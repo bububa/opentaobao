@@ -39,7 +39,7 @@ func (r TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Stores Setter
+// SetStores is Stores Setter
 // 门店列表
 func (r *TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) SetStores(_stores []Store) error {
 	r._stores = _stores
@@ -47,12 +47,12 @@ func (r *TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) SetStores(_stores
 	return nil
 }
 
-// Get Stores Getter
+// GetStores Stores Getter
 func (r TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) GetStores() []Store {
 	return r._stores
 }
 
-// Set is OperationTime Setter
+// SetOperationTime is OperationTime Setter
 // 操作时间
 func (r *TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) SetOperationTime(_operationTime string) error {
 	r._operationTime = _operationTime
@@ -60,7 +60,7 @@ func (r *TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) SetOperationTime(
 	return nil
 }
 
-// Get OperationTime Getter
+// GetOperationTime OperationTime Getter
 func (r TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) GetOperationTime() string {
 	return r._operationTime
 }

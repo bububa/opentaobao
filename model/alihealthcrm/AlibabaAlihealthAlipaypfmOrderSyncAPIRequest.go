@@ -45,7 +45,7 @@ func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // user_id
 func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -53,12 +53,12 @@ func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetUserId(_userId int64) 
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -66,12 +66,12 @@ func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetOrderId(_orderId strin
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is OrderPrice Setter
+// SetOrderPrice is OrderPrice Setter
 // 订单价格
 func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetOrderPrice(_orderPrice string) error {
 	r._orderPrice = _orderPrice
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetOrderPrice(_orderPrice
 	return nil
 }
 
-// Get OrderPrice Getter
+// GetOrderPrice OrderPrice Getter
 func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetOrderPrice() string {
 	return r._orderPrice
 }
 
-// Set is OrderStatus Setter
+// SetOrderStatus is OrderStatus Setter
 // 订单状态
 func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetOrderStatus(_orderStatus string) error {
 	r._orderStatus = _orderStatus
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetOrderStatus(_orderStat
 	return nil
 }
 
-// Get OrderStatus Getter
+// GetOrderStatus OrderStatus Getter
 func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetOrderStatus() string {
 	return r._orderStatus
 }
 
-// Set is ExtParam Setter
+// SetExtParam is ExtParam Setter
 // 扩展参数
 func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetExtParam(_extParam string) error {
 	r._extParam = _extParam
@@ -105,7 +105,7 @@ func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetExtParam(_extParam str
 	return nil
 }
 
-// Get ExtParam Getter
+// GetExtParam ExtParam Getter
 func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetExtParam() string {
 	return r._extParam
 }

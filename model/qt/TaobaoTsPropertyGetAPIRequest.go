@@ -37,7 +37,7 @@ func (r TaobaoTsPropertyGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ServiceItemCode Setter
+// SetServiceItemCode is ServiceItemCode Setter
 // 服务收费项code
 func (r *TaobaoTsPropertyGetAPIRequest) SetServiceItemCode(_serviceItemCode string) error {
 	r._serviceItemCode = _serviceItemCode
@@ -45,7 +45,7 @@ func (r *TaobaoTsPropertyGetAPIRequest) SetServiceItemCode(_serviceItemCode stri
 	return nil
 }
 
-// Get ServiceItemCode Getter
+// GetServiceItemCode ServiceItemCode Getter
 func (r TaobaoTsPropertyGetAPIRequest) GetServiceItemCode() string {
 	return r._serviceItemCode
 }

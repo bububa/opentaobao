@@ -49,7 +49,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业唯一标识
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -57,12 +57,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetRefEntId(_
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is EntName Setter
+// SetEntName is EntName Setter
 // 企业名称
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetEntName(_entName string) error {
 	r._entName = _entName
@@ -70,12 +70,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetEntName(_e
 	return nil
 }
 
-// Get EntName Getter
+// GetEntName EntName Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetEntName() string {
 	return r._entName
 }
 
-// Set is RefPartnerId Setter
+// SetRefPartnerId is RefPartnerId Setter
 // 企业自定义编号
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetRefPartnerId(_refPartnerId string) error {
 	r._refPartnerId = _refPartnerId
@@ -83,12 +83,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetRefPartner
 	return nil
 }
 
-// Get RefPartnerId Getter
+// GetRefPartnerId RefPartnerId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetRefPartnerId() string {
 	return r._refPartnerId
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -96,12 +96,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetPageSize(_
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 页码
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -109,12 +109,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetPage(_page
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is BeginDate Setter
+// SetBeginDate is BeginDate Setter
 // 开始时间
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetBeginDate(_beginDate string) error {
 	r._beginDate = _beginDate
@@ -122,12 +122,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetBeginDate(
 	return nil
 }
 
-// Get BeginDate Getter
+// GetBeginDate BeginDate Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetBeginDate() string {
 	return r._beginDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 结束时间
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -135,7 +135,7 @@ func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetEndDate(_e
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetEndDate() string {
 	return r._endDate
 }

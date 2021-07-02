@@ -39,7 +39,7 @@ func (r TaobaoAlitripAxinTransPayImgUploadAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is AxinPayImgUploadDTO Setter
+// SetAxinPayImgUploadDTO is AxinPayImgUploadDTO Setter
 // 上传图片到支付宝图片空间接口入参
 func (r *TaobaoAlitripAxinTransPayImgUploadAPIRequest) SetAxinPayImgUploadDTO(_axinPayImgUploadDTO *AxinPayImgUploadDto) error {
 	r._axinPayImgUploadDTO = _axinPayImgUploadDTO
@@ -47,12 +47,12 @@ func (r *TaobaoAlitripAxinTransPayImgUploadAPIRequest) SetAxinPayImgUploadDTO(_a
 	return nil
 }
 
-// Get AxinPayImgUploadDTO Getter
+// GetAxinPayImgUploadDTO AxinPayImgUploadDTO Getter
 func (r TaobaoAlitripAxinTransPayImgUploadAPIRequest) GetAxinPayImgUploadDTO() *AxinPayImgUploadDto {
 	return r._axinPayImgUploadDTO
 }
 
-// Set is ImgContents Setter
+// SetImgContents is ImgContents Setter
 // 图片字节流
 func (r *TaobaoAlitripAxinTransPayImgUploadAPIRequest) SetImgContents(_imgContents *model.File) error {
 	r._imgContents = _imgContents
@@ -60,7 +60,7 @@ func (r *TaobaoAlitripAxinTransPayImgUploadAPIRequest) SetImgContents(_imgConten
 	return nil
 }
 
-// Get ImgContents Getter
+// GetImgContents ImgContents Getter
 func (r TaobaoAlitripAxinTransPayImgUploadAPIRequest) GetImgContents() *model.File {
 	return r._imgContents
 }

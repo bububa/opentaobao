@@ -39,7 +39,7 @@ func (r TaobaoUmpDetailAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ActId Setter
+// SetActId is ActId Setter
 // 增加工具详情
 func (r *TaobaoUmpDetailAddAPIRequest) SetActId(_actId int64) error {
 	r._actId = _actId
@@ -47,12 +47,12 @@ func (r *TaobaoUmpDetailAddAPIRequest) SetActId(_actId int64) error {
 	return nil
 }
 
-// Get ActId Getter
+// GetActId ActId Getter
 func (r TaobaoUmpDetailAddAPIRequest) GetActId() int64 {
 	return r._actId
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 活动详情内容，json格式，可以通过ump sdk中的MarketingTool来进行处理
 func (r *TaobaoUmpDetailAddAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -60,7 +60,7 @@ func (r *TaobaoUmpDetailAddAPIRequest) SetContent(_content string) error {
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r TaobaoUmpDetailAddAPIRequest) GetContent() string {
 	return r._content
 }

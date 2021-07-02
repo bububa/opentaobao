@@ -37,7 +37,7 @@ func (r TaobaoGameDeliveryvoucherOrdervoucherAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 发券参数
 func (r *TaobaoGameDeliveryvoucherOrdervoucherAPIRequest) SetParam0(_param0 *OrderVoucherRequest) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TaobaoGameDeliveryvoucherOrdervoucherAPIRequest) SetParam0(_param0 *Ord
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoGameDeliveryvoucherOrdervoucherAPIRequest) GetParam0() *OrderVoucherRequest {
 	return r._param0
 }

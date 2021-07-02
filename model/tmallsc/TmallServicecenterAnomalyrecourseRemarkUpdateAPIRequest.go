@@ -39,7 +39,7 @@ func (r TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 需要更新的一键求助单id
 func (r *TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -47,12 +47,12 @@ func (r *TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) SetId(_id int6
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is Remark Setter
+// SetRemark is Remark Setter
 // 需要更新的服务商备注
 func (r *TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
@@ -60,7 +60,7 @@ func (r *TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) SetRemark(_rem
 	return nil
 }
 
-// Get Remark Getter
+// GetRemark Remark Getter
 func (r TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) GetRemark() string {
 	return r._remark
 }

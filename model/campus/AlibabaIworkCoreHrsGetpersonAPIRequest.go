@@ -43,7 +43,7 @@ func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AccountId Setter
+// SetAccountId is AccountId Setter
 // 用户ACCOUNT_ID
 func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetAccountId(_accountId string) error {
 	r._accountId = _accountId
@@ -51,12 +51,12 @@ func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetAccountId(_accountId string)
 	return nil
 }
 
-// Get AccountId Getter
+// GetAccountId AccountId Getter
 func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetAccountId() string {
 	return r._accountId
 }
 
-// Set is PersonId Setter
+// SetPersonId is PersonId Setter
 // 用户ID
 func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetPersonId(_personId int64) error {
 	r._personId = _personId
@@ -64,12 +64,12 @@ func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetPersonId(_personId int64) er
 	return nil
 }
 
-// Get PersonId Getter
+// GetPersonId PersonId Getter
 func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetPersonId() int64 {
 	return r._personId
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 应用ID
 func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
@@ -77,12 +77,12 @@ func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetAppId(_appId string) error {
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// Set is OperatorId Setter
+// SetOperatorId is OperatorId Setter
 // 操作人ID
 func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetOperatorId(_operatorId string) error {
 	r._operatorId = _operatorId
@@ -90,7 +90,7 @@ func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetOperatorId(_operatorId strin
 	return nil
 }
 
-// Get OperatorId Getter
+// GetOperatorId OperatorId Getter
 func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetOperatorId() string {
 	return r._operatorId
 }

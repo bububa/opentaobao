@@ -43,7 +43,7 @@ func (r AlibabaSeakingTaskReportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReportDetail Setter
+// SetReportDetail is ReportDetail Setter
 // 上报数据详情
 func (r *AlibabaSeakingTaskReportAPIRequest) SetReportDetail(_reportDetail []TaskDetailReportDto) error {
 	r._reportDetail = _reportDetail
@@ -51,12 +51,12 @@ func (r *AlibabaSeakingTaskReportAPIRequest) SetReportDetail(_reportDetail []Tas
 	return nil
 }
 
-// Get ReportDetail Getter
+// GetReportDetail ReportDetail Getter
 func (r AlibabaSeakingTaskReportAPIRequest) GetReportDetail() []TaskDetailReportDto {
 	return r._reportDetail
 }
 
-// Set is TaskType Setter
+// SetTaskType is TaskType Setter
 // 任务类型(title/image)
 func (r *AlibabaSeakingTaskReportAPIRequest) SetTaskType(_taskType string) error {
 	r._taskType = _taskType
@@ -64,12 +64,12 @@ func (r *AlibabaSeakingTaskReportAPIRequest) SetTaskType(_taskType string) error
 	return nil
 }
 
-// Get TaskType Getter
+// GetTaskType TaskType Getter
 func (r AlibabaSeakingTaskReportAPIRequest) GetTaskType() string {
 	return r._taskType
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 用户token
 func (r *AlibabaSeakingTaskReportAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -77,12 +77,12 @@ func (r *AlibabaSeakingTaskReportAPIRequest) SetToken(_token string) error {
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlibabaSeakingTaskReportAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is TokenFrom Setter
+// SetTokenFrom is TokenFrom Setter
 // token来源站点
 func (r *AlibabaSeakingTaskReportAPIRequest) SetTokenFrom(_tokenFrom string) error {
 	r._tokenFrom = _tokenFrom
@@ -90,7 +90,7 @@ func (r *AlibabaSeakingTaskReportAPIRequest) SetTokenFrom(_tokenFrom string) err
 	return nil
 }
 
-// Get TokenFrom Getter
+// GetTokenFrom TokenFrom Getter
 func (r AlibabaSeakingTaskReportAPIRequest) GetTokenFrom() string {
 	return r._tokenFrom
 }

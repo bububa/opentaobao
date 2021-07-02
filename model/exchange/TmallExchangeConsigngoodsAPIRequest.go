@@ -45,7 +45,7 @@ func (r TmallExchangeConsigngoodsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DisputeId Setter
+// SetDisputeId is DisputeId Setter
 // 换货单号ID
 func (r *TmallExchangeConsigngoodsAPIRequest) SetDisputeId(_disputeId int64) error {
 	r._disputeId = _disputeId
@@ -53,12 +53,12 @@ func (r *TmallExchangeConsigngoodsAPIRequest) SetDisputeId(_disputeId int64) err
 	return nil
 }
 
-// Get DisputeId Getter
+// GetDisputeId DisputeId Getter
 func (r TmallExchangeConsigngoodsAPIRequest) GetDisputeId() int64 {
 	return r._disputeId
 }
 
-// Set is LogisticsNo Setter
+// SetLogisticsNo is LogisticsNo Setter
 // 卖家发货的物流单号
 func (r *TmallExchangeConsigngoodsAPIRequest) SetLogisticsNo(_logisticsNo string) error {
 	r._logisticsNo = _logisticsNo
@@ -66,12 +66,12 @@ func (r *TmallExchangeConsigngoodsAPIRequest) SetLogisticsNo(_logisticsNo string
 	return nil
 }
 
-// Get LogisticsNo Getter
+// GetLogisticsNo LogisticsNo Getter
 func (r TmallExchangeConsigngoodsAPIRequest) GetLogisticsNo() string {
 	return r._logisticsNo
 }
 
-// Set is LogisticsType Setter
+// SetLogisticsType is LogisticsType Setter
 // 卖家发货的物流类型，100表示平邮，200表示快递
 func (r *TmallExchangeConsigngoodsAPIRequest) SetLogisticsType(_logisticsType int64) error {
 	r._logisticsType = _logisticsType
@@ -79,12 +79,12 @@ func (r *TmallExchangeConsigngoodsAPIRequest) SetLogisticsType(_logisticsType in
 	return nil
 }
 
-// Get LogisticsType Getter
+// GetLogisticsType LogisticsType Getter
 func (r TmallExchangeConsigngoodsAPIRequest) GetLogisticsType() int64 {
 	return r._logisticsType
 }
 
-// Set is LogisticsCompanyName Setter
+// SetLogisticsCompanyName is LogisticsCompanyName Setter
 // 卖家发货的快递公司
 func (r *TmallExchangeConsigngoodsAPIRequest) SetLogisticsCompanyName(_logisticsCompanyName string) error {
 	r._logisticsCompanyName = _logisticsCompanyName
@@ -92,12 +92,12 @@ func (r *TmallExchangeConsigngoodsAPIRequest) SetLogisticsCompanyName(_logistics
 	return nil
 }
 
-// Get LogisticsCompanyName Getter
+// GetLogisticsCompanyName LogisticsCompanyName Getter
 func (r TmallExchangeConsigngoodsAPIRequest) GetLogisticsCompanyName() string {
 	return r._logisticsCompanyName
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回字段
 func (r *TmallExchangeConsigngoodsAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -105,7 +105,7 @@ func (r *TmallExchangeConsigngoodsAPIRequest) SetFields(_fields []string) error 
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TmallExchangeConsigngoodsAPIRequest) GetFields() []string {
 	return r._fields
 }

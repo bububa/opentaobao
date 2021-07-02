@@ -37,7 +37,7 @@ func (r AlibabaWdkMarketingOpenVersionApplyAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is SyncVersion Setter
+// SetSyncVersion is SyncVersion Setter
 // 同步版本信息
 func (r *AlibabaWdkMarketingOpenVersionApplyAPIRequest) SetSyncVersion(_syncVersion *SyncVersionBo) error {
 	r._syncVersion = _syncVersion
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMarketingOpenVersionApplyAPIRequest) SetSyncVersion(_syncVers
 	return nil
 }
 
-// Get SyncVersion Getter
+// GetSyncVersion SyncVersion Getter
 func (r AlibabaWdkMarketingOpenVersionApplyAPIRequest) GetSyncVersion() *SyncVersionBo {
 	return r._syncVersion
 }

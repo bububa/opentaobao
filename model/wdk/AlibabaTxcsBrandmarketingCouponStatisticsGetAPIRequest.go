@@ -37,7 +37,7 @@ func (r AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is CouponStatisticsParamDo Setter
+// SetCouponStatisticsParamDo is CouponStatisticsParamDo Setter
 // 请求信息
 func (r *AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest) SetCouponStatisticsParamDo(_couponStatisticsParamDo *CouponStatisticsParamDo) error {
 	r._couponStatisticsParamDo = _couponStatisticsParamDo
@@ -45,7 +45,7 @@ func (r *AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest) SetCouponStatis
 	return nil
 }
 
-// Get CouponStatisticsParamDo Getter
+// GetCouponStatisticsParamDo CouponStatisticsParamDo Getter
 func (r AlibabaTxcsBrandmarketingCouponStatisticsGetAPIRequest) GetCouponStatisticsParamDo() *CouponStatisticsParamDo {
 	return r._couponStatisticsParamDo
 }

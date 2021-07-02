@@ -39,7 +39,7 @@ func (r TaobaoAlitripItPolicyAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ExtendAttributes Setter
+// SetExtendAttributes is ExtendAttributes Setter
 // 扩展字段
 func (r *TaobaoAlitripItPolicyAddAPIRequest) SetExtendAttributes(_extendAttributes string) error {
 	r._extendAttributes = _extendAttributes
@@ -47,12 +47,12 @@ func (r *TaobaoAlitripItPolicyAddAPIRequest) SetExtendAttributes(_extendAttribut
 	return nil
 }
 
-// Get ExtendAttributes Getter
+// GetExtendAttributes ExtendAttributes Getter
 func (r TaobaoAlitripItPolicyAddAPIRequest) GetExtendAttributes() string {
 	return r._extendAttributes
 }
 
-// Set is TopPolicyDo Setter
+// SetTopPolicyDo is TopPolicyDo Setter
 // 国际机票销售规则
 func (r *TaobaoAlitripItPolicyAddAPIRequest) SetTopPolicyDo(_topPolicyDo *TopPolicyDo) error {
 	r._topPolicyDo = _topPolicyDo
@@ -60,7 +60,7 @@ func (r *TaobaoAlitripItPolicyAddAPIRequest) SetTopPolicyDo(_topPolicyDo *TopPol
 	return nil
 }
 
-// Get TopPolicyDo Getter
+// GetTopPolicyDo TopPolicyDo Getter
 func (r TaobaoAlitripItPolicyAddAPIRequest) GetTopPolicyDo() *TopPolicyDo {
 	return r._topPolicyDo
 }

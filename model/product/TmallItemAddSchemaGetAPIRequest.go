@@ -43,7 +43,7 @@ func (r TmallItemAddSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 商品发布的目标类目，必须是叶子类目
 func (r *TmallItemAddSchemaGetAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
@@ -51,12 +51,12 @@ func (r *TmallItemAddSchemaGetAPIRequest) SetCategoryId(_categoryId int64) error
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r TmallItemAddSchemaGetAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 商品发布的目标product_id
 func (r *TmallItemAddSchemaGetAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -64,12 +64,12 @@ func (r *TmallItemAddSchemaGetAPIRequest) SetProductId(_productId int64) error {
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TmallItemAddSchemaGetAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 发布商品类型，一口价填“b”，拍卖填"a"
 func (r *TmallItemAddSchemaGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -77,12 +77,12 @@ func (r *TmallItemAddSchemaGetAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TmallItemAddSchemaGetAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is IsvInit Setter
+// SetIsvInit is IsvInit Setter
 // 正常接口调用时，请忽略这个参数或者填FALSE。这个参数提供给ISV对接Schema时，如果想先获取了解所有字段和规则，可以将此字段设置为true，product_id也就不需要提供了，设置为0即可
 func (r *TmallItemAddSchemaGetAPIRequest) SetIsvInit(_isvInit bool) error {
 	r._isvInit = _isvInit
@@ -90,7 +90,7 @@ func (r *TmallItemAddSchemaGetAPIRequest) SetIsvInit(_isvInit bool) error {
 	return nil
 }
 
-// Get IsvInit Getter
+// GetIsvInit IsvInit Getter
 func (r TmallItemAddSchemaGetAPIRequest) GetIsvInit() bool {
 	return r._isvInit
 }

@@ -47,7 +47,7 @@ func (r AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 淘宝用户ID
 func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
@@ -55,12 +55,12 @@ func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetSellerId(_seller
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }
 
-// Set is DeviceCodeList Setter
+// SetDeviceCodeList is DeviceCodeList Setter
 // 设备编码 device_code_list, device_uuid_list 二选一必填
 func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetDeviceCodeList(_deviceCodeList []string) error {
 	r._deviceCodeList = _deviceCodeList
@@ -68,12 +68,12 @@ func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetDeviceCodeList(_
 	return nil
 }
 
-// Get DeviceCodeList Getter
+// GetDeviceCodeList DeviceCodeList Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) GetDeviceCodeList() []string {
 	return r._deviceCodeList
 }
 
-// Set is DeviceUuidList Setter
+// SetDeviceUuidList is DeviceUuidList Setter
 // 外部设备编码 device_code_list, device_uuid_list 二选一必填
 func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetDeviceUuidList(_deviceUuidList []string) error {
 	r._deviceUuidList = _deviceUuidList
@@ -81,12 +81,12 @@ func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetDeviceUuidList(_
 	return nil
 }
 
-// Get DeviceUuidList Getter
+// GetDeviceUuidList DeviceUuidList Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) GetDeviceUuidList() []string {
 	return r._deviceUuidList
 }
 
-// Set is Barcode Setter
+// SetBarcode is Barcode Setter
 // 条码
 func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetBarcode(_barcode string) error {
 	r._barcode = _barcode
@@ -94,12 +94,12 @@ func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetBarcode(_barcode
 	return nil
 }
 
-// Get Barcode Getter
+// GetBarcode Barcode Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) GetBarcode() string {
 	return r._barcode
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 如果该参数传入，条码以商品条码为准
 func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -107,12 +107,12 @@ func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetItemId(_itemId i
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is AllDevice Setter
+// SetAllDevice is AllDevice Setter
 // 是否生效到所有设备
 func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetAllDevice(_allDevice bool) error {
 	r._allDevice = _allDevice
@@ -120,7 +120,7 @@ func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetAllDevice(_allDe
 	return nil
 }
 
-// Get AllDevice Getter
+// GetAllDevice AllDevice Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) GetAllDevice() bool {
 	return r._allDevice
 }

@@ -43,7 +43,7 @@ func (r AlibabaWdkopenCateorderPullAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 经营店ID
 func (r *AlibabaWdkopenCateorderPullAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -51,12 +51,12 @@ func (r *AlibabaWdkopenCateorderPullAPIRequest) SetStoreId(_storeId string) erro
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaWdkopenCateorderPullAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 回传状态,PREPARING,准备中，制作中；PRODUCE_FINISH，制作完成；FETCHED 已取餐；  CANCEL，加工失败/取消
 func (r *AlibabaWdkopenCateorderPullAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -64,12 +64,12 @@ func (r *AlibabaWdkopenCateorderPullAPIRequest) SetStatus(_status string) error 
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaWdkopenCateorderPullAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is OutOrderId Setter
+// SetOutOrderId is OutOrderId Setter
 // 主站主订单ID
 func (r *AlibabaWdkopenCateorderPullAPIRequest) SetOutOrderId(_outOrderId string) error {
 	r._outOrderId = _outOrderId
@@ -77,12 +77,12 @@ func (r *AlibabaWdkopenCateorderPullAPIRequest) SetOutOrderId(_outOrderId string
 	return nil
 }
 
-// Get OutOrderId Getter
+// GetOutOrderId OutOrderId Getter
 func (r AlibabaWdkopenCateorderPullAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
 }
 
-// Set is SubOutOrderIds Setter
+// SetSubOutOrderIds is SubOutOrderIds Setter
 // 主站子订单ID列表, 为空则表示回传整单状态
 func (r *AlibabaWdkopenCateorderPullAPIRequest) SetSubOutOrderIds(_subOutOrderIds []string) error {
 	r._subOutOrderIds = _subOutOrderIds
@@ -90,7 +90,7 @@ func (r *AlibabaWdkopenCateorderPullAPIRequest) SetSubOutOrderIds(_subOutOrderId
 	return nil
 }
 
-// Get SubOutOrderIds Getter
+// GetSubOutOrderIds SubOutOrderIds Getter
 func (r AlibabaWdkopenCateorderPullAPIRequest) GetSubOutOrderIds() []string {
 	return r._subOutOrderIds
 }

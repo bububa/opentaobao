@@ -37,7 +37,7 @@ func (r TaobaoJipiaoAgentOrderDetailAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderIds Setter
+// SetOrderIds is OrderIds Setter
 // 淘宝订单id列表，当前支持列表长度为1，即当前只支持单个订单详情查询
 func (r *TaobaoJipiaoAgentOrderDetailAPIRequest) SetOrderIds(_orderIds []int64) error {
 	r._orderIds = _orderIds
@@ -45,7 +45,7 @@ func (r *TaobaoJipiaoAgentOrderDetailAPIRequest) SetOrderIds(_orderIds []int64) 
 	return nil
 }
 
-// Get OrderIds Getter
+// GetOrderIds OrderIds Getter
 func (r TaobaoJipiaoAgentOrderDetailAPIRequest) GetOrderIds() []int64 {
 	return r._orderIds
 }

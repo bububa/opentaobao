@@ -55,7 +55,7 @@ func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is PackageCode Setter
+// SetPackageCode is PackageCode Setter
 // 机构套餐编码
 func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetPackageCode(_packageCode string) error {
 	r._packageCode = _packageCode
@@ -63,12 +63,12 @@ func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetPackageCode(_
 	return nil
 }
 
-// Get PackageCode Getter
+// GetPackageCode PackageCode Getter
 func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetPackageCode() string {
 	return r._packageCode
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 上门检测地址
 func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetAddress(_address string) error {
 	r._address = _address
@@ -76,12 +76,12 @@ func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetAddress(_addr
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetAddress() string {
 	return r._address
 }
 
-// Set is Latitude Setter
+// SetLatitude is Latitude Setter
 // 上门检测地址纬度
 func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetLatitude(_latitude string) error {
 	r._latitude = _latitude
@@ -89,12 +89,12 @@ func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetLatitude(_lat
 	return nil
 }
 
-// Get Latitude Getter
+// GetLatitude Latitude Getter
 func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetLatitude() string {
 	return r._latitude
 }
 
-// Set is Longitude Setter
+// SetLongitude is Longitude Setter
 // 上门检测地址经度
 func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetLongitude(_longitude string) error {
 	r._longitude = _longitude
@@ -102,12 +102,12 @@ func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetLongitude(_lo
 	return nil
 }
 
-// Get Longitude Getter
+// GetLongitude Longitude Getter
 func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetLongitude() string {
 	return r._longitude
 }
 
-// Set is Province Setter
+// SetProvince is Province Setter
 // 省份名称（高德）
 func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetProvince(_province string) error {
 	r._province = _province
@@ -115,12 +115,12 @@ func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetProvince(_pro
 	return nil
 }
 
-// Get Province Getter
+// GetProvince Province Getter
 func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetProvince() string {
 	return r._province
 }
 
-// Set is ProvinceCode Setter
+// SetProvinceCode is ProvinceCode Setter
 // 省份编码（高德adcode）
 func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetProvinceCode(_provinceCode string) error {
 	r._provinceCode = _provinceCode
@@ -128,12 +128,12 @@ func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetProvinceCode(
 	return nil
 }
 
-// Get ProvinceCode Getter
+// GetProvinceCode ProvinceCode Getter
 func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetProvinceCode() string {
 	return r._provinceCode
 }
 
-// Set is City Setter
+// SetCity is City Setter
 // 城市名称（高德）
 func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetCity(_city string) error {
 	r._city = _city
@@ -141,12 +141,12 @@ func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetCity(_city st
 	return nil
 }
 
-// Get City Getter
+// GetCity City Getter
 func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetCity() string {
 	return r._city
 }
 
-// Set is CityCode Setter
+// SetCityCode is CityCode Setter
 // 城市编码（高德adcode）
 func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetCityCode(_cityCode string) error {
 	r._cityCode = _cityCode
@@ -154,12 +154,12 @@ func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetCityCode(_cit
 	return nil
 }
 
-// Get CityCode Getter
+// GetCityCode CityCode Getter
 func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetCityCode() string {
 	return r._cityCode
 }
 
-// Set is District Setter
+// SetDistrict is District Setter
 // 区域名称（高德）
 func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetDistrict(_district string) error {
 	r._district = _district
@@ -167,12 +167,12 @@ func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetDistrict(_dis
 	return nil
 }
 
-// Get District Getter
+// GetDistrict District Getter
 func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetDistrict() string {
 	return r._district
 }
 
-// Set is DistrictCode Setter
+// SetDistrictCode is DistrictCode Setter
 // 区域编码（高德adcode）
 func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetDistrictCode(_districtCode string) error {
 	r._districtCode = _districtCode
@@ -180,7 +180,7 @@ func (r *AlibabaAlihealthExaminationServiceareaCheckAPIRequest) SetDistrictCode(
 	return nil
 }
 
-// Get DistrictCode Getter
+// GetDistrictCode DistrictCode Getter
 func (r AlibabaAlihealthExaminationServiceareaCheckAPIRequest) GetDistrictCode() string {
 	return r._districtCode
 }

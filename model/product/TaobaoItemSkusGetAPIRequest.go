@@ -40,7 +40,7 @@ func (r TaobaoItemSkusGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”分隔。
 func (r *TaobaoItemSkusGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -48,12 +48,12 @@ func (r *TaobaoItemSkusGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoItemSkusGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is NumIids Setter
+// SetNumIids is NumIids Setter
 // sku所属商品数字id，必选。num_iid个数不能超过40个
 func (r *TaobaoItemSkusGetAPIRequest) SetNumIids(_numIids string) error {
 	r._numIids = _numIids
@@ -61,7 +61,7 @@ func (r *TaobaoItemSkusGetAPIRequest) SetNumIids(_numIids string) error {
 	return nil
 }
 
-// Get NumIids Getter
+// GetNumIids NumIids Getter
 func (r TaobaoItemSkusGetAPIRequest) GetNumIids() string {
 	return r._numIids
 }

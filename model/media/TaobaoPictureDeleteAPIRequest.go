@@ -37,7 +37,7 @@ func (r TaobaoPictureDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PictureIds Setter
+// SetPictureIds is PictureIds Setter
 // 图片ID字符串,可以一个也可以一组,用英文逗号间隔,如450,120,155.限制数量是100
 func (r *TaobaoPictureDeleteAPIRequest) SetPictureIds(_pictureIds []string) error {
 	r._pictureIds = _pictureIds
@@ -45,7 +45,7 @@ func (r *TaobaoPictureDeleteAPIRequest) SetPictureIds(_pictureIds []string) erro
 	return nil
 }
 
-// Get PictureIds Getter
+// GetPictureIds PictureIds Getter
 func (r TaobaoPictureDeleteAPIRequest) GetPictureIds() []string {
 	return r._pictureIds
 }

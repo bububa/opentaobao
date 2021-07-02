@@ -41,7 +41,7 @@ func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is MerchantCode Setter
+// SetMerchantCode is MerchantCode Setter
 // 商户唯一码
 func (r *AlibabaAlihealthExaminationReserveStateAPIRequest) SetMerchantCode(_merchantCode string) error {
 	r._merchantCode = _merchantCode
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthExaminationReserveStateAPIRequest) SetMerchantCode(_mer
 	return nil
 }
 
-// Get MerchantCode Getter
+// GetMerchantCode MerchantCode Getter
 func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetMerchantCode() string {
 	return r._merchantCode
 }
 
-// Set is ReserveNumber Setter
+// SetReserveNumber is ReserveNumber Setter
 // 阿里健康预约唯一标识
 func (r *AlibabaAlihealthExaminationReserveStateAPIRequest) SetReserveNumber(_reserveNumber string) error {
 	r._reserveNumber = _reserveNumber
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthExaminationReserveStateAPIRequest) SetReserveNumber(_re
 	return nil
 }
 
-// Get ReserveNumber Getter
+// GetReserveNumber ReserveNumber Getter
 func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetReserveNumber() string {
 	return r._reserveNumber
 }
 
-// Set is UniqReserveCode Setter
+// SetUniqReserveCode is UniqReserveCode Setter
 // 体检机构预约唯一标识码
 func (r *AlibabaAlihealthExaminationReserveStateAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
 	r._uniqReserveCode = _uniqReserveCode
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthExaminationReserveStateAPIRequest) SetUniqReserveCode(_
 	return nil
 }
 
-// Get UniqReserveCode Getter
+// GetUniqReserveCode UniqReserveCode Getter
 func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetUniqReserveCode() string {
 	return r._uniqReserveCode
 }

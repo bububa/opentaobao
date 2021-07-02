@@ -81,7 +81,7 @@ func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is MerchantCode Setter
+// SetMerchantCode is MerchantCode Setter
 // 商户唯一码
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetMerchantCode(_merchantCode string) error {
 	r._merchantCode = _merchantCode
@@ -89,12 +89,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetMerchantCode(_m
 	return nil
 }
 
-// Get MerchantCode Getter
+// GetMerchantCode MerchantCode Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetMerchantCode() string {
 	return r._merchantCode
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 体检人姓名
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -102,12 +102,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetName(_name stri
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is ReserveNumber Setter
+// SetReserveNumber is ReserveNumber Setter
 // 阿里健康预约唯一标识
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetReserveNumber(_reserveNumber string) error {
 	r._reserveNumber = _reserveNumber
@@ -115,12 +115,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetReserveNumber(_
 	return nil
 }
 
-// Get ReserveNumber Getter
+// GetReserveNumber ReserveNumber Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetReserveNumber() string {
 	return r._reserveNumber
 }
 
-// Set is Gender Setter
+// SetGender is Gender Setter
 // 性别(0-男;1-女;)
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetGender(_gender string) error {
 	r._gender = _gender
@@ -128,12 +128,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetGender(_gender 
 	return nil
 }
 
-// Get Gender Getter
+// GetGender Gender Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetGender() string {
 	return r._gender
 }
 
-// Set is Birthday Setter
+// SetBirthday is Birthday Setter
 // 出生日期
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetBirthday(_birthday string) error {
 	r._birthday = _birthday
@@ -141,12 +141,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetBirthday(_birth
 	return nil
 }
 
-// Get Birthday Getter
+// GetBirthday Birthday Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetBirthday() string {
 	return r._birthday
 }
 
-// Set is ReserveDate Setter
+// SetReserveDate is ReserveDate Setter
 // 预约时间
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetReserveDate(_reserveDate string) error {
 	r._reserveDate = _reserveDate
@@ -154,12 +154,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetReserveDate(_re
 	return nil
 }
 
-// Get ReserveDate Getter
+// GetReserveDate ReserveDate Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetReserveDate() string {
 	return r._reserveDate
 }
 
-// Set is PackageCode Setter
+// SetPackageCode is PackageCode Setter
 // 体检套餐编码
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetPackageCode(_packageCode string) error {
 	r._packageCode = _packageCode
@@ -167,12 +167,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetPackageCode(_pa
 	return nil
 }
 
-// Get PackageCode Getter
+// GetPackageCode PackageCode Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetPackageCode() string {
 	return r._packageCode
 }
 
-// Set is Married Setter
+// SetMarried is Married Setter
 // 婚否(0-未婚; 1-已婚)
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetMarried(_married string) error {
 	r._married = _married
@@ -180,12 +180,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetMarried(_marrie
 	return nil
 }
 
-// Get Married Getter
+// GetMarried Married Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetMarried() string {
 	return r._married
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 店铺ID
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -193,12 +193,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetStoreId(_storeI
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 电话号码
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -206,12 +206,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetPhone(_phone st
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetPhone() string {
 	return r._phone
 }
 
-// Set is CertType Setter
+// SetCertType is CertType Setter
 // 证件类型(0-身份证; 1-护照; 2-军官证)
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetCertType(_certType string) error {
 	r._certType = _certType
@@ -219,12 +219,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetCertType(_certT
 	return nil
 }
 
-// Get CertType Getter
+// GetCertType CertType Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetCertType() string {
 	return r._certType
 }
 
-// Set is CertNumber Setter
+// SetCertNumber is CertNumber Setter
 // 证件号
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetCertNumber(_certNumber string) error {
 	r._certNumber = _certNumber
@@ -232,12 +232,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetCertNumber(_cer
 	return nil
 }
 
-// Get CertNumber Getter
+// GetCertNumber CertNumber Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetCertNumber() string {
 	return r._certNumber
 }
 
-// Set is Company Setter
+// SetCompany is Company Setter
 // 所属公司
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetCompany(_company string) error {
 	r._company = _company
@@ -245,12 +245,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetCompany(_compan
 	return nil
 }
 
-// Get Company Getter
+// GetCompany Company Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetCompany() string {
 	return r._company
 }
 
-// Set is Department Setter
+// SetDepartment is Department Setter
 // 所属部门
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetDepartment(_department string) error {
 	r._department = _department
@@ -258,12 +258,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetDepartment(_dep
 	return nil
 }
 
-// Get Department Getter
+// GetDepartment Department Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetDepartment() string {
 	return r._department
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 报告邮寄地址
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetAddress(_address string) error {
 	r._address = _address
@@ -271,12 +271,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetAddress(_addres
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetAddress() string {
 	return r._address
 }
 
-// Set is AddItems Setter
+// SetAddItems is AddItems Setter
 // 加项列表
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetAddItems(_addItems []AddItem) error {
 	r._addItems = _addItems
@@ -284,12 +284,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetAddItems(_addIt
 	return nil
 }
 
-// Get AddItems Getter
+// GetAddItems AddItems Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetAddItems() []AddItem {
 	return r._addItems
 }
 
-// Set is AddPacks Setter
+// SetAddPacks is AddPacks Setter
 // 加项包列表
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetAddPacks(_addPacks []AddPack) error {
 	r._addPacks = _addPacks
@@ -297,12 +297,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetAddPacks(_addPa
 	return nil
 }
 
-// Get AddPacks Getter
+// GetAddPacks AddPacks Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetAddPacks() []AddPack {
 	return r._addPacks
 }
 
-// Set is HavaReport Setter
+// SetHavaReport is HavaReport Setter
 // 0没报告1有报告
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetHavaReport(_havaReport string) error {
 	r._havaReport = _havaReport
@@ -310,12 +310,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetHavaReport(_hav
 	return nil
 }
 
-// Get HavaReport Getter
+// GetHavaReport HavaReport Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetHavaReport() string {
 	return r._havaReport
 }
 
-// Set is EmployeeNumber Setter
+// SetEmployeeNumber is EmployeeNumber Setter
 // 员工号
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetEmployeeNumber(_employeeNumber string) error {
 	r._employeeNumber = _employeeNumber
@@ -323,12 +323,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetEmployeeNumber(
 	return nil
 }
 
-// Get EmployeeNumber Getter
+// GetEmployeeNumber EmployeeNumber Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetEmployeeNumber() string {
 	return r._employeeNumber
 }
 
-// Set is ServiceType Setter
+// SetServiceType is ServiceType Setter
 // 服务类型，ONSITE_SERVICE（到店检测）、DOOR_TO_DOOR_SERVICE（上门检测）
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetServiceType(_serviceType string) error {
 	r._serviceType = _serviceType
@@ -336,12 +336,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetServiceType(_se
 	return nil
 }
 
-// Get ServiceType Getter
+// GetServiceType ServiceType Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetServiceType() string {
 	return r._serviceType
 }
 
-// Set is ServiceAddress Setter
+// SetServiceAddress is ServiceAddress Setter
 // 上门服务的上门地址
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetServiceAddress(_serviceAddress *AddAddress) error {
 	r._serviceAddress = _serviceAddress
@@ -349,12 +349,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetServiceAddress(
 	return nil
 }
 
-// Get ServiceAddress Getter
+// GetServiceAddress ServiceAddress Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetServiceAddress() *AddAddress {
 	return r._serviceAddress
 }
 
-// Set is ReserveTimeStart Setter
+// SetReserveTimeStart is ReserveTimeStart Setter
 // 预约时间段开始
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetReserveTimeStart(_reserveTimeStart string) error {
 	r._reserveTimeStart = _reserveTimeStart
@@ -362,12 +362,12 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetReserveTimeStar
 	return nil
 }
 
-// Get ReserveTimeStart Getter
+// GetReserveTimeStart ReserveTimeStart Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetReserveTimeStart() string {
 	return r._reserveTimeStart
 }
 
-// Set is ReserveTimeEnd Setter
+// SetReserveTimeEnd is ReserveTimeEnd Setter
 // 预约时间段截止
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetReserveTimeEnd(_reserveTimeEnd string) error {
 	r._reserveTimeEnd = _reserveTimeEnd
@@ -375,7 +375,7 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetReserveTimeEnd(
 	return nil
 }
 
-// Get ReserveTimeEnd Getter
+// GetReserveTimeEnd ReserveTimeEnd Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetReserveTimeEnd() string {
 	return r._reserveTimeEnd
 }

@@ -39,7 +39,7 @@ func (r AlibabaMjMoscarnivalReceivecouponAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 手机号码
 func (r *AlibabaMjMoscarnivalReceivecouponAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -47,12 +47,12 @@ func (r *AlibabaMjMoscarnivalReceivecouponAPIRequest) SetMobile(_mobile string) 
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r AlibabaMjMoscarnivalReceivecouponAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动id
 func (r *AlibabaMjMoscarnivalReceivecouponAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -60,7 +60,7 @@ func (r *AlibabaMjMoscarnivalReceivecouponAPIRequest) SetActivityId(_activityId 
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r AlibabaMjMoscarnivalReceivecouponAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }

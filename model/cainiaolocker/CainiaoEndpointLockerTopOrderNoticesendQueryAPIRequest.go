@@ -41,7 +41,7 @@ func (r CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is StationId Setter
+// SetStationId is StationId Setter
 // 站点id
 func (r *CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) SetStationId(_stationId string) error {
 	r._stationId = _stationId
@@ -49,12 +49,12 @@ func (r *CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) SetStationId(_s
 	return nil
 }
 
-// Get StationId Getter
+// GetStationId StationId Getter
 func (r CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) GetStationId() string {
 	return r._stationId
 }
 
-// Set is GetterPhone Setter
+// SetGetterPhone is GetterPhone Setter
 // 收件人手机号
 func (r *CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) SetGetterPhone(_getterPhone string) error {
 	r._getterPhone = _getterPhone
@@ -62,12 +62,12 @@ func (r *CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) SetGetterPhone(
 	return nil
 }
 
-// Get GetterPhone Getter
+// GetGetterPhone GetterPhone Getter
 func (r CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) GetGetterPhone() string {
 	return r._getterPhone
 }
 
-// Set is MailNo Setter
+// SetMailNo is MailNo Setter
 // 运单号
 func (r *CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) SetMailNo(_mailNo string) error {
 	r._mailNo = _mailNo
@@ -75,7 +75,7 @@ func (r *CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) SetMailNo(_mail
 	return nil
 }
 
-// Get MailNo Getter
+// GetMailNo MailNo Getter
 func (r CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) GetMailNo() string {
 	return r._mailNo
 }

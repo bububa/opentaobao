@@ -37,7 +37,7 @@ func (r AlibabaPosFundCashierShiftSummaryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CashierShiftFundRequest Setter
+// SetCashierShiftFundRequest is CashierShiftFundRequest Setter
 // 请求参数
 func (r *AlibabaPosFundCashierShiftSummaryAPIRequest) SetCashierShiftFundRequest(_cashierShiftFundRequest *CashierShiftFundRequest) error {
 	r._cashierShiftFundRequest = _cashierShiftFundRequest
@@ -45,7 +45,7 @@ func (r *AlibabaPosFundCashierShiftSummaryAPIRequest) SetCashierShiftFundRequest
 	return nil
 }
 
-// Get CashierShiftFundRequest Getter
+// GetCashierShiftFundRequest CashierShiftFundRequest Getter
 func (r AlibabaPosFundCashierShiftSummaryAPIRequest) GetCashierShiftFundRequest() *CashierShiftFundRequest {
 	return r._cashierShiftFundRequest
 }

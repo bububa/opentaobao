@@ -39,7 +39,7 @@ func (r AlibabaKbalgoAlscpoisGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageNum Setter
+// SetPageNum is PageNum Setter
 // 第几页
 func (r *AlibabaKbalgoAlscpoisGetAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
@@ -47,12 +47,12 @@ func (r *AlibabaKbalgoAlscpoisGetAPIRequest) SetPageNum(_pageNum int64) error {
 	return nil
 }
 
-// Get PageNum Getter
+// GetPageNum PageNum Getter
 func (r AlibabaKbalgoAlscpoisGetAPIRequest) GetPageNum() int64 {
 	return r._pageNum
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页的数量。
 func (r *AlibabaKbalgoAlscpoisGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -60,7 +60,7 @@ func (r *AlibabaKbalgoAlscpoisGetAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaKbalgoAlscpoisGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

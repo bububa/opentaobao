@@ -37,7 +37,7 @@ func (r TaobaoMtopUploadTokenGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamUploadTokenRequest Setter
+// SetParamUploadTokenRequest is ParamUploadTokenRequest Setter
 // 系统自动生成
 func (r *TaobaoMtopUploadTokenGetAPIRequest) SetParamUploadTokenRequest(_paramUploadTokenRequest *UploadTokenRequestV) error {
 	r._paramUploadTokenRequest = _paramUploadTokenRequest
@@ -45,7 +45,7 @@ func (r *TaobaoMtopUploadTokenGetAPIRequest) SetParamUploadTokenRequest(_paramUp
 	return nil
 }
 
-// Get ParamUploadTokenRequest Getter
+// GetParamUploadTokenRequest ParamUploadTokenRequest Getter
 func (r TaobaoMtopUploadTokenGetAPIRequest) GetParamUploadTokenRequest() *UploadTokenRequestV {
 	return r._paramUploadTokenRequest
 }

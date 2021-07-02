@@ -37,7 +37,7 @@ func (r TmallCarcenterVehicleChasisInsertAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Dto Setter
+// SetDto is Dto Setter
 // 底盘压缩库入参
 func (r *TmallCarcenterVehicleChasisInsertAPIRequest) SetDto(_dto *ChasisVehicleInfoOriginalDto) error {
 	r._dto = _dto
@@ -45,7 +45,7 @@ func (r *TmallCarcenterVehicleChasisInsertAPIRequest) SetDto(_dto *ChasisVehicle
 	return nil
 }
 
-// Get Dto Getter
+// GetDto Dto Getter
 func (r TmallCarcenterVehicleChasisInsertAPIRequest) GetDto() *ChasisVehicleInfoOriginalDto {
 	return r._dto
 }

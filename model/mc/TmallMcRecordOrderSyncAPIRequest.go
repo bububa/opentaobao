@@ -47,7 +47,7 @@ func (r TmallMcRecordOrderSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 设备编码
 func (r *TmallMcRecordOrderSyncAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -55,12 +55,12 @@ func (r *TmallMcRecordOrderSyncAPIRequest) SetDeviceCode(_deviceCode string) err
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r TmallMcRecordOrderSyncAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is OriginPrice Setter
+// SetOriginPrice is OriginPrice Setter
 // 原价
 func (r *TmallMcRecordOrderSyncAPIRequest) SetOriginPrice(_originPrice int64) error {
 	r._originPrice = _originPrice
@@ -68,12 +68,12 @@ func (r *TmallMcRecordOrderSyncAPIRequest) SetOriginPrice(_originPrice int64) er
 	return nil
 }
 
-// Get OriginPrice Getter
+// GetOriginPrice OriginPrice Getter
 func (r TmallMcRecordOrderSyncAPIRequest) GetOriginPrice() int64 {
 	return r._originPrice
 }
 
-// Set is PayPrice Setter
+// SetPayPrice is PayPrice Setter
 // 实付价
 func (r *TmallMcRecordOrderSyncAPIRequest) SetPayPrice(_payPrice int64) error {
 	r._payPrice = _payPrice
@@ -81,12 +81,12 @@ func (r *TmallMcRecordOrderSyncAPIRequest) SetPayPrice(_payPrice int64) error {
 	return nil
 }
 
-// Get PayPrice Getter
+// GetPayPrice PayPrice Getter
 func (r TmallMcRecordOrderSyncAPIRequest) GetPayPrice() int64 {
 	return r._payPrice
 }
 
-// Set is OpenId Setter
+// SetOpenId is OpenId Setter
 // 用户openId
 func (r *TmallMcRecordOrderSyncAPIRequest) SetOpenId(_openId string) error {
 	r._openId = _openId
@@ -94,12 +94,12 @@ func (r *TmallMcRecordOrderSyncAPIRequest) SetOpenId(_openId string) error {
 	return nil
 }
 
-// Get OpenId Getter
+// GetOpenId OpenId Getter
 func (r TmallMcRecordOrderSyncAPIRequest) GetOpenId() string {
 	return r._openId
 }
 
-// Set is Result Setter
+// SetResult is Result Setter
 // 核销结果
 func (r *TmallMcRecordOrderSyncAPIRequest) SetResult(_result string) error {
 	r._result = _result
@@ -107,12 +107,12 @@ func (r *TmallMcRecordOrderSyncAPIRequest) SetResult(_result string) error {
 	return nil
 }
 
-// Get Result Getter
+// GetResult Result Getter
 func (r TmallMcRecordOrderSyncAPIRequest) GetResult() string {
 	return r._result
 }
 
-// Set is Version Setter
+// SetVersion is Version Setter
 // 云码版本号
 func (r *TmallMcRecordOrderSyncAPIRequest) SetVersion(_version string) error {
 	r._version = _version
@@ -120,7 +120,7 @@ func (r *TmallMcRecordOrderSyncAPIRequest) SetVersion(_version string) error {
 	return nil
 }
 
-// Get Version Getter
+// GetVersion Version Getter
 func (r TmallMcRecordOrderSyncAPIRequest) GetVersion() string {
 	return r._version
 }

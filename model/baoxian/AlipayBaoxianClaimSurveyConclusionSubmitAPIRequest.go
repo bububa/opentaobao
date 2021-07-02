@@ -37,7 +37,7 @@ func (r AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is FacilitatorSurveyConclusions Setter
+// SetFacilitatorSurveyConclusions is FacilitatorSurveyConclusions Setter
 // 勘察结论
 func (r *AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest) SetFacilitatorSurveyConclusions(_facilitatorSurveyConclusions []InsFacilitatorSurveyConclusionDto) error {
 	r._facilitatorSurveyConclusions = _facilitatorSurveyConclusions
@@ -45,7 +45,7 @@ func (r *AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest) SetFacilitatorSurve
 	return nil
 }
 
-// Get FacilitatorSurveyConclusions Getter
+// GetFacilitatorSurveyConclusions FacilitatorSurveyConclusions Getter
 func (r AlipayBaoxianClaimSurveyConclusionSubmitAPIRequest) GetFacilitatorSurveyConclusions() []InsFacilitatorSurveyConclusionDto {
 	return r._facilitatorSurveyConclusions
 }

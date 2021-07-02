@@ -37,7 +37,7 @@ func (r TaobaoBaikeImportZhubaoPictureAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Picture Setter
+// SetPicture is Picture Setter
 // 图片二进制数据
 func (r *TaobaoBaikeImportZhubaoPictureAPIRequest) SetPicture(_picture *model.File) error {
 	r._picture = _picture
@@ -45,7 +45,7 @@ func (r *TaobaoBaikeImportZhubaoPictureAPIRequest) SetPicture(_picture *model.Fi
 	return nil
 }
 
-// Get Picture Getter
+// GetPicture Picture Getter
 func (r TaobaoBaikeImportZhubaoPictureAPIRequest) GetPicture() *model.File {
 	return r._picture
 }

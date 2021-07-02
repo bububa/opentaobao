@@ -45,7 +45,7 @@ func (r TaobaoItemQuantityUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NumIid Setter
+// SetNumIid is NumIid Setter
 // 商品数字ID，必填参数
 func (r *TaobaoItemQuantityUpdateAPIRequest) SetNumIid(_numIid int64) error {
 	r._numIid = _numIid
@@ -53,12 +53,12 @@ func (r *TaobaoItemQuantityUpdateAPIRequest) SetNumIid(_numIid int64) error {
 	return nil
 }
 
-// Get NumIid Getter
+// GetNumIid NumIid Getter
 func (r TaobaoItemQuantityUpdateAPIRequest) GetNumIid() int64 {
 	return r._numIid
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // 要操作的SKU的数字ID，可选。如果不填默认修改宝贝的库存，如果填上则修改该SKU的库存
 func (r *TaobaoItemQuantityUpdateAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
@@ -66,12 +66,12 @@ func (r *TaobaoItemQuantityUpdateAPIRequest) SetSkuId(_skuId int64) error {
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TaobaoItemQuantityUpdateAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // SKU的商家编码，可选参数。如果不填则默认修改宝贝的库存，如果填了则按照商家编码搜索出对应的SKU并修改库存。当sku_id和本字段都填写时以sku_id为准搜索对应SKU
 func (r *TaobaoItemQuantityUpdateAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -79,12 +79,12 @@ func (r *TaobaoItemQuantityUpdateAPIRequest) SetOuterId(_outerId string) error {
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoItemQuantityUpdateAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is Quantity Setter
+// SetQuantity is Quantity Setter
 // 库存修改值，必选。当全量更新库存时，quantity必须为大于等于0的正整数；当增量更新库存时，quantity为整数，可小于等于0。若增量更新时传入的库存为负数，则负数与实际库存之和不能小于0。比如当前实际库存为1，传入增量更新quantity=-1，库存改为0
 func (r *TaobaoItemQuantityUpdateAPIRequest) SetQuantity(_quantity int64) error {
 	r._quantity = _quantity
@@ -92,12 +92,12 @@ func (r *TaobaoItemQuantityUpdateAPIRequest) SetQuantity(_quantity int64) error 
 	return nil
 }
 
-// Get Quantity Getter
+// GetQuantity Quantity Getter
 func (r TaobaoItemQuantityUpdateAPIRequest) GetQuantity() int64 {
 	return r._quantity
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 库存更新方式，可选。1为全量更新，2为增量更新。如果不填，默认为全量更新
 func (r *TaobaoItemQuantityUpdateAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -105,7 +105,7 @@ func (r *TaobaoItemQuantityUpdateAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoItemQuantityUpdateAPIRequest) GetType() int64 {
 	return r._type
 }

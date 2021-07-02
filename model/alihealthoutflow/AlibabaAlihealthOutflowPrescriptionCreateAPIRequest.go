@@ -37,7 +37,7 @@ func (r AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is CreateRequest Setter
+// SetCreateRequest is CreateRequest Setter
 // 保存处方入参
 func (r *AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) SetCreateRequest(_createRequest *PrescriptionOutflowUpdateRequest) error {
 	r._createRequest = _createRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) SetCreateRequest(_
 	return nil
 }
 
-// Get CreateRequest Getter
+// GetCreateRequest CreateRequest Getter
 func (r AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) GetCreateRequest() *PrescriptionOutflowUpdateRequest {
 	return r._createRequest
 }

@@ -45,7 +45,7 @@ func (r TaobaoPictureCategoryGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 1
 func (r *TaobaoPictureCategoryGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -53,12 +53,12 @@ func (r *TaobaoPictureCategoryGetAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoPictureCategoryGetAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is PictureCategoryId Setter
+// SetPictureCategoryId is PictureCategoryId Setter
 // 图片分类ID
 func (r *TaobaoPictureCategoryGetAPIRequest) SetPictureCategoryId(_pictureCategoryId int64) error {
 	r._pictureCategoryId = _pictureCategoryId
@@ -66,12 +66,12 @@ func (r *TaobaoPictureCategoryGetAPIRequest) SetPictureCategoryId(_pictureCatego
 	return nil
 }
 
-// Get PictureCategoryId Getter
+// GetPictureCategoryId PictureCategoryId Getter
 func (r TaobaoPictureCategoryGetAPIRequest) GetPictureCategoryId() int64 {
 	return r._pictureCategoryId
 }
 
-// Set is PictureCategoryName Setter
+// SetPictureCategoryName is PictureCategoryName Setter
 // 图片分类名，不支持模糊查询
 func (r *TaobaoPictureCategoryGetAPIRequest) SetPictureCategoryName(_pictureCategoryName string) error {
 	r._pictureCategoryName = _pictureCategoryName
@@ -79,12 +79,12 @@ func (r *TaobaoPictureCategoryGetAPIRequest) SetPictureCategoryName(_pictureCate
 	return nil
 }
 
-// Get PictureCategoryName Getter
+// GetPictureCategoryName PictureCategoryName Getter
 func (r TaobaoPictureCategoryGetAPIRequest) GetPictureCategoryName() string {
 	return r._pictureCategoryName
 }
 
-// Set is ParentId Setter
+// SetParentId is ParentId Setter
 // 取二级分类时设置为对应父分类id<br/>取一级分类时父分类id设为0<br/>取全部分类的时候不设或设为-1
 func (r *TaobaoPictureCategoryGetAPIRequest) SetParentId(_parentId int64) error {
 	r._parentId = _parentId
@@ -92,12 +92,12 @@ func (r *TaobaoPictureCategoryGetAPIRequest) SetParentId(_parentId int64) error 
 	return nil
 }
 
-// Get ParentId Getter
+// GetParentId ParentId Getter
 func (r TaobaoPictureCategoryGetAPIRequest) GetParentId() int64 {
 	return r._parentId
 }
 
-// Set is ModifiedTime Setter
+// SetModifiedTime is ModifiedTime Setter
 // 图片分类的修改时间点，格式:yyyy-MM-dd HH:mm:ss。查询此修改时间点之后到目前的图片分类。
 func (r *TaobaoPictureCategoryGetAPIRequest) SetModifiedTime(_modifiedTime string) error {
 	r._modifiedTime = _modifiedTime
@@ -105,7 +105,7 @@ func (r *TaobaoPictureCategoryGetAPIRequest) SetModifiedTime(_modifiedTime strin
 	return nil
 }
 
-// Get ModifiedTime Getter
+// GetModifiedTime ModifiedTime Getter
 func (r TaobaoPictureCategoryGetAPIRequest) GetModifiedTime() string {
 	return r._modifiedTime
 }

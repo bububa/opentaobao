@@ -39,7 +39,7 @@ func (r AlibabaAuthCertGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Provider Setter
+// SetProvider is Provider Setter
 // 认证商
 func (r *AlibabaAuthCertGetAPIRequest) SetProvider(_provider string) error {
 	r._provider = _provider
@@ -47,12 +47,12 @@ func (r *AlibabaAuthCertGetAPIRequest) SetProvider(_provider string) error {
 	return nil
 }
 
-// Get Provider Getter
+// GetProvider Provider Getter
 func (r AlibabaAuthCertGetAPIRequest) GetProvider() string {
 	return r._provider
 }
 
-// Set is ReceiveInfo Setter
+// SetReceiveInfo is ReceiveInfo Setter
 // 证书数据
 func (r *AlibabaAuthCertGetAPIRequest) SetReceiveInfo(_receiveInfo string) error {
 	r._receiveInfo = _receiveInfo
@@ -60,7 +60,7 @@ func (r *AlibabaAuthCertGetAPIRequest) SetReceiveInfo(_receiveInfo string) error
 	return nil
 }
 
-// Get ReceiveInfo Getter
+// GetReceiveInfo ReceiveInfo Getter
 func (r AlibabaAuthCertGetAPIRequest) GetReceiveInfo() string {
 	return r._receiveInfo
 }

@@ -43,7 +43,7 @@ func (r AlibabaMjMemberBindmemberAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户号
 func (r *AlibabaMjMemberBindmemberAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -51,12 +51,12 @@ func (r *AlibabaMjMemberBindmemberAPIRequest) SetUserId(_userId int64) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaMjMemberBindmemberAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is MallId Setter
+// SetMallId is MallId Setter
 // 商城Id
 func (r *AlibabaMjMemberBindmemberAPIRequest) SetMallId(_mallId int64) error {
 	r._mallId = _mallId
@@ -64,12 +64,12 @@ func (r *AlibabaMjMemberBindmemberAPIRequest) SetMallId(_mallId int64) error {
 	return nil
 }
 
-// Get MallId Getter
+// GetMallId MallId Getter
 func (r AlibabaMjMemberBindmemberAPIRequest) GetMallId() int64 {
 	return r._mallId
 }
 
-// Set is OpenId Setter
+// SetOpenId is OpenId Setter
 // open_id
 func (r *AlibabaMjMemberBindmemberAPIRequest) SetOpenId(_openId string) error {
 	r._openId = _openId
@@ -77,12 +77,12 @@ func (r *AlibabaMjMemberBindmemberAPIRequest) SetOpenId(_openId string) error {
 	return nil
 }
 
-// Get OpenId Getter
+// GetOpenId OpenId Getter
 func (r AlibabaMjMemberBindmemberAPIRequest) GetOpenId() string {
 	return r._openId
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 渠道
 func (r *AlibabaMjMemberBindmemberAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -90,7 +90,7 @@ func (r *AlibabaMjMemberBindmemberAPIRequest) SetChannel(_channel string) error 
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r AlibabaMjMemberBindmemberAPIRequest) GetChannel() string {
 	return r._channel
 }

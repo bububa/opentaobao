@@ -37,7 +37,7 @@ func (r AlibabaMoziVdsTenantApiServiceDismissAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Par0 Setter
+// SetPar0 is Par0 Setter
 // 第一个入参
 func (r *AlibabaMoziVdsTenantApiServiceDismissAPIRequest) SetPar0(_par0 *DismissOrganizationSupervisorRequest) error {
 	r._par0 = _par0
@@ -45,7 +45,7 @@ func (r *AlibabaMoziVdsTenantApiServiceDismissAPIRequest) SetPar0(_par0 *Dismiss
 	return nil
 }
 
-// Get Par0 Getter
+// GetPar0 Par0 Getter
 func (r AlibabaMoziVdsTenantApiServiceDismissAPIRequest) GetPar0() *DismissOrganizationSupervisorRequest {
 	return r._par0
 }

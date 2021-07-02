@@ -37,7 +37,7 @@ func (r AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest) GetApiParams
 	return params
 }
 
-// Set is DetailRequest Setter
+// SetDetailRequest is DetailRequest Setter
 // 入参
 func (r *AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest) SetDetailRequest(_detailRequest *AsyncPrescribeDetailRequest) error {
 	r._detailRequest = _detailRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest) SetDetailRe
 	return nil
 }
 
-// Get DetailRequest Getter
+// GetDetailRequest DetailRequest Getter
 func (r AlibabaAlihealthAsyncprescribePrescriptionDetailAPIRequest) GetDetailRequest() *AsyncPrescribeDetailRequest {
 	return r._detailRequest
 }

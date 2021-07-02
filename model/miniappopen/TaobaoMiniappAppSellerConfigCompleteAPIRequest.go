@@ -39,7 +39,7 @@ func (r TaobaoMiniappAppSellerConfigCompleteAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 商家已完成配置的小部件/B端插件的appid
 func (r *TaobaoMiniappAppSellerConfigCompleteAPIRequest) SetAppId(_appId int64) error {
 	r._appId = _appId
@@ -47,12 +47,12 @@ func (r *TaobaoMiniappAppSellerConfigCompleteAPIRequest) SetAppId(_appId int64) 
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r TaobaoMiniappAppSellerConfigCompleteAPIRequest) GetAppId() int64 {
 	return r._appId
 }
 
-// Set is Version Setter
+// SetVersion is Version Setter
 // 小部件必传，B端插件不用传。与app_id对应的已完成配置的版本号
 func (r *TaobaoMiniappAppSellerConfigCompleteAPIRequest) SetVersion(_version string) error {
 	r._version = _version
@@ -60,7 +60,7 @@ func (r *TaobaoMiniappAppSellerConfigCompleteAPIRequest) SetVersion(_version str
 	return nil
 }
 
-// Get Version Getter
+// GetVersion Version Getter
 func (r TaobaoMiniappAppSellerConfigCompleteAPIRequest) GetVersion() string {
 	return r._version
 }

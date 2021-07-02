@@ -37,7 +37,7 @@ func (r TaobaoQimenStorecategoryGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Remark Setter
+// SetRemark is Remark Setter
 // 备注
 func (r *TaobaoQimenStorecategoryGetAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
@@ -45,7 +45,7 @@ func (r *TaobaoQimenStorecategoryGetAPIRequest) SetRemark(_remark string) error 
 	return nil
 }
 
-// Get Remark Getter
+// GetRemark Remark Getter
 func (r TaobaoQimenStorecategoryGetAPIRequest) GetRemark() string {
 	return r._remark
 }

@@ -37,7 +37,7 @@ func (r AlibabaLsyCrmCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NrtRecordDto Setter
+// SetNrtRecordDto is NrtRecordDto Setter
 // 客资记录对象
 func (r *AlibabaLsyCrmCreateAPIRequest) SetNrtRecordDto(_nrtRecordDto *NrtRecordDto) error {
 	r._nrtRecordDto = _nrtRecordDto
@@ -45,7 +45,7 @@ func (r *AlibabaLsyCrmCreateAPIRequest) SetNrtRecordDto(_nrtRecordDto *NrtRecord
 	return nil
 }
 
-// Get NrtRecordDto Getter
+// GetNrtRecordDto NrtRecordDto Getter
 func (r AlibabaLsyCrmCreateAPIRequest) GetNrtRecordDto() *NrtRecordDto {
 	return r._nrtRecordDto
 }

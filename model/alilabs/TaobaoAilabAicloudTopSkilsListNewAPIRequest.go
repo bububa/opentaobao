@@ -51,7 +51,7 @@ func (r TaobaoAilabAicloudTopSkilsListNewAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 账户体系隔离
 func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -59,12 +59,12 @@ func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetSchema(_schema string) 
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopSkilsListNewAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
 func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -72,12 +72,12 @@ func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetUserId(_userId string) 
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopSkilsListNewAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is UtdId Setter
+// SetUtdId is UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
 func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
@@ -85,12 +85,12 @@ func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetUtdId(_utdId string) er
 	return nil
 }
 
-// Get UtdId Getter
+// GetUtdId UtdId Getter
 func (r TaobaoAilabAicloudTopSkilsListNewAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息，用于存放APP类型等
 func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -98,12 +98,12 @@ func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetExt(_ext string) error 
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoAilabAicloudTopSkilsListNewAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // query(模糊匹配skillName)
 func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetQuery(_query string) error {
 	r._query = _query
@@ -111,12 +111,12 @@ func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetQuery(_query string) er
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r TaobaoAilabAicloudTopSkilsListNewAPIRequest) GetQuery() string {
 	return r._query
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // type(1000代表内容技能，3000代表自定义技能，4000代表官方技能)
 func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -124,12 +124,12 @@ func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetType(_type string) erro
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoAilabAicloudTopSkilsListNewAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // pageNo
 func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -137,12 +137,12 @@ func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetPageNo(_pageNo int64) e
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoAilabAicloudTopSkilsListNewAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // pageSize
 func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -150,7 +150,7 @@ func (r *TaobaoAilabAicloudTopSkilsListNewAPIRequest) SetPageSize(_pageSize int6
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoAilabAicloudTopSkilsListNewAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

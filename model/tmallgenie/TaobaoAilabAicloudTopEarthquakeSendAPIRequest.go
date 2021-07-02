@@ -45,7 +45,7 @@ func (r TaobaoAilabAicloudTopEarthquakeSendAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展占位字段
 func (r *TaobaoAilabAicloudTopEarthquakeSendAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -53,12 +53,12 @@ func (r *TaobaoAilabAicloudTopEarthquakeSendAPIRequest) SetExt(_ext string) erro
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoAilabAicloudTopEarthquakeSendAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is Signature Setter
+// SetSignature is Signature Setter
 // 签名
 func (r *TaobaoAilabAicloudTopEarthquakeSendAPIRequest) SetSignature(_signature string) error {
 	r._signature = _signature
@@ -66,12 +66,12 @@ func (r *TaobaoAilabAicloudTopEarthquakeSendAPIRequest) SetSignature(_signature 
 	return nil
 }
 
-// Get Signature Getter
+// GetSignature Signature Getter
 func (r TaobaoAilabAicloudTopEarthquakeSendAPIRequest) GetSignature() string {
 	return r._signature
 }
 
-// Set is NonceStr Setter
+// SetNonceStr is NonceStr Setter
 // 随机值
 func (r *TaobaoAilabAicloudTopEarthquakeSendAPIRequest) SetNonceStr(_nonceStr string) error {
 	r._nonceStr = _nonceStr
@@ -79,12 +79,12 @@ func (r *TaobaoAilabAicloudTopEarthquakeSendAPIRequest) SetNonceStr(_nonceStr st
 	return nil
 }
 
-// Get NonceStr Getter
+// GetNonceStr NonceStr Getter
 func (r TaobaoAilabAicloudTopEarthquakeSendAPIRequest) GetNonceStr() string {
 	return r._nonceStr
 }
 
-// Set is TimestampStr Setter
+// SetTimestampStr is TimestampStr Setter
 // 时间戳
 func (r *TaobaoAilabAicloudTopEarthquakeSendAPIRequest) SetTimestampStr(_timestampStr string) error {
 	r._timestampStr = _timestampStr
@@ -92,12 +92,12 @@ func (r *TaobaoAilabAicloudTopEarthquakeSendAPIRequest) SetTimestampStr(_timesta
 	return nil
 }
 
-// Get TimestampStr Getter
+// GetTimestampStr TimestampStr Getter
 func (r TaobaoAilabAicloudTopEarthquakeSendAPIRequest) GetTimestampStr() string {
 	return r._timestampStr
 }
 
-// Set is EarthquakeInfo Setter
+// SetEarthquakeInfo is EarthquakeInfo Setter
 // 地震信息
 func (r *TaobaoAilabAicloudTopEarthquakeSendAPIRequest) SetEarthquakeInfo(_earthquakeInfo string) error {
 	r._earthquakeInfo = _earthquakeInfo
@@ -105,7 +105,7 @@ func (r *TaobaoAilabAicloudTopEarthquakeSendAPIRequest) SetEarthquakeInfo(_earth
 	return nil
 }
 
-// Get EarthquakeInfo Getter
+// GetEarthquakeInfo EarthquakeInfo Getter
 func (r TaobaoAilabAicloudTopEarthquakeSendAPIRequest) GetEarthquakeInfo() string {
 	return r._earthquakeInfo
 }

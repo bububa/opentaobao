@@ -39,7 +39,7 @@ func (r YunosTvpubadminDeviceOsupgradedetailAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is VersionId Setter
+// SetVersionId is VersionId Setter
 // 版本ID
 func (r *YunosTvpubadminDeviceOsupgradedetailAPIRequest) SetVersionId(_versionId int64) error {
 	r._versionId = _versionId
@@ -47,12 +47,12 @@ func (r *YunosTvpubadminDeviceOsupgradedetailAPIRequest) SetVersionId(_versionId
 	return nil
 }
 
-// Get VersionId Getter
+// GetVersionId VersionId Getter
 func (r YunosTvpubadminDeviceOsupgradedetailAPIRequest) GetVersionId() int64 {
 	return r._versionId
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照方
 func (r *YunosTvpubadminDeviceOsupgradedetailAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -60,7 +60,7 @@ func (r *YunosTvpubadminDeviceOsupgradedetailAPIRequest) SetLicense(_license int
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminDeviceOsupgradedetailAPIRequest) GetLicense() int64 {
 	return r._license
 }

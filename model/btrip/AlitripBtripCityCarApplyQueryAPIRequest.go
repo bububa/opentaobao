@@ -37,7 +37,7 @@ func (r AlitripBtripCityCarApplyQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 入参对象
 func (r *AlitripBtripCityCarApplyQueryAPIRequest) SetRq(_rq *CityCarApplyQueryRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripCityCarApplyQueryAPIRequest) SetRq(_rq *CityCarApplyQueryRq
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripCityCarApplyQueryAPIRequest) GetRq() *CityCarApplyQueryRq {
 	return r._rq
 }

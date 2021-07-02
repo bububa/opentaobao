@@ -37,7 +37,7 @@ func (r AlibabaAlihealthMedicalOrderRefuseAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is RequestInfo Setter
+// SetRequestInfo is RequestInfo Setter
 // 请求入参
 func (r *AlibabaAlihealthMedicalOrderRefuseAPIRequest) SetRequestInfo(_requestInfo *RefuseOrderRequestDto) error {
 	r._requestInfo = _requestInfo
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthMedicalOrderRefuseAPIRequest) SetRequestInfo(_requestIn
 	return nil
 }
 
-// Get RequestInfo Getter
+// GetRequestInfo RequestInfo Getter
 func (r AlibabaAlihealthMedicalOrderRefuseAPIRequest) GetRequestInfo() *RefuseOrderRequestDto {
 	return r._requestInfo
 }

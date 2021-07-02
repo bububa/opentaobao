@@ -43,7 +43,7 @@ func (r TaobaoOpentradeGroupActivtiyQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页参数，每页大小
 func (r *TaobaoOpentradeGroupActivtiyQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -51,12 +51,12 @@ func (r *TaobaoOpentradeGroupActivtiyQueryAPIRequest) SetPageSize(_pageSize int6
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoOpentradeGroupActivtiyQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TaobaoOpentradeGroupActivtiyQueryAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -64,12 +64,12 @@ func (r *TaobaoOpentradeGroupActivtiyQueryAPIRequest) SetItemId(_itemId int64) e
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoOpentradeGroupActivtiyQueryAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 分页参数，当前页，以0开始
 func (r *TaobaoOpentradeGroupActivtiyQueryAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -77,12 +77,12 @@ func (r *TaobaoOpentradeGroupActivtiyQueryAPIRequest) SetPageIndex(_pageIndex in
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoOpentradeGroupActivtiyQueryAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
-// Set is GroupActivityId Setter
+// SetGroupActivityId is GroupActivityId Setter
 // 组团活动id
 func (r *TaobaoOpentradeGroupActivtiyQueryAPIRequest) SetGroupActivityId(_groupActivityId int64) error {
 	r._groupActivityId = _groupActivityId
@@ -90,7 +90,7 @@ func (r *TaobaoOpentradeGroupActivtiyQueryAPIRequest) SetGroupActivityId(_groupA
 	return nil
 }
 
-// Get GroupActivityId Getter
+// GetGroupActivityId GroupActivityId Getter
 func (r TaobaoOpentradeGroupActivtiyQueryAPIRequest) GetGroupActivityId() int64 {
 	return r._groupActivityId
 }

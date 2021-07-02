@@ -39,7 +39,7 @@ func (r TaobaoBusRefundfeeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AliTripOrderId Setter
+// SetAliTripOrderId is AliTripOrderId Setter
 // 飞猪订单号
 func (r *TaobaoBusRefundfeeGetAPIRequest) SetAliTripOrderId(_aliTripOrderId string) error {
 	r._aliTripOrderId = _aliTripOrderId
@@ -47,12 +47,12 @@ func (r *TaobaoBusRefundfeeGetAPIRequest) SetAliTripOrderId(_aliTripOrderId stri
 	return nil
 }
 
-// Get AliTripOrderId Getter
+// GetAliTripOrderId AliTripOrderId Getter
 func (r TaobaoBusRefundfeeGetAPIRequest) GetAliTripOrderId() string {
 	return r._aliTripOrderId
 }
 
-// Set is SubOrderIds Setter
+// SetSubOrderIds is SubOrderIds Setter
 // 飞猪子订单号
 func (r *TaobaoBusRefundfeeGetAPIRequest) SetSubOrderIds(_subOrderIds []int64) error {
 	r._subOrderIds = _subOrderIds
@@ -60,7 +60,7 @@ func (r *TaobaoBusRefundfeeGetAPIRequest) SetSubOrderIds(_subOrderIds []int64) e
 	return nil
 }
 
-// Get SubOrderIds Getter
+// GetSubOrderIds SubOrderIds Getter
 func (r TaobaoBusRefundfeeGetAPIRequest) GetSubOrderIds() []int64 {
 	return r._subOrderIds
 }

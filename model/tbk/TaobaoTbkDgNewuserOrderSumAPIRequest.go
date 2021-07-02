@@ -47,7 +47,7 @@ func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小，默认20，1~100
 func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -55,12 +55,12 @@ func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetPageSize(_pageSize int64) erro
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is AdzoneId Setter
+// SetAdzoneId is AdzoneId Setter
 // mm_xxx_xxx_xxx的第三位
 func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetAdzoneId(_adzoneId int64) error {
 	r._adzoneId = _adzoneId
@@ -68,12 +68,12 @@ func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetAdzoneId(_adzoneId int64) erro
 	return nil
 }
 
-// Get AdzoneId Getter
+// GetAdzoneId AdzoneId Getter
 func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetAdzoneId() int64 {
 	return r._adzoneId
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码，默认1
 func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -81,12 +81,12 @@ func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is SiteId Setter
+// SetSiteId is SiteId Setter
 // mm_xxx_xxx_xxx的第二位
 func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetSiteId(_siteId int64) error {
 	r._siteId = _siteId
@@ -94,12 +94,12 @@ func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetSiteId(_siteId int64) error {
 	return nil
 }
 
-// Get SiteId Getter
+// GetSiteId SiteId Getter
 func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetSiteId() int64 {
 	return r._siteId
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=8599277
 func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetActivityId(_activityId string) error {
 	r._activityId = _activityId
@@ -107,12 +107,12 @@ func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetActivityId(_activityId string)
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetActivityId() string {
 	return r._activityId
 }
 
-// Set is SettleMonth Setter
+// SetSettleMonth is SettleMonth Setter
 // 结算月份
 func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetSettleMonth(_settleMonth string) error {
 	r._settleMonth = _settleMonth
@@ -120,7 +120,7 @@ func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetSettleMonth(_settleMonth strin
 	return nil
 }
 
-// Get SettleMonth Getter
+// GetSettleMonth SettleMonth Getter
 func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetSettleMonth() string {
 	return r._settleMonth
 }

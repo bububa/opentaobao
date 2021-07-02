@@ -41,7 +41,7 @@ func (r TaobaoTmcMessagesConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupName Setter
+// SetGroupName is GroupName Setter
 // 分组名称，不传代表默认分组
 func (r *TaobaoTmcMessagesConfirmAPIRequest) SetGroupName(_groupName string) error {
 	r._groupName = _groupName
@@ -49,12 +49,12 @@ func (r *TaobaoTmcMessagesConfirmAPIRequest) SetGroupName(_groupName string) err
 	return nil
 }
 
-// Get GroupName Getter
+// GetGroupName GroupName Getter
 func (r TaobaoTmcMessagesConfirmAPIRequest) GetGroupName() string {
 	return r._groupName
 }
 
-// Set is SMessageIds Setter
+// SetSMessageIds is SMessageIds Setter
 // 处理成功的消息ID列表 最大 200个ID
 func (r *TaobaoTmcMessagesConfirmAPIRequest) SetSMessageIds(_sMessageIds []int64) error {
 	r._sMessageIds = _sMessageIds
@@ -62,12 +62,12 @@ func (r *TaobaoTmcMessagesConfirmAPIRequest) SetSMessageIds(_sMessageIds []int64
 	return nil
 }
 
-// Get SMessageIds Getter
+// GetSMessageIds SMessageIds Getter
 func (r TaobaoTmcMessagesConfirmAPIRequest) GetSMessageIds() []int64 {
 	return r._sMessageIds
 }
 
-// Set is FMessageIds Setter
+// SetFMessageIds is FMessageIds Setter
 // 处理失败的消息ID列表--已废弃，无需传此字段
 func (r *TaobaoTmcMessagesConfirmAPIRequest) SetFMessageIds(_fMessageIds []int64) error {
 	r._fMessageIds = _fMessageIds
@@ -75,7 +75,7 @@ func (r *TaobaoTmcMessagesConfirmAPIRequest) SetFMessageIds(_fMessageIds []int64
 	return nil
 }
 
-// Get FMessageIds Getter
+// GetFMessageIds FMessageIds Getter
 func (r TaobaoTmcMessagesConfirmAPIRequest) GetFMessageIds() []int64 {
 	return r._fMessageIds
 }

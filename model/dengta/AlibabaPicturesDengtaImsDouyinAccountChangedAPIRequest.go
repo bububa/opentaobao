@@ -41,7 +41,7 @@ func (r AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is AccountIds Setter
+// SetAccountIds is AccountIds Setter
 // 天下秀账号ID列表，多个用逗号分隔
 func (r *AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) SetAccountIds(_accountIds string) error {
 	r._accountIds = _accountIds
@@ -49,12 +49,12 @@ func (r *AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) SetAccountIds(_
 	return nil
 }
 
-// Get AccountIds Getter
+// GetAccountIds AccountIds Getter
 func (r AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) GetAccountIds() string {
 	return r._accountIds
 }
 
-// Set is AccountType Setter
+// SetAccountType is AccountType Setter
 // 3=抖音，1-微博 2-微信
 func (r *AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) SetAccountType(_accountType int64) error {
 	r._accountType = _accountType
@@ -62,12 +62,12 @@ func (r *AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) SetAccountType(
 	return nil
 }
 
-// Get AccountType Getter
+// GetAccountType AccountType Getter
 func (r AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) GetAccountType() int64 {
 	return r._accountType
 }
 
-// Set is ChangeType Setter
+// SetChangeType is ChangeType Setter
 // 1  下架 2  账号变更（包括账号上架）
 func (r *AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) SetChangeType(_changeType int64) error {
 	r._changeType = _changeType
@@ -75,7 +75,7 @@ func (r *AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) SetChangeType(_
 	return nil
 }
 
-// Get ChangeType Getter
+// GetChangeType ChangeType Getter
 func (r AlibabaPicturesDengtaImsDouyinAccountChangedAPIRequest) GetChangeType() int64 {
 	return r._changeType
 }

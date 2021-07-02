@@ -45,7 +45,7 @@ func (r AlibabaPicturesDengtaOrderStatusChangeAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Remark Setter
+// SetRemark is Remark Setter
 // 拒绝原因
 func (r *AlibabaPicturesDengtaOrderStatusChangeAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
@@ -53,12 +53,12 @@ func (r *AlibabaPicturesDengtaOrderStatusChangeAPIRequest) SetRemark(_remark str
 	return nil
 }
 
-// Get Remark Getter
+// GetRemark Remark Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeAPIRequest) GetRemark() string {
 	return r._remark
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 新状态
 func (r *AlibabaPicturesDengtaOrderStatusChangeAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -66,12 +66,12 @@ func (r *AlibabaPicturesDengtaOrderStatusChangeAPIRequest) SetStatus(_status int
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is ChangeTime Setter
+// SetChangeTime is ChangeTime Setter
 // 变更时间
 func (r *AlibabaPicturesDengtaOrderStatusChangeAPIRequest) SetChangeTime(_changeTime string) error {
 	r._changeTime = _changeTime
@@ -79,12 +79,12 @@ func (r *AlibabaPicturesDengtaOrderStatusChangeAPIRequest) SetChangeTime(_change
 	return nil
 }
 
-// Get ChangeTime Getter
+// GetChangeTime ChangeTime Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeAPIRequest) GetChangeTime() string {
 	return r._changeTime
 }
 
-// Set is ImsOrderId Setter
+// SetImsOrderId is ImsOrderId Setter
 // ims订单编号
 func (r *AlibabaPicturesDengtaOrderStatusChangeAPIRequest) SetImsOrderId(_imsOrderId string) error {
 	r._imsOrderId = _imsOrderId
@@ -92,12 +92,12 @@ func (r *AlibabaPicturesDengtaOrderStatusChangeAPIRequest) SetImsOrderId(_imsOrd
 	return nil
 }
 
-// Get ImsOrderId Getter
+// GetImsOrderId ImsOrderId Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeAPIRequest) GetImsOrderId() string {
 	return r._imsOrderId
 }
 
-// Set is AliTaskId Setter
+// SetAliTaskId is AliTaskId Setter
 // task 编号
 func (r *AlibabaPicturesDengtaOrderStatusChangeAPIRequest) SetAliTaskId(_aliTaskId string) error {
 	r._aliTaskId = _aliTaskId
@@ -105,7 +105,7 @@ func (r *AlibabaPicturesDengtaOrderStatusChangeAPIRequest) SetAliTaskId(_aliTask
 	return nil
 }
 
-// Get AliTaskId Getter
+// GetAliTaskId AliTaskId Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeAPIRequest) GetAliTaskId() string {
 	return r._aliTaskId
 }

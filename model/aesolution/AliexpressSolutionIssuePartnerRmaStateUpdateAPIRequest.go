@@ -37,7 +37,7 @@ func (r AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is RmaStateUpdateRequest Setter
+// SetRmaStateUpdateRequest is RmaStateUpdateRequest Setter
 // RMA's order state update request
 func (r *AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) SetRmaStateUpdateRequest(_rmaStateUpdateRequest *RmaStateUpdateRequest) error {
 	r._rmaStateUpdateRequest = _rmaStateUpdateRequest
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) SetRmaStateUpda
 	return nil
 }
 
-// Get RmaStateUpdateRequest Getter
+// GetRmaStateUpdateRequest RmaStateUpdateRequest Getter
 func (r AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) GetRmaStateUpdateRequest() *RmaStateUpdateRequest {
 	return r._rmaStateUpdateRequest
 }

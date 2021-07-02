@@ -37,7 +37,7 @@ func (r TaobaoQimenStoreQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 已分配的线上门店ID
 func (r *TaobaoQimenStoreQueryAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -45,7 +45,7 @@ func (r *TaobaoQimenStoreQueryAPIRequest) SetStoreId(_storeId int64) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoQimenStoreQueryAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }

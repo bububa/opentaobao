@@ -37,7 +37,7 @@ func (r TmallServicecenterWorkerQuerycapacitytaskAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 查询对象
 func (r *TmallServicecenterWorkerQuerycapacitytaskAPIRequest) SetQuery(_query *CapacityTaskQueryDto) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *TmallServicecenterWorkerQuerycapacitytaskAPIRequest) SetQuery(_query *C
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r TmallServicecenterWorkerQuerycapacitytaskAPIRequest) GetQuery() *CapacityTaskQueryDto {
 	return r._query
 }

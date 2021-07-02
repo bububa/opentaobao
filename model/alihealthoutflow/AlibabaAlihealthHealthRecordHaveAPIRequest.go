@@ -37,7 +37,7 @@ func (r AlibabaAlihealthHealthRecordHaveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Request1 Setter
+// SetRequest1 is Request1 Setter
 // 入参
 func (r *AlibabaAlihealthHealthRecordHaveAPIRequest) SetRequest1(_request1 *HaveRecordRequest) error {
 	r._request1 = _request1
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthHealthRecordHaveAPIRequest) SetRequest1(_request1 *Have
 	return nil
 }
 
-// Get Request1 Getter
+// GetRequest1 Request1 Getter
 func (r AlibabaAlihealthHealthRecordHaveAPIRequest) GetRequest1() *HaveRecordRequest {
 	return r._request1
 }

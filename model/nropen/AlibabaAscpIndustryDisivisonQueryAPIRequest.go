@@ -37,7 +37,7 @@ func (r AlibabaAscpIndustryDisivisonQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ServiceCode Setter
+// SetServiceCode is ServiceCode Setter
 // 服务编码
 func (r *AlibabaAscpIndustryDisivisonQueryAPIRequest) SetServiceCode(_serviceCode string) error {
 	r._serviceCode = _serviceCode
@@ -45,7 +45,7 @@ func (r *AlibabaAscpIndustryDisivisonQueryAPIRequest) SetServiceCode(_serviceCod
 	return nil
 }
 
-// Get ServiceCode Getter
+// GetServiceCode ServiceCode Getter
 func (r AlibabaAscpIndustryDisivisonQueryAPIRequest) GetServiceCode() string {
 	return r._serviceCode
 }

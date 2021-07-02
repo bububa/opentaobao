@@ -41,7 +41,7 @@ func (r TaobaoUsceslBizEslUnbindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EslBarCode Setter
+// SetEslBarCode is EslBarCode Setter
 // 价签条码
 func (r *TaobaoUsceslBizEslUnbindAPIRequest) SetEslBarCode(_eslBarCode string) error {
 	r._eslBarCode = _eslBarCode
@@ -49,12 +49,12 @@ func (r *TaobaoUsceslBizEslUnbindAPIRequest) SetEslBarCode(_eslBarCode string) e
 	return nil
 }
 
-// Get EslBarCode Getter
+// GetEslBarCode EslBarCode Getter
 func (r TaobaoUsceslBizEslUnbindAPIRequest) GetEslBarCode() string {
 	return r._eslBarCode
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 价签系统注册的门店storeId
 func (r *TaobaoUsceslBizEslUnbindAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -62,12 +62,12 @@ func (r *TaobaoUsceslBizEslUnbindAPIRequest) SetStoreId(_storeId int64) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoUsceslBizEslUnbindAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is BizBrandKey Setter
+// SetBizBrandKey is BizBrandKey Setter
 // 商家标识key
 func (r *TaobaoUsceslBizEslUnbindAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
 	r._bizBrandKey = _bizBrandKey
@@ -75,7 +75,7 @@ func (r *TaobaoUsceslBizEslUnbindAPIRequest) SetBizBrandKey(_bizBrandKey string)
 	return nil
 }
 
-// Get BizBrandKey Getter
+// GetBizBrandKey BizBrandKey Getter
 func (r TaobaoUsceslBizEslUnbindAPIRequest) GetBizBrandKey() string {
 	return r._bizBrandKey
 }

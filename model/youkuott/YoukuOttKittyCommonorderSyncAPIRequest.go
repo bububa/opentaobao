@@ -49,7 +49,7 @@ func (r YoukuOttKittyCommonorderSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 运营商订单id,最好是16位及以上唯一ID
 func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -57,12 +57,12 @@ func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetOrderId(_orderId string) err
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r YoukuOttKittyCommonorderSyncAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 充值的商品id（此商品需要事先给到优酷，并把商品的业务逻辑确定下来，比如是连续包月还是单月/单季/单年)
 func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetProductId(_productId string) error {
 	r._productId = _productId
@@ -70,12 +70,12 @@ func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetProductId(_productId string)
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r YoukuOttKittyCommonorderSyncAPIRequest) GetProductId() string {
 	return r._productId
 }
 
-// Set is SyncTime Setter
+// SetSyncTime is SyncTime Setter
 // 同步时间 格式yyyy-MM-dd HH:mm:ss 说明：如果是线上或线下订单此时间是用户支付成功时间，如果是退订则是退订时间
 func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetSyncTime(_syncTime string) error {
 	r._syncTime = _syncTime
@@ -83,12 +83,12 @@ func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetSyncTime(_syncTime string) e
 	return nil
 }
 
-// Get SyncTime Getter
+// GetSyncTime SyncTime Getter
 func (r YoukuOttKittyCommonorderSyncAPIRequest) GetSyncTime() string {
 	return r._syncTime
 }
 
-// Set is ChannelId Setter
+// SetChannelId is ChannelId Setter
 // 运营商渠道（需要找优酷方确认）
 func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetChannelId(_channelId string) error {
 	r._channelId = _channelId
@@ -96,12 +96,12 @@ func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetChannelId(_channelId string)
 	return nil
 }
 
-// Get ChannelId Getter
+// GetChannelId ChannelId Getter
 func (r YoukuOttKittyCommonorderSyncAPIRequest) GetChannelId() string {
 	return r._channelId
 }
 
-// Set is AccountId Setter
+// SetAccountId is AccountId Setter
 // 运营商用户账号账号id,与盒子登录账号tuid一致
 func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetAccountId(_accountId string) error {
 	r._accountId = _accountId
@@ -109,12 +109,12 @@ func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetAccountId(_accountId string)
 	return nil
 }
 
-// Get AccountId Getter
+// GetAccountId AccountId Getter
 func (r YoukuOttKittyCommonorderSyncAPIRequest) GetAccountId() string {
 	return r._accountId
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 订单类型 1:线上支付订单(线上应用内购买), 2:线下支付订单(比如营业厅订单), 3:连续包取消续订, 4:全额退款(立即终止权益,不分产品包,不计财务), 5:续费(运营商侧发起时才使用),6:非连续包退订(按未使用天数退款)
 func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -122,12 +122,12 @@ func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r YoukuOttKittyCommonorderSyncAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is ExtInfo Setter
+// SetExtInfo is ExtInfo Setter
 // 扩展字段，根据需要，约定具体的字段，json格式
 func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetExtInfo(_extInfo string) error {
 	r._extInfo = _extInfo
@@ -135,7 +135,7 @@ func (r *YoukuOttKittyCommonorderSyncAPIRequest) SetExtInfo(_extInfo string) err
 	return nil
 }
 
-// Get ExtInfo Getter
+// GetExtInfo ExtInfo Getter
 func (r YoukuOttKittyCommonorderSyncAPIRequest) GetExtInfo() string {
 	return r._extInfo
 }

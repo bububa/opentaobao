@@ -43,7 +43,7 @@ func (r AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // userId
 func (r *AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) SetUserId(_userId 
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is AssessType Setter
+// SetAssessType is AssessType Setter
 // 测评类型
 func (r *AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) SetAssessType(_assessType string) error {
 	r._assessType = _assessType
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) SetAssessType(_ass
 	return nil
 }
 
-// Get AssessType Getter
+// GetAssessType AssessType Getter
 func (r AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) GetAssessType() string {
 	return r._assessType
 }
 
-// Set is AssessResult Setter
+// SetAssessResult is AssessResult Setter
 // 测评结果
 func (r *AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) SetAssessResult(_assessResult string) error {
 	r._assessResult = _assessResult
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) SetAssessResult(_a
 	return nil
 }
 
-// Get AssessResult Getter
+// GetAssessResult AssessResult Getter
 func (r AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) GetAssessResult() string {
 	return r._assessResult
 }
 
-// Set is RefrenceResult Setter
+// SetRefrenceResult is RefrenceResult Setter
 // 测评结果冗余字段
 func (r *AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) SetRefrenceResult(_refrenceResult string) error {
 	r._refrenceResult = _refrenceResult
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) SetRefrenceResult(
 	return nil
 }
 
-// Get RefrenceResult Getter
+// GetRefrenceResult RefrenceResult Getter
 func (r AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) GetRefrenceResult() string {
 	return r._refrenceResult
 }

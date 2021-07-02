@@ -39,7 +39,7 @@ func (r TaobaoCrmGroupUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupId Setter
+// SetGroupId is GroupId Setter
 // 分组的id
 func (r *TaobaoCrmGroupUpdateAPIRequest) SetGroupId(_groupId int64) error {
 	r._groupId = _groupId
@@ -47,12 +47,12 @@ func (r *TaobaoCrmGroupUpdateAPIRequest) SetGroupId(_groupId int64) error {
 	return nil
 }
 
-// Get GroupId Getter
+// GetGroupId GroupId Getter
 func (r TaobaoCrmGroupUpdateAPIRequest) GetGroupId() int64 {
 	return r._groupId
 }
 
-// Set is NewGroupName Setter
+// SetNewGroupName is NewGroupName Setter
 // 新的分组名，分组名称不能包含|或者：
 func (r *TaobaoCrmGroupUpdateAPIRequest) SetNewGroupName(_newGroupName string) error {
 	r._newGroupName = _newGroupName
@@ -60,7 +60,7 @@ func (r *TaobaoCrmGroupUpdateAPIRequest) SetNewGroupName(_newGroupName string) e
 	return nil
 }
 
-// Get NewGroupName Getter
+// GetNewGroupName NewGroupName Getter
 func (r TaobaoCrmGroupUpdateAPIRequest) GetNewGroupName() string {
 	return r._newGroupName
 }

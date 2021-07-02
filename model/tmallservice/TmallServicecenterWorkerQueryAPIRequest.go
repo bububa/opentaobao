@@ -37,7 +37,7 @@ func (r TmallServicecenterWorkerQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IdentityId Setter
+// SetIdentityId is IdentityId Setter
 // 身份证号
 func (r *TmallServicecenterWorkerQueryAPIRequest) SetIdentityId(_identityId string) error {
 	r._identityId = _identityId
@@ -45,7 +45,7 @@ func (r *TmallServicecenterWorkerQueryAPIRequest) SetIdentityId(_identityId stri
 	return nil
 }
 
-// Get IdentityId Getter
+// GetIdentityId IdentityId Getter
 func (r TmallServicecenterWorkerQueryAPIRequest) GetIdentityId() string {
 	return r._identityId
 }

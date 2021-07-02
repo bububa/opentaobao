@@ -37,7 +37,7 @@ func (r AlibabaLsyCrmActivityPageUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NrtCrmActivityPageCreateReq Setter
+// SetNrtCrmActivityPageCreateReq is NrtCrmActivityPageCreateReq Setter
 // 入参
 func (r *AlibabaLsyCrmActivityPageUpdateAPIRequest) SetNrtCrmActivityPageCreateReq(_nrtCrmActivityPageCreateReq *NrtCrmActivityPageCreateReq) error {
 	r._nrtCrmActivityPageCreateReq = _nrtCrmActivityPageCreateReq
@@ -45,7 +45,7 @@ func (r *AlibabaLsyCrmActivityPageUpdateAPIRequest) SetNrtCrmActivityPageCreateR
 	return nil
 }
 
-// Get NrtCrmActivityPageCreateReq Getter
+// GetNrtCrmActivityPageCreateReq NrtCrmActivityPageCreateReq Getter
 func (r AlibabaLsyCrmActivityPageUpdateAPIRequest) GetNrtCrmActivityPageCreateReq() *NrtCrmActivityPageCreateReq {
 	return r._nrtCrmActivityPageCreateReq
 }

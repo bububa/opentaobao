@@ -37,7 +37,7 @@ func (r YoukuOttPayOrderQueryorderbycpAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CpOrderNo Setter
+// SetCpOrderNo is CpOrderNo Setter
 // cp订单号
 func (r *YoukuOttPayOrderQueryorderbycpAPIRequest) SetCpOrderNo(_cpOrderNo string) error {
 	r._cpOrderNo = _cpOrderNo
@@ -45,7 +45,7 @@ func (r *YoukuOttPayOrderQueryorderbycpAPIRequest) SetCpOrderNo(_cpOrderNo strin
 	return nil
 }
 
-// Get CpOrderNo Getter
+// GetCpOrderNo CpOrderNo Getter
 func (r YoukuOttPayOrderQueryorderbycpAPIRequest) GetCpOrderNo() string {
 	return r._cpOrderNo
 }

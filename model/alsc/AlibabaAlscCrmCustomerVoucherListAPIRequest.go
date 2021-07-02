@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmCustomerVoucherListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CustomerVoucherFullOpenReq Setter
+// SetCustomerVoucherFullOpenReq is CustomerVoucherFullOpenReq Setter
 // 获取顾客优惠券列表
 func (r *AlibabaAlscCrmCustomerVoucherListAPIRequest) SetCustomerVoucherFullOpenReq(_customerVoucherFullOpenReq *CustomerVoucherFullOpenReq) error {
 	r._customerVoucherFullOpenReq = _customerVoucherFullOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmCustomerVoucherListAPIRequest) SetCustomerVoucherFullOpen
 	return nil
 }
 
-// Get CustomerVoucherFullOpenReq Getter
+// GetCustomerVoucherFullOpenReq CustomerVoucherFullOpenReq Getter
 func (r AlibabaAlscCrmCustomerVoucherListAPIRequest) GetCustomerVoucherFullOpenReq() *CustomerVoucherFullOpenReq {
 	return r._customerVoucherFullOpenReq
 }

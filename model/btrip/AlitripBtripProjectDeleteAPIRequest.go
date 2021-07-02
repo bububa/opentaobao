@@ -37,7 +37,7 @@ func (r AlitripBtripProjectDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 请求对象
 func (r *AlitripBtripProjectDeleteAPIRequest) SetRq(_rq *OpenProjectRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripProjectDeleteAPIRequest) SetRq(_rq *OpenProjectRq) error {
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripProjectDeleteAPIRequest) GetRq() *OpenProjectRq {
 	return r._rq
 }

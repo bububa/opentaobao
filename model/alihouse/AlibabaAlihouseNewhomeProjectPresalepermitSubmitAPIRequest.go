@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) GetApiParams
 	return params
 }
 
-// Set is PreSalePermitDto Setter
+// SetPreSalePermitDto is PreSalePermitDto Setter
 // 预售证对象
 func (r *AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) SetPreSalePermitDto(_preSalePermitDto *ProjectPreSalePermitDto) error {
 	r._preSalePermitDto = _preSalePermitDto
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) SetPreSaleP
 	return nil
 }
 
-// Get PreSalePermitDto Getter
+// GetPreSalePermitDto PreSalePermitDto Getter
 func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitAPIRequest) GetPreSalePermitDto() *ProjectPreSalePermitDto {
 	return r._preSalePermitDto
 }

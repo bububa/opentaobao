@@ -37,7 +37,7 @@ func (r AlibabaWdkScmLrpOrderPredictAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOrderPredictQuery Setter
+// SetParamOrderPredictQuery is ParamOrderPredictQuery Setter
 // 单量预测查询参数
 func (r *AlibabaWdkScmLrpOrderPredictAPIRequest) SetParamOrderPredictQuery(_paramOrderPredictQuery *OrderPredictQuery) error {
 	r._paramOrderPredictQuery = _paramOrderPredictQuery
@@ -45,7 +45,7 @@ func (r *AlibabaWdkScmLrpOrderPredictAPIRequest) SetParamOrderPredictQuery(_para
 	return nil
 }
 
-// Get ParamOrderPredictQuery Getter
+// GetParamOrderPredictQuery ParamOrderPredictQuery Getter
 func (r AlibabaWdkScmLrpOrderPredictAPIRequest) GetParamOrderPredictQuery() *OrderPredictQuery {
 	return r._paramOrderPredictQuery
 }

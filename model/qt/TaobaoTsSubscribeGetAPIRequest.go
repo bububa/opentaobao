@@ -39,7 +39,7 @@ func (r TaobaoTsSubscribeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ServcieItemCode Setter
+// SetServcieItemCode is ServcieItemCode Setter
 // 服务收费项code
 func (r *TaobaoTsSubscribeGetAPIRequest) SetServcieItemCode(_servcieItemCode string) error {
 	r._servcieItemCode = _servcieItemCode
@@ -47,12 +47,12 @@ func (r *TaobaoTsSubscribeGetAPIRequest) SetServcieItemCode(_servcieItemCode str
 	return nil
 }
 
-// Get ServcieItemCode Getter
+// GetServcieItemCode ServcieItemCode Getter
 func (r TaobaoTsSubscribeGetAPIRequest) GetServcieItemCode() string {
 	return r._servcieItemCode
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 订购用户昵称
 func (r *TaobaoTsSubscribeGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -60,7 +60,7 @@ func (r *TaobaoTsSubscribeGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoTsSubscribeGetAPIRequest) GetNick() string {
 	return r._nick
 }

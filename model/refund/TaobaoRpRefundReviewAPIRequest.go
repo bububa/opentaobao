@@ -47,7 +47,7 @@ func (r TaobaoRpRefundReviewAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款单编号
 func (r *TaobaoRpRefundReviewAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -55,12 +55,12 @@ func (r *TaobaoRpRefundReviewAPIRequest) SetRefundId(_refundId int64) error {
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoRpRefundReviewAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }
 
-// Set is Operator Setter
+// SetOperator is Operator Setter
 // 审核人姓名
 func (r *TaobaoRpRefundReviewAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
@@ -68,12 +68,12 @@ func (r *TaobaoRpRefundReviewAPIRequest) SetOperator(_operator string) error {
 	return nil
 }
 
-// Get Operator Getter
+// GetOperator Operator Getter
 func (r TaobaoRpRefundReviewAPIRequest) GetOperator() string {
 	return r._operator
 }
 
-// Set is RefundPhase Setter
+// SetRefundPhase is RefundPhase Setter
 // 退款阶段，可选值：售中：onsale，售后：aftersale
 func (r *TaobaoRpRefundReviewAPIRequest) SetRefundPhase(_refundPhase string) error {
 	r._refundPhase = _refundPhase
@@ -81,12 +81,12 @@ func (r *TaobaoRpRefundReviewAPIRequest) SetRefundPhase(_refundPhase string) err
 	return nil
 }
 
-// Get RefundPhase Getter
+// GetRefundPhase RefundPhase Getter
 func (r TaobaoRpRefundReviewAPIRequest) GetRefundPhase() string {
 	return r._refundPhase
 }
 
-// Set is RefundVersion Setter
+// SetRefundVersion is RefundVersion Setter
 // 退款最后更新时间，以时间戳的方式表示
 func (r *TaobaoRpRefundReviewAPIRequest) SetRefundVersion(_refundVersion int64) error {
 	r._refundVersion = _refundVersion
@@ -94,12 +94,12 @@ func (r *TaobaoRpRefundReviewAPIRequest) SetRefundVersion(_refundVersion int64) 
 	return nil
 }
 
-// Get RefundVersion Getter
+// GetRefundVersion RefundVersion Getter
 func (r TaobaoRpRefundReviewAPIRequest) GetRefundVersion() int64 {
 	return r._refundVersion
 }
 
-// Set is Result Setter
+// SetResult is Result Setter
 // 审核是否可用于批量退款，可选值：true（审核通过），false（审核不通过或反审核）
 func (r *TaobaoRpRefundReviewAPIRequest) SetResult(_result bool) error {
 	r._result = _result
@@ -107,12 +107,12 @@ func (r *TaobaoRpRefundReviewAPIRequest) SetResult(_result bool) error {
 	return nil
 }
 
-// Get Result Getter
+// GetResult Result Getter
 func (r TaobaoRpRefundReviewAPIRequest) GetResult() bool {
 	return r._result
 }
 
-// Set is Message Setter
+// SetMessage is Message Setter
 // 审核留言
 func (r *TaobaoRpRefundReviewAPIRequest) SetMessage(_message string) error {
 	r._message = _message
@@ -120,7 +120,7 @@ func (r *TaobaoRpRefundReviewAPIRequest) SetMessage(_message string) error {
 	return nil
 }
 
-// Get Message Getter
+// GetMessage Message Getter
 func (r TaobaoRpRefundReviewAPIRequest) GetMessage() string {
 	return r._message
 }

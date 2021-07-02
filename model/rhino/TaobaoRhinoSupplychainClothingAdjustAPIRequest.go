@@ -37,7 +37,7 @@ func (r TaobaoRhinoSupplychainClothingAdjustAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 库存盘点对象
 func (r *TaobaoRhinoSupplychainClothingAdjustAPIRequest) SetParam0(_param0 *MaterialInventoryAdjustDto) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TaobaoRhinoSupplychainClothingAdjustAPIRequest) SetParam0(_param0 *Mate
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoRhinoSupplychainClothingAdjustAPIRequest) GetParam0() *MaterialInventoryAdjustDto {
 	return r._param0
 }

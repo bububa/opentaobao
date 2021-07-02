@@ -37,7 +37,7 @@ func (r TaobaoFeedflowItemCrowdPageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CrowdQuery Setter
+// SetCrowdQuery is CrowdQuery Setter
 // 查询条件
 func (r *TaobaoFeedflowItemCrowdPageAPIRequest) SetCrowdQuery(_crowdQuery *CrowdQueryDto) error {
 	r._crowdQuery = _crowdQuery
@@ -45,7 +45,7 @@ func (r *TaobaoFeedflowItemCrowdPageAPIRequest) SetCrowdQuery(_crowdQuery *Crowd
 	return nil
 }
 
-// Get CrowdQuery Getter
+// GetCrowdQuery CrowdQuery Getter
 func (r TaobaoFeedflowItemCrowdPageAPIRequest) GetCrowdQuery() *CrowdQueryDto {
 	return r._crowdQuery
 }

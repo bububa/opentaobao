@@ -43,7 +43,7 @@ func (r AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is FileInfo Setter
+// SetFileInfo is FileInfo Setter
 // 文件信息（对文件内容16进制编码）
 func (r *AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) SetFileInfo(_fileInfo string) error {
 	r._fileInfo = _fileInfo
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) SetFileInfo(_fil
 	return nil
 }
 
-// Get FileInfo Getter
+// GetFileInfo FileInfo Getter
 func (r AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) GetFileInfo() string {
 	return r._fileInfo
 }
 
-// Set is CallbackUrl Setter
+// SetCallbackUrl is CallbackUrl Setter
 // 回调url
 func (r *AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) SetCallbackUrl(_callbackUrl string) error {
 	r._callbackUrl = _callbackUrl
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) SetCallbackUrl(_
 	return nil
 }
 
-// Get CallbackUrl Getter
+// GetCallbackUrl CallbackUrl Getter
 func (r AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) GetCallbackUrl() string {
 	return r._callbackUrl
 }
 
-// Set is FileName Setter
+// SetFileName is FileName Setter
 // 文件名
 func (r *AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) SetFileName(_fileName string) error {
 	r._fileName = _fileName
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) SetFileName(_fil
 	return nil
 }
 
-// Get FileName Getter
+// GetFileName FileName Getter
 func (r AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) GetFileName() string {
 	return r._fileName
 }
 
-// Set is ProdId Setter
+// SetProdId is ProdId Setter
 // 商品id
 func (r *AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) SetProdId(_prodId int64) error {
 	r._prodId = _prodId
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) SetProdId(_prodI
 	return nil
 }
 
-// Get ProdId Getter
+// GetProdId ProdId Getter
 func (r AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) GetProdId() int64 {
 	return r._prodId
 }

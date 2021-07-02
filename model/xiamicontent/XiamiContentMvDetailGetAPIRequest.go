@@ -37,7 +37,7 @@ func (r XiamiContentMvDetailGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MvIds Setter
+// SetMvIds is MvIds Setter
 // mvId
 func (r *XiamiContentMvDetailGetAPIRequest) SetMvIds(_mvIds []int64) error {
 	r._mvIds = _mvIds
@@ -45,7 +45,7 @@ func (r *XiamiContentMvDetailGetAPIRequest) SetMvIds(_mvIds []int64) error {
 	return nil
 }
 
-// Get MvIds Getter
+// GetMvIds MvIds Getter
 func (r XiamiContentMvDetailGetAPIRequest) GetMvIds() []int64 {
 	return r._mvIds
 }

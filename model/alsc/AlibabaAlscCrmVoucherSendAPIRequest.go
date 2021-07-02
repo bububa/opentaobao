@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmVoucherSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamVoucherSendOpenReq Setter
+// SetParamVoucherSendOpenReq is ParamVoucherSendOpenReq Setter
 // 请求参数
 func (r *AlibabaAlscCrmVoucherSendAPIRequest) SetParamVoucherSendOpenReq(_paramVoucherSendOpenReq *VoucherSendOpenReq) error {
 	r._paramVoucherSendOpenReq = _paramVoucherSendOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmVoucherSendAPIRequest) SetParamVoucherSendOpenReq(_paramV
 	return nil
 }
 
-// Get ParamVoucherSendOpenReq Getter
+// GetParamVoucherSendOpenReq ParamVoucherSendOpenReq Getter
 func (r AlibabaAlscCrmVoucherSendAPIRequest) GetParamVoucherSendOpenReq() *VoucherSendOpenReq {
 	return r._paramVoucherSendOpenReq
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmPointReversepointAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamReverseConsumePointOpenReq Setter
+// SetParamReverseConsumePointOpenReq is ParamReverseConsumePointOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmPointReversepointAPIRequest) SetParamReverseConsumePointOpenReq(_paramReverseConsumePointOpenReq *ReverseConsumePointOpenReq) error {
 	r._paramReverseConsumePointOpenReq = _paramReverseConsumePointOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmPointReversepointAPIRequest) SetParamReverseConsumePointO
 	return nil
 }
 
-// Get ParamReverseConsumePointOpenReq Getter
+// GetParamReverseConsumePointOpenReq ParamReverseConsumePointOpenReq Getter
 func (r AlibabaAlscCrmPointReversepointAPIRequest) GetParamReverseConsumePointOpenReq() *ReverseConsumePointOpenReq {
 	return r._paramReverseConsumePointOpenReq
 }

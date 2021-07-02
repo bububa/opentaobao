@@ -43,7 +43,7 @@ func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ResourceId Setter
+// SetResourceId is ResourceId Setter
 // 通过taobao.wlb.imports.resource.get接口查询出来的资源ID
 func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetResourceId(_resourceId int64) error {
 	r._resourceId = _resourceId
@@ -51,12 +51,12 @@ func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetResourceId(_reso
 	return nil
 }
 
-// Get ResourceId Getter
+// GetResourceId ResourceId Getter
 func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetResourceId() int64 {
 	return r._resourceId
 }
 
-// Set is FromId Setter
+// SetFromId is FromId Setter
 // 卖家发货地址的区域ID，如果不填则为默认发货地址ID
 func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetFromId(_fromId int64) error {
 	r._fromId = _fromId
@@ -64,12 +64,12 @@ func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetFromId(_fromId i
 	return nil
 }
 
-// Get FromId Getter
+// GetFromId FromId Getter
 func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetFromId() int64 {
 	return r._fromId
 }
 
-// Set is Cids Setter
+// SetCids is Cids Setter
 // 商品前台叶子类目ID
 func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetCids(_cids []int64) error {
 	r._cids = _cids
@@ -77,12 +77,12 @@ func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetCids(_cids []int
 	return nil
 }
 
-// Get Cids Getter
+// GetCids Cids Getter
 func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetCids() []int64 {
 	return r._cids
 }
 
-// Set is ToAddress Setter
+// SetToAddress is ToAddress Setter
 // 买家收货地信息
 func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetToAddress(_toAddress *ReciverAddressDo) error {
 	r._toAddress = _toAddress
@@ -90,7 +90,7 @@ func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetToAddress(_toAdd
 	return nil
 }
 
-// Get ToAddress Getter
+// GetToAddress ToAddress Getter
 func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetToAddress() *ReciverAddressDo {
 	return r._toAddress
 }

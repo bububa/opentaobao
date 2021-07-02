@@ -47,7 +47,7 @@ func (r TaobaoRefundsApplyGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的字段。目前支持有：refund_id, tid, title, buyer_nick, seller_nick, total_fee, status, created, refund_fee
 func (r *TaobaoRefundsApplyGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -55,12 +55,12 @@ func (r *TaobaoRefundsApplyGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoRefundsApplyGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 退款状态，默认查询所有退款状态的数据，除了默认值外每次只能查询一种状态。<br/>WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) <br/>WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) <br/>WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) <br/>SELLER_REFUSE_BUYER(卖家拒绝退款) <br/>CLOSED(退款关闭) <br/>SUCCESS(退款成功)
 func (r *TaobaoRefundsApplyGetAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -68,12 +68,12 @@ func (r *TaobaoRefundsApplyGetAPIRequest) SetStatus(_status string) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoRefundsApplyGetAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is SellerNick Setter
+// SetSellerNick is SellerNick Setter
 // 卖家昵称
 func (r *TaobaoRefundsApplyGetAPIRequest) SetSellerNick(_sellerNick string) error {
 	r._sellerNick = _sellerNick
@@ -81,12 +81,12 @@ func (r *TaobaoRefundsApplyGetAPIRequest) SetSellerNick(_sellerNick string) erro
 	return nil
 }
 
-// Get SellerNick Getter
+// GetSellerNick SellerNick Getter
 func (r TaobaoRefundsApplyGetAPIRequest) GetSellerNick() string {
 	return r._sellerNick
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 交易类型列表，一次查询多种类型可用半角逗号分隔，默认同时查询guarantee_trade, auto_delivery的2种类型的数据。<br/>fixed(一口价) <br/>auction(拍卖) <br/>guarantee_trade(一口价、拍卖) <br/>independent_simple_trade(旺店入门版交易) <br/>independent_shop_trade(旺店标准版交易) <br/>auto_delivery(自动发货) <br/>ec(直冲) <br/>cod(货到付款) <br/>fenxiao(分销) <br/>game_equipment(游戏装备) <br/>shopex_trade(ShopEX交易) <br/>netcn_trade(万网交易) <br/>external_trade(统一外部交易)
 func (r *TaobaoRefundsApplyGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -94,12 +94,12 @@ func (r *TaobaoRefundsApplyGetAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoRefundsApplyGetAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码。传入值为 1 代表第一页，传入值为 2 代表第二页，依此类推。默认返回的数据是从第一页开始
 func (r *TaobaoRefundsApplyGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -107,12 +107,12 @@ func (r *TaobaoRefundsApplyGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoRefundsApplyGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数。取值范围:大于零的整数; 默认值:40;最大值:100
 func (r *TaobaoRefundsApplyGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -120,7 +120,7 @@ func (r *TaobaoRefundsApplyGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoRefundsApplyGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

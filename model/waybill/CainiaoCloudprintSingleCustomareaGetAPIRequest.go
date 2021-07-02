@@ -37,7 +37,7 @@ func (r CainiaoCloudprintSingleCustomareaGetAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 这是商家用户id
 func (r *CainiaoCloudprintSingleCustomareaGetAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
@@ -45,7 +45,7 @@ func (r *CainiaoCloudprintSingleCustomareaGetAPIRequest) SetSellerId(_sellerId i
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r CainiaoCloudprintSingleCustomareaGetAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }

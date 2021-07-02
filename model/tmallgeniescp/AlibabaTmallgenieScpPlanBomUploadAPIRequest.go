@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanBomUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PbomRequest Setter
+// SetPbomRequest is PbomRequest Setter
 // 对象
 func (r *AlibabaTmallgenieScpPlanBomUploadAPIRequest) SetPbomRequest(_pbomRequest *AbstractRequest) error {
 	r._pbomRequest = _pbomRequest
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanBomUploadAPIRequest) SetPbomRequest(_pbomReques
 	return nil
 }
 
-// Get PbomRequest Getter
+// GetPbomRequest PbomRequest Getter
 func (r AlibabaTmallgenieScpPlanBomUploadAPIRequest) GetPbomRequest() *AbstractRequest {
 	return r._pbomRequest
 }

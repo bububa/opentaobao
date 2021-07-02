@@ -79,7 +79,7 @@ func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Account Setter
+// SetAccount is Account Setter
 // 用户账号列表,以换行区分,仅sendType为3时有效
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAccount(_account string) error {
 	r._account = _account
@@ -87,12 +87,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAccount(_accoun
 	return nil
 }
 
-// Get Account Getter
+// GetAccount Account Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetAccount() string {
 	return r._account
 }
 
-// Set is AndroidExtraMap Setter
+// SetAndroidExtraMap is AndroidExtraMap Setter
 // 自定义的kv结构,开发者扩展用
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAndroidExtraMap(_androidExtraMap string) error {
 	r._androidExtraMap = _androidExtraMap
@@ -100,12 +100,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAndroidExtraMap
 	return nil
 }
 
-// Get AndroidExtraMap Getter
+// GetAndroidExtraMap AndroidExtraMap Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetAndroidExtraMap() string {
 	return r._androidExtraMap
 }
 
-// Set is AndroidMusic Setter
+// SetAndroidMusic is AndroidMusic Setter
 // 通知声音
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAndroidMusic(_androidMusic string) error {
 	r._androidMusic = _androidMusic
@@ -113,12 +113,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAndroidMusic(_a
 	return nil
 }
 
-// Get AndroidMusic Getter
+// GetAndroidMusic AndroidMusic Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetAndroidMusic() string {
 	return r._androidMusic
 }
 
-// Set is AndroidNotifyType Setter
+// SetAndroidNotifyType is AndroidNotifyType Setter
 // 通知类型 1:震动 2:响铃
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAndroidNotifyType(_androidNotifyType int64) error {
 	r._androidNotifyType = _androidNotifyType
@@ -126,12 +126,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAndroidNotifyTy
 	return nil
 }
 
-// Get AndroidNotifyType Getter
+// GetAndroidNotifyType AndroidNotifyType Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetAndroidNotifyType() int64 {
 	return r._androidNotifyType
 }
 
-// Set is AndroidOpenActivity Setter
+// SetAndroidOpenActivity is AndroidOpenActivity Setter
 // 打开app指定位置
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAndroidOpenActivity(_androidOpenActivity string) error {
 	r._androidOpenActivity = _androidOpenActivity
@@ -139,12 +139,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAndroidOpenActi
 	return nil
 }
 
-// Get AndroidOpenActivity Getter
+// GetAndroidOpenActivity AndroidOpenActivity Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetAndroidOpenActivity() string {
 	return r._androidOpenActivity
 }
 
-// Set is AndroidOpenType Setter
+// SetAndroidOpenType is AndroidOpenType Setter
 // 点击通知后动作
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAndroidOpenType(_androidOpenType int64) error {
 	r._androidOpenType = _androidOpenType
@@ -152,12 +152,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAndroidOpenType
 	return nil
 }
 
-// Get AndroidOpenType Getter
+// GetAndroidOpenType AndroidOpenType Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetAndroidOpenType() int64 {
 	return r._androidOpenType
 }
 
-// Set is AndroidOpenUrl Setter
+// SetAndroidOpenUrl is AndroidOpenUrl Setter
 // 打开应用,网页
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAndroidOpenUrl(_androidOpenUrl string) error {
 	r._androidOpenUrl = _androidOpenUrl
@@ -165,12 +165,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAndroidOpenUrl(
 	return nil
 }
 
-// Get AndroidOpenUrl Getter
+// GetAndroidOpenUrl AndroidOpenUrl Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetAndroidOpenUrl() string {
 	return r._androidOpenUrl
 }
 
-// Set is AntiHarassDuration Setter
+// SetAntiHarassDuration is AntiHarassDuration Setter
 // 防打扰时长,取值范围为1~23
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAntiHarassDuration(_antiHarassDuration int64) error {
 	r._antiHarassDuration = _antiHarassDuration
@@ -178,12 +178,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAntiHarassDurat
 	return nil
 }
 
-// Get AntiHarassDuration Getter
+// GetAntiHarassDuration AntiHarassDuration Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetAntiHarassDuration() int64 {
 	return r._antiHarassDuration
 }
 
-// Set is AntiHarassStartTime Setter
+// SetAntiHarassStartTime is AntiHarassStartTime Setter
 // 防打扰开始时间点,取值范围为0~23
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAntiHarassStartTime(_antiHarassStartTime int64) error {
 	r._antiHarassStartTime = _antiHarassStartTime
@@ -191,12 +191,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAntiHarassStart
 	return nil
 }
 
-// Get AntiHarassStartTime Getter
+// GetAntiHarassStartTime AntiHarassStartTime Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetAntiHarassStartTime() int64 {
 	return r._antiHarassStartTime
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 应用标识
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAppId(_appId int64) error {
 	r._appId = _appId
@@ -204,12 +204,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetAppId(_appId in
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetAppId() int64 {
 	return r._appId
 }
 
-// Set is BatchNumber Setter
+// SetBatchNumber is BatchNumber Setter
 // 批次编号,用于活动效果统计
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetBatchNumber(_batchNumber string) error {
 	r._batchNumber = _batchNumber
@@ -217,12 +217,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetBatchNumber(_ba
 	return nil
 }
 
-// Get BatchNumber Getter
+// GetBatchNumber BatchNumber Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetBatchNumber() string {
 	return r._batchNumber
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备编号列表,以换行区分,仅sendType为4时有效
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -230,12 +230,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetDeviceId(_devic
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 设备类型,取值范围为:0~3云推送支持多种设备,各 种设备类型编号如下:IOS设备:deviceType&amp;1=1; Andriod设备:deviceType&amp;2=2;如果存在此字段,则向 指定的设备类型推送消息。默认为全部(3);
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetDeviceType(_deviceType int64) error {
 	r._deviceType = _deviceType
@@ -243,12 +243,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetDeviceType(_dev
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetDeviceType() int64 {
 	return r._deviceType
 }
 
-// Set is IosExtraMap Setter
+// SetIosExtraMap is IosExtraMap Setter
 // 自定义的kv结构,开发者扩展用
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetIosExtraMap(_iosExtraMap string) error {
 	r._iosExtraMap = _iosExtraMap
@@ -256,12 +256,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetIosExtraMap(_io
 	return nil
 }
 
-// Get IosExtraMap Getter
+// GetIosExtraMap IosExtraMap Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetIosExtraMap() string {
 	return r._iosExtraMap
 }
 
-// Set is IosFooter Setter
+// SetIosFooter is IosFooter Setter
 // 角标
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetIosFooter(_iosFooter int64) error {
 	r._iosFooter = _iosFooter
@@ -269,12 +269,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetIosFooter(_iosF
 	return nil
 }
 
-// Get IosFooter Getter
+// GetIosFooter IosFooter Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetIosFooter() int64 {
 	return r._iosFooter
 }
 
-// Set is IosMusic Setter
+// SetIosMusic is IosMusic Setter
 // 默认音乐
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetIosMusic(_iosMusic string) error {
 	r._iosMusic = _iosMusic
@@ -282,12 +282,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetIosMusic(_iosMu
 	return nil
 }
 
-// Get IosMusic Getter
+// GetIosMusic IosMusic Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetIosMusic() string {
 	return r._iosMusic
 }
 
-// Set is PushTime Setter
+// SetPushTime is PushTime Setter
 // 推送时间,若空表示立即推送,推送时间不能早于当前时间
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetPushTime(_pushTime string) error {
 	r._pushTime = _pushTime
@@ -295,12 +295,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetPushTime(_pushT
 	return nil
 }
 
-// Get PushTime Getter
+// GetPushTime PushTime Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetPushTime() string {
 	return r._pushTime
 }
 
-// Set is SendType Setter
+// SetSendType is SendType Setter
 // 推送类型,取值范围:1~4; 1:所有人,无需指定tag、 deviceType等2:一群人,必须指定tag3:指定用户,根据 用户账号列表文件发送消息4:指定设备,根据设备编码列 表文件发送消息默认值为1
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetSendType(_sendType int64) error {
 	r._sendType = _sendType
@@ -308,12 +308,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetSendType(_sendT
 	return nil
 }
 
-// Get SendType Getter
+// GetSendType SendType Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetSendType() int64 {
 	return r._sendType
 }
 
-// Set is Summary Setter
+// SetSummary is Summary Setter
 // 摘要
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetSummary(_summary string) error {
 	r._summary = _summary
@@ -321,12 +321,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetSummary(_summar
 	return nil
 }
 
-// Get Summary Getter
+// GetSummary Summary Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetSummary() string {
 	return r._summary
 }
 
-// Set is Tag Setter
+// SetTag is Tag Setter
 // 标签名称,仅支持1个标签,仅sendType为2时有效
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetTag(_tag string) error {
 	r._tag = _tag
@@ -334,12 +334,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetTag(_tag string
 	return nil
 }
 
-// Get Tag Getter
+// GetTag Tag Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetTag() string {
 	return r._tag
 }
 
-// Set is Timeout Setter
+// SetTimeout is Timeout Setter
 // 离线消息保存时长,取值范围为1~72,若不填,则表示不保存离线消息
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetTimeout(_timeout int64) error {
 	r._timeout = _timeout
@@ -347,12 +347,12 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetTimeout(_timeou
 	return nil
 }
 
-// Get Timeout Getter
+// GetTimeout Timeout Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetTimeout() int64 {
 	return r._timeout
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 标题
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -360,7 +360,7 @@ func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetTitle(_title st
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetTitle() string {
 	return r._title
 }

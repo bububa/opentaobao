@@ -39,7 +39,7 @@ func (r TmallItemSimpleschemaUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *TmallItemSimpleschemaUpdateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -47,12 +47,12 @@ func (r *TmallItemSimpleschemaUpdateAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallItemSimpleschemaUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is SchemaXmlFields Setter
+// SetSchemaXmlFields is SchemaXmlFields Setter
 // 编辑商品时提交的xml信息
 func (r *TmallItemSimpleschemaUpdateAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
 	r._schemaXmlFields = _schemaXmlFields
@@ -60,7 +60,7 @@ func (r *TmallItemSimpleschemaUpdateAPIRequest) SetSchemaXmlFields(_schemaXmlFie
 	return nil
 }
 
-// Get SchemaXmlFields Getter
+// GetSchemaXmlFields SchemaXmlFields Getter
 func (r TmallItemSimpleschemaUpdateAPIRequest) GetSchemaXmlFields() string {
 	return r._schemaXmlFields
 }

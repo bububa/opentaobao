@@ -37,7 +37,7 @@ func (r TaobaoJstSmsOfficialaccountOrderAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderOfficialAccountRequest Setter
+// SetOrderOfficialAccountRequest is OrderOfficialAccountRequest Setter
 // 聚石塔公众号订购
 func (r *TaobaoJstSmsOfficialaccountOrderAPIRequest) SetOrderOfficialAccountRequest(_orderOfficialAccountRequest *OrderOfficialAccountRequest) error {
 	r._orderOfficialAccountRequest = _orderOfficialAccountRequest
@@ -45,7 +45,7 @@ func (r *TaobaoJstSmsOfficialaccountOrderAPIRequest) SetOrderOfficialAccountRequ
 	return nil
 }
 
-// Get OrderOfficialAccountRequest Getter
+// GetOrderOfficialAccountRequest OrderOfficialAccountRequest Getter
 func (r TaobaoJstSmsOfficialaccountOrderAPIRequest) GetOrderOfficialAccountRequest() *OrderOfficialAccountRequest {
 	return r._orderOfficialAccountRequest
 }

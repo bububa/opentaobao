@@ -37,7 +37,7 @@ func (r TmallMallitemcenterSupplierAbilityUpdateAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 入参
 func (r *TmallMallitemcenterSupplierAbilityUpdateAPIRequest) SetParam0(_param0 *EnableServiceStoreRequestDto) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TmallMallitemcenterSupplierAbilityUpdateAPIRequest) SetParam0(_param0 *
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TmallMallitemcenterSupplierAbilityUpdateAPIRequest) GetParam0() *EnableServiceStoreRequestDto {
 	return r._param0
 }

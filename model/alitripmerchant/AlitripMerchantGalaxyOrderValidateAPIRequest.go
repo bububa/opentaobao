@@ -41,7 +41,7 @@ func (r AlitripMerchantGalaxyOrderValidateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is TenantKey Setter
+// SetTenantKey is TenantKey Setter
 // 租户身份信息
 func (r *AlitripMerchantGalaxyOrderValidateAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
@@ -49,12 +49,12 @@ func (r *AlitripMerchantGalaxyOrderValidateAPIRequest) SetTenantKey(_tenantKey s
 	return nil
 }
 
-// Get TenantKey Getter
+// GetTenantKey TenantKey Getter
 func (r AlitripMerchantGalaxyOrderValidateAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
-// Set is ValidateOrderParam Setter
+// SetValidateOrderParam is ValidateOrderParam Setter
 // 试单参数
 func (r *AlitripMerchantGalaxyOrderValidateAPIRequest) SetValidateOrderParam(_validateOrderParam *ValidateOrderParam) error {
 	r._validateOrderParam = _validateOrderParam
@@ -62,12 +62,12 @@ func (r *AlitripMerchantGalaxyOrderValidateAPIRequest) SetValidateOrderParam(_va
 	return nil
 }
 
-// Get ValidateOrderParam Getter
+// GetValidateOrderParam ValidateOrderParam Getter
 func (r AlitripMerchantGalaxyOrderValidateAPIRequest) GetValidateOrderParam() *ValidateOrderParam {
 	return r._validateOrderParam
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 用户标识
 func (r *AlitripMerchantGalaxyOrderValidateAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -75,7 +75,7 @@ func (r *AlitripMerchantGalaxyOrderValidateAPIRequest) SetToken(_token string) e
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlitripMerchantGalaxyOrderValidateAPIRequest) GetToken() string {
 	return r._token
 }

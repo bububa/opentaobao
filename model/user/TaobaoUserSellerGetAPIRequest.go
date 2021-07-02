@@ -37,7 +37,7 @@ func (r TaobaoUserSellerGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的字段列表，可选值为返回示例值中的可以看到的字段
 func (r *TaobaoUserSellerGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -45,7 +45,7 @@ func (r *TaobaoUserSellerGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoUserSellerGetAPIRequest) GetFields() []string {
 	return r._fields
 }

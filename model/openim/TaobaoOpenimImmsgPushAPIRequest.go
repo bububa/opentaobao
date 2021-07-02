@@ -37,7 +37,7 @@ func (r TaobaoOpenimImmsgPushAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Immsg Setter
+// SetImmsg is Immsg Setter
 // openim消息结构体
 func (r *TaobaoOpenimImmsgPushAPIRequest) SetImmsg(_immsg *ImMsg) error {
 	r._immsg = _immsg
@@ -45,7 +45,7 @@ func (r *TaobaoOpenimImmsgPushAPIRequest) SetImmsg(_immsg *ImMsg) error {
 	return nil
 }
 
-// Get Immsg Getter
+// GetImmsg Immsg Getter
 func (r TaobaoOpenimImmsgPushAPIRequest) GetImmsg() *ImMsg {
 	return r._immsg
 }

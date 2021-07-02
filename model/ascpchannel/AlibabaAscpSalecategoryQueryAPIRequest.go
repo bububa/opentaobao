@@ -37,7 +37,7 @@ func (r AlibabaAscpSalecategoryQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 货品ID
 func (r *AlibabaAscpSalecategoryQueryAPIRequest) SetItemId(_itemId []int64) error {
 	r._itemId = _itemId
@@ -45,7 +45,7 @@ func (r *AlibabaAscpSalecategoryQueryAPIRequest) SetItemId(_itemId []int64) erro
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlibabaAscpSalecategoryQueryAPIRequest) GetItemId() []int64 {
 	return r._itemId
 }

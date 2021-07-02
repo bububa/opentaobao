@@ -61,7 +61,7 @@ func (r TmallChannelTradeOrderGetsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IsIncludeSubOrder Setter
+// SetIsIncludeSubOrder is IsIncludeSubOrder Setter
 // 是否包含子单
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetIsIncludeSubOrder(_isIncludeSubOrder bool) error {
 	r._isIncludeSubOrder = _isIncludeSubOrder
@@ -69,12 +69,12 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetIsIncludeSubOrder(_isIncludeSu
 	return nil
 }
 
-// Get IsIncludeSubOrder Getter
+// GetIsIncludeSubOrder IsIncludeSubOrder Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetIsIncludeSubOrder() bool {
 	return r._isIncludeSubOrder
 }
 
-// Set is IsIncludeMainOrder Setter
+// SetIsIncludeMainOrder is IsIncludeMainOrder Setter
 // 是否包含主单
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetIsIncludeMainOrder(_isIncludeMainOrder bool) error {
 	r._isIncludeMainOrder = _isIncludeMainOrder
@@ -82,12 +82,12 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetIsIncludeMainOrder(_isIncludeM
 	return nil
 }
 
-// Get IsIncludeMainOrder Getter
+// GetIsIncludeMainOrder IsIncludeMainOrder Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetIsIncludeMainOrder() bool {
 	return r._isIncludeMainOrder
 }
 
-// Set is IsIncludeLogistics Setter
+// SetIsIncludeLogistics is IsIncludeLogistics Setter
 // 是否包含物流信息
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetIsIncludeLogistics(_isIncludeLogistics bool) error {
 	r._isIncludeLogistics = _isIncludeLogistics
@@ -95,12 +95,12 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetIsIncludeLogistics(_isIncludeL
 	return nil
 }
 
-// Get IsIncludeLogistics Getter
+// GetIsIncludeLogistics IsIncludeLogistics Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetIsIncludeLogistics() bool {
 	return r._isIncludeLogistics
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页显示数量
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -108,12 +108,12 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetPageSize(_pageSize int64) erro
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNumber Setter
+// SetPageNumber is PageNumber Setter
 // 查询第几页
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetPageNumber(_pageNumber int64) error {
 	r._pageNumber = _pageNumber
@@ -121,12 +121,12 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetPageNumber(_pageNumber int64) 
 	return nil
 }
 
-// Get PageNumber Getter
+// GetPageNumber PageNumber Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetPageNumber() int64 {
 	return r._pageNumber
 }
 
-// Set is NeedPagination Setter
+// SetNeedPagination is NeedPagination Setter
 // 是否分页查询
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetNeedPagination(_needPagination bool) error {
 	r._needPagination = _needPagination
@@ -134,12 +134,12 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetNeedPagination(_needPagination
 	return nil
 }
 
-// Get NeedPagination Getter
+// GetNeedPagination NeedPagination Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetNeedPagination() bool {
 	return r._needPagination
 }
 
-// Set is MainPurchaseOrderNo Setter
+// SetMainPurchaseOrderNo is MainPurchaseOrderNo Setter
 // 主采购单号
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetMainPurchaseOrderNo(_mainPurchaseOrderNo int64) error {
 	r._mainPurchaseOrderNo = _mainPurchaseOrderNo
@@ -147,12 +147,12 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetMainPurchaseOrderNo(_mainPurch
 	return nil
 }
 
-// Get MainPurchaseOrderNo Getter
+// GetMainPurchaseOrderNo MainPurchaseOrderNo Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetMainPurchaseOrderNo() int64 {
 	return r._mainPurchaseOrderNo
 }
 
-// Set is DistributorNick Setter
+// SetDistributorNick is DistributorNick Setter
 // 分销商Nick
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetDistributorNick(_distributorNick string) error {
 	r._distributorNick = _distributorNick
@@ -160,12 +160,12 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetDistributorNick(_distributorNi
 	return nil
 }
 
-// Get DistributorNick Getter
+// GetDistributorNick DistributorNick Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetDistributorNick() string {
 	return r._distributorNick
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 渠道编码
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetChannel(_channel int64) error {
 	r._channel = _channel
@@ -173,12 +173,12 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetChannel(_channel int64) error 
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetChannel() int64 {
 	return r._channel
 }
 
-// Set is TradeType Setter
+// SetTradeType is TradeType Setter
 // 1-代销；2-经销
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetTradeType(_tradeType int64) error {
 	r._tradeType = _tradeType
@@ -186,12 +186,12 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetTradeType(_tradeType int64) er
 	return nil
 }
 
-// Get TradeType Getter
+// GetTradeType TradeType Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetTradeType() int64 {
 	return r._tradeType
 }
 
-// Set is OrderStatus Setter
+// SetOrderStatus is OrderStatus Setter
 // 1. 待付款 2.已付款待发货 3.已发货待收货 4.交易完成 5.交易关闭
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetOrderStatus(_orderStatus int64) error {
 	r._orderStatus = _orderStatus
@@ -199,12 +199,12 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetOrderStatus(_orderStatus int64
 	return nil
 }
 
-// Get OrderStatus Getter
+// GetOrderStatus OrderStatus Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetOrderStatus() int64 {
 	return r._orderStatus
 }
 
-// Set is CreateTimeStart Setter
+// SetCreateTimeStart is CreateTimeStart Setter
 // 创建时间从
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetCreateTimeStart(_createTimeStart string) error {
 	r._createTimeStart = _createTimeStart
@@ -212,12 +212,12 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetCreateTimeStart(_createTimeSta
 	return nil
 }
 
-// Get CreateTimeStart Getter
+// GetCreateTimeStart CreateTimeStart Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetCreateTimeStart() string {
 	return r._createTimeStart
 }
 
-// Set is CreateTimeEnd Setter
+// SetCreateTimeEnd is CreateTimeEnd Setter
 // 创建时间到
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetCreateTimeEnd(_createTimeEnd string) error {
 	r._createTimeEnd = _createTimeEnd
@@ -225,7 +225,7 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetCreateTimeEnd(_createTimeEnd s
 	return nil
 }
 
-// Get CreateTimeEnd Getter
+// GetCreateTimeEnd CreateTimeEnd Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetCreateTimeEnd() string {
 	return r._createTimeEnd
 }

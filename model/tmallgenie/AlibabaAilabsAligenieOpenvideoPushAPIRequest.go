@@ -37,7 +37,7 @@ func (r AlibabaAilabsAligenieOpenvideoPushAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Videos Setter
+// SetVideos is Videos Setter
 // 待推送的视频数据
 func (r *AlibabaAilabsAligenieOpenvideoPushAPIRequest) SetVideos(_videos []RawSingleVideo) error {
 	r._videos = _videos
@@ -45,7 +45,7 @@ func (r *AlibabaAilabsAligenieOpenvideoPushAPIRequest) SetVideos(_videos []RawSi
 	return nil
 }
 
-// Get Videos Getter
+// GetVideos Videos Getter
 func (r AlibabaAilabsAligenieOpenvideoPushAPIRequest) GetVideos() []RawSingleVideo {
 	return r._videos
 }

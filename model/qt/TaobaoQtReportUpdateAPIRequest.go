@@ -71,7 +71,7 @@ func (r TaobaoQtReportUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ServcieItemCode Setter
+// SetServcieItemCode is ServcieItemCode Setter
 // 收费项code
 func (r *TaobaoQtReportUpdateAPIRequest) SetServcieItemCode(_servcieItemCode string) error {
 	r._servcieItemCode = _servcieItemCode
@@ -79,12 +79,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetServcieItemCode(_servcieItemCode str
 	return nil
 }
 
-// Get ServcieItemCode Getter
+// GetServcieItemCode ServcieItemCode Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetServcieItemCode() string {
 	return r._servcieItemCode
 }
 
-// Set is SpName Setter
+// SetSpName is SpName Setter
 // 质检服务商名称
 func (r *TaobaoQtReportUpdateAPIRequest) SetSpName(_spName string) error {
 	r._spName = _spName
@@ -92,12 +92,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetSpName(_spName string) error {
 	return nil
 }
 
-// Get SpName Getter
+// GetSpName SpName Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetSpName() string {
 	return r._spName
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 送检者昵称
 func (r *TaobaoQtReportUpdateAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -105,12 +105,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is QtCode Setter
+// SetQtCode is QtCode Setter
 // 一个质检服务唯一标识质量检验单的编号
 func (r *TaobaoQtReportUpdateAPIRequest) SetQtCode(_qtCode string) error {
 	r._qtCode = _qtCode
@@ -118,12 +118,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetQtCode(_qtCode string) error {
 	return nil
 }
 
-// Get QtCode Getter
+// GetQtCode QtCode Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetQtCode() string {
 	return r._qtCode
 }
 
-// Set is QtName Setter
+// SetQtName is QtName Setter
 // 质检名称
 func (r *TaobaoQtReportUpdateAPIRequest) SetQtName(_qtName string) error {
 	r._qtName = _qtName
@@ -131,12 +131,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetQtName(_qtName string) error {
 	return nil
 }
 
-// Get QtName Getter
+// GetQtName QtName Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetQtName() string {
 	return r._qtName
 }
 
-// Set is ItemUrl Setter
+// SetItemUrl is ItemUrl Setter
 // 宝贝样品url
 func (r *TaobaoQtReportUpdateAPIRequest) SetItemUrl(_itemUrl string) error {
 	r._itemUrl = _itemUrl
@@ -144,12 +144,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetItemUrl(_itemUrl string) error {
 	return nil
 }
 
-// Get ItemUrl Getter
+// GetItemUrl ItemUrl Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetItemUrl() string {
 	return r._itemUrl
 }
 
-// Set is ItemDesc Setter
+// SetItemDesc is ItemDesc Setter
 // 样品宝贝描述
 func (r *TaobaoQtReportUpdateAPIRequest) SetItemDesc(_itemDesc string) error {
 	r._itemDesc = _itemDesc
@@ -157,12 +157,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetItemDesc(_itemDesc string) error {
 	return nil
 }
 
-// Get ItemDesc Getter
+// GetItemDesc ItemDesc Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetItemDesc() string {
 	return r._itemDesc
 }
 
-// Set is QtType Setter
+// SetQtType is QtType Setter
 // (1L, "聚划算"),<br/>(2L, "消保"),<br/>(3L, "分销"),<br/>(4L, "抽检"),<br/>(5L, "良无限线下数据"),<br/>(6L, "入驻/续签商城"),<br/>(7L, "买家质检维权"),<br/>(8L, "实地验证"),<br/>(9L, "淘宝买家订单商品鉴定"),<br/>(10L,"假一赔三");
 func (r *TaobaoQtReportUpdateAPIRequest) SetQtType(_qtType int64) error {
 	r._qtType = _qtType
@@ -170,12 +170,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetQtType(_qtType int64) error {
 	return nil
 }
 
-// Get QtType Getter
+// GetQtType QtType Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetQtType() int64 {
 	return r._qtType
 }
 
-// Set is QtStandard Setter
+// SetQtStandard is QtStandard Setter
 // 质检标准<br/>status=3 时必须非空
 func (r *TaobaoQtReportUpdateAPIRequest) SetQtStandard(_qtStandard string) error {
 	r._qtStandard = _qtStandard
@@ -183,12 +183,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetQtStandard(_qtStandard string) error
 	return nil
 }
 
-// Get QtStandard Getter
+// GetQtStandard QtStandard Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetQtStandard() string {
 	return r._qtStandard
 }
 
-// Set is ReportUrl Setter
+// SetReportUrl is ReportUrl Setter
 // 质检报告源文件url<br/>status状态为3时必须非空
 func (r *TaobaoQtReportUpdateAPIRequest) SetReportUrl(_reportUrl string) error {
 	r._reportUrl = _reportUrl
@@ -196,12 +196,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetReportUrl(_reportUrl string) error {
 	return nil
 }
 
-// Get ReportUrl Getter
+// GetReportUrl ReportUrl Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetReportUrl() string {
 	return r._reportUrl
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 0:已提交申请<br/>1:已收到样品<br/>2:已出检测结果<br/>3.已出具报告
 func (r *TaobaoQtReportUpdateAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -209,12 +209,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetStatus(_status int64) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is IsPassed Setter
+// SetIsPassed is IsPassed Setter
 // 只有status=3时赋值, <br/>0:未通过1:通过 空代表未判定
 func (r *TaobaoQtReportUpdateAPIRequest) SetIsPassed(_isPassed bool) error {
 	r._isPassed = _isPassed
@@ -222,12 +222,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetIsPassed(_isPassed bool) error {
 	return nil
 }
 
-// Get IsPassed Getter
+// GetIsPassed IsPassed Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetIsPassed() bool {
 	return r._isPassed
 }
 
-// Set is Message Setter
+// SetMessage is Message Setter
 // 检测结果消息描述
 func (r *TaobaoQtReportUpdateAPIRequest) SetMessage(_message string) error {
 	r._message = _message
@@ -235,12 +235,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetMessage(_message string) error {
 	return nil
 }
 
-// Get Message Getter
+// GetMessage Message Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetMessage() string {
 	return r._message
 }
 
-// Set is ExtAttr Setter
+// SetExtAttr is ExtAttr Setter
 // 自定义属性字段;分号分隔
 func (r *TaobaoQtReportUpdateAPIRequest) SetExtAttr(_extAttr string) error {
 	r._extAttr = _extAttr
@@ -248,12 +248,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetExtAttr(_extAttr string) error {
 	return nil
 }
 
-// Get ExtAttr Getter
+// GetExtAttr ExtAttr Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetExtAttr() string {
 	return r._extAttr
 }
 
-// Set is GmtSubmit Setter
+// SetGmtSubmit is GmtSubmit Setter
 // 送检日期
 func (r *TaobaoQtReportUpdateAPIRequest) SetGmtSubmit(_gmtSubmit string) error {
 	r._gmtSubmit = _gmtSubmit
@@ -261,12 +261,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetGmtSubmit(_gmtSubmit string) error {
 	return nil
 }
 
-// Get GmtSubmit Getter
+// GetGmtSubmit GmtSubmit Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetGmtSubmit() string {
 	return r._gmtSubmit
 }
 
-// Set is GmtReport Setter
+// SetGmtReport is GmtReport Setter
 // 提交报告结果时间
 func (r *TaobaoQtReportUpdateAPIRequest) SetGmtReport(_gmtReport string) error {
 	r._gmtReport = _gmtReport
@@ -274,12 +274,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetGmtReport(_gmtReport string) error {
 	return nil
 }
 
-// Get GmtReport Getter
+// GetGmtReport GmtReport Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetGmtReport() string {
 	return r._gmtReport
 }
 
-// Set is GmtExpiry Setter
+// SetGmtExpiry is GmtExpiry Setter
 // 质检有效到期时间，一般为一年有效期<br/>status状态为3时必须非空
 func (r *TaobaoQtReportUpdateAPIRequest) SetGmtExpiry(_gmtExpiry string) error {
 	r._gmtExpiry = _gmtExpiry
@@ -287,12 +287,12 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetGmtExpiry(_gmtExpiry string) error {
 	return nil
 }
 
-// Get GmtExpiry Getter
+// GetGmtExpiry GmtExpiry Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetGmtExpiry() string {
 	return r._gmtExpiry
 }
 
-// Set is NumIid Setter
+// SetNumIid is NumIid Setter
 // 外部ID，和QT_TYPE 一起表示某种平台的实体ID。QT_TYPE=9的时候，num_iid为淘宝订单号
 func (r *TaobaoQtReportUpdateAPIRequest) SetNumIid(_numIid int64) error {
 	r._numIid = _numIid
@@ -300,7 +300,7 @@ func (r *TaobaoQtReportUpdateAPIRequest) SetNumIid(_numIid int64) error {
 	return nil
 }
 
-// Get NumIid Getter
+// GetNumIid NumIid Getter
 func (r TaobaoQtReportUpdateAPIRequest) GetNumIid() int64 {
 	return r._numIid
 }

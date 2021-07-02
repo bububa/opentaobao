@@ -45,7 +45,7 @@ func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChannelId Setter
+// SetChannelId is ChannelId Setter
 // 渠道id
 func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetChannelId(_channelId int64) error {
 	r._channelId = _channelId
@@ -53,12 +53,12 @@ func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetChannelId(_channelId int
 	return nil
 }
 
-// Get ChannelId Getter
+// GetChannelId ChannelId Getter
 func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetChannelId() int64 {
 	return r._channelId
 }
 
-// Set is SubChannelId Setter
+// SetSubChannelId is SubChannelId Setter
 // 子渠道id
 func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetSubChannelId(_subChannelId int64) error {
 	r._subChannelId = _subChannelId
@@ -66,12 +66,12 @@ func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetSubChannelId(_subChannel
 	return nil
 }
 
-// Get SubChannelId Getter
+// GetSubChannelId SubChannelId Getter
 func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetSubChannelId() int64 {
 	return r._subChannelId
 }
 
-// Set is DeviceIds Setter
+// SetDeviceIds is DeviceIds Setter
 // 设备id串(md5加密)，多个设备逗号隔开
 func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetDeviceIds(_deviceIds string) error {
 	r._deviceIds = _deviceIds
@@ -79,12 +79,12 @@ func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetDeviceIds(_deviceIds str
 	return nil
 }
 
-// Get DeviceIds Getter
+// GetDeviceIds DeviceIds Getter
 func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetDeviceIds() string {
 	return r._deviceIds
 }
 
-// Set is DeviceIdType Setter
+// SetDeviceIdType is DeviceIdType Setter
 // 设备类型imei或者idfa
 func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetDeviceIdType(_deviceIdType string) error {
 	r._deviceIdType = _deviceIdType
@@ -92,12 +92,12 @@ func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetDeviceIdType(_deviceIdTy
 	return nil
 }
 
-// Get DeviceIdType Getter
+// GetDeviceIdType DeviceIdType Getter
 func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetDeviceIdType() string {
 	return r._deviceIdType
 }
 
-// Set is DeliveryType Setter
+// SetDeliveryType is DeliveryType Setter
 // 投放类型push或者feed
 func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetDeliveryType(_deliveryType string) error {
 	r._deliveryType = _deliveryType
@@ -105,7 +105,7 @@ func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetDeliveryType(_deliveryTy
 	return nil
 }
 
-// Get DeliveryType Getter
+// GetDeliveryType DeliveryType Getter
 func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetDeliveryType() string {
 	return r._deliveryType
 }

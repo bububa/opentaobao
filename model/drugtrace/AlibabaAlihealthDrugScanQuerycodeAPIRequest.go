@@ -47,7 +47,7 @@ func (r AlibabaAlihealthDrugScanQuerycodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 溯源码
 func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -55,12 +55,12 @@ func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetCode(_code string) erro
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaAlihealthDrugScanQuerycodeAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is WebchatId Setter
+// SetWebchatId is WebchatId Setter
 // 用户标识id
 func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetWebchatId(_webchatId string) error {
 	r._webchatId = _webchatId
@@ -68,12 +68,12 @@ func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetWebchatId(_webchatId st
 	return nil
 }
 
-// Get WebchatId Getter
+// GetWebchatId WebchatId Getter
 func (r AlibabaAlihealthDrugScanQuerycodeAPIRequest) GetWebchatId() string {
 	return r._webchatId
 }
 
-// Set is ProvinceCode Setter
+// SetProvinceCode is ProvinceCode Setter
 // 省编码
 func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetProvinceCode(_provinceCode string) error {
 	r._provinceCode = _provinceCode
@@ -81,12 +81,12 @@ func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetProvinceCode(_provinceC
 	return nil
 }
 
-// Get ProvinceCode Getter
+// GetProvinceCode ProvinceCode Getter
 func (r AlibabaAlihealthDrugScanQuerycodeAPIRequest) GetProvinceCode() string {
 	return r._provinceCode
 }
 
-// Set is CityCode Setter
+// SetCityCode is CityCode Setter
 // 市编码
 func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetCityCode(_cityCode string) error {
 	r._cityCode = _cityCode
@@ -94,12 +94,12 @@ func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetCityCode(_cityCode stri
 	return nil
 }
 
-// Get CityCode Getter
+// GetCityCode CityCode Getter
 func (r AlibabaAlihealthDrugScanQuerycodeAPIRequest) GetCityCode() string {
 	return r._cityCode
 }
 
-// Set is AreaCode Setter
+// SetAreaCode is AreaCode Setter
 // 区编码
 func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetAreaCode(_areaCode string) error {
 	r._areaCode = _areaCode
@@ -107,12 +107,12 @@ func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetAreaCode(_areaCode stri
 	return nil
 }
 
-// Get AreaCode Getter
+// GetAreaCode AreaCode Getter
 func (r AlibabaAlihealthDrugScanQuerycodeAPIRequest) GetAreaCode() string {
 	return r._areaCode
 }
 
-// Set is ScanTime Setter
+// SetScanTime is ScanTime Setter
 // 扫码日期
 func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetScanTime(_scanTime string) error {
 	r._scanTime = _scanTime
@@ -120,7 +120,7 @@ func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetScanTime(_scanTime stri
 	return nil
 }
 
-// Get ScanTime Getter
+// GetScanTime ScanTime Getter
 func (r AlibabaAlihealthDrugScanQuerycodeAPIRequest) GetScanTime() string {
 	return r._scanTime
 }

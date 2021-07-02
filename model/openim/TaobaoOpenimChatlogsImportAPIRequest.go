@@ -37,7 +37,7 @@ func (r TaobaoOpenimChatlogsImportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Messages Setter
+// SetMessages is Messages Setter
 // 消息序列
 func (r *TaobaoOpenimChatlogsImportAPIRequest) SetMessages(_messages []TextMessage) error {
 	r._messages = _messages
@@ -45,7 +45,7 @@ func (r *TaobaoOpenimChatlogsImportAPIRequest) SetMessages(_messages []TextMessa
 	return nil
 }
 
-// Get Messages Getter
+// GetMessages Messages Getter
 func (r TaobaoOpenimChatlogsImportAPIRequest) GetMessages() []TextMessage {
 	return r._messages
 }

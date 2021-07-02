@@ -45,7 +45,7 @@ func (r AlibabaAliqinFcSmsNumQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizId Setter
+// SetBizId is BizId Setter
 // 短信发送流水
 func (r *AlibabaAliqinFcSmsNumQueryAPIRequest) SetBizId(_bizId string) error {
 	r._bizId = _bizId
@@ -53,12 +53,12 @@ func (r *AlibabaAliqinFcSmsNumQueryAPIRequest) SetBizId(_bizId string) error {
 	return nil
 }
 
-// Get BizId Getter
+// GetBizId BizId Getter
 func (r AlibabaAliqinFcSmsNumQueryAPIRequest) GetBizId() string {
 	return r._bizId
 }
 
-// Set is RecNum Setter
+// SetRecNum is RecNum Setter
 // 短信接收号码
 func (r *AlibabaAliqinFcSmsNumQueryAPIRequest) SetRecNum(_recNum string) error {
 	r._recNum = _recNum
@@ -66,12 +66,12 @@ func (r *AlibabaAliqinFcSmsNumQueryAPIRequest) SetRecNum(_recNum string) error {
 	return nil
 }
 
-// Get RecNum Getter
+// GetRecNum RecNum Getter
 func (r AlibabaAliqinFcSmsNumQueryAPIRequest) GetRecNum() string {
 	return r._recNum
 }
 
-// Set is QueryDate Setter
+// SetQueryDate is QueryDate Setter
 // 短信发送日期，支持近30天记录查询，格式yyyyMMdd
 func (r *AlibabaAliqinFcSmsNumQueryAPIRequest) SetQueryDate(_queryDate string) error {
 	r._queryDate = _queryDate
@@ -79,12 +79,12 @@ func (r *AlibabaAliqinFcSmsNumQueryAPIRequest) SetQueryDate(_queryDate string) e
 	return nil
 }
 
-// Get QueryDate Getter
+// GetQueryDate QueryDate Getter
 func (r AlibabaAliqinFcSmsNumQueryAPIRequest) GetQueryDate() string {
 	return r._queryDate
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 分页参数,页码
 func (r *AlibabaAliqinFcSmsNumQueryAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -92,12 +92,12 @@ func (r *AlibabaAliqinFcSmsNumQueryAPIRequest) SetCurrentPage(_currentPage int64
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r AlibabaAliqinFcSmsNumQueryAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页参数，每页数量。最大值50
 func (r *AlibabaAliqinFcSmsNumQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -105,7 +105,7 @@ func (r *AlibabaAliqinFcSmsNumQueryAPIRequest) SetPageSize(_pageSize int64) erro
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaAliqinFcSmsNumQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

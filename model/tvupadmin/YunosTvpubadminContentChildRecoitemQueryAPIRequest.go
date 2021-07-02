@@ -47,7 +47,7 @@ func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 主键ID
 func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -55,12 +55,12 @@ func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetId(_id int64) er
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is NodeId Setter
+// SetNodeId is NodeId Setter
 // 所属类目ID
 func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetNodeId(_nodeId int64) error {
 	r._nodeId = _nodeId
@@ -68,12 +68,12 @@ func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetNodeId(_nodeId i
 	return nil
 }
 
-// Get NodeId Getter
+// GetNodeId NodeId Getter
 func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetNodeId() int64 {
 	return r._nodeId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 状态
 func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -81,12 +81,12 @@ func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetStatus(_status i
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -94,12 +94,12 @@ func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetPageNo(_pageNo i
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 名称
 func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -107,12 +107,12 @@ func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetName(_name strin
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 单页数量
 func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -120,7 +120,7 @@ func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetPageSize(_pageSi
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

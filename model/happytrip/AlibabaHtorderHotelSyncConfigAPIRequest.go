@@ -37,7 +37,7 @@ func (r AlibabaHtorderHotelSyncConfigAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DataEntity Setter
+// SetDataEntity is DataEntity Setter
 // 配置信息
 func (r *AlibabaHtorderHotelSyncConfigAPIRequest) SetDataEntity(_dataEntity *HotelMessageConfigDto) error {
 	r._dataEntity = _dataEntity
@@ -45,7 +45,7 @@ func (r *AlibabaHtorderHotelSyncConfigAPIRequest) SetDataEntity(_dataEntity *Hot
 	return nil
 }
 
-// Get DataEntity Getter
+// GetDataEntity DataEntity Getter
 func (r AlibabaHtorderHotelSyncConfigAPIRequest) GetDataEntity() *HotelMessageConfigDto {
 	return r._dataEntity
 }

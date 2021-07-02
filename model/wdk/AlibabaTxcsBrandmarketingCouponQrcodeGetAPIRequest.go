@@ -37,7 +37,7 @@ func (r AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is CouponQrcodeParamDo Setter
+// SetCouponQrcodeParamDo is CouponQrcodeParamDo Setter
 // 请求信息
 func (r *AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) SetCouponQrcodeParamDo(_couponQrcodeParamDo *CouponQrcodeParamDo) error {
 	r._couponQrcodeParamDo = _couponQrcodeParamDo
@@ -45,7 +45,7 @@ func (r *AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) SetCouponQrcodePara
 	return nil
 }
 
-// Get CouponQrcodeParamDo Getter
+// GetCouponQrcodeParamDo CouponQrcodeParamDo Getter
 func (r AlibabaTxcsBrandmarketingCouponQrcodeGetAPIRequest) GetCouponQrcodeParamDo() *CouponQrcodeParamDo {
 	return r._couponQrcodeParamDo
 }

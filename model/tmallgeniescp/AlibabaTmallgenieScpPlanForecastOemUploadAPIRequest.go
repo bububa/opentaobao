@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is SupplierForecastRequest Setter
+// SetSupplierForecastRequest is SupplierForecastRequest Setter
 // 请求参数
 func (r *AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest) SetSupplierForecastRequest(_supplierForecastRequest *SupplierForecastRequest) error {
 	r._supplierForecastRequest = _supplierForecastRequest
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest) SetSupplierForecas
 	return nil
 }
 
-// Get SupplierForecastRequest Getter
+// GetSupplierForecastRequest SupplierForecastRequest Getter
 func (r AlibabaTmallgenieScpPlanForecastOemUploadAPIRequest) GetSupplierForecastRequest() *SupplierForecastRequest {
 	return r._supplierForecastRequest
 }

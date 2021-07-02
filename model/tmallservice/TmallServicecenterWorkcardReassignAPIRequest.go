@@ -37,7 +37,7 @@ func (r TmallServicecenterWorkcardReassignAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ReassignStoreRequest Setter
+// SetReassignStoreRequest is ReassignStoreRequest Setter
 // 请求入参
 func (r *TmallServicecenterWorkcardReassignAPIRequest) SetReassignStoreRequest(_reassignStoreRequest *ReassignStoreRequest) error {
 	r._reassignStoreRequest = _reassignStoreRequest
@@ -45,7 +45,7 @@ func (r *TmallServicecenterWorkcardReassignAPIRequest) SetReassignStoreRequest(_
 	return nil
 }
 
-// Get ReassignStoreRequest Getter
+// GetReassignStoreRequest ReassignStoreRequest Getter
 func (r TmallServicecenterWorkcardReassignAPIRequest) GetReassignStoreRequest() *ReassignStoreRequest {
 	return r._reassignStoreRequest
 }

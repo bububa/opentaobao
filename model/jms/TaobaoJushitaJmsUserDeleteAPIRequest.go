@@ -37,7 +37,7 @@ func (r TaobaoJushitaJmsUserDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 需要停止同步消息的用户nick
 func (r *TaobaoJushitaJmsUserDeleteAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -45,7 +45,7 @@ func (r *TaobaoJushitaJmsUserDeleteAPIRequest) SetUserNick(_userNick string) err
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r TaobaoJushitaJmsUserDeleteAPIRequest) GetUserNick() string {
 	return r._userNick
 }

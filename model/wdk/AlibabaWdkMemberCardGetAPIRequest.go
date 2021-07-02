@@ -37,7 +37,7 @@ func (r AlibabaWdkMemberCardGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MemberQuery Setter
+// SetMemberQuery is MemberQuery Setter
 // 系统自动生成
 func (r *AlibabaWdkMemberCardGetAPIRequest) SetMemberQuery(_memberQuery *MemberQueryRequest) error {
 	r._memberQuery = _memberQuery
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMemberCardGetAPIRequest) SetMemberQuery(_memberQuery *MemberQ
 	return nil
 }
 
-// Get MemberQuery Getter
+// GetMemberQuery MemberQuery Getter
 func (r AlibabaWdkMemberCardGetAPIRequest) GetMemberQuery() *MemberQueryRequest {
 	return r._memberQuery
 }

@@ -39,7 +39,7 @@ func (r AlitripMerchantGalaxyProviderMemberQueryAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is TenantKey Setter
+// SetTenantKey is TenantKey Setter
 // 租户id
 func (r *AlitripMerchantGalaxyProviderMemberQueryAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
@@ -47,12 +47,12 @@ func (r *AlitripMerchantGalaxyProviderMemberQueryAPIRequest) SetTenantKey(_tenan
 	return nil
 }
 
-// Get TenantKey Getter
+// GetTenantKey TenantKey Getter
 func (r AlitripMerchantGalaxyProviderMemberQueryAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
-// Set is QueryMemberParam Setter
+// SetQueryMemberParam is QueryMemberParam Setter
 // 查询参数
 func (r *AlitripMerchantGalaxyProviderMemberQueryAPIRequest) SetQueryMemberParam(_queryMemberParam *QueryMemberParam) error {
 	r._queryMemberParam = _queryMemberParam
@@ -60,7 +60,7 @@ func (r *AlitripMerchantGalaxyProviderMemberQueryAPIRequest) SetQueryMemberParam
 	return nil
 }
 
-// Get QueryMemberParam Getter
+// GetQueryMemberParam QueryMemberParam Getter
 func (r AlitripMerchantGalaxyProviderMemberQueryAPIRequest) GetQueryMemberParam() *QueryMemberParam {
 	return r._queryMemberParam
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmRuleQuerytaglistAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamPlanRuleQueryOpenReq Setter
+// SetParamPlanRuleQueryOpenReq is ParamPlanRuleQueryOpenReq Setter
 // 请求参数
 func (r *AlibabaAlscCrmRuleQuerytaglistAPIRequest) SetParamPlanRuleQueryOpenReq(_paramPlanRuleQueryOpenReq *PlanRuleQueryOpenReq) error {
 	r._paramPlanRuleQueryOpenReq = _paramPlanRuleQueryOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmRuleQuerytaglistAPIRequest) SetParamPlanRuleQueryOpenReq(
 	return nil
 }
 
-// Get ParamPlanRuleQueryOpenReq Getter
+// GetParamPlanRuleQueryOpenReq ParamPlanRuleQueryOpenReq Getter
 func (r AlibabaAlscCrmRuleQuerytaglistAPIRequest) GetParamPlanRuleQueryOpenReq() *PlanRuleQueryOpenReq {
 	return r._paramPlanRuleQueryOpenReq
 }

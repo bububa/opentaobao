@@ -45,7 +45,7 @@ func (r TaobaoXhotelOrderOfficialCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝订单号,必选
 func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -53,12 +53,12 @@ func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoXhotelOrderOfficialCancelAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is ReasonText Setter
+// SetReasonText is ReasonText Setter
 // 原因描述
 func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetReasonText(_reasonText string) error {
 	r._reasonText = _reasonText
@@ -66,12 +66,12 @@ func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetReasonText(_reasonText st
 	return nil
 }
 
-// Get ReasonText Getter
+// GetReasonText ReasonText Getter
 func (r TaobaoXhotelOrderOfficialCancelAPIRequest) GetReasonText() string {
 	return r._reasonText
 }
 
-// Set is OutId Setter
+// SetOutId is OutId Setter
 // 外部订单号
 func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetOutId(_outId string) error {
 	r._outId = _outId
@@ -79,12 +79,12 @@ func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetOutId(_outId string) erro
 	return nil
 }
 
-// Get OutId Getter
+// GetOutId OutId Getter
 func (r TaobaoXhotelOrderOfficialCancelAPIRequest) GetOutId() string {
 	return r._outId
 }
 
-// Set is OutUuid Setter
+// SetOutUuid is OutUuid Setter
 // 请求流水号（必须传入）
 func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetOutUuid(_outUuid string) error {
 	r._outUuid = _outUuid
@@ -92,12 +92,12 @@ func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetOutUuid(_outUuid string) 
 	return nil
 }
 
-// Get OutUuid Getter
+// GetOutUuid OutUuid Getter
 func (r TaobaoXhotelOrderOfficialCancelAPIRequest) GetOutUuid() string {
 	return r._outUuid
 }
 
-// Set is NotifyUrl Setter
+// SetNotifyUrl is NotifyUrl Setter
 // 暂无意义，无需传入
 func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetNotifyUrl(_notifyUrl string) error {
 	r._notifyUrl = _notifyUrl
@@ -105,7 +105,7 @@ func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetNotifyUrl(_notifyUrl stri
 	return nil
 }
 
-// Get NotifyUrl Getter
+// GetNotifyUrl NotifyUrl Getter
 func (r TaobaoXhotelOrderOfficialCancelAPIRequest) GetNotifyUrl() string {
 	return r._notifyUrl
 }

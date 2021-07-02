@@ -37,7 +37,7 @@ func (r TaobaoVasServiceGetServTimesAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ServCode Setter
+// SetServCode is ServCode Setter
 // 服务编码
 func (r *TaobaoVasServiceGetServTimesAPIRequest) SetServCode(_servCode string) error {
 	r._servCode = _servCode
@@ -45,7 +45,7 @@ func (r *TaobaoVasServiceGetServTimesAPIRequest) SetServCode(_servCode string) e
 	return nil
 }
 
-// Get ServCode Getter
+// GetServCode ServCode Getter
 func (r TaobaoVasServiceGetServTimesAPIRequest) GetServCode() string {
 	return r._servCode
 }

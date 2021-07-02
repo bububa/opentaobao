@@ -37,7 +37,7 @@ func (r AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 请求入参
 func (r *AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest) SetParam(_param *RemoveTenantAdminsRequest) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest) SetParam(_param *R
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaMoziVdsTenantApiServiceRemoveadminAPIRequest) GetParam() *RemoveTenantAdminsRequest {
 	return r._param
 }

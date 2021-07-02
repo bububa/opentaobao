@@ -37,7 +37,7 @@ func (r TaobaoLogisticsExpressModifyAppointAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ExpressModifyAppointTopRequest Setter
+// SetExpressModifyAppointTopRequest is ExpressModifyAppointTopRequest Setter
 // 改约请求对象
 func (r *TaobaoLogisticsExpressModifyAppointAPIRequest) SetExpressModifyAppointTopRequest(_expressModifyAppointTopRequest *ExpressModifyAppointTopRequestDto) error {
 	r._expressModifyAppointTopRequest = _expressModifyAppointTopRequest
@@ -45,7 +45,7 @@ func (r *TaobaoLogisticsExpressModifyAppointAPIRequest) SetExpressModifyAppointT
 	return nil
 }
 
-// Get ExpressModifyAppointTopRequest Getter
+// GetExpressModifyAppointTopRequest ExpressModifyAppointTopRequest Getter
 func (r TaobaoLogisticsExpressModifyAppointAPIRequest) GetExpressModifyAppointTopRequest() *ExpressModifyAppointTopRequestDto {
 	return r._expressModifyAppointTopRequest
 }

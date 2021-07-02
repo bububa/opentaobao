@@ -37,7 +37,7 @@ func (r AlibabaAscpChannelDistributorProductSelectAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is SelectProductRequest Setter
+// SetSelectProductRequest is SelectProductRequest Setter
 // 选品请求
 func (r *AlibabaAscpChannelDistributorProductSelectAPIRequest) SetSelectProductRequest(_selectProductRequest *ProductLinkRequest) error {
 	r._selectProductRequest = _selectProductRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpChannelDistributorProductSelectAPIRequest) SetSelectProductR
 	return nil
 }
 
-// Get SelectProductRequest Getter
+// GetSelectProductRequest SelectProductRequest Getter
 func (r AlibabaAscpChannelDistributorProductSelectAPIRequest) GetSelectProductRequest() *ProductLinkRequest {
 	return r._selectProductRequest
 }

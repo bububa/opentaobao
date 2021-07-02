@@ -47,7 +47,7 @@ func (r AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is FileName Setter
+// SetFileName is FileName Setter
 // 文件名
 func (r *AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) SetFileName(_fileName string) error {
 	r._fileName = _fileName
@@ -55,12 +55,12 @@ func (r *AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) SetFileName(_fileN
 	return nil
 }
 
-// Get FileName Getter
+// GetFileName FileName Getter
 func (r AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) GetFileName() string {
 	return r._fileName
 }
 
-// Set is ProductInfoId Setter
+// SetProductInfoId is ProductInfoId Setter
 // 商品编号
 func (r *AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) SetProductInfoId(_productInfoId int64) error {
 	r._productInfoId = _productInfoId
@@ -68,12 +68,12 @@ func (r *AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) SetProductInfoId(_
 	return nil
 }
 
-// Get ProductInfoId Getter
+// GetProductInfoId ProductInfoId Getter
 func (r AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) GetProductInfoId() int64 {
 	return r._productInfoId
 }
 
-// Set is FileContent Setter
+// SetFileContent is FileContent Setter
 // 文件内容，十六进制编码
 func (r *AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) SetFileContent(_fileContent string) error {
 	r._fileContent = _fileContent
@@ -81,12 +81,12 @@ func (r *AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) SetFileContent(_fi
 	return nil
 }
 
-// Get FileContent Getter
+// GetFileContent FileContent Getter
 func (r AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) GetFileContent() string {
 	return r._fileContent
 }
 
-// Set is CorrelationType Setter
+// SetCorrelationType is CorrelationType Setter
 // 关联类型，0:无关联，1:前关联，2:后关联
 func (r *AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) SetCorrelationType(_correlationType int64) error {
 	r._correlationType = _correlationType
@@ -94,12 +94,12 @@ func (r *AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) SetCorrelationType
 	return nil
 }
 
-// Get CorrelationType Getter
+// GetCorrelationType CorrelationType Getter
 func (r AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) GetCorrelationType() int64 {
 	return r._correlationType
 }
 
-// Set is CorrelationRatio Setter
+// SetCorrelationRatio is CorrelationRatio Setter
 // 关联比例
 func (r *AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) SetCorrelationRatio(_correlationRatio string) error {
 	r._correlationRatio = _correlationRatio
@@ -107,12 +107,12 @@ func (r *AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) SetCorrelationRati
 	return nil
 }
 
-// Get CorrelationRatio Getter
+// GetCorrelationRatio CorrelationRatio Getter
 func (r AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) GetCorrelationRatio() string {
 	return r._correlationRatio
 }
 
-// Set is Language Setter
+// SetLanguage is Language Setter
 // 语言标识
 func (r *AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) SetLanguage(_language string) error {
 	r._language = _language
@@ -120,7 +120,7 @@ func (r *AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) SetLanguage(_langu
 	return nil
 }
 
-// Get Language Getter
+// GetLanguage Language Getter
 func (r AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) GetLanguage() string {
 	return r._language
 }

@@ -45,7 +45,7 @@ func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DegAppKey Setter
+// SetDegAppKey is DegAppKey Setter
 // 活动后台配置
 func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetDegAppKey(_degAppKey string) error {
 	r._degAppKey = _degAppKey
@@ -53,12 +53,12 @@ func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetDegAppKey(_degAppKey st
 	return nil
 }
 
-// Get DegAppKey Getter
+// GetDegAppKey DegAppKey Getter
 func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetDegAppKey() string {
 	return r._degAppKey
 }
 
-// Set is EventKey Setter
+// SetEventKey is EventKey Setter
 // 活动后台配置
 func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetEventKey(_eventKey string) error {
 	r._eventKey = _eventKey
@@ -66,12 +66,12 @@ func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetEventKey(_eventKey stri
 	return nil
 }
 
-// Get EventKey Getter
+// GetEventKey EventKey Getter
 func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetEventKey() string {
 	return r._eventKey
 }
 
-// Set is PageNumber Setter
+// SetPageNumber is PageNumber Setter
 // 第几页
 func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetPageNumber(_pageNumber int64) error {
 	r._pageNumber = _pageNumber
@@ -79,12 +79,12 @@ func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetPageNumber(_pageNumber 
 	return nil
 }
 
-// Get PageNumber Getter
+// GetPageNumber PageNumber Getter
 func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetPageNumber() int64 {
 	return r._pageNumber
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页尺寸
 func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -92,12 +92,12 @@ func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetPageSize(_pageSize int6
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is DegAccessToken Setter
+// SetDegAccessToken is DegAccessToken Setter
 // 系统信息
 func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetDegAccessToken(_degAccessToken string) error {
 	r._degAccessToken = _degAccessToken
@@ -105,7 +105,7 @@ func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetDegAccessToken(_degAcce
 	return nil
 }
 
-// Get DegAccessToken Getter
+// GetDegAccessToken DegAccessToken Getter
 func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetDegAccessToken() string {
 	return r._degAccessToken
 }

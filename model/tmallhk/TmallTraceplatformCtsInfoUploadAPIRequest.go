@@ -37,7 +37,7 @@ func (r TmallTraceplatformCtsInfoUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TraceInfo Setter
+// SetTraceInfo is TraceInfo Setter
 // 入参traceInfo
 func (r *TmallTraceplatformCtsInfoUploadAPIRequest) SetTraceInfo(_traceInfo *CtsInfo) error {
 	r._traceInfo = _traceInfo
@@ -45,7 +45,7 @@ func (r *TmallTraceplatformCtsInfoUploadAPIRequest) SetTraceInfo(_traceInfo *Cts
 	return nil
 }
 
-// Get TraceInfo Getter
+// GetTraceInfo TraceInfo Getter
 func (r TmallTraceplatformCtsInfoUploadAPIRequest) GetTraceInfo() *CtsInfo {
 	return r._traceInfo
 }

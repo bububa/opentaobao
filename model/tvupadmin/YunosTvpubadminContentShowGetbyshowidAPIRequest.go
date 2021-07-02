@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentShowGetbyshowidAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ShowId Setter
+// SetShowId is ShowId Setter
 // 节目字符串id
 func (r *YunosTvpubadminContentShowGetbyshowidAPIRequest) SetShowId(_showId string) error {
 	r._showId = _showId
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentShowGetbyshowidAPIRequest) SetShowId(_showId stri
 	return nil
 }
 
-// Get ShowId Getter
+// GetShowId ShowId Getter
 func (r YunosTvpubadminContentShowGetbyshowidAPIRequest) GetShowId() string {
 	return r._showId
 }

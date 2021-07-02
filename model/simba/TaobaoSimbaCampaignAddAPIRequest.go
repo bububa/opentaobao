@@ -41,7 +41,7 @@ func (r TaobaoSimbaCampaignAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 推广计划名称，不能多余20个汉字，不能和客户其他推广计划同名。
 func (r *TaobaoSimbaCampaignAddAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -49,12 +49,12 @@ func (r *TaobaoSimbaCampaignAddAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoSimbaCampaignAddAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaCampaignAddAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -62,12 +62,12 @@ func (r *TaobaoSimbaCampaignAddAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaCampaignAddAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 计划类型，当前仅支持两种标准推广0，销量明星16，默认为0
 func (r *TaobaoSimbaCampaignAddAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -75,7 +75,7 @@ func (r *TaobaoSimbaCampaignAddAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoSimbaCampaignAddAPIRequest) GetType() int64 {
 	return r._type
 }

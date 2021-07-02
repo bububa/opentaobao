@@ -39,7 +39,7 @@ func (r TmallFuwuServiceitemListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 商品所属卖家账号id
 func (r *TmallFuwuServiceitemListAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
@@ -47,12 +47,12 @@ func (r *TmallFuwuServiceitemListAPIRequest) SetSellerId(_sellerId int64) error 
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r TmallFuwuServiceitemListAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }
 
-// Set is Itemids Setter
+// SetItemids is Itemids Setter
 // 商品id列表，有数量限制
 func (r *TmallFuwuServiceitemListAPIRequest) SetItemids(_itemids []int64) error {
 	r._itemids = _itemids
@@ -60,7 +60,7 @@ func (r *TmallFuwuServiceitemListAPIRequest) SetItemids(_itemids []int64) error 
 	return nil
 }
 
-// Get Itemids Getter
+// GetItemids Itemids Getter
 func (r TmallFuwuServiceitemListAPIRequest) GetItemids() []int64 {
 	return r._itemids
 }

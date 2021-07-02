@@ -37,7 +37,7 @@ func (r AlibabaCgameScoreReportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReportData Setter
+// SetReportData is ReportData Setter
 // 通用战绩回传数据
 func (r *AlibabaCgameScoreReportAPIRequest) SetReportData(_reportData *CpCallbackReportDto) error {
 	r._reportData = _reportData
@@ -45,7 +45,7 @@ func (r *AlibabaCgameScoreReportAPIRequest) SetReportData(_reportData *CpCallbac
 	return nil
 }
 
-// Get ReportData Getter
+// GetReportData ReportData Getter
 func (r AlibabaCgameScoreReportAPIRequest) GetReportData() *CpCallbackReportDto {
 	return r._reportData
 }

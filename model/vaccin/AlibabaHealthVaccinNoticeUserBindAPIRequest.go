@@ -45,7 +45,7 @@ func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AlipayUserId Setter
+// SetAlipayUserId is AlipayUserId Setter
 // 支付宝ID
 func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetAlipayUserId(_alipayUserId string) error {
 	r._alipayUserId = _alipayUserId
@@ -53,12 +53,12 @@ func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetAlipayUserId(_alipayUse
 	return nil
 }
 
-// Get AlipayUserId Getter
+// GetAlipayUserId AlipayUserId Getter
 func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetAlipayUserId() string {
 	return r._alipayUserId
 }
 
-// Set is BindUsers Setter
+// SetBindUsers is BindUsers Setter
 // 绑定人信息list
 func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetBindUsers(_bindUsers []AlipayVaccineUserBindDto) error {
 	r._bindUsers = _bindUsers
@@ -66,12 +66,12 @@ func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetBindUsers(_bindUsers []
 	return nil
 }
 
-// Get BindUsers Getter
+// GetBindUsers BindUsers Getter
 func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetBindUsers() []AlipayVaccineUserBindDto {
 	return r._bindUsers
 }
 
-// Set is OuterUserId Setter
+// SetOuterUserId is OuterUserId Setter
 // ISV 侧用户 ID
 func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetOuterUserId(_outerUserId string) error {
 	r._outerUserId = _outerUserId
@@ -79,12 +79,12 @@ func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetOuterUserId(_outerUserI
 	return nil
 }
 
-// Get OuterUserId Getter
+// GetOuterUserId OuterUserId Getter
 func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetOuterUserId() string {
 	return r._outerUserId
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 联系电话
 func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -92,12 +92,12 @@ func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetMobile(_mobile string) 
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
-// Set is AppChannel Setter
+// SetAppChannel is AppChannel Setter
 // 用户来源：alipay或yl
 func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetAppChannel(_appChannel string) error {
 	r._appChannel = _appChannel
@@ -105,7 +105,7 @@ func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetAppChannel(_appChannel 
 	return nil
 }
 
-// Get AppChannel Getter
+// GetAppChannel AppChannel Getter
 func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetAppChannel() string {
 	return r._appChannel
 }

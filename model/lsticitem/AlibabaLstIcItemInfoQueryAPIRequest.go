@@ -37,7 +37,7 @@ func (r AlibabaLstIcItemInfoQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 零售通商品查询参数
 func (r *AlibabaLstIcItemInfoQueryAPIRequest) SetQuery(_query *LstItemListParam) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *AlibabaLstIcItemInfoQueryAPIRequest) SetQuery(_query *LstItemListParam)
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaLstIcItemInfoQueryAPIRequest) GetQuery() *LstItemListParam {
 	return r._query
 }

@@ -37,7 +37,7 @@ func (r AlibabaScbpTargetAdPlanUpdateTagsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamTopP4pModifyQuickCampaignTagDTO Setter
+// SetParamTopP4pModifyQuickCampaignTagDTO is ParamTopP4pModifyQuickCampaignTagDTO Setter
 // 系统生成
 func (r *AlibabaScbpTargetAdPlanUpdateTagsAPIRequest) SetParamTopP4pModifyQuickCampaignTagDTO(_paramTopP4pModifyQuickCampaignTagDTO *TopP4pModifyQuickCampaignTagDto) error {
 	r._paramTopP4pModifyQuickCampaignTagDTO = _paramTopP4pModifyQuickCampaignTagDTO
@@ -45,7 +45,7 @@ func (r *AlibabaScbpTargetAdPlanUpdateTagsAPIRequest) SetParamTopP4pModifyQuickC
 	return nil
 }
 
-// Get ParamTopP4pModifyQuickCampaignTagDTO Getter
+// GetParamTopP4pModifyQuickCampaignTagDTO ParamTopP4pModifyQuickCampaignTagDTO Getter
 func (r AlibabaScbpTargetAdPlanUpdateTagsAPIRequest) GetParamTopP4pModifyQuickCampaignTagDTO() *TopP4pModifyQuickCampaignTagDto {
 	return r._paramTopP4pModifyQuickCampaignTagDTO
 }

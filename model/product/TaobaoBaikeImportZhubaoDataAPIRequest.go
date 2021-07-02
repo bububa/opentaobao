@@ -37,7 +37,7 @@ func (r TaobaoBaikeImportZhubaoDataAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DataJsonStr Setter
+// SetDataJsonStr is DataJsonStr Setter
 // 约定的Json数据
 func (r *TaobaoBaikeImportZhubaoDataAPIRequest) SetDataJsonStr(_dataJsonStr string) error {
 	r._dataJsonStr = _dataJsonStr
@@ -45,7 +45,7 @@ func (r *TaobaoBaikeImportZhubaoDataAPIRequest) SetDataJsonStr(_dataJsonStr stri
 	return nil
 }
 
-// Get DataJsonStr Getter
+// GetDataJsonStr DataJsonStr Getter
 func (r TaobaoBaikeImportZhubaoDataAPIRequest) GetDataJsonStr() string {
 	return r._dataJsonStr
 }

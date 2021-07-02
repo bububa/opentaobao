@@ -39,7 +39,7 @@ func (r TaobaoNextoneLogisticsSignUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款编号
 func (r *TaobaoNextoneLogisticsSignUpdateAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -47,12 +47,12 @@ func (r *TaobaoNextoneLogisticsSignUpdateAPIRequest) SetRefundId(_refundId int64
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoNextoneLogisticsSignUpdateAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }
 
-// Set is SignStatus Setter
+// SetSignStatus is SignStatus Setter
 // 货物签收状态
 func (r *TaobaoNextoneLogisticsSignUpdateAPIRequest) SetSignStatus(_signStatus int64) error {
 	r._signStatus = _signStatus
@@ -60,7 +60,7 @@ func (r *TaobaoNextoneLogisticsSignUpdateAPIRequest) SetSignStatus(_signStatus i
 	return nil
 }
 
-// Get SignStatus Getter
+// GetSignStatus SignStatus Getter
 func (r TaobaoNextoneLogisticsSignUpdateAPIRequest) GetSignStatus() int64 {
 	return r._signStatus
 }

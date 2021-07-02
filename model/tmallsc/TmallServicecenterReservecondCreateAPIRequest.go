@@ -37,7 +37,7 @@ func (r TmallServicecenterReservecondCreateAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is RocList Setter
+// SetRocList is RocList Setter
 // 主动预约开通条件
 func (r *TmallServicecenterReservecondCreateAPIRequest) SetRocList(_rocList []ReserveOpenConditionDto) error {
 	r._rocList = _rocList
@@ -45,7 +45,7 @@ func (r *TmallServicecenterReservecondCreateAPIRequest) SetRocList(_rocList []Re
 	return nil
 }
 
-// Get RocList Getter
+// GetRocList RocList Getter
 func (r TmallServicecenterReservecondCreateAPIRequest) GetRocList() []ReserveOpenConditionDto {
 	return r._rocList
 }

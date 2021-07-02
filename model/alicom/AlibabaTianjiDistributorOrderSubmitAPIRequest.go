@@ -41,7 +41,7 @@ func (r AlibabaTianjiDistributorOrderSubmitAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ItemSerialNo Setter
+// SetItemSerialNo is ItemSerialNo Setter
 // 商品编码，如手机串号
 func (r *AlibabaTianjiDistributorOrderSubmitAPIRequest) SetItemSerialNo(_itemSerialNo string) error {
 	r._itemSerialNo = _itemSerialNo
@@ -49,12 +49,12 @@ func (r *AlibabaTianjiDistributorOrderSubmitAPIRequest) SetItemSerialNo(_itemSer
 	return nil
 }
 
-// Get ItemSerialNo Getter
+// GetItemSerialNo ItemSerialNo Getter
 func (r AlibabaTianjiDistributorOrderSubmitAPIRequest) GetItemSerialNo() string {
 	return r._itemSerialNo
 }
 
-// Set is OrderNo Setter
+// SetOrderNo is OrderNo Setter
 // 淘宝交易订单号
 func (r *AlibabaTianjiDistributorOrderSubmitAPIRequest) SetOrderNo(_orderNo string) error {
 	r._orderNo = _orderNo
@@ -62,12 +62,12 @@ func (r *AlibabaTianjiDistributorOrderSubmitAPIRequest) SetOrderNo(_orderNo stri
 	return nil
 }
 
-// Get OrderNo Getter
+// GetOrderNo OrderNo Getter
 func (r AlibabaTianjiDistributorOrderSubmitAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }
 
-// Set is ProductSerialNo Setter
+// SetProductSerialNo is ProductSerialNo Setter
 // 供应商产品编码，如SIM卡号
 func (r *AlibabaTianjiDistributorOrderSubmitAPIRequest) SetProductSerialNo(_productSerialNo string) error {
 	r._productSerialNo = _productSerialNo
@@ -75,7 +75,7 @@ func (r *AlibabaTianjiDistributorOrderSubmitAPIRequest) SetProductSerialNo(_prod
 	return nil
 }
 
-// Get ProductSerialNo Getter
+// GetProductSerialNo ProductSerialNo Getter
 func (r AlibabaTianjiDistributorOrderSubmitAPIRequest) GetProductSerialNo() string {
 	return r._productSerialNo
 }

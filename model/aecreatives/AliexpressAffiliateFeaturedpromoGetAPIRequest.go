@@ -39,7 +39,7 @@ func (r AliexpressAffiliateFeaturedpromoGetAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is AppSignature Setter
+// SetAppSignature is AppSignature Setter
 // 请求签名
 func (r *AliexpressAffiliateFeaturedpromoGetAPIRequest) SetAppSignature(_appSignature string) error {
 	r._appSignature = _appSignature
@@ -47,12 +47,12 @@ func (r *AliexpressAffiliateFeaturedpromoGetAPIRequest) SetAppSignature(_appSign
 	return nil
 }
 
-// Get AppSignature Getter
+// GetAppSignature AppSignature Getter
 func (r AliexpressAffiliateFeaturedpromoGetAPIRequest) GetAppSignature() string {
 	return r._appSignature
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回字段列表
 func (r *AliexpressAffiliateFeaturedpromoGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -60,7 +60,7 @@ func (r *AliexpressAffiliateFeaturedpromoGetAPIRequest) SetFields(_fields string
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r AliexpressAffiliateFeaturedpromoGetAPIRequest) GetFields() string {
 	return r._fields
 }

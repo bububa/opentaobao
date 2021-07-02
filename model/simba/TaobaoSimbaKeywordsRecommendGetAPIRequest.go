@@ -49,7 +49,7 @@ func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -57,12 +57,12 @@ func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetNick(_nick string) error 
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广组ID
 func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -70,12 +70,12 @@ func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetAdgroupId(_adgroupId int6
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }
 
-// Set is Search Setter
+// SetSearch is Search Setter
 // 搜索量,设置此值后返回的就是大于此搜索量的词列表
 func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetSearch(_search int64) error {
 	r._search = _search
@@ -83,12 +83,12 @@ func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetSearch(_search int64) err
 	return nil
 }
 
-// Get Search Getter
+// GetSearch Search Getter
 func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetSearch() int64 {
 	return r._search
 }
 
-// Set is Pertinence Setter
+// SetPertinence is Pertinence Setter
 // 相关度
 func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetPertinence(_pertinence string) error {
 	r._pertinence = _pertinence
@@ -96,12 +96,12 @@ func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetPertinence(_pertinence st
 	return nil
 }
 
-// Get Pertinence Getter
+// GetPertinence Pertinence Getter
 func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetPertinence() string {
 	return r._pertinence
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 返回的每页数据量大小,最大200
 func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -109,12 +109,12 @@ func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetPageSize(_pageSize int64)
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 返回的第几页数据，默认为1
 func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -122,12 +122,12 @@ func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetPageNo(_pageNo int64) err
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is OrderBy Setter
+// SetOrderBy is OrderBy Setter
 // 排序方式: 搜索量 search_volume 市场平均价格 average_price 相关度 relevance 不排序 non 默认为 non
 func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetOrderBy(_orderBy string) error {
 	r._orderBy = _orderBy
@@ -135,7 +135,7 @@ func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetOrderBy(_orderBy string) 
 	return nil
 }
 
-// Get OrderBy Getter
+// GetOrderBy OrderBy Getter
 func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetOrderBy() string {
 	return r._orderBy
 }

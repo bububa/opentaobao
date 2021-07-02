@@ -37,7 +37,7 @@ func (r TaobaoTopOnceTokenGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SecToken Setter
+// SetSecToken is SecToken Setter
 // sec_token
 func (r *TaobaoTopOnceTokenGetAPIRequest) SetSecToken(_secToken string) error {
 	r._secToken = _secToken
@@ -45,7 +45,7 @@ func (r *TaobaoTopOnceTokenGetAPIRequest) SetSecToken(_secToken string) error {
 	return nil
 }
 
-// Get SecToken Getter
+// GetSecToken SecToken Getter
 func (r TaobaoTopOnceTokenGetAPIRequest) GetSecToken() string {
 	return r._secToken
 }

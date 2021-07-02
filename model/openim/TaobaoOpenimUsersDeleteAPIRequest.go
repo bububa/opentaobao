@@ -37,7 +37,7 @@ func (r TaobaoOpenimUsersDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Userids Setter
+// SetUserids is Userids Setter
 // 需要删除的用户列表，多个用户用半角逗号分隔，最多一次可以删除100个用户
 func (r *TaobaoOpenimUsersDeleteAPIRequest) SetUserids(_userids []string) error {
 	r._userids = _userids
@@ -45,7 +45,7 @@ func (r *TaobaoOpenimUsersDeleteAPIRequest) SetUserids(_userids []string) error 
 	return nil
 }
 
-// Get Userids Getter
+// GetUserids Userids Getter
 func (r TaobaoOpenimUsersDeleteAPIRequest) GetUserids() []string {
 	return r._userids
 }

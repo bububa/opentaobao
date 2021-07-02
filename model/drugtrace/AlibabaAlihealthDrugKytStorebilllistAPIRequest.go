@@ -47,7 +47,7 @@ func (r AlibabaAlihealthDrugKytStorebilllistAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugKytStorebilllistAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -55,12 +55,12 @@ func (r *AlibabaAlihealthDrugKytStorebilllistAPIRequest) SetRefEntId(_refEntId s
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytStorebilllistAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 开始日期
 func (r *AlibabaAlihealthDrugKytStorebilllistAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -68,12 +68,12 @@ func (r *AlibabaAlihealthDrugKytStorebilllistAPIRequest) SetStartDate(_startDate
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r AlibabaAlihealthDrugKytStorebilllistAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 结束日期
 func (r *AlibabaAlihealthDrugKytStorebilllistAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -81,12 +81,12 @@ func (r *AlibabaAlihealthDrugKytStorebilllistAPIRequest) SetEndDate(_endDate str
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r AlibabaAlihealthDrugKytStorebilllistAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is BillStatus Setter
+// SetBillStatus is BillStatus Setter
 // 单据状态(A全部 1上传成功 3处理成功 4处理失败 )
 func (r *AlibabaAlihealthDrugKytStorebilllistAPIRequest) SetBillStatus(_billStatus string) error {
 	r._billStatus = _billStatus
@@ -94,12 +94,12 @@ func (r *AlibabaAlihealthDrugKytStorebilllistAPIRequest) SetBillStatus(_billStat
 	return nil
 }
 
-// Get BillStatus Getter
+// GetBillStatus BillStatus Getter
 func (r AlibabaAlihealthDrugKytStorebilllistAPIRequest) GetBillStatus() string {
 	return r._billStatus
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 页码
 func (r *AlibabaAlihealthDrugKytStorebilllistAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -107,12 +107,12 @@ func (r *AlibabaAlihealthDrugKytStorebilllistAPIRequest) SetPage(_page int64) er
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaAlihealthDrugKytStorebilllistAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页数
 func (r *AlibabaAlihealthDrugKytStorebilllistAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -120,7 +120,7 @@ func (r *AlibabaAlihealthDrugKytStorebilllistAPIRequest) SetPageSize(_pageSize i
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaAlihealthDrugKytStorebilllistAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

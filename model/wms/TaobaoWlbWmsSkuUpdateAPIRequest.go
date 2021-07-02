@@ -111,7 +111,7 @@ func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 外部系统ID
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetItemId(_itemId string) error {
 	r._itemId = _itemId
@@ -119,12 +119,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetItemId(_itemId string) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetItemId() string {
 	return r._itemId
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 仓库编码
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -132,12 +132,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetStoreCode(_storeCode string) error 
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 商品名称
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -145,12 +145,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 商品标题
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -158,12 +158,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// Set is Category Setter
+// SetCategory is Category Setter
 // 商品类别编码（外部系统类别）
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetCategory(_category string) error {
 	r._category = _category
@@ -171,12 +171,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetCategory(_category string) error {
 	return nil
 }
 
-// Get Category Getter
+// GetCategory Category Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetCategory() string {
 	return r._category
 }
 
-// Set is CategoryName Setter
+// SetCategoryName is CategoryName Setter
 // 商品类别名称
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetCategoryName(_categoryName string) error {
 	r._categoryName = _categoryName
@@ -184,12 +184,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetCategoryName(_categoryName string) 
 	return nil
 }
 
-// Get CategoryName Getter
+// GetCategoryName CategoryName Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetCategoryName() string {
 	return r._categoryName
 }
 
-// Set is Brand Setter
+// SetBrand is Brand Setter
 // 品牌编码
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetBrand(_brand string) error {
 	r._brand = _brand
@@ -197,12 +197,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetBrand(_brand string) error {
 	return nil
 }
 
-// Get Brand Getter
+// GetBrand Brand Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetBrand() string {
 	return r._brand
 }
 
-// Set is BrandName Setter
+// SetBrandName is BrandName Setter
 // 品牌名称
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetBrandName(_brandName string) error {
 	r._brandName = _brandName
@@ -210,12 +210,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetBrandName(_brandName string) error 
 	return nil
 }
 
-// Get BrandName Getter
+// GetBrandName BrandName Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetBrandName() string {
 	return r._brandName
 }
 
-// Set is Specification Setter
+// SetSpecification is Specification Setter
 // 规格
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetSpecification(_specification string) error {
 	r._specification = _specification
@@ -223,12 +223,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetSpecification(_specification string
 	return nil
 }
 
-// Get Specification Getter
+// GetSpecification Specification Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetSpecification() string {
 	return r._specification
 }
 
-// Set is Color Setter
+// SetColor is Color Setter
 // 颜色
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetColor(_color string) error {
 	r._color = _color
@@ -236,12 +236,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetColor(_color string) error {
 	return nil
 }
 
-// Get Color Getter
+// GetColor Color Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetColor() string {
 	return r._color
 }
 
-// Set is Size Setter
+// SetSize is Size Setter
 // 尺码
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetSize(_size string) error {
 	r._size = _size
@@ -249,12 +249,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetSize(_size string) error {
 	return nil
 }
 
-// Get Size Getter
+// GetSize Size Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetSize() string {
 	return r._size
 }
 
-// Set is GrossWeight Setter
+// SetGrossWeight is GrossWeight Setter
 // 毛重，单位克
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetGrossWeight(_grossWeight int64) error {
 	r._grossWeight = _grossWeight
@@ -262,12 +262,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetGrossWeight(_grossWeight int64) err
 	return nil
 }
 
-// Get GrossWeight Getter
+// GetGrossWeight GrossWeight Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetGrossWeight() int64 {
 	return r._grossWeight
 }
 
-// Set is NetWeight Setter
+// SetNetWeight is NetWeight Setter
 // 净重，单位克
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetNetWeight(_netWeight int64) error {
 	r._netWeight = _netWeight
@@ -275,12 +275,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetNetWeight(_netWeight int64) error {
 	return nil
 }
 
-// Get NetWeight Getter
+// GetNetWeight NetWeight Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetNetWeight() int64 {
 	return r._netWeight
 }
 
-// Set is Length Setter
+// SetLength is Length Setter
 // 长度，单位毫米
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetLength(_length int64) error {
 	r._length = _length
@@ -288,12 +288,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetLength(_length int64) error {
 	return nil
 }
 
-// Get Length Getter
+// GetLength Length Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetLength() int64 {
 	return r._length
 }
 
-// Set is Width Setter
+// SetWidth is Width Setter
 // 宽度，单位毫米
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetWidth(_width int64) error {
 	r._width = _width
@@ -301,12 +301,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetWidth(_width int64) error {
 	return nil
 }
 
-// Get Width Getter
+// GetWidth Width Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetWidth() int64 {
 	return r._width
 }
 
-// Set is Height Setter
+// SetHeight is Height Setter
 // 高度，单位毫米
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetHeight(_height int64) error {
 	r._height = _height
@@ -314,12 +314,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetHeight(_height int64) error {
 	return nil
 }
 
-// Get Height Getter
+// GetHeight Height Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetHeight() int64 {
 	return r._height
 }
 
-// Set is Volume Setter
+// SetVolume is Volume Setter
 // 体积，单位立方厘米
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetVolume(_volume int64) error {
 	r._volume = _volume
@@ -327,12 +327,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetVolume(_volume int64) error {
 	return nil
 }
 
-// Get Volume Getter
+// GetVolume Volume Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetVolume() int64 {
 	return r._volume
 }
 
-// Set is Pcs Setter
+// SetPcs is Pcs Setter
 // 箱规
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetPcs(_pcs int64) error {
 	r._pcs = _pcs
@@ -340,12 +340,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetPcs(_pcs int64) error {
 	return nil
 }
 
-// Get Pcs Getter
+// GetPcs Pcs Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetPcs() int64 {
 	return r._pcs
 }
 
-// Set is OriginAddress Setter
+// SetOriginAddress is OriginAddress Setter
 // 产地
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetOriginAddress(_originAddress int64) error {
 	r._originAddress = _originAddress
@@ -353,12 +353,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetOriginAddress(_originAddress int64)
 	return nil
 }
 
-// Get OriginAddress Getter
+// GetOriginAddress OriginAddress Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetOriginAddress() int64 {
 	return r._originAddress
 }
 
-// Set is ApprovalNumber Setter
+// SetApprovalNumber is ApprovalNumber Setter
 // 批准文号
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetApprovalNumber(_approvalNumber string) error {
 	r._approvalNumber = _approvalNumber
@@ -366,12 +366,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetApprovalNumber(_approvalNumber stri
 	return nil
 }
 
-// Get ApprovalNumber Getter
+// GetApprovalNumber ApprovalNumber Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetApprovalNumber() string {
 	return r._approvalNumber
 }
 
-// Set is IsShelflife Setter
+// SetIsShelflife is IsShelflife Setter
 // 是否启用保质期管理
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsShelflife(_isShelflife bool) error {
 	r._isShelflife = _isShelflife
@@ -379,12 +379,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsShelflife(_isShelflife bool) erro
 	return nil
 }
 
-// Get IsShelflife Getter
+// GetIsShelflife IsShelflife Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsShelflife() bool {
 	return r._isShelflife
 }
 
-// Set is Lifecycle Setter
+// SetLifecycle is Lifecycle Setter
 // 商品保质期天数
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetLifecycle(_lifecycle int64) error {
 	r._lifecycle = _lifecycle
@@ -392,12 +392,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetLifecycle(_lifecycle int64) error {
 	return nil
 }
 
-// Get Lifecycle Getter
+// GetLifecycle Lifecycle Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetLifecycle() int64 {
 	return r._lifecycle
 }
 
-// Set is RejectLifecycle Setter
+// SetRejectLifecycle is RejectLifecycle Setter
 // 保质期禁收天数
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetRejectLifecycle(_rejectLifecycle int64) error {
 	r._rejectLifecycle = _rejectLifecycle
@@ -405,12 +405,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetRejectLifecycle(_rejectLifecycle in
 	return nil
 }
 
-// Get RejectLifecycle Getter
+// GetRejectLifecycle RejectLifecycle Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetRejectLifecycle() int64 {
 	return r._rejectLifecycle
 }
 
-// Set is LockupLifecycle Setter
+// SetLockupLifecycle is LockupLifecycle Setter
 // 保质期禁售天数
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetLockupLifecycle(_lockupLifecycle int64) error {
 	r._lockupLifecycle = _lockupLifecycle
@@ -418,12 +418,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetLockupLifecycle(_lockupLifecycle in
 	return nil
 }
 
-// Get LockupLifecycle Getter
+// GetLockupLifecycle LockupLifecycle Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetLockupLifecycle() int64 {
 	return r._lockupLifecycle
 }
 
-// Set is AdventLifecycle Setter
+// SetAdventLifecycle is AdventLifecycle Setter
 // 保质期预警天数
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetAdventLifecycle(_adventLifecycle int64) error {
 	r._adventLifecycle = _adventLifecycle
@@ -431,12 +431,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetAdventLifecycle(_adventLifecycle in
 	return nil
 }
 
-// Get AdventLifecycle Getter
+// GetAdventLifecycle AdventLifecycle Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetAdventLifecycle() int64 {
 	return r._adventLifecycle
 }
 
-// Set is IsSnMgt Setter
+// SetIsSnMgt is IsSnMgt Setter
 // 是否启用序列号管理
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsSnMgt(_isSnMgt bool) error {
 	r._isSnMgt = _isSnMgt
@@ -444,12 +444,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsSnMgt(_isSnMgt bool) error {
 	return nil
 }
 
-// Get IsSnMgt Getter
+// GetIsSnMgt IsSnMgt Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsSnMgt() bool {
 	return r._isSnMgt
 }
 
-// Set is IsHygroscopic Setter
+// SetIsHygroscopic is IsHygroscopic Setter
 // 是否易碎品
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsHygroscopic(_isHygroscopic bool) error {
 	r._isHygroscopic = _isHygroscopic
@@ -457,12 +457,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsHygroscopic(_isHygroscopic bool) 
 	return nil
 }
 
-// Get IsHygroscopic Getter
+// GetIsHygroscopic IsHygroscopic Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsHygroscopic() bool {
 	return r._isHygroscopic
 }
 
-// Set is IsDanger Setter
+// SetIsDanger is IsDanger Setter
 // 是否危险品
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsDanger(_isDanger bool) error {
 	r._isDanger = _isDanger
@@ -470,12 +470,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsDanger(_isDanger bool) error {
 	return nil
 }
 
-// Get IsDanger Getter
+// GetIsDanger IsDanger Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsDanger() bool {
 	return r._isDanger
 }
 
-// Set is TagPrice Setter
+// SetTagPrice is TagPrice Setter
 // 吊牌价，单位分
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetTagPrice(_tagPrice int64) error {
 	r._tagPrice = _tagPrice
@@ -483,12 +483,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetTagPrice(_tagPrice int64) error {
 	return nil
 }
 
-// Get TagPrice Getter
+// GetTagPrice TagPrice Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetTagPrice() int64 {
 	return r._tagPrice
 }
 
-// Set is ItemPrice Setter
+// SetItemPrice is ItemPrice Setter
 // 零售价，单位分
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetItemPrice(_itemPrice int64) error {
 	r._itemPrice = _itemPrice
@@ -496,12 +496,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetItemPrice(_itemPrice int64) error {
 	return nil
 }
 
-// Get ItemPrice Getter
+// GetItemPrice ItemPrice Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetItemPrice() int64 {
 	return r._itemPrice
 }
 
-// Set is CostPrice Setter
+// SetCostPrice is CostPrice Setter
 // 成本价，单位分
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetCostPrice(_costPrice int64) error {
 	r._costPrice = _costPrice
@@ -509,12 +509,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetCostPrice(_costPrice int64) error {
 	return nil
 }
 
-// Get CostPrice Getter
+// GetCostPrice CostPrice Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetCostPrice() int64 {
 	return r._costPrice
 }
 
-// Set is IsBatchMgt Setter
+// SetIsBatchMgt is IsBatchMgt Setter
 // 是否启用批次管理
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsBatchMgt(_isBatchMgt bool) error {
 	r._isBatchMgt = _isBatchMgt
@@ -522,12 +522,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsBatchMgt(_isBatchMgt bool) error 
 	return nil
 }
 
-// Get IsBatchMgt Getter
+// GetIsBatchMgt IsBatchMgt Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsBatchMgt() bool {
 	return r._isBatchMgt
 }
 
-// Set is UseYn Setter
+// SetUseYn is UseYn Setter
 // 启用标识
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetUseYn(_useYn bool) error {
 	r._useYn = _useYn
@@ -535,12 +535,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetUseYn(_useYn bool) error {
 	return nil
 }
 
-// Get UseYn Getter
+// GetUseYn UseYn Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetUseYn() bool {
 	return r._useYn
 }
 
-// Set is ExtendFields Setter
+// SetExtendFields is ExtendFields Setter
 // 拓展属性
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetExtendFields(_extendFields string) error {
 	r._extendFields = _extendFields
@@ -548,12 +548,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetExtendFields(_extendFields string) 
 	return nil
 }
 
-// Get ExtendFields Getter
+// GetExtendFields ExtendFields Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetExtendFields() string {
 	return r._extendFields
 }
 
-// Set is BarCode Setter
+// SetBarCode is BarCode Setter
 // 条形码，多条码请用”;”分隔；条码更新只技术增量更新，已有条码无法修改，只能在原条码基础上增加新的条码。例：原商品条码为：BAR001，要增加一条新条码BAR002时，此字段内容应填写为：BAR001;BAR002
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetBarCode(_barCode string) error {
 	r._barCode = _barCode
@@ -561,12 +561,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetBarCode(_barCode string) error {
 	return nil
 }
 
-// Get BarCode Getter
+// GetBarCode BarCode Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetBarCode() string {
 	return r._barCode
 }
 
-// Set is Attribute Setter
+// SetAttribute is Attribute Setter
 // 商品属性编码
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetAttribute(_attribute string) error {
 	r._attribute = _attribute
@@ -574,12 +574,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetAttribute(_attribute string) error 
 	return nil
 }
 
-// Get Attribute Getter
+// GetAttribute Attribute Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetAttribute() string {
 	return r._attribute
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 商品类型:NORMAL-普通商品、 COMBINE-组合商品、 DISTRIBUTION-分销商品
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -587,12 +587,12 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is IsAreaSale Setter
+// SetIsAreaSale is IsAreaSale Setter
 // 是否区域销售属性
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsAreaSale(_isAreaSale bool) error {
 	r._isAreaSale = _isAreaSale
@@ -600,7 +600,7 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsAreaSale(_isAreaSale bool) error 
 	return nil
 }
 
-// Get IsAreaSale Getter
+// GetIsAreaSale IsAreaSale Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsAreaSale() bool {
 	return r._isAreaSale
 }

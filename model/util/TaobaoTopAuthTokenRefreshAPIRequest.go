@@ -37,7 +37,7 @@ func (r TaobaoTopAuthTokenRefreshAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefreshToken Setter
+// SetRefreshToken is RefreshToken Setter
 // grantType==refresh_token 时需要
 func (r *TaobaoTopAuthTokenRefreshAPIRequest) SetRefreshToken(_refreshToken string) error {
 	r._refreshToken = _refreshToken
@@ -45,7 +45,7 @@ func (r *TaobaoTopAuthTokenRefreshAPIRequest) SetRefreshToken(_refreshToken stri
 	return nil
 }
 
-// Get RefreshToken Getter
+// GetRefreshToken RefreshToken Getter
 func (r TaobaoTopAuthTokenRefreshAPIRequest) GetRefreshToken() string {
 	return r._refreshToken
 }

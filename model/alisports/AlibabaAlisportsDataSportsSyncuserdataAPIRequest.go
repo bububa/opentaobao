@@ -67,7 +67,7 @@ func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is AlispAppKey Setter
+// SetAlispAppKey is AlispAppKey Setter
 // 应用appkey
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetAlispAppKey(_alispAppKey string) error {
 	r._alispAppKey = _alispAppKey
@@ -75,12 +75,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetAlispAppKey(_alisp
 	return nil
 }
 
-// Get AlispAppKey Getter
+// GetAlispAppKey AlispAppKey Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetAlispAppKey() string {
 	return r._alispAppKey
 }
 
-// Set is Metabolize Setter
+// SetMetabolize is Metabolize Setter
 // 基础代谢率
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetMetabolize(_metabolize string) error {
 	r._metabolize = _metabolize
@@ -88,12 +88,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetMetabolize(_metabo
 	return nil
 }
 
-// Get Metabolize Getter
+// GetMetabolize Metabolize Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetMetabolize() string {
 	return r._metabolize
 }
 
-// Set is Protein Setter
+// SetProtein is Protein Setter
 // 蛋白质含量
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetProtein(_protein string) error {
 	r._protein = _protein
@@ -101,12 +101,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetProtein(_protein s
 	return nil
 }
 
-// Get Protein Getter
+// GetProtein Protein Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetProtein() string {
 	return r._protein
 }
 
-// Set is Bone Setter
+// SetBone is Bone Setter
 // 骨量
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetBone(_bone string) error {
 	r._bone = _bone
@@ -114,12 +114,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetBone(_bone string)
 	return nil
 }
 
-// Get Bone Getter
+// GetBone Bone Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetBone() string {
 	return r._bone
 }
 
-// Set is Water Setter
+// SetWater is Water Setter
 // 水分率
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetWater(_water string) error {
 	r._water = _water
@@ -127,12 +127,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetWater(_water strin
 	return nil
 }
 
-// Get Water Getter
+// GetWater Water Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetWater() string {
 	return r._water
 }
 
-// Set is Muscle Setter
+// SetMuscle is Muscle Setter
 // 肌肉率
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetMuscle(_muscle string) error {
 	r._muscle = _muscle
@@ -140,12 +140,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetMuscle(_muscle str
 	return nil
 }
 
-// Get Muscle Getter
+// GetMuscle Muscle Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetMuscle() string {
 	return r._muscle
 }
 
-// Set is Fat Setter
+// SetFat is Fat Setter
 // 体脂率
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetFat(_fat string) error {
 	r._fat = _fat
@@ -153,12 +153,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetFat(_fat string) e
 	return nil
 }
 
-// Get Fat Getter
+// GetFat Fat Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetFat() string {
 	return r._fat
 }
 
-// Set is HeartRate Setter
+// SetHeartRate is HeartRate Setter
 // 静息心率，单位：次/每分
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetHeartRate(_heartRate int64) error {
 	r._heartRate = _heartRate
@@ -166,12 +166,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetHeartRate(_heartRa
 	return nil
 }
 
-// Get HeartRate Getter
+// GetHeartRate HeartRate Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetHeartRate() int64 {
 	return r._heartRate
 }
 
-// Set is Weight Setter
+// SetWeight is Weight Setter
 // 体重，单位kg
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetWeight(_weight string) error {
 	r._weight = _weight
@@ -179,12 +179,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetWeight(_weight str
 	return nil
 }
 
-// Get Weight Getter
+// GetWeight Weight Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetWeight() string {
 	return r._weight
 }
 
-// Set is Height Setter
+// SetHeight is Height Setter
 // 身高，单位m
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetHeight(_height string) error {
 	r._height = _height
@@ -192,12 +192,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetHeight(_height str
 	return nil
 }
 
-// Get Height Getter
+// GetHeight Height Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetHeight() string {
 	return r._height
 }
 
-// Set is Age Setter
+// SetAge is Age Setter
 // 年龄
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetAge(_age int64) error {
 	r._age = _age
@@ -205,12 +205,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetAge(_age int64) er
 	return nil
 }
 
-// Get Age Getter
+// GetAge Age Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetAge() int64 {
 	return r._age
 }
 
-// Set is DataId Setter
+// SetDataId is DataId Setter
 // 三方主键id，唯一标识数据
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetDataId(_dataId string) error {
 	r._dataId = _dataId
@@ -218,12 +218,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetDataId(_dataId str
 	return nil
 }
 
-// Get DataId Getter
+// GetDataId DataId Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetDataId() string {
 	return r._dataId
 }
 
-// Set is Aliuid Setter
+// SetAliuid is Aliuid Setter
 // 阿里体育用户id
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetAliuid(_aliuid string) error {
 	r._aliuid = _aliuid
@@ -231,12 +231,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetAliuid(_aliuid str
 	return nil
 }
 
-// Get Aliuid Getter
+// GetAliuid Aliuid Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetAliuid() string {
 	return r._aliuid
 }
 
-// Set is AlispSign Setter
+// SetAlispSign is AlispSign Setter
 // 接口签名
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetAlispSign(_alispSign string) error {
 	r._alispSign = _alispSign
@@ -244,12 +244,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetAlispSign(_alispSi
 	return nil
 }
 
-// Get AlispSign Getter
+// GetAlispSign AlispSign Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetAlispSign() string {
 	return r._alispSign
 }
 
-// Set is AlispTime Setter
+// SetAlispTime is AlispTime Setter
 // 时间戳精确到秒
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetAlispTime(_alispTime string) error {
 	r._alispTime = _alispTime
@@ -257,12 +257,12 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetAlispTime(_alispTi
 	return nil
 }
 
-// Get AlispTime Getter
+// GetAlispTime AlispTime Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetAlispTime() string {
 	return r._alispTime
 }
 
-// Set is Time Setter
+// SetTime is Time Setter
 // 日期 格式：y-m-d h:i:s
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetTime(_time string) error {
 	r._time = _time
@@ -270,7 +270,7 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetTime(_time string)
 	return nil
 }
 
-// Get Time Getter
+// GetTime Time Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetTime() string {
 	return r._time
 }

@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenPushitemAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PushItemParam Setter
+// SetPushItemParam is PushItemParam Setter
 // 入参pushItemParam
 func (r *AlibabaDamaiMevOpenPushitemAPIRequest) SetPushItemParam(_pushItemParam *PushTicketItemPushOpenParam) error {
 	r._pushItemParam = _pushItemParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenPushitemAPIRequest) SetPushItemParam(_pushItemParam 
 	return nil
 }
 
-// Get PushItemParam Getter
+// GetPushItemParam PushItemParam Getter
 func (r AlibabaDamaiMevOpenPushitemAPIRequest) GetPushItemParam() *PushTicketItemPushOpenParam {
 	return r._pushItemParam
 }

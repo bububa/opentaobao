@@ -37,7 +37,7 @@ func (r TaobaoJdsTradeTracesGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝的订单tid
 func (r *TaobaoJdsTradeTracesGetAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -45,7 +45,7 @@ func (r *TaobaoJdsTradeTracesGetAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoJdsTradeTracesGetAPIRequest) GetTid() int64 {
 	return r._tid
 }

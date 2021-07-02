@@ -37,7 +37,7 @@ func (r AlibabaWdkItemStoreskustatusUpdateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Bean Setter
+// SetBean is Bean Setter
 // bean
 func (r *AlibabaWdkItemStoreskustatusUpdateAPIRequest) SetBean(_bean *UpdateStoreSkuLifeStatusRequestBean) error {
 	r._bean = _bean
@@ -45,7 +45,7 @@ func (r *AlibabaWdkItemStoreskustatusUpdateAPIRequest) SetBean(_bean *UpdateStor
 	return nil
 }
 
-// Get Bean Getter
+// GetBean Bean Getter
 func (r AlibabaWdkItemStoreskustatusUpdateAPIRequest) GetBean() *UpdateStoreSkuLifeStatusRequestBean {
 	return r._bean
 }

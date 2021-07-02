@@ -37,7 +37,7 @@ func (r TaobaoOcOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOCOrder Setter
+// SetParamOCOrder is ParamOCOrder Setter
 // OC订单
 func (r *TaobaoOcOrderCreateAPIRequest) SetParamOCOrder(_paramOCOrder *OcOrder) error {
 	r._paramOCOrder = _paramOCOrder
@@ -45,7 +45,7 @@ func (r *TaobaoOcOrderCreateAPIRequest) SetParamOCOrder(_paramOCOrder *OcOrder) 
 	return nil
 }
 
-// Get ParamOCOrder Getter
+// GetParamOCOrder ParamOCOrder Getter
 func (r TaobaoOcOrderCreateAPIRequest) GetParamOCOrder() *OcOrder {
 	return r._paramOCOrder
 }

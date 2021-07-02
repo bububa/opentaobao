@@ -40,7 +40,7 @@ func (r TaobaoWangwangEserviceChatrelationGetAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ChatRelationRequest Setter
+// SetChatRelationRequest is ChatRelationRequest Setter
 // 请求参数
 func (r *TaobaoWangwangEserviceChatrelationGetAPIRequest) SetChatRelationRequest(_chatRelationRequest *ChatRelationRequest) error {
 	r._chatRelationRequest = _chatRelationRequest
@@ -48,7 +48,7 @@ func (r *TaobaoWangwangEserviceChatrelationGetAPIRequest) SetChatRelationRequest
 	return nil
 }
 
-// Get ChatRelationRequest Getter
+// GetChatRelationRequest ChatRelationRequest Getter
 func (r TaobaoWangwangEserviceChatrelationGetAPIRequest) GetChatRelationRequest() *ChatRelationRequest {
 	return r._chatRelationRequest
 }

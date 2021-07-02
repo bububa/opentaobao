@@ -37,7 +37,7 @@ func (r TaobaoWangwangAbstractGetwordlistAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Charset Setter
+// SetCharset is Charset Setter
 // 传入参数的字符集
 func (r *TaobaoWangwangAbstractGetwordlistAPIRequest) SetCharset(_charset string) error {
 	r._charset = _charset
@@ -45,7 +45,7 @@ func (r *TaobaoWangwangAbstractGetwordlistAPIRequest) SetCharset(_charset string
 	return nil
 }
 
-// Get Charset Getter
+// GetCharset Charset Getter
 func (r TaobaoWangwangAbstractGetwordlistAPIRequest) GetCharset() string {
 	return r._charset
 }

@@ -91,7 +91,7 @@ func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is IsAuth Setter
+// SetIsAuth is IsAuth Setter
 // 是否需要用户授权
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetIsAuth(_isAuth string) error {
 	r._isAuth = _isAuth
@@ -99,12 +99,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetIsAuth(_isAuth st
 	return nil
 }
 
-// Get IsAuth Getter
+// GetIsAuth IsAuth Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetIsAuth() string {
 	return r._isAuth
 }
 
-// Set is Lat Setter
+// SetLat is Lat Setter
 // 主院区纬度
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetLat(_lat string) error {
 	r._lat = _lat
@@ -112,12 +112,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetLat(_lat string) 
 	return nil
 }
 
-// Get Lat Getter
+// GetLat Lat Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetLat() string {
 	return r._lat
 }
 
-// Set is Lon Setter
+// SetLon is Lon Setter
 // 主院区经度
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetLon(_lon string) error {
 	r._lon = _lon
@@ -125,12 +125,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetLon(_lon string) 
 	return nil
 }
 
-// Get Lon Getter
+// GetLon Lon Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetLon() string {
 	return r._lon
 }
 
-// Set is HosAddress Setter
+// SetHosAddress is HosAddress Setter
 // 主院区地址
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetHosAddress(_hosAddress string) error {
 	r._hosAddress = _hosAddress
@@ -138,12 +138,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetHosAddress(_hosAd
 	return nil
 }
 
-// Get HosAddress Getter
+// GetHosAddress HosAddress Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetHosAddress() string {
 	return r._hosAddress
 }
 
-// Set is Telephone Setter
+// SetTelephone is Telephone Setter
 // 主院区的联系电话
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetTelephone(_telephone string) error {
 	r._telephone = _telephone
@@ -151,12 +151,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetTelephone(_teleph
 	return nil
 }
 
-// Get Telephone Getter
+// GetTelephone Telephone Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetTelephone() string {
 	return r._telephone
 }
 
-// Set is RegionName Setter
+// SetRegionName is RegionName Setter
 // 院区名称
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetRegionName(_regionName string) error {
 	r._regionName = _regionName
@@ -164,12 +164,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetRegionName(_regio
 	return nil
 }
 
-// Get RegionName Getter
+// GetRegionName RegionName Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetRegionName() string {
 	return r._regionName
 }
 
-// Set is IsPublic Setter
+// SetIsPublic is IsPublic Setter
 // 是否公立医院（Y／N）
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetIsPublic(_isPublic string) error {
 	r._isPublic = _isPublic
@@ -177,12 +177,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetIsPublic(_isPubli
 	return nil
 }
 
-// Get IsPublic Getter
+// GetIsPublic IsPublic Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetIsPublic() string {
 	return r._isPublic
 }
 
-// Set is ServiceInfo Setter
+// SetServiceInfo is ServiceInfo Setter
 // 标签
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetServiceInfo(_serviceInfo string) error {
 	r._serviceInfo = _serviceInfo
@@ -190,12 +190,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetServiceInfo(_serv
 	return nil
 }
 
-// Get ServiceInfo Getter
+// GetServiceInfo ServiceInfo Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetServiceInfo() string {
 	return r._serviceInfo
 }
 
-// Set is Special Setter
+// SetSpecial is Special Setter
 // 自定义科室
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetSpecial(_special string) error {
 	r._special = _special
@@ -203,12 +203,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetSpecial(_special 
 	return nil
 }
 
-// Get Special Getter
+// GetSpecial Special Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetSpecial() string {
 	return r._special
 }
 
-// Set is ServiceWindowUrl Setter
+// SetServiceWindowUrl is ServiceWindowUrl Setter
 // 生活号或者服务窗url
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetServiceWindowUrl(_serviceWindowUrl string) error {
 	r._serviceWindowUrl = _serviceWindowUrl
@@ -216,12 +216,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetServiceWindowUrl(
 	return nil
 }
 
-// Get ServiceWindowUrl Getter
+// GetServiceWindowUrl ServiceWindowUrl Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetServiceWindowUrl() string {
 	return r._serviceWindowUrl
 }
 
-// Set is DescriptionUrl Setter
+// SetDescriptionUrl is DescriptionUrl Setter
 // 医院简介url
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetDescriptionUrl(_descriptionUrl string) error {
 	r._descriptionUrl = _descriptionUrl
@@ -229,12 +229,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetDescriptionUrl(_d
 	return nil
 }
 
-// Get DescriptionUrl Getter
+// GetDescriptionUrl DescriptionUrl Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetDescriptionUrl() string {
 	return r._descriptionUrl
 }
 
-// Set is IsInsurance Setter
+// SetIsInsurance is IsInsurance Setter
 // 是否支持医保（Y/N）
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetIsInsurance(_isInsurance string) error {
 	r._isInsurance = _isInsurance
@@ -242,12 +242,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetIsInsurance(_isIn
 	return nil
 }
 
-// Get IsInsurance Getter
+// GetIsInsurance IsInsurance Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetIsInsurance() string {
 	return r._isInsurance
 }
 
-// Set is Grade Setter
+// SetGrade is Grade Setter
 // 医院等级
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetGrade(_grade string) error {
 	r._grade = _grade
@@ -255,12 +255,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetGrade(_grade stri
 	return nil
 }
 
-// Get Grade Getter
+// GetGrade Grade Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetGrade() string {
 	return r._grade
 }
 
-// Set is Category Setter
+// SetCategory is Category Setter
 // 综合(general)、专科（special）
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetCategory(_category string) error {
 	r._category = _category
@@ -268,12 +268,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetCategory(_categor
 	return nil
 }
 
-// Get Category Getter
+// GetCategory Category Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetCategory() string {
 	return r._category
 }
 
-// Set is ShortName Setter
+// SetShortName is ShortName Setter
 // 医院简称
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetShortName(_shortName string) error {
 	r._shortName = _shortName
@@ -281,12 +281,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetShortName(_shortN
 	return nil
 }
 
-// Get ShortName Getter
+// GetShortName ShortName Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetShortName() string {
 	return r._shortName
 }
 
-// Set is Pid Setter
+// SetPid is Pid Setter
 // 医院pid
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetPid(_pid string) error {
 	r._pid = _pid
@@ -294,12 +294,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetPid(_pid string) 
 	return nil
 }
 
-// Get Pid Getter
+// GetPid Pid Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetPid() string {
 	return r._pid
 }
 
-// Set is UnifyCode Setter
+// SetUnifyCode is UnifyCode Setter
 // 机构编码
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetUnifyCode(_unifyCode string) error {
 	r._unifyCode = _unifyCode
@@ -307,12 +307,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetUnifyCode(_unifyC
 	return nil
 }
 
-// Get UnifyCode Getter
+// GetUnifyCode UnifyCode Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetUnifyCode() string {
 	return r._unifyCode
 }
 
-// Set is CityCode Setter
+// SetCityCode is CityCode Setter
 // 所在城市code
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetCityCode(_cityCode string) error {
 	r._cityCode = _cityCode
@@ -320,12 +320,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetCityCode(_cityCod
 	return nil
 }
 
-// Get CityCode Getter
+// GetCityCode CityCode Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetCityCode() string {
 	return r._cityCode
 }
 
-// Set is HosName Setter
+// SetHosName is HosName Setter
 // 营业执照上的医院全称
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetHosName(_hosName string) error {
 	r._hosName = _hosName
@@ -333,12 +333,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetHosName(_hosName 
 	return nil
 }
 
-// Get HosName Getter
+// GetHosName HosName Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetHosName() string {
 	return r._hosName
 }
 
-// Set is CompanyName Setter
+// SetCompanyName is CompanyName Setter
 // 公司名称
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetCompanyName(_companyName string) error {
 	r._companyName = _companyName
@@ -346,12 +346,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetCompanyName(_comp
 	return nil
 }
 
-// Get CompanyName Getter
+// GetCompanyName CompanyName Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetCompanyName() string {
 	return r._companyName
 }
 
-// Set is AliInterfaceMan Setter
+// SetAliInterfaceMan is AliInterfaceMan Setter
 // 支付宝BD的姓名
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetAliInterfaceMan(_aliInterfaceMan string) error {
 	r._aliInterfaceMan = _aliInterfaceMan
@@ -359,12 +359,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetAliInterfaceMan(_
 	return nil
 }
 
-// Get AliInterfaceMan Getter
+// GetAliInterfaceMan AliInterfaceMan Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetAliInterfaceMan() string {
 	return r._aliInterfaceMan
 }
 
-// Set is Email Setter
+// SetEmail is Email Setter
 // 邮箱地址
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetEmail(_email string) error {
 	r._email = _email
@@ -372,12 +372,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetEmail(_email stri
 	return nil
 }
 
-// Get Email Getter
+// GetEmail Email Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetEmail() string {
 	return r._email
 }
 
-// Set is TechnicalMan Setter
+// SetTechnicalMan is TechnicalMan Setter
 // 联系人
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetTechnicalMan(_technicalMan string) error {
 	r._technicalMan = _technicalMan
@@ -385,12 +385,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetTechnicalMan(_tec
 	return nil
 }
 
-// Get TechnicalMan Getter
+// GetTechnicalMan TechnicalMan Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetTechnicalMan() string {
 	return r._technicalMan
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 联系手机
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -398,12 +398,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetPhone(_phone stri
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetPhone() string {
 	return r._phone
 }
 
-// Set is HosType Setter
+// SetHosType is HosType Setter
 // 单医院（main）／ 平台（platform）
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetHosType(_hosType string) error {
 	r._hosType = _hosType
@@ -411,12 +411,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetHosType(_hosType 
 	return nil
 }
 
-// Get HosType Getter
+// GetHosType HosType Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetHosType() string {
 	return r._hosType
 }
 
-// Set is Functions Setter
+// SetFunctions is Functions Setter
 // 服务项列表
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetFunctions(_functions string) error {
 	r._functions = _functions
@@ -424,12 +424,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetFunctions(_functi
 	return nil
 }
 
-// Get Functions Getter
+// GetFunctions Functions Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetFunctions() string {
 	return r._functions
 }
 
-// Set is IsvHosCode Setter
+// SetIsvHosCode is IsvHosCode Setter
 // isv库里面的hosCode
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetIsvHosCode(_isvHosCode string) error {
 	r._isvHosCode = _isvHosCode
@@ -437,12 +437,12 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetIsvHosCode(_isvHo
 	return nil
 }
 
-// Get IsvHosCode Getter
+// GetIsvHosCode IsvHosCode Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetIsvHosCode() string {
 	return r._isvHosCode
 }
 
-// Set is DeliveryChannel Setter
+// SetDeliveryChannel is DeliveryChannel Setter
 // 投放阵地alipay aliyy uc quark
 func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetDeliveryChannel(_deliveryChannel string) error {
 	r._deliveryChannel = _deliveryChannel
@@ -450,7 +450,7 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetDeliveryChannel(_
 	return nil
 }
 
-// Get DeliveryChannel Getter
+// GetDeliveryChannel DeliveryChannel Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetDeliveryChannel() string {
 	return r._deliveryChannel
 }

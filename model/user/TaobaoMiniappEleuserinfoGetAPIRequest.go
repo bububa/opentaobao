@@ -37,7 +37,7 @@ func (r TaobaoMiniappEleuserinfoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizScence Setter
+// SetBizScence is BizScence Setter
 // 怪兽业务方
 func (r *TaobaoMiniappEleuserinfoGetAPIRequest) SetBizScence(_bizScence string) error {
 	r._bizScence = _bizScence
@@ -45,7 +45,7 @@ func (r *TaobaoMiniappEleuserinfoGetAPIRequest) SetBizScence(_bizScence string) 
 	return nil
 }
 
-// Get BizScence Getter
+// GetBizScence BizScence Getter
 func (r TaobaoMiniappEleuserinfoGetAPIRequest) GetBizScence() string {
 	return r._bizScence
 }

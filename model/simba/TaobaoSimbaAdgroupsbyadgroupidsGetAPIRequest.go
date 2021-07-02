@@ -43,7 +43,7 @@ func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -51,12 +51,12 @@ func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetNick(_nick string) err
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is AdgroupIds Setter
+// SetAdgroupIds is AdgroupIds Setter
 // 推广组Id列表
 func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetAdgroupIds(_adgroupIds []int64) error {
 	r._adgroupIds = _adgroupIds
@@ -64,12 +64,12 @@ func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetAdgroupIds(_adgroupIds
 	return nil
 }
 
-// Get AdgroupIds Getter
+// GetAdgroupIds AdgroupIds Getter
 func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetAdgroupIds() []int64 {
 	return r._adgroupIds
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页尺寸，最大200，如果入参adgroup_ids有传入值，则page_size和page_no值不起作用。如果adgrpup_ids为空而campaign_id有值，此时page_size和page_no值才是返回的页数据大小和页码
 func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetPageSize(_pageSize int
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码，从1开始
 func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -90,7 +90,7 @@ func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetPageNo(_pageNo int64) 
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

@@ -39,7 +39,7 @@ func (r TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 昵称
 func (r *TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -47,12 +47,12 @@ func (r *TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) SetNick(_nick string)
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is AdgroupIds Setter
+// SetAdgroupIds is AdgroupIds Setter
 // adgroup主键数组（批量最多支持200个）
 func (r *TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) SetAdgroupIds(_adgroupIds []int64) error {
 	r._adgroupIds = _adgroupIds
@@ -60,7 +60,7 @@ func (r *TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) SetAdgroupIds(_adgrou
 	return nil
 }
 
-// Get AdgroupIds Getter
+// GetAdgroupIds AdgroupIds Getter
 func (r TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) GetAdgroupIds() []int64 {
 	return r._adgroupIds
 }

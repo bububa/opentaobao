@@ -37,7 +37,7 @@ func (r TaobaoBusLastplaceGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamLastPlaceSearchRQ Setter
+// SetParamLastPlaceSearchRQ is ParamLastPlaceSearchRQ Setter
 // 目的地查询参数
 func (r *TaobaoBusLastplaceGetAPIRequest) SetParamLastPlaceSearchRQ(_paramLastPlaceSearchRQ *ParamLastPlaceSearchRq) error {
 	r._paramLastPlaceSearchRQ = _paramLastPlaceSearchRQ
@@ -45,7 +45,7 @@ func (r *TaobaoBusLastplaceGetAPIRequest) SetParamLastPlaceSearchRQ(_paramLastPl
 	return nil
 }
 
-// Get ParamLastPlaceSearchRQ Getter
+// GetParamLastPlaceSearchRQ ParamLastPlaceSearchRQ Getter
 func (r TaobaoBusLastplaceGetAPIRequest) GetParamLastPlaceSearchRQ() *ParamLastPlaceSearchRq {
 	return r._paramLastPlaceSearchRQ
 }

@@ -41,7 +41,7 @@ func (r AlibabaAlihealthTracecodesellerEntSearchAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is SkeyCode Setter
+// SetSkeyCode is SkeyCode Setter
 // appkey
 func (r *AlibabaAlihealthTracecodesellerEntSearchAPIRequest) SetSkeyCode(_skeyCode string) error {
 	r._skeyCode = _skeyCode
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthTracecodesellerEntSearchAPIRequest) SetSkeyCode(_skeyCo
 	return nil
 }
 
-// Get SkeyCode Getter
+// GetSkeyCode SkeyCode Getter
 func (r AlibabaAlihealthTracecodesellerEntSearchAPIRequest) GetSkeyCode() string {
 	return r._skeyCode
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 商家名称
 func (r *AlibabaAlihealthTracecodesellerEntSearchAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthTracecodesellerEntSearchAPIRequest) SetName(_name strin
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlibabaAlihealthTracecodesellerEntSearchAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is TbUserId Setter
+// SetTbUserId is TbUserId Setter
 // 淘宝名
 func (r *AlibabaAlihealthTracecodesellerEntSearchAPIRequest) SetTbUserId(_tbUserId string) error {
 	r._tbUserId = _tbUserId
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthTracecodesellerEntSearchAPIRequest) SetTbUserId(_tbUser
 	return nil
 }
 
-// Get TbUserId Getter
+// GetTbUserId TbUserId Getter
 func (r AlibabaAlihealthTracecodesellerEntSearchAPIRequest) GetTbUserId() string {
 	return r._tbUserId
 }

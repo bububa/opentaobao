@@ -37,7 +37,7 @@ func (r AlibabaWdkTradeRefundCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundGoodsCreateRequest Setter
+// SetRefundGoodsCreateRequest is RefundGoodsCreateRequest Setter
 // 退货请求
 func (r *AlibabaWdkTradeRefundCreateAPIRequest) SetRefundGoodsCreateRequest(_refundGoodsCreateRequest *RefundGoodsCreateRequest) error {
 	r._refundGoodsCreateRequest = _refundGoodsCreateRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkTradeRefundCreateAPIRequest) SetRefundGoodsCreateRequest(_ref
 	return nil
 }
 
-// Get RefundGoodsCreateRequest Getter
+// GetRefundGoodsCreateRequest RefundGoodsCreateRequest Getter
 func (r AlibabaWdkTradeRefundCreateAPIRequest) GetRefundGoodsCreateRequest() *RefundGoodsCreateRequest {
 	return r._refundGoodsCreateRequest
 }

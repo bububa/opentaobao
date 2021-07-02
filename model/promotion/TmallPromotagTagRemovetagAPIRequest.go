@@ -37,7 +37,7 @@ func (r TmallPromotagTagRemovetagAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TagId Setter
+// SetTagId is TagId Setter
 // 需要删除的标签id
 func (r *TmallPromotagTagRemovetagAPIRequest) SetTagId(_tagId int64) error {
 	r._tagId = _tagId
@@ -45,7 +45,7 @@ func (r *TmallPromotagTagRemovetagAPIRequest) SetTagId(_tagId int64) error {
 	return nil
 }
 
-// Get TagId Getter
+// GetTagId TagId Getter
 func (r TmallPromotagTagRemovetagAPIRequest) GetTagId() int64 {
 	return r._tagId
 }

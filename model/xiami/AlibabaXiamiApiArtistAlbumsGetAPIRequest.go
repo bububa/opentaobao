@@ -41,7 +41,7 @@ func (r AlibabaXiamiApiArtistAlbumsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Limit Setter
+// SetLimit is Limit Setter
 // 歌曲数量
 func (r *AlibabaXiamiApiArtistAlbumsGetAPIRequest) SetLimit(_limit int64) error {
 	r._limit = _limit
@@ -49,12 +49,12 @@ func (r *AlibabaXiamiApiArtistAlbumsGetAPIRequest) SetLimit(_limit int64) error 
 	return nil
 }
 
-// Get Limit Getter
+// GetLimit Limit Getter
 func (r AlibabaXiamiApiArtistAlbumsGetAPIRequest) GetLimit() int64 {
 	return r._limit
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 页码
 func (r *AlibabaXiamiApiArtistAlbumsGetAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -62,12 +62,12 @@ func (r *AlibabaXiamiApiArtistAlbumsGetAPIRequest) SetPage(_page int64) error {
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaXiamiApiArtistAlbumsGetAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 艺人id
 func (r *AlibabaXiamiApiArtistAlbumsGetAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -75,7 +75,7 @@ func (r *AlibabaXiamiApiArtistAlbumsGetAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaXiamiApiArtistAlbumsGetAPIRequest) GetId() int64 {
 	return r._id
 }

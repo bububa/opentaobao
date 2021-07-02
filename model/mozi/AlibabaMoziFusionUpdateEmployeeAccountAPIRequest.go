@@ -37,7 +37,7 @@ func (r AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is EmployeeAccount Setter
+// SetEmployeeAccount is EmployeeAccount Setter
 // 入参
 func (r *AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) SetEmployeeAccount(_employeeAccount *UpdateTenantEmployeeAndAccountRequest) error {
 	r._employeeAccount = _employeeAccount
@@ -45,7 +45,7 @@ func (r *AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) SetEmployeeAccount(_e
 	return nil
 }
 
-// Get EmployeeAccount Getter
+// GetEmployeeAccount EmployeeAccount Getter
 func (r AlibabaMoziFusionUpdateEmployeeAccountAPIRequest) GetEmployeeAccount() *UpdateTenantEmployeeAndAccountRequest {
 	return r._employeeAccount
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmRuleQuerygrowruleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamPlanRuleQueryOpenReq Setter
+// SetParamPlanRuleQueryOpenReq is ParamPlanRuleQueryOpenReq Setter
 // 系统自动生成
 func (r *AlibabaAlscCrmRuleQuerygrowruleAPIRequest) SetParamPlanRuleQueryOpenReq(_paramPlanRuleQueryOpenReq *PlanRuleQueryOpenReq) error {
 	r._paramPlanRuleQueryOpenReq = _paramPlanRuleQueryOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmRuleQuerygrowruleAPIRequest) SetParamPlanRuleQueryOpenReq
 	return nil
 }
 
-// Get ParamPlanRuleQueryOpenReq Getter
+// GetParamPlanRuleQueryOpenReq ParamPlanRuleQueryOpenReq Getter
 func (r AlibabaAlscCrmRuleQuerygrowruleAPIRequest) GetParamPlanRuleQueryOpenReq() *PlanRuleQueryOpenReq {
 	return r._paramPlanRuleQueryOpenReq
 }

@@ -45,7 +45,7 @@ func (r TaobaoCloudpushNoticeIosAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Summary Setter
+// SetSummary is Summary Setter
 // 通知摘要
 func (r *TaobaoCloudpushNoticeIosAPIRequest) SetSummary(_summary string) error {
 	r._summary = _summary
@@ -53,12 +53,12 @@ func (r *TaobaoCloudpushNoticeIosAPIRequest) SetSummary(_summary string) error {
 	return nil
 }
 
-// Get Summary Getter
+// GetSummary Summary Getter
 func (r TaobaoCloudpushNoticeIosAPIRequest) GetSummary() string {
 	return r._summary
 }
 
-// Set is Target Setter
+// SetTarget is Target Setter
 // 推送目标: device:推送给设备; account:推送给指定帐号,all: 推送给全部
 func (r *TaobaoCloudpushNoticeIosAPIRequest) SetTarget(_target string) error {
 	r._target = _target
@@ -66,12 +66,12 @@ func (r *TaobaoCloudpushNoticeIosAPIRequest) SetTarget(_target string) error {
 	return nil
 }
 
-// Get Target Getter
+// GetTarget Target Getter
 func (r TaobaoCloudpushNoticeIosAPIRequest) GetTarget() string {
 	return r._target
 }
 
-// Set is TargetValue Setter
+// SetTargetValue is TargetValue Setter
 // 根据Target来设定，如Target=device, 则对应的值为 设备id1,设备id2. 多个值使用逗号分隔
 func (r *TaobaoCloudpushNoticeIosAPIRequest) SetTargetValue(_targetValue string) error {
 	r._targetValue = _targetValue
@@ -79,12 +79,12 @@ func (r *TaobaoCloudpushNoticeIosAPIRequest) SetTargetValue(_targetValue string)
 	return nil
 }
 
-// Get TargetValue Getter
+// GetTargetValue TargetValue Getter
 func (r TaobaoCloudpushNoticeIosAPIRequest) GetTargetValue() string {
 	return r._targetValue
 }
 
-// Set is Env Setter
+// SetEnv is Env Setter
 // iOS的通知是通过APNS中心来发送的，需要填写对应的环境信息.  DEV:表示开发环境, PRODUCT: 表示生产环境.
 func (r *TaobaoCloudpushNoticeIosAPIRequest) SetEnv(_env string) error {
 	r._env = _env
@@ -92,12 +92,12 @@ func (r *TaobaoCloudpushNoticeIosAPIRequest) SetEnv(_env string) error {
 	return nil
 }
 
-// Get Env Getter
+// GetEnv Env Getter
 func (r TaobaoCloudpushNoticeIosAPIRequest) GetEnv() string {
 	return r._env
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 提供给IOS通知的扩展属性，如角标或者声音等,注意：参数值为json
 func (r *TaobaoCloudpushNoticeIosAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -105,7 +105,7 @@ func (r *TaobaoCloudpushNoticeIosAPIRequest) SetExt(_ext string) error {
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoCloudpushNoticeIosAPIRequest) GetExt() string {
 	return r._ext
 }

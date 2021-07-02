@@ -39,7 +39,7 @@ func (r WdkWmsPickMedicineQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // shopId
 func (r *WdkWmsPickMedicineQueryAPIRequest) SetShopId(_shopId int64) error {
 	r._shopId = _shopId
@@ -47,12 +47,12 @@ func (r *WdkWmsPickMedicineQueryAPIRequest) SetShopId(_shopId int64) error {
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r WdkWmsPickMedicineQueryAPIRequest) GetShopId() int64 {
 	return r._shopId
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // uuid
 func (r *WdkWmsPickMedicineQueryAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -60,7 +60,7 @@ func (r *WdkWmsPickMedicineQueryAPIRequest) SetUuid(_uuid string) error {
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r WdkWmsPickMedicineQueryAPIRequest) GetUuid() string {
 	return r._uuid
 }

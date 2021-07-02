@@ -41,7 +41,7 @@ func (r AlibabaHealthVaccinNoticeUserCreateAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is AliPayUserId Setter
+// SetAliPayUserId is AliPayUserId Setter
 // 支付宝用户id
 func (r *AlibabaHealthVaccinNoticeUserCreateAPIRequest) SetAliPayUserId(_aliPayUserId string) error {
 	r._aliPayUserId = _aliPayUserId
@@ -49,12 +49,12 @@ func (r *AlibabaHealthVaccinNoticeUserCreateAPIRequest) SetAliPayUserId(_aliPayU
 	return nil
 }
 
-// Get AliPayUserId Getter
+// GetAliPayUserId AliPayUserId Getter
 func (r AlibabaHealthVaccinNoticeUserCreateAPIRequest) GetAliPayUserId() string {
 	return r._aliPayUserId
 }
 
-// Set is OuterUserId Setter
+// SetOuterUserId is OuterUserId Setter
 // 外部渠道用户id
 func (r *AlibabaHealthVaccinNoticeUserCreateAPIRequest) SetOuterUserId(_outerUserId string) error {
 	r._outerUserId = _outerUserId
@@ -62,12 +62,12 @@ func (r *AlibabaHealthVaccinNoticeUserCreateAPIRequest) SetOuterUserId(_outerUse
 	return nil
 }
 
-// Get OuterUserId Getter
+// GetOuterUserId OuterUserId Getter
 func (r AlibabaHealthVaccinNoticeUserCreateAPIRequest) GetOuterUserId() string {
 	return r._outerUserId
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 用户电话号码
 func (r *AlibabaHealthVaccinNoticeUserCreateAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -75,7 +75,7 @@ func (r *AlibabaHealthVaccinNoticeUserCreateAPIRequest) SetMobile(_mobile string
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r AlibabaHealthVaccinNoticeUserCreateAPIRequest) GetMobile() string {
 	return r._mobile
 }

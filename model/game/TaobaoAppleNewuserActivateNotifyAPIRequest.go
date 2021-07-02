@@ -41,7 +41,7 @@ func (r TaobaoAppleNewuserActivateNotifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ResultCode Setter
+// SetResultCode is ResultCode Setter
 // 结果对应值，00位成功，其他为失败
 func (r *TaobaoAppleNewuserActivateNotifyAPIRequest) SetResultCode(_resultCode string) error {
 	r._resultCode = _resultCode
@@ -49,12 +49,12 @@ func (r *TaobaoAppleNewuserActivateNotifyAPIRequest) SetResultCode(_resultCode s
 	return nil
 }
 
-// Get ResultCode Getter
+// GetResultCode ResultCode Getter
 func (r TaobaoAppleNewuserActivateNotifyAPIRequest) GetResultCode() string {
 	return r._resultCode
 }
 
-// Set is ResultMsg Setter
+// SetResultMsg is ResultMsg Setter
 // 处理结果中文描述
 func (r *TaobaoAppleNewuserActivateNotifyAPIRequest) SetResultMsg(_resultMsg string) error {
 	r._resultMsg = _resultMsg
@@ -62,12 +62,12 @@ func (r *TaobaoAppleNewuserActivateNotifyAPIRequest) SetResultMsg(_resultMsg str
 	return nil
 }
 
-// Get ResultMsg Getter
+// GetResultMsg ResultMsg Getter
 func (r TaobaoAppleNewuserActivateNotifyAPIRequest) GetResultMsg() string {
 	return r._resultMsg
 }
 
-// Set is MainData Setter
+// SetMainData is MainData Setter
 // 主业务参数
 func (r *TaobaoAppleNewuserActivateNotifyAPIRequest) SetMainData(_mainData *AppleTopActivateNotifyDo) error {
 	r._mainData = _mainData
@@ -75,7 +75,7 @@ func (r *TaobaoAppleNewuserActivateNotifyAPIRequest) SetMainData(_mainData *Appl
 	return nil
 }
 
-// Get MainData Getter
+// GetMainData MainData Getter
 func (r TaobaoAppleNewuserActivateNotifyAPIRequest) GetMainData() *AppleTopActivateNotifyDo {
 	return r._mainData
 }

@@ -39,7 +39,7 @@ func (r AlibabaWdkSkuWarehouseskuQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SkuCodeList Setter
+// SetSkuCodeList is SkuCodeList Setter
 // 商品编码
 func (r *AlibabaWdkSkuWarehouseskuQueryAPIRequest) SetSkuCodeList(_skuCodeList []string) error {
 	r._skuCodeList = _skuCodeList
@@ -47,12 +47,12 @@ func (r *AlibabaWdkSkuWarehouseskuQueryAPIRequest) SetSkuCodeList(_skuCodeList [
 	return nil
 }
 
-// Get SkuCodeList Getter
+// GetSkuCodeList SkuCodeList Getter
 func (r AlibabaWdkSkuWarehouseskuQueryAPIRequest) GetSkuCodeList() []string {
 	return r._skuCodeList
 }
 
-// Set is WarehouseCode Setter
+// SetWarehouseCode is WarehouseCode Setter
 // 仓编码
 func (r *AlibabaWdkSkuWarehouseskuQueryAPIRequest) SetWarehouseCode(_warehouseCode string) error {
 	r._warehouseCode = _warehouseCode
@@ -60,7 +60,7 @@ func (r *AlibabaWdkSkuWarehouseskuQueryAPIRequest) SetWarehouseCode(_warehouseCo
 	return nil
 }
 
-// Get WarehouseCode Getter
+// GetWarehouseCode WarehouseCode Getter
 func (r AlibabaWdkSkuWarehouseskuQueryAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
 }

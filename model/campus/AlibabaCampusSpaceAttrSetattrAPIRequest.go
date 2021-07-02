@@ -39,7 +39,7 @@ func (r AlibabaCampusSpaceAttrSetattrAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Context Setter
+// SetContext is Context Setter
 // 操作用户上下文
 func (r *AlibabaCampusSpaceAttrSetattrAPIRequest) SetContext(_context *WorkBenchContext) error {
 	r._context = _context
@@ -47,12 +47,12 @@ func (r *AlibabaCampusSpaceAttrSetattrAPIRequest) SetContext(_context *WorkBench
 	return nil
 }
 
-// Get Context Getter
+// GetContext Context Getter
 func (r AlibabaCampusSpaceAttrSetattrAPIRequest) GetContext() *WorkBenchContext {
 	return r._context
 }
 
-// Set is List Setter
+// SetList is List Setter
 // 业务属性实例集合
 func (r *AlibabaCampusSpaceAttrSetattrAPIRequest) SetList(_list []TypeAttrInstanceRequest) error {
 	r._list = _list
@@ -60,7 +60,7 @@ func (r *AlibabaCampusSpaceAttrSetattrAPIRequest) SetList(_list []TypeAttrInstan
 	return nil
 }
 
-// Get List Getter
+// GetList List Getter
 func (r AlibabaCampusSpaceAttrSetattrAPIRequest) GetList() []TypeAttrInstanceRequest {
 	return r._list
 }

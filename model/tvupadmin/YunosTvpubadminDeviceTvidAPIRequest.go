@@ -37,7 +37,7 @@ func (r YunosTvpubadminDeviceTvidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 设备的UUID
 func (r *YunosTvpubadminDeviceTvidAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminDeviceTvidAPIRequest) SetUuid(_uuid string) error {
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r YunosTvpubadminDeviceTvidAPIRequest) GetUuid() string {
 	return r._uuid
 }

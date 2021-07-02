@@ -37,7 +37,7 @@ func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参param
 func (r *AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) SetParam(_param *EticketQueryParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) SetParam(_param *
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetParam() *EticketQueryParam {
 	return r._param
 }

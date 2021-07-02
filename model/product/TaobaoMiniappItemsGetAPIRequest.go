@@ -39,7 +39,7 @@ func (r TaobaoMiniappItemsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NumIids Setter
+// SetNumIids is NumIids Setter
 // 商品数字id列表，多个num_iid用逗号隔开，一次不超过50个。
 func (r *TaobaoMiniappItemsGetAPIRequest) SetNumIids(_numIids []string) error {
 	r._numIids = _numIids
@@ -47,12 +47,12 @@ func (r *TaobaoMiniappItemsGetAPIRequest) SetNumIids(_numIids []string) error {
 	return nil
 }
 
-// Get NumIids Getter
+// GetNumIids NumIids Getter
 func (r TaobaoMiniappItemsGetAPIRequest) GetNumIids() []string {
 	return r._numIids
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的商品对象字段。可选值：Item商品结构体中字段均可返回(其中item_weight,item_size,sold_quantity暂未返回)；多个字段用“,”分隔。如果想返回整个子对象，fields设置相应字段，如itemimg；如果想返回子对象里面的某个字段，那字段设为某个值，如itemimg.url。
 func (r *TaobaoMiniappItemsGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -60,7 +60,7 @@ func (r *TaobaoMiniappItemsGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoMiniappItemsGetAPIRequest) GetFields() []string {
 	return r._fields
 }

@@ -37,7 +37,7 @@ func (r TaobaoSimbaKeywordFindbyadgroupidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广单元id
 func (r *TaobaoSimbaKeywordFindbyadgroupidAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -45,7 +45,7 @@ func (r *TaobaoSimbaKeywordFindbyadgroupidAPIRequest) SetAdgroupId(_adgroupId in
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaKeywordFindbyadgroupidAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

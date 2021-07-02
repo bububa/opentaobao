@@ -37,7 +37,7 @@ func (r XiamiApiSongDetailGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SongIds Setter
+// SetSongIds is SongIds Setter
 // 歌曲id
 func (r *XiamiApiSongDetailGetAPIRequest) SetSongIds(_songIds []int64) error {
 	r._songIds = _songIds
@@ -45,7 +45,7 @@ func (r *XiamiApiSongDetailGetAPIRequest) SetSongIds(_songIds []int64) error {
 	return nil
 }
 
-// Get SongIds Getter
+// GetSongIds SongIds Getter
 func (r XiamiApiSongDetailGetAPIRequest) GetSongIds() []int64 {
 	return r._songIds
 }

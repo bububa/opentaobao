@@ -57,7 +57,7 @@ func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小，默认20，1~100
 func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -65,12 +65,12 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetPageSize(_pageSize int64) erro
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is AdzoneId Setter
+// SetAdzoneId is AdzoneId Setter
 // mm_xxx_xxx_xxx的第三位
 func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetAdzoneId(_adzoneId int64) error {
 	r._adzoneId = _adzoneId
@@ -78,12 +78,12 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetAdzoneId(_adzoneId int64) erro
 	return nil
 }
 
-// Get AdzoneId Getter
+// GetAdzoneId AdzoneId Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetAdzoneId() int64 {
 	return r._adzoneId
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 第几页，默认：1
 func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -91,12 +91,12 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is MaterialId Setter
+// SetMaterialId is MaterialId Setter
 // 官方的物料Id(详细物料id见：https://market.m.taobao.com/app/qn/toutiao-new/index-pc.html#/detail/10628875?_k=gpov9a)
 func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetMaterialId(_materialId int64) error {
 	r._materialId = _materialId
@@ -104,12 +104,12 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetMaterialId(_materialId int64) 
 	return nil
 }
 
-// Get MaterialId Getter
+// GetMaterialId MaterialId Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetMaterialId() int64 {
 	return r._materialId
 }
 
-// Set is DeviceValue Setter
+// SetDeviceValue is DeviceValue Setter
 // 智能匹配-设备号加密后的值（MD5加密需32位小写），类型为OAID时传原始OAID值
 func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetDeviceValue(_deviceValue string) error {
 	r._deviceValue = _deviceValue
@@ -117,12 +117,12 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetDeviceValue(_deviceValue strin
 	return nil
 }
 
-// Get DeviceValue Getter
+// GetDeviceValue DeviceValue Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetDeviceValue() string {
 	return r._deviceValue
 }
 
-// Set is DeviceEncrypt Setter
+// SetDeviceEncrypt is DeviceEncrypt Setter
 // 智能匹配-设备号加密类型：MD5，类型为OAID时不传
 func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetDeviceEncrypt(_deviceEncrypt string) error {
 	r._deviceEncrypt = _deviceEncrypt
@@ -130,12 +130,12 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetDeviceEncrypt(_deviceEncrypt s
 	return nil
 }
 
-// Get DeviceEncrypt Getter
+// GetDeviceEncrypt DeviceEncrypt Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetDeviceEncrypt() string {
 	return r._deviceEncrypt
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 智能匹配-设备号类型：IMEI，或者IDFA，或者UTDID（UTDID不支持MD5加密），或者OAID
 func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetDeviceType(_deviceType string) error {
 	r._deviceType = _deviceType
@@ -143,12 +143,12 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetDeviceType(_deviceType string)
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetDeviceType() string {
 	return r._deviceType
 }
 
-// Set is ContentId Setter
+// SetContentId is ContentId Setter
 // 内容专用-内容详情ID
 func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetContentId(_contentId int64) error {
 	r._contentId = _contentId
@@ -156,12 +156,12 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetContentId(_contentId int64) er
 	return nil
 }
 
-// Get ContentId Getter
+// GetContentId ContentId Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetContentId() int64 {
 	return r._contentId
 }
 
-// Set is ContentSource Setter
+// SetContentSource is ContentSource Setter
 // 内容专用-内容渠道信息
 func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetContentSource(_contentSource string) error {
 	r._contentSource = _contentSource
@@ -169,12 +169,12 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetContentSource(_contentSource s
 	return nil
 }
 
-// Get ContentSource Getter
+// GetContentSource ContentSource Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetContentSource() string {
 	return r._contentSource
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID，用于相似商品推荐
 func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -182,12 +182,12 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is FavoritesId Setter
+// SetFavoritesId is FavoritesId Setter
 // 选品库投放id
 func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetFavoritesId(_favoritesId string) error {
 	r._favoritesId = _favoritesId
@@ -195,7 +195,7 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetFavoritesId(_favoritesId strin
 	return nil
 }
 
-// Get FavoritesId Getter
+// GetFavoritesId FavoritesId Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetFavoritesId() string {
 	return r._favoritesId
 }

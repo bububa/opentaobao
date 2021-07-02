@@ -41,7 +41,7 @@ func (r TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is DealerOrderId Setter
+// SetDealerOrderId is DealerOrderId Setter
 // 经销采购单ID
 func (r *TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) SetDealerOrderId(_dealerOrderId int64) error {
 	r._dealerOrderId = _dealerOrderId
@@ -49,12 +49,12 @@ func (r *TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) SetDealerOrd
 	return nil
 }
 
-// Get DealerOrderId Getter
+// GetDealerOrderId DealerOrderId Getter
 func (r TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) GetDealerOrderId() int64 {
 	return r._dealerOrderId
 }
 
-// Set is SupplierMemo Setter
+// SetSupplierMemo is SupplierMemo Setter
 // 备注留言，可为空
 func (r *TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) SetSupplierMemo(_supplierMemo string) error {
 	r._supplierMemo = _supplierMemo
@@ -62,12 +62,12 @@ func (r *TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) SetSupplierM
 	return nil
 }
 
-// Get SupplierMemo Getter
+// GetSupplierMemo SupplierMemo Getter
 func (r TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) GetSupplierMemo() string {
 	return r._supplierMemo
 }
 
-// Set is SupplierMemoFlag Setter
+// SetSupplierMemoFlag is SupplierMemoFlag Setter
 // 旗子的标记，必选。<br/>1-5之间的数字。<br/>非1-5之间，都采用1作为默认。<br/>1:红色<br/>2:黄色<br/>3:绿色<br/>4:蓝色<br/>5:粉红色
 func (r *TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) SetSupplierMemoFlag(_supplierMemoFlag int64) error {
 	r._supplierMemoFlag = _supplierMemoFlag
@@ -75,7 +75,7 @@ func (r *TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) SetSupplierM
 	return nil
 }
 
-// Get SupplierMemoFlag Getter
+// GetSupplierMemoFlag SupplierMemoFlag Getter
 func (r TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) GetSupplierMemoFlag() int64 {
 	return r._supplierMemoFlag
 }

@@ -37,7 +37,7 @@ func (r AlitripPlatformPoiRawPoioutbypoiidsAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is FliggyPoiidParam Setter
+// SetFliggyPoiidParam is FliggyPoiidParam Setter
 // 查询参数
 func (r *AlitripPlatformPoiRawPoioutbypoiidsAPIRequest) SetFliggyPoiidParam(_fliggyPoiidParam *FliggyPoiIdParam) error {
 	r._fliggyPoiidParam = _fliggyPoiidParam
@@ -45,7 +45,7 @@ func (r *AlitripPlatformPoiRawPoioutbypoiidsAPIRequest) SetFliggyPoiidParam(_fli
 	return nil
 }
 
-// Get FliggyPoiidParam Getter
+// GetFliggyPoiidParam FliggyPoiidParam Getter
 func (r AlitripPlatformPoiRawPoioutbypoiidsAPIRequest) GetFliggyPoiidParam() *FliggyPoiIdParam {
 	return r._fliggyPoiidParam
 }

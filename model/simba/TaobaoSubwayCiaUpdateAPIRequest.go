@@ -39,7 +39,7 @@ func (r TaobaoSubwayCiaUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSubwayCiaUpdateAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -47,12 +47,12 @@ func (r *TaobaoSubwayCiaUpdateAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSubwayCiaUpdateAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is CiaConfigs Setter
+// SetCiaConfigs is CiaConfigs Setter
 // 系统自动生成
 func (r *TaobaoSubwayCiaUpdateAPIRequest) SetCiaConfigs(_ciaConfigs []CiaUpdateDto) error {
 	r._ciaConfigs = _ciaConfigs
@@ -60,7 +60,7 @@ func (r *TaobaoSubwayCiaUpdateAPIRequest) SetCiaConfigs(_ciaConfigs []CiaUpdateD
 	return nil
 }
 
-// Get CiaConfigs Getter
+// GetCiaConfigs CiaConfigs Getter
 func (r TaobaoSubwayCiaUpdateAPIRequest) GetCiaConfigs() []CiaUpdateDto {
 	return r._ciaConfigs
 }

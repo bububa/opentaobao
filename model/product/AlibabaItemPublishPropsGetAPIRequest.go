@@ -45,7 +45,7 @@ func (r AlibabaItemPublishPropsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Market Setter
+// SetMarket is Market Setter
 // 商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版
 func (r *AlibabaItemPublishPropsGetAPIRequest) SetMarket(_market string) error {
 	r._market = _market
@@ -53,12 +53,12 @@ func (r *AlibabaItemPublishPropsGetAPIRequest) SetMarket(_market string) error {
 	return nil
 }
 
-// Get Market Getter
+// GetMarket Market Getter
 func (r AlibabaItemPublishPropsGetAPIRequest) GetMarket() string {
 	return r._market
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 商品类目ID
 func (r *AlibabaItemPublishPropsGetAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -66,12 +66,12 @@ func (r *AlibabaItemPublishPropsGetAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r AlibabaItemPublishPropsGetAPIRequest) GetCatId() int64 {
 	return r._catId
 }
 
-// Set is Barcode Setter
+// SetBarcode is Barcode Setter
 // 商品条码
 func (r *AlibabaItemPublishPropsGetAPIRequest) SetBarcode(_barcode string) error {
 	r._barcode = _barcode
@@ -79,12 +79,12 @@ func (r *AlibabaItemPublishPropsGetAPIRequest) SetBarcode(_barcode string) error
 	return nil
 }
 
-// Get Barcode Getter
+// GetBarcode Barcode Getter
 func (r AlibabaItemPublishPropsGetAPIRequest) GetBarcode() string {
 	return r._barcode
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 类目属性渲染schema
 func (r *AlibabaItemPublishPropsGetAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -92,12 +92,12 @@ func (r *AlibabaItemPublishPropsGetAPIRequest) SetSchema(_schema string) error {
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r AlibabaItemPublishPropsGetAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is PropId Setter
+// SetPropId is PropId Setter
 // 属性ID
 func (r *AlibabaItemPublishPropsGetAPIRequest) SetPropId(_propId int64) error {
 	r._propId = _propId
@@ -105,7 +105,7 @@ func (r *AlibabaItemPublishPropsGetAPIRequest) SetPropId(_propId int64) error {
 	return nil
 }
 
-// Get PropId Getter
+// GetPropId PropId Getter
 func (r AlibabaItemPublishPropsGetAPIRequest) GetPropId() int64 {
 	return r._propId
 }

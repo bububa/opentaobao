@@ -39,7 +39,7 @@ func (r AlibabaWdkMerchantCategoryQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Keyword Setter
+// SetKeyword is Keyword Setter
 // 搜索关键词，可不填就查全部
 func (r *AlibabaWdkMerchantCategoryQueryAPIRequest) SetKeyword(_keyword string) error {
 	r._keyword = _keyword
@@ -47,12 +47,12 @@ func (r *AlibabaWdkMerchantCategoryQueryAPIRequest) SetKeyword(_keyword string) 
 	return nil
 }
 
-// Get Keyword Getter
+// GetKeyword Keyword Getter
 func (r AlibabaWdkMerchantCategoryQueryAPIRequest) GetKeyword() string {
 	return r._keyword
 }
 
-// Set is RootCategoryCode Setter
+// SetRootCategoryCode is RootCategoryCode Setter
 // 类目起点，可不填从根目录开始查
 func (r *AlibabaWdkMerchantCategoryQueryAPIRequest) SetRootCategoryCode(_rootCategoryCode string) error {
 	r._rootCategoryCode = _rootCategoryCode
@@ -60,7 +60,7 @@ func (r *AlibabaWdkMerchantCategoryQueryAPIRequest) SetRootCategoryCode(_rootCat
 	return nil
 }
 
-// Get RootCategoryCode Getter
+// GetRootCategoryCode RootCategoryCode Getter
 func (r AlibabaWdkMerchantCategoryQueryAPIRequest) GetRootCategoryCode() string {
 	return r._rootCategoryCode
 }

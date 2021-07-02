@@ -41,7 +41,7 @@ func (r TmallItemSizemappingTemplateUpdateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is TemplateId Setter
+// SetTemplateId is TemplateId Setter
 // 尺码表模板ID
 func (r *TmallItemSizemappingTemplateUpdateAPIRequest) SetTemplateId(_templateId int64) error {
 	r._templateId = _templateId
@@ -49,12 +49,12 @@ func (r *TmallItemSizemappingTemplateUpdateAPIRequest) SetTemplateId(_templateId
 	return nil
 }
 
-// Get TemplateId Getter
+// GetTemplateId TemplateId Getter
 func (r TmallItemSizemappingTemplateUpdateAPIRequest) GetTemplateId() int64 {
 	return r._templateId
 }
 
-// Set is TemplateName Setter
+// SetTemplateName is TemplateName Setter
 // 尺码表模板名称
 func (r *TmallItemSizemappingTemplateUpdateAPIRequest) SetTemplateName(_templateName string) error {
 	r._templateName = _templateName
@@ -62,12 +62,12 @@ func (r *TmallItemSizemappingTemplateUpdateAPIRequest) SetTemplateName(_template
 	return nil
 }
 
-// Get TemplateName Getter
+// GetTemplateName TemplateName Getter
 func (r TmallItemSizemappingTemplateUpdateAPIRequest) GetTemplateName() string {
 	return r._templateName
 }
 
-// Set is TemplateContent Setter
+// SetTemplateContent is TemplateContent Setter
 // 尺码表模板内容，格式为"尺码值:维度名称:数值,尺码值:维度名称:数值"。其中，数值的单位，长度单位为厘米（cm），体重单位为公斤（kg）。尺码值，维度数据不能包含数字，特殊字符。数值为0-999.9的数字，且最多一位小数。
 func (r *TmallItemSizemappingTemplateUpdateAPIRequest) SetTemplateContent(_templateContent string) error {
 	r._templateContent = _templateContent
@@ -75,7 +75,7 @@ func (r *TmallItemSizemappingTemplateUpdateAPIRequest) SetTemplateContent(_templ
 	return nil
 }
 
-// Get TemplateContent Getter
+// GetTemplateContent TemplateContent Getter
 func (r TmallItemSizemappingTemplateUpdateAPIRequest) GetTemplateContent() string {
 	return r._templateContent
 }

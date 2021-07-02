@@ -43,7 +43,7 @@ func (r YunosTvpubadminDeviceUpdateappstatusAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is VersionId Setter
+// SetVersionId is VersionId Setter
 // 应用ID
 func (r *YunosTvpubadminDeviceUpdateappstatusAPIRequest) SetVersionId(_versionId int64) error {
 	r._versionId = _versionId
@@ -51,12 +51,12 @@ func (r *YunosTvpubadminDeviceUpdateappstatusAPIRequest) SetVersionId(_versionId
 	return nil
 }
 
-// Get VersionId Getter
+// GetVersionId VersionId Getter
 func (r YunosTvpubadminDeviceUpdateappstatusAPIRequest) GetVersionId() int64 {
 	return r._versionId
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照方
 func (r *YunosTvpubadminDeviceUpdateappstatusAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -64,12 +64,12 @@ func (r *YunosTvpubadminDeviceUpdateappstatusAPIRequest) SetLicense(_license int
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminDeviceUpdateappstatusAPIRequest) GetLicense() int64 {
 	return r._license
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 审核状态
 func (r *YunosTvpubadminDeviceUpdateappstatusAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -77,12 +77,12 @@ func (r *YunosTvpubadminDeviceUpdateappstatusAPIRequest) SetStatus(_status strin
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r YunosTvpubadminDeviceUpdateappstatusAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is AuditComment Setter
+// SetAuditComment is AuditComment Setter
 // 审核意见
 func (r *YunosTvpubadminDeviceUpdateappstatusAPIRequest) SetAuditComment(_auditComment string) error {
 	r._auditComment = _auditComment
@@ -90,7 +90,7 @@ func (r *YunosTvpubadminDeviceUpdateappstatusAPIRequest) SetAuditComment(_auditC
 	return nil
 }
 
-// Get AuditComment Getter
+// GetAuditComment AuditComment Getter
 func (r YunosTvpubadminDeviceUpdateappstatusAPIRequest) GetAuditComment() string {
 	return r._auditComment
 }

@@ -47,7 +47,7 @@ func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CreativeIds Setter
+// SetCreativeIds is CreativeIds Setter
 // dsp的创意id
 func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetCreativeIds(_creativeIds []string) error {
 	r._creativeIds = _creativeIds
@@ -55,12 +55,12 @@ func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetCreativeIds(_creativeIds []st
 	return nil
 }
 
-// Get CreativeIds Getter
+// GetCreativeIds CreativeIds Getter
 func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetCreativeIds() []string {
 	return r._creativeIds
 }
 
-// Set is MemberId Setter
+// SetMemberId is MemberId Setter
 // dsp在tanx的memberid
 func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetMemberId(_memberId int64) error {
 	r._memberId = _memberId
@@ -68,12 +68,12 @@ func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetMemberId(_memberId int64) err
 	return nil
 }
 
-// Get MemberId Getter
+// GetMemberId MemberId Getter
 func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetMemberId() int64 {
 	return r._memberId
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // dsp对应的tanx的token
 func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -81,12 +81,12 @@ func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetToken(_token string) error {
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is SignTime Setter
+// SetSignTime is SignTime Setter
 // 1970年到现在的毫秒
 func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetSignTime(_signTime int64) error {
 	r._signTime = _signTime
@@ -94,12 +94,12 @@ func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetSignTime(_signTime int64) err
 	return nil
 }
 
-// Get SignTime Getter
+// GetSignTime SignTime Getter
 func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetSignTime() int64 {
 	return r._signTime
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 起始时间
 func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -107,12 +107,12 @@ func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetStartTime(_startTime string) 
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 截止时间
 func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -120,7 +120,7 @@ func (r *TaobaoTanxBiddingrefusesGetAPIRequest) SetEndTime(_endTime string) erro
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoTanxBiddingrefusesGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }

@@ -37,7 +37,7 @@ func (r AlibabaScbpAdKeywordDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AdKeyword Setter
+// SetAdKeyword is AdKeyword Setter
 // 要删除的关键词
 func (r *AlibabaScbpAdKeywordDeleteAPIRequest) SetAdKeyword(_adKeyword string) error {
 	r._adKeyword = _adKeyword
@@ -45,7 +45,7 @@ func (r *AlibabaScbpAdKeywordDeleteAPIRequest) SetAdKeyword(_adKeyword string) e
 	return nil
 }
 
-// Get AdKeyword Getter
+// GetAdKeyword AdKeyword Getter
 func (r AlibabaScbpAdKeywordDeleteAPIRequest) GetAdKeyword() string {
 	return r._adKeyword
 }

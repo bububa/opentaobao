@@ -37,7 +37,7 @@ func (r TaobaoPromotionBenefitActivityDeleteAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is RelationId Setter
+// SetRelationId is RelationId Setter
 // ISV活动关联权益后获得的关联ID
 func (r *TaobaoPromotionBenefitActivityDeleteAPIRequest) SetRelationId(_relationId int64) error {
 	r._relationId = _relationId
@@ -45,7 +45,7 @@ func (r *TaobaoPromotionBenefitActivityDeleteAPIRequest) SetRelationId(_relation
 	return nil
 }
 
-// Get RelationId Getter
+// GetRelationId RelationId Getter
 func (r TaobaoPromotionBenefitActivityDeleteAPIRequest) GetRelationId() int64 {
 	return r._relationId
 }

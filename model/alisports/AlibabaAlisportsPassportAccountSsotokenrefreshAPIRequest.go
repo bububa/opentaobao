@@ -43,7 +43,7 @@ func (r AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is AlispAppKey Setter
+// SetAlispAppKey is AlispAppKey Setter
 // 应用appkey
 func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) SetAlispAppKey(_alispAppKey string) error {
 	r._alispAppKey = _alispAppKey
@@ -51,12 +51,12 @@ func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) SetAlispAppKe
 	return nil
 }
 
-// Get AlispAppKey Getter
+// GetAlispAppKey AlispAppKey Getter
 func (r AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) GetAlispAppKey() string {
 	return r._alispAppKey
 }
 
-// Set is AlispTime Setter
+// SetAlispTime is AlispTime Setter
 // 当前时间戳[精确到秒,10位]
 func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) SetAlispTime(_alispTime string) error {
 	r._alispTime = _alispTime
@@ -64,12 +64,12 @@ func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) SetAlispTime(
 	return nil
 }
 
-// Get AlispTime Getter
+// GetAlispTime AlispTime Getter
 func (r AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) GetAlispTime() string {
 	return r._alispTime
 }
 
-// Set is AlispSign Setter
+// SetAlispSign is AlispSign Setter
 // 签名
 func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) SetAlispSign(_alispSign string) error {
 	r._alispSign = _alispSign
@@ -77,12 +77,12 @@ func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) SetAlispSign(
 	return nil
 }
 
-// Get AlispSign Getter
+// GetAlispSign AlispSign Getter
 func (r AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) GetAlispSign() string {
 	return r._alispSign
 }
 
-// Set is Secret Setter
+// SetSecret is Secret Setter
 // 登录成功返回的access_token(access_token是TOP保留关键字，只能改名，望谅解)
 func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) SetSecret(_secret string) error {
 	r._secret = _secret
@@ -90,7 +90,7 @@ func (r *AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) SetSecret(_se
 	return nil
 }
 
-// Get Secret Getter
+// GetSecret Secret Getter
 func (r AlibabaAlisportsPassportAccountSsotokenrefreshAPIRequest) GetSecret() string {
 	return r._secret
 }

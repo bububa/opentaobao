@@ -37,7 +37,7 @@ func (r AlitripShipOrderNotifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ConfirmBookRQ Setter
+// SetConfirmBookRQ is ConfirmBookRQ Setter
 // 出票入参
 func (r *AlitripShipOrderNotifyAPIRequest) SetConfirmBookRQ(_confirmBookRQ *ShipAgentConfirmBookRq) error {
 	r._confirmBookRQ = _confirmBookRQ
@@ -45,7 +45,7 @@ func (r *AlitripShipOrderNotifyAPIRequest) SetConfirmBookRQ(_confirmBookRQ *Ship
 	return nil
 }
 
-// Get ConfirmBookRQ Getter
+// GetConfirmBookRQ ConfirmBookRQ Getter
 func (r AlitripShipOrderNotifyAPIRequest) GetConfirmBookRQ() *ShipAgentConfirmBookRq {
 	return r._confirmBookRQ
 }

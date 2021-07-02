@@ -41,7 +41,7 @@ func (r AlibabaKclubKcQaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QuestionId Setter
+// SetQuestionId is QuestionId Setter
 // 问题id
 func (r *AlibabaKclubKcQaGetAPIRequest) SetQuestionId(_questionId int64) error {
 	r._questionId = _questionId
@@ -49,12 +49,12 @@ func (r *AlibabaKclubKcQaGetAPIRequest) SetQuestionId(_questionId int64) error {
 	return nil
 }
 
-// Get QuestionId Getter
+// GetQuestionId QuestionId Getter
 func (r AlibabaKclubKcQaGetAPIRequest) GetQuestionId() int64 {
 	return r._questionId
 }
 
-// Set is Filter Setter
+// SetFilter is Filter Setter
 // 过滤条件
 func (r *AlibabaKclubKcQaGetAPIRequest) SetFilter(_filter *KcQaFilter) error {
 	r._filter = _filter
@@ -62,12 +62,12 @@ func (r *AlibabaKclubKcQaGetAPIRequest) SetFilter(_filter *KcQaFilter) error {
 	return nil
 }
 
-// Get Filter Getter
+// GetFilter Filter Getter
 func (r AlibabaKclubKcQaGetAPIRequest) GetFilter() *KcQaFilter {
 	return r._filter
 }
 
-// Set is Auth Setter
+// SetAuth is Auth Setter
 // 鉴权
 func (r *AlibabaKclubKcQaGetAPIRequest) SetAuth(_auth *TenancyAuth) error {
 	r._auth = _auth
@@ -75,7 +75,7 @@ func (r *AlibabaKclubKcQaGetAPIRequest) SetAuth(_auth *TenancyAuth) error {
 	return nil
 }
 
-// Get Auth Getter
+// GetAuth Auth Getter
 func (r AlibabaKclubKcQaGetAPIRequest) GetAuth() *TenancyAuth {
 	return r._auth
 }

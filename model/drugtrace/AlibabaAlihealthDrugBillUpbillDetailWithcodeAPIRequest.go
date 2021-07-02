@@ -43,7 +43,7 @@ func (r AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业id
 func (r *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) SetRefEntId(_re
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据编码
 func (r *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) SetBillCode(_bi
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is FromRefUserId Setter
+// SetFromRefUserId is FromRefUserId Setter
 // 发货企业renEntId
 func (r *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) SetFromRefUserId(_fromRefUserId string) error {
 	r._fromRefUserId = _fromRefUserId
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) SetFromRefUserI
 	return nil
 }
 
-// Get FromRefUserId Getter
+// GetFromRefUserId FromRefUserId Getter
 func (r AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) GetFromRefUserId() string {
 	return r._fromRefUserId
 }
 
-// Set is ToRefUserId Setter
+// SetToRefUserId is ToRefUserId Setter
 // 收货企业refEntId
 func (r *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) SetToRefUserId(_toRefUserId string) error {
 	r._toRefUserId = _toRefUserId
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) SetToRefUserId(
 	return nil
 }
 
-// Get ToRefUserId Getter
+// GetToRefUserId ToRefUserId Getter
 func (r AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) GetToRefUserId() string {
 	return r._toRefUserId
 }

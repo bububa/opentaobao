@@ -37,7 +37,7 @@ func (r AlibabaLstVendingEquipmentQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpenEquipmentQuery Setter
+// SetOpenEquipmentQuery is OpenEquipmentQuery Setter
 // 设备查询条件
 func (r *AlibabaLstVendingEquipmentQueryAPIRequest) SetOpenEquipmentQuery(_openEquipmentQuery *OpenEquipmentQuery) error {
 	r._openEquipmentQuery = _openEquipmentQuery
@@ -45,7 +45,7 @@ func (r *AlibabaLstVendingEquipmentQueryAPIRequest) SetOpenEquipmentQuery(_openE
 	return nil
 }
 
-// Get OpenEquipmentQuery Getter
+// GetOpenEquipmentQuery OpenEquipmentQuery Getter
 func (r AlibabaLstVendingEquipmentQueryAPIRequest) GetOpenEquipmentQuery() *OpenEquipmentQuery {
 	return r._openEquipmentQuery
 }

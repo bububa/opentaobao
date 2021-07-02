@@ -37,7 +37,7 @@ func (r AlibabaTianjiSupplierOrderResultAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SupplierOrderResultModel Setter
+// SetSupplierOrderResultModel is SupplierOrderResultModel Setter
 // 供应商处理订单结果反馈参数
 func (r *AlibabaTianjiSupplierOrderResultAPIRequest) SetSupplierOrderResultModel(_supplierOrderResultModel *SupplierOrderResultModel) error {
 	r._supplierOrderResultModel = _supplierOrderResultModel
@@ -45,7 +45,7 @@ func (r *AlibabaTianjiSupplierOrderResultAPIRequest) SetSupplierOrderResultModel
 	return nil
 }
 
-// Get SupplierOrderResultModel Getter
+// GetSupplierOrderResultModel SupplierOrderResultModel Getter
 func (r AlibabaTianjiSupplierOrderResultAPIRequest) GetSupplierOrderResultModel() *SupplierOrderResultModel {
 	return r._supplierOrderResultModel
 }

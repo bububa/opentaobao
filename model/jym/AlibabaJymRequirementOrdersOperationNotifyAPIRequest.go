@@ -39,7 +39,7 @@ func (r AlibabaJymRequirementOrdersOperationNotifyAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Operation Setter
+// SetOperation is Operation Setter
 // 需求订单操作
 func (r *AlibabaJymRequirementOrdersOperationNotifyAPIRequest) SetOperation(_operation int64) error {
 	r._operation = _operation
@@ -47,12 +47,12 @@ func (r *AlibabaJymRequirementOrdersOperationNotifyAPIRequest) SetOperation(_ope
 	return nil
 }
 
-// Get Operation Getter
+// GetOperation Operation Getter
 func (r AlibabaJymRequirementOrdersOperationNotifyAPIRequest) GetOperation() int64 {
 	return r._operation
 }
 
-// Set is ReqmntOrderId Setter
+// SetReqmntOrderId is ReqmntOrderId Setter
 // 需求订单id
 func (r *AlibabaJymRequirementOrdersOperationNotifyAPIRequest) SetReqmntOrderId(_reqmntOrderId string) error {
 	r._reqmntOrderId = _reqmntOrderId
@@ -60,7 +60,7 @@ func (r *AlibabaJymRequirementOrdersOperationNotifyAPIRequest) SetReqmntOrderId(
 	return nil
 }
 
-// Get ReqmntOrderId Getter
+// GetReqmntOrderId ReqmntOrderId Getter
 func (r AlibabaJymRequirementOrdersOperationNotifyAPIRequest) GetReqmntOrderId() string {
 	return r._reqmntOrderId
 }

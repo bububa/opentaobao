@@ -37,7 +37,7 @@ func (r AlibabaArgusUpdateredriskAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RedRiskUpdateFactor Setter
+// SetRedRiskUpdateFactor is RedRiskUpdateFactor Setter
 // 红线价格参数
 func (r *AlibabaArgusUpdateredriskAPIRequest) SetRedRiskUpdateFactor(_redRiskUpdateFactor *RedRiskUpdateFactor) error {
 	r._redRiskUpdateFactor = _redRiskUpdateFactor
@@ -45,7 +45,7 @@ func (r *AlibabaArgusUpdateredriskAPIRequest) SetRedRiskUpdateFactor(_redRiskUpd
 	return nil
 }
 
-// Get RedRiskUpdateFactor Getter
+// GetRedRiskUpdateFactor RedRiskUpdateFactor Getter
 func (r AlibabaArgusUpdateredriskAPIRequest) GetRedRiskUpdateFactor() *RedRiskUpdateFactor {
 	return r._redRiskUpdateFactor
 }

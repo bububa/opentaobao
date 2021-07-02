@@ -39,7 +39,7 @@ func (r AlibabaSecurityJaqRpCloudUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is VerifyToken Setter
+// SetVerifyToken is VerifyToken Setter
 // 认证token
 func (r *AlibabaSecurityJaqRpCloudUploadAPIRequest) SetVerifyToken(_verifyToken string) error {
 	r._verifyToken = _verifyToken
@@ -47,12 +47,12 @@ func (r *AlibabaSecurityJaqRpCloudUploadAPIRequest) SetVerifyToken(_verifyToken 
 	return nil
 }
 
-// Get VerifyToken Getter
+// GetVerifyToken VerifyToken Getter
 func (r AlibabaSecurityJaqRpCloudUploadAPIRequest) GetVerifyToken() string {
 	return r._verifyToken
 }
 
-// Set is Elements Setter
+// SetElements is Elements Setter
 // []
 func (r *AlibabaSecurityJaqRpCloudUploadAPIRequest) SetElements(_elements []Elements) error {
 	r._elements = _elements
@@ -60,7 +60,7 @@ func (r *AlibabaSecurityJaqRpCloudUploadAPIRequest) SetElements(_elements []Elem
 	return nil
 }
 
-// Get Elements Getter
+// GetElements Elements Getter
 func (r AlibabaSecurityJaqRpCloudUploadAPIRequest) GetElements() []Elements {
 	return r._elements
 }

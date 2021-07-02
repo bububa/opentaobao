@@ -39,7 +39,7 @@ func (r TaobaoSingletreasureActivityItemDeleteAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动id
 func (r *TaobaoSingletreasureActivityItemDeleteAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -47,12 +47,12 @@ func (r *TaobaoSingletreasureActivityItemDeleteAPIRequest) SetActivityId(_activi
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoSingletreasureActivityItemDeleteAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品Id
 func (r *TaobaoSingletreasureActivityItemDeleteAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -60,7 +60,7 @@ func (r *TaobaoSingletreasureActivityItemDeleteAPIRequest) SetItemId(_itemId int
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoSingletreasureActivityItemDeleteAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

@@ -37,7 +37,7 @@ func (r AlitripHotelHstdfShotelMatchshotelselfAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // HotelMatchParam
 func (r *AlitripHotelHstdfShotelMatchshotelselfAPIRequest) SetParam0(_param0 *HotelMatchParam) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlitripHotelHstdfShotelMatchshotelselfAPIRequest) SetParam0(_param0 *Ho
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlitripHotelHstdfShotelMatchshotelselfAPIRequest) GetParam0() *HotelMatchParam {
 	return r._param0
 }

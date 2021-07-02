@@ -37,7 +37,7 @@ func (r AlibabaGuardAccessAuthAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamIdentifyAuthDTO Setter
+// SetParamIdentifyAuthDTO is ParamIdentifyAuthDTO Setter
 // 请求
 func (r *AlibabaGuardAccessAuthAPIRequest) SetParamIdentifyAuthDTO(_paramIdentifyAuthDTO *IdentifyAuthDto) error {
 	r._paramIdentifyAuthDTO = _paramIdentifyAuthDTO
@@ -45,7 +45,7 @@ func (r *AlibabaGuardAccessAuthAPIRequest) SetParamIdentifyAuthDTO(_paramIdentif
 	return nil
 }
 
-// Get ParamIdentifyAuthDTO Getter
+// GetParamIdentifyAuthDTO ParamIdentifyAuthDTO Getter
 func (r AlibabaGuardAccessAuthAPIRequest) GetParamIdentifyAuthDTO() *IdentifyAuthDto {
 	return r._paramIdentifyAuthDTO
 }

@@ -45,7 +45,7 @@ func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 渠道，和推送房价所使用的渠道保持一致
 func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -53,12 +53,12 @@ func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetVendor(_vendor string) err
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is RateplanCode Setter
+// SetRateplanCode is RateplanCode Setter
 // 商家价格政策编码
 func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetRateplanCode(_rateplanCode string) error {
 	r._rateplanCode = _rateplanCode
@@ -66,12 +66,12 @@ func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetRateplanCode(_rateplanCode
 	return nil
 }
 
-// Get RateplanCode Getter
+// GetRateplanCode RateplanCode Getter
 func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetRateplanCode() string {
 	return r._rateplanCode
 }
 
-// Set is OutRid Setter
+// SetOutRid is OutRid Setter
 // 商家房型编码
 func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetOutRid(_outRid string) error {
 	r._outRid = _outRid
@@ -79,12 +79,12 @@ func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetOutRid(_outRid string) err
 	return nil
 }
 
-// Get OutRid Getter
+// GetOutRid OutRid Getter
 func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetOutRid() string {
 	return r._outRid
 }
 
-// Set is Occupancy Setter
+// SetOccupancy is Occupancy Setter
 // 连住天数
 func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetOccupancy(_occupancy int64) error {
 	r._occupancy = _occupancy
@@ -92,12 +92,12 @@ func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetOccupancy(_occupancy int64
 	return nil
 }
 
-// Get Occupancy Getter
+// GetOccupancy Occupancy Getter
 func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetOccupancy() int64 {
 	return r._occupancy
 }
 
-// Set is Lengthofstay Setter
+// SetLengthofstay is Lengthofstay Setter
 // 入住人数
 func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetLengthofstay(_lengthofstay int64) error {
 	r._lengthofstay = _lengthofstay
@@ -105,7 +105,7 @@ func (r *TaobaoXhotelMultiplerateDeleteAPIRequest) SetLengthofstay(_lengthofstay
 	return nil
 }
 
-// Get Lengthofstay Getter
+// GetLengthofstay Lengthofstay Getter
 func (r TaobaoXhotelMultiplerateDeleteAPIRequest) GetLengthofstay() int64 {
 	return r._lengthofstay
 }

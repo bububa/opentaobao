@@ -37,7 +37,7 @@ func (r AlitripXhotelChannelOrderCreateResQueryAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is OutSourceOrderId Setter
+// SetOutSourceOrderId is OutSourceOrderId Setter
 // 外部渠道订单号
 func (r *AlitripXhotelChannelOrderCreateResQueryAPIRequest) SetOutSourceOrderId(_outSourceOrderId string) error {
 	r._outSourceOrderId = _outSourceOrderId
@@ -45,7 +45,7 @@ func (r *AlitripXhotelChannelOrderCreateResQueryAPIRequest) SetOutSourceOrderId(
 	return nil
 }
 
-// Get OutSourceOrderId Getter
+// GetOutSourceOrderId OutSourceOrderId Getter
 func (r AlitripXhotelChannelOrderCreateResQueryAPIRequest) GetOutSourceOrderId() string {
 	return r._outSourceOrderId
 }

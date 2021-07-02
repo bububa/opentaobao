@@ -37,7 +37,7 @@ func (r TaobaoItemDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NumIid Setter
+// SetNumIid is NumIid Setter
 // 商品数字ID，该参数必须
 func (r *TaobaoItemDeleteAPIRequest) SetNumIid(_numIid int64) error {
 	r._numIid = _numIid
@@ -45,7 +45,7 @@ func (r *TaobaoItemDeleteAPIRequest) SetNumIid(_numIid int64) error {
 	return nil
 }
 
-// Get NumIid Getter
+// GetNumIid NumIid Getter
 func (r TaobaoItemDeleteAPIRequest) GetNumIid() int64 {
 	return r._numIid
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkTradeRefundQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundGoodsQueryRequest Setter
+// SetRefundGoodsQueryRequest is RefundGoodsQueryRequest Setter
 // 查询请求
 func (r *AlibabaWdkTradeRefundQueryAPIRequest) SetRefundGoodsQueryRequest(_refundGoodsQueryRequest *RefundGoodsQueryRequest) error {
 	r._refundGoodsQueryRequest = _refundGoodsQueryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkTradeRefundQueryAPIRequest) SetRefundGoodsQueryRequest(_refun
 	return nil
 }
 
-// Get RefundGoodsQueryRequest Getter
+// GetRefundGoodsQueryRequest RefundGoodsQueryRequest Getter
 func (r AlibabaWdkTradeRefundQueryAPIRequest) GetRefundGoodsQueryRequest() *RefundGoodsQueryRequest {
 	return r._refundGoodsQueryRequest
 }

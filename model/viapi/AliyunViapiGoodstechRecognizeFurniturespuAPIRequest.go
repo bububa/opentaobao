@@ -43,7 +43,7 @@ func (r AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is ImageUrl Setter
+// SetImageUrl is ImageUrl Setter
 // 待检测图片链接
 func (r *AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) SetImageUrl(_imageUrl string) error {
 	r._imageUrl = _imageUrl
@@ -51,12 +51,12 @@ func (r *AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) SetImageUrl(_image
 	return nil
 }
 
-// Get ImageUrl Getter
+// GetImageUrl ImageUrl Getter
 func (r AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) GetImageUrl() string {
 	return r._imageUrl
 }
 
-// Set is XLength Setter
+// SetXLength is XLength Setter
 // 模型x方向的尺寸，单位cm，默认值100
 func (r *AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) SetXLength(_xLength string) error {
 	r._xLength = _xLength
@@ -64,12 +64,12 @@ func (r *AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) SetXLength(_xLengt
 	return nil
 }
 
-// Get XLength Getter
+// GetXLength XLength Getter
 func (r AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) GetXLength() string {
 	return r._xLength
 }
 
-// Set is YLength Setter
+// SetYLength is YLength Setter
 // 模型y方向的尺寸，单位cm，默认值100
 func (r *AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) SetYLength(_yLength string) error {
 	r._yLength = _yLength
@@ -77,12 +77,12 @@ func (r *AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) SetYLength(_yLengt
 	return nil
 }
 
-// Get YLength Getter
+// GetYLength YLength Getter
 func (r AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) GetYLength() string {
 	return r._yLength
 }
 
-// Set is ZLength Setter
+// SetZLength is ZLength Setter
 // 模型z方向的尺寸，单位cm，默认值100
 func (r *AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) SetZLength(_zLength string) error {
 	r._zLength = _zLength
@@ -90,7 +90,7 @@ func (r *AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) SetZLength(_zLengt
 	return nil
 }
 
-// Get ZLength Getter
+// GetZLength ZLength Getter
 func (r AliyunViapiGoodstechRecognizeFurniturespuAPIRequest) GetZLength() string {
 	return r._zLength
 }

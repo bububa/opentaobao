@@ -37,7 +37,7 @@ func (r AlibabaWdkBmPaiyangStockQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IsvShopStockParam Setter
+// SetIsvShopStockParam is IsvShopStockParam Setter
 // 请求入参
 func (r *AlibabaWdkBmPaiyangStockQueryAPIRequest) SetIsvShopStockParam(_isvShopStockParam *IsvShopStockParam) error {
 	r._isvShopStockParam = _isvShopStockParam
@@ -45,7 +45,7 @@ func (r *AlibabaWdkBmPaiyangStockQueryAPIRequest) SetIsvShopStockParam(_isvShopS
 	return nil
 }
 
-// Get IsvShopStockParam Getter
+// GetIsvShopStockParam IsvShopStockParam Getter
 func (r AlibabaWdkBmPaiyangStockQueryAPIRequest) GetIsvShopStockParam() *IsvShopStockParam {
 	return r._isvShopStockParam
 }

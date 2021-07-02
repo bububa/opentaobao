@@ -37,7 +37,7 @@ func (r TaobaoOpenAccountTokenValidateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamToken Setter
+// SetParamToken is ParamToken Setter
 // token
 func (r *TaobaoOpenAccountTokenValidateAPIRequest) SetParamToken(_paramToken string) error {
 	r._paramToken = _paramToken
@@ -45,7 +45,7 @@ func (r *TaobaoOpenAccountTokenValidateAPIRequest) SetParamToken(_paramToken str
 	return nil
 }
 
-// Get ParamToken Getter
+// GetParamToken ParamToken Getter
 func (r TaobaoOpenAccountTokenValidateAPIRequest) GetParamToken() string {
 	return r._paramToken
 }

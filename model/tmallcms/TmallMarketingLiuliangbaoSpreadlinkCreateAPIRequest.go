@@ -37,7 +37,7 @@ func (r TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 活动链接，必须为淘系链接
 func (r *TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -45,7 +45,7 @@ func (r *TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest) SetUrl(_url string
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r TmallMarketingLiuliangbaoSpreadlinkCreateAPIRequest) GetUrl() string {
 	return r._url
 }

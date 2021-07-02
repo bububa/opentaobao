@@ -43,7 +43,7 @@ func (r AlitripTravelElementsSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 商家id
 func (r *AlitripTravelElementsSearchAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
@@ -51,12 +51,12 @@ func (r *AlitripTravelElementsSearchAPIRequest) SetSellerId(_sellerId int64) err
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r AlitripTravelElementsSearchAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 查询关键词
 func (r *AlitripTravelElementsSearchAPIRequest) SetQuery(_query string) error {
 	r._query = _query
@@ -64,12 +64,12 @@ func (r *AlitripTravelElementsSearchAPIRequest) SetQuery(_query string) error {
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlitripTravelElementsSearchAPIRequest) GetQuery() string {
 	return r._query
 }
 
-// Set is Count Setter
+// SetCount is Count Setter
 // 查询数量，限制100
 func (r *AlitripTravelElementsSearchAPIRequest) SetCount(_count int64) error {
 	r._count = _count
@@ -77,12 +77,12 @@ func (r *AlitripTravelElementsSearchAPIRequest) SetCount(_count int64) error {
 	return nil
 }
 
-// Get Count Getter
+// GetCount Count Getter
 func (r AlitripTravelElementsSearchAPIRequest) GetCount() int64 {
 	return r._count
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 资源类型
 func (r *AlitripTravelElementsSearchAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -90,7 +90,7 @@ func (r *AlitripTravelElementsSearchAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlitripTravelElementsSearchAPIRequest) GetType() int64 {
 	return r._type
 }

@@ -41,7 +41,7 @@ func (r AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is ActivityList Setter
+// SetActivityList is ActivityList Setter
 // 大润发活动数据
 func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) SetActivityList(_activityList []DrfTxdActivityBo) error {
 	r._activityList = _activityList
@@ -49,12 +49,12 @@ func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) SetActivityList(_
 	return nil
 }
 
-// Get ActivityList Getter
+// GetActivityList ActivityList Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) GetActivityList() []DrfTxdActivityBo {
 	return r._activityList
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 门店Id
 func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) SetShopId(_shopId string) error {
 	r._shopId = _shopId
@@ -62,12 +62,12 @@ func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) SetShopId(_shopId
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) GetShopId() string {
 	return r._shopId
 }
 
-// Set is VersionId Setter
+// SetVersionId is VersionId Setter
 // 版本ID
 func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) SetVersionId(_versionId int64) error {
 	r._versionId = _versionId
@@ -75,7 +75,7 @@ func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) SetVersionId(_ver
 	return nil
 }
 
-// Get VersionId Getter
+// GetVersionId VersionId Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySyncAPIRequest) GetVersionId() int64 {
 	return r._versionId
 }

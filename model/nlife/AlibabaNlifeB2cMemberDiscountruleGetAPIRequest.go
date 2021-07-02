@@ -39,7 +39,7 @@ func (r AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is CompanyId Setter
+// SetCompanyId is CompanyId Setter
 // 企业ID
 func (r *AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) SetCompanyId(_companyId string) error {
 	r._companyId = _companyId
@@ -47,12 +47,12 @@ func (r *AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) SetCompanyId(_companyId
 	return nil
 }
 
-// Get CompanyId Getter
+// GetCompanyId CompanyId Getter
 func (r AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) GetCompanyId() string {
 	return r._companyId
 }
 
-// Set is CardNo Setter
+// SetCardNo is CardNo Setter
 // 会员在ISV处的编号
 func (r *AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) SetCardNo(_cardNo string) error {
 	r._cardNo = _cardNo
@@ -60,7 +60,7 @@ func (r *AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) SetCardNo(_cardNo strin
 	return nil
 }
 
-// Get CardNo Getter
+// GetCardNo CardNo Getter
 func (r AlibabaNlifeB2cMemberDiscountruleGetAPIRequest) GetCardNo() string {
 	return r._cardNo
 }

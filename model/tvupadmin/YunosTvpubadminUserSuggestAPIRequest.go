@@ -37,7 +37,7 @@ func (r YunosTvpubadminUserSuggestAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Keyword Setter
+// SetKeyword is Keyword Setter
 // 关键词
 func (r *YunosTvpubadminUserSuggestAPIRequest) SetKeyword(_keyword string) error {
 	r._keyword = _keyword
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminUserSuggestAPIRequest) SetKeyword(_keyword string) error
 	return nil
 }
 
-// Get Keyword Getter
+// GetKeyword Keyword Getter
 func (r YunosTvpubadminUserSuggestAPIRequest) GetKeyword() string {
 	return r._keyword
 }

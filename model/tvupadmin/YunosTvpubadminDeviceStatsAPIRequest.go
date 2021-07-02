@@ -39,7 +39,7 @@ func (r YunosTvpubadminDeviceStatsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FactoryName Setter
+// SetFactoryName is FactoryName Setter
 // 厂商名称
 func (r *YunosTvpubadminDeviceStatsAPIRequest) SetFactoryName(_factoryName string) error {
 	r._factoryName = _factoryName
@@ -47,12 +47,12 @@ func (r *YunosTvpubadminDeviceStatsAPIRequest) SetFactoryName(_factoryName strin
 	return nil
 }
 
-// Get FactoryName Getter
+// GetFactoryName FactoryName Getter
 func (r YunosTvpubadminDeviceStatsAPIRequest) GetFactoryName() string {
 	return r._factoryName
 }
 
-// Set is DeviceModel Setter
+// SetDeviceModel is DeviceModel Setter
 // 设备型号
 func (r *YunosTvpubadminDeviceStatsAPIRequest) SetDeviceModel(_deviceModel string) error {
 	r._deviceModel = _deviceModel
@@ -60,7 +60,7 @@ func (r *YunosTvpubadminDeviceStatsAPIRequest) SetDeviceModel(_deviceModel strin
 	return nil
 }
 
-// Get DeviceModel Getter
+// GetDeviceModel DeviceModel Getter
 func (r YunosTvpubadminDeviceStatsAPIRequest) GetDeviceModel() string {
 	return r._deviceModel
 }

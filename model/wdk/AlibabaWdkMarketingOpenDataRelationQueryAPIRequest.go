@@ -41,7 +41,7 @@ func (r AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is OutDataIds Setter
+// SetOutDataIds is OutDataIds Setter
 // 外部数据Id
 func (r *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) SetOutDataIds(_outDataIds []string) error {
 	r._outDataIds = _outDataIds
@@ -49,12 +49,12 @@ func (r *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) SetOutDataIds(_outD
 	return nil
 }
 
-// Get OutDataIds Getter
+// GetOutDataIds OutDataIds Getter
 func (r AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) GetOutDataIds() []string {
 	return r._outDataIds
 }
 
-// Set is BizCode Setter
+// SetBizCode is BizCode Setter
 // 数据类型：WDK_MARKET:五道口营销
 func (r *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) SetBizCode(_bizCode string) error {
 	r._bizCode = _bizCode
@@ -62,12 +62,12 @@ func (r *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) SetBizCode(_bizCode
 	return nil
 }
 
-// Get BizCode Getter
+// GetBizCode BizCode Getter
 func (r AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) GetBizCode() string {
 	return r._bizCode
 }
 
-// Set is SubBizCode Setter
+// SetSubBizCode is SubBizCode Setter
 // 数据子类型：ACTIVITY:营销活动数据
 func (r *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) SetSubBizCode(_subBizCode string) error {
 	r._subBizCode = _subBizCode
@@ -75,7 +75,7 @@ func (r *AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) SetSubBizCode(_subB
 	return nil
 }
 
-// Get SubBizCode Getter
+// GetSubBizCode SubBizCode Getter
 func (r AlibabaWdkMarketingOpenDataRelationQueryAPIRequest) GetSubBizCode() string {
 	return r._subBizCode
 }

@@ -37,7 +37,7 @@ func (r AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest) GetApiParams
 	return params
 }
 
-// Set is ScreeningResultCreationRequest Setter
+// SetScreeningResultCreationRequest is ScreeningResultCreationRequest Setter
 // Screening result creation request
 func (r *AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest) SetScreeningResultCreationRequest(_screeningResultCreationRequest *RmaScreeningCreationRequest) error {
 	r._screeningResultCreationRequest = _screeningResultCreationRequest
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest) SetScreenin
 	return nil
 }
 
-// Get ScreeningResultCreationRequest Getter
+// GetScreeningResultCreationRequest ScreeningResultCreationRequest Getter
 func (r AliexpressSolutionIssuePartnerRmaScreeningCreateAPIRequest) GetScreeningResultCreationRequest() *RmaScreeningCreationRequest {
 	return r._screeningResultCreationRequest
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkUmsOutboundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ErpOutputOrderDto Setter
+// SetErpOutputOrderDto is ErpOutputOrderDto Setter
 // 出库-ERP下发单请求dto
 func (r *AlibabaWdkUmsOutboundAPIRequest) SetErpOutputOrderDto(_erpOutputOrderDto *ErpOutputOrderDto) error {
 	r._erpOutputOrderDto = _erpOutputOrderDto
@@ -45,7 +45,7 @@ func (r *AlibabaWdkUmsOutboundAPIRequest) SetErpOutputOrderDto(_erpOutputOrderDt
 	return nil
 }
 
-// Get ErpOutputOrderDto Getter
+// GetErpOutputOrderDto ErpOutputOrderDto Getter
 func (r AlibabaWdkUmsOutboundAPIRequest) GetErpOutputOrderDto() *ErpOutputOrderDto {
 	return r._erpOutputOrderDto
 }

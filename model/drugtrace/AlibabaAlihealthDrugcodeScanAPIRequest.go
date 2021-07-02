@@ -45,7 +45,7 @@ func (r AlibabaAlihealthDrugcodeScanAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 20位码
 func (r *AlibabaAlihealthDrugcodeScanAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -53,12 +53,12 @@ func (r *AlibabaAlihealthDrugcodeScanAPIRequest) SetCode(_code string) error {
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaAlihealthDrugcodeScanAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is QueryAppName Setter
+// SetQueryAppName is QueryAppName Setter
 // 渠道
 func (r *AlibabaAlihealthDrugcodeScanAPIRequest) SetQueryAppName(_queryAppName string) error {
 	r._queryAppName = _queryAppName
@@ -66,12 +66,12 @@ func (r *AlibabaAlihealthDrugcodeScanAPIRequest) SetQueryAppName(_queryAppName s
 	return nil
 }
 
-// Get QueryAppName Getter
+// GetQueryAppName QueryAppName Getter
 func (r AlibabaAlihealthDrugcodeScanAPIRequest) GetQueryAppName() string {
 	return r._queryAppName
 }
 
-// Set is ClientId Setter
+// SetClientId is ClientId Setter
 // 用户ip
 func (r *AlibabaAlihealthDrugcodeScanAPIRequest) SetClientId(_clientId string) error {
 	r._clientId = _clientId
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthDrugcodeScanAPIRequest) SetClientId(_clientId string) e
 	return nil
 }
 
-// Get ClientId Getter
+// GetClientId ClientId Getter
 func (r AlibabaAlihealthDrugcodeScanAPIRequest) GetClientId() string {
 	return r._clientId
 }
 
-// Set is DeviceUtdid Setter
+// SetDeviceUtdid is DeviceUtdid Setter
 // 设备标识
 func (r *AlibabaAlihealthDrugcodeScanAPIRequest) SetDeviceUtdid(_deviceUtdid string) error {
 	r._deviceUtdid = _deviceUtdid
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthDrugcodeScanAPIRequest) SetDeviceUtdid(_deviceUtdid str
 	return nil
 }
 
-// Get DeviceUtdid Getter
+// GetDeviceUtdid DeviceUtdid Getter
 func (r AlibabaAlihealthDrugcodeScanAPIRequest) GetDeviceUtdid() string {
 	return r._deviceUtdid
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID
 func (r *AlibabaAlihealthDrugcodeScanAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -105,7 +105,7 @@ func (r *AlibabaAlihealthDrugcodeScanAPIRequest) SetUserId(_userId string) error
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaAlihealthDrugcodeScanAPIRequest) GetUserId() string {
 	return r._userId
 }

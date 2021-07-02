@@ -39,7 +39,7 @@ func (r TaobaoOmniorderDtdConsignAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 淘宝订单主订单号
 func (r *TaobaoOmniorderDtdConsignAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
@@ -47,12 +47,12 @@ func (r *TaobaoOmniorderDtdConsignAPIRequest) SetMainOrderId(_mainOrderId int64)
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r TaobaoOmniorderDtdConsignAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 发货对应的商户中心门店ID
 func (r *TaobaoOmniorderDtdConsignAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -60,7 +60,7 @@ func (r *TaobaoOmniorderDtdConsignAPIRequest) SetStoreId(_storeId int64) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoOmniorderDtdConsignAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }

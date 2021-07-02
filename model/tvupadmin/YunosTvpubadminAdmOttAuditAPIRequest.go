@@ -37,7 +37,7 @@ func (r YunosTvpubadminAdmOttAuditAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // 广告审核内容，json格式
 func (r *YunosTvpubadminAdmOttAuditAPIRequest) SetData(_data string) error {
 	r._data = _data
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminAdmOttAuditAPIRequest) SetData(_data string) error {
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r YunosTvpubadminAdmOttAuditAPIRequest) GetData() string {
 	return r._data
 }

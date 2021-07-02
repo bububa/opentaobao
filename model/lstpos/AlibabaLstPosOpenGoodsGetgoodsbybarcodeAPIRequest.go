@@ -37,7 +37,7 @@ func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is Barcode Setter
+// SetBarcode is Barcode Setter
 // 商品条码
 func (r *AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) SetBarcode(_barcode string) error {
 	r._barcode = _barcode
@@ -45,7 +45,7 @@ func (r *AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) SetBarcode(_barcode 
 	return nil
 }
 
-// Get Barcode Getter
+// GetBarcode Barcode Getter
 func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeAPIRequest) GetBarcode() string {
 	return r._barcode
 }

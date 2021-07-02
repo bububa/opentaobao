@@ -39,7 +39,7 @@ func (r TaobaoRdsDbDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InstanceName Setter
+// SetInstanceName is InstanceName Setter
 // rds的实例名
 func (r *TaobaoRdsDbDeleteAPIRequest) SetInstanceName(_instanceName string) error {
 	r._instanceName = _instanceName
@@ -47,12 +47,12 @@ func (r *TaobaoRdsDbDeleteAPIRequest) SetInstanceName(_instanceName string) erro
 	return nil
 }
 
-// Get InstanceName Getter
+// GetInstanceName InstanceName Getter
 func (r TaobaoRdsDbDeleteAPIRequest) GetInstanceName() string {
 	return r._instanceName
 }
 
-// Set is DbName Setter
+// SetDbName is DbName Setter
 // 数据库的name，可以通过 taobao.rds.db.get 获取
 func (r *TaobaoRdsDbDeleteAPIRequest) SetDbName(_dbName string) error {
 	r._dbName = _dbName
@@ -60,7 +60,7 @@ func (r *TaobaoRdsDbDeleteAPIRequest) SetDbName(_dbName string) error {
 	return nil
 }
 
-// Get DbName Getter
+// GetDbName DbName Getter
 func (r TaobaoRdsDbDeleteAPIRequest) GetDbName() string {
 	return r._dbName
 }

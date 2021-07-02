@@ -53,7 +53,7 @@ func (r CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 姓名
 func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -61,12 +61,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetName(_name string)
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is WorkStationName Setter
+// SetWorkStationName is WorkStationName Setter
 // 网点站点信息
 func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetWorkStationName(_workStationName string) error {
 	r._workStationName = _workStationName
@@ -74,12 +74,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetWorkStationName(_w
 	return nil
 }
 
-// Get WorkStationName Getter
+// GetWorkStationName WorkStationName Getter
 func (r CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) GetWorkStationName() string {
 	return r._workStationName
 }
 
-// Set is CpUserId Setter
+// SetCpUserId is CpUserId Setter
 // 小件员员工编号
 func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetCpUserId(_cpUserId string) error {
 	r._cpUserId = _cpUserId
@@ -87,12 +87,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetCpUserId(_cpUserId
 	return nil
 }
 
-// Get CpUserId Getter
+// GetCpUserId CpUserId Getter
 func (r CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) GetCpUserId() string {
 	return r._cpUserId
 }
 
-// Set is AlipayAccount Setter
+// SetAlipayAccount is AlipayAccount Setter
 // 支付宝账号
 func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetAlipayAccount(_alipayAccount string) error {
 	r._alipayAccount = _alipayAccount
@@ -100,12 +100,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetAlipayAccount(_ali
 	return nil
 }
 
-// Get AlipayAccount Getter
+// GetAlipayAccount AlipayAccount Getter
 func (r CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) GetAlipayAccount() string {
 	return r._alipayAccount
 }
 
-// Set is CityName Setter
+// SetCityName is CityName Setter
 // 城市
 func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetCityName(_cityName string) error {
 	r._cityName = _cityName
@@ -113,12 +113,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetCityName(_cityName
 	return nil
 }
 
-// Get CityName Getter
+// GetCityName CityName Getter
 func (r CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) GetCityName() string {
 	return r._cityName
 }
 
-// Set is CityCode Setter
+// SetCityCode is CityCode Setter
 // 城市行政区域编码
 func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetCityCode(_cityCode string) error {
 	r._cityCode = _cityCode
@@ -126,12 +126,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetCityCode(_cityCode
 	return nil
 }
 
-// Get CityCode Getter
+// GetCityCode CityCode Getter
 func (r CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) GetCityCode() string {
 	return r._cityCode
 }
 
-// Set is WorkStationCode Setter
+// SetWorkStationCode is WorkStationCode Setter
 // 网点站点编码
 func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetWorkStationCode(_workStationCode string) error {
 	r._workStationCode = _workStationCode
@@ -139,12 +139,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetWorkStationCode(_w
 	return nil
 }
 
-// Get WorkStationCode Getter
+// GetWorkStationCode WorkStationCode Getter
 func (r CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) GetWorkStationCode() string {
 	return r._workStationCode
 }
 
-// Set is CpCode Setter
+// SetCpCode is CpCode Setter
 // 小件员所在公司编号
 func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetCpCode(_cpCode string) error {
 	r._cpCode = _cpCode
@@ -152,12 +152,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetCpCode(_cpCode str
 	return nil
 }
 
-// Get CpCode Getter
+// GetCpCode CpCode Getter
 func (r CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) GetCpCode() string {
 	return r._cpCode
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 手机号
 func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -165,7 +165,7 @@ func (r *CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) SetMobile(_mobile str
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r CainiaoGuoguoCpNborderfrontrUpdateuserAPIRequest) GetMobile() string {
 	return r._mobile
 }

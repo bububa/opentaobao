@@ -39,7 +39,7 @@ func (r TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -47,12 +47,12 @@ func (r *TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) SetStoreId(_storeId i
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 门店发货自提状态
 func (r *TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -60,7 +60,7 @@ func (r *TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) SetStatus(_status str
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) GetStatus() string {
 	return r._status
 }

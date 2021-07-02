@@ -37,7 +37,7 @@ func (r AlibabaMjPresaleSettlementAddlistAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PreSaleRefundJson Setter
+// SetPreSaleRefundJson is PreSaleRefundJson Setter
 // 订单json格式数据
 func (r *AlibabaMjPresaleSettlementAddlistAPIRequest) SetPreSaleRefundJson(_preSaleRefundJson string) error {
 	r._preSaleRefundJson = _preSaleRefundJson
@@ -45,7 +45,7 @@ func (r *AlibabaMjPresaleSettlementAddlistAPIRequest) SetPreSaleRefundJson(_preS
 	return nil
 }
 
-// Get PreSaleRefundJson Getter
+// GetPreSaleRefundJson PreSaleRefundJson Getter
 func (r AlibabaMjPresaleSettlementAddlistAPIRequest) GetPreSaleRefundJson() string {
 	return r._preSaleRefundJson
 }

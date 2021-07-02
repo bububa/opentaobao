@@ -47,7 +47,7 @@ func (r TaobaoAlimeUserTokenGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ForeignId Setter
+// SetForeignId is ForeignId Setter
 // 用户在第三方账号中的唯一id
 func (r *TaobaoAlimeUserTokenGetAPIRequest) SetForeignId(_foreignId string) error {
 	r._foreignId = _foreignId
@@ -55,12 +55,12 @@ func (r *TaobaoAlimeUserTokenGetAPIRequest) SetForeignId(_foreignId string) erro
 	return nil
 }
 
-// Get ForeignId Getter
+// GetForeignId ForeignId Getter
 func (r TaobaoAlimeUserTokenGetAPIRequest) GetForeignId() string {
 	return r._foreignId
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 用户昵称
 func (r *TaobaoAlimeUserTokenGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -68,12 +68,12 @@ func (r *TaobaoAlimeUserTokenGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoAlimeUserTokenGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 小蜜分配给第三方账号的来源
 func (r *TaobaoAlimeUserTokenGetAPIRequest) SetSource(_source int64) error {
 	r._source = _source
@@ -81,12 +81,12 @@ func (r *TaobaoAlimeUserTokenGetAPIRequest) SetSource(_source int64) error {
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r TaobaoAlimeUserTokenGetAPIRequest) GetSource() int64 {
 	return r._source
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 用户在小蜜账号中的唯一id
 func (r *TaobaoAlimeUserTokenGetAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -94,12 +94,12 @@ func (r *TaobaoAlimeUserTokenGetAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TaobaoAlimeUserTokenGetAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is Expires Setter
+// SetExpires is Expires Setter
 // 令牌的过期时间(时间为秒)，最大为3600
 func (r *TaobaoAlimeUserTokenGetAPIRequest) SetExpires(_expires int64) error {
 	r._expires = _expires
@@ -107,12 +107,12 @@ func (r *TaobaoAlimeUserTokenGetAPIRequest) SetExpires(_expires int64) error {
 	return nil
 }
 
-// Get Expires Getter
+// GetExpires Expires Getter
 func (r TaobaoAlimeUserTokenGetAPIRequest) GetExpires() int64 {
 	return r._expires
 }
 
-// Set is Routing Setter
+// SetRouting is Routing Setter
 // 路由id, 一般为用户id，用于异地容灾
 func (r *TaobaoAlimeUserTokenGetAPIRequest) SetRouting(_routing int64) error {
 	r._routing = _routing
@@ -120,7 +120,7 @@ func (r *TaobaoAlimeUserTokenGetAPIRequest) SetRouting(_routing int64) error {
 	return nil
 }
 
-// Get Routing Getter
+// GetRouting Routing Getter
 func (r TaobaoAlimeUserTokenGetAPIRequest) GetRouting() int64 {
 	return r._routing
 }

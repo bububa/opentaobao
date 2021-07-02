@@ -39,7 +39,7 @@ func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is NormalVisaUpdateUnitList Setter
+// SetNormalVisaUpdateUnitList is NormalVisaUpdateUnitList Setter
 // 更新信息
 func (r *TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) SetNormalVisaUpdateUnitList(_normalVisaUpdateUnitList []NormalVisaUpdateUnit) error {
 	r._normalVisaUpdateUnitList = _normalVisaUpdateUnitList
@@ -47,12 +47,12 @@ func (r *TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) SetNormalVis
 	return nil
 }
 
-// Get NormalVisaUpdateUnitList Getter
+// GetNormalVisaUpdateUnitList NormalVisaUpdateUnitList Getter
 func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) GetNormalVisaUpdateUnitList() []NormalVisaUpdateUnit {
 	return r._normalVisaUpdateUnitList
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 订单号
 func (r *TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
@@ -60,7 +60,7 @@ func (r *TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) SetBizOrderI
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }

@@ -37,7 +37,7 @@ func (r CainiaoIotTicketSpMaintainVtwoCreateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is MakeMaintainPlanTopRequest Setter
+// SetMakeMaintainPlanTopRequest is MakeMaintainPlanTopRequest Setter
 // 维修方案
 func (r *CainiaoIotTicketSpMaintainVtwoCreateAPIRequest) SetMakeMaintainPlanTopRequest(_makeMaintainPlanTopRequest *MakeMaintainPlanV2TopRequest) error {
 	r._makeMaintainPlanTopRequest = _makeMaintainPlanTopRequest
@@ -45,7 +45,7 @@ func (r *CainiaoIotTicketSpMaintainVtwoCreateAPIRequest) SetMakeMaintainPlanTopR
 	return nil
 }
 
-// Get MakeMaintainPlanTopRequest Getter
+// GetMakeMaintainPlanTopRequest MakeMaintainPlanTopRequest Getter
 func (r CainiaoIotTicketSpMaintainVtwoCreateAPIRequest) GetMakeMaintainPlanTopRequest() *MakeMaintainPlanV2TopRequest {
 	return r._makeMaintainPlanTopRequest
 }

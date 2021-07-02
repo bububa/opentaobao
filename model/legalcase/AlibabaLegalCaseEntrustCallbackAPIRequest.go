@@ -39,7 +39,7 @@ func (r AlibabaLegalCaseEntrustCallbackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EntrustId Setter
+// SetEntrustId is EntrustId Setter
 // 委托id
 func (r *AlibabaLegalCaseEntrustCallbackAPIRequest) SetEntrustId(_entrustId int64) error {
 	r._entrustId = _entrustId
@@ -47,12 +47,12 @@ func (r *AlibabaLegalCaseEntrustCallbackAPIRequest) SetEntrustId(_entrustId int6
 	return nil
 }
 
-// Get EntrustId Getter
+// GetEntrustId EntrustId Getter
 func (r AlibabaLegalCaseEntrustCallbackAPIRequest) GetEntrustId() int64 {
 	return r._entrustId
 }
 
-// Set is CaseId Setter
+// SetCaseId is CaseId Setter
 // 案件id
 func (r *AlibabaLegalCaseEntrustCallbackAPIRequest) SetCaseId(_caseId int64) error {
 	r._caseId = _caseId
@@ -60,7 +60,7 @@ func (r *AlibabaLegalCaseEntrustCallbackAPIRequest) SetCaseId(_caseId int64) err
 	return nil
 }
 
-// Get CaseId Getter
+// GetCaseId CaseId Getter
 func (r AlibabaLegalCaseEntrustCallbackAPIRequest) GetCaseId() int64 {
 	return r._caseId
 }

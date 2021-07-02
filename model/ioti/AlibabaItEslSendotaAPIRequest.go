@@ -39,7 +39,7 @@ func (r AlibabaItEslSendotaAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MacAp Setter
+// SetMacAp is MacAp Setter
 // mac
 func (r *AlibabaItEslSendotaAPIRequest) SetMacAp(_macAp string) error {
 	r._macAp = _macAp
@@ -47,12 +47,12 @@ func (r *AlibabaItEslSendotaAPIRequest) SetMacAp(_macAp string) error {
 	return nil
 }
 
-// Get MacAp Getter
+// GetMacAp MacAp Getter
 func (r AlibabaItEslSendotaAPIRequest) GetMacAp() string {
 	return r._macAp
 }
 
-// Set is OtaDataBase64String Setter
+// SetOtaDataBase64String is OtaDataBase64String Setter
 // base64的ota包
 func (r *AlibabaItEslSendotaAPIRequest) SetOtaDataBase64String(_otaDataBase64String string) error {
 	r._otaDataBase64String = _otaDataBase64String
@@ -60,7 +60,7 @@ func (r *AlibabaItEslSendotaAPIRequest) SetOtaDataBase64String(_otaDataBase64Str
 	return nil
 }
 
-// Get OtaDataBase64String Getter
+// GetOtaDataBase64String OtaDataBase64String Getter
 func (r AlibabaItEslSendotaAPIRequest) GetOtaDataBase64String() string {
 	return r._otaDataBase64String
 }

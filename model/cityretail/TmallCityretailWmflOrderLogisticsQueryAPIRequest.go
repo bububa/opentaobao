@@ -37,7 +37,7 @@ func (r TmallCityretailWmflOrderLogisticsQueryAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 订单号
 func (r *TmallCityretailWmflOrderLogisticsQueryAPIRequest) SetMainOrderId(_mainOrderId string) error {
 	r._mainOrderId = _mainOrderId
@@ -45,7 +45,7 @@ func (r *TmallCityretailWmflOrderLogisticsQueryAPIRequest) SetMainOrderId(_mainO
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r TmallCityretailWmflOrderLogisticsQueryAPIRequest) GetMainOrderId() string {
 	return r._mainOrderId
 }

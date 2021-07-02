@@ -37,7 +37,7 @@ func (r AlitripAgentFlightSellRefundApproveAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参
 func (r *AlitripAgentFlightSellRefundApproveAPIRequest) SetParam(_param *RefundApproveRequestDto) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlitripAgentFlightSellRefundApproveAPIRequest) SetParam(_param *RefundA
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlitripAgentFlightSellRefundApproveAPIRequest) GetParam() *RefundApproveRequestDto {
 	return r._param
 }

@@ -37,7 +37,7 @@ func (r TaobaoBaichuanItemsSubscribeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemIds Setter
+// SetItemIds is ItemIds Setter
 // 订阅的商品id列表
 func (r *TaobaoBaichuanItemsSubscribeAPIRequest) SetItemIds(_itemIds []int64) error {
 	r._itemIds = _itemIds
@@ -45,7 +45,7 @@ func (r *TaobaoBaichuanItemsSubscribeAPIRequest) SetItemIds(_itemIds []int64) er
 	return nil
 }
 
-// Get ItemIds Getter
+// GetItemIds ItemIds Getter
 func (r TaobaoBaichuanItemsSubscribeAPIRequest) GetItemIds() []int64 {
 	return r._itemIds
 }

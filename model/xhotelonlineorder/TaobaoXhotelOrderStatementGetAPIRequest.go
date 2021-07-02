@@ -53,7 +53,7 @@ func (r TaobaoXhotelOrderStatementGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderTids Setter
+// SetOrderTids is OrderTids Setter
 // 要查询的tid列表，逗号分隔,列表查询;当此值不为空时候，其余参数忽略。最多单次20条。
 func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetOrderTids(_orderTids string) error {
 	r._orderTids = _orderTids
@@ -61,12 +61,12 @@ func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetOrderTids(_orderTids string
 	return nil
 }
 
-// Get OrderTids Getter
+// GetOrderTids OrderTids Getter
 func (r TaobaoXhotelOrderStatementGetAPIRequest) GetOrderTids() string {
 	return r._orderTids
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 查询条数，最大支持500条
 func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -74,12 +74,12 @@ func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetPageSize(_pageSize int64) e
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoXhotelOrderStatementGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Start Setter
+// SetStart is Start Setter
 // 数据查询开始下标
 func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetStart(_start int64) error {
 	r._start = _start
@@ -87,12 +87,12 @@ func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetStart(_start int64) error {
 	return nil
 }
 
-// Get Start Getter
+// GetStart Start Getter
 func (r TaobaoXhotelOrderStatementGetAPIRequest) GetStart() int64 {
 	return r._start
 }
 
-// Set is DateType Setter
+// SetDateType is DateType Setter
 // 0：check_in, 1：check_out,2：分账时间
 func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetDateType(_dateType int64) error {
 	r._dateType = _dateType
@@ -100,12 +100,12 @@ func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetDateType(_dateType int64) e
 	return nil
 }
 
-// Get DateType Getter
+// GetDateType DateType Getter
 func (r TaobaoXhotelOrderStatementGetAPIRequest) GetDateType() int64 {
 	return r._dateType
 }
 
-// Set is To Setter
+// SetTo is To Setter
 // 查询结束时间
 func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetTo(_to string) error {
 	r._to = _to
@@ -113,12 +113,12 @@ func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetTo(_to string) error {
 	return nil
 }
 
-// Get To Getter
+// GetTo To Getter
 func (r TaobaoXhotelOrderStatementGetAPIRequest) GetTo() string {
 	return r._to
 }
 
-// Set is From Setter
+// SetFrom is From Setter
 // 查询开始时间
 func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetFrom(_from string) error {
 	r._from = _from
@@ -126,12 +126,12 @@ func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetFrom(_from string) error {
 	return nil
 }
 
-// Get From Getter
+// GetFrom From Getter
 func (r TaobaoXhotelOrderStatementGetAPIRequest) GetFrom() string {
 	return r._from
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝订单号
 func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -139,12 +139,12 @@ func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoXhotelOrderStatementGetAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is HotelCode Setter
+// SetHotelCode is HotelCode Setter
 // 外部酒店编码
 func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetHotelCode(_hotelCode string) error {
 	r._hotelCode = _hotelCode
@@ -152,12 +152,12 @@ func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetHotelCode(_hotelCode string
 	return nil
 }
 
-// Get HotelCode Getter
+// GetHotelCode HotelCode Getter
 func (r TaobaoXhotelOrderStatementGetAPIRequest) GetHotelCode() string {
 	return r._hotelCode
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 系统商vendor
 func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -165,7 +165,7 @@ func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetVendor(_vendor string) erro
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelOrderStatementGetAPIRequest) GetVendor() string {
 	return r._vendor
 }

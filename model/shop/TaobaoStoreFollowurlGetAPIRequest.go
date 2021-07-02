@@ -41,7 +41,7 @@ func (r TaobaoStoreFollowurlGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CallbackUrl Setter
+// SetCallbackUrl is CallbackUrl Setter
 // 关注完成后的回调地址,需要是EWS地址。如果不设置，会跳转到店铺首页
 func (r *TaobaoStoreFollowurlGetAPIRequest) SetCallbackUrl(_callbackUrl string) error {
 	r._callbackUrl = _callbackUrl
@@ -49,12 +49,12 @@ func (r *TaobaoStoreFollowurlGetAPIRequest) SetCallbackUrl(_callbackUrl string) 
 	return nil
 }
 
-// Get CallbackUrl Getter
+// GetCallbackUrl CallbackUrl Getter
 func (r TaobaoStoreFollowurlGetAPIRequest) GetCallbackUrl() string {
 	return r._callbackUrl
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 商家nick
 func (r *TaobaoStoreFollowurlGetAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -62,12 +62,12 @@ func (r *TaobaoStoreFollowurlGetAPIRequest) SetUserNick(_userNick string) error 
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r TaobaoStoreFollowurlGetAPIRequest) GetUserNick() string {
 	return r._userNick
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 商家ID
 func (r *TaobaoStoreFollowurlGetAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -75,7 +75,7 @@ func (r *TaobaoStoreFollowurlGetAPIRequest) SetUserId(_userId int64) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoStoreFollowurlGetAPIRequest) GetUserId() int64 {
 	return r._userId
 }

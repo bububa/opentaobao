@@ -39,7 +39,7 @@ func (r TaobaoInteractiveListGetbyuserAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前页
 func (r *TaobaoInteractiveListGetbyuserAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -47,12 +47,12 @@ func (r *TaobaoInteractiveListGetbyuserAPIRequest) SetCurrentPage(_currentPage i
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TaobaoInteractiveListGetbyuserAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页多少
 func (r *TaobaoInteractiveListGetbyuserAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -60,7 +60,7 @@ func (r *TaobaoInteractiveListGetbyuserAPIRequest) SetPageSize(_pageSize int64) 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoInteractiveListGetbyuserAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

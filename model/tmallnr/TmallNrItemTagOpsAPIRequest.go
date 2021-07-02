@@ -37,7 +37,7 @@ func (r TmallNrItemTagOpsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TagReqDTO Setter
+// SetTagReqDTO is TagReqDTO Setter
 // 请求入参
 func (r *TmallNrItemTagOpsAPIRequest) SetTagReqDTO(_tagReqDTO *TagReqDto) error {
 	r._tagReqDTO = _tagReqDTO
@@ -45,7 +45,7 @@ func (r *TmallNrItemTagOpsAPIRequest) SetTagReqDTO(_tagReqDTO *TagReqDto) error 
 	return nil
 }
 
-// Get TagReqDTO Getter
+// GetTagReqDTO TagReqDTO Getter
 func (r TmallNrItemTagOpsAPIRequest) GetTagReqDTO() *TagReqDto {
 	return r._tagReqDTO
 }

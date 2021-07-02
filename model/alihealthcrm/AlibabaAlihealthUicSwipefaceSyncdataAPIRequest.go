@@ -47,7 +47,7 @@ func (r AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is TpUserId Setter
+// SetTpUserId is TpUserId Setter
 // 用户ID
 func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetTpUserId(_tpUserId int64) error {
 	r._tpUserId = _tpUserId
@@ -55,12 +55,12 @@ func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetTpUserId(_tpUserId i
 	return nil
 }
 
-// Get TpUserId Getter
+// GetTpUserId TpUserId Getter
 func (r AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) GetTpUserId() int64 {
 	return r._tpUserId
 }
 
-// Set is LackSleepHours Setter
+// SetLackSleepHours is LackSleepHours Setter
 // 缺觉小时数
 func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetLackSleepHours(_lackSleepHours int64) error {
 	r._lackSleepHours = _lackSleepHours
@@ -68,12 +68,12 @@ func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetLackSleepHours(_lack
 	return nil
 }
 
-// Get LackSleepHours Getter
+// GetLackSleepHours LackSleepHours Getter
 func (r AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) GetLackSleepHours() int64 {
 	return r._lackSleepHours
 }
 
-// Set is BlackEyeLevel Setter
+// SetBlackEyeLevel is BlackEyeLevel Setter
 // 黑圆圈级别
 func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetBlackEyeLevel(_blackEyeLevel int64) error {
 	r._blackEyeLevel = _blackEyeLevel
@@ -81,12 +81,12 @@ func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetBlackEyeLevel(_black
 	return nil
 }
 
-// Get BlackEyeLevel Getter
+// GetBlackEyeLevel BlackEyeLevel Getter
 func (r AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) GetBlackEyeLevel() int64 {
 	return r._blackEyeLevel
 }
 
-// Set is EyeBagSwollenLevel Setter
+// SetEyeBagSwollenLevel is EyeBagSwollenLevel Setter
 // 眼袋级别
 func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetEyeBagSwollenLevel(_eyeBagSwollenLevel int64) error {
 	r._eyeBagSwollenLevel = _eyeBagSwollenLevel
@@ -94,12 +94,12 @@ func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetEyeBagSwollenLevel(_
 	return nil
 }
 
-// Get EyeBagSwollenLevel Getter
+// GetEyeBagSwollenLevel EyeBagSwollenLevel Getter
 func (r AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) GetEyeBagSwollenLevel() int64 {
 	return r._eyeBagSwollenLevel
 }
 
-// Set is FishTail Setter
+// SetFishTail is FishTail Setter
 // 鱼尾纹数
 func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetFishTail(_fishTail int64) error {
 	r._fishTail = _fishTail
@@ -107,12 +107,12 @@ func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetFishTail(_fishTail i
 	return nil
 }
 
-// Get FishTail Getter
+// GetFishTail FishTail Getter
 func (r AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) GetFishTail() int64 {
 	return r._fishTail
 }
 
-// Set is LipColor Setter
+// SetLipColor is LipColor Setter
 // 嘴唇颜色
 func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetLipColor(_lipColor string) error {
 	r._lipColor = _lipColor
@@ -120,7 +120,7 @@ func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetLipColor(_lipColor s
 	return nil
 }
 
-// Get LipColor Getter
+// GetLipColor LipColor Getter
 func (r AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) GetLipColor() string {
 	return r._lipColor
 }

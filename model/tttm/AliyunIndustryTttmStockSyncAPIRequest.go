@@ -37,7 +37,7 @@ func (r AliyunIndustryTttmStockSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SyncStock Setter
+// SetSyncStock is SyncStock Setter
 // 库存
 func (r *AliyunIndustryTttmStockSyncAPIRequest) SetSyncStock(_syncStock *StockInfoDto) error {
 	r._syncStock = _syncStock
@@ -45,7 +45,7 @@ func (r *AliyunIndustryTttmStockSyncAPIRequest) SetSyncStock(_syncStock *StockIn
 	return nil
 }
 
-// Get SyncStock Getter
+// GetSyncStock SyncStock Getter
 func (r AliyunIndustryTttmStockSyncAPIRequest) GetSyncStock() *StockInfoDto {
 	return r._syncStock
 }

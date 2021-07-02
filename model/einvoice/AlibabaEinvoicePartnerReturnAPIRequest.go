@@ -75,7 +75,7 @@ func (r AlibabaEinvoicePartnerReturnAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PlatformCode Setter
+// SetPlatformCode is PlatformCode Setter
 // 电商平台身份标识码，TB=淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、OTHER=其他,  (只传英文编码)
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetPlatformCode(_platformCode string) error {
 	r._platformCode = _platformCode
@@ -83,12 +83,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetPlatformCode(_platformCode s
 	return nil
 }
 
-// Get PlatformCode Getter
+// GetPlatformCode PlatformCode Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetPlatformCode() string {
 	return r._platformCode
 }
 
-// Set is InvoiceAmount Setter
+// SetInvoiceAmount is InvoiceAmount Setter
 // 开票金额
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceAmount(_invoiceAmount string) error {
 	r._invoiceAmount = _invoiceAmount
@@ -96,12 +96,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceAmount(_invoiceAmount
 	return nil
 }
 
-// Get InvoiceAmount Getter
+// GetInvoiceAmount InvoiceAmount Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceAmount() string {
 	return r._invoiceAmount
 }
 
-// Set is Ciphertext Setter
+// SetCiphertext is Ciphertext Setter
 // 发票密文，密码区的字符串
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetCiphertext(_ciphertext string) error {
 	r._ciphertext = _ciphertext
@@ -109,12 +109,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetCiphertext(_ciphertext strin
 	return nil
 }
 
-// Get Ciphertext Getter
+// GetCiphertext Ciphertext Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetCiphertext() string {
 	return r._ciphertext
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 收款方税务登记证号
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -122,12 +122,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetPayeeRegisterNo(_payeeRegist
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is QrCode Setter
+// SetQrCode is QrCode Setter
 // 二维码
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetQrCode(_qrCode string) error {
 	r._qrCode = _qrCode
@@ -135,12 +135,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetQrCode(_qrCode string) error
 	return nil
 }
 
-// Get QrCode Getter
+// GetQrCode QrCode Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetQrCode() string {
 	return r._qrCode
 }
 
-// Set is ErpTid Setter
+// SetErpTid is ErpTid Setter
 // erp自定义单据号
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetErpTid(_erpTid string) error {
 	r._erpTid = _erpTid
@@ -148,12 +148,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetErpTid(_erpTid string) error
 	return nil
 }
 
-// Get ErpTid Getter
+// GetErpTid ErpTid Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetErpTid() string {
 	return r._erpTid
 }
 
-// Set is FileDataType Setter
+// SetFileDataType is FileDataType Setter
 // 文件类型(pdf,jpg,png)
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetFileDataType(_fileDataType string) error {
 	r._fileDataType = _fileDataType
@@ -161,12 +161,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetFileDataType(_fileDataType s
 	return nil
 }
 
-// Get FileDataType Getter
+// GetFileDataType FileDataType Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetFileDataType() string {
 	return r._fileDataType
 }
 
-// Set is InvoiceNo Setter
+// SetInvoiceNo is InvoiceNo Setter
 // 发票号码
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceNo(_invoiceNo string) error {
 	r._invoiceNo = _invoiceNo
@@ -174,12 +174,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceNo(_invoiceNo string)
 	return nil
 }
 
-// Get InvoiceNo Getter
+// GetInvoiceNo InvoiceNo Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceNo() string {
 	return r._invoiceNo
 }
 
-// Set is InvoiceDate Setter
+// SetInvoiceDate is InvoiceDate Setter
 // 发票日期
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceDate(_invoiceDate string) error {
 	r._invoiceDate = _invoiceDate
@@ -187,12 +187,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceDate(_invoiceDate str
 	return nil
 }
 
-// Get InvoiceDate Getter
+// GetInvoiceDate InvoiceDate Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceDate() string {
 	return r._invoiceDate
 }
 
-// Set is InvoiceFileData Setter
+// SetInvoiceFileData is InvoiceFileData Setter
 // 发票文件PDF内容，PDF的byte[]字段串。
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceFileData(_invoiceFileData *model.File) error {
 	r._invoiceFileData = _invoiceFileData
@@ -200,12 +200,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceFileData(_invoiceFile
 	return nil
 }
 
-// Get InvoiceFileData Getter
+// GetInvoiceFileData InvoiceFileData Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceFileData() *model.File {
 	return r._invoiceFileData
 }
 
-// Set is SerialNo Setter
+// SetSerialNo is SerialNo Setter
 // 流水号
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetSerialNo(_serialNo string) error {
 	r._serialNo = _serialNo
@@ -213,12 +213,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetSerialNo(_serialNo string) e
 	return nil
 }
 
-// Get SerialNo Getter
+// GetSerialNo SerialNo Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetSerialNo() string {
 	return r._serialNo
 }
 
-// Set is AntiFakeCode Setter
+// SetAntiFakeCode is AntiFakeCode Setter
 // 防伪码
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetAntiFakeCode(_antiFakeCode string) error {
 	r._antiFakeCode = _antiFakeCode
@@ -226,12 +226,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetAntiFakeCode(_antiFakeCode s
 	return nil
 }
 
-// Get AntiFakeCode Getter
+// GetAntiFakeCode AntiFakeCode Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetAntiFakeCode() string {
 	return r._antiFakeCode
 }
 
-// Set is DeviceNo Setter
+// SetDeviceNo is DeviceNo Setter
 // 税控设备编号(新版电子发票有)
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetDeviceNo(_deviceNo string) error {
 	r._deviceNo = _deviceNo
@@ -239,12 +239,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetDeviceNo(_deviceNo string) e
 	return nil
 }
 
-// Get DeviceNo Getter
+// GetDeviceNo DeviceNo Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetDeviceNo() string {
 	return r._deviceNo
 }
 
-// Set is InvoiceCode Setter
+// SetInvoiceCode is InvoiceCode Setter
 // 发票代码
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceCode(_invoiceCode string) error {
 	r._invoiceCode = _invoiceCode
@@ -252,12 +252,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceCode(_invoiceCode str
 	return nil
 }
 
-// Get InvoiceCode Getter
+// GetInvoiceCode InvoiceCode Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceCode() string {
 	return r._invoiceCode
 }
 
-// Set is PlatformTid Setter
+// SetPlatformTid is PlatformTid Setter
 // 电商平台对应的订单号
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetPlatformTid(_platformTid string) error {
 	r._platformTid = _platformTid
@@ -265,12 +265,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetPlatformTid(_platformTid str
 	return nil
 }
 
-// Get PlatformTid Getter
+// GetPlatformTid PlatformTid Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetPlatformTid() string {
 	return r._platformTid
 }
 
-// Set is CreateResult Setter
+// SetCreateResult is CreateResult Setter
 // 开票结果"success"或者"fail"
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetCreateResult(_createResult string) error {
 	r._createResult = _createResult
@@ -278,12 +278,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetCreateResult(_createResult s
 	return nil
 }
 
-// Get CreateResult Getter
+// GetCreateResult CreateResult Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetCreateResult() string {
 	return r._createResult
 }
 
-// Set is BizErrorCode Setter
+// SetBizErrorCode is BizErrorCode Setter
 // 错误码
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetBizErrorCode(_bizErrorCode string) error {
 	r._bizErrorCode = _bizErrorCode
@@ -291,12 +291,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetBizErrorCode(_bizErrorCode s
 	return nil
 }
 
-// Get BizErrorCode Getter
+// GetBizErrorCode BizErrorCode Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetBizErrorCode() string {
 	return r._bizErrorCode
 }
 
-// Set is BizErrorMsg Setter
+// SetBizErrorMsg is BizErrorMsg Setter
 // 错误信息
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetBizErrorMsg(_bizErrorMsg string) error {
 	r._bizErrorMsg = _bizErrorMsg
@@ -304,12 +304,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetBizErrorMsg(_bizErrorMsg str
 	return nil
 }
 
-// Get BizErrorMsg Getter
+// GetBizErrorMsg BizErrorMsg Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetBizErrorMsg() string {
 	return r._bizErrorMsg
 }
 
-// Set is ReqIndex Setter
+// SetReqIndex is ReqIndex Setter
 // 开票请求的唯一索引
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetReqIndex(_reqIndex string) error {
 	r._reqIndex = _reqIndex
@@ -317,12 +317,12 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetReqIndex(_reqIndex string) e
 	return nil
 }
 
-// Get ReqIndex Getter
+// GetReqIndex ReqIndex Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetReqIndex() string {
 	return r._reqIndex
 }
 
-// Set is InvoiceTime Setter
+// SetInvoiceTime is InvoiceTime Setter
 // 开票时间，格式为HH:mm:ss
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceTime(_invoiceTime string) error {
 	r._invoiceTime = _invoiceTime
@@ -330,7 +330,7 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceTime(_invoiceTime str
 	return nil
 }
 
-// Get InvoiceTime Getter
+// GetInvoiceTime InvoiceTime Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceTime() string {
 	return r._invoiceTime
 }

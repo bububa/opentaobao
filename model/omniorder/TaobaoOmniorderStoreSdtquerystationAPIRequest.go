@@ -37,7 +37,7 @@ func (r TaobaoOmniorderStoreSdtquerystationAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ParamLong2 Setter
+// SetParamLong2 is ParamLong2 Setter
 // 取号时返回的packageId
 func (r *TaobaoOmniorderStoreSdtquerystationAPIRequest) SetParamLong2(_paramLong2 int64) error {
 	r._paramLong2 = _paramLong2
@@ -45,7 +45,7 @@ func (r *TaobaoOmniorderStoreSdtquerystationAPIRequest) SetParamLong2(_paramLong
 	return nil
 }
 
-// Get ParamLong2 Getter
+// GetParamLong2 ParamLong2 Getter
 func (r TaobaoOmniorderStoreSdtquerystationAPIRequest) GetParamLong2() int64 {
 	return r._paramLong2
 }

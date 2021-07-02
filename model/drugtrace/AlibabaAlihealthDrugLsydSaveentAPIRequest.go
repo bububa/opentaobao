@@ -41,7 +41,7 @@ func (r AlibabaAlihealthDrugLsydSaveentAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 添加企业唯一标识
 func (r *AlibabaAlihealthDrugLsydSaveentAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthDrugLsydSaveentAPIRequest) SetRefEntId(_refEntId string
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugLsydSaveentAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is AddEntReq Setter
+// SetAddEntReq is AddEntReq Setter
 // 新增企业信息
 func (r *AlibabaAlihealthDrugLsydSaveentAPIRequest) SetAddEntReq(_addEntReq *AddEntReqDto) error {
 	r._addEntReq = _addEntReq
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthDrugLsydSaveentAPIRequest) SetAddEntReq(_addEntReq *Add
 	return nil
 }
 
-// Get AddEntReq Getter
+// GetAddEntReq AddEntReq Getter
 func (r AlibabaAlihealthDrugLsydSaveentAPIRequest) GetAddEntReq() *AddEntReqDto {
 	return r._addEntReq
 }
 
-// Set is LicPictureByte Setter
+// SetLicPictureByte is LicPictureByte Setter
 // 图片数据流。图片大小务必控制在2M以内
 func (r *AlibabaAlihealthDrugLsydSaveentAPIRequest) SetLicPictureByte(_licPictureByte *model.File) error {
 	r._licPictureByte = _licPictureByte
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthDrugLsydSaveentAPIRequest) SetLicPictureByte(_licPictur
 	return nil
 }
 
-// Get LicPictureByte Getter
+// GetLicPictureByte LicPictureByte Getter
 func (r AlibabaAlihealthDrugLsydSaveentAPIRequest) GetLicPictureByte() *model.File {
 	return r._licPictureByte
 }

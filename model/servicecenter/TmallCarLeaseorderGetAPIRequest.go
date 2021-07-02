@@ -37,7 +37,7 @@ func (r TmallCarLeaseorderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单号
 func (r *TmallCarLeaseorderGetAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -45,7 +45,7 @@ func (r *TmallCarLeaseorderGetAPIRequest) SetOrderId(_orderId int64) error {
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TmallCarLeaseorderGetAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }

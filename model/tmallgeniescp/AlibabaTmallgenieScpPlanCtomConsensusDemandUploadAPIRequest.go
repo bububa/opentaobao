@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest) GetApiParam
 	return params
 }
 
-// Set is C2MConsensusDemandRequest Setter
+// SetC2MConsensusDemandRequest is C2MConsensusDemandRequest Setter
 // 对象
 func (r *AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest) SetC2MConsensusDemandRequest(_c2MConsensusDemandRequest *C2MConsensusDemandRequest) error {
 	r._c2MConsensusDemandRequest = _c2MConsensusDemandRequest
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest) SetC2MCons
 	return nil
 }
 
-// Get C2MConsensusDemandRequest Getter
+// GetC2MConsensusDemandRequest C2MConsensusDemandRequest Getter
 func (r AlibabaTmallgenieScpPlanCtomConsensusDemandUploadAPIRequest) GetC2MConsensusDemandRequest() *C2MConsensusDemandRequest {
 	return r._c2MConsensusDemandRequest
 }

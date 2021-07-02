@@ -39,7 +39,7 @@ func (r TaobaoWlbWmsReturnBillGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // ERP订单编码，查询单个订单时orderCode与cnOrderCode必须有一个参数值不为空，两个参数都赋值时，以cnOrderCode值检索数据
 func (r *TaobaoWlbWmsReturnBillGetAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -47,12 +47,12 @@ func (r *TaobaoWlbWmsReturnBillGetAPIRequest) SetOrderCode(_orderCode string) er
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r TaobaoWlbWmsReturnBillGetAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// Set is CnOrderCode Setter
+// SetCnOrderCode is CnOrderCode Setter
 // 菜鸟订单编码，查询单个订单时orderCode与cnOrderCode必须有一个参数值不为空，两个参数都赋值时，以cnOrderCode值检索数据
 func (r *TaobaoWlbWmsReturnBillGetAPIRequest) SetCnOrderCode(_cnOrderCode string) error {
 	r._cnOrderCode = _cnOrderCode
@@ -60,7 +60,7 @@ func (r *TaobaoWlbWmsReturnBillGetAPIRequest) SetCnOrderCode(_cnOrderCode string
 	return nil
 }
 
-// Get CnOrderCode Getter
+// GetCnOrderCode CnOrderCode Getter
 func (r TaobaoWlbWmsReturnBillGetAPIRequest) GetCnOrderCode() string {
 	return r._cnOrderCode
 }

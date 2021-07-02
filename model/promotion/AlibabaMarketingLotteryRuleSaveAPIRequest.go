@@ -37,7 +37,7 @@ func (r AlibabaMarketingLotteryRuleSaveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LotteryRuleCreate Setter
+// SetLotteryRuleCreate is LotteryRuleCreate Setter
 // 抽奖规则保存请求对象
 func (r *AlibabaMarketingLotteryRuleSaveAPIRequest) SetLotteryRuleCreate(_lotteryRuleCreate *LotteryRuleCreateDto) error {
 	r._lotteryRuleCreate = _lotteryRuleCreate
@@ -45,7 +45,7 @@ func (r *AlibabaMarketingLotteryRuleSaveAPIRequest) SetLotteryRuleCreate(_lotter
 	return nil
 }
 
-// Get LotteryRuleCreate Getter
+// GetLotteryRuleCreate LotteryRuleCreate Getter
 func (r AlibabaMarketingLotteryRuleSaveAPIRequest) GetLotteryRuleCreate() *LotteryRuleCreateDto {
 	return r._lotteryRuleCreate
 }

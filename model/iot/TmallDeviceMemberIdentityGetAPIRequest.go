@@ -41,7 +41,7 @@ func (r TmallDeviceMemberIdentityGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ExtraInfo Setter
+// SetExtraInfo is ExtraInfo Setter
 // 扩展参数为JSON字符串，用于埋点统计，source为来源字段固定值 paiyangji代表来源派样机类型设备，deviceId 为设备id，itemId 相关商品id
 func (r *TmallDeviceMemberIdentityGetAPIRequest) SetExtraInfo(_extraInfo string) error {
 	r._extraInfo = _extraInfo
@@ -49,12 +49,12 @@ func (r *TmallDeviceMemberIdentityGetAPIRequest) SetExtraInfo(_extraInfo string)
 	return nil
 }
 
-// Get ExtraInfo Getter
+// GetExtraInfo ExtraInfo Getter
 func (r TmallDeviceMemberIdentityGetAPIRequest) GetExtraInfo() string {
 	return r._extraInfo
 }
 
-// Set is MixNick Setter
+// SetMixNick is MixNick Setter
 // 混淆昵称，
 func (r *TmallDeviceMemberIdentityGetAPIRequest) SetMixNick(_mixNick string) error {
 	r._mixNick = _mixNick
@@ -62,12 +62,12 @@ func (r *TmallDeviceMemberIdentityGetAPIRequest) SetMixNick(_mixNick string) err
 	return nil
 }
 
-// Get MixNick Getter
+// GetMixNick MixNick Getter
 func (r TmallDeviceMemberIdentityGetAPIRequest) GetMixNick() string {
 	return r._mixNick
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 明文nick，可不填，直接填混淆昵称
 func (r *TmallDeviceMemberIdentityGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -75,7 +75,7 @@ func (r *TmallDeviceMemberIdentityGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TmallDeviceMemberIdentityGetAPIRequest) GetNick() string {
 	return r._nick
 }

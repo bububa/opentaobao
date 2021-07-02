@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmCustomerGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamCustomerIdQueryOpenReq Setter
+// SetParamCustomerIdQueryOpenReq is ParamCustomerIdQueryOpenReq Setter
 // 顾客详情查询条件
 func (r *AlibabaAlscCrmCustomerGetAPIRequest) SetParamCustomerIdQueryOpenReq(_paramCustomerIdQueryOpenReq *CustomerIdQueryOpenReq) error {
 	r._paramCustomerIdQueryOpenReq = _paramCustomerIdQueryOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmCustomerGetAPIRequest) SetParamCustomerIdQueryOpenReq(_pa
 	return nil
 }
 
-// Get ParamCustomerIdQueryOpenReq Getter
+// GetParamCustomerIdQueryOpenReq ParamCustomerIdQueryOpenReq Getter
 func (r AlibabaAlscCrmCustomerGetAPIRequest) GetParamCustomerIdQueryOpenReq() *CustomerIdQueryOpenReq {
 	return r._paramCustomerIdQueryOpenReq
 }

@@ -41,7 +41,7 @@ func (r TmallNrSellerStorerangeReadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 给ISV用sellerid，ISV可能对接其他seller，有可能和登录不是同一个sellerid
 func (r *TmallNrSellerStorerangeReadAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
@@ -49,12 +49,12 @@ func (r *TmallNrSellerStorerangeReadAPIRequest) SetSellerId(_sellerId int64) err
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r TmallNrSellerStorerangeReadAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }
 
-// Set is BizIdentity Setter
+// SetBizIdentity is BizIdentity Setter
 // 业务身份，此api非必填
 func (r *TmallNrSellerStorerangeReadAPIRequest) SetBizIdentity(_bizIdentity string) error {
 	r._bizIdentity = _bizIdentity
@@ -62,12 +62,12 @@ func (r *TmallNrSellerStorerangeReadAPIRequest) SetBizIdentity(_bizIdentity stri
 	return nil
 }
 
-// Get BizIdentity Getter
+// GetBizIdentity BizIdentity Getter
 func (r TmallNrSellerStorerangeReadAPIRequest) GetBizIdentity() string {
 	return r._bizIdentity
 }
 
-// Set is StoreIds Setter
+// SetStoreIds is StoreIds Setter
 // 门店id
 func (r *TmallNrSellerStorerangeReadAPIRequest) SetStoreIds(_storeIds []int64) error {
 	r._storeIds = _storeIds
@@ -75,7 +75,7 @@ func (r *TmallNrSellerStorerangeReadAPIRequest) SetStoreIds(_storeIds []int64) e
 	return nil
 }
 
-// Get StoreIds Getter
+// GetStoreIds StoreIds Getter
 func (r TmallNrSellerStorerangeReadAPIRequest) GetStoreIds() []int64 {
 	return r._storeIds
 }

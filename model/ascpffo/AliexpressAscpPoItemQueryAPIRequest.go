@@ -37,7 +37,7 @@ func (r AliexpressAscpPoItemQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PurchaseOrderItemQuery Setter
+// SetPurchaseOrderItemQuery is PurchaseOrderItemQuery Setter
 // demo
 func (r *AliexpressAscpPoItemQueryAPIRequest) SetPurchaseOrderItemQuery(_purchaseOrderItemQuery *PurchaseOrderItemQueryDto) error {
 	r._purchaseOrderItemQuery = _purchaseOrderItemQuery
@@ -45,7 +45,7 @@ func (r *AliexpressAscpPoItemQueryAPIRequest) SetPurchaseOrderItemQuery(_purchas
 	return nil
 }
 
-// Get PurchaseOrderItemQuery Getter
+// GetPurchaseOrderItemQuery PurchaseOrderItemQuery Getter
 func (r AliexpressAscpPoItemQueryAPIRequest) GetPurchaseOrderItemQuery() *PurchaseOrderItemQueryDto {
 	return r._purchaseOrderItemQuery
 }

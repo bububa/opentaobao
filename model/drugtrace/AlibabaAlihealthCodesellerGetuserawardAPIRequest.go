@@ -37,7 +37,7 @@ func (r AlibabaAlihealthCodesellerGetuserawardAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 追溯码
 func (r *AlibabaAlihealthCodesellerGetuserawardAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthCodesellerGetuserawardAPIRequest) SetCode(_code string)
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaAlihealthCodesellerGetuserawardAPIRequest) GetCode() string {
 	return r._code
 }

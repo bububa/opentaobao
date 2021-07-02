@@ -39,7 +39,7 @@ func (r AlibabaMydataOverviewIndicatorBasicGetAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is DateRange Setter
+// SetDateRange is DateRange Setter
 // 要查询的数据周期
 func (r *AlibabaMydataOverviewIndicatorBasicGetAPIRequest) SetDateRange(_dateRange *DateRange) error {
 	r._dateRange = _dateRange
@@ -47,12 +47,12 @@ func (r *AlibabaMydataOverviewIndicatorBasicGetAPIRequest) SetDateRange(_dateRan
 	return nil
 }
 
-// Get DateRange Getter
+// GetDateRange DateRange Getter
 func (r AlibabaMydataOverviewIndicatorBasicGetAPIRequest) GetDateRange() *DateRange {
 	return r._dateRange
 }
 
-// Set is Industry Setter
+// SetIndustry is Industry Setter
 // 要查询的行业信息
 func (r *AlibabaMydataOverviewIndicatorBasicGetAPIRequest) SetIndustry(_industry *Industry) error {
 	r._industry = _industry
@@ -60,7 +60,7 @@ func (r *AlibabaMydataOverviewIndicatorBasicGetAPIRequest) SetIndustry(_industry
 	return nil
 }
 
-// Get Industry Getter
+// GetIndustry Industry Getter
 func (r AlibabaMydataOverviewIndicatorBasicGetAPIRequest) GetIndustry() *Industry {
 	return r._industry
 }

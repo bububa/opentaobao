@@ -37,7 +37,7 @@ func (r AlibabaAlihealthMdeerScienceSynarticleAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is SynArticleInfo Setter
+// SetSynArticleInfo is SynArticleInfo Setter
 // 同步文章对象
 func (r *AlibabaAlihealthMdeerScienceSynarticleAPIRequest) SetSynArticleInfo(_synArticleInfo *SynArticleInfo) error {
 	r._synArticleInfo = _synArticleInfo
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthMdeerScienceSynarticleAPIRequest) SetSynArticleInfo(_sy
 	return nil
 }
 
-// Get SynArticleInfo Getter
+// GetSynArticleInfo SynArticleInfo Getter
 func (r AlibabaAlihealthMdeerScienceSynarticleAPIRequest) GetSynArticleInfo() *SynArticleInfo {
 	return r._synArticleInfo
 }

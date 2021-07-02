@@ -39,7 +39,7 @@ func (r TmallStoreOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppInfo Setter
+// SetAppInfo is AppInfo Setter
 // 系统自动生成
 func (r *TmallStoreOrderCreateAPIRequest) SetAppInfo(_appInfo *AppInfo) error {
 	r._appInfo = _appInfo
@@ -47,12 +47,12 @@ func (r *TmallStoreOrderCreateAPIRequest) SetAppInfo(_appInfo *AppInfo) error {
 	return nil
 }
 
-// Get AppInfo Getter
+// GetAppInfo AppInfo Getter
 func (r TmallStoreOrderCreateAPIRequest) GetAppInfo() *AppInfo {
 	return r._appInfo
 }
 
-// Set is CreateOrderRequest Setter
+// SetCreateOrderRequest is CreateOrderRequest Setter
 // 创建订单请求
 func (r *TmallStoreOrderCreateAPIRequest) SetCreateOrderRequest(_createOrderRequest *CreateOrderRequest) error {
 	r._createOrderRequest = _createOrderRequest
@@ -60,7 +60,7 @@ func (r *TmallStoreOrderCreateAPIRequest) SetCreateOrderRequest(_createOrderRequ
 	return nil
 }
 
-// Get CreateOrderRequest Getter
+// GetCreateOrderRequest CreateOrderRequest Getter
 func (r TmallStoreOrderCreateAPIRequest) GetCreateOrderRequest() *CreateOrderRequest {
 	return r._createOrderRequest
 }

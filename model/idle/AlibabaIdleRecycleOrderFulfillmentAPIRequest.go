@@ -37,7 +37,7 @@ func (r AlibabaIdleRecycleOrderFulfillmentAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 订单同步入参
 func (r *AlibabaIdleRecycleOrderFulfillmentAPIRequest) SetParam0(_param0 *RecycleOrderSynDto) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlibabaIdleRecycleOrderFulfillmentAPIRequest) SetParam0(_param0 *Recycl
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaIdleRecycleOrderFulfillmentAPIRequest) GetParam0() *RecycleOrderSynDto {
 	return r._param0
 }

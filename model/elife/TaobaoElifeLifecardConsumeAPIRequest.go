@@ -37,7 +37,7 @@ func (r TaobaoElifeLifecardConsumeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ConsumeRequest Setter
+// SetConsumeRequest is ConsumeRequest Setter
 // 交易请求参数
 func (r *TaobaoElifeLifecardConsumeAPIRequest) SetConsumeRequest(_consumeRequest *ConsumeRequest) error {
 	r._consumeRequest = _consumeRequest
@@ -45,7 +45,7 @@ func (r *TaobaoElifeLifecardConsumeAPIRequest) SetConsumeRequest(_consumeRequest
 	return nil
 }
 
-// Get ConsumeRequest Getter
+// GetConsumeRequest ConsumeRequest Getter
 func (r TaobaoElifeLifecardConsumeAPIRequest) GetConsumeRequest() *ConsumeRequest {
 	return r._consumeRequest
 }

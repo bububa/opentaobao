@@ -39,7 +39,7 @@ func (r TaobaoSkusCustomGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // Sku的外部商家ID
 func (r *TaobaoSkusCustomGetAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -47,12 +47,12 @@ func (r *TaobaoSkusCustomGetAPIRequest) SetOuterId(_outerId string) error {
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoSkusCustomGetAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”隔开
 func (r *TaobaoSkusCustomGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -60,7 +60,7 @@ func (r *TaobaoSkusCustomGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoSkusCustomGetAPIRequest) GetFields() string {
 	return r._fields
 }

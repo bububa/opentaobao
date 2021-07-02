@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmCustomerCheckppwAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CheckRequest Setter
+// SetCheckRequest is CheckRequest Setter
 // 请求参数
 func (r *AlibabaAlscCrmCustomerCheckppwAPIRequest) SetCheckRequest(_checkRequest *CheckPayPasswdReq) error {
 	r._checkRequest = _checkRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmCustomerCheckppwAPIRequest) SetCheckRequest(_checkRequest
 	return nil
 }
 
-// Get CheckRequest Getter
+// GetCheckRequest CheckRequest Getter
 func (r AlibabaAlscCrmCustomerCheckppwAPIRequest) GetCheckRequest() *CheckPayPasswdReq {
 	return r._checkRequest
 }

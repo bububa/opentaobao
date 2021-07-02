@@ -39,7 +39,7 @@ func (r AlibabaSecurityJaqAppShieldAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppInfo Setter
+// SetAppInfo is AppInfo Setter
 // 待加固的应用信息
 func (r *AlibabaSecurityJaqAppShieldAPIRequest) SetAppInfo(_appInfo *ScanAppInfo) error {
 	r._appInfo = _appInfo
@@ -47,12 +47,12 @@ func (r *AlibabaSecurityJaqAppShieldAPIRequest) SetAppInfo(_appInfo *ScanAppInfo
 	return nil
 }
 
-// Get AppInfo Getter
+// GetAppInfo AppInfo Getter
 func (r AlibabaSecurityJaqAppShieldAPIRequest) GetAppInfo() *ScanAppInfo {
 	return r._appInfo
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 渠道列表,多渠道加固时填写
 func (r *AlibabaSecurityJaqAppShieldAPIRequest) SetChannel(_channel *ShieldChannel) error {
 	r._channel = _channel
@@ -60,7 +60,7 @@ func (r *AlibabaSecurityJaqAppShieldAPIRequest) SetChannel(_channel *ShieldChann
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r AlibabaSecurityJaqAppShieldAPIRequest) GetChannel() *ShieldChannel {
 	return r._channel
 }

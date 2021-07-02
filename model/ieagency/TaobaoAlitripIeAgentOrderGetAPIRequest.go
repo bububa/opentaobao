@@ -39,7 +39,7 @@ func (r TaobaoAlitripIeAgentOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商ID
 func (r *TaobaoAlitripIeAgentOrderGetAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -47,12 +47,12 @@ func (r *TaobaoAlitripIeAgentOrderGetAPIRequest) SetAgentId(_agentId int64) erro
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r TaobaoAlitripIeAgentOrderGetAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is TradeOrderId Setter
+// SetTradeOrderId is TradeOrderId Setter
 // 交易订单ID
 func (r *TaobaoAlitripIeAgentOrderGetAPIRequest) SetTradeOrderId(_tradeOrderId int64) error {
 	r._tradeOrderId = _tradeOrderId
@@ -60,7 +60,7 @@ func (r *TaobaoAlitripIeAgentOrderGetAPIRequest) SetTradeOrderId(_tradeOrderId i
 	return nil
 }
 
-// Get TradeOrderId Getter
+// GetTradeOrderId TradeOrderId Getter
 func (r TaobaoAlitripIeAgentOrderGetAPIRequest) GetTradeOrderId() int64 {
 	return r._tradeOrderId
 }

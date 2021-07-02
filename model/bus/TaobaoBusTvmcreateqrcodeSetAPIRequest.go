@@ -39,7 +39,7 @@ func (r TaobaoBusTvmcreateqrcodeSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AlitripOrderId Setter
+// SetAlitripOrderId is AlitripOrderId Setter
 // 飞猪订单号
 func (r *TaobaoBusTvmcreateqrcodeSetAPIRequest) SetAlitripOrderId(_alitripOrderId string) error {
 	r._alitripOrderId = _alitripOrderId
@@ -47,12 +47,12 @@ func (r *TaobaoBusTvmcreateqrcodeSetAPIRequest) SetAlitripOrderId(_alitripOrderI
 	return nil
 }
 
-// Get AlitripOrderId Getter
+// GetAlitripOrderId AlitripOrderId Getter
 func (r TaobaoBusTvmcreateqrcodeSetAPIRequest) GetAlitripOrderId() string {
 	return r._alitripOrderId
 }
 
-// Set is TimeoutExpress Setter
+// SetTimeoutExpress is TimeoutExpress Setter
 // 超时时间（分钟）
 func (r *TaobaoBusTvmcreateqrcodeSetAPIRequest) SetTimeoutExpress(_timeoutExpress int64) error {
 	r._timeoutExpress = _timeoutExpress
@@ -60,7 +60,7 @@ func (r *TaobaoBusTvmcreateqrcodeSetAPIRequest) SetTimeoutExpress(_timeoutExpres
 	return nil
 }
 
-// Get TimeoutExpress Getter
+// GetTimeoutExpress TimeoutExpress Getter
 func (r TaobaoBusTvmcreateqrcodeSetAPIRequest) GetTimeoutExpress() int64 {
 	return r._timeoutExpress
 }

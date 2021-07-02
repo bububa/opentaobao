@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeBusinessSyncAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is BaseBusinessDto Setter
+// SetBaseBusinessDto is BaseBusinessDto Setter
 // 入参数据
 func (r *AlibabaAlihouseNewhomeBusinessSyncAPIRequest) SetBaseBusinessDto(_baseBusinessDto *BaseBusinessDto) error {
 	r._baseBusinessDto = _baseBusinessDto
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeBusinessSyncAPIRequest) SetBaseBusinessDto(_baseB
 	return nil
 }
 
-// Get BaseBusinessDto Getter
+// GetBaseBusinessDto BaseBusinessDto Getter
 func (r AlibabaAlihouseNewhomeBusinessSyncAPIRequest) GetBaseBusinessDto() *BaseBusinessDto {
 	return r._baseBusinessDto
 }

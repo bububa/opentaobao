@@ -51,7 +51,7 @@ func (r AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is AlipayUserId Setter
+// SetAlipayUserId is AlipayUserId Setter
 // 432421
 func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetAlipayUserId(_alipayUserId string) error {
 	r._alipayUserId = _alipayUserId
@@ -59,12 +59,12 @@ func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetAlipayUserId(_a
 	return nil
 }
 
-// Get AlipayUserId Getter
+// GetAlipayUserId AlipayUserId Getter
 func (r AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) GetAlipayUserId() string {
 	return r._alipayUserId
 }
 
-// Set is VaccineName Setter
+// SetVaccineName is VaccineName Setter
 // 疫苗名称
 func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetVaccineName(_vaccineName string) error {
 	r._vaccineName = _vaccineName
@@ -72,12 +72,12 @@ func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetVaccineName(_va
 	return nil
 }
 
-// Get VaccineName Getter
+// GetVaccineName VaccineName Getter
 func (r AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) GetVaccineName() string {
 	return r._vaccineName
 }
 
-// Set is ReserveDate Setter
+// SetReserveDate is ReserveDate Setter
 // 预约日期：2019-02-08 严格按照
 func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetReserveDate(_reserveDate string) error {
 	r._reserveDate = _reserveDate
@@ -85,12 +85,12 @@ func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetReserveDate(_re
 	return nil
 }
 
-// Get ReserveDate Getter
+// GetReserveDate ReserveDate Getter
 func (r AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) GetReserveDate() string {
 	return r._reserveDate
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 接种人姓名
 func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -98,12 +98,12 @@ func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetName(_name stri
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is TheTimes Setter
+// SetTheTimes is TheTimes Setter
 // 针次
 func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetTheTimes(_theTimes string) error {
 	r._theTimes = _theTimes
@@ -111,12 +111,12 @@ func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetTheTimes(_theTi
 	return nil
 }
 
-// Get TheTimes Getter
+// GetTheTimes TheTimes Getter
 func (r AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) GetTheTimes() string {
 	return r._theTimes
 }
 
-// Set is PovStoreName Setter
+// SetPovStoreName is PovStoreName Setter
 // 接种点名称（通知方）
 func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetPovStoreName(_povStoreName string) error {
 	r._povStoreName = _povStoreName
@@ -124,12 +124,12 @@ func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetPovStoreName(_p
 	return nil
 }
 
-// Get PovStoreName Getter
+// GetPovStoreName PovStoreName Getter
 func (r AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) GetPovStoreName() string {
 	return r._povStoreName
 }
 
-// Set is ReserveTime Setter
+// SetReserveTime is ReserveTime Setter
 // 可预约时段
 func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetReserveTime(_reserveTime string) error {
 	r._reserveTime = _reserveTime
@@ -137,12 +137,12 @@ func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetReserveTime(_re
 	return nil
 }
 
-// Get ReserveTime Getter
+// GetReserveTime ReserveTime Getter
 func (r AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) GetReserveTime() string {
 	return r._reserveTime
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 用户授权的手机号
 func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -150,7 +150,7 @@ func (r *AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) SetMobile(_mobile 
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r AlibabaHealthVaccinNoticeTimebucketRemindAPIRequest) GetMobile() string {
 	return r._mobile
 }

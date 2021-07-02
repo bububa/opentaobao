@@ -43,7 +43,7 @@ func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 1212
 func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -51,12 +51,12 @@ func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetPhone(_phone string) err
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetPhone() string {
 	return r._phone
 }
 
-// Set is Latitude Setter
+// SetLatitude is Latitude Setter
 // 1212
 func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetLatitude(_latitude string) error {
 	r._latitude = _latitude
@@ -64,12 +64,12 @@ func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetLatitude(_latitude strin
 	return nil
 }
 
-// Get Latitude Getter
+// GetLatitude Latitude Getter
 func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetLatitude() string {
 	return r._latitude
 }
 
-// Set is Longitude Setter
+// SetLongitude is Longitude Setter
 // 1212
 func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetLongitude(_longitude string) error {
 	r._longitude = _longitude
@@ -77,12 +77,12 @@ func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetLongitude(_longitude str
 	return nil
 }
 
-// Get Longitude Getter
+// GetLongitude Longitude Getter
 func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetLongitude() string {
 	return r._longitude
 }
 
-// Set is ErestaurantId Setter
+// SetErestaurantId is ErestaurantId Setter
 // 餐厅id
 func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetErestaurantId(_erestaurantId string) error {
 	r._erestaurantId = _erestaurantId
@@ -90,7 +90,7 @@ func (r *AlibabaEleEnterpriseCartnewQueryAPIRequest) SetErestaurantId(_erestaura
 	return nil
 }
 
-// Get ErestaurantId Getter
+// GetErestaurantId ErestaurantId Getter
 func (r AlibabaEleEnterpriseCartnewQueryAPIRequest) GetErestaurantId() string {
 	return r._erestaurantId
 }

@@ -37,7 +37,7 @@ func (r TmallCarcenterVehicleinfoRegisterAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is VehicleInfo Setter
+// SetVehicleInfo is VehicleInfo Setter
 // 车型数据对象
 func (r *TmallCarcenterVehicleinfoRegisterAPIRequest) SetVehicleInfo(_vehicleInfo *OriginVehicleInfoDto) error {
 	r._vehicleInfo = _vehicleInfo
@@ -45,7 +45,7 @@ func (r *TmallCarcenterVehicleinfoRegisterAPIRequest) SetVehicleInfo(_vehicleInf
 	return nil
 }
 
-// Get VehicleInfo Getter
+// GetVehicleInfo VehicleInfo Getter
 func (r TmallCarcenterVehicleinfoRegisterAPIRequest) GetVehicleInfo() *OriginVehicleInfoDto {
 	return r._vehicleInfo
 }

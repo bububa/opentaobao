@@ -37,7 +37,7 @@ func (r YoukuOttPayOrderQuerycporderAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GatewayOrder Setter
+// SetGatewayOrder is GatewayOrder Setter
 // 支付对应订单
 func (r *YoukuOttPayOrderQuerycporderAPIRequest) SetGatewayOrder(_gatewayOrder string) error {
 	r._gatewayOrder = _gatewayOrder
@@ -45,7 +45,7 @@ func (r *YoukuOttPayOrderQuerycporderAPIRequest) SetGatewayOrder(_gatewayOrder s
 	return nil
 }
 
-// Get GatewayOrder Getter
+// GetGatewayOrder GatewayOrder Getter
 func (r YoukuOttPayOrderQuerycporderAPIRequest) GetGatewayOrder() string {
 	return r._gatewayOrder
 }

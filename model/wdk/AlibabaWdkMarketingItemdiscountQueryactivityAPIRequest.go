@@ -37,7 +37,7 @@ func (r AlibabaWdkMarketingItemdiscountQueryactivityAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 商品对象
 func (r *AlibabaWdkMarketingItemdiscountQueryactivityAPIRequest) SetParam0(_param0 *CommonActivityParam) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMarketingItemdiscountQueryactivityAPIRequest) SetParam0(_para
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaWdkMarketingItemdiscountQueryactivityAPIRequest) GetParam0() *CommonActivityParam {
 	return r._param0
 }

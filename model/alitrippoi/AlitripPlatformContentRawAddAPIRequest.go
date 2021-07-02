@@ -37,7 +37,7 @@ func (r AlitripPlatformContentRawAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FliggyContentRequest Setter
+// SetFliggyContentRequest is FliggyContentRequest Setter
 // 写入入参
 func (r *AlitripPlatformContentRawAddAPIRequest) SetFliggyContentRequest(_fliggyContentRequest *FliggyContentRequest) error {
 	r._fliggyContentRequest = _fliggyContentRequest
@@ -45,7 +45,7 @@ func (r *AlitripPlatformContentRawAddAPIRequest) SetFliggyContentRequest(_fliggy
 	return nil
 }
 
-// Get FliggyContentRequest Getter
+// GetFliggyContentRequest FliggyContentRequest Getter
 func (r AlitripPlatformContentRawAddAPIRequest) GetFliggyContentRequest() *FliggyContentRequest {
 	return r._fliggyContentRequest
 }

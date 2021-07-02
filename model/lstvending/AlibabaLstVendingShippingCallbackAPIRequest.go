@@ -45,7 +45,7 @@ func (r AlibabaLstVendingShippingCallbackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EquipmentCode Setter
+// SetEquipmentCode is EquipmentCode Setter
 // 厂商设备编码
 func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetEquipmentCode(_equipmentCode string) error {
 	r._equipmentCode = _equipmentCode
@@ -53,12 +53,12 @@ func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetEquipmentCode(_equipmen
 	return nil
 }
 
-// Get EquipmentCode Getter
+// GetEquipmentCode EquipmentCode Getter
 func (r AlibabaLstVendingShippingCallbackAPIRequest) GetEquipmentCode() string {
 	return r._equipmentCode
 }
 
-// Set is TradeFlowNo Setter
+// SetTradeFlowNo is TradeFlowNo Setter
 // 交易流水号
 func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetTradeFlowNo(_tradeFlowNo string) error {
 	r._tradeFlowNo = _tradeFlowNo
@@ -66,12 +66,12 @@ func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetTradeFlowNo(_tradeFlowN
 	return nil
 }
 
-// Get TradeFlowNo Getter
+// GetTradeFlowNo TradeFlowNo Getter
 func (r AlibabaLstVendingShippingCallbackAPIRequest) GetTradeFlowNo() string {
 	return r._tradeFlowNo
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 处理结果代码
 func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -79,12 +79,12 @@ func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetCode(_code string) erro
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaLstVendingShippingCallbackAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is Message Setter
+// SetMessage is Message Setter
 // 处理结果代码描述
 func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetMessage(_message string) error {
 	r._message = _message
@@ -92,12 +92,12 @@ func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetMessage(_message string
 	return nil
 }
 
-// Get Message Getter
+// GetMessage Message Getter
 func (r AlibabaLstVendingShippingCallbackAPIRequest) GetMessage() string {
 	return r._message
 }
 
-// Set is Time Setter
+// SetTime is Time Setter
 // 出货时间
 func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetTime(_time string) error {
 	r._time = _time
@@ -105,7 +105,7 @@ func (r *AlibabaLstVendingShippingCallbackAPIRequest) SetTime(_time string) erro
 	return nil
 }
 
-// Get Time Getter
+// GetTime Time Getter
 func (r AlibabaLstVendingShippingCallbackAPIRequest) GetTime() string {
 	return r._time
 }

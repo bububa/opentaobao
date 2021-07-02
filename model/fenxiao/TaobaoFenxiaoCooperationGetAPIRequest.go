@@ -51,7 +51,7 @@ func (r TaobaoFenxiaoCooperationGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 合作状态： NORMAL(合作中)、 ENDING(终止中) 、END (终止)
 func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -59,12 +59,12 @@ func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetStatus(_status string) error 
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoFenxiaoCooperationGetAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 合作开始时间yyyy-MM-dd HH:mm:ss
 func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -72,12 +72,12 @@ func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetStartDate(_startDate string) 
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoFenxiaoCooperationGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 合作结束时间yyyy-MM-dd HH:mm:ss
 func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -85,12 +85,12 @@ func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetEndDate(_endDate string) erro
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoFenxiaoCooperationGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is TradeType Setter
+// SetTradeType is TradeType Setter
 // 分销方式：AGENT(代销) 、DEALER（经销）
 func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetTradeType(_tradeType string) error {
 	r._tradeType = _tradeType
@@ -98,12 +98,12 @@ func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetTradeType(_tradeType string) 
 	return nil
 }
 
-// Get TradeType Getter
+// GetTradeType TradeType Getter
 func (r TaobaoFenxiaoCooperationGetAPIRequest) GetTradeType() string {
 	return r._tradeType
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码（大于0的整数，默认1）
 func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -111,12 +111,12 @@ func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoFenxiaoCooperationGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页记录数（默认20，最大50）
 func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -124,12 +124,12 @@ func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetPageSize(_pageSize int64) err
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoFenxiaoCooperationGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is ChannelCode Setter
+// SetChannelCode is ChannelCode Setter
 // 渠道code
 func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetChannelCode(_channelCode string) error {
 	r._channelCode = _channelCode
@@ -137,12 +137,12 @@ func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetChannelCode(_channelCode stri
 	return nil
 }
 
-// Get ChannelCode Getter
+// GetChannelCode ChannelCode Getter
 func (r TaobaoFenxiaoCooperationGetAPIRequest) GetChannelCode() string {
 	return r._channelCode
 }
 
-// Set is RoleType Setter
+// SetRoleType is RoleType Setter
 // 1是供应商，2 是分销商
 func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetRoleType(_roleType int64) error {
 	r._roleType = _roleType
@@ -150,7 +150,7 @@ func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetRoleType(_roleType int64) err
 	return nil
 }
 
-// Get RoleType Getter
+// GetRoleType RoleType Getter
 func (r TaobaoFenxiaoCooperationGetAPIRequest) GetRoleType() int64 {
 	return r._roleType
 }

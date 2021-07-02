@@ -43,7 +43,7 @@ func (r TaobaoVmarketEticketFailsendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单号
 func (r *TaobaoVmarketEticketFailsendAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -51,12 +51,12 @@ func (r *TaobaoVmarketEticketFailsendAPIRequest) SetOrderId(_orderId int64) erro
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoVmarketEticketFailsendAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 发码通知时的token
 func (r *TaobaoVmarketEticketFailsendAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -64,12 +64,12 @@ func (r *TaobaoVmarketEticketFailsendAPIRequest) SetToken(_token string) error {
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoVmarketEticketFailsendAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is ErrorCode Setter
+// SetErrorCode is ErrorCode Setter
 // 错误码
 func (r *TaobaoVmarketEticketFailsendAPIRequest) SetErrorCode(_errorCode int64) error {
 	r._errorCode = _errorCode
@@ -77,12 +77,12 @@ func (r *TaobaoVmarketEticketFailsendAPIRequest) SetErrorCode(_errorCode int64) 
 	return nil
 }
 
-// Get ErrorCode Getter
+// GetErrorCode ErrorCode Getter
 func (r TaobaoVmarketEticketFailsendAPIRequest) GetErrorCode() int64 {
 	return r._errorCode
 }
 
-// Set is ErrorMsg Setter
+// SetErrorMsg is ErrorMsg Setter
 // 错误信息
 func (r *TaobaoVmarketEticketFailsendAPIRequest) SetErrorMsg(_errorMsg string) error {
 	r._errorMsg = _errorMsg
@@ -90,7 +90,7 @@ func (r *TaobaoVmarketEticketFailsendAPIRequest) SetErrorMsg(_errorMsg string) e
 	return nil
 }
 
-// Get ErrorMsg Getter
+// GetErrorMsg ErrorMsg Getter
 func (r TaobaoVmarketEticketFailsendAPIRequest) GetErrorMsg() string {
 	return r._errorMsg
 }

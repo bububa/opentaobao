@@ -41,7 +41,7 @@ func (r AlibabaLstSpeakerConfigureAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 设备编码
 func (r *AlibabaLstSpeakerConfigureAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -49,12 +49,12 @@ func (r *AlibabaLstSpeakerConfigureAPIRequest) SetDeviceCode(_deviceCode string)
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r AlibabaLstSpeakerConfigureAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is Command Setter
+// SetCommand is Command Setter
 // 命令类型setPayTime,adjustVolume，syncAudio，syncAudioAdvert
 func (r *AlibabaLstSpeakerConfigureAPIRequest) SetCommand(_command string) error {
 	r._command = _command
@@ -62,12 +62,12 @@ func (r *AlibabaLstSpeakerConfigureAPIRequest) SetCommand(_command string) error
 	return nil
 }
 
-// Get Command Getter
+// GetCommand Command Getter
 func (r AlibabaLstSpeakerConfigureAPIRequest) GetCommand() string {
 	return r._command
 }
 
-// Set is Params Setter
+// SetParams is Params Setter
 // 数据体，根据命令不同而不同
 func (r *AlibabaLstSpeakerConfigureAPIRequest) SetParams(_params string) error {
 	r._params = _params
@@ -75,7 +75,7 @@ func (r *AlibabaLstSpeakerConfigureAPIRequest) SetParams(_params string) error {
 	return nil
 }
 
-// Get Params Getter
+// GetParams Params Getter
 func (r AlibabaLstSpeakerConfigureAPIRequest) GetParams() string {
 	return r._params
 }

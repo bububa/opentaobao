@@ -37,7 +37,7 @@ func (r AlibabaAlihealthOutflowDrugSaveorupdateAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is DrugRequest Setter
+// SetDrugRequest is DrugRequest Setter
 // 结果集
 func (r *AlibabaAlihealthOutflowDrugSaveorupdateAPIRequest) SetDrugRequest(_drugRequest *DrugRequest) error {
 	r._drugRequest = _drugRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthOutflowDrugSaveorupdateAPIRequest) SetDrugRequest(_drug
 	return nil
 }
 
-// Get DrugRequest Getter
+// GetDrugRequest DrugRequest Getter
 func (r AlibabaAlihealthOutflowDrugSaveorupdateAPIRequest) GetDrugRequest() *DrugRequest {
 	return r._drugRequest
 }

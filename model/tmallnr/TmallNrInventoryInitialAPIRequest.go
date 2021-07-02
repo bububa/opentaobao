@@ -37,7 +37,7 @@ func (r TmallNrInventoryInitialAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 请求入参
 func (r *TmallNrInventoryInitialAPIRequest) SetParam0(_param0 *NrStoreInvItemInitialReqDto) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TmallNrInventoryInitialAPIRequest) SetParam0(_param0 *NrStoreInvItemIni
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TmallNrInventoryInitialAPIRequest) GetParam0() *NrStoreInvItemInitialReqDto {
 	return r._param0
 }

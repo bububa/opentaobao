@@ -45,7 +45,7 @@ func (r TaobaoMiniappCloudFunctionInvokeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 云函数名称
 func (r *TaobaoMiniappCloudFunctionInvokeAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -53,12 +53,12 @@ func (r *TaobaoMiniappCloudFunctionInvokeAPIRequest) SetName(_name string) error
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoMiniappCloudFunctionInvokeAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Handler Setter
+// SetHandler is Handler Setter
 // 指定云函数的handler
 func (r *TaobaoMiniappCloudFunctionInvokeAPIRequest) SetHandler(_handler string) error {
 	r._handler = _handler
@@ -66,12 +66,12 @@ func (r *TaobaoMiniappCloudFunctionInvokeAPIRequest) SetHandler(_handler string)
 	return nil
 }
 
-// Get Handler Getter
+// GetHandler Handler Getter
 func (r TaobaoMiniappCloudFunctionInvokeAPIRequest) GetHandler() string {
 	return r._handler
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // 调用云函数时的传参（JSON格式）
 func (r *TaobaoMiniappCloudFunctionInvokeAPIRequest) SetData(_data string) error {
 	r._data = _data
@@ -79,12 +79,12 @@ func (r *TaobaoMiniappCloudFunctionInvokeAPIRequest) SetData(_data string) error
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r TaobaoMiniappCloudFunctionInvokeAPIRequest) GetData() string {
 	return r._data
 }
 
-// Set is Env Setter
+// SetEnv is Env Setter
 // 云环境
 func (r *TaobaoMiniappCloudFunctionInvokeAPIRequest) SetEnv(_env string) error {
 	r._env = _env
@@ -92,12 +92,12 @@ func (r *TaobaoMiniappCloudFunctionInvokeAPIRequest) SetEnv(_env string) error {
 	return nil
 }
 
-// Get Env Getter
+// GetEnv Env Getter
 func (r TaobaoMiniappCloudFunctionInvokeAPIRequest) GetEnv() string {
 	return r._env
 }
 
-// Set is Exts Setter
+// SetExts is Exts Setter
 // 扩展协议参数
 func (r *TaobaoMiniappCloudFunctionInvokeAPIRequest) SetExts(_exts string) error {
 	r._exts = _exts
@@ -105,7 +105,7 @@ func (r *TaobaoMiniappCloudFunctionInvokeAPIRequest) SetExts(_exts string) error
 	return nil
 }
 
-// Get Exts Getter
+// GetExts Exts Getter
 func (r TaobaoMiniappCloudFunctionInvokeAPIRequest) GetExts() string {
 	return r._exts
 }

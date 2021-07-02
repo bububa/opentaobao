@@ -39,7 +39,7 @@ func (r TaobaoTradeDrugRefuseorderAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单ID
 func (r *TaobaoTradeDrugRefuseorderAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *TaobaoTradeDrugRefuseorderAPIRequest) SetOrderId(_orderId int64) error 
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoTradeDrugRefuseorderAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is RefuseReason Setter
+// SetRefuseReason is RefuseReason Setter
 // 拒单原因
 func (r *TaobaoTradeDrugRefuseorderAPIRequest) SetRefuseReason(_refuseReason string) error {
 	r._refuseReason = _refuseReason
@@ -60,7 +60,7 @@ func (r *TaobaoTradeDrugRefuseorderAPIRequest) SetRefuseReason(_refuseReason str
 	return nil
 }
 
-// Get RefuseReason Getter
+// GetRefuseReason RefuseReason Getter
 func (r TaobaoTradeDrugRefuseorderAPIRequest) GetRefuseReason() string {
 	return r._refuseReason
 }

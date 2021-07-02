@@ -37,7 +37,7 @@ func (r AlibabaPurSupplierInvoicecreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Invoice Setter
+// SetInvoice is Invoice Setter
 // 预发票头信息
 func (r *AlibabaPurSupplierInvoicecreateAPIRequest) SetInvoice(_invoice *SupplierPreInvoiceInfoVO) error {
 	r._invoice = _invoice
@@ -45,7 +45,7 @@ func (r *AlibabaPurSupplierInvoicecreateAPIRequest) SetInvoice(_invoice *Supplie
 	return nil
 }
 
-// Get Invoice Getter
+// GetInvoice Invoice Getter
 func (r AlibabaPurSupplierInvoicecreateAPIRequest) GetInvoice() *SupplierPreInvoiceInfoVO {
 	return r._invoice
 }

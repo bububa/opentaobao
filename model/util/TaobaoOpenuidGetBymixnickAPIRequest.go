@@ -37,7 +37,7 @@ func (r TaobaoOpenuidGetBymixnickAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MixNick Setter
+// SetMixNick is MixNick Setter
 // 无线类应用获取到的混淆的nick
 func (r *TaobaoOpenuidGetBymixnickAPIRequest) SetMixNick(_mixNick string) error {
 	r._mixNick = _mixNick
@@ -45,7 +45,7 @@ func (r *TaobaoOpenuidGetBymixnickAPIRequest) SetMixNick(_mixNick string) error 
 	return nil
 }
 
-// Get MixNick Getter
+// GetMixNick MixNick Getter
 func (r TaobaoOpenuidGetBymixnickAPIRequest) GetMixNick() string {
 	return r._mixNick
 }

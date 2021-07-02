@@ -41,7 +41,7 @@ func (r TaobaoBaodianDepositGetWithSdkversionAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is DeviceModel Setter
+// SetDeviceModel is DeviceModel Setter
 // 设备型号
 func (r *TaobaoBaodianDepositGetWithSdkversionAPIRequest) SetDeviceModel(_deviceModel string) error {
 	r._deviceModel = _deviceModel
@@ -49,12 +49,12 @@ func (r *TaobaoBaodianDepositGetWithSdkversionAPIRequest) SetDeviceModel(_device
 	return nil
 }
 
-// Get DeviceModel Getter
+// GetDeviceModel DeviceModel Getter
 func (r TaobaoBaodianDepositGetWithSdkversionAPIRequest) GetDeviceModel() string {
 	return r._deviceModel
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // uuid
 func (r *TaobaoBaodianDepositGetWithSdkversionAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -62,12 +62,12 @@ func (r *TaobaoBaodianDepositGetWithSdkversionAPIRequest) SetUuid(_uuid string) 
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r TaobaoBaodianDepositGetWithSdkversionAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is SdkVersion Setter
+// SetSdkVersion is SdkVersion Setter
 // sdk版本
 func (r *TaobaoBaodianDepositGetWithSdkversionAPIRequest) SetSdkVersion(_sdkVersion string) error {
 	r._sdkVersion = _sdkVersion
@@ -75,7 +75,7 @@ func (r *TaobaoBaodianDepositGetWithSdkversionAPIRequest) SetSdkVersion(_sdkVers
 	return nil
 }
 
-// Get SdkVersion Getter
+// GetSdkVersion SdkVersion Getter
 func (r TaobaoBaodianDepositGetWithSdkversionAPIRequest) GetSdkVersion() string {
 	return r._sdkVersion
 }

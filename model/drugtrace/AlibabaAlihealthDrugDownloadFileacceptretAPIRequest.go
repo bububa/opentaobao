@@ -39,7 +39,7 @@ func (r AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is AppKeyN Setter
+// SetAppKeyN is AppKeyN Setter
 // appKey
 func (r *AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) SetAppKeyN(_appKeyN string) error {
 	r._appKeyN = _appKeyN
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) SetAppKeyN(_appKey
 	return nil
 }
 
-// Get AppKeyN Getter
+// GetAppKeyN AppKeyN Getter
 func (r AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) GetAppKeyN() string {
 	return r._appKeyN
 }
 
-// Set is FileResultJson Setter
+// SetFileResultJson is FileResultJson Setter
 // fileResultJson
 func (r *AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) SetFileResultJson(_fileResultJson string) error {
 	r._fileResultJson = _fileResultJson
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) SetFileResultJson(
 	return nil
 }
 
-// Get FileResultJson Getter
+// GetFileResultJson FileResultJson Getter
 func (r AlibabaAlihealthDrugDownloadFileacceptretAPIRequest) GetFileResultJson() string {
 	return r._fileResultJson
 }

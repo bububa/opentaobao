@@ -37,7 +37,7 @@ func (r AlibabaLsyCrmActivityGetbaseinfoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NrtQueryActivityReq Setter
+// SetNrtQueryActivityReq is NrtQueryActivityReq Setter
 // 入参
 func (r *AlibabaLsyCrmActivityGetbaseinfoAPIRequest) SetNrtQueryActivityReq(_nrtQueryActivityReq *NrtQueryActivityReq) error {
 	r._nrtQueryActivityReq = _nrtQueryActivityReq
@@ -45,7 +45,7 @@ func (r *AlibabaLsyCrmActivityGetbaseinfoAPIRequest) SetNrtQueryActivityReq(_nrt
 	return nil
 }
 
-// Get NrtQueryActivityReq Getter
+// GetNrtQueryActivityReq NrtQueryActivityReq Getter
 func (r AlibabaLsyCrmActivityGetbaseinfoAPIRequest) GetNrtQueryActivityReq() *NrtQueryActivityReq {
 	return r._nrtQueryActivityReq
 }

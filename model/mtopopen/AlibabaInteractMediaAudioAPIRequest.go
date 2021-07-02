@@ -37,7 +37,7 @@ func (r AlibabaInteractMediaAudioAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 系统自动生成
 func (r *AlibabaInteractMediaAudioAPIRequest) SetId(_id string) error {
 	r._id = _id
@@ -45,7 +45,7 @@ func (r *AlibabaInteractMediaAudioAPIRequest) SetId(_id string) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaInteractMediaAudioAPIRequest) GetId() string {
 	return r._id
 }

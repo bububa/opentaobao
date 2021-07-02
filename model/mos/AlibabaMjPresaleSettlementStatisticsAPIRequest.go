@@ -39,7 +39,7 @@ func (r AlibabaMjPresaleSettlementStatisticsAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ActionNo Setter
+// SetActionNo is ActionNo Setter
 // 活动期号
 func (r *AlibabaMjPresaleSettlementStatisticsAPIRequest) SetActionNo(_actionNo int64) error {
 	r._actionNo = _actionNo
@@ -47,12 +47,12 @@ func (r *AlibabaMjPresaleSettlementStatisticsAPIRequest) SetActionNo(_actionNo i
 	return nil
 }
 
-// Get ActionNo Getter
+// GetActionNo ActionNo Getter
 func (r AlibabaMjPresaleSettlementStatisticsAPIRequest) GetActionNo() int64 {
 	return r._actionNo
 }
 
-// Set is StoreNo Setter
+// SetStoreNo is StoreNo Setter
 // 外部门店编码
 func (r *AlibabaMjPresaleSettlementStatisticsAPIRequest) SetStoreNo(_storeNo string) error {
 	r._storeNo = _storeNo
@@ -60,7 +60,7 @@ func (r *AlibabaMjPresaleSettlementStatisticsAPIRequest) SetStoreNo(_storeNo str
 	return nil
 }
 
-// Get StoreNo Getter
+// GetStoreNo StoreNo Getter
 func (r AlibabaMjPresaleSettlementStatisticsAPIRequest) GetStoreNo() string {
 	return r._storeNo
 }

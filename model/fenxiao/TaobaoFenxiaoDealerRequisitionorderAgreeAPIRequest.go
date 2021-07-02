@@ -37,7 +37,7 @@ func (r TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is DealerOrderId Setter
+// SetDealerOrderId is DealerOrderId Setter
 // 采购申请/经销采购单编号
 func (r *TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest) SetDealerOrderId(_dealerOrderId int64) error {
 	r._dealerOrderId = _dealerOrderId
@@ -45,7 +45,7 @@ func (r *TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest) SetDealerOrderId(_d
 	return nil
 }
 
-// Get DealerOrderId Getter
+// GetDealerOrderId DealerOrderId Getter
 func (r TaobaoFenxiaoDealerRequisitionorderAgreeAPIRequest) GetDealerOrderId() int64 {
 	return r._dealerOrderId
 }

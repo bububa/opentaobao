@@ -37,7 +37,7 @@ func (r TaobaoFeedflowItemAdgroupPageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AdgroupQuery Setter
+// SetAdgroupQuery is AdgroupQuery Setter
 // 系统自动生成
 func (r *TaobaoFeedflowItemAdgroupPageAPIRequest) SetAdgroupQuery(_adgroupQuery *AdgroupQueryDto) error {
 	r._adgroupQuery = _adgroupQuery
@@ -45,7 +45,7 @@ func (r *TaobaoFeedflowItemAdgroupPageAPIRequest) SetAdgroupQuery(_adgroupQuery 
 	return nil
 }
 
-// Get AdgroupQuery Getter
+// GetAdgroupQuery AdgroupQuery Getter
 func (r TaobaoFeedflowItemAdgroupPageAPIRequest) GetAdgroupQuery() *AdgroupQueryDto {
 	return r._adgroupQuery
 }

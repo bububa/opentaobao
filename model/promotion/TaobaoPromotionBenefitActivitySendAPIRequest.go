@@ -45,7 +45,7 @@ func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is SendRequest Setter
+// SetSendRequest is SendRequest Setter
 // 单个权益发放请求
 func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetSendRequest(_sendRequest *BenefitSingleSendRequest) error {
 	r._sendRequest = _sendRequest
@@ -53,12 +53,12 @@ func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetSendRequest(_sendReque
 	return nil
 }
 
-// Get SendRequest Getter
+// GetSendRequest SendRequest Getter
 func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetSendRequest() *BenefitSingleSendRequest {
 	return r._sendRequest
 }
 
-// Set is ReceiverId Setter
+// SetReceiverId is ReceiverId Setter
 // 非混淆的接收者id
 func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetReceiverId(_receiverId int64) error {
 	r._receiverId = _receiverId
@@ -66,12 +66,12 @@ func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetReceiverId(_receiverId
 	return nil
 }
 
-// Get ReceiverId Getter
+// GetReceiverId ReceiverId Getter
 func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetReceiverId() int64 {
 	return r._receiverId
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 混淆的接收者nick
 func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -79,12 +79,12 @@ func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetNick(_nick string) err
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is PlatNick Setter
+// SetPlatNick is PlatNick Setter
 // 非混淆的接收者nick
 func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetPlatNick(_platNick string) error {
 	r._platNick = _platNick
@@ -92,12 +92,12 @@ func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetPlatNick(_platNick str
 	return nil
 }
 
-// Get PlatNick Getter
+// GetPlatNick PlatNick Getter
 func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetPlatNick() string {
 	return r._platNick
 }
 
-// Set is MixReceiverId Setter
+// SetMixReceiverId is MixReceiverId Setter
 // 混淆的接收者id
 func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetMixReceiverId(_mixReceiverId string) error {
 	r._mixReceiverId = _mixReceiverId
@@ -105,7 +105,7 @@ func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetMixReceiverId(_mixRece
 	return nil
 }
 
-// Get MixReceiverId Getter
+// GetMixReceiverId MixReceiverId Getter
 func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetMixReceiverId() string {
 	return r._mixReceiverId
 }

@@ -41,7 +41,7 @@ func (r TaobaoUmpRangeDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ActId Setter
+// SetActId is ActId Setter
 // 活动id
 func (r *TaobaoUmpRangeDeleteAPIRequest) SetActId(_actId int64) error {
 	r._actId = _actId
@@ -49,12 +49,12 @@ func (r *TaobaoUmpRangeDeleteAPIRequest) SetActId(_actId int64) error {
 	return nil
 }
 
-// Get ActId Getter
+// GetActId ActId Getter
 func (r TaobaoUmpRangeDeleteAPIRequest) GetActId() int64 {
 	return r._actId
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 范围的类型，比如是全店，商品，类目见：MarketingConstants.PARTICIPATE_TYPE_*
 func (r *TaobaoUmpRangeDeleteAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -62,12 +62,12 @@ func (r *TaobaoUmpRangeDeleteAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoUmpRangeDeleteAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is Ids Setter
+// SetIds is Ids Setter
 // id列表，当范围类型为商品时，该id为商品id；当范围类型为类目时，该id为类目id
 func (r *TaobaoUmpRangeDeleteAPIRequest) SetIds(_ids string) error {
 	r._ids = _ids
@@ -75,7 +75,7 @@ func (r *TaobaoUmpRangeDeleteAPIRequest) SetIds(_ids string) error {
 	return nil
 }
 
-// Get Ids Getter
+// GetIds Ids Getter
 func (r TaobaoUmpRangeDeleteAPIRequest) GetIds() string {
 	return r._ids
 }

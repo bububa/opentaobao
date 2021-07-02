@@ -37,7 +37,7 @@ func (r TaobaoJipiaoAgentOrderBdetailAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单号
 func (r *TaobaoJipiaoAgentOrderBdetailAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -45,7 +45,7 @@ func (r *TaobaoJipiaoAgentOrderBdetailAPIRequest) SetOrderId(_orderId int64) err
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoJipiaoAgentOrderBdetailAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }

@@ -43,7 +43,7 @@ func (r AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is CalledNum Setter
+// SetCalledNum is CalledNum Setter
 // 单呼号码
 func (r *AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) SetCalledNum(_calledNum string) error {
 	r._calledNum = _calledNum
@@ -51,12 +51,12 @@ func (r *AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) SetCalledNum(_calledN
 	return nil
 }
 
-// Get CalledNum Getter
+// GetCalledNum CalledNum Getter
 func (r AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) GetCalledNum() string {
 	return r._calledNum
 }
 
-// Set is CalledShowNum Setter
+// SetCalledShowNum is CalledShowNum Setter
 // 显示号码
 func (r *AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) SetCalledShowNum(_calledShowNum string) error {
 	r._calledShowNum = _calledShowNum
@@ -64,12 +64,12 @@ func (r *AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) SetCalledShowNum(_cal
 	return nil
 }
 
-// Get CalledShowNum Getter
+// GetCalledShowNum CalledShowNum Getter
 func (r AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) GetCalledShowNum() string {
 	return r._calledShowNum
 }
 
-// Set is VoiceCode Setter
+// SetVoiceCode is VoiceCode Setter
 // 语音文件code
 func (r *AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) SetVoiceCode(_voiceCode string) error {
 	r._voiceCode = _voiceCode
@@ -77,12 +77,12 @@ func (r *AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) SetVoiceCode(_voiceCo
 	return nil
 }
 
-// Get VoiceCode Getter
+// GetVoiceCode VoiceCode Getter
 func (r AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) GetVoiceCode() string {
 	return r._voiceCode
 }
 
-// Set is Params Setter
+// SetParams is Params Setter
 // 上下文参数 示例:{"extend":"回传参数"} extend为扩展信息作为回传参数的key
 func (r *AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) SetParams(_params string) error {
 	r._params = _params
@@ -90,7 +90,7 @@ func (r *AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) SetParams(_params str
 	return nil
 }
 
-// Get Params Getter
+// GetParams Params Getter
 func (r AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) GetParams() string {
 	return r._params
 }

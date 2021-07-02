@@ -57,7 +57,7 @@ func (r TaobaoFenxiaoProductsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 商家编码
 func (r *TaobaoFenxiaoProductsGetAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -65,12 +65,12 @@ func (r *TaobaoFenxiaoProductsGetAPIRequest) SetOuterId(_outerId string) error {
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoFenxiaoProductsGetAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is ProductcatId Setter
+// SetProductcatId is ProductcatId Setter
 // 产品线ID
 func (r *TaobaoFenxiaoProductsGetAPIRequest) SetProductcatId(_productcatId int64) error {
 	r._productcatId = _productcatId
@@ -78,12 +78,12 @@ func (r *TaobaoFenxiaoProductsGetAPIRequest) SetProductcatId(_productcatId int64
 	return nil
 }
 
-// Get ProductcatId Getter
+// GetProductcatId ProductcatId Getter
 func (r TaobaoFenxiaoProductsGetAPIRequest) GetProductcatId() int64 {
 	return r._productcatId
 }
 
-// Set is Pids Setter
+// SetPids is Pids Setter
 // 产品ID列表（最大限制30），用逗号分割，例如：“1001,1002,1003,1004,1005”
 func (r *TaobaoFenxiaoProductsGetAPIRequest) SetPids(_pids string) error {
 	r._pids = _pids
@@ -91,12 +91,12 @@ func (r *TaobaoFenxiaoProductsGetAPIRequest) SetPids(_pids string) error {
 	return nil
 }
 
-// Get Pids Getter
+// GetPids Pids Getter
 func (r TaobaoFenxiaoProductsGetAPIRequest) GetPids() string {
 	return r._pids
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 指定查询额外的信息，可选值：skus（sku数据）、images（多图），多个可选值用逗号分割。
 func (r *TaobaoFenxiaoProductsGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -104,12 +104,12 @@ func (r *TaobaoFenxiaoProductsGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoFenxiaoProductsGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is StartModified Setter
+// SetStartModified is StartModified Setter
 // 开始修改时间
 func (r *TaobaoFenxiaoProductsGetAPIRequest) SetStartModified(_startModified string) error {
 	r._startModified = _startModified
@@ -117,12 +117,12 @@ func (r *TaobaoFenxiaoProductsGetAPIRequest) SetStartModified(_startModified str
 	return nil
 }
 
-// Get StartModified Getter
+// GetStartModified StartModified Getter
 func (r TaobaoFenxiaoProductsGetAPIRequest) GetStartModified() string {
 	return r._startModified
 }
 
-// Set is EndModified Setter
+// SetEndModified is EndModified Setter
 // 结束修改时间
 func (r *TaobaoFenxiaoProductsGetAPIRequest) SetEndModified(_endModified string) error {
 	r._endModified = _endModified
@@ -130,12 +130,12 @@ func (r *TaobaoFenxiaoProductsGetAPIRequest) SetEndModified(_endModified string)
 	return nil
 }
 
-// Get EndModified Getter
+// GetEndModified EndModified Getter
 func (r TaobaoFenxiaoProductsGetAPIRequest) GetEndModified() string {
 	return r._endModified
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码（大于0的整数，默认1）
 func (r *TaobaoFenxiaoProductsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -143,12 +143,12 @@ func (r *TaobaoFenxiaoProductsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoFenxiaoProductsGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页记录数（默认20，最大50）
 func (r *TaobaoFenxiaoProductsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -156,12 +156,12 @@ func (r *TaobaoFenxiaoProductsGetAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoFenxiaoProductsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is SkuNumber Setter
+// SetSkuNumber is SkuNumber Setter
 // sku商家编码
 func (r *TaobaoFenxiaoProductsGetAPIRequest) SetSkuNumber(_skuNumber string) error {
 	r._skuNumber = _skuNumber
@@ -169,12 +169,12 @@ func (r *TaobaoFenxiaoProductsGetAPIRequest) SetSkuNumber(_skuNumber string) err
 	return nil
 }
 
-// Get SkuNumber Getter
+// GetSkuNumber SkuNumber Getter
 func (r TaobaoFenxiaoProductsGetAPIRequest) GetSkuNumber() string {
 	return r._skuNumber
 }
 
-// Set is IsAuthz Setter
+// SetIsAuthz is IsAuthz Setter
 // 查询产品列表时，查询入参“是否需要授权”<br/>yes:需要授权 <br/>no:不需要授权
 func (r *TaobaoFenxiaoProductsGetAPIRequest) SetIsAuthz(_isAuthz string) error {
 	r._isAuthz = _isAuthz
@@ -182,12 +182,12 @@ func (r *TaobaoFenxiaoProductsGetAPIRequest) SetIsAuthz(_isAuthz string) error {
 	return nil
 }
 
-// Get IsAuthz Getter
+// GetIsAuthz IsAuthz Getter
 func (r TaobaoFenxiaoProductsGetAPIRequest) GetIsAuthz() string {
 	return r._isAuthz
 }
 
-// Set is ItemIds Setter
+// SetItemIds is ItemIds Setter
 // 可根据导入的商品ID列表查询，优先级次于产品ID、sku_numbers，高于其他分页查询条件。最大限制20，用逗号分割，例如：“1001,1002,1003,1004,1005”
 func (r *TaobaoFenxiaoProductsGetAPIRequest) SetItemIds(_itemIds string) error {
 	r._itemIds = _itemIds
@@ -195,7 +195,7 @@ func (r *TaobaoFenxiaoProductsGetAPIRequest) SetItemIds(_itemIds string) error {
 	return nil
 }
 
-// Get ItemIds Getter
+// GetItemIds ItemIds Getter
 func (r TaobaoFenxiaoProductsGetAPIRequest) GetItemIds() string {
 	return r._itemIds
 }

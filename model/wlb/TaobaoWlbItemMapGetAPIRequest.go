@@ -37,7 +37,7 @@ func (r TaobaoWlbItemMapGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 要查询映射关系的物流宝商品id
 func (r *TaobaoWlbItemMapGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -45,7 +45,7 @@ func (r *TaobaoWlbItemMapGetAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoWlbItemMapGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

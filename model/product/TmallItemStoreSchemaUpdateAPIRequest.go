@@ -41,7 +41,7 @@ func (r TmallItemStoreSchemaUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MainItemId Setter
+// SetMainItemId is MainItemId Setter
 // 主商品ID
 func (r *TmallItemStoreSchemaUpdateAPIRequest) SetMainItemId(_mainItemId int64) error {
 	r._mainItemId = _mainItemId
@@ -49,12 +49,12 @@ func (r *TmallItemStoreSchemaUpdateAPIRequest) SetMainItemId(_mainItemId int64) 
 	return nil
 }
 
-// Get MainItemId Getter
+// GetMainItemId MainItemId Getter
 func (r TmallItemStoreSchemaUpdateAPIRequest) GetMainItemId() int64 {
 	return r._mainItemId
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *TmallItemStoreSchemaUpdateAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -62,12 +62,12 @@ func (r *TmallItemStoreSchemaUpdateAPIRequest) SetStoreId(_storeId int64) error 
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TmallItemStoreSchemaUpdateAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is Xml Setter
+// SetXml is Xml Setter
 // 商品的schema xml
 func (r *TmallItemStoreSchemaUpdateAPIRequest) SetXml(_xml string) error {
 	r._xml = _xml
@@ -75,7 +75,7 @@ func (r *TmallItemStoreSchemaUpdateAPIRequest) SetXml(_xml string) error {
 	return nil
 }
 
-// Get Xml Getter
+// GetXml Xml Getter
 func (r TmallItemStoreSchemaUpdateAPIRequest) GetXml() string {
 	return r._xml
 }

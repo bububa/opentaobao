@@ -45,7 +45,7 @@ func (r TaobaoRpReturngoodsRefuseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款编号
 func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -53,12 +53,12 @@ func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefundId(_refundId int64) error
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoRpReturngoodsRefuseAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }
 
-// Set is RefundPhase Setter
+// SetRefundPhase is RefundPhase Setter
 // 退款服务状态，售后或者售中
 func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefundPhase(_refundPhase string) error {
 	r._refundPhase = _refundPhase
@@ -66,12 +66,12 @@ func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefundPhase(_refundPhase string
 	return nil
 }
 
-// Get RefundPhase Getter
+// GetRefundPhase RefundPhase Getter
 func (r TaobaoRpReturngoodsRefuseAPIRequest) GetRefundPhase() string {
 	return r._refundPhase
 }
 
-// Set is RefundVersion Setter
+// SetRefundVersion is RefundVersion Setter
 // 退款版本号
 func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefundVersion(_refundVersion int64) error {
 	r._refundVersion = _refundVersion
@@ -79,12 +79,12 @@ func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefundVersion(_refundVersion in
 	return nil
 }
 
-// Get RefundVersion Getter
+// GetRefundVersion RefundVersion Getter
 func (r TaobaoRpReturngoodsRefuseAPIRequest) GetRefundVersion() int64 {
 	return r._refundVersion
 }
 
-// Set is RefuseProof Setter
+// SetRefuseProof is RefuseProof Setter
 // 拒绝退货凭证图片，必须图片格式，大小不能超过5M
 func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefuseProof(_refuseProof *model.File) error {
 	r._refuseProof = _refuseProof
@@ -92,12 +92,12 @@ func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefuseProof(_refuseProof *model
 	return nil
 }
 
-// Get RefuseProof Getter
+// GetRefuseProof RefuseProof Getter
 func (r TaobaoRpReturngoodsRefuseAPIRequest) GetRefuseProof() *model.File {
 	return r._refuseProof
 }
 
-// Set is RefuseReasonId Setter
+// SetRefuseReasonId is RefuseReasonId Setter
 // 拒绝原因编号，会提供拒绝原因列表供选择
 func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefuseReasonId(_refuseReasonId int64) error {
 	r._refuseReasonId = _refuseReasonId
@@ -105,7 +105,7 @@ func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefuseReasonId(_refuseReasonId 
 	return nil
 }
 
-// Get RefuseReasonId Getter
+// GetRefuseReasonId RefuseReasonId Getter
 func (r TaobaoRpReturngoodsRefuseAPIRequest) GetRefuseReasonId() int64 {
 	return r._refuseReasonId
 }

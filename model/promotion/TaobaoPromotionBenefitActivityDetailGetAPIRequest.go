@@ -37,7 +37,7 @@ func (r TaobaoPromotionBenefitActivityDetailGetAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is QueryRequest Setter
+// SetQueryRequest is QueryRequest Setter
 // 查询活动关联权益详情的请求
 func (r *TaobaoPromotionBenefitActivityDetailGetAPIRequest) SetQueryRequest(_queryRequest *ActivityRelationDetailRequest) error {
 	r._queryRequest = _queryRequest
@@ -45,7 +45,7 @@ func (r *TaobaoPromotionBenefitActivityDetailGetAPIRequest) SetQueryRequest(_que
 	return nil
 }
 
-// Get QueryRequest Getter
+// GetQueryRequest QueryRequest Getter
 func (r TaobaoPromotionBenefitActivityDetailGetAPIRequest) GetQueryRequest() *ActivityRelationDetailRequest {
 	return r._queryRequest
 }

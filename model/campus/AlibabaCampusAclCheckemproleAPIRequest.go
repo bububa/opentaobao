@@ -45,7 +45,7 @@ func (r AlibabaCampusAclCheckemproleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CompanyId Setter
+// SetCompanyId is CompanyId Setter
 // 公司id不填默认为SYS_000
 func (r *AlibabaCampusAclCheckemproleAPIRequest) SetCompanyId(_companyId int64) error {
 	r._companyId = _companyId
@@ -53,12 +53,12 @@ func (r *AlibabaCampusAclCheckemproleAPIRequest) SetCompanyId(_companyId int64) 
 	return nil
 }
 
-// Get CompanyId Getter
+// GetCompanyId CompanyId Getter
 func (r AlibabaCampusAclCheckemproleAPIRequest) GetCompanyId() int64 {
 	return r._companyId
 }
 
-// Set is SystemId Setter
+// SetSystemId is SystemId Setter
 // 系统id
 func (r *AlibabaCampusAclCheckemproleAPIRequest) SetSystemId(_systemId string) error {
 	r._systemId = _systemId
@@ -66,12 +66,12 @@ func (r *AlibabaCampusAclCheckemproleAPIRequest) SetSystemId(_systemId string) e
 	return nil
 }
 
-// Get SystemId Getter
+// GetSystemId SystemId Getter
 func (r AlibabaCampusAclCheckemproleAPIRequest) GetSystemId() string {
 	return r._systemId
 }
 
-// Set is CampusId Setter
+// SetCampusId is CampusId Setter
 // 园区id
 func (r *AlibabaCampusAclCheckemproleAPIRequest) SetCampusId(_campusId int64) error {
 	r._campusId = _campusId
@@ -79,12 +79,12 @@ func (r *AlibabaCampusAclCheckemproleAPIRequest) SetCampusId(_campusId int64) er
 	return nil
 }
 
-// Get CampusId Getter
+// GetCampusId CampusId Getter
 func (r AlibabaCampusAclCheckemproleAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }
 
-// Set is AccountId Setter
+// SetAccountId is AccountId Setter
 // 员工账号
 func (r *AlibabaCampusAclCheckemproleAPIRequest) SetAccountId(_accountId string) error {
 	r._accountId = _accountId
@@ -92,12 +92,12 @@ func (r *AlibabaCampusAclCheckemproleAPIRequest) SetAccountId(_accountId string)
 	return nil
 }
 
-// Get AccountId Getter
+// GetAccountId AccountId Getter
 func (r AlibabaCampusAclCheckemproleAPIRequest) GetAccountId() string {
 	return r._accountId
 }
 
-// Set is ItemKey Setter
+// SetItemKey is ItemKey Setter
 // 角色id
 func (r *AlibabaCampusAclCheckemproleAPIRequest) SetItemKey(_itemKey string) error {
 	r._itemKey = _itemKey
@@ -105,7 +105,7 @@ func (r *AlibabaCampusAclCheckemproleAPIRequest) SetItemKey(_itemKey string) err
 	return nil
 }
 
-// Get ItemKey Getter
+// GetItemKey ItemKey Getter
 func (r AlibabaCampusAclCheckemproleAPIRequest) GetItemKey() string {
 	return r._itemKey
 }

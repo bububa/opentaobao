@@ -37,7 +37,7 @@ func (r AlibabaInteractActivityUnregisterAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizId Setter
+// SetBizId is BizId Setter
 // 互动活动ID
 func (r *AlibabaInteractActivityUnregisterAPIRequest) SetBizId(_bizId string) error {
 	r._bizId = _bizId
@@ -45,7 +45,7 @@ func (r *AlibabaInteractActivityUnregisterAPIRequest) SetBizId(_bizId string) er
 	return nil
 }
 
-// Get BizId Getter
+// GetBizId BizId Getter
 func (r AlibabaInteractActivityUnregisterAPIRequest) GetBizId() string {
 	return r._bizId
 }

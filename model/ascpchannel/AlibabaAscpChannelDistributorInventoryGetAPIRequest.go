@@ -37,7 +37,7 @@ func (r AlibabaAscpChannelDistributorInventoryGetAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is InventoryRequest Setter
+// SetInventoryRequest is InventoryRequest Setter
 // 入参
 func (r *AlibabaAscpChannelDistributorInventoryGetAPIRequest) SetInventoryRequest(_inventoryRequest *ChannelInventoryQuery) error {
 	r._inventoryRequest = _inventoryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpChannelDistributorInventoryGetAPIRequest) SetInventoryReques
 	return nil
 }
 
-// Get InventoryRequest Getter
+// GetInventoryRequest InventoryRequest Getter
 func (r AlibabaAscpChannelDistributorInventoryGetAPIRequest) GetInventoryRequest() *ChannelInventoryQuery {
 	return r._inventoryRequest
 }

@@ -45,7 +45,7 @@ func (r AlibabaAlihealthDrugcodeApplycertAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SerialNum Setter
+// SetSerialNum is SerialNum Setter
 // 设备唯一标识编号
 func (r *AlibabaAlihealthDrugcodeApplycertAPIRequest) SetSerialNum(_serialNum string) error {
 	r._serialNum = _serialNum
@@ -53,12 +53,12 @@ func (r *AlibabaAlihealthDrugcodeApplycertAPIRequest) SetSerialNum(_serialNum st
 	return nil
 }
 
-// Get SerialNum Getter
+// GetSerialNum SerialNum Getter
 func (r AlibabaAlihealthDrugcodeApplycertAPIRequest) GetSerialNum() string {
 	return r._serialNum
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业Id
 func (r *AlibabaAlihealthDrugcodeApplycertAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -66,12 +66,12 @@ func (r *AlibabaAlihealthDrugcodeApplycertAPIRequest) SetRefEntId(_refEntId stri
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugcodeApplycertAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is EntName Setter
+// SetEntName is EntName Setter
 // 企业名称
 func (r *AlibabaAlihealthDrugcodeApplycertAPIRequest) SetEntName(_entName string) error {
 	r._entName = _entName
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthDrugcodeApplycertAPIRequest) SetEntName(_entName string
 	return nil
 }
 
-// Get EntName Getter
+// GetEntName EntName Getter
 func (r AlibabaAlihealthDrugcodeApplycertAPIRequest) GetEntName() string {
 	return r._entName
 }
 
-// Set is Csr Setter
+// SetCsr is Csr Setter
 // 证书签名请求
 func (r *AlibabaAlihealthDrugcodeApplycertAPIRequest) SetCsr(_csr string) error {
 	r._csr = _csr
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthDrugcodeApplycertAPIRequest) SetCsr(_csr string) error 
 	return nil
 }
 
-// Get Csr Getter
+// GetCsr Csr Getter
 func (r AlibabaAlihealthDrugcodeApplycertAPIRequest) GetCsr() string {
 	return r._csr
 }
 
-// Set is CertLostFlag Setter
+// SetCertLostFlag is CertLostFlag Setter
 // 证书丢失时的操作类型 (true：证书丢失)
 func (r *AlibabaAlihealthDrugcodeApplycertAPIRequest) SetCertLostFlag(_certLostFlag bool) error {
 	r._certLostFlag = _certLostFlag
@@ -105,7 +105,7 @@ func (r *AlibabaAlihealthDrugcodeApplycertAPIRequest) SetCertLostFlag(_certLostF
 	return nil
 }
 
-// Get CertLostFlag Getter
+// GetCertLostFlag CertLostFlag Getter
 func (r AlibabaAlihealthDrugcodeApplycertAPIRequest) GetCertLostFlag() bool {
 	return r._certLostFlag
 }

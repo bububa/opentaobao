@@ -41,7 +41,7 @@ func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Distributor Setter
+// SetDistributor is Distributor Setter
 // 分销者身份
 func (r *TaobaoOpenmallRefundMessageSubmitAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
@@ -49,12 +49,12 @@ func (r *TaobaoOpenmallRefundMessageSubmitAPIRequest) SetDistributor(_distributo
 	return nil
 }
 
-// Get Distributor Getter
+// GetDistributor Distributor Getter
 func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款单ID
 func (r *TaobaoOpenmallRefundMessageSubmitAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -62,12 +62,12 @@ func (r *TaobaoOpenmallRefundMessageSubmitAPIRequest) SetRefundId(_refundId int6
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }
 
-// Set is RefundMessage Setter
+// SetRefundMessage is RefundMessage Setter
 // 提交留言结构
 func (r *TaobaoOpenmallRefundMessageSubmitAPIRequest) SetRefundMessage(_refundMessage *RefundMessage) error {
 	r._refundMessage = _refundMessage
@@ -75,7 +75,7 @@ func (r *TaobaoOpenmallRefundMessageSubmitAPIRequest) SetRefundMessage(_refundMe
 	return nil
 }
 
-// Get RefundMessage Getter
+// GetRefundMessage RefundMessage Getter
 func (r TaobaoOpenmallRefundMessageSubmitAPIRequest) GetRefundMessage() *RefundMessage {
 	return r._refundMessage
 }

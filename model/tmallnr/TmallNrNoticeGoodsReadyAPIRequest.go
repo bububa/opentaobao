@@ -37,7 +37,7 @@ func (r TmallNrNoticeGoodsReadyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 入参
 func (r *TmallNrNoticeGoodsReadyAPIRequest) SetParam0(_param0 *NrZqsGoodsReadyReqDto) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TmallNrNoticeGoodsReadyAPIRequest) SetParam0(_param0 *NrZqsGoodsReadyRe
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TmallNrNoticeGoodsReadyAPIRequest) GetParam0() *NrZqsGoodsReadyReqDto {
 	return r._param0
 }

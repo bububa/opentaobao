@@ -37,7 +37,7 @@ func (r AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动ID
 func (r *AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest) SetActivityId(_activityId string) error {
 	r._activityId = _activityId
@@ -45,7 +45,7 @@ func (r *AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest) SetActivityId(_activ
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest) GetActivityId() string {
 	return r._activityId
 }

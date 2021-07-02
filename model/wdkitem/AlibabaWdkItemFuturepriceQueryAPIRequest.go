@@ -45,7 +45,7 @@ func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 渠道店id
 func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetShopId(_shopId int64) error {
 	r._shopId = _shopId
@@ -53,12 +53,12 @@ func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetShopId(_shopId int64) erro
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetShopId() int64 {
 	return r._shopId
 }
 
-// Set is SkuCode Setter
+// SetSkuCode is SkuCode Setter
 // 商品编码
 func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetSkuCode(_skuCode string) error {
 	r._skuCode = _skuCode
@@ -66,12 +66,12 @@ func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetSkuCode(_skuCode string) e
 	return nil
 }
 
-// Get SkuCode Getter
+// GetSkuCode SkuCode Getter
 func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetSkuCode() string {
 	return r._skuCode
 }
 
-// Set is OrderChannelCode Setter
+// SetOrderChannelCode is OrderChannelCode Setter
 // 渠道
 func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetOrderChannelCode(_orderChannelCode string) error {
 	r._orderChannelCode = _orderChannelCode
@@ -79,12 +79,12 @@ func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetOrderChannelCode(_orderCha
 	return nil
 }
 
-// Get OrderChannelCode Getter
+// GetOrderChannelCode OrderChannelCode Getter
 func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetOrderChannelCode() string {
 	return r._orderChannelCode
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 开始时间
 func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -92,12 +92,12 @@ func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetStartTime(_startTime strin
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间，结束时间-开始时间不能超过48小时
 func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -105,7 +105,7 @@ func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetEndTime(_endTime string) e
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetEndTime() string {
 	return r._endTime
 }

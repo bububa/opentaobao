@@ -37,7 +37,7 @@ func (r AlibabaFundplatformAccountJourQueryInfoAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ParamFundAccountJournalQueryReq Setter
+// SetParamFundAccountJournalQueryReq is ParamFundAccountJournalQueryReq Setter
 // 入参对象
 func (r *AlibabaFundplatformAccountJourQueryInfoAPIRequest) SetParamFundAccountJournalQueryReq(_paramFundAccountJournalQueryReq *FundAccountJournalQueryReq) error {
 	r._paramFundAccountJournalQueryReq = _paramFundAccountJournalQueryReq
@@ -45,7 +45,7 @@ func (r *AlibabaFundplatformAccountJourQueryInfoAPIRequest) SetParamFundAccountJ
 	return nil
 }
 
-// Get ParamFundAccountJournalQueryReq Getter
+// GetParamFundAccountJournalQueryReq ParamFundAccountJournalQueryReq Getter
 func (r AlibabaFundplatformAccountJourQueryInfoAPIRequest) GetParamFundAccountJournalQueryReq() *FundAccountJournalQueryReq {
 	return r._paramFundAccountJournalQueryReq
 }

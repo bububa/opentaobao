@@ -37,7 +37,7 @@ func (r AlitripHotelAllianceSettleOrderSynAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is OrderInfo Setter
+// SetOrderInfo is OrderInfo Setter
 // 订单信息
 func (r *AlitripHotelAllianceSettleOrderSynAPIRequest) SetOrderInfo(_orderInfo *AllianceSettleOrderInfo) error {
 	r._orderInfo = _orderInfo
@@ -45,7 +45,7 @@ func (r *AlitripHotelAllianceSettleOrderSynAPIRequest) SetOrderInfo(_orderInfo *
 	return nil
 }
 
-// Get OrderInfo Getter
+// GetOrderInfo OrderInfo Getter
 func (r AlitripHotelAllianceSettleOrderSynAPIRequest) GetOrderInfo() *AllianceSettleOrderInfo {
 	return r._orderInfo
 }

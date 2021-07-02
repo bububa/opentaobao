@@ -37,7 +37,7 @@ func (r AlibabaMoziFusionReentryEmployeeAccountAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ReentryEmployeeAccount Setter
+// SetReentryEmployeeAccount is ReentryEmployeeAccount Setter
 // 入参
 func (r *AlibabaMoziFusionReentryEmployeeAccountAPIRequest) SetReentryEmployeeAccount(_reentryEmployeeAccount *ReEntryTenantEmployeeAndAccountRequest) error {
 	r._reentryEmployeeAccount = _reentryEmployeeAccount
@@ -45,7 +45,7 @@ func (r *AlibabaMoziFusionReentryEmployeeAccountAPIRequest) SetReentryEmployeeAc
 	return nil
 }
 
-// Get ReentryEmployeeAccount Getter
+// GetReentryEmployeeAccount ReentryEmployeeAccount Getter
 func (r AlibabaMoziFusionReentryEmployeeAccountAPIRequest) GetReentryEmployeeAccount() *ReEntryTenantEmployeeAndAccountRequest {
 	return r._reentryEmployeeAccount
 }

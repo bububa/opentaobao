@@ -37,7 +37,7 @@ func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is ParamTaxOptimizationSalaryPaymentAccessReqDTO Setter
+// SetParamTaxOptimizationSalaryPaymentAccessReqDTO is ParamTaxOptimizationSalaryPaymentAccessReqDTO Setter
 // 请求入参
 func (r *AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest) SetParamTaxOptimizationSalaryPaymentAccessReqDTO(_paramTaxOptimizationSalaryPaymentAccessReqDTO *TaxOptimizationSalaryPaymentAccessReqDto) error {
 	r._paramTaxOptimizationSalaryPaymentAccessReqDTO = _paramTaxOptimizationSalaryPaymentAccessReqDTO
@@ -45,7 +45,7 @@ func (r *AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest) SetParamTaxO
 	return nil
 }
 
-// Get ParamTaxOptimizationSalaryPaymentAccessReqDTO Getter
+// GetParamTaxOptimizationSalaryPaymentAccessReqDTO ParamTaxOptimizationSalaryPaymentAccessReqDTO Getter
 func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentAPIRequest) GetParamTaxOptimizationSalaryPaymentAccessReqDTO() *TaxOptimizationSalaryPaymentAccessReqDto {
 	return r._paramTaxOptimizationSalaryPaymentAccessReqDTO
 }

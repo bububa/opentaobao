@@ -49,7 +49,7 @@ func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息，用于存放APP类型等
 func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -57,12 +57,12 @@ func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetExt(_ext string) error {
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is UtdId Setter
+// SetUtdId is UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
 func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
@@ -70,12 +70,12 @@ func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetUtdId(_utdId string) error 
 	return nil
 }
 
-// Get UtdId Getter
+// GetUtdId UtdId Getter
 func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
 func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -83,12 +83,12 @@ func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetUserId(_userId string) erro
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 账户体系隔离
 func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -96,12 +96,12 @@ func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetSchema(_schema string) erro
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is Param1 Setter
+// SetParam1 is Param1 Setter
 // 收藏类型，目前支持四种：story,children_song,music,program，分别表示故事、儿童、音乐和节目
 func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetParam1(_param1 string) error {
 	r._param1 = _param1
@@ -109,12 +109,12 @@ func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetParam1(_param1 string) erro
 	return nil
 }
 
-// Get Param1 Getter
+// GetParam1 Param1 Getter
 func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetParam1() string {
 	return r._param1
 }
 
-// Set is Param2 Setter
+// SetParam2 is Param2 Setter
 // 页码 从0起
 func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetParam2(_param2 int64) error {
 	r._param2 = _param2
@@ -122,12 +122,12 @@ func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetParam2(_param2 int64) error
 	return nil
 }
 
-// Get Param2 Getter
+// GetParam2 Param2 Getter
 func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetParam2() int64 {
 	return r._param2
 }
 
-// Set is Param3 Setter
+// SetParam3 is Param3 Setter
 // 每页条目个数
 func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetParam3(_param3 int64) error {
 	r._param3 = _param3
@@ -135,7 +135,7 @@ func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetParam3(_param3 int64) error
 	return nil
 }
 
-// Get Param3 Getter
+// GetParam3 Param3 Getter
 func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetParam3() int64 {
 	return r._param3
 }

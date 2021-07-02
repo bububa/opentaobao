@@ -37,7 +37,7 @@ func (r AlibabaAlihealthDruguseQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Command Setter
+// SetCommand is Command Setter
 // 入参
 func (r *AlibabaAlihealthDruguseQueryAPIRequest) SetCommand(_command *SafeMedicationReqCommand) error {
 	r._command = _command
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthDruguseQueryAPIRequest) SetCommand(_command *SafeMedica
 	return nil
 }
 
-// Get Command Getter
+// GetCommand Command Getter
 func (r AlibabaAlihealthDruguseQueryAPIRequest) GetCommand() *SafeMedicationReqCommand {
 	return r._command
 }

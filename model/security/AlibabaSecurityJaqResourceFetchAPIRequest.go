@@ -41,7 +41,7 @@ func (r AlibabaSecurityJaqResourceFetchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 设备类型可能值有：android ios wp
 func (r *AlibabaSecurityJaqResourceFetchAPIRequest) SetDeviceType(_deviceType string) error {
 	r._deviceType = _deviceType
@@ -49,12 +49,12 @@ func (r *AlibabaSecurityJaqResourceFetchAPIRequest) SetDeviceType(_deviceType st
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r AlibabaSecurityJaqResourceFetchAPIRequest) GetDeviceType() string {
 	return r._deviceType
 }
 
-// Set is Dpi Setter
+// SetDpi is Dpi Setter
 // 分辨率
 func (r *AlibabaSecurityJaqResourceFetchAPIRequest) SetDpi(_dpi string) error {
 	r._dpi = _dpi
@@ -62,12 +62,12 @@ func (r *AlibabaSecurityJaqResourceFetchAPIRequest) SetDpi(_dpi string) error {
 	return nil
 }
 
-// Get Dpi Getter
+// GetDpi Dpi Getter
 func (r AlibabaSecurityJaqResourceFetchAPIRequest) GetDpi() string {
 	return r._dpi
 }
 
-// Set is Lang Setter
+// SetLang is Lang Setter
 // 语言类型 zh_CN en_US
 func (r *AlibabaSecurityJaqResourceFetchAPIRequest) SetLang(_lang string) error {
 	r._lang = _lang
@@ -75,7 +75,7 @@ func (r *AlibabaSecurityJaqResourceFetchAPIRequest) SetLang(_lang string) error 
 	return nil
 }
 
-// Get Lang Getter
+// GetLang Lang Getter
 func (r AlibabaSecurityJaqResourceFetchAPIRequest) GetLang() string {
 	return r._lang
 }

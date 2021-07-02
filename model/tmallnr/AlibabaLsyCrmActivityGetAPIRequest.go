@@ -41,7 +41,7 @@ func (r AlibabaLsyCrmActivityGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动id
 func (r *AlibabaLsyCrmActivityGetAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -49,12 +49,12 @@ func (r *AlibabaLsyCrmActivityGetAPIRequest) SetActivityId(_activityId int64) er
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r AlibabaLsyCrmActivityGetAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }
 
-// Set is GuiderId Setter
+// SetGuiderId is GuiderId Setter
 // 导购员id
 func (r *AlibabaLsyCrmActivityGetAPIRequest) SetGuiderId(_guiderId int64) error {
 	r._guiderId = _guiderId
@@ -62,12 +62,12 @@ func (r *AlibabaLsyCrmActivityGetAPIRequest) SetGuiderId(_guiderId int64) error 
 	return nil
 }
 
-// Get GuiderId Getter
+// GetGuiderId GuiderId Getter
 func (r AlibabaLsyCrmActivityGetAPIRequest) GetGuiderId() int64 {
 	return r._guiderId
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 摊位id
 func (r *AlibabaLsyCrmActivityGetAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -75,7 +75,7 @@ func (r *AlibabaLsyCrmActivityGetAPIRequest) SetStoreId(_storeId int64) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaLsyCrmActivityGetAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }

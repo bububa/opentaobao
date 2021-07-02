@@ -39,7 +39,7 @@ func (r AlibabaAlinkMessageHistoryActionAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Index Setter
+// SetIndex is Index Setter
 // 消息id
 func (r *AlibabaAlinkMessageHistoryActionAPIRequest) SetIndex(_index string) error {
 	r._index = _index
@@ -47,12 +47,12 @@ func (r *AlibabaAlinkMessageHistoryActionAPIRequest) SetIndex(_index string) err
 	return nil
 }
 
-// Get Index Getter
+// GetIndex Index Getter
 func (r AlibabaAlinkMessageHistoryActionAPIRequest) GetIndex() string {
 	return r._index
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // 删除：delete,已读：read
 func (r *AlibabaAlinkMessageHistoryActionAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -60,7 +60,7 @@ func (r *AlibabaAlinkMessageHistoryActionAPIRequest) SetAction(_action string) e
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r AlibabaAlinkMessageHistoryActionAPIRequest) GetAction() string {
 	return r._action
 }

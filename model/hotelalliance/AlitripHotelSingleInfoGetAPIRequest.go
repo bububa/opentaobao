@@ -37,7 +37,7 @@ func (r AlitripHotelSingleInfoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryHotelInfoParam Setter
+// SetQueryHotelInfoParam is QueryHotelInfoParam Setter
 // 查询酒店信息query参数
 func (r *AlitripHotelSingleInfoGetAPIRequest) SetQueryHotelInfoParam(_queryHotelInfoParam *QueryHotelInfoParam) error {
 	r._queryHotelInfoParam = _queryHotelInfoParam
@@ -45,7 +45,7 @@ func (r *AlitripHotelSingleInfoGetAPIRequest) SetQueryHotelInfoParam(_queryHotel
 	return nil
 }
 
-// Get QueryHotelInfoParam Getter
+// GetQueryHotelInfoParam QueryHotelInfoParam Getter
 func (r AlitripHotelSingleInfoGetAPIRequest) GetQueryHotelInfoParam() *QueryHotelInfoParam {
 	return r._queryHotelInfoParam
 }

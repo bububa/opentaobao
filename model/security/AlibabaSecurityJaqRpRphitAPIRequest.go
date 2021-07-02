@@ -37,7 +37,7 @@ func (r AlibabaSecurityJaqRpRphitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // xxx
 func (r *AlibabaSecurityJaqRpRphitAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -45,7 +45,7 @@ func (r *AlibabaSecurityJaqRpRphitAPIRequest) SetContent(_content string) error 
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r AlibabaSecurityJaqRpRphitAPIRequest) GetContent() string {
 	return r._content
 }

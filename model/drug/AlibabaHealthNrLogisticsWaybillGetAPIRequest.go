@@ -37,7 +37,7 @@ func (r AlibabaHealthNrLogisticsWaybillGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *AlibabaHealthNrLogisticsWaybillGetAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -45,7 +45,7 @@ func (r *AlibabaHealthNrLogisticsWaybillGetAPIRequest) SetOrderId(_orderId int64
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaHealthNrLogisticsWaybillGetAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }

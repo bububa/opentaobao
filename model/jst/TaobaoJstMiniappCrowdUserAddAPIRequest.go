@@ -41,7 +41,7 @@ func (r TaobaoJstMiniappCrowdUserAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CrowdCode Setter
+// SetCrowdCode is CrowdCode Setter
 // 活动code
 func (r *TaobaoJstMiniappCrowdUserAddAPIRequest) SetCrowdCode(_crowdCode string) error {
 	r._crowdCode = _crowdCode
@@ -49,12 +49,12 @@ func (r *TaobaoJstMiniappCrowdUserAddAPIRequest) SetCrowdCode(_crowdCode string)
 	return nil
 }
 
-// Get CrowdCode Getter
+// GetCrowdCode CrowdCode Getter
 func (r TaobaoJstMiniappCrowdUserAddAPIRequest) GetCrowdCode() string {
 	return r._crowdCode
 }
 
-// Set is McGwSourceMiniAppId Setter
+// SetMcGwSourceMiniAppId is McGwSourceMiniAppId Setter
 // 小程序id
 func (r *TaobaoJstMiniappCrowdUserAddAPIRequest) SetMcGwSourceMiniAppId(_mcGwSourceMiniAppId string) error {
 	r._mcGwSourceMiniAppId = _mcGwSourceMiniAppId
@@ -62,12 +62,12 @@ func (r *TaobaoJstMiniappCrowdUserAddAPIRequest) SetMcGwSourceMiniAppId(_mcGwSou
 	return nil
 }
 
-// Get McGwSourceMiniAppId Getter
+// GetMcGwSourceMiniAppId McGwSourceMiniAppId Getter
 func (r TaobaoJstMiniappCrowdUserAddAPIRequest) GetMcGwSourceMiniAppId() string {
 	return r._mcGwSourceMiniAppId
 }
 
-// Set is McGwSourceAppKey Setter
+// SetMcGwSourceAppKey is McGwSourceAppKey Setter
 // 小程序appkey
 func (r *TaobaoJstMiniappCrowdUserAddAPIRequest) SetMcGwSourceAppKey(_mcGwSourceAppKey string) error {
 	r._mcGwSourceAppKey = _mcGwSourceAppKey
@@ -75,7 +75,7 @@ func (r *TaobaoJstMiniappCrowdUserAddAPIRequest) SetMcGwSourceAppKey(_mcGwSource
 	return nil
 }
 
-// Get McGwSourceAppKey Getter
+// GetMcGwSourceAppKey McGwSourceAppKey Getter
 func (r TaobaoJstMiniappCrowdUserAddAPIRequest) GetMcGwSourceAppKey() string {
 	return r._mcGwSourceAppKey
 }

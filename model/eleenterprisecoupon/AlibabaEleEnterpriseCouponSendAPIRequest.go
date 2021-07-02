@@ -51,7 +51,7 @@ func (r AlibabaEleEnterpriseCouponSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 手机号
 func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -59,12 +59,12 @@ func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetPhone(_phone string) error
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r AlibabaEleEnterpriseCouponSendAPIRequest) GetPhone() string {
 	return r._phone
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 固定值，申请获取
 func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -72,12 +72,12 @@ func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetChannel(_channel string) e
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r AlibabaEleEnterpriseCouponSendAPIRequest) GetChannel() string {
 	return r._channel
 }
 
-// Set is Latitude Setter
+// SetLatitude is Latitude Setter
 // 纬度
 func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetLatitude(_latitude string) error {
 	r._latitude = _latitude
@@ -85,12 +85,12 @@ func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetLatitude(_latitude string)
 	return nil
 }
 
-// Get Latitude Getter
+// GetLatitude Latitude Getter
 func (r AlibabaEleEnterpriseCouponSendAPIRequest) GetLatitude() string {
 	return r._latitude
 }
 
-// Set is Longitude Setter
+// SetLongitude is Longitude Setter
 // 经度
 func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetLongitude(_longitude string) error {
 	r._longitude = _longitude
@@ -98,12 +98,12 @@ func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetLongitude(_longitude strin
 	return nil
 }
 
-// Get Longitude Getter
+// GetLongitude Longitude Getter
 func (r AlibabaEleEnterpriseCouponSendAPIRequest) GetLongitude() string {
 	return r._longitude
 }
 
-// Set is Ip Setter
+// SetIp is Ip Setter
 // 客户端IP地址
 func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetIp(_ip string) error {
 	r._ip = _ip
@@ -111,12 +111,12 @@ func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetIp(_ip string) error {
 	return nil
 }
 
-// Get Ip Getter
+// GetIp Ip Getter
 func (r AlibabaEleEnterpriseCouponSendAPIRequest) GetIp() string {
 	return r._ip
 }
 
-// Set is UserAgent Setter
+// SetUserAgent is UserAgent Setter
 // 客户端User-Agent信息
 func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetUserAgent(_userAgent string) error {
 	r._userAgent = _userAgent
@@ -124,12 +124,12 @@ func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetUserAgent(_userAgent strin
 	return nil
 }
 
-// Get UserAgent Getter
+// GetUserAgent UserAgent Getter
 func (r AlibabaEleEnterpriseCouponSendAPIRequest) GetUserAgent() string {
 	return r._userAgent
 }
 
-// Set is BatchNo Setter
+// SetBatchNo is BatchNo Setter
 // 批次,同一个批次号只会发券一次，后续用同一个批次号的请求会返回上次发的券(幂等)
 func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetBatchNo(_batchNo string) error {
 	r._batchNo = _batchNo
@@ -137,12 +137,12 @@ func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetBatchNo(_batchNo string) e
 	return nil
 }
 
-// Get BatchNo Getter
+// GetBatchNo BatchNo Getter
 func (r AlibabaEleEnterpriseCouponSendAPIRequest) GetBatchNo() string {
 	return r._batchNo
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备ID
 func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -150,7 +150,7 @@ func (r *AlibabaEleEnterpriseCouponSendAPIRequest) SetDeviceId(_deviceId string)
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r AlibabaEleEnterpriseCouponSendAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }

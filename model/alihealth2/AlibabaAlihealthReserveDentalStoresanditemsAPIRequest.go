@@ -37,7 +37,7 @@ func (r AlibabaAlihealthReserveDentalStoresanditemsAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码，每页100个门店，超过100个门店分页请求
 func (r *AlibabaAlihealthReserveDentalStoresanditemsAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthReserveDentalStoresanditemsAPIRequest) SetPageNo(_pageN
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r AlibabaAlihealthReserveDentalStoresanditemsAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

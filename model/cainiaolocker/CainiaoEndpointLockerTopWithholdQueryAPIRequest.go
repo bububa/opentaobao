@@ -41,7 +41,7 @@ func (r CainiaoEndpointLockerTopWithholdQueryAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is CompanyCode Setter
+// SetCompanyCode is CompanyCode Setter
 // 柜子公司编码
 func (r *CainiaoEndpointLockerTopWithholdQueryAPIRequest) SetCompanyCode(_companyCode string) error {
 	r._companyCode = _companyCode
@@ -49,12 +49,12 @@ func (r *CainiaoEndpointLockerTopWithholdQueryAPIRequest) SetCompanyCode(_compan
 	return nil
 }
 
-// Get CompanyCode Getter
+// GetCompanyCode CompanyCode Getter
 func (r CainiaoEndpointLockerTopWithholdQueryAPIRequest) GetCompanyCode() string {
 	return r._companyCode
 }
 
-// Set is OpenUserId Setter
+// SetOpenUserId is OpenUserId Setter
 // 开放用户Id
 func (r *CainiaoEndpointLockerTopWithholdQueryAPIRequest) SetOpenUserId(_openUserId string) error {
 	r._openUserId = _openUserId
@@ -62,12 +62,12 @@ func (r *CainiaoEndpointLockerTopWithholdQueryAPIRequest) SetOpenUserId(_openUse
 	return nil
 }
 
-// Get OpenUserId Getter
+// GetOpenUserId OpenUserId Getter
 func (r CainiaoEndpointLockerTopWithholdQueryAPIRequest) GetOpenUserId() string {
 	return r._openUserId
 }
 
-// Set is OrderType Setter
+// SetOrderType is OrderType Setter
 // 柜子业务：0-取件业务，1-寄件业务，2-派样业务，3-小件员约柜（在约期内仅能使用一次）4-小件员租柜（在约期内可反复使用）
 func (r *CainiaoEndpointLockerTopWithholdQueryAPIRequest) SetOrderType(_orderType int64) error {
 	r._orderType = _orderType
@@ -75,7 +75,7 @@ func (r *CainiaoEndpointLockerTopWithholdQueryAPIRequest) SetOrderType(_orderTyp
 	return nil
 }
 
-// Get OrderType Getter
+// GetOrderType OrderType Getter
 func (r CainiaoEndpointLockerTopWithholdQueryAPIRequest) GetOrderType() int64 {
 	return r._orderType
 }

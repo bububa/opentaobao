@@ -37,7 +37,7 @@ func (r TaobaoSungariDisposeQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamList Setter
+// SetParamList is ParamList Setter
 // 查询的key列表
 func (r *TaobaoSungariDisposeQueryAPIRequest) SetParamList(_paramList []string) error {
 	r._paramList = _paramList
@@ -45,7 +45,7 @@ func (r *TaobaoSungariDisposeQueryAPIRequest) SetParamList(_paramList []string) 
 	return nil
 }
 
-// Get ParamList Getter
+// GetParamList ParamList Getter
 func (r TaobaoSungariDisposeQueryAPIRequest) GetParamList() []string {
 	return r._paramList
 }

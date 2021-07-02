@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmOpenCustomerSaveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamCustomerSaveOpenReq Setter
+// SetParamCustomerSaveOpenReq is ParamCustomerSaveOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmOpenCustomerSaveAPIRequest) SetParamCustomerSaveOpenReq(_paramCustomerSaveOpenReq *CustomerSaveOpenReq) error {
 	r._paramCustomerSaveOpenReq = _paramCustomerSaveOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmOpenCustomerSaveAPIRequest) SetParamCustomerSaveOpenReq(_
 	return nil
 }
 
-// Get ParamCustomerSaveOpenReq Getter
+// GetParamCustomerSaveOpenReq ParamCustomerSaveOpenReq Getter
 func (r AlibabaAlscCrmOpenCustomerSaveAPIRequest) GetParamCustomerSaveOpenReq() *CustomerSaveOpenReq {
 	return r._paramCustomerSaveOpenReq
 }

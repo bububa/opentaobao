@@ -41,7 +41,7 @@ func (r AlibabaAlihealthDrugKytDestbillCheckAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugKytDestbillCheckAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthDrugKytDestbillCheckAPIRequest) SetRefEntId(_refEntId s
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytDestbillCheckAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据号
 func (r *AlibabaAlihealthDrugKytDestbillCheckAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthDrugKytDestbillCheckAPIRequest) SetBillCode(_billCode s
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthDrugKytDestbillCheckAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is CheckType Setter
+// SetCheckType is CheckType Setter
 // 审核状态，'Y'审批通过 'N' 审批不通过
 func (r *AlibabaAlihealthDrugKytDestbillCheckAPIRequest) SetCheckType(_checkType string) error {
 	r._checkType = _checkType
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthDrugKytDestbillCheckAPIRequest) SetCheckType(_checkType
 	return nil
 }
 
-// Get CheckType Getter
+// GetCheckType CheckType Getter
 func (r AlibabaAlihealthDrugKytDestbillCheckAPIRequest) GetCheckType() string {
 	return r._checkType
 }

@@ -37,7 +37,7 @@ func (r AliyunAliosPayRecordListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SearchRecordRequest Setter
+// SetSearchRecordRequest is SearchRecordRequest Setter
 // 请求参数
 func (r *AliyunAliosPayRecordListAPIRequest) SetSearchRecordRequest(_searchRecordRequest *SearchRecordRequest) error {
 	r._searchRecordRequest = _searchRecordRequest
@@ -45,7 +45,7 @@ func (r *AliyunAliosPayRecordListAPIRequest) SetSearchRecordRequest(_searchRecor
 	return nil
 }
 
-// Get SearchRecordRequest Getter
+// GetSearchRecordRequest SearchRecordRequest Getter
 func (r AliyunAliosPayRecordListAPIRequest) GetSearchRecordRequest() *SearchRecordRequest {
 	return r._searchRecordRequest
 }

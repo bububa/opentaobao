@@ -41,7 +41,7 @@ func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户健康ID
 func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetUserId(_userId int64)
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is Date Setter
+// SetDate is Date Setter
 // 记录日期，format：yyyy-MM-dd
 func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetDate(_date string) error {
 	r._date = _date
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetDate(_date string) er
 	return nil
 }
 
-// Get Date Getter
+// GetDate Date Getter
 func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetDate() string {
 	return r._date
 }
 
-// Set is Energy Setter
+// SetEnergy is Energy Setter
 // 累积摄入卡路里
 func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetEnergy(_energy int64) error {
 	r._energy = _energy
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetEnergy(_energy int64)
 	return nil
 }
 
-// Get Energy Getter
+// GetEnergy Energy Getter
 func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetEnergy() int64 {
 	return r._energy
 }

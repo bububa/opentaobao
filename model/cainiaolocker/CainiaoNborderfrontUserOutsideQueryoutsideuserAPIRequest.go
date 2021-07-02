@@ -39,7 +39,7 @@ func (r CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is CpCode Setter
+// SetCpCode is CpCode Setter
 // cpcode
 func (r *CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest) SetCpCode(_cpCode string) error {
 	r._cpCode = _cpCode
@@ -47,12 +47,12 @@ func (r *CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest) SetCpCode(_cp
 	return nil
 }
 
-// Get CpCode Getter
+// GetCpCode CpCode Getter
 func (r CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest) GetCpCode() string {
 	return r._cpCode
 }
 
-// Set is CpUserId Setter
+// SetCpUserId is CpUserId Setter
 // cp小件员ID
 func (r *CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest) SetCpUserId(_cpUserId string) error {
 	r._cpUserId = _cpUserId
@@ -60,7 +60,7 @@ func (r *CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest) SetCpUserId(_
 	return nil
 }
 
-// Get CpUserId Getter
+// GetCpUserId CpUserId Getter
 func (r CainiaoNborderfrontUserOutsideQueryoutsideuserAPIRequest) GetCpUserId() string {
 	return r._cpUserId
 }

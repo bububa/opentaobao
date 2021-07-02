@@ -37,7 +37,7 @@ func (r AlibabaAisAssetsTagGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UNonce Setter
+// SetUNonce is UNonce Setter
 // 二维码生成唯一标识
 func (r *AlibabaAisAssetsTagGetAPIRequest) SetUNonce(_uNonce string) error {
 	r._uNonce = _uNonce
@@ -45,7 +45,7 @@ func (r *AlibabaAisAssetsTagGetAPIRequest) SetUNonce(_uNonce string) error {
 	return nil
 }
 
-// Get UNonce Getter
+// GetUNonce UNonce Getter
 func (r AlibabaAisAssetsTagGetAPIRequest) GetUNonce() string {
 	return r._uNonce
 }

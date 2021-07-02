@@ -41,7 +41,7 @@ func (r TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ExtendParams Setter
+// SetExtendParams is ExtendParams Setter
 // 扩展参数
 func (r *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) SetExtendParams(_extendParams string) error {
 	r._extendParams = _extendParams
@@ -49,12 +49,12 @@ func (r *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) SetExtendParams(_ext
 	return nil
 }
 
-// Get ExtendParams Getter
+// GetExtendParams ExtendParams Getter
 func (r TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) GetExtendParams() string {
 	return r._extendParams
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 主站id
 func (r *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
@@ -62,12 +62,12 @@ func (r *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) SetMainOrderId(_main
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 代理商id
 func (r *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
@@ -75,7 +75,7 @@ func (r *TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) SetSellerId(_sellerI
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r TaobaoTrainAgentHandleticketConfirmVtwoAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }

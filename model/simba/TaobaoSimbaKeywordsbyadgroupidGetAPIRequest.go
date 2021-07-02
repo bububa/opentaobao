@@ -39,7 +39,7 @@ func (r TaobaoSimbaKeywordsbyadgroupidGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaKeywordsbyadgroupidGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -47,12 +47,12 @@ func (r *TaobaoSimbaKeywordsbyadgroupidGetAPIRequest) SetNick(_nick string) erro
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaKeywordsbyadgroupidGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广组Id
 func (r *TaobaoSimbaKeywordsbyadgroupidGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -60,7 +60,7 @@ func (r *TaobaoSimbaKeywordsbyadgroupidGetAPIRequest) SetAdgroupId(_adgroupId in
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaKeywordsbyadgroupidGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

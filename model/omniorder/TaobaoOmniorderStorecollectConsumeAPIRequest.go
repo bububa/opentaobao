@@ -41,7 +41,7 @@ func (r TaobaoOmniorderStorecollectConsumeAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 核销码
 func (r *TaobaoOmniorderStorecollectConsumeAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -49,12 +49,12 @@ func (r *TaobaoOmniorderStorecollectConsumeAPIRequest) SetCode(_code string) err
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r TaobaoOmniorderStorecollectConsumeAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 淘宝主订单ID
 func (r *TaobaoOmniorderStorecollectConsumeAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
@@ -62,12 +62,12 @@ func (r *TaobaoOmniorderStorecollectConsumeAPIRequest) SetMainOrderId(_mainOrder
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r TaobaoOmniorderStorecollectConsumeAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }
 
-// Set is Operator Setter
+// SetOperator is Operator Setter
 // 核销操作人信息
 func (r *TaobaoOmniorderStorecollectConsumeAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
@@ -75,7 +75,7 @@ func (r *TaobaoOmniorderStorecollectConsumeAPIRequest) SetOperator(_operator str
 	return nil
 }
 
-// Get Operator Getter
+// GetOperator Operator Getter
 func (r TaobaoOmniorderStorecollectConsumeAPIRequest) GetOperator() string {
 	return r._operator
 }

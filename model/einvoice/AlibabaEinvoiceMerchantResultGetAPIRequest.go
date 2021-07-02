@@ -43,7 +43,7 @@ func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SerialNo Setter
+// SetSerialNo is SerialNo Setter
 // 流水号 (serial_no)和(platform_code,platform_tid)必须填写其中一组,serial_no优先级更高
 func (r *AlibabaEinvoiceMerchantResultGetAPIRequest) SetSerialNo(_serialNo string) error {
 	r._serialNo = _serialNo
@@ -51,12 +51,12 @@ func (r *AlibabaEinvoiceMerchantResultGetAPIRequest) SetSerialNo(_serialNo strin
 	return nil
 }
 
-// Get SerialNo Getter
+// GetSerialNo SerialNo Getter
 func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetSerialNo() string {
 	return r._serialNo
 }
 
-// Set is PlatformCode Setter
+// SetPlatformCode is PlatformCode Setter
 // 电商平台代码。淘宝：taobao，天猫：tmall
 func (r *AlibabaEinvoiceMerchantResultGetAPIRequest) SetPlatformCode(_platformCode string) error {
 	r._platformCode = _platformCode
@@ -64,12 +64,12 @@ func (r *AlibabaEinvoiceMerchantResultGetAPIRequest) SetPlatformCode(_platformCo
 	return nil
 }
 
-// Get PlatformCode Getter
+// GetPlatformCode PlatformCode Getter
 func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetPlatformCode() string {
 	return r._platformCode
 }
 
-// Set is PlatformTid Setter
+// SetPlatformTid is PlatformTid Setter
 // 电商平台对应的订单号
 func (r *AlibabaEinvoiceMerchantResultGetAPIRequest) SetPlatformTid(_platformTid string) error {
 	r._platformTid = _platformTid
@@ -77,12 +77,12 @@ func (r *AlibabaEinvoiceMerchantResultGetAPIRequest) SetPlatformTid(_platformTid
 	return nil
 }
 
-// Get PlatformTid Getter
+// GetPlatformTid PlatformTid Getter
 func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetPlatformTid() string {
 	return r._platformTid
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 收款方税务登记证号
 func (r *AlibabaEinvoiceMerchantResultGetAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -90,7 +90,7 @@ func (r *AlibabaEinvoiceMerchantResultGetAPIRequest) SetPayeeRegisterNo(_payeeRe
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }

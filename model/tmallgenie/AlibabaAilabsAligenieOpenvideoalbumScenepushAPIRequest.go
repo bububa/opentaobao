@@ -41,7 +41,7 @@ func (r AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is SceneType Setter
+// SetSceneType is SceneType Setter
 // 接入场景 0 无应用 1 挂靠应用
 func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) SetSceneType(_sceneType int64) error {
 	r._sceneType = _sceneType
@@ -49,12 +49,12 @@ func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) SetSceneType(_s
 	return nil
 }
 
-// Get SceneType Getter
+// GetSceneType SceneType Getter
 func (r AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) GetSceneType() int64 {
 	return r._sceneType
 }
 
-// Set is SceneValue Setter
+// SetSceneValue is SceneValue Setter
 // 如果场景是1 此处为应用id
 func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) SetSceneValue(_sceneValue string) error {
 	r._sceneValue = _sceneValue
@@ -62,12 +62,12 @@ func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) SetSceneValue(_
 	return nil
 }
 
-// Get SceneValue Getter
+// GetSceneValue SceneValue Getter
 func (r AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) GetSceneValue() string {
 	return r._sceneValue
 }
 
-// Set is ParamList Setter
+// SetParamList is ParamList Setter
 // 视频合辑数据
 func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) SetParamList(_paramList []RawVideoAlbum) error {
 	r._paramList = _paramList
@@ -75,7 +75,7 @@ func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) SetParamList(_p
 	return nil
 }
 
-// Get ParamList Getter
+// GetParamList ParamList Getter
 func (r AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) GetParamList() []RawVideoAlbum {
 	return r._paramList
 }

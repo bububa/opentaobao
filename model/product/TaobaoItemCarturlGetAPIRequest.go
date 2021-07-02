@@ -47,7 +47,7 @@ func (r TaobaoItemCarturlGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemIds Setter
+// SetItemIds is ItemIds Setter
 // 商品信息，格式为 商品ID_SKU ID_数量，多条记录以逗号(,)分割
 func (r *TaobaoItemCarturlGetAPIRequest) SetItemIds(_itemIds []string) error {
 	r._itemIds = _itemIds
@@ -55,12 +55,12 @@ func (r *TaobaoItemCarturlGetAPIRequest) SetItemIds(_itemIds []string) error {
 	return nil
 }
 
-// Get ItemIds Getter
+// GetItemIds ItemIds Getter
 func (r TaobaoItemCarturlGetAPIRequest) GetItemIds() []string {
 	return r._itemIds
 }
 
-// Set is CallbackUrl Setter
+// SetCallbackUrl is CallbackUrl Setter
 // 回调地址，需要是EWS域名地址。可不填，默认到购物车页面
 func (r *TaobaoItemCarturlGetAPIRequest) SetCallbackUrl(_callbackUrl string) error {
 	r._callbackUrl = _callbackUrl
@@ -68,12 +68,12 @@ func (r *TaobaoItemCarturlGetAPIRequest) SetCallbackUrl(_callbackUrl string) err
 	return nil
 }
 
-// Get CallbackUrl Getter
+// GetCallbackUrl CallbackUrl Getter
 func (r TaobaoItemCarturlGetAPIRequest) GetCallbackUrl() string {
 	return r._callbackUrl
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 商家Nick，优先使用user_id
 func (r *TaobaoItemCarturlGetAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -81,12 +81,12 @@ func (r *TaobaoItemCarturlGetAPIRequest) SetUserNick(_userNick string) error {
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r TaobaoItemCarturlGetAPIRequest) GetUserNick() string {
 	return r._userNick
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 商家ID
 func (r *TaobaoItemCarturlGetAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -94,12 +94,12 @@ func (r *TaobaoItemCarturlGetAPIRequest) SetUserId(_userId int64) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoItemCarturlGetAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is ExtParams Setter
+// SetExtParams is ExtParams Setter
 // 扩展属性，关注店铺的时候会传递下去，格式为K:V|K:V格式
 func (r *TaobaoItemCarturlGetAPIRequest) SetExtParams(_extParams string) error {
 	r._extParams = _extParams
@@ -107,12 +107,12 @@ func (r *TaobaoItemCarturlGetAPIRequest) SetExtParams(_extParams string) error {
 	return nil
 }
 
-// Get ExtParams Getter
+// GetExtParams ExtParams Getter
 func (r TaobaoItemCarturlGetAPIRequest) GetExtParams() string {
 	return r._extParams
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 端类型，默认是tb，可选tb,hm
 func (r *TaobaoItemCarturlGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -120,7 +120,7 @@ func (r *TaobaoItemCarturlGetAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoItemCarturlGetAPIRequest) GetType() string {
 	return r._type
 }

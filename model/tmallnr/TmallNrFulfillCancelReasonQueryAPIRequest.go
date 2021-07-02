@@ -39,7 +39,7 @@ func (r TmallNrFulfillCancelReasonQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 商家的sellerID
 func (r *TmallNrFulfillCancelReasonQueryAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
@@ -47,12 +47,12 @@ func (r *TmallNrFulfillCancelReasonQueryAPIRequest) SetSellerId(_sellerId int64)
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r TmallNrFulfillCancelReasonQueryAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 淘宝交易的主订单号
 func (r *TmallNrFulfillCancelReasonQueryAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
@@ -60,7 +60,7 @@ func (r *TmallNrFulfillCancelReasonQueryAPIRequest) SetMainOrderId(_mainOrderId 
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r TmallNrFulfillCancelReasonQueryAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }

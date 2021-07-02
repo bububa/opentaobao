@@ -37,7 +37,7 @@ func (r AlibabaInteractUserIsloginAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 用户nick
 func (r *AlibabaInteractUserIsloginAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -45,7 +45,7 @@ func (r *AlibabaInteractUserIsloginAPIRequest) SetBuyerNick(_buyerNick string) e
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r AlibabaInteractUserIsloginAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }

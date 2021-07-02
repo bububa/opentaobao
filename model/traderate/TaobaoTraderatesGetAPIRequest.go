@@ -57,7 +57,7 @@ func (r TaobaoTraderatesGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需返回的字段列表。可选值：TradeRate 结构中的所有字段，多个字段之间用“,”分隔
 func (r *TaobaoTraderatesGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -65,12 +65,12 @@ func (r *TaobaoTraderatesGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoTraderatesGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is RateType Setter
+// SetRateType is RateType Setter
 // 评价类型。可选值:get(得到),give(给出)
 func (r *TaobaoTraderatesGetAPIRequest) SetRateType(_rateType string) error {
 	r._rateType = _rateType
@@ -78,12 +78,12 @@ func (r *TaobaoTraderatesGetAPIRequest) SetRateType(_rateType string) error {
 	return nil
 }
 
-// Get RateType Getter
+// GetRateType RateType Getter
 func (r TaobaoTraderatesGetAPIRequest) GetRateType() string {
 	return r._rateType
 }
 
-// Set is Role Setter
+// SetRole is Role Setter
 // 评价者角色即评价的发起方。可选值:seller(卖家),buyer(买家)。 当 give buyer 以买家身份给卖家的评价； 当 get seller 以买家身份得到卖家给的评价； 当 give seller 以卖家身份给买家的评价； 当 get buyer 以卖家身份得到买家给的评价。
 func (r *TaobaoTraderatesGetAPIRequest) SetRole(_role string) error {
 	r._role = _role
@@ -91,12 +91,12 @@ func (r *TaobaoTraderatesGetAPIRequest) SetRole(_role string) error {
 	return nil
 }
 
-// Get Role Getter
+// GetRole Role Getter
 func (r TaobaoTraderatesGetAPIRequest) GetRole() string {
 	return r._role
 }
 
-// Set is Result Setter
+// SetResult is Result Setter
 // 评价结果。可选值:good(好评),neutral(中评),bad(差评)
 func (r *TaobaoTraderatesGetAPIRequest) SetResult(_result string) error {
 	r._result = _result
@@ -104,12 +104,12 @@ func (r *TaobaoTraderatesGetAPIRequest) SetResult(_result string) error {
 	return nil
 }
 
-// Get Result Getter
+// GetResult Result Getter
 func (r TaobaoTraderatesGetAPIRequest) GetResult() string {
 	return r._result
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码。取值范围:大于零的整数最大限制为200; 默认值:1
 func (r *TaobaoTraderatesGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -117,12 +117,12 @@ func (r *TaobaoTraderatesGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoTraderatesGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页获取条数。默认值40，最小值1，最大值150。
 func (r *TaobaoTraderatesGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -130,12 +130,12 @@ func (r *TaobaoTraderatesGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTraderatesGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 评价开始时。如果只输入开始时间，那么能返回开始时间之后的评价数据。
 func (r *TaobaoTraderatesGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -143,12 +143,12 @@ func (r *TaobaoTraderatesGetAPIRequest) SetStartDate(_startDate string) error {
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoTraderatesGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 评价结束时间。如果只输入结束时间，那么全部返回所有评价数据。
 func (r *TaobaoTraderatesGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -156,12 +156,12 @@ func (r *TaobaoTraderatesGetAPIRequest) SetEndDate(_endDate string) error {
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoTraderatesGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 交易订单id，可以是父订单id号，也可以是子订单id号
 func (r *TaobaoTraderatesGetAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -169,12 +169,12 @@ func (r *TaobaoTraderatesGetAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoTraderatesGetAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is UseHasNext Setter
+// SetUseHasNext is UseHasNext Setter
 // 是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取评价信息，效率在原有的基础上有80%的提升。
 func (r *TaobaoTraderatesGetAPIRequest) SetUseHasNext(_useHasNext bool) error {
 	r._useHasNext = _useHasNext
@@ -182,12 +182,12 @@ func (r *TaobaoTraderatesGetAPIRequest) SetUseHasNext(_useHasNext bool) error {
 	return nil
 }
 
-// Get UseHasNext Getter
+// GetUseHasNext UseHasNext Getter
 func (r TaobaoTraderatesGetAPIRequest) GetUseHasNext() bool {
 	return r._useHasNext
 }
 
-// Set is NumIid Setter
+// SetNumIid is NumIid Setter
 // 商品的数字ID
 func (r *TaobaoTraderatesGetAPIRequest) SetNumIid(_numIid int64) error {
 	r._numIid = _numIid
@@ -195,7 +195,7 @@ func (r *TaobaoTraderatesGetAPIRequest) SetNumIid(_numIid int64) error {
 	return nil
 }
 
-// Get NumIid Getter
+// GetNumIid NumIid Getter
 func (r TaobaoTraderatesGetAPIRequest) GetNumIid() int64 {
 	return r._numIid
 }

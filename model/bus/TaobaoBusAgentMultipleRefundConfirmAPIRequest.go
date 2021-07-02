@@ -37,7 +37,7 @@ func (r TaobaoBusAgentMultipleRefundConfirmAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ParamAgentMultipleRefundRQ Setter
+// SetParamAgentMultipleRefundRQ is ParamAgentMultipleRefundRQ Setter
 // 入参
 func (r *TaobaoBusAgentMultipleRefundConfirmAPIRequest) SetParamAgentMultipleRefundRQ(_paramAgentMultipleRefundRQ *AgentMultipleRefundRq) error {
 	r._paramAgentMultipleRefundRQ = _paramAgentMultipleRefundRQ
@@ -45,7 +45,7 @@ func (r *TaobaoBusAgentMultipleRefundConfirmAPIRequest) SetParamAgentMultipleRef
 	return nil
 }
 
-// Get ParamAgentMultipleRefundRQ Getter
+// GetParamAgentMultipleRefundRQ ParamAgentMultipleRefundRQ Getter
 func (r TaobaoBusAgentMultipleRefundConfirmAPIRequest) GetParamAgentMultipleRefundRQ() *AgentMultipleRefundRq {
 	return r._paramAgentMultipleRefundRQ
 }

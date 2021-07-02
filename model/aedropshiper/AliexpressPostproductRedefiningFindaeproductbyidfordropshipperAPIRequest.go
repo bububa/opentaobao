@@ -41,7 +41,7 @@ func (r AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIRequest
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 商品ID
 func (r *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -49,12 +49,12 @@ func (r *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIReques
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is LocalCountry Setter
+// SetLocalCountry is LocalCountry Setter
 // 国家
 func (r *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIRequest) SetLocalCountry(_localCountry string) error {
 	r._localCountry = _localCountry
@@ -62,12 +62,12 @@ func (r *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIReques
 	return nil
 }
 
-// Get LocalCountry Getter
+// GetLocalCountry LocalCountry Getter
 func (r AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIRequest) GetLocalCountry() string {
 	return r._localCountry
 }
 
-// Set is LocalLanguage Setter
+// SetLocalLanguage is LocalLanguage Setter
 // 语言
 func (r *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIRequest) SetLocalLanguage(_localLanguage string) error {
 	r._localLanguage = _localLanguage
@@ -75,7 +75,7 @@ func (r *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIReques
 	return nil
 }
 
-// Get LocalLanguage Getter
+// GetLocalLanguage LocalLanguage Getter
 func (r AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIRequest) GetLocalLanguage() string {
 	return r._localLanguage
 }

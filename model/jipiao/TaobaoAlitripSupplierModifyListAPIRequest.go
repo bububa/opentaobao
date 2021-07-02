@@ -49,7 +49,7 @@ func (r TaobaoAlitripSupplierModifyListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 页码
 func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -57,12 +57,12 @@ func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetCurrentPage(_currentPage 
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TaobaoAlitripSupplierModifyListAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is DepEnd Setter
+// SetDepEnd is DepEnd Setter
 // 乘客出发时间查询结束日期
 func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetDepEnd(_depEnd string) error {
 	r._depEnd = _depEnd
@@ -70,12 +70,12 @@ func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetDepEnd(_depEnd string) er
 	return nil
 }
 
-// Get DepEnd Getter
+// GetDepEnd DepEnd Getter
 func (r TaobaoAlitripSupplierModifyListAPIRequest) GetDepEnd() string {
 	return r._depEnd
 }
 
-// Set is DepStart Setter
+// SetDepStart is DepStart Setter
 // 乘客出发时间查询开始日期
 func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetDepStart(_depStart string) error {
 	r._depStart = _depStart
@@ -83,12 +83,12 @@ func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetDepStart(_depStart string
 	return nil
 }
 
-// Get DepStart Getter
+// GetDepStart DepStart Getter
 func (r TaobaoAlitripSupplierModifyListAPIRequest) GetDepStart() string {
 	return r._depStart
 }
 
-// Set is GmtCreateEnd Setter
+// SetGmtCreateEnd is GmtCreateEnd Setter
 // 申请单创建时间查询结束日期
 func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetGmtCreateEnd(_gmtCreateEnd string) error {
 	r._gmtCreateEnd = _gmtCreateEnd
@@ -96,12 +96,12 @@ func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetGmtCreateEnd(_gmtCreateEn
 	return nil
 }
 
-// Get GmtCreateEnd Getter
+// GetGmtCreateEnd GmtCreateEnd Getter
 func (r TaobaoAlitripSupplierModifyListAPIRequest) GetGmtCreateEnd() string {
 	return r._gmtCreateEnd
 }
 
-// Set is GmtCreateStart Setter
+// SetGmtCreateStart is GmtCreateStart Setter
 // 申请单创建时间查询开始日期
 func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetGmtCreateStart(_gmtCreateStart string) error {
 	r._gmtCreateStart = _gmtCreateStart
@@ -109,12 +109,12 @@ func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetGmtCreateStart(_gmtCreate
 	return nil
 }
 
-// Get GmtCreateStart Getter
+// GetGmtCreateStart GmtCreateStart Getter
 func (r TaobaoAlitripSupplierModifyListAPIRequest) GetGmtCreateStart() string {
 	return r._gmtCreateStart
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页记录数
 func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -122,12 +122,12 @@ func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetPageSize(_pageSize int64)
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoAlitripSupplierModifyListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 1：改签申请列表，2：改签已支付列表，3：改签成功列表
 func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -135,7 +135,7 @@ func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetStatus(_status int64) err
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoAlitripSupplierModifyListAPIRequest) GetStatus() int64 {
 	return r._status
 }

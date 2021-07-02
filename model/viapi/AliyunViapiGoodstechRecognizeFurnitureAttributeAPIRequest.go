@@ -37,7 +37,7 @@ func (r AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is ImageUrl Setter
+// SetImageUrl is ImageUrl Setter
 // 待检测图片链接
 func (r *AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest) SetImageUrl(_imageUrl string) error {
 	r._imageUrl = _imageUrl
@@ -45,7 +45,7 @@ func (r *AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest) SetImageUrl(
 	return nil
 }
 
-// Get ImageUrl Getter
+// GetImageUrl ImageUrl Getter
 func (r AliyunViapiGoodstechRecognizeFurnitureAttributeAPIRequest) GetImageUrl() string {
 	return r._imageUrl
 }

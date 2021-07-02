@@ -40,7 +40,7 @@ func (r AlibabaAlscCrmPointCalAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamCalculateDeductedMoneyOpenReq Setter
+// SetParamCalculateDeductedMoneyOpenReq is ParamCalculateDeductedMoneyOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmPointCalAPIRequest) SetParamCalculateDeductedMoneyOpenReq(_paramCalculateDeductedMoneyOpenReq *CalculateDeductedMoneyOpenReq) error {
 	r._paramCalculateDeductedMoneyOpenReq = _paramCalculateDeductedMoneyOpenReq
@@ -48,7 +48,7 @@ func (r *AlibabaAlscCrmPointCalAPIRequest) SetParamCalculateDeductedMoneyOpenReq
 	return nil
 }
 
-// Get ParamCalculateDeductedMoneyOpenReq Getter
+// GetParamCalculateDeductedMoneyOpenReq ParamCalculateDeductedMoneyOpenReq Getter
 func (r AlibabaAlscCrmPointCalAPIRequest) GetParamCalculateDeductedMoneyOpenReq() *CalculateDeductedMoneyOpenReq {
 	return r._paramCalculateDeductedMoneyOpenReq
 }

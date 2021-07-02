@@ -45,7 +45,7 @@ func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is ProviderType Setter
+// SetProviderType is ProviderType Setter
 // 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
 func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetProviderType(_providerType string) error {
 	r._providerType = _providerType
@@ -53,12 +53,12 @@ func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetProviderType(
 	return nil
 }
 
-// Get ProviderType Getter
+// GetProviderType ProviderType Getter
 func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetProviderType() string {
 	return r._providerType
 }
 
-// Set is ProviderId Setter
+// SetProviderId is ProviderId Setter
 // 服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id
 func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetProviderId(_providerId int64) error {
 	r._providerId = _providerId
@@ -66,12 +66,12 @@ func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetProviderId(_p
 	return nil
 }
 
-// Get ProviderId Getter
+// GetProviderId ProviderId Getter
 func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetProviderId() int64 {
 	return r._providerId
 }
 
-// Set is Mode Setter
+// SetMode is Mode Setter
 // 目前支持两种。daily 每天容量相同；customize 定制容量，每天都不同
 func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetMode(_mode string) error {
 	r._mode = _mode
@@ -79,12 +79,12 @@ func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetMode(_mode st
 	return nil
 }
 
-// Get Mode Getter
+// GetMode Mode Getter
 func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetMode() string {
 	return r._mode
 }
 
-// Set is TimeInterval Setter
+// SetTimeInterval is TimeInterval Setter
 // 目前支持两种。day 表示支持的时间粒度为天；hour 时间粒度为小时
 func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetTimeInterval(_timeInterval string) error {
 	r._timeInterval = _timeInterval
@@ -92,12 +92,12 @@ func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetTimeInterval(
 	return nil
 }
 
-// Get TimeInterval Getter
+// GetTimeInterval TimeInterval Getter
 func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetTimeInterval() string {
 	return r._timeInterval
 }
 
-// Set is CapacityData Setter
+// SetCapacityData is CapacityData Setter
 // 容量数据。根据mode和time interval有不同的格式。具体格式见业务对接文档。
 func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetCapacityData(_capacityData string) error {
 	r._capacityData = _capacityData
@@ -105,7 +105,7 @@ func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetCapacityData(
 	return nil
 }
 
-// Get CapacityData Getter
+// GetCapacityData CapacityData Getter
 func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetCapacityData() string {
 	return r._capacityData
 }

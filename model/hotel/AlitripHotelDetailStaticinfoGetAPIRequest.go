@@ -37,7 +37,7 @@ func (r AlitripHotelDetailStaticinfoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamHotelTopStaticDetailsParam Setter
+// SetParamHotelTopStaticDetailsParam is ParamHotelTopStaticDetailsParam Setter
 // 酒店详情页静态信息参数
 func (r *AlitripHotelDetailStaticinfoGetAPIRequest) SetParamHotelTopStaticDetailsParam(_paramHotelTopStaticDetailsParam *HotelTopStaticDetailsParam) error {
 	r._paramHotelTopStaticDetailsParam = _paramHotelTopStaticDetailsParam
@@ -45,7 +45,7 @@ func (r *AlitripHotelDetailStaticinfoGetAPIRequest) SetParamHotelTopStaticDetail
 	return nil
 }
 
-// Get ParamHotelTopStaticDetailsParam Getter
+// GetParamHotelTopStaticDetailsParam ParamHotelTopStaticDetailsParam Getter
 func (r AlitripHotelDetailStaticinfoGetAPIRequest) GetParamHotelTopStaticDetailsParam() *HotelTopStaticDetailsParam {
 	return r._paramHotelTopStaticDetailsParam
 }

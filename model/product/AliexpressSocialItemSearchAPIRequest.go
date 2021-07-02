@@ -71,7 +71,7 @@ func (r AliexpressSocialItemSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is HasVideo Setter
+// SetHasVideo is HasVideo Setter
 // 是否有视频
 func (r *AliexpressSocialItemSearchAPIRequest) SetHasVideo(_hasVideo bool) error {
 	r._hasVideo = _hasVideo
@@ -79,12 +79,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetHasVideo(_hasVideo bool) error
 	return nil
 }
 
-// Get HasVideo Getter
+// GetHasVideo HasVideo Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetHasVideo() bool {
 	return r._hasVideo
 }
 
-// Set is OrderBy Setter
+// SetOrderBy is OrderBy Setter
 // order by properties
 func (r *AliexpressSocialItemSearchAPIRequest) SetOrderBy(_orderBy string) error {
 	r._orderBy = _orderBy
@@ -92,12 +92,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetOrderBy(_orderBy string) error
 	return nil
 }
 
-// Get OrderBy Getter
+// GetOrderBy OrderBy Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetOrderBy() string {
 	return r._orderBy
 }
 
-// Set is Desc Setter
+// SetDesc is Desc Setter
 // 是否逆序
 func (r *AliexpressSocialItemSearchAPIRequest) SetDesc(_desc bool) error {
 	r._desc = _desc
@@ -105,12 +105,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetDesc(_desc bool) error {
 	return nil
 }
 
-// Get Desc Getter
+// GetDesc Desc Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetDesc() bool {
 	return r._desc
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // page size
 func (r *AliexpressSocialItemSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -118,12 +118,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetPageSize(_pageSize int64) erro
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is IsShipFree Setter
+// SetIsShipFree is IsShipFree Setter
 // 是否免邮
 func (r *AliexpressSocialItemSearchAPIRequest) SetIsShipFree(_isShipFree bool) error {
 	r._isShipFree = _isShipFree
@@ -131,12 +131,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetIsShipFree(_isShipFree bool) e
 	return nil
 }
 
-// Get IsShipFree Getter
+// GetIsShipFree IsShipFree Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetIsShipFree() bool {
 	return r._isShipFree
 }
 
-// Set is CommissionRateMax Setter
+// SetCommissionRateMax is CommissionRateMax Setter
 // 佣金最大值
 func (r *AliexpressSocialItemSearchAPIRequest) SetCommissionRateMax(_commissionRateMax string) error {
 	r._commissionRateMax = _commissionRateMax
@@ -144,12 +144,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetCommissionRateMax(_commissionR
 	return nil
 }
 
-// Get CommissionRateMax Getter
+// GetCommissionRateMax CommissionRateMax Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetCommissionRateMax() string {
 	return r._commissionRateMax
 }
 
-// Set is CommissionRateMin Setter
+// SetCommissionRateMin is CommissionRateMin Setter
 // 佣金最小值
 func (r *AliexpressSocialItemSearchAPIRequest) SetCommissionRateMin(_commissionRateMin string) error {
 	r._commissionRateMin = _commissionRateMin
@@ -157,12 +157,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetCommissionRateMin(_commissionR
 	return nil
 }
 
-// Get CommissionRateMin Getter
+// GetCommissionRateMin CommissionRateMin Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetCommissionRateMin() string {
 	return r._commissionRateMin
 }
 
-// Set is LogisticsTime Setter
+// SetLogisticsTime is LogisticsTime Setter
 // 物流时效
 func (r *AliexpressSocialItemSearchAPIRequest) SetLogisticsTime(_logisticsTime int64) error {
 	r._logisticsTime = _logisticsTime
@@ -170,12 +170,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetLogisticsTime(_logisticsTime i
 	return nil
 }
 
-// Get LogisticsTime Getter
+// GetLogisticsTime LogisticsTime Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetLogisticsTime() int64 {
 	return r._logisticsTime
 }
 
-// Set is AllianceItem Setter
+// SetAllianceItem is AllianceItem Setter
 // 是否联盟商品
 func (r *AliexpressSocialItemSearchAPIRequest) SetAllianceItem(_allianceItem bool) error {
 	r._allianceItem = _allianceItem
@@ -183,12 +183,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetAllianceItem(_allianceItem boo
 	return nil
 }
 
-// Get AllianceItem Getter
+// GetAllianceItem AllianceItem Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetAllianceItem() bool {
 	return r._allianceItem
 }
 
-// Set is CateId Setter
+// SetCateId is CateId Setter
 // 类目ID
 func (r *AliexpressSocialItemSearchAPIRequest) SetCateId(_cateId int64) error {
 	r._cateId = _cateId
@@ -196,12 +196,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetCateId(_cateId int64) error {
 	return nil
 }
 
-// Get CateId Getter
+// GetCateId CateId Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetCateId() int64 {
 	return r._cateId
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *AliexpressSocialItemSearchAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -209,12 +209,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is MinPrice Setter
+// SetMinPrice is MinPrice Setter
 // 最低价格
 func (r *AliexpressSocialItemSearchAPIRequest) SetMinPrice(_minPrice string) error {
 	r._minPrice = _minPrice
@@ -222,12 +222,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetMinPrice(_minPrice string) err
 	return nil
 }
 
-// Get MinPrice Getter
+// GetMinPrice MinPrice Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetMinPrice() string {
 	return r._minPrice
 }
 
-// Set is MaxPrice Setter
+// SetMaxPrice is MaxPrice Setter
 // 最高价格
 func (r *AliexpressSocialItemSearchAPIRequest) SetMaxPrice(_maxPrice string) error {
 	r._maxPrice = _maxPrice
@@ -235,12 +235,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetMaxPrice(_maxPrice string) err
 	return nil
 }
 
-// Get MaxPrice Getter
+// GetMaxPrice MaxPrice Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetMaxPrice() string {
 	return r._maxPrice
 }
 
-// Set is Keyword Setter
+// SetKeyword is Keyword Setter
 // 搜索关键字
 func (r *AliexpressSocialItemSearchAPIRequest) SetKeyword(_keyword string) error {
 	r._keyword = _keyword
@@ -248,12 +248,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetKeyword(_keyword string) error
 	return nil
 }
 
-// Get Keyword Getter
+// GetKeyword Keyword Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetKeyword() string {
 	return r._keyword
 }
 
-// Set is ShipTo Setter
+// SetShipTo is ShipTo Setter
 // shipTo国家
 func (r *AliexpressSocialItemSearchAPIRequest) SetShipTo(_shipTo string) error {
 	r._shipTo = _shipTo
@@ -261,12 +261,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetShipTo(_shipTo string) error {
 	return nil
 }
 
-// Get ShipTo Getter
+// GetShipTo ShipTo Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetShipTo() string {
 	return r._shipTo
 }
 
-// Set is CommentScore Setter
+// SetCommentScore is CommentScore Setter
 // 评价分数
 func (r *AliexpressSocialItemSearchAPIRequest) SetCommentScore(_commentScore string) error {
 	r._commentScore = _commentScore
@@ -274,12 +274,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetCommentScore(_commentScore str
 	return nil
 }
 
-// Get CommentScore Getter
+// GetCommentScore CommentScore Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetCommentScore() string {
 	return r._commentScore
 }
 
-// Set is Currency Setter
+// SetCurrency is Currency Setter
 // 币种
 func (r *AliexpressSocialItemSearchAPIRequest) SetCurrency(_currency string) error {
 	r._currency = _currency
@@ -287,12 +287,12 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetCurrency(_currency string) err
 	return nil
 }
 
-// Get Currency Getter
+// GetCurrency Currency Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetCurrency() string {
 	return r._currency
 }
 
-// Set is Locale Setter
+// SetLocale is Locale Setter
 // locale,格式为language+"_"+country
 func (r *AliexpressSocialItemSearchAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
@@ -300,7 +300,7 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetLocale(_locale string) error {
 	return nil
 }
 
-// Get Locale Getter
+// GetLocale Locale Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetLocale() string {
 	return r._locale
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is ProjectCooperationDto Setter
+// SetProjectCooperationDto is ProjectCooperationDto Setter
 // ka合作对象
 func (r *AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest) SetProjectCooperationDto(_projectCooperationDto *ProjectCooperationDto) error {
 	r._projectCooperationDto = _projectCooperationDto
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest) SetProjectCoo
 	return nil
 }
 
-// Get ProjectCooperationDto Getter
+// GetProjectCooperationDto ProjectCooperationDto Getter
 func (r AlibabaAlihouseNewhomeProjectCooperationSubmitAPIRequest) GetProjectCooperationDto() *ProjectCooperationDto {
 	return r._projectCooperationDto
 }

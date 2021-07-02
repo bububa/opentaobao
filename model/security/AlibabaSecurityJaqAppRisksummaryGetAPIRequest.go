@@ -37,7 +37,7 @@ func (r AlibabaSecurityJaqAppRisksummaryGetAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 任务唯一标识
 func (r *AlibabaSecurityJaqAppRisksummaryGetAPIRequest) SetItemId(_itemId string) error {
 	r._itemId = _itemId
@@ -45,7 +45,7 @@ func (r *AlibabaSecurityJaqAppRisksummaryGetAPIRequest) SetItemId(_itemId string
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlibabaSecurityJaqAppRisksummaryGetAPIRequest) GetItemId() string {
 	return r._itemId
 }

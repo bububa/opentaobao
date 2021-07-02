@@ -39,7 +39,7 @@ func (r TaobaoFenxiaoProductToChannelImportAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 要导入的渠道[21 零售PLUS]目前仅支持此渠道
 func (r *TaobaoFenxiaoProductToChannelImportAPIRequest) SetChannel(_channel int64) error {
 	r._channel = _channel
@@ -47,12 +47,12 @@ func (r *TaobaoFenxiaoProductToChannelImportAPIRequest) SetChannel(_channel int6
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TaobaoFenxiaoProductToChannelImportAPIRequest) GetChannel() int64 {
 	return r._channel
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 要导入的产品id
 func (r *TaobaoFenxiaoProductToChannelImportAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -60,7 +60,7 @@ func (r *TaobaoFenxiaoProductToChannelImportAPIRequest) SetProductId(_productId 
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TaobaoFenxiaoProductToChannelImportAPIRequest) GetProductId() int64 {
 	return r._productId
 }

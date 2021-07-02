@@ -37,7 +37,7 @@ func (r AlitripRailTradeRefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundParam Setter
+// SetRefundParam is RefundParam Setter
 // 入参
 func (r *AlitripRailTradeRefundAPIRequest) SetRefundParam(_refundParam *RefundReq) error {
 	r._refundParam = _refundParam
@@ -45,7 +45,7 @@ func (r *AlitripRailTradeRefundAPIRequest) SetRefundParam(_refundParam *RefundRe
 	return nil
 }
 
-// Get RefundParam Getter
+// GetRefundParam RefundParam Getter
 func (r AlitripRailTradeRefundAPIRequest) GetRefundParam() *RefundReq {
 	return r._refundParam
 }

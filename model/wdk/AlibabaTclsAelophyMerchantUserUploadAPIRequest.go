@@ -37,7 +37,7 @@ func (r AlibabaTclsAelophyMerchantUserUploadAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is UserInfoList Setter
+// SetUserInfoList is UserInfoList Setter
 // 渠道用户信息
 func (r *AlibabaTclsAelophyMerchantUserUploadAPIRequest) SetUserInfoList(_userInfoList []MerchantUserInfo) error {
 	r._userInfoList = _userInfoList
@@ -45,7 +45,7 @@ func (r *AlibabaTclsAelophyMerchantUserUploadAPIRequest) SetUserInfoList(_userIn
 	return nil
 }
 
-// Get UserInfoList Getter
+// GetUserInfoList UserInfoList Getter
 func (r AlibabaTclsAelophyMerchantUserUploadAPIRequest) GetUserInfoList() []MerchantUserInfo {
 	return r._userInfoList
 }

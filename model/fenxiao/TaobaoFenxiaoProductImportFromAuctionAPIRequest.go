@@ -41,7 +41,7 @@ func (r TaobaoFenxiaoProductImportFromAuctionAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is TradeType Setter
+// SetTradeType is TradeType Setter
 // 导入产品需要支持的交易类型：[1 代销][ 2 经销 ][3 代销和经销]
 func (r *TaobaoFenxiaoProductImportFromAuctionAPIRequest) SetTradeType(_tradeType int64) error {
 	r._tradeType = _tradeType
@@ -49,12 +49,12 @@ func (r *TaobaoFenxiaoProductImportFromAuctionAPIRequest) SetTradeType(_tradeTyp
 	return nil
 }
 
-// Get TradeType Getter
+// GetTradeType TradeType Getter
 func (r TaobaoFenxiaoProductImportFromAuctionAPIRequest) GetTradeType() int64 {
 	return r._tradeType
 }
 
-// Set is AuctionId Setter
+// SetAuctionId is AuctionId Setter
 // 店铺宝贝id
 func (r *TaobaoFenxiaoProductImportFromAuctionAPIRequest) SetAuctionId(_auctionId int64) error {
 	r._auctionId = _auctionId
@@ -62,12 +62,12 @@ func (r *TaobaoFenxiaoProductImportFromAuctionAPIRequest) SetAuctionId(_auctionI
 	return nil
 }
 
-// Get AuctionId Getter
+// GetAuctionId AuctionId Getter
 func (r TaobaoFenxiaoProductImportFromAuctionAPIRequest) GetAuctionId() int64 {
 	return r._auctionId
 }
 
-// Set is ProductLineId Setter
+// SetProductLineId is ProductLineId Setter
 // 产品线id
 func (r *TaobaoFenxiaoProductImportFromAuctionAPIRequest) SetProductLineId(_productLineId int64) error {
 	r._productLineId = _productLineId
@@ -75,7 +75,7 @@ func (r *TaobaoFenxiaoProductImportFromAuctionAPIRequest) SetProductLineId(_prod
 	return nil
 }
 
-// Get ProductLineId Getter
+// GetProductLineId ProductLineId Getter
 func (r TaobaoFenxiaoProductImportFromAuctionAPIRequest) GetProductLineId() int64 {
 	return r._productLineId
 }

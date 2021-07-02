@@ -77,7 +77,7 @@ func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ImsOrderId Setter
+// SetImsOrderId is ImsOrderId Setter
 // 微博订单id
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetImsOrderId(_imsOrderId string) error {
 	r._imsOrderId = _imsOrderId
@@ -85,12 +85,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetImsOrderId(_imsOrd
 	return nil
 }
 
-// Get ImsOrderId Getter
+// GetImsOrderId ImsOrderId Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetImsOrderId() string {
 	return r._imsOrderId
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 微博链接
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -98,12 +98,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetUrl(_url string) e
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetUrl() string {
 	return r._url
 }
 
-// Set is ReadsCount Setter
+// SetReadsCount is ReadsCount Setter
 // 阅读数
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetReadsCount(_readsCount int64) error {
 	r._readsCount = _readsCount
@@ -111,12 +111,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetReadsCount(_readsC
 	return nil
 }
 
-// Get ReadsCount Getter
+// GetReadsCount ReadsCount Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetReadsCount() int64 {
 	return r._readsCount
 }
 
-// Set is RepostsCount Setter
+// SetRepostsCount is RepostsCount Setter
 // 转发数
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetRepostsCount(_repostsCount int64) error {
 	r._repostsCount = _repostsCount
@@ -124,12 +124,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetRepostsCount(_repo
 	return nil
 }
 
-// Get RepostsCount Getter
+// GetRepostsCount RepostsCount Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetRepostsCount() int64 {
 	return r._repostsCount
 }
 
-// Set is CommentsCount Setter
+// SetCommentsCount is CommentsCount Setter
 // 评论数
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetCommentsCount(_commentsCount int64) error {
 	r._commentsCount = _commentsCount
@@ -137,12 +137,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetCommentsCount(_com
 	return nil
 }
 
-// Get CommentsCount Getter
+// GetCommentsCount CommentsCount Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetCommentsCount() int64 {
 	return r._commentsCount
 }
 
-// Set is AttitudesCount Setter
+// SetAttitudesCount is AttitudesCount Setter
 // 点赞数
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetAttitudesCount(_attitudesCount int64) error {
 	r._attitudesCount = _attitudesCount
@@ -150,12 +150,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetAttitudesCount(_at
 	return nil
 }
 
-// Get AttitudesCount Getter
+// GetAttitudesCount AttitudesCount Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetAttitudesCount() int64 {
 	return r._attitudesCount
 }
 
-// Set is WeiboNick Setter
+// SetWeiboNick is WeiboNick Setter
 // 微博昵称
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetWeiboNick(_weiboNick string) error {
 	r._weiboNick = _weiboNick
@@ -163,12 +163,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetWeiboNick(_weiboNi
 	return nil
 }
 
-// Get WeiboNick Getter
+// GetWeiboNick WeiboNick Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetWeiboNick() string {
 	return r._weiboNick
 }
 
-// Set is FollowersCount Setter
+// SetFollowersCount is FollowersCount Setter
 // 粉丝数
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetFollowersCount(_followersCount int64) error {
 	r._followersCount = _followersCount
@@ -176,12 +176,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetFollowersCount(_fo
 	return nil
 }
 
-// Get FollowersCount Getter
+// GetFollowersCount FollowersCount Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetFollowersCount() int64 {
 	return r._followersCount
 }
 
-// Set is NodesTop Setter
+// SetNodesTop is NodesTop Setter
 // 传播关键节点
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetNodesTop(_nodesTop string) error {
 	r._nodesTop = _nodesTop
@@ -189,12 +189,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetNodesTop(_nodesTop
 	return nil
 }
 
-// Get NodesTop Getter
+// GetNodesTop NodesTop Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetNodesTop() string {
 	return r._nodesTop
 }
 
-// Set is KeyPath Setter
+// SetKeyPath is KeyPath Setter
 // 关键路径
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetKeyPath(_keyPath string) error {
 	r._keyPath = _keyPath
@@ -202,12 +202,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetKeyPath(_keyPath s
 	return nil
 }
 
-// Get KeyPath Getter
+// GetKeyPath KeyPath Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetKeyPath() string {
 	return r._keyPath
 }
 
-// Set is WeiboSource Setter
+// SetWeiboSource is WeiboSource Setter
 // 微博来源
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetWeiboSource(_weiboSource string) error {
 	r._weiboSource = _weiboSource
@@ -215,12 +215,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetWeiboSource(_weibo
 	return nil
 }
 
-// Get WeiboSource Getter
+// GetWeiboSource WeiboSource Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetWeiboSource() string {
 	return r._weiboSource
 }
 
-// Set is VerifiedType Setter
+// SetVerifiedType is VerifiedType Setter
 // 类型分布
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetVerifiedType(_verifiedType string) error {
 	r._verifiedType = _verifiedType
@@ -228,12 +228,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetVerifiedType(_veri
 	return nil
 }
 
-// Get VerifiedType Getter
+// GetVerifiedType VerifiedType Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetVerifiedType() string {
 	return r._verifiedType
 }
 
-// Set is Gender Setter
+// SetGender is Gender Setter
 // 性别分布
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetGender(_gender string) error {
 	r._gender = _gender
@@ -241,12 +241,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetGender(_gender str
 	return nil
 }
 
-// Get Gender Getter
+// GetGender Gender Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetGender() string {
 	return r._gender
 }
 
-// Set is FansCount Setter
+// SetFansCount is FansCount Setter
 // 粉丝分布
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetFansCount(_fansCount string) error {
 	r._fansCount = _fansCount
@@ -254,12 +254,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetFansCount(_fansCou
 	return nil
 }
 
-// Get FansCount Getter
+// GetFansCount FansCount Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetFansCount() string {
 	return r._fansCount
 }
 
-// Set is Location Setter
+// SetLocation is Location Setter
 // 地域分布
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetLocation(_location string) error {
 	r._location = _location
@@ -267,12 +267,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetLocation(_location
 	return nil
 }
 
-// Get Location Getter
+// GetLocation Location Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetLocation() string {
 	return r._location
 }
 
-// Set is Graph Setter
+// SetGraph is Graph Setter
 // 关系图
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetGraph(_graph string) error {
 	r._graph = _graph
@@ -280,12 +280,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetGraph(_graph strin
 	return nil
 }
 
-// Get Graph Getter
+// GetGraph Graph Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetGraph() string {
 	return r._graph
 }
 
-// Set is Words Setter
+// SetWords is Words Setter
 // 关键词云
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetWords(_words string) error {
 	r._words = _words
@@ -293,12 +293,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetWords(_words strin
 	return nil
 }
 
-// Get Words Getter
+// GetWords Words Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetWords() string {
 	return r._words
 }
 
-// Set is RepostNumPerHour Setter
+// SetRepostNumPerHour is RepostNumPerHour Setter
 // 每小时转发量
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetRepostNumPerHour(_repostNumPerHour string) error {
 	r._repostNumPerHour = _repostNumPerHour
@@ -306,12 +306,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetRepostNumPerHour(_
 	return nil
 }
 
-// Get RepostNumPerHour Getter
+// GetRepostNumPerHour RepostNumPerHour Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetRepostNumPerHour() string {
 	return r._repostNumPerHour
 }
 
-// Set is AttitudesNumPerHour Setter
+// SetAttitudesNumPerHour is AttitudesNumPerHour Setter
 // 点赞量每小时趋势图
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetAttitudesNumPerHour(_attitudesNumPerHour string) error {
 	r._attitudesNumPerHour = _attitudesNumPerHour
@@ -319,12 +319,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetAttitudesNumPerHou
 	return nil
 }
 
-// Get AttitudesNumPerHour Getter
+// GetAttitudesNumPerHour AttitudesNumPerHour Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetAttitudesNumPerHour() string {
 	return r._attitudesNumPerHour
 }
 
-// Set is IsSuccess Setter
+// SetIsSuccess is IsSuccess Setter
 // 是否成功
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetIsSuccess(_isSuccess int64) error {
 	r._isSuccess = _isSuccess
@@ -332,12 +332,12 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetIsSuccess(_isSucce
 	return nil
 }
 
-// Get IsSuccess Getter
+// GetIsSuccess IsSuccess Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetIsSuccess() int64 {
 	return r._isSuccess
 }
 
-// Set is FailReason Setter
+// SetFailReason is FailReason Setter
 // 失败原因
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetFailReason(_failReason string) error {
 	r._failReason = _failReason
@@ -345,7 +345,7 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetFailReason(_failRe
 	return nil
 }
 
-// Get FailReason Getter
+// GetFailReason FailReason Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetFailReason() string {
 	return r._failReason
 }

@@ -50,7 +50,7 @@ func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetApiParams
 	return params
 }
 
-// Set is ServiceStore Setter
+// SetServiceStore is ServiceStore Setter
 // 网点
 func (r *TmallServicecenterServicestoreUpdateservicestoreAPIRequest) SetServiceStore(_serviceStore *ServiceStoreDto) error {
 	r._serviceStore = _serviceStore
@@ -58,7 +58,7 @@ func (r *TmallServicecenterServicestoreUpdateservicestoreAPIRequest) SetServiceS
 	return nil
 }
 
-// Get ServiceStore Getter
+// GetServiceStore ServiceStore Getter
 func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetServiceStore() *ServiceStoreDto {
 	return r._serviceStore
 }

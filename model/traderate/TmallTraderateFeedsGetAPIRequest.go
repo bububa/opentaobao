@@ -37,7 +37,7 @@ func (r TmallTraderateFeedsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChildTradeId Setter
+// SetChildTradeId is ChildTradeId Setter
 // 交易子订单ID
 func (r *TmallTraderateFeedsGetAPIRequest) SetChildTradeId(_childTradeId int64) error {
 	r._childTradeId = _childTradeId
@@ -45,7 +45,7 @@ func (r *TmallTraderateFeedsGetAPIRequest) SetChildTradeId(_childTradeId int64) 
 	return nil
 }
 
-// Get ChildTradeId Getter
+// GetChildTradeId ChildTradeId Getter
 func (r TmallTraderateFeedsGetAPIRequest) GetChildTradeId() int64 {
 	return r._childTradeId
 }

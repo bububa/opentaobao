@@ -39,7 +39,7 @@ func (r TmallProductSchemaUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is XmlData Setter
+// SetXmlData is XmlData Setter
 // 根据tmall.product.update.schema.get生成的产品更新规则入参数据
 func (r *TmallProductSchemaUpdateAPIRequest) SetXmlData(_xmlData string) error {
 	r._xmlData = _xmlData
@@ -47,12 +47,12 @@ func (r *TmallProductSchemaUpdateAPIRequest) SetXmlData(_xmlData string) error {
 	return nil
 }
 
-// Get XmlData Getter
+// GetXmlData XmlData Getter
 func (r TmallProductSchemaUpdateAPIRequest) GetXmlData() string {
 	return r._xmlData
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品编号
 func (r *TmallProductSchemaUpdateAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -60,7 +60,7 @@ func (r *TmallProductSchemaUpdateAPIRequest) SetProductId(_productId int64) erro
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TmallProductSchemaUpdateAPIRequest) GetProductId() int64 {
 	return r._productId
 }

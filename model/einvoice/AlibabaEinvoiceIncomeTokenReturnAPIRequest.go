@@ -51,7 +51,7 @@ func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Area Setter
+// SetArea is Area Setter
 // 税局所在区域，success=true时必填
 func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetArea(_area string) error {
 	r._area = _area
@@ -59,12 +59,12 @@ func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetArea(_area string) error
 	return nil
 }
 
-// Get Area Getter
+// GetArea Area Getter
 func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetArea() string {
 	return r._area
 }
 
-// Set is ErrorCode Setter
+// SetErrorCode is ErrorCode Setter
 // 错误码，success=false时必填
 func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetErrorCode(_errorCode string) error {
 	r._errorCode = _errorCode
@@ -72,12 +72,12 @@ func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetErrorCode(_errorCode str
 	return nil
 }
 
-// Get ErrorCode Getter
+// GetErrorCode ErrorCode Getter
 func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetErrorCode() string {
 	return r._errorCode
 }
 
-// Set is ErrorMessage Setter
+// SetErrorMessage is ErrorMessage Setter
 // 错误信息，success=false时必填
 func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetErrorMessage(_errorMessage string) error {
 	r._errorMessage = _errorMessage
@@ -85,12 +85,12 @@ func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetErrorMessage(_errorMessa
 	return nil
 }
 
-// Get ErrorMessage Getter
+// GetErrorMessage ErrorMessage Getter
 func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetErrorMessage() string {
 	return r._errorMessage
 }
 
-// Set is ExpireTime Setter
+// SetExpireTime is ExpireTime Setter
 // token过期时间，success=true时必填
 func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetExpireTime(_expireTime string) error {
 	r._expireTime = _expireTime
@@ -98,12 +98,12 @@ func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetExpireTime(_expireTime s
 	return nil
 }
 
-// Get ExpireTime Getter
+// GetExpireTime ExpireTime Getter
 func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetExpireTime() string {
 	return r._expireTime
 }
 
-// Set is PayeeName Setter
+// SetPayeeName is PayeeName Setter
 // 销售方企业名称，success=true时必填
 func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetPayeeName(_payeeName string) error {
 	r._payeeName = _payeeName
@@ -111,12 +111,12 @@ func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetPayeeName(_payeeName str
 	return nil
 }
 
-// Get PayeeName Getter
+// GetPayeeName PayeeName Getter
 func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetPayeeName() string {
 	return r._payeeName
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 销售方纳税人识别号，success=true时必填
 func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -124,12 +124,12 @@ func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetPayeeRegisterNo(_payeeRe
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is Success Setter
+// SetSuccess is Success Setter
 // token是否获取成功，true=成功， false=失败
 func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetSuccess(_success bool) error {
 	r._success = _success
@@ -137,12 +137,12 @@ func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetSuccess(_success bool) e
 	return nil
 }
 
-// Get Success Getter
+// GetSuccess Success Getter
 func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetSuccess() bool {
 	return r._success
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // token，success=true时必填
 func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -150,7 +150,7 @@ func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetToken(_token string) err
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetToken() string {
 	return r._token
 }

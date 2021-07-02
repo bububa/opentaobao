@@ -43,7 +43,7 @@ func (r AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) GetApiPara
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 药厂企业id
 func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) SetRefEnt
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is Operator Setter
+// SetOperator is Operator Setter
 // 操作人
 func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) SetOperat
 	return nil
 }
 
-// Get Operator Getter
+// GetOperator Operator Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) GetOperator() string {
 	return r._operator
 }
 
-// Set is BlindFileDeleteTime Setter
+// SetBlindFileDeleteTime is BlindFileDeleteTime Setter
 // 盲底文件删除时间
 func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) SetBlindFileDeleteTime(_blindFileDeleteTime string) error {
 	r._blindFileDeleteTime = _blindFileDeleteTime
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) SetBlindF
 	return nil
 }
 
-// Get BlindFileDeleteTime Getter
+// GetBlindFileDeleteTime BlindFileDeleteTime Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) GetBlindFileDeleteTime() string {
 	return r._blindFileDeleteTime
 }
 
-// Set is BlindFileNames Setter
+// SetBlindFileNames is BlindFileNames Setter
 // 盲底文件名称，多个盲底文件用,分隔
 func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) SetBlindFileNames(_blindFileNames string) error {
 	r._blindFileNames = _blindFileNames
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) SetBlindF
 	return nil
 }
 
-// Get BlindFileNames Getter
+// GetBlindFileNames BlindFileNames Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogAPIRequest) GetBlindFileNames() string {
 	return r._blindFileNames
 }

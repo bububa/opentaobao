@@ -37,7 +37,7 @@ func (r AlibabaDataItemGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UnNamed Setter
+// SetUnNamed is UnNamed Setter
 // 获取商品信息，作为客户端Weex鉴权的虚拟api
 func (r *AlibabaDataItemGetAPIRequest) SetUnNamed(_unNamed string) error {
 	r._unNamed = _unNamed
@@ -45,7 +45,7 @@ func (r *AlibabaDataItemGetAPIRequest) SetUnNamed(_unNamed string) error {
 	return nil
 }
 
-// Get UnNamed Getter
+// GetUnNamed UnNamed Getter
 func (r AlibabaDataItemGetAPIRequest) GetUnNamed() string {
 	return r._unNamed
 }

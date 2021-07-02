@@ -37,7 +37,7 @@ func (r AlibabaHappytripFreeloginGetusercontextAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is Req Setter
+// SetReq is Req Setter
 // 请求入参
 func (r *AlibabaHappytripFreeloginGetusercontextAPIRequest) SetReq(_req *SsoParamDto) error {
 	r._req = _req
@@ -45,7 +45,7 @@ func (r *AlibabaHappytripFreeloginGetusercontextAPIRequest) SetReq(_req *SsoPara
 	return nil
 }
 
-// Get Req Getter
+// GetReq Req Getter
 func (r AlibabaHappytripFreeloginGetusercontextAPIRequest) GetReq() *SsoParamDto {
 	return r._req
 }

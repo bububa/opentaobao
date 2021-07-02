@@ -41,7 +41,7 @@ func (r TaobaoSimbaCreativesGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaCreativesGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -49,12 +49,12 @@ func (r *TaobaoSimbaCreativesGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaCreativesGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is CreativeIds Setter
+// SetCreativeIds is CreativeIds Setter
 // 创意Id数组，最多200个
 func (r *TaobaoSimbaCreativesGetAPIRequest) SetCreativeIds(_creativeIds []int64) error {
 	r._creativeIds = _creativeIds
@@ -62,12 +62,12 @@ func (r *TaobaoSimbaCreativesGetAPIRequest) SetCreativeIds(_creativeIds []int64)
 	return nil
 }
 
-// Get CreativeIds Getter
+// GetCreativeIds CreativeIds Getter
 func (r TaobaoSimbaCreativesGetAPIRequest) GetCreativeIds() []int64 {
 	return r._creativeIds
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广组Id
 func (r *TaobaoSimbaCreativesGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -75,7 +75,7 @@ func (r *TaobaoSimbaCreativesGetAPIRequest) SetAdgroupId(_adgroupId int64) error
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaCreativesGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

@@ -47,7 +47,7 @@ func (r AlibabaAutonaviApiTrafficboardImageGetAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Deviceid Setter
+// SetDeviceid is Deviceid Setter
 // 设备id,  按照userid 的配置，决定是否需要
 func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) SetDeviceid(_deviceid string) error {
 	r._deviceid = _deviceid
@@ -55,12 +55,12 @@ func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) SetDeviceid(_deviceid
 	return nil
 }
 
-// Get Deviceid Getter
+// GetDeviceid Deviceid Getter
 func (r AlibabaAutonaviApiTrafficboardImageGetAPIRequest) GetDeviceid() string {
 	return r._deviceid
 }
 
-// Set is Batch Setter
+// SetBatch is Batch Setter
 // 批次,终端批次，按照userid 的配置，决定是否需要
 func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) SetBatch(_batch string) error {
 	r._batch = _batch
@@ -68,12 +68,12 @@ func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) SetBatch(_batch strin
 	return nil
 }
 
-// Get Batch Getter
+// GetBatch Batch Getter
 func (r AlibabaAutonaviApiTrafficboardImageGetAPIRequest) GetBatch() string {
 	return r._batch
 }
 
-// Set is Panelid Setter
+// SetPanelid is Panelid Setter
 // 图片 id
 func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) SetPanelid(_panelid string) error {
 	r._panelid = _panelid
@@ -81,12 +81,12 @@ func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) SetPanelid(_panelid s
 	return nil
 }
 
-// Get Panelid Getter
+// GetPanelid Panelid Getter
 func (r AlibabaAutonaviApiTrafficboardImageGetAPIRequest) GetPanelid() string {
 	return r._panelid
 }
 
-// Set is Size Setter
+// SetSize is Size Setter
 // 图像尺寸（可选）,默认尺寸为原始大小(960x600) 参数为:width  x   height   (例如:960x600),参数不正确时返回原始大小
 func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) SetSize(_size string) error {
 	r._size = _size
@@ -94,12 +94,12 @@ func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) SetSize(_size string)
 	return nil
 }
 
-// Get Size Getter
+// GetSize Size Getter
 func (r AlibabaAutonaviApiTrafficboardImageGetAPIRequest) GetSize() string {
 	return r._size
 }
 
-// Set is Whscale Setter
+// SetWhscale is Whscale Setter
 // 是否为宽高等比例（可选）,参数值 true（默认）,表示宽高等比例缩放 false:  按请求尺寸缩放
 func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) SetWhscale(_whscale string) error {
 	r._whscale = _whscale
@@ -107,12 +107,12 @@ func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) SetWhscale(_whscale s
 	return nil
 }
 
-// Get Whscale Getter
+// GetWhscale Whscale Getter
 func (r AlibabaAutonaviApiTrafficboardImageGetAPIRequest) GetWhscale() string {
 	return r._whscale
 }
 
-// Set is Adcodes Setter
+// SetAdcodes is Adcodes Setter
 // 城市编码
 func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) SetAdcodes(_adcodes string) error {
 	r._adcodes = _adcodes
@@ -120,7 +120,7 @@ func (r *AlibabaAutonaviApiTrafficboardImageGetAPIRequest) SetAdcodes(_adcodes s
 	return nil
 }
 
-// Get Adcodes Getter
+// GetAdcodes Adcodes Getter
 func (r AlibabaAutonaviApiTrafficboardImageGetAPIRequest) GetAdcodes() string {
 	return r._adcodes
 }

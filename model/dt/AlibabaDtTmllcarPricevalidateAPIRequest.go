@@ -49,7 +49,7 @@ func (r AlibabaDtTmllcarPricevalidateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppName Setter
+// SetAppName is AppName Setter
 // tt
 func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
@@ -57,12 +57,12 @@ func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetAppName(_appName string) er
 	return nil
 }
 
-// Get AppName Getter
+// GetAppName AppName Getter
 func (r AlibabaDtTmllcarPricevalidateAPIRequest) GetAppName() string {
 	return r._appName
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // tt
 func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -70,12 +70,12 @@ func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlibabaDtTmllcarPricevalidateAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Password Setter
+// SetPassword is Password Setter
 // tt
 func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetPassword(_password string) error {
 	r._password = _password
@@ -83,12 +83,12 @@ func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetPassword(_password string) 
 	return nil
 }
 
-// Get Password Getter
+// GetPassword Password Getter
 func (r AlibabaDtTmllcarPricevalidateAPIRequest) GetPassword() string {
 	return r._password
 }
 
-// Set is Price Setter
+// SetPrice is Price Setter
 // tt
 func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetPrice(_price *BigDecimal) error {
 	r._price = _price
@@ -96,12 +96,12 @@ func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetPrice(_price *BigDecimal) e
 	return nil
 }
 
-// Get Price Getter
+// GetPrice Price Getter
 func (r AlibabaDtTmllcarPricevalidateAPIRequest) GetPrice() *BigDecimal {
 	return r._price
 }
 
-// Set is CityName Setter
+// SetCityName is CityName Setter
 // tt
 func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetCityName(_cityName string) error {
 	r._cityName = _cityName
@@ -109,12 +109,12 @@ func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetCityName(_cityName string) 
 	return nil
 }
 
-// Get CityName Getter
+// GetCityName CityName Getter
 func (r AlibabaDtTmllcarPricevalidateAPIRequest) GetCityName() string {
 	return r._cityName
 }
 
-// Set is ModelName Setter
+// SetModelName is ModelName Setter
 // tt
 func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetModelName(_modelName string) error {
 	r._modelName = _modelName
@@ -122,7 +122,7 @@ func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetModelName(_modelName string
 	return nil
 }
 
-// Get ModelName Getter
+// GetModelName ModelName Getter
 func (r AlibabaDtTmllcarPricevalidateAPIRequest) GetModelName() string {
 	return r._modelName
 }

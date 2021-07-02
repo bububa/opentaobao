@@ -43,7 +43,7 @@ func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIR
 	return params
 }
 
-// Set is Ctei Setter
+// SetCtei is Ctei Setter
 // 设备唯一标识符
 func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIRequest) SetCtei(_ctei string) error {
 	r._ctei = _ctei
@@ -51,12 +51,12 @@ func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPI
 	return nil
 }
 
-// Get Ctei Getter
+// GetCtei Ctei Getter
 func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIRequest) GetCtei() string {
 	return r._ctei
 }
 
-// Set is DevType Setter
+// SetDevType is DevType Setter
 // 设备对应的产品类型
 func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIRequest) SetDevType(_devType string) error {
 	r._devType = _devType
@@ -64,12 +64,12 @@ func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPI
 	return nil
 }
 
-// Get DevType Getter
+// GetDevType DevType Getter
 func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIRequest) GetDevType() string {
 	return r._devType
 }
 
-// Set is SeqId Setter
+// SetSeqId is SeqId Setter
 // 一次请求的唯一标识符
 func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIRequest) SetSeqId(_seqId string) error {
 	r._seqId = _seqId
@@ -77,12 +77,12 @@ func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPI
 	return nil
 }
 
-// Get SeqId Getter
+// GetSeqId SeqId Getter
 func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIRequest) GetSeqId() string {
 	return r._seqId
 }
 
-// Set is UserAccount Setter
+// SetUserAccount is UserAccount Setter
 // 设备所属用户的账号信息
 func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIRequest) SetUserAccount(_userAccount string) error {
 	r._userAccount = _userAccount
@@ -90,7 +90,7 @@ func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPI
 	return nil
 }
 
-// Get UserAccount Getter
+// GetUserAccount UserAccount Getter
 func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateAPIRequest) GetUserAccount() string {
 	return r._userAccount
 }

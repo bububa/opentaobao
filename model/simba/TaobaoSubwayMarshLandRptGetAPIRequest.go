@@ -47,7 +47,7 @@ func (r TaobaoSubwayMarshLandRptGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSubwayMarshLandRptGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -55,12 +55,12 @@ func (r *TaobaoSubwayMarshLandRptGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSubwayMarshLandRptGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 2021-05-11
 func (r *TaobaoSubwayMarshLandRptGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -68,12 +68,12 @@ func (r *TaobaoSubwayMarshLandRptGetAPIRequest) SetEndDate(_endDate string) erro
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoSubwayMarshLandRptGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is AdgroupIdEqual Setter
+// SetAdgroupIdEqual is AdgroupIdEqual Setter
 // 推广组id
 func (r *TaobaoSubwayMarshLandRptGetAPIRequest) SetAdgroupIdEqual(_adgroupIdEqual string) error {
 	r._adgroupIdEqual = _adgroupIdEqual
@@ -81,12 +81,12 @@ func (r *TaobaoSubwayMarshLandRptGetAPIRequest) SetAdgroupIdEqual(_adgroupIdEqua
 	return nil
 }
 
-// Get AdgroupIdEqual Getter
+// GetAdgroupIdEqual AdgroupIdEqual Getter
 func (r TaobaoSubwayMarshLandRptGetAPIRequest) GetAdgroupIdEqual() string {
 	return r._adgroupIdEqual
 }
 
-// Set is IsAutoMatchEqual Setter
+// SetIsAutoMatchEqual is IsAutoMatchEqual Setter
 // 词包类型（捡漏词包填19）
 func (r *TaobaoSubwayMarshLandRptGetAPIRequest) SetIsAutoMatchEqual(_isAutoMatchEqual string) error {
 	r._isAutoMatchEqual = _isAutoMatchEqual
@@ -94,12 +94,12 @@ func (r *TaobaoSubwayMarshLandRptGetAPIRequest) SetIsAutoMatchEqual(_isAutoMatch
 	return nil
 }
 
-// Get IsAutoMatchEqual Getter
+// GetIsAutoMatchEqual IsAutoMatchEqual Getter
 func (r TaobaoSubwayMarshLandRptGetAPIRequest) GetIsAutoMatchEqual() string {
 	return r._isAutoMatchEqual
 }
 
-// Set is CampaignIdEqual Setter
+// SetCampaignIdEqual is CampaignIdEqual Setter
 // 计划id
 func (r *TaobaoSubwayMarshLandRptGetAPIRequest) SetCampaignIdEqual(_campaignIdEqual string) error {
 	r._campaignIdEqual = _campaignIdEqual
@@ -107,12 +107,12 @@ func (r *TaobaoSubwayMarshLandRptGetAPIRequest) SetCampaignIdEqual(_campaignIdEq
 	return nil
 }
 
-// Get CampaignIdEqual Getter
+// GetCampaignIdEqual CampaignIdEqual Getter
 func (r TaobaoSubwayMarshLandRptGetAPIRequest) GetCampaignIdEqual() string {
 	return r._campaignIdEqual
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 2021-05-05
 func (r *TaobaoSubwayMarshLandRptGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -120,7 +120,7 @@ func (r *TaobaoSubwayMarshLandRptGetAPIRequest) SetStartDate(_startDate string) 
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoSubwayMarshLandRptGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }

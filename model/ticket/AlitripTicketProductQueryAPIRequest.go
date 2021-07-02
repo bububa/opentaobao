@@ -43,7 +43,7 @@ func (r AlitripTicketProductQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutProductId Setter
+// SetOutProductId is OutProductId Setter
 // 商户自定义收费项目编码。与ali_product_id，item_id 三者至少填写一个
 func (r *AlitripTicketProductQueryAPIRequest) SetOutProductId(_outProductId string) error {
 	r._outProductId = _outProductId
@@ -51,12 +51,12 @@ func (r *AlitripTicketProductQueryAPIRequest) SetOutProductId(_outProductId stri
 	return nil
 }
 
-// Get OutProductId Getter
+// GetOutProductId OutProductId Getter
 func (r AlitripTicketProductQueryAPIRequest) GetOutProductId() string {
 	return r._outProductId
 }
 
-// Set is AliProductId Setter
+// SetAliProductId is AliProductId Setter
 // 阿里标准收费项目id。与out_product_id，item_id 三者至少填写一个
 func (r *AlitripTicketProductQueryAPIRequest) SetAliProductId(_aliProductId int64) error {
 	r._aliProductId = _aliProductId
@@ -64,12 +64,12 @@ func (r *AlitripTicketProductQueryAPIRequest) SetAliProductId(_aliProductId int6
 	return nil
 }
 
-// Get AliProductId Getter
+// GetAliProductId AliProductId Getter
 func (r AlitripTicketProductQueryAPIRequest) GetAliProductId() int64 {
 	return r._aliProductId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID。与out_product_id，ali_product_id三者至少填写一个
 func (r *AlitripTicketProductQueryAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -77,12 +77,12 @@ func (r *AlitripTicketProductQueryAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlitripTicketProductQueryAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is PageSource Setter
+// SetPageSource is PageSource Setter
 // 代表业务来源，gongxiao代表供销平台业务
 func (r *AlitripTicketProductQueryAPIRequest) SetPageSource(_pageSource string) error {
 	r._pageSource = _pageSource
@@ -90,7 +90,7 @@ func (r *AlitripTicketProductQueryAPIRequest) SetPageSource(_pageSource string) 
 	return nil
 }
 
-// Get PageSource Getter
+// GetPageSource PageSource Getter
 func (r AlitripTicketProductQueryAPIRequest) GetPageSource() string {
 	return r._pageSource
 }

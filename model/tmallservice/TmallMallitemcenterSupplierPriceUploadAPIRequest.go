@@ -39,7 +39,7 @@ func (r TmallMallitemcenterSupplierPriceUploadAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ServiceCode Setter
+// SetServiceCode is ServiceCode Setter
 // 服务code
 func (r *TmallMallitemcenterSupplierPriceUploadAPIRequest) SetServiceCode(_serviceCode string) error {
 	r._serviceCode = _serviceCode
@@ -47,12 +47,12 @@ func (r *TmallMallitemcenterSupplierPriceUploadAPIRequest) SetServiceCode(_servi
 	return nil
 }
 
-// Get ServiceCode Getter
+// GetServiceCode ServiceCode Getter
 func (r TmallMallitemcenterSupplierPriceUploadAPIRequest) GetServiceCode() string {
 	return r._serviceCode
 }
 
-// Set is ProviderPriceList Setter
+// SetProviderPriceList is ProviderPriceList Setter
 // 服务商门店价格列表
 func (r *TmallMallitemcenterSupplierPriceUploadAPIRequest) SetProviderPriceList(_providerPriceList []StoreOfferPriceDto) error {
 	r._providerPriceList = _providerPriceList
@@ -60,7 +60,7 @@ func (r *TmallMallitemcenterSupplierPriceUploadAPIRequest) SetProviderPriceList(
 	return nil
 }
 
-// Get ProviderPriceList Getter
+// GetProviderPriceList ProviderPriceList Getter
 func (r TmallMallitemcenterSupplierPriceUploadAPIRequest) GetProviderPriceList() []StoreOfferPriceDto {
 	return r._providerPriceList
 }

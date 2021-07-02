@@ -37,7 +37,7 @@ func (r AlibabaLstNicetuanOrderSaveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 订单数据
 func (r *AlibabaLstNicetuanOrderSaveAPIRequest) SetParam(_param *NicetuanMainOrderParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaLstNicetuanOrderSaveAPIRequest) SetParam(_param *NicetuanMainOrd
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaLstNicetuanOrderSaveAPIRequest) GetParam() *NicetuanMainOrderParam {
 	return r._param
 }

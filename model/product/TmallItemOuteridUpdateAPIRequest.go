@@ -41,7 +41,7 @@ func (r TmallItemOuteridUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TmallItemOuteridUpdateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -49,12 +49,12 @@ func (r *TmallItemOuteridUpdateAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallItemOuteridUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 商品维度商家编码，如果不修改可以不传；清空请设置空串
 func (r *TmallItemOuteridUpdateAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -62,12 +62,12 @@ func (r *TmallItemOuteridUpdateAPIRequest) SetOuterId(_outerId string) error {
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TmallItemOuteridUpdateAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is SkuOuters Setter
+// SetSkuOuters is SkuOuters Setter
 // 商品SKU更新OuterId时候用的数据
 func (r *TmallItemOuteridUpdateAPIRequest) SetSkuOuters(_skuOuters []UpdateSkuOuterId) error {
 	r._skuOuters = _skuOuters
@@ -75,7 +75,7 @@ func (r *TmallItemOuteridUpdateAPIRequest) SetSkuOuters(_skuOuters []UpdateSkuOu
 	return nil
 }
 
-// Get SkuOuters Getter
+// GetSkuOuters SkuOuters Getter
 func (r TmallItemOuteridUpdateAPIRequest) GetSkuOuters() []UpdateSkuOuterId {
 	return r._skuOuters
 }

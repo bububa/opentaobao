@@ -37,7 +37,7 @@ func (r AlibabaLsyCrmActivityUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NrtUpdateActivityReq Setter
+// SetNrtUpdateActivityReq is NrtUpdateActivityReq Setter
 // 入参
 func (r *AlibabaLsyCrmActivityUpdateAPIRequest) SetNrtUpdateActivityReq(_nrtUpdateActivityReq *NrtUpdateActivityReq) error {
 	r._nrtUpdateActivityReq = _nrtUpdateActivityReq
@@ -45,7 +45,7 @@ func (r *AlibabaLsyCrmActivityUpdateAPIRequest) SetNrtUpdateActivityReq(_nrtUpda
 	return nil
 }
 
-// Get NrtUpdateActivityReq Getter
+// GetNrtUpdateActivityReq NrtUpdateActivityReq Getter
 func (r AlibabaLsyCrmActivityUpdateAPIRequest) GetNrtUpdateActivityReq() *NrtUpdateActivityReq {
 	return r._nrtUpdateActivityReq
 }

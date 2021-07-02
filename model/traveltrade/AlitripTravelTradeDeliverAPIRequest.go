@@ -37,7 +37,7 @@ func (r AlitripTravelTradeDeliverAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SubOrderId Setter
+// SetSubOrderId is SubOrderId Setter
 // 子订单id
 func (r *AlitripTravelTradeDeliverAPIRequest) SetSubOrderId(_subOrderId int64) error {
 	r._subOrderId = _subOrderId
@@ -45,7 +45,7 @@ func (r *AlitripTravelTradeDeliverAPIRequest) SetSubOrderId(_subOrderId int64) e
 	return nil
 }
 
-// Get SubOrderId Getter
+// GetSubOrderId SubOrderId Getter
 func (r AlitripTravelTradeDeliverAPIRequest) GetSubOrderId() int64 {
 	return r._subOrderId
 }

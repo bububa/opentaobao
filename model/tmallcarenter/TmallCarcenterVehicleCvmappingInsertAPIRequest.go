@@ -41,7 +41,7 @@ func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 状态
 func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -49,12 +49,12 @@ func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetStatus(_status int64
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is SupplierVersionCid Setter
+// SetSupplierVersionCid is SupplierVersionCid Setter
 // 版本ID
 func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetSupplierVersionCid(_supplierVersionCid string) error {
 	r._supplierVersionCid = _supplierVersionCid
@@ -62,12 +62,12 @@ func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetSupplierVersionCid(_
 	return nil
 }
 
-// Get SupplierVersionCid Getter
+// GetSupplierVersionCid SupplierVersionCid Getter
 func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetSupplierVersionCid() string {
 	return r._supplierVersionCid
 }
 
-// Set is SupplierChassisCid Setter
+// SetSupplierChassisCid is SupplierChassisCid Setter
 // 底盘ID
 func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetSupplierChassisCid(_supplierChassisCid string) error {
 	r._supplierChassisCid = _supplierChassisCid
@@ -75,7 +75,7 @@ func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetSupplierChassisCid(_
 	return nil
 }
 
-// Get SupplierChassisCid Getter
+// GetSupplierChassisCid SupplierChassisCid Getter
 func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetSupplierChassisCid() string {
 	return r._supplierChassisCid
 }

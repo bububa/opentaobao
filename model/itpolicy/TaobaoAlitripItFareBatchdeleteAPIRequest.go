@@ -65,7 +65,7 @@ func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Airline Setter
+// SetAirline is Airline Setter
 // 航空公司
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetAirline(_airline string) error {
 	r._airline = _airline
@@ -73,12 +73,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetAirline(_airline string) e
 	return nil
 }
 
-// Get Airline Getter
+// GetAirline Airline Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetAirline() string {
 	return r._airline
 }
 
-// Set is ArrCity Setter
+// SetArrCity is ArrCity Setter
 // 到达城市 可传多个 AND关系
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetArrCity(_arrCity string) error {
 	r._arrCity = _arrCity
@@ -86,12 +86,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetArrCity(_arrCity string) e
 	return nil
 }
 
-// Get ArrCity Getter
+// GetArrCity ArrCity Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetArrCity() string {
 	return r._arrCity
 }
 
-// Set is Cabin Setter
+// SetCabin is Cabin Setter
 // 舱位 可传多个 或者的关系
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetCabin(_cabin string) error {
 	r._cabin = _cabin
@@ -99,12 +99,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetCabin(_cabin string) error
 	return nil
 }
 
-// Get Cabin Getter
+// GetCabin Cabin Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetCabin() string {
 	return r._cabin
 }
 
-// Set is CanRt Setter
+// SetCanRt is CanRt Setter
 // 是否能够混舱
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetCanRt(_canRt bool) error {
 	r._canRt = _canRt
@@ -112,12 +112,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetCanRt(_canRt bool) error {
 	return nil
 }
 
-// Get CanRt Getter
+// GetCanRt CanRt Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetCanRt() bool {
 	return r._canRt
 }
 
-// Set is DepCity Setter
+// SetDepCity is DepCity Setter
 // 到达城市 可传多个 AND关系
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetDepCity(_depCity string) error {
 	r._depCity = _depCity
@@ -125,12 +125,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetDepCity(_depCity string) e
 	return nil
 }
 
-// Get DepCity Getter
+// GetDepCity DepCity Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetDepCity() string {
 	return r._depCity
 }
 
-// Set is EndModifyDate Setter
+// SetEndModifyDate is EndModifyDate Setter
 // 最晚修改时间
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetEndModifyDate(_endModifyDate string) error {
 	r._endModifyDate = _endModifyDate
@@ -138,12 +138,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetEndModifyDate(_endModifyDa
 	return nil
 }
 
-// Get EndModifyDate Getter
+// GetEndModifyDate EndModifyDate Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetEndModifyDate() string {
 	return r._endModifyDate
 }
 
-// Set is FileCode Setter
+// SetFileCode is FileCode Setter
 // 文件编号
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetFileCode(_fileCode string) error {
 	r._fileCode = _fileCode
@@ -151,12 +151,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetFileCode(_fileCode string)
 	return nil
 }
 
-// Get FileCode Getter
+// GetFileCode FileCode Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetFileCode() string {
 	return r._fileCode
 }
 
-// Set is OperateSource Setter
+// SetOperateSource is OperateSource Setter
 // 维护方式，可选值（UI：后台界面录入；EXCEL：后台excel批量导入；API：top接口添加）
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetOperateSource(_operateSource string) error {
 	r._operateSource = _operateSource
@@ -164,12 +164,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetOperateSource(_operateSour
 	return nil
 }
 
-// Get OperateSource Getter
+// GetOperateSource OperateSource Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetOperateSource() string {
 	return r._operateSource
 }
 
-// Set is OutId Setter
+// SetOutId is OutId Setter
 // 外部政策id
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetOutId(_outId string) error {
 	r._outId = _outId
@@ -177,12 +177,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetOutId(_outId string) error
 	return nil
 }
 
-// Get OutId Getter
+// GetOutId OutId Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetOutId() string {
 	return r._outId
 }
 
-// Set is StartModifyDate Setter
+// SetStartModifyDate is StartModifyDate Setter
 // 最早修改时间
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetStartModifyDate(_startModifyDate string) error {
 	r._startModifyDate = _startModifyDate
@@ -190,12 +190,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetStartModifyDate(_startModi
 	return nil
 }
 
-// Get StartModifyDate Getter
+// GetStartModifyDate StartModifyDate Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetStartModifyDate() string {
 	return r._startModifyDate
 }
 
-// Set is StartRestrictGoDate Setter
+// SetStartRestrictGoDate is StartRestrictGoDate Setter
 // 去程适用开始日期
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetStartRestrictGoDate(_startRestrictGoDate string) error {
 	r._startRestrictGoDate = _startRestrictGoDate
@@ -203,12 +203,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetStartRestrictGoDate(_start
 	return nil
 }
 
-// Get StartRestrictGoDate Getter
+// GetStartRestrictGoDate StartRestrictGoDate Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetStartRestrictGoDate() string {
 	return r._startRestrictGoDate
 }
 
-// Set is EndRestrictGoDate Setter
+// SetEndRestrictGoDate is EndRestrictGoDate Setter
 // 去程适用结束日期
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetEndRestrictGoDate(_endRestrictGoDate string) error {
 	r._endRestrictGoDate = _endRestrictGoDate
@@ -216,12 +216,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetEndRestrictGoDate(_endRest
 	return nil
 }
 
-// Get EndRestrictGoDate Getter
+// GetEndRestrictGoDate EndRestrictGoDate Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetEndRestrictGoDate() string {
 	return r._endRestrictGoDate
 }
 
-// Set is FareType Setter
+// SetFareType is FareType Setter
 // 运价类型，1单程 2往返
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetFareType(_fareType int64) error {
 	r._fareType = _fareType
@@ -229,12 +229,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetFareType(_fareType int64) 
 	return nil
 }
 
-// Get FareType Getter
+// GetFareType FareType Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetFareType() int64 {
 	return r._fareType
 }
 
-// Set is StatusList Setter
+// SetStatusList is StatusList Setter
 // 0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetStatusList(_statusList []int64) error {
 	r._statusList = _statusList
@@ -242,12 +242,12 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetStatusList(_statusList []i
 	return nil
 }
 
-// Get StatusList Getter
+// GetStatusList StatusList Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetStatusList() []int64 {
 	return r._statusList
 }
 
-// Set is ExtendAttributes Setter
+// SetExtendAttributes is ExtendAttributes Setter
 // json格式的字符串，扩展属性，预留
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetExtendAttributes(_extendAttributes string) error {
 	r._extendAttributes = _extendAttributes
@@ -255,7 +255,7 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetExtendAttributes(_extendAt
 	return nil
 }
 
-// Get ExtendAttributes Getter
+// GetExtendAttributes ExtendAttributes Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetExtendAttributes() string {
 	return r._extendAttributes
 }

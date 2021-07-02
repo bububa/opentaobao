@@ -45,7 +45,7 @@ func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetApiPar
 	return params
 }
 
-// Set is UniqReserveCode Setter
+// SetUniqReserveCode is UniqReserveCode Setter
 // 服务商预约凭证
 func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
 	r._uniqReserveCode = _uniqReserveCode
@@ -53,12 +53,12 @@ func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetUniqR
 	return nil
 }
 
-// Get UniqReserveCode Getter
+// GetUniqReserveCode UniqReserveCode Getter
 func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetUniqReserveCode() string {
 	return r._uniqReserveCode
 }
 
-// Set is ReserveNumber Setter
+// SetReserveNumber is ReserveNumber Setter
 // 健康预约凭证
 func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetReserveNumber(_reserveNumber string) error {
 	r._reserveNumber = _reserveNumber
@@ -66,12 +66,12 @@ func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetReser
 	return nil
 }
 
-// Get ReserveNumber Getter
+// GetReserveNumber ReserveNumber Getter
 func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetReserveNumber() string {
 	return r._reserveNumber
 }
 
-// Set is ReportStatus Setter
+// SetReportStatus is ReportStatus Setter
 // 预约成功（ISSUED），预约失败(FAIL)
 func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetReportStatus(_reportStatus string) error {
 	r._reportStatus = _reportStatus
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetRepor
 	return nil
 }
 
-// Get ReportStatus Getter
+// GetReportStatus ReportStatus Getter
 func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetReportStatus() string {
 	return r._reportStatus
 }
 
-// Set is CheckNo Setter
+// SetCheckNo is CheckNo Setter
 // 到检凭证，exam_done状态下，该字段必填
 func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetCheckNo(_checkNo string) error {
 	r._checkNo = _checkNo
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetCheck
 	return nil
 }
 
-// Get CheckNo Getter
+// GetCheckNo CheckNo Getter
 func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetCheckNo() string {
 	return r._checkNo
 }
 
-// Set is StatusReason Setter
+// SetStatusReason is StatusReason Setter
 // 预约状态原因，描述预约状态如FAIL时的原因
 func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetStatusReason(_statusReason string) error {
 	r._statusReason = _statusReason
@@ -105,7 +105,7 @@ func (r *AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) SetStatu
 	return nil
 }
 
-// Get StatusReason Getter
+// GetStatusReason StatusReason Getter
 func (r AlibabaAlihealthExaminationReserveCertificateNotifyAPIRequest) GetStatusReason() string {
 	return r._statusReason
 }

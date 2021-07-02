@@ -45,7 +45,7 @@ func (r YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) GetApiPara
 	return params
 }
 
-// Set is Auditor Setter
+// SetAuditor is Auditor Setter
 // 审核人
 func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetAuditor(_auditor string) error {
 	r._auditor = _auditor
@@ -53,12 +53,12 @@ func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetAudito
 	return nil
 }
 
-// Get Auditor Getter
+// GetAuditor Auditor Getter
 func (r YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) GetAuditor() string {
 	return r._auditor
 }
 
-// Set is LicenseState Setter
+// SetLicenseState is LicenseState Setter
 // 审核状态：1未提审，2审核中，3通过，4不通过，5已下线
 func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetLicenseState(_licenseState int64) error {
 	r._licenseState = _licenseState
@@ -66,12 +66,12 @@ func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetLicens
 	return nil
 }
 
-// Get LicenseState Getter
+// GetLicenseState LicenseState Getter
 func (r YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) GetLicenseState() int64 {
 	return r._licenseState
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照方
 func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -79,12 +79,12 @@ func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetLicens
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) GetLicense() int64 {
 	return r._license
 }
 
-// Set is AuditComment Setter
+// SetAuditComment is AuditComment Setter
 // 备注说明
 func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetAuditComment(_auditComment string) error {
 	r._auditComment = _auditComment
@@ -92,12 +92,12 @@ func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetAuditC
 	return nil
 }
 
-// Get AuditComment Getter
+// GetAuditComment AuditComment Getter
 func (r YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) GetAuditComment() string {
 	return r._auditComment
 }
 
-// Set is VideoAuditId Setter
+// SetVideoAuditId is VideoAuditId Setter
 // 视频审核ID
 func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetVideoAuditId(_videoAuditId int64) error {
 	r._videoAuditId = _videoAuditId
@@ -105,7 +105,7 @@ func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetVideoA
 	return nil
 }
 
-// Get VideoAuditId Getter
+// GetVideoAuditId VideoAuditId Getter
 func (r YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) GetVideoAuditId() int64 {
 	return r._videoAuditId
 }

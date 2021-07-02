@@ -39,7 +39,7 @@ func (r TaobaoXhotelCityGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Start Setter
+// SetStart is Start Setter
 // 分页读取的开始下标,从0开始
 func (r *TaobaoXhotelCityGetAPIRequest) SetStart(_start int64) error {
 	r._start = _start
@@ -47,12 +47,12 @@ func (r *TaobaoXhotelCityGetAPIRequest) SetStart(_start int64) error {
 	return nil
 }
 
-// Get Start Getter
+// GetStart Start Getter
 func (r TaobaoXhotelCityGetAPIRequest) GetStart() int64 {
 	return r._start
 }
 
-// Set is Count Setter
+// SetCount is Count Setter
 // 分页读取的城市个数，最小值为1，最大值为200
 func (r *TaobaoXhotelCityGetAPIRequest) SetCount(_count int64) error {
 	r._count = _count
@@ -60,7 +60,7 @@ func (r *TaobaoXhotelCityGetAPIRequest) SetCount(_count int64) error {
 	return nil
 }
 
-// Get Count Getter
+// GetCount Count Getter
 func (r TaobaoXhotelCityGetAPIRequest) GetCount() int64 {
 	return r._count
 }

@@ -45,7 +45,7 @@ func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息，用于存放APP类型等
 func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -53,12 +53,12 @@ func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetExt(_ext string) error {
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is UtdId Setter
+// SetUtdId is UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
 func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
@@ -66,12 +66,12 @@ func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetUtdId(_utdId string) err
 	return nil
 }
 
-// Get UtdId Getter
+// GetUtdId UtdId Getter
 func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
 func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -79,12 +79,12 @@ func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetUserId(_userId string) e
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 账户体系隔离
 func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -92,12 +92,12 @@ func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetSchema(_schema string) e
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is AudioPath Setter
+// SetAudioPath is AudioPath Setter
 // 用户上传到OSS上的文件路径，不包含域名
 func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetAudioPath(_audioPath string) error {
 	r._audioPath = _audioPath
@@ -105,7 +105,7 @@ func (r *TaobaoAilabAicloudTopMessageSendAPIRequest) SetAudioPath(_audioPath str
 	return nil
 }
 
-// Get AudioPath Getter
+// GetAudioPath AudioPath Getter
 func (r TaobaoAilabAicloudTopMessageSendAPIRequest) GetAudioPath() string {
 	return r._audioPath
 }

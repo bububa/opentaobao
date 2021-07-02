@@ -41,7 +41,7 @@ func (r TmallExchangeRefusereasonGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DisputeId Setter
+// SetDisputeId is DisputeId Setter
 // 换货单号ID
 func (r *TmallExchangeRefusereasonGetAPIRequest) SetDisputeId(_disputeId int64) error {
 	r._disputeId = _disputeId
@@ -49,12 +49,12 @@ func (r *TmallExchangeRefusereasonGetAPIRequest) SetDisputeId(_disputeId int64) 
 	return nil
 }
 
-// Get DisputeId Getter
+// GetDisputeId DisputeId Getter
 func (r TmallExchangeRefusereasonGetAPIRequest) GetDisputeId() int64 {
 	return r._disputeId
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回字段
 func (r *TmallExchangeRefusereasonGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -62,12 +62,12 @@ func (r *TmallExchangeRefusereasonGetAPIRequest) SetFields(_fields []string) err
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TmallExchangeRefusereasonGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is DisputeType Setter
+// SetDisputeType is DisputeType Setter
 // 换货申请类型：0-任意类型；1-售中；2-售后
 func (r *TmallExchangeRefusereasonGetAPIRequest) SetDisputeType(_disputeType int64) error {
 	r._disputeType = _disputeType
@@ -75,7 +75,7 @@ func (r *TmallExchangeRefusereasonGetAPIRequest) SetDisputeType(_disputeType int
 	return nil
 }
 
-// Get DisputeType Getter
+// GetDisputeType DisputeType Getter
 func (r TmallExchangeRefusereasonGetAPIRequest) GetDisputeType() int64 {
 	return r._disputeType
 }

@@ -39,7 +39,7 @@ func (r AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest) GetApiParam
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业id
 func (r *AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest) SetRefEntI
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is BlindFileName Setter
+// SetBlindFileName is BlindFileName Setter
 // 盲底文件名称
 func (r *AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest) SetBlindFileName(_blindFileName string) error {
 	r._blindFileName = _blindFileName
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest) SetBlindFi
 	return nil
 }
 
-// Get BlindFileName Getter
+// GetBlindFileName BlindFileName Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest) GetBlindFileName() string {
 	return r._blindFileName
 }

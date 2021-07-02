@@ -51,7 +51,7 @@ func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is SkeyCode Setter
+// SetSkeyCode is SkeyCode Setter
 // top身份认证
 func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetSkeyCode(_skeyCode string) error {
 	r._skeyCode = _skeyCode
@@ -59,12 +59,12 @@ func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetSkeyCode(
 	return nil
 }
 
-// Get SkeyCode Getter
+// GetSkeyCode SkeyCode Getter
 func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetSkeyCode() string {
 	return r._skeyCode
 }
 
-// Set is EntInfoId Setter
+// SetEntInfoId is EntInfoId Setter
 // 商家id
 func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetEntInfoId(_entInfoId int64) error {
 	r._entInfoId = _entInfoId
@@ -72,12 +72,12 @@ func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetEntInfoId
 	return nil
 }
 
-// Get EntInfoId Getter
+// GetEntInfoId EntInfoId Getter
 func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetEntInfoId() int64 {
 	return r._entInfoId
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据编号
 func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -85,12 +85,12 @@ func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetBillCode(
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is BeginDate Setter
+// SetBeginDate is BeginDate Setter
 // 查询开始日期
 func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetBeginDate(_beginDate string) error {
 	r._beginDate = _beginDate
@@ -98,12 +98,12 @@ func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetBeginDate
 	return nil
 }
 
-// Get BeginDate Getter
+// GetBeginDate BeginDate Getter
 func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetBeginDate() string {
 	return r._beginDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 查询结束日期
 func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -111,12 +111,12 @@ func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetEndDate(_
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is SellerName Setter
+// SetSellerName is SellerName Setter
 // 不需要
 func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetSellerName(_sellerName string) error {
 	r._sellerName = _sellerName
@@ -124,12 +124,12 @@ func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetSellerNam
 	return nil
 }
 
-// Get SellerName Getter
+// GetSellerName SellerName Getter
 func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetSellerName() string {
 	return r._sellerName
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数
 func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -137,12 +137,12 @@ func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetPageSize(
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 当前页
 func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -150,7 +150,7 @@ func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetPage(_pag
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetPage() int64 {
 	return r._page
 }

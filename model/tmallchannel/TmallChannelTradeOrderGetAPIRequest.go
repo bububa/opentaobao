@@ -43,7 +43,7 @@ func (r TmallChannelTradeOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MainPurchaseOrderNo Setter
+// SetMainPurchaseOrderNo is MainPurchaseOrderNo Setter
 // 主采购单ID
 func (r *TmallChannelTradeOrderGetAPIRequest) SetMainPurchaseOrderNo(_mainPurchaseOrderNo int64) error {
 	r._mainPurchaseOrderNo = _mainPurchaseOrderNo
@@ -51,12 +51,12 @@ func (r *TmallChannelTradeOrderGetAPIRequest) SetMainPurchaseOrderNo(_mainPurcha
 	return nil
 }
 
-// Get MainPurchaseOrderNo Getter
+// GetMainPurchaseOrderNo MainPurchaseOrderNo Getter
 func (r TmallChannelTradeOrderGetAPIRequest) GetMainPurchaseOrderNo() int64 {
 	return r._mainPurchaseOrderNo
 }
 
-// Set is IsIncludeSubOrder Setter
+// SetIsIncludeSubOrder is IsIncludeSubOrder Setter
 // 是否包含子采购单
 func (r *TmallChannelTradeOrderGetAPIRequest) SetIsIncludeSubOrder(_isIncludeSubOrder bool) error {
 	r._isIncludeSubOrder = _isIncludeSubOrder
@@ -64,12 +64,12 @@ func (r *TmallChannelTradeOrderGetAPIRequest) SetIsIncludeSubOrder(_isIncludeSub
 	return nil
 }
 
-// Get IsIncludeSubOrder Getter
+// GetIsIncludeSubOrder IsIncludeSubOrder Getter
 func (r TmallChannelTradeOrderGetAPIRequest) GetIsIncludeSubOrder() bool {
 	return r._isIncludeSubOrder
 }
 
-// Set is IsIncludeMainOrder Setter
+// SetIsIncludeMainOrder is IsIncludeMainOrder Setter
 // 是否包含主采购单（针对特殊业务）
 func (r *TmallChannelTradeOrderGetAPIRequest) SetIsIncludeMainOrder(_isIncludeMainOrder bool) error {
 	r._isIncludeMainOrder = _isIncludeMainOrder
@@ -77,12 +77,12 @@ func (r *TmallChannelTradeOrderGetAPIRequest) SetIsIncludeMainOrder(_isIncludeMa
 	return nil
 }
 
-// Get IsIncludeMainOrder Getter
+// GetIsIncludeMainOrder IsIncludeMainOrder Getter
 func (r TmallChannelTradeOrderGetAPIRequest) GetIsIncludeMainOrder() bool {
 	return r._isIncludeMainOrder
 }
 
-// Set is IsIncludeLogistics Setter
+// SetIsIncludeLogistics is IsIncludeLogistics Setter
 // 是否包含物流信息
 func (r *TmallChannelTradeOrderGetAPIRequest) SetIsIncludeLogistics(_isIncludeLogistics bool) error {
 	r._isIncludeLogistics = _isIncludeLogistics
@@ -90,7 +90,7 @@ func (r *TmallChannelTradeOrderGetAPIRequest) SetIsIncludeLogistics(_isIncludeLo
 	return nil
 }
 
-// Get IsIncludeLogistics Getter
+// GetIsIncludeLogistics IsIncludeLogistics Getter
 func (r TmallChannelTradeOrderGetAPIRequest) GetIsIncludeLogistics() bool {
 	return r._isIncludeLogistics
 }

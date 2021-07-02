@@ -57,7 +57,7 @@ func (r TaobaoDeActivityLuckydrawAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EventKey Setter
+// SetEventKey is EventKey Setter
 // 运营和cp约定的事件唯一标示
 func (r *TaobaoDeActivityLuckydrawAPIRequest) SetEventKey(_eventKey string) error {
 	r._eventKey = _eventKey
@@ -65,12 +65,12 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetEventKey(_eventKey string) erro
 	return nil
 }
 
-// Get EventKey Getter
+// GetEventKey EventKey Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetEventKey() string {
 	return r._eventKey
 }
 
-// Set is SequenceId Setter
+// SetSequenceId is SequenceId Setter
 // 时间戳
 func (r *TaobaoDeActivityLuckydrawAPIRequest) SetSequenceId(_sequenceId int64) error {
 	r._sequenceId = _sequenceId
@@ -78,12 +78,12 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetSequenceId(_sequenceId int64) e
 	return nil
 }
 
-// Get SequenceId Getter
+// GetSequenceId SequenceId Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetSequenceId() int64 {
 	return r._sequenceId
 }
 
-// Set is AccountId Setter
+// SetAccountId is AccountId Setter
 // 用户的串ID
 func (r *TaobaoDeActivityLuckydrawAPIRequest) SetAccountId(_accountId string) error {
 	r._accountId = _accountId
@@ -91,12 +91,12 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetAccountId(_accountId string) er
 	return nil
 }
 
-// Get AccountId Getter
+// GetAccountId AccountId Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetAccountId() string {
 	return r._accountId
 }
 
-// Set is MachineId Setter
+// SetMachineId is MachineId Setter
 // 机器设备号
 func (r *TaobaoDeActivityLuckydrawAPIRequest) SetMachineId(_machineId string) error {
 	r._machineId = _machineId
@@ -104,12 +104,12 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetMachineId(_machineId string) er
 	return nil
 }
 
-// Get MachineId Getter
+// GetMachineId MachineId Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetMachineId() string {
 	return r._machineId
 }
 
-// Set is ConfirmKey Setter
+// SetConfirmKey is ConfirmKey Setter
 // 确认签名key
 func (r *TaobaoDeActivityLuckydrawAPIRequest) SetConfirmKey(_confirmKey string) error {
 	r._confirmKey = _confirmKey
@@ -117,12 +117,12 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetConfirmKey(_confirmKey string) 
 	return nil
 }
 
-// Get ConfirmKey Getter
+// GetConfirmKey ConfirmKey Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetConfirmKey() string {
 	return r._confirmKey
 }
 
-// Set is BehaviorKey Setter
+// SetBehaviorKey is BehaviorKey Setter
 // 行为Key
 func (r *TaobaoDeActivityLuckydrawAPIRequest) SetBehaviorKey(_behaviorKey string) error {
 	r._behaviorKey = _behaviorKey
@@ -130,12 +130,12 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetBehaviorKey(_behaviorKey string
 	return nil
 }
 
-// Get BehaviorKey Getter
+// GetBehaviorKey BehaviorKey Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetBehaviorKey() string {
 	return r._behaviorKey
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 渠道
 func (r *TaobaoDeActivityLuckydrawAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -143,12 +143,12 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetChannel(_channel string) error 
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetChannel() string {
 	return r._channel
 }
 
-// Set is Market Setter
+// SetMarket is Market Setter
 // 使用市场
 func (r *TaobaoDeActivityLuckydrawAPIRequest) SetMarket(_market string) error {
 	r._market = _market
@@ -156,12 +156,12 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetMarket(_market string) error {
 	return nil
 }
 
-// Get Market Getter
+// GetMarket Market Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetMarket() string {
 	return r._market
 }
 
-// Set is DeviceModel Setter
+// SetDeviceModel is DeviceModel Setter
 // 盒型号
 func (r *TaobaoDeActivityLuckydrawAPIRequest) SetDeviceModel(_deviceModel string) error {
 	r._deviceModel = _deviceModel
@@ -169,12 +169,12 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetDeviceModel(_deviceModel string
 	return nil
 }
 
-// Get DeviceModel Getter
+// GetDeviceModel DeviceModel Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetDeviceModel() string {
 	return r._deviceModel
 }
 
-// Set is DistribChannel Setter
+// SetDistribChannel is DistribChannel Setter
 // 魔盒分发渠道
 func (r *TaobaoDeActivityLuckydrawAPIRequest) SetDistribChannel(_distribChannel string) error {
 	r._distribChannel = _distribChannel
@@ -182,12 +182,12 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetDistribChannel(_distribChannel 
 	return nil
 }
 
-// Get DistribChannel Getter
+// GetDistribChannel DistribChannel Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetDistribChannel() string {
 	return r._distribChannel
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 魔盒UUID
 func (r *TaobaoDeActivityLuckydrawAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -195,7 +195,7 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetUuid(_uuid string) error {
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetUuid() string {
 	return r._uuid
 }

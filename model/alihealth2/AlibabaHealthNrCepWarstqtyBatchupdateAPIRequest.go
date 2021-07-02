@@ -37,7 +37,7 @@ func (r AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is WarStqtyList Setter
+// SetWarStqtyList is WarStqtyList Setter
 // 库存更新对象
 func (r *AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest) SetWarStqtyList(_warStqtyList []TopIsvStqtyLstDto) error {
 	r._warStqtyList = _warStqtyList
@@ -45,7 +45,7 @@ func (r *AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest) SetWarStqtyList(_warSt
 	return nil
 }
 
-// Get WarStqtyList Getter
+// GetWarStqtyList WarStqtyList Getter
 func (r AlibabaHealthNrCepWarstqtyBatchupdateAPIRequest) GetWarStqtyList() []TopIsvStqtyLstDto {
 	return r._warStqtyList
 }

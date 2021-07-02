@@ -37,7 +37,7 @@ func (r TaobaoPictureIsreferencedGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PictureId Setter
+// SetPictureId is PictureId Setter
 // 图片id
 func (r *TaobaoPictureIsreferencedGetAPIRequest) SetPictureId(_pictureId int64) error {
 	r._pictureId = _pictureId
@@ -45,7 +45,7 @@ func (r *TaobaoPictureIsreferencedGetAPIRequest) SetPictureId(_pictureId int64) 
 	return nil
 }
 
-// Get PictureId Getter
+// GetPictureId PictureId Getter
 func (r TaobaoPictureIsreferencedGetAPIRequest) GetPictureId() int64 {
 	return r._pictureId
 }

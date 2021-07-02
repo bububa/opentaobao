@@ -39,7 +39,7 @@ func (r AlibabaScbpTagRenameAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TagName Setter
+// SetTagName is TagName Setter
 // 需要重命名的关键词分组名
 func (r *AlibabaScbpTagRenameAPIRequest) SetTagName(_tagName string) error {
 	r._tagName = _tagName
@@ -47,12 +47,12 @@ func (r *AlibabaScbpTagRenameAPIRequest) SetTagName(_tagName string) error {
 	return nil
 }
 
-// Get TagName Getter
+// GetTagName TagName Getter
 func (r AlibabaScbpTagRenameAPIRequest) GetTagName() string {
 	return r._tagName
 }
 
-// Set is NewTagName Setter
+// SetNewTagName is NewTagName Setter
 // 新分组名
 func (r *AlibabaScbpTagRenameAPIRequest) SetNewTagName(_newTagName string) error {
 	r._newTagName = _newTagName
@@ -60,7 +60,7 @@ func (r *AlibabaScbpTagRenameAPIRequest) SetNewTagName(_newTagName string) error
 	return nil
 }
 
-// Get NewTagName Getter
+// GetNewTagName NewTagName Getter
 func (r AlibabaScbpTagRenameAPIRequest) GetNewTagName() string {
 	return r._newTagName
 }

@@ -89,7 +89,7 @@ func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -97,12 +97,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetUserId(_userId i
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is OrderSource Setter
+// SetOrderSource is OrderSource Setter
 // 订单来源，值选择：30
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetOrderSource(_orderSource int64) error {
 	r._orderSource = _orderSource
@@ -110,12 +110,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetOrderSource(_ord
 	return nil
 }
 
-// Get OrderSource Getter
+// GetOrderSource OrderSource Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetOrderSource() int64 {
 	return r._orderSource
 }
 
-// Set is OrderType Setter
+// SetOrderType is OrderType Setter
 // 订单类型，值固定选择：30
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetOrderType(_orderType int64) error {
 	r._orderType = _orderType
@@ -123,12 +123,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetOrderType(_order
 	return nil
 }
 
-// Get OrderType Getter
+// GetOrderType OrderType Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetOrderType() int64 {
 	return r._orderType
 }
 
-// Set is LogisType Setter
+// SetLogisType is LogisType Setter
 // 物流订单物流类型，值固定选择：2
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetLogisType(_logisType int64) error {
 	r._logisType = _logisType
@@ -136,12 +136,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetLogisType(_logis
 	return nil
 }
 
-// Get LogisType Getter
+// GetLogisType LogisType Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetLogisType() int64 {
 	return r._logisType
 }
 
-// Set is CompanyId Setter
+// SetCompanyId is CompanyId Setter
 // 物流公司ID
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetCompanyId(_companyId int64) error {
 	r._companyId = _companyId
@@ -149,12 +149,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetCompanyId(_compa
 	return nil
 }
 
-// Get CompanyId Getter
+// GetCompanyId CompanyId Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetCompanyId() int64 {
 	return r._companyId
 }
 
-// Set is TradeId Setter
+// SetTradeId is TradeId Setter
 // 交易流水号，淘外订单号或者商家内部交易流水号
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetTradeId(_tradeId int64) error {
 	r._tradeId = _tradeId
@@ -162,12 +162,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetTradeId(_tradeId
 	return nil
 }
 
-// Get TradeId Getter
+// GetTradeId TradeId Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetTradeId() int64 {
 	return r._tradeId
 }
 
-// Set is MailNo Setter
+// SetMailNo is MailNo Setter
 // 运单号
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetMailNo(_mailNo string) error {
 	r._mailNo = _mailNo
@@ -175,12 +175,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetMailNo(_mailNo s
 	return nil
 }
 
-// Get MailNo Getter
+// GetMailNo MailNo Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetMailNo() string {
 	return r._mailNo
 }
 
-// Set is Shipping Setter
+// SetShipping is Shipping Setter
 // 费用承担方式 1买家承担运费 2卖家承担运费
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetShipping(_shipping string) error {
 	r._shipping = _shipping
@@ -188,12 +188,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetShipping(_shippi
 	return nil
 }
 
-// Get Shipping Getter
+// GetShipping Shipping Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetShipping() string {
 	return r._shipping
 }
 
-// Set is SName Setter
+// SetSName is SName Setter
 // 发件人名称
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSName(_sName string) error {
 	r._sName = _sName
@@ -201,12 +201,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSName(_sName str
 	return nil
 }
 
-// Get SName Getter
+// GetSName SName Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetSName() string {
 	return r._sName
 }
 
-// Set is SAreaId Setter
+// SetSAreaId is SAreaId Setter
 // 发件人区域ID
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSAreaId(_sAreaId int64) error {
 	r._sAreaId = _sAreaId
@@ -214,12 +214,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSAreaId(_sAreaId
 	return nil
 }
 
-// Get SAreaId Getter
+// GetSAreaId SAreaId Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetSAreaId() int64 {
 	return r._sAreaId
 }
 
-// Set is SAddress Setter
+// SetSAddress is SAddress Setter
 // 发件人街道地址
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSAddress(_sAddress string) error {
 	r._sAddress = _sAddress
@@ -227,12 +227,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSAddress(_sAddre
 	return nil
 }
 
-// Get SAddress Getter
+// GetSAddress SAddress Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetSAddress() string {
 	return r._sAddress
 }
 
-// Set is SZipCode Setter
+// SetSZipCode is SZipCode Setter
 // 发件人出编
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSZipCode(_sZipCode string) error {
 	r._sZipCode = _sZipCode
@@ -240,12 +240,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSZipCode(_sZipCo
 	return nil
 }
 
-// Get SZipCode Getter
+// GetSZipCode SZipCode Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetSZipCode() string {
 	return r._sZipCode
 }
 
-// Set is SMobilePhone Setter
+// SetSMobilePhone is SMobilePhone Setter
 // 手机号码
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSMobilePhone(_sMobilePhone string) error {
 	r._sMobilePhone = _sMobilePhone
@@ -253,12 +253,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSMobilePhone(_sM
 	return nil
 }
 
-// Get SMobilePhone Getter
+// GetSMobilePhone SMobilePhone Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetSMobilePhone() string {
 	return r._sMobilePhone
 }
 
-// Set is STelephone Setter
+// SetSTelephone is STelephone Setter
 // 电话号码
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSTelephone(_sTelephone string) error {
 	r._sTelephone = _sTelephone
@@ -266,12 +266,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSTelephone(_sTel
 	return nil
 }
 
-// Get STelephone Getter
+// GetSTelephone STelephone Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetSTelephone() string {
 	return r._sTelephone
 }
 
-// Set is SProvName Setter
+// SetSProvName is SProvName Setter
 // 省
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSProvName(_sProvName string) error {
 	r._sProvName = _sProvName
@@ -279,12 +279,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSProvName(_sProv
 	return nil
 }
 
-// Get SProvName Getter
+// GetSProvName SProvName Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetSProvName() string {
 	return r._sProvName
 }
 
-// Set is SCityName Setter
+// SetSCityName is SCityName Setter
 // 市
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSCityName(_sCityName string) error {
 	r._sCityName = _sCityName
@@ -292,12 +292,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSCityName(_sCity
 	return nil
 }
 
-// Get SCityName Getter
+// GetSCityName SCityName Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetSCityName() string {
 	return r._sCityName
 }
 
-// Set is SDistName Setter
+// SetSDistName is SDistName Setter
 // 区
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSDistName(_sDistName string) error {
 	r._sDistName = _sDistName
@@ -305,12 +305,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSDistName(_sDist
 	return nil
 }
 
-// Get SDistName Getter
+// GetSDistName SDistName Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetSDistName() string {
 	return r._sDistName
 }
 
-// Set is RName Setter
+// SetRName is RName Setter
 // 收件人名称
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRName(_rName string) error {
 	r._rName = _rName
@@ -318,12 +318,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRName(_rName str
 	return nil
 }
 
-// Get RName Getter
+// GetRName RName Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetRName() string {
 	return r._rName
 }
 
-// Set is RAreaId Setter
+// SetRAreaId is RAreaId Setter
 // 收件人区域ID
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRAreaId(_rAreaId int64) error {
 	r._rAreaId = _rAreaId
@@ -331,12 +331,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRAreaId(_rAreaId
 	return nil
 }
 
-// Get RAreaId Getter
+// GetRAreaId RAreaId Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetRAreaId() int64 {
 	return r._rAreaId
 }
 
-// Set is RAddress Setter
+// SetRAddress is RAddress Setter
 // 收件人街道地址
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRAddress(_rAddress string) error {
 	r._rAddress = _rAddress
@@ -344,12 +344,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRAddress(_rAddre
 	return nil
 }
 
-// Get RAddress Getter
+// GetRAddress RAddress Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetRAddress() string {
 	return r._rAddress
 }
 
-// Set is RZipCode Setter
+// SetRZipCode is RZipCode Setter
 // 收件人邮编
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRZipCode(_rZipCode string) error {
 	r._rZipCode = _rZipCode
@@ -357,12 +357,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRZipCode(_rZipCo
 	return nil
 }
 
-// Get RZipCode Getter
+// GetRZipCode RZipCode Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetRZipCode() string {
 	return r._rZipCode
 }
 
-// Set is RMobilePhone Setter
+// SetRMobilePhone is RMobilePhone Setter
 // 手机号码
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRMobilePhone(_rMobilePhone string) error {
 	r._rMobilePhone = _rMobilePhone
@@ -370,12 +370,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRMobilePhone(_rM
 	return nil
 }
 
-// Get RMobilePhone Getter
+// GetRMobilePhone RMobilePhone Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetRMobilePhone() string {
 	return r._rMobilePhone
 }
 
-// Set is RTelephone Setter
+// SetRTelephone is RTelephone Setter
 // 电话号码
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRTelephone(_rTelephone string) error {
 	r._rTelephone = _rTelephone
@@ -383,12 +383,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRTelephone(_rTel
 	return nil
 }
 
-// Get RTelephone Getter
+// GetRTelephone RTelephone Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetRTelephone() string {
 	return r._rTelephone
 }
 
-// Set is RProvName Setter
+// SetRProvName is RProvName Setter
 // 省
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRProvName(_rProvName string) error {
 	r._rProvName = _rProvName
@@ -396,12 +396,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRProvName(_rProv
 	return nil
 }
 
-// Get RProvName Getter
+// GetRProvName RProvName Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetRProvName() string {
 	return r._rProvName
 }
 
-// Set is RCityName Setter
+// SetRCityName is RCityName Setter
 // 市
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRCityName(_rCityName string) error {
 	r._rCityName = _rCityName
@@ -409,12 +409,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRCityName(_rCity
 	return nil
 }
 
-// Get RCityName Getter
+// GetRCityName RCityName Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetRCityName() string {
 	return r._rCityName
 }
 
-// Set is RDistName Setter
+// SetRDistName is RDistName Setter
 // 区
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRDistName(_rDistName string) error {
 	r._rDistName = _rDistName
@@ -422,12 +422,12 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRDistName(_rDist
 	return nil
 }
 
-// Get RDistName Getter
+// GetRDistName RDistName Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetRDistName() string {
 	return r._rDistName
 }
 
-// Set is ItemJsonString Setter
+// SetItemJsonString is ItemJsonString Setter
 // 物品的json数据。
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetItemJsonString(_itemJsonString string) error {
 	r._itemJsonString = _itemJsonString
@@ -435,7 +435,7 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetItemJsonString(_
 	return nil
 }
 
-// Get ItemJsonString Getter
+// GetItemJsonString ItemJsonString Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetItemJsonString() string {
 	return r._itemJsonString
 }

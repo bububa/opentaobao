@@ -37,7 +37,7 @@ func (r AliexpressSolutionProductSchemaGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is AliexpressCategoryId Setter
+// SetAliexpressCategoryId is AliexpressCategoryId Setter
 // aliexpress category id. You can get it from category API
 func (r *AliexpressSolutionProductSchemaGetAPIRequest) SetAliexpressCategoryId(_aliexpressCategoryId int64) error {
 	r._aliexpressCategoryId = _aliexpressCategoryId
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionProductSchemaGetAPIRequest) SetAliexpressCategoryId(_
 	return nil
 }
 
-// Get AliexpressCategoryId Getter
+// GetAliexpressCategoryId AliexpressCategoryId Getter
 func (r AliexpressSolutionProductSchemaGetAPIRequest) GetAliexpressCategoryId() int64 {
 	return r._aliexpressCategoryId
 }

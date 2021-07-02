@@ -37,7 +37,7 @@ func (r TmallNrZqsPlanQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DetailOrderId Setter
+// SetDetailOrderId is DetailOrderId Setter
 // 交易子订单id
 func (r *TmallNrZqsPlanQueryAPIRequest) SetDetailOrderId(_detailOrderId int64) error {
 	r._detailOrderId = _detailOrderId
@@ -45,7 +45,7 @@ func (r *TmallNrZqsPlanQueryAPIRequest) SetDetailOrderId(_detailOrderId int64) e
 	return nil
 }
 
-// Get DetailOrderId Getter
+// GetDetailOrderId DetailOrderId Getter
 func (r TmallNrZqsPlanQueryAPIRequest) GetDetailOrderId() int64 {
 	return r._detailOrderId
 }

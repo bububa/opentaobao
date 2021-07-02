@@ -57,7 +57,7 @@ func (r TaobaoCrmMemberinfoUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 买家昵称
 func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -65,12 +65,12 @@ func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetBuyerNick(_buyerNick string) er
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r TaobaoCrmMemberinfoUpdateAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 用于描述会员的状态，normal表示正常，blacklist表示黑名单(不享受会员折扣).
 func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -78,12 +78,12 @@ func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetStatus(_status string) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoCrmMemberinfoUpdateAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is Grade Setter
+// SetGrade is Grade Setter
 // 会员等级，1：普通客户，2：高级会员，3：高级会员 ，4：至尊vip只有正常会员才给予升级，对于status blacklist的会员升级无效
 func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetGrade(_grade int64) error {
 	r._grade = _grade
@@ -91,12 +91,12 @@ func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetGrade(_grade int64) error {
 	return nil
 }
 
-// Get Grade Getter
+// GetGrade Grade Getter
 func (r TaobaoCrmMemberinfoUpdateAPIRequest) GetGrade() int64 {
 	return r._grade
 }
 
-// Set is Province Setter
+// SetProvince is Province Setter
 // 北京=1,天津=2,河北省=3,山西省=4,内蒙古自治区=5,辽宁省=6,吉林省=7,黑龙江省=8,上海=9,江苏省=10,浙江省=11,安徽省=12,福建省=13,江西省=14,山东省=15,河南省=16,湖北省=17,湖南省=18, 广东省=19,广西壮族自治区=20,海南省=21,重庆=22,四川省=23,贵州省=24,云南省=25,西藏自治区=26,陕西省=27,甘肃省=28,青海省=29,宁夏回族自治区=30,新疆维吾尔自治区=31,台湾省=32,香港特别行政区=33,澳门特别行政区=34,海外=35，约定36为清除Province设置.请注意:从2014.4.15之后,省市将采用地区标准码,请通过物流API taobao.areas.get接口获取,参考:http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.nOOF9g&path=cid:7-apiId:59.API对于老的省市代码兼容会逐步下线.
 func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetProvince(_province string) error {
 	r._province = _province
@@ -104,12 +104,12 @@ func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetProvince(_province string) erro
 	return nil
 }
 
-// Get Province Getter
+// GetProvince Province Getter
 func (r TaobaoCrmMemberinfoUpdateAPIRequest) GetProvince() string {
 	return r._province
 }
 
-// Set is City Setter
+// SetCity is City Setter
 // 城市.请注意:从2014.4.15之后,省市将采用地区标准码,请通过物流API taobao.areas.get接口获取,参考:http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.nOOF9g&path=cid:7-apiId:59.API对于老的省市代码兼容会逐步下线
 func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetCity(_city string) error {
 	r._city = _city
@@ -117,12 +117,12 @@ func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetCity(_city string) error {
 	return nil
 }
 
-// Get City Getter
+// GetCity City Getter
 func (r TaobaoCrmMemberinfoUpdateAPIRequest) GetCity() string {
 	return r._city
 }
 
-// Set is TradeCount Setter
+// SetTradeCount is TradeCount Setter
 // 交易笔数
 func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetTradeCount(_tradeCount int64) error {
 	r._tradeCount = _tradeCount
@@ -130,12 +130,12 @@ func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetTradeCount(_tradeCount int64) e
 	return nil
 }
 
-// Get TradeCount Getter
+// GetTradeCount TradeCount Getter
 func (r TaobaoCrmMemberinfoUpdateAPIRequest) GetTradeCount() int64 {
 	return r._tradeCount
 }
 
-// Set is TradeAmount Setter
+// SetTradeAmount is TradeAmount Setter
 // 交易金额，单位：分
 func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetTradeAmount(_tradeAmount int64) error {
 	r._tradeAmount = _tradeAmount
@@ -143,12 +143,12 @@ func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetTradeAmount(_tradeAmount int64)
 	return nil
 }
 
-// Get TradeAmount Getter
+// GetTradeAmount TradeAmount Getter
 func (r TaobaoCrmMemberinfoUpdateAPIRequest) GetTradeAmount() int64 {
 	return r._tradeAmount
 }
 
-// Set is CloseTradeCount Setter
+// SetCloseTradeCount is CloseTradeCount Setter
 // 交易关闭次数
 func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetCloseTradeCount(_closeTradeCount int64) error {
 	r._closeTradeCount = _closeTradeCount
@@ -156,12 +156,12 @@ func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetCloseTradeCount(_closeTradeCoun
 	return nil
 }
 
-// Get CloseTradeCount Getter
+// GetCloseTradeCount CloseTradeCount Getter
 func (r TaobaoCrmMemberinfoUpdateAPIRequest) GetCloseTradeCount() int64 {
 	return r._closeTradeCount
 }
 
-// Set is CloseTradeAmount Setter
+// SetCloseTradeAmount is CloseTradeAmount Setter
 // 交易关闭金额，单位：分
 func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetCloseTradeAmount(_closeTradeAmount int64) error {
 	r._closeTradeAmount = _closeTradeAmount
@@ -169,12 +169,12 @@ func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetCloseTradeAmount(_closeTradeAmo
 	return nil
 }
 
-// Get CloseTradeAmount Getter
+// GetCloseTradeAmount CloseTradeAmount Getter
 func (r TaobaoCrmMemberinfoUpdateAPIRequest) GetCloseTradeAmount() int64 {
 	return r._closeTradeAmount
 }
 
-// Set is GroupIds Setter
+// SetGroupIds is GroupIds Setter
 // 分组的id集合字符串
 func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetGroupIds(_groupIds string) error {
 	r._groupIds = _groupIds
@@ -182,12 +182,12 @@ func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetGroupIds(_groupIds string) erro
 	return nil
 }
 
-// Get GroupIds Getter
+// GetGroupIds GroupIds Getter
 func (r TaobaoCrmMemberinfoUpdateAPIRequest) GetGroupIds() string {
 	return r._groupIds
 }
 
-// Set is ItemNum Setter
+// SetItemNum is ItemNum Setter
 // 宝贝件数
 func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetItemNum(_itemNum int64) error {
 	r._itemNum = _itemNum
@@ -195,7 +195,7 @@ func (r *TaobaoCrmMemberinfoUpdateAPIRequest) SetItemNum(_itemNum int64) error {
 	return nil
 }
 
-// Get ItemNum Getter
+// GetItemNum ItemNum Getter
 func (r TaobaoCrmMemberinfoUpdateAPIRequest) GetItemNum() int64 {
 	return r._itemNum
 }

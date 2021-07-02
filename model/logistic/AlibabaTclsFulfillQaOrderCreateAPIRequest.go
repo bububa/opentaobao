@@ -43,7 +43,7 @@ func (r AlibabaTclsFulfillQaOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FulfillOrderId Setter
+// SetFulfillOrderId is FulfillOrderId Setter
 // 原始履约单号
 func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) SetFulfillOrderId(_fulfillOrderId string) error {
 	r._fulfillOrderId = _fulfillOrderId
@@ -51,12 +51,12 @@ func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) SetFulfillOrderId(_fulfillOr
 	return nil
 }
 
-// Get FulfillOrderId Getter
+// GetFulfillOrderId FulfillOrderId Getter
 func (r AlibabaTclsFulfillQaOrderCreateAPIRequest) GetFulfillOrderId() string {
 	return r._fulfillOrderId
 }
 
-// Set is TargetIp Setter
+// SetTargetIp is TargetIp Setter
 // 目标ip
 func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) SetTargetIp(_targetIp string) error {
 	r._targetIp = _targetIp
@@ -64,12 +64,12 @@ func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) SetTargetIp(_targetIp string
 	return nil
 }
 
-// Get TargetIp Getter
+// GetTargetIp TargetIp Getter
 func (r AlibabaTclsFulfillQaOrderCreateAPIRequest) GetTargetIp() string {
 	return r._targetIp
 }
 
-// Set is Creator Setter
+// SetCreator is Creator Setter
 // 执行人姓名
 func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) SetCreator(_creator string) error {
 	r._creator = _creator
@@ -77,12 +77,12 @@ func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) SetCreator(_creator string) 
 	return nil
 }
 
-// Get Creator Getter
+// GetCreator Creator Getter
 func (r AlibabaTclsFulfillQaOrderCreateAPIRequest) GetCreator() string {
 	return r._creator
 }
 
-// Set is JobNo Setter
+// SetJobNo is JobNo Setter
 // 执行人工号
 func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) SetJobNo(_jobNo string) error {
 	r._jobNo = _jobNo
@@ -90,7 +90,7 @@ func (r *AlibabaTclsFulfillQaOrderCreateAPIRequest) SetJobNo(_jobNo string) erro
 	return nil
 }
 
-// Get JobNo Getter
+// GetJobNo JobNo Getter
 func (r AlibabaTclsFulfillQaOrderCreateAPIRequest) GetJobNo() string {
 	return r._jobNo
 }

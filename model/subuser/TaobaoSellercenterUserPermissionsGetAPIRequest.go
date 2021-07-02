@@ -37,7 +37,7 @@ func (r TaobaoSellercenterUserPermissionsGetAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 用户标识，次入参必须为子账号比如zhangsan:cool。如果只输入主账号zhangsan，将报错。
 func (r *TaobaoSellercenterUserPermissionsGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -45,7 +45,7 @@ func (r *TaobaoSellercenterUserPermissionsGetAPIRequest) SetNick(_nick string) e
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSellercenterUserPermissionsGetAPIRequest) GetNick() string {
 	return r._nick
 }

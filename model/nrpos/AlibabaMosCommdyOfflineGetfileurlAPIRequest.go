@@ -37,7 +37,7 @@ func (r AlibabaMosCommdyOfflineGetfileurlAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FileKeys Setter
+// SetFileKeys is FileKeys Setter
 // 离线文件名称
 func (r *AlibabaMosCommdyOfflineGetfileurlAPIRequest) SetFileKeys(_fileKeys []string) error {
 	r._fileKeys = _fileKeys
@@ -45,7 +45,7 @@ func (r *AlibabaMosCommdyOfflineGetfileurlAPIRequest) SetFileKeys(_fileKeys []st
 	return nil
 }
 
-// Get FileKeys Getter
+// GetFileKeys FileKeys Getter
 func (r AlibabaMosCommdyOfflineGetfileurlAPIRequest) GetFileKeys() []string {
 	return r._fileKeys
 }

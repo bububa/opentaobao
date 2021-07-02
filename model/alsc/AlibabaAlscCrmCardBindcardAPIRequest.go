@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmCardBindcardAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamBindPhysicalCardOpenReq Setter
+// SetParamBindPhysicalCardOpenReq is ParamBindPhysicalCardOpenReq Setter
 // 请求参数
 func (r *AlibabaAlscCrmCardBindcardAPIRequest) SetParamBindPhysicalCardOpenReq(_paramBindPhysicalCardOpenReq *BindPhysicalCardOpenReq) error {
 	r._paramBindPhysicalCardOpenReq = _paramBindPhysicalCardOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmCardBindcardAPIRequest) SetParamBindPhysicalCardOpenReq(_
 	return nil
 }
 
-// Get ParamBindPhysicalCardOpenReq Getter
+// GetParamBindPhysicalCardOpenReq ParamBindPhysicalCardOpenReq Getter
 func (r AlibabaAlscCrmCardBindcardAPIRequest) GetParamBindPhysicalCardOpenReq() *BindPhysicalCardOpenReq {
 	return r._paramBindPhysicalCardOpenReq
 }

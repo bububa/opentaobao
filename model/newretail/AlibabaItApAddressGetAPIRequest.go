@@ -45,7 +45,7 @@ func (r AlibabaItApAddressGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Signature Setter
+// SetSignature is Signature Setter
 // 签名
 func (r *AlibabaItApAddressGetAPIRequest) SetSignature(_signature string) error {
 	r._signature = _signature
@@ -53,12 +53,12 @@ func (r *AlibabaItApAddressGetAPIRequest) SetSignature(_signature string) error 
 	return nil
 }
 
-// Get Signature Getter
+// GetSignature Signature Getter
 func (r AlibabaItApAddressGetAPIRequest) GetSignature() string {
 	return r._signature
 }
 
-// Set is Language Setter
+// SetLanguage is Language Setter
 // 语言
 func (r *AlibabaItApAddressGetAPIRequest) SetLanguage(_language string) error {
 	r._language = _language
@@ -66,12 +66,12 @@ func (r *AlibabaItApAddressGetAPIRequest) SetLanguage(_language string) error {
 	return nil
 }
 
-// Get Language Getter
+// GetLanguage Language Getter
 func (r AlibabaItApAddressGetAPIRequest) GetLanguage() string {
 	return r._language
 }
 
-// Set is AppKeyInternal Setter
+// SetAppKeyInternal is AppKeyInternal Setter
 // 分配的ak
 func (r *AlibabaItApAddressGetAPIRequest) SetAppKeyInternal(_appKeyInternal string) error {
 	r._appKeyInternal = _appKeyInternal
@@ -79,12 +79,12 @@ func (r *AlibabaItApAddressGetAPIRequest) SetAppKeyInternal(_appKeyInternal stri
 	return nil
 }
 
-// Get AppKeyInternal Getter
+// GetAppKeyInternal AppKeyInternal Getter
 func (r AlibabaItApAddressGetAPIRequest) GetAppKeyInternal() string {
 	return r._appKeyInternal
 }
 
-// Set is Mac Setter
+// SetMac is Mac Setter
 // ap的mac
 func (r *AlibabaItApAddressGetAPIRequest) SetMac(_mac string) error {
 	r._mac = _mac
@@ -92,12 +92,12 @@ func (r *AlibabaItApAddressGetAPIRequest) SetMac(_mac string) error {
 	return nil
 }
 
-// Get Mac Getter
+// GetMac Mac Getter
 func (r AlibabaItApAddressGetAPIRequest) GetMac() string {
 	return r._mac
 }
 
-// Set is TimestampInternal Setter
+// SetTimestampInternal is TimestampInternal Setter
 // 当前时间戳，毫秒
 func (r *AlibabaItApAddressGetAPIRequest) SetTimestampInternal(_timestampInternal int64) error {
 	r._timestampInternal = _timestampInternal
@@ -105,7 +105,7 @@ func (r *AlibabaItApAddressGetAPIRequest) SetTimestampInternal(_timestampInterna
 	return nil
 }
 
-// Get TimestampInternal Getter
+// GetTimestampInternal TimestampInternal Getter
 func (r AlibabaItApAddressGetAPIRequest) GetTimestampInternal() int64 {
 	return r._timestampInternal
 }

@@ -41,7 +41,7 @@ func (r AlibabaAliqinFcIotQryPersoninfoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Iccid Setter
+// SetIccid is Iccid Setter
 // 需要查询的iccid
 func (r *AlibabaAliqinFcIotQryPersoninfoAPIRequest) SetIccid(_iccid string) error {
 	r._iccid = _iccid
@@ -49,12 +49,12 @@ func (r *AlibabaAliqinFcIotQryPersoninfoAPIRequest) SetIccid(_iccid string) erro
 	return nil
 }
 
-// Get Iccid Getter
+// GetIccid Iccid Getter
 func (r AlibabaAliqinFcIotQryPersoninfoAPIRequest) GetIccid() string {
 	return r._iccid
 }
 
-// Set is Userid Setter
+// SetUserid is Userid Setter
 // 指定查询某userid
 func (r *AlibabaAliqinFcIotQryPersoninfoAPIRequest) SetUserid(_userid string) error {
 	r._userid = _userid
@@ -62,12 +62,12 @@ func (r *AlibabaAliqinFcIotQryPersoninfoAPIRequest) SetUserid(_userid string) er
 	return nil
 }
 
-// Get Userid Getter
+// GetUserid Userid Getter
 func (r AlibabaAliqinFcIotQryPersoninfoAPIRequest) GetUserid() string {
 	return r._userid
 }
 
-// Set is MidPatChannel Setter
+// SetMidPatChannel is MidPatChannel Setter
 // 由系统根据业务分配
 func (r *AlibabaAliqinFcIotQryPersoninfoAPIRequest) SetMidPatChannel(_midPatChannel string) error {
 	r._midPatChannel = _midPatChannel
@@ -75,7 +75,7 @@ func (r *AlibabaAliqinFcIotQryPersoninfoAPIRequest) SetMidPatChannel(_midPatChan
 	return nil
 }
 
-// Get MidPatChannel Getter
+// GetMidPatChannel MidPatChannel Getter
 func (r AlibabaAliqinFcIotQryPersoninfoAPIRequest) GetMidPatChannel() string {
 	return r._midPatChannel
 }

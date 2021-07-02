@@ -37,7 +37,7 @@ func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is PosMerchandiseList Setter
+// SetPosMerchandiseList is PosMerchandiseList Setter
 // 查询参数列表
 func (r *AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) SetPosMerchandiseList(_posMerchandiseList []QueryMerchandiseDto) error {
 	r._posMerchandiseList = _posMerchandiseList
@@ -45,7 +45,7 @@ func (r *AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) SetPosMerchandi
 	return nil
 }
 
-// Get PosMerchandiseList Getter
+// GetPosMerchandiseList PosMerchandiseList Getter
 func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseAPIRequest) GetPosMerchandiseList() []QueryMerchandiseDto {
 	return r._posMerchandiseList
 }

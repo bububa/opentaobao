@@ -41,7 +41,7 @@ func (r TmallItemDapeiTemplateQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 搭配标题
 func (r *TmallItemDapeiTemplateQueryAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -49,12 +49,12 @@ func (r *TmallItemDapeiTemplateQueryAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TmallItemDapeiTemplateQueryAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 页码
 func (r *TmallItemDapeiTemplateQueryAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -62,12 +62,12 @@ func (r *TmallItemDapeiTemplateQueryAPIRequest) SetPageIndex(_pageIndex int64) e
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TmallItemDapeiTemplateQueryAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
 func (r *TmallItemDapeiTemplateQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *TmallItemDapeiTemplateQueryAPIRequest) SetPageSize(_pageSize int64) err
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TmallItemDapeiTemplateQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

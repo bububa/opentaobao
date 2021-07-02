@@ -37,7 +37,7 @@ func (r TaobaoPlaceStoregroupDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 库Id
 func (r *TaobaoPlaceStoregroupDeleteAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -45,7 +45,7 @@ func (r *TaobaoPlaceStoregroupDeleteAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TaobaoPlaceStoregroupDeleteAPIRequest) GetId() int64 {
 	return r._id
 }

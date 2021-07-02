@@ -45,7 +45,7 @@ func (r TaobaoFenxiaoRequisitionsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 申请状态（1-申请中、2-成功、3-被退回、4-已撤消、5-过期）
 func (r *TaobaoFenxiaoRequisitionsGetAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -53,12 +53,12 @@ func (r *TaobaoFenxiaoRequisitionsGetAPIRequest) SetStatus(_status int64) error 
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoFenxiaoRequisitionsGetAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is ApplyStart Setter
+// SetApplyStart is ApplyStart Setter
 // 申请开始时间yyyy-MM-dd
 func (r *TaobaoFenxiaoRequisitionsGetAPIRequest) SetApplyStart(_applyStart string) error {
 	r._applyStart = _applyStart
@@ -66,12 +66,12 @@ func (r *TaobaoFenxiaoRequisitionsGetAPIRequest) SetApplyStart(_applyStart strin
 	return nil
 }
 
-// Get ApplyStart Getter
+// GetApplyStart ApplyStart Getter
 func (r TaobaoFenxiaoRequisitionsGetAPIRequest) GetApplyStart() string {
 	return r._applyStart
 }
 
-// Set is ApplyEnd Setter
+// SetApplyEnd is ApplyEnd Setter
 // 申请结束时间yyyy-MM-dd
 func (r *TaobaoFenxiaoRequisitionsGetAPIRequest) SetApplyEnd(_applyEnd string) error {
 	r._applyEnd = _applyEnd
@@ -79,12 +79,12 @@ func (r *TaobaoFenxiaoRequisitionsGetAPIRequest) SetApplyEnd(_applyEnd string) e
 	return nil
 }
 
-// Get ApplyEnd Getter
+// GetApplyEnd ApplyEnd Getter
 func (r TaobaoFenxiaoRequisitionsGetAPIRequest) GetApplyEnd() string {
 	return r._applyEnd
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码（大于0的整数，默认1）
 func (r *TaobaoFenxiaoRequisitionsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -92,12 +92,12 @@ func (r *TaobaoFenxiaoRequisitionsGetAPIRequest) SetPageNo(_pageNo int64) error 
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoFenxiaoRequisitionsGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页记录数（默认20，最大50）
 func (r *TaobaoFenxiaoRequisitionsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -105,7 +105,7 @@ func (r *TaobaoFenxiaoRequisitionsGetAPIRequest) SetPageSize(_pageSize int64) er
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoFenxiaoRequisitionsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

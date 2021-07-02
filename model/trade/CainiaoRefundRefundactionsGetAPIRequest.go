@@ -37,7 +37,7 @@ func (r CainiaoRefundRefundactionsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 子订单ID
 func (r *CainiaoRefundRefundactionsGetAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -45,7 +45,7 @@ func (r *CainiaoRefundRefundactionsGetAPIRequest) SetOrderId(_orderId string) er
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r CainiaoRefundRefundactionsGetAPIRequest) GetOrderId() string {
 	return r._orderId
 }

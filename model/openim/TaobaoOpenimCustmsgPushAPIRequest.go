@@ -37,7 +37,7 @@ func (r TaobaoOpenimCustmsgPushAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Custmsg Setter
+// SetCustmsg is Custmsg Setter
 // 自定义消息内容
 func (r *TaobaoOpenimCustmsgPushAPIRequest) SetCustmsg(_custmsg *CustMsg) error {
 	r._custmsg = _custmsg
@@ -45,7 +45,7 @@ func (r *TaobaoOpenimCustmsgPushAPIRequest) SetCustmsg(_custmsg *CustMsg) error 
 	return nil
 }
 
-// Get Custmsg Getter
+// GetCustmsg Custmsg Getter
 func (r TaobaoOpenimCustmsgPushAPIRequest) GetCustmsg() *CustMsg {
 	return r._custmsg
 }

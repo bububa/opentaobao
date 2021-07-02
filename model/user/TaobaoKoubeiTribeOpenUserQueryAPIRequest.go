@@ -41,7 +41,7 @@ func (r TaobaoKoubeiTribeOpenUserQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is VerifyCode Setter
+// SetVerifyCode is VerifyCode Setter
 // 验证码
 func (r *TaobaoKoubeiTribeOpenUserQueryAPIRequest) SetVerifyCode(_verifyCode string) error {
 	r._verifyCode = _verifyCode
@@ -49,12 +49,12 @@ func (r *TaobaoKoubeiTribeOpenUserQueryAPIRequest) SetVerifyCode(_verifyCode str
 	return nil
 }
 
-// Get VerifyCode Getter
+// GetVerifyCode VerifyCode Getter
 func (r TaobaoKoubeiTribeOpenUserQueryAPIRequest) GetVerifyCode() string {
 	return r._verifyCode
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 手机号
 func (r *TaobaoKoubeiTribeOpenUserQueryAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -62,12 +62,12 @@ func (r *TaobaoKoubeiTribeOpenUserQueryAPIRequest) SetPhone(_phone string) error
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r TaobaoKoubeiTribeOpenUserQueryAPIRequest) GetPhone() string {
 	return r._phone
 }
 
-// Set is DataSetId Setter
+// SetDataSetId is DataSetId Setter
 // 数据集id
 func (r *TaobaoKoubeiTribeOpenUserQueryAPIRequest) SetDataSetId(_dataSetId string) error {
 	r._dataSetId = _dataSetId
@@ -75,7 +75,7 @@ func (r *TaobaoKoubeiTribeOpenUserQueryAPIRequest) SetDataSetId(_dataSetId strin
 	return nil
 }
 
-// Get DataSetId Getter
+// GetDataSetId DataSetId Getter
 func (r TaobaoKoubeiTribeOpenUserQueryAPIRequest) GetDataSetId() string {
 	return r._dataSetId
 }

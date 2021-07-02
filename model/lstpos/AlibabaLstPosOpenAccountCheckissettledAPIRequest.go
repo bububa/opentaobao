@@ -37,7 +37,7 @@ func (r AlibabaLstPosOpenAccountCheckissettledAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 当前登录主账号userId
 func (r *AlibabaLstPosOpenAccountCheckissettledAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -45,7 +45,7 @@ func (r *AlibabaLstPosOpenAccountCheckissettledAPIRequest) SetUserId(_userId int
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaLstPosOpenAccountCheckissettledAPIRequest) GetUserId() int64 {
 	return r._userId
 }

@@ -43,7 +43,7 @@ func (r TaobaoAlitripItPolicyUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ExtendAttributes Setter
+// SetExtendAttributes is ExtendAttributes Setter
 // 扩展字段
 func (r *TaobaoAlitripItPolicyUpdateAPIRequest) SetExtendAttributes(_extendAttributes string) error {
 	r._extendAttributes = _extendAttributes
@@ -51,12 +51,12 @@ func (r *TaobaoAlitripItPolicyUpdateAPIRequest) SetExtendAttributes(_extendAttri
 	return nil
 }
 
-// Get ExtendAttributes Getter
+// GetExtendAttributes ExtendAttributes Getter
 func (r TaobaoAlitripItPolicyUpdateAPIRequest) GetExtendAttributes() string {
 	return r._extendAttributes
 }
 
-// Set is OutId Setter
+// SetOutId is OutId Setter
 // 接入方产品id
 func (r *TaobaoAlitripItPolicyUpdateAPIRequest) SetOutId(_outId string) error {
 	r._outId = _outId
@@ -64,12 +64,12 @@ func (r *TaobaoAlitripItPolicyUpdateAPIRequest) SetOutId(_outId string) error {
 	return nil
 }
 
-// Get OutId Getter
+// GetOutId OutId Getter
 func (r TaobaoAlitripItPolicyUpdateAPIRequest) GetOutId() string {
 	return r._outId
 }
 
-// Set is TaobaoId Setter
+// SetTaobaoId is TaobaoId Setter
 // 淘宝政策id
 func (r *TaobaoAlitripItPolicyUpdateAPIRequest) SetTaobaoId(_taobaoId int64) error {
 	r._taobaoId = _taobaoId
@@ -77,12 +77,12 @@ func (r *TaobaoAlitripItPolicyUpdateAPIRequest) SetTaobaoId(_taobaoId int64) err
 	return nil
 }
 
-// Get TaobaoId Getter
+// GetTaobaoId TaobaoId Getter
 func (r TaobaoAlitripItPolicyUpdateAPIRequest) GetTaobaoId() int64 {
 	return r._taobaoId
 }
 
-// Set is TopPolicyDo Setter
+// SetTopPolicyDo is TopPolicyDo Setter
 // 国际机票销售规则
 func (r *TaobaoAlitripItPolicyUpdateAPIRequest) SetTopPolicyDo(_topPolicyDo *TopPolicyDo) error {
 	r._topPolicyDo = _topPolicyDo
@@ -90,7 +90,7 @@ func (r *TaobaoAlitripItPolicyUpdateAPIRequest) SetTopPolicyDo(_topPolicyDo *Top
 	return nil
 }
 
-// Get TopPolicyDo Getter
+// GetTopPolicyDo TopPolicyDo Getter
 func (r TaobaoAlitripItPolicyUpdateAPIRequest) GetTopPolicyDo() *TopPolicyDo {
 	return r._topPolicyDo
 }

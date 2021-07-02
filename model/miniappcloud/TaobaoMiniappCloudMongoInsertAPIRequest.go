@@ -41,7 +41,7 @@ func (r TaobaoMiniappCloudMongoInsertAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Record Setter
+// SetRecord is Record Setter
 // 待插入的数据，JSON格式
 func (r *TaobaoMiniappCloudMongoInsertAPIRequest) SetRecord(_record string) error {
 	r._record = _record
@@ -49,12 +49,12 @@ func (r *TaobaoMiniappCloudMongoInsertAPIRequest) SetRecord(_record string) erro
 	return nil
 }
 
-// Get Record Getter
+// GetRecord Record Getter
 func (r TaobaoMiniappCloudMongoInsertAPIRequest) GetRecord() string {
 	return r._record
 }
 
-// Set is Collection Setter
+// SetCollection is Collection Setter
 // MongoDB表名
 func (r *TaobaoMiniappCloudMongoInsertAPIRequest) SetCollection(_collection string) error {
 	r._collection = _collection
@@ -62,12 +62,12 @@ func (r *TaobaoMiniappCloudMongoInsertAPIRequest) SetCollection(_collection stri
 	return nil
 }
 
-// Get Collection Getter
+// GetCollection Collection Getter
 func (r TaobaoMiniappCloudMongoInsertAPIRequest) GetCollection() string {
 	return r._collection
 }
 
-// Set is Env Setter
+// SetEnv is Env Setter
 // 要操作的环境，默认是测试环境
 func (r *TaobaoMiniappCloudMongoInsertAPIRequest) SetEnv(_env string) error {
 	r._env = _env
@@ -75,7 +75,7 @@ func (r *TaobaoMiniappCloudMongoInsertAPIRequest) SetEnv(_env string) error {
 	return nil
 }
 
-// Get Env Getter
+// GetEnv Env Getter
 func (r TaobaoMiniappCloudMongoInsertAPIRequest) GetEnv() string {
 	return r._env
 }

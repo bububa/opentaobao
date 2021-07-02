@@ -39,7 +39,7 @@ func (r TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIRequest) G
 	return params
 }
 
-// Set is WarehouseCode Setter
+// SetWarehouseCode is WarehouseCode Setter
 // warehouse_code
 func (r *TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIRequest) SetWarehouseCode(_warehouseCode string) error {
 	r._warehouseCode = _warehouseCode
@@ -47,12 +47,12 @@ func (r *TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIRequest) 
 	return nil
 }
 
-// Get WarehouseCode Getter
+// GetWarehouseCode WarehouseCode Getter
 func (r TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
 }
 
-// Set is WcsNum Setter
+// SetWcsNum is WcsNum Setter
 // wcs_num
 func (r *TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIRequest) SetWcsNum(_wcsNum int64) error {
 	r._wcsNum = _wcsNum
@@ -60,7 +60,7 @@ func (r *TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIRequest) 
 	return nil
 }
 
-// Get WcsNum Getter
+// GetWcsNum WcsNum Getter
 func (r TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorAPIRequest) GetWcsNum() int64 {
 	return r._wcsNum
 }

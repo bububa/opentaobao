@@ -37,7 +37,7 @@ func (r TmallNrtPayMerchantStallSigningModifyAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Req Setter
+// SetReq is Req Setter
 // 请求参数
 func (r *TmallNrtPayMerchantStallSigningModifyAPIRequest) SetReq(_req *StallSigningReqDto) error {
 	r._req = _req
@@ -45,7 +45,7 @@ func (r *TmallNrtPayMerchantStallSigningModifyAPIRequest) SetReq(_req *StallSign
 	return nil
 }
 
-// Get Req Getter
+// GetReq Req Getter
 func (r TmallNrtPayMerchantStallSigningModifyAPIRequest) GetReq() *StallSigningReqDto {
 	return r._req
 }

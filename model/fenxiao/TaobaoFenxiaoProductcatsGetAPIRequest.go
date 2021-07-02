@@ -37,7 +37,7 @@ func (r TaobaoFenxiaoProductcatsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回字段列表
 func (r *TaobaoFenxiaoProductcatsGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -45,7 +45,7 @@ func (r *TaobaoFenxiaoProductcatsGetAPIRequest) SetFields(_fields string) error 
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoFenxiaoProductcatsGetAPIRequest) GetFields() string {
 	return r._fields
 }

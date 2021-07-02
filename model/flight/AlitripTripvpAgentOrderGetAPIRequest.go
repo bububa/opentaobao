@@ -39,7 +39,7 @@ func (r AlitripTripvpAgentOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商ID
 func (r *AlitripTripvpAgentOrderGetAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -47,12 +47,12 @@ func (r *AlitripTripvpAgentOrderGetAPIRequest) SetAgentId(_agentId int64) error 
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r AlitripTripvpAgentOrderGetAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is TradeOrderId Setter
+// SetTradeOrderId is TradeOrderId Setter
 // 辅营的订单号
 func (r *AlitripTripvpAgentOrderGetAPIRequest) SetTradeOrderId(_tradeOrderId int64) error {
 	r._tradeOrderId = _tradeOrderId
@@ -60,7 +60,7 @@ func (r *AlitripTripvpAgentOrderGetAPIRequest) SetTradeOrderId(_tradeOrderId int
 	return nil
 }
 
-// Get TradeOrderId Getter
+// GetTradeOrderId TradeOrderId Getter
 func (r AlitripTripvpAgentOrderGetAPIRequest) GetTradeOrderId() int64 {
 	return r._tradeOrderId
 }

@@ -47,7 +47,7 @@ func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝交易主订单ID
 func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -55,12 +55,12 @@ func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 分单状态，如： 等待中(Waiting)，已分单(Allocated)，分单失败(AllocateFail)
 func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -68,12 +68,12 @@ func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetStatus(_status string) e
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is Message Setter
+// SetMessage is Message Setter
 // 分单结果消息, 如果status为AllocateFail, 则表示失败的理由.
 func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetMessage(_message string) error {
 	r._message = _message
@@ -81,12 +81,12 @@ func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetMessage(_message string)
 	return nil
 }
 
-// Get Message Getter
+// GetMessage Message Getter
 func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetMessage() string {
 	return r._message
 }
 
-// Set is ReportTimestamp Setter
+// SetReportTimestamp is ReportTimestamp Setter
 // 1231243213213
 func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetReportTimestamp(_reportTimestamp int64) error {
 	r._reportTimestamp = _reportTimestamp
@@ -94,12 +94,12 @@ func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetReportTimestamp(_reportT
 	return nil
 }
 
-// Get ReportTimestamp Getter
+// GetReportTimestamp ReportTimestamp Getter
 func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetReportTimestamp() int64 {
 	return r._reportTimestamp
 }
 
-// Set is SubOrderList Setter
+// SetSubOrderList is SubOrderList Setter
 // 门店的分单列表
 func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetSubOrderList(_subOrderList []StoreAllocatedResult) error {
 	r._subOrderList = _subOrderList
@@ -107,12 +107,12 @@ func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetSubOrderList(_subOrderLi
 	return nil
 }
 
-// Get SubOrderList Getter
+// GetSubOrderList SubOrderList Getter
 func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetSubOrderList() []StoreAllocatedResult {
 	return r._subOrderList
 }
 
-// Set is TraceId Setter
+// SetTraceId is TraceId Setter
 // 跟踪Id
 func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetTraceId(_traceId string) error {
 	r._traceId = _traceId
@@ -120,7 +120,7 @@ func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetTraceId(_traceId string)
 	return nil
 }
 
-// Get TraceId Getter
+// GetTraceId TraceId Getter
 func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetTraceId() string {
 	return r._traceId
 }

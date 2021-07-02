@@ -41,7 +41,7 @@ func (r TaobaoTmcUserGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需返回的字段列表，多个字段以半角逗号分隔。可选值：TmcUser结构体中的所有字段，一定要返回topic。
 func (r *TaobaoTmcUserGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -49,12 +49,12 @@ func (r *TaobaoTmcUserGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoTmcUserGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 用户昵称
 func (r *TaobaoTmcUserGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -62,12 +62,12 @@ func (r *TaobaoTmcUserGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoTmcUserGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is UserPlatform Setter
+// SetUserPlatform is UserPlatform Setter
 // 用户所属的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户
 func (r *TaobaoTmcUserGetAPIRequest) SetUserPlatform(_userPlatform string) error {
 	r._userPlatform = _userPlatform
@@ -75,7 +75,7 @@ func (r *TaobaoTmcUserGetAPIRequest) SetUserPlatform(_userPlatform string) error
 	return nil
 }
 
-// Get UserPlatform Getter
+// GetUserPlatform UserPlatform Getter
 func (r TaobaoTmcUserGetAPIRequest) GetUserPlatform() string {
 	return r._userPlatform
 }

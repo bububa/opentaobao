@@ -39,7 +39,7 @@ func (r AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is VisitorCode Setter
+// SetVisitorCode is VisitorCode Setter
 // 访客码
 func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) SetVisitorCode(_visitorCode int64) error {
 	r._visitorCode = _visitorCode
@@ -47,12 +47,12 @@ func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) SetVisitorCode(_v
 	return nil
 }
 
-// Get VisitorCode Getter
+// GetVisitorCode VisitorCode Getter
 func (r AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) GetVisitorCode() int64 {
 	return r._visitorCode
 }
 
-// Set is TermId Setter
+// SetTermId is TermId Setter
 // 终端ID
 func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) SetTermId(_termId string) error {
 	r._termId = _termId
@@ -60,7 +60,7 @@ func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) SetTermId(_termId
 	return nil
 }
 
-// Get TermId Getter
+// GetTermId TermId Getter
 func (r AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) GetTermId() string {
 	return r._termId
 }

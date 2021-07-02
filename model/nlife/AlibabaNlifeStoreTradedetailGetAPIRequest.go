@@ -37,7 +37,7 @@ func (r AlibabaNlifeStoreTradedetailGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProcurementNo Setter
+// SetProcurementNo is ProcurementNo Setter
 // 集团采购单号
 func (r *AlibabaNlifeStoreTradedetailGetAPIRequest) SetProcurementNo(_procurementNo string) error {
 	r._procurementNo = _procurementNo
@@ -45,7 +45,7 @@ func (r *AlibabaNlifeStoreTradedetailGetAPIRequest) SetProcurementNo(_procuremen
 	return nil
 }
 
-// Get ProcurementNo Getter
+// GetProcurementNo ProcurementNo Getter
 func (r AlibabaNlifeStoreTradedetailGetAPIRequest) GetProcurementNo() string {
 	return r._procurementNo
 }

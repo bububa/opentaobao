@@ -37,7 +37,7 @@ func (r TaobaoTrainAgentBookordersGetVtwoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商id
 func (r *TaobaoTrainAgentBookordersGetVtwoAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -45,7 +45,7 @@ func (r *TaobaoTrainAgentBookordersGetVtwoAPIRequest) SetAgentId(_agentId int64)
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r TaobaoTrainAgentBookordersGetVtwoAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }

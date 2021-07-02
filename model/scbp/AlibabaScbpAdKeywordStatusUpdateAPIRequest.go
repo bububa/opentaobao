@@ -39,7 +39,7 @@ func (r AlibabaScbpAdKeywordStatusUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AdKeyword Setter
+// SetAdKeyword is AdKeyword Setter
 // 只能取ascci字符
 func (r *AlibabaScbpAdKeywordStatusUpdateAPIRequest) SetAdKeyword(_adKeyword string) error {
 	r._adKeyword = _adKeyword
@@ -47,12 +47,12 @@ func (r *AlibabaScbpAdKeywordStatusUpdateAPIRequest) SetAdKeyword(_adKeyword str
 	return nil
 }
 
-// Get AdKeyword Getter
+// GetAdKeyword AdKeyword Getter
 func (r AlibabaScbpAdKeywordStatusUpdateAPIRequest) GetAdKeyword() string {
 	return r._adKeyword
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 只能去in_promotion或者stopped
 func (r *AlibabaScbpAdKeywordStatusUpdateAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -60,7 +60,7 @@ func (r *AlibabaScbpAdKeywordStatusUpdateAPIRequest) SetStatus(_status string) e
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaScbpAdKeywordStatusUpdateAPIRequest) GetStatus() string {
 	return r._status
 }

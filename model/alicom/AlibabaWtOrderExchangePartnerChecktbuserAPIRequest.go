@@ -37,7 +37,7 @@ func (r AlibabaWtOrderExchangePartnerChecktbuserAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is OutExchangeModel Setter
+// SetOutExchangeModel is OutExchangeModel Setter
 // model入参
 func (r *AlibabaWtOrderExchangePartnerChecktbuserAPIRequest) SetOutExchangeModel(_outExchangeModel *OutExchangeModel) error {
 	r._outExchangeModel = _outExchangeModel
@@ -45,7 +45,7 @@ func (r *AlibabaWtOrderExchangePartnerChecktbuserAPIRequest) SetOutExchangeModel
 	return nil
 }
 
-// Get OutExchangeModel Getter
+// GetOutExchangeModel OutExchangeModel Getter
 func (r AlibabaWtOrderExchangePartnerChecktbuserAPIRequest) GetOutExchangeModel() *OutExchangeModel {
 	return r._outExchangeModel
 }

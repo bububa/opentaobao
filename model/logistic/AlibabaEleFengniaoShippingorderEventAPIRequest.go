@@ -39,7 +39,7 @@ func (r AlibabaEleFengniaoShippingorderEventAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // appid
 func (r *AlibabaEleFengniaoShippingorderEventAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
@@ -47,12 +47,12 @@ func (r *AlibabaEleFengniaoShippingorderEventAPIRequest) SetAppId(_appId string)
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r AlibabaEleFengniaoShippingorderEventAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// Set is PartnerOrderCode Setter
+// SetPartnerOrderCode is PartnerOrderCode Setter
 // 外部订单号
 func (r *AlibabaEleFengniaoShippingorderEventAPIRequest) SetPartnerOrderCode(_partnerOrderCode string) error {
 	r._partnerOrderCode = _partnerOrderCode
@@ -60,7 +60,7 @@ func (r *AlibabaEleFengniaoShippingorderEventAPIRequest) SetPartnerOrderCode(_pa
 	return nil
 }
 
-// Get PartnerOrderCode Getter
+// GetPartnerOrderCode PartnerOrderCode Getter
 func (r AlibabaEleFengniaoShippingorderEventAPIRequest) GetPartnerOrderCode() string {
 	return r._partnerOrderCode
 }

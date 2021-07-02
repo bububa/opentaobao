@@ -37,7 +37,7 @@ func (r AlibabaWdkUmsFeedbackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ErpFeedbackdto Setter
+// SetErpFeedbackdto is ErpFeedbackdto Setter
 // 质量反馈请求dto
 func (r *AlibabaWdkUmsFeedbackAPIRequest) SetErpFeedbackdto(_erpFeedbackdto *ErpFeedbackDto) error {
 	r._erpFeedbackdto = _erpFeedbackdto
@@ -45,7 +45,7 @@ func (r *AlibabaWdkUmsFeedbackAPIRequest) SetErpFeedbackdto(_erpFeedbackdto *Erp
 	return nil
 }
 
-// Get ErpFeedbackdto Getter
+// GetErpFeedbackdto ErpFeedbackdto Getter
 func (r AlibabaWdkUmsFeedbackAPIRequest) GetErpFeedbackdto() *ErpFeedbackDto {
 	return r._erpFeedbackdto
 }

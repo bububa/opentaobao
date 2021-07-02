@@ -39,7 +39,7 @@ func (r TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款编号
 func (r *TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -47,12 +47,12 @@ func (r *TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) SetRefundId(_refundId 
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }
 
-// Set is WarehouseStatus Setter
+// SetWarehouseStatus is WarehouseStatus Setter
 // 退货入仓状态 1.已入仓
 func (r *TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) SetWarehouseStatus(_warehouseStatus int64) error {
 	r._warehouseStatus = _warehouseStatus
@@ -60,7 +60,7 @@ func (r *TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) SetWarehouseStatus(_wa
 	return nil
 }
 
-// Get WarehouseStatus Getter
+// GetWarehouseStatus WarehouseStatus Getter
 func (r TaobaoNextoneLogisticsWarehouseUpdateAPIRequest) GetWarehouseStatus() int64 {
 	return r._warehouseStatus
 }

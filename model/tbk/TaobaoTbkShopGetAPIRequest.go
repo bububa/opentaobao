@@ -65,7 +65,7 @@ func (r TaobaoTbkShopGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需返回的字段列表
 func (r *TaobaoTbkShopGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -73,12 +73,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoTbkShopGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is Q Setter
+// SetQ is Q Setter
 // 查询词
 func (r *TaobaoTbkShopGetAPIRequest) SetQ(_q string) error {
 	r._q = _q
@@ -86,12 +86,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetQ(_q string) error {
 	return nil
 }
 
-// Get Q Getter
+// GetQ Q Getter
 func (r TaobaoTbkShopGetAPIRequest) GetQ() string {
 	return r._q
 }
 
-// Set is Sort Setter
+// SetSort is Sort Setter
 // 排序_des（降序），排序_asc（升序），佣金比率（commission_rate）， 商品数量（auction_count），销售总数量（total_auction）
 func (r *TaobaoTbkShopGetAPIRequest) SetSort(_sort string) error {
 	r._sort = _sort
@@ -99,12 +99,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetSort(_sort string) error {
 	return nil
 }
 
-// Get Sort Getter
+// GetSort Sort Getter
 func (r TaobaoTbkShopGetAPIRequest) GetSort() string {
 	return r._sort
 }
 
-// Set is IsTmall Setter
+// SetIsTmall is IsTmall Setter
 // 是否商城的店铺，设置为true表示该是属于淘宝商城的店铺，设置为false或不设置表示不判断这个属性
 func (r *TaobaoTbkShopGetAPIRequest) SetIsTmall(_isTmall bool) error {
 	r._isTmall = _isTmall
@@ -112,12 +112,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetIsTmall(_isTmall bool) error {
 	return nil
 }
 
-// Get IsTmall Getter
+// GetIsTmall IsTmall Getter
 func (r TaobaoTbkShopGetAPIRequest) GetIsTmall() bool {
 	return r._isTmall
 }
 
-// Set is StartCredit Setter
+// SetStartCredit is StartCredit Setter
 // 信用等级下限，1~20
 func (r *TaobaoTbkShopGetAPIRequest) SetStartCredit(_startCredit int64) error {
 	r._startCredit = _startCredit
@@ -125,12 +125,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetStartCredit(_startCredit int64) error {
 	return nil
 }
 
-// Get StartCredit Getter
+// GetStartCredit StartCredit Getter
 func (r TaobaoTbkShopGetAPIRequest) GetStartCredit() int64 {
 	return r._startCredit
 }
 
-// Set is EndCredit Setter
+// SetEndCredit is EndCredit Setter
 // 信用等级上限，1~20
 func (r *TaobaoTbkShopGetAPIRequest) SetEndCredit(_endCredit int64) error {
 	r._endCredit = _endCredit
@@ -138,12 +138,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetEndCredit(_endCredit int64) error {
 	return nil
 }
 
-// Get EndCredit Getter
+// GetEndCredit EndCredit Getter
 func (r TaobaoTbkShopGetAPIRequest) GetEndCredit() int64 {
 	return r._endCredit
 }
 
-// Set is StartCommissionRate Setter
+// SetStartCommissionRate is StartCommissionRate Setter
 // 淘客佣金比率下限，1~10000
 func (r *TaobaoTbkShopGetAPIRequest) SetStartCommissionRate(_startCommissionRate int64) error {
 	r._startCommissionRate = _startCommissionRate
@@ -151,12 +151,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetStartCommissionRate(_startCommissionRate
 	return nil
 }
 
-// Get StartCommissionRate Getter
+// GetStartCommissionRate StartCommissionRate Getter
 func (r TaobaoTbkShopGetAPIRequest) GetStartCommissionRate() int64 {
 	return r._startCommissionRate
 }
 
-// Set is EndCommissionRate Setter
+// SetEndCommissionRate is EndCommissionRate Setter
 // 淘客佣金比率上限，1~10000
 func (r *TaobaoTbkShopGetAPIRequest) SetEndCommissionRate(_endCommissionRate int64) error {
 	r._endCommissionRate = _endCommissionRate
@@ -164,12 +164,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetEndCommissionRate(_endCommissionRate int
 	return nil
 }
 
-// Get EndCommissionRate Getter
+// GetEndCommissionRate EndCommissionRate Getter
 func (r TaobaoTbkShopGetAPIRequest) GetEndCommissionRate() int64 {
 	return r._endCommissionRate
 }
 
-// Set is StartTotalAction Setter
+// SetStartTotalAction is StartTotalAction Setter
 // 店铺商品总数下限
 func (r *TaobaoTbkShopGetAPIRequest) SetStartTotalAction(_startTotalAction int64) error {
 	r._startTotalAction = _startTotalAction
@@ -177,12 +177,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetStartTotalAction(_startTotalAction int64
 	return nil
 }
 
-// Get StartTotalAction Getter
+// GetStartTotalAction StartTotalAction Getter
 func (r TaobaoTbkShopGetAPIRequest) GetStartTotalAction() int64 {
 	return r._startTotalAction
 }
 
-// Set is EndTotalAction Setter
+// SetEndTotalAction is EndTotalAction Setter
 // 店铺商品总数上限
 func (r *TaobaoTbkShopGetAPIRequest) SetEndTotalAction(_endTotalAction int64) error {
 	r._endTotalAction = _endTotalAction
@@ -190,12 +190,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetEndTotalAction(_endTotalAction int64) er
 	return nil
 }
 
-// Get EndTotalAction Getter
+// GetEndTotalAction EndTotalAction Getter
 func (r TaobaoTbkShopGetAPIRequest) GetEndTotalAction() int64 {
 	return r._endTotalAction
 }
 
-// Set is StartAuctionCount Setter
+// SetStartAuctionCount is StartAuctionCount Setter
 // 累计推广商品下限
 func (r *TaobaoTbkShopGetAPIRequest) SetStartAuctionCount(_startAuctionCount int64) error {
 	r._startAuctionCount = _startAuctionCount
@@ -203,12 +203,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetStartAuctionCount(_startAuctionCount int
 	return nil
 }
 
-// Get StartAuctionCount Getter
+// GetStartAuctionCount StartAuctionCount Getter
 func (r TaobaoTbkShopGetAPIRequest) GetStartAuctionCount() int64 {
 	return r._startAuctionCount
 }
 
-// Set is EndAuctionCount Setter
+// SetEndAuctionCount is EndAuctionCount Setter
 // 累计推广商品上限
 func (r *TaobaoTbkShopGetAPIRequest) SetEndAuctionCount(_endAuctionCount int64) error {
 	r._endAuctionCount = _endAuctionCount
@@ -216,12 +216,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetEndAuctionCount(_endAuctionCount int64) 
 	return nil
 }
 
-// Get EndAuctionCount Getter
+// GetEndAuctionCount EndAuctionCount Getter
 func (r TaobaoTbkShopGetAPIRequest) GetEndAuctionCount() int64 {
 	return r._endAuctionCount
 }
 
-// Set is Platform Setter
+// SetPlatform is Platform Setter
 // 链接形式：1：PC，2：无线，默认：１
 func (r *TaobaoTbkShopGetAPIRequest) SetPlatform(_platform int64) error {
 	r._platform = _platform
@@ -229,12 +229,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetPlatform(_platform int64) error {
 	return nil
 }
 
-// Get Platform Getter
+// GetPlatform Platform Getter
 func (r TaobaoTbkShopGetAPIRequest) GetPlatform() int64 {
 	return r._platform
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 第几页，默认1，1~100
 func (r *TaobaoTbkShopGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -242,12 +242,12 @@ func (r *TaobaoTbkShopGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoTbkShopGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小，默认20，1~100
 func (r *TaobaoTbkShopGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -255,7 +255,7 @@ func (r *TaobaoTbkShopGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTbkShopGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

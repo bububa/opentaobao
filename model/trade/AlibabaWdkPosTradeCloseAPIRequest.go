@@ -37,7 +37,7 @@ func (r AlibabaWdkPosTradeCloseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CloseRequest Setter
+// SetCloseRequest is CloseRequest Setter
 // 关单请求
 func (r *AlibabaWdkPosTradeCloseAPIRequest) SetCloseRequest(_closeRequest *FastBuyPosCloseRequest) error {
 	r._closeRequest = _closeRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkPosTradeCloseAPIRequest) SetCloseRequest(_closeRequest *FastB
 	return nil
 }
 
-// Get CloseRequest Getter
+// GetCloseRequest CloseRequest Getter
 func (r AlibabaWdkPosTradeCloseAPIRequest) GetCloseRequest() *FastBuyPosCloseRequest {
 	return r._closeRequest
 }

@@ -37,7 +37,7 @@ func (r TmallNrtCouponSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NrtCouponSendDto Setter
+// SetNrtCouponSendDto is NrtCouponSendDto Setter
 // 发券dto
 func (r *TmallNrtCouponSendAPIRequest) SetNrtCouponSendDto(_nrtCouponSendDto *NrtCouponSendDto) error {
 	r._nrtCouponSendDto = _nrtCouponSendDto
@@ -45,7 +45,7 @@ func (r *TmallNrtCouponSendAPIRequest) SetNrtCouponSendDto(_nrtCouponSendDto *Nr
 	return nil
 }
 
-// Get NrtCouponSendDto Getter
+// GetNrtCouponSendDto NrtCouponSendDto Getter
 func (r TmallNrtCouponSendAPIRequest) GetNrtCouponSendDto() *NrtCouponSendDto {
 	return r._nrtCouponSendDto
 }

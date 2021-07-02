@@ -37,7 +37,7 @@ func (r AlibabaWdkStockCabinetQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 系统自动生成
 func (r *AlibabaWdkStockCabinetQueryAPIRequest) SetQuery(_query *WmsInventoryTopQuery) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *AlibabaWdkStockCabinetQueryAPIRequest) SetQuery(_query *WmsInventoryTop
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaWdkStockCabinetQueryAPIRequest) GetQuery() *WmsInventoryTopQuery {
 	return r._query
 }

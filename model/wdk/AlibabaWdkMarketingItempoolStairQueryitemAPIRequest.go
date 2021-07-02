@@ -37,7 +37,7 @@ func (r AlibabaWdkMarketingItempoolStairQueryitemAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 换购商品查询参数
 func (r *AlibabaWdkMarketingItempoolStairQueryitemAPIRequest) SetParam0(_param0 *ActivitySkuQuery) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMarketingItempoolStairQueryitemAPIRequest) SetParam0(_param0 
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaWdkMarketingItempoolStairQueryitemAPIRequest) GetParam0() *ActivitySkuQuery {
 	return r._param0
 }

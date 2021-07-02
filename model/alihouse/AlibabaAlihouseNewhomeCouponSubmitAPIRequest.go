@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeCouponSubmitAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is CouponDto Setter
+// SetCouponDto is CouponDto Setter
 // 打车券活动对象
 func (r *AlibabaAlihouseNewhomeCouponSubmitAPIRequest) SetCouponDto(_couponDto *MarketingCouponDto) error {
 	r._couponDto = _couponDto
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeCouponSubmitAPIRequest) SetCouponDto(_couponDto *
 	return nil
 }
 
-// Get CouponDto Getter
+// GetCouponDto CouponDto Getter
 func (r AlibabaAlihouseNewhomeCouponSubmitAPIRequest) GetCouponDto() *MarketingCouponDto {
 	return r._couponDto
 }

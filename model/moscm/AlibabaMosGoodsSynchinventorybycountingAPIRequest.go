@@ -40,7 +40,7 @@ func (r AlibabaMosGoodsSynchinventorybycountingAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ParamCountingInfoDto Setter
+// SetParamCountingInfoDto is ParamCountingInfoDto Setter
 // 专柜信息
 func (r *AlibabaMosGoodsSynchinventorybycountingAPIRequest) SetParamCountingInfoDto(_paramCountingInfoDto *CountingInfoDto) error {
 	r._paramCountingInfoDto = _paramCountingInfoDto
@@ -48,12 +48,12 @@ func (r *AlibabaMosGoodsSynchinventorybycountingAPIRequest) SetParamCountingInfo
 	return nil
 }
 
-// Get ParamCountingInfoDto Getter
+// GetParamCountingInfoDto ParamCountingInfoDto Getter
 func (r AlibabaMosGoodsSynchinventorybycountingAPIRequest) GetParamCountingInfoDto() *CountingInfoDto {
 	return r._paramCountingInfoDto
 }
 
-// Set is CountingItemDto Setter
+// SetCountingItemDto is CountingItemDto Setter
 // 盘点库存项（最大列表长度：20）
 func (r *AlibabaMosGoodsSynchinventorybycountingAPIRequest) SetCountingItemDto(_countingItemDto []CountingItemDto) error {
 	r._countingItemDto = _countingItemDto
@@ -61,7 +61,7 @@ func (r *AlibabaMosGoodsSynchinventorybycountingAPIRequest) SetCountingItemDto(_
 	return nil
 }
 
-// Get CountingItemDto Getter
+// GetCountingItemDto CountingItemDto Getter
 func (r AlibabaMosGoodsSynchinventorybycountingAPIRequest) GetCountingItemDto() []CountingItemDto {
 	return r._countingItemDto
 }

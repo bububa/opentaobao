@@ -55,7 +55,7 @@ func (r TaobaoTanxCreativeAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MemberId Setter
+// SetMemberId is MemberId Setter
 // DSP的memberId
 func (r *TaobaoTanxCreativeAddAPIRequest) SetMemberId(_memberId int64) error {
 	r._memberId = _memberId
@@ -63,12 +63,12 @@ func (r *TaobaoTanxCreativeAddAPIRequest) SetMemberId(_memberId int64) error {
 	return nil
 }
 
-// Get MemberId Getter
+// GetMemberId MemberId Getter
 func (r TaobaoTanxCreativeAddAPIRequest) GetMemberId() int64 {
 	return r._memberId
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // dsp用户身份认证的TOKEN
 func (r *TaobaoTanxCreativeAddAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -76,12 +76,12 @@ func (r *TaobaoTanxCreativeAddAPIRequest) SetToken(_token string) error {
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoTanxCreativeAddAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is SignTime Setter
+// SetSignTime is SignTime Setter
 // 当前时间戳，1970-01-01后的秒数
 func (r *TaobaoTanxCreativeAddAPIRequest) SetSignTime(_signTime int64) error {
 	r._signTime = _signTime
@@ -89,12 +89,12 @@ func (r *TaobaoTanxCreativeAddAPIRequest) SetSignTime(_signTime int64) error {
 	return nil
 }
 
-// Get SignTime Getter
+// GetSignTime SignTime Getter
 func (r TaobaoTanxCreativeAddAPIRequest) GetSignTime() int64 {
 	return r._signTime
 }
 
-// Set is CreativeId Setter
+// SetCreativeId is CreativeId Setter
 // 创意id
 func (r *TaobaoTanxCreativeAddAPIRequest) SetCreativeId(_creativeId string) error {
 	r._creativeId = _creativeId
@@ -102,12 +102,12 @@ func (r *TaobaoTanxCreativeAddAPIRequest) SetCreativeId(_creativeId string) erro
 	return nil
 }
 
-// Get CreativeId Getter
+// GetCreativeId CreativeId Getter
 func (r TaobaoTanxCreativeAddAPIRequest) GetCreativeId() string {
 	return r._creativeId
 }
 
-// Set is AdboardType Setter
+// SetAdboardType is AdboardType Setter
 // 广告类目 如果有多个，以逗号分隔
 func (r *TaobaoTanxCreativeAddAPIRequest) SetAdboardType(_adboardType string) error {
 	r._adboardType = _adboardType
@@ -115,12 +115,12 @@ func (r *TaobaoTanxCreativeAddAPIRequest) SetAdboardType(_adboardType string) er
 	return nil
 }
 
-// Get AdboardType Getter
+// GetAdboardType AdboardType Getter
 func (r TaobaoTanxCreativeAddAPIRequest) GetAdboardType() string {
 	return r._adboardType
 }
 
-// Set is SensitiveType Setter
+// SetSensitiveType is SensitiveType Setter
 // 敏感词类目，多个的话以逗号分隔
 func (r *TaobaoTanxCreativeAddAPIRequest) SetSensitiveType(_sensitiveType string) error {
 	r._sensitiveType = _sensitiveType
@@ -128,12 +128,12 @@ func (r *TaobaoTanxCreativeAddAPIRequest) SetSensitiveType(_sensitiveType string
 	return nil
 }
 
-// Get SensitiveType Getter
+// GetSensitiveType SensitiveType Getter
 func (r TaobaoTanxCreativeAddAPIRequest) GetSensitiveType() string {
 	return r._sensitiveType
 }
 
-// Set is AdboardData Setter
+// SetAdboardData is AdboardData Setter
 // 创意代码
 func (r *TaobaoTanxCreativeAddAPIRequest) SetAdboardData(_adboardData string) error {
 	r._adboardData = _adboardData
@@ -141,12 +141,12 @@ func (r *TaobaoTanxCreativeAddAPIRequest) SetAdboardData(_adboardData string) er
 	return nil
 }
 
-// Get AdboardData Getter
+// GetAdboardData AdboardData Getter
 func (r TaobaoTanxCreativeAddAPIRequest) GetAdboardData() string {
 	return r._adboardData
 }
 
-// Set is DestinationUrl Setter
+// SetDestinationUrl is DestinationUrl Setter
 // 目标地址
 func (r *TaobaoTanxCreativeAddAPIRequest) SetDestinationUrl(_destinationUrl string) error {
 	r._destinationUrl = _destinationUrl
@@ -154,12 +154,12 @@ func (r *TaobaoTanxCreativeAddAPIRequest) SetDestinationUrl(_destinationUrl stri
 	return nil
 }
 
-// Get DestinationUrl Getter
+// GetDestinationUrl DestinationUrl Getter
 func (r TaobaoTanxCreativeAddAPIRequest) GetDestinationUrl() string {
 	return r._destinationUrl
 }
 
-// Set is AdboardSize Setter
+// SetAdboardSize is AdboardSize Setter
 // 创意尺寸,中间以小写字母x分隔
 func (r *TaobaoTanxCreativeAddAPIRequest) SetAdboardSize(_adboardSize string) error {
 	r._adboardSize = _adboardSize
@@ -167,12 +167,12 @@ func (r *TaobaoTanxCreativeAddAPIRequest) SetAdboardSize(_adboardSize string) er
 	return nil
 }
 
-// Get AdboardSize Getter
+// GetAdboardSize AdboardSize Getter
 func (r TaobaoTanxCreativeAddAPIRequest) GetAdboardSize() string {
 	return r._adboardSize
 }
 
-// Set is CreativePackageFormat Setter
+// SetCreativePackageFormat is CreativePackageFormat Setter
 // 创意封装类型：1 Htmlsnippet(pc网页),2 vast-nonlinear（视频暂停）,3vast-linear（视频贴片） 4 vast-companion(视频伴随),5 Html5(无线banner或app)
 func (r *TaobaoTanxCreativeAddAPIRequest) SetCreativePackageFormat(_creativePackageFormat int64) error {
 	r._creativePackageFormat = _creativePackageFormat
@@ -180,7 +180,7 @@ func (r *TaobaoTanxCreativeAddAPIRequest) SetCreativePackageFormat(_creativePack
 	return nil
 }
 
-// Get CreativePackageFormat Getter
+// GetCreativePackageFormat CreativePackageFormat Getter
 func (r TaobaoTanxCreativeAddAPIRequest) GetCreativePackageFormat() int64 {
 	return r._creativePackageFormat
 }

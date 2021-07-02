@@ -39,7 +39,7 @@ func (r TaobaoPromotionmiscToolCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ToolId Setter
+// SetToolId is ToolId Setter
 // 工具ID, taobao.ump.tool.add成功后返回的id。
 func (r *TaobaoPromotionmiscToolCheckAPIRequest) SetToolId(_toolId int64) error {
 	r._toolId = _toolId
@@ -47,12 +47,12 @@ func (r *TaobaoPromotionmiscToolCheckAPIRequest) SetToolId(_toolId int64) error 
 	return nil
 }
 
-// Get ToolId Getter
+// GetToolId ToolId Getter
 func (r TaobaoPromotionmiscToolCheckAPIRequest) GetToolId() int64 {
 	return r._toolId
 }
 
-// Set is MetaAllow Setter
+// SetMetaAllow is MetaAllow Setter
 // 可使用的元数据。PRD审核后，会告诉isv可使用的元数据。
 func (r *TaobaoPromotionmiscToolCheckAPIRequest) SetMetaAllow(_metaAllow string) error {
 	r._metaAllow = _metaAllow
@@ -60,7 +60,7 @@ func (r *TaobaoPromotionmiscToolCheckAPIRequest) SetMetaAllow(_metaAllow string)
 	return nil
 }
 
-// Get MetaAllow Getter
+// GetMetaAllow MetaAllow Getter
 func (r TaobaoPromotionmiscToolCheckAPIRequest) GetMetaAllow() string {
 	return r._metaAllow
 }

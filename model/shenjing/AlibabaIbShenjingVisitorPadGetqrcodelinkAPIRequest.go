@@ -37,7 +37,7 @@ func (r AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is TermId Setter
+// SetTermId is TermId Setter
 // 终端id
 func (r *AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest) SetTermId(_termId string) error {
 	r._termId = _termId
@@ -45,7 +45,7 @@ func (r *AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest) SetTermId(_termId s
 	return nil
 }
 
-// Get TermId Getter
+// GetTermId TermId Getter
 func (r AlibabaIbShenjingVisitorPadGetqrcodelinkAPIRequest) GetTermId() string {
 	return r._termId
 }

@@ -50,7 +50,7 @@ func (r AlibabaEinvoiceMerchantAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TaxToken Setter
+// SetTaxToken is TaxToken Setter
 // 验证码，门店绑定已入驻税号接口返回的taxToken
 func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetTaxToken(_taxToken string) error {
 	r._taxToken = _taxToken
@@ -58,12 +58,12 @@ func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetTaxToken(_taxToken string) err
 	return nil
 }
 
-// Get TaxToken Getter
+// GetTaxToken TaxToken Getter
 func (r AlibabaEinvoiceMerchantAddAPIRequest) GetTaxToken() string {
 	return r._taxToken
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 业务方发起新增门店的唯一幂等ID, 由业务方生成。只能由字母和数字组成。
 func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -71,12 +71,12 @@ func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetOuterId(_outerId string) error
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r AlibabaEinvoiceMerchantAddAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is MerchantUserId Setter
+// SetMerchantUserId is MerchantUserId Setter
 // 业务平台门店ID
 func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetMerchantUserId(_merchantUserId string) error {
 	r._merchantUserId = _merchantUserId
@@ -84,12 +84,12 @@ func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetMerchantUserId(_merchantUserId
 	return nil
 }
 
-// Get MerchantUserId Getter
+// GetMerchantUserId MerchantUserId Getter
 func (r AlibabaEinvoiceMerchantAddAPIRequest) GetMerchantUserId() string {
 	return r._merchantUserId
 }
 
-// Set is PlatformCode Setter
+// SetPlatformCode is PlatformCode Setter
 // 业务平台code, 由阿里发票分配
 func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetPlatformCode(_platformCode string) error {
 	r._platformCode = _platformCode
@@ -97,12 +97,12 @@ func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetPlatformCode(_platformCode str
 	return nil
 }
 
-// Get PlatformCode Getter
+// GetPlatformCode PlatformCode Getter
 func (r AlibabaEinvoiceMerchantAddAPIRequest) GetPlatformCode() string {
 	return r._platformCode
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 税务登记号
 func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -110,12 +110,12 @@ func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetPayeeRegisterNo(_payeeRegister
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceMerchantAddAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is MerchantName Setter
+// SetMerchantName is MerchantName Setter
 // 业务平台门店名称
 func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetMerchantName(_merchantName string) error {
 	r._merchantName = _merchantName
@@ -123,12 +123,12 @@ func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetMerchantName(_merchantName str
 	return nil
 }
 
-// Get MerchantName Getter
+// GetMerchantName MerchantName Getter
 func (r AlibabaEinvoiceMerchantAddAPIRequest) GetMerchantName() string {
 	return r._merchantName
 }
 
-// Set is DeviceIds Setter
+// SetDeviceIds is DeviceIds Setter
 // 税盘列表
 func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetDeviceIds(_deviceIds []string) error {
 	r._deviceIds = _deviceIds
@@ -136,7 +136,7 @@ func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetDeviceIds(_deviceIds []string)
 	return nil
 }
 
-// Get DeviceIds Getter
+// GetDeviceIds DeviceIds Getter
 func (r AlibabaEinvoiceMerchantAddAPIRequest) GetDeviceIds() []string {
 	return r._deviceIds
 }

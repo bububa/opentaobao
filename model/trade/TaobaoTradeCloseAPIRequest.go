@@ -39,7 +39,7 @@ func (r TaobaoTradeCloseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 主订单或子订单编号。
 func (r *TaobaoTradeCloseAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -47,12 +47,12 @@ func (r *TaobaoTradeCloseAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoTradeCloseAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is CloseReason Setter
+// SetCloseReason is CloseReason Setter
 // 交易关闭原因。可以选择的理由有：1.未及时付款2、买家不想买了3、买家信息填写错误，重新拍4、恶意买家/同行捣乱5、缺货6、买家拍错了7、同城见面交易
 func (r *TaobaoTradeCloseAPIRequest) SetCloseReason(_closeReason string) error {
 	r._closeReason = _closeReason
@@ -60,7 +60,7 @@ func (r *TaobaoTradeCloseAPIRequest) SetCloseReason(_closeReason string) error {
 	return nil
 }
 
-// Get CloseReason Getter
+// GetCloseReason CloseReason Getter
 func (r TaobaoTradeCloseAPIRequest) GetCloseReason() string {
 	return r._closeReason
 }

@@ -37,7 +37,7 @@ func (r TaobaoAlitripAxinTransPaySignCheckAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is AxinPayCheckSignDto Setter
+// SetAxinPayCheckSignDto is AxinPayCheckSignDto Setter
 // 验签对象
 func (r *TaobaoAlitripAxinTransPaySignCheckAPIRequest) SetAxinPayCheckSignDto(_axinPayCheckSignDto *AxinPayCheckSignDto) error {
 	r._axinPayCheckSignDto = _axinPayCheckSignDto
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripAxinTransPaySignCheckAPIRequest) SetAxinPayCheckSignDto(_a
 	return nil
 }
 
-// Get AxinPayCheckSignDto Getter
+// GetAxinPayCheckSignDto AxinPayCheckSignDto Getter
 func (r TaobaoAlitripAxinTransPaySignCheckAPIRequest) GetAxinPayCheckSignDto() *AxinPayCheckSignDto {
 	return r._axinPayCheckSignDto
 }

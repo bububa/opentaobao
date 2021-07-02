@@ -37,7 +37,7 @@ func (r AlibabaWdkOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IdListQueryReq Setter
+// SetIdListQueryReq is IdListQueryReq Setter
 // 系统自动生成
 func (r *AlibabaWdkOrderGetAPIRequest) SetIdListQueryReq(_idListQueryReq *IdListQueryRequest) error {
 	r._idListQueryReq = _idListQueryReq
@@ -45,7 +45,7 @@ func (r *AlibabaWdkOrderGetAPIRequest) SetIdListQueryReq(_idListQueryReq *IdList
 	return nil
 }
 
-// Get IdListQueryReq Getter
+// GetIdListQueryReq IdListQueryReq Getter
 func (r AlibabaWdkOrderGetAPIRequest) GetIdListQueryReq() *IdListQueryRequest {
 	return r._idListQueryReq
 }

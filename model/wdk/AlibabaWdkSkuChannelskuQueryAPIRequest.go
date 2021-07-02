@@ -37,7 +37,7 @@ func (r AlibabaWdkSkuChannelskuQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 查询渠道商品的入参
 func (r *AlibabaWdkSkuChannelskuQueryAPIRequest) SetParam(_param *ChannelSkuQueryDo) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSkuChannelskuQueryAPIRequest) SetParam(_param *ChannelSkuQuer
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaWdkSkuChannelskuQueryAPIRequest) GetParam() *ChannelSkuQueryDo {
 	return r._param
 }

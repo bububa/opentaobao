@@ -41,7 +41,7 @@ func (r AlitripAgentFlightSellRefundRefuseAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ApplyId Setter
+// SetApplyId is ApplyId Setter
 // 申请单号
 func (r *AlitripAgentFlightSellRefundRefuseAPIRequest) SetApplyId(_applyId string) error {
 	r._applyId = _applyId
@@ -49,12 +49,12 @@ func (r *AlitripAgentFlightSellRefundRefuseAPIRequest) SetApplyId(_applyId strin
 	return nil
 }
 
-// Get ApplyId Getter
+// GetApplyId ApplyId Getter
 func (r AlitripAgentFlightSellRefundRefuseAPIRequest) GetApplyId() string {
 	return r._applyId
 }
 
-// Set is DomesticIntl Setter
+// SetDomesticIntl is DomesticIntl Setter
 // 国内国际标识
 func (r *AlitripAgentFlightSellRefundRefuseAPIRequest) SetDomesticIntl(_domesticIntl int64) error {
 	r._domesticIntl = _domesticIntl
@@ -62,12 +62,12 @@ func (r *AlitripAgentFlightSellRefundRefuseAPIRequest) SetDomesticIntl(_domestic
 	return nil
 }
 
-// Get DomesticIntl Getter
+// GetDomesticIntl DomesticIntl Getter
 func (r AlitripAgentFlightSellRefundRefuseAPIRequest) GetDomesticIntl() int64 {
 	return r._domesticIntl
 }
 
-// Set is RefuseReason Setter
+// SetRefuseReason is RefuseReason Setter
 // 拒绝原因
 func (r *AlitripAgentFlightSellRefundRefuseAPIRequest) SetRefuseReason(_refuseReason string) error {
 	r._refuseReason = _refuseReason
@@ -75,7 +75,7 @@ func (r *AlitripAgentFlightSellRefundRefuseAPIRequest) SetRefuseReason(_refuseRe
 	return nil
 }
 
-// Get RefuseReason Getter
+// GetRefuseReason RefuseReason Getter
 func (r AlitripAgentFlightSellRefundRefuseAPIRequest) GetRefuseReason() string {
 	return r._refuseReason
 }

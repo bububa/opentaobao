@@ -41,7 +41,7 @@ func (r AlibabaEinvoiceDeductGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 税号
 func (r *AlibabaEinvoiceDeductGetAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -49,12 +49,12 @@ func (r *AlibabaEinvoiceDeductGetAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceDeductGetAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is BizDate Setter
+// SetBizDate is BizDate Setter
 // 业务日期
 func (r *AlibabaEinvoiceDeductGetAPIRequest) SetBizDate(_bizDate string) error {
 	r._bizDate = _bizDate
@@ -62,12 +62,12 @@ func (r *AlibabaEinvoiceDeductGetAPIRequest) SetBizDate(_bizDate string) error {
 	return nil
 }
 
-// Get BizDate Getter
+// GetBizDate BizDate Getter
 func (r AlibabaEinvoiceDeductGetAPIRequest) GetBizDate() string {
 	return r._bizDate
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 类型 1：所有 2：当日
 func (r *AlibabaEinvoiceDeductGetAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -75,7 +75,7 @@ func (r *AlibabaEinvoiceDeductGetAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaEinvoiceDeductGetAPIRequest) GetType() int64 {
 	return r._type
 }

@@ -37,7 +37,7 @@ func (r AlitripXhotelChannelOrderMembertypeSyncAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ChannelSyncOrderMemberType Setter
+// SetChannelSyncOrderMemberType is ChannelSyncOrderMemberType Setter
 // 入参
 func (r *AlitripXhotelChannelOrderMembertypeSyncAPIRequest) SetChannelSyncOrderMemberType(_channelSyncOrderMemberType *ChannelSyncOrderMemberType) error {
 	r._channelSyncOrderMemberType = _channelSyncOrderMemberType
@@ -45,7 +45,7 @@ func (r *AlitripXhotelChannelOrderMembertypeSyncAPIRequest) SetChannelSyncOrderM
 	return nil
 }
 
-// Get ChannelSyncOrderMemberType Getter
+// GetChannelSyncOrderMemberType ChannelSyncOrderMemberType Getter
 func (r AlitripXhotelChannelOrderMembertypeSyncAPIRequest) GetChannelSyncOrderMemberType() *ChannelSyncOrderMemberType {
 	return r._channelSyncOrderMemberType
 }

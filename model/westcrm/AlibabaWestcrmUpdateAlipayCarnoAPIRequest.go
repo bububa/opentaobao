@@ -43,7 +43,7 @@ func (r AlibabaWestcrmUpdateAlipayCarnoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MallId Setter
+// SetMallId is MallId Setter
 // 商场id
 func (r *AlibabaWestcrmUpdateAlipayCarnoAPIRequest) SetMallId(_mallId int64) error {
 	r._mallId = _mallId
@@ -51,12 +51,12 @@ func (r *AlibabaWestcrmUpdateAlipayCarnoAPIRequest) SetMallId(_mallId int64) err
 	return nil
 }
 
-// Get MallId Getter
+// GetMallId MallId Getter
 func (r AlibabaWestcrmUpdateAlipayCarnoAPIRequest) GetMallId() int64 {
 	return r._mallId
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 用户id
 func (r *AlibabaWestcrmUpdateAlipayCarnoAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -64,12 +64,12 @@ func (r *AlibabaWestcrmUpdateAlipayCarnoAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaWestcrmUpdateAlipayCarnoAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is AlipayCardNo Setter
+// SetAlipayCardNo is AlipayCardNo Setter
 // 2088102011918821
 func (r *AlibabaWestcrmUpdateAlipayCarnoAPIRequest) SetAlipayCardNo(_alipayCardNo string) error {
 	r._alipayCardNo = _alipayCardNo
@@ -77,12 +77,12 @@ func (r *AlibabaWestcrmUpdateAlipayCarnoAPIRequest) SetAlipayCardNo(_alipayCardN
 	return nil
 }
 
-// Get AlipayCardNo Getter
+// GetAlipayCardNo AlipayCardNo Getter
 func (r AlibabaWestcrmUpdateAlipayCarnoAPIRequest) GetAlipayCardNo() string {
 	return r._alipayCardNo
 }
 
-// Set is WestcrmAppKey Setter
+// SetWestcrmAppKey is WestcrmAppKey Setter
 // appkey
 func (r *AlibabaWestcrmUpdateAlipayCarnoAPIRequest) SetWestcrmAppKey(_westcrmAppKey string) error {
 	r._westcrmAppKey = _westcrmAppKey
@@ -90,7 +90,7 @@ func (r *AlibabaWestcrmUpdateAlipayCarnoAPIRequest) SetWestcrmAppKey(_westcrmApp
 	return nil
 }
 
-// Get WestcrmAppKey Getter
+// GetWestcrmAppKey WestcrmAppKey Getter
 func (r AlibabaWestcrmUpdateAlipayCarnoAPIRequest) GetWestcrmAppKey() string {
 	return r._westcrmAppKey
 }

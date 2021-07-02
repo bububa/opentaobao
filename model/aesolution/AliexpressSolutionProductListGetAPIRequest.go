@@ -37,7 +37,7 @@ func (r AliexpressSolutionProductListGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AeopAEProductListQuery Setter
+// SetAeopAEProductListQuery is AeopAEProductListQuery Setter
 // request parameters to query
 func (r *AliexpressSolutionProductListGetAPIRequest) SetAeopAEProductListQuery(_aeopAEProductListQuery *ItemListQuery) error {
 	r._aeopAEProductListQuery = _aeopAEProductListQuery
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionProductListGetAPIRequest) SetAeopAEProductListQuery(_
 	return nil
 }
 
-// Get AeopAEProductListQuery Getter
+// GetAeopAEProductListQuery AeopAEProductListQuery Getter
 func (r AliexpressSolutionProductListGetAPIRequest) GetAeopAEProductListQuery() *ItemListQuery {
 	return r._aeopAEProductListQuery
 }

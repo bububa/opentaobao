@@ -37,7 +37,7 @@ func (r AlitripItemAddSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 类目id
 func (r *AlitripItemAddSchemaGetAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -45,7 +45,7 @@ func (r *AlitripItemAddSchemaGetAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r AlitripItemAddSchemaGetAPIRequest) GetCatId() int64 {
 	return r._catId
 }

@@ -43,7 +43,7 @@ func (r AlibabaWdkItemMerchantstoreskuCreateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店编码
 func (r *AlibabaWdkItemMerchantstoreskuCreateAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -51,12 +51,12 @@ func (r *AlibabaWdkItemMerchantstoreskuCreateAPIRequest) SetStoreId(_storeId str
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaWdkItemMerchantstoreskuCreateAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is SkuCode Setter
+// SetSkuCode is SkuCode Setter
 // 商品编码
 func (r *AlibabaWdkItemMerchantstoreskuCreateAPIRequest) SetSkuCode(_skuCode string) error {
 	r._skuCode = _skuCode
@@ -64,12 +64,12 @@ func (r *AlibabaWdkItemMerchantstoreskuCreateAPIRequest) SetSkuCode(_skuCode str
 	return nil
 }
 
-// Get SkuCode Getter
+// GetSkuCode SkuCode Getter
 func (r AlibabaWdkItemMerchantstoreskuCreateAPIRequest) GetSkuCode() string {
 	return r._skuCode
 }
 
-// Set is Params Setter
+// SetParams is Params Setter
 // 新建参数，是个json字符串
 func (r *AlibabaWdkItemMerchantstoreskuCreateAPIRequest) SetParams(_params string) error {
 	r._params = _params
@@ -77,12 +77,12 @@ func (r *AlibabaWdkItemMerchantstoreskuCreateAPIRequest) SetParams(_params strin
 	return nil
 }
 
-// Get Params Getter
+// GetParams Params Getter
 func (r AlibabaWdkItemMerchantstoreskuCreateAPIRequest) GetParams() string {
 	return r._params
 }
 
-// Set is OrgCode Setter
+// SetOrgCode is OrgCode Setter
 // 机构
 func (r *AlibabaWdkItemMerchantstoreskuCreateAPIRequest) SetOrgCode(_orgCode string) error {
 	r._orgCode = _orgCode
@@ -90,7 +90,7 @@ func (r *AlibabaWdkItemMerchantstoreskuCreateAPIRequest) SetOrgCode(_orgCode str
 	return nil
 }
 
-// Get OrgCode Getter
+// GetOrgCode OrgCode Getter
 func (r AlibabaWdkItemMerchantstoreskuCreateAPIRequest) GetOrgCode() string {
 	return r._orgCode
 }

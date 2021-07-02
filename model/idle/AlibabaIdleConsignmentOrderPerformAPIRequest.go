@@ -37,7 +37,7 @@ func (r AlibabaIdleConsignmentOrderPerformAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 帮卖订单同步DTO
 func (r *AlibabaIdleConsignmentOrderPerformAPIRequest) SetParam(_param *ConsignmentOrderSynDto) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaIdleConsignmentOrderPerformAPIRequest) SetParam(_param *Consignm
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaIdleConsignmentOrderPerformAPIRequest) GetParam() *ConsignmentOrderSynDto {
 	return r._param
 }

@@ -65,7 +65,7 @@ func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is WorkOrderType Setter
+// SetWorkOrderType is WorkOrderType Setter
 // 工单类型
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetWorkOrderType(_workOrderType string) error {
 	r._workOrderType = _workOrderType
@@ -73,12 +73,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetWorkOrderType(_wo
 	return nil
 }
 
-// Get WorkOrderType Getter
+// GetWorkOrderType WorkOrderType Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetWorkOrderType() string {
 	return r._workOrderType
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务类型
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -86,12 +86,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetBizType(_bizType 
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is Memo Setter
+// SetMemo is Memo Setter
 // 工单创建备注
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
@@ -99,12 +99,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetMemo(_memo string
 	return nil
 }
 
-// Get Memo Getter
+// GetMemo Memo Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetMemo() string {
 	return r._memo
 }
 
-// Set is MemberId Setter
+// SetMemberId is MemberId Setter
 // 货主商家用户id
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetMemberId(_memberId string) error {
 	r._memberId = _memberId
@@ -112,12 +112,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetMemberId(_memberI
 	return nil
 }
 
-// Get MemberId Getter
+// GetMemberId MemberId Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetMemberId() string {
 	return r._memberId
 }
 
-// Set is MemberRole Setter
+// SetMemberRole is MemberRole Setter
 // 货主用户角色
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetMemberRole(_memberRole string) error {
 	r._memberRole = _memberRole
@@ -125,12 +125,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetMemberRole(_membe
 	return nil
 }
 
-// Get MemberRole Getter
+// GetMemberRole MemberRole Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetMemberRole() string {
 	return r._memberRole
 }
 
-// Set is CreatorId Setter
+// SetCreatorId is CreatorId Setter
 // 创建者淘宝id（区分子账号）
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetCreatorId(_creatorId string) error {
 	r._creatorId = _creatorId
@@ -138,12 +138,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetCreatorId(_creato
 	return nil
 }
 
-// Get CreatorId Getter
+// GetCreatorId CreatorId Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetCreatorId() string {
 	return r._creatorId
 }
 
-// Set is CreatorRole Setter
+// SetCreatorRole is CreatorRole Setter
 // 创建者角色
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetCreatorRole(_creatorRole string) error {
 	r._creatorRole = _creatorRole
@@ -151,12 +151,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetCreatorRole(_crea
 	return nil
 }
 
-// Get CreatorRole Getter
+// GetCreatorRole CreatorRole Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetCreatorRole() string {
 	return r._creatorRole
 }
 
-// Set is BizEntityValue Setter
+// SetBizEntityValue is BizEntityValue Setter
 // 外部业务系统主键
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetBizEntityValue(_bizEntityValue string) error {
 	r._bizEntityValue = _bizEntityValue
@@ -164,12 +164,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetBizEntityValue(_b
 	return nil
 }
 
-// Get BizEntityValue Getter
+// GetBizEntityValue BizEntityValue Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetBizEntityValue() string {
 	return r._bizEntityValue
 }
 
-// Set is ShopUserId Setter
+// SetShopUserId is ShopUserId Setter
 // 店铺用户id
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetShopUserId(_shopUserId string) error {
 	r._shopUserId = _shopUserId
@@ -177,12 +177,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetShopUserId(_shopU
 	return nil
 }
 
-// Get ShopUserId Getter
+// GetShopUserId ShopUserId Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetShopUserId() string {
 	return r._shopUserId
 }
 
-// Set is TradeId Setter
+// SetTradeId is TradeId Setter
 // 交易订单id
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetTradeId(_tradeId string) error {
 	r._tradeId = _tradeId
@@ -190,12 +190,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetTradeId(_tradeId 
 	return nil
 }
 
-// Get TradeId Getter
+// GetTradeId TradeId Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetTradeId() string {
 	return r._tradeId
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 工单来源
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -203,12 +203,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetSource(_source st
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is SourceSign Setter
+// SetSourceSign is SourceSign Setter
 // 来源签名，用于唯一区分不同的来源方
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetSourceSign(_sourceSign string) error {
 	r._sourceSign = _sourceSign
@@ -216,12 +216,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetSourceSign(_sourc
 	return nil
 }
 
-// Get SourceSign Getter
+// GetSourceSign SourceSign Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetSourceSign() string {
 	return r._sourceSign
 }
 
-// Set is MailNo Setter
+// SetMailNo is MailNo Setter
 // 运单号
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetMailNo(_mailNo string) error {
 	r._mailNo = _mailNo
@@ -229,12 +229,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetMailNo(_mailNo st
 	return nil
 }
 
-// Get MailNo Getter
+// GetMailNo MailNo Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetMailNo() string {
 	return r._mailNo
 }
 
-// Set is Features Setter
+// SetFeatures is Features Setter
 // 扩展字段
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetFeatures(_features string) error {
 	r._features = _features
@@ -242,12 +242,12 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetFeatures(_feature
 	return nil
 }
 
-// Get Features Getter
+// GetFeatures Features Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetFeatures() string {
 	return r._features
 }
 
-// Set is AttachPathList Setter
+// SetAttachPathList is AttachPathList Setter
 // 凭证地址列表
 func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetAttachPathList(_attachPathList []string) error {
 	r._attachPathList = _attachPathList
@@ -255,7 +255,7 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetAttachPathList(_a
 	return nil
 }
 
-// Get AttachPathList Getter
+// GetAttachPathList AttachPathList Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetAttachPathList() []string {
 	return r._attachPathList
 }

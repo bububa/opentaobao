@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmCardActiveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamActiveCardOpenReq Setter
+// SetParamActiveCardOpenReq is ParamActiveCardOpenReq Setter
 // 请求参数
 func (r *AlibabaAlscCrmCardActiveAPIRequest) SetParamActiveCardOpenReq(_paramActiveCardOpenReq *ActiveCardOpenReq) error {
 	r._paramActiveCardOpenReq = _paramActiveCardOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmCardActiveAPIRequest) SetParamActiveCardOpenReq(_paramAct
 	return nil
 }
 
-// Get ParamActiveCardOpenReq Getter
+// GetParamActiveCardOpenReq ParamActiveCardOpenReq Getter
 func (r AlibabaAlscCrmCardActiveAPIRequest) GetParamActiveCardOpenReq() *ActiveCardOpenReq {
 	return r._paramActiveCardOpenReq
 }

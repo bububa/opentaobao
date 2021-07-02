@@ -45,7 +45,7 @@ func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetApiParams
 	return params
 }
 
-// Set is UniqReserveCode Setter
+// SetUniqReserveCode is UniqReserveCode Setter
 // 服务商预约凭证
 func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
 	r._uniqReserveCode = _uniqReserveCode
@@ -53,12 +53,12 @@ func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetUniqRese
 	return nil
 }
 
-// Get UniqReserveCode Getter
+// GetUniqReserveCode UniqReserveCode Getter
 func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetUniqReserveCode() string {
 	return r._uniqReserveCode
 }
 
-// Set is MedicalPractitionerInfo Setter
+// SetMedicalPractitionerInfo is MedicalPractitionerInfo Setter
 // 从业者信息
 func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetMedicalPractitionerInfo(_medicalPractitionerInfo *MedicalPractitionerInfo) error {
 	r._medicalPractitionerInfo = _medicalPractitionerInfo
@@ -66,12 +66,12 @@ func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetMedicalP
 	return nil
 }
 
-// Get MedicalPractitionerInfo Getter
+// GetMedicalPractitionerInfo MedicalPractitionerInfo Getter
 func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetMedicalPractitionerInfo() *MedicalPractitionerInfo {
 	return r._medicalPractitionerInfo
 }
 
-// Set is ReserveNumber Setter
+// SetReserveNumber is ReserveNumber Setter
 // 健康预约凭证
 func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetReserveNumber(_reserveNumber string) error {
 	r._reserveNumber = _reserveNumber
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetReserveN
 	return nil
 }
 
-// Get ReserveNumber Getter
+// GetReserveNumber ReserveNumber Getter
 func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetReserveNumber() string {
 	return r._reserveNumber
 }
 
-// Set is Event Setter
+// SetEvent is Event Setter
 // 事件(ASSIGNED_PRACTITONER:已分配医护人员、PRACTITONER_GO_OUT:医护人员已出发、PRACTITONER_HOME:医护人员已到家、PRACTITONER_CHECKED:医护人员检查完成)、CHANGE_PRACTITONER(变更医护人员)
 func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetEvent(_event string) error {
 	r._event = _event
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetEvent(_e
 	return nil
 }
 
-// Get Event Getter
+// GetEvent Event Getter
 func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetEvent() string {
 	return r._event
 }
 
-// Set is EventOccurTime Setter
+// SetEventOccurTime is EventOccurTime Setter
 // 事件发生时间
 func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetEventOccurTime(_eventOccurTime string) error {
 	r._eventOccurTime = _eventOccurTime
@@ -105,7 +105,7 @@ func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetEventOcc
 	return nil
 }
 
-// Get EventOccurTime Getter
+// GetEventOccurTime EventOccurTime Getter
 func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetEventOccurTime() string {
 	return r._eventOccurTime
 }

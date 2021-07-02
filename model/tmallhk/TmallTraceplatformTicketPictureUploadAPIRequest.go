@@ -39,7 +39,7 @@ func (r TmallTraceplatformTicketPictureUploadAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 子订单号
 func (r *TmallTraceplatformTicketPictureUploadAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
@@ -47,12 +47,12 @@ func (r *TmallTraceplatformTicketPictureUploadAPIRequest) SetBizOrderId(_bizOrde
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r TmallTraceplatformTicketPictureUploadAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }
 
-// Set is File Setter
+// SetFile is File Setter
 // 图片二进制流，只支持jpg/jpeg/png格式
 func (r *TmallTraceplatformTicketPictureUploadAPIRequest) SetFile(_file *model.File) error {
 	r._file = _file
@@ -60,7 +60,7 @@ func (r *TmallTraceplatformTicketPictureUploadAPIRequest) SetFile(_file *model.F
 	return nil
 }
 
-// Get File Getter
+// GetFile File Getter
 func (r TmallTraceplatformTicketPictureUploadAPIRequest) GetFile() *model.File {
 	return r._file
 }

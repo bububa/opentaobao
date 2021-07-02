@@ -41,7 +41,7 @@ func (r TaobaoSingletreasureActivityItemQueryAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动Id
 func (r *TaobaoSingletreasureActivityItemQueryAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -49,12 +49,12 @@ func (r *TaobaoSingletreasureActivityItemQueryAPIRequest) SetActivityId(_activit
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoSingletreasureActivityItemQueryAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小
 func (r *TaobaoSingletreasureActivityItemQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -62,12 +62,12 @@ func (r *TaobaoSingletreasureActivityItemQueryAPIRequest) SetPageSize(_pageSize 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoSingletreasureActivityItemQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNumber Setter
+// SetPageNumber is PageNumber Setter
 // 页码
 func (r *TaobaoSingletreasureActivityItemQueryAPIRequest) SetPageNumber(_pageNumber int64) error {
 	r._pageNumber = _pageNumber
@@ -75,7 +75,7 @@ func (r *TaobaoSingletreasureActivityItemQueryAPIRequest) SetPageNumber(_pageNum
 	return nil
 }
 
-// Get PageNumber Getter
+// GetPageNumber PageNumber Getter
 func (r TaobaoSingletreasureActivityItemQueryAPIRequest) GetPageNumber() int64 {
 	return r._pageNumber
 }

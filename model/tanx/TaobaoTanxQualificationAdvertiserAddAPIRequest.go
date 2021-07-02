@@ -43,7 +43,7 @@ func (r TaobaoTanxQualificationAdvertiserAddAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Advertisers Setter
+// SetAdvertisers is Advertisers Setter
 // 广告主对象
 func (r *TaobaoTanxQualificationAdvertiserAddAPIRequest) SetAdvertisers(_advertisers []AdvertiserDto) error {
 	r._advertisers = _advertisers
@@ -51,12 +51,12 @@ func (r *TaobaoTanxQualificationAdvertiserAddAPIRequest) SetAdvertisers(_adverti
 	return nil
 }
 
-// Get Advertisers Getter
+// GetAdvertisers Advertisers Getter
 func (r TaobaoTanxQualificationAdvertiserAddAPIRequest) GetAdvertisers() []AdvertiserDto {
 	return r._advertisers
 }
 
-// Set is MemberId Setter
+// SetMemberId is MemberId Setter
 // dsp用户memberId
 func (r *TaobaoTanxQualificationAdvertiserAddAPIRequest) SetMemberId(_memberId int64) error {
 	r._memberId = _memberId
@@ -64,12 +64,12 @@ func (r *TaobaoTanxQualificationAdvertiserAddAPIRequest) SetMemberId(_memberId i
 	return nil
 }
 
-// Get MemberId Getter
+// GetMemberId MemberId Getter
 func (r TaobaoTanxQualificationAdvertiserAddAPIRequest) GetMemberId() int64 {
 	return r._memberId
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // dsp用户验证token
 func (r *TaobaoTanxQualificationAdvertiserAddAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -77,12 +77,12 @@ func (r *TaobaoTanxQualificationAdvertiserAddAPIRequest) SetToken(_token string)
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoTanxQualificationAdvertiserAddAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is SignTime Setter
+// SetSignTime is SignTime Setter
 // 从1970年到当前时间的秒
 func (r *TaobaoTanxQualificationAdvertiserAddAPIRequest) SetSignTime(_signTime int64) error {
 	r._signTime = _signTime
@@ -90,7 +90,7 @@ func (r *TaobaoTanxQualificationAdvertiserAddAPIRequest) SetSignTime(_signTime i
 	return nil
 }
 
-// Get SignTime Getter
+// GetSignTime SignTime Getter
 func (r TaobaoTanxQualificationAdvertiserAddAPIRequest) GetSignTime() int64 {
 	return r._signTime
 }

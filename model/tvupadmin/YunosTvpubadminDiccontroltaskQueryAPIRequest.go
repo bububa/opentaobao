@@ -45,7 +45,7 @@ func (r YunosTvpubadminDiccontroltaskQueryAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 任务名称
 func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -53,12 +53,12 @@ func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetName(_name string) err
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r YunosTvpubadminDiccontroltaskQueryAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 任务状态
 func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -66,12 +66,12 @@ func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetStatus(_status int64) 
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r YunosTvpubadminDiccontroltaskQueryAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照方
 func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -79,12 +79,12 @@ func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetLicense(_license int64
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminDiccontroltaskQueryAPIRequest) GetLicense() int64 {
 	return r._license
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 当前页码值
 func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -92,12 +92,12 @@ func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetPageNo(_pageNo int64) 
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r YunosTvpubadminDiccontroltaskQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数
 func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -105,7 +105,7 @@ func (r *YunosTvpubadminDiccontroltaskQueryAPIRequest) SetPageSize(_pageSize int
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r YunosTvpubadminDiccontroltaskQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

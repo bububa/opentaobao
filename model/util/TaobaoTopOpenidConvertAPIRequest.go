@@ -37,7 +37,7 @@ func (r TaobaoTopOpenidConvertAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MixNick Setter
+// SetMixNick is MixNick Setter
 // 混淆nick转open_id
 func (r *TaobaoTopOpenidConvertAPIRequest) SetMixNick(_mixNick string) error {
 	r._mixNick = _mixNick
@@ -45,7 +45,7 @@ func (r *TaobaoTopOpenidConvertAPIRequest) SetMixNick(_mixNick string) error {
 	return nil
 }
 
-// Get MixNick Getter
+// GetMixNick MixNick Getter
 func (r TaobaoTopOpenidConvertAPIRequest) GetMixNick() string {
 	return r._mixNick
 }

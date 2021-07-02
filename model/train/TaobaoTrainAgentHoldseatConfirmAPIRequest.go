@@ -37,7 +37,7 @@ func (r TaobaoTrainAgentHoldseatConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is HoldSeatParam Setter
+// SetHoldSeatParam is HoldSeatParam Setter
 // 占座入参
 func (r *TaobaoTrainAgentHoldseatConfirmAPIRequest) SetHoldSeatParam(_holdSeatParam *HoldSeatParam) error {
 	r._holdSeatParam = _holdSeatParam
@@ -45,7 +45,7 @@ func (r *TaobaoTrainAgentHoldseatConfirmAPIRequest) SetHoldSeatParam(_holdSeatPa
 	return nil
 }
 
-// Get HoldSeatParam Getter
+// GetHoldSeatParam HoldSeatParam Getter
 func (r TaobaoTrainAgentHoldseatConfirmAPIRequest) GetHoldSeatParam() *HoldSeatParam {
 	return r._holdSeatParam
 }

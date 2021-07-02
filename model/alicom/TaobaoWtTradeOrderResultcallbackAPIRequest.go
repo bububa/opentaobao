@@ -37,7 +37,7 @@ func (r TaobaoWtTradeOrderResultcallbackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 系统自动生成
 func (r *TaobaoWtTradeOrderResultcallbackAPIRequest) SetParam0(_param0 *OrderResultDto) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TaobaoWtTradeOrderResultcallbackAPIRequest) SetParam0(_param0 *OrderRes
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoWtTradeOrderResultcallbackAPIRequest) GetParam0() *OrderResultDto {
 	return r._param0
 }

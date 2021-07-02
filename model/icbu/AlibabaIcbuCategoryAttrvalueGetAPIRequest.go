@@ -37,7 +37,7 @@ func (r AlibabaIcbuCategoryAttrvalueGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AttributeValueRequest Setter
+// SetAttributeValueRequest is AttributeValueRequest Setter
 // 属性值request对象
 func (r *AlibabaIcbuCategoryAttrvalueGetAPIRequest) SetAttributeValueRequest(_attributeValueRequest *AttributeValueRequest) error {
 	r._attributeValueRequest = _attributeValueRequest
@@ -45,7 +45,7 @@ func (r *AlibabaIcbuCategoryAttrvalueGetAPIRequest) SetAttributeValueRequest(_at
 	return nil
 }
 
-// Get AttributeValueRequest Getter
+// GetAttributeValueRequest AttributeValueRequest Getter
 func (r AlibabaIcbuCategoryAttrvalueGetAPIRequest) GetAttributeValueRequest() *AttributeValueRequest {
 	return r._attributeValueRequest
 }

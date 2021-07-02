@@ -37,7 +37,7 @@ func (r AlibabaLstVasTradeflowSaveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TradeFlowModelList Setter
+// SetTradeFlowModelList is TradeFlowModelList Setter
 // 交易流水信息
 func (r *AlibabaLstVasTradeflowSaveAPIRequest) SetTradeFlowModelList(_tradeFlowModelList *TradeFlowModel) error {
 	r._tradeFlowModelList = _tradeFlowModelList
@@ -45,7 +45,7 @@ func (r *AlibabaLstVasTradeflowSaveAPIRequest) SetTradeFlowModelList(_tradeFlowM
 	return nil
 }
 
-// Get TradeFlowModelList Getter
+// GetTradeFlowModelList TradeFlowModelList Getter
 func (r AlibabaLstVasTradeflowSaveAPIRequest) GetTradeFlowModelList() *TradeFlowModel {
 	return r._tradeFlowModelList
 }

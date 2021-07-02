@@ -47,7 +47,7 @@ func (r AlibabaCampusAclQueryallemppermiitemAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is CompanyId Setter
+// SetCompanyId is CompanyId Setter
 // 公司id不填默认SYS_000
 func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) SetCompanyId(_companyId int64) error {
 	r._companyId = _companyId
@@ -55,12 +55,12 @@ func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) SetCompanyId(_companyId
 	return nil
 }
 
-// Get CompanyId Getter
+// GetCompanyId CompanyId Getter
 func (r AlibabaCampusAclQueryallemppermiitemAPIRequest) GetCompanyId() int64 {
 	return r._companyId
 }
 
-// Set is SystemId Setter
+// SetSystemId is SystemId Setter
 // 系统id
 func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) SetSystemId(_systemId string) error {
 	r._systemId = _systemId
@@ -68,12 +68,12 @@ func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) SetSystemId(_systemId s
 	return nil
 }
 
-// Get SystemId Getter
+// GetSystemId SystemId Getter
 func (r AlibabaCampusAclQueryallemppermiitemAPIRequest) GetSystemId() string {
 	return r._systemId
 }
 
-// Set is CampusId Setter
+// SetCampusId is CampusId Setter
 // 园区id
 func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) SetCampusId(_campusId int64) error {
 	r._campusId = _campusId
@@ -81,12 +81,12 @@ func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) SetCampusId(_campusId i
 	return nil
 }
 
-// Get CampusId Getter
+// GetCampusId CampusId Getter
 func (r AlibabaCampusAclQueryallemppermiitemAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }
 
-// Set is AccountId Setter
+// SetAccountId is AccountId Setter
 // 用户账号
 func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) SetAccountId(_accountId string) error {
 	r._accountId = _accountId
@@ -94,12 +94,12 @@ func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) SetAccountId(_accountId
 	return nil
 }
 
-// Get AccountId Getter
+// GetAccountId AccountId Getter
 func (r AlibabaCampusAclQueryallemppermiitemAPIRequest) GetAccountId() string {
 	return r._accountId
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 每页多少条
 func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -107,12 +107,12 @@ func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) SetPage(_page int64) er
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaCampusAclQueryallemppermiitemAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页记录数
 func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -120,7 +120,7 @@ func (r *AlibabaCampusAclQueryallemppermiitemAPIRequest) SetPageSize(_pageSize i
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaCampusAclQueryallemppermiitemAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

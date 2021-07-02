@@ -37,7 +37,7 @@ func (r TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest) GetA
 	return params
 }
 
-// Set is AbnormalStatusChangeDto Setter
+// SetAbnormalStatusChangeDto is AbnormalStatusChangeDto Setter
 // 入参
 func (r *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest) SetAbnormalStatusChangeDto(_abnormalStatusChangeDto []AbnormalStatusChangeDto) error {
 	r._abnormalStatusChangeDto = _abnormalStatusChangeDto
@@ -45,7 +45,7 @@ func (r *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest) Set
 	return nil
 }
 
-// Get AbnormalStatusChangeDto Getter
+// GetAbnormalStatusChangeDto AbnormalStatusChangeDto Getter
 func (r TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIRequest) GetAbnormalStatusChangeDto() []AbnormalStatusChangeDto {
 	return r._abnormalStatusChangeDto
 }

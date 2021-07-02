@@ -37,7 +37,7 @@ func (r AliexpressSolutionProductEditAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EditProductRequest Setter
+// SetEditProductRequest is EditProductRequest Setter
 // input param
 func (r *AliexpressSolutionProductEditAPIRequest) SetEditProductRequest(_editProductRequest *PostProductRequestDto) error {
 	r._editProductRequest = _editProductRequest
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionProductEditAPIRequest) SetEditProductRequest(_editPro
 	return nil
 }
 
-// Get EditProductRequest Getter
+// GetEditProductRequest EditProductRequest Getter
 func (r AliexpressSolutionProductEditAPIRequest) GetEditProductRequest() *PostProductRequestDto {
 	return r._editProductRequest
 }

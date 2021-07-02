@@ -37,7 +37,7 @@ func (r TmallTmjlappSapServiceorderCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CancelRequest Setter
+// SetCancelRequest is CancelRequest Setter
 // 取消服务单请求
 func (r *TmallTmjlappSapServiceorderCancelAPIRequest) SetCancelRequest(_cancelRequest *Dtcancelrequest) error {
 	r._cancelRequest = _cancelRequest
@@ -45,7 +45,7 @@ func (r *TmallTmjlappSapServiceorderCancelAPIRequest) SetCancelRequest(_cancelRe
 	return nil
 }
 
-// Get CancelRequest Getter
+// GetCancelRequest CancelRequest Getter
 func (r TmallTmjlappSapServiceorderCancelAPIRequest) GetCancelRequest() *Dtcancelrequest {
 	return r._cancelRequest
 }

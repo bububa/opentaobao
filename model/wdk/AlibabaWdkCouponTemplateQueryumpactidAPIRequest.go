@@ -39,7 +39,7 @@ func (r AlibabaWdkCouponTemplateQueryumpactidAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is SourceIds Setter
+// SetSourceIds is SourceIds Setter
 // 券模版id列表
 func (r *AlibabaWdkCouponTemplateQueryumpactidAPIRequest) SetSourceIds(_sourceIds []int64) error {
 	r._sourceIds = _sourceIds
@@ -47,12 +47,12 @@ func (r *AlibabaWdkCouponTemplateQueryumpactidAPIRequest) SetSourceIds(_sourceId
 	return nil
 }
 
-// Get SourceIds Getter
+// GetSourceIds SourceIds Getter
 func (r AlibabaWdkCouponTemplateQueryumpactidAPIRequest) GetSourceIds() []int64 {
 	return r._sourceIds
 }
 
-// Set is WdkCouponType Setter
+// SetWdkCouponType is WdkCouponType Setter
 // 优惠券类型
 func (r *AlibabaWdkCouponTemplateQueryumpactidAPIRequest) SetWdkCouponType(_wdkCouponType int64) error {
 	r._wdkCouponType = _wdkCouponType
@@ -60,7 +60,7 @@ func (r *AlibabaWdkCouponTemplateQueryumpactidAPIRequest) SetWdkCouponType(_wdkC
 	return nil
 }
 
-// Get WdkCouponType Getter
+// GetWdkCouponType WdkCouponType Getter
 func (r AlibabaWdkCouponTemplateQueryumpactidAPIRequest) GetWdkCouponType() int64 {
 	return r._wdkCouponType
 }

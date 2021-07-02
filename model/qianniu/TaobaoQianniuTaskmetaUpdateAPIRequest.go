@@ -37,7 +37,7 @@ func (r TaobaoQianniuTaskmetaUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Meta Setter
+// SetMeta is Meta Setter
 // 要更新的任务元数据，JSON格式，例如：<br/>meta= {<br/>		"id" : 1,<br/>		"title" : "xxx",<br/>		"content" : "yyyy",<br/>		"biz_sys_Id" : 12232,<br/>		"biz_sys_task_type" : 1212,<br/>		"start_time" : 1380173565480,<br/>		"end_time" : 1380173565480,<br/> "sender_uid" : 213123213,<br/>		"sender_nick" : "tbtest1063",<br/>		"reminder_flag" : 1,<br/>		"finish_strategy" : 1<br/>	}
 func (r *TaobaoQianniuTaskmetaUpdateAPIRequest) SetMeta(_meta string) error {
 	r._meta = _meta
@@ -45,7 +45,7 @@ func (r *TaobaoQianniuTaskmetaUpdateAPIRequest) SetMeta(_meta string) error {
 	return nil
 }
 
-// Get Meta Getter
+// GetMeta Meta Getter
 func (r TaobaoQianniuTaskmetaUpdateAPIRequest) GetMeta() string {
 	return r._meta
 }

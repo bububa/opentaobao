@@ -45,7 +45,7 @@ func (r TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 账户体系隔离
 func (r *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -53,12 +53,12 @@ func (r *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) SetSchema(_schema s
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
 func (r *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -66,12 +66,12 @@ func (r *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) SetUserId(_userId s
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is UtdId Setter
+// SetUtdId is UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
 func (r *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
@@ -79,12 +79,12 @@ func (r *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) SetUtdId(_utdId str
 	return nil
 }
 
-// Get UtdId Getter
+// GetUtdId UtdId Getter
 func (r TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息，用于存放APP类型等
 func (r *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -92,12 +92,12 @@ func (r *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) SetExt(_ext string)
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is Param1 Setter
+// SetParam1 is Param1 Setter
 // 设备id
 func (r *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) SetParam1(_param1 string) error {
 	r._param1 = _param1
@@ -105,7 +105,7 @@ func (r *TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) SetParam1(_param1 s
 	return nil
 }
 
-// Get Param1 Getter
+// GetParam1 Param1 Getter
 func (r TaobaoAilabAicloudTopDeviceSettingsResetAPIRequest) GetParam1() string {
 	return r._param1
 }

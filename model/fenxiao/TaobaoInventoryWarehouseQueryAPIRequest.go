@@ -39,7 +39,7 @@ func (r TaobaoInventoryWarehouseQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *TaobaoInventoryWarehouseQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -47,12 +47,12 @@ func (r *TaobaoInventoryWarehouseQueryAPIRequest) SetPageNo(_pageNo int64) error
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoInventoryWarehouseQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小
 func (r *TaobaoInventoryWarehouseQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -60,7 +60,7 @@ func (r *TaobaoInventoryWarehouseQueryAPIRequest) SetPageSize(_pageSize int64) e
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoInventoryWarehouseQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

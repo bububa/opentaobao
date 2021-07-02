@@ -37,7 +37,7 @@ func (r AlibabaNazcaTokenChangeauthapplyGetAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // token
 func (r *AlibabaNazcaTokenChangeauthapplyGetAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -45,7 +45,7 @@ func (r *AlibabaNazcaTokenChangeauthapplyGetAPIRequest) SetToken(_token string) 
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlibabaNazcaTokenChangeauthapplyGetAPIRequest) GetToken() string {
 	return r._token
 }

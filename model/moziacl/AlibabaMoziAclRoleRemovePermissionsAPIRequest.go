@@ -37,7 +37,7 @@ func (r AlibabaMoziAclRoleRemovePermissionsAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is RemovePermissionsFromRole Setter
+// SetRemovePermissionsFromRole is RemovePermissionsFromRole Setter
 // 角色移除功能权限请求对象
 func (r *AlibabaMoziAclRoleRemovePermissionsAPIRequest) SetRemovePermissionsFromRole(_removePermissionsFromRole *RemovePermissionsFromRoleRequest) error {
 	r._removePermissionsFromRole = _removePermissionsFromRole
@@ -45,7 +45,7 @@ func (r *AlibabaMoziAclRoleRemovePermissionsAPIRequest) SetRemovePermissionsFrom
 	return nil
 }
 
-// Get RemovePermissionsFromRole Getter
+// GetRemovePermissionsFromRole RemovePermissionsFromRole Getter
 func (r AlibabaMoziAclRoleRemovePermissionsAPIRequest) GetRemovePermissionsFromRole() *RemovePermissionsFromRoleRequest {
 	return r._removePermissionsFromRole
 }

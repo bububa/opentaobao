@@ -37,7 +37,7 @@ func (r AlibabaScbpTargetAdPlanProductListGetAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is TopP4pQuickProductQuery Setter
+// SetTopP4pQuickProductQuery is TopP4pQuickProductQuery Setter
 // TopP4pQuickProductQuery
 func (r *AlibabaScbpTargetAdPlanProductListGetAPIRequest) SetTopP4pQuickProductQuery(_topP4pQuickProductQuery *TopP4pQuickProductQuery) error {
 	r._topP4pQuickProductQuery = _topP4pQuickProductQuery
@@ -45,7 +45,7 @@ func (r *AlibabaScbpTargetAdPlanProductListGetAPIRequest) SetTopP4pQuickProductQ
 	return nil
 }
 
-// Get TopP4pQuickProductQuery Getter
+// GetTopP4pQuickProductQuery TopP4pQuickProductQuery Getter
 func (r AlibabaScbpTargetAdPlanProductListGetAPIRequest) GetTopP4pQuickProductQuery() *TopP4pQuickProductQuery {
 	return r._topP4pQuickProductQuery
 }

@@ -39,7 +39,7 @@ func (r AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 任务唯一标识
 func (r *AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) SetItemId(_itemId string) error {
 	r._itemId = _itemId
@@ -47,12 +47,12 @@ func (r *AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) SetItemId(_itemId st
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) GetItemId() string {
 	return r._itemId
 }
 
-// Set is Locale Setter
+// SetLocale is Locale Setter
 // 本地化语言信息,用于指定返回结果内容所使用的语言(默认为zh_CN,目前仅支持zh_CN)
 func (r *AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) SetLocale(_locale *Locale) error {
 	r._locale = _locale
@@ -60,7 +60,7 @@ func (r *AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) SetLocale(_locale *L
 	return nil
 }
 
-// Get Locale Getter
+// GetLocale Locale Getter
 func (r AlibabaSecurityJaqAppRiskdetailbatchGetAPIRequest) GetLocale() *Locale {
 	return r._locale
 }

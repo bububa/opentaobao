@@ -37,7 +37,7 @@ func (r AlibabaIdleUserPermitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamUserGrantRequest Setter
+// SetParamUserGrantRequest is ParamUserGrantRequest Setter
 // 授权请求
 func (r *AlibabaIdleUserPermitAPIRequest) SetParamUserGrantRequest(_paramUserGrantRequest *UserGrantRequest) error {
 	r._paramUserGrantRequest = _paramUserGrantRequest
@@ -45,7 +45,7 @@ func (r *AlibabaIdleUserPermitAPIRequest) SetParamUserGrantRequest(_paramUserGra
 	return nil
 }
 
-// Get ParamUserGrantRequest Getter
+// GetParamUserGrantRequest ParamUserGrantRequest Getter
 func (r AlibabaIdleUserPermitAPIRequest) GetParamUserGrantRequest() *UserGrantRequest {
 	return r._paramUserGrantRequest
 }

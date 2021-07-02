@@ -37,7 +37,7 @@ func (r AlibabaAlicomWttOpentradeCreateorderAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 入参请求说明
 func (r *AlibabaAlicomWttOpentradeCreateorderAPIRequest) SetParam0(_param0 *OpentradCreateOrderRequestDto) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlibabaAlicomWttOpentradeCreateorderAPIRequest) SetParam0(_param0 *Open
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaAlicomWttOpentradeCreateorderAPIRequest) GetParam0() *OpentradCreateOrderRequestDto {
 	return r._param0
 }

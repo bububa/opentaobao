@@ -37,7 +37,7 @@ func (r AlibabaAsrDataservicePromotionruleDeleteAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is PosKey Setter
+// SetPosKey is PosKey Setter
 // poskey
 func (r *AlibabaAsrDataservicePromotionruleDeleteAPIRequest) SetPosKey(_posKey int64) error {
 	r._posKey = _posKey
@@ -45,7 +45,7 @@ func (r *AlibabaAsrDataservicePromotionruleDeleteAPIRequest) SetPosKey(_posKey i
 	return nil
 }
 
-// Get PosKey Getter
+// GetPosKey PosKey Getter
 func (r AlibabaAsrDataservicePromotionruleDeleteAPIRequest) GetPosKey() int64 {
 	return r._posKey
 }

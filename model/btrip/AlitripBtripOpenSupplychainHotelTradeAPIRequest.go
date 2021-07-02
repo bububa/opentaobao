@@ -37,7 +37,7 @@ func (r AlitripBtripOpenSupplychainHotelTradeAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 入参
 func (r *AlitripBtripOpenSupplychainHotelTradeAPIRequest) SetRq(_rq *OpenApiZzdSearchRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripOpenSupplychainHotelTradeAPIRequest) SetRq(_rq *OpenApiZzdS
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripOpenSupplychainHotelTradeAPIRequest) GetRq() *OpenApiZzdSearchRq {
 	return r._rq
 }

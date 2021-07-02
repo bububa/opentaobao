@@ -37,7 +37,7 @@ func (r TaobaoItemcatsAuthorizeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的字段。目前支持有：<br/>brand.vid, brand.name, <br/>item_cat.cid, item_cat.name, item_cat.status,item_cat.sort_order,item_cat.parent_cid,item_cat.is_parent,<br/>xinpin_item_cat.cid, <br/>xinpin_item_cat.name, <br/>xinpin_item_cat.status,<br/>xinpin_item_cat.sort_order,<br/>xinpin_item_cat.parent_cid,<br/>xinpin_item_cat.is_parent
 func (r *TaobaoItemcatsAuthorizeGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -45,7 +45,7 @@ func (r *TaobaoItemcatsAuthorizeGetAPIRequest) SetFields(_fields []string) error
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoItemcatsAuthorizeGetAPIRequest) GetFields() []string {
 	return r._fields
 }

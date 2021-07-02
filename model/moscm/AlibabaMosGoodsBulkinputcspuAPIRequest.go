@@ -37,7 +37,7 @@ func (r AlibabaMosGoodsBulkinputcspuAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CspuInputDtoList Setter
+// SetCspuInputDtoList is CspuInputDtoList Setter
 // 录入商品信息列表（最大列表长度：20）
 func (r *AlibabaMosGoodsBulkinputcspuAPIRequest) SetCspuInputDtoList(_cspuInputDtoList []CspuInputDto) error {
 	r._cspuInputDtoList = _cspuInputDtoList
@@ -45,7 +45,7 @@ func (r *AlibabaMosGoodsBulkinputcspuAPIRequest) SetCspuInputDtoList(_cspuInputD
 	return nil
 }
 
-// Get CspuInputDtoList Getter
+// GetCspuInputDtoList CspuInputDtoList Getter
 func (r AlibabaMosGoodsBulkinputcspuAPIRequest) GetCspuInputDtoList() []CspuInputDto {
 	return r._cspuInputDtoList
 }

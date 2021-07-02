@@ -41,7 +41,7 @@ func (r TmallServiceCodeConsumeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ConsumeCode Setter
+// SetConsumeCode is ConsumeCode Setter
 // 核销码
 func (r *TmallServiceCodeConsumeAPIRequest) SetConsumeCode(_consumeCode string) error {
 	r._consumeCode = _consumeCode
@@ -49,12 +49,12 @@ func (r *TmallServiceCodeConsumeAPIRequest) SetConsumeCode(_consumeCode string) 
 	return nil
 }
 
-// Get ConsumeCode Getter
+// GetConsumeCode ConsumeCode Getter
 func (r TmallServiceCodeConsumeAPIRequest) GetConsumeCode() string {
 	return r._consumeCode
 }
 
-// Set is OperatorNick Setter
+// SetOperatorNick is OperatorNick Setter
 // 核销帐号
 func (r *TmallServiceCodeConsumeAPIRequest) SetOperatorNick(_operatorNick string) error {
 	r._operatorNick = _operatorNick
@@ -62,12 +62,12 @@ func (r *TmallServiceCodeConsumeAPIRequest) SetOperatorNick(_operatorNick string
 	return nil
 }
 
-// Get OperatorNick Getter
+// GetOperatorNick OperatorNick Getter
 func (r TmallServiceCodeConsumeAPIRequest) GetOperatorNick() string {
 	return r._operatorNick
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 门店id
 func (r *TmallServiceCodeConsumeAPIRequest) SetShopId(_shopId string) error {
 	r._shopId = _shopId
@@ -75,7 +75,7 @@ func (r *TmallServiceCodeConsumeAPIRequest) SetShopId(_shopId string) error {
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r TmallServiceCodeConsumeAPIRequest) GetShopId() string {
 	return r._shopId
 }

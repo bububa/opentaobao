@@ -46,7 +46,7 @@ func (r TaobaoTradeFullinfoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的字段列表，多个字段用半角逗号分隔，可选值为返回示例中能看到的所有字段。
 func (r *TaobaoTradeFullinfoGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -54,12 +54,12 @@ func (r *TaobaoTradeFullinfoGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoTradeFullinfoGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 交易编号
 func (r *TaobaoTradeFullinfoGetAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -67,12 +67,12 @@ func (r *TaobaoTradeFullinfoGetAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoTradeFullinfoGetAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is IncludeOaid Setter
+// SetIncludeOaid is IncludeOaid Setter
 // appkey未对接oaid加密，则忽略该字段。对接oaid加密情况下，（收货人+手机号+座机+收货地址+create）5个字段组合成oaid，原始订单上座机为空也满足条件。传true，代表必须返回oaid，生成不了就报isv.oaid-field-miss错误；默认或者传false，满足生成条件则返回oaid，否则为空
 func (r *TaobaoTradeFullinfoGetAPIRequest) SetIncludeOaid(_includeOaid string) error {
 	r._includeOaid = _includeOaid
@@ -80,7 +80,7 @@ func (r *TaobaoTradeFullinfoGetAPIRequest) SetIncludeOaid(_includeOaid string) e
 	return nil
 }
 
-// Get IncludeOaid Getter
+// GetIncludeOaid IncludeOaid Getter
 func (r TaobaoTradeFullinfoGetAPIRequest) GetIncludeOaid() string {
 	return r._includeOaid
 }

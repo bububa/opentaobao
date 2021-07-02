@@ -37,7 +37,7 @@ func (r AlitripCarInvoiceConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReceiptDo Setter
+// SetReceiptDo is ReceiptDo Setter
 // 入参对象
 func (r *AlitripCarInvoiceConfirmAPIRequest) SetReceiptDo(_receiptDo *ReceiptDo) error {
 	r._receiptDo = _receiptDo
@@ -45,7 +45,7 @@ func (r *AlitripCarInvoiceConfirmAPIRequest) SetReceiptDo(_receiptDo *ReceiptDo)
 	return nil
 }
 
-// Get ReceiptDo Getter
+// GetReceiptDo ReceiptDo Getter
 func (r AlitripCarInvoiceConfirmAPIRequest) GetReceiptDo() *ReceiptDo {
 	return r._receiptDo
 }

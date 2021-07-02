@@ -37,7 +37,7 @@ func (r TaobaoPromotionmiscMjsActivityDeleteAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动id。
 func (r *TaobaoPromotionmiscMjsActivityDeleteAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -45,7 +45,7 @@ func (r *TaobaoPromotionmiscMjsActivityDeleteAPIRequest) SetActivityId(_activity
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoPromotionmiscMjsActivityDeleteAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }

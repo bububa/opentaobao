@@ -43,7 +43,7 @@ func (r TaobaoBrandStartshopRptCampaignGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Traffictype Setter
+// SetTraffictype is Traffictype Setter
 // 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5
 func (r *TaobaoBrandStartshopRptCampaignGetAPIRequest) SetTraffictype(_traffictype string) error {
 	r._traffictype = _traffictype
@@ -51,12 +51,12 @@ func (r *TaobaoBrandStartshopRptCampaignGetAPIRequest) SetTraffictype(_trafficty
 	return nil
 }
 
-// Get Traffictype Getter
+// GetTraffictype Traffictype Getter
 func (r TaobaoBrandStartshopRptCampaignGetAPIRequest) GetTraffictype() string {
 	return r._traffictype
 }
 
-// Set is Startdate Setter
+// SetStartdate is Startdate Setter
 // 查询开始时间(最多查询90天数据)
 func (r *TaobaoBrandStartshopRptCampaignGetAPIRequest) SetStartdate(_startdate string) error {
 	r._startdate = _startdate
@@ -64,12 +64,12 @@ func (r *TaobaoBrandStartshopRptCampaignGetAPIRequest) SetStartdate(_startdate s
 	return nil
 }
 
-// Get Startdate Getter
+// GetStartdate Startdate Getter
 func (r TaobaoBrandStartshopRptCampaignGetAPIRequest) GetStartdate() string {
 	return r._startdate
 }
 
-// Set is Enddate Setter
+// SetEnddate is Enddate Setter
 // 查询截至时间(最晚查询到昨天)
 func (r *TaobaoBrandStartshopRptCampaignGetAPIRequest) SetEnddate(_enddate string) error {
 	r._enddate = _enddate
@@ -77,12 +77,12 @@ func (r *TaobaoBrandStartshopRptCampaignGetAPIRequest) SetEnddate(_enddate strin
 	return nil
 }
 
-// Get Enddate Getter
+// GetEnddate Enddate Getter
 func (r TaobaoBrandStartshopRptCampaignGetAPIRequest) GetEnddate() string {
 	return r._enddate
 }
 
-// Set is Effect Setter
+// SetEffect is Effect Setter
 // 转化周期,默认15天,可选 3,7,15
 func (r *TaobaoBrandStartshopRptCampaignGetAPIRequest) SetEffect(_effect int64) error {
 	r._effect = _effect
@@ -90,7 +90,7 @@ func (r *TaobaoBrandStartshopRptCampaignGetAPIRequest) SetEffect(_effect int64) 
 	return nil
 }
 
-// Get Effect Getter
+// GetEffect Effect Getter
 func (r TaobaoBrandStartshopRptCampaignGetAPIRequest) GetEffect() int64 {
 	return r._effect
 }

@@ -39,7 +39,7 @@ func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ApiName Setter
+// SetApiName is ApiName Setter
 // 方法名称
 func (r *TaobaoCloudbridgeCaseinvestExecuteAPIRequest) SetApiName(_apiName string) error {
 	r._apiName = _apiName
@@ -47,12 +47,12 @@ func (r *TaobaoCloudbridgeCaseinvestExecuteAPIRequest) SetApiName(_apiName strin
 	return nil
 }
 
-// Get ApiName Getter
+// GetApiName ApiName Getter
 func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetApiName() string {
 	return r._apiName
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // 方法参数
 func (r *TaobaoCloudbridgeCaseinvestExecuteAPIRequest) SetData(_data string) error {
 	r._data = _data
@@ -60,7 +60,7 @@ func (r *TaobaoCloudbridgeCaseinvestExecuteAPIRequest) SetData(_data string) err
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetData() string {
 	return r._data
 }

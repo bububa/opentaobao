@@ -37,7 +37,7 @@ func (r TmallServicecenterWorkcardConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *TmallServicecenterWorkcardConfirmAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -45,7 +45,7 @@ func (r *TmallServicecenterWorkcardConfirmAPIRequest) SetWorkcardId(_workcardId 
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterWorkcardConfirmAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }

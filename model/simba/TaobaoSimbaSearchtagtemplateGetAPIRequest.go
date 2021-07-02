@@ -39,7 +39,7 @@ func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 被操作者的淘宝昵称
 func (r *TaobaoSimbaSearchtagtemplateGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -47,12 +47,12 @@ func (r *TaobaoSimbaSearchtagtemplateGetAPIRequest) SetNick(_nick string) error 
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is SubNick Setter
+// SetSubNick is SubNick Setter
 // 子帐号nick
 func (r *TaobaoSimbaSearchtagtemplateGetAPIRequest) SetSubNick(_subNick string) error {
 	r._subNick = _subNick
@@ -60,7 +60,7 @@ func (r *TaobaoSimbaSearchtagtemplateGetAPIRequest) SetSubNick(_subNick string) 
 	return nil
 }
 
-// Get SubNick Getter
+// GetSubNick SubNick Getter
 func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetSubNick() string {
 	return r._subNick
 }

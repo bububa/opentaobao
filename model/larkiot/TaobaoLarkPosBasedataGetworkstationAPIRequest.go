@@ -39,7 +39,7 @@ func (r TaobaoLarkPosBasedataGetworkstationAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is CinemaLinkId Setter
+// SetCinemaLinkId is CinemaLinkId Setter
 // 影城cinemaLinkId
 func (r *TaobaoLarkPosBasedataGetworkstationAPIRequest) SetCinemaLinkId(_cinemaLinkId string) error {
 	r._cinemaLinkId = _cinemaLinkId
@@ -47,12 +47,12 @@ func (r *TaobaoLarkPosBasedataGetworkstationAPIRequest) SetCinemaLinkId(_cinemaL
 	return nil
 }
 
-// Get CinemaLinkId Getter
+// GetCinemaLinkId CinemaLinkId Getter
 func (r TaobaoLarkPosBasedataGetworkstationAPIRequest) GetCinemaLinkId() string {
 	return r._cinemaLinkId
 }
 
-// Set is PosCode Setter
+// SetPosCode is PosCode Setter
 // 终端编码
 func (r *TaobaoLarkPosBasedataGetworkstationAPIRequest) SetPosCode(_posCode string) error {
 	r._posCode = _posCode
@@ -60,7 +60,7 @@ func (r *TaobaoLarkPosBasedataGetworkstationAPIRequest) SetPosCode(_posCode stri
 	return nil
 }
 
-// Get PosCode Getter
+// GetPosCode PosCode Getter
 func (r TaobaoLarkPosBasedataGetworkstationAPIRequest) GetPosCode() string {
 	return r._posCode
 }

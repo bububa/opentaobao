@@ -45,7 +45,7 @@ func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备id
 func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -53,12 +53,12 @@ func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetDeviceId(_deviceId string) err
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is From Setter
+// SetFrom is From Setter
 // 来源
 func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetFrom(_from string) error {
 	r._from = _from
@@ -66,12 +66,12 @@ func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetFrom(_from string) error {
 	return nil
 }
 
-// Get From Getter
+// GetFrom From Getter
 func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetFrom() string {
 	return r._from
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // 订单信息
 func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetData(_data string) error {
 	r._data = _data
@@ -79,12 +79,12 @@ func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetData(_data string) error {
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetData() string {
 	return r._data
 }
 
-// Set is PayType Setter
+// SetPayType is PayType Setter
 // 支付方式
 func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetPayType(_payType string) error {
 	r._payType = _payType
@@ -92,12 +92,12 @@ func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetPayType(_payType string) error
 	return nil
 }
 
-// Get PayType Getter
+// GetPayType PayType Getter
 func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetPayType() string {
 	return r._payType
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照方
 func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetLicense(_license string) error {
 	r._license = _license
@@ -105,7 +105,7 @@ func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetLicense(_license string) error
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetLicense() string {
 	return r._license
 }

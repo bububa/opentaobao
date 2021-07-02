@@ -39,7 +39,7 @@ func (r AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is AlihealthUserId Setter
+// SetAlihealthUserId is AlihealthUserId Setter
 // 阿里健康ID
 func (r *AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) SetAlihealthUserId(_alihealthUserId string) error {
 	r._alihealthUserId = _alihealthUserId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) SetAlihealthUserI
 	return nil
 }
 
-// Get AlihealthUserId Getter
+// GetAlihealthUserId AlihealthUserId Getter
 func (r AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) GetAlihealthUserId() string {
 	return r._alihealthUserId
 }
 
-// Set is AppChannel Setter
+// SetAppChannel is AppChannel Setter
 // 渠道alipay taobao uc gaode
 func (r *AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) SetAppChannel(_appChannel string) error {
 	r._appChannel = _appChannel
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) SetAppChannel(_ap
 	return nil
 }
 
-// Get AppChannel Getter
+// GetAppChannel AppChannel Getter
 func (r AlibabaAlihealthDocbaseUserinfoAlipayidGetAPIRequest) GetAppChannel() string {
 	return r._appChannel
 }

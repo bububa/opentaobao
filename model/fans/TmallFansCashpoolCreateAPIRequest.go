@@ -37,7 +37,7 @@ func (r TmallFansCashpoolCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CreateCashPoolParamDo Setter
+// SetCreateCashPoolParamDo is CreateCashPoolParamDo Setter
 // 创建资奖池输入对象
 func (r *TmallFansCashpoolCreateAPIRequest) SetCreateCashPoolParamDo(_createCashPoolParamDo *CreateCashPoolParamDo) error {
 	r._createCashPoolParamDo = _createCashPoolParamDo
@@ -45,7 +45,7 @@ func (r *TmallFansCashpoolCreateAPIRequest) SetCreateCashPoolParamDo(_createCash
 	return nil
 }
 
-// Get CreateCashPoolParamDo Getter
+// GetCreateCashPoolParamDo CreateCashPoolParamDo Getter
 func (r TmallFansCashpoolCreateAPIRequest) GetCreateCashPoolParamDo() *CreateCashPoolParamDo {
 	return r._createCashPoolParamDo
 }

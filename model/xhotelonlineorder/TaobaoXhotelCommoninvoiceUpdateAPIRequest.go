@@ -37,7 +37,7 @@ func (r TaobaoXhotelCommoninvoiceUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CommonInvoiceInfoParam Setter
+// SetCommonInvoiceInfoParam is CommonInvoiceInfoParam Setter
 // 无
 func (r *TaobaoXhotelCommoninvoiceUpdateAPIRequest) SetCommonInvoiceInfoParam(_commonInvoiceInfoParam *CommonInvoiceInfo) error {
 	r._commonInvoiceInfoParam = _commonInvoiceInfoParam
@@ -45,7 +45,7 @@ func (r *TaobaoXhotelCommoninvoiceUpdateAPIRequest) SetCommonInvoiceInfoParam(_c
 	return nil
 }
 
-// Get CommonInvoiceInfoParam Getter
+// GetCommonInvoiceInfoParam CommonInvoiceInfoParam Getter
 func (r TaobaoXhotelCommoninvoiceUpdateAPIRequest) GetCommonInvoiceInfoParam() *CommonInvoiceInfo {
 	return r._commonInvoiceInfoParam
 }

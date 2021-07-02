@@ -37,7 +37,7 @@ func (r AlibabaWholesaleGoodsSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamSearchGoodsOption Setter
+// SetParamSearchGoodsOption is ParamSearchGoodsOption Setter
 // SearchGoodsOption
 func (r *AlibabaWholesaleGoodsSearchAPIRequest) SetParamSearchGoodsOption(_paramSearchGoodsOption *SearchGoodsOption) error {
 	r._paramSearchGoodsOption = _paramSearchGoodsOption
@@ -45,7 +45,7 @@ func (r *AlibabaWholesaleGoodsSearchAPIRequest) SetParamSearchGoodsOption(_param
 	return nil
 }
 
-// Get ParamSearchGoodsOption Getter
+// GetParamSearchGoodsOption ParamSearchGoodsOption Getter
 func (r AlibabaWholesaleGoodsSearchAPIRequest) GetParamSearchGoodsOption() *SearchGoodsOption {
 	return r._paramSearchGoodsOption
 }

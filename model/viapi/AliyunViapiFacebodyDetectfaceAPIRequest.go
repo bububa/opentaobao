@@ -39,7 +39,7 @@ func (r AliyunViapiFacebodyDetectfaceAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ImageUrl Setter
+// SetImageUrl is ImageUrl Setter
 // 图片url地址(http/https)
 func (r *AliyunViapiFacebodyDetectfaceAPIRequest) SetImageUrl(_imageUrl string) error {
 	r._imageUrl = _imageUrl
@@ -47,12 +47,12 @@ func (r *AliyunViapiFacebodyDetectfaceAPIRequest) SetImageUrl(_imageUrl string) 
 	return nil
 }
 
-// Get ImageUrl Getter
+// GetImageUrl ImageUrl Getter
 func (r AliyunViapiFacebodyDetectfaceAPIRequest) GetImageUrl() string {
 	return r._imageUrl
 }
 
-// Set is ImageType Setter
+// SetImageType is ImageType Setter
 // 0: 通过url识别，参数image_url不为空；1: 通过图片content识别，参数content不为空 支持图片格式：JPEG、JPG、BMP、PNG
 func (r *AliyunViapiFacebodyDetectfaceAPIRequest) SetImageType(_imageType int64) error {
 	r._imageType = _imageType
@@ -60,7 +60,7 @@ func (r *AliyunViapiFacebodyDetectfaceAPIRequest) SetImageType(_imageType int64)
 	return nil
 }
 
-// Get ImageType Getter
+// GetImageType ImageType Getter
 func (r AliyunViapiFacebodyDetectfaceAPIRequest) GetImageType() int64 {
 	return r._imageType
 }

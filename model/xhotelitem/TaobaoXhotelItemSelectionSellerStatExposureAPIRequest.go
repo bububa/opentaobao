@@ -45,7 +45,7 @@ func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is Date Setter
+// SetDate is Date Setter
 // 日期 默认为昨天
 func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetDate(_date string) error {
 	r._date = _date
@@ -53,12 +53,12 @@ func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetDate(_date st
 	return nil
 }
 
-// Get Date Getter
+// GetDate Date Getter
 func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetDate() string {
 	return r._date
 }
 
-// Set is Hid Setter
+// SetHid is Hid Setter
 // hid  默认为all
 func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetHid(_hid string) error {
 	r._hid = _hid
@@ -66,12 +66,12 @@ func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetHid(_hid stri
 	return nil
 }
 
-// Get Hid Getter
+// GetHid Hid Getter
 func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetHid() string {
 	return r._hid
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 默认为all
 func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -79,12 +79,12 @@ func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetVendor(_vendo
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is Supplier Setter
+// SetSupplier is Supplier Setter
 // 默认为all
 func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetSupplier(_supplier string) error {
 	r._supplier = _supplier
@@ -92,12 +92,12 @@ func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetSupplier(_sup
 	return nil
 }
 
-// Get Supplier Getter
+// GetSupplier Supplier Getter
 func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetSupplier() string {
 	return r._supplier
 }
 
-// Set is OutHid Setter
+// SetOutHid is OutHid Setter
 // 酒店编码
 func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetOutHid(_outHid string) error {
 	r._outHid = _outHid
@@ -105,7 +105,7 @@ func (r *TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) SetOutHid(_outHi
 	return nil
 }
 
-// Get OutHid Getter
+// GetOutHid OutHid Getter
 func (r TaobaoXhotelItemSelectionSellerStatExposureAPIRequest) GetOutHid() string {
 	return r._outHid
 }

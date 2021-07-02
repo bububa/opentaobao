@@ -43,7 +43,7 @@ func (r TaobaoTanxAuditDepositcreativeAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MemberId Setter
+// SetMemberId is MemberId Setter
 // DSP的memberId
 func (r *TaobaoTanxAuditDepositcreativeAddAPIRequest) SetMemberId(_memberId int64) error {
 	r._memberId = _memberId
@@ -51,12 +51,12 @@ func (r *TaobaoTanxAuditDepositcreativeAddAPIRequest) SetMemberId(_memberId int6
 	return nil
 }
 
-// Get MemberId Getter
+// GetMemberId MemberId Getter
 func (r TaobaoTanxAuditDepositcreativeAddAPIRequest) GetMemberId() int64 {
 	return r._memberId
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // dsp用户身份认证的TOKEN
 func (r *TaobaoTanxAuditDepositcreativeAddAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -64,12 +64,12 @@ func (r *TaobaoTanxAuditDepositcreativeAddAPIRequest) SetToken(_token string) er
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoTanxAuditDepositcreativeAddAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is SignTime Setter
+// SetSignTime is SignTime Setter
 // 当前时间戳，1970-01-01后的秒数
 func (r *TaobaoTanxAuditDepositcreativeAddAPIRequest) SetSignTime(_signTime int64) error {
 	r._signTime = _signTime
@@ -77,12 +77,12 @@ func (r *TaobaoTanxAuditDepositcreativeAddAPIRequest) SetSignTime(_signTime int6
 	return nil
 }
 
-// Get SignTime Getter
+// GetSignTime SignTime Getter
 func (r TaobaoTanxAuditDepositcreativeAddAPIRequest) GetSignTime() int64 {
 	return r._signTime
 }
 
-// Set is Creative Setter
+// SetCreative is Creative Setter
 // 托管创意信息
 func (r *TaobaoTanxAuditDepositcreativeAddAPIRequest) SetCreative(_creative *CreativeInfoDto) error {
 	r._creative = _creative
@@ -90,7 +90,7 @@ func (r *TaobaoTanxAuditDepositcreativeAddAPIRequest) SetCreative(_creative *Cre
 	return nil
 }
 
-// Get Creative Getter
+// GetCreative Creative Getter
 func (r TaobaoTanxAuditDepositcreativeAddAPIRequest) GetCreative() *CreativeInfoDto {
 	return r._creative
 }

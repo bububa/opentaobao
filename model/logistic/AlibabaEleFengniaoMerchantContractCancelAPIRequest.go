@@ -37,7 +37,7 @@ func (r AlibabaEleFengniaoMerchantContractCancelAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 系统自动生成
 func (r *AlibabaEleFengniaoMerchantContractCancelAPIRequest) SetParam(_param *Param) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaEleFengniaoMerchantContractCancelAPIRequest) SetParam(_param *Pa
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaEleFengniaoMerchantContractCancelAPIRequest) GetParam() *Param {
 	return r._param
 }

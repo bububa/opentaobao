@@ -37,7 +37,7 @@ func (r AlibabaFundplatformCardordersInfoQueryAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Parameters Setter
+// SetParameters is Parameters Setter
 // 请求结构体
 func (r *AlibabaFundplatformCardordersInfoQueryAPIRequest) SetParameters(_parameters *CardMakingInfoQueryRequest) error {
 	r._parameters = _parameters
@@ -45,7 +45,7 @@ func (r *AlibabaFundplatformCardordersInfoQueryAPIRequest) SetParameters(_parame
 	return nil
 }
 
-// Get Parameters Getter
+// GetParameters Parameters Getter
 func (r AlibabaFundplatformCardordersInfoQueryAPIRequest) GetParameters() *CardMakingInfoQueryRequest {
 	return r._parameters
 }

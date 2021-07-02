@@ -39,7 +39,7 @@ func (r AlibabaAilabsAligenieDeviceRegisterAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备id
 func (r *AlibabaAilabsAligenieDeviceRegisterAPIRequest) SetDeviceId(_deviceId int64) error {
 	r._deviceId = _deviceId
@@ -47,12 +47,12 @@ func (r *AlibabaAilabsAligenieDeviceRegisterAPIRequest) SetDeviceId(_deviceId in
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r AlibabaAilabsAligenieDeviceRegisterAPIRequest) GetDeviceId() int64 {
 	return r._deviceId
 }
 
-// Set is MacSections Setter
+// SetMacSections is MacSections Setter
 // mac区段脚本
 func (r *AlibabaAilabsAligenieDeviceRegisterAPIRequest) SetMacSections(_macSections string) error {
 	r._macSections = _macSections
@@ -60,7 +60,7 @@ func (r *AlibabaAilabsAligenieDeviceRegisterAPIRequest) SetMacSections(_macSecti
 	return nil
 }
 
-// Get MacSections Getter
+// GetMacSections MacSections Getter
 func (r AlibabaAilabsAligenieDeviceRegisterAPIRequest) GetMacSections() string {
 	return r._macSections
 }

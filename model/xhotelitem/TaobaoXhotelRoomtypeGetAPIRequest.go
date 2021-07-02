@@ -41,7 +41,7 @@ func (r TaobaoXhotelRoomtypeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rid Setter
+// SetRid is Rid Setter
 // 废弃，使用商家房型ID
 func (r *TaobaoXhotelRoomtypeGetAPIRequest) SetRid(_rid int64) error {
 	r._rid = _rid
@@ -49,12 +49,12 @@ func (r *TaobaoXhotelRoomtypeGetAPIRequest) SetRid(_rid int64) error {
 	return nil
 }
 
-// Get Rid Getter
+// GetRid Rid Getter
 func (r TaobaoXhotelRoomtypeGetAPIRequest) GetRid() int64 {
 	return r._rid
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 商家房型ID
 func (r *TaobaoXhotelRoomtypeGetAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -62,12 +62,12 @@ func (r *TaobaoXhotelRoomtypeGetAPIRequest) SetOuterId(_outerId string) error {
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoXhotelRoomtypeGetAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 系统商，一般不填写，使用须申请
 func (r *TaobaoXhotelRoomtypeGetAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -75,7 +75,7 @@ func (r *TaobaoXhotelRoomtypeGetAPIRequest) SetVendor(_vendor string) error {
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelRoomtypeGetAPIRequest) GetVendor() string {
 	return r._vendor
 }

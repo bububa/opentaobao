@@ -45,7 +45,7 @@ func (r AlibabaAlihealthDrugKytDestbillListAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugKytDestbillListAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -53,12 +53,12 @@ func (r *AlibabaAlihealthDrugKytDestbillListAPIRequest) SetRefEntId(_refEntId st
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytDestbillListAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is BeginDate Setter
+// SetBeginDate is BeginDate Setter
 // 开始时间，格式yyyy-MM-dd
 func (r *AlibabaAlihealthDrugKytDestbillListAPIRequest) SetBeginDate(_beginDate string) error {
 	r._beginDate = _beginDate
@@ -66,12 +66,12 @@ func (r *AlibabaAlihealthDrugKytDestbillListAPIRequest) SetBeginDate(_beginDate 
 	return nil
 }
 
-// Get BeginDate Getter
+// GetBeginDate BeginDate Getter
 func (r AlibabaAlihealthDrugKytDestbillListAPIRequest) GetBeginDate() string {
 	return r._beginDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 结束时间，格式yyyy-MM-dd
 func (r *AlibabaAlihealthDrugKytDestbillListAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthDrugKytDestbillListAPIRequest) SetEndDate(_endDate stri
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r AlibabaAlihealthDrugKytDestbillListAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据编号
 func (r *AlibabaAlihealthDrugKytDestbillListAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthDrugKytDestbillListAPIRequest) SetBillCode(_billCode st
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthDrugKytDestbillListAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is ApprovalStatus Setter
+// SetApprovalStatus is ApprovalStatus Setter
 // 审核状态，1：未审核；2：审核通过；3：审核失败
 func (r *AlibabaAlihealthDrugKytDestbillListAPIRequest) SetApprovalStatus(_approvalStatus string) error {
 	r._approvalStatus = _approvalStatus
@@ -105,7 +105,7 @@ func (r *AlibabaAlihealthDrugKytDestbillListAPIRequest) SetApprovalStatus(_appro
 	return nil
 }
 
-// Get ApprovalStatus Getter
+// GetApprovalStatus ApprovalStatus Getter
 func (r AlibabaAlihealthDrugKytDestbillListAPIRequest) GetApprovalStatus() string {
 	return r._approvalStatus
 }

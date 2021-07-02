@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentChildRootnodeGetAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is NeedHomePage Setter
+// SetNeedHomePage is NeedHomePage Setter
 // 是否需要首页目录
 func (r *YunosTvpubadminContentChildRootnodeGetAPIRequest) SetNeedHomePage(_needHomePage bool) error {
 	r._needHomePage = _needHomePage
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentChildRootnodeGetAPIRequest) SetNeedHomePage(_need
 	return nil
 }
 
-// Get NeedHomePage Getter
+// GetNeedHomePage NeedHomePage Getter
 func (r YunosTvpubadminContentChildRootnodeGetAPIRequest) GetNeedHomePage() bool {
 	return r._needHomePage
 }

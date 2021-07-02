@@ -45,7 +45,7 @@ func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单ID，orderId、sellerNick、spNick三者不能同时为Null
 func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -53,12 +53,12 @@ func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetOrderId(_orderId int64) er
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is SellerNick Setter
+// SetSellerNick is SellerNick Setter
 // 商家子账号昵称，orderId、sellerNick、spNick三者不能同时为Null
 func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetSellerNick(_sellerNick string) error {
 	r._sellerNick = _sellerNick
@@ -66,12 +66,12 @@ func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetSellerNick(_sellerNick str
 	return nil
 }
 
-// Get SellerNick Getter
+// GetSellerNick SellerNick Getter
 func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetSellerNick() string {
 	return r._sellerNick
 }
 
-// Set is SpNick Setter
+// SetSpNick is SpNick Setter
 // 服务商子账号昵称，orderId、sellerNick、spNick三者不能同时为Null
 func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetSpNick(_spNick string) error {
 	r._spNick = _spNick
@@ -79,12 +79,12 @@ func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetSpNick(_spNick string) err
 	return nil
 }
 
-// Get SpNick Getter
+// GetSpNick SpNick Getter
 func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetSpNick() string {
 	return r._spNick
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 起始日期，起始日期和结束日期跨度不能超过31天
 func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -92,12 +92,12 @@ func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetStartDate(_startDate strin
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 结束日期，起始日期和结束日期跨度不能超过31天
 func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -105,7 +105,7 @@ func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetEndDate(_endDate string) e
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }

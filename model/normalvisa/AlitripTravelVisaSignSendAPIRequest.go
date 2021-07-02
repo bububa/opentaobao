@@ -41,7 +41,7 @@ func (r AlitripTravelVisaSignSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NationId Setter
+// SetNationId is NationId Setter
 // 国家id。目前只支持越南，越南国家id:27027
 func (r *AlitripTravelVisaSignSendAPIRequest) SetNationId(_nationId int64) error {
 	r._nationId = _nationId
@@ -49,12 +49,12 @@ func (r *AlitripTravelVisaSignSendAPIRequest) SetNationId(_nationId int64) error
 	return nil
 }
 
-// Get NationId Getter
+// GetNationId NationId Getter
 func (r AlitripTravelVisaSignSendAPIRequest) GetNationId() int64 {
 	return r._nationId
 }
 
-// Set is SignType Setter
+// SetSignType is SignType Setter
 // 送签类型：1-非加急，2-加急，默认非加急
 func (r *AlitripTravelVisaSignSendAPIRequest) SetSignType(_signType int64) error {
 	r._signType = _signType
@@ -62,12 +62,12 @@ func (r *AlitripTravelVisaSignSendAPIRequest) SetSignType(_signType int64) error
 	return nil
 }
 
-// Get SignType Getter
+// GetSignType SignType Getter
 func (r AlitripTravelVisaSignSendAPIRequest) GetSignType() int64 {
 	return r._signType
 }
 
-// Set is ApplyIds Setter
+// SetApplyIds is ApplyIds Setter
 // 申请人ids
 func (r *AlitripTravelVisaSignSendAPIRequest) SetApplyIds(_applyIds []string) error {
 	r._applyIds = _applyIds
@@ -75,7 +75,7 @@ func (r *AlitripTravelVisaSignSendAPIRequest) SetApplyIds(_applyIds []string) er
 	return nil
 }
 
-// Get ApplyIds Getter
+// GetApplyIds ApplyIds Getter
 func (r AlitripTravelVisaSignSendAPIRequest) GetApplyIds() []string {
 	return r._applyIds
 }

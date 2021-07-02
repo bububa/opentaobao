@@ -37,7 +37,7 @@ func (r TaobaoFliggyWrateGetmixratelistAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamTopGetMixRateListParam Setter
+// SetParamTopGetMixRateListParam is ParamTopGetMixRateListParam Setter
 // 评论列表查询参数
 func (r *TaobaoFliggyWrateGetmixratelistAPIRequest) SetParamTopGetMixRateListParam(_paramTopGetMixRateListParam *TopGetMixRateListParam) error {
 	r._paramTopGetMixRateListParam = _paramTopGetMixRateListParam
@@ -45,7 +45,7 @@ func (r *TaobaoFliggyWrateGetmixratelistAPIRequest) SetParamTopGetMixRateListPar
 	return nil
 }
 
-// Get ParamTopGetMixRateListParam Getter
+// GetParamTopGetMixRateListParam ParamTopGetMixRateListParam Getter
 func (r TaobaoFliggyWrateGetmixratelistAPIRequest) GetParamTopGetMixRateListParam() *TopGetMixRateListParam {
 	return r._paramTopGetMixRateListParam
 }

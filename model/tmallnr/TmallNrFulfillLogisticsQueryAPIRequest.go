@@ -39,7 +39,7 @@ func (r TmallNrFulfillLogisticsQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 交易主订单号
 func (r *TmallNrFulfillLogisticsQueryAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
@@ -47,12 +47,12 @@ func (r *TmallNrFulfillLogisticsQueryAPIRequest) SetMainOrderId(_mainOrderId int
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r TmallNrFulfillLogisticsQueryAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }
 
-// Set is BizIdentity Setter
+// SetBizIdentity is BizIdentity Setter
 // 业务标识，dss标识定时送业务；jsd表示极速达业务
 func (r *TmallNrFulfillLogisticsQueryAPIRequest) SetBizIdentity(_bizIdentity string) error {
 	r._bizIdentity = _bizIdentity
@@ -60,7 +60,7 @@ func (r *TmallNrFulfillLogisticsQueryAPIRequest) SetBizIdentity(_bizIdentity str
 	return nil
 }
 
-// Get BizIdentity Getter
+// GetBizIdentity BizIdentity Getter
 func (r TmallNrFulfillLogisticsQueryAPIRequest) GetBizIdentity() string {
 	return r._bizIdentity
 }

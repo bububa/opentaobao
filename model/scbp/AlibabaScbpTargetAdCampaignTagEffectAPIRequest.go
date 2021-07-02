@@ -37,7 +37,7 @@ func (r AlibabaScbpTargetAdCampaignTagEffectAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is TopP4pQuickEffectQuery Setter
+// SetTopP4pQuickEffectQuery is TopP4pQuickEffectQuery Setter
 // 效果数据
 func (r *AlibabaScbpTargetAdCampaignTagEffectAPIRequest) SetTopP4pQuickEffectQuery(_topP4pQuickEffectQuery *TopP4pQuickEffectQuery) error {
 	r._topP4pQuickEffectQuery = _topP4pQuickEffectQuery
@@ -45,7 +45,7 @@ func (r *AlibabaScbpTargetAdCampaignTagEffectAPIRequest) SetTopP4pQuickEffectQue
 	return nil
 }
 
-// Get TopP4pQuickEffectQuery Getter
+// GetTopP4pQuickEffectQuery TopP4pQuickEffectQuery Getter
 func (r AlibabaScbpTargetAdCampaignTagEffectAPIRequest) GetTopP4pQuickEffectQuery() *TopP4pQuickEffectQuery {
 	return r._topP4pQuickEffectQuery
 }

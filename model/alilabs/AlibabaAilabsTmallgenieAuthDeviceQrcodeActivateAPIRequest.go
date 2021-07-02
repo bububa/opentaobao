@@ -43,7 +43,7 @@ func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // OAUTH authcode码
 func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -51,12 +51,12 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) SetCode(_cod
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is ClientId Setter
+// SetClientId is ClientId Setter
 // 产品终端ID
 func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) SetClientId(_clientId string) error {
 	r._clientId = _clientId
@@ -64,12 +64,12 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) SetClientId(
 	return nil
 }
 
-// Get ClientId Getter
+// GetClientId ClientId Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) GetClientId() string {
 	return r._clientId
 }
 
-// Set is TaobaoUserOpenid Setter
+// SetTaobaoUserOpenid is TaobaoUserOpenid Setter
 // 淘宝授权ID
 func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) SetTaobaoUserOpenid(_taobaoUserOpenid string) error {
 	r._taobaoUserOpenid = _taobaoUserOpenid
@@ -77,12 +77,12 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) SetTaobaoUse
 	return nil
 }
 
-// Get TaobaoUserOpenid Getter
+// GetTaobaoUserOpenid TaobaoUserOpenid Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) GetTaobaoUserOpenid() string {
 	return r._taobaoUserOpenid
 }
 
-// Set is ExtInfo Setter
+// SetExtInfo is ExtInfo Setter
 // 扩展数据
 func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) SetExtInfo(_extInfo string) error {
 	r._extInfo = _extInfo
@@ -90,7 +90,7 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) SetExtInfo(_
 	return nil
 }
 
-// Get ExtInfo Getter
+// GetExtInfo ExtInfo Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeActivateAPIRequest) GetExtInfo() string {
 	return r._extInfo
 }

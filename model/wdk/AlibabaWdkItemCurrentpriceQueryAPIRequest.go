@@ -41,7 +41,7 @@ func (r AlibabaWdkItemCurrentpriceQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 渠道店id
 func (r *AlibabaWdkItemCurrentpriceQueryAPIRequest) SetShopId(_shopId int64) error {
 	r._shopId = _shopId
@@ -49,12 +49,12 @@ func (r *AlibabaWdkItemCurrentpriceQueryAPIRequest) SetShopId(_shopId int64) err
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r AlibabaWdkItemCurrentpriceQueryAPIRequest) GetShopId() int64 {
 	return r._shopId
 }
 
-// Set is SkuCodes Setter
+// SetSkuCodes is SkuCodes Setter
 // sku编码列表
 func (r *AlibabaWdkItemCurrentpriceQueryAPIRequest) SetSkuCodes(_skuCodes []string) error {
 	r._skuCodes = _skuCodes
@@ -62,12 +62,12 @@ func (r *AlibabaWdkItemCurrentpriceQueryAPIRequest) SetSkuCodes(_skuCodes []stri
 	return nil
 }
 
-// Get SkuCodes Getter
+// GetSkuCodes SkuCodes Getter
 func (r AlibabaWdkItemCurrentpriceQueryAPIRequest) GetSkuCodes() []string {
 	return r._skuCodes
 }
 
-// Set is OrderChannelCode Setter
+// SetOrderChannelCode is OrderChannelCode Setter
 // 渠道
 func (r *AlibabaWdkItemCurrentpriceQueryAPIRequest) SetOrderChannelCode(_orderChannelCode string) error {
 	r._orderChannelCode = _orderChannelCode
@@ -75,7 +75,7 @@ func (r *AlibabaWdkItemCurrentpriceQueryAPIRequest) SetOrderChannelCode(_orderCh
 	return nil
 }
 
-// Get OrderChannelCode Getter
+// GetOrderChannelCode OrderChannelCode Getter
 func (r AlibabaWdkItemCurrentpriceQueryAPIRequest) GetOrderChannelCode() string {
 	return r._orderChannelCode
 }

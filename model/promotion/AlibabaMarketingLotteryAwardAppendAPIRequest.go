@@ -37,7 +37,7 @@ func (r AlibabaMarketingLotteryAwardAppendAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is LotteryAwardAppend Setter
+// SetLotteryAwardAppend is LotteryAwardAppend Setter
 // 奖品添加请求对象
 func (r *AlibabaMarketingLotteryAwardAppendAPIRequest) SetLotteryAwardAppend(_lotteryAwardAppend *LotteryAwardAppendDto) error {
 	r._lotteryAwardAppend = _lotteryAwardAppend
@@ -45,7 +45,7 @@ func (r *AlibabaMarketingLotteryAwardAppendAPIRequest) SetLotteryAwardAppend(_lo
 	return nil
 }
 
-// Get LotteryAwardAppend Getter
+// GetLotteryAwardAppend LotteryAwardAppend Getter
 func (r AlibabaMarketingLotteryAwardAppendAPIRequest) GetLotteryAwardAppend() *LotteryAwardAppendDto {
 	return r._lotteryAwardAppend
 }

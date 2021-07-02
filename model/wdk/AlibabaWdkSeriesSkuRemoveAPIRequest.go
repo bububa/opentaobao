@@ -37,7 +37,7 @@ func (r AlibabaWdkSeriesSkuRemoveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SeriesSkus Setter
+// SetSeriesSkus is SeriesSkus Setter
 // 系列品移除商品请求
 func (r *AlibabaWdkSeriesSkuRemoveAPIRequest) SetSeriesSkus(_seriesSkus *SeriesSkuRequest) error {
 	r._seriesSkus = _seriesSkus
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSeriesSkuRemoveAPIRequest) SetSeriesSkus(_seriesSkus *SeriesS
 	return nil
 }
 
-// Get SeriesSkus Getter
+// GetSeriesSkus SeriesSkus Getter
 func (r AlibabaWdkSeriesSkuRemoveAPIRequest) GetSeriesSkus() *SeriesSkuRequest {
 	return r._seriesSkus
 }

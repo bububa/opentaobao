@@ -37,7 +37,7 @@ func (r AliexpressAscpPoQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PurchaseOrderQuery Setter
+// SetPurchaseOrderQuery is PurchaseOrderQuery Setter
 // 系统自动生成
 func (r *AliexpressAscpPoQueryAPIRequest) SetPurchaseOrderQuery(_purchaseOrderQuery *PurchaseOrderQueryDto) error {
 	r._purchaseOrderQuery = _purchaseOrderQuery
@@ -45,7 +45,7 @@ func (r *AliexpressAscpPoQueryAPIRequest) SetPurchaseOrderQuery(_purchaseOrderQu
 	return nil
 }
 
-// Get PurchaseOrderQuery Getter
+// GetPurchaseOrderQuery PurchaseOrderQuery Getter
 func (r AliexpressAscpPoQueryAPIRequest) GetPurchaseOrderQuery() *PurchaseOrderQueryDto {
 	return r._purchaseOrderQuery
 }

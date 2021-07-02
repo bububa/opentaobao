@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmOpenAssertVerifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamPropertyVerifyOpenReq Setter
+// SetParamPropertyVerifyOpenReq is ParamPropertyVerifyOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmOpenAssertVerifyAPIRequest) SetParamPropertyVerifyOpenReq(_paramPropertyVerifyOpenReq *PropertyVerifyOpenReq) error {
 	r._paramPropertyVerifyOpenReq = _paramPropertyVerifyOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmOpenAssertVerifyAPIRequest) SetParamPropertyVerifyOpenReq
 	return nil
 }
 
-// Get ParamPropertyVerifyOpenReq Getter
+// GetParamPropertyVerifyOpenReq ParamPropertyVerifyOpenReq Getter
 func (r AlibabaAlscCrmOpenAssertVerifyAPIRequest) GetParamPropertyVerifyOpenReq() *PropertyVerifyOpenReq {
 	return r._paramPropertyVerifyOpenReq
 }

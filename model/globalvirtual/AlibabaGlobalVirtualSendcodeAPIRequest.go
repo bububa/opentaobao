@@ -39,7 +39,7 @@ func (r AlibabaGlobalVirtualSendcodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TradeOrderLineId Setter
+// SetTradeOrderLineId is TradeOrderLineId Setter
 // trade order id
 func (r *AlibabaGlobalVirtualSendcodeAPIRequest) SetTradeOrderLineId(_tradeOrderLineId int64) error {
 	r._tradeOrderLineId = _tradeOrderLineId
@@ -47,12 +47,12 @@ func (r *AlibabaGlobalVirtualSendcodeAPIRequest) SetTradeOrderLineId(_tradeOrder
 	return nil
 }
 
-// Get TradeOrderLineId Getter
+// GetTradeOrderLineId TradeOrderLineId Getter
 func (r AlibabaGlobalVirtualSendcodeAPIRequest) GetTradeOrderLineId() int64 {
 	return r._tradeOrderLineId
 }
 
-// Set is CodeList Setter
+// SetCodeList is CodeList Setter
 // code list
 func (r *AlibabaGlobalVirtualSendcodeAPIRequest) SetCodeList(_codeList []VirtualCertificateDo) error {
 	r._codeList = _codeList
@@ -60,7 +60,7 @@ func (r *AlibabaGlobalVirtualSendcodeAPIRequest) SetCodeList(_codeList []Virtual
 	return nil
 }
 
-// Get CodeList Getter
+// GetCodeList CodeList Getter
 func (r AlibabaGlobalVirtualSendcodeAPIRequest) GetCodeList() []VirtualCertificateDo {
 	return r._codeList
 }

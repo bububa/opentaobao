@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentAppOnoffappbylicenseAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is OnOffApp Setter
+// SetOnOffApp is OnOffApp Setter
 // com.ali.yunos.tvacs.domain.OnOffApp
 func (r *YunosTvpubadminContentAppOnoffappbylicenseAPIRequest) SetOnOffApp(_onOffApp string) error {
 	r._onOffApp = _onOffApp
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentAppOnoffappbylicenseAPIRequest) SetOnOffApp(_onOf
 	return nil
 }
 
-// Get OnOffApp Getter
+// GetOnOffApp OnOffApp Getter
 func (r YunosTvpubadminContentAppOnoffappbylicenseAPIRequest) GetOnOffApp() string {
 	return r._onOffApp
 }

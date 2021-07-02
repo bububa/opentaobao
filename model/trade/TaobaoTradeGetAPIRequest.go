@@ -40,7 +40,7 @@ func (r TaobaoTradeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的字段列表，多个字段用半角逗号分隔，可选值为返回示例中能看到的所有字段。
 func (r *TaobaoTradeGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -48,12 +48,12 @@ func (r *TaobaoTradeGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoTradeGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 交易编号
 func (r *TaobaoTradeGetAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -61,7 +61,7 @@ func (r *TaobaoTradeGetAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoTradeGetAPIRequest) GetTid() int64 {
 	return r._tid
 }

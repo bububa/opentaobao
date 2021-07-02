@@ -37,7 +37,7 @@ func (r AlibabaScbpAdKeywordPriceBatchupdateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is KeywordUpdateDtoList Setter
+// SetKeywordUpdateDtoList is KeywordUpdateDtoList Setter
 // 系统自动生成
 func (r *AlibabaScbpAdKeywordPriceBatchupdateAPIRequest) SetKeywordUpdateDtoList(_keywordUpdateDtoList []KeywordUpdateDto) error {
 	r._keywordUpdateDtoList = _keywordUpdateDtoList
@@ -45,7 +45,7 @@ func (r *AlibabaScbpAdKeywordPriceBatchupdateAPIRequest) SetKeywordUpdateDtoList
 	return nil
 }
 
-// Get KeywordUpdateDtoList Getter
+// GetKeywordUpdateDtoList KeywordUpdateDtoList Getter
 func (r AlibabaScbpAdKeywordPriceBatchupdateAPIRequest) GetKeywordUpdateDtoList() []KeywordUpdateDto {
 	return r._keywordUpdateDtoList
 }

@@ -39,7 +39,7 @@ func (r AlibabaLstPosOpenGoodsGetgoodsbypagingAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 当前页码
 func (r *AlibabaLstPosOpenGoodsGetgoodsbypagingAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -47,12 +47,12 @@ func (r *AlibabaLstPosOpenGoodsGetgoodsbypagingAPIRequest) SetPage(_page int64) 
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaLstPosOpenGoodsGetgoodsbypagingAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 当前主账号userId
 func (r *AlibabaLstPosOpenGoodsGetgoodsbypagingAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -60,7 +60,7 @@ func (r *AlibabaLstPosOpenGoodsGetgoodsbypagingAPIRequest) SetUserId(_userId int
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaLstPosOpenGoodsGetgoodsbypagingAPIRequest) GetUserId() int64 {
 	return r._userId
 }

@@ -39,7 +39,7 @@ func (r AlibabaCampusDeviceHistorydataGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WorkBenchContext Setter
+// SetWorkBenchContext is WorkBenchContext Setter
 // workbench
 func (r *AlibabaCampusDeviceHistorydataGetAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
 	r._workBenchContext = _workBenchContext
@@ -47,12 +47,12 @@ func (r *AlibabaCampusDeviceHistorydataGetAPIRequest) SetWorkBenchContext(_workB
 	return nil
 }
 
-// Get WorkBenchContext Getter
+// GetWorkBenchContext WorkBenchContext Getter
 func (r AlibabaCampusDeviceHistorydataGetAPIRequest) GetWorkBenchContext() *WorkBenchContext {
 	return r._workBenchContext
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 查询条件
 func (r *AlibabaCampusDeviceHistorydataGetAPIRequest) SetQuery(_query *DeviceHistoryBatchQuery) error {
 	r._query = _query
@@ -60,7 +60,7 @@ func (r *AlibabaCampusDeviceHistorydataGetAPIRequest) SetQuery(_query *DeviceHis
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaCampusDeviceHistorydataGetAPIRequest) GetQuery() *DeviceHistoryBatchQuery {
 	return r._query
 }

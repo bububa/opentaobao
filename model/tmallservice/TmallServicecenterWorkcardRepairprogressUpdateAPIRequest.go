@@ -47,7 +47,7 @@ func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is PicUrlList Setter
+// SetPicUrlList is PicUrlList Setter
 // 图片列表
 func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetPicUrlList(_picUrlList []string) error {
 	r._picUrlList = _picUrlList
@@ -55,12 +55,12 @@ func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetPicUrlList
 	return nil
 }
 
-// Get PicUrlList Getter
+// GetPicUrlList PicUrlList Getter
 func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetPicUrlList() []string {
 	return r._picUrlList
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // 请求节点的动作描述，唯一标识一个节点
 func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -68,12 +68,12 @@ func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetAction(_ac
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetAction() string {
 	return r._action
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -81,12 +81,12 @@ func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetWorkcardId
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }
 
-// Set is RealTpNick Setter
+// SetRealTpNick is RealTpNick Setter
 // 真实接单服务商账号Nick
 func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetRealTpNick(_realTpNick string) error {
 	r._realTpNick = _realTpNick
@@ -94,12 +94,12 @@ func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetRealTpNick
 	return nil
 }
 
-// Get RealTpNick Getter
+// GetRealTpNick RealTpNick Getter
 func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetRealTpNick() string {
 	return r._realTpNick
 }
 
-// Set is TargetGoodsDefects Setter
+// SetTargetGoodsDefects is TargetGoodsDefects Setter
 // 服务目标物瑕疵信息
 func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetTargetGoodsDefects(_targetGoodsDefects string) error {
 	r._targetGoodsDefects = _targetGoodsDefects
@@ -107,12 +107,12 @@ func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetTargetGood
 	return nil
 }
 
-// Get TargetGoodsDefects Getter
+// GetTargetGoodsDefects TargetGoodsDefects Getter
 func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetTargetGoodsDefects() string {
 	return r._targetGoodsDefects
 }
 
-// Set is ReceivedGoods Setter
+// SetReceivedGoods is ReceivedGoods Setter
 // 衣服，鞋子
 func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetReceivedGoods(_receivedGoods string) error {
 	r._receivedGoods = _receivedGoods
@@ -120,7 +120,7 @@ func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetReceivedGo
 	return nil
 }
 
-// Get ReceivedGoods Getter
+// GetReceivedGoods ReceivedGoods Getter
 func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetReceivedGoods() string {
 	return r._receivedGoods
 }

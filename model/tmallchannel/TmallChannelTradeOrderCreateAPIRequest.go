@@ -37,7 +37,7 @@ func (r TmallChannelTradeOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 入参
 func (r *TmallChannelTradeOrderCreateAPIRequest) SetParam0(_param0 *TopChannelPurchaseOrderCreateParam) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TmallChannelTradeOrderCreateAPIRequest) SetParam0(_param0 *TopChannelPu
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TmallChannelTradeOrderCreateAPIRequest) GetParam0() *TopChannelPurchaseOrderCreateParam {
 	return r._param0
 }

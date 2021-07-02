@@ -37,7 +37,7 @@ func (r AlitripPlatformDivisionsQuerybyparentidAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ParamLong Setter
+// SetParamLong is ParamLong Setter
 // 行政区划父id
 func (r *AlitripPlatformDivisionsQuerybyparentidAPIRequest) SetParamLong(_paramLong int64) error {
 	r._paramLong = _paramLong
@@ -45,7 +45,7 @@ func (r *AlitripPlatformDivisionsQuerybyparentidAPIRequest) SetParamLong(_paramL
 	return nil
 }
 
-// Get ParamLong Getter
+// GetParamLong ParamLong Getter
 func (r AlitripPlatformDivisionsQuerybyparentidAPIRequest) GetParamLong() int64 {
 	return r._paramLong
 }

@@ -49,7 +49,7 @@ func (r TaobaoAilabAicloudTopLikeDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息，用于存放APP类型等
 func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -57,12 +57,12 @@ func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetExt(_ext string) error {
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoAilabAicloudTopLikeDeleteAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is UtdId Setter
+// SetUtdId is UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
 func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
@@ -70,12 +70,12 @@ func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetUtdId(_utdId string) erro
 	return nil
 }
 
-// Get UtdId Getter
+// GetUtdId UtdId Getter
 func (r TaobaoAilabAicloudTopLikeDeleteAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
 func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -83,12 +83,12 @@ func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetUserId(_userId string) er
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopLikeDeleteAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 账户体系隔离
 func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -96,12 +96,12 @@ func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetSchema(_schema string) er
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopLikeDeleteAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 收藏类型，目前支持四种：story,children_song,music,program，分别表示故事、儿童、音乐和节目
 func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -109,12 +109,12 @@ func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetType(_type string) error 
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoAilabAicloudTopLikeDeleteAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 来源
 func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -122,12 +122,12 @@ func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetSource(_source string) er
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r TaobaoAilabAicloudTopLikeDeleteAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 资源的记录ID
 func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetItemId(_itemId string) error {
 	r._itemId = _itemId
@@ -135,7 +135,7 @@ func (r *TaobaoAilabAicloudTopLikeDeleteAPIRequest) SetItemId(_itemId string) er
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoAilabAicloudTopLikeDeleteAPIRequest) GetItemId() string {
 	return r._itemId
 }

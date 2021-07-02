@@ -46,7 +46,7 @@ func (r AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is BureauName Setter
+// SetBureauName is BureauName Setter
 // 社保局(所属地市名称)
 func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetBureauName(_bureauName string) error {
 	r._bureauName = _bureauName
@@ -54,12 +54,12 @@ func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetBureauName(_bure
 	return nil
 }
 
-// Get BureauName Getter
+// GetBureauName BureauName Getter
 func (r AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) GetBureauName() string {
 	return r._bureauName
 }
 
-// Set is TerminalName Setter
+// SetTerminalName is TerminalName Setter
 // 请求终端名称
 func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetTerminalName(_terminalName string) error {
 	r._terminalName = _terminalName
@@ -67,12 +67,12 @@ func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetTerminalName(_te
 	return nil
 }
 
-// Get TerminalName Getter
+// GetTerminalName TerminalName Getter
 func (r AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) GetTerminalName() string {
 	return r._terminalName
 }
 
-// Set is TerminalType Setter
+// SetTerminalType is TerminalType Setter
 // 终端类型：1005100-零售，1005200-医疗
 func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetTerminalType(_terminalType string) error {
 	r._terminalType = _terminalType
@@ -80,12 +80,12 @@ func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetTerminalType(_te
 	return nil
 }
 
-// Get TerminalType Getter
+// GetTerminalType TerminalType Getter
 func (r AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) GetTerminalType() string {
 	return r._terminalType
 }
 
-// Set is Invocation Setter
+// SetInvocation is Invocation Setter
 // 调用方式：formal-正式、test-测试
 func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetInvocation(_invocation string) error {
 	r._invocation = _invocation
@@ -93,12 +93,12 @@ func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetInvocation(_invo
 	return nil
 }
 
-// Get Invocation Getter
+// GetInvocation Invocation Getter
 func (r AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) GetInvocation() string {
 	return r._invocation
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 追溯码
 func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -106,7 +106,7 @@ func (r *AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) SetCode(_code strin
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaAlihealthDrugKytYbGetcoderelationAPIRequest) GetCode() string {
 	return r._code
 }

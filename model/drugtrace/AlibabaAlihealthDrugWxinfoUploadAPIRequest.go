@@ -43,7 +43,7 @@ func (r AlibabaAlihealthDrugWxinfoUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserInfo Setter
+// SetUserInfo is UserInfo Setter
 // 用户信息
 func (r *AlibabaAlihealthDrugWxinfoUploadAPIRequest) SetUserInfo(_userInfo string) error {
 	r._userInfo = _userInfo
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthDrugWxinfoUploadAPIRequest) SetUserInfo(_userInfo strin
 	return nil
 }
 
-// Get UserInfo Getter
+// GetUserInfo UserInfo Getter
 func (r AlibabaAlihealthDrugWxinfoUploadAPIRequest) GetUserInfo() string {
 	return r._userInfo
 }
 
-// Set is ShopInfo Setter
+// SetShopInfo is ShopInfo Setter
 // 店铺名称
 func (r *AlibabaAlihealthDrugWxinfoUploadAPIRequest) SetShopInfo(_shopInfo string) error {
 	r._shopInfo = _shopInfo
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthDrugWxinfoUploadAPIRequest) SetShopInfo(_shopInfo strin
 	return nil
 }
 
-// Get ShopInfo Getter
+// GetShopInfo ShopInfo Getter
 func (r AlibabaAlihealthDrugWxinfoUploadAPIRequest) GetShopInfo() string {
 	return r._shopInfo
 }
 
-// Set is SalerInfo Setter
+// SetSalerInfo is SalerInfo Setter
 // 售货员信息
 func (r *AlibabaAlihealthDrugWxinfoUploadAPIRequest) SetSalerInfo(_salerInfo string) error {
 	r._salerInfo = _salerInfo
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthDrugWxinfoUploadAPIRequest) SetSalerInfo(_salerInfo str
 	return nil
 }
 
-// Get SalerInfo Getter
+// GetSalerInfo SalerInfo Getter
 func (r AlibabaAlihealthDrugWxinfoUploadAPIRequest) GetSalerInfo() string {
 	return r._salerInfo
 }
 
-// Set is IsvChannel Setter
+// SetIsvChannel is IsvChannel Setter
 // 渠道
 func (r *AlibabaAlihealthDrugWxinfoUploadAPIRequest) SetIsvChannel(_isvChannel string) error {
 	r._isvChannel = _isvChannel
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthDrugWxinfoUploadAPIRequest) SetIsvChannel(_isvChannel s
 	return nil
 }
 
-// Get IsvChannel Getter
+// GetIsvChannel IsvChannel Getter
 func (r AlibabaAlihealthDrugWxinfoUploadAPIRequest) GetIsvChannel() string {
 	return r._isvChannel
 }

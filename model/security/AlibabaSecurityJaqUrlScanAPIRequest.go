@@ -37,7 +37,7 @@ func (r AlibabaSecurityJaqUrlScanAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamUrlScanParamList Setter
+// SetParamUrlScanParamList is ParamUrlScanParamList Setter
 // 扫描参数
 func (r *AlibabaSecurityJaqUrlScanAPIRequest) SetParamUrlScanParamList(_paramUrlScanParamList *UrlScanParamList) error {
 	r._paramUrlScanParamList = _paramUrlScanParamList
@@ -45,7 +45,7 @@ func (r *AlibabaSecurityJaqUrlScanAPIRequest) SetParamUrlScanParamList(_paramUrl
 	return nil
 }
 
-// Get ParamUrlScanParamList Getter
+// GetParamUrlScanParamList ParamUrlScanParamList Getter
 func (r AlibabaSecurityJaqUrlScanAPIRequest) GetParamUrlScanParamList() *UrlScanParamList {
 	return r._paramUrlScanParamList
 }

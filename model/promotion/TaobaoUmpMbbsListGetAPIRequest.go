@@ -37,7 +37,7 @@ func (r TaobaoUmpMbbsListGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Ids Setter
+// SetIds is Ids Setter
 // 营销积木块id组成的字符串。
 func (r *TaobaoUmpMbbsListGetAPIRequest) SetIds(_ids []int64) error {
 	r._ids = _ids
@@ -45,7 +45,7 @@ func (r *TaobaoUmpMbbsListGetAPIRequest) SetIds(_ids []int64) error {
 	return nil
 }
 
-// Get Ids Getter
+// GetIds Ids Getter
 func (r TaobaoUmpMbbsListGetAPIRequest) GetIds() []int64 {
 	return r._ids
 }

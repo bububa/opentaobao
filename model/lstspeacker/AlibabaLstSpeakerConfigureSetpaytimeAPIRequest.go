@@ -45,7 +45,7 @@ func (r AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 设备编码
 func (r *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -53,12 +53,12 @@ func (r *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) SetDeviceCode(_deviceCo
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is PlayStartTime Setter
+// SetPlayStartTime is PlayStartTime Setter
 // 开始时间
 func (r *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) SetPlayStartTime(_playStartTime string) error {
 	r._playStartTime = _playStartTime
@@ -66,12 +66,12 @@ func (r *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) SetPlayStartTime(_playS
 	return nil
 }
 
-// Get PlayStartTime Getter
+// GetPlayStartTime PlayStartTime Getter
 func (r AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) GetPlayStartTime() string {
 	return r._playStartTime
 }
 
-// Set is PlayEndTime Setter
+// SetPlayEndTime is PlayEndTime Setter
 // 结束时间
 func (r *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) SetPlayEndTime(_playEndTime string) error {
 	r._playEndTime = _playEndTime
@@ -79,12 +79,12 @@ func (r *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) SetPlayEndTime(_playEnd
 	return nil
 }
 
-// Get PlayEndTime Getter
+// GetPlayEndTime PlayEndTime Getter
 func (r AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) GetPlayEndTime() string {
 	return r._playEndTime
 }
 
-// Set is IsOnlyPlayAdvert Setter
+// SetIsOnlyPlayAdvert is IsOnlyPlayAdvert Setter
 // 是否播放广告
 func (r *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) SetIsOnlyPlayAdvert(_isOnlyPlayAdvert bool) error {
 	r._isOnlyPlayAdvert = _isOnlyPlayAdvert
@@ -92,12 +92,12 @@ func (r *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) SetIsOnlyPlayAdvert(_is
 	return nil
 }
 
-// Get IsOnlyPlayAdvert Getter
+// GetIsOnlyPlayAdvert IsOnlyPlayAdvert Getter
 func (r AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) GetIsOnlyPlayAdvert() bool {
 	return r._isOnlyPlayAdvert
 }
 
-// Set is IsSetPlayTime Setter
+// SetIsSetPlayTime is IsSetPlayTime Setter
 // 是否设置播放时间
 func (r *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) SetIsSetPlayTime(_isSetPlayTime bool) error {
 	r._isSetPlayTime = _isSetPlayTime
@@ -105,7 +105,7 @@ func (r *AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) SetIsSetPlayTime(_isSet
 	return nil
 }
 
-// Get IsSetPlayTime Getter
+// GetIsSetPlayTime IsSetPlayTime Getter
 func (r AlibabaLstSpeakerConfigureSetpaytimeAPIRequest) GetIsSetPlayTime() bool {
 	return r._isSetPlayTime
 }

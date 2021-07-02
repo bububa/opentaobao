@@ -37,7 +37,7 @@ func (r TaobaoTradesSoldQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryList Setter
+// SetQueryList is QueryList Setter
 // 查询条件列表，多个条件之间是OR关系，最多支持20个。receiver_name、receiver_mobile、receiver_phone至少有一个值不为空。
 func (r *TaobaoTradesSoldQueryAPIRequest) SetQueryList(_queryList []OrderQuery) error {
 	r._queryList = _queryList
@@ -45,7 +45,7 @@ func (r *TaobaoTradesSoldQueryAPIRequest) SetQueryList(_queryList []OrderQuery) 
 	return nil
 }
 
-// Get QueryList Getter
+// GetQueryList QueryList Getter
 func (r TaobaoTradesSoldQueryAPIRequest) GetQueryList() []OrderQuery {
 	return r._queryList
 }

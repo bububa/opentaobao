@@ -41,7 +41,7 @@ func (r AlibabaWdkMerchantStoreitemQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SkuCode Setter
+// SetSkuCode is SkuCode Setter
 // 商品编码
 func (r *AlibabaWdkMerchantStoreitemQueryAPIRequest) SetSkuCode(_skuCode string) error {
 	r._skuCode = _skuCode
@@ -49,12 +49,12 @@ func (r *AlibabaWdkMerchantStoreitemQueryAPIRequest) SetSkuCode(_skuCode string)
 	return nil
 }
 
-// Get SkuCode Getter
+// GetSkuCode SkuCode Getter
 func (r AlibabaWdkMerchantStoreitemQueryAPIRequest) GetSkuCode() string {
 	return r._skuCode
 }
 
-// Set is MerchantCode Setter
+// SetMerchantCode is MerchantCode Setter
 // 商家编码
 func (r *AlibabaWdkMerchantStoreitemQueryAPIRequest) SetMerchantCode(_merchantCode string) error {
 	r._merchantCode = _merchantCode
@@ -62,12 +62,12 @@ func (r *AlibabaWdkMerchantStoreitemQueryAPIRequest) SetMerchantCode(_merchantCo
 	return nil
 }
 
-// Get MerchantCode Getter
+// GetMerchantCode MerchantCode Getter
 func (r AlibabaWdkMerchantStoreitemQueryAPIRequest) GetMerchantCode() string {
 	return r._merchantCode
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店编码
 func (r *AlibabaWdkMerchantStoreitemQueryAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -75,7 +75,7 @@ func (r *AlibabaWdkMerchantStoreitemQueryAPIRequest) SetStoreId(_storeId string)
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaWdkMerchantStoreitemQueryAPIRequest) GetStoreId() string {
 	return r._storeId
 }

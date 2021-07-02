@@ -39,7 +39,7 @@ func (r TaobaoCrmGroupAppendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FromGroupId Setter
+// SetFromGroupId is FromGroupId Setter
 // 添加的来源分组
 func (r *TaobaoCrmGroupAppendAPIRequest) SetFromGroupId(_fromGroupId int64) error {
 	r._fromGroupId = _fromGroupId
@@ -47,12 +47,12 @@ func (r *TaobaoCrmGroupAppendAPIRequest) SetFromGroupId(_fromGroupId int64) erro
 	return nil
 }
 
-// Get FromGroupId Getter
+// GetFromGroupId FromGroupId Getter
 func (r TaobaoCrmGroupAppendAPIRequest) GetFromGroupId() int64 {
 	return r._fromGroupId
 }
 
-// Set is ToGroupId Setter
+// SetToGroupId is ToGroupId Setter
 // 添加的目标分组
 func (r *TaobaoCrmGroupAppendAPIRequest) SetToGroupId(_toGroupId int64) error {
 	r._toGroupId = _toGroupId
@@ -60,7 +60,7 @@ func (r *TaobaoCrmGroupAppendAPIRequest) SetToGroupId(_toGroupId int64) error {
 	return nil
 }
 
-// Get ToGroupId Getter
+// GetToGroupId ToGroupId Getter
 func (r TaobaoCrmGroupAppendAPIRequest) GetToGroupId() int64 {
 	return r._toGroupId
 }

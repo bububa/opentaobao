@@ -39,7 +39,7 @@ func (r TaobaoOpenAccountListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpenAccountIds Setter
+// SetOpenAccountIds is OpenAccountIds Setter
 // Open Account的id列表, 每次最多查询 20 个帐户
 func (r *TaobaoOpenAccountListAPIRequest) SetOpenAccountIds(_openAccountIds []int64) error {
 	r._openAccountIds = _openAccountIds
@@ -47,12 +47,12 @@ func (r *TaobaoOpenAccountListAPIRequest) SetOpenAccountIds(_openAccountIds []in
 	return nil
 }
 
-// Get OpenAccountIds Getter
+// GetOpenAccountIds OpenAccountIds Getter
 func (r TaobaoOpenAccountListAPIRequest) GetOpenAccountIds() []int64 {
 	return r._openAccountIds
 }
 
-// Set is IsvAccountIds Setter
+// SetIsvAccountIds is IsvAccountIds Setter
 // ISV自己账号的id列表，isvAccountId和openAccountId二选一必填, 每次最多查询 20 个帐户
 func (r *TaobaoOpenAccountListAPIRequest) SetIsvAccountIds(_isvAccountIds []string) error {
 	r._isvAccountIds = _isvAccountIds
@@ -60,7 +60,7 @@ func (r *TaobaoOpenAccountListAPIRequest) SetIsvAccountIds(_isvAccountIds []stri
 	return nil
 }
 
-// Get IsvAccountIds Getter
+// GetIsvAccountIds IsvAccountIds Getter
 func (r TaobaoOpenAccountListAPIRequest) GetIsvAccountIds() []string {
 	return r._isvAccountIds
 }

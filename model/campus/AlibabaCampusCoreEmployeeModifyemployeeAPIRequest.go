@@ -41,7 +41,7 @@ func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is WorkBenchContext Setter
+// SetWorkBenchContext is WorkBenchContext Setter
 // WorkBenchContext
 func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
 	r._workBenchContext = _workBenchContext
@@ -49,12 +49,12 @@ func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) SetWorkBenchContext(
 	return nil
 }
 
-// Get WorkBenchContext Getter
+// GetWorkBenchContext WorkBenchContext Getter
 func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetWorkBenchContext() *WorkBenchContext {
 	return r._workBenchContext
 }
 
-// Set is EmployeeDto Setter
+// SetEmployeeDto is EmployeeDto Setter
 // EmployeeDto
 func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) SetEmployeeDto(_employeeDto *EmployeeDto) error {
 	r._employeeDto = _employeeDto
@@ -62,12 +62,12 @@ func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) SetEmployeeDto(_empl
 	return nil
 }
 
-// Get EmployeeDto Getter
+// GetEmployeeDto EmployeeDto Getter
 func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetEmployeeDto() *EmployeeDto {
 	return r._employeeDto
 }
 
-// Set is AccountId Setter
+// SetAccountId is AccountId Setter
 // 用户ID
 func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) SetAccountId(_accountId string) error {
 	r._accountId = _accountId
@@ -75,7 +75,7 @@ func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) SetAccountId(_accoun
 	return nil
 }
 
-// Get AccountId Getter
+// GetAccountId AccountId Getter
 func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetAccountId() string {
 	return r._accountId
 }

@@ -37,7 +37,7 @@ func (r TaobaoSimbaSalestarCreativeDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CreativeId Setter
+// SetCreativeId is CreativeId Setter
 // 创意Id
 func (r *TaobaoSimbaSalestarCreativeDeleteAPIRequest) SetCreativeId(_creativeId int64) error {
 	r._creativeId = _creativeId
@@ -45,7 +45,7 @@ func (r *TaobaoSimbaSalestarCreativeDeleteAPIRequest) SetCreativeId(_creativeId 
 	return nil
 }
 
-// Get CreativeId Getter
+// GetCreativeId CreativeId Getter
 func (r TaobaoSimbaSalestarCreativeDeleteAPIRequest) GetCreativeId() int64 {
 	return r._creativeId
 }

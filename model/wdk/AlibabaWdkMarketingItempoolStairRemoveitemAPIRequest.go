@@ -39,7 +39,7 @@ func (r AlibabaWdkMarketingItempoolStairRemoveitemAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 商品sku信息
 func (r *AlibabaWdkMarketingItempoolStairRemoveitemAPIRequest) SetParam0(_param0 *ItemPoolSku) error {
 	r._param0 = _param0
@@ -47,12 +47,12 @@ func (r *AlibabaWdkMarketingItempoolStairRemoveitemAPIRequest) SetParam0(_param0
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaWdkMarketingItempoolStairRemoveitemAPIRequest) GetParam0() *ItemPoolSku {
 	return r._param0
 }
 
-// Set is Param1 Setter
+// SetParam1 is Param1 Setter
 // 活动信息
 func (r *AlibabaWdkMarketingItempoolStairRemoveitemAPIRequest) SetParam1(_param1 *CommonActivityParam) error {
 	r._param1 = _param1
@@ -60,7 +60,7 @@ func (r *AlibabaWdkMarketingItempoolStairRemoveitemAPIRequest) SetParam1(_param1
 	return nil
 }
 
-// Get Param1 Getter
+// GetParam1 Param1 Getter
 func (r AlibabaWdkMarketingItempoolStairRemoveitemAPIRequest) GetParam1() *CommonActivityParam {
 	return r._param1
 }

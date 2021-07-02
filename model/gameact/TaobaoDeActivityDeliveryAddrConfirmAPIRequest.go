@@ -39,7 +39,7 @@ func (r TaobaoDeActivityDeliveryAddrConfirmAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is SerialNumber Setter
+// SetSerialNumber is SerialNumber Setter
 // 加密流水号
 func (r *TaobaoDeActivityDeliveryAddrConfirmAPIRequest) SetSerialNumber(_serialNumber string) error {
 	r._serialNumber = _serialNumber
@@ -47,12 +47,12 @@ func (r *TaobaoDeActivityDeliveryAddrConfirmAPIRequest) SetSerialNumber(_serialN
 	return nil
 }
 
-// Get SerialNumber Getter
+// GetSerialNumber SerialNumber Getter
 func (r TaobaoDeActivityDeliveryAddrConfirmAPIRequest) GetSerialNumber() string {
 	return r._serialNumber
 }
 
-// Set is AddressSign Setter
+// SetAddressSign is AddressSign Setter
 // 地址Sign
 func (r *TaobaoDeActivityDeliveryAddrConfirmAPIRequest) SetAddressSign(_addressSign string) error {
 	r._addressSign = _addressSign
@@ -60,7 +60,7 @@ func (r *TaobaoDeActivityDeliveryAddrConfirmAPIRequest) SetAddressSign(_addressS
 	return nil
 }
 
-// Get AddressSign Getter
+// GetAddressSign AddressSign Getter
 func (r TaobaoDeActivityDeliveryAddrConfirmAPIRequest) GetAddressSign() string {
 	return r._addressSign
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkSupplierRefundListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SupplierRefundQueryRequest Setter
+// SetSupplierRefundQueryRequest is SupplierRefundQueryRequest Setter
 // 查询参数
 func (r *AlibabaWdkSupplierRefundListAPIRequest) SetSupplierRefundQueryRequest(_supplierRefundQueryRequest *SupplierRefundQueryRequest) error {
 	r._supplierRefundQueryRequest = _supplierRefundQueryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSupplierRefundListAPIRequest) SetSupplierRefundQueryRequest(_
 	return nil
 }
 
-// Get SupplierRefundQueryRequest Getter
+// GetSupplierRefundQueryRequest SupplierRefundQueryRequest Getter
 func (r AlibabaWdkSupplierRefundListAPIRequest) GetSupplierRefundQueryRequest() *SupplierRefundQueryRequest {
 	return r._supplierRefundQueryRequest
 }

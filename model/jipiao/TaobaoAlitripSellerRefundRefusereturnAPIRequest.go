@@ -39,7 +39,7 @@ func (r TaobaoAlitripSellerRefundRefusereturnAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ApplyId Setter
+// SetApplyId is ApplyId Setter
 // 申请单ID
 func (r *TaobaoAlitripSellerRefundRefusereturnAPIRequest) SetApplyId(_applyId int64) error {
 	r._applyId = _applyId
@@ -47,12 +47,12 @@ func (r *TaobaoAlitripSellerRefundRefusereturnAPIRequest) SetApplyId(_applyId in
 	return nil
 }
 
-// Get ApplyId Getter
+// GetApplyId ApplyId Getter
 func (r TaobaoAlitripSellerRefundRefusereturnAPIRequest) GetApplyId() int64 {
 	return r._applyId
 }
 
-// Set is Reason Setter
+// SetReason is Reason Setter
 // 拒绝理由
 func (r *TaobaoAlitripSellerRefundRefusereturnAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
@@ -60,7 +60,7 @@ func (r *TaobaoAlitripSellerRefundRefusereturnAPIRequest) SetReason(_reason stri
 	return nil
 }
 
-// Get Reason Getter
+// GetReason Reason Getter
 func (r TaobaoAlitripSellerRefundRefusereturnAPIRequest) GetReason() string {
 	return r._reason
 }

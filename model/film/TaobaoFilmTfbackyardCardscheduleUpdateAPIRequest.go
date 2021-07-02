@@ -37,7 +37,7 @@ func (r TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is JsonData Setter
+// SetJsonData is JsonData Setter
 // CGV影城卡价格数据
 func (r *TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest) SetJsonData(_jsonData string) error {
 	r._jsonData = _jsonData
@@ -45,7 +45,7 @@ func (r *TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest) SetJsonData(_jsonData
 	return nil
 }
 
-// Get JsonData Getter
+// GetJsonData JsonData Getter
 func (r TaobaoFilmTfbackyardCardscheduleUpdateAPIRequest) GetJsonData() string {
 	return r._jsonData
 }

@@ -39,7 +39,7 @@ func (r TaobaoOpenmallTradeAddressParseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RawAddress Setter
+// SetRawAddress is RawAddress Setter
 // 需解析的地址信息，建议只传地址选择器中的省市区，街道门牌号等用户手动输入数据不传
 func (r *TaobaoOpenmallTradeAddressParseAPIRequest) SetRawAddress(_rawAddress string) error {
 	r._rawAddress = _rawAddress
@@ -47,12 +47,12 @@ func (r *TaobaoOpenmallTradeAddressParseAPIRequest) SetRawAddress(_rawAddress st
 	return nil
 }
 
-// Get RawAddress Getter
+// GetRawAddress RawAddress Getter
 func (r TaobaoOpenmallTradeAddressParseAPIRequest) GetRawAddress() string {
 	return r._rawAddress
 }
 
-// Set is Distributor Setter
+// SetDistributor is Distributor Setter
 // 渠道商分销者淘宝账号
 func (r *TaobaoOpenmallTradeAddressParseAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
@@ -60,7 +60,7 @@ func (r *TaobaoOpenmallTradeAddressParseAPIRequest) SetDistributor(_distributor 
 	return nil
 }
 
-// Get Distributor Getter
+// GetDistributor Distributor Getter
 func (r TaobaoOpenmallTradeAddressParseAPIRequest) GetDistributor() string {
 	return r._distributor
 }

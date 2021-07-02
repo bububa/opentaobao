@@ -45,7 +45,7 @@ func (r TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TaxNum Setter
+// SetTaxNum is TaxNum Setter
 // 开票点税号
 func (r *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) SetTaxNum(_taxNum string) error {
 	r._taxNum = _taxNum
@@ -53,12 +53,12 @@ func (r *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) SetTaxNum(_taxNum string) er
 	return nil
 }
 
-// Get TaxNum Getter
+// GetTaxNum TaxNum Getter
 func (r TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) GetTaxNum() string {
 	return r._taxNum
 }
 
-// Set is ShortIdNum Setter
+// SetShortIdNum is ShortIdNum Setter
 // 身份证后4位
 func (r *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) SetShortIdNum(_shortIdNum string) error {
 	r._shortIdNum = _shortIdNum
@@ -66,12 +66,12 @@ func (r *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) SetShortIdNum(_shortIdNum st
 	return nil
 }
 
-// Get ShortIdNum Getter
+// GetShortIdNum ShortIdNum Getter
 func (r TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) GetShortIdNum() string {
 	return r._shortIdNum
 }
 
-// Set is RoomNum Setter
+// SetRoomNum is RoomNum Setter
 // 房间号
 func (r *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) SetRoomNum(_roomNum string) error {
 	r._roomNum = _roomNum
@@ -79,12 +79,12 @@ func (r *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) SetRoomNum(_roomNum string) 
 	return nil
 }
 
-// Get RoomNum Getter
+// GetRoomNum RoomNum Getter
 func (r TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) GetRoomNum() string {
 	return r._roomNum
 }
 
-// Set is RequestId Setter
+// SetRequestId is RequestId Setter
 // 请求id (32位唯一值)
 func (r *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) SetRequestId(_requestId string) error {
 	r._requestId = _requestId
@@ -92,12 +92,12 @@ func (r *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) SetRequestId(_requestId stri
 	return nil
 }
 
-// Get RequestId Getter
+// GetRequestId RequestId Getter
 func (r TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) GetRequestId() string {
 	return r._requestId
 }
 
-// Set is UserChannel Setter
+// SetUserChannel is UserChannel Setter
 // 用户渠道(0:未知,1:淘宝)
 func (r *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) SetUserChannel(_userChannel int64) error {
 	r._userChannel = _userChannel
@@ -105,7 +105,7 @@ func (r *TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) SetUserChannel(_userChannel 
 	return nil
 }
 
-// Get UserChannel Getter
+// GetUserChannel UserChannel Getter
 func (r TaobaoXhotelPmsGuestbillGetVtwoAPIRequest) GetUserChannel() int64 {
 	return r._userChannel
 }

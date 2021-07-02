@@ -39,7 +39,7 @@ func (r AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) GetApiParams
 	return params
 }
 
-// Set is EntInfoId Setter
+// SetEntInfoId is EntInfoId Setter
 // 企业id
 func (r *AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) SetEntInfoId(_entInfoId int64) error {
 	r._entInfoId = _entInfoId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) SetEntInfoI
 	return nil
 }
 
-// Get EntInfoId Getter
+// GetEntInfoId EntInfoId Getter
 func (r AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) GetEntInfoId() int64 {
 	return r._entInfoId
 }
 
-// Set is TracUserProductInfoId Setter
+// SetTracUserProductInfoId is TracUserProductInfoId Setter
 // 货品id
 func (r *AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) SetTracUserProductInfoId(_tracUserProductInfoId int64) error {
 	r._tracUserProductInfoId = _tracUserProductInfoId
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) SetTracUser
 	return nil
 }
 
-// Get TracUserProductInfoId Getter
+// GetTracUserProductInfoId TracUserProductInfoId Getter
 func (r AlibabaAlihealthTracecodesellerProductAttrSearchAPIRequest) GetTracUserProductInfoId() int64 {
 	return r._tracUserProductInfoId
 }

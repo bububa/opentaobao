@@ -65,7 +65,7 @@ func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝订单号,必填
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -73,12 +73,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is OptType Setter
+// SetOptType is OptType Setter
 // 操作的类型：12.补录确认号,11.多间房确认无房，10.多间房确认有房，8.取消订单(cancel)酒店端发起取消,必须在和买家协商通过的情况下操作,否则有法务风险; 5.买家未入住(noshow),如果该单有担保，会收取买家的担保金额; 3.核实入住(checkIn); 4.核实离店(checkOut); 1.确认无房(直连卖家禁止该操作),2.确认有房(直连卖家禁止该操作)
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetOptType(_optType int64) error {
 	r._optType = _optType
@@ -86,12 +86,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetOptType(_optType int64)
 	return nil
 }
 
-// Get OptType Getter
+// GetOptType OptType Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetOptType() int64 {
 	return r._optType
 }
 
-// Set is ReasonType Setter
+// SetReasonType is ReasonType Setter
 // 无房原因分类:1.无房, 2.价格变动, 3.买家原因, 4.其它原因,opt_type=1时必填
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetReasonType(_reasonType int64) error {
 	r._reasonType = _reasonType
@@ -99,12 +99,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetReasonType(_reasonType 
 	return nil
 }
 
-// Get ReasonType Getter
+// GetReasonType ReasonType Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetReasonType() int64 {
 	return r._reasonType
 }
 
-// Set is ReasonText Setter
+// SetReasonText is ReasonText Setter
 // 无房原因描述:opt_type=1时必填
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetReasonText(_reasonText string) error {
 	r._reasonText = _reasonText
@@ -112,12 +112,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetReasonText(_reasonText 
 	return nil
 }
 
-// Get ReasonText Getter
+// GetReasonText ReasonText Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetReasonText() string {
 	return r._reasonText
 }
 
-// Set is OutRoomNumber Setter
+// SetOutRoomNumber is OutRoomNumber Setter
 // 入住房间号
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetOutRoomNumber(_outRoomNumber string) error {
 	r._outRoomNumber = _outRoomNumber
@@ -125,12 +125,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetOutRoomNumber(_outRoomN
 	return nil
 }
 
-// Get OutRoomNumber Getter
+// GetOutRoomNumber OutRoomNumber Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetOutRoomNumber() string {
 	return r._outRoomNumber
 }
 
-// Set is CheckinDate Setter
+// SetCheckinDate is CheckinDate Setter
 // 客人实际入住日期,opt_type=3/4时必填
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetCheckinDate(_checkinDate string) error {
 	r._checkinDate = _checkinDate
@@ -138,12 +138,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetCheckinDate(_checkinDat
 	return nil
 }
 
-// Get CheckinDate Getter
+// GetCheckinDate CheckinDate Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetCheckinDate() string {
 	return r._checkinDate
 }
 
-// Set is CheckoutDate Setter
+// SetCheckoutDate is CheckoutDate Setter
 // 客人实际离店日期,opt_type=4时必填
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetCheckoutDate(_checkoutDate string) error {
 	r._checkoutDate = _checkoutDate
@@ -151,12 +151,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetCheckoutDate(_checkoutD
 	return nil
 }
 
-// Get CheckoutDate Getter
+// GetCheckoutDate CheckoutDate Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetCheckoutDate() string {
 	return r._checkoutDate
 }
 
-// Set is Rooms Setter
+// SetRooms is Rooms Setter
 // 客人实际预定房间数
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetRooms(_rooms int64) error {
 	r._rooms = _rooms
@@ -164,12 +164,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetRooms(_rooms int64) err
 	return nil
 }
 
-// Get Rooms Getter
+// GetRooms Rooms Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetRooms() int64 {
 	return r._rooms
 }
 
-// Set is OutId Setter
+// SetOutId is OutId Setter
 // 外部订单号
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetOutId(_outId string) error {
 	r._outId = _outId
@@ -177,12 +177,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetOutId(_outId string) er
 	return nil
 }
 
-// Get OutId Getter
+// GetOutId OutId Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetOutId() string {
 	return r._outId
 }
 
-// Set is Tids Setter
+// SetTids is Tids Setter
 // opt_type为10,11启用，多间房订单号列表，逗号间隔
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetTids(_tids string) error {
 	r._tids = _tids
@@ -190,12 +190,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetTids(_tids string) erro
 	return nil
 }
 
-// Get Tids Getter
+// GetTids Tids Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetTids() string {
 	return r._tids
 }
 
-// Set is CancelType Setter
+// SetCancelType is CancelType Setter
 // opt_type为11启用，多间房订单取消原因类型，逗号间隔
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetCancelType(_cancelType int64) error {
 	r._cancelType = _cancelType
@@ -203,12 +203,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetCancelType(_cancelType 
 	return nil
 }
 
-// Get CancelType Getter
+// GetCancelType CancelType Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetCancelType() int64 {
 	return r._cancelType
 }
 
-// Set is Operator Setter
+// SetOperator is Operator Setter
 // opt_type为10,11,12启用，真实操作人
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
@@ -216,12 +216,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetOperator(_operator stri
 	return nil
 }
 
-// Get Operator Getter
+// GetOperator Operator Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetOperator() string {
 	return r._operator
 }
 
-// Set is ConfirmCode Setter
+// SetConfirmCode is ConfirmCode Setter
 // opt_type为12, 订单确认号
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetConfirmCode(_confirmCode string) error {
 	r._confirmCode = _confirmCode
@@ -229,12 +229,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetConfirmCode(_confirmCod
 	return nil
 }
 
-// Get ConfirmCode Getter
+// GetConfirmCode ConfirmCode Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetConfirmCode() string {
 	return r._confirmCode
 }
 
-// Set is SelfCheckin Setter
+// SetSelfCheckin is SelfCheckin Setter
 // 是否自助入住
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetSelfCheckin(_selfCheckin bool) error {
 	r._selfCheckin = _selfCheckin
@@ -242,12 +242,12 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetSelfCheckin(_selfChecki
 	return nil
 }
 
-// Get SelfCheckin Getter
+// GetSelfCheckin SelfCheckin Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetSelfCheckin() bool {
 	return r._selfCheckin
 }
 
-// Set is SyncToHotel Setter
+// SetSyncToHotel is SyncToHotel Setter
 // 是否把代理直签的订单同步到酒店，Y为同步，N不同步
 func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetSyncToHotel(_syncToHotel string) error {
 	r._syncToHotel = _syncToHotel
@@ -255,7 +255,7 @@ func (r *TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) SetSyncToHotel(_syncToHote
 	return nil
 }
 
-// Get SyncToHotel Getter
+// GetSyncToHotel SyncToHotel Getter
 func (r TaobaoXhotelOrderAlipayfaceUpdateAPIRequest) GetSyncToHotel() string {
 	return r._syncToHotel
 }

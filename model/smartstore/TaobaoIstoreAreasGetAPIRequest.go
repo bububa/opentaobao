@@ -38,7 +38,7 @@ func (r TaobaoIstoreAreasGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需返回的字段列表.可选值:Area 结构中的所有字段;多个字段之间用","分隔.如:id,type,name,parent_id,zip.
 func (r *TaobaoIstoreAreasGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -46,7 +46,7 @@ func (r *TaobaoIstoreAreasGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoIstoreAreasGetAPIRequest) GetFields() string {
 	return r._fields
 }

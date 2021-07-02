@@ -37,7 +37,7 @@ func (r AlibabaRetailMarketingItempoolActivityUpdateAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 更新商品池活动参数
 func (r *AlibabaRetailMarketingItempoolActivityUpdateAPIRequest) SetParam(_param *ItemPoolActivityOperateRequest) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaRetailMarketingItempoolActivityUpdateAPIRequest) SetParam(_param
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaRetailMarketingItempoolActivityUpdateAPIRequest) GetParam() *ItemPoolActivityOperateRequest {
 	return r._param
 }

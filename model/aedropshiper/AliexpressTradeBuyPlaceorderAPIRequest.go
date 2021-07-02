@@ -37,7 +37,7 @@ func (r AliexpressTradeBuyPlaceorderAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamPlaceOrderRequest4OpenApiDTO Setter
+// SetParamPlaceOrderRequest4OpenApiDTO is ParamPlaceOrderRequest4OpenApiDTO Setter
 // 下单具体参数
 func (r *AliexpressTradeBuyPlaceorderAPIRequest) SetParamPlaceOrderRequest4OpenApiDTO(_paramPlaceOrderRequest4OpenApiDTO *PlaceOrderRequest4OpenApiDto) error {
 	r._paramPlaceOrderRequest4OpenApiDTO = _paramPlaceOrderRequest4OpenApiDTO
@@ -45,7 +45,7 @@ func (r *AliexpressTradeBuyPlaceorderAPIRequest) SetParamPlaceOrderRequest4OpenA
 	return nil
 }
 
-// Get ParamPlaceOrderRequest4OpenApiDTO Getter
+// GetParamPlaceOrderRequest4OpenApiDTO ParamPlaceOrderRequest4OpenApiDTO Getter
 func (r AliexpressTradeBuyPlaceorderAPIRequest) GetParamPlaceOrderRequest4OpenApiDTO() *PlaceOrderRequest4OpenApiDto {
 	return r._paramPlaceOrderRequest4OpenApiDTO
 }

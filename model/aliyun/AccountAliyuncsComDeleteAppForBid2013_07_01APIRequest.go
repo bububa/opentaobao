@@ -39,7 +39,7 @@ func (r AccountAliyuncsComDeleteAppForBid2013_07_01APIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is OwnerId Setter
+// SetOwnerId is OwnerId Setter
 // 要删除的appkey的所有者用户的pk
 func (r *AccountAliyuncsComDeleteAppForBid2013_07_01APIRequest) SetOwnerId(_ownerId string) error {
 	r._ownerId = _ownerId
@@ -47,12 +47,12 @@ func (r *AccountAliyuncsComDeleteAppForBid2013_07_01APIRequest) SetOwnerId(_owne
 	return nil
 }
 
-// Get OwnerId Getter
+// GetOwnerId OwnerId Getter
 func (r AccountAliyuncsComDeleteAppForBid2013_07_01APIRequest) GetOwnerId() string {
 	return r._ownerId
 }
 
-// Set is OwnerAppkey Setter
+// SetOwnerAppkey is OwnerAppkey Setter
 // 要删除的appkey
 func (r *AccountAliyuncsComDeleteAppForBid2013_07_01APIRequest) SetOwnerAppkey(_ownerAppkey string) error {
 	r._ownerAppkey = _ownerAppkey
@@ -60,7 +60,7 @@ func (r *AccountAliyuncsComDeleteAppForBid2013_07_01APIRequest) SetOwnerAppkey(_
 	return nil
 }
 
-// Get OwnerAppkey Getter
+// GetOwnerAppkey OwnerAppkey Getter
 func (r AccountAliyuncsComDeleteAppForBid2013_07_01APIRequest) GetOwnerAppkey() string {
 	return r._ownerAppkey
 }

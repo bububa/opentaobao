@@ -37,7 +37,7 @@ func (r AlitripBtripCorpopDepartSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 同步部门请求
 func (r *AlitripBtripCorpopDepartSyncAPIRequest) SetRq(_rq *BtripDepartSyncRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripCorpopDepartSyncAPIRequest) SetRq(_rq *BtripDepartSyncRq) e
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripCorpopDepartSyncAPIRequest) GetRq() *BtripDepartSyncRq {
 	return r._rq
 }

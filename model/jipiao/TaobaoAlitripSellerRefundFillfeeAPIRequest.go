@@ -45,7 +45,7 @@ func (r TaobaoAlitripSellerRefundFillfeeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ApplyId Setter
+// SetApplyId is ApplyId Setter
 // 申请单ID
 func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetApplyId(_applyId int64) error {
 	r._applyId = _applyId
@@ -53,12 +53,12 @@ func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetApplyId(_applyId int64) 
 	return nil
 }
 
-// Get ApplyId Getter
+// GetApplyId ApplyId Getter
 func (r TaobaoAlitripSellerRefundFillfeeAPIRequest) GetApplyId() int64 {
 	return r._applyId
 }
 
-// Set is FeePriceMap Setter
+// SetFeePriceMap is FeePriceMap Setter
 // 费对于关系，格式：{apply_fee_id:123,value:费用,金额单位分}
 func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetFeePriceMap(_feePriceMap string) error {
 	r._feePriceMap = _feePriceMap
@@ -66,12 +66,12 @@ func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetFeePriceMap(_feePriceMap
 	return nil
 }
 
-// Get FeePriceMap Getter
+// GetFeePriceMap FeePriceMap Getter
 func (r TaobaoAlitripSellerRefundFillfeeAPIRequest) GetFeePriceMap() string {
 	return r._feePriceMap
 }
 
-// Set is ModifyFee Setter
+// SetModifyFee is ModifyFee Setter
 // 改签费用，格式：{detail_id:123,value:费用,金额单位分}
 func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetModifyFee(_modifyFee string) error {
 	r._modifyFee = _modifyFee
@@ -79,12 +79,12 @@ func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetModifyFee(_modifyFee str
 	return nil
 }
 
-// Get ModifyFee Getter
+// GetModifyFee ModifyFee Getter
 func (r TaobaoAlitripSellerRefundFillfeeAPIRequest) GetModifyFee() string {
 	return r._modifyFee
 }
 
-// Set is TicketPriceMap Setter
+// SetTicketPriceMap is TicketPriceMap Setter
 // 票价信息，格式：{apply_fee_id：123,value:费用,金额单位分}
 func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetTicketPriceMap(_ticketPriceMap string) error {
 	r._ticketPriceMap = _ticketPriceMap
@@ -92,12 +92,12 @@ func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetTicketPriceMap(_ticketPr
 	return nil
 }
 
-// Get TicketPriceMap Getter
+// GetTicketPriceMap TicketPriceMap Getter
 func (r TaobaoAlitripSellerRefundFillfeeAPIRequest) GetTicketPriceMap() string {
 	return r._ticketPriceMap
 }
 
-// Set is UpgradeFee Setter
+// SetUpgradeFee is UpgradeFee Setter
 // 升舱费用，格式：{detail_id:123,value:费用,金额单位分}
 func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetUpgradeFee(_upgradeFee string) error {
 	r._upgradeFee = _upgradeFee
@@ -105,7 +105,7 @@ func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetUpgradeFee(_upgradeFee s
 	return nil
 }
 
-// Get UpgradeFee Getter
+// GetUpgradeFee UpgradeFee Getter
 func (r TaobaoAlitripSellerRefundFillfeeAPIRequest) GetUpgradeFee() string {
 	return r._upgradeFee
 }

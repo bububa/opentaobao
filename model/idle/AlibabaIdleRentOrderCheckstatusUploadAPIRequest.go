@@ -39,7 +39,7 @@ func (r AlibabaIdleRentOrderCheckstatusUploadAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *AlibabaIdleRentOrderCheckstatusUploadAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *AlibabaIdleRentOrderCheckstatusUploadAPIRequest) SetOrderId(_orderId in
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaIdleRentOrderCheckstatusUploadAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is CheckResult Setter
+// SetCheckResult is CheckResult Setter
 // 校验结果
 func (r *AlibabaIdleRentOrderCheckstatusUploadAPIRequest) SetCheckResult(_checkResult *CheckResultDto) error {
 	r._checkResult = _checkResult
@@ -60,7 +60,7 @@ func (r *AlibabaIdleRentOrderCheckstatusUploadAPIRequest) SetCheckResult(_checkR
 	return nil
 }
 
-// Get CheckResult Getter
+// GetCheckResult CheckResult Getter
 func (r AlibabaIdleRentOrderCheckstatusUploadAPIRequest) GetCheckResult() *CheckResultDto {
 	return r._checkResult
 }

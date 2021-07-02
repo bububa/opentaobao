@@ -37,7 +37,7 @@ func (r AlibabaAlihealthAlidocDrugStoreAddAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is DrugStoreAddTopRequest Setter
+// SetDrugStoreAddTopRequest is DrugStoreAddTopRequest Setter
 // 新增药店
 func (r *AlibabaAlihealthAlidocDrugStoreAddAPIRequest) SetDrugStoreAddTopRequest(_drugStoreAddTopRequest *DrugStoreAddTopRequest) error {
 	r._drugStoreAddTopRequest = _drugStoreAddTopRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthAlidocDrugStoreAddAPIRequest) SetDrugStoreAddTopRequest
 	return nil
 }
 
-// Get DrugStoreAddTopRequest Getter
+// GetDrugStoreAddTopRequest DrugStoreAddTopRequest Getter
 func (r AlibabaAlihealthAlidocDrugStoreAddAPIRequest) GetDrugStoreAddTopRequest() *DrugStoreAddTopRequest {
 	return r._drugStoreAddTopRequest
 }

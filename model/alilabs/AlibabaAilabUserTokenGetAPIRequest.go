@@ -41,7 +41,7 @@ func (r AlibabaAilabUserTokenGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MerchantUserId Setter
+// SetMerchantUserId is MerchantUserId Setter
 // 三方用户的唯一ID
 func (r *AlibabaAilabUserTokenGetAPIRequest) SetMerchantUserId(_merchantUserId string) error {
 	r._merchantUserId = _merchantUserId
@@ -49,12 +49,12 @@ func (r *AlibabaAilabUserTokenGetAPIRequest) SetMerchantUserId(_merchantUserId s
 	return nil
 }
 
-// Get MerchantUserId Getter
+// GetMerchantUserId MerchantUserId Getter
 func (r AlibabaAilabUserTokenGetAPIRequest) GetMerchantUserId() string {
 	return r._merchantUserId
 }
 
-// Set is SchemaKey Setter
+// SetSchemaKey is SchemaKey Setter
 // 开放平台申请的schema
 func (r *AlibabaAilabUserTokenGetAPIRequest) SetSchemaKey(_schemaKey string) error {
 	r._schemaKey = _schemaKey
@@ -62,12 +62,12 @@ func (r *AlibabaAilabUserTokenGetAPIRequest) SetSchemaKey(_schemaKey string) err
 	return nil
 }
 
-// Get SchemaKey Getter
+// GetSchemaKey SchemaKey Getter
 func (r AlibabaAilabUserTokenGetAPIRequest) GetSchemaKey() string {
 	return r._schemaKey
 }
 
-// Set is CallBackUrl Setter
+// SetCallBackUrl is CallBackUrl Setter
 // 用户点击同意授权，则会有授权结果：success/fail，此结果通过 callBackUrl 回调给三方 如果授权账号重复授权给已授权的淘宝账号，幂等返回成功 url 的调用是 表单 post 的方式， request body success example: merchantUserId=xxx&result=success request body fail example: merchantUserId=xxx&result=fail
 func (r *AlibabaAilabUserTokenGetAPIRequest) SetCallBackUrl(_callBackUrl string) error {
 	r._callBackUrl = _callBackUrl
@@ -75,7 +75,7 @@ func (r *AlibabaAilabUserTokenGetAPIRequest) SetCallBackUrl(_callBackUrl string)
 	return nil
 }
 
-// Get CallBackUrl Getter
+// GetCallBackUrl CallBackUrl Getter
 func (r AlibabaAilabUserTokenGetAPIRequest) GetCallBackUrl() string {
 	return r._callBackUrl
 }

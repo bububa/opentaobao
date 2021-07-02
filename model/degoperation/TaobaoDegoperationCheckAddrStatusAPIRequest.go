@@ -37,7 +37,7 @@ func (r TaobaoDegoperationCheckAddrStatusAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SequenceNo Setter
+// SetSequenceNo is SequenceNo Setter
 // 奖品唯一标识
 func (r *TaobaoDegoperationCheckAddrStatusAPIRequest) SetSequenceNo(_sequenceNo int64) error {
 	r._sequenceNo = _sequenceNo
@@ -45,7 +45,7 @@ func (r *TaobaoDegoperationCheckAddrStatusAPIRequest) SetSequenceNo(_sequenceNo 
 	return nil
 }
 
-// Get SequenceNo Getter
+// GetSequenceNo SequenceNo Getter
 func (r TaobaoDegoperationCheckAddrStatusAPIRequest) GetSequenceNo() int64 {
 	return r._sequenceNo
 }

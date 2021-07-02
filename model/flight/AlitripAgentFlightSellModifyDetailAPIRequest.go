@@ -39,7 +39,7 @@ func (r AlitripAgentFlightSellModifyDetailAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ApplyId Setter
+// SetApplyId is ApplyId Setter
 // 申请单号
 func (r *AlitripAgentFlightSellModifyDetailAPIRequest) SetApplyId(_applyId string) error {
 	r._applyId = _applyId
@@ -47,12 +47,12 @@ func (r *AlitripAgentFlightSellModifyDetailAPIRequest) SetApplyId(_applyId strin
 	return nil
 }
 
-// Get ApplyId Getter
+// GetApplyId ApplyId Getter
 func (r AlitripAgentFlightSellModifyDetailAPIRequest) GetApplyId() string {
 	return r._applyId
 }
 
-// Set is DomesticIntl Setter
+// SetDomesticIntl is DomesticIntl Setter
 // 国内国际标识
 func (r *AlitripAgentFlightSellModifyDetailAPIRequest) SetDomesticIntl(_domesticIntl int64) error {
 	r._domesticIntl = _domesticIntl
@@ -60,7 +60,7 @@ func (r *AlitripAgentFlightSellModifyDetailAPIRequest) SetDomesticIntl(_domestic
 	return nil
 }
 
-// Get DomesticIntl Getter
+// GetDomesticIntl DomesticIntl Getter
 func (r AlitripAgentFlightSellModifyDetailAPIRequest) GetDomesticIntl() int64 {
 	return r._domesticIntl
 }

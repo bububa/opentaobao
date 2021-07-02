@@ -43,7 +43,7 @@ func (r TmallNrtCoupontemplateQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CouponTypeList Setter
+// SetCouponTypeList is CouponTypeList Setter
 // 券列表
 func (r *TmallNrtCoupontemplateQueryAPIRequest) SetCouponTypeList(_couponTypeList []int64) error {
 	r._couponTypeList = _couponTypeList
@@ -51,12 +51,12 @@ func (r *TmallNrtCoupontemplateQueryAPIRequest) SetCouponTypeList(_couponTypeLis
 	return nil
 }
 
-// Get CouponTypeList Getter
+// GetCouponTypeList CouponTypeList Getter
 func (r TmallNrtCoupontemplateQueryAPIRequest) GetCouponTypeList() []int64 {
 	return r._couponTypeList
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前页
 func (r *TmallNrtCoupontemplateQueryAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -64,12 +64,12 @@ func (r *TmallNrtCoupontemplateQueryAPIRequest) SetCurrentPage(_currentPage int6
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TmallNrtCoupontemplateQueryAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页数据数量
 func (r *TmallNrtCoupontemplateQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *TmallNrtCoupontemplateQueryAPIRequest) SetPageSize(_pageSize int64) err
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TmallNrtCoupontemplateQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is BizCode Setter
+// SetBizCode is BizCode Setter
 // 业务code阿里指定
 func (r *TmallNrtCoupontemplateQueryAPIRequest) SetBizCode(_bizCode string) error {
 	r._bizCode = _bizCode
@@ -90,7 +90,7 @@ func (r *TmallNrtCoupontemplateQueryAPIRequest) SetBizCode(_bizCode string) erro
 	return nil
 }
 
-// Get BizCode Getter
+// GetBizCode BizCode Getter
 func (r TmallNrtCoupontemplateQueryAPIRequest) GetBizCode() string {
 	return r._bizCode
 }

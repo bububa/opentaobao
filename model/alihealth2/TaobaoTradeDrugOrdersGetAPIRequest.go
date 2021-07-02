@@ -49,7 +49,7 @@ func (r TaobaoTradeDrugOrdersGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 外卖分店ID
 func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetShopId(_shopId int64) error {
 	r._shopId = _shopId
@@ -57,12 +57,12 @@ func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetShopId(_shopId int64) error {
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r TaobaoTradeDrugOrdersGetAPIRequest) GetShopId() int64 {
 	return r._shopId
 }
 
-// Set is Keyword Setter
+// SetKeyword is Keyword Setter
 // 关键字
 func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetKeyword(_keyword string) error {
 	r._keyword = _keyword
@@ -70,12 +70,12 @@ func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetKeyword(_keyword string) error {
 	return nil
 }
 
-// Get Keyword Getter
+// GetKeyword Keyword Getter
 func (r TaobaoTradeDrugOrdersGetAPIRequest) GetKeyword() string {
 	return r._keyword
 }
 
-// Set is IsAllShop Setter
+// SetIsAllShop is IsAllShop Setter
 // true-查询仅按商家维度  false-查询按商家下所属店铺维度
 func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetIsAllShop(_isAllShop bool) error {
 	r._isAllShop = _isAllShop
@@ -83,12 +83,12 @@ func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetIsAllShop(_isAllShop bool) error
 	return nil
 }
 
-// Get IsAllShop Getter
+// GetIsAllShop IsAllShop Getter
 func (r TaobaoTradeDrugOrdersGetAPIRequest) GetIsAllShop() bool {
 	return r._isAllShop
 }
 
-// Set is IsAllOrder Setter
+// SetIsAllOrder is IsAllOrder Setter
 // true 仅有支付宝订单,false 包括所有类型订单(货到付款,支付券等)
 func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetIsAllOrder(_isAllOrder bool) error {
 	r._isAllOrder = _isAllOrder
@@ -96,12 +96,12 @@ func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetIsAllOrder(_isAllOrder bool) err
 	return nil
 }
 
-// Get IsAllOrder Getter
+// GetIsAllOrder IsAllOrder Getter
 func (r TaobaoTradeDrugOrdersGetAPIRequest) GetIsAllOrder() bool {
 	return r._isAllOrder
 }
 
-// Set is OrderStatus Setter
+// SetOrderStatus is OrderStatus Setter
 // （必填字段）订单状态 待确认订单2 , 退款中订单4 , 已发货12 关闭20 交易成功21
 func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetOrderStatus(_orderStatus int64) error {
 	r._orderStatus = _orderStatus
@@ -109,12 +109,12 @@ func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetOrderStatus(_orderStatus int64) 
 	return nil
 }
 
-// Get OrderStatus Getter
+// GetOrderStatus OrderStatus Getter
 func (r TaobaoTradeDrugOrdersGetAPIRequest) GetOrderStatus() int64 {
 	return r._orderStatus
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 返回记录数，超过20按20条返回数据
 func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -122,12 +122,12 @@ func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTradeDrugOrdersGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -135,7 +135,7 @@ func (r *TaobaoTradeDrugOrdersGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoTradeDrugOrdersGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

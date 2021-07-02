@@ -49,7 +49,7 @@ func (r AlibabaNlifeB2cTradeRefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TradeNo Setter
+// SetTradeNo is TradeNo Setter
 // 零售+平台订单号，和out_trade_no不能同时为空
 func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetTradeNo(_tradeNo string) error {
 	r._tradeNo = _tradeNo
@@ -57,12 +57,12 @@ func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetTradeNo(_tradeNo string) error
 	return nil
 }
 
-// Get TradeNo Getter
+// GetTradeNo TradeNo Getter
 func (r AlibabaNlifeB2cTradeRefundAPIRequest) GetTradeNo() string {
 	return r._tradeNo
 }
 
-// Set is OutRequestNo Setter
+// SetOutRequestNo is OutRequestNo Setter
 // 外部请求号
 func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetOutRequestNo(_outRequestNo string) error {
 	r._outRequestNo = _outRequestNo
@@ -70,12 +70,12 @@ func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetOutRequestNo(_outRequestNo str
 	return nil
 }
 
-// Get OutRequestNo Getter
+// GetOutRequestNo OutRequestNo Getter
 func (r AlibabaNlifeB2cTradeRefundAPIRequest) GetOutRequestNo() string {
 	return r._outRequestNo
 }
 
-// Set is RefundBillList Setter
+// SetRefundBillList is RefundBillList Setter
 // 退款资金列表
 func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetRefundBillList(_refundBillList []FundBill) error {
 	r._refundBillList = _refundBillList
@@ -83,12 +83,12 @@ func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetRefundBillList(_refundBillList
 	return nil
 }
 
-// Get RefundBillList Getter
+// GetRefundBillList RefundBillList Getter
 func (r AlibabaNlifeB2cTradeRefundAPIRequest) GetRefundBillList() []FundBill {
 	return r._refundBillList
 }
 
-// Set is RefundGoodsList Setter
+// SetRefundGoodsList is RefundGoodsList Setter
 // 所退货物的ID列表,逗号分隔商品组，冒号分隔商品和退货数量，支持三种方式退。 条码模式：barcode1:3,barcode2:2 表示barcode1退3件，barcode2退2件。 item_sku模式:itemId1_skuId1:3,itemId2_skuId2:2 表示itemId1_skuId1这个商品退3件，itemId2_skuId2这个商品退2件。 唯一码模式：uniqeueCodeA:1,uniqeueCodeA:1,因唯一码指定到唯一一件商品，退货数量都是1。
 func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetRefundGoodsList(_refundGoodsList []string) error {
 	r._refundGoodsList = _refundGoodsList
@@ -96,12 +96,12 @@ func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetRefundGoodsList(_refundGoodsLi
 	return nil
 }
 
-// Get RefundGoodsList Getter
+// GetRefundGoodsList RefundGoodsList Getter
 func (r AlibabaNlifeB2cTradeRefundAPIRequest) GetRefundGoodsList() []string {
 	return r._refundGoodsList
 }
 
-// Set is OutTradeNo Setter
+// SetOutTradeNo is OutTradeNo Setter
 // 外部订单号，和trade_no不能同时为空
 func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetOutTradeNo(_outTradeNo string) error {
 	r._outTradeNo = _outTradeNo
@@ -109,12 +109,12 @@ func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetOutTradeNo(_outTradeNo string)
 	return nil
 }
 
-// Get OutTradeNo Getter
+// GetOutTradeNo OutTradeNo Getter
 func (r AlibabaNlifeB2cTradeRefundAPIRequest) GetOutTradeNo() string {
 	return r._outTradeNo
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 零售+门店ID
 func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -122,12 +122,12 @@ func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetStoreId(_storeId string) error
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaNlifeB2cTradeRefundAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is RefundPoints Setter
+// SetRefundPoints is RefundPoints Setter
 // 退积分,ISV自行算好
 func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetRefundPoints(_refundPoints int64) error {
 	r._refundPoints = _refundPoints
@@ -135,7 +135,7 @@ func (r *AlibabaNlifeB2cTradeRefundAPIRequest) SetRefundPoints(_refundPoints int
 	return nil
 }
 
-// Get RefundPoints Getter
+// GetRefundPoints RefundPoints Getter
 func (r AlibabaNlifeB2cTradeRefundAPIRequest) GetRefundPoints() int64 {
 	return r._refundPoints
 }

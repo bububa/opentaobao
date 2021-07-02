@@ -43,7 +43,7 @@ func (r AlitripRailTradeIssueticketAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentOrderId Setter
+// SetAgentOrderId is AgentOrderId Setter
 // 代理商订单号
 func (r *AlitripRailTradeIssueticketAPIRequest) SetAgentOrderId(_agentOrderId string) error {
 	r._agentOrderId = _agentOrderId
@@ -51,12 +51,12 @@ func (r *AlitripRailTradeIssueticketAPIRequest) SetAgentOrderId(_agentOrderId st
 	return nil
 }
 
-// Get AgentOrderId Getter
+// GetAgentOrderId AgentOrderId Getter
 func (r AlitripRailTradeIssueticketAPIRequest) GetAgentOrderId() string {
 	return r._agentOrderId
 }
 
-// Set is TpOrderId Setter
+// SetTpOrderId is TpOrderId Setter
 // 平台订单号
 func (r *AlitripRailTradeIssueticketAPIRequest) SetTpOrderId(_tpOrderId int64) error {
 	r._tpOrderId = _tpOrderId
@@ -64,12 +64,12 @@ func (r *AlitripRailTradeIssueticketAPIRequest) SetTpOrderId(_tpOrderId int64) e
 	return nil
 }
 
-// Get TpOrderId Getter
+// GetTpOrderId TpOrderId Getter
 func (r AlitripRailTradeIssueticketAPIRequest) GetTpOrderId() int64 {
 	return r._tpOrderId
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商id
 func (r *AlitripRailTradeIssueticketAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -77,12 +77,12 @@ func (r *AlitripRailTradeIssueticketAPIRequest) SetAgentId(_agentId int64) error
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r AlitripRailTradeIssueticketAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is TicketNo Setter
+// SetTicketNo is TicketNo Setter
 // pnr票号有则填，无则空
 func (r *AlitripRailTradeIssueticketAPIRequest) SetTicketNo(_ticketNo string) error {
 	r._ticketNo = _ticketNo
@@ -90,7 +90,7 @@ func (r *AlitripRailTradeIssueticketAPIRequest) SetTicketNo(_ticketNo string) er
 	return nil
 }
 
-// Get TicketNo Getter
+// GetTicketNo TicketNo Getter
 func (r AlitripRailTradeIssueticketAPIRequest) GetTicketNo() string {
 	return r._ticketNo
 }

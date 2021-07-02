@@ -37,7 +37,7 @@ func (r AlipayXiaodaiUserPermitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户数字ID
 func (r *AlipayXiaodaiUserPermitAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -45,7 +45,7 @@ func (r *AlipayXiaodaiUserPermitAPIRequest) SetUserId(_userId int64) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlipayXiaodaiUserPermitAPIRequest) GetUserId() int64 {
 	return r._userId
 }

@@ -37,7 +37,7 @@ func (r AlibabaIcbuRfqRecommendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryDto Setter
+// SetQueryDto is QueryDto Setter
 // 入参数据
 func (r *AlibabaIcbuRfqRecommendAPIRequest) SetQueryDto(_queryDto *QueryDto) error {
 	r._queryDto = _queryDto
@@ -45,7 +45,7 @@ func (r *AlibabaIcbuRfqRecommendAPIRequest) SetQueryDto(_queryDto *QueryDto) err
 	return nil
 }
 
-// Get QueryDto Getter
+// GetQueryDto QueryDto Getter
 func (r AlibabaIcbuRfqRecommendAPIRequest) GetQueryDto() *QueryDto {
 	return r._queryDto
 }

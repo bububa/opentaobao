@@ -39,7 +39,7 @@ func (r AlibabaAlinkMessageConfigSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 设备id
 func (r *AlibabaAlinkMessageConfigSetAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -47,12 +47,12 @@ func (r *AlibabaAlinkMessageConfigSetAPIRequest) SetUuid(_uuid string) error {
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r AlibabaAlinkMessageConfigSetAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is PushDisabled Setter
+// SetPushDisabled is PushDisabled Setter
 // 0：开启，1：关闭
 func (r *AlibabaAlinkMessageConfigSetAPIRequest) SetPushDisabled(_pushDisabled string) error {
 	r._pushDisabled = _pushDisabled
@@ -60,7 +60,7 @@ func (r *AlibabaAlinkMessageConfigSetAPIRequest) SetPushDisabled(_pushDisabled s
 	return nil
 }
 
-// Get PushDisabled Getter
+// GetPushDisabled PushDisabled Getter
 func (r AlibabaAlinkMessageConfigSetAPIRequest) GetPushDisabled() string {
 	return r._pushDisabled
 }

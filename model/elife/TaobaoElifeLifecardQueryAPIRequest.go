@@ -37,7 +37,7 @@ func (r TaobaoElifeLifecardQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryRequest Setter
+// SetQueryRequest is QueryRequest Setter
 // 入参
 func (r *TaobaoElifeLifecardQueryAPIRequest) SetQueryRequest(_queryRequest *ConsumeRequest) error {
 	r._queryRequest = _queryRequest
@@ -45,7 +45,7 @@ func (r *TaobaoElifeLifecardQueryAPIRequest) SetQueryRequest(_queryRequest *Cons
 	return nil
 }
 
-// Get QueryRequest Getter
+// GetQueryRequest QueryRequest Getter
 func (r TaobaoElifeLifecardQueryAPIRequest) GetQueryRequest() *ConsumeRequest {
 	return r._queryRequest
 }

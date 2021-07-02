@@ -37,7 +37,7 @@ func (r AlibabaIcbuCategoryAttributeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 发布类目id
 func (r *AlibabaIcbuCategoryAttributeGetAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -45,7 +45,7 @@ func (r *AlibabaIcbuCategoryAttributeGetAPIRequest) SetCatId(_catId int64) error
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r AlibabaIcbuCategoryAttributeGetAPIRequest) GetCatId() int64 {
 	return r._catId
 }

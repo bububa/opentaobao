@@ -51,7 +51,7 @@ func (r AlibabaAlihealthDrugCodeErrorReportAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 追溯码
 func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -59,12 +59,12 @@ func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetCode(_code string) er
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaAlihealthDrugCodeErrorReportAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is FieldName Setter
+// SetFieldName is FieldName Setter
 // 有问题的字段名称
 func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetFieldName(_fieldName string) error {
 	r._fieldName = _fieldName
@@ -72,12 +72,12 @@ func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetFieldName(_fieldName 
 	return nil
 }
 
-// Get FieldName Getter
+// GetFieldName FieldName Getter
 func (r AlibabaAlihealthDrugCodeErrorReportAPIRequest) GetFieldName() string {
 	return r._fieldName
 }
 
-// Set is CodeValue Setter
+// SetCodeValue is CodeValue Setter
 // 通过码获得的问题字段值
 func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetCodeValue(_codeValue string) error {
 	r._codeValue = _codeValue
@@ -85,12 +85,12 @@ func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetCodeValue(_codeValue 
 	return nil
 }
 
-// Get CodeValue Getter
+// GetCodeValue CodeValue Getter
 func (r AlibabaAlihealthDrugCodeErrorReportAPIRequest) GetCodeValue() string {
 	return r._codeValue
 }
 
-// Set is SourceValue Setter
+// SetSourceValue is SourceValue Setter
 // 平台获得/期望的问题字段值
 func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetSourceValue(_sourceValue string) error {
 	r._sourceValue = _sourceValue
@@ -98,12 +98,12 @@ func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetSourceValue(_sourceVa
 	return nil
 }
 
-// Get SourceValue Getter
+// GetSourceValue SourceValue Getter
 func (r AlibabaAlihealthDrugCodeErrorReportAPIRequest) GetSourceValue() string {
 	return r._sourceValue
 }
 
-// Set is ErrMsg Setter
+// SetErrMsg is ErrMsg Setter
 // 错误信息描述
 func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetErrMsg(_errMsg string) error {
 	r._errMsg = _errMsg
@@ -111,12 +111,12 @@ func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetErrMsg(_errMsg string
 	return nil
 }
 
-// Get ErrMsg Getter
+// GetErrMsg ErrMsg Getter
 func (r AlibabaAlihealthDrugCodeErrorReportAPIRequest) GetErrMsg() string {
 	return r._errMsg
 }
 
-// Set is Reporter Setter
+// SetReporter is Reporter Setter
 // 上报人员
 func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetReporter(_reporter string) error {
 	r._reporter = _reporter
@@ -124,12 +124,12 @@ func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetReporter(_reporter st
 	return nil
 }
 
-// Get Reporter Getter
+// GetReporter Reporter Getter
 func (r AlibabaAlihealthDrugCodeErrorReportAPIRequest) GetReporter() string {
 	return r._reporter
 }
 
-// Set is ReporterEmail Setter
+// SetReporterEmail is ReporterEmail Setter
 // 上报人员邮箱
 func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetReporterEmail(_reporterEmail string) error {
 	r._reporterEmail = _reporterEmail
@@ -137,12 +137,12 @@ func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetReporterEmail(_report
 	return nil
 }
 
-// Get ReporterEmail Getter
+// GetReporterEmail ReporterEmail Getter
 func (r AlibabaAlihealthDrugCodeErrorReportAPIRequest) GetReporterEmail() string {
 	return r._reporterEmail
 }
 
-// Set is ReporterMobile Setter
+// SetReporterMobile is ReporterMobile Setter
 // 上报人员手机号
 func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetReporterMobile(_reporterMobile string) error {
 	r._reporterMobile = _reporterMobile
@@ -150,7 +150,7 @@ func (r *AlibabaAlihealthDrugCodeErrorReportAPIRequest) SetReporterMobile(_repor
 	return nil
 }
 
-// Get ReporterMobile Getter
+// GetReporterMobile ReporterMobile Getter
 func (r AlibabaAlihealthDrugCodeErrorReportAPIRequest) GetReporterMobile() string {
 	return r._reporterMobile
 }

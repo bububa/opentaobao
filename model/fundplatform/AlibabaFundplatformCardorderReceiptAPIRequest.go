@@ -39,7 +39,7 @@ func (r AlibabaFundplatformCardorderReceiptAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is CardOrderId Setter
+// SetCardOrderId is CardOrderId Setter
 // 通知制卡成功的子卡子单号
 func (r *AlibabaFundplatformCardorderReceiptAPIRequest) SetCardOrderId(_cardOrderId int64) error {
 	r._cardOrderId = _cardOrderId
@@ -47,12 +47,12 @@ func (r *AlibabaFundplatformCardorderReceiptAPIRequest) SetCardOrderId(_cardOrde
 	return nil
 }
 
-// Get CardOrderId Getter
+// GetCardOrderId CardOrderId Getter
 func (r AlibabaFundplatformCardorderReceiptAPIRequest) GetCardOrderId() int64 {
 	return r._cardOrderId
 }
 
-// Set is OwnSign Setter
+// SetOwnSign is OwnSign Setter
 // 环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）
 func (r *AlibabaFundplatformCardorderReceiptAPIRequest) SetOwnSign(_ownSign string) error {
 	r._ownSign = _ownSign
@@ -60,7 +60,7 @@ func (r *AlibabaFundplatformCardorderReceiptAPIRequest) SetOwnSign(_ownSign stri
 	return nil
 }
 
-// Get OwnSign Getter
+// GetOwnSign OwnSign Getter
 func (r AlibabaFundplatformCardorderReceiptAPIRequest) GetOwnSign() string {
 	return r._ownSign
 }

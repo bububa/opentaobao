@@ -41,7 +41,7 @@ func (r TaobaoWlbWmsSnInfoQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // 订单编码
 func (r *TaobaoWlbWmsSnInfoQueryAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -49,12 +49,12 @@ func (r *TaobaoWlbWmsSnInfoQueryAPIRequest) SetOrderCode(_orderCode string) erro
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r TaobaoWlbWmsSnInfoQueryAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// Set is OrderCodeType Setter
+// SetOrderCodeType is OrderCodeType Setter
 // 订单类型（1:仓配订单 10：配送扫码 20：增值扫码 40:ERP单号; 50：交易订单 ）
 func (r *TaobaoWlbWmsSnInfoQueryAPIRequest) SetOrderCodeType(_orderCodeType int64) error {
 	r._orderCodeType = _orderCodeType
@@ -62,12 +62,12 @@ func (r *TaobaoWlbWmsSnInfoQueryAPIRequest) SetOrderCodeType(_orderCodeType int6
 	return nil
 }
 
-// Get OrderCodeType Getter
+// GetOrderCodeType OrderCodeType Getter
 func (r TaobaoWlbWmsSnInfoQueryAPIRequest) GetOrderCodeType() int64 {
 	return r._orderCodeType
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 页数，默认每页50条
 func (r *TaobaoWlbWmsSnInfoQueryAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -75,7 +75,7 @@ func (r *TaobaoWlbWmsSnInfoQueryAPIRequest) SetPageIndex(_pageIndex int64) error
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoWlbWmsSnInfoQueryAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }

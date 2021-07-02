@@ -37,7 +37,7 @@ func (r TaobaoAntifraudRiskassessmentGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CollinadataContext Setter
+// SetCollinadataContext is CollinadataContext Setter
 // 风控查询参数
 func (r *TaobaoAntifraudRiskassessmentGetAPIRequest) SetCollinadataContext(_collinadataContext *CollinadataContext) error {
 	r._collinadataContext = _collinadataContext
@@ -45,7 +45,7 @@ func (r *TaobaoAntifraudRiskassessmentGetAPIRequest) SetCollinadataContext(_coll
 	return nil
 }
 
-// Get CollinadataContext Getter
+// GetCollinadataContext CollinadataContext Getter
 func (r TaobaoAntifraudRiskassessmentGetAPIRequest) GetCollinadataContext() *CollinadataContext {
 	return r._collinadataContext
 }

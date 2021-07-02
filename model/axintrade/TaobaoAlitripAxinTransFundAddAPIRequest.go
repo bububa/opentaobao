@@ -37,7 +37,7 @@ func (r TaobaoAlitripAxinTransFundAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AxinFundCreateDTO Setter
+// SetAxinFundCreateDTO is AxinFundCreateDTO Setter
 // 创建资金单接口入参
 func (r *TaobaoAlitripAxinTransFundAddAPIRequest) SetAxinFundCreateDTO(_axinFundCreateDTO *AxinFundCreateDto) error {
 	r._axinFundCreateDTO = _axinFundCreateDTO
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripAxinTransFundAddAPIRequest) SetAxinFundCreateDTO(_axinFund
 	return nil
 }
 
-// Get AxinFundCreateDTO Getter
+// GetAxinFundCreateDTO AxinFundCreateDTO Getter
 func (r TaobaoAlitripAxinTransFundAddAPIRequest) GetAxinFundCreateDTO() *AxinFundCreateDto {
 	return r._axinFundCreateDTO
 }

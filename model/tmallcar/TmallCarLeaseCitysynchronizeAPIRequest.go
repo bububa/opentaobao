@@ -37,7 +37,7 @@ func (r TmallCarLeaseCitysynchronizeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamAreaDto Setter
+// SetParamAreaDto is ParamAreaDto Setter
 // 地址信息
 func (r *TmallCarLeaseCitysynchronizeAPIRequest) SetParamAreaDto(_paramAreaDto *AreaDto) error {
 	r._paramAreaDto = _paramAreaDto
@@ -45,7 +45,7 @@ func (r *TmallCarLeaseCitysynchronizeAPIRequest) SetParamAreaDto(_paramAreaDto *
 	return nil
 }
 
-// Get ParamAreaDto Getter
+// GetParamAreaDto ParamAreaDto Getter
 func (r TmallCarLeaseCitysynchronizeAPIRequest) GetParamAreaDto() *AreaDto {
 	return r._paramAreaDto
 }

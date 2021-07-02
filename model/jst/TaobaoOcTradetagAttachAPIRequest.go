@@ -45,7 +45,7 @@ func (r TaobaoOcTradetagAttachAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TagType Setter
+// SetTagType is TagType Setter
 // 标签类型       1：官方标签      2：自定义标签
 func (r *TaobaoOcTradetagAttachAPIRequest) SetTagType(_tagType int64) error {
 	r._tagType = _tagType
@@ -53,12 +53,12 @@ func (r *TaobaoOcTradetagAttachAPIRequest) SetTagType(_tagType int64) error {
 	return nil
 }
 
-// Get TagType Getter
+// GetTagType TagType Getter
 func (r TaobaoOcTradetagAttachAPIRequest) GetTagType() int64 {
 	return r._tagType
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 订单id
 func (r *TaobaoOcTradetagAttachAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -66,12 +66,12 @@ func (r *TaobaoOcTradetagAttachAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoOcTradetagAttachAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is TagName Setter
+// SetTagName is TagName Setter
 // 标签名称
 func (r *TaobaoOcTradetagAttachAPIRequest) SetTagName(_tagName string) error {
 	r._tagName = _tagName
@@ -79,12 +79,12 @@ func (r *TaobaoOcTradetagAttachAPIRequest) SetTagName(_tagName string) error {
 	return nil
 }
 
-// Get TagName Getter
+// GetTagName TagName Getter
 func (r TaobaoOcTradetagAttachAPIRequest) GetTagName() string {
 	return r._tagName
 }
 
-// Set is TagValue Setter
+// SetTagValue is TagValue Setter
 // 标签值，json格式
 func (r *TaobaoOcTradetagAttachAPIRequest) SetTagValue(_tagValue string) error {
 	r._tagValue = _tagValue
@@ -92,12 +92,12 @@ func (r *TaobaoOcTradetagAttachAPIRequest) SetTagValue(_tagValue string) error {
 	return nil
 }
 
-// Get TagValue Getter
+// GetTagValue TagValue Getter
 func (r TaobaoOcTradetagAttachAPIRequest) GetTagValue() string {
 	return r._tagValue
 }
 
-// Set is Visible Setter
+// SetVisible is Visible Setter
 // 该标签在消费者端是否显示,0:不显示,1：显示
 func (r *TaobaoOcTradetagAttachAPIRequest) SetVisible(_visible int64) error {
 	r._visible = _visible
@@ -105,7 +105,7 @@ func (r *TaobaoOcTradetagAttachAPIRequest) SetVisible(_visible int64) error {
 	return nil
 }
 
-// Get Visible Getter
+// GetVisible Visible Getter
 func (r TaobaoOcTradetagAttachAPIRequest) GetVisible() int64 {
 	return r._visible
 }

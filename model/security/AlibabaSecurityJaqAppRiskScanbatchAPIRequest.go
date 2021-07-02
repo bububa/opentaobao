@@ -39,7 +39,7 @@ func (r AlibabaSecurityJaqAppRiskScanbatchAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is AppInfo Setter
+// SetAppInfo is AppInfo Setter
 // APP信息
 func (r *AlibabaSecurityJaqAppRiskScanbatchAPIRequest) SetAppInfo(_appInfo *AppInfoBatch) error {
 	r._appInfo = _appInfo
@@ -47,12 +47,12 @@ func (r *AlibabaSecurityJaqAppRiskScanbatchAPIRequest) SetAppInfo(_appInfo *AppI
 	return nil
 }
 
-// Get AppInfo Getter
+// GetAppInfo AppInfo Getter
 func (r AlibabaSecurityJaqAppRiskScanbatchAPIRequest) GetAppInfo() *AppInfoBatch {
 	return r._appInfo
 }
 
-// Set is ScanTypes Setter
+// SetScanTypes is ScanTypes Setter
 // 扫描类型
 func (r *AlibabaSecurityJaqAppRiskScanbatchAPIRequest) SetScanTypes(_scanTypes []string) error {
 	r._scanTypes = _scanTypes
@@ -60,7 +60,7 @@ func (r *AlibabaSecurityJaqAppRiskScanbatchAPIRequest) SetScanTypes(_scanTypes [
 	return nil
 }
 
-// Get ScanTypes Getter
+// GetScanTypes ScanTypes Getter
 func (r AlibabaSecurityJaqAppRiskScanbatchAPIRequest) GetScanTypes() []string {
 	return r._scanTypes
 }

@@ -69,7 +69,7 @@ func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Sex Setter
+// SetSex is Sex Setter
 // 预约人性别(1男2女)
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetSex(_sex int64) error {
 	r._sex = _sex
@@ -77,12 +77,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetSex(_sex int64) erro
 	return nil
 }
 
-// Get Sex Getter
+// GetSex Sex Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetSex() int64 {
 	return r._sex
 }
 
-// Set is Age Setter
+// SetAge is Age Setter
 // 年龄
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAge(_age int64) error {
 	r._age = _age
@@ -90,12 +90,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAge(_age int64) erro
 	return nil
 }
 
-// Get Age Getter
+// GetAge Age Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetAge() int64 {
 	return r._age
 }
 
-// Set is ReserveDate Setter
+// SetReserveDate is ReserveDate Setter
 // 预约日期
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetReserveDate(_reserveDate string) error {
 	r._reserveDate = _reserveDate
@@ -103,12 +103,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetReserveDate(_reserve
 	return nil
 }
 
-// Get ReserveDate Getter
+// GetReserveDate ReserveDate Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetReserveDate() string {
 	return r._reserveDate
 }
 
-// Set is AlipayUserId Setter
+// SetAlipayUserId is AlipayUserId Setter
 // 支付宝用户id
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAlipayUserId(_alipayUserId string) error {
 	r._alipayUserId = _alipayUserId
@@ -116,12 +116,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAlipayUserId(_alipay
 	return nil
 }
 
-// Get AlipayUserId Getter
+// GetAlipayUserId AlipayUserId Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetAlipayUserId() string {
 	return r._alipayUserId
 }
 
-// Set is OuterUserId Setter
+// SetOuterUserId is OuterUserId Setter
 // 外部渠道用户id
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetOuterUserId(_outerUserId string) error {
 	r._outerUserId = _outerUserId
@@ -129,12 +129,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetOuterUserId(_outerUs
 	return nil
 }
 
-// Get OuterUserId Getter
+// GetOuterUserId OuterUserId Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetOuterUserId() string {
 	return r._outerUserId
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 预约id
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -142,12 +142,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetOrderId(_orderId str
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 手机号码
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -155,12 +155,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetMobile(_mobile strin
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 接种人姓名
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -168,12 +168,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetName(_name string) e
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 接种点地址
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAddress(_address string) error {
 	r._address = _address
@@ -181,12 +181,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAddress(_address str
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetAddress() string {
 	return r._address
 }
 
-// Set is PovStoreName Setter
+// SetPovStoreName is PovStoreName Setter
 // 接种点名称
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetPovStoreName(_povStoreName string) error {
 	r._povStoreName = _povStoreName
@@ -194,12 +194,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetPovStoreName(_povSto
 	return nil
 }
 
-// Get PovStoreName Getter
+// GetPovStoreName PovStoreName Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetPovStoreName() string {
 	return r._povStoreName
 }
 
-// Set is ReserveTime Setter
+// SetReserveTime is ReserveTime Setter
 // 预约时间
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetReserveTime(_reserveTime string) error {
 	r._reserveTime = _reserveTime
@@ -207,12 +207,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetReserveTime(_reserve
 	return nil
 }
 
-// Get ReserveTime Getter
+// GetReserveTime ReserveTime Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetReserveTime() string {
 	return r._reserveTime
 }
 
-// Set is VaccineInfo Setter
+// SetVaccineInfo is VaccineInfo Setter
 // 疫苗信息
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetVaccineInfo(_vaccineInfo string) error {
 	r._vaccineInfo = _vaccineInfo
@@ -220,12 +220,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetVaccineInfo(_vaccine
 	return nil
 }
 
-// Get VaccineInfo Getter
+// GetVaccineInfo VaccineInfo Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetVaccineInfo() string {
 	return r._vaccineInfo
 }
 
-// Set is AgeType Setter
+// SetAgeType is AgeType Setter
 // 年龄类型(1-宝宝2-成人)
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAgeType(_ageType int64) error {
 	r._ageType = _ageType
@@ -233,12 +233,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAgeType(_ageType int
 	return nil
 }
 
-// Get AgeType Getter
+// GetAgeType AgeType Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetAgeType() int64 {
 	return r._ageType
 }
 
-// Set is OrderDetailUrl Setter
+// SetOrderDetailUrl is OrderDetailUrl Setter
 // 支付宝消息通知跳转订单详情链接
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetOrderDetailUrl(_orderDetailUrl string) error {
 	r._orderDetailUrl = _orderDetailUrl
@@ -246,12 +246,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetOrderDetailUrl(_orde
 	return nil
 }
 
-// Get OrderDetailUrl Getter
+// GetOrderDetailUrl OrderDetailUrl Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetOrderDetailUrl() string {
 	return r._orderDetailUrl
 }
 
-// Set is Area Setter
+// SetArea is Area Setter
 // 地区名字
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetArea(_area string) error {
 	r._area = _area
@@ -259,12 +259,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetArea(_area string) e
 	return nil
 }
 
-// Get Area Getter
+// GetArea Area Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetArea() string {
 	return r._area
 }
 
-// Set is City Setter
+// SetCity is City Setter
 // 城市名字
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetCity(_city string) error {
 	r._city = _city
@@ -272,12 +272,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetCity(_city string) e
 	return nil
 }
 
-// Get City Getter
+// GetCity City Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetCity() string {
 	return r._city
 }
 
-// Set is Province Setter
+// SetProvince is Province Setter
 // 省份名字
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetProvince(_province string) error {
 	r._province = _province
@@ -285,7 +285,7 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetProvince(_province s
 	return nil
 }
 
-// Get Province Getter
+// GetProvince Province Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetProvince() string {
 	return r._province
 }

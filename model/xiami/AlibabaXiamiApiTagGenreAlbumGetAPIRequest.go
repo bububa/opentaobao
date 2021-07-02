@@ -43,7 +43,7 @@ func (r AlibabaXiamiApiTagGenreAlbumGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 1:风格，2:流派
 func (r *AlibabaXiamiApiTagGenreAlbumGetAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -51,12 +51,12 @@ func (r *AlibabaXiamiApiTagGenreAlbumGetAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaXiamiApiTagGenreAlbumGetAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 风格，流派id
 func (r *AlibabaXiamiApiTagGenreAlbumGetAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -64,12 +64,12 @@ func (r *AlibabaXiamiApiTagGenreAlbumGetAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaXiamiApiTagGenreAlbumGetAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 页数
 func (r *AlibabaXiamiApiTagGenreAlbumGetAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -77,12 +77,12 @@ func (r *AlibabaXiamiApiTagGenreAlbumGetAPIRequest) SetPage(_page int64) error {
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaXiamiApiTagGenreAlbumGetAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is Limit Setter
+// SetLimit is Limit Setter
 // 每页数量
 func (r *AlibabaXiamiApiTagGenreAlbumGetAPIRequest) SetLimit(_limit int64) error {
 	r._limit = _limit
@@ -90,7 +90,7 @@ func (r *AlibabaXiamiApiTagGenreAlbumGetAPIRequest) SetLimit(_limit int64) error
 	return nil
 }
 
-// Get Limit Getter
+// GetLimit Limit Getter
 func (r AlibabaXiamiApiTagGenreAlbumGetAPIRequest) GetLimit() int64 {
 	return r._limit
 }

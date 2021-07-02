@@ -39,7 +39,7 @@ func (r AlibabaIdleParttimeJobsyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is JobList Setter
+// SetJobList is JobList Setter
 // 岗位列表
 func (r *AlibabaIdleParttimeJobsyncAPIRequest) SetJobList(_jobList []PartTimeJob) error {
 	r._jobList = _jobList
@@ -47,12 +47,12 @@ func (r *AlibabaIdleParttimeJobsyncAPIRequest) SetJobList(_jobList []PartTimeJob
 	return nil
 }
 
-// Get JobList Getter
+// GetJobList JobList Getter
 func (r AlibabaIdleParttimeJobsyncAPIRequest) GetJobList() []PartTimeJob {
 	return r._jobList
 }
 
-// Set is SyncTime Setter
+// SetSyncTime is SyncTime Setter
 // 同步数据的时间
 func (r *AlibabaIdleParttimeJobsyncAPIRequest) SetSyncTime(_syncTime int64) error {
 	r._syncTime = _syncTime
@@ -60,7 +60,7 @@ func (r *AlibabaIdleParttimeJobsyncAPIRequest) SetSyncTime(_syncTime int64) erro
 	return nil
 }
 
-// Get SyncTime Getter
+// GetSyncTime SyncTime Getter
 func (r AlibabaIdleParttimeJobsyncAPIRequest) GetSyncTime() int64 {
 	return r._syncTime
 }

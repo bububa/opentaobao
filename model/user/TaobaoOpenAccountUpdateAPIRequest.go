@@ -37,7 +37,7 @@ func (r TaobaoOpenAccountUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamList Setter
+// SetParamList is ParamList Setter
 // Open Account
 func (r *TaobaoOpenAccountUpdateAPIRequest) SetParamList(_paramList []OpenAccount) error {
 	r._paramList = _paramList
@@ -45,7 +45,7 @@ func (r *TaobaoOpenAccountUpdateAPIRequest) SetParamList(_paramList []OpenAccoun
 	return nil
 }
 
-// Get ParamList Getter
+// GetParamList ParamList Getter
 func (r TaobaoOpenAccountUpdateAPIRequest) GetParamList() []OpenAccount {
 	return r._paramList
 }

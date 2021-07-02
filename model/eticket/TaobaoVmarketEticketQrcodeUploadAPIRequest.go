@@ -39,7 +39,7 @@ func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CodeMerchantId Setter
+// SetCodeMerchantId is CodeMerchantId Setter
 // 码商ID
 func (r *TaobaoVmarketEticketQrcodeUploadAPIRequest) SetCodeMerchantId(_codeMerchantId int64) error {
 	r._codeMerchantId = _codeMerchantId
@@ -47,12 +47,12 @@ func (r *TaobaoVmarketEticketQrcodeUploadAPIRequest) SetCodeMerchantId(_codeMerc
 	return nil
 }
 
-// Get CodeMerchantId Getter
+// GetCodeMerchantId CodeMerchantId Getter
 func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetCodeMerchantId() int64 {
 	return r._codeMerchantId
 }
 
-// Set is ImgBytes Setter
+// SetImgBytes is ImgBytes Setter
 // 上传的图片byte[]  小于300K，图片尺寸400*400以内
 func (r *TaobaoVmarketEticketQrcodeUploadAPIRequest) SetImgBytes(_imgBytes *model.File) error {
 	r._imgBytes = _imgBytes
@@ -60,7 +60,7 @@ func (r *TaobaoVmarketEticketQrcodeUploadAPIRequest) SetImgBytes(_imgBytes *mode
 	return nil
 }
 
-// Get ImgBytes Getter
+// GetImgBytes ImgBytes Getter
 func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetImgBytes() *model.File {
 	return r._imgBytes
 }

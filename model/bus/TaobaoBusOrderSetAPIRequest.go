@@ -37,7 +37,7 @@ func (r TaobaoBusOrderSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamB2BCreateOrderRQ Setter
+// SetParamB2BCreateOrderRQ is ParamB2BCreateOrderRQ Setter
 // 下单参数
 func (r *TaobaoBusOrderSetAPIRequest) SetParamB2BCreateOrderRQ(_paramB2BCreateOrderRQ *B2BCreateOrderRq) error {
 	r._paramB2BCreateOrderRQ = _paramB2BCreateOrderRQ
@@ -45,7 +45,7 @@ func (r *TaobaoBusOrderSetAPIRequest) SetParamB2BCreateOrderRQ(_paramB2BCreateOr
 	return nil
 }
 
-// Get ParamB2BCreateOrderRQ Getter
+// GetParamB2BCreateOrderRQ ParamB2BCreateOrderRQ Getter
 func (r TaobaoBusOrderSetAPIRequest) GetParamB2BCreateOrderRQ() *B2BCreateOrderRq {
 	return r._paramB2BCreateOrderRQ
 }

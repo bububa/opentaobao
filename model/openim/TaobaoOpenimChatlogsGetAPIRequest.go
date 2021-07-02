@@ -47,7 +47,7 @@ func (r TaobaoOpenimChatlogsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is User1 Setter
+// SetUser1 is User1 Setter
 // 用户1信息
 func (r *TaobaoOpenimChatlogsGetAPIRequest) SetUser1(_user1 *OpenImUser) error {
 	r._user1 = _user1
@@ -55,12 +55,12 @@ func (r *TaobaoOpenimChatlogsGetAPIRequest) SetUser1(_user1 *OpenImUser) error {
 	return nil
 }
 
-// Get User1 Getter
+// GetUser1 User1 Getter
 func (r TaobaoOpenimChatlogsGetAPIRequest) GetUser1() *OpenImUser {
 	return r._user1
 }
 
-// Set is User2 Setter
+// SetUser2 is User2 Setter
 // 用户2信息
 func (r *TaobaoOpenimChatlogsGetAPIRequest) SetUser2(_user2 *OpenImUser) error {
 	r._user2 = _user2
@@ -68,12 +68,12 @@ func (r *TaobaoOpenimChatlogsGetAPIRequest) SetUser2(_user2 *OpenImUser) error {
 	return nil
 }
 
-// Get User2 Getter
+// GetUser2 User2 Getter
 func (r TaobaoOpenimChatlogsGetAPIRequest) GetUser2() *OpenImUser {
 	return r._user2
 }
 
-// Set is Begin Setter
+// SetBegin is Begin Setter
 // 查询开始时间（UTC时间）
 func (r *TaobaoOpenimChatlogsGetAPIRequest) SetBegin(_begin int64) error {
 	r._begin = _begin
@@ -81,12 +81,12 @@ func (r *TaobaoOpenimChatlogsGetAPIRequest) SetBegin(_begin int64) error {
 	return nil
 }
 
-// Get Begin Getter
+// GetBegin Begin Getter
 func (r TaobaoOpenimChatlogsGetAPIRequest) GetBegin() int64 {
 	return r._begin
 }
 
-// Set is End Setter
+// SetEnd is End Setter
 // 查询结束时间（UTC时间）
 func (r *TaobaoOpenimChatlogsGetAPIRequest) SetEnd(_end int64) error {
 	r._end = _end
@@ -94,12 +94,12 @@ func (r *TaobaoOpenimChatlogsGetAPIRequest) SetEnd(_end int64) error {
 	return nil
 }
 
-// Get End Getter
+// GetEnd End Getter
 func (r TaobaoOpenimChatlogsGetAPIRequest) GetEnd() int64 {
 	return r._end
 }
 
-// Set is Count Setter
+// SetCount is Count Setter
 // 查询条数
 func (r *TaobaoOpenimChatlogsGetAPIRequest) SetCount(_count int64) error {
 	r._count = _count
@@ -107,12 +107,12 @@ func (r *TaobaoOpenimChatlogsGetAPIRequest) SetCount(_count int64) error {
 	return nil
 }
 
-// Get Count Getter
+// GetCount Count Getter
 func (r TaobaoOpenimChatlogsGetAPIRequest) GetCount() int64 {
 	return r._count
 }
 
-// Set is NextKey Setter
+// SetNextKey is NextKey Setter
 // 迭代key
 func (r *TaobaoOpenimChatlogsGetAPIRequest) SetNextKey(_nextKey string) error {
 	r._nextKey = _nextKey
@@ -120,7 +120,7 @@ func (r *TaobaoOpenimChatlogsGetAPIRequest) SetNextKey(_nextKey string) error {
 	return nil
 }
 
-// Get NextKey Getter
+// GetNextKey NextKey Getter
 func (r TaobaoOpenimChatlogsGetAPIRequest) GetNextKey() string {
 	return r._nextKey
 }

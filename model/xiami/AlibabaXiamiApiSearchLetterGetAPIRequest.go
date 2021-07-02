@@ -37,7 +37,7 @@ func (r AlibabaXiamiApiSearchLetterGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Key Setter
+// SetKey is Key Setter
 // 搜索关键字
 func (r *AlibabaXiamiApiSearchLetterGetAPIRequest) SetKey(_key string) error {
 	r._key = _key
@@ -45,7 +45,7 @@ func (r *AlibabaXiamiApiSearchLetterGetAPIRequest) SetKey(_key string) error {
 	return nil
 }
 
-// Get Key Getter
+// GetKey Key Getter
 func (r AlibabaXiamiApiSearchLetterGetAPIRequest) GetKey() string {
 	return r._key
 }

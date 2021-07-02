@@ -37,7 +37,7 @@ func (r TmallProductSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品编号
 func (r *TmallProductSchemaGetAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -45,7 +45,7 @@ func (r *TmallProductSchemaGetAPIRequest) SetProductId(_productId int64) error {
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TmallProductSchemaGetAPIRequest) GetProductId() int64 {
 	return r._productId
 }

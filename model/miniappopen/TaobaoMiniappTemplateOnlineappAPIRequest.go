@@ -45,7 +45,7 @@ func (r TaobaoMiniappTemplateOnlineappAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Clients Setter
+// SetClients is Clients Setter
 // 要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)
 func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetClients(_clients []string) error {
 	r._clients = _clients
@@ -53,12 +53,12 @@ func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetClients(_clients []string)
 	return nil
 }
 
-// Get Clients Getter
+// GetClients Clients Getter
 func (r TaobaoMiniappTemplateOnlineappAPIRequest) GetClients() []string {
 	return r._clients
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 小程序app_id
 func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
@@ -66,12 +66,12 @@ func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetAppId(_appId string) error
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r TaobaoMiniappTemplateOnlineappAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// Set is TemplateId Setter
+// SetTemplateId is TemplateId Setter
 // 模板id
 func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetTemplateId(_templateId string) error {
 	r._templateId = _templateId
@@ -79,12 +79,12 @@ func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetTemplateId(_templateId str
 	return nil
 }
 
-// Get TemplateId Getter
+// GetTemplateId TemplateId Getter
 func (r TaobaoMiniappTemplateOnlineappAPIRequest) GetTemplateId() string {
 	return r._templateId
 }
 
-// Set is TemplateVersion Setter
+// SetTemplateVersion is TemplateVersion Setter
 // 模板版本
 func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetTemplateVersion(_templateVersion string) error {
 	r._templateVersion = _templateVersion
@@ -92,12 +92,12 @@ func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetTemplateVersion(_templateV
 	return nil
 }
 
-// Get TemplateVersion Getter
+// GetTemplateVersion TemplateVersion Getter
 func (r TaobaoMiniappTemplateOnlineappAPIRequest) GetTemplateVersion() string {
 	return r._templateVersion
 }
 
-// Set is AppVersion Setter
+// SetAppVersion is AppVersion Setter
 // 待上线的预览版本号
 func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetAppVersion(_appVersion string) error {
 	r._appVersion = _appVersion
@@ -105,7 +105,7 @@ func (r *TaobaoMiniappTemplateOnlineappAPIRequest) SetAppVersion(_appVersion str
 	return nil
 }
 
-// Get AppVersion Getter
+// GetAppVersion AppVersion Getter
 func (r TaobaoMiniappTemplateOnlineappAPIRequest) GetAppVersion() string {
 	return r._appVersion
 }

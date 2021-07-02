@@ -37,7 +37,7 @@ func (r AlibabaMoziAclRoleAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CreateRoleRequest Setter
+// SetCreateRoleRequest is CreateRoleRequest Setter
 // 创建角色请求对象
 func (r *AlibabaMoziAclRoleAddAPIRequest) SetCreateRoleRequest(_createRoleRequest *CreateRoleRequest) error {
 	r._createRoleRequest = _createRoleRequest
@@ -45,7 +45,7 @@ func (r *AlibabaMoziAclRoleAddAPIRequest) SetCreateRoleRequest(_createRoleReques
 	return nil
 }
 
-// Get CreateRoleRequest Getter
+// GetCreateRoleRequest CreateRoleRequest Getter
 func (r AlibabaMoziAclRoleAddAPIRequest) GetCreateRoleRequest() *CreateRoleRequest {
 	return r._createRoleRequest
 }

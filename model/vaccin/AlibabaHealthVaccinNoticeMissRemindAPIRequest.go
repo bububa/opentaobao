@@ -45,7 +45,7 @@ func (r AlibabaHealthVaccinNoticeMissRemindAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is AlipayUserId Setter
+// SetAlipayUserId is AlipayUserId Setter
 // 432421
 func (r *AlibabaHealthVaccinNoticeMissRemindAPIRequest) SetAlipayUserId(_alipayUserId string) error {
 	r._alipayUserId = _alipayUserId
@@ -53,12 +53,12 @@ func (r *AlibabaHealthVaccinNoticeMissRemindAPIRequest) SetAlipayUserId(_alipayU
 	return nil
 }
 
-// Get AlipayUserId Getter
+// GetAlipayUserId AlipayUserId Getter
 func (r AlibabaHealthVaccinNoticeMissRemindAPIRequest) GetAlipayUserId() string {
 	return r._alipayUserId
 }
 
-// Set is VaccineName Setter
+// SetVaccineName is VaccineName Setter
 // 多个疫苗英文逗号分隔
 func (r *AlibabaHealthVaccinNoticeMissRemindAPIRequest) SetVaccineName(_vaccineName string) error {
 	r._vaccineName = _vaccineName
@@ -66,12 +66,12 @@ func (r *AlibabaHealthVaccinNoticeMissRemindAPIRequest) SetVaccineName(_vaccineN
 	return nil
 }
 
-// Get VaccineName Getter
+// GetVaccineName VaccineName Getter
 func (r AlibabaHealthVaccinNoticeMissRemindAPIRequest) GetVaccineName() string {
 	return r._vaccineName
 }
 
-// Set is ReserveDate Setter
+// SetReserveDate is ReserveDate Setter
 // 2019-02-08 严格按照
 func (r *AlibabaHealthVaccinNoticeMissRemindAPIRequest) SetReserveDate(_reserveDate string) error {
 	r._reserveDate = _reserveDate
@@ -79,12 +79,12 @@ func (r *AlibabaHealthVaccinNoticeMissRemindAPIRequest) SetReserveDate(_reserveD
 	return nil
 }
 
-// Get ReserveDate Getter
+// GetReserveDate ReserveDate Getter
 func (r AlibabaHealthVaccinNoticeMissRemindAPIRequest) GetReserveDate() string {
 	return r._reserveDate
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 姓名
 func (r *AlibabaHealthVaccinNoticeMissRemindAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -92,12 +92,12 @@ func (r *AlibabaHealthVaccinNoticeMissRemindAPIRequest) SetName(_name string) er
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlibabaHealthVaccinNoticeMissRemindAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 点击提醒消息的跳转链接
 func (r *AlibabaHealthVaccinNoticeMissRemindAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -105,7 +105,7 @@ func (r *AlibabaHealthVaccinNoticeMissRemindAPIRequest) SetUrl(_url string) erro
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r AlibabaHealthVaccinNoticeMissRemindAPIRequest) GetUrl() string {
 	return r._url
 }

@@ -46,7 +46,7 @@ func (r AlitripTicketSkusBatchUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AliProductId Setter
+// SetAliProductId is AliProductId Setter
 // 特殊必填，阿里标准收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
 func (r *AlitripTicketSkusBatchUploadAPIRequest) SetAliProductId(_aliProductId int64) error {
 	r._aliProductId = _aliProductId
@@ -54,12 +54,12 @@ func (r *AlitripTicketSkusBatchUploadAPIRequest) SetAliProductId(_aliProductId i
 	return nil
 }
 
-// Get AliProductId Getter
+// GetAliProductId AliProductId Getter
 func (r AlitripTicketSkusBatchUploadAPIRequest) GetAliProductId() int64 {
 	return r._aliProductId
 }
 
-// Set is OutProductId Setter
+// SetOutProductId is OutProductId Setter
 // 特殊必填，商户收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
 func (r *AlitripTicketSkusBatchUploadAPIRequest) SetOutProductId(_outProductId string) error {
 	r._outProductId = _outProductId
@@ -67,12 +67,12 @@ func (r *AlitripTicketSkusBatchUploadAPIRequest) SetOutProductId(_outProductId s
 	return nil
 }
 
-// Get OutProductId Getter
+// GetOutProductId OutProductId Getter
 func (r AlitripTicketSkusBatchUploadAPIRequest) GetOutProductId() string {
 	return r._outProductId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 特殊必填，淘宝商品id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
 func (r *AlitripTicketSkusBatchUploadAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -80,12 +80,12 @@ func (r *AlitripTicketSkusBatchUploadAPIRequest) SetItemId(_itemId int64) error 
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlitripTicketSkusBatchUploadAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is TicketPriceRules Setter
+// SetTicketPriceRules is TicketPriceRules Setter
 // 必填，各票种下sku的价格库存参数。
 func (r *AlitripTicketSkusBatchUploadAPIRequest) SetTicketPriceRules(_ticketPriceRules []TicketPriceRule) error {
 	r._ticketPriceRules = _ticketPriceRules
@@ -93,7 +93,7 @@ func (r *AlitripTicketSkusBatchUploadAPIRequest) SetTicketPriceRules(_ticketPric
 	return nil
 }
 
-// Get TicketPriceRules Getter
+// GetTicketPriceRules TicketPriceRules Getter
 func (r AlitripTicketSkusBatchUploadAPIRequest) GetTicketPriceRules() []TicketPriceRule {
 	return r._ticketPriceRules
 }

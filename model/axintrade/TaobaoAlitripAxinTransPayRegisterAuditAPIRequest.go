@@ -37,7 +37,7 @@ func (r TaobaoAlitripAxinTransPayRegisterAuditAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is AxinPayRegisterAuditDto Setter
+// SetAxinPayRegisterAuditDto is AxinPayRegisterAuditDto Setter
 // 支付入驻审核对象
 func (r *TaobaoAlitripAxinTransPayRegisterAuditAPIRequest) SetAxinPayRegisterAuditDto(_axinPayRegisterAuditDto *AxinPayRegisterAuditDto) error {
 	r._axinPayRegisterAuditDto = _axinPayRegisterAuditDto
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripAxinTransPayRegisterAuditAPIRequest) SetAxinPayRegisterAud
 	return nil
 }
 
-// Get AxinPayRegisterAuditDto Getter
+// GetAxinPayRegisterAuditDto AxinPayRegisterAuditDto Getter
 func (r TaobaoAlitripAxinTransPayRegisterAuditAPIRequest) GetAxinPayRegisterAuditDto() *AxinPayRegisterAuditDto {
 	return r._axinPayRegisterAuditDto
 }

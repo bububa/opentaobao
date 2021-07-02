@@ -37,7 +37,7 @@ func (r TaobaoAlitripCarOrderRefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOrderRefund Setter
+// SetParamOrderRefund is ParamOrderRefund Setter
 // 退款对象
 func (r *TaobaoAlitripCarOrderRefundAPIRequest) SetParamOrderRefund(_paramOrderRefund *OrderRefund) error {
 	r._paramOrderRefund = _paramOrderRefund
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripCarOrderRefundAPIRequest) SetParamOrderRefund(_paramOrderR
 	return nil
 }
 
-// Get ParamOrderRefund Getter
+// GetParamOrderRefund ParamOrderRefund Getter
 func (r TaobaoAlitripCarOrderRefundAPIRequest) GetParamOrderRefund() *OrderRefund {
 	return r._paramOrderRefund
 }

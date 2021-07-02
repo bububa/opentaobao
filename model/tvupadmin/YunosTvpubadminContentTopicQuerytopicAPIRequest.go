@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentTopicQuerytopicAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is TopicAuditQuery Setter
+// SetTopicAuditQuery is TopicAuditQuery Setter
 // TopicAuditQueryBO
 func (r *YunosTvpubadminContentTopicQuerytopicAPIRequest) SetTopicAuditQuery(_topicAuditQuery string) error {
 	r._topicAuditQuery = _topicAuditQuery
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentTopicQuerytopicAPIRequest) SetTopicAuditQuery(_to
 	return nil
 }
 
-// Get TopicAuditQuery Getter
+// GetTopicAuditQuery TopicAuditQuery Getter
 func (r YunosTvpubadminContentTopicQuerytopicAPIRequest) GetTopicAuditQuery() string {
 	return r._topicAuditQuery
 }

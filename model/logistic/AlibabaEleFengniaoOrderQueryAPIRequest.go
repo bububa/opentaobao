@@ -37,7 +37,7 @@ func (r AlibabaEleFengniaoOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 参数
 func (r *AlibabaEleFengniaoOrderQueryAPIRequest) SetParam(_param *Param) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaEleFengniaoOrderQueryAPIRequest) SetParam(_param *Param) error {
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaEleFengniaoOrderQueryAPIRequest) GetParam() *Param {
 	return r._param
 }

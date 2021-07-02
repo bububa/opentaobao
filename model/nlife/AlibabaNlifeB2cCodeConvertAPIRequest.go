@@ -39,7 +39,7 @@ func (r AlibabaNlifeB2cCodeConvertAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 零售商在零售+平台ID，非唯一码模式必填，建议传递该值
 func (r *AlibabaNlifeB2cCodeConvertAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -47,12 +47,12 @@ func (r *AlibabaNlifeB2cCodeConvertAPIRequest) SetStoreId(_storeId string) error
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaNlifeB2cCodeConvertAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 商品URL
 func (r *AlibabaNlifeB2cCodeConvertAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -60,7 +60,7 @@ func (r *AlibabaNlifeB2cCodeConvertAPIRequest) SetUrl(_url string) error {
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r AlibabaNlifeB2cCodeConvertAPIRequest) GetUrl() string {
 	return r._url
 }

@@ -39,7 +39,7 @@ func (r TmallCarLeaseContractdownloadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 天猫开新车订单id
 func (r *TmallCarLeaseContractdownloadAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *TmallCarLeaseContractdownloadAPIRequest) SetOrderId(_orderId int64) err
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TmallCarLeaseContractdownloadAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 续租协议： 1， 全款购车协议： 2，分期购买协议：3， 分期购买车辆资产验收协议：4，分期购买车辆抵押：5， 分期购买融资租赁合同：6
 func (r *TmallCarLeaseContractdownloadAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -60,7 +60,7 @@ func (r *TmallCarLeaseContractdownloadAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TmallCarLeaseContractdownloadAPIRequest) GetType() string {
 	return r._type
 }

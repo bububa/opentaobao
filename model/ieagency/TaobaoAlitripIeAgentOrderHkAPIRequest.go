@@ -39,7 +39,7 @@ func (r TaobaoAlitripIeAgentOrderHkAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商ID
 func (r *TaobaoAlitripIeAgentOrderHkAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -47,12 +47,12 @@ func (r *TaobaoAlitripIeAgentOrderHkAPIRequest) SetAgentId(_agentId int64) error
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r TaobaoAlitripIeAgentOrderHkAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is WriteBackPnrVO Setter
+// SetWriteBackPnrVO is WriteBackPnrVO Setter
 // 回填pnr信息
 func (r *TaobaoAlitripIeAgentOrderHkAPIRequest) SetWriteBackPnrVO(_writeBackPnrVO *IeWriteBackPnrVO) error {
 	r._writeBackPnrVO = _writeBackPnrVO
@@ -60,7 +60,7 @@ func (r *TaobaoAlitripIeAgentOrderHkAPIRequest) SetWriteBackPnrVO(_writeBackPnrV
 	return nil
 }
 
-// Get WriteBackPnrVO Getter
+// GetWriteBackPnrVO WriteBackPnrVO Getter
 func (r TaobaoAlitripIeAgentOrderHkAPIRequest) GetWriteBackPnrVO() *IeWriteBackPnrVO {
 	return r._writeBackPnrVO
 }

@@ -41,7 +41,7 @@ func (r TaobaoSimbaSalestarAdgroupFindbycampidAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划Id
 func (r *TaobaoSimbaSalestarAdgroupFindbycampidAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -49,12 +49,12 @@ func (r *TaobaoSimbaSalestarAdgroupFindbycampidAPIRequest) SetCampaignId(_campai
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaSalestarAdgroupFindbycampidAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页尺寸，最大200，如果入参adgroup_ids有传入值，则page_size和page_no值不起作用。如果adgrpup_ids为空而campaign_id有值，此时page_size和page_no值才是返回的页数据大小和页码
 func (r *TaobaoSimbaSalestarAdgroupFindbycampidAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -62,12 +62,12 @@ func (r *TaobaoSimbaSalestarAdgroupFindbycampidAPIRequest) SetPageSize(_pageSize
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoSimbaSalestarAdgroupFindbycampidAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码，从1开始
 func (r *TaobaoSimbaSalestarAdgroupFindbycampidAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -75,7 +75,7 @@ func (r *TaobaoSimbaSalestarAdgroupFindbycampidAPIRequest) SetPageNo(_pageNo int
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoSimbaSalestarAdgroupFindbycampidAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

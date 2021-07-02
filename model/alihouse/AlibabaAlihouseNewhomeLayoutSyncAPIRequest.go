@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeLayoutSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SyncProjectLayoutData Setter
+// SetSyncProjectLayoutData is SyncProjectLayoutData Setter
 // 数据
 func (r *AlibabaAlihouseNewhomeLayoutSyncAPIRequest) SetSyncProjectLayoutData(_syncProjectLayoutData *SyncProjectLayoutDto) error {
 	r._syncProjectLayoutData = _syncProjectLayoutData
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeLayoutSyncAPIRequest) SetSyncProjectLayoutData(_s
 	return nil
 }
 
-// Get SyncProjectLayoutData Getter
+// GetSyncProjectLayoutData SyncProjectLayoutData Getter
 func (r AlibabaAlihouseNewhomeLayoutSyncAPIRequest) GetSyncProjectLayoutData() *SyncProjectLayoutDto {
 	return r._syncProjectLayoutData
 }

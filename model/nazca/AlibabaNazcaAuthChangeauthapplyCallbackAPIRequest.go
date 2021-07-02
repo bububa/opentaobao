@@ -37,7 +37,7 @@ func (r AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ParamChangeAuthCallBackDo Setter
+// SetParamChangeAuthCallBackDo is ParamChangeAuthCallBackDo Setter
 // 变更认证回调参数
 func (r *AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest) SetParamChangeAuthCallBackDo(_paramChangeAuthCallBackDo *ChangeAuthCallBackDo) error {
 	r._paramChangeAuthCallBackDo = _paramChangeAuthCallBackDo
@@ -45,7 +45,7 @@ func (r *AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest) SetParamChangeAuthCa
 	return nil
 }
 
-// Get ParamChangeAuthCallBackDo Getter
+// GetParamChangeAuthCallBackDo ParamChangeAuthCallBackDo Getter
 func (r AlibabaNazcaAuthChangeauthapplyCallbackAPIRequest) GetParamChangeAuthCallBackDo() *ChangeAuthCallBackDo {
 	return r._paramChangeAuthCallBackDo
 }

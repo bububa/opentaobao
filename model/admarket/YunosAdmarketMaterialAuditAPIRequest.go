@@ -37,7 +37,7 @@ func (r YunosAdmarketMaterialAuditAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SspMaterialAuditResult Setter
+// SetSspMaterialAuditResult is SspMaterialAuditResult Setter
 // 创意审核结果
 func (r *YunosAdmarketMaterialAuditAPIRequest) SetSspMaterialAuditResult(_sspMaterialAuditResult *SspMaterialAuditResult) error {
 	r._sspMaterialAuditResult = _sspMaterialAuditResult
@@ -45,7 +45,7 @@ func (r *YunosAdmarketMaterialAuditAPIRequest) SetSspMaterialAuditResult(_sspMat
 	return nil
 }
 
-// Get SspMaterialAuditResult Getter
+// GetSspMaterialAuditResult SspMaterialAuditResult Getter
 func (r YunosAdmarketMaterialAuditAPIRequest) GetSspMaterialAuditResult() *SspMaterialAuditResult {
 	return r._sspMaterialAuditResult
 }

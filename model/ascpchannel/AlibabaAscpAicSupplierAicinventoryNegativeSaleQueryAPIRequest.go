@@ -37,7 +37,7 @@ func (r AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest) GetApiPar
 	return params
 }
 
-// Set is AicinventoryQueryRequest Setter
+// SetAicinventoryQueryRequest is AicinventoryQueryRequest Setter
 // 库存查询参数
 func (r *AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest) SetAicinventoryQueryRequest(_aicinventoryQueryRequest *Aicinventoryqueryrequest) error {
 	r._aicinventoryQueryRequest = _aicinventoryQueryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest) SetAicin
 	return nil
 }
 
-// Get AicinventoryQueryRequest Getter
+// GetAicinventoryQueryRequest AicinventoryQueryRequest Getter
 func (r AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryAPIRequest) GetAicinventoryQueryRequest() *Aicinventoryqueryrequest {
 	return r._aicinventoryQueryRequest
 }

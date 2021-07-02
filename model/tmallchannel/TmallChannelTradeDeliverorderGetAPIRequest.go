@@ -39,7 +39,7 @@ func (r TmallChannelTradeDeliverorderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MainDeliverOrderNo Setter
+// SetMainDeliverOrderNo is MainDeliverOrderNo Setter
 // 发货单号
 func (r *TmallChannelTradeDeliverorderGetAPIRequest) SetMainDeliverOrderNo(_mainDeliverOrderNo int64) error {
 	r._mainDeliverOrderNo = _mainDeliverOrderNo
@@ -47,12 +47,12 @@ func (r *TmallChannelTradeDeliverorderGetAPIRequest) SetMainDeliverOrderNo(_main
 	return nil
 }
 
-// Get MainDeliverOrderNo Getter
+// GetMainDeliverOrderNo MainDeliverOrderNo Getter
 func (r TmallChannelTradeDeliverorderGetAPIRequest) GetMainDeliverOrderNo() int64 {
 	return r._mainDeliverOrderNo
 }
 
-// Set is IsIncludeSubOrder Setter
+// SetIsIncludeSubOrder is IsIncludeSubOrder Setter
 // 是否包含子发货单
 func (r *TmallChannelTradeDeliverorderGetAPIRequest) SetIsIncludeSubOrder(_isIncludeSubOrder bool) error {
 	r._isIncludeSubOrder = _isIncludeSubOrder
@@ -60,7 +60,7 @@ func (r *TmallChannelTradeDeliverorderGetAPIRequest) SetIsIncludeSubOrder(_isInc
 	return nil
 }
 
-// Get IsIncludeSubOrder Getter
+// GetIsIncludeSubOrder IsIncludeSubOrder Getter
 func (r TmallChannelTradeDeliverorderGetAPIRequest) GetIsIncludeSubOrder() bool {
 	return r._isIncludeSubOrder
 }

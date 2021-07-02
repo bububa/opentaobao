@@ -37,7 +37,7 @@ func (r CainiaoWaybillIiUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamWaybillCloudPrintUpdateRequest Setter
+// SetParamWaybillCloudPrintUpdateRequest is ParamWaybillCloudPrintUpdateRequest Setter
 // 更新请求信息
 func (r *CainiaoWaybillIiUpdateAPIRequest) SetParamWaybillCloudPrintUpdateRequest(_paramWaybillCloudPrintUpdateRequest *WaybillCloudPrintUpdateRequest) error {
 	r._paramWaybillCloudPrintUpdateRequest = _paramWaybillCloudPrintUpdateRequest
@@ -45,7 +45,7 @@ func (r *CainiaoWaybillIiUpdateAPIRequest) SetParamWaybillCloudPrintUpdateReques
 	return nil
 }
 
-// Get ParamWaybillCloudPrintUpdateRequest Getter
+// GetParamWaybillCloudPrintUpdateRequest ParamWaybillCloudPrintUpdateRequest Getter
 func (r CainiaoWaybillIiUpdateAPIRequest) GetParamWaybillCloudPrintUpdateRequest() *WaybillCloudPrintUpdateRequest {
 	return r._paramWaybillCloudPrintUpdateRequest
 }

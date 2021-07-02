@@ -37,7 +37,7 @@ func (r AlibabaScbpKeywordMatchedProductsGetAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is AdKeyword Setter
+// SetAdKeyword is AdKeyword Setter
 // 已购买的关键词
 func (r *AlibabaScbpKeywordMatchedProductsGetAPIRequest) SetAdKeyword(_adKeyword string) error {
 	r._adKeyword = _adKeyword
@@ -45,7 +45,7 @@ func (r *AlibabaScbpKeywordMatchedProductsGetAPIRequest) SetAdKeyword(_adKeyword
 	return nil
 }
 
-// Get AdKeyword Getter
+// GetAdKeyword AdKeyword Getter
 func (r AlibabaScbpKeywordMatchedProductsGetAPIRequest) GetAdKeyword() string {
 	return r._adKeyword
 }

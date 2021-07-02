@@ -39,7 +39,7 @@ func (r TmallItemStoreUpdateSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MainItemId Setter
+// SetMainItemId is MainItemId Setter
 // 主商品ID
 func (r *TmallItemStoreUpdateSchemaGetAPIRequest) SetMainItemId(_mainItemId int64) error {
 	r._mainItemId = _mainItemId
@@ -47,12 +47,12 @@ func (r *TmallItemStoreUpdateSchemaGetAPIRequest) SetMainItemId(_mainItemId int6
 	return nil
 }
 
-// Get MainItemId Getter
+// GetMainItemId MainItemId Getter
 func (r TmallItemStoreUpdateSchemaGetAPIRequest) GetMainItemId() int64 {
 	return r._mainItemId
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *TmallItemStoreUpdateSchemaGetAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -60,7 +60,7 @@ func (r *TmallItemStoreUpdateSchemaGetAPIRequest) SetStoreId(_storeId int64) err
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TmallItemStoreUpdateSchemaGetAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }

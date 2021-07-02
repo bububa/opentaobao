@@ -37,7 +37,7 @@ func (r AliexpressFulfillmentEventAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参对象
 func (r *AliexpressFulfillmentEventAPIRequest) SetParam(_param *FulfillmentOrderStatusUpdateRequest) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AliexpressFulfillmentEventAPIRequest) SetParam(_param *FulfillmentOrder
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AliexpressFulfillmentEventAPIRequest) GetParam() *FulfillmentOrderStatusUpdateRequest {
 	return r._param
 }

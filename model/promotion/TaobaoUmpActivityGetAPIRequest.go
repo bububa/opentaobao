@@ -37,7 +37,7 @@ func (r TaobaoUmpActivityGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ActId Setter
+// SetActId is ActId Setter
 // 活动id
 func (r *TaobaoUmpActivityGetAPIRequest) SetActId(_actId int64) error {
 	r._actId = _actId
@@ -45,7 +45,7 @@ func (r *TaobaoUmpActivityGetAPIRequest) SetActId(_actId int64) error {
 	return nil
 }
 
-// Get ActId Getter
+// GetActId ActId Getter
 func (r TaobaoUmpActivityGetAPIRequest) GetActId() int64 {
 	return r._actId
 }

@@ -41,7 +41,7 @@ func (r AlibabaCampusTopologyGetallAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CampusId Setter
+// SetCampusId is CampusId Setter
 // 园区id
 func (r *AlibabaCampusTopologyGetallAPIRequest) SetCampusId(_campusId int64) error {
 	r._campusId = _campusId
@@ -49,12 +49,12 @@ func (r *AlibabaCampusTopologyGetallAPIRequest) SetCampusId(_campusId int64) err
 	return nil
 }
 
-// Get CampusId Getter
+// GetCampusId CampusId Getter
 func (r AlibabaCampusTopologyGetallAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }
 
-// Set is CompanyId Setter
+// SetCompanyId is CompanyId Setter
 // 公司id
 func (r *AlibabaCampusTopologyGetallAPIRequest) SetCompanyId(_companyId int64) error {
 	r._companyId = _companyId
@@ -62,12 +62,12 @@ func (r *AlibabaCampusTopologyGetallAPIRequest) SetCompanyId(_companyId int64) e
 	return nil
 }
 
-// Get CompanyId Getter
+// GetCompanyId CompanyId Getter
 func (r AlibabaCampusTopologyGetallAPIRequest) GetCompanyId() int64 {
 	return r._companyId
 }
 
-// Set is SystemId Setter
+// SetSystemId is SystemId Setter
 // 系统id
 func (r *AlibabaCampusTopologyGetallAPIRequest) SetSystemId(_systemId string) error {
 	r._systemId = _systemId
@@ -75,7 +75,7 @@ func (r *AlibabaCampusTopologyGetallAPIRequest) SetSystemId(_systemId string) er
 	return nil
 }
 
-// Get SystemId Getter
+// GetSystemId SystemId Getter
 func (r AlibabaCampusTopologyGetallAPIRequest) GetSystemId() string {
 	return r._systemId
 }

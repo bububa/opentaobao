@@ -39,7 +39,7 @@ func (r TaobaoAplatformWeakgetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamRichClientInfo Setter
+// SetParamRichClientInfo is ParamRichClientInfo Setter
 // 客户端自带参数
 func (r *TaobaoAplatformWeakgetAPIRequest) SetParamRichClientInfo(_paramRichClientInfo *RichClientInfo) error {
 	r._paramRichClientInfo = _paramRichClientInfo
@@ -47,12 +47,12 @@ func (r *TaobaoAplatformWeakgetAPIRequest) SetParamRichClientInfo(_paramRichClie
 	return nil
 }
 
-// Get ParamRichClientInfo Getter
+// GetParamRichClientInfo ParamRichClientInfo Getter
 func (r TaobaoAplatformWeakgetAPIRequest) GetParamRichClientInfo() *RichClientInfo {
 	return r._paramRichClientInfo
 }
 
-// Set is ParamDto Setter
+// SetParamDto is ParamDto Setter
 // 业务自定义参数
 func (r *TaobaoAplatformWeakgetAPIRequest) SetParamDto(_paramDto *ParamDto) error {
 	r._paramDto = _paramDto
@@ -60,7 +60,7 @@ func (r *TaobaoAplatformWeakgetAPIRequest) SetParamDto(_paramDto *ParamDto) erro
 	return nil
 }
 
-// Get ParamDto Getter
+// GetParamDto ParamDto Getter
 func (r TaobaoAplatformWeakgetAPIRequest) GetParamDto() *ParamDto {
 	return r._paramDto
 }

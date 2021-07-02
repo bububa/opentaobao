@@ -43,7 +43,7 @@ func (r TaobaoUsergrowthDeliveryBatchaskAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 渠道标识，向淘宝技术申请
 func (r *TaobaoUsergrowthDeliveryBatchaskAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -51,12 +51,12 @@ func (r *TaobaoUsergrowthDeliveryBatchaskAPIRequest) SetChannel(_channel string)
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TaobaoUsergrowthDeliveryBatchaskAPIRequest) GetChannel() string {
 	return r._channel
 }
 
-// Set is Adid Setter
+// SetAdid is Adid Setter
 // 广告id，淘宝和媒体协商
 func (r *TaobaoUsergrowthDeliveryBatchaskAPIRequest) SetAdid(_adid string) error {
 	r._adid = _adid
@@ -64,12 +64,12 @@ func (r *TaobaoUsergrowthDeliveryBatchaskAPIRequest) SetAdid(_adid string) error
 	return nil
 }
 
-// Get Adid Getter
+// GetAdid Adid Getter
 func (r TaobaoUsergrowthDeliveryBatchaskAPIRequest) GetAdid() string {
 	return r._adid
 }
 
-// Set is IdfaMd5 Setter
+// SetIdfaMd5 is IdfaMd5 Setter
 // idfa的md5值， 32位小写， 多个使用,分隔， 最多支持20个
 func (r *TaobaoUsergrowthDeliveryBatchaskAPIRequest) SetIdfaMd5(_idfaMd5 string) error {
 	r._idfaMd5 = _idfaMd5
@@ -77,12 +77,12 @@ func (r *TaobaoUsergrowthDeliveryBatchaskAPIRequest) SetIdfaMd5(_idfaMd5 string)
 	return nil
 }
 
-// Get IdfaMd5 Getter
+// GetIdfaMd5 IdfaMd5 Getter
 func (r TaobaoUsergrowthDeliveryBatchaskAPIRequest) GetIdfaMd5() string {
 	return r._idfaMd5
 }
 
-// Set is ImeiMd5 Setter
+// SetImeiMd5 is ImeiMd5 Setter
 // imei的md5值， 32位小写， 多个之间使用,分隔， 最多支持20个
 func (r *TaobaoUsergrowthDeliveryBatchaskAPIRequest) SetImeiMd5(_imeiMd5 string) error {
 	r._imeiMd5 = _imeiMd5
@@ -90,7 +90,7 @@ func (r *TaobaoUsergrowthDeliveryBatchaskAPIRequest) SetImeiMd5(_imeiMd5 string)
 	return nil
 }
 
-// Get ImeiMd5 Getter
+// GetImeiMd5 ImeiMd5 Getter
 func (r TaobaoUsergrowthDeliveryBatchaskAPIRequest) GetImeiMd5() string {
 	return r._imeiMd5
 }

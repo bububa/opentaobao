@@ -39,7 +39,7 @@ func (r TmallItemVipSchemaUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SchemaXmlFields Setter
+// SetSchemaXmlFields is SchemaXmlFields Setter
 // 商品编辑的schema参数
 func (r *TmallItemVipSchemaUpdateAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
 	r._schemaXmlFields = _schemaXmlFields
@@ -47,12 +47,12 @@ func (r *TmallItemVipSchemaUpdateAPIRequest) SetSchemaXmlFields(_schemaXmlFields
 	return nil
 }
 
-// Get SchemaXmlFields Getter
+// GetSchemaXmlFields SchemaXmlFields Getter
 func (r TmallItemVipSchemaUpdateAPIRequest) GetSchemaXmlFields() string {
 	return r._schemaXmlFields
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *TmallItemVipSchemaUpdateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -60,7 +60,7 @@ func (r *TmallItemVipSchemaUpdateAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallItemVipSchemaUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

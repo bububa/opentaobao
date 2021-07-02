@@ -37,7 +37,7 @@ func (r TaobaoJstSmsMessageShorturlQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ShortName Setter
+// SetShortName is ShortName Setter
 // 短链名，即域名后的字符串
 func (r *TaobaoJstSmsMessageShorturlQueryAPIRequest) SetShortName(_shortName string) error {
 	r._shortName = _shortName
@@ -45,7 +45,7 @@ func (r *TaobaoJstSmsMessageShorturlQueryAPIRequest) SetShortName(_shortName str
 	return nil
 }
 
-// Get ShortName Getter
+// GetShortName ShortName Getter
 func (r TaobaoJstSmsMessageShorturlQueryAPIRequest) GetShortName() string {
 	return r._shortName
 }

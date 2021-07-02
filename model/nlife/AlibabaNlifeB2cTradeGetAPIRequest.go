@@ -41,7 +41,7 @@ func (r AlibabaNlifeB2cTradeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TradeNo Setter
+// SetTradeNo is TradeNo Setter
 // 零售+平台订单号,和out_trade_no不能同时为空
 func (r *AlibabaNlifeB2cTradeGetAPIRequest) SetTradeNo(_tradeNo string) error {
 	r._tradeNo = _tradeNo
@@ -49,12 +49,12 @@ func (r *AlibabaNlifeB2cTradeGetAPIRequest) SetTradeNo(_tradeNo string) error {
 	return nil
 }
 
-// Get TradeNo Getter
+// GetTradeNo TradeNo Getter
 func (r AlibabaNlifeB2cTradeGetAPIRequest) GetTradeNo() string {
 	return r._tradeNo
 }
 
-// Set is OutTradeNo Setter
+// SetOutTradeNo is OutTradeNo Setter
 // 外部订单号，和trade_no不能同时为空
 func (r *AlibabaNlifeB2cTradeGetAPIRequest) SetOutTradeNo(_outTradeNo string) error {
 	r._outTradeNo = _outTradeNo
@@ -62,12 +62,12 @@ func (r *AlibabaNlifeB2cTradeGetAPIRequest) SetOutTradeNo(_outTradeNo string) er
 	return nil
 }
 
-// Get OutTradeNo Getter
+// GetOutTradeNo OutTradeNo Getter
 func (r AlibabaNlifeB2cTradeGetAPIRequest) GetOutTradeNo() string {
 	return r._outTradeNo
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 零售+门店ID，如果传递的是outTradeNola，那么这个是必传的
 func (r *AlibabaNlifeB2cTradeGetAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -75,7 +75,7 @@ func (r *AlibabaNlifeB2cTradeGetAPIRequest) SetStoreId(_storeId string) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaNlifeB2cTradeGetAPIRequest) GetStoreId() string {
 	return r._storeId
 }

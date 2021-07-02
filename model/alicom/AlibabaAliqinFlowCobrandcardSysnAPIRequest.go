@@ -43,7 +43,7 @@ func (r AlibabaAliqinFlowCobrandcardSysnAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TbUserNick Setter
+// SetTbUserNick is TbUserNick Setter
 // 淘宝nick
 func (r *AlibabaAliqinFlowCobrandcardSysnAPIRequest) SetTbUserNick(_tbUserNick string) error {
 	r._tbUserNick = _tbUserNick
@@ -51,12 +51,12 @@ func (r *AlibabaAliqinFlowCobrandcardSysnAPIRequest) SetTbUserNick(_tbUserNick s
 	return nil
 }
 
-// Get TbUserNick Getter
+// GetTbUserNick TbUserNick Getter
 func (r AlibabaAliqinFlowCobrandcardSysnAPIRequest) GetTbUserNick() string {
 	return r._tbUserNick
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 手机号码
 func (r *AlibabaAliqinFlowCobrandcardSysnAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -64,12 +64,12 @@ func (r *AlibabaAliqinFlowCobrandcardSysnAPIRequest) SetPhone(_phone string) err
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r AlibabaAliqinFlowCobrandcardSysnAPIRequest) GetPhone() string {
 	return r._phone
 }
 
-// Set is CardType Setter
+// SetCardType is CardType Setter
 // 联名卡类型cardType:1-大喵卡,2-小喵卡
 func (r *AlibabaAliqinFlowCobrandcardSysnAPIRequest) SetCardType(_cardType string) error {
 	r._cardType = _cardType
@@ -77,12 +77,12 @@ func (r *AlibabaAliqinFlowCobrandcardSysnAPIRequest) SetCardType(_cardType strin
 	return nil
 }
 
-// Get CardType Getter
+// GetCardType CardType Getter
 func (r AlibabaAliqinFlowCobrandcardSysnAPIRequest) GetCardType() string {
 	return r._cardType
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // 1-激活，0-失效
 func (r *AlibabaAliqinFlowCobrandcardSysnAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -90,7 +90,7 @@ func (r *AlibabaAliqinFlowCobrandcardSysnAPIRequest) SetAction(_action string) e
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r AlibabaAliqinFlowCobrandcardSysnAPIRequest) GetAction() string {
 	return r._action
 }

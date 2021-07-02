@@ -41,7 +41,7 @@ func (r TmallAliautoWisdomdataModelReciveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ModelDetail Setter
+// SetModelDetail is ModelDetail Setter
 // JSON格式车型完整数据
 func (r *TmallAliautoWisdomdataModelReciveAPIRequest) SetModelDetail(_modelDetail string) error {
 	r._modelDetail = _modelDetail
@@ -49,12 +49,12 @@ func (r *TmallAliautoWisdomdataModelReciveAPIRequest) SetModelDetail(_modelDetai
 	return nil
 }
 
-// Get ModelDetail Getter
+// GetModelDetail ModelDetail Getter
 func (r TmallAliautoWisdomdataModelReciveAPIRequest) GetModelDetail() string {
 	return r._modelDetail
 }
 
-// Set is ResourceId Setter
+// SetResourceId is ResourceId Setter
 // 接入的第三方库中的车型唯一id
 func (r *TmallAliautoWisdomdataModelReciveAPIRequest) SetResourceId(_resourceId string) error {
 	r._resourceId = _resourceId
@@ -62,12 +62,12 @@ func (r *TmallAliautoWisdomdataModelReciveAPIRequest) SetResourceId(_resourceId 
 	return nil
 }
 
-// Get ResourceId Getter
+// GetResourceId ResourceId Getter
 func (r TmallAliautoWisdomdataModelReciveAPIRequest) GetResourceId() string {
 	return r._resourceId
 }
 
-// Set is FromSource Setter
+// SetFromSource is FromSource Setter
 // 接入的第三方库的名称
 func (r *TmallAliautoWisdomdataModelReciveAPIRequest) SetFromSource(_fromSource string) error {
 	r._fromSource = _fromSource
@@ -75,7 +75,7 @@ func (r *TmallAliautoWisdomdataModelReciveAPIRequest) SetFromSource(_fromSource 
 	return nil
 }
 
-// Get FromSource Getter
+// GetFromSource FromSource Getter
 func (r TmallAliautoWisdomdataModelReciveAPIRequest) GetFromSource() string {
 	return r._fromSource
 }

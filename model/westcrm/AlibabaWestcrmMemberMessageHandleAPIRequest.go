@@ -39,7 +39,7 @@ func (r AlibabaWestcrmMemberMessageHandleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MessageType Setter
+// SetMessageType is MessageType Setter
 // 消息类型
 func (r *AlibabaWestcrmMemberMessageHandleAPIRequest) SetMessageType(_messageType string) error {
 	r._messageType = _messageType
@@ -47,12 +47,12 @@ func (r *AlibabaWestcrmMemberMessageHandleAPIRequest) SetMessageType(_messageTyp
 	return nil
 }
 
-// Get MessageType Getter
+// GetMessageType MessageType Getter
 func (r AlibabaWestcrmMemberMessageHandleAPIRequest) GetMessageType() string {
 	return r._messageType
 }
 
-// Set is MessageContent Setter
+// SetMessageContent is MessageContent Setter
 // 消息内容
 func (r *AlibabaWestcrmMemberMessageHandleAPIRequest) SetMessageContent(_messageContent string) error {
 	r._messageContent = _messageContent
@@ -60,7 +60,7 @@ func (r *AlibabaWestcrmMemberMessageHandleAPIRequest) SetMessageContent(_message
 	return nil
 }
 
-// Get MessageContent Getter
+// GetMessageContent MessageContent Getter
 func (r AlibabaWestcrmMemberMessageHandleAPIRequest) GetMessageContent() string {
 	return r._messageContent
 }

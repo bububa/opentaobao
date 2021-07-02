@@ -37,7 +37,7 @@ func (r AlibabaAlihealthPwApplynodeUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Body Setter
+// SetBody is Body Setter
 // 回调入参
 func (r *AlibabaAlihealthPwApplynodeUpdateAPIRequest) SetBody(_body *AuditRollbackRo) error {
 	r._body = _body
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthPwApplynodeUpdateAPIRequest) SetBody(_body *AuditRollba
 	return nil
 }
 
-// Get Body Getter
+// GetBody Body Getter
 func (r AlibabaAlihealthPwApplynodeUpdateAPIRequest) GetBody() *AuditRollbackRo {
 	return r._body
 }

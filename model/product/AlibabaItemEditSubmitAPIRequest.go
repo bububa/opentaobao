@@ -45,7 +45,7 @@ func (r AlibabaItemEditSubmitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务扩展参数，需与平台约定好
 func (r *AlibabaItemEditSubmitAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -53,12 +53,12 @@ func (r *AlibabaItemEditSubmitAPIRequest) SetBizType(_bizType string) error {
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r AlibabaItemEditSubmitAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 商品类目ID。若不需要修改商品类目，则不用填写
 func (r *AlibabaItemEditSubmitAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -66,12 +66,12 @@ func (r *AlibabaItemEditSubmitAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r AlibabaItemEditSubmitAPIRequest) GetCatId() int64 {
 	return r._catId
 }
 
-// Set is SpuId Setter
+// SetSpuId is SpuId Setter
 // 产品ID，若不需要修改关联的产品信息，则不需要填写
 func (r *AlibabaItemEditSubmitAPIRequest) SetSpuId(_spuId int64) error {
 	r._spuId = _spuId
@@ -79,12 +79,12 @@ func (r *AlibabaItemEditSubmitAPIRequest) SetSpuId(_spuId int64) error {
 	return nil
 }
 
-// Get SpuId Getter
+// GetSpuId SpuId Getter
 func (r AlibabaItemEditSubmitAPIRequest) GetSpuId() int64 {
 	return r._spuId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *AlibabaItemEditSubmitAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -92,12 +92,12 @@ func (r *AlibabaItemEditSubmitAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlibabaItemEditSubmitAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 编辑后的schema信息，通过alibaba.item.edit.schema.get获取
 func (r *AlibabaItemEditSubmitAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -105,7 +105,7 @@ func (r *AlibabaItemEditSubmitAPIRequest) SetSchema(_schema string) error {
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r AlibabaItemEditSubmitAPIRequest) GetSchema() string {
 	return r._schema
 }

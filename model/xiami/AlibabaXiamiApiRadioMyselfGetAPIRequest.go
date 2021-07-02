@@ -37,7 +37,7 @@ func (r AlibabaXiamiApiRadioMyselfGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Limit Setter
+// SetLimit is Limit Setter
 // 歌曲数量
 func (r *AlibabaXiamiApiRadioMyselfGetAPIRequest) SetLimit(_limit int64) error {
 	r._limit = _limit
@@ -45,7 +45,7 @@ func (r *AlibabaXiamiApiRadioMyselfGetAPIRequest) SetLimit(_limit int64) error {
 	return nil
 }
 
-// Get Limit Getter
+// GetLimit Limit Getter
 func (r AlibabaXiamiApiRadioMyselfGetAPIRequest) GetLimit() int64 {
 	return r._limit
 }

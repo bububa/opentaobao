@@ -43,7 +43,7 @@ func (r TaobaoJstInteractiveActivityCreateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is MiniAppId Setter
+// SetMiniAppId is MiniAppId Setter
 // 小程序id
 func (r *TaobaoJstInteractiveActivityCreateAPIRequest) SetMiniAppId(_miniAppId string) error {
 	r._miniAppId = _miniAppId
@@ -51,12 +51,12 @@ func (r *TaobaoJstInteractiveActivityCreateAPIRequest) SetMiniAppId(_miniAppId s
 	return nil
 }
 
-// Get MiniAppId Getter
+// GetMiniAppId MiniAppId Getter
 func (r TaobaoJstInteractiveActivityCreateAPIRequest) GetMiniAppId() string {
 	return r._miniAppId
 }
 
-// Set is ActivityName Setter
+// SetActivityName is ActivityName Setter
 // 活动名称
 func (r *TaobaoJstInteractiveActivityCreateAPIRequest) SetActivityName(_activityName string) error {
 	r._activityName = _activityName
@@ -64,12 +64,12 @@ func (r *TaobaoJstInteractiveActivityCreateAPIRequest) SetActivityName(_activity
 	return nil
 }
 
-// Get ActivityName Getter
+// GetActivityName ActivityName Getter
 func (r TaobaoJstInteractiveActivityCreateAPIRequest) GetActivityName() string {
 	return r._activityName
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 活动开始时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回
 func (r *TaobaoJstInteractiveActivityCreateAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -77,12 +77,12 @@ func (r *TaobaoJstInteractiveActivityCreateAPIRequest) SetStartTime(_startTime s
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoJstInteractiveActivityCreateAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 活动结束时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回
 func (r *TaobaoJstInteractiveActivityCreateAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -90,7 +90,7 @@ func (r *TaobaoJstInteractiveActivityCreateAPIRequest) SetEndTime(_endTime strin
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoJstInteractiveActivityCreateAPIRequest) GetEndTime() string {
 	return r._endTime
 }

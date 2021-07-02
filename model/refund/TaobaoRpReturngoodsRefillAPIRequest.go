@@ -43,7 +43,7 @@ func (r TaobaoRpReturngoodsRefillAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款单编号
 func (r *TaobaoRpReturngoodsRefillAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -51,12 +51,12 @@ func (r *TaobaoRpReturngoodsRefillAPIRequest) SetRefundId(_refundId int64) error
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoRpReturngoodsRefillAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }
 
-// Set is RefundPhase Setter
+// SetRefundPhase is RefundPhase Setter
 // 退款阶段，可选值：售中：onsale，售后：aftersale
 func (r *TaobaoRpReturngoodsRefillAPIRequest) SetRefundPhase(_refundPhase string) error {
 	r._refundPhase = _refundPhase
@@ -64,12 +64,12 @@ func (r *TaobaoRpReturngoodsRefillAPIRequest) SetRefundPhase(_refundPhase string
 	return nil
 }
 
-// Get RefundPhase Getter
+// GetRefundPhase RefundPhase Getter
 func (r TaobaoRpReturngoodsRefillAPIRequest) GetRefundPhase() string {
 	return r._refundPhase
 }
 
-// Set is LogisticsWaybillNo Setter
+// SetLogisticsWaybillNo is LogisticsWaybillNo Setter
 // 物流公司运单号
 func (r *TaobaoRpReturngoodsRefillAPIRequest) SetLogisticsWaybillNo(_logisticsWaybillNo string) error {
 	r._logisticsWaybillNo = _logisticsWaybillNo
@@ -77,12 +77,12 @@ func (r *TaobaoRpReturngoodsRefillAPIRequest) SetLogisticsWaybillNo(_logisticsWa
 	return nil
 }
 
-// Get LogisticsWaybillNo Getter
+// GetLogisticsWaybillNo LogisticsWaybillNo Getter
 func (r TaobaoRpReturngoodsRefillAPIRequest) GetLogisticsWaybillNo() string {
 	return r._logisticsWaybillNo
 }
 
-// Set is LogisticsCompanyCode Setter
+// SetLogisticsCompanyCode is LogisticsCompanyCode Setter
 // 物流公司编号
 func (r *TaobaoRpReturngoodsRefillAPIRequest) SetLogisticsCompanyCode(_logisticsCompanyCode string) error {
 	r._logisticsCompanyCode = _logisticsCompanyCode
@@ -90,7 +90,7 @@ func (r *TaobaoRpReturngoodsRefillAPIRequest) SetLogisticsCompanyCode(_logistics
 	return nil
 }
 
-// Get LogisticsCompanyCode Getter
+// GetLogisticsCompanyCode LogisticsCompanyCode Getter
 func (r TaobaoRpReturngoodsRefillAPIRequest) GetLogisticsCompanyCode() string {
 	return r._logisticsCompanyCode
 }

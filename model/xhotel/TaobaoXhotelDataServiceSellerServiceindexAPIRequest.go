@@ -45,7 +45,7 @@ func (r TaobaoXhotelDataServiceSellerServiceindexAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 渠道商名称
 func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -53,12 +53,12 @@ func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetVendor(_vendor 
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelDataServiceSellerServiceindexAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is StartRow Setter
+// SetStartRow is StartRow Setter
 // 分页参数
 func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetStartRow(_startRow int64) error {
 	r._startRow = _startRow
@@ -66,12 +66,12 @@ func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetStartRow(_start
 	return nil
 }
 
-// Get StartRow Getter
+// GetStartRow StartRow Getter
 func (r TaobaoXhotelDataServiceSellerServiceindexAPIRequest) GetStartRow() int64 {
 	return r._startRow
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页参数
 func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -79,12 +79,12 @@ func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetPageSize(_pageS
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoXhotelDataServiceSellerServiceindexAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is ReportEndDate Setter
+// SetReportEndDate is ReportEndDate Setter
 // 查询截止日期
 func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetReportEndDate(_reportEndDate string) error {
 	r._reportEndDate = _reportEndDate
@@ -92,12 +92,12 @@ func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetReportEndDate(_
 	return nil
 }
 
-// Get ReportEndDate Getter
+// GetReportEndDate ReportEndDate Getter
 func (r TaobaoXhotelDataServiceSellerServiceindexAPIRequest) GetReportEndDate() string {
 	return r._reportEndDate
 }
 
-// Set is ReportStartDate Setter
+// SetReportStartDate is ReportStartDate Setter
 // 查询开始日期
 func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetReportStartDate(_reportStartDate string) error {
 	r._reportStartDate = _reportStartDate
@@ -105,7 +105,7 @@ func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetReportStartDate
 	return nil
 }
 
-// Get ReportStartDate Getter
+// GetReportStartDate ReportStartDate Getter
 func (r TaobaoXhotelDataServiceSellerServiceindexAPIRequest) GetReportStartDate() string {
 	return r._reportStartDate
 }

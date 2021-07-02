@@ -37,7 +37,7 @@ func (r AlibabaWdkMarketingFullrangeCreateactivityAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 创建活动请求入参
 func (r *AlibabaWdkMarketingFullrangeCreateactivityAPIRequest) SetParam(_param *FullRangeActivity) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMarketingFullrangeCreateactivityAPIRequest) SetParam(_param *
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaWdkMarketingFullrangeCreateactivityAPIRequest) GetParam() *FullRangeActivity {
 	return r._param
 }

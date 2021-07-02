@@ -37,7 +37,7 @@ func (r TaobaoJushitaJmsTopicsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 卖家nick
 func (r *TaobaoJushitaJmsTopicsGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -45,7 +45,7 @@ func (r *TaobaoJushitaJmsTopicsGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoJushitaJmsTopicsGetAPIRequest) GetNick() string {
 	return r._nick
 }

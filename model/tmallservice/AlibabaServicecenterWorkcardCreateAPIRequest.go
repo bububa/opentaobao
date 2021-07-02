@@ -47,7 +47,7 @@ func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is SpServiceOrderId Setter
+// SetSpServiceOrderId is SpServiceOrderId Setter
 // 服务单id
 func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetSpServiceOrderId(_spServiceOrderId int64) error {
 	r._spServiceOrderId = _spServiceOrderId
@@ -55,12 +55,12 @@ func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetSpServiceOrderId(_spSe
 	return nil
 }
 
-// Get SpServiceOrderId Getter
+// GetSpServiceOrderId SpServiceOrderId Getter
 func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetSpServiceOrderId() int64 {
 	return r._spServiceOrderId
 }
 
-// Set is ServiceSequence Setter
+// SetServiceSequence is ServiceSequence Setter
 // 申请工单时的序号，对应服务单上的serviceSequence。用于控制幂等，防重复提交
 func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetServiceSequence(_serviceSequence int64) error {
 	r._serviceSequence = _serviceSequence
@@ -68,12 +68,12 @@ func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetServiceSequence(_servi
 	return nil
 }
 
-// Get ServiceSequence Getter
+// GetServiceSequence ServiceSequence Getter
 func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetServiceSequence() int64 {
 	return r._serviceSequence
 }
 
-// Set is ServiceCount Setter
+// SetServiceCount is ServiceCount Setter
 // 申请次数
 func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetServiceCount(_serviceCount int64) error {
 	r._serviceCount = _serviceCount
@@ -81,12 +81,12 @@ func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetServiceCount(_serviceC
 	return nil
 }
 
-// Get ServiceCount Getter
+// GetServiceCount ServiceCount Getter
 func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetServiceCount() int64 {
 	return r._serviceCount
 }
 
-// Set is Attributes Setter
+// SetAttributes is Attributes Setter
 // 工单属性，json格式字符串
 func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetAttributes(_attributes string) error {
 	r._attributes = _attributes
@@ -94,12 +94,12 @@ func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetAttributes(_attributes
 	return nil
 }
 
-// Get Attributes Getter
+// GetAttributes Attributes Getter
 func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetAttributes() string {
 	return r._attributes
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 工单外部唯一键单号
 func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -107,12 +107,12 @@ func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetOuterId(_outerId strin
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is ServiceProvider Setter
+// SetServiceProvider is ServiceProvider Setter
 // 服务提供者信息
 func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetServiceProvider(_serviceProvider *ServiceProviderDto) error {
 	r._serviceProvider = _serviceProvider
@@ -120,7 +120,7 @@ func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetServiceProvider(_servi
 	return nil
 }
 
-// Get ServiceProvider Getter
+// GetServiceProvider ServiceProvider Getter
 func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetServiceProvider() *ServiceProviderDto {
 	return r._serviceProvider
 }

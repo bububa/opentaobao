@@ -37,7 +37,7 @@ func (r AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is PresalesOrderCreateRequest Setter
+// SetPresalesOrderCreateRequest is PresalesOrderCreateRequest Setter
 // 预售商家仓接单对象
 func (r *AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest) SetPresalesOrderCreateRequest(_presalesOrderCreateRequest *PresalesordercreaterequestTest) error {
 	r._presalesOrderCreateRequest = _presalesOrderCreateRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest) SetPresalesOrderCrea
 	return nil
 }
 
-// Get PresalesOrderCreateRequest Getter
+// GetPresalesOrderCreateRequest PresalesOrderCreateRequest Getter
 func (r AlibabaAscpUopTaobaoPresalesorderCreateAPIRequest) GetPresalesOrderCreateRequest() *PresalesordercreaterequestTest {
 	return r._presalesOrderCreateRequest
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkShopQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuCode Setter
+// SetOuCode is OuCode Setter
 // 如果不传，返回所有
 func (r *AlibabaWdkShopQueryAPIRequest) SetOuCode(_ouCode string) error {
 	r._ouCode = _ouCode
@@ -45,7 +45,7 @@ func (r *AlibabaWdkShopQueryAPIRequest) SetOuCode(_ouCode string) error {
 	return nil
 }
 
-// Get OuCode Getter
+// GetOuCode OuCode Getter
 func (r AlibabaWdkShopQueryAPIRequest) GetOuCode() string {
 	return r._ouCode
 }

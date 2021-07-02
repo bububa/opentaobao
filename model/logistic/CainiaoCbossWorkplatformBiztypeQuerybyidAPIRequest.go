@@ -37,7 +37,7 @@ func (r CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is BizTypeId Setter
+// SetBizTypeId is BizTypeId Setter
 // 业务类型id
 func (r *CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) SetBizTypeId(_bizTypeId string) error {
 	r._bizTypeId = _bizTypeId
@@ -45,7 +45,7 @@ func (r *CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) SetBizTypeId(_bizTy
 	return nil
 }
 
-// Get BizTypeId Getter
+// GetBizTypeId BizTypeId Getter
 func (r CainiaoCbossWorkplatformBiztypeQuerybyidAPIRequest) GetBizTypeId() string {
 	return r._bizTypeId
 }

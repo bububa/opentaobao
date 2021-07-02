@@ -37,7 +37,7 @@ func (r AlibabaMosStoreGetcloudshelfversionAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ScreenNo Setter
+// SetScreenNo is ScreenNo Setter
 // 屏编号
 func (r *AlibabaMosStoreGetcloudshelfversionAPIRequest) SetScreenNo(_screenNo string) error {
 	r._screenNo = _screenNo
@@ -45,7 +45,7 @@ func (r *AlibabaMosStoreGetcloudshelfversionAPIRequest) SetScreenNo(_screenNo st
 	return nil
 }
 
-// Get ScreenNo Getter
+// GetScreenNo ScreenNo Getter
 func (r AlibabaMosStoreGetcloudshelfversionAPIRequest) GetScreenNo() string {
 	return r._screenNo
 }

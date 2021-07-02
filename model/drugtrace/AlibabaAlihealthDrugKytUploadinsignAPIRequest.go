@@ -47,7 +47,7 @@ func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据编号（小于20位字符串，唯一）
 func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -55,12 +55,12 @@ func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetBillCode(_billCode st
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is BillTime Setter
+// SetBillTime is BillTime Setter
 // 单据生成时间
 func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetBillTime(_billTime string) error {
 	r._billTime = _billTime
@@ -68,12 +68,12 @@ func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetBillTime(_billTime st
 	return nil
 }
 
-// Get BillTime Getter
+// GetBillTime BillTime Getter
 func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetBillTime() string {
 	return r._billTime
 }
 
-// Set is RefUserId Setter
+// SetRefUserId is RefUserId Setter
 // 码上放心平台企业编码（仓库所有者）
 func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetRefUserId(_refUserId string) error {
 	r._refUserId = _refUserId
@@ -81,12 +81,12 @@ func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetRefUserId(_refUserId 
 	return nil
 }
 
-// Get RefUserId Getter
+// GetRefUserId RefUserId Getter
 func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetRefUserId() string {
 	return r._refUserId
 }
 
-// Set is WarehouseId Setter
+// SetWarehouseId is WarehouseId Setter
 // 仓库名称（企业自定义）
 func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetWarehouseId(_warehouseId string) error {
 	r._warehouseId = _warehouseId
@@ -94,12 +94,12 @@ func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetWarehouseId(_warehous
 	return nil
 }
 
-// Get WarehouseId Getter
+// GetWarehouseId WarehouseId Getter
 func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetWarehouseId() string {
 	return r._warehouseId
 }
 
-// Set is DrugId Setter
+// SetDrugId is DrugId Setter
 // 药品ID
 func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetDrugId(_drugId string) error {
 	r._drugId = _drugId
@@ -107,12 +107,12 @@ func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetDrugId(_drugId string
 	return nil
 }
 
-// Get DrugId Getter
+// GetDrugId DrugId Getter
 func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetDrugId() string {
 	return r._drugId
 }
 
-// Set is TraceCodes Setter
+// SetTraceCodes is TraceCodes Setter
 // 追溯码[多个时用逗号分开]
 func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetTraceCodes(_traceCodes []string) error {
 	r._traceCodes = _traceCodes
@@ -120,7 +120,7 @@ func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetTraceCodes(_traceCode
 	return nil
 }
 
-// Get TraceCodes Getter
+// GetTraceCodes TraceCodes Getter
 func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetTraceCodes() []string {
 	return r._traceCodes
 }

@@ -49,7 +49,7 @@ func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品ID
 func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -57,12 +57,12 @@ func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetProductId(_productId int64)
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is Quantity Setter
+// SetQuantity is Quantity Setter
 // 产品SKU库存
 func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetQuantity(_quantity int64) error {
 	r._quantity = _quantity
@@ -70,12 +70,12 @@ func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetQuantity(_quantity int64) e
 	return nil
 }
 
-// Get Quantity Getter
+// GetQuantity Quantity Getter
 func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetQuantity() int64 {
 	return r._quantity
 }
 
-// Set is StandardPrice Setter
+// SetStandardPrice is StandardPrice Setter
 // 采购基准价
 func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetStandardPrice(_standardPrice string) error {
 	r._standardPrice = _standardPrice
@@ -83,12 +83,12 @@ func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetStandardPrice(_standardPric
 	return nil
 }
 
-// Get StandardPrice Getter
+// GetStandardPrice StandardPrice Getter
 func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetStandardPrice() string {
 	return r._standardPrice
 }
 
-// Set is AgentCostPrice Setter
+// SetAgentCostPrice is AgentCostPrice Setter
 // 代销采购价
 func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetAgentCostPrice(_agentCostPrice string) error {
 	r._agentCostPrice = _agentCostPrice
@@ -96,12 +96,12 @@ func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetAgentCostPrice(_agentCostPr
 	return nil
 }
 
-// Get AgentCostPrice Getter
+// GetAgentCostPrice AgentCostPrice Getter
 func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetAgentCostPrice() string {
 	return r._agentCostPrice
 }
 
-// Set is Properties Setter
+// SetProperties is Properties Setter
 // sku属性
 func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetProperties(_properties string) error {
 	r._properties = _properties
@@ -109,12 +109,12 @@ func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetProperties(_properties stri
 	return nil
 }
 
-// Get Properties Getter
+// GetProperties Properties Getter
 func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetProperties() string {
 	return r._properties
 }
 
-// Set is SkuNumber Setter
+// SetSkuNumber is SkuNumber Setter
 // 商家编码
 func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetSkuNumber(_skuNumber string) error {
 	r._skuNumber = _skuNumber
@@ -122,12 +122,12 @@ func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetSkuNumber(_skuNumber string
 	return nil
 }
 
-// Get SkuNumber Getter
+// GetSkuNumber SkuNumber Getter
 func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetSkuNumber() string {
 	return r._skuNumber
 }
 
-// Set is DealerCostPrice Setter
+// SetDealerCostPrice is DealerCostPrice Setter
 // 经销采购价
 func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetDealerCostPrice(_dealerCostPrice string) error {
 	r._dealerCostPrice = _dealerCostPrice
@@ -135,7 +135,7 @@ func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetDealerCostPrice(_dealerCost
 	return nil
 }
 
-// Get DealerCostPrice Getter
+// GetDealerCostPrice DealerCostPrice Getter
 func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetDealerCostPrice() string {
 	return r._dealerCostPrice
 }

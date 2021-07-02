@@ -37,7 +37,7 @@ func (r AlibabaAscpPurchasePriceCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CreateRequest Setter
+// SetCreateRequest is CreateRequest Setter
 // 采购价创建/更新请求
 func (r *AlibabaAscpPurchasePriceCreateAPIRequest) SetCreateRequest(_createRequest *AlibabaAscpPurchasePriceCreateRequest) error {
 	r._createRequest = _createRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpPurchasePriceCreateAPIRequest) SetCreateRequest(_createReque
 	return nil
 }
 
-// Get CreateRequest Getter
+// GetCreateRequest CreateRequest Getter
 func (r AlibabaAscpPurchasePriceCreateAPIRequest) GetCreateRequest() *AlibabaAscpPurchasePriceCreateRequest {
 	return r._createRequest
 }

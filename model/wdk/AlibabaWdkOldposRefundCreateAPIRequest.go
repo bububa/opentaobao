@@ -37,7 +37,7 @@ func (r AlibabaWdkOldposRefundCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PosRefundCreateRequest Setter
+// SetPosRefundCreateRequest is PosRefundCreateRequest Setter
 // 入参
 func (r *AlibabaWdkOldposRefundCreateAPIRequest) SetPosRefundCreateRequest(_posRefundCreateRequest *PosRefundCreateRequest) error {
 	r._posRefundCreateRequest = _posRefundCreateRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkOldposRefundCreateAPIRequest) SetPosRefundCreateRequest(_posR
 	return nil
 }
 
-// Get PosRefundCreateRequest Getter
+// GetPosRefundCreateRequest PosRefundCreateRequest Getter
 func (r AlibabaWdkOldposRefundCreateAPIRequest) GetPosRefundCreateRequest() *PosRefundCreateRequest {
 	return r._posRefundCreateRequest
 }

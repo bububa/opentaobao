@@ -51,7 +51,7 @@ func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 淘宝账号ID，此ID是一串数字。可自行百度查看如何获取或者咨询淘票票技术人员提供
 func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -59,12 +59,12 @@ func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetUserId(_userId int64)
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is Platform Setter
+// SetPlatform is Platform Setter
 // 淘票票分配的渠道码
 func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetPlatform(_platform int64) error {
 	r._platform = _platform
@@ -72,12 +72,12 @@ func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetPlatform(_platform in
 	return nil
 }
 
-// Get Platform Getter
+// GetPlatform Platform Getter
 func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetPlatform() int64 {
 	return r._platform
 }
 
-// Set is ExtUserId Setter
+// SetExtUserId is ExtUserId Setter
 // 退票身份ID，用于标识一个购票用户的身份，该参数需要跟锁座接口的ext_order_id参数一致，否则下单会失败。外部渠道需保证该参数的唯一性及准确性，下单出票接口会利用该参数做冥等性判断，如果由于外部渠道自身传入的参数有问题而导致的下单出票接口返回的结果有误，需要外部渠道自己承担损失
 func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetExtUserId(_extUserId string) error {
 	r._extUserId = _extUserId
@@ -85,12 +85,12 @@ func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetExtUserId(_extUserId 
 	return nil
 }
 
-// Get ExtUserId Getter
+// GetExtUserId ExtUserId Getter
 func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetExtUserId() string {
 	return r._extUserId
 }
 
-// Set is ExtOrderId Setter
+// SetExtOrderId is ExtOrderId Setter
 // 退款时候需要传入第三方的订单号。外部渠道需保证该参数的唯一性和准确性
 func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetExtOrderId(_extOrderId string) error {
 	r._extOrderId = _extOrderId
@@ -98,12 +98,12 @@ func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetExtOrderId(_extOrderI
 	return nil
 }
 
-// Get ExtOrderId Getter
+// GetExtOrderId ExtOrderId Getter
 func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetExtOrderId() string {
 	return r._extOrderId
 }
 
-// Set is TbOrderId Setter
+// SetTbOrderId is TbOrderId Setter
 // 下单时返回的淘宝订单号参数
 func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetTbOrderId(_tbOrderId int64) error {
 	r._tbOrderId = _tbOrderId
@@ -111,12 +111,12 @@ func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetTbOrderId(_tbOrderId 
 	return nil
 }
 
-// Get TbOrderId Getter
+// GetTbOrderId TbOrderId Getter
 func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetTbOrderId() int64 {
 	return r._tbOrderId
 }
 
-// Set is RefundAmount Setter
+// SetRefundAmount is RefundAmount Setter
 // 退款金额，以分为单位，为指定的退款订单的金额
 func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetRefundAmount(_refundAmount int64) error {
 	r._refundAmount = _refundAmount
@@ -124,12 +124,12 @@ func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetRefundAmount(_refundA
 	return nil
 }
 
-// Get RefundAmount Getter
+// GetRefundAmount RefundAmount Getter
 func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetRefundAmount() int64 {
 	return r._refundAmount
 }
 
-// Set is RefundServiceFee Setter
+// SetRefundServiceFee is RefundServiceFee Setter
 // 退款服务费，目前都为0
 func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetRefundServiceFee(_refundServiceFee int64) error {
 	r._refundServiceFee = _refundServiceFee
@@ -137,12 +137,12 @@ func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetRefundServiceFee(_ref
 	return nil
 }
 
-// Get RefundServiceFee Getter
+// GetRefundServiceFee RefundServiceFee Getter
 func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetRefundServiceFee() int64 {
 	return r._refundServiceFee
 }
 
-// Set is Params Setter
+// SetParams is Params Setter
 // 目前可以暂时不填参数
 func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetParams(_params string) error {
 	r._params = _params
@@ -150,7 +150,7 @@ func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetParams(_params string
 	return nil
 }
 
-// Get Params Getter
+// GetParams Params Getter
 func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetParams() string {
 	return r._params
 }

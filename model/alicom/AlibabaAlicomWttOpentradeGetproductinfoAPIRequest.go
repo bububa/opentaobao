@@ -39,7 +39,7 @@ func (r AlibabaAlicomWttOpentradeGetproductinfoAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 阿里通信产品ID
 func (r *AlibabaAlicomWttOpentradeGetproductinfoAPIRequest) SetProductId(_productId string) error {
 	r._productId = _productId
@@ -47,12 +47,12 @@ func (r *AlibabaAlicomWttOpentradeGetproductinfoAPIRequest) SetProductId(_produc
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r AlibabaAlicomWttOpentradeGetproductinfoAPIRequest) GetProductId() string {
 	return r._productId
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 类型
 func (r *AlibabaAlicomWttOpentradeGetproductinfoAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -60,7 +60,7 @@ func (r *AlibabaAlicomWttOpentradeGetproductinfoAPIRequest) SetBizType(_bizType 
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r AlibabaAlicomWttOpentradeGetproductinfoAPIRequest) GetBizType() string {
 	return r._bizType
 }

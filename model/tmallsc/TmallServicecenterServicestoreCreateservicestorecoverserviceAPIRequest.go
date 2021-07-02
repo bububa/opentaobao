@@ -46,7 +46,7 @@ func (r TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest) 
 	return params
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务类型
 func (r *TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -54,12 +54,12 @@ func (r *TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest)
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is CategoryIdsAndBrandIds Setter
+// SetCategoryIdsAndBrandIds is CategoryIdsAndBrandIds Setter
 // json格式，在某个业务类型(biz_type)下类目和品牌的授权关系,比如空调授权了格力和美的，热水器授权了美的和林内，洗衣机和冰箱都授权了美的和松下
 func (r *TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest) SetCategoryIdsAndBrandIds(_categoryIdsAndBrandIds string) error {
 	r._categoryIdsAndBrandIds = _categoryIdsAndBrandIds
@@ -67,12 +67,12 @@ func (r *TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest)
 	return nil
 }
 
-// Get CategoryIdsAndBrandIds Getter
+// GetCategoryIdsAndBrandIds CategoryIdsAndBrandIds Getter
 func (r TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest) GetCategoryIdsAndBrandIds() string {
 	return r._categoryIdsAndBrandIds
 }
 
-// Set is ServiceCodes Setter
+// SetServiceCodes is ServiceCodes Setter
 // serviceCodes列表,|分隔
 func (r *TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest) SetServiceCodes(_serviceCodes string) error {
 	r._serviceCodes = _serviceCodes
@@ -80,12 +80,12 @@ func (r *TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest)
 	return nil
 }
 
-// Get ServiceCodes Getter
+// GetServiceCodes ServiceCodes Getter
 func (r TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest) GetServiceCodes() string {
 	return r._serviceCodes
 }
 
-// Set is ServiceStoreCode Setter
+// SetServiceStoreCode is ServiceStoreCode Setter
 // 网点编码
 func (r *TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest) SetServiceStoreCode(_serviceStoreCode string) error {
 	r._serviceStoreCode = _serviceStoreCode
@@ -93,7 +93,7 @@ func (r *TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest)
 	return nil
 }
 
-// Get ServiceStoreCode Getter
+// GetServiceStoreCode ServiceStoreCode Getter
 func (r TmallServicecenterServicestoreCreateservicestorecoverserviceAPIRequest) GetServiceStoreCode() string {
 	return r._serviceStoreCode
 }

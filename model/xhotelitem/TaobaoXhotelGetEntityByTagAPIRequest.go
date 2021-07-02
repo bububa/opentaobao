@@ -39,7 +39,7 @@ func (r TaobaoXhotelGetEntityByTagAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tag Setter
+// SetTag is Tag Setter
 // 标签
 func (r *TaobaoXhotelGetEntityByTagAPIRequest) SetTag(_tag int64) error {
 	r._tag = _tag
@@ -47,12 +47,12 @@ func (r *TaobaoXhotelGetEntityByTagAPIRequest) SetTag(_tag int64) error {
 	return nil
 }
 
-// Get Tag Getter
+// GetTag Tag Getter
 func (r TaobaoXhotelGetEntityByTagAPIRequest) GetTag() int64 {
 	return r._tag
 }
 
-// Set is TokenStr Setter
+// SetTokenStr is TokenStr Setter
 // 查询token，填入上一页查询的返回结果，只能按顺序单线程查询
 func (r *TaobaoXhotelGetEntityByTagAPIRequest) SetTokenStr(_tokenStr string) error {
 	r._tokenStr = _tokenStr
@@ -60,7 +60,7 @@ func (r *TaobaoXhotelGetEntityByTagAPIRequest) SetTokenStr(_tokenStr string) err
 	return nil
 }
 
-// Get TokenStr Getter
+// GetTokenStr TokenStr Getter
 func (r TaobaoXhotelGetEntityByTagAPIRequest) GetTokenStr() string {
 	return r._tokenStr
 }

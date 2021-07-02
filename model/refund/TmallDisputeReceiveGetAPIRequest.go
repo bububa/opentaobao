@@ -55,7 +55,7 @@ func (r TmallDisputeReceiveGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 退款状态，默认查询所有退款状态的数据，除了默认值外每次只能查询一种状态。WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意);WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货);WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货);CLOSED(退款关闭); SUCCESS(退款成功);SELLER_REFUSE_BUYER(卖家拒绝退款);WAIT_BUYER_CONFIRM_REDO_SEND_GOODS(等待买家确认重新邮寄的货物);WAIT_SELLER_CONFIRM_RETURN_ADDRESS(等待卖家确认退货地址);WAIT_SELLER_CONSIGN_GOOGDS(卖家确认收货,等待卖家发货);EXCHANGE_TRANSFORM_TO_REFUND(换货关闭,转退货退款);EXCHANGE_WAIT_BUYER_CONFIRM_GOODS(卖家已发货,等待买家确认收货);POST_FEE_DISPUTE_WAIT_ACTIVATE(邮费单已创建,待激活)
 func (r *TmallDisputeReceiveGetAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -63,12 +63,12 @@ func (r *TmallDisputeReceiveGetAPIRequest) SetStatus(_status string) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TmallDisputeReceiveGetAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数。取值范围:大于零的整数; 默认值:20;最大值:100
 func (r *TmallDisputeReceiveGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -76,12 +76,12 @@ func (r *TmallDisputeReceiveGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TmallDisputeReceiveGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is UseHasNext Setter
+// SetUseHasNext is UseHasNext Setter
 // 是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取增量退款，接口调用成功率在原有的基础上有所提升。
 func (r *TmallDisputeReceiveGetAPIRequest) SetUseHasNext(_useHasNext bool) error {
 	r._useHasNext = _useHasNext
@@ -89,12 +89,12 @@ func (r *TmallDisputeReceiveGetAPIRequest) SetUseHasNext(_useHasNext bool) error
 	return nil
 }
 
-// Get UseHasNext Getter
+// GetUseHasNext UseHasNext Getter
 func (r TmallDisputeReceiveGetAPIRequest) GetUseHasNext() bool {
 	return r._useHasNext
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 交易类型列表，一次查询多种类型可用半角逗号分隔，默认同时查询guarantee_trade, auto_delivery这两种类型的数据，查看可选值
 func (r *TmallDisputeReceiveGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -102,12 +102,12 @@ func (r *TmallDisputeReceiveGetAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TmallDisputeReceiveGetAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 逆向纠纷单号id
 func (r *TmallDisputeReceiveGetAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -115,12 +115,12 @@ func (r *TmallDisputeReceiveGetAPIRequest) SetRefundId(_refundId int64) error {
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TmallDisputeReceiveGetAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码。取值范围:大于零的整数; 默认值:1
 func (r *TmallDisputeReceiveGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -128,12 +128,12 @@ func (r *TmallDisputeReceiveGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TmallDisputeReceiveGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 买家昵称
 func (r *TmallDisputeReceiveGetAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -141,12 +141,12 @@ func (r *TmallDisputeReceiveGetAPIRequest) SetBuyerNick(_buyerNick string) error
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r TmallDisputeReceiveGetAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }
 
-// Set is StartModified Setter
+// SetStartModified is StartModified Setter
 // 查询修改时间开始。格式: yyyy-MM-dd HH:mm:ss
 func (r *TmallDisputeReceiveGetAPIRequest) SetStartModified(_startModified string) error {
 	r._startModified = _startModified
@@ -154,12 +154,12 @@ func (r *TmallDisputeReceiveGetAPIRequest) SetStartModified(_startModified strin
 	return nil
 }
 
-// Get StartModified Getter
+// GetStartModified StartModified Getter
 func (r TmallDisputeReceiveGetAPIRequest) GetStartModified() string {
 	return r._startModified
 }
 
-// Set is EndModified Setter
+// SetEndModified is EndModified Setter
 // 查询修改时间结束。格式: yyyy-MM-dd HH:mm:ss
 func (r *TmallDisputeReceiveGetAPIRequest) SetEndModified(_endModified string) error {
 	r._endModified = _endModified
@@ -167,12 +167,12 @@ func (r *TmallDisputeReceiveGetAPIRequest) SetEndModified(_endModified string) e
 	return nil
 }
 
-// Get EndModified Getter
+// GetEndModified EndModified Getter
 func (r TmallDisputeReceiveGetAPIRequest) GetEndModified() string {
 	return r._endModified
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的字段。目前支持有：refund_id, alipay_no, tid, buyer_nick, seller_nick, status, created, modified, order_status, refund_fee, good_status, show_return_logistic(展现买家退货的物流信息), show_exchange_logistic(展现换货的物流信息), time_out, oid, refund_version, title, num, dispute_request, reason, desc
 func (r *TmallDisputeReceiveGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -180,7 +180,7 @@ func (r *TmallDisputeReceiveGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TmallDisputeReceiveGetAPIRequest) GetFields() []string {
 	return r._fields
 }

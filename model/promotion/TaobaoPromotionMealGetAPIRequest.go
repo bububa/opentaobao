@@ -39,7 +39,7 @@ func (r TaobaoPromotionMealGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MealId Setter
+// SetMealId is MealId Setter
 // 搭配套餐id
 func (r *TaobaoPromotionMealGetAPIRequest) SetMealId(_mealId int64) error {
 	r._mealId = _mealId
@@ -47,12 +47,12 @@ func (r *TaobaoPromotionMealGetAPIRequest) SetMealId(_mealId int64) error {
 	return nil
 }
 
-// Get MealId Getter
+// GetMealId MealId Getter
 func (r TaobaoPromotionMealGetAPIRequest) GetMealId() int64 {
 	return r._mealId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 套餐状态。有效：VALID;失效：INVALID(有效套餐为可使用的套餐,无效套餐为套餐中有商品下架或库存为0时)。默认时两种情况都会查询。
 func (r *TaobaoPromotionMealGetAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -60,7 +60,7 @@ func (r *TaobaoPromotionMealGetAPIRequest) SetStatus(_status string) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoPromotionMealGetAPIRequest) GetStatus() string {
 	return r._status
 }

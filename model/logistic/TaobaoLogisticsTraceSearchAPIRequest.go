@@ -41,7 +41,7 @@ func (r TaobaoLogisticsTraceSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝交易号，请勿传非淘宝交易号
 func (r *TaobaoLogisticsTraceSearchAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -49,12 +49,12 @@ func (r *TaobaoLogisticsTraceSearchAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoLogisticsTraceSearchAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is IsSplit Setter
+// SetIsSplit is IsSplit Setter
 // 表明是否是拆单，默认值0，1表示拆单
 func (r *TaobaoLogisticsTraceSearchAPIRequest) SetIsSplit(_isSplit int64) error {
 	r._isSplit = _isSplit
@@ -62,12 +62,12 @@ func (r *TaobaoLogisticsTraceSearchAPIRequest) SetIsSplit(_isSplit int64) error 
 	return nil
 }
 
-// Get IsSplit Getter
+// GetIsSplit IsSplit Getter
 func (r TaobaoLogisticsTraceSearchAPIRequest) GetIsSplit() int64 {
 	return r._isSplit
 }
 
-// Set is SubTid Setter
+// SetSubTid is SubTid Setter
 // 拆单子订单列表，当is_split=1时，需要传人；对应的数据是：子订单号的列表。
 func (r *TaobaoLogisticsTraceSearchAPIRequest) SetSubTid(_subTid []int64) error {
 	r._subTid = _subTid
@@ -75,7 +75,7 @@ func (r *TaobaoLogisticsTraceSearchAPIRequest) SetSubTid(_subTid []int64) error 
 	return nil
 }
 
-// Get SubTid Getter
+// GetSubTid SubTid Getter
 func (r TaobaoLogisticsTraceSearchAPIRequest) GetSubTid() []int64 {
 	return r._subTid
 }

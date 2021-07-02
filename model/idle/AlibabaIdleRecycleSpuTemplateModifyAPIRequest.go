@@ -37,7 +37,7 @@ func (r AlibabaIdleRecycleSpuTemplateModifyAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is RecycleSpuTemplate Setter
+// SetRecycleSpuTemplate is RecycleSpuTemplate Setter
 // 回收商挂载模版信息
 func (r *AlibabaIdleRecycleSpuTemplateModifyAPIRequest) SetRecycleSpuTemplate(_recycleSpuTemplate *RecycleSpuTemplate) error {
 	r._recycleSpuTemplate = _recycleSpuTemplate
@@ -45,7 +45,7 @@ func (r *AlibabaIdleRecycleSpuTemplateModifyAPIRequest) SetRecycleSpuTemplate(_r
 	return nil
 }
 
-// Get RecycleSpuTemplate Getter
+// GetRecycleSpuTemplate RecycleSpuTemplate Getter
 func (r AlibabaIdleRecycleSpuTemplateModifyAPIRequest) GetRecycleSpuTemplate() *RecycleSpuTemplate {
 	return r._recycleSpuTemplate
 }

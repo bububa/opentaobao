@@ -37,7 +37,7 @@ func (r AlibabaBaichuanTaopasswordQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PasswordContent Setter
+// SetPasswordContent is PasswordContent Setter
 // 淘口令
 func (r *AlibabaBaichuanTaopasswordQueryAPIRequest) SetPasswordContent(_passwordContent string) error {
 	r._passwordContent = _passwordContent
@@ -45,7 +45,7 @@ func (r *AlibabaBaichuanTaopasswordQueryAPIRequest) SetPasswordContent(_password
 	return nil
 }
 
-// Get PasswordContent Getter
+// GetPasswordContent PasswordContent Getter
 func (r AlibabaBaichuanTaopasswordQueryAPIRequest) GetPasswordContent() string {
 	return r._passwordContent
 }

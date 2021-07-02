@@ -39,7 +39,7 @@ func (r TaobaoSungariInspectionSubmitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // 抽检入参
 func (r *TaobaoSungariInspectionSubmitAPIRequest) SetData(_data string) error {
 	r._data = _data
@@ -47,12 +47,12 @@ func (r *TaobaoSungariInspectionSubmitAPIRequest) SetData(_data string) error {
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r TaobaoSungariInspectionSubmitAPIRequest) GetData() string {
 	return r._data
 }
 
-// Set is MethodName Setter
+// SetMethodName is MethodName Setter
 // 操作类型
 func (r *TaobaoSungariInspectionSubmitAPIRequest) SetMethodName(_methodName string) error {
 	r._methodName = _methodName
@@ -60,7 +60,7 @@ func (r *TaobaoSungariInspectionSubmitAPIRequest) SetMethodName(_methodName stri
 	return nil
 }
 
-// Get MethodName Getter
+// GetMethodName MethodName Getter
 func (r TaobaoSungariInspectionSubmitAPIRequest) GetMethodName() string {
 	return r._methodName
 }

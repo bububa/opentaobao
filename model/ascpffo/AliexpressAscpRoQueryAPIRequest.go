@@ -37,7 +37,7 @@ func (r AliexpressAscpRoQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReturnOrderQuery Setter
+// SetReturnOrderQuery is ReturnOrderQuery Setter
 // dto
 func (r *AliexpressAscpRoQueryAPIRequest) SetReturnOrderQuery(_returnOrderQuery *ReturnOrderQueryDto) error {
 	r._returnOrderQuery = _returnOrderQuery
@@ -45,7 +45,7 @@ func (r *AliexpressAscpRoQueryAPIRequest) SetReturnOrderQuery(_returnOrderQuery 
 	return nil
 }
 
-// Get ReturnOrderQuery Getter
+// GetReturnOrderQuery ReturnOrderQuery Getter
 func (r AliexpressAscpRoQueryAPIRequest) GetReturnOrderQuery() *ReturnOrderQueryDto {
 	return r._returnOrderQuery
 }

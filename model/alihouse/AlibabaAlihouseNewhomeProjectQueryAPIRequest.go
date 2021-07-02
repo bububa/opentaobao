@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeProjectQueryAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 外部楼盘/小区id
 func (r *AlibabaAlihouseNewhomeProjectQueryAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeProjectQueryAPIRequest) SetOuterId(_outerId strin
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r AlibabaAlihouseNewhomeProjectQueryAPIRequest) GetOuterId() string {
 	return r._outerId
 }

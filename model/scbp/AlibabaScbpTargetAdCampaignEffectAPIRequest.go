@@ -43,7 +43,7 @@ func (r AlibabaScbpTargetAdCampaignEffectAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Interval Setter
+// SetInterval is Interval Setter
 // 统计区间 只能为1 7 30
 func (r *AlibabaScbpTargetAdCampaignEffectAPIRequest) SetInterval(_interval int64) error {
 	r._interval = _interval
@@ -51,12 +51,12 @@ func (r *AlibabaScbpTargetAdCampaignEffectAPIRequest) SetInterval(_interval int6
 	return nil
 }
 
-// Get Interval Getter
+// GetInterval Interval Getter
 func (r AlibabaScbpTargetAdCampaignEffectAPIRequest) GetInterval() int64 {
 	return r._interval
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 结束时间 当inteval=7或30的时候 不需要填写，当inteval=1时需要填写（开始结束时间区间不允许大于180天）
 func (r *AlibabaScbpTargetAdCampaignEffectAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -64,12 +64,12 @@ func (r *AlibabaScbpTargetAdCampaignEffectAPIRequest) SetEndDate(_endDate string
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r AlibabaScbpTargetAdCampaignEffectAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is BeginDate Setter
+// SetBeginDate is BeginDate Setter
 // 开始时间 当inteval=7或30的时候 不需要填写，当inteval=1时需要填写（开始结束时间区间不允许大于180天）
 func (r *AlibabaScbpTargetAdCampaignEffectAPIRequest) SetBeginDate(_beginDate string) error {
 	r._beginDate = _beginDate
@@ -77,12 +77,12 @@ func (r *AlibabaScbpTargetAdCampaignEffectAPIRequest) SetBeginDate(_beginDate st
 	return nil
 }
 
-// Get BeginDate Getter
+// GetBeginDate BeginDate Getter
 func (r AlibabaScbpTargetAdCampaignEffectAPIRequest) GetBeginDate() string {
 	return r._beginDate
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 当填写时，展示指定id的数据，不填写，则展示全部计划总数据
 func (r *AlibabaScbpTargetAdCampaignEffectAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -90,7 +90,7 @@ func (r *AlibabaScbpTargetAdCampaignEffectAPIRequest) SetCampaignId(_campaignId 
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r AlibabaScbpTargetAdCampaignEffectAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }

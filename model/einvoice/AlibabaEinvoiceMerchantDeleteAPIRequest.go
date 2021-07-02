@@ -45,7 +45,7 @@ func (r AlibabaEinvoiceMerchantDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TaxToken Setter
+// SetTaxToken is TaxToken Setter
 // 验证码，商户首次绑定已入驻税号接口返回的taxToken
 func (r *AlibabaEinvoiceMerchantDeleteAPIRequest) SetTaxToken(_taxToken string) error {
 	r._taxToken = _taxToken
@@ -53,12 +53,12 @@ func (r *AlibabaEinvoiceMerchantDeleteAPIRequest) SetTaxToken(_taxToken string) 
 	return nil
 }
 
-// Get TaxToken Getter
+// GetTaxToken TaxToken Getter
 func (r AlibabaEinvoiceMerchantDeleteAPIRequest) GetTaxToken() string {
 	return r._taxToken
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 业务方发起删除商户的唯一幂等ID, 由业务方生成。只能由字母和数字组成。
 func (r *AlibabaEinvoiceMerchantDeleteAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -66,12 +66,12 @@ func (r *AlibabaEinvoiceMerchantDeleteAPIRequest) SetOuterId(_outerId string) er
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r AlibabaEinvoiceMerchantDeleteAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is MerchantUserId Setter
+// SetMerchantUserId is MerchantUserId Setter
 // 业务平台商户ID
 func (r *AlibabaEinvoiceMerchantDeleteAPIRequest) SetMerchantUserId(_merchantUserId string) error {
 	r._merchantUserId = _merchantUserId
@@ -79,12 +79,12 @@ func (r *AlibabaEinvoiceMerchantDeleteAPIRequest) SetMerchantUserId(_merchantUse
 	return nil
 }
 
-// Get MerchantUserId Getter
+// GetMerchantUserId MerchantUserId Getter
 func (r AlibabaEinvoiceMerchantDeleteAPIRequest) GetMerchantUserId() string {
 	return r._merchantUserId
 }
 
-// Set is PlatformCode Setter
+// SetPlatformCode is PlatformCode Setter
 // 业务平台code, 由阿里发票分配
 func (r *AlibabaEinvoiceMerchantDeleteAPIRequest) SetPlatformCode(_platformCode string) error {
 	r._platformCode = _platformCode
@@ -92,12 +92,12 @@ func (r *AlibabaEinvoiceMerchantDeleteAPIRequest) SetPlatformCode(_platformCode 
 	return nil
 }
 
-// Get PlatformCode Getter
+// GetPlatformCode PlatformCode Getter
 func (r AlibabaEinvoiceMerchantDeleteAPIRequest) GetPlatformCode() string {
 	return r._platformCode
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 税号
 func (r *AlibabaEinvoiceMerchantDeleteAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -105,7 +105,7 @@ func (r *AlibabaEinvoiceMerchantDeleteAPIRequest) SetPayeeRegisterNo(_payeeRegis
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceMerchantDeleteAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }

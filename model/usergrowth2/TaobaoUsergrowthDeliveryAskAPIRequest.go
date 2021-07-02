@@ -161,7 +161,7 @@ func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Adid Setter
+// SetAdid is Adid Setter
 // 广告id，淘宝和媒体协商
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdid(_adid string) error {
 	r._adid = _adid
@@ -169,12 +169,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdid(_adid string) error {
 	return nil
 }
 
-// Get Adid Getter
+// GetAdid Adid Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetAdid() string {
 	return r._adid
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 渠道标识，向淘宝技术申请
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -182,12 +182,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetChannel(_channel string) erro
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetChannel() string {
 	return r._channel
 }
 
-// Set is IsDicountPrefer Setter
+// SetIsDicountPrefer is IsDicountPrefer Setter
 // 是否爱折扣： 0： 不是? 1：是
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIsDicountPrefer(_isDicountPrefer string) error {
 	r._isDicountPrefer = _isDicountPrefer
@@ -195,12 +195,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIsDicountPrefer(_isDicountPre
 	return nil
 }
 
-// Get IsDicountPrefer Getter
+// GetIsDicountPrefer IsDicountPrefer Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetIsDicountPrefer() string {
 	return r._isDicountPrefer
 }
 
-// Set is IsCashPrefer Setter
+// SetIsCashPrefer is IsCashPrefer Setter
 // 是否爱返现： 0： 不是? 1：是
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIsCashPrefer(_isCashPrefer string) error {
 	r._isCashPrefer = _isCashPrefer
@@ -208,12 +208,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIsCashPrefer(_isCashPrefer st
 	return nil
 }
 
-// Get IsCashPrefer Getter
+// GetIsCashPrefer IsCashPrefer Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetIsCashPrefer() string {
 	return r._isCashPrefer
 }
 
-// Set is PayLayer Setter
+// SetPayLayer is PayLayer Setter
 // 用户网购支付层级：? 0： 0~50 1： 50~200?2： 200~500 3： 500以上
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetPayLayer(_payLayer string) error {
 	r._payLayer = _payLayer
@@ -221,12 +221,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetPayLayer(_payLayer string) er
 	return nil
 }
 
-// Get PayLayer Getter
+// GetPayLayer PayLayer Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetPayLayer() string {
 	return r._payLayer
 }
 
-// Set is IsGiftPrefer Setter
+// SetIsGiftPrefer is IsGiftPrefer Setter
 // 是否爱赠品： 0： 不是? 1：是
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIsGiftPrefer(_isGiftPrefer string) error {
 	r._isGiftPrefer = _isGiftPrefer
@@ -234,12 +234,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIsGiftPrefer(_isGiftPrefer st
 	return nil
 }
 
-// Get IsGiftPrefer Getter
+// GetIsGiftPrefer IsGiftPrefer Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetIsGiftPrefer() string {
 	return r._isGiftPrefer
 }
 
-// Set is IsRemarkUser Setter
+// SetIsRemarkUser is IsRemarkUser Setter
 // 是否爱评价： 0： 不是? 1：是
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIsRemarkUser(_isRemarkUser string) error {
 	r._isRemarkUser = _isRemarkUser
@@ -247,12 +247,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIsRemarkUser(_isRemarkUser st
 	return nil
 }
 
-// Get IsRemarkUser Getter
+// GetIsRemarkUser IsRemarkUser Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetIsRemarkUser() string {
 	return r._isRemarkUser
 }
 
-// Set is IsSharingUser Setter
+// SetIsSharingUser is IsSharingUser Setter
 // 是否爱分享： 0： 不是? 1：是
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIsSharingUser(_isSharingUser string) error {
 	r._isSharingUser = _isSharingUser
@@ -260,12 +260,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIsSharingUser(_isSharingUser 
 	return nil
 }
 
-// Get IsSharingUser Getter
+// GetIsSharingUser IsSharingUser Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetIsSharingUser() string {
 	return r._isSharingUser
 }
 
-// Set is BabyGender Setter
+// SetBabyGender is BabyGender Setter
 // 宝宝性别，0:F 1:M 2:未知，但有宝宝 3: 没有宝宝
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetBabyGender(_babyGender string) error {
 	r._babyGender = _babyGender
@@ -273,12 +273,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetBabyGender(_babyGender string
 	return nil
 }
 
-// Get BabyGender Getter
+// GetBabyGender BabyGender Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetBabyGender() string {
 	return r._babyGender
 }
 
-// Set is HasPet Setter
+// SetHasPet is HasPet Setter
 // 是否有宠物?0：没有 1：有 2：预测有
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetHasPet(_hasPet string) error {
 	r._hasPet = _hasPet
@@ -286,12 +286,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetHasPet(_hasPet string) error 
 	return nil
 }
 
-// Get HasPet Getter
+// GetHasPet HasPet Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetHasPet() string {
 	return r._hasPet
 }
 
-// Set is HasHouse Setter
+// SetHasHouse is HasHouse Setter
 // 预测是否有房 0：没房 1：有房 2：预测有房
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetHasHouse(_hasHouse string) error {
 	r._hasHouse = _hasHouse
@@ -299,12 +299,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetHasHouse(_hasHouse string) er
 	return nil
 }
 
-// Get HasHouse Getter
+// GetHasHouse HasHouse Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetHasHouse() string {
 	return r._hasHouse
 }
 
-// Set is LifeStage Setter
+// SetLifeStage is LifeStage Setter
 // 预测人生阶段
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetLifeStage(_lifeStage string) error {
 	r._lifeStage = _lifeStage
@@ -312,12 +312,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetLifeStage(_lifeStage string) 
 	return nil
 }
 
-// Get LifeStage Getter
+// GetLifeStage LifeStage Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetLifeStage() string {
 	return r._lifeStage
 }
 
-// Set is HasCar Setter
+// SetHasCar is HasCar Setter
 // 预测是否有车,0: 没有车 1：自己注册有车2：预测有车
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetHasCar(_hasCar string) error {
 	r._hasCar = _hasCar
@@ -325,12 +325,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetHasCar(_hasCar string) error 
 	return nil
 }
 
-// Get HasCar Getter
+// GetHasCar HasCar Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetHasCar() string {
 	return r._hasCar
 }
 
-// Set is IsUndergraduate Setter
+// SetIsUndergraduate is IsUndergraduate Setter
 // 预测是否在校大学生?0：不是 1 是 2 预测是
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIsUndergraduate(_isUndergraduate string) error {
 	r._isUndergraduate = _isUndergraduate
@@ -338,12 +338,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIsUndergraduate(_isUndergradu
 	return nil
 }
 
-// Get IsUndergraduate Getter
+// GetIsUndergraduate IsUndergraduate Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetIsUndergraduate() string {
 	return r._isUndergraduate
 }
 
-// Set is UserIncome Setter
+// SetUserIncome is UserIncome Setter
 // 预测月收入
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetUserIncome(_userIncome string) error {
 	r._userIncome = _userIncome
@@ -351,12 +351,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetUserIncome(_userIncome string
 	return nil
 }
 
-// Get UserIncome Getter
+// GetUserIncome UserIncome Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetUserIncome() string {
 	return r._userIncome
 }
 
-// Set is CareerType Setter
+// SetCareerType is CareerType Setter
 // 预测职业
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetCareerType(_careerType string) error {
 	r._careerType = _careerType
@@ -364,12 +364,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetCareerType(_careerType string
 	return nil
 }
 
-// Get CareerType Getter
+// GetCareerType CareerType Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetCareerType() string {
 	return r._careerType
 }
 
-// Set is Education Setter
+// SetEducation is Education Setter
 // 预测学历,初高中,博士,专科,硕士,本科
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetEducation(_education string) error {
 	r._education = _education
@@ -377,12 +377,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetEducation(_education string) 
 	return nil
 }
 
-// Get Education Getter
+// GetEducation Education Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetEducation() string {
 	return r._education
 }
 
-// Set is RegCityLevel Setter
+// SetRegCityLevel is RegCityLevel Setter
 // 注册IP解析的城市等级
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetRegCityLevel(_regCityLevel string) error {
 	r._regCityLevel = _regCityLevel
@@ -390,12 +390,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetRegCityLevel(_regCityLevel st
 	return nil
 }
 
-// Get RegCityLevel Getter
+// GetRegCityLevel RegCityLevel Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetRegCityLevel() string {
 	return r._regCityLevel
 }
 
-// Set is IpAreaName Setter
+// SetIpAreaName is IpAreaName Setter
 // 注册IP解析区县名
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIpAreaName(_ipAreaName string) error {
 	r._ipAreaName = _ipAreaName
@@ -403,12 +403,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIpAreaName(_ipAreaName string
 	return nil
 }
 
-// Get IpAreaName Getter
+// GetIpAreaName IpAreaName Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetIpAreaName() string {
 	return r._ipAreaName
 }
 
-// Set is IpCityName Setter
+// SetIpCityName is IpCityName Setter
 // 注册IP解析城市名称
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIpCityName(_ipCityName string) error {
 	r._ipCityName = _ipCityName
@@ -416,12 +416,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIpCityName(_ipCityName string
 	return nil
 }
 
-// Get IpCityName Getter
+// GetIpCityName IpCityName Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetIpCityName() string {
 	return r._ipCityName
 }
 
-// Set is IpProvName Setter
+// SetIpProvName is IpProvName Setter
 // 注册IP解析的省份名称
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIpProvName(_ipProvName string) error {
 	r._ipProvName = _ipProvName
@@ -429,12 +429,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIpProvName(_ipProvName string
 	return nil
 }
 
-// Get IpProvName Getter
+// GetIpProvName IpProvName Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetIpProvName() string {
 	return r._ipProvName
 }
 
-// Set is IdCardNumber Setter
+// SetIdCardNumber is IdCardNumber Setter
 // 用户身份证号
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIdCardNumber(_idCardNumber string) error {
 	r._idCardNumber = _idCardNumber
@@ -442,12 +442,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIdCardNumber(_idCardNumber st
 	return nil
 }
 
-// Get IdCardNumber Getter
+// GetIdCardNumber IdCardNumber Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetIdCardNumber() string {
 	return r._idCardNumber
 }
 
-// Set is Ukeywords Setter
+// SetUkeywords is Ukeywords Setter
 // 用户感兴趣的标签,多个用逗号隔开。如动漫、历史
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetUkeywords(_ukeywords string) error {
 	r._ukeywords = _ukeywords
@@ -455,12 +455,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetUkeywords(_ukeywords string) 
 	return nil
 }
 
-// Get Ukeywords Getter
+// GetUkeywords Ukeywords Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetUkeywords() string {
 	return r._ukeywords
 }
 
-// Set is Age Setter
+// SetAge is Age Setter
 // 年龄
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAge(_age string) error {
 	r._age = _age
@@ -468,12 +468,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAge(_age string) error {
 	return nil
 }
 
-// Get Age Getter
+// GetAge Age Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetAge() string {
 	return r._age
 }
 
-// Set is Gender Setter
+// SetGender is Gender Setter
 // 性别, 0:未知 1： 男 2：女
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetGender(_gender string) error {
 	r._gender = _gender
@@ -481,12 +481,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetGender(_gender string) error 
 	return nil
 }
 
-// Get Gender Getter
+// GetGender Gender Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetGender() string {
 	return r._gender
 }
 
-// Set is AdFloorPrice Setter
+// SetAdFloorPrice is AdFloorPrice Setter
 // 底价，单位为分
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdFloorPrice(_adFloorPrice string) error {
 	r._adFloorPrice = _adFloorPrice
@@ -494,12 +494,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdFloorPrice(_adFloorPrice st
 	return nil
 }
 
-// Get AdFloorPrice Getter
+// GetAdFloorPrice AdFloorPrice Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetAdFloorPrice() string {
 	return r._adFloorPrice
 }
 
-// Set is AdImgType Setter
+// SetAdImgType is AdImgType Setter
 // 广告位支持图片格式 0: jpg, 1:?jpeg, 2: gif
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdImgType(_adImgType string) error {
 	r._adImgType = _adImgType
@@ -507,12 +507,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdImgType(_adImgType string) 
 	return nil
 }
 
-// Get AdImgType Getter
+// GetAdImgType AdImgType Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetAdImgType() string {
 	return r._adImgType
 }
 
-// Set is AdPos Setter
+// SetAdPos is AdPos Setter
 // 广告位位置 0:未知,1:头部,2:底部, 3:侧边栏,4:全屏 默认传0
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdPos(_adPos string) error {
 	r._adPos = _adPos
@@ -520,12 +520,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdPos(_adPos string) error {
 	return nil
 }
 
-// Get AdPos Getter
+// GetAdPos AdPos Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetAdPos() string {
 	return r._adPos
 }
 
-// Set is AdHeight Setter
+// SetAdHeight is AdHeight Setter
 // 广告位高度
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdHeight(_adHeight string) error {
 	r._adHeight = _adHeight
@@ -533,12 +533,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdHeight(_adHeight string) er
 	return nil
 }
 
-// Get AdHeight Getter
+// GetAdHeight AdHeight Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetAdHeight() string {
 	return r._adHeight
 }
 
-// Set is AdWidth Setter
+// SetAdWidth is AdWidth Setter
 // 广告位宽度
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdWidth(_adWidth string) error {
 	r._adWidth = _adWidth
@@ -546,12 +546,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdWidth(_adWidth string) erro
 	return nil
 }
 
-// Get AdWidth Getter
+// GetAdWidth AdWidth Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetAdWidth() string {
 	return r._adWidth
 }
 
-// Set is AdType Setter
+// SetAdType is AdType Setter
 // 广告类型 0:横幅,1: 插屏, 2:开屏, 3:原生,4:视频
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdType(_adType string) error {
 	r._adType = _adType
@@ -559,12 +559,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAdType(_adType string) error 
 	return nil
 }
 
-// Get AdType Getter
+// GetAdType AdType Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetAdType() string {
 	return r._adType
 }
 
-// Set is GeoLon Setter
+// SetGeoLon is GeoLon Setter
 // 设备经度
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetGeoLon(_geoLon string) error {
 	r._geoLon = _geoLon
@@ -572,12 +572,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetGeoLon(_geoLon string) error 
 	return nil
 }
 
-// Get GeoLon Getter
+// GetGeoLon GeoLon Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetGeoLon() string {
 	return r._geoLon
 }
 
-// Set is GeoLat Setter
+// SetGeoLat is GeoLat Setter
 // 设备维度
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetGeoLat(_geoLat string) error {
 	r._geoLat = _geoLat
@@ -585,12 +585,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetGeoLat(_geoLat string) error 
 	return nil
 }
 
-// Get GeoLat Getter
+// GetGeoLat GeoLat Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetGeoLat() string {
 	return r._geoLat
 }
 
-// Set is ScreenHeight Setter
+// SetScreenHeight is ScreenHeight Setter
 // 设备屏幕纵向分辨率，单位：像素
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetScreenHeight(_screenHeight string) error {
 	r._screenHeight = _screenHeight
@@ -598,12 +598,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetScreenHeight(_screenHeight st
 	return nil
 }
 
-// Get ScreenHeight Getter
+// GetScreenHeight ScreenHeight Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetScreenHeight() string {
 	return r._screenHeight
 }
 
-// Set is ScreenWidth Setter
+// SetScreenWidth is ScreenWidth Setter
 // 设备屏幕水平分辨率，单位：像素
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetScreenWidth(_screenWidth string) error {
 	r._screenWidth = _screenWidth
@@ -611,12 +611,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetScreenWidth(_screenWidth stri
 	return nil
 }
 
-// Get ScreenWidth Getter
+// GetScreenWidth ScreenWidth Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetScreenWidth() string {
 	return r._screenWidth
 }
 
-// Set is Orientation Setter
+// SetOrientation is Orientation Setter
 // 设备方向：0:未知， 1： 纵向；2： 横向
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetOrientation(_orientation string) error {
 	r._orientation = _orientation
@@ -624,12 +624,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetOrientation(_orientation stri
 	return nil
 }
 
-// Get Orientation Getter
+// GetOrientation Orientation Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetOrientation() string {
 	return r._orientation
 }
 
-// Set is Carrier Setter
+// SetCarrier is Carrier Setter
 // 运营商，0: 未知， 1:移动,2:电信,3:联通
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetCarrier(_carrier string) error {
 	r._carrier = _carrier
@@ -637,12 +637,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetCarrier(_carrier string) erro
 	return nil
 }
 
-// Get Carrier Getter
+// GetCarrier Carrier Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetCarrier() string {
 	return r._carrier
 }
 
-// Set is Network Setter
+// SetNetwork is Network Setter
 // 网络类型，0：未知，1：WIFI, 2: 2G, 3: 3G, 4: 4G; 5: 5G
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetNetwork(_network string) error {
 	r._network = _network
@@ -650,12 +650,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetNetwork(_network string) erro
 	return nil
 }
 
-// Get Network Getter
+// GetNetwork Network Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetNetwork() string {
 	return r._network
 }
 
-// Set is Brand Setter
+// SetBrand is Brand Setter
 // 手机品牌
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetBrand(_brand string) error {
 	r._brand = _brand
@@ -663,12 +663,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetBrand(_brand string) error {
 	return nil
 }
 
-// Get Brand Getter
+// GetBrand Brand Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetBrand() string {
 	return r._brand
 }
 
-// Set is Made Setter
+// SetMade is Made Setter
 // 设备厂商
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetMade(_made string) error {
 	r._made = _made
@@ -676,12 +676,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetMade(_made string) error {
 	return nil
 }
 
-// Get Made Getter
+// GetMade Made Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetMade() string {
 	return r._made
 }
 
-// Set is Model Setter
+// SetModel is Model Setter
 // 设备型号
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetModel(_model string) error {
 	r._model = _model
@@ -689,12 +689,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetModel(_model string) error {
 	return nil
 }
 
-// Get Model Getter
+// GetModel Model Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetModel() string {
 	return r._model
 }
 
-// Set is PosCat Setter
+// SetPosCat is PosCat Setter
 // 素材展示所在的页面或者频道
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetPosCat(_posCat string) error {
 	r._posCat = _posCat
@@ -702,12 +702,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetPosCat(_posCat string) error 
 	return nil
 }
 
-// Get PosCat Getter
+// GetPosCat PosCat Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetPosCat() string {
 	return r._posCat
 }
 
-// Set is PublishName Setter
+// SetPublishName is PublishName Setter
 // 合作方名称
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetPublishName(_publishName string) error {
 	r._publishName = _publishName
@@ -715,12 +715,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetPublishName(_publishName stri
 	return nil
 }
 
-// Get PublishName Getter
+// GetPublishName PublishName Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetPublishName() string {
 	return r._publishName
 }
 
-// Set is PosId Setter
+// SetPosId is PosId Setter
 // 给定appid中的位置id，用于提高转化率
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetPosId(_posId string) error {
 	r._posId = _posId
@@ -728,12 +728,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetPosId(_posId string) error {
 	return nil
 }
 
-// Get PosId Getter
+// GetPosId PosId Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetPosId() string {
 	return r._posId
 }
 
-// Set is AppCat Setter
+// SetAppCat is AppCat Setter
 // app类别
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAppCat(_appCat string) error {
 	r._appCat = _appCat
@@ -741,12 +741,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAppCat(_appCat string) error 
 	return nil
 }
 
-// Get AppCat Getter
+// GetAppCat AppCat Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetAppCat() string {
 	return r._appCat
 }
 
-// Set is AppVer Setter
+// SetAppVer is AppVer Setter
 // app版本号
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAppVer(_appVer string) error {
 	r._appVer = _appVer
@@ -754,12 +754,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAppVer(_appVer string) error 
 	return nil
 }
 
-// Get AppVer Getter
+// GetAppVer AppVer Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetAppVer() string {
 	return r._appVer
 }
 
-// Set is AppName Setter
+// SetAppName is AppName Setter
 // 对接的appName
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
@@ -767,12 +767,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAppName(_appName string) erro
 	return nil
 }
 
-// Get AppName Getter
+// GetAppName AppName Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetAppName() string {
 	return r._appName
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 对接的appId
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
@@ -780,12 +780,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAppId(_appId string) error {
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// Set is Description Setter
+// SetDescription is Description Setter
 // 关键词的描述
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetDescription(_description string) error {
 	r._description = _description
@@ -793,12 +793,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetDescription(_description stri
 	return nil
 }
 
-// Get Description Getter
+// GetDescription Description Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetDescription() string {
 	return r._description
 }
 
-// Set is Keyword Setter
+// SetKeyword is Keyword Setter
 // 关键词
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetKeyword(_keyword string) error {
 	r._keyword = _keyword
@@ -806,12 +806,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetKeyword(_keyword string) erro
 	return nil
 }
 
-// Get Keyword Getter
+// GetKeyword Keyword Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetKeyword() string {
 	return r._keyword
 }
 
-// Set is KeywordType Setter
+// SetKeywordType is KeywordType Setter
 // 关键词类型
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetKeywordType(_keywordType string) error {
 	r._keywordType = _keywordType
@@ -819,12 +819,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetKeywordType(_keywordType stri
 	return nil
 }
 
-// Get KeywordType Getter
+// GetKeywordType KeywordType Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetKeywordType() string {
 	return r._keywordType
 }
 
-// Set is AppInstallFlag Setter
+// SetAppInstallFlag is AppInstallFlag Setter
 // 安装转化目标app的标识， 0： 未安装转化目标app, 1: 安装了转化目标app
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAppInstallFlag(_appInstallFlag string) error {
 	r._appInstallFlag = _appInstallFlag
@@ -832,12 +832,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetAppInstallFlag(_appInstallFla
 	return nil
 }
 
-// Get AppInstallFlag Getter
+// GetAppInstallFlag AppInstallFlag Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetAppInstallFlag() string {
 	return r._appInstallFlag
 }
 
-// Set is App Setter
+// SetApp is App Setter
 // 转化目标app, 1：淘宝；2：天猫；3：闲鱼；4：支付宝
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetApp(_app string) error {
 	r._app = _app
@@ -845,12 +845,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetApp(_app string) error {
 	return nil
 }
 
-// Get App Getter
+// GetApp App Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetApp() string {
 	return r._app
 }
 
-// Set is IdfaMd5 Setter
+// SetIdfaMd5 is IdfaMd5 Setter
 // idfa的md5值， 32位小写
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIdfaMd5(_idfaMd5 string) error {
 	r._idfaMd5 = _idfaMd5
@@ -858,12 +858,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIdfaMd5(_idfaMd5 string) erro
 	return nil
 }
 
-// Get IdfaMd5 Getter
+// GetIdfaMd5 IdfaMd5 Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetIdfaMd5() string {
 	return r._idfaMd5
 }
 
-// Set is ImeiMd5 Setter
+// SetImeiMd5 is ImeiMd5 Setter
 // imei的md5值， 32位小写
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetImeiMd5(_imeiMd5 string) error {
 	r._imeiMd5 = _imeiMd5
@@ -871,12 +871,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetImeiMd5(_imeiMd5 string) erro
 	return nil
 }
 
-// Get ImeiMd5 Getter
+// GetImeiMd5 ImeiMd5 Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetImeiMd5() string {
 	return r._imeiMd5
 }
 
-// Set is Idfa Setter
+// SetIdfa is Idfa Setter
 // idfa原生值
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIdfa(_idfa string) error {
 	r._idfa = _idfa
@@ -884,12 +884,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetIdfa(_idfa string) error {
 	return nil
 }
 
-// Get Idfa Getter
+// GetIdfa Idfa Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetIdfa() string {
 	return r._idfa
 }
 
-// Set is Imei Setter
+// SetImei is Imei Setter
 // imei原生值
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetImei(_imei string) error {
 	r._imei = _imei
@@ -897,12 +897,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetImei(_imei string) error {
 	return nil
 }
 
-// Get Imei Getter
+// GetImei Imei Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetImei() string {
 	return r._imei
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 手机号
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -910,12 +910,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetMobile(_mobile string) error 
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
-// Set is TransformType Setter
+// SetTransformType is TransformType Setter
 // 转化类型， 1： 激活；2： 新登；32896：定向促活
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetTransformType(_transformType string) error {
 	r._transformType = _transformType
@@ -923,12 +923,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetTransformType(_transformType 
 	return nil
 }
 
-// Get TransformType Getter
+// GetTransformType TransformType Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetTransformType() string {
 	return r._transformType
 }
 
-// Set is Os Setter
+// SetOs is Os Setter
 // 用户所使用设备的系统， 0： android, 1: ios, 2: windowsphone, 3: other
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetOs(_os string) error {
 	r._os = _os
@@ -936,12 +936,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetOs(_os string) error {
 	return nil
 }
 
-// Get Os Getter
+// GetOs Os Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetOs() string {
 	return r._os
 }
 
-// Set is Cid Setter
+// SetCid is Cid Setter
 // 广告创意id，淘宝和媒体协商
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetCid(_cid string) error {
 	r._cid = _cid
@@ -949,12 +949,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetCid(_cid string) error {
 	return nil
 }
 
-// Get Cid Getter
+// GetCid Cid Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetCid() string {
 	return r._cid
 }
 
-// Set is Oaid Setter
+// SetOaid is Oaid Setter
 // android最新广告标识
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetOaid(_oaid string) error {
 	r._oaid = _oaid
@@ -962,12 +962,12 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetOaid(_oaid string) error {
 	return nil
 }
 
-// Get Oaid Getter
+// GetOaid Oaid Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetOaid() string {
 	return r._oaid
 }
 
-// Set is OaidMd5 Setter
+// SetOaidMd5 is OaidMd5 Setter
 // android最新广告标识md5值， 32位小写
 func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetOaidMd5(_oaidMd5 string) error {
 	r._oaidMd5 = _oaidMd5
@@ -975,7 +975,7 @@ func (r *TaobaoUsergrowthDeliveryAskAPIRequest) SetOaidMd5(_oaidMd5 string) erro
 	return nil
 }
 
-// Get OaidMd5 Getter
+// GetOaidMd5 OaidMd5 Getter
 func (r TaobaoUsergrowthDeliveryAskAPIRequest) GetOaidMd5() string {
 	return r._oaidMd5
 }

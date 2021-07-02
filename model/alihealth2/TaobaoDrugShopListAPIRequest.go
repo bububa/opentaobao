@@ -43,7 +43,7 @@ func (r TaobaoDrugShopListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Keywords Setter
+// SetKeywords is Keywords Setter
 // 查询关键字
 func (r *TaobaoDrugShopListAPIRequest) SetKeywords(_keywords string) error {
 	r._keywords = _keywords
@@ -51,12 +51,12 @@ func (r *TaobaoDrugShopListAPIRequest) SetKeywords(_keywords string) error {
 	return nil
 }
 
-// Get Keywords Getter
+// GetKeywords Keywords Getter
 func (r TaobaoDrugShopListAPIRequest) GetKeywords() string {
 	return r._keywords
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 店铺状态，歇业：0，营业：1，所有：-1
 func (r *TaobaoDrugShopListAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -64,12 +64,12 @@ func (r *TaobaoDrugShopListAPIRequest) SetStatus(_status int64) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoDrugShopListAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 页码
 func (r *TaobaoDrugShopListAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -77,12 +77,12 @@ func (r *TaobaoDrugShopListAPIRequest) SetPage(_page int64) error {
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r TaobaoDrugShopListAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数
 func (r *TaobaoDrugShopListAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -90,7 +90,7 @@ func (r *TaobaoDrugShopListAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoDrugShopListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

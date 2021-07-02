@@ -57,7 +57,7 @@ func (r AlibabaAliqinOfflineCustomerAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DistributeId Setter
+// SetDistributeId is DistributeId Setter
 // 代理商id
 func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetDistributeId(_distributeId string) error {
 	r._distributeId = _distributeId
@@ -65,12 +65,12 @@ func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetDistributeId(_distributeI
 	return nil
 }
 
-// Get DistributeId Getter
+// GetDistributeId DistributeId Getter
 func (r AlibabaAliqinOfflineCustomerAddAPIRequest) GetDistributeId() string {
 	return r._distributeId
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 网点id，如果存在填写，不存在的话，填0即可；注意：如果填写了这个字段，后面的pob_name等会失效；如果为0，下面的网点名称、省份、城市必填
 func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetAgentId(_agentId string) error {
 	r._agentId = _agentId
@@ -78,12 +78,12 @@ func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetAgentId(_agentId string) 
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r AlibabaAliqinOfflineCustomerAddAPIRequest) GetAgentId() string {
 	return r._agentId
 }
 
-// Set is PobName Setter
+// SetPobName is PobName Setter
 // 网点名称
 func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetPobName(_pobName string) error {
 	r._pobName = _pobName
@@ -91,12 +91,12 @@ func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetPobName(_pobName string) 
 	return nil
 }
 
-// Get PobName Getter
+// GetPobName PobName Getter
 func (r AlibabaAliqinOfflineCustomerAddAPIRequest) GetPobName() string {
 	return r._pobName
 }
 
-// Set is Province Setter
+// SetProvince is Province Setter
 // 网点所在省份
 func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetProvince(_province string) error {
 	r._province = _province
@@ -104,12 +104,12 @@ func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetProvince(_province string
 	return nil
 }
 
-// Get Province Getter
+// GetProvince Province Getter
 func (r AlibabaAliqinOfflineCustomerAddAPIRequest) GetProvince() string {
 	return r._province
 }
 
-// Set is City Setter
+// SetCity is City Setter
 // 网点所在城市
 func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetCity(_city string) error {
 	r._city = _city
@@ -117,12 +117,12 @@ func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetCity(_city string) error 
 	return nil
 }
 
-// Get City Getter
+// GetCity City Getter
 func (r AlibabaAliqinOfflineCustomerAddAPIRequest) GetCity() string {
 	return r._city
 }
 
-// Set is CustomerName Setter
+// SetCustomerName is CustomerName Setter
 // 客户经理名称
 func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetCustomerName(_customerName string) error {
 	r._customerName = _customerName
@@ -130,12 +130,12 @@ func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetCustomerName(_customerNam
 	return nil
 }
 
-// Get CustomerName Getter
+// GetCustomerName CustomerName Getter
 func (r AlibabaAliqinOfflineCustomerAddAPIRequest) GetCustomerName() string {
 	return r._customerName
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 手机号码
 func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -143,12 +143,12 @@ func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetPhone(_phone string) erro
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r AlibabaAliqinOfflineCustomerAddAPIRequest) GetPhone() string {
 	return r._phone
 }
 
-// Set is OtherKey Setter
+// SetOtherKey is OtherKey Setter
 // 客户经理编码，如果没有可以不填
 func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetOtherKey(_otherKey string) error {
 	r._otherKey = _otherKey
@@ -156,12 +156,12 @@ func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetOtherKey(_otherKey string
 	return nil
 }
 
-// Get OtherKey Getter
+// GetOtherKey OtherKey Getter
 func (r AlibabaAliqinOfflineCustomerAddAPIRequest) GetOtherKey() string {
 	return r._otherKey
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // json类型，Map<String,String>
 func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -169,12 +169,12 @@ func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetExt(_ext string) error {
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r AlibabaAliqinOfflineCustomerAddAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is ActivityCode Setter
+// SetActivityCode is ActivityCode Setter
 // 活动编码
 func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetActivityCode(_activityCode string) error {
 	r._activityCode = _activityCode
@@ -182,12 +182,12 @@ func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetActivityCode(_activityCod
 	return nil
 }
 
-// Get ActivityCode Getter
+// GetActivityCode ActivityCode Getter
 func (r AlibabaAliqinOfflineCustomerAddAPIRequest) GetActivityCode() string {
 	return r._activityCode
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // token，页面获取到的参数
 func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -195,7 +195,7 @@ func (r *AlibabaAliqinOfflineCustomerAddAPIRequest) SetToken(_token string) erro
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlibabaAliqinOfflineCustomerAddAPIRequest) GetToken() string {
 	return r._token
 }

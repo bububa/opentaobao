@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmPromotionListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PromotionFacadeOpenReq Setter
+// SetPromotionFacadeOpenReq is PromotionFacadeOpenReq Setter
 // 获取促销规则请求参数
 func (r *AlibabaAlscCrmPromotionListAPIRequest) SetPromotionFacadeOpenReq(_promotionFacadeOpenReq *PromotionFacadeOpenReq) error {
 	r._promotionFacadeOpenReq = _promotionFacadeOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmPromotionListAPIRequest) SetPromotionFacadeOpenReq(_promo
 	return nil
 }
 
-// Get PromotionFacadeOpenReq Getter
+// GetPromotionFacadeOpenReq PromotionFacadeOpenReq Getter
 func (r AlibabaAlscCrmPromotionListAPIRequest) GetPromotionFacadeOpenReq() *PromotionFacadeOpenReq {
 	return r._promotionFacadeOpenReq
 }

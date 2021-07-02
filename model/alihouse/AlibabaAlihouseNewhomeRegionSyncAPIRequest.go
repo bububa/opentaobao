@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeRegionSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BaseRegionDto Setter
+// SetBaseRegionDto is BaseRegionDto Setter
 // 城区数据
 func (r *AlibabaAlihouseNewhomeRegionSyncAPIRequest) SetBaseRegionDto(_baseRegionDto *BaseRegionDto) error {
 	r._baseRegionDto = _baseRegionDto
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeRegionSyncAPIRequest) SetBaseRegionDto(_baseRegio
 	return nil
 }
 
-// Get BaseRegionDto Getter
+// GetBaseRegionDto BaseRegionDto Getter
 func (r AlibabaAlihouseNewhomeRegionSyncAPIRequest) GetBaseRegionDto() *BaseRegionDto {
 	return r._baseRegionDto
 }

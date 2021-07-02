@@ -39,7 +39,7 @@ func (r AlibabaLstTradeRefundOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款单id
 func (r *AlibabaLstTradeRefundOrderGetAPIRequest) SetRefundId(_refundId string) error {
 	r._refundId = _refundId
@@ -47,12 +47,12 @@ func (r *AlibabaLstTradeRefundOrderGetAPIRequest) SetRefundId(_refundId string) 
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r AlibabaLstTradeRefundOrderGetAPIRequest) GetRefundId() string {
 	return r._refundId
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 主订单id
 func (r *AlibabaLstTradeRefundOrderGetAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
@@ -60,7 +60,7 @@ func (r *AlibabaLstTradeRefundOrderGetAPIRequest) SetMainOrderId(_mainOrderId in
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r AlibabaLstTradeRefundOrderGetAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }

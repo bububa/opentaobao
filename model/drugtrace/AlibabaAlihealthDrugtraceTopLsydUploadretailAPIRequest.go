@@ -69,7 +69,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据编号（唯一）
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetBillCode(_bi
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is BillTime Setter
+// SetBillTime is BillTime Setter
 // 单据生成时间（一般写当前时间）
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetBillTime(_billTime string) error {
 	r._billTime = _billTime
@@ -90,12 +90,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetBillTime(_bi
 	return nil
 }
 
-// Get BillTime Getter
+// GetBillTime BillTime Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetBillTime() string {
 	return r._billTime
 }
 
-// Set is BillType Setter
+// SetBillType is BillType Setter
 // 单据类型[321,零售出库][322,疫苗接种]
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetBillType(_billType int64) error {
 	r._billType = _billType
@@ -103,12 +103,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetBillType(_bi
 	return nil
 }
 
-// Get BillType Getter
+// GetBillType BillType Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetBillType() int64 {
 	return r._billType
 }
 
-// Set is PhysicType Setter
+// SetPhysicType is PhysicType Setter
 // 药品类型[2,特药，3,普药]
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetPhysicType(_physicType int64) error {
 	r._physicType = _physicType
@@ -116,12 +116,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetPhysicType(_
 	return nil
 }
 
-// Get PhysicType Getter
+// GetPhysicType PhysicType Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetPhysicType() int64 {
 	return r._physicType
 }
 
-// Set is RefUserId Setter
+// SetRefUserId is RefUserId Setter
 // 码上放心平台企业唯一编码（门店或医疗机构）
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetRefUserId(_refUserId string) error {
 	r._refUserId = _refUserId
@@ -129,12 +129,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetRefUserId(_r
 	return nil
 }
 
-// Get RefUserId Getter
+// GetRefUserId RefUserId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetRefUserId() string {
 	return r._refUserId
 }
 
-// Set is FromUserId Setter
+// SetFromUserId is FromUserId Setter
 // 发货企业(可为空)
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetFromUserId(_fromUserId string) error {
 	r._fromUserId = _fromUserId
@@ -142,12 +142,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetFromUserId(_
 	return nil
 }
 
-// Get FromUserId Getter
+// GetFromUserId FromUserId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetFromUserId() string {
 	return r._fromUserId
 }
 
-// Set is OperIcCode Setter
+// SetOperIcCode is OperIcCode Setter
 // 单据提交者(appkey编号)
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetOperIcCode(_operIcCode string) error {
 	r._operIcCode = _operIcCode
@@ -155,12 +155,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetOperIcCode(_
 	return nil
 }
 
-// Get OperIcCode Getter
+// GetOperIcCode OperIcCode Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetOperIcCode() string {
 	return r._operIcCode
 }
 
-// Set is OperIcName Setter
+// SetOperIcName is OperIcName Setter
 // 单据提交者姓名(可为空)
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetOperIcName(_operIcName string) error {
 	r._operIcName = _operIcName
@@ -168,12 +168,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetOperIcName(_
 	return nil
 }
 
-// Get OperIcName Getter
+// GetOperIcName OperIcName Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetOperIcName() string {
 	return r._operIcName
 }
 
-// Set is TraceCodes Setter
+// SetTraceCodes is TraceCodes Setter
 // 20位追溯码（多个时用半角逗号分隔）
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetTraceCodes(_traceCodes []string) error {
 	r._traceCodes = _traceCodes
@@ -181,12 +181,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetTraceCodes(_
 	return nil
 }
 
-// Get TraceCodes Getter
+// GetTraceCodes TraceCodes Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetTraceCodes() []string {
 	return r._traceCodes
 }
 
-// Set is CustomerIdType Setter
+// SetCustomerIdType is CustomerIdType Setter
 // 购买人证件类型【1身份证2护照3 军官证4 医保卡5接种卡6学生证9其它】
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetCustomerIdType(_customerIdType string) error {
 	r._customerIdType = _customerIdType
@@ -194,12 +194,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetCustomerIdTy
 	return nil
 }
 
-// Get CustomerIdType Getter
+// GetCustomerIdType CustomerIdType Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetCustomerIdType() string {
 	return r._customerIdType
 }
 
-// Set is CustomerId Setter
+// SetCustomerId is CustomerId Setter
 // 购买人证件编号
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetCustomerId(_customerId string) error {
 	r._customerId = _customerId
@@ -207,12 +207,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetCustomerId(_
 	return nil
 }
 
-// Get CustomerId Getter
+// GetCustomerId CustomerId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetCustomerId() string {
 	return r._customerId
 }
 
-// Set is UserTel Setter
+// SetUserTel is UserTel Setter
 // 购买人电话
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetUserTel(_userTel string) error {
 	r._userTel = _userTel
@@ -220,12 +220,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetUserTel(_use
 	return nil
 }
 
-// Get UserTel Getter
+// GetUserTel UserTel Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetUserTel() string {
 	return r._userTel
 }
 
-// Set is NetworkBillFlag Setter
+// SetNetworkBillFlag is NetworkBillFlag Setter
 // 互联网订单标识 0非互联网 1互联网
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetNetworkBillFlag(_networkBillFlag string) error {
 	r._networkBillFlag = _networkBillFlag
@@ -233,12 +233,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetNetworkBillF
 	return nil
 }
 
-// Get NetworkBillFlag Getter
+// GetNetworkBillFlag NetworkBillFlag Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetNetworkBillFlag() string {
 	return r._networkBillFlag
 }
 
-// Set is MedicDoctor Setter
+// SetMedicDoctor is MedicDoctor Setter
 // 开药医师
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetMedicDoctor(_medicDoctor string) error {
 	r._medicDoctor = _medicDoctor
@@ -246,12 +246,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetMedicDoctor(
 	return nil
 }
 
-// Get MedicDoctor Getter
+// GetMedicDoctor MedicDoctor Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetMedicDoctor() string {
 	return r._medicDoctor
 }
 
-// Set is MedicDispenser Setter
+// SetMedicDispenser is MedicDispenser Setter
 // 药品发药人
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetMedicDispenser(_medicDispenser string) error {
 	r._medicDispenser = _medicDispenser
@@ -259,12 +259,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetMedicDispens
 	return nil
 }
 
-// Get MedicDispenser Getter
+// GetMedicDispenser MedicDispenser Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetMedicDispenser() string {
 	return r._medicDispenser
 }
 
-// Set is UserName Setter
+// SetUserName is UserName Setter
 // 药品使用者姓名
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetUserName(_userName string) error {
 	r._userName = _userName
@@ -272,12 +272,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetUserName(_us
 	return nil
 }
 
-// Get UserName Getter
+// GetUserName UserName Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetUserName() string {
 	return r._userName
 }
 
-// Set is UserAgent Setter
+// SetUserAgent is UserAgent Setter
 // 药品代理人
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetUserAgent(_userAgent string) error {
 	r._userAgent = _userAgent
@@ -285,7 +285,7 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetUserAgent(_u
 	return nil
 }
 
-// Get UserAgent Getter
+// GetUserAgent UserAgent Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetUserAgent() string {
 	return r._userAgent
 }

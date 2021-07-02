@@ -37,7 +37,7 @@ func (r TmallItemUpdateSimpleschemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *TmallItemUpdateSimpleschemaGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -45,7 +45,7 @@ func (r *TmallItemUpdateSimpleschemaGetAPIRequest) SetItemId(_itemId int64) erro
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallItemUpdateSimpleschemaGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

@@ -39,7 +39,7 @@ func (r TmallProductAddSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 商品发布的目标类目，必须是叶子类目
 func (r *TmallProductAddSchemaGetAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
@@ -47,12 +47,12 @@ func (r *TmallProductAddSchemaGetAPIRequest) SetCategoryId(_categoryId int64) er
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r TmallProductAddSchemaGetAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }
 
-// Set is BrandId Setter
+// SetBrandId is BrandId Setter
 // 品牌ID
 func (r *TmallProductAddSchemaGetAPIRequest) SetBrandId(_brandId int64) error {
 	r._brandId = _brandId
@@ -60,7 +60,7 @@ func (r *TmallProductAddSchemaGetAPIRequest) SetBrandId(_brandId int64) error {
 	return nil
 }
 
-// Get BrandId Getter
+// GetBrandId BrandId Getter
 func (r TmallProductAddSchemaGetAPIRequest) GetBrandId() int64 {
 	return r._brandId
 }

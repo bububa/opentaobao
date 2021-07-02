@@ -37,7 +37,7 @@ func (r AliexpressTaxationCalculateOpenQueryAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 主订单id
 func (r *AliexpressTaxationCalculateOpenQueryAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -45,7 +45,7 @@ func (r *AliexpressTaxationCalculateOpenQueryAPIRequest) SetOrderId(_orderId str
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AliexpressTaxationCalculateOpenQueryAPIRequest) GetOrderId() string {
 	return r._orderId
 }

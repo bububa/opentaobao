@@ -43,7 +43,7 @@ func (r AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 用户昵称
 func (r *AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -51,12 +51,12 @@ func (r *AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) SetUserNick(_u
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) GetUserNick() string {
 	return r._userNick
 }
 
-// Set is ActivityKey Setter
+// SetActivityKey is ActivityKey Setter
 // 活动code
 func (r *AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) SetActivityKey(_activityKey string) error {
 	r._activityKey = _activityKey
@@ -64,12 +64,12 @@ func (r *AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) SetActivityKey
 	return nil
 }
 
-// Get ActivityKey Getter
+// GetActivityKey ActivityKey Getter
 func (r AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) GetActivityKey() string {
 	return r._activityKey
 }
 
-// Set is Lng Setter
+// SetLng is Lng Setter
 // 经度
 func (r *AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) SetLng(_lng string) error {
 	r._lng = _lng
@@ -77,12 +77,12 @@ func (r *AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) SetLng(_lng st
 	return nil
 }
 
-// Get Lng Getter
+// GetLng Lng Getter
 func (r AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) GetLng() string {
 	return r._lng
 }
 
-// Set is Lat Setter
+// SetLat is Lat Setter
 // 纬度
 func (r *AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) SetLat(_lat string) error {
 	r._lat = _lat
@@ -90,7 +90,7 @@ func (r *AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) SetLat(_lat st
 	return nil
 }
 
-// Get Lat Getter
+// GetLat Lat Getter
 func (r AlibabaInteractSupplierAwardResourceGetCuntaoAPIRequest) GetLat() string {
 	return r._lat
 }

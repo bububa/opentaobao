@@ -39,7 +39,7 @@ func (r AlibabaFundplatformAccountChargeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamLong Setter
+// SetParamLong is ParamLong Setter
 // 用户ID
 func (r *AlibabaFundplatformAccountChargeAPIRequest) SetParamLong(_paramLong int64) error {
 	r._paramLong = _paramLong
@@ -47,12 +47,12 @@ func (r *AlibabaFundplatformAccountChargeAPIRequest) SetParamLong(_paramLong int
 	return nil
 }
 
-// Get ParamLong Getter
+// GetParamLong ParamLong Getter
 func (r AlibabaFundplatformAccountChargeAPIRequest) GetParamLong() int64 {
 	return r._paramLong
 }
 
-// Set is ParamChargeRequest Setter
+// SetParamChargeRequest is ParamChargeRequest Setter
 // 入参对象
 func (r *AlibabaFundplatformAccountChargeAPIRequest) SetParamChargeRequest(_paramChargeRequest *ChargeRequest) error {
 	r._paramChargeRequest = _paramChargeRequest
@@ -60,7 +60,7 @@ func (r *AlibabaFundplatformAccountChargeAPIRequest) SetParamChargeRequest(_para
 	return nil
 }
 
-// Get ParamChargeRequest Getter
+// GetParamChargeRequest ParamChargeRequest Getter
 func (r AlibabaFundplatformAccountChargeAPIRequest) GetParamChargeRequest() *ChargeRequest {
 	return r._paramChargeRequest
 }

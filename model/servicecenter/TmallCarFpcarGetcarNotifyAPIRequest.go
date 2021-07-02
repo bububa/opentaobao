@@ -41,7 +41,7 @@ func (r TmallCarFpcarGetcarNotifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品宝贝id
 func (r *TmallCarFpcarGetcarNotifyAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -49,12 +49,12 @@ func (r *TmallCarFpcarGetcarNotifyAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallCarFpcarGetcarNotifyAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *TmallCarFpcarGetcarNotifyAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -62,12 +62,12 @@ func (r *TmallCarFpcarGetcarNotifyAPIRequest) SetOrderId(_orderId int64) error {
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TmallCarFpcarGetcarNotifyAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 卖家id
 func (r *TmallCarFpcarGetcarNotifyAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
@@ -75,7 +75,7 @@ func (r *TmallCarFpcarGetcarNotifyAPIRequest) SetSellerId(_sellerId int64) error
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r TmallCarFpcarGetcarNotifyAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }

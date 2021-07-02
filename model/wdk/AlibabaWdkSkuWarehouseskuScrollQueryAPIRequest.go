@@ -39,7 +39,7 @@ func (r AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is WarehouseCode Setter
+// SetWarehouseCode is WarehouseCode Setter
 // 仓库编码
 func (r *AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest) SetWarehouseCode(_warehouseCode string) error {
 	r._warehouseCode = _warehouseCode
@@ -47,12 +47,12 @@ func (r *AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest) SetWarehouseCode(_wareh
 	return nil
 }
 
-// Get WarehouseCode Getter
+// GetWarehouseCode WarehouseCode Getter
 func (r AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
 }
 
-// Set is ScrollId Setter
+// SetScrollId is ScrollId Setter
 // 游标
 func (r *AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest) SetScrollId(_scrollId string) error {
 	r._scrollId = _scrollId
@@ -60,7 +60,7 @@ func (r *AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest) SetScrollId(_scrollId s
 	return nil
 }
 
-// Get ScrollId Getter
+// GetScrollId ScrollId Getter
 func (r AlibabaWdkSkuWarehouseskuScrollQueryAPIRequest) GetScrollId() string {
 	return r._scrollId
 }

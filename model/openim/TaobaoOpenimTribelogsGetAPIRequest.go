@@ -45,7 +45,7 @@ func (r TaobaoOpenimTribelogsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TribeId Setter
+// SetTribeId is TribeId Setter
 // 群号
 func (r *TaobaoOpenimTribelogsGetAPIRequest) SetTribeId(_tribeId string) error {
 	r._tribeId = _tribeId
@@ -53,12 +53,12 @@ func (r *TaobaoOpenimTribelogsGetAPIRequest) SetTribeId(_tribeId string) error {
 	return nil
 }
 
-// Get TribeId Getter
+// GetTribeId TribeId Getter
 func (r TaobaoOpenimTribelogsGetAPIRequest) GetTribeId() string {
 	return r._tribeId
 }
 
-// Set is Begin Setter
+// SetBegin is Begin Setter
 // 查询起始时间，UTC秒数。必须在一个月内。
 func (r *TaobaoOpenimTribelogsGetAPIRequest) SetBegin(_begin int64) error {
 	r._begin = _begin
@@ -66,12 +66,12 @@ func (r *TaobaoOpenimTribelogsGetAPIRequest) SetBegin(_begin int64) error {
 	return nil
 }
 
-// Get Begin Getter
+// GetBegin Begin Getter
 func (r TaobaoOpenimTribelogsGetAPIRequest) GetBegin() int64 {
 	return r._begin
 }
 
-// Set is End Setter
+// SetEnd is End Setter
 // 查询结束时间，UTC秒数。必须大于起始时间并小于当前时间
 func (r *TaobaoOpenimTribelogsGetAPIRequest) SetEnd(_end int64) error {
 	r._end = _end
@@ -79,12 +79,12 @@ func (r *TaobaoOpenimTribelogsGetAPIRequest) SetEnd(_end int64) error {
 	return nil
 }
 
-// Get End Getter
+// GetEnd End Getter
 func (r TaobaoOpenimTribelogsGetAPIRequest) GetEnd() int64 {
 	return r._end
 }
 
-// Set is Count Setter
+// SetCount is Count Setter
 // 查询条数
 func (r *TaobaoOpenimTribelogsGetAPIRequest) SetCount(_count int64) error {
 	r._count = _count
@@ -92,12 +92,12 @@ func (r *TaobaoOpenimTribelogsGetAPIRequest) SetCount(_count int64) error {
 	return nil
 }
 
-// Get Count Getter
+// GetCount Count Getter
 func (r TaobaoOpenimTribelogsGetAPIRequest) GetCount() int64 {
 	return r._count
 }
 
-// Set is Next Setter
+// SetNext is Next Setter
 // 迭代key
 func (r *TaobaoOpenimTribelogsGetAPIRequest) SetNext(_next string) error {
 	r._next = _next
@@ -105,7 +105,7 @@ func (r *TaobaoOpenimTribelogsGetAPIRequest) SetNext(_next string) error {
 	return nil
 }
 
-// Get Next Getter
+// GetNext Next Getter
 func (r TaobaoOpenimTribelogsGetAPIRequest) GetNext() string {
 	return r._next
 }

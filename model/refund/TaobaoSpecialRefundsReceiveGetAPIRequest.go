@@ -53,7 +53,7 @@ func (r TaobaoSpecialRefundsReceiveGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的字段。目前支持有：refund_id, tid, title, buyer_nick, seller_nick, total_fee, status, created, refund_fee, oid, good_status, company_name, sid, payment, reason, desc, has_good_return, modified, order_status,refund_phase
 func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -61,12 +61,12 @@ func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetFields(_fields []string) e
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoSpecialRefundsReceiveGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 退款状态，默认查询所有退款状态的数据，除了默认值外每次只能查询一种状态。WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)
 func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -74,12 +74,12 @@ func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetStatus(_status string) err
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoSpecialRefundsReceiveGetAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 买家昵称
 func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -87,12 +87,12 @@ func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetBuyerNick(_buyerNick strin
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r TaobaoSpecialRefundsReceiveGetAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 交易类型列表，一次查询多种类型可用半角逗号分隔，默认同时查询guarantee_trade, auto_delivery这两种类型的数据，<a href="http://open.taobao.com/doc/detail.htm?id=102855" target="_blank">查看可选值</a>
 func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -100,12 +100,12 @@ func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoSpecialRefundsReceiveGetAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is StartModified Setter
+// SetStartModified is StartModified Setter
 // 查询修改时间开始。格式: yyyy-MM-dd HH:mm:ss
 func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetStartModified(_startModified string) error {
 	r._startModified = _startModified
@@ -113,12 +113,12 @@ func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetStartModified(_startModifi
 	return nil
 }
 
-// Get StartModified Getter
+// GetStartModified StartModified Getter
 func (r TaobaoSpecialRefundsReceiveGetAPIRequest) GetStartModified() string {
 	return r._startModified
 }
 
-// Set is EndModified Setter
+// SetEndModified is EndModified Setter
 // 查询修改时间结束。格式: yyyy-MM-dd HH:mm:ss
 func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetEndModified(_endModified string) error {
 	r._endModified = _endModified
@@ -126,12 +126,12 @@ func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetEndModified(_endModified s
 	return nil
 }
 
-// Get EndModified Getter
+// GetEndModified EndModified Getter
 func (r TaobaoSpecialRefundsReceiveGetAPIRequest) GetEndModified() string {
 	return r._endModified
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码。取值范围:大于零的整数; 默认值:1
 func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -139,12 +139,12 @@ func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetPageNo(_pageNo int64) erro
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoSpecialRefundsReceiveGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数。取值范围:大于零的整数; 默认值:40;最大值:100
 func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -152,12 +152,12 @@ func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetPageSize(_pageSize int64) 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoSpecialRefundsReceiveGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is UseHasNext Setter
+// SetUseHasNext is UseHasNext Setter
 // 是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取增量退款，接口调用成功率在原有的基础上有所提升。
 func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetUseHasNext(_useHasNext bool) error {
 	r._useHasNext = _useHasNext
@@ -165,7 +165,7 @@ func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetUseHasNext(_useHasNext boo
 	return nil
 }
 
-// Get UseHasNext Getter
+// GetUseHasNext UseHasNext Getter
 func (r TaobaoSpecialRefundsReceiveGetAPIRequest) GetUseHasNext() bool {
 	return r._useHasNext
 }

@@ -41,7 +41,7 @@ func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 库id
 func (r *TaobaoPlaceStoregroupUpdateAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -49,12 +49,12 @@ func (r *TaobaoPlaceStoregroupUpdateAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 库名称
 func (r *TaobaoPlaceStoregroupUpdateAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -62,12 +62,12 @@ func (r *TaobaoPlaceStoregroupUpdateAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Desc Setter
+// SetDesc is Desc Setter
 // 库备注
 func (r *TaobaoPlaceStoregroupUpdateAPIRequest) SetDesc(_desc string) error {
 	r._desc = _desc
@@ -75,7 +75,7 @@ func (r *TaobaoPlaceStoregroupUpdateAPIRequest) SetDesc(_desc string) error {
 	return nil
 }
 
-// Get Desc Getter
+// GetDesc Desc Getter
 func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetDesc() string {
 	return r._desc
 }

@@ -43,7 +43,7 @@ func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ModifyDate Setter
+// SetModifyDate is ModifyDate Setter
 // null-请求所有，20200616-请求2020年6月16号的变更信息
 func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetModifyDate(_modifyDate string) error {
 	r._modifyDate = _modifyDate
@@ -51,12 +51,12 @@ func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetModifyDate(_modifyDate
 	return nil
 }
 
-// Get ModifyDate Getter
+// GetModifyDate ModifyDate Getter
 func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetModifyDate() string {
 	return r._modifyDate
 }
 
-// Set is PageNum Setter
+// SetPageNum is PageNum Setter
 // 第几页
 func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
@@ -64,12 +64,12 @@ func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetPageNum(_pageNum int64
 	return nil
 }
 
-// Get PageNum Getter
+// GetPageNum PageNum Getter
 func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetPageNum() int64 {
 	return r._pageNum
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 查询实时数据时，必传，开始时间结束时间间隔不能超过4个小时
 func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -77,12 +77,12 @@ func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetEndTime(_endTime strin
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 查询实时数据时，必传，开始时间不能早于2天前
 func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -90,7 +90,7 @@ func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetStartTime(_startTime s
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetStartTime() string {
 	return r._startTime
 }

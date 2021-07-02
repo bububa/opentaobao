@@ -39,7 +39,7 @@ func (r TaobaoMixnickChangeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SrcMixNick Setter
+// SetSrcMixNick is SrcMixNick Setter
 // 输入的混淆nick
 func (r *TaobaoMixnickChangeAPIRequest) SetSrcMixNick(_srcMixNick string) error {
 	r._srcMixNick = _srcMixNick
@@ -47,12 +47,12 @@ func (r *TaobaoMixnickChangeAPIRequest) SetSrcMixNick(_srcMixNick string) error 
 	return nil
 }
 
-// Get SrcMixNick Getter
+// GetSrcMixNick SrcMixNick Getter
 func (r TaobaoMixnickChangeAPIRequest) GetSrcMixNick() string {
 	return r._srcMixNick
 }
 
-// Set is SrcAppkey Setter
+// SetSrcAppkey is SrcAppkey Setter
 // 输入的appkey
 func (r *TaobaoMixnickChangeAPIRequest) SetSrcAppkey(_srcAppkey string) error {
 	r._srcAppkey = _srcAppkey
@@ -60,7 +60,7 @@ func (r *TaobaoMixnickChangeAPIRequest) SetSrcAppkey(_srcAppkey string) error {
 	return nil
 }
 
-// Get SrcAppkey Getter
+// GetSrcAppkey SrcAppkey Getter
 func (r TaobaoMixnickChangeAPIRequest) GetSrcAppkey() string {
 	return r._srcAppkey
 }

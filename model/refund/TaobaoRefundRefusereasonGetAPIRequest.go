@@ -41,7 +41,7 @@ func (r TaobaoRefundRefusereasonGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款编号
 func (r *TaobaoRefundRefusereasonGetAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -49,12 +49,12 @@ func (r *TaobaoRefundRefusereasonGetAPIRequest) SetRefundId(_refundId int64) err
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoRefundRefusereasonGetAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回参数
 func (r *TaobaoRefundRefusereasonGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -62,12 +62,12 @@ func (r *TaobaoRefundRefusereasonGetAPIRequest) SetFields(_fields string) error 
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoRefundRefusereasonGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is RefundPhase Setter
+// SetRefundPhase is RefundPhase Setter
 // 售中或售后
 func (r *TaobaoRefundRefusereasonGetAPIRequest) SetRefundPhase(_refundPhase string) error {
 	r._refundPhase = _refundPhase
@@ -75,7 +75,7 @@ func (r *TaobaoRefundRefusereasonGetAPIRequest) SetRefundPhase(_refundPhase stri
 	return nil
 }
 
-// Get RefundPhase Getter
+// GetRefundPhase RefundPhase Getter
 func (r TaobaoRefundRefusereasonGetAPIRequest) GetRefundPhase() string {
 	return r._refundPhase
 }

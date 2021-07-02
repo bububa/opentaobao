@@ -39,7 +39,7 @@ func (r TaobaoFuwuSaleLinkGenAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 用户需要营销的目标人群中的用户nick
 func (r *TaobaoFuwuSaleLinkGenAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -47,12 +47,12 @@ func (r *TaobaoFuwuSaleLinkGenAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoFuwuSaleLinkGenAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is ParamStr Setter
+// SetParamStr is ParamStr Setter
 // 从服务商后台，营销链接功能中生成的参数串直接复制使用。不要修改，否则抛错。
 func (r *TaobaoFuwuSaleLinkGenAPIRequest) SetParamStr(_paramStr string) error {
 	r._paramStr = _paramStr
@@ -60,7 +60,7 @@ func (r *TaobaoFuwuSaleLinkGenAPIRequest) SetParamStr(_paramStr string) error {
 	return nil
 }
 
-// Get ParamStr Getter
+// GetParamStr ParamStr Getter
 func (r TaobaoFuwuSaleLinkGenAPIRequest) GetParamStr() string {
 	return r._paramStr
 }

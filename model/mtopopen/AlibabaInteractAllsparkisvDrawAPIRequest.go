@@ -39,7 +39,7 @@ func (r AlibabaInteractAllsparkisvDrawAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Test Setter
+// SetTest is Test Setter
 // ddd
 func (r *AlibabaInteractAllsparkisvDrawAPIRequest) SetTest(_test string) error {
 	r._test = _test
@@ -47,12 +47,12 @@ func (r *AlibabaInteractAllsparkisvDrawAPIRequest) SetTest(_test string) error {
 	return nil
 }
 
-// Get Test Getter
+// GetTest Test Getter
 func (r AlibabaInteractAllsparkisvDrawAPIRequest) GetTest() string {
 	return r._test
 }
 
-// Set is Ddd Setter
+// SetDdd is Ddd Setter
 // dd
 func (r *AlibabaInteractAllsparkisvDrawAPIRequest) SetDdd(_ddd string) error {
 	r._ddd = _ddd
@@ -60,7 +60,7 @@ func (r *AlibabaInteractAllsparkisvDrawAPIRequest) SetDdd(_ddd string) error {
 	return nil
 }
 
-// Get Ddd Getter
+// GetDdd Ddd Getter
 func (r AlibabaInteractAllsparkisvDrawAPIRequest) GetDdd() string {
 	return r._ddd
 }

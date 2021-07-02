@@ -79,7 +79,7 @@ func (r TmallItemsExtendSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Q Setter
+// SetQ is Q Setter
 // 表示搜索的关键字，例如搜索query=nike。当输入关键字为中文时，将对他进行URLEncode的UTF-8格式编码，如 耐克，那么q=%E8%80%90%E5%85%8B。
 func (r *TmallItemsExtendSearchAPIRequest) SetQ(_q string) error {
 	r._q = _q
@@ -87,12 +87,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetQ(_q string) error {
 	return nil
 }
 
-// Get Q Getter
+// GetQ Q Getter
 func (r TmallItemsExtendSearchAPIRequest) GetQ() string {
 	return r._q
 }
 
-// Set is Cat Setter
+// SetCat is Cat Setter
 // 前台类目id，支持多选过滤，cat=catid1,catid2
 func (r *TmallItemsExtendSearchAPIRequest) SetCat(_cat string) error {
 	r._cat = _cat
@@ -100,12 +100,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetCat(_cat string) error {
 	return nil
 }
 
-// Get Cat Getter
+// GetCat Cat Getter
 func (r TmallItemsExtendSearchAPIRequest) GetCat() string {
 	return r._cat
 }
 
-// Set is Sort Setter
+// SetSort is Sort Setter
 // 排序类型。类型包括：s: 人气排序p: 价格从低到高;pd: 价格从高到低;d: 月销量从高到低;td: 总销量从高到低;pt: 按发布时间排序.
 func (r *TmallItemsExtendSearchAPIRequest) SetSort(_sort string) error {
 	r._sort = _sort
@@ -113,12 +113,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetSort(_sort string) error {
 	return nil
 }
 
-// Get Sort Getter
+// GetSort Sort Getter
 func (r TmallItemsExtendSearchAPIRequest) GetSort() string {
 	return r._sort
 }
 
-// Set is Brand Setter
+// SetBrand is Brand Setter
 // 品牌的id。支持多选过滤，brand=brand1,brand2
 func (r *TmallItemsExtendSearchAPIRequest) SetBrand(_brand string) error {
 	r._brand = _brand
@@ -126,12 +126,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetBrand(_brand string) error {
 	return nil
 }
 
-// Get Brand Getter
+// GetBrand Brand Getter
 func (r TmallItemsExtendSearchAPIRequest) GetBrand() string {
 	return r._brand
 }
 
-// Set is Loc Setter
+// SetLoc is Loc Setter
 // 宝贝卖家所在地，中文gbk编码
 func (r *TmallItemsExtendSearchAPIRequest) SetLoc(_loc string) error {
 	r._loc = _loc
@@ -139,12 +139,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetLoc(_loc string) error {
 	return nil
 }
 
-// Get Loc Getter
+// GetLoc Loc Getter
 func (r TmallItemsExtendSearchAPIRequest) GetLoc() string {
 	return r._loc
 }
 
-// Set is Prop Setter
+// SetProp is Prop Setter
 // 以“属性id：属性值”的形式传入;
 func (r *TmallItemsExtendSearchAPIRequest) SetProp(_prop string) error {
 	r._prop = _prop
@@ -152,12 +152,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetProp(_prop string) error {
 	return nil
 }
 
-// Get Prop Getter
+// GetProp Prop Getter
 func (r TmallItemsExtendSearchAPIRequest) GetProp() string {
 	return r._prop
 }
 
-// Set is PostFee Setter
+// SetPostFee is PostFee Setter
 // 是否包邮，-1为包邮
 func (r *TmallItemsExtendSearchAPIRequest) SetPostFee(_postFee int64) error {
 	r._postFee = _postFee
@@ -165,12 +165,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetPostFee(_postFee int64) error {
 	return nil
 }
 
-// Get PostFee Getter
+// GetPostFee PostFee Getter
 func (r TmallItemsExtendSearchAPIRequest) GetPostFee() int64 {
 	return r._postFee
 }
 
-// Set is StartPrice Setter
+// SetStartPrice is StartPrice Setter
 // 在宝贝页面中进行价格筛选的时候，如果填写了最低价格，就会显示该字段。
 func (r *TmallItemsExtendSearchAPIRequest) SetStartPrice(_startPrice float64) error {
 	r._startPrice = _startPrice
@@ -178,12 +178,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetStartPrice(_startPrice float64) er
 	return nil
 }
 
-// Get StartPrice Getter
+// GetStartPrice StartPrice Getter
 func (r TmallItemsExtendSearchAPIRequest) GetStartPrice() float64 {
 	return r._startPrice
 }
 
-// Set is EndPrice Setter
+// SetEndPrice is EndPrice Setter
 // 在宝贝页面中进行价格筛选的时候，如果填写了最高价格，就会显示该字段。
 func (r *TmallItemsExtendSearchAPIRequest) SetEndPrice(_endPrice float64) error {
 	r._endPrice = _endPrice
@@ -191,12 +191,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetEndPrice(_endPrice float64) error 
 	return nil
 }
 
-// Get EndPrice Getter
+// GetEndPrice EndPrice Getter
 func (r TmallItemsExtendSearchAPIRequest) GetEndPrice() float64 {
 	return r._endPrice
 }
 
-// Set is SupportCod Setter
+// SetSupportCod is SupportCod Setter
 // 是否货到付款，1为货到付款
 func (r *TmallItemsExtendSearchAPIRequest) SetSupportCod(_supportCod int64) error {
 	r._supportCod = _supportCod
@@ -204,12 +204,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetSupportCod(_supportCod int64) erro
 	return nil
 }
 
-// Get SupportCod Getter
+// GetSupportCod SupportCod Getter
 func (r TmallItemsExtendSearchAPIRequest) GetSupportCod() int64 {
 	return r._supportCod
 }
 
-// Set is ManyPoints Setter
+// SetManyPoints is ManyPoints Setter
 // 是否多倍积分，1为多倍积分
 func (r *TmallItemsExtendSearchAPIRequest) SetManyPoints(_manyPoints int64) error {
 	r._manyPoints = _manyPoints
@@ -217,12 +217,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetManyPoints(_manyPoints int64) erro
 	return nil
 }
 
-// Get ManyPoints Getter
+// GetManyPoints ManyPoints Getter
 func (r TmallItemsExtendSearchAPIRequest) GetManyPoints() int64 {
 	return r._manyPoints
 }
 
-// Set is Wwonline Setter
+// SetWwonline is Wwonline Setter
 // 显示旺旺在线卖家的宝贝时，wwonline=1
 func (r *TmallItemsExtendSearchAPIRequest) SetWwonline(_wwonline int64) error {
 	r._wwonline = _wwonline
@@ -230,12 +230,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetWwonline(_wwonline int64) error {
 	return nil
 }
 
-// Get Wwonline Getter
+// GetWwonline Wwonline Getter
 func (r TmallItemsExtendSearchAPIRequest) GetWwonline() int64 {
 	return r._wwonline
 }
 
-// Set is Vip Setter
+// SetVip is Vip Setter
 // 过滤vip宝贝时，vip=1
 func (r *TmallItemsExtendSearchAPIRequest) SetVip(_vip int64) error {
 	r._vip = _vip
@@ -243,12 +243,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetVip(_vip int64) error {
 	return nil
 }
 
-// Get Vip Getter
+// GetVip Vip Getter
 func (r TmallItemsExtendSearchAPIRequest) GetVip() int64 {
 	return r._vip
 }
 
-// Set is Combo Setter
+// SetCombo is Combo Setter
 // 过滤搭配减价宝贝时，combo=1
 func (r *TmallItemsExtendSearchAPIRequest) SetCombo(_combo int64) error {
 	r._combo = _combo
@@ -256,12 +256,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetCombo(_combo int64) error {
 	return nil
 }
 
-// Get Combo Getter
+// GetCombo Combo Getter
 func (r TmallItemsExtendSearchAPIRequest) GetCombo() int64 {
 	return r._combo
 }
 
-// Set is Miaosha Setter
+// SetMiaosha is Miaosha Setter
 // 过滤折扣宝贝时，miaosha=1
 func (r *TmallItemsExtendSearchAPIRequest) SetMiaosha(_miaosha int64) error {
 	r._miaosha = _miaosha
@@ -269,12 +269,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetMiaosha(_miaosha int64) error {
 	return nil
 }
 
-// Get Miaosha Getter
+// GetMiaosha Miaosha Getter
 func (r TmallItemsExtendSearchAPIRequest) GetMiaosha() int64 {
 	return r._miaosha
 }
 
-// Set is Nspu Setter
+// SetNspu is Nspu Setter
 // 是否需要spu聚合的开关:1为关闭，不传表示遵循后端聚合逻辑。默认不作spu聚合。
 func (r *TmallItemsExtendSearchAPIRequest) SetNspu(_nspu int64) error {
 	r._nspu = _nspu
@@ -282,12 +282,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetNspu(_nspu int64) error {
 	return nil
 }
 
-// Get Nspu Getter
+// GetNspu Nspu Getter
 func (r TmallItemsExtendSearchAPIRequest) GetNspu() int64 {
 	return r._nspu
 }
 
-// Set is AuctionTag Setter
+// SetAuctionTag is AuctionTag Setter
 // 商品标签。支持多选过滤,auction_tag=auction_tag1,auction_tag2,不支持天猫精品库8578
 func (r *TmallItemsExtendSearchAPIRequest) SetAuctionTag(_auctionTag string) error {
 	r._auctionTag = _auctionTag
@@ -295,12 +295,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetAuctionTag(_auctionTag string) err
 	return nil
 }
 
-// Get AuctionTag Getter
+// GetAuctionTag AuctionTag Getter
 func (r TmallItemsExtendSearchAPIRequest) GetAuctionTag() string {
 	return r._auctionTag
 }
 
-// Set is Spuid Setter
+// SetSpuid is Spuid Setter
 // 可以根据产品Id搜索属于这个spu的商品。
 func (r *TmallItemsExtendSearchAPIRequest) SetSpuid(_spuid int64) error {
 	r._spuid = _spuid
@@ -308,12 +308,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetSpuid(_spuid int64) error {
 	return nil
 }
 
-// Get Spuid Getter
+// GetSpuid Spuid Getter
 func (r TmallItemsExtendSearchAPIRequest) GetSpuid() int64 {
 	return r._spuid
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 可以根据卖家id搜索属于该卖家的商品
 func (r *TmallItemsExtendSearchAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -321,12 +321,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetUserId(_userId int64) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TmallItemsExtendSearchAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码。取值范围：大于零的整数；最大值：100；默认值：1，即默认返回第一页数据。
 func (r *TmallItemsExtendSearchAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -334,12 +334,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TmallItemsExtendSearchAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数。取值范围：大于零的整数；最大值：100；默认值：40
 func (r *TmallItemsExtendSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -347,12 +347,12 @@ func (r *TmallItemsExtendSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TmallItemsExtendSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Category Setter
+// SetCategory is Category Setter
 // 后台类目id，category=categoryId
 func (r *TmallItemsExtendSearchAPIRequest) SetCategory(_category string) error {
 	r._category = _category
@@ -360,7 +360,7 @@ func (r *TmallItemsExtendSearchAPIRequest) SetCategory(_category string) error {
 	return nil
 }
 
-// Get Category Getter
+// GetCategory Category Getter
 func (r TmallItemsExtendSearchAPIRequest) GetCategory() string {
 	return r._category
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkOldposOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PosOrderCreateRequest Setter
+// SetPosOrderCreateRequest is PosOrderCreateRequest Setter
 // 入参
 func (r *AlibabaWdkOldposOrderCreateAPIRequest) SetPosOrderCreateRequest(_posOrderCreateRequest *PosOrderCreateRequest) error {
 	r._posOrderCreateRequest = _posOrderCreateRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkOldposOrderCreateAPIRequest) SetPosOrderCreateRequest(_posOrd
 	return nil
 }
 
-// Get PosOrderCreateRequest Getter
+// GetPosOrderCreateRequest PosOrderCreateRequest Getter
 func (r AlibabaWdkOldposOrderCreateAPIRequest) GetPosOrderCreateRequest() *PosOrderCreateRequest {
 	return r._posOrderCreateRequest
 }

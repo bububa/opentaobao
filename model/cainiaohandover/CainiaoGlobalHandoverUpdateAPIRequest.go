@@ -57,7 +57,7 @@ func (r CainiaoGlobalHandoverUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserInfo Setter
+// SetUserInfo is UserInfo Setter
 // 用户信息
 func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
 	r._userInfo = _userInfo
@@ -65,12 +65,12 @@ func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetUserInfo(_userInfo *UserInfoD
 	return nil
 }
 
-// Get UserInfo Getter
+// GetUserInfo UserInfo Getter
 func (r CainiaoGlobalHandoverUpdateAPIRequest) GetUserInfo() *UserInfoDto {
 	return r._userInfo
 }
 
-// Set is WeightUnit Setter
+// SetWeightUnit is WeightUnit Setter
 // 重量单位，克:g, 千克:kg，默认g
 func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetWeightUnit(_weightUnit string) error {
 	r._weightUnit = _weightUnit
@@ -78,12 +78,12 @@ func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetWeightUnit(_weightUnit string
 	return nil
 }
 
-// Get WeightUnit Getter
+// GetWeightUnit WeightUnit Getter
 func (r CainiaoGlobalHandoverUpdateAPIRequest) GetWeightUnit() string {
 	return r._weightUnit
 }
 
-// Set is Weight Setter
+// SetWeight is Weight Setter
 // 大包重量
 func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetWeight(_weight int64) error {
 	r._weight = _weight
@@ -91,12 +91,12 @@ func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetWeight(_weight int64) error {
 	return nil
 }
 
-// Get Weight Getter
+// GetWeight Weight Getter
 func (r CainiaoGlobalHandoverUpdateAPIRequest) GetWeight() int64 {
 	return r._weight
 }
 
-// Set is HandoverOrderId Setter
+// SetHandoverOrderId is HandoverOrderId Setter
 // 交接单id
 func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetHandoverOrderId(_handoverOrderId int64) error {
 	r._handoverOrderId = _handoverOrderId
@@ -104,12 +104,12 @@ func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetHandoverOrderId(_handoverOrde
 	return nil
 }
 
-// Get HandoverOrderId Getter
+// GetHandoverOrderId HandoverOrderId Getter
 func (r CainiaoGlobalHandoverUpdateAPIRequest) GetHandoverOrderId() int64 {
 	return r._handoverOrderId
 }
 
-// Set is Remark Setter
+// SetRemark is Remark Setter
 // 大包备注
 func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
@@ -117,12 +117,12 @@ func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetRemark(_remark string) error 
 	return nil
 }
 
-// Get Remark Getter
+// GetRemark Remark Getter
 func (r CainiaoGlobalHandoverUpdateAPIRequest) GetRemark() string {
 	return r._remark
 }
 
-// Set is ReturnInfo Setter
+// SetReturnInfo is ReturnInfo Setter
 // 退件信息
 func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetReturnInfo(_returnInfo *ReturnerDto) error {
 	r._returnInfo = _returnInfo
@@ -130,12 +130,12 @@ func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetReturnInfo(_returnInfo *Retur
 	return nil
 }
 
-// Get ReturnInfo Getter
+// GetReturnInfo ReturnInfo Getter
 func (r CainiaoGlobalHandoverUpdateAPIRequest) GetReturnInfo() *ReturnerDto {
 	return r._returnInfo
 }
 
-// Set is PickupInfo Setter
+// SetPickupInfo is PickupInfo Setter
 // 揽收信息
 func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetPickupInfo(_pickupInfo *PickupDto) error {
 	r._pickupInfo = _pickupInfo
@@ -143,12 +143,12 @@ func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetPickupInfo(_pickupInfo *Picku
 	return nil
 }
 
-// Get PickupInfo Getter
+// GetPickupInfo PickupInfo Getter
 func (r CainiaoGlobalHandoverUpdateAPIRequest) GetPickupInfo() *PickupDto {
 	return r._pickupInfo
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 交接单类型，菜鸟揽收(cainiao_pickup)或自寄(self_post)，默认菜鸟揽收
 func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -156,12 +156,12 @@ func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r CainiaoGlobalHandoverUpdateAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is Client Setter
+// SetClient is Client Setter
 // ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
 func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetClient(_client string) error {
 	r._client = _client
@@ -169,12 +169,12 @@ func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetClient(_client string) error 
 	return nil
 }
 
-// Get Client Getter
+// GetClient Client Getter
 func (r CainiaoGlobalHandoverUpdateAPIRequest) GetClient() string {
 	return r._client
 }
 
-// Set is OrderCodeList Setter
+// SetOrderCodeList is OrderCodeList Setter
 // 要创建交接单的小包编码集合，数量上限200
 func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetOrderCodeList(_orderCodeList []string) error {
 	r._orderCodeList = _orderCodeList
@@ -182,12 +182,12 @@ func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetOrderCodeList(_orderCodeList 
 	return nil
 }
 
-// Get OrderCodeList Getter
+// GetOrderCodeList OrderCodeList Getter
 func (r CainiaoGlobalHandoverUpdateAPIRequest) GetOrderCodeList() []string {
 	return r._orderCodeList
 }
 
-// Set is Locale Setter
+// SetLocale is Locale Setter
 // 多语言
 func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
@@ -195,7 +195,7 @@ func (r *CainiaoGlobalHandoverUpdateAPIRequest) SetLocale(_locale string) error 
 	return nil
 }
 
-// Get Locale Getter
+// GetLocale Locale Getter
 func (r CainiaoGlobalHandoverUpdateAPIRequest) GetLocale() string {
 	return r._locale
 }

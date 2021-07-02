@@ -37,7 +37,7 @@ func (r TaobaoQtReportGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QtCode Setter
+// SetQtCode is QtCode Setter
 // 质检编号
 func (r *TaobaoQtReportGetAPIRequest) SetQtCode(_qtCode string) error {
 	r._qtCode = _qtCode
@@ -45,7 +45,7 @@ func (r *TaobaoQtReportGetAPIRequest) SetQtCode(_qtCode string) error {
 	return nil
 }
 
-// Get QtCode Getter
+// GetQtCode QtCode Getter
 func (r TaobaoQtReportGetAPIRequest) GetQtCode() string {
 	return r._qtCode
 }

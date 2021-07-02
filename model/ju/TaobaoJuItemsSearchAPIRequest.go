@@ -37,7 +37,7 @@ func (r TaobaoJuItemsSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamTopItemQuery Setter
+// SetParamTopItemQuery is ParamTopItemQuery Setter
 // query
 func (r *TaobaoJuItemsSearchAPIRequest) SetParamTopItemQuery(_paramTopItemQuery *TopItemQuery) error {
 	r._paramTopItemQuery = _paramTopItemQuery
@@ -45,7 +45,7 @@ func (r *TaobaoJuItemsSearchAPIRequest) SetParamTopItemQuery(_paramTopItemQuery 
 	return nil
 }
 
-// Get ParamTopItemQuery Getter
+// GetParamTopItemQuery ParamTopItemQuery Getter
 func (r TaobaoJuItemsSearchAPIRequest) GetParamTopItemQuery() *TopItemQuery {
 	return r._paramTopItemQuery
 }

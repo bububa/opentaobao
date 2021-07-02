@@ -39,7 +39,7 @@ func (r TaobaoItemAnchorGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 宝贝模板类型是人工打标还是自动打标：人工打标为1，自动打标为0.人工和自动打标为-1.(最小值：-1，最大值：1)
 func (r *TaobaoItemAnchorGetAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -47,12 +47,12 @@ func (r *TaobaoItemAnchorGetAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoItemAnchorGetAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 对应类目编号
 func (r *TaobaoItemAnchorGetAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -60,7 +60,7 @@ func (r *TaobaoItemAnchorGetAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r TaobaoItemAnchorGetAPIRequest) GetCatId() int64 {
 	return r._catId
 }

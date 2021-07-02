@@ -37,7 +37,7 @@ func (r AlibabaWdkCouponAbandonAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamWdkCouponAbandonParam Setter
+// SetParamWdkCouponAbandonParam is ParamWdkCouponAbandonParam Setter
 // 废券参数
 func (r *AlibabaWdkCouponAbandonAPIRequest) SetParamWdkCouponAbandonParam(_paramWdkCouponAbandonParam *WdkCouponAbandonParam) error {
 	r._paramWdkCouponAbandonParam = _paramWdkCouponAbandonParam
@@ -45,7 +45,7 @@ func (r *AlibabaWdkCouponAbandonAPIRequest) SetParamWdkCouponAbandonParam(_param
 	return nil
 }
 
-// Get ParamWdkCouponAbandonParam Getter
+// GetParamWdkCouponAbandonParam ParamWdkCouponAbandonParam Getter
 func (r AlibabaWdkCouponAbandonAPIRequest) GetParamWdkCouponAbandonParam() *WdkCouponAbandonParam {
 	return r._paramWdkCouponAbandonParam
 }

@@ -41,7 +41,7 @@ func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 计划id
 func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -49,12 +49,12 @@ func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) SetCampaignId(_
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // 标签数据，json格式。 最外层key：人群标签crowd/地域标签region、priceMode，第二层key: 增add、删del、改mod，第三层key：optionValue、bidRate、tagId  eg: 删除：{"crowd":{"del":[{"tagId":3595769030}]}}   修改：{"crowd":{"mod":[{"optionValue":"high_potential_order_user","bidRate":"151"}]}} 增加：{"crowd":{"add":[{"optionValue":"user_area_CA","bidRate":"133"}]}}
 func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) SetData(_data string) error {
 	r._data = _data
@@ -62,12 +62,12 @@ func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) SetData(_data s
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) GetData() string {
 	return r._data
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -75,7 +75,7 @@ func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) SetTopContext(_
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }

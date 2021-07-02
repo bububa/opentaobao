@@ -41,7 +41,7 @@ func (r TmallCarFpcarRestpayReceiveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 卖家id
 func (r *TmallCarFpcarRestpayReceiveAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
@@ -49,12 +49,12 @@ func (r *TmallCarFpcarRestpayReceiveAPIRequest) SetSellerId(_sellerId int64) err
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r TmallCarFpcarRestpayReceiveAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *TmallCarFpcarRestpayReceiveAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -62,12 +62,12 @@ func (r *TmallCarFpcarRestpayReceiveAPIRequest) SetOrderId(_orderId int64) error
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TmallCarFpcarRestpayReceiveAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品宝贝id
 func (r *TmallCarFpcarRestpayReceiveAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -75,7 +75,7 @@ func (r *TmallCarFpcarRestpayReceiveAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallCarFpcarRestpayReceiveAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

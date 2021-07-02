@@ -37,7 +37,7 @@ func (r TmallCarcenterVehicleVersionInsertAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Dto Setter
+// SetDto is Dto Setter
 // 版本压缩库入参
 func (r *TmallCarcenterVehicleVersionInsertAPIRequest) SetDto(_dto *VersionVehicleInfoOriginalDto) error {
 	r._dto = _dto
@@ -45,7 +45,7 @@ func (r *TmallCarcenterVehicleVersionInsertAPIRequest) SetDto(_dto *VersionVehic
 	return nil
 }
 
-// Get Dto Getter
+// GetDto Dto Getter
 func (r TmallCarcenterVehicleVersionInsertAPIRequest) GetDto() *VersionVehicleInfoOriginalDto {
 	return r._dto
 }

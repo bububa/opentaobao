@@ -49,7 +49,7 @@ func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户id
 func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -57,12 +57,12 @@ func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetUserId(_userId int64) e
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 三方id
 func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetOuterId(_outerId int64) error {
 	r._outerId = _outerId
@@ -70,12 +70,12 @@ func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetOuterId(_outerId int64)
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetOuterId() int64 {
 	return r._outerId
 }
 
-// Set is EventType Setter
+// SetEventType is EventType Setter
 // 4经期调整；1基础体温；2排卵试纸；3 B超测排
 func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetEventType(_eventType int64) error {
 	r._eventType = _eventType
@@ -83,12 +83,12 @@ func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetEventType(_eventType in
 	return nil
 }
 
-// Get EventType Getter
+// GetEventType EventType Getter
 func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetEventType() int64 {
 	return r._eventType
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // 四类数据定制化详情
 func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetData(_data string) error {
 	r._data = _data
@@ -96,12 +96,12 @@ func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetData(_data string) erro
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetData() string {
 	return r._data
 }
 
-// Set is MeasureDate Setter
+// SetMeasureDate is MeasureDate Setter
 // 测量日期
 func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetMeasureDate(_measureDate int64) error {
 	r._measureDate = _measureDate
@@ -109,12 +109,12 @@ func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetMeasureDate(_measureDat
 	return nil
 }
 
-// Get MeasureDate Getter
+// GetMeasureDate MeasureDate Getter
 func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetMeasureDate() int64 {
 	return r._measureDate
 }
 
-// Set is OperationType Setter
+// SetOperationType is OperationType Setter
 // 0-新增 1-修改 2-删除
 func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetOperationType(_operationType int64) error {
 	r._operationType = _operationType
@@ -122,12 +122,12 @@ func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetOperationType(_operatio
 	return nil
 }
 
-// Get OperationType Getter
+// GetOperationType OperationType Getter
 func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetOperationType() int64 {
 	return r._operationType
 }
 
-// Set is PeriodMsg Setter
+// SetPeriodMsg is PeriodMsg Setter
 // 经期数据json串
 func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetPeriodMsg(_periodMsg string) error {
 	r._periodMsg = _periodMsg
@@ -135,7 +135,7 @@ func (r *AlibabaAlihealthPregnancyDataSyncAPIRequest) SetPeriodMsg(_periodMsg st
 	return nil
 }
 
-// Get PeriodMsg Getter
+// GetPeriodMsg PeriodMsg Getter
 func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetPeriodMsg() string {
 	return r._periodMsg
 }

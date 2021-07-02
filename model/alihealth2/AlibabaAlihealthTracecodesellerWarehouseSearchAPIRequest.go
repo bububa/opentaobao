@@ -43,7 +43,7 @@ func (r AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is Appkey Setter
+// SetAppkey is Appkey Setter
 // 身份认证
 func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) SetAppkey(_appkey string) error {
 	r._appkey = _appkey
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) SetAppkey(_ap
 	return nil
 }
 
-// Get Appkey Getter
+// GetAppkey Appkey Getter
 func (r AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) GetAppkey() string {
 	return r._appkey
 }
 
-// Set is EntInfoId Setter
+// SetEntInfoId is EntInfoId Setter
 // 商家id
 func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) SetEntInfoId(_entInfoId int64) error {
 	r._entInfoId = _entInfoId
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) SetEntInfoId(
 	return nil
 }
 
-// Get EntInfoId Getter
+// GetEntInfoId EntInfoId Getter
 func (r AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) GetEntInfoId() int64 {
 	return r._entInfoId
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 第几页
 func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) SetPage(_page
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页多少条
 func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) SetPageSize(_
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaAlihealthTracecodesellerWarehouseSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

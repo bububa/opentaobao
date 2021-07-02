@@ -43,7 +43,7 @@ func (r AlibabaNlifeStoreDeliversGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TradeNo Setter
+// SetTradeNo is TradeNo Setter
 // 门店采购订单号
 func (r *AlibabaNlifeStoreDeliversGetAPIRequest) SetTradeNo(_tradeNo string) error {
 	r._tradeNo = _tradeNo
@@ -51,12 +51,12 @@ func (r *AlibabaNlifeStoreDeliversGetAPIRequest) SetTradeNo(_tradeNo string) err
 	return nil
 }
 
-// Get TradeNo Getter
+// GetTradeNo TradeNo Getter
 func (r AlibabaNlifeStoreDeliversGetAPIRequest) GetTradeNo() string {
 	return r._tradeNo
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 零售商的门店id
 func (r *AlibabaNlifeStoreDeliversGetAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -64,12 +64,12 @@ func (r *AlibabaNlifeStoreDeliversGetAPIRequest) SetStoreId(_storeId int64) erro
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaNlifeStoreDeliversGetAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页的数量
 func (r *AlibabaNlifeStoreDeliversGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *AlibabaNlifeStoreDeliversGetAPIRequest) SetPageSize(_pageSize int64) er
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaNlifeStoreDeliversGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 查询的页码
 func (r *AlibabaNlifeStoreDeliversGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -90,7 +90,7 @@ func (r *AlibabaNlifeStoreDeliversGetAPIRequest) SetPageNo(_pageNo int64) error 
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r AlibabaNlifeStoreDeliversGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

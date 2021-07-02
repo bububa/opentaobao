@@ -43,7 +43,7 @@ func (r AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is SecretNo Setter
+// SetSecretNo is SecretNo Setter
 // 异常的中间号码
 func (r *AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) SetSecretNo(_secretNo string) error {
 	r._secretNo = _secretNo
@@ -51,12 +51,12 @@ func (r *AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) SetSecretNo(_secretNo 
 	return nil
 }
 
-// Get SecretNo Getter
+// GetSecretNo SecretNo Getter
 func (r AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) GetSecretNo() string {
 	return r._secretNo
 }
 
-// Set is ExceptionMsg Setter
+// SetExceptionMsg is ExceptionMsg Setter
 // 异常的原因
 func (r *AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) SetExceptionMsg(_exceptionMsg string) error {
 	r._exceptionMsg = _exceptionMsg
@@ -64,12 +64,12 @@ func (r *AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) SetExceptionMsg(_excep
 	return nil
 }
 
-// Get ExceptionMsg Getter
+// GetExceptionMsg ExceptionMsg Getter
 func (r AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) GetExceptionMsg() string {
 	return r._exceptionMsg
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 0-异常状态 1-可恢复正常使用
 func (r *AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -77,12 +77,12 @@ func (r *AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) SetStatus(_status int6
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is VendorKey Setter
+// SetVendorKey is VendorKey Setter
 // 供应商KEY
 func (r *AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) SetVendorKey(_vendorKey string) error {
 	r._vendorKey = _vendorKey
@@ -90,7 +90,7 @@ func (r *AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) SetVendorKey(_vendorKe
 	return nil
 }
 
-// Get VendorKey Getter
+// GetVendorKey VendorKey Getter
 func (r AlibabaAliqinAxbVendorExceptionNoSyncAPIRequest) GetVendorKey() string {
 	return r._vendorKey
 }

@@ -61,7 +61,7 @@ func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Checksum Setter
+// SetChecksum is Checksum Setter
 // 校验码，ocr结果为普票，success=true并且invoiceKind=1时必填
 func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetChecksum(_checksum string) error {
 	r._checksum = _checksum
@@ -69,12 +69,12 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetChecksum(_checksum string)
 	return nil
 }
 
-// Get Checksum Getter
+// GetChecksum Checksum Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetChecksum() string {
 	return r._checksum
 }
 
-// Set is ErrorCode Setter
+// SetErrorCode is ErrorCode Setter
 // 错误码，success=false是必填
 func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetErrorCode(_errorCode string) error {
 	r._errorCode = _errorCode
@@ -82,12 +82,12 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetErrorCode(_errorCode strin
 	return nil
 }
 
-// Get ErrorCode Getter
+// GetErrorCode ErrorCode Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetErrorCode() string {
 	return r._errorCode
 }
 
-// Set is ErrorMessage Setter
+// SetErrorMessage is ErrorMessage Setter
 // 错误消息，success=false是必填
 func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetErrorMessage(_errorMessage string) error {
 	r._errorMessage = _errorMessage
@@ -95,12 +95,12 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetErrorMessage(_errorMessage
 	return nil
 }
 
-// Get ErrorMessage Getter
+// GetErrorMessage ErrorMessage Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetErrorMessage() string {
 	return r._errorMessage
 }
 
-// Set is ImageData Setter
+// SetImageData is ImageData Setter
 // 发票ocr影像文件，type=1时必填
 func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetImageData(_imageData *model.File) error {
 	r._imageData = _imageData
@@ -108,12 +108,12 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetImageData(_imageData *mode
 	return nil
 }
 
-// Get ImageData Getter
+// GetImageData ImageData Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetImageData() *model.File {
 	return r._imageData
 }
 
-// Set is ImageId Setter
+// SetImageId is ImageId Setter
 // 发票ocr影像编号，type=1时必填
 func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetImageId(_imageId string) error {
 	r._imageId = _imageId
@@ -121,12 +121,12 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetImageId(_imageId string) e
 	return nil
 }
 
-// Get ImageId Getter
+// GetImageId ImageId Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetImageId() string {
 	return r._imageId
 }
 
-// Set is InvoiceCode Setter
+// SetInvoiceCode is InvoiceCode Setter
 // 发票代码，success=true时必填
 func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetInvoiceCode(_invoiceCode string) error {
 	r._invoiceCode = _invoiceCode
@@ -134,12 +134,12 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetInvoiceCode(_invoiceCode s
 	return nil
 }
 
-// Get InvoiceCode Getter
+// GetInvoiceCode InvoiceCode Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetInvoiceCode() string {
 	return r._invoiceCode
 }
 
-// Set is InvoiceDate Setter
+// SetInvoiceDate is InvoiceDate Setter
 // 开票日期，格式为yyyy-MM-dd，success=true时必填
 func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetInvoiceDate(_invoiceDate string) error {
 	r._invoiceDate = _invoiceDate
@@ -147,12 +147,12 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetInvoiceDate(_invoiceDate s
 	return nil
 }
 
-// Get InvoiceDate Getter
+// GetInvoiceDate InvoiceDate Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetInvoiceDate() string {
 	return r._invoiceDate
 }
 
-// Set is InvoiceKind Setter
+// SetInvoiceKind is InvoiceKind Setter
 // 发票种类，1=普票，2=专票，success=true时必填
 func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetInvoiceKind(_invoiceKind int64) error {
 	r._invoiceKind = _invoiceKind
@@ -160,12 +160,12 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetInvoiceKind(_invoiceKind i
 	return nil
 }
 
-// Get InvoiceKind Getter
+// GetInvoiceKind InvoiceKind Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetInvoiceKind() int64 {
 	return r._invoiceKind
 }
 
-// Set is InvoiceNo Setter
+// SetInvoiceNo is InvoiceNo Setter
 // 发票号码，success=true时必填
 func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetInvoiceNo(_invoiceNo string) error {
 	r._invoiceNo = _invoiceNo
@@ -173,12 +173,12 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetInvoiceNo(_invoiceNo strin
 	return nil
 }
 
-// Get InvoiceNo Getter
+// GetInvoiceNo InvoiceNo Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetInvoiceNo() string {
 	return r._invoiceNo
 }
 
-// Set is ReqIndex Setter
+// SetReqIndex is ReqIndex Setter
 // 开票请求标识，扫描驱动回传type=1时填批次号
 func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetReqIndex(_reqIndex string) error {
 	r._reqIndex = _reqIndex
@@ -186,12 +186,12 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetReqIndex(_reqIndex string)
 	return nil
 }
 
-// Get ReqIndex Getter
+// GetReqIndex ReqIndex Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetReqIndex() string {
 	return r._reqIndex
 }
 
-// Set is Success Setter
+// SetSuccess is Success Setter
 // ocr结果，true=成功，false=失败
 func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetSuccess(_success bool) error {
 	r._success = _success
@@ -199,12 +199,12 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetSuccess(_success bool) err
 	return nil
 }
 
-// Get Success Getter
+// GetSuccess Success Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetSuccess() bool {
 	return r._success
 }
 
-// Set is SumPrice Setter
+// SetSumPrice is SumPrice Setter
 // 不含税金额，ocr结果为专票，success=true并且invoiceKind=2时必填
 func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetSumPrice(_sumPrice string) error {
 	r._sumPrice = _sumPrice
@@ -212,12 +212,12 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetSumPrice(_sumPrice string)
 	return nil
 }
 
-// Get SumPrice Getter
+// GetSumPrice SumPrice Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetSumPrice() string {
 	return r._sumPrice
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 请求类型，0=阿里主动发起的cor，1=扫描驱动服务商主动回传ocr结果
 func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -225,7 +225,7 @@ func (r *AlibabaEinvoiceIncomeOcrReturnAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaEinvoiceIncomeOcrReturnAPIRequest) GetType() int64 {
 	return r._type
 }

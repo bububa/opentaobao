@@ -39,7 +39,7 @@ func (r AlibabaCuntaoInteractRequisitionUpdateAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 物料制作状态
 func (r *AlibabaCuntaoInteractRequisitionUpdateAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -47,12 +47,12 @@ func (r *AlibabaCuntaoInteractRequisitionUpdateAPIRequest) SetStatus(_status str
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaCuntaoInteractRequisitionUpdateAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is UuidList Setter
+// SetUuidList is UuidList Setter
 // 申请单id列表
 func (r *AlibabaCuntaoInteractRequisitionUpdateAPIRequest) SetUuidList(_uuidList []string) error {
 	r._uuidList = _uuidList
@@ -60,7 +60,7 @@ func (r *AlibabaCuntaoInteractRequisitionUpdateAPIRequest) SetUuidList(_uuidList
 	return nil
 }
 
-// Get UuidList Getter
+// GetUuidList UuidList Getter
 func (r AlibabaCuntaoInteractRequisitionUpdateAPIRequest) GetUuidList() []string {
 	return r._uuidList
 }

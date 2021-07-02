@@ -43,7 +43,7 @@ func (r TaobaoJstMiniappCrowdCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 活动开始时间，开始时间和结束时间不能超过1个月
 func (r *TaobaoJstMiniappCrowdCreateAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -51,12 +51,12 @@ func (r *TaobaoJstMiniappCrowdCreateAPIRequest) SetEndDate(_endDate string) erro
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoJstMiniappCrowdCreateAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is Description Setter
+// SetDescription is Description Setter
 // 活动描述
 func (r *TaobaoJstMiniappCrowdCreateAPIRequest) SetDescription(_description string) error {
 	r._description = _description
@@ -64,12 +64,12 @@ func (r *TaobaoJstMiniappCrowdCreateAPIRequest) SetDescription(_description stri
 	return nil
 }
 
-// Get Description Getter
+// GetDescription Description Getter
 func (r TaobaoJstMiniappCrowdCreateAPIRequest) GetDescription() string {
 	return r._description
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 活动开始时间
 func (r *TaobaoJstMiniappCrowdCreateAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -77,12 +77,12 @@ func (r *TaobaoJstMiniappCrowdCreateAPIRequest) SetStartDate(_startDate string) 
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoJstMiniappCrowdCreateAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is CrowdName Setter
+// SetCrowdName is CrowdName Setter
 // 活动名称
 func (r *TaobaoJstMiniappCrowdCreateAPIRequest) SetCrowdName(_crowdName string) error {
 	r._crowdName = _crowdName
@@ -90,7 +90,7 @@ func (r *TaobaoJstMiniappCrowdCreateAPIRequest) SetCrowdName(_crowdName string) 
 	return nil
 }
 
-// Get CrowdName Getter
+// GetCrowdName CrowdName Getter
 func (r TaobaoJstMiniappCrowdCreateAPIRequest) GetCrowdName() string {
 	return r._crowdName
 }

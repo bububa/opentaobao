@@ -37,7 +37,7 @@ func (r TaobaoAlitripIeAgentRefundNewMultiplerefundsAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is ParamRefundOrderMultipleRefundsRq Setter
+// SetParamRefundOrderMultipleRefundsRq is ParamRefundOrderMultipleRefundsRq Setter
 // 请求参数
 func (r *TaobaoAlitripIeAgentRefundNewMultiplerefundsAPIRequest) SetParamRefundOrderMultipleRefundsRq(_paramRefundOrderMultipleRefundsRq *RefundOrderMultipleRefundsRq) error {
 	r._paramRefundOrderMultipleRefundsRq = _paramRefundOrderMultipleRefundsRq
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripIeAgentRefundNewMultiplerefundsAPIRequest) SetParamRefundO
 	return nil
 }
 
-// Get ParamRefundOrderMultipleRefundsRq Getter
+// GetParamRefundOrderMultipleRefundsRq ParamRefundOrderMultipleRefundsRq Getter
 func (r TaobaoAlitripIeAgentRefundNewMultiplerefundsAPIRequest) GetParamRefundOrderMultipleRefundsRq() *RefundOrderMultipleRefundsRq {
 	return r._paramRefundOrderMultipleRefundsRq
 }

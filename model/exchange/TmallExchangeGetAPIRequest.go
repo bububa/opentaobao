@@ -39,7 +39,7 @@ func (r TmallExchangeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DisputeId Setter
+// SetDisputeId is DisputeId Setter
 // 换货单号ID
 func (r *TmallExchangeGetAPIRequest) SetDisputeId(_disputeId int64) error {
 	r._disputeId = _disputeId
@@ -47,12 +47,12 @@ func (r *TmallExchangeGetAPIRequest) SetDisputeId(_disputeId int64) error {
 	return nil
 }
 
-// Get DisputeId Getter
+// GetDisputeId DisputeId Getter
 func (r TmallExchangeGetAPIRequest) GetDisputeId() int64 {
 	return r._disputeId
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回字段。目前支持dispute_id, bizorder_id, num, buyer_nick, status, created, modified, reason, title, buyer_logistic_no, seller_logistic_no, bought_sku, exchange_sku, buyer_address, address, buyer_phone, buyer_logistic_name, seller_logistic_name, alipay_no, buyer_name, seller_nick
 func (r *TmallExchangeGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -60,7 +60,7 @@ func (r *TmallExchangeGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TmallExchangeGetAPIRequest) GetFields() []string {
 	return r._fields
 }

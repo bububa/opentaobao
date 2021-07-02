@@ -41,7 +41,7 @@ func (r TaobaoSubwayWordpackageUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSubwayWordpackageUpdateAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -49,12 +49,12 @@ func (r *TaobaoSubwayWordpackageUpdateAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSubwayWordpackageUpdateAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广组Id
 func (r *TaobaoSubwayWordpackageUpdateAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -62,12 +62,12 @@ func (r *TaobaoSubwayWordpackageUpdateAPIRequest) SetAdgroupId(_adgroupId int64)
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSubwayWordpackageUpdateAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }
 
-// Set is WordPackageDTOS Setter
+// SetWordPackageDTOS is WordPackageDTOS Setter
 // 词包列表
 func (r *TaobaoSubwayWordpackageUpdateAPIRequest) SetWordPackageDTOS(_wordPackageDTOS []ItemWordPackageDto) error {
 	r._wordPackageDTOS = _wordPackageDTOS
@@ -75,7 +75,7 @@ func (r *TaobaoSubwayWordpackageUpdateAPIRequest) SetWordPackageDTOS(_wordPackag
 	return nil
 }
 
-// Get WordPackageDTOS Getter
+// GetWordPackageDTOS WordPackageDTOS Getter
 func (r TaobaoSubwayWordpackageUpdateAPIRequest) GetWordPackageDTOS() []ItemWordPackageDto {
 	return r._wordPackageDTOS
 }

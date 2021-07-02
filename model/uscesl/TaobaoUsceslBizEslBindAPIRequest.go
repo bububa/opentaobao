@@ -45,7 +45,7 @@ func (r TaobaoUsceslBizEslBindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EslBarCode Setter
+// SetEslBarCode is EslBarCode Setter
 // 价签条码
 func (r *TaobaoUsceslBizEslBindAPIRequest) SetEslBarCode(_eslBarCode string) error {
 	r._eslBarCode = _eslBarCode
@@ -53,12 +53,12 @@ func (r *TaobaoUsceslBizEslBindAPIRequest) SetEslBarCode(_eslBarCode string) err
 	return nil
 }
 
-// Get EslBarCode Getter
+// GetEslBarCode EslBarCode Getter
 func (r TaobaoUsceslBizEslBindAPIRequest) GetEslBarCode() string {
 	return r._eslBarCode
 }
 
-// Set is ItemBarCode Setter
+// SetItemBarCode is ItemBarCode Setter
 // 商品条码
 func (r *TaobaoUsceslBizEslBindAPIRequest) SetItemBarCode(_itemBarCode string) error {
 	r._itemBarCode = _itemBarCode
@@ -66,12 +66,12 @@ func (r *TaobaoUsceslBizEslBindAPIRequest) SetItemBarCode(_itemBarCode string) e
 	return nil
 }
 
-// Get ItemBarCode Getter
+// GetItemBarCode ItemBarCode Getter
 func (r TaobaoUsceslBizEslBindAPIRequest) GetItemBarCode() string {
 	return r._itemBarCode
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店storeId
 func (r *TaobaoUsceslBizEslBindAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -79,12 +79,12 @@ func (r *TaobaoUsceslBizEslBindAPIRequest) SetStoreId(_storeId int64) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoUsceslBizEslBindAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is BizBrandKey Setter
+// SetBizBrandKey is BizBrandKey Setter
 // 商家ID
 func (r *TaobaoUsceslBizEslBindAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
 	r._bizBrandKey = _bizBrandKey
@@ -92,12 +92,12 @@ func (r *TaobaoUsceslBizEslBindAPIRequest) SetBizBrandKey(_bizBrandKey string) e
 	return nil
 }
 
-// Get BizBrandKey Getter
+// GetBizBrandKey BizBrandKey Getter
 func (r TaobaoUsceslBizEslBindAPIRequest) GetBizBrandKey() string {
 	return r._bizBrandKey
 }
 
-// Set is ExtendInfo Setter
+// SetExtendInfo is ExtendInfo Setter
 // 额外扩展信息
 func (r *TaobaoUsceslBizEslBindAPIRequest) SetExtendInfo(_extendInfo string) error {
 	r._extendInfo = _extendInfo
@@ -105,7 +105,7 @@ func (r *TaobaoUsceslBizEslBindAPIRequest) SetExtendInfo(_extendInfo string) err
 	return nil
 }
 
-// Get ExtendInfo Getter
+// GetExtendInfo ExtendInfo Getter
 func (r TaobaoUsceslBizEslBindAPIRequest) GetExtendInfo() string {
 	return r._extendInfo
 }

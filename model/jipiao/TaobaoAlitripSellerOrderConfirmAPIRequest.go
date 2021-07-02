@@ -37,7 +37,7 @@ func (r TaobaoAlitripSellerOrderConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TripConfirmOrderParam Setter
+// SetTripConfirmOrderParam is TripConfirmOrderParam Setter
 // 请求参数
 func (r *TaobaoAlitripSellerOrderConfirmAPIRequest) SetTripConfirmOrderParam(_tripConfirmOrderParam *TripConfirmOrderParam) error {
 	r._tripConfirmOrderParam = _tripConfirmOrderParam
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripSellerOrderConfirmAPIRequest) SetTripConfirmOrderParam(_tr
 	return nil
 }
 
-// Get TripConfirmOrderParam Getter
+// GetTripConfirmOrderParam TripConfirmOrderParam Getter
 func (r TaobaoAlitripSellerOrderConfirmAPIRequest) GetTripConfirmOrderParam() *TripConfirmOrderParam {
 	return r._tripConfirmOrderParam
 }

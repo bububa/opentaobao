@@ -39,7 +39,7 @@ func (r TaobaoDaogoubaoOrderStatisticsTotalAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is DebugId Setter
+// SetDebugId is DebugId Setter
 // 调试时用的传入id
 func (r *TaobaoDaogoubaoOrderStatisticsTotalAPIRequest) SetDebugId(_debugId string) error {
 	r._debugId = _debugId
@@ -47,12 +47,12 @@ func (r *TaobaoDaogoubaoOrderStatisticsTotalAPIRequest) SetDebugId(_debugId stri
 	return nil
 }
 
-// Get DebugId Getter
+// GetDebugId DebugId Getter
 func (r TaobaoDaogoubaoOrderStatisticsTotalAPIRequest) GetDebugId() string {
 	return r._debugId
 }
 
-// Set is Field Setter
+// SetField is Field Setter
 // 需要的字段名
 func (r *TaobaoDaogoubaoOrderStatisticsTotalAPIRequest) SetField(_field string) error {
 	r._field = _field
@@ -60,7 +60,7 @@ func (r *TaobaoDaogoubaoOrderStatisticsTotalAPIRequest) SetField(_field string) 
 	return nil
 }
 
-// Get Field Getter
+// GetField Field Getter
 func (r TaobaoDaogoubaoOrderStatisticsTotalAPIRequest) GetField() string {
 	return r._field
 }

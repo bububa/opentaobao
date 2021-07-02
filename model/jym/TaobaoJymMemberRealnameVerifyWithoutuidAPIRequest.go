@@ -39,7 +39,7 @@ func (r TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is EncryptName Setter
+// SetEncryptName is EncryptName Setter
 // 加密名字串
 func (r *TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest) SetEncryptName(_encryptName string) error {
 	r._encryptName = _encryptName
@@ -47,12 +47,12 @@ func (r *TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest) SetEncryptName(_encr
 	return nil
 }
 
-// Get EncryptName Getter
+// GetEncryptName EncryptName Getter
 func (r TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest) GetEncryptName() string {
 	return r._encryptName
 }
 
-// Set is EncryptIdNo Setter
+// SetEncryptIdNo is EncryptIdNo Setter
 // 加密身份证串
 func (r *TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest) SetEncryptIdNo(_encryptIdNo string) error {
 	r._encryptIdNo = _encryptIdNo
@@ -60,7 +60,7 @@ func (r *TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest) SetEncryptIdNo(_encr
 	return nil
 }
 
-// Get EncryptIdNo Getter
+// GetEncryptIdNo EncryptIdNo Getter
 func (r TaobaoJymMemberRealnameVerifyWithoutuidAPIRequest) GetEncryptIdNo() string {
 	return r._encryptIdNo
 }

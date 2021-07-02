@@ -39,7 +39,7 @@ func (r AlibabaSecurityJaqWsgriskdataReportAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Wua Setter
+// SetWua is Wua Setter
 // wua串
 func (r *AlibabaSecurityJaqWsgriskdataReportAPIRequest) SetWua(_wua string) error {
 	r._wua = _wua
@@ -47,12 +47,12 @@ func (r *AlibabaSecurityJaqWsgriskdataReportAPIRequest) SetWua(_wua string) erro
 	return nil
 }
 
-// Get Wua Getter
+// GetWua Wua Getter
 func (r AlibabaSecurityJaqWsgriskdataReportAPIRequest) GetWua() string {
 	return r._wua
 }
 
-// Set is ExtParam Setter
+// SetExtParam is ExtParam Setter
 // mtopappkey是mtop的appkey
 func (r *AlibabaSecurityJaqWsgriskdataReportAPIRequest) SetExtParam(_extParam string) error {
 	r._extParam = _extParam
@@ -60,7 +60,7 @@ func (r *AlibabaSecurityJaqWsgriskdataReportAPIRequest) SetExtParam(_extParam st
 	return nil
 }
 
-// Get ExtParam Getter
+// GetExtParam ExtParam Getter
 func (r AlibabaSecurityJaqWsgriskdataReportAPIRequest) GetExtParam() string {
 	return r._extParam
 }

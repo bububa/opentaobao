@@ -45,7 +45,7 @@ func (r AlibabaLegalCaseStandpointSavestandpointAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is DefenseCaliber Setter
+// SetDefenseCaliber is DefenseCaliber Setter
 // 答辩口径
 func (r *AlibabaLegalCaseStandpointSavestandpointAPIRequest) SetDefenseCaliber(_defenseCaliber string) error {
 	r._defenseCaliber = _defenseCaliber
@@ -53,12 +53,12 @@ func (r *AlibabaLegalCaseStandpointSavestandpointAPIRequest) SetDefenseCaliber(_
 	return nil
 }
 
-// Get DefenseCaliber Getter
+// GetDefenseCaliber DefenseCaliber Getter
 func (r AlibabaLegalCaseStandpointSavestandpointAPIRequest) GetDefenseCaliber() string {
 	return r._defenseCaliber
 }
 
-// Set is StandpointDesc Setter
+// SetStandpointDesc is StandpointDesc Setter
 // 口径描述
 func (r *AlibabaLegalCaseStandpointSavestandpointAPIRequest) SetStandpointDesc(_standpointDesc string) error {
 	r._standpointDesc = _standpointDesc
@@ -66,12 +66,12 @@ func (r *AlibabaLegalCaseStandpointSavestandpointAPIRequest) SetStandpointDesc(_
 	return nil
 }
 
-// Get StandpointDesc Getter
+// GetStandpointDesc StandpointDesc Getter
 func (r AlibabaLegalCaseStandpointSavestandpointAPIRequest) GetStandpointDesc() string {
 	return r._standpointDesc
 }
 
-// Set is SuitId Setter
+// SetSuitId is SuitId Setter
 // 案件id
 func (r *AlibabaLegalCaseStandpointSavestandpointAPIRequest) SetSuitId(_suitId int64) error {
 	r._suitId = _suitId
@@ -79,12 +79,12 @@ func (r *AlibabaLegalCaseStandpointSavestandpointAPIRequest) SetSuitId(_suitId i
 	return nil
 }
 
-// Get SuitId Getter
+// GetSuitId SuitId Getter
 func (r AlibabaLegalCaseStandpointSavestandpointAPIRequest) GetSuitId() int64 {
 	return r._suitId
 }
 
-// Set is EntrustId Setter
+// SetEntrustId is EntrustId Setter
 // 委托id
 func (r *AlibabaLegalCaseStandpointSavestandpointAPIRequest) SetEntrustId(_entrustId int64) error {
 	r._entrustId = _entrustId
@@ -92,12 +92,12 @@ func (r *AlibabaLegalCaseStandpointSavestandpointAPIRequest) SetEntrustId(_entru
 	return nil
 }
 
-// Get EntrustId Getter
+// GetEntrustId EntrustId Getter
 func (r AlibabaLegalCaseStandpointSavestandpointAPIRequest) GetEntrustId() int64 {
 	return r._entrustId
 }
 
-// Set is SubmitPeople Setter
+// SetSubmitPeople is SubmitPeople Setter
 // 提交人
 func (r *AlibabaLegalCaseStandpointSavestandpointAPIRequest) SetSubmitPeople(_submitPeople string) error {
 	r._submitPeople = _submitPeople
@@ -105,7 +105,7 @@ func (r *AlibabaLegalCaseStandpointSavestandpointAPIRequest) SetSubmitPeople(_su
 	return nil
 }
 
-// Get SubmitPeople Getter
+// GetSubmitPeople SubmitPeople Getter
 func (r AlibabaLegalCaseStandpointSavestandpointAPIRequest) GetSubmitPeople() string {
 	return r._submitPeople
 }

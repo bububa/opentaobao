@@ -45,7 +45,7 @@ func (r TaobaoItempropvaluesGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的字段。目前支持有：cid,pid,prop_name,vid,name,name_alias,status,sort_order
 func (r *TaobaoItempropvaluesGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -53,12 +53,12 @@ func (r *TaobaoItempropvaluesGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoItempropvaluesGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is Cid Setter
+// SetCid is Cid Setter
 // 叶子类目ID ,通过taobao.itemcats.get获得叶子类目ID
 func (r *TaobaoItempropvaluesGetAPIRequest) SetCid(_cid int64) error {
 	r._cid = _cid
@@ -66,12 +66,12 @@ func (r *TaobaoItempropvaluesGetAPIRequest) SetCid(_cid int64) error {
 	return nil
 }
 
-// Get Cid Getter
+// GetCid Cid Getter
 func (r TaobaoItempropvaluesGetAPIRequest) GetCid() int64 {
 	return r._cid
 }
 
-// Set is Pvs Setter
+// SetPvs is Pvs Setter
 // 属性和属性值 id串，格式例如(pid1;pid2)或(pid1:vid1;pid2:vid2)或(pid1;pid2:vid2)
 func (r *TaobaoItempropvaluesGetAPIRequest) SetPvs(_pvs string) error {
 	r._pvs = _pvs
@@ -79,12 +79,12 @@ func (r *TaobaoItempropvaluesGetAPIRequest) SetPvs(_pvs string) error {
 	return nil
 }
 
-// Get Pvs Getter
+// GetPvs Pvs Getter
 func (r TaobaoItempropvaluesGetAPIRequest) GetPvs() string {
 	return r._pvs
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 获取类目的类型：1代表集市、2代表天猫
 func (r *TaobaoItempropvaluesGetAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -92,12 +92,12 @@ func (r *TaobaoItempropvaluesGetAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoItempropvaluesGetAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is AttrKeys Setter
+// SetAttrKeys is AttrKeys Setter
 // 属性的Key，支持多条，以“,”分隔
 func (r *TaobaoItempropvaluesGetAPIRequest) SetAttrKeys(_attrKeys []string) error {
 	r._attrKeys = _attrKeys
@@ -105,7 +105,7 @@ func (r *TaobaoItempropvaluesGetAPIRequest) SetAttrKeys(_attrKeys []string) erro
 	return nil
 }
 
-// Get AttrKeys Getter
+// GetAttrKeys AttrKeys Getter
 func (r TaobaoItempropvaluesGetAPIRequest) GetAttrKeys() []string {
 	return r._attrKeys
 }

@@ -45,7 +45,7 @@ func (r TaobaoOpenmallRefundSubmitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Distributor Setter
+// SetDistributor is Distributor Setter
 // 渠道
 func (r *TaobaoOpenmallRefundSubmitAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
@@ -53,12 +53,12 @@ func (r *TaobaoOpenmallRefundSubmitAPIRequest) SetDistributor(_distributor strin
 	return nil
 }
 
-// Get Distributor Getter
+// GetDistributor Distributor Getter
 func (r TaobaoOpenmallRefundSubmitAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
-// Set is LogisticsCompanyCode Setter
+// SetLogisticsCompanyCode is LogisticsCompanyCode Setter
 // 物流公司编码
 func (r *TaobaoOpenmallRefundSubmitAPIRequest) SetLogisticsCompanyCode(_logisticsCompanyCode string) error {
 	r._logisticsCompanyCode = _logisticsCompanyCode
@@ -66,12 +66,12 @@ func (r *TaobaoOpenmallRefundSubmitAPIRequest) SetLogisticsCompanyCode(_logistic
 	return nil
 }
 
-// Get LogisticsCompanyCode Getter
+// GetLogisticsCompanyCode LogisticsCompanyCode Getter
 func (r TaobaoOpenmallRefundSubmitAPIRequest) GetLogisticsCompanyCode() string {
 	return r._logisticsCompanyCode
 }
 
-// Set is LogisticsCompanyName Setter
+// SetLogisticsCompanyName is LogisticsCompanyName Setter
 // 物流公司名称
 func (r *TaobaoOpenmallRefundSubmitAPIRequest) SetLogisticsCompanyName(_logisticsCompanyName string) error {
 	r._logisticsCompanyName = _logisticsCompanyName
@@ -79,12 +79,12 @@ func (r *TaobaoOpenmallRefundSubmitAPIRequest) SetLogisticsCompanyName(_logistic
 	return nil
 }
 
-// Get LogisticsCompanyName Getter
+// GetLogisticsCompanyName LogisticsCompanyName Getter
 func (r TaobaoOpenmallRefundSubmitAPIRequest) GetLogisticsCompanyName() string {
 	return r._logisticsCompanyName
 }
 
-// Set is LogisticsNo Setter
+// SetLogisticsNo is LogisticsNo Setter
 // 快递单号
 func (r *TaobaoOpenmallRefundSubmitAPIRequest) SetLogisticsNo(_logisticsNo string) error {
 	r._logisticsNo = _logisticsNo
@@ -92,12 +92,12 @@ func (r *TaobaoOpenmallRefundSubmitAPIRequest) SetLogisticsNo(_logisticsNo strin
 	return nil
 }
 
-// Get LogisticsNo Getter
+// GetLogisticsNo LogisticsNo Getter
 func (r TaobaoOpenmallRefundSubmitAPIRequest) GetLogisticsNo() string {
 	return r._logisticsNo
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款单ID
 func (r *TaobaoOpenmallRefundSubmitAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -105,7 +105,7 @@ func (r *TaobaoOpenmallRefundSubmitAPIRequest) SetRefundId(_refundId int64) erro
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoOpenmallRefundSubmitAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }

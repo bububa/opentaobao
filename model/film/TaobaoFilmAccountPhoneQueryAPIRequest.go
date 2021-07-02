@@ -37,7 +37,7 @@ func (r TaobaoFilmAccountPhoneQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 11位手机号码
 func (r *TaobaoFilmAccountPhoneQueryAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -45,7 +45,7 @@ func (r *TaobaoFilmAccountPhoneQueryAPIRequest) SetPhone(_phone string) error {
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r TaobaoFilmAccountPhoneQueryAPIRequest) GetPhone() string {
 	return r._phone
 }

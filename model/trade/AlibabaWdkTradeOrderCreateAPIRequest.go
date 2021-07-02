@@ -37,7 +37,7 @@ func (r AlibabaWdkTradeOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Trade Setter
+// SetTrade is Trade Setter
 // 待创建的订单
 func (r *AlibabaWdkTradeOrderCreateAPIRequest) SetTrade(_trade *TradeOrder) error {
 	r._trade = _trade
@@ -45,7 +45,7 @@ func (r *AlibabaWdkTradeOrderCreateAPIRequest) SetTrade(_trade *TradeOrder) erro
 	return nil
 }
 
-// Get Trade Getter
+// GetTrade Trade Getter
 func (r AlibabaWdkTradeOrderCreateAPIRequest) GetTrade() *TradeOrder {
 	return r._trade
 }

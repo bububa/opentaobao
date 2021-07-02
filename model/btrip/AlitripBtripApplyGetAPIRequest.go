@@ -43,7 +43,7 @@ func (r AlitripBtripApplyGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ThirdpartApplyId Setter
+// SetThirdpartApplyId is ThirdpartApplyId Setter
 // 外部审批单id
 func (r *AlitripBtripApplyGetAPIRequest) SetThirdpartApplyId(_thirdpartApplyId string) error {
 	r._thirdpartApplyId = _thirdpartApplyId
@@ -51,12 +51,12 @@ func (r *AlitripBtripApplyGetAPIRequest) SetThirdpartApplyId(_thirdpartApplyId s
 	return nil
 }
 
-// Get ThirdpartApplyId Getter
+// GetThirdpartApplyId ThirdpartApplyId Getter
 func (r AlitripBtripApplyGetAPIRequest) GetThirdpartApplyId() string {
 	return r._thirdpartApplyId
 }
 
-// Set is ApplyId Setter
+// SetApplyId is ApplyId Setter
 // 阿里商旅审批单id
 func (r *AlitripBtripApplyGetAPIRequest) SetApplyId(_applyId int64) error {
 	r._applyId = _applyId
@@ -64,12 +64,12 @@ func (r *AlitripBtripApplyGetAPIRequest) SetApplyId(_applyId int64) error {
 	return nil
 }
 
-// Get ApplyId Getter
+// GetApplyId ApplyId Getter
 func (r AlitripBtripApplyGetAPIRequest) GetApplyId() int64 {
 	return r._applyId
 }
 
-// Set is CorpId Setter
+// SetCorpId is CorpId Setter
 // 企业id
 func (r *AlitripBtripApplyGetAPIRequest) SetCorpId(_corpId string) error {
 	r._corpId = _corpId
@@ -77,12 +77,12 @@ func (r *AlitripBtripApplyGetAPIRequest) SetCorpId(_corpId string) error {
 	return nil
 }
 
-// Get CorpId Getter
+// GetCorpId CorpId Getter
 func (r AlitripBtripApplyGetAPIRequest) GetCorpId() string {
 	return r._corpId
 }
 
-// Set is ApplyShowId Setter
+// SetApplyShowId is ApplyShowId Setter
 // 审批单展示id
 func (r *AlitripBtripApplyGetAPIRequest) SetApplyShowId(_applyShowId string) error {
 	r._applyShowId = _applyShowId
@@ -90,7 +90,7 @@ func (r *AlitripBtripApplyGetAPIRequest) SetApplyShowId(_applyShowId string) err
 	return nil
 }
 
-// Get ApplyShowId Getter
+// GetApplyShowId ApplyShowId Getter
 func (r AlitripBtripApplyGetAPIRequest) GetApplyShowId() string {
 	return r._applyShowId
 }

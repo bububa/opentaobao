@@ -37,7 +37,7 @@ func (r TaobaoAlitripAxinTransFundConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuterOrderId Setter
+// SetOuterOrderId is OuterOrderId Setter
 // 外部订单编号
 func (r *TaobaoAlitripAxinTransFundConfirmAPIRequest) SetOuterOrderId(_outerOrderId string) error {
 	r._outerOrderId = _outerOrderId
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripAxinTransFundConfirmAPIRequest) SetOuterOrderId(_outerOrde
 	return nil
 }
 
-// Get OuterOrderId Getter
+// GetOuterOrderId OuterOrderId Getter
 func (r TaobaoAlitripAxinTransFundConfirmAPIRequest) GetOuterOrderId() string {
 	return r._outerOrderId
 }

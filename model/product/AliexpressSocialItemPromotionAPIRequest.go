@@ -45,7 +45,7 @@ func (r AliexpressSocialItemPromotionAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TargetUrl Setter
+// SetTargetUrl is TargetUrl Setter
 // 推广的商品链接
 func (r *AliexpressSocialItemPromotionAPIRequest) SetTargetUrl(_targetUrl string) error {
 	r._targetUrl = _targetUrl
@@ -53,12 +53,12 @@ func (r *AliexpressSocialItemPromotionAPIRequest) SetTargetUrl(_targetUrl string
 	return nil
 }
 
-// Get TargetUrl Getter
+// GetTargetUrl TargetUrl Getter
 func (r AliexpressSocialItemPromotionAPIRequest) GetTargetUrl() string {
 	return r._targetUrl
 }
 
-// Set is Af Setter
+// SetAf is Af Setter
 // 子渠道号
 func (r *AliexpressSocialItemPromotionAPIRequest) SetAf(_af string) error {
 	r._af = _af
@@ -66,12 +66,12 @@ func (r *AliexpressSocialItemPromotionAPIRequest) SetAf(_af string) error {
 	return nil
 }
 
-// Get Af Getter
+// GetAf Af Getter
 func (r AliexpressSocialItemPromotionAPIRequest) GetAf() string {
 	return r._af
 }
 
-// Set is Cn Setter
+// SetCn is Cn Setter
 // campaign Id
 func (r *AliexpressSocialItemPromotionAPIRequest) SetCn(_cn string) error {
 	r._cn = _cn
@@ -79,12 +79,12 @@ func (r *AliexpressSocialItemPromotionAPIRequest) SetCn(_cn string) error {
 	return nil
 }
 
-// Get Cn Getter
+// GetCn Cn Getter
 func (r AliexpressSocialItemPromotionAPIRequest) GetCn() string {
 	return r._cn
 }
 
-// Set is Cv Setter
+// SetCv is Cv Setter
 // creative id
 func (r *AliexpressSocialItemPromotionAPIRequest) SetCv(_cv string) error {
 	r._cv = _cv
@@ -92,12 +92,12 @@ func (r *AliexpressSocialItemPromotionAPIRequest) SetCv(_cv string) error {
 	return nil
 }
 
-// Get Cv Getter
+// GetCv Cv Getter
 func (r AliexpressSocialItemPromotionAPIRequest) GetCv() string {
 	return r._cv
 }
 
-// Set is Dp Setter
+// SetDp is Dp Setter
 // click id
 func (r *AliexpressSocialItemPromotionAPIRequest) SetDp(_dp string) error {
 	r._dp = _dp
@@ -105,7 +105,7 @@ func (r *AliexpressSocialItemPromotionAPIRequest) SetDp(_dp string) error {
 	return nil
 }
 
-// Get Dp Getter
+// GetDp Dp Getter
 func (r AliexpressSocialItemPromotionAPIRequest) GetDp() string {
 	return r._dp
 }

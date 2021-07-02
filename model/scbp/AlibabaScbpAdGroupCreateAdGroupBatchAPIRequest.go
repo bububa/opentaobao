@@ -41,7 +41,7 @@ func (r AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 计划id
 func (r *AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -49,12 +49,12 @@ func (r *AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) SetCampaignId(_campaign
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is AdGroupBatchOperation Setter
+// SetAdGroupBatchOperation is AdGroupBatchOperation Setter
 // 入参
 func (r *AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) SetAdGroupBatchOperation(_adGroupBatchOperation *AdGroupBatchOperationDto) error {
 	r._adGroupBatchOperation = _adGroupBatchOperation
@@ -62,12 +62,12 @@ func (r *AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) SetAdGroupBatchOperatio
 	return nil
 }
 
-// Get AdGroupBatchOperation Getter
+// GetAdGroupBatchOperation AdGroupBatchOperation Getter
 func (r AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) GetAdGroupBatchOperation() *AdGroupBatchOperationDto {
 	return r._adGroupBatchOperation
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -75,7 +75,7 @@ func (r *AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) SetTopContext(_topConte
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdGroupCreateAdGroupBatchAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }

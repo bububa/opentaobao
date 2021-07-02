@@ -43,7 +43,7 @@ func (r TaobaoPromotionCouponSellerSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SellerNick Setter
+// SetSellerNick is SellerNick Setter
 // 卖家昵称
 func (r *TaobaoPromotionCouponSellerSearchAPIRequest) SetSellerNick(_sellerNick string) error {
 	r._sellerNick = _sellerNick
@@ -51,12 +51,12 @@ func (r *TaobaoPromotionCouponSellerSearchAPIRequest) SetSellerNick(_sellerNick 
 	return nil
 }
 
-// Get SellerNick Getter
+// GetSellerNick SellerNick Getter
 func (r TaobaoPromotionCouponSellerSearchAPIRequest) GetSellerNick() string {
 	return r._sellerNick
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前第几页  从第一页开始
 func (r *TaobaoPromotionCouponSellerSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -64,12 +64,12 @@ func (r *TaobaoPromotionCouponSellerSearchAPIRequest) SetCurrentPage(_currentPag
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TaobaoPromotionCouponSellerSearchAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页数据 最大20左右
 func (r *TaobaoPromotionCouponSellerSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *TaobaoPromotionCouponSellerSearchAPIRequest) SetPageSize(_pageSize int6
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoPromotionCouponSellerSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is SpreadIds Setter
+// SetSpreadIds is SpreadIds Setter
 // 券id集合
 func (r *TaobaoPromotionCouponSellerSearchAPIRequest) SetSpreadIds(_spreadIds []string) error {
 	r._spreadIds = _spreadIds
@@ -90,7 +90,7 @@ func (r *TaobaoPromotionCouponSellerSearchAPIRequest) SetSpreadIds(_spreadIds []
 	return nil
 }
 
-// Get SpreadIds Getter
+// GetSpreadIds SpreadIds Getter
 func (r TaobaoPromotionCouponSellerSearchAPIRequest) GetSpreadIds() []string {
 	return r._spreadIds
 }

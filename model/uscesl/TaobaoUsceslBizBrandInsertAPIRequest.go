@@ -39,7 +39,7 @@ func (r TaobaoUsceslBizBrandInsertAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BrandName Setter
+// SetBrandName is BrandName Setter
 // 商家名称
 func (r *TaobaoUsceslBizBrandInsertAPIRequest) SetBrandName(_brandName string) error {
 	r._brandName = _brandName
@@ -47,12 +47,12 @@ func (r *TaobaoUsceslBizBrandInsertAPIRequest) SetBrandName(_brandName string) e
 	return nil
 }
 
-// Get BrandName Getter
+// GetBrandName BrandName Getter
 func (r TaobaoUsceslBizBrandInsertAPIRequest) GetBrandName() string {
 	return r._brandName
 }
 
-// Set is BrandOutCode Setter
+// SetBrandOutCode is BrandOutCode Setter
 // 商家外部编号
 func (r *TaobaoUsceslBizBrandInsertAPIRequest) SetBrandOutCode(_brandOutCode string) error {
 	r._brandOutCode = _brandOutCode
@@ -60,7 +60,7 @@ func (r *TaobaoUsceslBizBrandInsertAPIRequest) SetBrandOutCode(_brandOutCode str
 	return nil
 }
 
-// Get BrandOutCode Getter
+// GetBrandOutCode BrandOutCode Getter
 func (r TaobaoUsceslBizBrandInsertAPIRequest) GetBrandOutCode() string {
 	return r._brandOutCode
 }

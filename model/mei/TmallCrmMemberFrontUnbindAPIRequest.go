@@ -37,7 +37,7 @@ func (r TmallCrmMemberFrontUnbindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 会员昵称
 func (r *TmallCrmMemberFrontUnbindAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -45,7 +45,7 @@ func (r *TmallCrmMemberFrontUnbindAPIRequest) SetUserNick(_userNick string) erro
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r TmallCrmMemberFrontUnbindAPIRequest) GetUserNick() string {
 	return r._userNick
 }

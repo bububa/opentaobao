@@ -37,7 +37,7 @@ func (r TaobaoTvpayPartnerOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderNo Setter
+// SetOrderNo is OrderNo Setter
 // 商户订单号
 func (r *TaobaoTvpayPartnerOrderQueryAPIRequest) SetOrderNo(_orderNo string) error {
 	r._orderNo = _orderNo
@@ -45,7 +45,7 @@ func (r *TaobaoTvpayPartnerOrderQueryAPIRequest) SetOrderNo(_orderNo string) err
 	return nil
 }
 
-// Get OrderNo Getter
+// GetOrderNo OrderNo Getter
 func (r TaobaoTvpayPartnerOrderQueryAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }

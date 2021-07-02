@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentChannelQueryAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ChannelAuditQuery Setter
+// SetChannelAuditQuery is ChannelAuditQuery Setter
 // ChannelAuditQueryBO
 func (r *YunosTvpubadminContentChannelQueryAPIRequest) SetChannelAuditQuery(_channelAuditQuery string) error {
 	r._channelAuditQuery = _channelAuditQuery
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentChannelQueryAPIRequest) SetChannelAuditQuery(_cha
 	return nil
 }
 
-// Get ChannelAuditQuery Getter
+// GetChannelAuditQuery ChannelAuditQuery Getter
 func (r YunosTvpubadminContentChannelQueryAPIRequest) GetChannelAuditQuery() string {
 	return r._channelAuditQuery
 }

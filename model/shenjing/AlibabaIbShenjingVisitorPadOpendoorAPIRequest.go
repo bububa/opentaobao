@@ -39,7 +39,7 @@ func (r AlibabaIbShenjingVisitorPadOpendoorAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 访客标识
 func (r *AlibabaIbShenjingVisitorPadOpendoorAPIRequest) SetId(_id string) error {
 	r._id = _id
@@ -47,12 +47,12 @@ func (r *AlibabaIbShenjingVisitorPadOpendoorAPIRequest) SetId(_id string) error 
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaIbShenjingVisitorPadOpendoorAPIRequest) GetId() string {
 	return r._id
 }
 
-// Set is PadId Setter
+// SetPadId is PadId Setter
 // padid
 func (r *AlibabaIbShenjingVisitorPadOpendoorAPIRequest) SetPadId(_padId string) error {
 	r._padId = _padId
@@ -60,7 +60,7 @@ func (r *AlibabaIbShenjingVisitorPadOpendoorAPIRequest) SetPadId(_padId string) 
 	return nil
 }
 
-// Get PadId Getter
+// GetPadId PadId Getter
 func (r AlibabaIbShenjingVisitorPadOpendoorAPIRequest) GetPadId() string {
 	return r._padId
 }

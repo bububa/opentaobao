@@ -39,7 +39,7 @@ func (r AlibabaIcbuProductGroupGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupId Setter
+// SetGroupId is GroupId Setter
 // 分组ID，传-1获得所有一级分组
 func (r *AlibabaIcbuProductGroupGetAPIRequest) SetGroupId(_groupId int64) error {
 	r._groupId = _groupId
@@ -47,12 +47,12 @@ func (r *AlibabaIcbuProductGroupGetAPIRequest) SetGroupId(_groupId int64) error 
 	return nil
 }
 
-// Get GroupId Getter
+// GetGroupId GroupId Getter
 func (r AlibabaIcbuProductGroupGetAPIRequest) GetGroupId() int64 {
 	return r._groupId
 }
 
-// Set is ExtraContext Setter
+// SetExtraContext is ExtraContext Setter
 // 补充信息
 func (r *AlibabaIcbuProductGroupGetAPIRequest) SetExtraContext(_extraContext string) error {
 	r._extraContext = _extraContext
@@ -60,7 +60,7 @@ func (r *AlibabaIcbuProductGroupGetAPIRequest) SetExtraContext(_extraContext str
 	return nil
 }
 
-// Get ExtraContext Getter
+// GetExtraContext ExtraContext Getter
 func (r AlibabaIcbuProductGroupGetAPIRequest) GetExtraContext() string {
 	return r._extraContext
 }

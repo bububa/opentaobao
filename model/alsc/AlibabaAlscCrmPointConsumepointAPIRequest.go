@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmPointConsumepointAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamConsumePointOpenReq Setter
+// SetParamConsumePointOpenReq is ParamConsumePointOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmPointConsumepointAPIRequest) SetParamConsumePointOpenReq(_paramConsumePointOpenReq *ConsumePointOpenReq) error {
 	r._paramConsumePointOpenReq = _paramConsumePointOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmPointConsumepointAPIRequest) SetParamConsumePointOpenReq(
 	return nil
 }
 
-// Get ParamConsumePointOpenReq Getter
+// GetParamConsumePointOpenReq ParamConsumePointOpenReq Getter
 func (r AlibabaAlscCrmPointConsumepointAPIRequest) GetParamConsumePointOpenReq() *ConsumePointOpenReq {
 	return r._paramConsumePointOpenReq
 }

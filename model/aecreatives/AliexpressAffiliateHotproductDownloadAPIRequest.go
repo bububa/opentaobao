@@ -55,7 +55,7 @@ func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is TrackingId Setter
+// SetTrackingId is TrackingId Setter
 // trackingId
 func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetTrackingId(_trackingId string) error {
 	r._trackingId = _trackingId
@@ -63,12 +63,12 @@ func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetTrackingId(_trackin
 	return nil
 }
 
-// Get TrackingId Getter
+// GetTrackingId TrackingId Getter
 func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetTrackingId() string {
 	return r._trackingId
 }
 
-// Set is AppSignature Setter
+// SetAppSignature is AppSignature Setter
 // 请求签名
 func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetAppSignature(_appSignature string) error {
 	r._appSignature = _appSignature
@@ -76,12 +76,12 @@ func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetAppSignature(_appSi
 	return nil
 }
 
-// Get AppSignature Getter
+// GetAppSignature AppSignature Getter
 func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetAppSignature() string {
 	return r._appSignature
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 类目ID
 func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetCategoryId(_categoryId string) error {
 	r._categoryId = _categoryId
@@ -89,12 +89,12 @@ func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetCategoryId(_categor
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetCategoryId() string {
 	return r._categoryId
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回字段列表
 func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -102,12 +102,12 @@ func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetFields(_fields stri
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is LocaleSite Setter
+// SetLocaleSite is LocaleSite Setter
 // 站点商品标：global,it_site,es_site,ru_site
 func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetLocaleSite(_localeSite string) error {
 	r._localeSite = _localeSite
@@ -115,12 +115,12 @@ func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetLocaleSite(_localeS
 	return nil
 }
 
-// Get LocaleSite Getter
+// GetLocaleSite LocaleSite Getter
 func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetLocaleSite() string {
 	return r._localeSite
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 请求页数
 func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -128,12 +128,12 @@ func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetPageNo(_pageNo int6
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每次请求数量
 func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -141,12 +141,12 @@ func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetPageSize(_pageSize 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is TargetCurrency Setter
+// SetTargetCurrency is TargetCurrency Setter
 // 目标币种:USD, GBP, CAD, EUR, UAH, MXN, TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW
 func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetTargetCurrency(_targetCurrency string) error {
 	r._targetCurrency = _targetCurrency
@@ -154,12 +154,12 @@ func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetTargetCurrency(_tar
 	return nil
 }
 
-// Get TargetCurrency Getter
+// GetTargetCurrency TargetCurrency Getter
 func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetTargetCurrency() string {
 	return r._targetCurrency
 }
 
-// Set is TargetLanguage Setter
+// SetTargetLanguage is TargetLanguage Setter
 // 目标语言:EN,RU,PT,ES,FR,ID,IT,TH,JA,AR,VI,TR,DE,HE,KO,NL,PL,MX,CL,IW,IN
 func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetTargetLanguage(_targetLanguage string) error {
 	r._targetLanguage = _targetLanguage
@@ -167,12 +167,12 @@ func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetTargetLanguage(_tar
 	return nil
 }
 
-// Get TargetLanguage Getter
+// GetTargetLanguage TargetLanguage Getter
 func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetTargetLanguage() string {
 	return r._targetLanguage
 }
 
-// Set is Country Setter
+// SetCountry is Country Setter
 // 收货国家，可筛选能销售至该国家的商品，并根据该国家税率政策返回对应商品价格
 func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetCountry(_country string) error {
 	r._country = _country
@@ -180,7 +180,7 @@ func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetCountry(_country st
 	return nil
 }
 
-// Get Country Getter
+// GetCountry Country Getter
 func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetCountry() string {
 	return r._country
 }

@@ -43,7 +43,7 @@ func (r CainiaoGlobalSolutionInquiryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Locale Setter
+// SetLocale is Locale Setter
 // 多语言，zh_CN中文、en_US:英文、ru_RU俄语
 func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
@@ -51,12 +51,12 @@ func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetLocale(_locale string) error
 	return nil
 }
 
-// Get Locale Getter
+// GetLocale Locale Getter
 func (r CainiaoGlobalSolutionInquiryAPIRequest) GetLocale() string {
 	return r._locale
 }
 
-// Set is TradeOrderParam Setter
+// SetTradeOrderParam is TradeOrderParam Setter
 // 交易单参数
 func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetTradeOrderParam(_tradeOrderParam *OpenTradeOrderParam) error {
 	r._tradeOrderParam = _tradeOrderParam
@@ -64,12 +64,12 @@ func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetTradeOrderParam(_tradeOrderP
 	return nil
 }
 
-// Get TradeOrderParam Getter
+// GetTradeOrderParam TradeOrderParam Getter
 func (r CainiaoGlobalSolutionInquiryAPIRequest) GetTradeOrderParam() *OpenTradeOrderParam {
 	return r._tradeOrderParam
 }
 
-// Set is SellerInfoParam Setter
+// SetSellerInfoParam is SellerInfoParam Setter
 // 商家信息
 func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetSellerInfoParam(_sellerInfoParam *OpenSellerInfoParam) error {
 	r._sellerInfoParam = _sellerInfoParam
@@ -77,12 +77,12 @@ func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetSellerInfoParam(_sellerInfoP
 	return nil
 }
 
-// Get SellerInfoParam Getter
+// GetSellerInfoParam SellerInfoParam Getter
 func (r CainiaoGlobalSolutionInquiryAPIRequest) GetSellerInfoParam() *OpenSellerInfoParam {
 	return r._sellerInfoParam
 }
 
-// Set is PackageParams Setter
+// SetPackageParams is PackageParams Setter
 // 包裹参数
 func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetPackageParams(_packageParams []OpenPackageParam) error {
 	r._packageParams = _packageParams
@@ -90,7 +90,7 @@ func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetPackageParams(_packageParams
 	return nil
 }
 
-// Get PackageParams Getter
+// GetPackageParams PackageParams Getter
 func (r CainiaoGlobalSolutionInquiryAPIRequest) GetPackageParams() []OpenPackageParam {
 	return r._packageParams
 }

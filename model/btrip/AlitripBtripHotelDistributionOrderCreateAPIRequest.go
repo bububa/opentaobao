@@ -37,7 +37,7 @@ func (r AlitripBtripHotelDistributionOrderCreateAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ParamBtripHotelCreateOrderRq Setter
+// SetParamBtripHotelCreateOrderRq is ParamBtripHotelCreateOrderRq Setter
 // 创建订单请求入参
 func (r *AlitripBtripHotelDistributionOrderCreateAPIRequest) SetParamBtripHotelCreateOrderRq(_paramBtripHotelCreateOrderRq *BtripHotelCreateOrderRq) error {
 	r._paramBtripHotelCreateOrderRq = _paramBtripHotelCreateOrderRq
@@ -45,7 +45,7 @@ func (r *AlitripBtripHotelDistributionOrderCreateAPIRequest) SetParamBtripHotelC
 	return nil
 }
 
-// Get ParamBtripHotelCreateOrderRq Getter
+// GetParamBtripHotelCreateOrderRq ParamBtripHotelCreateOrderRq Getter
 func (r AlitripBtripHotelDistributionOrderCreateAPIRequest) GetParamBtripHotelCreateOrderRq() *BtripHotelCreateOrderRq {
 	return r._paramBtripHotelCreateOrderRq
 }

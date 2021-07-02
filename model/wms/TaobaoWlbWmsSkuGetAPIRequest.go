@@ -41,7 +41,7 @@ func (r TaobaoWlbWmsSkuGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemCode Setter
+// SetItemCode is ItemCode Setter
 // 菜鸟商品ID,与itemcode必须有一个值不为空
 func (r *TaobaoWlbWmsSkuGetAPIRequest) SetItemCode(_itemCode string) error {
 	r._itemCode = _itemCode
@@ -49,12 +49,12 @@ func (r *TaobaoWlbWmsSkuGetAPIRequest) SetItemCode(_itemCode string) error {
 	return nil
 }
 
-// Get ItemCode Getter
+// GetItemCode ItemCode Getter
 func (r TaobaoWlbWmsSkuGetAPIRequest) GetItemCode() string {
 	return r._itemCode
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商家商品编码,与itemid必须有一个值不为空
 func (r *TaobaoWlbWmsSkuGetAPIRequest) SetItemId(_itemId string) error {
 	r._itemId = _itemId
@@ -62,12 +62,12 @@ func (r *TaobaoWlbWmsSkuGetAPIRequest) SetItemId(_itemId string) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoWlbWmsSkuGetAPIRequest) GetItemId() string {
 	return r._itemId
 }
 
-// Set is OwnerUserId Setter
+// SetOwnerUserId is OwnerUserId Setter
 // 货主ID
 func (r *TaobaoWlbWmsSkuGetAPIRequest) SetOwnerUserId(_ownerUserId string) error {
 	r._ownerUserId = _ownerUserId
@@ -75,7 +75,7 @@ func (r *TaobaoWlbWmsSkuGetAPIRequest) SetOwnerUserId(_ownerUserId string) error
 	return nil
 }
 
-// Get OwnerUserId Getter
+// GetOwnerUserId OwnerUserId Getter
 func (r TaobaoWlbWmsSkuGetAPIRequest) GetOwnerUserId() string {
 	return r._ownerUserId
 }

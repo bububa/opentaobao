@@ -37,7 +37,7 @@ func (r YunosTvpubadminManageDialogAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DialogJson Setter
+// SetDialogJson is DialogJson Setter
 // 新增的全局弹窗json
 func (r *YunosTvpubadminManageDialogAddAPIRequest) SetDialogJson(_dialogJson string) error {
 	r._dialogJson = _dialogJson
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminManageDialogAddAPIRequest) SetDialogJson(_dialogJson str
 	return nil
 }
 
-// Get DialogJson Getter
+// GetDialogJson DialogJson Getter
 func (r YunosTvpubadminManageDialogAddAPIRequest) GetDialogJson() string {
 	return r._dialogJson
 }

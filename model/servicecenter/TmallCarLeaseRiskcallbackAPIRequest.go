@@ -37,7 +37,7 @@ func (r TmallCarLeaseRiskcallbackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CreditInfo Setter
+// SetCreditInfo is CreditInfo Setter
 // 授信结果
 func (r *TmallCarLeaseRiskcallbackAPIRequest) SetCreditInfo(_creditInfo *CreditInfoTopDto) error {
 	r._creditInfo = _creditInfo
@@ -45,7 +45,7 @@ func (r *TmallCarLeaseRiskcallbackAPIRequest) SetCreditInfo(_creditInfo *CreditI
 	return nil
 }
 
-// Get CreditInfo Getter
+// GetCreditInfo CreditInfo Getter
 func (r TmallCarLeaseRiskcallbackAPIRequest) GetCreditInfo() *CreditInfoTopDto {
 	return r._creditInfo
 }

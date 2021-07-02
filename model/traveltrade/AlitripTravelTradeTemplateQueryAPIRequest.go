@@ -39,7 +39,7 @@ func (r AlitripTravelTradeTemplateQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IsNew Setter
+// SetIsNew is IsNew Setter
 // 是否取最新的模版
 func (r *AlitripTravelTradeTemplateQueryAPIRequest) SetIsNew(_isNew bool) error {
 	r._isNew = _isNew
@@ -47,12 +47,12 @@ func (r *AlitripTravelTradeTemplateQueryAPIRequest) SetIsNew(_isNew bool) error 
 	return nil
 }
 
-// Get IsNew Getter
+// GetIsNew IsNew Getter
 func (r AlitripTravelTradeTemplateQueryAPIRequest) GetIsNew() bool {
 	return r._isNew
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 淘宝平台订单ID
 func (r *AlitripTravelTradeTemplateQueryAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -60,7 +60,7 @@ func (r *AlitripTravelTradeTemplateQueryAPIRequest) SetOrderId(_orderId int64) e
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlitripTravelTradeTemplateQueryAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }

@@ -43,7 +43,7 @@ func (r TaobaoOpentradeActivityQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 活动结束时间
 func (r *TaobaoOpentradeActivityQueryAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -51,12 +51,12 @@ func (r *TaobaoOpentradeActivityQueryAPIRequest) SetEndTime(_endTime string) err
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoOpentradeActivityQueryAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is ActivityName Setter
+// SetActivityName is ActivityName Setter
 // 活动名称
 func (r *TaobaoOpentradeActivityQueryAPIRequest) SetActivityName(_activityName string) error {
 	r._activityName = _activityName
@@ -64,12 +64,12 @@ func (r *TaobaoOpentradeActivityQueryAPIRequest) SetActivityName(_activityName s
 	return nil
 }
 
-// Get ActivityName Getter
+// GetActivityName ActivityName Getter
 func (r TaobaoOpentradeActivityQueryAPIRequest) GetActivityName() string {
 	return r._activityName
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
 func (r *TaobaoOpentradeActivityQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *TaobaoOpentradeActivityQueryAPIRequest) SetPageSize(_pageSize int64) er
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoOpentradeActivityQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 分页序号
 func (r *TaobaoOpentradeActivityQueryAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -90,7 +90,7 @@ func (r *TaobaoOpentradeActivityQueryAPIRequest) SetPageIndex(_pageIndex int64) 
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoOpentradeActivityQueryAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }

@@ -43,7 +43,7 @@ func (r AlibabaWdkPictureUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PictureCategoryId Setter
+// SetPictureCategoryId is PictureCategoryId Setter
 // 图片分类ID，设置具体某个分类ID或设置0上传到默认分类，只能传入一个分类
 func (r *AlibabaWdkPictureUploadAPIRequest) SetPictureCategoryId(_pictureCategoryId int64) error {
 	r._pictureCategoryId = _pictureCategoryId
@@ -51,12 +51,12 @@ func (r *AlibabaWdkPictureUploadAPIRequest) SetPictureCategoryId(_pictureCategor
 	return nil
 }
 
-// Get PictureCategoryId Getter
+// GetPictureCategoryId PictureCategoryId Getter
 func (r AlibabaWdkPictureUploadAPIRequest) GetPictureCategoryId() int64 {
 	return r._pictureCategoryId
 }
 
-// Set is Img Setter
+// SetImg is Img Setter
 // 图片二进制文件流,不能为空,允许png、jpg、gif图片格式,3M以内
 func (r *AlibabaWdkPictureUploadAPIRequest) SetImg(_img *model.File) error {
 	r._img = _img
@@ -64,12 +64,12 @@ func (r *AlibabaWdkPictureUploadAPIRequest) SetImg(_img *model.File) error {
 	return nil
 }
 
-// Get Img Getter
+// GetImg Img Getter
 func (r AlibabaWdkPictureUploadAPIRequest) GetImg() *model.File {
 	return r._img
 }
 
-// Set is ImgInputTitle Setter
+// SetImgInputTitle is ImgInputTitle Setter
 // 包括后缀名的图片标题,不能为空，如Bule.jpg,有些卖家希望图片上传后取图片文件的默认名
 func (r *AlibabaWdkPictureUploadAPIRequest) SetImgInputTitle(_imgInputTitle string) error {
 	r._imgInputTitle = _imgInputTitle
@@ -77,12 +77,12 @@ func (r *AlibabaWdkPictureUploadAPIRequest) SetImgInputTitle(_imgInputTitle stri
 	return nil
 }
 
-// Get ImgInputTitle Getter
+// GetImgInputTitle ImgInputTitle Getter
 func (r AlibabaWdkPictureUploadAPIRequest) GetImgInputTitle() string {
 	return r._imgInputTitle
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 图片标题,如果为空,传的图片标题就取去掉后缀名的image_input_title,超过50字符长度会截取50字符,重名会在标题末尾加"(1)";标题末尾已经有"(数字)"了，则数字加1
 func (r *AlibabaWdkPictureUploadAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -90,7 +90,7 @@ func (r *AlibabaWdkPictureUploadAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r AlibabaWdkPictureUploadAPIRequest) GetTitle() string {
 	return r._title
 }

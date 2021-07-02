@@ -37,7 +37,7 @@ func (r AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is OrderlSyncDTO Setter
+// SetOrderlSyncDTO is OrderlSyncDTO Setter
 // 订单信息
 func (r *AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest) SetOrderlSyncDTO(_orderlSyncDTO *OrderlSyncDto) error {
 	r._orderlSyncDTO = _orderlSyncDTO
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest) SetOrderlSyncDTO(
 	return nil
 }
 
-// Get OrderlSyncDTO Getter
+// GetOrderlSyncDTO OrderlSyncDTO Getter
 func (r AlibabaAlihealthMedicalbaseOrderStatusSyncAPIRequest) GetOrderlSyncDTO() *OrderlSyncDto {
 	return r._orderlSyncDTO
 }

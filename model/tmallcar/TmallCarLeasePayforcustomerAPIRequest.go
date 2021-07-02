@@ -47,7 +47,7 @@ func (r TmallCarLeasePayforcustomerAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 天猫开新车订单id
 func (r *TmallCarLeasePayforcustomerAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -55,12 +55,12 @@ func (r *TmallCarLeasePayforcustomerAPIRequest) SetOrderId(_orderId int64) error
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TmallCarLeasePayforcustomerAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is CustIproleId Setter
+// SetCustIproleId is CustIproleId Setter
 // 贷款客户在网商的会员ID
 func (r *TmallCarLeasePayforcustomerAPIRequest) SetCustIproleId(_custIproleId string) error {
 	r._custIproleId = _custIproleId
@@ -68,12 +68,12 @@ func (r *TmallCarLeasePayforcustomerAPIRequest) SetCustIproleId(_custIproleId st
 	return nil
 }
 
-// Get CustIproleId Getter
+// GetCustIproleId CustIproleId Getter
 func (r TmallCarLeasePayforcustomerAPIRequest) GetCustIproleId() string {
 	return r._custIproleId
 }
 
-// Set is Date Setter
+// SetDate is Date Setter
 // 还款日，精确到日，格式为yyyyMMdd，必须是当天
 func (r *TmallCarLeasePayforcustomerAPIRequest) SetDate(_date string) error {
 	r._date = _date
@@ -81,12 +81,12 @@ func (r *TmallCarLeasePayforcustomerAPIRequest) SetDate(_date string) error {
 	return nil
 }
 
-// Get Date Getter
+// GetDate Date Getter
 func (r TmallCarLeasePayforcustomerAPIRequest) GetDate() string {
 	return r._date
 }
 
-// Set is LoanArNo Setter
+// SetLoanArNo is LoanArNo Setter
 // 贷款合约号
 func (r *TmallCarLeasePayforcustomerAPIRequest) SetLoanArNo(_loanArNo string) error {
 	r._loanArNo = _loanArNo
@@ -94,12 +94,12 @@ func (r *TmallCarLeasePayforcustomerAPIRequest) SetLoanArNo(_loanArNo string) er
 	return nil
 }
 
-// Get LoanArNo Getter
+// GetLoanArNo LoanArNo Getter
 func (r TmallCarLeasePayforcustomerAPIRequest) GetLoanArNo() string {
 	return r._loanArNo
 }
 
-// Set is PrinAmt Setter
+// SetPrinAmt is PrinAmt Setter
 // 还款本金金额，单位默认为元，支持小数点两位，为了便于传输用合作方将数值型转换为字符串型
 func (r *TmallCarLeasePayforcustomerAPIRequest) SetPrinAmt(_prinAmt string) error {
 	r._prinAmt = _prinAmt
@@ -107,12 +107,12 @@ func (r *TmallCarLeasePayforcustomerAPIRequest) SetPrinAmt(_prinAmt string) erro
 	return nil
 }
 
-// Get PrinAmt Getter
+// GetPrinAmt PrinAmt Getter
 func (r TmallCarLeasePayforcustomerAPIRequest) GetPrinAmt() string {
 	return r._prinAmt
 }
 
-// Set is RequestId Setter
+// SetRequestId is RequestId Setter
 // 外部流水号格式：日期(8位)+序列号(8位）,序列号是数字，如00000001（必须是16位且符合该格式
 func (r *TmallCarLeasePayforcustomerAPIRequest) SetRequestId(_requestId string) error {
 	r._requestId = _requestId
@@ -120,7 +120,7 @@ func (r *TmallCarLeasePayforcustomerAPIRequest) SetRequestId(_requestId string) 
 	return nil
 }
 
-// Get RequestId Getter
+// GetRequestId RequestId Getter
 func (r TmallCarLeasePayforcustomerAPIRequest) GetRequestId() string {
 	return r._requestId
 }

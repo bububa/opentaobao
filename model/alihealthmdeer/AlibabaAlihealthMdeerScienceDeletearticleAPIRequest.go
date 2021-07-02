@@ -37,7 +37,7 @@ func (r AlibabaAlihealthMdeerScienceDeletearticleAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is ArticleId Setter
+// SetArticleId is ArticleId Setter
 // 文章ID
 func (r *AlibabaAlihealthMdeerScienceDeletearticleAPIRequest) SetArticleId(_articleId int64) error {
 	r._articleId = _articleId
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthMdeerScienceDeletearticleAPIRequest) SetArticleId(_arti
 	return nil
 }
 
-// Get ArticleId Getter
+// GetArticleId ArticleId Getter
 func (r AlibabaAlihealthMdeerScienceDeletearticleAPIRequest) GetArticleId() int64 {
 	return r._articleId
 }

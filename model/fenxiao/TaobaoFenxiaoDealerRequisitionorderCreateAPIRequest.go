@@ -57,7 +57,7 @@ func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is LogisticsType Setter
+// SetLogisticsType is LogisticsType Setter
 // 配送方式。SELF_PICKUP：自提；LOGISTICS：仓库发货
 func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetLogisticsType(_logisticsType string) error {
 	r._logisticsType = _logisticsType
@@ -65,12 +65,12 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetLogisticsType(_
 	return nil
 }
 
-// Get LogisticsType Getter
+// GetLogisticsType LogisticsType Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetLogisticsType() string {
 	return r._logisticsType
 }
 
-// Set is OrderDetail Setter
+// SetOrderDetail is OrderDetail Setter
 // 采购清单，存放多个采购明细，每个采购明细内部以‘:’隔开，多个采购明细之间以‘,’隔开. 例(分销产品id:skuid:购买数量:申请单价,分销产品id:skuid:购买数量:申请单价)，申请单价的单位为分。不存在sku请留空skuid，如（分销产品id::购买数量:申请单价）
 func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetOrderDetail(_orderDetail []string) error {
 	r._orderDetail = _orderDetail
@@ -78,12 +78,12 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetOrderDetail(_or
 	return nil
 }
 
-// Get OrderDetail Getter
+// GetOrderDetail OrderDetail Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetOrderDetail() []string {
 	return r._orderDetail
 }
 
-// Set is Province Setter
+// SetProvince is Province Setter
 // 收货人所在省份
 func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetProvince(_province string) error {
 	r._province = _province
@@ -91,12 +91,12 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetProvince(_provi
 	return nil
 }
 
-// Get Province Getter
+// GetProvince Province Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetProvince() string {
 	return r._province
 }
 
-// Set is City Setter
+// SetCity is City Setter
 // 收货人所在市
 func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetCity(_city string) error {
 	r._city = _city
@@ -104,12 +104,12 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetCity(_city stri
 	return nil
 }
 
-// Get City Getter
+// GetCity City Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetCity() string {
 	return r._city
 }
 
-// Set is District Setter
+// SetDistrict is District Setter
 // 收货人所在区
 func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetDistrict(_district string) error {
 	r._district = _district
@@ -117,12 +117,12 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetDistrict(_distr
 	return nil
 }
 
-// Get District Getter
+// GetDistrict District Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetDistrict() string {
 	return r._district
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 收货人所在街道地址
 func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetAddress(_address string) error {
 	r._address = _address
@@ -130,12 +130,12 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetAddress(_addres
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetAddress() string {
 	return r._address
 }
 
-// Set is PostCode Setter
+// SetPostCode is PostCode Setter
 // 收货人所在地区邮政编码
 func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetPostCode(_postCode string) error {
 	r._postCode = _postCode
@@ -143,12 +143,12 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetPostCode(_postC
 	return nil
 }
 
-// Get PostCode Getter
+// GetPostCode PostCode Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetPostCode() string {
 	return r._postCode
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 买家联系电话（此字段和mobile字段至少填写一个）
 func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -156,12 +156,12 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetPhone(_phone st
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetPhone() string {
 	return r._phone
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 买家的手机号码（1、此字段与phone字段至少填写一个。2、自提方式下此字段必填，保存提货人联系电话）
 func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -169,12 +169,12 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetMobile(_mobile 
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
-// Set is BuyerName Setter
+// SetBuyerName is BuyerName Setter
 // 买家姓名（自提方式填写提货人姓名）
 func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetBuyerName(_buyerName string) error {
 	r._buyerName = _buyerName
@@ -182,12 +182,12 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetBuyerName(_buye
 	return nil
 }
 
-// Get BuyerName Getter
+// GetBuyerName BuyerName Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetBuyerName() string {
 	return r._buyerName
 }
 
-// Set is IdCardNumber Setter
+// SetIdCardNumber is IdCardNumber Setter
 // 身份证号（自提方式必填，填写提货人身份证号码，提货时用于确认提货人身份）
 func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetIdCardNumber(_idCardNumber string) error {
 	r._idCardNumber = _idCardNumber
@@ -195,7 +195,7 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetIdCardNumber(_i
 	return nil
 }
 
-// Get IdCardNumber Getter
+// GetIdCardNumber IdCardNumber Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetIdCardNumber() string {
 	return r._idCardNumber
 }

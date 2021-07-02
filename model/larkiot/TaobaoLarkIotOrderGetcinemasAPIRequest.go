@@ -37,7 +37,7 @@ func (r TaobaoLarkIotOrderGetcinemasAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChannelCode Setter
+// SetChannelCode is ChannelCode Setter
 // 渠道编码
 func (r *TaobaoLarkIotOrderGetcinemasAPIRequest) SetChannelCode(_channelCode string) error {
 	r._channelCode = _channelCode
@@ -45,7 +45,7 @@ func (r *TaobaoLarkIotOrderGetcinemasAPIRequest) SetChannelCode(_channelCode str
 	return nil
 }
 
-// Get ChannelCode Getter
+// GetChannelCode ChannelCode Getter
 func (r TaobaoLarkIotOrderGetcinemasAPIRequest) GetChannelCode() string {
 	return r._channelCode
 }

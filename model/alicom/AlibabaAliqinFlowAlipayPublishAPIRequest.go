@@ -43,7 +43,7 @@ func (r AlibabaAliqinFlowAlipayPublishAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AlipayId Setter
+// SetAlipayId is AlipayId Setter
 // 用户的支付宝ID
 func (r *AlibabaAliqinFlowAlipayPublishAPIRequest) SetAlipayId(_alipayId string) error {
 	r._alipayId = _alipayId
@@ -51,12 +51,12 @@ func (r *AlibabaAliqinFlowAlipayPublishAPIRequest) SetAlipayId(_alipayId string)
 	return nil
 }
 
-// Get AlipayId Getter
+// GetAlipayId AlipayId Getter
 func (r AlibabaAliqinFlowAlipayPublishAPIRequest) GetAlipayId() string {
 	return r._alipayId
 }
 
-// Set is Serial Setter
+// SetSerial is Serial Setter
 // 外部流水号，用来做幂等校验
 func (r *AlibabaAliqinFlowAlipayPublishAPIRequest) SetSerial(_serial string) error {
 	r._serial = _serial
@@ -64,12 +64,12 @@ func (r *AlibabaAliqinFlowAlipayPublishAPIRequest) SetSerial(_serial string) err
 	return nil
 }
 
-// Get Serial Getter
+// GetSerial Serial Getter
 func (r AlibabaAliqinFlowAlipayPublishAPIRequest) GetSerial() string {
 	return r._serial
 }
 
-// Set is Flow Setter
+// SetFlow is Flow Setter
 // 发放的流量数，单位MB
 func (r *AlibabaAliqinFlowAlipayPublishAPIRequest) SetFlow(_flow string) error {
 	r._flow = _flow
@@ -77,12 +77,12 @@ func (r *AlibabaAliqinFlowAlipayPublishAPIRequest) SetFlow(_flow string) error {
 	return nil
 }
 
-// Get Flow Getter
+// GetFlow Flow Getter
 func (r AlibabaAliqinFlowAlipayPublishAPIRequest) GetFlow() string {
 	return r._flow
 }
 
-// Set is Reason Setter
+// SetReason is Reason Setter
 // 发放原因
 func (r *AlibabaAliqinFlowAlipayPublishAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
@@ -90,7 +90,7 @@ func (r *AlibabaAliqinFlowAlipayPublishAPIRequest) SetReason(_reason string) err
 	return nil
 }
 
-// Get Reason Getter
+// GetReason Reason Getter
 func (r AlibabaAliqinFlowAlipayPublishAPIRequest) GetReason() string {
 	return r._reason
 }

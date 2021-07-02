@@ -39,7 +39,7 @@ func (r AlibabaCampusAclNewListrolesAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Workbenchcontext Setter
+// SetWorkbenchcontext is Workbenchcontext Setter
 // 系统入参
 func (r *AlibabaCampusAclNewListrolesAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
 	r._workbenchcontext = _workbenchcontext
@@ -47,12 +47,12 @@ func (r *AlibabaCampusAclNewListrolesAPIRequest) SetWorkbenchcontext(_workbenchc
 	return nil
 }
 
-// Get Workbenchcontext Getter
+// GetWorkbenchcontext Workbenchcontext Getter
 func (r AlibabaCampusAclNewListrolesAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
 }
 
-// Set is Rolequeryparam Setter
+// SetRolequeryparam is Rolequeryparam Setter
 // 入参
 func (r *AlibabaCampusAclNewListrolesAPIRequest) SetRolequeryparam(_rolequeryparam *RoleQueryParam) error {
 	r._rolequeryparam = _rolequeryparam
@@ -60,7 +60,7 @@ func (r *AlibabaCampusAclNewListrolesAPIRequest) SetRolequeryparam(_rolequerypar
 	return nil
 }
 
-// Get Rolequeryparam Getter
+// GetRolequeryparam Rolequeryparam Getter
 func (r AlibabaCampusAclNewListrolesAPIRequest) GetRolequeryparam() *RoleQueryParam {
 	return r._rolequeryparam
 }

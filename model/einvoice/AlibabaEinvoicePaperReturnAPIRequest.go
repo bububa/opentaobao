@@ -55,7 +55,7 @@ func (r AlibabaEinvoicePaperReturnAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Ciphertext Setter
+// SetCiphertext is Ciphertext Setter
 // 发票密文，密码区的字符串
 func (r *AlibabaEinvoicePaperReturnAPIRequest) SetCiphertext(_ciphertext string) error {
 	r._ciphertext = _ciphertext
@@ -63,12 +63,12 @@ func (r *AlibabaEinvoicePaperReturnAPIRequest) SetCiphertext(_ciphertext string)
 	return nil
 }
 
-// Get Ciphertext Getter
+// GetCiphertext Ciphertext Getter
 func (r AlibabaEinvoicePaperReturnAPIRequest) GetCiphertext() string {
 	return r._ciphertext
 }
 
-// Set is InvoiceNo Setter
+// SetInvoiceNo is InvoiceNo Setter
 // 发票号码
 func (r *AlibabaEinvoicePaperReturnAPIRequest) SetInvoiceNo(_invoiceNo string) error {
 	r._invoiceNo = _invoiceNo
@@ -76,12 +76,12 @@ func (r *AlibabaEinvoicePaperReturnAPIRequest) SetInvoiceNo(_invoiceNo string) e
 	return nil
 }
 
-// Get InvoiceNo Getter
+// GetInvoiceNo InvoiceNo Getter
 func (r AlibabaEinvoicePaperReturnAPIRequest) GetInvoiceNo() string {
 	return r._invoiceNo
 }
 
-// Set is InvoiceDate Setter
+// SetInvoiceDate is InvoiceDate Setter
 // 发票日期
 func (r *AlibabaEinvoicePaperReturnAPIRequest) SetInvoiceDate(_invoiceDate string) error {
 	r._invoiceDate = _invoiceDate
@@ -89,12 +89,12 @@ func (r *AlibabaEinvoicePaperReturnAPIRequest) SetInvoiceDate(_invoiceDate strin
 	return nil
 }
 
-// Get InvoiceDate Getter
+// GetInvoiceDate InvoiceDate Getter
 func (r AlibabaEinvoicePaperReturnAPIRequest) GetInvoiceDate() string {
 	return r._invoiceDate
 }
 
-// Set is AntiFakeCode Setter
+// SetAntiFakeCode is AntiFakeCode Setter
 // 防伪码
 func (r *AlibabaEinvoicePaperReturnAPIRequest) SetAntiFakeCode(_antiFakeCode string) error {
 	r._antiFakeCode = _antiFakeCode
@@ -102,12 +102,12 @@ func (r *AlibabaEinvoicePaperReturnAPIRequest) SetAntiFakeCode(_antiFakeCode str
 	return nil
 }
 
-// Get AntiFakeCode Getter
+// GetAntiFakeCode AntiFakeCode Getter
 func (r AlibabaEinvoicePaperReturnAPIRequest) GetAntiFakeCode() string {
 	return r._antiFakeCode
 }
 
-// Set is DeviceNo Setter
+// SetDeviceNo is DeviceNo Setter
 // 税控设备编号(新版电子发票有)
 func (r *AlibabaEinvoicePaperReturnAPIRequest) SetDeviceNo(_deviceNo string) error {
 	r._deviceNo = _deviceNo
@@ -115,12 +115,12 @@ func (r *AlibabaEinvoicePaperReturnAPIRequest) SetDeviceNo(_deviceNo string) err
 	return nil
 }
 
-// Get DeviceNo Getter
+// GetDeviceNo DeviceNo Getter
 func (r AlibabaEinvoicePaperReturnAPIRequest) GetDeviceNo() string {
 	return r._deviceNo
 }
 
-// Set is InvoiceCode Setter
+// SetInvoiceCode is InvoiceCode Setter
 // 发票代码
 func (r *AlibabaEinvoicePaperReturnAPIRequest) SetInvoiceCode(_invoiceCode string) error {
 	r._invoiceCode = _invoiceCode
@@ -128,12 +128,12 @@ func (r *AlibabaEinvoicePaperReturnAPIRequest) SetInvoiceCode(_invoiceCode strin
 	return nil
 }
 
-// Get InvoiceCode Getter
+// GetInvoiceCode InvoiceCode Getter
 func (r AlibabaEinvoicePaperReturnAPIRequest) GetInvoiceCode() string {
 	return r._invoiceCode
 }
 
-// Set is CreateResult Setter
+// SetCreateResult is CreateResult Setter
 // 开票结果"success"或者"fail"
 func (r *AlibabaEinvoicePaperReturnAPIRequest) SetCreateResult(_createResult string) error {
 	r._createResult = _createResult
@@ -141,12 +141,12 @@ func (r *AlibabaEinvoicePaperReturnAPIRequest) SetCreateResult(_createResult str
 	return nil
 }
 
-// Get CreateResult Getter
+// GetCreateResult CreateResult Getter
 func (r AlibabaEinvoicePaperReturnAPIRequest) GetCreateResult() string {
 	return r._createResult
 }
 
-// Set is BizErrorCode Setter
+// SetBizErrorCode is BizErrorCode Setter
 // 错误码
 func (r *AlibabaEinvoicePaperReturnAPIRequest) SetBizErrorCode(_bizErrorCode string) error {
 	r._bizErrorCode = _bizErrorCode
@@ -154,12 +154,12 @@ func (r *AlibabaEinvoicePaperReturnAPIRequest) SetBizErrorCode(_bizErrorCode str
 	return nil
 }
 
-// Get BizErrorCode Getter
+// GetBizErrorCode BizErrorCode Getter
 func (r AlibabaEinvoicePaperReturnAPIRequest) GetBizErrorCode() string {
 	return r._bizErrorCode
 }
 
-// Set is BizErrorMsg Setter
+// SetBizErrorMsg is BizErrorMsg Setter
 // 错误信息
 func (r *AlibabaEinvoicePaperReturnAPIRequest) SetBizErrorMsg(_bizErrorMsg string) error {
 	r._bizErrorMsg = _bizErrorMsg
@@ -167,12 +167,12 @@ func (r *AlibabaEinvoicePaperReturnAPIRequest) SetBizErrorMsg(_bizErrorMsg strin
 	return nil
 }
 
-// Get BizErrorMsg Getter
+// GetBizErrorMsg BizErrorMsg Getter
 func (r AlibabaEinvoicePaperReturnAPIRequest) GetBizErrorMsg() string {
 	return r._bizErrorMsg
 }
 
-// Set is ReqIndex Setter
+// SetReqIndex is ReqIndex Setter
 // 开票请求的唯一索引
 func (r *AlibabaEinvoicePaperReturnAPIRequest) SetReqIndex(_reqIndex string) error {
 	r._reqIndex = _reqIndex
@@ -180,7 +180,7 @@ func (r *AlibabaEinvoicePaperReturnAPIRequest) SetReqIndex(_reqIndex string) err
 	return nil
 }
 
-// Get ReqIndex Getter
+// GetReqIndex ReqIndex Getter
 func (r AlibabaEinvoicePaperReturnAPIRequest) GetReqIndex() string {
 	return r._reqIndex
 }

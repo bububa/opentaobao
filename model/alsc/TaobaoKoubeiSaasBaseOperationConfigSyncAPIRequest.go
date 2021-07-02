@@ -45,7 +45,7 @@ func (r TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is MerchantId Setter
+// SetMerchantId is MerchantId Setter
 // 商户ID
 func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetMerchantId(_merchantId string) error {
 	r._merchantId = _merchantId
@@ -53,12 +53,12 @@ func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetMerchantId(_merch
 	return nil
 }
 
-// Get MerchantId Getter
+// GetMerchantId MerchantId Getter
 func (r TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) GetMerchantId() string {
 	return r._merchantId
 }
 
-// Set is RequestId Setter
+// SetRequestId is RequestId Setter
 // 请求ID
 func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetRequestId(_requestId string) error {
 	r._requestId = _requestId
@@ -66,12 +66,12 @@ func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetRequestId(_reques
 	return nil
 }
 
-// Get RequestId Getter
+// GetRequestId RequestId Getter
 func (r TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) GetRequestId() string {
 	return r._requestId
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务类型。支付方式：payment_method
 func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -79,12 +79,12 @@ func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetBizType(_bizType 
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is OperationConfig Setter
+// SetOperationConfig is OperationConfig Setter
 // 经营设置json串
 func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetOperationConfig(_operationConfig string) error {
 	r._operationConfig = _operationConfig
@@ -92,12 +92,12 @@ func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetOperationConfig(_
 	return nil
 }
 
-// Get OperationConfig Getter
+// GetOperationConfig OperationConfig Getter
 func (r TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) GetOperationConfig() string {
 	return r._operationConfig
 }
 
-// Set is OuterOperatorId Setter
+// SetOuterOperatorId is OuterOperatorId Setter
 // 操作员ID
 func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetOuterOperatorId(_outerOperatorId string) error {
 	r._outerOperatorId = _outerOperatorId
@@ -105,7 +105,7 @@ func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetOuterOperatorId(_
 	return nil
 }
 
-// Get OuterOperatorId Getter
+// GetOuterOperatorId OuterOperatorId Getter
 func (r TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) GetOuterOperatorId() string {
 	return r._outerOperatorId
 }

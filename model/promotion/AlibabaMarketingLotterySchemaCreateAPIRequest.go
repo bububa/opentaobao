@@ -37,7 +37,7 @@ func (r AlibabaMarketingLotterySchemaCreateAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is LotterySchemaCreate Setter
+// SetLotterySchemaCreate is LotterySchemaCreate Setter
 // 创建抽奖方案请求对象
 func (r *AlibabaMarketingLotterySchemaCreateAPIRequest) SetLotterySchemaCreate(_lotterySchemaCreate *LotterySchemaCreateDto) error {
 	r._lotterySchemaCreate = _lotterySchemaCreate
@@ -45,7 +45,7 @@ func (r *AlibabaMarketingLotterySchemaCreateAPIRequest) SetLotterySchemaCreate(_
 	return nil
 }
 
-// Get LotterySchemaCreate Getter
+// GetLotterySchemaCreate LotterySchemaCreate Getter
 func (r AlibabaMarketingLotterySchemaCreateAPIRequest) GetLotterySchemaCreate() *LotterySchemaCreateDto {
 	return r._lotterySchemaCreate
 }

@@ -37,7 +37,7 @@ func (r AlibabaMosOnsiteTradeIsnewpayorderAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is OutTradeNo Setter
+// SetOutTradeNo is OutTradeNo Setter
 // 外部订单号
 func (r *AlibabaMosOnsiteTradeIsnewpayorderAPIRequest) SetOutTradeNo(_outTradeNo string) error {
 	r._outTradeNo = _outTradeNo
@@ -45,7 +45,7 @@ func (r *AlibabaMosOnsiteTradeIsnewpayorderAPIRequest) SetOutTradeNo(_outTradeNo
 	return nil
 }
 
-// Get OutTradeNo Getter
+// GetOutTradeNo OutTradeNo Getter
 func (r AlibabaMosOnsiteTradeIsnewpayorderAPIRequest) GetOutTradeNo() string {
 	return r._outTradeNo
 }

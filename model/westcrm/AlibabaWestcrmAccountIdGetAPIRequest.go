@@ -37,7 +37,7 @@ func (r AlibabaWestcrmAccountIdGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AlipayId Setter
+// SetAlipayId is AlipayId Setter
 // 支付宝id
 func (r *AlibabaWestcrmAccountIdGetAPIRequest) SetAlipayId(_alipayId string) error {
 	r._alipayId = _alipayId
@@ -45,7 +45,7 @@ func (r *AlibabaWestcrmAccountIdGetAPIRequest) SetAlipayId(_alipayId string) err
 	return nil
 }
 
-// Get AlipayId Getter
+// GetAlipayId AlipayId Getter
 func (r AlibabaWestcrmAccountIdGetAPIRequest) GetAlipayId() string {
 	return r._alipayId
 }

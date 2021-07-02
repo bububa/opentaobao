@@ -37,7 +37,7 @@ func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIReq
 	return params
 }
 
-// Set is LogisticsOrderCreationRequest Setter
+// SetLogisticsOrderCreationRequest is LogisticsOrderCreationRequest Setter
 // Logistic's order creation request
 func (r *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) SetLogisticsOrderCreationRequest(_logisticsOrderCreationRequest *LogisticOrderCreationForRmaRequest) error {
 	r._logisticsOrderCreationRequest = _logisticsOrderCreationRequest
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRe
 	return nil
 }
 
-// Get LogisticsOrderCreationRequest Getter
+// GetLogisticsOrderCreationRequest LogisticsOrderCreationRequest Getter
 func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) GetLogisticsOrderCreationRequest() *LogisticOrderCreationForRmaRequest {
 	return r._logisticsOrderCreationRequest
 }

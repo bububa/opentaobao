@@ -37,7 +37,7 @@ func (r AlibabaWdkSkuCategoryUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 更新请求模型
 func (r *AlibabaWdkSkuCategoryUpdateAPIRequest) SetParam(_param *CategoryDo) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSkuCategoryUpdateAPIRequest) SetParam(_param *CategoryDo) err
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaWdkSkuCategoryUpdateAPIRequest) GetParam() *CategoryDo {
 	return r._param
 }

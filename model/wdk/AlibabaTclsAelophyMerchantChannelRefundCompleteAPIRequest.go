@@ -37,7 +37,7 @@ func (r AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is RefundCompleteInfo Setter
+// SetRefundCompleteInfo is RefundCompleteInfo Setter
 // 请求对象
 func (r *AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) SetRefundCompleteInfo(_refundCompleteInfo *RefundCompleteInfo) error {
 	r._refundCompleteInfo = _refundCompleteInfo
@@ -45,7 +45,7 @@ func (r *AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) SetRefundCom
 	return nil
 }
 
-// Get RefundCompleteInfo Getter
+// GetRefundCompleteInfo RefundCompleteInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelRefundCompleteAPIRequest) GetRefundCompleteInfo() *RefundCompleteInfo {
 	return r._refundCompleteInfo
 }

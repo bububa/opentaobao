@@ -43,7 +43,7 @@ func (r TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 账户体系隔离，即硬件接入平台中取得的schema key。
 func (r *TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -51,12 +51,12 @@ func (r *TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest) SetSchema(_schema str
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id，由开发者或厂商自行定义，每一schema key下唯一即可
 func (r *TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -64,12 +64,12 @@ func (r *TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest) SetUserId(_userId str
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is UtdId Setter
+// SetUtdId is UtdId Setter
 // (废弃) 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
 func (r *TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
@@ -77,12 +77,12 @@ func (r *TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest) SetUtdId(_utdId strin
 	return nil
 }
 
-// Get UtdId Getter
+// GetUtdId UtdId Getter
 func (r TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息，用于存放APP类型等
 func (r *TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -90,7 +90,7 @@ func (r *TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest) SetExt(_ext string) e
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoAilabAicloudTopDeviceAuthcodeGetAPIRequest) GetExt() string {
 	return r._ext
 }

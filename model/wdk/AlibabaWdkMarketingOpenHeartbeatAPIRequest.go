@@ -37,7 +37,7 @@ func (r AlibabaWdkMarketingOpenHeartbeatAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is HeartBeat Setter
+// SetHeartBeat is HeartBeat Setter
 // 心跳信息
 func (r *AlibabaWdkMarketingOpenHeartbeatAPIRequest) SetHeartBeat(_heartBeat *HeartBeatBo) error {
 	r._heartBeat = _heartBeat
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMarketingOpenHeartbeatAPIRequest) SetHeartBeat(_heartBeat *He
 	return nil
 }
 
-// Get HeartBeat Getter
+// GetHeartBeat HeartBeat Getter
 func (r AlibabaWdkMarketingOpenHeartbeatAPIRequest) GetHeartBeat() *HeartBeatBo {
 	return r._heartBeat
 }

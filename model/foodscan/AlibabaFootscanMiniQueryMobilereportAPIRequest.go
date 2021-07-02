@@ -39,7 +39,7 @@ func (r AlibabaFootscanMiniQueryMobilereportAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 平台分配的token
 func (r *AlibabaFootscanMiniQueryMobilereportAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -47,12 +47,12 @@ func (r *AlibabaFootscanMiniQueryMobilereportAPIRequest) SetToken(_token string)
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlibabaFootscanMiniQueryMobilereportAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is ScanId Setter
+// SetScanId is ScanId Setter
 // 扫描ID
 func (r *AlibabaFootscanMiniQueryMobilereportAPIRequest) SetScanId(_scanId string) error {
 	r._scanId = _scanId
@@ -60,7 +60,7 @@ func (r *AlibabaFootscanMiniQueryMobilereportAPIRequest) SetScanId(_scanId strin
 	return nil
 }
 
-// Get ScanId Getter
+// GetScanId ScanId Getter
 func (r AlibabaFootscanMiniQueryMobilereportAPIRequest) GetScanId() string {
 	return r._scanId
 }

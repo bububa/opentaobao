@@ -37,7 +37,7 @@ func (r AlibabaWdkorderSharestockOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TbOrderId Setter
+// SetTbOrderId is TbOrderId Setter
 // 淘宝主订单ID
 func (r *AlibabaWdkorderSharestockOrderGetAPIRequest) SetTbOrderId(_tbOrderId int64) error {
 	r._tbOrderId = _tbOrderId
@@ -45,7 +45,7 @@ func (r *AlibabaWdkorderSharestockOrderGetAPIRequest) SetTbOrderId(_tbOrderId in
 	return nil
 }
 
-// Get TbOrderId Getter
+// GetTbOrderId TbOrderId Getter
 func (r AlibabaWdkorderSharestockOrderGetAPIRequest) GetTbOrderId() int64 {
 	return r._tbOrderId
 }

@@ -37,7 +37,7 @@ func (r TaobaoWlbWmsInventoryLackUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 缺货通知信息
 func (r *TaobaoWlbWmsInventoryLackUploadAPIRequest) SetContent(_content *WlbWmsInventoryLackUpload) error {
 	r._content = _content
@@ -45,7 +45,7 @@ func (r *TaobaoWlbWmsInventoryLackUploadAPIRequest) SetContent(_content *WlbWmsI
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r TaobaoWlbWmsInventoryLackUploadAPIRequest) GetContent() *WlbWmsInventoryLackUpload {
 	return r._content
 }

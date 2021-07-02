@@ -37,7 +37,7 @@ func (r AlibabaIdleAppraiseOrderPerformAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppraiseOrderSynDto Setter
+// SetAppraiseOrderSynDto is AppraiseOrderSynDto Setter
 // AppraiseOrderSynDto
 func (r *AlibabaIdleAppraiseOrderPerformAPIRequest) SetAppraiseOrderSynDto(_appraiseOrderSynDto *AppraiseOrderSynDto) error {
 	r._appraiseOrderSynDto = _appraiseOrderSynDto
@@ -45,7 +45,7 @@ func (r *AlibabaIdleAppraiseOrderPerformAPIRequest) SetAppraiseOrderSynDto(_appr
 	return nil
 }
 
-// Get AppraiseOrderSynDto Getter
+// GetAppraiseOrderSynDto AppraiseOrderSynDto Getter
 func (r AlibabaIdleAppraiseOrderPerformAPIRequest) GetAppraiseOrderSynDto() *AppraiseOrderSynDto {
 	return r._appraiseOrderSynDto
 }

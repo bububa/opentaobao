@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmVoucherTemplateListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is VoucherTemplateOpenReq Setter
+// SetVoucherTemplateOpenReq is VoucherTemplateOpenReq Setter
 // 获取优惠模版规则请求参数
 func (r *AlibabaAlscCrmVoucherTemplateListAPIRequest) SetVoucherTemplateOpenReq(_voucherTemplateOpenReq *VoucherTemplateOpenReq) error {
 	r._voucherTemplateOpenReq = _voucherTemplateOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmVoucherTemplateListAPIRequest) SetVoucherTemplateOpenReq(
 	return nil
 }
 
-// Get VoucherTemplateOpenReq Getter
+// GetVoucherTemplateOpenReq VoucherTemplateOpenReq Getter
 func (r AlibabaAlscCrmVoucherTemplateListAPIRequest) GetVoucherTemplateOpenReq() *VoucherTemplateOpenReq {
 	return r._voucherTemplateOpenReq
 }

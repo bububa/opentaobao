@@ -39,7 +39,7 @@ func (r TaobaoItemPropimgDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 商品属性图片ID
 func (r *TaobaoItemPropimgDeleteAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -47,12 +47,12 @@ func (r *TaobaoItemPropimgDeleteAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TaobaoItemPropimgDeleteAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is NumIid Setter
+// SetNumIid is NumIid Setter
 // 商品数字ID，必选
 func (r *TaobaoItemPropimgDeleteAPIRequest) SetNumIid(_numIid int64) error {
 	r._numIid = _numIid
@@ -60,7 +60,7 @@ func (r *TaobaoItemPropimgDeleteAPIRequest) SetNumIid(_numIid int64) error {
 	return nil
 }
 
-// Get NumIid Getter
+// GetNumIid NumIid Getter
 func (r TaobaoItemPropimgDeleteAPIRequest) GetNumIid() int64 {
 	return r._numIid
 }

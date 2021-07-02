@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmPointRuleGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamQueryPointRuleOpenReq Setter
+// SetParamQueryPointRuleOpenReq is ParamQueryPointRuleOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmPointRuleGetAPIRequest) SetParamQueryPointRuleOpenReq(_paramQueryPointRuleOpenReq *QueryPointRuleOpenReq) error {
 	r._paramQueryPointRuleOpenReq = _paramQueryPointRuleOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmPointRuleGetAPIRequest) SetParamQueryPointRuleOpenReq(_pa
 	return nil
 }
 
-// Get ParamQueryPointRuleOpenReq Getter
+// GetParamQueryPointRuleOpenReq ParamQueryPointRuleOpenReq Getter
 func (r AlibabaAlscCrmPointRuleGetAPIRequest) GetParamQueryPointRuleOpenReq() *QueryPointRuleOpenReq {
 	return r._paramQueryPointRuleOpenReq
 }

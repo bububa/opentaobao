@@ -43,7 +43,7 @@ func (r AlibabaEinvoiceBillEinvoiceListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Platform Setter
+// SetPlatform is Platform Setter
 // 结算单同步的ERP平台系统
 func (r *AlibabaEinvoiceBillEinvoiceListAPIRequest) SetPlatform(_platform string) error {
 	r._platform = _platform
@@ -51,12 +51,12 @@ func (r *AlibabaEinvoiceBillEinvoiceListAPIRequest) SetPlatform(_platform string
 	return nil
 }
 
-// Get Platform Getter
+// GetPlatform Platform Getter
 func (r AlibabaEinvoiceBillEinvoiceListAPIRequest) GetPlatform() string {
 	return r._platform
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 收款方税号
 func (r *AlibabaEinvoiceBillEinvoiceListAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -64,12 +64,12 @@ func (r *AlibabaEinvoiceBillEinvoiceListAPIRequest) SetPayeeRegisterNo(_payeeReg
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceBillEinvoiceListAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单ID
 func (r *AlibabaEinvoiceBillEinvoiceListAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -77,12 +77,12 @@ func (r *AlibabaEinvoiceBillEinvoiceListAPIRequest) SetOrderId(_orderId string) 
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaEinvoiceBillEinvoiceListAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is EinvoiceType Setter
+// SetEinvoiceType is EinvoiceType Setter
 // 开票状态：0=未开票，1=开票中，3=开蓝成功，4=开蓝失败。不填获取全部
 func (r *AlibabaEinvoiceBillEinvoiceListAPIRequest) SetEinvoiceType(_einvoiceType []int64) error {
 	r._einvoiceType = _einvoiceType
@@ -90,7 +90,7 @@ func (r *AlibabaEinvoiceBillEinvoiceListAPIRequest) SetEinvoiceType(_einvoiceTyp
 	return nil
 }
 
-// Get EinvoiceType Getter
+// GetEinvoiceType EinvoiceType Getter
 func (r AlibabaEinvoiceBillEinvoiceListAPIRequest) GetEinvoiceType() []int64 {
 	return r._einvoiceType
 }

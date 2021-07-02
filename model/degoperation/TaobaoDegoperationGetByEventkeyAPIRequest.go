@@ -41,7 +41,7 @@ func (r TaobaoDegoperationGetByEventkeyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DegAppKey Setter
+// SetDegAppKey is DegAppKey Setter
 // 活动后台配置appkey
 func (r *TaobaoDegoperationGetByEventkeyAPIRequest) SetDegAppKey(_degAppKey string) error {
 	r._degAppKey = _degAppKey
@@ -49,12 +49,12 @@ func (r *TaobaoDegoperationGetByEventkeyAPIRequest) SetDegAppKey(_degAppKey stri
 	return nil
 }
 
-// Get DegAppKey Getter
+// GetDegAppKey DegAppKey Getter
 func (r TaobaoDegoperationGetByEventkeyAPIRequest) GetDegAppKey() string {
 	return r._degAppKey
 }
 
-// Set is EventKey Setter
+// SetEventKey is EventKey Setter
 // 活动后台配置eventkey
 func (r *TaobaoDegoperationGetByEventkeyAPIRequest) SetEventKey(_eventKey string) error {
 	r._eventKey = _eventKey
@@ -62,12 +62,12 @@ func (r *TaobaoDegoperationGetByEventkeyAPIRequest) SetEventKey(_eventKey string
 	return nil
 }
 
-// Get EventKey Getter
+// GetEventKey EventKey Getter
 func (r TaobaoDegoperationGetByEventkeyAPIRequest) GetEventKey() string {
 	return r._eventKey
 }
 
-// Set is DegAccessToken Setter
+// SetDegAccessToken is DegAccessToken Setter
 // info
 func (r *TaobaoDegoperationGetByEventkeyAPIRequest) SetDegAccessToken(_degAccessToken string) error {
 	r._degAccessToken = _degAccessToken
@@ -75,7 +75,7 @@ func (r *TaobaoDegoperationGetByEventkeyAPIRequest) SetDegAccessToken(_degAccess
 	return nil
 }
 
-// Get DegAccessToken Getter
+// GetDegAccessToken DegAccessToken Getter
 func (r TaobaoDegoperationGetByEventkeyAPIRequest) GetDegAccessToken() string {
 	return r._degAccessToken
 }

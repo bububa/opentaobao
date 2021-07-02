@@ -37,7 +37,7 @@ func (r AlibabaInteractSensorUiAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UnNamed Setter
+// SetUnNamed is UnNamed Setter
 // 仅作客户端鉴权使用，不会发送接收请求
 func (r *AlibabaInteractSensorUiAPIRequest) SetUnNamed(_unNamed string) error {
 	r._unNamed = _unNamed
@@ -45,7 +45,7 @@ func (r *AlibabaInteractSensorUiAPIRequest) SetUnNamed(_unNamed string) error {
 	return nil
 }
 
-// Get UnNamed Getter
+// GetUnNamed UnNamed Getter
 func (r AlibabaInteractSensorUiAPIRequest) GetUnNamed() string {
 	return r._unNamed
 }

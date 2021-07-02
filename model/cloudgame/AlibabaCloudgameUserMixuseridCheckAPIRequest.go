@@ -37,7 +37,7 @@ func (r AlibabaCloudgameUserMixuseridCheckAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is MixUserId Setter
+// SetMixUserId is MixUserId Setter
 // 云游戏混淆用户ID
 func (r *AlibabaCloudgameUserMixuseridCheckAPIRequest) SetMixUserId(_mixUserId string) error {
 	r._mixUserId = _mixUserId
@@ -45,7 +45,7 @@ func (r *AlibabaCloudgameUserMixuseridCheckAPIRequest) SetMixUserId(_mixUserId s
 	return nil
 }
 
-// Get MixUserId Getter
+// GetMixUserId MixUserId Getter
 func (r AlibabaCloudgameUserMixuseridCheckAPIRequest) GetMixUserId() string {
 	return r._mixUserId
 }

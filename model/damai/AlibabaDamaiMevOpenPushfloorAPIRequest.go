@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenPushfloorAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PushFloorParam Setter
+// SetPushFloorParam is PushFloorParam Setter
 // 入参pushFloorParam
 func (r *AlibabaDamaiMevOpenPushfloorAPIRequest) SetPushFloorParam(_pushFloorParam *ThirdFloorPushOpenParam) error {
 	r._pushFloorParam = _pushFloorParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenPushfloorAPIRequest) SetPushFloorParam(_pushFloorPar
 	return nil
 }
 
-// Get PushFloorParam Getter
+// GetPushFloorParam PushFloorParam Getter
 func (r AlibabaDamaiMevOpenPushfloorAPIRequest) GetPushFloorParam() *ThirdFloorPushOpenParam {
 	return r._pushFloorParam
 }

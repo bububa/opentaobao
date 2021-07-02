@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is ConsensusDemandRequest Setter
+// SetConsensusDemandRequest is ConsensusDemandRequest Setter
 // 入参
 func (r *AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest) SetConsensusDemandRequest(_consensusDemandRequest *ConsensusDemandRequest) error {
 	r._consensusDemandRequest = _consensusDemandRequest
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest) SetConsensusDe
 	return nil
 }
 
-// Get ConsensusDemandRequest Getter
+// GetConsensusDemandRequest ConsensusDemandRequest Getter
 func (r AlibabaTmallgenieScpPlanConsensusDemandUploadAPIRequest) GetConsensusDemandRequest() *ConsensusDemandRequest {
 	return r._consensusDemandRequest
 }

@@ -37,7 +37,7 @@ func (r YunosAppstorePadHpApplistAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 获取的应用群code
 func (r *YunosAppstorePadHpApplistAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -45,7 +45,7 @@ func (r *YunosAppstorePadHpApplistAPIRequest) SetCode(_code string) error {
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r YunosAppstorePadHpApplistAPIRequest) GetCode() string {
 	return r._code
 }

@@ -37,7 +37,7 @@ func (r TmallPopupstoreItemDiscountPriceAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemIds Setter
+// SetItemIds is ItemIds Setter
 // 商品id列表
 func (r *TmallPopupstoreItemDiscountPriceAPIRequest) SetItemIds(_itemIds []int64) error {
 	r._itemIds = _itemIds
@@ -45,7 +45,7 @@ func (r *TmallPopupstoreItemDiscountPriceAPIRequest) SetItemIds(_itemIds []int64
 	return nil
 }
 
-// Get ItemIds Getter
+// GetItemIds ItemIds Getter
 func (r TmallPopupstoreItemDiscountPriceAPIRequest) GetItemIds() []int64 {
 	return r._itemIds
 }

@@ -50,7 +50,7 @@ func (r TmallServicecenterServicestoreDeleteservicestoreAPIRequest) GetApiParams
 	return params
 }
 
-// Set is ServiceStoreCode Setter
+// SetServiceStoreCode is ServiceStoreCode Setter
 // 网点名称
 func (r *TmallServicecenterServicestoreDeleteservicestoreAPIRequest) SetServiceStoreCode(_serviceStoreCode string) error {
 	r._serviceStoreCode = _serviceStoreCode
@@ -58,7 +58,7 @@ func (r *TmallServicecenterServicestoreDeleteservicestoreAPIRequest) SetServiceS
 	return nil
 }
 
-// Get ServiceStoreCode Getter
+// GetServiceStoreCode ServiceStoreCode Getter
 func (r TmallServicecenterServicestoreDeleteservicestoreAPIRequest) GetServiceStoreCode() string {
 	return r._serviceStoreCode
 }

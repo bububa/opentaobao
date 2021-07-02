@@ -43,7 +43,7 @@ func (r TaobaoInventoryAdjustTradeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TbOrderType Setter
+// SetTbOrderType is TbOrderType Setter
 // 订单类型：B2C、B2B
 func (r *TaobaoInventoryAdjustTradeAPIRequest) SetTbOrderType(_tbOrderType string) error {
 	r._tbOrderType = _tbOrderType
@@ -51,12 +51,12 @@ func (r *TaobaoInventoryAdjustTradeAPIRequest) SetTbOrderType(_tbOrderType strin
 	return nil
 }
 
-// Get TbOrderType Getter
+// GetTbOrderType TbOrderType Getter
 func (r TaobaoInventoryAdjustTradeAPIRequest) GetTbOrderType() string {
 	return r._tbOrderType
 }
 
-// Set is OperateTime Setter
+// SetOperateTime is OperateTime Setter
 // 业务操作时间
 func (r *TaobaoInventoryAdjustTradeAPIRequest) SetOperateTime(_operateTime string) error {
 	r._operateTime = _operateTime
@@ -64,12 +64,12 @@ func (r *TaobaoInventoryAdjustTradeAPIRequest) SetOperateTime(_operateTime strin
 	return nil
 }
 
-// Get OperateTime Getter
+// GetOperateTime OperateTime Getter
 func (r TaobaoInventoryAdjustTradeAPIRequest) GetOperateTime() string {
 	return r._operateTime
 }
 
-// Set is BizUniqueCode Setter
+// SetBizUniqueCode is BizUniqueCode Setter
 // 商家外部定单号
 func (r *TaobaoInventoryAdjustTradeAPIRequest) SetBizUniqueCode(_bizUniqueCode string) error {
 	r._bizUniqueCode = _bizUniqueCode
@@ -77,12 +77,12 @@ func (r *TaobaoInventoryAdjustTradeAPIRequest) SetBizUniqueCode(_bizUniqueCode s
 	return nil
 }
 
-// Get BizUniqueCode Getter
+// GetBizUniqueCode BizUniqueCode Getter
 func (r TaobaoInventoryAdjustTradeAPIRequest) GetBizUniqueCode() string {
 	return r._bizUniqueCode
 }
 
-// Set is Items Setter
+// SetItems is Items Setter
 // 商品初始库存信息： [{ "TBOrderCode”:”淘宝交易号”,"TBSubOrderCode ":"淘宝子交易单号,赠品可以不填","”isGift”:”TRUE或者FALSE,是否赠品”,storeCode":"商家仓库编码"," scItemId ":"商品后端ID","scItemCode":"商品商家编码"," originScItemId ":"原商品ID","inventoryType":"","quantity":"111","isComplete":"TRUE或者FALSE，是否全部确认出库"}]
 func (r *TaobaoInventoryAdjustTradeAPIRequest) SetItems(_items string) error {
 	r._items = _items
@@ -90,7 +90,7 @@ func (r *TaobaoInventoryAdjustTradeAPIRequest) SetItems(_items string) error {
 	return nil
 }
 
-// Get Items Getter
+// GetItems Items Getter
 func (r TaobaoInventoryAdjustTradeAPIRequest) GetItems() string {
 	return r._items
 }

@@ -39,7 +39,7 @@ func (r TaobaoAlitripTravelItemNewQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id。itemId和outProductId至少填写一个
 func (r *TaobaoAlitripTravelItemNewQueryAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -47,12 +47,12 @@ func (r *TaobaoAlitripTravelItemNewQueryAPIRequest) SetItemId(_itemId int64) err
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoAlitripTravelItemNewQueryAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is OutProductId Setter
+// SetOutProductId is OutProductId Setter
 // 商品 外部商家编码。itemId和outProductId至少填写一个
 func (r *TaobaoAlitripTravelItemNewQueryAPIRequest) SetOutProductId(_outProductId string) error {
 	r._outProductId = _outProductId
@@ -60,7 +60,7 @@ func (r *TaobaoAlitripTravelItemNewQueryAPIRequest) SetOutProductId(_outProductI
 	return nil
 }
 
-// Get OutProductId Getter
+// GetOutProductId OutProductId Getter
 func (r TaobaoAlitripTravelItemNewQueryAPIRequest) GetOutProductId() string {
 	return r._outProductId
 }

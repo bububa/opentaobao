@@ -43,7 +43,7 @@ func (r AliyunAlinkOpendataUrlQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AccessKey Setter
+// SetAccessKey is AccessKey Setter
 // 授权key，厂家在物联平台申请的云端授权key
 func (r *AliyunAlinkOpendataUrlQueryAPIRequest) SetAccessKey(_accessKey string) error {
 	r._accessKey = _accessKey
@@ -51,12 +51,12 @@ func (r *AliyunAlinkOpendataUrlQueryAPIRequest) SetAccessKey(_accessKey string) 
 	return nil
 }
 
-// Get AccessKey Getter
+// GetAccessKey AccessKey Getter
 func (r AliyunAlinkOpendataUrlQueryAPIRequest) GetAccessKey() string {
 	return r._accessKey
 }
 
-// Set is BizDay Setter
+// SetBizDay is BizDay Setter
 // 数据日期，格式：yyyyMMdd
 func (r *AliyunAlinkOpendataUrlQueryAPIRequest) SetBizDay(_bizDay string) error {
 	r._bizDay = _bizDay
@@ -64,12 +64,12 @@ func (r *AliyunAlinkOpendataUrlQueryAPIRequest) SetBizDay(_bizDay string) error 
 	return nil
 }
 
-// Get BizDay Getter
+// GetBizDay BizDay Getter
 func (r AliyunAlinkOpendataUrlQueryAPIRequest) GetBizDay() string {
 	return r._bizDay
 }
 
-// Set is BizHour Setter
+// SetBizHour is BizHour Setter
 // 数据时点，范围[0,23]
 func (r *AliyunAlinkOpendataUrlQueryAPIRequest) SetBizHour(_bizHour int64) error {
 	r._bizHour = _bizHour
@@ -77,12 +77,12 @@ func (r *AliyunAlinkOpendataUrlQueryAPIRequest) SetBizHour(_bizHour int64) error
 	return nil
 }
 
-// Get BizHour Getter
+// GetBizHour BizHour Getter
 func (r AliyunAlinkOpendataUrlQueryAPIRequest) GetBizHour() int64 {
 	return r._bizHour
 }
 
-// Set is DataType Setter
+// SetDataType is DataType Setter
 // 数据类型，1：设备数据，2：用户操作数据
 func (r *AliyunAlinkOpendataUrlQueryAPIRequest) SetDataType(_dataType int64) error {
 	r._dataType = _dataType
@@ -90,7 +90,7 @@ func (r *AliyunAlinkOpendataUrlQueryAPIRequest) SetDataType(_dataType int64) err
 	return nil
 }
 
-// Get DataType Getter
+// GetDataType DataType Getter
 func (r AliyunAlinkOpendataUrlQueryAPIRequest) GetDataType() int64 {
 	return r._dataType
 }

@@ -45,7 +45,7 @@ func (r YunosTvpubadminDeviceQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TerminalType Setter
+// SetTerminalType is TerminalType Setter
 // 终端类型
 func (r *YunosTvpubadminDeviceQueryAPIRequest) SetTerminalType(_terminalType string) error {
 	r._terminalType = _terminalType
@@ -53,12 +53,12 @@ func (r *YunosTvpubadminDeviceQueryAPIRequest) SetTerminalType(_terminalType str
 	return nil
 }
 
-// Get TerminalType Getter
+// GetTerminalType TerminalType Getter
 func (r YunosTvpubadminDeviceQueryAPIRequest) GetTerminalType() string {
 	return r._terminalType
 }
 
-// Set is BrandId Setter
+// SetBrandId is BrandId Setter
 // 品牌ID
 func (r *YunosTvpubadminDeviceQueryAPIRequest) SetBrandId(_brandId int64) error {
 	r._brandId = _brandId
@@ -66,12 +66,12 @@ func (r *YunosTvpubadminDeviceQueryAPIRequest) SetBrandId(_brandId int64) error 
 	return nil
 }
 
-// Get BrandId Getter
+// GetBrandId BrandId Getter
 func (r YunosTvpubadminDeviceQueryAPIRequest) GetBrandId() int64 {
 	return r._brandId
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照方
 func (r *YunosTvpubadminDeviceQueryAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -79,12 +79,12 @@ func (r *YunosTvpubadminDeviceQueryAPIRequest) SetLicense(_license int64) error 
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminDeviceQueryAPIRequest) GetLicense() int64 {
 	return r._license
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码值
 func (r *YunosTvpubadminDeviceQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -92,12 +92,12 @@ func (r *YunosTvpubadminDeviceQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r YunosTvpubadminDeviceQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数
 func (r *YunosTvpubadminDeviceQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -105,7 +105,7 @@ func (r *YunosTvpubadminDeviceQueryAPIRequest) SetPageSize(_pageSize int64) erro
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r YunosTvpubadminDeviceQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

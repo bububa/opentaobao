@@ -37,7 +37,7 @@ func (r AlibabaWdkWholesaleOrderCommitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderCommitReq Setter
+// SetOrderCommitReq is OrderCommitReq Setter
 // 采购单信息
 func (r *AlibabaWdkWholesaleOrderCommitAPIRequest) SetOrderCommitReq(_orderCommitReq *OrderCommitReq) error {
 	r._orderCommitReq = _orderCommitReq
@@ -45,7 +45,7 @@ func (r *AlibabaWdkWholesaleOrderCommitAPIRequest) SetOrderCommitReq(_orderCommi
 	return nil
 }
 
-// Get OrderCommitReq Getter
+// GetOrderCommitReq OrderCommitReq Getter
 func (r AlibabaWdkWholesaleOrderCommitAPIRequest) GetOrderCommitReq() *OrderCommitReq {
 	return r._orderCommitReq
 }

@@ -37,7 +37,7 @@ func (r AlibabaMosStoreRecordscreenpointinfoAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ScreenPointInfo Setter
+// SetScreenPointInfo is ScreenPointInfo Setter
 // 云屏埋点信息
 func (r *AlibabaMosStoreRecordscreenpointinfoAPIRequest) SetScreenPointInfo(_screenPointInfo string) error {
 	r._screenPointInfo = _screenPointInfo
@@ -45,7 +45,7 @@ func (r *AlibabaMosStoreRecordscreenpointinfoAPIRequest) SetScreenPointInfo(_scr
 	return nil
 }
 
-// Get ScreenPointInfo Getter
+// GetScreenPointInfo ScreenPointInfo Getter
 func (r AlibabaMosStoreRecordscreenpointinfoAPIRequest) GetScreenPointInfo() string {
 	return r._screenPointInfo
 }

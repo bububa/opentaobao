@@ -41,7 +41,7 @@ func (r TaobaoAlitripItFareDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ExtendAttributes Setter
+// SetExtendAttributes is ExtendAttributes Setter
 // json格式的字符串，扩展属性，预留
 func (r *TaobaoAlitripItFareDeleteAPIRequest) SetExtendAttributes(_extendAttributes string) error {
 	r._extendAttributes = _extendAttributes
@@ -49,12 +49,12 @@ func (r *TaobaoAlitripItFareDeleteAPIRequest) SetExtendAttributes(_extendAttribu
 	return nil
 }
 
-// Get ExtendAttributes Getter
+// GetExtendAttributes ExtendAttributes Getter
 func (r TaobaoAlitripItFareDeleteAPIRequest) GetExtendAttributes() string {
 	return r._extendAttributes
 }
 
-// Set is FareId Setter
+// SetFareId is FareId Setter
 // 运价id，单条新增成功时返回运价id，fareId和outId必填一个，fareId优先
 func (r *TaobaoAlitripItFareDeleteAPIRequest) SetFareId(_fareId int64) error {
 	r._fareId = _fareId
@@ -62,12 +62,12 @@ func (r *TaobaoAlitripItFareDeleteAPIRequest) SetFareId(_fareId int64) error {
 	return nil
 }
 
-// Get FareId Getter
+// GetFareId FareId Getter
 func (r TaobaoAlitripItFareDeleteAPIRequest) GetFareId() int64 {
 	return r._fareId
 }
 
-// Set is OutId Setter
+// SetOutId is OutId Setter
 // 外部id，为新增时请求参数中的外部政策id
 func (r *TaobaoAlitripItFareDeleteAPIRequest) SetOutId(_outId string) error {
 	r._outId = _outId
@@ -75,7 +75,7 @@ func (r *TaobaoAlitripItFareDeleteAPIRequest) SetOutId(_outId string) error {
 	return nil
 }
 
-// Get OutId Getter
+// GetOutId OutId Getter
 func (r TaobaoAlitripItFareDeleteAPIRequest) GetOutId() string {
 	return r._outId
 }

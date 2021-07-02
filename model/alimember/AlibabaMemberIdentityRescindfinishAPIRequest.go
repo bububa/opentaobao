@@ -37,7 +37,7 @@ func (r AlibabaMemberIdentityRescindfinishAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is RescindFinish Setter
+// SetRescindFinish is RescindFinish Setter
 // 取消确认信息
 func (r *AlibabaMemberIdentityRescindfinishAPIRequest) SetRescindFinish(_rescindFinish *RescindIdentityFinishRequest) error {
 	r._rescindFinish = _rescindFinish
@@ -45,7 +45,7 @@ func (r *AlibabaMemberIdentityRescindfinishAPIRequest) SetRescindFinish(_rescind
 	return nil
 }
 
-// Get RescindFinish Getter
+// GetRescindFinish RescindFinish Getter
 func (r AlibabaMemberIdentityRescindfinishAPIRequest) GetRescindFinish() *RescindIdentityFinishRequest {
 	return r._rescindFinish
 }

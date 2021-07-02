@@ -37,7 +37,7 @@ func (r TaobaoMixnickPlaytoweAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MixMix Setter
+// SetMixMix is MixMix Setter
 // 用户的混淆nick
 func (r *TaobaoMixnickPlaytoweAPIRequest) SetMixMix(_mixMix string) error {
 	r._mixMix = _mixMix
@@ -45,7 +45,7 @@ func (r *TaobaoMixnickPlaytoweAPIRequest) SetMixMix(_mixMix string) error {
 	return nil
 }
 
-// Get MixMix Getter
+// GetMixMix MixMix Getter
 func (r TaobaoMixnickPlaytoweAPIRequest) GetMixMix() string {
 	return r._mixMix
 }

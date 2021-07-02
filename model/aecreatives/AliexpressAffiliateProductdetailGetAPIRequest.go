@@ -49,7 +49,7 @@ func (r AliexpressAffiliateProductdetailGetAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is AppSignature Setter
+// SetAppSignature is AppSignature Setter
 // 安全签名
 func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetAppSignature(_appSignature string) error {
 	r._appSignature = _appSignature
@@ -57,12 +57,12 @@ func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetAppSignature(_appSign
 	return nil
 }
 
-// Get AppSignature Getter
+// GetAppSignature AppSignature Getter
 func (r AliexpressAffiliateProductdetailGetAPIRequest) GetAppSignature() string {
 	return r._appSignature
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // commission_rate,sale_price
 func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -70,12 +70,12 @@ func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetFields(_fields string
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r AliexpressAffiliateProductdetailGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is ProductIds Setter
+// SetProductIds is ProductIds Setter
 // 商品ID列表
 func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetProductIds(_productIds string) error {
 	r._productIds = _productIds
@@ -83,12 +83,12 @@ func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetProductIds(_productId
 	return nil
 }
 
-// Get ProductIds Getter
+// GetProductIds ProductIds Getter
 func (r AliexpressAffiliateProductdetailGetAPIRequest) GetProductIds() string {
 	return r._productIds
 }
 
-// Set is TargetCurrency Setter
+// SetTargetCurrency is TargetCurrency Setter
 // 目标币种:USD, GBP, CAD, EUR, UAH, MXN, TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW
 func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetTargetCurrency(_targetCurrency string) error {
 	r._targetCurrency = _targetCurrency
@@ -96,12 +96,12 @@ func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetTargetCurrency(_targe
 	return nil
 }
 
-// Get TargetCurrency Getter
+// GetTargetCurrency TargetCurrency Getter
 func (r AliexpressAffiliateProductdetailGetAPIRequest) GetTargetCurrency() string {
 	return r._targetCurrency
 }
 
-// Set is TargetLanguage Setter
+// SetTargetLanguage is TargetLanguage Setter
 // 目标语言:EN,RU,PT,ES,FR,ID,IT,TH,JA,AR,VI,TR,DE,HE,KO,NL,PL,MX,CL,IW,IN
 func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetTargetLanguage(_targetLanguage string) error {
 	r._targetLanguage = _targetLanguage
@@ -109,12 +109,12 @@ func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetTargetLanguage(_targe
 	return nil
 }
 
-// Get TargetLanguage Getter
+// GetTargetLanguage TargetLanguage Getter
 func (r AliexpressAffiliateProductdetailGetAPIRequest) GetTargetLanguage() string {
 	return r._targetLanguage
 }
 
-// Set is TrackingId Setter
+// SetTrackingId is TrackingId Setter
 // trackingId
 func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetTrackingId(_trackingId string) error {
 	r._trackingId = _trackingId
@@ -122,12 +122,12 @@ func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetTrackingId(_trackingI
 	return nil
 }
 
-// Get TrackingId Getter
+// GetTrackingId TrackingId Getter
 func (r AliexpressAffiliateProductdetailGetAPIRequest) GetTrackingId() string {
 	return r._trackingId
 }
 
-// Set is Country Setter
+// SetCountry is Country Setter
 // 商品收货国家，可筛选能销售至该国家的商品，并根据该国家税率政策返回对应商品价格
 func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetCountry(_country string) error {
 	r._country = _country
@@ -135,7 +135,7 @@ func (r *AliexpressAffiliateProductdetailGetAPIRequest) SetCountry(_country stri
 	return nil
 }
 
-// Get Country Getter
+// GetCountry Country Getter
 func (r AliexpressAffiliateProductdetailGetAPIRequest) GetCountry() string {
 	return r._country
 }

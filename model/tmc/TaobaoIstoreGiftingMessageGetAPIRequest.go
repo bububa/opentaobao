@@ -37,7 +37,7 @@ func (r TaobaoIstoreGiftingMessageGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GiftMessageBizCondition Setter
+// SetGiftMessageBizCondition is GiftMessageBizCondition Setter
 // 消息查询条件
 func (r *TaobaoIstoreGiftingMessageGetAPIRequest) SetGiftMessageBizCondition(_giftMessageBizCondition *GiftMessageBizCondition) error {
 	r._giftMessageBizCondition = _giftMessageBizCondition
@@ -45,7 +45,7 @@ func (r *TaobaoIstoreGiftingMessageGetAPIRequest) SetGiftMessageBizCondition(_gi
 	return nil
 }
 
-// Get GiftMessageBizCondition Getter
+// GetGiftMessageBizCondition GiftMessageBizCondition Getter
 func (r TaobaoIstoreGiftingMessageGetAPIRequest) GetGiftMessageBizCondition() *GiftMessageBizCondition {
 	return r._giftMessageBizCondition
 }

@@ -41,7 +41,7 @@ func (r AlibabaIcbuProductGroupAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupName Setter
+// SetGroupName is GroupName Setter
 // 分组名称
 func (r *AlibabaIcbuProductGroupAddAPIRequest) SetGroupName(_groupName string) error {
 	r._groupName = _groupName
@@ -49,12 +49,12 @@ func (r *AlibabaIcbuProductGroupAddAPIRequest) SetGroupName(_groupName string) e
 	return nil
 }
 
-// Get GroupName Getter
+// GetGroupName GroupName Getter
 func (r AlibabaIcbuProductGroupAddAPIRequest) GetGroupName() string {
 	return r._groupName
 }
 
-// Set is ParentId Setter
+// SetParentId is ParentId Setter
 // 上级分组ID，如果建立顶级分组设为-1
 func (r *AlibabaIcbuProductGroupAddAPIRequest) SetParentId(_parentId int64) error {
 	r._parentId = _parentId
@@ -62,12 +62,12 @@ func (r *AlibabaIcbuProductGroupAddAPIRequest) SetParentId(_parentId int64) erro
 	return nil
 }
 
-// Get ParentId Getter
+// GetParentId ParentId Getter
 func (r AlibabaIcbuProductGroupAddAPIRequest) GetParentId() int64 {
 	return r._parentId
 }
 
-// Set is ExtraContext Setter
+// SetExtraContext is ExtraContext Setter
 // 补充信息，如isv id
 func (r *AlibabaIcbuProductGroupAddAPIRequest) SetExtraContext(_extraContext string) error {
 	r._extraContext = _extraContext
@@ -75,7 +75,7 @@ func (r *AlibabaIcbuProductGroupAddAPIRequest) SetExtraContext(_extraContext str
 	return nil
 }
 
-// Get ExtraContext Getter
+// GetExtraContext ExtraContext Getter
 func (r AlibabaIcbuProductGroupAddAPIRequest) GetExtraContext() string {
 	return r._extraContext
 }

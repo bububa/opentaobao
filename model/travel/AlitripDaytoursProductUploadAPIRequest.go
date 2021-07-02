@@ -100,7 +100,7 @@ func (r AlitripDaytoursProductUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutProductId Setter
+// SetOutProductId is OutProductId Setter
 // 商家自定义商品编码。注：商品基本信息维护、价格库存维护，商品查询都以该编码为主键。
 func (r *AlitripDaytoursProductUploadAPIRequest) SetOutProductId(_outProductId string) error {
 	r._outProductId = _outProductId
@@ -108,12 +108,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetOutProductId(_outProductId s
 	return nil
 }
 
-// Get OutProductId Getter
+// GetOutProductId OutProductId Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetOutProductId() string {
 	return r._outProductId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 可选，淘系商品id，用于将out_product_id关联到已经存在的商品，并且修改该商品外部商家编码为out_product_id。
 func (r *AlitripDaytoursProductUploadAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -121,12 +121,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetItemId(_itemId int64) error 
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 新发布商品时必填。商品标题，30个中文字符以内
 func (r *AlitripDaytoursProductUploadAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -134,12 +134,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// Set is SubTitles Setter
+// SetSubTitles is SubTitles Setter
 // 可选，商品亮点，最多支持4个亮点。注：在SDK中数组多个元素间以英文逗号分隔
 func (r *AlitripDaytoursProductUploadAPIRequest) SetSubTitles(_subTitles []string) error {
 	r._subTitles = _subTitles
@@ -147,12 +147,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetSubTitles(_subTitles []strin
 	return nil
 }
 
-// Get SubTitles Getter
+// GetSubTitles SubTitles Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetSubTitles() []string {
 	return r._subTitles
 }
 
-// Set is PicUrls Setter
+// SetPicUrls is PicUrls Setter
 // 新发布商品时必填。商品图片路径。最多支持5张，第一张为主图，必填，其余四张可选填。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。。注：在SDK中数组多个元素间以英文逗号分隔
 func (r *AlitripDaytoursProductUploadAPIRequest) SetPicUrls(_picUrls []string) error {
 	r._picUrls = _picUrls
@@ -160,12 +160,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetPicUrls(_picUrls []string) e
 	return nil
 }
 
-// Get PicUrls Getter
+// GetPicUrls PicUrls Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetPicUrls() []string {
 	return r._picUrls
 }
 
-// Set is FromLocations Setter
+// SetFromLocations is FromLocations Setter
 // 新发布商品时必填。出发地，多个出发地用英文逗号分隔。使用说明同“目的地”
 func (r *AlitripDaytoursProductUploadAPIRequest) SetFromLocations(_fromLocations string) error {
 	r._fromLocations = _fromLocations
@@ -173,12 +173,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetFromLocations(_fromLocations
 	return nil
 }
 
-// Get FromLocations Getter
+// GetFromLocations FromLocations Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetFromLocations() string {
 	return r._fromLocations
 }
 
-// Set is ToLocations Setter
+// SetToLocations is ToLocations Setter
 // 新发布商品时必填。目的地，多个目的地用英文逗号分隔。地址可以使用飞猪标准地址名称，也可以使用商家系统中目的地地址（支持商家目的地id和商家目的地名称）。如果需要使用商家目的地地址，必须在目的地关联页（https://sell.alitrip.com/icenter/main.htm#/widgets/api-adaptor?_k=n61ii0）配置映射关系（一次性批量上传建立映射关系，之后度假所有类目、API接口共用该映射关系）。 商家目的地地址使用示例1：东京,大阪。示例2：123,124。说明：商家目的地id（123,124）会根据映射关系自动转换成飞猪标准地址
 func (r *AlitripDaytoursProductUploadAPIRequest) SetToLocations(_toLocations string) error {
 	r._toLocations = _toLocations
@@ -186,12 +186,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetToLocations(_toLocations str
 	return nil
 }
 
-// Get ToLocations Getter
+// GetToLocations ToLocations Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetToLocations() string {
 	return r._toLocations
 }
 
-// Set is TripDay Setter
+// SetTripDay is TripDay Setter
 // 新发布商品时必填。旅游天数
 func (r *AlitripDaytoursProductUploadAPIRequest) SetTripDay(_tripDay int64) error {
 	r._tripDay = _tripDay
@@ -199,12 +199,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetTripDay(_tripDay int64) erro
 	return nil
 }
 
-// Get TripDay Getter
+// GetTripDay TripDay Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetTripDay() int64 {
 	return r._tripDay
 }
 
-// Set is TripNight Setter
+// SetTripNight is TripNight Setter
 // 可选，旅游晚数，不传默认旅游天数-1
 func (r *AlitripDaytoursProductUploadAPIRequest) SetTripNight(_tripNight int64) error {
 	r._tripNight = _tripNight
@@ -212,12 +212,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetTripNight(_tripNight int64) 
 	return nil
 }
 
-// Get TripNight Getter
+// GetTripNight TripNight Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetTripNight() int64 {
 	return r._tripNight
 }
 
-// Set is DescXml Setter
+// SetDescXml is DescXml Setter
 // PC端详情描述（新发布商品时，desc_xml和desc_html二者至少填写一个），xml格式：DESC根标签必须有，每一个亮点（HIGHLIGHT）支持1个title子标签，1个txt子标签和多个img子标签。
 func (r *AlitripDaytoursProductUploadAPIRequest) SetDescXml(_descXml string) error {
 	r._descXml = _descXml
@@ -225,12 +225,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetDescXml(_descXml string) err
 	return nil
 }
 
-// Get DescXml Getter
+// GetDescXml DescXml Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetDescXml() string {
 	return r._descXml
 }
 
-// Set is DescHtml Setter
+// SetDescHtml is DescHtml Setter
 // PC端详情描述（新发布商品时，desc_xml和desc_html二者至少填写一个），Html格式。商家自定义Html格式描述。
 func (r *AlitripDaytoursProductUploadAPIRequest) SetDescHtml(_descHtml string) error {
 	r._descHtml = _descHtml
@@ -238,12 +238,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetDescHtml(_descHtml string) e
 	return nil
 }
 
-// Get DescHtml Getter
+// GetDescHtml DescHtml Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetDescHtml() string {
 	return r._descHtml
 }
 
-// Set is WapDesc Setter
+// SetWapDesc is WapDesc Setter
 // 可选，手机端详情描述，xml格式，格式详见示例。
 func (r *AlitripDaytoursProductUploadAPIRequest) SetWapDesc(_wapDesc string) error {
 	r._wapDesc = _wapDesc
@@ -251,12 +251,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetWapDesc(_wapDesc string) err
 	return nil
 }
 
-// Get WapDesc Getter
+// GetWapDesc WapDesc Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetWapDesc() string {
 	return r._wapDesc
 }
 
-// Set is Itineraries Setter
+// SetItineraries is Itineraries Setter
 // 特殊必填，（struct_itineraries与itineraries二者选填一个即可，如果两个都上传则以struct_itineraries为准）。itineraries数组的元素个数必须与旅游天数trip_day一致。行程描述，每一天行程都是xml格式（数组的每个元素对应每一天的行程）： ITINERARY根标签必须有，每个活动（ACTIVITY）支持1个title子标签，1个txt子标签和多个img子标签。注：在SDK中多个元素间以英文逗号分隔
 func (r *AlitripDaytoursProductUploadAPIRequest) SetItineraries(_itineraries []string) error {
 	r._itineraries = _itineraries
@@ -264,12 +264,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetItineraries(_itineraries []s
 	return nil
 }
 
-// Get Itineraries Getter
+// GetItineraries Itineraries Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetItineraries() []string {
 	return r._itineraries
 }
 
-// Set is StructItineraries Setter
+// SetStructItineraries is StructItineraries Setter
 // 特殊必填，行程描述（struct_itineraries与itineraries二者选填一个即可，如果两个都上传则以struct_itineraries为准）。列表中每一个元素对应一天的行程，每天行程由多个活动组成。行程描述是可选项，如果上传了行程内容 则行程序号和行程活动信息必填。
 func (r *AlitripDaytoursProductUploadAPIRequest) SetStructItineraries(_structItineraries []StructItinerary) error {
 	r._structItineraries = _structItineraries
@@ -277,12 +277,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetStructItineraries(_structIti
 	return nil
 }
 
-// Get StructItineraries Getter
+// GetStructItineraries StructItineraries Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetStructItineraries() []StructItinerary {
 	return r._structItineraries
 }
 
-// Set is FeeInclude Setter
+// SetFeeInclude is FeeInclude Setter
 // 新发布商品时必填。费用包含。列表中每一个元素 对应一点描述，每点描述小于100个中文字符。注：在SDK中数组多个元素间以英文逗号分隔
 func (r *AlitripDaytoursProductUploadAPIRequest) SetFeeInclude(_feeInclude []string) error {
 	r._feeInclude = _feeInclude
@@ -290,12 +290,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetFeeInclude(_feeInclude []str
 	return nil
 }
 
-// Get FeeInclude Getter
+// GetFeeInclude FeeInclude Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetFeeInclude() []string {
 	return r._feeInclude
 }
 
-// Set is FeeExclude Setter
+// SetFeeExclude is FeeExclude Setter
 // 新发布商品时必填。费用不含。列表中每一个元素 对应一点描述，每点描述小于100个中文字符。注：在SDK中数组多个元素间以英文逗号分隔
 func (r *AlitripDaytoursProductUploadAPIRequest) SetFeeExclude(_feeExclude []string) error {
 	r._feeExclude = _feeExclude
@@ -303,12 +303,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetFeeExclude(_feeExclude []str
 	return nil
 }
 
-// Get FeeExclude Getter
+// GetFeeExclude FeeExclude Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetFeeExclude() []string {
 	return r._feeExclude
 }
 
-// Set is OrderInfo Setter
+// SetOrderInfo is OrderInfo Setter
 // 新发布商品时必填。预定须知。列表中每一个元素 对应一点描述，每点描述小于100个中文字符。注：在SDK中数组多个元素间以英文逗号分隔
 func (r *AlitripDaytoursProductUploadAPIRequest) SetOrderInfo(_orderInfo []string) error {
 	r._orderInfo = _orderInfo
@@ -316,12 +316,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetOrderInfo(_orderInfo []strin
 	return nil
 }
 
-// Get OrderInfo Getter
+// GetOrderInfo OrderInfo Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetOrderInfo() []string {
 	return r._orderInfo
 }
 
-// Set is TouristServiceProvider Setter
+// SetTouristServiceProvider is TouristServiceProvider Setter
 // 真实的旅游服务提供商
 func (r *AlitripDaytoursProductUploadAPIRequest) SetTouristServiceProvider(_touristServiceProvider string) error {
 	r._touristServiceProvider = _touristServiceProvider
@@ -329,12 +329,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetTouristServiceProvider(_tour
 	return nil
 }
 
-// Get TouristServiceProvider Getter
+// GetTouristServiceProvider TouristServiceProvider Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetTouristServiceProvider() string {
 	return r._touristServiceProvider
 }
 
-// Set is RefundType Setter
+// SetRefundType is RefundType Setter
 // 可选，退改规则类型。0-平台标准退改规则，1-自定义退改规则，2-不支持退改（已废弃，勿用），7-新版自定义退改规则。不传默认为0
 func (r *AlitripDaytoursProductUploadAPIRequest) SetRefundType(_refundType int64) error {
 	r._refundType = _refundType
@@ -342,12 +342,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetRefundType(_refundType int64
 	return nil
 }
 
-// Get RefundType Getter
+// GetRefundType RefundType Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetRefundType() int64 {
 	return r._refundType
 }
 
-// Set is RefundRegulationsJson Setter
+// SetRefundRegulationsJson is RefundRegulationsJson Setter
 // 特殊可选，退款规则（json数组格式）。自定义退改时需填写（与refund_regulations字段二选一）。示例中一共包含4条规则（3条平日规则，1条节假日规则），按照顺序每条规则含义如下：出行前5日及以上，买家违约收取总费用的50，卖家违约收取总费用的20；出行前4日至1日，买家违约收取总费用的80，卖家违约收取总费用的50；行程开始当天，买家违约收取总费用的100，卖家违约收取总费用的70；如果行程日期包含节假日，则节假日条款为买家违约收取总费用的100，卖家违约收取总费用的90
 func (r *AlitripDaytoursProductUploadAPIRequest) SetRefundRegulationsJson(_refundRegulationsJson string) error {
 	r._refundRegulationsJson = _refundRegulationsJson
@@ -355,12 +355,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetRefundRegulationsJson(_refun
 	return nil
 }
 
-// Get RefundRegulationsJson Getter
+// GetRefundRegulationsJson RefundRegulationsJson Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetRefundRegulationsJson() string {
 	return r._refundRegulationsJson
 }
 
-// Set is ReserveLimit Setter
+// SetReserveLimit is ReserveLimit Setter
 // 可选，该商品提前预定时间限制。格式：1_18_00，含义：该商品必须提前1天预定，且在18:00之前完成预定
 func (r *AlitripDaytoursProductUploadAPIRequest) SetReserveLimit(_reserveLimit string) error {
 	r._reserveLimit = _reserveLimit
@@ -368,12 +368,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetReserveLimit(_reserveLimit s
 	return nil
 }
 
-// Get ReserveLimit Getter
+// GetReserveLimit ReserveLimit Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetReserveLimit() string {
 	return r._reserveLimit
 }
 
-// Set is ConfirmType Setter
+// SetConfirmType is ConfirmType Setter
 // 可选，资源确认类型。1-即时确认，2-二次确认。不传默认1
 func (r *AlitripDaytoursProductUploadAPIRequest) SetConfirmType(_confirmType int64) error {
 	r._confirmType = _confirmType
@@ -381,12 +381,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetConfirmType(_confirmType int
 	return nil
 }
 
-// Get ConfirmType Getter
+// GetConfirmType ConfirmType Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetConfirmType() int64 {
 	return r._confirmType
 }
 
-// Set is ConfirmTime Setter
+// SetConfirmTime is ConfirmTime Setter
 // 特殊可选（confirm_type为2时必填），资源确认时长，当confirm_type=2时必填。1：2个工作小时内确认，2：6个工作小时内确认，3：9个工作小时内确认，4：18个工作小时内确认
 func (r *AlitripDaytoursProductUploadAPIRequest) SetConfirmTime(_confirmTime int64) error {
 	r._confirmTime = _confirmTime
@@ -394,12 +394,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetConfirmTime(_confirmTime int
 	return nil
 }
 
-// Get ConfirmTime Getter
+// GetConfirmTime ConfirmTime Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetConfirmTime() int64 {
 	return r._confirmTime
 }
 
-// Set is SubStock Setter
+// SetSubStock is SubStock Setter
 // 可选，减库存方式。0-拍下减库存。1-付款减库存。不传默认为0
 func (r *AlitripDaytoursProductUploadAPIRequest) SetSubStock(_subStock int64) error {
 	r._subStock = _subStock
@@ -407,12 +407,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetSubStock(_subStock int64) er
 	return nil
 }
 
-// Get SubStock Getter
+// GetSubStock SubStock Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetSubStock() int64 {
 	return r._subStock
 }
 
-// Set is TravellerTemplateId Setter
+// SetTravellerTemplateId is TravellerTemplateId Setter
 // 可选，出行人模板id。模板id需要商家以店铺账号身份登录飞猪商家工作台，从卖家工具->出行人管理中获取。注意：如果传0则代表设置为不需要出行人模板或使用飞猪平台默认的类目模板。
 func (r *AlitripDaytoursProductUploadAPIRequest) SetTravellerTemplateId(_travellerTemplateId int64) error {
 	r._travellerTemplateId = _travellerTemplateId
@@ -420,12 +420,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetTravellerTemplateId(_travell
 	return nil
 }
 
-// Get TravellerTemplateId Getter
+// GetTravellerTemplateId TravellerTemplateId Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetTravellerTemplateId() int64 {
 	return r._travellerTemplateId
 }
 
-// Set is ItemCustomTag Setter
+// SetItemCustomTag is ItemCustomTag Setter
 // 可选，商家自定义标签（最多4个字，超长则自动截断，会进行违禁词校验）
 func (r *AlitripDaytoursProductUploadAPIRequest) SetItemCustomTag(_itemCustomTag string) error {
 	r._itemCustomTag = _itemCustomTag
@@ -433,12 +433,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetItemCustomTag(_itemCustomTag
 	return nil
 }
 
-// Get ItemCustomTag Getter
+// GetItemCustomTag ItemCustomTag Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetItemCustomTag() string {
 	return r._itemCustomTag
 }
 
-// Set is HighLights Setter
+// SetHighLights is HighLights Setter
 // 一日游 产品亮点
 func (r *AlitripDaytoursProductUploadAPIRequest) SetHighLights(_highLights []ProductHighLights) error {
 	r._highLights = _highLights
@@ -446,12 +446,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetHighLights(_highLights []Pro
 	return nil
 }
 
-// Get HighLights Getter
+// GetHighLights HighLights Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetHighLights() []ProductHighLights {
 	return r._highLights
 }
 
-// Set is BusinessLicense Setter
+// SetBusinessLicense is BusinessLicense Setter
 // 必填，营业执照图片路径。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为jpg或jpeg，大小在3M以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间。
 func (r *AlitripDaytoursProductUploadAPIRequest) SetBusinessLicense(_businessLicense string) error {
 	r._businessLicense = _businessLicense
@@ -459,12 +459,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetBusinessLicense(_businessLic
 	return nil
 }
 
-// Get BusinessLicense Getter
+// GetBusinessLicense BusinessLicense Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetBusinessLicense() string {
 	return r._businessLicense
 }
 
-// Set is SellerCids Setter
+// SetSellerCids is SellerCids Setter
 // 关联商品与店铺类目 结构:"cid1,cid2,...,"。如何获取卖家店铺类目具体参见：http://open.taobao.com/doc2/apiDetail.htm?apiId=65
 func (r *AlitripDaytoursProductUploadAPIRequest) SetSellerCids(_sellerCids []string) error {
 	r._sellerCids = _sellerCids
@@ -472,12 +472,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetSellerCids(_sellerCids []str
 	return nil
 }
 
-// Get SellerCids Getter
+// GetSellerCids SellerCids Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetSellerCids() []string {
 	return r._sellerCids
 }
 
-// Set is SecondKill Setter
+// SetSecondKill is SecondKill Setter
 // 商品秒杀，商品秒杀三个值：可选类型web_only(只能通过web网络秒杀)，wap_only(只能通过wap网络秒杀)，web_and_wap(既能通过web秒杀也能通过wap秒杀)
 func (r *AlitripDaytoursProductUploadAPIRequest) SetSecondKill(_secondKill string) error {
 	r._secondKill = _secondKill
@@ -485,12 +485,12 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetSecondKill(_secondKill strin
 	return nil
 }
 
-// Get SecondKill Getter
+// GetSecondKill SecondKill Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetSecondKill() string {
 	return r._secondKill
 }
 
-// Set is HasDiscount Setter
+// SetHasDiscount is HasDiscount Setter
 // 是否支持会员打折。可选值：true，false；默认值：false(不打折)。不传的话默认为false
 func (r *AlitripDaytoursProductUploadAPIRequest) SetHasDiscount(_hasDiscount bool) error {
 	r._hasDiscount = _hasDiscount
@@ -498,7 +498,7 @@ func (r *AlitripDaytoursProductUploadAPIRequest) SetHasDiscount(_hasDiscount boo
 	return nil
 }
 
-// Get HasDiscount Getter
+// GetHasDiscount HasDiscount Getter
 func (r AlitripDaytoursProductUploadAPIRequest) GetHasDiscount() bool {
 	return r._hasDiscount
 }

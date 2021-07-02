@@ -47,7 +47,7 @@ func (r AlibabaItemPublishSubmitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务扩展参数，需与平台约定好
 func (r *AlibabaItemPublishSubmitAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -55,12 +55,12 @@ func (r *AlibabaItemPublishSubmitAPIRequest) SetBizType(_bizType string) error {
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r AlibabaItemPublishSubmitAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is Market Setter
+// SetMarket is Market Setter
 // 商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版
 func (r *AlibabaItemPublishSubmitAPIRequest) SetMarket(_market string) error {
 	r._market = _market
@@ -68,12 +68,12 @@ func (r *AlibabaItemPublishSubmitAPIRequest) SetMarket(_market string) error {
 	return nil
 }
 
-// Get Market Getter
+// GetMarket Market Getter
 func (r AlibabaItemPublishSubmitAPIRequest) GetMarket() string {
 	return r._market
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 商品类目ID
 func (r *AlibabaItemPublishSubmitAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -81,12 +81,12 @@ func (r *AlibabaItemPublishSubmitAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r AlibabaItemPublishSubmitAPIRequest) GetCatId() int64 {
 	return r._catId
 }
 
-// Set is SpuId Setter
+// SetSpuId is SpuId Setter
 // 产品ID，天猫市场(market=tmall)时必填
 func (r *AlibabaItemPublishSubmitAPIRequest) SetSpuId(_spuId int64) error {
 	r._spuId = _spuId
@@ -94,12 +94,12 @@ func (r *AlibabaItemPublishSubmitAPIRequest) SetSpuId(_spuId int64) error {
 	return nil
 }
 
-// Get SpuId Getter
+// GetSpuId SpuId Getter
 func (r AlibabaItemPublishSubmitAPIRequest) GetSpuId() int64 {
 	return r._spuId
 }
 
-// Set is Barcode Setter
+// SetBarcode is Barcode Setter
 // 商品条码
 func (r *AlibabaItemPublishSubmitAPIRequest) SetBarcode(_barcode string) error {
 	r._barcode = _barcode
@@ -107,12 +107,12 @@ func (r *AlibabaItemPublishSubmitAPIRequest) SetBarcode(_barcode string) error {
 	return nil
 }
 
-// Get Barcode Getter
+// GetBarcode Barcode Getter
 func (r AlibabaItemPublishSubmitAPIRequest) GetBarcode() string {
 	return r._barcode
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 商品schema信息，通过alibaba.item.publish.props.get获取并补全后提交
 func (r *AlibabaItemPublishSubmitAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -120,7 +120,7 @@ func (r *AlibabaItemPublishSubmitAPIRequest) SetSchema(_schema string) error {
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r AlibabaItemPublishSubmitAPIRequest) GetSchema() string {
 	return r._schema
 }

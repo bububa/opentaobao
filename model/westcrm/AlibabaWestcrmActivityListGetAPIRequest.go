@@ -49,7 +49,7 @@ func (r AlibabaWestcrmActivityListGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 活动状态
 func (r *AlibabaWestcrmActivityListGetAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -57,12 +57,12 @@ func (r *AlibabaWestcrmActivityListGetAPIRequest) SetStatus(_status int64) error
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaWestcrmActivityListGetAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is CampusId Setter
+// SetCampusId is CampusId Setter
 // 园区id
 func (r *AlibabaWestcrmActivityListGetAPIRequest) SetCampusId(_campusId int64) error {
 	r._campusId = _campusId
@@ -70,12 +70,12 @@ func (r *AlibabaWestcrmActivityListGetAPIRequest) SetCampusId(_campusId int64) e
 	return nil
 }
 
-// Get CampusId Getter
+// GetCampusId CampusId Getter
 func (r AlibabaWestcrmActivityListGetAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }
 
-// Set is Sord Setter
+// SetSord is Sord Setter
 // 排序方向
 func (r *AlibabaWestcrmActivityListGetAPIRequest) SetSord(_sord string) error {
 	r._sord = _sord
@@ -83,12 +83,12 @@ func (r *AlibabaWestcrmActivityListGetAPIRequest) SetSord(_sord string) error {
 	return nil
 }
 
-// Get Sord Getter
+// GetSord Sord Getter
 func (r AlibabaWestcrmActivityListGetAPIRequest) GetSord() string {
 	return r._sord
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 页,默认第一页
 func (r *AlibabaWestcrmActivityListGetAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -96,12 +96,12 @@ func (r *AlibabaWestcrmActivityListGetAPIRequest) SetPage(_page int64) error {
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaWestcrmActivityListGetAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is Sidx Setter
+// SetSidx is Sidx Setter
 // 排序字段
 func (r *AlibabaWestcrmActivityListGetAPIRequest) SetSidx(_sidx string) error {
 	r._sidx = _sidx
@@ -109,12 +109,12 @@ func (r *AlibabaWestcrmActivityListGetAPIRequest) SetSidx(_sidx string) error {
 	return nil
 }
 
-// Get Sidx Getter
+// GetSidx Sidx Getter
 func (r AlibabaWestcrmActivityListGetAPIRequest) GetSidx() string {
 	return r._sidx
 }
 
-// Set is Offset Setter
+// SetOffset is Offset Setter
 // 分页偏移量 eq . limit offset ,rows
 func (r *AlibabaWestcrmActivityListGetAPIRequest) SetOffset(_offset int64) error {
 	r._offset = _offset
@@ -122,12 +122,12 @@ func (r *AlibabaWestcrmActivityListGetAPIRequest) SetOffset(_offset int64) error
 	return nil
 }
 
-// Get Offset Getter
+// GetOffset Offset Getter
 func (r AlibabaWestcrmActivityListGetAPIRequest) GetOffset() int64 {
 	return r._offset
 }
 
-// Set is Rows Setter
+// SetRows is Rows Setter
 // 页大小,默认每页查询10条数据
 func (r *AlibabaWestcrmActivityListGetAPIRequest) SetRows(_rows int64) error {
 	r._rows = _rows
@@ -135,7 +135,7 @@ func (r *AlibabaWestcrmActivityListGetAPIRequest) SetRows(_rows int64) error {
 	return nil
 }
 
-// Get Rows Getter
+// GetRows Rows Getter
 func (r AlibabaWestcrmActivityListGetAPIRequest) GetRows() int64 {
 	return r._rows
 }

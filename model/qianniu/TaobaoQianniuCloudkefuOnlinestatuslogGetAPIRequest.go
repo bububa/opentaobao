@@ -42,7 +42,7 @@ func (r TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is AccountIds Setter
+// SetAccountIds is AccountIds Setter
 // 子帐号列表，最多10个
 func (r *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) SetAccountIds(_accountIds []int64) error {
 	r._accountIds = _accountIds
@@ -50,12 +50,12 @@ func (r *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) SetAccountIds(_acco
 	return nil
 }
 
-// Get AccountIds Getter
+// GetAccountIds AccountIds Getter
 func (r TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) GetAccountIds() []int64 {
 	return r._accountIds
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 查询开始日期，只有日期有效，时间忽略
 func (r *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -63,12 +63,12 @@ func (r *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) SetStartDate(_start
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 查询结束日期，只有日期有效，时间忽略
 func (r *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -76,7 +76,7 @@ func (r *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) SetEndDate(_endDate
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }

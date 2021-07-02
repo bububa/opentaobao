@@ -45,7 +45,7 @@ func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BotId Setter
+// SetBotId is BotId Setter
 // 设备id
 func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetBotId(_botId int64) error {
 	r._botId = _botId
@@ -53,12 +53,12 @@ func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetBotId(_botId int64) error 
 	return nil
 }
 
-// Get BotId Getter
+// GetBotId BotId Getter
 func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetBotId() int64 {
 	return r._botId
 }
 
-// Set is DeletToken Setter
+// SetDeletToken is DeletToken Setter
 // 1234
 func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetDeletToken(_deletToken int64) error {
 	r._deletToken = _deletToken
@@ -66,12 +66,12 @@ func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetDeletToken(_deletToken int
 	return nil
 }
 
-// Get DeletToken Getter
+// GetDeletToken DeletToken Getter
 func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetDeletToken() int64 {
 	return r._deletToken
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 当前页
 func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -79,12 +79,12 @@ func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetPageIndex(_pageIndex int64
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页单位
 func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -92,12 +92,12 @@ func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetPageSize(_pageSize int64) 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is SkillId Setter
+// SetSkillId is SkillId Setter
 // 技能id
 func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetSkillId(_skillId int64) error {
 	r._skillId = _skillId
@@ -105,7 +105,7 @@ func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetSkillId(_skillId int64) er
 	return nil
 }
 
-// Get SkillId Getter
+// GetSkillId SkillId Getter
 func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetSkillId() int64 {
 	return r._skillId
 }

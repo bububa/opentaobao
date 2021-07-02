@@ -41,7 +41,7 @@ func (r TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // ONLINE_WITH_CONTENT("ONLINE_WITH_CONTENT", "设备在线"), OFFLINE("OFFLINE", "设备断线");
 func (r *TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -49,12 +49,12 @@ func (r *TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) SetStatus(_status strin
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 设备编码
 func (r *TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -62,12 +62,12 @@ func (r *TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) SetDeviceCode(_deviceCo
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is StatusTime Setter
+// SetStatusTime is StatusTime Setter
 // 当前状态的时间
 func (r *TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) SetStatusTime(_statusTime string) error {
 	r._statusTime = _statusTime
@@ -75,7 +75,7 @@ func (r *TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) SetStatusTime(_statusTi
 	return nil
 }
 
-// Get StatusTime Getter
+// GetStatusTime StatusTime Getter
 func (r TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) GetStatusTime() string {
 	return r._statusTime
 }

@@ -41,7 +41,7 @@ func (r TmallServicecenterWorkcardCollectAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *TmallServicecenterWorkcardCollectAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -49,12 +49,12 @@ func (r *TmallServicecenterWorkcardCollectAPIRequest) SetWorkcardId(_workcardId 
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterWorkcardCollectAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }
 
-// Set is BuyerId Setter
+// SetBuyerId is BuyerId Setter
 // 买家id
 func (r *TmallServicecenterWorkcardCollectAPIRequest) SetBuyerId(_buyerId int64) error {
 	r._buyerId = _buyerId
@@ -62,12 +62,12 @@ func (r *TmallServicecenterWorkcardCollectAPIRequest) SetBuyerId(_buyerId int64)
 	return nil
 }
 
-// Get BuyerId Getter
+// GetBuyerId BuyerId Getter
 func (r TmallServicecenterWorkcardCollectAPIRequest) GetBuyerId() int64 {
 	return r._buyerId
 }
 
-// Set is Attributes Setter
+// SetAttributes is Attributes Setter
 // 扩展信息
 func (r *TmallServicecenterWorkcardCollectAPIRequest) SetAttributes(_attributes string) error {
 	r._attributes = _attributes
@@ -75,7 +75,7 @@ func (r *TmallServicecenterWorkcardCollectAPIRequest) SetAttributes(_attributes 
 	return nil
 }
 
-// Get Attributes Getter
+// GetAttributes Attributes Getter
 func (r TmallServicecenterWorkcardCollectAPIRequest) GetAttributes() string {
 	return r._attributes
 }

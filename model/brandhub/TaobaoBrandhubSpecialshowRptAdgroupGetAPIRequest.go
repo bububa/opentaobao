@@ -47,7 +47,7 @@ func (r TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 开始时间(最多可查询最近90天)
 func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -55,12 +55,12 @@ func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetStartDate(_startDa
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 截至时间(最晚到昨天)
 func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -68,12 +68,12 @@ func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetEndDate(_endDate s
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is SolutionId Setter
+// SetSolutionId is SolutionId Setter
 // 指定计划id
 func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetSolutionId(_solutionId string) error {
 	r._solutionId = _solutionId
@@ -81,12 +81,12 @@ func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetSolutionId(_soluti
 	return nil
 }
 
-// Get SolutionId Getter
+// GetSolutionId SolutionId Getter
 func (r TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) GetSolutionId() string {
 	return r._solutionId
 }
 
-// Set is TaskId Setter
+// SetTaskId is TaskId Setter
 // 指定任务id
 func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetTaskId(_taskId string) error {
 	r._taskId = _taskId
@@ -94,12 +94,12 @@ func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetTaskId(_taskId str
 	return nil
 }
 
-// Get TaskId Getter
+// GetTaskId TaskId Getter
 func (r TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) GetTaskId() string {
 	return r._taskId
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 当前页数
 func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetPageIndex(_pageIndex string) error {
 	r._pageIndex = _pageIndex
@@ -107,12 +107,12 @@ func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetPageIndex(_pageInd
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) GetPageIndex() string {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 可选页数
 func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetPageSize(_pageSize string) error {
 	r._pageSize = _pageSize
@@ -120,7 +120,7 @@ func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetPageSize(_pageSize
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) GetPageSize() string {
 	return r._pageSize
 }

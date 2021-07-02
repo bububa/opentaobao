@@ -61,7 +61,7 @@ func (r TaobaoLogisticsAddressModifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ContactId Setter
+// SetContactId is ContactId Setter
 // 地址库ID
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetContactId(_contactId int64) error {
 	r._contactId = _contactId
@@ -69,12 +69,12 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetContactId(_contactId int64) 
 	return nil
 }
 
-// Get ContactId Getter
+// GetContactId ContactId Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetContactId() int64 {
 	return r._contactId
 }
 
-// Set is ContactName Setter
+// SetContactName is ContactName Setter
 // 联系人姓名<br/><font color='red'>长度不可超过20个字节</font>
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetContactName(_contactName string) error {
 	r._contactName = _contactName
@@ -82,12 +82,12 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetContactName(_contactName str
 	return nil
 }
 
-// Get ContactName Getter
+// GetContactName ContactName Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetContactName() string {
 	return r._contactName
 }
 
-// Set is Province Setter
+// SetProvince is Province Setter
 // 所在省
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetProvince(_province string) error {
 	r._province = _province
@@ -95,12 +95,12 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetProvince(_province string) e
 	return nil
 }
 
-// Get Province Getter
+// GetProvince Province Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetProvince() string {
 	return r._province
 }
 
-// Set is City Setter
+// SetCity is City Setter
 // 所在市
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetCity(_city string) error {
 	r._city = _city
@@ -108,12 +108,12 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetCity(_city string) error {
 	return nil
 }
 
-// Get City Getter
+// GetCity City Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetCity() string {
 	return r._city
 }
 
-// Set is Country Setter
+// SetCountry is Country Setter
 // 区、县<br/><br><font color='red'>如果所在地区是海外的可以为空，否则为必参</font>
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetCountry(_country string) error {
 	r._country = _country
@@ -121,12 +121,12 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetCountry(_country string) err
 	return nil
 }
 
-// Get Country Getter
+// GetCountry Country Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetCountry() string {
 	return r._country
 }
 
-// Set is Addr Setter
+// SetAddr is Addr Setter
 // 详细街道地址，不需要重复填写省/市/区
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetAddr(_addr string) error {
 	r._addr = _addr
@@ -134,12 +134,12 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetAddr(_addr string) error {
 	return nil
 }
 
-// Get Addr Getter
+// GetAddr Addr Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetAddr() string {
 	return r._addr
 }
 
-// Set is ZipCode Setter
+// SetZipCode is ZipCode Setter
 // 地区邮政编码<br/><br><font color='red'>如果所在地区是海外的可以为空，否则为必参</font>
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetZipCode(_zipCode string) error {
 	r._zipCode = _zipCode
@@ -147,12 +147,12 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetZipCode(_zipCode string) err
 	return nil
 }
 
-// Get ZipCode Getter
+// GetZipCode ZipCode Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetZipCode() string {
 	return r._zipCode
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 电话号码,手机与电话必需有一个
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -160,12 +160,12 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetPhone(_phone string) error {
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetPhone() string {
 	return r._phone
 }
 
-// Set is MobilePhone Setter
+// SetMobilePhone is MobilePhone Setter
 // 手机号码，手机与电话必需有一个 <br><font color='red'>手机号码不能超过20位</font>
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetMobilePhone(_mobilePhone string) error {
 	r._mobilePhone = _mobilePhone
@@ -173,12 +173,12 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetMobilePhone(_mobilePhone str
 	return nil
 }
 
-// Get MobilePhone Getter
+// GetMobilePhone MobilePhone Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetMobilePhone() string {
 	return r._mobilePhone
 }
 
-// Set is SellerCompany Setter
+// SetSellerCompany is SellerCompany Setter
 // 公司名称,<br/><br><font color='red'>公司名称长能不能超过20字节</font>
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetSellerCompany(_sellerCompany string) error {
 	r._sellerCompany = _sellerCompany
@@ -186,12 +186,12 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetSellerCompany(_sellerCompany
 	return nil
 }
 
-// Get SellerCompany Getter
+// GetSellerCompany SellerCompany Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetSellerCompany() string {
 	return r._sellerCompany
 }
 
-// Set is Memo Setter
+// SetMemo is Memo Setter
 // 备注,<br><font color='red'>备注不能超过256字节</font>
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
@@ -199,12 +199,12 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetMemo(_memo string) error {
 	return nil
 }
 
-// Get Memo Getter
+// GetMemo Memo Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetMemo() string {
 	return r._memo
 }
 
-// Set is GetDef Setter
+// SetGetDef is GetDef Setter
 // 默认取货地址。<br><br/><font color='red'>选择此项(true)，将当前地址设为默认取货地址，撤消原默认取货地址</font>
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetGetDef(_getDef bool) error {
 	r._getDef = _getDef
@@ -212,12 +212,12 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetGetDef(_getDef bool) error {
 	return nil
 }
 
-// Get GetDef Getter
+// GetGetDef GetDef Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetGetDef() bool {
 	return r._getDef
 }
 
-// Set is CancelDef Setter
+// SetCancelDef is CancelDef Setter
 // 默认退货地址。<br><br/><font color='red'>选择此项(true)，将当前地址设为默认退货地址，撤消原默认退货地址</font>
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetCancelDef(_cancelDef bool) error {
 	r._cancelDef = _cancelDef
@@ -225,7 +225,7 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetCancelDef(_cancelDef bool) e
 	return nil
 }
 
-// Get CancelDef Getter
+// GetCancelDef CancelDef Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetCancelDef() bool {
 	return r._cancelDef
 }

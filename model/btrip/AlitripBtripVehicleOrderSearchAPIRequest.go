@@ -37,7 +37,7 @@ func (r AlitripBtripVehicleOrderSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 请求对象
 func (r *AlitripBtripVehicleOrderSearchAPIRequest) SetRq(_rq *OpenSearchRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripVehicleOrderSearchAPIRequest) SetRq(_rq *OpenSearchRq) erro
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripVehicleOrderSearchAPIRequest) GetRq() *OpenSearchRq {
 	return r._rq
 }

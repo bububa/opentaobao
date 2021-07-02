@@ -45,7 +45,7 @@ func (r TmallCrmMemberPointChangeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Point Setter
+// SetPoint is Point Setter
 // 更改积分数值
 func (r *TmallCrmMemberPointChangeAPIRequest) SetPoint(_point int64) error {
 	r._point = _point
@@ -53,12 +53,12 @@ func (r *TmallCrmMemberPointChangeAPIRequest) SetPoint(_point int64) error {
 	return nil
 }
 
-// Get Point Getter
+// GetPoint Point Getter
 func (r TmallCrmMemberPointChangeAPIRequest) GetPoint() int64 {
 	return r._point
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // minus:扣减;add:累加
 func (r *TmallCrmMemberPointChangeAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -66,12 +66,12 @@ func (r *TmallCrmMemberPointChangeAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TmallCrmMemberPointChangeAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is BizCode Setter
+// SetBizCode is BizCode Setter
 // 业务代码
 func (r *TmallCrmMemberPointChangeAPIRequest) SetBizCode(_bizCode string) error {
 	r._bizCode = _bizCode
@@ -79,12 +79,12 @@ func (r *TmallCrmMemberPointChangeAPIRequest) SetBizCode(_bizCode string) error 
 	return nil
 }
 
-// Get BizCode Getter
+// GetBizCode BizCode Getter
 func (r TmallCrmMemberPointChangeAPIRequest) GetBizCode() string {
 	return r._bizCode
 }
 
-// Set is BizDetail Setter
+// SetBizDetail is BizDetail Setter
 // 业务描述
 func (r *TmallCrmMemberPointChangeAPIRequest) SetBizDetail(_bizDetail string) error {
 	r._bizDetail = _bizDetail
@@ -92,12 +92,12 @@ func (r *TmallCrmMemberPointChangeAPIRequest) SetBizDetail(_bizDetail string) er
 	return nil
 }
 
-// Get BizDetail Getter
+// GetBizDetail BizDetail Getter
 func (r TmallCrmMemberPointChangeAPIRequest) GetBizDetail() string {
 	return r._bizDetail
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 用户昵称
 func (r *TmallCrmMemberPointChangeAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -105,7 +105,7 @@ func (r *TmallCrmMemberPointChangeAPIRequest) SetUserNick(_userNick string) erro
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r TmallCrmMemberPointChangeAPIRequest) GetUserNick() string {
 	return r._userNick
 }

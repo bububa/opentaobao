@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentTableauditQuerymetaitemAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is TableAuditQueryBo Setter
+// SetTableAuditQueryBo is TableAuditQueryBo Setter
 // 查询条件，json格式
 func (r *YunosTvpubadminContentTableauditQuerymetaitemAPIRequest) SetTableAuditQueryBo(_tableAuditQueryBo string) error {
 	r._tableAuditQueryBo = _tableAuditQueryBo
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentTableauditQuerymetaitemAPIRequest) SetTableAuditQ
 	return nil
 }
 
-// Get TableAuditQueryBo Getter
+// GetTableAuditQueryBo TableAuditQueryBo Getter
 func (r YunosTvpubadminContentTableauditQuerymetaitemAPIRequest) GetTableAuditQueryBo() string {
 	return r._tableAuditQueryBo
 }

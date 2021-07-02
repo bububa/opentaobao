@@ -37,7 +37,7 @@ func (r TmallServicecenterSpserviceorderQueryAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ParentBizOrderId Setter
+// SetParentBizOrderId is ParentBizOrderId Setter
 // 交易主订单id
 func (r *TmallServicecenterSpserviceorderQueryAPIRequest) SetParentBizOrderId(_parentBizOrderId int64) error {
 	r._parentBizOrderId = _parentBizOrderId
@@ -45,7 +45,7 @@ func (r *TmallServicecenterSpserviceorderQueryAPIRequest) SetParentBizOrderId(_p
 	return nil
 }
 
-// Get ParentBizOrderId Getter
+// GetParentBizOrderId ParentBizOrderId Getter
 func (r TmallServicecenterSpserviceorderQueryAPIRequest) GetParentBizOrderId() int64 {
 	return r._parentBizOrderId
 }

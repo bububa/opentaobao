@@ -41,7 +41,7 @@ func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is TemplateName Setter
+// SetTemplateName is TemplateName Setter
 // 模板名称
 func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) SetTemplateName(_templateName string) error {
 	r._templateName = _templateName
@@ -49,12 +49,12 @@ func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) SetTemplateName(_template
 	return nil
 }
 
-// Get TemplateName Getter
+// GetTemplateName TemplateName Getter
 func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetTemplateName() string {
 	return r._templateName
 }
 
-// Set is TemplateContents Setter
+// SetTemplateContents is TemplateContents Setter
 // 系统自动生成
 func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) SetTemplateContents(_templateContents []DigitalSmsTemplateContentDto) error {
 	r._templateContents = _templateContents
@@ -62,12 +62,12 @@ func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) SetTemplateContents(_temp
 	return nil
 }
 
-// Get TemplateContents Getter
+// GetTemplateContents TemplateContents Getter
 func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetTemplateContents() []DigitalSmsTemplateContentDto {
 	return r._templateContents
 }
 
-// Set is ApplyRemark Setter
+// SetApplyRemark is ApplyRemark Setter
 // 申请说明
 func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) SetApplyRemark(_applyRemark string) error {
 	r._applyRemark = _applyRemark
@@ -75,7 +75,7 @@ func (r *AlibabaIsvDigitalsmsCreatetemplateAPIRequest) SetApplyRemark(_applyRema
 	return nil
 }
 
-// Get ApplyRemark Getter
+// GetApplyRemark ApplyRemark Getter
 func (r AlibabaIsvDigitalsmsCreatetemplateAPIRequest) GetApplyRemark() string {
 	return r._applyRemark
 }

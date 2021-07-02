@@ -43,7 +43,7 @@ func (r AlibabaWdkItemPriceUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 盒马门店id
 func (r *AlibabaWdkItemPriceUpdateAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -51,12 +51,12 @@ func (r *AlibabaWdkItemPriceUpdateAPIRequest) SetStoreId(_storeId string) error 
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaWdkItemPriceUpdateAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is SkuCode Setter
+// SetSkuCode is SkuCode Setter
 // 商品编码
 func (r *AlibabaWdkItemPriceUpdateAPIRequest) SetSkuCode(_skuCode string) error {
 	r._skuCode = _skuCode
@@ -64,12 +64,12 @@ func (r *AlibabaWdkItemPriceUpdateAPIRequest) SetSkuCode(_skuCode string) error 
 	return nil
 }
 
-// Get SkuCode Getter
+// GetSkuCode SkuCode Getter
 func (r AlibabaWdkItemPriceUpdateAPIRequest) GetSkuCode() string {
 	return r._skuCode
 }
 
-// Set is SkuPrice Setter
+// SetSkuPrice is SkuPrice Setter
 // 价格，单位是分
 func (r *AlibabaWdkItemPriceUpdateAPIRequest) SetSkuPrice(_skuPrice int64) error {
 	r._skuPrice = _skuPrice
@@ -77,12 +77,12 @@ func (r *AlibabaWdkItemPriceUpdateAPIRequest) SetSkuPrice(_skuPrice int64) error
 	return nil
 }
 
-// Get SkuPrice Getter
+// GetSkuPrice SkuPrice Getter
 func (r AlibabaWdkItemPriceUpdateAPIRequest) GetSkuPrice() int64 {
 	return r._skuPrice
 }
 
-// Set is SkuMemberPrice Setter
+// SetSkuMemberPrice is SkuMemberPrice Setter
 // 会员价格，单位是分，且不能大于价格
 func (r *AlibabaWdkItemPriceUpdateAPIRequest) SetSkuMemberPrice(_skuMemberPrice int64) error {
 	r._skuMemberPrice = _skuMemberPrice
@@ -90,7 +90,7 @@ func (r *AlibabaWdkItemPriceUpdateAPIRequest) SetSkuMemberPrice(_skuMemberPrice 
 	return nil
 }
 
-// Get SkuMemberPrice Getter
+// GetSkuMemberPrice SkuMemberPrice Getter
 func (r AlibabaWdkItemPriceUpdateAPIRequest) GetSkuMemberPrice() int64 {
 	return r._skuMemberPrice
 }

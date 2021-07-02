@@ -39,7 +39,7 @@ func (r TaobaoWangwangAbstractAddwordAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Word Setter
+// SetWord is Word Setter
 // 关键词，长度大于0
 func (r *TaobaoWangwangAbstractAddwordAPIRequest) SetWord(_word string) error {
 	r._word = _word
@@ -47,12 +47,12 @@ func (r *TaobaoWangwangAbstractAddwordAPIRequest) SetWord(_word string) error {
 	return nil
 }
 
-// Get Word Getter
+// GetWord Word Getter
 func (r TaobaoWangwangAbstractAddwordAPIRequest) GetWord() string {
 	return r._word
 }
 
-// Set is Charset Setter
+// SetCharset is Charset Setter
 // 传入参数的字符集
 func (r *TaobaoWangwangAbstractAddwordAPIRequest) SetCharset(_charset string) error {
 	r._charset = _charset
@@ -60,7 +60,7 @@ func (r *TaobaoWangwangAbstractAddwordAPIRequest) SetCharset(_charset string) er
 	return nil
 }
 
-// Get Charset Getter
+// GetCharset Charset Getter
 func (r TaobaoWangwangAbstractAddwordAPIRequest) GetCharset() string {
 	return r._charset
 }

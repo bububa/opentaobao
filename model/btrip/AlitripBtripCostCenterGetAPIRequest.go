@@ -39,7 +39,7 @@ func (r AlitripBtripCostCenterGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CorpId Setter
+// SetCorpId is CorpId Setter
 // 企业id
 func (r *AlitripBtripCostCenterGetAPIRequest) SetCorpId(_corpId string) error {
 	r._corpId = _corpId
@@ -47,12 +47,12 @@ func (r *AlitripBtripCostCenterGetAPIRequest) SetCorpId(_corpId string) error {
 	return nil
 }
 
-// Get CorpId Getter
+// GetCorpId CorpId Getter
 func (r AlitripBtripCostCenterGetAPIRequest) GetCorpId() string {
 	return r._corpId
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户id
 func (r *AlitripBtripCostCenterGetAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -60,7 +60,7 @@ func (r *AlitripBtripCostCenterGetAPIRequest) SetUserId(_userId string) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlitripBtripCostCenterGetAPIRequest) GetUserId() string {
 	return r._userId
 }

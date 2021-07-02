@@ -39,7 +39,7 @@ func (r TaobaoOpenimIoscertSandboxSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Cert Setter
+// SetCert is Cert Setter
 // 证书内容,base64编码
 func (r *TaobaoOpenimIoscertSandboxSetAPIRequest) SetCert(_cert string) error {
 	r._cert = _cert
@@ -47,12 +47,12 @@ func (r *TaobaoOpenimIoscertSandboxSetAPIRequest) SetCert(_cert string) error {
 	return nil
 }
 
-// Get Cert Getter
+// GetCert Cert Getter
 func (r TaobaoOpenimIoscertSandboxSetAPIRequest) GetCert() string {
 	return r._cert
 }
 
-// Set is Password Setter
+// SetPassword is Password Setter
 // 系统自动生成
 func (r *TaobaoOpenimIoscertSandboxSetAPIRequest) SetPassword(_password string) error {
 	r._password = _password
@@ -60,7 +60,7 @@ func (r *TaobaoOpenimIoscertSandboxSetAPIRequest) SetPassword(_password string) 
 	return nil
 }
 
-// Get Password Getter
+// GetPassword Password Getter
 func (r TaobaoOpenimIoscertSandboxSetAPIRequest) GetPassword() string {
 	return r._password
 }

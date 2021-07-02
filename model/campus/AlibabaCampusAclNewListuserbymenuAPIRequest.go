@@ -39,7 +39,7 @@ func (r AlibabaCampusAclNewListuserbymenuAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Context Setter
+// SetContext is Context Setter
 // 系统入参
 func (r *AlibabaCampusAclNewListuserbymenuAPIRequest) SetContext(_context *WorkBenchContext) error {
 	r._context = _context
@@ -47,12 +47,12 @@ func (r *AlibabaCampusAclNewListuserbymenuAPIRequest) SetContext(_context *WorkB
 	return nil
 }
 
-// Get Context Getter
+// GetContext Context Getter
 func (r AlibabaCampusAclNewListuserbymenuAPIRequest) GetContext() *WorkBenchContext {
 	return r._context
 }
 
-// Set is MenuUrl Setter
+// SetMenuUrl is MenuUrl Setter
 // /workbench/space/application
 func (r *AlibabaCampusAclNewListuserbymenuAPIRequest) SetMenuUrl(_menuUrl string) error {
 	r._menuUrl = _menuUrl
@@ -60,7 +60,7 @@ func (r *AlibabaCampusAclNewListuserbymenuAPIRequest) SetMenuUrl(_menuUrl string
 	return nil
 }
 
-// Get MenuUrl Getter
+// GetMenuUrl MenuUrl Getter
 func (r AlibabaCampusAclNewListuserbymenuAPIRequest) GetMenuUrl() string {
 	return r._menuUrl
 }

@@ -43,7 +43,7 @@ func (r AlibabaDtTmllcarLeadsinfoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ShopCode Setter
+// SetShopCode is ShopCode Setter
 // shopcode
 func (r *AlibabaDtTmllcarLeadsinfoAPIRequest) SetShopCode(_shopCode string) error {
 	r._shopCode = _shopCode
@@ -51,12 +51,12 @@ func (r *AlibabaDtTmllcarLeadsinfoAPIRequest) SetShopCode(_shopCode string) erro
 	return nil
 }
 
-// Get ShopCode Getter
+// GetShopCode ShopCode Getter
 func (r AlibabaDtTmllcarLeadsinfoAPIRequest) GetShopCode() string {
 	return r._shopCode
 }
 
-// Set is AppName Setter
+// SetAppName is AppName Setter
 // app_name
 func (r *AlibabaDtTmllcarLeadsinfoAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
@@ -64,12 +64,12 @@ func (r *AlibabaDtTmllcarLeadsinfoAPIRequest) SetAppName(_appName string) error 
 	return nil
 }
 
-// Get AppName Getter
+// GetAppName AppName Getter
 func (r AlibabaDtTmllcarLeadsinfoAPIRequest) GetAppName() string {
 	return r._appName
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // name
 func (r *AlibabaDtTmllcarLeadsinfoAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -77,12 +77,12 @@ func (r *AlibabaDtTmllcarLeadsinfoAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlibabaDtTmllcarLeadsinfoAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Password Setter
+// SetPassword is Password Setter
 // pssword
 func (r *AlibabaDtTmllcarLeadsinfoAPIRequest) SetPassword(_password string) error {
 	r._password = _password
@@ -90,7 +90,7 @@ func (r *AlibabaDtTmllcarLeadsinfoAPIRequest) SetPassword(_password string) erro
 	return nil
 }
 
-// Get Password Getter
+// GetPassword Password Getter
 func (r AlibabaDtTmllcarLeadsinfoAPIRequest) GetPassword() string {
 	return r._password
 }

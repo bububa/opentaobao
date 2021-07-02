@@ -39,7 +39,7 @@ func (r AlibabaCampusAclNewListusermenuAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Workbenchcontext Setter
+// SetWorkbenchcontext is Workbenchcontext Setter
 // 系统入参
 func (r *AlibabaCampusAclNewListusermenuAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
 	r._workbenchcontext = _workbenchcontext
@@ -47,12 +47,12 @@ func (r *AlibabaCampusAclNewListusermenuAPIRequest) SetWorkbenchcontext(_workben
 	return nil
 }
 
-// Get Workbenchcontext Getter
+// GetWorkbenchcontext Workbenchcontext Getter
 func (r AlibabaCampusAclNewListusermenuAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户账号
 func (r *AlibabaCampusAclNewListusermenuAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -60,7 +60,7 @@ func (r *AlibabaCampusAclNewListusermenuAPIRequest) SetUserId(_userId string) er
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaCampusAclNewListusermenuAPIRequest) GetUserId() string {
 	return r._userId
 }

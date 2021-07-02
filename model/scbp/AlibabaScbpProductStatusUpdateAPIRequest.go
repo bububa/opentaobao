@@ -39,7 +39,7 @@ func (r AlibabaScbpProductStatusUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductIdList Setter
+// SetProductIdList is ProductIdList Setter
 // 产品ID列表
 func (r *AlibabaScbpProductStatusUpdateAPIRequest) SetProductIdList(_productIdList []int64) error {
 	r._productIdList = _productIdList
@@ -47,12 +47,12 @@ func (r *AlibabaScbpProductStatusUpdateAPIRequest) SetProductIdList(_productIdLi
 	return nil
 }
 
-// Get ProductIdList Getter
+// GetProductIdList ProductIdList Getter
 func (r AlibabaScbpProductStatusUpdateAPIRequest) GetProductIdList() []int64 {
 	return r._productIdList
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // enabled:开启,disabled:暂停
 func (r *AlibabaScbpProductStatusUpdateAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -60,7 +60,7 @@ func (r *AlibabaScbpProductStatusUpdateAPIRequest) SetStatus(_status string) err
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaScbpProductStatusUpdateAPIRequest) GetStatus() string {
 	return r._status
 }

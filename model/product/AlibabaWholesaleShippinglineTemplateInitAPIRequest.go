@@ -37,7 +37,7 @@ func (r AlibabaWholesaleShippinglineTemplateInitAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is InitialTemplate Setter
+// SetInitialTemplate is InitialTemplate Setter
 // 创建初始运费模板参数
 func (r *AlibabaWholesaleShippinglineTemplateInitAPIRequest) SetInitialTemplate(_initialTemplate []InitialTemplate) error {
 	r._initialTemplate = _initialTemplate
@@ -45,7 +45,7 @@ func (r *AlibabaWholesaleShippinglineTemplateInitAPIRequest) SetInitialTemplate(
 	return nil
 }
 
-// Get InitialTemplate Getter
+// GetInitialTemplate InitialTemplate Getter
 func (r AlibabaWholesaleShippinglineTemplateInitAPIRequest) GetInitialTemplate() []InitialTemplate {
 	return r._initialTemplate
 }

@@ -37,7 +37,7 @@ func (r AlibabaAscpChannelRefundGoodsWaybillAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is RefundWayBillReq Setter
+// SetRefundWayBillReq is RefundWayBillReq Setter
 // 请求
 func (r *AlibabaAscpChannelRefundGoodsWaybillAPIRequest) SetRefundWayBillReq(_refundWayBillReq *ExternalRefundGoodsWaybillRequest) error {
 	r._refundWayBillReq = _refundWayBillReq
@@ -45,7 +45,7 @@ func (r *AlibabaAscpChannelRefundGoodsWaybillAPIRequest) SetRefundWayBillReq(_re
 	return nil
 }
 
-// Get RefundWayBillReq Getter
+// GetRefundWayBillReq RefundWayBillReq Getter
 func (r AlibabaAscpChannelRefundGoodsWaybillAPIRequest) GetRefundWayBillReq() *ExternalRefundGoodsWaybillRequest {
 	return r._refundWayBillReq
 }

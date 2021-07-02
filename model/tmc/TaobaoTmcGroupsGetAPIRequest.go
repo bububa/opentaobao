@@ -41,7 +41,7 @@ func (r TaobaoTmcGroupsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupNames Setter
+// SetGroupNames is GroupNames Setter
 // 要查询分组的名称，多个分组用半角逗号分隔，不传代表查询所有分组信息，但不会返回组下面的用户信息。如果应用没有设置分组则返回空。组名不能以default开头，default开头是系统默认的组。
 func (r *TaobaoTmcGroupsGetAPIRequest) SetGroupNames(_groupNames []string) error {
 	r._groupNames = _groupNames
@@ -49,12 +49,12 @@ func (r *TaobaoTmcGroupsGetAPIRequest) SetGroupNames(_groupNames []string) error
 	return nil
 }
 
-// Get GroupNames Getter
+// GetGroupNames GroupNames Getter
 func (r TaobaoTmcGroupsGetAPIRequest) GetGroupNames() []string {
 	return r._groupNames
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *TaobaoTmcGroupsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -62,12 +62,12 @@ func (r *TaobaoTmcGroupsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoTmcGroupsGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页返回多少个分组
 func (r *TaobaoTmcGroupsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *TaobaoTmcGroupsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTmcGroupsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

@@ -39,7 +39,7 @@ func (r AlibabaMosOnsiteTradeQueryrefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutRequestNo Setter
+// SetOutRequestNo is OutRequestNo Setter
 // 退款外部流水号
 func (r *AlibabaMosOnsiteTradeQueryrefundAPIRequest) SetOutRequestNo(_outRequestNo string) error {
 	r._outRequestNo = _outRequestNo
@@ -47,12 +47,12 @@ func (r *AlibabaMosOnsiteTradeQueryrefundAPIRequest) SetOutRequestNo(_outRequest
 	return nil
 }
 
-// Get OutRequestNo Getter
+// GetOutRequestNo OutRequestNo Getter
 func (r AlibabaMosOnsiteTradeQueryrefundAPIRequest) GetOutRequestNo() string {
 	return r._outRequestNo
 }
 
-// Set is OrderNo Setter
+// SetOrderNo is OrderNo Setter
 // 订单号。可能为外部订单号，也可能为喵街订单号
 func (r *AlibabaMosOnsiteTradeQueryrefundAPIRequest) SetOrderNo(_orderNo string) error {
 	r._orderNo = _orderNo
@@ -60,7 +60,7 @@ func (r *AlibabaMosOnsiteTradeQueryrefundAPIRequest) SetOrderNo(_orderNo string)
 	return nil
 }
 
-// Get OrderNo Getter
+// GetOrderNo OrderNo Getter
 func (r AlibabaMosOnsiteTradeQueryrefundAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }

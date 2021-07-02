@@ -39,7 +39,7 @@ func (r AliexpressSolutionSellerCategoryTreeQueryAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // parent category ID. To obtain the root categories, setting the category_id = 0
 func (r *AliexpressSolutionSellerCategoryTreeQueryAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
@@ -47,12 +47,12 @@ func (r *AliexpressSolutionSellerCategoryTreeQueryAPIRequest) SetCategoryId(_cat
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r AliexpressSolutionSellerCategoryTreeQueryAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }
 
-// Set is FilterNoPermission Setter
+// SetFilterNoPermission is FilterNoPermission Setter
 // filter the categories which seller does not have permission
 func (r *AliexpressSolutionSellerCategoryTreeQueryAPIRequest) SetFilterNoPermission(_filterNoPermission bool) error {
 	r._filterNoPermission = _filterNoPermission
@@ -60,7 +60,7 @@ func (r *AliexpressSolutionSellerCategoryTreeQueryAPIRequest) SetFilterNoPermiss
 	return nil
 }
 
-// Get FilterNoPermission Getter
+// GetFilterNoPermission FilterNoPermission Getter
 func (r AliexpressSolutionSellerCategoryTreeQueryAPIRequest) GetFilterNoPermission() bool {
 	return r._filterNoPermission
 }

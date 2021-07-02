@@ -37,7 +37,7 @@ func (r AlibabaFpmFileUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizDto Setter
+// SetBizDto is BizDto Setter
 // 实体
 func (r *AlibabaFpmFileUploadAPIRequest) SetBizDto(_bizDto *FileUploadRequestDto) error {
 	r._bizDto = _bizDto
@@ -45,7 +45,7 @@ func (r *AlibabaFpmFileUploadAPIRequest) SetBizDto(_bizDto *FileUploadRequestDto
 	return nil
 }
 
-// Get BizDto Getter
+// GetBizDto BizDto Getter
 func (r AlibabaFpmFileUploadAPIRequest) GetBizDto() *FileUploadRequestDto {
 	return r._bizDto
 }

@@ -43,7 +43,7 @@ func (r YunosServiceCmnsCoaMessageAckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceToken Setter
+// SetDeviceToken is DeviceToken Setter
 // 设备唯一值deviceToken
 func (r *YunosServiceCmnsCoaMessageAckAPIRequest) SetDeviceToken(_deviceToken string) error {
 	r._deviceToken = _deviceToken
@@ -51,12 +51,12 @@ func (r *YunosServiceCmnsCoaMessageAckAPIRequest) SetDeviceToken(_deviceToken st
 	return nil
 }
 
-// Get DeviceToken Getter
+// GetDeviceToken DeviceToken Getter
 func (r YunosServiceCmnsCoaMessageAckAPIRequest) GetDeviceToken() string {
 	return r._deviceToken
 }
 
-// Set is Imei Setter
+// SetImei is Imei Setter
 // 设备imei
 func (r *YunosServiceCmnsCoaMessageAckAPIRequest) SetImei(_imei string) error {
 	r._imei = _imei
@@ -64,12 +64,12 @@ func (r *YunosServiceCmnsCoaMessageAckAPIRequest) SetImei(_imei string) error {
 	return nil
 }
 
-// Get Imei Getter
+// GetImei Imei Getter
 func (r YunosServiceCmnsCoaMessageAckAPIRequest) GetImei() string {
 	return r._imei
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 设备uuid
 func (r *YunosServiceCmnsCoaMessageAckAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -77,12 +77,12 @@ func (r *YunosServiceCmnsCoaMessageAckAPIRequest) SetUuid(_uuid string) error {
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r YunosServiceCmnsCoaMessageAckAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is Mid Setter
+// SetMid is Mid Setter
 // 消息ID
 func (r *YunosServiceCmnsCoaMessageAckAPIRequest) SetMid(_mid int64) error {
 	r._mid = _mid
@@ -90,7 +90,7 @@ func (r *YunosServiceCmnsCoaMessageAckAPIRequest) SetMid(_mid int64) error {
 	return nil
 }
 
-// Get Mid Getter
+// GetMid Mid Getter
 func (r YunosServiceCmnsCoaMessageAckAPIRequest) GetMid() int64 {
 	return r._mid
 }

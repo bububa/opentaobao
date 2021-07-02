@@ -59,7 +59,7 @@ func (r TmallProductSpecAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品ID
 func (r *TmallProductSpecAddAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -67,12 +67,12 @@ func (r *TmallProductSpecAddAPIRequest) SetProductId(_productId int64) error {
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TmallProductSpecAddAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is CertifiedPicStr Setter
+// SetCertifiedPicStr is CertifiedPicStr Setter
 // 存放产品规格认证类型-认证图片url映射信息，格式为k:v;k:v;，其中key为认证类型数字id，value为调用tmall.product.spec.pic.upload返回的认证图片url文本
 func (r *TmallProductSpecAddAPIRequest) SetCertifiedPicStr(_certifiedPicStr string) error {
 	r._certifiedPicStr = _certifiedPicStr
@@ -80,12 +80,12 @@ func (r *TmallProductSpecAddAPIRequest) SetCertifiedPicStr(_certifiedPicStr stri
 	return nil
 }
 
-// Get CertifiedPicStr Getter
+// GetCertifiedPicStr CertifiedPicStr Getter
 func (r TmallProductSpecAddAPIRequest) GetCertifiedPicStr() string {
 	return r._certifiedPicStr
 }
 
-// Set is LabelPrice Setter
+// SetLabelPrice is LabelPrice Setter
 // 产品规格吊牌价，以分为单位，无默认值，上限999999999
 func (r *TmallProductSpecAddAPIRequest) SetLabelPrice(_labelPrice int64) error {
 	r._labelPrice = _labelPrice
@@ -93,12 +93,12 @@ func (r *TmallProductSpecAddAPIRequest) SetLabelPrice(_labelPrice int64) error {
 	return nil
 }
 
-// Get LabelPrice Getter
+// GetLabelPrice LabelPrice Getter
 func (r TmallProductSpecAddAPIRequest) GetLabelPrice() int64 {
 	return r._labelPrice
 }
 
-// Set is CertifiedTxtStr Setter
+// SetCertifiedTxtStr is CertifiedTxtStr Setter
 // 存放产品规格认证类型-认证文本映射信息，格式为k:v;k:v;，其中key为认证类型数字id，value为认证文本值
 func (r *TmallProductSpecAddAPIRequest) SetCertifiedTxtStr(_certifiedTxtStr string) error {
 	r._certifiedTxtStr = _certifiedTxtStr
@@ -106,12 +106,12 @@ func (r *TmallProductSpecAddAPIRequest) SetCertifiedTxtStr(_certifiedTxtStr stri
 	return nil
 }
 
-// Get CertifiedTxtStr Getter
+// GetCertifiedTxtStr CertifiedTxtStr Getter
 func (r TmallProductSpecAddAPIRequest) GetCertifiedTxtStr() string {
 	return r._certifiedTxtStr
 }
 
-// Set is SpecProps Setter
+// SetSpecProps is SpecProps Setter
 // 产品的规格属性
 func (r *TmallProductSpecAddAPIRequest) SetSpecProps(_specProps string) error {
 	r._specProps = _specProps
@@ -119,12 +119,12 @@ func (r *TmallProductSpecAddAPIRequest) SetSpecProps(_specProps string) error {
 	return nil
 }
 
-// Get SpecProps Getter
+// GetSpecProps SpecProps Getter
 func (r TmallProductSpecAddAPIRequest) GetSpecProps() string {
 	return r._specProps
 }
 
-// Set is SpecPropsAlias Setter
+// SetSpecPropsAlias is SpecPropsAlias Setter
 // 规格属性别名,只允许传颜色别名
 func (r *TmallProductSpecAddAPIRequest) SetSpecPropsAlias(_specPropsAlias string) error {
 	r._specPropsAlias = _specPropsAlias
@@ -132,12 +132,12 @@ func (r *TmallProductSpecAddAPIRequest) SetSpecPropsAlias(_specPropsAlias string
 	return nil
 }
 
-// Get SpecPropsAlias Getter
+// GetSpecPropsAlias SpecPropsAlias Getter
 func (r TmallProductSpecAddAPIRequest) GetSpecPropsAlias() string {
 	return r._specPropsAlias
 }
 
-// Set is CustomerSpecProps Setter
+// SetCustomerSpecProps is CustomerSpecProps Setter
 // 用户自定义销售属性，结构：pid1:value1;pid2:value2。在
 func (r *TmallProductSpecAddAPIRequest) SetCustomerSpecProps(_customerSpecProps string) error {
 	r._customerSpecProps = _customerSpecProps
@@ -145,12 +145,12 @@ func (r *TmallProductSpecAddAPIRequest) SetCustomerSpecProps(_customerSpecProps 
 	return nil
 }
 
-// Get CustomerSpecProps Getter
+// GetCustomerSpecProps CustomerSpecProps Getter
 func (r TmallProductSpecAddAPIRequest) GetCustomerSpecProps() string {
 	return r._customerSpecProps
 }
 
-// Set is ChangeProp Setter
+// SetChangeProp is ChangeProp Setter
 // 产品基础色，数据格式为：pid:vid:rvid1,rvid2,rvid3;pid:vid:rvid1
 func (r *TmallProductSpecAddAPIRequest) SetChangeProp(_changeProp string) error {
 	r._changeProp = _changeProp
@@ -158,12 +158,12 @@ func (r *TmallProductSpecAddAPIRequest) SetChangeProp(_changeProp string) error 
 	return nil
 }
 
-// Get ChangeProp Getter
+// GetChangeProp ChangeProp Getter
 func (r TmallProductSpecAddAPIRequest) GetChangeProp() string {
 	return r._changeProp
 }
 
-// Set is Image Setter
+// SetImage is Image Setter
 // 产品图片
 func (r *TmallProductSpecAddAPIRequest) SetImage(_image *model.File) error {
 	r._image = _image
@@ -171,12 +171,12 @@ func (r *TmallProductSpecAddAPIRequest) SetImage(_image *model.File) error {
 	return nil
 }
 
-// Get Image Getter
+// GetImage Image Getter
 func (r TmallProductSpecAddAPIRequest) GetImage() *model.File {
 	return r._image
 }
 
-// Set is Barcode Setter
+// SetBarcode is Barcode Setter
 // 产品二维码
 func (r *TmallProductSpecAddAPIRequest) SetBarcode(_barcode string) error {
 	r._barcode = _barcode
@@ -184,12 +184,12 @@ func (r *TmallProductSpecAddAPIRequest) SetBarcode(_barcode string) error {
 	return nil
 }
 
-// Get Barcode Getter
+// GetBarcode Barcode Getter
 func (r TmallProductSpecAddAPIRequest) GetBarcode() string {
 	return r._barcode
 }
 
-// Set is ProductCode Setter
+// SetProductCode is ProductCode Setter
 // 产品货号
 func (r *TmallProductSpecAddAPIRequest) SetProductCode(_productCode string) error {
 	r._productCode = _productCode
@@ -197,12 +197,12 @@ func (r *TmallProductSpecAddAPIRequest) SetProductCode(_productCode string) erro
 	return nil
 }
 
-// Get ProductCode Getter
+// GetProductCode ProductCode Getter
 func (r TmallProductSpecAddAPIRequest) GetProductCode() string {
 	return r._productCode
 }
 
-// Set is MarketTime Setter
+// SetMarketTime is MarketTime Setter
 // 产品上市时间
 func (r *TmallProductSpecAddAPIRequest) SetMarketTime(_marketTime string) error {
 	r._marketTime = _marketTime
@@ -210,7 +210,7 @@ func (r *TmallProductSpecAddAPIRequest) SetMarketTime(_marketTime string) error 
 	return nil
 }
 
-// Get MarketTime Getter
+// GetMarketTime MarketTime Getter
 func (r TmallProductSpecAddAPIRequest) GetMarketTime() string {
 	return r._marketTime
 }

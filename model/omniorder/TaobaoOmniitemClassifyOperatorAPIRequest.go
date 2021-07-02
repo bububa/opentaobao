@@ -43,7 +43,7 @@ func (r TaobaoOmniitemClassifyOperatorAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Category Setter
+// SetCategory is Category Setter
 // 分类信息
 func (r *TaobaoOmniitemClassifyOperatorAPIRequest) SetCategory(_category *OmniItemCategoryDetailDto) error {
 	r._category = _category
@@ -51,12 +51,12 @@ func (r *TaobaoOmniitemClassifyOperatorAPIRequest) SetCategory(_category *OmniIt
 	return nil
 }
 
-// Get Category Getter
+// GetCategory Category Getter
 func (r TaobaoOmniitemClassifyOperatorAPIRequest) GetCategory() *OmniItemCategoryDetailDto {
 	return r._category
 }
 
-// Set is AddItemIds Setter
+// SetAddItemIds is AddItemIds Setter
 // 需要添加的关联关系的商品
 func (r *TaobaoOmniitemClassifyOperatorAPIRequest) SetAddItemIds(_addItemIds []int64) error {
 	r._addItemIds = _addItemIds
@@ -64,12 +64,12 @@ func (r *TaobaoOmniitemClassifyOperatorAPIRequest) SetAddItemIds(_addItemIds []i
 	return nil
 }
 
-// Get AddItemIds Getter
+// GetAddItemIds AddItemIds Getter
 func (r TaobaoOmniitemClassifyOperatorAPIRequest) GetAddItemIds() []int64 {
 	return r._addItemIds
 }
 
-// Set is RemoveItemIds Setter
+// SetRemoveItemIds is RemoveItemIds Setter
 // 需要修改的关联关系的商品
 func (r *TaobaoOmniitemClassifyOperatorAPIRequest) SetRemoveItemIds(_removeItemIds []int64) error {
 	r._removeItemIds = _removeItemIds
@@ -77,12 +77,12 @@ func (r *TaobaoOmniitemClassifyOperatorAPIRequest) SetRemoveItemIds(_removeItemI
 	return nil
 }
 
-// Get RemoveItemIds Getter
+// GetRemoveItemIds RemoveItemIds Getter
 func (r TaobaoOmniitemClassifyOperatorAPIRequest) GetRemoveItemIds() []int64 {
 	return r._removeItemIds
 }
 
-// Set is Operator Setter
+// SetOperator is Operator Setter
 // 操作人信息（暂时不填）
 func (r *TaobaoOmniitemClassifyOperatorAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
@@ -90,7 +90,7 @@ func (r *TaobaoOmniitemClassifyOperatorAPIRequest) SetOperator(_operator string)
 	return nil
 }
 
-// Get Operator Getter
+// GetOperator Operator Getter
 func (r TaobaoOmniitemClassifyOperatorAPIRequest) GetOperator() string {
 	return r._operator
 }

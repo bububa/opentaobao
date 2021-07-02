@@ -37,7 +37,7 @@ func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is BindIds Setter
+// SetBindIds is BindIds Setter
 // 绑定ID列表
 func (r *AlibabaAlihealthDentalBindAuditQueryAPIRequest) SetBindIds(_bindIds []int64) error {
 	r._bindIds = _bindIds
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthDentalBindAuditQueryAPIRequest) SetBindIds(_bindIds []i
 	return nil
 }
 
-// Get BindIds Getter
+// GetBindIds BindIds Getter
 func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetBindIds() []int64 {
 	return r._bindIds
 }

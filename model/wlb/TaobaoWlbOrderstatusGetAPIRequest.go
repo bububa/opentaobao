@@ -37,7 +37,7 @@ func (r TaobaoWlbOrderstatusGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // 物流宝订单编码
 func (r *TaobaoWlbOrderstatusGetAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -45,7 +45,7 @@ func (r *TaobaoWlbOrderstatusGetAPIRequest) SetOrderCode(_orderCode string) erro
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r TaobaoWlbOrderstatusGetAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }

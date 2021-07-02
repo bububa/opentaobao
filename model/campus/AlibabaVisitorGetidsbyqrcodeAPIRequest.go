@@ -43,7 +43,7 @@ func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CompanyId Setter
+// SetCompanyId is CompanyId Setter
 // 公司id
 func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetCompanyId(_companyId int64) error {
 	r._companyId = _companyId
@@ -51,12 +51,12 @@ func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetCompanyId(_companyId int64) 
 	return nil
 }
 
-// Get CompanyId Getter
+// GetCompanyId CompanyId Getter
 func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetCompanyId() int64 {
 	return r._companyId
 }
 
-// Set is CampusId Setter
+// SetCampusId is CampusId Setter
 // 园区id
 func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetCampusId(_campusId int64) error {
 	r._campusId = _campusId
@@ -64,12 +64,12 @@ func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetCampusId(_campusId int64) er
 	return nil
 }
 
-// Get CampusId Getter
+// GetCampusId CampusId Getter
 func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }
 
-// Set is Date Setter
+// SetDate is Date Setter
 // 来访时间
 func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetDate(_date string) error {
 	r._date = _date
@@ -77,12 +77,12 @@ func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetDate(_date string) error {
 	return nil
 }
 
-// Get Date Getter
+// GetDate Date Getter
 func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetDate() string {
 	return r._date
 }
 
-// Set is QrCode Setter
+// SetQrCode is QrCode Setter
 // 二维码字符串
 func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetQrCode(_qrCode string) error {
 	r._qrCode = _qrCode
@@ -90,7 +90,7 @@ func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetQrCode(_qrCode string) error
 	return nil
 }
 
-// Get QrCode Getter
+// GetQrCode QrCode Getter
 func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetQrCode() string {
 	return r._qrCode
 }

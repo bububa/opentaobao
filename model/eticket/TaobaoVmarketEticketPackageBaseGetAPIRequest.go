@@ -37,7 +37,7 @@ func (r TaobaoVmarketEticketPackageBaseGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is PackageId Setter
+// SetPackageId is PackageId Setter
 // 包id
 func (r *TaobaoVmarketEticketPackageBaseGetAPIRequest) SetPackageId(_packageId int64) error {
 	r._packageId = _packageId
@@ -45,7 +45,7 @@ func (r *TaobaoVmarketEticketPackageBaseGetAPIRequest) SetPackageId(_packageId i
 	return nil
 }
 
-// Get PackageId Getter
+// GetPackageId PackageId Getter
 func (r TaobaoVmarketEticketPackageBaseGetAPIRequest) GetPackageId() int64 {
 	return r._packageId
 }

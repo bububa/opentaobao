@@ -37,7 +37,7 @@ func (r AlibabaAlihealthBookingReserveTreatAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Treat Setter
+// SetTreat is Treat Setter
 // treat
 func (r *AlibabaAlihealthBookingReserveTreatAPIRequest) SetTreat(_treat *IsvReserveRequest) error {
 	r._treat = _treat
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthBookingReserveTreatAPIRequest) SetTreat(_treat *IsvRese
 	return nil
 }
 
-// Get Treat Getter
+// GetTreat Treat Getter
 func (r AlibabaAlihealthBookingReserveTreatAPIRequest) GetTreat() *IsvReserveRequest {
 	return r._treat
 }

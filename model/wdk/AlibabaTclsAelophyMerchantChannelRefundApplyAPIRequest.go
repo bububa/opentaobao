@@ -37,7 +37,7 @@ func (r AlibabaTclsAelophyMerchantChannelRefundApplyAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is RefundApplyInfo Setter
+// SetRefundApplyInfo is RefundApplyInfo Setter
 // 请求对象
 func (r *AlibabaTclsAelophyMerchantChannelRefundApplyAPIRequest) SetRefundApplyInfo(_refundApplyInfo *RefundApplyInfo) error {
 	r._refundApplyInfo = _refundApplyInfo
@@ -45,7 +45,7 @@ func (r *AlibabaTclsAelophyMerchantChannelRefundApplyAPIRequest) SetRefundApplyI
 	return nil
 }
 
-// Get RefundApplyInfo Getter
+// GetRefundApplyInfo RefundApplyInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelRefundApplyAPIRequest) GetRefundApplyInfo() *RefundApplyInfo {
 	return r._refundApplyInfo
 }

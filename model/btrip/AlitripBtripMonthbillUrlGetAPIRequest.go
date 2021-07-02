@@ -37,7 +37,7 @@ func (r AlitripBtripMonthbillUrlGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 请求对象
 func (r *AlitripBtripMonthbillUrlGetAPIRequest) SetRq(_rq *OpenAccountRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripMonthbillUrlGetAPIRequest) SetRq(_rq *OpenAccountRq) error 
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripMonthbillUrlGetAPIRequest) GetRq() *OpenAccountRq {
 	return r._rq
 }

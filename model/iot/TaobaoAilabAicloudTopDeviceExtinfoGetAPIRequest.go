@@ -43,7 +43,7 @@ func (r TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is OriginUserId Setter
+// SetOriginUserId is OriginUserId Setter
 // 三方id、淘宝openId
 func (r *TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) SetOriginUserId(_originUserId string) error {
 	r._originUserId = _originUserId
@@ -51,12 +51,12 @@ func (r *TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) SetOriginUserId(_origi
 	return nil
 }
 
-// Get OriginUserId Getter
+// GetOriginUserId OriginUserId Getter
 func (r TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) GetOriginUserId() string {
 	return r._originUserId
 }
 
-// Set is SchemaKey Setter
+// SetSchemaKey is SchemaKey Setter
 // 账号秘钥
 func (r *TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) SetSchemaKey(_schemaKey string) error {
 	r._schemaKey = _schemaKey
@@ -64,12 +64,12 @@ func (r *TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) SetSchemaKey(_schemaKe
 	return nil
 }
 
-// Get SchemaKey Getter
+// GetSchemaKey SchemaKey Getter
 func (r TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) GetSchemaKey() string {
 	return r._schemaKey
 }
 
-// Set is UserType Setter
+// SetUserType is UserType Setter
 // 类型：openTaoBao, extUser
 func (r *TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) SetUserType(_userType string) error {
 	r._userType = _userType
@@ -77,12 +77,12 @@ func (r *TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) SetUserType(_userType 
 	return nil
 }
 
-// Get UserType Getter
+// GetUserType UserType Getter
 func (r TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) GetUserType() string {
 	return r._userType
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备id
 func (r *TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -90,7 +90,7 @@ func (r *TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) SetDeviceId(_deviceId 
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r TaobaoAilabAicloudTopDeviceExtinfoGetAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }

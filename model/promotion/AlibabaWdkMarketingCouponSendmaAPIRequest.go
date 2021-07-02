@@ -37,7 +37,7 @@ func (r AlibabaWdkMarketingCouponSendmaAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 发放匿名码入参
 func (r *AlibabaWdkMarketingCouponSendmaAPIRequest) SetParam0(_param0 *CommonActivityParam) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMarketingCouponSendmaAPIRequest) SetParam0(_param0 *CommonAct
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaWdkMarketingCouponSendmaAPIRequest) GetParam0() *CommonActivityParam {
 	return r._param0
 }

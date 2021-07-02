@@ -37,7 +37,7 @@ func (r AlibabaMoziAclGrantGrantroleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GrantRolesRequest Setter
+// SetGrantRolesRequest is GrantRolesRequest Setter
 // 整体入参对象
 func (r *AlibabaMoziAclGrantGrantroleAPIRequest) SetGrantRolesRequest(_grantRolesRequest *GrantRolesRequest) error {
 	r._grantRolesRequest = _grantRolesRequest
@@ -45,7 +45,7 @@ func (r *AlibabaMoziAclGrantGrantroleAPIRequest) SetGrantRolesRequest(_grantRole
 	return nil
 }
 
-// Get GrantRolesRequest Getter
+// GetGrantRolesRequest GrantRolesRequest Getter
 func (r AlibabaMoziAclGrantGrantroleAPIRequest) GetGrantRolesRequest() *GrantRolesRequest {
 	return r._grantRolesRequest
 }

@@ -37,7 +37,7 @@ func (r WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest) GetApiPa
 	return params
 }
 
-// Set is ParamPageQueryWarehouseResourceRelationByFromRequest Setter
+// SetParamPageQueryWarehouseResourceRelationByFromRequest is ParamPageQueryWarehouseResourceRelationByFromRequest Setter
 // 查询参数
 func (r *WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest) SetParamPageQueryWarehouseResourceRelationByFromRequest(_paramPageQueryWarehouseResourceRelationByFromRequest *PageQueryWarehouseResourceRelationByFromRequest) error {
 	r._paramPageQueryWarehouseResourceRelationByFromRequest = _paramPageQueryWarehouseResourceRelationByFromRequest
@@ -45,7 +45,7 @@ func (r *WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest) SetPara
 	return nil
 }
 
-// Get ParamPageQueryWarehouseResourceRelationByFromRequest Getter
+// GetParamPageQueryWarehouseResourceRelationByFromRequest ParamPageQueryWarehouseResourceRelationByFromRequest Getter
 func (r WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIRequest) GetParamPageQueryWarehouseResourceRelationByFromRequest() *PageQueryWarehouseResourceRelationByFromRequest {
 	return r._paramPageQueryWarehouseResourceRelationByFromRequest
 }

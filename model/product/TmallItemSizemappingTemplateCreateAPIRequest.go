@@ -39,7 +39,7 @@ func (r TmallItemSizemappingTemplateCreateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is TemplateName Setter
+// SetTemplateName is TemplateName Setter
 // 尺码表模板名称
 func (r *TmallItemSizemappingTemplateCreateAPIRequest) SetTemplateName(_templateName string) error {
 	r._templateName = _templateName
@@ -47,12 +47,12 @@ func (r *TmallItemSizemappingTemplateCreateAPIRequest) SetTemplateName(_template
 	return nil
 }
 
-// Get TemplateName Getter
+// GetTemplateName TemplateName Getter
 func (r TmallItemSizemappingTemplateCreateAPIRequest) GetTemplateName() string {
 	return r._templateName
 }
 
-// Set is TemplateContent Setter
+// SetTemplateContent is TemplateContent Setter
 // 尺码表模板内容，格式为"尺码值:维度名称:数值,尺码值:维度名称:数值"。其中，数值的单位，长度单位为厘米（cm），体重单位为公斤（kg）。尺码值，维度数据不能包含数字，特殊字符。数值为0-999.9的数字，且最多一位小数。
 func (r *TmallItemSizemappingTemplateCreateAPIRequest) SetTemplateContent(_templateContent string) error {
 	r._templateContent = _templateContent
@@ -60,7 +60,7 @@ func (r *TmallItemSizemappingTemplateCreateAPIRequest) SetTemplateContent(_templ
 	return nil
 }
 
-// Get TemplateContent Getter
+// GetTemplateContent TemplateContent Getter
 func (r TmallItemSizemappingTemplateCreateAPIRequest) GetTemplateContent() string {
 	return r._templateContent
 }

@@ -39,7 +39,7 @@ func (r TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is WarehouseCode Setter
+// SetWarehouseCode is WarehouseCode Setter
 // warehouse_code
 func (r *TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) SetWarehouseCode(_warehouseCode string) error {
 	r._warehouseCode = _warehouseCode
@@ -47,12 +47,12 @@ func (r *TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) SetWarehouseCode(_wa
 	return nil
 }
 
-// Get WarehouseCode Getter
+// GetWarehouseCode WarehouseCode Getter
 func (r TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // uuid
 func (r *TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -60,7 +60,7 @@ func (r *TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) SetUuid(_uuid string
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r TaobaoWdkEquipmentConveyorStatusconfirmAPIRequest) GetUuid() string {
 	return r._uuid
 }

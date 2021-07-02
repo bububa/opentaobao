@@ -39,7 +39,7 @@ func (r TaobaoUmpActivityAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ToolId Setter
+// SetToolId is ToolId Setter
 // 工具id
 func (r *TaobaoUmpActivityAddAPIRequest) SetToolId(_toolId int64) error {
 	r._toolId = _toolId
@@ -47,12 +47,12 @@ func (r *TaobaoUmpActivityAddAPIRequest) SetToolId(_toolId int64) error {
 	return nil
 }
 
-// Get ToolId Getter
+// GetToolId ToolId Getter
 func (r TaobaoUmpActivityAddAPIRequest) GetToolId() int64 {
 	return r._toolId
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 活动内容，通过ump sdk里面的MarkeitngTool来生成，name必须属于“营销标签词库”——https://huodong.m.taobao.com/api/data/v2/5fe5e737d3314fa2973297f86f7bff3a.js?file=5fe5e737d3314fa2973297f86f7bff3a.js中的word值中的一种。
 func (r *TaobaoUmpActivityAddAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -60,7 +60,7 @@ func (r *TaobaoUmpActivityAddAPIRequest) SetContent(_content string) error {
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r TaobaoUmpActivityAddAPIRequest) GetContent() string {
 	return r._content
 }

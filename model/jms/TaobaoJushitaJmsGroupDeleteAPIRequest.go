@@ -41,7 +41,7 @@ func (r TaobaoJushitaJmsGroupDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupName Setter
+// SetGroupName is GroupName Setter
 // 分组名称，分组删除后，用户的消息将会存储于默认分组中。警告：由于分组已经删除，用户之前未消费的消息将无法再获取。不能以default开头，default开头为系统默认组。
 func (r *TaobaoJushitaJmsGroupDeleteAPIRequest) SetGroupName(_groupName string) error {
 	r._groupName = _groupName
@@ -49,12 +49,12 @@ func (r *TaobaoJushitaJmsGroupDeleteAPIRequest) SetGroupName(_groupName string) 
 	return nil
 }
 
-// Get GroupName Getter
+// GetGroupName GroupName Getter
 func (r TaobaoJushitaJmsGroupDeleteAPIRequest) GetGroupName() string {
 	return r._groupName
 }
 
-// Set is Nicks Setter
+// SetNicks is Nicks Setter
 // 用户列表，不传表示删除整个分组，如果用户全部删除后，也会自动删除整个分组
 func (r *TaobaoJushitaJmsGroupDeleteAPIRequest) SetNicks(_nicks []string) error {
 	r._nicks = _nicks
@@ -62,12 +62,12 @@ func (r *TaobaoJushitaJmsGroupDeleteAPIRequest) SetNicks(_nicks []string) error 
 	return nil
 }
 
-// Get Nicks Getter
+// GetNicks Nicks Getter
 func (r TaobaoJushitaJmsGroupDeleteAPIRequest) GetNicks() []string {
 	return r._nicks
 }
 
-// Set is UserPlatform Setter
+// SetUserPlatform is UserPlatform Setter
 // 用户所属于的平台类型，tbUIC:淘宝用户; icbu: icbu用户
 func (r *TaobaoJushitaJmsGroupDeleteAPIRequest) SetUserPlatform(_userPlatform string) error {
 	r._userPlatform = _userPlatform
@@ -75,7 +75,7 @@ func (r *TaobaoJushitaJmsGroupDeleteAPIRequest) SetUserPlatform(_userPlatform st
 	return nil
 }
 
-// Get UserPlatform Getter
+// GetUserPlatform UserPlatform Getter
 func (r TaobaoJushitaJmsGroupDeleteAPIRequest) GetUserPlatform() string {
 	return r._userPlatform
 }

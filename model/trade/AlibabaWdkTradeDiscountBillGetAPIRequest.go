@@ -37,7 +37,7 @@ func (r AlibabaWdkTradeDiscountBillGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 请求参数
 func (r *AlibabaWdkTradeDiscountBillGetAPIRequest) SetParam0(_param0 *OrderDiscountBillQueryRequest) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlibabaWdkTradeDiscountBillGetAPIRequest) SetParam0(_param0 *OrderDisco
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaWdkTradeDiscountBillGetAPIRequest) GetParam0() *OrderDiscountBillQueryRequest {
 	return r._param0
 }

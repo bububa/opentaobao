@@ -41,7 +41,7 @@ func (r AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) GetApiParams
 	return params
 }
 
-// Set is SupplierId Setter
+// SetSupplierId is SupplierId Setter
 // qimen.alibaba.ascp.uop.consignorder.notify报文中的supplierId字段值
 func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) SetSupplierId(_supplierId string) error {
 	r._supplierId = _supplierId
@@ -49,12 +49,12 @@ func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) SetSupplier
 	return nil
 }
 
-// Get SupplierId Getter
+// GetSupplierId SupplierId Getter
 func (r AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) GetSupplierId() string {
 	return r._supplierId
 }
 
-// Set is BizOrderCode Setter
+// SetBizOrderCode is BizOrderCode Setter
 // qimen.alibaba.ascp.uop.consignorder.notify报文中bizOrderCode履约单号
 func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) SetBizOrderCode(_bizOrderCode string) error {
 	r._bizOrderCode = _bizOrderCode
@@ -62,12 +62,12 @@ func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) SetBizOrder
 	return nil
 }
 
-// Get BizOrderCode Getter
+// GetBizOrderCode BizOrderCode Getter
 func (r AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) GetBizOrderCode() string {
 	return r._bizOrderCode
 }
 
-// Set is BizTime Setter
+// SetBizTime is BizTime Setter
 // 业务请求时间
 func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) SetBizTime(_bizTime string) error {
 	r._bizTime = _bizTime
@@ -75,7 +75,7 @@ func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) SetBizTime(
 	return nil
 }
 
-// Get BizTime Getter
+// GetBizTime BizTime Getter
 func (r AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) GetBizTime() string {
 	return r._bizTime
 }

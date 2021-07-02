@@ -37,7 +37,7 @@ func (r YunosOsupdateOsfotaAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OsFotaJson Setter
+// SetOsFotaJson is OsFotaJson Setter
 // 系统升级任务json格式
 func (r *YunosOsupdateOsfotaAddAPIRequest) SetOsFotaJson(_osFotaJson string) error {
 	r._osFotaJson = _osFotaJson
@@ -45,7 +45,7 @@ func (r *YunosOsupdateOsfotaAddAPIRequest) SetOsFotaJson(_osFotaJson string) err
 	return nil
 }
 
-// Get OsFotaJson Getter
+// GetOsFotaJson OsFotaJson Getter
 func (r YunosOsupdateOsfotaAddAPIRequest) GetOsFotaJson() string {
 	return r._osFotaJson
 }

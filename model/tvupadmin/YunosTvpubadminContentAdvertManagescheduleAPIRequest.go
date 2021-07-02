@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentAdvertManagescheduleAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Req Setter
+// SetReq is Req Setter
 // 管理参数
 func (r *YunosTvpubadminContentAdvertManagescheduleAPIRequest) SetReq(_req string) error {
 	r._req = _req
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentAdvertManagescheduleAPIRequest) SetReq(_req strin
 	return nil
 }
 
-// Get Req Getter
+// GetReq Req Getter
 func (r YunosTvpubadminContentAdvertManagescheduleAPIRequest) GetReq() string {
 	return r._req
 }

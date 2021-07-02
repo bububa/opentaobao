@@ -41,7 +41,7 @@ func (r AlibabaSecurityJaqRpCloudEventAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is VerifyToken Setter
+// SetVerifyToken is VerifyToken Setter
 // 认证token
 func (r *AlibabaSecurityJaqRpCloudEventAPIRequest) SetVerifyToken(_verifyToken string) error {
 	r._verifyToken = _verifyToken
@@ -49,12 +49,12 @@ func (r *AlibabaSecurityJaqRpCloudEventAPIRequest) SetVerifyToken(_verifyToken s
 	return nil
 }
 
-// Get VerifyToken Getter
+// GetVerifyToken VerifyToken Getter
 func (r AlibabaSecurityJaqRpCloudEventAPIRequest) GetVerifyToken() string {
 	return r._verifyToken
 }
 
-// Set is EventCode Setter
+// SetEventCode is EventCode Setter
 // 事件编码
 func (r *AlibabaSecurityJaqRpCloudEventAPIRequest) SetEventCode(_eventCode string) error {
 	r._eventCode = _eventCode
@@ -62,12 +62,12 @@ func (r *AlibabaSecurityJaqRpCloudEventAPIRequest) SetEventCode(_eventCode strin
 	return nil
 }
 
-// Get EventCode Getter
+// GetEventCode EventCode Getter
 func (r AlibabaSecurityJaqRpCloudEventAPIRequest) GetEventCode() string {
 	return r._eventCode
 }
 
-// Set is EventData Setter
+// SetEventData is EventData Setter
 // 事件信息
 func (r *AlibabaSecurityJaqRpCloudEventAPIRequest) SetEventData(_eventData string) error {
 	r._eventData = _eventData
@@ -75,7 +75,7 @@ func (r *AlibabaSecurityJaqRpCloudEventAPIRequest) SetEventData(_eventData strin
 	return nil
 }
 
-// Get EventData Getter
+// GetEventData EventData Getter
 func (r AlibabaSecurityJaqRpCloudEventAPIRequest) GetEventData() string {
 	return r._eventData
 }

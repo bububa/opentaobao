@@ -37,7 +37,7 @@ func (r AlibabaLstVendingOrderUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is VendingOrderDTO Setter
+// SetVendingOrderDTO is VendingOrderDTO Setter
 // 零售通设备订单
 func (r *AlibabaLstVendingOrderUpdateAPIRequest) SetVendingOrderDTO(_vendingOrderDTO *VendingOrderDto) error {
 	r._vendingOrderDTO = _vendingOrderDTO
@@ -45,7 +45,7 @@ func (r *AlibabaLstVendingOrderUpdateAPIRequest) SetVendingOrderDTO(_vendingOrde
 	return nil
 }
 
-// Get VendingOrderDTO Getter
+// GetVendingOrderDTO VendingOrderDTO Getter
 func (r AlibabaLstVendingOrderUpdateAPIRequest) GetVendingOrderDTO() *VendingOrderDto {
 	return r._vendingOrderDTO
 }

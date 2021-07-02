@@ -39,7 +39,7 @@ func (r TaobaoFuwuSkuGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ArticleCode Setter
+// SetArticleCode is ArticleCode Setter
 // 服务code
 func (r *TaobaoFuwuSkuGetAPIRequest) SetArticleCode(_articleCode string) error {
 	r._articleCode = _articleCode
@@ -47,12 +47,12 @@ func (r *TaobaoFuwuSkuGetAPIRequest) SetArticleCode(_articleCode string) error {
 	return nil
 }
 
-// Get ArticleCode Getter
+// GetArticleCode ArticleCode Getter
 func (r TaobaoFuwuSkuGetAPIRequest) GetArticleCode() string {
 	return r._articleCode
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 用户的淘宝nick
 func (r *TaobaoFuwuSkuGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -60,7 +60,7 @@ func (r *TaobaoFuwuSkuGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoFuwuSkuGetAPIRequest) GetNick() string {
 	return r._nick
 }

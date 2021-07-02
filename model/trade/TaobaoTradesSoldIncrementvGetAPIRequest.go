@@ -59,7 +59,7 @@ func (r TaobaoTradesSoldIncrementvGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的字段列表，多个字段用半角逗号分隔，可选值为返回示例中能看到的所有字段。
 func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -67,12 +67,12 @@ func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetFields(_fields string) erro
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoTradesSoldIncrementvGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is StartCreate Setter
+// SetStartCreate is StartCreate Setter
 // 查询入库开始时间(修改时间跨度不能大于一天)。格式:yyyy-MM-dd HH:mm:ss
 func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetStartCreate(_startCreate string) error {
 	r._startCreate = _startCreate
@@ -80,12 +80,12 @@ func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetStartCreate(_startCreate st
 	return nil
 }
 
-// Get StartCreate Getter
+// GetStartCreate StartCreate Getter
 func (r TaobaoTradesSoldIncrementvGetAPIRequest) GetStartCreate() string {
 	return r._startCreate
 }
 
-// Set is EndCreate Setter
+// SetEndCreate is EndCreate Setter
 // 查询入库结束时间，必须大于入库开始时间(修改时间跨度不能大于一天)，格式:yyyy-MM-dd HH:mm:ss。<span style="color:red;font-weight: bold;">建议使用30分钟以内的时间跨度，能大大提高响应速度和成功率</span>。
 func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetEndCreate(_endCreate string) error {
 	r._endCreate = _endCreate
@@ -93,12 +93,12 @@ func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetEndCreate(_endCreate string
 	return nil
 }
 
-// Get EndCreate Getter
+// GetEndCreate EndCreate Getter
 func (r TaobaoTradesSoldIncrementvGetAPIRequest) GetEndCreate() string {
 	return r._endCreate
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 交易状态（<a href="http://open.taobao.com/doc/detail.htm?id=102856" target="_blank">查看可选值</a>），默认查询所有交易状态的数据，除了默认值外每次只能查询一种状态。
 func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -106,12 +106,12 @@ func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetStatus(_status string) erro
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoTradesSoldIncrementvGetAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 交易类型列表（<a href="http://open.taobao.com/doc/detail.htm?id=102855" target="_blank">查看可选值</a>），一次查询多种类型可用半角逗号分隔，默认同时查询guarantee_trade,auto_delivery,ec,cod,step这5种类型的数据。
 func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -119,12 +119,12 @@ func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoTradesSoldIncrementvGetAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is ExtType Setter
+// SetExtType is ExtType Setter
 // 可选值有ershou(二手市场的订单）,service（商城服务子订单）mark（双十一大促活动异常订单）作为扩展类型筛选只能做单个ext_type查询，不能全部查询所有的ext_type类型
 func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetExtType(_extType string) error {
 	r._extType = _extType
@@ -132,12 +132,12 @@ func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetExtType(_extType string) er
 	return nil
 }
 
-// Get ExtType Getter
+// GetExtType ExtType Getter
 func (r TaobaoTradesSoldIncrementvGetAPIRequest) GetExtType() string {
 	return r._extType
 }
 
-// Set is Tag Setter
+// SetTag is Tag Setter
 // 卖家对交易的自定义分组标签，目前可选值为：time_card（点卡软件代充），fee_card（话费软件代充）
 func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetTag(_tag string) error {
 	r._tag = _tag
@@ -145,12 +145,12 @@ func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetTag(_tag string) error {
 	return nil
 }
 
-// Get Tag Getter
+// GetTag Tag Getter
 func (r TaobaoTradesSoldIncrementvGetAPIRequest) GetTag() string {
 	return r._tag
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码。取值范围:大于零的整数;默认值:1。<span style="color:red;font-weight: bold;">注：必须采用倒序的分页方式（从最后一页往回取）才能避免漏单问题。</span>
 func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -158,12 +158,12 @@ func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetPageNo(_pageNo int64) error
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoTradesSoldIncrementvGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数。取值范围：1~100，默认值：40。<span style="color:red;font-weight: bold;">建议使用40~50，可以提高成功率，减少超时数量</span>。
 func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -171,12 +171,12 @@ func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetPageSize(_pageSize int64) e
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTradesSoldIncrementvGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is UseHasNext Setter
+// SetUseHasNext is UseHasNext Setter
 // 是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，<span style="color:red;font-weight: bold;">通过此种方式获取增量交易，效率在原有的基础上有80%的提升</span>。
 func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetUseHasNext(_useHasNext bool) error {
 	r._useHasNext = _useHasNext
@@ -184,7 +184,7 @@ func (r *TaobaoTradesSoldIncrementvGetAPIRequest) SetUseHasNext(_useHasNext bool
 	return nil
 }
 
-// Get UseHasNext Getter
+// GetUseHasNext UseHasNext Getter
 func (r TaobaoTradesSoldIncrementvGetAPIRequest) GetUseHasNext() bool {
 	return r._useHasNext
 }

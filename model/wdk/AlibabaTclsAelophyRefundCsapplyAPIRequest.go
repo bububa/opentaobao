@@ -37,7 +37,7 @@ func (r AlibabaTclsAelophyRefundCsapplyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundCsApplyDTO Setter
+// SetRefundCsApplyDTO is RefundCsApplyDTO Setter
 // 逆向申请入参
 func (r *AlibabaTclsAelophyRefundCsapplyAPIRequest) SetRefundCsApplyDTO(_refundCsApplyDTO *RefundCsApplyDto) error {
 	r._refundCsApplyDTO = _refundCsApplyDTO
@@ -45,7 +45,7 @@ func (r *AlibabaTclsAelophyRefundCsapplyAPIRequest) SetRefundCsApplyDTO(_refundC
 	return nil
 }
 
-// Get RefundCsApplyDTO Getter
+// GetRefundCsApplyDTO RefundCsApplyDTO Getter
 func (r AlibabaTclsAelophyRefundCsapplyAPIRequest) GetRefundCsApplyDTO() *RefundCsApplyDto {
 	return r._refundCsApplyDTO
 }

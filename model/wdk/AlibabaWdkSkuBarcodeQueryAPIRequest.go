@@ -37,7 +37,7 @@ func (r AlibabaWdkSkuBarcodeQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SkuCode Setter
+// SetSkuCode is SkuCode Setter
 // 商品编码
 func (r *AlibabaWdkSkuBarcodeQueryAPIRequest) SetSkuCode(_skuCode string) error {
 	r._skuCode = _skuCode
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSkuBarcodeQueryAPIRequest) SetSkuCode(_skuCode string) error 
 	return nil
 }
 
-// Get SkuCode Getter
+// GetSkuCode SkuCode Getter
 func (r AlibabaWdkSkuBarcodeQueryAPIRequest) GetSkuCode() string {
 	return r._skuCode
 }

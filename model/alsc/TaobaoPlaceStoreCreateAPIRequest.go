@@ -37,7 +37,7 @@ func (r TaobaoPlaceStoreCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreCreate Setter
+// SetStoreCreate is StoreCreate Setter
 // 门店创建入参
 func (r *TaobaoPlaceStoreCreateAPIRequest) SetStoreCreate(_storeCreate *StoreUpdateTopDto) error {
 	r._storeCreate = _storeCreate
@@ -45,7 +45,7 @@ func (r *TaobaoPlaceStoreCreateAPIRequest) SetStoreCreate(_storeCreate *StoreUpd
 	return nil
 }
 
-// Get StoreCreate Getter
+// GetStoreCreate StoreCreate Getter
 func (r TaobaoPlaceStoreCreateAPIRequest) GetStoreCreate() *StoreUpdateTopDto {
 	return r._storeCreate
 }

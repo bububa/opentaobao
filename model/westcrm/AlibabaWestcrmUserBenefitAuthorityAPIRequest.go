@@ -39,7 +39,7 @@ func (r AlibabaWestcrmUserBenefitAuthorityAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is CampusId Setter
+// SetCampusId is CampusId Setter
 // 园区ID
 func (r *AlibabaWestcrmUserBenefitAuthorityAPIRequest) SetCampusId(_campusId int64) error {
 	r._campusId = _campusId
@@ -47,12 +47,12 @@ func (r *AlibabaWestcrmUserBenefitAuthorityAPIRequest) SetCampusId(_campusId int
 	return nil
 }
 
-// Get CampusId Getter
+// GetCampusId CampusId Getter
 func (r AlibabaWestcrmUserBenefitAuthorityAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }
 
-// Set is IbUserId Setter
+// SetIbUserId is IbUserId Setter
 // 当前用户id
 func (r *AlibabaWestcrmUserBenefitAuthorityAPIRequest) SetIbUserId(_ibUserId int64) error {
 	r._ibUserId = _ibUserId
@@ -60,7 +60,7 @@ func (r *AlibabaWestcrmUserBenefitAuthorityAPIRequest) SetIbUserId(_ibUserId int
 	return nil
 }
 
-// Get IbUserId Getter
+// GetIbUserId IbUserId Getter
 func (r AlibabaWestcrmUserBenefitAuthorityAPIRequest) GetIbUserId() int64 {
 	return r._ibUserId
 }

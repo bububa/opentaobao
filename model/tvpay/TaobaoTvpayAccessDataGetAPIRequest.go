@@ -43,7 +43,7 @@ func (r TaobaoTvpayAccessDataGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备id
 func (r *TaobaoTvpayAccessDataGetAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -51,12 +51,12 @@ func (r *TaobaoTvpayAccessDataGetAPIRequest) SetDeviceId(_deviceId string) error
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r TaobaoTvpayAccessDataGetAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is From Setter
+// SetFrom is From Setter
 // 来源
 func (r *TaobaoTvpayAccessDataGetAPIRequest) SetFrom(_from string) error {
 	r._from = _from
@@ -64,12 +64,12 @@ func (r *TaobaoTvpayAccessDataGetAPIRequest) SetFrom(_from string) error {
 	return nil
 }
 
-// Get From Getter
+// GetFrom From Getter
 func (r TaobaoTvpayAccessDataGetAPIRequest) GetFrom() string {
 	return r._from
 }
 
-// Set is OutOrderNo Setter
+// SetOutOrderNo is OutOrderNo Setter
 // 订单id
 func (r *TaobaoTvpayAccessDataGetAPIRequest) SetOutOrderNo(_outOrderNo string) error {
 	r._outOrderNo = _outOrderNo
@@ -77,12 +77,12 @@ func (r *TaobaoTvpayAccessDataGetAPIRequest) SetOutOrderNo(_outOrderNo string) e
 	return nil
 }
 
-// Get OutOrderNo Getter
+// GetOutOrderNo OutOrderNo Getter
 func (r TaobaoTvpayAccessDataGetAPIRequest) GetOutOrderNo() string {
 	return r._outOrderNo
 }
 
-// Set is AccountClientVersion Setter
+// SetAccountClientVersion is AccountClientVersion Setter
 // 账号客户端版本
 func (r *TaobaoTvpayAccessDataGetAPIRequest) SetAccountClientVersion(_accountClientVersion string) error {
 	r._accountClientVersion = _accountClientVersion
@@ -90,7 +90,7 @@ func (r *TaobaoTvpayAccessDataGetAPIRequest) SetAccountClientVersion(_accountCli
 	return nil
 }
 
-// Get AccountClientVersion Getter
+// GetAccountClientVersion AccountClientVersion Getter
 func (r TaobaoTvpayAccessDataGetAPIRequest) GetAccountClientVersion() string {
 	return r._accountClientVersion
 }

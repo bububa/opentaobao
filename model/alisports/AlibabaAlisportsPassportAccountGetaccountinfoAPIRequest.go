@@ -49,7 +49,7 @@ func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is NeedDetail Setter
+// SetNeedDetail is NeedDetail Setter
 // 是否获取详情0否1是 默认0
 func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetNeedDetail(_needDetail int64) error {
 	r._needDetail = _needDetail
@@ -57,12 +57,12 @@ func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetNeedDetail(
 	return nil
 }
 
-// Get NeedDetail Getter
+// GetNeedDetail NeedDetail Getter
 func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetNeedDetail() int64 {
 	return r._needDetail
 }
 
-// Set is AlispTime Setter
+// SetAlispTime is AlispTime Setter
 // 当前时间戳
 func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetAlispTime(_alispTime string) error {
 	r._alispTime = _alispTime
@@ -70,12 +70,12 @@ func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetAlispTime(_
 	return nil
 }
 
-// Get AlispTime Getter
+// GetAlispTime AlispTime Getter
 func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetAlispTime() string {
 	return r._alispTime
 }
 
-// Set is AlispAppKey Setter
+// SetAlispAppKey is AlispAppKey Setter
 // 业务appkey
 func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetAlispAppKey(_alispAppKey string) error {
 	r._alispAppKey = _alispAppKey
@@ -83,12 +83,12 @@ func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetAlispAppKey
 	return nil
 }
 
-// Get AlispAppKey Getter
+// GetAlispAppKey AlispAppKey Getter
 func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetAlispAppKey() string {
 	return r._alispAppKey
 }
 
-// Set is AlispSign Setter
+// SetAlispSign is AlispSign Setter
 // 业务加密参数
 func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetAlispSign(_alispSign string) error {
 	r._alispSign = _alispSign
@@ -96,12 +96,12 @@ func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetAlispSign(_
 	return nil
 }
 
-// Get AlispSign Getter
+// GetAlispSign AlispSign Getter
 func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetAlispSign() string {
 	return r._alispSign
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 查询类型：1.用户的阿里体育id, 4.用户通过登录生成的sso_token
 func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -109,12 +109,12 @@ func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetType(_type 
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is Value Setter
+// SetValue is Value Setter
 // 要查询的值
 func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetValue(_value string) error {
 	r._value = _value
@@ -122,12 +122,12 @@ func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetValue(_valu
 	return nil
 }
 
-// Get Value Getter
+// GetValue Value Getter
 func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetValue() string {
 	return r._value
 }
 
-// Set is ExtInfoType Setter
+// SetExtInfoType is ExtInfoType Setter
 // 决定返回值是否包含扩展字段
 func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetExtInfoType(_extInfoType string) error {
 	r._extInfoType = _extInfoType
@@ -135,7 +135,7 @@ func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetExtInfoType
 	return nil
 }
 
-// Get ExtInfoType Getter
+// GetExtInfoType ExtInfoType Getter
 func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetExtInfoType() string {
 	return r._extInfoType
 }

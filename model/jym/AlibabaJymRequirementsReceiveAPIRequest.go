@@ -41,7 +41,7 @@ func (r AlibabaJymRequirementsReceiveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RequirementId Setter
+// SetRequirementId is RequirementId Setter
 // 需求id
 func (r *AlibabaJymRequirementsReceiveAPIRequest) SetRequirementId(_requirementId string) error {
 	r._requirementId = _requirementId
@@ -49,12 +49,12 @@ func (r *AlibabaJymRequirementsReceiveAPIRequest) SetRequirementId(_requirementI
 	return nil
 }
 
-// Get RequirementId Getter
+// GetRequirementId RequirementId Getter
 func (r AlibabaJymRequirementsReceiveAPIRequest) GetRequirementId() string {
 	return r._requirementId
 }
 
-// Set is ReceiverMobile Setter
+// SetReceiverMobile is ReceiverMobile Setter
 // 接单者手机号
 func (r *AlibabaJymRequirementsReceiveAPIRequest) SetReceiverMobile(_receiverMobile string) error {
 	r._receiverMobile = _receiverMobile
@@ -62,12 +62,12 @@ func (r *AlibabaJymRequirementsReceiveAPIRequest) SetReceiverMobile(_receiverMob
 	return nil
 }
 
-// Get ReceiverMobile Getter
+// GetReceiverMobile ReceiverMobile Getter
 func (r AlibabaJymRequirementsReceiveAPIRequest) GetReceiverMobile() string {
 	return r._receiverMobile
 }
 
-// Set is RequirementOrderId Setter
+// SetRequirementOrderId is RequirementOrderId Setter
 // 需求订单id
 func (r *AlibabaJymRequirementsReceiveAPIRequest) SetRequirementOrderId(_requirementOrderId string) error {
 	r._requirementOrderId = _requirementOrderId
@@ -75,7 +75,7 @@ func (r *AlibabaJymRequirementsReceiveAPIRequest) SetRequirementOrderId(_require
 	return nil
 }
 
-// Get RequirementOrderId Getter
+// GetRequirementOrderId RequirementOrderId Getter
 func (r AlibabaJymRequirementsReceiveAPIRequest) GetRequirementOrderId() string {
 	return r._requirementOrderId
 }

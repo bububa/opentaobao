@@ -37,7 +37,7 @@ func (r AlibabaWdkCouponSpreadApplyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamWdkCouponApplyParam Setter
+// SetParamWdkCouponApplyParam is ParamWdkCouponApplyParam Setter
 // 参数对象
 func (r *AlibabaWdkCouponSpreadApplyAPIRequest) SetParamWdkCouponApplyParam(_paramWdkCouponApplyParam *WdkCouponApplyParam) error {
 	r._paramWdkCouponApplyParam = _paramWdkCouponApplyParam
@@ -45,7 +45,7 @@ func (r *AlibabaWdkCouponSpreadApplyAPIRequest) SetParamWdkCouponApplyParam(_par
 	return nil
 }
 
-// Get ParamWdkCouponApplyParam Getter
+// GetParamWdkCouponApplyParam ParamWdkCouponApplyParam Getter
 func (r AlibabaWdkCouponSpreadApplyAPIRequest) GetParamWdkCouponApplyParam() *WdkCouponApplyParam {
 	return r._paramWdkCouponApplyParam
 }

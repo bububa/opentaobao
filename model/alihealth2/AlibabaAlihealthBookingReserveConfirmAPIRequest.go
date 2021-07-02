@@ -37,7 +37,7 @@ func (r AlibabaAlihealthBookingReserveConfirmAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Confirm Setter
+// SetConfirm is Confirm Setter
 // 参数
 func (r *AlibabaAlihealthBookingReserveConfirmAPIRequest) SetConfirm(_confirm *IsvReserveRequest) error {
 	r._confirm = _confirm
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthBookingReserveConfirmAPIRequest) SetConfirm(_confirm *I
 	return nil
 }
 
-// Get Confirm Getter
+// GetConfirm Confirm Getter
 func (r AlibabaAlihealthBookingReserveConfirmAPIRequest) GetConfirm() *IsvReserveRequest {
 	return r._confirm
 }

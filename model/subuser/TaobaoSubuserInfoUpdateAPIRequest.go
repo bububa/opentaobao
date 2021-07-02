@@ -41,7 +41,7 @@ func (r TaobaoSubuserInfoUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IsDisableSubaccount Setter
+// SetIsDisableSubaccount is IsDisableSubaccount Setter
 // 是否停用子账号 true:表示停用该子账号false:表示开启该子账号
 func (r *TaobaoSubuserInfoUpdateAPIRequest) SetIsDisableSubaccount(_isDisableSubaccount bool) error {
 	r._isDisableSubaccount = _isDisableSubaccount
@@ -49,12 +49,12 @@ func (r *TaobaoSubuserInfoUpdateAPIRequest) SetIsDisableSubaccount(_isDisableSub
 	return nil
 }
 
-// Get IsDisableSubaccount Getter
+// GetIsDisableSubaccount IsDisableSubaccount Getter
 func (r TaobaoSubuserInfoUpdateAPIRequest) GetIsDisableSubaccount() bool {
 	return r._isDisableSubaccount
 }
 
-// Set is IsDispatch Setter
+// SetIsDispatch is IsDispatch Setter
 // 子账号是否参与分流 true:参与分流 false:不参与分流
 func (r *TaobaoSubuserInfoUpdateAPIRequest) SetIsDispatch(_isDispatch bool) error {
 	r._isDispatch = _isDispatch
@@ -62,12 +62,12 @@ func (r *TaobaoSubuserInfoUpdateAPIRequest) SetIsDispatch(_isDispatch bool) erro
 	return nil
 }
 
-// Get IsDispatch Getter
+// GetIsDispatch IsDispatch Getter
 func (r TaobaoSubuserInfoUpdateAPIRequest) GetIsDispatch() bool {
 	return r._isDispatch
 }
 
-// Set is SubId Setter
+// SetSubId is SubId Setter
 // 子账号ID
 func (r *TaobaoSubuserInfoUpdateAPIRequest) SetSubId(_subId int64) error {
 	r._subId = _subId
@@ -75,7 +75,7 @@ func (r *TaobaoSubuserInfoUpdateAPIRequest) SetSubId(_subId int64) error {
 	return nil
 }
 
-// Get SubId Getter
+// GetSubId SubId Getter
 func (r TaobaoSubuserInfoUpdateAPIRequest) GetSubId() int64 {
 	return r._subId
 }

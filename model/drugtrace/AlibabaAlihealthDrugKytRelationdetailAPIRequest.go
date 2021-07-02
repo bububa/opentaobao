@@ -41,7 +41,7 @@ func (r AlibabaAlihealthDrugKytRelationdetailAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is CodeActiveInfoId Setter
+// SetCodeActiveInfoId is CodeActiveInfoId Setter
 // 码激活文件上传信息标识
 func (r *AlibabaAlihealthDrugKytRelationdetailAPIRequest) SetCodeActiveInfoId(_codeActiveInfoId string) error {
 	r._codeActiveInfoId = _codeActiveInfoId
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthDrugKytRelationdetailAPIRequest) SetCodeActiveInfoId(_c
 	return nil
 }
 
-// Get CodeActiveInfoId Getter
+// GetCodeActiveInfoId CodeActiveInfoId Getter
 func (r AlibabaAlihealthDrugKytRelationdetailAPIRequest) GetCodeActiveInfoId() string {
 	return r._codeActiveInfoId
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugKytRelationdetailAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthDrugKytRelationdetailAPIRequest) SetRefEntId(_refEntId 
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytRelationdetailAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is ClientType Setter
+// SetClientType is ClientType Setter
 // 客户端ID【默认写2】
 func (r *AlibabaAlihealthDrugKytRelationdetailAPIRequest) SetClientType(_clientType string) error {
 	r._clientType = _clientType
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthDrugKytRelationdetailAPIRequest) SetClientType(_clientT
 	return nil
 }
 
-// Get ClientType Getter
+// GetClientType ClientType Getter
 func (r AlibabaAlihealthDrugKytRelationdetailAPIRequest) GetClientType() string {
 	return r._clientType
 }

@@ -39,7 +39,7 @@ func (r AlibabaCampusAclNewRemoveroleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 系统入参
 func (r *AlibabaCampusAclNewRemoveroleAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
 	r._param0 = _param0
@@ -47,12 +47,12 @@ func (r *AlibabaCampusAclNewRemoveroleAPIRequest) SetParam0(_param0 *WorkBenchCo
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaCampusAclNewRemoveroleAPIRequest) GetParam0() *WorkBenchContext {
 	return r._param0
 }
 
-// Set is RoleId Setter
+// SetRoleId is RoleId Setter
 // 角色主键id
 func (r *AlibabaCampusAclNewRemoveroleAPIRequest) SetRoleId(_roleId int64) error {
 	r._roleId = _roleId
@@ -60,7 +60,7 @@ func (r *AlibabaCampusAclNewRemoveroleAPIRequest) SetRoleId(_roleId int64) error
 	return nil
 }
 
-// Get RoleId Getter
+// GetRoleId RoleId Getter
 func (r AlibabaCampusAclNewRemoveroleAPIRequest) GetRoleId() int64 {
 	return r._roleId
 }

@@ -61,7 +61,7 @@ func (r TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 硬件CODE
 func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -69,12 +69,12 @@ func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetDeviceCode(_deviceC
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 字段废弃
 func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -82,12 +82,12 @@ func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetEndTime(_endTime st
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 字段废弃，考虑兼容，等同于op_time，两个必须传一个
 func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -95,12 +95,12 @@ func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetStartTime(_startTim
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // ACTION枚举值： BODY_SENSOR（通过人体感应、人脸识别成功识别到人） ITEM_SENSOR（通过RFID、蓝牙等感应设备识别商品，必须设置ITEM_ID） ITEM_CLICK（商品点击时必须设置ITEM_ID）  RECEIVE_COUPONS（扫码领取优惠券时必须设置COUPON_ID） BUY_CLICK（点击购买，必须设置ITEM_ID）  SHARE_CLICK（点击分享）
 func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -108,12 +108,12 @@ func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetAction(_action stri
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) GetAction() string {
 	return r._action
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID，item_id 在action为ITEM_CLICK、ITEM_SENSOR、BUY_CLICK必须传入；  必须使用淘宝商品id，否则失败。
 func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetItemId(_itemId string) error {
 	r._itemId = _itemId
@@ -121,12 +121,12 @@ func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetItemId(_itemId stri
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) GetItemId() string {
 	return r._itemId
 }
 
-// Set is CouponId Setter
+// SetCouponId is CouponId Setter
 // "例如官方领取优惠券链接里的activityId： https://taoquan.taobao.com/coupon/unify_apply.htm?sellerId=2649119619&activityId=9d390579777e41a981b54aa4d6154f5e"
 func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetCouponId(_couponId string) error {
 	r._couponId = _couponId
@@ -134,12 +134,12 @@ func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetCouponId(_couponId 
 	return nil
 }
 
-// Get CouponId Getter
+// GetCouponId CouponId Getter
 func (r TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) GetCouponId() string {
 	return r._couponId
 }
 
-// Set is OuterBizId Setter
+// SetOuterBizId is OuterBizId Setter
 // 数据外部编码，保证数据唯一性
 func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetOuterBizId(_outerBizId string) error {
 	r._outerBizId = _outerBizId
@@ -147,12 +147,12 @@ func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetOuterBizId(_outerBi
 	return nil
 }
 
-// Get OuterBizId Getter
+// GetOuterBizId OuterBizId Getter
 func (r TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) GetOuterBizId() string {
 	return r._outerBizId
 }
 
-// Set is OpTime Setter
+// SetOpTime is OpTime Setter
 // 操作时间，后续统一使用该字段，考虑兼容，start_time跟该字段含义一致
 func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetOpTime(_opTime string) error {
 	r._opTime = _opTime
@@ -160,12 +160,12 @@ func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetOpTime(_opTime stri
 	return nil
 }
 
-// Get OpTime Getter
+// GetOpTime OpTime Getter
 func (r TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) GetOpTime() string {
 	return r._opTime
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 用户昵称（混淆）
 func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -173,12 +173,12 @@ func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetUserNick(_userNick 
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) GetUserNick() string {
 	return r._userNick
 }
 
-// Set is OuterUser Setter
+// SetOuterUser is OuterUser Setter
 // 硬件识别的用户标识
 func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetOuterUser(_outerUser string) error {
 	r._outerUser = _outerUser
@@ -186,7 +186,7 @@ func (r *TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) SetOuterUser(_outerUse
 	return nil
 }
 
-// Get OuterUser Getter
+// GetOuterUser OuterUser Getter
 func (r TaobaoSmartstoreDeviceIashelfFeedbackAPIRequest) GetOuterUser() string {
 	return r._outerUser
 }

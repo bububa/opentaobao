@@ -39,7 +39,7 @@ func (r AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is StationCode Setter
+// SetStationCode is StationCode Setter
 // 自提点
 func (r *AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) SetStationCode(_stationCode string) error {
 	r._stationCode = _stationCode
@@ -47,12 +47,12 @@ func (r *AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) SetStationCode(_stati
 	return nil
 }
 
-// Get StationCode Getter
+// GetStationCode StationCode Getter
 func (r AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) GetStationCode() string {
 	return r._stationCode
 }
 
-// Set is CarNum Setter
+// SetCarNum is CarNum Setter
 // 车牌号
 func (r *AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) SetCarNum(_carNum string) error {
 	r._carNum = _carNum
@@ -60,7 +60,7 @@ func (r *AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) SetCarNum(_carNum str
 	return nil
 }
 
-// Get CarNum Getter
+// GetCarNum CarNum Getter
 func (r AlibabaWdkLogisticsPusPickupCararrivedAPIRequest) GetCarNum() string {
 	return r._carNum
 }

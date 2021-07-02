@@ -37,7 +37,7 @@ func (r TaobaoQianniuTaskRemoveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MetadataId Setter
+// SetMetadataId is MetadataId Setter
 // 对于发起人删除一个任务，请使用这个字段，同时清除所有处理人。
 func (r *TaobaoQianniuTaskRemoveAPIRequest) SetMetadataId(_metadataId int64) error {
 	r._metadataId = _metadataId
@@ -45,7 +45,7 @@ func (r *TaobaoQianniuTaskRemoveAPIRequest) SetMetadataId(_metadataId int64) err
 	return nil
 }
 
-// Get MetadataId Getter
+// GetMetadataId MetadataId Getter
 func (r TaobaoQianniuTaskRemoveAPIRequest) GetMetadataId() int64 {
 	return r._metadataId
 }

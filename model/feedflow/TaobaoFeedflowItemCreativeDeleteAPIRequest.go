@@ -37,7 +37,7 @@ func (r TaobaoFeedflowItemCreativeDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CreativeIdList Setter
+// SetCreativeIdList is CreativeIdList Setter
 // 创意id列表
 func (r *TaobaoFeedflowItemCreativeDeleteAPIRequest) SetCreativeIdList(_creativeIdList []int64) error {
 	r._creativeIdList = _creativeIdList
@@ -45,7 +45,7 @@ func (r *TaobaoFeedflowItemCreativeDeleteAPIRequest) SetCreativeIdList(_creative
 	return nil
 }
 
-// Get CreativeIdList Getter
+// GetCreativeIdList CreativeIdList Getter
 func (r TaobaoFeedflowItemCreativeDeleteAPIRequest) GetCreativeIdList() []int64 {
 	return r._creativeIdList
 }

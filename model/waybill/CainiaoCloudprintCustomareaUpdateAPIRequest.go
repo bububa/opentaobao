@@ -41,7 +41,7 @@ func (r CainiaoCloudprintCustomareaUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CustomAreaId Setter
+// SetCustomAreaId is CustomAreaId Setter
 // 自定义区id（不可修改）
 func (r *CainiaoCloudprintCustomareaUpdateAPIRequest) SetCustomAreaId(_customAreaId int64) error {
 	r._customAreaId = _customAreaId
@@ -49,12 +49,12 @@ func (r *CainiaoCloudprintCustomareaUpdateAPIRequest) SetCustomAreaId(_customAre
 	return nil
 }
 
-// Get CustomAreaId Getter
+// GetCustomAreaId CustomAreaId Getter
 func (r CainiaoCloudprintCustomareaUpdateAPIRequest) GetCustomAreaId() int64 {
 	return r._customAreaId
 }
 
-// Set is CustomAreaName Setter
+// SetCustomAreaName is CustomAreaName Setter
 // 自定义区名称（可修改）
 func (r *CainiaoCloudprintCustomareaUpdateAPIRequest) SetCustomAreaName(_customAreaName string) error {
 	r._customAreaName = _customAreaName
@@ -62,12 +62,12 @@ func (r *CainiaoCloudprintCustomareaUpdateAPIRequest) SetCustomAreaName(_customA
 	return nil
 }
 
-// Get CustomAreaName Getter
+// GetCustomAreaName CustomAreaName Getter
 func (r CainiaoCloudprintCustomareaUpdateAPIRequest) GetCustomAreaName() string {
 	return r._customAreaName
 }
 
-// Set is CustomAreaContent Setter
+// SetCustomAreaContent is CustomAreaContent Setter
 // 自定义区内容（可修改）
 func (r *CainiaoCloudprintCustomareaUpdateAPIRequest) SetCustomAreaContent(_customAreaContent string) error {
 	r._customAreaContent = _customAreaContent
@@ -75,7 +75,7 @@ func (r *CainiaoCloudprintCustomareaUpdateAPIRequest) SetCustomAreaContent(_cust
 	return nil
 }
 
-// Get CustomAreaContent Getter
+// GetCustomAreaContent CustomAreaContent Getter
 func (r CainiaoCloudprintCustomareaUpdateAPIRequest) GetCustomAreaContent() string {
 	return r._customAreaContent
 }

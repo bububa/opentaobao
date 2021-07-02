@@ -41,7 +41,7 @@ func (r TaobaoTradeOrderskuUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Oid Setter
+// SetOid is Oid Setter
 // 子订单编号（对于单笔订单的交易可以传交易编号）。
 func (r *TaobaoTradeOrderskuUpdateAPIRequest) SetOid(_oid int64) error {
 	r._oid = _oid
@@ -49,12 +49,12 @@ func (r *TaobaoTradeOrderskuUpdateAPIRequest) SetOid(_oid int64) error {
 	return nil
 }
 
-// Get Oid Getter
+// GetOid Oid Getter
 func (r TaobaoTradeOrderskuUpdateAPIRequest) GetOid() int64 {
 	return r._oid
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // 销售属性编号，可以通过taobao.item.skus.get获取订单对应的商品的所有销售属性。
 func (r *TaobaoTradeOrderskuUpdateAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
@@ -62,12 +62,12 @@ func (r *TaobaoTradeOrderskuUpdateAPIRequest) SetSkuId(_skuId int64) error {
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TaobaoTradeOrderskuUpdateAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }
 
-// Set is SkuProps Setter
+// SetSkuProps is SkuProps Setter
 // 销售属性组合串，格式：p1:v1;p2:v2，如：1627207:28329;20509:28314。可以通过taobao.item.skus.get获取订单对应的商品的所有销售属性。
 func (r *TaobaoTradeOrderskuUpdateAPIRequest) SetSkuProps(_skuProps string) error {
 	r._skuProps = _skuProps
@@ -75,7 +75,7 @@ func (r *TaobaoTradeOrderskuUpdateAPIRequest) SetSkuProps(_skuProps string) erro
 	return nil
 }
 
-// Get SkuProps Getter
+// GetSkuProps SkuProps Getter
 func (r TaobaoTradeOrderskuUpdateAPIRequest) GetSkuProps() string {
 	return r._skuProps
 }

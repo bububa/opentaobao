@@ -37,7 +37,7 @@ func (r AlitripHotelAllianceHidGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AllianceInfoRequest Setter
+// SetAllianceInfoRequest is AllianceInfoRequest Setter
 // 查询入参
 func (r *AlitripHotelAllianceHidGetAPIRequest) SetAllianceInfoRequest(_allianceInfoRequest *AllianceInfoRequest) error {
 	r._allianceInfoRequest = _allianceInfoRequest
@@ -45,7 +45,7 @@ func (r *AlitripHotelAllianceHidGetAPIRequest) SetAllianceInfoRequest(_allianceI
 	return nil
 }
 
-// Get AllianceInfoRequest Getter
+// GetAllianceInfoRequest AllianceInfoRequest Getter
 func (r AlitripHotelAllianceHidGetAPIRequest) GetAllianceInfoRequest() *AllianceInfoRequest {
 	return r._allianceInfoRequest
 }

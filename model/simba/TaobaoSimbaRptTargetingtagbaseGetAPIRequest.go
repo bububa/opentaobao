@@ -49,7 +49,7 @@ func (r TaobaoSimbaRptTargetingtagbaseGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 被操作者昵称
 func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -57,12 +57,12 @@ func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetNick(_nick string) erro
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaRptTargetingtagbaseGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 计划id
 func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -70,12 +70,12 @@ func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetCampaignId(_campaignId 
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaRptTargetingtagbaseGetAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广组id
 func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -83,12 +83,12 @@ func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetAdgroupId(_adgroupId in
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaRptTargetingtagbaseGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 起始时间
 func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -96,12 +96,12 @@ func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetStartTime(_startTime st
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoSimbaRptTargetingtagbaseGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间
 func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -109,12 +109,12 @@ func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetEndTime(_endTime string
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoSimbaRptTargetingtagbaseGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
 func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -122,12 +122,12 @@ func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetPageSize(_pageSize int6
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoSimbaRptTargetingtagbaseGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNumber Setter
+// SetPageNumber is PageNumber Setter
 // 页码
 func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetPageNumber(_pageNumber int64) error {
 	r._pageNumber = _pageNumber
@@ -135,7 +135,7 @@ func (r *TaobaoSimbaRptTargetingtagbaseGetAPIRequest) SetPageNumber(_pageNumber 
 	return nil
 }
 
-// Get PageNumber Getter
+// GetPageNumber PageNumber Getter
 func (r TaobaoSimbaRptTargetingtagbaseGetAPIRequest) GetPageNumber() int64 {
 	return r._pageNumber
 }

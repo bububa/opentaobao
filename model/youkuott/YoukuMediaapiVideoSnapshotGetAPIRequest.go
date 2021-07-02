@@ -37,7 +37,7 @@ func (r YoukuMediaapiVideoSnapshotGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Vid Setter
+// SetVid is Vid Setter
 // 视频id
 func (r *YoukuMediaapiVideoSnapshotGetAPIRequest) SetVid(_vid string) error {
 	r._vid = _vid
@@ -45,7 +45,7 @@ func (r *YoukuMediaapiVideoSnapshotGetAPIRequest) SetVid(_vid string) error {
 	return nil
 }
 
-// Get Vid Getter
+// GetVid Vid Getter
 func (r YoukuMediaapiVideoSnapshotGetAPIRequest) GetVid() string {
 	return r._vid
 }

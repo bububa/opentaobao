@@ -69,7 +69,7 @@ func (r YunosAppstoreOpenGetadsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rid Setter
+// SetRid is Rid Setter
 // 请求id
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetRid(_rid string) error {
 	r._rid = _rid
@@ -77,12 +77,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetRid(_rid string) error {
 	return nil
 }
 
-// Get Rid Getter
+// GetRid Rid Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetRid() string {
 	return r._rid
 }
 
-// Set is Cats Setter
+// SetCats is Cats Setter
 // 指定广告分类
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetCats(_cats []string) error {
 	r._cats = _cats
@@ -90,12 +90,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetCats(_cats []string) error {
 	return nil
 }
 
-// Get Cats Getter
+// GetCats Cats Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetCats() []string {
 	return r._cats
 }
 
-// Set is ExcludeInstall Setter
+// SetExcludeInstall is ExcludeInstall Setter
 // 是否排除已安装
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetExcludeInstall(_excludeInstall bool) error {
 	r._excludeInstall = _excludeInstall
@@ -103,12 +103,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetExcludeInstall(_excludeInstall bo
 	return nil
 }
 
-// Get ExcludeInstall Getter
+// GetExcludeInstall ExcludeInstall Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetExcludeInstall() bool {
 	return r._excludeInstall
 }
 
-// Set is CaseId Setter
+// SetCaseId is CaseId Setter
 // 场景或页面标识
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetCaseId(_caseId string) error {
 	r._caseId = _caseId
@@ -116,12 +116,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetCaseId(_caseId string) error {
 	return nil
 }
 
-// Get CaseId Getter
+// GetCaseId CaseId Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetCaseId() string {
 	return r._caseId
 }
 
-// Set is Ssp Setter
+// SetSsp is Ssp Setter
 // ssp标识
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetSsp(_ssp string) error {
 	r._ssp = _ssp
@@ -129,12 +129,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetSsp(_ssp string) error {
 	return nil
 }
 
-// Get Ssp Getter
+// GetSsp Ssp Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetSsp() string {
 	return r._ssp
 }
 
-// Set is FeeType Setter
+// SetFeeType is FeeType Setter
 // 结算类型
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetFeeType(_feeType string) error {
 	r._feeType = _feeType
@@ -142,12 +142,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetFeeType(_feeType string) error {
 	return nil
 }
 
-// Get FeeType Getter
+// GetFeeType FeeType Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetFeeType() string {
 	return r._feeType
 }
 
-// Set is ClientIp Setter
+// SetClientIp is ClientIp Setter
 // 客户端来源ip
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetClientIp(_clientIp string) error {
 	r._clientIp = _clientIp
@@ -155,12 +155,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetClientIp(_clientIp string) error 
 	return nil
 }
 
-// Get ClientIp Getter
+// GetClientIp ClientIp Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetClientIp() string {
 	return r._clientIp
 }
 
-// Set is Pkgs Setter
+// SetPkgs is Pkgs Setter
 // 广告指定包名
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetPkgs(_pkgs []string) error {
 	r._pkgs = _pkgs
@@ -168,12 +168,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetPkgs(_pkgs []string) error {
 	return nil
 }
 
-// Get Pkgs Getter
+// GetPkgs Pkgs Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetPkgs() []string {
 	return r._pkgs
 }
 
-// Set is ClientVerCode Setter
+// SetClientVerCode is ClientVerCode Setter
 // 客户端版本号
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetClientVerCode(_clientVerCode int64) error {
 	r._clientVerCode = _clientVerCode
@@ -181,12 +181,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetClientVerCode(_clientVerCode int6
 	return nil
 }
 
-// Get ClientVerCode Getter
+// GetClientVerCode ClientVerCode Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetClientVerCode() int64 {
 	return r._clientVerCode
 }
 
-// Set is TryMapToUuid Setter
+// SetTryMapToUuid is TryMapToUuid Setter
 // 是否映射到uuid
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetTryMapToUuid(_tryMapToUuid bool) error {
 	r._tryMapToUuid = _tryMapToUuid
@@ -194,12 +194,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetTryMapToUuid(_tryMapToUuid bool) 
 	return nil
 }
 
-// Get TryMapToUuid Getter
+// GetTryMapToUuid TryMapToUuid Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetTryMapToUuid() bool {
 	return r._tryMapToUuid
 }
 
-// Set is ExcludePkgs Setter
+// SetExcludePkgs is ExcludePkgs Setter
 // 排除包名列表
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetExcludePkgs(_excludePkgs []string) error {
 	r._excludePkgs = _excludePkgs
@@ -207,12 +207,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetExcludePkgs(_excludePkgs []string
 	return nil
 }
 
-// Get ExcludePkgs Getter
+// GetExcludePkgs ExcludePkgs Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetExcludePkgs() []string {
 	return r._excludePkgs
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备唯一标识
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -220,12 +220,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetDeviceId(_deviceId string) error 
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is Size Setter
+// SetSize is Size Setter
 // 广告数量
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetSize(_size int64) error {
 	r._size = _size
@@ -233,12 +233,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetSize(_size int64) error {
 	return nil
 }
 
-// Get Size Getter
+// GetSize Size Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetSize() int64 {
 	return r._size
 }
 
-// Set is ExcludeCats Setter
+// SetExcludeCats is ExcludeCats Setter
 // 排除分类
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetExcludeCats(_excludeCats []string) error {
 	r._excludeCats = _excludeCats
@@ -246,12 +246,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetExcludeCats(_excludeCats []string
 	return nil
 }
 
-// Get ExcludeCats Getter
+// GetExcludeCats ExcludeCats Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetExcludeCats() []string {
 	return r._excludeCats
 }
 
-// Set is TemplateIds Setter
+// SetTemplateIds is TemplateIds Setter
 // 创意模板id列表
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetTemplateIds(_templateIds []int64) error {
 	r._templateIds = _templateIds
@@ -259,12 +259,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetTemplateIds(_templateIds []int64)
 	return nil
 }
 
-// Get TemplateIds Getter
+// GetTemplateIds TemplateIds Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetTemplateIds() []int64 {
 	return r._templateIds
 }
 
-// Set is Mrp Setter
+// SetMrp is Mrp Setter
 // 广告底价
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetMrp(_mrp int64) error {
 	r._mrp = _mrp
@@ -272,12 +272,12 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetMrp(_mrp int64) error {
 	return nil
 }
 
-// Get Mrp Getter
+// GetMrp Mrp Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetMrp() int64 {
 	return r._mrp
 }
 
-// Set is Options Setter
+// SetOptions is Options Setter
 // 请求特征集
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetOptions(_options int64) error {
 	r._options = _options
@@ -285,7 +285,7 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetOptions(_options int64) error {
 	return nil
 }
 
-// Get Options Getter
+// GetOptions Options Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetOptions() int64 {
 	return r._options
 }

@@ -51,7 +51,7 @@ func (r TaobaoItemSkuAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NumIid Setter
+// SetNumIid is NumIid Setter
 // Sku所属商品数字id。必选
 func (r *TaobaoItemSkuAddAPIRequest) SetNumIid(_numIid int64) error {
 	r._numIid = _numIid
@@ -59,12 +59,12 @@ func (r *TaobaoItemSkuAddAPIRequest) SetNumIid(_numIid int64) error {
 	return nil
 }
 
-// Get NumIid Getter
+// GetNumIid NumIid Getter
 func (r TaobaoItemSkuAddAPIRequest) GetNumIid() int64 {
 	return r._numIid
 }
 
-// Set is Properties Setter
+// SetProperties is Properties Setter
 // Sku属性串。格式:pid:vid;pid:vid,如:1627207:3232483;1630696:3284570,表示:机身颜色:军绿色;手机套餐:一电一充。
 func (r *TaobaoItemSkuAddAPIRequest) SetProperties(_properties string) error {
 	r._properties = _properties
@@ -72,12 +72,12 @@ func (r *TaobaoItemSkuAddAPIRequest) SetProperties(_properties string) error {
 	return nil
 }
 
-// Get Properties Getter
+// GetProperties Properties Getter
 func (r TaobaoItemSkuAddAPIRequest) GetProperties() string {
 	return r._properties
 }
 
-// Set is Quantity Setter
+// SetQuantity is Quantity Setter
 // Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)。取值范围:大于零的整数
 func (r *TaobaoItemSkuAddAPIRequest) SetQuantity(_quantity int64) error {
 	r._quantity = _quantity
@@ -85,12 +85,12 @@ func (r *TaobaoItemSkuAddAPIRequest) SetQuantity(_quantity int64) error {
 	return nil
 }
 
-// Get Quantity Getter
+// GetQuantity Quantity Getter
 func (r TaobaoItemSkuAddAPIRequest) GetQuantity() int64 {
 	return r._quantity
 }
 
-// Set is Price Setter
+// SetPrice is Price Setter
 // Sku的销售价格。商品的价格要在商品所有的sku的价格之间。精确到2位小数;单位:元。如:200.07，表示:200元7分
 func (r *TaobaoItemSkuAddAPIRequest) SetPrice(_price float64) error {
 	r._price = _price
@@ -98,12 +98,12 @@ func (r *TaobaoItemSkuAddAPIRequest) SetPrice(_price float64) error {
 	return nil
 }
 
-// Get Price Getter
+// GetPrice Price Getter
 func (r TaobaoItemSkuAddAPIRequest) GetPrice() float64 {
 	return r._price
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // Sku的商家外部id
 func (r *TaobaoItemSkuAddAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -111,12 +111,12 @@ func (r *TaobaoItemSkuAddAPIRequest) SetOuterId(_outerId string) error {
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoItemSkuAddAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is ItemPrice Setter
+// SetItemPrice is ItemPrice Setter
 // sku所属商品的价格。当用户新增sku，使商品价格不属于sku价格之间的时候，用于修改商品的价格，使sku能够添加成功
 func (r *TaobaoItemSkuAddAPIRequest) SetItemPrice(_itemPrice float64) error {
 	r._itemPrice = _itemPrice
@@ -124,12 +124,12 @@ func (r *TaobaoItemSkuAddAPIRequest) SetItemPrice(_itemPrice float64) error {
 	return nil
 }
 
-// Get ItemPrice Getter
+// GetItemPrice ItemPrice Getter
 func (r TaobaoItemSkuAddAPIRequest) GetItemPrice() float64 {
 	return r._itemPrice
 }
 
-// Set is Lang Setter
+// SetLang is Lang Setter
 // Sku文字的版本。可选值:zh_HK(繁体),zh_CN(简体);默认值:zh_CN
 func (r *TaobaoItemSkuAddAPIRequest) SetLang(_lang string) error {
 	r._lang = _lang
@@ -137,12 +137,12 @@ func (r *TaobaoItemSkuAddAPIRequest) SetLang(_lang string) error {
 	return nil
 }
 
-// Get Lang Getter
+// GetLang Lang Getter
 func (r TaobaoItemSkuAddAPIRequest) GetLang() string {
 	return r._lang
 }
 
-// Set is Ignorewarning Setter
+// SetIgnorewarning is Ignorewarning Setter
 // 忽略警告提示.
 func (r *TaobaoItemSkuAddAPIRequest) SetIgnorewarning(_ignorewarning string) error {
 	r._ignorewarning = _ignorewarning
@@ -150,7 +150,7 @@ func (r *TaobaoItemSkuAddAPIRequest) SetIgnorewarning(_ignorewarning string) err
 	return nil
 }
 
-// Get Ignorewarning Getter
+// GetIgnorewarning Ignorewarning Getter
 func (r TaobaoItemSkuAddAPIRequest) GetIgnorewarning() string {
 	return r._ignorewarning
 }

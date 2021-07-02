@@ -43,7 +43,7 @@ func (r TaobaoOpenimTribeModifytribeinfoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is User Setter
+// SetUser is User Setter
 // 用户信息
 func (r *TaobaoOpenimTribeModifytribeinfoAPIRequest) SetUser(_user *OpenImUser) error {
 	r._user = _user
@@ -51,12 +51,12 @@ func (r *TaobaoOpenimTribeModifytribeinfoAPIRequest) SetUser(_user *OpenImUser) 
 	return nil
 }
 
-// Get User Getter
+// GetUser User Getter
 func (r TaobaoOpenimTribeModifytribeinfoAPIRequest) GetUser() *OpenImUser {
 	return r._user
 }
 
-// Set is TribeName Setter
+// SetTribeName is TribeName Setter
 // 群名称
 func (r *TaobaoOpenimTribeModifytribeinfoAPIRequest) SetTribeName(_tribeName string) error {
 	r._tribeName = _tribeName
@@ -64,12 +64,12 @@ func (r *TaobaoOpenimTribeModifytribeinfoAPIRequest) SetTribeName(_tribeName str
 	return nil
 }
 
-// Get TribeName Getter
+// GetTribeName TribeName Getter
 func (r TaobaoOpenimTribeModifytribeinfoAPIRequest) GetTribeName() string {
 	return r._tribeName
 }
 
-// Set is Notice Setter
+// SetNotice is Notice Setter
 // 群公告
 func (r *TaobaoOpenimTribeModifytribeinfoAPIRequest) SetNotice(_notice string) error {
 	r._notice = _notice
@@ -77,12 +77,12 @@ func (r *TaobaoOpenimTribeModifytribeinfoAPIRequest) SetNotice(_notice string) e
 	return nil
 }
 
-// Get Notice Getter
+// GetNotice Notice Getter
 func (r TaobaoOpenimTribeModifytribeinfoAPIRequest) GetNotice() string {
 	return r._notice
 }
 
-// Set is TribeId Setter
+// SetTribeId is TribeId Setter
 // 群id
 func (r *TaobaoOpenimTribeModifytribeinfoAPIRequest) SetTribeId(_tribeId int64) error {
 	r._tribeId = _tribeId
@@ -90,7 +90,7 @@ func (r *TaobaoOpenimTribeModifytribeinfoAPIRequest) SetTribeId(_tribeId int64) 
 	return nil
 }
 
-// Get TribeId Getter
+// GetTribeId TribeId Getter
 func (r TaobaoOpenimTribeModifytribeinfoAPIRequest) GetTribeId() int64 {
 	return r._tribeId
 }

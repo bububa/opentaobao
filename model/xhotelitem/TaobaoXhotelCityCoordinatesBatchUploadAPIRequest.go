@@ -38,7 +38,7 @@ func (r TaobaoXhotelCityCoordinatesBatchUploadAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is CoordinateList Setter
+// SetCoordinateList is CoordinateList Setter
 // 经纬度列表
 func (r *TaobaoXhotelCityCoordinatesBatchUploadAPIRequest) SetCoordinateList(_coordinateList []Coordinate) error {
 	r._coordinateList = _coordinateList
@@ -46,7 +46,7 @@ func (r *TaobaoXhotelCityCoordinatesBatchUploadAPIRequest) SetCoordinateList(_co
 	return nil
 }
 
-// Get CoordinateList Getter
+// GetCoordinateList CoordinateList Getter
 func (r TaobaoXhotelCityCoordinatesBatchUploadAPIRequest) GetCoordinateList() []Coordinate {
 	return r._coordinateList
 }

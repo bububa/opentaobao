@@ -43,7 +43,7 @@ func (r TmallExchangeMessageAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 留言内容
 func (r *TmallExchangeMessageAddAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -51,12 +51,12 @@ func (r *TmallExchangeMessageAddAPIRequest) SetContent(_content string) error {
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r TmallExchangeMessageAddAPIRequest) GetContent() string {
 	return r._content
 }
 
-// Set is DisputeId Setter
+// SetDisputeId is DisputeId Setter
 // 换货单号ID
 func (r *TmallExchangeMessageAddAPIRequest) SetDisputeId(_disputeId int64) error {
 	r._disputeId = _disputeId
@@ -64,12 +64,12 @@ func (r *TmallExchangeMessageAddAPIRequest) SetDisputeId(_disputeId int64) error
 	return nil
 }
 
-// Get DisputeId Getter
+// GetDisputeId DisputeId Getter
 func (r TmallExchangeMessageAddAPIRequest) GetDisputeId() int64 {
 	return r._disputeId
 }
 
-// Set is MessagePics Setter
+// SetMessagePics is MessagePics Setter
 // 凭证图片列表
 func (r *TmallExchangeMessageAddAPIRequest) SetMessagePics(_messagePics *model.File) error {
 	r._messagePics = _messagePics
@@ -77,12 +77,12 @@ func (r *TmallExchangeMessageAddAPIRequest) SetMessagePics(_messagePics *model.F
 	return nil
 }
 
-// Get MessagePics Getter
+// GetMessagePics MessagePics Getter
 func (r TmallExchangeMessageAddAPIRequest) GetMessagePics() *model.File {
 	return r._messagePics
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回字段。目前支持id,refund_id,owner_id,owner_nick,owner_role,content,pic_urls,created,message_type
 func (r *TmallExchangeMessageAddAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -90,7 +90,7 @@ func (r *TmallExchangeMessageAddAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TmallExchangeMessageAddAPIRequest) GetFields() []string {
 	return r._fields
 }

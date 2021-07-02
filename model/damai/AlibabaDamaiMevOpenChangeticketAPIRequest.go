@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenChangeticketAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TicketIdOpenParam Setter
+// SetTicketIdOpenParam is TicketIdOpenParam Setter
 // 入参ticketIdOpenParam
 func (r *AlibabaDamaiMevOpenChangeticketAPIRequest) SetTicketIdOpenParam(_ticketIdOpenParam *TicketIdOpenParam) error {
 	r._ticketIdOpenParam = _ticketIdOpenParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenChangeticketAPIRequest) SetTicketIdOpenParam(_ticket
 	return nil
 }
 
-// Get TicketIdOpenParam Getter
+// GetTicketIdOpenParam TicketIdOpenParam Getter
 func (r AlibabaDamaiMevOpenChangeticketAPIRequest) GetTicketIdOpenParam() *TicketIdOpenParam {
 	return r._ticketIdOpenParam
 }

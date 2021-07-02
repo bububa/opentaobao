@@ -37,7 +37,7 @@ func (r AlitripHotelHmsPartnerInfoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryPartnerInfoParam Setter
+// SetQueryPartnerInfoParam is QueryPartnerInfoParam Setter
 // 查询合作商信息query参数
 func (r *AlitripHotelHmsPartnerInfoGetAPIRequest) SetQueryPartnerInfoParam(_queryPartnerInfoParam *QueryPartnerInfoParam) error {
 	r._queryPartnerInfoParam = _queryPartnerInfoParam
@@ -45,7 +45,7 @@ func (r *AlitripHotelHmsPartnerInfoGetAPIRequest) SetQueryPartnerInfoParam(_quer
 	return nil
 }
 
-// Get QueryPartnerInfoParam Getter
+// GetQueryPartnerInfoParam QueryPartnerInfoParam Getter
 func (r AlitripHotelHmsPartnerInfoGetAPIRequest) GetQueryPartnerInfoParam() *QueryPartnerInfoParam {
 	return r._queryPartnerInfoParam
 }

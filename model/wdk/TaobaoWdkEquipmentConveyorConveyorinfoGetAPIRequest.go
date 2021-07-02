@@ -39,7 +39,7 @@ func (r TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is WarehouseCode Setter
+// SetWarehouseCode is WarehouseCode Setter
 // 仓库code
 func (r *TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest) SetWarehouseCode(_warehouseCode string) error {
 	r._warehouseCode = _warehouseCode
@@ -47,12 +47,12 @@ func (r *TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest) SetWarehouseCode(_
 	return nil
 }
 
-// Get WarehouseCode Getter
+// GetWarehouseCode WarehouseCode Getter
 func (r TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
 }
 
-// Set is ConveyorId Setter
+// SetConveyorId is ConveyorId Setter
 // wcsNum
 func (r *TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest) SetConveyorId(_conveyorId int64) error {
 	r._conveyorId = _conveyorId
@@ -60,7 +60,7 @@ func (r *TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest) SetConveyorId(_con
 	return nil
 }
 
-// Get ConveyorId Getter
+// GetConveyorId ConveyorId Getter
 func (r TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest) GetConveyorId() int64 {
 	return r._conveyorId
 }

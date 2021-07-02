@@ -37,7 +37,7 @@ func (r AlibabaAscpIndustryUopSupplierConsignoderAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is ErpNormalConsignOrderRequest Setter
+// SetErpNormalConsignOrderRequest is ErpNormalConsignOrderRequest Setter
 // 发货主单信息
 func (r *AlibabaAscpIndustryUopSupplierConsignoderAPIRequest) SetErpNormalConsignOrderRequest(_erpNormalConsignOrderRequest *Erpnormalconsignorderrequest) error {
 	r._erpNormalConsignOrderRequest = _erpNormalConsignOrderRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpIndustryUopSupplierConsignoderAPIRequest) SetErpNormalConsig
 	return nil
 }
 
-// Get ErpNormalConsignOrderRequest Getter
+// GetErpNormalConsignOrderRequest ErpNormalConsignOrderRequest Getter
 func (r AlibabaAscpIndustryUopSupplierConsignoderAPIRequest) GetErpNormalConsignOrderRequest() *Erpnormalconsignorderrequest {
 	return r._erpNormalConsignOrderRequest
 }

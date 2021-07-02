@@ -37,7 +37,7 @@ func (r AlibabaIhomeCtomContentImgUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MaterialDto Setter
+// SetMaterialDto is MaterialDto Setter
 // materialDTO
 func (r *AlibabaIhomeCtomContentImgUploadAPIRequest) SetMaterialDto(_materialDto *UploadPicMaterialDto) error {
 	r._materialDto = _materialDto
@@ -45,7 +45,7 @@ func (r *AlibabaIhomeCtomContentImgUploadAPIRequest) SetMaterialDto(_materialDto
 	return nil
 }
 
-// Get MaterialDto Getter
+// GetMaterialDto MaterialDto Getter
 func (r AlibabaIhomeCtomContentImgUploadAPIRequest) GetMaterialDto() *UploadPicMaterialDto {
 	return r._materialDto
 }

@@ -37,7 +37,7 @@ func (r CainiaoCntecItemChangeMessageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemChangeMessage Setter
+// SetItemChangeMessage is ItemChangeMessage Setter
 // 供应商商品变更信息
 func (r *CainiaoCntecItemChangeMessageAPIRequest) SetItemChangeMessage(_itemChangeMessage *SupplyItemChangeMessage) error {
 	r._itemChangeMessage = _itemChangeMessage
@@ -45,7 +45,7 @@ func (r *CainiaoCntecItemChangeMessageAPIRequest) SetItemChangeMessage(_itemChan
 	return nil
 }
 
-// Get ItemChangeMessage Getter
+// GetItemChangeMessage ItemChangeMessage Getter
 func (r CainiaoCntecItemChangeMessageAPIRequest) GetItemChangeMessage() *SupplyItemChangeMessage {
 	return r._itemChangeMessage
 }

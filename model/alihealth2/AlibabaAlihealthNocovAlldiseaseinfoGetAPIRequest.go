@@ -41,7 +41,7 @@ func (r AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Province Setter
+// SetProvince is Province Setter
 // 省的
 func (r *AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) SetProvince(_province string) error {
 	r._province = _province
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) SetProvince(_province
 	return nil
 }
 
-// Get Province Getter
+// GetProvince Province Getter
 func (r AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) GetProvince() string {
 	return r._province
 }
 
-// Set is City Setter
+// SetCity is City Setter
 // 城市
 func (r *AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) SetCity(_city string) error {
 	r._city = _city
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) SetCity(_city string)
 	return nil
 }
 
-// Get City Getter
+// GetCity City Getter
 func (r AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) GetCity() string {
 	return r._city
 }
 
-// Set is CityCode Setter
+// SetCityCode is CityCode Setter
 // 城市code
 func (r *AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) SetCityCode(_cityCode string) error {
 	r._cityCode = _cityCode
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) SetCityCode(_cityCode
 	return nil
 }
 
-// Get CityCode Getter
+// GetCityCode CityCode Getter
 func (r AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) GetCityCode() string {
 	return r._cityCode
 }

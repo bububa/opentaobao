@@ -44,7 +44,7 @@ func (r TaobaoProductsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需返回的字段列表.可选值:Product数据结构中的所有字段;多个字段之间用","分隔
 func (r *TaobaoProductsGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -52,12 +52,12 @@ func (r *TaobaoProductsGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoProductsGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 用户昵称
 func (r *TaobaoProductsGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -65,12 +65,12 @@ func (r *TaobaoProductsGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoProductsGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码.传入值为1代表第一页,传入值为2代表第二页,依此类推.默认返回的数据是从第一页开始.
 func (r *TaobaoProductsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -78,12 +78,12 @@ func (r *TaobaoProductsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoProductsGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数.每页返回最多返回100条,默认值为40
 func (r *TaobaoProductsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -91,7 +91,7 @@ func (r *TaobaoProductsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoProductsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

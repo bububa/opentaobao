@@ -49,7 +49,7 @@ func (r AlitripTravelProductGereralskuUpdateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Alias Setter
+// SetAlias is Alias Setter
 // sku销售属性别名；如套餐1 需要调整成其他 需要在这里修改
 func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetAlias(_alias []PropertyAliasInfo) error {
 	r._alias = _alias
@@ -57,12 +57,12 @@ func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetAlias(_alias []Prope
 	return nil
 }
 
-// Get Alias Getter
+// GetAlias Alias Getter
 func (r AlitripTravelProductGereralskuUpdateAPIRequest) GetAlias() []PropertyAliasInfo {
 	return r._alias
 }
 
-// Set is Properties Setter
+// SetProperties is Properties Setter
 // 商品属性列表；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对
 func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetProperties(_properties []CatPropInfo) error {
 	r._properties = _properties
@@ -70,12 +70,12 @@ func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetProperties(_properti
 	return nil
 }
 
-// Get Properties Getter
+// GetProperties Properties Getter
 func (r AlitripTravelProductGereralskuUpdateAPIRequest) GetProperties() []CatPropInfo {
 	return r._properties
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 淘宝商品ID
 func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -83,12 +83,12 @@ func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetItemId(_itemId int64
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlitripTravelProductGereralskuUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is Price Setter
+// SetPrice is Price Setter
 // Sku的销售价格。精确到2位小数;单位:分。如:20007，表示:200元7分。修改后的sku价格要保证商品的价格在所有sku价格所形成的价格区间内（例如：商品价格为6元，sku价格有5元、10元两种，如果要修改5元sku的价格，那么修改的范围只能是0-6元之间；如果要修改10元的sku，那么修改的范围只能是6到无穷大的区间中）
 func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetPrice(_price int64) error {
 	r._price = _price
@@ -96,12 +96,12 @@ func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetPrice(_price int64) 
 	return nil
 }
 
-// Get Price Getter
+// GetPrice Price Getter
 func (r AlitripTravelProductGereralskuUpdateAPIRequest) GetPrice() int64 {
 	return r._price
 }
 
-// Set is Quantity Setter
+// SetQuantity is Quantity Setter
 // Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)，sku数量变化后item的总数量也会随着变化。取值范围:大于等于零的整数
 func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetQuantity(_quantity int64) error {
 	r._quantity = _quantity
@@ -109,12 +109,12 @@ func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetQuantity(_quantity i
 	return nil
 }
 
-// Get Quantity Getter
+// GetQuantity Quantity Getter
 func (r AlitripTravelProductGereralskuUpdateAPIRequest) GetQuantity() int64 {
 	return r._quantity
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 商家编码
 func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -122,12 +122,12 @@ func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetOuterId(_outerId str
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r AlitripTravelProductGereralskuUpdateAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is DateList Setter
+// SetDateList is DateList Setter
 // SKU的销售价格库存，日历商品使用
 func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetDateList(_dateList []DateInventoryAndPrice) error {
 	r._dateList = _dateList
@@ -135,7 +135,7 @@ func (r *AlitripTravelProductGereralskuUpdateAPIRequest) SetDateList(_dateList [
 	return nil
 }
 
-// Get DateList Getter
+// GetDateList DateList Getter
 func (r AlitripTravelProductGereralskuUpdateAPIRequest) GetDateList() []DateInventoryAndPrice {
 	return r._dateList
 }

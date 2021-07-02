@@ -47,7 +47,7 @@ func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpenUserIds Setter
+// SetOpenUserIds is OpenUserIds Setter
 // 用户openId列表，多个以逗号(,)分割
 func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetOpenUserIds(_openUserIds []string) error {
 	r._openUserIds = _openUserIds
@@ -55,12 +55,12 @@ func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetOpenUserIds(_openUserIds
 	return nil
 }
 
-// Get OpenUserIds Getter
+// GetOpenUserIds OpenUserIds Getter
 func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetOpenUserIds() []string {
 	return r._openUserIds
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页参数，每页大小
 func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -68,12 +68,12 @@ func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetPageSize(_pageSize int64
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -81,12 +81,12 @@ func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetItemId(_itemId int64) er
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // 商品SKU ID，不存在传0
 func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
@@ -94,12 +94,12 @@ func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetSkuId(_skuId int64) erro
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 用户状态
 func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -107,12 +107,12 @@ func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetStatus(_status string) e
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 分页参数，当前页，以0开始
 func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -120,7 +120,7 @@ func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetPageIndex(_pageIndex int
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }

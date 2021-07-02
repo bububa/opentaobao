@@ -37,7 +37,7 @@ func (r AlibabaIdleItemIdlecoinAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IdleCoinItemParam Setter
+// SetIdleCoinItemParam is IdleCoinItemParam Setter
 // 免费送商品数据
 func (r *AlibabaIdleItemIdlecoinAddAPIRequest) SetIdleCoinItemParam(_idleCoinItemParam *IdleCoinItemApiDto) error {
 	r._idleCoinItemParam = _idleCoinItemParam
@@ -45,7 +45,7 @@ func (r *AlibabaIdleItemIdlecoinAddAPIRequest) SetIdleCoinItemParam(_idleCoinIte
 	return nil
 }
 
-// Get IdleCoinItemParam Getter
+// GetIdleCoinItemParam IdleCoinItemParam Getter
 func (r AlibabaIdleItemIdlecoinAddAPIRequest) GetIdleCoinItemParam() *IdleCoinItemApiDto {
 	return r._idleCoinItemParam
 }

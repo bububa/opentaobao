@@ -47,7 +47,7 @@ func (r TaobaoSimbaAdgroupAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaAdgroupAddAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -55,12 +55,12 @@ func (r *TaobaoSimbaAdgroupAddAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaAdgroupAddAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划Id
 func (r *TaobaoSimbaAdgroupAddAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -68,12 +68,12 @@ func (r *TaobaoSimbaAdgroupAddAPIRequest) SetCampaignId(_campaignId int64) error
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaAdgroupAddAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品Id
 func (r *TaobaoSimbaAdgroupAddAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -81,12 +81,12 @@ func (r *TaobaoSimbaAdgroupAddAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoSimbaAdgroupAddAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is DefaultPrice Setter
+// SetDefaultPrice is DefaultPrice Setter
 // 推广组默认出价，单位为分，不能小于5 不能大于日最高限额
 func (r *TaobaoSimbaAdgroupAddAPIRequest) SetDefaultPrice(_defaultPrice int64) error {
 	r._defaultPrice = _defaultPrice
@@ -94,12 +94,12 @@ func (r *TaobaoSimbaAdgroupAddAPIRequest) SetDefaultPrice(_defaultPrice int64) e
 	return nil
 }
 
-// Get DefaultPrice Getter
+// GetDefaultPrice DefaultPrice Getter
 func (r TaobaoSimbaAdgroupAddAPIRequest) GetDefaultPrice() int64 {
 	return r._defaultPrice
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 创意标题，最多20个汉字
 func (r *TaobaoSimbaAdgroupAddAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -107,12 +107,12 @@ func (r *TaobaoSimbaAdgroupAddAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoSimbaAdgroupAddAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// Set is ImgUrl Setter
+// SetImgUrl is ImgUrl Setter
 // 创意图片地址，必须是商品的图片之一
 func (r *TaobaoSimbaAdgroupAddAPIRequest) SetImgUrl(_imgUrl string) error {
 	r._imgUrl = _imgUrl
@@ -120,7 +120,7 @@ func (r *TaobaoSimbaAdgroupAddAPIRequest) SetImgUrl(_imgUrl string) error {
 	return nil
 }
 
-// Get ImgUrl Getter
+// GetImgUrl ImgUrl Getter
 func (r TaobaoSimbaAdgroupAddAPIRequest) GetImgUrl() string {
 	return r._imgUrl
 }

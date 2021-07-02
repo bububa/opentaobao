@@ -41,7 +41,7 @@ func (r TaobaoWlbSubscriptionQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 状态 <br/>AUDITING 1-待审核; <br/>CANCEL 2-撤销 ;<br/>CHECKED 3-审核通过 ;<br/>FAILED 4-审核未通过 ;<br/>SYNCHRONIZING 5-同步中;<br/>只允许输入上面指定的值，且可以为空，为空时查询所有状态。若输错了，则按AUDITING处理。
 func (r *TaobaoWlbSubscriptionQueryAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -49,12 +49,12 @@ func (r *TaobaoWlbSubscriptionQueryAPIRequest) SetStatus(_status string) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoWlbSubscriptionQueryAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 当前页
 func (r *TaobaoWlbSubscriptionQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -62,12 +62,12 @@ func (r *TaobaoWlbSubscriptionQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoWlbSubscriptionQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页记录个数，如果用户输入的记录数大于50，则一页显示50条记录
 func (r *TaobaoWlbSubscriptionQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *TaobaoWlbSubscriptionQueryAPIRequest) SetPageSize(_pageSize int64) erro
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoWlbSubscriptionQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

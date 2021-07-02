@@ -37,7 +37,7 @@ func (r TaobaoCityretailWmflConvertWarehouseAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is TbOrderId Setter
+// SetTbOrderId is TbOrderId Setter
 // 淘宝交易单id
 func (r *TaobaoCityretailWmflConvertWarehouseAPIRequest) SetTbOrderId(_tbOrderId string) error {
 	r._tbOrderId = _tbOrderId
@@ -45,7 +45,7 @@ func (r *TaobaoCityretailWmflConvertWarehouseAPIRequest) SetTbOrderId(_tbOrderId
 	return nil
 }
 
-// Get TbOrderId Getter
+// GetTbOrderId TbOrderId Getter
 func (r TaobaoCityretailWmflConvertWarehouseAPIRequest) GetTbOrderId() string {
 	return r._tbOrderId
 }

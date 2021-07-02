@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmMarketingIssueVoucherAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ParamIssueVoucherReq Setter
+// SetParamIssueVoucherReq is ParamIssueVoucherReq Setter
 // 参数
 func (r *AlibabaAlscCrmMarketingIssueVoucherAPIRequest) SetParamIssueVoucherReq(_paramIssueVoucherReq *IssueVoucherReq) error {
 	r._paramIssueVoucherReq = _paramIssueVoucherReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmMarketingIssueVoucherAPIRequest) SetParamIssueVoucherReq(
 	return nil
 }
 
-// Get ParamIssueVoucherReq Getter
+// GetParamIssueVoucherReq ParamIssueVoucherReq Getter
 func (r AlibabaAlscCrmMarketingIssueVoucherAPIRequest) GetParamIssueVoucherReq() *IssueVoucherReq {
 	return r._paramIssueVoucherReq
 }

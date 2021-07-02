@@ -39,7 +39,7 @@ func (r AlibabaCampusSpaceFloorGetbyidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Context Setter
+// SetContext is Context Setter
 // 环境上下文
 func (r *AlibabaCampusSpaceFloorGetbyidAPIRequest) SetContext(_context *WorkBenchContext) error {
 	r._context = _context
@@ -47,12 +47,12 @@ func (r *AlibabaCampusSpaceFloorGetbyidAPIRequest) SetContext(_context *WorkBenc
 	return nil
 }
 
-// Get Context Getter
+// GetContext Context Getter
 func (r AlibabaCampusSpaceFloorGetbyidAPIRequest) GetContext() *WorkBenchContext {
 	return r._context
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 楼层id
 func (r *AlibabaCampusSpaceFloorGetbyidAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -60,7 +60,7 @@ func (r *AlibabaCampusSpaceFloorGetbyidAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaCampusSpaceFloorGetbyidAPIRequest) GetId() int64 {
 	return r._id
 }

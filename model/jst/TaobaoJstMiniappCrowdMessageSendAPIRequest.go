@@ -45,7 +45,7 @@ func (r TaobaoJstMiniappCrowdMessageSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SignName Setter
+// SetSignName is SignName Setter
 // 短信签名
 func (r *TaobaoJstMiniappCrowdMessageSendAPIRequest) SetSignName(_signName string) error {
 	r._signName = _signName
@@ -53,12 +53,12 @@ func (r *TaobaoJstMiniappCrowdMessageSendAPIRequest) SetSignName(_signName strin
 	return nil
 }
 
-// Get SignName Getter
+// GetSignName SignName Getter
 func (r TaobaoJstMiniappCrowdMessageSendAPIRequest) GetSignName() string {
 	return r._signName
 }
 
-// Set is CrowdCode Setter
+// SetCrowdCode is CrowdCode Setter
 // 活动code
 func (r *TaobaoJstMiniappCrowdMessageSendAPIRequest) SetCrowdCode(_crowdCode string) error {
 	r._crowdCode = _crowdCode
@@ -66,12 +66,12 @@ func (r *TaobaoJstMiniappCrowdMessageSendAPIRequest) SetCrowdCode(_crowdCode str
 	return nil
 }
 
-// Get CrowdCode Getter
+// GetCrowdCode CrowdCode Getter
 func (r TaobaoJstMiniappCrowdMessageSendAPIRequest) GetCrowdCode() string {
 	return r._crowdCode
 }
 
-// Set is TemplateCode Setter
+// SetTemplateCode is TemplateCode Setter
 // 短信模板，必须为全变量模板
 func (r *TaobaoJstMiniappCrowdMessageSendAPIRequest) SetTemplateCode(_templateCode string) error {
 	r._templateCode = _templateCode
@@ -79,12 +79,12 @@ func (r *TaobaoJstMiniappCrowdMessageSendAPIRequest) SetTemplateCode(_templateCo
 	return nil
 }
 
-// Get TemplateCode Getter
+// GetTemplateCode TemplateCode Getter
 func (r TaobaoJstMiniappCrowdMessageSendAPIRequest) GetTemplateCode() string {
 	return r._templateCode
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 短信内容
 func (r *TaobaoJstMiniappCrowdMessageSendAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -92,12 +92,12 @@ func (r *TaobaoJstMiniappCrowdMessageSendAPIRequest) SetContent(_content string)
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r TaobaoJstMiniappCrowdMessageSendAPIRequest) GetContent() string {
 	return r._content
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 短信中携带的短链，会替换短信内容中的${url}
 func (r *TaobaoJstMiniappCrowdMessageSendAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -105,7 +105,7 @@ func (r *TaobaoJstMiniappCrowdMessageSendAPIRequest) SetUrl(_url string) error {
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r TaobaoJstMiniappCrowdMessageSendAPIRequest) GetUrl() string {
 	return r._url
 }

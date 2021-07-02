@@ -39,7 +39,7 @@ func (r AlibabaAlihealthDentalItemBindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BindList Setter
+// SetBindList is BindList Setter
 // bind_list
 func (r *AlibabaAlihealthDentalItemBindAPIRequest) SetBindList(_bindList []StoreItemRelRequest) error {
 	r._bindList = _bindList
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthDentalItemBindAPIRequest) SetBindList(_bindList []Store
 	return nil
 }
 
-// Get BindList Getter
+// GetBindList BindList Getter
 func (r AlibabaAlihealthDentalItemBindAPIRequest) GetBindList() []StoreItemRelRequest {
 	return r._bindList
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 类型 1 天猫门店 2 支付宝门店
 func (r *AlibabaAlihealthDentalItemBindAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthDentalItemBindAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaAlihealthDentalItemBindAPIRequest) GetType() int64 {
 	return r._type
 }

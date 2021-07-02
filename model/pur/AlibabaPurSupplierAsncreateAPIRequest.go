@@ -37,7 +37,7 @@ func (r AlibabaPurSupplierAsncreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Asn Setter
+// SetAsn is Asn Setter
 // asn头信息
 func (r *AlibabaPurSupplierAsncreateAPIRequest) SetAsn(_asn *SupplierAsnInfoVO) error {
 	r._asn = _asn
@@ -45,7 +45,7 @@ func (r *AlibabaPurSupplierAsncreateAPIRequest) SetAsn(_asn *SupplierAsnInfoVO) 
 	return nil
 }
 
-// Get Asn Getter
+// GetAsn Asn Getter
 func (r AlibabaPurSupplierAsncreateAPIRequest) GetAsn() *SupplierAsnInfoVO {
 	return r._asn
 }

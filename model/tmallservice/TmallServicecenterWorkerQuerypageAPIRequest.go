@@ -37,7 +37,7 @@ func (r TmallServicecenterWorkerQuerypageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 页码
 func (r *TmallServicecenterWorkerQuerypageAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -45,7 +45,7 @@ func (r *TmallServicecenterWorkerQuerypageAPIRequest) SetPageIndex(_pageIndex in
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TmallServicecenterWorkerQuerypageAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }

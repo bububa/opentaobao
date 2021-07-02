@@ -41,7 +41,7 @@ func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 所属门店code
 func (r *AlibabaWdkItemTraceUrlGetAPIRequest) SetShopId(_shopId string) error {
 	r._shopId = _shopId
@@ -49,12 +49,12 @@ func (r *AlibabaWdkItemTraceUrlGetAPIRequest) SetShopId(_shopId string) error {
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetShopId() string {
 	return r._shopId
 }
 
-// Set is SourceCode Setter
+// SetSourceCode is SourceCode Setter
 // 来源编码
 func (r *AlibabaWdkItemTraceUrlGetAPIRequest) SetSourceCode(_sourceCode string) error {
 	r._sourceCode = _sourceCode
@@ -62,12 +62,12 @@ func (r *AlibabaWdkItemTraceUrlGetAPIRequest) SetSourceCode(_sourceCode string) 
 	return nil
 }
 
-// Get SourceCode Getter
+// GetSourceCode SourceCode Getter
 func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetSourceCode() string {
 	return r._sourceCode
 }
 
-// Set is SkuCode Setter
+// SetSkuCode is SkuCode Setter
 // 商品skuCode
 func (r *AlibabaWdkItemTraceUrlGetAPIRequest) SetSkuCode(_skuCode string) error {
 	r._skuCode = _skuCode
@@ -75,7 +75,7 @@ func (r *AlibabaWdkItemTraceUrlGetAPIRequest) SetSkuCode(_skuCode string) error 
 	return nil
 }
 
-// Get SkuCode Getter
+// GetSkuCode SkuCode Getter
 func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetSkuCode() string {
 	return r._skuCode
 }

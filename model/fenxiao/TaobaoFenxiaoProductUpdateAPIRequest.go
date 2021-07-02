@@ -109,7 +109,7 @@ func (r TaobaoFenxiaoProductUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PostageType Setter
+// SetPostageType is PostageType Setter
 // 运费类型，可选值：seller（供应商承担运费）、buyer（分销商承担运费）。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPostageType(_postageType string) error {
 	r._postageType = _postageType
@@ -117,12 +117,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPostageType(_postageType strin
 	return nil
 }
 
-// Get PostageType Getter
+// GetPostageType PostageType Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetPostageType() string {
 	return r._postageType
 }
 
-// Set is HaveInvoice Setter
+// SetHaveInvoice is HaveInvoice Setter
 // 是否有发票，可选值：false（否）、true（是），默认false。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetHaveInvoice(_haveInvoice string) error {
 	r._haveInvoice = _haveInvoice
@@ -130,12 +130,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetHaveInvoice(_haveInvoice strin
 	return nil
 }
 
-// Get HaveInvoice Getter
+// GetHaveInvoice HaveInvoice Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetHaveInvoice() string {
 	return r._haveInvoice
 }
 
-// Set is HaveQuarantee Setter
+// SetHaveQuarantee is HaveQuarantee Setter
 // 是否有保修，可选值：false（否）、true（是），默认false。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetHaveQuarantee(_haveQuarantee string) error {
 	r._haveQuarantee = _haveQuarantee
@@ -143,12 +143,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetHaveQuarantee(_haveQuarantee s
 	return nil
 }
 
-// Get HaveQuarantee Getter
+// GetHaveQuarantee HaveQuarantee Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetHaveQuarantee() string {
 	return r._haveQuarantee
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 发布状态，可选值：up（上架）、down（下架）、delete（删除），输入非法字符则忽略。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -156,12 +156,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetStatus(_status string) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is Pid Setter
+// SetPid is Pid Setter
 // 产品ID
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPid(_pid int64) error {
 	r._pid = _pid
@@ -169,12 +169,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPid(_pid int64) error {
 	return nil
 }
 
-// Get Pid Getter
+// GetPid Pid Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetPid() int64 {
 	return r._pid
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 产品名称，长度不超过60个字节。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -182,12 +182,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is StandardPrice Setter
+// SetStandardPrice is StandardPrice Setter
 // 采购基准价，单位：元。例：“10.56”。必须在0.01元到10000000元之间。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetStandardPrice(_standardPrice string) error {
 	r._standardPrice = _standardPrice
@@ -195,12 +195,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetStandardPrice(_standardPrice s
 	return nil
 }
 
-// Get StandardPrice Getter
+// GetStandardPrice StandardPrice Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetStandardPrice() string {
 	return r._standardPrice
 }
 
-// Set is CostPrice Setter
+// SetCostPrice is CostPrice Setter
 // 代销采购价格，单位：元。例：“10.56”。必须在0.01元到10000000元之间。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetCostPrice(_costPrice string) error {
 	r._costPrice = _costPrice
@@ -208,12 +208,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetCostPrice(_costPrice string) e
 	return nil
 }
 
-// Get CostPrice Getter
+// GetCostPrice CostPrice Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetCostPrice() string {
 	return r._costPrice
 }
 
-// Set is RetailPriceLow Setter
+// SetRetailPriceLow is RetailPriceLow Setter
 // 最低零售价，单位：元。例：“10.56”。必须在0.01元到10000000元之间。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetRetailPriceLow(_retailPriceLow string) error {
 	r._retailPriceLow = _retailPriceLow
@@ -221,12 +221,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetRetailPriceLow(_retailPriceLow
 	return nil
 }
 
-// Get RetailPriceLow Getter
+// GetRetailPriceLow RetailPriceLow Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetRetailPriceLow() string {
 	return r._retailPriceLow
 }
 
-// Set is RetailPriceHigh Setter
+// SetRetailPriceHigh is RetailPriceHigh Setter
 // 最高零售价，单位：元。例：“10.56”。必须在0.01元到10000000元之间，最高零售价必须大于最低零售价。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetRetailPriceHigh(_retailPriceHigh string) error {
 	r._retailPriceHigh = _retailPriceHigh
@@ -234,12 +234,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetRetailPriceHigh(_retailPriceHi
 	return nil
 }
 
-// Get RetailPriceHigh Getter
+// GetRetailPriceHigh RetailPriceHigh Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetRetailPriceHigh() string {
 	return r._retailPriceHigh
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 商家编码，长度不能超过60个字节。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -247,12 +247,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetOuterId(_outerId string) error
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is Quantity Setter
+// SetQuantity is Quantity Setter
 // 产品库存必须是1到999999。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetQuantity(_quantity int64) error {
 	r._quantity = _quantity
@@ -260,12 +260,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetQuantity(_quantity int64) erro
 	return nil
 }
 
-// Get Quantity Getter
+// GetQuantity Quantity Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetQuantity() int64 {
 	return r._quantity
 }
 
-// Set is Desc Setter
+// SetDesc is Desc Setter
 // 产品描述，长度为5到25000字符。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetDesc(_desc string) error {
 	r._desc = _desc
@@ -273,12 +273,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetDesc(_desc string) error {
 	return nil
 }
 
-// Get Desc Getter
+// GetDesc Desc Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetDesc() string {
 	return r._desc
 }
 
-// Set is Prov Setter
+// SetProv is Prov Setter
 // 所在地：省，例：“浙江”
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetProv(_prov string) error {
 	r._prov = _prov
@@ -286,12 +286,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetProv(_prov string) error {
 	return nil
 }
 
-// Get Prov Getter
+// GetProv Prov Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetProv() string {
 	return r._prov
 }
 
-// Set is City Setter
+// SetCity is City Setter
 // 所在地：市，例：“杭州”
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetCity(_city string) error {
 	r._city = _city
@@ -299,12 +299,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetCity(_city string) error {
 	return nil
 }
 
-// Get City Getter
+// GetCity City Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetCity() string {
 	return r._city
 }
 
-// Set is PostageId Setter
+// SetPostageId is PostageId Setter
 // 运费模板ID，参考taobao.postages.get。更新时必须指定运费类型为 buyer，否则不更新。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPostageId(_postageId int64) error {
 	r._postageId = _postageId
@@ -312,12 +312,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPostageId(_postageId int64) er
 	return nil
 }
 
-// Get PostageId Getter
+// GetPostageId PostageId Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetPostageId() int64 {
 	return r._postageId
 }
 
-// Set is PostageOrdinary Setter
+// SetPostageOrdinary is PostageOrdinary Setter
 // 平邮费用，单位：元。例：“10.56”。大小为0.01元到999999元之间。更新时必须指定运费类型为buyer，否则不更新。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPostageOrdinary(_postageOrdinary string) error {
 	r._postageOrdinary = _postageOrdinary
@@ -325,12 +325,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPostageOrdinary(_postageOrdina
 	return nil
 }
 
-// Get PostageOrdinary Getter
+// GetPostageOrdinary PostageOrdinary Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetPostageOrdinary() string {
 	return r._postageOrdinary
 }
 
-// Set is PostageFast Setter
+// SetPostageFast is PostageFast Setter
 // 快递费用，单位：元。例：“10.56”。大小为0.01元到999999元之间。更新时必须指定运费类型为buyer，否则不更新。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPostageFast(_postageFast string) error {
 	r._postageFast = _postageFast
@@ -338,12 +338,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPostageFast(_postageFast strin
 	return nil
 }
 
-// Get PostageFast Getter
+// GetPostageFast PostageFast Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetPostageFast() string {
 	return r._postageFast
 }
 
-// Set is PostageEms Setter
+// SetPostageEms is PostageEms Setter
 // ems费用，单位：元。例：“10.56”。大小为0.01元到999999元之间。更新时必须指定运费类型为buyer，否则不更新。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPostageEms(_postageEms string) error {
 	r._postageEms = _postageEms
@@ -351,12 +351,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPostageEms(_postageEms string)
 	return nil
 }
 
-// Get PostageEms Getter
+// GetPostageEms PostageEms Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetPostageEms() string {
 	return r._postageEms
 }
 
-// Set is SkuIds Setter
+// SetSkuIds is SkuIds Setter
 // sku id列表，例：1001,1002,1003。如果传入sku_properties将忽略此参数。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuIds(_skuIds string) error {
 	r._skuIds = _skuIds
@@ -364,12 +364,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuIds(_skuIds string) error {
 	return nil
 }
 
-// Get SkuIds Getter
+// GetSkuIds SkuIds Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuIds() string {
 	return r._skuIds
 }
 
-// Set is SkuCostPrices Setter
+// SetSkuCostPrices is SkuCostPrices Setter
 // sku采购价格，单位元，例："10.50,11.00,20.50"，字段必须和上面的sku_ids或sku_properties保持一致。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuCostPrices(_skuCostPrices string) error {
 	r._skuCostPrices = _skuCostPrices
@@ -377,12 +377,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuCostPrices(_skuCostPrices s
 	return nil
 }
 
-// Get SkuCostPrices Getter
+// GetSkuCostPrices SkuCostPrices Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuCostPrices() string {
 	return r._skuCostPrices
 }
 
-// Set is SkuQuantitys Setter
+// SetSkuQuantitys is SkuQuantitys Setter
 // sku库存，单位元，例："10,20,30"，字段必须和sku_ids或sku_properties保持一致。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuQuantitys(_skuQuantitys string) error {
 	r._skuQuantitys = _skuQuantitys
@@ -390,12 +390,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuQuantitys(_skuQuantitys str
 	return nil
 }
 
-// Get SkuQuantitys Getter
+// GetSkuQuantitys SkuQuantitys Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuQuantitys() string {
 	return r._skuQuantitys
 }
 
-// Set is SkuOuterIds Setter
+// SetSkuOuterIds is SkuOuterIds Setter
 // sku商家编码 ，单位元，例："S1000,S1002,S1003"，字段必须和上面的id或sku_properties保持一致，如果没有可以写成",,"
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuOuterIds(_skuOuterIds string) error {
 	r._skuOuterIds = _skuOuterIds
@@ -403,12 +403,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuOuterIds(_skuOuterIds strin
 	return nil
 }
 
-// Get SkuOuterIds Getter
+// GetSkuOuterIds SkuOuterIds Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuOuterIds() string {
 	return r._skuOuterIds
 }
 
-// Set is DiscountId Setter
+// SetDiscountId is DiscountId Setter
 // 折扣ID
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetDiscountId(_discountId int64) error {
 	r._discountId = _discountId
@@ -416,12 +416,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetDiscountId(_discountId int64) 
 	return nil
 }
 
-// Get DiscountId Getter
+// GetDiscountId DiscountId Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetDiscountId() int64 {
 	return r._discountId
 }
 
-// Set is SkuStandardPrices Setter
+// SetSkuStandardPrices is SkuStandardPrices Setter
 // sku采购基准价，单位元，例："10.50,11.00,20.50"，字段必须和上面的sku_ids或sku_properties保持一致。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuStandardPrices(_skuStandardPrices string) error {
 	r._skuStandardPrices = _skuStandardPrices
@@ -429,12 +429,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuStandardPrices(_skuStandard
 	return nil
 }
 
-// Get SkuStandardPrices Getter
+// GetSkuStandardPrices SkuStandardPrices Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuStandardPrices() string {
 	return r._skuStandardPrices
 }
 
-// Set is SkuProperties Setter
+// SetSkuProperties is SkuProperties Setter
 // sku属性。格式:pid:vid;pid:vid,表示一组属性如:1627207:3232483;1630696:3284570,表示一组:机身颜色:军绿色;手机套餐:一电一充。多组之间用逗号“,”区分。(属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid)<br/>通过此字段可新增和更新sku。若传入此值将忽略sku_ids字段。sku其他字段与此值保持一致。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuProperties(_skuProperties string) error {
 	r._skuProperties = _skuProperties
@@ -442,12 +442,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuProperties(_skuProperties s
 	return nil
 }
 
-// Get SkuProperties Getter
+// GetSkuProperties SkuProperties Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuProperties() string {
 	return r._skuProperties
 }
 
-// Set is SkuPropertiesDel Setter
+// SetSkuPropertiesDel is SkuPropertiesDel Setter
 // 根据sku属性删除sku信息。需要按组删除属性。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuPropertiesDel(_skuPropertiesDel string) error {
 	r._skuPropertiesDel = _skuPropertiesDel
@@ -455,12 +455,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuPropertiesDel(_skuPropertie
 	return nil
 }
 
-// Get SkuPropertiesDel Getter
+// GetSkuPropertiesDel SkuPropertiesDel Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuPropertiesDel() string {
 	return r._skuPropertiesDel
 }
 
-// Set is IsAuthz Setter
+// SetIsAuthz is IsAuthz Setter
 // 产品是否需要授权isAuthz:yes|no <br/>yes:需要授权 <br/>no:不需要授权
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetIsAuthz(_isAuthz string) error {
 	r._isAuthz = _isAuthz
@@ -468,12 +468,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetIsAuthz(_isAuthz string) error
 	return nil
 }
 
-// Get IsAuthz Getter
+// GetIsAuthz IsAuthz Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetIsAuthz() string {
 	return r._isAuthz
 }
 
-// Set is PicPath Setter
+// SetPicPath is PicPath Setter
 // 产品主图图片空间相对路径或绝对路径
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPicPath(_picPath string) error {
 	r._picPath = _picPath
@@ -481,12 +481,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPicPath(_picPath string) error
 	return nil
 }
 
-// Get PicPath Getter
+// GetPicPath PicPath Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetPicPath() string {
 	return r._picPath
 }
 
-// Set is Image Setter
+// SetImage is Image Setter
 // 主图图片，如果pic_path参数不空，则优先使用pic_path，忽略该参数
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetImage(_image *model.File) error {
 	r._image = _image
@@ -494,12 +494,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetImage(_image *model.File) erro
 	return nil
 }
 
-// Get Image Getter
+// GetImage Image Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetImage() *model.File {
 	return r._image
 }
 
-// Set is Properties Setter
+// SetProperties is Properties Setter
 // 产品属性
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetProperties(_properties string) error {
 	r._properties = _properties
@@ -507,12 +507,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetProperties(_properties string)
 	return nil
 }
 
-// Get Properties Getter
+// GetProperties Properties Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetProperties() string {
 	return r._properties
 }
 
-// Set is PropertyAlias Setter
+// SetPropertyAlias is PropertyAlias Setter
 // 属性别名
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPropertyAlias(_propertyAlias string) error {
 	r._propertyAlias = _propertyAlias
@@ -520,12 +520,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetPropertyAlias(_propertyAlias s
 	return nil
 }
 
-// Get PropertyAlias Getter
+// GetPropertyAlias PropertyAlias Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetPropertyAlias() string {
 	return r._propertyAlias
 }
 
-// Set is InputProperties Setter
+// SetInputProperties is InputProperties Setter
 // 自定义属性。格式为pid:value;pid:value
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetInputProperties(_inputProperties string) error {
 	r._inputProperties = _inputProperties
@@ -533,12 +533,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetInputProperties(_inputProperti
 	return nil
 }
 
-// Get InputProperties Getter
+// GetInputProperties InputProperties Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetInputProperties() string {
 	return r._inputProperties
 }
 
-// Set is DealerCostPrice Setter
+// SetDealerCostPrice is DealerCostPrice Setter
 // 经销采购价，单位：元。例：“10.56”。必须在0.01元到10000000元之间。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetDealerCostPrice(_dealerCostPrice string) error {
 	r._dealerCostPrice = _dealerCostPrice
@@ -546,12 +546,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetDealerCostPrice(_dealerCostPri
 	return nil
 }
 
-// Get DealerCostPrice Getter
+// GetDealerCostPrice DealerCostPrice Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetDealerCostPrice() string {
 	return r._dealerCostPrice
 }
 
-// Set is SkuDealerCostPrices Setter
+// SetSkuDealerCostPrices is SkuDealerCostPrices Setter
 // sku的经销采购价。如果多个，用逗号分隔，并与其他sku信息保持相同顺序。其中每个值的单位：元。例：“10.56,12.3”。必须在0.01元到10000000元之间。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuDealerCostPrices(_skuDealerCostPrices string) error {
 	r._skuDealerCostPrices = _skuDealerCostPrices
@@ -559,12 +559,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuDealerCostPrices(_skuDealer
 	return nil
 }
 
-// Get SkuDealerCostPrices Getter
+// GetSkuDealerCostPrices SkuDealerCostPrices Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuDealerCostPrices() string {
 	return r._skuDealerCostPrices
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 所属类目id，参考Taobao.itemcats.get，不支持成人等类目，输入成人类目id保存提示类目属性错误。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
@@ -572,12 +572,12 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetCategoryId(_categoryId int64) 
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }
 
-// Set is StandardRetailPrice Setter
+// SetStandardRetailPrice is StandardRetailPrice Setter
 // 零售基准价，单位：元。例：“10.56”。必须在0.01元到10000000元之间。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetStandardRetailPrice(_standardRetailPrice string) error {
 	r._standardRetailPrice = _standardRetailPrice
@@ -585,7 +585,7 @@ func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetStandardRetailPrice(_standardR
 	return nil
 }
 
-// Get StandardRetailPrice Getter
+// GetStandardRetailPrice StandardRetailPrice Getter
 func (r TaobaoFenxiaoProductUpdateAPIRequest) GetStandardRetailPrice() string {
 	return r._standardRetailPrice
 }

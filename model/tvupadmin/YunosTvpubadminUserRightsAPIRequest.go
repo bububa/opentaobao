@@ -41,7 +41,7 @@ func (r YunosTvpubadminUserRightsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Uid Setter
+// SetUid is Uid Setter
 // 用户ID
 func (r *YunosTvpubadminUserRightsAPIRequest) SetUid(_uid int64) error {
 	r._uid = _uid
@@ -49,12 +49,12 @@ func (r *YunosTvpubadminUserRightsAPIRequest) SetUid(_uid int64) error {
 	return nil
 }
 
-// Get Uid Getter
+// GetUid Uid Getter
 func (r YunosTvpubadminUserRightsAPIRequest) GetUid() int64 {
 	return r._uid
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码值
 func (r *YunosTvpubadminUserRightsAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -62,12 +62,12 @@ func (r *YunosTvpubadminUserRightsAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r YunosTvpubadminUserRightsAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页行数
 func (r *YunosTvpubadminUserRightsAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *YunosTvpubadminUserRightsAPIRequest) SetPageSize(_pageSize int64) error
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r YunosTvpubadminUserRightsAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

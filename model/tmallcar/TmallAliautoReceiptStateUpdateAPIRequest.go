@@ -39,7 +39,7 @@ func (r TmallAliautoReceiptStateUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // FINISH:服务完成
 func (r *TmallAliautoReceiptStateUpdateAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -47,12 +47,12 @@ func (r *TmallAliautoReceiptStateUpdateAPIRequest) SetStatus(_status string) err
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TmallAliautoReceiptStateUpdateAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is ReceiptId Setter
+// SetReceiptId is ReceiptId Setter
 // 服务工单id
 func (r *TmallAliautoReceiptStateUpdateAPIRequest) SetReceiptId(_receiptId int64) error {
 	r._receiptId = _receiptId
@@ -60,7 +60,7 @@ func (r *TmallAliautoReceiptStateUpdateAPIRequest) SetReceiptId(_receiptId int64
 	return nil
 }
 
-// Get ReceiptId Getter
+// GetReceiptId ReceiptId Getter
 func (r TmallAliautoReceiptStateUpdateAPIRequest) GetReceiptId() int64 {
 	return r._receiptId
 }

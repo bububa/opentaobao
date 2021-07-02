@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenPushvenueAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PushVenueParam Setter
+// SetPushVenueParam is PushVenueParam Setter
 // 入参pushVenueParam
 func (r *AlibabaDamaiMevOpenPushvenueAPIRequest) SetPushVenueParam(_pushVenueParam *ThirdVenuePushOpenParam) error {
 	r._pushVenueParam = _pushVenueParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenPushvenueAPIRequest) SetPushVenueParam(_pushVenuePar
 	return nil
 }
 
-// Get PushVenueParam Getter
+// GetPushVenueParam PushVenueParam Getter
 func (r AlibabaDamaiMevOpenPushvenueAPIRequest) GetPushVenueParam() *ThirdVenuePushOpenParam {
 	return r._pushVenueParam
 }

@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentShowEditAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // 请求入参，JSON格式
 func (r *YunosTvpubadminContentShowEditAPIRequest) SetData(_data string) error {
 	r._data = _data
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentShowEditAPIRequest) SetData(_data string) error {
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r YunosTvpubadminContentShowEditAPIRequest) GetData() string {
 	return r._data
 }

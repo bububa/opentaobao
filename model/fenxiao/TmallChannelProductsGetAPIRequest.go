@@ -45,7 +45,7 @@ func (r TmallChannelProductsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TopQueryProductDO Setter
+// SetTopQueryProductDO is TopQueryProductDO Setter
 // top_query_product_d_o
 func (r *TmallChannelProductsGetAPIRequest) SetTopQueryProductDO(_topQueryProductDO *TopQueryProductDo) error {
 	r._topQueryProductDO = _topQueryProductDO
@@ -53,7 +53,7 @@ func (r *TmallChannelProductsGetAPIRequest) SetTopQueryProductDO(_topQueryProduc
 	return nil
 }
 
-// Get TopQueryProductDO Getter
+// GetTopQueryProductDO TopQueryProductDO Getter
 func (r TmallChannelProductsGetAPIRequest) GetTopQueryProductDO() *TopQueryProductDo {
 	return r._topQueryProductDO
 }

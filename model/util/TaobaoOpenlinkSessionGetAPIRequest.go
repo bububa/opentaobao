@@ -37,7 +37,7 @@ func (r TaobaoOpenlinkSessionGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 授权码
 func (r *TaobaoOpenlinkSessionGetAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -45,7 +45,7 @@ func (r *TaobaoOpenlinkSessionGetAPIRequest) SetCode(_code string) error {
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r TaobaoOpenlinkSessionGetAPIRequest) GetCode() string {
 	return r._code
 }

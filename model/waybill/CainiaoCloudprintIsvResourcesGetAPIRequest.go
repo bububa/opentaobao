@@ -37,7 +37,7 @@ func (r CainiaoCloudprintIsvResourcesGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IsvResourceType Setter
+// SetIsvResourceType is IsvResourceType Setter
 // isv资源类型，分为：TEMPLATE（表示模板），PRINT_ITEM（打印项），CUSTOM_AREA（预设自定义区）
 func (r *CainiaoCloudprintIsvResourcesGetAPIRequest) SetIsvResourceType(_isvResourceType string) error {
 	r._isvResourceType = _isvResourceType
@@ -45,7 +45,7 @@ func (r *CainiaoCloudprintIsvResourcesGetAPIRequest) SetIsvResourceType(_isvReso
 	return nil
 }
 
-// Get IsvResourceType Getter
+// GetIsvResourceType IsvResourceType Getter
 func (r CainiaoCloudprintIsvResourcesGetAPIRequest) GetIsvResourceType() string {
 	return r._isvResourceType
 }

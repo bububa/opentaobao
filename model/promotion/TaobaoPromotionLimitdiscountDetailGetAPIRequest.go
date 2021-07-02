@@ -37,7 +37,7 @@ func (r TaobaoPromotionLimitdiscountDetailGetAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is LimitDiscountId Setter
+// SetLimitDiscountId is LimitDiscountId Setter
 // 限时打折ID。这个针对查询唯一限时打折情况。
 func (r *TaobaoPromotionLimitdiscountDetailGetAPIRequest) SetLimitDiscountId(_limitDiscountId int64) error {
 	r._limitDiscountId = _limitDiscountId
@@ -45,7 +45,7 @@ func (r *TaobaoPromotionLimitdiscountDetailGetAPIRequest) SetLimitDiscountId(_li
 	return nil
 }
 
-// Get LimitDiscountId Getter
+// GetLimitDiscountId LimitDiscountId Getter
 func (r TaobaoPromotionLimitdiscountDetailGetAPIRequest) GetLimitDiscountId() int64 {
 	return r._limitDiscountId
 }

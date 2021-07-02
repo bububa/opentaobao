@@ -39,7 +39,7 @@ func (r AlibabaIcbuRfqdetailGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Md5key Setter
+// SetMd5key is Md5key Setter
 // 验证
 func (r *AlibabaIcbuRfqdetailGetAPIRequest) SetMd5key(_md5key string) error {
 	r._md5key = _md5key
@@ -47,12 +47,12 @@ func (r *AlibabaIcbuRfqdetailGetAPIRequest) SetMd5key(_md5key string) error {
 	return nil
 }
 
-// Get Md5key Getter
+// GetMd5key Md5key Getter
 func (r AlibabaIcbuRfqdetailGetAPIRequest) GetMd5key() string {
 	return r._md5key
 }
 
-// Set is RfqQueryDto Setter
+// SetRfqQueryDto is RfqQueryDto Setter
 // 查询RFQ详情DTO
 func (r *AlibabaIcbuRfqdetailGetAPIRequest) SetRfqQueryDto(_rfqQueryDto *RfqDetailSearchQueryDto) error {
 	r._rfqQueryDto = _rfqQueryDto
@@ -60,7 +60,7 @@ func (r *AlibabaIcbuRfqdetailGetAPIRequest) SetRfqQueryDto(_rfqQueryDto *RfqDeta
 	return nil
 }
 
-// Get RfqQueryDto Getter
+// GetRfqQueryDto RfqQueryDto Getter
 func (r AlibabaIcbuRfqdetailGetAPIRequest) GetRfqQueryDto() *RfqDetailSearchQueryDto {
 	return r._rfqQueryDto
 }

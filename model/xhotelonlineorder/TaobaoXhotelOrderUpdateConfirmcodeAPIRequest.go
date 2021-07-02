@@ -37,7 +37,7 @@ func (r TaobaoXhotelOrderUpdateConfirmcodeAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 系统入参
 func (r *TaobaoXhotelOrderUpdateConfirmcodeAPIRequest) SetParam(_param *UpdateOrderConfirmCodeParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *TaobaoXhotelOrderUpdateConfirmcodeAPIRequest) SetParam(_param *UpdateOr
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r TaobaoXhotelOrderUpdateConfirmcodeAPIRequest) GetParam() *UpdateOrderConfirmCodeParam {
 	return r._param
 }

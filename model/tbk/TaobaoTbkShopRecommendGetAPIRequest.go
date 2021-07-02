@@ -43,7 +43,7 @@ func (r TaobaoTbkShopRecommendGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需返回的字段列表
 func (r *TaobaoTbkShopRecommendGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -51,12 +51,12 @@ func (r *TaobaoTbkShopRecommendGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoTbkShopRecommendGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 卖家Id
 func (r *TaobaoTbkShopRecommendGetAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -64,12 +64,12 @@ func (r *TaobaoTbkShopRecommendGetAPIRequest) SetUserId(_userId int64) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoTbkShopRecommendGetAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is Count Setter
+// SetCount is Count Setter
 // 返回数量，默认20，最大值40
 func (r *TaobaoTbkShopRecommendGetAPIRequest) SetCount(_count int64) error {
 	r._count = _count
@@ -77,12 +77,12 @@ func (r *TaobaoTbkShopRecommendGetAPIRequest) SetCount(_count int64) error {
 	return nil
 }
 
-// Get Count Getter
+// GetCount Count Getter
 func (r TaobaoTbkShopRecommendGetAPIRequest) GetCount() int64 {
 	return r._count
 }
 
-// Set is Platform Setter
+// SetPlatform is Platform Setter
 // 链接形式：1：PC，2：无线，默认：１
 func (r *TaobaoTbkShopRecommendGetAPIRequest) SetPlatform(_platform int64) error {
 	r._platform = _platform
@@ -90,7 +90,7 @@ func (r *TaobaoTbkShopRecommendGetAPIRequest) SetPlatform(_platform int64) error
 	return nil
 }
 
-// Get Platform Getter
+// GetPlatform Platform Getter
 func (r TaobaoTbkShopRecommendGetAPIRequest) GetPlatform() int64 {
 	return r._platform
 }

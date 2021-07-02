@@ -49,7 +49,7 @@ func (r AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is AuthRefEntId Setter
+// SetAuthRefEntId is AuthRefEntId Setter
 // 认证企业refEntId
 func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetAuthRefEntId(_authRefEntId string) error {
 	r._authRefEntId = _authRefEntId
@@ -57,12 +57,12 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetAuthRefEntId(_a
 	return nil
 }
 
-// Get AuthRefEntId Getter
+// GetAuthRefEntId AuthRefEntId Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) GetAuthRefEntId() string {
 	return r._authRefEntId
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业refEntId
 func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -70,12 +70,12 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetRefEntId(_refEn
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is BureauName Setter
+// SetBureauName is BureauName Setter
 // 城市名
 func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetBureauName(_bureauName string) error {
 	r._bureauName = _bureauName
@@ -83,12 +83,12 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetBureauName(_bur
 	return nil
 }
 
-// Get BureauName Getter
+// GetBureauName BureauName Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) GetBureauName() string {
 	return r._bureauName
 }
 
-// Set is TerminalName Setter
+// SetTerminalName is TerminalName Setter
 // 终端名称
 func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetTerminalName(_terminalName string) error {
 	r._terminalName = _terminalName
@@ -96,12 +96,12 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetTerminalName(_t
 	return nil
 }
 
-// Get TerminalName Getter
+// GetTerminalName TerminalName Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) GetTerminalName() string {
 	return r._terminalName
 }
 
-// Set is TerminalType Setter
+// SetTerminalType is TerminalType Setter
 // 终端类型
 func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetTerminalType(_terminalType string) error {
 	r._terminalType = _terminalType
@@ -109,12 +109,12 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetTerminalType(_t
 	return nil
 }
 
-// Get TerminalType Getter
+// GetTerminalType TerminalType Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) GetTerminalType() string {
 	return r._terminalType
 }
 
-// Set is CType Setter
+// SetCType is CType Setter
 // 核销类型
 func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetCType(_cType string) error {
 	r._cType = _cType
@@ -122,12 +122,12 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetCType(_cType st
 	return nil
 }
 
-// Get CType Getter
+// GetCType CType Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) GetCType() string {
 	return r._cType
 }
 
-// Set is Codes Setter
+// SetCodes is Codes Setter
 // 码列表
 func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetCodes(_codes []string) error {
 	r._codes = _codes
@@ -135,7 +135,7 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetCodes(_codes []
 	return nil
 }
 
-// Get Codes Getter
+// GetCodes Codes Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) GetCodes() []string {
 	return r._codes
 }

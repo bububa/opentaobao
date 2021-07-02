@@ -37,7 +37,7 @@ func (r TmallNrFulfillLogisticsSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 物流回传参数
 func (r *TmallNrFulfillLogisticsSyncAPIRequest) SetParam0(_param0 *NrLogisticsInfoSynReqDto) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TmallNrFulfillLogisticsSyncAPIRequest) SetParam0(_param0 *NrLogisticsIn
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TmallNrFulfillLogisticsSyncAPIRequest) GetParam0() *NrLogisticsInfoSynReqDto {
 	return r._param0
 }

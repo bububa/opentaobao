@@ -41,7 +41,7 @@ func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is CodeList Setter
+// SetCodeList is CodeList Setter
 // 追溯码
 func (r *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) SetCodeList(_codeList []string) error {
 	r._codeList = _codeList
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) SetCodeList(_codeList
 	return nil
 }
 
-// Get CodeList Getter
+// GetCodeList CodeList Getter
 func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetCodeList() []string {
 	return r._codeList
 }
 
-// Set is TerminalName Setter
+// SetTerminalName is TerminalName Setter
 // 调用零售药店名称
 func (r *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) SetTerminalName(_terminalName string) error {
 	r._terminalName = _terminalName
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) SetTerminalName(_term
 	return nil
 }
 
-// Get TerminalName Getter
+// GetTerminalName TerminalName Getter
 func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetTerminalName() string {
 	return r._terminalName
 }
 
-// Set is BureauId Setter
+// SetBureauId is BureauId Setter
 // 门店所属的行政区域ID
 func (r *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) SetBureauId(_bureauId string) error {
 	r._bureauId = _bureauId
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) SetBureauId(_bureauId
 	return nil
 }
 
-// Get BureauId Getter
+// GetBureauId BureauId Getter
 func (r AlibabaAlihealthDrugCodeKytYqQuerycodeAPIRequest) GetBureauId() string {
 	return r._bureauId
 }

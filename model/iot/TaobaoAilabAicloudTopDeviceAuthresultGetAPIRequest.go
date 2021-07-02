@@ -45,7 +45,7 @@ func (r TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 账户体系隔离
 func (r *TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -53,12 +53,12 @@ func (r *TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) SetSchema(_schema s
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
 func (r *TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -66,12 +66,12 @@ func (r *TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) SetUserId(_userId s
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is UtdId Setter
+// SetUtdId is UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
 func (r *TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
@@ -79,12 +79,12 @@ func (r *TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) SetUtdId(_utdId str
 	return nil
 }
 
-// Get UtdId Getter
+// GetUtdId UtdId Getter
 func (r TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息，用于存放APP类型等
 func (r *TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -92,12 +92,12 @@ func (r *TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) SetExt(_ext string)
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is AuthCodes Setter
+// SetAuthCodes is AuthCodes Setter
 // authCodes信息
 func (r *TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) SetAuthCodes(_authCodes []string) error {
 	r._authCodes = _authCodes
@@ -105,7 +105,7 @@ func (r *TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) SetAuthCodes(_authC
 	return nil
 }
 
-// Get AuthCodes Getter
+// GetAuthCodes AuthCodes Getter
 func (r TaobaoAilabAicloudTopDeviceAuthresultGetAPIRequest) GetAuthCodes() []string {
 	return r._authCodes
 }

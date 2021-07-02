@@ -41,7 +41,7 @@ func (r AlitripMerchantGalaxyPaymentParamQueryAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is TenantKey Setter
+// SetTenantKey is TenantKey Setter
 // 租户身份信息
 func (r *AlitripMerchantGalaxyPaymentParamQueryAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
@@ -49,12 +49,12 @@ func (r *AlitripMerchantGalaxyPaymentParamQueryAPIRequest) SetTenantKey(_tenantK
 	return nil
 }
 
-// Get TenantKey Getter
+// GetTenantKey TenantKey Getter
 func (r AlitripMerchantGalaxyPaymentParamQueryAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 用户校验token
 func (r *AlitripMerchantGalaxyPaymentParamQueryAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -62,12 +62,12 @@ func (r *AlitripMerchantGalaxyPaymentParamQueryAPIRequest) SetToken(_token strin
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlitripMerchantGalaxyPaymentParamQueryAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单编号
 func (r *AlitripMerchantGalaxyPaymentParamQueryAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -75,7 +75,7 @@ func (r *AlitripMerchantGalaxyPaymentParamQueryAPIRequest) SetOrderId(_orderId s
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlitripMerchantGalaxyPaymentParamQueryAPIRequest) GetOrderId() string {
 	return r._orderId
 }

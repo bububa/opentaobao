@@ -41,7 +41,7 @@ func (r AlibabaScbpAdKeywordAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AdKeyword Setter
+// SetAdKeyword is AdKeyword Setter
 // 加入的词
 func (r *AlibabaScbpAdKeywordAddAPIRequest) SetAdKeyword(_adKeyword string) error {
 	r._adKeyword = _adKeyword
@@ -49,12 +49,12 @@ func (r *AlibabaScbpAdKeywordAddAPIRequest) SetAdKeyword(_adKeyword string) erro
 	return nil
 }
 
-// Get AdKeyword Getter
+// GetAdKeyword AdKeyword Getter
 func (r AlibabaScbpAdKeywordAddAPIRequest) GetAdKeyword() string {
 	return r._adKeyword
 }
 
-// Set is PriceStr Setter
+// SetPriceStr is PriceStr Setter
 // 词的出价
 func (r *AlibabaScbpAdKeywordAddAPIRequest) SetPriceStr(_priceStr string) error {
 	r._priceStr = _priceStr
@@ -62,12 +62,12 @@ func (r *AlibabaScbpAdKeywordAddAPIRequest) SetPriceStr(_priceStr string) error 
 	return nil
 }
 
-// Get PriceStr Getter
+// GetPriceStr PriceStr Getter
 func (r AlibabaScbpAdKeywordAddAPIRequest) GetPriceStr() string {
 	return r._priceStr
 }
 
-// Set is TagName Setter
+// SetTagName is TagName Setter
 // 分组名
 func (r *AlibabaScbpAdKeywordAddAPIRequest) SetTagName(_tagName string) error {
 	r._tagName = _tagName
@@ -75,7 +75,7 @@ func (r *AlibabaScbpAdKeywordAddAPIRequest) SetTagName(_tagName string) error {
 	return nil
 }
 
-// Get TagName Getter
+// GetTagName TagName Getter
 func (r AlibabaScbpAdKeywordAddAPIRequest) GetTagName() string {
 	return r._tagName
 }

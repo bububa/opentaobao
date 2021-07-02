@@ -45,7 +45,7 @@ func (r TaobaoMiniappCloudStoreRelationAddAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Env Setter
+// SetEnv is Env Setter
 // 环境 test/online
 func (r *TaobaoMiniappCloudStoreRelationAddAPIRequest) SetEnv(_env string) error {
 	r._env = _env
@@ -53,12 +53,12 @@ func (r *TaobaoMiniappCloudStoreRelationAddAPIRequest) SetEnv(_env string) error
 	return nil
 }
 
-// Get Env Getter
+// GetEnv Env Getter
 func (r TaobaoMiniappCloudStoreRelationAddAPIRequest) GetEnv() string {
 	return r._env
 }
 
-// Set is FileType Setter
+// SetFileType is FileType Setter
 // 文件类型 image/audio/video/font/other
 func (r *TaobaoMiniappCloudStoreRelationAddAPIRequest) SetFileType(_fileType string) error {
 	r._fileType = _fileType
@@ -66,12 +66,12 @@ func (r *TaobaoMiniappCloudStoreRelationAddAPIRequest) SetFileType(_fileType str
 	return nil
 }
 
-// Get FileType Getter
+// GetFileType FileType Getter
 func (r TaobaoMiniappCloudStoreRelationAddAPIRequest) GetFileType() string {
 	return r._fileType
 }
 
-// Set is SpecialId Setter
+// SetSpecialId is SpecialId Setter
 // 上传平台返回的文件唯一ID
 func (r *TaobaoMiniappCloudStoreRelationAddAPIRequest) SetSpecialId(_specialId string) error {
 	r._specialId = _specialId
@@ -79,12 +79,12 @@ func (r *TaobaoMiniappCloudStoreRelationAddAPIRequest) SetSpecialId(_specialId s
 	return nil
 }
 
-// Get SpecialId Getter
+// GetSpecialId SpecialId Getter
 func (r TaobaoMiniappCloudStoreRelationAddAPIRequest) GetSpecialId() string {
 	return r._specialId
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 上传平台返回的文件url，部分文件类型无固定url，非必填
 func (r *TaobaoMiniappCloudStoreRelationAddAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -92,12 +92,12 @@ func (r *TaobaoMiniappCloudStoreRelationAddAPIRequest) SetUrl(_url string) error
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r TaobaoMiniappCloudStoreRelationAddAPIRequest) GetUrl() string {
 	return r._url
 }
 
-// Set is CloudPath Setter
+// SetCloudPath is CloudPath Setter
 // 文件路径
 func (r *TaobaoMiniappCloudStoreRelationAddAPIRequest) SetCloudPath(_cloudPath string) error {
 	r._cloudPath = _cloudPath
@@ -105,7 +105,7 @@ func (r *TaobaoMiniappCloudStoreRelationAddAPIRequest) SetCloudPath(_cloudPath s
 	return nil
 }
 
-// Get CloudPath Getter
+// GetCloudPath CloudPath Getter
 func (r TaobaoMiniappCloudStoreRelationAddAPIRequest) GetCloudPath() string {
 	return r._cloudPath
 }

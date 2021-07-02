@@ -97,7 +97,7 @@ func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -105,12 +105,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetWorkcardId(_workca
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 工单类型： 2（合同） 或者 1(任务）
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetType(_type *model.File) error {
 	r._type = _type
@@ -118,12 +118,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetType(_type *model.
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetType() *model.File {
 	return r._type
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 目前仅支持5种状态的反馈：3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败。（所有状态列表： -1： 初始化 0： 生成 1： 生效 2： 申请 3： 受理 4： 执行 5： 成功 9： 结算 10： 拒绝 11： 失败 12 ： 撤销 13： 暂停 19： 终止）
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetStatus(_status *model.File) error {
 	r._status = _status
@@ -131,12 +131,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetStatus(_status *mo
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetStatus() *model.File {
 	return r._status
 }
 
-// Set is BuyerId Setter
+// SetBuyerId is BuyerId Setter
 // 买家id
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetBuyerId(_buyerId int64) error {
 	r._buyerId = _buyerId
@@ -144,12 +144,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetBuyerId(_buyerId i
 	return nil
 }
 
-// Get BuyerId Getter
+// GetBuyerId BuyerId Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetBuyerId() int64 {
 	return r._buyerId
 }
 
-// Set is Updater Setter
+// SetUpdater is Updater Setter
 // api调用者
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetUpdater(_updater string) error {
 	r._updater = _updater
@@ -157,12 +157,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetUpdater(_updater s
 	return nil
 }
 
-// Get Updater Getter
+// GetUpdater Updater Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetUpdater() string {
 	return r._updater
 }
 
-// Set is UpdateDate Setter
+// SetUpdateDate is UpdateDate Setter
 // 更新时间
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetUpdateDate(_updateDate int64) error {
 	r._updateDate = _updateDate
@@ -170,12 +170,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetUpdateDate(_update
 	return nil
 }
 
-// Get UpdateDate Getter
+// GetUpdateDate UpdateDate Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetUpdateDate() int64 {
 	return r._updateDate
 }
 
-// Set is EffectDate Setter
+// SetEffectDate is EffectDate Setter
 // 服务生效时间 ：工单类型为合同工单时，必选！
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetEffectDate(_effectDate int64) error {
 	r._effectDate = _effectDate
@@ -183,12 +183,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetEffectDate(_effect
 	return nil
 }
 
-// Get EffectDate Getter
+// GetEffectDate EffectDate Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetEffectDate() int64 {
 	return r._effectDate
 }
 
-// Set is ExpireDate Setter
+// SetExpireDate is ExpireDate Setter
 // 服务失效时间 ：工单类型为合同工单时，必选！
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetExpireDate(_expireDate int64) error {
 	r._expireDate = _expireDate
@@ -196,12 +196,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetExpireDate(_expire
 	return nil
 }
 
-// Get ExpireDate Getter
+// GetExpireDate ExpireDate Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetExpireDate() int64 {
 	return r._expireDate
 }
 
-// Set is Comments Setter
+// SetComments is Comments Setter
 // 备注,256个字符以内
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetComments(_comments string) error {
 	r._comments = _comments
@@ -209,12 +209,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetComments(_comments
 	return nil
 }
 
-// Get Comments Getter
+// GetComments Comments Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetComments() string {
 	return r._comments
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 任务类工单，预约或者上门地址
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetAddress(_address string) error {
 	r._address = _address
@@ -222,12 +222,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetAddress(_address s
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetAddress() string {
 	return r._address
 }
 
-// Set is ContactName Setter
+// SetContactName is ContactName Setter
 // 任务执行，预约联系人
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetContactName(_contactName string) error {
 	r._contactName = _contactName
@@ -235,12 +235,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetContactName(_conta
 	return nil
 }
 
-// Get ContactName Getter
+// GetContactName ContactName Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetContactName() string {
 	return r._contactName
 }
 
-// Set is ContactPhone Setter
+// SetContactPhone is ContactPhone Setter
 // 任务执行，预约联系人电话
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetContactPhone(_contactPhone string) error {
 	r._contactPhone = _contactPhone
@@ -248,12 +248,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetContactPhone(_cont
 	return nil
 }
 
-// Get ContactPhone Getter
+// GetContactPhone ContactPhone Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetContactPhone() string {
 	return r._contactPhone
 }
 
-// Set is ServiceDate Setter
+// SetServiceDate is ServiceDate Setter
 // 服务预约时间
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceDate(_serviceDate int64) error {
 	r._serviceDate = _serviceDate
@@ -261,12 +261,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceDate(_servi
 	return nil
 }
 
-// Get ServiceDate Getter
+// GetServiceDate ServiceDate Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceDate() int64 {
 	return r._serviceDate
 }
 
-// Set is CompleteDate Setter
+// SetCompleteDate is CompleteDate Setter
 // 服务完成时间
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetCompleteDate(_completeDate int64) error {
 	r._completeDate = _completeDate
@@ -274,12 +274,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetCompleteDate(_comp
 	return nil
 }
 
-// Get CompleteDate Getter
+// GetCompleteDate CompleteDate Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetCompleteDate() int64 {
 	return r._completeDate
 }
 
-// Set is ServiceVoucherPics Setter
+// SetServiceVoucherPics is ServiceVoucherPics Setter
 // 服务凭证上传的图片URL链接，多个以;隔开
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceVoucherPics(_serviceVoucherPics string) error {
 	r._serviceVoucherPics = _serviceVoucherPics
@@ -287,12 +287,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceVoucherPics
 	return nil
 }
 
-// Get ServiceVoucherPics Getter
+// GetServiceVoucherPics ServiceVoucherPics Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceVoucherPics() string {
 	return r._serviceVoucherPics
 }
 
-// Set is Attribute Setter
+// SetAttribute is Attribute Setter
 // 属性定义。例如无忧退货服务，K-V对定义，每对KV用“;”分割，“:”号左边是key右边是value，value如果有多个则以“,”分割。 reasons   :  原因，可能有多个 succeedCount     :    取件成功个数 failedCount    :    取件失败个数 cancelCount      :     取件取消个数 totalCount       :      总取件个数，totalCount= succeedCount + failedCount + cancelCount
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetAttribute(_attribute string) error {
 	r._attribute = _attribute
@@ -300,12 +300,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetAttribute(_attribu
 	return nil
 }
 
-// Get Attribute Getter
+// GetAttribute Attribute Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetAttribute() string {
 	return r._attribute
 }
 
-// Set is ServiceCenterCode Setter
+// SetServiceCenterCode is ServiceCenterCode Setter
 // 服务商网点内部编码
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceCenterCode(_serviceCenterCode string) error {
 	r._serviceCenterCode = _serviceCenterCode
@@ -313,12 +313,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceCenterCode(
 	return nil
 }
 
-// Get ServiceCenterCode Getter
+// GetServiceCenterCode ServiceCenterCode Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceCenterCode() string {
 	return r._serviceCenterCode
 }
 
-// Set is ServiceCenterName Setter
+// SetServiceCenterName is ServiceCenterName Setter
 // 服务商网点名字
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceCenterName(_serviceCenterName string) error {
 	r._serviceCenterName = _serviceCenterName
@@ -326,12 +326,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceCenterName(
 	return nil
 }
 
-// Get ServiceCenterName Getter
+// GetServiceCenterName ServiceCenterName Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceCenterName() string {
 	return r._serviceCenterName
 }
 
-// Set is ServiceFee Setter
+// SetServiceFee is ServiceFee Setter
 // 单元是分
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceFee(_serviceFee int64) error {
 	r._serviceFee = _serviceFee
@@ -339,12 +339,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceFee(_servic
 	return nil
 }
 
-// Get ServiceFee Getter
+// GetServiceFee ServiceFee Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceFee() int64 {
 	return r._serviceFee
 }
 
-// Set is IsVisit Setter
+// SetIsVisit is IsVisit Setter
 // 是否上门
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetIsVisit(_isVisit bool) error {
 	r._isVisit = _isVisit
@@ -352,12 +352,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetIsVisit(_isVisit b
 	return nil
 }
 
-// Get IsVisit Getter
+// GetIsVisit IsVisit Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetIsVisit() bool {
 	return r._isVisit
 }
 
-// Set is BeforeServiceMemo Setter
+// SetBeforeServiceMemo is BeforeServiceMemo Setter
 // 说明
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetBeforeServiceMemo(_beforeServiceMemo string) error {
 	r._beforeServiceMemo = _beforeServiceMemo
@@ -365,12 +365,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetBeforeServiceMemo(
 	return nil
 }
 
-// Get BeforeServiceMemo Getter
+// GetBeforeServiceMemo BeforeServiceMemo Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetBeforeServiceMemo() string {
 	return r._beforeServiceMemo
 }
 
-// Set is AfterServiceMemo Setter
+// SetAfterServiceMemo is AfterServiceMemo Setter
 // 说明
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetAfterServiceMemo(_afterServiceMemo string) error {
 	r._afterServiceMemo = _afterServiceMemo
@@ -378,12 +378,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetAfterServiceMemo(_
 	return nil
 }
 
-// Get AfterServiceMemo Getter
+// GetAfterServiceMemo AfterServiceMemo Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetAfterServiceMemo() string {
 	return r._afterServiceMemo
 }
 
-// Set is PhoneImei Setter
+// SetPhoneImei is PhoneImei Setter
 // 手机号码
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetPhoneImei(_phoneImei string) error {
 	r._phoneImei = _phoneImei
@@ -391,12 +391,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetPhoneImei(_phoneIm
 	return nil
 }
 
-// Get PhoneImei Getter
+// GetPhoneImei PhoneImei Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetPhoneImei() string {
 	return r._phoneImei
 }
 
-// Set is SubStatus Setter
+// SetSubStatus is SubStatus Setter
 // 服务子状态：30 表示“服务已申请（上门）” 31表示“服务改约（上门）” 400表示“服务结果（待件上门）” 410表示“服务结果（拖机维修）” 411表示“服务结果（换机）” 420表示“服务结果（上门不可维修）”
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetSubStatus(_subStatus int64) error {
 	r._subStatus = _subStatus
@@ -404,12 +404,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetSubStatus(_subStat
 	return nil
 }
 
-// Get SubStatus Getter
+// GetSubStatus SubStatus Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetSubStatus() int64 {
 	return r._subStatus
 }
 
-// Set is ServiceCenterManagerPhone Setter
+// SetServiceCenterManagerPhone is ServiceCenterManagerPhone Setter
 // 网点负责人联系电话
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceCenterManagerPhone(_serviceCenterManagerPhone string) error {
 	r._serviceCenterManagerPhone = _serviceCenterManagerPhone
@@ -417,12 +417,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceCenterManag
 	return nil
 }
 
-// Get ServiceCenterManagerPhone Getter
+// GetServiceCenterManagerPhone ServiceCenterManagerPhone Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceCenterManagerPhone() string {
 	return r._serviceCenterManagerPhone
 }
 
-// Set is ServiceCenterManagerName Setter
+// SetServiceCenterManagerName is ServiceCenterManagerName Setter
 // 网点负责人
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceCenterManagerName(_serviceCenterManagerName string) error {
 	r._serviceCenterManagerName = _serviceCenterManagerName
@@ -430,12 +430,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceCenterManag
 	return nil
 }
 
-// Get ServiceCenterManagerName Getter
+// GetServiceCenterManagerName ServiceCenterManagerName Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceCenterManagerName() string {
 	return r._serviceCenterManagerName
 }
 
-// Set is ServiceCenterAddress Setter
+// SetServiceCenterAddress is ServiceCenterAddress Setter
 // 网点地址
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceCenterAddress(_serviceCenterAddress string) error {
 	r._serviceCenterAddress = _serviceCenterAddress
@@ -443,12 +443,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceCenterAddre
 	return nil
 }
 
-// Get ServiceCenterAddress Getter
+// GetServiceCenterAddress ServiceCenterAddress Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceCenterAddress() string {
 	return r._serviceCenterAddress
 }
 
-// Set is WorkCardInstallDetailList Setter
+// SetWorkCardInstallDetailList is WorkCardInstallDetailList Setter
 // 一个工单可能包含多件商品，比如空调可能有两台，录入每天机器的安装情况
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetWorkCardInstallDetailList(_workCardInstallDetailList []WorkCardInstallDetail) error {
 	r._workCardInstallDetailList = _workCardInstallDetailList
@@ -456,12 +456,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetWorkCardInstallDet
 	return nil
 }
 
-// Get WorkCardInstallDetailList Getter
+// GetWorkCardInstallDetailList WorkCardInstallDetailList Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetWorkCardInstallDetailList() []WorkCardInstallDetail {
 	return r._workCardInstallDetailList
 }
 
-// Set is ServiceFeeDetail Setter
+// SetServiceFeeDetail is ServiceFeeDetail Setter
 // json string。费用单位为分
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceFeeDetail(_serviceFeeDetail string) error {
 	r._serviceFeeDetail = _serviceFeeDetail
@@ -469,12 +469,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceFeeDetail(_
 	return nil
 }
 
-// Get ServiceFeeDetail Getter
+// GetServiceFeeDetail ServiceFeeDetail Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceFeeDetail() string {
 	return r._serviceFeeDetail
 }
 
-// Set is ExpressCode Setter
+// SetExpressCode is ExpressCode Setter
 // 物流单号
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetExpressCode(_expressCode string) error {
 	r._expressCode = _expressCode
@@ -482,12 +482,12 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetExpressCode(_expre
 	return nil
 }
 
-// Get ExpressCode Getter
+// GetExpressCode ExpressCode Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetExpressCode() string {
 	return r._expressCode
 }
 
-// Set is ExpressCompany Setter
+// SetExpressCompany is ExpressCompany Setter
 // 物流公司名字
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetExpressCompany(_expressCompany string) error {
 	r._expressCompany = _expressCompany
@@ -495,7 +495,7 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetExpressCompany(_ex
 	return nil
 }
 
-// Get ExpressCompany Getter
+// GetExpressCompany ExpressCompany Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetExpressCompany() string {
 	return r._expressCompany
 }

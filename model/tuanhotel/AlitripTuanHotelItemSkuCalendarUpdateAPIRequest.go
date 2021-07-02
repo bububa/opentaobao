@@ -41,7 +41,7 @@ func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 宝贝ID
 func (r *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -49,12 +49,12 @@ func (r *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) SetItemId(_itemId int6
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 宝贝所属类目
 func (r *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -62,12 +62,12 @@ func (r *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) SetCatId(_catId int64)
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetCatId() int64 {
 	return r._catId
 }
 
-// Set is ItemSkuList Setter
+// SetItemSkuList is ItemSkuList Setter
 // 暂不支持此接口对SKU的部分属性进行更新，包括以下属性： 套餐名称、价格、原价、库存、间夜、商家编码、人数、使用次数等
 func (r *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) SetItemSkuList(_itemSkuList []TopTuanItemSkuVO) error {
 	r._itemSkuList = _itemSkuList
@@ -75,7 +75,7 @@ func (r *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) SetItemSkuList(_itemSk
 	return nil
 }
 
-// Get ItemSkuList Getter
+// GetItemSkuList ItemSkuList Getter
 func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetItemSkuList() []TopTuanItemSkuVO {
 	return r._itemSkuList
 }

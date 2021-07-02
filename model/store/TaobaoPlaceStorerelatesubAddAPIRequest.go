@@ -39,7 +39,7 @@ func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店Id
 func (r *TaobaoPlaceStorerelatesubAddAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -47,12 +47,12 @@ func (r *TaobaoPlaceStorerelatesubAddAPIRequest) SetStoreId(_storeId int64) erro
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is SubStoreIds Setter
+// SetSubStoreIds is SubStoreIds Setter
 // 子门店Id
 func (r *TaobaoPlaceStorerelatesubAddAPIRequest) SetSubStoreIds(_subStoreIds []int64) error {
 	r._subStoreIds = _subStoreIds
@@ -60,7 +60,7 @@ func (r *TaobaoPlaceStorerelatesubAddAPIRequest) SetSubStoreIds(_subStoreIds []i
 	return nil
 }
 
-// Get SubStoreIds Getter
+// GetSubStoreIds SubStoreIds Getter
 func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetSubStoreIds() []int64 {
 	return r._subStoreIds
 }

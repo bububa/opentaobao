@@ -45,7 +45,7 @@ func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserInfo Setter
+// SetUserInfo is UserInfo Setter
 // 用户信息
 func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
 	r._userInfo = _userInfo
@@ -53,12 +53,12 @@ func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetUserInfo(_userInfo *UserInfoD
 	return nil
 }
 
-// Get UserInfo Getter
+// GetUserInfo UserInfo Getter
 func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetUserInfo() *UserInfoDto {
 	return r._userInfo
 }
 
-// Set is Client Setter
+// SetClient is Client Setter
 // 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
 func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetClient(_client string) error {
 	r._client = _client
@@ -66,12 +66,12 @@ func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetClient(_client string) error 
 	return nil
 }
 
-// Get Client Getter
+// GetClient Client Getter
 func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetClient() string {
 	return r._client
 }
 
-// Set is Locale Setter
+// SetLocale is Locale Setter
 // 多语言
 func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
@@ -79,12 +79,12 @@ func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetLocale(_locale string) error 
 	return nil
 }
 
-// Get Locale Getter
+// GetLocale Locale Getter
 func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetLocale() string {
 	return r._locale
 }
 
-// Set is HandoverContentId Setter
+// SetHandoverContentId is HandoverContentId Setter
 // 大包编号id
 func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetHandoverContentId(_handoverContentId int64) error {
 	r._handoverContentId = _handoverContentId
@@ -92,12 +92,12 @@ func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetHandoverContentId(_handoverCo
 	return nil
 }
 
-// Get HandoverContentId Getter
+// GetHandoverContentId HandoverContentId Getter
 func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetHandoverContentId() int64 {
 	return r._handoverContentId
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 打印数据类型，1：面单、4：发货标签、512：交接清单
 func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -105,7 +105,7 @@ func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetType() int64 {
 	return r._type
 }

@@ -37,7 +37,7 @@ func (r YunosTvpubadminManageDialogListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 查询的query参数
 func (r *YunosTvpubadminManageDialogListAPIRequest) SetQuery(_query string) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminManageDialogListAPIRequest) SetQuery(_query string) erro
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r YunosTvpubadminManageDialogListAPIRequest) GetQuery() string {
 	return r._query
 }

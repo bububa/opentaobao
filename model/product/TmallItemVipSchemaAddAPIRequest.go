@@ -37,7 +37,7 @@ func (r TmallItemVipSchemaAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SchemaXmlFields Setter
+// SetSchemaXmlFields is SchemaXmlFields Setter
 // 商品发布schema参数
 func (r *TmallItemVipSchemaAddAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
 	r._schemaXmlFields = _schemaXmlFields
@@ -45,7 +45,7 @@ func (r *TmallItemVipSchemaAddAPIRequest) SetSchemaXmlFields(_schemaXmlFields st
 	return nil
 }
 
-// Get SchemaXmlFields Getter
+// GetSchemaXmlFields SchemaXmlFields Getter
 func (r TmallItemVipSchemaAddAPIRequest) GetSchemaXmlFields() string {
 	return r._schemaXmlFields
 }

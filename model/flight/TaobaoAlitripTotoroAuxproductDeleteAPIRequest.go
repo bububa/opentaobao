@@ -37,7 +37,7 @@ func (r TaobaoAlitripTotoroAuxproductDeleteAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is DelAuxProductRq Setter
+// SetDelAuxProductRq is DelAuxProductRq Setter
 // 廉航辅营产品删除请求
 func (r *TaobaoAlitripTotoroAuxproductDeleteAPIRequest) SetDelAuxProductRq(_delAuxProductRq *DelAuxProductRq) error {
 	r._delAuxProductRq = _delAuxProductRq
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripTotoroAuxproductDeleteAPIRequest) SetDelAuxProductRq(_delA
 	return nil
 }
 
-// Get DelAuxProductRq Getter
+// GetDelAuxProductRq DelAuxProductRq Getter
 func (r TaobaoAlitripTotoroAuxproductDeleteAPIRequest) GetDelAuxProductRq() *DelAuxProductRq {
 	return r._delAuxProductRq
 }

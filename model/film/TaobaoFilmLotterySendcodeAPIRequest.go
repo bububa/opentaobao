@@ -37,7 +37,7 @@ func (r TaobaoFilmLotterySendcodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamFCodeMerchantSendCodeRequest Setter
+// SetParamFCodeMerchantSendCodeRequest is ParamFCodeMerchantSendCodeRequest Setter
 // 外部商户发码请求
 func (r *TaobaoFilmLotterySendcodeAPIRequest) SetParamFCodeMerchantSendCodeRequest(_paramFCodeMerchantSendCodeRequest *FCodeMerchantSendCodeRq) error {
 	r._paramFCodeMerchantSendCodeRequest = _paramFCodeMerchantSendCodeRequest
@@ -45,7 +45,7 @@ func (r *TaobaoFilmLotterySendcodeAPIRequest) SetParamFCodeMerchantSendCodeReque
 	return nil
 }
 
-// Get ParamFCodeMerchantSendCodeRequest Getter
+// GetParamFCodeMerchantSendCodeRequest ParamFCodeMerchantSendCodeRequest Getter
 func (r TaobaoFilmLotterySendcodeAPIRequest) GetParamFCodeMerchantSendCodeRequest() *FCodeMerchantSendCodeRq {
 	return r._paramFCodeMerchantSendCodeRequest
 }

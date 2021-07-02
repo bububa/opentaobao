@@ -37,7 +37,7 @@ func (r AlibabaAlihealthOutflowPatientinfoSyncAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is SyncPatientInfoRequest Setter
+// SetSyncPatientInfoRequest is SyncPatientInfoRequest Setter
 // 入参
 func (r *AlibabaAlihealthOutflowPatientinfoSyncAPIRequest) SetSyncPatientInfoRequest(_syncPatientInfoRequest *SyncPatientInfoRequest) error {
 	r._syncPatientInfoRequest = _syncPatientInfoRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthOutflowPatientinfoSyncAPIRequest) SetSyncPatientInfoReq
 	return nil
 }
 
-// Get SyncPatientInfoRequest Getter
+// GetSyncPatientInfoRequest SyncPatientInfoRequest Getter
 func (r AlibabaAlihealthOutflowPatientinfoSyncAPIRequest) GetSyncPatientInfoRequest() *SyncPatientInfoRequest {
 	return r._syncPatientInfoRequest
 }

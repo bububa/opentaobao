@@ -43,7 +43,7 @@ func (r AlibabaWestcrmMemberScoreGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RequestId Setter
+// SetRequestId is RequestId Setter
 // requestId
 func (r *AlibabaWestcrmMemberScoreGetAPIRequest) SetRequestId(_requestId string) error {
 	r._requestId = _requestId
@@ -51,12 +51,12 @@ func (r *AlibabaWestcrmMemberScoreGetAPIRequest) SetRequestId(_requestId string)
 	return nil
 }
 
-// Get RequestId Getter
+// GetRequestId RequestId Getter
 func (r AlibabaWestcrmMemberScoreGetAPIRequest) GetRequestId() string {
 	return r._requestId
 }
 
-// Set is AlipayId Setter
+// SetAlipayId is AlipayId Setter
 // 支付宝id
 func (r *AlibabaWestcrmMemberScoreGetAPIRequest) SetAlipayId(_alipayId string) error {
 	r._alipayId = _alipayId
@@ -64,12 +64,12 @@ func (r *AlibabaWestcrmMemberScoreGetAPIRequest) SetAlipayId(_alipayId string) e
 	return nil
 }
 
-// Get AlipayId Getter
+// GetAlipayId AlipayId Getter
 func (r AlibabaWestcrmMemberScoreGetAPIRequest) GetAlipayId() string {
 	return r._alipayId
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 开始时间
 func (r *AlibabaWestcrmMemberScoreGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -77,12 +77,12 @@ func (r *AlibabaWestcrmMemberScoreGetAPIRequest) SetStartTime(_startTime string)
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r AlibabaWestcrmMemberScoreGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间
 func (r *AlibabaWestcrmMemberScoreGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -90,7 +90,7 @@ func (r *AlibabaWestcrmMemberScoreGetAPIRequest) SetEndTime(_endTime string) err
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r AlibabaWestcrmMemberScoreGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }

@@ -39,7 +39,7 @@ func (r AlibabaFootscanMiniReportListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 平台分配的token
 func (r *AlibabaFootscanMiniReportListAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -47,12 +47,12 @@ func (r *AlibabaFootscanMiniReportListAPIRequest) SetToken(_token string) error 
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlibabaFootscanMiniReportListAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is ReqData Setter
+// SetReqData is ReqData Setter
 // 请求数据
 func (r *AlibabaFootscanMiniReportListAPIRequest) SetReqData(_reqData *TobFeetModelMobileReportRequest) error {
 	r._reqData = _reqData
@@ -60,7 +60,7 @@ func (r *AlibabaFootscanMiniReportListAPIRequest) SetReqData(_reqData *TobFeetMo
 	return nil
 }
 
-// Get ReqData Getter
+// GetReqData ReqData Getter
 func (r AlibabaFootscanMiniReportListAPIRequest) GetReqData() *TobFeetModelMobileReportRequest {
 	return r._reqData
 }

@@ -37,7 +37,7 @@ func (r TaobaoBusTvmcancelorderSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AlitripOrderId Setter
+// SetAlitripOrderId is AlitripOrderId Setter
 // 飞猪订单号
 func (r *TaobaoBusTvmcancelorderSetAPIRequest) SetAlitripOrderId(_alitripOrderId string) error {
 	r._alitripOrderId = _alitripOrderId
@@ -45,7 +45,7 @@ func (r *TaobaoBusTvmcancelorderSetAPIRequest) SetAlitripOrderId(_alitripOrderId
 	return nil
 }
 
-// Get AlitripOrderId Getter
+// GetAlitripOrderId AlitripOrderId Getter
 func (r TaobaoBusTvmcancelorderSetAPIRequest) GetAlitripOrderId() string {
 	return r._alitripOrderId
 }

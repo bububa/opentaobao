@@ -45,7 +45,7 @@ func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -53,12 +53,12 @@ func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetOrderId(_order
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is Tlng Setter
+// SetTlng is Tlng Setter
 // 目的地经度
 func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetTlng(_tlng string) error {
 	r._tlng = _tlng
@@ -66,12 +66,12 @@ func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetTlng(_tlng str
 	return nil
 }
 
-// Get Tlng Getter
+// GetTlng Tlng Getter
 func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetTlng() string {
 	return r._tlng
 }
 
-// Set is Tlat Setter
+// SetTlat is Tlat Setter
 // 目的地纬度
 func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetTlat(_tlat string) error {
 	r._tlat = _tlat
@@ -79,12 +79,12 @@ func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetTlat(_tlat str
 	return nil
 }
 
-// Get Tlat Getter
+// GetTlat Tlat Getter
 func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetTlat() string {
 	return r._tlat
 }
 
-// Set is EndName Setter
+// SetEndName is EndName Setter
 // 目的地名称(最多50个字)
 func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetEndName(_endName string) error {
 	r._endName = _endName
@@ -92,12 +92,12 @@ func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetEndName(_endNa
 	return nil
 }
 
-// Get EndName Getter
+// GetEndName EndName Getter
 func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetEndName() string {
 	return r._endName
 }
 
-// Set is EndAddress Setter
+// SetEndAddress is EndAddress Setter
 // 目的地详细地址(最多100个字)
 func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetEndAddress(_endAddress string) error {
 	r._endAddress = _endAddress
@@ -105,7 +105,7 @@ func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetEndAddress(_en
 	return nil
 }
 
-// Get EndAddress Getter
+// GetEndAddress EndAddress Getter
 func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetEndAddress() string {
 	return r._endAddress
 }

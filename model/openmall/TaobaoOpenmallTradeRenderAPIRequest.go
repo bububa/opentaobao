@@ -37,7 +37,7 @@ func (r TaobaoOpenmallTradeRenderAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamTopTradeCreateDO Setter
+// SetParamTopTradeCreateDO is ParamTopTradeCreateDO Setter
 // 请求入参
 func (r *TaobaoOpenmallTradeRenderAPIRequest) SetParamTopTradeCreateDO(_paramTopTradeCreateDO *TopTradeCreateDo) error {
 	r._paramTopTradeCreateDO = _paramTopTradeCreateDO
@@ -45,7 +45,7 @@ func (r *TaobaoOpenmallTradeRenderAPIRequest) SetParamTopTradeCreateDO(_paramTop
 	return nil
 }
 
-// Get ParamTopTradeCreateDO Getter
+// GetParamTopTradeCreateDO ParamTopTradeCreateDO Getter
 func (r TaobaoOpenmallTradeRenderAPIRequest) GetParamTopTradeCreateDO() *TopTradeCreateDo {
 	return r._paramTopTradeCreateDO
 }

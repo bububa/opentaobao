@@ -37,7 +37,7 @@ func (r TaobaoTrainAgentGrabAccountAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AccountParam Setter
+// SetAccountParam is AccountParam Setter
 // 12306账户信息
 func (r *TaobaoTrainAgentGrabAccountAPIRequest) SetAccountParam(_accountParam *AccountParam) error {
 	r._accountParam = _accountParam
@@ -45,7 +45,7 @@ func (r *TaobaoTrainAgentGrabAccountAPIRequest) SetAccountParam(_accountParam *A
 	return nil
 }
 
-// Get AccountParam Getter
+// GetAccountParam AccountParam Getter
 func (r TaobaoTrainAgentGrabAccountAPIRequest) GetAccountParam() *AccountParam {
 	return r._accountParam
 }

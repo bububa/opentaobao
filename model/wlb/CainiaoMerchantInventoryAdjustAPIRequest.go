@@ -41,7 +41,7 @@ func (r CainiaoMerchantInventoryAdjustAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AdjustRequest Setter
+// SetAdjustRequest is AdjustRequest Setter
 // 商家仓编辑库存
 func (r *CainiaoMerchantInventoryAdjustAPIRequest) SetAdjustRequest(_adjustRequest []MerStoreInvAdjustDto) error {
 	r._adjustRequest = _adjustRequest
@@ -49,12 +49,12 @@ func (r *CainiaoMerchantInventoryAdjustAPIRequest) SetAdjustRequest(_adjustReque
 	return nil
 }
 
-// Get AdjustRequest Getter
+// GetAdjustRequest AdjustRequest Getter
 func (r CainiaoMerchantInventoryAdjustAPIRequest) GetAdjustRequest() []MerStoreInvAdjustDto {
 	return r._adjustRequest
 }
 
-// Set is AppName Setter
+// SetAppName is AppName Setter
 // 调用方应用名
 func (r *CainiaoMerchantInventoryAdjustAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
@@ -62,12 +62,12 @@ func (r *CainiaoMerchantInventoryAdjustAPIRequest) SetAppName(_appName string) e
 	return nil
 }
 
-// Get AppName Getter
+// GetAppName AppName Getter
 func (r CainiaoMerchantInventoryAdjustAPIRequest) GetAppName() string {
 	return r._appName
 }
 
-// Set is Operation Setter
+// SetOperation is Operation Setter
 // 操作
 func (r *CainiaoMerchantInventoryAdjustAPIRequest) SetOperation(_operation string) error {
 	r._operation = _operation
@@ -75,7 +75,7 @@ func (r *CainiaoMerchantInventoryAdjustAPIRequest) SetOperation(_operation strin
 	return nil
 }
 
-// Get Operation Getter
+// GetOperation Operation Getter
 func (r CainiaoMerchantInventoryAdjustAPIRequest) GetOperation() string {
 	return r._operation
 }

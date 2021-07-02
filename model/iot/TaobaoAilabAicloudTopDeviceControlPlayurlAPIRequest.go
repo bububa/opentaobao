@@ -41,7 +41,7 @@ func (r TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 用户信息
 func (r *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
 	r._param0 = _param0
@@ -49,12 +49,12 @@ func (r *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) SetParam0(_param0 
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) GetParam0() *OpenBaseInfo {
 	return r._param0
 }
 
-// Set is Param1 Setter
+// SetParam1 is Param1 Setter
 // 设备id
 func (r *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) SetParam1(_param1 string) error {
 	r._param1 = _param1
@@ -62,12 +62,12 @@ func (r *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) SetParam1(_param1 
 	return nil
 }
 
-// Get Param1 Getter
+// GetParam1 Param1 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) GetParam1() string {
 	return r._param1
 }
 
-// Set is Param2 Setter
+// SetParam2 is Param2 Setter
 // url
 func (r *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) SetParam2(_param2 string) error {
 	r._param2 = _param2
@@ -75,7 +75,7 @@ func (r *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) SetParam2(_param2 
 	return nil
 }
 
-// Get Param2 Getter
+// GetParam2 Param2 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) GetParam2() string {
 	return r._param2
 }

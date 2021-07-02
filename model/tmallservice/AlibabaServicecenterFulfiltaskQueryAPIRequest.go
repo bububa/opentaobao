@@ -47,7 +47,7 @@ func (r AlibabaServicecenterFulfiltaskQueryAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is GmtCreateStart Setter
+// SetGmtCreateStart is GmtCreateStart Setter
 // 时间段查询，核销单创建时间，时间段跨度不超过15分钟
 func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) SetGmtCreateStart(_gmtCreateStart string) error {
 	r._gmtCreateStart = _gmtCreateStart
@@ -55,12 +55,12 @@ func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) SetGmtCreateStart(_gmtCr
 	return nil
 }
 
-// Get GmtCreateStart Getter
+// GetGmtCreateStart GmtCreateStart Getter
 func (r AlibabaServicecenterFulfiltaskQueryAPIRequest) GetGmtCreateStart() string {
 	return r._gmtCreateStart
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数，默认50，最大50
 func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -68,12 +68,12 @@ func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) SetPageSize(_pageSize in
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaServicecenterFulfiltaskQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 核销单外部单号
 func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -81,12 +81,12 @@ func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) SetOuterId(_outerId stri
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r AlibabaServicecenterFulfiltaskQueryAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is GmtCreateEnd Setter
+// SetGmtCreateEnd is GmtCreateEnd Setter
 // 时间段查询，核销单创建时间，时间段跨度不超过15分钟
 func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) SetGmtCreateEnd(_gmtCreateEnd string) error {
 	r._gmtCreateEnd = _gmtCreateEnd
@@ -94,12 +94,12 @@ func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) SetGmtCreateEnd(_gmtCrea
 	return nil
 }
 
-// Get GmtCreateEnd Getter
+// GetGmtCreateEnd GmtCreateEnd Getter
 func (r AlibabaServicecenterFulfiltaskQueryAPIRequest) GetGmtCreateEnd() string {
 	return r._gmtCreateEnd
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 查询第几页
 func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -107,12 +107,12 @@ func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) SetCurrentPage(_currentP
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r AlibabaServicecenterFulfiltaskQueryAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is FulfilTaskIdList Setter
+// SetFulfilTaskIdList is FulfilTaskIdList Setter
 // 核销单id列表
 func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) SetFulfilTaskIdList(_fulfilTaskIdList []int64) error {
 	r._fulfilTaskIdList = _fulfilTaskIdList
@@ -120,7 +120,7 @@ func (r *AlibabaServicecenterFulfiltaskQueryAPIRequest) SetFulfilTaskIdList(_ful
 	return nil
 }
 
-// Get FulfilTaskIdList Getter
+// GetFulfilTaskIdList FulfilTaskIdList Getter
 func (r AlibabaServicecenterFulfiltaskQueryAPIRequest) GetFulfilTaskIdList() []int64 {
 	return r._fulfilTaskIdList
 }

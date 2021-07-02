@@ -45,7 +45,7 @@ func (r TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息，用于存放APP类型等
 func (r *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -53,12 +53,12 @@ func (r *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) SetExt(_ext string) erro
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 账户体系隔离
 func (r *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -66,12 +66,12 @@ func (r *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) SetSchema(_schema string
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
 func (r *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -79,12 +79,12 @@ func (r *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) SetUserId(_userId string
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is UtdId Setter
+// SetUtdId is UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
 func (r *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
@@ -92,12 +92,12 @@ func (r *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) SetUtdId(_utdId string) 
 	return nil
 }
 
-// Get UtdId Getter
+// GetUtdId UtdId Getter
 func (r TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
-// Set is SentenceId Setter
+// SetSentenceId is SentenceId Setter
 // 消息的唯一标识
 func (r *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) SetSentenceId(_sentenceId string) error {
 	r._sentenceId = _sentenceId
@@ -105,7 +105,7 @@ func (r *TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) SetSentenceId(_sentenceI
 	return nil
 }
 
-// Get SentenceId Getter
+// GetSentenceId SentenceId Getter
 func (r TaobaoAilabAicloudTopFeedlistDeleteAPIRequest) GetSentenceId() string {
 	return r._sentenceId
 }

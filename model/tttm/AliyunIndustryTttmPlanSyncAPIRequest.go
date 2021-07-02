@@ -37,7 +37,7 @@ func (r AliyunIndustryTttmPlanSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SyncPlan Setter
+// SetSyncPlan is SyncPlan Setter
 // 计划单
 func (r *AliyunIndustryTttmPlanSyncAPIRequest) SetSyncPlan(_syncPlan *SyncPlanDto) error {
 	r._syncPlan = _syncPlan
@@ -45,7 +45,7 @@ func (r *AliyunIndustryTttmPlanSyncAPIRequest) SetSyncPlan(_syncPlan *SyncPlanDt
 	return nil
 }
 
-// Get SyncPlan Getter
+// GetSyncPlan SyncPlan Getter
 func (r AliyunIndustryTttmPlanSyncAPIRequest) GetSyncPlan() *SyncPlanDto {
 	return r._syncPlan
 }

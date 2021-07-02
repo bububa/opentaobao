@@ -39,7 +39,7 @@ func (r TaobaoTxpItemItemlistgetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BeginPage Setter
+// SetBeginPage is BeginPage Setter
 // 第几页
 func (r *TaobaoTxpItemItemlistgetAPIRequest) SetBeginPage(_beginPage int64) error {
 	r._beginPage = _beginPage
@@ -47,12 +47,12 @@ func (r *TaobaoTxpItemItemlistgetAPIRequest) SetBeginPage(_beginPage int64) erro
 	return nil
 }
 
-// Get BeginPage Getter
+// GetBeginPage BeginPage Getter
 func (r TaobaoTxpItemItemlistgetAPIRequest) GetBeginPage() int64 {
 	return r._beginPage
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页多少条
 func (r *TaobaoTxpItemItemlistgetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -60,7 +60,7 @@ func (r *TaobaoTxpItemItemlistgetAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTxpItemItemlistgetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

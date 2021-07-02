@@ -39,7 +39,7 @@ func (r AlibabaIcbuPhotobankGroupListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ExtraContext Setter
+// SetExtraContext is ExtraContext Setter
 // 补充信息
 func (r *AlibabaIcbuPhotobankGroupListAPIRequest) SetExtraContext(_extraContext string) error {
 	r._extraContext = _extraContext
@@ -47,12 +47,12 @@ func (r *AlibabaIcbuPhotobankGroupListAPIRequest) SetExtraContext(_extraContext 
 	return nil
 }
 
-// Get ExtraContext Getter
+// GetExtraContext ExtraContext Getter
 func (r AlibabaIcbuPhotobankGroupListAPIRequest) GetExtraContext() string {
 	return r._extraContext
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 查询图片分组信息，如果传入id，则获取当前分组和所有子分组信息，否则获取所有一级分组信息
 func (r *AlibabaIcbuPhotobankGroupListAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -60,7 +60,7 @@ func (r *AlibabaIcbuPhotobankGroupListAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaIcbuPhotobankGroupListAPIRequest) GetId() int64 {
 	return r._id
 }

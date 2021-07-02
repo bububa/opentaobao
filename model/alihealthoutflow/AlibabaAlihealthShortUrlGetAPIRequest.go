@@ -39,7 +39,7 @@ func (r AlibabaAlihealthShortUrlGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 三方h5
 func (r *AlibabaAlihealthShortUrlGetAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthShortUrlGetAPIRequest) SetUrl(_url string) error {
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r AlibabaAlihealthShortUrlGetAPIRequest) GetUrl() string {
 	return r._url
 }
 
-// Set is Params Setter
+// SetParams is Params Setter
 // 参数替换列表
 func (r *AlibabaAlihealthShortUrlGetAPIRequest) SetParams(_params []string) error {
 	r._params = _params
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthShortUrlGetAPIRequest) SetParams(_params []string) erro
 	return nil
 }
 
-// Get Params Getter
+// GetParams Params Getter
 func (r AlibabaAlihealthShortUrlGetAPIRequest) GetParams() []string {
 	return r._params
 }

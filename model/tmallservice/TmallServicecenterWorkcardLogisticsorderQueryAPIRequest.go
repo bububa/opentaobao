@@ -37,7 +37,7 @@ func (r TmallServicecenterWorkcardLogisticsorderQueryAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is LogisticsOrderId Setter
+// SetLogisticsOrderId is LogisticsOrderId Setter
 // 物流单号
 func (r *TmallServicecenterWorkcardLogisticsorderQueryAPIRequest) SetLogisticsOrderId(_logisticsOrderId int64) error {
 	r._logisticsOrderId = _logisticsOrderId
@@ -45,7 +45,7 @@ func (r *TmallServicecenterWorkcardLogisticsorderQueryAPIRequest) SetLogisticsOr
 	return nil
 }
 
-// Get LogisticsOrderId Getter
+// GetLogisticsOrderId LogisticsOrderId Getter
 func (r TmallServicecenterWorkcardLogisticsorderQueryAPIRequest) GetLogisticsOrderId() int64 {
 	return r._logisticsOrderId
 }

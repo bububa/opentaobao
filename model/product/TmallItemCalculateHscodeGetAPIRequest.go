@@ -37,7 +37,7 @@ func (r TmallItemCalculateHscodeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *TmallItemCalculateHscodeGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -45,7 +45,7 @@ func (r *TmallItemCalculateHscodeGetAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallItemCalculateHscodeGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

@@ -47,7 +47,7 @@ func (r TaobaoOmniitemItemImageUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Img Setter
+// SetImg is Img Setter
 // 商品图片信息，允许png、jpg、gif图片格式,3M以内
 func (r *TaobaoOmniitemItemImageUploadAPIRequest) SetImg(_img *model.File) error {
 	r._img = _img
@@ -55,12 +55,12 @@ func (r *TaobaoOmniitemItemImageUploadAPIRequest) SetImg(_img *model.File) error
 	return nil
 }
 
-// Get Img Getter
+// GetImg Img Getter
 func (r TaobaoOmniitemItemImageUploadAPIRequest) GetImg() *model.File {
 	return r._img
 }
 
-// Set is BarCode Setter
+// SetBarCode is BarCode Setter
 // 条形码
 func (r *TaobaoOmniitemItemImageUploadAPIRequest) SetBarCode(_barCode string) error {
 	r._barCode = _barCode
@@ -68,12 +68,12 @@ func (r *TaobaoOmniitemItemImageUploadAPIRequest) SetBarCode(_barCode string) er
 	return nil
 }
 
-// Get BarCode Getter
+// GetBarCode BarCode Getter
 func (r TaobaoOmniitemItemImageUploadAPIRequest) GetBarCode() string {
 	return r._barCode
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID，若填入商品ID则以商品ID为准，否则以outerId/barCode为准
 func (r *TaobaoOmniitemItemImageUploadAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -81,12 +81,12 @@ func (r *TaobaoOmniitemItemImageUploadAPIRequest) SetItemId(_itemId int64) error
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoOmniitemItemImageUploadAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 商品outerId
 func (r *TaobaoOmniitemItemImageUploadAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -94,12 +94,12 @@ func (r *TaobaoOmniitemItemImageUploadAPIRequest) SetOuterId(_outerId string) er
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoOmniitemItemImageUploadAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is Major Setter
+// SetMajor is Major Setter
 // 是否为主图
 func (r *TaobaoOmniitemItemImageUploadAPIRequest) SetMajor(_major bool) error {
 	r._major = _major
@@ -107,12 +107,12 @@ func (r *TaobaoOmniitemItemImageUploadAPIRequest) SetMajor(_major bool) error {
 	return nil
 }
 
-// Get Major Getter
+// GetMajor Major Getter
 func (r TaobaoOmniitemItemImageUploadAPIRequest) GetMajor() bool {
 	return r._major
 }
 
-// Set is Position Setter
+// SetPosition is Position Setter
 // 图片顺序
 func (r *TaobaoOmniitemItemImageUploadAPIRequest) SetPosition(_position int64) error {
 	r._position = _position
@@ -120,7 +120,7 @@ func (r *TaobaoOmniitemItemImageUploadAPIRequest) SetPosition(_position int64) e
 	return nil
 }
 
-// Get Position Getter
+// GetPosition Position Getter
 func (r TaobaoOmniitemItemImageUploadAPIRequest) GetPosition() int64 {
 	return r._position
 }

@@ -43,7 +43,7 @@ func (r TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is OriginUserId Setter
+// SetOriginUserId is OriginUserId Setter
 // 三方用户id或淘宝openId
 func (r *TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest) SetOriginUserId(_originUserId string) error {
 	r._originUserId = _originUserId
@@ -51,12 +51,12 @@ func (r *TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest) SetOriginUserId(_or
 	return nil
 }
 
-// Get OriginUserId Getter
+// GetOriginUserId OriginUserId Getter
 func (r TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest) GetOriginUserId() string {
 	return r._originUserId
 }
 
-// Set is SchemaKey Setter
+// SetSchemaKey is SchemaKey Setter
 // 账号秘钥
 func (r *TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest) SetSchemaKey(_schemaKey string) error {
 	r._schemaKey = _schemaKey
@@ -64,12 +64,12 @@ func (r *TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest) SetSchemaKey(_schem
 	return nil
 }
 
-// Get SchemaKey Getter
+// GetSchemaKey SchemaKey Getter
 func (r TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest) GetSchemaKey() string {
 	return r._schemaKey
 }
 
-// Set is UserType Setter
+// SetUserType is UserType Setter
 // 三方传extUser，淘宝传openTaoBaoUser
 func (r *TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest) SetUserType(_userType string) error {
 	r._userType = _userType
@@ -77,12 +77,12 @@ func (r *TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest) SetUserType(_userTy
 	return nil
 }
 
-// Get UserType Getter
+// GetUserType UserType Getter
 func (r TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest) GetUserType() string {
 	return r._userType
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备id
 func (r *TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -90,7 +90,7 @@ func (r *TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest) SetDeviceId(_device
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r TaobaoAilabAicloudTopDeviceStatusinfoGetAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }

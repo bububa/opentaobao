@@ -37,7 +37,7 @@ func (r AlibabaAliqinFlowWalletSignAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 用户昵称
 func (r *AlibabaAliqinFlowWalletSignAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -45,7 +45,7 @@ func (r *AlibabaAliqinFlowWalletSignAPIRequest) SetUserNick(_userNick string) er
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r AlibabaAliqinFlowWalletSignAPIRequest) GetUserNick() string {
 	return r._userNick
 }

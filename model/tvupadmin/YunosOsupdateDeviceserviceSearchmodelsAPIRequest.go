@@ -39,7 +39,7 @@ func (r YunosOsupdateDeviceserviceSearchmodelsAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ParentId Setter
+// SetParentId is ParentId Setter
 // 设备父ID
 func (r *YunosOsupdateDeviceserviceSearchmodelsAPIRequest) SetParentId(_parentId int64) error {
 	r._parentId = _parentId
@@ -47,12 +47,12 @@ func (r *YunosOsupdateDeviceserviceSearchmodelsAPIRequest) SetParentId(_parentId
 	return nil
 }
 
-// Get ParentId Getter
+// GetParentId ParentId Getter
 func (r YunosOsupdateDeviceserviceSearchmodelsAPIRequest) GetParentId() int64 {
 	return r._parentId
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 关键词
 func (r *YunosOsupdateDeviceserviceSearchmodelsAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -60,7 +60,7 @@ func (r *YunosOsupdateDeviceserviceSearchmodelsAPIRequest) SetName(_name string)
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r YunosOsupdateDeviceserviceSearchmodelsAPIRequest) GetName() string {
 	return r._name
 }

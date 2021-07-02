@@ -37,7 +37,7 @@ func (r TaobaoUserBuyerGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 只返回nick, avatar参数
 func (r *TaobaoUserBuyerGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -45,7 +45,7 @@ func (r *TaobaoUserBuyerGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoUserBuyerGetAPIRequest) GetFields() string {
 	return r._fields
 }

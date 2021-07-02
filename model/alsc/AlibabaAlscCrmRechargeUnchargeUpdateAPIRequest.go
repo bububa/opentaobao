@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmRechargeUnchargeUpdateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ParamUnchargeOpenReq Setter
+// SetParamUnchargeOpenReq is ParamUnchargeOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmRechargeUnchargeUpdateAPIRequest) SetParamUnchargeOpenReq(_paramUnchargeOpenReq *UnchargeOpenReq) error {
 	r._paramUnchargeOpenReq = _paramUnchargeOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmRechargeUnchargeUpdateAPIRequest) SetParamUnchargeOpenReq
 	return nil
 }
 
-// Get ParamUnchargeOpenReq Getter
+// GetParamUnchargeOpenReq ParamUnchargeOpenReq Getter
 func (r AlibabaAlscCrmRechargeUnchargeUpdateAPIRequest) GetParamUnchargeOpenReq() *UnchargeOpenReq {
 	return r._paramUnchargeOpenReq
 }

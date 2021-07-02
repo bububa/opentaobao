@@ -37,7 +37,7 @@ func (r AlibabaWdkItemCategoryUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Bean Setter
+// SetBean is Bean Setter
 // 入参
 func (r *AlibabaWdkItemCategoryUpdateAPIRequest) SetBean(_bean *UpdateCategoryRequestBean) error {
 	r._bean = _bean
@@ -45,7 +45,7 @@ func (r *AlibabaWdkItemCategoryUpdateAPIRequest) SetBean(_bean *UpdateCategoryRe
 	return nil
 }
 
-// Get Bean Getter
+// GetBean Bean Getter
 func (r AlibabaWdkItemCategoryUpdateAPIRequest) GetBean() *UpdateCategoryRequestBean {
 	return r._bean
 }

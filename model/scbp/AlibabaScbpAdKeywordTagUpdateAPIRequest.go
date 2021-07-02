@@ -39,7 +39,7 @@ func (r AlibabaScbpAdKeywordTagUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is KeywordIdList Setter
+// SetKeywordIdList is KeywordIdList Setter
 // 关键词ID列表
 func (r *AlibabaScbpAdKeywordTagUpdateAPIRequest) SetKeywordIdList(_keywordIdList []int64) error {
 	r._keywordIdList = _keywordIdList
@@ -47,12 +47,12 @@ func (r *AlibabaScbpAdKeywordTagUpdateAPIRequest) SetKeywordIdList(_keywordIdLis
 	return nil
 }
 
-// Get KeywordIdList Getter
+// GetKeywordIdList KeywordIdList Getter
 func (r AlibabaScbpAdKeywordTagUpdateAPIRequest) GetKeywordIdList() []int64 {
 	return r._keywordIdList
 }
 
-// Set is TagIdList Setter
+// SetTagIdList is TagIdList Setter
 // 关键词分组ID,不传表示取消关键词的分组
 func (r *AlibabaScbpAdKeywordTagUpdateAPIRequest) SetTagIdList(_tagIdList []int64) error {
 	r._tagIdList = _tagIdList
@@ -60,7 +60,7 @@ func (r *AlibabaScbpAdKeywordTagUpdateAPIRequest) SetTagIdList(_tagIdList []int6
 	return nil
 }
 
-// Get TagIdList Getter
+// GetTagIdList TagIdList Getter
 func (r AlibabaScbpAdKeywordTagUpdateAPIRequest) GetTagIdList() []int64 {
 	return r._tagIdList
 }

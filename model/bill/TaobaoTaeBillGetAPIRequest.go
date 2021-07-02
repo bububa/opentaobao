@@ -43,7 +43,7 @@ func (r TaobaoTaeBillGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Bid Setter
+// SetBid is Bid Setter
 // 账单编号
 func (r *TaobaoTaeBillGetAPIRequest) SetBid(_bid int64) error {
 	r._bid = _bid
@@ -51,12 +51,12 @@ func (r *TaobaoTaeBillGetAPIRequest) SetBid(_bid int64) error {
 	return nil
 }
 
-// Get Bid Getter
+// GetBid Bid Getter
 func (r TaobaoTaeBillGetAPIRequest) GetBid() int64 {
 	return r._bid
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 传入需要返回的字段
 func (r *TaobaoTaeBillGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -64,12 +64,12 @@ func (r *TaobaoTaeBillGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoTaeBillGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 账单编号
 func (r *TaobaoTaeBillGetAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -77,12 +77,12 @@ func (r *TaobaoTaeBillGetAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TaobaoTaeBillGetAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is AccountId Setter
+// SetAccountId is AccountId Setter
 // 虚拟账户科目编号
 func (r *TaobaoTaeBillGetAPIRequest) SetAccountId(_accountId int64) error {
 	r._accountId = _accountId
@@ -90,7 +90,7 @@ func (r *TaobaoTaeBillGetAPIRequest) SetAccountId(_accountId int64) error {
 	return nil
 }
 
-// Get AccountId Getter
+// GetAccountId AccountId Getter
 func (r TaobaoTaeBillGetAPIRequest) GetAccountId() int64 {
 	return r._accountId
 }

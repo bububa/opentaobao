@@ -37,7 +37,7 @@ func (r AlibabaRetailMarketingBuygiftActivityCreateAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 创建活动参数
 func (r *AlibabaRetailMarketingBuygiftActivityCreateAPIRequest) SetParam(_param *BuyGiftActivityOperateRequest) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaRetailMarketingBuygiftActivityCreateAPIRequest) SetParam(_param 
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaRetailMarketingBuygiftActivityCreateAPIRequest) GetParam() *BuyGiftActivityOperateRequest {
 	return r._param
 }

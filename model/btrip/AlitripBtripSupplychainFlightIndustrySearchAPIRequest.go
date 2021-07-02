@@ -37,7 +37,7 @@ func (r AlitripBtripSupplychainFlightIndustrySearchAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 入参
 func (r *AlitripBtripSupplychainFlightIndustrySearchAPIRequest) SetRq(_rq *FlightSearchRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripSupplychainFlightIndustrySearchAPIRequest) SetRq(_rq *Fligh
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripSupplychainFlightIndustrySearchAPIRequest) GetRq() *FlightSearchRq {
 	return r._rq
 }

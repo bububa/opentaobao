@@ -43,7 +43,7 @@ func (r AlibabaMjOcBigposBanksaleQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 开始时间
 func (r *AlibabaMjOcBigposBanksaleQueryAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -51,12 +51,12 @@ func (r *AlibabaMjOcBigposBanksaleQueryAPIRequest) SetStartTime(_startTime strin
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r AlibabaMjOcBigposBanksaleQueryAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is CardNo Setter
+// SetCardNo is CardNo Setter
 // 卡号
 func (r *AlibabaMjOcBigposBanksaleQueryAPIRequest) SetCardNo(_cardNo string) error {
 	r._cardNo = _cardNo
@@ -64,12 +64,12 @@ func (r *AlibabaMjOcBigposBanksaleQueryAPIRequest) SetCardNo(_cardNo string) err
 	return nil
 }
 
-// Get CardNo Getter
+// GetCardNo CardNo Getter
 func (r AlibabaMjOcBigposBanksaleQueryAPIRequest) GetCardNo() string {
 	return r._cardNo
 }
 
-// Set is OutStoreNo Setter
+// SetOutStoreNo is OutStoreNo Setter
 // 外部门店号
 func (r *AlibabaMjOcBigposBanksaleQueryAPIRequest) SetOutStoreNo(_outStoreNo string) error {
 	r._outStoreNo = _outStoreNo
@@ -77,12 +77,12 @@ func (r *AlibabaMjOcBigposBanksaleQueryAPIRequest) SetOutStoreNo(_outStoreNo str
 	return nil
 }
 
-// Get OutStoreNo Getter
+// GetOutStoreNo OutStoreNo Getter
 func (r AlibabaMjOcBigposBanksaleQueryAPIRequest) GetOutStoreNo() string {
 	return r._outStoreNo
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间
 func (r *AlibabaMjOcBigposBanksaleQueryAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -90,7 +90,7 @@ func (r *AlibabaMjOcBigposBanksaleQueryAPIRequest) SetEndTime(_endTime string) e
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r AlibabaMjOcBigposBanksaleQueryAPIRequest) GetEndTime() string {
 	return r._endTime
 }

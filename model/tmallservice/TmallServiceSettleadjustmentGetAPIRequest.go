@@ -37,7 +37,7 @@ func (r TmallServiceSettleadjustmentGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 结算调整单ID
 func (r *TmallServiceSettleadjustmentGetAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -45,7 +45,7 @@ func (r *TmallServiceSettleadjustmentGetAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TmallServiceSettleadjustmentGetAPIRequest) GetId() int64 {
 	return r._id
 }

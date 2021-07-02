@@ -37,7 +37,7 @@ func (r AlibabaAlihealthExaminationAgreementListAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // isv传递过来的门店code
 func (r *AlibabaAlihealthExaminationAgreementListAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthExaminationAgreementListAPIRequest) SetStoreCode(_store
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r AlibabaAlihealthExaminationAgreementListAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }

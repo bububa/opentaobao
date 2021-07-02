@@ -37,7 +37,7 @@ func (r AlibabaIdleConsignmentSpuStatisticsAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参
 func (r *AlibabaIdleConsignmentSpuStatisticsAPIRequest) SetParam(_param *SpuStatistics) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaIdleConsignmentSpuStatisticsAPIRequest) SetParam(_param *SpuStat
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaIdleConsignmentSpuStatisticsAPIRequest) GetParam() *SpuStatistics {
 	return r._param
 }

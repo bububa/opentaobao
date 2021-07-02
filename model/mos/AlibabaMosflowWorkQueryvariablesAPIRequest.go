@@ -37,7 +37,7 @@ func (r AlibabaMosflowWorkQueryvariablesAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProcessInstanceId Setter
+// SetProcessInstanceId is ProcessInstanceId Setter
 // 流程实例ID
 func (r *AlibabaMosflowWorkQueryvariablesAPIRequest) SetProcessInstanceId(_processInstanceId string) error {
 	r._processInstanceId = _processInstanceId
@@ -45,7 +45,7 @@ func (r *AlibabaMosflowWorkQueryvariablesAPIRequest) SetProcessInstanceId(_proce
 	return nil
 }
 
-// Get ProcessInstanceId Getter
+// GetProcessInstanceId ProcessInstanceId Getter
 func (r AlibabaMosflowWorkQueryvariablesAPIRequest) GetProcessInstanceId() string {
 	return r._processInstanceId
 }

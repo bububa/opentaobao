@@ -37,7 +37,7 @@ func (r AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is WorkerSaveForTopReqDto Setter
+// SetWorkerSaveForTopReqDto is WorkerSaveForTopReqDto Setter
 // 工人保存参数
 func (r *AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) SetWorkerSaveForTopReqDto(_workerSaveForTopReqDto *WorkerSaveForTopReqDto) error {
 	r._workerSaveForTopReqDto = _workerSaveForTopReqDto
@@ -45,7 +45,7 @@ func (r *AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) SetWorkerSaveForTo
 	return nil
 }
 
-// Get WorkerSaveForTopReqDto Getter
+// GetWorkerSaveForTopReqDto WorkerSaveForTopReqDto Getter
 func (r AlibabaSscSupplyplatformServiceworkerSaveAPIRequest) GetWorkerSaveForTopReqDto() *WorkerSaveForTopReqDto {
 	return r._workerSaveForTopReqDto
 }

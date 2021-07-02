@@ -41,7 +41,7 @@ func (r AliexpressAffiliateOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppSignature Setter
+// SetAppSignature is AppSignature Setter
 // 安全签名
 func (r *AliexpressAffiliateOrderGetAPIRequest) SetAppSignature(_appSignature string) error {
 	r._appSignature = _appSignature
@@ -49,12 +49,12 @@ func (r *AliexpressAffiliateOrderGetAPIRequest) SetAppSignature(_appSignature st
 	return nil
 }
 
-// Get AppSignature Getter
+// GetAppSignature AppSignature Getter
 func (r AliexpressAffiliateOrderGetAPIRequest) GetAppSignature() string {
 	return r._appSignature
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回的字段列表
 func (r *AliexpressAffiliateOrderGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -62,12 +62,12 @@ func (r *AliexpressAffiliateOrderGetAPIRequest) SetFields(_fields string) error 
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r AliexpressAffiliateOrderGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is OrderIds Setter
+// SetOrderIds is OrderIds Setter
 // 订单ID列表，以逗号分隔，当前只支持子订单ID查询
 func (r *AliexpressAffiliateOrderGetAPIRequest) SetOrderIds(_orderIds string) error {
 	r._orderIds = _orderIds
@@ -75,7 +75,7 @@ func (r *AliexpressAffiliateOrderGetAPIRequest) SetOrderIds(_orderIds string) er
 	return nil
 }
 
-// Get OrderIds Getter
+// GetOrderIds OrderIds Getter
 func (r AliexpressAffiliateOrderGetAPIRequest) GetOrderIds() string {
 	return r._orderIds
 }

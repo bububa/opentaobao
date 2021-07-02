@@ -39,7 +39,7 @@ func (r AlibabaSecurityJaqRpOcrAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is VerifyToken Setter
+// SetVerifyToken is VerifyToken Setter
 // token
 func (r *AlibabaSecurityJaqRpOcrAPIRequest) SetVerifyToken(_verifyToken string) error {
 	r._verifyToken = _verifyToken
@@ -47,12 +47,12 @@ func (r *AlibabaSecurityJaqRpOcrAPIRequest) SetVerifyToken(_verifyToken string) 
 	return nil
 }
 
-// Get VerifyToken Getter
+// GetVerifyToken VerifyToken Getter
 func (r AlibabaSecurityJaqRpOcrAPIRequest) GetVerifyToken() string {
 	return r._verifyToken
 }
 
-// Set is ImageUrls Setter
+// SetImageUrls is ImageUrls Setter
 // 要识别的信息
 func (r *AlibabaSecurityJaqRpOcrAPIRequest) SetImageUrls(_imageUrls string) error {
 	r._imageUrls = _imageUrls
@@ -60,7 +60,7 @@ func (r *AlibabaSecurityJaqRpOcrAPIRequest) SetImageUrls(_imageUrls string) erro
 	return nil
 }
 
-// Get ImageUrls Getter
+// GetImageUrls ImageUrls Getter
 func (r AlibabaSecurityJaqRpOcrAPIRequest) GetImageUrls() string {
 	return r._imageUrls
 }

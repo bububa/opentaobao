@@ -47,7 +47,7 @@ func (r AliexpressSolutionFeedListGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // current page
 func (r *AliexpressSolutionFeedListGetAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -55,12 +55,12 @@ func (r *AliexpressSolutionFeedListGetAPIRequest) SetCurrentPage(_currentPage in
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r AliexpressSolutionFeedListGetAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is FeedType Setter
+// SetFeedType is FeedType Setter
 // feed type
 func (r *AliexpressSolutionFeedListGetAPIRequest) SetFeedType(_feedType string) error {
 	r._feedType = _feedType
@@ -68,12 +68,12 @@ func (r *AliexpressSolutionFeedListGetAPIRequest) SetFeedType(_feedType string) 
 	return nil
 }
 
-// Get FeedType Getter
+// GetFeedType FeedType Getter
 func (r AliexpressSolutionFeedListGetAPIRequest) GetFeedType() string {
 	return r._feedType
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // page size
 func (r *AliexpressSolutionFeedListGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -81,12 +81,12 @@ func (r *AliexpressSolutionFeedListGetAPIRequest) SetPageSize(_pageSize int64) e
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AliexpressSolutionFeedListGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // status of the job, currently there are 3 types: FINISH, PROCESSING, QUEUEING
 func (r *AliexpressSolutionFeedListGetAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -94,12 +94,12 @@ func (r *AliexpressSolutionFeedListGetAPIRequest) SetStatus(_status string) erro
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AliexpressSolutionFeedListGetAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is SubmittedTimeEnd Setter
+// SetSubmittedTimeEnd is SubmittedTimeEnd Setter
 // Search for feeds submitted before a specific time, format: yyyy-MM-dd hh:mm:ss. Timezone:America/Los_Angeles
 func (r *AliexpressSolutionFeedListGetAPIRequest) SetSubmittedTimeEnd(_submittedTimeEnd string) error {
 	r._submittedTimeEnd = _submittedTimeEnd
@@ -107,12 +107,12 @@ func (r *AliexpressSolutionFeedListGetAPIRequest) SetSubmittedTimeEnd(_submitted
 	return nil
 }
 
-// Get SubmittedTimeEnd Getter
+// GetSubmittedTimeEnd SubmittedTimeEnd Getter
 func (r AliexpressSolutionFeedListGetAPIRequest) GetSubmittedTimeEnd() string {
 	return r._submittedTimeEnd
 }
 
-// Set is SubmittedTimeStart Setter
+// SetSubmittedTimeStart is SubmittedTimeStart Setter
 // Search for feeds submitted after a specific time, format: yyyy-MM-dd hh:mm:ss  .Timezone:America/Los_Angeles
 func (r *AliexpressSolutionFeedListGetAPIRequest) SetSubmittedTimeStart(_submittedTimeStart string) error {
 	r._submittedTimeStart = _submittedTimeStart
@@ -120,7 +120,7 @@ func (r *AliexpressSolutionFeedListGetAPIRequest) SetSubmittedTimeStart(_submitt
 	return nil
 }
 
-// Get SubmittedTimeStart Getter
+// GetSubmittedTimeStart SubmittedTimeStart Getter
 func (r AliexpressSolutionFeedListGetAPIRequest) GetSubmittedTimeStart() string {
 	return r._submittedTimeStart
 }

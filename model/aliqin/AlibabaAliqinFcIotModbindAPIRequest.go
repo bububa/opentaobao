@@ -49,7 +49,7 @@ func (r AlibabaAliqinFcIotModbindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpionType Setter
+// SetOpionType is OpionType Setter
 // chgBind：换绑；unBind：解绑
 func (r *AlibabaAliqinFcIotModbindAPIRequest) SetOpionType(_opionType string) error {
 	r._opionType = _opionType
@@ -57,12 +57,12 @@ func (r *AlibabaAliqinFcIotModbindAPIRequest) SetOpionType(_opionType string) er
 	return nil
 }
 
-// Get OpionType Getter
+// GetOpionType OpionType Getter
 func (r AlibabaAliqinFcIotModbindAPIRequest) GetOpionType() string {
 	return r._opionType
 }
 
-// Set is BillReal Setter
+// SetBillReal is BillReal Setter
 // 物联卡和iccid保持一致
 func (r *AlibabaAliqinFcIotModbindAPIRequest) SetBillReal(_billReal string) error {
 	r._billReal = _billReal
@@ -70,12 +70,12 @@ func (r *AlibabaAliqinFcIotModbindAPIRequest) SetBillReal(_billReal string) erro
 	return nil
 }
 
-// Get BillReal Getter
+// GetBillReal BillReal Getter
 func (r AlibabaAliqinFcIotModbindAPIRequest) GetBillReal() string {
 	return r._billReal
 }
 
-// Set is Iccid Setter
+// SetIccid is Iccid Setter
 // iccid （20位）
 func (r *AlibabaAliqinFcIotModbindAPIRequest) SetIccid(_iccid string) error {
 	r._iccid = _iccid
@@ -83,12 +83,12 @@ func (r *AlibabaAliqinFcIotModbindAPIRequest) SetIccid(_iccid string) error {
 	return nil
 }
 
-// Get Iccid Getter
+// GetIccid Iccid Getter
 func (r AlibabaAliqinFcIotModbindAPIRequest) GetIccid() string {
 	return r._iccid
 }
 
-// Set is Newimei Setter
+// SetNewimei is Newimei Setter
 // 换绑的时候必传，换的新设备imei
 func (r *AlibabaAliqinFcIotModbindAPIRequest) SetNewimei(_newimei string) error {
 	r._newimei = _newimei
@@ -96,12 +96,12 @@ func (r *AlibabaAliqinFcIotModbindAPIRequest) SetNewimei(_newimei string) error 
 	return nil
 }
 
-// Get Newimei Getter
+// GetNewimei Newimei Getter
 func (r AlibabaAliqinFcIotModbindAPIRequest) GetNewimei() string {
 	return r._newimei
 }
 
-// Set is Imei Setter
+// SetImei is Imei Setter
 // 目前绑定的设备imei
 func (r *AlibabaAliqinFcIotModbindAPIRequest) SetImei(_imei string) error {
 	r._imei = _imei
@@ -109,12 +109,12 @@ func (r *AlibabaAliqinFcIotModbindAPIRequest) SetImei(_imei string) error {
 	return nil
 }
 
-// Get Imei Getter
+// GetImei Imei Getter
 func (r AlibabaAliqinFcIotModbindAPIRequest) GetImei() string {
 	return r._imei
 }
 
-// Set is BillSource Setter
+// SetBillSource is BillSource Setter
 // 物联卡业务：若无特殊为ICCID
 func (r *AlibabaAliqinFcIotModbindAPIRequest) SetBillSource(_billSource string) error {
 	r._billSource = _billSource
@@ -122,12 +122,12 @@ func (r *AlibabaAliqinFcIotModbindAPIRequest) SetBillSource(_billSource string) 
 	return nil
 }
 
-// Get BillSource Getter
+// GetBillSource BillSource Getter
 func (r AlibabaAliqinFcIotModbindAPIRequest) GetBillSource() string {
 	return r._billSource
 }
 
-// Set is MidPatChannel Setter
+// SetMidPatChannel is MidPatChannel Setter
 // 若无特殊物联卡传入122
 func (r *AlibabaAliqinFcIotModbindAPIRequest) SetMidPatChannel(_midPatChannel string) error {
 	r._midPatChannel = _midPatChannel
@@ -135,7 +135,7 @@ func (r *AlibabaAliqinFcIotModbindAPIRequest) SetMidPatChannel(_midPatChannel st
 	return nil
 }
 
-// Get MidPatChannel Getter
+// GetMidPatChannel MidPatChannel Getter
 func (r AlibabaAliqinFcIotModbindAPIRequest) GetMidPatChannel() string {
 	return r._midPatChannel
 }

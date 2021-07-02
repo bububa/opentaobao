@@ -39,7 +39,7 @@ func (r AlibabaLstTradeOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 主订单id
 func (r *AlibabaLstTradeOrderGetAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
@@ -47,12 +47,12 @@ func (r *AlibabaLstTradeOrderGetAPIRequest) SetMainOrderId(_mainOrderId int64) e
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r AlibabaLstTradeOrderGetAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }
 
-// Set is SubOrderId Setter
+// SetSubOrderId is SubOrderId Setter
 // 子订单id
 func (r *AlibabaLstTradeOrderGetAPIRequest) SetSubOrderId(_subOrderId int64) error {
 	r._subOrderId = _subOrderId
@@ -60,7 +60,7 @@ func (r *AlibabaLstTradeOrderGetAPIRequest) SetSubOrderId(_subOrderId int64) err
 	return nil
 }
 
-// Get SubOrderId Getter
+// GetSubOrderId SubOrderId Getter
 func (r AlibabaLstTradeOrderGetAPIRequest) GetSubOrderId() int64 {
 	return r._subOrderId
 }

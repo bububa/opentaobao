@@ -37,7 +37,7 @@ func (r CainiaoGlobalLogisticsCarrierQuerylistAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Locale Setter
+// SetLocale is Locale Setter
 // 多语言(暂不支持，保留入参)
 func (r *CainiaoGlobalLogisticsCarrierQuerylistAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
@@ -45,7 +45,7 @@ func (r *CainiaoGlobalLogisticsCarrierQuerylistAPIRequest) SetLocale(_locale str
 	return nil
 }
 
-// Get Locale Getter
+// GetLocale Locale Getter
 func (r CainiaoGlobalLogisticsCarrierQuerylistAPIRequest) GetLocale() string {
 	return r._locale
 }

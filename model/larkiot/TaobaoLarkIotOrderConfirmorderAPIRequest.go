@@ -55,7 +55,7 @@ func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChannelCode Setter
+// SetChannelCode is ChannelCode Setter
 // 渠道编码
 func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetChannelCode(_channelCode string) error {
 	r._channelCode = _channelCode
@@ -63,12 +63,12 @@ func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetChannelCode(_channelCode s
 	return nil
 }
 
-// Get ChannelCode Getter
+// GetChannelCode ChannelCode Getter
 func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetChannelCode() string {
 	return r._channelCode
 }
 
-// Set is CinemaLinkId Setter
+// SetCinemaLinkId is CinemaLinkId Setter
 // 影院内码
 func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetCinemaLinkId(_cinemaLinkId string) error {
 	r._cinemaLinkId = _cinemaLinkId
@@ -76,12 +76,12 @@ func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetCinemaLinkId(_cinemaLinkId
 	return nil
 }
 
-// Get CinemaLinkId Getter
+// GetCinemaLinkId CinemaLinkId Getter
 func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetCinemaLinkId() string {
 	return r._cinemaLinkId
 }
 
-// Set is OutGoodsOrderId Setter
+// SetOutGoodsOrderId is OutGoodsOrderId Setter
 // 外部订单号
 func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetOutGoodsOrderId(_outGoodsOrderId string) error {
 	r._outGoodsOrderId = _outGoodsOrderId
@@ -89,12 +89,12 @@ func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetOutGoodsOrderId(_outGoodsO
 	return nil
 }
 
-// Get OutGoodsOrderId Getter
+// GetOutGoodsOrderId OutGoodsOrderId Getter
 func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetOutGoodsOrderId() string {
 	return r._outGoodsOrderId
 }
 
-// Set is WorkstationId Setter
+// SetWorkstationId is WorkstationId Setter
 // 工作站id
 func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetWorkstationId(_workstationId string) error {
 	r._workstationId = _workstationId
@@ -102,12 +102,12 @@ func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetWorkstationId(_workstation
 	return nil
 }
 
-// Get WorkstationId Getter
+// GetWorkstationId WorkstationId Getter
 func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetWorkstationId() string {
 	return r._workstationId
 }
 
-// Set is WorkstationName Setter
+// SetWorkstationName is WorkstationName Setter
 // 工作站名称
 func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetWorkstationName(_workstationName string) error {
 	r._workstationName = _workstationName
@@ -115,12 +115,12 @@ func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetWorkstationName(_workstati
 	return nil
 }
 
-// Get WorkstationName Getter
+// GetWorkstationName WorkstationName Getter
 func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetWorkstationName() string {
 	return r._workstationName
 }
 
-// Set is PaymentList Setter
+// SetPaymentList is PaymentList Setter
 // 支付方式
 func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetPaymentList(_paymentList string) error {
 	r._paymentList = _paymentList
@@ -128,12 +128,12 @@ func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetPaymentList(_paymentList s
 	return nil
 }
 
-// Get PaymentList Getter
+// GetPaymentList PaymentList Getter
 func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetPaymentList() string {
 	return r._paymentList
 }
 
-// Set is PromotionList Setter
+// SetPromotionList is PromotionList Setter
 // 优惠列表
 func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetPromotionList(_promotionList string) error {
 	r._promotionList = _promotionList
@@ -141,12 +141,12 @@ func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetPromotionList(_promotionLi
 	return nil
 }
 
-// Get PromotionList Getter
+// GetPromotionList PromotionList Getter
 func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetPromotionList() string {
 	return r._promotionList
 }
 
-// Set is GoodsList Setter
+// SetGoodsList is GoodsList Setter
 // 卖品列表
 func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetGoodsList(_goodsList string) error {
 	r._goodsList = _goodsList
@@ -154,12 +154,12 @@ func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetGoodsList(_goodsList strin
 	return nil
 }
 
-// Get GoodsList Getter
+// GetGoodsList GoodsList Getter
 func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetGoodsList() string {
 	return r._goodsList
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 手机号
 func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -167,12 +167,12 @@ func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetMobile(_mobile string) err
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
-// Set is OperatorUserId Setter
+// SetOperatorUserId is OperatorUserId Setter
 // 管理员
 func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetOperatorUserId(_operatorUserId string) error {
 	r._operatorUserId = _operatorUserId
@@ -180,7 +180,7 @@ func (r *TaobaoLarkIotOrderConfirmorderAPIRequest) SetOperatorUserId(_operatorUs
 	return nil
 }
 
-// Get OperatorUserId Getter
+// GetOperatorUserId OperatorUserId Getter
 func (r TaobaoLarkIotOrderConfirmorderAPIRequest) GetOperatorUserId() string {
 	return r._operatorUserId
 }

@@ -39,7 +39,7 @@ func (r TmallItemDescModulesGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 淘宝后台发布商品的叶子类目id，可通过taobao.itemcats.get查到。api 访问地址http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.CFhhk4&path=cid:3-apiId:122
 func (r *TmallItemDescModulesGetAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -47,12 +47,12 @@ func (r *TmallItemDescModulesGetAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r TmallItemDescModulesGetAPIRequest) GetCatId() int64 {
 	return r._catId
 }
 
-// Set is UsrId Setter
+// SetUsrId is UsrId Setter
 // 商家主帐号id
 func (r *TmallItemDescModulesGetAPIRequest) SetUsrId(_usrId string) error {
 	r._usrId = _usrId
@@ -60,7 +60,7 @@ func (r *TmallItemDescModulesGetAPIRequest) SetUsrId(_usrId string) error {
 	return nil
 }
 
-// Get UsrId Getter
+// GetUsrId UsrId Getter
 func (r TmallItemDescModulesGetAPIRequest) GetUsrId() string {
 	return r._usrId
 }

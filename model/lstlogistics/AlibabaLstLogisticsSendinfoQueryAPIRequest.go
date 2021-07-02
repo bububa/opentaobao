@@ -37,7 +37,7 @@ func (r AlibabaLstLogisticsSendinfoQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 入参
 func (r *AlibabaLstLogisticsSendinfoQueryAPIRequest) SetQuery(_query *LstLogisticsInfoQuery) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *AlibabaLstLogisticsSendinfoQueryAPIRequest) SetQuery(_query *LstLogisti
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaLstLogisticsSendinfoQueryAPIRequest) GetQuery() *LstLogisticsInfoQuery {
 	return r._query
 }

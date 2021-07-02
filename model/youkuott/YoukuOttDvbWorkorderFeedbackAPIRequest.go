@@ -41,7 +41,7 @@ func (r YoukuOttDvbWorkorderFeedbackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WorkorderId Setter
+// SetWorkorderId is WorkorderId Setter
 // 工单id
 func (r *YoukuOttDvbWorkorderFeedbackAPIRequest) SetWorkorderId(_workorderId int64) error {
 	r._workorderId = _workorderId
@@ -49,12 +49,12 @@ func (r *YoukuOttDvbWorkorderFeedbackAPIRequest) SetWorkorderId(_workorderId int
 	return nil
 }
 
-// Get WorkorderId Getter
+// GetWorkorderId WorkorderId Getter
 func (r YoukuOttDvbWorkorderFeedbackAPIRequest) GetWorkorderId() int64 {
 	return r._workorderId
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 反馈内容
 func (r *YoukuOttDvbWorkorderFeedbackAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -62,12 +62,12 @@ func (r *YoukuOttDvbWorkorderFeedbackAPIRequest) SetContent(_content string) err
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r YoukuOttDvbWorkorderFeedbackAPIRequest) GetContent() string {
 	return r._content
 }
 
-// Set is OccureTime Setter
+// SetOccureTime is OccureTime Setter
 // 操作发生时间（时间戳：毫秒）
 func (r *YoukuOttDvbWorkorderFeedbackAPIRequest) SetOccureTime(_occureTime int64) error {
 	r._occureTime = _occureTime
@@ -75,7 +75,7 @@ func (r *YoukuOttDvbWorkorderFeedbackAPIRequest) SetOccureTime(_occureTime int64
 	return nil
 }
 
-// Get OccureTime Getter
+// GetOccureTime OccureTime Getter
 func (r YoukuOttDvbWorkorderFeedbackAPIRequest) GetOccureTime() int64 {
 	return r._occureTime
 }

@@ -39,7 +39,7 @@ func (r AlibabaAliqinAxbVendorHeartBeatAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 可选的预留字段
 func (r *AlibabaAliqinAxbVendorHeartBeatAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -47,12 +47,12 @@ func (r *AlibabaAliqinAxbVendorHeartBeatAPIRequest) SetStatus(_status string) er
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaAliqinAxbVendorHeartBeatAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is VendorKey Setter
+// SetVendorKey is VendorKey Setter
 // 供应商合作KEY
 func (r *AlibabaAliqinAxbVendorHeartBeatAPIRequest) SetVendorKey(_vendorKey string) error {
 	r._vendorKey = _vendorKey
@@ -60,7 +60,7 @@ func (r *AlibabaAliqinAxbVendorHeartBeatAPIRequest) SetVendorKey(_vendorKey stri
 	return nil
 }
 
-// Get VendorKey Getter
+// GetVendorKey VendorKey Getter
 func (r AlibabaAliqinAxbVendorHeartBeatAPIRequest) GetVendorKey() string {
 	return r._vendorKey
 }

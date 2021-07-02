@@ -37,7 +37,7 @@ func (r CainiaoConsignplatformOrderCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CancelRequest Setter
+// SetCancelRequest is CancelRequest Setter
 // 取消参数
 func (r *CainiaoConsignplatformOrderCancelAPIRequest) SetCancelRequest(_cancelRequest *OrderCancelRequest) error {
 	r._cancelRequest = _cancelRequest
@@ -45,7 +45,7 @@ func (r *CainiaoConsignplatformOrderCancelAPIRequest) SetCancelRequest(_cancelRe
 	return nil
 }
 
-// Get CancelRequest Getter
+// GetCancelRequest CancelRequest Getter
 func (r CainiaoConsignplatformOrderCancelAPIRequest) GetCancelRequest() *OrderCancelRequest {
 	return r._cancelRequest
 }

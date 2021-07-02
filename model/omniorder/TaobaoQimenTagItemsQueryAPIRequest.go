@@ -39,7 +39,7 @@ func (r TaobaoQimenTagItemsQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TagType Setter
+// SetTagType is TagType Setter
 // 打标值，string（50），TBKU=同步库存标，MDZT=门店自提标，必填
 func (r *TaobaoQimenTagItemsQueryAPIRequest) SetTagType(_tagType string) error {
 	r._tagType = _tagType
@@ -47,12 +47,12 @@ func (r *TaobaoQimenTagItemsQueryAPIRequest) SetTagType(_tagType string) error {
 	return nil
 }
 
-// Get TagType Getter
+// GetTagType TagType Getter
 func (r TaobaoQimenTagItemsQueryAPIRequest) GetTagType() string {
 	return r._tagType
 }
 
-// Set is Remark Setter
+// SetRemark is Remark Setter
 // 备注，string（500）
 func (r *TaobaoQimenTagItemsQueryAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
@@ -60,7 +60,7 @@ func (r *TaobaoQimenTagItemsQueryAPIRequest) SetRemark(_remark string) error {
 	return nil
 }
 
-// Get Remark Getter
+// GetRemark Remark Getter
 func (r TaobaoQimenTagItemsQueryAPIRequest) GetRemark() string {
 	return r._remark
 }

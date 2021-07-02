@@ -39,7 +39,7 @@ func (r AlibabaScbpAdCampaignUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CampaignOperation Setter
+// SetCampaignOperation is CampaignOperation Setter
 // 修改数据
 func (r *AlibabaScbpAdCampaignUpdateAPIRequest) SetCampaignOperation(_campaignOperation *CampaignOperationDto) error {
 	r._campaignOperation = _campaignOperation
@@ -47,12 +47,12 @@ func (r *AlibabaScbpAdCampaignUpdateAPIRequest) SetCampaignOperation(_campaignOp
 	return nil
 }
 
-// Get CampaignOperation Getter
+// GetCampaignOperation CampaignOperation Getter
 func (r AlibabaScbpAdCampaignUpdateAPIRequest) GetCampaignOperation() *CampaignOperationDto {
 	return r._campaignOperation
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdCampaignUpdateAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -60,7 +60,7 @@ func (r *AlibabaScbpAdCampaignUpdateAPIRequest) SetTopContext(_topContext *TopCo
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdCampaignUpdateAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }

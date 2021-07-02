@@ -37,7 +37,7 @@ func (r AlibabaWdkOrderSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReceiptOrder Setter
+// SetReceiptOrder is ReceiptOrder Setter
 // 订单
 func (r *AlibabaWdkOrderSyncAPIRequest) SetReceiptOrder(_receiptOrder *ReceiptOrderDo) error {
 	r._receiptOrder = _receiptOrder
@@ -45,7 +45,7 @@ func (r *AlibabaWdkOrderSyncAPIRequest) SetReceiptOrder(_receiptOrder *ReceiptOr
 	return nil
 }
 
-// Get ReceiptOrder Getter
+// GetReceiptOrder ReceiptOrder Getter
 func (r AlibabaWdkOrderSyncAPIRequest) GetReceiptOrder() *ReceiptOrderDo {
 	return r._receiptOrder
 }

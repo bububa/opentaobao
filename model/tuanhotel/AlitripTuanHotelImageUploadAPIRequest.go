@@ -37,7 +37,7 @@ func (r AlitripTuanHotelImageUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ImageInfoList Setter
+// SetImageInfoList is ImageInfoList Setter
 // 上传图片信息列表，最多一次支持5张图片上传。单张图片大小限制为1M
 func (r *AlitripTuanHotelImageUploadAPIRequest) SetImageInfoList(_imageInfoList []ImageInfoVOList) error {
 	r._imageInfoList = _imageInfoList
@@ -45,7 +45,7 @@ func (r *AlitripTuanHotelImageUploadAPIRequest) SetImageInfoList(_imageInfoList 
 	return nil
 }
 
-// Get ImageInfoList Getter
+// GetImageInfoList ImageInfoList Getter
 func (r AlitripTuanHotelImageUploadAPIRequest) GetImageInfoList() []ImageInfoVOList {
 	return r._imageInfoList
 }

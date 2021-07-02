@@ -39,7 +39,7 @@ func (r TmallTxcsFinanceBillConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuCode Setter
+// SetOuCode is OuCode Setter
 // 门店ID
 func (r *TmallTxcsFinanceBillConfirmAPIRequest) SetOuCode(_ouCode string) error {
 	r._ouCode = _ouCode
@@ -47,12 +47,12 @@ func (r *TmallTxcsFinanceBillConfirmAPIRequest) SetOuCode(_ouCode string) error 
 	return nil
 }
 
-// Get OuCode Getter
+// GetOuCode OuCode Getter
 func (r TmallTxcsFinanceBillConfirmAPIRequest) GetOuCode() string {
 	return r._ouCode
 }
 
-// Set is StatementBillConfirmDTO Setter
+// SetStatementBillConfirmDTO is StatementBillConfirmDTO Setter
 // 系统自动生成
 func (r *TmallTxcsFinanceBillConfirmAPIRequest) SetStatementBillConfirmDTO(_statementBillConfirmDTO *StatementBillConfirmDto) error {
 	r._statementBillConfirmDTO = _statementBillConfirmDTO
@@ -60,7 +60,7 @@ func (r *TmallTxcsFinanceBillConfirmAPIRequest) SetStatementBillConfirmDTO(_stat
 	return nil
 }
 
-// Get StatementBillConfirmDTO Getter
+// GetStatementBillConfirmDTO StatementBillConfirmDTO Getter
 func (r TmallTxcsFinanceBillConfirmAPIRequest) GetStatementBillConfirmDTO() *StatementBillConfirmDto {
 	return r._statementBillConfirmDTO
 }

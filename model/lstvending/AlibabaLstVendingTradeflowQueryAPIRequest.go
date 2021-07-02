@@ -37,7 +37,7 @@ func (r AlibabaLstVendingTradeflowQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpenTradeFlowQuery Setter
+// SetOpenTradeFlowQuery is OpenTradeFlowQuery Setter
 // 交易流水查询条件
 func (r *AlibabaLstVendingTradeflowQueryAPIRequest) SetOpenTradeFlowQuery(_openTradeFlowQuery *OpenTradeFlowQuery) error {
 	r._openTradeFlowQuery = _openTradeFlowQuery
@@ -45,7 +45,7 @@ func (r *AlibabaLstVendingTradeflowQueryAPIRequest) SetOpenTradeFlowQuery(_openT
 	return nil
 }
 
-// Get OpenTradeFlowQuery Getter
+// GetOpenTradeFlowQuery OpenTradeFlowQuery Getter
 func (r AlibabaLstVendingTradeflowQueryAPIRequest) GetOpenTradeFlowQuery() *OpenTradeFlowQuery {
 	return r._openTradeFlowQuery
 }

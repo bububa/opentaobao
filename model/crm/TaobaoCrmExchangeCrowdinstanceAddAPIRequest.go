@@ -41,7 +41,7 @@ func (r TaobaoCrmExchangeCrowdinstanceAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Reason Setter
+// SetReason is Reason Setter
 // 操作原因
 func (r *TaobaoCrmExchangeCrowdinstanceAddAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
@@ -49,12 +49,12 @@ func (r *TaobaoCrmExchangeCrowdinstanceAddAPIRequest) SetReason(_reason string) 
 	return nil
 }
 
-// Get Reason Getter
+// GetReason Reason Getter
 func (r TaobaoCrmExchangeCrowdinstanceAddAPIRequest) GetReason() string {
 	return r._reason
 }
 
-// Set is CrowdInstanceId Setter
+// SetCrowdInstanceId is CrowdInstanceId Setter
 // 人群实例ID
 func (r *TaobaoCrmExchangeCrowdinstanceAddAPIRequest) SetCrowdInstanceId(_crowdInstanceId int64) error {
 	r._crowdInstanceId = _crowdInstanceId
@@ -62,12 +62,12 @@ func (r *TaobaoCrmExchangeCrowdinstanceAddAPIRequest) SetCrowdInstanceId(_crowdI
 	return nil
 }
 
-// Get CrowdInstanceId Getter
+// GetCrowdInstanceId CrowdInstanceId Getter
 func (r TaobaoCrmExchangeCrowdinstanceAddAPIRequest) GetCrowdInstanceId() int64 {
 	return r._crowdInstanceId
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 买家昵称
 func (r *TaobaoCrmExchangeCrowdinstanceAddAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -75,7 +75,7 @@ func (r *TaobaoCrmExchangeCrowdinstanceAddAPIRequest) SetBuyerNick(_buyerNick st
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r TaobaoCrmExchangeCrowdinstanceAddAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }

@@ -37,7 +37,7 @@ func (r AlibabaInteractRetailQueryshelflocationAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 门店code
 func (r *AlibabaInteractRetailQueryshelflocationAPIRequest) SetParam0(_param0 string) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlibabaInteractRetailQueryshelflocationAPIRequest) SetParam0(_param0 st
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaInteractRetailQueryshelflocationAPIRequest) GetParam0() string {
 	return r._param0
 }

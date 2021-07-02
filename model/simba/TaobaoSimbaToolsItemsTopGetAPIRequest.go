@@ -41,7 +41,7 @@ func (r TaobaoSimbaToolsItemsTopGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaToolsItemsTopGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -49,12 +49,12 @@ func (r *TaobaoSimbaToolsItemsTopGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaToolsItemsTopGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is Keyword Setter
+// SetKeyword is Keyword Setter
 // 关键词
 func (r *TaobaoSimbaToolsItemsTopGetAPIRequest) SetKeyword(_keyword string) error {
 	r._keyword = _keyword
@@ -62,12 +62,12 @@ func (r *TaobaoSimbaToolsItemsTopGetAPIRequest) SetKeyword(_keyword string) erro
 	return nil
 }
 
-// Get Keyword Getter
+// GetKeyword Keyword Getter
 func (r TaobaoSimbaToolsItemsTopGetAPIRequest) GetKeyword() string {
 	return r._keyword
 }
 
-// Set is Ip Setter
+// SetIp is Ip Setter
 // 输入的必须是一个符合ipv4或者ipv6格式的IP地址
 func (r *TaobaoSimbaToolsItemsTopGetAPIRequest) SetIp(_ip string) error {
 	r._ip = _ip
@@ -75,7 +75,7 @@ func (r *TaobaoSimbaToolsItemsTopGetAPIRequest) SetIp(_ip string) error {
 	return nil
 }
 
-// Get Ip Getter
+// GetIp Ip Getter
 func (r TaobaoSimbaToolsItemsTopGetAPIRequest) GetIp() string {
 	return r._ip
 }

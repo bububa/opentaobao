@@ -37,7 +37,7 @@ func (r AlibabaWdkOrderListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BatchQueryRequest Setter
+// SetBatchQueryRequest is BatchQueryRequest Setter
 // 查询参数
 func (r *AlibabaWdkOrderListAPIRequest) SetBatchQueryRequest(_batchQueryRequest *BatchQueryRequest) error {
 	r._batchQueryRequest = _batchQueryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkOrderListAPIRequest) SetBatchQueryRequest(_batchQueryRequest 
 	return nil
 }
 
-// Get BatchQueryRequest Getter
+// GetBatchQueryRequest BatchQueryRequest Getter
 func (r AlibabaWdkOrderListAPIRequest) GetBatchQueryRequest() *BatchQueryRequest {
 	return r._batchQueryRequest
 }

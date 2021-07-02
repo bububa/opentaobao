@@ -39,7 +39,7 @@ func (r TaobaoSimbaKeywordAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Bidwords Setter
+// SetBidwords is Bidwords Setter
 // 关键词相关信息
 func (r *TaobaoSimbaKeywordAddAPIRequest) SetBidwords(_bidwords []SiriusBidwordDto) error {
 	r._bidwords = _bidwords
@@ -47,12 +47,12 @@ func (r *TaobaoSimbaKeywordAddAPIRequest) SetBidwords(_bidwords []SiriusBidwordD
 	return nil
 }
 
-// Get Bidwords Getter
+// GetBidwords Bidwords Getter
 func (r TaobaoSimbaKeywordAddAPIRequest) GetBidwords() []SiriusBidwordDto {
 	return r._bidwords
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广单元id
 func (r *TaobaoSimbaKeywordAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -60,7 +60,7 @@ func (r *TaobaoSimbaKeywordAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaKeywordAddAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

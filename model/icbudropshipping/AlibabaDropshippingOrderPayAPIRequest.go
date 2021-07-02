@@ -37,7 +37,7 @@ func (r AlibabaDropshippingOrderPayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOrderPayRequest Setter
+// SetParamOrderPayRequest is ParamOrderPayRequest Setter
 // request model
 func (r *AlibabaDropshippingOrderPayAPIRequest) SetParamOrderPayRequest(_paramOrderPayRequest *OrderPayRequest) error {
 	r._paramOrderPayRequest = _paramOrderPayRequest
@@ -45,7 +45,7 @@ func (r *AlibabaDropshippingOrderPayAPIRequest) SetParamOrderPayRequest(_paramOr
 	return nil
 }
 
-// Get ParamOrderPayRequest Getter
+// GetParamOrderPayRequest ParamOrderPayRequest Getter
 func (r AlibabaDropshippingOrderPayAPIRequest) GetParamOrderPayRequest() *OrderPayRequest {
 	return r._paramOrderPayRequest
 }

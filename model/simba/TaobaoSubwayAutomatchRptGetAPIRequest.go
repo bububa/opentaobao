@@ -45,7 +45,7 @@ func (r TaobaoSubwayAutomatchRptGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSubwayAutomatchRptGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -53,12 +53,12 @@ func (r *TaobaoSubwayAutomatchRptGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSubwayAutomatchRptGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 起始日期
 func (r *TaobaoSubwayAutomatchRptGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -66,12 +66,12 @@ func (r *TaobaoSubwayAutomatchRptGetAPIRequest) SetStartDate(_startDate string) 
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoSubwayAutomatchRptGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 终止日期
 func (r *TaobaoSubwayAutomatchRptGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -79,12 +79,12 @@ func (r *TaobaoSubwayAutomatchRptGetAPIRequest) SetEndDate(_endDate string) erro
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoSubwayAutomatchRptGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 计划id
 func (r *TaobaoSubwayAutomatchRptGetAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -92,12 +92,12 @@ func (r *TaobaoSubwayAutomatchRptGetAPIRequest) SetCampaignId(_campaignId int64)
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSubwayAutomatchRptGetAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广组id
 func (r *TaobaoSubwayAutomatchRptGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -105,7 +105,7 @@ func (r *TaobaoSubwayAutomatchRptGetAPIRequest) SetAdgroupId(_adgroupId int64) e
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSubwayAutomatchRptGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

@@ -43,7 +43,7 @@ func (r TaobaoItemSkuGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”分隔。
 func (r *TaobaoItemSkuGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -51,12 +51,12 @@ func (r *TaobaoItemSkuGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoItemSkuGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // Sku的id。可以通过taobao.item.seller.get得到
 func (r *TaobaoItemSkuGetAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
@@ -64,12 +64,12 @@ func (r *TaobaoItemSkuGetAPIRequest) SetSkuId(_skuId int64) error {
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TaobaoItemSkuGetAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }
 
-// Set is NumIid Setter
+// SetNumIid is NumIid Setter
 // 商品的数字IID（num_iid和nick必传一个，推荐用num_iid），传商品的数字id返回的结果里包含cspu（SKu上的产品规格信息）。
 func (r *TaobaoItemSkuGetAPIRequest) SetNumIid(_numIid int64) error {
 	r._numIid = _numIid
@@ -77,7 +77,7 @@ func (r *TaobaoItemSkuGetAPIRequest) SetNumIid(_numIid int64) error {
 	return nil
 }
 
-// Get NumIid Getter
+// GetNumIid NumIid Getter
 func (r TaobaoItemSkuGetAPIRequest) GetNumIid() int64 {
 	return r._numIid
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkBmPaiyangSupplyPublishAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IsvSupplySyncParam Setter
+// SetIsvSupplySyncParam is IsvSupplySyncParam Setter
 // 请求入参
 func (r *AlibabaWdkBmPaiyangSupplyPublishAPIRequest) SetIsvSupplySyncParam(_isvSupplySyncParam *IsvSupplySyncParam) error {
 	r._isvSupplySyncParam = _isvSupplySyncParam
@@ -45,7 +45,7 @@ func (r *AlibabaWdkBmPaiyangSupplyPublishAPIRequest) SetIsvSupplySyncParam(_isvS
 	return nil
 }
 
-// Get IsvSupplySyncParam Getter
+// GetIsvSupplySyncParam IsvSupplySyncParam Getter
 func (r AlibabaWdkBmPaiyangSupplyPublishAPIRequest) GetIsvSupplySyncParam() *IsvSupplySyncParam {
 	return r._isvSupplySyncParam
 }

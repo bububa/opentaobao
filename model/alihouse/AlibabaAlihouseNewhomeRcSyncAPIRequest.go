@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeRcSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rc Setter
+// SetRc is Rc Setter
 // 图文内容
 func (r *AlibabaAlihouseNewhomeRcSyncAPIRequest) SetRc(_rc *RichContentDraftDto) error {
 	r._rc = _rc
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeRcSyncAPIRequest) SetRc(_rc *RichContentDraftDto)
 	return nil
 }
 
-// Get Rc Getter
+// GetRc Rc Getter
 func (r AlibabaAlihouseNewhomeRcSyncAPIRequest) GetRc() *RichContentDraftDto {
 	return r._rc
 }

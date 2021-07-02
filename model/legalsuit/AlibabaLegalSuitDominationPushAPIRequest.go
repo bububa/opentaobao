@@ -37,7 +37,7 @@ func (r AlibabaLegalSuitDominationPushAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DominationDissentModel Setter
+// SetDominationDissentModel is DominationDissentModel Setter
 // 管辖信息
 func (r *AlibabaLegalSuitDominationPushAPIRequest) SetDominationDissentModel(_dominationDissentModel *DominationDissentModel) error {
 	r._dominationDissentModel = _dominationDissentModel
@@ -45,7 +45,7 @@ func (r *AlibabaLegalSuitDominationPushAPIRequest) SetDominationDissentModel(_do
 	return nil
 }
 
-// Get DominationDissentModel Getter
+// GetDominationDissentModel DominationDissentModel Getter
 func (r AlibabaLegalSuitDominationPushAPIRequest) GetDominationDissentModel() *DominationDissentModel {
 	return r._dominationDissentModel
 }

@@ -37,7 +37,7 @@ func (r TaobaoJstSmsOfficialaccountReportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OfficialAccountInfoReportRequest Setter
+// SetOfficialAccountInfoReportRequest is OfficialAccountInfoReportRequest Setter
 // 公众号信息上报接口入参
 func (r *TaobaoJstSmsOfficialaccountReportAPIRequest) SetOfficialAccountInfoReportRequest(_officialAccountInfoReportRequest *OfficialAccountInfoReportRequest) error {
 	r._officialAccountInfoReportRequest = _officialAccountInfoReportRequest
@@ -45,7 +45,7 @@ func (r *TaobaoJstSmsOfficialaccountReportAPIRequest) SetOfficialAccountInfoRepo
 	return nil
 }
 
-// Get OfficialAccountInfoReportRequest Getter
+// GetOfficialAccountInfoReportRequest OfficialAccountInfoReportRequest Getter
 func (r TaobaoJstSmsOfficialaccountReportAPIRequest) GetOfficialAccountInfoReportRequest() *OfficialAccountInfoReportRequest {
 	return r._officialAccountInfoReportRequest
 }

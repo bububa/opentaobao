@@ -37,7 +37,7 @@ func (r AlibabaWdkSopoPushTriggerAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WdkOpenPushSoPoRequest Setter
+// SetWdkOpenPushSoPoRequest is WdkOpenPushSoPoRequest Setter
 // 系统自动生成
 func (r *AlibabaWdkSopoPushTriggerAPIRequest) SetWdkOpenPushSoPoRequest(_wdkOpenPushSoPoRequest *WdkOpenPushSoPoRequest) error {
 	r._wdkOpenPushSoPoRequest = _wdkOpenPushSoPoRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSopoPushTriggerAPIRequest) SetWdkOpenPushSoPoRequest(_wdkOpen
 	return nil
 }
 
-// Get WdkOpenPushSoPoRequest Getter
+// GetWdkOpenPushSoPoRequest WdkOpenPushSoPoRequest Getter
 func (r AlibabaWdkSopoPushTriggerAPIRequest) GetWdkOpenPushSoPoRequest() *WdkOpenPushSoPoRequest {
 	return r._wdkOpenPushSoPoRequest
 }

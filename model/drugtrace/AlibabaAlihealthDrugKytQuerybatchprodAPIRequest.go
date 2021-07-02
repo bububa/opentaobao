@@ -47,7 +47,7 @@ func (r AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ProductEntName Setter
+// SetProductEntName is ProductEntName Setter
 // 生产企业名称；支持新老企业名称匹配
 func (r *AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) SetProductEntName(_productEntName string) error {
 	r._productEntName = _productEntName
@@ -55,12 +55,12 @@ func (r *AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) SetProductEntName(_pro
 	return nil
 }
 
-// Get ProductEntName Getter
+// GetProductEntName ProductEntName Getter
 func (r AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) GetProductEntName() string {
 	return r._productEntName
 }
 
-// Set is ProductBatchNo Setter
+// SetProductBatchNo is ProductBatchNo Setter
 // 生产批号;支持大小写模糊匹配
 func (r *AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) SetProductBatchNo(_productBatchNo string) error {
 	r._productBatchNo = _productBatchNo
@@ -68,12 +68,12 @@ func (r *AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) SetProductBatchNo(_pro
 	return nil
 }
 
-// Get ProductBatchNo Getter
+// GetProductBatchNo ProductBatchNo Getter
 func (r AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) GetProductBatchNo() string {
 	return r._productBatchNo
 }
 
-// Set is BureauName Setter
+// SetBureauName is BureauName Setter
 // 社保局(所属地市名称)
 func (r *AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) SetBureauName(_bureauName string) error {
 	r._bureauName = _bureauName
@@ -81,12 +81,12 @@ func (r *AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) SetBureauName(_bureauN
 	return nil
 }
 
-// Get BureauName Getter
+// GetBureauName BureauName Getter
 func (r AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) GetBureauName() string {
 	return r._bureauName
 }
 
-// Set is TerminalName Setter
+// SetTerminalName is TerminalName Setter
 // 请求终端名称
 func (r *AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) SetTerminalName(_terminalName string) error {
 	r._terminalName = _terminalName
@@ -94,12 +94,12 @@ func (r *AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) SetTerminalName(_termi
 	return nil
 }
 
-// Get TerminalName Getter
+// GetTerminalName TerminalName Getter
 func (r AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) GetTerminalName() string {
 	return r._terminalName
 }
 
-// Set is TerminalType Setter
+// SetTerminalType is TerminalType Setter
 // 终端类型：1005100-零售，1005200-医疗
 func (r *AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) SetTerminalType(_terminalType string) error {
 	r._terminalType = _terminalType
@@ -107,12 +107,12 @@ func (r *AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) SetTerminalType(_termi
 	return nil
 }
 
-// Get TerminalType Getter
+// GetTerminalType TerminalType Getter
 func (r AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) GetTerminalType() string {
 	return r._terminalType
 }
 
-// Set is Invocation Setter
+// SetInvocation is Invocation Setter
 // 调用方式：formal-正式、test-测试
 func (r *AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) SetInvocation(_invocation string) error {
 	r._invocation = _invocation
@@ -120,7 +120,7 @@ func (r *AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) SetInvocation(_invocat
 	return nil
 }
 
-// Get Invocation Getter
+// GetInvocation Invocation Getter
 func (r AlibabaAlihealthDrugKytQuerybatchprodAPIRequest) GetInvocation() string {
 	return r._invocation
 }

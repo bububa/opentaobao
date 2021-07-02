@@ -43,7 +43,7 @@ func (r AlibabaGpuSchemaCatsearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LeafCatId Setter
+// SetLeafCatId is LeafCatId Setter
 // 叶子类目ID
 func (r *AlibabaGpuSchemaCatsearchAPIRequest) SetLeafCatId(_leafCatId int64) error {
 	r._leafCatId = _leafCatId
@@ -51,12 +51,12 @@ func (r *AlibabaGpuSchemaCatsearchAPIRequest) SetLeafCatId(_leafCatId int64) err
 	return nil
 }
 
-// Get LeafCatId Getter
+// GetLeafCatId LeafCatId Getter
 func (r AlibabaGpuSchemaCatsearchAPIRequest) GetLeafCatId() int64 {
 	return r._leafCatId
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前页
 func (r *AlibabaGpuSchemaCatsearchAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -64,12 +64,12 @@ func (r *AlibabaGpuSchemaCatsearchAPIRequest) SetCurrentPage(_currentPage int64)
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r AlibabaGpuSchemaCatsearchAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页大小
 func (r *AlibabaGpuSchemaCatsearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *AlibabaGpuSchemaCatsearchAPIRequest) SetPageSize(_pageSize int64) error
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaGpuSchemaCatsearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is ProviderId Setter
+// SetProviderId is ProviderId Setter
 // 渠道Id，如0代表天猫，8代表淘宝
 func (r *AlibabaGpuSchemaCatsearchAPIRequest) SetProviderId(_providerId int64) error {
 	r._providerId = _providerId
@@ -90,7 +90,7 @@ func (r *AlibabaGpuSchemaCatsearchAPIRequest) SetProviderId(_providerId int64) e
 	return nil
 }
 
-// Get ProviderId Getter
+// GetProviderId ProviderId Getter
 func (r AlibabaGpuSchemaCatsearchAPIRequest) GetProviderId() int64 {
 	return r._providerId
 }

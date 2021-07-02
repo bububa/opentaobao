@@ -41,7 +41,7 @@ func (r AlibabaCampusAclNewCheckuserroleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户账号
 func (r *AlibabaCampusAclNewCheckuserroleAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -49,12 +49,12 @@ func (r *AlibabaCampusAclNewCheckuserroleAPIRequest) SetUserId(_userId string) e
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaCampusAclNewCheckuserroleAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is RoleKey Setter
+// SetRoleKey is RoleKey Setter
 // 角色key
 func (r *AlibabaCampusAclNewCheckuserroleAPIRequest) SetRoleKey(_roleKey string) error {
 	r._roleKey = _roleKey
@@ -62,12 +62,12 @@ func (r *AlibabaCampusAclNewCheckuserroleAPIRequest) SetRoleKey(_roleKey string)
 	return nil
 }
 
-// Get RoleKey Getter
+// GetRoleKey RoleKey Getter
 func (r AlibabaCampusAclNewCheckuserroleAPIRequest) GetRoleKey() string {
 	return r._roleKey
 }
 
-// Set is Workbenchcontext Setter
+// SetWorkbenchcontext is Workbenchcontext Setter
 // 系统入参
 func (r *AlibabaCampusAclNewCheckuserroleAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
 	r._workbenchcontext = _workbenchcontext
@@ -75,7 +75,7 @@ func (r *AlibabaCampusAclNewCheckuserroleAPIRequest) SetWorkbenchcontext(_workbe
 	return nil
 }
 
-// Get Workbenchcontext Getter
+// GetWorkbenchcontext Workbenchcontext Getter
 func (r AlibabaCampusAclNewCheckuserroleAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
 }

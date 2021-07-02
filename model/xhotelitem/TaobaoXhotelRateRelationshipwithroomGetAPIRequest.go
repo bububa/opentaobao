@@ -39,7 +39,7 @@ func (r TaobaoXhotelRateRelationshipwithroomGetAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is RpId Setter
+// SetRpId is RpId Setter
 // rpId
 func (r *TaobaoXhotelRateRelationshipwithroomGetAPIRequest) SetRpId(_rpId int64) error {
 	r._rpId = _rpId
@@ -47,12 +47,12 @@ func (r *TaobaoXhotelRateRelationshipwithroomGetAPIRequest) SetRpId(_rpId int64)
 	return nil
 }
 
-// Get RpId Getter
+// GetRpId RpId Getter
 func (r TaobaoXhotelRateRelationshipwithroomGetAPIRequest) GetRpId() int64 {
 	return r._rpId
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页数
 func (r *TaobaoXhotelRateRelationshipwithroomGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -60,7 +60,7 @@ func (r *TaobaoXhotelRateRelationshipwithroomGetAPIRequest) SetPageNo(_pageNo in
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoXhotelRateRelationshipwithroomGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

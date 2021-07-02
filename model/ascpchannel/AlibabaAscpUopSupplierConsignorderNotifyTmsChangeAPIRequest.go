@@ -37,7 +37,7 @@ func (r AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest) GetApiParam
 	return params
 }
 
-// Set is ModifyMailNoRequest Setter
+// SetModifyMailNoRequest is ModifyMailNoRequest Setter
 // 修改运单号请求模型
 func (r *AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest) SetModifyMailNoRequest(_modifyMailNoRequest *Modifymailnorequest) error {
 	r._modifyMailNoRequest = _modifyMailNoRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest) SetModifyM
 	return nil
 }
 
-// Get ModifyMailNoRequest Getter
+// GetModifyMailNoRequest ModifyMailNoRequest Getter
 func (r AlibabaAscpUopSupplierConsignorderNotifyTmsChangeAPIRequest) GetModifyMailNoRequest() *Modifymailnorequest {
 	return r._modifyMailNoRequest
 }

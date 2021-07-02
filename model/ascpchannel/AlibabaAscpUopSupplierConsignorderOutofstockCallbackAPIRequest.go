@@ -37,7 +37,7 @@ func (r AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest) GetApiPa
 	return params
 }
 
-// Set is ConsignorderOutofstockCallbackRequest Setter
+// SetConsignorderOutofstockCallbackRequest is ConsignorderOutofstockCallbackRequest Setter
 // 缺货回告请求模型
 func (r *AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest) SetConsignorderOutofstockCallbackRequest(_consignorderOutofstockCallbackRequest *Consignorderoutofstockcallbackrequest) error {
 	r._consignorderOutofstockCallbackRequest = _consignorderOutofstockCallbackRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest) SetCons
 	return nil
 }
 
-// Get ConsignorderOutofstockCallbackRequest Getter
+// GetConsignorderOutofstockCallbackRequest ConsignorderOutofstockCallbackRequest Getter
 func (r AlibabaAscpUopSupplierConsignorderOutofstockCallbackAPIRequest) GetConsignorderOutofstockCallbackRequest() *Consignorderoutofstockcallbackrequest {
 	return r._consignorderOutofstockCallbackRequest
 }

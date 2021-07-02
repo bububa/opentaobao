@@ -41,7 +41,7 @@ func (r AlibabaScbpShowcaseSortAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WindowId Setter
+// SetWindowId is WindowId Setter
 // 要移动的橱窗id
 func (r *AlibabaScbpShowcaseSortAPIRequest) SetWindowId(_windowId int64) error {
 	r._windowId = _windowId
@@ -49,12 +49,12 @@ func (r *AlibabaScbpShowcaseSortAPIRequest) SetWindowId(_windowId int64) error {
 	return nil
 }
 
-// Get WindowId Getter
+// GetWindowId WindowId Getter
 func (r AlibabaScbpShowcaseSortAPIRequest) GetWindowId() int64 {
 	return r._windowId
 }
 
-// Set is SourceOrder Setter
+// SetSourceOrder is SourceOrder Setter
 // 当前位置（从1开始）
 func (r *AlibabaScbpShowcaseSortAPIRequest) SetSourceOrder(_sourceOrder int64) error {
 	r._sourceOrder = _sourceOrder
@@ -62,12 +62,12 @@ func (r *AlibabaScbpShowcaseSortAPIRequest) SetSourceOrder(_sourceOrder int64) e
 	return nil
 }
 
-// Get SourceOrder Getter
+// GetSourceOrder SourceOrder Getter
 func (r AlibabaScbpShowcaseSortAPIRequest) GetSourceOrder() int64 {
 	return r._sourceOrder
 }
 
-// Set is TargetOrder Setter
+// SetTargetOrder is TargetOrder Setter
 // 目标位置（从1开始）
 func (r *AlibabaScbpShowcaseSortAPIRequest) SetTargetOrder(_targetOrder int64) error {
 	r._targetOrder = _targetOrder
@@ -75,7 +75,7 @@ func (r *AlibabaScbpShowcaseSortAPIRequest) SetTargetOrder(_targetOrder int64) e
 	return nil
 }
 
-// Get TargetOrder Getter
+// GetTargetOrder TargetOrder Getter
 func (r AlibabaScbpShowcaseSortAPIRequest) GetTargetOrder() int64 {
 	return r._targetOrder
 }

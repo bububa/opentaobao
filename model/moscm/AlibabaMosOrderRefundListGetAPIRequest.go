@@ -39,7 +39,7 @@ func (r AlibabaMosOrderRefundListGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RmaCriteria Setter
+// SetRmaCriteria is RmaCriteria Setter
 // 退换货查询条件
 func (r *AlibabaMosOrderRefundListGetAPIRequest) SetRmaCriteria(_rmaCriteria *RmaCriteria) error {
 	r._rmaCriteria = _rmaCriteria
@@ -47,12 +47,12 @@ func (r *AlibabaMosOrderRefundListGetAPIRequest) SetRmaCriteria(_rmaCriteria *Rm
 	return nil
 }
 
-// Get RmaCriteria Getter
+// GetRmaCriteria RmaCriteria Getter
 func (r AlibabaMosOrderRefundListGetAPIRequest) GetRmaCriteria() *RmaCriteria {
 	return r._rmaCriteria
 }
 
-// Set is Paginator Setter
+// SetPaginator is Paginator Setter
 // 分页信息
 func (r *AlibabaMosOrderRefundListGetAPIRequest) SetPaginator(_paginator *Paginator) error {
 	r._paginator = _paginator
@@ -60,7 +60,7 @@ func (r *AlibabaMosOrderRefundListGetAPIRequest) SetPaginator(_paginator *Pagina
 	return nil
 }
 
-// Get Paginator Getter
+// GetPaginator Paginator Getter
 func (r AlibabaMosOrderRefundListGetAPIRequest) GetPaginator() *Paginator {
 	return r._paginator
 }

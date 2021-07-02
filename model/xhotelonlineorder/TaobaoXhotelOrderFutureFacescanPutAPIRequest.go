@@ -37,7 +37,7 @@ func (r TaobaoXhotelOrderFutureFacescanPutAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is FaceScanParam Setter
+// SetFaceScanParam is FaceScanParam Setter
 // 扫脸参数
 func (r *TaobaoXhotelOrderFutureFacescanPutAPIRequest) SetFaceScanParam(_faceScanParam *FaceScanParam) error {
 	r._faceScanParam = _faceScanParam
@@ -45,7 +45,7 @@ func (r *TaobaoXhotelOrderFutureFacescanPutAPIRequest) SetFaceScanParam(_faceSca
 	return nil
 }
 
-// Get FaceScanParam Getter
+// GetFaceScanParam FaceScanParam Getter
 func (r TaobaoXhotelOrderFutureFacescanPutAPIRequest) GetFaceScanParam() *FaceScanParam {
 	return r._faceScanParam
 }

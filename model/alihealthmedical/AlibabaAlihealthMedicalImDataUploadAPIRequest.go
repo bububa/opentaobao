@@ -39,7 +39,7 @@ func (r AlibabaAlihealthMedicalImDataUploadAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is UploadDataRequest Setter
+// SetUploadDataRequest is UploadDataRequest Setter
 // request
 func (r *AlibabaAlihealthMedicalImDataUploadAPIRequest) SetUploadDataRequest(_uploadDataRequest *UploadDataRequest) error {
 	r._uploadDataRequest = _uploadDataRequest
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthMedicalImDataUploadAPIRequest) SetUploadDataRequest(_up
 	return nil
 }
 
-// Get UploadDataRequest Getter
+// GetUploadDataRequest UploadDataRequest Getter
 func (r AlibabaAlihealthMedicalImDataUploadAPIRequest) GetUploadDataRequest() *UploadDataRequest {
 	return r._uploadDataRequest
 }
 
-// Set is File Setter
+// SetFile is File Setter
 // 文件字节流
 func (r *AlibabaAlihealthMedicalImDataUploadAPIRequest) SetFile(_file *model.File) error {
 	r._file = _file
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthMedicalImDataUploadAPIRequest) SetFile(_file *model.Fil
 	return nil
 }
 
-// Get File Getter
+// GetFile File Getter
 func (r AlibabaAlihealthMedicalImDataUploadAPIRequest) GetFile() *model.File {
 	return r._file
 }

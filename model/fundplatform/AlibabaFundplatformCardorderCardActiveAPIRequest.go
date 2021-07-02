@@ -38,7 +38,7 @@ func (r AlibabaFundplatformCardorderCardActiveAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ParamCardActiveRequest Setter
+// SetParamCardActiveRequest is ParamCardActiveRequest Setter
 // 入参对象
 func (r *AlibabaFundplatformCardorderCardActiveAPIRequest) SetParamCardActiveRequest(_paramCardActiveRequest *CardActiveRequest) error {
 	r._paramCardActiveRequest = _paramCardActiveRequest
@@ -46,7 +46,7 @@ func (r *AlibabaFundplatformCardorderCardActiveAPIRequest) SetParamCardActiveReq
 	return nil
 }
 
-// Get ParamCardActiveRequest Getter
+// GetParamCardActiveRequest ParamCardActiveRequest Getter
 func (r AlibabaFundplatformCardorderCardActiveAPIRequest) GetParamCardActiveRequest() *CardActiveRequest {
 	return r._paramCardActiveRequest
 }

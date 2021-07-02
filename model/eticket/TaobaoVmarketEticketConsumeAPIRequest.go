@@ -55,7 +55,7 @@ func (r TaobaoVmarketEticketConsumeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 进行验码的电子凭证订单的订单ID
 func (r *TaobaoVmarketEticketConsumeAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -63,12 +63,12 @@ func (r *TaobaoVmarketEticketConsumeAPIRequest) SetOrderId(_orderId int64) error
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoVmarketEticketConsumeAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is VerifyCode Setter
+// SetVerifyCode is VerifyCode Setter
 // 核销的码，只支持单个码，多个码核销需要多次调用
 func (r *TaobaoVmarketEticketConsumeAPIRequest) SetVerifyCode(_verifyCode string) error {
 	r._verifyCode = _verifyCode
@@ -76,12 +76,12 @@ func (r *TaobaoVmarketEticketConsumeAPIRequest) SetVerifyCode(_verifyCode string
 	return nil
 }
 
-// Get VerifyCode Getter
+// GetVerifyCode VerifyCode Getter
 func (r TaobaoVmarketEticketConsumeAPIRequest) GetVerifyCode() string {
 	return r._verifyCode
 }
 
-// Set is ConsumeNum Setter
+// SetConsumeNum is ConsumeNum Setter
 // 核销份数
 func (r *TaobaoVmarketEticketConsumeAPIRequest) SetConsumeNum(_consumeNum int64) error {
 	r._consumeNum = _consumeNum
@@ -89,12 +89,12 @@ func (r *TaobaoVmarketEticketConsumeAPIRequest) SetConsumeNum(_consumeNum int64)
 	return nil
 }
 
-// Get ConsumeNum Getter
+// GetConsumeNum ConsumeNum Getter
 func (r TaobaoVmarketEticketConsumeAPIRequest) GetConsumeNum() int64 {
 	return r._consumeNum
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 安全验证token,需要和发码通知中的token一致
 func (r *TaobaoVmarketEticketConsumeAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -102,12 +102,12 @@ func (r *TaobaoVmarketEticketConsumeAPIRequest) SetToken(_token string) error {
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoVmarketEticketConsumeAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is CodemerchantId Setter
+// SetCodemerchantId is CodemerchantId Setter
 // 码商ID,是码商的话必须传递,如果是信任卖家不需要传
 func (r *TaobaoVmarketEticketConsumeAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
 	r._codemerchantId = _codemerchantId
@@ -115,12 +115,12 @@ func (r *TaobaoVmarketEticketConsumeAPIRequest) SetCodemerchantId(_codemerchantI
 	return nil
 }
 
-// Get CodemerchantId Getter
+// GetCodemerchantId CodemerchantId Getter
 func (r TaobaoVmarketEticketConsumeAPIRequest) GetCodemerchantId() int64 {
 	return r._codemerchantId
 }
 
-// Set is Posid Setter
+// SetPosid is Posid Setter
 // 机具ID(此参数信任卖家可不传递，码商必须传递)
 func (r *TaobaoVmarketEticketConsumeAPIRequest) SetPosid(_posid string) error {
 	r._posid = _posid
@@ -128,12 +128,12 @@ func (r *TaobaoVmarketEticketConsumeAPIRequest) SetPosid(_posid string) error {
 	return nil
 }
 
-// Get Posid Getter
+// GetPosid Posid Getter
 func (r TaobaoVmarketEticketConsumeAPIRequest) GetPosid() string {
 	return r._posid
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 手机后四位(没有特殊说明请不要传该参数)
 func (r *TaobaoVmarketEticketConsumeAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -141,12 +141,12 @@ func (r *TaobaoVmarketEticketConsumeAPIRequest) SetMobile(_mobile string) error 
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r TaobaoVmarketEticketConsumeAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
-// Set is NewCode Setter
+// SetNewCode is NewCode Setter
 // 核销后需要重新生成的码，如果不需要重新生成码，不要传该参数
 func (r *TaobaoVmarketEticketConsumeAPIRequest) SetNewCode(_newCode string) error {
 	r._newCode = _newCode
@@ -154,12 +154,12 @@ func (r *TaobaoVmarketEticketConsumeAPIRequest) SetNewCode(_newCode string) erro
 	return nil
 }
 
-// Get NewCode Getter
+// GetNewCode NewCode Getter
 func (r TaobaoVmarketEticketConsumeAPIRequest) GetNewCode() string {
 	return r._newCode
 }
 
-// Set is SerialNum Setter
+// SetSerialNum is SerialNum Setter
 // 自定义核销流水号，如果核销调用失败，可以用该核销流水号进行冲正操作，需要小于等于100个字符(a-zA-Z0-9_)；每次核销都是唯一的流水号
 func (r *TaobaoVmarketEticketConsumeAPIRequest) SetSerialNum(_serialNum string) error {
 	r._serialNum = _serialNum
@@ -167,12 +167,12 @@ func (r *TaobaoVmarketEticketConsumeAPIRequest) SetSerialNum(_serialNum string) 
 	return nil
 }
 
-// Get SerialNum Getter
+// GetSerialNum SerialNum Getter
 func (r TaobaoVmarketEticketConsumeAPIRequest) GetSerialNum() string {
 	return r._serialNum
 }
 
-// Set is QrImages Setter
+// SetQrImages is QrImages Setter
 // 不需要上传二维码图片或者核销后不需重新生成码码商请不要传，需要传入二维码的码商请先调用taobao.vmarket.eticket.qrcode.upload接口，将返回的img_filename文件名称作为参数（如果二维码不变的话，也可将将发码时传入二维码文件名作为参数传入），文件名与参数new_code必须相互对应。
 func (r *TaobaoVmarketEticketConsumeAPIRequest) SetQrImages(_qrImages string) error {
 	r._qrImages = _qrImages
@@ -180,7 +180,7 @@ func (r *TaobaoVmarketEticketConsumeAPIRequest) SetQrImages(_qrImages string) er
 	return nil
 }
 
-// Get QrImages Getter
+// GetQrImages QrImages Getter
 func (r TaobaoVmarketEticketConsumeAPIRequest) GetQrImages() string {
 	return r._qrImages
 }

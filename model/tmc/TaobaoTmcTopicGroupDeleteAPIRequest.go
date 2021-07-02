@@ -41,7 +41,7 @@ func (r TaobaoTmcTopicGroupDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupName Setter
+// SetGroupName is GroupName Setter
 // 消息分组名
 func (r *TaobaoTmcTopicGroupDeleteAPIRequest) SetGroupName(_groupName string) error {
 	r._groupName = _groupName
@@ -49,12 +49,12 @@ func (r *TaobaoTmcTopicGroupDeleteAPIRequest) SetGroupName(_groupName string) er
 	return nil
 }
 
-// Get GroupName Getter
+// GetGroupName GroupName Getter
 func (r TaobaoTmcTopicGroupDeleteAPIRequest) GetGroupName() string {
 	return r._groupName
 }
 
-// Set is Topics Setter
+// SetTopics is Topics Setter
 // 消息topic名称，多个以逗号(,)分割
 func (r *TaobaoTmcTopicGroupDeleteAPIRequest) SetTopics(_topics []string) error {
 	r._topics = _topics
@@ -62,12 +62,12 @@ func (r *TaobaoTmcTopicGroupDeleteAPIRequest) SetTopics(_topics []string) error 
 	return nil
 }
 
-// Get Topics Getter
+// GetTopics Topics Getter
 func (r TaobaoTmcTopicGroupDeleteAPIRequest) GetTopics() []string {
 	return r._topics
 }
 
-// Set is GroupId Setter
+// SetGroupId is GroupId Setter
 // 消息分组Id，一般不用填写，如果分组已经被删除，则根据问题排查工具返回的ID删除路由关系
 func (r *TaobaoTmcTopicGroupDeleteAPIRequest) SetGroupId(_groupId int64) error {
 	r._groupId = _groupId
@@ -75,7 +75,7 @@ func (r *TaobaoTmcTopicGroupDeleteAPIRequest) SetGroupId(_groupId int64) error {
 	return nil
 }
 
-// Get GroupId Getter
+// GetGroupId GroupId Getter
 func (r TaobaoTmcTopicGroupDeleteAPIRequest) GetGroupId() int64 {
 	return r._groupId
 }

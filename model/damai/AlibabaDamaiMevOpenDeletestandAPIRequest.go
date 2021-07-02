@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenDeletestandAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeleteStandParam Setter
+// SetDeleteStandParam is DeleteStandParam Setter
 // 入参deleteStandParam
 func (r *AlibabaDamaiMevOpenDeletestandAPIRequest) SetDeleteStandParam(_deleteStandParam *StandIdOpenParam) error {
 	r._deleteStandParam = _deleteStandParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenDeletestandAPIRequest) SetDeleteStandParam(_deleteSt
 	return nil
 }
 
-// Get DeleteStandParam Getter
+// GetDeleteStandParam DeleteStandParam Getter
 func (r AlibabaDamaiMevOpenDeletestandAPIRequest) GetDeleteStandParam() *StandIdOpenParam {
 	return r._deleteStandParam
 }

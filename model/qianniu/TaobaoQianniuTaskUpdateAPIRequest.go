@@ -57,7 +57,7 @@ func (r TaobaoQianniuTaskUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TaskId Setter
+// SetTaskId is TaskId Setter
 // 任务ID
 func (r *TaobaoQianniuTaskUpdateAPIRequest) SetTaskId(_taskId int64) error {
 	r._taskId = _taskId
@@ -65,12 +65,12 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetTaskId(_taskId int64) error {
 	return nil
 }
 
-// Get TaskId Getter
+// GetTaskId TaskId Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetTaskId() int64 {
 	return r._taskId
 }
 
-// Set is SubStatus Setter
+// SetSubStatus is SubStatus Setter
 // 子任务状态，由业务方自定义
 func (r *TaobaoQianniuTaskUpdateAPIRequest) SetSubStatus(_subStatus string) error {
 	r._subStatus = _subStatus
@@ -78,12 +78,12 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetSubStatus(_subStatus string) erro
 	return nil
 }
 
-// Get SubStatus Getter
+// GetSubStatus SubStatus Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetSubStatus() string {
 	return r._subStatus
 }
 
-// Set is Tag Setter
+// SetTag is Tag Setter
 // 任务标签
 func (r *TaobaoQianniuTaskUpdateAPIRequest) SetTag(_tag string) error {
 	r._tag = _tag
@@ -91,12 +91,12 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetTag(_tag string) error {
 	return nil
 }
 
-// Get Tag Getter
+// GetTag Tag Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetTag() string {
 	return r._tag
 }
 
-// Set is Memo Setter
+// SetMemo is Memo Setter
 // 任务备注。当memo_mode为1时，memo将采用追加方式。
 func (r *TaobaoQianniuTaskUpdateAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
@@ -104,12 +104,12 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetMemo(_memo string) error {
 	return nil
 }
 
-// Get Memo Getter
+// GetMemo Memo Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetMemo() string {
 	return r._memo
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 状态值，多个以逗号分隔
 func (r *TaobaoQianniuTaskUpdateAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -117,12 +117,12 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetStatus(_status string) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is RemindTime Setter
+// SetRemindTime is RemindTime Setter
 // 提醒时间，时间的毫秒数
 func (r *TaobaoQianniuTaskUpdateAPIRequest) SetRemindTime(_remindTime int64) error {
 	r._remindTime = _remindTime
@@ -130,12 +130,12 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetRemindTime(_remindTime int64) err
 	return nil
 }
 
-// Get RemindTime Getter
+// GetRemindTime RemindTime Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetRemindTime() int64 {
 	return r._remindTime
 }
 
-// Set is BizParam Setter
+// SetBizParam is BizParam Setter
 // 应用自定义参数
 func (r *TaobaoQianniuTaskUpdateAPIRequest) SetBizParam(_bizParam string) error {
 	r._bizParam = _bizParam
@@ -143,12 +143,12 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetBizParam(_bizParam string) error 
 	return nil
 }
 
-// Get BizParam Getter
+// GetBizParam BizParam Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetBizParam() string {
 	return r._bizParam
 }
 
-// Set is RemindFlag Setter
+// SetRemindFlag is RemindFlag Setter
 // 0为不提醒，1为全部提醒，2为PC提醒，3为移动提醒，4为已提醒，5为已忽略。
 func (r *TaobaoQianniuTaskUpdateAPIRequest) SetRemindFlag(_remindFlag int64) error {
 	r._remindFlag = _remindFlag
@@ -156,12 +156,12 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetRemindFlag(_remindFlag int64) err
 	return nil
 }
 
-// Get RemindFlag Getter
+// GetRemindFlag RemindFlag Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetRemindFlag() int64 {
 	return r._remindFlag
 }
 
-// Set is MemoMode Setter
+// SetMemoMode is MemoMode Setter
 // 表示memo字段的更新策略。如需采用追加方式的，请将此字段设置为1。
 func (r *TaobaoQianniuTaskUpdateAPIRequest) SetMemoMode(_memoMode int64) error {
 	r._memoMode = _memoMode
@@ -169,12 +169,12 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetMemoMode(_memoMode int64) error {
 	return nil
 }
 
-// Get MemoMode Getter
+// GetMemoMode MemoMode Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetMemoMode() int64 {
 	return r._memoMode
 }
 
-// Set is Priority Setter
+// SetPriority is Priority Setter
 // 默认填0，数字越大优化级越高。当前常用0和1.
 func (r *TaobaoQianniuTaskUpdateAPIRequest) SetPriority(_priority int64) error {
 	r._priority = _priority
@@ -182,12 +182,12 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetPriority(_priority int64) error {
 	return nil
 }
 
-// Get Priority Getter
+// GetPriority Priority Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetPriority() int64 {
 	return r._priority
 }
 
-// Set is IsDeleted Setter
+// SetIsDeleted is IsDeleted Setter
 // 0表示没有删除，1表示删除
 func (r *TaobaoQianniuTaskUpdateAPIRequest) SetIsDeleted(_isDeleted int64) error {
 	r._isDeleted = _isDeleted
@@ -195,7 +195,7 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetIsDeleted(_isDeleted int64) error
 	return nil
 }
 
-// Get IsDeleted Getter
+// GetIsDeleted IsDeleted Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetIsDeleted() int64 {
 	return r._isDeleted
 }

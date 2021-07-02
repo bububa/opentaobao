@@ -37,7 +37,7 @@ func (r CainiaoEccExceptionsDelayGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MailNo Setter
+// SetMailNo is MailNo Setter
 // 运单号
 func (r *CainiaoEccExceptionsDelayGetAPIRequest) SetMailNo(_mailNo string) error {
 	r._mailNo = _mailNo
@@ -45,7 +45,7 @@ func (r *CainiaoEccExceptionsDelayGetAPIRequest) SetMailNo(_mailNo string) error
 	return nil
 }
 
-// Get MailNo Getter
+// GetMailNo MailNo Getter
 func (r CainiaoEccExceptionsDelayGetAPIRequest) GetMailNo() string {
 	return r._mailNo
 }

@@ -37,7 +37,7 @@ func (r AlibabaMjOcOnlineTicketnoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutStoreNo Setter
+// SetOutStoreNo is OutStoreNo Setter
 // 外部门店号
 func (r *AlibabaMjOcOnlineTicketnoGetAPIRequest) SetOutStoreNo(_outStoreNo string) error {
 	r._outStoreNo = _outStoreNo
@@ -45,7 +45,7 @@ func (r *AlibabaMjOcOnlineTicketnoGetAPIRequest) SetOutStoreNo(_outStoreNo strin
 	return nil
 }
 
-// Get OutStoreNo Getter
+// GetOutStoreNo OutStoreNo Getter
 func (r AlibabaMjOcOnlineTicketnoGetAPIRequest) GetOutStoreNo() string {
 	return r._outStoreNo
 }

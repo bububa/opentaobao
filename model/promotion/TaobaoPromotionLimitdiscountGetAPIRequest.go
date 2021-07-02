@@ -45,7 +45,7 @@ func (r TaobaoPromotionLimitdiscountGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LimitDiscountId Setter
+// SetLimitDiscountId is LimitDiscountId Setter
 // 限时打折ID。这个针对查询唯一限时打折情况。若此字段不为空，则说明操作为单条限时打折记录查询，其他字段忽略。若想分页按条件查询，这个字段置为空。
 func (r *TaobaoPromotionLimitdiscountGetAPIRequest) SetLimitDiscountId(_limitDiscountId int64) error {
 	r._limitDiscountId = _limitDiscountId
@@ -53,12 +53,12 @@ func (r *TaobaoPromotionLimitdiscountGetAPIRequest) SetLimitDiscountId(_limitDis
 	return nil
 }
 
-// Get LimitDiscountId Getter
+// GetLimitDiscountId LimitDiscountId Getter
 func (r TaobaoPromotionLimitdiscountGetAPIRequest) GetLimitDiscountId() int64 {
 	return r._limitDiscountId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 限时打折活动状态。ALL:全部状态;OVER:已结束;DOING:进行中;PROPARE:未开始(只支持大写)。当limit_discount_id为空时，为空时，默认为全部的状态。
 func (r *TaobaoPromotionLimitdiscountGetAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -66,12 +66,12 @@ func (r *TaobaoPromotionLimitdiscountGetAPIRequest) SetStatus(_status string) er
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoPromotionLimitdiscountGetAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 限时打折开始时间。输入的时间会被截取，年月日有效，时分秒忽略。
 func (r *TaobaoPromotionLimitdiscountGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -79,12 +79,12 @@ func (r *TaobaoPromotionLimitdiscountGetAPIRequest) SetStartTime(_startTime stri
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoPromotionLimitdiscountGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 限时打折结束时间。输入的时间会被截取，年月日有效，时分秒忽略。
 func (r *TaobaoPromotionLimitdiscountGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -92,12 +92,12 @@ func (r *TaobaoPromotionLimitdiscountGetAPIRequest) SetEndTime(_endTime string) 
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoPromotionLimitdiscountGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is PageNumber Setter
+// SetPageNumber is PageNumber Setter
 // 分页页号。默认1。当页数大于最大页数时，结果为最大页数的数据。
 func (r *TaobaoPromotionLimitdiscountGetAPIRequest) SetPageNumber(_pageNumber int64) error {
 	r._pageNumber = _pageNumber
@@ -105,7 +105,7 @@ func (r *TaobaoPromotionLimitdiscountGetAPIRequest) SetPageNumber(_pageNumber in
 	return nil
 }
 
-// Get PageNumber Getter
+// GetPageNumber PageNumber Getter
 func (r TaobaoPromotionLimitdiscountGetAPIRequest) GetPageNumber() int64 {
 	return r._pageNumber
 }

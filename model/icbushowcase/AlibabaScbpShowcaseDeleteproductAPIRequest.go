@@ -37,7 +37,7 @@ func (r AlibabaScbpShowcaseDeleteproductAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WindowIdList Setter
+// SetWindowIdList is WindowIdList Setter
 // 橱窗idList
 func (r *AlibabaScbpShowcaseDeleteproductAPIRequest) SetWindowIdList(_windowIdList []int64) error {
 	r._windowIdList = _windowIdList
@@ -45,7 +45,7 @@ func (r *AlibabaScbpShowcaseDeleteproductAPIRequest) SetWindowIdList(_windowIdLi
 	return nil
 }
 
-// Get WindowIdList Getter
+// GetWindowIdList WindowIdList Getter
 func (r AlibabaScbpShowcaseDeleteproductAPIRequest) GetWindowIdList() []int64 {
 	return r._windowIdList
 }

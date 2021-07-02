@@ -37,7 +37,7 @@ func (r TaobaoQimenEntryorderConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Request Setter
+// SetRequest is Request Setter
 //
 func (r *TaobaoQimenEntryorderConfirmAPIRequest) SetRequest(_request *EntryOrderConfirmRequest) error {
 	r._request = _request
@@ -45,7 +45,7 @@ func (r *TaobaoQimenEntryorderConfirmAPIRequest) SetRequest(_request *EntryOrder
 	return nil
 }
 
-// Get Request Getter
+// GetRequest Request Getter
 func (r TaobaoQimenEntryorderConfirmAPIRequest) GetRequest() *EntryOrderConfirmRequest {
 	return r._request
 }

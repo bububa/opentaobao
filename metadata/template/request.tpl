@@ -40,7 +40,7 @@ func (r {{ .Name }}APIRequest) GetApiParams() url.Values {
 }
 
 {{- range $v := .RequestParams }}
-// Set is {{ $v.Name }} Setter
+// Set{{ $v.Name }} is {{ $v.Name }} Setter
 // {{ $v.Desc }}
 func (r *{{ $.Name }}APIRequest) Set{{ $v.Name }}(_{{ $v.Label }} {{ $v.Type }}) error {
     r._{{ $v.Label }} = _{{ $v.Label }}
@@ -48,7 +48,7 @@ func (r *{{ $.Name }}APIRequest) Set{{ $v.Name }}(_{{ $v.Label }} {{ $v.Type }})
     return nil
 }
 
-// Get {{ $v.Name }} Getter
+// Get{{ $v.Name }} {{ $v.Name }} Getter
 func (r {{ $.Name }}APIRequest) Get{{ $v.Name }}() {{ $v.Type }} {
     return r._{{ $v.Label }}
 }

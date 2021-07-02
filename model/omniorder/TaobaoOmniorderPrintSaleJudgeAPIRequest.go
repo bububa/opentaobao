@@ -37,7 +37,7 @@ func (r TaobaoOmniorderPrintSaleJudgeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SubUid Setter
+// SetSubUid is SubUid Setter
 // 用户子账号ID
 func (r *TaobaoOmniorderPrintSaleJudgeAPIRequest) SetSubUid(_subUid int64) error {
 	r._subUid = _subUid
@@ -45,7 +45,7 @@ func (r *TaobaoOmniorderPrintSaleJudgeAPIRequest) SetSubUid(_subUid int64) error
 	return nil
 }
 
-// Get SubUid Getter
+// GetSubUid SubUid Getter
 func (r TaobaoOmniorderPrintSaleJudgeAPIRequest) GetSubUid() int64 {
 	return r._subUid
 }

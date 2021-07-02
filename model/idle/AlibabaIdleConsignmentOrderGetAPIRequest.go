@@ -37,7 +37,7 @@ func (r AlibabaIdleConsignmentOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 闲鱼订单ID
 func (r *AlibabaIdleConsignmentOrderGetAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
@@ -45,7 +45,7 @@ func (r *AlibabaIdleConsignmentOrderGetAPIRequest) SetBizOrderId(_bizOrderId int
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r AlibabaIdleConsignmentOrderGetAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }

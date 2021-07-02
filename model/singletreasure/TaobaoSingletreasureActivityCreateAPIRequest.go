@@ -37,7 +37,7 @@ func (r TaobaoSingletreasureActivityCreateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ActivityInfo Setter
+// SetActivityInfo is ActivityInfo Setter
 // 系统入参
 func (r *TaobaoSingletreasureActivityCreateAPIRequest) SetActivityInfo(_activityInfo *ActivityInfoCreateDto) error {
 	r._activityInfo = _activityInfo
@@ -45,7 +45,7 @@ func (r *TaobaoSingletreasureActivityCreateAPIRequest) SetActivityInfo(_activity
 	return nil
 }
 
-// Get ActivityInfo Getter
+// GetActivityInfo ActivityInfo Getter
 func (r TaobaoSingletreasureActivityCreateAPIRequest) GetActivityInfo() *ActivityInfoCreateDto {
 	return r._activityInfo
 }

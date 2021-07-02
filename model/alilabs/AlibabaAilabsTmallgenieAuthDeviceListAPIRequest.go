@@ -39,7 +39,7 @@ func (r AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ClientId Setter
+// SetClientId is ClientId Setter
 // 客户id
 func (r *AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) SetClientId(_clientId string) error {
 	r._clientId = _clientId
@@ -47,12 +47,12 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) SetClientId(_clientId 
 	return nil
 }
 
-// Get ClientId Getter
+// GetClientId ClientId Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) GetClientId() string {
 	return r._clientId
 }
 
-// Set is UserOpenId Setter
+// SetUserOpenId is UserOpenId Setter
 // 用户开放id
 func (r *AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) SetUserOpenId(_userOpenId string) error {
 	r._userOpenId = _userOpenId
@@ -60,7 +60,7 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) SetUserOpenId(_userOpe
 	return nil
 }
 
-// Get UserOpenId Getter
+// GetUserOpenId UserOpenId Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceListAPIRequest) GetUserOpenId() string {
 	return r._userOpenId
 }

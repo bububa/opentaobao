@@ -45,7 +45,7 @@ func (r CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is AssignReason Setter
+// SetAssignReason is AssignReason Setter
 // 指派/改派原因
 func (r *CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) SetAssignReason(_assignReason string) error {
 	r._assignReason = _assignReason
@@ -53,12 +53,12 @@ func (r *CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) SetAssignReason(_assi
 	return nil
 }
 
-// Get AssignReason Getter
+// GetAssignReason AssignReason Getter
 func (r CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) GetAssignReason() string {
 	return r._assignReason
 }
 
-// Set is AssignReasonCode Setter
+// SetAssignReasonCode is AssignReasonCode Setter
 // 指派/改派原因编码
 func (r *CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) SetAssignReasonCode(_assignReasonCode string) error {
 	r._assignReasonCode = _assignReasonCode
@@ -66,12 +66,12 @@ func (r *CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) SetAssignReasonCode(_
 	return nil
 }
 
-// Get AssignReasonCode Getter
+// GetAssignReasonCode AssignReasonCode Getter
 func (r CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) GetAssignReasonCode() string {
 	return r._assignReasonCode
 }
 
-// Set is TaskId Setter
+// SetTaskId is TaskId Setter
 // 任务编号
 func (r *CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) SetTaskId(_taskId int64) error {
 	r._taskId = _taskId
@@ -79,12 +79,12 @@ func (r *CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) SetTaskId(_taskId int
 	return nil
 }
 
-// Get TaskId Getter
+// GetTaskId TaskId Getter
 func (r CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) GetTaskId() int64 {
 	return r._taskId
 }
 
-// Set is AccountId Setter
+// SetAccountId is AccountId Setter
 // 小件员菜鸟账号ID
 func (r *CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) SetAccountId(_accountId int64) error {
 	r._accountId = _accountId
@@ -92,12 +92,12 @@ func (r *CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) SetAccountId(_account
 	return nil
 }
 
-// Get AccountId Getter
+// GetAccountId AccountId Getter
 func (r CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) GetAccountId() int64 {
 	return r._accountId
 }
 
-// Set is CpCode Setter
+// SetCpCode is CpCode Setter
 // CP公司编号
 func (r *CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) SetCpCode(_cpCode string) error {
 	r._cpCode = _cpCode
@@ -105,7 +105,7 @@ func (r *CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) SetCpCode(_cpCode str
 	return nil
 }
 
-// Get CpCode Getter
+// GetCpCode CpCode Getter
 func (r CainiaoGuoguoCpBackupAssigncourierbyidAPIRequest) GetCpCode() string {
 	return r._cpCode
 }

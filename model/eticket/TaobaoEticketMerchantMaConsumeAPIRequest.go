@@ -51,7 +51,7 @@ func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务类型
 func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetBizType(_bizType int64) error {
 	r._bizType = _bizType
@@ -59,12 +59,12 @@ func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetBizType(_bizType int64) er
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetBizType() int64 {
 	return r._bizType
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 需要被核销的码
 func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -72,12 +72,12 @@ func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetCode(_code string) error {
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is ConsumeNum Setter
+// SetConsumeNum is ConsumeNum Setter
 // 核销份数
 func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetConsumeNum(_consumeNum int64) error {
 	r._consumeNum = _consumeNum
@@ -85,12 +85,12 @@ func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetConsumeNum(_consumeNum int
 	return nil
 }
 
-// Get ConsumeNum Getter
+// GetConsumeNum ConsumeNum Getter
 func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetConsumeNum() int64 {
 	return r._consumeNum
 }
 
-// Set is IsvMaList Setter
+// SetIsvMaList is IsvMaList Setter
 // 核销后换码的码列表
 func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetIsvMaList(_isvMaList []IsvMa) error {
 	r._isvMaList = _isvMaList
@@ -98,12 +98,12 @@ func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetIsvMaList(_isvMaList []Isv
 	return nil
 }
 
-// Get IsvMaList Getter
+// GetIsvMaList IsvMaList Getter
 func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetIsvMaList() []IsvMa {
 	return r._isvMaList
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 业务id（订单号）
 func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -111,12 +111,12 @@ func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetOuterId(_outerId string) e
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is PosId Setter
+// SetPosId is PosId Setter
 // 机具编号
 func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetPosId(_posId string) error {
 	r._posId = _posId
@@ -124,12 +124,12 @@ func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetPosId(_posId string) error
 	return nil
 }
 
-// Get PosId Getter
+// GetPosId PosId Getter
 func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetPosId() string {
 	return r._posId
 }
 
-// Set is SerialNum Setter
+// SetSerialNum is SerialNum Setter
 // 核销序列号，需要保证唯一
 func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetSerialNum(_serialNum string) error {
 	r._serialNum = _serialNum
@@ -137,12 +137,12 @@ func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetSerialNum(_serialNum strin
 	return nil
 }
 
-// Get SerialNum Getter
+// GetSerialNum SerialNum Getter
 func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetSerialNum() string {
 	return r._serialNum
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 需要跟发码通知获取到的参数一致
 func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -150,7 +150,7 @@ func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetToken(_token string) error
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetToken() string {
 	return r._token
 }

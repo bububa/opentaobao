@@ -41,7 +41,7 @@ func (r TaobaoMiniappDistributionItemsBindAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is TargetEntityList Setter
+// SetTargetEntityList is TargetEntityList Setter
 // 商品id列表
 func (r *TaobaoMiniappDistributionItemsBindAPIRequest) SetTargetEntityList(_targetEntityList []string) error {
 	r._targetEntityList = _targetEntityList
@@ -49,12 +49,12 @@ func (r *TaobaoMiniappDistributionItemsBindAPIRequest) SetTargetEntityList(_targ
 	return nil
 }
 
-// Get TargetEntityList Getter
+// GetTargetEntityList TargetEntityList Getter
 func (r TaobaoMiniappDistributionItemsBindAPIRequest) GetTargetEntityList() []string {
 	return r._targetEntityList
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 投放的商家应用完整链接
 func (r *TaobaoMiniappDistributionItemsBindAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -62,12 +62,12 @@ func (r *TaobaoMiniappDistributionItemsBindAPIRequest) SetUrl(_url string) error
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r TaobaoMiniappDistributionItemsBindAPIRequest) GetUrl() string {
 	return r._url
 }
 
-// Set is AddBind Setter
+// SetAddBind is AddBind Setter
 // true表示新增绑定，false表示解绑
 func (r *TaobaoMiniappDistributionItemsBindAPIRequest) SetAddBind(_addBind bool) error {
 	r._addBind = _addBind
@@ -75,7 +75,7 @@ func (r *TaobaoMiniappDistributionItemsBindAPIRequest) SetAddBind(_addBind bool)
 	return nil
 }
 
-// Get AddBind Getter
+// GetAddBind AddBind Getter
 func (r TaobaoMiniappDistributionItemsBindAPIRequest) GetAddBind() bool {
 	return r._addBind
 }

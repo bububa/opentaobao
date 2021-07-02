@@ -39,7 +39,7 @@ func (r AlibabaDamaiTickletQrcodeDecodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductSystemId Setter
+// SetProductSystemId is ProductSystemId Setter
 // 生产系统
 func (r *AlibabaDamaiTickletQrcodeDecodeAPIRequest) SetProductSystemId(_productSystemId string) error {
 	r._productSystemId = _productSystemId
@@ -47,12 +47,12 @@ func (r *AlibabaDamaiTickletQrcodeDecodeAPIRequest) SetProductSystemId(_productS
 	return nil
 }
 
-// Get ProductSystemId Getter
+// GetProductSystemId ProductSystemId Getter
 func (r AlibabaDamaiTickletQrcodeDecodeAPIRequest) GetProductSystemId() string {
 	return r._productSystemId
 }
 
-// Set is EncryptedQrCode Setter
+// SetEncryptedQrCode is EncryptedQrCode Setter
 // 加密二维码
 func (r *AlibabaDamaiTickletQrcodeDecodeAPIRequest) SetEncryptedQrCode(_encryptedQrCode string) error {
 	r._encryptedQrCode = _encryptedQrCode
@@ -60,7 +60,7 @@ func (r *AlibabaDamaiTickletQrcodeDecodeAPIRequest) SetEncryptedQrCode(_encrypte
 	return nil
 }
 
-// Get EncryptedQrCode Getter
+// GetEncryptedQrCode EncryptedQrCode Getter
 func (r AlibabaDamaiTickletQrcodeDecodeAPIRequest) GetEncryptedQrCode() string {
 	return r._encryptedQrCode
 }

@@ -39,7 +39,7 @@ func (r AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is AppCode Setter
+// SetAppCode is AppCode Setter
 // 用户身份认证
 func (r *AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest) SetAppCode(_appCode string) error {
 	r._appCode = _appCode
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest) SetAppCode(_a
 	return nil
 }
 
-// Get AppCode Getter
+// GetAppCode AppCode Getter
 func (r AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest) GetAppCode() string {
 	return r._appCode
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 码
 func (r *AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest) SetCode(_code
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaAlihealthTracecodesellerBillRootcodeGetAPIRequest) GetCode() string {
 	return r._code
 }

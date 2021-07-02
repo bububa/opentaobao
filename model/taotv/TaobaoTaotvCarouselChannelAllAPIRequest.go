@@ -37,7 +37,7 @@ func (r TaobaoTaotvCarouselChannelAllAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SystemInfo Setter
+// SetSystemInfo is SystemInfo Setter
 // 系统信息
 func (r *TaobaoTaotvCarouselChannelAllAPIRequest) SetSystemInfo(_systemInfo string) error {
 	r._systemInfo = _systemInfo
@@ -45,7 +45,7 @@ func (r *TaobaoTaotvCarouselChannelAllAPIRequest) SetSystemInfo(_systemInfo stri
 	return nil
 }
 
-// Get SystemInfo Getter
+// GetSystemInfo SystemInfo Getter
 func (r TaobaoTaotvCarouselChannelAllAPIRequest) GetSystemInfo() string {
 	return r._systemInfo
 }

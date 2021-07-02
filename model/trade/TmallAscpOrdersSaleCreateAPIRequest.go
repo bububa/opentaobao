@@ -37,7 +37,7 @@ func (r TmallAscpOrdersSaleCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChannelOrderRequest Setter
+// SetChannelOrderRequest is ChannelOrderRequest Setter
 // 请求对象
 func (r *TmallAscpOrdersSaleCreateAPIRequest) SetChannelOrderRequest(_channelOrderRequest *CreateChannelOrderRequest) error {
 	r._channelOrderRequest = _channelOrderRequest
@@ -45,7 +45,7 @@ func (r *TmallAscpOrdersSaleCreateAPIRequest) SetChannelOrderRequest(_channelOrd
 	return nil
 }
 
-// Get ChannelOrderRequest Getter
+// GetChannelOrderRequest ChannelOrderRequest Getter
 func (r TmallAscpOrdersSaleCreateAPIRequest) GetChannelOrderRequest() *CreateChannelOrderRequest {
 	return r._channelOrderRequest
 }

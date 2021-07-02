@@ -47,7 +47,7 @@ func (r TaobaoDegoperationDoLuckydrawAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DegAppKey Setter
+// SetDegAppKey is DegAppKey Setter
 // 后台活动配置appkey
 func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetDegAppKey(_degAppKey string) error {
 	r._degAppKey = _degAppKey
@@ -55,12 +55,12 @@ func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetDegAppKey(_degAppKey string
 	return nil
 }
 
-// Get DegAppKey Getter
+// GetDegAppKey DegAppKey Getter
 func (r TaobaoDegoperationDoLuckydrawAPIRequest) GetDegAppKey() string {
 	return r._degAppKey
 }
 
-// Set is DegEventKey Setter
+// SetDegEventKey is DegEventKey Setter
 // 后台活动配置eventkey
 func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetDegEventKey(_degEventKey string) error {
 	r._degEventKey = _degEventKey
@@ -68,12 +68,12 @@ func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetDegEventKey(_degEventKey st
 	return nil
 }
 
-// Get DegEventKey Getter
+// GetDegEventKey DegEventKey Getter
 func (r TaobaoDegoperationDoLuckydrawAPIRequest) GetDegEventKey() string {
 	return r._degEventKey
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 前端标识
 func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -81,12 +81,12 @@ func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetSource(_source string) erro
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r TaobaoDegoperationDoLuckydrawAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 设备uuid
 func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -94,12 +94,12 @@ func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetUuid(_uuid string) error {
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r TaobaoDegoperationDoLuckydrawAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is ParamSign Setter
+// SetParamSign is ParamSign Setter
 // 参数校验
 func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetParamSign(_paramSign string) error {
 	r._paramSign = _paramSign
@@ -107,12 +107,12 @@ func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetParamSign(_paramSign string
 	return nil
 }
 
-// Get ParamSign Getter
+// GetParamSign ParamSign Getter
 func (r TaobaoDegoperationDoLuckydrawAPIRequest) GetParamSign() string {
 	return r._paramSign
 }
 
-// Set is DegAccessToken Setter
+// SetDegAccessToken is DegAccessToken Setter
 // 传参信息
 func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetDegAccessToken(_degAccessToken string) error {
 	r._degAccessToken = _degAccessToken
@@ -120,7 +120,7 @@ func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetDegAccessToken(_degAccessTo
 	return nil
 }
 
-// Get DegAccessToken Getter
+// GetDegAccessToken DegAccessToken Getter
 func (r TaobaoDegoperationDoLuckydrawAPIRequest) GetDegAccessToken() string {
 	return r._degAccessToken
 }

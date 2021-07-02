@@ -39,7 +39,7 @@ func (r AlibabaNazcaTokenFilesecretGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PlatformUserId Setter
+// SetPlatformUserId is PlatformUserId Setter
 // 客户在1688的唯一标识
 func (r *AlibabaNazcaTokenFilesecretGetAPIRequest) SetPlatformUserId(_platformUserId string) error {
 	r._platformUserId = _platformUserId
@@ -47,12 +47,12 @@ func (r *AlibabaNazcaTokenFilesecretGetAPIRequest) SetPlatformUserId(_platformUs
 	return nil
 }
 
-// Get PlatformUserId Getter
+// GetPlatformUserId PlatformUserId Getter
 func (r AlibabaNazcaTokenFilesecretGetAPIRequest) GetPlatformUserId() string {
 	return r._platformUserId
 }
 
-// Set is ContractNum Setter
+// SetContractNum is ContractNum Setter
 // 合同编号
 func (r *AlibabaNazcaTokenFilesecretGetAPIRequest) SetContractNum(_contractNum string) error {
 	r._contractNum = _contractNum
@@ -60,7 +60,7 @@ func (r *AlibabaNazcaTokenFilesecretGetAPIRequest) SetContractNum(_contractNum s
 	return nil
 }
 
-// Get ContractNum Getter
+// GetContractNum ContractNum Getter
 func (r AlibabaNazcaTokenFilesecretGetAPIRequest) GetContractNum() string {
 	return r._contractNum
 }

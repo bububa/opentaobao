@@ -43,7 +43,7 @@ func (r AliyunViapiOcrCharacterAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ImageUrl Setter
+// SetImageUrl is ImageUrl Setter
 // 待检测图片链接
 func (r *AliyunViapiOcrCharacterAPIRequest) SetImageUrl(_imageUrl string) error {
 	r._imageUrl = _imageUrl
@@ -51,12 +51,12 @@ func (r *AliyunViapiOcrCharacterAPIRequest) SetImageUrl(_imageUrl string) error 
 	return nil
 }
 
-// Get ImageUrl Getter
+// GetImageUrl ImageUrl Getter
 func (r AliyunViapiOcrCharacterAPIRequest) GetImageUrl() string {
 	return r._imageUrl
 }
 
-// Set is ImageType Setter
+// SetImageType is ImageType Setter
 // 图片类型, ,取范围[0:ImageURL, 1:ImageContent]
 func (r *AliyunViapiOcrCharacterAPIRequest) SetImageType(_imageType int64) error {
 	r._imageType = _imageType
@@ -64,12 +64,12 @@ func (r *AliyunViapiOcrCharacterAPIRequest) SetImageType(_imageType int64) error
 	return nil
 }
 
-// Get ImageType Getter
+// GetImageType ImageType Getter
 func (r AliyunViapiOcrCharacterAPIRequest) GetImageType() int64 {
 	return r._imageType
 }
 
-// Set is MinHeight Setter
+// SetMinHeight is MinHeight Setter
 // 图片中文字的最小高度，单位像素
 func (r *AliyunViapiOcrCharacterAPIRequest) SetMinHeight(_minHeight int64) error {
 	r._minHeight = _minHeight
@@ -77,12 +77,12 @@ func (r *AliyunViapiOcrCharacterAPIRequest) SetMinHeight(_minHeight int64) error
 	return nil
 }
 
-// Get MinHeight Getter
+// GetMinHeight MinHeight Getter
 func (r AliyunViapiOcrCharacterAPIRequest) GetMinHeight() int64 {
 	return r._minHeight
 }
 
-// Set is OutputProbability Setter
+// SetOutputProbability is OutputProbability Setter
 // 是否输出文字框的概率,取值范围[true:是, false:否]
 func (r *AliyunViapiOcrCharacterAPIRequest) SetOutputProbability(_outputProbability bool) error {
 	r._outputProbability = _outputProbability
@@ -90,7 +90,7 @@ func (r *AliyunViapiOcrCharacterAPIRequest) SetOutputProbability(_outputProbabil
 	return nil
 }
 
-// Get OutputProbability Getter
+// GetOutputProbability OutputProbability Getter
 func (r AliyunViapiOcrCharacterAPIRequest) GetOutputProbability() bool {
 	return r._outputProbability
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlihealthMedicalDoctorPublishAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is OuterDoctorPublishRequest Setter
+// SetOuterDoctorPublishRequest is OuterDoctorPublishRequest Setter
 // 三方机构医生上传request
 func (r *AlibabaAlihealthMedicalDoctorPublishAPIRequest) SetOuterDoctorPublishRequest(_outerDoctorPublishRequest *OuterDoctorPublishRequest) error {
 	r._outerDoctorPublishRequest = _outerDoctorPublishRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthMedicalDoctorPublishAPIRequest) SetOuterDoctorPublishRe
 	return nil
 }
 
-// Get OuterDoctorPublishRequest Getter
+// GetOuterDoctorPublishRequest OuterDoctorPublishRequest Getter
 func (r AlibabaAlihealthMedicalDoctorPublishAPIRequest) GetOuterDoctorPublishRequest() *OuterDoctorPublishRequest {
 	return r._outerDoctorPublishRequest
 }

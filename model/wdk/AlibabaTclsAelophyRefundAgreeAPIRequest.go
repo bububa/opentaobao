@@ -45,7 +45,7 @@ func (r AlibabaTclsAelophyRefundAgreeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *AlibabaTclsAelophyRefundAgreeAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -53,12 +53,12 @@ func (r *AlibabaTclsAelophyRefundAgreeAPIRequest) SetStoreId(_storeId string) er
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaTclsAelophyRefundAgreeAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is OutOrderId Setter
+// SetOutOrderId is OutOrderId Setter
 // 外部订单ID
 func (r *AlibabaTclsAelophyRefundAgreeAPIRequest) SetOutOrderId(_outOrderId string) error {
 	r._outOrderId = _outOrderId
@@ -66,12 +66,12 @@ func (r *AlibabaTclsAelophyRefundAgreeAPIRequest) SetOutOrderId(_outOrderId stri
 	return nil
 }
 
-// Get OutOrderId Getter
+// GetOutOrderId OutOrderId Getter
 func (r AlibabaTclsAelophyRefundAgreeAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款单ID
 func (r *AlibabaTclsAelophyRefundAgreeAPIRequest) SetRefundId(_refundId string) error {
 	r._refundId = _refundId
@@ -79,12 +79,12 @@ func (r *AlibabaTclsAelophyRefundAgreeAPIRequest) SetRefundId(_refundId string) 
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r AlibabaTclsAelophyRefundAgreeAPIRequest) GetRefundId() string {
 	return r._refundId
 }
 
-// Set is AuditMemo Setter
+// SetAuditMemo is AuditMemo Setter
 // 审核说明
 func (r *AlibabaTclsAelophyRefundAgreeAPIRequest) SetAuditMemo(_auditMemo string) error {
 	r._auditMemo = _auditMemo
@@ -92,12 +92,12 @@ func (r *AlibabaTclsAelophyRefundAgreeAPIRequest) SetAuditMemo(_auditMemo string
 	return nil
 }
 
-// Get AuditMemo Getter
+// GetAuditMemo AuditMemo Getter
 func (r AlibabaTclsAelophyRefundAgreeAPIRequest) GetAuditMemo() string {
 	return r._auditMemo
 }
 
-// Set is SubRefundList Setter
+// SetSubRefundList is SubRefundList Setter
 // 外部子订单列表
 func (r *AlibabaTclsAelophyRefundAgreeAPIRequest) SetSubRefundList(_subRefundList []Subrefundlist) error {
 	r._subRefundList = _subRefundList
@@ -105,7 +105,7 @@ func (r *AlibabaTclsAelophyRefundAgreeAPIRequest) SetSubRefundList(_subRefundLis
 	return nil
 }
 
-// Get SubRefundList Getter
+// GetSubRefundList SubRefundList Getter
 func (r AlibabaTclsAelophyRefundAgreeAPIRequest) GetSubRefundList() []Subrefundlist {
 	return r._subRefundList
 }

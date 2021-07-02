@@ -43,7 +43,7 @@ func (r TmallExchangeReturngoodsRefuseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LeaveMessagePics Setter
+// SetLeaveMessagePics is LeaveMessagePics Setter
 // 凭证图片
 func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetLeaveMessagePics(_leaveMessagePics *model.File) error {
 	r._leaveMessagePics = _leaveMessagePics
@@ -51,12 +51,12 @@ func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetLeaveMessagePics(_leaveMes
 	return nil
 }
 
-// Get LeaveMessagePics Getter
+// GetLeaveMessagePics LeaveMessagePics Getter
 func (r TmallExchangeReturngoodsRefuseAPIRequest) GetLeaveMessagePics() *model.File {
 	return r._leaveMessagePics
 }
 
-// Set is LeaveMessage Setter
+// SetLeaveMessage is LeaveMessage Setter
 // 留言说明
 func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetLeaveMessage(_leaveMessage string) error {
 	r._leaveMessage = _leaveMessage
@@ -64,12 +64,12 @@ func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetLeaveMessage(_leaveMessage
 	return nil
 }
 
-// Get LeaveMessage Getter
+// GetLeaveMessage LeaveMessage Getter
 func (r TmallExchangeReturngoodsRefuseAPIRequest) GetLeaveMessage() string {
 	return r._leaveMessage
 }
 
-// Set is DisputeId Setter
+// SetDisputeId is DisputeId Setter
 // 换货单号ID
 func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetDisputeId(_disputeId int64) error {
 	r._disputeId = _disputeId
@@ -77,12 +77,12 @@ func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetDisputeId(_disputeId int64
 	return nil
 }
 
-// Get DisputeId Getter
+// GetDisputeId DisputeId Getter
 func (r TmallExchangeReturngoodsRefuseAPIRequest) GetDisputeId() int64 {
 	return r._disputeId
 }
 
-// Set is SellerRefuseReasonId Setter
+// SetSellerRefuseReasonId is SellerRefuseReasonId Setter
 // 拒绝原因ID
 func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetSellerRefuseReasonId(_sellerRefuseReasonId int64) error {
 	r._sellerRefuseReasonId = _sellerRefuseReasonId
@@ -90,7 +90,7 @@ func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetSellerRefuseReasonId(_sell
 	return nil
 }
 
-// Get SellerRefuseReasonId Getter
+// GetSellerRefuseReasonId SellerRefuseReasonId Getter
 func (r TmallExchangeReturngoodsRefuseAPIRequest) GetSellerRefuseReasonId() int64 {
 	return r._sellerRefuseReasonId
 }

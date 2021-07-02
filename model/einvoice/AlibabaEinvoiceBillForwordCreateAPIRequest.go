@@ -65,7 +65,7 @@ func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InvoiceItems Setter
+// SetInvoiceItems is InvoiceItems Setter
 // 发票商品明细
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetInvoiceItems(_invoiceItems []BillItemDo) error {
 	r._invoiceItems = _invoiceItems
@@ -73,12 +73,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetInvoiceItems(_invoiceIte
 	return nil
 }
 
-// Get InvoiceItems Getter
+// GetInvoiceItems InvoiceItems Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetInvoiceItems() []BillItemDo {
 	return r._invoiceItems
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 结算单订单ID
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -86,12 +86,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetOrderId(_orderId string)
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 收款方税号
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -99,12 +99,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayeeRegisterNo(_payeeRe
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is Platform Setter
+// SetPlatform is Platform Setter
 // 调用平台，用以区分不同的订单ID，不填默认为default
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPlatform(_platform string) error {
 	r._platform = _platform
@@ -112,12 +112,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPlatform(_platform strin
 	return nil
 }
 
-// Get Platform Getter
+// GetPlatform Platform Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPlatform() string {
 	return r._platform
 }
 
-// Set is SeriNo Setter
+// SetSeriNo is SeriNo Setter
 // 开票流水号，若不填则系统默认生成
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetSeriNo(_seriNo string) error {
 	r._seriNo = _seriNo
@@ -125,12 +125,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetSeriNo(_seriNo string) e
 	return nil
 }
 
-// Get SeriNo Getter
+// GetSeriNo SeriNo Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetSeriNo() string {
 	return r._seriNo
 }
 
-// Set is ShopName Setter
+// SetShopName is ShopName Setter
 // 店铺名称
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetShopName(_shopName string) error {
 	r._shopName = _shopName
@@ -138,12 +138,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetShopName(_shopName strin
 	return nil
 }
 
-// Get ShopName Getter
+// GetShopName ShopName Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetShopName() string {
 	return r._shopName
 }
 
-// Set is SumPrice Setter
+// SetSumPrice is SumPrice Setter
 // 开票金额，和明细累计总金额需相同
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetSumPrice(_sumPrice string) error {
 	r._sumPrice = _sumPrice
@@ -151,12 +151,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetSumPrice(_sumPrice strin
 	return nil
 }
 
-// Get SumPrice Getter
+// GetSumPrice SumPrice Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetSumPrice() string {
 	return r._sumPrice
 }
 
-// Set is PayerAddress Setter
+// SetPayerAddress is PayerAddress Setter
 // 付款方地址
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerAddress(_payerAddress string) error {
 	r._payerAddress = _payerAddress
@@ -164,12 +164,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerAddress(_payerAddre
 	return nil
 }
 
-// Get PayerAddress Getter
+// GetPayerAddress PayerAddress Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayerAddress() string {
 	return r._payerAddress
 }
 
-// Set is PayerBankaccount Setter
+// SetPayerBankaccount is PayerBankaccount Setter
 // 付款方银行账户
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerBankaccount(_payerBankaccount string) error {
 	r._payerBankaccount = _payerBankaccount
@@ -177,12 +177,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerBankaccount(_payerB
 	return nil
 }
 
-// Get PayerBankaccount Getter
+// GetPayerBankaccount PayerBankaccount Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayerBankaccount() string {
 	return r._payerBankaccount
 }
 
-// Set is PayerEmail Setter
+// SetPayerEmail is PayerEmail Setter
 // 付款方开票邮件通知邮箱
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerEmail(_payerEmail string) error {
 	r._payerEmail = _payerEmail
@@ -190,12 +190,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerEmail(_payerEmail s
 	return nil
 }
 
-// Get PayerEmail Getter
+// GetPayerEmail PayerEmail Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayerEmail() string {
 	return r._payerEmail
 }
 
-// Set is PayerName Setter
+// SetPayerName is PayerName Setter
 // 付款方发票抬头
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerName(_payerName string) error {
 	r._payerName = _payerName
@@ -203,12 +203,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerName(_payerName str
 	return nil
 }
 
-// Get PayerName Getter
+// GetPayerName PayerName Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayerName() string {
 	return r._payerName
 }
 
-// Set is PayerPhone Setter
+// SetPayerPhone is PayerPhone Setter
 // 企业电话
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerPhone(_payerPhone string) error {
 	r._payerPhone = _payerPhone
@@ -216,12 +216,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerPhone(_payerPhone s
 	return nil
 }
 
-// Get PayerPhone Getter
+// GetPayerPhone PayerPhone Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayerPhone() string {
 	return r._payerPhone
 }
 
-// Set is PayerRegisterNo Setter
+// SetPayerRegisterNo is PayerRegisterNo Setter
 // 付款方税号
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerRegisterNo(_payerRegisterNo string) error {
 	r._payerRegisterNo = _payerRegisterNo
@@ -229,12 +229,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPayerRegisterNo(_payerRe
 	return nil
 }
 
-// Get PayerRegisterNo Getter
+// GetPayerRegisterNo PayerRegisterNo Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPayerRegisterNo() string {
 	return r._payerRegisterNo
 }
 
-// Set is PhoneNumber Setter
+// SetPhoneNumber is PhoneNumber Setter
 // 个人电话，接收发票通知
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPhoneNumber(_phoneNumber string) error {
 	r._phoneNumber = _phoneNumber
@@ -242,12 +242,12 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetPhoneNumber(_phoneNumber
 	return nil
 }
 
-// Get PhoneNumber Getter
+// GetPhoneNumber PhoneNumber Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetPhoneNumber() string {
 	return r._phoneNumber
 }
 
-// Set is BusinessType Setter
+// SetBusinessType is BusinessType Setter
 // 企业或个人抬头发票，0=个人，1=企业。默认=1
 func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetBusinessType(_businessType int64) error {
 	r._businessType = _businessType
@@ -255,7 +255,7 @@ func (r *AlibabaEinvoiceBillForwordCreateAPIRequest) SetBusinessType(_businessTy
 	return nil
 }
 
-// Get BusinessType Getter
+// GetBusinessType BusinessType Getter
 func (r AlibabaEinvoiceBillForwordCreateAPIRequest) GetBusinessType() int64 {
 	return r._businessType
 }

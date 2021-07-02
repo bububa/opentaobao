@@ -39,7 +39,7 @@ func (r TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is DeviceOpenId Setter
+// SetDeviceOpenId is DeviceOpenId Setter
 // 设备openId
 func (r *TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) SetDeviceOpenId(_deviceOpenId string) error {
 	r._deviceOpenId = _deviceOpenId
@@ -47,12 +47,12 @@ func (r *TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) SetDeviceOpenId(_
 	return nil
 }
 
-// Get DeviceOpenId Getter
+// GetDeviceOpenId DeviceOpenId Getter
 func (r TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) GetDeviceOpenId() string {
 	return r._deviceOpenId
 }
 
-// Set is SkillId Setter
+// SetSkillId is SkillId Setter
 // 技能id
 func (r *TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) SetSkillId(_skillId string) error {
 	r._skillId = _skillId
@@ -60,7 +60,7 @@ func (r *TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) SetSkillId(_skill
 	return nil
 }
 
-// Get SkillId Getter
+// GetSkillId SkillId Getter
 func (r TaobaoAilabAicloudTopDeviceDeviceidConvertAPIRequest) GetSkillId() string {
 	return r._skillId
 }

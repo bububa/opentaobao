@@ -39,7 +39,7 @@ func (r AlibabaWdkItemServiceitemQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is HemaCategoryId Setter
+// SetHemaCategoryId is HemaCategoryId Setter
 // 后台类目
 func (r *AlibabaWdkItemServiceitemQueryAPIRequest) SetHemaCategoryId(_hemaCategoryId string) error {
 	r._hemaCategoryId = _hemaCategoryId
@@ -47,12 +47,12 @@ func (r *AlibabaWdkItemServiceitemQueryAPIRequest) SetHemaCategoryId(_hemaCatego
 	return nil
 }
 
-// Get HemaCategoryId Getter
+// GetHemaCategoryId HemaCategoryId Getter
 func (r AlibabaWdkItemServiceitemQueryAPIRequest) GetHemaCategoryId() string {
 	return r._hemaCategoryId
 }
 
-// Set is OrgNo Setter
+// SetOrgNo is OrgNo Setter
 // 机构编码
 func (r *AlibabaWdkItemServiceitemQueryAPIRequest) SetOrgNo(_orgNo string) error {
 	r._orgNo = _orgNo
@@ -60,7 +60,7 @@ func (r *AlibabaWdkItemServiceitemQueryAPIRequest) SetOrgNo(_orgNo string) error
 	return nil
 }
 
-// Get OrgNo Getter
+// GetOrgNo OrgNo Getter
 func (r AlibabaWdkItemServiceitemQueryAPIRequest) GetOrgNo() string {
 	return r._orgNo
 }

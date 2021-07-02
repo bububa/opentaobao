@@ -37,7 +37,7 @@ func (r AlibabaAliqinAxbVendorSmsInterceptAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is SmsInterceptRequest Setter
+// SetSmsInterceptRequest is SmsInterceptRequest Setter
 // 短信托收结构体
 func (r *AlibabaAliqinAxbVendorSmsInterceptAPIRequest) SetSmsInterceptRequest(_smsInterceptRequest *SmsInterceptRequest) error {
 	r._smsInterceptRequest = _smsInterceptRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAliqinAxbVendorSmsInterceptAPIRequest) SetSmsInterceptRequest(_s
 	return nil
 }
 
-// Get SmsInterceptRequest Getter
+// GetSmsInterceptRequest SmsInterceptRequest Getter
 func (r AlibabaAliqinAxbVendorSmsInterceptAPIRequest) GetSmsInterceptRequest() *SmsInterceptRequest {
 	return r._smsInterceptRequest
 }

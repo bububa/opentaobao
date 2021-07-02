@@ -37,7 +37,7 @@ func (r TaobaoBanamadpcItemRenderAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 类目ID
 func (r *TaobaoBanamadpcItemRenderAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -45,7 +45,7 @@ func (r *TaobaoBanamadpcItemRenderAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r TaobaoBanamadpcItemRenderAPIRequest) GetCatId() int64 {
 	return r._catId
 }

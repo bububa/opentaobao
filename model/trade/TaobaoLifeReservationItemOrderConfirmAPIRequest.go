@@ -41,7 +41,7 @@ func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is TradeNo Setter
+// SetTradeNo is TradeNo Setter
 // 淘宝主单号
 func (r *TaobaoLifeReservationItemOrderConfirmAPIRequest) SetTradeNo(_tradeNo string) error {
 	r._tradeNo = _tradeNo
@@ -49,12 +49,12 @@ func (r *TaobaoLifeReservationItemOrderConfirmAPIRequest) SetTradeNo(_tradeNo st
 	return nil
 }
 
-// Get TradeNo Getter
+// GetTradeNo TradeNo Getter
 func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetTradeNo() string {
 	return r._tradeNo
 }
 
-// Set is TicketId Setter
+// SetTicketId is TicketId Setter
 // 凭证ID
 func (r *TaobaoLifeReservationItemOrderConfirmAPIRequest) SetTicketId(_ticketId string) error {
 	r._ticketId = _ticketId
@@ -62,12 +62,12 @@ func (r *TaobaoLifeReservationItemOrderConfirmAPIRequest) SetTicketId(_ticketId 
 	return nil
 }
 
-// Get TicketId Getter
+// GetTicketId TicketId Getter
 func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetTicketId() string {
 	return r._ticketId
 }
 
-// Set is OptType Setter
+// SetOptType is OptType Setter
 // 审核类型，PASS-通过；REJECT-驳回
 func (r *TaobaoLifeReservationItemOrderConfirmAPIRequest) SetOptType(_optType string) error {
 	r._optType = _optType
@@ -75,7 +75,7 @@ func (r *TaobaoLifeReservationItemOrderConfirmAPIRequest) SetOptType(_optType st
 	return nil
 }
 
-// Get OptType Getter
+// GetOptType OptType Getter
 func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetOptType() string {
 	return r._optType
 }

@@ -39,7 +39,7 @@ func (r AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 设备编码
 func (r *AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -47,12 +47,12 @@ func (r *AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) SetDeviceCode(_dev
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is SpeakerConfigParam4SyncAudioAdvert Setter
+// SetSpeakerConfigParam4SyncAudioAdvert is SpeakerConfigParam4SyncAudioAdvert Setter
 // 音频参数
 func (r *AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) SetSpeakerConfigParam4SyncAudioAdvert(_speakerConfigParam4SyncAudioAdvert *SpeakerConfigParam4SyncAudioAdvert) error {
 	r._speakerConfigParam4SyncAudioAdvert = _speakerConfigParam4SyncAudioAdvert
@@ -60,7 +60,7 @@ func (r *AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) SetSpeakerConfigPa
 	return nil
 }
 
-// Get SpeakerConfigParam4SyncAudioAdvert Getter
+// GetSpeakerConfigParam4SyncAudioAdvert SpeakerConfigParam4SyncAudioAdvert Getter
 func (r AlibabaLstSpeakerConfigureSyncaudioadvertAPIRequest) GetSpeakerConfigParam4SyncAudioAdvert() *SpeakerConfigParam4SyncAudioAdvert {
 	return r._speakerConfigParam4SyncAudioAdvert
 }

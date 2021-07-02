@@ -37,7 +37,7 @@ func (r AlibabaInteractOpenIsattentionAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 1
 func (r *AlibabaInteractOpenIsattentionAPIRequest) SetParam0(_param0 int64) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlibabaInteractOpenIsattentionAPIRequest) SetParam0(_param0 int64) erro
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaInteractOpenIsattentionAPIRequest) GetParam0() int64 {
 	return r._param0
 }

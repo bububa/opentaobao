@@ -41,7 +41,7 @@ func (r AlibabaBaichuanAsoQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 1-tmail,2-taobao
 func (r *AlibabaBaichuanAsoQueryAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
@@ -49,12 +49,12 @@ func (r *AlibabaBaichuanAsoQueryAPIRequest) SetAppId(_appId string) error {
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r AlibabaBaichuanAsoQueryAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// Set is AppOs Setter
+// SetAppOs is AppOs Setter
 // 1-android,2-ios
 func (r *AlibabaBaichuanAsoQueryAPIRequest) SetAppOs(_appOs int64) error {
 	r._appOs = _appOs
@@ -62,12 +62,12 @@ func (r *AlibabaBaichuanAsoQueryAPIRequest) SetAppOs(_appOs int64) error {
 	return nil
 }
 
-// Get AppOs Getter
+// GetAppOs AppOs Getter
 func (r AlibabaBaichuanAsoQueryAPIRequest) GetAppOs() int64 {
 	return r._appOs
 }
 
-// Set is DeviceInfoList Setter
+// SetDeviceInfoList is DeviceInfoList Setter
 // 设备信息，ios为idfa ，android 为imei + imsi
 func (r *AlibabaBaichuanAsoQueryAPIRequest) SetDeviceInfoList(_deviceInfoList []AsoDeviceInfoDo) error {
 	r._deviceInfoList = _deviceInfoList
@@ -75,7 +75,7 @@ func (r *AlibabaBaichuanAsoQueryAPIRequest) SetDeviceInfoList(_deviceInfoList []
 	return nil
 }
 
-// Get DeviceInfoList Getter
+// GetDeviceInfoList DeviceInfoList Getter
 func (r AlibabaBaichuanAsoQueryAPIRequest) GetDeviceInfoList() []AsoDeviceInfoDo {
 	return r._deviceInfoList
 }

@@ -41,7 +41,7 @@ func (r AlibabaAlihealthDrugKytDrAssociateequiAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业refentid
 func (r *AlibabaAlihealthDrugKytDrAssociateequiAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthDrugKytDrAssociateequiAPIRequest) SetRefEntId(_refEntId
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytDrAssociateequiAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is BillCodes Setter
+// SetBillCodes is BillCodes Setter
 // 单据编号，多个用逗号分隔
 func (r *AlibabaAlihealthDrugKytDrAssociateequiAPIRequest) SetBillCodes(_billCodes string) error {
 	r._billCodes = _billCodes
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthDrugKytDrAssociateequiAPIRequest) SetBillCodes(_billCod
 	return nil
 }
 
-// Get BillCodes Getter
+// GetBillCodes BillCodes Getter
 func (r AlibabaAlihealthDrugKytDrAssociateequiAPIRequest) GetBillCodes() string {
 	return r._billCodes
 }
 
-// Set is VaEquipmentId Setter
+// SetVaEquipmentId is VaEquipmentId Setter
 // 设备ID
 func (r *AlibabaAlihealthDrugKytDrAssociateequiAPIRequest) SetVaEquipmentId(_vaEquipmentId string) error {
 	r._vaEquipmentId = _vaEquipmentId
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthDrugKytDrAssociateequiAPIRequest) SetVaEquipmentId(_vaE
 	return nil
 }
 
-// Get VaEquipmentId Getter
+// GetVaEquipmentId VaEquipmentId Getter
 func (r AlibabaAlihealthDrugKytDrAssociateequiAPIRequest) GetVaEquipmentId() string {
 	return r._vaEquipmentId
 }

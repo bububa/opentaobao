@@ -39,7 +39,7 @@ func (r TaobaoCrmGroupMoveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FromGroupId Setter
+// SetFromGroupId is FromGroupId Setter
 // 需要移动的分组
 func (r *TaobaoCrmGroupMoveAPIRequest) SetFromGroupId(_fromGroupId int64) error {
 	r._fromGroupId = _fromGroupId
@@ -47,12 +47,12 @@ func (r *TaobaoCrmGroupMoveAPIRequest) SetFromGroupId(_fromGroupId int64) error 
 	return nil
 }
 
-// Get FromGroupId Getter
+// GetFromGroupId FromGroupId Getter
 func (r TaobaoCrmGroupMoveAPIRequest) GetFromGroupId() int64 {
 	return r._fromGroupId
 }
 
-// Set is ToGroupId Setter
+// SetToGroupId is ToGroupId Setter
 // 目的分组
 func (r *TaobaoCrmGroupMoveAPIRequest) SetToGroupId(_toGroupId int64) error {
 	r._toGroupId = _toGroupId
@@ -60,7 +60,7 @@ func (r *TaobaoCrmGroupMoveAPIRequest) SetToGroupId(_toGroupId int64) error {
 	return nil
 }
 
-// Get ToGroupId Getter
+// GetToGroupId ToGroupId Getter
 func (r TaobaoCrmGroupMoveAPIRequest) GetToGroupId() int64 {
 	return r._toGroupId
 }

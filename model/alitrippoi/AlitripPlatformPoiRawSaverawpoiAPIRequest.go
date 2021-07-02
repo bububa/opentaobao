@@ -37,7 +37,7 @@ func (r AlitripPlatformPoiRawSaverawpoiAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TripPoiRawSaveParam Setter
+// SetTripPoiRawSaveParam is TripPoiRawSaveParam Setter
 // poi存储参数
 func (r *AlitripPlatformPoiRawSaverawpoiAPIRequest) SetTripPoiRawSaveParam(_tripPoiRawSaveParam *TripPoiRawSaveParamV2) error {
 	r._tripPoiRawSaveParam = _tripPoiRawSaveParam
@@ -45,7 +45,7 @@ func (r *AlitripPlatformPoiRawSaverawpoiAPIRequest) SetTripPoiRawSaveParam(_trip
 	return nil
 }
 
-// Get TripPoiRawSaveParam Getter
+// GetTripPoiRawSaveParam TripPoiRawSaveParam Getter
 func (r AlitripPlatformPoiRawSaverawpoiAPIRequest) GetTripPoiRawSaveParam() *TripPoiRawSaveParamV2 {
 	return r._tripPoiRawSaveParam
 }

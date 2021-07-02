@@ -37,7 +37,7 @@ func (r AlitripBtripOpenplatformAddressGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 入参
 func (r *AlitripBtripOpenplatformAddressGetAPIRequest) SetRq(_rq *OpenApiJumpInfoRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripOpenplatformAddressGetAPIRequest) SetRq(_rq *OpenApiJumpInf
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripOpenplatformAddressGetAPIRequest) GetRq() *OpenApiJumpInfoRq {
 	return r._rq
 }

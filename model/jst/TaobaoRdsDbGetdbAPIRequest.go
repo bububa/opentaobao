@@ -39,7 +39,7 @@ func (r TaobaoRdsDbGetdbAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AccountName Setter
+// SetAccountName is AccountName Setter
 // 账户名
 func (r *TaobaoRdsDbGetdbAPIRequest) SetAccountName(_accountName string) error {
 	r._accountName = _accountName
@@ -47,12 +47,12 @@ func (r *TaobaoRdsDbGetdbAPIRequest) SetAccountName(_accountName string) error {
 	return nil
 }
 
-// Get AccountName Getter
+// GetAccountName AccountName Getter
 func (r TaobaoRdsDbGetdbAPIRequest) GetAccountName() string {
 	return r._accountName
 }
 
-// Set is InstanceName Setter
+// SetInstanceName is InstanceName Setter
 // 实例名
 func (r *TaobaoRdsDbGetdbAPIRequest) SetInstanceName(_instanceName string) error {
 	r._instanceName = _instanceName
@@ -60,7 +60,7 @@ func (r *TaobaoRdsDbGetdbAPIRequest) SetInstanceName(_instanceName string) error
 	return nil
 }
 
-// Get InstanceName Getter
+// GetInstanceName InstanceName Getter
 func (r TaobaoRdsDbGetdbAPIRequest) GetInstanceName() string {
 	return r._instanceName
 }

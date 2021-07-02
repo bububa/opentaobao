@@ -45,7 +45,7 @@ func (r TaobaoAuctionGovDataTopnGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CircleType Setter
+// SetCircleType is CircleType Setter
 // 周期类型  （2：周，3：月，4：年）
 func (r *TaobaoAuctionGovDataTopnGetAPIRequest) SetCircleType(_circleType int64) error {
 	r._circleType = _circleType
@@ -53,12 +53,12 @@ func (r *TaobaoAuctionGovDataTopnGetAPIRequest) SetCircleType(_circleType int64)
 	return nil
 }
 
-// Get CircleType Getter
+// GetCircleType CircleType Getter
 func (r TaobaoAuctionGovDataTopnGetAPIRequest) GetCircleType() int64 {
 	return r._circleType
 }
 
-// Set is Circle Setter
+// SetCircle is Circle Setter
 // 周期区间 周期（周填0、月份 yyyyMM、年份 yyyy)
 func (r *TaobaoAuctionGovDataTopnGetAPIRequest) SetCircle(_circle int64) error {
 	r._circle = _circle
@@ -66,12 +66,12 @@ func (r *TaobaoAuctionGovDataTopnGetAPIRequest) SetCircle(_circle int64) error {
 	return nil
 }
 
-// Get Circle Getter
+// GetCircle Circle Getter
 func (r TaobaoAuctionGovDataTopnGetAPIRequest) GetCircle() int64 {
 	return r._circle
 }
 
-// Set is BusiType Setter
+// SetBusiType is BusiType Setter
 // 业务类型 （1：成交额，2：发拍件数）
 func (r *TaobaoAuctionGovDataTopnGetAPIRequest) SetBusiType(_busiType int64) error {
 	r._busiType = _busiType
@@ -79,12 +79,12 @@ func (r *TaobaoAuctionGovDataTopnGetAPIRequest) SetBusiType(_busiType int64) err
 	return nil
 }
 
-// Get BusiType Getter
+// GetBusiType BusiType Getter
 func (r TaobaoAuctionGovDataTopnGetAPIRequest) GetBusiType() int64 {
 	return r._busiType
 }
 
-// Set is ZoneType Setter
+// SetZoneType is ZoneType Setter
 // 区域类型（1：全国，2：全省）
 func (r *TaobaoAuctionGovDataTopnGetAPIRequest) SetZoneType(_zoneType int64) error {
 	r._zoneType = _zoneType
@@ -92,12 +92,12 @@ func (r *TaobaoAuctionGovDataTopnGetAPIRequest) SetZoneType(_zoneType int64) err
 	return nil
 }
 
-// Get ZoneType Getter
+// GetZoneType ZoneType Getter
 func (r TaobaoAuctionGovDataTopnGetAPIRequest) GetZoneType() int64 {
 	return r._zoneType
 }
 
-// Set is CourtName Setter
+// SetCourtName is CourtName Setter
 // 法院名称
 func (r *TaobaoAuctionGovDataTopnGetAPIRequest) SetCourtName(_courtName string) error {
 	r._courtName = _courtName
@@ -105,7 +105,7 @@ func (r *TaobaoAuctionGovDataTopnGetAPIRequest) SetCourtName(_courtName string) 
 	return nil
 }
 
-// Get CourtName Getter
+// GetCourtName CourtName Getter
 func (r TaobaoAuctionGovDataTopnGetAPIRequest) GetCourtName() string {
 	return r._courtName
 }

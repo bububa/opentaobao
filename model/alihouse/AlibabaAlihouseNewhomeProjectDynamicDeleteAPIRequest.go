@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is OuterDynamicId Setter
+// SetOuterDynamicId is OuterDynamicId Setter
 // 外部动态ID
 func (r *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) SetOuterDynamicId(_outerDynamicId string) error {
 	r._outerDynamicId = _outerDynamicId
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) SetOuterDynamicId
 	return nil
 }
 
-// Get OuterDynamicId Getter
+// GetOuterDynamicId OuterDynamicId Getter
 func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetOuterDynamicId() string {
 	return r._outerDynamicId
 }

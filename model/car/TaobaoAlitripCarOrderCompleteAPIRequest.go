@@ -37,7 +37,7 @@ func (r TaobaoAlitripCarOrderCompleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOrderComplete Setter
+// SetParamOrderComplete is ParamOrderComplete Setter
 // 服务完成API
 func (r *TaobaoAlitripCarOrderCompleteAPIRequest) SetParamOrderComplete(_paramOrderComplete *OrderComplete) error {
 	r._paramOrderComplete = _paramOrderComplete
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripCarOrderCompleteAPIRequest) SetParamOrderComplete(_paramOr
 	return nil
 }
 
-// Get ParamOrderComplete Getter
+// GetParamOrderComplete ParamOrderComplete Getter
 func (r TaobaoAlitripCarOrderCompleteAPIRequest) GetParamOrderComplete() *OrderComplete {
 	return r._paramOrderComplete
 }

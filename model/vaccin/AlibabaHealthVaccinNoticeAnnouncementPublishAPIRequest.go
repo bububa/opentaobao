@@ -49,7 +49,7 @@ func (r AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is PovNo Setter
+// SetPovNo is PovNo Setter
 // 接种点编码（通知方）
 func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetPovNo(_povNo string) error {
 	r._povNo = _povNo
@@ -57,12 +57,12 @@ func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetPovNo(_povNo
 	return nil
 }
 
-// Get PovNo Getter
+// GetPovNo PovNo Getter
 func (r AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) GetPovNo() string {
 	return r._povNo
 }
 
-// Set is NoticeTitle Setter
+// SetNoticeTitle is NoticeTitle Setter
 // 公告标题
 func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetNoticeTitle(_noticeTitle string) error {
 	r._noticeTitle = _noticeTitle
@@ -70,12 +70,12 @@ func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetNoticeTitle(
 	return nil
 }
 
-// Get NoticeTitle Getter
+// GetNoticeTitle NoticeTitle Getter
 func (r AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) GetNoticeTitle() string {
 	return r._noticeTitle
 }
 
-// Set is NoticeContent Setter
+// SetNoticeContent is NoticeContent Setter
 // 公告内容
 func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetNoticeContent(_noticeContent string) error {
 	r._noticeContent = _noticeContent
@@ -83,12 +83,12 @@ func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetNoticeConten
 	return nil
 }
 
-// Get NoticeContent Getter
+// GetNoticeContent NoticeContent Getter
 func (r AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) GetNoticeContent() string {
 	return r._noticeContent
 }
 
-// Set is NoticeType Setter
+// SetNoticeType is NoticeType Setter
 // 0:所有类型人群,1：宝宝、2：成人
 func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetNoticeType(_noticeType string) error {
 	r._noticeType = _noticeType
@@ -96,12 +96,12 @@ func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetNoticeType(_
 	return nil
 }
 
-// Get NoticeType Getter
+// GetNoticeType NoticeType Getter
 func (r AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) GetNoticeType() string {
 	return r._noticeType
 }
 
-// Set is NoticeTime Setter
+// SetNoticeTime is NoticeTime Setter
 // 公告发布时间
 func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetNoticeTime(_noticeTime string) error {
 	r._noticeTime = _noticeTime
@@ -109,12 +109,12 @@ func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetNoticeTime(_
 	return nil
 }
 
-// Get NoticeTime Getter
+// GetNoticeTime NoticeTime Getter
 func (r AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) GetNoticeTime() string {
 	return r._noticeTime
 }
 
-// Set is AlipayUserIds Setter
+// SetAlipayUserIds is AlipayUserIds Setter
 // 需要接受公告的用户ID，默认是所有用户都可以看到
 func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetAlipayUserIds(_alipayUserIds []string) error {
 	r._alipayUserIds = _alipayUserIds
@@ -122,12 +122,12 @@ func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetAlipayUserId
 	return nil
 }
 
-// Get AlipayUserIds Getter
+// GetAlipayUserIds AlipayUserIds Getter
 func (r AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) GetAlipayUserIds() []string {
 	return r._alipayUserIds
 }
 
-// Set is PovName Setter
+// SetPovName is PovName Setter
 // 接种点名称
 func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetPovName(_povName string) error {
 	r._povName = _povName
@@ -135,7 +135,7 @@ func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetPovName(_pov
 	return nil
 }
 
-// Get PovName Getter
+// GetPovName PovName Getter
 func (r AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) GetPovName() string {
 	return r._povName
 }

@@ -37,7 +37,7 @@ func (r YoukuOttIotDevicelistChangeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChangeInfo Setter
+// SetChangeInfo is ChangeInfo Setter
 // 变更信息
 func (r *YoukuOttIotDevicelistChangeAPIRequest) SetChangeInfo(_changeInfo string) error {
 	r._changeInfo = _changeInfo
@@ -45,7 +45,7 @@ func (r *YoukuOttIotDevicelistChangeAPIRequest) SetChangeInfo(_changeInfo string
 	return nil
 }
 
-// Get ChangeInfo Getter
+// GetChangeInfo ChangeInfo Getter
 func (r YoukuOttIotDevicelistChangeAPIRequest) GetChangeInfo() string {
 	return r._changeInfo
 }

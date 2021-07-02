@@ -37,7 +37,7 @@ func (r TmallAliautoAutofinanceCreditReceiveAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is CreditReceiveDto Setter
+// SetCreditReceiveDto is CreditReceiveDto Setter
 // 授信通知描述
 func (r *TmallAliautoAutofinanceCreditReceiveAPIRequest) SetCreditReceiveDto(_creditReceiveDto *CreditReceiveDto) error {
 	r._creditReceiveDto = _creditReceiveDto
@@ -45,7 +45,7 @@ func (r *TmallAliautoAutofinanceCreditReceiveAPIRequest) SetCreditReceiveDto(_cr
 	return nil
 }
 
-// Get CreditReceiveDto Getter
+// GetCreditReceiveDto CreditReceiveDto Getter
 func (r TmallAliautoAutofinanceCreditReceiveAPIRequest) GetCreditReceiveDto() *CreditReceiveDto {
 	return r._creditReceiveDto
 }

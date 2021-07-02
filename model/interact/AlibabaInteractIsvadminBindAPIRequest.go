@@ -45,7 +45,7 @@ func (r AlibabaInteractIsvadminBindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InteractDescription Setter
+// SetInteractDescription is InteractDescription Setter
 // 描述信息
 func (r *AlibabaInteractIsvadminBindAPIRequest) SetInteractDescription(_interactDescription string) error {
 	r._interactDescription = _interactDescription
@@ -53,12 +53,12 @@ func (r *AlibabaInteractIsvadminBindAPIRequest) SetInteractDescription(_interact
 	return nil
 }
 
-// Get InteractDescription Getter
+// GetInteractDescription InteractDescription Getter
 func (r AlibabaInteractIsvadminBindAPIRequest) GetInteractDescription() string {
 	return r._interactDescription
 }
 
-// Set is InstanceName Setter
+// SetInstanceName is InstanceName Setter
 // 互动实例名称
 func (r *AlibabaInteractIsvadminBindAPIRequest) SetInstanceName(_instanceName string) error {
 	r._instanceName = _instanceName
@@ -66,12 +66,12 @@ func (r *AlibabaInteractIsvadminBindAPIRequest) SetInstanceName(_instanceName st
 	return nil
 }
 
-// Get InstanceName Getter
+// GetInstanceName InstanceName Getter
 func (r AlibabaInteractIsvadminBindAPIRequest) GetInstanceName() string {
 	return r._instanceName
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 互动开始时间
 func (r *AlibabaInteractIsvadminBindAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -79,12 +79,12 @@ func (r *AlibabaInteractIsvadminBindAPIRequest) SetStartTime(_startTime string) 
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r AlibabaInteractIsvadminBindAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 互动结束时间
 func (r *AlibabaInteractIsvadminBindAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -92,12 +92,12 @@ func (r *AlibabaInteractIsvadminBindAPIRequest) SetEndTime(_endTime string) erro
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r AlibabaInteractIsvadminBindAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is LotteryCode Setter
+// SetLotteryCode is LotteryCode Setter
 // 奖池ID
 func (r *AlibabaInteractIsvadminBindAPIRequest) SetLotteryCode(_lotteryCode string) error {
 	r._lotteryCode = _lotteryCode
@@ -105,7 +105,7 @@ func (r *AlibabaInteractIsvadminBindAPIRequest) SetLotteryCode(_lotteryCode stri
 	return nil
 }
 
-// Get LotteryCode Getter
+// GetLotteryCode LotteryCode Getter
 func (r AlibabaInteractIsvadminBindAPIRequest) GetLotteryCode() string {
 	return r._lotteryCode
 }

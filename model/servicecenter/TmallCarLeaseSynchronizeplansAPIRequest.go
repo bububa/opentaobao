@@ -39,7 +39,7 @@ func (r TmallCarLeaseSynchronizeplansAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *TmallCarLeaseSynchronizeplansAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -47,12 +47,12 @@ func (r *TmallCarLeaseSynchronizeplansAPIRequest) SetItemId(_itemId int64) error
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallCarLeaseSynchronizeplansAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is Plans Setter
+// SetPlans is Plans Setter
 // 租赁计划
 func (r *TmallCarLeaseSynchronizeplansAPIRequest) SetPlans(_plans []CarLeasePlanDo) error {
 	r._plans = _plans
@@ -60,7 +60,7 @@ func (r *TmallCarLeaseSynchronizeplansAPIRequest) SetPlans(_plans []CarLeasePlan
 	return nil
 }
 
-// Get Plans Getter
+// GetPlans Plans Getter
 func (r TmallCarLeaseSynchronizeplansAPIRequest) GetPlans() []CarLeasePlanDo {
 	return r._plans
 }

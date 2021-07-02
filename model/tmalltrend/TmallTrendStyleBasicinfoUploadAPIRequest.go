@@ -37,7 +37,7 @@ func (r TmallTrendStyleBasicinfoUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StyleBasicInfoBoList Setter
+// SetStyleBasicInfoBoList is StyleBasicInfoBoList Setter
 // 款式基本信息列表，单次同步最多1000条
 func (r *TmallTrendStyleBasicinfoUploadAPIRequest) SetStyleBasicInfoBoList(_styleBasicInfoBoList []StyleBasicInfoBo) error {
 	r._styleBasicInfoBoList = _styleBasicInfoBoList
@@ -45,7 +45,7 @@ func (r *TmallTrendStyleBasicinfoUploadAPIRequest) SetStyleBasicInfoBoList(_styl
 	return nil
 }
 
-// Get StyleBasicInfoBoList Getter
+// GetStyleBasicInfoBoList StyleBasicInfoBoList Getter
 func (r TmallTrendStyleBasicinfoUploadAPIRequest) GetStyleBasicInfoBoList() []StyleBasicInfoBo {
 	return r._styleBasicInfoBoList
 }

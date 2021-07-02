@@ -53,7 +53,7 @@ func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -61,12 +61,12 @@ func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetRefEntId(_refEnt
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 追溯码
 func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -74,12 +74,12 @@ func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetCode(_code strin
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is Longitude Setter
+// SetLongitude is Longitude Setter
 // 经度
 func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetLongitude(_longitude string) error {
 	r._longitude = _longitude
@@ -87,12 +87,12 @@ func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetLongitude(_longi
 	return nil
 }
 
-// Get Longitude Getter
+// GetLongitude Longitude Getter
 func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetLongitude() string {
 	return r._longitude
 }
 
-// Set is Latitude Setter
+// SetLatitude is Latitude Setter
 // 纬度
 func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetLatitude(_latitude string) error {
 	r._latitude = _latitude
@@ -100,12 +100,12 @@ func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetLatitude(_latitu
 	return nil
 }
 
-// Get Latitude Getter
+// GetLatitude Latitude Getter
 func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetLatitude() string {
 	return r._latitude
 }
 
-// Set is QueryProv Setter
+// SetQueryProv is QueryProv Setter
 // 查询地所在省
 func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetQueryProv(_queryProv string) error {
 	r._queryProv = _queryProv
@@ -113,12 +113,12 @@ func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetQueryProv(_query
 	return nil
 }
 
-// Get QueryProv Getter
+// GetQueryProv QueryProv Getter
 func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetQueryProv() string {
 	return r._queryProv
 }
 
-// Set is QueryCity Setter
+// SetQueryCity is QueryCity Setter
 // 查询地所在市
 func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetQueryCity(_queryCity string) error {
 	r._queryCity = _queryCity
@@ -126,12 +126,12 @@ func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetQueryCity(_query
 	return nil
 }
 
-// Get QueryCity Getter
+// GetQueryCity QueryCity Getter
 func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetQueryCity() string {
 	return r._queryCity
 }
 
-// Set is QueryArea Setter
+// SetQueryArea is QueryArea Setter
 // 查询地所在区
 func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetQueryArea(_queryArea string) error {
 	r._queryArea = _queryArea
@@ -139,12 +139,12 @@ func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetQueryArea(_query
 	return nil
 }
 
-// Get QueryArea Getter
+// GetQueryArea QueryArea Getter
 func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetQueryArea() string {
 	return r._queryArea
 }
 
-// Set is QueryRegionCode Setter
+// SetQueryRegionCode is QueryRegionCode Setter
 // 查询地所在区域代码
 func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetQueryRegionCode(_queryRegionCode string) error {
 	r._queryRegionCode = _queryRegionCode
@@ -152,12 +152,12 @@ func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetQueryRegionCode(
 	return nil
 }
 
-// Get QueryRegionCode Getter
+// GetQueryRegionCode QueryRegionCode Getter
 func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetQueryRegionCode() string {
 	return r._queryRegionCode
 }
 
-// Set is Detail Setter
+// SetDetail is Detail Setter
 // 详细地址
 func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetDetail(_detail string) error {
 	r._detail = _detail
@@ -165,7 +165,7 @@ func (r *AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) SetDetail(_detail s
 	return nil
 }
 
-// Get Detail Getter
+// GetDetail Detail Getter
 func (r AlibabaAlihealthDrugCodeKytQuerycodeflowAPIRequest) GetDetail() string {
 	return r._detail
 }

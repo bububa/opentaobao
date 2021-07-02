@@ -37,7 +37,7 @@ func (r AlibabaWdkPosTradeCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CreateRequest Setter
+// SetCreateRequest is CreateRequest Setter
 // 下单请求
 func (r *AlibabaWdkPosTradeCreateAPIRequest) SetCreateRequest(_createRequest *FastBuyPosCreateRequest) error {
 	r._createRequest = _createRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkPosTradeCreateAPIRequest) SetCreateRequest(_createRequest *Fa
 	return nil
 }
 
-// Get CreateRequest Getter
+// GetCreateRequest CreateRequest Getter
 func (r AlibabaWdkPosTradeCreateAPIRequest) GetCreateRequest() *FastBuyPosCreateRequest {
 	return r._createRequest
 }

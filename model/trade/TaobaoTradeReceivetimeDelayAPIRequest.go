@@ -39,7 +39,7 @@ func (r TaobaoTradeReceivetimeDelayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 主订单号
 func (r *TaobaoTradeReceivetimeDelayAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -47,12 +47,12 @@ func (r *TaobaoTradeReceivetimeDelayAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoTradeReceivetimeDelayAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is Days Setter
+// SetDays is Days Setter
 // 延长收货的天数，可选值为：3, 5, 7, 10。
 func (r *TaobaoTradeReceivetimeDelayAPIRequest) SetDays(_days int64) error {
 	r._days = _days
@@ -60,7 +60,7 @@ func (r *TaobaoTradeReceivetimeDelayAPIRequest) SetDays(_days int64) error {
 	return nil
 }
 
-// Get Days Getter
+// GetDays Days Getter
 func (r TaobaoTradeReceivetimeDelayAPIRequest) GetDays() int64 {
 	return r._days
 }

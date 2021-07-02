@@ -39,7 +39,7 @@ func (r AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is ClaimNo Setter
+// SetClaimNo is ClaimNo Setter
 // 理赔单号
 func (r *AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest) SetClaimNo(_claimNo string) error {
 	r._claimNo = _claimNo
@@ -47,12 +47,12 @@ func (r *AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest) SetClaimNo(_claimN
 	return nil
 }
 
-// Get ClaimNo Getter
+// GetClaimNo ClaimNo Getter
 func (r AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest) GetClaimNo() string {
 	return r._claimNo
 }
 
-// Set is GoodsStatus Setter
+// SetGoodsStatus is GoodsStatus Setter
 // 退货货物状态
 func (r *AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest) SetGoodsStatus(_goodsStatus string) error {
 	r._goodsStatus = _goodsStatus
@@ -60,7 +60,7 @@ func (r *AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest) SetGoodsStatus(_go
 	return nil
 }
 
-// Get GoodsStatus Getter
+// GetGoodsStatus GoodsStatus Getter
 func (r AlipayBaoxianClaimReturngoodsstatusUpdateAPIRequest) GetGoodsStatus() string {
 	return r._goodsStatus
 }

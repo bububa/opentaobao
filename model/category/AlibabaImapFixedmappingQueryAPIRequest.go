@@ -47,7 +47,7 @@ func (r AlibabaImapFixedmappingQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Password Setter
+// SetPassword is Password Setter
 // 密码
 func (r *AlibabaImapFixedmappingQueryAPIRequest) SetPassword(_password string) error {
 	r._password = _password
@@ -55,12 +55,12 @@ func (r *AlibabaImapFixedmappingQueryAPIRequest) SetPassword(_password string) e
 	return nil
 }
 
-// Get Password Getter
+// GetPassword Password Getter
 func (r AlibabaImapFixedmappingQueryAPIRequest) GetPassword() string {
 	return r._password
 }
 
-// Set is AppName Setter
+// SetAppName is AppName Setter
 // 账号
 func (r *AlibabaImapFixedmappingQueryAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
@@ -68,12 +68,12 @@ func (r *AlibabaImapFixedmappingQueryAPIRequest) SetAppName(_appName string) err
 	return nil
 }
 
-// Get AppName Getter
+// GetAppName AppName Getter
 func (r AlibabaImapFixedmappingQueryAPIRequest) GetAppName() string {
 	return r._appName
 }
 
-// Set is SrcChannelId Setter
+// SetSrcChannelId is SrcChannelId Setter
 // 源渠道ID
 func (r *AlibabaImapFixedmappingQueryAPIRequest) SetSrcChannelId(_srcChannelId int64) error {
 	r._srcChannelId = _srcChannelId
@@ -81,12 +81,12 @@ func (r *AlibabaImapFixedmappingQueryAPIRequest) SetSrcChannelId(_srcChannelId i
 	return nil
 }
 
-// Get SrcChannelId Getter
+// GetSrcChannelId SrcChannelId Getter
 func (r AlibabaImapFixedmappingQueryAPIRequest) GetSrcChannelId() int64 {
 	return r._srcChannelId
 }
 
-// Set is TargetChannelIdList Setter
+// SetTargetChannelIdList is TargetChannelIdList Setter
 // 目标渠道ID列表
 func (r *AlibabaImapFixedmappingQueryAPIRequest) SetTargetChannelIdList(_targetChannelIdList []int64) error {
 	r._targetChannelIdList = _targetChannelIdList
@@ -94,12 +94,12 @@ func (r *AlibabaImapFixedmappingQueryAPIRequest) SetTargetChannelIdList(_targetC
 	return nil
 }
 
-// Get TargetChannelIdList Getter
+// GetTargetChannelIdList TargetChannelIdList Getter
 func (r AlibabaImapFixedmappingQueryAPIRequest) GetTargetChannelIdList() []int64 {
 	return r._targetChannelIdList
 }
 
-// Set is TargetCategoryId Setter
+// SetTargetCategoryId is TargetCategoryId Setter
 // 目标渠道ID
 func (r *AlibabaImapFixedmappingQueryAPIRequest) SetTargetCategoryId(_targetCategoryId int64) error {
 	r._targetCategoryId = _targetCategoryId
@@ -107,12 +107,12 @@ func (r *AlibabaImapFixedmappingQueryAPIRequest) SetTargetCategoryId(_targetCate
 	return nil
 }
 
-// Get TargetCategoryId Getter
+// GetTargetCategoryId TargetCategoryId Getter
 func (r AlibabaImapFixedmappingQueryAPIRequest) GetTargetCategoryId() int64 {
 	return r._targetCategoryId
 }
 
-// Set is SrcCategoryId Setter
+// SetSrcCategoryId is SrcCategoryId Setter
 // 源类目ID
 func (r *AlibabaImapFixedmappingQueryAPIRequest) SetSrcCategoryId(_srcCategoryId int64) error {
 	r._srcCategoryId = _srcCategoryId
@@ -120,7 +120,7 @@ func (r *AlibabaImapFixedmappingQueryAPIRequest) SetSrcCategoryId(_srcCategoryId
 	return nil
 }
 
-// Get SrcCategoryId Getter
+// GetSrcCategoryId SrcCategoryId Getter
 func (r AlibabaImapFixedmappingQueryAPIRequest) GetSrcCategoryId() int64 {
 	return r._srcCategoryId
 }

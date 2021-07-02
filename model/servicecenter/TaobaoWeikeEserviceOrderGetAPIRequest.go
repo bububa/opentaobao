@@ -49,7 +49,7 @@ func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 订单服务开始日期
 func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -57,12 +57,12 @@ func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetStartDate(_startDate string) 
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is SchedulingState Setter
+// SetSchedulingState is SchedulingState Setter
 // 订单是否可以排班
 func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetSchedulingState(_schedulingState bool) error {
 	r._schedulingState = _schedulingState
@@ -70,12 +70,12 @@ func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetSchedulingState(_schedulingSt
 	return nil
 }
 
-// Get SchedulingState Getter
+// GetSchedulingState SchedulingState Getter
 func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetSchedulingState() bool {
 	return r._schedulingState
 }
 
-// Set is SellerNick Setter
+// SetSellerNick is SellerNick Setter
 // 商家昵称
 func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetSellerNick(_sellerNick string) error {
 	r._sellerNick = _sellerNick
@@ -83,12 +83,12 @@ func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetSellerNick(_sellerNick string
 	return nil
 }
 
-// Get SellerNick Getter
+// GetSellerNick SellerNick Getter
 func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetSellerNick() string {
 	return r._sellerNick
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页记录数（默认20，最大不超过20）
 func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -96,12 +96,12 @@ func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetPageSize(_pageSize int64) err
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 订单服务结束日期
 func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -109,12 +109,12 @@ func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetEndDate(_endDate string) erro
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is OrderIdList Setter
+// SetOrderIdList is OrderIdList Setter
 // 订单ID列表，最大不超过20个（这个参数指定后，其它过滤条件失效）
 func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetOrderIdList(_orderIdList []int64) error {
 	r._orderIdList = _orderIdList
@@ -122,12 +122,12 @@ func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetOrderIdList(_orderIdList []in
 	return nil
 }
 
-// Get OrderIdList Getter
+// GetOrderIdList OrderIdList Getter
 func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetOrderIdList() []int64 {
 	return r._orderIdList
 }
 
-// Set is PageNum Setter
+// SetPageNum is PageNum Setter
 // 页码（默认为1）
 func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
@@ -135,7 +135,7 @@ func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetPageNum(_pageNum int64) error
 	return nil
 }
 
-// Get PageNum Getter
+// GetPageNum PageNum Getter
 func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetPageNum() int64 {
 	return r._pageNum
 }

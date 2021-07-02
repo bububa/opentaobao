@@ -43,7 +43,7 @@ func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -51,12 +51,12 @@ func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetWorkcardId(_workcardId
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }
 
-// Set is Memo Setter
+// SetMemo is Memo Setter
 // 取消备注
 func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
@@ -64,12 +64,12 @@ func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetMemo(_memo string) err
 	return nil
 }
 
-// Get Memo Getter
+// GetMemo Memo Getter
 func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetMemo() string {
 	return r._memo
 }
 
-// Set is ServiceOrderId Setter
+// SetServiceOrderId is ServiceOrderId Setter
 // 服务单id
 func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetServiceOrderId(_serviceOrderId int64) error {
 	r._serviceOrderId = _serviceOrderId
@@ -77,12 +77,12 @@ func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetServiceOrderId(_servic
 	return nil
 }
 
-// Get ServiceOrderId Getter
+// GetServiceOrderId ServiceOrderId Getter
 func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetServiceOrderId() int64 {
 	return r._serviceOrderId
 }
 
-// Set is RealTpNick Setter
+// SetRealTpNick is RealTpNick Setter
 // 真实服务商昵称
 func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetRealTpNick(_realTpNick string) error {
 	r._realTpNick = _realTpNick
@@ -90,7 +90,7 @@ func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetRealTpNick(_realTpNick
 	return nil
 }
 
-// Get RealTpNick Getter
+// GetRealTpNick RealTpNick Getter
 func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetRealTpNick() string {
 	return r._realTpNick
 }

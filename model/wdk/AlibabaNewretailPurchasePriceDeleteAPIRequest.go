@@ -37,7 +37,7 @@ func (r AlibabaNewretailPurchasePriceDeleteAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is DeletePurchasePriceRequest Setter
+// SetDeletePurchasePriceRequest is DeletePurchasePriceRequest Setter
 // 调用入参
 func (r *AlibabaNewretailPurchasePriceDeleteAPIRequest) SetDeletePurchasePriceRequest(_deletePurchasePriceRequest *DeletePurchasePriceRequest) error {
 	r._deletePurchasePriceRequest = _deletePurchasePriceRequest
@@ -45,7 +45,7 @@ func (r *AlibabaNewretailPurchasePriceDeleteAPIRequest) SetDeletePurchasePriceRe
 	return nil
 }
 
-// Get DeletePurchasePriceRequest Getter
+// GetDeletePurchasePriceRequest DeletePurchasePriceRequest Getter
 func (r AlibabaNewretailPurchasePriceDeleteAPIRequest) GetDeletePurchasePriceRequest() *DeletePurchasePriceRequest {
 	return r._deletePurchasePriceRequest
 }

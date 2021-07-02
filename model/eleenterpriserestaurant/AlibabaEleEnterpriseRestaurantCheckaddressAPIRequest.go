@@ -39,7 +39,7 @@ func (r AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is ErestaurantId Setter
+// SetErestaurantId is ErestaurantId Setter
 // 餐厅Id
 func (r *AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest) SetErestaurantId(_erestaurantId string) error {
 	r._erestaurantId = _erestaurantId
@@ -47,12 +47,12 @@ func (r *AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest) SetErestaurantId(
 	return nil
 }
 
-// Get ErestaurantId Getter
+// GetErestaurantId ErestaurantId Getter
 func (r AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest) GetErestaurantId() string {
 	return r._erestaurantId
 }
 
-// Set is Addresses Setter
+// SetAddresses is Addresses Setter
 // [{"longitude": 1, "latitude": 2}], json 字符串, 每个元素是 一个 dict{longitude, latitude, …} 其他字段原样返回
 func (r *AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest) SetAddresses(_addresses string) error {
 	r._addresses = _addresses
@@ -60,7 +60,7 @@ func (r *AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest) SetAddresses(_add
 	return nil
 }
 
-// Get Addresses Getter
+// GetAddresses Addresses Getter
 func (r AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest) GetAddresses() string {
 	return r._addresses
 }

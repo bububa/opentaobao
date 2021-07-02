@@ -49,7 +49,7 @@ func (r CainiaoCrmOmsRuleSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ShopCode Setter
+// SetShopCode is ShopCode Setter
 // 店铺nick
 func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetShopCode(_shopCode string) error {
 	r._shopCode = _shopCode
@@ -57,12 +57,12 @@ func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetShopCode(_shopCode string) error {
 	return nil
 }
 
-// Get ShopCode Getter
+// GetShopCode ShopCode Getter
 func (r CainiaoCrmOmsRuleSyncAPIRequest) GetShopCode() string {
 	return r._shopCode
 }
 
-// Set is IsOpenCnauto Setter
+// SetIsOpenCnauto is IsOpenCnauto Setter
 // 是否开启菜鸟自动流转规则
 func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetIsOpenCnauto(_isOpenCnauto bool) error {
 	r._isOpenCnauto = _isOpenCnauto
@@ -70,12 +70,12 @@ func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetIsOpenCnauto(_isOpenCnauto bool) er
 	return nil
 }
 
-// Get IsOpenCnauto Getter
+// GetIsOpenCnauto IsOpenCnauto Getter
 func (r CainiaoCrmOmsRuleSyncAPIRequest) GetIsOpenCnauto() bool {
 	return r._isOpenCnauto
 }
 
-// Set is IsAutoCheck Setter
+// SetIsAutoCheck is IsAutoCheck Setter
 // 是否系统智能处理订单（无人工介入）
 func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetIsAutoCheck(_isAutoCheck bool) error {
 	r._isAutoCheck = _isAutoCheck
@@ -83,12 +83,12 @@ func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetIsAutoCheck(_isAutoCheck bool) erro
 	return nil
 }
 
-// Get IsAutoCheck Getter
+// GetIsAutoCheck IsAutoCheck Getter
 func (r CainiaoCrmOmsRuleSyncAPIRequest) GetIsAutoCheck() bool {
 	return r._isAutoCheck
 }
 
-// Set is CheckRuleMsg Setter
+// SetCheckRuleMsg is CheckRuleMsg Setter
 // 人工审单规则描述
 func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetCheckRuleMsg(_checkRuleMsg string) error {
 	r._checkRuleMsg = _checkRuleMsg
@@ -96,12 +96,12 @@ func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetCheckRuleMsg(_checkRuleMsg string) 
 	return nil
 }
 
-// Get CheckRuleMsg Getter
+// GetCheckRuleMsg CheckRuleMsg Getter
 func (r CainiaoCrmOmsRuleSyncAPIRequest) GetCheckRuleMsg() string {
 	return r._checkRuleMsg
 }
 
-// Set is IsSysMergeOrder Setter
+// SetIsSysMergeOrder is IsSysMergeOrder Setter
 // 是否开启了订单合单
 func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetIsSysMergeOrder(_isSysMergeOrder bool) error {
 	r._isSysMergeOrder = _isSysMergeOrder
@@ -109,12 +109,12 @@ func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetIsSysMergeOrder(_isSysMergeOrder bo
 	return nil
 }
 
-// Get IsSysMergeOrder Getter
+// GetIsSysMergeOrder IsSysMergeOrder Getter
 func (r CainiaoCrmOmsRuleSyncAPIRequest) GetIsSysMergeOrder() bool {
 	return r._isSysMergeOrder
 }
 
-// Set is MergeOrderCycle Setter
+// SetMergeOrderCycle is MergeOrderCycle Setter
 // 订单合单周期（单位：分钟）
 func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetMergeOrderCycle(_mergeOrderCycle int64) error {
 	r._mergeOrderCycle = _mergeOrderCycle
@@ -122,12 +122,12 @@ func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetMergeOrderCycle(_mergeOrderCycle in
 	return nil
 }
 
-// Get MergeOrderCycle Getter
+// GetMergeOrderCycle MergeOrderCycle Getter
 func (r CainiaoCrmOmsRuleSyncAPIRequest) GetMergeOrderCycle() int64 {
 	return r._mergeOrderCycle
 }
 
-// Set is OtherRule Setter
+// SetOtherRule is OtherRule Setter
 // 其他未定义订单处理规则，格式｛name;stauts;cycle;｝
 func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetOtherRule(_otherRule string) error {
 	r._otherRule = _otherRule
@@ -135,7 +135,7 @@ func (r *CainiaoCrmOmsRuleSyncAPIRequest) SetOtherRule(_otherRule string) error 
 	return nil
 }
 
-// Get OtherRule Getter
+// GetOtherRule OtherRule Getter
 func (r CainiaoCrmOmsRuleSyncAPIRequest) GetOtherRule() string {
 	return r._otherRule
 }

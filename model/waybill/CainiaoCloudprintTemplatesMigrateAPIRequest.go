@@ -41,7 +41,7 @@ func (r CainiaoCloudprintTemplatesMigrateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TempalteId Setter
+// SetTempalteId is TempalteId Setter
 // 标准电子面单模板的id
 func (r *CainiaoCloudprintTemplatesMigrateAPIRequest) SetTempalteId(_tempalteId int64) error {
 	r._tempalteId = _tempalteId
@@ -49,12 +49,12 @@ func (r *CainiaoCloudprintTemplatesMigrateAPIRequest) SetTempalteId(_tempalteId 
 	return nil
 }
 
-// Get TempalteId Getter
+// GetTempalteId TempalteId Getter
 func (r CainiaoCloudprintTemplatesMigrateAPIRequest) GetTempalteId() int64 {
 	return r._tempalteId
 }
 
-// Set is CustomAreaName Setter
+// SetCustomAreaName is CustomAreaName Setter
 // 自定义区名称
 func (r *CainiaoCloudprintTemplatesMigrateAPIRequest) SetCustomAreaName(_customAreaName string) error {
 	r._customAreaName = _customAreaName
@@ -62,12 +62,12 @@ func (r *CainiaoCloudprintTemplatesMigrateAPIRequest) SetCustomAreaName(_customA
 	return nil
 }
 
-// Get CustomAreaName Getter
+// GetCustomAreaName CustomAreaName Getter
 func (r CainiaoCloudprintTemplatesMigrateAPIRequest) GetCustomAreaName() string {
 	return r._customAreaName
 }
 
-// Set is CustomAreaContent Setter
+// SetCustomAreaContent is CustomAreaContent Setter
 // 自定义区内容
 func (r *CainiaoCloudprintTemplatesMigrateAPIRequest) SetCustomAreaContent(_customAreaContent string) error {
 	r._customAreaContent = _customAreaContent
@@ -75,7 +75,7 @@ func (r *CainiaoCloudprintTemplatesMigrateAPIRequest) SetCustomAreaContent(_cust
 	return nil
 }
 
-// Get CustomAreaContent Getter
+// GetCustomAreaContent CustomAreaContent Getter
 func (r CainiaoCloudprintTemplatesMigrateAPIRequest) GetCustomAreaContent() string {
 	return r._customAreaContent
 }

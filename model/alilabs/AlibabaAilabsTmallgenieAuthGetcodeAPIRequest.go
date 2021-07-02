@@ -39,7 +39,7 @@ func (r AlibabaAilabsTmallgenieAuthGetcodeAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is AuthParam Setter
+// SetAuthParam is AuthParam Setter
 // 授权参数
 func (r *AlibabaAilabsTmallgenieAuthGetcodeAPIRequest) SetAuthParam(_authParam *TopAuthReqDto) error {
 	r._authParam = _authParam
@@ -47,12 +47,12 @@ func (r *AlibabaAilabsTmallgenieAuthGetcodeAPIRequest) SetAuthParam(_authParam *
 	return nil
 }
 
-// Get AuthParam Getter
+// GetAuthParam AuthParam Getter
 func (r AlibabaAilabsTmallgenieAuthGetcodeAPIRequest) GetAuthParam() *TopAuthReqDto {
 	return r._authParam
 }
 
-// Set is DeviceParam Setter
+// SetDeviceParam is DeviceParam Setter
 // 设备参数
 func (r *AlibabaAilabsTmallgenieAuthGetcodeAPIRequest) SetDeviceParam(_deviceParam *TopDeviceReqDto) error {
 	r._deviceParam = _deviceParam
@@ -60,7 +60,7 @@ func (r *AlibabaAilabsTmallgenieAuthGetcodeAPIRequest) SetDeviceParam(_devicePar
 	return nil
 }
 
-// Get DeviceParam Getter
+// GetDeviceParam DeviceParam Getter
 func (r AlibabaAilabsTmallgenieAuthGetcodeAPIRequest) GetDeviceParam() *TopDeviceReqDto {
 	return r._deviceParam
 }

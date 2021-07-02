@@ -41,7 +41,7 @@ func (r AlibabaCampusSpaceTypeGetbycodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 查询条件封装
 func (r *AlibabaCampusSpaceTypeGetbycodeAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
 	r._param0 = _param0
@@ -49,12 +49,12 @@ func (r *AlibabaCampusSpaceTypeGetbycodeAPIRequest) SetParam0(_param0 *WorkBench
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaCampusSpaceTypeGetbycodeAPIRequest) GetParam0() *WorkBenchContext {
 	return r._param0
 }
 
-// Set is TypeCode Setter
+// SetTypeCode is TypeCode Setter
 // 空间类别编码
 func (r *AlibabaCampusSpaceTypeGetbycodeAPIRequest) SetTypeCode(_typeCode string) error {
 	r._typeCode = _typeCode
@@ -62,7 +62,7 @@ func (r *AlibabaCampusSpaceTypeGetbycodeAPIRequest) SetTypeCode(_typeCode string
 	return nil
 }
 
-// Get TypeCode Getter
+// GetTypeCode TypeCode Getter
 func (r AlibabaCampusSpaceTypeGetbycodeAPIRequest) GetTypeCode() string {
 	return r._typeCode
 }

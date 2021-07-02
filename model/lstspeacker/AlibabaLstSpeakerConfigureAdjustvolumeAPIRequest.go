@@ -41,7 +41,7 @@ func (r AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 设备编码
 func (r *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -49,12 +49,12 @@ func (r *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) SetDeviceCode(_device
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is Volume Setter
+// SetVolume is Volume Setter
 // 音量直
 func (r *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) SetVolume(_volume string) error {
 	r._volume = _volume
@@ -62,12 +62,12 @@ func (r *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) SetVolume(_volume str
 	return nil
 }
 
-// Get Volume Getter
+// GetVolume Volume Getter
 func (r AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) GetVolume() string {
 	return r._volume
 }
 
-// Set is ValueType Setter
+// SetValueType is ValueType Setter
 // 音量类型，val:固定值, percent:百分比
 func (r *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) SetValueType(_valueType string) error {
 	r._valueType = _valueType
@@ -75,7 +75,7 @@ func (r *AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) SetValueType(_valueTy
 	return nil
 }
 
-// Get ValueType Getter
+// GetValueType ValueType Getter
 func (r AlibabaLstSpeakerConfigureAdjustvolumeAPIRequest) GetValueType() string {
 	return r._valueType
 }

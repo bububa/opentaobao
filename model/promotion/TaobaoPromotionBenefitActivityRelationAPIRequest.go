@@ -37,7 +37,7 @@ func (r TaobaoPromotionBenefitActivityRelationAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is RelationRequest Setter
+// SetRelationRequest is RelationRequest Setter
 // 活动关联权益请求参数
 func (r *TaobaoPromotionBenefitActivityRelationAPIRequest) SetRelationRequest(_relationRequest *RelationActivityBenefitRequest) error {
 	r._relationRequest = _relationRequest
@@ -45,7 +45,7 @@ func (r *TaobaoPromotionBenefitActivityRelationAPIRequest) SetRelationRequest(_r
 	return nil
 }
 
-// Get RelationRequest Getter
+// GetRelationRequest RelationRequest Getter
 func (r TaobaoPromotionBenefitActivityRelationAPIRequest) GetRelationRequest() *RelationActivityBenefitRequest {
 	return r._relationRequest
 }

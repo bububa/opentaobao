@@ -38,7 +38,7 @@ func (r CainiaoCntecSupplierOrderServiceAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryConditioin Setter
+// SetQueryConditioin is QueryConditioin Setter
 // 系统自动生成
 func (r *CainiaoCntecSupplierOrderServiceAPIRequest) SetQueryConditioin(_queryConditioin *SupplierOrderQueryDto) error {
 	r._queryConditioin = _queryConditioin
@@ -46,7 +46,7 @@ func (r *CainiaoCntecSupplierOrderServiceAPIRequest) SetQueryConditioin(_queryCo
 	return nil
 }
 
-// Get QueryConditioin Getter
+// GetQueryConditioin QueryConditioin Getter
 func (r CainiaoCntecSupplierOrderServiceAPIRequest) GetQueryConditioin() *SupplierOrderQueryDto {
 	return r._queryConditioin
 }

@@ -39,7 +39,7 @@ func (r TaobaoFenxiaoRefundGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SubOrderId Setter
+// SetSubOrderId is SubOrderId Setter
 // 要查询的退款子单的id
 func (r *TaobaoFenxiaoRefundGetAPIRequest) SetSubOrderId(_subOrderId int64) error {
 	r._subOrderId = _subOrderId
@@ -47,12 +47,12 @@ func (r *TaobaoFenxiaoRefundGetAPIRequest) SetSubOrderId(_subOrderId int64) erro
 	return nil
 }
 
-// Get SubOrderId Getter
+// GetSubOrderId SubOrderId Getter
 func (r TaobaoFenxiaoRefundGetAPIRequest) GetSubOrderId() int64 {
 	return r._subOrderId
 }
 
-// Set is QuerySellerRefund Setter
+// SetQuerySellerRefund is QuerySellerRefund Setter
 // 是否查询下游买家的退款信息
 func (r *TaobaoFenxiaoRefundGetAPIRequest) SetQuerySellerRefund(_querySellerRefund bool) error {
 	r._querySellerRefund = _querySellerRefund
@@ -60,7 +60,7 @@ func (r *TaobaoFenxiaoRefundGetAPIRequest) SetQuerySellerRefund(_querySellerRefu
 	return nil
 }
 
-// Get QuerySellerRefund Getter
+// GetQuerySellerRefund QuerySellerRefund Getter
 func (r TaobaoFenxiaoRefundGetAPIRequest) GetQuerySellerRefund() bool {
 	return r._querySellerRefund
 }

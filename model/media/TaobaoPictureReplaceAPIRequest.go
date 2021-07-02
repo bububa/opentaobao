@@ -39,7 +39,7 @@ func (r TaobaoPictureReplaceAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PictureId Setter
+// SetPictureId is PictureId Setter
 // 要替换的图片的id，必须大于0
 func (r *TaobaoPictureReplaceAPIRequest) SetPictureId(_pictureId int64) error {
 	r._pictureId = _pictureId
@@ -47,12 +47,12 @@ func (r *TaobaoPictureReplaceAPIRequest) SetPictureId(_pictureId int64) error {
 	return nil
 }
 
-// Get PictureId Getter
+// GetPictureId PictureId Getter
 func (r TaobaoPictureReplaceAPIRequest) GetPictureId() int64 {
 	return r._pictureId
 }
 
-// Set is ImageData Setter
+// SetImageData is ImageData Setter
 // 图片二进制文件流,不能为空,允许png、jpg、gif图片格式
 func (r *TaobaoPictureReplaceAPIRequest) SetImageData(_imageData *model.File) error {
 	r._imageData = _imageData
@@ -60,7 +60,7 @@ func (r *TaobaoPictureReplaceAPIRequest) SetImageData(_imageData *model.File) er
 	return nil
 }
 
-// Get ImageData Getter
+// GetImageData ImageData Getter
 func (r TaobaoPictureReplaceAPIRequest) GetImageData() *model.File {
 	return r._imageData
 }

@@ -37,7 +37,7 @@ func (r AlibabaWestcrmShopListGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CampusId Setter
+// SetCampusId is CampusId Setter
 // 园区id
 func (r *AlibabaWestcrmShopListGetAPIRequest) SetCampusId(_campusId int64) error {
 	r._campusId = _campusId
@@ -45,7 +45,7 @@ func (r *AlibabaWestcrmShopListGetAPIRequest) SetCampusId(_campusId int64) error
 	return nil
 }
 
-// Get CampusId Getter
+// GetCampusId CampusId Getter
 func (r AlibabaWestcrmShopListGetAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }

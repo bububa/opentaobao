@@ -37,7 +37,7 @@ func (r AlibabaWdkPurchasePriceAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WdkOpenPurchasePrice Setter
+// SetWdkOpenPurchasePrice is WdkOpenPurchasePrice Setter
 // 入参
 func (r *AlibabaWdkPurchasePriceAPIRequest) SetWdkOpenPurchasePrice(_wdkOpenPurchasePrice *WdkOpenPurchasePrice) error {
 	r._wdkOpenPurchasePrice = _wdkOpenPurchasePrice
@@ -45,7 +45,7 @@ func (r *AlibabaWdkPurchasePriceAPIRequest) SetWdkOpenPurchasePrice(_wdkOpenPurc
 	return nil
 }
 
-// Get WdkOpenPurchasePrice Getter
+// GetWdkOpenPurchasePrice WdkOpenPurchasePrice Getter
 func (r AlibabaWdkPurchasePriceAPIRequest) GetWdkOpenPurchasePrice() *WdkOpenPurchasePrice {
 	return r._wdkOpenPurchasePrice
 }

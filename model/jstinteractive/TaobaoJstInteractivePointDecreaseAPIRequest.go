@@ -39,7 +39,7 @@ func (r TaobaoJstInteractivePointDecreaseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Amount Setter
+// SetAmount is Amount Setter
 // 扣减的积分值
 func (r *TaobaoJstInteractivePointDecreaseAPIRequest) SetAmount(_amount int64) error {
 	r._amount = _amount
@@ -47,12 +47,12 @@ func (r *TaobaoJstInteractivePointDecreaseAPIRequest) SetAmount(_amount int64) e
 	return nil
 }
 
-// Get Amount Getter
+// GetAmount Amount Getter
 func (r TaobaoJstInteractivePointDecreaseAPIRequest) GetAmount() int64 {
 	return r._amount
 }
 
-// Set is OperateCode Setter
+// SetOperateCode is OperateCode Setter
 // 幂等操作码，要确保唯一性，同一个操作码只能使用一次，避免重复操作
 func (r *TaobaoJstInteractivePointDecreaseAPIRequest) SetOperateCode(_operateCode string) error {
 	r._operateCode = _operateCode
@@ -60,7 +60,7 @@ func (r *TaobaoJstInteractivePointDecreaseAPIRequest) SetOperateCode(_operateCod
 	return nil
 }
 
-// Get OperateCode Getter
+// GetOperateCode OperateCode Getter
 func (r TaobaoJstInteractivePointDecreaseAPIRequest) GetOperateCode() string {
 	return r._operateCode
 }

@@ -39,7 +39,7 @@ func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FansNick Setter
+// SetFansNick is FansNick Setter
 // 要查询的粉丝的淘宝昵称
 func (r *TaobaoWeitaoFeedIsrelationAPIRequest) SetFansNick(_fansNick string) error {
 	r._fansNick = _fansNick
@@ -47,12 +47,12 @@ func (r *TaobaoWeitaoFeedIsrelationAPIRequest) SetFansNick(_fansNick string) err
 	return nil
 }
 
-// Get FansNick Getter
+// GetFansNick FansNick Getter
 func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetFansNick() string {
 	return r._fansNick
 }
 
-// Set is SellerNick Setter
+// SetSellerNick is SellerNick Setter
 // 要查询的公共账号的淘宝昵称
 func (r *TaobaoWeitaoFeedIsrelationAPIRequest) SetSellerNick(_sellerNick string) error {
 	r._sellerNick = _sellerNick
@@ -60,7 +60,7 @@ func (r *TaobaoWeitaoFeedIsrelationAPIRequest) SetSellerNick(_sellerNick string)
 	return nil
 }
 
-// Get SellerNick Getter
+// GetSellerNick SellerNick Getter
 func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetSellerNick() string {
 	return r._sellerNick
 }

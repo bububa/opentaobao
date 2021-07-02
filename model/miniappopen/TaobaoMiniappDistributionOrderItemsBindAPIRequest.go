@@ -41,7 +41,7 @@ func (r TaobaoMiniappDistributionOrderItemsBindAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is TargetEntityList Setter
+// SetTargetEntityList is TargetEntityList Setter
 // 商品id列表
 func (r *TaobaoMiniappDistributionOrderItemsBindAPIRequest) SetTargetEntityList(_targetEntityList []string) error {
 	r._targetEntityList = _targetEntityList
@@ -49,12 +49,12 @@ func (r *TaobaoMiniappDistributionOrderItemsBindAPIRequest) SetTargetEntityList(
 	return nil
 }
 
-// Get TargetEntityList Getter
+// GetTargetEntityList TargetEntityList Getter
 func (r TaobaoMiniappDistributionOrderItemsBindAPIRequest) GetTargetEntityList() []string {
 	return r._targetEntityList
 }
 
-// Set is AddBind Setter
+// SetAddBind is AddBind Setter
 // true表示新增绑定，false表示解绑
 func (r *TaobaoMiniappDistributionOrderItemsBindAPIRequest) SetAddBind(_addBind bool) error {
 	r._addBind = _addBind
@@ -62,12 +62,12 @@ func (r *TaobaoMiniappDistributionOrderItemsBindAPIRequest) SetAddBind(_addBind 
 	return nil
 }
 
-// Get AddBind Getter
+// GetAddBind AddBind Getter
 func (r TaobaoMiniappDistributionOrderItemsBindAPIRequest) GetAddBind() bool {
 	return r._addBind
 }
 
-// Set is DistributeId Setter
+// SetDistributeId is DistributeId Setter
 // 投放计划标识id
 func (r *TaobaoMiniappDistributionOrderItemsBindAPIRequest) SetDistributeId(_distributeId int64) error {
 	r._distributeId = _distributeId
@@ -75,7 +75,7 @@ func (r *TaobaoMiniappDistributionOrderItemsBindAPIRequest) SetDistributeId(_dis
 	return nil
 }
 
-// Get DistributeId Getter
+// GetDistributeId DistributeId Getter
 func (r TaobaoMiniappDistributionOrderItemsBindAPIRequest) GetDistributeId() int64 {
 	return r._distributeId
 }

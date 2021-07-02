@@ -37,7 +37,7 @@ func (r AlibabaMoziAclUserrolesRevokeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RevokeRolesRequest Setter
+// SetRevokeRolesRequest is RevokeRolesRequest Setter
 // 回收角色入参对象
 func (r *AlibabaMoziAclUserrolesRevokeAPIRequest) SetRevokeRolesRequest(_revokeRolesRequest *RevokeRolesRequest) error {
 	r._revokeRolesRequest = _revokeRolesRequest
@@ -45,7 +45,7 @@ func (r *AlibabaMoziAclUserrolesRevokeAPIRequest) SetRevokeRolesRequest(_revokeR
 	return nil
 }
 
-// Get RevokeRolesRequest Getter
+// GetRevokeRolesRequest RevokeRolesRequest Getter
 func (r AlibabaMoziAclUserrolesRevokeAPIRequest) GetRevokeRolesRequest() *RevokeRolesRequest {
 	return r._revokeRolesRequest
 }

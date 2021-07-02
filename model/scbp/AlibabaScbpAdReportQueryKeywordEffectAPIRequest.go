@@ -39,7 +39,7 @@ func (r AlibabaScbpAdReportQueryKeywordEffectAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is KeywordReportOperation Setter
+// SetKeywordReportOperation is KeywordReportOperation Setter
 // 请求参数
 func (r *AlibabaScbpAdReportQueryKeywordEffectAPIRequest) SetKeywordReportOperation(_keywordReportOperation *KeywordReportOperationDto) error {
 	r._keywordReportOperation = _keywordReportOperation
@@ -47,12 +47,12 @@ func (r *AlibabaScbpAdReportQueryKeywordEffectAPIRequest) SetKeywordReportOperat
 	return nil
 }
 
-// Get KeywordReportOperation Getter
+// GetKeywordReportOperation KeywordReportOperation Getter
 func (r AlibabaScbpAdReportQueryKeywordEffectAPIRequest) GetKeywordReportOperation() *KeywordReportOperationDto {
 	return r._keywordReportOperation
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdReportQueryKeywordEffectAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -60,7 +60,7 @@ func (r *AlibabaScbpAdReportQueryKeywordEffectAPIRequest) SetTopContext(_topCont
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdReportQueryKeywordEffectAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }

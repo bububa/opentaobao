@@ -49,7 +49,7 @@ func (r AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is AlispAppKey Setter
+// SetAlispAppKey is AlispAppKey Setter
 // 阿里体育分配的用户appkey
 func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetAlispAppKey(_alispAppKey string) error {
 	r._alispAppKey = _alispAppKey
@@ -57,12 +57,12 @@ func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetAlispAppKey(_ali
 	return nil
 }
 
-// Get AlispAppKey Getter
+// GetAlispAppKey AlispAppKey Getter
 func (r AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) GetAlispAppKey() string {
 	return r._alispAppKey
 }
 
-// Set is AlispTime Setter
+// SetAlispTime is AlispTime Setter
 // 请求接口的时间戳
 func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetAlispTime(_alispTime string) error {
 	r._alispTime = _alispTime
@@ -70,12 +70,12 @@ func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetAlispTime(_alisp
 	return nil
 }
 
-// Get AlispTime Getter
+// GetAlispTime AlispTime Getter
 func (r AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) GetAlispTime() string {
 	return r._alispTime
 }
 
-// Set is AlispSign Setter
+// SetAlispSign is AlispSign Setter
 // 签名字符串
 func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetAlispSign(_alispSign string) error {
 	r._alispSign = _alispSign
@@ -83,12 +83,12 @@ func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetAlispSign(_alisp
 	return nil
 }
 
-// Get AlispSign Getter
+// GetAlispSign AlispSign Getter
 func (r AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) GetAlispSign() string {
 	return r._alispSign
 }
 
-// Set is AuthCode Setter
+// SetAuthCode is AuthCode Setter
 // 调用支付宝登录sdk返回的code
 func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetAuthCode(_authCode string) error {
 	r._authCode = _authCode
@@ -96,12 +96,12 @@ func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetAuthCode(_authCo
 	return nil
 }
 
-// Get AuthCode Getter
+// GetAuthCode AuthCode Getter
 func (r AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) GetAuthCode() string {
 	return r._authCode
 }
 
-// Set is PartnerMode Setter
+// SetPartnerMode is PartnerMode Setter
 // 固定为rich_sports
 func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetPartnerMode(_partnerMode string) error {
 	r._partnerMode = _partnerMode
@@ -109,12 +109,12 @@ func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetPartnerMode(_par
 	return nil
 }
 
-// Get PartnerMode Getter
+// GetPartnerMode PartnerMode Getter
 func (r AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) GetPartnerMode() string {
 	return r._partnerMode
 }
 
-// Set is Appid Setter
+// SetAppid is Appid Setter
 // 支付宝的appid
 func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetAppid(_appid string) error {
 	r._appid = _appid
@@ -122,12 +122,12 @@ func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetAppid(_appid str
 	return nil
 }
 
-// Get Appid Getter
+// GetAppid Appid Getter
 func (r AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) GetAppid() string {
 	return r._appid
 }
 
-// Set is AppUid Setter
+// SetAppUid is AppUid Setter
 // 合作方的userid，即用户唯一的id标识
 func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetAppUid(_appUid string) error {
 	r._appUid = _appUid
@@ -135,7 +135,7 @@ func (r *AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) SetAppUid(_appUid s
 	return nil
 }
 
-// Get AppUid Getter
+// GetAppUid AppUid Getter
 func (r AlibabaAlisportsPassportOauthAlipaygrantAPIRequest) GetAppUid() string {
 	return r._appUid
 }

@@ -37,7 +37,7 @@ func (r YunosMiniappDatatunnelCallAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 参数
 func (r *YunosMiniappDatatunnelCallAPIRequest) SetParam(_param *YunosMiniappDatatunnelCallBaseRequest) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *YunosMiniappDatatunnelCallAPIRequest) SetParam(_param *YunosMiniappData
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r YunosMiniappDatatunnelCallAPIRequest) GetParam() *YunosMiniappDatatunnelCallBaseRequest {
 	return r._param
 }

@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenDeletePaperformatAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is DeletePaperFormatParam Setter
+// SetDeletePaperFormatParam is DeletePaperFormatParam Setter
 // 入参deletePaperFormatParam
 func (r *AlibabaDamaiMevOpenDeletePaperformatAPIRequest) SetDeletePaperFormatParam(_deletePaperFormatParam *TicketPaperFormatIdOpenParam) error {
 	r._deletePaperFormatParam = _deletePaperFormatParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenDeletePaperformatAPIRequest) SetDeletePaperFormatPar
 	return nil
 }
 
-// Get DeletePaperFormatParam Getter
+// GetDeletePaperFormatParam DeletePaperFormatParam Getter
 func (r AlibabaDamaiMevOpenDeletePaperformatAPIRequest) GetDeletePaperFormatParam() *TicketPaperFormatIdOpenParam {
 	return r._deletePaperFormatParam
 }

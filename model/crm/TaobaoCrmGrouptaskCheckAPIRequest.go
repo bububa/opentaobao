@@ -37,7 +37,7 @@ func (r TaobaoCrmGrouptaskCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupId Setter
+// SetGroupId is GroupId Setter
 // 分组id
 func (r *TaobaoCrmGrouptaskCheckAPIRequest) SetGroupId(_groupId int64) error {
 	r._groupId = _groupId
@@ -45,7 +45,7 @@ func (r *TaobaoCrmGrouptaskCheckAPIRequest) SetGroupId(_groupId int64) error {
 	return nil
 }
 
-// Get GroupId Getter
+// GetGroupId GroupId Getter
 func (r TaobaoCrmGrouptaskCheckAPIRequest) GetGroupId() int64 {
 	return r._groupId
 }

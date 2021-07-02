@@ -37,7 +37,7 @@ func (r AlibabaTelecomZhimaOrdernotifyCallbackAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 入参对象
 func (r *AlibabaTelecomZhimaOrdernotifyCallbackAPIRequest) SetParam0(_param0 *OrderStatusNotifyRequest) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlibabaTelecomZhimaOrdernotifyCallbackAPIRequest) SetParam0(_param0 *Or
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaTelecomZhimaOrdernotifyCallbackAPIRequest) GetParam0() *OrderStatusNotifyRequest {
 	return r._param0
 }

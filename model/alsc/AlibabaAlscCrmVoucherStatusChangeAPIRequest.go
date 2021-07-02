@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmVoucherStatusChangeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamVoucherStatusChangeOpenReq Setter
+// SetParamVoucherStatusChangeOpenReq is ParamVoucherStatusChangeOpenReq Setter
 // 参数
 func (r *AlibabaAlscCrmVoucherStatusChangeAPIRequest) SetParamVoucherStatusChangeOpenReq(_paramVoucherStatusChangeOpenReq *VoucherStatusChangeOpenReq) error {
 	r._paramVoucherStatusChangeOpenReq = _paramVoucherStatusChangeOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmVoucherStatusChangeAPIRequest) SetParamVoucherStatusChang
 	return nil
 }
 
-// Get ParamVoucherStatusChangeOpenReq Getter
+// GetParamVoucherStatusChangeOpenReq ParamVoucherStatusChangeOpenReq Getter
 func (r AlibabaAlscCrmVoucherStatusChangeAPIRequest) GetParamVoucherStatusChangeOpenReq() *VoucherStatusChangeOpenReq {
 	return r._paramVoucherStatusChangeOpenReq
 }

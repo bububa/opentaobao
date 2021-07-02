@@ -37,7 +37,7 @@ func (r AlibabaWdkTradeOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 订单查询
 func (r *AlibabaWdkTradeOrderQueryAPIRequest) SetQuery(_query *TradeOrderQuery) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *AlibabaWdkTradeOrderQueryAPIRequest) SetQuery(_query *TradeOrderQuery) 
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaWdkTradeOrderQueryAPIRequest) GetQuery() *TradeOrderQuery {
 	return r._query
 }

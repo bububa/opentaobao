@@ -41,7 +41,7 @@ func (r AlibabaLegalCaseStandpointQueryrefAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is SuitId Setter
+// SetSuitId is SuitId Setter
 // 案件id
 func (r *AlibabaLegalCaseStandpointQueryrefAPIRequest) SetSuitId(_suitId int64) error {
 	r._suitId = _suitId
@@ -49,12 +49,12 @@ func (r *AlibabaLegalCaseStandpointQueryrefAPIRequest) SetSuitId(_suitId int64) 
 	return nil
 }
 
-// Get SuitId Getter
+// GetSuitId SuitId Getter
 func (r AlibabaLegalCaseStandpointQueryrefAPIRequest) GetSuitId() int64 {
 	return r._suitId
 }
 
-// Set is EntrustId Setter
+// SetEntrustId is EntrustId Setter
 // 委托id
 func (r *AlibabaLegalCaseStandpointQueryrefAPIRequest) SetEntrustId(_entrustId int64) error {
 	r._entrustId = _entrustId
@@ -62,12 +62,12 @@ func (r *AlibabaLegalCaseStandpointQueryrefAPIRequest) SetEntrustId(_entrustId i
 	return nil
 }
 
-// Get EntrustId Getter
+// GetEntrustId EntrustId Getter
 func (r AlibabaLegalCaseStandpointQueryrefAPIRequest) GetEntrustId() int64 {
 	return r._entrustId
 }
 
-// Set is StandpointIds Setter
+// SetStandpointIds is StandpointIds Setter
 // 查询的口径id列表
 func (r *AlibabaLegalCaseStandpointQueryrefAPIRequest) SetStandpointIds(_standpointIds []int64) error {
 	r._standpointIds = _standpointIds
@@ -75,7 +75,7 @@ func (r *AlibabaLegalCaseStandpointQueryrefAPIRequest) SetStandpointIds(_standpo
 	return nil
 }
 
-// Get StandpointIds Getter
+// GetStandpointIds StandpointIds Getter
 func (r AlibabaLegalCaseStandpointQueryrefAPIRequest) GetStandpointIds() []int64 {
 	return r._standpointIds
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkBmCouponQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IsvQueryCouponParam Setter
+// SetIsvQueryCouponParam is IsvQueryCouponParam Setter
 // 查询券参数
 func (r *AlibabaWdkBmCouponQueryAPIRequest) SetIsvQueryCouponParam(_isvQueryCouponParam *IsvQueryCouponParam) error {
 	r._isvQueryCouponParam = _isvQueryCouponParam
@@ -45,7 +45,7 @@ func (r *AlibabaWdkBmCouponQueryAPIRequest) SetIsvQueryCouponParam(_isvQueryCoup
 	return nil
 }
 
-// Get IsvQueryCouponParam Getter
+// GetIsvQueryCouponParam IsvQueryCouponParam Getter
 func (r AlibabaWdkBmCouponQueryAPIRequest) GetIsvQueryCouponParam() *IsvQueryCouponParam {
 	return r._isvQueryCouponParam
 }

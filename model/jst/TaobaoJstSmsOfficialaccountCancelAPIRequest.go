@@ -37,7 +37,7 @@ func (r TaobaoJstSmsOfficialaccountCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CancelOrderRequest Setter
+// SetCancelOrderRequest is CancelOrderRequest Setter
 // 取消公众号订购请求
 func (r *TaobaoJstSmsOfficialaccountCancelAPIRequest) SetCancelOrderRequest(_cancelOrderRequest *CancelOrderRequest) error {
 	r._cancelOrderRequest = _cancelOrderRequest
@@ -45,7 +45,7 @@ func (r *TaobaoJstSmsOfficialaccountCancelAPIRequest) SetCancelOrderRequest(_can
 	return nil
 }
 
-// Get CancelOrderRequest Getter
+// GetCancelOrderRequest CancelOrderRequest Getter
 func (r TaobaoJstSmsOfficialaccountCancelAPIRequest) GetCancelOrderRequest() *CancelOrderRequest {
 	return r._cancelOrderRequest
 }

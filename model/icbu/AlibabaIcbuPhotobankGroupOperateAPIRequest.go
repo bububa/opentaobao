@@ -37,7 +37,7 @@ func (r AlibabaIcbuPhotobankGroupOperateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PhotoGroupOperationRequest Setter
+// SetPhotoGroupOperationRequest is PhotoGroupOperationRequest Setter
 // 图片分组操作请求对象
 func (r *AlibabaIcbuPhotobankGroupOperateAPIRequest) SetPhotoGroupOperationRequest(_photoGroupOperationRequest *PhotoGroupOperationRequest) error {
 	r._photoGroupOperationRequest = _photoGroupOperationRequest
@@ -45,7 +45,7 @@ func (r *AlibabaIcbuPhotobankGroupOperateAPIRequest) SetPhotoGroupOperationReque
 	return nil
 }
 
-// Get PhotoGroupOperationRequest Getter
+// GetPhotoGroupOperationRequest PhotoGroupOperationRequest Getter
 func (r AlibabaIcbuPhotobankGroupOperateAPIRequest) GetPhotoGroupOperationRequest() *PhotoGroupOperationRequest {
 	return r._photoGroupOperationRequest
 }

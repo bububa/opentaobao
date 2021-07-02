@@ -37,7 +37,7 @@ func (r TaobaoSingletreasureActivityItemBatchaddAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ItemDetailInfo Setter
+// SetItemDetailInfo is ItemDetailInfo Setter
 // 系统入参
 func (r *TaobaoSingletreasureActivityItemBatchaddAPIRequest) SetItemDetailInfo(_itemDetailInfo *ItemDetailInfoBatchCreateDto) error {
 	r._itemDetailInfo = _itemDetailInfo
@@ -45,7 +45,7 @@ func (r *TaobaoSingletreasureActivityItemBatchaddAPIRequest) SetItemDetailInfo(_
 	return nil
 }
 
-// Get ItemDetailInfo Getter
+// GetItemDetailInfo ItemDetailInfo Getter
 func (r TaobaoSingletreasureActivityItemBatchaddAPIRequest) GetItemDetailInfo() *ItemDetailInfoBatchCreateDto {
 	return r._itemDetailInfo
 }

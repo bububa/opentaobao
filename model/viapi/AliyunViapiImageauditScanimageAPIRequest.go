@@ -39,7 +39,7 @@ func (r AliyunViapiImageauditScanimageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tasks Setter
+// SetTasks is Tasks Setter
 // 系统自动生成
 func (r *AliyunViapiImageauditScanimageAPIRequest) SetTasks(_tasks []Task) error {
 	r._tasks = _tasks
@@ -47,12 +47,12 @@ func (r *AliyunViapiImageauditScanimageAPIRequest) SetTasks(_tasks []Task) error
 	return nil
 }
 
-// Get Tasks Getter
+// GetTasks Tasks Getter
 func (r AliyunViapiImageauditScanimageAPIRequest) GetTasks() []Task {
 	return r._tasks
 }
 
-// Set is Scenes Setter
+// SetScenes is Scenes Setter
 // 场景列表
 func (r *AliyunViapiImageauditScanimageAPIRequest) SetScenes(_scenes []string) error {
 	r._scenes = _scenes
@@ -60,7 +60,7 @@ func (r *AliyunViapiImageauditScanimageAPIRequest) SetScenes(_scenes []string) e
 	return nil
 }
 
-// Get Scenes Getter
+// GetScenes Scenes Getter
 func (r AliyunViapiImageauditScanimageAPIRequest) GetScenes() []string {
 	return r._scenes
 }

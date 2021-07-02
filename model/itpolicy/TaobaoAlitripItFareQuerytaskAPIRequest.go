@@ -39,7 +39,7 @@ func (r TaobaoAlitripItFareQuerytaskAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ExtendAttributes Setter
+// SetExtendAttributes is ExtendAttributes Setter
 // json格式的字符串，扩展属性，预留
 func (r *TaobaoAlitripItFareQuerytaskAPIRequest) SetExtendAttributes(_extendAttributes string) error {
 	r._extendAttributes = _extendAttributes
@@ -47,12 +47,12 @@ func (r *TaobaoAlitripItFareQuerytaskAPIRequest) SetExtendAttributes(_extendAttr
 	return nil
 }
 
-// Get ExtendAttributes Getter
+// GetExtendAttributes ExtendAttributes Getter
 func (r TaobaoAlitripItFareQuerytaskAPIRequest) GetExtendAttributes() string {
 	return r._extendAttributes
 }
 
-// Set is TaskId Setter
+// SetTaskId is TaskId Setter
 // 任务id
 func (r *TaobaoAlitripItFareQuerytaskAPIRequest) SetTaskId(_taskId int64) error {
 	r._taskId = _taskId
@@ -60,7 +60,7 @@ func (r *TaobaoAlitripItFareQuerytaskAPIRequest) SetTaskId(_taskId int64) error 
 	return nil
 }
 
-// Get TaskId Getter
+// GetTaskId TaskId Getter
 func (r TaobaoAlitripItFareQuerytaskAPIRequest) GetTaskId() int64 {
 	return r._taskId
 }

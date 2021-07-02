@@ -37,7 +37,7 @@ func (r AlibabaMjMosFundCreatebillAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BillDto Setter
+// SetBillDto is BillDto Setter
 // 创建付款单入参
 func (r *AlibabaMjMosFundCreatebillAPIRequest) SetBillDto(_billDto *CreateBillDto) error {
 	r._billDto = _billDto
@@ -45,7 +45,7 @@ func (r *AlibabaMjMosFundCreatebillAPIRequest) SetBillDto(_billDto *CreateBillDt
 	return nil
 }
 
-// Get BillDto Getter
+// GetBillDto BillDto Getter
 func (r AlibabaMjMosFundCreatebillAPIRequest) GetBillDto() *CreateBillDto {
 	return r._billDto
 }

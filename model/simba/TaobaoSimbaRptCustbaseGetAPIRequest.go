@@ -49,7 +49,7 @@ func (r TaobaoSimbaRptCustbaseGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SubwayToken Setter
+// SetSubwayToken is SubwayToken Setter
 // 权限验证信息
 func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetSubwayToken(_subwayToken string) error {
 	r._subwayToken = _subwayToken
@@ -57,12 +57,12 @@ func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetSubwayToken(_subwayToken string
 	return nil
 }
 
-// Get SubwayToken Getter
+// GetSubwayToken SubwayToken Getter
 func (r TaobaoSimbaRptCustbaseGetAPIRequest) GetSubwayToken() string {
 	return r._subwayToken
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 昵称
 func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -70,12 +70,12 @@ func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaRptCustbaseGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 开始日期，格式yyyy-mm-dd
 func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -83,12 +83,12 @@ func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetStartTime(_startTime string) er
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoSimbaRptCustbaseGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束日期，格式yyyy-mm-dd
 func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -96,12 +96,12 @@ func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetEndTime(_endTime string) error 
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoSimbaRptCustbaseGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -109,12 +109,12 @@ func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoSimbaRptCustbaseGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页大小
 func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -122,12 +122,12 @@ func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetPageSize(_pageSize int64) error
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoSimbaRptCustbaseGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 数据来源（站内：1，站外：2 ，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2
 func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -135,7 +135,7 @@ func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetSource(_source string) error {
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r TaobaoSimbaRptCustbaseGetAPIRequest) GetSource() string {
 	return r._source
 }

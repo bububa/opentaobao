@@ -45,7 +45,7 @@ func (r AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is ReserveNumber Setter
+// SetReserveNumber is ReserveNumber Setter
 // 阿里健康预约唯一标识
 func (r *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) SetReserveNumber(_reserveNumber string) error {
 	r._reserveNumber = _reserveNumber
@@ -53,12 +53,12 @@ func (r *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) SetReserveNumber
 	return nil
 }
 
-// Get ReserveNumber Getter
+// GetReserveNumber ReserveNumber Getter
 func (r AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) GetReserveNumber() string {
 	return r._reserveNumber
 }
 
-// Set is UniqReserveCode Setter
+// SetUniqReserveCode is UniqReserveCode Setter
 // 体检机构预约唯一标识码
 func (r *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
 	r._uniqReserveCode = _uniqReserveCode
@@ -66,12 +66,12 @@ func (r *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) SetUniqReserveCo
 	return nil
 }
 
-// Get UniqReserveCode Getter
+// GetUniqReserveCode UniqReserveCode Getter
 func (r AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) GetUniqReserveCode() string {
 	return r._uniqReserveCode
 }
 
-// Set is ReserveDate Setter
+// SetReserveDate is ReserveDate Setter
 // 修改后预约预约日期，格式：yyyy-MM-dd
 func (r *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) SetReserveDate(_reserveDate string) error {
 	r._reserveDate = _reserveDate
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) SetReserveDate(_
 	return nil
 }
 
-// Get ReserveDate Getter
+// GetReserveDate ReserveDate Getter
 func (r AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) GetReserveDate() string {
 	return r._reserveDate
 }
 
-// Set is ReserveTimeStart Setter
+// SetReserveTimeStart is ReserveTimeStart Setter
 // 修改后预约时间段开始时间 HH:mm:ss
 func (r *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) SetReserveTimeStart(_reserveTimeStart string) error {
 	r._reserveTimeStart = _reserveTimeStart
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) SetReserveTimeSt
 	return nil
 }
 
-// Get ReserveTimeStart Getter
+// GetReserveTimeStart ReserveTimeStart Getter
 func (r AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) GetReserveTimeStart() string {
 	return r._reserveTimeStart
 }
 
-// Set is ReserveTimeEnd Setter
+// SetReserveTimeEnd is ReserveTimeEnd Setter
 // 修改后预约时间段结束时间 HH:mm:ss
 func (r *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) SetReserveTimeEnd(_reserveTimeEnd string) error {
 	r._reserveTimeEnd = _reserveTimeEnd
@@ -105,7 +105,7 @@ func (r *AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) SetReserveTimeEn
 	return nil
 }
 
-// Get ReserveTimeEnd Getter
+// GetReserveTimeEnd ReserveTimeEnd Getter
 func (r AlibabaAlihealthExaminationReserveIsvModifyAPIRequest) GetReserveTimeEnd() string {
 	return r._reserveTimeEnd
 }

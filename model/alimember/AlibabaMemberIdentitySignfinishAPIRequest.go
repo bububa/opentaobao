@@ -37,7 +37,7 @@ func (r AlibabaMemberIdentitySignfinishAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SignFinish Setter
+// SetSignFinish is SignFinish Setter
 // 签约确认信息
 func (r *AlibabaMemberIdentitySignfinishAPIRequest) SetSignFinish(_signFinish *SignIdentityFinishRequest) error {
 	r._signFinish = _signFinish
@@ -45,7 +45,7 @@ func (r *AlibabaMemberIdentitySignfinishAPIRequest) SetSignFinish(_signFinish *S
 	return nil
 }
 
-// Get SignFinish Getter
+// GetSignFinish SignFinish Getter
 func (r AlibabaMemberIdentitySignfinishAPIRequest) GetSignFinish() *SignIdentityFinishRequest {
 	return r._signFinish
 }

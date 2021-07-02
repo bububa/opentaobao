@@ -39,7 +39,7 @@ func (r TaobaoFeedflowItemAdgroupAdzoneBindAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is BindAdzoneList Setter
+// SetBindAdzoneList is BindAdzoneList Setter
 // 新增的绑定资源位
 func (r *TaobaoFeedflowItemAdgroupAdzoneBindAPIRequest) SetBindAdzoneList(_bindAdzoneList []AdzoneBindDto) error {
 	r._bindAdzoneList = _bindAdzoneList
@@ -47,12 +47,12 @@ func (r *TaobaoFeedflowItemAdgroupAdzoneBindAPIRequest) SetBindAdzoneList(_bindA
 	return nil
 }
 
-// Get BindAdzoneList Getter
+// GetBindAdzoneList BindAdzoneList Getter
 func (r TaobaoFeedflowItemAdgroupAdzoneBindAPIRequest) GetBindAdzoneList() []AdzoneBindDto {
 	return r._bindAdzoneList
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 单元id
 func (r *TaobaoFeedflowItemAdgroupAdzoneBindAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -60,7 +60,7 @@ func (r *TaobaoFeedflowItemAdgroupAdzoneBindAPIRequest) SetAdgroupId(_adgroupId 
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoFeedflowItemAdgroupAdzoneBindAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

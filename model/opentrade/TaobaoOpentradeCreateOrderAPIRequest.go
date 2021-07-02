@@ -51,7 +51,7 @@ func (r TaobaoOpentradeCreateOrderAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutId Setter
+// SetOutId is OutId Setter
 // 外部订单ID
 func (r *TaobaoOpentradeCreateOrderAPIRequest) SetOutId(_outId string) error {
 	r._outId = _outId
@@ -59,12 +59,12 @@ func (r *TaobaoOpentradeCreateOrderAPIRequest) SetOutId(_outId string) error {
 	return nil
 }
 
-// Get OutId Getter
+// GetOutId OutId Getter
 func (r TaobaoOpentradeCreateOrderAPIRequest) GetOutId() string {
 	return r._outId
 }
 
-// Set is OpenUserId Setter
+// SetOpenUserId is OpenUserId Setter
 // 买家openID
 func (r *TaobaoOpentradeCreateOrderAPIRequest) SetOpenUserId(_openUserId string) error {
 	r._openUserId = _openUserId
@@ -72,12 +72,12 @@ func (r *TaobaoOpentradeCreateOrderAPIRequest) SetOpenUserId(_openUserId string)
 	return nil
 }
 
-// Get OpenUserId Getter
+// GetOpenUserId OpenUserId Getter
 func (r TaobaoOpentradeCreateOrderAPIRequest) GetOpenUserId() string {
 	return r._openUserId
 }
 
-// Set is FullName Setter
+// SetFullName is FullName Setter
 // 收货地址的收件人姓名
 func (r *TaobaoOpentradeCreateOrderAPIRequest) SetFullName(_fullName string) error {
 	r._fullName = _fullName
@@ -85,12 +85,12 @@ func (r *TaobaoOpentradeCreateOrderAPIRequest) SetFullName(_fullName string) err
 	return nil
 }
 
-// Get FullName Getter
+// GetFullName FullName Getter
 func (r TaobaoOpentradeCreateOrderAPIRequest) GetFullName() string {
 	return r._fullName
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 收货地址的手机号码
 func (r *TaobaoOpentradeCreateOrderAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -98,12 +98,12 @@ func (r *TaobaoOpentradeCreateOrderAPIRequest) SetMobile(_mobile string) error {
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r TaobaoOpentradeCreateOrderAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 收货地址
 func (r *TaobaoOpentradeCreateOrderAPIRequest) SetAddress(_address string) error {
 	r._address = _address
@@ -111,12 +111,12 @@ func (r *TaobaoOpentradeCreateOrderAPIRequest) SetAddress(_address string) error
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r TaobaoOpentradeCreateOrderAPIRequest) GetAddress() string {
 	return r._address
 }
 
-// Set is SellerMemo Setter
+// SetSellerMemo is SellerMemo Setter
 // 卖家备忘
 func (r *TaobaoOpentradeCreateOrderAPIRequest) SetSellerMemo(_sellerMemo string) error {
 	r._sellerMemo = _sellerMemo
@@ -124,12 +124,12 @@ func (r *TaobaoOpentradeCreateOrderAPIRequest) SetSellerMemo(_sellerMemo string)
 	return nil
 }
 
-// Get SellerMemo Getter
+// GetSellerMemo SellerMemo Getter
 func (r TaobaoOpentradeCreateOrderAPIRequest) GetSellerMemo() string {
 	return r._sellerMemo
 }
 
-// Set is BuyerMemo Setter
+// SetBuyerMemo is BuyerMemo Setter
 // 卖家备忘
 func (r *TaobaoOpentradeCreateOrderAPIRequest) SetBuyerMemo(_buyerMemo string) error {
 	r._buyerMemo = _buyerMemo
@@ -137,12 +137,12 @@ func (r *TaobaoOpentradeCreateOrderAPIRequest) SetBuyerMemo(_buyerMemo string) e
 	return nil
 }
 
-// Get BuyerMemo Getter
+// GetBuyerMemo BuyerMemo Getter
 func (r TaobaoOpentradeCreateOrderAPIRequest) GetBuyerMemo() string {
 	return r._buyerMemo
 }
 
-// Set is ItemInfos Setter
+// SetItemInfos is ItemInfos Setter
 // 商品信息，一次不能超过10个
 func (r *TaobaoOpentradeCreateOrderAPIRequest) SetItemInfos(_itemInfos []ItemInfo) error {
 	r._itemInfos = _itemInfos
@@ -150,7 +150,7 @@ func (r *TaobaoOpentradeCreateOrderAPIRequest) SetItemInfos(_itemInfos []ItemInf
 	return nil
 }
 
-// Get ItemInfos Getter
+// GetItemInfos ItemInfos Getter
 func (r TaobaoOpentradeCreateOrderAPIRequest) GetItemInfos() []ItemInfo {
 	return r._itemInfos
 }

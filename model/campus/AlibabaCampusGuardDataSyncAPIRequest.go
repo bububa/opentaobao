@@ -41,7 +41,7 @@ func (r AlibabaCampusGuardDataSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DataType Setter
+// SetDataType is DataType Setter
 // 1-刷卡流水
 func (r *AlibabaCampusGuardDataSyncAPIRequest) SetDataType(_dataType string) error {
 	r._dataType = _dataType
@@ -49,12 +49,12 @@ func (r *AlibabaCampusGuardDataSyncAPIRequest) SetDataType(_dataType string) err
 	return nil
 }
 
-// Get DataType Getter
+// GetDataType DataType Getter
 func (r AlibabaCampusGuardDataSyncAPIRequest) GetDataType() string {
 	return r._dataType
 }
 
-// Set is SupplierName Setter
+// SetSupplierName is SupplierName Setter
 // 供应商名称
 func (r *AlibabaCampusGuardDataSyncAPIRequest) SetSupplierName(_supplierName string) error {
 	r._supplierName = _supplierName
@@ -62,12 +62,12 @@ func (r *AlibabaCampusGuardDataSyncAPIRequest) SetSupplierName(_supplierName str
 	return nil
 }
 
-// Get SupplierName Getter
+// GetSupplierName SupplierName Getter
 func (r AlibabaCampusGuardDataSyncAPIRequest) GetSupplierName() string {
 	return r._supplierName
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // json串
 func (r *AlibabaCampusGuardDataSyncAPIRequest) SetData(_data string) error {
 	r._data = _data
@@ -75,7 +75,7 @@ func (r *AlibabaCampusGuardDataSyncAPIRequest) SetData(_data string) error {
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r AlibabaCampusGuardDataSyncAPIRequest) GetData() string {
 	return r._data
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest) GetAp
 	return params
 }
 
-// Set is ReturnWarehouseResult Setter
+// SetReturnWarehouseResult is ReturnWarehouseResult Setter
 // 退仓结果
 func (r *AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest) SetReturnWarehouseResult(_returnWarehouseResult *ReturnWarehouseResult) error {
 	r._returnWarehouseResult = _returnWarehouseResult
@@ -45,7 +45,7 @@ func (r *AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest) SetR
 	return nil
 }
 
-// Get ReturnWarehouseResult Getter
+// GetReturnWarehouseResult ReturnWarehouseResult Getter
 func (r AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIRequest) GetReturnWarehouseResult() *ReturnWarehouseResult {
 	return r._returnWarehouseResult
 }

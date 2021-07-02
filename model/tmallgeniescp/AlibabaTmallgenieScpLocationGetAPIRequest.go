@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpLocationGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RequestExtendJson Setter
+// SetRequestExtendJson is RequestExtendJson Setter
 // 扩展参数
 func (r *AlibabaTmallgenieScpLocationGetAPIRequest) SetRequestExtendJson(_requestExtendJson string) error {
 	r._requestExtendJson = _requestExtendJson
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpLocationGetAPIRequest) SetRequestExtendJson(_reques
 	return nil
 }
 
-// Get RequestExtendJson Getter
+// GetRequestExtendJson RequestExtendJson Getter
 func (r AlibabaTmallgenieScpLocationGetAPIRequest) GetRequestExtendJson() string {
 	return r._requestExtendJson
 }

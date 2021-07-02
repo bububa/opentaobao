@@ -43,7 +43,7 @@ func (r AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) GetApiParams
 	return params
 }
 
-// Set is ProjectId Setter
+// SetProjectId is ProjectId Setter
 // 项目id
 func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) SetProjectId(_projectId int64) error {
 	r._projectId = _projectId
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) SetProjectI
 	return nil
 }
 
-// Get ProjectId Getter
+// GetProjectId ProjectId Getter
 func (r AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) GetProjectId() int64 {
 	return r._projectId
 }
 
-// Set is HospitalRefEntId Setter
+// SetHospitalRefEntId is HospitalRefEntId Setter
 // 临床研究机构id
 func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) SetHospitalRefEntId(_hospitalRefEntId string) error {
 	r._hospitalRefEntId = _hospitalRefEntId
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) SetHospital
 	return nil
 }
 
-// Get HospitalRefEntId Getter
+// GetHospitalRefEntId HospitalRefEntId Getter
 func (r AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) GetHospitalRefEntId() string {
 	return r._hospitalRefEntId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 状态 4:绑定成功 5:绑定失败
 func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) SetStatus(_
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is CenterRandomSysId Setter
+// SetCenterRandomSysId is CenterRandomSysId Setter
 // 中央随机化系统id
 func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) SetCenterRandomSysId(_centerRandomSysId string) error {
 	r._centerRandomSysId = _centerRandomSysId
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) SetCenterRa
 	return nil
 }
 
-// Get CenterRandomSysId Getter
+// GetCenterRandomSysId CenterRandomSysId Getter
 func (r AlibabaAlihealthDrugcodeCenterReceiveBoundStatusAPIRequest) GetCenterRandomSysId() string {
 	return r._centerRandomSysId
 }

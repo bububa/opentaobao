@@ -37,7 +37,7 @@ func (r AlibabaDamaiMaitixOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 分销单查询入参
 func (r *AlibabaDamaiMaitixOrderQueryAPIRequest) SetParam(_param *MoaOrderQueryParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMaitixOrderQueryAPIRequest) SetParam(_param *MoaOrderQueryP
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaDamaiMaitixOrderQueryAPIRequest) GetParam() *MoaOrderQueryParam {
 	return r._param
 }

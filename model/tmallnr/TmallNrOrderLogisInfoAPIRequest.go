@@ -41,7 +41,7 @@ func (r TmallNrOrderLogisInfoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 卖家ID
 func (r *TmallNrOrderLogisInfoAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
@@ -49,12 +49,12 @@ func (r *TmallNrOrderLogisInfoAPIRequest) SetSellerId(_sellerId int64) error {
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r TmallNrOrderLogisInfoAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }
 
-// Set is MainOrderIds Setter
+// SetMainOrderIds is MainOrderIds Setter
 // 主订单号
 func (r *TmallNrOrderLogisInfoAPIRequest) SetMainOrderIds(_mainOrderIds []int64) error {
 	r._mainOrderIds = _mainOrderIds
@@ -62,12 +62,12 @@ func (r *TmallNrOrderLogisInfoAPIRequest) SetMainOrderIds(_mainOrderIds []int64)
 	return nil
 }
 
-// Get MainOrderIds Getter
+// GetMainOrderIds MainOrderIds Getter
 func (r TmallNrOrderLogisInfoAPIRequest) GetMainOrderIds() []int64 {
 	return r._mainOrderIds
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 来源标识
 func (r *TmallNrOrderLogisInfoAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -75,7 +75,7 @@ func (r *TmallNrOrderLogisInfoAPIRequest) SetChannel(_channel string) error {
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TmallNrOrderLogisInfoAPIRequest) GetChannel() string {
 	return r._channel
 }

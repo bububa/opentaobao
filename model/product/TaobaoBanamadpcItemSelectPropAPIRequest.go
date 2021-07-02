@@ -41,7 +41,7 @@ func (r TaobaoBanamadpcItemSelectPropAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Xml Setter
+// SetXml is Xml Setter
 // 子属性的schema xml
 func (r *TaobaoBanamadpcItemSelectPropAPIRequest) SetXml(_xml string) error {
 	r._xml = _xml
@@ -49,12 +49,12 @@ func (r *TaobaoBanamadpcItemSelectPropAPIRequest) SetXml(_xml string) error {
 	return nil
 }
 
-// Get Xml Getter
+// GetXml Xml Getter
 func (r TaobaoBanamadpcItemSelectPropAPIRequest) GetXml() string {
 	return r._xml
 }
 
-// Set is PropId Setter
+// SetPropId is PropId Setter
 // 属性id
 func (r *TaobaoBanamadpcItemSelectPropAPIRequest) SetPropId(_propId int64) error {
 	r._propId = _propId
@@ -62,12 +62,12 @@ func (r *TaobaoBanamadpcItemSelectPropAPIRequest) SetPropId(_propId int64) error
 	return nil
 }
 
-// Get PropId Getter
+// GetPropId PropId Getter
 func (r TaobaoBanamadpcItemSelectPropAPIRequest) GetPropId() int64 {
 	return r._propId
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 类目id
 func (r *TaobaoBanamadpcItemSelectPropAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -75,7 +75,7 @@ func (r *TaobaoBanamadpcItemSelectPropAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r TaobaoBanamadpcItemSelectPropAPIRequest) GetCatId() int64 {
 	return r._catId
 }

@@ -43,7 +43,7 @@ func (r TaobaoVmarketEticketFlowConsumeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 业务单号
 func (r *TaobaoVmarketEticketFlowConsumeAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -51,12 +51,12 @@ func (r *TaobaoVmarketEticketFlowConsumeAPIRequest) SetOuterId(_outerId string) 
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoVmarketEticketFlowConsumeAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 凭证码
 func (r *TaobaoVmarketEticketFlowConsumeAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -64,12 +64,12 @@ func (r *TaobaoVmarketEticketFlowConsumeAPIRequest) SetCode(_code string) error 
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r TaobaoVmarketEticketFlowConsumeAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 淘宝业务提供的业务类型值，请联系相关业务运营取得
 func (r *TaobaoVmarketEticketFlowConsumeAPIRequest) SetBizType(_bizType int64) error {
 	r._bizType = _bizType
@@ -77,12 +77,12 @@ func (r *TaobaoVmarketEticketFlowConsumeAPIRequest) SetBizType(_bizType int64) e
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TaobaoVmarketEticketFlowConsumeAPIRequest) GetBizType() int64 {
 	return r._bizType
 }
 
-// Set is Operator Setter
+// SetOperator is Operator Setter
 // 核销操作人
 func (r *TaobaoVmarketEticketFlowConsumeAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
@@ -90,7 +90,7 @@ func (r *TaobaoVmarketEticketFlowConsumeAPIRequest) SetOperator(_operator string
 	return nil
 }
 
-// Get Operator Getter
+// GetOperator Operator Getter
 func (r TaobaoVmarketEticketFlowConsumeAPIRequest) GetOperator() string {
 	return r._operator
 }

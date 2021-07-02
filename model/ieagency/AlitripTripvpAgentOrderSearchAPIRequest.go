@@ -47,7 +47,7 @@ func (r AlitripTripvpAgentOrderSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商ID
 func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -55,12 +55,12 @@ func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetAgentId(_agentId int64) err
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r AlitripTripvpAgentOrderSearchAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is BeginTime Setter
+// SetBeginTime is BeginTime Setter
 // 辅营创建开始时间
 func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetBeginTime(_beginTime string) error {
 	r._beginTime = _beginTime
@@ -68,12 +68,12 @@ func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetBeginTime(_beginTime string
 	return nil
 }
 
-// Get BeginTime Getter
+// GetBeginTime BeginTime Getter
 func (r AlitripTripvpAgentOrderSearchAPIRequest) GetBeginTime() string {
 	return r._beginTime
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前页码
 func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -81,12 +81,12 @@ func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetCurrentPage(_currentPage in
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r AlitripTripvpAgentOrderSearchAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 辅营创建结束时间
 func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -94,12 +94,12 @@ func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetEndTime(_endTime string) er
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r AlitripTripvpAgentOrderSearchAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is OrderStatus Setter
+// SetOrderStatus is OrderStatus Setter
 // 订单状态，1-待支付 2-支付成功 3-	辅营出货成功 4-订单取消
 func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetOrderStatus(_orderStatus int64) error {
 	r._orderStatus = _orderStatus
@@ -107,12 +107,12 @@ func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetOrderStatus(_orderStatus in
 	return nil
 }
 
-// Get OrderStatus Getter
+// GetOrderStatus OrderStatus Getter
 func (r AlitripTripvpAgentOrderSearchAPIRequest) GetOrderStatus() int64 {
 	return r._orderStatus
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页行数
 func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -120,7 +120,7 @@ func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetPageSize(_pageSize int64) e
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlitripTripvpAgentOrderSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

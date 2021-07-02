@@ -41,7 +41,7 @@ func (r TaobaoTradeDrugGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 店铺id
 func (r *TaobaoTradeDrugGetAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -49,12 +49,12 @@ func (r *TaobaoTradeDrugGetAPIRequest) SetStoreId(_storeId int64) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoTradeDrugGetAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is IsAll Setter
+// SetIsAll is IsAll Setter
 // true-商家下所有店铺的待确认订单, false—指定店铺的订单
 func (r *TaobaoTradeDrugGetAPIRequest) SetIsAll(_isAll bool) error {
 	r._isAll = _isAll
@@ -62,12 +62,12 @@ func (r *TaobaoTradeDrugGetAPIRequest) SetIsAll(_isAll bool) error {
 	return nil
 }
 
-// Get IsAll Getter
+// GetIsAll IsAll Getter
 func (r TaobaoTradeDrugGetAPIRequest) GetIsAll() bool {
 	return r._isAll
 }
 
-// Set is MaxSize Setter
+// SetMaxSize is MaxSize Setter
 // 返回记录数，超过20按20条返回数据
 func (r *TaobaoTradeDrugGetAPIRequest) SetMaxSize(_maxSize int64) error {
 	r._maxSize = _maxSize
@@ -75,7 +75,7 @@ func (r *TaobaoTradeDrugGetAPIRequest) SetMaxSize(_maxSize int64) error {
 	return nil
 }
 
-// Get MaxSize Getter
+// GetMaxSize MaxSize Getter
 func (r TaobaoTradeDrugGetAPIRequest) GetMaxSize() int64 {
 	return r._maxSize
 }

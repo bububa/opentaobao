@@ -37,7 +37,7 @@ func (r AlibabaTradeAlianceCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamIsvCreateOrderParam Setter
+// SetParamIsvCreateOrderParam is ParamIsvCreateOrderParam Setter
 // 下单请求
 func (r *AlibabaTradeAlianceCreateAPIRequest) SetParamIsvCreateOrderParam(_paramIsvCreateOrderParam *IsvCreateOrderParam) error {
 	r._paramIsvCreateOrderParam = _paramIsvCreateOrderParam
@@ -45,7 +45,7 @@ func (r *AlibabaTradeAlianceCreateAPIRequest) SetParamIsvCreateOrderParam(_param
 	return nil
 }
 
-// Get ParamIsvCreateOrderParam Getter
+// GetParamIsvCreateOrderParam ParamIsvCreateOrderParam Getter
 func (r AlibabaTradeAlianceCreateAPIRequest) GetParamIsvCreateOrderParam() *IsvCreateOrderParam {
 	return r._paramIsvCreateOrderParam
 }

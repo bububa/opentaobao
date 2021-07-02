@@ -37,7 +37,7 @@ func (r AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ParamTaxOptimizationEmployeeAssetUpdateDTO Setter
+// SetParamTaxOptimizationEmployeeAssetUpdateDTO is ParamTaxOptimizationEmployeeAssetUpdateDTO Setter
 // 入参
 func (r *AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest) SetParamTaxOptimizationEmployeeAssetUpdateDTO(_paramTaxOptimizationEmployeeAssetUpdateDTO *TaxOptimizationEmployeeAssetUpdateDto) error {
 	r._paramTaxOptimizationEmployeeAssetUpdateDTO = _paramTaxOptimizationEmployeeAssetUpdateDTO
@@ -45,7 +45,7 @@ func (r *AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest) SetParamTaxOptimiza
 	return nil
 }
 
-// Get ParamTaxOptimizationEmployeeAssetUpdateDTO Getter
+// GetParamTaxOptimizationEmployeeAssetUpdateDTO ParamTaxOptimizationEmployeeAssetUpdateDTO Getter
 func (r AlibabaEinvoiceTaxOptSalaryaccountUpdateAPIRequest) GetParamTaxOptimizationEmployeeAssetUpdateDTO() *TaxOptimizationEmployeeAssetUpdateDto {
 	return r._paramTaxOptimizationEmployeeAssetUpdateDTO
 }

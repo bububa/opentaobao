@@ -39,7 +39,7 @@ func (r AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest) GetApiParams
 	return params
 }
 
-// Set is Context Setter
+// SetContext is Context Setter
 // 操作用户上下文
 func (r *AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest) SetContext(_context *WorkBenchContext) error {
 	r._context = _context
@@ -47,12 +47,12 @@ func (r *AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest) SetContext(
 	return nil
 }
 
-// Get Context Getter
+// GetContext Context Getter
 func (r AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest) GetContext() *WorkBenchContext {
 	return r._context
 }
 
-// Set is GroupQuery Setter
+// SetGroupQuery is GroupQuery Setter
 // 查询对象
 func (r *AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest) SetGroupQuery(_groupQuery *SpaceGroupQuery) error {
 	r._groupQuery = _groupQuery
@@ -60,7 +60,7 @@ func (r *AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest) SetGroupQue
 	return nil
 }
 
-// Get GroupQuery Getter
+// GetGroupQuery GroupQuery Getter
 func (r AlibabaCampusSpaceGroupGetspacegrouplistwithattrAPIRequest) GetGroupQuery() *SpaceGroupQuery {
 	return r._groupQuery
 }

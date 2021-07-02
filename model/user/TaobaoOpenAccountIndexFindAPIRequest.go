@@ -39,7 +39,7 @@ func (r TaobaoOpenAccountIndexFindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IndexType Setter
+// SetIndexType is IndexType Setter
 // int MOBILE         = 1;int EMAIL          = 2;int ISV_ACCOUNT_ID = 3;int LOGIN_ID       = 4;int OPEN_ID        = 5;
 func (r *TaobaoOpenAccountIndexFindAPIRequest) SetIndexType(_indexType int64) error {
 	r._indexType = _indexType
@@ -47,12 +47,12 @@ func (r *TaobaoOpenAccountIndexFindAPIRequest) SetIndexType(_indexType int64) er
 	return nil
 }
 
-// Get IndexType Getter
+// GetIndexType IndexType Getter
 func (r TaobaoOpenAccountIndexFindAPIRequest) GetIndexType() int64 {
 	return r._indexType
 }
 
-// Set is IndexValue Setter
+// SetIndexValue is IndexValue Setter
 // 具体值，当索引类型是 OPEN_ID 是，格式为 oauthPlatform|openId，即使用竖线分隔的组合值
 func (r *TaobaoOpenAccountIndexFindAPIRequest) SetIndexValue(_indexValue string) error {
 	r._indexValue = _indexValue
@@ -60,7 +60,7 @@ func (r *TaobaoOpenAccountIndexFindAPIRequest) SetIndexValue(_indexValue string)
 	return nil
 }
 
-// Get IndexValue Getter
+// GetIndexValue IndexValue Getter
 func (r TaobaoOpenAccountIndexFindAPIRequest) GetIndexValue() string {
 	return r._indexValue
 }

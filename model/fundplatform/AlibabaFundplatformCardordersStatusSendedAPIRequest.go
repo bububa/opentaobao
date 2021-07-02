@@ -41,7 +41,7 @@ func (r AlibabaFundplatformCardordersStatusSendedAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is CardOrderId Setter
+// SetCardOrderId is CardOrderId Setter
 // 子制卡单ID
 func (r *AlibabaFundplatformCardordersStatusSendedAPIRequest) SetCardOrderId(_cardOrderId int64) error {
 	r._cardOrderId = _cardOrderId
@@ -49,12 +49,12 @@ func (r *AlibabaFundplatformCardordersStatusSendedAPIRequest) SetCardOrderId(_ca
 	return nil
 }
 
-// Get CardOrderId Getter
+// GetCardOrderId CardOrderId Getter
 func (r AlibabaFundplatformCardordersStatusSendedAPIRequest) GetCardOrderId() int64 {
 	return r._cardOrderId
 }
 
-// Set is LogisticsOrderId Setter
+// SetLogisticsOrderId is LogisticsOrderId Setter
 // 物流单号
 func (r *AlibabaFundplatformCardordersStatusSendedAPIRequest) SetLogisticsOrderId(_logisticsOrderId string) error {
 	r._logisticsOrderId = _logisticsOrderId
@@ -62,12 +62,12 @@ func (r *AlibabaFundplatformCardordersStatusSendedAPIRequest) SetLogisticsOrderI
 	return nil
 }
 
-// Get LogisticsOrderId Getter
+// GetLogisticsOrderId LogisticsOrderId Getter
 func (r AlibabaFundplatformCardordersStatusSendedAPIRequest) GetLogisticsOrderId() string {
 	return r._logisticsOrderId
 }
 
-// Set is LogisticsCompany Setter
+// SetLogisticsCompany is LogisticsCompany Setter
 // 物流商名称
 func (r *AlibabaFundplatformCardordersStatusSendedAPIRequest) SetLogisticsCompany(_logisticsCompany string) error {
 	r._logisticsCompany = _logisticsCompany
@@ -75,7 +75,7 @@ func (r *AlibabaFundplatformCardordersStatusSendedAPIRequest) SetLogisticsCompan
 	return nil
 }
 
-// Get LogisticsCompany Getter
+// GetLogisticsCompany LogisticsCompany Getter
 func (r AlibabaFundplatformCardordersStatusSendedAPIRequest) GetLogisticsCompany() string {
 	return r._logisticsCompany
 }

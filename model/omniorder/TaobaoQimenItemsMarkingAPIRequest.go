@@ -43,7 +43,7 @@ func (r TaobaoQimenItemsMarkingAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ActionType Setter
+// SetActionType is ActionType Setter
 // 操作类型，string（50），ADD=打标，DELETE=去标，必填
 func (r *TaobaoQimenItemsMarkingAPIRequest) SetActionType(_actionType string) error {
 	r._actionType = _actionType
@@ -51,12 +51,12 @@ func (r *TaobaoQimenItemsMarkingAPIRequest) SetActionType(_actionType string) er
 	return nil
 }
 
-// Get ActionType Getter
+// GetActionType ActionType Getter
 func (r TaobaoQimenItemsMarkingAPIRequest) GetActionType() string {
 	return r._actionType
 }
 
-// Set is TagType Setter
+// SetTagType is TagType Setter
 // 打标值，string（50），TBKU=同步库存标，MDZT=门店自提标，必填
 func (r *TaobaoQimenItemsMarkingAPIRequest) SetTagType(_tagType string) error {
 	r._tagType = _tagType
@@ -64,12 +64,12 @@ func (r *TaobaoQimenItemsMarkingAPIRequest) SetTagType(_tagType string) error {
 	return nil
 }
 
-// Get TagType Getter
+// GetTagType TagType Getter
 func (r TaobaoQimenItemsMarkingAPIRequest) GetTagType() string {
 	return r._tagType
 }
 
-// Set is ItemIds Setter
+// SetItemIds is ItemIds Setter
 // 线上商品ID，long，必填
 func (r *TaobaoQimenItemsMarkingAPIRequest) SetItemIds(_itemIds []int64) error {
 	r._itemIds = _itemIds
@@ -77,12 +77,12 @@ func (r *TaobaoQimenItemsMarkingAPIRequest) SetItemIds(_itemIds []int64) error {
 	return nil
 }
 
-// Get ItemIds Getter
+// GetItemIds ItemIds Getter
 func (r TaobaoQimenItemsMarkingAPIRequest) GetItemIds() []int64 {
 	return r._itemIds
 }
 
-// Set is Remark Setter
+// SetRemark is Remark Setter
 // 备注，string（500）
 func (r *TaobaoQimenItemsMarkingAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
@@ -90,7 +90,7 @@ func (r *TaobaoQimenItemsMarkingAPIRequest) SetRemark(_remark string) error {
 	return nil
 }
 
-// Get Remark Getter
+// GetRemark Remark Getter
 func (r TaobaoQimenItemsMarkingAPIRequest) GetRemark() string {
 	return r._remark
 }

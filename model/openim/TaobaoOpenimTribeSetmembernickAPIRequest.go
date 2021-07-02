@@ -45,7 +45,7 @@ func (r TaobaoOpenimTribeSetmembernickAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is User Setter
+// SetUser is User Setter
 // 发起设置昵称的操作者，如果是设置其他成员的昵称，只有普通组的群主和管理员有权限
 func (r *TaobaoOpenimTribeSetmembernickAPIRequest) SetUser(_user *User) error {
 	r._user = _user
@@ -53,12 +53,12 @@ func (r *TaobaoOpenimTribeSetmembernickAPIRequest) SetUser(_user *User) error {
 	return nil
 }
 
-// Get User Getter
+// GetUser User Getter
 func (r TaobaoOpenimTribeSetmembernickAPIRequest) GetUser() *User {
 	return r._user
 }
 
-// Set is TribeId Setter
+// SetTribeId is TribeId Setter
 // 群id
 func (r *TaobaoOpenimTribeSetmembernickAPIRequest) SetTribeId(_tribeId int64) error {
 	r._tribeId = _tribeId
@@ -66,12 +66,12 @@ func (r *TaobaoOpenimTribeSetmembernickAPIRequest) SetTribeId(_tribeId int64) er
 	return nil
 }
 
-// Get TribeId Getter
+// GetTribeId TribeId Getter
 func (r TaobaoOpenimTribeSetmembernickAPIRequest) GetTribeId() int64 {
 	return r._tribeId
 }
 
-// Set is Member Setter
+// SetMember is Member Setter
 // 被设置昵称的群成员
 func (r *TaobaoOpenimTribeSetmembernickAPIRequest) SetMember(_member *User) error {
 	r._member = _member
@@ -79,12 +79,12 @@ func (r *TaobaoOpenimTribeSetmembernickAPIRequest) SetMember(_member *User) erro
 	return nil
 }
 
-// Get Member Getter
+// GetMember Member Getter
 func (r TaobaoOpenimTribeSetmembernickAPIRequest) GetMember() *User {
 	return r._member
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 设置的昵称
 func (r *TaobaoOpenimTribeSetmembernickAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -92,7 +92,7 @@ func (r *TaobaoOpenimTribeSetmembernickAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoOpenimTribeSetmembernickAPIRequest) GetNick() string {
 	return r._nick
 }

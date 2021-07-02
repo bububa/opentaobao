@@ -37,7 +37,7 @@ func (r AlibabaAlifanyiMarketExamAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReportQueryApiDTO Setter
+// SetReportQueryApiDTO is ReportQueryApiDTO Setter
 // 请求参数
 func (r *AlibabaAlifanyiMarketExamAPIRequest) SetReportQueryApiDTO(_reportQueryApiDTO *ReportQueryApiDto) error {
 	r._reportQueryApiDTO = _reportQueryApiDTO
@@ -45,7 +45,7 @@ func (r *AlibabaAlifanyiMarketExamAPIRequest) SetReportQueryApiDTO(_reportQueryA
 	return nil
 }
 
-// Get ReportQueryApiDTO Getter
+// GetReportQueryApiDTO ReportQueryApiDTO Getter
 func (r AlibabaAlifanyiMarketExamAPIRequest) GetReportQueryApiDTO() *ReportQueryApiDto {
 	return r._reportQueryApiDTO
 }

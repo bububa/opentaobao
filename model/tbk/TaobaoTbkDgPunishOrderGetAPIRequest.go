@@ -37,7 +37,7 @@ func (r TaobaoTbkDgPunishOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AfOrderOption Setter
+// SetAfOrderOption is AfOrderOption Setter
 // 入参的对象
 func (r *TaobaoTbkDgPunishOrderGetAPIRequest) SetAfOrderOption(_afOrderOption *TopApiAfOrderOption) error {
 	r._afOrderOption = _afOrderOption
@@ -45,7 +45,7 @@ func (r *TaobaoTbkDgPunishOrderGetAPIRequest) SetAfOrderOption(_afOrderOption *T
 	return nil
 }
 
-// Get AfOrderOption Getter
+// GetAfOrderOption AfOrderOption Getter
 func (r TaobaoTbkDgPunishOrderGetAPIRequest) GetAfOrderOption() *TopApiAfOrderOption {
 	return r._afOrderOption
 }

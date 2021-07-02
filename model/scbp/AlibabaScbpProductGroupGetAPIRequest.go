@@ -37,7 +37,7 @@ func (r AlibabaScbpProductGroupGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupId Setter
+// SetGroupId is GroupId Setter
 // 产品分组标识，null表示查询第一层分组
 func (r *AlibabaScbpProductGroupGetAPIRequest) SetGroupId(_groupId string) error {
 	r._groupId = _groupId
@@ -45,7 +45,7 @@ func (r *AlibabaScbpProductGroupGetAPIRequest) SetGroupId(_groupId string) error
 	return nil
 }
 
-// Get GroupId Getter
+// GetGroupId GroupId Getter
 func (r AlibabaScbpProductGroupGetAPIRequest) GetGroupId() string {
 	return r._groupId
 }

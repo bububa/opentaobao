@@ -114,7 +114,7 @@ func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据编号【同一个企业不能上传相同单据号】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -122,12 +122,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetBillCode(_billCode
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is BillTime Setter
+// SetBillTime is BillTime Setter
 // 单据时间（扫码时间）
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetBillTime(_billTime string) error {
 	r._billTime = _billTime
@@ -135,12 +135,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetBillTime(_billTime
 	return nil
 }
 
-// Get BillTime Getter
+// GetBillTime BillTime Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetBillTime() string {
 	return r._billTime
 }
 
-// Set is BillType Setter
+// SetBillType is BillType Setter
 // 单据类型【102代表采购入库,201代表销售出库，其它单据类型详见文档】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetBillType(_billType int64) error {
 	r._billType = _billType
@@ -148,12 +148,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetBillType(_billType
 	return nil
 }
 
-// Get BillType Getter
+// GetBillType BillType Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetBillType() int64 {
 	return r._billType
 }
 
-// Set is PhysicType Setter
+// SetPhysicType is PhysicType Setter
 // 药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetPhysicType(_physicType int64) error {
 	r._physicType = _physicType
@@ -161,12 +161,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetPhysicType(_physic
 	return nil
 }
 
-// Get PhysicType Getter
+// GetPhysicType PhysicType Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetPhysicType() int64 {
 	return r._physicType
 }
 
-// Set is RefUserId Setter
+// SetRefUserId is RefUserId Setter
 // 货主（单据的所有者，上传人），上传企业的单位维一编码【注意：该入参是ref_ent_id，不是ent_id】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetRefUserId(_refUserId string) error {
 	r._refUserId = _refUserId
@@ -174,12 +174,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetRefUserId(_refUser
 	return nil
 }
 
-// Get RefUserId Getter
+// GetRefUserId RefUserId Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetRefUserId() string {
 	return r._refUserId
 }
 
-// Set is AgentRefUserId Setter
+// SetAgentRefUserId is AgentRefUserId Setter
 // 第三方物流代理企业【注意：该入参是ref_ent_id，不是ent_id】，该字段兼容之前接口逻辑，后期将不允许使用，不要填值。
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetAgentRefUserId(_agentRefUserId string) error {
 	r._agentRefUserId = _agentRefUserId
@@ -187,12 +187,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetAgentRefUserId(_ag
 	return nil
 }
 
-// Get AgentRefUserId Getter
+// GetAgentRefUserId AgentRefUserId Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetAgentRefUserId() string {
 	return r._agentRefUserId
 }
 
-// Set is FromUserId Setter
+// SetFromUserId is FromUserId Setter
 // 发货企业entId【注意：该入参是ent_id,并不是ref_ent_id】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetFromUserId(_fromUserId string) error {
 	r._fromUserId = _fromUserId
@@ -200,12 +200,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetFromUserId(_fromUs
 	return nil
 }
 
-// Get FromUserId Getter
+// GetFromUserId FromUserId Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetFromUserId() string {
 	return r._fromUserId
 }
 
-// Set is ToUserId Setter
+// SetToUserId is ToUserId Setter
 // 收货企业entId【注意：该入参是ent_id,并不是ref_ent_id】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetToUserId(_toUserId string) error {
 	r._toUserId = _toUserId
@@ -213,12 +213,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetToUserId(_toUserId
 	return nil
 }
 
-// Get ToUserId Getter
+// GetToUserId ToUserId Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetToUserId() string {
 	return r._toUserId
 }
 
-// Set is DestUserId Setter
+// SetDestUserId is DestUserId Setter
 // 直调企业标识【注意：该入参是ent_id,并不是ref_ent_id】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetDestUserId(_destUserId string) error {
 	r._destUserId = _destUserId
@@ -226,12 +226,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetDestUserId(_destUs
 	return nil
 }
 
-// Get DestUserId Getter
+// GetDestUserId DestUserId Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetDestUserId() string {
 	return r._destUserId
 }
 
-// Set is OperIcCode Setter
+// SetOperIcCode is OperIcCode Setter
 // 单据提交者（调用接口时的appkey编号）
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetOperIcCode(_operIcCode string) error {
 	r._operIcCode = _operIcCode
@@ -239,12 +239,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetOperIcCode(_operIc
 	return nil
 }
 
-// Get OperIcCode Getter
+// GetOperIcCode OperIcCode Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetOperIcCode() string {
 	return r._operIcCode
 }
 
-// Set is OperIcName Setter
+// SetOperIcName is OperIcName Setter
 // 单据提交者姓名（出入库单上传人的名子）
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetOperIcName(_operIcName string) error {
 	r._operIcName = _operIcName
@@ -252,12 +252,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetOperIcName(_operIc
 	return nil
 }
 
-// Get OperIcName Getter
+// GetOperIcName OperIcName Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetOperIcName() string {
 	return r._operIcName
 }
 
-// Set is ClientType Setter
+// SetClientType is ClientType Setter
 // 调用方类型[必须填2]
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetClientType(_clientType string) error {
 	r._clientType = _clientType
@@ -265,12 +265,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetClientType(_client
 	return nil
 }
 
-// Get ClientType Getter
+// GetClientType ClientType Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetClientType() string {
 	return r._clientType
 }
 
-// Set is ReturnReasonCode Setter
+// SetReturnReasonCode is ReturnReasonCode Setter
 // 退货原因代码[退货入出库时填写]
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetReturnReasonCode(_returnReasonCode string) error {
 	r._returnReasonCode = _returnReasonCode
@@ -278,12 +278,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetReturnReasonCode(_
 	return nil
 }
 
-// Get ReturnReasonCode Getter
+// GetReturnReasonCode ReturnReasonCode Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetReturnReasonCode() string {
 	return r._returnReasonCode
 }
 
-// Set is ReturnReasonDes Setter
+// SetReturnReasonDes is ReturnReasonDes Setter
 // 退货原因描述[退货入出库时填写]
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetReturnReasonDes(_returnReasonDes string) error {
 	r._returnReasonDes = _returnReasonDes
@@ -291,12 +291,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetReturnReasonDes(_r
 	return nil
 }
 
-// Get ReturnReasonDes Getter
+// GetReturnReasonDes ReturnReasonDes Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetReturnReasonDes() string {
 	return r._returnReasonDes
 }
 
-// Set is CancelReasonCode Setter
+// SetCancelReasonCode is CancelReasonCode Setter
 // 注销原因代码【销毁出库时填写】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetCancelReasonCode(_cancelReasonCode string) error {
 	r._cancelReasonCode = _cancelReasonCode
@@ -304,12 +304,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetCancelReasonCode(_
 	return nil
 }
 
-// Get CancelReasonCode Getter
+// GetCancelReasonCode CancelReasonCode Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetCancelReasonCode() string {
 	return r._cancelReasonCode
 }
 
-// Set is CancelReasonDes Setter
+// SetCancelReasonDes is CancelReasonDes Setter
 // 注销原因描述【销毁出库时填写】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetCancelReasonDes(_cancelReasonDes string) error {
 	r._cancelReasonDes = _cancelReasonDes
@@ -317,12 +317,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetCancelReasonDes(_c
 	return nil
 }
 
-// Get CancelReasonDes Getter
+// GetCancelReasonDes CancelReasonDes Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetCancelReasonDes() string {
 	return r._cancelReasonDes
 }
 
-// Set is ExecuterName Setter
+// SetExecuterName is ExecuterName Setter
 // 执行人姓名【销毁出库时填写】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetExecuterName(_executerName string) error {
 	r._executerName = _executerName
@@ -330,12 +330,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetExecuterName(_exec
 	return nil
 }
 
-// Get ExecuterName Getter
+// GetExecuterName ExecuterName Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetExecuterName() string {
 	return r._executerName
 }
 
-// Set is ExecuterCode Setter
+// SetExecuterCode is ExecuterCode Setter
 // 执行人证件号【销毁出库时填写】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetExecuterCode(_executerCode string) error {
 	r._executerCode = _executerCode
@@ -343,12 +343,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetExecuterCode(_exec
 	return nil
 }
 
-// Get ExecuterCode Getter
+// GetExecuterCode ExecuterCode Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetExecuterCode() string {
 	return r._executerCode
 }
 
-// Set is SuperviserName Setter
+// SetSuperviserName is SuperviserName Setter
 // 监督人姓名【销毁出库时填写】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetSuperviserName(_superviserName string) error {
 	r._superviserName = _superviserName
@@ -356,12 +356,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetSuperviserName(_su
 	return nil
 }
 
-// Get SuperviserName Getter
+// GetSuperviserName SuperviserName Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetSuperviserName() string {
 	return r._superviserName
 }
 
-// Set is SuperviserCode Setter
+// SetSuperviserCode is SuperviserCode Setter
 // 监督人证件号【销毁出库时填写】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetSuperviserCode(_superviserCode string) error {
 	r._superviserCode = _superviserCode
@@ -369,12 +369,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetSuperviserCode(_su
 	return nil
 }
 
-// Get SuperviserCode Getter
+// GetSuperviserCode SuperviserCode Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetSuperviserCode() string {
 	return r._superviserCode
 }
 
-// Set is WarehouseId Setter
+// SetWarehouseId is WarehouseId Setter
 // 仓号
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetWarehouseId(_warehouseId string) error {
 	r._warehouseId = _warehouseId
@@ -382,12 +382,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetWarehouseId(_wareh
 	return nil
 }
 
-// Get WarehouseId Getter
+// GetWarehouseId WarehouseId Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetWarehouseId() string {
 	return r._warehouseId
 }
 
-// Set is DrugId Setter
+// SetDrugId is DrugId Setter
 // 药品ID[企业自已系统的药品ID]
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetDrugId(_drugId string) error {
 	r._drugId = _drugId
@@ -395,12 +395,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetDrugId(_drugId str
 	return nil
 }
 
-// Get DrugId Getter
+// GetDrugId DrugId Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetDrugId() string {
 	return r._drugId
 }
 
-// Set is TraceCodes Setter
+// SetTraceCodes is TraceCodes Setter
 // 追溯码[多个时用逗号分开]
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetTraceCodes(_traceCodes []string) error {
 	r._traceCodes = _traceCodes
@@ -408,12 +408,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetTraceCodes(_traceC
 	return nil
 }
 
-// Get TraceCodes Getter
+// GetTraceCodes TraceCodes Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetTraceCodes() []string {
 	return r._traceCodes
 }
 
-// Set is QuReceivable Setter
+// SetQuReceivable is QuReceivable Setter
 // （协同平台数据合规）应收货总数量
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetQuReceivable(_quReceivable int64) error {
 	r._quReceivable = _quReceivable
@@ -421,12 +421,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetQuReceivable(_quRe
 	return nil
 }
 
-// Get QuReceivable Getter
+// GetQuReceivable QuReceivable Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetQuReceivable() int64 {
 	return r._quReceivable
 }
 
-// Set is XtIsCheck Setter
+// SetXtIsCheck is XtIsCheck Setter
 // （协同平台数据合规）是否验证，0：未通过验证，1：已验证
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetXtIsCheck(_xtIsCheck string) error {
 	r._xtIsCheck = _xtIsCheck
@@ -434,12 +434,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetXtIsCheck(_xtIsChe
 	return nil
 }
 
-// Get XtIsCheck Getter
+// GetXtIsCheck XtIsCheck Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetXtIsCheck() string {
 	return r._xtIsCheck
 }
 
-// Set is XtCheckCode Setter
+// SetXtCheckCode is XtCheckCode Setter
 // （协同平台数据合规）未验证通过原因【验证未通过时填写】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetXtCheckCode(_xtCheckCode string) error {
 	r._xtCheckCode = _xtCheckCode
@@ -447,12 +447,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetXtCheckCode(_xtChe
 	return nil
 }
 
-// Get XtCheckCode Getter
+// GetXtCheckCode XtCheckCode Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetXtCheckCode() string {
 	return r._xtCheckCode
 }
 
-// Set is XtCheckCodeDesc Setter
+// SetXtCheckCodeDesc is XtCheckCodeDesc Setter
 // （协同平台数据合规）未验证通过原因描述【验证未通过时填写】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetXtCheckCodeDesc(_xtCheckCodeDesc string) error {
 	r._xtCheckCodeDesc = _xtCheckCodeDesc
@@ -460,12 +460,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetXtCheckCodeDesc(_x
 	return nil
 }
 
-// Get XtCheckCodeDesc Getter
+// GetXtCheckCodeDesc XtCheckCodeDesc Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetXtCheckCodeDesc() string {
 	return r._xtCheckCodeDesc
 }
 
-// Set is DrugListJson Setter
+// SetDrugListJson is DrugListJson Setter
 // （协同平台数据合规）药品列表Json："codeCount": 药品数量 "commDrugId": 国家药品唯一标识 "exprieDate": 生产日期 "physicInfo": 药品信息 "pkgSpec": 包状规格 "prepnCount": 制剂数量 "produceBatchNo":生产批次 "produceDate": 生产日期
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetDrugListJson(_drugListJson string) error {
 	r._drugListJson = _drugListJson
@@ -473,12 +473,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetDrugListJson(_drug
 	return nil
 }
 
-// Get DrugListJson Getter
+// GetDrugListJson DrugListJson Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetDrugListJson() string {
 	return r._drugListJson
 }
 
-// Set is AssRefEntId Setter
+// SetAssRefEntId is AssRefEntId Setter
 // （协同平台数据合规）单据委托企业refEntId
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetAssRefEntId(_assRefEntId string) error {
 	r._assRefEntId = _assRefEntId
@@ -486,12 +486,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetAssRefEntId(_assRe
 	return nil
 }
 
-// Get AssRefEntId Getter
+// GetAssRefEntId AssRefEntId Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetAssRefEntId() string {
 	return r._assRefEntId
 }
 
-// Set is DisEntId Setter
+// SetDisEntId is DisEntId Setter
 // （协同平台数据合规）药品配送企业entId出库单，收货方为医疗机构时填写】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetDisEntId(_disEntId string) error {
 	r._disEntId = _disEntId
@@ -499,12 +499,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetDisEntId(_disEntId
 	return nil
 }
 
-// Get DisEntId Getter
+// GetDisEntId DisEntId Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetDisEntId() string {
 	return r._disEntId
 }
 
-// Set is DisRefEntId Setter
+// SetDisRefEntId is DisRefEntId Setter
 // （协同平台数据合规）药品配送企业出库单，收货方为医疗机构时填写】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetDisRefEntId(_disRefEntId string) error {
 	r._disRefEntId = _disRefEntId
@@ -512,12 +512,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetDisRefEntId(_disRe
 	return nil
 }
 
-// Get DisRefEntId Getter
+// GetDisRefEntId DisRefEntId Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetDisRefEntId() string {
 	return r._disRefEntId
 }
 
-// Set is ToPerson Setter
+// SetToPerson is ToPerson Setter
 // （协同平台数据合规）收货人【必选】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetToPerson(_toPerson string) error {
 	r._toPerson = _toPerson
@@ -525,12 +525,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetToPerson(_toPerson
 	return nil
 }
 
-// Get ToPerson Getter
+// GetToPerson ToPerson Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetToPerson() string {
 	return r._toPerson
 }
 
-// Set is FromPerson Setter
+// SetFromPerson is FromPerson Setter
 // （协同平台数据合规）发货人【必选】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetFromPerson(_fromPerson string) error {
 	r._fromPerson = _fromPerson
@@ -538,12 +538,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetFromPerson(_fromPe
 	return nil
 }
 
-// Get FromPerson Getter
+// GetFromPerson FromPerson Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetFromPerson() string {
 	return r._fromPerson
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // （协同平台数据合规）订货单编号【可选】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -551,12 +551,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetOrderCode(_orderCo
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// Set is FromBillCode Setter
+// SetFromBillCode is FromBillCode Setter
 // （协同平台数据合规）发货单编号【必选】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetFromBillCode(_fromBillCode string) error {
 	r._fromBillCode = _fromBillCode
@@ -564,12 +564,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetFromBillCode(_from
 	return nil
 }
 
-// Get FromBillCode Getter
+// GetFromBillCode FromBillCode Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetFromBillCode() string {
 	return r._fromBillCode
 }
 
-// Set is ToAddress Setter
+// SetToAddress is ToAddress Setter
 // （协同平台数据合规）收货地址【必选】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetToAddress(_toAddress string) error {
 	r._toAddress = _toAddress
@@ -577,12 +577,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetToAddress(_toAddre
 	return nil
 }
 
-// Get ToAddress Getter
+// GetToAddress ToAddress Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetToAddress() string {
 	return r._toAddress
 }
 
-// Set is FromAddress Setter
+// SetFromAddress is FromAddress Setter
 // （协同平台数据合规）发货地址【必选】
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetFromAddress(_fromAddress string) error {
 	r._fromAddress = _fromAddress
@@ -590,12 +590,12 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetFromAddress(_fromA
 	return nil
 }
 
-// Get FromAddress Getter
+// GetFromAddress FromAddress Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetFromAddress() string {
 	return r._fromAddress
 }
 
-// Set is AssEntId Setter
+// SetAssEntId is AssEntId Setter
 // （协同平台数据合规）单据委托企业entId
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetAssEntId(_assEntId string) error {
 	r._assEntId = _assEntId
@@ -603,7 +603,7 @@ func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetAssEntId(_assEntId
 	return nil
 }
 
-// Get AssEntId Getter
+// GetAssEntId AssEntId Getter
 func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetAssEntId() string {
 	return r._assEntId
 }

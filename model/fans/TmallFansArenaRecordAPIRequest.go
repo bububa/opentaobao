@@ -41,7 +41,7 @@ func (r TmallFansArenaRecordAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CashPoolId Setter
+// SetCashPoolId is CashPoolId Setter
 // 资金池id
 func (r *TmallFansArenaRecordAPIRequest) SetCashPoolId(_cashPoolId int64) error {
 	r._cashPoolId = _cashPoolId
@@ -49,12 +49,12 @@ func (r *TmallFansArenaRecordAPIRequest) SetCashPoolId(_cashPoolId int64) error 
 	return nil
 }
 
-// Get CashPoolId Getter
+// GetCashPoolId CashPoolId Getter
 func (r TmallFansArenaRecordAPIRequest) GetCashPoolId() int64 {
 	return r._cashPoolId
 }
 
-// Set is Score Setter
+// SetScore is Score Setter
 // 用户得分
 func (r *TmallFansArenaRecordAPIRequest) SetScore(_score int64) error {
 	r._score = _score
@@ -62,12 +62,12 @@ func (r *TmallFansArenaRecordAPIRequest) SetScore(_score int64) error {
 	return nil
 }
 
-// Get Score Getter
+// GetScore Score Getter
 func (r TmallFansArenaRecordAPIRequest) GetScore() int64 {
 	return r._score
 }
 
-// Set is MixNick Setter
+// SetMixNick is MixNick Setter
 // mixnick
 func (r *TmallFansArenaRecordAPIRequest) SetMixNick(_mixNick string) error {
 	r._mixNick = _mixNick
@@ -75,7 +75,7 @@ func (r *TmallFansArenaRecordAPIRequest) SetMixNick(_mixNick string) error {
 	return nil
 }
 
-// Get MixNick Getter
+// GetMixNick MixNick Getter
 func (r TmallFansArenaRecordAPIRequest) GetMixNick() string {
 	return r._mixNick
 }

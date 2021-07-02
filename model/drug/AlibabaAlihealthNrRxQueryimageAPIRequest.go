@@ -37,7 +37,7 @@ func (r AlibabaAlihealthNrRxQueryimageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单编号
 func (r *AlibabaAlihealthNrRxQueryimageAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthNrRxQueryimageAPIRequest) SetOrderId(_orderId int64) er
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaAlihealthNrRxQueryimageAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }

@@ -37,7 +37,7 @@ func (r AliexpressFeedPostPublishAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OffsitePublishPostEntity Setter
+// SetOffsitePublishPostEntity is OffsitePublishPostEntity Setter
 // 站外导入内容请求参数
 func (r *AliexpressFeedPostPublishAPIRequest) SetOffsitePublishPostEntity(_offsitePublishPostEntity *OffsitePublishPostEntity) error {
 	r._offsitePublishPostEntity = _offsitePublishPostEntity
@@ -45,7 +45,7 @@ func (r *AliexpressFeedPostPublishAPIRequest) SetOffsitePublishPostEntity(_offsi
 	return nil
 }
 
-// Get OffsitePublishPostEntity Getter
+// GetOffsitePublishPostEntity OffsitePublishPostEntity Getter
 func (r AliexpressFeedPostPublishAPIRequest) GetOffsitePublishPostEntity() *OffsitePublishPostEntity {
 	return r._offsitePublishPostEntity
 }

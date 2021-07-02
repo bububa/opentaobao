@@ -61,7 +61,7 @@ func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is AppSignature Setter
+// SetAppSignature is AppSignature Setter
 // 请求签名
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetAppSignature(_appSignature string) error {
 	r._appSignature = _appSignature
@@ -69,12 +69,12 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetAppSignature(
 	return nil
 }
 
-// Get AppSignature Getter
+// GetAppSignature AppSignature Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetAppSignature() string {
 	return r._appSignature
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 类目 ID 如何获取category_id，请参考，https://open.taobao.com/api.htm?docId=45801&docType=2&scopeId=17063
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetCategoryId(_categoryId string) error {
 	r._categoryId = _categoryId
@@ -82,12 +82,12 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetCategoryId(_c
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetCategoryId() string {
 	return r._categoryId
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回字段列表
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -95,12 +95,12 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetFields(_field
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 查询页码
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -108,12 +108,12 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPageNo(_pageN
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页记录数，1-50
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -121,12 +121,12 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPageSize(_pag
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PromotionEndTime Setter
+// SetPromotionEndTime is PromotionEndTime Setter
 // 活动结束时间，PST 时区
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPromotionEndTime(_promotionEndTime string) error {
 	r._promotionEndTime = _promotionEndTime
@@ -134,12 +134,12 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPromotionEndT
 	return nil
 }
 
-// Get PromotionEndTime Getter
+// GetPromotionEndTime PromotionEndTime Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetPromotionEndTime() string {
 	return r._promotionEndTime
 }
 
-// Set is PromotionName Setter
+// SetPromotionName is PromotionName Setter
 // 主题活动的名称，如何获取主题活动，请参考"get featuredpromo info" API. 固定主题：高佣品（Hot Product）、新品（New Arrival）、热销商品（Best Seller）、每周尖货（weeklydeals）
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPromotionName(_promotionName string) error {
 	r._promotionName = _promotionName
@@ -147,12 +147,12 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPromotionName
 	return nil
 }
 
-// Get PromotionName Getter
+// GetPromotionName PromotionName Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetPromotionName() string {
 	return r._promotionName
 }
 
-// Set is PromotionStartTime Setter
+// SetPromotionStartTime is PromotionStartTime Setter
 // 活动开始时间，PST 时区
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPromotionStartTime(_promotionStartTime string) error {
 	r._promotionStartTime = _promotionStartTime
@@ -160,12 +160,12 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPromotionStar
 	return nil
 }
 
-// Get PromotionStartTime Getter
+// GetPromotionStartTime PromotionStartTime Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetPromotionStartTime() string {
 	return r._promotionStartTime
 }
 
-// Set is Sort Setter
+// SetSort is Sort Setter
 // 排序方式：commissionAsc，commissionDesc, priceAsc，priceDesc，volumeAsc、volumeDesc, discountAsc, discountDesc, ratingAsc，ratingDesc, promotionTimeAsc, pr
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetSort(_sort string) error {
 	r._sort = _sort
@@ -173,12 +173,12 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetSort(_sort st
 	return nil
 }
 
-// Get Sort Getter
+// GetSort Sort Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetSort() string {
 	return r._sort
 }
 
-// Set is TargetCurrency Setter
+// SetTargetCurrency is TargetCurrency Setter
 // 目标币种，可根据目标币种返回对应币种：USD, GBP, CAD, EUR, UAH, MXN, TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetTargetCurrency(_targetCurrency string) error {
 	r._targetCurrency = _targetCurrency
@@ -186,12 +186,12 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetTargetCurrenc
 	return nil
 }
 
-// Get TargetCurrency Getter
+// GetTargetCurrency TargetCurrency Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetTargetCurrency() string {
 	return r._targetCurrency
 }
 
-// Set is TargetLanguage Setter
+// SetTargetLanguage is TargetLanguage Setter
 // 目标语言，可根据目标语言返回对应语言：EN,RU,PT,ES,FR,ID,IT,TH,JA,AR,VI,TR,DE,HE,KO,NL,PL,MX,CL,IN
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetTargetLanguage(_targetLanguage string) error {
 	r._targetLanguage = _targetLanguage
@@ -199,12 +199,12 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetTargetLanguag
 	return nil
 }
 
-// Get TargetLanguage Getter
+// GetTargetLanguage TargetLanguage Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetTargetLanguage() string {
 	return r._targetLanguage
 }
 
-// Set is TrackingId Setter
+// SetTrackingId is TrackingId Setter
 // trackingID
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetTrackingId(_trackingId string) error {
 	r._trackingId = _trackingId
@@ -212,12 +212,12 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetTrackingId(_t
 	return nil
 }
 
-// Get TrackingId Getter
+// GetTrackingId TrackingId Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetTrackingId() string {
 	return r._trackingId
 }
 
-// Set is Country Setter
+// SetCountry is Country Setter
 // 商品收货国家，可筛选能销售至该国家的商品，并根据该国家税率政策返回对应商品价格
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetCountry(_country string) error {
 	r._country = _country
@@ -225,7 +225,7 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetCountry(_coun
 	return nil
 }
 
-// Get Country Getter
+// GetCountry Country Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetCountry() string {
 	return r._country
 }

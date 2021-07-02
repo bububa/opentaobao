@@ -43,7 +43,7 @@ func (r TaobaoTanxDealGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DspId Setter
+// SetDspId is DspId Setter
 // dsp用户id
 func (r *TaobaoTanxDealGetAPIRequest) SetDspId(_dspId int64) error {
 	r._dspId = _dspId
@@ -51,12 +51,12 @@ func (r *TaobaoTanxDealGetAPIRequest) SetDspId(_dspId int64) error {
 	return nil
 }
 
-// Get DspId Getter
+// GetDspId DspId Getter
 func (r TaobaoTanxDealGetAPIRequest) GetDspId() int64 {
 	return r._dspId
 }
 
-// Set is DealId Setter
+// SetDealId is DealId Setter
 // 交易id
 func (r *TaobaoTanxDealGetAPIRequest) SetDealId(_dealId int64) error {
 	r._dealId = _dealId
@@ -64,12 +64,12 @@ func (r *TaobaoTanxDealGetAPIRequest) SetDealId(_dealId int64) error {
 	return nil
 }
 
-// Get DealId Getter
+// GetDealId DealId Getter
 func (r TaobaoTanxDealGetAPIRequest) GetDealId() int64 {
 	return r._dealId
 }
 
-// Set is SignTime Setter
+// SetSignTime is SignTime Setter
 // 1970年到现在的时间，毫秒
 func (r *TaobaoTanxDealGetAPIRequest) SetSignTime(_signTime int64) error {
 	r._signTime = _signTime
@@ -77,12 +77,12 @@ func (r *TaobaoTanxDealGetAPIRequest) SetSignTime(_signTime int64) error {
 	return nil
 }
 
-// Get SignTime Getter
+// GetSignTime SignTime Getter
 func (r TaobaoTanxDealGetAPIRequest) GetSignTime() int64 {
 	return r._signTime
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 验证token
 func (r *TaobaoTanxDealGetAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -90,7 +90,7 @@ func (r *TaobaoTanxDealGetAPIRequest) SetToken(_token string) error {
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoTanxDealGetAPIRequest) GetToken() string {
 	return r._token
 }

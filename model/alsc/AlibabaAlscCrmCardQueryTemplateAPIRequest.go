@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmCardQueryTemplateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamQueryCardTemplateOpenReq Setter
+// SetParamQueryCardTemplateOpenReq is ParamQueryCardTemplateOpenReq Setter
 // 请求对象
 func (r *AlibabaAlscCrmCardQueryTemplateAPIRequest) SetParamQueryCardTemplateOpenReq(_paramQueryCardTemplateOpenReq *QueryCardTemplateOpenReq) error {
 	r._paramQueryCardTemplateOpenReq = _paramQueryCardTemplateOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmCardQueryTemplateAPIRequest) SetParamQueryCardTemplateOpe
 	return nil
 }
 
-// Get ParamQueryCardTemplateOpenReq Getter
+// GetParamQueryCardTemplateOpenReq ParamQueryCardTemplateOpenReq Getter
 func (r AlibabaAlscCrmCardQueryTemplateAPIRequest) GetParamQueryCardTemplateOpenReq() *QueryCardTemplateOpenReq {
 	return r._paramQueryCardTemplateOpenReq
 }

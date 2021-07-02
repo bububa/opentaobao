@@ -45,7 +45,7 @@ func (r TaobaoRefundMessagesGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需返回的字段列表。可选值：RefundMessage结构体中的所有字段，以半角逗号(,)分隔。
 func (r *TaobaoRefundMessagesGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -53,12 +53,12 @@ func (r *TaobaoRefundMessagesGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoRefundMessagesGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款单号
 func (r *TaobaoRefundMessagesGetAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -66,12 +66,12 @@ func (r *TaobaoRefundMessagesGetAPIRequest) SetRefundId(_refundId int64) error {
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoRefundMessagesGetAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *TaobaoRefundMessagesGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -79,12 +79,12 @@ func (r *TaobaoRefundMessagesGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoRefundMessagesGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数
 func (r *TaobaoRefundMessagesGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -92,12 +92,12 @@ func (r *TaobaoRefundMessagesGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoRefundMessagesGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is RefundPhase Setter
+// SetRefundPhase is RefundPhase Setter
 // 退款阶段，可选值：onsale（售中），aftersale（售后），天猫退款为必传。
 func (r *TaobaoRefundMessagesGetAPIRequest) SetRefundPhase(_refundPhase string) error {
 	r._refundPhase = _refundPhase
@@ -105,7 +105,7 @@ func (r *TaobaoRefundMessagesGetAPIRequest) SetRefundPhase(_refundPhase string) 
 	return nil
 }
 
-// Get RefundPhase Getter
+// GetRefundPhase RefundPhase Getter
 func (r TaobaoRefundMessagesGetAPIRequest) GetRefundPhase() string {
 	return r._refundPhase
 }

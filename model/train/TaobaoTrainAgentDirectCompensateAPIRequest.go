@@ -37,7 +37,7 @@ func (r TaobaoTrainAgentDirectCompensateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CompensateParam Setter
+// SetCompensateParam is CompensateParam Setter
 // 出票成功补偿入参
 func (r *TaobaoTrainAgentDirectCompensateAPIRequest) SetCompensateParam(_compensateParam *CompensateParam) error {
 	r._compensateParam = _compensateParam
@@ -45,7 +45,7 @@ func (r *TaobaoTrainAgentDirectCompensateAPIRequest) SetCompensateParam(_compens
 	return nil
 }
 
-// Get CompensateParam Getter
+// GetCompensateParam CompensateParam Getter
 func (r TaobaoTrainAgentDirectCompensateAPIRequest) GetCompensateParam() *CompensateParam {
 	return r._compensateParam
 }

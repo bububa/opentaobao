@@ -37,7 +37,7 @@ func (r TmallItemCombineGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 组合商品ID
 func (r *TmallItemCombineGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -45,7 +45,7 @@ func (r *TmallItemCombineGetAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallItemCombineGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

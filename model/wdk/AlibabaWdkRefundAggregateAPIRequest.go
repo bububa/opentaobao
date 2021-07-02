@@ -37,7 +37,7 @@ func (r AlibabaWdkRefundAggregateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundAggregateQueryRequest Setter
+// SetRefundAggregateQueryRequest is RefundAggregateQueryRequest Setter
 // 系统自动生成
 func (r *AlibabaWdkRefundAggregateAPIRequest) SetRefundAggregateQueryRequest(_refundAggregateQueryRequest *RefundAggregateQueryRequest) error {
 	r._refundAggregateQueryRequest = _refundAggregateQueryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkRefundAggregateAPIRequest) SetRefundAggregateQueryRequest(_re
 	return nil
 }
 
-// Get RefundAggregateQueryRequest Getter
+// GetRefundAggregateQueryRequest RefundAggregateQueryRequest Getter
 func (r AlibabaWdkRefundAggregateAPIRequest) GetRefundAggregateQueryRequest() *RefundAggregateQueryRequest {
 	return r._refundAggregateQueryRequest
 }

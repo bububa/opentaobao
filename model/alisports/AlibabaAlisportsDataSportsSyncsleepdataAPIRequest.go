@@ -55,7 +55,7 @@ func (r AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is AlispAppKey Setter
+// SetAlispAppKey is AlispAppKey Setter
 // 应用appkey
 func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetAlispAppKey(_alispAppKey string) error {
 	r._alispAppKey = _alispAppKey
@@ -63,12 +63,12 @@ func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetAlispAppKey(_alis
 	return nil
 }
 
-// Get AlispAppKey Getter
+// GetAlispAppKey AlispAppKey Getter
 func (r AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) GetAlispAppKey() string {
 	return r._alispAppKey
 }
 
-// Set is Stime Setter
+// SetStime is Stime Setter
 // 入睡时间，格式：y-m-d h:i:s
 func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetStime(_stime string) error {
 	r._stime = _stime
@@ -76,12 +76,12 @@ func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetStime(_stime stri
 	return nil
 }
 
-// Get Stime Getter
+// GetStime Stime Getter
 func (r AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) GetStime() string {
 	return r._stime
 }
 
-// Set is SoberTime Setter
+// SetSoberTime is SoberTime Setter
 // 清醒时间，单位：小时
 func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetSoberTime(_soberTime string) error {
 	r._soberTime = _soberTime
@@ -89,12 +89,12 @@ func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetSoberTime(_soberT
 	return nil
 }
 
-// Get SoberTime Getter
+// GetSoberTime SoberTime Getter
 func (r AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) GetSoberTime() string {
 	return r._soberTime
 }
 
-// Set is ShallowTime Setter
+// SetShallowTime is ShallowTime Setter
 // 浅度睡眠时间，单位：小时
 func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetShallowTime(_shallowTime string) error {
 	r._shallowTime = _shallowTime
@@ -102,12 +102,12 @@ func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetShallowTime(_shal
 	return nil
 }
 
-// Get ShallowTime Getter
+// GetShallowTime ShallowTime Getter
 func (r AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) GetShallowTime() string {
 	return r._shallowTime
 }
 
-// Set is DeepTime Setter
+// SetDeepTime is DeepTime Setter
 // 深度睡眠时间，单位：小时
 func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetDeepTime(_deepTime string) error {
 	r._deepTime = _deepTime
@@ -115,12 +115,12 @@ func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetDeepTime(_deepTim
 	return nil
 }
 
-// Get DeepTime Getter
+// GetDeepTime DeepTime Getter
 func (r AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) GetDeepTime() string {
 	return r._deepTime
 }
 
-// Set is AllTime Setter
+// SetAllTime is AllTime Setter
 // 睡眠总时间，单位：小时
 func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetAllTime(_allTime string) error {
 	r._allTime = _allTime
@@ -128,12 +128,12 @@ func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetAllTime(_allTime 
 	return nil
 }
 
-// Get AllTime Getter
+// GetAllTime AllTime Getter
 func (r AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) GetAllTime() string {
 	return r._allTime
 }
 
-// Set is Aliuid Setter
+// SetAliuid is Aliuid Setter
 // 阿里体育用户id
 func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetAliuid(_aliuid string) error {
 	r._aliuid = _aliuid
@@ -141,12 +141,12 @@ func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetAliuid(_aliuid st
 	return nil
 }
 
-// Get Aliuid Getter
+// GetAliuid Aliuid Getter
 func (r AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) GetAliuid() string {
 	return r._aliuid
 }
 
-// Set is AlispSign Setter
+// SetAlispSign is AlispSign Setter
 // 接口签名
 func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetAlispSign(_alispSign string) error {
 	r._alispSign = _alispSign
@@ -154,12 +154,12 @@ func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetAlispSign(_alispS
 	return nil
 }
 
-// Get AlispSign Getter
+// GetAlispSign AlispSign Getter
 func (r AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) GetAlispSign() string {
 	return r._alispSign
 }
 
-// Set is AlispTime Setter
+// SetAlispTime is AlispTime Setter
 // 时间戳精确到秒
 func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetAlispTime(_alispTime string) error {
 	r._alispTime = _alispTime
@@ -167,12 +167,12 @@ func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetAlispTime(_alispT
 	return nil
 }
 
-// Get AlispTime Getter
+// GetAlispTime AlispTime Getter
 func (r AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) GetAlispTime() string {
 	return r._alispTime
 }
 
-// Set is Etime Setter
+// SetEtime is Etime Setter
 // 醒来时间，格式：y-m-d h:i:s
 func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetEtime(_etime string) error {
 	r._etime = _etime
@@ -180,7 +180,7 @@ func (r *AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) SetEtime(_etime stri
 	return nil
 }
 
-// Get Etime Getter
+// GetEtime Etime Getter
 func (r AlibabaAlisportsDataSportsSyncsleepdataAPIRequest) GetEtime() string {
 	return r._etime
 }

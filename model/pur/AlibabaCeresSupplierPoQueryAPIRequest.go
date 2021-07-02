@@ -41,7 +41,7 @@ func (r AlibabaCeresSupplierPoQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 订单创建日期开始时间
 func (r *AlibabaCeresSupplierPoQueryAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -49,12 +49,12 @@ func (r *AlibabaCeresSupplierPoQueryAPIRequest) SetStartDate(_startDate string) 
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r AlibabaCeresSupplierPoQueryAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 订单创建日期结束时间
 func (r *AlibabaCeresSupplierPoQueryAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -62,12 +62,12 @@ func (r *AlibabaCeresSupplierPoQueryAPIRequest) SetEndDate(_endDate string) erro
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r AlibabaCeresSupplierPoQueryAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 订单状态
 func (r *AlibabaCeresSupplierPoQueryAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -75,7 +75,7 @@ func (r *AlibabaCeresSupplierPoQueryAPIRequest) SetStatus(_status string) error 
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaCeresSupplierPoQueryAPIRequest) GetStatus() string {
 	return r._status
 }

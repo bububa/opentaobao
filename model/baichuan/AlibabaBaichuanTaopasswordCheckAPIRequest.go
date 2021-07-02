@@ -39,7 +39,7 @@ func (r AlibabaBaichuanTaopasswordCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamDto Setter
+// SetParamDto is ParamDto Setter
 // 参数DTO
 func (r *AlibabaBaichuanTaopasswordCheckAPIRequest) SetParamDto(_paramDto *ParamDto) error {
 	r._paramDto = _paramDto
@@ -47,12 +47,12 @@ func (r *AlibabaBaichuanTaopasswordCheckAPIRequest) SetParamDto(_paramDto *Param
 	return nil
 }
 
-// Get ParamDto Getter
+// GetParamDto ParamDto Getter
 func (r AlibabaBaichuanTaopasswordCheckAPIRequest) GetParamDto() *ParamDto {
 	return r._paramDto
 }
 
-// Set is ClientInfo Setter
+// SetClientInfo is ClientInfo Setter
 // 系统自动生成
 func (r *AlibabaBaichuanTaopasswordCheckAPIRequest) SetClientInfo(_clientInfo *RichClientInfo) error {
 	r._clientInfo = _clientInfo
@@ -60,7 +60,7 @@ func (r *AlibabaBaichuanTaopasswordCheckAPIRequest) SetClientInfo(_clientInfo *R
 	return nil
 }
 
-// Get ClientInfo Getter
+// GetClientInfo ClientInfo Getter
 func (r AlibabaBaichuanTaopasswordCheckAPIRequest) GetClientInfo() *RichClientInfo {
 	return r._clientInfo
 }

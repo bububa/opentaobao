@@ -37,7 +37,7 @@ func (r TaobaoUsergrowthOfflineConvertionDetailsEightGetAPIRequest) GetApiParams
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 入参
 func (r *TaobaoUsergrowthOfflineConvertionDetailsEightGetAPIRequest) SetQuery(_query *OfflineMapiQuery) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *TaobaoUsergrowthOfflineConvertionDetailsEightGetAPIRequest) SetQuery(_q
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r TaobaoUsergrowthOfflineConvertionDetailsEightGetAPIRequest) GetQuery() *OfflineMapiQuery {
 	return r._query
 }

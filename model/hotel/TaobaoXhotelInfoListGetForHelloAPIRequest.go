@@ -37,7 +37,7 @@ func (r TaobaoXhotelInfoListGetForHelloAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is HotelInfoParam Setter
+// SetHotelInfoParam is HotelInfoParam Setter
 // 参数封装模型
 func (r *TaobaoXhotelInfoListGetForHelloAPIRequest) SetHotelInfoParam(_hotelInfoParam *HotelInfoParam) error {
 	r._hotelInfoParam = _hotelInfoParam
@@ -45,7 +45,7 @@ func (r *TaobaoXhotelInfoListGetForHelloAPIRequest) SetHotelInfoParam(_hotelInfo
 	return nil
 }
 
-// Get HotelInfoParam Getter
+// GetHotelInfoParam HotelInfoParam Getter
 func (r TaobaoXhotelInfoListGetForHelloAPIRequest) GetHotelInfoParam() *HotelInfoParam {
 	return r._hotelInfoParam
 }

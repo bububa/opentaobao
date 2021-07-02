@@ -37,7 +37,7 @@ func (r AlitripHotelHstdfHotelroomstaticGetAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ParamGetHotelRoomStaticParam Setter
+// SetParamGetHotelRoomStaticParam is ParamGetHotelRoomStaticParam Setter
 // 参数封装
 func (r *AlitripHotelHstdfHotelroomstaticGetAPIRequest) SetParamGetHotelRoomStaticParam(_paramGetHotelRoomStaticParam *GetHotelRoomStaticParam) error {
 	r._paramGetHotelRoomStaticParam = _paramGetHotelRoomStaticParam
@@ -45,7 +45,7 @@ func (r *AlitripHotelHstdfHotelroomstaticGetAPIRequest) SetParamGetHotelRoomStat
 	return nil
 }
 
-// Get ParamGetHotelRoomStaticParam Getter
+// GetParamGetHotelRoomStaticParam ParamGetHotelRoomStaticParam Getter
 func (r AlitripHotelHstdfHotelroomstaticGetAPIRequest) GetParamGetHotelRoomStaticParam() *GetHotelRoomStaticParam {
 	return r._paramGetHotelRoomStaticParam
 }

@@ -39,7 +39,7 @@ func (r TmallServicecenterWorkerTaglistGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is IdNumber Setter
+// SetIdNumber is IdNumber Setter
 // 工人注册勤鸽时的身份证
 func (r *TmallServicecenterWorkerTaglistGetAPIRequest) SetIdNumber(_idNumber string) error {
 	r._idNumber = _idNumber
@@ -47,12 +47,12 @@ func (r *TmallServicecenterWorkerTaglistGetAPIRequest) SetIdNumber(_idNumber str
 	return nil
 }
 
-// Get IdNumber Getter
+// GetIdNumber IdNumber Getter
 func (r TmallServicecenterWorkerTaglistGetAPIRequest) GetIdNumber() string {
 	return r._idNumber
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 工人注册勤鸽时的手机号码
 func (r *TmallServicecenterWorkerTaglistGetAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -60,7 +60,7 @@ func (r *TmallServicecenterWorkerTaglistGetAPIRequest) SetMobile(_mobile string)
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r TmallServicecenterWorkerTaglistGetAPIRequest) GetMobile() string {
 	return r._mobile
 }

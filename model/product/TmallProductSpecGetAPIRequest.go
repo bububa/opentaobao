@@ -37,7 +37,7 @@ func (r TmallProductSpecGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SpecId Setter
+// SetSpecId is SpecId Setter
 // 要获取信息的产品规格信息。
 func (r *TmallProductSpecGetAPIRequest) SetSpecId(_specId int64) error {
 	r._specId = _specId
@@ -45,7 +45,7 @@ func (r *TmallProductSpecGetAPIRequest) SetSpecId(_specId int64) error {
 	return nil
 }
 
-// Get SpecId Getter
+// GetSpecId SpecId Getter
 func (r TmallProductSpecGetAPIRequest) GetSpecId() int64 {
 	return r._specId
 }

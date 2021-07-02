@@ -41,7 +41,7 @@ func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Workbenchcontext Setter
+// SetWorkbenchcontext is Workbenchcontext Setter
 // 系统入参
 func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
 	r._workbenchcontext = _workbenchcontext
@@ -49,12 +49,12 @@ func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) SetWorkbenchcontext(_workb
 	return nil
 }
 
-// Get Workbenchcontext Getter
+// GetWorkbenchcontext Workbenchcontext Getter
 func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户账号
 func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -62,12 +62,12 @@ func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) SetUserId(_userId string) 
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is RoleIds Setter
+// SetRoleIds is RoleIds Setter
 // 角色id
 func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) SetRoleIds(_roleIds []int64) error {
 	r._roleIds = _roleIds
@@ -75,7 +75,7 @@ func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) SetRoleIds(_roleIds []int6
 	return nil
 }
 
-// Get RoleIds Getter
+// GetRoleIds RoleIds Getter
 func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetRoleIds() []int64 {
 	return r._roleIds
 }

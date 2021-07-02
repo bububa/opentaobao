@@ -39,7 +39,7 @@ func (r TaobaoUsceslIteminfoBatchPutAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemChangeBOList Setter
+// SetItemChangeBOList is ItemChangeBOList Setter
 // 商品变更信息集合
 func (r *TaobaoUsceslIteminfoBatchPutAPIRequest) SetItemChangeBOList(_itemChangeBOList []ItemChangeBo) error {
 	r._itemChangeBOList = _itemChangeBOList
@@ -47,12 +47,12 @@ func (r *TaobaoUsceslIteminfoBatchPutAPIRequest) SetItemChangeBOList(_itemChange
 	return nil
 }
 
-// Get ItemChangeBOList Getter
+// GetItemChangeBOList ItemChangeBOList Getter
 func (r TaobaoUsceslIteminfoBatchPutAPIRequest) GetItemChangeBOList() []ItemChangeBo {
 	return r._itemChangeBOList
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 门店ID
 func (r *TaobaoUsceslIteminfoBatchPutAPIRequest) SetShopId(_shopId int64) error {
 	r._shopId = _shopId
@@ -60,7 +60,7 @@ func (r *TaobaoUsceslIteminfoBatchPutAPIRequest) SetShopId(_shopId int64) error 
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r TaobaoUsceslIteminfoBatchPutAPIRequest) GetShopId() int64 {
 	return r._shopId
 }

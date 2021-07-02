@@ -39,7 +39,7 @@ func (r AlibabaAlisportsEfspUsercancelorderAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is OrderNo Setter
+// SetOrderNo is OrderNo Setter
 // 订单编号
 func (r *AlibabaAlisportsEfspUsercancelorderAPIRequest) SetOrderNo(_orderNo string) error {
 	r._orderNo = _orderNo
@@ -47,12 +47,12 @@ func (r *AlibabaAlisportsEfspUsercancelorderAPIRequest) SetOrderNo(_orderNo stri
 	return nil
 }
 
-// Get OrderNo Getter
+// GetOrderNo OrderNo Getter
 func (r AlibabaAlisportsEfspUsercancelorderAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }
 
-// Set is AlipayId Setter
+// SetAlipayId is AlipayId Setter
 // 用户支付宝ID
 func (r *AlibabaAlisportsEfspUsercancelorderAPIRequest) SetAlipayId(_alipayId string) error {
 	r._alipayId = _alipayId
@@ -60,7 +60,7 @@ func (r *AlibabaAlisportsEfspUsercancelorderAPIRequest) SetAlipayId(_alipayId st
 	return nil
 }
 
-// Get AlipayId Getter
+// GetAlipayId AlipayId Getter
 func (r AlibabaAlisportsEfspUsercancelorderAPIRequest) GetAlipayId() string {
 	return r._alipayId
 }

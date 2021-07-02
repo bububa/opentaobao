@@ -37,7 +37,7 @@ func (r AlibabaEinvoiceInvoiceapplyGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ApplyId Setter
+// SetApplyId is ApplyId Setter
 // 开票申请id
 func (r *AlibabaEinvoiceInvoiceapplyGetAPIRequest) SetApplyId(_applyId string) error {
 	r._applyId = _applyId
@@ -45,7 +45,7 @@ func (r *AlibabaEinvoiceInvoiceapplyGetAPIRequest) SetApplyId(_applyId string) e
 	return nil
 }
 
-// Get ApplyId Getter
+// GetApplyId ApplyId Getter
 func (r AlibabaEinvoiceInvoiceapplyGetAPIRequest) GetApplyId() string {
 	return r._applyId
 }

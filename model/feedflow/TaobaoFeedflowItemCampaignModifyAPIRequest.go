@@ -37,7 +37,7 @@ func (r TaobaoFeedflowItemCampaignModifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Campaign Setter
+// SetCampaign is Campaign Setter
 // 修改参数
 func (r *TaobaoFeedflowItemCampaignModifyAPIRequest) SetCampaign(_campaign *CampaignDto) error {
 	r._campaign = _campaign
@@ -45,7 +45,7 @@ func (r *TaobaoFeedflowItemCampaignModifyAPIRequest) SetCampaign(_campaign *Camp
 	return nil
 }
 
-// Get Campaign Getter
+// GetCampaign Campaign Getter
 func (r TaobaoFeedflowItemCampaignModifyAPIRequest) GetCampaign() *CampaignDto {
 	return r._campaign
 }

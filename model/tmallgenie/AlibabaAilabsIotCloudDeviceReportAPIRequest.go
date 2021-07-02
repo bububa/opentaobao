@@ -37,7 +37,7 @@ func (r AlibabaAilabsIotCloudDeviceReportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CloudReportParam Setter
+// SetCloudReportParam is CloudReportParam Setter
 // 上报总入参
 func (r *AlibabaAilabsIotCloudDeviceReportAPIRequest) SetCloudReportParam(_cloudReportParam *CloudReportParam) error {
 	r._cloudReportParam = _cloudReportParam
@@ -45,7 +45,7 @@ func (r *AlibabaAilabsIotCloudDeviceReportAPIRequest) SetCloudReportParam(_cloud
 	return nil
 }
 
-// Get CloudReportParam Getter
+// GetCloudReportParam CloudReportParam Getter
 func (r AlibabaAilabsIotCloudDeviceReportAPIRequest) GetCloudReportParam() *CloudReportParam {
 	return r._cloudReportParam
 }

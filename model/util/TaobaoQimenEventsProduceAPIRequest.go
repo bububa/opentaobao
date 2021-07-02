@@ -37,7 +37,7 @@ func (r TaobaoQimenEventsProduceAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Messages Setter
+// SetMessages is Messages Setter
 // 奇门事件列表, 最多50条
 func (r *TaobaoQimenEventsProduceAPIRequest) SetMessages(_messages []QimenEvent) error {
 	r._messages = _messages
@@ -45,7 +45,7 @@ func (r *TaobaoQimenEventsProduceAPIRequest) SetMessages(_messages []QimenEvent)
 	return nil
 }
 
-// Get Messages Getter
+// GetMessages Messages Getter
 func (r TaobaoQimenEventsProduceAPIRequest) GetMessages() []QimenEvent {
 	return r._messages
 }

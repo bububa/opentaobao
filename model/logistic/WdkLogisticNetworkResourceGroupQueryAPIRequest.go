@@ -37,7 +37,7 @@ func (r WdkLogisticNetworkResourceGroupQueryAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ParamResourceGroupPageQueryRequest Setter
+// SetParamResourceGroupPageQueryRequest is ParamResourceGroupPageQueryRequest Setter
 // 入参
 func (r *WdkLogisticNetworkResourceGroupQueryAPIRequest) SetParamResourceGroupPageQueryRequest(_paramResourceGroupPageQueryRequest *ResourceGroupPageQueryRequest) error {
 	r._paramResourceGroupPageQueryRequest = _paramResourceGroupPageQueryRequest
@@ -45,7 +45,7 @@ func (r *WdkLogisticNetworkResourceGroupQueryAPIRequest) SetParamResourceGroupPa
 	return nil
 }
 
-// Get ParamResourceGroupPageQueryRequest Getter
+// GetParamResourceGroupPageQueryRequest ParamResourceGroupPageQueryRequest Getter
 func (r WdkLogisticNetworkResourceGroupQueryAPIRequest) GetParamResourceGroupPageQueryRequest() *ResourceGroupPageQueryRequest {
 	return r._paramResourceGroupPageQueryRequest
 }

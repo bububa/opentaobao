@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmMenuListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MenuOpenReq Setter
+// SetMenuOpenReq is MenuOpenReq Setter
 // 获取特价菜单请求参数
 func (r *AlibabaAlscCrmMenuListAPIRequest) SetMenuOpenReq(_menuOpenReq *MenuOpenReq) error {
 	r._menuOpenReq = _menuOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmMenuListAPIRequest) SetMenuOpenReq(_menuOpenReq *MenuOpen
 	return nil
 }
 
-// Get MenuOpenReq Getter
+// GetMenuOpenReq MenuOpenReq Getter
 func (r AlibabaAlscCrmMenuListAPIRequest) GetMenuOpenReq() *MenuOpenReq {
 	return r._menuOpenReq
 }

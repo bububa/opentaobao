@@ -41,7 +41,7 @@ func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CallId Setter
+// SetCallId is CallId Setter
 // 呼叫唯一ID
 func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetCallId(_callId string) error {
 	r._callId = _callId
@@ -49,12 +49,12 @@ func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetCallId(_callId string) erro
 	return nil
 }
 
-// Get CallId Getter
+// GetCallId CallId Getter
 func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetCallId() string {
 	return r._callId
 }
 
-// Set is ProdId Setter
+// SetProdId is ProdId Setter
 // 语音通知为:11000000300006, 语音验证码为:11010000138001, IVR为:11000000300005, 点击拨号为:11000000300004, SIP为:11000000300009
 func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetProdId(_prodId int64) error {
 	r._prodId = _prodId
@@ -62,12 +62,12 @@ func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetProdId(_prodId int64) error
 	return nil
 }
 
-// Get ProdId Getter
+// GetProdId ProdId Getter
 func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetProdId() int64 {
 	return r._prodId
 }
 
-// Set is QueryDate Setter
+// SetQueryDate is QueryDate Setter
 // Unix时间戳，会查询这个时间点对应那一天的记录（单位毫秒）
 func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetQueryDate(_queryDate int64) error {
 	r._queryDate = _queryDate
@@ -75,7 +75,7 @@ func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetQueryDate(_queryDate int64)
 	return nil
 }
 
-// Get QueryDate Getter
+// GetQueryDate QueryDate Getter
 func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetQueryDate() int64 {
 	return r._queryDate
 }

@@ -47,7 +47,7 @@ func (r TaobaoXhotelOrderFutureInfoPutAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutUuid Setter
+// SetOutUuid is OutUuid Setter
 // 商家请求流水号
 func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetOutUuid(_outUuid string) error {
 	r._outUuid = _outUuid
@@ -55,12 +55,12 @@ func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetOutUuid(_outUuid string) e
 	return nil
 }
 
-// Get OutUuid Getter
+// GetOutUuid OutUuid Getter
 func (r TaobaoXhotelOrderFutureInfoPutAPIRequest) GetOutUuid() string {
 	return r._outUuid
 }
 
-// Set is OperateType Setter
+// SetOperateType is OperateType Setter
 // 操作类型 21: 订单状态更新（商家推送订单状态变更）23：酒店房态信息上传（上传一段时间内的酒店房态）25：在线开发票请求确认 26：自助选房请求进行请求确认   27：自助checkIn请求进行请求确认 32: 扫脸入住入住信息回传 （飞猪将登记至公安系统）
 func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetOperateType(_operateType int64) error {
 	r._operateType = _operateType
@@ -68,12 +68,12 @@ func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetOperateType(_operateType i
 	return nil
 }
 
-// Get OperateType Getter
+// GetOperateType OperateType Getter
 func (r TaobaoXhotelOrderFutureInfoPutAPIRequest) GetOperateType() int64 {
 	return r._operateType
 }
 
-// Set is HotelCode Setter
+// SetHotelCode is HotelCode Setter
 // 酒店编码
 func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetHotelCode(_hotelCode string) error {
 	r._hotelCode = _hotelCode
@@ -81,12 +81,12 @@ func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetHotelCode(_hotelCode strin
 	return nil
 }
 
-// Get HotelCode Getter
+// GetHotelCode HotelCode Getter
 func (r TaobaoXhotelOrderFutureInfoPutAPIRequest) GetHotelCode() string {
 	return r._hotelCode
 }
 
-// Set is Context Setter
+// SetContext is Context Setter
 // 字段详细介绍参见 https://open.alitrip.com/docs/doc.htm?docType=1&articleId=106153
 func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetContext(_context string) error {
 	r._context = _context
@@ -94,12 +94,12 @@ func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetContext(_context string) e
 	return nil
 }
 
-// Get Context Getter
+// GetContext Context Getter
 func (r TaobaoXhotelOrderFutureInfoPutAPIRequest) GetContext() string {
 	return r._context
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 商家vendor信息。具体值咨询淘宝技术
 func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -107,12 +107,12 @@ func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetVendor(_vendor string) err
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelOrderFutureInfoPutAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is RequestId Setter
+// SetRequestId is RequestId Setter
 // 请求流水号
 func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetRequestId(_requestId string) error {
 	r._requestId = _requestId
@@ -120,7 +120,7 @@ func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetRequestId(_requestId strin
 	return nil
 }
 
-// Get RequestId Getter
+// GetRequestId RequestId Getter
 func (r TaobaoXhotelOrderFutureInfoPutAPIRequest) GetRequestId() string {
 	return r._requestId
 }

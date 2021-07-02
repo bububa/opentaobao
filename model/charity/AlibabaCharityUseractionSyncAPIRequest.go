@@ -37,7 +37,7 @@ func (r AlibabaCharityUseractionSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChannelUserActionDto Setter
+// SetChannelUserActionDto is ChannelUserActionDto Setter
 // 用户公益行为
 func (r *AlibabaCharityUseractionSyncAPIRequest) SetChannelUserActionDto(_channelUserActionDto *ChannelUserActionDto) error {
 	r._channelUserActionDto = _channelUserActionDto
@@ -45,7 +45,7 @@ func (r *AlibabaCharityUseractionSyncAPIRequest) SetChannelUserActionDto(_channe
 	return nil
 }
 
-// Get ChannelUserActionDto Getter
+// GetChannelUserActionDto ChannelUserActionDto Getter
 func (r AlibabaCharityUseractionSyncAPIRequest) GetChannelUserActionDto() *ChannelUserActionDto {
 	return r._channelUserActionDto
 }

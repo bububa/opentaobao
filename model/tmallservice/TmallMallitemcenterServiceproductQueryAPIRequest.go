@@ -43,7 +43,7 @@ func (r TmallMallitemcenterServiceproductQueryAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 服务产品id
 func (r *TmallMallitemcenterServiceproductQueryAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -51,12 +51,12 @@ func (r *TmallMallitemcenterServiceproductQueryAPIRequest) SetId(_id int64) erro
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TmallMallitemcenterServiceproductQueryAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 产品状态
 func (r *TmallMallitemcenterServiceproductQueryAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -64,12 +64,12 @@ func (r *TmallMallitemcenterServiceproductQueryAPIRequest) SetStatus(_status int
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TmallMallitemcenterServiceproductQueryAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is ServiceCode Setter
+// SetServiceCode is ServiceCode Setter
 // 服务名称
 func (r *TmallMallitemcenterServiceproductQueryAPIRequest) SetServiceCode(_serviceCode string) error {
 	r._serviceCode = _serviceCode
@@ -77,12 +77,12 @@ func (r *TmallMallitemcenterServiceproductQueryAPIRequest) SetServiceCode(_servi
 	return nil
 }
 
-// Get ServiceCode Getter
+// GetServiceCode ServiceCode Getter
 func (r TmallMallitemcenterServiceproductQueryAPIRequest) GetServiceCode() string {
 	return r._serviceCode
 }
 
-// Set is ServiceProductType Setter
+// SetServiceProductType is ServiceProductType Setter
 // 产品类型
 func (r *TmallMallitemcenterServiceproductQueryAPIRequest) SetServiceProductType(_serviceProductType int64) error {
 	r._serviceProductType = _serviceProductType
@@ -90,7 +90,7 @@ func (r *TmallMallitemcenterServiceproductQueryAPIRequest) SetServiceProductType
 	return nil
 }
 
-// Get ServiceProductType Getter
+// GetServiceProductType ServiceProductType Getter
 func (r TmallMallitemcenterServiceproductQueryAPIRequest) GetServiceProductType() int64 {
 	return r._serviceProductType
 }

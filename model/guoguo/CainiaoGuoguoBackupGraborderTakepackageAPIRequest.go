@@ -39,7 +39,7 @@ func (r CainiaoGuoguoBackupGraborderTakepackageAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // 物流订单号
 func (r *CainiaoGuoguoBackupGraborderTakepackageAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -47,12 +47,12 @@ func (r *CainiaoGuoguoBackupGraborderTakepackageAPIRequest) SetOrderCode(_orderC
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r CainiaoGuoguoBackupGraborderTakepackageAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// Set is PackageCode Setter
+// SetPackageCode is PackageCode Setter
 // 包裹四位码
 func (r *CainiaoGuoguoBackupGraborderTakepackageAPIRequest) SetPackageCode(_packageCode string) error {
 	r._packageCode = _packageCode
@@ -60,7 +60,7 @@ func (r *CainiaoGuoguoBackupGraborderTakepackageAPIRequest) SetPackageCode(_pack
 	return nil
 }
 
-// Get PackageCode Getter
+// GetPackageCode PackageCode Getter
 func (r CainiaoGuoguoBackupGraborderTakepackageAPIRequest) GetPackageCode() string {
 	return r._packageCode
 }

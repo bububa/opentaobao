@@ -37,7 +37,7 @@ func (r AlibabaHappytripTaxiServicestatusGetAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is CostCenter Setter
+// SetCostCenter is CostCenter Setter
 // 成本中心代码，用于区分不同的分账账号
 func (r *AlibabaHappytripTaxiServicestatusGetAPIRequest) SetCostCenter(_costCenter string) error {
 	r._costCenter = _costCenter
@@ -45,7 +45,7 @@ func (r *AlibabaHappytripTaxiServicestatusGetAPIRequest) SetCostCenter(_costCent
 	return nil
 }
 
-// Get CostCenter Getter
+// GetCostCenter CostCenter Getter
 func (r AlibabaHappytripTaxiServicestatusGetAPIRequest) GetCostCenter() string {
 	return r._costCenter
 }

@@ -75,7 +75,7 @@ func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 仓库编码
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -83,12 +83,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetStoreCode(_storeCode strin
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // 入库单据编码
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -96,12 +96,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderCode(_orderCode strin
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// Set is OrderType Setter
+// SetOrderType is OrderType Setter
 // 单据类型 601普通入库单、501销退入库单、302 调拨入库单、904其他入库单、306 B2B入库
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderType(_orderType int64) error {
 	r._orderType = _orderType
@@ -109,12 +109,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderType(_orderType int64
 	return nil
 }
 
-// Get OrderType Getter
+// GetOrderType OrderType Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetOrderType() int64 {
 	return r._orderType
 }
 
-// Set is InboundTypeDesc Setter
+// SetInboundTypeDesc is InboundTypeDesc Setter
 // 可选择性文本透传至WMS，比如加工归还、委外归还、借出归还、内部归还等
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetInboundTypeDesc(_inboundTypeDesc string) error {
 	r._inboundTypeDesc = _inboundTypeDesc
@@ -122,12 +122,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetInboundTypeDesc(_inboundTy
 	return nil
 }
 
-// Get InboundTypeDesc Getter
+// GetInboundTypeDesc InboundTypeDesc Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetInboundTypeDesc() string {
 	return r._inboundTypeDesc
 }
 
-// Set is OrderFlag Setter
+// SetOrderFlag is OrderFlag Setter
 // 订单标记以逗号分隔：  9:上门退货入库 13: 退货时是否收取发票，默认不收取（即没13为多选项，如1,2,8,9）
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderFlag(_orderFlag string) error {
 	r._orderFlag = _orderFlag
@@ -135,12 +135,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderFlag(_orderFlag strin
 	return nil
 }
 
-// Get OrderFlag Getter
+// GetOrderFlag OrderFlag Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetOrderFlag() string {
 	return r._orderFlag
 }
 
-// Set is OrderCreateTime Setter
+// SetOrderCreateTime is OrderCreateTime Setter
 // 单据创建时间
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderCreateTime(_orderCreateTime string) error {
 	r._orderCreateTime = _orderCreateTime
@@ -148,12 +148,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderCreateTime(_orderCrea
 	return nil
 }
 
-// Get OrderCreateTime Getter
+// GetOrderCreateTime OrderCreateTime Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetOrderCreateTime() string {
 	return r._orderCreateTime
 }
 
-// Set is SupplierCode Setter
+// SetSupplierCode is SupplierCode Setter
 // 供应商编码，往来单位编码
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetSupplierCode(_supplierCode string) error {
 	r._supplierCode = _supplierCode
@@ -161,12 +161,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetSupplierCode(_supplierCode
 	return nil
 }
 
-// Get SupplierCode Getter
+// GetSupplierCode SupplierCode Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetSupplierCode() string {
 	return r._supplierCode
 }
 
-// Set is SupplierName Setter
+// SetSupplierName is SupplierName Setter
 // 供应商名称 ，往来单位名称
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetSupplierName(_supplierName string) error {
 	r._supplierName = _supplierName
@@ -174,12 +174,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetSupplierName(_supplierName
 	return nil
 }
 
-// Get SupplierName Getter
+// GetSupplierName SupplierName Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetSupplierName() string {
 	return r._supplierName
 }
 
-// Set is TmsServiceCode Setter
+// SetTmsServiceCode is TmsServiceCode Setter
 // 配送公司编码，拒收（非妥投）的销退订单，由ERP填充原单配送公司编码
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetTmsServiceCode(_tmsServiceCode string) error {
 	r._tmsServiceCode = _tmsServiceCode
@@ -187,12 +187,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetTmsServiceCode(_tmsService
 	return nil
 }
 
-// Get TmsServiceCode Getter
+// GetTmsServiceCode TmsServiceCode Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetTmsServiceCode() string {
 	return r._tmsServiceCode
 }
 
-// Set is TmsServiceName Setter
+// SetTmsServiceName is TmsServiceName Setter
 // 快递公司名称
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetTmsServiceName(_tmsServiceName string) error {
 	r._tmsServiceName = _tmsServiceName
@@ -200,12 +200,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetTmsServiceName(_tmsService
 	return nil
 }
 
-// Get TmsServiceName Getter
+// GetTmsServiceName TmsServiceName Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetTmsServiceName() string {
 	return r._tmsServiceName
 }
 
-// Set is TmsOrderCode Setter
+// SetTmsOrderCode is TmsOrderCode Setter
 // 运单号&托运单号 1)	入库单支持多运单号录入 2)	销退场景下如果是拒收（非妥投运单）由ERP填充原运单号
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetTmsOrderCode(_tmsOrderCode string) error {
 	r._tmsOrderCode = _tmsOrderCode
@@ -213,12 +213,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetTmsOrderCode(_tmsOrderCode
 	return nil
 }
 
-// Get TmsOrderCode Getter
+// GetTmsOrderCode TmsOrderCode Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetTmsOrderCode() string {
 	return r._tmsOrderCode
 }
 
-// Set is PrevOrderCode Setter
+// SetPrevOrderCode is PrevOrderCode Setter
 // 来源单据号，如销售退货时填充原销售订单号
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetPrevOrderCode(_prevOrderCode string) error {
 	r._prevOrderCode = _prevOrderCode
@@ -226,12 +226,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetPrevOrderCode(_prevOrderCo
 	return nil
 }
 
-// Get PrevOrderCode Getter
+// GetPrevOrderCode PrevOrderCode Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetPrevOrderCode() string {
 	return r._prevOrderCode
 }
 
-// Set is ReturnReason Setter
+// SetReturnReason is ReturnReason Setter
 // 销退时请提供退货的原因
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetReturnReason(_returnReason string) error {
 	r._returnReason = _returnReason
@@ -239,12 +239,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetReturnReason(_returnReason
 	return nil
 }
 
-// Get ReturnReason Getter
+// GetReturnReason ReturnReason Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetReturnReason() string {
 	return r._returnReason
 }
 
-// Set is ExpectStartTime Setter
+// SetExpectStartTime is ExpectStartTime Setter
 // 预期送达开始时间
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetExpectStartTime(_expectStartTime string) error {
 	r._expectStartTime = _expectStartTime
@@ -252,12 +252,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetExpectStartTime(_expectSta
 	return nil
 }
 
-// Get ExpectStartTime Getter
+// GetExpectStartTime ExpectStartTime Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetExpectStartTime() string {
 	return r._expectStartTime
 }
 
-// Set is ExpectEndTime Setter
+// SetExpectEndTime is ExpectEndTime Setter
 // 预期送达结束时间
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetExpectEndTime(_expectEndTime string) error {
 	r._expectEndTime = _expectEndTime
@@ -265,12 +265,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetExpectEndTime(_expectEndTi
 	return nil
 }
 
-// Get ExpectEndTime Getter
+// GetExpectEndTime ExpectEndTime Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetExpectEndTime() string {
 	return r._expectEndTime
 }
 
-// Set is ReceiverInfo Setter
+// SetReceiverInfo is ReceiverInfo Setter
 // 系统自动生成
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo *Receiverinfowlbwmsstockinordernotifywl) error {
 	r._receiverInfo = _receiverInfo
@@ -278,12 +278,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo
 	return nil
 }
 
-// Get ReceiverInfo Getter
+// GetReceiverInfo ReceiverInfo Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetReceiverInfo() *Receiverinfowlbwmsstockinordernotifywl {
 	return r._receiverInfo
 }
 
-// Set is SenderInfo Setter
+// SetSenderInfo is SenderInfo Setter
 // 系统自动生成
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *Senderinfowlbwmsstockinordernotifywl) error {
 	r._senderInfo = _senderInfo
@@ -291,12 +291,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *Se
 	return nil
 }
 
-// Get SenderInfo Getter
+// GetSenderInfo SenderInfo Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetSenderInfo() *Senderinfowlbwmsstockinordernotifywl {
 	return r._senderInfo
 }
 
-// Set is OrderItemList Setter
+// SetOrderItemList is OrderItemList Setter
 // 系统自动生成
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderItemList(_orderItemList []Orderitemlistwlbwmsstockinordernotifywl) error {
 	r._orderItemList = _orderItemList
@@ -304,12 +304,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderItemList(_orderItemLi
 	return nil
 }
 
-// Get OrderItemList Getter
+// GetOrderItemList OrderItemList Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetOrderItemList() []Orderitemlistwlbwmsstockinordernotifywl {
 	return r._orderItemList
 }
 
-// Set is ExtendFields Setter
+// SetExtendFields is ExtendFields Setter
 // 扩展属性, key-value结构，格式要求： 以英文分号“;”分隔每组key-value，以英文冒号“:”分隔key与value。如果value中带有分号，需要转成下划线“_”，如果带有冒号，需要转成中划线“-”
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetExtendFields(_extendFields string) error {
 	r._extendFields = _extendFields
@@ -317,12 +317,12 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetExtendFields(_extendFields
 	return nil
 }
 
-// Get ExtendFields Getter
+// GetExtendFields ExtendFields Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetExtendFields() string {
 	return r._extendFields
 }
 
-// Set is Remark Setter
+// SetRemark is Remark Setter
 // 备注，销退入库订单需要留言备注填充到此字段
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
@@ -330,7 +330,7 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetRemark(_remark string) err
 	return nil
 }
 
-// Get Remark Getter
+// GetRemark Remark Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetRemark() string {
 	return r._remark
 }

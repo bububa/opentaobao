@@ -37,7 +37,7 @@ func (r AlibabaWdkReverseApplyrefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamApplyReverseReq Setter
+// SetParamApplyReverseReq is ParamApplyReverseReq Setter
 // 入参
 func (r *AlibabaWdkReverseApplyrefundAPIRequest) SetParamApplyReverseReq(_paramApplyReverseReq *ApplyReverseReq) error {
 	r._paramApplyReverseReq = _paramApplyReverseReq
@@ -45,7 +45,7 @@ func (r *AlibabaWdkReverseApplyrefundAPIRequest) SetParamApplyReverseReq(_paramA
 	return nil
 }
 
-// Get ParamApplyReverseReq Getter
+// GetParamApplyReverseReq ParamApplyReverseReq Getter
 func (r AlibabaWdkReverseApplyrefundAPIRequest) GetParamApplyReverseReq() *ApplyReverseReq {
 	return r._paramApplyReverseReq
 }

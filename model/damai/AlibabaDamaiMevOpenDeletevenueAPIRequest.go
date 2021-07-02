@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenDeletevenueAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeleteVenueParam Setter
+// SetDeleteVenueParam is DeleteVenueParam Setter
 // 入参deleteVenueParam
 func (r *AlibabaDamaiMevOpenDeletevenueAPIRequest) SetDeleteVenueParam(_deleteVenueParam *VenueIdOpenParam) error {
 	r._deleteVenueParam = _deleteVenueParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenDeletevenueAPIRequest) SetDeleteVenueParam(_deleteVe
 	return nil
 }
 
-// Get DeleteVenueParam Getter
+// GetDeleteVenueParam DeleteVenueParam Getter
 func (r AlibabaDamaiMevOpenDeletevenueAPIRequest) GetDeleteVenueParam() *VenueIdOpenParam {
 	return r._deleteVenueParam
 }

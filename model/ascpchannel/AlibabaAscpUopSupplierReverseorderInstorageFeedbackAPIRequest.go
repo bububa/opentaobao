@@ -37,7 +37,7 @@ func (r AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest) GetApiPar
 	return params
 }
 
-// Set is InstorageFeedbackRequest Setter
+// SetInstorageFeedbackRequest is InstorageFeedbackRequest Setter
 // 销退单入库结果请求
 func (r *AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest) SetInstorageFeedbackRequest(_instorageFeedbackRequest *Instoragefeedbackrequest) error {
 	r._instorageFeedbackRequest = _instorageFeedbackRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest) SetInsto
 	return nil
 }
 
-// Get InstorageFeedbackRequest Getter
+// GetInstorageFeedbackRequest InstorageFeedbackRequest Getter
 func (r AlibabaAscpUopSupplierReverseorderInstorageFeedbackAPIRequest) GetInstorageFeedbackRequest() *Instoragefeedbackrequest {
 	return r._instorageFeedbackRequest
 }

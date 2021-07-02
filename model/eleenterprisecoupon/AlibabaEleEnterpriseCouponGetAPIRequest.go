@@ -37,7 +37,7 @@ func (r AlibabaEleEnterpriseCouponGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 手机号
 func (r *AlibabaEleEnterpriseCouponGetAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -45,7 +45,7 @@ func (r *AlibabaEleEnterpriseCouponGetAPIRequest) SetPhone(_phone string) error 
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r AlibabaEleEnterpriseCouponGetAPIRequest) GetPhone() string {
 	return r._phone
 }

@@ -37,7 +37,7 @@ func (r TaobaoQimenOrderprocessQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Request Setter
+// SetRequest is Request Setter
 //
 func (r *TaobaoQimenOrderprocessQueryAPIRequest) SetRequest(_request *OrderProcessQueryRequest) error {
 	r._request = _request
@@ -45,7 +45,7 @@ func (r *TaobaoQimenOrderprocessQueryAPIRequest) SetRequest(_request *OrderProce
 	return nil
 }
 
-// Get Request Getter
+// GetRequest Request Getter
 func (r TaobaoQimenOrderprocessQueryAPIRequest) GetRequest() *OrderProcessQueryRequest {
 	return r._request
 }

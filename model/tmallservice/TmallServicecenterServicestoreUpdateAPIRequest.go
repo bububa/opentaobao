@@ -37,7 +37,7 @@ func (r TmallServicecenterServicestoreUpdateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ParamServiceStoreDTO Setter
+// SetParamServiceStoreDTO is ParamServiceStoreDTO Setter
 // 网点/门店
 func (r *TmallServicecenterServicestoreUpdateAPIRequest) SetParamServiceStoreDTO(_paramServiceStoreDTO *ServiceStoreDto) error {
 	r._paramServiceStoreDTO = _paramServiceStoreDTO
@@ -45,7 +45,7 @@ func (r *TmallServicecenterServicestoreUpdateAPIRequest) SetParamServiceStoreDTO
 	return nil
 }
 
-// Get ParamServiceStoreDTO Getter
+// GetParamServiceStoreDTO ParamServiceStoreDTO Getter
 func (r TmallServicecenterServicestoreUpdateAPIRequest) GetParamServiceStoreDTO() *ServiceStoreDto {
 	return r._paramServiceStoreDTO
 }

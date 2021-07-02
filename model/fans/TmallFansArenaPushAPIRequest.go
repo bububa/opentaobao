@@ -37,7 +37,7 @@ func (r TmallFansArenaPushAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PushList Setter
+// SetPushList is PushList Setter
 // 推送列表
 func (r *TmallFansArenaPushAPIRequest) SetPushList(_pushList []PushMessageParamDo) error {
 	r._pushList = _pushList
@@ -45,7 +45,7 @@ func (r *TmallFansArenaPushAPIRequest) SetPushList(_pushList []PushMessageParamD
 	return nil
 }
 
-// Get PushList Getter
+// GetPushList PushList Getter
 func (r TmallFansArenaPushAPIRequest) GetPushList() []PushMessageParamDo {
 	return r._pushList
 }

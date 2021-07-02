@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmOpenOrderBackflowAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOrderBackflowOpenReq Setter
+// SetParamOrderBackflowOpenReq is ParamOrderBackflowOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmOpenOrderBackflowAPIRequest) SetParamOrderBackflowOpenReq(_paramOrderBackflowOpenReq *OrderBackflowOpenReq) error {
 	r._paramOrderBackflowOpenReq = _paramOrderBackflowOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmOpenOrderBackflowAPIRequest) SetParamOrderBackflowOpenReq
 	return nil
 }
 
-// Get ParamOrderBackflowOpenReq Getter
+// GetParamOrderBackflowOpenReq ParamOrderBackflowOpenReq Getter
 func (r AlibabaAlscCrmOpenOrderBackflowAPIRequest) GetParamOrderBackflowOpenReq() *OrderBackflowOpenReq {
 	return r._paramOrderBackflowOpenReq
 }

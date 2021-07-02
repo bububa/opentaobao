@@ -37,7 +37,7 @@ func (r CainiaoIotTicketSpMaintainCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 请求参数
 func (r *CainiaoIotTicketSpMaintainCreateAPIRequest) SetParam(_param *AssignMaintenancePersonnelTopRequest) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *CainiaoIotTicketSpMaintainCreateAPIRequest) SetParam(_param *AssignMain
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r CainiaoIotTicketSpMaintainCreateAPIRequest) GetParam() *AssignMaintenancePersonnelTopRequest {
 	return r._param
 }

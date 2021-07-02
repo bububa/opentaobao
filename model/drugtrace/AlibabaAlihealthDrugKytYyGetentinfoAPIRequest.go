@@ -37,7 +37,7 @@ func (r AlibabaAlihealthDrugKytYyGetentinfoAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is EntName Setter
+// SetEntName is EntName Setter
 // 公司名称
 func (r *AlibabaAlihealthDrugKytYyGetentinfoAPIRequest) SetEntName(_entName string) error {
 	r._entName = _entName
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthDrugKytYyGetentinfoAPIRequest) SetEntName(_entName stri
 	return nil
 }
 
-// Get EntName Getter
+// GetEntName EntName Getter
 func (r AlibabaAlihealthDrugKytYyGetentinfoAPIRequest) GetEntName() string {
 	return r._entName
 }

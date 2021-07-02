@@ -37,7 +37,7 @@ func (r AliexpressSolutionProductInfoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // product ID
 func (r *AliexpressSolutionProductInfoGetAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionProductInfoGetAPIRequest) SetProductId(_productId int
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r AliexpressSolutionProductInfoGetAPIRequest) GetProductId() int64 {
 	return r._productId
 }

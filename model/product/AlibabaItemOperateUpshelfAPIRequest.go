@@ -39,7 +39,7 @@ func (r AlibabaItemOperateUpshelfAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *AlibabaItemOperateUpshelfAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -47,12 +47,12 @@ func (r *AlibabaItemOperateUpshelfAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlibabaItemOperateUpshelfAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is Quantity Setter
+// SetQuantity is Quantity Setter
 // 商品库存
 func (r *AlibabaItemOperateUpshelfAPIRequest) SetQuantity(_quantity int64) error {
 	r._quantity = _quantity
@@ -60,7 +60,7 @@ func (r *AlibabaItemOperateUpshelfAPIRequest) SetQuantity(_quantity int64) error
 	return nil
 }
 
-// Get Quantity Getter
+// GetQuantity Quantity Getter
 func (r AlibabaItemOperateUpshelfAPIRequest) GetQuantity() int64 {
 	return r._quantity
 }

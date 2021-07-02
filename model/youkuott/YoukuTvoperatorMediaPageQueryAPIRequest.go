@@ -43,7 +43,7 @@ func (r YoukuTvoperatorMediaPageQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SystemInfo Setter
+// SetSystemInfo is SystemInfo Setter
 // 系统信息（和服务提供方确认)
 func (r *YoukuTvoperatorMediaPageQueryAPIRequest) SetSystemInfo(_systemInfo string) error {
 	r._systemInfo = _systemInfo
@@ -51,12 +51,12 @@ func (r *YoukuTvoperatorMediaPageQueryAPIRequest) SetSystemInfo(_systemInfo stri
 	return nil
 }
 
-// Get SystemInfo Getter
+// GetSystemInfo SystemInfo Getter
 func (r YoukuTvoperatorMediaPageQueryAPIRequest) GetSystemInfo() string {
 	return r._systemInfo
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 从第一页开始
 func (r *YoukuTvoperatorMediaPageQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -64,12 +64,12 @@ func (r *YoukuTvoperatorMediaPageQueryAPIRequest) SetPageNo(_pageNo int64) error
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r YoukuTvoperatorMediaPageQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页面大小
 func (r *YoukuTvoperatorMediaPageQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *YoukuTvoperatorMediaPageQueryAPIRequest) SetPageSize(_pageSize int64) e
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r YoukuTvoperatorMediaPageQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is ProgramId Setter
+// SetProgramId is ProgramId Setter
 // 节目programId
 func (r *YoukuTvoperatorMediaPageQueryAPIRequest) SetProgramId(_programId int64) error {
 	r._programId = _programId
@@ -90,7 +90,7 @@ func (r *YoukuTvoperatorMediaPageQueryAPIRequest) SetProgramId(_programId int64)
 	return nil
 }
 
-// Get ProgramId Getter
+// GetProgramId ProgramId Getter
 func (r YoukuTvoperatorMediaPageQueryAPIRequest) GetProgramId() int64 {
 	return r._programId
 }

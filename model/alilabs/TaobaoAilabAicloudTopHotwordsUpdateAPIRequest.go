@@ -45,7 +45,7 @@ func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // schemaKey
 func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -53,12 +53,12 @@ func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetSchema(_schema string
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 三方用户id
 func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -66,12 +66,12 @@ func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetUserId(_userId string
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is BizClass Setter
+// SetBizClass is BizClass Setter
 // 业务类型
 func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetBizClass(_bizClass string) error {
 	r._bizClass = _bizClass
@@ -79,12 +79,12 @@ func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetBizClass(_bizClass st
 	return nil
 }
 
-// Get BizClass Getter
+// GetBizClass BizClass Getter
 func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetBizClass() string {
 	return r._bizClass
 }
 
-// Set is OpType Setter
+// SetOpType is OpType Setter
 // 操作类型
 func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetOpType(_opType string) error {
 	r._opType = _opType
@@ -92,12 +92,12 @@ func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetOpType(_opType string
 	return nil
 }
 
-// Get OpType Getter
+// GetOpType OpType Getter
 func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetOpType() string {
 	return r._opType
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 热词内容
 func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetContent(_content *HotWordsContent) error {
 	r._content = _content
@@ -105,7 +105,7 @@ func (r *TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) SetContent(_content *Hot
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r TaobaoAilabAicloudTopHotwordsUpdateAPIRequest) GetContent() *HotWordsContent {
 	return r._content
 }

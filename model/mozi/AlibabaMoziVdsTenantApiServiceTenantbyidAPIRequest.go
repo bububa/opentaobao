@@ -37,7 +37,7 @@ func (r AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Par0 Setter
+// SetPar0 is Par0 Setter
 // 入参
 func (r *AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest) SetPar0(_par0 *GetTenantByIdRequest) error {
 	r._par0 = _par0
@@ -45,7 +45,7 @@ func (r *AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest) SetPar0(_par0 *GetT
 	return nil
 }
 
-// Get Par0 Getter
+// GetPar0 Par0 Getter
 func (r AlibabaMoziVdsTenantApiServiceTenantbyidAPIRequest) GetPar0() *GetTenantByIdRequest {
 	return r._par0
 }

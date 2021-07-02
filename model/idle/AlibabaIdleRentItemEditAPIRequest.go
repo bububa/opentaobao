@@ -37,7 +37,7 @@ func (r AlibabaIdleRentItemEditAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamRentItemDTO Setter
+// SetParamRentItemDTO is ParamRentItemDTO Setter
 // 商品信息
 func (r *AlibabaIdleRentItemEditAPIRequest) SetParamRentItemDTO(_paramRentItemDTO *RentItemDto) error {
 	r._paramRentItemDTO = _paramRentItemDTO
@@ -45,7 +45,7 @@ func (r *AlibabaIdleRentItemEditAPIRequest) SetParamRentItemDTO(_paramRentItemDT
 	return nil
 }
 
-// Get ParamRentItemDTO Getter
+// GetParamRentItemDTO ParamRentItemDTO Getter
 func (r AlibabaIdleRentItemEditAPIRequest) GetParamRentItemDTO() *RentItemDto {
 	return r._paramRentItemDTO
 }

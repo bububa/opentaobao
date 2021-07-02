@@ -37,7 +37,7 @@ func (r AlitripAgentFlightSellModifyBackfillAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参
 func (r *AlitripAgentFlightSellModifyBackfillAPIRequest) SetParam(_param *ModifyBackFillRequestDto) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlitripAgentFlightSellModifyBackfillAPIRequest) SetParam(_param *Modify
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlitripAgentFlightSellModifyBackfillAPIRequest) GetParam() *ModifyBackFillRequestDto {
 	return r._param
 }

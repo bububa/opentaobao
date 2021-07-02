@@ -37,7 +37,7 @@ func (r TaobaoEticketMerchantTbmaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryTbMaCallbackReq Setter
+// SetQueryTbMaCallbackReq is QueryTbMaCallbackReq Setter
 // 查询淘宝码请求
 func (r *TaobaoEticketMerchantTbmaGetAPIRequest) SetQueryTbMaCallbackReq(_queryTbMaCallbackReq *QueryTbMaCallbackReq) error {
 	r._queryTbMaCallbackReq = _queryTbMaCallbackReq
@@ -45,7 +45,7 @@ func (r *TaobaoEticketMerchantTbmaGetAPIRequest) SetQueryTbMaCallbackReq(_queryT
 	return nil
 }
 
-// Get QueryTbMaCallbackReq Getter
+// GetQueryTbMaCallbackReq QueryTbMaCallbackReq Getter
 func (r TaobaoEticketMerchantTbmaGetAPIRequest) GetQueryTbMaCallbackReq() *QueryTbMaCallbackReq {
 	return r._queryTbMaCallbackReq
 }

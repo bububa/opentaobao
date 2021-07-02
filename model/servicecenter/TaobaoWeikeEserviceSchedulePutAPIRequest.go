@@ -39,7 +39,7 @@ func (r TaobaoWeikeEserviceSchedulePutAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单ID
 func (r *TaobaoWeikeEserviceSchedulePutAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *TaobaoWeikeEserviceSchedulePutAPIRequest) SetOrderId(_orderId int64) er
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoWeikeEserviceSchedulePutAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is CsSchedulings Setter
+// SetCsSchedulings is CsSchedulings Setter
 // 按天排班信息
 func (r *TaobaoWeikeEserviceSchedulePutAPIRequest) SetCsSchedulings(_csSchedulings []CsSchedulingOneDayDto) error {
 	r._csSchedulings = _csSchedulings
@@ -60,7 +60,7 @@ func (r *TaobaoWeikeEserviceSchedulePutAPIRequest) SetCsSchedulings(_csSchedulin
 	return nil
 }
 
-// Get CsSchedulings Getter
+// GetCsSchedulings CsSchedulings Getter
 func (r TaobaoWeikeEserviceSchedulePutAPIRequest) GetCsSchedulings() []CsSchedulingOneDayDto {
 	return r._csSchedulings
 }

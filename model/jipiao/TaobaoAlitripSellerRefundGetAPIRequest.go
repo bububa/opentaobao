@@ -37,7 +37,7 @@ func (r TaobaoAlitripSellerRefundGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ApplyId Setter
+// SetApplyId is ApplyId Setter
 // 申请单ID
 func (r *TaobaoAlitripSellerRefundGetAPIRequest) SetApplyId(_applyId int64) error {
 	r._applyId = _applyId
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripSellerRefundGetAPIRequest) SetApplyId(_applyId int64) erro
 	return nil
 }
 
-// Get ApplyId Getter
+// GetApplyId ApplyId Getter
 func (r TaobaoAlitripSellerRefundGetAPIRequest) GetApplyId() int64 {
 	return r._applyId
 }

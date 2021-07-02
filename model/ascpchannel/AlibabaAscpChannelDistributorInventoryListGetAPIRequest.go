@@ -37,7 +37,7 @@ func (r AlibabaAscpChannelDistributorInventoryListGetAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is InventoryRequest Setter
+// SetInventoryRequest is InventoryRequest Setter
 // 系统自动生成
 func (r *AlibabaAscpChannelDistributorInventoryListGetAPIRequest) SetInventoryRequest(_inventoryRequest *BatchChannelInventoryQuery) error {
 	r._inventoryRequest = _inventoryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpChannelDistributorInventoryListGetAPIRequest) SetInventoryRe
 	return nil
 }
 
-// Get InventoryRequest Getter
+// GetInventoryRequest InventoryRequest Getter
 func (r AlibabaAscpChannelDistributorInventoryListGetAPIRequest) GetInventoryRequest() *BatchChannelInventoryQuery {
 	return r._inventoryRequest
 }

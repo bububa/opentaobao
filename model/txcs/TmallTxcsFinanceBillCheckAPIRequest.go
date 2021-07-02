@@ -39,7 +39,7 @@ func (r TmallTxcsFinanceBillCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StatementBillFeeDetailQuery Setter
+// SetStatementBillFeeDetailQuery is StatementBillFeeDetailQuery Setter
 // 查询参数
 func (r *TmallTxcsFinanceBillCheckAPIRequest) SetStatementBillFeeDetailQuery(_statementBillFeeDetailQuery *StatementBillFeeDetailQuery) error {
 	r._statementBillFeeDetailQuery = _statementBillFeeDetailQuery
@@ -47,12 +47,12 @@ func (r *TmallTxcsFinanceBillCheckAPIRequest) SetStatementBillFeeDetailQuery(_st
 	return nil
 }
 
-// Get StatementBillFeeDetailQuery Getter
+// GetStatementBillFeeDetailQuery StatementBillFeeDetailQuery Getter
 func (r TmallTxcsFinanceBillCheckAPIRequest) GetStatementBillFeeDetailQuery() *StatementBillFeeDetailQuery {
 	return r._statementBillFeeDetailQuery
 }
 
-// Set is OuCode Setter
+// SetOuCode is OuCode Setter
 // 门店编码
 func (r *TmallTxcsFinanceBillCheckAPIRequest) SetOuCode(_ouCode string) error {
 	r._ouCode = _ouCode
@@ -60,7 +60,7 @@ func (r *TmallTxcsFinanceBillCheckAPIRequest) SetOuCode(_ouCode string) error {
 	return nil
 }
 
-// Get OuCode Getter
+// GetOuCode OuCode Getter
 func (r TmallTxcsFinanceBillCheckAPIRequest) GetOuCode() string {
 	return r._ouCode
 }

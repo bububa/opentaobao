@@ -39,7 +39,7 @@ func (r TaobaoTrainAgentGetRefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 淘宝的主订单号
 func (r *TaobaoTrainAgentGetRefundAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
@@ -47,12 +47,12 @@ func (r *TaobaoTrainAgentGetRefundAPIRequest) SetMainOrderId(_mainOrderId int64)
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r TaobaoTrainAgentGetRefundAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商id
 func (r *TaobaoTrainAgentGetRefundAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -60,7 +60,7 @@ func (r *TaobaoTrainAgentGetRefundAPIRequest) SetAgentId(_agentId int64) error {
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r TaobaoTrainAgentGetRefundAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }

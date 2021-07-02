@@ -37,7 +37,7 @@ func (r TaobaoOpenimUsersUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Userinfos Setter
+// SetUserinfos is Userinfos Setter
 // 用户信息列表
 func (r *TaobaoOpenimUsersUpdateAPIRequest) SetUserinfos(_userinfos []Userinfos) error {
 	r._userinfos = _userinfos
@@ -45,7 +45,7 @@ func (r *TaobaoOpenimUsersUpdateAPIRequest) SetUserinfos(_userinfos []Userinfos)
 	return nil
 }
 
-// Get Userinfos Getter
+// GetUserinfos Userinfos Getter
 func (r TaobaoOpenimUsersUpdateAPIRequest) GetUserinfos() []Userinfos {
 	return r._userinfos
 }

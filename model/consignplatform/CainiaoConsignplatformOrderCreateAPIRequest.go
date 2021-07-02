@@ -37,7 +37,7 @@ func (r CainiaoConsignplatformOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CreateRequest Setter
+// SetCreateRequest is CreateRequest Setter
 // 订单创建入参
 func (r *CainiaoConsignplatformOrderCreateAPIRequest) SetCreateRequest(_createRequest *OrderCreateRequest) error {
 	r._createRequest = _createRequest
@@ -45,7 +45,7 @@ func (r *CainiaoConsignplatformOrderCreateAPIRequest) SetCreateRequest(_createRe
 	return nil
 }
 
-// Get CreateRequest Getter
+// GetCreateRequest CreateRequest Getter
 func (r CainiaoConsignplatformOrderCreateAPIRequest) GetCreateRequest() *OrderCreateRequest {
 	return r._createRequest
 }

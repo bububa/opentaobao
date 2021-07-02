@@ -39,7 +39,7 @@ func (r TaobaoSimbaCampaignsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaCampaignsGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -47,12 +47,12 @@ func (r *TaobaoSimbaCampaignsGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaCampaignsGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 计划类型0位标准计划，16位销量明星计划
 func (r *TaobaoSimbaCampaignsGetAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -60,7 +60,7 @@ func (r *TaobaoSimbaCampaignsGetAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoSimbaCampaignsGetAPIRequest) GetType() int64 {
 	return r._type
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkSupplierOrderListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SupplierOrderQueryRequest Setter
+// SetSupplierOrderQueryRequest is SupplierOrderQueryRequest Setter
 // 查询参数
 func (r *AlibabaWdkSupplierOrderListAPIRequest) SetSupplierOrderQueryRequest(_supplierOrderQueryRequest *SupplierOrderQueryRequest) error {
 	r._supplierOrderQueryRequest = _supplierOrderQueryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSupplierOrderListAPIRequest) SetSupplierOrderQueryRequest(_su
 	return nil
 }
 
-// Get SupplierOrderQueryRequest Getter
+// GetSupplierOrderQueryRequest SupplierOrderQueryRequest Getter
 func (r AlibabaWdkSupplierOrderListAPIRequest) GetSupplierOrderQueryRequest() *SupplierOrderQueryRequest {
 	return r._supplierOrderQueryRequest
 }

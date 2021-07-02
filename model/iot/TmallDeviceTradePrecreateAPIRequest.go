@@ -52,7 +52,7 @@ func (r TmallDeviceTradePrecreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 交易类型。1，售卖。2，派样
 func (r *TmallDeviceTradePrecreateAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -60,12 +60,12 @@ func (r *TmallDeviceTradePrecreateAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TmallDeviceTradePrecreateAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is ItemList Setter
+// SetItemList is ItemList Setter
 // 商品列表
 func (r *TmallDeviceTradePrecreateAPIRequest) SetItemList(_itemList []TradeItemDo) error {
 	r._itemList = _itemList
@@ -73,12 +73,12 @@ func (r *TmallDeviceTradePrecreateAPIRequest) SetItemList(_itemList []TradeItemD
 	return nil
 }
 
-// Get ItemList Getter
+// GetItemList ItemList Getter
 func (r TmallDeviceTradePrecreateAPIRequest) GetItemList() []TradeItemDo {
 	return r._itemList
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 设备业务编码
 func (r *TmallDeviceTradePrecreateAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -86,12 +86,12 @@ func (r *TmallDeviceTradePrecreateAPIRequest) SetDeviceCode(_deviceCode string) 
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r TmallDeviceTradePrecreateAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is OutTradeId Setter
+// SetOutTradeId is OutTradeId Setter
 // 外部订单ID，用户下保证唯一。最大长度22
 func (r *TmallDeviceTradePrecreateAPIRequest) SetOutTradeId(_outTradeId string) error {
 	r._outTradeId = _outTradeId
@@ -99,12 +99,12 @@ func (r *TmallDeviceTradePrecreateAPIRequest) SetOutTradeId(_outTradeId string) 
 	return nil
 }
 
-// Get OutTradeId Getter
+// GetOutTradeId OutTradeId Getter
 func (r TmallDeviceTradePrecreateAPIRequest) GetOutTradeId() string {
 	return r._outTradeId
 }
 
-// Set is CallbackUrl Setter
+// SetCallbackUrl is CallbackUrl Setter
 // 回调地址，当订单创建，付款成功后，会收到回调。必须是https地址，HTTP响应必须包含success，否则系统会重发
 func (r *TmallDeviceTradePrecreateAPIRequest) SetCallbackUrl(_callbackUrl string) error {
 	r._callbackUrl = _callbackUrl
@@ -112,12 +112,12 @@ func (r *TmallDeviceTradePrecreateAPIRequest) SetCallbackUrl(_callbackUrl string
 	return nil
 }
 
-// Get CallbackUrl Getter
+// GetCallbackUrl CallbackUrl Getter
 func (r TmallDeviceTradePrecreateAPIRequest) GetCallbackUrl() string {
 	return r._callbackUrl
 }
 
-// Set is BaPhone Setter
+// SetBaPhone is BaPhone Setter
 // 导购员手机号码
 func (r *TmallDeviceTradePrecreateAPIRequest) SetBaPhone(_baPhone string) error {
 	r._baPhone = _baPhone
@@ -125,12 +125,12 @@ func (r *TmallDeviceTradePrecreateAPIRequest) SetBaPhone(_baPhone string) error 
 	return nil
 }
 
-// Get BaPhone Getter
+// GetBaPhone BaPhone Getter
 func (r TmallDeviceTradePrecreateAPIRequest) GetBaPhone() string {
 	return r._baPhone
 }
 
-// Set is BaStoreId Setter
+// SetBaStoreId is BaStoreId Setter
 // 导购员所属门店
 func (r *TmallDeviceTradePrecreateAPIRequest) SetBaStoreId(_baStoreId int64) error {
 	r._baStoreId = _baStoreId
@@ -138,7 +138,7 @@ func (r *TmallDeviceTradePrecreateAPIRequest) SetBaStoreId(_baStoreId int64) err
 	return nil
 }
 
-// Get BaStoreId Getter
+// GetBaStoreId BaStoreId Getter
 func (r TmallDeviceTradePrecreateAPIRequest) GetBaStoreId() int64 {
 	return r._baStoreId
 }

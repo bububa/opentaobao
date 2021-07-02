@@ -43,7 +43,7 @@ func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页面大小
 func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -51,12 +51,12 @@ func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetPageSize(_pageSize int6
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is BizKey Setter
+// SetBizKey is BizKey Setter
 // 业务授权key
 func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetBizKey(_bizKey string) error {
 	r._bizKey = _bizKey
@@ -64,12 +64,12 @@ func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetBizKey(_bizKey string) 
 	return nil
 }
 
-// Get BizKey Getter
+// GetBizKey BizKey Getter
 func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetBizKey() string {
 	return r._bizKey
 }
 
-// Set is BizCode Setter
+// SetBizCode is BizCode Setter
 // 业务授权code
 func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetBizCode(_bizCode string) error {
 	r._bizCode = _bizCode
@@ -77,12 +77,12 @@ func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetBizCode(_bizCode string
 	return nil
 }
 
-// Get BizCode Getter
+// GetBizCode BizCode Getter
 func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetBizCode() string {
 	return r._bizCode
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 起始页
 func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -90,7 +90,7 @@ func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetCurrentPage(_currentPag
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }

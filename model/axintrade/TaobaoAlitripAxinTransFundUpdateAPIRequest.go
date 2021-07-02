@@ -37,7 +37,7 @@ func (r TaobaoAlitripAxinTransFundUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AxinFundUpdateDTO Setter
+// SetAxinFundUpdateDTO is AxinFundUpdateDTO Setter
 // 更新资金单接口入参
 func (r *TaobaoAlitripAxinTransFundUpdateAPIRequest) SetAxinFundUpdateDTO(_axinFundUpdateDTO *AxinFundUpdateDto) error {
 	r._axinFundUpdateDTO = _axinFundUpdateDTO
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripAxinTransFundUpdateAPIRequest) SetAxinFundUpdateDTO(_axinF
 	return nil
 }
 
-// Get AxinFundUpdateDTO Getter
+// GetAxinFundUpdateDTO AxinFundUpdateDTO Getter
 func (r TaobaoAlitripAxinTransFundUpdateAPIRequest) GetAxinFundUpdateDTO() *AxinFundUpdateDto {
 	return r._axinFundUpdateDTO
 }

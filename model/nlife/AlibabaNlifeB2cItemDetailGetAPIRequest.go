@@ -39,7 +39,7 @@ func (r AlibabaNlifeB2cItemDetailGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 商家入驻门店在零售+平台的ID
 func (r *AlibabaNlifeB2cItemDetailGetAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -47,12 +47,12 @@ func (r *AlibabaNlifeB2cItemDetailGetAPIRequest) SetStoreId(_storeId string) err
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaNlifeB2cItemDetailGetAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is UniqueCode Setter
+// SetUniqueCode is UniqueCode Setter
 // 零售+平台生成的唯一码或条码
 func (r *AlibabaNlifeB2cItemDetailGetAPIRequest) SetUniqueCode(_uniqueCode string) error {
 	r._uniqueCode = _uniqueCode
@@ -60,7 +60,7 @@ func (r *AlibabaNlifeB2cItemDetailGetAPIRequest) SetUniqueCode(_uniqueCode strin
 	return nil
 }
 
-// Get UniqueCode Getter
+// GetUniqueCode UniqueCode Getter
 func (r AlibabaNlifeB2cItemDetailGetAPIRequest) GetUniqueCode() string {
 	return r._uniqueCode
 }

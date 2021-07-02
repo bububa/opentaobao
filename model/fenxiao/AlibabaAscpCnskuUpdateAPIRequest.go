@@ -39,7 +39,7 @@ func (r AlibabaAscpCnskuUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Cnsku Setter
+// SetCnsku is Cnsku Setter
 // 待新增的货品
 func (r *AlibabaAscpCnskuUpdateAPIRequest) SetCnsku(_cnsku *CnskuDto) error {
 	r._cnsku = _cnsku
@@ -47,12 +47,12 @@ func (r *AlibabaAscpCnskuUpdateAPIRequest) SetCnsku(_cnsku *CnskuDto) error {
 	return nil
 }
 
-// Get Cnsku Getter
+// GetCnsku Cnsku Getter
 func (r AlibabaAscpCnskuUpdateAPIRequest) GetCnsku() *CnskuDto {
 	return r._cnsku
 }
 
-// Set is Option Setter
+// SetOption is Option Setter
 // 修改选项
 func (r *AlibabaAscpCnskuUpdateAPIRequest) SetOption(_option *UpdateCnskuOption) error {
 	r._option = _option
@@ -60,7 +60,7 @@ func (r *AlibabaAscpCnskuUpdateAPIRequest) SetOption(_option *UpdateCnskuOption)
 	return nil
 }
 
-// Get Option Getter
+// GetOption Option Getter
 func (r AlibabaAscpCnskuUpdateAPIRequest) GetOption() *UpdateCnskuOption {
 	return r._option
 }

@@ -37,7 +37,7 @@ func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamSyncLedgerInvoiceRequest Setter
+// SetParamSyncLedgerInvoiceRequest is ParamSyncLedgerInvoiceRequest Setter
 // 参数
 func (r *AlibabaTaxInvoiceSyncLedgerAPIRequest) SetParamSyncLedgerInvoiceRequest(_paramSyncLedgerInvoiceRequest *SyncLedgerInvoiceRequest) error {
 	r._paramSyncLedgerInvoiceRequest = _paramSyncLedgerInvoiceRequest
@@ -45,7 +45,7 @@ func (r *AlibabaTaxInvoiceSyncLedgerAPIRequest) SetParamSyncLedgerInvoiceRequest
 	return nil
 }
 
-// Get ParamSyncLedgerInvoiceRequest Getter
+// GetParamSyncLedgerInvoiceRequest ParamSyncLedgerInvoiceRequest Getter
 func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetParamSyncLedgerInvoiceRequest() *SyncLedgerInvoiceRequest {
 	return r._paramSyncLedgerInvoiceRequest
 }

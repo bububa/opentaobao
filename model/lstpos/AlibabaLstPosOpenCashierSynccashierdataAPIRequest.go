@@ -39,7 +39,7 @@ func (r AlibabaLstPosOpenCashierSynccashierdataAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is CashierFlowDTOList Setter
+// SetCashierFlowDTOList is CashierFlowDTOList Setter
 // 订单对象列表
 func (r *AlibabaLstPosOpenCashierSynccashierdataAPIRequest) SetCashierFlowDTOList(_cashierFlowDTOList []CashierFlowDto) error {
 	r._cashierFlowDTOList = _cashierFlowDTOList
@@ -47,12 +47,12 @@ func (r *AlibabaLstPosOpenCashierSynccashierdataAPIRequest) SetCashierFlowDTOLis
 	return nil
 }
 
-// Get CashierFlowDTOList Getter
+// GetCashierFlowDTOList CashierFlowDTOList Getter
 func (r AlibabaLstPosOpenCashierSynccashierdataAPIRequest) GetCashierFlowDTOList() []CashierFlowDto {
 	return r._cashierFlowDTOList
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 门店对应的主账号id
 func (r *AlibabaLstPosOpenCashierSynccashierdataAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -60,7 +60,7 @@ func (r *AlibabaLstPosOpenCashierSynccashierdataAPIRequest) SetUserId(_userId in
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaLstPosOpenCashierSynccashierdataAPIRequest) GetUserId() int64 {
 	return r._userId
 }

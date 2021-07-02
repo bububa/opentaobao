@@ -37,7 +37,7 @@ func (r AlibabaLstSpeakerStatusGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 设备编码
 func (r *AlibabaLstSpeakerStatusGetAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -45,7 +45,7 @@ func (r *AlibabaLstSpeakerStatusGetAPIRequest) SetDeviceCode(_deviceCode string)
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r AlibabaLstSpeakerStatusGetAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }

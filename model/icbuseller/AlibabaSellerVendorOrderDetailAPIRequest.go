@@ -37,7 +37,7 @@ func (r AlibabaSellerVendorOrderDetailAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderNo Setter
+// SetOrderNo is OrderNo Setter
 // 订单编号
 func (r *AlibabaSellerVendorOrderDetailAPIRequest) SetOrderNo(_orderNo string) error {
 	r._orderNo = _orderNo
@@ -45,7 +45,7 @@ func (r *AlibabaSellerVendorOrderDetailAPIRequest) SetOrderNo(_orderNo string) e
 	return nil
 }
 
-// Get OrderNo Getter
+// GetOrderNo OrderNo Getter
 func (r AlibabaSellerVendorOrderDetailAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }

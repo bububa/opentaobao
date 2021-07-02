@@ -38,7 +38,7 @@ func (r TmallServiceSettleadjustmentRequestAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ParamSettleAdjustmentRequest Setter
+// SetParamSettleAdjustmentRequest is ParamSettleAdjustmentRequest Setter
 // 父节点
 func (r *TmallServiceSettleadjustmentRequestAPIRequest) SetParamSettleAdjustmentRequest(_paramSettleAdjustmentRequest *SettleAdjustmentRequest) error {
 	r._paramSettleAdjustmentRequest = _paramSettleAdjustmentRequest
@@ -46,7 +46,7 @@ func (r *TmallServiceSettleadjustmentRequestAPIRequest) SetParamSettleAdjustment
 	return nil
 }
 
-// Get ParamSettleAdjustmentRequest Getter
+// GetParamSettleAdjustmentRequest ParamSettleAdjustmentRequest Getter
 func (r TmallServiceSettleadjustmentRequestAPIRequest) GetParamSettleAdjustmentRequest() *SettleAdjustmentRequest {
 	return r._paramSettleAdjustmentRequest
 }

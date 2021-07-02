@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenPushperformAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PushPerformParam Setter
+// SetPushPerformParam is PushPerformParam Setter
 // 入参pushPerformParam
 func (r *AlibabaDamaiMevOpenPushperformAPIRequest) SetPushPerformParam(_pushPerformParam *ThirdPerformPushOpenParam) error {
 	r._pushPerformParam = _pushPerformParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenPushperformAPIRequest) SetPushPerformParam(_pushPerf
 	return nil
 }
 
-// Get PushPerformParam Getter
+// GetPushPerformParam PushPerformParam Getter
 func (r AlibabaDamaiMevOpenPushperformAPIRequest) GetPushPerformParam() *ThirdPerformPushOpenParam {
 	return r._pushPerformParam
 }

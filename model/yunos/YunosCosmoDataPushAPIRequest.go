@@ -39,7 +39,7 @@ func (r YunosCosmoDataPushAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 业务方数据源唯一标识，由COSMO平台颁发
 func (r *YunosCosmoDataPushAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
@@ -47,12 +47,12 @@ func (r *YunosCosmoDataPushAPIRequest) SetAppId(_appId string) error {
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r YunosCosmoDataPushAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// Set is JsonModel Setter
+// SetJsonModel is JsonModel Setter
 // 业务方推送数据，List结构的JSON序列化字符串
 func (r *YunosCosmoDataPushAPIRequest) SetJsonModel(_jsonModel string) error {
 	r._jsonModel = _jsonModel
@@ -60,7 +60,7 @@ func (r *YunosCosmoDataPushAPIRequest) SetJsonModel(_jsonModel string) error {
 	return nil
 }
 
-// Get JsonModel Getter
+// GetJsonModel JsonModel Getter
 func (r YunosCosmoDataPushAPIRequest) GetJsonModel() string {
 	return r._jsonModel
 }

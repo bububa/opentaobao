@@ -37,7 +37,7 @@ func (r AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参param
 func (r *AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest) SetParam(_param *QueryPayResultParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest) SetParam(_pa
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaDamaiMaitixDistributionCmbQuerypayresultAPIRequest) GetParam() *QueryPayResultParam {
 	return r._param
 }

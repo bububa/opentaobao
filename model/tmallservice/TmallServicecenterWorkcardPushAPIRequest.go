@@ -47,7 +47,7 @@ func (r TmallServicecenterWorkcardPushAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Attributes Setter
+// SetAttributes is Attributes Setter
 // 属性列表。使用半角分号隔开,字符串前后都需要有半角分号
 func (r *TmallServicecenterWorkcardPushAPIRequest) SetAttributes(_attributes string) error {
 	r._attributes = _attributes
@@ -55,12 +55,12 @@ func (r *TmallServicecenterWorkcardPushAPIRequest) SetAttributes(_attributes str
 	return nil
 }
 
-// Get Attributes Getter
+// GetAttributes Attributes Getter
 func (r TmallServicecenterWorkcardPushAPIRequest) GetAttributes() string {
 	return r._attributes
 }
 
-// Set is Desc Setter
+// SetDesc is Desc Setter
 // 描述
 func (r *TmallServicecenterWorkcardPushAPIRequest) SetDesc(_desc string) error {
 	r._desc = _desc
@@ -68,12 +68,12 @@ func (r *TmallServicecenterWorkcardPushAPIRequest) SetDesc(_desc string) error {
 	return nil
 }
 
-// Get Desc Getter
+// GetDesc Desc Getter
 func (r TmallServicecenterWorkcardPushAPIRequest) GetDesc() string {
 	return r._desc
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 淘宝交易订单号
 func (r *TmallServicecenterWorkcardPushAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
@@ -81,12 +81,12 @@ func (r *TmallServicecenterWorkcardPushAPIRequest) SetBizOrderId(_bizOrderId int
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r TmallServicecenterWorkcardPushAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }
 
-// Set is ServiceReserveTime Setter
+// SetServiceReserveTime is ServiceReserveTime Setter
 // 服务预约安装时间
 func (r *TmallServicecenterWorkcardPushAPIRequest) SetServiceReserveTime(_serviceReserveTime string) error {
 	r._serviceReserveTime = _serviceReserveTime
@@ -94,12 +94,12 @@ func (r *TmallServicecenterWorkcardPushAPIRequest) SetServiceReserveTime(_servic
 	return nil
 }
 
-// Get ServiceReserveTime Getter
+// GetServiceReserveTime ServiceReserveTime Getter
 func (r TmallServicecenterWorkcardPushAPIRequest) GetServiceReserveTime() string {
 	return r._serviceReserveTime
 }
 
-// Set is ServiceReserveAddress Setter
+// SetServiceReserveAddress is ServiceReserveAddress Setter
 // 服务预约安装地址。四级地址与街道地址用空格隔开
 func (r *TmallServicecenterWorkcardPushAPIRequest) SetServiceReserveAddress(_serviceReserveAddress string) error {
 	r._serviceReserveAddress = _serviceReserveAddress
@@ -107,12 +107,12 @@ func (r *TmallServicecenterWorkcardPushAPIRequest) SetServiceReserveAddress(_ser
 	return nil
 }
 
-// Get ServiceReserveAddress Getter
+// GetServiceReserveAddress ServiceReserveAddress Getter
 func (r TmallServicecenterWorkcardPushAPIRequest) GetServiceReserveAddress() string {
 	return r._serviceReserveAddress
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 0=初始化, 3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败
 func (r *TmallServicecenterWorkcardPushAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -120,7 +120,7 @@ func (r *TmallServicecenterWorkcardPushAPIRequest) SetStatus(_status string) err
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TmallServicecenterWorkcardPushAPIRequest) GetStatus() string {
 	return r._status
 }

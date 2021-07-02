@@ -39,7 +39,7 @@ func (r TaobaoNlpWordAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WType Setter
+// SetWType is WType Setter
 // 功能类型选择：1)wType=1时提供分词功能，type=0时为基本粒度，type=1时为混合粒度，type=3时为基本粒度和混合粒度共同输出；
 func (r *TaobaoNlpWordAPIRequest) SetWType(_wType int64) error {
 	r._wType = _wType
@@ -47,12 +47,12 @@ func (r *TaobaoNlpWordAPIRequest) SetWType(_wType int64) error {
 	return nil
 }
 
-// Get WType Getter
+// GetWType WType Getter
 func (r TaobaoNlpWordAPIRequest) GetWType() int64 {
 	return r._wType
 }
 
-// Set is Text Setter
+// SetText is Text Setter
 // 文本内容
 func (r *TaobaoNlpWordAPIRequest) SetText(_text *Text) error {
 	r._text = _text
@@ -60,7 +60,7 @@ func (r *TaobaoNlpWordAPIRequest) SetText(_text *Text) error {
 	return nil
 }
 
-// Get Text Getter
+// GetText Text Getter
 func (r TaobaoNlpWordAPIRequest) GetText() *Text {
 	return r._text
 }

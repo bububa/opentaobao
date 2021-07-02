@@ -40,7 +40,7 @@ func (r TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) GetA
 	return params
 }
 
-// Set is ServiceStoreCode Setter
+// SetServiceStoreCode is ServiceStoreCode Setter
 // 网点编码
 func (r *TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) SetServiceStoreCode(_serviceStoreCode string) error {
 	r._serviceStoreCode = _serviceStoreCode
@@ -48,12 +48,12 @@ func (r *TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) Set
 	return nil
 }
 
-// Get ServiceStoreCode Getter
+// GetServiceStoreCode ServiceStoreCode Getter
 func (r TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) GetServiceStoreCode() string {
 	return r._serviceStoreCode
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务类型
 func (r *TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -61,7 +61,7 @@ func (r *TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) Set
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TmallServicecenterServicestoreDeleteservicestorecapacityAPIRequest) GetBizType() string {
 	return r._bizType
 }

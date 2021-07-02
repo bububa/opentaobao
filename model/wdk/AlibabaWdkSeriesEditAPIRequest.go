@@ -37,7 +37,7 @@ func (r AlibabaWdkSeriesEditAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Series Setter
+// SetSeries is Series Setter
 // 商品系列修改请求
 func (r *AlibabaWdkSeriesEditAPIRequest) SetSeries(_series *SkuSeriesEditRequest) error {
 	r._series = _series
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSeriesEditAPIRequest) SetSeries(_series *SkuSeriesEditRequest
 	return nil
 }
 
-// Get Series Getter
+// GetSeries Series Getter
 func (r AlibabaWdkSeriesEditAPIRequest) GetSeries() *SkuSeriesEditRequest {
 	return r._series
 }

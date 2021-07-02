@@ -37,7 +37,7 @@ func (r AlibabaAliqinFlowWalletCheckBalanceAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is GradeId Setter
+// SetGradeId is GradeId Setter
 // 检查金额档位id
 func (r *AlibabaAliqinFlowWalletCheckBalanceAPIRequest) SetGradeId(_gradeId string) error {
 	r._gradeId = _gradeId
@@ -45,7 +45,7 @@ func (r *AlibabaAliqinFlowWalletCheckBalanceAPIRequest) SetGradeId(_gradeId stri
 	return nil
 }
 
-// Get GradeId Getter
+// GetGradeId GradeId Getter
 func (r AlibabaAliqinFlowWalletCheckBalanceAPIRequest) GetGradeId() string {
 	return r._gradeId
 }

@@ -43,7 +43,7 @@ func (r TaobaoTanxQualificationPictureUploadAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is MemberId Setter
+// SetMemberId is MemberId Setter
 // dsp用户id
 func (r *TaobaoTanxQualificationPictureUploadAPIRequest) SetMemberId(_memberId int64) error {
 	r._memberId = _memberId
@@ -51,12 +51,12 @@ func (r *TaobaoTanxQualificationPictureUploadAPIRequest) SetMemberId(_memberId i
 	return nil
 }
 
-// Get MemberId Getter
+// GetMemberId MemberId Getter
 func (r TaobaoTanxQualificationPictureUploadAPIRequest) GetMemberId() int64 {
 	return r._memberId
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // dsp用户检验token
 func (r *TaobaoTanxQualificationPictureUploadAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -64,12 +64,12 @@ func (r *TaobaoTanxQualificationPictureUploadAPIRequest) SetToken(_token string)
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoTanxQualificationPictureUploadAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is SignTime Setter
+// SetSignTime is SignTime Setter
 // 1970年到现在的时间，毫秒
 func (r *TaobaoTanxQualificationPictureUploadAPIRequest) SetSignTime(_signTime int64) error {
 	r._signTime = _signTime
@@ -77,12 +77,12 @@ func (r *TaobaoTanxQualificationPictureUploadAPIRequest) SetSignTime(_signTime i
 	return nil
 }
 
-// Get SignTime Getter
+// GetSignTime SignTime Getter
 func (r TaobaoTanxQualificationPictureUploadAPIRequest) GetSignTime() int64 {
 	return r._signTime
 }
 
-// Set is FileByte Setter
+// SetFileByte is FileByte Setter
 // File文件getByte后的二进制数组
 func (r *TaobaoTanxQualificationPictureUploadAPIRequest) SetFileByte(_fileByte *model.File) error {
 	r._fileByte = _fileByte
@@ -90,7 +90,7 @@ func (r *TaobaoTanxQualificationPictureUploadAPIRequest) SetFileByte(_fileByte *
 	return nil
 }
 
-// Get FileByte Getter
+// GetFileByte FileByte Getter
 func (r TaobaoTanxQualificationPictureUploadAPIRequest) GetFileByte() *model.File {
 	return r._fileByte
 }

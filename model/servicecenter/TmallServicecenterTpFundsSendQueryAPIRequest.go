@@ -37,7 +37,7 @@ func (r TmallServicecenterTpFundsSendQueryAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 入参对象
 func (r *TmallServicecenterTpFundsSendQueryAPIRequest) SetQuery(_query *TpFundsSendQuery) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *TmallServicecenterTpFundsSendQueryAPIRequest) SetQuery(_query *TpFundsS
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r TmallServicecenterTpFundsSendQueryAPIRequest) GetQuery() *TpFundsSendQuery {
 	return r._query
 }

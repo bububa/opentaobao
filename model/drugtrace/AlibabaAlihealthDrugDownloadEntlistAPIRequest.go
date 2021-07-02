@@ -37,7 +37,7 @@ func (r AlibabaAlihealthDrugDownloadEntlistAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is AppKeyN Setter
+// SetAppKeyN is AppKeyN Setter
 // appKey
 func (r *AlibabaAlihealthDrugDownloadEntlistAPIRequest) SetAppKeyN(_appKeyN string) error {
 	r._appKeyN = _appKeyN
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthDrugDownloadEntlistAPIRequest) SetAppKeyN(_appKeyN stri
 	return nil
 }
 
-// Get AppKeyN Getter
+// GetAppKeyN AppKeyN Getter
 func (r AlibabaAlihealthDrugDownloadEntlistAPIRequest) GetAppKeyN() string {
 	return r._appKeyN
 }

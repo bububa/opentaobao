@@ -38,7 +38,7 @@ func (r AlibabaHappytripTaxiOrderConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 要确认支付的订单号
 func (r *AlibabaHappytripTaxiOrderConfirmAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -46,7 +46,7 @@ func (r *AlibabaHappytripTaxiOrderConfirmAPIRequest) SetOrderId(_orderId string)
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaHappytripTaxiOrderConfirmAPIRequest) GetOrderId() string {
 	return r._orderId
 }

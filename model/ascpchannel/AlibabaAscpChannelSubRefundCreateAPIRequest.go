@@ -37,7 +37,7 @@ func (r AlibabaAscpChannelSubRefundCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SubRefundCreateReq Setter
+// SetSubRefundCreateReq is SubRefundCreateReq Setter
 // 子单退款创建请求
 func (r *AlibabaAscpChannelSubRefundCreateAPIRequest) SetSubRefundCreateReq(_subRefundCreateReq *ExternalCreateRefundOrderDetailRequest) error {
 	r._subRefundCreateReq = _subRefundCreateReq
@@ -45,7 +45,7 @@ func (r *AlibabaAscpChannelSubRefundCreateAPIRequest) SetSubRefundCreateReq(_sub
 	return nil
 }
 
-// Get SubRefundCreateReq Getter
+// GetSubRefundCreateReq SubRefundCreateReq Getter
 func (r AlibabaAscpChannelSubRefundCreateAPIRequest) GetSubRefundCreateReq() *ExternalCreateRefundOrderDetailRequest {
 	return r._subRefundCreateReq
 }

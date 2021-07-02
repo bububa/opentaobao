@@ -37,7 +37,7 @@ func (r AlibabaMjOcWritesaleslipAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PosSaleOrder Setter
+// SetPosSaleOrder is PosSaleOrder Setter
 // 开票占库入参
 func (r *AlibabaMjOcWritesaleslipAPIRequest) SetPosSaleOrder(_posSaleOrder *PosSaleOrderDto) error {
 	r._posSaleOrder = _posSaleOrder
@@ -45,7 +45,7 @@ func (r *AlibabaMjOcWritesaleslipAPIRequest) SetPosSaleOrder(_posSaleOrder *PosS
 	return nil
 }
 
-// Get PosSaleOrder Getter
+// GetPosSaleOrder PosSaleOrder Getter
 func (r AlibabaMjOcWritesaleslipAPIRequest) GetPosSaleOrder() *PosSaleOrderDto {
 	return r._posSaleOrder
 }

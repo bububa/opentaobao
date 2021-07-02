@@ -37,7 +37,7 @@ func (r AlibabaAlihealthOutflowVisitinfoSyncAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is SyncVisitInfoRequest Setter
+// SetSyncVisitInfoRequest is SyncVisitInfoRequest Setter
 // 入参
 func (r *AlibabaAlihealthOutflowVisitinfoSyncAPIRequest) SetSyncVisitInfoRequest(_syncVisitInfoRequest *SyncVisitInfoRequest) error {
 	r._syncVisitInfoRequest = _syncVisitInfoRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthOutflowVisitinfoSyncAPIRequest) SetSyncVisitInfoRequest
 	return nil
 }
 
-// Get SyncVisitInfoRequest Getter
+// GetSyncVisitInfoRequest SyncVisitInfoRequest Getter
 func (r AlibabaAlihealthOutflowVisitinfoSyncAPIRequest) GetSyncVisitInfoRequest() *SyncVisitInfoRequest {
 	return r._syncVisitInfoRequest
 }

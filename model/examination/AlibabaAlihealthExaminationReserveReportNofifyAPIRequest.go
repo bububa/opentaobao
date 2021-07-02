@@ -45,7 +45,7 @@ func (r AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is UniqReserveCode Setter
+// SetUniqReserveCode is UniqReserveCode Setter
 // 服务商预约凭证
 func (r *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
 	r._uniqReserveCode = _uniqReserveCode
@@ -53,12 +53,12 @@ func (r *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) SetUniqReserv
 	return nil
 }
 
-// Get UniqReserveCode Getter
+// GetUniqReserveCode UniqReserveCode Getter
 func (r AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) GetUniqReserveCode() string {
 	return r._uniqReserveCode
 }
 
-// Set is CheckNo Setter
+// SetCheckNo is CheckNo Setter
 // 服务商到检编号
 func (r *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) SetCheckNo(_checkNo string) error {
 	r._checkNo = _checkNo
@@ -66,12 +66,12 @@ func (r *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) SetCheckNo(_c
 	return nil
 }
 
-// Get CheckNo Getter
+// GetCheckNo CheckNo Getter
 func (r AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) GetCheckNo() string {
 	return r._checkNo
 }
 
-// Set is ReserveNumber Setter
+// SetReserveNumber is ReserveNumber Setter
 // 健康预约凭证
 func (r *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) SetReserveNumber(_reserveNumber string) error {
 	r._reserveNumber = _reserveNumber
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) SetReserveNum
 	return nil
 }
 
-// Get ReserveNumber Getter
+// GetReserveNumber ReserveNumber Getter
 func (r AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) GetReserveNumber() string {
 	return r._reserveNumber
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 报告通知类型，传1即可
 func (r *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) SetType(_type
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // pdf文件的二进制base64编码字符串
 func (r *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -105,7 +105,7 @@ func (r *AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) SetContent(_c
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r AlibabaAlihealthExaminationReserveReportNofifyAPIRequest) GetContent() string {
 	return r._content
 }

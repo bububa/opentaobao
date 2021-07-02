@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is ProjectDynamics Setter
+// SetProjectDynamics is ProjectDynamics Setter
 // 楼盘动态列表
 func (r *AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest) SetProjectDynamics(_projectDynamics []ProjectDynamicDto) error {
 	r._projectDynamics = _projectDynamics
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest) SetProjectDynamic
 	return nil
 }
 
-// Get ProjectDynamics Getter
+// GetProjectDynamics ProjectDynamics Getter
 func (r AlibabaAlihouseNewhomeProjectDynamicSubmitAPIRequest) GetProjectDynamics() []ProjectDynamicDto {
 	return r._projectDynamics
 }

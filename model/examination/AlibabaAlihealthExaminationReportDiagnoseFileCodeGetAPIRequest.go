@@ -41,7 +41,7 @@ func (r AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) GetApiPa
 	return params
 }
 
-// Set is ReportId Setter
+// SetReportId is ReportId Setter
 // 报告id
 func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) SetReportId(_reportId int64) error {
 	r._reportId = _reportId
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) SetRepo
 	return nil
 }
 
-// Get ReportId Getter
+// GetReportId ReportId Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) GetReportId() int64 {
 	return r._reportId
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) SetOrde
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is DoctorId Setter
+// SetDoctorId is DoctorId Setter
 // 医生id
 func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) SetDoctorId(_doctorId string) error {
 	r._doctorId = _doctorId
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) SetDoct
 	return nil
 }
 
-// Get DoctorId Getter
+// GetDoctorId DoctorId Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) GetDoctorId() string {
 	return r._doctorId
 }

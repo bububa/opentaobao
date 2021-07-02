@@ -37,7 +37,7 @@ func (r AlibabaAilabsIotDeviceControlNotifyAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is NotifyControlParams Setter
+// SetNotifyControlParams is NotifyControlParams Setter
 // 入参
 func (r *AlibabaAilabsIotDeviceControlNotifyAPIRequest) SetNotifyControlParams(_notifyControlParams *NotifyVehicleControlParams) error {
 	r._notifyControlParams = _notifyControlParams
@@ -45,7 +45,7 @@ func (r *AlibabaAilabsIotDeviceControlNotifyAPIRequest) SetNotifyControlParams(_
 	return nil
 }
 
-// Get NotifyControlParams Getter
+// GetNotifyControlParams NotifyControlParams Getter
 func (r AlibabaAilabsIotDeviceControlNotifyAPIRequest) GetNotifyControlParams() *NotifyVehicleControlParams {
 	return r._notifyControlParams
 }

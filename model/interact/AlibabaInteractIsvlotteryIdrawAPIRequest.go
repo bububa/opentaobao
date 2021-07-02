@@ -41,7 +41,7 @@ func (r AlibabaInteractIsvlotteryIdrawAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InteractId Setter
+// SetInteractId is InteractId Setter
 // 互动实例ID
 func (r *AlibabaInteractIsvlotteryIdrawAPIRequest) SetInteractId(_interactId string) error {
 	r._interactId = _interactId
@@ -49,12 +49,12 @@ func (r *AlibabaInteractIsvlotteryIdrawAPIRequest) SetInteractId(_interactId str
 	return nil
 }
 
-// Get InteractId Getter
+// GetInteractId InteractId Getter
 func (r AlibabaInteractIsvlotteryIdrawAPIRequest) GetInteractId() string {
 	return r._interactId
 }
 
-// Set is AwardIds Setter
+// SetAwardIds is AwardIds Setter
 // 抽奖ID列表 用逗号隔开
 func (r *AlibabaInteractIsvlotteryIdrawAPIRequest) SetAwardIds(_awardIds string) error {
 	r._awardIds = _awardIds
@@ -62,12 +62,12 @@ func (r *AlibabaInteractIsvlotteryIdrawAPIRequest) SetAwardIds(_awardIds string)
 	return nil
 }
 
-// Get AwardIds Getter
+// GetAwardIds AwardIds Getter
 func (r AlibabaInteractIsvlotteryIdrawAPIRequest) GetAwardIds() string {
 	return r._awardIds
 }
 
-// Set is Ua Setter
+// SetUa is Ua Setter
 // 埋点参数
 func (r *AlibabaInteractIsvlotteryIdrawAPIRequest) SetUa(_ua string) error {
 	r._ua = _ua
@@ -75,7 +75,7 @@ func (r *AlibabaInteractIsvlotteryIdrawAPIRequest) SetUa(_ua string) error {
 	return nil
 }
 
-// Get Ua Getter
+// GetUa Ua Getter
 func (r AlibabaInteractIsvlotteryIdrawAPIRequest) GetUa() string {
 	return r._ua
 }

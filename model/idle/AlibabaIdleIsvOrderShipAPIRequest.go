@@ -41,7 +41,7 @@ func (r AlibabaIdleIsvOrderShipAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 订单号
 func (r *AlibabaIdleIsvOrderShipAPIRequest) SetBizOrderId(_bizOrderId string) error {
 	r._bizOrderId = _bizOrderId
@@ -49,12 +49,12 @@ func (r *AlibabaIdleIsvOrderShipAPIRequest) SetBizOrderId(_bizOrderId string) er
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r AlibabaIdleIsvOrderShipAPIRequest) GetBizOrderId() string {
 	return r._bizOrderId
 }
 
-// Set is LogisticsCompany Setter
+// SetLogisticsCompany is LogisticsCompany Setter
 // 物流公司
 func (r *AlibabaIdleIsvOrderShipAPIRequest) SetLogisticsCompany(_logisticsCompany string) error {
 	r._logisticsCompany = _logisticsCompany
@@ -62,12 +62,12 @@ func (r *AlibabaIdleIsvOrderShipAPIRequest) SetLogisticsCompany(_logisticsCompan
 	return nil
 }
 
-// Get LogisticsCompany Getter
+// GetLogisticsCompany LogisticsCompany Getter
 func (r AlibabaIdleIsvOrderShipAPIRequest) GetLogisticsCompany() string {
 	return r._logisticsCompany
 }
 
-// Set is ShipMailNo Setter
+// SetShipMailNo is ShipMailNo Setter
 // 运单号
 func (r *AlibabaIdleIsvOrderShipAPIRequest) SetShipMailNo(_shipMailNo string) error {
 	r._shipMailNo = _shipMailNo
@@ -75,7 +75,7 @@ func (r *AlibabaIdleIsvOrderShipAPIRequest) SetShipMailNo(_shipMailNo string) er
 	return nil
 }
 
-// Get ShipMailNo Getter
+// GetShipMailNo ShipMailNo Getter
 func (r AlibabaIdleIsvOrderShipAPIRequest) GetShipMailNo() string {
 	return r._shipMailNo
 }

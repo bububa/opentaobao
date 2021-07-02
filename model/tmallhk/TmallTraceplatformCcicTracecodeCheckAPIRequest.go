@@ -39,7 +39,7 @@ func (r TmallTraceplatformCcicTracecodeCheckAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ShortTracecode Setter
+// SetShortTracecode is ShortTracecode Setter
 // 15为溯源短码，必选
 func (r *TmallTraceplatformCcicTracecodeCheckAPIRequest) SetShortTracecode(_shortTracecode string) error {
 	r._shortTracecode = _shortTracecode
@@ -47,12 +47,12 @@ func (r *TmallTraceplatformCcicTracecodeCheckAPIRequest) SetShortTracecode(_shor
 	return nil
 }
 
-// Get ShortTracecode Getter
+// GetShortTracecode ShortTracecode Getter
 func (r TmallTraceplatformCcicTracecodeCheckAPIRequest) GetShortTracecode() string {
 	return r._shortTracecode
 }
 
-// Set is HideCode Setter
+// SetHideCode is HideCode Setter
 // 6位暗码，必选
 func (r *TmallTraceplatformCcicTracecodeCheckAPIRequest) SetHideCode(_hideCode string) error {
 	r._hideCode = _hideCode
@@ -60,7 +60,7 @@ func (r *TmallTraceplatformCcicTracecodeCheckAPIRequest) SetHideCode(_hideCode s
 	return nil
 }
 
-// Get HideCode Getter
+// GetHideCode HideCode Getter
 func (r TmallTraceplatformCcicTracecodeCheckAPIRequest) GetHideCode() string {
 	return r._hideCode
 }

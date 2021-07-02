@@ -41,7 +41,7 @@ func (r AliyunViapiFacebodyComparefaceAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ImageUrlA Setter
+// SetImageUrlA is ImageUrlA Setter
 // 图片url地址(http/https)
 func (r *AliyunViapiFacebodyComparefaceAPIRequest) SetImageUrlA(_imageUrlA string) error {
 	r._imageUrlA = _imageUrlA
@@ -49,12 +49,12 @@ func (r *AliyunViapiFacebodyComparefaceAPIRequest) SetImageUrlA(_imageUrlA strin
 	return nil
 }
 
-// Get ImageUrlA Getter
+// GetImageUrlA ImageUrlA Getter
 func (r AliyunViapiFacebodyComparefaceAPIRequest) GetImageUrlA() string {
 	return r._imageUrlA
 }
 
-// Set is ImageUrlB Setter
+// SetImageUrlB is ImageUrlB Setter
 // 图片url地址(http/https)
 func (r *AliyunViapiFacebodyComparefaceAPIRequest) SetImageUrlB(_imageUrlB string) error {
 	r._imageUrlB = _imageUrlB
@@ -62,12 +62,12 @@ func (r *AliyunViapiFacebodyComparefaceAPIRequest) SetImageUrlB(_imageUrlB strin
 	return nil
 }
 
-// Get ImageUrlB Getter
+// GetImageUrlB ImageUrlB Getter
 func (r AliyunViapiFacebodyComparefaceAPIRequest) GetImageUrlB() string {
 	return r._imageUrlB
 }
 
-// Set is ImageType Setter
+// SetImageType is ImageType Setter
 // 图片类型, ,取值范围[0:图片URL, 1:图片Base64数据]
 func (r *AliyunViapiFacebodyComparefaceAPIRequest) SetImageType(_imageType int64) error {
 	r._imageType = _imageType
@@ -75,7 +75,7 @@ func (r *AliyunViapiFacebodyComparefaceAPIRequest) SetImageType(_imageType int64
 	return nil
 }
 
-// Get ImageType Getter
+// GetImageType ImageType Getter
 func (r AliyunViapiFacebodyComparefaceAPIRequest) GetImageType() int64 {
 	return r._imageType
 }

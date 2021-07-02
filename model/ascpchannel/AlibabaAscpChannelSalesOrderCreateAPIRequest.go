@@ -37,7 +37,7 @@ func (r AlibabaAscpChannelSalesOrderCreateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is CreateOrderRequest Setter
+// SetCreateOrderRequest is CreateOrderRequest Setter
 // 请求参数
 func (r *AlibabaAscpChannelSalesOrderCreateAPIRequest) SetCreateOrderRequest(_createOrderRequest *ExternalCreateSalesOrderRequest) error {
 	r._createOrderRequest = _createOrderRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpChannelSalesOrderCreateAPIRequest) SetCreateOrderRequest(_cr
 	return nil
 }
 
-// Get CreateOrderRequest Getter
+// GetCreateOrderRequest CreateOrderRequest Getter
 func (r AlibabaAscpChannelSalesOrderCreateAPIRequest) GetCreateOrderRequest() *ExternalCreateSalesOrderRequest {
 	return r._createOrderRequest
 }

@@ -61,7 +61,7 @@ func (r TmallExchangeReceiveGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EndGmtModifedTime Setter
+// SetEndGmtModifedTime is EndGmtModifedTime Setter
 // 查询修改时间段的结束时间点
 func (r *TmallExchangeReceiveGetAPIRequest) SetEndGmtModifedTime(_endGmtModifedTime string) error {
 	r._endGmtModifedTime = _endGmtModifedTime
@@ -69,12 +69,12 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetEndGmtModifedTime(_endGmtModifedT
 	return nil
 }
 
-// Get EndGmtModifedTime Getter
+// GetEndGmtModifedTime EndGmtModifedTime Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetEndGmtModifedTime() string {
 	return r._endGmtModifedTime
 }
 
-// Set is StartGmtModifiedTime Setter
+// SetStartGmtModifiedTime is StartGmtModifiedTime Setter
 // 查询修改时间段的开始时间点
 func (r *TmallExchangeReceiveGetAPIRequest) SetStartGmtModifiedTime(_startGmtModifiedTime string) error {
 	r._startGmtModifiedTime = _startGmtModifiedTime
@@ -82,12 +82,12 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetStartGmtModifiedTime(_startGmtMod
 	return nil
 }
 
-// Get StartGmtModifiedTime Getter
+// GetStartGmtModifiedTime StartGmtModifiedTime Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetStartGmtModifiedTime() string {
 	return r._startGmtModifiedTime
 }
 
-// Set is LogisticNo Setter
+// SetLogisticNo is LogisticNo Setter
 // 快递单号
 func (r *TmallExchangeReceiveGetAPIRequest) SetLogisticNo(_logisticNo string) error {
 	r._logisticNo = _logisticNo
@@ -95,12 +95,12 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetLogisticNo(_logisticNo string) er
 	return nil
 }
 
-// Get LogisticNo Getter
+// GetLogisticNo LogisticNo Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetLogisticNo() string {
 	return r._logisticNo
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 买家昵称
 func (r *TmallExchangeReceiveGetAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -108,12 +108,12 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetBuyerNick(_buyerNick string) erro
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }
 
-// Set is StartCreatedTime Setter
+// SetStartCreatedTime is StartCreatedTime Setter
 // 查询申请时间段的开始时间点
 func (r *TmallExchangeReceiveGetAPIRequest) SetStartCreatedTime(_startCreatedTime string) error {
 	r._startCreatedTime = _startCreatedTime
@@ -121,12 +121,12 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetStartCreatedTime(_startCreatedTim
 	return nil
 }
 
-// Get StartCreatedTime Getter
+// GetStartCreatedTime StartCreatedTime Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetStartCreatedTime() string {
 	return r._startCreatedTime
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回字段。目前支持dispute_id, bizorder_id, num, buyer_nick, status, created, modified, reason, title, buyer_logistic_no, seller_logistic_no, bought_sku, exchange_sku, buyer_address, address, buyer_phone, buyer_logistic_name, seller_logistic_name, alipay_no, buyer_name, seller_nick
 func (r *TmallExchangeReceiveGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -134,12 +134,12 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数
 func (r *TmallExchangeReceiveGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -147,12 +147,12 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is DisputeStatusArray Setter
+// SetDisputeStatusArray is DisputeStatusArray Setter
 // 换货状态，具体包括：换货待处理(1), 待买家退货(2), 买家已退货，待收货(3),  换货关闭(4), 换货成功(5), 待买家修改(6), 待发出换货商品(12), 待买家收货(13), 请退款(14)
 func (r *TmallExchangeReceiveGetAPIRequest) SetDisputeStatusArray(_disputeStatusArray []int64) error {
 	r._disputeStatusArray = _disputeStatusArray
@@ -160,12 +160,12 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetDisputeStatusArray(_disputeStatus
 	return nil
 }
 
-// Get DisputeStatusArray Getter
+// GetDisputeStatusArray DisputeStatusArray Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetDisputeStatusArray() []int64 {
 	return r._disputeStatusArray
 }
 
-// Set is EndCreatedTime Setter
+// SetEndCreatedTime is EndCreatedTime Setter
 // 查询申请时间段的结束时间点
 func (r *TmallExchangeReceiveGetAPIRequest) SetEndCreatedTime(_endCreatedTime string) error {
 	r._endCreatedTime = _endCreatedTime
@@ -173,12 +173,12 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetEndCreatedTime(_endCreatedTime st
 	return nil
 }
 
-// Get EndCreatedTime Getter
+// GetEndCreatedTime EndCreatedTime Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetEndCreatedTime() string {
 	return r._endCreatedTime
 }
 
-// Set is BuyerId Setter
+// SetBuyerId is BuyerId Setter
 // 买家id
 func (r *TmallExchangeReceiveGetAPIRequest) SetBuyerId(_buyerId int64) error {
 	r._buyerId = _buyerId
@@ -186,12 +186,12 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetBuyerId(_buyerId int64) error {
 	return nil
 }
 
-// Get BuyerId Getter
+// GetBuyerId BuyerId Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetBuyerId() int64 {
 	return r._buyerId
 }
 
-// Set is RefundIdArray Setter
+// SetRefundIdArray is RefundIdArray Setter
 // 退款单号ID列表，最多只能输入20个id
 func (r *TmallExchangeReceiveGetAPIRequest) SetRefundIdArray(_refundIdArray []int64) error {
 	r._refundIdArray = _refundIdArray
@@ -199,12 +199,12 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetRefundIdArray(_refundIdArray []in
 	return nil
 }
 
-// Get RefundIdArray Getter
+// GetRefundIdArray RefundIdArray Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetRefundIdArray() []int64 {
 	return r._refundIdArray
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *TmallExchangeReceiveGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -212,12 +212,12 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 正向订单号
 func (r *TmallExchangeReceiveGetAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
@@ -225,7 +225,7 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetBizOrderId(_bizOrderId int64) err
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }

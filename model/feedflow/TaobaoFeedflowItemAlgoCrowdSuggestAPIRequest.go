@@ -41,7 +41,7 @@ func (r TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Crowds Setter
+// SetCrowds is Crowds Setter
 // 人群列表
 func (r *TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) SetCrowds(_crowds []CrowdDto) error {
 	r._crowds = _crowds
@@ -49,12 +49,12 @@ func (r *TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) SetCrowds(_crowds []Crowd
 	return nil
 }
 
-// Get Crowds Getter
+// GetCrowds Crowds Getter
 func (r TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) GetCrowds() []CrowdDto {
 	return r._crowds
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 预估的宝贝id
 func (r *TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -62,12 +62,12 @@ func (r *TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) SetItemId(_itemId int64) 
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 预估的计划id
 func (r *TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -75,7 +75,7 @@ func (r *TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) SetCampaignId(_campaignId
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoFeedflowItemAlgoCrowdSuggestAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }

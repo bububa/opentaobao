@@ -37,7 +37,7 @@ func (r AlibabaTclsAelophyMerchantOrderUploadAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is OrderInfo Setter
+// SetOrderInfo is OrderInfo Setter
 // 商家订单信息
 func (r *AlibabaTclsAelophyMerchantOrderUploadAPIRequest) SetOrderInfo(_orderInfo *MerchantOrderInfo) error {
 	r._orderInfo = _orderInfo
@@ -45,7 +45,7 @@ func (r *AlibabaTclsAelophyMerchantOrderUploadAPIRequest) SetOrderInfo(_orderInf
 	return nil
 }
 
-// Get OrderInfo Getter
+// GetOrderInfo OrderInfo Getter
 func (r AlibabaTclsAelophyMerchantOrderUploadAPIRequest) GetOrderInfo() *MerchantOrderInfo {
 	return r._orderInfo
 }

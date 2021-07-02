@@ -49,7 +49,7 @@ func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Hid Setter
+// SetHid is Hid Setter
 // 酒店id
 func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetHid(_hid int64) error {
 	r._hid = _hid
@@ -57,12 +57,12 @@ func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetHid(_hid int64) 
 	return nil
 }
 
-// Get Hid Getter
+// GetHid Hid Getter
 func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetHid() int64 {
 	return r._hid
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 渠道商名称
 func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -70,12 +70,12 @@ func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetVendor(_vendor s
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is StartRow Setter
+// SetStartRow is StartRow Setter
 // 1
 func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetStartRow(_startRow int64) error {
 	r._startRow = _startRow
@@ -83,12 +83,12 @@ func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetStartRow(_startR
 	return nil
 }
 
-// Get StartRow Getter
+// GetStartRow StartRow Getter
 func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetStartRow() int64 {
 	return r._startRow
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 10
 func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -96,12 +96,12 @@ func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetPageSize(_pageSi
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is ReportEndDate Setter
+// SetReportEndDate is ReportEndDate Setter
 // 查询时间段结束
 func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetReportEndDate(_reportEndDate string) error {
 	r._reportEndDate = _reportEndDate
@@ -109,12 +109,12 @@ func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetReportEndDate(_r
 	return nil
 }
 
-// Get ReportEndDate Getter
+// GetReportEndDate ReportEndDate Getter
 func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetReportEndDate() string {
 	return r._reportEndDate
 }
 
-// Set is ReportStartDate Setter
+// SetReportStartDate is ReportStartDate Setter
 // 查询时间段开始
 func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetReportStartDate(_reportStartDate string) error {
 	r._reportStartDate = _reportStartDate
@@ -122,12 +122,12 @@ func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetReportStartDate(
 	return nil
 }
 
-// Get ReportStartDate Getter
+// GetReportStartDate ReportStartDate Getter
 func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetReportStartDate() string {
 	return r._reportStartDate
 }
 
-// Set is Supplier Setter
+// SetSupplier is Supplier Setter
 // 供应商名称
 func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetSupplier(_supplier string) error {
 	r._supplier = _supplier
@@ -135,7 +135,7 @@ func (r *TaobaoXhotelDataServiceHotelServiceindexAPIRequest) SetSupplier(_suppli
 	return nil
 }
 
-// Get Supplier Getter
+// GetSupplier Supplier Getter
 func (r TaobaoXhotelDataServiceHotelServiceindexAPIRequest) GetSupplier() string {
 	return r._supplier
 }

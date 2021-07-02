@@ -37,7 +37,7 @@ func (r AlibabaLstTradeOrderRefundListQueryAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 输入参数
 func (r *AlibabaLstTradeOrderRefundListQueryAPIRequest) SetParam(_param *TopLstSupplierOrderRefundQuery) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaLstTradeOrderRefundListQueryAPIRequest) SetParam(_param *TopLstS
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaLstTradeOrderRefundListQueryAPIRequest) GetParam() *TopLstSupplierOrderRefundQuery {
 	return r._param
 }

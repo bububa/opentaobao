@@ -37,7 +37,7 @@ func (r AlibabaAlihealthOutflowOperationinfoSyncAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is SyncOperationInfoRequest Setter
+// SetSyncOperationInfoRequest is SyncOperationInfoRequest Setter
 // 入参
 func (r *AlibabaAlihealthOutflowOperationinfoSyncAPIRequest) SetSyncOperationInfoRequest(_syncOperationInfoRequest *SyncOperationInfoRequest) error {
 	r._syncOperationInfoRequest = _syncOperationInfoRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthOutflowOperationinfoSyncAPIRequest) SetSyncOperationInf
 	return nil
 }
 
-// Get SyncOperationInfoRequest Getter
+// GetSyncOperationInfoRequest SyncOperationInfoRequest Getter
 func (r AlibabaAlihealthOutflowOperationinfoSyncAPIRequest) GetSyncOperationInfoRequest() *SyncOperationInfoRequest {
 	return r._syncOperationInfoRequest
 }

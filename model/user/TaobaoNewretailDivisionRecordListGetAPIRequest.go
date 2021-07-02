@@ -37,7 +37,7 @@ func (r TaobaoNewretailDivisionRecordListGetAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参
 func (r *TaobaoNewretailDivisionRecordListGetAPIRequest) SetParam(_param *TopDivisionRecordReqDto) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *TaobaoNewretailDivisionRecordListGetAPIRequest) SetParam(_param *TopDiv
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r TaobaoNewretailDivisionRecordListGetAPIRequest) GetParam() *TopDivisionRecordReqDto {
 	return r._param
 }

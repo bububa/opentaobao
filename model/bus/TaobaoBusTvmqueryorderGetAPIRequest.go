@@ -37,7 +37,7 @@ func (r TaobaoBusTvmqueryorderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AlitripOrderId Setter
+// SetAlitripOrderId is AlitripOrderId Setter
 // 阿里订单标编号
 func (r *TaobaoBusTvmqueryorderGetAPIRequest) SetAlitripOrderId(_alitripOrderId string) error {
 	r._alitripOrderId = _alitripOrderId
@@ -45,7 +45,7 @@ func (r *TaobaoBusTvmqueryorderGetAPIRequest) SetAlitripOrderId(_alitripOrderId 
 	return nil
 }
 
-// Get AlitripOrderId Getter
+// GetAlitripOrderId AlitripOrderId Getter
 func (r TaobaoBusTvmqueryorderGetAPIRequest) GetAlitripOrderId() string {
 	return r._alitripOrderId
 }

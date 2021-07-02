@@ -41,7 +41,7 @@ func (r TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id。itemId和outProductId至少填写一个
 func (r *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -49,12 +49,12 @@ func (r *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) SetItemId(_itemId in
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is OutProductId Setter
+// SetOutProductId is OutProductId Setter
 // 商品 外部商家编码。itemId和outProductId至少填写一个
 func (r *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) SetOutProductId(_outProductId string) error {
 	r._outProductId = _outProductId
@@ -62,12 +62,12 @@ func (r *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) SetOutProductId(_out
 	return nil
 }
 
-// Get OutProductId Getter
+// GetOutProductId OutProductId Getter
 func (r TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) GetOutProductId() string {
 	return r._outProductId
 }
 
-// Set is Skus Setter
+// SetSkus is Skus Setter
 // 商品日历价格库存套餐
 func (r *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) SetSkus(_skus []ItemSkuInfo) error {
 	r._skus = _skus
@@ -75,7 +75,7 @@ func (r *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) SetSkus(_skus []Item
 	return nil
 }
 
-// Get Skus Getter
+// GetSkus Skus Getter
 func (r TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) GetSkus() []ItemSkuInfo {
 	return r._skus
 }

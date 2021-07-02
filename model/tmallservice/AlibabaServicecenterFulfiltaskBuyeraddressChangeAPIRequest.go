@@ -41,7 +41,7 @@ func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetApiParams
 	return params
 }
 
-// Set is FulfilTaskId Setter
+// SetFulfilTaskId is FulfilTaskId Setter
 // 核销单id
 func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetFulfilTaskId(_fulfilTaskId int64) error {
 	r._fulfilTaskId = _fulfilTaskId
@@ -49,12 +49,12 @@ func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetFulfilTa
 	return nil
 }
 
-// Get FulfilTaskId Getter
+// GetFulfilTaskId FulfilTaskId Getter
 func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetFulfilTaskId() int64 {
 	return r._fulfilTaskId
 }
 
-// Set is AddressDetail Setter
+// SetAddressDetail is AddressDetail Setter
 // 详细地址
 func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetAddressDetail(_addressDetail string) error {
 	r._addressDetail = _addressDetail
@@ -62,12 +62,12 @@ func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetAddressD
 	return nil
 }
 
-// Get AddressDetail Getter
+// GetAddressDetail AddressDetail Getter
 func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetAddressDetail() string {
 	return r._addressDetail
 }
 
-// Set is Location Setter
+// SetLocation is Location Setter
 // 地址编码
 func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetLocation(_location int64) error {
 	r._location = _location
@@ -75,7 +75,7 @@ func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetLocation
 	return nil
 }
 
-// Get Location Getter
+// GetLocation Location Getter
 func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetLocation() int64 {
 	return r._location
 }

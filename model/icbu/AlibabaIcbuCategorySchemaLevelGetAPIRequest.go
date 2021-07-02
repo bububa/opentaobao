@@ -41,7 +41,7 @@ func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 类目id
 func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -49,12 +49,12 @@ func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) SetCatId(_catId int64) err
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetCatId() int64 {
 	return r._catId
 }
 
-// Set is Language Setter
+// SetLanguage is Language Setter
 // 返回的文案的语种，可以输入en_US或者zh
 func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) SetLanguage(_language string) error {
 	r._language = _language
@@ -62,12 +62,12 @@ func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) SetLanguage(_language stri
 	return nil
 }
 
-// Get Language Getter
+// GetLanguage Language Getter
 func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetLanguage() string {
 	return r._language
 }
 
-// Set is Xml Setter
+// SetXml is Xml Setter
 // 层级属性的当前层级属性
 func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) SetXml(_xml string) error {
 	r._xml = _xml
@@ -75,7 +75,7 @@ func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) SetXml(_xml string) error 
 	return nil
 }
 
-// Get Xml Getter
+// GetXml Xml Getter
 func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetXml() string {
 	return r._xml
 }

@@ -37,7 +37,7 @@ func (r TaobaoXhotelIntlRateUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UpdateRateParam Setter
+// SetUpdateRateParam is UpdateRateParam Setter
 // rate更新参数
 func (r *TaobaoXhotelIntlRateUpdateAPIRequest) SetUpdateRateParam(_updateRateParam *UpdateRateParam) error {
 	r._updateRateParam = _updateRateParam
@@ -45,7 +45,7 @@ func (r *TaobaoXhotelIntlRateUpdateAPIRequest) SetUpdateRateParam(_updateRatePar
 	return nil
 }
 
-// Get UpdateRateParam Getter
+// GetUpdateRateParam UpdateRateParam Getter
 func (r TaobaoXhotelIntlRateUpdateAPIRequest) GetUpdateRateParam() *UpdateRateParam {
 	return r._updateRateParam
 }

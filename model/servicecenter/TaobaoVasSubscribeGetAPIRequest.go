@@ -39,7 +39,7 @@ func (r TaobaoVasSubscribeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ArticleCode Setter
+// SetArticleCode is ArticleCode Setter
 // 商品编码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的商品代码
 func (r *TaobaoVasSubscribeGetAPIRequest) SetArticleCode(_articleCode string) error {
 	r._articleCode = _articleCode
@@ -47,12 +47,12 @@ func (r *TaobaoVasSubscribeGetAPIRequest) SetArticleCode(_articleCode string) er
 	return nil
 }
 
-// Get ArticleCode Getter
+// GetArticleCode ArticleCode Getter
 func (r TaobaoVasSubscribeGetAPIRequest) GetArticleCode() string {
 	return r._articleCode
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 淘宝会员名
 func (r *TaobaoVasSubscribeGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -60,7 +60,7 @@ func (r *TaobaoVasSubscribeGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoVasSubscribeGetAPIRequest) GetNick() string {
 	return r._nick
 }

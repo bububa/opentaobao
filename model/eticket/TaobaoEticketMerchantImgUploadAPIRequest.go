@@ -37,7 +37,7 @@ func (r TaobaoEticketMerchantImgUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ImgBytes Setter
+// SetImgBytes is ImgBytes Setter
 // 二维码图片
 func (r *TaobaoEticketMerchantImgUploadAPIRequest) SetImgBytes(_imgBytes *model.File) error {
 	r._imgBytes = _imgBytes
@@ -45,7 +45,7 @@ func (r *TaobaoEticketMerchantImgUploadAPIRequest) SetImgBytes(_imgBytes *model.
 	return nil
 }
 
-// Get ImgBytes Getter
+// GetImgBytes ImgBytes Getter
 func (r TaobaoEticketMerchantImgUploadAPIRequest) GetImgBytes() *model.File {
 	return r._imgBytes
 }

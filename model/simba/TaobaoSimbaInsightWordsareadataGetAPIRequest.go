@@ -41,7 +41,7 @@ func (r TaobaoSimbaInsightWordsareadataGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Bidword Setter
+// SetBidword is Bidword Setter
 // 关键词
 func (r *TaobaoSimbaInsightWordsareadataGetAPIRequest) SetBidword(_bidword string) error {
 	r._bidword = _bidword
@@ -49,12 +49,12 @@ func (r *TaobaoSimbaInsightWordsareadataGetAPIRequest) SetBidword(_bidword strin
 	return nil
 }
 
-// Get Bidword Getter
+// GetBidword Bidword Getter
 func (r TaobaoSimbaInsightWordsareadataGetAPIRequest) GetBidword() string {
 	return r._bidword
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 开始时间，格式：yyyy-MM-dd
 func (r *TaobaoSimbaInsightWordsareadataGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -62,12 +62,12 @@ func (r *TaobaoSimbaInsightWordsareadataGetAPIRequest) SetStartDate(_startDate s
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoSimbaInsightWordsareadataGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 结束时间，格式：yyyy-MM-dd
 func (r *TaobaoSimbaInsightWordsareadataGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -75,7 +75,7 @@ func (r *TaobaoSimbaInsightWordsareadataGetAPIRequest) SetEndDate(_endDate strin
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoSimbaInsightWordsareadataGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }

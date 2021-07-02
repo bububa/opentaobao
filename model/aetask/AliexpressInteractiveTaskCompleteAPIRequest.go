@@ -39,7 +39,7 @@ func (r AliexpressInteractiveTaskCompleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TaskInstanceId Setter
+// SetTaskInstanceId is TaskInstanceId Setter
 // 任务实例id
 func (r *AliexpressInteractiveTaskCompleteAPIRequest) SetTaskInstanceId(_taskInstanceId int64) error {
 	r._taskInstanceId = _taskInstanceId
@@ -47,12 +47,12 @@ func (r *AliexpressInteractiveTaskCompleteAPIRequest) SetTaskInstanceId(_taskIns
 	return nil
 }
 
-// Get TaskInstanceId Getter
+// GetTaskInstanceId TaskInstanceId Getter
 func (r AliexpressInteractiveTaskCompleteAPIRequest) GetTaskInstanceId() int64 {
 	return r._taskInstanceId
 }
 
-// Set is ProjectAppKey Setter
+// SetProjectAppKey is ProjectAppKey Setter
 // appkey
 func (r *AliexpressInteractiveTaskCompleteAPIRequest) SetProjectAppKey(_projectAppKey string) error {
 	r._projectAppKey = _projectAppKey
@@ -60,7 +60,7 @@ func (r *AliexpressInteractiveTaskCompleteAPIRequest) SetProjectAppKey(_projectA
 	return nil
 }
 
-// Get ProjectAppKey Getter
+// GetProjectAppKey ProjectAppKey Getter
 func (r AliexpressInteractiveTaskCompleteAPIRequest) GetProjectAppKey() string {
 	return r._projectAppKey
 }

@@ -41,7 +41,7 @@ func (r AlibabaMydataSelfProductGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StatisticsType Setter
+// SetStatisticsType is StatisticsType Setter
 // 统计周期，可以为"day", "week", "month"
 func (r *AlibabaMydataSelfProductGetAPIRequest) SetStatisticsType(_statisticsType string) error {
 	r._statisticsType = _statisticsType
@@ -49,12 +49,12 @@ func (r *AlibabaMydataSelfProductGetAPIRequest) SetStatisticsType(_statisticsTyp
 	return nil
 }
 
-// Get StatisticsType Getter
+// GetStatisticsType StatisticsType Getter
 func (r AlibabaMydataSelfProductGetAPIRequest) GetStatisticsType() string {
 	return r._statisticsType
 }
 
-// Set is StatDate Setter
+// SetStatDate is StatDate Setter
 // 统计日期
 func (r *AlibabaMydataSelfProductGetAPIRequest) SetStatDate(_statDate string) error {
 	r._statDate = _statDate
@@ -62,12 +62,12 @@ func (r *AlibabaMydataSelfProductGetAPIRequest) SetStatDate(_statDate string) er
 	return nil
 }
 
-// Get StatDate Getter
+// GetStatDate StatDate Getter
 func (r AlibabaMydataSelfProductGetAPIRequest) GetStatDate() string {
 	return r._statDate
 }
 
-// Set is ProductIds Setter
+// SetProductIds is ProductIds Setter
 // 待查询产品id列表
 func (r *AlibabaMydataSelfProductGetAPIRequest) SetProductIds(_productIds []int64) error {
 	r._productIds = _productIds
@@ -75,7 +75,7 @@ func (r *AlibabaMydataSelfProductGetAPIRequest) SetProductIds(_productIds []int6
 	return nil
 }
 
-// Get ProductIds Getter
+// GetProductIds ProductIds Getter
 func (r AlibabaMydataSelfProductGetAPIRequest) GetProductIds() []int64 {
 	return r._productIds
 }

@@ -45,7 +45,7 @@ func (r TaobaoAppleCardActiveCancelNotifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderNo Setter
+// SetOrderNo is OrderNo Setter
 // 原商户申请激活时的订单号
 func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetOrderNo(_orderNo string) error {
 	r._orderNo = _orderNo
@@ -53,12 +53,12 @@ func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetOrderNo(_orderNo string
 	return nil
 }
 
-// Get OrderNo Getter
+// GetOrderNo OrderNo Getter
 func (r TaobaoAppleCardActiveCancelNotifyAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }
 
-// Set is ResultCode Setter
+// SetResultCode is ResultCode Setter
 // 结果，000：整单取消激活成功  04： 取消激活失败（包括全部失败和部分失败，此时需以detail为准）
 func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetResultCode(_resultCode string) error {
 	r._resultCode = _resultCode
@@ -66,12 +66,12 @@ func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetResultCode(_resultCode 
 	return nil
 }
 
-// Get ResultCode Getter
+// GetResultCode ResultCode Getter
 func (r TaobaoAppleCardActiveCancelNotifyAPIRequest) GetResultCode() string {
 	return r._resultCode
 }
 
-// Set is GatewayOrderNo Setter
+// SetGatewayOrderNo is GatewayOrderNo Setter
 // 网关订单号
 func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetGatewayOrderNo(_gatewayOrderNo string) error {
 	r._gatewayOrderNo = _gatewayOrderNo
@@ -79,12 +79,12 @@ func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetGatewayOrderNo(_gateway
 	return nil
 }
 
-// Get GatewayOrderNo Getter
+// GetGatewayOrderNo GatewayOrderNo Getter
 func (r TaobaoAppleCardActiveCancelNotifyAPIRequest) GetGatewayOrderNo() string {
 	return r._gatewayOrderNo
 }
 
-// Set is ResultMsg Setter
+// SetResultMsg is ResultMsg Setter
 // 描述
 func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetResultMsg(_resultMsg string) error {
 	r._resultMsg = _resultMsg
@@ -92,12 +92,12 @@ func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetResultMsg(_resultMsg st
 	return nil
 }
 
-// Get ResultMsg Getter
+// GetResultMsg ResultMsg Getter
 func (r TaobaoAppleCardActiveCancelNotifyAPIRequest) GetResultMsg() string {
 	return r._resultMsg
 }
 
-// Set is AppleCardCancels Setter
+// SetAppleCardCancels is AppleCardCancels Setter
 // 卡信息
 func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetAppleCardCancels(_appleCardCancels []AppleCardCancelDto) error {
 	r._appleCardCancels = _appleCardCancels
@@ -105,7 +105,7 @@ func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetAppleCardCancels(_apple
 	return nil
 }
 
-// Get AppleCardCancels Getter
+// GetAppleCardCancels AppleCardCancels Getter
 func (r TaobaoAppleCardActiveCancelNotifyAPIRequest) GetAppleCardCancels() []AppleCardCancelDto {
 	return r._appleCardCancels
 }

@@ -39,7 +39,7 @@ func (r TaobaoUmpDetailListAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ActId Setter
+// SetActId is ActId Setter
 // 营销活动id。
 func (r *TaobaoUmpDetailListAddAPIRequest) SetActId(_actId int64) error {
 	r._actId = _actId
@@ -47,12 +47,12 @@ func (r *TaobaoUmpDetailListAddAPIRequest) SetActId(_actId int64) error {
 	return nil
 }
 
-// Get ActId Getter
+// GetActId ActId Getter
 func (r TaobaoUmpDetailListAddAPIRequest) GetActId() int64 {
 	return r._actId
 }
 
-// Set is Details Setter
+// SetDetails is Details Setter
 // 营销详情的列表。此列表由detail的json字符串组成。最多插入为10个。
 func (r *TaobaoUmpDetailListAddAPIRequest) SetDetails(_details string) error {
 	r._details = _details
@@ -60,7 +60,7 @@ func (r *TaobaoUmpDetailListAddAPIRequest) SetDetails(_details string) error {
 	return nil
 }
 
-// Get Details Getter
+// GetDetails Details Getter
 func (r TaobaoUmpDetailListAddAPIRequest) GetDetails() string {
 	return r._details
 }

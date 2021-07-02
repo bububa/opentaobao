@@ -39,7 +39,7 @@ func (r TmallItemSchemaIncrementUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 需要编辑的商品ID
 func (r *TmallItemSchemaIncrementUpdateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -47,12 +47,12 @@ func (r *TmallItemSchemaIncrementUpdateAPIRequest) SetItemId(_itemId int64) erro
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallItemSchemaIncrementUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is XmlData Setter
+// SetXmlData is XmlData Setter
 // 根据tmall.item.increment.update.schema.get生成的商品增量编辑规则入参数据。需要更新的字段，一定要在入参的XML重点update_fields字段中明确指明
 func (r *TmallItemSchemaIncrementUpdateAPIRequest) SetXmlData(_xmlData string) error {
 	r._xmlData = _xmlData
@@ -60,7 +60,7 @@ func (r *TmallItemSchemaIncrementUpdateAPIRequest) SetXmlData(_xmlData string) e
 	return nil
 }
 
-// Get XmlData Getter
+// GetXmlData XmlData Getter
 func (r TmallItemSchemaIncrementUpdateAPIRequest) GetXmlData() string {
 	return r._xmlData
 }

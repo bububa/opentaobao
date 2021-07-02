@@ -63,7 +63,7 @@ func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CampaignType Setter
+// SetCampaignType is CampaignType Setter
 // CPS佣金计划类型
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetCampaignType(_campaignType string) error {
 	r._campaignType = _campaignType
@@ -71,12 +71,12 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetCampaignType(_campaignType stri
 	return nil
 }
 
-// Get CampaignType Getter
+// GetCampaignType CampaignType Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetCampaignType() string {
 	return r._campaignType
 }
 
-// Set is AdzoneId Setter
+// SetAdzoneId is AdzoneId Setter
 // 妈妈广告位Id
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetAdzoneId(_adzoneId int64) error {
 	r._adzoneId = _adzoneId
@@ -84,12 +84,12 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetAdzoneId(_adzoneId int64) error
 	return nil
 }
 
-// Get AdzoneId Getter
+// GetAdzoneId AdzoneId Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetAdzoneId() int64 {
 	return r._adzoneId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 宝贝id
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -97,12 +97,12 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is TotalNum Setter
+// SetTotalNum is TotalNum Setter
 // 淘礼金总个数
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetTotalNum(_totalNum int64) error {
 	r._totalNum = _totalNum
@@ -110,12 +110,12 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetTotalNum(_totalNum int64) error
 	return nil
 }
 
-// Get TotalNum Getter
+// GetTotalNum TotalNum Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetTotalNum() int64 {
 	return r._totalNum
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 淘礼金名称，最大10个字符
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -123,12 +123,12 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is UserTotalWinNumLimit Setter
+// SetUserTotalWinNumLimit is UserTotalWinNumLimit Setter
 // 单用户累计中奖次数上限
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetUserTotalWinNumLimit(_userTotalWinNumLimit int64) error {
 	r._userTotalWinNumLimit = _userTotalWinNumLimit
@@ -136,12 +136,12 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetUserTotalWinNumLimit(_userTotal
 	return nil
 }
 
-// Get UserTotalWinNumLimit Getter
+// GetUserTotalWinNumLimit UserTotalWinNumLimit Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetUserTotalWinNumLimit() int64 {
 	return r._userTotalWinNumLimit
 }
 
-// Set is SecuritySwitch Setter
+// SetSecuritySwitch is SecuritySwitch Setter
 // 安全开关，若不进行安全校验，可能放大您的资损风险，请谨慎选择
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetSecuritySwitch(_securitySwitch bool) error {
 	r._securitySwitch = _securitySwitch
@@ -149,12 +149,12 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetSecuritySwitch(_securitySwitch 
 	return nil
 }
 
-// Get SecuritySwitch Getter
+// GetSecuritySwitch SecuritySwitch Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetSecuritySwitch() bool {
 	return r._securitySwitch
 }
 
-// Set is PerFace Setter
+// SetPerFace is PerFace Setter
 // 单个淘礼金面额，支持两位小数，单位元
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetPerFace(_perFace string) error {
 	r._perFace = _perFace
@@ -162,12 +162,12 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetPerFace(_perFace string) error 
 	return nil
 }
 
-// Get PerFace Getter
+// GetPerFace PerFace Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetPerFace() string {
 	return r._perFace
 }
 
-// Set is SendStartTime Setter
+// SetSendStartTime is SendStartTime Setter
 // 发放开始时间
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetSendStartTime(_sendStartTime string) error {
 	r._sendStartTime = _sendStartTime
@@ -175,12 +175,12 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetSendStartTime(_sendStartTime st
 	return nil
 }
 
-// Get SendStartTime Getter
+// GetSendStartTime SendStartTime Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetSendStartTime() string {
 	return r._sendStartTime
 }
 
-// Set is SendEndTime Setter
+// SetSendEndTime is SendEndTime Setter
 // 发放截止时间
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetSendEndTime(_sendEndTime string) error {
 	r._sendEndTime = _sendEndTime
@@ -188,12 +188,12 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetSendEndTime(_sendEndTime string
 	return nil
 }
 
-// Get SendEndTime Getter
+// GetSendEndTime SendEndTime Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetSendEndTime() string {
 	return r._sendEndTime
 }
 
-// Set is UseEndTime Setter
+// SetUseEndTime is UseEndTime Setter
 // 使用结束日期。如果是结束时间模式为相对时间，时间格式为1-7直接的整数, 例如，1（相对领取时间1天）； 如果是绝对时间，格式为yyyy-MM-dd，例如，2019-01-29，表示到2019-01-29 23:59:59结束
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetUseEndTime(_useEndTime string) error {
 	r._useEndTime = _useEndTime
@@ -201,12 +201,12 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetUseEndTime(_useEndTime string) 
 	return nil
 }
 
-// Get UseEndTime Getter
+// GetUseEndTime UseEndTime Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetUseEndTime() string {
 	return r._useEndTime
 }
 
-// Set is UseEndTimeMode Setter
+// SetUseEndTimeMode is UseEndTimeMode Setter
 // 结束日期的模式,1:相对时间，2:绝对时间
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetUseEndTimeMode(_useEndTimeMode int64) error {
 	r._useEndTimeMode = _useEndTimeMode
@@ -214,12 +214,12 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetUseEndTimeMode(_useEndTimeMode 
 	return nil
 }
 
-// Get UseEndTimeMode Getter
+// GetUseEndTimeMode UseEndTimeMode Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetUseEndTimeMode() int64 {
 	return r._useEndTimeMode
 }
 
-// Set is UseStartTime Setter
+// SetUseStartTime is UseStartTime Setter
 // 使用开始日期。相对时间，无需填写，以用户领取时间作为使用开始时间。绝对时间，格式 yyyy-MM-dd，例如，2019-01-29，表示从2019-01-29 00:00:00 开始
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetUseStartTime(_useStartTime string) error {
 	r._useStartTime = _useStartTime
@@ -227,12 +227,12 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetUseStartTime(_useStartTime stri
 	return nil
 }
 
-// Get UseStartTime Getter
+// GetUseStartTime UseStartTime Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetUseStartTime() string {
 	return r._useStartTime
 }
 
-// Set is SecurityLevel Setter
+// SetSecurityLevel is SecurityLevel Setter
 // 安全等级，0：适用于常规淘礼金投放场景；1：更高安全级别，适用于淘礼金面额偏大等安全性较高的淘礼金投放场景，可能导致更多用户拦截。security_switch为true，此字段不填写时，使用0作为默认安全级别。如果security_switch为false，不进行安全判断。
 func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetSecurityLevel(_securityLevel int64) error {
 	r._securityLevel = _securityLevel
@@ -240,7 +240,7 @@ func (r *TaobaoTbkDgVegasTljCreateAPIRequest) SetSecurityLevel(_securityLevel in
 	return nil
 }
 
-// Get SecurityLevel Getter
+// GetSecurityLevel SecurityLevel Getter
 func (r TaobaoTbkDgVegasTljCreateAPIRequest) GetSecurityLevel() int64 {
 	return r._securityLevel
 }

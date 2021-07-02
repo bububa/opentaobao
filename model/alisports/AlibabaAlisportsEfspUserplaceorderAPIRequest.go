@@ -37,7 +37,7 @@ func (r AlibabaAlisportsEfspUserplaceorderAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is OrderJson Setter
+// SetOrderJson is OrderJson Setter
 // 青橙订单的json
 func (r *AlibabaAlisportsEfspUserplaceorderAPIRequest) SetOrderJson(_orderJson string) error {
 	r._orderJson = _orderJson
@@ -45,7 +45,7 @@ func (r *AlibabaAlisportsEfspUserplaceorderAPIRequest) SetOrderJson(_orderJson s
 	return nil
 }
 
-// Get OrderJson Getter
+// GetOrderJson OrderJson Getter
 func (r AlibabaAlisportsEfspUserplaceorderAPIRequest) GetOrderJson() string {
 	return r._orderJson
 }

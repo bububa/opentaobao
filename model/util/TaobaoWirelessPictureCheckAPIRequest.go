@@ -38,7 +38,7 @@ func (r TaobaoWirelessPictureCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 图片的URL,URL必须为淘系安全域名地址。图片格式支持png,jpg,webp
 func (r *TaobaoWirelessPictureCheckAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -46,7 +46,7 @@ func (r *TaobaoWirelessPictureCheckAPIRequest) SetUrl(_url string) error {
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r TaobaoWirelessPictureCheckAPIRequest) GetUrl() string {
 	return r._url
 }

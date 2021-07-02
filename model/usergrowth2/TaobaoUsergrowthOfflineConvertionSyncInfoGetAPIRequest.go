@@ -37,7 +37,7 @@ func (r TaobaoUsergrowthOfflineConvertionSyncInfoGetAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 入参
 func (r *TaobaoUsergrowthOfflineConvertionSyncInfoGetAPIRequest) SetQuery(_query *OfflineConvertionSyncInfoQuery) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *TaobaoUsergrowthOfflineConvertionSyncInfoGetAPIRequest) SetQuery(_query
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r TaobaoUsergrowthOfflineConvertionSyncInfoGetAPIRequest) GetQuery() *OfflineConvertionSyncInfoQuery {
 	return r._query
 }

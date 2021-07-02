@@ -37,7 +37,7 @@ func (r AlibabaLegalSuitJudgementPushAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefereeRegistrationModel Setter
+// SetRefereeRegistrationModel is RefereeRegistrationModel Setter
 // 裁判登记信息
 func (r *AlibabaLegalSuitJudgementPushAPIRequest) SetRefereeRegistrationModel(_refereeRegistrationModel *RefereeRegistrationModel) error {
 	r._refereeRegistrationModel = _refereeRegistrationModel
@@ -45,7 +45,7 @@ func (r *AlibabaLegalSuitJudgementPushAPIRequest) SetRefereeRegistrationModel(_r
 	return nil
 }
 
-// Get RefereeRegistrationModel Getter
+// GetRefereeRegistrationModel RefereeRegistrationModel Getter
 func (r AlibabaLegalSuitJudgementPushAPIRequest) GetRefereeRegistrationModel() *RefereeRegistrationModel {
 	return r._refereeRegistrationModel
 }

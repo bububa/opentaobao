@@ -37,7 +37,7 @@ func (r TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is ParamRefundOrderFillConfirmFeeRq Setter
+// SetParamRefundOrderFillConfirmFeeRq is ParamRefundOrderFillConfirmFeeRq Setter
 // 请求
 func (r *TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest) SetParamRefundOrderFillConfirmFeeRq(_paramRefundOrderFillConfirmFeeRq *RefundOrderFillConfirmFeeRq) error {
 	r._paramRefundOrderFillConfirmFeeRq = _paramRefundOrderFillConfirmFeeRq
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest) SetParamRefundOr
 	return nil
 }
 
-// Get ParamRefundOrderFillConfirmFeeRq Getter
+// GetParamRefundOrderFillConfirmFeeRq ParamRefundOrderFillConfirmFeeRq Getter
 func (r TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIRequest) GetParamRefundOrderFillConfirmFeeRq() *RefundOrderFillConfirmFeeRq {
 	return r._paramRefundOrderFillConfirmFeeRq
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkChannelUserSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserSyncInfo Setter
+// SetUserSyncInfo is UserSyncInfo Setter
 // 会员信息
 func (r *AlibabaWdkChannelUserSyncAPIRequest) SetUserSyncInfo(_userSyncInfo *UserSyncInfo) error {
 	r._userSyncInfo = _userSyncInfo
@@ -45,7 +45,7 @@ func (r *AlibabaWdkChannelUserSyncAPIRequest) SetUserSyncInfo(_userSyncInfo *Use
 	return nil
 }
 
-// Get UserSyncInfo Getter
+// GetUserSyncInfo UserSyncInfo Getter
 func (r AlibabaWdkChannelUserSyncAPIRequest) GetUserSyncInfo() *UserSyncInfo {
 	return r._userSyncInfo
 }

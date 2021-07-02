@@ -39,7 +39,7 @@ func (r TaobaoCrmMembersGroupsBatchdeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BuyerNicks Setter
+// SetBuyerNicks is BuyerNicks Setter
 // 买家昵称列表
 func (r *TaobaoCrmMembersGroupsBatchdeleteAPIRequest) SetBuyerNicks(_buyerNicks []string) error {
 	r._buyerNicks = _buyerNicks
@@ -47,12 +47,12 @@ func (r *TaobaoCrmMembersGroupsBatchdeleteAPIRequest) SetBuyerNicks(_buyerNicks 
 	return nil
 }
 
-// Get BuyerNicks Getter
+// GetBuyerNicks BuyerNicks Getter
 func (r TaobaoCrmMembersGroupsBatchdeleteAPIRequest) GetBuyerNicks() []string {
 	return r._buyerNicks
 }
 
-// Set is GroupIds Setter
+// SetGroupIds is GroupIds Setter
 // 会员需要删除的分组
 func (r *TaobaoCrmMembersGroupsBatchdeleteAPIRequest) SetGroupIds(_groupIds []int64) error {
 	r._groupIds = _groupIds
@@ -60,7 +60,7 @@ func (r *TaobaoCrmMembersGroupsBatchdeleteAPIRequest) SetGroupIds(_groupIds []in
 	return nil
 }
 
-// Get GroupIds Getter
+// GetGroupIds GroupIds Getter
 func (r TaobaoCrmMembersGroupsBatchdeleteAPIRequest) GetGroupIds() []int64 {
 	return r._groupIds
 }

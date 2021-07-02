@@ -37,7 +37,7 @@ func (r AlibabaMosOnsiteTradePayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OnsiteTradePayRequest Setter
+// SetOnsiteTradePayRequest is OnsiteTradePayRequest Setter
 // 创建订单请求参数
 func (r *AlibabaMosOnsiteTradePayAPIRequest) SetOnsiteTradePayRequest(_onsiteTradePayRequest *OnsiteTradePayRequest) error {
 	r._onsiteTradePayRequest = _onsiteTradePayRequest
@@ -45,7 +45,7 @@ func (r *AlibabaMosOnsiteTradePayAPIRequest) SetOnsiteTradePayRequest(_onsiteTra
 	return nil
 }
 
-// Get OnsiteTradePayRequest Getter
+// GetOnsiteTradePayRequest OnsiteTradePayRequest Getter
 func (r AlibabaMosOnsiteTradePayAPIRequest) GetOnsiteTradePayRequest() *OnsiteTradePayRequest {
 	return r._onsiteTradePayRequest
 }

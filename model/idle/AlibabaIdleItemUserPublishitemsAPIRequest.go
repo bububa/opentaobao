@@ -37,7 +37,7 @@ func (r AlibabaIdleItemUserPublishitemsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamItemPageQuery Setter
+// SetParamItemPageQuery is ParamItemPageQuery Setter
 // 查询参数
 func (r *AlibabaIdleItemUserPublishitemsAPIRequest) SetParamItemPageQuery(_paramItemPageQuery *ItemPageQuery) error {
 	r._paramItemPageQuery = _paramItemPageQuery
@@ -45,7 +45,7 @@ func (r *AlibabaIdleItemUserPublishitemsAPIRequest) SetParamItemPageQuery(_param
 	return nil
 }
 
-// Get ParamItemPageQuery Getter
+// GetParamItemPageQuery ParamItemPageQuery Getter
 func (r AlibabaIdleItemUserPublishitemsAPIRequest) GetParamItemPageQuery() *ItemPageQuery {
 	return r._paramItemPageQuery
 }

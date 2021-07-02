@@ -37,7 +37,7 @@ func (r TaobaoBaichuanItemSubscribeRelationQueryAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品Id
 func (r *TaobaoBaichuanItemSubscribeRelationQueryAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -45,7 +45,7 @@ func (r *TaobaoBaichuanItemSubscribeRelationQueryAPIRequest) SetItemId(_itemId i
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoBaichuanItemSubscribeRelationQueryAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

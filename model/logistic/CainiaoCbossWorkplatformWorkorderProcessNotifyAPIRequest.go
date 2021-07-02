@@ -37,7 +37,7 @@ func (r CainiaoCbossWorkplatformWorkorderProcessNotifyAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 服务入参
 func (r *CainiaoCbossWorkplatformWorkorderProcessNotifyAPIRequest) SetContent(_content *CainiaoCbossWorkplatformWorkorderProcessNotifyStruct) error {
 	r._content = _content
@@ -45,7 +45,7 @@ func (r *CainiaoCbossWorkplatformWorkorderProcessNotifyAPIRequest) SetContent(_c
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r CainiaoCbossWorkplatformWorkorderProcessNotifyAPIRequest) GetContent() *CainiaoCbossWorkplatformWorkorderProcessNotifyStruct {
 	return r._content
 }

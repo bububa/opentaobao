@@ -73,7 +73,7 @@ func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetApiPar
 	return params
 }
 
-// Set is PhoneNumber Setter
+// SetPhoneNumber is PhoneNumber Setter
 // 账号绑定的手机号码
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetPhoneNumber(_phoneNumber string) error {
 	r._phoneNumber = _phoneNumber
@@ -81,12 +81,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetPhone
 	return nil
 }
 
-// Get PhoneNumber Getter
+// GetPhoneNumber PhoneNumber Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetPhoneNumber() string {
 	return r._phoneNumber
 }
 
-// Set is Ip Setter
+// SetIp is Ip Setter
 // 账号绑定的IP地址
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetIp(_ip string) error {
 	r._ip = _ip
@@ -94,12 +94,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetIp(_i
 	return nil
 }
 
-// Get Ip Getter
+// GetIp Ip Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetIp() string {
 	return r._ip
 }
 
-// Set is Context Setter
+// SetContext is Context Setter
 // 场景描述，String必须在下面可以使用的场景中选择。可以使用的场景为：Login：登录事件；Register：注册事件；Trade:交易事件；Payment:支付事件;Refund：退款事件	；Loan：借款事件；Transfer：转账事件；Withdraw	：提现事件；Modify：修改事件；Click：点击事件；Activate：激活事件；	Other：其他事件。
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetContext(_context string) error {
 	r._context = _context
@@ -107,12 +107,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetConte
 	return nil
 }
 
-// Get Context Getter
+// GetContext Context Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetContext() string {
 	return r._context
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 登录来源。可以输入的参数如下：1：PC网页；2：移动网页；3：APP；4：其他
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetSource(_source int64) error {
 	r._source = _source
@@ -120,12 +120,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetSourc
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetSource() int64 {
 	return r._source
 }
 
-// Set is Email Setter
+// SetEmail is Email Setter
 // 账号绑定的email地址
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetEmail(_email string) error {
 	r._email = _email
@@ -133,12 +133,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetEmail
 	return nil
 }
 
-// Get Email Getter
+// GetEmail Email Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetEmail() string {
 	return r._email
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 账号的全局唯一标识
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -146,12 +146,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetUserI
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is RegisterUrl Setter
+// SetRegisterUrl is RegisterUrl Setter
 // 当前注册的页面URL，Source为1，2时，该参数必选
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetRegisterUrl(_registerUrl string) error {
 	r._registerUrl = _registerUrl
@@ -159,12 +159,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetRegis
 	return nil
 }
 
-// Get RegisterUrl Getter
+// GetRegisterUrl RegisterUrl Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetRegisterUrl() string {
 	return r._registerUrl
 }
 
-// Set is Agent Setter
+// SetAgent is Agent Setter
 // agent，发送HTTP请求的代理
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetAgent(_agent string) error {
 	r._agent = _agent
@@ -172,12 +172,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetAgent
 	return nil
 }
 
-// Get Agent Getter
+// GetAgent Agent Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetAgent() string {
 	return r._agent
 }
 
-// Set is Cookie Setter
+// SetCookie is Cookie Setter
 // Cookie
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetCookie(_cookie string) error {
 	r._cookie = _cookie
@@ -185,12 +185,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetCooki
 	return nil
 }
 
-// Get Cookie Getter
+// GetCookie Cookie Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetCookie() string {
 	return r._cookie
 }
 
-// Set is SessionId Setter
+// SetSessionId is SessionId Setter
 // Session id
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetSessionId(_sessionId string) error {
 	r._sessionId = _sessionId
@@ -198,12 +198,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetSessi
 	return nil
 }
 
-// Get SessionId Getter
+// GetSessionId SessionId Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetSessionId() string {
 	return r._sessionId
 }
 
-// Set is MacAddress Setter
+// SetMacAddress is MacAddress Setter
 // 硬件信息
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetMacAddress(_macAddress string) error {
 	r._macAddress = _macAddress
@@ -211,12 +211,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetMacAd
 	return nil
 }
 
-// Get MacAddress Getter
+// GetMacAddress MacAddress Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetMacAddress() string {
 	return r._macAddress
 }
 
-// Set is Referer Setter
+// SetReferer is Referer Setter
 // 上一跳信息
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetReferer(_referer string) error {
 	r._referer = _referer
@@ -224,12 +224,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetRefer
 	return nil
 }
 
-// Get Referer Getter
+// GetReferer Referer Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetReferer() string {
 	return r._referer
 }
 
-// Set is NickName Setter
+// SetNickName is NickName Setter
 // 账号绑定的呢称
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetNickName(_nickName string) error {
 	r._nickName = _nickName
@@ -237,12 +237,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetNickN
 	return nil
 }
 
-// Get NickName Getter
+// GetNickName NickName Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetNickName() string {
 	return r._nickName
 }
 
-// Set is CompanyName Setter
+// SetCompanyName is CompanyName Setter
 // 账号绑定的公司名字
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetCompanyName(_companyName string) error {
 	r._companyName = _companyName
@@ -250,12 +250,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetCompa
 	return nil
 }
 
-// Get CompanyName Getter
+// GetCompanyName CompanyName Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetCompanyName() string {
 	return r._companyName
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 账号绑定的注册的地址
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetAddress(_address string) error {
 	r._address = _address
@@ -263,12 +263,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetAddre
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetAddress() string {
 	return r._address
 }
 
-// Set is IdNumber Setter
+// SetIdNumber is IdNumber Setter
 // 账号绑定的身份证号
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetIdNumber(_idNumber string) error {
 	r._idNumber = _idNumber
@@ -276,12 +276,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetIdNum
 	return nil
 }
 
-// Get IdNumber Getter
+// GetIdNumber IdNumber Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetIdNumber() string {
 	return r._idNumber
 }
 
-// Set is BankCardNumber Setter
+// SetBankCardNumber is BankCardNumber Setter
 // 账号绑定的银行卡号
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetBankCardNumber(_bankCardNumber string) error {
 	r._bankCardNumber = _bankCardNumber
@@ -289,12 +289,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetBankC
 	return nil
 }
 
-// Get BankCardNumber Getter
+// GetBankCardNumber BankCardNumber Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetBankCardNumber() string {
 	return r._bankCardNumber
 }
 
-// Set is JsToken Setter
+// SetJsToken is JsToken Setter
 // 接入JS后从服务端获取的token
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetJsToken(_jsToken string) error {
 	r._jsToken = _jsToken
@@ -302,12 +302,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetJsTok
 	return nil
 }
 
-// Get JsToken Getter
+// GetJsToken JsToken Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetJsToken() string {
 	return r._jsToken
 }
 
-// Set is SdkToken Setter
+// SetSdkToken is SdkToken Setter
 // 接入SDK后从服务端获取的token
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetSdkToken(_sdkToken string) error {
 	r._sdkToken = _sdkToken
@@ -315,7 +315,7 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetSdkTo
 	return nil
 }
 
-// Get SdkToken Getter
+// GetSdkToken SdkToken Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetSdkToken() string {
 	return r._sdkToken
 }

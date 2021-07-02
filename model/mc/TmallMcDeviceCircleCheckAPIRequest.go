@@ -39,7 +39,7 @@ func (r TmallMcDeviceCircleCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuterCode Setter
+// SetOuterCode is OuterCode Setter
 // 外部设备编码
 func (r *TmallMcDeviceCircleCheckAPIRequest) SetOuterCode(_outerCode string) error {
 	r._outerCode = _outerCode
@@ -47,12 +47,12 @@ func (r *TmallMcDeviceCircleCheckAPIRequest) SetOuterCode(_outerCode string) err
 	return nil
 }
 
-// Get OuterCode Getter
+// GetOuterCode OuterCode Getter
 func (r TmallMcDeviceCircleCheckAPIRequest) GetOuterCode() string {
 	return r._outerCode
 }
 
-// Set is ChannelId Setter
+// SetChannelId is ChannelId Setter
 // 渠道编码
 func (r *TmallMcDeviceCircleCheckAPIRequest) SetChannelId(_channelId string) error {
 	r._channelId = _channelId
@@ -60,7 +60,7 @@ func (r *TmallMcDeviceCircleCheckAPIRequest) SetChannelId(_channelId string) err
 	return nil
 }
 
-// Get ChannelId Getter
+// GetChannelId ChannelId Getter
 func (r TmallMcDeviceCircleCheckAPIRequest) GetChannelId() string {
 	return r._channelId
 }

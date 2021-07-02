@@ -43,7 +43,7 @@ func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetApiPar
 	return params
 }
 
-// Set is VendorId Setter
+// SetVendorId is VendorId Setter
 // 供应商id
 func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetVendorId(_vendorId int64) error {
 	r._vendorId = _vendorId
@@ -51,12 +51,12 @@ func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetVendo
 	return nil
 }
 
-// Get VendorId Getter
+// GetVendorId VendorId Getter
 func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetVendorId() int64 {
 	return r._vendorId
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备id
 func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -64,12 +64,12 @@ func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetDevic
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 设备状态，online上线，offline下线
 func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -77,12 +77,12 @@ func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetStatu
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is Extensions Setter
+// SetExtensions is Extensions Setter
 // 保留字段json字符串
 func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetExtensions(_extensions string) error {
 	r._extensions = _extensions
@@ -90,7 +90,7 @@ func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetExten
 	return nil
 }
 
-// Get Extensions Getter
+// GetExtensions Extensions Getter
 func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetExtensions() string {
 	return r._extensions
 }

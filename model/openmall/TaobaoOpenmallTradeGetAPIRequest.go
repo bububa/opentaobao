@@ -39,7 +39,7 @@ func (r TaobaoOpenmallTradeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Distributor Setter
+// SetDistributor is Distributor Setter
 // 分销者信息
 func (r *TaobaoOpenmallTradeGetAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
@@ -47,12 +47,12 @@ func (r *TaobaoOpenmallTradeGetAPIRequest) SetDistributor(_distributor string) e
 	return nil
 }
 
-// Get Distributor Getter
+// GetDistributor Distributor Getter
 func (r TaobaoOpenmallTradeGetAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝订单号
 func (r *TaobaoOpenmallTradeGetAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -60,7 +60,7 @@ func (r *TaobaoOpenmallTradeGetAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoOpenmallTradeGetAPIRequest) GetTid() int64 {
 	return r._tid
 }

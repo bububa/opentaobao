@@ -41,7 +41,7 @@ func (r TaobaoPlaceStoreRelationAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 关系B的门店ID
 func (r *TaobaoPlaceStoreRelationAddAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -49,12 +49,12 @@ func (r *TaobaoPlaceStoreRelationAddAPIRequest) SetOuterId(_outerId string) erro
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoPlaceStoreRelationAddAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is RelationType Setter
+// SetRelationType is RelationType Setter
 // 关系类型(outer_id是主, store_id是从)
 func (r *TaobaoPlaceStoreRelationAddAPIRequest) SetRelationType(_relationType int64) error {
 	r._relationType = _relationType
@@ -62,12 +62,12 @@ func (r *TaobaoPlaceStoreRelationAddAPIRequest) SetRelationType(_relationType in
 	return nil
 }
 
-// Get RelationType Getter
+// GetRelationType RelationType Getter
 func (r TaobaoPlaceStoreRelationAddAPIRequest) GetRelationType() int64 {
 	return r._relationType
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *TaobaoPlaceStoreRelationAddAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -75,7 +75,7 @@ func (r *TaobaoPlaceStoreRelationAddAPIRequest) SetStoreId(_storeId int64) error
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoPlaceStoreRelationAddAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }

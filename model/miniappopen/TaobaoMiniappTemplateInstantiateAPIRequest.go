@@ -51,7 +51,7 @@ func (r TaobaoMiniappTemplateInstantiateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Clients Setter
+// SetClients is Clients Setter
 // 投放端,目前可投放： taobao(淘宝),tmall(天猫)，taobao为必填，需要模板在这些端上已经发布上线
 func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetClients(_clients []string) error {
 	r._clients = _clients
@@ -59,12 +59,12 @@ func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetClients(_clients []strin
 	return nil
 }
 
-// Get Clients Getter
+// GetClients Clients Getter
 func (r TaobaoMiniappTemplateInstantiateAPIRequest) GetClients() []string {
 	return r._clients
 }
 
-// Set is Description Setter
+// SetDescription is Description Setter
 // 描述长度(9~200)
 func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetDescription(_description string) error {
 	r._description = _description
@@ -72,12 +72,12 @@ func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetDescription(_description
 	return nil
 }
 
-// Get Description Getter
+// GetDescription Description Getter
 func (r TaobaoMiniappTemplateInstantiateAPIRequest) GetDescription() string {
 	return r._description
 }
 
-// Set is ExtJson Setter
+// SetExtJson is ExtJson Setter
 // 扩展信息，JSON格式。
 func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetExtJson(_extJson string) error {
 	r._extJson = _extJson
@@ -85,12 +85,12 @@ func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetExtJson(_extJson string)
 	return nil
 }
 
-// Get ExtJson Getter
+// GetExtJson ExtJson Getter
 func (r TaobaoMiniappTemplateInstantiateAPIRequest) GetExtJson() string {
 	return r._extJson
 }
 
-// Set is Icon Setter
+// SetIcon is Icon Setter
 // 小程序icon
 func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetIcon(_icon string) error {
 	r._icon = _icon
@@ -98,12 +98,12 @@ func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetIcon(_icon string) error
 	return nil
 }
 
-// Get Icon Getter
+// GetIcon Icon Getter
 func (r TaobaoMiniappTemplateInstantiateAPIRequest) GetIcon() string {
 	return r._icon
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 小程序名称按平台规则自动生成，该字段仅做兜底使用。
 func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -111,12 +111,12 @@ func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetName(_name string) error
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoMiniappTemplateInstantiateAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is TemplateId Setter
+// SetTemplateId is TemplateId Setter
 // 模板id
 func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetTemplateId(_templateId string) error {
 	r._templateId = _templateId
@@ -124,12 +124,12 @@ func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetTemplateId(_templateId s
 	return nil
 }
 
-// Get TemplateId Getter
+// GetTemplateId TemplateId Getter
 func (r TaobaoMiniappTemplateInstantiateAPIRequest) GetTemplateId() string {
 	return r._templateId
 }
 
-// Set is TemplateVersion Setter
+// SetTemplateVersion is TemplateVersion Setter
 // 模板版本
 func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetTemplateVersion(_templateVersion string) error {
 	r._templateVersion = _templateVersion
@@ -137,12 +137,12 @@ func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetTemplateVersion(_templat
 	return nil
 }
 
-// Get TemplateVersion Getter
+// GetTemplateVersion TemplateVersion Getter
 func (r TaobaoMiniappTemplateInstantiateAPIRequest) GetTemplateVersion() string {
 	return r._templateVersion
 }
 
-// Set is Alias Setter
+// SetAlias is Alias Setter
 // 小程序简称【1-16】字符，可重名
 func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetAlias(_alias string) error {
 	r._alias = _alias
@@ -150,7 +150,7 @@ func (r *TaobaoMiniappTemplateInstantiateAPIRequest) SetAlias(_alias string) err
 	return nil
 }
 
-// Get Alias Getter
+// GetAlias Alias Getter
 func (r TaobaoMiniappTemplateInstantiateAPIRequest) GetAlias() string {
 	return r._alias
 }

@@ -55,7 +55,7 @@ func (r AlibabaNlifeB2cTradePayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TradeNo Setter
+// SetTradeNo is TradeNo Setter
 // 零售+平台订单号，和out_trade_no不能同时为空
 func (r *AlibabaNlifeB2cTradePayAPIRequest) SetTradeNo(_tradeNo string) error {
 	r._tradeNo = _tradeNo
@@ -63,12 +63,12 @@ func (r *AlibabaNlifeB2cTradePayAPIRequest) SetTradeNo(_tradeNo string) error {
 	return nil
 }
 
-// Get TradeNo Getter
+// GetTradeNo TradeNo Getter
 func (r AlibabaNlifeB2cTradePayAPIRequest) GetTradeNo() string {
 	return r._tradeNo
 }
 
-// Set is PickingUp Setter
+// SetPickingUp is PickingUp Setter
 // 提货方式：    LOGISTICS("物流发货"),     SELF_DELIVERY("门店自提");
 func (r *AlibabaNlifeB2cTradePayAPIRequest) SetPickingUp(_pickingUp string) error {
 	r._pickingUp = _pickingUp
@@ -76,12 +76,12 @@ func (r *AlibabaNlifeB2cTradePayAPIRequest) SetPickingUp(_pickingUp string) erro
 	return nil
 }
 
-// Get PickingUp Getter
+// GetPickingUp PickingUp Getter
 func (r AlibabaNlifeB2cTradePayAPIRequest) GetPickingUp() string {
 	return r._pickingUp
 }
 
-// Set is Consignee Setter
+// SetConsignee is Consignee Setter
 // 收货人
 func (r *AlibabaNlifeB2cTradePayAPIRequest) SetConsignee(_consignee string) error {
 	r._consignee = _consignee
@@ -89,12 +89,12 @@ func (r *AlibabaNlifeB2cTradePayAPIRequest) SetConsignee(_consignee string) erro
 	return nil
 }
 
-// Get Consignee Getter
+// GetConsignee Consignee Getter
 func (r AlibabaNlifeB2cTradePayAPIRequest) GetConsignee() string {
 	return r._consignee
 }
 
-// Set is ConsigneePhoneNum Setter
+// SetConsigneePhoneNum is ConsigneePhoneNum Setter
 // 收货人电话
 func (r *AlibabaNlifeB2cTradePayAPIRequest) SetConsigneePhoneNum(_consigneePhoneNum string) error {
 	r._consigneePhoneNum = _consigneePhoneNum
@@ -102,12 +102,12 @@ func (r *AlibabaNlifeB2cTradePayAPIRequest) SetConsigneePhoneNum(_consigneePhone
 	return nil
 }
 
-// Get ConsigneePhoneNum Getter
+// GetConsigneePhoneNum ConsigneePhoneNum Getter
 func (r AlibabaNlifeB2cTradePayAPIRequest) GetConsigneePhoneNum() string {
 	return r._consigneePhoneNum
 }
 
-// Set is ConsigneeAddress Setter
+// SetConsigneeAddress is ConsigneeAddress Setter
 // 收货人地址
 func (r *AlibabaNlifeB2cTradePayAPIRequest) SetConsigneeAddress(_consigneeAddress string) error {
 	r._consigneeAddress = _consigneeAddress
@@ -115,12 +115,12 @@ func (r *AlibabaNlifeB2cTradePayAPIRequest) SetConsigneeAddress(_consigneeAddres
 	return nil
 }
 
-// Get ConsigneeAddress Getter
+// GetConsigneeAddress ConsigneeAddress Getter
 func (r AlibabaNlifeB2cTradePayAPIRequest) GetConsigneeAddress() string {
 	return r._consigneeAddress
 }
 
-// Set is GmtPayment Setter
+// SetGmtPayment is GmtPayment Setter
 // ISV处支付时间
 func (r *AlibabaNlifeB2cTradePayAPIRequest) SetGmtPayment(_gmtPayment string) error {
 	r._gmtPayment = _gmtPayment
@@ -128,12 +128,12 @@ func (r *AlibabaNlifeB2cTradePayAPIRequest) SetGmtPayment(_gmtPayment string) er
 	return nil
 }
 
-// Get GmtPayment Getter
+// GetGmtPayment GmtPayment Getter
 func (r AlibabaNlifeB2cTradePayAPIRequest) GetGmtPayment() string {
 	return r._gmtPayment
 }
 
-// Set is FundBillList Setter
+// SetFundBillList is FundBillList Setter
 // 支付资金各渠道列表
 func (r *AlibabaNlifeB2cTradePayAPIRequest) SetFundBillList(_fundBillList []FundBill) error {
 	r._fundBillList = _fundBillList
@@ -141,12 +141,12 @@ func (r *AlibabaNlifeB2cTradePayAPIRequest) SetFundBillList(_fundBillList []Fund
 	return nil
 }
 
-// Get FundBillList Getter
+// GetFundBillList FundBillList Getter
 func (r AlibabaNlifeB2cTradePayAPIRequest) GetFundBillList() []FundBill {
 	return r._fundBillList
 }
 
-// Set is OutTradeNo Setter
+// SetOutTradeNo is OutTradeNo Setter
 // 外部订单号，和trade_no不能同时为空
 func (r *AlibabaNlifeB2cTradePayAPIRequest) SetOutTradeNo(_outTradeNo string) error {
 	r._outTradeNo = _outTradeNo
@@ -154,12 +154,12 @@ func (r *AlibabaNlifeB2cTradePayAPIRequest) SetOutTradeNo(_outTradeNo string) er
 	return nil
 }
 
-// Get OutTradeNo Getter
+// GetOutTradeNo OutTradeNo Getter
 func (r AlibabaNlifeB2cTradePayAPIRequest) GetOutTradeNo() string {
 	return r._outTradeNo
 }
 
-// Set is ActualPayFee Setter
+// SetActualPayFee is ActualPayFee Setter
 // 实付金额，单位人民币分；该字段实际为必选，为兼容已经接入的isv设置成可选
 func (r *AlibabaNlifeB2cTradePayAPIRequest) SetActualPayFee(_actualPayFee int64) error {
 	r._actualPayFee = _actualPayFee
@@ -167,12 +167,12 @@ func (r *AlibabaNlifeB2cTradePayAPIRequest) SetActualPayFee(_actualPayFee int64)
 	return nil
 }
 
-// Get ActualPayFee Getter
+// GetActualPayFee ActualPayFee Getter
 func (r AlibabaNlifeB2cTradePayAPIRequest) GetActualPayFee() int64 {
 	return r._actualPayFee
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 只传out_trade_no时候，零售+门店号一定要传
 func (r *AlibabaNlifeB2cTradePayAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -180,7 +180,7 @@ func (r *AlibabaNlifeB2cTradePayAPIRequest) SetStoreId(_storeId string) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaNlifeB2cTradePayAPIRequest) GetStoreId() string {
 	return r._storeId
 }

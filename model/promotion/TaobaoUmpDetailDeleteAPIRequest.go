@@ -37,7 +37,7 @@ func (r TaobaoUmpDetailDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DetailId Setter
+// SetDetailId is DetailId Setter
 // 活动详情id
 func (r *TaobaoUmpDetailDeleteAPIRequest) SetDetailId(_detailId int64) error {
 	r._detailId = _detailId
@@ -45,7 +45,7 @@ func (r *TaobaoUmpDetailDeleteAPIRequest) SetDetailId(_detailId int64) error {
 	return nil
 }
 
-// Get DetailId Getter
+// GetDetailId DetailId Getter
 func (r TaobaoUmpDetailDeleteAPIRequest) GetDetailId() int64 {
 	return r._detailId
 }

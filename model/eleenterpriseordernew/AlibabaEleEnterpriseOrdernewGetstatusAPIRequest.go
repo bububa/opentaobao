@@ -37,7 +37,7 @@ func (r AlibabaEleEnterpriseOrdernewGetstatusAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ElemeOrderId Setter
+// SetElemeOrderId is ElemeOrderId Setter
 // 订单号
 func (r *AlibabaEleEnterpriseOrdernewGetstatusAPIRequest) SetElemeOrderId(_elemeOrderId string) error {
 	r._elemeOrderId = _elemeOrderId
@@ -45,7 +45,7 @@ func (r *AlibabaEleEnterpriseOrdernewGetstatusAPIRequest) SetElemeOrderId(_eleme
 	return nil
 }
 
-// Get ElemeOrderId Getter
+// GetElemeOrderId ElemeOrderId Getter
 func (r AlibabaEleEnterpriseOrdernewGetstatusAPIRequest) GetElemeOrderId() string {
 	return r._elemeOrderId
 }

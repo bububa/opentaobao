@@ -43,7 +43,7 @@ func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is ActivitySkuList Setter
+// SetActivitySkuList is ActivitySkuList Setter
 // 淘鲜达活动商品信息
 func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) SetActivitySkuList(_activitySkuList []DrfTxdActivitySkuBo) error {
 	r._activitySkuList = _activitySkuList
@@ -51,12 +51,12 @@ func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) SetActivitySku
 	return nil
 }
 
-// Get ActivitySkuList Getter
+// GetActivitySkuList ActivitySkuList Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetActivitySkuList() []DrfTxdActivitySkuBo {
 	return r._activitySkuList
 }
 
-// Set is VersionId Setter
+// SetVersionId is VersionId Setter
 // 数据版本Id
 func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) SetVersionId(_versionId int64) error {
 	r._versionId = _versionId
@@ -64,12 +64,12 @@ func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) SetVersionId(_
 	return nil
 }
 
-// Get VersionId Getter
+// GetVersionId VersionId Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetVersionId() int64 {
 	return r._versionId
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 大润发活动Id
 func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) SetActivityId(_activityId string) error {
 	r._activityId = _activityId
@@ -77,12 +77,12 @@ func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) SetActivityId(
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetActivityId() string {
 	return r._activityId
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 活动对应的门店Id
 func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) SetShopId(_shopId string) error {
 	r._shopId = _shopId
@@ -90,7 +90,7 @@ func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) SetShopId(_sho
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetShopId() string {
 	return r._shopId
 }

@@ -41,7 +41,7 @@ func (r AlitripTuanHotelRelatePoiGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Keywords Setter
+// SetKeywords is Keywords Setter
 // 关键字
 func (r *AlitripTuanHotelRelatePoiGetAPIRequest) SetKeywords(_keywords string) error {
 	r._keywords = _keywords
@@ -49,12 +49,12 @@ func (r *AlitripTuanHotelRelatePoiGetAPIRequest) SetKeywords(_keywords string) e
 	return nil
 }
 
-// Get Keywords Getter
+// GetKeywords Keywords Getter
 func (r AlitripTuanHotelRelatePoiGetAPIRequest) GetKeywords() string {
 	return r._keywords
 }
 
-// Set is DivisionId Setter
+// SetDivisionId is DivisionId Setter
 // 行政区ID
 func (r *AlitripTuanHotelRelatePoiGetAPIRequest) SetDivisionId(_divisionId int64) error {
 	r._divisionId = _divisionId
@@ -62,12 +62,12 @@ func (r *AlitripTuanHotelRelatePoiGetAPIRequest) SetDivisionId(_divisionId int64
 	return nil
 }
 
-// Get DivisionId Getter
+// GetDivisionId DivisionId Getter
 func (r AlitripTuanHotelRelatePoiGetAPIRequest) GetDivisionId() int64 {
 	return r._divisionId
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 类目ID：国内酒店套餐-201189402；国际酒店套餐-201188002；酒店餐饮美食-201214101；酒店服务-201214201；酒店客房优惠券-201214301
 func (r *AlitripTuanHotelRelatePoiGetAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -75,7 +75,7 @@ func (r *AlitripTuanHotelRelatePoiGetAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r AlitripTuanHotelRelatePoiGetAPIRequest) GetCatId() int64 {
 	return r._catId
 }

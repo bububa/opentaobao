@@ -39,7 +39,7 @@ func (r AlibabaAlihealthDrugKytIdgenerateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RegionCode Setter
+// SetRegionCode is RegionCode Setter
 // 行政区（省市区）
 func (r *AlibabaAlihealthDrugKytIdgenerateAPIRequest) SetRegionCode(_regionCode string) error {
 	r._regionCode = _regionCode
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthDrugKytIdgenerateAPIRequest) SetRegionCode(_regionCode 
 	return nil
 }
 
-// Get RegionCode Getter
+// GetRegionCode RegionCode Getter
 func (r AlibabaAlihealthDrugKytIdgenerateAPIRequest) GetRegionCode() string {
 	return r._regionCode
 }
 
-// Set is TerminalName Setter
+// SetTerminalName is TerminalName Setter
 // 零售药店、医疗机构名称
 func (r *AlibabaAlihealthDrugKytIdgenerateAPIRequest) SetTerminalName(_terminalName string) error {
 	r._terminalName = _terminalName
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthDrugKytIdgenerateAPIRequest) SetTerminalName(_terminalN
 	return nil
 }
 
-// Get TerminalName Getter
+// GetTerminalName TerminalName Getter
 func (r AlibabaAlihealthDrugKytIdgenerateAPIRequest) GetTerminalName() string {
 	return r._terminalName
 }

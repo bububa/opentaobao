@@ -39,7 +39,7 @@ func (r TaobaoXhotelRateRelationshipwithrpGetAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Gid Setter
+// SetGid is Gid Setter
 // 宝贝的gid
 func (r *TaobaoXhotelRateRelationshipwithrpGetAPIRequest) SetGid(_gid int64) error {
 	r._gid = _gid
@@ -47,12 +47,12 @@ func (r *TaobaoXhotelRateRelationshipwithrpGetAPIRequest) SetGid(_gid int64) err
 	return nil
 }
 
-// Get Gid Getter
+// GetGid Gid Getter
 func (r TaobaoXhotelRateRelationshipwithrpGetAPIRequest) GetGid() int64 {
 	return r._gid
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页数，可根据此值展示某页的数据。不填默认为1
 func (r *TaobaoXhotelRateRelationshipwithrpGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -60,7 +60,7 @@ func (r *TaobaoXhotelRateRelationshipwithrpGetAPIRequest) SetPageNo(_pageNo int6
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoXhotelRateRelationshipwithrpGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

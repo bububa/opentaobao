@@ -45,7 +45,7 @@ func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is TradeNo Setter
+// SetTradeNo is TradeNo Setter
 // 淘宝主单号
 func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetTradeNo(_tradeNo string) error {
 	r._tradeNo = _tradeNo
@@ -53,12 +53,12 @@ func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetTradeNo(_tradeNo str
 	return nil
 }
 
-// Get TradeNo Getter
+// GetTradeNo TradeNo Getter
 func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetTradeNo() string {
 	return r._tradeNo
 }
 
-// Set is TicketId Setter
+// SetTicketId is TicketId Setter
 // 凭证ID
 func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetTicketId(_ticketId string) error {
 	r._ticketId = _ticketId
@@ -66,12 +66,12 @@ func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetTicketId(_ticketId s
 	return nil
 }
 
-// Get TicketId Getter
+// GetTicketId TicketId Getter
 func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetTicketId() string {
 	return r._ticketId
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // 改期：MODIFY   取消：CANCEL
 func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -79,12 +79,12 @@ func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetAction(_action strin
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetAction() string {
 	return r._action
 }
 
-// Set is ReserveStartTime Setter
+// SetReserveStartTime is ReserveStartTime Setter
 // 改期必填，格式：yyyy-MM-dd HH:mm。时分固定00:00
 func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetReserveStartTime(_reserveStartTime string) error {
 	r._reserveStartTime = _reserveStartTime
@@ -92,12 +92,12 @@ func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetReserveStartTime(_re
 	return nil
 }
 
-// Get ReserveStartTime Getter
+// GetReserveStartTime ReserveStartTime Getter
 func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetReserveStartTime() string {
 	return r._reserveStartTime
 }
 
-// Set is ReserveEndTime Setter
+// SetReserveEndTime is ReserveEndTime Setter
 // 改期必填，格式：yyyy-MM-dd HH:mm。时分固定23:59
 func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetReserveEndTime(_reserveEndTime string) error {
 	r._reserveEndTime = _reserveEndTime
@@ -105,7 +105,7 @@ func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetReserveEndTime(_rese
 	return nil
 }
 
-// Get ReserveEndTime Getter
+// GetReserveEndTime ReserveEndTime Getter
 func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetReserveEndTime() string {
 	return r._reserveEndTime
 }

@@ -41,7 +41,7 @@ func (r TaobaoUsceslIteminfoBatchInsertAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemList Setter
+// SetItemList is ItemList Setter
 // 商品信息集合，限制500
 func (r *TaobaoUsceslIteminfoBatchInsertAPIRequest) SetItemList(_itemList []ItemChangeBo) error {
 	r._itemList = _itemList
@@ -49,12 +49,12 @@ func (r *TaobaoUsceslIteminfoBatchInsertAPIRequest) SetItemList(_itemList []Item
 	return nil
 }
 
-// Get ItemList Getter
+// GetItemList ItemList Getter
 func (r TaobaoUsceslIteminfoBatchInsertAPIRequest) GetItemList() []ItemChangeBo {
 	return r._itemList
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *TaobaoUsceslIteminfoBatchInsertAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -62,12 +62,12 @@ func (r *TaobaoUsceslIteminfoBatchInsertAPIRequest) SetStoreId(_storeId int64) e
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoUsceslIteminfoBatchInsertAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is BizBrandKey Setter
+// SetBizBrandKey is BizBrandKey Setter
 // 商家KEY
 func (r *TaobaoUsceslIteminfoBatchInsertAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
 	r._bizBrandKey = _bizBrandKey
@@ -75,7 +75,7 @@ func (r *TaobaoUsceslIteminfoBatchInsertAPIRequest) SetBizBrandKey(_bizBrandKey 
 	return nil
 }
 
-// Get BizBrandKey Getter
+// GetBizBrandKey BizBrandKey Getter
 func (r TaobaoUsceslIteminfoBatchInsertAPIRequest) GetBizBrandKey() string {
 	return r._bizBrandKey
 }

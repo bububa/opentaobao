@@ -39,7 +39,7 @@ func (r TaobaoTmcUserCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 用户昵称
 func (r *TaobaoTmcUserCancelAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -47,12 +47,12 @@ func (r *TaobaoTmcUserCancelAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoTmcUserCancelAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is UserPlatform Setter
+// SetUserPlatform is UserPlatform Setter
 // 用户所属的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户
 func (r *TaobaoTmcUserCancelAPIRequest) SetUserPlatform(_userPlatform string) error {
 	r._userPlatform = _userPlatform
@@ -60,7 +60,7 @@ func (r *TaobaoTmcUserCancelAPIRequest) SetUserPlatform(_userPlatform string) er
 	return nil
 }
 
-// Get UserPlatform Getter
+// GetUserPlatform UserPlatform Getter
 func (r TaobaoTmcUserCancelAPIRequest) GetUserPlatform() string {
 	return r._userPlatform
 }

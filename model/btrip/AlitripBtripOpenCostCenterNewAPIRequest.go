@@ -37,7 +37,7 @@ func (r AlitripBtripOpenCostCenterNewAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 入参对象
 func (r *AlitripBtripOpenCostCenterNewAPIRequest) SetRq(_rq *OpenCostCenterSaveRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripOpenCostCenterNewAPIRequest) SetRq(_rq *OpenCostCenterSaveR
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripOpenCostCenterNewAPIRequest) GetRq() *OpenCostCenterSaveRq {
 	return r._rq
 }

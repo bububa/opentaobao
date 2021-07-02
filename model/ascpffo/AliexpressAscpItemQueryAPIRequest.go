@@ -37,7 +37,7 @@ func (r AliexpressAscpItemQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ScItemQuery Setter
+// SetScItemQuery is ScItemQuery Setter
 // DTO
 func (r *AliexpressAscpItemQueryAPIRequest) SetScItemQuery(_scItemQuery *ScItemQueryDto) error {
 	r._scItemQuery = _scItemQuery
@@ -45,7 +45,7 @@ func (r *AliexpressAscpItemQueryAPIRequest) SetScItemQuery(_scItemQuery *ScItemQ
 	return nil
 }
 
-// Get ScItemQuery Getter
+// GetScItemQuery ScItemQuery Getter
 func (r AliexpressAscpItemQueryAPIRequest) GetScItemQuery() *ScItemQueryDto {
 	return r._scItemQuery
 }

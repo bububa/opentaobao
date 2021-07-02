@@ -41,7 +41,7 @@ func (r AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is RoleId Setter
+// SetRoleId is RoleId Setter
 // 角色id
 func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetRoleId(_roleId int64) error {
 	r._roleId = _roleId
@@ -49,12 +49,12 @@ func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetRoleId(_roleI
 	return nil
 }
 
-// Get RoleId Getter
+// GetRoleId RoleId Getter
 func (r AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) GetRoleId() int64 {
 	return r._roleId
 }
 
-// Set is AllPermission Setter
+// SetAllPermission is AllPermission Setter
 // 是否查询全部类型权限
 func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetAllPermission(_allPermission bool) error {
 	r._allPermission = _allPermission
@@ -62,12 +62,12 @@ func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetAllPermission
 	return nil
 }
 
-// Get AllPermission Getter
+// GetAllPermission AllPermission Getter
 func (r AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) GetAllPermission() bool {
 	return r._allPermission
 }
 
-// Set is Workbenchcontext Setter
+// SetWorkbenchcontext is Workbenchcontext Setter
 // 系统参数
 func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
 	r._workbenchcontext = _workbenchcontext
@@ -75,7 +75,7 @@ func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetWorkbenchcont
 	return nil
 }
 
-// Get Workbenchcontext Getter
+// GetWorkbenchcontext Workbenchcontext Getter
 func (r AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
 }

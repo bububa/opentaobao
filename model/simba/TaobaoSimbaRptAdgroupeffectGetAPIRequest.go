@@ -55,7 +55,7 @@ func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SubwayToken Setter
+// SetSubwayToken is SubwayToken Setter
 // 权限校验参数
 func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetSubwayToken(_subwayToken string) error {
 	r._subwayToken = _subwayToken
@@ -63,12 +63,12 @@ func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetSubwayToken(_subwayToken s
 	return nil
 }
 
-// Get SubwayToken Getter
+// GetSubwayToken SubwayToken Getter
 func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetSubwayToken() string {
 	return r._subwayToken
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 昵称
 func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -76,12 +76,12 @@ func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划id
 func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -89,12 +89,12 @@ func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetCampaignId(_campaignId int
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广组id
 func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -102,12 +102,12 @@ func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetAdgroupId(_adgroupId int64
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 开始时间，格式yyyy-mm-dd
 func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -115,12 +115,12 @@ func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetStartTime(_startTime strin
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间，格式yyyy-mm-dd
 func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -128,12 +128,12 @@ func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetEndTime(_endTime string) e
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is SearchType Setter
+// SetSearchType is SearchType Setter
 // 报表类型（搜索：SEARCH,类目出价：CAT,<br/>定向投放：NOSEARCH ）可以一次取多个例如：SEARCH,CAT
 func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetSearchType(_searchType string) error {
 	r._searchType = _searchType
@@ -141,12 +141,12 @@ func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetSearchType(_searchType str
 	return nil
 }
 
-// Get SearchType Getter
+// GetSearchType SearchType Getter
 func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetSearchType() string {
 	return r._searchType
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 数据来源（PC站内：1，PC站外：2，无线站内：4，无线站外 : 5）可多选，以逗号分隔
 func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -154,12 +154,12 @@ func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetSource(_source string) err
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -167,12 +167,12 @@ func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetPageNo(_pageNo int64) erro
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页大小
 func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -180,7 +180,7 @@ func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetPageSize(_pageSize int64) 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

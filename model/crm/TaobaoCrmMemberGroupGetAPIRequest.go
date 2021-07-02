@@ -37,7 +37,7 @@ func (r TaobaoCrmMemberGroupGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 会员Nick
 func (r *TaobaoCrmMemberGroupGetAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -45,7 +45,7 @@ func (r *TaobaoCrmMemberGroupGetAPIRequest) SetBuyerNick(_buyerNick string) erro
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r TaobaoCrmMemberGroupGetAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }

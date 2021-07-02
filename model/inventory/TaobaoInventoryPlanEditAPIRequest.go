@@ -37,7 +37,7 @@ func (r TaobaoInventoryPlanEditAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PlanTop Setter
+// SetPlanTop is PlanTop Setter
 // 计划库存设置入参
 func (r *TaobaoInventoryPlanEditAPIRequest) SetPlanTop(_planTop *PlanTopDto) error {
 	r._planTop = _planTop
@@ -45,7 +45,7 @@ func (r *TaobaoInventoryPlanEditAPIRequest) SetPlanTop(_planTop *PlanTopDto) err
 	return nil
 }
 
-// Get PlanTop Getter
+// GetPlanTop PlanTop Getter
 func (r TaobaoInventoryPlanEditAPIRequest) GetPlanTop() *PlanTopDto {
 	return r._planTop
 }

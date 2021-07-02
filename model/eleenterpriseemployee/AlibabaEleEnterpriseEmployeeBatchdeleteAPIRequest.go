@@ -37,7 +37,7 @@ func (r AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is EmployeeNos Setter
+// SetEmployeeNos is EmployeeNos Setter
 // 员工工号
 func (r *AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) SetEmployeeNos(_employeeNos []string) error {
 	r._employeeNos = _employeeNos
@@ -45,7 +45,7 @@ func (r *AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) SetEmployeeNos(_empl
 	return nil
 }
 
-// Get EmployeeNos Getter
+// GetEmployeeNos EmployeeNos Getter
 func (r AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) GetEmployeeNos() []string {
 	return r._employeeNos
 }

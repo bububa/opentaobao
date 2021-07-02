@@ -39,7 +39,7 @@ func (r AlibabaTclsAelophyRefundDisagreeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款单ID
 func (r *AlibabaTclsAelophyRefundDisagreeAPIRequest) SetRefundId(_refundId string) error {
 	r._refundId = _refundId
@@ -47,12 +47,12 @@ func (r *AlibabaTclsAelophyRefundDisagreeAPIRequest) SetRefundId(_refundId strin
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r AlibabaTclsAelophyRefundDisagreeAPIRequest) GetRefundId() string {
 	return r._refundId
 }
 
-// Set is RejectReason Setter
+// SetRejectReason is RejectReason Setter
 // 拒绝原因
 func (r *AlibabaTclsAelophyRefundDisagreeAPIRequest) SetRejectReason(_rejectReason string) error {
 	r._rejectReason = _rejectReason
@@ -60,7 +60,7 @@ func (r *AlibabaTclsAelophyRefundDisagreeAPIRequest) SetRejectReason(_rejectReas
 	return nil
 }
 
-// Get RejectReason Getter
+// GetRejectReason RejectReason Getter
 func (r AlibabaTclsAelophyRefundDisagreeAPIRequest) GetRejectReason() string {
 	return r._rejectReason
 }

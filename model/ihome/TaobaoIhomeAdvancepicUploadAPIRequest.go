@@ -37,7 +37,7 @@ func (r TaobaoIhomeAdvancepicUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Materials Setter
+// SetMaterials is Materials Setter
 // 图片类
 func (r *TaobaoIhomeAdvancepicUploadAPIRequest) SetMaterials(_materials []AdvancePicMaterialDto) error {
 	r._materials = _materials
@@ -45,7 +45,7 @@ func (r *TaobaoIhomeAdvancepicUploadAPIRequest) SetMaterials(_materials []Advanc
 	return nil
 }
 
-// Get Materials Getter
+// GetMaterials Materials Getter
 func (r TaobaoIhomeAdvancepicUploadAPIRequest) GetMaterials() []AdvancePicMaterialDto {
 	return r._materials
 }

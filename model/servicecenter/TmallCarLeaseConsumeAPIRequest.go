@@ -37,7 +37,7 @@ func (r TmallCarLeaseConsumeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CosumeCodeReqDTO Setter
+// SetCosumeCodeReqDTO is CosumeCodeReqDTO Setter
 // 核销请求
 func (r *TmallCarLeaseConsumeAPIRequest) SetCosumeCodeReqDTO(_cosumeCodeReqDTO *CosumeCodeReqDto) error {
 	r._cosumeCodeReqDTO = _cosumeCodeReqDTO
@@ -45,7 +45,7 @@ func (r *TmallCarLeaseConsumeAPIRequest) SetCosumeCodeReqDTO(_cosumeCodeReqDTO *
 	return nil
 }
 
-// Get CosumeCodeReqDTO Getter
+// GetCosumeCodeReqDTO CosumeCodeReqDTO Getter
 func (r TmallCarLeaseConsumeAPIRequest) GetCosumeCodeReqDTO() *CosumeCodeReqDto {
 	return r._cosumeCodeReqDTO
 }

@@ -41,7 +41,7 @@ func (r AlibabaHappytripTaxiCityGetidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Lat Setter
+// SetLat is Lat Setter
 // 纬度
 func (r *AlibabaHappytripTaxiCityGetidAPIRequest) SetLat(_lat string) error {
 	r._lat = _lat
@@ -49,12 +49,12 @@ func (r *AlibabaHappytripTaxiCityGetidAPIRequest) SetLat(_lat string) error {
 	return nil
 }
 
-// Get Lat Getter
+// GetLat Lat Getter
 func (r AlibabaHappytripTaxiCityGetidAPIRequest) GetLat() string {
 	return r._lat
 }
 
-// Set is Lng Setter
+// SetLng is Lng Setter
 // 经度
 func (r *AlibabaHappytripTaxiCityGetidAPIRequest) SetLng(_lng string) error {
 	r._lng = _lng
@@ -62,12 +62,12 @@ func (r *AlibabaHappytripTaxiCityGetidAPIRequest) SetLng(_lng string) error {
 	return nil
 }
 
-// Get Lng Getter
+// GetLng Lng Getter
 func (r AlibabaHappytripTaxiCityGetidAPIRequest) GetLng() string {
 	return r._lng
 }
 
-// Set is MapType Setter
+// SetMapType is MapType Setter
 // 地图类型:amap：高德，默认高德地图
 func (r *AlibabaHappytripTaxiCityGetidAPIRequest) SetMapType(_mapType string) error {
 	r._mapType = _mapType
@@ -75,7 +75,7 @@ func (r *AlibabaHappytripTaxiCityGetidAPIRequest) SetMapType(_mapType string) er
 	return nil
 }
 
-// Get MapType Getter
+// GetMapType MapType Getter
 func (r AlibabaHappytripTaxiCityGetidAPIRequest) GetMapType() string {
 	return r._mapType
 }

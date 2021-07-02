@@ -37,7 +37,7 @@ func (r TmallProductSpecsTicketGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SpecIds Setter
+// SetSpecIds is SpecIds Setter
 // 产品规格ID，多个用逗号分隔
 func (r *TmallProductSpecsTicketGetAPIRequest) SetSpecIds(_specIds string) error {
 	r._specIds = _specIds
@@ -45,7 +45,7 @@ func (r *TmallProductSpecsTicketGetAPIRequest) SetSpecIds(_specIds string) error
 	return nil
 }
 
-// Get SpecIds Getter
+// GetSpecIds SpecIds Getter
 func (r TmallProductSpecsTicketGetAPIRequest) GetSpecIds() string {
 	return r._specIds
 }

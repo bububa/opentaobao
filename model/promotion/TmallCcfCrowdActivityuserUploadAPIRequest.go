@@ -43,7 +43,7 @@ func (r TmallCcfCrowdActivityuserUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动id
 func (r *TmallCcfCrowdActivityuserUploadAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -51,12 +51,12 @@ func (r *TmallCcfCrowdActivityuserUploadAPIRequest) SetActivityId(_activityId in
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TmallCcfCrowdActivityuserUploadAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }
 
-// Set is CrowdTypes Setter
+// SetCrowdTypes is CrowdTypes Setter
 // 人群类型
 func (r *TmallCcfCrowdActivityuserUploadAPIRequest) SetCrowdTypes(_crowdTypes []string) error {
 	r._crowdTypes = _crowdTypes
@@ -64,12 +64,12 @@ func (r *TmallCcfCrowdActivityuserUploadAPIRequest) SetCrowdTypes(_crowdTypes []
 	return nil
 }
 
-// Get CrowdTypes Getter
+// GetCrowdTypes CrowdTypes Getter
 func (r TmallCcfCrowdActivityuserUploadAPIRequest) GetCrowdTypes() []string {
 	return r._crowdTypes
 }
 
-// Set is TaobaoOpenId Setter
+// SetTaobaoOpenId is TaobaoOpenId Setter
 // 淘宝小程序的openid
 func (r *TmallCcfCrowdActivityuserUploadAPIRequest) SetTaobaoOpenId(_taobaoOpenId string) error {
 	r._taobaoOpenId = _taobaoOpenId
@@ -77,12 +77,12 @@ func (r *TmallCcfCrowdActivityuserUploadAPIRequest) SetTaobaoOpenId(_taobaoOpenI
 	return nil
 }
 
-// Get TaobaoOpenId Getter
+// GetTaobaoOpenId TaobaoOpenId Getter
 func (r TmallCcfCrowdActivityuserUploadAPIRequest) GetTaobaoOpenId() string {
 	return r._taobaoOpenId
 }
 
-// Set is TaobaoAppKey Setter
+// SetTaobaoAppKey is TaobaoAppKey Setter
 // 小程序对应的appKey
 func (r *TmallCcfCrowdActivityuserUploadAPIRequest) SetTaobaoAppKey(_taobaoAppKey string) error {
 	r._taobaoAppKey = _taobaoAppKey
@@ -90,7 +90,7 @@ func (r *TmallCcfCrowdActivityuserUploadAPIRequest) SetTaobaoAppKey(_taobaoAppKe
 	return nil
 }
 
-// Get TaobaoAppKey Getter
+// GetTaobaoAppKey TaobaoAppKey Getter
 func (r TmallCcfCrowdActivityuserUploadAPIRequest) GetTaobaoAppKey() string {
 	return r._taobaoAppKey
 }

@@ -37,7 +37,7 @@ func (r AlibabaLstTradeSellerOfflineOrderCancelAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is OfflineOrderCancalParam Setter
+// SetOfflineOrderCancalParam is OfflineOrderCancalParam Setter
 // 入参
 func (r *AlibabaLstTradeSellerOfflineOrderCancelAPIRequest) SetOfflineOrderCancalParam(_offlineOrderCancalParam *LstOfflineOrderCancalParam) error {
 	r._offlineOrderCancalParam = _offlineOrderCancalParam
@@ -45,7 +45,7 @@ func (r *AlibabaLstTradeSellerOfflineOrderCancelAPIRequest) SetOfflineOrderCanca
 	return nil
 }
 
-// Get OfflineOrderCancalParam Getter
+// GetOfflineOrderCancalParam OfflineOrderCancalParam Getter
 func (r AlibabaLstTradeSellerOfflineOrderCancelAPIRequest) GetOfflineOrderCancalParam() *LstOfflineOrderCancalParam {
 	return r._offlineOrderCancalParam
 }

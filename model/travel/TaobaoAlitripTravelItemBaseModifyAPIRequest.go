@@ -57,7 +57,7 @@ func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupItemExt Setter
+// SetGroupItemExt is GroupItemExt Setter
 // 跟团游商品相关信息
 func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetGroupItemExt(_groupItemExt *PontusTravelGroupItemExt) error {
 	r._groupItemExt = _groupItemExt
@@ -65,12 +65,12 @@ func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetGroupItemExt(_groupItem
 	return nil
 }
 
-// Get GroupItemExt Getter
+// GetGroupItemExt GroupItemExt Getter
 func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetGroupItemExt() *PontusTravelGroupItemExt {
 	return r._groupItemExt
 }
 
-// Set is BaseInfo Setter
+// SetBaseInfo is BaseInfo Setter
 // 商品基本信息
 func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetBaseInfo(_baseInfo *PontusTravelItemBaseInfo) error {
 	r._baseInfo = _baseInfo
@@ -78,12 +78,12 @@ func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetBaseInfo(_baseInfo *Pon
 	return nil
 }
 
-// Get BaseInfo Getter
+// GetBaseInfo BaseInfo Getter
 func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetBaseInfo() *PontusTravelItemBaseInfo {
 	return r._baseInfo
 }
 
-// Set is Itineraries Setter
+// SetItineraries is Itineraries Setter
 // 详细行程描述结构
 func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetItineraries(_itineraries []PontusTravelItemItineraryInfo) error {
 	r._itineraries = _itineraries
@@ -91,12 +91,12 @@ func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetItineraries(_itinerarie
 	return nil
 }
 
-// Get Itineraries Getter
+// GetItineraries Itineraries Getter
 func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetItineraries() []PontusTravelItemItineraryInfo {
 	return r._itineraries
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -104,12 +104,12 @@ func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetItemId(_itemId int64) e
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is RefundInfo Setter
+// SetRefundInfo is RefundInfo Setter
 // 退款规则结构
 func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetRefundInfo(_refundInfo *PontusTravelItemRefundInfo) error {
 	r._refundInfo = _refundInfo
@@ -117,12 +117,12 @@ func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetRefundInfo(_refundInfo 
 	return nil
 }
 
-// Get RefundInfo Getter
+// GetRefundInfo RefundInfo Getter
 func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetRefundInfo() *PontusTravelItemRefundInfo {
 	return r._refundInfo
 }
 
-// Set is BookingRules Setter
+// SetBookingRules is BookingRules Setter
 // 预定规则结构
 func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetBookingRules(_bookingRules []PontusTravelBookingRuleInfo) error {
 	r._bookingRules = _bookingRules
@@ -130,12 +130,12 @@ func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetBookingRules(_bookingRu
 	return nil
 }
 
-// Get BookingRules Getter
+// GetBookingRules BookingRules Getter
 func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetBookingRules() []PontusTravelBookingRuleInfo {
 	return r._bookingRules
 }
 
-// Set is FreedomItemExt Setter
+// SetFreedomItemExt is FreedomItemExt Setter
 // 自由行商品相关信息
 func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetFreedomItemExt(_freedomItemExt *PontusTravelFreedomItemExt) error {
 	r._freedomItemExt = _freedomItemExt
@@ -143,12 +143,12 @@ func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetFreedomItemExt(_freedom
 	return nil
 }
 
-// Get FreedomItemExt Getter
+// GetFreedomItemExt FreedomItemExt Getter
 func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetFreedomItemExt() *PontusTravelFreedomItemExt {
 	return r._freedomItemExt
 }
 
-// Set is SalesInfo Setter
+// SetSalesInfo is SalesInfo Setter
 // 商品的销售属性相关信息
 func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetSalesInfo(_salesInfo *PontusTravelItemSaleInfo) error {
 	r._salesInfo = _salesInfo
@@ -156,12 +156,12 @@ func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetSalesInfo(_salesInfo *P
 	return nil
 }
 
-// Get SalesInfo Getter
+// GetSalesInfo SalesInfo Getter
 func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetSalesInfo() *PontusTravelItemSaleInfo {
 	return r._salesInfo
 }
 
-// Set is FieldsToClean Setter
+// SetFieldsToClean is FieldsToClean Setter
 // 可选，支持清空商品某些字段内容。多个待清空字段名之间以英文逗号分隔。目前支持清除以下字段内容：seller_cids表示删除关联的店铺类目id
 func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetFieldsToClean(_fieldsToClean string) error {
 	r._fieldsToClean = _fieldsToClean
@@ -169,12 +169,12 @@ func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetFieldsToClean(_fieldsTo
 	return nil
 }
 
-// Get FieldsToClean Getter
+// GetFieldsToClean FieldsToClean Getter
 func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetFieldsToClean() string {
 	return r._fieldsToClean
 }
 
-// Set is CruiseItemExt Setter
+// SetCruiseItemExt is CruiseItemExt Setter
 // 邮轮商品相关扩展信息
 func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetCruiseItemExt(_cruiseItemExt *CruiseItemExt) error {
 	r._cruiseItemExt = _cruiseItemExt
@@ -182,12 +182,12 @@ func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetCruiseItemExt(_cruiseIt
 	return nil
 }
 
-// Get CruiseItemExt Getter
+// GetCruiseItemExt CruiseItemExt Getter
 func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetCruiseItemExt() *CruiseItemExt {
 	return r._cruiseItemExt
 }
 
-// Set is TcwlItemExt Setter
+// SetTcwlItemExt is TcwlItemExt Setter
 // 同城活动商品相关扩展信息
 func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetTcwlItemExt(_tcwlItemExt *TcwlItemExt) error {
 	r._tcwlItemExt = _tcwlItemExt
@@ -195,7 +195,7 @@ func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetTcwlItemExt(_tcwlItemEx
 	return nil
 }
 
-// Get TcwlItemExt Getter
+// GetTcwlItemExt TcwlItemExt Getter
 func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetTcwlItemExt() *TcwlItemExt {
 	return r._tcwlItemExt
 }

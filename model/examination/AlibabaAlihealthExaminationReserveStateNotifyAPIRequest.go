@@ -43,7 +43,7 @@ func (r AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is UniqReserveCode Setter
+// SetUniqReserveCode is UniqReserveCode Setter
 // 服务商预约凭证
 func (r *AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
 	r._uniqReserveCode = _uniqReserveCode
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) SetUniqReserve
 	return nil
 }
 
-// Get UniqReserveCode Getter
+// GetUniqReserveCode UniqReserveCode Getter
 func (r AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) GetUniqReserveCode() string {
 	return r._uniqReserveCode
 }
 
-// Set is ReserveNumber Setter
+// SetReserveNumber is ReserveNumber Setter
 // 健康预约凭证
 func (r *AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) SetReserveNumber(_reserveNumber string) error {
 	r._reserveNumber = _reserveNumber
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) SetReserveNumb
 	return nil
 }
 
-// Get ReserveNumber Getter
+// GetReserveNumber ReserveNumber Getter
 func (r AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) GetReserveNumber() string {
 	return r._reserveNumber
 }
 
-// Set is ReportStatus Setter
+// SetReportStatus is ReportStatus Setter
 // 体检状态：未到检(exam_not), 已到检(exam_done)； 上门服务中还需以下两种状态：预约确认中（reserve_confirming），预约拒绝（reserve_rejected）；
 func (r *AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) SetReportStatus(_reportStatus string) error {
 	r._reportStatus = _reportStatus
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) SetReportStatu
 	return nil
 }
 
-// Get ReportStatus Getter
+// GetReportStatus ReportStatus Getter
 func (r AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) GetReportStatus() string {
 	return r._reportStatus
 }
 
-// Set is CheckNo Setter
+// SetCheckNo is CheckNo Setter
 // 到检凭证，exam_done状态下，该字段必填
 func (r *AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) SetCheckNo(_checkNo string) error {
 	r._checkNo = _checkNo
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) SetCheckNo(_ch
 	return nil
 }
 
-// Get CheckNo Getter
+// GetCheckNo CheckNo Getter
 func (r AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) GetCheckNo() string {
 	return r._checkNo
 }

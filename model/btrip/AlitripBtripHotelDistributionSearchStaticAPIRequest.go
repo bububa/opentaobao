@@ -37,7 +37,7 @@ func (r AlitripBtripHotelDistributionSearchStaticAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is ParamHotelInfoRQ Setter
+// SetParamHotelInfoRQ is ParamHotelInfoRQ Setter
 // 基础信息入参
 func (r *AlitripBtripHotelDistributionSearchStaticAPIRequest) SetParamHotelInfoRQ(_paramHotelInfoRQ *HotelInfoRq) error {
 	r._paramHotelInfoRQ = _paramHotelInfoRQ
@@ -45,7 +45,7 @@ func (r *AlitripBtripHotelDistributionSearchStaticAPIRequest) SetParamHotelInfoR
 	return nil
 }
 
-// Get ParamHotelInfoRQ Getter
+// GetParamHotelInfoRQ ParamHotelInfoRQ Getter
 func (r AlitripBtripHotelDistributionSearchStaticAPIRequest) GetParamHotelInfoRQ() *HotelInfoRq {
 	return r._paramHotelInfoRQ
 }

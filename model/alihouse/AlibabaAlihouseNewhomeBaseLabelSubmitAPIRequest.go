@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeBaseLabelSubmitAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Labels Setter
+// SetLabels is Labels Setter
 // 标签列表
 func (r *AlibabaAlihouseNewhomeBaseLabelSubmitAPIRequest) SetLabels(_labels []BaseLabelDto) error {
 	r._labels = _labels
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeBaseLabelSubmitAPIRequest) SetLabels(_labels []Ba
 	return nil
 }
 
-// Get Labels Getter
+// GetLabels Labels Getter
 func (r AlibabaAlihouseNewhomeBaseLabelSubmitAPIRequest) GetLabels() []BaseLabelDto {
 	return r._labels
 }

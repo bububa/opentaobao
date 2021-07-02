@@ -37,7 +37,7 @@ func (r AlibabaIdleIsvOrderCloseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IsvAppraiseIsvOrderCloseDto Setter
+// SetIsvAppraiseIsvOrderCloseDto is IsvAppraiseIsvOrderCloseDto Setter
 // 输入参数
 func (r *AlibabaIdleIsvOrderCloseAPIRequest) SetIsvAppraiseIsvOrderCloseDto(_isvAppraiseIsvOrderCloseDto *AppraiseIsvOrderCloseDto) error {
 	r._isvAppraiseIsvOrderCloseDto = _isvAppraiseIsvOrderCloseDto
@@ -45,7 +45,7 @@ func (r *AlibabaIdleIsvOrderCloseAPIRequest) SetIsvAppraiseIsvOrderCloseDto(_isv
 	return nil
 }
 
-// Get IsvAppraiseIsvOrderCloseDto Getter
+// GetIsvAppraiseIsvOrderCloseDto IsvAppraiseIsvOrderCloseDto Getter
 func (r AlibabaIdleIsvOrderCloseAPIRequest) GetIsvAppraiseIsvOrderCloseDto() *AppraiseIsvOrderCloseDto {
 	return r._isvAppraiseIsvOrderCloseDto
 }

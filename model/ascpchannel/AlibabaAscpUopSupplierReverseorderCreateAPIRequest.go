@@ -37,7 +37,7 @@ func (r AlibabaAscpUopSupplierReverseorderCreateAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ReverseCreateRequest Setter
+// SetReverseCreateRequest is ReverseCreateRequest Setter
 // 逆向销退单创建请求
 func (r *AlibabaAscpUopSupplierReverseorderCreateAPIRequest) SetReverseCreateRequest(_reverseCreateRequest *ReverseCreateRequest) error {
 	r._reverseCreateRequest = _reverseCreateRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpUopSupplierReverseorderCreateAPIRequest) SetReverseCreateReq
 	return nil
 }
 
-// Get ReverseCreateRequest Getter
+// GetReverseCreateRequest ReverseCreateRequest Getter
 func (r AlibabaAscpUopSupplierReverseorderCreateAPIRequest) GetReverseCreateRequest() *ReverseCreateRequest {
 	return r._reverseCreateRequest
 }

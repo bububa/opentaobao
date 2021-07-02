@@ -39,7 +39,7 @@ func (r AlibabaEleFengniaoCarrierdriverLocationAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // appid
 func (r *AlibabaEleFengniaoCarrierdriverLocationAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
@@ -47,12 +47,12 @@ func (r *AlibabaEleFengniaoCarrierdriverLocationAPIRequest) SetAppId(_appId stri
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r AlibabaEleFengniaoCarrierdriverLocationAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// Set is PartnerOrderCode Setter
+// SetPartnerOrderCode is PartnerOrderCode Setter
 // 外部订单号
 func (r *AlibabaEleFengniaoCarrierdriverLocationAPIRequest) SetPartnerOrderCode(_partnerOrderCode string) error {
 	r._partnerOrderCode = _partnerOrderCode
@@ -60,7 +60,7 @@ func (r *AlibabaEleFengniaoCarrierdriverLocationAPIRequest) SetPartnerOrderCode(
 	return nil
 }
 
-// Get PartnerOrderCode Getter
+// GetPartnerOrderCode PartnerOrderCode Getter
 func (r AlibabaEleFengniaoCarrierdriverLocationAPIRequest) GetPartnerOrderCode() string {
 	return r._partnerOrderCode
 }

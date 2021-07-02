@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Advisers Setter
+// SetAdvisers is Advisers Setter
 // 顾问列表
 func (r *AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) SetAdvisers(_advisers []ProjectAdviserDto) error {
 	r._advisers = _advisers
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) SetAdvisers(_advi
 	return nil
 }
 
-// Get Advisers Getter
+// GetAdvisers Advisers Getter
 func (r AlibabaAlihouseNewhomeProjectAdviserSubmitAPIRequest) GetAdvisers() []ProjectAdviserDto {
 	return r._advisers
 }

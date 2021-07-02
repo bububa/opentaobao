@@ -37,7 +37,7 @@ func (r AlibabaAlihealthDapHuaweiCardinfosAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // source     HUAWEI_HAG,OPPO_OAG
 func (r *AlibabaAlihealthDapHuaweiCardinfosAPIRequest) SetParam(_param string) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthDapHuaweiCardinfosAPIRequest) SetParam(_param string) e
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaAlihealthDapHuaweiCardinfosAPIRequest) GetParam() string {
 	return r._param
 }

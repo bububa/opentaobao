@@ -44,7 +44,7 @@ func (r TaobaoAlitripTravelItemShelveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id。itemId和outProductId至少填写一个
 func (r *TaobaoAlitripTravelItemShelveAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -52,12 +52,12 @@ func (r *TaobaoAlitripTravelItemShelveAPIRequest) SetItemId(_itemId int64) error
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoAlitripTravelItemShelveAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is OutProductId Setter
+// SetOutProductId is OutProductId Setter
 // 商品 外部商家编码。itemId和outProductId至少填写一个
 func (r *TaobaoAlitripTravelItemShelveAPIRequest) SetOutProductId(_outProductId string) error {
 	r._outProductId = _outProductId
@@ -65,12 +65,12 @@ func (r *TaobaoAlitripTravelItemShelveAPIRequest) SetOutProductId(_outProductId 
 	return nil
 }
 
-// Get OutProductId Getter
+// GetOutProductId OutProductId Getter
 func (r TaobaoAlitripTravelItemShelveAPIRequest) GetOutProductId() string {
 	return r._outProductId
 }
 
-// Set is ItemStatus Setter
+// SetItemStatus is ItemStatus Setter
 // 1-上架 0-下架
 func (r *TaobaoAlitripTravelItemShelveAPIRequest) SetItemStatus(_itemStatus int64) error {
 	r._itemStatus = _itemStatus
@@ -78,12 +78,12 @@ func (r *TaobaoAlitripTravelItemShelveAPIRequest) SetItemStatus(_itemStatus int6
 	return nil
 }
 
-// Get ItemStatus Getter
+// GetItemStatus ItemStatus Getter
 func (r TaobaoAlitripTravelItemShelveAPIRequest) GetItemStatus() int64 {
 	return r._itemStatus
 }
 
-// Set is OnlineTime Setter
+// SetOnlineTime is OnlineTime Setter
 // 指定定时上架时间，格式：yyyy-MM-dd HH:mm:ss。若不设置该值且item_status为1，则表示立即上架。
 func (r *TaobaoAlitripTravelItemShelveAPIRequest) SetOnlineTime(_onlineTime string) error {
 	r._onlineTime = _onlineTime
@@ -91,7 +91,7 @@ func (r *TaobaoAlitripTravelItemShelveAPIRequest) SetOnlineTime(_onlineTime stri
 	return nil
 }
 
-// Get OnlineTime Getter
+// GetOnlineTime OnlineTime Getter
 func (r TaobaoAlitripTravelItemShelveAPIRequest) GetOnlineTime() string {
 	return r._onlineTime
 }

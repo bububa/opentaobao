@@ -43,7 +43,7 @@ func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划Id
 func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -51,12 +51,12 @@ func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetCampaignId(_campaignId int6
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品Id
 func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -64,12 +64,12 @@ func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetItemId(_itemId int64) error
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 创意标题，最多20个汉字
 func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -77,12 +77,12 @@ func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetTitle(_title string) error 
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// Set is ImgUrl Setter
+// SetImgUrl is ImgUrl Setter
 // 创意图片地址，必须是商品的图片之一
 func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetImgUrl(_imgUrl string) error {
 	r._imgUrl = _imgUrl
@@ -90,7 +90,7 @@ func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetImgUrl(_imgUrl string) erro
 	return nil
 }
 
-// Get ImgUrl Getter
+// GetImgUrl ImgUrl Getter
 func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetImgUrl() string {
 	return r._imgUrl
 }

@@ -51,7 +51,7 @@ func (r XiamiContentResourceActionReportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ResourceId Setter
+// SetResourceId is ResourceId Setter
 // 资源ID
 func (r *XiamiContentResourceActionReportAPIRequest) SetResourceId(_resourceId string) error {
 	r._resourceId = _resourceId
@@ -59,12 +59,12 @@ func (r *XiamiContentResourceActionReportAPIRequest) SetResourceId(_resourceId s
 	return nil
 }
 
-// Get ResourceId Getter
+// GetResourceId ResourceId Getter
 func (r XiamiContentResourceActionReportAPIRequest) GetResourceId() string {
 	return r._resourceId
 }
 
-// Set is Num Setter
+// SetNum is Num Setter
 // 行为数量
 func (r *XiamiContentResourceActionReportAPIRequest) SetNum(_num int64) error {
 	r._num = _num
@@ -72,12 +72,12 @@ func (r *XiamiContentResourceActionReportAPIRequest) SetNum(_num int64) error {
 	return nil
 }
 
-// Get Num Getter
+// GetNum Num Getter
 func (r XiamiContentResourceActionReportAPIRequest) GetNum() int64 {
 	return r._num
 }
 
-// Set is ResourceType Setter
+// SetResourceType is ResourceType Setter
 // 资源类型（可枚举）: song(歌曲)
 func (r *XiamiContentResourceActionReportAPIRequest) SetResourceType(_resourceType string) error {
 	r._resourceType = _resourceType
@@ -85,12 +85,12 @@ func (r *XiamiContentResourceActionReportAPIRequest) SetResourceType(_resourceTy
 	return nil
 }
 
-// Get ResourceType Getter
+// GetResourceType ResourceType Getter
 func (r XiamiContentResourceActionReportAPIRequest) GetResourceType() string {
 	return r._resourceType
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // 行为类型（可枚举）：LISTEN（主动试听）、PASSIVE_LISTEN（被动试听）
 func (r *XiamiContentResourceActionReportAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -98,12 +98,12 @@ func (r *XiamiContentResourceActionReportAPIRequest) SetAction(_action string) e
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r XiamiContentResourceActionReportAPIRequest) GetAction() string {
 	return r._action
 }
 
-// Set is FromId Setter
+// SetFromId is FromId Setter
 // 来源id，如歌单id
 func (r *XiamiContentResourceActionReportAPIRequest) SetFromId(_fromId string) error {
 	r._fromId = _fromId
@@ -111,12 +111,12 @@ func (r *XiamiContentResourceActionReportAPIRequest) SetFromId(_fromId string) e
 	return nil
 }
 
-// Get FromId Getter
+// GetFromId FromId Getter
 func (r XiamiContentResourceActionReportAPIRequest) GetFromId() string {
 	return r._fromId
 }
 
-// Set is FromType Setter
+// SetFromType is FromType Setter
 // 1推荐2歌单3标签
 func (r *XiamiContentResourceActionReportAPIRequest) SetFromType(_fromType int64) error {
 	r._fromType = _fromType
@@ -124,12 +124,12 @@ func (r *XiamiContentResourceActionReportAPIRequest) SetFromType(_fromType int64
 	return nil
 }
 
-// Get FromType Getter
+// GetFromType FromType Getter
 func (r XiamiContentResourceActionReportAPIRequest) GetFromType() int64 {
 	return r._fromType
 }
 
-// Set is OpenId Setter
+// SetOpenId is OpenId Setter
 // 用户id
 func (r *XiamiContentResourceActionReportAPIRequest) SetOpenId(_openId string) error {
 	r._openId = _openId
@@ -137,12 +137,12 @@ func (r *XiamiContentResourceActionReportAPIRequest) SetOpenId(_openId string) e
 	return nil
 }
 
-// Get OpenId Getter
+// GetOpenId OpenId Getter
 func (r XiamiContentResourceActionReportAPIRequest) GetOpenId() string {
 	return r._openId
 }
 
-// Set is Utdid Setter
+// SetUtdid is Utdid Setter
 // 用户设备id
 func (r *XiamiContentResourceActionReportAPIRequest) SetUtdid(_utdid string) error {
 	r._utdid = _utdid
@@ -150,7 +150,7 @@ func (r *XiamiContentResourceActionReportAPIRequest) SetUtdid(_utdid string) err
 	return nil
 }
 
-// Get Utdid Getter
+// GetUtdid Utdid Getter
 func (r XiamiContentResourceActionReportAPIRequest) GetUtdid() string {
 	return r._utdid
 }

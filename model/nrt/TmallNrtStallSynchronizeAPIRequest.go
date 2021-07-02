@@ -37,7 +37,7 @@ func (r TmallNrtStallSynchronizeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Stall Setter
+// SetStall is Stall Setter
 // 参数对象
 func (r *TmallNrtStallSynchronizeAPIRequest) SetStall(_stall *NrtStoreDto) error {
 	r._stall = _stall
@@ -45,7 +45,7 @@ func (r *TmallNrtStallSynchronizeAPIRequest) SetStall(_stall *NrtStoreDto) error
 	return nil
 }
 
-// Get Stall Getter
+// GetStall Stall Getter
 func (r TmallNrtStallSynchronizeAPIRequest) GetStall() *NrtStoreDto {
 	return r._stall
 }

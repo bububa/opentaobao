@@ -37,7 +37,7 @@ func (r AlibabaWdkSkuChannelskuAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChSkuDOList Setter
+// SetChSkuDOList is ChSkuDOList Setter
 // 入参模型
 func (r *AlibabaWdkSkuChannelskuAddAPIRequest) SetChSkuDOList(_chSkuDOList []ChannelSkuDo) error {
 	r._chSkuDOList = _chSkuDOList
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSkuChannelskuAddAPIRequest) SetChSkuDOList(_chSkuDOList []Cha
 	return nil
 }
 
-// Get ChSkuDOList Getter
+// GetChSkuDOList ChSkuDOList Getter
 func (r AlibabaWdkSkuChannelskuAddAPIRequest) GetChSkuDOList() []ChannelSkuDo {
 	return r._chSkuDOList
 }

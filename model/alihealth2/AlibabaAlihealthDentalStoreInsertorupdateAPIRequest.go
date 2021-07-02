@@ -37,7 +37,7 @@ func (r AlibabaAlihealthDentalStoreInsertorupdateAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Store Setter
+// SetStore is Store Setter
 // 门店
 func (r *AlibabaAlihealthDentalStoreInsertorupdateAPIRequest) SetStore(_store *DentalOuterStoreRequest) error {
 	r._store = _store
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthDentalStoreInsertorupdateAPIRequest) SetStore(_store *D
 	return nil
 }
 
-// Get Store Getter
+// GetStore Store Getter
 func (r AlibabaAlihealthDentalStoreInsertorupdateAPIRequest) GetStore() *DentalOuterStoreRequest {
 	return r._store
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest) GetApiPa
 	return params
 }
 
-// Set is ReportOrderStatusRequest Setter
+// SetReportOrderStatusRequest is ReportOrderStatusRequest Setter
 // 参数对象
 func (r *AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest) SetReportOrderStatusRequest(_reportOrderStatusRequest *ReportOrderStatusRequest) error {
 	r._reportOrderStatusRequest = _reportOrderStatusRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest) SetRepo
 	return nil
 }
 
-// Get ReportOrderStatusRequest Getter
+// GetReportOrderStatusRequest ReportOrderStatusRequest Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseOrderStatusAPIRequest) GetReportOrderStatusRequest() *ReportOrderStatusRequest {
 	return r._reportOrderStatusRequest
 }

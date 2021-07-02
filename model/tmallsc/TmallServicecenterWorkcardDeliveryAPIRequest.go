@@ -37,7 +37,7 @@ func (r TmallServicecenterWorkcardDeliveryAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is IdentifyTaskDeliveryRequest Setter
+// SetIdentifyTaskDeliveryRequest is IdentifyTaskDeliveryRequest Setter
 // 工单配送请求参数
 func (r *TmallServicecenterWorkcardDeliveryAPIRequest) SetIdentifyTaskDeliveryRequest(_identifyTaskDeliveryRequest *IdentifyTaskDeliveryRequest) error {
 	r._identifyTaskDeliveryRequest = _identifyTaskDeliveryRequest
@@ -45,7 +45,7 @@ func (r *TmallServicecenterWorkcardDeliveryAPIRequest) SetIdentifyTaskDeliveryRe
 	return nil
 }
 
-// Get IdentifyTaskDeliveryRequest Getter
+// GetIdentifyTaskDeliveryRequest IdentifyTaskDeliveryRequest Getter
 func (r TmallServicecenterWorkcardDeliveryAPIRequest) GetIdentifyTaskDeliveryRequest() *IdentifyTaskDeliveryRequest {
 	return r._identifyTaskDeliveryRequest
 }

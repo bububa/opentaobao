@@ -37,7 +37,7 @@ func (r TaobaoPromotionBenefitActivityUpdateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is UpdateRequest Setter
+// SetUpdateRequest is UpdateRequest Setter
 // 修改关联的权益的活动请求
 func (r *TaobaoPromotionBenefitActivityUpdateAPIRequest) SetUpdateRequest(_updateRequest *UpdateBenefitActivityRequest) error {
 	r._updateRequest = _updateRequest
@@ -45,7 +45,7 @@ func (r *TaobaoPromotionBenefitActivityUpdateAPIRequest) SetUpdateRequest(_updat
 	return nil
 }
 
-// Get UpdateRequest Getter
+// GetUpdateRequest UpdateRequest Getter
 func (r TaobaoPromotionBenefitActivityUpdateAPIRequest) GetUpdateRequest() *UpdateBenefitActivityRequest {
 	return r._updateRequest
 }

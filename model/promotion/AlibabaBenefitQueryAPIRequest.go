@@ -47,7 +47,7 @@ func (r AlibabaBenefitQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Ename Setter
+// SetEname is Ename Setter
 // 奖池编号
 func (r *AlibabaBenefitQueryAPIRequest) SetEname(_ename string) error {
 	r._ename = _ename
@@ -55,12 +55,12 @@ func (r *AlibabaBenefitQueryAPIRequest) SetEname(_ename string) error {
 	return nil
 }
 
-// Get Ename Getter
+// GetEname Ename Getter
 func (r AlibabaBenefitQueryAPIRequest) GetEname() string {
 	return r._ename
 }
 
-// Set is AppName Setter
+// SetAppName is AppName Setter
 // 商家来源身份标识（"promotion-"+appId）
 func (r *AlibabaBenefitQueryAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
@@ -68,12 +68,12 @@ func (r *AlibabaBenefitQueryAPIRequest) SetAppName(_appName string) error {
 	return nil
 }
 
-// Get AppName Getter
+// GetAppName AppName Getter
 func (r AlibabaBenefitQueryAPIRequest) GetAppName() string {
 	return r._appName
 }
 
-// Set is AwardType Setter
+// SetAwardType is AwardType Setter
 // 表示奖池类型（发奖奖池传1，抽奖传0）
 func (r *AlibabaBenefitQueryAPIRequest) SetAwardType(_awardType string) error {
 	r._awardType = _awardType
@@ -81,7 +81,7 @@ func (r *AlibabaBenefitQueryAPIRequest) SetAwardType(_awardType string) error {
 	return nil
 }
 
-// Get AwardType Getter
+// GetAwardType AwardType Getter
 func (r AlibabaBenefitQueryAPIRequest) GetAwardType() string {
 	return r._awardType
 }

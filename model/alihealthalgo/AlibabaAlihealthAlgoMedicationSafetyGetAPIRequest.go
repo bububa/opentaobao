@@ -37,7 +37,7 @@ func (r AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ParamSolutionRequestTopSupport Setter
+// SetParamSolutionRequestTopSupport is ParamSolutionRequestTopSupport Setter
 // 业务请求对象
 func (r *AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) SetParamSolutionRequestTopSupport(_paramSolutionRequestTopSupport *SolutionRequestTopSupport) error {
 	r._paramSolutionRequestTopSupport = _paramSolutionRequestTopSupport
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) SetParamSolutionRequ
 	return nil
 }
 
-// Get ParamSolutionRequestTopSupport Getter
+// GetParamSolutionRequestTopSupport ParamSolutionRequestTopSupport Getter
 func (r AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) GetParamSolutionRequestTopSupport() *SolutionRequestTopSupport {
 	return r._paramSolutionRequestTopSupport
 }

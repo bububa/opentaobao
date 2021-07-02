@@ -37,7 +37,7 @@ func (r AlibabaWdkorderSharestockFulfillGetAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is FulfillOrderId Setter
+// SetFulfillOrderId is FulfillOrderId Setter
 // 履约单ID
 func (r *AlibabaWdkorderSharestockFulfillGetAPIRequest) SetFulfillOrderId(_fulfillOrderId string) error {
 	r._fulfillOrderId = _fulfillOrderId
@@ -45,7 +45,7 @@ func (r *AlibabaWdkorderSharestockFulfillGetAPIRequest) SetFulfillOrderId(_fulfi
 	return nil
 }
 
-// Get FulfillOrderId Getter
+// GetFulfillOrderId FulfillOrderId Getter
 func (r AlibabaWdkorderSharestockFulfillGetAPIRequest) GetFulfillOrderId() string {
 	return r._fulfillOrderId
 }

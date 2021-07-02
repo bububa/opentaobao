@@ -45,7 +45,7 @@ func (r AlibabaEinvoicePaperCommonReturnAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReqIndex Setter
+// SetReqIndex is ReqIndex Setter
 // 请求索引
 func (r *AlibabaEinvoicePaperCommonReturnAPIRequest) SetReqIndex(_reqIndex string) error {
 	r._reqIndex = _reqIndex
@@ -53,12 +53,12 @@ func (r *AlibabaEinvoicePaperCommonReturnAPIRequest) SetReqIndex(_reqIndex strin
 	return nil
 }
 
-// Get ReqIndex Getter
+// GetReqIndex ReqIndex Getter
 func (r AlibabaEinvoicePaperCommonReturnAPIRequest) GetReqIndex() string {
 	return r._reqIndex
 }
 
-// Set is Success Setter
+// SetSuccess is Success Setter
 // 回传结果
 func (r *AlibabaEinvoicePaperCommonReturnAPIRequest) SetSuccess(_success bool) error {
 	r._success = _success
@@ -66,12 +66,12 @@ func (r *AlibabaEinvoicePaperCommonReturnAPIRequest) SetSuccess(_success bool) e
 	return nil
 }
 
-// Get Success Getter
+// GetSuccess Success Getter
 func (r AlibabaEinvoicePaperCommonReturnAPIRequest) GetSuccess() bool {
 	return r._success
 }
 
-// Set is BizErrorCode Setter
+// SetBizErrorCode is BizErrorCode Setter
 // 错误码，success=false时必填
 func (r *AlibabaEinvoicePaperCommonReturnAPIRequest) SetBizErrorCode(_bizErrorCode string) error {
 	r._bizErrorCode = _bizErrorCode
@@ -79,12 +79,12 @@ func (r *AlibabaEinvoicePaperCommonReturnAPIRequest) SetBizErrorCode(_bizErrorCo
 	return nil
 }
 
-// Get BizErrorCode Getter
+// GetBizErrorCode BizErrorCode Getter
 func (r AlibabaEinvoicePaperCommonReturnAPIRequest) GetBizErrorCode() string {
 	return r._bizErrorCode
 }
 
-// Set is BizErrorMsg Setter
+// SetBizErrorMsg is BizErrorMsg Setter
 // 错误信息，success=false时必填
 func (r *AlibabaEinvoicePaperCommonReturnAPIRequest) SetBizErrorMsg(_bizErrorMsg string) error {
 	r._bizErrorMsg = _bizErrorMsg
@@ -92,12 +92,12 @@ func (r *AlibabaEinvoicePaperCommonReturnAPIRequest) SetBizErrorMsg(_bizErrorMsg
 	return nil
 }
 
-// Get BizErrorMsg Getter
+// GetBizErrorMsg BizErrorMsg Getter
 func (r AlibabaEinvoicePaperCommonReturnAPIRequest) GetBizErrorMsg() string {
 	return r._bizErrorMsg
 }
 
-// Set is ExtProps Setter
+// SetExtProps is ExtProps Setter
 // 扩展信息
 func (r *AlibabaEinvoicePaperCommonReturnAPIRequest) SetExtProps(_extProps string) error {
 	r._extProps = _extProps
@@ -105,7 +105,7 @@ func (r *AlibabaEinvoicePaperCommonReturnAPIRequest) SetExtProps(_extProps strin
 	return nil
 }
 
-// Get ExtProps Getter
+// GetExtProps ExtProps Getter
 func (r AlibabaEinvoicePaperCommonReturnAPIRequest) GetExtProps() string {
 	return r._extProps
 }

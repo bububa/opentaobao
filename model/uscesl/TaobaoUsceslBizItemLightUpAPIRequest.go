@@ -45,7 +45,7 @@ func (r TaobaoUsceslBizItemLightUpAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemBarCode Setter
+// SetItemBarCode is ItemBarCode Setter
 // 商品条码
 func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetItemBarCode(_itemBarCode string) error {
 	r._itemBarCode = _itemBarCode
@@ -53,12 +53,12 @@ func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetItemBarCode(_itemBarCode strin
 	return nil
 }
 
-// Get ItemBarCode Getter
+// GetItemBarCode ItemBarCode Getter
 func (r TaobaoUsceslBizItemLightUpAPIRequest) GetItemBarCode() string {
 	return r._itemBarCode
 }
 
-// Set is LedColor Setter
+// SetLedColor is LedColor Setter
 // 亮灯颜色，绿：值为2；红：值为4
 func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetLedColor(_ledColor string) error {
 	r._ledColor = _ledColor
@@ -66,12 +66,12 @@ func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetLedColor(_ledColor string) err
 	return nil
 }
 
-// Get LedColor Getter
+// GetLedColor LedColor Getter
 func (r TaobaoUsceslBizItemLightUpAPIRequest) GetLedColor() string {
 	return r._ledColor
 }
 
-// Set is LightUpTime Setter
+// SetLightUpTime is LightUpTime Setter
 // 亮灯时长，单位：秒，最大长度3600秒
 func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetLightUpTime(_lightUpTime int64) error {
 	r._lightUpTime = _lightUpTime
@@ -79,12 +79,12 @@ func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetLightUpTime(_lightUpTime int64
 	return nil
 }
 
-// Get LightUpTime Getter
+// GetLightUpTime LightUpTime Getter
 func (r TaobaoUsceslBizItemLightUpAPIRequest) GetLightUpTime() int64 {
 	return r._lightUpTime
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店编号
 func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -92,12 +92,12 @@ func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetStoreId(_storeId int64) error 
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoUsceslBizItemLightUpAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is BizBrandKey Setter
+// SetBizBrandKey is BizBrandKey Setter
 // 商家编号
 func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
 	r._bizBrandKey = _bizBrandKey
@@ -105,7 +105,7 @@ func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetBizBrandKey(_bizBrandKey strin
 	return nil
 }
 
-// Get BizBrandKey Getter
+// GetBizBrandKey BizBrandKey Getter
 func (r TaobaoUsceslBizItemLightUpAPIRequest) GetBizBrandKey() string {
 	return r._bizBrandKey
 }

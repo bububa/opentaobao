@@ -39,7 +39,7 @@ func (r AlibabaServicecenterFulfiltaskCreateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is WorkcardIds Setter
+// SetWorkcardIds is WorkcardIds Setter
 // 工单id列表
 func (r *AlibabaServicecenterFulfiltaskCreateAPIRequest) SetWorkcardIds(_workcardIds []int64) error {
 	r._workcardIds = _workcardIds
@@ -47,12 +47,12 @@ func (r *AlibabaServicecenterFulfiltaskCreateAPIRequest) SetWorkcardIds(_workcar
 	return nil
 }
 
-// Get WorkcardIds Getter
+// GetWorkcardIds WorkcardIds Getter
 func (r AlibabaServicecenterFulfiltaskCreateAPIRequest) GetWorkcardIds() []int64 {
 	return r._workcardIds
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 外部单号
 func (r *AlibabaServicecenterFulfiltaskCreateAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -60,7 +60,7 @@ func (r *AlibabaServicecenterFulfiltaskCreateAPIRequest) SetOuterId(_outerId str
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r AlibabaServicecenterFulfiltaskCreateAPIRequest) GetOuterId() string {
 	return r._outerId
 }

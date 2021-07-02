@@ -37,7 +37,7 @@ func (r AlibabaWdkPosTradeReverseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReverseRequest Setter
+// SetReverseRequest is ReverseRequest Setter
 // 退款请求
 func (r *AlibabaWdkPosTradeReverseAPIRequest) SetReverseRequest(_reverseRequest *FastBuyPosReverseRequest) error {
 	r._reverseRequest = _reverseRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkPosTradeReverseAPIRequest) SetReverseRequest(_reverseRequest 
 	return nil
 }
 
-// Get ReverseRequest Getter
+// GetReverseRequest ReverseRequest Getter
 func (r AlibabaWdkPosTradeReverseAPIRequest) GetReverseRequest() *FastBuyPosReverseRequest {
 	return r._reverseRequest
 }

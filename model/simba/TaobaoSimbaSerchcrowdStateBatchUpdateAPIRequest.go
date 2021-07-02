@@ -43,7 +43,7 @@ func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 被操作者的淘宝昵称
 func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -51,12 +51,12 @@ func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetNick(_nick string) 
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is AdgroupCrowdIds Setter
+// SetAdgroupCrowdIds is AdgroupCrowdIds Setter
 // 需要修改出价的人群包id,批量传入时用,分割
 func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetAdgroupCrowdIds(_adgroupCrowdIds []int64) error {
 	r._adgroupCrowdIds = _adgroupCrowdIds
@@ -64,12 +64,12 @@ func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetAdgroupCrowdIds(_ad
 	return nil
 }
 
-// Get AdgroupCrowdIds Getter
+// GetAdgroupCrowdIds AdgroupCrowdIds Getter
 func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetAdgroupCrowdIds() []int64 {
 	return r._adgroupCrowdIds
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广单元id
 func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -77,12 +77,12 @@ func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetAdgroupId(_adgroupI
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }
 
-// Set is State Setter
+// SetState is State Setter
 // 人群状态,0:暂停;1:启用
 func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetState(_state int64) error {
 	r._state = _state
@@ -90,7 +90,7 @@ func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetState(_state int64)
 	return nil
 }
 
-// Get State Getter
+// GetState State Getter
 func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetState() int64 {
 	return r._state
 }

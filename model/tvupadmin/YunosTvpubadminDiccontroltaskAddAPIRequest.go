@@ -37,7 +37,7 @@ func (r YunosTvpubadminDiccontroltaskAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Task Setter
+// SetTask is Task Setter
 // 任务信息
 func (r *YunosTvpubadminDiccontroltaskAddAPIRequest) SetTask(_task *DicControlTaskDo) error {
 	r._task = _task
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminDiccontroltaskAddAPIRequest) SetTask(_task *DicControlTa
 	return nil
 }
 
-// Get Task Getter
+// GetTask Task Getter
 func (r YunosTvpubadminDiccontroltaskAddAPIRequest) GetTask() *DicControlTaskDo {
 	return r._task
 }

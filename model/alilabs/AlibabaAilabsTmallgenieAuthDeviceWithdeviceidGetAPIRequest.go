@@ -39,7 +39,7 @@ func (r AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIRequest) GetApiParams
 	return params
 }
 
-// Set is ClientId Setter
+// SetClientId is ClientId Setter
 // 设备产品ID
 func (r *AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIRequest) SetClientId(_clientId string) error {
 	r._clientId = _clientId
@@ -47,12 +47,12 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIRequest) SetClientId
 	return nil
 }
 
-// Get ClientId Getter
+// GetClientId ClientId Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIRequest) GetClientId() string {
 	return r._clientId
 }
 
-// Set is Mac Setter
+// SetMac is Mac Setter
 // mac地址
 func (r *AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIRequest) SetMac(_mac string) error {
 	r._mac = _mac
@@ -60,7 +60,7 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIRequest) SetMac(_mac
 	return nil
 }
 
-// Get Mac Getter
+// GetMac Mac Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetAPIRequest) GetMac() string {
 	return r._mac
 }

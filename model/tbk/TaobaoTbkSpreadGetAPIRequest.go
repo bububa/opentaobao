@@ -38,7 +38,7 @@ func (r TaobaoTbkSpreadGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Requests Setter
+// SetRequests is Requests Setter
 // 请求列表，内部包含多个url
 func (r *TaobaoTbkSpreadGetAPIRequest) SetRequests(_requests []TbkSpreadRequest) error {
 	r._requests = _requests
@@ -46,7 +46,7 @@ func (r *TaobaoTbkSpreadGetAPIRequest) SetRequests(_requests []TbkSpreadRequest)
 	return nil
 }
 
-// Get Requests Getter
+// GetRequests Requests Getter
 func (r TaobaoTbkSpreadGetAPIRequest) GetRequests() []TbkSpreadRequest {
 	return r._requests
 }

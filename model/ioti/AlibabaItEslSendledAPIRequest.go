@@ -39,7 +39,7 @@ func (r AlibabaItEslSendledAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MacAp Setter
+// SetMacAp is MacAp Setter
 // mac
 func (r *AlibabaItEslSendledAPIRequest) SetMacAp(_macAp string) error {
 	r._macAp = _macAp
@@ -47,12 +47,12 @@ func (r *AlibabaItEslSendledAPIRequest) SetMacAp(_macAp string) error {
 	return nil
 }
 
-// Get MacAp Getter
+// GetMacAp MacAp Getter
 func (r AlibabaItEslSendledAPIRequest) GetMacAp() string {
 	return r._macAp
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 0、1、2、3：关蓝绿红
 func (r *AlibabaItEslSendledAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -60,7 +60,7 @@ func (r *AlibabaItEslSendledAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaItEslSendledAPIRequest) GetType() string {
 	return r._type
 }

@@ -55,7 +55,7 @@ func (r AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is CodeList Setter
+// SetCodeList is CodeList Setter
 // 追溯码
 func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetCodeList(_codeList []string) error {
 	r._codeList = _codeList
@@ -63,12 +63,12 @@ func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetCodeList(_codeL
 	return nil
 }
 
-// Get CodeList Getter
+// GetCodeList CodeList Getter
 func (r AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) GetCodeList() []string {
 	return r._codeList
 }
 
-// Set is CertIsvNo Setter
+// SetCertIsvNo is CertIsvNo Setter
 // ISV开放平台帐号标识
 func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetCertIsvNo(_certIsvNo string) error {
 	r._certIsvNo = _certIsvNo
@@ -76,12 +76,12 @@ func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetCertIsvNo(_cert
 	return nil
 }
 
-// Get CertIsvNo Getter
+// GetCertIsvNo CertIsvNo Getter
 func (r AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) GetCertIsvNo() string {
 	return r._certIsvNo
 }
 
-// Set is Invocation Setter
+// SetInvocation is Invocation Setter
 // 调用方式：formal-正式、test-测试
 func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetInvocation(_invocation string) error {
 	r._invocation = _invocation
@@ -89,12 +89,12 @@ func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetInvocation(_inv
 	return nil
 }
 
-// Get Invocation Getter
+// GetInvocation Invocation Getter
 func (r AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) GetInvocation() string {
 	return r._invocation
 }
 
-// Set is TerminalType Setter
+// SetTerminalType is TerminalType Setter
 // 终端类型 1005100-零售药店 ；10052-医疗机构    10053-建行智能pos机，10054-建行裕农通，10055-建行手机银行，10056-建行龙易行，10057-建行APP，10058-建行自助设备，10059-建行扫码设备
 func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetTerminalType(_terminalType string) error {
 	r._terminalType = _terminalType
@@ -102,12 +102,12 @@ func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetTerminalType(_t
 	return nil
 }
 
-// Get TerminalType Getter
+// GetTerminalType TerminalType Getter
 func (r AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) GetTerminalType() string {
 	return r._terminalType
 }
 
-// Set is TerminalName Setter
+// SetTerminalName is TerminalName Setter
 // 调用零售药店名称
 func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetTerminalName(_terminalName string) error {
 	r._terminalName = _terminalName
@@ -115,12 +115,12 @@ func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetTerminalName(_t
 	return nil
 }
 
-// Get TerminalName Getter
+// GetTerminalName TerminalName Getter
 func (r AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) GetTerminalName() string {
 	return r._terminalName
 }
 
-// Set is BureauId Setter
+// SetBureauId is BureauId Setter
 // 门店所属的行政区域ID
 func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetBureauId(_bureauId string) error {
 	r._bureauId = _bureauId
@@ -128,12 +128,12 @@ func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetBureauId(_burea
 	return nil
 }
 
-// Get BureauId Getter
+// GetBureauId BureauId Getter
 func (r AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) GetBureauId() string {
 	return r._bureauId
 }
 
-// Set is TerminalEntId Setter
+// SetTerminalEntId is TerminalEntId Setter
 // 零售终端id
 func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetTerminalEntId(_terminalEntId string) error {
 	r._terminalEntId = _terminalEntId
@@ -141,7 +141,7 @@ func (r *AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) SetTerminalEntId(_
 	return nil
 }
 
-// Get TerminalEntId Getter
+// GetTerminalEntId TerminalEntId Getter
 func (r AlibabaAlihealthDrugCodeListCodeSuperviseAPIRequest) GetTerminalEntId() string {
 	return r._terminalEntId
 }

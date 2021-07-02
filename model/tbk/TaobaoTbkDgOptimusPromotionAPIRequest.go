@@ -43,7 +43,7 @@ func (r TaobaoTbkDgOptimusPromotionAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小，一次请求请限制在10以内
 func (r *TaobaoTbkDgOptimusPromotionAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -51,12 +51,12 @@ func (r *TaobaoTbkDgOptimusPromotionAPIRequest) SetPageSize(_pageSize int64) err
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTbkDgOptimusPromotionAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNum Setter
+// SetPageNum is PageNum Setter
 // 第几页，默认：1
 func (r *TaobaoTbkDgOptimusPromotionAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
@@ -64,12 +64,12 @@ func (r *TaobaoTbkDgOptimusPromotionAPIRequest) SetPageNum(_pageNum int64) error
 	return nil
 }
 
-// Get PageNum Getter
+// GetPageNum PageNum Getter
 func (r TaobaoTbkDgOptimusPromotionAPIRequest) GetPageNum() int64 {
 	return r._pageNum
 }
 
-// Set is AdzoneId Setter
+// SetAdzoneId is AdzoneId Setter
 // mm_xxx_xxx_xxx的第3段数字
 func (r *TaobaoTbkDgOptimusPromotionAPIRequest) SetAdzoneId(_adzoneId int64) error {
 	r._adzoneId = _adzoneId
@@ -77,12 +77,12 @@ func (r *TaobaoTbkDgOptimusPromotionAPIRequest) SetAdzoneId(_adzoneId int64) err
 	return nil
 }
 
-// Get AdzoneId Getter
+// GetAdzoneId AdzoneId Getter
 func (r TaobaoTbkDgOptimusPromotionAPIRequest) GetAdzoneId() int64 {
 	return r._adzoneId
 }
 
-// Set is PromotionId Setter
+// SetPromotionId is PromotionId Setter
 // 官方提供的权益物料Id。有价券-37104、大额店铺券-37116，更多权益物料id敬请期待！
 func (r *TaobaoTbkDgOptimusPromotionAPIRequest) SetPromotionId(_promotionId int64) error {
 	r._promotionId = _promotionId
@@ -90,7 +90,7 @@ func (r *TaobaoTbkDgOptimusPromotionAPIRequest) SetPromotionId(_promotionId int6
 	return nil
 }
 
-// Get PromotionId Getter
+// GetPromotionId PromotionId Getter
 func (r TaobaoTbkDgOptimusPromotionAPIRequest) GetPromotionId() int64 {
 	return r._promotionId
 }

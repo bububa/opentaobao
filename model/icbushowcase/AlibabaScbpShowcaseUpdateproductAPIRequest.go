@@ -39,7 +39,7 @@ func (r AlibabaScbpShowcaseUpdateproductAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WindowId Setter
+// SetWindowId is WindowId Setter
 // 橱窗id
 func (r *AlibabaScbpShowcaseUpdateproductAPIRequest) SetWindowId(_windowId int64) error {
 	r._windowId = _windowId
@@ -47,12 +47,12 @@ func (r *AlibabaScbpShowcaseUpdateproductAPIRequest) SetWindowId(_windowId int64
 	return nil
 }
 
-// Get WindowId Getter
+// GetWindowId WindowId Getter
 func (r AlibabaScbpShowcaseUpdateproductAPIRequest) GetWindowId() int64 {
 	return r._windowId
 }
 
-// Set is NewProductId Setter
+// SetNewProductId is NewProductId Setter
 // 新的商品id
 func (r *AlibabaScbpShowcaseUpdateproductAPIRequest) SetNewProductId(_newProductId int64) error {
 	r._newProductId = _newProductId
@@ -60,7 +60,7 @@ func (r *AlibabaScbpShowcaseUpdateproductAPIRequest) SetNewProductId(_newProduct
 	return nil
 }
 
-// Get NewProductId Getter
+// GetNewProductId NewProductId Getter
 func (r AlibabaScbpShowcaseUpdateproductAPIRequest) GetNewProductId() int64 {
 	return r._newProductId
 }

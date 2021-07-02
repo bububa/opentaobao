@@ -39,7 +39,7 @@ func (r AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) GetAp
 	return params
 }
 
-// Set is EntId Setter
+// SetEntId is EntId Setter
 // 奶粉品牌ID
 func (r *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) SetEntId(_entId string) error {
 	r._entId = _entId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) SetE
 	return nil
 }
 
-// Get EntId Getter
+// GetEntId EntId Getter
 func (r AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) GetEntId() string {
 	return r._entId
 }
 
-// Set is JsonStr Setter
+// SetJsonStr is JsonStr Setter
 // 奶粉数据
 func (r *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) SetJsonStr(_jsonStr string) error {
 	r._jsonStr = _jsonStr
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) SetJ
 	return nil
 }
 
-// Get JsonStr Getter
+// GetJsonStr JsonStr Getter
 func (r AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataAPIRequest) GetJsonStr() string {
 	return r._jsonStr
 }

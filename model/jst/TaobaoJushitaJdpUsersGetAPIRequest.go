@@ -45,7 +45,7 @@ func (r TaobaoJushitaJdpUsersGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartModified Setter
+// SetStartModified is StartModified Setter
 // 此参数一般不用传，用于查询最后更改时间在某个时间段内的用户
 func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetStartModified(_startModified string) error {
 	r._startModified = _startModified
@@ -53,12 +53,12 @@ func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetStartModified(_startModified str
 	return nil
 }
 
-// Get StartModified Getter
+// GetStartModified StartModified Getter
 func (r TaobaoJushitaJdpUsersGetAPIRequest) GetStartModified() string {
 	return r._startModified
 }
 
-// Set is EndModified Setter
+// SetEndModified is EndModified Setter
 // 此参数一般不用传，用于查询最后更改时间在某个时间段内的用户
 func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetEndModified(_endModified string) error {
 	r._endModified = _endModified
@@ -66,12 +66,12 @@ func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetEndModified(_endModified string)
 	return nil
 }
 
-// Get EndModified Getter
+// GetEndModified EndModified Getter
 func (r TaobaoJushitaJdpUsersGetAPIRequest) GetEndModified() string {
 	return r._endModified
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页记录数，默认200
 func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -79,12 +79,12 @@ func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoJushitaJdpUsersGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 当前页数
 func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -92,12 +92,12 @@ func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoJushitaJdpUsersGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 如果传了user_id表示单条查询
 func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -105,7 +105,7 @@ func (r *TaobaoJushitaJdpUsersGetAPIRequest) SetUserId(_userId int64) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoJushitaJdpUsersGetAPIRequest) GetUserId() int64 {
 	return r._userId
 }

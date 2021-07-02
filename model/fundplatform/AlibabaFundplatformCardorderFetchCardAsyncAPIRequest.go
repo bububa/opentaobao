@@ -37,7 +37,7 @@ func (r AlibabaFundplatformCardorderFetchCardAsyncAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is ParamCardFetchAsyncRequest Setter
+// SetParamCardFetchAsyncRequest is ParamCardFetchAsyncRequest Setter
 // 入参复杂对象
 func (r *AlibabaFundplatformCardorderFetchCardAsyncAPIRequest) SetParamCardFetchAsyncRequest(_paramCardFetchAsyncRequest *CardFetchAsyncRequest) error {
 	r._paramCardFetchAsyncRequest = _paramCardFetchAsyncRequest
@@ -45,7 +45,7 @@ func (r *AlibabaFundplatformCardorderFetchCardAsyncAPIRequest) SetParamCardFetch
 	return nil
 }
 
-// Get ParamCardFetchAsyncRequest Getter
+// GetParamCardFetchAsyncRequest ParamCardFetchAsyncRequest Getter
 func (r AlibabaFundplatformCardorderFetchCardAsyncAPIRequest) GetParamCardFetchAsyncRequest() *CardFetchAsyncRequest {
 	return r._paramCardFetchAsyncRequest
 }

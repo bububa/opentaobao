@@ -39,7 +39,7 @@ func (r AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is AuthBeginDate Setter
+// SetAuthBeginDate is AuthBeginDate Setter
 // 授权开始时间
 func (r *AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) SetAuthBeginDate(_authBeginDate string) error {
 	r._authBeginDate = _authBeginDate
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) SetAuthBeginDate(_
 	return nil
 }
 
-// Get AuthBeginDate Getter
+// GetAuthBeginDate AuthBeginDate Getter
 func (r AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) GetAuthBeginDate() string {
 	return r._authBeginDate
 }
 
-// Set is AuthEndDate Setter
+// SetAuthEndDate is AuthEndDate Setter
 // 授权结束时间
 func (r *AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) SetAuthEndDate(_authEndDate string) error {
 	r._authEndDate = _authEndDate
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) SetAuthEndDate(_au
 	return nil
 }
 
-// Get AuthEndDate Getter
+// GetAuthEndDate AuthEndDate Getter
 func (r AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) GetAuthEndDate() string {
 	return r._authEndDate
 }

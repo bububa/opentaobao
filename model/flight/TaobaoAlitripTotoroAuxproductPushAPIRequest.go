@@ -37,7 +37,7 @@ func (r TaobaoAlitripTotoroAuxproductPushAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PushAuxProductsRq Setter
+// SetPushAuxProductsRq is PushAuxProductsRq Setter
 // 廉航辅营产品推送请求
 func (r *TaobaoAlitripTotoroAuxproductPushAPIRequest) SetPushAuxProductsRq(_pushAuxProductsRq *PushAuxProductsRq) error {
 	r._pushAuxProductsRq = _pushAuxProductsRq
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripTotoroAuxproductPushAPIRequest) SetPushAuxProductsRq(_push
 	return nil
 }
 
-// Get PushAuxProductsRq Getter
+// GetPushAuxProductsRq PushAuxProductsRq Getter
 func (r TaobaoAlitripTotoroAuxproductPushAPIRequest) GetPushAuxProductsRq() *PushAuxProductsRq {
 	return r._pushAuxProductsRq
 }

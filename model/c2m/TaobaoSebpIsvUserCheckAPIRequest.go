@@ -43,7 +43,7 @@ func (r TaobaoSebpIsvUserCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserName Setter
+// SetUserName is UserName Setter
 // 淘宝账号
 func (r *TaobaoSebpIsvUserCheckAPIRequest) SetUserName(_userName string) error {
 	r._userName = _userName
@@ -51,12 +51,12 @@ func (r *TaobaoSebpIsvUserCheckAPIRequest) SetUserName(_userName string) error {
 	return nil
 }
 
-// Get UserName Getter
+// GetUserName UserName Getter
 func (r TaobaoSebpIsvUserCheckAPIRequest) GetUserName() string {
 	return r._userName
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 姓名
 func (r *TaobaoSebpIsvUserCheckAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -64,12 +64,12 @@ func (r *TaobaoSebpIsvUserCheckAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoSebpIsvUserCheckAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Identity Setter
+// SetIdentity is Identity Setter
 // 证件号
 func (r *TaobaoSebpIsvUserCheckAPIRequest) SetIdentity(_identity string) error {
 	r._identity = _identity
@@ -77,12 +77,12 @@ func (r *TaobaoSebpIsvUserCheckAPIRequest) SetIdentity(_identity string) error {
 	return nil
 }
 
-// Get Identity Getter
+// GetIdentity Identity Getter
 func (r TaobaoSebpIsvUserCheckAPIRequest) GetIdentity() string {
 	return r._identity
 }
 
-// Set is Alipay Setter
+// SetAlipay is Alipay Setter
 // 支付宝账号
 func (r *TaobaoSebpIsvUserCheckAPIRequest) SetAlipay(_alipay string) error {
 	r._alipay = _alipay
@@ -90,7 +90,7 @@ func (r *TaobaoSebpIsvUserCheckAPIRequest) SetAlipay(_alipay string) error {
 	return nil
 }
 
-// Get Alipay Getter
+// GetAlipay Alipay Getter
 func (r TaobaoSebpIsvUserCheckAPIRequest) GetAlipay() string {
 	return r._alipay
 }

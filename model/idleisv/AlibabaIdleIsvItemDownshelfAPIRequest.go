@@ -37,7 +37,7 @@ func (r AlibabaIdleIsvItemDownshelfAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 返回结果result
 func (r *AlibabaIdleIsvItemDownshelfAPIRequest) SetParam(_param *IdleItemBaseApiDo) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaIdleIsvItemDownshelfAPIRequest) SetParam(_param *IdleItemBaseApi
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaIdleIsvItemDownshelfAPIRequest) GetParam() *IdleItemBaseApiDo {
 	return r._param
 }

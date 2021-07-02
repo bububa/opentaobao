@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmRechargeAccountflowsGetAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ParamPageQueryAccountFlowsOpenReq Setter
+// SetParamPageQueryAccountFlowsOpenReq is ParamPageQueryAccountFlowsOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmRechargeAccountflowsGetAPIRequest) SetParamPageQueryAccountFlowsOpenReq(_paramPageQueryAccountFlowsOpenReq *PageQueryAccountFlowsOpenReq) error {
 	r._paramPageQueryAccountFlowsOpenReq = _paramPageQueryAccountFlowsOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmRechargeAccountflowsGetAPIRequest) SetParamPageQueryAccou
 	return nil
 }
 
-// Get ParamPageQueryAccountFlowsOpenReq Getter
+// GetParamPageQueryAccountFlowsOpenReq ParamPageQueryAccountFlowsOpenReq Getter
 func (r AlibabaAlscCrmRechargeAccountflowsGetAPIRequest) GetParamPageQueryAccountFlowsOpenReq() *PageQueryAccountFlowsOpenReq {
 	return r._paramPageQueryAccountFlowsOpenReq
 }

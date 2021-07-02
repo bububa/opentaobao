@@ -41,7 +41,7 @@ func (r TaobaoWlbTradeorderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SubTradeId Setter
+// SetSubTradeId is SubTradeId Setter
 // 子交易号
 func (r *TaobaoWlbTradeorderGetAPIRequest) SetSubTradeId(_subTradeId string) error {
 	r._subTradeId = _subTradeId
@@ -49,12 +49,12 @@ func (r *TaobaoWlbTradeorderGetAPIRequest) SetSubTradeId(_subTradeId string) err
 	return nil
 }
 
-// Get SubTradeId Getter
+// GetSubTradeId SubTradeId Getter
 func (r TaobaoWlbTradeorderGetAPIRequest) GetSubTradeId() string {
 	return r._subTradeId
 }
 
-// Set is TradeId Setter
+// SetTradeId is TradeId Setter
 // 指定交易类型的交易号
 func (r *TaobaoWlbTradeorderGetAPIRequest) SetTradeId(_tradeId string) error {
 	r._tradeId = _tradeId
@@ -62,12 +62,12 @@ func (r *TaobaoWlbTradeorderGetAPIRequest) SetTradeId(_tradeId string) error {
 	return nil
 }
 
-// Get TradeId Getter
+// GetTradeId TradeId Getter
 func (r TaobaoWlbTradeorderGetAPIRequest) GetTradeId() string {
 	return r._tradeId
 }
 
-// Set is TradeType Setter
+// SetTradeType is TradeType Setter
 // 交易类型: TAOBAO--淘宝交易 OTHER_TRADE--其它交易
 func (r *TaobaoWlbTradeorderGetAPIRequest) SetTradeType(_tradeType string) error {
 	r._tradeType = _tradeType
@@ -75,7 +75,7 @@ func (r *TaobaoWlbTradeorderGetAPIRequest) SetTradeType(_tradeType string) error
 	return nil
 }
 
-// Get TradeType Getter
+// GetTradeType TradeType Getter
 func (r TaobaoWlbTradeorderGetAPIRequest) GetTradeType() string {
 	return r._tradeType
 }

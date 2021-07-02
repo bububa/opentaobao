@@ -37,7 +37,7 @@ func (r AlibabaNazcaAuthAuthapplyCallbackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AuthApplyDoneCallbackDo Setter
+// SetAuthApplyDoneCallbackDo is AuthApplyDoneCallbackDo Setter
 // 认证回调参数
 func (r *AlibabaNazcaAuthAuthapplyCallbackAPIRequest) SetAuthApplyDoneCallbackDo(_authApplyDoneCallbackDo *AuthApplyDoneCallBackDo) error {
 	r._authApplyDoneCallbackDo = _authApplyDoneCallbackDo
@@ -45,7 +45,7 @@ func (r *AlibabaNazcaAuthAuthapplyCallbackAPIRequest) SetAuthApplyDoneCallbackDo
 	return nil
 }
 
-// Get AuthApplyDoneCallbackDo Getter
+// GetAuthApplyDoneCallbackDo AuthApplyDoneCallbackDo Getter
 func (r AlibabaNazcaAuthAuthapplyCallbackAPIRequest) GetAuthApplyDoneCallbackDo() *AuthApplyDoneCallBackDo {
 	return r._authApplyDoneCallbackDo
 }

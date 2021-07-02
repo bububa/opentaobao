@@ -37,7 +37,7 @@ func (r AlibabaIfpFulfillWarehouseTokenQueryAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is PackageQueryDTO Setter
+// SetPackageQueryDTO is PackageQueryDTO Setter
 // 入参
 func (r *AlibabaIfpFulfillWarehouseTokenQueryAPIRequest) SetPackageQueryDTO(_packageQueryDTO *PackageQueryDto) error {
 	r._packageQueryDTO = _packageQueryDTO
@@ -45,7 +45,7 @@ func (r *AlibabaIfpFulfillWarehouseTokenQueryAPIRequest) SetPackageQueryDTO(_pac
 	return nil
 }
 
-// Get PackageQueryDTO Getter
+// GetPackageQueryDTO PackageQueryDTO Getter
 func (r AlibabaIfpFulfillWarehouseTokenQueryAPIRequest) GetPackageQueryDTO() *PackageQueryDto {
 	return r._packageQueryDTO
 }

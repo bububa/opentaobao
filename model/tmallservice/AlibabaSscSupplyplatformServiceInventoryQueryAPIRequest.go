@@ -43,7 +43,7 @@ func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is StartDay Setter
+// SetStartDay is StartDay Setter
 // 查询开始日期。yyyy-MM-dd格式
 func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetStartDay(_startDay string) error {
 	r._startDay = _startDay
@@ -51,12 +51,12 @@ func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetStartDay(_s
 	return nil
 }
 
-// Get StartDay Getter
+// GetStartDay StartDay Getter
 func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetStartDay() string {
 	return r._startDay
 }
 
-// Set is EndDay Setter
+// SetEndDay is EndDay Setter
 // 查询结束日期。与start间隔不能超过31天。yyyy-MM-dd格式
 func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetEndDay(_endDay string) error {
 	r._endDay = _endDay
@@ -64,12 +64,12 @@ func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetEndDay(_end
 	return nil
 }
 
-// Get EndDay Getter
+// GetEndDay EndDay Getter
 func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetEndDay() string {
 	return r._endDay
 }
 
-// Set is ProviderType Setter
+// SetProviderType is ProviderType Setter
 // 服务提供者类型。参考alibaba.ssc.supplyplatform.servicecapacity.save入参
 func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetProviderType(_providerType string) error {
 	r._providerType = _providerType
@@ -77,12 +77,12 @@ func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetProviderTyp
 	return nil
 }
 
-// Get ProviderType Getter
+// GetProviderType ProviderType Getter
 func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetProviderType() string {
 	return r._providerType
 }
 
-// Set is ProviderId Setter
+// SetProviderId is ProviderId Setter
 // 服务提供者类型。参考alibaba.ssc.supplyplatform.servicecapacity.save入参
 func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetProviderId(_providerId int64) error {
 	r._providerId = _providerId
@@ -90,7 +90,7 @@ func (r *AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) SetProviderId(
 	return nil
 }
 
-// Get ProviderId Getter
+// GetProviderId ProviderId Getter
 func (r AlibabaSscSupplyplatformServiceInventoryQueryAPIRequest) GetProviderId() int64 {
 	return r._providerId
 }

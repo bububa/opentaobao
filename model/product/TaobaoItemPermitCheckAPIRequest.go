@@ -41,7 +41,7 @@ func (r TaobaoItemPermitCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *TaobaoItemPermitCheckAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -49,12 +49,12 @@ func (r *TaobaoItemPermitCheckAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoItemPermitCheckAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is Cid Setter
+// SetCid is Cid Setter
 // 类目id
 func (r *TaobaoItemPermitCheckAPIRequest) SetCid(_cid int64) error {
 	r._cid = _cid
@@ -62,12 +62,12 @@ func (r *TaobaoItemPermitCheckAPIRequest) SetCid(_cid int64) error {
 	return nil
 }
 
-// Get Cid Getter
+// GetCid Cid Getter
 func (r TaobaoItemPermitCheckAPIRequest) GetCid() int64 {
 	return r._cid
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 发布类型。可选值:fixed(一口价),auction(拍卖)
 func (r *TaobaoItemPermitCheckAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -75,7 +75,7 @@ func (r *TaobaoItemPermitCheckAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoItemPermitCheckAPIRequest) GetType() string {
 	return r._type
 }

@@ -39,7 +39,7 @@ func (r TaobaoNrrsAcceptanceTaskUpdateResultAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is TaskId Setter
+// SetTaskId is TaskId Setter
 // 任务ID
 func (r *TaobaoNrrsAcceptanceTaskUpdateResultAPIRequest) SetTaskId(_taskId string) error {
 	r._taskId = _taskId
@@ -47,12 +47,12 @@ func (r *TaobaoNrrsAcceptanceTaskUpdateResultAPIRequest) SetTaskId(_taskId strin
 	return nil
 }
 
-// Get TaskId Getter
+// GetTaskId TaskId Getter
 func (r TaobaoNrrsAcceptanceTaskUpdateResultAPIRequest) GetTaskId() string {
 	return r._taskId
 }
 
-// Set is AlipayResultList Setter
+// SetAlipayResultList is AlipayResultList Setter
 // 系统自动生成
 func (r *TaobaoNrrsAcceptanceTaskUpdateResultAPIRequest) SetAlipayResultList(_alipayResultList []AlipayCheckResult) error {
 	r._alipayResultList = _alipayResultList
@@ -60,7 +60,7 @@ func (r *TaobaoNrrsAcceptanceTaskUpdateResultAPIRequest) SetAlipayResultList(_al
 	return nil
 }
 
-// Get AlipayResultList Getter
+// GetAlipayResultList AlipayResultList Getter
 func (r TaobaoNrrsAcceptanceTaskUpdateResultAPIRequest) GetAlipayResultList() []AlipayCheckResult {
 	return r._alipayResultList
 }

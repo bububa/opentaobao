@@ -41,7 +41,7 @@ func (r AlibabaScbpAdKeywordQueryKeywordRankPriceAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 计划id
 func (r *AlibabaScbpAdKeywordQueryKeywordRankPriceAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -49,12 +49,12 @@ func (r *AlibabaScbpAdKeywordQueryKeywordRankPriceAPIRequest) SetCampaignId(_cam
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r AlibabaScbpAdKeywordQueryKeywordRankPriceAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is KeywordQuery Setter
+// SetKeywordQuery is KeywordQuery Setter
 // 请求参数
 func (r *AlibabaScbpAdKeywordQueryKeywordRankPriceAPIRequest) SetKeywordQuery(_keywordQuery *KeywordQuery) error {
 	r._keywordQuery = _keywordQuery
@@ -62,12 +62,12 @@ func (r *AlibabaScbpAdKeywordQueryKeywordRankPriceAPIRequest) SetKeywordQuery(_k
 	return nil
 }
 
-// Get KeywordQuery Getter
+// GetKeywordQuery KeywordQuery Getter
 func (r AlibabaScbpAdKeywordQueryKeywordRankPriceAPIRequest) GetKeywordQuery() *KeywordQuery {
 	return r._keywordQuery
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdKeywordQueryKeywordRankPriceAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -75,7 +75,7 @@ func (r *AlibabaScbpAdKeywordQueryKeywordRankPriceAPIRequest) SetTopContext(_top
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdKeywordQueryKeywordRankPriceAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }

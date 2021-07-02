@@ -37,7 +37,7 @@ func (r YunosAppstoreAppsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Pkgs Setter
+// SetPkgs is Pkgs Setter
 // 应用包名列表
 func (r *YunosAppstoreAppsGetAPIRequest) SetPkgs(_pkgs []string) error {
 	r._pkgs = _pkgs
@@ -45,7 +45,7 @@ func (r *YunosAppstoreAppsGetAPIRequest) SetPkgs(_pkgs []string) error {
 	return nil
 }
 
-// Get Pkgs Getter
+// GetPkgs Pkgs Getter
 func (r YunosAppstoreAppsGetAPIRequest) GetPkgs() []string {
 	return r._pkgs
 }

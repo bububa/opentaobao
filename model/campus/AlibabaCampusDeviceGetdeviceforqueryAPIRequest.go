@@ -39,7 +39,7 @@ func (r AlibabaCampusDeviceGetdeviceforqueryAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 系统自动生成
 func (r *AlibabaCampusDeviceGetdeviceforqueryAPIRequest) SetQuery(_query *DeviceApiQuery) error {
 	r._query = _query
@@ -47,12 +47,12 @@ func (r *AlibabaCampusDeviceGetdeviceforqueryAPIRequest) SetQuery(_query *Device
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaCampusDeviceGetdeviceforqueryAPIRequest) GetQuery() *DeviceApiQuery {
 	return r._query
 }
 
-// Set is WorkBenchContext Setter
+// SetWorkBenchContext is WorkBenchContext Setter
 // 平台统一参数
 func (r *AlibabaCampusDeviceGetdeviceforqueryAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
 	r._workBenchContext = _workBenchContext
@@ -60,7 +60,7 @@ func (r *AlibabaCampusDeviceGetdeviceforqueryAPIRequest) SetWorkBenchContext(_wo
 	return nil
 }
 
-// Get WorkBenchContext Getter
+// GetWorkBenchContext WorkBenchContext Getter
 func (r AlibabaCampusDeviceGetdeviceforqueryAPIRequest) GetWorkBenchContext() *WorkBenchContext {
 	return r._workBenchContext
 }

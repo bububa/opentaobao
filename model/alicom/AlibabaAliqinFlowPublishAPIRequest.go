@@ -45,7 +45,7 @@ func (r AlibabaAliqinFlowPublishAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户id
 func (r *AlibabaAliqinFlowPublishAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -53,12 +53,12 @@ func (r *AlibabaAliqinFlowPublishAPIRequest) SetUserId(_userId string) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaAliqinFlowPublishAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is Flow Setter
+// SetFlow is Flow Setter
 // 流量
 func (r *AlibabaAliqinFlowPublishAPIRequest) SetFlow(_flow string) error {
 	r._flow = _flow
@@ -66,12 +66,12 @@ func (r *AlibabaAliqinFlowPublishAPIRequest) SetFlow(_flow string) error {
 	return nil
 }
 
-// Get Flow Getter
+// GetFlow Flow Getter
 func (r AlibabaAliqinFlowPublishAPIRequest) GetFlow() string {
 	return r._flow
 }
 
-// Set is Reason Setter
+// SetReason is Reason Setter
 // 原因
 func (r *AlibabaAliqinFlowPublishAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
@@ -79,12 +79,12 @@ func (r *AlibabaAliqinFlowPublishAPIRequest) SetReason(_reason string) error {
 	return nil
 }
 
-// Get Reason Getter
+// GetReason Reason Getter
 func (r AlibabaAliqinFlowPublishAPIRequest) GetReason() string {
 	return r._reason
 }
 
-// Set is Serial Setter
+// SetSerial is Serial Setter
 // 唯一流水号（字母+数字）
 func (r *AlibabaAliqinFlowPublishAPIRequest) SetSerial(_serial string) error {
 	r._serial = _serial
@@ -92,12 +92,12 @@ func (r *AlibabaAliqinFlowPublishAPIRequest) SetSerial(_serial string) error {
 	return nil
 }
 
-// Get Serial Getter
+// GetSerial Serial Getter
 func (r AlibabaAliqinFlowPublishAPIRequest) GetSerial() string {
 	return r._serial
 }
 
-// Set is Always Setter
+// SetAlways is Always Setter
 // 设置true为始终发送成功
 func (r *AlibabaAliqinFlowPublishAPIRequest) SetAlways(_always string) error {
 	r._always = _always
@@ -105,7 +105,7 @@ func (r *AlibabaAliqinFlowPublishAPIRequest) SetAlways(_always string) error {
 	return nil
 }
 
-// Get Always Getter
+// GetAlways Always Getter
 func (r AlibabaAliqinFlowPublishAPIRequest) GetAlways() string {
 	return r._always
 }

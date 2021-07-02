@@ -39,7 +39,7 @@ func (r TaobaoOmniorderStoreDeliverconfigUpdateAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *TaobaoOmniorderStoreDeliverconfigUpdateAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -47,12 +47,12 @@ func (r *TaobaoOmniorderStoreDeliverconfigUpdateAPIRequest) SetStoreId(_storeId 
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoOmniorderStoreDeliverconfigUpdateAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is StoreDeliverConfig Setter
+// SetStoreDeliverConfig is StoreDeliverConfig Setter
 // 卖家发货配置
 func (r *TaobaoOmniorderStoreDeliverconfigUpdateAPIRequest) SetStoreDeliverConfig(_storeDeliverConfig *StoreDeliverConfig) error {
 	r._storeDeliverConfig = _storeDeliverConfig
@@ -60,7 +60,7 @@ func (r *TaobaoOmniorderStoreDeliverconfigUpdateAPIRequest) SetStoreDeliverConfi
 	return nil
 }
 
-// Get StoreDeliverConfig Getter
+// GetStoreDeliverConfig StoreDeliverConfig Getter
 func (r TaobaoOmniorderStoreDeliverconfigUpdateAPIRequest) GetStoreDeliverConfig() *StoreDeliverConfig {
 	return r._storeDeliverConfig
 }

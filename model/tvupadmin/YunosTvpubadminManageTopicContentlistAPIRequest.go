@@ -37,7 +37,7 @@ func (r YunosTvpubadminManageTopicContentlistAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ProgramQuery Setter
+// SetProgramQuery is ProgramQuery Setter
 // 节目查询参数
 func (r *YunosTvpubadminManageTopicContentlistAPIRequest) SetProgramQuery(_programQuery string) error {
 	r._programQuery = _programQuery
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminManageTopicContentlistAPIRequest) SetProgramQuery(_progr
 	return nil
 }
 
-// Get ProgramQuery Getter
+// GetProgramQuery ProgramQuery Getter
 func (r YunosTvpubadminManageTopicContentlistAPIRequest) GetProgramQuery() string {
 	return r._programQuery
 }

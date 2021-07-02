@@ -37,7 +37,7 @@ func (r AlibabaBaseOrderSupplierNotifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamFlowSuppllierNotifyModel Setter
+// SetParamFlowSuppllierNotifyModel is ParamFlowSuppllierNotifyModel Setter
 // 入参对象
 func (r *AlibabaBaseOrderSupplierNotifyAPIRequest) SetParamFlowSuppllierNotifyModel(_paramFlowSuppllierNotifyModel *FlowSuppllierNotifyModel) error {
 	r._paramFlowSuppllierNotifyModel = _paramFlowSuppllierNotifyModel
@@ -45,7 +45,7 @@ func (r *AlibabaBaseOrderSupplierNotifyAPIRequest) SetParamFlowSuppllierNotifyMo
 	return nil
 }
 
-// Get ParamFlowSuppllierNotifyModel Getter
+// GetParamFlowSuppllierNotifyModel ParamFlowSuppllierNotifyModel Getter
 func (r AlibabaBaseOrderSupplierNotifyAPIRequest) GetParamFlowSuppllierNotifyModel() *FlowSuppllierNotifyModel {
 	return r._paramFlowSuppllierNotifyModel
 }

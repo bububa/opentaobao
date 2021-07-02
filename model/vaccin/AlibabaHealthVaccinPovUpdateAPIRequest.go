@@ -47,7 +47,7 @@ func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Telephone Setter
+// SetTelephone is Telephone Setter
 // 接种点联系电话
 func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetTelephone(_telephone string) error {
 	r._telephone = _telephone
@@ -55,12 +55,12 @@ func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetTelephone(_telephone string)
 	return nil
 }
 
-// Get Telephone Getter
+// GetTelephone Telephone Getter
 func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetTelephone() string {
 	return r._telephone
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 接种点具体地址
 func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetAddress(_address string) error {
 	r._address = _address
@@ -68,12 +68,12 @@ func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetAddress(_address string) err
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetAddress() string {
 	return r._address
 }
 
-// Set is Description Setter
+// SetDescription is Description Setter
 // 接种点介绍
 func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetDescription(_description string) error {
 	r._description = _description
@@ -81,12 +81,12 @@ func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetDescription(_description str
 	return nil
 }
 
-// Get Description Getter
+// GetDescription Description Getter
 func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetDescription() string {
 	return r._description
 }
 
-// Set is PovNo Setter
+// SetPovNo is PovNo Setter
 // 接种点编码
 func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetPovNo(_povNo string) error {
 	r._povNo = _povNo
@@ -94,12 +94,12 @@ func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetPovNo(_povNo string) error {
 	return nil
 }
 
-// Get PovNo Getter
+// GetPovNo PovNo Getter
 func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetPovNo() string {
 	return r._povNo
 }
 
-// Set is PovName Setter
+// SetPovName is PovName Setter
 // 接种点名称
 func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetPovName(_povName string) error {
 	r._povName = _povName
@@ -107,12 +107,12 @@ func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetPovName(_povName string) err
 	return nil
 }
 
-// Get PovName Getter
+// GetPovName PovName Getter
 func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetPovName() string {
 	return r._povName
 }
 
-// Set is BusinessTime Setter
+// SetBusinessTime is BusinessTime Setter
 // 服务时间
 func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetBusinessTime(_businessTime string) error {
 	r._businessTime = _businessTime
@@ -120,7 +120,7 @@ func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetBusinessTime(_businessTime s
 	return nil
 }
 
-// Get BusinessTime Getter
+// GetBusinessTime BusinessTime Getter
 func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetBusinessTime() string {
 	return r._businessTime
 }

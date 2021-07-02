@@ -37,7 +37,7 @@ func (r AlitripBtripCorpopApplyGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 请求对象
 func (r *AlitripBtripCorpopApplyGetAPIRequest) SetRq(_rq *OpenIsvSearchRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripCorpopApplyGetAPIRequest) SetRq(_rq *OpenIsvSearchRq) error
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripCorpopApplyGetAPIRequest) GetRq() *OpenIsvSearchRq {
 	return r._rq
 }

@@ -47,7 +47,7 @@ func (r AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is ChangeTime Setter
+// SetChangeTime is ChangeTime Setter
 // 状态发生的时间 2020-01-02 10:02:03
 func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetChangeTime(_changeTime string) error {
 	r._changeTime = _changeTime
@@ -55,12 +55,12 @@ func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetChangeTime(_cha
 	return nil
 }
 
-// Get ChangeTime Getter
+// GetChangeTime ChangeTime Getter
 func (r AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) GetChangeTime() string {
 	return r._changeTime
 }
 
-// Set is Comments Setter
+// SetComments is Comments Setter
 // 描述，如ims关单，返回关单原因。
 func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetComments(_comments string) error {
 	r._comments = _comments
@@ -68,12 +68,12 @@ func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetComments(_comme
 	return nil
 }
 
-// Get Comments Getter
+// GetComments Comments Getter
 func (r AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) GetComments() string {
 	return r._comments
 }
 
-// Set is ImsOrderId Setter
+// SetImsOrderId is ImsOrderId Setter
 // 天下秀订单id
 func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetImsOrderId(_imsOrderId string) error {
 	r._imsOrderId = _imsOrderId
@@ -81,12 +81,12 @@ func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetImsOrderId(_ims
 	return nil
 }
 
-// Get ImsOrderId Getter
+// GetImsOrderId ImsOrderId Getter
 func (r AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) GetImsOrderId() string {
 	return r._imsOrderId
 }
 
-// Set is AccountType Setter
+// SetAccountType is AccountType Setter
 // 3=抖音，1-微博 2-微信
 func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetAccountType(_accountType int64) error {
 	r._accountType = _accountType
@@ -94,12 +94,12 @@ func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetAccountType(_ac
 	return nil
 }
 
-// Get AccountType Getter
+// GetAccountType AccountType Getter
 func (r AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) GetAccountType() int64 {
 	return r._accountType
 }
 
-// Set is ExtJson Setter
+// SetExtJson is ExtJson Setter
 // 扩展字段
 func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetExtJson(_extJson string) error {
 	r._extJson = _extJson
@@ -107,12 +107,12 @@ func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetExtJson(_extJso
 	return nil
 }
 
-// Get ExtJson Getter
+// GetExtJson ExtJson Getter
 func (r AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) GetExtJson() string {
 	return r._extJson
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 1:待执行  2:执行中  3:发布  4:完成  5:取消
 func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -120,7 +120,7 @@ func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetStatus(_status 
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) GetStatus() int64 {
 	return r._status
 }

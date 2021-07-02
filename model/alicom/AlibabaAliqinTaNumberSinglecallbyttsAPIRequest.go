@@ -43,7 +43,7 @@ func (r AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is CalledNum Setter
+// SetCalledNum is CalledNum Setter
 // 被叫号码
 func (r *AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) SetCalledNum(_calledNum string) error {
 	r._calledNum = _calledNum
@@ -51,12 +51,12 @@ func (r *AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) SetCalledNum(_calledNum
 	return nil
 }
 
-// Get CalledNum Getter
+// GetCalledNum CalledNum Getter
 func (r AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) GetCalledNum() string {
 	return r._calledNum
 }
 
-// Set is CalledShowNum Setter
+// SetCalledShowNum is CalledShowNum Setter
 // 显示号码
 func (r *AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) SetCalledShowNum(_calledShowNum string) error {
 	r._calledShowNum = _calledShowNum
@@ -64,12 +64,12 @@ func (r *AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) SetCalledShowNum(_calle
 	return nil
 }
 
-// Get CalledShowNum Getter
+// GetCalledShowNum CalledShowNum Getter
 func (r AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) GetCalledShowNum() string {
 	return r._calledShowNum
 }
 
-// Set is TtsCode Setter
+// SetTtsCode is TtsCode Setter
 // tts文本模板code
 func (r *AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) SetTtsCode(_ttsCode string) error {
 	r._ttsCode = _ttsCode
@@ -77,12 +77,12 @@ func (r *AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) SetTtsCode(_ttsCode str
 	return nil
 }
 
-// Get TtsCode Getter
+// GetTtsCode TtsCode Getter
 func (r AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) GetTtsCode() string {
 	return r._ttsCode
 }
 
-// Set is Params Setter
+// SetParams is Params Setter
 // 上下文参数,tts模板含有变量的, 此参数需填写。示例:{"date":"2015年 " ,"name":"测试","extend":"回传参数"} date、name 为模板里的变量名作为key,extend为扩展信息作为回传参数的key
 func (r *AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) SetParams(_params string) error {
 	r._params = _params
@@ -90,7 +90,7 @@ func (r *AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) SetParams(_params strin
 	return nil
 }
 
-// Get Params Getter
+// GetParams Params Getter
 func (r AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) GetParams() string {
 	return r._params
 }

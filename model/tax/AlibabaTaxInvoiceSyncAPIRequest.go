@@ -37,7 +37,7 @@ func (r AlibabaTaxInvoiceSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamJson Setter
+// SetParamJson is ParamJson Setter
 // 回调发票信息，请求参数详情见链接：https://yuque.antfin-inc.com/tax/biw99l/uestb7
 func (r *AlibabaTaxInvoiceSyncAPIRequest) SetParamJson(_paramJson string) error {
 	r._paramJson = _paramJson
@@ -45,7 +45,7 @@ func (r *AlibabaTaxInvoiceSyncAPIRequest) SetParamJson(_paramJson string) error 
 	return nil
 }
 
-// Get ParamJson Getter
+// GetParamJson ParamJson Getter
 func (r AlibabaTaxInvoiceSyncAPIRequest) GetParamJson() string {
 	return r._paramJson
 }

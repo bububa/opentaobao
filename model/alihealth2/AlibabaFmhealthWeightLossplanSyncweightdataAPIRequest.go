@@ -41,7 +41,7 @@ func (r AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is TpUserId Setter
+// SetTpUserId is TpUserId Setter
 // 阿里健康id
 func (r *AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) SetTpUserId(_tpUserId int64) error {
 	r._tpUserId = _tpUserId
@@ -49,12 +49,12 @@ func (r *AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) SetTpUserId(_tpU
 	return nil
 }
 
-// Get TpUserId Getter
+// GetTpUserId TpUserId Getter
 func (r AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) GetTpUserId() int64 {
 	return r._tpUserId
 }
 
-// Set is Weight Setter
+// SetWeight is Weight Setter
 // 记录体重
 func (r *AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) SetWeight(_weight string) error {
 	r._weight = _weight
@@ -62,12 +62,12 @@ func (r *AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) SetWeight(_weigh
 	return nil
 }
 
-// Get Weight Getter
+// GetWeight Weight Getter
 func (r AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) GetWeight() string {
 	return r._weight
 }
 
-// Set is RecordDate Setter
+// SetRecordDate is RecordDate Setter
 // 记录日期
 func (r *AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) SetRecordDate(_recordDate string) error {
 	r._recordDate = _recordDate
@@ -75,7 +75,7 @@ func (r *AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) SetRecordDate(_r
 	return nil
 }
 
-// Get RecordDate Getter
+// GetRecordDate RecordDate Getter
 func (r AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) GetRecordDate() string {
 	return r._recordDate
 }

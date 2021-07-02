@@ -37,7 +37,7 @@ func (r YunosServiceCmnsCoaPushAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MsgObj Setter
+// SetMsgObj is MsgObj Setter
 // 消息结构对象
 func (r *YunosServiceCmnsCoaPushAPIRequest) SetMsgObj(_msgObj *CmnsMessage) error {
 	r._msgObj = _msgObj
@@ -45,7 +45,7 @@ func (r *YunosServiceCmnsCoaPushAPIRequest) SetMsgObj(_msgObj *CmnsMessage) erro
 	return nil
 }
 
-// Get MsgObj Getter
+// GetMsgObj MsgObj Getter
 func (r YunosServiceCmnsCoaPushAPIRequest) GetMsgObj() *CmnsMessage {
 	return r._msgObj
 }

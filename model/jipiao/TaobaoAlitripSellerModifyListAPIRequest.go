@@ -57,7 +57,7 @@ func (r TaobaoAlitripSellerModifyListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ApplyId Setter
+// SetApplyId is ApplyId Setter
 // 申请单ID
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetApplyId(_applyId int64) error {
 	r._applyId = _applyId
@@ -65,12 +65,12 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetApplyId(_applyId int64) err
 	return nil
 }
 
-// Get ApplyId Getter
+// GetApplyId ApplyId Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetApplyId() int64 {
 	return r._applyId
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 淘宝订单号
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -78,12 +78,12 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetOrderId(_orderId int64) err
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is ApplyDateEnd Setter
+// SetApplyDateEnd is ApplyDateEnd Setter
 // 改签发起时间的查询结束日期 和 更新时间必选其一
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetApplyDateEnd(_applyDateEnd string) error {
 	r._applyDateEnd = _applyDateEnd
@@ -91,12 +91,12 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetApplyDateEnd(_applyDateEnd 
 	return nil
 }
 
-// Get ApplyDateEnd Getter
+// GetApplyDateEnd ApplyDateEnd Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetApplyDateEnd() string {
 	return r._applyDateEnd
 }
 
-// Set is ApplyDateStart Setter
+// SetApplyDateStart is ApplyDateStart Setter
 // 改签发起时间的查询开始日期 和 更新时间必选其一
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetApplyDateStart(_applyDateStart string) error {
 	r._applyDateStart = _applyDateStart
@@ -104,12 +104,12 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetApplyDateStart(_applyDateSt
 	return nil
 }
 
-// Get ApplyDateStart Getter
+// GetApplyDateStart ApplyDateStart Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetApplyDateStart() string {
 	return r._applyDateStart
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 页码
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -117,12 +117,12 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetCurrentPage(_currentPage in
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is FlyDateEnd Setter
+// SetFlyDateEnd is FlyDateEnd Setter
 // 乘客起飞时间的查询结束日期
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetFlyDateEnd(_flyDateEnd string) error {
 	r._flyDateEnd = _flyDateEnd
@@ -130,12 +130,12 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetFlyDateEnd(_flyDateEnd stri
 	return nil
 }
 
-// Get FlyDateEnd Getter
+// GetFlyDateEnd FlyDateEnd Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetFlyDateEnd() string {
 	return r._flyDateEnd
 }
 
-// Set is FlyDateStart Setter
+// SetFlyDateStart is FlyDateStart Setter
 // 乘客起飞时间的查询开始日期
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetFlyDateStart(_flyDateStart string) error {
 	r._flyDateStart = _flyDateStart
@@ -143,12 +143,12 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetFlyDateStart(_flyDateStart 
 	return nil
 }
 
-// Get FlyDateStart Getter
+// GetFlyDateStart FlyDateStart Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetFlyDateStart() string {
 	return r._flyDateStart
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页记录数
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -156,12 +156,12 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetPageSize(_pageSize int64) e
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 1：初始状态，2：已改签成功，3：已拒绝，4：未付款（已回填退票费），5：已付款
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -169,12 +169,12 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetStatus(_status int64) error
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is ModifyDateEnd Setter
+// SetModifyDateEnd is ModifyDateEnd Setter
 // 记录修改结束时间  和 改签发起时间必选其一
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetModifyDateEnd(_modifyDateEnd string) error {
 	r._modifyDateEnd = _modifyDateEnd
@@ -182,12 +182,12 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetModifyDateEnd(_modifyDateEn
 	return nil
 }
 
-// Get ModifyDateEnd Getter
+// GetModifyDateEnd ModifyDateEnd Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetModifyDateEnd() string {
 	return r._modifyDateEnd
 }
 
-// Set is ModifyDateStart Setter
+// SetModifyDateStart is ModifyDateStart Setter
 // 记录修改起始时间 和 改签发起时间必选其一
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetModifyDateStart(_modifyDateStart string) error {
 	r._modifyDateStart = _modifyDateStart
@@ -195,7 +195,7 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetModifyDateStart(_modifyDate
 	return nil
 }
 
-// Get ModifyDateStart Getter
+// GetModifyDateStart ModifyDateStart Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetModifyDateStart() string {
 	return r._modifyDateStart
 }

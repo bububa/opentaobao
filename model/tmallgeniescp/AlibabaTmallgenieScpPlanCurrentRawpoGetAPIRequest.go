@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanCurrentRawpoGetAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ParamRequest Setter
+// SetParamRequest is ParamRequest Setter
 // 系统自动生成
 func (r *AlibabaTmallgenieScpPlanCurrentRawpoGetAPIRequest) SetParamRequest(_paramRequest *AbstractRequest) error {
 	r._paramRequest = _paramRequest
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanCurrentRawpoGetAPIRequest) SetParamRequest(_par
 	return nil
 }
 
-// Get ParamRequest Getter
+// GetParamRequest ParamRequest Getter
 func (r AlibabaTmallgenieScpPlanCurrentRawpoGetAPIRequest) GetParamRequest() *AbstractRequest {
 	return r._paramRequest
 }

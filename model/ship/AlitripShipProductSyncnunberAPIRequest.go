@@ -43,7 +43,7 @@ func (r AlitripShipProductSyncnunberAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CityName Setter
+// SetCityName is CityName Setter
 // 出发城市
 func (r *AlitripShipProductSyncnunberAPIRequest) SetCityName(_cityName string) error {
 	r._cityName = _cityName
@@ -51,12 +51,12 @@ func (r *AlitripShipProductSyncnunberAPIRequest) SetCityName(_cityName string) e
 	return nil
 }
 
-// Get CityName Getter
+// GetCityName CityName Getter
 func (r AlitripShipProductSyncnunberAPIRequest) GetCityName() string {
 	return r._cityName
 }
 
-// Set is CityCode Setter
+// SetCityCode is CityCode Setter
 // 出发城市code
 func (r *AlitripShipProductSyncnunberAPIRequest) SetCityCode(_cityCode string) error {
 	r._cityCode = _cityCode
@@ -64,12 +64,12 @@ func (r *AlitripShipProductSyncnunberAPIRequest) SetCityCode(_cityCode string) e
 	return nil
 }
 
-// Get CityCode Getter
+// GetCityCode CityCode Getter
 func (r AlitripShipProductSyncnunberAPIRequest) GetCityCode() string {
 	return r._cityCode
 }
 
-// Set is FromStationName Setter
+// SetFromStationName is FromStationName Setter
 // 出发港口
 func (r *AlitripShipProductSyncnunberAPIRequest) SetFromStationName(_fromStationName string) error {
 	r._fromStationName = _fromStationName
@@ -77,12 +77,12 @@ func (r *AlitripShipProductSyncnunberAPIRequest) SetFromStationName(_fromStation
 	return nil
 }
 
-// Get FromStationName Getter
+// GetFromStationName FromStationName Getter
 func (r AlitripShipProductSyncnunberAPIRequest) GetFromStationName() string {
 	return r._fromStationName
 }
 
-// Set is FromStationCode Setter
+// SetFromStationCode is FromStationCode Setter
 // 出发港口编号
 func (r *AlitripShipProductSyncnunberAPIRequest) SetFromStationCode(_fromStationCode string) error {
 	r._fromStationCode = _fromStationCode
@@ -90,7 +90,7 @@ func (r *AlitripShipProductSyncnunberAPIRequest) SetFromStationCode(_fromStation
 	return nil
 }
 
-// Get FromStationCode Getter
+// GetFromStationCode FromStationCode Getter
 func (r AlitripShipProductSyncnunberAPIRequest) GetFromStationCode() string {
 	return r._fromStationCode
 }

@@ -45,7 +45,7 @@ func (r TaobaoXhotelOrderHotelsignQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutUuid Setter
+// SetOutUuid is OutUuid Setter
 // 请求流水
 func (r *TaobaoXhotelOrderHotelsignQueryAPIRequest) SetOutUuid(_outUuid string) error {
 	r._outUuid = _outUuid
@@ -53,12 +53,12 @@ func (r *TaobaoXhotelOrderHotelsignQueryAPIRequest) SetOutUuid(_outUuid string) 
 	return nil
 }
 
-// Get OutUuid Getter
+// GetOutUuid OutUuid Getter
 func (r TaobaoXhotelOrderHotelsignQueryAPIRequest) GetOutUuid() string {
 	return r._outUuid
 }
 
-// Set is HotelCode Setter
+// SetHotelCode is HotelCode Setter
 // 商家酒店编码
 func (r *TaobaoXhotelOrderHotelsignQueryAPIRequest) SetHotelCode(_hotelCode string) error {
 	r._hotelCode = _hotelCode
@@ -66,12 +66,12 @@ func (r *TaobaoXhotelOrderHotelsignQueryAPIRequest) SetHotelCode(_hotelCode stri
 	return nil
 }
 
-// Get HotelCode Getter
+// GetHotelCode HotelCode Getter
 func (r TaobaoXhotelOrderHotelsignQueryAPIRequest) GetHotelCode() string {
 	return r._hotelCode
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 商家vendor
 func (r *TaobaoXhotelOrderHotelsignQueryAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -79,12 +79,12 @@ func (r *TaobaoXhotelOrderHotelsignQueryAPIRequest) SetVendor(_vendor string) er
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelOrderHotelsignQueryAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 1
 func (r *TaobaoXhotelOrderHotelsignQueryAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -92,12 +92,12 @@ func (r *TaobaoXhotelOrderHotelsignQueryAPIRequest) SetType(_type string) error 
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoXhotelOrderHotelsignQueryAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *TaobaoXhotelOrderHotelsignQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -105,7 +105,7 @@ func (r *TaobaoXhotelOrderHotelsignQueryAPIRequest) SetPageNo(_pageNo int64) err
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoXhotelOrderHotelsignQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

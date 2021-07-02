@@ -37,7 +37,7 @@ func (r AlitripBtripHotelDistributionOrderValidateAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is ParamBtripHotelValidateOrderRq Setter
+// SetParamBtripHotelValidateOrderRq is ParamBtripHotelValidateOrderRq Setter
 // 下单前校验入参
 func (r *AlitripBtripHotelDistributionOrderValidateAPIRequest) SetParamBtripHotelValidateOrderRq(_paramBtripHotelValidateOrderRq *BtripHotelValidateOrderRq) error {
 	r._paramBtripHotelValidateOrderRq = _paramBtripHotelValidateOrderRq
@@ -45,7 +45,7 @@ func (r *AlitripBtripHotelDistributionOrderValidateAPIRequest) SetParamBtripHote
 	return nil
 }
 
-// Get ParamBtripHotelValidateOrderRq Getter
+// GetParamBtripHotelValidateOrderRq ParamBtripHotelValidateOrderRq Getter
 func (r AlitripBtripHotelDistributionOrderValidateAPIRequest) GetParamBtripHotelValidateOrderRq() *BtripHotelValidateOrderRq {
 	return r._paramBtripHotelValidateOrderRq
 }

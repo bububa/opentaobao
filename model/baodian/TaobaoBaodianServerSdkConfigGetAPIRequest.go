@@ -43,7 +43,7 @@ func (r TaobaoBaodianServerSdkConfigGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Appkey Setter
+// SetAppkey is Appkey Setter
 // appKey
 func (r *TaobaoBaodianServerSdkConfigGetAPIRequest) SetAppkey(_appkey string) error {
 	r._appkey = _appkey
@@ -51,12 +51,12 @@ func (r *TaobaoBaodianServerSdkConfigGetAPIRequest) SetAppkey(_appkey string) er
 	return nil
 }
 
-// Get Appkey Getter
+// GetAppkey Appkey Getter
 func (r TaobaoBaodianServerSdkConfigGetAPIRequest) GetAppkey() string {
 	return r._appkey
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 渠道
 func (r *TaobaoBaodianServerSdkConfigGetAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -64,12 +64,12 @@ func (r *TaobaoBaodianServerSdkConfigGetAPIRequest) SetChannel(_channel string) 
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TaobaoBaodianServerSdkConfigGetAPIRequest) GetChannel() string {
 	return r._channel
 }
 
-// Set is SdkVer Setter
+// SetSdkVer is SdkVer Setter
 // sdk版本号
 func (r *TaobaoBaodianServerSdkConfigGetAPIRequest) SetSdkVer(_sdkVer string) error {
 	r._sdkVer = _sdkVer
@@ -77,12 +77,12 @@ func (r *TaobaoBaodianServerSdkConfigGetAPIRequest) SetSdkVer(_sdkVer string) er
 	return nil
 }
 
-// Get SdkVer Getter
+// GetSdkVer SdkVer Getter
 func (r TaobaoBaodianServerSdkConfigGetAPIRequest) GetSdkVer() string {
 	return r._sdkVer
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 与后端约定
 func (r *TaobaoBaodianServerSdkConfigGetAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -90,7 +90,7 @@ func (r *TaobaoBaodianServerSdkConfigGetAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoBaodianServerSdkConfigGetAPIRequest) GetType() int64 {
 	return r._type
 }

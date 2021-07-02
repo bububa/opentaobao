@@ -37,7 +37,7 @@ func (r CainiaoRefundRefundactionsJudgementAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 操作请求
 func (r *CainiaoRefundRefundactionsJudgementAPIRequest) SetParam0(_param0 *OrderRefundOperationJudgementReq) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *CainiaoRefundRefundactionsJudgementAPIRequest) SetParam0(_param0 *Order
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r CainiaoRefundRefundactionsJudgementAPIRequest) GetParam0() *OrderRefundOperationJudgementReq {
 	return r._param0
 }

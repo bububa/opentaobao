@@ -39,7 +39,7 @@ func (r WdkWmsPickMedicineChecksellAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 从二维码扫描出的信息
 func (r *WdkWmsPickMedicineChecksellAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -47,12 +47,12 @@ func (r *WdkWmsPickMedicineChecksellAPIRequest) SetUuid(_uuid string) error {
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r WdkWmsPickMedicineChecksellAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // shopId
 func (r *WdkWmsPickMedicineChecksellAPIRequest) SetShopId(_shopId int64) error {
 	r._shopId = _shopId
@@ -60,7 +60,7 @@ func (r *WdkWmsPickMedicineChecksellAPIRequest) SetShopId(_shopId int64) error {
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r WdkWmsPickMedicineChecksellAPIRequest) GetShopId() int64 {
 	return r._shopId
 }

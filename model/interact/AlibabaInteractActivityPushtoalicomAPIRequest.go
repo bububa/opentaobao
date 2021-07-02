@@ -39,7 +39,7 @@ func (r AlibabaInteractActivityPushtoalicomAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is BannerUrl Setter
+// SetBannerUrl is BannerUrl Setter
 // 推送到流量聚乐部的banner图
 func (r *AlibabaInteractActivityPushtoalicomAPIRequest) SetBannerUrl(_bannerUrl string) error {
 	r._bannerUrl = _bannerUrl
@@ -47,12 +47,12 @@ func (r *AlibabaInteractActivityPushtoalicomAPIRequest) SetBannerUrl(_bannerUrl 
 	return nil
 }
 
-// Get BannerUrl Getter
+// GetBannerUrl BannerUrl Getter
 func (r AlibabaInteractActivityPushtoalicomAPIRequest) GetBannerUrl() string {
 	return r._bannerUrl
 }
 
-// Set is BizId Setter
+// SetBizId is BizId Setter
 // 推送到流量聚乐部的活动bizid
 func (r *AlibabaInteractActivityPushtoalicomAPIRequest) SetBizId(_bizId string) error {
 	r._bizId = _bizId
@@ -60,7 +60,7 @@ func (r *AlibabaInteractActivityPushtoalicomAPIRequest) SetBizId(_bizId string) 
 	return nil
 }
 
-// Get BizId Getter
+// GetBizId BizId Getter
 func (r AlibabaInteractActivityPushtoalicomAPIRequest) GetBizId() string {
 	return r._bizId
 }

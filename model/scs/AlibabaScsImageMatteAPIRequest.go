@@ -47,7 +47,7 @@ func (r AlibabaScsImageMatteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Pid Setter
+// SetPid is Pid Setter
 // 资源位ID，接入前由智能创意平台分配
 func (r *AlibabaScsImageMatteAPIRequest) SetPid(_pid string) error {
 	r._pid = _pid
@@ -55,12 +55,12 @@ func (r *AlibabaScsImageMatteAPIRequest) SetPid(_pid string) error {
 	return nil
 }
 
-// Get Pid Getter
+// GetPid Pid Getter
 func (r AlibabaScsImageMatteAPIRequest) GetPid() string {
 	return r._pid
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 服务名称，可选值: scs
 func (r *AlibabaScsImageMatteAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -68,12 +68,12 @@ func (r *AlibabaScsImageMatteAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlibabaScsImageMatteAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Scenes Setter
+// SetScenes is Scenes Setter
 // 场景名称，可选值: image_cutout
 func (r *AlibabaScsImageMatteAPIRequest) SetScenes(_scenes string) error {
 	r._scenes = _scenes
@@ -81,12 +81,12 @@ func (r *AlibabaScsImageMatteAPIRequest) SetScenes(_scenes string) error {
 	return nil
 }
 
-// Get Scenes Getter
+// GetScenes Scenes Getter
 func (r AlibabaScsImageMatteAPIRequest) GetScenes() string {
 	return r._scenes
 }
 
-// Set is ObExt Setter
+// SetObExt is ObExt Setter
 // 抠图上下文信息，json字符串格式，json中matting_type字段可选值: external_matting，url: 需要抠图的目标图片url
 func (r *AlibabaScsImageMatteAPIRequest) SetObExt(_obExt string) error {
 	r._obExt = _obExt
@@ -94,12 +94,12 @@ func (r *AlibabaScsImageMatteAPIRequest) SetObExt(_obExt string) error {
 	return nil
 }
 
-// Get ObExt Getter
+// GetObExt ObExt Getter
 func (r AlibabaScsImageMatteAPIRequest) GetObExt() string {
 	return r._obExt
 }
 
-// Set is Sessionid Setter
+// SetSessionid is Sessionid Setter
 // 32位uuid
 func (r *AlibabaScsImageMatteAPIRequest) SetSessionid(_sessionid string) error {
 	r._sessionid = _sessionid
@@ -107,12 +107,12 @@ func (r *AlibabaScsImageMatteAPIRequest) SetSessionid(_sessionid string) error {
 	return nil
 }
 
-// Get Sessionid Getter
+// GetSessionid Sessionid Getter
 func (r AlibabaScsImageMatteAPIRequest) GetSessionid() string {
 	return r._sessionid
 }
 
-// Set is Ts Setter
+// SetTs is Ts Setter
 // 当前秒级时间戳
 func (r *AlibabaScsImageMatteAPIRequest) SetTs(_ts string) error {
 	r._ts = _ts
@@ -120,7 +120,7 @@ func (r *AlibabaScsImageMatteAPIRequest) SetTs(_ts string) error {
 	return nil
 }
 
-// Get Ts Getter
+// GetTs Ts Getter
 func (r AlibabaScsImageMatteAPIRequest) GetTs() string {
 	return r._ts
 }

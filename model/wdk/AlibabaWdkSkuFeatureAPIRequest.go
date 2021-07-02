@@ -37,7 +37,7 @@ func (r AlibabaWdkSkuFeatureAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // SkuFeatureDo
 func (r *AlibabaWdkSkuFeatureAPIRequest) SetParam(_param *SkuFeatureDo) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSkuFeatureAPIRequest) SetParam(_param *SkuFeatureDo) error {
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaWdkSkuFeatureAPIRequest) GetParam() *SkuFeatureDo {
 	return r._param
 }

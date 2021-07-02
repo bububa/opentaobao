@@ -41,7 +41,7 @@ func (r YunosOsupdateAppversionQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 应用ID
 func (r *YunosOsupdateAppversionQueryAPIRequest) SetAppId(_appId int64) error {
 	r._appId = _appId
@@ -49,12 +49,12 @@ func (r *YunosOsupdateAppversionQueryAPIRequest) SetAppId(_appId int64) error {
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r YunosOsupdateAppversionQueryAPIRequest) GetAppId() int64 {
 	return r._appId
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 页码值
 func (r *YunosOsupdateAppversionQueryAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -62,12 +62,12 @@ func (r *YunosOsupdateAppversionQueryAPIRequest) SetPage(_page int64) error {
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r YunosOsupdateAppversionQueryAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is Size Setter
+// SetSize is Size Setter
 // 页大小
 func (r *YunosOsupdateAppversionQueryAPIRequest) SetSize(_size int64) error {
 	r._size = _size
@@ -75,7 +75,7 @@ func (r *YunosOsupdateAppversionQueryAPIRequest) SetSize(_size int64) error {
 	return nil
 }
 
-// Get Size Getter
+// GetSize Size Getter
 func (r YunosOsupdateAppversionQueryAPIRequest) GetSize() int64 {
 	return r._size
 }

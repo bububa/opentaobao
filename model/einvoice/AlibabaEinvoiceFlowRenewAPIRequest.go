@@ -37,7 +37,7 @@ func (r AlibabaEinvoiceFlowRenewAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InvoiceFlowRenewDto Setter
+// SetInvoiceFlowRenewDto is InvoiceFlowRenewDto Setter
 // 续约请求参数
 func (r *AlibabaEinvoiceFlowRenewAPIRequest) SetInvoiceFlowRenewDto(_invoiceFlowRenewDto *InvoiceFlowRenewDto) error {
 	r._invoiceFlowRenewDto = _invoiceFlowRenewDto
@@ -45,7 +45,7 @@ func (r *AlibabaEinvoiceFlowRenewAPIRequest) SetInvoiceFlowRenewDto(_invoiceFlow
 	return nil
 }
 
-// Get InvoiceFlowRenewDto Getter
+// GetInvoiceFlowRenewDto InvoiceFlowRenewDto Getter
 func (r AlibabaEinvoiceFlowRenewAPIRequest) GetInvoiceFlowRenewDto() *InvoiceFlowRenewDto {
 	return r._invoiceFlowRenewDto
 }

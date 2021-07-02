@@ -37,7 +37,7 @@ func (r AlibabaWdkUmsReturnitemsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WarehouseCode Setter
+// SetWarehouseCode is WarehouseCode Setter
 // 店仓code，指的是作业对象，对应一个物理店或仓编码
 func (r *AlibabaWdkUmsReturnitemsGetAPIRequest) SetWarehouseCode(_warehouseCode string) error {
 	r._warehouseCode = _warehouseCode
@@ -45,7 +45,7 @@ func (r *AlibabaWdkUmsReturnitemsGetAPIRequest) SetWarehouseCode(_warehouseCode 
 	return nil
 }
 
-// Get WarehouseCode Getter
+// GetWarehouseCode WarehouseCode Getter
 func (r AlibabaWdkUmsReturnitemsGetAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
 }

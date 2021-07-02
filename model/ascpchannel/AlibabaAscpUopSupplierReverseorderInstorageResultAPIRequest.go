@@ -37,7 +37,7 @@ func (r AlibabaAscpUopSupplierReverseorderInstorageResultAPIRequest) GetApiParam
 	return params
 }
 
-// Set is InstorageResultRequest Setter
+// SetInstorageResultRequest is InstorageResultRequest Setter
 // 消退入库单结果请求
 func (r *AlibabaAscpUopSupplierReverseorderInstorageResultAPIRequest) SetInstorageResultRequest(_instorageResultRequest *Instorageresultrequest) error {
 	r._instorageResultRequest = _instorageResultRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpUopSupplierReverseorderInstorageResultAPIRequest) SetInstora
 	return nil
 }
 
-// Get InstorageResultRequest Getter
+// GetInstorageResultRequest InstorageResultRequest Getter
 func (r AlibabaAscpUopSupplierReverseorderInstorageResultAPIRequest) GetInstorageResultRequest() *Instorageresultrequest {
 	return r._instorageResultRequest
 }

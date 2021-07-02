@@ -53,7 +53,7 @@ func (r AlitripTravelCrsorderSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CrsOrderStatus Setter
+// SetCrsOrderStatus is CrsOrderStatus Setter
 // 订单状态，10-待派单，20-待用车，30-已取消，40-待处理退款申请，60-已关闭，70-已完成
 func (r *AlitripTravelCrsorderSearchAPIRequest) SetCrsOrderStatus(_crsOrderStatus int64) error {
 	r._crsOrderStatus = _crsOrderStatus
@@ -61,12 +61,12 @@ func (r *AlitripTravelCrsorderSearchAPIRequest) SetCrsOrderStatus(_crsOrderStatu
 	return nil
 }
 
-// Get CrsOrderStatus Getter
+// GetCrsOrderStatus CrsOrderStatus Getter
 func (r AlitripTravelCrsorderSearchAPIRequest) GetCrsOrderStatus() int64 {
 	return r._crsOrderStatus
 }
 
-// Set is BeginCarUseTime Setter
+// SetBeginCarUseTime is BeginCarUseTime Setter
 // 用车时间-起始
 func (r *AlitripTravelCrsorderSearchAPIRequest) SetBeginCarUseTime(_beginCarUseTime string) error {
 	r._beginCarUseTime = _beginCarUseTime
@@ -74,12 +74,12 @@ func (r *AlitripTravelCrsorderSearchAPIRequest) SetBeginCarUseTime(_beginCarUseT
 	return nil
 }
 
-// Get BeginCarUseTime Getter
+// GetBeginCarUseTime BeginCarUseTime Getter
 func (r AlitripTravelCrsorderSearchAPIRequest) GetBeginCarUseTime() string {
 	return r._beginCarUseTime
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小，默认20
 func (r *AlitripTravelCrsorderSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -87,12 +87,12 @@ func (r *AlitripTravelCrsorderSearchAPIRequest) SetPageSize(_pageSize int64) err
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlitripTravelCrsorderSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is EndCarUseTime Setter
+// SetEndCarUseTime is EndCarUseTime Setter
 // 用车时间-终止
 func (r *AlitripTravelCrsorderSearchAPIRequest) SetEndCarUseTime(_endCarUseTime string) error {
 	r._endCarUseTime = _endCarUseTime
@@ -100,12 +100,12 @@ func (r *AlitripTravelCrsorderSearchAPIRequest) SetEndCarUseTime(_endCarUseTime 
 	return nil
 }
 
-// Get EndCarUseTime Getter
+// GetEndCarUseTime EndCarUseTime Getter
 func (r AlitripTravelCrsorderSearchAPIRequest) GetEndCarUseTime() string {
 	return r._endCarUseTime
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前页，默认值1
 func (r *AlitripTravelCrsorderSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -113,12 +113,12 @@ func (r *AlitripTravelCrsorderSearchAPIRequest) SetCurrentPage(_currentPage int6
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r AlitripTravelCrsorderSearchAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is EndPayTime Setter
+// SetEndPayTime is EndPayTime Setter
 // 支付时间-终止
 func (r *AlitripTravelCrsorderSearchAPIRequest) SetEndPayTime(_endPayTime string) error {
 	r._endPayTime = _endPayTime
@@ -126,12 +126,12 @@ func (r *AlitripTravelCrsorderSearchAPIRequest) SetEndPayTime(_endPayTime string
 	return nil
 }
 
-// Get EndPayTime Getter
+// GetEndPayTime EndPayTime Getter
 func (r AlitripTravelCrsorderSearchAPIRequest) GetEndPayTime() string {
 	return r._endPayTime
 }
 
-// Set is BeginPayTime Setter
+// SetBeginPayTime is BeginPayTime Setter
 // 支付时间-起始
 func (r *AlitripTravelCrsorderSearchAPIRequest) SetBeginPayTime(_beginPayTime string) error {
 	r._beginPayTime = _beginPayTime
@@ -139,12 +139,12 @@ func (r *AlitripTravelCrsorderSearchAPIRequest) SetBeginPayTime(_beginPayTime st
 	return nil
 }
 
-// Get BeginPayTime Getter
+// GetBeginPayTime BeginPayTime Getter
 func (r AlitripTravelCrsorderSearchAPIRequest) GetBeginPayTime() string {
 	return r._beginPayTime
 }
 
-// Set is BeginCancelTime Setter
+// SetBeginCancelTime is BeginCancelTime Setter
 // 取消时间-起始
 func (r *AlitripTravelCrsorderSearchAPIRequest) SetBeginCancelTime(_beginCancelTime string) error {
 	r._beginCancelTime = _beginCancelTime
@@ -152,12 +152,12 @@ func (r *AlitripTravelCrsorderSearchAPIRequest) SetBeginCancelTime(_beginCancelT
 	return nil
 }
 
-// Get BeginCancelTime Getter
+// GetBeginCancelTime BeginCancelTime Getter
 func (r AlitripTravelCrsorderSearchAPIRequest) GetBeginCancelTime() string {
 	return r._beginCancelTime
 }
 
-// Set is EndCancelTime Setter
+// SetEndCancelTime is EndCancelTime Setter
 // 取消时间-终止
 func (r *AlitripTravelCrsorderSearchAPIRequest) SetEndCancelTime(_endCancelTime string) error {
 	r._endCancelTime = _endCancelTime
@@ -165,7 +165,7 @@ func (r *AlitripTravelCrsorderSearchAPIRequest) SetEndCancelTime(_endCancelTime 
 	return nil
 }
 
-// Get EndCancelTime Getter
+// GetEndCancelTime EndCancelTime Getter
 func (r AlitripTravelCrsorderSearchAPIRequest) GetEndCancelTime() string {
 	return r._endCancelTime
 }

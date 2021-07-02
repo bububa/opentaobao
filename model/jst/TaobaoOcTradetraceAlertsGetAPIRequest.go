@@ -41,7 +41,7 @@ func (r TaobaoOcTradetraceAlertsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AbnormalType Setter
+// SetAbnormalType is AbnormalType Setter
 // 异常类型代码：发货回写淘宝异常=1，商家系统漏单提醒=2，发货超时提醒=3，物流寄送超时=4，买家签收超时=5，物流中转异常=6，退货寄回异常=7，订单追回提醒=8"。
 func (r *TaobaoOcTradetraceAlertsGetAPIRequest) SetAbnormalType(_abnormalType int64) error {
 	r._abnormalType = _abnormalType
@@ -49,12 +49,12 @@ func (r *TaobaoOcTradetraceAlertsGetAPIRequest) SetAbnormalType(_abnormalType in
 	return nil
 }
 
-// Get AbnormalType Getter
+// GetAbnormalType AbnormalType Getter
 func (r TaobaoOcTradetraceAlertsGetAPIRequest) GetAbnormalType() int64 {
 	return r._abnormalType
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 返回数据的页码
 func (r *TaobaoOcTradetraceAlertsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -62,12 +62,12 @@ func (r *TaobaoOcTradetraceAlertsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoOcTradetraceAlertsGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 返回数据每页包含的记录数目
 func (r *TaobaoOcTradetraceAlertsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *TaobaoOcTradetraceAlertsGetAPIRequest) SetPageSize(_pageSize int64) err
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoOcTradetraceAlertsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

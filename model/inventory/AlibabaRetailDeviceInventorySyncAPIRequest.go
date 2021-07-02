@@ -43,7 +43,7 @@ func (r AlibabaRetailDeviceInventorySyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 设备类型
 func (r *AlibabaRetailDeviceInventorySyncAPIRequest) SetDeviceType(_deviceType string) error {
 	r._deviceType = _deviceType
@@ -51,12 +51,12 @@ func (r *AlibabaRetailDeviceInventorySyncAPIRequest) SetDeviceType(_deviceType s
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r AlibabaRetailDeviceInventorySyncAPIRequest) GetDeviceType() string {
 	return r._deviceType
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备Id
 func (r *AlibabaRetailDeviceInventorySyncAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -64,12 +64,12 @@ func (r *AlibabaRetailDeviceInventorySyncAPIRequest) SetDeviceId(_deviceId strin
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r AlibabaRetailDeviceInventorySyncAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is InventoryDtos Setter
+// SetInventoryDtos is InventoryDtos Setter
 // 系统自动生成
 func (r *AlibabaRetailDeviceInventorySyncAPIRequest) SetInventoryDtos(_inventoryDtos []InventorySyncDto) error {
 	r._inventoryDtos = _inventoryDtos
@@ -77,12 +77,12 @@ func (r *AlibabaRetailDeviceInventorySyncAPIRequest) SetInventoryDtos(_inventory
 	return nil
 }
 
-// Get InventoryDtos Getter
+// GetInventoryDtos InventoryDtos Getter
 func (r AlibabaRetailDeviceInventorySyncAPIRequest) GetInventoryDtos() []InventorySyncDto {
 	return r._inventoryDtos
 }
 
-// Set is DeviceOption Setter
+// SetDeviceOption is DeviceOption Setter
 // 系统自动生成
 func (r *AlibabaRetailDeviceInventorySyncAPIRequest) SetDeviceOption(_deviceOption *InventorySyncOption) error {
 	r._deviceOption = _deviceOption
@@ -90,7 +90,7 @@ func (r *AlibabaRetailDeviceInventorySyncAPIRequest) SetDeviceOption(_deviceOpti
 	return nil
 }
 
-// Get DeviceOption Getter
+// GetDeviceOption DeviceOption Getter
 func (r AlibabaRetailDeviceInventorySyncAPIRequest) GetDeviceOption() *InventorySyncOption {
 	return r._deviceOption
 }

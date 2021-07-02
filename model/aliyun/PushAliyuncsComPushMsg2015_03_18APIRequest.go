@@ -61,7 +61,7 @@ func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Account Setter
+// SetAccount is Account Setter
 // 用户账号列表,以换行区分,仅sendType为3时有效
 func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetAccount(_account string) error {
 	r._account = _account
@@ -69,12 +69,12 @@ func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetAccount(_account string)
 	return nil
 }
 
-// Get Account Getter
+// GetAccount Account Getter
 func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetAccount() string {
 	return r._account
 }
 
-// Set is AntiHarassDuration Setter
+// SetAntiHarassDuration is AntiHarassDuration Setter
 // 防打扰时长,取值范围为1~23
 func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetAntiHarassDuration(_antiHarassDuration int64) error {
 	r._antiHarassDuration = _antiHarassDuration
@@ -82,12 +82,12 @@ func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetAntiHarassDuration(_anti
 	return nil
 }
 
-// Get AntiHarassDuration Getter
+// GetAntiHarassDuration AntiHarassDuration Getter
 func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetAntiHarassDuration() int64 {
 	return r._antiHarassDuration
 }
 
-// Set is AntiHarassStartTime Setter
+// SetAntiHarassStartTime is AntiHarassStartTime Setter
 // 防打扰开始时间点,取值范围为0~23
 func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetAntiHarassStartTime(_antiHarassStartTime int64) error {
 	r._antiHarassStartTime = _antiHarassStartTime
@@ -95,12 +95,12 @@ func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetAntiHarassStartTime(_ant
 	return nil
 }
 
-// Get AntiHarassStartTime Getter
+// GetAntiHarassStartTime AntiHarassStartTime Getter
 func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetAntiHarassStartTime() int64 {
 	return r._antiHarassStartTime
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 应用标识
 func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetAppId(_appId int64) error {
 	r._appId = _appId
@@ -108,12 +108,12 @@ func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetAppId(_appId int64) erro
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetAppId() int64 {
 	return r._appId
 }
 
-// Set is BatchNumber Setter
+// SetBatchNumber is BatchNumber Setter
 // 批次编号,用于统计活动推送效果
 func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetBatchNumber(_batchNumber string) error {
 	r._batchNumber = _batchNumber
@@ -121,12 +121,12 @@ func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetBatchNumber(_batchNumber
 	return nil
 }
 
-// Get BatchNumber Getter
+// GetBatchNumber BatchNumber Getter
 func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetBatchNumber() string {
 	return r._batchNumber
 }
 
-// Set is Body Setter
+// SetBody is Body Setter
 // 消息体,UTF-8编码
 func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetBody(_body string) error {
 	r._body = _body
@@ -134,12 +134,12 @@ func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetBody(_body string) error
 	return nil
 }
 
-// Get Body Getter
+// GetBody Body Getter
 func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetBody() string {
 	return r._body
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备编号列表,以换行区分,仅sendType为4时有效
 func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -147,12 +147,12 @@ func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetDeviceId(_deviceId strin
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 设备类型,取值范围为:0~3云推送支持多种设备, 各种设备类型编号如下:IOS设备:deviceType&amp;1=1; Andriod设备:deviceType&amp;2=2;如果存在此字段,则 向指定的设备类型推送消息。默认为全部(3);
 func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetDeviceType(_deviceType int64) error {
 	r._deviceType = _deviceType
@@ -160,12 +160,12 @@ func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetDeviceType(_deviceType i
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetDeviceType() int64 {
 	return r._deviceType
 }
 
-// Set is PushTime Setter
+// SetPushTime is PushTime Setter
 // 推送时间,若空表示立即推送,推送时间不能早于当前 时间
 func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetPushTime(_pushTime string) error {
 	r._pushTime = _pushTime
@@ -173,12 +173,12 @@ func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetPushTime(_pushTime strin
 	return nil
 }
 
-// Get PushTime Getter
+// GetPushTime PushTime Getter
 func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetPushTime() string {
 	return r._pushTime
 }
 
-// Set is SendType Setter
+// SetSendType is SendType Setter
 // 推送类型,取值范围:1~4; 1:所有人,无需指定tag、 deviceType等2:一群人,必须指定tag3:指定用户,根 据用户账号列表文件发送消息4:指定设备,根据设备编 码列表文件发送消息默认值为1
 func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetSendType(_sendType int64) error {
 	r._sendType = _sendType
@@ -186,12 +186,12 @@ func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetSendType(_sendType int64
 	return nil
 }
 
-// Get SendType Getter
+// GetSendType SendType Getter
 func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetSendType() int64 {
 	return r._sendType
 }
 
-// Set is Tag Setter
+// SetTag is Tag Setter
 // 标签名称,仅支持1个标签,仅sendType为2时有效
 func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetTag(_tag string) error {
 	r._tag = _tag
@@ -199,12 +199,12 @@ func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetTag(_tag string) error {
 	return nil
 }
 
-// Get Tag Getter
+// GetTag Tag Getter
 func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetTag() string {
 	return r._tag
 }
 
-// Set is Timeout Setter
+// SetTimeout is Timeout Setter
 // 离线消息保存时长,取值范围为1~72,若不填,则表 示不保存离线消息
 func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetTimeout(_timeout int64) error {
 	r._timeout = _timeout
@@ -212,12 +212,12 @@ func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetTimeout(_timeout int64) 
 	return nil
 }
 
-// Get Timeout Getter
+// GetTimeout Timeout Getter
 func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetTimeout() int64 {
 	return r._timeout
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 标题
 func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -225,7 +225,7 @@ func (r *PushAliyuncsComPushMsg2015_03_18APIRequest) SetTitle(_title string) err
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r PushAliyuncsComPushMsg2015_03_18APIRequest) GetTitle() string {
 	return r._title
 }

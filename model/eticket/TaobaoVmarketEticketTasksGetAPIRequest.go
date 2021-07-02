@@ -45,7 +45,7 @@ func (r TaobaoVmarketEticketTasksGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 卖家家ID(信任卖家不必传，码商可选)
 func (r *TaobaoVmarketEticketTasksGetAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
@@ -53,12 +53,12 @@ func (r *TaobaoVmarketEticketTasksGetAPIRequest) SetSellerId(_sellerId int64) er
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r TaobaoVmarketEticketTasksGetAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 返回结果类型:<br/>1:返回通知失败的订单<br/>2.返回通知成功回调失败的订单
 func (r *TaobaoVmarketEticketTasksGetAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -66,12 +66,12 @@ func (r *TaobaoVmarketEticketTasksGetAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoVmarketEticketTasksGetAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码。取值范围:大于零的整数; 默认值:1
 func (r *TaobaoVmarketEticketTasksGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -79,12 +79,12 @@ func (r *TaobaoVmarketEticketTasksGetAPIRequest) SetPageNo(_pageNo int64) error 
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoVmarketEticketTasksGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页获取条数。默认值40，最小值1，最大值100。
 func (r *TaobaoVmarketEticketTasksGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -92,12 +92,12 @@ func (r *TaobaoVmarketEticketTasksGetAPIRequest) SetPageSize(_pageSize int64) er
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoVmarketEticketTasksGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is CodemerchantId Setter
+// SetCodemerchantId is CodemerchantId Setter
 // 码商ID，如果是码商，必须传，如果是信任卖家，不需要传
 func (r *TaobaoVmarketEticketTasksGetAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
 	r._codemerchantId = _codemerchantId
@@ -105,7 +105,7 @@ func (r *TaobaoVmarketEticketTasksGetAPIRequest) SetCodemerchantId(_codemerchant
 	return nil
 }
 
-// Get CodemerchantId Getter
+// GetCodemerchantId CodemerchantId Getter
 func (r TaobaoVmarketEticketTasksGetAPIRequest) GetCodemerchantId() int64 {
 	return r._codemerchantId
 }

@@ -43,7 +43,7 @@ func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BotId Setter
+// SetBotId is BotId Setter
 // botId值
 func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetBotId(_botId int64) error {
 	r._botId = _botId
@@ -51,12 +51,12 @@ func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetBotId(_botId int64) erro
 	return nil
 }
 
-// Get BotId Getter
+// GetBotId BotId Getter
 func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetBotId() int64 {
 	return r._botId
 }
 
-// Set is Params Setter
+// SetParams is Params Setter
 // 筛选条件，目前只支持name、type和style
 func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetParams(_params string) error {
 	r._params = _params
@@ -64,12 +64,12 @@ func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetParams(_params string) e
 	return nil
 }
 
-// Get Params Getter
+// GetParams Params Getter
 func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetParams() string {
 	return r._params
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 分页页码
 func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -77,12 +77,12 @@ func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetPageNo(_pageNo int64) er
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页页大小
 func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -90,7 +90,7 @@ func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetPageSize(_pageSize int64
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

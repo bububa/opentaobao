@@ -39,7 +39,7 @@ func (r TaobaoPromotionmiscActivityRangeRemoveAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动id。
 func (r *TaobaoPromotionmiscActivityRangeRemoveAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -47,12 +47,12 @@ func (r *TaobaoPromotionmiscActivityRangeRemoveAPIRequest) SetActivityId(_activi
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoPromotionmiscActivityRangeRemoveAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }
 
-// Set is Ids Setter
+// SetIds is Ids Setter
 // 商品id,多个id用逗号隔开。
 func (r *TaobaoPromotionmiscActivityRangeRemoveAPIRequest) SetIds(_ids string) error {
 	r._ids = _ids
@@ -60,7 +60,7 @@ func (r *TaobaoPromotionmiscActivityRangeRemoveAPIRequest) SetIds(_ids string) e
 	return nil
 }
 
-// Get Ids Getter
+// GetIds Ids Getter
 func (r TaobaoPromotionmiscActivityRangeRemoveAPIRequest) GetIds() string {
 	return r._ids
 }

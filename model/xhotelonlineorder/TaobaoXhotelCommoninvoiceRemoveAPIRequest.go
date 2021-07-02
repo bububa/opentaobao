@@ -39,7 +39,7 @@ func (r TaobaoXhotelCommoninvoiceRemoveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InvoiceId Setter
+// SetInvoiceId is InvoiceId Setter
 // 发票id
 func (r *TaobaoXhotelCommoninvoiceRemoveAPIRequest) SetInvoiceId(_invoiceId int64) error {
 	r._invoiceId = _invoiceId
@@ -47,12 +47,12 @@ func (r *TaobaoXhotelCommoninvoiceRemoveAPIRequest) SetInvoiceId(_invoiceId int6
 	return nil
 }
 
-// Get InvoiceId Getter
+// GetInvoiceId InvoiceId Getter
 func (r TaobaoXhotelCommoninvoiceRemoveAPIRequest) GetInvoiceId() int64 {
 	return r._invoiceId
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 用户名
 func (r *TaobaoXhotelCommoninvoiceRemoveAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -60,7 +60,7 @@ func (r *TaobaoXhotelCommoninvoiceRemoveAPIRequest) SetUserNick(_userNick string
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r TaobaoXhotelCommoninvoiceRemoveAPIRequest) GetUserNick() string {
 	return r._userNick
 }

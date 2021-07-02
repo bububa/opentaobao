@@ -45,7 +45,7 @@ func (r TmallMcTaskChargeLaunchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuterCode Setter
+// SetOuterCode is OuterCode Setter
 // 外部设备编码
 func (r *TmallMcTaskChargeLaunchAPIRequest) SetOuterCode(_outerCode string) error {
 	r._outerCode = _outerCode
@@ -53,12 +53,12 @@ func (r *TmallMcTaskChargeLaunchAPIRequest) SetOuterCode(_outerCode string) erro
 	return nil
 }
 
-// Get OuterCode Getter
+// GetOuterCode OuterCode Getter
 func (r TmallMcTaskChargeLaunchAPIRequest) GetOuterCode() string {
 	return r._outerCode
 }
 
-// Set is ChannelId Setter
+// SetChannelId is ChannelId Setter
 // 渠道ID
 func (r *TmallMcTaskChargeLaunchAPIRequest) SetChannelId(_channelId string) error {
 	r._channelId = _channelId
@@ -66,12 +66,12 @@ func (r *TmallMcTaskChargeLaunchAPIRequest) SetChannelId(_channelId string) erro
 	return nil
 }
 
-// Get ChannelId Getter
+// GetChannelId ChannelId Getter
 func (r TmallMcTaskChargeLaunchAPIRequest) GetChannelId() string {
 	return r._channelId
 }
 
-// Set is AlipayOpenId Setter
+// SetAlipayOpenId is AlipayOpenId Setter
 // 支付宝openID
 func (r *TmallMcTaskChargeLaunchAPIRequest) SetAlipayOpenId(_alipayOpenId string) error {
 	r._alipayOpenId = _alipayOpenId
@@ -79,12 +79,12 @@ func (r *TmallMcTaskChargeLaunchAPIRequest) SetAlipayOpenId(_alipayOpenId string
 	return nil
 }
 
-// Get AlipayOpenId Getter
+// GetAlipayOpenId AlipayOpenId Getter
 func (r TmallMcTaskChargeLaunchAPIRequest) GetAlipayOpenId() string {
 	return r._alipayOpenId
 }
 
-// Set is UrlId Setter
+// SetUrlId is UrlId Setter
 // urlID
 func (r *TmallMcTaskChargeLaunchAPIRequest) SetUrlId(_urlId string) error {
 	r._urlId = _urlId
@@ -92,12 +92,12 @@ func (r *TmallMcTaskChargeLaunchAPIRequest) SetUrlId(_urlId string) error {
 	return nil
 }
 
-// Get UrlId Getter
+// GetUrlId UrlId Getter
 func (r TmallMcTaskChargeLaunchAPIRequest) GetUrlId() string {
 	return r._urlId
 }
 
-// Set is Extra Setter
+// SetExtra is Extra Setter
 // 服务商附加url参数
 func (r *TmallMcTaskChargeLaunchAPIRequest) SetExtra(_extra string) error {
 	r._extra = _extra
@@ -105,7 +105,7 @@ func (r *TmallMcTaskChargeLaunchAPIRequest) SetExtra(_extra string) error {
 	return nil
 }
 
-// Get Extra Getter
+// GetExtra Extra Getter
 func (r TmallMcTaskChargeLaunchAPIRequest) GetExtra() string {
 	return r._extra
 }

@@ -51,7 +51,7 @@ func (r TmallExchangeAgreeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Post Setter
+// SetPost is Post Setter
 // 邮政编码
 func (r *TmallExchangeAgreeAPIRequest) SetPost(_post string) error {
 	r._post = _post
@@ -59,12 +59,12 @@ func (r *TmallExchangeAgreeAPIRequest) SetPost(_post string) error {
 	return nil
 }
 
-// Get Post Getter
+// GetPost Post Getter
 func (r TmallExchangeAgreeAPIRequest) GetPost() string {
 	return r._post
 }
 
-// Set is LeaveMessagePics Setter
+// SetLeaveMessagePics is LeaveMessagePics Setter
 // 上传图片举证
 func (r *TmallExchangeAgreeAPIRequest) SetLeaveMessagePics(_leaveMessagePics *model.File) error {
 	r._leaveMessagePics = _leaveMessagePics
@@ -72,12 +72,12 @@ func (r *TmallExchangeAgreeAPIRequest) SetLeaveMessagePics(_leaveMessagePics *mo
 	return nil
 }
 
-// Get LeaveMessagePics Getter
+// GetLeaveMessagePics LeaveMessagePics Getter
 func (r TmallExchangeAgreeAPIRequest) GetLeaveMessagePics() *model.File {
 	return r._leaveMessagePics
 }
 
-// Set is LeaveMessage Setter
+// SetLeaveMessage is LeaveMessage Setter
 // 卖家留言
 func (r *TmallExchangeAgreeAPIRequest) SetLeaveMessage(_leaveMessage string) error {
 	r._leaveMessage = _leaveMessage
@@ -85,12 +85,12 @@ func (r *TmallExchangeAgreeAPIRequest) SetLeaveMessage(_leaveMessage string) err
 	return nil
 }
 
-// Get LeaveMessage Getter
+// GetLeaveMessage LeaveMessage Getter
 func (r TmallExchangeAgreeAPIRequest) GetLeaveMessage() string {
 	return r._leaveMessage
 }
 
-// Set is AddressId Setter
+// SetAddressId is AddressId Setter
 // 收货地址id，如需获取请调用该top接口：taobao.logistics.address.search，对应属性为contact_id
 func (r *TmallExchangeAgreeAPIRequest) SetAddressId(_addressId int64) error {
 	r._addressId = _addressId
@@ -98,12 +98,12 @@ func (r *TmallExchangeAgreeAPIRequest) SetAddressId(_addressId int64) error {
 	return nil
 }
 
-// Get AddressId Getter
+// GetAddressId AddressId Getter
 func (r TmallExchangeAgreeAPIRequest) GetAddressId() int64 {
 	return r._addressId
 }
 
-// Set is CompleteAddress Setter
+// SetCompleteAddress is CompleteAddress Setter
 // 详细收货地址
 func (r *TmallExchangeAgreeAPIRequest) SetCompleteAddress(_completeAddress string) error {
 	r._completeAddress = _completeAddress
@@ -111,12 +111,12 @@ func (r *TmallExchangeAgreeAPIRequest) SetCompleteAddress(_completeAddress strin
 	return nil
 }
 
-// Get CompleteAddress Getter
+// GetCompleteAddress CompleteAddress Getter
 func (r TmallExchangeAgreeAPIRequest) GetCompleteAddress() string {
 	return r._completeAddress
 }
 
-// Set is DisputeId Setter
+// SetDisputeId is DisputeId Setter
 // 换货单号ID
 func (r *TmallExchangeAgreeAPIRequest) SetDisputeId(_disputeId int64) error {
 	r._disputeId = _disputeId
@@ -124,12 +124,12 @@ func (r *TmallExchangeAgreeAPIRequest) SetDisputeId(_disputeId int64) error {
 	return nil
 }
 
-// Get DisputeId Getter
+// GetDisputeId DisputeId Getter
 func (r TmallExchangeAgreeAPIRequest) GetDisputeId() int64 {
 	return r._disputeId
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回字段。当前支持的有 dispute_id, bizorder_id, modified, status
 func (r *TmallExchangeAgreeAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -137,12 +137,12 @@ func (r *TmallExchangeAgreeAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TmallExchangeAgreeAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 收货人手机号
 func (r *TmallExchangeAgreeAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -150,7 +150,7 @@ func (r *TmallExchangeAgreeAPIRequest) SetMobile(_mobile string) error {
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r TmallExchangeAgreeAPIRequest) GetMobile() string {
 	return r._mobile
 }

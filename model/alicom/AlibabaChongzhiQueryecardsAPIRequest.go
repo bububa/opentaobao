@@ -39,7 +39,7 @@ func (r AlibabaChongzhiQueryecardsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 号码
 func (r *AlibabaChongzhiQueryecardsAPIRequest) SetMobile(_mobile int64) error {
 	r._mobile = _mobile
@@ -47,12 +47,12 @@ func (r *AlibabaChongzhiQueryecardsAPIRequest) SetMobile(_mobile int64) error {
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r AlibabaChongzhiQueryecardsAPIRequest) GetMobile() int64 {
 	return r._mobile
 }
 
-// Set is ClientSource Setter
+// SetClientSource is ClientSource Setter
 // 来源
 func (r *AlibabaChongzhiQueryecardsAPIRequest) SetClientSource(_clientSource string) error {
 	r._clientSource = _clientSource
@@ -60,7 +60,7 @@ func (r *AlibabaChongzhiQueryecardsAPIRequest) SetClientSource(_clientSource str
 	return nil
 }
 
-// Get ClientSource Getter
+// GetClientSource ClientSource Getter
 func (r AlibabaChongzhiQueryecardsAPIRequest) GetClientSource() string {
 	return r._clientSource
 }

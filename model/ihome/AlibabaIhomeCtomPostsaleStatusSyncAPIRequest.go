@@ -57,7 +57,7 @@ func (r AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ServiceId Setter
+// SetServiceId is ServiceId Setter
 // 三维家服务ID
 func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetServiceId(_serviceId string) error {
 	r._serviceId = _serviceId
@@ -65,12 +65,12 @@ func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetServiceId(_serviceId s
 	return nil
 }
 
-// Get ServiceId Getter
+// GetServiceId ServiceId Getter
 func (r AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) GetServiceId() string {
 	return r._serviceId
 }
 
-// Set is PostSalesId Setter
+// SetPostSalesId is PostSalesId Setter
 // 三维家售后单号ID
 func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetPostSalesId(_postSalesId string) error {
 	r._postSalesId = _postSalesId
@@ -78,12 +78,12 @@ func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetPostSalesId(_postSales
 	return nil
 }
 
-// Get PostSalesId Getter
+// GetPostSalesId PostSalesId Getter
 func (r AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) GetPostSalesId() string {
 	return r._postSalesId
 }
 
-// Set is SubOrderId Setter
+// SetSubOrderId is SubOrderId Setter
 // 三维家订单号ID
 func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetSubOrderId(_subOrderId string) error {
 	r._subOrderId = _subOrderId
@@ -91,12 +91,12 @@ func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetSubOrderId(_subOrderId
 	return nil
 }
 
-// Get SubOrderId Getter
+// GetSubOrderId SubOrderId Getter
 func (r AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) GetSubOrderId() string {
 	return r._subOrderId
 }
 
-// Set is UnitId Setter
+// SetUnitId is UnitId Setter
 // 三维家操作人部门ID
 func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetUnitId(_unitId string) error {
 	r._unitId = _unitId
@@ -104,12 +104,12 @@ func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetUnitId(_unitId string)
 	return nil
 }
 
-// Get UnitId Getter
+// GetUnitId UnitId Getter
 func (r AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) GetUnitId() string {
 	return r._unitId
 }
 
-// Set is OperatorId Setter
+// SetOperatorId is OperatorId Setter
 // 三维家操作人ID
 func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetOperatorId(_operatorId string) error {
 	r._operatorId = _operatorId
@@ -117,12 +117,12 @@ func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetOperatorId(_operatorId
 	return nil
 }
 
-// Get OperatorId Getter
+// GetOperatorId OperatorId Getter
 func (r AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) GetOperatorId() string {
 	return r._operatorId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 售后状态更新
 func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -130,12 +130,12 @@ func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetStatus(_status string)
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 售后发起来源
 func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -143,12 +143,12 @@ func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetSource(_source string)
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is IsExpedited Setter
+// SetIsExpedited is IsExpedited Setter
 // 是否加急订单
 func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetIsExpedited(_isExpedited string) error {
 	r._isExpedited = _isExpedited
@@ -156,12 +156,12 @@ func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetIsExpedited(_isExpedit
 	return nil
 }
 
-// Get IsExpedited Getter
+// GetIsExpedited IsExpedited Getter
 func (r AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) GetIsExpedited() string {
 	return r._isExpedited
 }
 
-// Set is Reason Setter
+// SetReason is Reason Setter
 // 售后单更新状态原因
 func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
@@ -169,12 +169,12 @@ func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetReason(_reason string)
 	return nil
 }
 
-// Get Reason Getter
+// GetReason Reason Getter
 func (r AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) GetReason() string {
 	return r._reason
 }
 
-// Set is FinishType Setter
+// SetFinishType is FinishType Setter
 // 售后单结束原因
 func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetFinishType(_finishType string) error {
 	r._finishType = _finishType
@@ -182,12 +182,12 @@ func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetFinishType(_finishType
 	return nil
 }
 
-// Get FinishType Getter
+// GetFinishType FinishType Getter
 func (r AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) GetFinishType() string {
 	return r._finishType
 }
 
-// Set is CsrId Setter
+// SetCsrId is CsrId Setter
 // 客服代表ID
 func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetCsrId(_csrId string) error {
 	r._csrId = _csrId
@@ -195,7 +195,7 @@ func (r *AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) SetCsrId(_csrId string) e
 	return nil
 }
 
-// Get CsrId Getter
+// GetCsrId CsrId Getter
 func (r AlibabaIhomeCtomPostsaleStatusSyncAPIRequest) GetCsrId() string {
 	return r._csrId
 }

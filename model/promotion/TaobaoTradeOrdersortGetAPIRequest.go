@@ -41,7 +41,7 @@ func (r TaobaoTradeOrdersortGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动ID
 func (r *TaobaoTradeOrdersortGetAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -49,12 +49,12 @@ func (r *TaobaoTradeOrdersortGetAPIRequest) SetActivityId(_activityId int64) err
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoTradeOrdersortGetAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *TaobaoTradeOrdersortGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -62,12 +62,12 @@ func (r *TaobaoTradeOrdersortGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoTradeOrdersortGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 一页记录数, 必须写死500
 func (r *TaobaoTradeOrdersortGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *TaobaoTradeOrdersortGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTradeOrdersortGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

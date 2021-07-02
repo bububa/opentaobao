@@ -41,7 +41,7 @@ func (r TaobaoXhotelRateplanDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RpId Setter
+// SetRpId is RpId Setter
 // ratepland标识
 func (r *TaobaoXhotelRateplanDeleteAPIRequest) SetRpId(_rpId int64) error {
 	r._rpId = _rpId
@@ -49,12 +49,12 @@ func (r *TaobaoXhotelRateplanDeleteAPIRequest) SetRpId(_rpId int64) error {
 	return nil
 }
 
-// Get RpId Getter
+// GetRpId RpId Getter
 func (r TaobaoXhotelRateplanDeleteAPIRequest) GetRpId() int64 {
 	return r._rpId
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 系统商，一般不用填写，使用须申请
 func (r *TaobaoXhotelRateplanDeleteAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -62,12 +62,12 @@ func (r *TaobaoXhotelRateplanDeleteAPIRequest) SetVendor(_vendor string) error {
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelRateplanDeleteAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is RateplanCode Setter
+// SetRateplanCode is RateplanCode Setter
 // 商家价格政策编码
 func (r *TaobaoXhotelRateplanDeleteAPIRequest) SetRateplanCode(_rateplanCode string) error {
 	r._rateplanCode = _rateplanCode
@@ -75,7 +75,7 @@ func (r *TaobaoXhotelRateplanDeleteAPIRequest) SetRateplanCode(_rateplanCode str
 	return nil
 }
 
-// Get RateplanCode Getter
+// GetRateplanCode RateplanCode Getter
 func (r TaobaoXhotelRateplanDeleteAPIRequest) GetRateplanCode() string {
 	return r._rateplanCode
 }

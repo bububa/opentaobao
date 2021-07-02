@@ -39,7 +39,7 @@ func (r AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 计划id
 func (r *AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -47,12 +47,12 @@ func (r *AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest) SetCampaignId(_cam
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -60,7 +60,7 @@ func (r *AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest) SetTopContext(_top
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdCampaignFindForbiddenKeywordAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }

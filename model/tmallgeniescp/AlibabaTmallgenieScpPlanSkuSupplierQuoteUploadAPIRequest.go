@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is NetDemandRequest Setter
+// SetNetDemandRequest is NetDemandRequest Setter
 // 对象
 func (r *AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadAPIRequest) SetNetDemandRequest(_netDemandRequest *NetDemandRequest) error {
 	r._netDemandRequest = _netDemandRequest
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadAPIRequest) SetNetDemandR
 	return nil
 }
 
-// Get NetDemandRequest Getter
+// GetNetDemandRequest NetDemandRequest Getter
 func (r AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadAPIRequest) GetNetDemandRequest() *NetDemandRequest {
 	return r._netDemandRequest
 }

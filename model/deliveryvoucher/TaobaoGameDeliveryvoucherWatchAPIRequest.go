@@ -37,7 +37,7 @@ func (r TaobaoGameDeliveryvoucherWatchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 入参
 func (r *TaobaoGameDeliveryvoucherWatchAPIRequest) SetParam0(_param0 *WatchAppointmentRequest) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TaobaoGameDeliveryvoucherWatchAPIRequest) SetParam0(_param0 *WatchAppoi
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoGameDeliveryvoucherWatchAPIRequest) GetParam0() *WatchAppointmentRequest {
 	return r._param0
 }

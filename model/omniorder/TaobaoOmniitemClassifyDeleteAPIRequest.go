@@ -39,7 +39,7 @@ func (r TaobaoOmniitemClassifyDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ClassifyId Setter
+// SetClassifyId is ClassifyId Setter
 // 分类ID
 func (r *TaobaoOmniitemClassifyDeleteAPIRequest) SetClassifyId(_classifyId int64) error {
 	r._classifyId = _classifyId
@@ -47,12 +47,12 @@ func (r *TaobaoOmniitemClassifyDeleteAPIRequest) SetClassifyId(_classifyId int64
 	return nil
 }
 
-// Get ClassifyId Getter
+// GetClassifyId ClassifyId Getter
 func (r TaobaoOmniitemClassifyDeleteAPIRequest) GetClassifyId() int64 {
 	return r._classifyId
 }
 
-// Set is Operator Setter
+// SetOperator is Operator Setter
 // 操作人信息（暂时不填）
 func (r *TaobaoOmniitemClassifyDeleteAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
@@ -60,7 +60,7 @@ func (r *TaobaoOmniitemClassifyDeleteAPIRequest) SetOperator(_operator string) e
 	return nil
 }
 
-// Get Operator Getter
+// GetOperator Operator Getter
 func (r TaobaoOmniitemClassifyDeleteAPIRequest) GetOperator() string {
 	return r._operator
 }

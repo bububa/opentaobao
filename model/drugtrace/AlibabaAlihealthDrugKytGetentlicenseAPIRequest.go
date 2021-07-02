@@ -37,7 +37,7 @@ func (r AlibabaAlihealthDrugKytGetentlicenseAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugKytGetentlicenseAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthDrugKytGetentlicenseAPIRequest) SetRefEntId(_refEntId s
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytGetentlicenseAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }

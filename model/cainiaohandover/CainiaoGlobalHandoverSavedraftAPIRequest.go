@@ -53,7 +53,7 @@ func (r CainiaoGlobalHandoverSavedraftAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserInfo Setter
+// SetUserInfo is UserInfo Setter
 // 用户信息
 func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
 	r._userInfo = _userInfo
@@ -61,12 +61,12 @@ func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetUserInfo(_userInfo *UserIn
 	return nil
 }
 
-// Get UserInfo Getter
+// GetUserInfo UserInfo Getter
 func (r CainiaoGlobalHandoverSavedraftAPIRequest) GetUserInfo() *UserInfoDto {
 	return r._userInfo
 }
 
-// Set is Remark Setter
+// SetRemark is Remark Setter
 // 备注
 func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
@@ -74,12 +74,12 @@ func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetRemark(_remark string) err
 	return nil
 }
 
-// Get Remark Getter
+// GetRemark Remark Getter
 func (r CainiaoGlobalHandoverSavedraftAPIRequest) GetRemark() string {
 	return r._remark
 }
 
-// Set is Weight Setter
+// SetWeight is Weight Setter
 // 大包重量
 func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetWeight(_weight int64) error {
 	r._weight = _weight
@@ -87,12 +87,12 @@ func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetWeight(_weight int64) erro
 	return nil
 }
 
-// Get Weight Getter
+// GetWeight Weight Getter
 func (r CainiaoGlobalHandoverSavedraftAPIRequest) GetWeight() int64 {
 	return r._weight
 }
 
-// Set is WeightUnit Setter
+// SetWeightUnit is WeightUnit Setter
 // 重量单位，克:g, 千克:kg，默认g
 func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetWeightUnit(_weightUnit string) error {
 	r._weightUnit = _weightUnit
@@ -100,12 +100,12 @@ func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetWeightUnit(_weightUnit str
 	return nil
 }
 
-// Get WeightUnit Getter
+// GetWeightUnit WeightUnit Getter
 func (r CainiaoGlobalHandoverSavedraftAPIRequest) GetWeightUnit() string {
 	return r._weightUnit
 }
 
-// Set is PickupInfo Setter
+// SetPickupInfo is PickupInfo Setter
 // 揽收信息
 func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetPickupInfo(_pickupInfo *PickupDto) error {
 	r._pickupInfo = _pickupInfo
@@ -113,12 +113,12 @@ func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetPickupInfo(_pickupInfo *Pi
 	return nil
 }
 
-// Get PickupInfo Getter
+// GetPickupInfo PickupInfo Getter
 func (r CainiaoGlobalHandoverSavedraftAPIRequest) GetPickupInfo() *PickupDto {
 	return r._pickupInfo
 }
 
-// Set is ReturnInfo Setter
+// SetReturnInfo is ReturnInfo Setter
 // 退件信息
 func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetReturnInfo(_returnInfo *ReturnerDto) error {
 	r._returnInfo = _returnInfo
@@ -126,12 +126,12 @@ func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetReturnInfo(_returnInfo *Re
 	return nil
 }
 
-// Get ReturnInfo Getter
+// GetReturnInfo ReturnInfo Getter
 func (r CainiaoGlobalHandoverSavedraftAPIRequest) GetReturnInfo() *ReturnerDto {
 	return r._returnInfo
 }
 
-// Set is Client Setter
+// SetClient is Client Setter
 // 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
 func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetClient(_client string) error {
 	r._client = _client
@@ -139,12 +139,12 @@ func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetClient(_client string) err
 	return nil
 }
 
-// Get Client Getter
+// GetClient Client Getter
 func (r CainiaoGlobalHandoverSavedraftAPIRequest) GetClient() string {
 	return r._client
 }
 
-// Set is OrderCodeList Setter
+// SetOrderCodeList is OrderCodeList Setter
 // 需要组装大包的小包编码集合，最多限制200个小包
 func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetOrderCodeList(_orderCodeList []string) error {
 	r._orderCodeList = _orderCodeList
@@ -152,12 +152,12 @@ func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetOrderCodeList(_orderCodeLi
 	return nil
 }
 
-// Get OrderCodeList Getter
+// GetOrderCodeList OrderCodeList Getter
 func (r CainiaoGlobalHandoverSavedraftAPIRequest) GetOrderCodeList() []string {
 	return r._orderCodeList
 }
 
-// Set is Locale Setter
+// SetLocale is Locale Setter
 // 多语言
 func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
@@ -165,7 +165,7 @@ func (r *CainiaoGlobalHandoverSavedraftAPIRequest) SetLocale(_locale string) err
 	return nil
 }
 
-// Get Locale Getter
+// GetLocale Locale Getter
 func (r CainiaoGlobalHandoverSavedraftAPIRequest) GetLocale() string {
 	return r._locale
 }

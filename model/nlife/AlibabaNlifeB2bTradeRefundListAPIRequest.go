@@ -45,7 +45,7 @@ func (r AlibabaNlifeB2bTradeRefundListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartEffectiveDate Setter
+// SetStartEffectiveDate is StartEffectiveDate Setter
 // 采购退货单创建时间开始范围
 func (r *AlibabaNlifeB2bTradeRefundListAPIRequest) SetStartEffectiveDate(_startEffectiveDate string) error {
 	r._startEffectiveDate = _startEffectiveDate
@@ -53,12 +53,12 @@ func (r *AlibabaNlifeB2bTradeRefundListAPIRequest) SetStartEffectiveDate(_startE
 	return nil
 }
 
-// Get StartEffectiveDate Getter
+// GetStartEffectiveDate StartEffectiveDate Getter
 func (r AlibabaNlifeB2bTradeRefundListAPIRequest) GetStartEffectiveDate() string {
 	return r._startEffectiveDate
 }
 
-// Set is EndEffectiveDate Setter
+// SetEndEffectiveDate is EndEffectiveDate Setter
 // 采购退货单创建时间结束范围
 func (r *AlibabaNlifeB2bTradeRefundListAPIRequest) SetEndEffectiveDate(_endEffectiveDate string) error {
 	r._endEffectiveDate = _endEffectiveDate
@@ -66,12 +66,12 @@ func (r *AlibabaNlifeB2bTradeRefundListAPIRequest) SetEndEffectiveDate(_endEffec
 	return nil
 }
 
-// Get EndEffectiveDate Getter
+// GetEndEffectiveDate EndEffectiveDate Getter
 func (r AlibabaNlifeB2bTradeRefundListAPIRequest) GetEndEffectiveDate() string {
 	return r._endEffectiveDate
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 查询的页数
 func (r *AlibabaNlifeB2bTradeRefundListAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -79,12 +79,12 @@ func (r *AlibabaNlifeB2bTradeRefundListAPIRequest) SetPageNo(_pageNo int64) erro
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r AlibabaNlifeB2bTradeRefundListAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页的数量
 func (r *AlibabaNlifeB2bTradeRefundListAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -92,12 +92,12 @@ func (r *AlibabaNlifeB2bTradeRefundListAPIRequest) SetPageSize(_pageSize int64) 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaNlifeB2bTradeRefundListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is EntId Setter
+// SetEntId is EntId Setter
 // 企业Id
 func (r *AlibabaNlifeB2bTradeRefundListAPIRequest) SetEntId(_entId int64) error {
 	r._entId = _entId
@@ -105,7 +105,7 @@ func (r *AlibabaNlifeB2bTradeRefundListAPIRequest) SetEntId(_entId int64) error 
 	return nil
 }
 
-// Get EntId Getter
+// GetEntId EntId Getter
 func (r AlibabaNlifeB2bTradeRefundListAPIRequest) GetEntId() int64 {
 	return r._entId
 }

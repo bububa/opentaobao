@@ -37,7 +37,7 @@ func (r AlibabaScbpTagDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TagName Setter
+// SetTagName is TagName Setter
 // 关键词分组名
 func (r *AlibabaScbpTagDeleteAPIRequest) SetTagName(_tagName string) error {
 	r._tagName = _tagName
@@ -45,7 +45,7 @@ func (r *AlibabaScbpTagDeleteAPIRequest) SetTagName(_tagName string) error {
 	return nil
 }
 
-// Get TagName Getter
+// GetTagName TagName Getter
 func (r AlibabaScbpTagDeleteAPIRequest) GetTagName() string {
 	return r._tagName
 }

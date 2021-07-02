@@ -37,7 +37,7 @@ func (r TaobaoQimenTradeUserAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Memo Setter
+// SetMemo is Memo Setter
 // 商家备注
 func (r *TaobaoQimenTradeUserAddAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
@@ -45,7 +45,7 @@ func (r *TaobaoQimenTradeUserAddAPIRequest) SetMemo(_memo string) error {
 	return nil
 }
 
-// Get Memo Getter
+// GetMemo Memo Getter
 func (r TaobaoQimenTradeUserAddAPIRequest) GetMemo() string {
 	return r._memo
 }

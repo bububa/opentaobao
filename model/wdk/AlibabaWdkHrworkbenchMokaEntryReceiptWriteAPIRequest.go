@@ -37,7 +37,7 @@ func (r AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is ParamSyncEntryReceiptRequest Setter
+// SetParamSyncEntryReceiptRequest is ParamSyncEntryReceiptRequest Setter
 // 确认入职后入职单据请求
 func (r *AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest) SetParamSyncEntryReceiptRequest(_paramSyncEntryReceiptRequest *SyncEntryReceiptRequest) error {
 	r._paramSyncEntryReceiptRequest = _paramSyncEntryReceiptRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest) SetParamSyncEntry
 	return nil
 }
 
-// Get ParamSyncEntryReceiptRequest Getter
+// GetParamSyncEntryReceiptRequest ParamSyncEntryReceiptRequest Getter
 func (r AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIRequest) GetParamSyncEntryReceiptRequest() *SyncEntryReceiptRequest {
 	return r._paramSyncEntryReceiptRequest
 }

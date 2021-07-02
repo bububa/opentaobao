@@ -43,7 +43,7 @@ func (r TaobaoWlbItemBatchQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 仓库编号
 func (r *TaobaoWlbItemBatchQueryAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -51,12 +51,12 @@ func (r *TaobaoWlbItemBatchQueryAPIRequest) SetStoreCode(_storeCode string) erro
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r TaobaoWlbItemBatchQueryAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 分页查询参数，指定查询页数，默认为1
 func (r *TaobaoWlbItemBatchQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -64,12 +64,12 @@ func (r *TaobaoWlbItemBatchQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoWlbItemBatchQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页查询参数，每页查询数量，默认20，最大值50,大于50时按照50条查询
 func (r *TaobaoWlbItemBatchQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *TaobaoWlbItemBatchQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoWlbItemBatchQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is ItemIds Setter
+// SetItemIds is ItemIds Setter
 // 需要查询的商品ID列表，以字符串表示，ID间以;隔开
 func (r *TaobaoWlbItemBatchQueryAPIRequest) SetItemIds(_itemIds string) error {
 	r._itemIds = _itemIds
@@ -90,7 +90,7 @@ func (r *TaobaoWlbItemBatchQueryAPIRequest) SetItemIds(_itemIds string) error {
 	return nil
 }
 
-// Get ItemIds Getter
+// GetItemIds ItemIds Getter
 func (r TaobaoWlbItemBatchQueryAPIRequest) GetItemIds() string {
 	return r._itemIds
 }

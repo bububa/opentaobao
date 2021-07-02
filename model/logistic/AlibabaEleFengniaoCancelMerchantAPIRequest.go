@@ -37,7 +37,7 @@ func (r AlibabaEleFengniaoCancelMerchantAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 参数param
 func (r *AlibabaEleFengniaoCancelMerchantAPIRequest) SetParam(_param *Param) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaEleFengniaoCancelMerchantAPIRequest) SetParam(_param *Param) err
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaEleFengniaoCancelMerchantAPIRequest) GetParam() *Param {
 	return r._param
 }

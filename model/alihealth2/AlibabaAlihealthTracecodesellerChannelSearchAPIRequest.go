@@ -45,7 +45,7 @@ func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is SkeyCode Setter
+// SetSkeyCode is SkeyCode Setter
 // 身份认证
 func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetSkeyCode(_skeyCode string) error {
 	r._skeyCode = _skeyCode
@@ -53,12 +53,12 @@ func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetSkeyCode(_sk
 	return nil
 }
 
-// Get SkeyCode Getter
+// GetSkeyCode SkeyCode Getter
 func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetSkeyCode() string {
 	return r._skeyCode
 }
 
-// Set is EntInfoId Setter
+// SetEntInfoId is EntInfoId Setter
 // 商家id
 func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetEntInfoId(_entInfoId int64) error {
 	r._entInfoId = _entInfoId
@@ -66,12 +66,12 @@ func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetEntInfoId(_e
 	return nil
 }
 
-// Get EntInfoId Getter
+// GetEntInfoId EntInfoId Getter
 func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetEntInfoId() int64 {
 	return r._entInfoId
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 第几页
 func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetPage(_page i
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页几条
 func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetPageSize(_pa
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is OutInType Setter
+// SetOutInType is OutInType Setter
 // 0 出库 2 入库
 func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetOutInType(_outInType int64) error {
 	r._outInType = _outInType
@@ -105,7 +105,7 @@ func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetOutInType(_o
 	return nil
 }
 
-// Get OutInType Getter
+// GetOutInType OutInType Getter
 func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetOutInType() int64 {
 	return r._outInType
 }

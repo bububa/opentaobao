@@ -41,7 +41,7 @@ func (r TmallItemSchemaAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 商品发布的目标类目，必须是叶子类目
 func (r *TmallItemSchemaAddAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
@@ -49,12 +49,12 @@ func (r *TmallItemSchemaAddAPIRequest) SetCategoryId(_categoryId int64) error {
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r TmallItemSchemaAddAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 发布商品的productId，如果tmall.product.match.schema.get获取到得字段为空，这个参数传入0，否则需要通过tmall.product.schema.match查询到得可用productId
 func (r *TmallItemSchemaAddAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -62,12 +62,12 @@ func (r *TmallItemSchemaAddAPIRequest) SetProductId(_productId int64) error {
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TmallItemSchemaAddAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is XmlData Setter
+// SetXmlData is XmlData Setter
 // 根据tmall.item.add.schema.get生成的商品发布规则入参数据
 func (r *TmallItemSchemaAddAPIRequest) SetXmlData(_xmlData string) error {
 	r._xmlData = _xmlData
@@ -75,7 +75,7 @@ func (r *TmallItemSchemaAddAPIRequest) SetXmlData(_xmlData string) error {
 	return nil
 }
 
-// Get XmlData Getter
+// GetXmlData XmlData Getter
 func (r TmallItemSchemaAddAPIRequest) GetXmlData() string {
 	return r._xmlData
 }

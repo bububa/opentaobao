@@ -37,7 +37,7 @@ func (r AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackAPIRequest) GetApiParam
 	return params
 }
 
-// Set is CallbackOrder Setter
+// SetCallbackOrder is CallbackOrder Setter
 // 作业单回传对象
 func (r *AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackAPIRequest) SetCallbackOrder(_callbackOrder *DrfB2CCallbackOrder) error {
 	r._callbackOrder = _callbackOrder
@@ -45,7 +45,7 @@ func (r *AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackAPIRequest) SetCallbac
 	return nil
 }
 
-// Get CallbackOrder Getter
+// GetCallbackOrder CallbackOrder Getter
 func (r AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackAPIRequest) GetCallbackOrder() *DrfB2CCallbackOrder {
 	return r._callbackOrder
 }

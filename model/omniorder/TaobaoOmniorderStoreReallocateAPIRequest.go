@@ -43,7 +43,7 @@ func (r TaobaoOmniorderStoreReallocateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 主订单号
 func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
@@ -51,12 +51,12 @@ func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetMainOrderId(_mainOrderId i
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r TaobaoOmniorderStoreReallocateAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }
 
-// Set is SubOrderIds Setter
+// SetSubOrderIds is SubOrderIds Setter
 // 子订单号
 func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetSubOrderIds(_subOrderIds []int64) error {
 	r._subOrderIds = _subOrderIds
@@ -64,12 +64,12 @@ func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetSubOrderIds(_subOrderIds [
 	return nil
 }
 
-// Get SubOrderIds Getter
+// GetSubOrderIds SubOrderIds Getter
 func (r TaobaoOmniorderStoreReallocateAPIRequest) GetSubOrderIds() []int64 {
 	return r._subOrderIds
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店Id
 func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -77,12 +77,12 @@ func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetStoreId(_storeId int64) er
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoOmniorderStoreReallocateAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is WarehouseCode Setter
+// SetWarehouseCode is WarehouseCode Setter
 // 电商仓code
 func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetWarehouseCode(_warehouseCode string) error {
 	r._warehouseCode = _warehouseCode
@@ -90,7 +90,7 @@ func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetWarehouseCode(_warehouseCo
 	return nil
 }
 
-// Get WarehouseCode Getter
+// GetWarehouseCode WarehouseCode Getter
 func (r TaobaoOmniorderStoreReallocateAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
 }

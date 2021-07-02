@@ -37,7 +37,7 @@ func (r TaobaoAlitripIeAgentRefundNewGetlistAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ParamRefundOrderQueryListRq Setter
+// SetParamRefundOrderQueryListRq is ParamRefundOrderQueryListRq Setter
 // 列表查询
 func (r *TaobaoAlitripIeAgentRefundNewGetlistAPIRequest) SetParamRefundOrderQueryListRq(_paramRefundOrderQueryListRq *RefundOrderQueryListRq) error {
 	r._paramRefundOrderQueryListRq = _paramRefundOrderQueryListRq
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripIeAgentRefundNewGetlistAPIRequest) SetParamRefundOrderQuer
 	return nil
 }
 
-// Get ParamRefundOrderQueryListRq Getter
+// GetParamRefundOrderQueryListRq ParamRefundOrderQueryListRq Getter
 func (r TaobaoAlitripIeAgentRefundNewGetlistAPIRequest) GetParamRefundOrderQueryListRq() *RefundOrderQueryListRq {
 	return r._paramRefundOrderQueryListRq
 }

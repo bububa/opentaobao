@@ -39,7 +39,7 @@ func (r TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is AdzoneIdList Setter
+// SetAdzoneIdList is AdzoneIdList Setter
 // 广告位id
 func (r *TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest) SetAdzoneIdList(_adzoneIdList []int64) error {
 	r._adzoneIdList = _adzoneIdList
@@ -47,12 +47,12 @@ func (r *TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest) SetAdzoneIdList(_adzon
 	return nil
 }
 
-// Get AdzoneIdList Getter
+// GetAdzoneIdList AdzoneIdList Getter
 func (r TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest) GetAdzoneIdList() []int64 {
 	return r._adzoneIdList
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 单元id
 func (r *TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -60,7 +60,7 @@ func (r *TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest) SetAdgroupId(_adgroupI
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

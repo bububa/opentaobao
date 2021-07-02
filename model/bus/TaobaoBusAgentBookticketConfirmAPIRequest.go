@@ -37,7 +37,7 @@ func (r TaobaoBusAgentBookticketConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamAgentConfirmBookRQ Setter
+// SetParamAgentConfirmBookRQ is ParamAgentConfirmBookRQ Setter
 // 请求对象
 func (r *TaobaoBusAgentBookticketConfirmAPIRequest) SetParamAgentConfirmBookRQ(_paramAgentConfirmBookRQ *AgentConfirmBookRq) error {
 	r._paramAgentConfirmBookRQ = _paramAgentConfirmBookRQ
@@ -45,7 +45,7 @@ func (r *TaobaoBusAgentBookticketConfirmAPIRequest) SetParamAgentConfirmBookRQ(_
 	return nil
 }
 
-// Get ParamAgentConfirmBookRQ Getter
+// GetParamAgentConfirmBookRQ ParamAgentConfirmBookRQ Getter
 func (r TaobaoBusAgentBookticketConfirmAPIRequest) GetParamAgentConfirmBookRQ() *AgentConfirmBookRq {
 	return r._paramAgentConfirmBookRQ
 }

@@ -45,7 +45,7 @@ func (r TaobaoSimbaSalestarCreativeUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广组Id
 func (r *TaobaoSimbaSalestarCreativeUpdateAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -53,12 +53,12 @@ func (r *TaobaoSimbaSalestarCreativeUpdateAPIRequest) SetAdgroupId(_adgroupId in
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaSalestarCreativeUpdateAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }
 
-// Set is CreativeId Setter
+// SetCreativeId is CreativeId Setter
 // 创意Id
 func (r *TaobaoSimbaSalestarCreativeUpdateAPIRequest) SetCreativeId(_creativeId int64) error {
 	r._creativeId = _creativeId
@@ -66,12 +66,12 @@ func (r *TaobaoSimbaSalestarCreativeUpdateAPIRequest) SetCreativeId(_creativeId 
 	return nil
 }
 
-// Get CreativeId Getter
+// GetCreativeId CreativeId Getter
 func (r TaobaoSimbaSalestarCreativeUpdateAPIRequest) GetCreativeId() int64 {
 	return r._creativeId
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 创意标题，最多20个汉字
 func (r *TaobaoSimbaSalestarCreativeUpdateAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -79,12 +79,12 @@ func (r *TaobaoSimbaSalestarCreativeUpdateAPIRequest) SetTitle(_title string) er
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoSimbaSalestarCreativeUpdateAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// Set is ImgUrl Setter
+// SetImgUrl is ImgUrl Setter
 // 创意图片地址，必须是推广组对应商品的图片之一
 func (r *TaobaoSimbaSalestarCreativeUpdateAPIRequest) SetImgUrl(_imgUrl string) error {
 	r._imgUrl = _imgUrl
@@ -92,12 +92,12 @@ func (r *TaobaoSimbaSalestarCreativeUpdateAPIRequest) SetImgUrl(_imgUrl string) 
 	return nil
 }
 
-// Get ImgUrl Getter
+// GetImgUrl ImgUrl Getter
 func (r TaobaoSimbaSalestarCreativeUpdateAPIRequest) GetImgUrl() string {
 	return r._imgUrl
 }
 
-// Set is PictureId Setter
+// SetPictureId is PictureId Setter
 // 如果用户开通了创意本地上传图片功能的，可以使用该用户图片空间的图片来修改创意，pictureId为图片空间中图片的pictureId，img_url为图片空间中图片链接地址，如果是使用的主图或副图修改创意，则pictureId必须为空
 func (r *TaobaoSimbaSalestarCreativeUpdateAPIRequest) SetPictureId(_pictureId int64) error {
 	r._pictureId = _pictureId
@@ -105,7 +105,7 @@ func (r *TaobaoSimbaSalestarCreativeUpdateAPIRequest) SetPictureId(_pictureId in
 	return nil
 }
 
-// Get PictureId Getter
+// GetPictureId PictureId Getter
 func (r TaobaoSimbaSalestarCreativeUpdateAPIRequest) GetPictureId() int64 {
 	return r._pictureId
 }

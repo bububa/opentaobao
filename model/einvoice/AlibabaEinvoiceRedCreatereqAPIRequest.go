@@ -45,7 +45,7 @@ func (r AlibabaEinvoiceRedCreatereqAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 销售方税号
 func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -53,12 +53,12 @@ func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetPayeeRegisterNo(_payeeRegiste
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceRedCreatereqAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is BlueSerialNo Setter
+// SetBlueSerialNo is BlueSerialNo Setter
 // 蓝票流水号，优先级高于发票代码+发票号码
 func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetBlueSerialNo(_blueSerialNo string) error {
 	r._blueSerialNo = _blueSerialNo
@@ -66,12 +66,12 @@ func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetBlueSerialNo(_blueSerialNo st
 	return nil
 }
 
-// Get BlueSerialNo Getter
+// GetBlueSerialNo BlueSerialNo Getter
 func (r AlibabaEinvoiceRedCreatereqAPIRequest) GetBlueSerialNo() string {
 	return r._blueSerialNo
 }
 
-// Set is RedSerialNo Setter
+// SetRedSerialNo is RedSerialNo Setter
 // 红票流水号
 func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetRedSerialNo(_redSerialNo string) error {
 	r._redSerialNo = _redSerialNo
@@ -79,12 +79,12 @@ func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetRedSerialNo(_redSerialNo stri
 	return nil
 }
 
-// Get RedSerialNo Getter
+// GetRedSerialNo RedSerialNo Getter
 func (r AlibabaEinvoiceRedCreatereqAPIRequest) GetRedSerialNo() string {
 	return r._redSerialNo
 }
 
-// Set is InvoiceCode Setter
+// SetInvoiceCode is InvoiceCode Setter
 // 蓝票发票代码
 func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetInvoiceCode(_invoiceCode string) error {
 	r._invoiceCode = _invoiceCode
@@ -92,12 +92,12 @@ func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetInvoiceCode(_invoiceCode stri
 	return nil
 }
 
-// Get InvoiceCode Getter
+// GetInvoiceCode InvoiceCode Getter
 func (r AlibabaEinvoiceRedCreatereqAPIRequest) GetInvoiceCode() string {
 	return r._invoiceCode
 }
 
-// Set is InvoiceNo Setter
+// SetInvoiceNo is InvoiceNo Setter
 // 蓝票发票号码
 func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetInvoiceNo(_invoiceNo string) error {
 	r._invoiceNo = _invoiceNo
@@ -105,7 +105,7 @@ func (r *AlibabaEinvoiceRedCreatereqAPIRequest) SetInvoiceNo(_invoiceNo string) 
 	return nil
 }
 
-// Get InvoiceNo Getter
+// GetInvoiceNo InvoiceNo Getter
 func (r AlibabaEinvoiceRedCreatereqAPIRequest) GetInvoiceNo() string {
 	return r._invoiceNo
 }

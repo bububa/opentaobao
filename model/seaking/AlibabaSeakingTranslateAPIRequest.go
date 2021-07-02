@@ -51,7 +51,7 @@ func (r AlibabaSeakingTranslateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Identifier Setter
+// SetIdentifier is Identifier Setter
 // 定制用户id
 func (r *AlibabaSeakingTranslateAPIRequest) SetIdentifier(_identifier string) error {
 	r._identifier = _identifier
@@ -59,12 +59,12 @@ func (r *AlibabaSeakingTranslateAPIRequest) SetIdentifier(_identifier string) er
 	return nil
 }
 
-// Get Identifier Getter
+// GetIdentifier Identifier Getter
 func (r AlibabaSeakingTranslateAPIRequest) GetIdentifier() string {
 	return r._identifier
 }
 
-// Set is TargetLang Setter
+// SetTargetLang is TargetLang Setter
 // 目标语种
 func (r *AlibabaSeakingTranslateAPIRequest) SetTargetLang(_targetLang string) error {
 	r._targetLang = _targetLang
@@ -72,12 +72,12 @@ func (r *AlibabaSeakingTranslateAPIRequest) SetTargetLang(_targetLang string) er
 	return nil
 }
 
-// Get TargetLang Getter
+// GetTargetLang TargetLang Getter
 func (r AlibabaSeakingTranslateAPIRequest) GetTargetLang() string {
 	return r._targetLang
 }
 
-// Set is SourceLang Setter
+// SetSourceLang is SourceLang Setter
 // 源语种
 func (r *AlibabaSeakingTranslateAPIRequest) SetSourceLang(_sourceLang string) error {
 	r._sourceLang = _sourceLang
@@ -85,12 +85,12 @@ func (r *AlibabaSeakingTranslateAPIRequest) SetSourceLang(_sourceLang string) er
 	return nil
 }
 
-// Get SourceLang Getter
+// GetSourceLang SourceLang Getter
 func (r AlibabaSeakingTranslateAPIRequest) GetSourceLang() string {
 	return r._sourceLang
 }
 
-// Set is SourceText Setter
+// SetSourceText is SourceText Setter
 // 原文
 func (r *AlibabaSeakingTranslateAPIRequest) SetSourceText(_sourceText string) error {
 	r._sourceText = _sourceText
@@ -98,12 +98,12 @@ func (r *AlibabaSeakingTranslateAPIRequest) SetSourceText(_sourceText string) er
 	return nil
 }
 
-// Get SourceText Getter
+// GetSourceText SourceText Getter
 func (r AlibabaSeakingTranslateAPIRequest) GetSourceText() string {
 	return r._sourceText
 }
 
-// Set is SourceFormat Setter
+// SetSourceFormat is SourceFormat Setter
 // 原文格式(text/html)
 func (r *AlibabaSeakingTranslateAPIRequest) SetSourceFormat(_sourceFormat string) error {
 	r._sourceFormat = _sourceFormat
@@ -111,12 +111,12 @@ func (r *AlibabaSeakingTranslateAPIRequest) SetSourceFormat(_sourceFormat string
 	return nil
 }
 
-// Get SourceFormat Getter
+// GetSourceFormat SourceFormat Getter
 func (r AlibabaSeakingTranslateAPIRequest) GetSourceFormat() string {
 	return r._sourceFormat
 }
 
-// Set is IdentifierType Setter
+// SetIdentifierType is IdentifierType Setter
 // 定制用户类型
 func (r *AlibabaSeakingTranslateAPIRequest) SetIdentifierType(_identifierType string) error {
 	r._identifierType = _identifierType
@@ -124,12 +124,12 @@ func (r *AlibabaSeakingTranslateAPIRequest) SetIdentifierType(_identifierType st
 	return nil
 }
 
-// Get IdentifierType Getter
+// GetIdentifierType IdentifierType Getter
 func (r AlibabaSeakingTranslateAPIRequest) GetIdentifierType() string {
 	return r._identifierType
 }
 
-// Set is FieldType Setter
+// SetFieldType is FieldType Setter
 // 原文类型(title: 标题/offer: 详描/message: 消息)
 func (r *AlibabaSeakingTranslateAPIRequest) SetFieldType(_fieldType string) error {
 	r._fieldType = _fieldType
@@ -137,12 +137,12 @@ func (r *AlibabaSeakingTranslateAPIRequest) SetFieldType(_fieldType string) erro
 	return nil
 }
 
-// Get FieldType Getter
+// GetFieldType FieldType Getter
 func (r AlibabaSeakingTranslateAPIRequest) GetFieldType() string {
 	return r._fieldType
 }
 
-// Set is Extra Setter
+// SetExtra is Extra Setter
 // 扩展信息
 func (r *AlibabaSeakingTranslateAPIRequest) SetExtra(_extra *Extra) error {
 	r._extra = _extra
@@ -150,7 +150,7 @@ func (r *AlibabaSeakingTranslateAPIRequest) SetExtra(_extra *Extra) error {
 	return nil
 }
 
-// Get Extra Getter
+// GetExtra Extra Getter
 func (r AlibabaSeakingTranslateAPIRequest) GetExtra() *Extra {
 	return r._extra
 }

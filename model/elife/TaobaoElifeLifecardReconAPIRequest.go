@@ -37,7 +37,7 @@ func (r TaobaoElifeLifecardReconAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpDate Setter
+// SetOpDate is OpDate Setter
 // 对账日期(YYYYMMDD)
 func (r *TaobaoElifeLifecardReconAPIRequest) SetOpDate(_opDate string) error {
 	r._opDate = _opDate
@@ -45,7 +45,7 @@ func (r *TaobaoElifeLifecardReconAPIRequest) SetOpDate(_opDate string) error {
 	return nil
 }
 
-// Get OpDate Getter
+// GetOpDate OpDate Getter
 func (r TaobaoElifeLifecardReconAPIRequest) GetOpDate() string {
 	return r._opDate
 }

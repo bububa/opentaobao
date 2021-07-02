@@ -37,7 +37,7 @@ func (r AlibabaPurProductSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AccessProductDtos Setter
+// SetAccessProductDtos is AccessProductDtos Setter
 // 产品对象
 func (r *AlibabaPurProductSyncAPIRequest) SetAccessProductDtos(_accessProductDtos []AccessProductDto) error {
 	r._accessProductDtos = _accessProductDtos
@@ -45,7 +45,7 @@ func (r *AlibabaPurProductSyncAPIRequest) SetAccessProductDtos(_accessProductDto
 	return nil
 }
 
-// Get AccessProductDtos Getter
+// GetAccessProductDtos AccessProductDtos Getter
 func (r AlibabaPurProductSyncAPIRequest) GetAccessProductDtos() []AccessProductDto {
 	return r._accessProductDtos
 }

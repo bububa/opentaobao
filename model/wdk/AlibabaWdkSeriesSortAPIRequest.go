@@ -37,7 +37,7 @@ func (r AlibabaWdkSeriesSortAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Sort Setter
+// SetSort is Sort Setter
 // 自定义排序请求
 func (r *AlibabaWdkSeriesSortAPIRequest) SetSort(_sort *SeriesSortRequest) error {
 	r._sort = _sort
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSeriesSortAPIRequest) SetSort(_sort *SeriesSortRequest) error
 	return nil
 }
 
-// Get Sort Getter
+// GetSort Sort Getter
 func (r AlibabaWdkSeriesSortAPIRequest) GetSort() *SeriesSortRequest {
 	return r._sort
 }

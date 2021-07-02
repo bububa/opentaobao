@@ -49,7 +49,7 @@ func (r AlibabaAlisportsPassportParterSynccardAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Aliuid Setter
+// SetAliuid is Aliuid Setter
 // 用户的id
 func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetAliuid(_aliuid string) error {
 	r._aliuid = _aliuid
@@ -57,12 +57,12 @@ func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetAliuid(_aliuid str
 	return nil
 }
 
-// Get Aliuid Getter
+// GetAliuid Aliuid Getter
 func (r AlibabaAlisportsPassportParterSynccardAPIRequest) GetAliuid() string {
 	return r._aliuid
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 类型：1.修改，2.删除
 func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -70,12 +70,12 @@ func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetType(_type string)
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaAlisportsPassportParterSynccardAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is OldCardNum Setter
+// SetOldCardNum is OldCardNum Setter
 // 用户的老卡号(修改或删除之前的卡号)
 func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetOldCardNum(_oldCardNum string) error {
 	r._oldCardNum = _oldCardNum
@@ -83,12 +83,12 @@ func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetOldCardNum(_oldCar
 	return nil
 }
 
-// Get OldCardNum Getter
+// GetOldCardNum OldCardNum Getter
 func (r AlibabaAlisportsPassportParterSynccardAPIRequest) GetOldCardNum() string {
 	return r._oldCardNum
 }
 
-// Set is AlispTime Setter
+// SetAlispTime is AlispTime Setter
 // 时间戳
 func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetAlispTime(_alispTime string) error {
 	r._alispTime = _alispTime
@@ -96,12 +96,12 @@ func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetAlispTime(_alispTi
 	return nil
 }
 
-// Get AlispTime Getter
+// GetAlispTime AlispTime Getter
 func (r AlibabaAlisportsPassportParterSynccardAPIRequest) GetAlispTime() string {
 	return r._alispTime
 }
 
-// Set is AlispAppKey Setter
+// SetAlispAppKey is AlispAppKey Setter
 // appkey
 func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetAlispAppKey(_alispAppKey string) error {
 	r._alispAppKey = _alispAppKey
@@ -109,12 +109,12 @@ func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetAlispAppKey(_alisp
 	return nil
 }
 
-// Get AlispAppKey Getter
+// GetAlispAppKey AlispAppKey Getter
 func (r AlibabaAlisportsPassportParterSynccardAPIRequest) GetAlispAppKey() string {
 	return r._alispAppKey
 }
 
-// Set is AlispSign Setter
+// SetAlispSign is AlispSign Setter
 // 签名字符串
 func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetAlispSign(_alispSign string) error {
 	r._alispSign = _alispSign
@@ -122,12 +122,12 @@ func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetAlispSign(_alispSi
 	return nil
 }
 
-// Get AlispSign Getter
+// GetAlispSign AlispSign Getter
 func (r AlibabaAlisportsPassportParterSynccardAPIRequest) GetAlispSign() string {
 	return r._alispSign
 }
 
-// Set is CenterNum Setter
+// SetCenterNum is CenterNum Setter
 // 改卡的中心id，如果卡号唯一则不需要传
 func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetCenterNum(_centerNum string) error {
 	r._centerNum = _centerNum
@@ -135,7 +135,7 @@ func (r *AlibabaAlisportsPassportParterSynccardAPIRequest) SetCenterNum(_centerN
 	return nil
 }
 
-// Get CenterNum Getter
+// GetCenterNum CenterNum Getter
 func (r AlibabaAlisportsPassportParterSynccardAPIRequest) GetCenterNum() string {
 	return r._centerNum
 }

@@ -47,7 +47,7 @@ func (r TaobaoAilabAicloudTopMessageListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 账户体系隔离
 func (r *TaobaoAilabAicloudTopMessageListAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -55,12 +55,12 @@ func (r *TaobaoAilabAicloudTopMessageListAPIRequest) SetSchema(_schema string) e
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopMessageListAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
 func (r *TaobaoAilabAicloudTopMessageListAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -68,12 +68,12 @@ func (r *TaobaoAilabAicloudTopMessageListAPIRequest) SetUserId(_userId string) e
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopMessageListAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is UtdId Setter
+// SetUtdId is UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
 func (r *TaobaoAilabAicloudTopMessageListAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
@@ -81,12 +81,12 @@ func (r *TaobaoAilabAicloudTopMessageListAPIRequest) SetUtdId(_utdId string) err
 	return nil
 }
 
-// Get UtdId Getter
+// GetUtdId UtdId Getter
 func (r TaobaoAilabAicloudTopMessageListAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息，用于存放APP类型等
 func (r *TaobaoAilabAicloudTopMessageListAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -94,12 +94,12 @@ func (r *TaobaoAilabAicloudTopMessageListAPIRequest) SetExt(_ext string) error {
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoAilabAicloudTopMessageListAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is BeforeTime Setter
+// SetBeforeTime is BeforeTime Setter
 // 截止时间，yyyy-MM-dd HH:mm:ss.SSS
 func (r *TaobaoAilabAicloudTopMessageListAPIRequest) SetBeforeTime(_beforeTime string) error {
 	r._beforeTime = _beforeTime
@@ -107,12 +107,12 @@ func (r *TaobaoAilabAicloudTopMessageListAPIRequest) SetBeforeTime(_beforeTime s
 	return nil
 }
 
-// Get BeforeTime Getter
+// GetBeforeTime BeforeTime Getter
 func (r TaobaoAilabAicloudTopMessageListAPIRequest) GetBeforeTime() string {
 	return r._beforeTime
 }
 
-// Set is Limit Setter
+// SetLimit is Limit Setter
 // 一次性展示多少条信息
 func (r *TaobaoAilabAicloudTopMessageListAPIRequest) SetLimit(_limit int64) error {
 	r._limit = _limit
@@ -120,7 +120,7 @@ func (r *TaobaoAilabAicloudTopMessageListAPIRequest) SetLimit(_limit int64) erro
 	return nil
 }
 
-// Get Limit Getter
+// GetLimit Limit Getter
 func (r TaobaoAilabAicloudTopMessageListAPIRequest) GetLimit() int64 {
 	return r._limit
 }

@@ -49,7 +49,7 @@ func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is CurrencyType Setter
+// SetCurrencyType is CurrencyType Setter
 // 币种，非必填，仅支持当商品记为外币价格时使用
 func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetCurrencyType(_currencyType string) error {
 	r._currencyType = _currencyType
@@ -57,12 +57,12 @@ func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetCurrencyType(_c
 	return nil
 }
 
-// Get CurrencyType Getter
+// GetCurrencyType CurrencyType Getter
 func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetCurrencyType() string {
 	return r._currencyType
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品数字ID
 func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -70,12 +70,12 @@ func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetProductId(_prod
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is PriceType Setter
+// SetPriceType is PriceType Setter
 // 1.指导价(默认) 2.区域价
 func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetPriceType(_priceType int64) error {
 	r._priceType = _priceType
@@ -83,12 +83,12 @@ func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetPriceType(_pric
 	return nil
 }
 
-// Get PriceType Getter
+// GetPriceType PriceType Getter
 func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetPriceType() int64 {
 	return r._priceType
 }
 
-// Set is SkuPrice Setter
+// SetSkuPrice is SkuPrice Setter
 // 属于这个sku的商品的价格 取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。
 func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetSkuPrice(_skuPrice string) error {
 	r._skuPrice = _skuPrice
@@ -96,12 +96,12 @@ func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetSkuPrice(_skuPr
 	return nil
 }
 
-// Get SkuPrice Getter
+// GetSkuPrice SkuPrice Getter
 func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetSkuPrice() string {
 	return r._skuPrice
 }
 
-// Set is ProductPrice Setter
+// SetProductPrice is ProductPrice Setter
 // 产品价格，必填
 func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetProductPrice(_productPrice string) error {
 	r._productPrice = _productPrice
@@ -109,12 +109,12 @@ func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetProductPrice(_p
 	return nil
 }
 
-// Get ProductPrice Getter
+// GetProductPrice ProductPrice Getter
 func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetProductPrice() string {
 	return r._productPrice
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // SKU ID
 func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
@@ -122,12 +122,12 @@ func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetSkuId(_skuId in
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }
 
-// Set is ChannelCode Setter
+// SetChannelCode is ChannelCode Setter
 // 渠道编码
 func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetChannelCode(_channelCode int64) error {
 	r._channelCode = _channelCode
@@ -135,7 +135,7 @@ func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetChannelCode(_ch
 	return nil
 }
 
-// Get ChannelCode Getter
+// GetChannelCode ChannelCode Getter
 func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetChannelCode() int64 {
 	return r._channelCode
 }

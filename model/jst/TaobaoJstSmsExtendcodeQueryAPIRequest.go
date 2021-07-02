@@ -37,7 +37,7 @@ func (r TaobaoJstSmsExtendcodeQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ExtendCodeQueryRequest Setter
+// SetExtendCodeQueryRequest is ExtendCodeQueryRequest Setter
 // 扩展码查询请求
 func (r *TaobaoJstSmsExtendcodeQueryAPIRequest) SetExtendCodeQueryRequest(_extendCodeQueryRequest *ExtendCodeQueryRequest) error {
 	r._extendCodeQueryRequest = _extendCodeQueryRequest
@@ -45,7 +45,7 @@ func (r *TaobaoJstSmsExtendcodeQueryAPIRequest) SetExtendCodeQueryRequest(_exten
 	return nil
 }
 
-// Get ExtendCodeQueryRequest Getter
+// GetExtendCodeQueryRequest ExtendCodeQueryRequest Getter
 func (r TaobaoJstSmsExtendcodeQueryAPIRequest) GetExtendCodeQueryRequest() *ExtendCodeQueryRequest {
 	return r._extendCodeQueryRequest
 }

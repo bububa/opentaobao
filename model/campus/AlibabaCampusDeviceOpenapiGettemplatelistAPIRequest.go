@@ -37,7 +37,7 @@ func (r AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 设备模板查询对象
 func (r *AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest) SetQuery(_query *TemplateApiQuery) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest) SetQuery(_query *T
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaCampusDeviceOpenapiGettemplatelistAPIRequest) GetQuery() *TemplateApiQuery {
 	return r._query
 }

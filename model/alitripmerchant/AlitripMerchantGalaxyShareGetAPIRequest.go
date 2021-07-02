@@ -37,7 +37,7 @@ func (r AlitripMerchantGalaxyShareGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TenantKey Setter
+// SetTenantKey is TenantKey Setter
 // 租户ID
 func (r *AlitripMerchantGalaxyShareGetAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
@@ -45,7 +45,7 @@ func (r *AlitripMerchantGalaxyShareGetAPIRequest) SetTenantKey(_tenantKey string
 	return nil
 }
 
-// Get TenantKey Getter
+// GetTenantKey TenantKey Getter
 func (r AlitripMerchantGalaxyShareGetAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }

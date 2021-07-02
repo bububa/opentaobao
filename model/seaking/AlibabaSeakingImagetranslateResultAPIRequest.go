@@ -41,7 +41,7 @@ func (r AlibabaSeakingImagetranslateResultAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is TokenFrom Setter
+// SetTokenFrom is TokenFrom Setter
 // token来源站点
 func (r *AlibabaSeakingImagetranslateResultAPIRequest) SetTokenFrom(_tokenFrom string) error {
 	r._tokenFrom = _tokenFrom
@@ -49,12 +49,12 @@ func (r *AlibabaSeakingImagetranslateResultAPIRequest) SetTokenFrom(_tokenFrom s
 	return nil
 }
 
-// Get TokenFrom Getter
+// GetTokenFrom TokenFrom Getter
 func (r AlibabaSeakingImagetranslateResultAPIRequest) GetTokenFrom() string {
 	return r._tokenFrom
 }
 
-// Set is TaskId Setter
+// SetTaskId is TaskId Setter
 // 任务id
 func (r *AlibabaSeakingImagetranslateResultAPIRequest) SetTaskId(_taskId int64) error {
 	r._taskId = _taskId
@@ -62,12 +62,12 @@ func (r *AlibabaSeakingImagetranslateResultAPIRequest) SetTaskId(_taskId int64) 
 	return nil
 }
 
-// Get TaskId Getter
+// GetTaskId TaskId Getter
 func (r AlibabaSeakingImagetranslateResultAPIRequest) GetTaskId() int64 {
 	return r._taskId
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 用户token
 func (r *AlibabaSeakingImagetranslateResultAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -75,7 +75,7 @@ func (r *AlibabaSeakingImagetranslateResultAPIRequest) SetToken(_token string) e
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlibabaSeakingImagetranslateResultAPIRequest) GetToken() string {
 	return r._token
 }

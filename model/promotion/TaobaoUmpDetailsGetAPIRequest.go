@@ -41,7 +41,7 @@ func (r TaobaoUmpDetailsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ActId Setter
+// SetActId is ActId Setter
 // 营销活动id
 func (r *TaobaoUmpDetailsGetAPIRequest) SetActId(_actId int64) error {
 	r._actId = _actId
@@ -49,12 +49,12 @@ func (r *TaobaoUmpDetailsGetAPIRequest) SetActId(_actId int64) error {
 	return nil
 }
 
-// Get ActId Getter
+// GetActId ActId Getter
 func (r TaobaoUmpDetailsGetAPIRequest) GetActId() int64 {
 	return r._actId
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 分页的页码
 func (r *TaobaoUmpDetailsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -62,12 +62,12 @@ func (r *TaobaoUmpDetailsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoUmpDetailsGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页的最大条数
 func (r *TaobaoUmpDetailsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *TaobaoUmpDetailsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoUmpDetailsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

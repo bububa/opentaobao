@@ -39,7 +39,7 @@ func (r YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest) GetApiPar
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 元数据主键id
 func (r *YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -47,12 +47,12 @@ func (r *YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest) SetId(_i
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is TerminalType Setter
+// SetTerminalType is TerminalType Setter
 // 联盟：TV_OTT,一体机：TV_ALLINONE
 func (r *YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest) SetTerminalType(_terminalType string) error {
 	r._terminalType = _terminalType
@@ -60,7 +60,7 @@ func (r *YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest) SetTermi
 	return nil
 }
 
-// Get TerminalType Getter
+// GetTerminalType TerminalType Getter
 func (r YunosTvpubadminContentTableauditOfflinelauncheritemAPIRequest) GetTerminalType() string {
 	return r._terminalType
 }

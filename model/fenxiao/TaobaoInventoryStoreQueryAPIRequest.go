@@ -37,7 +37,7 @@ func (r TaobaoInventoryStoreQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 商家的仓库编码
 func (r *TaobaoInventoryStoreQueryAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -45,7 +45,7 @@ func (r *TaobaoInventoryStoreQueryAPIRequest) SetStoreCode(_storeCode string) er
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r TaobaoInventoryStoreQueryAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }

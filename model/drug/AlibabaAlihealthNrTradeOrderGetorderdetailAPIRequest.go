@@ -37,7 +37,7 @@ func (r AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 淘宝订单ID
 func (r *AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) SetOrderId(_order
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaAlihealthNrTradeOrderGetorderdetailAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }

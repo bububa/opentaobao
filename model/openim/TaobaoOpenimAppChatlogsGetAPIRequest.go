@@ -43,7 +43,7 @@ func (r TaobaoOpenimAppChatlogsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Beg Setter
+// SetBeg is Beg Setter
 // 查询结束时间。UTC时间。精度到秒
 func (r *TaobaoOpenimAppChatlogsGetAPIRequest) SetBeg(_beg int64) error {
 	r._beg = _beg
@@ -51,12 +51,12 @@ func (r *TaobaoOpenimAppChatlogsGetAPIRequest) SetBeg(_beg int64) error {
 	return nil
 }
 
-// Get Beg Getter
+// GetBeg Beg Getter
 func (r TaobaoOpenimAppChatlogsGetAPIRequest) GetBeg() int64 {
 	return r._beg
 }
 
-// Set is End Setter
+// SetEnd is End Setter
 // 查询结束时间。UTC时间。精度到秒
 func (r *TaobaoOpenimAppChatlogsGetAPIRequest) SetEnd(_end int64) error {
 	r._end = _end
@@ -64,12 +64,12 @@ func (r *TaobaoOpenimAppChatlogsGetAPIRequest) SetEnd(_end int64) error {
 	return nil
 }
 
-// Get End Getter
+// GetEnd End Getter
 func (r TaobaoOpenimAppChatlogsGetAPIRequest) GetEnd() int64 {
 	return r._end
 }
 
-// Set is Count Setter
+// SetCount is Count Setter
 // 查询最大条数
 func (r *TaobaoOpenimAppChatlogsGetAPIRequest) SetCount(_count int64) error {
 	r._count = _count
@@ -77,12 +77,12 @@ func (r *TaobaoOpenimAppChatlogsGetAPIRequest) SetCount(_count int64) error {
 	return nil
 }
 
-// Get Count Getter
+// GetCount Count Getter
 func (r TaobaoOpenimAppChatlogsGetAPIRequest) GetCount() int64 {
 	return r._count
 }
 
-// Set is Next Setter
+// SetNext is Next Setter
 // 迭代key
 func (r *TaobaoOpenimAppChatlogsGetAPIRequest) SetNext(_next string) error {
 	r._next = _next
@@ -90,7 +90,7 @@ func (r *TaobaoOpenimAppChatlogsGetAPIRequest) SetNext(_next string) error {
 	return nil
 }
 
-// Get Next Getter
+// GetNext Next Getter
 func (r TaobaoOpenimAppChatlogsGetAPIRequest) GetNext() string {
 	return r._next
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeVideoSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Video Setter
+// SetVideo is Video Setter
 // 草稿对下
 func (r *AlibabaAlihouseNewhomeVideoSyncAPIRequest) SetVideo(_video *VideoDraftDto) error {
 	r._video = _video
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeVideoSyncAPIRequest) SetVideo(_video *VideoDraftD
 	return nil
 }
 
-// Get Video Getter
+// GetVideo Video Getter
 func (r AlibabaAlihouseNewhomeVideoSyncAPIRequest) GetVideo() *VideoDraftDto {
 	return r._video
 }

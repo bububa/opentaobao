@@ -37,7 +37,7 @@ func (r TaobaoTrainMomentGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 出参
 func (r *TaobaoTrainMomentGetAPIRequest) SetParam(_param *TrainMomentTopParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *TaobaoTrainMomentGetAPIRequest) SetParam(_param *TrainMomentTopParam) e
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r TaobaoTrainMomentGetAPIRequest) GetParam() *TrainMomentTopParam {
 	return r._param
 }

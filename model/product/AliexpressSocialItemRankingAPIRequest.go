@@ -47,7 +47,7 @@ func (r AliexpressSocialItemRankingAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Currency Setter
+// SetCurrency is Currency Setter
 // 币种
 func (r *AliexpressSocialItemRankingAPIRequest) SetCurrency(_currency string) error {
 	r._currency = _currency
@@ -55,12 +55,12 @@ func (r *AliexpressSocialItemRankingAPIRequest) SetCurrency(_currency string) er
 	return nil
 }
 
-// Get Currency Getter
+// GetCurrency Currency Getter
 func (r AliexpressSocialItemRankingAPIRequest) GetCurrency() string {
 	return r._currency
 }
 
-// Set is CountryList Setter
+// SetCountryList is CountryList Setter
 // 国家列表
 func (r *AliexpressSocialItemRankingAPIRequest) SetCountryList(_countryList []string) error {
 	r._countryList = _countryList
@@ -68,12 +68,12 @@ func (r *AliexpressSocialItemRankingAPIRequest) SetCountryList(_countryList []st
 	return nil
 }
 
-// Get CountryList Getter
+// GetCountryList CountryList Getter
 func (r AliexpressSocialItemRankingAPIRequest) GetCountryList() []string {
 	return r._countryList
 }
 
-// Set is Locale Setter
+// SetLocale is Locale Setter
 // locale，格式为language+"_"+country
 func (r *AliexpressSocialItemRankingAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
@@ -81,12 +81,12 @@ func (r *AliexpressSocialItemRankingAPIRequest) SetLocale(_locale string) error 
 	return nil
 }
 
-// Get Locale Getter
+// GetLocale Locale Getter
 func (r AliexpressSocialItemRankingAPIRequest) GetLocale() string {
 	return r._locale
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *AliexpressSocialItemRankingAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -94,12 +94,12 @@ func (r *AliexpressSocialItemRankingAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r AliexpressSocialItemRankingAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is CateId Setter
+// SetCateId is CateId Setter
 // 类目ID
 func (r *AliexpressSocialItemRankingAPIRequest) SetCateId(_cateId int64) error {
 	r._cateId = _cateId
@@ -107,12 +107,12 @@ func (r *AliexpressSocialItemRankingAPIRequest) SetCateId(_cateId int64) error {
 	return nil
 }
 
-// Get CateId Getter
+// GetCateId CateId Getter
 func (r AliexpressSocialItemRankingAPIRequest) GetCateId() int64 {
 	return r._cateId
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数
 func (r *AliexpressSocialItemRankingAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -120,7 +120,7 @@ func (r *AliexpressSocialItemRankingAPIRequest) SetPageSize(_pageSize int64) err
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AliexpressSocialItemRankingAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

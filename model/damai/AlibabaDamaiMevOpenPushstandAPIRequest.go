@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenPushstandAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PushStandParam Setter
+// SetPushStandParam is PushStandParam Setter
 // 入参pushStandParam
 func (r *AlibabaDamaiMevOpenPushstandAPIRequest) SetPushStandParam(_pushStandParam *ThirdStandPushOpenParam) error {
 	r._pushStandParam = _pushStandParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenPushstandAPIRequest) SetPushStandParam(_pushStandPar
 	return nil
 }
 
-// Get PushStandParam Getter
+// GetPushStandParam PushStandParam Getter
 func (r AlibabaDamaiMevOpenPushstandAPIRequest) GetPushStandParam() *ThirdStandPushOpenParam {
 	return r._pushStandParam
 }

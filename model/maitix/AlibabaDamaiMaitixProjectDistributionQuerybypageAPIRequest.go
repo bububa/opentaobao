@@ -37,7 +37,7 @@ func (r AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest) GetApiParams
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参param
 func (r *AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest) SetParam(_param *ProjectPageParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest) SetParam(_p
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaDamaiMaitixProjectDistributionQuerybypageAPIRequest) GetParam() *ProjectPageParam {
 	return r._param
 }

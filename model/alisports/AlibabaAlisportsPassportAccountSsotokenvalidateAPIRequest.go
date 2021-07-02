@@ -43,7 +43,7 @@ func (r AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is SsoToken Setter
+// SetSsoToken is SsoToken Setter
 // sso_token
 func (r *AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) SetSsoToken(_ssoToken string) error {
 	r._ssoToken = _ssoToken
@@ -51,12 +51,12 @@ func (r *AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) SetSsoToken(
 	return nil
 }
 
-// Get SsoToken Getter
+// GetSsoToken SsoToken Getter
 func (r AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) GetSsoToken() string {
 	return r._ssoToken
 }
 
-// Set is AlispAppKey Setter
+// SetAlispAppKey is AlispAppKey Setter
 // 应用APPKEY
 func (r *AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) SetAlispAppKey(_alispAppKey string) error {
 	r._alispAppKey = _alispAppKey
@@ -64,12 +64,12 @@ func (r *AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) SetAlispAppK
 	return nil
 }
 
-// Get AlispAppKey Getter
+// GetAlispAppKey AlispAppKey Getter
 func (r AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) GetAlispAppKey() string {
 	return r._alispAppKey
 }
 
-// Set is AlispTime Setter
+// SetAlispTime is AlispTime Setter
 // 当前时间戳[精确到秒，10位]
 func (r *AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) SetAlispTime(_alispTime string) error {
 	r._alispTime = _alispTime
@@ -77,12 +77,12 @@ func (r *AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) SetAlispTime
 	return nil
 }
 
-// Get AlispTime Getter
+// GetAlispTime AlispTime Getter
 func (r AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) GetAlispTime() string {
 	return r._alispTime
 }
 
-// Set is AlispSign Setter
+// SetAlispSign is AlispSign Setter
 // 签名
 func (r *AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) SetAlispSign(_alispSign string) error {
 	r._alispSign = _alispSign
@@ -90,7 +90,7 @@ func (r *AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) SetAlispSign
 	return nil
 }
 
-// Get AlispSign Getter
+// GetAlispSign AlispSign Getter
 func (r AlibabaAlisportsPassportAccountSsotokenvalidateAPIRequest) GetAlispSign() string {
 	return r._alispSign
 }

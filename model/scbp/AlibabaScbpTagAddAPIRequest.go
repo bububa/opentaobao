@@ -37,7 +37,7 @@ func (r AlibabaScbpTagAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TagName Setter
+// SetTagName is TagName Setter
 // 分组名称，最多允许创建100个
 func (r *AlibabaScbpTagAddAPIRequest) SetTagName(_tagName string) error {
 	r._tagName = _tagName
@@ -45,7 +45,7 @@ func (r *AlibabaScbpTagAddAPIRequest) SetTagName(_tagName string) error {
 	return nil
 }
 
-// Get TagName Getter
+// GetTagName TagName Getter
 func (r AlibabaScbpTagAddAPIRequest) GetTagName() string {
 	return r._tagName
 }

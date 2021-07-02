@@ -45,7 +45,7 @@ func (r TaobaoCrmMembersIncrementGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Grade Setter
+// SetGrade is Grade Setter
 // 会员等级
 func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetGrade(_grade int64) error {
 	r._grade = _grade
@@ -53,12 +53,12 @@ func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetGrade(_grade int64) error {
 	return nil
 }
 
-// Get Grade Getter
+// GetGrade Grade Getter
 func (r TaobaoCrmMembersIncrementGetAPIRequest) GetGrade() int64 {
 	return r._grade
 }
 
-// Set is StartModify Setter
+// SetStartModify is StartModify Setter
 // 卖家修改会员信息的时间起点.
 func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetStartModify(_startModify string) error {
 	r._startModify = _startModify
@@ -66,12 +66,12 @@ func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetStartModify(_startModify str
 	return nil
 }
 
-// Get StartModify Getter
+// GetStartModify StartModify Getter
 func (r TaobaoCrmMembersIncrementGetAPIRequest) GetStartModify() string {
 	return r._startModify
 }
 
-// Set is EndModify Setter
+// SetEndModify is EndModify Setter
 // 卖家修改会员信息的时间终点.如果不填写此字段,默认为当前时间.
 func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetEndModify(_endModify string) error {
 	r._endModify = _endModify
@@ -79,12 +79,12 @@ func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetEndModify(_endModify string)
 	return nil
 }
 
-// Get EndModify Getter
+// GetEndModify EndModify Getter
 func (r TaobaoCrmMembersIncrementGetAPIRequest) GetEndModify() string {
 	return r._endModify
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页显示的会员数，page_size的值不能超过100，最小值要大于1
 func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -92,12 +92,12 @@ func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetPageSize(_pageSize int64) er
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoCrmMembersIncrementGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1
 func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -105,7 +105,7 @@ func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetCurrentPage(_currentPage int
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TaobaoCrmMembersIncrementGetAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }

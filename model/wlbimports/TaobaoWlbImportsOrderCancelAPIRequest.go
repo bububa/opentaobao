@@ -37,7 +37,7 @@ func (r TaobaoWlbImportsOrderCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LgorderCode Setter
+// SetLgorderCode is LgorderCode Setter
 // 物流订单编号
 func (r *TaobaoWlbImportsOrderCancelAPIRequest) SetLgorderCode(_lgorderCode string) error {
 	r._lgorderCode = _lgorderCode
@@ -45,7 +45,7 @@ func (r *TaobaoWlbImportsOrderCancelAPIRequest) SetLgorderCode(_lgorderCode stri
 	return nil
 }
 
-// Get LgorderCode Getter
+// GetLgorderCode LgorderCode Getter
 func (r TaobaoWlbImportsOrderCancelAPIRequest) GetLgorderCode() string {
 	return r._lgorderCode
 }

@@ -45,7 +45,7 @@ func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // 订购单工单事件：  deploy_finish: 设备就绪，部署完成  isv_reject: 服务商驳回订购单
 func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -53,12 +53,12 @@ func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetAction(_action string) e
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetAction() string {
 	return r._action
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 税控设备ID
 func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -66,12 +66,12 @@ func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetDeviceId(_deviceId strin
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is ExtJson Setter
+// SetExtJson is ExtJson Setter
 // 拓展字段。  ①当action=deploy_finish时，拓展字段中必须包含：  serv_start_time: 服务有效周期-起始时间  serv_end_time: 服务有效周期-结束时间  时间格式：yyyy-MM-dd HH:mm:ss  ②当action=isv_reject时，拓展字段中必须包含：  message: 驳回原因
 func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetExtJson(_extJson string) error {
 	r._extJson = _extJson
@@ -79,12 +79,12 @@ func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetExtJson(_extJson string)
 	return nil
 }
 
-// Get ExtJson Getter
+// GetExtJson ExtJson Getter
 func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetExtJson() string {
 	return r._extJson
 }
 
-// Set is FlowId Setter
+// SetFlowId is FlowId Setter
 // 订购开通单ID
 func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetFlowId(_flowId string) error {
 	r._flowId = _flowId
@@ -92,12 +92,12 @@ func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetFlowId(_flowId string) e
 	return nil
 }
 
-// Get FlowId Getter
+// GetFlowId FlowId Getter
 func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetFlowId() string {
 	return r._flowId
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 税号
 func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -105,7 +105,7 @@ func (r *AlibabaEinvoiceDeviceOrderUpdateAPIRequest) SetPayeeRegisterNo(_payeeRe
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceDeviceOrderUpdateAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }

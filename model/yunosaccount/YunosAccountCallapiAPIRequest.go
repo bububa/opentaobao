@@ -45,7 +45,7 @@ func (r YunosAccountCallapiAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Version Setter
+// SetVersion is Version Setter
 // API版本号
 func (r *YunosAccountCallapiAPIRequest) SetVersion(_version string) error {
 	r._version = _version
@@ -53,12 +53,12 @@ func (r *YunosAccountCallapiAPIRequest) SetVersion(_version string) error {
 	return nil
 }
 
-// Get Version Getter
+// GetVersion Version Getter
 func (r YunosAccountCallapiAPIRequest) GetVersion() string {
 	return r._version
 }
 
-// Set is Api Setter
+// SetApi is Api Setter
 // 调用的API名称
 func (r *YunosAccountCallapiAPIRequest) SetApi(_api string) error {
 	r._api = _api
@@ -66,12 +66,12 @@ func (r *YunosAccountCallapiAPIRequest) SetApi(_api string) error {
 	return nil
 }
 
-// Get Api Getter
+// GetApi Api Getter
 func (r YunosAccountCallapiAPIRequest) GetApi() string {
 	return r._api
 }
 
-// Set is TimeStamp Setter
+// SetTimeStamp is TimeStamp Setter
 // 时间戳，精确到秒；账号服务端会校验该值与服务器当前时间戳的差值，超过一定范围则拒绝请求
 func (r *YunosAccountCallapiAPIRequest) SetTimeStamp(_timeStamp string) error {
 	r._timeStamp = _timeStamp
@@ -79,12 +79,12 @@ func (r *YunosAccountCallapiAPIRequest) SetTimeStamp(_timeStamp string) error {
 	return nil
 }
 
-// Get TimeStamp Getter
+// GetTimeStamp TimeStamp Getter
 func (r YunosAccountCallapiAPIRequest) GetTimeStamp() string {
 	return r._timeStamp
 }
 
-// Set is Params Setter
+// SetParams is Params Setter
 // 业务参数
 func (r *YunosAccountCallapiAPIRequest) SetParams(_params string) error {
 	r._params = _params
@@ -92,12 +92,12 @@ func (r *YunosAccountCallapiAPIRequest) SetParams(_params string) error {
 	return nil
 }
 
-// Get Params Getter
+// GetParams Params Getter
 func (r YunosAccountCallapiAPIRequest) GetParams() string {
 	return r._params
 }
 
-// Set is AuthSign Setter
+// SetAuthSign is AuthSign Setter
 // 应用签名的MD5值
 func (r *YunosAccountCallapiAPIRequest) SetAuthSign(_authSign string) error {
 	r._authSign = _authSign
@@ -105,7 +105,7 @@ func (r *YunosAccountCallapiAPIRequest) SetAuthSign(_authSign string) error {
 	return nil
 }
 
-// Get AuthSign Getter
+// GetAuthSign AuthSign Getter
 func (r YunosAccountCallapiAPIRequest) GetAuthSign() string {
 	return r._authSign
 }

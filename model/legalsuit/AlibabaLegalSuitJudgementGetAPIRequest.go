@@ -37,7 +37,7 @@ func (r AlibabaLegalSuitJudgementGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SuitId Setter
+// SetSuitId is SuitId Setter
 // 案件id
 func (r *AlibabaLegalSuitJudgementGetAPIRequest) SetSuitId(_suitId int64) error {
 	r._suitId = _suitId
@@ -45,7 +45,7 @@ func (r *AlibabaLegalSuitJudgementGetAPIRequest) SetSuitId(_suitId int64) error 
 	return nil
 }
 
-// Get SuitId Getter
+// GetSuitId SuitId Getter
 func (r AlibabaLegalSuitJudgementGetAPIRequest) GetSuitId() int64 {
 	return r._suitId
 }

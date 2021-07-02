@@ -37,7 +37,7 @@ func (r AlibabaWdkorderSharestockInsuranceGetorderAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is TbSubOrderId Setter
+// SetTbSubOrderId is TbSubOrderId Setter
 // 淘宝子订单ID
 func (r *AlibabaWdkorderSharestockInsuranceGetorderAPIRequest) SetTbSubOrderId(_tbSubOrderId int64) error {
 	r._tbSubOrderId = _tbSubOrderId
@@ -45,7 +45,7 @@ func (r *AlibabaWdkorderSharestockInsuranceGetorderAPIRequest) SetTbSubOrderId(_
 	return nil
 }
 
-// Get TbSubOrderId Getter
+// GetTbSubOrderId TbSubOrderId Getter
 func (r AlibabaWdkorderSharestockInsuranceGetorderAPIRequest) GetTbSubOrderId() int64 {
 	return r._tbSubOrderId
 }

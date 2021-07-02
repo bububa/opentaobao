@@ -39,7 +39,7 @@ func (r AlibabaAilabsBotsSkilsListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 当前页
 func (r *AlibabaAilabsBotsSkilsListAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -47,12 +47,12 @@ func (r *AlibabaAilabsBotsSkilsListAPIRequest) SetPageIndex(_pageIndex int64) er
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r AlibabaAilabsBotsSkilsListAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页单位
 func (r *AlibabaAilabsBotsSkilsListAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -60,7 +60,7 @@ func (r *AlibabaAilabsBotsSkilsListAPIRequest) SetPageSize(_pageSize int64) erro
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaAilabsBotsSkilsListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

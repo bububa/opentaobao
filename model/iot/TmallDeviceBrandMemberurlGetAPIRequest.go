@@ -45,7 +45,7 @@ func (r TmallDeviceBrandMemberurlGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 设备DeviceCode
 func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -53,12 +53,12 @@ func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetDeviceCode(_deviceCode strin
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r TmallDeviceBrandMemberurlGetAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is CallbackUrl Setter
+// SetCallbackUrl is CallbackUrl Setter
 // 入会后的回调地址
 func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetCallbackUrl(_callbackUrl string) error {
 	r._callbackUrl = _callbackUrl
@@ -66,12 +66,12 @@ func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetCallbackUrl(_callbackUrl str
 	return nil
 }
 
-// Get CallbackUrl Getter
+// GetCallbackUrl CallbackUrl Getter
 func (r TmallDeviceBrandMemberurlGetAPIRequest) GetCallbackUrl() string {
 	return r._callbackUrl
 }
 
-// Set is Longterm Setter
+// SetLongterm is Longterm Setter
 // 是否使用长期链接
 func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetLongterm(_longterm bool) error {
 	r._longterm = _longterm
@@ -79,12 +79,12 @@ func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetLongterm(_longterm bool) err
 	return nil
 }
 
-// Get Longterm Getter
+// GetLongterm Longterm Getter
 func (r TmallDeviceBrandMemberurlGetAPIRequest) GetLongterm() bool {
 	return r._longterm
 }
 
-// Set is BannerImg Setter
+// SetBannerImg is BannerImg Setter
 // 页面banner的图片，如果没有传入，会使用系统默认图
 func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetBannerImg(_bannerImg string) error {
 	r._bannerImg = _bannerImg
@@ -92,12 +92,12 @@ func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetBannerImg(_bannerImg string)
 	return nil
 }
 
-// Get BannerImg Getter
+// GetBannerImg BannerImg Getter
 func (r TmallDeviceBrandMemberurlGetAPIRequest) GetBannerImg() string {
 	return r._bannerImg
 }
 
-// Set is FollowRetailAccount Setter
+// SetFollowRetailAccount is FollowRetailAccount Setter
 // 是否同时关注天猫理想站
 func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetFollowRetailAccount(_followRetailAccount bool) error {
 	r._followRetailAccount = _followRetailAccount
@@ -105,7 +105,7 @@ func (r *TmallDeviceBrandMemberurlGetAPIRequest) SetFollowRetailAccount(_followR
 	return nil
 }
 
-// Get FollowRetailAccount Getter
+// GetFollowRetailAccount FollowRetailAccount Getter
 func (r TmallDeviceBrandMemberurlGetAPIRequest) GetFollowRetailAccount() bool {
 	return r._followRetailAccount
 }

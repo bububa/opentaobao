@@ -37,7 +37,7 @@ func (r AlibabaAlihealthOutflowDiagnosisSaveorupdateAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is DiagnoseDictDto Setter
+// SetDiagnoseDictDto is DiagnoseDictDto Setter
 // 诊断数据
 func (r *AlibabaAlihealthOutflowDiagnosisSaveorupdateAPIRequest) SetDiagnoseDictDto(_diagnoseDictDto *DiagnoseDictDto) error {
 	r._diagnoseDictDto = _diagnoseDictDto
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthOutflowDiagnosisSaveorupdateAPIRequest) SetDiagnoseDict
 	return nil
 }
 
-// Get DiagnoseDictDto Getter
+// GetDiagnoseDictDto DiagnoseDictDto Getter
 func (r AlibabaAlihealthOutflowDiagnosisSaveorupdateAPIRequest) GetDiagnoseDictDto() *DiagnoseDictDto {
 	return r._diagnoseDictDto
 }

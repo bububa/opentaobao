@@ -37,7 +37,7 @@ func (r AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is Request1 Setter
+// SetRequest1 is Request1 Setter
 // 请求
 func (r *AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest) SetRequest1(_request1 *OuterDrugVo) error {
 	r._request1 = _request1
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest) SetRequest1(_req
 	return nil
 }
 
-// Get Request1 Getter
+// GetRequest1 Request1 Getter
 func (r AlibabaAlihealthOutflowDrugSupervisionQueryAPIRequest) GetRequest1() *OuterDrugVo {
 	return r._request1
 }

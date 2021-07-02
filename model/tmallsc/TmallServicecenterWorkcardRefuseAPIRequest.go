@@ -37,7 +37,7 @@ func (r TmallServicecenterWorkcardRefuseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BuyerRefuseAcceptRequest Setter
+// SetBuyerRefuseAcceptRequest is BuyerRefuseAcceptRequest Setter
 // 买家拒收信息
 func (r *TmallServicecenterWorkcardRefuseAPIRequest) SetBuyerRefuseAcceptRequest(_buyerRefuseAcceptRequest *BuyerRefuseAcceptRequest) error {
 	r._buyerRefuseAcceptRequest = _buyerRefuseAcceptRequest
@@ -45,7 +45,7 @@ func (r *TmallServicecenterWorkcardRefuseAPIRequest) SetBuyerRefuseAcceptRequest
 	return nil
 }
 
-// Get BuyerRefuseAcceptRequest Getter
+// GetBuyerRefuseAcceptRequest BuyerRefuseAcceptRequest Getter
 func (r TmallServicecenterWorkcardRefuseAPIRequest) GetBuyerRefuseAcceptRequest() *BuyerRefuseAcceptRequest {
 	return r._buyerRefuseAcceptRequest
 }

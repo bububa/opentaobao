@@ -41,7 +41,7 @@ func (r TaobaoAlitripItPolicyDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ExtendAttributes Setter
+// SetExtendAttributes is ExtendAttributes Setter
 // 扩展字段
 func (r *TaobaoAlitripItPolicyDeleteAPIRequest) SetExtendAttributes(_extendAttributes string) error {
 	r._extendAttributes = _extendAttributes
@@ -49,12 +49,12 @@ func (r *TaobaoAlitripItPolicyDeleteAPIRequest) SetExtendAttributes(_extendAttri
 	return nil
 }
 
-// Get ExtendAttributes Getter
+// GetExtendAttributes ExtendAttributes Getter
 func (r TaobaoAlitripItPolicyDeleteAPIRequest) GetExtendAttributes() string {
 	return r._extendAttributes
 }
 
-// Set is OutId Setter
+// SetOutId is OutId Setter
 // 接入方产品id
 func (r *TaobaoAlitripItPolicyDeleteAPIRequest) SetOutId(_outId string) error {
 	r._outId = _outId
@@ -62,12 +62,12 @@ func (r *TaobaoAlitripItPolicyDeleteAPIRequest) SetOutId(_outId string) error {
 	return nil
 }
 
-// Get OutId Getter
+// GetOutId OutId Getter
 func (r TaobaoAlitripItPolicyDeleteAPIRequest) GetOutId() string {
 	return r._outId
 }
 
-// Set is TaobaoId Setter
+// SetTaobaoId is TaobaoId Setter
 // 淘宝政策id
 func (r *TaobaoAlitripItPolicyDeleteAPIRequest) SetTaobaoId(_taobaoId int64) error {
 	r._taobaoId = _taobaoId
@@ -75,7 +75,7 @@ func (r *TaobaoAlitripItPolicyDeleteAPIRequest) SetTaobaoId(_taobaoId int64) err
 	return nil
 }
 
-// Get TaobaoId Getter
+// GetTaobaoId TaobaoId Getter
 func (r TaobaoAlitripItPolicyDeleteAPIRequest) GetTaobaoId() int64 {
 	return r._taobaoId
 }

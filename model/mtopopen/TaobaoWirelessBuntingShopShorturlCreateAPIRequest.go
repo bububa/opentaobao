@@ -37,7 +37,7 @@ func (r TaobaoWirelessBuntingShopShorturlCreateAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 商店id
 func (r *TaobaoWirelessBuntingShopShorturlCreateAPIRequest) SetShopId(_shopId string) error {
 	r._shopId = _shopId
@@ -45,7 +45,7 @@ func (r *TaobaoWirelessBuntingShopShorturlCreateAPIRequest) SetShopId(_shopId st
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r TaobaoWirelessBuntingShopShorturlCreateAPIRequest) GetShopId() string {
 	return r._shopId
 }

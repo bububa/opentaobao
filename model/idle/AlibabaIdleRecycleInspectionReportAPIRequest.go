@@ -37,7 +37,7 @@ func (r AlibabaIdleRecycleInspectionReportAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is InspectionReport Setter
+// SetInspectionReport is InspectionReport Setter
 // 鉴定报告
 func (r *AlibabaIdleRecycleInspectionReportAPIRequest) SetInspectionReport(_inspectionReport *InspectionReport) error {
 	r._inspectionReport = _inspectionReport
@@ -45,7 +45,7 @@ func (r *AlibabaIdleRecycleInspectionReportAPIRequest) SetInspectionReport(_insp
 	return nil
 }
 
-// Get InspectionReport Getter
+// GetInspectionReport InspectionReport Getter
 func (r AlibabaIdleRecycleInspectionReportAPIRequest) GetInspectionReport() *InspectionReport {
 	return r._inspectionReport
 }

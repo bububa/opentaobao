@@ -40,7 +40,7 @@ func (r AlibabaIdleRentOrderLogisticsDeliverAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *AlibabaIdleRentOrderLogisticsDeliverAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -48,12 +48,12 @@ func (r *AlibabaIdleRentOrderLogisticsDeliverAPIRequest) SetOrderId(_orderId int
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaIdleRentOrderLogisticsDeliverAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is Logistics Setter
+// SetLogistics is Logistics Setter
 // 物流信息
 func (r *AlibabaIdleRentOrderLogisticsDeliverAPIRequest) SetLogistics(_logistics *LogisticsDto) error {
 	r._logistics = _logistics
@@ -61,7 +61,7 @@ func (r *AlibabaIdleRentOrderLogisticsDeliverAPIRequest) SetLogistics(_logistics
 	return nil
 }
 
-// Get Logistics Getter
+// GetLogistics Logistics Getter
 func (r AlibabaIdleRentOrderLogisticsDeliverAPIRequest) GetLogistics() *LogisticsDto {
 	return r._logistics
 }

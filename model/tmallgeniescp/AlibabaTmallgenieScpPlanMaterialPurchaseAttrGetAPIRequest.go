@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is RequestExtendJson Setter
+// SetRequestExtendJson is RequestExtendJson Setter
 // 扩展字段
 func (r *AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIRequest) SetRequestExtendJson(_requestExtendJson string) error {
 	r._requestExtendJson = _requestExtendJson
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIRequest) SetRequestEx
 	return nil
 }
 
-// Get RequestExtendJson Getter
+// GetRequestExtendJson RequestExtendJson Getter
 func (r AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetAPIRequest) GetRequestExtendJson() string {
 	return r._requestExtendJson
 }

@@ -39,7 +39,7 @@ func (r TaobaoPromotionCouponSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CouponId Setter
+// SetCouponId is CouponId Setter
 // 优惠券的id
 func (r *TaobaoPromotionCouponSendAPIRequest) SetCouponId(_couponId int64) error {
 	r._couponId = _couponId
@@ -47,12 +47,12 @@ func (r *TaobaoPromotionCouponSendAPIRequest) SetCouponId(_couponId int64) error
 	return nil
 }
 
-// Get CouponId Getter
+// GetCouponId CouponId Getter
 func (r TaobaoPromotionCouponSendAPIRequest) GetCouponId() int64 {
 	return r._couponId
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 买家昵称用半角','号分割
 func (r *TaobaoPromotionCouponSendAPIRequest) SetBuyerNick(_buyerNick []string) error {
 	r._buyerNick = _buyerNick
@@ -60,7 +60,7 @@ func (r *TaobaoPromotionCouponSendAPIRequest) SetBuyerNick(_buyerNick []string) 
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r TaobaoPromotionCouponSendAPIRequest) GetBuyerNick() []string {
 	return r._buyerNick
 }

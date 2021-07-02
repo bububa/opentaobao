@@ -37,7 +37,7 @@ func (r TaobaoTmcMessagesProduceAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Messages Setter
+// SetMessages is Messages Setter
 // tmc消息列表, 最多50条，元素结构与taobao.tmc.message.produce一致，用json表示的消息列表。例如：[{"content": "{\"tid\":1234554321,\"status\":\"X_LOGISTICS_PRINTED\",\"action_time\":\"2014-08-08 18:24:00\",\"seller_nick\": \"向阳aa\",\"operator\":\"小张\"}","topic": "taobao_jds_TradeTrace"},{"content": "{\"tid\":1234554321,\"status\":\"X_LOGISTICS_PRINTED\",\"action_time\":\"2014-08-08 18:24:00\",\"seller_nick\": \"向阳aa\",\"operator\":\"小张\"}","topic": "taobao_jds_TradeTrace"}]
 func (r *TaobaoTmcMessagesProduceAPIRequest) SetMessages(_messages []TmcPublishMessage) error {
 	r._messages = _messages
@@ -45,7 +45,7 @@ func (r *TaobaoTmcMessagesProduceAPIRequest) SetMessages(_messages []TmcPublishM
 	return nil
 }
 
-// Get Messages Getter
+// GetMessages Messages Getter
 func (r TaobaoTmcMessagesProduceAPIRequest) GetMessages() []TmcPublishMessage {
 	return r._messages
 }

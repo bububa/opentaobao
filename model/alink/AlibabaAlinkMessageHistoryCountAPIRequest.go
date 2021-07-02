@@ -47,7 +47,7 @@ func (r AlibabaAlinkMessageHistoryCountAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 设备id
 func (r *AlibabaAlinkMessageHistoryCountAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -55,12 +55,12 @@ func (r *AlibabaAlinkMessageHistoryCountAPIRequest) SetUuid(_uuid string) error 
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r AlibabaAlinkMessageHistoryCountAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 消息类型 1:通知, 2:报警, 3:运营，5:语音控制机器人响应，6:语音控
 func (r *AlibabaAlinkMessageHistoryCountAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -68,12 +68,12 @@ func (r *AlibabaAlinkMessageHistoryCountAPIRequest) SetType(_type string) error 
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaAlinkMessageHistoryCountAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 消息状态，0：未读；1：已读
 func (r *AlibabaAlinkMessageHistoryCountAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -81,12 +81,12 @@ func (r *AlibabaAlinkMessageHistoryCountAPIRequest) SetStatus(_status string) er
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaAlinkMessageHistoryCountAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is Level Setter
+// SetLevel is Level Setter
 // 消息级别 1：普通；2：重要消息
 func (r *AlibabaAlinkMessageHistoryCountAPIRequest) SetLevel(_level string) error {
 	r._level = _level
@@ -94,12 +94,12 @@ func (r *AlibabaAlinkMessageHistoryCountAPIRequest) SetLevel(_level string) erro
 	return nil
 }
 
-// Get Level Getter
+// GetLevel Level Getter
 func (r AlibabaAlinkMessageHistoryCountAPIRequest) GetLevel() string {
 	return r._level
 }
 
-// Set is Limit Setter
+// SetLimit is Limit Setter
 // 查询多少条数据
 func (r *AlibabaAlinkMessageHistoryCountAPIRequest) SetLimit(_limit string) error {
 	r._limit = _limit
@@ -107,12 +107,12 @@ func (r *AlibabaAlinkMessageHistoryCountAPIRequest) SetLimit(_limit string) erro
 	return nil
 }
 
-// Get Limit Getter
+// GetLimit Limit Getter
 func (r AlibabaAlinkMessageHistoryCountAPIRequest) GetLimit() string {
 	return r._limit
 }
 
-// Set is Offset Setter
+// SetOffset is Offset Setter
 // 偏移量
 func (r *AlibabaAlinkMessageHistoryCountAPIRequest) SetOffset(_offset string) error {
 	r._offset = _offset
@@ -120,7 +120,7 @@ func (r *AlibabaAlinkMessageHistoryCountAPIRequest) SetOffset(_offset string) er
 	return nil
 }
 
-// Get Offset Getter
+// GetOffset Offset Getter
 func (r AlibabaAlinkMessageHistoryCountAPIRequest) GetOffset() string {
 	return r._offset
 }

@@ -41,7 +41,7 @@ func (r YunosPubadminCommonOperationAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Parameter Setter
+// SetParameter is Parameter Setter
 // 入参json串
 func (r *YunosPubadminCommonOperationAPIRequest) SetParameter(_parameter string) error {
 	r._parameter = _parameter
@@ -49,12 +49,12 @@ func (r *YunosPubadminCommonOperationAPIRequest) SetParameter(_parameter string)
 	return nil
 }
 
-// Get Parameter Getter
+// GetParameter Parameter Getter
 func (r YunosPubadminCommonOperationAPIRequest) GetParameter() string {
 	return r._parameter
 }
 
-// Set is InterfaceName Setter
+// SetInterfaceName is InterfaceName Setter
 // 接口名
 func (r *YunosPubadminCommonOperationAPIRequest) SetInterfaceName(_interfaceName string) error {
 	r._interfaceName = _interfaceName
@@ -62,12 +62,12 @@ func (r *YunosPubadminCommonOperationAPIRequest) SetInterfaceName(_interfaceName
 	return nil
 }
 
-// Get InterfaceName Getter
+// GetInterfaceName InterfaceName Getter
 func (r YunosPubadminCommonOperationAPIRequest) GetInterfaceName() string {
 	return r._interfaceName
 }
 
-// Set is MethodName Setter
+// SetMethodName is MethodName Setter
 // 方法名
 func (r *YunosPubadminCommonOperationAPIRequest) SetMethodName(_methodName string) error {
 	r._methodName = _methodName
@@ -75,7 +75,7 @@ func (r *YunosPubadminCommonOperationAPIRequest) SetMethodName(_methodName strin
 	return nil
 }
 
-// Get MethodName Getter
+// GetMethodName MethodName Getter
 func (r YunosPubadminCommonOperationAPIRequest) GetMethodName() string {
 	return r._methodName
 }

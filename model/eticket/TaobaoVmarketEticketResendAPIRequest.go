@@ -45,7 +45,7 @@ func (r TaobaoVmarketEticketResendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单编号
 func (r *TaobaoVmarketEticketResendAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -53,12 +53,12 @@ func (r *TaobaoVmarketEticketResendAPIRequest) SetOrderId(_orderId int64) error 
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoVmarketEticketResendAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is VerifyCodes Setter
+// SetVerifyCodes is VerifyCodes Setter
 // 重新发送的验证码及可验证次数的列表，多个码之间用英文逗号分割，需要包含此订单所有可用的码（如果订单总的有10个码，可用的是5个，那么这里设置的是5个可用的码）
 func (r *TaobaoVmarketEticketResendAPIRequest) SetVerifyCodes(_verifyCodes string) error {
 	r._verifyCodes = _verifyCodes
@@ -66,12 +66,12 @@ func (r *TaobaoVmarketEticketResendAPIRequest) SetVerifyCodes(_verifyCodes strin
 	return nil
 }
 
-// Get VerifyCodes Getter
+// GetVerifyCodes VerifyCodes Getter
 func (r TaobaoVmarketEticketResendAPIRequest) GetVerifyCodes() string {
 	return r._verifyCodes
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 安全验证token,回传淘宝发通知时发过来的token串
 func (r *TaobaoVmarketEticketResendAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -79,12 +79,12 @@ func (r *TaobaoVmarketEticketResendAPIRequest) SetToken(_token string) error {
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoVmarketEticketResendAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is CodemerchantId Setter
+// SetCodemerchantId is CodemerchantId Setter
 // 码商ID，如果是码商，必须传，如果是信任卖家，不需要传
 func (r *TaobaoVmarketEticketResendAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
 	r._codemerchantId = _codemerchantId
@@ -92,12 +92,12 @@ func (r *TaobaoVmarketEticketResendAPIRequest) SetCodemerchantId(_codemerchantId
 	return nil
 }
 
-// Get CodemerchantId Getter
+// GetCodemerchantId CodemerchantId Getter
 func (r TaobaoVmarketEticketResendAPIRequest) GetCodemerchantId() int64 {
 	return r._codemerchantId
 }
 
-// Set is QrImages Setter
+// SetQrImages is QrImages Setter
 // 不需要上传二维码图片的码商请不要传，需要传入二维码的码商请先调用taobao.vmarket.eticket.qrcode.upload接口，将返回的img_filename文件名称作为参数（如果二维码不变的话，也可将将发码时传入二维码文件名作为参数传入），多个文件名用逗号隔开且与参数verify_codes按从左到有的顺序一一对应。
 func (r *TaobaoVmarketEticketResendAPIRequest) SetQrImages(_qrImages string) error {
 	r._qrImages = _qrImages
@@ -105,7 +105,7 @@ func (r *TaobaoVmarketEticketResendAPIRequest) SetQrImages(_qrImages string) err
 	return nil
 }
 
-// Get QrImages Getter
+// GetQrImages QrImages Getter
 func (r TaobaoVmarketEticketResendAPIRequest) GetQrImages() string {
 	return r._qrImages
 }

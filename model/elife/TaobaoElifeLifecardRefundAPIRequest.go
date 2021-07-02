@@ -37,7 +37,7 @@ func (r TaobaoElifeLifecardRefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundRequest Setter
+// SetRefundRequest is RefundRequest Setter
 // 请求参数
 func (r *TaobaoElifeLifecardRefundAPIRequest) SetRefundRequest(_refundRequest *RefundRequest) error {
 	r._refundRequest = _refundRequest
@@ -45,7 +45,7 @@ func (r *TaobaoElifeLifecardRefundAPIRequest) SetRefundRequest(_refundRequest *R
 	return nil
 }
 
-// Get RefundRequest Getter
+// GetRefundRequest RefundRequest Getter
 func (r TaobaoElifeLifecardRefundAPIRequest) GetRefundRequest() *RefundRequest {
 	return r._refundRequest
 }

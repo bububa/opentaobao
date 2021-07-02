@@ -37,7 +37,7 @@ func (r AlibabaMjOcSyncpayinfoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PosPay Setter
+// SetPosPay is PosPay Setter
 // 支付参考号信息
 func (r *AlibabaMjOcSyncpayinfoAPIRequest) SetPosPay(_posPay *PosPayDto) error {
 	r._posPay = _posPay
@@ -45,7 +45,7 @@ func (r *AlibabaMjOcSyncpayinfoAPIRequest) SetPosPay(_posPay *PosPayDto) error {
 	return nil
 }
 
-// Get PosPay Getter
+// GetPosPay PosPay Getter
 func (r AlibabaMjOcSyncpayinfoAPIRequest) GetPosPay() *PosPayDto {
 	return r._posPay
 }

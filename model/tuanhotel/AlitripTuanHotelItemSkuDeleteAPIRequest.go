@@ -41,7 +41,7 @@ func (r AlitripTuanHotelItemSkuDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 宝贝ID
 func (r *AlitripTuanHotelItemSkuDeleteAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -49,12 +49,12 @@ func (r *AlitripTuanHotelItemSkuDeleteAPIRequest) SetItemId(_itemId int64) error
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlitripTuanHotelItemSkuDeleteAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 宝贝所属类目
 func (r *AlitripTuanHotelItemSkuDeleteAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -62,12 +62,12 @@ func (r *AlitripTuanHotelItemSkuDeleteAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r AlitripTuanHotelItemSkuDeleteAPIRequest) GetCatId() int64 {
 	return r._catId
 }
 
-// Set is ItemDeletedSkuIdList Setter
+// SetItemDeletedSkuIdList is ItemDeletedSkuIdList Setter
 // 要删除的skuId列表
 func (r *AlitripTuanHotelItemSkuDeleteAPIRequest) SetItemDeletedSkuIdList(_itemDeletedSkuIdList []int64) error {
 	r._itemDeletedSkuIdList = _itemDeletedSkuIdList
@@ -75,7 +75,7 @@ func (r *AlitripTuanHotelItemSkuDeleteAPIRequest) SetItemDeletedSkuIdList(_itemD
 	return nil
 }
 
-// Get ItemDeletedSkuIdList Getter
+// GetItemDeletedSkuIdList ItemDeletedSkuIdList Getter
 func (r AlitripTuanHotelItemSkuDeleteAPIRequest) GetItemDeletedSkuIdList() []int64 {
 	return r._itemDeletedSkuIdList
 }

@@ -39,7 +39,7 @@ func (r TaobaoRefundGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的字段。目前支持有：refund_id, alipay_no, tid, oid, buyer_nick, seller_nick, total_fee, status, created, refund_fee, good_status, has_good_return, payment, reason, desc, num_iid, title, price, num, good_return_time, company_name, sid, address, shipping_type, refund_remind_timeout, refund_phase, refund_version, operation_contraint, attribute, outer_id, sku
 func (r *TaobaoRefundGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -47,12 +47,12 @@ func (r *TaobaoRefundGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoRefundGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款单号
 func (r *TaobaoRefundGetAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -60,7 +60,7 @@ func (r *TaobaoRefundGetAPIRequest) SetRefundId(_refundId int64) error {
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoRefundGetAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }

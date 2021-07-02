@@ -43,7 +43,7 @@ func (r TaobaoTanxQualificationModifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Qualifications Setter
+// SetQualifications is Qualifications Setter
 // dsp客户新增资质dto
 func (r *TaobaoTanxQualificationModifyAPIRequest) SetQualifications(_qualifications []Qualification) error {
 	r._qualifications = _qualifications
@@ -51,12 +51,12 @@ func (r *TaobaoTanxQualificationModifyAPIRequest) SetQualifications(_qualificati
 	return nil
 }
 
-// Get Qualifications Getter
+// GetQualifications Qualifications Getter
 func (r TaobaoTanxQualificationModifyAPIRequest) GetQualifications() []Qualification {
 	return r._qualifications
 }
 
-// Set is MemberId Setter
+// SetMemberId is MemberId Setter
 // dsp用户id
 func (r *TaobaoTanxQualificationModifyAPIRequest) SetMemberId(_memberId int64) error {
 	r._memberId = _memberId
@@ -64,12 +64,12 @@ func (r *TaobaoTanxQualificationModifyAPIRequest) SetMemberId(_memberId int64) e
 	return nil
 }
 
-// Get MemberId Getter
+// GetMemberId MemberId Getter
 func (r TaobaoTanxQualificationModifyAPIRequest) GetMemberId() int64 {
 	return r._memberId
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // dsp用户验证token
 func (r *TaobaoTanxQualificationModifyAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -77,12 +77,12 @@ func (r *TaobaoTanxQualificationModifyAPIRequest) SetToken(_token string) error 
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoTanxQualificationModifyAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is SignTime Setter
+// SetSignTime is SignTime Setter
 // 1970年到现在的秒
 func (r *TaobaoTanxQualificationModifyAPIRequest) SetSignTime(_signTime int64) error {
 	r._signTime = _signTime
@@ -90,7 +90,7 @@ func (r *TaobaoTanxQualificationModifyAPIRequest) SetSignTime(_signTime int64) e
 	return nil
 }
 
-// Get SignTime Getter
+// GetSignTime SignTime Getter
 func (r TaobaoTanxQualificationModifyAPIRequest) GetSignTime() int64 {
 	return r._signTime
 }

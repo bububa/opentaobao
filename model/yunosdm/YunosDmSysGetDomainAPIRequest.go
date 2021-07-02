@@ -41,7 +41,7 @@ func (r YunosDmSysGetDomainAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Make Setter
+// SetMake is Make Setter
 // 制造商
 func (r *YunosDmSysGetDomainAPIRequest) SetMake(_make string) error {
 	r._make = _make
@@ -49,12 +49,12 @@ func (r *YunosDmSysGetDomainAPIRequest) SetMake(_make string) error {
 	return nil
 }
 
-// Get Make Getter
+// GetMake Make Getter
 func (r YunosDmSysGetDomainAPIRequest) GetMake() string {
 	return r._make
 }
 
-// Set is Model Setter
+// SetModel is Model Setter
 // 设备类型
 func (r *YunosDmSysGetDomainAPIRequest) SetModel(_model string) error {
 	r._model = _model
@@ -62,12 +62,12 @@ func (r *YunosDmSysGetDomainAPIRequest) SetModel(_model string) error {
 	return nil
 }
 
-// Get Model Getter
+// GetModel Model Getter
 func (r YunosDmSysGetDomainAPIRequest) GetModel() string {
 	return r._model
 }
 
-// Set is Sn Setter
+// SetSn is Sn Setter
 // 序列号
 func (r *YunosDmSysGetDomainAPIRequest) SetSn(_sn string) error {
 	r._sn = _sn
@@ -75,7 +75,7 @@ func (r *YunosDmSysGetDomainAPIRequest) SetSn(_sn string) error {
 	return nil
 }
 
-// Get Sn Getter
+// GetSn Sn Getter
 func (r YunosDmSysGetDomainAPIRequest) GetSn() string {
 	return r._sn
 }

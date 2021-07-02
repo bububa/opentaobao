@@ -41,7 +41,7 @@ func (r TaobaoOmniitemItemFullupdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LightPublishInfo Setter
+// SetLightPublishInfo is LightPublishInfo Setter
 // 发布商品信息
 func (r *TaobaoOmniitemItemFullupdateAPIRequest) SetLightPublishInfo(_lightPublishInfo *ItemLightPublishDto) error {
 	r._lightPublishInfo = _lightPublishInfo
@@ -49,12 +49,12 @@ func (r *TaobaoOmniitemItemFullupdateAPIRequest) SetLightPublishInfo(_lightPubli
 	return nil
 }
 
-// Get LightPublishInfo Getter
+// GetLightPublishInfo LightPublishInfo Getter
 func (r TaobaoOmniitemItemFullupdateAPIRequest) GetLightPublishInfo() *ItemLightPublishDto {
 	return r._lightPublishInfo
 }
 
-// Set is OperateType Setter
+// SetOperateType is OperateType Setter
 // 操作类型，STORE表示门店域新增，ALL表示全域新增
 func (r *TaobaoOmniitemItemFullupdateAPIRequest) SetOperateType(_operateType string) error {
 	r._operateType = _operateType
@@ -62,7 +62,7 @@ func (r *TaobaoOmniitemItemFullupdateAPIRequest) SetOperateType(_operateType str
 	return nil
 }
 
-// Get OperateType Getter
+// GetOperateType OperateType Getter
 func (r TaobaoOmniitemItemFullupdateAPIRequest) GetOperateType() string {
 	return r._operateType
 }

@@ -37,7 +37,7 @@ func (r TaobaoWlbWmsInventoryProfitlossGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is CnOrderCode Setter
+// SetCnOrderCode is CnOrderCode Setter
 // 菜鸟订单编码
 func (r *TaobaoWlbWmsInventoryProfitlossGetAPIRequest) SetCnOrderCode(_cnOrderCode string) error {
 	r._cnOrderCode = _cnOrderCode
@@ -45,7 +45,7 @@ func (r *TaobaoWlbWmsInventoryProfitlossGetAPIRequest) SetCnOrderCode(_cnOrderCo
 	return nil
 }
 
-// Get CnOrderCode Getter
+// GetCnOrderCode CnOrderCode Getter
 func (r TaobaoWlbWmsInventoryProfitlossGetAPIRequest) GetCnOrderCode() string {
 	return r._cnOrderCode
 }

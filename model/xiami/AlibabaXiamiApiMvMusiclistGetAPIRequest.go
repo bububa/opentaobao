@@ -43,7 +43,7 @@ func (r AlibabaXiamiApiMvMusiclistGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 语种, 有all, chinese, musician, english, japanese, korea
 func (r *AlibabaXiamiApiMvMusiclistGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -51,12 +51,12 @@ func (r *AlibabaXiamiApiMvMusiclistGetAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaXiamiApiMvMusiclistGetAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is Order Setter
+// SetOrder is Order Setter
 // 分组, 有recommend、hot、new
 func (r *AlibabaXiamiApiMvMusiclistGetAPIRequest) SetOrder(_order string) error {
 	r._order = _order
@@ -64,12 +64,12 @@ func (r *AlibabaXiamiApiMvMusiclistGetAPIRequest) SetOrder(_order string) error 
 	return nil
 }
 
-// Get Order Getter
+// GetOrder Order Getter
 func (r AlibabaXiamiApiMvMusiclistGetAPIRequest) GetOrder() string {
 	return r._order
 }
 
-// Set is Limit Setter
+// SetLimit is Limit Setter
 // 每页记录
 func (r *AlibabaXiamiApiMvMusiclistGetAPIRequest) SetLimit(_limit int64) error {
 	r._limit = _limit
@@ -77,12 +77,12 @@ func (r *AlibabaXiamiApiMvMusiclistGetAPIRequest) SetLimit(_limit int64) error {
 	return nil
 }
 
-// Get Limit Getter
+// GetLimit Limit Getter
 func (r AlibabaXiamiApiMvMusiclistGetAPIRequest) GetLimit() int64 {
 	return r._limit
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 当前页
 func (r *AlibabaXiamiApiMvMusiclistGetAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -90,7 +90,7 @@ func (r *AlibabaXiamiApiMvMusiclistGetAPIRequest) SetPage(_page int64) error {
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaXiamiApiMvMusiclistGetAPIRequest) GetPage() int64 {
 	return r._page
 }

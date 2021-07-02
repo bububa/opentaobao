@@ -37,7 +37,7 @@ func (r CainiaoMemberCourierCpresignAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AccountId Setter
+// SetAccountId is AccountId Setter
 // 菜鸟用户id
 func (r *CainiaoMemberCourierCpresignAPIRequest) SetAccountId(_accountId int64) error {
 	r._accountId = _accountId
@@ -45,7 +45,7 @@ func (r *CainiaoMemberCourierCpresignAPIRequest) SetAccountId(_accountId int64) 
 	return nil
 }
 
-// Get AccountId Getter
+// GetAccountId AccountId Getter
 func (r CainiaoMemberCourierCpresignAPIRequest) GetAccountId() int64 {
 	return r._accountId
 }

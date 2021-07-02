@@ -43,7 +43,7 @@ func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TaobaoId Setter
+// SetTaobaoId is TaobaoId Setter
 // taobao open id
 func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetTaobaoId(_taobaoId string) error {
 	r._taobaoId = _taobaoId
@@ -51,12 +51,12 @@ func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetTaobaoId(_taobaoId string) e
 	return nil
 }
 
-// Get TaobaoId Getter
+// GetTaobaoId TaobaoId Getter
 func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetTaobaoId() string {
 	return r._taobaoId
 }
 
-// Set is ExpireIn Setter
+// SetExpireIn is ExpireIn Setter
 // access token 过期时间，单位：秒
 func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetExpireIn(_expireIn int64) error {
 	r._expireIn = _expireIn
@@ -64,12 +64,12 @@ func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetExpireIn(_expireIn int64) er
 	return nil
 }
 
-// Get ExpireIn Getter
+// GetExpireIn ExpireIn Getter
 func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetExpireIn() int64 {
 	return r._expireIn
 }
 
-// Set is OauthAccessToken Setter
+// SetOauthAccessToken is OauthAccessToken Setter
 // access token
 func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetOauthAccessToken(_oauthAccessToken string) error {
 	r._oauthAccessToken = _oauthAccessToken
@@ -77,12 +77,12 @@ func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetOauthAccessToken(_oauthAcces
 	return nil
 }
 
-// Get OauthAccessToken Getter
+// GetOauthAccessToken OauthAccessToken Getter
 func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetOauthAccessToken() string {
 	return r._oauthAccessToken
 }
 
-// Set is RefreshToken Setter
+// SetRefreshToken is RefreshToken Setter
 // refresh token
 func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetRefreshToken(_refreshToken string) error {
 	r._refreshToken = _refreshToken
@@ -90,7 +90,7 @@ func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetRefreshToken(_refreshToken s
 	return nil
 }
 
-// Get RefreshToken Getter
+// GetRefreshToken RefreshToken Getter
 func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetRefreshToken() string {
 	return r._refreshToken
 }

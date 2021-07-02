@@ -41,7 +41,7 @@ func (r TaobaoFuwuScoresGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前页
 func (r *TaobaoFuwuScoresGetAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -49,12 +49,12 @@ func (r *TaobaoFuwuScoresGetAPIRequest) SetCurrentPage(_currentPage int64) error
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TaobaoFuwuScoresGetAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页获取条数。默认值40，最小值1，最大值100。
 func (r *TaobaoFuwuScoresGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -62,12 +62,12 @@ func (r *TaobaoFuwuScoresGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoFuwuScoresGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Date Setter
+// SetDate is Date Setter
 // 评价日期，查询某一天的评价
 func (r *TaobaoFuwuScoresGetAPIRequest) SetDate(_date string) error {
 	r._date = _date
@@ -75,7 +75,7 @@ func (r *TaobaoFuwuScoresGetAPIRequest) SetDate(_date string) error {
 	return nil
 }
 
-// Get Date Getter
+// GetDate Date Getter
 func (r TaobaoFuwuScoresGetAPIRequest) GetDate() string {
 	return r._date
 }

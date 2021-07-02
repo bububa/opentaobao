@@ -37,7 +37,7 @@ func (r AlibabaWdkMarketingCouponQueryactivityAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 查询优惠券活动入参
 func (r *AlibabaWdkMarketingCouponQueryactivityAPIRequest) SetParam0(_param0 *CommonActivityParam) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMarketingCouponQueryactivityAPIRequest) SetParam0(_param0 *Co
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaWdkMarketingCouponQueryactivityAPIRequest) GetParam0() *CommonActivityParam {
 	return r._param0
 }

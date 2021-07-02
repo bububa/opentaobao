@@ -39,7 +39,7 @@ func (r AlibabaAlihealthUserBaseinfoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户id
 func (r *AlibabaAlihealthUserBaseinfoGetAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthUserBaseinfoGetAPIRequest) SetUserId(_userId int64) err
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaAlihealthUserBaseinfoGetAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is AppName Setter
+// SetAppName is AppName Setter
 // 三方服务商
 func (r *AlibabaAlihealthUserBaseinfoGetAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthUserBaseinfoGetAPIRequest) SetAppName(_appName string) 
 	return nil
 }
 
-// Get AppName Getter
+// GetAppName AppName Getter
 func (r AlibabaAlihealthUserBaseinfoGetAPIRequest) GetAppName() string {
 	return r._appName
 }

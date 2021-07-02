@@ -37,7 +37,7 @@ func (r AlibabaWdkMerchantproductEditAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Req Setter
+// SetReq is Req Setter
 // 产品编辑入参
 func (r *AlibabaWdkMerchantproductEditAPIRequest) SetReq(_req *MerchantProductRequest) error {
 	r._req = _req
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMerchantproductEditAPIRequest) SetReq(_req *MerchantProductRe
 	return nil
 }
 
-// Get Req Getter
+// GetReq Req Getter
 func (r AlibabaWdkMerchantproductEditAPIRequest) GetReq() *MerchantProductRequest {
 	return r._req
 }

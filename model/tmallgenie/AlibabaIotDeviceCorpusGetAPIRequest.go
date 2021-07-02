@@ -41,7 +41,7 @@ func (r AlibabaIotDeviceCorpusGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserOpenId Setter
+// SetUserOpenId is UserOpenId Setter
 // 天猫精灵开放用户id
 func (r *AlibabaIotDeviceCorpusGetAPIRequest) SetUserOpenId(_userOpenId string) error {
 	r._userOpenId = _userOpenId
@@ -49,12 +49,12 @@ func (r *AlibabaIotDeviceCorpusGetAPIRequest) SetUserOpenId(_userOpenId string) 
 	return nil
 }
 
-// Get UserOpenId Getter
+// GetUserOpenId UserOpenId Getter
 func (r AlibabaIotDeviceCorpusGetAPIRequest) GetUserOpenId() string {
 	return r._userOpenId
 }
 
-// Set is ClientId Setter
+// SetClientId is ClientId Setter
 // 天猫精灵开放的client id
 func (r *AlibabaIotDeviceCorpusGetAPIRequest) SetClientId(_clientId string) error {
 	r._clientId = _clientId
@@ -62,12 +62,12 @@ func (r *AlibabaIotDeviceCorpusGetAPIRequest) SetClientId(_clientId string) erro
 	return nil
 }
 
-// Get ClientId Getter
+// GetClientId ClientId Getter
 func (r AlibabaIotDeviceCorpusGetAPIRequest) GetClientId() string {
 	return r._clientId
 }
 
-// Set is DevId Setter
+// SetDevId is DevId Setter
 // iot设备id
 func (r *AlibabaIotDeviceCorpusGetAPIRequest) SetDevId(_devId string) error {
 	r._devId = _devId
@@ -75,7 +75,7 @@ func (r *AlibabaIotDeviceCorpusGetAPIRequest) SetDevId(_devId string) error {
 	return nil
 }
 
-// Get DevId Getter
+// GetDevId DevId Getter
 func (r AlibabaIotDeviceCorpusGetAPIRequest) GetDevId() string {
 	return r._devId
 }

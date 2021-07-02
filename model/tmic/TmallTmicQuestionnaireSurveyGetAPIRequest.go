@@ -41,7 +41,7 @@ func (r TmallTmicQuestionnaireSurveyGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is HashCode Setter
+// SetHashCode is HashCode Setter
 // 问卷hashCode，问卷对外唯一编码
 func (r *TmallTmicQuestionnaireSurveyGetAPIRequest) SetHashCode(_hashCode string) error {
 	r._hashCode = _hashCode
@@ -49,12 +49,12 @@ func (r *TmallTmicQuestionnaireSurveyGetAPIRequest) SetHashCode(_hashCode string
 	return nil
 }
 
-// Get HashCode Getter
+// GetHashCode HashCode Getter
 func (r TmallTmicQuestionnaireSurveyGetAPIRequest) GetHashCode() string {
 	return r._hashCode
 }
 
-// Set is Biz Setter
+// SetBiz is Biz Setter
 // biz业务参数，1024表示投放id，下划线分隔，fav表示收藏行为的英文
 func (r *TmallTmicQuestionnaireSurveyGetAPIRequest) SetBiz(_biz string) error {
 	r._biz = _biz
@@ -62,12 +62,12 @@ func (r *TmallTmicQuestionnaireSurveyGetAPIRequest) SetBiz(_biz string) error {
 	return nil
 }
 
-// Get Biz Getter
+// GetBiz Biz Getter
 func (r TmallTmicQuestionnaireSurveyGetAPIRequest) GetBiz() string {
 	return r._biz
 }
 
-// Set is OpenUserId Setter
+// SetOpenUserId is OpenUserId Setter
 // open_id
 func (r *TmallTmicQuestionnaireSurveyGetAPIRequest) SetOpenUserId(_openUserId string) error {
 	r._openUserId = _openUserId
@@ -75,7 +75,7 @@ func (r *TmallTmicQuestionnaireSurveyGetAPIRequest) SetOpenUserId(_openUserId st
 	return nil
 }
 
-// Get OpenUserId Getter
+// GetOpenUserId OpenUserId Getter
 func (r TmallTmicQuestionnaireSurveyGetAPIRequest) GetOpenUserId() string {
 	return r._openUserId
 }

@@ -37,7 +37,7 @@ func (r AlibabaAscpUopSupplierConsignorderShipAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ConsignorderShipRequest Setter
+// SetConsignorderShipRequest is ConsignorderShipRequest Setter
 // 发货回传请求模型
 func (r *AlibabaAscpUopSupplierConsignorderShipAPIRequest) SetConsignorderShipRequest(_consignorderShipRequest *Consignordershiprequest) error {
 	r._consignorderShipRequest = _consignorderShipRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpUopSupplierConsignorderShipAPIRequest) SetConsignorderShipRe
 	return nil
 }
 
-// Get ConsignorderShipRequest Getter
+// GetConsignorderShipRequest ConsignorderShipRequest Getter
 func (r AlibabaAscpUopSupplierConsignorderShipAPIRequest) GetConsignorderShipRequest() *Consignordershiprequest {
 	return r._consignorderShipRequest
 }

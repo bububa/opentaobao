@@ -37,7 +37,7 @@ func (r AlibabaWdkSkuChannelskuUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamList Setter
+// SetParamList is ParamList Setter
 // 请求参数
 func (r *AlibabaWdkSkuChannelskuUpdateAPIRequest) SetParamList(_paramList []ChannelSkuDo) error {
 	r._paramList = _paramList
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSkuChannelskuUpdateAPIRequest) SetParamList(_paramList []Chan
 	return nil
 }
 
-// Get ParamList Getter
+// GetParamList ParamList Getter
 func (r AlibabaWdkSkuChannelskuUpdateAPIRequest) GetParamList() []ChannelSkuDo {
 	return r._paramList
 }

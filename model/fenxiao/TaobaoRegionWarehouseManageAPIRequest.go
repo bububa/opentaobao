@@ -39,7 +39,7 @@ func (r TaobaoRegionWarehouseManageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 仓库编码
 func (r *TaobaoRegionWarehouseManageAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -47,12 +47,12 @@ func (r *TaobaoRegionWarehouseManageAPIRequest) SetStoreCode(_storeCode string) 
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r TaobaoRegionWarehouseManageAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is Regions Setter
+// SetRegions is Regions Setter
 // 可映射三级地址,例: 广东省
 func (r *TaobaoRegionWarehouseManageAPIRequest) SetRegions(_regions []string) error {
 	r._regions = _regions
@@ -60,7 +60,7 @@ func (r *TaobaoRegionWarehouseManageAPIRequest) SetRegions(_regions []string) er
 	return nil
 }
 
-// Get Regions Getter
+// GetRegions Regions Getter
 func (r TaobaoRegionWarehouseManageAPIRequest) GetRegions() []string {
 	return r._regions
 }

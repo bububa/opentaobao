@@ -37,7 +37,7 @@ func (r AlibabaMjMosFundModifybillbankaccountAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ModifyDto Setter
+// SetModifyDto is ModifyDto Setter
 // 修改入参
 func (r *AlibabaMjMosFundModifybillbankaccountAPIRequest) SetModifyDto(_modifyDto *ModifyBillDto) error {
 	r._modifyDto = _modifyDto
@@ -45,7 +45,7 @@ func (r *AlibabaMjMosFundModifybillbankaccountAPIRequest) SetModifyDto(_modifyDt
 	return nil
 }
 
-// Get ModifyDto Getter
+// GetModifyDto ModifyDto Getter
 func (r AlibabaMjMosFundModifybillbankaccountAPIRequest) GetModifyDto() *ModifyBillDto {
 	return r._modifyDto
 }

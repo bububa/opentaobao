@@ -53,7 +53,7 @@ func (r TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is ChangeBizStatusEnum Setter
+// SetChangeBizStatusEnum is ChangeBizStatusEnum Setter
 // WAITING_CONFIRM(10, "卖家待确认"),CONFIRMED(20, "卖家已确认"),WAITING_ISSUE(30, "卖家待出票"),FROZEN_ORDER(40, "出票超时冻结"),ISSUE_SUCCESS(50, "出票成功"),CHECKING_FAILURE(60,"验真失败"),CHECKING_SUCCCESS(61,"验真成功"),REFUSED(70, "卖家已拒绝")
 func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetChangeBizStatusEnum(_changeBizStatusEnum string) error {
 	r._changeBizStatusEnum = _changeBizStatusEnum
@@ -61,12 +61,12 @@ func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetChangeBizStatus
 	return nil
 }
 
-// Get ChangeBizStatusEnum Getter
+// GetChangeBizStatusEnum ChangeBizStatusEnum Getter
 func (r TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) GetChangeBizStatusEnum() string {
 	return r._changeBizStatusEnum
 }
 
-// Set is ChangeOrderId Setter
+// SetChangeOrderId is ChangeOrderId Setter
 // 改签申请单ID
 func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetChangeOrderId(_changeOrderId int64) error {
 	r._changeOrderId = _changeOrderId
@@ -74,12 +74,12 @@ func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetChangeOrderId(_
 	return nil
 }
 
-// Get ChangeOrderId Getter
+// GetChangeOrderId ChangeOrderId Getter
 func (r TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) GetChangeOrderId() int64 {
 	return r._changeOrderId
 }
 
-// Set is ChangeReasonType Setter
+// SetChangeReasonType is ChangeReasonType Setter
 // 申请原因类型 0－因乘客个人原因(自愿改签) ,1－因航班取消/延误(非自愿),
 func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetChangeReasonType(_changeReasonType string) error {
 	r._changeReasonType = _changeReasonType
@@ -87,12 +87,12 @@ func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetChangeReasonTyp
 	return nil
 }
 
-// Get ChangeReasonType Getter
+// GetChangeReasonType ChangeReasonType Getter
 func (r TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) GetChangeReasonType() string {
 	return r._changeReasonType
 }
 
-// Set is EndCreateDate Setter
+// SetEndCreateDate is EndCreateDate Setter
 // 1
 func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetEndCreateDate(_endCreateDate string) error {
 	r._endCreateDate = _endCreateDate
@@ -100,12 +100,12 @@ func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetEndCreateDate(_
 	return nil
 }
 
-// Get EndCreateDate Getter
+// GetEndCreateDate EndCreateDate Getter
 func (r TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) GetEndCreateDate() string {
 	return r._endCreateDate
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单ID
 func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -113,12 +113,12 @@ func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetOrderId(_orderI
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 分页索引
 func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -126,12 +126,12 @@ func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetPageIndex(_page
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
 func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -139,12 +139,12 @@ func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetPageSize(_pageS
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is SortField Setter
+// SetSortField is SortField Setter
 // 排序
 func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetSortField(_sortField int64) error {
 	r._sortField = _sortField
@@ -152,12 +152,12 @@ func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetSortField(_sort
 	return nil
 }
 
-// Get SortField Getter
+// GetSortField SortField Getter
 func (r TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) GetSortField() int64 {
 	return r._sortField
 }
 
-// Set is StartCreateDate Setter
+// SetStartCreateDate is StartCreateDate Setter
 // 1
 func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetStartCreateDate(_startCreateDate string) error {
 	r._startCreateDate = _startCreateDate
@@ -165,7 +165,7 @@ func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetStartCreateDate
 	return nil
 }
 
-// Get StartCreateDate Getter
+// GetStartCreateDate StartCreateDate Getter
 func (r TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) GetStartCreateDate() string {
 	return r._startCreateDate
 }

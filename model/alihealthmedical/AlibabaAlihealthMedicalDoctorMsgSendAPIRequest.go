@@ -37,7 +37,7 @@ func (r AlibabaAlihealthMedicalDoctorMsgSendAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Inquiry Setter
+// SetInquiry is Inquiry Setter
 // request
 func (r *AlibabaAlihealthMedicalDoctorMsgSendAPIRequest) SetInquiry(_inquiry *OuterMsgPullRequest) error {
 	r._inquiry = _inquiry
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthMedicalDoctorMsgSendAPIRequest) SetInquiry(_inquiry *Ou
 	return nil
 }
 
-// Get Inquiry Getter
+// GetInquiry Inquiry Getter
 func (r AlibabaAlihealthMedicalDoctorMsgSendAPIRequest) GetInquiry() *OuterMsgPullRequest {
 	return r._inquiry
 }

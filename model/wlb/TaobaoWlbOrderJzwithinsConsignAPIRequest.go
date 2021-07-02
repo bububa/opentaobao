@@ -43,7 +43,7 @@ func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝交易订单号
 func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -51,12 +51,12 @@ func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is TmsPartner Setter
+// SetTmsPartner is TmsPartner Setter
 // 物流服务商信息
 func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetTmsPartner(_tmsPartner *JzPartnerNew) error {
 	r._tmsPartner = _tmsPartner
@@ -64,12 +64,12 @@ func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetTmsPartner(_tmsPartner *Jz
 	return nil
 }
 
-// Get TmsPartner Getter
+// GetTmsPartner TmsPartner Getter
 func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetTmsPartner() *JzPartnerNew {
 	return r._tmsPartner
 }
 
-// Set is InsPartner Setter
+// SetInsPartner is InsPartner Setter
 // 物流服务商信息
 func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetInsPartner(_insPartner *JzPartnerNew) error {
 	r._insPartner = _insPartner
@@ -77,12 +77,12 @@ func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetInsPartner(_insPartner *Jz
 	return nil
 }
 
-// Get InsPartner Getter
+// GetInsPartner InsPartner Getter
 func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetInsPartner() *JzPartnerNew {
 	return r._insPartner
 }
 
-// Set is JzConsignArgs Setter
+// SetJzConsignArgs is JzConsignArgs Setter
 // 家装物流发货参数
 func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetJzConsignArgs(_jzConsignArgs *JzConsignArgsNew) error {
 	r._jzConsignArgs = _jzConsignArgs
@@ -90,7 +90,7 @@ func (r *TaobaoWlbOrderJzwithinsConsignAPIRequest) SetJzConsignArgs(_jzConsignAr
 	return nil
 }
 
-// Get JzConsignArgs Getter
+// GetJzConsignArgs JzConsignArgs Getter
 func (r TaobaoWlbOrderJzwithinsConsignAPIRequest) GetJzConsignArgs() *JzConsignArgsNew {
 	return r._jzConsignArgs
 }

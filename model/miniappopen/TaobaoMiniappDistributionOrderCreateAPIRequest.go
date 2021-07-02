@@ -37,7 +37,7 @@ func (r TaobaoMiniappDistributionOrderCreateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is OrderRequest Setter
+// SetOrderRequest is OrderRequest Setter
 // 投放计划信息
 func (r *TaobaoMiniappDistributionOrderCreateAPIRequest) SetOrderRequest(_orderRequest *DistributionOrderSaveOpenRequest) error {
 	r._orderRequest = _orderRequest
@@ -45,7 +45,7 @@ func (r *TaobaoMiniappDistributionOrderCreateAPIRequest) SetOrderRequest(_orderR
 	return nil
 }
 
-// Get OrderRequest Getter
+// GetOrderRequest OrderRequest Getter
 func (r TaobaoMiniappDistributionOrderCreateAPIRequest) GetOrderRequest() *DistributionOrderSaveOpenRequest {
 	return r._orderRequest
 }

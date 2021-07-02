@@ -37,7 +37,7 @@ func (r AliyunAlinkDataStatReportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamBean Setter
+// SetParamBean is ParamBean Setter
 // 入参对象
 func (r *AliyunAlinkDataStatReportAPIRequest) SetParamBean(_paramBean *OuterDataBean) error {
 	r._paramBean = _paramBean
@@ -45,7 +45,7 @@ func (r *AliyunAlinkDataStatReportAPIRequest) SetParamBean(_paramBean *OuterData
 	return nil
 }
 
-// Get ParamBean Getter
+// GetParamBean ParamBean Getter
 func (r AliyunAlinkDataStatReportAPIRequest) GetParamBean() *OuterDataBean {
 	return r._paramBean
 }

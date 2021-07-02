@@ -37,7 +37,7 @@ func (r YunosOsupdateAppversionCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppVersion Setter
+// SetAppVersion is AppVersion Setter
 // 应用版本信息
 func (r *YunosOsupdateAppversionCreateAPIRequest) SetAppVersion(_appVersion *TvAppVersion) error {
 	r._appVersion = _appVersion
@@ -45,7 +45,7 @@ func (r *YunosOsupdateAppversionCreateAPIRequest) SetAppVersion(_appVersion *TvA
 	return nil
 }
 
-// Get AppVersion Getter
+// GetAppVersion AppVersion Getter
 func (r YunosOsupdateAppversionCreateAPIRequest) GetAppVersion() *TvAppVersion {
 	return r._appVersion
 }

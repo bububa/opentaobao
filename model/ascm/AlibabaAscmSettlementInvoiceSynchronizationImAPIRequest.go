@@ -37,7 +37,7 @@ func (r AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is XmlDataSlot Setter
+// SetXmlDataSlot is XmlDataSlot Setter
 // im invoice xml
 func (r *AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest) SetXmlDataSlot(_xmlDataSlot string) error {
 	r._xmlDataSlot = _xmlDataSlot
@@ -45,7 +45,7 @@ func (r *AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest) SetXmlDataSlot
 	return nil
 }
 
-// Get XmlDataSlot Getter
+// GetXmlDataSlot XmlDataSlot Getter
 func (r AlibabaAscmSettlementInvoiceSynchronizationImAPIRequest) GetXmlDataSlot() string {
 	return r._xmlDataSlot
 }

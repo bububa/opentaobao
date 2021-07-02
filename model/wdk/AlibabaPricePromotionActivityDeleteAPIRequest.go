@@ -39,7 +39,7 @@ func (r AlibabaPricePromotionActivityDeleteAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is OuterPromotionCode Setter
+// SetOuterPromotionCode is OuterPromotionCode Setter
 // 外部主键
 func (r *AlibabaPricePromotionActivityDeleteAPIRequest) SetOuterPromotionCode(_outerPromotionCode string) error {
 	r._outerPromotionCode = _outerPromotionCode
@@ -47,12 +47,12 @@ func (r *AlibabaPricePromotionActivityDeleteAPIRequest) SetOuterPromotionCode(_o
 	return nil
 }
 
-// Get OuterPromotionCode Getter
+// GetOuterPromotionCode OuterPromotionCode Getter
 func (r AlibabaPricePromotionActivityDeleteAPIRequest) GetOuterPromotionCode() string {
 	return r._outerPromotionCode
 }
 
-// Set is OuCode Setter
+// SetOuCode is OuCode Setter
 // 经营店OU
 func (r *AlibabaPricePromotionActivityDeleteAPIRequest) SetOuCode(_ouCode string) error {
 	r._ouCode = _ouCode
@@ -60,7 +60,7 @@ func (r *AlibabaPricePromotionActivityDeleteAPIRequest) SetOuCode(_ouCode string
 	return nil
 }
 
-// Get OuCode Getter
+// GetOuCode OuCode Getter
 func (r AlibabaPricePromotionActivityDeleteAPIRequest) GetOuCode() string {
 	return r._ouCode
 }

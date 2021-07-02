@@ -43,7 +43,7 @@ func (r AlibabaAliqinFlowWalletConsumeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Flow Setter
+// SetFlow is Flow Setter
 // 扣减流量值
 func (r *AlibabaAliqinFlowWalletConsumeAPIRequest) SetFlow(_flow int64) error {
 	r._flow = _flow
@@ -51,12 +51,12 @@ func (r *AlibabaAliqinFlowWalletConsumeAPIRequest) SetFlow(_flow int64) error {
 	return nil
 }
 
-// Get Flow Getter
+// GetFlow Flow Getter
 func (r AlibabaAliqinFlowWalletConsumeAPIRequest) GetFlow() int64 {
 	return r._flow
 }
 
-// Set is SerialNo Setter
+// SetSerialNo is SerialNo Setter
 // 扣减流水号
 func (r *AlibabaAliqinFlowWalletConsumeAPIRequest) SetSerialNo(_serialNo string) error {
 	r._serialNo = _serialNo
@@ -64,12 +64,12 @@ func (r *AlibabaAliqinFlowWalletConsumeAPIRequest) SetSerialNo(_serialNo string)
 	return nil
 }
 
-// Get SerialNo Getter
+// GetSerialNo SerialNo Getter
 func (r AlibabaAliqinFlowWalletConsumeAPIRequest) GetSerialNo() string {
 	return r._serialNo
 }
 
-// Set is Reason Setter
+// SetReason is Reason Setter
 // 扣减原因
 func (r *AlibabaAliqinFlowWalletConsumeAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
@@ -77,12 +77,12 @@ func (r *AlibabaAliqinFlowWalletConsumeAPIRequest) SetReason(_reason string) err
 	return nil
 }
 
-// Get Reason Getter
+// GetReason Reason Getter
 func (r AlibabaAliqinFlowWalletConsumeAPIRequest) GetReason() string {
 	return r._reason
 }
 
-// Set is Remark Setter
+// SetRemark is Remark Setter
 // 备注
 func (r *AlibabaAliqinFlowWalletConsumeAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
@@ -90,7 +90,7 @@ func (r *AlibabaAliqinFlowWalletConsumeAPIRequest) SetRemark(_remark string) err
 	return nil
 }
 
-// Get Remark Getter
+// GetRemark Remark Getter
 func (r AlibabaAliqinFlowWalletConsumeAPIRequest) GetRemark() string {
 	return r._remark
 }

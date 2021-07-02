@@ -37,7 +37,7 @@ func (r TaobaoInventoryWarehouseManageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WareHouseDto Setter
+// SetWareHouseDto is WareHouseDto Setter
 // 仓库信息
 func (r *TaobaoInventoryWarehouseManageAPIRequest) SetWareHouseDto(_wareHouseDto *WareHouseDto) error {
 	r._wareHouseDto = _wareHouseDto
@@ -45,7 +45,7 @@ func (r *TaobaoInventoryWarehouseManageAPIRequest) SetWareHouseDto(_wareHouseDto
 	return nil
 }
 
-// Get WareHouseDto Getter
+// GetWareHouseDto WareHouseDto Getter
 func (r TaobaoInventoryWarehouseManageAPIRequest) GetWareHouseDto() *WareHouseDto {
 	return r._wareHouseDto
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkBmStockPublishAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SkuStockPublishParamList Setter
+// SetSkuStockPublishParamList is SkuStockPublishParamList Setter
 // 批量入参
 func (r *AlibabaWdkBmStockPublishAPIRequest) SetSkuStockPublishParamList(_skuStockPublishParamList []SkuStockPublishParamDo) error {
 	r._skuStockPublishParamList = _skuStockPublishParamList
@@ -45,7 +45,7 @@ func (r *AlibabaWdkBmStockPublishAPIRequest) SetSkuStockPublishParamList(_skuSto
 	return nil
 }
 
-// Get SkuStockPublishParamList Getter
+// GetSkuStockPublishParamList SkuStockPublishParamList Getter
 func (r AlibabaWdkBmStockPublishAPIRequest) GetSkuStockPublishParamList() []SkuStockPublishParamDo {
 	return r._skuStockPublishParamList
 }

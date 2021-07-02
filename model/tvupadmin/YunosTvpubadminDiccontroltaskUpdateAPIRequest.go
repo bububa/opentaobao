@@ -41,7 +41,7 @@ func (r YunosTvpubadminDiccontroltaskUpdateAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 任务ID
 func (r *YunosTvpubadminDiccontroltaskUpdateAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -49,12 +49,12 @@ func (r *YunosTvpubadminDiccontroltaskUpdateAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r YunosTvpubadminDiccontroltaskUpdateAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 任务状态
 func (r *YunosTvpubadminDiccontroltaskUpdateAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -62,12 +62,12 @@ func (r *YunosTvpubadminDiccontroltaskUpdateAPIRequest) SetStatus(_status int64)
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r YunosTvpubadminDiccontroltaskUpdateAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照方
 func (r *YunosTvpubadminDiccontroltaskUpdateAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -75,7 +75,7 @@ func (r *YunosTvpubadminDiccontroltaskUpdateAPIRequest) SetLicense(_license int6
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminDiccontroltaskUpdateAPIRequest) GetLicense() int64 {
 	return r._license
 }

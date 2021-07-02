@@ -41,7 +41,7 @@ func (r TmallDeviceCarturlGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemIds Setter
+// SetItemIds is ItemIds Setter
 // 商品信息，格式为 商品ID_SKU ID_数量，多条记录以逗号(,)分割
 func (r *TmallDeviceCarturlGetAPIRequest) SetItemIds(_itemIds []string) error {
 	r._itemIds = _itemIds
@@ -49,12 +49,12 @@ func (r *TmallDeviceCarturlGetAPIRequest) SetItemIds(_itemIds []string) error {
 	return nil
 }
 
-// Get ItemIds Getter
+// GetItemIds ItemIds Getter
 func (r TmallDeviceCarturlGetAPIRequest) GetItemIds() []string {
 	return r._itemIds
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 设备业务编码
 func (r *TmallDeviceCarturlGetAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -62,12 +62,12 @@ func (r *TmallDeviceCarturlGetAPIRequest) SetDeviceCode(_deviceCode string) erro
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r TmallDeviceCarturlGetAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is Longterm Setter
+// SetLongterm is Longterm Setter
 // 是否申请长期链接
 func (r *TmallDeviceCarturlGetAPIRequest) SetLongterm(_longterm bool) error {
 	r._longterm = _longterm
@@ -75,7 +75,7 @@ func (r *TmallDeviceCarturlGetAPIRequest) SetLongterm(_longterm bool) error {
 	return nil
 }
 
-// Get Longterm Getter
+// GetLongterm Longterm Getter
 func (r TmallDeviceCarturlGetAPIRequest) GetLongterm() bool {
 	return r._longterm
 }

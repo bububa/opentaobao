@@ -43,7 +43,7 @@ func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is CampaignIdList Setter
+// SetCampaignIdList is CampaignIdList Setter
 // 计划id集合
 func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetCampaignIdList(_campaignIdList []int64) error {
 	r._campaignIdList = _campaignIdList
@@ -51,12 +51,12 @@ func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetCampaignIdList(_c
 	return nil
 }
 
-// Get CampaignIdList Getter
+// GetCampaignIdList CampaignIdList Getter
 func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetCampaignIdList() []int64 {
 	return r._campaignIdList
 }
 
-// Set is BeginDate Setter
+// SetBeginDate is BeginDate Setter
 // 开始时间
 func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetBeginDate(_beginDate string) error {
 	r._beginDate = _beginDate
@@ -64,12 +64,12 @@ func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetBeginDate(_beginD
 	return nil
 }
 
-// Get BeginDate Getter
+// GetBeginDate BeginDate Getter
 func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetBeginDate() string {
 	return r._beginDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 结束时间
 func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -77,12 +77,12 @@ func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetEndDate(_endDate 
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -90,7 +90,7 @@ func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetTopContext(_topCo
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }

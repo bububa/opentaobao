@@ -37,7 +37,7 @@ func (r AliyunAliosPayTokenGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GetTokenRequest Setter
+// SetGetTokenRequest is GetTokenRequest Setter
 // 请求参数
 func (r *AliyunAliosPayTokenGetAPIRequest) SetGetTokenRequest(_getTokenRequest *GetTokenRequest) error {
 	r._getTokenRequest = _getTokenRequest
@@ -45,7 +45,7 @@ func (r *AliyunAliosPayTokenGetAPIRequest) SetGetTokenRequest(_getTokenRequest *
 	return nil
 }
 
-// Get GetTokenRequest Getter
+// GetGetTokenRequest GetTokenRequest Getter
 func (r AliyunAliosPayTokenGetAPIRequest) GetGetTokenRequest() *GetTokenRequest {
 	return r._getTokenRequest
 }

@@ -37,7 +37,7 @@ func (r YoukuOttPayOrderQueryauthstateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OriginalCpOrderNo Setter
+// SetOriginalCpOrderNo is OriginalCpOrderNo Setter
 // 原始签约订单号
 func (r *YoukuOttPayOrderQueryauthstateAPIRequest) SetOriginalCpOrderNo(_originalCpOrderNo string) error {
 	r._originalCpOrderNo = _originalCpOrderNo
@@ -45,7 +45,7 @@ func (r *YoukuOttPayOrderQueryauthstateAPIRequest) SetOriginalCpOrderNo(_origina
 	return nil
 }
 
-// Get OriginalCpOrderNo Getter
+// GetOriginalCpOrderNo OriginalCpOrderNo Getter
 func (r YoukuOttPayOrderQueryauthstateAPIRequest) GetOriginalCpOrderNo() string {
 	return r._originalCpOrderNo
 }

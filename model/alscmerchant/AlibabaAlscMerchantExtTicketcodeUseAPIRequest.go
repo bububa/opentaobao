@@ -37,7 +37,7 @@ func (r AlibabaAlscMerchantExtTicketcodeUseAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is UseRequest Setter
+// SetUseRequest is UseRequest Setter
 // 外部券使用请求
 func (r *AlibabaAlscMerchantExtTicketcodeUseAPIRequest) SetUseRequest(_useRequest *ExternalTicketUseRequest) error {
 	r._useRequest = _useRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlscMerchantExtTicketcodeUseAPIRequest) SetUseRequest(_useReques
 	return nil
 }
 
-// Get UseRequest Getter
+// GetUseRequest UseRequest Getter
 func (r AlibabaAlscMerchantExtTicketcodeUseAPIRequest) GetUseRequest() *ExternalTicketUseRequest {
 	return r._useRequest
 }

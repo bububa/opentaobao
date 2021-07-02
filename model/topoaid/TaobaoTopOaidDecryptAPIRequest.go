@@ -37,7 +37,7 @@ func (r TaobaoTopOaidDecryptAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryList Setter
+// SetQueryList is QueryList Setter
 // 解密请求列表，最多支持20个。
 func (r *TaobaoTopOaidDecryptAPIRequest) SetQueryList(_queryList []ReceiverQuery) error {
 	r._queryList = _queryList
@@ -45,7 +45,7 @@ func (r *TaobaoTopOaidDecryptAPIRequest) SetQueryList(_queryList []ReceiverQuery
 	return nil
 }
 
-// Get QueryList Getter
+// GetQueryList QueryList Getter
 func (r TaobaoTopOaidDecryptAPIRequest) GetQueryList() []ReceiverQuery {
 	return r._queryList
 }

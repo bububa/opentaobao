@@ -39,7 +39,7 @@ func (r AlibabaMjMemberHasbindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // user_id
 func (r *AlibabaMjMemberHasbindAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -47,12 +47,12 @@ func (r *AlibabaMjMemberHasbindAPIRequest) SetUserId(_userId int64) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaMjMemberHasbindAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is OpenId Setter
+// SetOpenId is OpenId Setter
 // open_id
 func (r *AlibabaMjMemberHasbindAPIRequest) SetOpenId(_openId string) error {
 	r._openId = _openId
@@ -60,7 +60,7 @@ func (r *AlibabaMjMemberHasbindAPIRequest) SetOpenId(_openId string) error {
 	return nil
 }
 
-// Get OpenId Getter
+// GetOpenId OpenId Getter
 func (r AlibabaMjMemberHasbindAPIRequest) GetOpenId() string {
 	return r._openId
 }

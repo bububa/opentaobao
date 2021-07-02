@@ -37,7 +37,7 @@ func (r AlibabaAlihealthOutflowUsageSaveorupdateAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is UsageRequest Setter
+// SetUsageRequest is UsageRequest Setter
 // 用法数据
 func (r *AlibabaAlihealthOutflowUsageSaveorupdateAPIRequest) SetUsageRequest(_usageRequest *UsageRequest) error {
 	r._usageRequest = _usageRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthOutflowUsageSaveorupdateAPIRequest) SetUsageRequest(_us
 	return nil
 }
 
-// Get UsageRequest Getter
+// GetUsageRequest UsageRequest Getter
 func (r AlibabaAlihealthOutflowUsageSaveorupdateAPIRequest) GetUsageRequest() *UsageRequest {
 	return r._usageRequest
 }

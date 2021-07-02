@@ -43,7 +43,7 @@ func (r AlibabaIcbuCategoryIdMappingAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 发布类目id
 func (r *AlibabaIcbuCategoryIdMappingAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -51,12 +51,12 @@ func (r *AlibabaIcbuCategoryIdMappingAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r AlibabaIcbuCategoryIdMappingAPIRequest) GetCatId() int64 {
 	return r._catId
 }
 
-// Set is AttributeValueId Setter
+// SetAttributeValueId is AttributeValueId Setter
 // 属性值id
 func (r *AlibabaIcbuCategoryIdMappingAPIRequest) SetAttributeValueId(_attributeValueId int64) error {
 	r._attributeValueId = _attributeValueId
@@ -64,12 +64,12 @@ func (r *AlibabaIcbuCategoryIdMappingAPIRequest) SetAttributeValueId(_attributeV
 	return nil
 }
 
-// Get AttributeValueId Getter
+// GetAttributeValueId AttributeValueId Getter
 func (r AlibabaIcbuCategoryIdMappingAPIRequest) GetAttributeValueId() int64 {
 	return r._attributeValueId
 }
 
-// Set is AttributeId Setter
+// SetAttributeId is AttributeId Setter
 // 属性id
 func (r *AlibabaIcbuCategoryIdMappingAPIRequest) SetAttributeId(_attributeId int64) error {
 	r._attributeId = _attributeId
@@ -77,12 +77,12 @@ func (r *AlibabaIcbuCategoryIdMappingAPIRequest) SetAttributeId(_attributeId int
 	return nil
 }
 
-// Get AttributeId Getter
+// GetAttributeId AttributeId Getter
 func (r AlibabaIcbuCategoryIdMappingAPIRequest) GetAttributeId() int64 {
 	return r._attributeId
 }
 
-// Set is ConvertType Setter
+// SetConvertType is ConvertType Setter
 // 转化类型, 1 = 转化类目id 2= 转化属性id 3= 转化属性值id
 func (r *AlibabaIcbuCategoryIdMappingAPIRequest) SetConvertType(_convertType int64) error {
 	r._convertType = _convertType
@@ -90,7 +90,7 @@ func (r *AlibabaIcbuCategoryIdMappingAPIRequest) SetConvertType(_convertType int
 	return nil
 }
 
-// Get ConvertType Getter
+// GetConvertType ConvertType Getter
 func (r AlibabaIcbuCategoryIdMappingAPIRequest) GetConvertType() int64 {
 	return r._convertType
 }

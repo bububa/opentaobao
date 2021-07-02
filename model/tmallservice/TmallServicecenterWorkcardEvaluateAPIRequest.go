@@ -43,7 +43,7 @@ func (r TmallServicecenterWorkcardEvaluateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is PassEvaluation Setter
+// SetPassEvaluation is PassEvaluation Setter
 // 是否鉴定通过
 func (r *TmallServicecenterWorkcardEvaluateAPIRequest) SetPassEvaluation(_passEvaluation bool) error {
 	r._passEvaluation = _passEvaluation
@@ -51,12 +51,12 @@ func (r *TmallServicecenterWorkcardEvaluateAPIRequest) SetPassEvaluation(_passEv
 	return nil
 }
 
-// Get PassEvaluation Getter
+// GetPassEvaluation PassEvaluation Getter
 func (r TmallServicecenterWorkcardEvaluateAPIRequest) GetPassEvaluation() bool {
 	return r._passEvaluation
 }
 
-// Set is FailCode Setter
+// SetFailCode is FailCode Setter
 // 鉴定不通过时的原因编码
 func (r *TmallServicecenterWorkcardEvaluateAPIRequest) SetFailCode(_failCode int64) error {
 	r._failCode = _failCode
@@ -64,12 +64,12 @@ func (r *TmallServicecenterWorkcardEvaluateAPIRequest) SetFailCode(_failCode int
 	return nil
 }
 
-// Get FailCode Getter
+// GetFailCode FailCode Getter
 func (r TmallServicecenterWorkcardEvaluateAPIRequest) GetFailCode() int64 {
 	return r._failCode
 }
 
-// Set is PicUrlList Setter
+// SetPicUrlList is PicUrlList Setter
 // 鉴定结果图片列表
 func (r *TmallServicecenterWorkcardEvaluateAPIRequest) SetPicUrlList(_picUrlList []string) error {
 	r._picUrlList = _picUrlList
@@ -77,12 +77,12 @@ func (r *TmallServicecenterWorkcardEvaluateAPIRequest) SetPicUrlList(_picUrlList
 	return nil
 }
 
-// Get PicUrlList Getter
+// GetPicUrlList PicUrlList Getter
 func (r TmallServicecenterWorkcardEvaluateAPIRequest) GetPicUrlList() []string {
 	return r._picUrlList
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *TmallServicecenterWorkcardEvaluateAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -90,7 +90,7 @@ func (r *TmallServicecenterWorkcardEvaluateAPIRequest) SetWorkcardId(_workcardId
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterWorkcardEvaluateAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }

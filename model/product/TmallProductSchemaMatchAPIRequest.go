@@ -39,7 +39,7 @@ func (r TmallProductSchemaMatchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 商品发布的目标类目，必须是叶子类目
 func (r *TmallProductSchemaMatchAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
@@ -47,12 +47,12 @@ func (r *TmallProductSchemaMatchAPIRequest) SetCategoryId(_categoryId int64) err
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r TmallProductSchemaMatchAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }
 
-// Set is Propvalues Setter
+// SetPropvalues is Propvalues Setter
 // 根据tmall.product.match.schema.get获取到的模板，ISV将需要的字段填充好相应的值结果XML。
 func (r *TmallProductSchemaMatchAPIRequest) SetPropvalues(_propvalues string) error {
 	r._propvalues = _propvalues
@@ -60,7 +60,7 @@ func (r *TmallProductSchemaMatchAPIRequest) SetPropvalues(_propvalues string) er
 	return nil
 }
 
-// Get Propvalues Getter
+// GetPropvalues Propvalues Getter
 func (r TmallProductSchemaMatchAPIRequest) GetPropvalues() string {
 	return r._propvalues
 }

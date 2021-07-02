@@ -44,7 +44,7 @@ func (r TaobaoMiniappCloudPictureTokenAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GenerateTokenRequest Setter
+// SetGenerateTokenRequest is GenerateTokenRequest Setter
 // 请求参数
 func (r *TaobaoMiniappCloudPictureTokenAPIRequest) SetGenerateTokenRequest(_generateTokenRequest *GenerateTokenRequest) error {
 	r._generateTokenRequest = _generateTokenRequest
@@ -52,7 +52,7 @@ func (r *TaobaoMiniappCloudPictureTokenAPIRequest) SetGenerateTokenRequest(_gene
 	return nil
 }
 
-// Get GenerateTokenRequest Getter
+// GetGenerateTokenRequest GenerateTokenRequest Getter
 func (r TaobaoMiniappCloudPictureTokenAPIRequest) GetGenerateTokenRequest() *GenerateTokenRequest {
 	return r._generateTokenRequest
 }

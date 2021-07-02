@@ -39,7 +39,7 @@ func (r YunosTvpubadminContentDeviceGetvendorAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // license
 func (r *YunosTvpubadminContentDeviceGetvendorAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -47,12 +47,12 @@ func (r *YunosTvpubadminContentDeviceGetvendorAPIRequest) SetLicense(_license in
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminContentDeviceGetvendorAPIRequest) GetLicense() int64 {
 	return r._license
 }
 
-// Set is BrandId Setter
+// SetBrandId is BrandId Setter
 // brand_id
 func (r *YunosTvpubadminContentDeviceGetvendorAPIRequest) SetBrandId(_brandId int64) error {
 	r._brandId = _brandId
@@ -60,7 +60,7 @@ func (r *YunosTvpubadminContentDeviceGetvendorAPIRequest) SetBrandId(_brandId in
 	return nil
 }
 
-// Get BrandId Getter
+// GetBrandId BrandId Getter
 func (r YunosTvpubadminContentDeviceGetvendorAPIRequest) GetBrandId() int64 {
 	return r._brandId
 }

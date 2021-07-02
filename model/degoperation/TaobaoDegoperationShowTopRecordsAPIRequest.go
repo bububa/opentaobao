@@ -41,7 +41,7 @@ func (r TaobaoDegoperationShowTopRecordsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DegAppKey Setter
+// SetDegAppKey is DegAppKey Setter
 // 活动后台配置
 func (r *TaobaoDegoperationShowTopRecordsAPIRequest) SetDegAppKey(_degAppKey string) error {
 	r._degAppKey = _degAppKey
@@ -49,12 +49,12 @@ func (r *TaobaoDegoperationShowTopRecordsAPIRequest) SetDegAppKey(_degAppKey str
 	return nil
 }
 
-// Get DegAppKey Getter
+// GetDegAppKey DegAppKey Getter
 func (r TaobaoDegoperationShowTopRecordsAPIRequest) GetDegAppKey() string {
 	return r._degAppKey
 }
 
-// Set is DegEventKey Setter
+// SetDegEventKey is DegEventKey Setter
 // 活动后台配置
 func (r *TaobaoDegoperationShowTopRecordsAPIRequest) SetDegEventKey(_degEventKey string) error {
 	r._degEventKey = _degEventKey
@@ -62,12 +62,12 @@ func (r *TaobaoDegoperationShowTopRecordsAPIRequest) SetDegEventKey(_degEventKey
 	return nil
 }
 
-// Get DegEventKey Getter
+// GetDegEventKey DegEventKey Getter
 func (r TaobaoDegoperationShowTopRecordsAPIRequest) GetDegEventKey() string {
 	return r._degEventKey
 }
 
-// Set is TopN Setter
+// SetTopN is TopN Setter
 // 返回数
 func (r *TaobaoDegoperationShowTopRecordsAPIRequest) SetTopN(_topN int64) error {
 	r._topN = _topN
@@ -75,7 +75,7 @@ func (r *TaobaoDegoperationShowTopRecordsAPIRequest) SetTopN(_topN int64) error 
 	return nil
 }
 
-// Get TopN Getter
+// GetTopN TopN Getter
 func (r TaobaoDegoperationShowTopRecordsAPIRequest) GetTopN() int64 {
 	return r._topN
 }

@@ -37,7 +37,7 @@ func (r TaobaoCaipiaoPresentStatGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Days Setter
+// SetDays is Days Setter
 // 指定查询的天数，从当前日期（不包括当前日期）向前推算的天数，可为空。如果为空、0、负数或者大于90天，则设置为默认的90天。举例：当天是20120703， days=2， 则统计数据的日期为：20120702，20120701.
 func (r *TaobaoCaipiaoPresentStatGetAPIRequest) SetDays(_days int64) error {
 	r._days = _days
@@ -45,7 +45,7 @@ func (r *TaobaoCaipiaoPresentStatGetAPIRequest) SetDays(_days int64) error {
 	return nil
 }
 
-// Get Days Getter
+// GetDays Days Getter
 func (r TaobaoCaipiaoPresentStatGetAPIRequest) GetDays() int64 {
 	return r._days
 }

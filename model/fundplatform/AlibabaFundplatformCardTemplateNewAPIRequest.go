@@ -47,7 +47,7 @@ func (r AlibabaFundplatformCardTemplateNewAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is TemplateNo Setter
+// SetTemplateNo is TemplateNo Setter
 // 卡模板编号
 func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetTemplateNo(_templateNo string) error {
 	r._templateNo = _templateNo
@@ -55,12 +55,12 @@ func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetTemplateNo(_templateNo
 	return nil
 }
 
-// Get TemplateNo Getter
+// GetTemplateNo TemplateNo Getter
 func (r AlibabaFundplatformCardTemplateNewAPIRequest) GetTemplateNo() string {
 	return r._templateNo
 }
 
-// Set is CardName Setter
+// SetCardName is CardName Setter
 // 该模板生成的卡名称
 func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetCardName(_cardName string) error {
 	r._cardName = _cardName
@@ -68,12 +68,12 @@ func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetCardName(_cardName str
 	return nil
 }
 
-// Get CardName Getter
+// GetCardName CardName Getter
 func (r AlibabaFundplatformCardTemplateNewAPIRequest) GetCardName() string {
 	return r._cardName
 }
 
-// Set is ParValue Setter
+// SetParValue is ParValue Setter
 // 卡面额，单元分
 func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetParValue(_parValue string) error {
 	r._parValue = _parValue
@@ -81,12 +81,12 @@ func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetParValue(_parValue str
 	return nil
 }
 
-// Get ParValue Getter
+// GetParValue ParValue Getter
 func (r AlibabaFundplatformCardTemplateNewAPIRequest) GetParValue() string {
 	return r._parValue
 }
 
-// Set is PictureUrl Setter
+// SetPictureUrl is PictureUrl Setter
 // 卡外观图片地址
 func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetPictureUrl(_pictureUrl string) error {
 	r._pictureUrl = _pictureUrl
@@ -94,12 +94,12 @@ func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetPictureUrl(_pictureUrl
 	return nil
 }
 
-// Get PictureUrl Getter
+// GetPictureUrl PictureUrl Getter
 func (r AlibabaFundplatformCardTemplateNewAPIRequest) GetPictureUrl() string {
 	return r._pictureUrl
 }
 
-// Set is IsTest Setter
+// SetIsTest is IsTest Setter
 // 是否为测试卡模板，true表示是，如果是测试卡模板则请求制卡时无需真正去制作实体卡
 func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetIsTest(_isTest bool) error {
 	r._isTest = _isTest
@@ -107,12 +107,12 @@ func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetIsTest(_isTest bool) e
 	return nil
 }
 
-// Get IsTest Getter
+// GetIsTest IsTest Getter
 func (r AlibabaFundplatformCardTemplateNewAPIRequest) GetIsTest() bool {
 	return r._isTest
 }
 
-// Set is OwnSign Setter
+// SetOwnSign is OwnSign Setter
 // 环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）
 func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetOwnSign(_ownSign string) error {
 	r._ownSign = _ownSign
@@ -120,7 +120,7 @@ func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetOwnSign(_ownSign strin
 	return nil
 }
 
-// Get OwnSign Getter
+// GetOwnSign OwnSign Getter
 func (r AlibabaFundplatformCardTemplateNewAPIRequest) GetOwnSign() string {
 	return r._ownSign
 }

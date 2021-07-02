@@ -37,7 +37,7 @@ func (r AlibabaWdkUmsInboundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ErpArrivalnoticeDto Setter
+// SetErpArrivalnoticeDto is ErpArrivalnoticeDto Setter
 // 1
 func (r *AlibabaWdkUmsInboundAPIRequest) SetErpArrivalnoticeDto(_erpArrivalnoticeDto *ErpArrivalNoticeDto) error {
 	r._erpArrivalnoticeDto = _erpArrivalnoticeDto
@@ -45,7 +45,7 @@ func (r *AlibabaWdkUmsInboundAPIRequest) SetErpArrivalnoticeDto(_erpArrivalnotic
 	return nil
 }
 
-// Get ErpArrivalnoticeDto Getter
+// GetErpArrivalnoticeDto ErpArrivalnoticeDto Getter
 func (r AlibabaWdkUmsInboundAPIRequest) GetErpArrivalnoticeDto() *ErpArrivalNoticeDto {
 	return r._erpArrivalnoticeDto
 }

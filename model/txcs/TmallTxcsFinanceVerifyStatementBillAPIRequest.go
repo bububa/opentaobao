@@ -39,7 +39,7 @@ func (r TmallTxcsFinanceVerifyStatementBillAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is OuCode Setter
+// SetOuCode is OuCode Setter
 // 门店ID
 func (r *TmallTxcsFinanceVerifyStatementBillAPIRequest) SetOuCode(_ouCode string) error {
 	r._ouCode = _ouCode
@@ -47,12 +47,12 @@ func (r *TmallTxcsFinanceVerifyStatementBillAPIRequest) SetOuCode(_ouCode string
 	return nil
 }
 
-// Get OuCode Getter
+// GetOuCode OuCode Getter
 func (r TmallTxcsFinanceVerifyStatementBillAPIRequest) GetOuCode() string {
 	return r._ouCode
 }
 
-// Set is VerificationBillDTO Setter
+// SetVerificationBillDTO is VerificationBillDTO Setter
 // 核销单内容
 func (r *TmallTxcsFinanceVerifyStatementBillAPIRequest) SetVerificationBillDTO(_verificationBillDTO *VerificationBillDto) error {
 	r._verificationBillDTO = _verificationBillDTO
@@ -60,7 +60,7 @@ func (r *TmallTxcsFinanceVerifyStatementBillAPIRequest) SetVerificationBillDTO(_
 	return nil
 }
 
-// Get VerificationBillDTO Getter
+// GetVerificationBillDTO VerificationBillDTO Getter
 func (r TmallTxcsFinanceVerifyStatementBillAPIRequest) GetVerificationBillDTO() *VerificationBillDto {
 	return r._verificationBillDTO
 }

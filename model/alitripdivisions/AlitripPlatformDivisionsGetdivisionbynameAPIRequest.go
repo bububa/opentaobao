@@ -39,7 +39,7 @@ func (r AlitripPlatformDivisionsGetdivisionbynameAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 行政区划名称
 func (r *AlitripPlatformDivisionsGetdivisionbynameAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -47,12 +47,12 @@ func (r *AlitripPlatformDivisionsGetdivisionbynameAPIRequest) SetName(_name stri
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlitripPlatformDivisionsGetdivisionbynameAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Level Setter
+// SetLevel is Level Setter
 // 行政区划级别ALL(0, "全部"),  	CONTINENT(1, "大洲"),  	COUNTRY(2, "国家"),  	PROVINCE(3, "省份"),  	CITY(4, "城市"),  	DISTRICT(5, "区县"),  	STREET(6, "街道")
 func (r *AlitripPlatformDivisionsGetdivisionbynameAPIRequest) SetLevel(_level int64) error {
 	r._level = _level
@@ -60,7 +60,7 @@ func (r *AlitripPlatformDivisionsGetdivisionbynameAPIRequest) SetLevel(_level in
 	return nil
 }
 
-// Get Level Getter
+// GetLevel Level Getter
 func (r AlitripPlatformDivisionsGetdivisionbynameAPIRequest) GetLevel() int64 {
 	return r._level
 }

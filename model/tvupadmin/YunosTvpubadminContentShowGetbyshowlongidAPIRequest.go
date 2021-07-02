@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentShowGetbyshowlongidAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is ShowLongId Setter
+// SetShowLongId is ShowLongId Setter
 // 节目longid
 func (r *YunosTvpubadminContentShowGetbyshowlongidAPIRequest) SetShowLongId(_showLongId int64) error {
 	r._showLongId = _showLongId
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentShowGetbyshowlongidAPIRequest) SetShowLongId(_sho
 	return nil
 }
 
-// Get ShowLongId Getter
+// GetShowLongId ShowLongId Getter
 func (r YunosTvpubadminContentShowGetbyshowlongidAPIRequest) GetShowLongId() int64 {
 	return r._showLongId
 }

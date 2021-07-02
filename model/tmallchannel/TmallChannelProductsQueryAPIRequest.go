@@ -47,7 +47,7 @@ func (r TmallChannelProductsQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductNumber Setter
+// SetProductNumber is ProductNumber Setter
 // 商家产品编码
 func (r *TmallChannelProductsQueryAPIRequest) SetProductNumber(_productNumber string) error {
 	r._productNumber = _productNumber
@@ -55,12 +55,12 @@ func (r *TmallChannelProductsQueryAPIRequest) SetProductNumber(_productNumber st
 	return nil
 }
 
-// Get ProductNumber Getter
+// GetProductNumber ProductNumber Getter
 func (r TmallChannelProductsQueryAPIRequest) GetProductNumber() string {
 	return r._productNumber
 }
 
-// Set is SkuNumber Setter
+// SetSkuNumber is SkuNumber Setter
 // 商家SKU编码
 func (r *TmallChannelProductsQueryAPIRequest) SetSkuNumber(_skuNumber string) error {
 	r._skuNumber = _skuNumber
@@ -68,12 +68,12 @@ func (r *TmallChannelProductsQueryAPIRequest) SetSkuNumber(_skuNumber string) er
 	return nil
 }
 
-// Get SkuNumber Getter
+// GetSkuNumber SkuNumber Getter
 func (r TmallChannelProductsQueryAPIRequest) GetSkuNumber() string {
 	return r._skuNumber
 }
 
-// Set is ProductIds Setter
+// SetProductIds is ProductIds Setter
 // 产品Id
 func (r *TmallChannelProductsQueryAPIRequest) SetProductIds(_productIds []int64) error {
 	r._productIds = _productIds
@@ -81,12 +81,12 @@ func (r *TmallChannelProductsQueryAPIRequest) SetProductIds(_productIds []int64)
 	return nil
 }
 
-// Get ProductIds Getter
+// GetProductIds ProductIds Getter
 func (r TmallChannelProductsQueryAPIRequest) GetProductIds() []int64 {
 	return r._productIds
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
 func (r *TmallChannelProductsQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -94,12 +94,12 @@ func (r *TmallChannelProductsQueryAPIRequest) SetPageSize(_pageSize int64) error
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TmallChannelProductsQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is ProductLineId Setter
+// SetProductLineId is ProductLineId Setter
 // 产品线Id
 func (r *TmallChannelProductsQueryAPIRequest) SetProductLineId(_productLineId int64) error {
 	r._productLineId = _productLineId
@@ -107,12 +107,12 @@ func (r *TmallChannelProductsQueryAPIRequest) SetProductLineId(_productLineId in
 	return nil
 }
 
-// Get ProductLineId Getter
+// GetProductLineId ProductLineId Getter
 func (r TmallChannelProductsQueryAPIRequest) GetProductLineId() int64 {
 	return r._productLineId
 }
 
-// Set is PageNum Setter
+// SetPageNum is PageNum Setter
 // 页码数，从1开始
 func (r *TmallChannelProductsQueryAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
@@ -120,7 +120,7 @@ func (r *TmallChannelProductsQueryAPIRequest) SetPageNum(_pageNum int64) error {
 	return nil
 }
 
-// Get PageNum Getter
+// GetPageNum PageNum Getter
 func (r TmallChannelProductsQueryAPIRequest) GetPageNum() int64 {
 	return r._pageNum
 }

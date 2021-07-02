@@ -47,7 +47,7 @@ func (r AlibabaAliqinTaVoiceNumDoublecallAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SessionTimeOut Setter
+// SetSessionTimeOut is SessionTimeOut Setter
 // 通话超时时长，如接通后到达120秒时，通话会因为超时自动挂断。若无需设置超时时长，可不传。
 func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) SetSessionTimeOut(_sessionTimeOut string) error {
 	r._sessionTimeOut = _sessionTimeOut
@@ -55,12 +55,12 @@ func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) SetSessionTimeOut(_session
 	return nil
 }
 
-// Get SessionTimeOut Getter
+// GetSessionTimeOut SessionTimeOut Getter
 func (r AlibabaAliqinTaVoiceNumDoublecallAPIRequest) GetSessionTimeOut() string {
 	return r._sessionTimeOut
 }
 
-// Set is Extend Setter
+// SetExtend is Extend Setter
 // 公共回传参数，在“消息返回”中会透传回该参数；举例：用户可以传入自己下级的会员ID，在消息返回时，该会员ID会包含在内，用户可以根据该会员ID识别是哪位会员使用了你的应用
 func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) SetExtend(_extend string) error {
 	r._extend = _extend
@@ -68,12 +68,12 @@ func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) SetExtend(_extend string) 
 	return nil
 }
 
-// Get Extend Getter
+// GetExtend Extend Getter
 func (r AlibabaAliqinTaVoiceNumDoublecallAPIRequest) GetExtend() string {
 	return r._extend
 }
 
-// Set is CallerNum Setter
+// SetCallerNum is CallerNum Setter
 // 主叫号码，支持国内手机号与固话号码,格式如下057188773344,13911112222,4001112222,95500
 func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) SetCallerNum(_callerNum string) error {
 	r._callerNum = _callerNum
@@ -81,12 +81,12 @@ func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) SetCallerNum(_callerNum st
 	return nil
 }
 
-// Get CallerNum Getter
+// GetCallerNum CallerNum Getter
 func (r AlibabaAliqinTaVoiceNumDoublecallAPIRequest) GetCallerNum() string {
 	return r._callerNum
 }
 
-// Set is CallerShowNum Setter
+// SetCallerShowNum is CallerShowNum Setter
 // 主叫号码侧的号码显示，传入的显示号码必须是阿里大于“管理中心-号码管理”中申请通过的号码。显示号码格式如下057188773344，4001112222，95500
 func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) SetCallerShowNum(_callerShowNum string) error {
 	r._callerShowNum = _callerShowNum
@@ -94,12 +94,12 @@ func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) SetCallerShowNum(_callerSh
 	return nil
 }
 
-// Get CallerShowNum Getter
+// GetCallerShowNum CallerShowNum Getter
 func (r AlibabaAliqinTaVoiceNumDoublecallAPIRequest) GetCallerShowNum() string {
 	return r._callerShowNum
 }
 
-// Set is CalledNum Setter
+// SetCalledNum is CalledNum Setter
 // 被叫号码，支持国内手机号与固话号码,格式如下057188773344,13911112222,4001112222,95500
 func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) SetCalledNum(_calledNum string) error {
 	r._calledNum = _calledNum
@@ -107,12 +107,12 @@ func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) SetCalledNum(_calledNum st
 	return nil
 }
 
-// Get CalledNum Getter
+// GetCalledNum CalledNum Getter
 func (r AlibabaAliqinTaVoiceNumDoublecallAPIRequest) GetCalledNum() string {
 	return r._calledNum
 }
 
-// Set is CalledShowNum Setter
+// SetCalledShowNum is CalledShowNum Setter
 // 被叫号码侧的号码显示，传入的显示号码可以是阿里大于“管理中心-号码管理”中申请通过的号码。显示号码格式如下057188773344，4001112222，95500。显示号码也可以为主叫号码。
 func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) SetCalledShowNum(_calledShowNum string) error {
 	r._calledShowNum = _calledShowNum
@@ -120,7 +120,7 @@ func (r *AlibabaAliqinTaVoiceNumDoublecallAPIRequest) SetCalledShowNum(_calledSh
 	return nil
 }
 
-// Get CalledShowNum Getter
+// GetCalledShowNum CalledShowNum Getter
 func (r AlibabaAliqinTaVoiceNumDoublecallAPIRequest) GetCalledShowNum() string {
 	return r._calledShowNum
 }

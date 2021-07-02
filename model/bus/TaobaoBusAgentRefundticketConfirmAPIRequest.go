@@ -37,7 +37,7 @@ func (r TaobaoBusAgentRefundticketConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamAgentConfirmRefundRQ Setter
+// SetParamAgentConfirmRefundRQ is ParamAgentConfirmRefundRQ Setter
 // 退款入参
 func (r *TaobaoBusAgentRefundticketConfirmAPIRequest) SetParamAgentConfirmRefundRQ(_paramAgentConfirmRefundRQ *AgentConfirmRefundRq) error {
 	r._paramAgentConfirmRefundRQ = _paramAgentConfirmRefundRQ
@@ -45,7 +45,7 @@ func (r *TaobaoBusAgentRefundticketConfirmAPIRequest) SetParamAgentConfirmRefund
 	return nil
 }
 
-// Get ParamAgentConfirmRefundRQ Getter
+// GetParamAgentConfirmRefundRQ ParamAgentConfirmRefundRQ Getter
 func (r TaobaoBusAgentRefundticketConfirmAPIRequest) GetParamAgentConfirmRefundRQ() *AgentConfirmRefundRq {
 	return r._paramAgentConfirmRefundRQ
 }

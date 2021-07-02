@@ -49,7 +49,7 @@ func (r AlibabaItemPublishSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务扩展参数，需与平台约定好
 func (r *AlibabaItemPublishSchemaGetAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -57,12 +57,12 @@ func (r *AlibabaItemPublishSchemaGetAPIRequest) SetBizType(_bizType string) erro
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r AlibabaItemPublishSchemaGetAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is Images Setter
+// SetImages is Images Setter
 // 商品主图链接，最多5张，传入完整URL
 func (r *AlibabaItemPublishSchemaGetAPIRequest) SetImages(_images []string) error {
 	r._images = _images
@@ -70,12 +70,12 @@ func (r *AlibabaItemPublishSchemaGetAPIRequest) SetImages(_images []string) erro
 	return nil
 }
 
-// Get Images Getter
+// GetImages Images Getter
 func (r AlibabaItemPublishSchemaGetAPIRequest) GetImages() []string {
 	return r._images
 }
 
-// Set is ItemType Setter
+// SetItemType is ItemType Setter
 // 商品类型。b:一口价  a:拍卖  默认值b一口价
 func (r *AlibabaItemPublishSchemaGetAPIRequest) SetItemType(_itemType string) error {
 	r._itemType = _itemType
@@ -83,12 +83,12 @@ func (r *AlibabaItemPublishSchemaGetAPIRequest) SetItemType(_itemType string) er
 	return nil
 }
 
-// Get ItemType Getter
+// GetItemType ItemType Getter
 func (r AlibabaItemPublishSchemaGetAPIRequest) GetItemType() string {
 	return r._itemType
 }
 
-// Set is Market Setter
+// SetMarket is Market Setter
 // 商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版
 func (r *AlibabaItemPublishSchemaGetAPIRequest) SetMarket(_market string) error {
 	r._market = _market
@@ -96,12 +96,12 @@ func (r *AlibabaItemPublishSchemaGetAPIRequest) SetMarket(_market string) error 
 	return nil
 }
 
-// Get Market Getter
+// GetMarket Market Getter
 func (r AlibabaItemPublishSchemaGetAPIRequest) GetMarket() string {
 	return r._market
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 商品类目ID
 func (r *AlibabaItemPublishSchemaGetAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -109,12 +109,12 @@ func (r *AlibabaItemPublishSchemaGetAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r AlibabaItemPublishSchemaGetAPIRequest) GetCatId() int64 {
 	return r._catId
 }
 
-// Set is SpuId Setter
+// SetSpuId is SpuId Setter
 // 产品ID，天猫市场(market=tmall)时必填
 func (r *AlibabaItemPublishSchemaGetAPIRequest) SetSpuId(_spuId int64) error {
 	r._spuId = _spuId
@@ -122,12 +122,12 @@ func (r *AlibabaItemPublishSchemaGetAPIRequest) SetSpuId(_spuId int64) error {
 	return nil
 }
 
-// Get SpuId Getter
+// GetSpuId SpuId Getter
 func (r AlibabaItemPublishSchemaGetAPIRequest) GetSpuId() int64 {
 	return r._spuId
 }
 
-// Set is Barcode Setter
+// SetBarcode is Barcode Setter
 // 商品条码
 func (r *AlibabaItemPublishSchemaGetAPIRequest) SetBarcode(_barcode string) error {
 	r._barcode = _barcode
@@ -135,7 +135,7 @@ func (r *AlibabaItemPublishSchemaGetAPIRequest) SetBarcode(_barcode string) erro
 	return nil
 }
 
-// Get Barcode Getter
+// GetBarcode Barcode Getter
 func (r AlibabaItemPublishSchemaGetAPIRequest) GetBarcode() string {
 	return r._barcode
 }

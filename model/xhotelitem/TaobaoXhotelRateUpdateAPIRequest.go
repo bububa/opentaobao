@@ -51,7 +51,7 @@ func (r TaobaoXhotelRateUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InventoryPrice Setter
+// SetInventoryPrice is InventoryPrice Setter
 // 每日价格和房价专有库存信息。A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。B:date  日期必须为 T---T+180 日内的日期（T为当天），且不能重复C:price 价格 int类型 取值范围1-99999999 单位为分D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)
 func (r *TaobaoXhotelRateUpdateAPIRequest) SetInventoryPrice(_inventoryPrice string) error {
 	r._inventoryPrice = _inventoryPrice
@@ -59,12 +59,12 @@ func (r *TaobaoXhotelRateUpdateAPIRequest) SetInventoryPrice(_inventoryPrice str
 	return nil
 }
 
-// Get InventoryPrice Getter
+// GetInventoryPrice InventoryPrice Getter
 func (r TaobaoXhotelRateUpdateAPIRequest) GetInventoryPrice() string {
 	return r._inventoryPrice
 }
 
-// Set is RateplanCode Setter
+// SetRateplanCode is RateplanCode Setter
 // 商家价格计划编码
 func (r *TaobaoXhotelRateUpdateAPIRequest) SetRateplanCode(_rateplanCode string) error {
 	r._rateplanCode = _rateplanCode
@@ -72,12 +72,12 @@ func (r *TaobaoXhotelRateUpdateAPIRequest) SetRateplanCode(_rateplanCode string)
 	return nil
 }
 
-// Get RateplanCode Getter
+// GetRateplanCode RateplanCode Getter
 func (r TaobaoXhotelRateUpdateAPIRequest) GetRateplanCode() string {
 	return r._rateplanCode
 }
 
-// Set is OutRid Setter
+// SetOutRid is OutRid Setter
 // 商家房型ID
 func (r *TaobaoXhotelRateUpdateAPIRequest) SetOutRid(_outRid string) error {
 	r._outRid = _outRid
@@ -85,12 +85,12 @@ func (r *TaobaoXhotelRateUpdateAPIRequest) SetOutRid(_outRid string) error {
 	return nil
 }
 
-// Get OutRid Getter
+// GetOutRid OutRid Getter
 func (r TaobaoXhotelRateUpdateAPIRequest) GetOutRid() string {
 	return r._outRid
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 系统商，一般不用填写，使用需要申请
 func (r *TaobaoXhotelRateUpdateAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -98,12 +98,12 @@ func (r *TaobaoXhotelRateUpdateAPIRequest) SetVendor(_vendor string) error {
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelRateUpdateAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is RateSwitchCal Setter
+// SetRateSwitchCal is RateSwitchCal Setter
 // 日历价格开关， date：开关状态控制的是那一天 rate_status：开关状态。0，关闭；1，打开
 func (r *TaobaoXhotelRateUpdateAPIRequest) SetRateSwitchCal(_rateSwitchCal string) error {
 	r._rateSwitchCal = _rateSwitchCal
@@ -111,12 +111,12 @@ func (r *TaobaoXhotelRateUpdateAPIRequest) SetRateSwitchCal(_rateSwitchCal strin
 	return nil
 }
 
-// Get RateSwitchCal Getter
+// GetRateSwitchCal RateSwitchCal Getter
 func (r TaobaoXhotelRateUpdateAPIRequest) GetRateSwitchCal() string {
 	return r._rateSwitchCal
 }
 
-// Set is LockEndTime Setter
+// SetLockEndTime is LockEndTime Setter
 // 锁库存截止时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）
 func (r *TaobaoXhotelRateUpdateAPIRequest) SetLockEndTime(_lockEndTime string) error {
 	r._lockEndTime = _lockEndTime
@@ -124,12 +124,12 @@ func (r *TaobaoXhotelRateUpdateAPIRequest) SetLockEndTime(_lockEndTime string) e
 	return nil
 }
 
-// Get LockEndTime Getter
+// GetLockEndTime LockEndTime Getter
 func (r TaobaoXhotelRateUpdateAPIRequest) GetLockEndTime() string {
 	return r._lockEndTime
 }
 
-// Set is LockStartTime Setter
+// SetLockStartTime is LockStartTime Setter
 // 锁库存开始时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）
 func (r *TaobaoXhotelRateUpdateAPIRequest) SetLockStartTime(_lockStartTime string) error {
 	r._lockStartTime = _lockStartTime
@@ -137,12 +137,12 @@ func (r *TaobaoXhotelRateUpdateAPIRequest) SetLockStartTime(_lockStartTime strin
 	return nil
 }
 
-// Get LockStartTime Getter
+// GetLockStartTime LockStartTime Getter
 func (r TaobaoXhotelRateUpdateAPIRequest) GetLockStartTime() string {
 	return r._lockStartTime
 }
 
-// Set is OnlineBookingBindingInfo Setter
+// SetOnlineBookingBindingInfo is OnlineBookingBindingInfo Setter
 // 在线预约关联关系推送，priceRuleNumber：加价规则序号
 func (r *TaobaoXhotelRateUpdateAPIRequest) SetOnlineBookingBindingInfo(_onlineBookingBindingInfo string) error {
 	r._onlineBookingBindingInfo = _onlineBookingBindingInfo
@@ -150,7 +150,7 @@ func (r *TaobaoXhotelRateUpdateAPIRequest) SetOnlineBookingBindingInfo(_onlineBo
 	return nil
 }
 
-// Get OnlineBookingBindingInfo Getter
+// GetOnlineBookingBindingInfo OnlineBookingBindingInfo Getter
 func (r TaobaoXhotelRateUpdateAPIRequest) GetOnlineBookingBindingInfo() string {
 	return r._onlineBookingBindingInfo
 }

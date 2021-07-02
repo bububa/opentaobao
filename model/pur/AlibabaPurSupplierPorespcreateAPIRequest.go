@@ -37,7 +37,7 @@ func (r AlibabaPurSupplierPorespcreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PoResponse Setter
+// SetPoResponse is PoResponse Setter
 // PO反馈信息
 func (r *AlibabaPurSupplierPorespcreateAPIRequest) SetPoResponse(_poResponse []SupplierPoResponseDo) error {
 	r._poResponse = _poResponse
@@ -45,7 +45,7 @@ func (r *AlibabaPurSupplierPorespcreateAPIRequest) SetPoResponse(_poResponse []S
 	return nil
 }
 
-// Get PoResponse Getter
+// GetPoResponse PoResponse Getter
 func (r AlibabaPurSupplierPorespcreateAPIRequest) GetPoResponse() []SupplierPoResponseDo {
 	return r._poResponse
 }

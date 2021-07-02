@@ -39,7 +39,7 @@ func (r AlibabaIcbuRfqSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Md5key Setter
+// SetMd5key is Md5key Setter
 // 验证
 func (r *AlibabaIcbuRfqSearchAPIRequest) SetMd5key(_md5key string) error {
 	r._md5key = _md5key
@@ -47,12 +47,12 @@ func (r *AlibabaIcbuRfqSearchAPIRequest) SetMd5key(_md5key string) error {
 	return nil
 }
 
-// Get Md5key Getter
+// GetMd5key Md5key Getter
 func (r AlibabaIcbuRfqSearchAPIRequest) GetMd5key() string {
 	return r._md5key
 }
 
-// Set is Cond Setter
+// SetCond is Cond Setter
 // 查询条件
 func (r *AlibabaIcbuRfqSearchAPIRequest) SetCond(_cond *RfqRequestSearchCondDto) error {
 	r._cond = _cond
@@ -60,7 +60,7 @@ func (r *AlibabaIcbuRfqSearchAPIRequest) SetCond(_cond *RfqRequestSearchCondDto)
 	return nil
 }
 
-// Get Cond Getter
+// GetCond Cond Getter
 func (r AlibabaIcbuRfqSearchAPIRequest) GetCond() *RfqRequestSearchCondDto {
 	return r._cond
 }

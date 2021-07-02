@@ -37,7 +37,7 @@ func (r AlitripHotelSearchListGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamTopHotelSearchListParam Setter
+// SetParamTopHotelSearchListParam is ParamTopHotelSearchListParam Setter
 // 入参
 func (r *AlitripHotelSearchListGetAPIRequest) SetParamTopHotelSearchListParam(_paramTopHotelSearchListParam *TopHotelSearchListParam) error {
 	r._paramTopHotelSearchListParam = _paramTopHotelSearchListParam
@@ -45,7 +45,7 @@ func (r *AlitripHotelSearchListGetAPIRequest) SetParamTopHotelSearchListParam(_p
 	return nil
 }
 
-// Get ParamTopHotelSearchListParam Getter
+// GetParamTopHotelSearchListParam ParamTopHotelSearchListParam Getter
 func (r AlitripHotelSearchListGetAPIRequest) GetParamTopHotelSearchListParam() *TopHotelSearchListParam {
 	return r._paramTopHotelSearchListParam
 }

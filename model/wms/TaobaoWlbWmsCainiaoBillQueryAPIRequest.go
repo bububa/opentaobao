@@ -45,7 +45,7 @@ func (r TaobaoWlbWmsCainiaoBillQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartModifiedTime Setter
+// SetStartModifiedTime is StartModifiedTime Setter
 // 结束时间，此字段检索订单最后修改时间， 格式 yyyy-MM-dd HH:mm:ss。
 func (r *TaobaoWlbWmsCainiaoBillQueryAPIRequest) SetStartModifiedTime(_startModifiedTime string) error {
 	r._startModifiedTime = _startModifiedTime
@@ -53,12 +53,12 @@ func (r *TaobaoWlbWmsCainiaoBillQueryAPIRequest) SetStartModifiedTime(_startModi
 	return nil
 }
 
-// Get StartModifiedTime Getter
+// GetStartModifiedTime StartModifiedTime Getter
 func (r TaobaoWlbWmsCainiaoBillQueryAPIRequest) GetStartModifiedTime() string {
 	return r._startModifiedTime
 }
 
-// Set is EndModifiedTime Setter
+// SetEndModifiedTime is EndModifiedTime Setter
 // 起始时间，此字段检索订单最后修改时间， 格式 yyyy-MM-dd HH:mm:ss。
 func (r *TaobaoWlbWmsCainiaoBillQueryAPIRequest) SetEndModifiedTime(_endModifiedTime string) error {
 	r._endModifiedTime = _endModifiedTime
@@ -66,12 +66,12 @@ func (r *TaobaoWlbWmsCainiaoBillQueryAPIRequest) SetEndModifiedTime(_endModified
 	return nil
 }
 
-// Get EndModifiedTime Getter
+// GetEndModifiedTime EndModifiedTime Getter
 func (r TaobaoWlbWmsCainiaoBillQueryAPIRequest) GetEndModifiedTime() string {
 	return r._endModifiedTime
 }
 
-// Set is OrderType Setter
+// SetOrderType is OrderType Setter
 // 订单类型 201 销售出库 501 退货入库 502 换货出库 503 补发出库904 普通入库 903 普通出库单 306 B2B入库单 305 B2B出库单 601 采购入库 901 退供出库单 701 盘点出库 702 盘点入库 711 库存异动单
 func (r *TaobaoWlbWmsCainiaoBillQueryAPIRequest) SetOrderType(_orderType string) error {
 	r._orderType = _orderType
@@ -79,12 +79,12 @@ func (r *TaobaoWlbWmsCainiaoBillQueryAPIRequest) SetOrderType(_orderType string)
 	return nil
 }
 
-// Get OrderType Getter
+// GetOrderType OrderType Getter
 func (r TaobaoWlbWmsCainiaoBillQueryAPIRequest) GetOrderType() string {
 	return r._orderType
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码。（大于0的整数。默认为1）
 func (r *TaobaoWlbWmsCainiaoBillQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -92,12 +92,12 @@ func (r *TaobaoWlbWmsCainiaoBillQueryAPIRequest) SetPageNo(_pageNo int64) error 
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoWlbWmsCainiaoBillQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数。（每页条数不超过50条。默认为50）
 func (r *TaobaoWlbWmsCainiaoBillQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -105,7 +105,7 @@ func (r *TaobaoWlbWmsCainiaoBillQueryAPIRequest) SetPageSize(_pageSize int64) er
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoWlbWmsCainiaoBillQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

@@ -43,7 +43,7 @@ func (r TaobaoTanxNativetemplatesGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MemberId Setter
+// SetMemberId is MemberId Setter
 // dsp在tanx的memberid
 func (r *TaobaoTanxNativetemplatesGetAPIRequest) SetMemberId(_memberId int64) error {
 	r._memberId = _memberId
@@ -51,12 +51,12 @@ func (r *TaobaoTanxNativetemplatesGetAPIRequest) SetMemberId(_memberId int64) er
 	return nil
 }
 
-// Get MemberId Getter
+// GetMemberId MemberId Getter
 func (r TaobaoTanxNativetemplatesGetAPIRequest) GetMemberId() int64 {
 	return r._memberId
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // dsp对应的tanx的token
 func (r *TaobaoTanxNativetemplatesGetAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -64,12 +64,12 @@ func (r *TaobaoTanxNativetemplatesGetAPIRequest) SetToken(_token string) error {
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoTanxNativetemplatesGetAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is SignTime Setter
+// SetSignTime is SignTime Setter
 // 1970年到现在的毫秒
 func (r *TaobaoTanxNativetemplatesGetAPIRequest) SetSignTime(_signTime int64) error {
 	r._signTime = _signTime
@@ -77,12 +77,12 @@ func (r *TaobaoTanxNativetemplatesGetAPIRequest) SetSignTime(_signTime int64) er
 	return nil
 }
 
-// Get SignTime Getter
+// GetSignTime SignTime Getter
 func (r TaobaoTanxNativetemplatesGetAPIRequest) GetSignTime() int64 {
 	return r._signTime
 }
 
-// Set is TemplateIds Setter
+// SetTemplateIds is TemplateIds Setter
 // 本地模板ID列表
 func (r *TaobaoTanxNativetemplatesGetAPIRequest) SetTemplateIds(_templateIds []int64) error {
 	r._templateIds = _templateIds
@@ -90,7 +90,7 @@ func (r *TaobaoTanxNativetemplatesGetAPIRequest) SetTemplateIds(_templateIds []i
 	return nil
 }
 
-// Get TemplateIds Getter
+// GetTemplateIds TemplateIds Getter
 func (r TaobaoTanxNativetemplatesGetAPIRequest) GetTemplateIds() []int64 {
 	return r._templateIds
 }

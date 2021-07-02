@@ -42,7 +42,7 @@ func (r TaobaoPromotionBenefitSelectorAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 权益选择器请求
 func (r *TaobaoPromotionBenefitSelectorAPIRequest) SetQuery(_query *BenefitSelectorQuery) error {
 	r._query = _query
@@ -50,7 +50,7 @@ func (r *TaobaoPromotionBenefitSelectorAPIRequest) SetQuery(_query *BenefitSelec
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r TaobaoPromotionBenefitSelectorAPIRequest) GetQuery() *BenefitSelectorQuery {
 	return r._query
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkWholesaleInboundorderCommitAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is InboundInfoCommitReq Setter
+// SetInboundInfoCommitReq is InboundInfoCommitReq Setter
 // 退货信息参数
 func (r *AlibabaWdkWholesaleInboundorderCommitAPIRequest) SetInboundInfoCommitReq(_inboundInfoCommitReq *InboundInfoCommitReq) error {
 	r._inboundInfoCommitReq = _inboundInfoCommitReq
@@ -45,7 +45,7 @@ func (r *AlibabaWdkWholesaleInboundorderCommitAPIRequest) SetInboundInfoCommitRe
 	return nil
 }
 
-// Get InboundInfoCommitReq Getter
+// GetInboundInfoCommitReq InboundInfoCommitReq Getter
 func (r AlibabaWdkWholesaleInboundorderCommitAPIRequest) GetInboundInfoCommitReq() *InboundInfoCommitReq {
 	return r._inboundInfoCommitReq
 }

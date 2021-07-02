@@ -39,7 +39,7 @@ func (r AlitripTravelTradeServiceinfoWriteAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is TipValue Setter
+// SetTipValue is TipValue Setter
 // 根据模版要求传递对应的订单服务信息，当涉及多值时，用英文分号隔开";"，目前api暂时不支持文件上传，只支持链接；链接必须外网能访问
 func (r *AlitripTravelTradeServiceinfoWriteAPIRequest) SetTipValue(_tipValue string) error {
 	r._tipValue = _tipValue
@@ -47,12 +47,12 @@ func (r *AlitripTravelTradeServiceinfoWriteAPIRequest) SetTipValue(_tipValue str
 	return nil
 }
 
-// Get TipValue Getter
+// GetTipValue TipValue Getter
 func (r AlitripTravelTradeServiceinfoWriteAPIRequest) GetTipValue() string {
 	return r._tipValue
 }
 
-// Set is SubTcOrderId Setter
+// SetSubTcOrderId is SubTcOrderId Setter
 // 对应的订单信息
 func (r *AlitripTravelTradeServiceinfoWriteAPIRequest) SetSubTcOrderId(_subTcOrderId int64) error {
 	r._subTcOrderId = _subTcOrderId
@@ -60,7 +60,7 @@ func (r *AlitripTravelTradeServiceinfoWriteAPIRequest) SetSubTcOrderId(_subTcOrd
 	return nil
 }
 
-// Get SubTcOrderId Getter
+// GetSubTcOrderId SubTcOrderId Getter
 func (r AlitripTravelTradeServiceinfoWriteAPIRequest) GetSubTcOrderId() int64 {
 	return r._subTcOrderId
 }

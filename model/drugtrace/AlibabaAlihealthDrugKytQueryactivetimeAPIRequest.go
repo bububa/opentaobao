@@ -46,7 +46,7 @@ func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is BureauName Setter
+// SetBureauName is BureauName Setter
 // 社保局(所属地市名称)
 func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetBureauName(_bureauName string) error {
 	r._bureauName = _bureauName
@@ -54,12 +54,12 @@ func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetBureauName(_bureau
 	return nil
 }
 
-// Get BureauName Getter
+// GetBureauName BureauName Getter
 func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetBureauName() string {
 	return r._bureauName
 }
 
-// Set is TerminalName Setter
+// SetTerminalName is TerminalName Setter
 // 请求终端名称
 func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetTerminalName(_terminalName string) error {
 	r._terminalName = _terminalName
@@ -67,12 +67,12 @@ func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetTerminalName(_term
 	return nil
 }
 
-// Get TerminalName Getter
+// GetTerminalName TerminalName Getter
 func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetTerminalName() string {
 	return r._terminalName
 }
 
-// Set is TerminalType Setter
+// SetTerminalType is TerminalType Setter
 // 终端类型：1005100-零售，1005200-医疗
 func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetTerminalType(_terminalType string) error {
 	r._terminalType = _terminalType
@@ -80,12 +80,12 @@ func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetTerminalType(_term
 	return nil
 }
 
-// Get TerminalType Getter
+// GetTerminalType TerminalType Getter
 func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetTerminalType() string {
 	return r._terminalType
 }
 
-// Set is Invocation Setter
+// SetInvocation is Invocation Setter
 // 调用方式：formal-正式、test-测试
 func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetInvocation(_invocation string) error {
 	r._invocation = _invocation
@@ -93,12 +93,12 @@ func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetInvocation(_invoca
 	return nil
 }
 
-// Get Invocation Getter
+// GetInvocation Invocation Getter
 func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetInvocation() string {
 	return r._invocation
 }
 
-// Set is ResProdCodeList Setter
+// SetResProdCodeList is ResProdCodeList Setter
 // 码段的数组
 func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetResProdCodeList(_resProdCodeList []string) error {
 	r._resProdCodeList = _resProdCodeList
@@ -106,7 +106,7 @@ func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetResProdCodeList(_r
 	return nil
 }
 
-// Get ResProdCodeList Getter
+// GetResProdCodeList ResProdCodeList Getter
 func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetResProdCodeList() []string {
 	return r._resProdCodeList
 }

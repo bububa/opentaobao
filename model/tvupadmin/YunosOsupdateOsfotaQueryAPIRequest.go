@@ -41,7 +41,7 @@ func (r YunosOsupdateOsfotaQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ModleId Setter
+// SetModleId is ModleId Setter
 // 设备型号ID
 func (r *YunosOsupdateOsfotaQueryAPIRequest) SetModleId(_modleId int64) error {
 	r._modleId = _modleId
@@ -49,12 +49,12 @@ func (r *YunosOsupdateOsfotaQueryAPIRequest) SetModleId(_modleId int64) error {
 	return nil
 }
 
-// Get ModleId Getter
+// GetModleId ModleId Getter
 func (r YunosOsupdateOsfotaQueryAPIRequest) GetModleId() int64 {
 	return r._modleId
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 页码
 func (r *YunosOsupdateOsfotaQueryAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -62,12 +62,12 @@ func (r *YunosOsupdateOsfotaQueryAPIRequest) SetPage(_page int64) error {
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r YunosOsupdateOsfotaQueryAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页数量
 func (r *YunosOsupdateOsfotaQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *YunosOsupdateOsfotaQueryAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r YunosOsupdateOsfotaQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

@@ -37,7 +37,7 @@ func (r AlibabaSecurityJaqAppOfficialApplyAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is OfficialAppApplyRequest Setter
+// SetOfficialAppApplyRequest is OfficialAppApplyRequest Setter
 // 官方应用申请入参
 func (r *AlibabaSecurityJaqAppOfficialApplyAPIRequest) SetOfficialAppApplyRequest(_officialAppApplyRequest *OfficialAppApplyRequest) error {
 	r._officialAppApplyRequest = _officialAppApplyRequest
@@ -45,7 +45,7 @@ func (r *AlibabaSecurityJaqAppOfficialApplyAPIRequest) SetOfficialAppApplyReques
 	return nil
 }
 
-// Get OfficialAppApplyRequest Getter
+// GetOfficialAppApplyRequest OfficialAppApplyRequest Getter
 func (r AlibabaSecurityJaqAppOfficialApplyAPIRequest) GetOfficialAppApplyRequest() *OfficialAppApplyRequest {
 	return r._officialAppApplyRequest
 }

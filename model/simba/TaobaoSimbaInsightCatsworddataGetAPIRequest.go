@@ -43,7 +43,7 @@ func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 类目id
 func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetCatId(_catId string) error {
 	r._catId = _catId
@@ -51,12 +51,12 @@ func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetCatId(_catId string) er
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetCatId() string {
 	return r._catId
 }
 
-// Set is BidwordList Setter
+// SetBidwordList is BidwordList Setter
 // 需要查询的关键词列表，最大长度100。
 func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetBidwordList(_bidwordList []string) error {
 	r._bidwordList = _bidwordList
@@ -64,12 +64,12 @@ func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetBidwordList(_bidwordLis
 	return nil
 }
 
-// Get BidwordList Getter
+// GetBidwordList BidwordList Getter
 func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetBidwordList() []string {
 	return r._bidwordList
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 开始时间，格式只能为：yyyy-MM-dd
 func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -77,12 +77,12 @@ func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetStartDate(_startDate st
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 结束时间，格式只能为：yyyy-MM-dd
 func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -90,7 +90,7 @@ func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetEndDate(_endDate string
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }

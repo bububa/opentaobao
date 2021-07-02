@@ -37,7 +37,7 @@ func (r AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest) GetApiParams
 	return params
 }
 
-// Set is SearchRequest Setter
+// SetSearchRequest is SearchRequest Setter
 // 查询入参
 func (r *AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest) SetSearchRequest(_searchRequest *AsyncPrescribeSearchRequest) error {
 	r._searchRequest = _searchRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest) SetSearchRe
 	return nil
 }
 
-// Get SearchRequest Getter
+// GetSearchRequest SearchRequest Getter
 func (r AlibabaAlihealthAsyncprescribePrescriptionSearchAPIRequest) GetSearchRequest() *AsyncPrescribeSearchRequest {
 	return r._searchRequest
 }

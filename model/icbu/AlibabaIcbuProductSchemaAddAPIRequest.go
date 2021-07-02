@@ -37,7 +37,7 @@ func (r AlibabaIcbuProductSchemaAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamProductTopPublishRequest Setter
+// SetParamProductTopPublishRequest is ParamProductTopPublishRequest Setter
 // 发布入参
 func (r *AlibabaIcbuProductSchemaAddAPIRequest) SetParamProductTopPublishRequest(_paramProductTopPublishRequest *ProductTopPublishRequest) error {
 	r._paramProductTopPublishRequest = _paramProductTopPublishRequest
@@ -45,7 +45,7 @@ func (r *AlibabaIcbuProductSchemaAddAPIRequest) SetParamProductTopPublishRequest
 	return nil
 }
 
-// Get ParamProductTopPublishRequest Getter
+// GetParamProductTopPublishRequest ParamProductTopPublishRequest Getter
 func (r AlibabaIcbuProductSchemaAddAPIRequest) GetParamProductTopPublishRequest() *ProductTopPublishRequest {
 	return r._paramProductTopPublishRequest
 }

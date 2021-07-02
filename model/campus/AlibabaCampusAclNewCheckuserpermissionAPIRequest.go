@@ -39,7 +39,7 @@ func (r AlibabaCampusAclNewCheckuserpermissionAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Workbenchcontext Setter
+// SetWorkbenchcontext is Workbenchcontext Setter
 // 系统入参
 func (r *AlibabaCampusAclNewCheckuserpermissionAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
 	r._workbenchcontext = _workbenchcontext
@@ -47,12 +47,12 @@ func (r *AlibabaCampusAclNewCheckuserpermissionAPIRequest) SetWorkbenchcontext(_
 	return nil
 }
 
-// Get Workbenchcontext Getter
+// GetWorkbenchcontext Workbenchcontext Getter
 func (r AlibabaCampusAclNewCheckuserpermissionAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
 }
 
-// Set is CheckUserPermissionParam Setter
+// SetCheckUserPermissionParam is CheckUserPermissionParam Setter
 // 接口入参
 func (r *AlibabaCampusAclNewCheckuserpermissionAPIRequest) SetCheckUserPermissionParam(_checkUserPermissionParam *CheckUserPermissionParam) error {
 	r._checkUserPermissionParam = _checkUserPermissionParam
@@ -60,7 +60,7 @@ func (r *AlibabaCampusAclNewCheckuserpermissionAPIRequest) SetCheckUserPermissio
 	return nil
 }
 
-// Get CheckUserPermissionParam Getter
+// GetCheckUserPermissionParam CheckUserPermissionParam Getter
 func (r AlibabaCampusAclNewCheckuserpermissionAPIRequest) GetCheckUserPermissionParam() *CheckUserPermissionParam {
 	return r._checkUserPermissionParam
 }

@@ -39,7 +39,7 @@ func (r AlitripRailIrServiceGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 6代表境外火车票
 func (r *AlitripRailIrServiceGetAPIRequest) SetBizType(_bizType int64) error {
 	r._bizType = _bizType
@@ -47,12 +47,12 @@ func (r *AlitripRailIrServiceGetAPIRequest) SetBizType(_bizType int64) error {
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r AlitripRailIrServiceGetAPIRequest) GetBizType() int64 {
 	return r._bizType
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商id
 func (r *AlitripRailIrServiceGetAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -60,7 +60,7 @@ func (r *AlitripRailIrServiceGetAPIRequest) SetAgentId(_agentId int64) error {
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r AlitripRailIrServiceGetAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }

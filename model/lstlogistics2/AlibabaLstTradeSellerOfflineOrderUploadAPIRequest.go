@@ -37,7 +37,7 @@ func (r AlibabaLstTradeSellerOfflineOrderUploadAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is OfflineOrderUploadParam Setter
+// SetOfflineOrderUploadParam is OfflineOrderUploadParam Setter
 // 入参
 func (r *AlibabaLstTradeSellerOfflineOrderUploadAPIRequest) SetOfflineOrderUploadParam(_offlineOrderUploadParam *LstOffLineOrderUploadParam) error {
 	r._offlineOrderUploadParam = _offlineOrderUploadParam
@@ -45,7 +45,7 @@ func (r *AlibabaLstTradeSellerOfflineOrderUploadAPIRequest) SetOfflineOrderUploa
 	return nil
 }
 
-// Get OfflineOrderUploadParam Getter
+// GetOfflineOrderUploadParam OfflineOrderUploadParam Getter
 func (r AlibabaLstTradeSellerOfflineOrderUploadAPIRequest) GetOfflineOrderUploadParam() *LstOffLineOrderUploadParam {
 	return r._offlineOrderUploadParam
 }

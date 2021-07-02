@@ -37,7 +37,7 @@ func (r TmallCarLeaseOrderidGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpenId Setter
+// SetOpenId is OpenId Setter
 // openid
 func (r *TmallCarLeaseOrderidGetAPIRequest) SetOpenId(_openId string) error {
 	r._openId = _openId
@@ -45,7 +45,7 @@ func (r *TmallCarLeaseOrderidGetAPIRequest) SetOpenId(_openId string) error {
 	return nil
 }
 
-// Get OpenId Getter
+// GetOpenId OpenId Getter
 func (r TmallCarLeaseOrderidGetAPIRequest) GetOpenId() string {
 	return r._openId
 }

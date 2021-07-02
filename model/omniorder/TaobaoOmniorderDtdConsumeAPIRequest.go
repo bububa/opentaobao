@@ -37,7 +37,7 @@ func (r TaobaoOmniorderDtdConsumeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamDoor2doorConsumeRequest Setter
+// SetParamDoor2doorConsumeRequest is ParamDoor2doorConsumeRequest Setter
 // 核销信息
 func (r *TaobaoOmniorderDtdConsumeAPIRequest) SetParamDoor2doorConsumeRequest(_paramDoor2doorConsumeRequest *Door2doorConsumeRequest) error {
 	r._paramDoor2doorConsumeRequest = _paramDoor2doorConsumeRequest
@@ -45,7 +45,7 @@ func (r *TaobaoOmniorderDtdConsumeAPIRequest) SetParamDoor2doorConsumeRequest(_p
 	return nil
 }
 
-// Get ParamDoor2doorConsumeRequest Getter
+// GetParamDoor2doorConsumeRequest ParamDoor2doorConsumeRequest Getter
 func (r TaobaoOmniorderDtdConsumeAPIRequest) GetParamDoor2doorConsumeRequest() *Door2doorConsumeRequest {
 	return r._paramDoor2doorConsumeRequest
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlihealthRxPrescriptionDetailAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 查询参数
 func (r *AlibabaAlihealthRxPrescriptionDetailAPIRequest) SetQuery(_query *RxPrescriptionQuery) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthRxPrescriptionDetailAPIRequest) SetQuery(_query *RxPres
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaAlihealthRxPrescriptionDetailAPIRequest) GetQuery() *RxPrescriptionQuery {
 	return r._query
 }

@@ -61,7 +61,7 @@ func (r TaobaoQimenStoreCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreName Setter
+// SetStoreName is StoreName Setter
 // 门店名称
 func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreName(_storeName string) error {
 	r._storeName = _storeName
@@ -69,12 +69,12 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreName(_storeName string) error
 	return nil
 }
 
-// Get StoreName Getter
+// GetStoreName StoreName Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetStoreName() string {
 	return r._storeName
 }
 
-// Set is MainCategory Setter
+// SetMainCategory is MainCategory Setter
 // 门店主营类目
 func (r *TaobaoQimenStoreCreateAPIRequest) SetMainCategory(_mainCategory int64) error {
 	r._mainCategory = _mainCategory
@@ -82,12 +82,12 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetMainCategory(_mainCategory int64) 
 	return nil
 }
 
-// Get MainCategory Getter
+// GetMainCategory MainCategory Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetMainCategory() int64 {
 	return r._mainCategory
 }
 
-// Set is CompanyName Setter
+// SetCompanyName is CompanyName Setter
 // 商户名称
 func (r *TaobaoQimenStoreCreateAPIRequest) SetCompanyName(_companyName string) error {
 	r._companyName = _companyName
@@ -95,12 +95,12 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetCompanyName(_companyName string) e
 	return nil
 }
 
-// Get CompanyName Getter
+// GetCompanyName CompanyName Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetCompanyName() string {
 	return r._companyName
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 关闭营业时间(只填时，分；只支持半点和整点)
 func (r *TaobaoQimenStoreCreateAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -108,12 +108,12 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetEndTime(_endTime string) error {
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 开始营业时间(只填时，分；只支持半点和整点)
 func (r *TaobaoQimenStoreCreateAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -121,12 +121,12 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetStartTime(_startTime string) error
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is StoreStatus Setter
+// SetStoreStatus is StoreStatus Setter
 // 门店状态
 func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreStatus(_storeStatus string) error {
 	r._storeStatus = _storeStatus
@@ -134,12 +134,12 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreStatus(_storeStatus string) e
 	return nil
 }
 
-// Get StoreStatus Getter
+// GetStoreStatus StoreStatus Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetStoreStatus() string {
 	return r._storeStatus
 }
 
-// Set is StoreDescription Setter
+// SetStoreDescription is StoreDescription Setter
 // 商户介绍
 func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreDescription(_storeDescription string) error {
 	r._storeDescription = _storeDescription
@@ -147,12 +147,12 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreDescription(_storeDescription
 	return nil
 }
 
-// Get StoreDescription Getter
+// GetStoreDescription StoreDescription Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetStoreDescription() string {
 	return r._storeDescription
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 地址信息
 func (r *TaobaoQimenStoreCreateAPIRequest) SetAddress(_address *Address) error {
 	r._address = _address
@@ -160,12 +160,12 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetAddress(_address *Address) error {
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetAddress() *Address {
 	return r._address
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 需要关联的线上店铺ID
 func (r *TaobaoQimenStoreCreateAPIRequest) SetShopId(_shopId int64) error {
 	r._shopId = _shopId
@@ -173,12 +173,12 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetShopId(_shopId int64) error {
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetShopId() int64 {
 	return r._shopId
 }
 
-// Set is StoreKeeper Setter
+// SetStoreKeeper is StoreKeeper Setter
 // 门店所有者信息
 func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreKeeper(_storeKeeper *StoreKeeper) error {
 	r._storeKeeper = _storeKeeper
@@ -186,12 +186,12 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreKeeper(_storeKeeper *StoreKee
 	return nil
 }
 
-// Get StoreKeeper Getter
+// GetStoreKeeper StoreKeeper Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetStoreKeeper() *StoreKeeper {
 	return r._storeKeeper
 }
 
-// Set is StoreType Setter
+// SetStoreType is StoreType Setter
 // 门店的类型
 func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreType(_storeType string) error {
 	r._storeType = _storeType
@@ -199,12 +199,12 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreType(_storeType string) error
 	return nil
 }
 
-// Get StoreType Getter
+// GetStoreType StoreType Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetStoreType() string {
 	return r._storeType
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // ERP系统中门店的编码
 func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -212,12 +212,12 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreCode(_storeCode string) error
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is Remark Setter
+// SetRemark is Remark Setter
 // 备注
 func (r *TaobaoQimenStoreCreateAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
@@ -225,7 +225,7 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetRemark(_remark string) error {
 	return nil
 }
 
-// Get Remark Getter
+// GetRemark Remark Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetRemark() string {
 	return r._remark
 }

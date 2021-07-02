@@ -37,7 +37,7 @@ func (r AliexpressAffiliateCategoryGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppSignature Setter
+// SetAppSignature is AppSignature Setter
 // 请求安全签名
 func (r *AliexpressAffiliateCategoryGetAPIRequest) SetAppSignature(_appSignature string) error {
 	r._appSignature = _appSignature
@@ -45,7 +45,7 @@ func (r *AliexpressAffiliateCategoryGetAPIRequest) SetAppSignature(_appSignature
 	return nil
 }
 
-// Get AppSignature Getter
+// GetAppSignature AppSignature Getter
 func (r AliexpressAffiliateCategoryGetAPIRequest) GetAppSignature() string {
 	return r._appSignature
 }

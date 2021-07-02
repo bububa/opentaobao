@@ -37,7 +37,7 @@ func (r TmallFansCashpoolCheckpayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CashPoolList Setter
+// SetCashPoolList is CashPoolList Setter
 // 资金池列表
 func (r *TmallFansCashpoolCheckpayAPIRequest) SetCashPoolList(_cashPoolList []int64) error {
 	r._cashPoolList = _cashPoolList
@@ -45,7 +45,7 @@ func (r *TmallFansCashpoolCheckpayAPIRequest) SetCashPoolList(_cashPoolList []in
 	return nil
 }
 
-// Get CashPoolList Getter
+// GetCashPoolList CashPoolList Getter
 func (r TmallFansCashpoolCheckpayAPIRequest) GetCashPoolList() []int64 {
 	return r._cashPoolList
 }

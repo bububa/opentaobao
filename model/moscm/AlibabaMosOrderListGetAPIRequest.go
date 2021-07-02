@@ -39,7 +39,7 @@ func (r AlibabaMosOrderListGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderCriteria Setter
+// SetOrderCriteria is OrderCriteria Setter
 // 订单查询条件
 func (r *AlibabaMosOrderListGetAPIRequest) SetOrderCriteria(_orderCriteria *OrderCriteria) error {
 	r._orderCriteria = _orderCriteria
@@ -47,12 +47,12 @@ func (r *AlibabaMosOrderListGetAPIRequest) SetOrderCriteria(_orderCriteria *Orde
 	return nil
 }
 
-// Get OrderCriteria Getter
+// GetOrderCriteria OrderCriteria Getter
 func (r AlibabaMosOrderListGetAPIRequest) GetOrderCriteria() *OrderCriteria {
 	return r._orderCriteria
 }
 
-// Set is Paginator Setter
+// SetPaginator is Paginator Setter
 // 分页信息
 func (r *AlibabaMosOrderListGetAPIRequest) SetPaginator(_paginator *Paginator) error {
 	r._paginator = _paginator
@@ -60,7 +60,7 @@ func (r *AlibabaMosOrderListGetAPIRequest) SetPaginator(_paginator *Paginator) e
 	return nil
 }
 
-// Get Paginator Getter
+// GetPaginator Paginator Getter
 func (r AlibabaMosOrderListGetAPIRequest) GetPaginator() *Paginator {
 	return r._paginator
 }

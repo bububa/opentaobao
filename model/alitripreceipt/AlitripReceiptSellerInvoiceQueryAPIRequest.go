@@ -37,7 +37,7 @@ func (r AlitripReceiptSellerInvoiceQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryReceiptParam Setter
+// SetQueryReceiptParam is QueryReceiptParam Setter
 // 入参对象
 func (r *AlitripReceiptSellerInvoiceQueryAPIRequest) SetQueryReceiptParam(_queryReceiptParam *QueryReceiptParam) error {
 	r._queryReceiptParam = _queryReceiptParam
@@ -45,7 +45,7 @@ func (r *AlitripReceiptSellerInvoiceQueryAPIRequest) SetQueryReceiptParam(_query
 	return nil
 }
 
-// Get QueryReceiptParam Getter
+// GetQueryReceiptParam QueryReceiptParam Getter
 func (r AlitripReceiptSellerInvoiceQueryAPIRequest) GetQueryReceiptParam() *QueryReceiptParam {
 	return r._queryReceiptParam
 }

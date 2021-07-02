@@ -53,7 +53,7 @@ func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is WorkOrderId Setter
+// SetWorkOrderId is WorkOrderId Setter
 // 工单id
 func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetWorkOrderId(_workOrderId string) error {
 	r._workOrderId = _workOrderId
@@ -61,12 +61,12 @@ func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetWorkOrderId(_workO
 	return nil
 }
 
-// Get WorkOrderId Getter
+// GetWorkOrderId WorkOrderId Getter
 func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetWorkOrderId() string {
 	return r._workOrderId
 }
 
-// Set is TaskId Setter
+// SetTaskId is TaskId Setter
 // 工单任务id
 func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetTaskId(_taskId string) error {
 	r._taskId = _taskId
@@ -74,12 +74,12 @@ func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetTaskId(_taskId str
 	return nil
 }
 
-// Get TaskId Getter
+// GetTaskId TaskId Getter
 func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetTaskId() string {
 	return r._taskId
 }
 
-// Set is ActionTime Setter
+// SetActionTime is ActionTime Setter
 // 任务操作时间
 func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetActionTime(_actionTime string) error {
 	r._actionTime = _actionTime
@@ -87,12 +87,12 @@ func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetActionTime(_action
 	return nil
 }
 
-// Get ActionTime Getter
+// GetActionTime ActionTime Getter
 func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetActionTime() string {
 	return r._actionTime
 }
 
-// Set is ActionType Setter
+// SetActionType is ActionType Setter
 // 任务操作类型
 func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetActionType(_actionType int64) error {
 	r._actionType = _actionType
@@ -100,12 +100,12 @@ func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetActionType(_action
 	return nil
 }
 
-// Get ActionType Getter
+// GetActionType ActionType Getter
 func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetActionType() int64 {
 	return r._actionType
 }
 
-// Set is DealerUserId Setter
+// SetDealerUserId is DealerUserId Setter
 // 操作者userId
 func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetDealerUserId(_dealerUserId string) error {
 	r._dealerUserId = _dealerUserId
@@ -113,12 +113,12 @@ func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetDealerUserId(_deal
 	return nil
 }
 
-// Get DealerUserId Getter
+// GetDealerUserId DealerUserId Getter
 func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetDealerUserId() string {
 	return r._dealerUserId
 }
 
-// Set is DealerContact Setter
+// SetDealerContact is DealerContact Setter
 // 操作者联系方式
 func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetDealerContact(_dealerContact string) error {
 	r._dealerContact = _dealerContact
@@ -126,12 +126,12 @@ func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetDealerContact(_dea
 	return nil
 }
 
-// Get DealerContact Getter
+// GetDealerContact DealerContact Getter
 func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetDealerContact() string {
 	return r._dealerContact
 }
 
-// Set is Memo Setter
+// SetMemo is Memo Setter
 // 商家工单操作回传备注
 func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
@@ -139,12 +139,12 @@ func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetMemo(_memo string)
 	return nil
 }
 
-// Get Memo Getter
+// GetMemo Memo Getter
 func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetMemo() string {
 	return r._memo
 }
 
-// Set is AttachPath Setter
+// SetAttachPath is AttachPath Setter
 // 凭证照片地址拼接
 func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetAttachPath(_attachPath string) error {
 	r._attachPath = _attachPath
@@ -152,12 +152,12 @@ func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetAttachPath(_attach
 	return nil
 }
 
-// Get AttachPath Getter
+// GetAttachPath AttachPath Getter
 func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetAttachPath() string {
 	return r._attachPath
 }
 
-// Set is Features Setter
+// SetFeatures is Features Setter
 // 扩展字段
 func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetFeatures(_features string) error {
 	r._features = _features
@@ -165,7 +165,7 @@ func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetFeatures(_features
 	return nil
 }
 
-// Get Features Getter
+// GetFeatures Features Getter
 func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetFeatures() string {
 	return r._features
 }

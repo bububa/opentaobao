@@ -39,7 +39,7 @@ func (r TmallNrtItemGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BoothId Setter
+// SetBoothId is BoothId Setter
 // 城市站id
 func (r *TmallNrtItemGetAPIRequest) SetBoothId(_boothId int64) error {
 	r._boothId = _boothId
@@ -47,12 +47,12 @@ func (r *TmallNrtItemGetAPIRequest) SetBoothId(_boothId int64) error {
 	return nil
 }
 
-// Get BoothId Getter
+// GetBoothId BoothId Getter
 func (r TmallNrtItemGetAPIRequest) GetBoothId() int64 {
 	return r._boothId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *TmallNrtItemGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -60,7 +60,7 @@ func (r *TmallNrtItemGetAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallNrtItemGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

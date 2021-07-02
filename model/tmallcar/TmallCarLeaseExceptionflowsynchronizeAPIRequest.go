@@ -43,7 +43,7 @@ func (r TmallCarLeaseExceptionflowsynchronizeAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 天猫开新车订单id
 func (r *TmallCarLeaseExceptionflowsynchronizeAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -51,12 +51,12 @@ func (r *TmallCarLeaseExceptionflowsynchronizeAPIRequest) SetOrderId(_orderId in
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TmallCarLeaseExceptionflowsynchronizeAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 1:开始切换为异常流，2:线下处理完成
 func (r *TmallCarLeaseExceptionflowsynchronizeAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -64,12 +64,12 @@ func (r *TmallCarLeaseExceptionflowsynchronizeAPIRequest) SetStatus(_status int6
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TmallCarLeaseExceptionflowsynchronizeAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is FlowType Setter
+// SetFlowType is FlowType Setter
 // 异常流类型,0.退车,1.买断,2.分期，3.续租
 func (r *TmallCarLeaseExceptionflowsynchronizeAPIRequest) SetFlowType(_flowType int64) error {
 	r._flowType = _flowType
@@ -77,12 +77,12 @@ func (r *TmallCarLeaseExceptionflowsynchronizeAPIRequest) SetFlowType(_flowType 
 	return nil
 }
 
-// Get FlowType Getter
+// GetFlowType FlowType Getter
 func (r TmallCarLeaseExceptionflowsynchronizeAPIRequest) GetFlowType() int64 {
 	return r._flowType
 }
 
-// Set is Desc Setter
+// SetDesc is Desc Setter
 // 切换原因描述
 func (r *TmallCarLeaseExceptionflowsynchronizeAPIRequest) SetDesc(_desc string) error {
 	r._desc = _desc
@@ -90,7 +90,7 @@ func (r *TmallCarLeaseExceptionflowsynchronizeAPIRequest) SetDesc(_desc string) 
 	return nil
 }
 
-// Get Desc Getter
+// GetDesc Desc Getter
 func (r TmallCarLeaseExceptionflowsynchronizeAPIRequest) GetDesc() string {
 	return r._desc
 }

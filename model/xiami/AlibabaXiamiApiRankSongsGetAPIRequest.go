@@ -37,7 +37,7 @@ func (r AlibabaXiamiApiRankSongsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 榜单类型:<br/>虾米榜 music_all,music_oumei,music_ri,music_han,music_huayu;<br/>虾米新歌榜 newmusic_all,newmusc_oumei,newmusic_ri,newmusic_han,newmusic_huayu;<br/>全球媒体榜 hito,jingge,uk,billboard,oricon,mnet;<br/>原创榜 music_original;<br/>demo榜 music_demo;<br/>陌陌榜 momo;
 func (r *AlibabaXiamiApiRankSongsGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -45,7 +45,7 @@ func (r *AlibabaXiamiApiRankSongsGetAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaXiamiApiRankSongsGetAPIRequest) GetType() string {
 	return r._type
 }

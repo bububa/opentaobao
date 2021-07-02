@@ -37,7 +37,7 @@ func (r AlitripTravelTradeQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 主订单id
 func (r *AlitripTravelTradeQueryAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -45,7 +45,7 @@ func (r *AlitripTravelTradeQueryAPIRequest) SetOrderId(_orderId int64) error {
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlitripTravelTradeQueryAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }

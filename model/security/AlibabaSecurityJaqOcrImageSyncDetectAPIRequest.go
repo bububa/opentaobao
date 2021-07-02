@@ -37,7 +37,7 @@ func (r AlibabaSecurityJaqOcrImageSyncDetectAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ImageUrl Setter
+// SetImageUrl is ImageUrl Setter
 // 待检测图像链接
 func (r *AlibabaSecurityJaqOcrImageSyncDetectAPIRequest) SetImageUrl(_imageUrl string) error {
 	r._imageUrl = _imageUrl
@@ -45,7 +45,7 @@ func (r *AlibabaSecurityJaqOcrImageSyncDetectAPIRequest) SetImageUrl(_imageUrl s
 	return nil
 }
 
-// Get ImageUrl Getter
+// GetImageUrl ImageUrl Getter
 func (r AlibabaSecurityJaqOcrImageSyncDetectAPIRequest) GetImageUrl() string {
 	return r._imageUrl
 }

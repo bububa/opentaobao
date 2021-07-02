@@ -43,7 +43,7 @@ func (r AlibabaAlihealthDrugKytDrGetproteminfoAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 调用企业ID
 func (r *AlibabaAlihealthDrugKytDrGetproteminfoAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthDrugKytDrGetproteminfoAPIRequest) SetRefEntId(_refEntId
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytDrGetproteminfoAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is DrugEntBaseInfoId Setter
+// SetDrugEntBaseInfoId is DrugEntBaseInfoId Setter
 // 药品ID
 func (r *AlibabaAlihealthDrugKytDrGetproteminfoAPIRequest) SetDrugEntBaseInfoId(_drugEntBaseInfoId string) error {
 	r._drugEntBaseInfoId = _drugEntBaseInfoId
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthDrugKytDrGetproteminfoAPIRequest) SetDrugEntBaseInfoId(
 	return nil
 }
 
-// Get DrugEntBaseInfoId Getter
+// GetDrugEntBaseInfoId DrugEntBaseInfoId Getter
 func (r AlibabaAlihealthDrugKytDrGetproteminfoAPIRequest) GetDrugEntBaseInfoId() string {
 	return r._drugEntBaseInfoId
 }
 
-// Set is BatchNo Setter
+// SetBatchNo is BatchNo Setter
 // 批次编号
 func (r *AlibabaAlihealthDrugKytDrGetproteminfoAPIRequest) SetBatchNo(_batchNo string) error {
 	r._batchNo = _batchNo
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthDrugKytDrGetproteminfoAPIRequest) SetBatchNo(_batchNo s
 	return nil
 }
 
-// Get BatchNo Getter
+// GetBatchNo BatchNo Getter
 func (r AlibabaAlihealthDrugKytDrGetproteminfoAPIRequest) GetBatchNo() string {
 	return r._batchNo
 }
 
-// Set is BillOutCode Setter
+// SetBillOutCode is BillOutCode Setter
 // 出库单号
 func (r *AlibabaAlihealthDrugKytDrGetproteminfoAPIRequest) SetBillOutCode(_billOutCode string) error {
 	r._billOutCode = _billOutCode
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthDrugKytDrGetproteminfoAPIRequest) SetBillOutCode(_billO
 	return nil
 }
 
-// Get BillOutCode Getter
+// GetBillOutCode BillOutCode Getter
 func (r AlibabaAlihealthDrugKytDrGetproteminfoAPIRequest) GetBillOutCode() string {
 	return r._billOutCode
 }

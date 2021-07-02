@@ -50,7 +50,7 @@ func (r TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is OpenAppKey Setter
+// SetOpenAppKey is OpenAppKey Setter
 // 自运营开放平台APPKEY
 func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetOpenAppKey(_openAppKey string) error {
 	r._openAppKey = _openAppKey
@@ -58,12 +58,12 @@ func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetOpenAppKey(_openAppK
 	return nil
 }
 
-// Get OpenAppKey Getter
+// GetOpenAppKey OpenAppKey Getter
 func (r TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) GetOpenAppKey() string {
 	return r._openAppKey
 }
 
-// Set is CinemaId Setter
+// SetCinemaId is CinemaId Setter
 // 影院ID
 func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetCinemaId(_cinemaId int64) error {
 	r._cinemaId = _cinemaId
@@ -71,12 +71,12 @@ func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetCinemaId(_cinemaId i
 	return nil
 }
 
-// Get CinemaId Getter
+// GetCinemaId CinemaId Getter
 func (r TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) GetCinemaId() int64 {
 	return r._cinemaId
 }
 
-// Set is BeginTime Setter
+// SetBeginTime is BeginTime Setter
 // 开始时间
 func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetBeginTime(_beginTime string) error {
 	r._beginTime = _beginTime
@@ -84,12 +84,12 @@ func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetBeginTime(_beginTime
 	return nil
 }
 
-// Get BeginTime Getter
+// GetBeginTime BeginTime Getter
 func (r TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) GetBeginTime() string {
 	return r._beginTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间
 func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -97,12 +97,12 @@ func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetEndTime(_endTime str
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is IncludedOrderStatus Setter
+// SetIncludedOrderStatus is IncludedOrderStatus Setter
 // 包含的订单状态, 默认不填
 func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetIncludedOrderStatus(_includedOrderStatus []string) error {
 	r._includedOrderStatus = _includedOrderStatus
@@ -110,12 +110,12 @@ func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetIncludedOrderStatus(
 	return nil
 }
 
-// Get IncludedOrderStatus Getter
+// GetIncludedOrderStatus IncludedOrderStatus Getter
 func (r TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) GetIncludedOrderStatus() []string {
 	return r._includedOrderStatus
 }
 
-// Set is Offset Setter
+// SetOffset is Offset Setter
 // offset 下标, 从0开始
 func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetOffset(_offset int64) error {
 	r._offset = _offset
@@ -123,12 +123,12 @@ func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetOffset(_offset int64
 	return nil
 }
 
-// Get Offset Getter
+// GetOffset Offset Getter
 func (r TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) GetOffset() int64 {
 	return r._offset
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小
 func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -136,7 +136,7 @@ func (r *TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) SetPageSize(_pageSize i
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

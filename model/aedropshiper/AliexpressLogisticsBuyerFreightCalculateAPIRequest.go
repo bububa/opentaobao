@@ -37,7 +37,7 @@ func (r AliexpressLogisticsBuyerFreightCalculateAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ParamAeopFreightCalculateForBuyerDTO Setter
+// SetParamAeopFreightCalculateForBuyerDTO is ParamAeopFreightCalculateForBuyerDTO Setter
 // 运费计算请求参数
 func (r *AliexpressLogisticsBuyerFreightCalculateAPIRequest) SetParamAeopFreightCalculateForBuyerDTO(_paramAeopFreightCalculateForBuyerDTO *AeopFreightCalculateForBuyerDto) error {
 	r._paramAeopFreightCalculateForBuyerDTO = _paramAeopFreightCalculateForBuyerDTO
@@ -45,7 +45,7 @@ func (r *AliexpressLogisticsBuyerFreightCalculateAPIRequest) SetParamAeopFreight
 	return nil
 }
 
-// Get ParamAeopFreightCalculateForBuyerDTO Getter
+// GetParamAeopFreightCalculateForBuyerDTO ParamAeopFreightCalculateForBuyerDTO Getter
 func (r AliexpressLogisticsBuyerFreightCalculateAPIRequest) GetParamAeopFreightCalculateForBuyerDTO() *AeopFreightCalculateForBuyerDto {
 	return r._paramAeopFreightCalculateForBuyerDTO
 }

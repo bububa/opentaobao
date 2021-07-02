@@ -37,7 +37,7 @@ func (r TaobaoWlbWaybillISearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WaybillApplyRequest Setter
+// SetWaybillApplyRequest is WaybillApplyRequest Setter
 // 查询网点信息
 func (r *TaobaoWlbWaybillISearchAPIRequest) SetWaybillApplyRequest(_waybillApplyRequest *WaybillApplyRequest) error {
 	r._waybillApplyRequest = _waybillApplyRequest
@@ -45,7 +45,7 @@ func (r *TaobaoWlbWaybillISearchAPIRequest) SetWaybillApplyRequest(_waybillApply
 	return nil
 }
 
-// Get WaybillApplyRequest Getter
+// GetWaybillApplyRequest WaybillApplyRequest Getter
 func (r TaobaoWlbWaybillISearchAPIRequest) GetWaybillApplyRequest() *WaybillApplyRequest {
 	return r._waybillApplyRequest
 }

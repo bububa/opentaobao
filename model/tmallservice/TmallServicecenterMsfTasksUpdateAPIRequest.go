@@ -45,7 +45,7 @@ func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WorkerMobile Setter
+// SetWorkerMobile is WorkerMobile Setter
 // 工人手机号
 func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetWorkerMobile(_workerMobile int64) error {
 	r._workerMobile = _workerMobile
@@ -53,12 +53,12 @@ func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetWorkerMobile(_workerMobi
 	return nil
 }
 
-// Get WorkerMobile Getter
+// GetWorkerMobile WorkerMobile Getter
 func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetWorkerMobile() int64 {
 	return r._workerMobile
 }
 
-// Set is ServiceCode Setter
+// SetServiceCode is ServiceCode Setter
 // 服务编码
 func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetServiceCode(_serviceCode string) error {
 	r._serviceCode = _serviceCode
@@ -66,12 +66,12 @@ func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetServiceCode(_serviceCode
 	return nil
 }
 
-// Get ServiceCode Getter
+// GetServiceCode ServiceCode Getter
 func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetServiceCode() string {
 	return r._serviceCode
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 调用来源
 func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -79,12 +79,12 @@ func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetSource(_source string) e
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is BizOrderIds Setter
+// SetBizOrderIds is BizOrderIds Setter
 // 子订单号列表。最多100个
 func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetBizOrderIds(_bizOrderIds []int64) error {
 	r._bizOrderIds = _bizOrderIds
@@ -92,12 +92,12 @@ func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetBizOrderIds(_bizOrderIds
 	return nil
 }
 
-// Get BizOrderIds Getter
+// GetBizOrderIds BizOrderIds Getter
 func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetBizOrderIds() []int64 {
 	return r._bizOrderIds
 }
 
-// Set is Seqs Setter
+// SetSeqs is Seqs Setter
 // 周期序号。必须与子订单列表对应
 func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetSeqs(_seqs []int64) error {
 	r._seqs = _seqs
@@ -105,7 +105,7 @@ func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetSeqs(_seqs []int64) erro
 	return nil
 }
 
-// Get Seqs Getter
+// GetSeqs Seqs Getter
 func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetSeqs() []int64 {
 	return r._seqs
 }

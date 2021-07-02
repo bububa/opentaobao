@@ -43,7 +43,7 @@ func (r TaobaoSimbaAdgroupsbycampaignidGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaAdgroupsbycampaignidGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -51,12 +51,12 @@ func (r *TaobaoSimbaAdgroupsbycampaignidGetAPIRequest) SetNick(_nick string) err
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaAdgroupsbycampaignidGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划Id
 func (r *TaobaoSimbaAdgroupsbycampaignidGetAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -64,12 +64,12 @@ func (r *TaobaoSimbaAdgroupsbycampaignidGetAPIRequest) SetCampaignId(_campaignId
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaAdgroupsbycampaignidGetAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页尺寸，最大200，如果入参adgroup_ids有传入值，则page_size和page_no值不起作用。如果adgrpup_ids为空而campaign_id有值，此时page_size和page_no值才是返回的页数据大小和页码
 func (r *TaobaoSimbaAdgroupsbycampaignidGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *TaobaoSimbaAdgroupsbycampaignidGetAPIRequest) SetPageSize(_pageSize int
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoSimbaAdgroupsbycampaignidGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码，从1开始
 func (r *TaobaoSimbaAdgroupsbycampaignidGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -90,7 +90,7 @@ func (r *TaobaoSimbaAdgroupsbycampaignidGetAPIRequest) SetPageNo(_pageNo int64) 
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoSimbaAdgroupsbycampaignidGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

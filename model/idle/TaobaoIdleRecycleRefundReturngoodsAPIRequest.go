@@ -37,7 +37,7 @@ func (r TaobaoIdleRecycleRefundReturngoodsAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 退货
 func (r *TaobaoIdleRecycleRefundReturngoodsAPIRequest) SetParam0(_param0 *RecycleReturnGoodsRequest) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TaobaoIdleRecycleRefundReturngoodsAPIRequest) SetParam0(_param0 *Recycl
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoIdleRecycleRefundReturngoodsAPIRequest) GetParam0() *RecycleReturnGoodsRequest {
 	return r._param0
 }

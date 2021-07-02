@@ -37,7 +37,7 @@ func (r AlitripHotelHstdfBusinessareaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamGetByTrdiDivisionIdParam Setter
+// SetParamGetByTrdiDivisionIdParam is ParamGetByTrdiDivisionIdParam Setter
 // 请求参数封装
 func (r *AlitripHotelHstdfBusinessareaGetAPIRequest) SetParamGetByTrdiDivisionIdParam(_paramGetByTrdiDivisionIdParam *GetByTrdiDivisionIdParam) error {
 	r._paramGetByTrdiDivisionIdParam = _paramGetByTrdiDivisionIdParam
@@ -45,7 +45,7 @@ func (r *AlitripHotelHstdfBusinessareaGetAPIRequest) SetParamGetByTrdiDivisionId
 	return nil
 }
 
-// Get ParamGetByTrdiDivisionIdParam Getter
+// GetParamGetByTrdiDivisionIdParam ParamGetByTrdiDivisionIdParam Getter
 func (r AlitripHotelHstdfBusinessareaGetAPIRequest) GetParamGetByTrdiDivisionIdParam() *GetByTrdiDivisionIdParam {
 	return r._paramGetByTrdiDivisionIdParam
 }

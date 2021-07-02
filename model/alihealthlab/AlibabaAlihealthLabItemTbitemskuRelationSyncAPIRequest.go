@@ -43,7 +43,7 @@ func (r AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is IsvRelationStatus Setter
+// SetIsvRelationStatus is IsvRelationStatus Setter
 // EFFECTIVE 有效，INVALID 无效
 func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest) SetIsvRelationStatus(_isvRelationStatus string) error {
 	r._isvRelationStatus = _isvRelationStatus
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest) SetIsvRelationS
 	return nil
 }
 
-// Get IsvRelationStatus Getter
+// GetIsvRelationStatus IsvRelationStatus Getter
 func (r AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest) GetIsvRelationStatus() string {
 	return r._isvRelationStatus
 }
 
-// Set is TbSkuId Setter
+// SetTbSkuId is TbSkuId Setter
 // 关联的淘宝商品SKU id，在商品没有sku的情况下传0
 func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest) SetTbSkuId(_tbSkuId int64) error {
 	r._tbSkuId = _tbSkuId
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest) SetTbSkuId(_tbS
 	return nil
 }
 
-// Get TbSkuId Getter
+// GetTbSkuId TbSkuId Getter
 func (r AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest) GetTbSkuId() int64 {
 	return r._tbSkuId
 }
 
-// Set is TbItemId Setter
+// SetTbItemId is TbItemId Setter
 // 关联的淘宝商品 id
 func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest) SetTbItemId(_tbItemId int64) error {
 	r._tbItemId = _tbItemId
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest) SetTbItemId(_tb
 	return nil
 }
 
-// Get TbItemId Getter
+// GetTbItemId TbItemId Getter
 func (r AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest) GetTbItemId() int64 {
 	return r._tbItemId
 }
 
-// Set is IsvItemCode Setter
+// SetIsvItemCode is IsvItemCode Setter
 // 检验检测项目isv侧code
 func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest) SetIsvItemCode(_isvItemCode string) error {
 	r._isvItemCode = _isvItemCode
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest) SetIsvItemCode(
 	return nil
 }
 
-// Get IsvItemCode Getter
+// GetIsvItemCode IsvItemCode Getter
 func (r AlibabaAlihealthLabItemTbitemskuRelationSyncAPIRequest) GetIsvItemCode() string {
 	return r._isvItemCode
 }

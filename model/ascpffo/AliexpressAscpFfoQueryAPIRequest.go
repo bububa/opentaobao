@@ -37,7 +37,7 @@ func (r AliexpressAscpFfoQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FulfillmentForwardOrderQuery Setter
+// SetFulfillmentForwardOrderQuery is FulfillmentForwardOrderQuery Setter
 // dto
 func (r *AliexpressAscpFfoQueryAPIRequest) SetFulfillmentForwardOrderQuery(_fulfillmentForwardOrderQuery *FulfillmentForwardOrderQueryDto) error {
 	r._fulfillmentForwardOrderQuery = _fulfillmentForwardOrderQuery
@@ -45,7 +45,7 @@ func (r *AliexpressAscpFfoQueryAPIRequest) SetFulfillmentForwardOrderQuery(_fulf
 	return nil
 }
 
-// Get FulfillmentForwardOrderQuery Getter
+// GetFulfillmentForwardOrderQuery FulfillmentForwardOrderQuery Getter
 func (r AliexpressAscpFfoQueryAPIRequest) GetFulfillmentForwardOrderQuery() *FulfillmentForwardOrderQueryDto {
 	return r._fulfillmentForwardOrderQuery
 }

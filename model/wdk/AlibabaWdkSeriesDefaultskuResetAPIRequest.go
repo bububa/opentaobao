@@ -37,7 +37,7 @@ func (r AlibabaWdkSeriesDefaultskuResetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SeriesSku Setter
+// SetSeriesSku is SeriesSku Setter
 // 系列品重置默认商品请求
 func (r *AlibabaWdkSeriesDefaultskuResetAPIRequest) SetSeriesSku(_seriesSku *SeriesSkuRequest) error {
 	r._seriesSku = _seriesSku
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSeriesDefaultskuResetAPIRequest) SetSeriesSku(_seriesSku *Ser
 	return nil
 }
 
-// Get SeriesSku Getter
+// GetSeriesSku SeriesSku Getter
 func (r AlibabaWdkSeriesDefaultskuResetAPIRequest) GetSeriesSku() *SeriesSkuRequest {
 	return r._seriesSku
 }

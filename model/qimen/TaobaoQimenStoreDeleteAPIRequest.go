@@ -37,7 +37,7 @@ func (r TaobaoQimenStoreDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 要删除的门店id
 func (r *TaobaoQimenStoreDeleteAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -45,7 +45,7 @@ func (r *TaobaoQimenStoreDeleteAPIRequest) SetStoreId(_storeId int64) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoQimenStoreDeleteAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }

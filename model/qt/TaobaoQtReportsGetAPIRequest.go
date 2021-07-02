@@ -47,7 +47,7 @@ func (r TaobaoQtReportsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SpName Setter
+// SetSpName is SpName Setter
 // 质检服务商名
 func (r *TaobaoQtReportsGetAPIRequest) SetSpName(_spName string) error {
 	r._spName = _spName
@@ -55,12 +55,12 @@ func (r *TaobaoQtReportsGetAPIRequest) SetSpName(_spName string) error {
 	return nil
 }
 
-// Get SpName Getter
+// GetSpName SpName Getter
 func (r TaobaoQtReportsGetAPIRequest) GetSpName() string {
 	return r._spName
 }
 
-// Set is QtType Setter
+// SetQtType is QtType Setter
 // 质检类型，目前只支持查询qt_type=11的类型
 func (r *TaobaoQtReportsGetAPIRequest) SetQtType(_qtType int64) error {
 	r._qtType = _qtType
@@ -68,12 +68,12 @@ func (r *TaobaoQtReportsGetAPIRequest) SetQtType(_qtType int64) error {
 	return nil
 }
 
-// Get QtType Getter
+// GetQtType QtType Getter
 func (r TaobaoQtReportsGetAPIRequest) GetQtType() int64 {
 	return r._qtType
 }
 
-// Set is ServcieItemCode Setter
+// SetServcieItemCode is ServcieItemCode Setter
 // 收费项code
 func (r *TaobaoQtReportsGetAPIRequest) SetServcieItemCode(_servcieItemCode string) error {
 	r._servcieItemCode = _servcieItemCode
@@ -81,12 +81,12 @@ func (r *TaobaoQtReportsGetAPIRequest) SetServcieItemCode(_servcieItemCode strin
 	return nil
 }
 
-// Get ServcieItemCode Getter
+// GetServcieItemCode ServcieItemCode Getter
 func (r TaobaoQtReportsGetAPIRequest) GetServcieItemCode() string {
 	return r._servcieItemCode
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 送检者昵称
 func (r *TaobaoQtReportsGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -94,12 +94,12 @@ func (r *TaobaoQtReportsGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoQtReportsGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 查询时间段的开始时间
 func (r *TaobaoQtReportsGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -107,12 +107,12 @@ func (r *TaobaoQtReportsGetAPIRequest) SetStartTime(_startTime string) error {
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoQtReportsGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 查询时间段的结束时间
 func (r *TaobaoQtReportsGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -120,7 +120,7 @@ func (r *TaobaoQtReportsGetAPIRequest) SetEndTime(_endTime string) error {
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoQtReportsGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }

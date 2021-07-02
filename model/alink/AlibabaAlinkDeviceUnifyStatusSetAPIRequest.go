@@ -39,7 +39,7 @@ func (r AlibabaAlinkDeviceUnifyStatusSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // uuid
 func (r *AlibabaAlinkDeviceUnifyStatusSetAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -47,12 +47,12 @@ func (r *AlibabaAlinkDeviceUnifyStatusSetAPIRequest) SetUuid(_uuid string) error
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r AlibabaAlinkDeviceUnifyStatusSetAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is Instructions Setter
+// SetInstructions is Instructions Setter
 // 设备的设置参数数据
 func (r *AlibabaAlinkDeviceUnifyStatusSetAPIRequest) SetInstructions(_instructions string) error {
 	r._instructions = _instructions
@@ -60,7 +60,7 @@ func (r *AlibabaAlinkDeviceUnifyStatusSetAPIRequest) SetInstructions(_instructio
 	return nil
 }
 
-// Get Instructions Getter
+// GetInstructions Instructions Getter
 func (r AlibabaAlinkDeviceUnifyStatusSetAPIRequest) GetInstructions() string {
 	return r._instructions
 }

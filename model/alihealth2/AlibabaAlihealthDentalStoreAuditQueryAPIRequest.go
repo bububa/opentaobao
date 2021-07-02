@@ -37,7 +37,7 @@ func (r AlibabaAlihealthDentalStoreAuditQueryAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is StoreAuditIds Setter
+// SetStoreAuditIds is StoreAuditIds Setter
 // 审核ID列表
 func (r *AlibabaAlihealthDentalStoreAuditQueryAPIRequest) SetStoreAuditIds(_storeAuditIds []int64) error {
 	r._storeAuditIds = _storeAuditIds
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthDentalStoreAuditQueryAPIRequest) SetStoreAuditIds(_stor
 	return nil
 }
 
-// Get StoreAuditIds Getter
+// GetStoreAuditIds StoreAuditIds Getter
 func (r AlibabaAlihealthDentalStoreAuditQueryAPIRequest) GetStoreAuditIds() []int64 {
 	return r._storeAuditIds
 }

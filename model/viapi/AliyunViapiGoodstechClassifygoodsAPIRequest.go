@@ -37,7 +37,7 @@ func (r AliyunViapiGoodstechClassifygoodsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ImageUrl Setter
+// SetImageUrl is ImageUrl Setter
 // 待检测图片链接
 func (r *AliyunViapiGoodstechClassifygoodsAPIRequest) SetImageUrl(_imageUrl string) error {
 	r._imageUrl = _imageUrl
@@ -45,7 +45,7 @@ func (r *AliyunViapiGoodstechClassifygoodsAPIRequest) SetImageUrl(_imageUrl stri
 	return nil
 }
 
-// Get ImageUrl Getter
+// GetImageUrl ImageUrl Getter
 func (r AliyunViapiGoodstechClassifygoodsAPIRequest) GetImageUrl() string {
 	return r._imageUrl
 }

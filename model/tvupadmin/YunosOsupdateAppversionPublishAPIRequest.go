@@ -37,7 +37,7 @@ func (r YunosOsupdateAppversionPublishAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PublishJson Setter
+// SetPublishJson is PublishJson Setter
 // 发布应用升级入参json
 func (r *YunosOsupdateAppversionPublishAPIRequest) SetPublishJson(_publishJson string) error {
 	r._publishJson = _publishJson
@@ -45,7 +45,7 @@ func (r *YunosOsupdateAppversionPublishAPIRequest) SetPublishJson(_publishJson s
 	return nil
 }
 
-// Get PublishJson Getter
+// GetPublishJson PublishJson Getter
 func (r YunosOsupdateAppversionPublishAPIRequest) GetPublishJson() string {
 	return r._publishJson
 }

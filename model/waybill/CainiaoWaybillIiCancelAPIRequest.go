@@ -39,7 +39,7 @@ func (r CainiaoWaybillIiCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CpCode Setter
+// SetCpCode is CpCode Setter
 // 快递公司code
 func (r *CainiaoWaybillIiCancelAPIRequest) SetCpCode(_cpCode string) error {
 	r._cpCode = _cpCode
@@ -47,12 +47,12 @@ func (r *CainiaoWaybillIiCancelAPIRequest) SetCpCode(_cpCode string) error {
 	return nil
 }
 
-// Get CpCode Getter
+// GetCpCode CpCode Getter
 func (r CainiaoWaybillIiCancelAPIRequest) GetCpCode() string {
 	return r._cpCode
 }
 
-// Set is WaybillCode Setter
+// SetWaybillCode is WaybillCode Setter
 // 电子面单号
 func (r *CainiaoWaybillIiCancelAPIRequest) SetWaybillCode(_waybillCode string) error {
 	r._waybillCode = _waybillCode
@@ -60,7 +60,7 @@ func (r *CainiaoWaybillIiCancelAPIRequest) SetWaybillCode(_waybillCode string) e
 	return nil
 }
 
-// Get WaybillCode Getter
+// GetWaybillCode WaybillCode Getter
 func (r CainiaoWaybillIiCancelAPIRequest) GetWaybillCode() string {
 	return r._waybillCode
 }

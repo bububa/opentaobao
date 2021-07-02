@@ -39,7 +39,7 @@ func (r AlitripItemSchemaAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 类目id
 func (r *AlitripItemSchemaAddAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -47,12 +47,12 @@ func (r *AlitripItemSchemaAddAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r AlitripItemSchemaAddAPIRequest) GetCatId() int64 {
 	return r._catId
 }
 
-// Set is SchemaXmlFields Setter
+// SetSchemaXmlFields is SchemaXmlFields Setter
 // 商品数据
 func (r *AlitripItemSchemaAddAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
 	r._schemaXmlFields = _schemaXmlFields
@@ -60,7 +60,7 @@ func (r *AlitripItemSchemaAddAPIRequest) SetSchemaXmlFields(_schemaXmlFields str
 	return nil
 }
 
-// Get SchemaXmlFields Getter
+// GetSchemaXmlFields SchemaXmlFields Getter
 func (r AlitripItemSchemaAddAPIRequest) GetSchemaXmlFields() string {
 	return r._schemaXmlFields
 }

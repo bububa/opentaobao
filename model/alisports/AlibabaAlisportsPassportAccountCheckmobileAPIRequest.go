@@ -51,7 +51,7 @@ func (r AlibabaAlisportsPassportAccountCheckmobileAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is AlispAppKey Setter
+// SetAlispAppKey is AlispAppKey Setter
 // 业务appkey
 func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetAlispAppKey(_alispAppKey string) error {
 	r._alispAppKey = _alispAppKey
@@ -59,12 +59,12 @@ func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetAlispAppKey(_a
 	return nil
 }
 
-// Get AlispAppKey Getter
+// GetAlispAppKey AlispAppKey Getter
 func (r AlibabaAlisportsPassportAccountCheckmobileAPIRequest) GetAlispAppKey() string {
 	return r._alispAppKey
 }
 
-// Set is AlispTime Setter
+// SetAlispTime is AlispTime Setter
 // 调用时间戳
 func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetAlispTime(_alispTime string) error {
 	r._alispTime = _alispTime
@@ -72,12 +72,12 @@ func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetAlispTime(_ali
 	return nil
 }
 
-// Get AlispTime Getter
+// GetAlispTime AlispTime Getter
 func (r AlibabaAlisportsPassportAccountCheckmobileAPIRequest) GetAlispTime() string {
 	return r._alispTime
 }
 
-// Set is AlispSign Setter
+// SetAlispSign is AlispSign Setter
 // 签名字符串
 func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetAlispSign(_alispSign string) error {
 	r._alispSign = _alispSign
@@ -85,12 +85,12 @@ func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetAlispSign(_ali
 	return nil
 }
 
-// Get AlispSign Getter
+// GetAlispSign AlispSign Getter
 func (r AlibabaAlisportsPassportAccountCheckmobileAPIRequest) GetAlispSign() string {
 	return r._alispSign
 }
 
-// Set is AppUid Setter
+// SetAppUid is AppUid Setter
 // 合作方用户ID
 func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetAppUid(_appUid string) error {
 	r._appUid = _appUid
@@ -98,12 +98,12 @@ func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetAppUid(_appUid
 	return nil
 }
 
-// Get AppUid Getter
+// GetAppUid AppUid Getter
 func (r AlibabaAlisportsPassportAccountCheckmobileAPIRequest) GetAppUid() string {
 	return r._appUid
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 用户呢称
 func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -111,12 +111,12 @@ func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetNick(_nick str
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r AlibabaAlisportsPassportAccountCheckmobileAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 手机号
 func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -124,12 +124,12 @@ func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetMobile(_mobile
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r AlibabaAlisportsPassportAccountCheckmobileAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
-// Set is Gender Setter
+// SetGender is Gender Setter
 // 性别 0未设置 1男 2女 3保密
 func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetGender(_gender string) error {
 	r._gender = _gender
@@ -137,12 +137,12 @@ func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetGender(_gender
 	return nil
 }
 
-// Get Gender Getter
+// GetGender Gender Getter
 func (r AlibabaAlisportsPassportAccountCheckmobileAPIRequest) GetGender() string {
 	return r._gender
 }
 
-// Set is Birthday Setter
+// SetBirthday is Birthday Setter
 // 生日
 func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetBirthday(_birthday string) error {
 	r._birthday = _birthday
@@ -150,7 +150,7 @@ func (r *AlibabaAlisportsPassportAccountCheckmobileAPIRequest) SetBirthday(_birt
 	return nil
 }
 
-// Get Birthday Getter
+// GetBirthday Birthday Getter
 func (r AlibabaAlisportsPassportAccountCheckmobileAPIRequest) GetBirthday() string {
 	return r._birthday
 }

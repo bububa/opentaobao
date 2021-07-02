@@ -41,7 +41,7 @@ func (r YunosMiniappActivityCallAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Options Setter
+// SetOptions is Options Setter
 // 请求选项
 func (r *YunosMiniappActivityCallAPIRequest) SetOptions(_options *Options) error {
 	r._options = _options
@@ -49,12 +49,12 @@ func (r *YunosMiniappActivityCallAPIRequest) SetOptions(_options *Options) error
 	return nil
 }
 
-// Get Options Getter
+// GetOptions Options Getter
 func (r YunosMiniappActivityCallAPIRequest) GetOptions() *Options {
 	return r._options
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备id
 func (r *YunosMiniappActivityCallAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -62,12 +62,12 @@ func (r *YunosMiniappActivityCallAPIRequest) SetDeviceId(_deviceId string) error
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r YunosMiniappActivityCallAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动id
 func (r *YunosMiniappActivityCallAPIRequest) SetActivityId(_activityId string) error {
 	r._activityId = _activityId
@@ -75,7 +75,7 @@ func (r *YunosMiniappActivityCallAPIRequest) SetActivityId(_activityId string) e
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r YunosMiniappActivityCallAPIRequest) GetActivityId() string {
 	return r._activityId
 }

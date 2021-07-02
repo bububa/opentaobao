@@ -37,7 +37,7 @@ func (r AlibabaAscpChannelDistributorProductDetailAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is ProductDetailRequest Setter
+// SetProductDetailRequest is ProductDetailRequest Setter
 // 产品详情查询入参
 func (r *AlibabaAscpChannelDistributorProductDetailAPIRequest) SetProductDetailRequest(_productDetailRequest *ProductDetailQueryRequestForDistributor) error {
 	r._productDetailRequest = _productDetailRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpChannelDistributorProductDetailAPIRequest) SetProductDetailR
 	return nil
 }
 
-// Get ProductDetailRequest Getter
+// GetProductDetailRequest ProductDetailRequest Getter
 func (r AlibabaAscpChannelDistributorProductDetailAPIRequest) GetProductDetailRequest() *ProductDetailQueryRequestForDistributor {
 	return r._productDetailRequest
 }

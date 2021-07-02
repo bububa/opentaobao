@@ -37,7 +37,7 @@ func (r AlibabaAlihealthBookingReserveCheckinAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is CheckIn Setter
+// SetCheckIn is CheckIn Setter
 // check_in
 func (r *AlibabaAlihealthBookingReserveCheckinAPIRequest) SetCheckIn(_checkIn *IsvReserveRequest) error {
 	r._checkIn = _checkIn
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthBookingReserveCheckinAPIRequest) SetCheckIn(_checkIn *I
 	return nil
 }
 
-// Get CheckIn Getter
+// GetCheckIn CheckIn Getter
 func (r AlibabaAlihealthBookingReserveCheckinAPIRequest) GetCheckIn() *IsvReserveRequest {
 	return r._checkIn
 }

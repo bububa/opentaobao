@@ -39,7 +39,7 @@ func (r TaobaoOpenmallRefundCloseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Distributor Setter
+// SetDistributor is Distributor Setter
 // 渠道
 func (r *TaobaoOpenmallRefundCloseAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
@@ -47,12 +47,12 @@ func (r *TaobaoOpenmallRefundCloseAPIRequest) SetDistributor(_distributor string
 	return nil
 }
 
-// Get Distributor Getter
+// GetDistributor Distributor Getter
 func (r TaobaoOpenmallRefundCloseAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款ID
 func (r *TaobaoOpenmallRefundCloseAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -60,7 +60,7 @@ func (r *TaobaoOpenmallRefundCloseAPIRequest) SetRefundId(_refundId int64) error
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoOpenmallRefundCloseAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }

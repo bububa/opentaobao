@@ -37,7 +37,7 @@ func (r YunosServiceCmnsCoaMessagePushAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PushRequest Setter
+// SetPushRequest is PushRequest Setter
 // 消息推送请求对象
 func (r *YunosServiceCmnsCoaMessagePushAPIRequest) SetPushRequest(_pushRequest *PushRequest) error {
 	r._pushRequest = _pushRequest
@@ -45,7 +45,7 @@ func (r *YunosServiceCmnsCoaMessagePushAPIRequest) SetPushRequest(_pushRequest *
 	return nil
 }
 
-// Get PushRequest Getter
+// GetPushRequest PushRequest Getter
 func (r YunosServiceCmnsCoaMessagePushAPIRequest) GetPushRequest() *PushRequest {
 	return r._pushRequest
 }

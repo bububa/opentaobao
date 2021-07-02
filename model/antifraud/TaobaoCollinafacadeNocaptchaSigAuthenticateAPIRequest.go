@@ -37,7 +37,7 @@ func (r TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is SigAuthenticateContext Setter
+// SetSigAuthenticateContext is SigAuthenticateContext Setter
 // 签名串校验接口入参
 func (r *TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest) SetSigAuthenticateContext(_sigAuthenticateContext *SigAuthenticateContext) error {
 	r._sigAuthenticateContext = _sigAuthenticateContext
@@ -45,7 +45,7 @@ func (r *TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest) SetSigAuthentica
 	return nil
 }
 
-// Get SigAuthenticateContext Getter
+// GetSigAuthenticateContext SigAuthenticateContext Getter
 func (r TaobaoCollinafacadeNocaptchaSigAuthenticateAPIRequest) GetSigAuthenticateContext() *SigAuthenticateContext {
 	return r._sigAuthenticateContext
 }

@@ -39,7 +39,7 @@ func (r AlibabaKclubKcQaSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 查询参数
 func (r *AlibabaKclubKcQaSearchAPIRequest) SetQuery(_query *KcSearchQuestionQuery) error {
 	r._query = _query
@@ -47,12 +47,12 @@ func (r *AlibabaKclubKcQaSearchAPIRequest) SetQuery(_query *KcSearchQuestionQuer
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaKclubKcQaSearchAPIRequest) GetQuery() *KcSearchQuestionQuery {
 	return r._query
 }
 
-// Set is Auth Setter
+// SetAuth is Auth Setter
 // 鉴权
 func (r *AlibabaKclubKcQaSearchAPIRequest) SetAuth(_auth *TenancyAuth) error {
 	r._auth = _auth
@@ -60,7 +60,7 @@ func (r *AlibabaKclubKcQaSearchAPIRequest) SetAuth(_auth *TenancyAuth) error {
 	return nil
 }
 
-// Get Auth Getter
+// GetAuth Auth Getter
 func (r AlibabaKclubKcQaSearchAPIRequest) GetAuth() *TenancyAuth {
 	return r._auth
 }

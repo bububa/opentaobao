@@ -47,7 +47,7 @@ func (r TaobaoOpentradeSpecialUsersMarkAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Hit Setter
+// SetHit is Hit Setter
 // 是否目标用户，传入true后，用户可购买商品
 func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) SetHit(_hit bool) error {
 	r._hit = _hit
@@ -55,12 +55,12 @@ func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) SetHit(_hit bool) error {
 	return nil
 }
 
-// Get Hit Getter
+// GetHit Hit Getter
 func (r TaobaoOpentradeSpecialUsersMarkAPIRequest) GetHit() bool {
 	return r._hit
 }
 
-// Set is OpenUserIds Setter
+// SetOpenUserIds is OpenUserIds Setter
 // 本次待标记的用户列表，多个以逗号(,)分割，最大20个
 func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) SetOpenUserIds(_openUserIds []string) error {
 	r._openUserIds = _openUserIds
@@ -68,12 +68,12 @@ func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) SetOpenUserIds(_openUserIds 
 	return nil
 }
 
-// Get OpenUserIds Getter
+// GetOpenUserIds OpenUserIds Getter
 func (r TaobaoOpentradeSpecialUsersMarkAPIRequest) GetOpenUserIds() []string {
 	return r._openUserIds
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -81,12 +81,12 @@ func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) SetItemId(_itemId int64) err
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoOpentradeSpecialUsersMarkAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // 商品SKU ID，不存在传0
 func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
@@ -94,12 +94,12 @@ func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) SetSkuId(_skuId int64) error
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TaobaoOpentradeSpecialUsersMarkAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 用户状态，可任意传入，后续查询返回
 func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -107,12 +107,12 @@ func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) SetStatus(_status string) er
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoOpentradeSpecialUsersMarkAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is LimitNum Setter
+// SetLimitNum is LimitNum Setter
 // 单次购买最大限购数量
 func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) SetLimitNum(_limitNum int64) error {
 	r._limitNum = _limitNum
@@ -120,7 +120,7 @@ func (r *TaobaoOpentradeSpecialUsersMarkAPIRequest) SetLimitNum(_limitNum int64)
 	return nil
 }
 
-// Get LimitNum Getter
+// GetLimitNum LimitNum Getter
 func (r TaobaoOpentradeSpecialUsersMarkAPIRequest) GetLimitNum() int64 {
 	return r._limitNum
 }

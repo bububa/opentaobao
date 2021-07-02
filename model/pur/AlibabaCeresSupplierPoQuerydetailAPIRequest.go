@@ -37,7 +37,7 @@ func (r AlibabaCeresSupplierPoQuerydetailAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PoNo Setter
+// SetPoNo is PoNo Setter
 // 订单编号
 func (r *AlibabaCeresSupplierPoQuerydetailAPIRequest) SetPoNo(_poNo string) error {
 	r._poNo = _poNo
@@ -45,7 +45,7 @@ func (r *AlibabaCeresSupplierPoQuerydetailAPIRequest) SetPoNo(_poNo string) erro
 	return nil
 }
 
-// Get PoNo Getter
+// GetPoNo PoNo Getter
 func (r AlibabaCeresSupplierPoQuerydetailAPIRequest) GetPoNo() string {
 	return r._poNo
 }

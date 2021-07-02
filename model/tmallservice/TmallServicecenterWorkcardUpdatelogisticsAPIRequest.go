@@ -43,7 +43,7 @@ func (r TmallServicecenterWorkcardUpdatelogisticsAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 工单号
 func (r *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -51,12 +51,12 @@ func (r *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) SetWorkcardId(_wor
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterWorkcardUpdatelogisticsAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // 工单操作
 func (r *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -64,12 +64,12 @@ func (r *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) SetAction(_action 
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r TmallServicecenterWorkcardUpdatelogisticsAPIRequest) GetAction() string {
 	return r._action
 }
 
-// Set is ExpressCompany Setter
+// SetExpressCompany is ExpressCompany Setter
 // 快递公司
 func (r *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) SetExpressCompany(_expressCompany string) error {
 	r._expressCompany = _expressCompany
@@ -77,12 +77,12 @@ func (r *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) SetExpressCompany(
 	return nil
 }
 
-// Get ExpressCompany Getter
+// GetExpressCompany ExpressCompany Getter
 func (r TmallServicecenterWorkcardUpdatelogisticsAPIRequest) GetExpressCompany() string {
 	return r._expressCompany
 }
 
-// Set is ExpressCode Setter
+// SetExpressCode is ExpressCode Setter
 // 快递号
 func (r *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) SetExpressCode(_expressCode string) error {
 	r._expressCode = _expressCode
@@ -90,7 +90,7 @@ func (r *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) SetExpressCode(_ex
 	return nil
 }
 
-// Get ExpressCode Getter
+// GetExpressCode ExpressCode Getter
 func (r TmallServicecenterWorkcardUpdatelogisticsAPIRequest) GetExpressCode() string {
 	return r._expressCode
 }

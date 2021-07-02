@@ -37,7 +37,7 @@ func (r TaobaoXhotelIntlAriNotifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CacheChangeList Setter
+// SetCacheChangeList is CacheChangeList Setter
 // 缓存变更
 func (r *TaobaoXhotelIntlAriNotifyAPIRequest) SetCacheChangeList(_cacheChangeList []CacheChangeInfo) error {
 	r._cacheChangeList = _cacheChangeList
@@ -45,7 +45,7 @@ func (r *TaobaoXhotelIntlAriNotifyAPIRequest) SetCacheChangeList(_cacheChangeLis
 	return nil
 }
 
-// Get CacheChangeList Getter
+// GetCacheChangeList CacheChangeList Getter
 func (r TaobaoXhotelIntlAriNotifyAPIRequest) GetCacheChangeList() []CacheChangeInfo {
 	return r._cacheChangeList
 }

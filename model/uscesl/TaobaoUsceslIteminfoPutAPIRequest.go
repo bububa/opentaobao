@@ -103,7 +103,7 @@ func (r TaobaoUsceslIteminfoPutAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ModelNum Setter
+// SetModelNum is ModelNum Setter
 // 型号
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetModelNum(_modelNum string) error {
 	r._modelNum = _modelNum
@@ -111,12 +111,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetModelNum(_modelNum string) error 
 	return nil
 }
 
-// Get ModelNum Getter
+// GetModelNum ModelNum Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetModelNum() string {
 	return r._modelNum
 }
 
-// Set is PriceUnit Setter
+// SetPriceUnit is PriceUnit Setter
 // 价格单位
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetPriceUnit(_priceUnit string) error {
 	r._priceUnit = _priceUnit
@@ -124,12 +124,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetPriceUnit(_priceUnit string) erro
 	return nil
 }
 
-// Get PriceUnit Getter
+// GetPriceUnit PriceUnit Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetPriceUnit() string {
 	return r._priceUnit
 }
 
-// Set is BrandName Setter
+// SetBrandName is BrandName Setter
 // 品牌名
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetBrandName(_brandName string) error {
 	r._brandName = _brandName
@@ -137,12 +137,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetBrandName(_brandName string) erro
 	return nil
 }
 
-// Get BrandName Getter
+// GetBrandName BrandName Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetBrandName() string {
 	return r._brandName
 }
 
-// Set is SaleSpec Setter
+// SetSaleSpec is SaleSpec Setter
 // 销售规格
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetSaleSpec(_saleSpec string) error {
 	r._saleSpec = _saleSpec
@@ -150,12 +150,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetSaleSpec(_saleSpec string) error 
 	return nil
 }
 
-// Get SaleSpec Getter
+// GetSaleSpec SaleSpec Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetSaleSpec() string {
 	return r._saleSpec
 }
 
-// Set is CategoryName Setter
+// SetCategoryName is CategoryName Setter
 // 分类
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCategoryName(_categoryName string) error {
 	r._categoryName = _categoryName
@@ -163,12 +163,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCategoryName(_categoryName string
 	return nil
 }
 
-// Get CategoryName Getter
+// GetCategoryName CategoryName Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetCategoryName() string {
 	return r._categoryName
 }
 
-// Set is Rank Setter
+// SetRank is Rank Setter
 // 等级
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetRank(_rank string) error {
 	r._rank = _rank
@@ -176,12 +176,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetRank(_rank string) error {
 	return nil
 }
 
-// Get Rank Getter
+// GetRank Rank Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetRank() string {
 	return r._rank
 }
 
-// Set is ItemChangeStatus Setter
+// SetItemChangeStatus is ItemChangeStatus Setter
 // 商品变更状态
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemChangeStatus(_itemChangeStatus string) error {
 	r._itemChangeStatus = _itemChangeStatus
@@ -189,12 +189,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemChangeStatus(_itemChangeStatu
 	return nil
 }
 
-// Get ItemChangeStatus Getter
+// GetItemChangeStatus ItemChangeStatus Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetItemChangeStatus() string {
 	return r._itemChangeStatus
 }
 
-// Set is AcctionPrice Setter
+// SetAcctionPrice is AcctionPrice Setter
 // 实际销售价格，单位：分
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetAcctionPrice(_acctionPrice string) error {
 	r._acctionPrice = _acctionPrice
@@ -202,12 +202,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetAcctionPrice(_acctionPrice string
 	return nil
 }
 
-// Get AcctionPrice Getter
+// GetAcctionPrice AcctionPrice Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetAcctionPrice() string {
 	return r._acctionPrice
 }
 
-// Set is EnergyEfficiency Setter
+// SetEnergyEfficiency is EnergyEfficiency Setter
 // 能效
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetEnergyEfficiency(_energyEfficiency string) error {
 	r._energyEfficiency = _energyEfficiency
@@ -215,12 +215,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetEnergyEfficiency(_energyEfficienc
 	return nil
 }
 
-// Get EnergyEfficiency Getter
+// GetEnergyEfficiency EnergyEfficiency Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetEnergyEfficiency() string {
 	return r._energyEfficiency
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // 商品skuId
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetSkuId(_skuId string) error {
 	r._skuId = _skuId
@@ -228,12 +228,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetSkuId(_skuId string) error {
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetSkuId() string {
 	return r._skuId
 }
 
-// Set is PromotionStart Setter
+// SetPromotionStart is PromotionStart Setter
 // 促销开始时间:yyyy-MM-dd HH:mm:ss
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetPromotionStart(_promotionStart string) error {
 	r._promotionStart = _promotionStart
@@ -241,12 +241,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetPromotionStart(_promotionStart st
 	return nil
 }
 
-// Get PromotionStart Getter
+// GetPromotionStart PromotionStart Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetPromotionStart() string {
 	return r._promotionStart
 }
 
-// Set is ItemBarCode Setter
+// SetItemBarCode is ItemBarCode Setter
 // 商品条码
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemBarCode(_itemBarCode string) error {
 	r._itemBarCode = _itemBarCode
@@ -254,12 +254,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemBarCode(_itemBarCode string) 
 	return nil
 }
 
-// Get ItemBarCode Getter
+// GetItemBarCode ItemBarCode Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetItemBarCode() string {
 	return r._itemBarCode
 }
 
-// Set is ItemTitle Setter
+// SetItemTitle is ItemTitle Setter
 // 商品名称
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemTitle(_itemTitle string) error {
 	r._itemTitle = _itemTitle
@@ -267,12 +267,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemTitle(_itemTitle string) erro
 	return nil
 }
 
-// Get ItemTitle Getter
+// GetItemTitle ItemTitle Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetItemTitle() string {
 	return r._itemTitle
 }
 
-// Set is PromotionText Setter
+// SetPromotionText is PromotionText Setter
 // 促销文案
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetPromotionText(_promotionText string) error {
 	r._promotionText = _promotionText
@@ -280,12 +280,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetPromotionText(_promotionText stri
 	return nil
 }
 
-// Get PromotionText Getter
+// GetPromotionText PromotionText Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetPromotionText() string {
 	return r._promotionText
 }
 
-// Set is CustomizeFeatureC Setter
+// SetCustomizeFeatureC is CustomizeFeatureC Setter
 // 扩展属性C
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureC(_customizeFeatureC string) error {
 	r._customizeFeatureC = _customizeFeatureC
@@ -293,12 +293,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureC(_customizeFeatu
 	return nil
 }
 
-// Get CustomizeFeatureC Getter
+// GetCustomizeFeatureC CustomizeFeatureC Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetCustomizeFeatureC() string {
 	return r._customizeFeatureC
 }
 
-// Set is CustomizeFeatureD Setter
+// SetCustomizeFeatureD is CustomizeFeatureD Setter
 // 扩展属性D
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureD(_customizeFeatureD string) error {
 	r._customizeFeatureD = _customizeFeatureD
@@ -306,12 +306,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureD(_customizeFeatu
 	return nil
 }
 
-// Get CustomizeFeatureD Getter
+// GetCustomizeFeatureD CustomizeFeatureD Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetCustomizeFeatureD() string {
 	return r._customizeFeatureD
 }
 
-// Set is CustomizeFeatureE Setter
+// SetCustomizeFeatureE is CustomizeFeatureE Setter
 // 扩展属性E
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureE(_customizeFeatureE string) error {
 	r._customizeFeatureE = _customizeFeatureE
@@ -319,12 +319,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureE(_customizeFeatu
 	return nil
 }
 
-// Get CustomizeFeatureE Getter
+// GetCustomizeFeatureE CustomizeFeatureE Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetCustomizeFeatureE() string {
 	return r._customizeFeatureE
 }
 
-// Set is CustomizeFeatureF Setter
+// SetCustomizeFeatureF is CustomizeFeatureF Setter
 // 扩展属性F
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureF(_customizeFeatureF string) error {
 	r._customizeFeatureF = _customizeFeatureF
@@ -332,12 +332,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureF(_customizeFeatu
 	return nil
 }
 
-// Get CustomizeFeatureF Getter
+// GetCustomizeFeatureF CustomizeFeatureF Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetCustomizeFeatureF() string {
 	return r._customizeFeatureF
 }
 
-// Set is CustomizeFeatureG Setter
+// SetCustomizeFeatureG is CustomizeFeatureG Setter
 // 扩展属性G
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureG(_customizeFeatureG string) error {
 	r._customizeFeatureG = _customizeFeatureG
@@ -345,12 +345,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureG(_customizeFeatu
 	return nil
 }
 
-// Get CustomizeFeatureG Getter
+// GetCustomizeFeatureG CustomizeFeatureG Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetCustomizeFeatureG() string {
 	return r._customizeFeatureG
 }
 
-// Set is CustomizeFeatureH Setter
+// SetCustomizeFeatureH is CustomizeFeatureH Setter
 // 扩展属性H
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureH(_customizeFeatureH string) error {
 	r._customizeFeatureH = _customizeFeatureH
@@ -358,12 +358,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureH(_customizeFeatu
 	return nil
 }
 
-// Get CustomizeFeatureH Getter
+// GetCustomizeFeatureH CustomizeFeatureH Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetCustomizeFeatureH() string {
 	return r._customizeFeatureH
 }
 
-// Set is CustomizeFeatureI Setter
+// SetCustomizeFeatureI is CustomizeFeatureI Setter
 // 扩展属性I
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureI(_customizeFeatureI string) error {
 	r._customizeFeatureI = _customizeFeatureI
@@ -371,12 +371,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureI(_customizeFeatu
 	return nil
 }
 
-// Get CustomizeFeatureI Getter
+// GetCustomizeFeatureI CustomizeFeatureI Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetCustomizeFeatureI() string {
 	return r._customizeFeatureI
 }
 
-// Set is CustomizeFeatureJ Setter
+// SetCustomizeFeatureJ is CustomizeFeatureJ Setter
 // 扩展属性J
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureJ(_customizeFeatureJ string) error {
 	r._customizeFeatureJ = _customizeFeatureJ
@@ -384,12 +384,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureJ(_customizeFeatu
 	return nil
 }
 
-// Get CustomizeFeatureJ Getter
+// GetCustomizeFeatureJ CustomizeFeatureJ Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetCustomizeFeatureJ() string {
 	return r._customizeFeatureJ
 }
 
-// Set is ItemQrCode Setter
+// SetItemQrCode is ItemQrCode Setter
 // 二维码
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemQrCode(_itemQrCode string) error {
 	r._itemQrCode = _itemQrCode
@@ -397,12 +397,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemQrCode(_itemQrCode string) er
 	return nil
 }
 
-// Get ItemQrCode Getter
+// GetItemQrCode ItemQrCode Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetItemQrCode() string {
 	return r._itemQrCode
 }
 
-// Set is ItemStatus Setter
+// SetItemStatus is ItemStatus Setter
 // 商品状态0:在售 1:售罄
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemStatus(_itemStatus int64) error {
 	r._itemStatus = _itemStatus
@@ -410,12 +410,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemStatus(_itemStatus int64) err
 	return nil
 }
 
-// Get ItemStatus Getter
+// GetItemStatus ItemStatus Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetItemStatus() int64 {
 	return r._itemStatus
 }
 
-// Set is IfPromotion Setter
+// SetIfPromotion is IfPromotion Setter
 // 促销状态0:非促销 1:促销
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetIfPromotion(_ifPromotion bool) error {
 	r._ifPromotion = _ifPromotion
@@ -423,12 +423,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetIfPromotion(_ifPromotion bool) er
 	return nil
 }
 
-// Get IfPromotion Getter
+// GetIfPromotion IfPromotion Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetIfPromotion() bool {
 	return r._ifPromotion
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品编码
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -436,12 +436,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is PromotionEnd Setter
+// SetPromotionEnd is PromotionEnd Setter
 // 促销结束时间:yyyy-MM-dd HH:mm:ss
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetPromotionEnd(_promotionEnd string) error {
 	r._promotionEnd = _promotionEnd
@@ -449,12 +449,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetPromotionEnd(_promotionEnd string
 	return nil
 }
 
-// Get PromotionEnd Getter
+// GetPromotionEnd PromotionEnd Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetPromotionEnd() string {
 	return r._promotionEnd
 }
 
-// Set is PromotionReason Setter
+// SetPromotionReason is PromotionReason Setter
 // 促销原因
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetPromotionReason(_promotionReason string) error {
 	r._promotionReason = _promotionReason
@@ -462,12 +462,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetPromotionReason(_promotionReason 
 	return nil
 }
 
-// Get PromotionReason Getter
+// GetPromotionReason PromotionReason Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetPromotionReason() string {
 	return r._promotionReason
 }
 
-// Set is OriginalPrice Setter
+// SetOriginalPrice is OriginalPrice Setter
 // 商品原价
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetOriginalPrice(_originalPrice string) error {
 	r._originalPrice = _originalPrice
@@ -475,12 +475,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetOriginalPrice(_originalPrice stri
 	return nil
 }
 
-// Get OriginalPrice Getter
+// GetOriginalPrice OriginalPrice Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetOriginalPrice() string {
 	return r._originalPrice
 }
 
-// Set is ShortTitle Setter
+// SetShortTitle is ShortTitle Setter
 // 商品简称
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetShortTitle(_shortTitle string) error {
 	r._shortTitle = _shortTitle
@@ -488,12 +488,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetShortTitle(_shortTitle string) er
 	return nil
 }
 
-// Get ShortTitle Getter
+// GetShortTitle ShortTitle Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetShortTitle() string {
 	return r._shortTitle
 }
 
-// Set is CustomizeFeatureB Setter
+// SetCustomizeFeatureB is CustomizeFeatureB Setter
 // 扩展属性B
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureB(_customizeFeatureB string) error {
 	r._customizeFeatureB = _customizeFeatureB
@@ -501,12 +501,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureB(_customizeFeatu
 	return nil
 }
 
-// Get CustomizeFeatureB Getter
+// GetCustomizeFeatureB CustomizeFeatureB Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetCustomizeFeatureB() string {
 	return r._customizeFeatureB
 }
 
-// Set is ProductionPlace Setter
+// SetProductionPlace is ProductionPlace Setter
 // 产地
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetProductionPlace(_productionPlace string) error {
 	r._productionPlace = _productionPlace
@@ -514,12 +514,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetProductionPlace(_productionPlace 
 	return nil
 }
 
-// Get ProductionPlace Getter
+// GetProductionPlace ProductionPlace Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetProductionPlace() string {
 	return r._productionPlace
 }
 
-// Set is CustomizeFeatureA Setter
+// SetCustomizeFeatureA is CustomizeFeatureA Setter
 // 扩展属性A
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureA(_customizeFeatureA string) error {
 	r._customizeFeatureA = _customizeFeatureA
@@ -527,12 +527,12 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetCustomizeFeatureA(_customizeFeatu
 	return nil
 }
 
-// Get CustomizeFeatureA Getter
+// GetCustomizeFeatureA CustomizeFeatureA Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetCustomizeFeatureA() string {
 	return r._customizeFeatureA
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 门店ID
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetShopId(_shopId int64) error {
 	r._shopId = _shopId
@@ -540,7 +540,7 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetShopId(_shopId int64) error {
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetShopId() int64 {
 	return r._shopId
 }

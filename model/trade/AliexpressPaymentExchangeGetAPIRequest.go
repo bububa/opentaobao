@@ -37,7 +37,7 @@ func (r AliexpressPaymentExchangeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CheckoutExchangeRequest Setter
+// SetCheckoutExchangeRequest is CheckoutExchangeRequest Setter
 // 系统自动生成
 func (r *AliexpressPaymentExchangeGetAPIRequest) SetCheckoutExchangeRequest(_checkoutExchangeRequest *CheckoutExchangeRequest) error {
 	r._checkoutExchangeRequest = _checkoutExchangeRequest
@@ -45,7 +45,7 @@ func (r *AliexpressPaymentExchangeGetAPIRequest) SetCheckoutExchangeRequest(_che
 	return nil
 }
 
-// Get CheckoutExchangeRequest Getter
+// GetCheckoutExchangeRequest CheckoutExchangeRequest Getter
 func (r AliexpressPaymentExchangeGetAPIRequest) GetCheckoutExchangeRequest() *CheckoutExchangeRequest {
 	return r._checkoutExchangeRequest
 }

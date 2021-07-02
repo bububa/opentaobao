@@ -43,7 +43,7 @@ func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Locale Setter
+// SetLocale is Locale Setter
 // 多语言信息
 func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
@@ -51,12 +51,12 @@ func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetLocale(_locale 
 	return nil
 }
 
-// Get Locale Getter
+// GetLocale Locale Getter
 func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetLocale() string {
 	return r._locale
 }
 
-// Set is SellerParam Setter
+// SetSellerParam is SellerParam Setter
 // 商家信息
 func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetSellerParam(_sellerParam *SellerParam) error {
 	r._sellerParam = _sellerParam
@@ -64,12 +64,12 @@ func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetSellerParam(_se
 	return nil
 }
 
-// Get SellerParam Getter
+// GetSellerParam SellerParam Getter
 func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetSellerParam() *SellerParam {
 	return r._sellerParam
 }
 
-// Set is SolutionServiceResParam Setter
+// SetSolutionServiceResParam is SolutionServiceResParam Setter
 // 查询参数
 func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetSolutionServiceResParam(_solutionServiceResParam *QuerySolutionServiceResParam) error {
 	r._solutionServiceResParam = _solutionServiceResParam
@@ -77,12 +77,12 @@ func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetSolutionService
 	return nil
 }
 
-// Get SolutionServiceResParam Getter
+// GetSolutionServiceResParam SolutionServiceResParam Getter
 func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetSolutionServiceResParam() *QuerySolutionServiceResParam {
 	return r._solutionServiceResParam
 }
 
-// Set is SenderParam Setter
+// SetSenderParam is SenderParam Setter
 // 发件信息
 func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetSenderParam(_senderParam *OpenSenderParam) error {
 	r._senderParam = _senderParam
@@ -90,7 +90,7 @@ func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetSenderParam(_se
 	return nil
 }
 
-// Get SenderParam Getter
+// GetSenderParam SenderParam Getter
 func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetSenderParam() *OpenSenderParam {
 	return r._senderParam
 }

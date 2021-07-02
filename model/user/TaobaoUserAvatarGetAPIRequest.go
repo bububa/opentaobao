@@ -37,7 +37,7 @@ func (r TaobaoUserAvatarGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 混淆nick
 func (r *TaobaoUserAvatarGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -45,7 +45,7 @@ func (r *TaobaoUserAvatarGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoUserAvatarGetAPIRequest) GetNick() string {
 	return r._nick
 }

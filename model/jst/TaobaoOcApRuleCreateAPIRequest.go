@@ -39,7 +39,7 @@ func (r TaobaoOcApRuleCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DivisionRule Setter
+// SetDivisionRule is DivisionRule Setter
 // 传入比例数组后者金额数组
 func (r *TaobaoOcApRuleCreateAPIRequest) SetDivisionRule(_divisionRule []int64) error {
 	r._divisionRule = _divisionRule
@@ -47,12 +47,12 @@ func (r *TaobaoOcApRuleCreateAPIRequest) SetDivisionRule(_divisionRule []int64) 
 	return nil
 }
 
-// Get DivisionRule Getter
+// GetDivisionRule DivisionRule Getter
 func (r TaobaoOcApRuleCreateAPIRequest) GetDivisionRule() []int64 {
 	return r._divisionRule
 }
 
-// Set is ExtAttributes Setter
+// SetExtAttributes is ExtAttributes Setter
 // 规则描述相关扩展信息，divisonRule的值包含（"byAmount" 或者 "byPercentage"），excutionPeriod的值包含（ "month" 或者 "day" 或者 "now"）
 func (r *TaobaoOcApRuleCreateAPIRequest) SetExtAttributes(_extAttributes string) error {
 	r._extAttributes = _extAttributes
@@ -60,7 +60,7 @@ func (r *TaobaoOcApRuleCreateAPIRequest) SetExtAttributes(_extAttributes string)
 	return nil
 }
 
-// Get ExtAttributes Getter
+// GetExtAttributes ExtAttributes Getter
 func (r TaobaoOcApRuleCreateAPIRequest) GetExtAttributes() string {
 	return r._extAttributes
 }

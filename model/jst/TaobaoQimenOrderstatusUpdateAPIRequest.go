@@ -49,7 +49,7 @@ func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AllocationCode Setter
+// SetAllocationCode is AllocationCode Setter
 // 星盘派单号
 func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetAllocationCode(_allocationCode string) error {
 	r._allocationCode = _allocationCode
@@ -57,12 +57,12 @@ func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetAllocationCode(_allocationCo
 	return nil
 }
 
-// Get AllocationCode Getter
+// GetAllocationCode AllocationCode Getter
 func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetAllocationCode() string {
 	return r._allocationCode
 }
 
-// Set is OrderCodes Setter
+// SetOrderCodes is OrderCodes Setter
 // 淘系子订单号
 func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetOrderCodes(_orderCodes []int64) error {
 	r._orderCodes = _orderCodes
@@ -70,12 +70,12 @@ func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetOrderCodes(_orderCodes []int
 	return nil
 }
 
-// Get OrderCodes Getter
+// GetOrderCodes OrderCodes Getter
 func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetOrderCodes() []int64 {
 	return r._orderCodes
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 目标门店的商户中心门店编码
 func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -83,12 +83,12 @@ func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetStoreId(_storeId int64) erro
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 业务类型，（枚举值：FAHUO、ZITI）
 func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -96,12 +96,12 @@ func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 订单状态，门店发货包括X_SHOP_ALLOCATION、X_SHOP_DENYX_SHOP_HANDLED、X_SHOP_CANCEL_CONFIRM、X_SHOP_CANCEL_DENIED、X_MATCHED；门店自提包括X_COMMODITY_CONFIRMX_COMMODITY_TRANSER、X_TRANSFER _SUCCESS、X_SHOP_CANCEL_CONFIRM、X_MATCHED、X_SHOP_DENY
 func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -109,12 +109,12 @@ func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetStatus(_status string) error
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is Operator Setter
+// SetOperator is Operator Setter
 // 操作人
 func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
@@ -122,12 +122,12 @@ func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetOperator(_operator string) e
 	return nil
 }
 
-// Get Operator Getter
+// GetOperator Operator Getter
 func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetOperator() string {
 	return r._operator
 }
 
-// Set is ActionTime Setter
+// SetActionTime is ActionTime Setter
 // 事件发生时间
 func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetActionTime(_actionTime string) error {
 	r._actionTime = _actionTime
@@ -135,7 +135,7 @@ func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetActionTime(_actionTime strin
 	return nil
 }
 
-// Get ActionTime Getter
+// GetActionTime ActionTime Getter
 func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetActionTime() string {
 	return r._actionTime
 }

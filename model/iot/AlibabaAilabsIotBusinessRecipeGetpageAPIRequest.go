@@ -41,7 +41,7 @@ func (r AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is OpenAccountId Setter
+// SetOpenAccountId is OpenAccountId Setter
 // 开放账号id
 func (r *AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) SetOpenAccountId(_openAccountId string) error {
 	r._openAccountId = _openAccountId
@@ -49,12 +49,12 @@ func (r *AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) SetOpenAccountId(_open
 	return nil
 }
 
-// Get OpenAccountId Getter
+// GetOpenAccountId OpenAccountId Getter
 func (r AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) GetOpenAccountId() string {
 	return r._openAccountId
 }
 
-// Set is PageNum Setter
+// SetPageNum is PageNum Setter
 // 分页页码
 func (r *AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
@@ -62,12 +62,12 @@ func (r *AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) SetPageNum(_pageNum in
 	return nil
 }
 
-// Get PageNum Getter
+// GetPageNum PageNum Getter
 func (r AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) GetPageNum() int64 {
 	return r._pageNum
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
 func (r *AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) SetPageSize(_pageSize 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaAilabsIotBusinessRecipeGetpageAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

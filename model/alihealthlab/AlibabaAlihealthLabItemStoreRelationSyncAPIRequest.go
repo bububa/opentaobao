@@ -41,7 +41,7 @@ func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is IsvRelationStatus Setter
+// SetIsvRelationStatus is IsvRelationStatus Setter
 // EFFECTIVE 有效，INVALID 无效
 func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvRelationStatus(_isvRelationStatus string) error {
 	r._isvRelationStatus = _isvRelationStatus
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvRelationStatu
 	return nil
 }
 
-// Get IsvRelationStatus Getter
+// GetIsvRelationStatus IsvRelationStatus Getter
 func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetIsvRelationStatus() string {
 	return r._isvRelationStatus
 }
 
-// Set is IsvStoreCodes Setter
+// SetIsvStoreCodes is IsvStoreCodes Setter
 // isv门店编码
 func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvStoreCodes(_isvStoreCodes []string) error {
 	r._isvStoreCodes = _isvStoreCodes
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvStoreCodes(_i
 	return nil
 }
 
-// Get IsvStoreCodes Getter
+// GetIsvStoreCodes IsvStoreCodes Getter
 func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetIsvStoreCodes() []string {
 	return r._isvStoreCodes
 }
 
-// Set is IsvItemCode Setter
+// SetIsvItemCode is IsvItemCode Setter
 // 检验检测项目isv侧编码
 func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvItemCode(_isvItemCode string) error {
 	r._isvItemCode = _isvItemCode
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvItemCode(_isv
 	return nil
 }
 
-// Get IsvItemCode Getter
+// GetIsvItemCode IsvItemCode Getter
 func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetIsvItemCode() string {
 	return r._isvItemCode
 }

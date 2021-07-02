@@ -37,7 +37,7 @@ func (r TaobaoRdcAligeniusSendgoodsCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 请求参数
 func (r *TaobaoRdcAligeniusSendgoodsCancelAPIRequest) SetParam(_param *CancelGoodsDto) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *TaobaoRdcAligeniusSendgoodsCancelAPIRequest) SetParam(_param *CancelGoo
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r TaobaoRdcAligeniusSendgoodsCancelAPIRequest) GetParam() *CancelGoodsDto {
 	return r._param
 }

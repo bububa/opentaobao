@@ -41,7 +41,7 @@ func (r AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ApplyId Setter
+// SetApplyId is ApplyId Setter
 // 申请单id
 func (r *AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) SetApplyId(_applyId string) error {
 	r._applyId = _applyId
@@ -49,12 +49,12 @@ func (r *AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) SetApplyId(_applyId string
 	return nil
 }
 
-// Get ApplyId Getter
+// GetApplyId ApplyId Getter
 func (r AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) GetApplyId() string {
 	return r._applyId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 申请单状态：1：待确认，2：开票中，3：拒绝开票，4：发票已发出，0：完成开票
 func (r *AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -62,12 +62,12 @@ func (r *AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) SetStatus(_status int64) e
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is ExInfo Setter
+// SetExInfo is ExInfo Setter
 // 扩展信息,目前用于回传文本及物流消息
 func (r *AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) SetExInfo(_exInfo string) error {
 	r._exInfo = _exInfo
@@ -75,7 +75,7 @@ func (r *AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) SetExInfo(_exInfo string) 
 	return nil
 }
 
-// Get ExInfo Getter
+// GetExInfo ExInfo Getter
 func (r AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) GetExInfo() string {
 	return r._exInfo
 }

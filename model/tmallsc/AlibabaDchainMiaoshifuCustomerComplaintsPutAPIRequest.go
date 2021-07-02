@@ -37,7 +37,7 @@ func (r AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is WorkerCustomerComplaintSaveCmd Setter
+// SetWorkerCustomerComplaintSaveCmd is WorkerCustomerComplaintSaveCmd Setter
 // 服务工人客诉对象
 func (r *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) SetWorkerCustomerComplaintSaveCmd(_workerCustomerComplaintSaveCmd *WorkerCustomerComplaintSaveCmd) error {
 	r._workerCustomerComplaintSaveCmd = _workerCustomerComplaintSaveCmd
@@ -45,7 +45,7 @@ func (r *AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) SetWorkerCustome
 	return nil
 }
 
-// Get WorkerCustomerComplaintSaveCmd Getter
+// GetWorkerCustomerComplaintSaveCmd WorkerCustomerComplaintSaveCmd Getter
 func (r AlibabaDchainMiaoshifuCustomerComplaintsPutAPIRequest) GetWorkerCustomerComplaintSaveCmd() *WorkerCustomerComplaintSaveCmd {
 	return r._workerCustomerComplaintSaveCmd
 }

@@ -43,7 +43,7 @@ func (r TaobaoPromotionCouponAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Denominations Setter
+// SetDenominations is Denominations Setter
 // 优惠券的面额，必须是3，5，10，20，50，100
 func (r *TaobaoPromotionCouponAddAPIRequest) SetDenominations(_denominations int64) error {
 	r._denominations = _denominations
@@ -51,12 +51,12 @@ func (r *TaobaoPromotionCouponAddAPIRequest) SetDenominations(_denominations int
 	return nil
 }
 
-// Get Denominations Getter
+// GetDenominations Denominations Getter
 func (r TaobaoPromotionCouponAddAPIRequest) GetDenominations() int64 {
 	return r._denominations
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 优惠券的截止日期
 func (r *TaobaoPromotionCouponAddAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -64,12 +64,12 @@ func (r *TaobaoPromotionCouponAddAPIRequest) SetEndTime(_endTime string) error {
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoPromotionCouponAddAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is Condition Setter
+// SetCondition is Condition Setter
 // 订单满多少元才能用这个优惠券，500就是满500元才能使用
 func (r *TaobaoPromotionCouponAddAPIRequest) SetCondition(_condition int64) error {
 	r._condition = _condition
@@ -77,12 +77,12 @@ func (r *TaobaoPromotionCouponAddAPIRequest) SetCondition(_condition int64) erro
 	return nil
 }
 
-// Get Condition Getter
+// GetCondition Condition Getter
 func (r TaobaoPromotionCouponAddAPIRequest) GetCondition() int64 {
 	return r._condition
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 优惠券的生效时间
 func (r *TaobaoPromotionCouponAddAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -90,7 +90,7 @@ func (r *TaobaoPromotionCouponAddAPIRequest) SetStartTime(_startTime string) err
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoPromotionCouponAddAPIRequest) GetStartTime() string {
 	return r._startTime
 }

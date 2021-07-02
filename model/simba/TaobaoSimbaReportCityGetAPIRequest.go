@@ -43,7 +43,7 @@ func (r TaobaoSimbaReportCityGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 昵称
 func (r *TaobaoSimbaReportCityGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -51,12 +51,12 @@ func (r *TaobaoSimbaReportCityGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaReportCityGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is TheDate Setter
+// SetTheDate is TheDate Setter
 // 时间
 func (r *TaobaoSimbaReportCityGetAPIRequest) SetTheDate(_theDate string) error {
 	r._theDate = _theDate
@@ -64,12 +64,12 @@ func (r *TaobaoSimbaReportCityGetAPIRequest) SetTheDate(_theDate string) error {
 	return nil
 }
 
-// Get TheDate Getter
+// GetTheDate TheDate Getter
 func (r TaobaoSimbaReportCityGetAPIRequest) GetTheDate() string {
 	return r._theDate
 }
 
-// Set is Hour Setter
+// SetHour is Hour Setter
 // 当前小时
 func (r *TaobaoSimbaReportCityGetAPIRequest) SetHour(_hour string) error {
 	r._hour = _hour
@@ -77,12 +77,12 @@ func (r *TaobaoSimbaReportCityGetAPIRequest) SetHour(_hour string) error {
 	return nil
 }
 
-// Get Hour Getter
+// GetHour Hour Getter
 func (r TaobaoSimbaReportCityGetAPIRequest) GetHour() string {
 	return r._hour
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 计划id
 func (r *TaobaoSimbaReportCityGetAPIRequest) SetCampaignId(_campaignId string) error {
 	r._campaignId = _campaignId
@@ -90,7 +90,7 @@ func (r *TaobaoSimbaReportCityGetAPIRequest) SetCampaignId(_campaignId string) e
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaReportCityGetAPIRequest) GetCampaignId() string {
 	return r._campaignId
 }

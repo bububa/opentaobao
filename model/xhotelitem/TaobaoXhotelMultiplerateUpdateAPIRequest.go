@@ -70,7 +70,7 @@ func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Gid Setter
+// SetGid is Gid Setter
 // 废弃，使用out_rid
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetGid(_gid int64) error {
 	r._gid = _gid
@@ -78,12 +78,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetGid(_gid int64) error {
 	return nil
 }
 
-// Get Gid Getter
+// GetGid Gid Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetGid() int64 {
 	return r._gid
 }
 
-// Set is OutRid Setter
+// SetOutRid is OutRid Setter
 // 卖家房型ID
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetOutRid(_outRid string) error {
 	r._outRid = _outRid
@@ -91,12 +91,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetOutRid(_outRid string) err
 	return nil
 }
 
-// Get OutRid Getter
+// GetOutRid OutRid Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetOutRid() string {
 	return r._outRid
 }
 
-// Set is Rpid Setter
+// SetRpid is Rpid Setter
 // 废弃，使用rate_plan_code
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetRpid(_rpid int64) error {
 	r._rpid = _rpid
@@ -104,12 +104,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetRpid(_rpid int64) error {
 	return nil
 }
 
-// Get Rpid Getter
+// GetRpid Rpid Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetRpid() int64 {
 	return r._rpid
 }
 
-// Set is RatePlanCode Setter
+// SetRatePlanCode is RatePlanCode Setter
 // 卖家自己系统的房价code
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetRatePlanCode(_ratePlanCode string) error {
 	r._ratePlanCode = _ratePlanCode
@@ -117,12 +117,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetRatePlanCode(_ratePlanCode
 	return nil
 }
 
-// Get RatePlanCode Getter
+// GetRatePlanCode RatePlanCode Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetRatePlanCode() string {
 	return r._ratePlanCode
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 废弃
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -130,12 +130,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Occupancy Setter
+// SetOccupancy is Occupancy Setter
 // 入住人数(范围1~10)
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetOccupancy(_occupancy int64) error {
 	r._occupancy = _occupancy
@@ -143,12 +143,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetOccupancy(_occupancy int64
 	return nil
 }
 
-// Get Occupancy Getter
+// GetOccupancy Occupancy Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetOccupancy() int64 {
 	return r._occupancy
 }
 
-// Set is Lengthofstay Setter
+// SetLengthofstay is Lengthofstay Setter
 // 连住天数(范围1~5)
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetLengthofstay(_lengthofstay int64) error {
 	r._lengthofstay = _lengthofstay
@@ -156,12 +156,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetLengthofstay(_lengthofstay
 	return nil
 }
 
-// Get Lengthofstay Getter
+// GetLengthofstay Lengthofstay Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetLengthofstay() int64 {
 	return r._lengthofstay
 }
 
-// Set is InventoryPrice Setter
+// SetInventoryPrice is InventoryPrice Setter
 // 价格和库存信息。 A:use_room_inventory:是否使用房型共享库存，可选值 true false ,false时：使用房价专有库存，此时要求价格和库存必填。 B:date 日期必须为 T---T+180 日内的日期（T为当天），且不能重复 C:price 价格 int类型 取值范围1-99999999 单位为分 D:quota 库存 int 类型 取值范围 0-999（数量库存） 60000(状态库存关) 61000(状态库存开) tax为税费，addBed为加床价，addPerson为加人价1,若连住大于1，price请推送总价
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetInventoryPrice(_inventoryPrice string) error {
 	r._inventoryPrice = _inventoryPrice
@@ -169,12 +169,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetInventoryPrice(_inventoryP
 	return nil
 }
 
-// Get InventoryPrice Getter
+// GetInventoryPrice InventoryPrice Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetInventoryPrice() string {
 	return r._inventoryPrice
 }
 
-// Set is RateSwitchCal Setter
+// SetRateSwitchCal is RateSwitchCal Setter
 // 价格开关 date：开关状态控制的那一天；rate_status：开关状态(0，关闭；1，打开); checkin_status：入住开关(0，关闭；1，打开)；checkout_status：离店开关 (0，关闭；1，打开)
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetRateSwitchCal(_rateSwitchCal string) error {
 	r._rateSwitchCal = _rateSwitchCal
@@ -182,12 +182,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetRateSwitchCal(_rateSwitchC
 	return nil
 }
 
-// Get RateSwitchCal Getter
+// GetRateSwitchCal RateSwitchCal Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetRateSwitchCal() string {
 	return r._rateSwitchCal
 }
 
-// Set is CurrencyCode Setter
+// SetCurrencyCode is CurrencyCode Setter
 // 币种.CNY为人民币
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetCurrencyCode(_currencyCode string) error {
 	r._currencyCode = _currencyCode
@@ -195,12 +195,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetCurrencyCode(_currencyCode
 	return nil
 }
 
-// Get CurrencyCode Getter
+// GetCurrencyCode CurrencyCode Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetCurrencyCode() string {
 	return r._currencyCode
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 价格状态。0为不可售；1为可售，默认可售
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -208,12 +208,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetStatus(_status int64) erro
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 系统商，一般不填写，使用须申请
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -221,12 +221,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetVendor(_vendor string) err
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is Childnum Setter
+// SetChildnum is Childnum Setter
 // 儿童人数
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetChildnum(_childnum int64) error {
 	r._childnum = _childnum
@@ -234,12 +234,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetChildnum(_childnum int64) 
 	return nil
 }
 
-// Get Childnum Getter
+// GetChildnum Childnum Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetChildnum() int64 {
 	return r._childnum
 }
 
-// Set is Infantnum Setter
+// SetInfantnum is Infantnum Setter
 // 婴儿人数
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetInfantnum(_infantnum int64) error {
 	r._infantnum = _infantnum
@@ -247,12 +247,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetInfantnum(_infantnum int64
 	return nil
 }
 
-// Get Infantnum Getter
+// GetInfantnum Infantnum Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetInfantnum() int64 {
 	return r._infantnum
 }
 
-// Set is LockEndTime Setter
+// SetLockEndTime is LockEndTime Setter
 // 锁库存截止时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetLockEndTime(_lockEndTime string) error {
 	r._lockEndTime = _lockEndTime
@@ -260,12 +260,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetLockEndTime(_lockEndTime s
 	return nil
 }
 
-// Get LockEndTime Getter
+// GetLockEndTime LockEndTime Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetLockEndTime() string {
 	return r._lockEndTime
 }
 
-// Set is LockStartTime Setter
+// SetLockStartTime is LockStartTime Setter
 // 锁库存开始时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetLockStartTime(_lockStartTime string) error {
 	r._lockStartTime = _lockStartTime
@@ -273,12 +273,12 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetLockStartTime(_lockStartTi
 	return nil
 }
 
-// Get LockStartTime Getter
+// GetLockStartTime LockStartTime Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetLockStartTime() string {
 	return r._lockStartTime
 }
 
-// Set is OnlineBookingBindingInfo Setter
+// SetOnlineBookingBindingInfo is OnlineBookingBindingInfo Setter
 // 在线预约关联关系推送，priceRuleNumber：加价规则序号
 func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetOnlineBookingBindingInfo(_onlineBookingBindingInfo string) error {
 	r._onlineBookingBindingInfo = _onlineBookingBindingInfo
@@ -286,7 +286,7 @@ func (r *TaobaoXhotelMultiplerateUpdateAPIRequest) SetOnlineBookingBindingInfo(_
 	return nil
 }
 
-// Get OnlineBookingBindingInfo Getter
+// GetOnlineBookingBindingInfo OnlineBookingBindingInfo Getter
 func (r TaobaoXhotelMultiplerateUpdateAPIRequest) GetOnlineBookingBindingInfo() string {
 	return r._onlineBookingBindingInfo
 }

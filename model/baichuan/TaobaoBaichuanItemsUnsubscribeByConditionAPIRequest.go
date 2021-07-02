@@ -37,7 +37,7 @@ func (r TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Condition Setter
+// SetCondition is Condition Setter
 // 删除条件
 func (r *TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest) SetCondition(_condition *Condition) error {
 	r._condition = _condition
@@ -45,7 +45,7 @@ func (r *TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest) SetCondition(_cond
 	return nil
 }
 
-// Get Condition Getter
+// GetCondition Condition Getter
 func (r TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest) GetCondition() *Condition {
 	return r._condition
 }

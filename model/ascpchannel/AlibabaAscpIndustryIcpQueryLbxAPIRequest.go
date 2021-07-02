@@ -37,7 +37,7 @@ func (r AlibabaAscpIndustryIcpQueryLbxAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IcpOrderCode Setter
+// SetIcpOrderCode is IcpOrderCode Setter
 // icps订单号
 func (r *AlibabaAscpIndustryIcpQueryLbxAPIRequest) SetIcpOrderCode(_icpOrderCode string) error {
 	r._icpOrderCode = _icpOrderCode
@@ -45,7 +45,7 @@ func (r *AlibabaAscpIndustryIcpQueryLbxAPIRequest) SetIcpOrderCode(_icpOrderCode
 	return nil
 }
 
-// Get IcpOrderCode Getter
+// GetIcpOrderCode IcpOrderCode Getter
 func (r AlibabaAscpIndustryIcpQueryLbxAPIRequest) GetIcpOrderCode() string {
 	return r._icpOrderCode
 }

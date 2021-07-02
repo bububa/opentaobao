@@ -44,7 +44,7 @@ func (r AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TraceId Setter
+// SetTraceId is TraceId Setter
 // 32位字符串
 func (r *AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) SetTraceId(_traceId string) error {
 	r._traceId = _traceId
@@ -52,12 +52,12 @@ func (r *AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) SetTraceId(_traceId string
 	return nil
 }
 
-// Get TraceId Getter
+// GetTraceId TraceId Getter
 func (r AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) GetTraceId() string {
 	return r._traceId
 }
 
-// Set is CaseId Setter
+// SetCaseId is CaseId Setter
 // 方案id
 func (r *AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) SetCaseId(_caseId string) error {
 	r._caseId = _caseId
@@ -65,12 +65,12 @@ func (r *AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) SetCaseId(_caseId string) 
 	return nil
 }
 
-// Get CaseId Getter
+// GetCaseId CaseId Getter
 func (r AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) GetCaseId() string {
 	return r._caseId
 }
 
-// Set is PicUrl Setter
+// SetPicUrl is PicUrl Setter
 // 图片的地址
 func (r *AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) SetPicUrl(_picUrl string) error {
 	r._picUrl = _picUrl
@@ -78,12 +78,12 @@ func (r *AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) SetPicUrl(_picUrl string) 
 	return nil
 }
 
-// Get PicUrl Getter
+// GetPicUrl PicUrl Getter
 func (r AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) GetPicUrl() string {
 	return r._picUrl
 }
 
-// Set is PicType Setter
+// SetPicType is PicType Setter
 // 图片类型
 func (r *AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) SetPicType(_picType string) error {
 	r._picType = _picType
@@ -91,7 +91,7 @@ func (r *AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) SetPicType(_picType string
 	return nil
 }
 
-// Get PicType Getter
+// GetPicType PicType Getter
 func (r AlibabaIhomeCtomCaseMainpicUpdateAPIRequest) GetPicType() string {
 	return r._picType
 }

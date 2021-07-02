@@ -43,7 +43,7 @@ func (r TaobaoCaipiaoLotterySendbynickAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 彩票接收方nick， 不可为空、""。
 func (r *TaobaoCaipiaoLotterySendbynickAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -51,12 +51,12 @@ func (r *TaobaoCaipiaoLotterySendbynickAPIRequest) SetBuyerNick(_buyerNick strin
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r TaobaoCaipiaoLotterySendbynickAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }
 
-// Set is LotteryTypeId Setter
+// SetLotteryTypeId is LotteryTypeId Setter
 // 彩种ID，此彩种ID为彩票系统中的序号。
 func (r *TaobaoCaipiaoLotterySendbynickAPIRequest) SetLotteryTypeId(_lotteryTypeId int64) error {
 	r._lotteryTypeId = _lotteryTypeId
@@ -64,12 +64,12 @@ func (r *TaobaoCaipiaoLotterySendbynickAPIRequest) SetLotteryTypeId(_lotteryType
 	return nil
 }
 
-// Get LotteryTypeId Getter
+// GetLotteryTypeId LotteryTypeId Getter
 func (r TaobaoCaipiaoLotterySendbynickAPIRequest) GetLotteryTypeId() int64 {
 	return r._lotteryTypeId
 }
 
-// Set is StakeCount Setter
+// SetStakeCount is StakeCount Setter
 // 彩票注数，不可为空、0和负数，最大值为100。
 func (r *TaobaoCaipiaoLotterySendbynickAPIRequest) SetStakeCount(_stakeCount int64) error {
 	r._stakeCount = _stakeCount
@@ -77,12 +77,12 @@ func (r *TaobaoCaipiaoLotterySendbynickAPIRequest) SetStakeCount(_stakeCount int
 	return nil
 }
 
-// Get StakeCount Getter
+// GetStakeCount StakeCount Getter
 func (r TaobaoCaipiaoLotterySendbynickAPIRequest) GetStakeCount() int64 {
 	return r._stakeCount
 }
 
-// Set is SweetyWords Setter
+// SetSweetyWords is SweetyWords Setter
 // 送彩票给接收方的赠言。 不能超过20个字符，1个中文字符、1个英文字母及1个数字等均当作一个字符，如果超过，则会截取。
 func (r *TaobaoCaipiaoLotterySendbynickAPIRequest) SetSweetyWords(_sweetyWords string) error {
 	r._sweetyWords = _sweetyWords
@@ -90,7 +90,7 @@ func (r *TaobaoCaipiaoLotterySendbynickAPIRequest) SetSweetyWords(_sweetyWords s
 	return nil
 }
 
-// Get SweetyWords Getter
+// GetSweetyWords SweetyWords Getter
 func (r TaobaoCaipiaoLotterySendbynickAPIRequest) GetSweetyWords() string {
 	return r._sweetyWords
 }

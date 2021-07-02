@@ -39,7 +39,7 @@ func (r AlibabaAliqinTccTradeIdentityGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 订单编号
 func (r *AlibabaAliqinTccTradeIdentityGetAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
@@ -47,12 +47,12 @@ func (r *AlibabaAliqinTccTradeIdentityGetAPIRequest) SetBizOrderId(_bizOrderId i
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r AlibabaAliqinTccTradeIdentityGetAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }
 
-// Set is SellerNick Setter
+// SetSellerNick is SellerNick Setter
 // 店铺名称
 func (r *AlibabaAliqinTccTradeIdentityGetAPIRequest) SetSellerNick(_sellerNick string) error {
 	r._sellerNick = _sellerNick
@@ -60,7 +60,7 @@ func (r *AlibabaAliqinTccTradeIdentityGetAPIRequest) SetSellerNick(_sellerNick s
 	return nil
 }
 
-// Get SellerNick Getter
+// GetSellerNick SellerNick Getter
 func (r AlibabaAliqinTccTradeIdentityGetAPIRequest) GetSellerNick() string {
 	return r._sellerNick
 }

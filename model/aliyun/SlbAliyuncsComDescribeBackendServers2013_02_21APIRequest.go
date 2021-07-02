@@ -39,7 +39,7 @@ func (r SlbAliyuncsComDescribeBackendServers2013_02_21APIRequest) GetApiParams()
 	return params
 }
 
-// Set is LoadBalancerId Setter
+// SetLoadBalancerId is LoadBalancerId Setter
 // loadBalancerId
 func (r *SlbAliyuncsComDescribeBackendServers2013_02_21APIRequest) SetLoadBalancerId(_loadBalancerId string) error {
 	r._loadBalancerId = _loadBalancerId
@@ -47,12 +47,12 @@ func (r *SlbAliyuncsComDescribeBackendServers2013_02_21APIRequest) SetLoadBalanc
 	return nil
 }
 
-// Get LoadBalancerId Getter
+// GetLoadBalancerId LoadBalancerId Getter
 func (r SlbAliyuncsComDescribeBackendServers2013_02_21APIRequest) GetLoadBalancerId() string {
 	return r._loadBalancerId
 }
 
-// Set is ListenerPort Setter
+// SetListenerPort is ListenerPort Setter
 // listenerPort
 func (r *SlbAliyuncsComDescribeBackendServers2013_02_21APIRequest) SetListenerPort(_listenerPort int64) error {
 	r._listenerPort = _listenerPort
@@ -60,7 +60,7 @@ func (r *SlbAliyuncsComDescribeBackendServers2013_02_21APIRequest) SetListenerPo
 	return nil
 }
 
-// Get ListenerPort Getter
+// GetListenerPort ListenerPort Getter
 func (r SlbAliyuncsComDescribeBackendServers2013_02_21APIRequest) GetListenerPort() int64 {
 	return r._listenerPort
 }

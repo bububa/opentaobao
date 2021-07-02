@@ -39,7 +39,7 @@ func (r TaobaoQianniuTaskCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MetaId Setter
+// SetMetaId is MetaId Setter
 // 任务元数据ID
 func (r *TaobaoQianniuTaskCancelAPIRequest) SetMetaId(_metaId int64) error {
 	r._metaId = _metaId
@@ -47,12 +47,12 @@ func (r *TaobaoQianniuTaskCancelAPIRequest) SetMetaId(_metaId int64) error {
 	return nil
 }
 
-// Get MetaId Getter
+// GetMetaId MetaId Getter
 func (r TaobaoQianniuTaskCancelAPIRequest) GetMetaId() int64 {
 	return r._metaId
 }
 
-// Set is Memo Setter
+// SetMemo is Memo Setter
 // 任务备注
 func (r *TaobaoQianniuTaskCancelAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
@@ -60,7 +60,7 @@ func (r *TaobaoQianniuTaskCancelAPIRequest) SetMemo(_memo string) error {
 	return nil
 }
 
-// Get Memo Getter
+// GetMemo Memo Getter
 func (r TaobaoQianniuTaskCancelAPIRequest) GetMemo() string {
 	return r._memo
 }

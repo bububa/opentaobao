@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenPushfaceelementAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is PushFaceElementParamList Setter
+// SetPushFaceElementParamList is PushFaceElementParamList Setter
 // 入参pushFaceElementParamList
 func (r *AlibabaDamaiMevOpenPushfaceelementAPIRequest) SetPushFaceElementParamList(_pushFaceElementParamList []ThirdFaceElementPushOpenParam) error {
 	r._pushFaceElementParamList = _pushFaceElementParamList
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenPushfaceelementAPIRequest) SetPushFaceElementParamLi
 	return nil
 }
 
-// Get PushFaceElementParamList Getter
+// GetPushFaceElementParamList PushFaceElementParamList Getter
 func (r AlibabaDamaiMevOpenPushfaceelementAPIRequest) GetPushFaceElementParamList() []ThirdFaceElementPushOpenParam {
 	return r._pushFaceElementParamList
 }

@@ -37,7 +37,7 @@ func (r TaobaoBusTvmcreateorderSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamTVMCreateOrderRQ Setter
+// SetParamTVMCreateOrderRQ is ParamTVMCreateOrderRQ Setter
 // 创建订单对象
 func (r *TaobaoBusTvmcreateorderSetAPIRequest) SetParamTVMCreateOrderRQ(_paramTVMCreateOrderRQ *TvmCreateOrderRq) error {
 	r._paramTVMCreateOrderRQ = _paramTVMCreateOrderRQ
@@ -45,7 +45,7 @@ func (r *TaobaoBusTvmcreateorderSetAPIRequest) SetParamTVMCreateOrderRQ(_paramTV
 	return nil
 }
 
-// Get ParamTVMCreateOrderRQ Getter
+// GetParamTVMCreateOrderRQ ParamTVMCreateOrderRQ Getter
 func (r TaobaoBusTvmcreateorderSetAPIRequest) GetParamTVMCreateOrderRQ() *TvmCreateOrderRq {
 	return r._paramTVMCreateOrderRQ
 }

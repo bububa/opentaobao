@@ -37,7 +37,7 @@ func (r AlibabaIdleIsvOrderDealrefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamAppraiseIsvRefundRequest Setter
+// SetParamAppraiseIsvRefundRequest is ParamAppraiseIsvRefundRequest Setter
 // 退款参数
 func (r *AlibabaIdleIsvOrderDealrefundAPIRequest) SetParamAppraiseIsvRefundRequest(_paramAppraiseIsvRefundRequest *AppraiseIsvRefundRequest) error {
 	r._paramAppraiseIsvRefundRequest = _paramAppraiseIsvRefundRequest
@@ -45,7 +45,7 @@ func (r *AlibabaIdleIsvOrderDealrefundAPIRequest) SetParamAppraiseIsvRefundReque
 	return nil
 }
 
-// Get ParamAppraiseIsvRefundRequest Getter
+// GetParamAppraiseIsvRefundRequest ParamAppraiseIsvRefundRequest Getter
 func (r AlibabaIdleIsvOrderDealrefundAPIRequest) GetParamAppraiseIsvRefundRequest() *AppraiseIsvRefundRequest {
 	return r._paramAppraiseIsvRefundRequest
 }

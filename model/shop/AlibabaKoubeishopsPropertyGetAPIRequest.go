@@ -37,7 +37,7 @@ func (r AlibabaKoubeishopsPropertyGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOpenApiSearchRequest Setter
+// SetParamOpenApiSearchRequest is ParamOpenApiSearchRequest Setter
 // 入参
 func (r *AlibabaKoubeishopsPropertyGetAPIRequest) SetParamOpenApiSearchRequest(_paramOpenApiSearchRequest *OpenApiSearchRequest) error {
 	r._paramOpenApiSearchRequest = _paramOpenApiSearchRequest
@@ -45,7 +45,7 @@ func (r *AlibabaKoubeishopsPropertyGetAPIRequest) SetParamOpenApiSearchRequest(_
 	return nil
 }
 
-// Get ParamOpenApiSearchRequest Getter
+// GetParamOpenApiSearchRequest ParamOpenApiSearchRequest Getter
 func (r AlibabaKoubeishopsPropertyGetAPIRequest) GetParamOpenApiSearchRequest() *OpenApiSearchRequest {
 	return r._paramOpenApiSearchRequest
 }

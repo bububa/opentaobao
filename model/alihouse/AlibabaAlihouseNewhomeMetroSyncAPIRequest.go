@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeMetroSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BaseMetroLineDto Setter
+// SetBaseMetroLineDto is BaseMetroLineDto Setter
 // 地铁入参数据
 func (r *AlibabaAlihouseNewhomeMetroSyncAPIRequest) SetBaseMetroLineDto(_baseMetroLineDto *BaseMetroLineDto) error {
 	r._baseMetroLineDto = _baseMetroLineDto
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeMetroSyncAPIRequest) SetBaseMetroLineDto(_baseMet
 	return nil
 }
 
-// Get BaseMetroLineDto Getter
+// GetBaseMetroLineDto BaseMetroLineDto Getter
 func (r AlibabaAlihouseNewhomeMetroSyncAPIRequest) GetBaseMetroLineDto() *BaseMetroLineDto {
 	return r._baseMetroLineDto
 }

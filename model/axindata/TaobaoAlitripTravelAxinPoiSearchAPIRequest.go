@@ -37,7 +37,7 @@ func (r TaobaoAlitripTravelAxinPoiSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is KeyWord Setter
+// SetKeyWord is KeyWord Setter
 // 搜索关键词
 func (r *TaobaoAlitripTravelAxinPoiSearchAPIRequest) SetKeyWord(_keyWord string) error {
 	r._keyWord = _keyWord
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripTravelAxinPoiSearchAPIRequest) SetKeyWord(_keyWord string)
 	return nil
 }
 
-// Get KeyWord Getter
+// GetKeyWord KeyWord Getter
 func (r TaobaoAlitripTravelAxinPoiSearchAPIRequest) GetKeyWord() string {
 	return r._keyWord
 }

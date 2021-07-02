@@ -52,7 +52,7 @@ func (r TmallServicecenterWorkerUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Worker Setter
+// SetWorker is Worker Setter
 // 工人信息
 func (r *TmallServicecenterWorkerUpdateAPIRequest) SetWorker(_worker *WorkerDto) error {
 	r._worker = _worker
@@ -60,7 +60,7 @@ func (r *TmallServicecenterWorkerUpdateAPIRequest) SetWorker(_worker *WorkerDto)
 	return nil
 }
 
-// Get Worker Getter
+// GetWorker Worker Getter
 func (r TmallServicecenterWorkerUpdateAPIRequest) GetWorker() *WorkerDto {
 	return r._worker
 }

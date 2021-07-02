@@ -49,7 +49,7 @@ func (r YunosTvpubadminDataQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TableName Setter
+// SetTableName is TableName Setter
 // 表名
 func (r *YunosTvpubadminDataQueryAPIRequest) SetTableName(_tableName string) error {
 	r._tableName = _tableName
@@ -57,12 +57,12 @@ func (r *YunosTvpubadminDataQueryAPIRequest) SetTableName(_tableName string) err
 	return nil
 }
 
-// Get TableName Getter
+// GetTableName TableName Getter
 func (r YunosTvpubadminDataQueryAPIRequest) GetTableName() string {
 	return r._tableName
 }
 
-// Set is Columns Setter
+// SetColumns is Columns Setter
 // 列名
 func (r *YunosTvpubadminDataQueryAPIRequest) SetColumns(_columns string) error {
 	r._columns = _columns
@@ -70,12 +70,12 @@ func (r *YunosTvpubadminDataQueryAPIRequest) SetColumns(_columns string) error {
 	return nil
 }
 
-// Get Columns Getter
+// GetColumns Columns Getter
 func (r YunosTvpubadminDataQueryAPIRequest) GetColumns() string {
 	return r._columns
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // UUID
 func (r *YunosTvpubadminDataQueryAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -83,12 +83,12 @@ func (r *YunosTvpubadminDataQueryAPIRequest) SetUuid(_uuid string) error {
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r YunosTvpubadminDataQueryAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is DataTypeId Setter
+// SetDataTypeId is DataTypeId Setter
 // 数据类型
 func (r *YunosTvpubadminDataQueryAPIRequest) SetDataTypeId(_dataTypeId int64) error {
 	r._dataTypeId = _dataTypeId
@@ -96,12 +96,12 @@ func (r *YunosTvpubadminDataQueryAPIRequest) SetDataTypeId(_dataTypeId int64) er
 	return nil
 }
 
-// Get DataTypeId Getter
+// GetDataTypeId DataTypeId Getter
 func (r YunosTvpubadminDataQueryAPIRequest) GetDataTypeId() int64 {
 	return r._dataTypeId
 }
 
-// Set is Date Setter
+// SetDate is Date Setter
 // 日期
 func (r *YunosTvpubadminDataQueryAPIRequest) SetDate(_date string) error {
 	r._date = _date
@@ -109,12 +109,12 @@ func (r *YunosTvpubadminDataQueryAPIRequest) SetDate(_date string) error {
 	return nil
 }
 
-// Get Date Getter
+// GetDate Date Getter
 func (r YunosTvpubadminDataQueryAPIRequest) GetDate() string {
 	return r._date
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *YunosTvpubadminDataQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -122,12 +122,12 @@ func (r *YunosTvpubadminDataQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r YunosTvpubadminDataQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页个数
 func (r *YunosTvpubadminDataQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -135,7 +135,7 @@ func (r *YunosTvpubadminDataQueryAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r YunosTvpubadminDataQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

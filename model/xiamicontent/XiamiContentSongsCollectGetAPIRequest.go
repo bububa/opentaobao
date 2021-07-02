@@ -39,7 +39,7 @@ func (r XiamiContentSongsCollectGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CollectId Setter
+// SetCollectId is CollectId Setter
 // 歌单id
 func (r *XiamiContentSongsCollectGetAPIRequest) SetCollectId(_collectId int64) error {
 	r._collectId = _collectId
@@ -47,12 +47,12 @@ func (r *XiamiContentSongsCollectGetAPIRequest) SetCollectId(_collectId int64) e
 	return nil
 }
 
-// Get CollectId Getter
+// GetCollectId CollectId Getter
 func (r XiamiContentSongsCollectGetAPIRequest) GetCollectId() int64 {
 	return r._collectId
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 分页信息
 func (r *XiamiContentSongsCollectGetAPIRequest) SetPage(_page *PagingVo) error {
 	r._page = _page
@@ -60,7 +60,7 @@ func (r *XiamiContentSongsCollectGetAPIRequest) SetPage(_page *PagingVo) error {
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r XiamiContentSongsCollectGetAPIRequest) GetPage() *PagingVo {
 	return r._page
 }

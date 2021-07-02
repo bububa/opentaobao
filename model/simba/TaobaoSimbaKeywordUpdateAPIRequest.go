@@ -37,7 +37,7 @@ func (r TaobaoSimbaKeywordUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Bidwords Setter
+// SetBidwords is Bidwords Setter
 // 关键词相关信息
 func (r *TaobaoSimbaKeywordUpdateAPIRequest) SetBidwords(_bidwords []SiriusBidwordDto) error {
 	r._bidwords = _bidwords
@@ -45,7 +45,7 @@ func (r *TaobaoSimbaKeywordUpdateAPIRequest) SetBidwords(_bidwords []SiriusBidwo
 	return nil
 }
 
-// Get Bidwords Getter
+// GetBidwords Bidwords Getter
 func (r TaobaoSimbaKeywordUpdateAPIRequest) GetBidwords() []SiriusBidwordDto {
 	return r._bidwords
 }

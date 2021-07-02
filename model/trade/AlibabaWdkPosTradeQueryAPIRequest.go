@@ -37,7 +37,7 @@ func (r AlibabaWdkPosTradeQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryRequest Setter
+// SetQueryRequest is QueryRequest Setter
 // 查询请求
 func (r *AlibabaWdkPosTradeQueryAPIRequest) SetQueryRequest(_queryRequest *FastBuyPosQueryRequest) error {
 	r._queryRequest = _queryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkPosTradeQueryAPIRequest) SetQueryRequest(_queryRequest *FastB
 	return nil
 }
 
-// Get QueryRequest Getter
+// GetQueryRequest QueryRequest Getter
 func (r AlibabaWdkPosTradeQueryAPIRequest) GetQueryRequest() *FastBuyPosQueryRequest {
 	return r._queryRequest
 }

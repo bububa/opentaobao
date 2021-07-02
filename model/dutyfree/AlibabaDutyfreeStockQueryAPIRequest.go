@@ -37,7 +37,7 @@ func (r AlibabaDutyfreeStockQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BarCode Setter
+// SetBarCode is BarCode Setter
 // 条形码
 func (r *AlibabaDutyfreeStockQueryAPIRequest) SetBarCode(_barCode string) error {
 	r._barCode = _barCode
@@ -45,7 +45,7 @@ func (r *AlibabaDutyfreeStockQueryAPIRequest) SetBarCode(_barCode string) error 
 	return nil
 }
 
-// Get BarCode Getter
+// GetBarCode BarCode Getter
 func (r AlibabaDutyfreeStockQueryAPIRequest) GetBarCode() string {
 	return r._barCode
 }

@@ -37,7 +37,7 @@ func (r AlibabaAliqinFcVoiceNumCancelcallAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CallId Setter
+// SetCallId is CallId Setter
 // 呼叫唯一id
 func (r *AlibabaAliqinFcVoiceNumCancelcallAPIRequest) SetCallId(_callId string) error {
 	r._callId = _callId
@@ -45,7 +45,7 @@ func (r *AlibabaAliqinFcVoiceNumCancelcallAPIRequest) SetCallId(_callId string) 
 	return nil
 }
 
-// Get CallId Getter
+// GetCallId CallId Getter
 func (r AlibabaAliqinFcVoiceNumCancelcallAPIRequest) GetCallId() string {
 	return r._callId
 }

@@ -43,7 +43,7 @@ func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 仓库code
 func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetStoreCode(_storeCo
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is AuditType Setter
+// SetAuditType is AuditType Setter
 // 审批业务类型
 func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetAuditType(_auditType string) error {
 	r._auditType = _auditType
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetAuditType(_auditTy
 	return nil
 }
 
-// Get AuditType Getter
+// GetAuditType AuditType Getter
 func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetAuditType() string {
 	return r._auditType
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 审批内容
 func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetContent(_content s
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetContent() string {
 	return r._content
 }
 
-// Set is BizNo Setter
+// SetBizNo is BizNo Setter
 // 业务单号
 func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetBizNo(_bizNo string) error {
 	r._bizNo = _bizNo
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthStoreCertificateCreateAPIRequest) SetBizNo(_bizNo strin
 	return nil
 }
 
-// Get BizNo Getter
+// GetBizNo BizNo Getter
 func (r AlibabaAlihealthStoreCertificateCreateAPIRequest) GetBizNo() string {
 	return r._bizNo
 }

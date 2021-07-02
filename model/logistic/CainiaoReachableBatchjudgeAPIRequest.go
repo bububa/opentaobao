@@ -41,7 +41,7 @@ func (r CainiaoReachableBatchjudgeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ClientInfo Setter
+// SetClientInfo is ClientInfo Setter
 // 调用方对象
 func (r *CainiaoReachableBatchjudgeAPIRequest) SetClientInfo(_clientInfo *ClientInfoDto) error {
 	r._clientInfo = _clientInfo
@@ -49,12 +49,12 @@ func (r *CainiaoReachableBatchjudgeAPIRequest) SetClientInfo(_clientInfo *Client
 	return nil
 }
 
-// Get ClientInfo Getter
+// GetClientInfo ClientInfo Getter
 func (r CainiaoReachableBatchjudgeAPIRequest) GetClientInfo() *ClientInfoDto {
 	return r._clientInfo
 }
 
-// Set is AddressType Setter
+// SetAddressType is AddressType Setter
 // 1:快递 2:快运
 func (r *CainiaoReachableBatchjudgeAPIRequest) SetAddressType(_addressType int64) error {
 	r._addressType = _addressType
@@ -62,12 +62,12 @@ func (r *CainiaoReachableBatchjudgeAPIRequest) SetAddressType(_addressType int64
 	return nil
 }
 
-// Get AddressType Getter
+// GetAddressType AddressType Getter
 func (r CainiaoReachableBatchjudgeAPIRequest) GetAddressType() int64 {
 	return r._addressType
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // 收发信息
 func (r *CainiaoReachableBatchjudgeAPIRequest) SetData(_data *RoutingReachableBatchRequestDto) error {
 	r._data = _data
@@ -75,7 +75,7 @@ func (r *CainiaoReachableBatchjudgeAPIRequest) SetData(_data *RoutingReachableBa
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r CainiaoReachableBatchjudgeAPIRequest) GetData() *RoutingReachableBatchRequestDto {
 	return r._data
 }

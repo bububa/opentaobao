@@ -43,7 +43,7 @@ func (r TaobaoAlitripItFareBatchaddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AddType Setter
+// SetAddType is AddType Setter
 // 新增类型，1 自有政策单程 2 自有政策往返 3 销售规则
 func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetAddType(_addType int64) error {
 	r._addType = _addType
@@ -51,12 +51,12 @@ func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetAddType(_addType int64) error
 	return nil
 }
 
-// Get AddType Getter
+// GetAddType AddType Getter
 func (r TaobaoAlitripItFareBatchaddAPIRequest) GetAddType() int64 {
 	return r._addType
 }
 
-// Set is Bytes Setter
+// SetBytes is Bytes Setter
 // 文本zip压缩后的数据字节流
 func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetBytes(_bytes *model.File) error {
 	r._bytes = _bytes
@@ -64,12 +64,12 @@ func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetBytes(_bytes *model.File) err
 	return nil
 }
 
-// Get Bytes Getter
+// GetBytes Bytes Getter
 func (r TaobaoAlitripItFareBatchaddAPIRequest) GetBytes() *model.File {
 	return r._bytes
 }
 
-// Set is DataType Setter
+// SetDataType is DataType Setter
 // 数据格式类型，1 淘宝 2 携程
 func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetDataType(_dataType int64) error {
 	r._dataType = _dataType
@@ -77,12 +77,12 @@ func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetDataType(_dataType int64) err
 	return nil
 }
 
-// Get DataType Getter
+// GetDataType DataType Getter
 func (r TaobaoAlitripItFareBatchaddAPIRequest) GetDataType() int64 {
 	return r._dataType
 }
 
-// Set is ExtendAttributes Setter
+// SetExtendAttributes is ExtendAttributes Setter
 // json格式的字符串，扩展属性，预留
 func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetExtendAttributes(_extendAttributes string) error {
 	r._extendAttributes = _extendAttributes
@@ -90,7 +90,7 @@ func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetExtendAttributes(_extendAttri
 	return nil
 }
 
-// Get ExtendAttributes Getter
+// GetExtendAttributes ExtendAttributes Getter
 func (r TaobaoAlitripItFareBatchaddAPIRequest) GetExtendAttributes() string {
 	return r._extendAttributes
 }

@@ -39,7 +39,7 @@ func (r YunosOsupdateVersionstatusUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 升级任务ID
 func (r *YunosOsupdateVersionstatusUpdateAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -47,12 +47,12 @@ func (r *YunosOsupdateVersionstatusUpdateAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r YunosOsupdateVersionstatusUpdateAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 状态值
 func (r *YunosOsupdateVersionstatusUpdateAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -60,7 +60,7 @@ func (r *YunosOsupdateVersionstatusUpdateAPIRequest) SetStatus(_status string) e
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r YunosOsupdateVersionstatusUpdateAPIRequest) GetStatus() string {
 	return r._status
 }

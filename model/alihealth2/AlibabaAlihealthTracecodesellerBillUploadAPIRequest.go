@@ -51,7 +51,7 @@ func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is SkeyCode Setter
+// SetSkeyCode is SkeyCode Setter
 // 身份认证
 func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetSkeyCode(_skeyCode string) error {
 	r._skeyCode = _skeyCode
@@ -59,12 +59,12 @@ func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetSkeyCode(_skeyC
 	return nil
 }
 
-// Get SkeyCode Getter
+// GetSkeyCode SkeyCode Getter
 func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetSkeyCode() string {
 	return r._skeyCode
 }
 
-// Set is EntInfoId Setter
+// SetEntInfoId is EntInfoId Setter
 // 商家id
 func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetEntInfoId(_entInfoId int64) error {
 	r._entInfoId = _entInfoId
@@ -72,12 +72,12 @@ func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetEntInfoId(_entI
 	return nil
 }
 
-// Get EntInfoId Getter
+// GetEntInfoId EntInfoId Getter
 func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetEntInfoId() int64 {
 	return r._entInfoId
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据编号
 func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -85,12 +85,12 @@ func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetBillCode(_billC
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 出入库类型
 func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -98,12 +98,12 @@ func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetType(_type stri
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is Time Setter
+// SetTime is Time Setter
 // 出入库时间 精确到 年 月 日 时 分 秒
 func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetTime(_time string) error {
 	r._time = _time
@@ -111,12 +111,12 @@ func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetTime(_time stri
 	return nil
 }
 
-// Get Time Getter
+// GetTime Time Getter
 func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetTime() string {
 	return r._time
 }
 
-// Set is WarehouseId Setter
+// SetWarehouseId is WarehouseId Setter
 // 自己仓库id
 func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetWarehouseId(_warehouseId int64) error {
 	r._warehouseId = _warehouseId
@@ -124,12 +124,12 @@ func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetWarehouseId(_wa
 	return nil
 }
 
-// Get WarehouseId Getter
+// GetWarehouseId WarehouseId Getter
 func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetWarehouseId() int64 {
 	return r._warehouseId
 }
 
-// Set is EntMerchantId Setter
+// SetEntMerchantId is EntMerchantId Setter
 // 渠道商id
 func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetEntMerchantId(_entMerchantId int64) error {
 	r._entMerchantId = _entMerchantId
@@ -137,12 +137,12 @@ func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetEntMerchantId(_
 	return nil
 }
 
-// Get EntMerchantId Getter
+// GetEntMerchantId EntMerchantId Getter
 func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetEntMerchantId() int64 {
 	return r._entMerchantId
 }
 
-// Set is CodeInfo Setter
+// SetCodeInfo is CodeInfo Setter
 // 把txt格式的文件转成16进制的字符串，txt文件是每个码一行
 func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetCodeInfo(_codeInfo string) error {
 	r._codeInfo = _codeInfo
@@ -150,7 +150,7 @@ func (r *AlibabaAlihealthTracecodesellerBillUploadAPIRequest) SetCodeInfo(_codeI
 	return nil
 }
 
-// Get CodeInfo Getter
+// GetCodeInfo CodeInfo Getter
 func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetCodeInfo() string {
 	return r._codeInfo
 }

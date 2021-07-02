@@ -37,7 +37,7 @@ func (r AlibabaCgameAvatarUserbodyQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MixUserId Setter
+// SetMixUserId is MixUserId Setter
 // 查询数据所属用户的mixUserId
 func (r *AlibabaCgameAvatarUserbodyQueryAPIRequest) SetMixUserId(_mixUserId string) error {
 	r._mixUserId = _mixUserId
@@ -45,7 +45,7 @@ func (r *AlibabaCgameAvatarUserbodyQueryAPIRequest) SetMixUserId(_mixUserId stri
 	return nil
 }
 
-// Get MixUserId Getter
+// GetMixUserId MixUserId Getter
 func (r AlibabaCgameAvatarUserbodyQueryAPIRequest) GetMixUserId() string {
 	return r._mixUserId
 }

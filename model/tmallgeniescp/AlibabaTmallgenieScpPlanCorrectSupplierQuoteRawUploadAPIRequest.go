@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest) GetApiP
 	return params
 }
 
-// Set is CurrentQuoteRawRequest Setter
+// SetCurrentQuoteRawRequest is CurrentQuoteRawRequest Setter
 // 对象
 func (r *AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest) SetCurrentQuoteRawRequest(_currentQuoteRawRequest *AbstractRequest) error {
 	r._currentQuoteRawRequest = _currentQuoteRawRequest
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest) SetCur
 	return nil
 }
 
-// Get CurrentQuoteRawRequest Getter
+// GetCurrentQuoteRawRequest CurrentQuoteRawRequest Getter
 func (r AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadAPIRequest) GetCurrentQuoteRawRequest() *AbstractRequest {
 	return r._currentQuoteRawRequest
 }

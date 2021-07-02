@@ -37,7 +37,7 @@ func (r AlibabaLstBranddatashareSuppliersListQueryAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 入参
 func (r *AlibabaLstBranddatashareSuppliersListQueryAPIRequest) SetQuery(_query *LstBmSupplierQuery) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *AlibabaLstBranddatashareSuppliersListQueryAPIRequest) SetQuery(_query *
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaLstBranddatashareSuppliersListQueryAPIRequest) GetQuery() *LstBmSupplierQuery {
 	return r._query
 }

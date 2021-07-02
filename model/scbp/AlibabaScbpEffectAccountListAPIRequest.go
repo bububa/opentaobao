@@ -37,7 +37,7 @@ func (r AlibabaScbpEffectAccountListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is P4pAccountReportQuery Setter
+// SetP4pAccountReportQuery is P4pAccountReportQuery Setter
 // AccountQuery
 func (r *AlibabaScbpEffectAccountListAPIRequest) SetP4pAccountReportQuery(_p4pAccountReportQuery *AccountQuery) error {
 	r._p4pAccountReportQuery = _p4pAccountReportQuery
@@ -45,7 +45,7 @@ func (r *AlibabaScbpEffectAccountListAPIRequest) SetP4pAccountReportQuery(_p4pAc
 	return nil
 }
 
-// Get P4pAccountReportQuery Getter
+// GetP4pAccountReportQuery P4pAccountReportQuery Getter
 func (r AlibabaScbpEffectAccountListAPIRequest) GetP4pAccountReportQuery() *AccountQuery {
 	return r._p4pAccountReportQuery
 }

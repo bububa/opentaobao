@@ -41,7 +41,7 @@ func (r TaobaoXhotelDistributionOrderDetailSearchAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is DistributionOid Setter
+// SetDistributionOid is DistributionOid Setter
 // 外部分销渠道的订单号（与tid必填其一）
 func (r *TaobaoXhotelDistributionOrderDetailSearchAPIRequest) SetDistributionOid(_distributionOid string) error {
 	r._distributionOid = _distributionOid
@@ -49,12 +49,12 @@ func (r *TaobaoXhotelDistributionOrderDetailSearchAPIRequest) SetDistributionOid
 	return nil
 }
 
-// Get DistributionOid Getter
+// GetDistributionOid DistributionOid Getter
 func (r TaobaoXhotelDistributionOrderDetailSearchAPIRequest) GetDistributionOid() string {
 	return r._distributionOid
 }
 
-// Set is OpenId Setter
+// SetOpenId is OpenId Setter
 // 传入用户对应的openId
 func (r *TaobaoXhotelDistributionOrderDetailSearchAPIRequest) SetOpenId(_openId string) error {
 	r._openId = _openId
@@ -62,12 +62,12 @@ func (r *TaobaoXhotelDistributionOrderDetailSearchAPIRequest) SetOpenId(_openId 
 	return nil
 }
 
-// Get OpenId Getter
+// GetOpenId OpenId Getter
 func (r TaobaoXhotelDistributionOrderDetailSearchAPIRequest) GetOpenId() string {
 	return r._openId
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 飞猪的订单号（与distribution_oid必填其一）
 func (r *TaobaoXhotelDistributionOrderDetailSearchAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -75,7 +75,7 @@ func (r *TaobaoXhotelDistributionOrderDetailSearchAPIRequest) SetTid(_tid int64)
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoXhotelDistributionOrderDetailSearchAPIRequest) GetTid() int64 {
 	return r._tid
 }

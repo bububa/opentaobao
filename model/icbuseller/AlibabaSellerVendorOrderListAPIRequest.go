@@ -37,7 +37,7 @@ func (r AlibabaSellerVendorOrderListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryTradeDto Setter
+// SetQueryTradeDto is QueryTradeDto Setter
 // 查询参数
 func (r *AlibabaSellerVendorOrderListAPIRequest) SetQueryTradeDto(_queryTradeDto *QueryTradeDto) error {
 	r._queryTradeDto = _queryTradeDto
@@ -45,7 +45,7 @@ func (r *AlibabaSellerVendorOrderListAPIRequest) SetQueryTradeDto(_queryTradeDto
 	return nil
 }
 
-// Get QueryTradeDto Getter
+// GetQueryTradeDto QueryTradeDto Getter
 func (r AlibabaSellerVendorOrderListAPIRequest) GetQueryTradeDto() *QueryTradeDto {
 	return r._queryTradeDto
 }

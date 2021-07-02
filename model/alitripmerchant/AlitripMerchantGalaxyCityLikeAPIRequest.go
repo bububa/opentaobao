@@ -41,7 +41,7 @@ func (r AlitripMerchantGalaxyCityLikeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TenantKey Setter
+// SetTenantKey is TenantKey Setter
 // 商家租户id
 func (r *AlitripMerchantGalaxyCityLikeAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
@@ -49,12 +49,12 @@ func (r *AlitripMerchantGalaxyCityLikeAPIRequest) SetTenantKey(_tenantKey string
 	return nil
 }
 
-// Get TenantKey Getter
+// GetTenantKey TenantKey Getter
 func (r AlitripMerchantGalaxyCityLikeAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
-// Set is CityName Setter
+// SetCityName is CityName Setter
 // 城市模糊
 func (r *AlitripMerchantGalaxyCityLikeAPIRequest) SetCityName(_cityName string) error {
 	r._cityName = _cityName
@@ -62,12 +62,12 @@ func (r *AlitripMerchantGalaxyCityLikeAPIRequest) SetCityName(_cityName string) 
 	return nil
 }
 
-// Get CityName Getter
+// GetCityName CityName Getter
 func (r AlitripMerchantGalaxyCityLikeAPIRequest) GetCityName() string {
 	return r._cityName
 }
 
-// Set is Domestic Setter
+// SetDomestic is Domestic Setter
 // 0国内1国外
 func (r *AlitripMerchantGalaxyCityLikeAPIRequest) SetDomestic(_domestic int64) error {
 	r._domestic = _domestic
@@ -75,7 +75,7 @@ func (r *AlitripMerchantGalaxyCityLikeAPIRequest) SetDomestic(_domestic int64) e
 	return nil
 }
 
-// Get Domestic Getter
+// GetDomestic Domestic Getter
 func (r AlitripMerchantGalaxyCityLikeAPIRequest) GetDomestic() int64 {
 	return r._domestic
 }

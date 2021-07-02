@@ -43,7 +43,7 @@ func (r TaobaoOmniitemClassifyItemBatchOperateAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ClassifyIds Setter
+// SetClassifyIds is ClassifyIds Setter
 // 分类ID
 func (r *TaobaoOmniitemClassifyItemBatchOperateAPIRequest) SetClassifyIds(_classifyIds []int64) error {
 	r._classifyIds = _classifyIds
@@ -51,12 +51,12 @@ func (r *TaobaoOmniitemClassifyItemBatchOperateAPIRequest) SetClassifyIds(_class
 	return nil
 }
 
-// Get ClassifyIds Getter
+// GetClassifyIds ClassifyIds Getter
 func (r TaobaoOmniitemClassifyItemBatchOperateAPIRequest) GetClassifyIds() []int64 {
 	return r._classifyIds
 }
 
-// Set is AddItemIds Setter
+// SetAddItemIds is AddItemIds Setter
 // 需要添加分类关联关系的商品ID
 func (r *TaobaoOmniitemClassifyItemBatchOperateAPIRequest) SetAddItemIds(_addItemIds []int64) error {
 	r._addItemIds = _addItemIds
@@ -64,12 +64,12 @@ func (r *TaobaoOmniitemClassifyItemBatchOperateAPIRequest) SetAddItemIds(_addIte
 	return nil
 }
 
-// Get AddItemIds Getter
+// GetAddItemIds AddItemIds Getter
 func (r TaobaoOmniitemClassifyItemBatchOperateAPIRequest) GetAddItemIds() []int64 {
 	return r._addItemIds
 }
 
-// Set is DeleteItemIds Setter
+// SetDeleteItemIds is DeleteItemIds Setter
 // 需要删除分类关联关系的商品ID
 func (r *TaobaoOmniitemClassifyItemBatchOperateAPIRequest) SetDeleteItemIds(_deleteItemIds []int64) error {
 	r._deleteItemIds = _deleteItemIds
@@ -77,12 +77,12 @@ func (r *TaobaoOmniitemClassifyItemBatchOperateAPIRequest) SetDeleteItemIds(_del
 	return nil
 }
 
-// Get DeleteItemIds Getter
+// GetDeleteItemIds DeleteItemIds Getter
 func (r TaobaoOmniitemClassifyItemBatchOperateAPIRequest) GetDeleteItemIds() []int64 {
 	return r._deleteItemIds
 }
 
-// Set is Operator Setter
+// SetOperator is Operator Setter
 // 操作人信息（暂时不填）
 func (r *TaobaoOmniitemClassifyItemBatchOperateAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
@@ -90,7 +90,7 @@ func (r *TaobaoOmniitemClassifyItemBatchOperateAPIRequest) SetOperator(_operator
 	return nil
 }
 
-// Get Operator Getter
+// GetOperator Operator Getter
 func (r TaobaoOmniitemClassifyItemBatchOperateAPIRequest) GetOperator() string {
 	return r._operator
 }

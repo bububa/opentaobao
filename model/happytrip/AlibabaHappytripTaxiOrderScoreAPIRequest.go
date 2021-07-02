@@ -41,7 +41,7 @@ func (r AlibabaHappytripTaxiOrderScoreAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *AlibabaHappytripTaxiOrderScoreAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -49,12 +49,12 @@ func (r *AlibabaHappytripTaxiOrderScoreAPIRequest) SetOrderId(_orderId string) e
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaHappytripTaxiOrderScoreAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is Level Setter
+// SetLevel is Level Setter
 // 司机评分 星级(1-5)
 func (r *AlibabaHappytripTaxiOrderScoreAPIRequest) SetLevel(_level int64) error {
 	r._level = _level
@@ -62,12 +62,12 @@ func (r *AlibabaHappytripTaxiOrderScoreAPIRequest) SetLevel(_level int64) error 
 	return nil
 }
 
-// Get Level Getter
+// GetLevel Level Getter
 func (r AlibabaHappytripTaxiOrderScoreAPIRequest) GetLevel() int64 {
 	return r._level
 }
 
-// Set is Comment Setter
+// SetComment is Comment Setter
 // 司机评价最多40个汉字
 func (r *AlibabaHappytripTaxiOrderScoreAPIRequest) SetComment(_comment string) error {
 	r._comment = _comment
@@ -75,7 +75,7 @@ func (r *AlibabaHappytripTaxiOrderScoreAPIRequest) SetComment(_comment string) e
 	return nil
 }
 
-// Get Comment Getter
+// GetComment Comment Getter
 func (r AlibabaHappytripTaxiOrderScoreAPIRequest) GetComment() string {
 	return r._comment
 }

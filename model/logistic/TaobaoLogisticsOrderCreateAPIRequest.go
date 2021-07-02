@@ -55,7 +55,7 @@ func (r TaobaoLogisticsOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LogisType Setter
+// SetLogisType is LogisType Setter
 // 发货方式,默认为自己联系发货。可选值:ONLINE(在线下单)、OFFLINE(自己联系)。
 func (r *TaobaoLogisticsOrderCreateAPIRequest) SetLogisType(_logisType string) error {
 	r._logisType = _logisType
@@ -63,12 +63,12 @@ func (r *TaobaoLogisticsOrderCreateAPIRequest) SetLogisType(_logisType string) e
 	return nil
 }
 
-// Get LogisType Getter
+// GetLogisType LogisType Getter
 func (r TaobaoLogisticsOrderCreateAPIRequest) GetLogisType() string {
 	return r._logisType
 }
 
-// Set is LogisCompanyCode Setter
+// SetLogisCompanyCode is LogisCompanyCode Setter
 // 发货的物流公司代码，如申通=STO，圆通=YTO。is_consign=true时，此项必填。
 func (r *TaobaoLogisticsOrderCreateAPIRequest) SetLogisCompanyCode(_logisCompanyCode string) error {
 	r._logisCompanyCode = _logisCompanyCode
@@ -76,12 +76,12 @@ func (r *TaobaoLogisticsOrderCreateAPIRequest) SetLogisCompanyCode(_logisCompany
 	return nil
 }
 
-// Get LogisCompanyCode Getter
+// GetLogisCompanyCode LogisCompanyCode Getter
 func (r TaobaoLogisticsOrderCreateAPIRequest) GetLogisCompanyCode() string {
 	return r._logisCompanyCode
 }
 
-// Set is MailNo Setter
+// SetMailNo is MailNo Setter
 // 发货的物流公司运单号。在logis_type=OFFLINE且is_consign=true时，此项必填。
 func (r *TaobaoLogisticsOrderCreateAPIRequest) SetMailNo(_mailNo string) error {
 	r._mailNo = _mailNo
@@ -89,12 +89,12 @@ func (r *TaobaoLogisticsOrderCreateAPIRequest) SetMailNo(_mailNo string) error {
 	return nil
 }
 
-// Get MailNo Getter
+// GetMailNo MailNo Getter
 func (r TaobaoLogisticsOrderCreateAPIRequest) GetMailNo() string {
 	return r._mailNo
 }
 
-// Set is GoodsNames Setter
+// SetGoodsNames is GoodsNames Setter
 // 运送的货物名称列表，用|号隔开
 func (r *TaobaoLogisticsOrderCreateAPIRequest) SetGoodsNames(_goodsNames string) error {
 	r._goodsNames = _goodsNames
@@ -102,12 +102,12 @@ func (r *TaobaoLogisticsOrderCreateAPIRequest) SetGoodsNames(_goodsNames string)
 	return nil
 }
 
-// Get GoodsNames Getter
+// GetGoodsNames GoodsNames Getter
 func (r TaobaoLogisticsOrderCreateAPIRequest) GetGoodsNames() string {
 	return r._goodsNames
 }
 
-// Set is GoodsQuantities Setter
+// SetGoodsQuantities is GoodsQuantities Setter
 // 运送货物的数量列表，用|号隔开
 func (r *TaobaoLogisticsOrderCreateAPIRequest) SetGoodsQuantities(_goodsQuantities string) error {
 	r._goodsQuantities = _goodsQuantities
@@ -115,12 +115,12 @@ func (r *TaobaoLogisticsOrderCreateAPIRequest) SetGoodsQuantities(_goodsQuantiti
 	return nil
 }
 
-// Get GoodsQuantities Getter
+// GetGoodsQuantities GoodsQuantities Getter
 func (r TaobaoLogisticsOrderCreateAPIRequest) GetGoodsQuantities() string {
 	return r._goodsQuantities
 }
 
-// Set is ItemValues Setter
+// SetItemValues is ItemValues Setter
 // 运送货物的单价列表(注意：单位为分），用|号隔开
 func (r *TaobaoLogisticsOrderCreateAPIRequest) SetItemValues(_itemValues string) error {
 	r._itemValues = _itemValues
@@ -128,12 +128,12 @@ func (r *TaobaoLogisticsOrderCreateAPIRequest) SetItemValues(_itemValues string)
 	return nil
 }
 
-// Get ItemValues Getter
+// GetItemValues ItemValues Getter
 func (r TaobaoLogisticsOrderCreateAPIRequest) GetItemValues() string {
 	return r._itemValues
 }
 
-// Set is SellerWangwangId Setter
+// SetSellerWangwangId is SellerWangwangId Setter
 // 卖家旺旺号
 func (r *TaobaoLogisticsOrderCreateAPIRequest) SetSellerWangwangId(_sellerWangwangId string) error {
 	r._sellerWangwangId = _sellerWangwangId
@@ -141,12 +141,12 @@ func (r *TaobaoLogisticsOrderCreateAPIRequest) SetSellerWangwangId(_sellerWangwa
 	return nil
 }
 
-// Get SellerWangwangId Getter
+// GetSellerWangwangId SellerWangwangId Getter
 func (r TaobaoLogisticsOrderCreateAPIRequest) GetSellerWangwangId() string {
 	return r._sellerWangwangId
 }
 
-// Set is TradeId Setter
+// SetTradeId is TradeId Setter
 // 订单的交易号码
 func (r *TaobaoLogisticsOrderCreateAPIRequest) SetTradeId(_tradeId int64) error {
 	r._tradeId = _tradeId
@@ -154,12 +154,12 @@ func (r *TaobaoLogisticsOrderCreateAPIRequest) SetTradeId(_tradeId int64) error 
 	return nil
 }
 
-// Get TradeId Getter
+// GetTradeId TradeId Getter
 func (r TaobaoLogisticsOrderCreateAPIRequest) GetTradeId() int64 {
 	return r._tradeId
 }
 
-// Set is IsConsign Setter
+// SetIsConsign is IsConsign Setter
 // 创建订单同时是否进行发货，默认发货。
 func (r *TaobaoLogisticsOrderCreateAPIRequest) SetIsConsign(_isConsign bool) error {
 	r._isConsign = _isConsign
@@ -167,12 +167,12 @@ func (r *TaobaoLogisticsOrderCreateAPIRequest) SetIsConsign(_isConsign bool) err
 	return nil
 }
 
-// Get IsConsign Getter
+// GetIsConsign IsConsign Getter
 func (r TaobaoLogisticsOrderCreateAPIRequest) GetIsConsign() bool {
 	return r._isConsign
 }
 
-// Set is Shipping Setter
+// SetShipping is Shipping Setter
 // 运费承担方式。1为买家承担运费，2为卖家承担运费，其他值为错误参数。
 func (r *TaobaoLogisticsOrderCreateAPIRequest) SetShipping(_shipping int64) error {
 	r._shipping = _shipping
@@ -180,7 +180,7 @@ func (r *TaobaoLogisticsOrderCreateAPIRequest) SetShipping(_shipping int64) erro
 	return nil
 }
 
-// Get Shipping Getter
+// GetShipping Shipping Getter
 func (r TaobaoLogisticsOrderCreateAPIRequest) GetShipping() int64 {
 	return r._shipping
 }

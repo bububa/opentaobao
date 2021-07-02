@@ -37,7 +37,7 @@ func (r AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is DisPerformStatusQueryParam Setter
+// SetDisPerformStatusQueryParam is DisPerformStatusQueryParam Setter
 // 入参
 func (r *AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest) SetDisPerformStatusQueryParam(_disPerformStatusQueryParam *DisPerformStatusQueryDto) error {
 	r._disPerformStatusQueryParam = _disPerformStatusQueryParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest) SetDisPerfor
 	return nil
 }
 
-// Get DisPerformStatusQueryParam Getter
+// GetDisPerformStatusQueryParam DisPerformStatusQueryParam Getter
 func (r AlibabaDamaiMaitixOpengatewayPerformStatusQueryAPIRequest) GetDisPerformStatusQueryParam() *DisPerformStatusQueryDto {
 	return r._disPerformStatusQueryParam
 }

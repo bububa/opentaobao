@@ -51,7 +51,7 @@ func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is AlispAppKey Setter
+// SetAlispAppKey is AlispAppKey Setter
 // 业务方appkey
 func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetAlispAppKey(_alispAppKey string) error {
 	r._alispAppKey = _alispAppKey
@@ -59,12 +59,12 @@ func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetAlispAppKey(
 	return nil
 }
 
-// Get AlispAppKey Getter
+// GetAlispAppKey AlispAppKey Getter
 func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetAlispAppKey() string {
 	return r._alispAppKey
 }
 
-// Set is AlispSign Setter
+// SetAlispSign is AlispSign Setter
 // 签名
 func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetAlispSign(_alispSign string) error {
 	r._alispSign = _alispSign
@@ -72,12 +72,12 @@ func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetAlispSign(_a
 	return nil
 }
 
-// Get AlispSign Getter
+// GetAlispSign AlispSign Getter
 func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetAlispSign() string {
 	return r._alispSign
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // token
 func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -85,12 +85,12 @@ func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetToken(_token
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is UserType Setter
+// SetUserType is UserType Setter
 // 注册用户类型
 func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetUserType(_userType int64) error {
 	r._userType = _userType
@@ -98,12 +98,12 @@ func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetUserType(_us
 	return nil
 }
 
-// Get UserType Getter
+// GetUserType UserType Getter
 func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetUserType() int64 {
 	return r._userType
 }
 
-// Set is AlispTime Setter
+// SetAlispTime is AlispTime Setter
 // 时间戳
 func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetAlispTime(_alispTime string) error {
 	r._alispTime = _alispTime
@@ -111,12 +111,12 @@ func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetAlispTime(_a
 	return nil
 }
 
-// Get AlispTime Getter
+// GetAlispTime AlispTime Getter
 func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetAlispTime() string {
 	return r._alispTime
 }
 
-// Set is Secret Setter
+// SetSecret is Secret Setter
 // 一键登录参数
 func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetSecret(_secret string) error {
 	r._secret = _secret
@@ -124,12 +124,12 @@ func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetSecret(_secr
 	return nil
 }
 
-// Get Secret Getter
+// GetSecret Secret Getter
 func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetSecret() string {
 	return r._secret
 }
 
-// Set is ExtInfo Setter
+// SetExtInfo is ExtInfo Setter
 // json字符串，传入扩展字段
 func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetExtInfo(_extInfo string) error {
 	r._extInfo = _extInfo
@@ -137,12 +137,12 @@ func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetExtInfo(_ext
 	return nil
 }
 
-// Get ExtInfo Getter
+// GetExtInfo ExtInfo Getter
 func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetExtInfo() string {
 	return r._extInfo
 }
 
-// Set is MtopAppkey Setter
+// SetMtopAppkey is MtopAppkey Setter
 // 选填，调用百川登录接口的appkey，百川登录时，需要传此字段
 func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetMtopAppkey(_mtopAppkey string) error {
 	r._mtopAppkey = _mtopAppkey
@@ -150,7 +150,7 @@ func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetMtopAppkey(_
 	return nil
 }
 
-// Get MtopAppkey Getter
+// GetMtopAppkey MtopAppkey Getter
 func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetMtopAppkey() string {
 	return r._mtopAppkey
 }

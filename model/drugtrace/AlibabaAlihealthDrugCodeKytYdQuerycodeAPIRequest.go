@@ -40,7 +40,7 @@ func (r AlibabaAlihealthDrugCodeKytYdQuerycodeAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业唯一标识
 func (r *AlibabaAlihealthDrugCodeKytYdQuerycodeAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -48,12 +48,12 @@ func (r *AlibabaAlihealthDrugCodeKytYdQuerycodeAPIRequest) SetRefEntId(_refEntId
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugCodeKytYdQuerycodeAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is Codes Setter
+// SetCodes is Codes Setter
 // 码列表
 func (r *AlibabaAlihealthDrugCodeKytYdQuerycodeAPIRequest) SetCodes(_codes []string) error {
 	r._codes = _codes
@@ -61,7 +61,7 @@ func (r *AlibabaAlihealthDrugCodeKytYdQuerycodeAPIRequest) SetCodes(_codes []str
 	return nil
 }
 
-// Get Codes Getter
+// GetCodes Codes Getter
 func (r AlibabaAlihealthDrugCodeKytYdQuerycodeAPIRequest) GetCodes() []string {
 	return r._codes
 }

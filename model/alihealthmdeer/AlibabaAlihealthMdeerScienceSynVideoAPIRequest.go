@@ -37,7 +37,7 @@ func (r AlibabaAlihealthMdeerScienceSynVideoAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is SynVideoInfo Setter
+// SetSynVideoInfo is SynVideoInfo Setter
 // 视频信息实体
 func (r *AlibabaAlihealthMdeerScienceSynVideoAPIRequest) SetSynVideoInfo(_synVideoInfo *SynVideoInfo) error {
 	r._synVideoInfo = _synVideoInfo
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthMdeerScienceSynVideoAPIRequest) SetSynVideoInfo(_synVid
 	return nil
 }
 
-// Get SynVideoInfo Getter
+// GetSynVideoInfo SynVideoInfo Getter
 func (r AlibabaAlihealthMdeerScienceSynVideoAPIRequest) GetSynVideoInfo() *SynVideoInfo {
 	return r._synVideoInfo
 }

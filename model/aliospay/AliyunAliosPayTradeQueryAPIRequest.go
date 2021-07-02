@@ -37,7 +37,7 @@ func (r AliyunAliosPayTradeQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryTradeRequest Setter
+// SetQueryTradeRequest is QueryTradeRequest Setter
 // 请求参数
 func (r *AliyunAliosPayTradeQueryAPIRequest) SetQueryTradeRequest(_queryTradeRequest *QueryTradeRequest) error {
 	r._queryTradeRequest = _queryTradeRequest
@@ -45,7 +45,7 @@ func (r *AliyunAliosPayTradeQueryAPIRequest) SetQueryTradeRequest(_queryTradeReq
 	return nil
 }
 
-// Get QueryTradeRequest Getter
+// GetQueryTradeRequest QueryTradeRequest Getter
 func (r AliyunAliosPayTradeQueryAPIRequest) GetQueryTradeRequest() *QueryTradeRequest {
 	return r._queryTradeRequest
 }

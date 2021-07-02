@@ -37,7 +37,7 @@ func (r AliyunIndustryTttmProductsSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SyncProducts Setter
+// SetSyncProducts is SyncProducts Setter
 // 产品信息
 func (r *AliyunIndustryTttmProductsSyncAPIRequest) SetSyncProducts(_syncProducts []ProductInfoDto) error {
 	r._syncProducts = _syncProducts
@@ -45,7 +45,7 @@ func (r *AliyunIndustryTttmProductsSyncAPIRequest) SetSyncProducts(_syncProducts
 	return nil
 }
 
-// Get SyncProducts Getter
+// GetSyncProducts SyncProducts Getter
 func (r AliyunIndustryTttmProductsSyncAPIRequest) GetSyncProducts() []ProductInfoDto {
 	return r._syncProducts
 }

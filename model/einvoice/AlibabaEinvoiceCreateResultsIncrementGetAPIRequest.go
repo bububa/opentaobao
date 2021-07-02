@@ -47,7 +47,7 @@ func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 开票状态 (waiting = 开票中) 、(create_success = 开票成功)、(create_failed = 开票失败)
 func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -55,12 +55,12 @@ func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetStatus(_status s
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is StartModified Setter
+// SetStartModified is StartModified Setter
 // 起始查询时间
 func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetStartModified(_startModified string) error {
 	r._startModified = _startModified
@@ -68,12 +68,12 @@ func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetStartModified(_s
 	return nil
 }
 
-// Get StartModified Getter
+// GetStartModified StartModified Getter
 func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetStartModified() string {
 	return r._startModified
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 收款方税务登记证号
 func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -81,12 +81,12 @@ func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetPayeeRegisterNo(
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is EndModified Setter
+// SetEndModified is EndModified Setter
 // 终止查询时间
 func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetEndModified(_endModified string) error {
 	r._endModified = _endModified
@@ -94,12 +94,12 @@ func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetEndModified(_end
 	return nil
 }
 
-// Get EndModified Getter
+// GetEndModified EndModified Getter
 func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetEndModified() string {
 	return r._endModified
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页面大小(不能超过200)
 func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -107,12 +107,12 @@ func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetPageSize(_pageSi
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 显示的页码
 func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -120,7 +120,7 @@ func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetPageNo(_pageNo i
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

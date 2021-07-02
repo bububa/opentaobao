@@ -37,7 +37,7 @@ func (r TaobaoInventoryMerchantAdjustAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InventoryCheck Setter
+// SetInventoryCheck is InventoryCheck Setter
 // 调整库存对象
 func (r *TaobaoInventoryMerchantAdjustAPIRequest) SetInventoryCheck(_inventoryCheck *InventoryCheckDto) error {
 	r._inventoryCheck = _inventoryCheck
@@ -45,7 +45,7 @@ func (r *TaobaoInventoryMerchantAdjustAPIRequest) SetInventoryCheck(_inventoryCh
 	return nil
 }
 
-// Get InventoryCheck Getter
+// GetInventoryCheck InventoryCheck Getter
 func (r TaobaoInventoryMerchantAdjustAPIRequest) GetInventoryCheck() *InventoryCheckDto {
 	return r._inventoryCheck
 }

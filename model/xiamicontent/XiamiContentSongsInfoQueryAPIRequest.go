@@ -43,7 +43,7 @@ func (r XiamiContentSongsInfoQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SearchTerms Setter
+// SetSearchTerms is SearchTerms Setter
 // 搜索条件 key支持songName/singerName/copyrightStatus/publishStatus/keyword
 func (r *XiamiContentSongsInfoQueryAPIRequest) SetSearchTerms(_searchTerms []SearchTermsDto) error {
 	r._searchTerms = _searchTerms
@@ -51,12 +51,12 @@ func (r *XiamiContentSongsInfoQueryAPIRequest) SetSearchTerms(_searchTerms []Sea
 	return nil
 }
 
-// Get SearchTerms Getter
+// GetSearchTerms SearchTerms Getter
 func (r XiamiContentSongsInfoQueryAPIRequest) GetSearchTerms() []SearchTermsDto {
 	return r._searchTerms
 }
 
-// Set is TagOptional Setter
+// SetTagOptional is TagOptional Setter
 // tag搜索条件，tag尽量不要超过50个
 func (r *XiamiContentSongsInfoQueryAPIRequest) SetTagOptional(_tagOptional *SongCatsSearchDto) error {
 	r._tagOptional = _tagOptional
@@ -64,12 +64,12 @@ func (r *XiamiContentSongsInfoQueryAPIRequest) SetTagOptional(_tagOptional *Song
 	return nil
 }
 
-// Get TagOptional Getter
+// GetTagOptional TagOptional Getter
 func (r XiamiContentSongsInfoQueryAPIRequest) GetTagOptional() *SongCatsSearchDto {
 	return r._tagOptional
 }
 
-// Set is OrderBy Setter
+// SetOrderBy is OrderBy Setter
 // 排序,默认按照最新排序 1最新 2本周最热 3本月最热
 func (r *XiamiContentSongsInfoQueryAPIRequest) SetOrderBy(_orderBy int64) error {
 	r._orderBy = _orderBy
@@ -77,12 +77,12 @@ func (r *XiamiContentSongsInfoQueryAPIRequest) SetOrderBy(_orderBy int64) error 
 	return nil
 }
 
-// Get OrderBy Getter
+// GetOrderBy OrderBy Getter
 func (r XiamiContentSongsInfoQueryAPIRequest) GetOrderBy() int64 {
 	return r._orderBy
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 分页信息
 func (r *XiamiContentSongsInfoQueryAPIRequest) SetPage(_page *PagingVo) error {
 	r._page = _page
@@ -90,7 +90,7 @@ func (r *XiamiContentSongsInfoQueryAPIRequest) SetPage(_page *PagingVo) error {
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r XiamiContentSongsInfoQueryAPIRequest) GetPage() *PagingVo {
 	return r._page
 }

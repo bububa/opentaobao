@@ -37,7 +37,7 @@ func (r TaobaoAlitripCarOrderAgentCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOrderCancel Setter
+// SetParamOrderCancel is ParamOrderCancel Setter
 // 取消对象
 func (r *TaobaoAlitripCarOrderAgentCancelAPIRequest) SetParamOrderCancel(_paramOrderCancel *OrderCancel) error {
 	r._paramOrderCancel = _paramOrderCancel
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripCarOrderAgentCancelAPIRequest) SetParamOrderCancel(_paramO
 	return nil
 }
 
-// Get ParamOrderCancel Getter
+// GetParamOrderCancel ParamOrderCancel Getter
 func (r TaobaoAlitripCarOrderAgentCancelAPIRequest) GetParamOrderCancel() *OrderCancel {
 	return r._paramOrderCancel
 }

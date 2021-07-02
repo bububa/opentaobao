@@ -41,7 +41,7 @@ func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is ClientId Setter
+// SetClientId is ClientId Setter
 // 给产品分配的唯一ID（22位）
 func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) SetClientId(_clientId string) error {
 	r._clientId = _clientId
@@ -49,12 +49,12 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) SetClientId(_clie
 	return nil
 }
 
-// Get ClientId Getter
+// GetClientId ClientId Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) GetClientId() string {
 	return r._clientId
 }
 
-// Set is UserOpenId Setter
+// SetUserOpenId is UserOpenId Setter
 // 精灵用户的唯一外部ID
 func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) SetUserOpenId(_userOpenId string) error {
 	r._userOpenId = _userOpenId
@@ -62,12 +62,12 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) SetUserOpenId(_us
 	return nil
 }
 
-// Get UserOpenId Getter
+// GetUserOpenId UserOpenId Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) GetUserOpenId() string {
 	return r._userOpenId
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 精灵设备的唯一ID
 func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -75,7 +75,7 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) SetUuid(_uuid str
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetAPIRequest) GetUuid() string {
 	return r._uuid
 }

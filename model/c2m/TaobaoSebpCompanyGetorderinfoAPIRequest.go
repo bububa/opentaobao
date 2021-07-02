@@ -39,7 +39,7 @@ func (r TaobaoSebpCompanyGetorderinfoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ModifyDate Setter
+// SetModifyDate is ModifyDate Setter
 // null-请求所有，20200616-请求2020年6月16号的变更信息
 func (r *TaobaoSebpCompanyGetorderinfoAPIRequest) SetModifyDate(_modifyDate string) error {
 	r._modifyDate = _modifyDate
@@ -47,12 +47,12 @@ func (r *TaobaoSebpCompanyGetorderinfoAPIRequest) SetModifyDate(_modifyDate stri
 	return nil
 }
 
-// Get ModifyDate Getter
+// GetModifyDate ModifyDate Getter
 func (r TaobaoSebpCompanyGetorderinfoAPIRequest) GetModifyDate() string {
 	return r._modifyDate
 }
 
-// Set is PageNum Setter
+// SetPageNum is PageNum Setter
 // 第几页
 func (r *TaobaoSebpCompanyGetorderinfoAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
@@ -60,7 +60,7 @@ func (r *TaobaoSebpCompanyGetorderinfoAPIRequest) SetPageNum(_pageNum int64) err
 	return nil
 }
 
-// Get PageNum Getter
+// GetPageNum PageNum Getter
 func (r TaobaoSebpCompanyGetorderinfoAPIRequest) GetPageNum() int64 {
 	return r._pageNum
 }

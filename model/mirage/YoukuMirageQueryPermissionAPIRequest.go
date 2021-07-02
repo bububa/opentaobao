@@ -37,7 +37,7 @@ func (r YoukuMirageQueryPermissionAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PermissionRequestDto Setter
+// SetPermissionRequestDto is PermissionRequestDto Setter
 // 入参
 func (r *YoukuMirageQueryPermissionAPIRequest) SetPermissionRequestDto(_permissionRequestDto *PermissionRequestDto) error {
 	r._permissionRequestDto = _permissionRequestDto
@@ -45,7 +45,7 @@ func (r *YoukuMirageQueryPermissionAPIRequest) SetPermissionRequestDto(_permissi
 	return nil
 }
 
-// Get PermissionRequestDto Getter
+// GetPermissionRequestDto PermissionRequestDto Getter
 func (r YoukuMirageQueryPermissionAPIRequest) GetPermissionRequestDto() *PermissionRequestDto {
 	return r._permissionRequestDto
 }

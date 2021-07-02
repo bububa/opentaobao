@@ -47,7 +47,7 @@ func (r TaobaoUsceslBizApSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizBrandKey Setter
+// SetBizBrandKey is BizBrandKey Setter
 // 商家编码
 func (r *TaobaoUsceslBizApSearchAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
 	r._bizBrandKey = _bizBrandKey
@@ -55,12 +55,12 @@ func (r *TaobaoUsceslBizApSearchAPIRequest) SetBizBrandKey(_bizBrandKey string) 
 	return nil
 }
 
-// Get BizBrandKey Getter
+// GetBizBrandKey BizBrandKey Getter
 func (r TaobaoUsceslBizApSearchAPIRequest) GetBizBrandKey() string {
 	return r._bizBrandKey
 }
 
-// Set is Limit Setter
+// SetLimit is Limit Setter
 // 每页显示数
 func (r *TaobaoUsceslBizApSearchAPIRequest) SetLimit(_limit int64) error {
 	r._limit = _limit
@@ -68,12 +68,12 @@ func (r *TaobaoUsceslBizApSearchAPIRequest) SetLimit(_limit int64) error {
 	return nil
 }
 
-// Get Limit Getter
+// GetLimit Limit Getter
 func (r TaobaoUsceslBizApSearchAPIRequest) GetLimit() int64 {
 	return r._limit
 }
 
-// Set is IsActivate Setter
+// SetIsActivate is IsActivate Setter
 // 是否激活
 func (r *TaobaoUsceslBizApSearchAPIRequest) SetIsActivate(_isActivate bool) error {
 	r._isActivate = _isActivate
@@ -81,12 +81,12 @@ func (r *TaobaoUsceslBizApSearchAPIRequest) SetIsActivate(_isActivate bool) erro
 	return nil
 }
 
-// Get IsActivate Getter
+// GetIsActivate IsActivate Getter
 func (r TaobaoUsceslBizApSearchAPIRequest) GetIsActivate() bool {
 	return r._isActivate
 }
 
-// Set is Mac Setter
+// SetMac is Mac Setter
 // 价签条码
 func (r *TaobaoUsceslBizApSearchAPIRequest) SetMac(_mac string) error {
 	r._mac = _mac
@@ -94,12 +94,12 @@ func (r *TaobaoUsceslBizApSearchAPIRequest) SetMac(_mac string) error {
 	return nil
 }
 
-// Get Mac Getter
+// GetMac Mac Getter
 func (r TaobaoUsceslBizApSearchAPIRequest) GetMac() string {
 	return r._mac
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 页码
 func (r *TaobaoUsceslBizApSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -107,12 +107,12 @@ func (r *TaobaoUsceslBizApSearchAPIRequest) SetCurrentPage(_currentPage int64) e
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TaobaoUsceslBizApSearchAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *TaobaoUsceslBizApSearchAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -120,7 +120,7 @@ func (r *TaobaoUsceslBizApSearchAPIRequest) SetStoreId(_storeId int64) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoUsceslBizApSearchAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }

@@ -37,7 +37,7 @@ func (r TaobaoUmpMbbGetbycodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 营销积木块code
 func (r *TaobaoUmpMbbGetbycodeAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -45,7 +45,7 @@ func (r *TaobaoUmpMbbGetbycodeAPIRequest) SetCode(_code string) error {
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r TaobaoUmpMbbGetbycodeAPIRequest) GetCode() string {
 	return r._code
 }

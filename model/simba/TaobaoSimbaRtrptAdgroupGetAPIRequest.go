@@ -45,7 +45,7 @@ func (r TaobaoSimbaRtrptAdgroupGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 用户名
 func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -53,12 +53,12 @@ func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaRtrptAdgroupGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划id
 func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -66,12 +66,12 @@ func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetCampaignId(_campaignId int64) 
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaRtrptAdgroupGetAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is TheDate Setter
+// SetTheDate is TheDate Setter
 // 日期，格式yyyy-mm-dd
 func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetTheDate(_theDate string) error {
 	r._theDate = _theDate
@@ -79,12 +79,12 @@ func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetTheDate(_theDate string) error
 	return nil
 }
 
-// Get TheDate Getter
+// GetTheDate TheDate Getter
 func (r TaobaoSimbaRtrptAdgroupGetAPIRequest) GetTheDate() string {
 	return r._theDate
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页大小
 func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -92,12 +92,12 @@ func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetPageSize(_pageSize int64) erro
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoSimbaRtrptAdgroupGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNumber Setter
+// SetPageNumber is PageNumber Setter
 // 页码
 func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetPageNumber(_pageNumber int64) error {
 	r._pageNumber = _pageNumber
@@ -105,7 +105,7 @@ func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetPageNumber(_pageNumber int64) 
 	return nil
 }
 
-// Get PageNumber Getter
+// GetPageNumber PageNumber Getter
 func (r TaobaoSimbaRtrptAdgroupGetAPIRequest) GetPageNumber() int64 {
 	return r._pageNumber
 }

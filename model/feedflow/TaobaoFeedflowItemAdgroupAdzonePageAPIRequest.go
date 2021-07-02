@@ -37,7 +37,7 @@ func (r TaobaoFeedflowItemAdgroupAdzonePageAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is AdzoneBindQuery Setter
+// SetAdzoneBindQuery is AdzoneBindQuery Setter
 // 查询条件
 func (r *TaobaoFeedflowItemAdgroupAdzonePageAPIRequest) SetAdzoneBindQuery(_adzoneBindQuery *AdzoneBindQueryDto) error {
 	r._adzoneBindQuery = _adzoneBindQuery
@@ -45,7 +45,7 @@ func (r *TaobaoFeedflowItemAdgroupAdzonePageAPIRequest) SetAdzoneBindQuery(_adzo
 	return nil
 }
 
-// Get AdzoneBindQuery Getter
+// GetAdzoneBindQuery AdzoneBindQuery Getter
 func (r TaobaoFeedflowItemAdgroupAdzonePageAPIRequest) GetAdzoneBindQuery() *AdzoneBindQueryDto {
 	return r._adzoneBindQuery
 }

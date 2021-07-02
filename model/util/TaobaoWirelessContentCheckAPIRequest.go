@@ -37,7 +37,7 @@ func (r TaobaoWirelessContentCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Text Setter
+// SetText is Text Setter
 // 待检查的文本
 func (r *TaobaoWirelessContentCheckAPIRequest) SetText(_text string) error {
 	r._text = _text
@@ -45,7 +45,7 @@ func (r *TaobaoWirelessContentCheckAPIRequest) SetText(_text string) error {
 	return nil
 }
 
-// Get Text Getter
+// GetText Text Getter
 func (r TaobaoWirelessContentCheckAPIRequest) GetText() string {
 	return r._text
 }

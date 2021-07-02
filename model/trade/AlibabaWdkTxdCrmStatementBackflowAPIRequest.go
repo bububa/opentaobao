@@ -37,7 +37,7 @@ func (r AlibabaWdkTxdCrmStatementBackflowAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamStatementBO Setter
+// SetParamStatementBO is ParamStatementBO Setter
 // 参数
 func (r *AlibabaWdkTxdCrmStatementBackflowAPIRequest) SetParamStatementBO(_paramStatementBO *StatementBo) error {
 	r._paramStatementBO = _paramStatementBO
@@ -45,7 +45,7 @@ func (r *AlibabaWdkTxdCrmStatementBackflowAPIRequest) SetParamStatementBO(_param
 	return nil
 }
 
-// Get ParamStatementBO Getter
+// GetParamStatementBO ParamStatementBO Getter
 func (r AlibabaWdkTxdCrmStatementBackflowAPIRequest) GetParamStatementBO() *StatementBo {
 	return r._paramStatementBO
 }

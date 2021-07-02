@@ -39,7 +39,7 @@ func (r AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest) GetApiPar
 	return params
 }
 
-// Set is ClientId Setter
+// SetClientId is ClientId Setter
 // 产品ID
 func (r *AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest) SetClientId(_clientId string) error {
 	r._clientId = _clientId
@@ -47,12 +47,12 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest) SetClien
 	return nil
 }
 
-// Get ClientId Getter
+// GetClientId ClientId Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest) GetClientId() string {
 	return r._clientId
 }
 
-// Set is AuthCode Setter
+// SetAuthCode is AuthCode Setter
 // 授权码
 func (r *AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest) SetAuthCode(_authCode string) error {
 	r._authCode = _authCode
@@ -60,7 +60,7 @@ func (r *AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest) SetAuthC
 	return nil
 }
 
-// Get AuthCode Getter
+// GetAuthCode AuthCode Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetAPIRequest) GetAuthCode() string {
 	return r._authCode
 }

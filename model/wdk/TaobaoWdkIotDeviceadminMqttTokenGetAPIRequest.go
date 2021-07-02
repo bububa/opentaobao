@@ -39,7 +39,7 @@ func (r TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is AccessKey Setter
+// SetAccessKey is AccessKey Setter
 // accessKey
 func (r *TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) SetAccessKey(_accessKey string) error {
 	r._accessKey = _accessKey
@@ -47,12 +47,12 @@ func (r *TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) SetAccessKey(_accessKey 
 	return nil
 }
 
-// Get AccessKey Getter
+// GetAccessKey AccessKey Getter
 func (r TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) GetAccessKey() string {
 	return r._accessKey
 }
 
-// Set is ApplyTimestamp Setter
+// SetApplyTimestamp is ApplyTimestamp Setter
 // 申请令牌的客户端时间戳
 func (r *TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) SetApplyTimestamp(_applyTimestamp int64) error {
 	r._applyTimestamp = _applyTimestamp
@@ -60,7 +60,7 @@ func (r *TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) SetApplyTimestamp(_apply
 	return nil
 }
 
-// Get ApplyTimestamp Getter
+// GetApplyTimestamp ApplyTimestamp Getter
 func (r TaobaoWdkIotDeviceadminMqttTokenGetAPIRequest) GetApplyTimestamp() int64 {
 	return r._applyTimestamp
 }

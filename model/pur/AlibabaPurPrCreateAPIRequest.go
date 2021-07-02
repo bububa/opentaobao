@@ -37,7 +37,7 @@ func (r AlibabaPurPrCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PurReq Setter
+// SetPurReq is PurReq Setter
 // 订单信息
 func (r *AlibabaPurPrCreateAPIRequest) SetPurReq(_purReq *MallReceivePrRequest) error {
 	r._purReq = _purReq
@@ -45,7 +45,7 @@ func (r *AlibabaPurPrCreateAPIRequest) SetPurReq(_purReq *MallReceivePrRequest) 
 	return nil
 }
 
-// Get PurReq Getter
+// GetPurReq PurReq Getter
 func (r AlibabaPurPrCreateAPIRequest) GetPurReq() *MallReceivePrRequest {
 	return r._purReq
 }

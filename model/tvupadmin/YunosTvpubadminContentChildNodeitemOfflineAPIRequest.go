@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentChildNodeitemOfflineAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is ContentId Setter
+// SetContentId is ContentId Setter
 // 类目内容ID
 func (r *YunosTvpubadminContentChildNodeitemOfflineAPIRequest) SetContentId(_contentId int64) error {
 	r._contentId = _contentId
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentChildNodeitemOfflineAPIRequest) SetContentId(_con
 	return nil
 }
 
-// Get ContentId Getter
+// GetContentId ContentId Getter
 func (r YunosTvpubadminContentChildNodeitemOfflineAPIRequest) GetContentId() int64 {
 	return r._contentId
 }

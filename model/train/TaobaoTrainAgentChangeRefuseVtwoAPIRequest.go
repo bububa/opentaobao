@@ -37,7 +37,7 @@ func (r TaobaoTrainAgentChangeRefuseVtwoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 代理商拒绝改签参数
 func (r *TaobaoTrainAgentChangeRefuseVtwoAPIRequest) SetParam(_param *AgentRefuseChangeParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *TaobaoTrainAgentChangeRefuseVtwoAPIRequest) SetParam(_param *AgentRefus
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r TaobaoTrainAgentChangeRefuseVtwoAPIRequest) GetParam() *AgentRefuseChangeParam {
 	return r._param
 }

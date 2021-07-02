@@ -43,7 +43,7 @@ func (r AlitripUppcMemberGainAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RequestId Setter
+// SetRequestId is RequestId Setter
 // 请求唯一标识
 func (r *AlitripUppcMemberGainAPIRequest) SetRequestId(_requestId string) error {
 	r._requestId = _requestId
@@ -51,12 +51,12 @@ func (r *AlitripUppcMemberGainAPIRequest) SetRequestId(_requestId string) error 
 	return nil
 }
 
-// Get RequestId Getter
+// GetRequestId RequestId Getter
 func (r AlitripUppcMemberGainAPIRequest) GetRequestId() string {
 	return r._requestId
 }
 
-// Set is StatusCode Setter
+// SetStatusCode is StatusCode Setter
 // 查询成功
 func (r *AlitripUppcMemberGainAPIRequest) SetStatusCode(_statusCode int64) error {
 	r._statusCode = _statusCode
@@ -64,12 +64,12 @@ func (r *AlitripUppcMemberGainAPIRequest) SetStatusCode(_statusCode int64) error
 	return nil
 }
 
-// Get StatusCode Getter
+// GetStatusCode StatusCode Getter
 func (r AlitripUppcMemberGainAPIRequest) GetStatusCode() int64 {
 	return r._statusCode
 }
 
-// Set is ResponseJson Setter
+// SetResponseJson is ResponseJson Setter
 // 权益截止时间（扩展字段）
 func (r *AlitripUppcMemberGainAPIRequest) SetResponseJson(_responseJson string) error {
 	r._responseJson = _responseJson
@@ -77,12 +77,12 @@ func (r *AlitripUppcMemberGainAPIRequest) SetResponseJson(_responseJson string) 
 	return nil
 }
 
-// Get ResponseJson Getter
+// GetResponseJson ResponseJson Getter
 func (r AlitripUppcMemberGainAPIRequest) GetResponseJson() string {
 	return r._responseJson
 }
 
-// Set is ErrorMsg Setter
+// SetErrorMsg is ErrorMsg Setter
 // 错误提示
 func (r *AlitripUppcMemberGainAPIRequest) SetErrorMsg(_errorMsg string) error {
 	r._errorMsg = _errorMsg
@@ -90,7 +90,7 @@ func (r *AlitripUppcMemberGainAPIRequest) SetErrorMsg(_errorMsg string) error {
 	return nil
 }
 
-// Get ErrorMsg Getter
+// GetErrorMsg ErrorMsg Getter
 func (r AlitripUppcMemberGainAPIRequest) GetErrorMsg() string {
 	return r._errorMsg
 }

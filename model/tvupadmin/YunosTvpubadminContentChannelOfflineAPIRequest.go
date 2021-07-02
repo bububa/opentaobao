@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentChannelOfflineAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // id
 func (r *YunosTvpubadminContentChannelOfflineAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentChannelOfflineAPIRequest) SetId(_id int64) error 
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r YunosTvpubadminContentChannelOfflineAPIRequest) GetId() int64 {
 	return r._id
 }

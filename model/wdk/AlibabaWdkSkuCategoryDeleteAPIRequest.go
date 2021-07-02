@@ -37,7 +37,7 @@ func (r AlibabaWdkSkuCategoryDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 类目删除请求模型
 func (r *AlibabaWdkSkuCategoryDeleteAPIRequest) SetParam(_param *CategoryDo) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSkuCategoryDeleteAPIRequest) SetParam(_param *CategoryDo) err
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaWdkSkuCategoryDeleteAPIRequest) GetParam() *CategoryDo {
 	return r._param
 }

@@ -47,7 +47,7 @@ func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MixMobile Setter
+// SetMixMobile is MixMobile Setter
 // 混淆会员手机号码
 func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetMixMobile(_mixMobile string) error {
 	r._mixMobile = _mixMobile
@@ -55,12 +55,12 @@ func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetMixMobile(_mixMobile strin
 	return nil
 }
 
-// Get MixMobile Getter
+// GetMixMobile MixMobile Getter
 func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetMixMobile() string {
 	return r._mixMobile
 }
 
-// Set is RecordId Setter
+// SetRecordId is RecordId Setter
 // 变更记录ID
 func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetRecordId(_recordId int64) error {
 	r._recordId = _recordId
@@ -68,12 +68,12 @@ func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetRecordId(_recordId int64) 
 	return nil
 }
 
-// Get RecordId Getter
+// GetRecordId RecordId Getter
 func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetRecordId() int64 {
 	return r._recordId
 }
 
-// Set is Result Setter
+// SetResult is Result Setter
 // 0:成功。1：失败
 func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetResult(_result int64) error {
 	r._result = _result
@@ -81,12 +81,12 @@ func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetResult(_result int64) erro
 	return nil
 }
 
-// Get Result Getter
+// GetResult Result Getter
 func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetResult() int64 {
 	return r._result
 }
 
-// Set is ErrorCode Setter
+// SetErrorCode is ErrorCode Setter
 // 处理失败的错误码.
 func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetErrorCode(_errorCode string) error {
 	r._errorCode = _errorCode
@@ -94,12 +94,12 @@ func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetErrorCode(_errorCode strin
 	return nil
 }
 
-// Get ErrorCode Getter
+// GetErrorCode ErrorCode Getter
 func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetErrorCode() string {
 	return r._errorCode
 }
 
-// Set is ExtInfo Setter
+// SetExtInfo is ExtInfo Setter
 // 拓展信息
 func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetExtInfo(_extInfo string) error {
 	r._extInfo = _extInfo
@@ -107,12 +107,12 @@ func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetExtInfo(_extInfo string) e
 	return nil
 }
 
-// Get ExtInfo Getter
+// GetExtInfo ExtInfo Getter
 func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetExtInfo() string {
 	return r._extInfo
 }
 
-// Set is Point Setter
+// SetPoint is Point Setter
 // 积分信息
 func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetPoint(_point int64) error {
 	r._point = _point
@@ -120,7 +120,7 @@ func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetPoint(_point int64) error 
 	return nil
 }
 
-// Get Point Getter
+// GetPoint Point Getter
 func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetPoint() int64 {
 	return r._point
 }

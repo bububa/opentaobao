@@ -40,7 +40,7 @@ func (r TaobaoItemSellerGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的商品字段列表。可选值：Item商品结构体中所有字段均可返回，多个字段用“,”分隔。
 func (r *TaobaoItemSellerGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -48,12 +48,12 @@ func (r *TaobaoItemSellerGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoItemSellerGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is NumIid Setter
+// SetNumIid is NumIid Setter
 // 商品数字ID
 func (r *TaobaoItemSellerGetAPIRequest) SetNumIid(_numIid int64) error {
 	r._numIid = _numIid
@@ -61,7 +61,7 @@ func (r *TaobaoItemSellerGetAPIRequest) SetNumIid(_numIid int64) error {
 	return nil
 }
 
-// Get NumIid Getter
+// GetNumIid NumIid Getter
 func (r TaobaoItemSellerGetAPIRequest) GetNumIid() int64 {
 	return r._numIid
 }

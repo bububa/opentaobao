@@ -39,7 +39,7 @@ func (r AlibabaIdleOrderMsgSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *AlibabaIdleOrderMsgSendAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *AlibabaIdleOrderMsgSendAPIRequest) SetOrderId(_orderId string) error {
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaIdleOrderMsgSendAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is Text Setter
+// SetText is Text Setter
 // 消息发送内容
 func (r *AlibabaIdleOrderMsgSendAPIRequest) SetText(_text string) error {
 	r._text = _text
@@ -60,7 +60,7 @@ func (r *AlibabaIdleOrderMsgSendAPIRequest) SetText(_text string) error {
 	return nil
 }
 
-// Get Text Getter
+// GetText Text Getter
 func (r AlibabaIdleOrderMsgSendAPIRequest) GetText() string {
 	return r._text
 }

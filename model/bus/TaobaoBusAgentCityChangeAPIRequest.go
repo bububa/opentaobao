@@ -37,7 +37,7 @@ func (r TaobaoBusAgentCityChangeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamCityChangeRQ Setter
+// SetParamCityChangeRQ is ParamCityChangeRQ Setter
 // 城市变更请求对象
 func (r *TaobaoBusAgentCityChangeAPIRequest) SetParamCityChangeRQ(_paramCityChangeRQ *CityChangeRq) error {
 	r._paramCityChangeRQ = _paramCityChangeRQ
@@ -45,7 +45,7 @@ func (r *TaobaoBusAgentCityChangeAPIRequest) SetParamCityChangeRQ(_paramCityChan
 	return nil
 }
 
-// Get ParamCityChangeRQ Getter
+// GetParamCityChangeRQ ParamCityChangeRQ Getter
 func (r TaobaoBusAgentCityChangeAPIRequest) GetParamCityChangeRQ() *CityChangeRq {
 	return r._paramCityChangeRQ
 }

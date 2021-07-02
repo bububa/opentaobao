@@ -37,7 +37,7 @@ func (r TaobaoAilabAicloudTopMessagePushUnicastAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is MessageUnicastRequest Setter
+// SetMessageUnicastRequest is MessageUnicastRequest Setter
 // 消息推送单播请求体
 func (r *TaobaoAilabAicloudTopMessagePushUnicastAPIRequest) SetMessageUnicastRequest(_messageUnicastRequest *MessageUnicastRequest) error {
 	r._messageUnicastRequest = _messageUnicastRequest
@@ -45,7 +45,7 @@ func (r *TaobaoAilabAicloudTopMessagePushUnicastAPIRequest) SetMessageUnicastReq
 	return nil
 }
 
-// Get MessageUnicastRequest Getter
+// GetMessageUnicastRequest MessageUnicastRequest Getter
 func (r TaobaoAilabAicloudTopMessagePushUnicastAPIRequest) GetMessageUnicastRequest() *MessageUnicastRequest {
 	return r._messageUnicastRequest
 }

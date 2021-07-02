@@ -37,7 +37,7 @@ func (r TaobaoFeedflowItemAdzoneListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AdzoneQuery Setter
+// SetAdzoneQuery is AdzoneQuery Setter
 // 广告位查询条件
 func (r *TaobaoFeedflowItemAdzoneListAPIRequest) SetAdzoneQuery(_adzoneQuery *AdzoneQueryDto) error {
 	r._adzoneQuery = _adzoneQuery
@@ -45,7 +45,7 @@ func (r *TaobaoFeedflowItemAdzoneListAPIRequest) SetAdzoneQuery(_adzoneQuery *Ad
 	return nil
 }
 
-// Get AdzoneQuery Getter
+// GetAdzoneQuery AdzoneQuery Getter
 func (r TaobaoFeedflowItemAdzoneListAPIRequest) GetAdzoneQuery() *AdzoneQueryDto {
 	return r._adzoneQuery
 }

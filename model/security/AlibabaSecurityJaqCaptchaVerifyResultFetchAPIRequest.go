@@ -37,7 +37,7 @@ func (r AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is SessionId Setter
+// SetSessionId is SessionId Setter
 // 二次验证获取验证检查结果所需的seesionId
 func (r *AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) SetSessionId(_sessionId string) error {
 	r._sessionId = _sessionId
@@ -45,7 +45,7 @@ func (r *AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) SetSessionId(_ses
 	return nil
 }
 
-// Get SessionId Getter
+// GetSessionId SessionId Getter
 func (r AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) GetSessionId() string {
 	return r._sessionId
 }

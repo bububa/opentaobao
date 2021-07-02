@@ -37,7 +37,7 @@ func (r AlibabaMosDeliverySendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeliveryDto Setter
+// SetDeliveryDto is DeliveryDto Setter
 // 发货信息
 func (r *AlibabaMosDeliverySendAPIRequest) SetDeliveryDto(_deliveryDto *DeliveryDto) error {
 	r._deliveryDto = _deliveryDto
@@ -45,7 +45,7 @@ func (r *AlibabaMosDeliverySendAPIRequest) SetDeliveryDto(_deliveryDto *Delivery
 	return nil
 }
 
-// Get DeliveryDto Getter
+// GetDeliveryDto DeliveryDto Getter
 func (r AlibabaMosDeliverySendAPIRequest) GetDeliveryDto() *DeliveryDto {
 	return r._deliveryDto
 }

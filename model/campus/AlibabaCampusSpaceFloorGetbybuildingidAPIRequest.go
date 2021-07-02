@@ -41,7 +41,7 @@ func (r AlibabaCampusSpaceFloorGetbybuildingidAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 系统自动生成
 func (r *AlibabaCampusSpaceFloorGetbybuildingidAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
 	r._param0 = _param0
@@ -49,12 +49,12 @@ func (r *AlibabaCampusSpaceFloorGetbybuildingidAPIRequest) SetParam0(_param0 *Wo
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaCampusSpaceFloorGetbybuildingidAPIRequest) GetParam0() *WorkBenchContext {
 	return r._param0
 }
 
-// Set is Param1 Setter
+// SetParam1 is Param1 Setter
 // 楼宇iD封装
 func (r *AlibabaCampusSpaceFloorGetbybuildingidAPIRequest) SetParam1(_param1 *FloorQuery) error {
 	r._param1 = _param1
@@ -62,7 +62,7 @@ func (r *AlibabaCampusSpaceFloorGetbybuildingidAPIRequest) SetParam1(_param1 *Fl
 	return nil
 }
 
-// Get Param1 Getter
+// GetParam1 Param1 Getter
 func (r AlibabaCampusSpaceFloorGetbybuildingidAPIRequest) GetParam1() *FloorQuery {
 	return r._param1
 }

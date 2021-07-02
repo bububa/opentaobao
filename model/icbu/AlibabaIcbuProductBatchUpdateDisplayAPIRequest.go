@@ -39,7 +39,7 @@ func (r AlibabaIcbuProductBatchUpdateDisplayAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is NewDisplay Setter
+// SetNewDisplay is NewDisplay Setter
 // on表示上架，off表示下架
 func (r *AlibabaIcbuProductBatchUpdateDisplayAPIRequest) SetNewDisplay(_newDisplay string) error {
 	r._newDisplay = _newDisplay
@@ -47,12 +47,12 @@ func (r *AlibabaIcbuProductBatchUpdateDisplayAPIRequest) SetNewDisplay(_newDispl
 	return nil
 }
 
-// Get NewDisplay Getter
+// GetNewDisplay NewDisplay Getter
 func (r AlibabaIcbuProductBatchUpdateDisplayAPIRequest) GetNewDisplay() string {
 	return r._newDisplay
 }
 
-// Set is ProductIdList Setter
+// SetProductIdList is ProductIdList Setter
 // 用逗号分隔的混淆id字符串
 func (r *AlibabaIcbuProductBatchUpdateDisplayAPIRequest) SetProductIdList(_productIdList string) error {
 	r._productIdList = _productIdList
@@ -60,7 +60,7 @@ func (r *AlibabaIcbuProductBatchUpdateDisplayAPIRequest) SetProductIdList(_produ
 	return nil
 }
 
-// Get ProductIdList Getter
+// GetProductIdList ProductIdList Getter
 func (r AlibabaIcbuProductBatchUpdateDisplayAPIRequest) GetProductIdList() string {
 	return r._productIdList
 }

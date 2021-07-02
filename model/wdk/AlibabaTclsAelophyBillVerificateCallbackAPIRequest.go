@@ -37,7 +37,7 @@ func (r AlibabaTclsAelophyBillVerificateCallbackAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Module Setter
+// SetModule is Module Setter
 // 回调对象
 func (r *AlibabaTclsAelophyBillVerificateCallbackAPIRequest) SetModule(_module *VerificateCallbackDto) error {
 	r._module = _module
@@ -45,7 +45,7 @@ func (r *AlibabaTclsAelophyBillVerificateCallbackAPIRequest) SetModule(_module *
 	return nil
 }
 
-// Get Module Getter
+// GetModule Module Getter
 func (r AlibabaTclsAelophyBillVerificateCallbackAPIRequest) GetModule() *VerificateCallbackDto {
 	return r._module
 }

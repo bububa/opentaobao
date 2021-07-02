@@ -43,7 +43,7 @@ func (r AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) GetApiParams
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业id
 func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) SetRefEntId
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is SignValue Setter
+// SetSignValue is SignValue Setter
 // 签名值
 func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) SetSignValue(_signValue string) error {
 	r._signValue = _signValue
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) SetSignValu
 	return nil
 }
 
-// Get SignValue Getter
+// GetSignValue SignValue Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) GetSignValue() string {
 	return r._signValue
 }
 
-// Set is CipherText Setter
+// SetCipherText is CipherText Setter
 // 密文
 func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) SetCipherText(_cipherText string) error {
 	r._cipherText = _cipherText
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) SetCipherTe
 	return nil
 }
 
-// Get CipherText Getter
+// GetCipherText CipherText Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) GetCipherText() string {
 	return r._cipherText
 }
 
-// Set is FileName Setter
+// SetFileName is FileName Setter
 // 文件名称
 func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) SetFileName(_fileName string) error {
 	r._fileName = _fileName
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) SetFileName
 	return nil
 }
 
-// Get FileName Getter
+// GetFileName FileName Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferblindAPIRequest) GetFileName() string {
 	return r._fileName
 }

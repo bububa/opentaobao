@@ -37,7 +37,7 @@ func (r AlibabaMarketingLotteryActivityCreateAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is LotteryActivityCreate Setter
+// SetLotteryActivityCreate is LotteryActivityCreate Setter
 // 抽奖活动创建请求对象
 func (r *AlibabaMarketingLotteryActivityCreateAPIRequest) SetLotteryActivityCreate(_lotteryActivityCreate *LotteryActivityCreateDto) error {
 	r._lotteryActivityCreate = _lotteryActivityCreate
@@ -45,7 +45,7 @@ func (r *AlibabaMarketingLotteryActivityCreateAPIRequest) SetLotteryActivityCrea
 	return nil
 }
 
-// Get LotteryActivityCreate Getter
+// GetLotteryActivityCreate LotteryActivityCreate Getter
 func (r AlibabaMarketingLotteryActivityCreateAPIRequest) GetLotteryActivityCreate() *LotteryActivityCreateDto {
 	return r._lotteryActivityCreate
 }

@@ -45,7 +45,7 @@ func (r AlibabaAlisportsPassportAccountDelrelationAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is AlispAppKey Setter
+// SetAlispAppKey is AlispAppKey Setter
 // 业务appkey
 func (r *AlibabaAlisportsPassportAccountDelrelationAPIRequest) SetAlispAppKey(_alispAppKey string) error {
 	r._alispAppKey = _alispAppKey
@@ -53,12 +53,12 @@ func (r *AlibabaAlisportsPassportAccountDelrelationAPIRequest) SetAlispAppKey(_a
 	return nil
 }
 
-// Get AlispAppKey Getter
+// GetAlispAppKey AlispAppKey Getter
 func (r AlibabaAlisportsPassportAccountDelrelationAPIRequest) GetAlispAppKey() string {
 	return r._alispAppKey
 }
 
-// Set is AlispTime Setter
+// SetAlispTime is AlispTime Setter
 // 调用时间戳
 func (r *AlibabaAlisportsPassportAccountDelrelationAPIRequest) SetAlispTime(_alispTime string) error {
 	r._alispTime = _alispTime
@@ -66,12 +66,12 @@ func (r *AlibabaAlisportsPassportAccountDelrelationAPIRequest) SetAlispTime(_ali
 	return nil
 }
 
-// Get AlispTime Getter
+// GetAlispTime AlispTime Getter
 func (r AlibabaAlisportsPassportAccountDelrelationAPIRequest) GetAlispTime() string {
 	return r._alispTime
 }
 
-// Set is AlispSign Setter
+// SetAlispSign is AlispSign Setter
 // 签名字符串
 func (r *AlibabaAlisportsPassportAccountDelrelationAPIRequest) SetAlispSign(_alispSign string) error {
 	r._alispSign = _alispSign
@@ -79,12 +79,12 @@ func (r *AlibabaAlisportsPassportAccountDelrelationAPIRequest) SetAlispSign(_ali
 	return nil
 }
 
-// Get AlispSign Getter
+// GetAlispSign AlispSign Getter
 func (r AlibabaAlisportsPassportAccountDelrelationAPIRequest) GetAlispSign() string {
 	return r._alispSign
 }
 
-// Set is AppUid Setter
+// SetAppUid is AppUid Setter
 // 合作方用户ID
 func (r *AlibabaAlisportsPassportAccountDelrelationAPIRequest) SetAppUid(_appUid string) error {
 	r._appUid = _appUid
@@ -92,12 +92,12 @@ func (r *AlibabaAlisportsPassportAccountDelrelationAPIRequest) SetAppUid(_appUid
 	return nil
 }
 
-// Get AppUid Getter
+// GetAppUid AppUid Getter
 func (r AlibabaAlisportsPassportAccountDelrelationAPIRequest) GetAppUid() string {
 	return r._appUid
 }
 
-// Set is Aliuid Setter
+// SetAliuid is Aliuid Setter
 // 阿里体育会员id
 func (r *AlibabaAlisportsPassportAccountDelrelationAPIRequest) SetAliuid(_aliuid string) error {
 	r._aliuid = _aliuid
@@ -105,7 +105,7 @@ func (r *AlibabaAlisportsPassportAccountDelrelationAPIRequest) SetAliuid(_aliuid
 	return nil
 }
 
-// Get Aliuid Getter
+// GetAliuid Aliuid Getter
 func (r AlibabaAlisportsPassportAccountDelrelationAPIRequest) GetAliuid() string {
 	return r._aliuid
 }

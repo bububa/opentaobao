@@ -37,7 +37,7 @@ func (r AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 渠道
 func (r *AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest) SetChannel(_
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r AlibabaAlihealthTracecodesearcGetinfomationVivoAPIRequest) GetChannel() string {
 	return r._channel
 }

@@ -37,7 +37,7 @@ func (r CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is QueryActivityDto Setter
+// SetQueryActivityDto is QueryActivityDto Setter
 // 查询参数
 func (r *CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) SetQueryActivityDto(_queryActivityDto *QueryActivityDto) error {
 	r._queryActivityDto = _queryActivityDto
@@ -45,7 +45,7 @@ func (r *CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) SetQueryActivity
 	return nil
 }
 
-// Get QueryActivityDto Getter
+// GetQueryActivityDto QueryActivityDto Getter
 func (r CainiaoCntecShopkeeperSupplyStatisticsQueryAPIRequest) GetQueryActivityDto() *QueryActivityDto {
 	return r._queryActivityDto
 }

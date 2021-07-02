@@ -41,7 +41,7 @@ func (r TaobaoSebpIsvWxrobotCallbackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NType Setter
+// SetNType is NType Setter
 // 操作类型
 func (r *TaobaoSebpIsvWxrobotCallbackAPIRequest) SetNType(_nType string) error {
 	r._nType = _nType
@@ -49,12 +49,12 @@ func (r *TaobaoSebpIsvWxrobotCallbackAPIRequest) SetNType(_nType string) error {
 	return nil
 }
 
-// Get NType Getter
+// GetNType NType Getter
 func (r TaobaoSebpIsvWxrobotCallbackAPIRequest) GetNType() string {
 	return r._nType
 }
 
-// Set is StrSign Setter
+// SetStrSign is StrSign Setter
 // 调用签名
 func (r *TaobaoSebpIsvWxrobotCallbackAPIRequest) SetStrSign(_strSign string) error {
 	r._strSign = _strSign
@@ -62,12 +62,12 @@ func (r *TaobaoSebpIsvWxrobotCallbackAPIRequest) SetStrSign(_strSign string) err
 	return nil
 }
 
-// Get StrSign Getter
+// GetStrSign StrSign Getter
 func (r TaobaoSebpIsvWxrobotCallbackAPIRequest) GetStrSign() string {
 	return r._strSign
 }
 
-// Set is StrContext Setter
+// SetStrContext is StrContext Setter
 // 参数
 func (r *TaobaoSebpIsvWxrobotCallbackAPIRequest) SetStrContext(_strContext string) error {
 	r._strContext = _strContext
@@ -75,7 +75,7 @@ func (r *TaobaoSebpIsvWxrobotCallbackAPIRequest) SetStrContext(_strContext strin
 	return nil
 }
 
-// Get StrContext Getter
+// GetStrContext StrContext Getter
 func (r TaobaoSebpIsvWxrobotCallbackAPIRequest) GetStrContext() string {
 	return r._strContext
 }

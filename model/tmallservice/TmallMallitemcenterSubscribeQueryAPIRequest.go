@@ -37,7 +37,7 @@ func (r TmallMallitemcenterSubscribeQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 入参query
 func (r *TmallMallitemcenterSubscribeQueryAPIRequest) SetQuery(_query *Spb2bOderQuery) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *TmallMallitemcenterSubscribeQueryAPIRequest) SetQuery(_query *Spb2bOder
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r TmallMallitemcenterSubscribeQueryAPIRequest) GetQuery() *Spb2bOderQuery {
 	return r._query
 }

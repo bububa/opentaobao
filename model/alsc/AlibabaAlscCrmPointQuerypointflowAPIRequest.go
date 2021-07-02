@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmPointQuerypointflowAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamPageQueryPointFlowOpenReq Setter
+// SetParamPageQueryPointFlowOpenReq is ParamPageQueryPointFlowOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmPointQuerypointflowAPIRequest) SetParamPageQueryPointFlowOpenReq(_paramPageQueryPointFlowOpenReq *PageQueryPointFlowOpenReq) error {
 	r._paramPageQueryPointFlowOpenReq = _paramPageQueryPointFlowOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmPointQuerypointflowAPIRequest) SetParamPageQueryPointFlow
 	return nil
 }
 
-// Get ParamPageQueryPointFlowOpenReq Getter
+// GetParamPageQueryPointFlowOpenReq ParamPageQueryPointFlowOpenReq Getter
 func (r AlibabaAlscCrmPointQuerypointflowAPIRequest) GetParamPageQueryPointFlowOpenReq() *PageQueryPointFlowOpenReq {
 	return r._paramPageQueryPointFlowOpenReq
 }

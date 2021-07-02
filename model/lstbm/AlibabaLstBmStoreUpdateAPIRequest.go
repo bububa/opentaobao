@@ -37,7 +37,7 @@ func (r AlibabaLstBmStoreUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpenStoreDto Setter
+// SetOpenStoreDto is OpenStoreDto Setter
 // 门店数据模型
 func (r *AlibabaLstBmStoreUpdateAPIRequest) SetOpenStoreDto(_openStoreDto *LstTopOpenStoreDto) error {
 	r._openStoreDto = _openStoreDto
@@ -45,7 +45,7 @@ func (r *AlibabaLstBmStoreUpdateAPIRequest) SetOpenStoreDto(_openStoreDto *LstTo
 	return nil
 }
 
-// Get OpenStoreDto Getter
+// GetOpenStoreDto OpenStoreDto Getter
 func (r AlibabaLstBmStoreUpdateAPIRequest) GetOpenStoreDto() *LstTopOpenStoreDto {
 	return r._openStoreDto
 }

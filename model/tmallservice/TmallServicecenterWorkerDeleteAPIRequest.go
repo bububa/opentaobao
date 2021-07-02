@@ -56,7 +56,7 @@ func (r TmallServicecenterWorkerDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 工人姓名
 func (r *TmallServicecenterWorkerDeleteAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -64,12 +64,12 @@ func (r *TmallServicecenterWorkerDeleteAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TmallServicecenterWorkerDeleteAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 工人手机号
 func (r *TmallServicecenterWorkerDeleteAPIRequest) SetPhone(_phone int64) error {
 	r._phone = _phone
@@ -77,12 +77,12 @@ func (r *TmallServicecenterWorkerDeleteAPIRequest) SetPhone(_phone int64) error 
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r TmallServicecenterWorkerDeleteAPIRequest) GetPhone() int64 {
 	return r._phone
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务类型,电器预约安装业务填appliance_install
 func (r *TmallServicecenterWorkerDeleteAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -90,7 +90,7 @@ func (r *TmallServicecenterWorkerDeleteAPIRequest) SetBizType(_bizType string) e
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TmallServicecenterWorkerDeleteAPIRequest) GetBizType() string {
 	return r._bizType
 }

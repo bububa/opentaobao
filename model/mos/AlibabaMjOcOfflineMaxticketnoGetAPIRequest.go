@@ -41,7 +41,7 @@ func (r AlibabaMjOcOfflineMaxticketnoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PosNo Setter
+// SetPosNo is PosNo Setter
 // 收银机号
 func (r *AlibabaMjOcOfflineMaxticketnoGetAPIRequest) SetPosNo(_posNo string) error {
 	r._posNo = _posNo
@@ -49,12 +49,12 @@ func (r *AlibabaMjOcOfflineMaxticketnoGetAPIRequest) SetPosNo(_posNo string) err
 	return nil
 }
 
-// Get PosNo Getter
+// GetPosNo PosNo Getter
 func (r AlibabaMjOcOfflineMaxticketnoGetAPIRequest) GetPosNo() string {
 	return r._posNo
 }
 
-// Set is StoreNo Setter
+// SetStoreNo is StoreNo Setter
 // 外部门店号
 func (r *AlibabaMjOcOfflineMaxticketnoGetAPIRequest) SetStoreNo(_storeNo string) error {
 	r._storeNo = _storeNo
@@ -62,12 +62,12 @@ func (r *AlibabaMjOcOfflineMaxticketnoGetAPIRequest) SetStoreNo(_storeNo string)
 	return nil
 }
 
-// Get StoreNo Getter
+// GetStoreNo StoreNo Getter
 func (r AlibabaMjOcOfflineMaxticketnoGetAPIRequest) GetStoreNo() string {
 	return r._storeNo
 }
 
-// Set is Datetime Setter
+// SetDatetime is Datetime Setter
 // 日期
 func (r *AlibabaMjOcOfflineMaxticketnoGetAPIRequest) SetDatetime(_datetime string) error {
 	r._datetime = _datetime
@@ -75,7 +75,7 @@ func (r *AlibabaMjOcOfflineMaxticketnoGetAPIRequest) SetDatetime(_datetime strin
 	return nil
 }
 
-// Get Datetime Getter
+// GetDatetime Datetime Getter
 func (r AlibabaMjOcOfflineMaxticketnoGetAPIRequest) GetDatetime() string {
 	return r._datetime
 }

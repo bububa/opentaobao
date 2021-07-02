@@ -37,7 +37,7 @@ func (r AlibabaLstTradeSellerOrderDetailQueryAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参
 func (r *AlibabaLstTradeSellerOrderDetailQueryAPIRequest) SetParam(_param *LstTradeGetSellerOrderListParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaLstTradeSellerOrderDetailQueryAPIRequest) SetParam(_param *LstTr
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaLstTradeSellerOrderDetailQueryAPIRequest) GetParam() *LstTradeGetSellerOrderListParam {
 	return r._param
 }

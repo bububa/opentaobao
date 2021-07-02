@@ -47,7 +47,7 @@ func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefEntName Setter
+// SetRefEntName is RefEntName Setter
 // 企业名称
 func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetRefEntName(_refEntName string) error {
 	r._refEntName = _refEntName
@@ -55,12 +55,12 @@ func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetRefEntName(_refEntName s
 	return nil
 }
 
-// Get RefEntName Getter
+// GetRefEntName RefEntName Getter
 func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetRefEntName() string {
 	return r._refEntName
 }
 
-// Set is PhysicName Setter
+// SetPhysicName is PhysicName Setter
 // 药品名称
 func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetPhysicName(_physicName string) error {
 	r._physicName = _physicName
@@ -68,12 +68,12 @@ func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetPhysicName(_physicName s
 	return nil
 }
 
-// Get PhysicName Getter
+// GetPhysicName PhysicName Getter
 func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetPhysicName() string {
 	return r._physicName
 }
 
-// Set is ProduceBatchNo Setter
+// SetProduceBatchNo is ProduceBatchNo Setter
 // 生产批号
 func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetProduceBatchNo(_produceBatchNo string) error {
 	r._produceBatchNo = _produceBatchNo
@@ -81,12 +81,12 @@ func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetProduceBatchNo(_produceB
 	return nil
 }
 
-// Get ProduceBatchNo Getter
+// GetProduceBatchNo ProduceBatchNo Getter
 func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetProduceBatchNo() string {
 	return r._produceBatchNo
 }
 
-// Set is PhysicType Setter
+// SetPhysicType is PhysicType Setter
 // 药品类型
 func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetPhysicType(_physicType string) error {
 	r._physicType = _physicType
@@ -94,12 +94,12 @@ func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetPhysicType(_physicType s
 	return nil
 }
 
-// Get PhysicType Getter
+// GetPhysicType PhysicType Getter
 func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetPhysicType() string {
 	return r._physicType
 }
 
-// Set is PkgSpec Setter
+// SetPkgSpec is PkgSpec Setter
 // 包装规格
 func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetPkgSpec(_pkgSpec string) error {
 	r._pkgSpec = _pkgSpec
@@ -107,12 +107,12 @@ func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetPkgSpec(_pkgSpec string)
 	return nil
 }
 
-// Get PkgSpec Getter
+// GetPkgSpec PkgSpec Getter
 func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetPkgSpec() string {
 	return r._pkgSpec
 }
 
-// Set is PrepnSpec Setter
+// SetPrepnSpec is PrepnSpec Setter
 // 制剂规格
 func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetPrepnSpec(_prepnSpec string) error {
 	r._prepnSpec = _prepnSpec
@@ -120,7 +120,7 @@ func (r *AlibabaAlihealthDrugKytDrugcodesAPIRequest) SetPrepnSpec(_prepnSpec str
 	return nil
 }
 
-// Get PrepnSpec Getter
+// GetPrepnSpec PrepnSpec Getter
 func (r AlibabaAlihealthDrugKytDrugcodesAPIRequest) GetPrepnSpec() string {
 	return r._prepnSpec
 }

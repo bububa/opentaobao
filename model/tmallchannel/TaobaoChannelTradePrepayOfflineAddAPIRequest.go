@@ -37,7 +37,7 @@ func (r TaobaoChannelTradePrepayOfflineAddAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is OfflineAddPrepayParam Setter
+// SetOfflineAddPrepayParam is OfflineAddPrepayParam Setter
 // 增加流水
 func (r *TaobaoChannelTradePrepayOfflineAddAPIRequest) SetOfflineAddPrepayParam(_offlineAddPrepayParam *TopOfflineAddPrepayDto) error {
 	r._offlineAddPrepayParam = _offlineAddPrepayParam
@@ -45,7 +45,7 @@ func (r *TaobaoChannelTradePrepayOfflineAddAPIRequest) SetOfflineAddPrepayParam(
 	return nil
 }
 
-// Get OfflineAddPrepayParam Getter
+// GetOfflineAddPrepayParam OfflineAddPrepayParam Getter
 func (r TaobaoChannelTradePrepayOfflineAddAPIRequest) GetOfflineAddPrepayParam() *TopOfflineAddPrepayDto {
 	return r._offlineAddPrepayParam
 }

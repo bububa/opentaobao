@@ -38,7 +38,7 @@ func (r TmallServicecenterWorkcardVirtualphoneBindAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is WorkcardRequest Setter
+// SetWorkcardRequest is WorkcardRequest Setter
 // 绑定阿里通讯号入参
 func (r *TmallServicecenterWorkcardVirtualphoneBindAPIRequest) SetWorkcardRequest(_workcardRequest *WorkcardBaseRequest) error {
 	r._workcardRequest = _workcardRequest
@@ -46,7 +46,7 @@ func (r *TmallServicecenterWorkcardVirtualphoneBindAPIRequest) SetWorkcardReques
 	return nil
 }
 
-// Get WorkcardRequest Getter
+// GetWorkcardRequest WorkcardRequest Getter
 func (r TmallServicecenterWorkcardVirtualphoneBindAPIRequest) GetWorkcardRequest() *WorkcardBaseRequest {
 	return r._workcardRequest
 }

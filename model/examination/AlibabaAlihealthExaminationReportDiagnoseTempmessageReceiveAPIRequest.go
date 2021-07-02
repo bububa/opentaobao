@@ -37,7 +37,7 @@ func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest) G
 	return params
 }
 
-// Set is ReportDiagnoseImMessageRequest Setter
+// SetReportDiagnoseImMessageRequest is ReportDiagnoseImMessageRequest Setter
 // 入参对象
 func (r *AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest) SetReportDiagnoseImMessageRequest(_reportDiagnoseImMessageRequest *ReportDiagnoseImMessageRequest) error {
 	r._reportDiagnoseImMessageRequest = _reportDiagnoseImMessageRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest) 
 	return nil
 }
 
-// Get ReportDiagnoseImMessageRequest Getter
+// GetReportDiagnoseImMessageRequest ReportDiagnoseImMessageRequest Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveAPIRequest) GetReportDiagnoseImMessageRequest() *ReportDiagnoseImMessageRequest {
 	return r._reportDiagnoseImMessageRequest
 }

@@ -37,7 +37,7 @@ func (r TmallServicecenterTaskQueryrefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WorkcardList Setter
+// SetWorkcardList is WorkcardList Setter
 // 工单id列表
 func (r *TmallServicecenterTaskQueryrefundAPIRequest) SetWorkcardList(_workcardList []int64) error {
 	r._workcardList = _workcardList
@@ -45,7 +45,7 @@ func (r *TmallServicecenterTaskQueryrefundAPIRequest) SetWorkcardList(_workcardL
 	return nil
 }
 
-// Get WorkcardList Getter
+// GetWorkcardList WorkcardList Getter
 func (r TmallServicecenterTaskQueryrefundAPIRequest) GetWorkcardList() []int64 {
 	return r._workcardList
 }

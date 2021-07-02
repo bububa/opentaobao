@@ -37,7 +37,7 @@ func (r AlitripPlatformPoiRawFeedAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // poi存储参数
 func (r *AlitripPlatformPoiRawFeedAPIRequest) SetParam0(_param0 *TripPoiRawSaveParam) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlitripPlatformPoiRawFeedAPIRequest) SetParam0(_param0 *TripPoiRawSaveP
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlitripPlatformPoiRawFeedAPIRequest) GetParam0() *TripPoiRawSaveParam {
 	return r._param0
 }

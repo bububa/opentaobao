@@ -41,7 +41,7 @@ func (r AlibabaInteractActivityAddcommentAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 该字段为评论内容
 func (r *AlibabaInteractActivityAddcommentAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -49,12 +49,12 @@ func (r *AlibabaInteractActivityAddcommentAPIRequest) SetContent(_content string
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r AlibabaInteractActivityAddcommentAPIRequest) GetContent() string {
 	return r._content
 }
 
-// Set is FeedId Setter
+// SetFeedId is FeedId Setter
 // 评论feedid
 func (r *AlibabaInteractActivityAddcommentAPIRequest) SetFeedId(_feedId int64) error {
 	r._feedId = _feedId
@@ -62,12 +62,12 @@ func (r *AlibabaInteractActivityAddcommentAPIRequest) SetFeedId(_feedId int64) e
 	return nil
 }
 
-// Get FeedId Getter
+// GetFeedId FeedId Getter
 func (r AlibabaInteractActivityAddcommentAPIRequest) GetFeedId() int64 {
 	return r._feedId
 }
 
-// Set is BizId Setter
+// SetBizId is BizId Setter
 // 发评论的业务id
 func (r *AlibabaInteractActivityAddcommentAPIRequest) SetBizId(_bizId string) error {
 	r._bizId = _bizId
@@ -75,7 +75,7 @@ func (r *AlibabaInteractActivityAddcommentAPIRequest) SetBizId(_bizId string) er
 	return nil
 }
 
-// Get BizId Getter
+// GetBizId BizId Getter
 func (r AlibabaInteractActivityAddcommentAPIRequest) GetBizId() string {
 	return r._bizId
 }

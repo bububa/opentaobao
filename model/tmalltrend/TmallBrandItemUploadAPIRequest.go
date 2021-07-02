@@ -37,7 +37,7 @@ func (r TmallBrandItemUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemList Setter
+// SetItemList is ItemList Setter
 // 需要同步的商品列表
 func (r *TmallBrandItemUploadAPIRequest) SetItemList(_itemList []TmallBrandChannelNewItem) error {
 	r._itemList = _itemList
@@ -45,7 +45,7 @@ func (r *TmallBrandItemUploadAPIRequest) SetItemList(_itemList []TmallBrandChann
 	return nil
 }
 
-// Get ItemList Getter
+// GetItemList ItemList Getter
 func (r TmallBrandItemUploadAPIRequest) GetItemList() []TmallBrandChannelNewItem {
 	return r._itemList
 }

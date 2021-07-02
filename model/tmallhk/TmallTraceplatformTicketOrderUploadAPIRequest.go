@@ -37,7 +37,7 @@ func (r TmallTraceplatformTicketOrderUploadAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is TicketOrder Setter
+// SetTicketOrder is TicketOrder Setter
 // 上传小票参数
 func (r *TmallTraceplatformTicketOrderUploadAPIRequest) SetTicketOrder(_ticketOrder *TicketOrderUpdator) error {
 	r._ticketOrder = _ticketOrder
@@ -45,7 +45,7 @@ func (r *TmallTraceplatformTicketOrderUploadAPIRequest) SetTicketOrder(_ticketOr
 	return nil
 }
 
-// Get TicketOrder Getter
+// GetTicketOrder TicketOrder Getter
 func (r TmallTraceplatformTicketOrderUploadAPIRequest) GetTicketOrder() *TicketOrderUpdator {
 	return r._ticketOrder
 }

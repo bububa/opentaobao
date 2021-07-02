@@ -43,7 +43,7 @@ func (r AlibabaRetailDeviceRoadStatusResetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is DeviceUuid Setter
+// SetDeviceUuid is DeviceUuid Setter
 // 设备外部编码
 func (r *AlibabaRetailDeviceRoadStatusResetAPIRequest) SetDeviceUuid(_deviceUuid string) error {
 	r._deviceUuid = _deviceUuid
@@ -51,12 +51,12 @@ func (r *AlibabaRetailDeviceRoadStatusResetAPIRequest) SetDeviceUuid(_deviceUuid
 	return nil
 }
 
-// Get DeviceUuid Getter
+// GetDeviceUuid DeviceUuid Getter
 func (r AlibabaRetailDeviceRoadStatusResetAPIRequest) GetDeviceUuid() string {
 	return r._deviceUuid
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 阿里设备编码
 func (r *AlibabaRetailDeviceRoadStatusResetAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -64,12 +64,12 @@ func (r *AlibabaRetailDeviceRoadStatusResetAPIRequest) SetDeviceCode(_deviceCode
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r AlibabaRetailDeviceRoadStatusResetAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is DeviceSn Setter
+// SetDeviceSn is DeviceSn Setter
 // 阿里设备物理编码
 func (r *AlibabaRetailDeviceRoadStatusResetAPIRequest) SetDeviceSn(_deviceSn string) error {
 	r._deviceSn = _deviceSn
@@ -77,12 +77,12 @@ func (r *AlibabaRetailDeviceRoadStatusResetAPIRequest) SetDeviceSn(_deviceSn str
 	return nil
 }
 
-// Get DeviceSn Getter
+// GetDeviceSn DeviceSn Getter
 func (r AlibabaRetailDeviceRoadStatusResetAPIRequest) GetDeviceSn() string {
 	return r._deviceSn
 }
 
-// Set is RoadNoList Setter
+// SetRoadNoList is RoadNoList Setter
 // 货道编码
 func (r *AlibabaRetailDeviceRoadStatusResetAPIRequest) SetRoadNoList(_roadNoList []string) error {
 	r._roadNoList = _roadNoList
@@ -90,7 +90,7 @@ func (r *AlibabaRetailDeviceRoadStatusResetAPIRequest) SetRoadNoList(_roadNoList
 	return nil
 }
 
-// Get RoadNoList Getter
+// GetRoadNoList RoadNoList Getter
 func (r AlibabaRetailDeviceRoadStatusResetAPIRequest) GetRoadNoList() []string {
 	return r._roadNoList
 }

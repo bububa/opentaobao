@@ -45,7 +45,7 @@ func (r TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息json段，用于存放APP类型，APP版本等等信息。
 func (r *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -53,12 +53,12 @@ func (r *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) SetExt(_ext string) err
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // schema
 func (r *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -66,12 +66,12 @@ func (r *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) SetSchema(_schema strin
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 企业用户ID
 func (r *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -79,12 +79,12 @@ func (r *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) SetUserId(_userId strin
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is UtdId Setter
+// SetUtdId is UtdId Setter
 // 手持设备ID
 func (r *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
@@ -92,12 +92,12 @@ func (r *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) SetUtdId(_utdId string)
 	return nil
 }
 
-// Get UtdId Getter
+// GetUtdId UtdId Getter
 func (r TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
-// Set is ParamCreateAlarmParam Setter
+// SetParamCreateAlarmParam is ParamCreateAlarmParam Setter
 // 创建闹钟入参
 func (r *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) SetParamCreateAlarmParam(_paramCreateAlarmParam *CreateAlarmParam) error {
 	r._paramCreateAlarmParam = _paramCreateAlarmParam
@@ -105,7 +105,7 @@ func (r *TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) SetParamCreateAlarmPara
 	return nil
 }
 
-// Get ParamCreateAlarmParam Getter
+// GetParamCreateAlarmParam ParamCreateAlarmParam Getter
 func (r TaobaoAilabAicloudTopMemoAlarmCreateAPIRequest) GetParamCreateAlarmParam() *CreateAlarmParam {
 	return r._paramCreateAlarmParam
 }

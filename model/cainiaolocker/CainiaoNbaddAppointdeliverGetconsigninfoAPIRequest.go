@@ -37,7 +37,7 @@ func (r CainiaoNbaddAppointdeliverGetconsigninfoAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is TradeOrderId Setter
+// SetTradeOrderId is TradeOrderId Setter
 // 淘宝交易订单id
 func (r *CainiaoNbaddAppointdeliverGetconsigninfoAPIRequest) SetTradeOrderId(_tradeOrderId int64) error {
 	r._tradeOrderId = _tradeOrderId
@@ -45,7 +45,7 @@ func (r *CainiaoNbaddAppointdeliverGetconsigninfoAPIRequest) SetTradeOrderId(_tr
 	return nil
 }
 
-// Get TradeOrderId Getter
+// GetTradeOrderId TradeOrderId Getter
 func (r CainiaoNbaddAppointdeliverGetconsigninfoAPIRequest) GetTradeOrderId() int64 {
 	return r._tradeOrderId
 }

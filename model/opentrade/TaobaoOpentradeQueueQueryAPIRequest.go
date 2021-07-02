@@ -47,7 +47,7 @@ func (r TaobaoOpentradeQueueQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 排队用户状态，新用户为NEW
 func (r *TaobaoOpentradeQueueQueryAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -55,12 +55,12 @@ func (r *TaobaoOpentradeQueueQueryAPIRequest) SetStatus(_status string) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoOpentradeQueueQueryAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 排队活动ID，排队时如传入，这里需要填写；若未传，这里也可以不传
 func (r *TaobaoOpentradeQueueQueryAPIRequest) SetActivityId(_activityId string) error {
 	r._activityId = _activityId
@@ -68,12 +68,12 @@ func (r *TaobaoOpentradeQueueQueryAPIRequest) SetActivityId(_activityId string) 
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoOpentradeQueueQueryAPIRequest) GetActivityId() string {
 	return r._activityId
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // 排队商品SKU ID，不存在传0
 func (r *TaobaoOpentradeQueueQueryAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
@@ -81,12 +81,12 @@ func (r *TaobaoOpentradeQueueQueryAPIRequest) SetSkuId(_skuId int64) error {
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TaobaoOpentradeQueueQueryAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 排队商品ID
 func (r *TaobaoOpentradeQueueQueryAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -94,12 +94,12 @@ func (r *TaobaoOpentradeQueueQueryAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoOpentradeQueueQueryAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页参数，每页大小
 func (r *TaobaoOpentradeQueueQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -107,12 +107,12 @@ func (r *TaobaoOpentradeQueueQueryAPIRequest) SetPageSize(_pageSize int64) error
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoOpentradeQueueQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 分页参数，当前页，以0开始
 func (r *TaobaoOpentradeQueueQueryAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -120,7 +120,7 @@ func (r *TaobaoOpentradeQueueQueryAPIRequest) SetPageIndex(_pageIndex int64) err
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoOpentradeQueueQueryAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }

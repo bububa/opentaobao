@@ -37,7 +37,7 @@ func (r AlibabaWdkElemeBillGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EleBillRequest Setter
+// SetEleBillRequest is EleBillRequest Setter
 // 对账单查询参数
 func (r *AlibabaWdkElemeBillGetAPIRequest) SetEleBillRequest(_eleBillRequest *EleBillRequest) error {
 	r._eleBillRequest = _eleBillRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkElemeBillGetAPIRequest) SetEleBillRequest(_eleBillRequest *El
 	return nil
 }
 
-// Get EleBillRequest Getter
+// GetEleBillRequest EleBillRequest Getter
 func (r AlibabaWdkElemeBillGetAPIRequest) GetEleBillRequest() *EleBillRequest {
 	return r._eleBillRequest
 }

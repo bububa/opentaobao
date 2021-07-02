@@ -45,7 +45,7 @@ func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -53,12 +53,12 @@ func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetPageNo(_pageNo int64) error 
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
 func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -66,12 +66,12 @@ func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetPageSize(_pageSize int64) er
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 零售门店在零售+平台对应的ID
 func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -79,12 +79,12 @@ func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetStoreId(_storeId string) err
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 开始时间
 func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -92,12 +92,12 @@ func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetStartDate(_startDate string)
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 结束时间
 func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -105,7 +105,7 @@ func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetEndDate(_endDate string) err
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetEndDate() string {
 	return r._endDate
 }

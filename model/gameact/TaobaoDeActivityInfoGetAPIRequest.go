@@ -37,7 +37,7 @@ func (r TaobaoDeActivityInfoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EventKey Setter
+// SetEventKey is EventKey Setter
 // 事件唯一标识
 func (r *TaobaoDeActivityInfoGetAPIRequest) SetEventKey(_eventKey string) error {
 	r._eventKey = _eventKey
@@ -45,7 +45,7 @@ func (r *TaobaoDeActivityInfoGetAPIRequest) SetEventKey(_eventKey string) error 
 	return nil
 }
 
-// Get EventKey Getter
+// GetEventKey EventKey Getter
 func (r TaobaoDeActivityInfoGetAPIRequest) GetEventKey() string {
 	return r._eventKey
 }

@@ -39,7 +39,7 @@ func (r AlitripItemUpdateSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *AlitripItemUpdateSchemaGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -47,12 +47,12 @@ func (r *AlitripItemUpdateSchemaGetAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlitripItemUpdateSchemaGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is UpdateFieldIds Setter
+// SetUpdateFieldIds is UpdateFieldIds Setter
 // 需要获取的编辑schema，不填默认返回全部
 func (r *AlitripItemUpdateSchemaGetAPIRequest) SetUpdateFieldIds(_updateFieldIds []string) error {
 	r._updateFieldIds = _updateFieldIds
@@ -60,7 +60,7 @@ func (r *AlitripItemUpdateSchemaGetAPIRequest) SetUpdateFieldIds(_updateFieldIds
 	return nil
 }
 
-// Get UpdateFieldIds Getter
+// GetUpdateFieldIds UpdateFieldIds Getter
 func (r AlitripItemUpdateSchemaGetAPIRequest) GetUpdateFieldIds() []string {
 	return r._updateFieldIds
 }

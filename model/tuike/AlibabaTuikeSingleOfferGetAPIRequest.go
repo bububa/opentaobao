@@ -39,7 +39,7 @@ func (r AlibabaTuikeSingleOfferGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LoginId Setter
+// SetLoginId is LoginId Setter
 // 推客id
 func (r *AlibabaTuikeSingleOfferGetAPIRequest) SetLoginId(_loginId string) error {
 	r._loginId = _loginId
@@ -47,12 +47,12 @@ func (r *AlibabaTuikeSingleOfferGetAPIRequest) SetLoginId(_loginId string) error
 	return nil
 }
 
-// Get LoginId Getter
+// GetLoginId LoginId Getter
 func (r AlibabaTuikeSingleOfferGetAPIRequest) GetLoginId() string {
 	return r._loginId
 }
 
-// Set is OfferId Setter
+// SetOfferId is OfferId Setter
 // 商品id
 func (r *AlibabaTuikeSingleOfferGetAPIRequest) SetOfferId(_offerId int64) error {
 	r._offerId = _offerId
@@ -60,7 +60,7 @@ func (r *AlibabaTuikeSingleOfferGetAPIRequest) SetOfferId(_offerId int64) error 
 	return nil
 }
 
-// Get OfferId Getter
+// GetOfferId OfferId Getter
 func (r AlibabaTuikeSingleOfferGetAPIRequest) GetOfferId() int64 {
 	return r._offerId
 }

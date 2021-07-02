@@ -37,7 +37,7 @@ func (r AliexpressSolutionOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // param
 func (r *AliexpressSolutionOrderGetAPIRequest) SetParam0(_param0 *OrderQuery) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionOrderGetAPIRequest) SetParam0(_param0 *OrderQuery) er
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AliexpressSolutionOrderGetAPIRequest) GetParam0() *OrderQuery {
 	return r._param0
 }

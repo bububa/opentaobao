@@ -41,7 +41,7 @@ func (r TmallProductSchemaAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 商品发布的目标类目，必须是叶子类目
 func (r *TmallProductSchemaAddAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
@@ -49,12 +49,12 @@ func (r *TmallProductSchemaAddAPIRequest) SetCategoryId(_categoryId int64) error
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r TmallProductSchemaAddAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }
 
-// Set is BrandId Setter
+// SetBrandId is BrandId Setter
 // 品牌ID
 func (r *TmallProductSchemaAddAPIRequest) SetBrandId(_brandId int64) error {
 	r._brandId = _brandId
@@ -62,12 +62,12 @@ func (r *TmallProductSchemaAddAPIRequest) SetBrandId(_brandId int64) error {
 	return nil
 }
 
-// Get BrandId Getter
+// GetBrandId BrandId Getter
 func (r TmallProductSchemaAddAPIRequest) GetBrandId() int64 {
 	return r._brandId
 }
 
-// Set is XmlData Setter
+// SetXmlData is XmlData Setter
 // 根据tmall.product.add.schema.get生成的产品发布规则入参数据
 func (r *TmallProductSchemaAddAPIRequest) SetXmlData(_xmlData string) error {
 	r._xmlData = _xmlData
@@ -75,7 +75,7 @@ func (r *TmallProductSchemaAddAPIRequest) SetXmlData(_xmlData string) error {
 	return nil
 }
 
-// Get XmlData Getter
+// GetXmlData XmlData Getter
 func (r TmallProductSchemaAddAPIRequest) GetXmlData() string {
 	return r._xmlData
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) GetApiP
 	return params
 }
 
-// Set is ReportOrderSummaryRequest Setter
+// SetReportOrderSummaryRequest is ReportOrderSummaryRequest Setter
 // 入参对象
 func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) SetReportOrderSummaryRequest(_reportOrderSummaryRequest *ReportOrderSummaryRequest) error {
 	r._reportOrderSummaryRequest = _reportOrderSummaryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) SetRep
 	return nil
 }
 
-// Get ReportOrderSummaryRequest Getter
+// GetReportOrderSummaryRequest ReportOrderSummaryRequest Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) GetReportOrderSummaryRequest() *ReportOrderSummaryRequest {
 	return r._reportOrderSummaryRequest
 }

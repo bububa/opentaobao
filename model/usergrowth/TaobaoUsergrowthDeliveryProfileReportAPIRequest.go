@@ -39,7 +39,7 @@ func (r TaobaoUsergrowthDeliveryProfileReportAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // 标签参数, 支持一次传多个， 一次最多传20个
 func (r *TaobaoUsergrowthDeliveryProfileReportAPIRequest) SetData(_data string) error {
 	r._data = _data
@@ -47,12 +47,12 @@ func (r *TaobaoUsergrowthDeliveryProfileReportAPIRequest) SetData(_data string) 
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r TaobaoUsergrowthDeliveryProfileReportAPIRequest) GetData() string {
 	return r._data
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 渠道标识，找淘宝运营申请
 func (r *TaobaoUsergrowthDeliveryProfileReportAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -60,7 +60,7 @@ func (r *TaobaoUsergrowthDeliveryProfileReportAPIRequest) SetChannel(_channel st
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TaobaoUsergrowthDeliveryProfileReportAPIRequest) GetChannel() string {
 	return r._channel
 }

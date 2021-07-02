@@ -37,7 +37,7 @@ func (r TaobaoAlitripCarOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 飞猪平台订单id
 func (r *TaobaoAlitripCarOrderQueryAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripCarOrderQueryAPIRequest) SetOrderId(_orderId string) error
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoAlitripCarOrderQueryAPIRequest) GetOrderId() string {
 	return r._orderId
 }

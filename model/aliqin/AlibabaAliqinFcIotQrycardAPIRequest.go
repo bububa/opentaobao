@@ -41,7 +41,7 @@ func (r AlibabaAliqinFcIotQrycardAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BillSource Setter
+// SetBillSource is BillSource Setter
 // 外部计费来源
 func (r *AlibabaAliqinFcIotQrycardAPIRequest) SetBillSource(_billSource string) error {
 	r._billSource = _billSource
@@ -49,12 +49,12 @@ func (r *AlibabaAliqinFcIotQrycardAPIRequest) SetBillSource(_billSource string) 
 	return nil
 }
 
-// Get BillSource Getter
+// GetBillSource BillSource Getter
 func (r AlibabaAliqinFcIotQrycardAPIRequest) GetBillSource() string {
 	return r._billSource
 }
 
-// Set is BillReal Setter
+// SetBillReal is BillReal Setter
 // 外部计费号
 func (r *AlibabaAliqinFcIotQrycardAPIRequest) SetBillReal(_billReal string) error {
 	r._billReal = _billReal
@@ -62,12 +62,12 @@ func (r *AlibabaAliqinFcIotQrycardAPIRequest) SetBillReal(_billReal string) erro
 	return nil
 }
 
-// Get BillReal Getter
+// GetBillReal BillReal Getter
 func (r AlibabaAliqinFcIotQrycardAPIRequest) GetBillReal() string {
 	return r._billReal
 }
 
-// Set is Iccid Setter
+// SetIccid is Iccid Setter
 // ICCID
 func (r *AlibabaAliqinFcIotQrycardAPIRequest) SetIccid(_iccid string) error {
 	r._iccid = _iccid
@@ -75,7 +75,7 @@ func (r *AlibabaAliqinFcIotQrycardAPIRequest) SetIccid(_iccid string) error {
 	return nil
 }
 
-// Get Iccid Getter
+// GetIccid Iccid Getter
 func (r AlibabaAliqinFcIotQrycardAPIRequest) GetIccid() string {
 	return r._iccid
 }

@@ -47,7 +47,7 @@ func (r TaobaoFilmKoubeiCinemaGetactivityAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户账号
 func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -55,12 +55,12 @@ func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetUserId(_userId string) 
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoFilmKoubeiCinemaGetactivityAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is AccountType Setter
+// SetAccountType is AccountType Setter
 // 账号类型
 func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetAccountType(_accountType string) error {
 	r._accountType = _accountType
@@ -68,12 +68,12 @@ func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetAccountType(_accountTyp
 	return nil
 }
 
-// Get AccountType Getter
+// GetAccountType AccountType Getter
 func (r TaobaoFilmKoubeiCinemaGetactivityAPIRequest) GetAccountType() string {
 	return r._accountType
 }
 
-// Set is CityCode Setter
+// SetCityCode is CityCode Setter
 // 城市编码
 func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetCityCode(_cityCode int64) error {
 	r._cityCode = _cityCode
@@ -81,12 +81,12 @@ func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetCityCode(_cityCode int6
 	return nil
 }
 
-// Get CityCode Getter
+// GetCityCode CityCode Getter
 func (r TaobaoFilmKoubeiCinemaGetactivityAPIRequest) GetCityCode() int64 {
 	return r._cityCode
 }
 
-// Set is Platform Setter
+// SetPlatform is Platform Setter
 // 平台
 func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetPlatform(_platform int64) error {
 	r._platform = _platform
@@ -94,12 +94,12 @@ func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetPlatform(_platform int6
 	return nil
 }
 
-// Get Platform Getter
+// GetPlatform Platform Getter
 func (r TaobaoFilmKoubeiCinemaGetactivityAPIRequest) GetPlatform() int64 {
 	return r._platform
 }
 
-// Set is CinemaIds Setter
+// SetCinemaIds is CinemaIds Setter
 // 影院ID集合
 func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetCinemaIds(_cinemaIds []int64) error {
 	r._cinemaIds = _cinemaIds
@@ -107,12 +107,12 @@ func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetCinemaIds(_cinemaIds []
 	return nil
 }
 
-// Get CinemaIds Getter
+// GetCinemaIds CinemaIds Getter
 func (r TaobaoFilmKoubeiCinemaGetactivityAPIRequest) GetCinemaIds() []int64 {
 	return r._cinemaIds
 }
 
-// Set is Params Setter
+// SetParams is Params Setter
 // 附加参数
 func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetParams(_params string) error {
 	r._params = _params
@@ -120,7 +120,7 @@ func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetParams(_params string) 
 	return nil
 }
 
-// Get Params Getter
+// GetParams Params Getter
 func (r TaobaoFilmKoubeiCinemaGetactivityAPIRequest) GetParams() string {
 	return r._params
 }

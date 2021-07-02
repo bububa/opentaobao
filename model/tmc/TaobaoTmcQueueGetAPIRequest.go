@@ -37,7 +37,7 @@ func (r TaobaoTmcQueueGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupName Setter
+// SetGroupName is GroupName Setter
 // TMC组名
 func (r *TaobaoTmcQueueGetAPIRequest) SetGroupName(_groupName string) error {
 	r._groupName = _groupName
@@ -45,7 +45,7 @@ func (r *TaobaoTmcQueueGetAPIRequest) SetGroupName(_groupName string) error {
 	return nil
 }
 
-// Get GroupName Getter
+// GetGroupName GroupName Getter
 func (r TaobaoTmcQueueGetAPIRequest) GetGroupName() string {
 	return r._groupName
 }

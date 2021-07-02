@@ -39,7 +39,7 @@ func (r AlibabaServicecenterIdentifytaskCreateAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is WorkcardIds Setter
+// SetWorkcardIds is WorkcardIds Setter
 // 工单集合
 func (r *AlibabaServicecenterIdentifytaskCreateAPIRequest) SetWorkcardIds(_workcardIds []int64) error {
 	r._workcardIds = _workcardIds
@@ -47,12 +47,12 @@ func (r *AlibabaServicecenterIdentifytaskCreateAPIRequest) SetWorkcardIds(_workc
 	return nil
 }
 
-// Get WorkcardIds Getter
+// GetWorkcardIds WorkcardIds Getter
 func (r AlibabaServicecenterIdentifytaskCreateAPIRequest) GetWorkcardIds() []int64 {
 	return r._workcardIds
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 核销单外部标识，服务商保证唯一。如果创建核销单时传入重复的outer_id，系统直接会返回服务商下该outer_id对应的核销单，不会重新创建新核销单。
 func (r *AlibabaServicecenterIdentifytaskCreateAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -60,7 +60,7 @@ func (r *AlibabaServicecenterIdentifytaskCreateAPIRequest) SetOuterId(_outerId s
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r AlibabaServicecenterIdentifytaskCreateAPIRequest) GetOuterId() string {
 	return r._outerId
 }

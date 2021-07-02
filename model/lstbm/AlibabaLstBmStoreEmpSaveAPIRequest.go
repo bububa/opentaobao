@@ -39,7 +39,7 @@ func (r AlibabaLstBmStoreEmpSaveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店id标识
 func (r *AlibabaLstBmStoreEmpSaveAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -47,12 +47,12 @@ func (r *AlibabaLstBmStoreEmpSaveAPIRequest) SetStoreId(_storeId string) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaLstBmStoreEmpSaveAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is BmEmpId Setter
+// SetBmEmpId is BmEmpId Setter
 // 员工id标识
 func (r *AlibabaLstBmStoreEmpSaveAPIRequest) SetBmEmpId(_bmEmpId string) error {
 	r._bmEmpId = _bmEmpId
@@ -60,7 +60,7 @@ func (r *AlibabaLstBmStoreEmpSaveAPIRequest) SetBmEmpId(_bmEmpId string) error {
 	return nil
 }
 
-// Get BmEmpId Getter
+// GetBmEmpId BmEmpId Getter
 func (r AlibabaLstBmStoreEmpSaveAPIRequest) GetBmEmpId() string {
 	return r._bmEmpId
 }

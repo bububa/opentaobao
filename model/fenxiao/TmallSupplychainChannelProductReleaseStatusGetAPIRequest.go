@@ -39,7 +39,7 @@ func (r TmallSupplychainChannelProductReleaseStatusGetAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品ID
 func (r *TmallSupplychainChannelProductReleaseStatusGetAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -47,12 +47,12 @@ func (r *TmallSupplychainChannelProductReleaseStatusGetAPIRequest) SetProductId(
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TmallSupplychainChannelProductReleaseStatusGetAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is ChannelCode Setter
+// SetChannelCode is ChannelCode Setter
 // 渠道ID ( 台湾 : 111002 )
 func (r *TmallSupplychainChannelProductReleaseStatusGetAPIRequest) SetChannelCode(_channelCode int64) error {
 	r._channelCode = _channelCode
@@ -60,7 +60,7 @@ func (r *TmallSupplychainChannelProductReleaseStatusGetAPIRequest) SetChannelCod
 	return nil
 }
 
-// Get ChannelCode Getter
+// GetChannelCode ChannelCode Getter
 func (r TmallSupplychainChannelProductReleaseStatusGetAPIRequest) GetChannelCode() int64 {
 	return r._channelCode
 }

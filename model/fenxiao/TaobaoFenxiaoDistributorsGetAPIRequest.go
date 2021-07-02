@@ -37,7 +37,7 @@ func (r TaobaoFenxiaoDistributorsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nicks Setter
+// SetNicks is Nicks Setter
 // 分销商用户名列表。多个之间以“,”分隔;最多支持50个分销商用户名。
 func (r *TaobaoFenxiaoDistributorsGetAPIRequest) SetNicks(_nicks string) error {
 	r._nicks = _nicks
@@ -45,7 +45,7 @@ func (r *TaobaoFenxiaoDistributorsGetAPIRequest) SetNicks(_nicks string) error {
 	return nil
 }
 
-// Get Nicks Getter
+// GetNicks Nicks Getter
 func (r TaobaoFenxiaoDistributorsGetAPIRequest) GetNicks() string {
 	return r._nicks
 }

@@ -37,7 +37,7 @@ func (r AlibabaLegalSuitCourtAfterPushAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AfterCourtInfoModel Setter
+// SetAfterCourtInfoModel is AfterCourtInfoModel Setter
 // 庭后信息
 func (r *AlibabaLegalSuitCourtAfterPushAPIRequest) SetAfterCourtInfoModel(_afterCourtInfoModel *AfterCourtInfoModel) error {
 	r._afterCourtInfoModel = _afterCourtInfoModel
@@ -45,7 +45,7 @@ func (r *AlibabaLegalSuitCourtAfterPushAPIRequest) SetAfterCourtInfoModel(_after
 	return nil
 }
 
-// Get AfterCourtInfoModel Getter
+// GetAfterCourtInfoModel AfterCourtInfoModel Getter
 func (r AlibabaLegalSuitCourtAfterPushAPIRequest) GetAfterCourtInfoModel() *AfterCourtInfoModel {
 	return r._afterCourtInfoModel
 }

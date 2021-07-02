@@ -45,7 +45,7 @@ func (r AlibabaXiamiApiMobileFigureimageGetAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Limit Setter
+// SetLimit is Limit Setter
 // 分页限制
 func (r *AlibabaXiamiApiMobileFigureimageGetAPIRequest) SetLimit(_limit int64) error {
 	r._limit = _limit
@@ -53,12 +53,12 @@ func (r *AlibabaXiamiApiMobileFigureimageGetAPIRequest) SetLimit(_limit int64) e
 	return nil
 }
 
-// Get Limit Getter
+// GetLimit Limit Getter
 func (r AlibabaXiamiApiMobileFigureimageGetAPIRequest) GetLimit() int64 {
 	return r._limit
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 类型
 func (r *AlibabaXiamiApiMobileFigureimageGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -66,12 +66,12 @@ func (r *AlibabaXiamiApiMobileFigureimageGetAPIRequest) SetType(_type string) er
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaXiamiApiMobileFigureimageGetAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is Av Setter
+// SetAv is Av Setter
 // 客户端版本
 func (r *AlibabaXiamiApiMobileFigureimageGetAPIRequest) SetAv(_av string) error {
 	r._av = _av
@@ -79,12 +79,12 @@ func (r *AlibabaXiamiApiMobileFigureimageGetAPIRequest) SetAv(_av string) error 
 	return nil
 }
 
-// Get Av Getter
+// GetAv Av Getter
 func (r AlibabaXiamiApiMobileFigureimageGetAPIRequest) GetAv() string {
 	return r._av
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 设备类型
 func (r *AlibabaXiamiApiMobileFigureimageGetAPIRequest) SetDeviceType(_deviceType string) error {
 	r._deviceType = _deviceType
@@ -92,12 +92,12 @@ func (r *AlibabaXiamiApiMobileFigureimageGetAPIRequest) SetDeviceType(_deviceTyp
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r AlibabaXiamiApiMobileFigureimageGetAPIRequest) GetDeviceType() string {
 	return r._deviceType
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备ID
 func (r *AlibabaXiamiApiMobileFigureimageGetAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -105,7 +105,7 @@ func (r *AlibabaXiamiApiMobileFigureimageGetAPIRequest) SetDeviceId(_deviceId st
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r AlibabaXiamiApiMobileFigureimageGetAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }

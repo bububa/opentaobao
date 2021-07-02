@@ -37,7 +37,7 @@ func (r AlibabaCampusDevicehubOpenapiReportdataAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is DeviceEventData Setter
+// SetDeviceEventData is DeviceEventData Setter
 // 自动生成
 func (r *AlibabaCampusDevicehubOpenapiReportdataAPIRequest) SetDeviceEventData(_deviceEventData *DeviceReportEventDto) error {
 	r._deviceEventData = _deviceEventData
@@ -45,7 +45,7 @@ func (r *AlibabaCampusDevicehubOpenapiReportdataAPIRequest) SetDeviceEventData(_
 	return nil
 }
 
-// Get DeviceEventData Getter
+// GetDeviceEventData DeviceEventData Getter
 func (r AlibabaCampusDevicehubOpenapiReportdataAPIRequest) GetDeviceEventData() *DeviceReportEventDto {
 	return r._deviceEventData
 }

@@ -37,7 +37,7 @@ func (r TaobaoMessageaccountMesssageNormalSendAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 下行普通消息
 func (r *TaobaoMessageaccountMesssageNormalSendAPIRequest) SetParam(_param *NormalMessageDto) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *TaobaoMessageaccountMesssageNormalSendAPIRequest) SetParam(_param *Norm
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r TaobaoMessageaccountMesssageNormalSendAPIRequest) GetParam() *NormalMessageDto {
 	return r._param
 }

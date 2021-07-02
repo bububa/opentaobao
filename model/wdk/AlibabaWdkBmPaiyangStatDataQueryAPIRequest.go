@@ -37,7 +37,7 @@ func (r AlibabaWdkBmPaiyangStatDataQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参对象
 func (r *AlibabaWdkBmPaiyangStatDataQueryAPIRequest) SetParam(_param *PaiyangStatDataParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaWdkBmPaiyangStatDataQueryAPIRequest) SetParam(_param *PaiyangSta
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaWdkBmPaiyangStatDataQueryAPIRequest) GetParam() *PaiyangStatDataParam {
 	return r._param
 }

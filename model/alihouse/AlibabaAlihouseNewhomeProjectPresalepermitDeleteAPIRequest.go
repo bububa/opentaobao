@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest) GetApiParams
 	return params
 }
 
-// Set is OuterPermitId Setter
+// SetOuterPermitId is OuterPermitId Setter
 // 外部顾问ID
 func (r *AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest) SetOuterPermitId(_outerPermitId string) error {
 	r._outerPermitId = _outerPermitId
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest) SetOuterPer
 	return nil
 }
 
-// Get OuterPermitId Getter
+// GetOuterPermitId OuterPermitId Getter
 func (r AlibabaAlihouseNewhomeProjectPresalepermitDeleteAPIRequest) GetOuterPermitId() string {
 	return r._outerPermitId
 }

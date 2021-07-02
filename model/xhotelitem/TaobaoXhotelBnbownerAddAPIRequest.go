@@ -37,7 +37,7 @@ func (r TaobaoXhotelBnbownerAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AddOwnerParam Setter
+// SetAddOwnerParam is AddOwnerParam Setter
 // 添加房东信息的对象
 func (r *TaobaoXhotelBnbownerAddAPIRequest) SetAddOwnerParam(_addOwnerParam *AddOwnerParam) error {
 	r._addOwnerParam = _addOwnerParam
@@ -45,7 +45,7 @@ func (r *TaobaoXhotelBnbownerAddAPIRequest) SetAddOwnerParam(_addOwnerParam *Add
 	return nil
 }
 
-// Get AddOwnerParam Getter
+// GetAddOwnerParam AddOwnerParam Getter
 func (r TaobaoXhotelBnbownerAddAPIRequest) GetAddOwnerParam() *AddOwnerParam {
 	return r._addOwnerParam
 }

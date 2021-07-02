@@ -39,7 +39,7 @@ func (r AlibabaScbpAdReportGetTargetReportAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is TargetReportOperation Setter
+// SetTargetReportOperation is TargetReportOperation Setter
 // 请求参数
 func (r *AlibabaScbpAdReportGetTargetReportAPIRequest) SetTargetReportOperation(_targetReportOperation *TargetReportOperationDto) error {
 	r._targetReportOperation = _targetReportOperation
@@ -47,12 +47,12 @@ func (r *AlibabaScbpAdReportGetTargetReportAPIRequest) SetTargetReportOperation(
 	return nil
 }
 
-// Get TargetReportOperation Getter
+// GetTargetReportOperation TargetReportOperation Getter
 func (r AlibabaScbpAdReportGetTargetReportAPIRequest) GetTargetReportOperation() *TargetReportOperationDto {
 	return r._targetReportOperation
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdReportGetTargetReportAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -60,7 +60,7 @@ func (r *AlibabaScbpAdReportGetTargetReportAPIRequest) SetTopContext(_topContext
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdReportGetTargetReportAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }

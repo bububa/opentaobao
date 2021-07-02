@@ -37,7 +37,7 @@ func (r AlibabaLsyCrmActivityStoreGetstorelistAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is QueryStoreReq Setter
+// SetQueryStoreReq is QueryStoreReq Setter
 // 系统自动生成
 func (r *AlibabaLsyCrmActivityStoreGetstorelistAPIRequest) SetQueryStoreReq(_queryStoreReq *NrtQueryStoreReq) error {
 	r._queryStoreReq = _queryStoreReq
@@ -45,7 +45,7 @@ func (r *AlibabaLsyCrmActivityStoreGetstorelistAPIRequest) SetQueryStoreReq(_que
 	return nil
 }
 
-// Get QueryStoreReq Getter
+// GetQueryStoreReq QueryStoreReq Getter
 func (r AlibabaLsyCrmActivityStoreGetstorelistAPIRequest) GetQueryStoreReq() *NrtQueryStoreReq {
 	return r._queryStoreReq
 }

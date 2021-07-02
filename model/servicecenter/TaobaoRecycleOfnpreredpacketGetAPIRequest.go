@@ -37,7 +37,7 @@ func (r TaobaoRecycleOfnpreredpacketGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OldOrderId Setter
+// SetOldOrderId is OldOrderId Setter
 // 旧机单id
 func (r *TaobaoRecycleOfnpreredpacketGetAPIRequest) SetOldOrderId(_oldOrderId int64) error {
 	r._oldOrderId = _oldOrderId
@@ -45,7 +45,7 @@ func (r *TaobaoRecycleOfnpreredpacketGetAPIRequest) SetOldOrderId(_oldOrderId in
 	return nil
 }
 
-// Get OldOrderId Getter
+// GetOldOrderId OldOrderId Getter
 func (r TaobaoRecycleOfnpreredpacketGetAPIRequest) GetOldOrderId() int64 {
 	return r._oldOrderId
 }

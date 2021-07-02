@@ -37,7 +37,7 @@ func (r TaobaoFuwuPurchaseOrderConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOrderConfirmQueryDTO Setter
+// SetParamOrderConfirmQueryDTO is ParamOrderConfirmQueryDTO Setter
 // 内购服务下单接口参数
 func (r *TaobaoFuwuPurchaseOrderConfirmAPIRequest) SetParamOrderConfirmQueryDTO(_paramOrderConfirmQueryDTO *OrderConfirmQueryDto) error {
 	r._paramOrderConfirmQueryDTO = _paramOrderConfirmQueryDTO
@@ -45,7 +45,7 @@ func (r *TaobaoFuwuPurchaseOrderConfirmAPIRequest) SetParamOrderConfirmQueryDTO(
 	return nil
 }
 
-// Get ParamOrderConfirmQueryDTO Getter
+// GetParamOrderConfirmQueryDTO ParamOrderConfirmQueryDTO Getter
 func (r TaobaoFuwuPurchaseOrderConfirmAPIRequest) GetParamOrderConfirmQueryDTO() *OrderConfirmQueryDto {
 	return r._paramOrderConfirmQueryDTO
 }

@@ -39,7 +39,7 @@ func (r AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is BusinessRecipeId Setter
+// SetBusinessRecipeId is BusinessRecipeId Setter
 // 行业食谱id
 func (r *AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest) SetBusinessRecipeId(_businessRecipeId int64) error {
 	r._businessRecipeId = _businessRecipeId
@@ -47,12 +47,12 @@ func (r *AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest) SetBusinessRecipeId(
 	return nil
 }
 
-// Get BusinessRecipeId Getter
+// GetBusinessRecipeId BusinessRecipeId Getter
 func (r AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest) GetBusinessRecipeId() int64 {
 	return r._businessRecipeId
 }
 
-// Set is OpenAccountId Setter
+// SetOpenAccountId is OpenAccountId Setter
 // 开放账号id
 func (r *AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest) SetOpenAccountId(_openAccountId string) error {
 	r._openAccountId = _openAccountId
@@ -60,7 +60,7 @@ func (r *AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest) SetOpenAccountId(_op
 	return nil
 }
 
-// Get OpenAccountId Getter
+// GetOpenAccountId OpenAccountId Getter
 func (r AlibabaAilabsIotBusinessRecipeGetdetailAPIRequest) GetOpenAccountId() string {
 	return r._openAccountId
 }

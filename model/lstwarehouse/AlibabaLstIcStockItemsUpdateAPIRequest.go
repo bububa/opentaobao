@@ -37,7 +37,7 @@ func (r AlibabaLstIcStockItemsUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 零售通经销商商品库存
 func (r *AlibabaLstIcStockItemsUpdateAPIRequest) SetQuery(_query *LstItemStockParam) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *AlibabaLstIcStockItemsUpdateAPIRequest) SetQuery(_query *LstItemStockPa
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaLstIcStockItemsUpdateAPIRequest) GetQuery() *LstItemStockParam {
 	return r._query
 }

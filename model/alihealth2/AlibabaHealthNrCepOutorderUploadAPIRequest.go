@@ -37,7 +37,7 @@ func (r AlibabaHealthNrCepOutorderUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TopWarOutDto Setter
+// SetTopWarOutDto is TopWarOutDto Setter
 // 出库单对象
 func (r *AlibabaHealthNrCepOutorderUploadAPIRequest) SetTopWarOutDto(_topWarOutDto *TopWarOutDto) error {
 	r._topWarOutDto = _topWarOutDto
@@ -45,7 +45,7 @@ func (r *AlibabaHealthNrCepOutorderUploadAPIRequest) SetTopWarOutDto(_topWarOutD
 	return nil
 }
 
-// Get TopWarOutDto Getter
+// GetTopWarOutDto TopWarOutDto Getter
 func (r AlibabaHealthNrCepOutorderUploadAPIRequest) GetTopWarOutDto() *TopWarOutDto {
 	return r._topWarOutDto
 }

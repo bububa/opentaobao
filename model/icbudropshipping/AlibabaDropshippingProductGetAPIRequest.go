@@ -37,7 +37,7 @@ func (r AlibabaDropshippingProductGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamDistributionSaleProductRequest Setter
+// SetParamDistributionSaleProductRequest is ParamDistributionSaleProductRequest Setter
 // {}
 func (r *AlibabaDropshippingProductGetAPIRequest) SetParamDistributionSaleProductRequest(_paramDistributionSaleProductRequest *DistributionSaleProductRequest) error {
 	r._paramDistributionSaleProductRequest = _paramDistributionSaleProductRequest
@@ -45,7 +45,7 @@ func (r *AlibabaDropshippingProductGetAPIRequest) SetParamDistributionSaleProduc
 	return nil
 }
 
-// Get ParamDistributionSaleProductRequest Getter
+// GetParamDistributionSaleProductRequest ParamDistributionSaleProductRequest Getter
 func (r AlibabaDropshippingProductGetAPIRequest) GetParamDistributionSaleProductRequest() *DistributionSaleProductRequest {
 	return r._paramDistributionSaleProductRequest
 }

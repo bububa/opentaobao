@@ -37,7 +37,7 @@ func (r AlibabaEinvoiceOrderRefundUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderRefundResultDto Setter
+// SetOrderRefundResultDto is OrderRefundResultDto Setter
 // 退款审核结果DTO
 func (r *AlibabaEinvoiceOrderRefundUpdateAPIRequest) SetOrderRefundResultDto(_orderRefundResultDto *InvoiceOrderRefundResultDto) error {
 	r._orderRefundResultDto = _orderRefundResultDto
@@ -45,7 +45,7 @@ func (r *AlibabaEinvoiceOrderRefundUpdateAPIRequest) SetOrderRefundResultDto(_or
 	return nil
 }
 
-// Get OrderRefundResultDto Getter
+// GetOrderRefundResultDto OrderRefundResultDto Getter
 func (r AlibabaEinvoiceOrderRefundUpdateAPIRequest) GetOrderRefundResultDto() *InvoiceOrderRefundResultDto {
 	return r._orderRefundResultDto
 }

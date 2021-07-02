@@ -41,7 +41,7 @@ func (r AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 追溯码
 func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) SetCode(_code 
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 接口调用企业的唯一标识（接口调用者）
 func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) SetRefEntId(_r
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is DesRefEntId Setter
+// SetDesRefEntId is DesRefEntId Setter
 // 目标企业唯一标识（为哪个企业查询，一般与入参ref_ent_id一样）
 func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) SetDesRefEntId(_desRefEntId string) error {
 	r._desRefEntId = _desRefEntId
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) SetDesRefEntId
 	return nil
 }
 
-// Get DesRefEntId Getter
+// GetDesRefEntId DesRefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) GetDesRefEntId() string {
 	return r._desRefEntId
 }

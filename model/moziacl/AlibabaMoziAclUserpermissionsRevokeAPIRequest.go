@@ -37,7 +37,7 @@ func (r AlibabaMoziAclUserpermissionsRevokeAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is RevokePermission Setter
+// SetRevokePermission is RevokePermission Setter
 // 回收权限入参对象
 func (r *AlibabaMoziAclUserpermissionsRevokeAPIRequest) SetRevokePermission(_revokePermission *RevokePermissionsRequest) error {
 	r._revokePermission = _revokePermission
@@ -45,7 +45,7 @@ func (r *AlibabaMoziAclUserpermissionsRevokeAPIRequest) SetRevokePermission(_rev
 	return nil
 }
 
-// Get RevokePermission Getter
+// GetRevokePermission RevokePermission Getter
 func (r AlibabaMoziAclUserpermissionsRevokeAPIRequest) GetRevokePermission() *RevokePermissionsRequest {
 	return r._revokePermission
 }

@@ -41,7 +41,7 @@ func (r YunosTvscreenAdminCommonOperationAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Parameters Setter
+// SetParameters is Parameters Setter
 // 参数数组
 func (r *YunosTvscreenAdminCommonOperationAPIRequest) SetParameters(_parameters string) error {
 	r._parameters = _parameters
@@ -49,12 +49,12 @@ func (r *YunosTvscreenAdminCommonOperationAPIRequest) SetParameters(_parameters 
 	return nil
 }
 
-// Get Parameters Getter
+// GetParameters Parameters Getter
 func (r YunosTvscreenAdminCommonOperationAPIRequest) GetParameters() string {
 	return r._parameters
 }
 
-// Set is MethodName Setter
+// SetMethodName is MethodName Setter
 // 方法名
 func (r *YunosTvscreenAdminCommonOperationAPIRequest) SetMethodName(_methodName string) error {
 	r._methodName = _methodName
@@ -62,12 +62,12 @@ func (r *YunosTvscreenAdminCommonOperationAPIRequest) SetMethodName(_methodName 
 	return nil
 }
 
-// Get MethodName Getter
+// GetMethodName MethodName Getter
 func (r YunosTvscreenAdminCommonOperationAPIRequest) GetMethodName() string {
 	return r._methodName
 }
 
-// Set is InterfaceName Setter
+// SetInterfaceName is InterfaceName Setter
 // 接口名称
 func (r *YunosTvscreenAdminCommonOperationAPIRequest) SetInterfaceName(_interfaceName string) error {
 	r._interfaceName = _interfaceName
@@ -75,7 +75,7 @@ func (r *YunosTvscreenAdminCommonOperationAPIRequest) SetInterfaceName(_interfac
 	return nil
 }
 
-// Get InterfaceName Getter
+// GetInterfaceName InterfaceName Getter
 func (r YunosTvscreenAdminCommonOperationAPIRequest) GetInterfaceName() string {
 	return r._interfaceName
 }

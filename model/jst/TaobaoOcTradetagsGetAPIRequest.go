@@ -46,7 +46,7 @@ func (r TaobaoOcTradetagsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 交易主订单id
 func (r *TaobaoOcTradetagsGetAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -54,12 +54,12 @@ func (r *TaobaoOcTradetagsGetAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoOcTradetagsGetAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is History Setter
+// SetHistory is History Setter
 // 是否查询历史标签
 func (r *TaobaoOcTradetagsGetAPIRequest) SetHistory(_history int64) error {
 	r._history = _history
@@ -67,12 +67,12 @@ func (r *TaobaoOcTradetagsGetAPIRequest) SetHistory(_history int64) error {
 	return nil
 }
 
-// Get History Getter
+// GetHistory History Getter
 func (r TaobaoOcTradetagsGetAPIRequest) GetHistory() int64 {
 	return r._history
 }
 
-// Set is TagTypes Setter
+// SetTagTypes is TagTypes Setter
 // 不填，则默认只查询1,2。1为官方标，2为自定义标，3为主站只读标签
 func (r *TaobaoOcTradetagsGetAPIRequest) SetTagTypes(_tagTypes []string) error {
 	r._tagTypes = _tagTypes
@@ -80,12 +80,12 @@ func (r *TaobaoOcTradetagsGetAPIRequest) SetTagTypes(_tagTypes []string) error {
 	return nil
 }
 
-// Get TagTypes Getter
+// GetTagTypes TagTypes Getter
 func (r TaobaoOcTradetagsGetAPIRequest) GetTagTypes() []string {
 	return r._tagTypes
 }
 
-// Set is TagNames Setter
+// SetTagNames is TagNames Setter
 // 不填，则不做标签名称过滤
 func (r *TaobaoOcTradetagsGetAPIRequest) SetTagNames(_tagNames []string) error {
 	r._tagNames = _tagNames
@@ -93,7 +93,7 @@ func (r *TaobaoOcTradetagsGetAPIRequest) SetTagNames(_tagNames []string) error {
 	return nil
 }
 
-// Get TagNames Getter
+// GetTagNames TagNames Getter
 func (r TaobaoOcTradetagsGetAPIRequest) GetTagNames() []string {
 	return r._tagNames
 }

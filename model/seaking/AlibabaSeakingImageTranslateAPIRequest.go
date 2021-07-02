@@ -47,7 +47,7 @@ func (r AlibabaSeakingImagetranslateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Identifier Setter
+// SetIdentifier is Identifier Setter
 // erp用户id
 func (r *AlibabaSeakingImagetranslateAPIRequest) SetIdentifier(_identifier string) error {
 	r._identifier = _identifier
@@ -55,12 +55,12 @@ func (r *AlibabaSeakingImagetranslateAPIRequest) SetIdentifier(_identifier strin
 	return nil
 }
 
-// Get Identifier Getter
+// GetIdentifier Identifier Getter
 func (r AlibabaSeakingImagetranslateAPIRequest) GetIdentifier() string {
 	return r._identifier
 }
 
-// Set is TargetLang Setter
+// SetTargetLang is TargetLang Setter
 // 目标语种
 func (r *AlibabaSeakingImagetranslateAPIRequest) SetTargetLang(_targetLang string) error {
 	r._targetLang = _targetLang
@@ -68,12 +68,12 @@ func (r *AlibabaSeakingImagetranslateAPIRequest) SetTargetLang(_targetLang strin
 	return nil
 }
 
-// Get TargetLang Getter
+// GetTargetLang TargetLang Getter
 func (r AlibabaSeakingImagetranslateAPIRequest) GetTargetLang() string {
 	return r._targetLang
 }
 
-// Set is SourceLang Setter
+// SetSourceLang is SourceLang Setter
 // 源语种
 func (r *AlibabaSeakingImagetranslateAPIRequest) SetSourceLang(_sourceLang string) error {
 	r._sourceLang = _sourceLang
@@ -81,12 +81,12 @@ func (r *AlibabaSeakingImagetranslateAPIRequest) SetSourceLang(_sourceLang strin
 	return nil
 }
 
-// Get SourceLang Getter
+// GetSourceLang SourceLang Getter
 func (r AlibabaSeakingImagetranslateAPIRequest) GetSourceLang() string {
 	return r._sourceLang
 }
 
-// Set is IdentifierType Setter
+// SetIdentifierType is IdentifierType Setter
 // 调用来源(erp名称)
 func (r *AlibabaSeakingImagetranslateAPIRequest) SetIdentifierType(_identifierType string) error {
 	r._identifierType = _identifierType
@@ -94,12 +94,12 @@ func (r *AlibabaSeakingImagetranslateAPIRequest) SetIdentifierType(_identifierTy
 	return nil
 }
 
-// Get IdentifierType Getter
+// GetIdentifierType IdentifierType Getter
 func (r AlibabaSeakingImagetranslateAPIRequest) GetIdentifierType() string {
 	return r._identifierType
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 原图url
 func (r *AlibabaSeakingImagetranslateAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -107,12 +107,12 @@ func (r *AlibabaSeakingImagetranslateAPIRequest) SetUrl(_url string) error {
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r AlibabaSeakingImagetranslateAPIRequest) GetUrl() string {
 	return r._url
 }
 
-// Set is Extra Setter
+// SetExtra is Extra Setter
 // 扩展信息
 func (r *AlibabaSeakingImagetranslateAPIRequest) SetExtra(_extra *Extra) error {
 	r._extra = _extra
@@ -120,7 +120,7 @@ func (r *AlibabaSeakingImagetranslateAPIRequest) SetExtra(_extra *Extra) error {
 	return nil
 }
 
-// Get Extra Getter
+// GetExtra Extra Getter
 func (r AlibabaSeakingImagetranslateAPIRequest) GetExtra() *Extra {
 	return r._extra
 }

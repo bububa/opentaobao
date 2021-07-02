@@ -41,7 +41,7 @@ func (r TmallServicecenterPictureUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Img Setter
+// SetImg is Img Setter
 // 图片文件二进制流
 func (r *TmallServicecenterPictureUploadAPIRequest) SetImg(_img *model.File) error {
 	r._img = _img
@@ -49,12 +49,12 @@ func (r *TmallServicecenterPictureUploadAPIRequest) SetImg(_img *model.File) err
 	return nil
 }
 
-// Get Img Getter
+// GetImg Img Getter
 func (r TmallServicecenterPictureUploadAPIRequest) GetImg() *model.File {
 	return r._img
 }
 
-// Set is PictureName Setter
+// SetPictureName is PictureName Setter
 // 图片全称包括扩展名。目前支持 jpg jpeg png
 func (r *TmallServicecenterPictureUploadAPIRequest) SetPictureName(_pictureName string) error {
 	r._pictureName = _pictureName
@@ -62,12 +62,12 @@ func (r *TmallServicecenterPictureUploadAPIRequest) SetPictureName(_pictureName 
 	return nil
 }
 
-// Get PictureName Getter
+// GetPictureName PictureName Getter
 func (r TmallServicecenterPictureUploadAPIRequest) GetPictureName() string {
 	return r._pictureName
 }
 
-// Set is IsHttps Setter
+// SetIsHttps is IsHttps Setter
 // true返回Https地址
 func (r *TmallServicecenterPictureUploadAPIRequest) SetIsHttps(_isHttps bool) error {
 	r._isHttps = _isHttps
@@ -75,7 +75,7 @@ func (r *TmallServicecenterPictureUploadAPIRequest) SetIsHttps(_isHttps bool) er
 	return nil
 }
 
-// Get IsHttps Getter
+// GetIsHttps IsHttps Getter
 func (r TmallServicecenterPictureUploadAPIRequest) GetIsHttps() bool {
 	return r._isHttps
 }

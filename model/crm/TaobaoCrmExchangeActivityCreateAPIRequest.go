@@ -37,7 +37,7 @@ func (r TaobaoCrmExchangeActivityCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ExchangeActivityCreateDto Setter
+// SetExchangeActivityCreateDto is ExchangeActivityCreateDto Setter
 // 创建积分兑换活动
 func (r *TaobaoCrmExchangeActivityCreateAPIRequest) SetExchangeActivityCreateDto(_exchangeActivityCreateDto *ExchangeActivityCreateDto) error {
 	r._exchangeActivityCreateDto = _exchangeActivityCreateDto
@@ -45,7 +45,7 @@ func (r *TaobaoCrmExchangeActivityCreateAPIRequest) SetExchangeActivityCreateDto
 	return nil
 }
 
-// Get ExchangeActivityCreateDto Getter
+// GetExchangeActivityCreateDto ExchangeActivityCreateDto Getter
 func (r TaobaoCrmExchangeActivityCreateAPIRequest) GetExchangeActivityCreateDto() *ExchangeActivityCreateDto {
 	return r._exchangeActivityCreateDto
 }

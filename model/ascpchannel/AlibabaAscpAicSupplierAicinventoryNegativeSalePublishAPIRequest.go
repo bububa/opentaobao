@@ -37,7 +37,7 @@ func (r AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIRequest) GetApiP
 	return params
 }
 
-// Set is FutureInventoryMainOperationQuest Setter
+// SetFutureInventoryMainOperationQuest is FutureInventoryMainOperationQuest Setter
 // 入参
 func (r *AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIRequest) SetFutureInventoryMainOperationQuest(_futureInventoryMainOperationQuest *Futureinventorymainoperationquest) error {
 	r._futureInventoryMainOperationQuest = _futureInventoryMainOperationQuest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIRequest) SetFut
 	return nil
 }
 
-// Get FutureInventoryMainOperationQuest Getter
+// GetFutureInventoryMainOperationQuest FutureInventoryMainOperationQuest Getter
 func (r AlibabaAscpAicSupplierAicinventoryNegativeSalePublishAPIRequest) GetFutureInventoryMainOperationQuest() *Futureinventorymainoperationquest {
 	return r._futureInventoryMainOperationQuest
 }

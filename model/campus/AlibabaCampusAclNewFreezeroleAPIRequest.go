@@ -39,7 +39,7 @@ func (r AlibabaCampusAclNewFreezeroleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Workbenchcontext Setter
+// SetWorkbenchcontext is Workbenchcontext Setter
 // 系统入参
 func (r *AlibabaCampusAclNewFreezeroleAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
 	r._workbenchcontext = _workbenchcontext
@@ -47,12 +47,12 @@ func (r *AlibabaCampusAclNewFreezeroleAPIRequest) SetWorkbenchcontext(_workbench
 	return nil
 }
 
-// Get Workbenchcontext Getter
+// GetWorkbenchcontext Workbenchcontext Getter
 func (r AlibabaCampusAclNewFreezeroleAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
 }
 
-// Set is RoleId Setter
+// SetRoleId is RoleId Setter
 // 角色主键id
 func (r *AlibabaCampusAclNewFreezeroleAPIRequest) SetRoleId(_roleId int64) error {
 	r._roleId = _roleId
@@ -60,7 +60,7 @@ func (r *AlibabaCampusAclNewFreezeroleAPIRequest) SetRoleId(_roleId int64) error
 	return nil
 }
 
-// Get RoleId Getter
+// GetRoleId RoleId Getter
 func (r AlibabaCampusAclNewFreezeroleAPIRequest) GetRoleId() int64 {
 	return r._roleId
 }

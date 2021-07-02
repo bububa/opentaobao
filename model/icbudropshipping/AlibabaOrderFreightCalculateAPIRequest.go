@@ -38,7 +38,7 @@ func (r AlibabaOrderFreightCalculateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamMultiFreightTemplateRequest Setter
+// SetParamMultiFreightTemplateRequest is ParamMultiFreightTemplateRequest Setter
 // {}
 func (r *AlibabaOrderFreightCalculateAPIRequest) SetParamMultiFreightTemplateRequest(_paramMultiFreightTemplateRequest *MultiFreightTemplateRequest) error {
 	r._paramMultiFreightTemplateRequest = _paramMultiFreightTemplateRequest
@@ -46,7 +46,7 @@ func (r *AlibabaOrderFreightCalculateAPIRequest) SetParamMultiFreightTemplateReq
 	return nil
 }
 
-// Get ParamMultiFreightTemplateRequest Getter
+// GetParamMultiFreightTemplateRequest ParamMultiFreightTemplateRequest Getter
 func (r AlibabaOrderFreightCalculateAPIRequest) GetParamMultiFreightTemplateRequest() *MultiFreightTemplateRequest {
 	return r._paramMultiFreightTemplateRequest
 }

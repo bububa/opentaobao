@@ -48,7 +48,7 @@ func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CourtName Setter
+// SetCourtName is CourtName Setter
 // 法院名称
 func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetCourtName(_courtName string) error {
 	r._courtName = _courtName
@@ -56,12 +56,12 @@ func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetCourtName(_courtName stri
 	return nil
 }
 
-// Get CourtName Getter
+// GetCourtName CourtName Getter
 func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetCourtName() string {
 	return r._courtName
 }
 
-// Set is IsIncludeSub Setter
+// SetIsIncludeSub is IsIncludeSub Setter
 // 统计数据是够包含下属法院
 func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetIsIncludeSub(_isIncludeSub bool) error {
 	r._isIncludeSub = _isIncludeSub
@@ -69,12 +69,12 @@ func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetIsIncludeSub(_isIncludeSu
 	return nil
 }
 
-// Get IsIncludeSub Getter
+// GetIsIncludeSub IsIncludeSub Getter
 func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetIsIncludeSub() bool {
 	return r._isIncludeSub
 }
 
-// Set is StartYear Setter
+// SetStartYear is StartYear Setter
 // 开始年份
 func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetStartYear(_startYear string) error {
 	r._startYear = _startYear
@@ -82,12 +82,12 @@ func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetStartYear(_startYear stri
 	return nil
 }
 
-// Get StartYear Getter
+// GetStartYear StartYear Getter
 func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetStartYear() string {
 	return r._startYear
 }
 
-// Set is EndYear Setter
+// SetEndYear is EndYear Setter
 // 结束年份
 func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetEndYear(_endYear string) error {
 	r._endYear = _endYear
@@ -95,7 +95,7 @@ func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetEndYear(_endYear string) 
 	return nil
 }
 
-// Get EndYear Getter
+// GetEndYear EndYear Getter
 func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetEndYear() string {
 	return r._endYear
 }

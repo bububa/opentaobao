@@ -39,7 +39,7 @@ func (r AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is WorkBenchContext Setter
+// SetWorkBenchContext is WorkBenchContext Setter
 // 请求发送端信息
 func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
 	r._workBenchContext = _workBenchContext
@@ -47,12 +47,12 @@ func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) SetWorkBenchContex
 	return nil
 }
 
-// Get WorkBenchContext Getter
+// GetWorkBenchContext WorkBenchContext Getter
 func (r AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) GetWorkBenchContext() *WorkBenchContext {
 	return r._workBenchContext
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 设备uuid
 func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -60,7 +60,7 @@ func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) SetUuid(_uuid stri
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) GetUuid() string {
 	return r._uuid
 }

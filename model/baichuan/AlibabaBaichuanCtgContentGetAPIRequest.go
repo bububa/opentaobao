@@ -45,7 +45,7 @@ func (r AlibabaBaichuanCtgContentGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeliveryId Setter
+// SetDeliveryId is DeliveryId Setter
 // 投放位置
 func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetDeliveryId(_deliveryId string) error {
 	r._deliveryId = _deliveryId
@@ -53,12 +53,12 @@ func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetDeliveryId(_deliveryId strin
 	return nil
 }
 
-// Get DeliveryId Getter
+// GetDeliveryId DeliveryId Getter
 func (r AlibabaBaichuanCtgContentGetAPIRequest) GetDeliveryId() string {
 	return r._deliveryId
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
 func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -66,12 +66,12 @@ func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetPageSize(_pageSize int64) er
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaBaichuanCtgContentGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前页
 func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -79,12 +79,12 @@ func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetCurrentPage(_currentPage int
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r AlibabaBaichuanCtgContentGetAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is ResId Setter
+// SetResId is ResId Setter
 // 资源位
 func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetResId(_resId string) error {
 	r._resId = _resId
@@ -92,12 +92,12 @@ func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetResId(_resId string) error {
 	return nil
 }
 
-// Get ResId Getter
+// GetResId ResId Getter
 func (r AlibabaBaichuanCtgContentGetAPIRequest) GetResId() string {
 	return r._resId
 }
 
-// Set is Date Setter
+// SetDate is Date Setter
 // 日期
 func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetDate(_date string) error {
 	r._date = _date
@@ -105,7 +105,7 @@ func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetDate(_date string) error {
 	return nil
 }
 
-// Get Date Getter
+// GetDate Date Getter
 func (r AlibabaBaichuanCtgContentGetAPIRequest) GetDate() string {
 	return r._date
 }

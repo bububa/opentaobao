@@ -37,7 +37,7 @@ func (r AlibabaMoziAclRoleAddPermissionsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AddPermissionsToRole Setter
+// SetAddPermissionsToRole is AddPermissionsToRole Setter
 // 角色添加功能权限请求对象
 func (r *AlibabaMoziAclRoleAddPermissionsAPIRequest) SetAddPermissionsToRole(_addPermissionsToRole *AddPermissionToRoleRequest) error {
 	r._addPermissionsToRole = _addPermissionsToRole
@@ -45,7 +45,7 @@ func (r *AlibabaMoziAclRoleAddPermissionsAPIRequest) SetAddPermissionsToRole(_ad
 	return nil
 }
 
-// Get AddPermissionsToRole Getter
+// GetAddPermissionsToRole AddPermissionsToRole Getter
 func (r AlibabaMoziAclRoleAddPermissionsAPIRequest) GetAddPermissionsToRole() *AddPermissionToRoleRequest {
 	return r._addPermissionsToRole
 }

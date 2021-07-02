@@ -47,7 +47,7 @@ func (r AlibabaServicecenterSpserviceorderUpdateAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is SpServiceOrderId Setter
+// SetSpServiceOrderId is SpServiceOrderId Setter
 // 服务单id
 func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetSpServiceOrderId(_spServiceOrderId int64) error {
 	r._spServiceOrderId = _spServiceOrderId
@@ -55,12 +55,12 @@ func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetSpServiceOrderId
 	return nil
 }
 
-// Get SpServiceOrderId Getter
+// GetSpServiceOrderId SpServiceOrderId Getter
 func (r AlibabaServicecenterSpserviceorderUpdateAPIRequest) GetSpServiceOrderId() int64 {
 	return r._spServiceOrderId
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // 新设备sn.当action填写addSn、changeSn时必填
 func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -68,12 +68,12 @@ func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetAction(_action s
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r AlibabaServicecenterSpserviceorderUpdateAPIRequest) GetAction() string {
 	return r._action
 }
 
-// Set is NewSn Setter
+// SetNewSn is NewSn Setter
 // 新设备sn.当action填写addSn、changeSn时必填
 func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetNewSn(_newSn string) error {
 	r._newSn = _newSn
@@ -81,12 +81,12 @@ func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetNewSn(_newSn str
 	return nil
 }
 
-// Get NewSn Getter
+// GetNewSn NewSn Getter
 func (r AlibabaServicecenterSpserviceorderUpdateAPIRequest) GetNewSn() string {
 	return r._newSn
 }
 
-// Set is OldSn Setter
+// SetOldSn is OldSn Setter
 // 旧设备sn，当action填写changeSn时必填
 func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetOldSn(_oldSn string) error {
 	r._oldSn = _oldSn
@@ -94,12 +94,12 @@ func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetOldSn(_oldSn str
 	return nil
 }
 
-// Get OldSn Getter
+// GetOldSn OldSn Getter
 func (r AlibabaServicecenterSpserviceorderUpdateAPIRequest) GetOldSn() string {
 	return r._oldSn
 }
 
-// Set is GmtEffect Setter
+// SetGmtEffect is GmtEffect Setter
 // 服务有效期开始时间
 func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetGmtEffect(_gmtEffect string) error {
 	r._gmtEffect = _gmtEffect
@@ -107,12 +107,12 @@ func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetGmtEffect(_gmtEf
 	return nil
 }
 
-// Get GmtEffect Getter
+// GetGmtEffect GmtEffect Getter
 func (r AlibabaServicecenterSpserviceorderUpdateAPIRequest) GetGmtEffect() string {
 	return r._gmtEffect
 }
 
-// Set is GmtExpire Setter
+// SetGmtExpire is GmtExpire Setter
 // 服务过期时间
 func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetGmtExpire(_gmtExpire string) error {
 	r._gmtExpire = _gmtExpire
@@ -120,7 +120,7 @@ func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetGmtExpire(_gmtEx
 	return nil
 }
 
-// Get GmtExpire Getter
+// GetGmtExpire GmtExpire Getter
 func (r AlibabaServicecenterSpserviceorderUpdateAPIRequest) GetGmtExpire() string {
 	return r._gmtExpire
 }

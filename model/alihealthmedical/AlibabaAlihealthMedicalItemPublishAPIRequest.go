@@ -37,7 +37,7 @@ func (r AlibabaAlihealthMedicalItemPublishAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Request1 Setter
+// SetRequest1 is Request1 Setter
 // 请求
 func (r *AlibabaAlihealthMedicalItemPublishAPIRequest) SetRequest1(_request1 *ItemPublishRequest) error {
 	r._request1 = _request1
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthMedicalItemPublishAPIRequest) SetRequest1(_request1 *It
 	return nil
 }
 
-// Get Request1 Getter
+// GetRequest1 Request1 Getter
 func (r AlibabaAlihealthMedicalItemPublishAPIRequest) GetRequest1() *ItemPublishRequest {
 	return r._request1
 }

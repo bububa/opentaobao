@@ -85,7 +85,7 @@ func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // ERP订单号
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -93,12 +93,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderCode(_orderCode strin
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// Set is OrderType Setter
+// SetOrderType is OrderType Setter
 // 单据类型 201 一般交易出库单 202 B2B交易出库单 502 换货出库单 503 补发出库单
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderType(_orderType int64) error {
 	r._orderType = _orderType
@@ -106,12 +106,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderType(_orderType int64
 	return nil
 }
 
-// Get OrderType Getter
+// GetOrderType OrderType Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderType() int64 {
 	return r._orderType
 }
 
-// Set is OrderFlag Setter
+// SetOrderFlag is OrderFlag Setter
 // 订单标识 (1: cod –货到付款，4:invoiceinfo-需要发票)
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderFlag(_orderFlag string) error {
 	r._orderFlag = _orderFlag
@@ -119,12 +119,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderFlag(_orderFlag strin
 	return nil
 }
 
-// Get OrderFlag Getter
+// GetOrderFlag OrderFlag Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderFlag() string {
 	return r._orderFlag
 }
 
-// Set is OrderSource Setter
+// SetOrderSource is OrderSource Setter
 // 订单来源（213 天猫，201 淘宝，214 京东，202 1688 阿里中文站 ，203 苏宁在线，204 亚马逊中国，205 当当，208 1号店，207 唯品会，209 国美在线，210 拍拍，206 易贝ebay，211 聚美优品，212 乐蜂网，215 邮乐，216 凡客，217 优购，218 银泰，219 易讯，221 聚尚网，222 蘑菇街，223 POS门店，301 其他）
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderSource(_orderSource int64) error {
 	r._orderSource = _orderSource
@@ -132,12 +132,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderSource(_orderSource i
 	return nil
 }
 
-// Get OrderSource Getter
+// GetOrderSource OrderSource Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderSource() int64 {
 	return r._orderSource
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 仓库编码，此字段为空时，由菜鸟路由仓库发货
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -145,12 +145,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetStoreCode(_storeCode strin
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is TmsServiceCode Setter
+// SetTmsServiceCode is TmsServiceCode Setter
 // 快递公司编码，此字段为空时，由菜鸟选择快递配送
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetTmsServiceCode(_tmsServiceCode string) error {
 	r._tmsServiceCode = _tmsServiceCode
@@ -158,12 +158,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetTmsServiceCode(_tmsService
 	return nil
 }
 
-// Get TmsServiceCode Getter
+// GetTmsServiceCode TmsServiceCode Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetTmsServiceCode() string {
 	return r._tmsServiceCode
 }
 
-// Set is TmsServiceName Setter
+// SetTmsServiceName is TmsServiceName Setter
 // 快递公司名称
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetTmsServiceName(_tmsServiceName string) error {
 	r._tmsServiceName = _tmsServiceName
@@ -171,12 +171,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetTmsServiceName(_tmsService
 	return nil
 }
 
-// Get TmsServiceName Getter
+// GetTmsServiceName TmsServiceName Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetTmsServiceName() string {
 	return r._tmsServiceName
 }
 
-// Set is PrevOrderCode Setter
+// SetPrevOrderCode is PrevOrderCode Setter
 // 前物流订单号，订单类型为502 换货出库单 503 补发出库单时，需求传入此内容
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetPrevOrderCode(_prevOrderCode string) error {
 	r._prevOrderCode = _prevOrderCode
@@ -184,12 +184,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetPrevOrderCode(_prevOrderCo
 	return nil
 }
 
-// Get PrevOrderCode Getter
+// GetPrevOrderCode PrevOrderCode Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetPrevOrderCode() string {
 	return r._prevOrderCode
 }
 
-// Set is OrderShopCreateTime Setter
+// SetOrderShopCreateTime is OrderShopCreateTime Setter
 // 下单时间，订单在交易平台创建时间
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderShopCreateTime(_orderShopCreateTime string) error {
 	r._orderShopCreateTime = _orderShopCreateTime
@@ -197,12 +197,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderShopCreateTime(_order
 	return nil
 }
 
-// Get OrderShopCreateTime Getter
+// GetOrderShopCreateTime OrderShopCreateTime Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderShopCreateTime() string {
 	return r._orderShopCreateTime
 }
 
-// Set is OrderPayTime Setter
+// SetOrderPayTime is OrderPayTime Setter
 // 订单支付时间
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderPayTime(_orderPayTime string) error {
 	r._orderPayTime = _orderPayTime
@@ -210,12 +210,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderPayTime(_orderPayTime
 	return nil
 }
 
-// Get OrderPayTime Getter
+// GetOrderPayTime OrderPayTime Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderPayTime() string {
 	return r._orderPayTime
 }
 
-// Set is OrderCreateTime Setter
+// SetOrderCreateTime is OrderCreateTime Setter
 // 订单创建时间,ERP创建订单时间
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderCreateTime(_orderCreateTime string) error {
 	r._orderCreateTime = _orderCreateTime
@@ -223,12 +223,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderCreateTime(_orderCrea
 	return nil
 }
 
-// Get OrderCreateTime Getter
+// GetOrderCreateTime OrderCreateTime Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderCreateTime() string {
 	return r._orderCreateTime
 }
 
-// Set is OrderExaminationTime Setter
+// SetOrderExaminationTime is OrderExaminationTime Setter
 // 订单审核时间,ERP创建支付时间
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderExaminationTime(_orderExaminationTime string) error {
 	r._orderExaminationTime = _orderExaminationTime
@@ -236,12 +236,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderExaminationTime(_orde
 	return nil
 }
 
-// Get OrderExaminationTime Getter
+// GetOrderExaminationTime OrderExaminationTime Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderExaminationTime() string {
 	return r._orderExaminationTime
 }
 
-// Set is OrderAmount Setter
+// SetOrderAmount is OrderAmount Setter
 // 订单总金额,=总商品金额-订单优惠金额+快递费用，单位分
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderAmount(_orderAmount int64) error {
 	r._orderAmount = _orderAmount
@@ -249,12 +249,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderAmount(_orderAmount i
 	return nil
 }
 
-// Get OrderAmount Getter
+// GetOrderAmount OrderAmount Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderAmount() int64 {
 	return r._orderAmount
 }
 
-// Set is DiscountAmount Setter
+// SetDiscountAmount is DiscountAmount Setter
 // 订单优惠金额，整单优惠金额，单位分
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetDiscountAmount(_discountAmount int64) error {
 	r._discountAmount = _discountAmount
@@ -262,12 +262,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetDiscountAmount(_discountAm
 	return nil
 }
 
-// Get DiscountAmount Getter
+// GetDiscountAmount DiscountAmount Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetDiscountAmount() int64 {
 	return r._discountAmount
 }
 
-// Set is ArAmount Setter
+// SetArAmount is ArAmount Setter
 // 订单应收金额，消费者还需要付的金额，单位分
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetArAmount(_arAmount int64) error {
 	r._arAmount = _arAmount
@@ -275,12 +275,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetArAmount(_arAmount int64) 
 	return nil
 }
 
-// Get ArAmount Getter
+// GetArAmount ArAmount Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetArAmount() int64 {
 	return r._arAmount
 }
 
-// Set is GotAmount Setter
+// SetGotAmount is GotAmount Setter
 // 订单已付金额，消费者已经支付的金额，单位分
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetGotAmount(_gotAmount int64) error {
 	r._gotAmount = _gotAmount
@@ -288,12 +288,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetGotAmount(_gotAmount int64
 	return nil
 }
 
-// Get GotAmount Getter
+// GetGotAmount GotAmount Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetGotAmount() int64 {
 	return r._gotAmount
 }
 
-// Set is Postfee Setter
+// SetPostfee is Postfee Setter
 // 快递费用，单位分
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetPostfee(_postfee int64) error {
 	r._postfee = _postfee
@@ -301,12 +301,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetPostfee(_postfee int64) er
 	return nil
 }
 
-// Get Postfee Getter
+// GetPostfee Postfee Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetPostfee() int64 {
 	return r._postfee
 }
 
-// Set is ServiceFee Setter
+// SetServiceFee is ServiceFee Setter
 // COD服务费，单位分
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetServiceFee(_serviceFee int64) error {
 	r._serviceFee = _serviceFee
@@ -314,12 +314,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetServiceFee(_serviceFee int
 	return nil
 }
 
-// Get ServiceFee Getter
+// GetServiceFee ServiceFee Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetServiceFee() int64 {
 	return r._serviceFee
 }
 
-// Set is DeliverRequirements Setter
+// SetDeliverRequirements is DeliverRequirements Setter
 // 配送要求
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetDeliverRequirements(_deliverRequirements *Deliverrequirementswlbwmsconsignordernotify) error {
 	r._deliverRequirements = _deliverRequirements
@@ -327,12 +327,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetDeliverRequirements(_deliv
 	return nil
 }
 
-// Get DeliverRequirements Getter
+// GetDeliverRequirements DeliverRequirements Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetDeliverRequirements() *Deliverrequirementswlbwmsconsignordernotify {
 	return r._deliverRequirements
 }
 
-// Set is ReceiverInfo Setter
+// SetReceiverInfo is ReceiverInfo Setter
 // 收件人信息
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo *Receiverwlbwmsconsignordernotify) error {
 	r._receiverInfo = _receiverInfo
@@ -340,12 +340,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo
 	return nil
 }
 
-// Get ReceiverInfo Getter
+// GetReceiverInfo ReceiverInfo Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetReceiverInfo() *Receiverwlbwmsconsignordernotify {
 	return r._receiverInfo
 }
 
-// Set is SenderInfo Setter
+// SetSenderInfo is SenderInfo Setter
 // 发货方信息
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *Senderwlbwmsconsignordernotify) error {
 	r._senderInfo = _senderInfo
@@ -353,12 +353,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *Se
 	return nil
 }
 
-// Get SenderInfo Getter
+// GetSenderInfo SenderInfo Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetSenderInfo() *Senderwlbwmsconsignordernotify {
 	return r._senderInfo
 }
 
-// Set is OrderItemList Setter
+// SetOrderItemList is OrderItemList Setter
 // 订单商品信息列表
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderItemList(_orderItemList []Orderitemlistwlbwmsconsignordernotify) error {
 	r._orderItemList = _orderItemList
@@ -366,12 +366,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderItemList(_orderItemLi
 	return nil
 }
 
-// Get OrderItemList Getter
+// GetOrderItemList OrderItemList Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderItemList() []Orderitemlistwlbwmsconsignordernotify {
 	return r._orderItemList
 }
 
-// Set is InvoiceInfoList Setter
+// SetInvoiceInfoList is InvoiceInfoList Setter
 // 发票信息列表
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetInvoiceInfoList(_invoiceInfoList []Invoicelistwlbwmsconsignordernotify) error {
 	r._invoiceInfoList = _invoiceInfoList
@@ -379,12 +379,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetInvoiceInfoList(_invoiceIn
 	return nil
 }
 
-// Get InvoiceInfoList Getter
+// GetInvoiceInfoList InvoiceInfoList Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetInvoiceInfoList() []Invoicelistwlbwmsconsignordernotify {
 	return r._invoiceInfoList
 }
 
-// Set is ExtendFields Setter
+// SetExtendFields is ExtendFields Setter
 // 拓展属性
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetExtendFields(_extendFields string) error {
 	r._extendFields = _extendFields
@@ -392,12 +392,12 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetExtendFields(_extendFields
 	return nil
 }
 
-// Get ExtendFields Getter
+// GetExtendFields ExtendFields Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetExtendFields() string {
 	return r._extendFields
 }
 
-// Set is Remark Setter
+// SetRemark is Remark Setter
 // 备注
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
@@ -405,7 +405,7 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetRemark(_remark string) err
 	return nil
 }
 
-// Get Remark Getter
+// GetRemark Remark Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetRemark() string {
 	return r._remark
 }

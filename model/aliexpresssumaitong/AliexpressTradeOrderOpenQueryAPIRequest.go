@@ -45,7 +45,7 @@ func (r AliexpressTradeOrderOpenQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BuyerId Setter
+// SetBuyerId is BuyerId Setter
 // 买家用户id
 func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetBuyerId(_buyerId int64) error {
 	r._buyerId = _buyerId
@@ -53,12 +53,12 @@ func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetBuyerId(_buyerId int64) err
 	return nil
 }
 
-// Get BuyerId Getter
+// GetBuyerId BuyerId Getter
 func (r AliexpressTradeOrderOpenQueryAPIRequest) GetBuyerId() int64 {
 	return r._buyerId
 }
 
-// Set is OrderIds Setter
+// SetOrderIds is OrderIds Setter
 // 订单号
 func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetOrderIds(_orderIds []int64) error {
 	r._orderIds = _orderIds
@@ -66,12 +66,12 @@ func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetOrderIds(_orderIds []int64)
 	return nil
 }
 
-// Get OrderIds Getter
+// GetOrderIds OrderIds Getter
 func (r AliexpressTradeOrderOpenQueryAPIRequest) GetOrderIds() []int64 {
 	return r._orderIds
 }
 
-// Set is OutIds Setter
+// SetOutIds is OutIds Setter
 // 外部订单号
 func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetOutIds(_outIds []string) error {
 	r._outIds = _outIds
@@ -79,12 +79,12 @@ func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetOutIds(_outIds []string) er
 	return nil
 }
 
-// Get OutIds Getter
+// GetOutIds OutIds Getter
 func (r AliexpressTradeOrderOpenQueryAPIRequest) GetOutIds() []string {
 	return r._outIds
 }
 
-// Set is OpenAppKey Setter
+// SetOpenAppKey is OpenAppKey Setter
 // 小程序appId
 func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetOpenAppKey(_openAppKey string) error {
 	r._openAppKey = _openAppKey
@@ -92,12 +92,12 @@ func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetOpenAppKey(_openAppKey stri
 	return nil
 }
 
-// Get OpenAppKey Getter
+// GetOpenAppKey OpenAppKey Getter
 func (r AliexpressTradeOrderOpenQueryAPIRequest) GetOpenAppKey() string {
 	return r._openAppKey
 }
 
-// Set is BizCode Setter
+// SetBizCode is BizCode Setter
 // 业务编码
 func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetBizCode(_bizCode string) error {
 	r._bizCode = _bizCode
@@ -105,7 +105,7 @@ func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetBizCode(_bizCode string) er
 	return nil
 }
 
-// Get BizCode Getter
+// GetBizCode BizCode Getter
 func (r AliexpressTradeOrderOpenQueryAPIRequest) GetBizCode() string {
 	return r._bizCode
 }

@@ -38,7 +38,7 @@ func (r AlibabaEinvoiceFlowTaxGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FlowId Setter
+// SetFlowId is FlowId Setter
 // 入驻开通工单ID
 func (r *AlibabaEinvoiceFlowTaxGetAPIRequest) SetFlowId(_flowId string) error {
 	r._flowId = _flowId
@@ -46,7 +46,7 @@ func (r *AlibabaEinvoiceFlowTaxGetAPIRequest) SetFlowId(_flowId string) error {
 	return nil
 }
 
-// Get FlowId Getter
+// GetFlowId FlowId Getter
 func (r AlibabaEinvoiceFlowTaxGetAPIRequest) GetFlowId() string {
 	return r._flowId
 }

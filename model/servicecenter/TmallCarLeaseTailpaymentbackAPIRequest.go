@@ -37,7 +37,7 @@ func (r TmallCarLeaseTailpaymentbackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TailPaymentDTO Setter
+// SetTailPaymentDTO is TailPaymentDTO Setter
 // 尾款方案
 func (r *TmallCarLeaseTailpaymentbackAPIRequest) SetTailPaymentDTO(_tailPaymentDTO *TailPaymentDto) error {
 	r._tailPaymentDTO = _tailPaymentDTO
@@ -45,7 +45,7 @@ func (r *TmallCarLeaseTailpaymentbackAPIRequest) SetTailPaymentDTO(_tailPaymentD
 	return nil
 }
 
-// Get TailPaymentDTO Getter
+// GetTailPaymentDTO TailPaymentDTO Getter
 func (r TmallCarLeaseTailpaymentbackAPIRequest) GetTailPaymentDTO() *TailPaymentDto {
 	return r._tailPaymentDTO
 }

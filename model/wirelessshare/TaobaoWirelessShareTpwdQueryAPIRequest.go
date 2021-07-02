@@ -37,7 +37,7 @@ func (r TaobaoWirelessShareTpwdQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PasswordContent Setter
+// SetPasswordContent is PasswordContent Setter
 // 淘口令
 func (r *TaobaoWirelessShareTpwdQueryAPIRequest) SetPasswordContent(_passwordContent string) error {
 	r._passwordContent = _passwordContent
@@ -45,7 +45,7 @@ func (r *TaobaoWirelessShareTpwdQueryAPIRequest) SetPasswordContent(_passwordCon
 	return nil
 }
 
-// Get PasswordContent Getter
+// GetPasswordContent PasswordContent Getter
 func (r TaobaoWirelessShareTpwdQueryAPIRequest) GetPasswordContent() string {
 	return r._passwordContent
 }

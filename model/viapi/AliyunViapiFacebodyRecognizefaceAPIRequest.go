@@ -39,7 +39,7 @@ func (r AliyunViapiFacebodyRecognizefaceAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ImageUrl Setter
+// SetImageUrl is ImageUrl Setter
 // 待检测图片链接
 func (r *AliyunViapiFacebodyRecognizefaceAPIRequest) SetImageUrl(_imageUrl string) error {
 	r._imageUrl = _imageUrl
@@ -47,12 +47,12 @@ func (r *AliyunViapiFacebodyRecognizefaceAPIRequest) SetImageUrl(_imageUrl strin
 	return nil
 }
 
-// Get ImageUrl Getter
+// GetImageUrl ImageUrl Getter
 func (r AliyunViapiFacebodyRecognizefaceAPIRequest) GetImageUrl() string {
 	return r._imageUrl
 }
 
-// Set is ImageType Setter
+// SetImageType is ImageType Setter
 // 图片类型, ,取值范围[0:ImageURL, 1:ImageContent]
 func (r *AliyunViapiFacebodyRecognizefaceAPIRequest) SetImageType(_imageType int64) error {
 	r._imageType = _imageType
@@ -60,7 +60,7 @@ func (r *AliyunViapiFacebodyRecognizefaceAPIRequest) SetImageType(_imageType int
 	return nil
 }
 
-// Get ImageType Getter
+// GetImageType ImageType Getter
 func (r AliyunViapiFacebodyRecognizefaceAPIRequest) GetImageType() int64 {
 	return r._imageType
 }

@@ -37,7 +37,7 @@ func (r TaobaoOmniorderDtdQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 核销码
 func (r *TaobaoOmniorderDtdQueryAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -45,7 +45,7 @@ func (r *TaobaoOmniorderDtdQueryAPIRequest) SetCode(_code string) error {
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r TaobaoOmniorderDtdQueryAPIRequest) GetCode() string {
 	return r._code
 }

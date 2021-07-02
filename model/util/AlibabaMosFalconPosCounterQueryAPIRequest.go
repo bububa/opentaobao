@@ -41,7 +41,7 @@ func (r AlibabaMosFalconPosCounterQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Sn Setter
+// SetSn is Sn Setter
 // 设备序列号
 func (r *AlibabaMosFalconPosCounterQueryAPIRequest) SetSn(_sn string) error {
 	r._sn = _sn
@@ -49,12 +49,12 @@ func (r *AlibabaMosFalconPosCounterQueryAPIRequest) SetSn(_sn string) error {
 	return nil
 }
 
-// Get Sn Getter
+// GetSn Sn Getter
 func (r AlibabaMosFalconPosCounterQueryAPIRequest) GetSn() string {
 	return r._sn
 }
 
-// Set is StoreNo Setter
+// SetStoreNo is StoreNo Setter
 // 门店号
 func (r *AlibabaMosFalconPosCounterQueryAPIRequest) SetStoreNo(_storeNo string) error {
 	r._storeNo = _storeNo
@@ -62,12 +62,12 @@ func (r *AlibabaMosFalconPosCounterQueryAPIRequest) SetStoreNo(_storeNo string) 
 	return nil
 }
 
-// Get StoreNo Getter
+// GetStoreNo StoreNo Getter
 func (r AlibabaMosFalconPosCounterQueryAPIRequest) GetStoreNo() string {
 	return r._storeNo
 }
 
-// Set is CounterNo Setter
+// SetCounterNo is CounterNo Setter
 // 专柜号
 func (r *AlibabaMosFalconPosCounterQueryAPIRequest) SetCounterNo(_counterNo string) error {
 	r._counterNo = _counterNo
@@ -75,7 +75,7 @@ func (r *AlibabaMosFalconPosCounterQueryAPIRequest) SetCounterNo(_counterNo stri
 	return nil
 }
 
-// Get CounterNo Getter
+// GetCounterNo CounterNo Getter
 func (r AlibabaMosFalconPosCounterQueryAPIRequest) GetCounterNo() string {
 	return r._counterNo
 }

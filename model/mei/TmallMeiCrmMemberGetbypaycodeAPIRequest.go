@@ -37,7 +37,7 @@ func (r TmallMeiCrmMemberGetbypaycodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PayCode Setter
+// SetPayCode is PayCode Setter
 // 会员码
 func (r *TmallMeiCrmMemberGetbypaycodeAPIRequest) SetPayCode(_payCode string) error {
 	r._payCode = _payCode
@@ -45,7 +45,7 @@ func (r *TmallMeiCrmMemberGetbypaycodeAPIRequest) SetPayCode(_payCode string) er
 	return nil
 }
 
-// Get PayCode Getter
+// GetPayCode PayCode Getter
 func (r TmallMeiCrmMemberGetbypaycodeAPIRequest) GetPayCode() string {
 	return r._payCode
 }

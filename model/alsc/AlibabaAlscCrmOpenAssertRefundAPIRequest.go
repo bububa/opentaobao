@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmOpenAssertRefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamPropertyRefundOpenReq Setter
+// SetParamPropertyRefundOpenReq is ParamPropertyRefundOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmOpenAssertRefundAPIRequest) SetParamPropertyRefundOpenReq(_paramPropertyRefundOpenReq *PropertyRefundOpenReq) error {
 	r._paramPropertyRefundOpenReq = _paramPropertyRefundOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmOpenAssertRefundAPIRequest) SetParamPropertyRefundOpenReq
 	return nil
 }
 
-// Get ParamPropertyRefundOpenReq Getter
+// GetParamPropertyRefundOpenReq ParamPropertyRefundOpenReq Getter
 func (r AlibabaAlscCrmOpenAssertRefundAPIRequest) GetParamPropertyRefundOpenReq() *PropertyRefundOpenReq {
 	return r._paramPropertyRefundOpenReq
 }

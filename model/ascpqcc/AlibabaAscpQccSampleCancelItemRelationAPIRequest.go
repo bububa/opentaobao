@@ -37,7 +37,7 @@ func (r AlibabaAscpQccSampleCancelItemRelationAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is CancelRequest Setter
+// SetCancelRequest is CancelRequest Setter
 // 请求参数对象
 func (r *AlibabaAscpQccSampleCancelItemRelationAPIRequest) SetCancelRequest(_cancelRequest *CancelSampleRelationRequest) error {
 	r._cancelRequest = _cancelRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpQccSampleCancelItemRelationAPIRequest) SetCancelRequest(_can
 	return nil
 }
 
-// Get CancelRequest Getter
+// GetCancelRequest CancelRequest Getter
 func (r AlibabaAscpQccSampleCancelItemRelationAPIRequest) GetCancelRequest() *CancelSampleRelationRequest {
 	return r._cancelRequest
 }

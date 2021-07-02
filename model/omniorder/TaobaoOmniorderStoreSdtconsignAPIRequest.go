@@ -39,7 +39,7 @@ func (r TaobaoOmniorderStoreSdtconsignAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PackageId Setter
+// SetPackageId is PackageId Setter
 // 取号接口返回的包裹id
 func (r *TaobaoOmniorderStoreSdtconsignAPIRequest) SetPackageId(_packageId string) error {
 	r._packageId = _packageId
@@ -47,12 +47,12 @@ func (r *TaobaoOmniorderStoreSdtconsignAPIRequest) SetPackageId(_packageId strin
 	return nil
 }
 
-// Get PackageId Getter
+// GetPackageId PackageId Getter
 func (r TaobaoOmniorderStoreSdtconsignAPIRequest) GetPackageId() string {
 	return r._packageId
 }
 
-// Set is TagCode Setter
+// SetTagCode is TagCode Setter
 // 发货标签号
 func (r *TaobaoOmniorderStoreSdtconsignAPIRequest) SetTagCode(_tagCode string) error {
 	r._tagCode = _tagCode
@@ -60,7 +60,7 @@ func (r *TaobaoOmniorderStoreSdtconsignAPIRequest) SetTagCode(_tagCode string) e
 	return nil
 }
 
-// Get TagCode Getter
+// GetTagCode TagCode Getter
 func (r TaobaoOmniorderStoreSdtconsignAPIRequest) GetTagCode() string {
 	return r._tagCode
 }

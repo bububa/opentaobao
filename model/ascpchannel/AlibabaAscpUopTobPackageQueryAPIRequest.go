@@ -37,7 +37,7 @@ func (r AlibabaAscpUopTobPackageQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PackageQueryRequest Setter
+// SetPackageQueryRequest is PackageQueryRequest Setter
 // 系统自动生成
 func (r *AlibabaAscpUopTobPackageQueryAPIRequest) SetPackageQueryRequest(_packageQueryRequest *Packagequeryrequest) error {
 	r._packageQueryRequest = _packageQueryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpUopTobPackageQueryAPIRequest) SetPackageQueryRequest(_packag
 	return nil
 }
 
-// Get PackageQueryRequest Getter
+// GetPackageQueryRequest PackageQueryRequest Getter
 func (r AlibabaAscpUopTobPackageQueryAPIRequest) GetPackageQueryRequest() *Packagequeryrequest {
 	return r._packageQueryRequest
 }

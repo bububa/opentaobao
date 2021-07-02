@@ -37,7 +37,7 @@ func (r TaobaoTrainAgentOrderPayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentPayOrderParam Setter
+// SetAgentPayOrderParam is AgentPayOrderParam Setter
 // 入参对象
 func (r *TaobaoTrainAgentOrderPayAPIRequest) SetAgentPayOrderParam(_agentPayOrderParam *AgentPayOrderParam) error {
 	r._agentPayOrderParam = _agentPayOrderParam
@@ -45,7 +45,7 @@ func (r *TaobaoTrainAgentOrderPayAPIRequest) SetAgentPayOrderParam(_agentPayOrde
 	return nil
 }
 
-// Get AgentPayOrderParam Getter
+// GetAgentPayOrderParam AgentPayOrderParam Getter
 func (r TaobaoTrainAgentOrderPayAPIRequest) GetAgentPayOrderParam() *AgentPayOrderParam {
 	return r._agentPayOrderParam
 }

@@ -37,7 +37,7 @@ func (r TaobaoBusTicketSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TicketParams Setter
+// SetTicketParams is TicketParams Setter
 // 系统自动生成
 func (r *TaobaoBusTicketSetAPIRequest) SetTicketParams(_ticketParams *B2BBookOrderRq) error {
 	r._ticketParams = _ticketParams
@@ -45,7 +45,7 @@ func (r *TaobaoBusTicketSetAPIRequest) SetTicketParams(_ticketParams *B2BBookOrd
 	return nil
 }
 
-// Get TicketParams Getter
+// GetTicketParams TicketParams Getter
 func (r TaobaoBusTicketSetAPIRequest) GetTicketParams() *B2BBookOrderRq {
 	return r._ticketParams
 }

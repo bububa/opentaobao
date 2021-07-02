@@ -51,7 +51,7 @@ func (r TaobaoFenxiaoRefundQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 代销采购退款单最早修改时间
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -59,12 +59,12 @@ func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetStartDate(_startDate string) err
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoFenxiaoRefundQueryAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 代销采购退款最迟修改时间。与start_date的最大时间间隔不能超过30天
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -72,12 +72,12 @@ func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetEndDate(_endDate string) error {
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoFenxiaoRefundQueryAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码（大于0的整数。无值或小于1的值按默认值1计）
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -85,12 +85,12 @@ func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoFenxiaoRefundQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数（大于0但小于等于50的整数。无值或大于50或小于1的值按默认值50计）
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -98,12 +98,12 @@ func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoFenxiaoRefundQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is QuerySellerRefund Setter
+// SetQuerySellerRefund is QuerySellerRefund Setter
 // 是否查询下游买家的退款信息
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetQuerySellerRefund(_querySellerRefund bool) error {
 	r._querySellerRefund = _querySellerRefund
@@ -111,12 +111,12 @@ func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetQuerySellerRefund(_querySellerRe
 	return nil
 }
 
-// Get QuerySellerRefund Getter
+// GetQuerySellerRefund QuerySellerRefund Getter
 func (r TaobaoFenxiaoRefundQueryAPIRequest) GetQuerySellerRefund() bool {
 	return r._querySellerRefund
 }
 
-// Set is TradeTypes Setter
+// SetTradeTypes is TradeTypes Setter
 // 渠道code，可批量 老供销渠道：999
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetTradeTypes(_tradeTypes []int64) error {
 	r._tradeTypes = _tradeTypes
@@ -124,12 +124,12 @@ func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetTradeTypes(_tradeTypes []int64) 
 	return nil
 }
 
-// Get TradeTypes Getter
+// GetTradeTypes TradeTypes Getter
 func (r TaobaoFenxiaoRefundQueryAPIRequest) GetTradeTypes() []int64 {
 	return r._tradeTypes
 }
 
-// Set is UserRoleType Setter
+// SetUserRoleType is UserRoleType Setter
 // 角色，供应商：2，分销商：1
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetUserRoleType(_userRoleType int64) error {
 	r._userRoleType = _userRoleType
@@ -137,12 +137,12 @@ func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetUserRoleType(_userRoleType int64
 	return nil
 }
 
-// Get UserRoleType Getter
+// GetUserRoleType UserRoleType Getter
 func (r TaobaoFenxiaoRefundQueryAPIRequest) GetUserRoleType() int64 {
 	return r._userRoleType
 }
 
-// Set is ChannelCodes Setter
+// SetChannelCodes is ChannelCodes Setter
 // 代销：1 经销：2 寄售（猫超自营寄售）：5 平台寄售：6
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetChannelCodes(_channelCodes []int64) error {
 	r._channelCodes = _channelCodes
@@ -150,7 +150,7 @@ func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetChannelCodes(_channelCodes []int
 	return nil
 }
 
-// Get ChannelCodes Getter
+// GetChannelCodes ChannelCodes Getter
 func (r TaobaoFenxiaoRefundQueryAPIRequest) GetChannelCodes() []int64 {
 	return r._channelCodes
 }

@@ -37,7 +37,7 @@ func (r AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参param
 func (r *AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest) SetParam(_param *DisEncrypt4CmbParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest) SetParam(_para
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaDamaiMaitixDistributionCmbParamencryptAPIRequest) GetParam() *DisEncrypt4CmbParam {
 	return r._param
 }

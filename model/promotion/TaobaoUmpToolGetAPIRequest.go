@@ -37,7 +37,7 @@ func (r TaobaoUmpToolGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ToolId Setter
+// SetToolId is ToolId Setter
 // 工具的id
 func (r *TaobaoUmpToolGetAPIRequest) SetToolId(_toolId int64) error {
 	r._toolId = _toolId
@@ -45,7 +45,7 @@ func (r *TaobaoUmpToolGetAPIRequest) SetToolId(_toolId int64) error {
 	return nil
 }
 
-// Get ToolId Getter
+// GetToolId ToolId Getter
 func (r TaobaoUmpToolGetAPIRequest) GetToolId() int64 {
 	return r._toolId
 }

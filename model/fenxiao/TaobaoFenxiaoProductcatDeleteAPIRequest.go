@@ -37,7 +37,7 @@ func (r TaobaoFenxiaoProductcatDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductLineId Setter
+// SetProductLineId is ProductLineId Setter
 // 产品线ID
 func (r *TaobaoFenxiaoProductcatDeleteAPIRequest) SetProductLineId(_productLineId int64) error {
 	r._productLineId = _productLineId
@@ -45,7 +45,7 @@ func (r *TaobaoFenxiaoProductcatDeleteAPIRequest) SetProductLineId(_productLineI
 	return nil
 }
 
-// Get ProductLineId Getter
+// GetProductLineId ProductLineId Getter
 func (r TaobaoFenxiaoProductcatDeleteAPIRequest) GetProductLineId() int64 {
 	return r._productLineId
 }

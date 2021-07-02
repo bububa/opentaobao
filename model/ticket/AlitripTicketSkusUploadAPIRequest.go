@@ -52,7 +52,7 @@ func (r AlitripTicketSkusUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AliProductId Setter
+// SetAliProductId is AliProductId Setter
 // 特殊必填，阿里标准收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
 func (r *AlitripTicketSkusUploadAPIRequest) SetAliProductId(_aliProductId int64) error {
 	r._aliProductId = _aliProductId
@@ -60,12 +60,12 @@ func (r *AlitripTicketSkusUploadAPIRequest) SetAliProductId(_aliProductId int64)
 	return nil
 }
 
-// Get AliProductId Getter
+// GetAliProductId AliProductId Getter
 func (r AlitripTicketSkusUploadAPIRequest) GetAliProductId() int64 {
 	return r._aliProductId
 }
 
-// Set is OutProductId Setter
+// SetOutProductId is OutProductId Setter
 // 特殊必填，商户收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
 func (r *AlitripTicketSkusUploadAPIRequest) SetOutProductId(_outProductId string) error {
 	r._outProductId = _outProductId
@@ -73,12 +73,12 @@ func (r *AlitripTicketSkusUploadAPIRequest) SetOutProductId(_outProductId string
 	return nil
 }
 
-// Get OutProductId Getter
+// GetOutProductId OutProductId Getter
 func (r AlitripTicketSkusUploadAPIRequest) GetOutProductId() string {
 	return r._outProductId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 特殊必填，淘宝商品id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
 func (r *AlitripTicketSkusUploadAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -86,12 +86,12 @@ func (r *AlitripTicketSkusUploadAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlitripTicketSkusUploadAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is TicketType Setter
+// SetTicketType is TicketType Setter
 // 必填，门票 票种类型
 func (r *AlitripTicketSkusUploadAPIRequest) SetTicketType(_ticketType string) error {
 	r._ticketType = _ticketType
@@ -99,12 +99,12 @@ func (r *AlitripTicketSkusUploadAPIRequest) SetTicketType(_ticketType string) er
 	return nil
 }
 
-// Get TicketType Getter
+// GetTicketType TicketType Getter
 func (r AlitripTicketSkusUploadAPIRequest) GetTicketType() string {
 	return r._ticketType
 }
 
-// Set is TicketSeason Setter
+// SetTicketSeason is TicketSeason Setter
 // 可选，门票场次（场次门票专用，对于场次门票必选）
 func (r *AlitripTicketSkusUploadAPIRequest) SetTicketSeason(_ticketSeason string) error {
 	r._ticketSeason = _ticketSeason
@@ -112,12 +112,12 @@ func (r *AlitripTicketSkusUploadAPIRequest) SetTicketSeason(_ticketSeason string
 	return nil
 }
 
-// Get TicketSeason Getter
+// GetTicketSeason TicketSeason Getter
 func (r AlitripTicketSkusUploadAPIRequest) GetTicketSeason() string {
 	return r._ticketSeason
 }
 
-// Set is TicketArea Setter
+// SetTicketArea is TicketArea Setter
 // 可选，门票区域（场次门票专用，对于场次门票必选）
 func (r *AlitripTicketSkusUploadAPIRequest) SetTicketArea(_ticketArea string) error {
 	r._ticketArea = _ticketArea
@@ -125,12 +125,12 @@ func (r *AlitripTicketSkusUploadAPIRequest) SetTicketArea(_ticketArea string) er
 	return nil
 }
 
-// Get TicketArea Getter
+// GetTicketArea TicketArea Getter
 func (r AlitripTicketSkusUploadAPIRequest) GetTicketArea() string {
 	return r._ticketArea
 }
 
-// Set is PriceRules Setter
+// SetPriceRules is PriceRules Setter
 // 必填，该票种下使用的价格规则。
 func (r *AlitripTicketSkusUploadAPIRequest) SetPriceRules(_priceRules []PriceRule) error {
 	r._priceRules = _priceRules
@@ -138,7 +138,7 @@ func (r *AlitripTicketSkusUploadAPIRequest) SetPriceRules(_priceRules []PriceRul
 	return nil
 }
 
-// Get PriceRules Getter
+// GetPriceRules PriceRules Getter
 func (r AlitripTicketSkusUploadAPIRequest) GetPriceRules() []PriceRule {
 	return r._priceRules
 }

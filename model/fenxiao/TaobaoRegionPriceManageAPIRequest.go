@@ -43,7 +43,7 @@ func (r TaobaoRegionPriceManageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *TaobaoRegionPriceManageAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -51,12 +51,12 @@ func (r *TaobaoRegionPriceManageAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoRegionPriceManageAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // 无sku传0
 func (r *TaobaoRegionPriceManageAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
@@ -64,12 +64,12 @@ func (r *TaobaoRegionPriceManageAPIRequest) SetSkuId(_skuId int64) error {
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TaobaoRegionPriceManageAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }
 
-// Set is RegionalPriceDtos Setter
+// SetRegionalPriceDtos is RegionalPriceDtos Setter
 // 列表
 func (r *TaobaoRegionPriceManageAPIRequest) SetRegionalPriceDtos(_regionalPriceDtos []RegionalPriceDto) error {
 	r._regionalPriceDtos = _regionalPriceDtos
@@ -77,12 +77,12 @@ func (r *TaobaoRegionPriceManageAPIRequest) SetRegionalPriceDtos(_regionalPriceD
 	return nil
 }
 
-// Get RegionalPriceDtos Getter
+// GetRegionalPriceDtos RegionalPriceDtos Getter
 func (r TaobaoRegionPriceManageAPIRequest) GetRegionalPriceDtos() []RegionalPriceDto {
 	return r._regionalPriceDtos
 }
 
-// Set is IsFull Setter
+// SetIsFull is IsFull Setter
 // true:全量, false:增量
 func (r *TaobaoRegionPriceManageAPIRequest) SetIsFull(_isFull bool) error {
 	r._isFull = _isFull
@@ -90,7 +90,7 @@ func (r *TaobaoRegionPriceManageAPIRequest) SetIsFull(_isFull bool) error {
 	return nil
 }
 
-// Get IsFull Getter
+// GetIsFull IsFull Getter
 func (r TaobaoRegionPriceManageAPIRequest) GetIsFull() bool {
 	return r._isFull
 }

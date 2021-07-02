@@ -41,7 +41,7 @@ func (r AlitripBtripFlightCitySuggestAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户id
 func (r *AlitripBtripFlightCitySuggestAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -49,12 +49,12 @@ func (r *AlitripBtripFlightCitySuggestAPIRequest) SetUserId(_userId string) erro
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlitripBtripFlightCitySuggestAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is Keyword Setter
+// SetKeyword is Keyword Setter
 // 搜索关键字
 func (r *AlitripBtripFlightCitySuggestAPIRequest) SetKeyword(_keyword string) error {
 	r._keyword = _keyword
@@ -62,12 +62,12 @@ func (r *AlitripBtripFlightCitySuggestAPIRequest) SetKeyword(_keyword string) er
 	return nil
 }
 
-// Get Keyword Getter
+// GetKeyword Keyword Getter
 func (r AlitripBtripFlightCitySuggestAPIRequest) GetKeyword() string {
 	return r._keyword
 }
 
-// Set is CorpId Setter
+// SetCorpId is CorpId Setter
 // 企业id
 func (r *AlitripBtripFlightCitySuggestAPIRequest) SetCorpId(_corpId string) error {
 	r._corpId = _corpId
@@ -75,7 +75,7 @@ func (r *AlitripBtripFlightCitySuggestAPIRequest) SetCorpId(_corpId string) erro
 	return nil
 }
 
-// Get CorpId Getter
+// GetCorpId CorpId Getter
 func (r AlitripBtripFlightCitySuggestAPIRequest) GetCorpId() string {
 	return r._corpId
 }

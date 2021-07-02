@@ -37,7 +37,7 @@ func (r AlibabaAliqinFlowWalletGradeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PhoneNum Setter
+// SetPhoneNum is PhoneNum Setter
 // 手机号码
 func (r *AlibabaAliqinFlowWalletGradeAPIRequest) SetPhoneNum(_phoneNum string) error {
 	r._phoneNum = _phoneNum
@@ -45,7 +45,7 @@ func (r *AlibabaAliqinFlowWalletGradeAPIRequest) SetPhoneNum(_phoneNum string) e
 	return nil
 }
 
-// Get PhoneNum Getter
+// GetPhoneNum PhoneNum Getter
 func (r AlibabaAliqinFlowWalletGradeAPIRequest) GetPhoneNum() string {
 	return r._phoneNum
 }

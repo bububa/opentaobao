@@ -39,7 +39,7 @@ func (r AlibabaNrsItemPricetagRecognizeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ImgByteArr Setter
+// SetImgByteArr is ImgByteArr Setter
 // 图片数据
 func (r *AlibabaNrsItemPricetagRecognizeAPIRequest) SetImgByteArr(_imgByteArr *model.File) error {
 	r._imgByteArr = _imgByteArr
@@ -47,12 +47,12 @@ func (r *AlibabaNrsItemPricetagRecognizeAPIRequest) SetImgByteArr(_imgByteArr *m
 	return nil
 }
 
-// Get ImgByteArr Getter
+// GetImgByteArr ImgByteArr Getter
 func (r AlibabaNrsItemPricetagRecognizeAPIRequest) GetImgByteArr() *model.File {
 	return r._imgByteArr
 }
 
-// Set is PriceTagParam Setter
+// SetPriceTagParam is PriceTagParam Setter
 // 价签识别参数
 func (r *AlibabaNrsItemPricetagRecognizeAPIRequest) SetPriceTagParam(_priceTagParam *PriceTagReqParam) error {
 	r._priceTagParam = _priceTagParam
@@ -60,7 +60,7 @@ func (r *AlibabaNrsItemPricetagRecognizeAPIRequest) SetPriceTagParam(_priceTagPa
 	return nil
 }
 
-// Get PriceTagParam Getter
+// GetPriceTagParam PriceTagParam Getter
 func (r AlibabaNrsItemPricetagRecognizeAPIRequest) GetPriceTagParam() *PriceTagReqParam {
 	return r._priceTagParam
 }

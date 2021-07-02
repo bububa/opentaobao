@@ -37,7 +37,7 @@ func (r TaobaoMiniappDistributionOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderIdRequest Setter
+// SetOrderIdRequest is OrderIdRequest Setter
 // 查询入参
 func (r *TaobaoMiniappDistributionOrderGetAPIRequest) SetOrderIdRequest(_orderIdRequest *DistributionOrderQueryByIdOpenRequest) error {
 	r._orderIdRequest = _orderIdRequest
@@ -45,7 +45,7 @@ func (r *TaobaoMiniappDistributionOrderGetAPIRequest) SetOrderIdRequest(_orderId
 	return nil
 }
 
-// Get OrderIdRequest Getter
+// GetOrderIdRequest OrderIdRequest Getter
 func (r TaobaoMiniappDistributionOrderGetAPIRequest) GetOrderIdRequest() *DistributionOrderQueryByIdOpenRequest {
 	return r._orderIdRequest
 }

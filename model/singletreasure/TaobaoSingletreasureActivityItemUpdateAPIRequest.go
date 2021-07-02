@@ -37,7 +37,7 @@ func (r TaobaoSingletreasureActivityItemUpdateAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ItemDetailInfo Setter
+// SetItemDetailInfo is ItemDetailInfo Setter
 // 修改接口的入参对象
 func (r *TaobaoSingletreasureActivityItemUpdateAPIRequest) SetItemDetailInfo(_itemDetailInfo *ItemDetailInfoCreateDto) error {
 	r._itemDetailInfo = _itemDetailInfo
@@ -45,7 +45,7 @@ func (r *TaobaoSingletreasureActivityItemUpdateAPIRequest) SetItemDetailInfo(_it
 	return nil
 }
 
-// Get ItemDetailInfo Getter
+// GetItemDetailInfo ItemDetailInfo Getter
 func (r TaobaoSingletreasureActivityItemUpdateAPIRequest) GetItemDetailInfo() *ItemDetailInfoCreateDto {
 	return r._itemDetailInfo
 }

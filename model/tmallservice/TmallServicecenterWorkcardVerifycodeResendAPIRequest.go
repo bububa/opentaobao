@@ -39,7 +39,7 @@ func (r TmallServicecenterWorkcardVerifycodeResendAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *TmallServicecenterWorkcardVerifycodeResendAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -47,12 +47,12 @@ func (r *TmallServicecenterWorkcardVerifycodeResendAPIRequest) SetWorkcardId(_wo
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterWorkcardVerifycodeResendAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }
 
-// Set is ServiceStoreId Setter
+// SetServiceStoreId is ServiceStoreId Setter
 // 门店/网点id
 func (r *TmallServicecenterWorkcardVerifycodeResendAPIRequest) SetServiceStoreId(_serviceStoreId int64) error {
 	r._serviceStoreId = _serviceStoreId
@@ -60,7 +60,7 @@ func (r *TmallServicecenterWorkcardVerifycodeResendAPIRequest) SetServiceStoreId
 	return nil
 }
 
-// Get ServiceStoreId Getter
+// GetServiceStoreId ServiceStoreId Getter
 func (r TmallServicecenterWorkcardVerifycodeResendAPIRequest) GetServiceStoreId() int64 {
 	return r._serviceStoreId
 }

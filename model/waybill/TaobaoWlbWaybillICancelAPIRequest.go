@@ -37,7 +37,7 @@ func (r TaobaoWlbWaybillICancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WaybillApplyCancelRequest Setter
+// SetWaybillApplyCancelRequest is WaybillApplyCancelRequest Setter
 // 取消接口入参
 func (r *TaobaoWlbWaybillICancelAPIRequest) SetWaybillApplyCancelRequest(_waybillApplyCancelRequest *WaybillApplyCancelRequest) error {
 	r._waybillApplyCancelRequest = _waybillApplyCancelRequest
@@ -45,7 +45,7 @@ func (r *TaobaoWlbWaybillICancelAPIRequest) SetWaybillApplyCancelRequest(_waybil
 	return nil
 }
 
-// Get WaybillApplyCancelRequest Getter
+// GetWaybillApplyCancelRequest WaybillApplyCancelRequest Getter
 func (r TaobaoWlbWaybillICancelAPIRequest) GetWaybillApplyCancelRequest() *WaybillApplyCancelRequest {
 	return r._waybillApplyCancelRequest
 }

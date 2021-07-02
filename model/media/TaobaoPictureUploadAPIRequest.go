@@ -47,7 +47,7 @@ func (r TaobaoPictureUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PictureCategoryId Setter
+// SetPictureCategoryId is PictureCategoryId Setter
 // 图片分类ID，设置具体某个分类ID或设置0上传到默认分类，只能传入一个分类
 func (r *TaobaoPictureUploadAPIRequest) SetPictureCategoryId(_pictureCategoryId int64) error {
 	r._pictureCategoryId = _pictureCategoryId
@@ -55,12 +55,12 @@ func (r *TaobaoPictureUploadAPIRequest) SetPictureCategoryId(_pictureCategoryId 
 	return nil
 }
 
-// Get PictureCategoryId Getter
+// GetPictureCategoryId PictureCategoryId Getter
 func (r TaobaoPictureUploadAPIRequest) GetPictureCategoryId() int64 {
 	return r._pictureCategoryId
 }
 
-// Set is Img Setter
+// SetImg is Img Setter
 // 图片二进制文件流,不能为空,允许png、jpg、gif图片格式,3M以内。
 func (r *TaobaoPictureUploadAPIRequest) SetImg(_img *model.File) error {
 	r._img = _img
@@ -68,12 +68,12 @@ func (r *TaobaoPictureUploadAPIRequest) SetImg(_img *model.File) error {
 	return nil
 }
 
-// Get Img Getter
+// GetImg Img Getter
 func (r TaobaoPictureUploadAPIRequest) GetImg() *model.File {
 	return r._img
 }
 
-// Set is ImageInputTitle Setter
+// SetImageInputTitle is ImageInputTitle Setter
 // 包括后缀名的图片标题,不能为空，如Bule.jpg,有些卖家希望图片上传后取图片文件的默认名
 func (r *TaobaoPictureUploadAPIRequest) SetImageInputTitle(_imageInputTitle string) error {
 	r._imageInputTitle = _imageInputTitle
@@ -81,12 +81,12 @@ func (r *TaobaoPictureUploadAPIRequest) SetImageInputTitle(_imageInputTitle stri
 	return nil
 }
 
-// Get ImageInputTitle Getter
+// GetImageInputTitle ImageInputTitle Getter
 func (r TaobaoPictureUploadAPIRequest) GetImageInputTitle() string {
 	return r._imageInputTitle
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 图片标题,如果为空,传的图片标题就取去掉后缀名的image_input_title,超过50字符长度会截取50字符,重名会在标题末尾加"(1)";标题末尾已经有"(数字)"了，则数字加1
 func (r *TaobaoPictureUploadAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -94,12 +94,12 @@ func (r *TaobaoPictureUploadAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoPictureUploadAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// Set is ClientType Setter
+// SetClientType is ClientType Setter
 // 图片上传的来源，有电脑版本宝贝发布，手机版本宝贝发布client:computer电脑版本宝贝使用，client:phone手机版本宝贝使用。注意：当client:phone时，图片限制为宽度在480-620之间，长度不能超过960，否则会报错。
 func (r *TaobaoPictureUploadAPIRequest) SetClientType(_clientType string) error {
 	r._clientType = _clientType
@@ -107,12 +107,12 @@ func (r *TaobaoPictureUploadAPIRequest) SetClientType(_clientType string) error 
 	return nil
 }
 
-// Get ClientType Getter
+// GetClientType ClientType Getter
 func (r TaobaoPictureUploadAPIRequest) GetClientType() string {
 	return r._clientType
 }
 
-// Set is IsHttps Setter
+// SetIsHttps is IsHttps Setter
 // 是否获取https连接
 func (r *TaobaoPictureUploadAPIRequest) SetIsHttps(_isHttps bool) error {
 	r._isHttps = _isHttps
@@ -120,7 +120,7 @@ func (r *TaobaoPictureUploadAPIRequest) SetIsHttps(_isHttps bool) error {
 	return nil
 }
 
-// Get IsHttps Getter
+// GetIsHttps IsHttps Getter
 func (r TaobaoPictureUploadAPIRequest) GetIsHttps() bool {
 	return r._isHttps
 }

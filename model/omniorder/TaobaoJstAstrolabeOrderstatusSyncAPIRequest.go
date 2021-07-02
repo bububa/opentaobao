@@ -49,7 +49,7 @@ func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SubOrderIds Setter
+// SetSubOrderIds is SubOrderIds Setter
 // 子订单Id
 func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetSubOrderIds(_subOrderIds []int64) error {
 	r._subOrderIds = _subOrderIds
@@ -57,12 +57,12 @@ func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetSubOrderIds(_subOrderId
 	return nil
 }
 
-// Get SubOrderIds Getter
+// GetSubOrderIds SubOrderIds Getter
 func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetSubOrderIds() []int64 {
 	return r._subOrderIds
 }
 
-// Set is ActionTime Setter
+// SetActionTime is ActionTime Setter
 // 事件发生时间
 func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetActionTime(_actionTime string) error {
 	r._actionTime = _actionTime
@@ -70,12 +70,12 @@ func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetActionTime(_actionTime 
 	return nil
 }
 
-// Get ActionTime Getter
+// GetActionTime ActionTime Getter
 func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetActionTime() string {
 	return r._actionTime
 }
 
-// Set is Operator Setter
+// SetOperator is Operator Setter
 // 操作人
 func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
@@ -83,12 +83,12 @@ func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetOperator(_operator stri
 	return nil
 }
 
-// Get Operator Getter
+// GetOperator Operator Getter
 func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetOperator() string {
 	return r._operator
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 业务类型
 func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -96,12 +96,12 @@ func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetType(_type string) erro
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 订单状态
 func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -109,12 +109,12 @@ func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetStatus(_status string) 
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 目标门店的商户中心门店编码
 func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -122,12 +122,12 @@ func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetStoreId(_storeId int64)
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is ParentOrderCode Setter
+// SetParentOrderCode is ParentOrderCode Setter
 // 交易订单
 func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetParentOrderCode(_parentOrderCode int64) error {
 	r._parentOrderCode = _parentOrderCode
@@ -135,7 +135,7 @@ func (r *TaobaoJstAstrolabeOrderstatusSyncAPIRequest) SetParentOrderCode(_parent
 	return nil
 }
 
-// Get ParentOrderCode Getter
+// GetParentOrderCode ParentOrderCode Getter
 func (r TaobaoJstAstrolabeOrderstatusSyncAPIRequest) GetParentOrderCode() int64 {
 	return r._parentOrderCode
 }

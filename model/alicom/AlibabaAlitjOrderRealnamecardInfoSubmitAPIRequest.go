@@ -39,7 +39,7 @@ func (r AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is OrderNo Setter
+// SetOrderNo is OrderNo Setter
 // 淘宝订单号
 func (r *AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) SetOrderNo(_orderNo int64) error {
 	r._orderNo = _orderNo
@@ -47,12 +47,12 @@ func (r *AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) SetOrderNo(_orderNo 
 	return nil
 }
 
-// Get OrderNo Getter
+// GetOrderNo OrderNo Getter
 func (r AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) GetOrderNo() int64 {
 	return r._orderNo
 }
 
-// Set is Iccid Setter
+// SetIccid is Iccid Setter
 // sim卡iccid（一般为18位到20位）
 func (r *AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) SetIccid(_iccid string) error {
 	r._iccid = _iccid
@@ -60,7 +60,7 @@ func (r *AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) SetIccid(_iccid stri
 	return nil
 }
 
-// Get Iccid Getter
+// GetIccid Iccid Getter
 func (r AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) GetIccid() string {
 	return r._iccid
 }

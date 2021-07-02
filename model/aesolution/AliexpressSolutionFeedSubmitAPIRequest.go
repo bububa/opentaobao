@@ -39,7 +39,7 @@ func (r AliexpressSolutionFeedSubmitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OperationType Setter
+// SetOperationType is OperationType Setter
 // Currently support 4 types of feeds:PRODUCT_CREATE,PRODUCT_FULL_UPDATE,PRODUCT_STOCKS_UPDATE,PRODUCT_PRICES_UPDATE
 func (r *AliexpressSolutionFeedSubmitAPIRequest) SetOperationType(_operationType string) error {
 	r._operationType = _operationType
@@ -47,12 +47,12 @@ func (r *AliexpressSolutionFeedSubmitAPIRequest) SetOperationType(_operationType
 	return nil
 }
 
-// Get OperationType Getter
+// GetOperationType OperationType Getter
 func (r AliexpressSolutionFeedSubmitAPIRequest) GetOperationType() string {
 	return r._operationType
 }
 
-// Set is ItemList Setter
+// SetItemList is ItemList Setter
 // item list, maximum size: 2000.
 func (r *AliexpressSolutionFeedSubmitAPIRequest) SetItemList(_itemList []SingleItemRequestDto) error {
 	r._itemList = _itemList
@@ -60,7 +60,7 @@ func (r *AliexpressSolutionFeedSubmitAPIRequest) SetItemList(_itemList []SingleI
 	return nil
 }
 
-// Get ItemList Getter
+// GetItemList ItemList Getter
 func (r AliexpressSolutionFeedSubmitAPIRequest) GetItemList() []SingleItemRequestDto {
 	return r._itemList
 }

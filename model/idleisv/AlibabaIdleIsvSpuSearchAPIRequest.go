@@ -39,7 +39,7 @@ func (r AlibabaIdleIsvSpuSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChannelCatId Setter
+// SetChannelCatId is ChannelCatId Setter
 // 闲鱼渠道类目的id
 func (r *AlibabaIdleIsvSpuSearchAPIRequest) SetChannelCatId(_channelCatId string) error {
 	r._channelCatId = _channelCatId
@@ -47,12 +47,12 @@ func (r *AlibabaIdleIsvSpuSearchAPIRequest) SetChannelCatId(_channelCatId string
 	return nil
 }
 
-// Get ChannelCatId Getter
+// GetChannelCatId ChannelCatId Getter
 func (r AlibabaIdleIsvSpuSearchAPIRequest) GetChannelCatId() string {
 	return r._channelCatId
 }
 
-// Set is SearchText Setter
+// SetSearchText is SearchText Setter
 // 搜索的文本
 func (r *AlibabaIdleIsvSpuSearchAPIRequest) SetSearchText(_searchText string) error {
 	r._searchText = _searchText
@@ -60,7 +60,7 @@ func (r *AlibabaIdleIsvSpuSearchAPIRequest) SetSearchText(_searchText string) er
 	return nil
 }
 
-// Get SearchText Getter
+// GetSearchText SearchText Getter
 func (r AlibabaIdleIsvSpuSearchAPIRequest) GetSearchText() string {
 	return r._searchText
 }

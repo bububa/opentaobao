@@ -41,7 +41,7 @@ func (r TaobaoOpenmallTradeCloseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Distributor Setter
+// SetDistributor is Distributor Setter
 // 分销者信息
 func (r *TaobaoOpenmallTradeCloseAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
@@ -49,12 +49,12 @@ func (r *TaobaoOpenmallTradeCloseAPIRequest) SetDistributor(_distributor string)
 	return nil
 }
 
-// Get Distributor Getter
+// GetDistributor Distributor Getter
 func (r TaobaoOpenmallTradeCloseAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
-// Set is Reason Setter
+// SetReason is Reason Setter
 // 关单原因
 func (r *TaobaoOpenmallTradeCloseAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
@@ -62,12 +62,12 @@ func (r *TaobaoOpenmallTradeCloseAPIRequest) SetReason(_reason string) error {
 	return nil
 }
 
-// Get Reason Getter
+// GetReason Reason Getter
 func (r TaobaoOpenmallTradeCloseAPIRequest) GetReason() string {
 	return r._reason
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝订单号
 func (r *TaobaoOpenmallTradeCloseAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -75,7 +75,7 @@ func (r *TaobaoOpenmallTradeCloseAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoOpenmallTradeCloseAPIRequest) GetTid() int64 {
 	return r._tid
 }

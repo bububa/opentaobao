@@ -61,7 +61,7 @@ func (r TaobaoPicturePicturesGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 查询上传结束时间点,格式:yyyy-MM-dd HH:mm:ss
 func (r *TaobaoPicturePicturesGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -69,12 +69,12 @@ func (r *TaobaoPicturePicturesGetAPIRequest) SetStartDate(_startDate string) err
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoPicturePicturesGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is PictureCategoryId Setter
+// SetPictureCategoryId is PictureCategoryId Setter
 // 图片分类
 func (r *TaobaoPicturePicturesGetAPIRequest) SetPictureCategoryId(_pictureCategoryId int64) error {
 	r._pictureCategoryId = _pictureCategoryId
@@ -82,12 +82,12 @@ func (r *TaobaoPicturePicturesGetAPIRequest) SetPictureCategoryId(_pictureCatego
 	return nil
 }
 
-// Get PictureCategoryId Getter
+// GetPictureCategoryId PictureCategoryId Getter
 func (r TaobaoPicturePicturesGetAPIRequest) GetPictureCategoryId() int64 {
 	return r._pictureCategoryId
 }
 
-// Set is OrderBy Setter
+// SetOrderBy is OrderBy Setter
 // 图片查询结果排序,time:desc按上传时间从晚到早(默认), time:asc按上传时间从早到晚,sizes:desc按图片从大到小，sizes:asc按图片从小到大,默认time:desc
 func (r *TaobaoPicturePicturesGetAPIRequest) SetOrderBy(_orderBy string) error {
 	r._orderBy = _orderBy
@@ -95,12 +95,12 @@ func (r *TaobaoPicturePicturesGetAPIRequest) SetOrderBy(_orderBy string) error {
 	return nil
 }
 
-// Get OrderBy Getter
+// GetOrderBy OrderBy Getter
 func (r TaobaoPicturePicturesGetAPIRequest) GetOrderBy() string {
 	return r._orderBy
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 图片标题,最大长度50字符,中英文都算一字符
 func (r *TaobaoPicturePicturesGetAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -108,12 +108,12 @@ func (r *TaobaoPicturePicturesGetAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoPicturePicturesGetAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数.每页返回最多返回100条,默认值40
 func (r *TaobaoPicturePicturesGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -121,12 +121,12 @@ func (r *TaobaoPicturePicturesGetAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoPicturePicturesGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 结束时间
 func (r *TaobaoPicturePicturesGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -134,12 +134,12 @@ func (r *TaobaoPicturePicturesGetAPIRequest) SetEndDate(_endDate string) error {
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoPicturePicturesGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 页码.传入值为1代表第一页,传入值为2代表第二页,依此类推,默认值为1
 func (r *TaobaoPicturePicturesGetAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -147,12 +147,12 @@ func (r *TaobaoPicturePicturesGetAPIRequest) SetCurrentPage(_currentPage int64) 
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TaobaoPicturePicturesGetAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is StartModifiedDate Setter
+// SetStartModifiedDate is StartModifiedDate Setter
 // 图片被修改的时间点，格式:yyyy-MM-dd HH:mm:ss。查询此修改时间点之后到目前的图片。
 func (r *TaobaoPicturePicturesGetAPIRequest) SetStartModifiedDate(_startModifiedDate string) error {
 	r._startModifiedDate = _startModifiedDate
@@ -160,12 +160,12 @@ func (r *TaobaoPicturePicturesGetAPIRequest) SetStartModifiedDate(_startModified
 	return nil
 }
 
-// Get StartModifiedDate Getter
+// GetStartModifiedDate StartModifiedDate Getter
 func (r TaobaoPicturePicturesGetAPIRequest) GetStartModifiedDate() string {
 	return r._startModifiedDate
 }
 
-// Set is Deleted Setter
+// SetDeleted is Deleted Setter
 // 是否删除,deleted代表没有删除
 func (r *TaobaoPicturePicturesGetAPIRequest) SetDeleted(_deleted string) error {
 	r._deleted = _deleted
@@ -173,12 +173,12 @@ func (r *TaobaoPicturePicturesGetAPIRequest) SetDeleted(_deleted string) error {
 	return nil
 }
 
-// Get Deleted Getter
+// GetDeleted Deleted Getter
 func (r TaobaoPicturePicturesGetAPIRequest) GetDeleted() string {
 	return r._deleted
 }
 
-// Set is PictureId Setter
+// SetPictureId is PictureId Setter
 // 图片ID
 func (r *TaobaoPicturePicturesGetAPIRequest) SetPictureId(_pictureId int64) error {
 	r._pictureId = _pictureId
@@ -186,12 +186,12 @@ func (r *TaobaoPicturePicturesGetAPIRequest) SetPictureId(_pictureId int64) erro
 	return nil
 }
 
-// Get PictureId Getter
+// GetPictureId PictureId Getter
 func (r TaobaoPicturePicturesGetAPIRequest) GetPictureId() int64 {
 	return r._pictureId
 }
 
-// Set is ClientType Setter
+// SetClientType is ClientType Setter
 // 图片使用，如果是pc宝贝detail使用，设置为client:computer，查询出来的图片是符合pc的宝贝detail显示的如果是手机宝贝detail使用，设置为client:phone，查询出来的图片是符合手机的宝贝detail显示的,默认值是全部
 func (r *TaobaoPicturePicturesGetAPIRequest) SetClientType(_clientType string) error {
 	r._clientType = _clientType
@@ -199,12 +199,12 @@ func (r *TaobaoPicturePicturesGetAPIRequest) SetClientType(_clientType string) e
 	return nil
 }
 
-// Get ClientType Getter
+// GetClientType ClientType Getter
 func (r TaobaoPicturePicturesGetAPIRequest) GetClientType() string {
 	return r._clientType
 }
 
-// Set is Urls Setter
+// SetUrls is Urls Setter
 // 图片url查询接口
 func (r *TaobaoPicturePicturesGetAPIRequest) SetUrls(_urls string) error {
 	r._urls = _urls
@@ -212,12 +212,12 @@ func (r *TaobaoPicturePicturesGetAPIRequest) SetUrls(_urls string) error {
 	return nil
 }
 
-// Get Urls Getter
+// GetUrls Urls Getter
 func (r TaobaoPicturePicturesGetAPIRequest) GetUrls() string {
 	return r._urls
 }
 
-// Set is IsHttps Setter
+// SetIsHttps is IsHttps Setter
 // 是否获取https的链接
 func (r *TaobaoPicturePicturesGetAPIRequest) SetIsHttps(_isHttps bool) error {
 	r._isHttps = _isHttps
@@ -225,7 +225,7 @@ func (r *TaobaoPicturePicturesGetAPIRequest) SetIsHttps(_isHttps bool) error {
 	return nil
 }
 
-// Get IsHttps Getter
+// GetIsHttps IsHttps Getter
 func (r TaobaoPicturePicturesGetAPIRequest) GetIsHttps() bool {
 	return r._isHttps
 }

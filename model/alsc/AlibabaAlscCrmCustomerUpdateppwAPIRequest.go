@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmCustomerUpdateppwAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UpdatePayPasswdReq Setter
+// SetUpdatePayPasswdReq is UpdatePayPasswdReq Setter
 // 修改密码
 func (r *AlibabaAlscCrmCustomerUpdateppwAPIRequest) SetUpdatePayPasswdReq(_updatePayPasswdReq *UpdatePayPasswdReq) error {
 	r._updatePayPasswdReq = _updatePayPasswdReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmCustomerUpdateppwAPIRequest) SetUpdatePayPasswdReq(_updat
 	return nil
 }
 
-// Get UpdatePayPasswdReq Getter
+// GetUpdatePayPasswdReq UpdatePayPasswdReq Getter
 func (r AlibabaAlscCrmCustomerUpdateppwAPIRequest) GetUpdatePayPasswdReq() *UpdatePayPasswdReq {
 	return r._updatePayPasswdReq
 }

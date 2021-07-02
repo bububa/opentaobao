@@ -37,7 +37,7 @@ func (r TaobaoFuwuSpBillreordAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamBillRecordDTO Setter
+// SetParamBillRecordDTO is ParamBillRecordDTO Setter
 // 确认单的账单明细
 func (r *TaobaoFuwuSpBillreordAddAPIRequest) SetParamBillRecordDTO(_paramBillRecordDTO *BillRecordDto) error {
 	r._paramBillRecordDTO = _paramBillRecordDTO
@@ -45,7 +45,7 @@ func (r *TaobaoFuwuSpBillreordAddAPIRequest) SetParamBillRecordDTO(_paramBillRec
 	return nil
 }
 
-// Get ParamBillRecordDTO Getter
+// GetParamBillRecordDTO ParamBillRecordDTO Getter
 func (r TaobaoFuwuSpBillreordAddAPIRequest) GetParamBillRecordDTO() *BillRecordDto {
 	return r._paramBillRecordDTO
 }

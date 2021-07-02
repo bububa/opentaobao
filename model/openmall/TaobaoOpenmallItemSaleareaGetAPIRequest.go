@@ -39,7 +39,7 @@ func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SkuIds Setter
+// SetSkuIds is SkuIds Setter
 // 商品SKU
 func (r *TaobaoOpenmallItemSaleareaGetAPIRequest) SetSkuIds(_skuIds string) error {
 	r._skuIds = _skuIds
@@ -47,12 +47,12 @@ func (r *TaobaoOpenmallItemSaleareaGetAPIRequest) SetSkuIds(_skuIds string) erro
 	return nil
 }
 
-// Get SkuIds Getter
+// GetSkuIds SkuIds Getter
 func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetSkuIds() string {
 	return r._skuIds
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TaobaoOpenmallItemSaleareaGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -60,7 +60,7 @@ func (r *TaobaoOpenmallItemSaleareaGetAPIRequest) SetItemId(_itemId int64) error
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

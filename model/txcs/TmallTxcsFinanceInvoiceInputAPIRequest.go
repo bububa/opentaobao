@@ -39,7 +39,7 @@ func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuCode Setter
+// SetOuCode is OuCode Setter
 // 门店ID
 func (r *TmallTxcsFinanceInvoiceInputAPIRequest) SetOuCode(_ouCode string) error {
 	r._ouCode = _ouCode
@@ -47,12 +47,12 @@ func (r *TmallTxcsFinanceInvoiceInputAPIRequest) SetOuCode(_ouCode string) error
 	return nil
 }
 
-// Get OuCode Getter
+// GetOuCode OuCode Getter
 func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetOuCode() string {
 	return r._ouCode
 }
 
-// Set is InvoiceInputDTO1 Setter
+// SetInvoiceInputDTO1 is InvoiceInputDTO1 Setter
 // 发票内容
 func (r *TmallTxcsFinanceInvoiceInputAPIRequest) SetInvoiceInputDTO1(_invoiceInputDTO1 []InvoiceInputDto) error {
 	r._invoiceInputDTO1 = _invoiceInputDTO1
@@ -60,7 +60,7 @@ func (r *TmallTxcsFinanceInvoiceInputAPIRequest) SetInvoiceInputDTO1(_invoiceInp
 	return nil
 }
 
-// Get InvoiceInputDTO1 Getter
+// GetInvoiceInputDTO1 InvoiceInputDTO1 Getter
 func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetInvoiceInputDTO1() []InvoiceInputDto {
 	return r._invoiceInputDTO1
 }

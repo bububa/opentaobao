@@ -37,7 +37,7 @@ func (r TaobaoPlaceStoreExtendUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamUpdateStoreExtendDTO Setter
+// SetParamUpdateStoreExtendDTO is ParamUpdateStoreExtendDTO Setter
 // 更新数据
 func (r *TaobaoPlaceStoreExtendUpdateAPIRequest) SetParamUpdateStoreExtendDTO(_paramUpdateStoreExtendDTO *UpdateStoreExtendDto) error {
 	r._paramUpdateStoreExtendDTO = _paramUpdateStoreExtendDTO
@@ -45,7 +45,7 @@ func (r *TaobaoPlaceStoreExtendUpdateAPIRequest) SetParamUpdateStoreExtendDTO(_p
 	return nil
 }
 
-// Get ParamUpdateStoreExtendDTO Getter
+// GetParamUpdateStoreExtendDTO ParamUpdateStoreExtendDTO Getter
 func (r TaobaoPlaceStoreExtendUpdateAPIRequest) GetParamUpdateStoreExtendDTO() *UpdateStoreExtendDto {
 	return r._paramUpdateStoreExtendDTO
 }

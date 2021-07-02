@@ -37,7 +37,7 @@ func (r TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // name
 func (r *TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -45,7 +45,7 @@ func (r *TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) SetName(_name stri
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoBaichuanOpenaccountLogindoublecheckAPIRequest) GetName() string {
 	return r._name
 }

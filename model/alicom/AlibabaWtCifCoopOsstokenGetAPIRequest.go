@@ -41,7 +41,7 @@ func (r AlibabaWtCifCoopOsstokenGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppName Setter
+// SetAppName is AppName Setter
 // 调用方的应用名
 func (r *AlibabaWtCifCoopOsstokenGetAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
@@ -49,12 +49,12 @@ func (r *AlibabaWtCifCoopOsstokenGetAPIRequest) SetAppName(_appName string) erro
 	return nil
 }
 
-// Get AppName Getter
+// GetAppName AppName Getter
 func (r AlibabaWtCifCoopOsstokenGetAPIRequest) GetAppName() string {
 	return r._appName
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 系统分配的source
 func (r *AlibabaWtCifCoopOsstokenGetAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -62,12 +62,12 @@ func (r *AlibabaWtCifCoopOsstokenGetAPIRequest) SetSource(_source string) error 
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r AlibabaWtCifCoopOsstokenGetAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is Biz Setter
+// SetBiz is Biz Setter
 // 系统分配的biz
 func (r *AlibabaWtCifCoopOsstokenGetAPIRequest) SetBiz(_biz string) error {
 	r._biz = _biz
@@ -75,7 +75,7 @@ func (r *AlibabaWtCifCoopOsstokenGetAPIRequest) SetBiz(_biz string) error {
 	return nil
 }
 
-// Get Biz Getter
+// GetBiz Biz Getter
 func (r AlibabaWtCifCoopOsstokenGetAPIRequest) GetBiz() string {
 	return r._biz
 }

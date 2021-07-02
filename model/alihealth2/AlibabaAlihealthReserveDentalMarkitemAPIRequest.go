@@ -39,7 +39,7 @@ func (r AlibabaAlihealthReserveDentalMarkitemAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 平台商品id
 func (r *AlibabaAlihealthReserveDentalMarkitemAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthReserveDentalMarkitemAPIRequest) SetItemId(_itemId int6
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlibabaAlihealthReserveDentalMarkitemAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 是否可预约，1.可预约 0.不可预约
 func (r *AlibabaAlihealthReserveDentalMarkitemAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthReserveDentalMarkitemAPIRequest) SetStatus(_status int6
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaAlihealthReserveDentalMarkitemAPIRequest) GetStatus() int64 {
 	return r._status
 }

@@ -37,7 +37,7 @@ func (r TmallChannelTradeApplyorderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChannelPurchaseApplyOrderNo Setter
+// SetChannelPurchaseApplyOrderNo is ChannelPurchaseApplyOrderNo Setter
 // 采购申请单单号
 func (r *TmallChannelTradeApplyorderGetAPIRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
 	r._channelPurchaseApplyOrderNo = _channelPurchaseApplyOrderNo
@@ -45,7 +45,7 @@ func (r *TmallChannelTradeApplyorderGetAPIRequest) SetChannelPurchaseApplyOrderN
 	return nil
 }
 
-// Get ChannelPurchaseApplyOrderNo Getter
+// GetChannelPurchaseApplyOrderNo ChannelPurchaseApplyOrderNo Getter
 func (r TmallChannelTradeApplyorderGetAPIRequest) GetChannelPurchaseApplyOrderNo() string {
 	return r._channelPurchaseApplyOrderNo
 }

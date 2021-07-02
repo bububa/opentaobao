@@ -47,7 +47,7 @@ func (r AlibabaAlihealthDrugKytUploadrelationAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is SaveCodeRelation Setter
+// SetSaveCodeRelation is SaveCodeRelation Setter
 // 关联关系文件信息
 func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetSaveCodeRelation(_saveCodeRelation *SaveCodeRelationType) error {
 	r._saveCodeRelation = _saveCodeRelation
@@ -55,12 +55,12 @@ func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetSaveCodeRelation(_s
 	return nil
 }
 
-// Get SaveCodeRelation Getter
+// GetSaveCodeRelation SaveCodeRelation Getter
 func (r AlibabaAlihealthDrugKytUploadrelationAPIRequest) GetSaveCodeRelation() *SaveCodeRelationType {
 	return r._saveCodeRelation
 }
 
-// Set is AffirmFlag Setter
+// SetAffirmFlag is AffirmFlag Setter
 // affirmFlag
 func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetAffirmFlag(_affirmFlag string) error {
 	r._affirmFlag = _affirmFlag
@@ -68,12 +68,12 @@ func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetAffirmFlag(_affirmF
 	return nil
 }
 
-// Get AffirmFlag Getter
+// GetAffirmFlag AffirmFlag Getter
 func (r AlibabaAlihealthDrugKytUploadrelationAPIRequest) GetAffirmFlag() string {
 	return r._affirmFlag
 }
 
-// Set is FileContent Setter
+// SetFileContent is FileContent Setter
 // fileContent
 func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetFileContent(_fileContent string) error {
 	r._fileContent = _fileContent
@@ -81,12 +81,12 @@ func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetFileContent(_fileCo
 	return nil
 }
 
-// Get FileContent Getter
+// GetFileContent FileContent Getter
 func (r AlibabaAlihealthDrugKytUploadrelationAPIRequest) GetFileContent() string {
 	return r._fileContent
 }
 
-// Set is FileContentString Setter
+// SetFileContentString is FileContentString Setter
 // 加密之后的文件内容字符串
 func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetFileContentString(_fileContentString string) error {
 	r._fileContentString = _fileContentString
@@ -94,12 +94,12 @@ func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetFileContentString(_
 	return nil
 }
 
-// Get FileContentString Getter
+// GetFileContentString FileContentString Getter
 func (r AlibabaAlihealthDrugKytUploadrelationAPIRequest) GetFileContentString() string {
 	return r._fileContentString
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 上传文件的企业ID
 func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -107,12 +107,12 @@ func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetRefEntId(_refEntId 
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytUploadrelationAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is ClientType Setter
+// SetClientType is ClientType Setter
 // 客户端类型
 func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetClientType(_clientType string) error {
 	r._clientType = _clientType
@@ -120,7 +120,7 @@ func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetClientType(_clientT
 	return nil
 }
 
-// Get ClientType Getter
+// GetClientType ClientType Getter
 func (r AlibabaAlihealthDrugKytUploadrelationAPIRequest) GetClientType() string {
 	return r._clientType
 }

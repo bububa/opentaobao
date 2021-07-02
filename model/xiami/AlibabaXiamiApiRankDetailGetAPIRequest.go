@@ -39,7 +39,7 @@ func (r AlibabaXiamiApiRankDetailGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BillboardId Setter
+// SetBillboardId is BillboardId Setter
 // 榜单ID
 func (r *AlibabaXiamiApiRankDetailGetAPIRequest) SetBillboardId(_billboardId int64) error {
 	r._billboardId = _billboardId
@@ -47,12 +47,12 @@ func (r *AlibabaXiamiApiRankDetailGetAPIRequest) SetBillboardId(_billboardId int
 	return nil
 }
 
-// Get BillboardId Getter
+// GetBillboardId BillboardId Getter
 func (r AlibabaXiamiApiRankDetailGetAPIRequest) GetBillboardId() int64 {
 	return r._billboardId
 }
 
-// Set is BizCode Setter
+// SetBizCode is BizCode Setter
 // 调用来源
 func (r *AlibabaXiamiApiRankDetailGetAPIRequest) SetBizCode(_bizCode string) error {
 	r._bizCode = _bizCode
@@ -60,7 +60,7 @@ func (r *AlibabaXiamiApiRankDetailGetAPIRequest) SetBizCode(_bizCode string) err
 	return nil
 }
 
-// Get BizCode Getter
+// GetBizCode BizCode Getter
 func (r AlibabaXiamiApiRankDetailGetAPIRequest) GetBizCode() string {
 	return r._bizCode
 }

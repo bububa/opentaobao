@@ -39,7 +39,7 @@ func (r YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is ShowLongIds Setter
+// SetShowLongIds is ShowLongIds Setter
 // 节目longid
 func (r *YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) SetShowLongIds(_showLongIds string) error {
 	r._showLongIds = _showLongIds
@@ -47,12 +47,12 @@ func (r *YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) SetShowLongI
 	return nil
 }
 
-// Get ShowLongIds Getter
+// GetShowLongIds ShowLongIds Getter
 func (r YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) GetShowLongIds() string {
 	return r._showLongIds
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照id
 func (r *YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -60,7 +60,7 @@ func (r *YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) SetLicense(_
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminContentShowGetshowexemptauditmapAPIRequest) GetLicense() int64 {
 	return r._license
 }

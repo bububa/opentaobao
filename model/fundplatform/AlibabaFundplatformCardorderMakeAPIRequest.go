@@ -43,7 +43,7 @@ func (r AlibabaFundplatformCardorderMakeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LogisticsInfo Setter
+// SetLogisticsInfo is LogisticsInfo Setter
 // 物流信息
 func (r *AlibabaFundplatformCardorderMakeAPIRequest) SetLogisticsInfo(_logisticsInfo *AlibabaFundplatformCardorderMakeStruct) error {
 	r._logisticsInfo = _logisticsInfo
@@ -51,12 +51,12 @@ func (r *AlibabaFundplatformCardorderMakeAPIRequest) SetLogisticsInfo(_logistics
 	return nil
 }
 
-// Get LogisticsInfo Getter
+// GetLogisticsInfo LogisticsInfo Getter
 func (r AlibabaFundplatformCardorderMakeAPIRequest) GetLogisticsInfo() *AlibabaFundplatformCardorderMakeStruct {
 	return r._logisticsInfo
 }
 
-// Set is CardProductInfos Setter
+// SetCardProductInfos is CardProductInfos Setter
 // 卡模板信息列表
 func (r *AlibabaFundplatformCardorderMakeAPIRequest) SetCardProductInfos(_cardProductInfos []AlibabaFundplatformCardorderMakeStruct) error {
 	r._cardProductInfos = _cardProductInfos
@@ -64,12 +64,12 @@ func (r *AlibabaFundplatformCardorderMakeAPIRequest) SetCardProductInfos(_cardPr
 	return nil
 }
 
-// Get CardProductInfos Getter
+// GetCardProductInfos CardProductInfos Getter
 func (r AlibabaFundplatformCardorderMakeAPIRequest) GetCardProductInfos() []AlibabaFundplatformCardorderMakeStruct {
 	return r._cardProductInfos
 }
 
-// Set is CardOrderId Setter
+// SetCardOrderId is CardOrderId Setter
 // 子制卡单ID
 func (r *AlibabaFundplatformCardorderMakeAPIRequest) SetCardOrderId(_cardOrderId int64) error {
 	r._cardOrderId = _cardOrderId
@@ -77,12 +77,12 @@ func (r *AlibabaFundplatformCardorderMakeAPIRequest) SetCardOrderId(_cardOrderId
 	return nil
 }
 
-// Get CardOrderId Getter
+// GetCardOrderId CardOrderId Getter
 func (r AlibabaFundplatformCardorderMakeAPIRequest) GetCardOrderId() int64 {
 	return r._cardOrderId
 }
 
-// Set is OwnSign Setter
+// SetOwnSign is OwnSign Setter
 // 环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）
 func (r *AlibabaFundplatformCardorderMakeAPIRequest) SetOwnSign(_ownSign string) error {
 	r._ownSign = _ownSign
@@ -90,7 +90,7 @@ func (r *AlibabaFundplatformCardorderMakeAPIRequest) SetOwnSign(_ownSign string)
 	return nil
 }
 
-// Get OwnSign Getter
+// GetOwnSign OwnSign Getter
 func (r AlibabaFundplatformCardorderMakeAPIRequest) GetOwnSign() string {
 	return r._ownSign
 }

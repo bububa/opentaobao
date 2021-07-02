@@ -39,7 +39,7 @@ func (r AlibabaLstShiporderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 零售通
 func (r *AlibabaLstShiporderQueryAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -47,12 +47,12 @@ func (r *AlibabaLstShiporderQueryAPIRequest) SetSource(_source string) error {
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r AlibabaLstShiporderQueryAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is OutOrderId Setter
+// SetOutOrderId is OutOrderId Setter
 // 订单
 func (r *AlibabaLstShiporderQueryAPIRequest) SetOutOrderId(_outOrderId string) error {
 	r._outOrderId = _outOrderId
@@ -60,7 +60,7 @@ func (r *AlibabaLstShiporderQueryAPIRequest) SetOutOrderId(_outOrderId string) e
 	return nil
 }
 
-// Get OutOrderId Getter
+// GetOutOrderId OutOrderId Getter
 func (r AlibabaLstShiporderQueryAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
 }

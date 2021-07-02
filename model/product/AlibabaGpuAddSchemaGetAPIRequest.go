@@ -41,7 +41,7 @@ func (r AlibabaGpuAddSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LeafCatId Setter
+// SetLeafCatId is LeafCatId Setter
 // 叶子类目ID
 func (r *AlibabaGpuAddSchemaGetAPIRequest) SetLeafCatId(_leafCatId int64) error {
 	r._leafCatId = _leafCatId
@@ -49,12 +49,12 @@ func (r *AlibabaGpuAddSchemaGetAPIRequest) SetLeafCatId(_leafCatId int64) error 
 	return nil
 }
 
-// Get LeafCatId Getter
+// GetLeafCatId LeafCatId Getter
 func (r AlibabaGpuAddSchemaGetAPIRequest) GetLeafCatId() int64 {
 	return r._leafCatId
 }
 
-// Set is BrandId Setter
+// SetBrandId is BrandId Setter
 // 品牌ID
 func (r *AlibabaGpuAddSchemaGetAPIRequest) SetBrandId(_brandId int64) error {
 	r._brandId = _brandId
@@ -62,12 +62,12 @@ func (r *AlibabaGpuAddSchemaGetAPIRequest) SetBrandId(_brandId int64) error {
 	return nil
 }
 
-// Get BrandId Getter
+// GetBrandId BrandId Getter
 func (r AlibabaGpuAddSchemaGetAPIRequest) GetBrandId() int64 {
 	return r._brandId
 }
 
-// Set is ProviderId Setter
+// SetProviderId is ProviderId Setter
 // 当前用户所在渠道如0代表天猫，8代表淘宝
 func (r *AlibabaGpuAddSchemaGetAPIRequest) SetProviderId(_providerId int64) error {
 	r._providerId = _providerId
@@ -75,7 +75,7 @@ func (r *AlibabaGpuAddSchemaGetAPIRequest) SetProviderId(_providerId int64) erro
 	return nil
 }
 
-// Get ProviderId Getter
+// GetProviderId ProviderId Getter
 func (r AlibabaGpuAddSchemaGetAPIRequest) GetProviderId() int64 {
 	return r._providerId
 }

@@ -45,7 +45,7 @@ func (r AlibabaAlisportsEfspCountsubsidyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SumAmount Setter
+// SetSumAmount is SumAmount Setter
 // 订单金额
 func (r *AlibabaAlisportsEfspCountsubsidyAPIRequest) SetSumAmount(_sumAmount int64) error {
 	r._sumAmount = _sumAmount
@@ -53,12 +53,12 @@ func (r *AlibabaAlisportsEfspCountsubsidyAPIRequest) SetSumAmount(_sumAmount int
 	return nil
 }
 
-// Get SumAmount Getter
+// GetSumAmount SumAmount Getter
 func (r AlibabaAlisportsEfspCountsubsidyAPIRequest) GetSumAmount() int64 {
 	return r._sumAmount
 }
 
-// Set is GymId Setter
+// SetGymId is GymId Setter
 // 健身房ID
 func (r *AlibabaAlisportsEfspCountsubsidyAPIRequest) SetGymId(_gymId string) error {
 	r._gymId = _gymId
@@ -66,12 +66,12 @@ func (r *AlibabaAlisportsEfspCountsubsidyAPIRequest) SetGymId(_gymId string) err
 	return nil
 }
 
-// Get GymId Getter
+// GetGymId GymId Getter
 func (r AlibabaAlisportsEfspCountsubsidyAPIRequest) GetGymId() string {
 	return r._gymId
 }
 
-// Set is EnterpriseId Setter
+// SetEnterpriseId is EnterpriseId Setter
 // 企业ID
 func (r *AlibabaAlisportsEfspCountsubsidyAPIRequest) SetEnterpriseId(_enterpriseId string) error {
 	r._enterpriseId = _enterpriseId
@@ -79,12 +79,12 @@ func (r *AlibabaAlisportsEfspCountsubsidyAPIRequest) SetEnterpriseId(_enterprise
 	return nil
 }
 
-// Get EnterpriseId Getter
+// GetEnterpriseId EnterpriseId Getter
 func (r AlibabaAlisportsEfspCountsubsidyAPIRequest) GetEnterpriseId() string {
 	return r._enterpriseId
 }
 
-// Set is AlipayId Setter
+// SetAlipayId is AlipayId Setter
 // alipayId
 func (r *AlibabaAlisportsEfspCountsubsidyAPIRequest) SetAlipayId(_alipayId string) error {
 	r._alipayId = _alipayId
@@ -92,12 +92,12 @@ func (r *AlibabaAlisportsEfspCountsubsidyAPIRequest) SetAlipayId(_alipayId strin
 	return nil
 }
 
-// Get AlipayId Getter
+// GetAlipayId AlipayId Getter
 func (r AlibabaAlisportsEfspCountsubsidyAPIRequest) GetAlipayId() string {
 	return r._alipayId
 }
 
-// Set is DistrictCode Setter
+// SetDistrictCode is DistrictCode Setter
 // 健身房所在省市
 func (r *AlibabaAlisportsEfspCountsubsidyAPIRequest) SetDistrictCode(_districtCode string) error {
 	r._districtCode = _districtCode
@@ -105,7 +105,7 @@ func (r *AlibabaAlisportsEfspCountsubsidyAPIRequest) SetDistrictCode(_districtCo
 	return nil
 }
 
-// Get DistrictCode Getter
+// GetDistrictCode DistrictCode Getter
 func (r AlibabaAlisportsEfspCountsubsidyAPIRequest) GetDistrictCode() string {
 	return r._districtCode
 }

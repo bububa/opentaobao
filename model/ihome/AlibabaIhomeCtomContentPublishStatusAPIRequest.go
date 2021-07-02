@@ -37,7 +37,7 @@ func (r AlibabaIhomeCtomContentPublishStatusAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is IdList Setter
+// SetIdList is IdList Setter
 // 要查询投稿状态的ID列表
 func (r *AlibabaIhomeCtomContentPublishStatusAPIRequest) SetIdList(_idList []int64) error {
 	r._idList = _idList
@@ -45,7 +45,7 @@ func (r *AlibabaIhomeCtomContentPublishStatusAPIRequest) SetIdList(_idList []int
 	return nil
 }
 
-// Get IdList Getter
+// GetIdList IdList Getter
 func (r AlibabaIhomeCtomContentPublishStatusAPIRequest) GetIdList() []int64 {
 	return r._idList
 }

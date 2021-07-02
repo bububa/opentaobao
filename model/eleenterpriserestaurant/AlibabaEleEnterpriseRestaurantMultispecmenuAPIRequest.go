@@ -37,7 +37,7 @@ func (r AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is ErestaurantId Setter
+// SetErestaurantId is ErestaurantId Setter
 // 餐厅ID
 func (r *AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) SetErestaurantId(_erestaurantId string) error {
 	r._erestaurantId = _erestaurantId
@@ -45,7 +45,7 @@ func (r *AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) SetErestaurantId
 	return nil
 }
 
-// Get ErestaurantId Getter
+// GetErestaurantId ErestaurantId Getter
 func (r AlibabaEleEnterpriseRestaurantMultispecmenuAPIRequest) GetErestaurantId() string {
 	return r._erestaurantId
 }

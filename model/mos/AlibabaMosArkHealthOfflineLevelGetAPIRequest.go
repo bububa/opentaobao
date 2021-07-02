@@ -37,7 +37,7 @@ func (r AlibabaMosArkHealthOfflineLevelGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is MallId Setter
+// SetMallId is MallId Setter
 // 商场id
 func (r *AlibabaMosArkHealthOfflineLevelGetAPIRequest) SetMallId(_mallId string) error {
 	r._mallId = _mallId
@@ -45,7 +45,7 @@ func (r *AlibabaMosArkHealthOfflineLevelGetAPIRequest) SetMallId(_mallId string)
 	return nil
 }
 
-// Get MallId Getter
+// GetMallId MallId Getter
 func (r AlibabaMosArkHealthOfflineLevelGetAPIRequest) GetMallId() string {
 	return r._mallId
 }

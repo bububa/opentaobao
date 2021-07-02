@@ -45,7 +45,7 @@ func (r TaobaoSimbaRtrptTargetingtagGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 旺旺名称
 func (r *TaobaoSimbaRtrptTargetingtagGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -53,12 +53,12 @@ func (r *TaobaoSimbaRtrptTargetingtagGetAPIRequest) SetNick(_nick string) error 
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaRtrptTargetingtagGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划id
 func (r *TaobaoSimbaRtrptTargetingtagGetAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -66,12 +66,12 @@ func (r *TaobaoSimbaRtrptTargetingtagGetAPIRequest) SetCampaignId(_campaignId in
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaRtrptTargetingtagGetAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广单元id
 func (r *TaobaoSimbaRtrptTargetingtagGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -79,12 +79,12 @@ func (r *TaobaoSimbaRtrptTargetingtagGetAPIRequest) SetAdgroupId(_adgroupId int6
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaRtrptTargetingtagGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }
 
-// Set is TheDate Setter
+// SetTheDate is TheDate Setter
 // 日期，格式yyyy-mm-dd
 func (r *TaobaoSimbaRtrptTargetingtagGetAPIRequest) SetTheDate(_theDate string) error {
 	r._theDate = _theDate
@@ -92,12 +92,12 @@ func (r *TaobaoSimbaRtrptTargetingtagGetAPIRequest) SetTheDate(_theDate string) 
 	return nil
 }
 
-// Get TheDate Getter
+// GetTheDate TheDate Getter
 func (r TaobaoSimbaRtrptTargetingtagGetAPIRequest) GetTheDate() string {
 	return r._theDate
 }
 
-// Set is TrafficType Setter
+// SetTrafficType is TrafficType Setter
 // 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5
 func (r *TaobaoSimbaRtrptTargetingtagGetAPIRequest) SetTrafficType(_trafficType string) error {
 	r._trafficType = _trafficType
@@ -105,7 +105,7 @@ func (r *TaobaoSimbaRtrptTargetingtagGetAPIRequest) SetTrafficType(_trafficType 
 	return nil
 }
 
-// Get TrafficType Getter
+// GetTrafficType TrafficType Getter
 func (r TaobaoSimbaRtrptTargetingtagGetAPIRequest) GetTrafficType() string {
 	return r._trafficType
 }

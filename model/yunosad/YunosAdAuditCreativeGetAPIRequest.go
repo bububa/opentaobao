@@ -39,7 +39,7 @@ func (r YunosAdAuditCreativeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MemberId Setter
+// SetMemberId is MemberId Setter
 // 第三方的dspId
 func (r *YunosAdAuditCreativeGetAPIRequest) SetMemberId(_memberId int64) error {
 	r._memberId = _memberId
@@ -47,12 +47,12 @@ func (r *YunosAdAuditCreativeGetAPIRequest) SetMemberId(_memberId int64) error {
 	return nil
 }
 
-// Get MemberId Getter
+// GetMemberId MemberId Getter
 func (r YunosAdAuditCreativeGetAPIRequest) GetMemberId() int64 {
 	return r._memberId
 }
 
-// Set is CreativeId Setter
+// SetCreativeId is CreativeId Setter
 // 第三方广告创意id
 func (r *YunosAdAuditCreativeGetAPIRequest) SetCreativeId(_creativeId string) error {
 	r._creativeId = _creativeId
@@ -60,7 +60,7 @@ func (r *YunosAdAuditCreativeGetAPIRequest) SetCreativeId(_creativeId string) er
 	return nil
 }
 
-// Get CreativeId Getter
+// GetCreativeId CreativeId Getter
 func (r YunosAdAuditCreativeGetAPIRequest) GetCreativeId() string {
 	return r._creativeId
 }

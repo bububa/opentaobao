@@ -39,7 +39,7 @@ func (r AlibabaXiamiApiAlbumDetailGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 专辑ID
 func (r *AlibabaXiamiApiAlbumDetailGetAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -47,12 +47,12 @@ func (r *AlibabaXiamiApiAlbumDetailGetAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaXiamiApiAlbumDetailGetAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is FullDes Setter
+// SetFullDes is FullDes Setter
 // 是否获取完整描述
 func (r *AlibabaXiamiApiAlbumDetailGetAPIRequest) SetFullDes(_fullDes bool) error {
 	r._fullDes = _fullDes
@@ -60,7 +60,7 @@ func (r *AlibabaXiamiApiAlbumDetailGetAPIRequest) SetFullDes(_fullDes bool) erro
 	return nil
 }
 
-// Get FullDes Getter
+// GetFullDes FullDes Getter
 func (r AlibabaXiamiApiAlbumDetailGetAPIRequest) GetFullDes() bool {
 	return r._fullDes
 }

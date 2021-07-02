@@ -41,7 +41,7 @@ func (r TaobaoVmarketEticketAuthBeforeconsumeAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is VerifyCode Setter
+// SetVerifyCode is VerifyCode Setter
 // 核销的码，只支持单个码，多个码核销需要多次调用
 func (r *TaobaoVmarketEticketAuthBeforeconsumeAPIRequest) SetVerifyCode(_verifyCode string) error {
 	r._verifyCode = _verifyCode
@@ -49,12 +49,12 @@ func (r *TaobaoVmarketEticketAuthBeforeconsumeAPIRequest) SetVerifyCode(_verifyC
 	return nil
 }
 
-// Get VerifyCode Getter
+// GetVerifyCode VerifyCode Getter
 func (r TaobaoVmarketEticketAuthBeforeconsumeAPIRequest) GetVerifyCode() string {
 	return r._verifyCode
 }
 
-// Set is Operatorid Setter
+// SetOperatorid is Operatorid Setter
 // 核销方的ID，如果是普通码商必须传入机具ID,如果是私有码商家（即原有的信任商家）可默认传入私有码商ID
 func (r *TaobaoVmarketEticketAuthBeforeconsumeAPIRequest) SetOperatorid(_operatorid string) error {
 	r._operatorid = _operatorid
@@ -62,12 +62,12 @@ func (r *TaobaoVmarketEticketAuthBeforeconsumeAPIRequest) SetOperatorid(_operato
 	return nil
 }
 
-// Get Operatorid Getter
+// GetOperatorid Operatorid Getter
 func (r TaobaoVmarketEticketAuthBeforeconsumeAPIRequest) GetOperatorid() string {
 	return r._operatorid
 }
 
-// Set is Storeid Setter
+// SetStoreid is Storeid Setter
 // 网点ID,网点授权核销时，必须传入；其他核销方式可不传
 func (r *TaobaoVmarketEticketAuthBeforeconsumeAPIRequest) SetStoreid(_storeid string) error {
 	r._storeid = _storeid
@@ -75,7 +75,7 @@ func (r *TaobaoVmarketEticketAuthBeforeconsumeAPIRequest) SetStoreid(_storeid st
 	return nil
 }
 
-// Get Storeid Getter
+// GetStoreid Storeid Getter
 func (r TaobaoVmarketEticketAuthBeforeconsumeAPIRequest) GetStoreid() string {
 	return r._storeid
 }

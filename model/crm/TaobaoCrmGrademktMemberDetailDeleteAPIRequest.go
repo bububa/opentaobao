@@ -39,7 +39,7 @@ func (r TaobaoCrmGrademktMemberDetailDeleteAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Feather Setter
+// SetFeather is Feather Setter
 // 扩展字段
 func (r *TaobaoCrmGrademktMemberDetailDeleteAPIRequest) SetFeather(_feather string) error {
 	r._feather = _feather
@@ -47,12 +47,12 @@ func (r *TaobaoCrmGrademktMemberDetailDeleteAPIRequest) SetFeather(_feather stri
 	return nil
 }
 
-// Get Feather Getter
+// GetFeather Feather Getter
 func (r TaobaoCrmGrademktMemberDetailDeleteAPIRequest) GetFeather() string {
 	return r._feather
 }
 
-// Set is Parameter Setter
+// SetParameter is Parameter Setter
 // 创建营销详情，生成方法见http://open.taobao.com/doc/detail.htm?id=101281
 func (r *TaobaoCrmGrademktMemberDetailDeleteAPIRequest) SetParameter(_parameter string) error {
 	r._parameter = _parameter
@@ -60,7 +60,7 @@ func (r *TaobaoCrmGrademktMemberDetailDeleteAPIRequest) SetParameter(_parameter 
 	return nil
 }
 
-// Get Parameter Getter
+// GetParameter Parameter Getter
 func (r TaobaoCrmGrademktMemberDetailDeleteAPIRequest) GetParameter() string {
 	return r._parameter
 }

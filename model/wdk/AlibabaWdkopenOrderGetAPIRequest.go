@@ -41,7 +41,7 @@ func (r AlibabaWdkopenOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 经营店id
 func (r *AlibabaWdkopenOrderGetAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -49,12 +49,12 @@ func (r *AlibabaWdkopenOrderGetAPIRequest) SetStoreId(_storeId string) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaWdkopenOrderGetAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 五道口主订单id
 func (r *AlibabaWdkopenOrderGetAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
@@ -62,12 +62,12 @@ func (r *AlibabaWdkopenOrderGetAPIRequest) SetBizOrderId(_bizOrderId int64) erro
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r AlibabaWdkopenOrderGetAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }
 
-// Set is OutOrderId Setter
+// SetOutOrderId is OutOrderId Setter
 // 外部主订单ID
 func (r *AlibabaWdkopenOrderGetAPIRequest) SetOutOrderId(_outOrderId string) error {
 	r._outOrderId = _outOrderId
@@ -75,7 +75,7 @@ func (r *AlibabaWdkopenOrderGetAPIRequest) SetOutOrderId(_outOrderId string) err
 	return nil
 }
 
-// Get OutOrderId Getter
+// GetOutOrderId OutOrderId Getter
 func (r AlibabaWdkopenOrderGetAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
 }

@@ -39,7 +39,7 @@ func (r CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // 菜鸟物流订单号
 func (r *CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -47,12 +47,12 @@ func (r *CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest) SetOrderCode(_order
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// Set is MailNo Setter
+// SetMailNo is MailNo Setter
 // 运单号
 func (r *CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest) SetMailNo(_mailNo string) error {
 	r._mailNo = _mailNo
@@ -60,7 +60,7 @@ func (r *CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest) SetMailNo(_mailNo s
 	return nil
 }
 
-// Get MailNo Getter
+// GetMailNo MailNo Getter
 func (r CainiaoGuoguoBackupGraborderSubmitmailnoAPIRequest) GetMailNo() string {
 	return r._mailNo
 }

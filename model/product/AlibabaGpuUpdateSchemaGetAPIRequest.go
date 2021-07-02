@@ -39,7 +39,7 @@ func (r AlibabaGpuUpdateSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品ID
 func (r *AlibabaGpuUpdateSchemaGetAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -47,12 +47,12 @@ func (r *AlibabaGpuUpdateSchemaGetAPIRequest) SetProductId(_productId int64) err
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r AlibabaGpuUpdateSchemaGetAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is ProviderId Setter
+// SetProviderId is ProviderId Setter
 // 当前用户所在渠道如0代表天猫，8代表淘宝
 func (r *AlibabaGpuUpdateSchemaGetAPIRequest) SetProviderId(_providerId int64) error {
 	r._providerId = _providerId
@@ -60,7 +60,7 @@ func (r *AlibabaGpuUpdateSchemaGetAPIRequest) SetProviderId(_providerId int64) e
 	return nil
 }
 
-// Get ProviderId Getter
+// GetProviderId ProviderId Getter
 func (r AlibabaGpuUpdateSchemaGetAPIRequest) GetProviderId() int64 {
 	return r._providerId
 }

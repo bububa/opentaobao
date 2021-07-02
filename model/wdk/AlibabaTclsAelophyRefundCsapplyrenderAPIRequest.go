@@ -37,7 +37,7 @@ func (r AlibabaTclsAelophyRefundCsapplyrenderAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is RefundCsApplyRenderDTO Setter
+// SetRefundCsApplyRenderDTO is RefundCsApplyRenderDTO Setter
 // 系统自动生成
 func (r *AlibabaTclsAelophyRefundCsapplyrenderAPIRequest) SetRefundCsApplyRenderDTO(_refundCsApplyRenderDTO *RefundCsApplyRenderDto) error {
 	r._refundCsApplyRenderDTO = _refundCsApplyRenderDTO
@@ -45,7 +45,7 @@ func (r *AlibabaTclsAelophyRefundCsapplyrenderAPIRequest) SetRefundCsApplyRender
 	return nil
 }
 
-// Get RefundCsApplyRenderDTO Getter
+// GetRefundCsApplyRenderDTO RefundCsApplyRenderDTO Getter
 func (r AlibabaTclsAelophyRefundCsapplyrenderAPIRequest) GetRefundCsApplyRenderDTO() *RefundCsApplyRenderDto {
 	return r._refundCsApplyRenderDTO
 }

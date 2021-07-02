@@ -43,7 +43,7 @@ func (r TaobaoJdsTradesStatisticsDiffAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Date Setter
+// SetDate is Date Setter
 // 查询的日期，格式如YYYYMMDD的日期对应的数字
 func (r *TaobaoJdsTradesStatisticsDiffAPIRequest) SetDate(_date int64) error {
 	r._date = _date
@@ -51,12 +51,12 @@ func (r *TaobaoJdsTradesStatisticsDiffAPIRequest) SetDate(_date int64) error {
 	return nil
 }
 
-// Get Date Getter
+// GetDate Date Getter
 func (r TaobaoJdsTradesStatisticsDiffAPIRequest) GetDate() int64 {
 	return r._date
 }
 
-// Set is PreStatus Setter
+// SetPreStatus is PreStatus Setter
 // 需要比较的状态，将会和post_status做比较
 func (r *TaobaoJdsTradesStatisticsDiffAPIRequest) SetPreStatus(_preStatus string) error {
 	r._preStatus = _preStatus
@@ -64,12 +64,12 @@ func (r *TaobaoJdsTradesStatisticsDiffAPIRequest) SetPreStatus(_preStatus string
 	return nil
 }
 
-// Get PreStatus Getter
+// GetPreStatus PreStatus Getter
 func (r TaobaoJdsTradesStatisticsDiffAPIRequest) GetPreStatus() string {
 	return r._preStatus
 }
 
-// Set is PostStatus Setter
+// SetPostStatus is PostStatus Setter
 // 需要比较的状态
 func (r *TaobaoJdsTradesStatisticsDiffAPIRequest) SetPostStatus(_postStatus string) error {
 	r._postStatus = _postStatus
@@ -77,12 +77,12 @@ func (r *TaobaoJdsTradesStatisticsDiffAPIRequest) SetPostStatus(_postStatus stri
 	return nil
 }
 
-// Get PostStatus Getter
+// GetPostStatus PostStatus Getter
 func (r TaobaoJdsTradesStatisticsDiffAPIRequest) GetPostStatus() string {
 	return r._postStatus
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页数
 func (r *TaobaoJdsTradesStatisticsDiffAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -90,7 +90,7 @@ func (r *TaobaoJdsTradesStatisticsDiffAPIRequest) SetPageNo(_pageNo int64) error
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoJdsTradesStatisticsDiffAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

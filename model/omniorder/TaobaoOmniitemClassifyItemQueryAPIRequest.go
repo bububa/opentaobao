@@ -41,7 +41,7 @@ func (r TaobaoOmniitemClassifyItemQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ClassifyId Setter
+// SetClassifyId is ClassifyId Setter
 // 分类ID
 func (r *TaobaoOmniitemClassifyItemQueryAPIRequest) SetClassifyId(_classifyId int64) error {
 	r._classifyId = _classifyId
@@ -49,12 +49,12 @@ func (r *TaobaoOmniitemClassifyItemQueryAPIRequest) SetClassifyId(_classifyId in
 	return nil
 }
 
-// Get ClassifyId Getter
+// GetClassifyId ClassifyId Getter
 func (r TaobaoOmniitemClassifyItemQueryAPIRequest) GetClassifyId() int64 {
 	return r._classifyId
 }
 
-// Set is PageNum Setter
+// SetPageNum is PageNum Setter
 // 页码
 func (r *TaobaoOmniitemClassifyItemQueryAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
@@ -62,12 +62,12 @@ func (r *TaobaoOmniitemClassifyItemQueryAPIRequest) SetPageNum(_pageNum int64) e
 	return nil
 }
 
-// Get PageNum Getter
+// GetPageNum PageNum Getter
 func (r TaobaoOmniitemClassifyItemQueryAPIRequest) GetPageNum() int64 {
 	return r._pageNum
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页大小
 func (r *TaobaoOmniitemClassifyItemQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *TaobaoOmniitemClassifyItemQueryAPIRequest) SetPageSize(_pageSize int64)
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoOmniitemClassifyItemQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

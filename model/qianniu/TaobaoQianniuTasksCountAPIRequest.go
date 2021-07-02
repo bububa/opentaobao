@@ -67,7 +67,7 @@ func (r TaobaoQianniuTasksCountAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务类型
 func (r *TaobaoQianniuTasksCountAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -75,12 +75,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetBizType(_bizType string) error {
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is SubBizType Setter
+// SetSubBizType is SubBizType Setter
 // 子任务类型
 func (r *TaobaoQianniuTasksCountAPIRequest) SetSubBizType(_subBizType string) error {
 	r._subBizType = _subBizType
@@ -88,12 +88,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetSubBizType(_subBizType string) er
 	return nil
 }
 
-// Get SubBizType Getter
+// GetSubBizType SubBizType Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetSubBizType() string {
 	return r._subBizType
 }
 
-// Set is BizIds Setter
+// SetBizIds is BizIds Setter
 // 业务ID列表，逗号分隔
 func (r *TaobaoQianniuTasksCountAPIRequest) SetBizIds(_bizIds string) error {
 	r._bizIds = _bizIds
@@ -101,12 +101,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetBizIds(_bizIds string) error {
 	return nil
 }
 
-// Get BizIds Getter
+// GetBizIds BizIds Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetBizIds() string {
 	return r._bizIds
 }
 
-// Set is TaskIds Setter
+// SetTaskIds is TaskIds Setter
 // 任务的ID列表，用逗号分隔
 func (r *TaobaoQianniuTasksCountAPIRequest) SetTaskIds(_taskIds string) error {
 	r._taskIds = _taskIds
@@ -114,12 +114,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetTaskIds(_taskIds string) error {
 	return nil
 }
 
-// Get TaskIds Getter
+// GetTaskIds TaskIds Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetTaskIds() string {
 	return r._taskIds
 }
 
-// Set is SenderUid Setter
+// SetSenderUid is SenderUid Setter
 // 任务发起者用户数字ID
 func (r *TaobaoQianniuTasksCountAPIRequest) SetSenderUid(_senderUid int64) error {
 	r._senderUid = _senderUid
@@ -127,12 +127,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetSenderUid(_senderUid int64) error
 	return nil
 }
 
-// Get SenderUid Getter
+// GetSenderUid SenderUid Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetSenderUid() int64 {
 	return r._senderUid
 }
 
-// Set is ReceiverUid Setter
+// SetReceiverUid is ReceiverUid Setter
 // 任务执行者用户数字ID
 func (r *TaobaoQianniuTasksCountAPIRequest) SetReceiverUid(_receiverUid int64) error {
 	r._receiverUid = _receiverUid
@@ -140,12 +140,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetReceiverUid(_receiverUid int64) e
 	return nil
 }
 
-// Get ReceiverUid Getter
+// GetReceiverUid ReceiverUid Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetReceiverUid() int64 {
 	return r._receiverUid
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 逗号分隔的任务状态：0-未执行，1-执行中，2-执行完成，3-超时，4-取消，5-忽略
 func (r *TaobaoQianniuTasksCountAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -153,12 +153,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetStatus(_status string) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is SubStatus Setter
+// SetSubStatus is SubStatus Setter
 // 逗号分隔的子任务状态，由业务方自定义
 func (r *TaobaoQianniuTasksCountAPIRequest) SetSubStatus(_subStatus string) error {
 	r._subStatus = _subStatus
@@ -166,12 +166,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetSubStatus(_subStatus string) erro
 	return nil
 }
 
-// Get SubStatus Getter
+// GetSubStatus SubStatus Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetSubStatus() string {
 	return r._subStatus
 }
 
-// Set is RemindFlag Setter
+// SetRemindFlag is RemindFlag Setter
 // 0-不需要提醒，未设提醒时间 1-设置过提醒时间，需要提醒
 func (r *TaobaoQianniuTasksCountAPIRequest) SetRemindFlag(_remindFlag int64) error {
 	r._remindFlag = _remindFlag
@@ -179,12 +179,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetRemindFlag(_remindFlag int64) err
 	return nil
 }
 
-// Get RemindFlag Getter
+// GetRemindFlag RemindFlag Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetRemindFlag() int64 {
 	return r._remindFlag
 }
 
-// Set is MetadataIds Setter
+// SetMetadataIds is MetadataIds Setter
 // 任务元id，多个以逗号分隔
 func (r *TaobaoQianniuTasksCountAPIRequest) SetMetadataIds(_metadataIds string) error {
 	r._metadataIds = _metadataIds
@@ -192,12 +192,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetMetadataIds(_metadataIds string) 
 	return nil
 }
 
-// Get MetadataIds Getter
+// GetMetadataIds MetadataIds Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetMetadataIds() string {
 	return r._metadataIds
 }
 
-// Set is BizNick Setter
+// SetBizNick is BizNick Setter
 // 与业务相关的买家nick
 func (r *TaobaoQianniuTasksCountAPIRequest) SetBizNick(_bizNick string) error {
 	r._bizNick = _bizNick
@@ -205,12 +205,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetBizNick(_bizNick string) error {
 	return nil
 }
 
-// Get BizNick Getter
+// GetBizNick BizNick Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetBizNick() string {
 	return r._bizNick
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 按时间段搜索时的开始日期，格式如2014-01-01，不填则不限
 func (r *TaobaoQianniuTasksCountAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -218,12 +218,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetStartDate(_startDate string) erro
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 按时间段搜索的结束日期。不填则不限。格式为2014-01-01
 func (r *TaobaoQianniuTasksCountAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -231,12 +231,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetEndDate(_endDate string) error {
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is Priority Setter
+// SetPriority is Priority Setter
 // 优先级
 func (r *TaobaoQianniuTasksCountAPIRequest) SetPriority(_priority int64) error {
 	r._priority = _priority
@@ -244,12 +244,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetPriority(_priority int64) error {
 	return nil
 }
 
-// Get Priority Getter
+// GetPriority Priority Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetPriority() int64 {
 	return r._priority
 }
 
-// Set is ExcludeBizType Setter
+// SetExcludeBizType is ExcludeBizType Setter
 // 需要排除的任务类型
 func (r *TaobaoQianniuTasksCountAPIRequest) SetExcludeBizType(_excludeBizType string) error {
 	r._excludeBizType = _excludeBizType
@@ -257,12 +257,12 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetExcludeBizType(_excludeBizType st
 	return nil
 }
 
-// Get ExcludeBizType Getter
+// GetExcludeBizType ExcludeBizType Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetExcludeBizType() string {
 	return r._excludeBizType
 }
 
-// Set is KeyWord Setter
+// SetKeyWord is KeyWord Setter
 // 关键词搜索。只对任务内容进行模糊匹配，以及bizid和biznick进行精准匹配
 func (r *TaobaoQianniuTasksCountAPIRequest) SetKeyWord(_keyWord string) error {
 	r._keyWord = _keyWord
@@ -270,7 +270,7 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetKeyWord(_keyWord string) error {
 	return nil
 }
 
-// Get KeyWord Getter
+// GetKeyWord KeyWord Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetKeyWord() string {
 	return r._keyWord
 }

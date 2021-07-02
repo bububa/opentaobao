@@ -52,7 +52,7 @@ func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetApiParam
 	return params
 }
 
-// Set is BureauName Setter
+// SetBureauName is BureauName Setter
 // 行政区域
 func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetBureauName(_bureauName string) error {
 	r._bureauName = _bureauName
@@ -60,12 +60,12 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetBureauN
 	return nil
 }
 
-// Get BureauName Getter
+// GetBureauName BureauName Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetBureauName() string {
 	return r._bureauName
 }
 
-// Set is TerminalId Setter
+// SetTerminalId is TerminalId Setter
 // 终端id
 func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetTerminalId(_terminalId string) error {
 	r._terminalId = _terminalId
@@ -73,12 +73,12 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetTermina
 	return nil
 }
 
-// Get TerminalId Getter
+// GetTerminalId TerminalId Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetTerminalId() string {
 	return r._terminalId
 }
 
-// Set is TerminalType Setter
+// SetTerminalType is TerminalType Setter
 // 终端类型（1005100-零售药店；1005200-医疗机构）
 func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetTerminalType(_terminalType string) error {
 	r._terminalType = _terminalType
@@ -86,12 +86,12 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetTermina
 	return nil
 }
 
-// Get TerminalType Getter
+// GetTerminalType TerminalType Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetTerminalType() string {
 	return r._terminalType
 }
 
-// Set is CType Setter
+// SetCType is CType Setter
 // 核销类型(1012100：核销；1012900：退库)
 func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetCType(_cType string) error {
 	r._cType = _cType
@@ -99,12 +99,12 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetCType(_
 	return nil
 }
 
-// Get CType Getter
+// GetCType CType Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetCType() string {
 	return r._cType
 }
 
-// Set is Codes Setter
+// SetCodes is Codes Setter
 // 码列表
 func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetCodes(_codes []string) error {
 	r._codes = _codes
@@ -112,12 +112,12 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetCodes(_
 	return nil
 }
 
-// Get Codes Getter
+// GetCodes Codes Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetCodes() []string {
 	return r._codes
 }
 
-// Set is TerminalEntId Setter
+// SetTerminalEntId is TerminalEntId Setter
 // 平台返回的终端id
 func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetTerminalEntId(_terminalEntId string) error {
 	r._terminalEntId = _terminalEntId
@@ -125,7 +125,7 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetTermina
 	return nil
 }
 
-// Get TerminalEntId Getter
+// GetTerminalEntId TerminalEntId Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetTerminalEntId() string {
 	return r._terminalEntId
 }

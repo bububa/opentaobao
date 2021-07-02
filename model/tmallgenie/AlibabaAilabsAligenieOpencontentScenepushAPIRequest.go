@@ -41,7 +41,7 @@ func (r AlibabaAilabsAligenieOpencontentScenepushAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is SceneType Setter
+// SetSceneType is SceneType Setter
 // 0 无场景接入  1 关联应用接入
 func (r *AlibabaAilabsAligenieOpencontentScenepushAPIRequest) SetSceneType(_sceneType int64) error {
 	r._sceneType = _sceneType
@@ -49,12 +49,12 @@ func (r *AlibabaAilabsAligenieOpencontentScenepushAPIRequest) SetSceneType(_scen
 	return nil
 }
 
-// Get SceneType Getter
+// GetSceneType SceneType Getter
 func (r AlibabaAilabsAligenieOpencontentScenepushAPIRequest) GetSceneType() int64 {
 	return r._sceneType
 }
 
-// Set is SceneValue Setter
+// SetSceneValue is SceneValue Setter
 // 如果关联应用此字段为应用id
 func (r *AlibabaAilabsAligenieOpencontentScenepushAPIRequest) SetSceneValue(_sceneValue string) error {
 	r._sceneValue = _sceneValue
@@ -62,12 +62,12 @@ func (r *AlibabaAilabsAligenieOpencontentScenepushAPIRequest) SetSceneValue(_sce
 	return nil
 }
 
-// Get SceneValue Getter
+// GetSceneValue SceneValue Getter
 func (r AlibabaAilabsAligenieOpencontentScenepushAPIRequest) GetSceneValue() string {
 	return r._sceneValue
 }
 
-// Set is BatchContent Setter
+// SetBatchContent is BatchContent Setter
 // 详细内容列表
 func (r *AlibabaAilabsAligenieOpencontentScenepushAPIRequest) SetBatchContent(_batchContent *BatchContent) error {
 	r._batchContent = _batchContent
@@ -75,7 +75,7 @@ func (r *AlibabaAilabsAligenieOpencontentScenepushAPIRequest) SetBatchContent(_b
 	return nil
 }
 
-// Get BatchContent Getter
+// GetBatchContent BatchContent Getter
 func (r AlibabaAilabsAligenieOpencontentScenepushAPIRequest) GetBatchContent() *BatchContent {
 	return r._batchContent
 }

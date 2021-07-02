@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanHistorySaleQtyGetAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is RequestExtendJson Setter
+// SetRequestExtendJson is RequestExtendJson Setter
 // 扩展参数
 func (r *AlibabaTmallgenieScpPlanHistorySaleQtyGetAPIRequest) SetRequestExtendJson(_requestExtendJson string) error {
 	r._requestExtendJson = _requestExtendJson
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanHistorySaleQtyGetAPIRequest) SetRequestExtendJs
 	return nil
 }
 
-// Get RequestExtendJson Getter
+// GetRequestExtendJson RequestExtendJson Getter
 func (r AlibabaTmallgenieScpPlanHistorySaleQtyGetAPIRequest) GetRequestExtendJson() string {
 	return r._requestExtendJson
 }

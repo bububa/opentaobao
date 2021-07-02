@@ -37,7 +37,7 @@ func (r TmallServicecenterWorkcardCallRecordAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is BusiRequest Setter
+// SetBusiRequest is BusiRequest Setter
 // 请求入参
 func (r *TmallServicecenterWorkcardCallRecordAPIRequest) SetBusiRequest(_busiRequest *UpdateAttributeRequest) error {
 	r._busiRequest = _busiRequest
@@ -45,7 +45,7 @@ func (r *TmallServicecenterWorkcardCallRecordAPIRequest) SetBusiRequest(_busiReq
 	return nil
 }
 
-// Get BusiRequest Getter
+// GetBusiRequest BusiRequest Getter
 func (r TmallServicecenterWorkcardCallRecordAPIRequest) GetBusiRequest() *UpdateAttributeRequest {
 	return r._busiRequest
 }

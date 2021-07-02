@@ -45,7 +45,7 @@ func (r AlibabaItemCategoryPredictAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Images Setter
+// SetImages is Images Setter
 // 商品主图链接，最多5张，传入完整URL
 func (r *AlibabaItemCategoryPredictAPIRequest) SetImages(_images []string) error {
 	r._images = _images
@@ -53,12 +53,12 @@ func (r *AlibabaItemCategoryPredictAPIRequest) SetImages(_images []string) error
 	return nil
 }
 
-// Get Images Getter
+// GetImages Images Getter
 func (r AlibabaItemCategoryPredictAPIRequest) GetImages() []string {
 	return r._images
 }
 
-// Set is Market Setter
+// SetMarket is Market Setter
 // 商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版
 func (r *AlibabaItemCategoryPredictAPIRequest) SetMarket(_market string) error {
 	r._market = _market
@@ -66,12 +66,12 @@ func (r *AlibabaItemCategoryPredictAPIRequest) SetMarket(_market string) error {
 	return nil
 }
 
-// Get Market Getter
+// GetMarket Market Getter
 func (r AlibabaItemCategoryPredictAPIRequest) GetMarket() string {
 	return r._market
 }
 
-// Set is Barcode Setter
+// SetBarcode is Barcode Setter
 // 商品条码
 func (r *AlibabaItemCategoryPredictAPIRequest) SetBarcode(_barcode string) error {
 	r._barcode = _barcode
@@ -79,12 +79,12 @@ func (r *AlibabaItemCategoryPredictAPIRequest) SetBarcode(_barcode string) error
 	return nil
 }
 
-// Get Barcode Getter
+// GetBarcode Barcode Getter
 func (r AlibabaItemCategoryPredictAPIRequest) GetBarcode() string {
 	return r._barcode
 }
 
-// Set is BarcodeImage Setter
+// SetBarcodeImage is BarcodeImage Setter
 // 商品条码图片
 func (r *AlibabaItemCategoryPredictAPIRequest) SetBarcodeImage(_barcodeImage string) error {
 	r._barcodeImage = _barcodeImage
@@ -92,12 +92,12 @@ func (r *AlibabaItemCategoryPredictAPIRequest) SetBarcodeImage(_barcodeImage str
 	return nil
 }
 
-// Get BarcodeImage Getter
+// GetBarcodeImage BarcodeImage Getter
 func (r AlibabaItemCategoryPredictAPIRequest) GetBarcodeImage() string {
 	return r._barcodeImage
 }
 
-// Set is ItemDesc Setter
+// SetItemDesc is ItemDesc Setter
 // 商品介绍
 func (r *AlibabaItemCategoryPredictAPIRequest) SetItemDesc(_itemDesc string) error {
 	r._itemDesc = _itemDesc
@@ -105,7 +105,7 @@ func (r *AlibabaItemCategoryPredictAPIRequest) SetItemDesc(_itemDesc string) err
 	return nil
 }
 
-// Get ItemDesc Getter
+// GetItemDesc ItemDesc Getter
 func (r AlibabaItemCategoryPredictAPIRequest) GetItemDesc() string {
 	return r._itemDesc
 }

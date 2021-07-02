@@ -41,7 +41,7 @@ func (r TaobaoTmcMsgSendrecordAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupName Setter
+// SetGroupName is GroupName Setter
 // 消息分组名
 func (r *TaobaoTmcMsgSendrecordAPIRequest) SetGroupName(_groupName string) error {
 	r._groupName = _groupName
@@ -49,12 +49,12 @@ func (r *TaobaoTmcMsgSendrecordAPIRequest) SetGroupName(_groupName string) error
 	return nil
 }
 
-// Get GroupName Getter
+// GetGroupName GroupName Getter
 func (r TaobaoTmcMsgSendrecordAPIRequest) GetGroupName() string {
 	return r._groupName
 }
 
-// Set is TopicName Setter
+// SetTopicName is TopicName Setter
 // TOPIC名称
 func (r *TaobaoTmcMsgSendrecordAPIRequest) SetTopicName(_topicName string) error {
 	r._topicName = _topicName
@@ -62,12 +62,12 @@ func (r *TaobaoTmcMsgSendrecordAPIRequest) SetTopicName(_topicName string) error
 	return nil
 }
 
-// Get TopicName Getter
+// GetTopicName TopicName Getter
 func (r TaobaoTmcMsgSendrecordAPIRequest) GetTopicName() string {
 	return r._topicName
 }
 
-// Set is DataId Setter
+// SetDataId is DataId Setter
 // 消息主键ID
 func (r *TaobaoTmcMsgSendrecordAPIRequest) SetDataId(_dataId string) error {
 	r._dataId = _dataId
@@ -75,7 +75,7 @@ func (r *TaobaoTmcMsgSendrecordAPIRequest) SetDataId(_dataId string) error {
 	return nil
 }
 
-// Get DataId Getter
+// GetDataId DataId Getter
 func (r TaobaoTmcMsgSendrecordAPIRequest) GetDataId() string {
 	return r._dataId
 }

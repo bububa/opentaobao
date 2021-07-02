@@ -37,7 +37,7 @@ func (r TaobaoSungariDisposeSubmitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Info Setter
+// SetInfo is Info Setter
 // 平台处置信息入参
 func (r *TaobaoSungariDisposeSubmitAPIRequest) SetInfo(_info *DisposeInfoDo) error {
 	r._info = _info
@@ -45,7 +45,7 @@ func (r *TaobaoSungariDisposeSubmitAPIRequest) SetInfo(_info *DisposeInfoDo) err
 	return nil
 }
 
-// Get Info Getter
+// GetInfo Info Getter
 func (r TaobaoSungariDisposeSubmitAPIRequest) GetInfo() *DisposeInfoDo {
 	return r._info
 }

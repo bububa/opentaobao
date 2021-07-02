@@ -39,7 +39,7 @@ func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) G
 	return params
 }
 
-// Set is SeqId Setter
+// SetSeqId is SeqId Setter
 // 一次请求的唯一标识符
 func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) SetSeqId(_seqId string) error {
 	r._seqId = _seqId
@@ -47,12 +47,12 @@ func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) 
 	return nil
 }
 
-// Get SeqId Getter
+// GetSeqId SeqId Getter
 func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) GetSeqId() string {
 	return r._seqId
 }
 
-// Set is Secret Setter
+// SetSecret is Secret Setter
 // 新的 key
 func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) SetSecret(_secret string) error {
 	r._secret = _secret
@@ -60,7 +60,7 @@ func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) 
 	return nil
 }
 
-// Get Secret Getter
+// GetSecret Secret Getter
 func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) GetSecret() string {
 	return r._secret
 }

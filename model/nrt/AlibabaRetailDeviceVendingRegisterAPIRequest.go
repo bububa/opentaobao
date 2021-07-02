@@ -57,7 +57,7 @@ func (r AlibabaRetailDeviceVendingRegisterAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is DeviceName Setter
+// SetDeviceName is DeviceName Setter
 // 设备名称
 func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetDeviceName(_deviceName string) error {
 	r._deviceName = _deviceName
@@ -65,12 +65,12 @@ func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetDeviceName(_deviceName
 	return nil
 }
 
-// Get DeviceName Getter
+// GetDeviceName DeviceName Getter
 func (r AlibabaRetailDeviceVendingRegisterAPIRequest) GetDeviceName() string {
 	return r._deviceName
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 设备地址
 func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetAddress(_address string) error {
 	r._address = _address
@@ -78,12 +78,12 @@ func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetAddress(_address strin
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r AlibabaRetailDeviceVendingRegisterAPIRequest) GetAddress() string {
 	return r._address
 }
 
-// Set is DeviceSn Setter
+// SetDeviceSn is DeviceSn Setter
 // 对接过阿里atm传入
 func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetDeviceSn(_deviceSn string) error {
 	r._deviceSn = _deviceSn
@@ -91,12 +91,12 @@ func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetDeviceSn(_deviceSn str
 	return nil
 }
 
-// Get DeviceSn Getter
+// GetDeviceSn DeviceSn Getter
 func (r AlibabaRetailDeviceVendingRegisterAPIRequest) GetDeviceSn() string {
 	return r._deviceSn
 }
 
-// Set is BizCode Setter
+// SetBizCode is BizCode Setter
 // 业务编码，联系对接人申请
 func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetBizCode(_bizCode string) error {
 	r._bizCode = _bizCode
@@ -104,12 +104,12 @@ func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetBizCode(_bizCode strin
 	return nil
 }
 
-// Get BizCode Getter
+// GetBizCode BizCode Getter
 func (r AlibabaRetailDeviceVendingRegisterAPIRequest) GetBizCode() string {
 	return r._bizCode
 }
 
-// Set is DeviceUuid Setter
+// SetDeviceUuid is DeviceUuid Setter
 // 外部设备编号
 func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetDeviceUuid(_deviceUuid string) error {
 	r._deviceUuid = _deviceUuid
@@ -117,12 +117,12 @@ func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetDeviceUuid(_deviceUuid
 	return nil
 }
 
-// Get DeviceUuid Getter
+// GetDeviceUuid DeviceUuid Getter
 func (r AlibabaRetailDeviceVendingRegisterAPIRequest) GetDeviceUuid() string {
 	return r._deviceUuid
 }
 
-// Set is DeviceModel Setter
+// SetDeviceModel is DeviceModel Setter
 // 设备类型
 func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetDeviceModel(_deviceModel string) error {
 	r._deviceModel = _deviceModel
@@ -130,12 +130,12 @@ func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetDeviceModel(_deviceMod
 	return nil
 }
 
-// Get DeviceModel Getter
+// GetDeviceModel DeviceModel Getter
 func (r AlibabaRetailDeviceVendingRegisterAPIRequest) GetDeviceModel() string {
 	return r._deviceModel
 }
 
-// Set is Scene Setter
+// SetScene is Scene Setter
 // COMMUNITY：小区,SCHOOL：学校,OFFICE：写字楼,SHOPPING_MALL：商场,AIRPORT：机场,SUBWAY：地铁,HOSPITAL：医院,PLAYGROUNDS：游乐场所,FACTORY：工厂,VIEWPOINT：旅游景点,OTHERS：其他
 func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetScene(_scene string) error {
 	r._scene = _scene
@@ -143,12 +143,12 @@ func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetScene(_scene string) e
 	return nil
 }
 
-// Get Scene Getter
+// GetScene Scene Getter
 func (r AlibabaRetailDeviceVendingRegisterAPIRequest) GetScene() string {
 	return r._scene
 }
 
-// Set is SiteName Setter
+// SetSiteName is SiteName Setter
 // 场地名称，根据场地类型来，如：学校名称，商场名称。如果不传系统会根据address传入计算，为确保准确性请传入并确保address完整
 func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetSiteName(_siteName string) error {
 	r._siteName = _siteName
@@ -156,12 +156,12 @@ func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetSiteName(_siteName str
 	return nil
 }
 
-// Get SiteName Getter
+// GetSiteName SiteName Getter
 func (r AlibabaRetailDeviceVendingRegisterAPIRequest) GetSiteName() string {
 	return r._siteName
 }
 
-// Set is Floor Setter
+// SetFloor is Floor Setter
 // 楼栋信息。如果不传系统会根据address传入计算，为确保准确性请传入并确保address完整
 func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetFloor(_floor string) error {
 	r._floor = _floor
@@ -169,12 +169,12 @@ func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetFloor(_floor string) e
 	return nil
 }
 
-// Get Floor Getter
+// GetFloor Floor Getter
 func (r AlibabaRetailDeviceVendingRegisterAPIRequest) GetFloor() string {
 	return r._floor
 }
 
-// Set is Layer Setter
+// SetLayer is Layer Setter
 // 层。如果不传系统会根据address传入计算，为确保准确性请传入并确保address完整
 func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetLayer(_layer string) error {
 	r._layer = _layer
@@ -182,12 +182,12 @@ func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetLayer(_layer string) e
 	return nil
 }
 
-// Get Layer Getter
+// GetLayer Layer Getter
 func (r AlibabaRetailDeviceVendingRegisterAPIRequest) GetLayer() string {
 	return r._layer
 }
 
-// Set is Location Setter
+// SetLocation is Location Setter
 // 室内地址描述。如果不传系统会根据address传入计算，为确保准确性请传入并确保address完整
 func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetLocation(_location string) error {
 	r._location = _location
@@ -195,7 +195,7 @@ func (r *AlibabaRetailDeviceVendingRegisterAPIRequest) SetLocation(_location str
 	return nil
 }
 
-// Get Location Getter
+// GetLocation Location Getter
 func (r AlibabaRetailDeviceVendingRegisterAPIRequest) GetLocation() string {
 	return r._location
 }

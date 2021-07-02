@@ -39,7 +39,7 @@ func (r AlitripMerchantGalaxyWechatInfoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TenantKey Setter
+// SetTenantKey is TenantKey Setter
 // 租户的id
 func (r *AlitripMerchantGalaxyWechatInfoAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
@@ -47,12 +47,12 @@ func (r *AlitripMerchantGalaxyWechatInfoAPIRequest) SetTenantKey(_tenantKey stri
 	return nil
 }
 
-// Get TenantKey Getter
+// GetTenantKey TenantKey Getter
 func (r AlitripMerchantGalaxyWechatInfoAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 微信小程序获取的code
 func (r *AlitripMerchantGalaxyWechatInfoAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -60,7 +60,7 @@ func (r *AlitripMerchantGalaxyWechatInfoAPIRequest) SetCode(_code string) error 
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlitripMerchantGalaxyWechatInfoAPIRequest) GetCode() string {
 	return r._code
 }

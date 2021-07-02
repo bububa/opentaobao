@@ -45,7 +45,7 @@ func (r TmallDeviceShortchainurlGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Longterm Setter
+// SetLongterm is Longterm Setter
 // 是否需要长期二维码，默认否
 func (r *TmallDeviceShortchainurlGetAPIRequest) SetLongterm(_longterm bool) error {
 	r._longterm = _longterm
@@ -53,12 +53,12 @@ func (r *TmallDeviceShortchainurlGetAPIRequest) SetLongterm(_longterm bool) erro
 	return nil
 }
 
-// Get Longterm Getter
+// GetLongterm Longterm Getter
 func (r TmallDeviceShortchainurlGetAPIRequest) GetLongterm() bool {
 	return r._longterm
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 需要生成短链接的url
 func (r *TmallDeviceShortchainurlGetAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -66,12 +66,12 @@ func (r *TmallDeviceShortchainurlGetAPIRequest) SetUrl(_url string) error {
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r TmallDeviceShortchainurlGetAPIRequest) GetUrl() string {
 	return r._url
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 设备DeviceCode
 func (r *TmallDeviceShortchainurlGetAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -79,12 +79,12 @@ func (r *TmallDeviceShortchainurlGetAPIRequest) SetDeviceCode(_deviceCode string
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r TmallDeviceShortchainurlGetAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 商户中心门店ID
 func (r *TmallDeviceShortchainurlGetAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -92,12 +92,12 @@ func (r *TmallDeviceShortchainurlGetAPIRequest) SetStoreId(_storeId int64) error
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TmallDeviceShortchainurlGetAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // 动作类型，支持自定义
 func (r *TmallDeviceShortchainurlGetAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -105,7 +105,7 @@ func (r *TmallDeviceShortchainurlGetAPIRequest) SetAction(_action string) error 
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r TmallDeviceShortchainurlGetAPIRequest) GetAction() string {
 	return r._action
 }

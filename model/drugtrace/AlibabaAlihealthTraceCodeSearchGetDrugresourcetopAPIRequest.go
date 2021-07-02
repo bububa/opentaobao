@@ -47,7 +47,7 @@ func (r AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) GetApiParam
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 追溯码
 func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -55,12 +55,12 @@ func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) SetCode(_c
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 校验值
 func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -68,12 +68,12 @@ func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) SetToken(_
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is QueryAppName Setter
+// SetQueryAppName is QueryAppName Setter
 // 查询app名称
 func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) SetQueryAppName(_queryAppName string) error {
 	r._queryAppName = _queryAppName
@@ -81,12 +81,12 @@ func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) SetQueryAp
 	return nil
 }
 
-// Get QueryAppName Getter
+// GetQueryAppName QueryAppName Getter
 func (r AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) GetQueryAppName() string {
 	return r._queryAppName
 }
 
-// Set is ClientId Setter
+// SetClientId is ClientId Setter
 // 客户端ip
 func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) SetClientId(_clientId string) error {
 	r._clientId = _clientId
@@ -94,12 +94,12 @@ func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) SetClientI
 	return nil
 }
 
-// Get ClientId Getter
+// GetClientId ClientId Getter
 func (r AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) GetClientId() string {
 	return r._clientId
 }
 
-// Set is TbUserId Setter
+// SetTbUserId is TbUserId Setter
 // 用户id
 func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) SetTbUserId(_tbUserId int64) error {
 	r._tbUserId = _tbUserId
@@ -107,12 +107,12 @@ func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) SetTbUserI
 	return nil
 }
 
-// Get TbUserId Getter
+// GetTbUserId TbUserId Getter
 func (r AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) GetTbUserId() int64 {
 	return r._tbUserId
 }
 
-// Set is DeviceUtdid Setter
+// SetDeviceUtdid is DeviceUtdid Setter
 // 设备号
 func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) SetDeviceUtdid(_deviceUtdid string) error {
 	r._deviceUtdid = _deviceUtdid
@@ -120,7 +120,7 @@ func (r *AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) SetDeviceU
 	return nil
 }
 
-// Get DeviceUtdid Getter
+// GetDeviceUtdid DeviceUtdid Getter
 func (r AlibabaAlihealthTraceCodeSearchGetDrugresourcetopAPIRequest) GetDeviceUtdid() string {
 	return r._deviceUtdid
 }

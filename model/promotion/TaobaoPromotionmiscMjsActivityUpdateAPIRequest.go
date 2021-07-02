@@ -85,7 +85,7 @@ func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动id。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -93,12 +93,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetActivityId(_activity
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 活动名称。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -106,12 +106,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetName(_name string) e
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is ParticipateRange Setter
+// SetParticipateRange is ParticipateRange Setter
 // 活动范围：0表示全部参与； 1表示部分商品参与。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetParticipateRange(_participateRange int64) error {
 	r._participateRange = _participateRange
@@ -119,12 +119,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetParticipateRange(_pa
 	return nil
 }
 
-// Get ParticipateRange Getter
+// GetParticipateRange ParticipateRange Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetParticipateRange() int64 {
 	return r._participateRange
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 活动开始时间。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -132,12 +132,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetStartTime(_startTime
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 活动结束时间。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -145,12 +145,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetEndTime(_endTime str
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is IsAmountOver Setter
+// SetIsAmountOver is IsAmountOver Setter
 // 是否有满元条件。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsAmountOver(_isAmountOver bool) error {
 	r._isAmountOver = _isAmountOver
@@ -158,12 +158,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsAmountOver(_isAmou
 	return nil
 }
 
-// Get IsAmountOver Getter
+// GetIsAmountOver IsAmountOver Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetIsAmountOver() bool {
 	return r._isAmountOver
 }
 
-// Set is TotalPrice Setter
+// SetTotalPrice is TotalPrice Setter
 // 满多少元。当is_amount_over为true时，该才字段有意义。注意：单位是分，即10000表示100元。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetTotalPrice(_totalPrice int64) error {
 	r._totalPrice = _totalPrice
@@ -171,12 +171,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetTotalPrice(_totalPri
 	return nil
 }
 
-// Get TotalPrice Getter
+// GetTotalPrice TotalPrice Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetTotalPrice() int64 {
 	return r._totalPrice
 }
 
-// Set is IsAmountMultiple Setter
+// SetIsAmountMultiple is IsAmountMultiple Setter
 // 满元是否上不封顶。当is_amount_over为true时，该值才有意义。当该值为true时，表示满元上不封顶，例如满100元减10元，当满200时，则减20元。。。默认为false。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsAmountMultiple(_isAmountMultiple bool) error {
 	r._isAmountMultiple = _isAmountMultiple
@@ -184,12 +184,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsAmountMultiple(_is
 	return nil
 }
 
-// Get IsAmountMultiple Getter
+// GetIsAmountMultiple IsAmountMultiple Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetIsAmountMultiple() bool {
 	return r._isAmountMultiple
 }
 
-// Set is IsItemCountOver Setter
+// SetIsItemCountOver is IsItemCountOver Setter
 // 是否有满件条件。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsItemCountOver(_isItemCountOver bool) error {
 	r._isItemCountOver = _isItemCountOver
@@ -197,12 +197,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsItemCountOver(_isI
 	return nil
 }
 
-// Get IsItemCountOver Getter
+// GetIsItemCountOver IsItemCountOver Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetIsItemCountOver() bool {
 	return r._isItemCountOver
 }
 
-// Set is ItemCount Setter
+// SetItemCount is ItemCount Setter
 // 满多少件。当is_item_count_over为true时，该值才有意义。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetItemCount(_itemCount int64) error {
 	r._itemCount = _itemCount
@@ -210,12 +210,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetItemCount(_itemCount
 	return nil
 }
 
-// Get ItemCount Getter
+// GetItemCount ItemCount Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetItemCount() int64 {
 	return r._itemCount
 }
 
-// Set is IsItemMultiple Setter
+// SetIsItemMultiple is IsItemMultiple Setter
 // 满件是否上不封顶。当is_amount_multiple为true时，该值才有意义。当该值为true时，表示满件上不封顶，例如满10件减2元，当满20件时，则减4元。。。 默认为false。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsItemMultiple(_isItemMultiple bool) error {
 	r._isItemMultiple = _isItemMultiple
@@ -223,12 +223,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsItemMultiple(_isIt
 	return nil
 }
 
-// Get IsItemMultiple Getter
+// GetIsItemMultiple IsItemMultiple Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetIsItemMultiple() bool {
 	return r._isItemMultiple
 }
 
-// Set is IsShopMember Setter
+// SetIsShopMember is IsShopMember Setter
 // 是否有店铺会员等级条件。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsShopMember(_isShopMember bool) error {
 	r._isShopMember = _isShopMember
@@ -236,12 +236,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsShopMember(_isShop
 	return nil
 }
 
-// Get IsShopMember Getter
+// GetIsShopMember IsShopMember Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetIsShopMember() bool {
 	return r._isShopMember
 }
 
-// Set is ShopMemberLevel Setter
+// SetShopMemberLevel is ShopMemberLevel Setter
 // 店铺会员等级，当is_shop_member为true时，该值才有意义。0：店铺客户；1：普通客户；2：高级会员；3：VIP会员； 4：至尊VIP会员。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetShopMemberLevel(_shopMemberLevel int64) error {
 	r._shopMemberLevel = _shopMemberLevel
@@ -249,12 +249,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetShopMemberLevel(_sho
 	return nil
 }
 
-// Get ShopMemberLevel Getter
+// GetShopMemberLevel ShopMemberLevel Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetShopMemberLevel() int64 {
 	return r._shopMemberLevel
 }
 
-// Set is IsUserTag Setter
+// SetIsUserTag is IsUserTag Setter
 // 是否指定用户标签。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsUserTag(_isUserTag bool) error {
 	r._isUserTag = _isUserTag
@@ -262,12 +262,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsUserTag(_isUserTag
 	return nil
 }
 
-// Get IsUserTag Getter
+// GetIsUserTag IsUserTag Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetIsUserTag() bool {
 	return r._isUserTag
 }
 
-// Set is UserTag Setter
+// SetUserTag is UserTag Setter
 // 用户标签。当is_user_tag为true时，该值才有意义。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetUserTag(_userTag string) error {
 	r._userTag = _userTag
@@ -275,12 +275,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetUserTag(_userTag str
 	return nil
 }
 
-// Get UserTag Getter
+// GetUserTag UserTag Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetUserTag() string {
 	return r._userTag
 }
 
-// Set is IsDecreaseMoney Setter
+// SetIsDecreaseMoney is IsDecreaseMoney Setter
 // 是否有减钱行为。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsDecreaseMoney(_isDecreaseMoney bool) error {
 	r._isDecreaseMoney = _isDecreaseMoney
@@ -288,12 +288,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsDecreaseMoney(_isD
 	return nil
 }
 
-// Get IsDecreaseMoney Getter
+// GetIsDecreaseMoney IsDecreaseMoney Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetIsDecreaseMoney() bool {
 	return r._isDecreaseMoney
 }
 
-// Set is DecreaseAmount Setter
+// SetDecreaseAmount is DecreaseAmount Setter
 // 减多少钱。当is_decrease_money为true时，该值才有意义。注意：该值单位为分，即100表示1元。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetDecreaseAmount(_decreaseAmount int64) error {
 	r._decreaseAmount = _decreaseAmount
@@ -301,12 +301,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetDecreaseAmount(_decr
 	return nil
 }
 
-// Get DecreaseAmount Getter
+// GetDecreaseAmount DecreaseAmount Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetDecreaseAmount() int64 {
 	return r._decreaseAmount
 }
 
-// Set is IsDiscount Setter
+// SetIsDiscount is IsDiscount Setter
 // 是否有打折行为。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsDiscount(_isDiscount bool) error {
 	r._isDiscount = _isDiscount
@@ -314,12 +314,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsDiscount(_isDiscou
 	return nil
 }
 
-// Get IsDiscount Getter
+// GetIsDiscount IsDiscount Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetIsDiscount() bool {
 	return r._isDiscount
 }
 
-// Set is DiscountRate Setter
+// SetDiscountRate is DiscountRate Setter
 // 折扣值。当is_discount为true时，该值才有意义。注意：800表示8折。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetDiscountRate(_discountRate int64) error {
 	r._discountRate = _discountRate
@@ -327,12 +327,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetDiscountRate(_discou
 	return nil
 }
 
-// Get DiscountRate Getter
+// GetDiscountRate DiscountRate Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetDiscountRate() int64 {
 	return r._discountRate
 }
 
-// Set is IsSendGift Setter
+// SetIsSendGift is IsSendGift Setter
 // 是否有送礼品行为。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsSendGift(_isSendGift bool) error {
 	r._isSendGift = _isSendGift
@@ -340,12 +340,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsSendGift(_isSendGi
 	return nil
 }
 
-// Get IsSendGift Getter
+// GetIsSendGift IsSendGift Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetIsSendGift() bool {
 	return r._isSendGift
 }
 
-// Set is GiftName Setter
+// SetGiftName is GiftName Setter
 // 礼品名称。当is_send_gift为true时，该值才有意义。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetGiftName(_giftName string) error {
 	r._giftName = _giftName
@@ -353,12 +353,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetGiftName(_giftName s
 	return nil
 }
 
-// Get GiftName Getter
+// GetGiftName GiftName Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetGiftName() string {
 	return r._giftName
 }
 
-// Set is GiftId Setter
+// SetGiftId is GiftId Setter
 // 礼品id，当is_send_gift为true时，该值才有意义。 1）只有填写真实的淘宝商品id时，才能生成物流单，并且在确定订单的页面上可以点击该商品名称跳转到商品详情页面。2）当礼物为实物商品时(有宝贝id),礼物必须为上架商品,不能为虚拟商品,不能为拍卖商品,不能有sku,不符合条件的,不做为礼物。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetGiftId(_giftId int64) error {
 	r._giftId = _giftId
@@ -366,12 +366,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetGiftId(_giftId int64
 	return nil
 }
 
-// Get GiftId Getter
+// GetGiftId GiftId Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetGiftId() int64 {
 	return r._giftId
 }
 
-// Set is GiftUrl Setter
+// SetGiftUrl is GiftUrl Setter
 // 商品详情的url，当is_send_gift为true时，该值才有效。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetGiftUrl(_giftUrl string) error {
 	r._giftUrl = _giftUrl
@@ -379,12 +379,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetGiftUrl(_giftUrl str
 	return nil
 }
 
-// Get GiftUrl Getter
+// GetGiftUrl GiftUrl Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetGiftUrl() string {
 	return r._giftUrl
 }
 
-// Set is IsFreePost Setter
+// SetIsFreePost is IsFreePost Setter
 // 是否有免邮行为。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsFreePost(_isFreePost bool) error {
 	r._isFreePost = _isFreePost
@@ -392,12 +392,12 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetIsFreePost(_isFreePo
 	return nil
 }
 
-// Get IsFreePost Getter
+// GetIsFreePost IsFreePost Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetIsFreePost() bool {
 	return r._isFreePost
 }
 
-// Set is ExcludeArea Setter
+// SetExcludeArea is ExcludeArea Setter
 // 免邮的排除地区，即，除指定地区外，其他地区包邮。当is_free_post为true时，该值才有意义。代码使用*链接，代码为行政区划代码。
 func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetExcludeArea(_excludeArea string) error {
 	r._excludeArea = _excludeArea
@@ -405,7 +405,7 @@ func (r *TaobaoPromotionmiscMjsActivityUpdateAPIRequest) SetExcludeArea(_exclude
 	return nil
 }
 
-// Get ExcludeArea Getter
+// GetExcludeArea ExcludeArea Getter
 func (r TaobaoPromotionmiscMjsActivityUpdateAPIRequest) GetExcludeArea() string {
 	return r._excludeArea
 }

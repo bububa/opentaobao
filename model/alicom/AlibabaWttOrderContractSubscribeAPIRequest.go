@@ -37,7 +37,7 @@ func (r AlibabaWttOrderContractSubscribeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DistributionOrderModel Setter
+// SetDistributionOrderModel is DistributionOrderModel Setter
 // 分销商合约生产
 func (r *AlibabaWttOrderContractSubscribeAPIRequest) SetDistributionOrderModel(_distributionOrderModel *DistributionOrderModel) error {
 	r._distributionOrderModel = _distributionOrderModel
@@ -45,7 +45,7 @@ func (r *AlibabaWttOrderContractSubscribeAPIRequest) SetDistributionOrderModel(_
 	return nil
 }
 
-// Get DistributionOrderModel Getter
+// GetDistributionOrderModel DistributionOrderModel Getter
 func (r AlibabaWttOrderContractSubscribeAPIRequest) GetDistributionOrderModel() *DistributionOrderModel {
 	return r._distributionOrderModel
 }

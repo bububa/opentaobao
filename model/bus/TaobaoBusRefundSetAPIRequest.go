@@ -37,7 +37,7 @@ func (r TaobaoBusRefundSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 入参
 func (r *TaobaoBusRefundSetAPIRequest) SetParam0(_param0 *B2BRefundOrderRq) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TaobaoBusRefundSetAPIRequest) SetParam0(_param0 *B2BRefundOrderRq) erro
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoBusRefundSetAPIRequest) GetParam0() *B2BRefundOrderRq {
 	return r._param0
 }

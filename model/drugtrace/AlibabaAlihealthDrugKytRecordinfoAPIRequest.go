@@ -45,7 +45,7 @@ func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ServiceName Setter
+// SetServiceName is ServiceName Setter
 // 服务名
 func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetServiceName(_serviceName string) error {
 	r._serviceName = _serviceName
@@ -53,12 +53,12 @@ func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetServiceName(_serviceNam
 	return nil
 }
 
-// Get ServiceName Getter
+// GetServiceName ServiceName Getter
 func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetServiceName() string {
 	return r._serviceName
 }
 
-// Set is ServiceType Setter
+// SetServiceType is ServiceType Setter
 // 类型
 func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetServiceType(_serviceType string) error {
 	r._serviceType = _serviceType
@@ -66,12 +66,12 @@ func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetServiceType(_serviceTyp
 	return nil
 }
 
-// Get ServiceType Getter
+// GetServiceType ServiceType Getter
 func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetServiceType() string {
 	return r._serviceType
 }
 
-// Set is InputParam Setter
+// SetInputParam is InputParam Setter
 // 输入参数
 func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetInputParam(_inputParam string) error {
 	r._inputParam = _inputParam
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetInputParam(_inputParam 
 	return nil
 }
 
-// Get InputParam Getter
+// GetInputParam InputParam Getter
 func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetInputParam() string {
 	return r._inputParam
 }
 
-// Set is OtherParam Setter
+// SetOtherParam is OtherParam Setter
 // 其他参数
 func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetOtherParam(_otherParam string) error {
 	r._otherParam = _otherParam
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetOtherParam(_otherParam 
 	return nil
 }
 
-// Get OtherParam Getter
+// GetOtherParam OtherParam Getter
 func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetOtherParam() string {
 	return r._otherParam
 }
 
-// Set is LogLevel Setter
+// SetLogLevel is LogLevel Setter
 // 级别
 func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetLogLevel(_logLevel string) error {
 	r._logLevel = _logLevel
@@ -105,7 +105,7 @@ func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetLogLevel(_logLevel stri
 	return nil
 }
 
-// Get LogLevel Getter
+// GetLogLevel LogLevel Getter
 func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetLogLevel() string {
 	return r._logLevel
 }

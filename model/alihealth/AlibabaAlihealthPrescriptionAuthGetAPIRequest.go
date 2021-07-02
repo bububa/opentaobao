@@ -37,7 +37,7 @@ func (r AlibabaAlihealthPrescriptionAuthGetAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is PrescriptionRequest Setter
+// SetPrescriptionRequest is PrescriptionRequest Setter
 // 请求入参
 func (r *AlibabaAlihealthPrescriptionAuthGetAPIRequest) SetPrescriptionRequest(_prescriptionRequest *PrescriptionDoctorAuthRequest) error {
 	r._prescriptionRequest = _prescriptionRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthPrescriptionAuthGetAPIRequest) SetPrescriptionRequest(_
 	return nil
 }
 
-// Get PrescriptionRequest Getter
+// GetPrescriptionRequest PrescriptionRequest Getter
 func (r AlibabaAlihealthPrescriptionAuthGetAPIRequest) GetPrescriptionRequest() *PrescriptionDoctorAuthRequest {
 	return r._prescriptionRequest
 }

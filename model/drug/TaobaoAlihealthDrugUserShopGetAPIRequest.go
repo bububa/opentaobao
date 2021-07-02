@@ -37,7 +37,7 @@ func (r TaobaoAlihealthDrugUserShopGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 用户昵称
 func (r *TaobaoAlihealthDrugUserShopGetAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -45,7 +45,7 @@ func (r *TaobaoAlihealthDrugUserShopGetAPIRequest) SetUserNick(_userNick string)
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r TaobaoAlihealthDrugUserShopGetAPIRequest) GetUserNick() string {
 	return r._userNick
 }

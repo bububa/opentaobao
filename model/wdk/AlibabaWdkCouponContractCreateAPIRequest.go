@@ -37,7 +37,7 @@ func (r AlibabaWdkCouponContractCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CreateContractInstanceRequest Setter
+// SetCreateContractInstanceRequest is CreateContractInstanceRequest Setter
 // 调用入参
 func (r *AlibabaWdkCouponContractCreateAPIRequest) SetCreateContractInstanceRequest(_createContractInstanceRequest *CreateContractInstanceRequest) error {
 	r._createContractInstanceRequest = _createContractInstanceRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkCouponContractCreateAPIRequest) SetCreateContractInstanceRequ
 	return nil
 }
 
-// Get CreateContractInstanceRequest Getter
+// GetCreateContractInstanceRequest CreateContractInstanceRequest Getter
 func (r AlibabaWdkCouponContractCreateAPIRequest) GetCreateContractInstanceRequest() *CreateContractInstanceRequest {
 	return r._createContractInstanceRequest
 }

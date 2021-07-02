@@ -45,7 +45,7 @@ func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 业务id（订单号）
 func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -53,12 +53,12 @@ func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetOuterId(_outerId string) 
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is SubErrCode Setter
+// SetSubErrCode is SubErrCode Setter
 // 错误原因码
 func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetSubErrCode(_subErrCode string) error {
 	r._subErrCode = _subErrCode
@@ -66,12 +66,12 @@ func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetSubErrCode(_subErrCode st
 	return nil
 }
 
-// Get SubErrCode Getter
+// GetSubErrCode SubErrCode Getter
 func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetSubErrCode() string {
 	return r._subErrCode
 }
 
-// Set is SubErrMsg Setter
+// SetSubErrMsg is SubErrMsg Setter
 // 错误码描述
 func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetSubErrMsg(_subErrMsg string) error {
 	r._subErrMsg = _subErrMsg
@@ -79,12 +79,12 @@ func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetSubErrMsg(_subErrMsg stri
 	return nil
 }
 
-// Get SubErrMsg Getter
+// GetSubErrMsg SubErrMsg Getter
 func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetSubErrMsg() string {
 	return r._subErrMsg
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 需要与发码通知获取的值一致
 func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -92,12 +92,12 @@ func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetToken(_token string) erro
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务类型
 func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetBizType(_bizType int64) error {
 	r._bizType = _bizType
@@ -105,7 +105,7 @@ func (r *TaobaoEticketMerchantMaFailsendAPIRequest) SetBizType(_bizType int64) e
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetBizType() int64 {
 	return r._bizType
 }

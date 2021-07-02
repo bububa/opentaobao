@@ -39,7 +39,7 @@ func (r TaobaoPlaceStoreExtendAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *TaobaoPlaceStoreExtendAddAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -47,12 +47,12 @@ func (r *TaobaoPlaceStoreExtendAddAPIRequest) SetStoreId(_storeId int64) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoPlaceStoreExtendAddAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is Etv Setter
+// SetEtv is Etv Setter
 // 扩展信息
 func (r *TaobaoPlaceStoreExtendAddAPIRequest) SetEtv(_etv []ExtendTypeValueTopDto) error {
 	r._etv = _etv
@@ -60,7 +60,7 @@ func (r *TaobaoPlaceStoreExtendAddAPIRequest) SetEtv(_etv []ExtendTypeValueTopDt
 	return nil
 }
 
-// Get Etv Getter
+// GetEtv Etv Getter
 func (r TaobaoPlaceStoreExtendAddAPIRequest) GetEtv() []ExtendTypeValueTopDto {
 	return r._etv
 }

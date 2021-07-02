@@ -37,7 +37,7 @@ func (r AlibabaMjOcConfpickupgoodsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ConfPickupGoodsRequest Setter
+// SetConfPickupGoodsRequest is ConfPickupGoodsRequest Setter
 // 提货核销请求参数
 func (r *AlibabaMjOcConfpickupgoodsAPIRequest) SetConfPickupGoodsRequest(_confPickupGoodsRequest *ConfPickupGoodsReqDto) error {
 	r._confPickupGoodsRequest = _confPickupGoodsRequest
@@ -45,7 +45,7 @@ func (r *AlibabaMjOcConfpickupgoodsAPIRequest) SetConfPickupGoodsRequest(_confPi
 	return nil
 }
 
-// Get ConfPickupGoodsRequest Getter
+// GetConfPickupGoodsRequest ConfPickupGoodsRequest Getter
 func (r AlibabaMjOcConfpickupgoodsAPIRequest) GetConfPickupGoodsRequest() *ConfPickupGoodsReqDto {
 	return r._confPickupGoodsRequest
 }

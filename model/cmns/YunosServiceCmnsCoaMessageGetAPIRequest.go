@@ -37,7 +37,7 @@ func (r YunosServiceCmnsCoaMessageGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Mid Setter
+// SetMid is Mid Setter
 // 消息id
 func (r *YunosServiceCmnsCoaMessageGetAPIRequest) SetMid(_mid int64) error {
 	r._mid = _mid
@@ -45,7 +45,7 @@ func (r *YunosServiceCmnsCoaMessageGetAPIRequest) SetMid(_mid int64) error {
 	return nil
 }
 
-// Get Mid Getter
+// GetMid Mid Getter
 func (r YunosServiceCmnsCoaMessageGetAPIRequest) GetMid() int64 {
 	return r._mid
 }

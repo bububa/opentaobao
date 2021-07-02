@@ -37,7 +37,7 @@ func (r AlibabaAlihealthReservationOrderVerifyAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Verify Setter
+// SetVerify is Verify Setter
 // 请求参数
 func (r *AlibabaAlihealthReservationOrderVerifyAPIRequest) SetVerify(_verify *VerifyOrderRequest) error {
 	r._verify = _verify
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthReservationOrderVerifyAPIRequest) SetVerify(_verify *Ve
 	return nil
 }
 
-// Get Verify Getter
+// GetVerify Verify Getter
 func (r AlibabaAlihealthReservationOrderVerifyAPIRequest) GetVerify() *VerifyOrderRequest {
 	return r._verify
 }

@@ -43,7 +43,7 @@ func (r AlibabaCuntaoInteractRequisitionGetAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小，默认20
 func (r *AlibabaCuntaoInteractRequisitionGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -51,12 +51,12 @@ func (r *AlibabaCuntaoInteractRequisitionGetAPIRequest) SetPageSize(_pageSize in
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaCuntaoInteractRequisitionGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is GmtCreateEnd Setter
+// SetGmtCreateEnd is GmtCreateEnd Setter
 // 截止时间戳，开区间
 func (r *AlibabaCuntaoInteractRequisitionGetAPIRequest) SetGmtCreateEnd(_gmtCreateEnd int64) error {
 	r._gmtCreateEnd = _gmtCreateEnd
@@ -64,12 +64,12 @@ func (r *AlibabaCuntaoInteractRequisitionGetAPIRequest) SetGmtCreateEnd(_gmtCrea
 	return nil
 }
 
-// Get GmtCreateEnd Getter
+// GetGmtCreateEnd GmtCreateEnd Getter
 func (r AlibabaCuntaoInteractRequisitionGetAPIRequest) GetGmtCreateEnd() int64 {
 	return r._gmtCreateEnd
 }
 
-// Set is GmtCreateStart Setter
+// SetGmtCreateStart is GmtCreateStart Setter
 // 开始时间戳，闭区间
 func (r *AlibabaCuntaoInteractRequisitionGetAPIRequest) SetGmtCreateStart(_gmtCreateStart int64) error {
 	r._gmtCreateStart = _gmtCreateStart
@@ -77,12 +77,12 @@ func (r *AlibabaCuntaoInteractRequisitionGetAPIRequest) SetGmtCreateStart(_gmtCr
 	return nil
 }
 
-// Get GmtCreateStart Getter
+// GetGmtCreateStart GmtCreateStart Getter
 func (r AlibabaCuntaoInteractRequisitionGetAPIRequest) GetGmtCreateStart() int64 {
 	return r._gmtCreateStart
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 页码，从0开始
 func (r *AlibabaCuntaoInteractRequisitionGetAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -90,7 +90,7 @@ func (r *AlibabaCuntaoInteractRequisitionGetAPIRequest) SetPageIndex(_pageIndex 
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r AlibabaCuntaoInteractRequisitionGetAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }

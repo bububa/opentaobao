@@ -37,7 +37,7 @@ func (r AlibabaWdkItemMerchantskuCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Params Setter
+// SetParams is Params Setter
 // 新建商品参数，是个json字符串
 func (r *AlibabaWdkItemMerchantskuCreateAPIRequest) SetParams(_params string) error {
 	r._params = _params
@@ -45,7 +45,7 @@ func (r *AlibabaWdkItemMerchantskuCreateAPIRequest) SetParams(_params string) er
 	return nil
 }
 
-// Get Params Getter
+// GetParams Params Getter
 func (r AlibabaWdkItemMerchantskuCreateAPIRequest) GetParams() string {
 	return r._params
 }

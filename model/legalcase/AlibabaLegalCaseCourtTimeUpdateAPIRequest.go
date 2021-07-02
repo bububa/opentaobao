@@ -41,7 +41,7 @@ func (r AlibabaLegalCaseCourtTimeUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CaseId Setter
+// SetCaseId is CaseId Setter
 // 案件id
 func (r *AlibabaLegalCaseCourtTimeUpdateAPIRequest) SetCaseId(_caseId int64) error {
 	r._caseId = _caseId
@@ -49,12 +49,12 @@ func (r *AlibabaLegalCaseCourtTimeUpdateAPIRequest) SetCaseId(_caseId int64) err
 	return nil
 }
 
-// Get CaseId Getter
+// GetCaseId CaseId Getter
 func (r AlibabaLegalCaseCourtTimeUpdateAPIRequest) GetCaseId() int64 {
 	return r._caseId
 }
 
-// Set is EntrustId Setter
+// SetEntrustId is EntrustId Setter
 // 委托id
 func (r *AlibabaLegalCaseCourtTimeUpdateAPIRequest) SetEntrustId(_entrustId int64) error {
 	r._entrustId = _entrustId
@@ -62,12 +62,12 @@ func (r *AlibabaLegalCaseCourtTimeUpdateAPIRequest) SetEntrustId(_entrustId int6
 	return nil
 }
 
-// Get EntrustId Getter
+// GetEntrustId EntrustId Getter
 func (r AlibabaLegalCaseCourtTimeUpdateAPIRequest) GetEntrustId() int64 {
 	return r._entrustId
 }
 
-// Set is CourtTime Setter
+// SetCourtTime is CourtTime Setter
 // 开庭时间
 func (r *AlibabaLegalCaseCourtTimeUpdateAPIRequest) SetCourtTime(_courtTime string) error {
 	r._courtTime = _courtTime
@@ -75,7 +75,7 @@ func (r *AlibabaLegalCaseCourtTimeUpdateAPIRequest) SetCourtTime(_courtTime stri
 	return nil
 }
 
-// Get CourtTime Getter
+// GetCourtTime CourtTime Getter
 func (r AlibabaLegalCaseCourtTimeUpdateAPIRequest) GetCourtTime() string {
 	return r._courtTime
 }

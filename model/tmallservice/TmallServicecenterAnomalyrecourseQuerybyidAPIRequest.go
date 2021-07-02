@@ -37,7 +37,7 @@ func (r TmallServicecenterAnomalyrecourseQuerybyidAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is AnomalyRecourseId Setter
+// SetAnomalyRecourseId is AnomalyRecourseId Setter
 // 一键求助的id
 func (r *TmallServicecenterAnomalyrecourseQuerybyidAPIRequest) SetAnomalyRecourseId(_anomalyRecourseId int64) error {
 	r._anomalyRecourseId = _anomalyRecourseId
@@ -45,7 +45,7 @@ func (r *TmallServicecenterAnomalyrecourseQuerybyidAPIRequest) SetAnomalyRecours
 	return nil
 }
 
-// Get AnomalyRecourseId Getter
+// GetAnomalyRecourseId AnomalyRecourseId Getter
 func (r TmallServicecenterAnomalyrecourseQuerybyidAPIRequest) GetAnomalyRecourseId() int64 {
 	return r._anomalyRecourseId
 }

@@ -39,7 +39,7 @@ func (r AlibabaMosGoodsSearchcspuAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamCspuCriteria Setter
+// SetParamCspuCriteria is ParamCspuCriteria Setter
 // 组合查询对象
 func (r *AlibabaMosGoodsSearchcspuAPIRequest) SetParamCspuCriteria(_paramCspuCriteria *CspuCriteria) error {
 	r._paramCspuCriteria = _paramCspuCriteria
@@ -47,12 +47,12 @@ func (r *AlibabaMosGoodsSearchcspuAPIRequest) SetParamCspuCriteria(_paramCspuCri
 	return nil
 }
 
-// Get ParamCspuCriteria Getter
+// GetParamCspuCriteria ParamCspuCriteria Getter
 func (r AlibabaMosGoodsSearchcspuAPIRequest) GetParamCspuCriteria() *CspuCriteria {
 	return r._paramCspuCriteria
 }
 
-// Set is ParamPaginator Setter
+// SetParamPaginator is ParamPaginator Setter
 // 分页参数
 func (r *AlibabaMosGoodsSearchcspuAPIRequest) SetParamPaginator(_paramPaginator *Paginator) error {
 	r._paramPaginator = _paramPaginator
@@ -60,7 +60,7 @@ func (r *AlibabaMosGoodsSearchcspuAPIRequest) SetParamPaginator(_paramPaginator 
 	return nil
 }
 
-// Get ParamPaginator Getter
+// GetParamPaginator ParamPaginator Getter
 func (r AlibabaMosGoodsSearchcspuAPIRequest) GetParamPaginator() *Paginator {
 	return r._paramPaginator
 }

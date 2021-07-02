@@ -39,7 +39,7 @@ func (r AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 药监码
 func (r *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) SetCode(_code s
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is ServiceFlag Setter
+// SetServiceFlag is ServiceFlag Setter
 // 不同企业有不同的标识
 func (r *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) SetServiceFlag(_serviceFlag string) error {
 	r._serviceFlag = _serviceFlag
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) SetServiceFlag(
 	return nil
 }
 
-// Get ServiceFlag Getter
+// GetServiceFlag ServiceFlag Getter
 func (r AlibabaAlihealthTracecodeplatformCodeEntscanAPIRequest) GetServiceFlag() string {
 	return r._serviceFlag
 }

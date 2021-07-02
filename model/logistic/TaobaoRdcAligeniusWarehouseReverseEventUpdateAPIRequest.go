@@ -37,7 +37,7 @@ func (r TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 参数
 func (r *TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIRequest) SetParam0(_param0 *ReverseEventInfoDto) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIRequest) SetParam0(_par
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIRequest) GetParam0() *ReverseEventInfoDto {
 	return r._param0
 }

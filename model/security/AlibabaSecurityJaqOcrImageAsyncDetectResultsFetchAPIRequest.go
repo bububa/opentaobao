@@ -37,7 +37,7 @@ func (r AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest) GetApiParam
 	return params
 }
 
-// Set is TaskIds Setter
+// SetTaskIds is TaskIds Setter
 // 值为图像检测接口异步调用时返回的图片task_id
 func (r *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest) SetTaskIds(_taskIds []string) error {
 	r._taskIds = _taskIds
@@ -45,7 +45,7 @@ func (r *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest) SetTaskIds
 	return nil
 }
 
-// Get TaskIds Getter
+// GetTaskIds TaskIds Getter
 func (r AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIRequest) GetTaskIds() []string {
 	return r._taskIds
 }

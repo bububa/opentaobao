@@ -39,7 +39,7 @@ func (r AlibabaAlihouseNewhomeReviewChangestatusAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 外部测评id
 func (r *AlibabaAlihouseNewhomeReviewChangestatusAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihouseNewhomeReviewChangestatusAPIRequest) SetOuterId(_outerId
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r AlibabaAlihouseNewhomeReviewChangestatusAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 0 失效 1 有效
 func (r *AlibabaAlihouseNewhomeReviewChangestatusAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -60,7 +60,7 @@ func (r *AlibabaAlihouseNewhomeReviewChangestatusAPIRequest) SetStatus(_status i
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaAlihouseNewhomeReviewChangestatusAPIRequest) GetStatus() int64 {
 	return r._status
 }

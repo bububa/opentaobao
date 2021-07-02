@@ -37,7 +37,7 @@ func (r TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 捡配完成消息
 func (r *TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest) SetParam0(_param0 *PickingCompleteMsg) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest) SetParam0(_par
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoRhinoSupplychainOutboundPickingcompleteAPIRequest) GetParam0() *PickingCompleteMsg {
 	return r._param0
 }

@@ -37,7 +37,7 @@ func (r AlibabaScbpAdKeywordGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryDto Setter
+// SetQueryDto is QueryDto Setter
 // KeywordQuery
 func (r *AlibabaScbpAdKeywordGetAPIRequest) SetQueryDto(_queryDto *KeywordQuery) error {
 	r._queryDto = _queryDto
@@ -45,7 +45,7 @@ func (r *AlibabaScbpAdKeywordGetAPIRequest) SetQueryDto(_queryDto *KeywordQuery)
 	return nil
 }
 
-// Get QueryDto Getter
+// GetQueryDto QueryDto Getter
 func (r AlibabaScbpAdKeywordGetAPIRequest) GetQueryDto() *KeywordQuery {
 	return r._queryDto
 }

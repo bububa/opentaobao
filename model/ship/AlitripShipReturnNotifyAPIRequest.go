@@ -37,7 +37,7 @@ func (r AlitripShipReturnNotifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ConfirmRefundRQ Setter
+// SetConfirmRefundRQ is ConfirmRefundRQ Setter
 // 退票请求入参
 func (r *AlitripShipReturnNotifyAPIRequest) SetConfirmRefundRQ(_confirmRefundRQ *ShipAgentConfirmRefundRq) error {
 	r._confirmRefundRQ = _confirmRefundRQ
@@ -45,7 +45,7 @@ func (r *AlitripShipReturnNotifyAPIRequest) SetConfirmRefundRQ(_confirmRefundRQ 
 	return nil
 }
 
-// Get ConfirmRefundRQ Getter
+// GetConfirmRefundRQ ConfirmRefundRQ Getter
 func (r AlitripShipReturnNotifyAPIRequest) GetConfirmRefundRQ() *ShipAgentConfirmRefundRq {
 	return r._confirmRefundRQ
 }

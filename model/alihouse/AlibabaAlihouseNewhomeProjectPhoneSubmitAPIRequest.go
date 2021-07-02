@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ProjectPhoneDto Setter
+// SetProjectPhoneDto is ProjectPhoneDto Setter
 // 楼盘电话
 func (r *AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) SetProjectPhoneDto(_projectPhoneDto *ProjectPhoneDto) error {
 	r._projectPhoneDto = _projectPhoneDto
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) SetProjectPhoneDto(
 	return nil
 }
 
-// Get ProjectPhoneDto Getter
+// GetProjectPhoneDto ProjectPhoneDto Getter
 func (r AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) GetProjectPhoneDto() *ProjectPhoneDto {
 	return r._projectPhoneDto
 }

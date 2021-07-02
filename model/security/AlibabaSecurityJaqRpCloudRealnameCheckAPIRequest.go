@@ -43,7 +43,7 @@ func (r AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is VerifyToken Setter
+// SetVerifyToken is VerifyToken Setter
 // token
 func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) SetVerifyToken(_verifyToken string) error {
 	r._verifyToken = _verifyToken
@@ -51,12 +51,12 @@ func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) SetVerifyToken(_verif
 	return nil
 }
 
-// Get VerifyToken Getter
+// GetVerifyToken VerifyToken Getter
 func (r AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) GetVerifyToken() string {
 	return r._verifyToken
 }
 
-// Set is ImageUrls Setter
+// SetImageUrls is ImageUrls Setter
 // 要识别的信息
 func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) SetImageUrls(_imageUrls string) error {
 	r._imageUrls = _imageUrls
@@ -64,12 +64,12 @@ func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) SetImageUrls(_imageUr
 	return nil
 }
 
-// Get ImageUrls Getter
+// GetImageUrls ImageUrls Getter
 func (r AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) GetImageUrls() string {
 	return r._imageUrls
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 姓名
 func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -77,12 +77,12 @@ func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) SetName(_name string)
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is IdentityCode Setter
+// SetIdentityCode is IdentityCode Setter
 // 证件号
 func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) SetIdentityCode(_identityCode string) error {
 	r._identityCode = _identityCode
@@ -90,7 +90,7 @@ func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) SetIdentityCode(_iden
 	return nil
 }
 
-// Get IdentityCode Getter
+// GetIdentityCode IdentityCode Getter
 func (r AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) GetIdentityCode() string {
 	return r._identityCode
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlihealthMedicalRegisterWeiyiSyncAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ServiceRequest Setter
+// SetServiceRequest is ServiceRequest Setter
 // 号源数据实体
 func (r *AlibabaAlihealthMedicalRegisterWeiyiSyncAPIRequest) SetServiceRequest(_serviceRequest *SourcesReturnVo) error {
 	r._serviceRequest = _serviceRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthMedicalRegisterWeiyiSyncAPIRequest) SetServiceRequest(_
 	return nil
 }
 
-// Get ServiceRequest Getter
+// GetServiceRequest ServiceRequest Getter
 func (r AlibabaAlihealthMedicalRegisterWeiyiSyncAPIRequest) GetServiceRequest() *SourcesReturnVo {
 	return r._serviceRequest
 }

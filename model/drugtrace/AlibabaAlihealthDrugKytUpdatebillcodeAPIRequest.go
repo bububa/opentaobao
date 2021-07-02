@@ -45,7 +45,7 @@ func (r AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -53,12 +53,12 @@ func (r *AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) SetRefEntId(_refEntId 
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is IcCode Setter
+// SetIcCode is IcCode Setter
 // 操作人ID
 func (r *AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) SetIcCode(_icCode string) error {
 	r._icCode = _icCode
@@ -66,12 +66,12 @@ func (r *AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) SetIcCode(_icCode stri
 	return nil
 }
 
-// Get IcCode Getter
+// GetIcCode IcCode Getter
 func (r AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) GetIcCode() string {
 	return r._icCode
 }
 
-// Set is BillId Setter
+// SetBillId is BillId Setter
 // 单据ID
 func (r *AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) SetBillId(_billId string) error {
 	r._billId = _billId
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) SetBillId(_billId stri
 	return nil
 }
 
-// Get BillId Getter
+// GetBillId BillId Getter
 func (r AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) GetBillId() string {
 	return r._billId
 }
 
-// Set is BillType Setter
+// SetBillType is BillType Setter
 // 单据类型
 func (r *AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) SetBillType(_billType string) error {
 	r._billType = _billType
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) SetBillType(_billType 
 	return nil
 }
 
-// Get BillType Getter
+// GetBillType BillType Getter
 func (r AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) GetBillType() string {
 	return r._billType
 }
 
-// Set is CodeList Setter
+// SetCodeList is CodeList Setter
 // 追溯码
 func (r *AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) SetCodeList(_codeList []string) error {
 	r._codeList = _codeList
@@ -105,7 +105,7 @@ func (r *AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) SetCodeList(_codeList 
 	return nil
 }
 
-// Get CodeList Getter
+// GetCodeList CodeList Getter
 func (r AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) GetCodeList() []string {
 	return r._codeList
 }

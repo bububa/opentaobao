@@ -37,7 +37,7 @@ func (r AlibabaOnetouchLogisticsExpressAddressProvinceListAPIRequest) GetApiPara
 	return params
 }
 
-// Set is ParamQuery Setter
+// SetParamQuery is ParamQuery Setter
 // 请求参数
 func (r *AlibabaOnetouchLogisticsExpressAddressProvinceListAPIRequest) SetParamQuery(_paramQuery *AddressQueryDto) error {
 	r._paramQuery = _paramQuery
@@ -45,7 +45,7 @@ func (r *AlibabaOnetouchLogisticsExpressAddressProvinceListAPIRequest) SetParamQ
 	return nil
 }
 
-// Get ParamQuery Getter
+// GetParamQuery ParamQuery Getter
 func (r AlibabaOnetouchLogisticsExpressAddressProvinceListAPIRequest) GetParamQuery() *AddressQueryDto {
 	return r._paramQuery
 }

@@ -39,7 +39,7 @@ func (r AlibabaAlihealthDentalStatementQueryAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单ID
 func (r *AlibabaAlihealthDentalStatementQueryAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthDentalStatementQueryAPIRequest) SetOrderId(_orderId str
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaAlihealthDentalStatementQueryAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is StatementTime Setter
+// SetStatementTime is StatementTime Setter
 // 结算周期，单位月
 func (r *AlibabaAlihealthDentalStatementQueryAPIRequest) SetStatementTime(_statementTime string) error {
 	r._statementTime = _statementTime
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthDentalStatementQueryAPIRequest) SetStatementTime(_state
 	return nil
 }
 
-// Get StatementTime Getter
+// GetStatementTime StatementTime Getter
 func (r AlibabaAlihealthDentalStatementQueryAPIRequest) GetStatementTime() string {
 	return r._statementTime
 }

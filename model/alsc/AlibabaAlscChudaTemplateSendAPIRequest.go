@@ -37,7 +37,7 @@ func (r AlibabaAlscChudaTemplateSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NotifyRequest Setter
+// SetNotifyRequest is NotifyRequest Setter
 // 请求参数
 func (r *AlibabaAlscChudaTemplateSendAPIRequest) SetNotifyRequest(_notifyRequest *TemplateNotifyRequest) error {
 	r._notifyRequest = _notifyRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlscChudaTemplateSendAPIRequest) SetNotifyRequest(_notifyRequest
 	return nil
 }
 
-// Get NotifyRequest Getter
+// GetNotifyRequest NotifyRequest Getter
 func (r AlibabaAlscChudaTemplateSendAPIRequest) GetNotifyRequest() *TemplateNotifyRequest {
 	return r._notifyRequest
 }

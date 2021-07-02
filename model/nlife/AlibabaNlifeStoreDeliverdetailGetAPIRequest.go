@@ -39,7 +39,7 @@ func (r AlibabaNlifeStoreDeliverdetailGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ConsignNo Setter
+// SetConsignNo is ConsignNo Setter
 // 发货单号
 func (r *AlibabaNlifeStoreDeliverdetailGetAPIRequest) SetConsignNo(_consignNo string) error {
 	r._consignNo = _consignNo
@@ -47,12 +47,12 @@ func (r *AlibabaNlifeStoreDeliverdetailGetAPIRequest) SetConsignNo(_consignNo st
 	return nil
 }
 
-// Get ConsignNo Getter
+// GetConsignNo ConsignNo Getter
 func (r AlibabaNlifeStoreDeliverdetailGetAPIRequest) GetConsignNo() string {
 	return r._consignNo
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店id
 func (r *AlibabaNlifeStoreDeliverdetailGetAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -60,7 +60,7 @@ func (r *AlibabaNlifeStoreDeliverdetailGetAPIRequest) SetStoreId(_storeId int64)
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaNlifeStoreDeliverdetailGetAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }

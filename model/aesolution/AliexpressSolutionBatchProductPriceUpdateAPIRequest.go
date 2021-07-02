@@ -37,7 +37,7 @@ func (r AliexpressSolutionBatchProductPriceUpdateAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is MutipleProductUpdateList Setter
+// SetMutipleProductUpdateList is MutipleProductUpdateList Setter
 // The product list, in which the price needs to be updated. Maximum length:20
 func (r *AliexpressSolutionBatchProductPriceUpdateAPIRequest) SetMutipleProductUpdateList(_mutipleProductUpdateList []SynchronizeProductRequestDto) error {
 	r._mutipleProductUpdateList = _mutipleProductUpdateList
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionBatchProductPriceUpdateAPIRequest) SetMutipleProductU
 	return nil
 }
 
-// Get MutipleProductUpdateList Getter
+// GetMutipleProductUpdateList MutipleProductUpdateList Getter
 func (r AliexpressSolutionBatchProductPriceUpdateAPIRequest) GetMutipleProductUpdateList() []SynchronizeProductRequestDto {
 	return r._mutipleProductUpdateList
 }

@@ -41,7 +41,7 @@ func (r AlibabaBaichuanCtgUserRelationAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is App Setter
+// SetApp is App Setter
 // 调用的业务方
 func (r *AlibabaBaichuanCtgUserRelationAPIRequest) SetApp(_app string) error {
 	r._app = _app
@@ -49,12 +49,12 @@ func (r *AlibabaBaichuanCtgUserRelationAPIRequest) SetApp(_app string) error {
 	return nil
 }
 
-// Get App Getter
+// GetApp App Getter
 func (r AlibabaBaichuanCtgUserRelationAPIRequest) GetApp() string {
 	return r._app
 }
 
-// Set is Uid Setter
+// SetUid is Uid Setter
 // 业务方的用户ID
 func (r *AlibabaBaichuanCtgUserRelationAPIRequest) SetUid(_uid string) error {
 	r._uid = _uid
@@ -62,12 +62,12 @@ func (r *AlibabaBaichuanCtgUserRelationAPIRequest) SetUid(_uid string) error {
 	return nil
 }
 
-// Get Uid Getter
+// GetUid Uid Getter
 func (r AlibabaBaichuanCtgUserRelationAPIRequest) GetUid() string {
 	return r._uid
 }
 
-// Set is TbUid Setter
+// SetTbUid is TbUid Setter
 // 淘宝的用户ID
 func (r *AlibabaBaichuanCtgUserRelationAPIRequest) SetTbUid(_tbUid string) error {
 	r._tbUid = _tbUid
@@ -75,7 +75,7 @@ func (r *AlibabaBaichuanCtgUserRelationAPIRequest) SetTbUid(_tbUid string) error
 	return nil
 }
 
-// Get TbUid Getter
+// GetTbUid TbUid Getter
 func (r AlibabaBaichuanCtgUserRelationAPIRequest) GetTbUid() string {
 	return r._tbUid
 }

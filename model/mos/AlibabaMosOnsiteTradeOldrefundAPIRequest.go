@@ -37,7 +37,7 @@ func (r AlibabaMosOnsiteTradeOldrefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OnsiteRefundRequest Setter
+// SetOnsiteRefundRequest is OnsiteRefundRequest Setter
 // 交易退款请求
 func (r *AlibabaMosOnsiteTradeOldrefundAPIRequest) SetOnsiteRefundRequest(_onsiteRefundRequest *OnsiteRefundRequest) error {
 	r._onsiteRefundRequest = _onsiteRefundRequest
@@ -45,7 +45,7 @@ func (r *AlibabaMosOnsiteTradeOldrefundAPIRequest) SetOnsiteRefundRequest(_onsit
 	return nil
 }
 
-// Get OnsiteRefundRequest Getter
+// GetOnsiteRefundRequest OnsiteRefundRequest Getter
 func (r AlibabaMosOnsiteTradeOldrefundAPIRequest) GetOnsiteRefundRequest() *OnsiteRefundRequest {
 	return r._onsiteRefundRequest
 }

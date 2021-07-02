@@ -37,7 +37,7 @@ func (r AlibabaLstVendngImageUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ImgBytes Setter
+// SetImgBytes is ImgBytes Setter
 // 图片文件字节数组
 func (r *AlibabaLstVendngImageUploadAPIRequest) SetImgBytes(_imgBytes *model.File) error {
 	r._imgBytes = _imgBytes
@@ -45,7 +45,7 @@ func (r *AlibabaLstVendngImageUploadAPIRequest) SetImgBytes(_imgBytes *model.Fil
 	return nil
 }
 
-// Get ImgBytes Getter
+// GetImgBytes ImgBytes Getter
 func (r AlibabaLstVendngImageUploadAPIRequest) GetImgBytes() *model.File {
 	return r._imgBytes
 }

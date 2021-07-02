@@ -37,7 +37,7 @@ func (r AlibabaScbpTargetAdCampaignProductEffectAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is TopP4pQuickEffectQuery Setter
+// SetTopP4pQuickEffectQuery is TopP4pQuickEffectQuery Setter
 // TopP4pQuickEffectQuery
 func (r *AlibabaScbpTargetAdCampaignProductEffectAPIRequest) SetTopP4pQuickEffectQuery(_topP4pQuickEffectQuery *TopP4pQuickEffectQuery) error {
 	r._topP4pQuickEffectQuery = _topP4pQuickEffectQuery
@@ -45,7 +45,7 @@ func (r *AlibabaScbpTargetAdCampaignProductEffectAPIRequest) SetTopP4pQuickEffec
 	return nil
 }
 
-// Get TopP4pQuickEffectQuery Getter
+// GetTopP4pQuickEffectQuery TopP4pQuickEffectQuery Getter
 func (r AlibabaScbpTargetAdCampaignProductEffectAPIRequest) GetTopP4pQuickEffectQuery() *TopP4pQuickEffectQuery {
 	return r._topP4pQuickEffectQuery
 }

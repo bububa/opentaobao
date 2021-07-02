@@ -37,7 +37,7 @@ func (r AlitripTravelBookinfoQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BookinfoId Setter
+// SetBookinfoId is BookinfoId Setter
 // 预定信息id
 func (r *AlitripTravelBookinfoQueryAPIRequest) SetBookinfoId(_bookinfoId int64) error {
 	r._bookinfoId = _bookinfoId
@@ -45,7 +45,7 @@ func (r *AlitripTravelBookinfoQueryAPIRequest) SetBookinfoId(_bookinfoId int64) 
 	return nil
 }
 
-// Get BookinfoId Getter
+// GetBookinfoId BookinfoId Getter
 func (r AlitripTravelBookinfoQueryAPIRequest) GetBookinfoId() int64 {
 	return r._bookinfoId
 }

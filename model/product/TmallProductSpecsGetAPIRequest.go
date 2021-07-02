@@ -41,7 +41,7 @@ func (r TmallProductSpecsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品的ID。这个不能和properties和cat_id同时起效果<br>properties 和cat_id 均不传时，该参数必传。
 func (r *TmallProductSpecsGetAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -49,12 +49,12 @@ func (r *TmallProductSpecsGetAPIRequest) SetProductId(_productId int64) error {
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TmallProductSpecsGetAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is Properties Setter
+// SetProperties is Properties Setter
 // 关键属性的字符串，pid:vid;pid:vid该字段必须和cat_id同时传入才起效果。 而且只有当product_id不传入的时候才起效果。<br>product_id 不传时该参数必传
 func (r *TmallProductSpecsGetAPIRequest) SetProperties(_properties string) error {
 	r._properties = _properties
@@ -62,12 +62,12 @@ func (r *TmallProductSpecsGetAPIRequest) SetProperties(_properties string) error
 	return nil
 }
 
-// Get Properties Getter
+// GetProperties Properties Getter
 func (r TmallProductSpecsGetAPIRequest) GetProperties() string {
 	return r._properties
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 类目的ID号，该id必须和properties同时传入。而且只有当product_id不传入的时候才起效果。<br> product_id不传时，该参数必传
 func (r *TmallProductSpecsGetAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -75,7 +75,7 @@ func (r *TmallProductSpecsGetAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r TmallProductSpecsGetAPIRequest) GetCatId() int64 {
 	return r._catId
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is TaskStatus Setter
+// SetTaskStatus is TaskStatus Setter
 // 作业状态回传对象
 func (r *AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest) SetTaskStatus(_taskStatus *TaskStatus) error {
 	r._taskStatus = _taskStatus
@@ -45,7 +45,7 @@ func (r *AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest) SetTaskStatus(_tas
 	return nil
 }
 
-// Get TaskStatus Getter
+// GetTaskStatus TaskStatus Getter
 func (r AlibabaWdkFulfillBatchOnTaskStatusChangedAPIRequest) GetTaskStatus() *TaskStatus {
 	return r._taskStatus
 }

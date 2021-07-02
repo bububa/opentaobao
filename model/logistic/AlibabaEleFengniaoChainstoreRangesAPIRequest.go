@@ -41,7 +41,7 @@ func (r AlibabaEleFengniaoChainstoreRangesAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is MerchantCode Setter
+// SetMerchantCode is MerchantCode Setter
 // 商户code
 func (r *AlibabaEleFengniaoChainstoreRangesAPIRequest) SetMerchantCode(_merchantCode string) error {
 	r._merchantCode = _merchantCode
@@ -49,12 +49,12 @@ func (r *AlibabaEleFengniaoChainstoreRangesAPIRequest) SetMerchantCode(_merchant
 	return nil
 }
 
-// Get MerchantCode Getter
+// GetMerchantCode MerchantCode Getter
 func (r AlibabaEleFengniaoChainstoreRangesAPIRequest) GetMerchantCode() string {
 	return r._merchantCode
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // appId
 func (r *AlibabaEleFengniaoChainstoreRangesAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
@@ -62,12 +62,12 @@ func (r *AlibabaEleFengniaoChainstoreRangesAPIRequest) SetAppId(_appId string) e
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r AlibabaEleFengniaoChainstoreRangesAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// Set is ChainstoreCode Setter
+// SetChainstoreCode is ChainstoreCode Setter
 // 门店code
 func (r *AlibabaEleFengniaoChainstoreRangesAPIRequest) SetChainstoreCode(_chainstoreCode string) error {
 	r._chainstoreCode = _chainstoreCode
@@ -75,7 +75,7 @@ func (r *AlibabaEleFengniaoChainstoreRangesAPIRequest) SetChainstoreCode(_chains
 	return nil
 }
 
-// Get ChainstoreCode Getter
+// GetChainstoreCode ChainstoreCode Getter
 func (r AlibabaEleFengniaoChainstoreRangesAPIRequest) GetChainstoreCode() string {
 	return r._chainstoreCode
 }

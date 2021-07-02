@@ -41,7 +41,7 @@ func (r YunosTvpubadminDeviceYksSkillModifyAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is SkillId Setter
+// SetSkillId is SkillId Setter
 // 技能id
 func (r *YunosTvpubadminDeviceYksSkillModifyAPIRequest) SetSkillId(_skillId int64) error {
 	r._skillId = _skillId
@@ -49,12 +49,12 @@ func (r *YunosTvpubadminDeviceYksSkillModifyAPIRequest) SetSkillId(_skillId int6
 	return nil
 }
 
-// Get SkillId Getter
+// GetSkillId SkillId Getter
 func (r YunosTvpubadminDeviceYksSkillModifyAPIRequest) GetSkillId() int64 {
 	return r._skillId
 }
 
-// Set is IconImageUrl Setter
+// SetIconImageUrl is IconImageUrl Setter
 // 图片地址
 func (r *YunosTvpubadminDeviceYksSkillModifyAPIRequest) SetIconImageUrl(_iconImageUrl string) error {
 	r._iconImageUrl = _iconImageUrl
@@ -62,12 +62,12 @@ func (r *YunosTvpubadminDeviceYksSkillModifyAPIRequest) SetIconImageUrl(_iconIma
 	return nil
 }
 
-// Get IconImageUrl Getter
+// GetIconImageUrl IconImageUrl Getter
 func (r YunosTvpubadminDeviceYksSkillModifyAPIRequest) GetIconImageUrl() string {
 	return r._iconImageUrl
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 技能名称
 func (r *YunosTvpubadminDeviceYksSkillModifyAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -75,7 +75,7 @@ func (r *YunosTvpubadminDeviceYksSkillModifyAPIRequest) SetName(_name string) er
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r YunosTvpubadminDeviceYksSkillModifyAPIRequest) GetName() string {
 	return r._name
 }

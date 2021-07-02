@@ -43,7 +43,7 @@ func (r TmallPromotagTagApplyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TagName Setter
+// SetTagName is TagName Setter
 // 标签名称。注意在UMP中使用新人群标签top变成大写的“NEW_” 如：老标签是top1234，新标签是NEW_1234 。
 func (r *TmallPromotagTagApplyAPIRequest) SetTagName(_tagName string) error {
 	r._tagName = _tagName
@@ -51,12 +51,12 @@ func (r *TmallPromotagTagApplyAPIRequest) SetTagName(_tagName string) error {
 	return nil
 }
 
-// Get TagName Getter
+// GetTagName TagName Getter
 func (r TmallPromotagTagApplyAPIRequest) GetTagName() string {
 	return r._tagName
 }
 
-// Set is TagDesc Setter
+// SetTagDesc is TagDesc Setter
 // 标签用途描述
 func (r *TmallPromotagTagApplyAPIRequest) SetTagDesc(_tagDesc string) error {
 	r._tagDesc = _tagDesc
@@ -64,12 +64,12 @@ func (r *TmallPromotagTagApplyAPIRequest) SetTagDesc(_tagDesc string) error {
 	return nil
 }
 
-// Get TagDesc Getter
+// GetTagDesc TagDesc Getter
 func (r TmallPromotagTagApplyAPIRequest) GetTagDesc() string {
 	return r._tagDesc
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 标签开始时间
 func (r *TmallPromotagTagApplyAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -77,12 +77,12 @@ func (r *TmallPromotagTagApplyAPIRequest) SetStartTime(_startTime string) error 
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TmallPromotagTagApplyAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 标签结束时间
 func (r *TmallPromotagTagApplyAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -90,7 +90,7 @@ func (r *TmallPromotagTagApplyAPIRequest) SetEndTime(_endTime string) error {
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TmallPromotagTagApplyAPIRequest) GetEndTime() string {
 	return r._endTime
 }

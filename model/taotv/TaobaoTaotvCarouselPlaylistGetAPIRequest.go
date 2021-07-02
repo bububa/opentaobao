@@ -39,7 +39,7 @@ func (r TaobaoTaotvCarouselPlaylistGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChannelId Setter
+// SetChannelId is ChannelId Setter
 // 频道ID
 func (r *TaobaoTaotvCarouselPlaylistGetAPIRequest) SetChannelId(_channelId int64) error {
 	r._channelId = _channelId
@@ -47,12 +47,12 @@ func (r *TaobaoTaotvCarouselPlaylistGetAPIRequest) SetChannelId(_channelId int64
 	return nil
 }
 
-// Get ChannelId Getter
+// GetChannelId ChannelId Getter
 func (r TaobaoTaotvCarouselPlaylistGetAPIRequest) GetChannelId() int64 {
 	return r._channelId
 }
 
-// Set is SystemInfo Setter
+// SetSystemInfo is SystemInfo Setter
 // 设备信息
 func (r *TaobaoTaotvCarouselPlaylistGetAPIRequest) SetSystemInfo(_systemInfo string) error {
 	r._systemInfo = _systemInfo
@@ -60,7 +60,7 @@ func (r *TaobaoTaotvCarouselPlaylistGetAPIRequest) SetSystemInfo(_systemInfo str
 	return nil
 }
 
-// Get SystemInfo Getter
+// GetSystemInfo SystemInfo Getter
 func (r TaobaoTaotvCarouselPlaylistGetAPIRequest) GetSystemInfo() string {
 	return r._systemInfo
 }

@@ -39,7 +39,7 @@ func (r AlibabaAlihealthDrugKytGetbyrefentidAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 接口调用企业的唯一标识（接口调用者）
 func (r *AlibabaAlihealthDrugKytGetbyrefentidAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthDrugKytGetbyrefentidAPIRequest) SetRefEntId(_refEntId s
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytGetbyrefentidAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is DestRefEntId Setter
+// SetDestRefEntId is DestRefEntId Setter
 // 准备要查询的企业唯一标识（返回该唯一标识企业的详细信息）
 func (r *AlibabaAlihealthDrugKytGetbyrefentidAPIRequest) SetDestRefEntId(_destRefEntId string) error {
 	r._destRefEntId = _destRefEntId
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthDrugKytGetbyrefentidAPIRequest) SetDestRefEntId(_destRe
 	return nil
 }
 
-// Get DestRefEntId Getter
+// GetDestRefEntId DestRefEntId Getter
 func (r AlibabaAlihealthDrugKytGetbyrefentidAPIRequest) GetDestRefEntId() string {
 	return r._destRefEntId
 }

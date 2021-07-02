@@ -37,7 +37,7 @@ func (r AlibabaFundplatformCardorderStatusQueryAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is Request Setter
+// SetRequest is Request Setter
 // 请求结构体
 func (r *AlibabaFundplatformCardorderStatusQueryAPIRequest) SetRequest(_request *AlibabaFundplatformCardorderStatusQueryStruct) error {
 	r._request = _request
@@ -45,7 +45,7 @@ func (r *AlibabaFundplatformCardorderStatusQueryAPIRequest) SetRequest(_request 
 	return nil
 }
 
-// Get Request Getter
+// GetRequest Request Getter
 func (r AlibabaFundplatformCardorderStatusQueryAPIRequest) GetRequest() *AlibabaFundplatformCardorderStatusQueryStruct {
 	return r._request
 }

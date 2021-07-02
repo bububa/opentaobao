@@ -37,7 +37,7 @@ func (r TmallInventoryQueryForstoreAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamList Setter
+// SetParamList is ParamList Setter
 // 查询列表
 func (r *TmallInventoryQueryForstoreAPIRequest) SetParamList(_paramList []InventoryQueryForStoreRequest) error {
 	r._paramList = _paramList
@@ -45,7 +45,7 @@ func (r *TmallInventoryQueryForstoreAPIRequest) SetParamList(_paramList []Invent
 	return nil
 }
 
-// Get ParamList Getter
+// GetParamList ParamList Getter
 func (r TmallInventoryQueryForstoreAPIRequest) GetParamList() []InventoryQueryForStoreRequest {
 	return r._paramList
 }

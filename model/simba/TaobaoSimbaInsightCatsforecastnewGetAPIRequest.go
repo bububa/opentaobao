@@ -37,7 +37,7 @@ func (r TaobaoSimbaInsightCatsforecastnewGetAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is BidwordList Setter
+// SetBidwordList is BidwordList Setter
 // 需要查询的词列表
 func (r *TaobaoSimbaInsightCatsforecastnewGetAPIRequest) SetBidwordList(_bidwordList []string) error {
 	r._bidwordList = _bidwordList
@@ -45,7 +45,7 @@ func (r *TaobaoSimbaInsightCatsforecastnewGetAPIRequest) SetBidwordList(_bidword
 	return nil
 }
 
-// Get BidwordList Getter
+// GetBidwordList BidwordList Getter
 func (r TaobaoSimbaInsightCatsforecastnewGetAPIRequest) GetBidwordList() []string {
 	return r._bidwordList
 }

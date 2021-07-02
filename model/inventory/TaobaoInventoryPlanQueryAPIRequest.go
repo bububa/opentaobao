@@ -37,7 +37,7 @@ func (r TaobaoInventoryPlanQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 计划库存查询入参
 func (r *TaobaoInventoryPlanQueryAPIRequest) SetParam(_param *InvUnifyPlanTopQuerys) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *TaobaoInventoryPlanQueryAPIRequest) SetParam(_param *InvUnifyPlanTopQue
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r TaobaoInventoryPlanQueryAPIRequest) GetParam() *InvUnifyPlanTopQuerys {
 	return r._param
 }

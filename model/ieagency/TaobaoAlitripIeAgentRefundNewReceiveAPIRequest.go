@@ -41,7 +41,7 @@ func (r TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ApplyId Setter
+// SetApplyId is ApplyId Setter
 // 退票申请单id
 func (r *TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) SetApplyId(_applyId int64) error {
 	r._applyId = _applyId
@@ -49,12 +49,12 @@ func (r *TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) SetApplyId(_applyId int
 	return nil
 }
 
-// Get ApplyId Getter
+// GetApplyId ApplyId Getter
 func (r TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) GetApplyId() int64 {
 	return r._applyId
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商id
 func (r *TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -62,12 +62,12 @@ func (r *TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) SetAgentId(_agentId int
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -75,7 +75,7 @@ func (r *TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) SetOrderId(_orderId int
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoAlitripIeAgentRefundNewReceiveAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }

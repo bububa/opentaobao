@@ -37,7 +37,7 @@ func (r TaobaoItemUpdateDelistingTmallAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NumIid Setter
+// SetNumIid is NumIid Setter
 // 商品数字ID，该参数必须
 func (r *TaobaoItemUpdateDelistingTmallAPIRequest) SetNumIid(_numIid int64) error {
 	r._numIid = _numIid
@@ -45,7 +45,7 @@ func (r *TaobaoItemUpdateDelistingTmallAPIRequest) SetNumIid(_numIid int64) erro
 	return nil
 }
 
-// Get NumIid Getter
+// GetNumIid NumIid Getter
 func (r TaobaoItemUpdateDelistingTmallAPIRequest) GetNumIid() int64 {
 	return r._numIid
 }

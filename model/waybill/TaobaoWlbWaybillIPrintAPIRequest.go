@@ -37,7 +37,7 @@ func (r TaobaoWlbWaybillIPrintAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WaybillApplyPrintCheckRequest Setter
+// SetWaybillApplyPrintCheckRequest is WaybillApplyPrintCheckRequest Setter
 // 打印请求
 func (r *TaobaoWlbWaybillIPrintAPIRequest) SetWaybillApplyPrintCheckRequest(_waybillApplyPrintCheckRequest *WaybillApplyPrintCheckRequest) error {
 	r._waybillApplyPrintCheckRequest = _waybillApplyPrintCheckRequest
@@ -45,7 +45,7 @@ func (r *TaobaoWlbWaybillIPrintAPIRequest) SetWaybillApplyPrintCheckRequest(_way
 	return nil
 }
 
-// Get WaybillApplyPrintCheckRequest Getter
+// GetWaybillApplyPrintCheckRequest WaybillApplyPrintCheckRequest Getter
 func (r TaobaoWlbWaybillIPrintAPIRequest) GetWaybillApplyPrintCheckRequest() *WaybillApplyPrintCheckRequest {
 	return r._waybillApplyPrintCheckRequest
 }

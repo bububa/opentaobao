@@ -37,7 +37,7 @@ func (r AlibabaAilabsUserSpeechGuideAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 用户query
 func (r *AlibabaAilabsUserSpeechGuideAPIRequest) SetQuery(_query string) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *AlibabaAilabsUserSpeechGuideAPIRequest) SetQuery(_query string) error {
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaAilabsUserSpeechGuideAPIRequest) GetQuery() string {
 	return r._query
 }

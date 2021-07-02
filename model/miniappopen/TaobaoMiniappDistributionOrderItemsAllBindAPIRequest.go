@@ -37,7 +37,7 @@ func (r TaobaoMiniappDistributionOrderItemsAllBindAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is AllItemBindRequest Setter
+// SetAllItemBindRequest is AllItemBindRequest Setter
 // 绑定/解绑的入参信息
 func (r *TaobaoMiniappDistributionOrderItemsAllBindAPIRequest) SetAllItemBindRequest(_allItemBindRequest *DistributionOrderBindTargetEntityOpenRequestV2) error {
 	r._allItemBindRequest = _allItemBindRequest
@@ -45,7 +45,7 @@ func (r *TaobaoMiniappDistributionOrderItemsAllBindAPIRequest) SetAllItemBindReq
 	return nil
 }
 
-// Get AllItemBindRequest Getter
+// GetAllItemBindRequest AllItemBindRequest Getter
 func (r TaobaoMiniappDistributionOrderItemsAllBindAPIRequest) GetAllItemBindRequest() *DistributionOrderBindTargetEntityOpenRequestV2 {
 	return r._allItemBindRequest
 }

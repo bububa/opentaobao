@@ -37,7 +37,7 @@ func (r TaobaoTopOaidMergeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MergeList Setter
+// SetMergeList is MergeList Setter
 // 合单请求列表，最多支持100个。
 func (r *TaobaoTopOaidMergeAPIRequest) SetMergeList(_mergeList []OrderMerge) error {
 	r._mergeList = _mergeList
@@ -45,7 +45,7 @@ func (r *TaobaoTopOaidMergeAPIRequest) SetMergeList(_mergeList []OrderMerge) err
 	return nil
 }
 
-// Get MergeList Getter
+// GetMergeList MergeList Getter
 func (r TaobaoTopOaidMergeAPIRequest) GetMergeList() []OrderMerge {
 	return r._mergeList
 }

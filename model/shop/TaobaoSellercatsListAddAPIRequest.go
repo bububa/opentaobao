@@ -43,7 +43,7 @@ func (r TaobaoSellercatsListAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 卖家自定义类目名称。不超过20个字符
 func (r *TaobaoSellercatsListAddAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -51,12 +51,12 @@ func (r *TaobaoSellercatsListAddAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoSellercatsListAddAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is PictUrl Setter
+// SetPictUrl is PictUrl Setter
 // 链接图片URL地址。(绝对地址，格式：http://host/image_path)
 func (r *TaobaoSellercatsListAddAPIRequest) SetPictUrl(_pictUrl string) error {
 	r._pictUrl = _pictUrl
@@ -64,12 +64,12 @@ func (r *TaobaoSellercatsListAddAPIRequest) SetPictUrl(_pictUrl string) error {
 	return nil
 }
 
-// Get PictUrl Getter
+// GetPictUrl PictUrl Getter
 func (r TaobaoSellercatsListAddAPIRequest) GetPictUrl() string {
 	return r._pictUrl
 }
 
-// Set is ParentCid Setter
+// SetParentCid is ParentCid Setter
 // 父类目编号，如果类目为店铺下的一级类目：值等于0，如果类目为子类目，调用获取taobao.sellercats.list.get父类目编号
 func (r *TaobaoSellercatsListAddAPIRequest) SetParentCid(_parentCid int64) error {
 	r._parentCid = _parentCid
@@ -77,12 +77,12 @@ func (r *TaobaoSellercatsListAddAPIRequest) SetParentCid(_parentCid int64) error
 	return nil
 }
 
-// Get ParentCid Getter
+// GetParentCid ParentCid Getter
 func (r TaobaoSellercatsListAddAPIRequest) GetParentCid() int64 {
 	return r._parentCid
 }
 
-// Set is SortOrder Setter
+// SetSortOrder is SortOrder Setter
 // 该类目在页面上的排序位置,取值范围:大于零的整数
 func (r *TaobaoSellercatsListAddAPIRequest) SetSortOrder(_sortOrder int64) error {
 	r._sortOrder = _sortOrder
@@ -90,7 +90,7 @@ func (r *TaobaoSellercatsListAddAPIRequest) SetSortOrder(_sortOrder int64) error
 	return nil
 }
 
-// Get SortOrder Getter
+// GetSortOrder SortOrder Getter
 func (r TaobaoSellercatsListAddAPIRequest) GetSortOrder() int64 {
 	return r._sortOrder
 }

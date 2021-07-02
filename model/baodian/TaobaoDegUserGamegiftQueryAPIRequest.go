@@ -39,7 +39,7 @@ func (r TaobaoDegUserGamegiftQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 状态，1为待发放，2为已发放，3为过期
 func (r *TaobaoDegUserGamegiftQueryAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -47,12 +47,12 @@ func (r *TaobaoDegUserGamegiftQueryAPIRequest) SetStatus(_status int64) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoDegUserGamegiftQueryAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is CpItemIds Setter
+// SetCpItemIds is CpItemIds Setter
 // cp item id列表
 func (r *TaobaoDegUserGamegiftQueryAPIRequest) SetCpItemIds(_cpItemIds []string) error {
 	r._cpItemIds = _cpItemIds
@@ -60,7 +60,7 @@ func (r *TaobaoDegUserGamegiftQueryAPIRequest) SetCpItemIds(_cpItemIds []string)
 	return nil
 }
 
-// Get CpItemIds Getter
+// GetCpItemIds CpItemIds Getter
 func (r TaobaoDegUserGamegiftQueryAPIRequest) GetCpItemIds() []string {
 	return r._cpItemIds
 }

@@ -39,7 +39,7 @@ func (r AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 小程序appid
 func (r *AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest) SetAppId(_appId strin
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 加密后的userId
 func (r *AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest) SetContent(_content s
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r AlibabaAlihealthAlipaypfmUseridDecryptAPIRequest) GetContent() string {
 	return r._content
 }

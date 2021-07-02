@@ -45,7 +45,7 @@ func (r YunosTvpubadminDeviceAppupgradequeryAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照方
 func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -53,12 +53,12 @@ func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetLicense(_license int
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminDeviceAppupgradequeryAPIRequest) GetLicense() int64 {
 	return r._license
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 审核状态
 func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -66,12 +66,12 @@ func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetStatus(_status strin
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r YunosTvpubadminDeviceAppupgradequeryAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is DayRange Setter
+// SetDayRange is DayRange Setter
 // 时间范围
 func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetDayRange(_dayRange int64) error {
 	r._dayRange = _dayRange
@@ -79,12 +79,12 @@ func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetDayRange(_dayRange i
 	return nil
 }
 
-// Get DayRange Getter
+// GetDayRange DayRange Getter
 func (r YunosTvpubadminDeviceAppupgradequeryAPIRequest) GetDayRange() int64 {
 	return r._dayRange
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 第几页
 func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -92,12 +92,12 @@ func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetPageNo(_pageNo int64
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r YunosTvpubadminDeviceAppupgradequeryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 数据大小
 func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -105,7 +105,7 @@ func (r *YunosTvpubadminDeviceAppupgradequeryAPIRequest) SetPageSize(_pageSize i
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r YunosTvpubadminDeviceAppupgradequeryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

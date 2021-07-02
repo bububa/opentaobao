@@ -37,7 +37,7 @@ func (r AlibabaAscpChannelDistributorPriceGetAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is PriceRequest Setter
+// SetPriceRequest is PriceRequest Setter
 // 价格入参
 func (r *AlibabaAscpChannelDistributorPriceGetAPIRequest) SetPriceRequest(_priceRequest *Pricerequest) error {
 	r._priceRequest = _priceRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpChannelDistributorPriceGetAPIRequest) SetPriceRequest(_price
 	return nil
 }
 
-// Get PriceRequest Getter
+// GetPriceRequest PriceRequest Getter
 func (r AlibabaAscpChannelDistributorPriceGetAPIRequest) GetPriceRequest() *Pricerequest {
 	return r._priceRequest
 }

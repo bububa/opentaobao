@@ -37,7 +37,7 @@ func (r AlibabaIdleConsignmentiiOrderPerformAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ConsignmentV2OrderSynDto Setter
+// SetConsignmentV2OrderSynDto is ConsignmentV2OrderSynDto Setter
 // 同步参数
 func (r *AlibabaIdleConsignmentiiOrderPerformAPIRequest) SetConsignmentV2OrderSynDto(_consignmentV2OrderSynDto *ConsignmentV2OrderSynDto) error {
 	r._consignmentV2OrderSynDto = _consignmentV2OrderSynDto
@@ -45,7 +45,7 @@ func (r *AlibabaIdleConsignmentiiOrderPerformAPIRequest) SetConsignmentV2OrderSy
 	return nil
 }
 
-// Get ConsignmentV2OrderSynDto Getter
+// GetConsignmentV2OrderSynDto ConsignmentV2OrderSynDto Getter
 func (r AlibabaIdleConsignmentiiOrderPerformAPIRequest) GetConsignmentV2OrderSynDto() *ConsignmentV2OrderSynDto {
 	return r._consignmentV2OrderSynDto
 }

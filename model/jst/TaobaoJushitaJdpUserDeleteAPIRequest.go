@@ -39,7 +39,7 @@ func (r TaobaoJushitaJdpUserDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 要删除用户的昵称
 func (r *TaobaoJushitaJdpUserDeleteAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -47,12 +47,12 @@ func (r *TaobaoJushitaJdpUserDeleteAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoJushitaJdpUserDeleteAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 需要删除的用户编号
 func (r *TaobaoJushitaJdpUserDeleteAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -60,7 +60,7 @@ func (r *TaobaoJushitaJdpUserDeleteAPIRequest) SetUserId(_userId int64) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoJushitaJdpUserDeleteAPIRequest) GetUserId() int64 {
 	return r._userId
 }

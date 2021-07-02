@@ -37,7 +37,7 @@ func (r CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is DeliveryStrategySetRequest Setter
+// SetDeliveryStrategySetRequest is DeliveryStrategySetRequest Setter
 // 智能发货设置请求参数
 func (r *CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest) SetDeliveryStrategySetRequest(_deliveryStrategySetRequest *DeliveryStrategySetRequest) error {
 	r._deliveryStrategySetRequest = _deliveryStrategySetRequest
@@ -45,7 +45,7 @@ func (r *CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest) SetDeliveryStra
 	return nil
 }
 
-// Get DeliveryStrategySetRequest Getter
+// GetDeliveryStrategySetRequest DeliveryStrategySetRequest Getter
 func (r CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIRequest) GetDeliveryStrategySetRequest() *DeliveryStrategySetRequest {
 	return r._deliveryStrategySetRequest
 }

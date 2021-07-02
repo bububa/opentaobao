@@ -65,7 +65,7 @@ func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Longitude Setter
+// SetLongitude is Longitude Setter
 // 订单来源地址经度
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetLongitude(_longitude string) error {
 	r._longitude = _longitude
@@ -73,12 +73,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetLongitude(_longitude s
 	return nil
 }
 
-// Get Longitude Getter
+// GetLongitude Longitude Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetLongitude() string {
 	return r._longitude
 }
 
-// Set is ErestaurantId Setter
+// SetErestaurantId is ErestaurantId Setter
 // 餐厅Id
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetErestaurantId(_erestaurantId string) error {
 	r._erestaurantId = _erestaurantId
@@ -86,12 +86,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetErestaurantId(_erestau
 	return nil
 }
 
-// Get ErestaurantId Getter
+// GetErestaurantId ErestaurantId Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetErestaurantId() string {
 	return r._erestaurantId
 }
 
-// Set is CouponSn Setter
+// SetCouponSn is CouponSn Setter
 // 使用的券号
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetCouponSn(_couponSn string) error {
 	r._couponSn = _couponSn
@@ -99,12 +99,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetCouponSn(_couponSn str
 	return nil
 }
 
-// Get CouponSn Getter
+// GetCouponSn CouponSn Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetCouponSn() string {
 	return r._couponSn
 }
 
-// Set is Description Setter
+// SetDescription is Description Setter
 // 订单备注信息
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetDescription(_description string) error {
 	r._description = _description
@@ -112,12 +112,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetDescription(_descripti
 	return nil
 }
 
-// Get Description Getter
+// GetDescription Description Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetDescription() string {
 	return r._description
 }
 
-// Set is Phones Setter
+// SetPhones is Phones Setter
 // 电话号码，主要号码必须是手机号；多个手机号以逗号分隔
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetPhones(_phones string) error {
 	r._phones = _phones
@@ -125,12 +125,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetPhones(_phones string)
 	return nil
 }
 
-// Get Phones Getter
+// GetPhones Phones Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetPhones() string {
 	return r._phones
 }
 
-// Set is Ip Setter
+// SetIp is Ip Setter
 // 订单来源IP地址
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetIp(_ip string) error {
 	r._ip = _ip
@@ -138,12 +138,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetIp(_ip string) error {
 	return nil
 }
 
-// Get Ip Getter
+// GetIp Ip Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetIp() string {
 	return r._ip
 }
 
-// Set is Latitude Setter
+// SetLatitude is Latitude Setter
 // 订单来源地址纬度
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetLatitude(_latitude string) error {
 	r._latitude = _latitude
@@ -151,12 +151,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetLatitude(_latitude str
 	return nil
 }
 
-// Get Latitude Getter
+// GetLatitude Latitude Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetLatitude() string {
 	return r._latitude
 }
 
-// Set is CartId Setter
+// SetCartId is CartId Setter
 // 购物车Id（创建购物车返回的购物车id）
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetCartId(_cartId string) error {
 	r._cartId = _cartId
@@ -164,12 +164,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetCartId(_cartId string)
 	return nil
 }
 
-// Get CartId Getter
+// GetCartId CartId Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetCartId() string {
 	return r._cartId
 }
 
-// Set is TpOrderId Setter
+// SetTpOrderId is TpOrderId Setter
 // 第三方订单Id（需保证唯一）
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetTpOrderId(_tpOrderId string) error {
 	r._tpOrderId = _tpOrderId
@@ -177,12 +177,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetTpOrderId(_tpOrderId s
 	return nil
 }
 
-// Get TpOrderId Getter
+// GetTpOrderId TpOrderId Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetTpOrderId() string {
 	return r._tpOrderId
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 送餐地址
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetAddress(_address string) error {
 	r._address = _address
@@ -190,12 +190,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetAddress(_address strin
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetAddress() string {
 	return r._address
 }
 
-// Set is Consignee Setter
+// SetConsignee is Consignee Setter
 // 收餐人姓名
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetConsignee(_consignee string) error {
 	r._consignee = _consignee
@@ -203,12 +203,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetConsignee(_consignee s
 	return nil
 }
 
-// Get Consignee Getter
+// GetConsignee Consignee Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetConsignee() string {
 	return r._consignee
 }
 
-// Set is DeliverTime Setter
+// SetDeliverTime is DeliverTime Setter
 // 暂时不用传（忽略此字段）
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetDeliverTime(_deliverTime string) error {
 	r._deliverTime = _deliverTime
@@ -216,12 +216,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetDeliverTime(_deliverTi
 	return nil
 }
 
-// Get DeliverTime Getter
+// GetDeliverTime DeliverTime Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetDeliverTime() string {
 	return r._deliverTime
 }
 
-// Set is InvoiceNumber Setter
+// SetInvoiceNumber is InvoiceNumber Setter
 // 纳税人识别号
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetInvoiceNumber(_invoiceNumber string) error {
 	r._invoiceNumber = _invoiceNumber
@@ -229,12 +229,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetInvoiceNumber(_invoice
 	return nil
 }
 
-// Get InvoiceNumber Getter
+// GetInvoiceNumber InvoiceNumber Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetInvoiceNumber() string {
 	return r._invoiceNumber
 }
 
-// Set is Invoice Setter
+// SetInvoice is Invoice Setter
 // 发票抬头（个人发票请填写个人），不传表示不要发票
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetInvoice(_invoice string) error {
 	r._invoice = _invoice
@@ -242,12 +242,12 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetInvoice(_invoice strin
 	return nil
 }
 
-// Get Invoice Getter
+// GetInvoice Invoice Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetInvoice() string {
 	return r._invoice
 }
 
-// Set is InvoiceType Setter
+// SetInvoiceType is InvoiceType Setter
 // 发票类型（发票类型, 1: 个人, 2: 企业; 空为兼容数据, 由商户判断发票类型）
 func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetInvoiceType(_invoiceType int64) error {
 	r._invoiceType = _invoiceType
@@ -255,7 +255,7 @@ func (r *AlibabaEleEnterpriseOrdernewCreateAPIRequest) SetInvoiceType(_invoiceTy
 	return nil
 }
 
-// Get InvoiceType Getter
+// GetInvoiceType InvoiceType Getter
 func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetInvoiceType() int64 {
 	return r._invoiceType
 }

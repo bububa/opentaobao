@@ -37,7 +37,7 @@ func (r AlibabaIworkMcMsgSenddefaultAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MessageEvent Setter
+// SetMessageEvent is MessageEvent Setter
 // 消息对象
 func (r *AlibabaIworkMcMsgSenddefaultAPIRequest) SetMessageEvent(_messageEvent *DefaultMessageEvent) error {
 	r._messageEvent = _messageEvent
@@ -45,7 +45,7 @@ func (r *AlibabaIworkMcMsgSenddefaultAPIRequest) SetMessageEvent(_messageEvent *
 	return nil
 }
 
-// Get MessageEvent Getter
+// GetMessageEvent MessageEvent Getter
 func (r AlibabaIworkMcMsgSenddefaultAPIRequest) GetMessageEvent() *DefaultMessageEvent {
 	return r._messageEvent
 }

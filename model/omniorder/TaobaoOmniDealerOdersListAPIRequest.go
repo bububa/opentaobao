@@ -37,7 +37,7 @@ func (r TaobaoOmniDealerOdersListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryParam Setter
+// SetQueryParam is QueryParam Setter
 // 参数对象
 func (r *TaobaoOmniDealerOdersListAPIRequest) SetQueryParam(_queryParam *QueryOmniOrderRequest) error {
 	r._queryParam = _queryParam
@@ -45,7 +45,7 @@ func (r *TaobaoOmniDealerOdersListAPIRequest) SetQueryParam(_queryParam *QueryOm
 	return nil
 }
 
-// Get QueryParam Getter
+// GetQueryParam QueryParam Getter
 func (r TaobaoOmniDealerOdersListAPIRequest) GetQueryParam() *QueryOmniOrderRequest {
 	return r._queryParam
 }

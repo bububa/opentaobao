@@ -37,7 +37,7 @@ func (r AlitripXhotelChannelOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutSourceOrderCreateReq Setter
+// SetOutSourceOrderCreateReq is OutSourceOrderCreateReq Setter
 // 创建订单参数
 func (r *AlitripXhotelChannelOrderCreateAPIRequest) SetOutSourceOrderCreateReq(_outSourceOrderCreateReq *OutSourceOrderCreateReq) error {
 	r._outSourceOrderCreateReq = _outSourceOrderCreateReq
@@ -45,7 +45,7 @@ func (r *AlitripXhotelChannelOrderCreateAPIRequest) SetOutSourceOrderCreateReq(_
 	return nil
 }
 
-// Get OutSourceOrderCreateReq Getter
+// GetOutSourceOrderCreateReq OutSourceOrderCreateReq Getter
 func (r AlitripXhotelChannelOrderCreateAPIRequest) GetOutSourceOrderCreateReq() *OutSourceOrderCreateReq {
 	return r._outSourceOrderCreateReq
 }

@@ -37,7 +37,7 @@ func (r AlibabaMjOcCalldispatcherAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CallDispatcherDTO Setter
+// SetCallDispatcherDTO is CallDispatcherDTO Setter
 // 入参
 func (r *AlibabaMjOcCalldispatcherAPIRequest) SetCallDispatcherDTO(_callDispatcherDTO *CallDispatcherDto) error {
 	r._callDispatcherDTO = _callDispatcherDTO
@@ -45,7 +45,7 @@ func (r *AlibabaMjOcCalldispatcherAPIRequest) SetCallDispatcherDTO(_callDispatch
 	return nil
 }
 
-// Get CallDispatcherDTO Getter
+// GetCallDispatcherDTO CallDispatcherDTO Getter
 func (r AlibabaMjOcCalldispatcherAPIRequest) GetCallDispatcherDTO() *CallDispatcherDto {
 	return r._callDispatcherDTO
 }

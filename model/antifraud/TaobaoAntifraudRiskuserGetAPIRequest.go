@@ -37,7 +37,7 @@ func (r TaobaoAntifraudRiskuserGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamAccountQuery Setter
+// SetParamAccountQuery is ParamAccountQuery Setter
 // 风险用户查询条件
 func (r *TaobaoAntifraudRiskuserGetAPIRequest) SetParamAccountQuery(_paramAccountQuery *ParamAccountQuery) error {
 	r._paramAccountQuery = _paramAccountQuery
@@ -45,7 +45,7 @@ func (r *TaobaoAntifraudRiskuserGetAPIRequest) SetParamAccountQuery(_paramAccoun
 	return nil
 }
 
-// Get ParamAccountQuery Getter
+// GetParamAccountQuery ParamAccountQuery Getter
 func (r TaobaoAntifraudRiskuserGetAPIRequest) GetParamAccountQuery() *ParamAccountQuery {
 	return r._paramAccountQuery
 }

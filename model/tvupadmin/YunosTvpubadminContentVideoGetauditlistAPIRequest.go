@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentVideoGetauditlistAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 查询
 func (r *YunosTvpubadminContentVideoGetauditlistAPIRequest) SetQuery(_query string) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentVideoGetauditlistAPIRequest) SetQuery(_query stri
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r YunosTvpubadminContentVideoGetauditlistAPIRequest) GetQuery() string {
 	return r._query
 }

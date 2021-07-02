@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenDeleteitemAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeleteItemParam Setter
+// SetDeleteItemParam is DeleteItemParam Setter
 // 入参deleteItemParam
 func (r *AlibabaDamaiMevOpenDeleteitemAPIRequest) SetDeleteItemParam(_deleteItemParam *TicketItemIdOpenParam) error {
 	r._deleteItemParam = _deleteItemParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenDeleteitemAPIRequest) SetDeleteItemParam(_deleteItem
 	return nil
 }
 
-// Get DeleteItemParam Getter
+// GetDeleteItemParam DeleteItemParam Getter
 func (r AlibabaDamaiMevOpenDeleteitemAPIRequest) GetDeleteItemParam() *TicketItemIdOpenParam {
 	return r._deleteItemParam
 }

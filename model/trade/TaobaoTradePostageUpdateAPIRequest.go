@@ -40,7 +40,7 @@ func (r TaobaoTradePostageUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 主订单编号
 func (r *TaobaoTradePostageUpdateAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -48,12 +48,12 @@ func (r *TaobaoTradePostageUpdateAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoTradePostageUpdateAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is PostFee Setter
+// SetPostFee is PostFee Setter
 // 邮费价格(邮费单位是元）
 func (r *TaobaoTradePostageUpdateAPIRequest) SetPostFee(_postFee string) error {
 	r._postFee = _postFee
@@ -61,7 +61,7 @@ func (r *TaobaoTradePostageUpdateAPIRequest) SetPostFee(_postFee string) error {
 	return nil
 }
 
-// Get PostFee Getter
+// GetPostFee PostFee Getter
 func (r TaobaoTradePostageUpdateAPIRequest) GetPostFee() string {
 	return r._postFee
 }

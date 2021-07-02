@@ -37,7 +37,7 @@ func (r TmallPopupstoreActivityDeviceQueryAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // ISV的活动ID
 func (r *TmallPopupstoreActivityDeviceQueryAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -45,7 +45,7 @@ func (r *TmallPopupstoreActivityDeviceQueryAPIRequest) SetActivityId(_activityId
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TmallPopupstoreActivityDeviceQueryAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }

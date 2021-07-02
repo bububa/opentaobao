@@ -41,7 +41,7 @@ func (r TaobaoDrugPriceUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutStoreId Setter
+// SetOutStoreId is OutStoreId Setter
 // 对应的外部店铺ID
 func (r *TaobaoDrugPriceUpdateAPIRequest) SetOutStoreId(_outStoreId string) error {
 	r._outStoreId = _outStoreId
@@ -49,12 +49,12 @@ func (r *TaobaoDrugPriceUpdateAPIRequest) SetOutStoreId(_outStoreId string) erro
 	return nil
 }
 
-// Get OutStoreId Getter
+// GetOutStoreId OutStoreId Getter
 func (r TaobaoDrugPriceUpdateAPIRequest) GetOutStoreId() string {
 	return r._outStoreId
 }
 
-// Set is OutItemId Setter
+// SetOutItemId is OutItemId Setter
 // 对应的外部商品编码
 func (r *TaobaoDrugPriceUpdateAPIRequest) SetOutItemId(_outItemId string) error {
 	r._outItemId = _outItemId
@@ -62,12 +62,12 @@ func (r *TaobaoDrugPriceUpdateAPIRequest) SetOutItemId(_outItemId string) error 
 	return nil
 }
 
-// Get OutItemId Getter
+// GetOutItemId OutItemId Getter
 func (r TaobaoDrugPriceUpdateAPIRequest) GetOutItemId() string {
 	return r._outItemId
 }
 
-// Set is Price Setter
+// SetPrice is Price Setter
 // 商品价格
 func (r *TaobaoDrugPriceUpdateAPIRequest) SetPrice(_price float64) error {
 	r._price = _price
@@ -75,7 +75,7 @@ func (r *TaobaoDrugPriceUpdateAPIRequest) SetPrice(_price float64) error {
 	return nil
 }
 
-// Get Price Getter
+// GetPrice Price Getter
 func (r TaobaoDrugPriceUpdateAPIRequest) GetPrice() float64 {
 	return r._price
 }

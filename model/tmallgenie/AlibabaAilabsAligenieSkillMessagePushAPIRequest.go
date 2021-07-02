@@ -51,7 +51,7 @@ func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 要推送的消息内容
 func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -59,12 +59,12 @@ func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetContent(_content st
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetContent() string {
 	return r._content
 }
 
-// Set is SkillId Setter
+// SetSkillId is SkillId Setter
 // 智能应用平台创建的技能id
 func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetSkillId(_skillId int64) error {
 	r._skillId = _skillId
@@ -72,12 +72,12 @@ func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetSkillId(_skillId in
 	return nil
 }
 
-// Get SkillId Getter
+// GetSkillId SkillId Getter
 func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetSkillId() int64 {
 	return r._skillId
 }
 
-// Set is AccountType Setter
+// SetAccountType is AccountType Setter
 // 接收方的用户Id，从技能WebHook中取得的userOpenId
 func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetAccountType(_accountType string) error {
 	r._accountType = _accountType
@@ -85,12 +85,12 @@ func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetAccountType(_accoun
 	return nil
 }
 
-// Get AccountType Getter
+// GetAccountType AccountType Getter
 func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetAccountType() string {
 	return r._accountType
 }
 
-// Set is PushType Setter
+// SetPushType is PushType Setter
 // 消息推送的方式，和技能中申请的权限相关，可选值为TO_USER，TO_APP_BOX，BROADCAST
 func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetPushType(_pushType string) error {
 	r._pushType = _pushType
@@ -98,12 +98,12 @@ func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetPushType(_pushType 
 	return nil
 }
 
-// Get PushType Getter
+// GetPushType PushType Getter
 func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetPushType() string {
 	return r._pushType
 }
 
-// Set is Test Setter
+// SetTest is Test Setter
 // 是否是测试消息
 func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetTest(_test bool) error {
 	r._test = _test
@@ -111,12 +111,12 @@ func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetTest(_test bool) er
 	return nil
 }
 
-// Get Test Getter
+// GetTest Test Getter
 func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetTest() bool {
 	return r._test
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // TO_USER时必填，接收方的用户Id，从技能WebHook中取得的userOpenId
 func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -124,12 +124,12 @@ func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetUserId(_userId stri
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 接收方的用户设备id，从技能WebHook中取得的deviceOpenId，填写设备id，则用户id必填，否则无法推送
 func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -137,12 +137,12 @@ func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetUuid(_uuid string) 
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is AuthAccountType Setter
+// SetAuthAccountType is AuthAccountType Setter
 // 鉴权用户类型
 func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetAuthAccountType(_authAccountType string) error {
 	r._authAccountType = _authAccountType
@@ -150,7 +150,7 @@ func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetAuthAccountType(_au
 	return nil
 }
 
-// Get AuthAccountType Getter
+// GetAuthAccountType AuthAccountType Getter
 func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetAuthAccountType() string {
 	return r._authAccountType
 }

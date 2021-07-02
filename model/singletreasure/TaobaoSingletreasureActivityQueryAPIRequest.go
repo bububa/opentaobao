@@ -37,7 +37,7 @@ func (r TaobaoSingletreasureActivityQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 查询对象
 func (r *TaobaoSingletreasureActivityQueryAPIRequest) SetQuery(_query *PageQueryDto) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *TaobaoSingletreasureActivityQueryAPIRequest) SetQuery(_query *PageQuery
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r TaobaoSingletreasureActivityQueryAPIRequest) GetQuery() *PageQueryDto {
 	return r._query
 }

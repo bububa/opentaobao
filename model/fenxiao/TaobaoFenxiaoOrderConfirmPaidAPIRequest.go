@@ -39,7 +39,7 @@ func (r TaobaoFenxiaoOrderConfirmPaidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PurchaseOrderId Setter
+// SetPurchaseOrderId is PurchaseOrderId Setter
 // 采购单编号。
 func (r *TaobaoFenxiaoOrderConfirmPaidAPIRequest) SetPurchaseOrderId(_purchaseOrderId int64) error {
 	r._purchaseOrderId = _purchaseOrderId
@@ -47,12 +47,12 @@ func (r *TaobaoFenxiaoOrderConfirmPaidAPIRequest) SetPurchaseOrderId(_purchaseOr
 	return nil
 }
 
-// Get PurchaseOrderId Getter
+// GetPurchaseOrderId PurchaseOrderId Getter
 func (r TaobaoFenxiaoOrderConfirmPaidAPIRequest) GetPurchaseOrderId() int64 {
 	return r._purchaseOrderId
 }
 
-// Set is ConfirmRemark Setter
+// SetConfirmRemark is ConfirmRemark Setter
 // 确认支付信息（字数小于100）
 func (r *TaobaoFenxiaoOrderConfirmPaidAPIRequest) SetConfirmRemark(_confirmRemark string) error {
 	r._confirmRemark = _confirmRemark
@@ -60,7 +60,7 @@ func (r *TaobaoFenxiaoOrderConfirmPaidAPIRequest) SetConfirmRemark(_confirmRemar
 	return nil
 }
 
-// Get ConfirmRemark Getter
+// GetConfirmRemark ConfirmRemark Getter
 func (r TaobaoFenxiaoOrderConfirmPaidAPIRequest) GetConfirmRemark() string {
 	return r._confirmRemark
 }

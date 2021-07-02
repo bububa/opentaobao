@@ -37,7 +37,7 @@ func (r AlibabaSecurityJaqAppOfficialVerifyAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is OfficialAppVerifyRequest Setter
+// SetOfficialAppVerifyRequest is OfficialAppVerifyRequest Setter
 // 验证参数
 func (r *AlibabaSecurityJaqAppOfficialVerifyAPIRequest) SetOfficialAppVerifyRequest(_officialAppVerifyRequest *OfficialAppVerifyRequest) error {
 	r._officialAppVerifyRequest = _officialAppVerifyRequest
@@ -45,7 +45,7 @@ func (r *AlibabaSecurityJaqAppOfficialVerifyAPIRequest) SetOfficialAppVerifyRequ
 	return nil
 }
 
-// Get OfficialAppVerifyRequest Getter
+// GetOfficialAppVerifyRequest OfficialAppVerifyRequest Getter
 func (r AlibabaSecurityJaqAppOfficialVerifyAPIRequest) GetOfficialAppVerifyRequest() *OfficialAppVerifyRequest {
 	return r._officialAppVerifyRequest
 }

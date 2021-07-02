@@ -53,7 +53,7 @@ func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TotalFee Setter
+// SetTotalFee is TotalFee Setter
 // 总的收费金额，单位为分
 func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetTotalFee(_totalFee int64) error {
 	r._totalFee = _totalFee
@@ -61,12 +61,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetTotalFee(_totalFee int64
 	return nil
 }
 
-// Get TotalFee Getter
+// GetTotalFee TotalFee Getter
 func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetTotalFee() int64 {
 	return r._totalFee
 }
 
-// Set is HotelCode Setter
+// SetHotelCode is HotelCode Setter
 // 参数必填，发布到阿里旅行的酒店编码
 func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetHotelCode(_hotelCode string) error {
 	r._hotelCode = _hotelCode
@@ -74,12 +74,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetHotelCode(_hotelCode str
 	return nil
 }
 
-// Get HotelCode Getter
+// GetHotelCode HotelCode Getter
 func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetHotelCode() string {
 	return r._hotelCode
 }
 
-// Set is IdNumber Setter
+// SetIdNumber is IdNumber Setter
 // 证件号, 如果加密方式设置为1, 传入加密后的证件号
 func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetIdNumber(_idNumber string) error {
 	r._idNumber = _idNumber
@@ -87,12 +87,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetIdNumber(_idNumber strin
 	return nil
 }
 
-// Get IdNumber Getter
+// GetIdNumber IdNumber Getter
 func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetIdNumber() string {
 	return r._idNumber
 }
 
-// Set is EncryptType Setter
+// SetEncryptType is EncryptType Setter
 // 加密方式, 默认0: 不加密, 信息会通过淘宝开放平台传输, 阿里旅行可以获取到具体信息;  1: SHA-1不可逆加密,  阿里旅行方面无法解析到具体信息, 只用于做信息匹配.注意加密后生成40字节长度的字符串
 func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetEncryptType(_encryptType int64) error {
 	r._encryptType = _encryptType
@@ -100,12 +100,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetEncryptType(_encryptType
 	return nil
 }
 
-// Get EncryptType Getter
+// GetEncryptType EncryptType Getter
 func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetEncryptType() int64 {
 	return r._encryptType
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 验证类型.可以不设置. 默认0-信用住下单资格校验;1-已经创建的信用住订单,入住人在checkIn时的资格复审
 func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -113,12 +113,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetType(_type int64) error 
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is IdType Setter
+// SetIdType is IdType Setter
 // 证件类型, 默认0:身份证; 1: 护照; 2:警官证; 3:士兵证; 4: 回乡证
 func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetIdType(_idType int64) error {
 	r._idType = _idType
@@ -126,12 +126,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetIdType(_idType int64) er
 	return nil
 }
 
-// Get IdType Getter
+// GetIdType IdType Getter
 func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetIdType() int64 {
 	return r._idType
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 不清楚请留空, 用于和outHid共同定位一个酒店
 func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -139,12 +139,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetVendor(_vendor string) e
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is GuestName Setter
+// SetGuestName is GuestName Setter
 // 入住人姓名
 func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetGuestName(_guestName string) error {
 	r._guestName = _guestName
@@ -152,12 +152,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetGuestName(_guestName str
 	return nil
 }
 
-// Get GuestName Getter
+// GetGuestName GuestName Getter
 func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetGuestName() string {
 	return r._guestName
 }
 
-// Set is MobileNo Setter
+// SetMobileNo is MobileNo Setter
 // 客人手机号
 func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetMobileNo(_mobileNo string) error {
 	r._mobileNo = _mobileNo
@@ -165,7 +165,7 @@ func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetMobileNo(_mobileNo strin
 	return nil
 }
 
-// Get MobileNo Getter
+// GetMobileNo MobileNo Getter
 func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetMobileNo() string {
 	return r._mobileNo
 }

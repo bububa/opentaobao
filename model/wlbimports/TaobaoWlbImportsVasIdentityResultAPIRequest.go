@@ -37,7 +37,7 @@ func (r TaobaoWlbImportsVasIdentityResultAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LgOrderCode Setter
+// SetLgOrderCode is LgOrderCode Setter
 // 物流订单编号
 func (r *TaobaoWlbImportsVasIdentityResultAPIRequest) SetLgOrderCode(_lgOrderCode string) error {
 	r._lgOrderCode = _lgOrderCode
@@ -45,7 +45,7 @@ func (r *TaobaoWlbImportsVasIdentityResultAPIRequest) SetLgOrderCode(_lgOrderCod
 	return nil
 }
 
-// Get LgOrderCode Getter
+// GetLgOrderCode LgOrderCode Getter
 func (r TaobaoWlbImportsVasIdentityResultAPIRequest) GetLgOrderCode() string {
 	return r._lgOrderCode
 }

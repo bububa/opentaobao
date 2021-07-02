@@ -37,7 +37,7 @@ func (r AlibabaAlicomOrderPreauthorizeFulfillmentAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is PreAuthorizeModel Setter
+// SetPreAuthorizeModel is PreAuthorizeModel Setter
 // 入参
 func (r *AlibabaAlicomOrderPreauthorizeFulfillmentAPIRequest) SetPreAuthorizeModel(_preAuthorizeModel *PreAuthorizeModel) error {
 	r._preAuthorizeModel = _preAuthorizeModel
@@ -45,7 +45,7 @@ func (r *AlibabaAlicomOrderPreauthorizeFulfillmentAPIRequest) SetPreAuthorizeMod
 	return nil
 }
 
-// Get PreAuthorizeModel Getter
+// GetPreAuthorizeModel PreAuthorizeModel Getter
 func (r AlibabaAlicomOrderPreauthorizeFulfillmentAPIRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
 	return r._preAuthorizeModel
 }

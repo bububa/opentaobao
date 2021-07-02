@@ -39,7 +39,7 @@ func (r AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is ProviderType Setter
+// SetProviderType is ProviderType Setter
 // 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
 func (r *AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest) SetProviderType(_providerType string) error {
 	r._providerType = _providerType
@@ -47,12 +47,12 @@ func (r *AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest) SetProviderTyp
 	return nil
 }
 
-// Get ProviderType Getter
+// GetProviderType ProviderType Getter
 func (r AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest) GetProviderType() string {
 	return r._providerType
 }
 
-// Set is ProviderId Setter
+// SetProviderId is ProviderId Setter
 // 服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id
 func (r *AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest) SetProviderId(_providerId int64) error {
 	r._providerId = _providerId
@@ -60,7 +60,7 @@ func (r *AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest) SetProviderId(
 	return nil
 }
 
-// Get ProviderId Getter
+// GetProviderId ProviderId Getter
 func (r AlibabaSscSupplyplatformServicecapacityDeleteAPIRequest) GetProviderId() int64 {
 	return r._providerId
 }

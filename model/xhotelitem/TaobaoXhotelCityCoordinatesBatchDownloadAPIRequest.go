@@ -37,7 +37,7 @@ func (r TaobaoXhotelCityCoordinatesBatchDownloadAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is BatchId Setter
+// SetBatchId is BatchId Setter
 // 上传的经纬度批次号
 func (r *TaobaoXhotelCityCoordinatesBatchDownloadAPIRequest) SetBatchId(_batchId int64) error {
 	r._batchId = _batchId
@@ -45,7 +45,7 @@ func (r *TaobaoXhotelCityCoordinatesBatchDownloadAPIRequest) SetBatchId(_batchId
 	return nil
 }
 
-// Get BatchId Getter
+// GetBatchId BatchId Getter
 func (r TaobaoXhotelCityCoordinatesBatchDownloadAPIRequest) GetBatchId() int64 {
 	return r._batchId
 }

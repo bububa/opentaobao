@@ -59,7 +59,7 @@ func (r AlibabaEinvoiceBillSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InvoiceItems Setter
+// SetInvoiceItems is InvoiceItems Setter
 // 结算商品单明细列表
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetInvoiceItems(_invoiceItems []BillItemDo) error {
 	r._invoiceItems = _invoiceItems
@@ -67,12 +67,12 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetInvoiceItems(_invoiceItems []Bill
 	return nil
 }
 
-// Get InvoiceItems Getter
+// GetInvoiceItems InvoiceItems Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetInvoiceItems() []BillItemDo {
 	return r._invoiceItems
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 结算单同步操作：=1插入，=2更新，=3废弃删除
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -80,12 +80,12 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetStatus(_status int64) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is OrderDate Setter
+// SetOrderDate is OrderDate Setter
 // 结算单订单日期
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetOrderDate(_orderDate string) error {
 	r._orderDate = _orderDate
@@ -93,12 +93,12 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetOrderDate(_orderDate string) erro
 	return nil
 }
 
-// Get OrderDate Getter
+// GetOrderDate OrderDate Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetOrderDate() string {
 	return r._orderDate
 }
 
-// Set is ShopName Setter
+// SetShopName is ShopName Setter
 // 店铺名称，与后台店铺名称保持一致
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetShopName(_shopName string) error {
 	r._shopName = _shopName
@@ -106,12 +106,12 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetShopName(_shopName string) error 
 	return nil
 }
 
-// Get ShopName Getter
+// GetShopName ShopName Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetShopName() string {
 	return r._shopName
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 税务登记证号
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -119,12 +119,12 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo 
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 结算单订单ID
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -132,12 +132,12 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetOrderId(_orderId string) error {
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is SumPrice Setter
+// SetSumPrice is SumPrice Setter
 // 结算单总价格，小数点后2两位
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetSumPrice(_sumPrice string) error {
 	r._sumPrice = _sumPrice
@@ -145,12 +145,12 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetSumPrice(_sumPrice string) error 
 	return nil
 }
 
-// Get SumPrice Getter
+// GetSumPrice SumPrice Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetSumPrice() string {
 	return r._sumPrice
 }
 
-// Set is Platform Setter
+// SetPlatform is Platform Setter
 // 调用平台，用于区分同一个税号下多个店铺来源["TB:淘宝","ALIPAY:支付宝","TM:天猫","JD:京东","DD:当当","PP:拍拍","YX:易讯","EBAY:ebay","QQ:QQ网购","AMAZON:亚马逊","SN:苏宁","GM:国美","WPH:唯品会","JM:聚美","LF:乐蜂","MGJ:蘑菇街","JS:聚尚","PX:拍鞋","YT:银泰","YHD:1号店","VANCL:凡客","YL:邮乐","YG:优购","1688:阿里巴巴","POS:POS门店","ELEME:饿了么","OTHER:其他"]
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetPlatform(_platform string) error {
 	r._platform = _platform
@@ -158,12 +158,12 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetPlatform(_platform string) error 
 	return nil
 }
 
-// Get Platform Getter
+// GetPlatform Platform Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetPlatform() string {
 	return r._platform
 }
 
-// Set is Qrcode Setter
+// SetQrcode is Qrcode Setter
 // 生成二维码参数，若不需要生成二维码，则不填
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetQrcode(_qrcode *QrCodeDo) error {
 	r._qrcode = _qrcode
@@ -171,12 +171,12 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetQrcode(_qrcode *QrCodeDo) error {
 	return nil
 }
 
-// Get Qrcode Getter
+// GetQrcode Qrcode Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetQrcode() *QrCodeDo {
 	return r._qrcode
 }
 
-// Set is BrandName Setter
+// SetBrandName is BrandName Setter
 // 品牌名称，不填默认=shop_name
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetBrandName(_brandName string) error {
 	r._brandName = _brandName
@@ -184,12 +184,12 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetBrandName(_brandName string) erro
 	return nil
 }
 
-// Get BrandName Getter
+// GetBrandName BrandName Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetBrandName() string {
 	return r._brandName
 }
 
-// Set is InvoicePrice Setter
+// SetInvoicePrice is InvoicePrice Setter
 // 结算单可开票总金额（不填=sumPrice），小数点后2两位
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetInvoicePrice(_invoicePrice string) error {
 	r._invoicePrice = _invoicePrice
@@ -197,12 +197,12 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetInvoicePrice(_invoicePrice string
 	return nil
 }
 
-// Get InvoicePrice Getter
+// GetInvoicePrice InvoicePrice Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetInvoicePrice() string {
 	return r._invoicePrice
 }
 
-// Set is ShopPlatform Setter
+// SetShopPlatform is ShopPlatform Setter
 // 开票店铺的平台，默认等于platform
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetShopPlatform(_shopPlatform string) error {
 	r._shopPlatform = _shopPlatform
@@ -210,7 +210,7 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetShopPlatform(_shopPlatform string
 	return nil
 }
 
-// Get ShopPlatform Getter
+// GetShopPlatform ShopPlatform Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetShopPlatform() string {
 	return r._shopPlatform
 }

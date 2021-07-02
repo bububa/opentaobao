@@ -37,7 +37,7 @@ func (r AlitripRailIrCarrierGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 商家id
 func (r *AlitripRailIrCarrierGetAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -45,7 +45,7 @@ func (r *AlitripRailIrCarrierGetAPIRequest) SetAgentId(_agentId int64) error {
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r AlitripRailIrCarrierGetAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }

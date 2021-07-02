@@ -43,7 +43,7 @@ func (r AlibabaDamaiMaitixSeatTokenQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PerformId Setter
+// SetPerformId is PerformId Setter
 // 场次ID-必填
 func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetPerformId(_performId int64) error {
 	r._performId = _performId
@@ -51,12 +51,12 @@ func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetPerformId(_performId int
 	return nil
 }
 
-// Get PerformId Getter
+// GetPerformId PerformId Getter
 func (r AlibabaDamaiMaitixSeatTokenQueryAPIRequest) GetPerformId() int64 {
 	return r._performId
 }
 
-// Set is ProjectId Setter
+// SetProjectId is ProjectId Setter
 // 项目ID-必填
 func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetProjectId(_projectId int64) error {
 	r._projectId = _projectId
@@ -64,12 +64,12 @@ func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetProjectId(_projectId int
 	return nil
 }
 
-// Get ProjectId Getter
+// GetProjectId ProjectId Getter
 func (r AlibabaDamaiMaitixSeatTokenQueryAPIRequest) GetProjectId() int64 {
 	return r._projectId
 }
 
-// Set is CallbackUrl Setter
+// SetCallbackUrl is CallbackUrl Setter
 // 必填-选座结束跳转回去的url,这是渠道方自己的url地址,用于接收选座后的座位信息参数
 func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetCallbackUrl(_callbackUrl string) error {
 	r._callbackUrl = _callbackUrl
@@ -77,12 +77,12 @@ func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetCallbackUrl(_callbackUrl
 	return nil
 }
 
-// Get CallbackUrl Getter
+// GetCallbackUrl CallbackUrl Getter
 func (r AlibabaDamaiMaitixSeatTokenQueryAPIRequest) GetCallbackUrl() string {
 	return r._callbackUrl
 }
 
-// Set is RequestId Setter
+// SetRequestId is RequestId Setter
 // 会话ID，保证一次选座会话,建议使用 appKey+随机串 生成 ；注意：同一个场次下的会话ID不能重复
 func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetRequestId(_requestId string) error {
 	r._requestId = _requestId
@@ -90,7 +90,7 @@ func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetRequestId(_requestId str
 	return nil
 }
 
-// Get RequestId Getter
+// GetRequestId RequestId Getter
 func (r AlibabaDamaiMaitixSeatTokenQueryAPIRequest) GetRequestId() string {
 	return r._requestId
 }

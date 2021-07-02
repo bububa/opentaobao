@@ -39,7 +39,7 @@ func (r AlibabaWdkMarketingExpirePromotionQueryAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 店铺id
 func (r *AlibabaWdkMarketingExpirePromotionQueryAPIRequest) SetShopId(_shopId string) error {
 	r._shopId = _shopId
@@ -47,12 +47,12 @@ func (r *AlibabaWdkMarketingExpirePromotionQueryAPIRequest) SetShopId(_shopId st
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r AlibabaWdkMarketingExpirePromotionQueryAPIRequest) GetShopId() string {
 	return r._shopId
 }
 
-// Set is SkuCode Setter
+// SetSkuCode is SkuCode Setter
 // 商品skucode
 func (r *AlibabaWdkMarketingExpirePromotionQueryAPIRequest) SetSkuCode(_skuCode string) error {
 	r._skuCode = _skuCode
@@ -60,7 +60,7 @@ func (r *AlibabaWdkMarketingExpirePromotionQueryAPIRequest) SetSkuCode(_skuCode 
 	return nil
 }
 
-// Get SkuCode Getter
+// GetSkuCode SkuCode Getter
 func (r AlibabaWdkMarketingExpirePromotionQueryAPIRequest) GetSkuCode() string {
 	return r._skuCode
 }

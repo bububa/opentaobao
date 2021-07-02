@@ -37,7 +37,7 @@ func (r TaobaoBusBusnumberGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamBusNumberSearchRQ Setter
+// SetParamBusNumberSearchRQ is ParamBusNumberSearchRQ Setter
 // 车次查询入参
 func (r *TaobaoBusBusnumberGetAPIRequest) SetParamBusNumberSearchRQ(_paramBusNumberSearchRQ *BusNumberSearchRq) error {
 	r._paramBusNumberSearchRQ = _paramBusNumberSearchRQ
@@ -45,7 +45,7 @@ func (r *TaobaoBusBusnumberGetAPIRequest) SetParamBusNumberSearchRQ(_paramBusNum
 	return nil
 }
 
-// Get ParamBusNumberSearchRQ Getter
+// GetParamBusNumberSearchRQ ParamBusNumberSearchRQ Getter
 func (r TaobaoBusBusnumberGetAPIRequest) GetParamBusNumberSearchRQ() *BusNumberSearchRq {
 	return r._paramBusNumberSearchRQ
 }

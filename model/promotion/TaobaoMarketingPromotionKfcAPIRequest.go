@@ -39,7 +39,7 @@ func (r TaobaoMarketingPromotionKfcAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PromotionTitle Setter
+// SetPromotionTitle is PromotionTitle Setter
 // 活动名称
 func (r *TaobaoMarketingPromotionKfcAPIRequest) SetPromotionTitle(_promotionTitle string) error {
 	r._promotionTitle = _promotionTitle
@@ -47,12 +47,12 @@ func (r *TaobaoMarketingPromotionKfcAPIRequest) SetPromotionTitle(_promotionTitl
 	return nil
 }
 
-// Get PromotionTitle Getter
+// GetPromotionTitle PromotionTitle Getter
 func (r TaobaoMarketingPromotionKfcAPIRequest) GetPromotionTitle() string {
 	return r._promotionTitle
 }
 
-// Set is PromotionDesc Setter
+// SetPromotionDesc is PromotionDesc Setter
 // 活动描述
 func (r *TaobaoMarketingPromotionKfcAPIRequest) SetPromotionDesc(_promotionDesc string) error {
 	r._promotionDesc = _promotionDesc
@@ -60,7 +60,7 @@ func (r *TaobaoMarketingPromotionKfcAPIRequest) SetPromotionDesc(_promotionDesc 
 	return nil
 }
 
-// Get PromotionDesc Getter
+// GetPromotionDesc PromotionDesc Getter
 func (r TaobaoMarketingPromotionKfcAPIRequest) GetPromotionDesc() string {
 	return r._promotionDesc
 }

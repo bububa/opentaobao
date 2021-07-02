@@ -51,7 +51,7 @@ func (r AliexpressAffiliateOrderListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 开始时间
 func (r *AliexpressAffiliateOrderListAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -59,12 +59,12 @@ func (r *AliexpressAffiliateOrderListAPIRequest) SetStartTime(_startTime string)
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r AliexpressAffiliateOrderListAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间
 func (r *AliexpressAffiliateOrderListAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -72,12 +72,12 @@ func (r *AliexpressAffiliateOrderListAPIRequest) SetEndTime(_endTime string) err
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r AliexpressAffiliateOrderListAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 订单状态:Payment Completed,Buyer Confirmed Receipt
 func (r *AliexpressAffiliateOrderListAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -85,12 +85,12 @@ func (r *AliexpressAffiliateOrderListAPIRequest) SetStatus(_status string) error
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AliexpressAffiliateOrderListAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is LocaleSite Setter
+// SetLocaleSite is LocaleSite Setter
 // 站点信息：global、ru_site、es_site、it_site
 func (r *AliexpressAffiliateOrderListAPIRequest) SetLocaleSite(_localeSite string) error {
 	r._localeSite = _localeSite
@@ -98,12 +98,12 @@ func (r *AliexpressAffiliateOrderListAPIRequest) SetLocaleSite(_localeSite strin
 	return nil
 }
 
-// Get LocaleSite Getter
+// GetLocaleSite LocaleSite Getter
 func (r AliexpressAffiliateOrderListAPIRequest) GetLocaleSite() string {
 	return r._localeSite
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页数
 func (r *AliexpressAffiliateOrderListAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -111,12 +111,12 @@ func (r *AliexpressAffiliateOrderListAPIRequest) SetPageNo(_pageNo int64) error 
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r AliexpressAffiliateOrderListAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页记录数
 func (r *AliexpressAffiliateOrderListAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -124,12 +124,12 @@ func (r *AliexpressAffiliateOrderListAPIRequest) SetPageSize(_pageSize int64) er
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AliexpressAffiliateOrderListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回的字段信息
 func (r *AliexpressAffiliateOrderListAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -137,12 +137,12 @@ func (r *AliexpressAffiliateOrderListAPIRequest) SetFields(_fields string) error
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r AliexpressAffiliateOrderListAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is AppSignature Setter
+// SetAppSignature is AppSignature Setter
 // 安全签名
 func (r *AliexpressAffiliateOrderListAPIRequest) SetAppSignature(_appSignature string) error {
 	r._appSignature = _appSignature
@@ -150,7 +150,7 @@ func (r *AliexpressAffiliateOrderListAPIRequest) SetAppSignature(_appSignature s
 	return nil
 }
 
-// Get AppSignature Getter
+// GetAppSignature AppSignature Getter
 func (r AliexpressAffiliateOrderListAPIRequest) GetAppSignature() string {
 	return r._appSignature
 }

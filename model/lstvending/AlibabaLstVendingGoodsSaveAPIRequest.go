@@ -37,7 +37,7 @@ func (r AlibabaLstVendingGoodsSaveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GoodsDTOList Setter
+// SetGoodsDTOList is GoodsDTOList Setter
 // 商品信息
 func (r *AlibabaLstVendingGoodsSaveAPIRequest) SetGoodsDTOList(_goodsDTOList []VendingGoodsDto) error {
 	r._goodsDTOList = _goodsDTOList
@@ -45,7 +45,7 @@ func (r *AlibabaLstVendingGoodsSaveAPIRequest) SetGoodsDTOList(_goodsDTOList []V
 	return nil
 }
 
-// Get GoodsDTOList Getter
+// GetGoodsDTOList GoodsDTOList Getter
 func (r AlibabaLstVendingGoodsSaveAPIRequest) GetGoodsDTOList() []VendingGoodsDto {
 	return r._goodsDTOList
 }

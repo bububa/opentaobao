@@ -37,7 +37,7 @@ func (r TaobaoSimbaKeywordFindbyidsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BidwordIds Setter
+// SetBidwordIds is BidwordIds Setter
 // 关键词ids
 func (r *TaobaoSimbaKeywordFindbyidsAPIRequest) SetBidwordIds(_bidwordIds []int64) error {
 	r._bidwordIds = _bidwordIds
@@ -45,7 +45,7 @@ func (r *TaobaoSimbaKeywordFindbyidsAPIRequest) SetBidwordIds(_bidwordIds []int6
 	return nil
 }
 
-// Get BidwordIds Getter
+// GetBidwordIds BidwordIds Getter
 func (r TaobaoSimbaKeywordFindbyidsAPIRequest) GetBidwordIds() []int64 {
 	return r._bidwordIds
 }

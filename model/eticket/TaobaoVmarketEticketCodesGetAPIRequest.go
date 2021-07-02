@@ -39,7 +39,7 @@ func (r TaobaoVmarketEticketCodesGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单号
 func (r *TaobaoVmarketEticketCodesGetAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *TaobaoVmarketEticketCodesGetAPIRequest) SetOrderId(_orderId int64) erro
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoVmarketEticketCodesGetAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is CodemerchantId Setter
+// SetCodemerchantId is CodemerchantId Setter
 // 码商ID
 func (r *TaobaoVmarketEticketCodesGetAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
 	r._codemerchantId = _codemerchantId
@@ -60,7 +60,7 @@ func (r *TaobaoVmarketEticketCodesGetAPIRequest) SetCodemerchantId(_codemerchant
 	return nil
 }
 
-// Get CodemerchantId Getter
+// GetCodemerchantId CodemerchantId Getter
 func (r TaobaoVmarketEticketCodesGetAPIRequest) GetCodemerchantId() int64 {
 	return r._codemerchantId
 }

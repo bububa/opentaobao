@@ -45,7 +45,7 @@ func (r AlibabaTuikeWebUnionOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TimeType Setter
+// SetTimeType is TimeType Setter
 // 0 表示time为下单时间;1表示time为更新时间
 func (r *AlibabaTuikeWebUnionOrderQueryAPIRequest) SetTimeType(_timeType int64) error {
 	r._timeType = _timeType
@@ -53,12 +53,12 @@ func (r *AlibabaTuikeWebUnionOrderQueryAPIRequest) SetTimeType(_timeType int64) 
 	return nil
 }
 
-// Get TimeType Getter
+// GetTimeType TimeType Getter
 func (r AlibabaTuikeWebUnionOrderQueryAPIRequest) GetTimeType() int64 {
 	return r._timeType
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 13位时间戳
 func (r *AlibabaTuikeWebUnionOrderQueryAPIRequest) SetStartTime(_startTime int64) error {
 	r._startTime = _startTime
@@ -66,12 +66,12 @@ func (r *AlibabaTuikeWebUnionOrderQueryAPIRequest) SetStartTime(_startTime int64
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r AlibabaTuikeWebUnionOrderQueryAPIRequest) GetStartTime() int64 {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 13位时间戳
 func (r *AlibabaTuikeWebUnionOrderQueryAPIRequest) SetEndTime(_endTime int64) error {
 	r._endTime = _endTime
@@ -79,12 +79,12 @@ func (r *AlibabaTuikeWebUnionOrderQueryAPIRequest) SetEndTime(_endTime int64) er
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r AlibabaTuikeWebUnionOrderQueryAPIRequest) GetEndTime() int64 {
 	return r._endTime
 }
 
-// Set is PageOffset Setter
+// SetPageOffset is PageOffset Setter
 // 页码偏移
 func (r *AlibabaTuikeWebUnionOrderQueryAPIRequest) SetPageOffset(_pageOffset int64) error {
 	r._pageOffset = _pageOffset
@@ -92,12 +92,12 @@ func (r *AlibabaTuikeWebUnionOrderQueryAPIRequest) SetPageOffset(_pageOffset int
 	return nil
 }
 
-// Get PageOffset Getter
+// GetPageOffset PageOffset Getter
 func (r AlibabaTuikeWebUnionOrderQueryAPIRequest) GetPageOffset() int64 {
 	return r._pageOffset
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 返回条数
 func (r *AlibabaTuikeWebUnionOrderQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -105,7 +105,7 @@ func (r *AlibabaTuikeWebUnionOrderQueryAPIRequest) SetPageSize(_pageSize int64) 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaTuikeWebUnionOrderQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

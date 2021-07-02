@@ -37,7 +37,7 @@ func (r AlibabaPurMediaStatisticsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MediaStatisticsDTO Setter
+// SetMediaStatisticsDTO is MediaStatisticsDTO Setter
 // 新媒体统计对象
 func (r *AlibabaPurMediaStatisticsAPIRequest) SetMediaStatisticsDTO(_mediaStatisticsDTO []MediaStatisticsDto) error {
 	r._mediaStatisticsDTO = _mediaStatisticsDTO
@@ -45,7 +45,7 @@ func (r *AlibabaPurMediaStatisticsAPIRequest) SetMediaStatisticsDTO(_mediaStatis
 	return nil
 }
 
-// Get MediaStatisticsDTO Getter
+// GetMediaStatisticsDTO MediaStatisticsDTO Getter
 func (r AlibabaPurMediaStatisticsAPIRequest) GetMediaStatisticsDTO() []MediaStatisticsDto {
 	return r._mediaStatisticsDTO
 }

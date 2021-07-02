@@ -39,7 +39,7 @@ func (r TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 订单id
 func (r *TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
@@ -47,12 +47,12 @@ func (r *TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) SetBizOrderId(_bizOrd
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }
 
-// Set is NormalVisaUserUnitList Setter
+// SetNormalVisaUserUnitList is NormalVisaUserUnitList Setter
 // 列表：签证人信息列表
 func (r *TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) SetNormalVisaUserUnitList(_normalVisaUserUnitList []NormalVisaUserUnit) error {
 	r._normalVisaUserUnitList = _normalVisaUserUnitList
@@ -60,7 +60,7 @@ func (r *TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) SetNormalVisaUserUnit
 	return nil
 }
 
-// Get NormalVisaUserUnitList Getter
+// GetNormalVisaUserUnitList NormalVisaUserUnitList Getter
 func (r TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) GetNormalVisaUserUnitList() []NormalVisaUserUnit {
 	return r._normalVisaUserUnitList
 }

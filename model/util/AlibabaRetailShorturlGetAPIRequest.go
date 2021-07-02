@@ -39,7 +39,7 @@ func (r AlibabaRetailShorturlGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SourceUrl Setter
+// SetSourceUrl is SourceUrl Setter
 // 源url
 func (r *AlibabaRetailShorturlGetAPIRequest) SetSourceUrl(_sourceUrl string) error {
 	r._sourceUrl = _sourceUrl
@@ -47,12 +47,12 @@ func (r *AlibabaRetailShorturlGetAPIRequest) SetSourceUrl(_sourceUrl string) err
 	return nil
 }
 
-// Get SourceUrl Getter
+// GetSourceUrl SourceUrl Getter
 func (r AlibabaRetailShorturlGetAPIRequest) GetSourceUrl() string {
 	return r._sourceUrl
 }
 
-// Set is Options Setter
+// SetOptions is Options Setter
 // 系统自动生成
 func (r *AlibabaRetailShorturlGetAPIRequest) SetOptions(_options *ShortUrlOption) error {
 	r._options = _options
@@ -60,7 +60,7 @@ func (r *AlibabaRetailShorturlGetAPIRequest) SetOptions(_options *ShortUrlOption
 	return nil
 }
 
-// Get Options Getter
+// GetOptions Options Getter
 func (r AlibabaRetailShorturlGetAPIRequest) GetOptions() *ShortUrlOption {
 	return r._options
 }

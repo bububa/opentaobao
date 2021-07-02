@@ -37,7 +37,7 @@ func (r TaobaoWlbWaybillIQuerydetailAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WaybillDetailQueryRequest Setter
+// SetWaybillDetailQueryRequest is WaybillDetailQueryRequest Setter
 // 面单查询请求
 func (r *TaobaoWlbWaybillIQuerydetailAPIRequest) SetWaybillDetailQueryRequest(_waybillDetailQueryRequest *WaybillDetailQueryRequest) error {
 	r._waybillDetailQueryRequest = _waybillDetailQueryRequest
@@ -45,7 +45,7 @@ func (r *TaobaoWlbWaybillIQuerydetailAPIRequest) SetWaybillDetailQueryRequest(_w
 	return nil
 }
 
-// Get WaybillDetailQueryRequest Getter
+// GetWaybillDetailQueryRequest WaybillDetailQueryRequest Getter
 func (r TaobaoWlbWaybillIQuerydetailAPIRequest) GetWaybillDetailQueryRequest() *WaybillDetailQueryRequest {
 	return r._waybillDetailQueryRequest
 }

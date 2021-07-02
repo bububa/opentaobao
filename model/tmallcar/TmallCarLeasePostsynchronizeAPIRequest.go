@@ -37,7 +37,7 @@ func (r TmallCarLeasePostsynchronizeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SchemeDto Setter
+// SetSchemeDto is SchemeDto Setter
 // 租后方案信息
 func (r *TmallCarLeasePostsynchronizeAPIRequest) SetSchemeDto(_schemeDto *CarLeasePostSchemeSynchronizeDto) error {
 	r._schemeDto = _schemeDto
@@ -45,7 +45,7 @@ func (r *TmallCarLeasePostsynchronizeAPIRequest) SetSchemeDto(_schemeDto *CarLea
 	return nil
 }
 
-// Get SchemeDto Getter
+// GetSchemeDto SchemeDto Getter
 func (r TmallCarLeasePostsynchronizeAPIRequest) GetSchemeDto() *CarLeasePostSchemeSynchronizeDto {
 	return r._schemeDto
 }

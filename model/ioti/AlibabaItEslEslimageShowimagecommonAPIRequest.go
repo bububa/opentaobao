@@ -45,7 +45,7 @@ func (r AlibabaItEslEslimageShowimagecommonAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Mac Setter
+// SetMac is Mac Setter
 // ma地址
 func (r *AlibabaItEslEslimageShowimagecommonAPIRequest) SetMac(_mac string) error {
 	r._mac = _mac
@@ -53,12 +53,12 @@ func (r *AlibabaItEslEslimageShowimagecommonAPIRequest) SetMac(_mac string) erro
 	return nil
 }
 
-// Get Mac Getter
+// GetMac Mac Getter
 func (r AlibabaItEslEslimageShowimagecommonAPIRequest) GetMac() string {
 	return r._mac
 }
 
-// Set is Content2 Setter
+// SetContent2 is Content2 Setter
 // 图片的base64编码,图片要和价签大小一致
 func (r *AlibabaItEslEslimageShowimagecommonAPIRequest) SetContent2(_content2 string) error {
 	r._content2 = _content2
@@ -66,12 +66,12 @@ func (r *AlibabaItEslEslimageShowimagecommonAPIRequest) SetContent2(_content2 st
 	return nil
 }
 
-// Get Content2 Getter
+// GetContent2 Content2 Getter
 func (r AlibabaItEslEslimageShowimagecommonAPIRequest) GetContent2() string {
 	return r._content2
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 图片2的base64编码,图片要和价签大小一致
 func (r *AlibabaItEslEslimageShowimagecommonAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -79,12 +79,12 @@ func (r *AlibabaItEslEslimageShowimagecommonAPIRequest) SetContent(_content stri
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r AlibabaItEslEslimageShowimagecommonAPIRequest) GetContent() string {
 	return r._content
 }
 
-// Set is IsCompress Setter
+// SetIsCompress is IsCompress Setter
 // 是否压缩，默认不传，字符串：yes，no
 func (r *AlibabaItEslEslimageShowimagecommonAPIRequest) SetIsCompress(_isCompress string) error {
 	r._isCompress = _isCompress
@@ -92,12 +92,12 @@ func (r *AlibabaItEslEslimageShowimagecommonAPIRequest) SetIsCompress(_isCompres
 	return nil
 }
 
-// Get IsCompress Getter
+// GetIsCompress IsCompress Getter
 func (r AlibabaItEslEslimageShowimagecommonAPIRequest) GetIsCompress() string {
 	return r._isCompress
 }
 
-// Set is IsManual Setter
+// SetIsManual is IsManual Setter
 // 是否手动刷图，默认不传，字符串：true，false
 func (r *AlibabaItEslEslimageShowimagecommonAPIRequest) SetIsManual(_isManual string) error {
 	r._isManual = _isManual
@@ -105,7 +105,7 @@ func (r *AlibabaItEslEslimageShowimagecommonAPIRequest) SetIsManual(_isManual st
 	return nil
 }
 
-// Get IsManual Getter
+// GetIsManual IsManual Getter
 func (r AlibabaItEslEslimageShowimagecommonAPIRequest) GetIsManual() string {
 	return r._isManual
 }

@@ -44,7 +44,7 @@ func (r AlitripRailIrDivisionGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商id
 func (r *AlitripRailIrDivisionGetAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -52,12 +52,12 @@ func (r *AlitripRailIrDivisionGetAPIRequest) SetAgentId(_agentId int64) error {
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r AlitripRailIrDivisionGetAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is Level Setter
+// SetLevel is Level Setter
 // 层级，1洲，2是国家，3是省，4是市，5是区，6是街道/镇，7是村，8是逻辑行政区，境外火车票业务只需要市级别，传4就可以
 func (r *AlitripRailIrDivisionGetAPIRequest) SetLevel(_level int64) error {
 	r._level = _level
@@ -65,12 +65,12 @@ func (r *AlitripRailIrDivisionGetAPIRequest) SetLevel(_level int64) error {
 	return nil
 }
 
-// Get Level Getter
+// GetLevel Level Getter
 func (r AlitripRailIrDivisionGetAPIRequest) GetLevel() int64 {
 	return r._level
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数
 func (r *AlitripRailIrDivisionGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -78,12 +78,12 @@ func (r *AlitripRailIrDivisionGetAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlitripRailIrDivisionGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 页数，从1开始
 func (r *AlitripRailIrDivisionGetAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -91,7 +91,7 @@ func (r *AlitripRailIrDivisionGetAPIRequest) SetPageIndex(_pageIndex int64) erro
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r AlitripRailIrDivisionGetAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }

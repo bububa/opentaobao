@@ -41,7 +41,7 @@ func (r TaobaoUsceslBizApDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ApMac Setter
+// SetApMac is ApMac Setter
 // ap的MAC地址
 func (r *TaobaoUsceslBizApDeleteAPIRequest) SetApMac(_apMac string) error {
 	r._apMac = _apMac
@@ -49,12 +49,12 @@ func (r *TaobaoUsceslBizApDeleteAPIRequest) SetApMac(_apMac string) error {
 	return nil
 }
 
-// Get ApMac Getter
+// GetApMac ApMac Getter
 func (r TaobaoUsceslBizApDeleteAPIRequest) GetApMac() string {
 	return r._apMac
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *TaobaoUsceslBizApDeleteAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -62,12 +62,12 @@ func (r *TaobaoUsceslBizApDeleteAPIRequest) SetStoreId(_storeId int64) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoUsceslBizApDeleteAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is BizBrandKey Setter
+// SetBizBrandKey is BizBrandKey Setter
 // 商家CODE
 func (r *TaobaoUsceslBizApDeleteAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
 	r._bizBrandKey = _bizBrandKey
@@ -75,7 +75,7 @@ func (r *TaobaoUsceslBizApDeleteAPIRequest) SetBizBrandKey(_bizBrandKey string) 
 	return nil
 }
 
-// Get BizBrandKey Getter
+// GetBizBrandKey BizBrandKey Getter
 func (r TaobaoUsceslBizApDeleteAPIRequest) GetBizBrandKey() string {
 	return r._bizBrandKey
 }

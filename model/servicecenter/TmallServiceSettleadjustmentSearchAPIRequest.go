@@ -39,7 +39,7 @@ func (r TmallServiceSettleadjustmentSearchAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间
 func (r *TmallServiceSettleadjustmentSearchAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -47,12 +47,12 @@ func (r *TmallServiceSettleadjustmentSearchAPIRequest) SetEndTime(_endTime strin
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TmallServiceSettleadjustmentSearchAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 开始时间
 func (r *TmallServiceSettleadjustmentSearchAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -60,7 +60,7 @@ func (r *TmallServiceSettleadjustmentSearchAPIRequest) SetStartTime(_startTime s
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TmallServiceSettleadjustmentSearchAPIRequest) GetStartTime() string {
 	return r._startTime
 }

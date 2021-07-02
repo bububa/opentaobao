@@ -39,7 +39,7 @@ func (r TaobaoOpenmallTraceSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Distributor Setter
+// SetDistributor is Distributor Setter
 // 签约支付宝代扣的账号
 func (r *TaobaoOpenmallTraceSearchAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
@@ -47,12 +47,12 @@ func (r *TaobaoOpenmallTraceSearchAPIRequest) SetDistributor(_distributor string
 	return nil
 }
 
-// Get Distributor Getter
+// GetDistributor Distributor Getter
 func (r TaobaoOpenmallTraceSearchAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝订单编号
 func (r *TaobaoOpenmallTraceSearchAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -60,7 +60,7 @@ func (r *TaobaoOpenmallTraceSearchAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoOpenmallTraceSearchAPIRequest) GetTid() int64 {
 	return r._tid
 }

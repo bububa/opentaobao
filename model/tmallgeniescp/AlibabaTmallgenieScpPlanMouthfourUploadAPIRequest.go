@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is MonthFourPrRequest Setter
+// SetMonthFourPrRequest is MonthFourPrRequest Setter
 // 请求参数
 func (r *AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest) SetMonthFourPrRequest(_monthFourPrRequest *MonthFourPrRequest) error {
 	r._monthFourPrRequest = _monthFourPrRequest
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest) SetMonthFourPrReques
 	return nil
 }
 
-// Get MonthFourPrRequest Getter
+// GetMonthFourPrRequest MonthFourPrRequest Getter
 func (r AlibabaTmallgenieScpPlanMouthfourUploadAPIRequest) GetMonthFourPrRequest() *MonthFourPrRequest {
 	return r._monthFourPrRequest
 }

@@ -37,7 +37,7 @@ func (r AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is EnterpriseDatas Setter
+// SetEnterpriseDatas is EnterpriseDatas Setter
 // 批量员工信息
 func (r *AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest) SetEnterpriseDatas(_enterpriseDatas []EmployeeInfoDto) error {
 	r._enterpriseDatas = _enterpriseDatas
@@ -45,7 +45,7 @@ func (r *AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest) SetEnterpriseDatas(_
 	return nil
 }
 
-// Get EnterpriseDatas Getter
+// GetEnterpriseDatas EnterpriseDatas Getter
 func (r AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest) GetEnterpriseDatas() []EmployeeInfoDto {
 	return r._enterpriseDatas
 }

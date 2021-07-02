@@ -59,7 +59,7 @@ func (r TmallServicecenterWorkcardReserveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -67,12 +67,12 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetWorkcardId(_workcardId 
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }
 
-// Set is ReserveTimeStart Setter
+// SetReserveTimeStart is ReserveTimeStart Setter
 // 服务开始时间
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetReserveTimeStart(_reserveTimeStart string) error {
 	r._reserveTimeStart = _reserveTimeStart
@@ -80,12 +80,12 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetReserveTimeStart(_reser
 	return nil
 }
 
-// Get ReserveTimeStart Getter
+// GetReserveTimeStart ReserveTimeStart Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetReserveTimeStart() string {
 	return r._reserveTimeStart
 }
 
-// Set is ReserveTimeEnd Setter
+// SetReserveTimeEnd is ReserveTimeEnd Setter
 // 服务结束时间
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetReserveTimeEnd(_reserveTimeEnd string) error {
 	r._reserveTimeEnd = _reserveTimeEnd
@@ -93,12 +93,12 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetReserveTimeEnd(_reserve
 	return nil
 }
 
-// Get ReserveTimeEnd Getter
+// GetReserveTimeEnd ReserveTimeEnd Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetReserveTimeEnd() string {
 	return r._reserveTimeEnd
 }
 
-// Set is WorkerMobile Setter
+// SetWorkerMobile is WorkerMobile Setter
 // 工人手机号
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetWorkerMobile(_workerMobile string) error {
 	r._workerMobile = _workerMobile
@@ -106,12 +106,12 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetWorkerMobile(_workerMob
 	return nil
 }
 
-// Get WorkerMobile Getter
+// GetWorkerMobile WorkerMobile Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetWorkerMobile() string {
 	return r._workerMobile
 }
 
-// Set is ReserveRemark Setter
+// SetReserveRemark is ReserveRemark Setter
 // 预约备注信息
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetReserveRemark(_reserveRemark string) error {
 	r._reserveRemark = _reserveRemark
@@ -119,12 +119,12 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetReserveRemark(_reserveR
 	return nil
 }
 
-// Get ReserveRemark Getter
+// GetReserveRemark ReserveRemark Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetReserveRemark() string {
 	return r._reserveRemark
 }
 
-// Set is WorkerName Setter
+// SetWorkerName is WorkerName Setter
 // 工人姓名
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetWorkerName(_workerName string) error {
 	r._workerName = _workerName
@@ -132,12 +132,12 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetWorkerName(_workerName 
 	return nil
 }
 
-// Get WorkerName Getter
+// GetWorkerName WorkerName Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetWorkerName() string {
 	return r._workerName
 }
 
-// Set is Attributes Setter
+// SetAttributes is Attributes Setter
 // 扩展信息
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetAttributes(_attributes string) error {
 	r._attributes = _attributes
@@ -145,12 +145,12 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetAttributes(_attributes 
 	return nil
 }
 
-// Get Attributes Getter
+// GetAttributes Attributes Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetAttributes() string {
 	return r._attributes
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // 存在多个不同预约节点时需要回传。用于区分具体是哪个预约节点，例如预约上门鉴定和预约上门取件
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -158,12 +158,12 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetAction(_action string) 
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetAction() string {
 	return r._action
 }
 
-// Set is FulfilType Setter
+// SetFulfilType is FulfilType Setter
 // 履约类型，上门或者到店
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetFulfilType(_fulfilType string) error {
 	r._fulfilType = _fulfilType
@@ -171,12 +171,12 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetFulfilType(_fulfilType 
 	return nil
 }
 
-// Get FulfilType Getter
+// GetFulfilType FulfilType Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetFulfilType() string {
 	return r._fulfilType
 }
 
-// Set is ServiceStoreCode Setter
+// SetServiceStoreCode is ServiceStoreCode Setter
 // 门店编码
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetServiceStoreCode(_serviceStoreCode string) error {
 	r._serviceStoreCode = _serviceStoreCode
@@ -184,12 +184,12 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetServiceStoreCode(_servi
 	return nil
 }
 
-// Get ServiceStoreCode Getter
+// GetServiceStoreCode ServiceStoreCode Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetServiceStoreCode() string {
 	return r._serviceStoreCode
 }
 
-// Set is ServiceStoreName Setter
+// SetServiceStoreName is ServiceStoreName Setter
 // 门店名称
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetServiceStoreName(_serviceStoreName string) error {
 	r._serviceStoreName = _serviceStoreName
@@ -197,12 +197,12 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetServiceStoreName(_servi
 	return nil
 }
 
-// Get ServiceStoreName Getter
+// GetServiceStoreName ServiceStoreName Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetServiceStoreName() string {
 	return r._serviceStoreName
 }
 
-// Set is FulfilTaskId Setter
+// SetFulfilTaskId is FulfilTaskId Setter
 // 核销单id
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetFulfilTaskId(_fulfilTaskId int64) error {
 	r._fulfilTaskId = _fulfilTaskId
@@ -210,7 +210,7 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetFulfilTaskId(_fulfilTas
 	return nil
 }
 
-// Get FulfilTaskId Getter
+// GetFulfilTaskId FulfilTaskId Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetFulfilTaskId() int64 {
 	return r._fulfilTaskId
 }

@@ -37,7 +37,7 @@ func (r AlibabaScbpTargetAdPlanUpdateProductsAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ParamTopP4pModifyQuickCampaignProductDTO Setter
+// SetParamTopP4pModifyQuickCampaignProductDTO is ParamTopP4pModifyQuickCampaignProductDTO Setter
 // 系统生成
 func (r *AlibabaScbpTargetAdPlanUpdateProductsAPIRequest) SetParamTopP4pModifyQuickCampaignProductDTO(_paramTopP4pModifyQuickCampaignProductDTO *TopP4pModifyQuickCampaignProductDto) error {
 	r._paramTopP4pModifyQuickCampaignProductDTO = _paramTopP4pModifyQuickCampaignProductDTO
@@ -45,7 +45,7 @@ func (r *AlibabaScbpTargetAdPlanUpdateProductsAPIRequest) SetParamTopP4pModifyQu
 	return nil
 }
 
-// Get ParamTopP4pModifyQuickCampaignProductDTO Getter
+// GetParamTopP4pModifyQuickCampaignProductDTO ParamTopP4pModifyQuickCampaignProductDTO Getter
 func (r AlibabaScbpTargetAdPlanUpdateProductsAPIRequest) GetParamTopP4pModifyQuickCampaignProductDTO() *TopP4pModifyQuickCampaignProductDto {
 	return r._paramTopP4pModifyQuickCampaignProductDTO
 }

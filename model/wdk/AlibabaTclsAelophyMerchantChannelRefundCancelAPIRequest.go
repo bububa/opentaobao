@@ -37,7 +37,7 @@ func (r AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is RefundCancelInfo Setter
+// SetRefundCancelInfo is RefundCancelInfo Setter
 // 逆向申请取消
 func (r *AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) SetRefundCancelInfo(_refundCancelInfo *RefundCancelInfo) error {
 	r._refundCancelInfo = _refundCancelInfo
@@ -45,7 +45,7 @@ func (r *AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) SetRefundCance
 	return nil
 }
 
-// Get RefundCancelInfo Getter
+// GetRefundCancelInfo RefundCancelInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) GetRefundCancelInfo() *RefundCancelInfo {
 	return r._refundCancelInfo
 }

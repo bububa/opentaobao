@@ -55,7 +55,7 @@ func (r TaobaoWlbWmsInventoryQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 菜鸟商品ID
 func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetItemId(_itemId string) error {
 	r._itemId = _itemId
@@ -63,12 +63,12 @@ func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetItemId(_itemId string) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoWlbWmsInventoryQueryAPIRequest) GetItemId() string {
 	return r._itemId
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 仓库编码
 func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -76,12 +76,12 @@ func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetStoreCode(_storeCode string) e
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r TaobaoWlbWmsInventoryQueryAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is InventoryType Setter
+// SetInventoryType is InventoryType Setter
 // 库存类型。 (1 正品 101 残次 102 机损 103 箱损 201 冻结库存 301 在途库存 )
 func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetInventoryType(_inventoryType int64) error {
 	r._inventoryType = _inventoryType
@@ -89,12 +89,12 @@ func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetInventoryType(_inventoryType i
 	return nil
 }
 
-// Get InventoryType Getter
+// GetInventoryType InventoryType Getter
 func (r TaobaoWlbWmsInventoryQueryAPIRequest) GetInventoryType() int64 {
 	return r._inventoryType
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 库存查询类型 1-	汇总库存，不区分批次和渠道 2-	批次库存，库存按商品批次维度划分 3-	渠道库存，库存按渠道维度划分 （当前业务不支持批次库存和渠道库存共存，批次库存无渠道属性，渠道库存无批次属性）
 func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -102,12 +102,12 @@ func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoWlbWmsInventoryQueryAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is BatchCode Setter
+// SetBatchCode is BatchCode Setter
 // 库存批次号，type=2时字段传值有效。 商品设置为批次管理时，商品产生批次库存。当商品为批次管理时，此字段不传值，返回所有批次库存信息。
 func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetBatchCode(_batchCode string) error {
 	r._batchCode = _batchCode
@@ -115,12 +115,12 @@ func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetBatchCode(_batchCode string) e
 	return nil
 }
 
-// Get BatchCode Getter
+// GetBatchCode BatchCode Getter
 func (r TaobaoWlbWmsInventoryQueryAPIRequest) GetBatchCode() string {
 	return r._batchCode
 }
 
-// Set is ProduceDate Setter
+// SetProduceDate is ProduceDate Setter
 // 生产日期，type=2时字段传值有效。
 func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetProduceDate(_produceDate string) error {
 	r._produceDate = _produceDate
@@ -128,12 +128,12 @@ func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetProduceDate(_produceDate strin
 	return nil
 }
 
-// Get ProduceDate Getter
+// GetProduceDate ProduceDate Getter
 func (r TaobaoWlbWmsInventoryQueryAPIRequest) GetProduceDate() string {
 	return r._produceDate
 }
 
-// Set is DueDate Setter
+// SetDueDate is DueDate Setter
 // 失效日期，type=2时字段传值有效。
 func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetDueDate(_dueDate string) error {
 	r._dueDate = _dueDate
@@ -141,12 +141,12 @@ func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetDueDate(_dueDate string) error
 	return nil
 }
 
-// Get DueDate Getter
+// GetDueDate DueDate Getter
 func (r TaobaoWlbWmsInventoryQueryAPIRequest) GetDueDate() string {
 	return r._dueDate
 }
 
-// Set is ChannelCode Setter
+// SetChannelCode is ChannelCode Setter
 // 渠道编码，type=3时字段传值有效。（TB 淘系， OTHERS 其他）
 func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetChannelCode(_channelCode string) error {
 	r._channelCode = _channelCode
@@ -154,12 +154,12 @@ func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetChannelCode(_channelCode strin
 	return nil
 }
 
-// Get ChannelCode Getter
+// GetChannelCode ChannelCode Getter
 func (r TaobaoWlbWmsInventoryQueryAPIRequest) GetChannelCode() string {
 	return r._channelCode
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 分页的第几页
 func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -167,12 +167,12 @@ func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoWlbWmsInventoryQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页多少条，最大50条
 func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -180,7 +180,7 @@ func (r *TaobaoWlbWmsInventoryQueryAPIRequest) SetPageSize(_pageSize int64) erro
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoWlbWmsInventoryQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

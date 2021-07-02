@@ -37,7 +37,7 @@ func (r TmallAscpPricingScmTofAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Costs Setter
+// SetCosts is Costs Setter
 // 成本价集合
 func (r *TmallAscpPricingScmTofAPIRequest) SetCosts(_costs []ItemSkuCost) error {
 	r._costs = _costs
@@ -45,7 +45,7 @@ func (r *TmallAscpPricingScmTofAPIRequest) SetCosts(_costs []ItemSkuCost) error 
 	return nil
 }
 
-// Get Costs Getter
+// GetCosts Costs Getter
 func (r TmallAscpPricingScmTofAPIRequest) GetCosts() []ItemSkuCost {
 	return r._costs
 }

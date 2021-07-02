@@ -41,7 +41,7 @@ func (r AlibabaScbpProductPreferentialUpdateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is KeywordId Setter
+// SetKeywordId is KeywordId Setter
 // 关键词ID
 func (r *AlibabaScbpProductPreferentialUpdateAPIRequest) SetKeywordId(_keywordId int64) error {
 	r._keywordId = _keywordId
@@ -49,12 +49,12 @@ func (r *AlibabaScbpProductPreferentialUpdateAPIRequest) SetKeywordId(_keywordId
 	return nil
 }
 
-// Get KeywordId Getter
+// GetKeywordId KeywordId Getter
 func (r AlibabaScbpProductPreferentialUpdateAPIRequest) GetKeywordId() int64 {
 	return r._keywordId
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品ID
 func (r *AlibabaScbpProductPreferentialUpdateAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -62,12 +62,12 @@ func (r *AlibabaScbpProductPreferentialUpdateAPIRequest) SetProductId(_productId
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r AlibabaScbpProductPreferentialUpdateAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // Y:设置优推,N:取消优推
 func (r *AlibabaScbpProductPreferentialUpdateAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -75,7 +75,7 @@ func (r *AlibabaScbpProductPreferentialUpdateAPIRequest) SetStatus(_status strin
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaScbpProductPreferentialUpdateAPIRequest) GetStatus() string {
 	return r._status
 }

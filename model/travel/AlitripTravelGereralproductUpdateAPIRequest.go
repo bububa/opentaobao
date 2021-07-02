@@ -45,7 +45,7 @@ func (r AlitripTravelGereralproductUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BaseInfo Setter
+// SetBaseInfo is BaseInfo Setter
 // 产品基本信息
 func (r *AlitripTravelGereralproductUpdateAPIRequest) SetBaseInfo(_baseInfo *GeneralProductBaseInfo) error {
 	r._baseInfo = _baseInfo
@@ -53,12 +53,12 @@ func (r *AlitripTravelGereralproductUpdateAPIRequest) SetBaseInfo(_baseInfo *Gen
 	return nil
 }
 
-// Get BaseInfo Getter
+// GetBaseInfo BaseInfo Getter
 func (r AlitripTravelGereralproductUpdateAPIRequest) GetBaseInfo() *GeneralProductBaseInfo {
 	return r._baseInfo
 }
 
-// Set is RefundInfo Setter
+// SetRefundInfo is RefundInfo Setter
 // 退款规则结构
 func (r *AlitripTravelGereralproductUpdateAPIRequest) SetRefundInfo(_refundInfo *ItemRefundInfo) error {
 	r._refundInfo = _refundInfo
@@ -66,12 +66,12 @@ func (r *AlitripTravelGereralproductUpdateAPIRequest) SetRefundInfo(_refundInfo 
 	return nil
 }
 
-// Get RefundInfo Getter
+// GetRefundInfo RefundInfo Getter
 func (r AlitripTravelGereralproductUpdateAPIRequest) GetRefundInfo() *ItemRefundInfo {
 	return r._refundInfo
 }
 
-// Set is BookingRules Setter
+// SetBookingRules is BookingRules Setter
 // 必填，预定规则结构。示例： [{ "rule_type": "fee_excluded", "rule_desc": "费用包含描述"},{ "rule_type": "fee_included", "rule_desc": "费用不含描述"},{ "rule_type": "order_info", "rule_desc": "预定须知描述"}]
 func (r *AlitripTravelGereralproductUpdateAPIRequest) SetBookingRules(_bookingRules []BookingRuleInfo) error {
 	r._bookingRules = _bookingRules
@@ -79,12 +79,12 @@ func (r *AlitripTravelGereralproductUpdateAPIRequest) SetBookingRules(_bookingRu
 	return nil
 }
 
-// Get BookingRules Getter
+// GetBookingRules BookingRules Getter
 func (r AlitripTravelGereralproductUpdateAPIRequest) GetBookingRules() []BookingRuleInfo {
 	return r._bookingRules
 }
 
-// Set is ProductSaleInfo Setter
+// SetProductSaleInfo is ProductSaleInfo Setter
 // 产品销售信息
 func (r *AlitripTravelGereralproductUpdateAPIRequest) SetProductSaleInfo(_productSaleInfo *ProductSaleInfo) error {
 	r._productSaleInfo = _productSaleInfo
@@ -92,12 +92,12 @@ func (r *AlitripTravelGereralproductUpdateAPIRequest) SetProductSaleInfo(_produc
 	return nil
 }
 
-// Get ProductSaleInfo Getter
+// GetProductSaleInfo ProductSaleInfo Getter
 func (r AlitripTravelGereralproductUpdateAPIRequest) GetProductSaleInfo() *ProductSaleInfo {
 	return r._productSaleInfo
 }
 
-// Set is DateSkuInfoList Setter
+// SetDateSkuInfoList is DateSkuInfoList Setter
 // 更新sku信息，仅限日历商品使用
 func (r *AlitripTravelGereralproductUpdateAPIRequest) SetDateSkuInfoList(_dateSkuInfoList []DateSkuInfo) error {
 	r._dateSkuInfoList = _dateSkuInfoList
@@ -105,7 +105,7 @@ func (r *AlitripTravelGereralproductUpdateAPIRequest) SetDateSkuInfoList(_dateSk
 	return nil
 }
 
-// Get DateSkuInfoList Getter
+// GetDateSkuInfoList DateSkuInfoList Getter
 func (r AlitripTravelGereralproductUpdateAPIRequest) GetDateSkuInfoList() []DateSkuInfo {
 	return r._dateSkuInfoList
 }

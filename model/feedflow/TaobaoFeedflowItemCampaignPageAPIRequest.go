@@ -37,7 +37,7 @@ func (r TaobaoFeedflowItemCampaignPageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CampaignQuery Setter
+// SetCampaignQuery is CampaignQuery Setter
 // 入参
 func (r *TaobaoFeedflowItemCampaignPageAPIRequest) SetCampaignQuery(_campaignQuery *CampaignQueryDto) error {
 	r._campaignQuery = _campaignQuery
@@ -45,7 +45,7 @@ func (r *TaobaoFeedflowItemCampaignPageAPIRequest) SetCampaignQuery(_campaignQue
 	return nil
 }
 
-// Get CampaignQuery Getter
+// GetCampaignQuery CampaignQuery Getter
 func (r TaobaoFeedflowItemCampaignPageAPIRequest) GetCampaignQuery() *CampaignQueryDto {
 	return r._campaignQuery
 }

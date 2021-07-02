@@ -43,7 +43,7 @@ func (r TmallNrtStallPayratioSynchronizeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizCode Setter
+// SetBizCode is BizCode Setter
 // 业务编码
 func (r *TmallNrtStallPayratioSynchronizeAPIRequest) SetBizCode(_bizCode string) error {
 	r._bizCode = _bizCode
@@ -51,12 +51,12 @@ func (r *TmallNrtStallPayratioSynchronizeAPIRequest) SetBizCode(_bizCode string)
 	return nil
 }
 
-// Get BizCode Getter
+// GetBizCode BizCode Getter
 func (r TmallNrtStallPayratioSynchronizeAPIRequest) GetBizCode() string {
 	return r._bizCode
 }
 
-// Set is ContractCode Setter
+// SetContractCode is ContractCode Setter
 // 合同编号
 func (r *TmallNrtStallPayratioSynchronizeAPIRequest) SetContractCode(_contractCode string) error {
 	r._contractCode = _contractCode
@@ -64,12 +64,12 @@ func (r *TmallNrtStallPayratioSynchronizeAPIRequest) SetContractCode(_contractCo
 	return nil
 }
 
-// Get ContractCode Getter
+// GetContractCode ContractCode Getter
 func (r TmallNrtStallPayratioSynchronizeAPIRequest) GetContractCode() string {
 	return r._contractCode
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 摊位编码
 func (r *TmallNrtStallPayratioSynchronizeAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -77,12 +77,12 @@ func (r *TmallNrtStallPayratioSynchronizeAPIRequest) SetStoreCode(_storeCode str
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r TmallNrtStallPayratioSynchronizeAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is PayRatio Setter
+// SetPayRatio is PayRatio Setter
 // 收银比例
 func (r *TmallNrtStallPayratioSynchronizeAPIRequest) SetPayRatio(_payRatio string) error {
 	r._payRatio = _payRatio
@@ -90,7 +90,7 @@ func (r *TmallNrtStallPayratioSynchronizeAPIRequest) SetPayRatio(_payRatio strin
 	return nil
 }
 
-// Get PayRatio Getter
+// GetPayRatio PayRatio Getter
 func (r TmallNrtStallPayratioSynchronizeAPIRequest) GetPayRatio() string {
 	return r._payRatio
 }

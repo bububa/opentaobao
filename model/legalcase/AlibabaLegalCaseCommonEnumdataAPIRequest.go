@@ -39,7 +39,7 @@ func (r AlibabaLegalCaseCommonEnumdataAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Key Setter
+// SetKey is Key Setter
 // bu
 func (r *AlibabaLegalCaseCommonEnumdataAPIRequest) SetKey(_key string) error {
 	r._key = _key
@@ -47,12 +47,12 @@ func (r *AlibabaLegalCaseCommonEnumdataAPIRequest) SetKey(_key string) error {
 	return nil
 }
 
-// Get Key Getter
+// GetKey Key Getter
 func (r AlibabaLegalCaseCommonEnumdataAPIRequest) GetKey() string {
 	return r._key
 }
 
-// Set is Lang Setter
+// SetLang is Lang Setter
 // 语言
 func (r *AlibabaLegalCaseCommonEnumdataAPIRequest) SetLang(_lang string) error {
 	r._lang = _lang
@@ -60,7 +60,7 @@ func (r *AlibabaLegalCaseCommonEnumdataAPIRequest) SetLang(_lang string) error {
 	return nil
 }
 
-// Get Lang Getter
+// GetLang Lang Getter
 func (r AlibabaLegalCaseCommonEnumdataAPIRequest) GetLang() string {
 	return r._lang
 }

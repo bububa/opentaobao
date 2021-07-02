@@ -37,7 +37,7 @@ func (r AlibabaMarketingLotteryDrawDodrawAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LotteryDrawQuery Setter
+// SetLotteryDrawQuery is LotteryDrawQuery Setter
 // 抽奖请求对象
 func (r *AlibabaMarketingLotteryDrawDodrawAPIRequest) SetLotteryDrawQuery(_lotteryDrawQuery *LotteryDrawQueryDto) error {
 	r._lotteryDrawQuery = _lotteryDrawQuery
@@ -45,7 +45,7 @@ func (r *AlibabaMarketingLotteryDrawDodrawAPIRequest) SetLotteryDrawQuery(_lotte
 	return nil
 }
 
-// Get LotteryDrawQuery Getter
+// GetLotteryDrawQuery LotteryDrawQuery Getter
 func (r AlibabaMarketingLotteryDrawDodrawAPIRequest) GetLotteryDrawQuery() *LotteryDrawQueryDto {
 	return r._lotteryDrawQuery
 }

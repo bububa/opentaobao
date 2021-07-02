@@ -39,7 +39,7 @@ func (r TaobaoFeedflowItemCrowdAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Crowds Setter
+// SetCrowds is Crowds Setter
 // 人群列表
 func (r *TaobaoFeedflowItemCrowdAddAPIRequest) SetCrowds(_crowds []CrowdDto) error {
 	r._crowds = _crowds
@@ -47,12 +47,12 @@ func (r *TaobaoFeedflowItemCrowdAddAPIRequest) SetCrowds(_crowds []CrowdDto) err
 	return nil
 }
 
-// Get Crowds Getter
+// GetCrowds Crowds Getter
 func (r TaobaoFeedflowItemCrowdAddAPIRequest) GetCrowds() []CrowdDto {
 	return r._crowds
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 单元id
 func (r *TaobaoFeedflowItemCrowdAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -60,7 +60,7 @@ func (r *TaobaoFeedflowItemCrowdAddAPIRequest) SetAdgroupId(_adgroupId int64) er
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoFeedflowItemCrowdAddAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

@@ -37,7 +37,7 @@ func (r AlibabaEinvoiceProdApplyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamInvoiceApplyDto Setter
+// SetParamInvoiceApplyDto is ParamInvoiceApplyDto Setter
 // 申请开票请求
 func (r *AlibabaEinvoiceProdApplyAPIRequest) SetParamInvoiceApplyDto(_paramInvoiceApplyDto *InvoiceApplyDto) error {
 	r._paramInvoiceApplyDto = _paramInvoiceApplyDto
@@ -45,7 +45,7 @@ func (r *AlibabaEinvoiceProdApplyAPIRequest) SetParamInvoiceApplyDto(_paramInvoi
 	return nil
 }
 
-// Get ParamInvoiceApplyDto Getter
+// GetParamInvoiceApplyDto ParamInvoiceApplyDto Getter
 func (r AlibabaEinvoiceProdApplyAPIRequest) GetParamInvoiceApplyDto() *InvoiceApplyDto {
 	return r._paramInvoiceApplyDto
 }

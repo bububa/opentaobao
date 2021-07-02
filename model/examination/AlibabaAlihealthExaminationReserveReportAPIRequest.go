@@ -47,7 +47,7 @@ func (r AlibabaAlihealthExaminationReserveReportAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is MerchantCode Setter
+// SetMerchantCode is MerchantCode Setter
 // 商户唯一码
 func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) SetMerchantCode(_merchantCode string) error {
 	r._merchantCode = _merchantCode
@@ -55,12 +55,12 @@ func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) SetMerchantCode(_me
 	return nil
 }
 
-// Get MerchantCode Getter
+// GetMerchantCode MerchantCode Getter
 func (r AlibabaAlihealthExaminationReserveReportAPIRequest) GetMerchantCode() string {
 	return r._merchantCode
 }
 
-// Set is ReserveNumber Setter
+// SetReserveNumber is ReserveNumber Setter
 // 阿里健康预约唯一标识
 func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) SetReserveNumber(_reserveNumber string) error {
 	r._reserveNumber = _reserveNumber
@@ -68,12 +68,12 @@ func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) SetReserveNumber(_r
 	return nil
 }
 
-// Get ReserveNumber Getter
+// GetReserveNumber ReserveNumber Getter
 func (r AlibabaAlihealthExaminationReserveReportAPIRequest) GetReserveNumber() string {
 	return r._reserveNumber
 }
 
-// Set is CheckNo Setter
+// SetCheckNo is CheckNo Setter
 // 到检唯一标识
 func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) SetCheckNo(_checkNo string) error {
 	r._checkNo = _checkNo
@@ -81,12 +81,12 @@ func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) SetCheckNo(_checkNo
 	return nil
 }
 
-// Get CheckNo Getter
+// GetCheckNo CheckNo Getter
 func (r AlibabaAlihealthExaminationReserveReportAPIRequest) GetCheckNo() string {
 	return r._checkNo
 }
 
-// Set is UniqReserveCode Setter
+// SetUniqReserveCode is UniqReserveCode Setter
 // 体检机构预约唯一标识码
 func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
 	r._uniqReserveCode = _uniqReserveCode
@@ -94,12 +94,12 @@ func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) SetUniqReserveCode(
 	return nil
 }
 
-// Get UniqReserveCode Getter
+// GetUniqReserveCode UniqReserveCode Getter
 func (r AlibabaAlihealthExaminationReserveReportAPIRequest) GetUniqReserveCode() string {
 	return r._uniqReserveCode
 }
 
-// Set is SearchNo Setter
+// SetSearchNo is SearchNo Setter
 // 查询报告卡号
 func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) SetSearchNo(_searchNo string) error {
 	r._searchNo = _searchNo
@@ -107,12 +107,12 @@ func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) SetSearchNo(_search
 	return nil
 }
 
-// Get SearchNo Getter
+// GetSearchNo SearchNo Getter
 func (r AlibabaAlihealthExaminationReserveReportAPIRequest) GetSearchNo() string {
 	return r._searchNo
 }
 
-// Set is SearchPwd Setter
+// SetSearchPwd is SearchPwd Setter
 // 查询报告密码
 func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) SetSearchPwd(_searchPwd string) error {
 	r._searchPwd = _searchPwd
@@ -120,7 +120,7 @@ func (r *AlibabaAlihealthExaminationReserveReportAPIRequest) SetSearchPwd(_searc
 	return nil
 }
 
-// Get SearchPwd Getter
+// GetSearchPwd SearchPwd Getter
 func (r AlibabaAlihealthExaminationReserveReportAPIRequest) GetSearchPwd() string {
 	return r._searchPwd
 }

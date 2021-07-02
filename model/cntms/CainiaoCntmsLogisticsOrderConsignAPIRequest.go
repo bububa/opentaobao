@@ -37,7 +37,7 @@ func (r CainiaoCntmsLogisticsOrderConsignAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 配送发货信息
 func (r *CainiaoCntmsLogisticsOrderConsignAPIRequest) SetContent(_content *CnTmsLogisticsOrderConsignContent) error {
 	r._content = _content
@@ -45,7 +45,7 @@ func (r *CainiaoCntmsLogisticsOrderConsignAPIRequest) SetContent(_content *CnTms
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r CainiaoCntmsLogisticsOrderConsignAPIRequest) GetContent() *CnTmsLogisticsOrderConsignContent {
 	return r._content
 }

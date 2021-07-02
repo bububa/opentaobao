@@ -41,7 +41,7 @@ func (r TaobaoShopUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 店铺标题。不超过30个字符；过滤敏感词，如淘咖啡、阿里巴巴等。title, bulletin和desc至少必须传一个
 func (r *TaobaoShopUpdateAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -49,12 +49,12 @@ func (r *TaobaoShopUpdateAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoShopUpdateAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// Set is Bulletin Setter
+// SetBulletin is Bulletin Setter
 // 店铺公告。不超过1024个字符
 func (r *TaobaoShopUpdateAPIRequest) SetBulletin(_bulletin string) error {
 	r._bulletin = _bulletin
@@ -62,12 +62,12 @@ func (r *TaobaoShopUpdateAPIRequest) SetBulletin(_bulletin string) error {
 	return nil
 }
 
-// Get Bulletin Getter
+// GetBulletin Bulletin Getter
 func (r TaobaoShopUpdateAPIRequest) GetBulletin() string {
 	return r._bulletin
 }
 
-// Set is Desc Setter
+// SetDesc is Desc Setter
 // 店铺描述。10～2000个字符以内
 func (r *TaobaoShopUpdateAPIRequest) SetDesc(_desc string) error {
 	r._desc = _desc
@@ -75,7 +75,7 @@ func (r *TaobaoShopUpdateAPIRequest) SetDesc(_desc string) error {
 	return nil
 }
 
-// Get Desc Getter
+// GetDesc Desc Getter
 func (r TaobaoShopUpdateAPIRequest) GetDesc() string {
 	return r._desc
 }

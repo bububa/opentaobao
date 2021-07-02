@@ -37,7 +37,7 @@ func (r TaobaoXhotelFastinvoiceCompleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InvoiceInfoParam Setter
+// SetInvoiceInfoParam is InvoiceInfoParam Setter
 // 无
 func (r *TaobaoXhotelFastinvoiceCompleteAPIRequest) SetInvoiceInfoParam(_invoiceInfoParam *InvoiceInfoParam) error {
 	r._invoiceInfoParam = _invoiceInfoParam
@@ -45,7 +45,7 @@ func (r *TaobaoXhotelFastinvoiceCompleteAPIRequest) SetInvoiceInfoParam(_invoice
 	return nil
 }
 
-// Get InvoiceInfoParam Getter
+// GetInvoiceInfoParam InvoiceInfoParam Getter
 func (r TaobaoXhotelFastinvoiceCompleteAPIRequest) GetInvoiceInfoParam() *InvoiceInfoParam {
 	return r._invoiceInfoParam
 }

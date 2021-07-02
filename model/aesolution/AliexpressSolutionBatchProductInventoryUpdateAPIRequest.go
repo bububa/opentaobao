@@ -37,7 +37,7 @@ func (r AliexpressSolutionBatchProductInventoryUpdateAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is MutipleProductUpdateList Setter
+// SetMutipleProductUpdateList is MutipleProductUpdateList Setter
 // The product list, in which the inventory needs to be updated. Maximum 20 products.
 func (r *AliexpressSolutionBatchProductInventoryUpdateAPIRequest) SetMutipleProductUpdateList(_mutipleProductUpdateList []SynchronizeProductRequestDto) error {
 	r._mutipleProductUpdateList = _mutipleProductUpdateList
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionBatchProductInventoryUpdateAPIRequest) SetMutipleProd
 	return nil
 }
 
-// Get MutipleProductUpdateList Getter
+// GetMutipleProductUpdateList MutipleProductUpdateList Getter
 func (r AliexpressSolutionBatchProductInventoryUpdateAPIRequest) GetMutipleProductUpdateList() []SynchronizeProductRequestDto {
 	return r._mutipleProductUpdateList
 }

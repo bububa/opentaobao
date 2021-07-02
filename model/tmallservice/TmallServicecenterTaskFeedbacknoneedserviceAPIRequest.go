@@ -37,7 +37,7 @@ func (r TmallServicecenterTaskFeedbacknoneedserviceAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参对象
 func (r *TmallServicecenterTaskFeedbacknoneedserviceAPIRequest) SetParam(_param *SuspendServiceDo) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *TmallServicecenterTaskFeedbacknoneedserviceAPIRequest) SetParam(_param 
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r TmallServicecenterTaskFeedbacknoneedserviceAPIRequest) GetParam() *SuspendServiceDo {
 	return r._param
 }

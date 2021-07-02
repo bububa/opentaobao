@@ -41,7 +41,7 @@ func (r TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Oid Setter
+// SetOid is Oid Setter
 // 子订单（消息中传的子订单）
 func (r *TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) SetOid(_oid int64) error {
 	r._oid = _oid
@@ -49,12 +49,12 @@ func (r *TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) SetOid(_oid int64) error {
 	return nil
 }
 
-// Get Oid Getter
+// GetOid Oid Getter
 func (r TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) GetOid() int64 {
 	return r._oid
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 处理状态，1=成功，2=处理失败
 func (r *TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -62,12 +62,12 @@ func (r *TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) SetStatus(_status int64) er
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 主订单（消息中传的主订单）
 func (r *TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -75,7 +75,7 @@ func (r *TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoRdcAligeniusOrdermsgUpdateAPIRequest) GetTid() int64 {
 	return r._tid
 }

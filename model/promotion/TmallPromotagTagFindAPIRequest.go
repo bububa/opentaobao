@@ -43,7 +43,7 @@ func (r TmallPromotagTagFindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 当前页码
 func (r *TmallPromotagTagFindAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -51,12 +51,12 @@ func (r *TmallPromotagTagFindAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TmallPromotagTagFindAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页显示个数
 func (r *TmallPromotagTagFindAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -64,12 +64,12 @@ func (r *TmallPromotagTagFindAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TmallPromotagTagFindAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is TagName Setter
+// SetTagName is TagName Setter
 // 标签名称，查询时可选项
 func (r *TmallPromotagTagFindAPIRequest) SetTagName(_tagName string) error {
 	r._tagName = _tagName
@@ -77,12 +77,12 @@ func (r *TmallPromotagTagFindAPIRequest) SetTagName(_tagName string) error {
 	return nil
 }
 
-// Get TagName Getter
+// GetTagName TagName Getter
 func (r TmallPromotagTagFindAPIRequest) GetTagName() string {
 	return r._tagName
 }
 
-// Set is TagId Setter
+// SetTagId is TagId Setter
 // 标签ID
 func (r *TmallPromotagTagFindAPIRequest) SetTagId(_tagId int64) error {
 	r._tagId = _tagId
@@ -90,7 +90,7 @@ func (r *TmallPromotagTagFindAPIRequest) SetTagId(_tagId int64) error {
 	return nil
 }
 
-// Get TagId Getter
+// GetTagId TagId Getter
 func (r TmallPromotagTagFindAPIRequest) GetTagId() int64 {
 	return r._tagId
 }

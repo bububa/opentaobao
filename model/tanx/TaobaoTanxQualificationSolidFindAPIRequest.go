@@ -49,7 +49,7 @@ func (r TaobaoTanxQualificationSolidFindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AdvertiserId Setter
+// SetAdvertiserId is AdvertiserId Setter
 // 广告主id
 func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetAdvertiserId(_advertiserId int64) error {
 	r._advertiserId = _advertiserId
@@ -57,12 +57,12 @@ func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetAdvertiserId(_advertiser
 	return nil
 }
 
-// Get AdvertiserId Getter
+// GetAdvertiserId AdvertiserId Getter
 func (r TaobaoTanxQualificationSolidFindAPIRequest) GetAdvertiserId() int64 {
 	return r._advertiserId
 }
 
-// Set is ElementIds Setter
+// SetElementIds is ElementIds Setter
 // 资质元素id列表
 func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetElementIds(_elementIds []int64) error {
 	r._elementIds = _elementIds
@@ -70,12 +70,12 @@ func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetElementIds(_elementIds [
 	return nil
 }
 
-// Get ElementIds Getter
+// GetElementIds ElementIds Getter
 func (r TaobaoTanxQualificationSolidFindAPIRequest) GetElementIds() []int64 {
 	return r._elementIds
 }
 
-// Set is MemberId Setter
+// SetMemberId is MemberId Setter
 // dsp用户id
 func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetMemberId(_memberId int64) error {
 	r._memberId = _memberId
@@ -83,12 +83,12 @@ func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetMemberId(_memberId int64
 	return nil
 }
 
-// Get MemberId Getter
+// GetMemberId MemberId Getter
 func (r TaobaoTanxQualificationSolidFindAPIRequest) GetMemberId() int64 {
 	return r._memberId
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // dsp客户验证token
 func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -96,12 +96,12 @@ func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetToken(_token string) err
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoTanxQualificationSolidFindAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is SignTime Setter
+// SetSignTime is SignTime Setter
 // 1970年到现在的秒
 func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetSignTime(_signTime int64) error {
 	r._signTime = _signTime
@@ -109,12 +109,12 @@ func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetSignTime(_signTime int64
 	return nil
 }
 
-// Get SignTime Getter
+// GetSignTime SignTime Getter
 func (r TaobaoTanxQualificationSolidFindAPIRequest) GetSignTime() int64 {
 	return r._signTime
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 查询起始页
 func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -122,12 +122,12 @@ func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetPage(_page int64) error 
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r TaobaoTanxQualificationSolidFindAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
 func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -135,7 +135,7 @@ func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetPageSize(_pageSize int64
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTanxQualificationSolidFindAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

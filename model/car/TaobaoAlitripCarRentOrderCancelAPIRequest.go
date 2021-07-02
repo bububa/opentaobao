@@ -37,7 +37,7 @@ func (r TaobaoAlitripCarRentOrderCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 取消请求对象
 func (r *TaobaoAlitripCarRentOrderCancelAPIRequest) SetParam0(_param0 *RentProviderCancelRequest) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripCarRentOrderCancelAPIRequest) SetParam0(_param0 *RentProvi
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoAlitripCarRentOrderCancelAPIRequest) GetParam0() *RentProviderCancelRequest {
 	return r._param0
 }

@@ -37,7 +37,7 @@ func (r TaobaoAlitripCarOrderAcceptAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOrderAccept Setter
+// SetParamOrderAccept is ParamOrderAccept Setter
 // 确认订单请求
 func (r *TaobaoAlitripCarOrderAcceptAPIRequest) SetParamOrderAccept(_paramOrderAccept *OrderAccept) error {
 	r._paramOrderAccept = _paramOrderAccept
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripCarOrderAcceptAPIRequest) SetParamOrderAccept(_paramOrderA
 	return nil
 }
 
-// Get ParamOrderAccept Getter
+// GetParamOrderAccept ParamOrderAccept Getter
 func (r TaobaoAlitripCarOrderAcceptAPIRequest) GetParamOrderAccept() *OrderAccept {
 	return r._paramOrderAccept
 }

@@ -37,7 +37,7 @@ func (r CainiaoWaybillIiQueryByWaybillcodeAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ParamList Setter
+// SetParamList is ParamList Setter
 // 系统自动生成
 func (r *CainiaoWaybillIiQueryByWaybillcodeAPIRequest) SetParamList(_paramList []WaybillDetailQueryByWaybillCodeRequest) error {
 	r._paramList = _paramList
@@ -45,7 +45,7 @@ func (r *CainiaoWaybillIiQueryByWaybillcodeAPIRequest) SetParamList(_paramList [
 	return nil
 }
 
-// Get ParamList Getter
+// GetParamList ParamList Getter
 func (r CainiaoWaybillIiQueryByWaybillcodeAPIRequest) GetParamList() []WaybillDetailQueryByWaybillCodeRequest {
 	return r._paramList
 }

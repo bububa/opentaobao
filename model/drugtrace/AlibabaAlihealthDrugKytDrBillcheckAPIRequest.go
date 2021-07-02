@@ -43,7 +43,7 @@ func (r AlibabaAlihealthDrugKytDrBillcheckAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 调用企业ID
 func (r *AlibabaAlihealthDrugKytDrBillcheckAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthDrugKytDrBillcheckAPIRequest) SetRefEntId(_refEntId str
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytDrBillcheckAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据编号
 func (r *AlibabaAlihealthDrugKytDrBillcheckAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthDrugKytDrBillcheckAPIRequest) SetBillCode(_billCode str
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthDrugKytDrBillcheckAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is BillType Setter
+// SetBillType is BillType Setter
 // 单据类型
 func (r *AlibabaAlihealthDrugKytDrBillcheckAPIRequest) SetBillType(_billType string) error {
 	r._billType = _billType
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthDrugKytDrBillcheckAPIRequest) SetBillType(_billType str
 	return nil
 }
 
-// Get BillType Getter
+// GetBillType BillType Getter
 func (r AlibabaAlihealthDrugKytDrBillcheckAPIRequest) GetBillType() string {
 	return r._billType
 }
 
-// Set is OwerRefEntId Setter
+// SetOwerRefEntId is OwerRefEntId Setter
 // 单据企业refEntId
 func (r *AlibabaAlihealthDrugKytDrBillcheckAPIRequest) SetOwerRefEntId(_owerRefEntId string) error {
 	r._owerRefEntId = _owerRefEntId
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthDrugKytDrBillcheckAPIRequest) SetOwerRefEntId(_owerRefE
 	return nil
 }
 
-// Get OwerRefEntId Getter
+// GetOwerRefEntId OwerRefEntId Getter
 func (r AlibabaAlihealthDrugKytDrBillcheckAPIRequest) GetOwerRefEntId() string {
 	return r._owerRefEntId
 }

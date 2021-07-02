@@ -43,7 +43,7 @@ func (r YunosServiceCmnsCoaMessageAcksListAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Mid Setter
+// SetMid is Mid Setter
 // 消息id
 func (r *YunosServiceCmnsCoaMessageAcksListAPIRequest) SetMid(_mid int64) error {
 	r._mid = _mid
@@ -51,12 +51,12 @@ func (r *YunosServiceCmnsCoaMessageAcksListAPIRequest) SetMid(_mid int64) error 
 	return nil
 }
 
-// Get Mid Getter
+// GetMid Mid Getter
 func (r YunosServiceCmnsCoaMessageAcksListAPIRequest) GetMid() int64 {
 	return r._mid
 }
 
-// Set is Did Setter
+// SetDid is Did Setter
 // 设备id
 func (r *YunosServiceCmnsCoaMessageAcksListAPIRequest) SetDid(_did int64) error {
 	r._did = _did
@@ -64,12 +64,12 @@ func (r *YunosServiceCmnsCoaMessageAcksListAPIRequest) SetDid(_did int64) error 
 	return nil
 }
 
-// Get Did Getter
+// GetDid Did Getter
 func (r YunosServiceCmnsCoaMessageAcksListAPIRequest) GetDid() int64 {
 	return r._did
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 分页查询页码
 func (r *YunosServiceCmnsCoaMessageAcksListAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -77,12 +77,12 @@ func (r *YunosServiceCmnsCoaMessageAcksListAPIRequest) SetPageIndex(_pageIndex i
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r YunosServiceCmnsCoaMessageAcksListAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页每页数据集数
 func (r *YunosServiceCmnsCoaMessageAcksListAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -90,7 +90,7 @@ func (r *YunosServiceCmnsCoaMessageAcksListAPIRequest) SetPageSize(_pageSize int
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r YunosServiceCmnsCoaMessageAcksListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

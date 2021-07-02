@@ -37,7 +37,7 @@ func (r CainiaoEndpointLockerTopOrderTrackingNewAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is TrackInfo Setter
+// SetTrackInfo is TrackInfo Setter
 // 回传信息
 func (r *CainiaoEndpointLockerTopOrderTrackingNewAPIRequest) SetTrackInfo(_trackInfo *CollectTrackingInfo) error {
 	r._trackInfo = _trackInfo
@@ -45,7 +45,7 @@ func (r *CainiaoEndpointLockerTopOrderTrackingNewAPIRequest) SetTrackInfo(_track
 	return nil
 }
 
-// Get TrackInfo Getter
+// GetTrackInfo TrackInfo Getter
 func (r CainiaoEndpointLockerTopOrderTrackingNewAPIRequest) GetTrackInfo() *CollectTrackingInfo {
 	return r._trackInfo
 }

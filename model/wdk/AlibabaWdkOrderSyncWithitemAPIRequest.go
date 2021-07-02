@@ -37,7 +37,7 @@ func (r AlibabaWdkOrderSyncWithitemAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PosOrderAndItemSync Setter
+// SetPosOrderAndItemSync is PosOrderAndItemSync Setter
 // 商家传过来的交易和商品信息
 func (r *AlibabaWdkOrderSyncWithitemAPIRequest) SetPosOrderAndItemSync(_posOrderAndItemSync *PosOrderAndItemSyncDo) error {
 	r._posOrderAndItemSync = _posOrderAndItemSync
@@ -45,7 +45,7 @@ func (r *AlibabaWdkOrderSyncWithitemAPIRequest) SetPosOrderAndItemSync(_posOrder
 	return nil
 }
 
-// Get PosOrderAndItemSync Getter
+// GetPosOrderAndItemSync PosOrderAndItemSync Getter
 func (r AlibabaWdkOrderSyncWithitemAPIRequest) GetPosOrderAndItemSync() *PosOrderAndItemSyncDo {
 	return r._posOrderAndItemSync
 }

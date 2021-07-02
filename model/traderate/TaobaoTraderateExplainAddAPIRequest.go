@@ -39,7 +39,7 @@ func (r TaobaoTraderateExplainAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Oid Setter
+// SetOid is Oid Setter
 // 子订单ID
 func (r *TaobaoTraderateExplainAddAPIRequest) SetOid(_oid int64) error {
 	r._oid = _oid
@@ -47,12 +47,12 @@ func (r *TaobaoTraderateExplainAddAPIRequest) SetOid(_oid int64) error {
 	return nil
 }
 
-// Get Oid Getter
+// GetOid Oid Getter
 func (r TaobaoTraderateExplainAddAPIRequest) GetOid() int64 {
 	return r._oid
 }
 
-// Set is Reply Setter
+// SetReply is Reply Setter
 // 评价解释内容，最大长度：500个汉字
 func (r *TaobaoTraderateExplainAddAPIRequest) SetReply(_reply string) error {
 	r._reply = _reply
@@ -60,7 +60,7 @@ func (r *TaobaoTraderateExplainAddAPIRequest) SetReply(_reply string) error {
 	return nil
 }
 
-// Get Reply Getter
+// GetReply Reply Getter
 func (r TaobaoTraderateExplainAddAPIRequest) GetReply() string {
 	return r._reply
 }

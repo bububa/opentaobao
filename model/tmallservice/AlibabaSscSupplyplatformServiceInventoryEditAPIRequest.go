@@ -46,7 +46,7 @@ func (r AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is ProviderType Setter
+// SetProviderType is ProviderType Setter
 // 服务提供者类型。参考alibaba.ssc.supplyplatform.servicecapacity.save入参
 func (r *AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) SetProviderType(_providerType string) error {
 	r._providerType = _providerType
@@ -54,12 +54,12 @@ func (r *AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) SetProviderType
 	return nil
 }
 
-// Get ProviderType Getter
+// GetProviderType ProviderType Getter
 func (r AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) GetProviderType() string {
 	return r._providerType
 }
 
-// Set is ProviderId Setter
+// SetProviderId is ProviderId Setter
 // 服务提供者id。参考alibaba.ssc.supplyplatform.servicecapacity.save入参
 func (r *AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) SetProviderId(_providerId int64) error {
 	r._providerId = _providerId
@@ -67,12 +67,12 @@ func (r *AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) SetProviderId(_
 	return nil
 }
 
-// Get ProviderId Getter
+// GetProviderId ProviderId Getter
 func (r AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) GetProviderId() int64 {
 	return r._providerId
 }
 
-// Set is BizId Setter
+// SetBizId is BizId Setter
 // 业务幂等键。该字段主要用于远程调用失败后的重试的场景，例如接口超时，调用方感知到失败，但服务端可能实际上已经成功了，这时如果发起一次重试请求，服务端需要通过bizId来识别是同一个请求，这样才不会重复增加库存值。对于同一个bizId，多次请求只会生效一次，后续的重复请求不会生效。对于批量操作时，如果部分key成功，部分key失败，重试请求时只会对未成功的key生效。
 func (r *AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) SetBizId(_bizId string) error {
 	r._bizId = _bizId
@@ -80,12 +80,12 @@ func (r *AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) SetBizId(_bizId
 	return nil
 }
 
-// Get BizId Getter
+// GetBizId BizId Getter
 func (r AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) GetBizId() string {
 	return r._bizId
 }
 
-// Set is EditDetails Setter
+// SetEditDetails is EditDetails Setter
 // 库存编辑列表。每次不超过100条
 func (r *AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) SetEditDetails(_editDetails []EditDetailInventoryRequest) error {
 	r._editDetails = _editDetails
@@ -93,7 +93,7 @@ func (r *AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) SetEditDetails(
 	return nil
 }
 
-// Get EditDetails Getter
+// GetEditDetails EditDetails Getter
 func (r AlibabaSscSupplyplatformServiceInventoryEditAPIRequest) GetEditDetails() []EditDetailInventoryRequest {
 	return r._editDetails
 }

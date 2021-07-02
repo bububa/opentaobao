@@ -37,7 +37,7 @@ func (r AlibabaAilabsIotDeviceStatusUpdateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is DeviceStatusDTO Setter
+// SetDeviceStatusDTO is DeviceStatusDTO Setter
 // 入参设备信息
 func (r *AlibabaAilabsIotDeviceStatusUpdateAPIRequest) SetDeviceStatusDTO(_deviceStatusDTO *DeviceStatusDto) error {
 	r._deviceStatusDTO = _deviceStatusDTO
@@ -45,7 +45,7 @@ func (r *AlibabaAilabsIotDeviceStatusUpdateAPIRequest) SetDeviceStatusDTO(_devic
 	return nil
 }
 
-// Get DeviceStatusDTO Getter
+// GetDeviceStatusDTO DeviceStatusDTO Getter
 func (r AlibabaAilabsIotDeviceStatusUpdateAPIRequest) GetDeviceStatusDTO() *DeviceStatusDto {
 	return r._deviceStatusDTO
 }

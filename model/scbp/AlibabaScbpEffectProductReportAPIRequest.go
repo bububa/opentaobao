@@ -37,7 +37,7 @@ func (r AlibabaScbpEffectProductReportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is P4pProductReportQuery Setter
+// SetP4pProductReportQuery is P4pProductReportQuery Setter
 // ProductQuery
 func (r *AlibabaScbpEffectProductReportAPIRequest) SetP4pProductReportQuery(_p4pProductReportQuery *ProductQuery) error {
 	r._p4pProductReportQuery = _p4pProductReportQuery
@@ -45,7 +45,7 @@ func (r *AlibabaScbpEffectProductReportAPIRequest) SetP4pProductReportQuery(_p4p
 	return nil
 }
 
-// Get P4pProductReportQuery Getter
+// GetP4pProductReportQuery P4pProductReportQuery Getter
 func (r AlibabaScbpEffectProductReportAPIRequest) GetP4pProductReportQuery() *ProductQuery {
 	return r._p4pProductReportQuery
 }

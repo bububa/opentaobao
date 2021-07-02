@@ -57,7 +57,7 @@ func (r AliexpressAffiliateImageSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppSignature Setter
+// SetAppSignature is AppSignature Setter
 // API signature
 func (r *AliexpressAffiliateImageSearchAPIRequest) SetAppSignature(_appSignature string) error {
 	r._appSignature = _appSignature
@@ -65,12 +65,12 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetAppSignature(_appSignature
 	return nil
 }
 
-// Get AppSignature Getter
+// GetAppSignature AppSignature Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetAppSignature() string {
 	return r._appSignature
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 请求字段
 func (r *AliexpressAffiliateImageSearchAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -78,12 +78,12 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetFields(_fields string) err
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is ImageFileBytes Setter
+// SetImageFileBytes is ImageFileBytes Setter
 // 图片文件字节数组，最大不超过 100 KB
 func (r *AliexpressAffiliateImageSearchAPIRequest) SetImageFileBytes(_imageFileBytes *model.File) error {
 	r._imageFileBytes = _imageFileBytes
@@ -91,12 +91,12 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetImageFileBytes(_imageFileB
 	return nil
 }
 
-// Get ImageFileBytes Getter
+// GetImageFileBytes ImageFileBytes Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetImageFileBytes() *model.File {
 	return r._imageFileBytes
 }
 
-// Set is ImgCid Setter
+// SetImgCid is ImgCid Setter
 // 图片类目倾向，不填则为最佳匹配。0 - 服装；3 - 包；4 - 鞋子；88888888 - 其他类目
 func (r *AliexpressAffiliateImageSearchAPIRequest) SetImgCid(_imgCid string) error {
 	r._imgCid = _imgCid
@@ -104,12 +104,12 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetImgCid(_imgCid string) err
 	return nil
 }
 
-// Get ImgCid Getter
+// GetImgCid ImgCid Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetImgCid() string {
 	return r._imgCid
 }
 
-// Set is MediaUserId Setter
+// SetMediaUserId is MediaUserId Setter
 // 媒体用户唯一识别号
 func (r *AliexpressAffiliateImageSearchAPIRequest) SetMediaUserId(_mediaUserId string) error {
 	r._mediaUserId = _mediaUserId
@@ -117,12 +117,12 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetMediaUserId(_mediaUserId s
 	return nil
 }
 
-// Get MediaUserId Getter
+// GetMediaUserId MediaUserId Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetMediaUserId() string {
 	return r._mediaUserId
 }
 
-// Set is ProductCnt Setter
+// SetProductCnt is ProductCnt Setter
 // 搜索结果数量，最高 50
 func (r *AliexpressAffiliateImageSearchAPIRequest) SetProductCnt(_productCnt int64) error {
 	r._productCnt = _productCnt
@@ -130,12 +130,12 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetProductCnt(_productCnt int
 	return nil
 }
 
-// Get ProductCnt Getter
+// GetProductCnt ProductCnt Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetProductCnt() int64 {
 	return r._productCnt
 }
 
-// Set is ShptTo Setter
+// SetShptTo is ShptTo Setter
 // ship-to 国家
 func (r *AliexpressAffiliateImageSearchAPIRequest) SetShptTo(_shptTo string) error {
 	r._shptTo = _shptTo
@@ -143,12 +143,12 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetShptTo(_shptTo string) err
 	return nil
 }
 
-// Get ShptTo Getter
+// GetShptTo ShptTo Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetShptTo() string {
 	return r._shptTo
 }
 
-// Set is Sort Setter
+// SetSort is Sort Setter
 // 排序方式:SALE_PRICE_ASC, SALE_PRICE_DESC,LAST_VOLUME_ASC, LAST_VOLUME_DESC
 func (r *AliexpressAffiliateImageSearchAPIRequest) SetSort(_sort string) error {
 	r._sort = _sort
@@ -156,12 +156,12 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetSort(_sort string) error {
 	return nil
 }
 
-// Get Sort Getter
+// GetSort Sort Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetSort() string {
 	return r._sort
 }
 
-// Set is TargetCurrency Setter
+// SetTargetCurrency is TargetCurrency Setter
 // 目标币种:USD, GBP, CAD, EUR, UAH, MXN,TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW
 func (r *AliexpressAffiliateImageSearchAPIRequest) SetTargetCurrency(_targetCurrency string) error {
 	r._targetCurrency = _targetCurrency
@@ -169,12 +169,12 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetTargetCurrency(_targetCurr
 	return nil
 }
 
-// Get TargetCurrency Getter
+// GetTargetCurrency TargetCurrency Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetTargetCurrency() string {
 	return r._targetCurrency
 }
 
-// Set is TargetLanguage Setter
+// SetTargetLanguage is TargetLanguage Setter
 // 目标语言:en,ru,pt,es,fr,id,it,th,ja,ar,vi,tr,de,he,ko,nl,pl,mx,cl,iw,in
 func (r *AliexpressAffiliateImageSearchAPIRequest) SetTargetLanguage(_targetLanguage string) error {
 	r._targetLanguage = _targetLanguage
@@ -182,12 +182,12 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetTargetLanguage(_targetLang
 	return nil
 }
 
-// Get TargetLanguage Getter
+// GetTargetLanguage TargetLanguage Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetTargetLanguage() string {
 	return r._targetLanguage
 }
 
-// Set is TrackingId Setter
+// SetTrackingId is TrackingId Setter
 // 媒体 trackingid
 func (r *AliexpressAffiliateImageSearchAPIRequest) SetTrackingId(_trackingId string) error {
 	r._trackingId = _trackingId
@@ -195,7 +195,7 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetTrackingId(_trackingId str
 	return nil
 }
 
-// Get TrackingId Getter
+// GetTrackingId TrackingId Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetTrackingId() string {
 	return r._trackingId
 }

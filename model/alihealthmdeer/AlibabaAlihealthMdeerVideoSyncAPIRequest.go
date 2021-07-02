@@ -77,7 +77,7 @@ func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PartnerPortraitUrl Setter
+// SetPartnerPortraitUrl is PartnerPortraitUrl Setter
 // 合作方头像url
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetPartnerPortraitUrl(_partnerPortraitUrl string) error {
 	r._partnerPortraitUrl = _partnerPortraitUrl
@@ -85,12 +85,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetPartnerPortraitUrl(_partne
 	return nil
 }
 
-// Get PartnerPortraitUrl Getter
+// GetPartnerPortraitUrl PartnerPortraitUrl Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetPartnerPortraitUrl() string {
 	return r._partnerPortraitUrl
 }
 
-// Set is PhoneNumber Setter
+// SetPhoneNumber is PhoneNumber Setter
 // 作者电话
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetPhoneNumber(_phoneNumber string) error {
 	r._phoneNumber = _phoneNumber
@@ -98,12 +98,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetPhoneNumber(_phoneNumber s
 	return nil
 }
 
-// Get PhoneNumber Getter
+// GetPhoneNumber PhoneNumber Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetPhoneNumber() string {
 	return r._phoneNumber
 }
 
-// Set is AuthorIntroduction Setter
+// SetAuthorIntroduction is AuthorIntroduction Setter
 // 作者简介
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetAuthorIntroduction(_authorIntroduction string) error {
 	r._authorIntroduction = _authorIntroduction
@@ -111,12 +111,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetAuthorIntroduction(_author
 	return nil
 }
 
-// Get AuthorIntroduction Getter
+// GetAuthorIntroduction AuthorIntroduction Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetAuthorIntroduction() string {
 	return r._authorIntroduction
 }
 
-// Set is AuthorDepartment Setter
+// SetAuthorDepartment is AuthorDepartment Setter
 // 作者科室
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetAuthorDepartment(_authorDepartment string) error {
 	r._authorDepartment = _authorDepartment
@@ -124,12 +124,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetAuthorDepartment(_authorDe
 	return nil
 }
 
-// Get AuthorDepartment Getter
+// GetAuthorDepartment AuthorDepartment Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetAuthorDepartment() string {
 	return r._authorDepartment
 }
 
-// Set is AuthorLevel Setter
+// SetAuthorLevel is AuthorLevel Setter
 // 作者级别
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetAuthorLevel(_authorLevel string) error {
 	r._authorLevel = _authorLevel
@@ -137,12 +137,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetAuthorLevel(_authorLevel s
 	return nil
 }
 
-// Get AuthorLevel Getter
+// GetAuthorLevel AuthorLevel Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetAuthorLevel() string {
 	return r._authorLevel
 }
 
-// Set is HospitalLevel Setter
+// SetHospitalLevel is HospitalLevel Setter
 // 医院级别
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetHospitalLevel(_hospitalLevel string) error {
 	r._hospitalLevel = _hospitalLevel
@@ -150,12 +150,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetHospitalLevel(_hospitalLev
 	return nil
 }
 
-// Get HospitalLevel Getter
+// GetHospitalLevel HospitalLevel Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetHospitalLevel() string {
 	return r._hospitalLevel
 }
 
-// Set is HospitalName Setter
+// SetHospitalName is HospitalName Setter
 // 医院名称
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetHospitalName(_hospitalName string) error {
 	r._hospitalName = _hospitalName
@@ -163,12 +163,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetHospitalName(_hospitalName
 	return nil
 }
 
-// Get HospitalName Getter
+// GetHospitalName HospitalName Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetHospitalName() string {
 	return r._hospitalName
 }
 
-// Set is PortraitUrl Setter
+// SetPortraitUrl is PortraitUrl Setter
 // 作者头像
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetPortraitUrl(_portraitUrl string) error {
 	r._portraitUrl = _portraitUrl
@@ -176,12 +176,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetPortraitUrl(_portraitUrl s
 	return nil
 }
 
-// Get PortraitUrl Getter
+// GetPortraitUrl PortraitUrl Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetPortraitUrl() string {
 	return r._portraitUrl
 }
 
-// Set is AuthorName Setter
+// SetAuthorName is AuthorName Setter
 // 作者名称
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetAuthorName(_authorName string) error {
 	r._authorName = _authorName
@@ -189,12 +189,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetAuthorName(_authorName str
 	return nil
 }
 
-// Get AuthorName Getter
+// GetAuthorName AuthorName Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetAuthorName() string {
 	return r._authorName
 }
 
-// Set is AuthorId Setter
+// SetAuthorId is AuthorId Setter
 // 作者id
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetAuthorId(_authorId string) error {
 	r._authorId = _authorId
@@ -202,12 +202,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetAuthorId(_authorId string)
 	return nil
 }
 
-// Get AuthorId Getter
+// GetAuthorId AuthorId Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetAuthorId() string {
 	return r._authorId
 }
 
-// Set is PartnerHomepage Setter
+// SetPartnerHomepage is PartnerHomepage Setter
 // 合作方主页
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetPartnerHomepage(_partnerHomepage string) error {
 	r._partnerHomepage = _partnerHomepage
@@ -215,12 +215,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetPartnerHomepage(_partnerHo
 	return nil
 }
 
-// Get PartnerHomepage Getter
+// GetPartnerHomepage PartnerHomepage Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetPartnerHomepage() string {
 	return r._partnerHomepage
 }
 
-// Set is PartnerName Setter
+// SetPartnerName is PartnerName Setter
 // 合作方名称
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetPartnerName(_partnerName string) error {
 	r._partnerName = _partnerName
@@ -228,12 +228,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetPartnerName(_partnerName s
 	return nil
 }
 
-// Get PartnerName Getter
+// GetPartnerName PartnerName Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetPartnerName() string {
 	return r._partnerName
 }
 
-// Set is ReleaseDate Setter
+// SetReleaseDate is ReleaseDate Setter
 // 发布日期
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetReleaseDate(_releaseDate string) error {
 	r._releaseDate = _releaseDate
@@ -241,12 +241,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetReleaseDate(_releaseDate s
 	return nil
 }
 
-// Get ReleaseDate Getter
+// GetReleaseDate ReleaseDate Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetReleaseDate() string {
 	return r._releaseDate
 }
 
-// Set is VideoFileUrl Setter
+// SetVideoFileUrl is VideoFileUrl Setter
 // 视频文件url
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetVideoFileUrl(_videoFileUrl string) error {
 	r._videoFileUrl = _videoFileUrl
@@ -254,12 +254,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetVideoFileUrl(_videoFileUrl
 	return nil
 }
 
-// Get VideoFileUrl Getter
+// GetVideoFileUrl VideoFileUrl Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetVideoFileUrl() string {
 	return r._videoFileUrl
 }
 
-// Set is VideoMobileUrl Setter
+// SetVideoMobileUrl is VideoMobileUrl Setter
 // 视频落地页
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetVideoMobileUrl(_videoMobileUrl string) error {
 	r._videoMobileUrl = _videoMobileUrl
@@ -267,12 +267,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetVideoMobileUrl(_videoMobil
 	return nil
 }
 
-// Get VideoMobileUrl Getter
+// GetVideoMobileUrl VideoMobileUrl Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetVideoMobileUrl() string {
 	return r._videoMobileUrl
 }
 
-// Set is VideoIntroduction Setter
+// SetVideoIntroduction is VideoIntroduction Setter
 // 视频简介
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetVideoIntroduction(_videoIntroduction string) error {
 	r._videoIntroduction = _videoIntroduction
@@ -280,12 +280,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetVideoIntroduction(_videoIn
 	return nil
 }
 
-// Get VideoIntroduction Getter
+// GetVideoIntroduction VideoIntroduction Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetVideoIntroduction() string {
 	return r._videoIntroduction
 }
 
-// Set is VideoLength Setter
+// SetVideoLength is VideoLength Setter
 // 视频长度
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetVideoLength(_videoLength string) error {
 	r._videoLength = _videoLength
@@ -293,12 +293,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetVideoLength(_videoLength s
 	return nil
 }
 
-// Get VideoLength Getter
+// GetVideoLength VideoLength Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetVideoLength() string {
 	return r._videoLength
 }
 
-// Set is Disease Setter
+// SetDisease is Disease Setter
 // 视频所述疾病
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetDisease(_disease string) error {
 	r._disease = _disease
@@ -306,12 +306,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetDisease(_disease string) e
 	return nil
 }
 
-// Get Disease Getter
+// GetDisease Disease Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetDisease() string {
 	return r._disease
 }
 
-// Set is PriviewUrl Setter
+// SetPriviewUrl is PriviewUrl Setter
 // 预览图url
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetPriviewUrl(_priviewUrl string) error {
 	r._priviewUrl = _priviewUrl
@@ -319,12 +319,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetPriviewUrl(_priviewUrl str
 	return nil
 }
 
-// Get PriviewUrl Getter
+// GetPriviewUrl PriviewUrl Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetPriviewUrl() string {
 	return r._priviewUrl
 }
 
-// Set is VideoTitle Setter
+// SetVideoTitle is VideoTitle Setter
 // 视频标题
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetVideoTitle(_videoTitle string) error {
 	r._videoTitle = _videoTitle
@@ -332,12 +332,12 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetVideoTitle(_videoTitle str
 	return nil
 }
 
-// Get VideoTitle Getter
+// GetVideoTitle VideoTitle Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetVideoTitle() string {
 	return r._videoTitle
 }
 
-// Set is VideoId Setter
+// SetVideoId is VideoId Setter
 // 视频id
 func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetVideoId(_videoId string) error {
 	r._videoId = _videoId
@@ -345,7 +345,7 @@ func (r *AlibabaAlihealthMdeerVideoSyncAPIRequest) SetVideoId(_videoId string) e
 	return nil
 }
 
-// Get VideoId Getter
+// GetVideoId VideoId Getter
 func (r AlibabaAlihealthMdeerVideoSyncAPIRequest) GetVideoId() string {
 	return r._videoId
 }

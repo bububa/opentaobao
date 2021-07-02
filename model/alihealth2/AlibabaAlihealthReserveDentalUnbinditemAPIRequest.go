@@ -39,7 +39,7 @@ func (r AlibabaAlihealthReserveDentalUnbinditemAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is SpStoreId Setter
+// SetSpStoreId is SpStoreId Setter
 // 服务商门店id
 func (r *AlibabaAlihealthReserveDentalUnbinditemAPIRequest) SetSpStoreId(_spStoreId string) error {
 	r._spStoreId = _spStoreId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthReserveDentalUnbinditemAPIRequest) SetSpStoreId(_spStor
 	return nil
 }
 
-// Get SpStoreId Getter
+// GetSpStoreId SpStoreId Getter
 func (r AlibabaAlihealthReserveDentalUnbinditemAPIRequest) GetSpStoreId() string {
 	return r._spStoreId
 }
 
-// Set is SpItemId Setter
+// SetSpItemId is SpItemId Setter
 // 服务商商品id
 func (r *AlibabaAlihealthReserveDentalUnbinditemAPIRequest) SetSpItemId(_spItemId string) error {
 	r._spItemId = _spItemId
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthReserveDentalUnbinditemAPIRequest) SetSpItemId(_spItemI
 	return nil
 }
 
-// Get SpItemId Getter
+// GetSpItemId SpItemId Getter
 func (r AlibabaAlihealthReserveDentalUnbinditemAPIRequest) GetSpItemId() string {
 	return r._spItemId
 }

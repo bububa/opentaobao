@@ -37,7 +37,7 @@ func (r TaobaoAlitripBuyerGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RequestAxb Setter
+// SetRequestAxb is RequestAxb Setter
 // 敏感信息查询请求参数
 func (r *TaobaoAlitripBuyerGetAPIRequest) SetRequestAxb(_requestAxb *RequestAxbDo) error {
 	r._requestAxb = _requestAxb
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripBuyerGetAPIRequest) SetRequestAxb(_requestAxb *RequestAxbD
 	return nil
 }
 
-// Get RequestAxb Getter
+// GetRequestAxb RequestAxb Getter
 func (r TaobaoAlitripBuyerGetAPIRequest) GetRequestAxb() *RequestAxbDo {
 	return r._requestAxb
 }

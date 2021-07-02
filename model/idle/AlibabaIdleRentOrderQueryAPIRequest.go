@@ -37,7 +37,7 @@ func (r AlibabaIdleRentOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *AlibabaIdleRentOrderQueryAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -45,7 +45,7 @@ func (r *AlibabaIdleRentOrderQueryAPIRequest) SetOrderId(_orderId int64) error {
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaIdleRentOrderQueryAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }

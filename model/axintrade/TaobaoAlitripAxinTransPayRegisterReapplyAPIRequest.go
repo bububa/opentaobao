@@ -38,7 +38,7 @@ func (r TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is AxinPayRegisterCreateDTO Setter
+// SetAxinPayRegisterCreateDTO is AxinPayRegisterCreateDTO Setter
 // 阿信支付入驻重新申请参数
 func (r *TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest) SetAxinPayRegisterCreateDTO(_axinPayRegisterCreateDTO *AxinPayRegisterCreateDto) error {
 	r._axinPayRegisterCreateDTO = _axinPayRegisterCreateDTO
@@ -46,7 +46,7 @@ func (r *TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest) SetAxinPayRegisterC
 	return nil
 }
 
-// Get AxinPayRegisterCreateDTO Getter
+// GetAxinPayRegisterCreateDTO AxinPayRegisterCreateDTO Getter
 func (r TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest) GetAxinPayRegisterCreateDTO() *AxinPayRegisterCreateDto {
 	return r._axinPayRegisterCreateDTO
 }

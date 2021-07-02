@@ -37,7 +37,7 @@ func (r AlibabaPricePromotionItemAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PromotionContent Setter
+// SetPromotionContent is PromotionContent Setter
 // 入参
 func (r *AlibabaPricePromotionItemAddAPIRequest) SetPromotionContent(_promotionContent *PromotionContent) error {
 	r._promotionContent = _promotionContent
@@ -45,7 +45,7 @@ func (r *AlibabaPricePromotionItemAddAPIRequest) SetPromotionContent(_promotionC
 	return nil
 }
 
-// Get PromotionContent Getter
+// GetPromotionContent PromotionContent Getter
 func (r AlibabaPricePromotionItemAddAPIRequest) GetPromotionContent() *PromotionContent {
 	return r._promotionContent
 }

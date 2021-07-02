@@ -37,7 +37,7 @@ func (r AlibabaScbpAdKeywordRankPriceGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Keyword Setter
+// SetKeyword is Keyword Setter
 // 关键词
 func (r *AlibabaScbpAdKeywordRankPriceGetAPIRequest) SetKeyword(_keyword string) error {
 	r._keyword = _keyword
@@ -45,7 +45,7 @@ func (r *AlibabaScbpAdKeywordRankPriceGetAPIRequest) SetKeyword(_keyword string)
 	return nil
 }
 
-// Get Keyword Getter
+// GetKeyword Keyword Getter
 func (r AlibabaScbpAdKeywordRankPriceGetAPIRequest) GetKeyword() string {
 	return r._keyword
 }

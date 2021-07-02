@@ -37,7 +37,7 @@ func (r AlitripBpCouponinfoSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamCouponDataRequest Setter
+// SetParamCouponDataRequest is ParamCouponDataRequest Setter
 // 商业化券同步接口请求
 func (r *AlitripBpCouponinfoSyncAPIRequest) SetParamCouponDataRequest(_paramCouponDataRequest *CouponDataRequest) error {
 	r._paramCouponDataRequest = _paramCouponDataRequest
@@ -45,7 +45,7 @@ func (r *AlitripBpCouponinfoSyncAPIRequest) SetParamCouponDataRequest(_paramCoup
 	return nil
 }
 
-// Get ParamCouponDataRequest Getter
+// GetParamCouponDataRequest ParamCouponDataRequest Getter
 func (r AlitripBpCouponinfoSyncAPIRequest) GetParamCouponDataRequest() *CouponDataRequest {
 	return r._paramCouponDataRequest
 }

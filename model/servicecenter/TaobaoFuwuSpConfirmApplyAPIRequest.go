@@ -37,7 +37,7 @@ func (r TaobaoFuwuSpConfirmApplyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamIncomeConfirmDTO Setter
+// SetParamIncomeConfirmDTO is ParamIncomeConfirmDTO Setter
 // 确认单申请
 func (r *TaobaoFuwuSpConfirmApplyAPIRequest) SetParamIncomeConfirmDTO(_paramIncomeConfirmDTO *IncomeConfirmDto) error {
 	r._paramIncomeConfirmDTO = _paramIncomeConfirmDTO
@@ -45,7 +45,7 @@ func (r *TaobaoFuwuSpConfirmApplyAPIRequest) SetParamIncomeConfirmDTO(_paramInco
 	return nil
 }
 
-// Get ParamIncomeConfirmDTO Getter
+// GetParamIncomeConfirmDTO ParamIncomeConfirmDTO Getter
 func (r TaobaoFuwuSpConfirmApplyAPIRequest) GetParamIncomeConfirmDTO() *IncomeConfirmDto {
 	return r._paramIncomeConfirmDTO
 }

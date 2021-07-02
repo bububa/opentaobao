@@ -41,7 +41,7 @@ func (r TaobaoTopSecretGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SecretVersion Setter
+// SetSecretVersion is SecretVersion Setter
 // 秘钥版本号
 func (r *TaobaoTopSecretGetAPIRequest) SetSecretVersion(_secretVersion int64) error {
 	r._secretVersion = _secretVersion
@@ -49,12 +49,12 @@ func (r *TaobaoTopSecretGetAPIRequest) SetSecretVersion(_secretVersion int64) er
 	return nil
 }
 
-// Get SecretVersion Getter
+// GetSecretVersion SecretVersion Getter
 func (r TaobaoTopSecretGetAPIRequest) GetSecretVersion() int64 {
 	return r._secretVersion
 }
 
-// Set is RandomNum Setter
+// SetRandomNum is RandomNum Setter
 // 伪随机数
 func (r *TaobaoTopSecretGetAPIRequest) SetRandomNum(_randomNum string) error {
 	r._randomNum = _randomNum
@@ -62,12 +62,12 @@ func (r *TaobaoTopSecretGetAPIRequest) SetRandomNum(_randomNum string) error {
 	return nil
 }
 
-// Get RandomNum Getter
+// GetRandomNum RandomNum Getter
 func (r TaobaoTopSecretGetAPIRequest) GetRandomNum() string {
 	return r._randomNum
 }
 
-// Set is CustomerUserId Setter
+// SetCustomerUserId is CustomerUserId Setter
 // 自定义用户id
 func (r *TaobaoTopSecretGetAPIRequest) SetCustomerUserId(_customerUserId int64) error {
 	r._customerUserId = _customerUserId
@@ -75,7 +75,7 @@ func (r *TaobaoTopSecretGetAPIRequest) SetCustomerUserId(_customerUserId int64) 
 	return nil
 }
 
-// Get CustomerUserId Getter
+// GetCustomerUserId CustomerUserId Getter
 func (r TaobaoTopSecretGetAPIRequest) GetCustomerUserId() int64 {
 	return r._customerUserId
 }

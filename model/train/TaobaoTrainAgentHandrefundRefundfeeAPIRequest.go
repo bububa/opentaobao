@@ -41,7 +41,7 @@ func (r TaobaoTrainAgentHandrefundRefundfeeAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is MainBizOrderId Setter
+// SetMainBizOrderId is MainBizOrderId Setter
 // 主订单id
 func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) SetMainBizOrderId(_mainBizOrderId int64) error {
 	r._mainBizOrderId = _mainBizOrderId
@@ -49,12 +49,12 @@ func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) SetMainBizOrderId(_mainB
 	return nil
 }
 
-// Get MainBizOrderId Getter
+// GetMainBizOrderId MainBizOrderId Getter
 func (r TaobaoTrainAgentHandrefundRefundfeeAPIRequest) GetMainBizOrderId() int64 {
 	return r._mainBizOrderId
 }
 
-// Set is OutTradeNo Setter
+// SetOutTradeNo is OutTradeNo Setter
 // 外部订单号
 func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) SetOutTradeNo(_outTradeNo string) error {
 	r._outTradeNo = _outTradeNo
@@ -62,12 +62,12 @@ func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) SetOutTradeNo(_outTradeN
 	return nil
 }
 
-// Get OutTradeNo Getter
+// GetOutTradeNo OutTradeNo Getter
 func (r TaobaoTrainAgentHandrefundRefundfeeAPIRequest) GetOutTradeNo() string {
 	return r._outTradeNo
 }
 
-// Set is RefundFee Setter
+// SetRefundFee is RefundFee Setter
 // 退款金额,单位为分
 func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) SetRefundFee(_refundFee int64) error {
 	r._refundFee = _refundFee
@@ -75,7 +75,7 @@ func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) SetRefundFee(_refundFee 
 	return nil
 }
 
-// Get RefundFee Getter
+// GetRefundFee RefundFee Getter
 func (r TaobaoTrainAgentHandrefundRefundfeeAPIRequest) GetRefundFee() int64 {
 	return r._refundFee
 }

@@ -53,7 +53,7 @@ func (r TaobaoLogisticsOfflineSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SubTid Setter
+// SetSubTid is SubTid Setter
 // 需要拆单发货的子订单集合，针对的是一笔交易下有多个子订单需要分开发货的场景；1次可传人多个子订单号，子订单间用逗号隔开；为空表示不做拆单发货。
 func (r *TaobaoLogisticsOfflineSendAPIRequest) SetSubTid(_subTid []int64) error {
 	r._subTid = _subTid
@@ -61,12 +61,12 @@ func (r *TaobaoLogisticsOfflineSendAPIRequest) SetSubTid(_subTid []int64) error 
 	return nil
 }
 
-// Get SubTid Getter
+// GetSubTid SubTid Getter
 func (r TaobaoLogisticsOfflineSendAPIRequest) GetSubTid() []int64 {
 	return r._subTid
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝交易ID
 func (r *TaobaoLogisticsOfflineSendAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -74,12 +74,12 @@ func (r *TaobaoLogisticsOfflineSendAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoLogisticsOfflineSendAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is IsSplit Setter
+// SetIsSplit is IsSplit Setter
 // 表明是否是拆单，默认值0，1表示拆单
 func (r *TaobaoLogisticsOfflineSendAPIRequest) SetIsSplit(_isSplit int64) error {
 	r._isSplit = _isSplit
@@ -87,12 +87,12 @@ func (r *TaobaoLogisticsOfflineSendAPIRequest) SetIsSplit(_isSplit int64) error 
 	return nil
 }
 
-// Get IsSplit Getter
+// GetIsSplit IsSplit Getter
 func (r TaobaoLogisticsOfflineSendAPIRequest) GetIsSplit() int64 {
 	return r._isSplit
 }
 
-// Set is OutSid Setter
+// SetOutSid is OutSid Setter
 // 运单号.具体一个物流公司的真实运单号码。淘宝官方物流会校验，请谨慎传入；
 func (r *TaobaoLogisticsOfflineSendAPIRequest) SetOutSid(_outSid string) error {
 	r._outSid = _outSid
@@ -100,12 +100,12 @@ func (r *TaobaoLogisticsOfflineSendAPIRequest) SetOutSid(_outSid string) error {
 	return nil
 }
 
-// Get OutSid Getter
+// GetOutSid OutSid Getter
 func (r TaobaoLogisticsOfflineSendAPIRequest) GetOutSid() string {
 	return r._outSid
 }
 
-// Set is CompanyCode Setter
+// SetCompanyCode is CompanyCode Setter
 // 物流公司代码.如"POST"就代表中国邮政,"ZJS"就代表宅急送.调用 taobao.logistics.companies.get 获取。
 func (r *TaobaoLogisticsOfflineSendAPIRequest) SetCompanyCode(_companyCode string) error {
 	r._companyCode = _companyCode
@@ -113,12 +113,12 @@ func (r *TaobaoLogisticsOfflineSendAPIRequest) SetCompanyCode(_companyCode strin
 	return nil
 }
 
-// Get CompanyCode Getter
+// GetCompanyCode CompanyCode Getter
 func (r TaobaoLogisticsOfflineSendAPIRequest) GetCompanyCode() string {
 	return r._companyCode
 }
 
-// Set is SenderId Setter
+// SetSenderId is SenderId Setter
 // 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。如果为空，取的卖家的默认取货地址
 func (r *TaobaoLogisticsOfflineSendAPIRequest) SetSenderId(_senderId int64) error {
 	r._senderId = _senderId
@@ -126,12 +126,12 @@ func (r *TaobaoLogisticsOfflineSendAPIRequest) SetSenderId(_senderId int64) erro
 	return nil
 }
 
-// Get SenderId Getter
+// GetSenderId SenderId Getter
 func (r TaobaoLogisticsOfflineSendAPIRequest) GetSenderId() int64 {
 	return r._senderId
 }
 
-// Set is CancelId Setter
+// SetCancelId is CancelId Setter
 // 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。 如果为空，取的卖家的默认退货地址
 func (r *TaobaoLogisticsOfflineSendAPIRequest) SetCancelId(_cancelId int64) error {
 	r._cancelId = _cancelId
@@ -139,12 +139,12 @@ func (r *TaobaoLogisticsOfflineSendAPIRequest) SetCancelId(_cancelId int64) erro
 	return nil
 }
 
-// Get CancelId Getter
+// GetCancelId CancelId Getter
 func (r TaobaoLogisticsOfflineSendAPIRequest) GetCancelId() int64 {
 	return r._cancelId
 }
 
-// Set is Feature Setter
+// SetFeature is Feature Setter
 // feature参数格式 范例: identCode=tid1:识别码1,识别码2|tid2:识别码3;machineCode=tid3:3C机器号A,3C机器号B identCode为识别码的KEY,machineCode为3C的KEY,多个key之间用”;”分隔 “tid1:识别码1,识别码2|tid2:识别码3”为identCode对应的value。 "|"不同商品间的分隔符。 例1商品和2商品，之间就用"|"分开。 TID就是商品代表的子订单号，对应taobao.trade.fullinfo.get 接口获得的oid字段。(通过OID可以唯一定位到当前商品上) ":"TID和具体传入参数间的分隔符。冒号前表示TID,之后代表该商品的参数属性。 "," 属性间分隔符。（对应商品数量，当存在一个商品的数量超过1个时，用逗号分开）。 具体:当订单中A商品的数量为2个，其中手机串号分别为"12345","67890"。 参数格式：identCode=TIDA:12345,67890。 TIDA对应了A宝贝，冒号后用逗号分隔的"12345","67890".说明本订单A宝贝的数量为2，值分别为"12345","67890"。 当存在"|"时，就说明订单中存在多个商品，商品间用"|"分隔了开来。|"之后的内容含义同上。retailStoreId=12345，发货门店ID或仓信息。retailStoreType=STORE: 发货门店类别，STORE表示门店，WAREHOUSE表示电商仓。对于全渠道订单回传的商家，retailStoreId和retailStoreType字段为必填字段。
 func (r *TaobaoLogisticsOfflineSendAPIRequest) SetFeature(_feature string) error {
 	r._feature = _feature
@@ -152,12 +152,12 @@ func (r *TaobaoLogisticsOfflineSendAPIRequest) SetFeature(_feature string) error
 	return nil
 }
 
-// Get Feature Getter
+// GetFeature Feature Getter
 func (r TaobaoLogisticsOfflineSendAPIRequest) GetFeature() string {
 	return r._feature
 }
 
-// Set is SellerIp Setter
+// SetSellerIp is SellerIp Setter
 // 商家的IP地址
 func (r *TaobaoLogisticsOfflineSendAPIRequest) SetSellerIp(_sellerIp string) error {
 	r._sellerIp = _sellerIp
@@ -165,7 +165,7 @@ func (r *TaobaoLogisticsOfflineSendAPIRequest) SetSellerIp(_sellerIp string) err
 	return nil
 }
 
-// Get SellerIp Getter
+// GetSellerIp SellerIp Getter
 func (r TaobaoLogisticsOfflineSendAPIRequest) GetSellerIp() string {
 	return r._sellerIp
 }

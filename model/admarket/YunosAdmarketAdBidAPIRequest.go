@@ -37,7 +37,7 @@ func (r YunosAdmarketAdBidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BidRequest Setter
+// SetBidRequest is BidRequest Setter
 // 竞价请求
 func (r *YunosAdmarketAdBidAPIRequest) SetBidRequest(_bidRequest *BidRequest) error {
 	r._bidRequest = _bidRequest
@@ -45,7 +45,7 @@ func (r *YunosAdmarketAdBidAPIRequest) SetBidRequest(_bidRequest *BidRequest) er
 	return nil
 }
 
-// Get BidRequest Getter
+// GetBidRequest BidRequest Getter
 func (r YunosAdmarketAdBidAPIRequest) GetBidRequest() *BidRequest {
 	return r._bidRequest
 }

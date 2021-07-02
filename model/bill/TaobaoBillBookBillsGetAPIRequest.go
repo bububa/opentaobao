@@ -49,7 +49,7 @@ func (r TaobaoBillBookBillsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AccountId Setter
+// SetAccountId is AccountId Setter
 // 虚拟账户科目编号
 func (r *TaobaoBillBookBillsGetAPIRequest) SetAccountId(_accountId int64) error {
 	r._accountId = _accountId
@@ -57,12 +57,12 @@ func (r *TaobaoBillBookBillsGetAPIRequest) SetAccountId(_accountId int64) error 
 	return nil
 }
 
-// Get AccountId Getter
+// GetAccountId AccountId Getter
 func (r TaobaoBillBookBillsGetAPIRequest) GetAccountId() int64 {
 	return r._accountId
 }
 
-// Set is JournalTypes Setter
+// SetJournalTypes is JournalTypes Setter
 // 明细流水类型:流水类型:101、可用金充值；102、可用金扣除；103、冻结；104、解冻；105、冻结金充值；106、冻结金扣除
 func (r *TaobaoBillBookBillsGetAPIRequest) SetJournalTypes(_journalTypes []int64) error {
 	r._journalTypes = _journalTypes
@@ -70,12 +70,12 @@ func (r *TaobaoBillBookBillsGetAPIRequest) SetJournalTypes(_journalTypes []int64
 	return nil
 }
 
-// Get JournalTypes Getter
+// GetJournalTypes JournalTypes Getter
 func (r TaobaoBillBookBillsGetAPIRequest) GetJournalTypes() []int64 {
 	return r._journalTypes
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 记账开始时间
 func (r *TaobaoBillBookBillsGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -83,12 +83,12 @@ func (r *TaobaoBillBookBillsGetAPIRequest) SetStartTime(_startTime string) error
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoBillBookBillsGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 记账结束时间,end_time与start_time相差不能超过30天
 func (r *TaobaoBillBookBillsGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -96,12 +96,12 @@ func (r *TaobaoBillBookBillsGetAPIRequest) SetEndTime(_endTime string) error {
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoBillBookBillsGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页大小,建议40~100,不能超过100
 func (r *TaobaoBillBookBillsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -109,12 +109,12 @@ func (r *TaobaoBillBookBillsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoBillBookBillsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的字段:bid,account_id,journal_type,amount,book_time,description,gmt_create,gmt_modified ,如果不是以上字段将自动忽略
 func (r *TaobaoBillBookBillsGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -122,12 +122,12 @@ func (r *TaobaoBillBookBillsGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoBillBookBillsGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码,传入值为1代表第一页,传入值为2代表第二页,依此类推.默认返回的数据是从第一页开始
 func (r *TaobaoBillBookBillsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -135,7 +135,7 @@ func (r *TaobaoBillBookBillsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoBillBookBillsGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

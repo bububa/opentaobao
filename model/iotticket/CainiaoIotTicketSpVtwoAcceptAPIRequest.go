@@ -37,7 +37,7 @@ func (r CainiaoIotTicketSpVtwoAcceptAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AcceptTicketTopRequest Setter
+// SetAcceptTicketTopRequest is AcceptTicketTopRequest Setter
 // 受理接口请求参数
 func (r *CainiaoIotTicketSpVtwoAcceptAPIRequest) SetAcceptTicketTopRequest(_acceptTicketTopRequest *AcceptTicketV2TopRequest) error {
 	r._acceptTicketTopRequest = _acceptTicketTopRequest
@@ -45,7 +45,7 @@ func (r *CainiaoIotTicketSpVtwoAcceptAPIRequest) SetAcceptTicketTopRequest(_acce
 	return nil
 }
 
-// Get AcceptTicketTopRequest Getter
+// GetAcceptTicketTopRequest AcceptTicketTopRequest Getter
 func (r CainiaoIotTicketSpVtwoAcceptAPIRequest) GetAcceptTicketTopRequest() *AcceptTicketV2TopRequest {
 	return r._acceptTicketTopRequest
 }

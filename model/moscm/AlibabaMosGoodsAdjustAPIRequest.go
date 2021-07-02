@@ -37,7 +37,7 @@ func (r AlibabaMosGoodsAdjustAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamIsvStockAdjustRequestDTO Setter
+// SetParamIsvStockAdjustRequestDTO is ParamIsvStockAdjustRequestDTO Setter
 // 库存调整入参
 func (r *AlibabaMosGoodsAdjustAPIRequest) SetParamIsvStockAdjustRequestDTO(_paramIsvStockAdjustRequestDTO *IsvStockAdjustRequestDto) error {
 	r._paramIsvStockAdjustRequestDTO = _paramIsvStockAdjustRequestDTO
@@ -45,7 +45,7 @@ func (r *AlibabaMosGoodsAdjustAPIRequest) SetParamIsvStockAdjustRequestDTO(_para
 	return nil
 }
 
-// Get ParamIsvStockAdjustRequestDTO Getter
+// GetParamIsvStockAdjustRequestDTO ParamIsvStockAdjustRequestDTO Getter
 func (r AlibabaMosGoodsAdjustAPIRequest) GetParamIsvStockAdjustRequestDTO() *IsvStockAdjustRequestDto {
 	return r._paramIsvStockAdjustRequestDTO
 }

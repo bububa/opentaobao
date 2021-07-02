@@ -37,7 +37,7 @@ func (r AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is ParamnQuery Setter
+// SetParamnQuery is ParamnQuery Setter
 // 请求参数对象
 func (r *AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest) SetParamnQuery(_paramnQuery *PlaceOrderDto) error {
 	r._paramnQuery = _paramnQuery
@@ -45,7 +45,7 @@ func (r *AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest) SetParamnQuer
 	return nil
 }
 
-// Get ParamnQuery Getter
+// GetParamnQuery ParamnQuery Getter
 func (r AlibabaOnetouchLogisticsExpressChargeCalculateAPIRequest) GetParamnQuery() *PlaceOrderDto {
 	return r._paramnQuery
 }

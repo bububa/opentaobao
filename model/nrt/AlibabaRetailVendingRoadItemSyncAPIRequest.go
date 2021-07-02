@@ -37,7 +37,7 @@ func (r AlibabaRetailVendingRoadItemSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RoadItemSync Setter
+// SetRoadItemSync is RoadItemSync Setter
 // 入参
 func (r *AlibabaRetailVendingRoadItemSyncAPIRequest) SetRoadItemSync(_roadItemSync *RoadItemSyncDto) error {
 	r._roadItemSync = _roadItemSync
@@ -45,7 +45,7 @@ func (r *AlibabaRetailVendingRoadItemSyncAPIRequest) SetRoadItemSync(_roadItemSy
 	return nil
 }
 
-// Get RoadItemSync Getter
+// GetRoadItemSync RoadItemSync Getter
 func (r AlibabaRetailVendingRoadItemSyncAPIRequest) GetRoadItemSync() *RoadItemSyncDto {
 	return r._roadItemSync
 }

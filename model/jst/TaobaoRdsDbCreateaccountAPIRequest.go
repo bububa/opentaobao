@@ -37,7 +37,7 @@ func (r TaobaoRdsDbCreateaccountAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 入参对象
 func (r *TaobaoRdsDbCreateaccountAPIRequest) SetParam0(_param0 *RequestDbAccountModel) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TaobaoRdsDbCreateaccountAPIRequest) SetParam0(_param0 *RequestDbAccount
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoRdsDbCreateaccountAPIRequest) GetParam0() *RequestDbAccountModel {
 	return r._param0
 }

@@ -43,7 +43,7 @@ func (r AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is WorkBenchContext Setter
+// SetWorkBenchContext is WorkBenchContext Setter
 // 请求发送端信息
 func (r *AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
 	r._workBenchContext = _workBenchContext
@@ -51,12 +51,12 @@ func (r *AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest) SetWorkBenchContext(
 	return nil
 }
 
-// Get WorkBenchContext Getter
+// GetWorkBenchContext WorkBenchContext Getter
 func (r AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest) GetWorkBenchContext() *WorkBenchContext {
 	return r._workBenchContext
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 设备序列号uuid
 func (r *AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -64,12 +64,12 @@ func (r *AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest) SetUuid(_uuid string
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is PropertyCode Setter
+// SetPropertyCode is PropertyCode Setter
 // 参数code,如灯亮度参数为brightness;设备的开关switchstate。参数code信息请查阅‘平台技术’下‘设备详细信息开发文档’。
 func (r *AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest) SetPropertyCode(_propertyCode string) error {
 	r._propertyCode = _propertyCode
@@ -77,12 +77,12 @@ func (r *AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest) SetPropertyCode(_pro
 	return nil
 }
 
-// Get PropertyCode Getter
+// GetPropertyCode PropertyCode Getter
 func (r AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest) GetPropertyCode() string {
 	return r._propertyCode
 }
 
-// Set is Value Setter
+// SetValue is Value Setter
 // 设置的参数值.如灯亮度为0~255.0表示关;设备开关,值使用on或off。[请按照‘设备详细信息开发文档’传入正确的参数值类型]
 func (r *AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest) SetValue(_value string) error {
 	r._value = _value
@@ -90,7 +90,7 @@ func (r *AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest) SetValue(_value stri
 	return nil
 }
 
-// Get Value Getter
+// GetValue Value Getter
 func (r AlibabaCampusDeviceOpenapiOperatedeviceAPIRequest) GetValue() string {
 	return r._value
 }

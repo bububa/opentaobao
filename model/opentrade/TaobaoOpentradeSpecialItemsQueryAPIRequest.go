@@ -37,7 +37,7 @@ func (r TaobaoOpentradeSpecialItemsQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MiniappId Setter
+// SetMiniappId is MiniappId Setter
 // 绑定专属下单场景的C端小程序ID
 func (r *TaobaoOpentradeSpecialItemsQueryAPIRequest) SetMiniappId(_miniappId int64) error {
 	r._miniappId = _miniappId
@@ -45,7 +45,7 @@ func (r *TaobaoOpentradeSpecialItemsQueryAPIRequest) SetMiniappId(_miniappId int
 	return nil
 }
 
-// Get MiniappId Getter
+// GetMiniappId MiniappId Getter
 func (r TaobaoOpentradeSpecialItemsQueryAPIRequest) GetMiniappId() int64 {
 	return r._miniappId
 }

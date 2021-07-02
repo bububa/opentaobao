@@ -39,7 +39,7 @@ func (r TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 用户信息
 func (r *TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
 	r._param0 = _param0
@@ -47,12 +47,12 @@ func (r *TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) SetParam0(_param0 *Open
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) GetParam0() *OpenBaseInfo {
 	return r._param0
 }
 
-// Set is Param1 Setter
+// SetParam1 is Param1 Setter
 // 设备id
 func (r *TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) SetParam1(_param1 string) error {
 	r._param1 = _param1
@@ -60,7 +60,7 @@ func (r *TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) SetParam1(_param1 strin
 	return nil
 }
 
-// Get Param1 Getter
+// GetParam1 Param1 Getter
 func (r TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) GetParam1() string {
 	return r._param1
 }

@@ -37,7 +37,7 @@ func (r AlibabaMoziAclPermissionpkgAddRolesAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Parameters Setter
+// SetParameters is Parameters Setter
 // 请求入参对象
 func (r *AlibabaMoziAclPermissionpkgAddRolesAPIRequest) SetParameters(_parameters *UpdateRolesToPermissionPackageRequest) error {
 	r._parameters = _parameters
@@ -45,7 +45,7 @@ func (r *AlibabaMoziAclPermissionpkgAddRolesAPIRequest) SetParameters(_parameter
 	return nil
 }
 
-// Get Parameters Getter
+// GetParameters Parameters Getter
 func (r AlibabaMoziAclPermissionpkgAddRolesAPIRequest) GetParameters() *UpdateRolesToPermissionPackageRequest {
 	return r._parameters
 }

@@ -41,7 +41,7 @@ func (r TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 旺旺名称
 func (r *TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -49,12 +49,12 @@ func (r *TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) SetNick(_nick str
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is AdGroupId Setter
+// SetAdGroupId is AdGroupId Setter
 // adgroupId
 func (r *TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) SetAdGroupId(_adGroupId int64) error {
 	r._adGroupId = _adGroupId
@@ -62,12 +62,12 @@ func (r *TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) SetAdGroupId(_adG
 	return nil
 }
 
-// Get AdGroupId Getter
+// GetAdGroupId AdGroupId Getter
 func (r TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) GetAdGroupId() int64 {
 	return r._adGroupId
 }
 
-// Set is BidwordIds Setter
+// SetBidwordIds is BidwordIds Setter
 // 关键词列表集合,id用半角逗号分割，一次最多20个
 func (r *TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) SetBidwordIds(_bidwordIds []int64) error {
 	r._bidwordIds = _bidwordIds
@@ -75,7 +75,7 @@ func (r *TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) SetBidwordIds(_bi
 	return nil
 }
 
-// Get BidwordIds Getter
+// GetBidwordIds BidwordIds Getter
 func (r TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) GetBidwordIds() []int64 {
 	return r._bidwordIds
 }

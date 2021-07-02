@@ -37,7 +37,7 @@ func (r TaobaoBusOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamB2BOrderQueryRQ Setter
+// SetParamB2BOrderQueryRQ is ParamB2BOrderQueryRQ Setter
 // 订单查询对象
 func (r *TaobaoBusOrderGetAPIRequest) SetParamB2BOrderQueryRQ(_paramB2BOrderQueryRQ *B2BOrderQueryRq) error {
 	r._paramB2BOrderQueryRQ = _paramB2BOrderQueryRQ
@@ -45,7 +45,7 @@ func (r *TaobaoBusOrderGetAPIRequest) SetParamB2BOrderQueryRQ(_paramB2BOrderQuer
 	return nil
 }
 
-// Get ParamB2BOrderQueryRQ Getter
+// GetParamB2BOrderQueryRQ ParamB2BOrderQueryRQ Getter
 func (r TaobaoBusOrderGetAPIRequest) GetParamB2BOrderQueryRQ() *B2BOrderQueryRq {
 	return r._paramB2BOrderQueryRQ
 }

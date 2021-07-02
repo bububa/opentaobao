@@ -41,7 +41,7 @@ func (r AlitripMerchantGalaxyMemberCardAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TenantKey Setter
+// SetTenantKey is TenantKey Setter
 // 租户信息
 func (r *AlitripMerchantGalaxyMemberCardAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
@@ -49,12 +49,12 @@ func (r *AlitripMerchantGalaxyMemberCardAPIRequest) SetTenantKey(_tenantKey stri
 	return nil
 }
 
-// Get TenantKey Getter
+// GetTenantKey TenantKey Getter
 func (r AlitripMerchantGalaxyMemberCardAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
-// Set is FliggyLevel Setter
+// SetFliggyLevel is FliggyLevel Setter
 // 飞猪等级
 func (r *AlitripMerchantGalaxyMemberCardAPIRequest) SetFliggyLevel(_fliggyLevel string) error {
 	r._fliggyLevel = _fliggyLevel
@@ -62,12 +62,12 @@ func (r *AlitripMerchantGalaxyMemberCardAPIRequest) SetFliggyLevel(_fliggyLevel 
 	return nil
 }
 
-// Get FliggyLevel Getter
+// GetFliggyLevel FliggyLevel Getter
 func (r AlitripMerchantGalaxyMemberCardAPIRequest) GetFliggyLevel() string {
 	return r._fliggyLevel
 }
 
-// Set is CardType Setter
+// SetCardType is CardType Setter
 // 卡类型
 func (r *AlitripMerchantGalaxyMemberCardAPIRequest) SetCardType(_cardType string) error {
 	r._cardType = _cardType
@@ -75,7 +75,7 @@ func (r *AlitripMerchantGalaxyMemberCardAPIRequest) SetCardType(_cardType string
 	return nil
 }
 
-// Get CardType Getter
+// GetCardType CardType Getter
 func (r AlitripMerchantGalaxyMemberCardAPIRequest) GetCardType() string {
 	return r._cardType
 }

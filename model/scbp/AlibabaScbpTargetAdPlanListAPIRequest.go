@@ -37,7 +37,7 @@ func (r AlibabaScbpTargetAdPlanListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TopP4pQuickCampaignQuery Setter
+// SetTopP4pQuickCampaignQuery is TopP4pQuickCampaignQuery Setter
 // TopP4pQuickCampaignQuery
 func (r *AlibabaScbpTargetAdPlanListAPIRequest) SetTopP4pQuickCampaignQuery(_topP4pQuickCampaignQuery *TopP4pQuickCampaignQueryDto) error {
 	r._topP4pQuickCampaignQuery = _topP4pQuickCampaignQuery
@@ -45,7 +45,7 @@ func (r *AlibabaScbpTargetAdPlanListAPIRequest) SetTopP4pQuickCampaignQuery(_top
 	return nil
 }
 
-// Get TopP4pQuickCampaignQuery Getter
+// GetTopP4pQuickCampaignQuery TopP4pQuickCampaignQuery Getter
 func (r AlibabaScbpTargetAdPlanListAPIRequest) GetTopP4pQuickCampaignQuery() *TopP4pQuickCampaignQueryDto {
 	return r._topP4pQuickCampaignQuery
 }

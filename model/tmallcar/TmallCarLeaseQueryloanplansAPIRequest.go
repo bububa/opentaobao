@@ -39,7 +39,7 @@ func (r TmallCarLeaseQueryloanplansAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Loanarno Setter
+// SetLoanarno is Loanarno Setter
 // 合约编号
 func (r *TmallCarLeaseQueryloanplansAPIRequest) SetLoanarno(_loanarno string) error {
 	r._loanarno = _loanarno
@@ -47,12 +47,12 @@ func (r *TmallCarLeaseQueryloanplansAPIRequest) SetLoanarno(_loanarno string) er
 	return nil
 }
 
-// Get Loanarno Getter
+// GetLoanarno Loanarno Getter
 func (r TmallCarLeaseQueryloanplansAPIRequest) GetLoanarno() string {
 	return r._loanarno
 }
 
-// Set is Iproleid Setter
+// SetIproleid is Iproleid Setter
 // 客户的角色编号
 func (r *TmallCarLeaseQueryloanplansAPIRequest) SetIproleid(_iproleid string) error {
 	r._iproleid = _iproleid
@@ -60,7 +60,7 @@ func (r *TmallCarLeaseQueryloanplansAPIRequest) SetIproleid(_iproleid string) er
 	return nil
 }
 
-// Get Iproleid Getter
+// GetIproleid Iproleid Getter
 func (r TmallCarLeaseQueryloanplansAPIRequest) GetIproleid() string {
 	return r._iproleid
 }

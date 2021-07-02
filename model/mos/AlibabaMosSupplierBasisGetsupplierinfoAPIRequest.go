@@ -37,7 +37,7 @@ func (r AlibabaMosSupplierBasisGetsupplierinfoAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is SupplierId Setter
+// SetSupplierId is SupplierId Setter
 // 供应商id
 func (r *AlibabaMosSupplierBasisGetsupplierinfoAPIRequest) SetSupplierId(_supplierId string) error {
 	r._supplierId = _supplierId
@@ -45,7 +45,7 @@ func (r *AlibabaMosSupplierBasisGetsupplierinfoAPIRequest) SetSupplierId(_suppli
 	return nil
 }
 
-// Get SupplierId Getter
+// GetSupplierId SupplierId Getter
 func (r AlibabaMosSupplierBasisGetsupplierinfoAPIRequest) GetSupplierId() string {
 	return r._supplierId
 }

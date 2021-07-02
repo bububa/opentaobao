@@ -37,7 +37,7 @@ func (r AlitripBtripSupplychainTrainCityAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 入参对象
 func (r *AlitripBtripSupplychainTrainCityAPIRequest) SetRq(_rq *OpenSuggestRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripSupplychainTrainCityAPIRequest) SetRq(_rq *OpenSuggestRq) e
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripSupplychainTrainCityAPIRequest) GetRq() *OpenSuggestRq {
 	return r._rq
 }

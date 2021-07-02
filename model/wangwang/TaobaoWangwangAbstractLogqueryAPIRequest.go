@@ -49,7 +49,7 @@ func (r TaobaoWangwangAbstractLogqueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ToId Setter
+// SetToId is ToId Setter
 // 买家id，有cntaobao前缀
 func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetToId(_toId string) error {
 	r._toId = _toId
@@ -57,12 +57,12 @@ func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetToId(_toId string) error {
 	return nil
 }
 
-// Get ToId Getter
+// GetToId ToId Getter
 func (r TaobaoWangwangAbstractLogqueryAPIRequest) GetToId() string {
 	return r._toId
 }
 
-// Set is FromId Setter
+// SetFromId is FromId Setter
 // 卖家id，有cntaobao前缀
 func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetFromId(_fromId string) error {
 	r._fromId = _fromId
@@ -70,12 +70,12 @@ func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetFromId(_fromId string) err
 	return nil
 }
 
-// Get FromId Getter
+// GetFromId FromId Getter
 func (r TaobaoWangwangAbstractLogqueryAPIRequest) GetFromId() string {
 	return r._fromId
 }
 
-// Set is Count Setter
+// SetCount is Count Setter
 // 获取记录条数，默认值是1000
 func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetCount(_count int64) error {
 	r._count = _count
@@ -83,12 +83,12 @@ func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetCount(_count int64) error 
 	return nil
 }
 
-// Get Count Getter
+// GetCount Count Getter
 func (r TaobaoWangwangAbstractLogqueryAPIRequest) GetCount() int64 {
 	return r._count
 }
 
-// Set is NextKey Setter
+// SetNextKey is NextKey Setter
 // 设置了这个值，那么聊天记录就从这个点开始查询
 func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetNextKey(_nextKey string) error {
 	r._nextKey = _nextKey
@@ -96,12 +96,12 @@ func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetNextKey(_nextKey string) e
 	return nil
 }
 
-// Get NextKey Getter
+// GetNextKey NextKey Getter
 func (r TaobaoWangwangAbstractLogqueryAPIRequest) GetNextKey() string {
 	return r._nextKey
 }
 
-// Set is Charset Setter
+// SetCharset is Charset Setter
 // 传入参数的字符集
 func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetCharset(_charset string) error {
 	r._charset = _charset
@@ -109,12 +109,12 @@ func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetCharset(_charset string) e
 	return nil
 }
 
-// Get Charset Getter
+// GetCharset Charset Getter
 func (r TaobaoWangwangAbstractLogqueryAPIRequest) GetCharset() string {
 	return r._charset
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // utc
 func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetStartDate(_startDate int64) error {
 	r._startDate = _startDate
@@ -122,12 +122,12 @@ func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetStartDate(_startDate int64
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoWangwangAbstractLogqueryAPIRequest) GetStartDate() int64 {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // utc
 func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetEndDate(_endDate int64) error {
 	r._endDate = _endDate
@@ -135,7 +135,7 @@ func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetEndDate(_endDate int64) er
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoWangwangAbstractLogqueryAPIRequest) GetEndDate() int64 {
 	return r._endDate
 }

@@ -37,7 +37,7 @@ func (r TaobaoWttTradeServiceGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizOrder Setter
+// SetBizOrder is BizOrder Setter
 // 订单ID
 func (r *TaobaoWttTradeServiceGetAPIRequest) SetBizOrder(_bizOrder int64) error {
 	r._bizOrder = _bizOrder
@@ -45,7 +45,7 @@ func (r *TaobaoWttTradeServiceGetAPIRequest) SetBizOrder(_bizOrder int64) error 
 	return nil
 }
 
-// Get BizOrder Getter
+// GetBizOrder BizOrder Getter
 func (r TaobaoWttTradeServiceGetAPIRequest) GetBizOrder() int64 {
 	return r._bizOrder
 }

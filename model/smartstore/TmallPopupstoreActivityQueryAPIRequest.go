@@ -39,7 +39,7 @@ func (r TmallPopupstoreActivityQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 查询开始时间,yyyy-MM-dd
 func (r *TmallPopupstoreActivityQueryAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -47,12 +47,12 @@ func (r *TmallPopupstoreActivityQueryAPIRequest) SetStartDate(_startDate string)
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TmallPopupstoreActivityQueryAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 查询结束时间，yyyy-MM-dd
 func (r *TmallPopupstoreActivityQueryAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -60,7 +60,7 @@ func (r *TmallPopupstoreActivityQueryAPIRequest) SetEndDate(_endDate string) err
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TmallPopupstoreActivityQueryAPIRequest) GetEndDate() string {
 	return r._endDate
 }

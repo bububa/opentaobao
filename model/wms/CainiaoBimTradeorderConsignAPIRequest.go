@@ -41,7 +41,7 @@ func (r CainiaoBimTradeorderConsignAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TradeId Setter
+// SetTradeId is TradeId Setter
 // 交易单号
 func (r *CainiaoBimTradeorderConsignAPIRequest) SetTradeId(_tradeId string) error {
 	r._tradeId = _tradeId
@@ -49,12 +49,12 @@ func (r *CainiaoBimTradeorderConsignAPIRequest) SetTradeId(_tradeId string) erro
 	return nil
 }
 
-// Get TradeId Getter
+// GetTradeId TradeId Getter
 func (r CainiaoBimTradeorderConsignAPIRequest) GetTradeId() string {
 	return r._tradeId
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 仓储编码，ERP指定仓库发货时需要传值，编码由菜鸟提供
 func (r *CainiaoBimTradeorderConsignAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -62,12 +62,12 @@ func (r *CainiaoBimTradeorderConsignAPIRequest) SetStoreCode(_storeCode string) 
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r CainiaoBimTradeorderConsignAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is ResId Setter
+// SetResId is ResId Setter
 // 选择的线路ID非必填字段
 func (r *CainiaoBimTradeorderConsignAPIRequest) SetResId(_resId string) error {
 	r._resId = _resId
@@ -75,7 +75,7 @@ func (r *CainiaoBimTradeorderConsignAPIRequest) SetResId(_resId string) error {
 	return nil
 }
 
-// Get ResId Getter
+// GetResId ResId Getter
 func (r CainiaoBimTradeorderConsignAPIRequest) GetResId() string {
 	return r._resId
 }

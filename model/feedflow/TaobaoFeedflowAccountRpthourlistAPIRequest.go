@@ -37,7 +37,7 @@ func (r TaobaoFeedflowAccountRpthourlistAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RptQuery Setter
+// SetRptQuery is RptQuery Setter
 // 查询参数
 func (r *TaobaoFeedflowAccountRpthourlistAPIRequest) SetRptQuery(_rptQuery *RptQueryDto) error {
 	r._rptQuery = _rptQuery
@@ -45,7 +45,7 @@ func (r *TaobaoFeedflowAccountRpthourlistAPIRequest) SetRptQuery(_rptQuery *RptQ
 	return nil
 }
 
-// Get RptQuery Getter
+// GetRptQuery RptQuery Getter
 func (r TaobaoFeedflowAccountRpthourlistAPIRequest) GetRptQuery() *RptQueryDto {
 	return r._rptQuery
 }

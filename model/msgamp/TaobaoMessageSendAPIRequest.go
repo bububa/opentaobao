@@ -37,7 +37,7 @@ func (r TaobaoMessageSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SendMessageReq Setter
+// SetSendMessageReq is SendMessageReq Setter
 // 消息发送相关参数
 func (r *TaobaoMessageSendAPIRequest) SetSendMessageReq(_sendMessageReq *SendMessageReq) error {
 	r._sendMessageReq = _sendMessageReq
@@ -45,7 +45,7 @@ func (r *TaobaoMessageSendAPIRequest) SetSendMessageReq(_sendMessageReq *SendMes
 	return nil
 }
 
-// Get SendMessageReq Getter
+// GetSendMessageReq SendMessageReq Getter
 func (r TaobaoMessageSendAPIRequest) GetSendMessageReq() *SendMessageReq {
 	return r._sendMessageReq
 }

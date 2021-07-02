@@ -39,7 +39,7 @@ func (r SlbAliyuncsComSetLoadBalancerName2013_02_21APIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is LoadBalancerId Setter
+// SetLoadBalancerId is LoadBalancerId Setter
 // loadBalancerId
 func (r *SlbAliyuncsComSetLoadBalancerName2013_02_21APIRequest) SetLoadBalancerId(_loadBalancerId string) error {
 	r._loadBalancerId = _loadBalancerId
@@ -47,12 +47,12 @@ func (r *SlbAliyuncsComSetLoadBalancerName2013_02_21APIRequest) SetLoadBalancerI
 	return nil
 }
 
-// Get LoadBalancerId Getter
+// GetLoadBalancerId LoadBalancerId Getter
 func (r SlbAliyuncsComSetLoadBalancerName2013_02_21APIRequest) GetLoadBalancerId() string {
 	return r._loadBalancerId
 }
 
-// Set is LoadBalancerName Setter
+// SetLoadBalancerName is LoadBalancerName Setter
 // loadBalancerName
 func (r *SlbAliyuncsComSetLoadBalancerName2013_02_21APIRequest) SetLoadBalancerName(_loadBalancerName string) error {
 	r._loadBalancerName = _loadBalancerName
@@ -60,7 +60,7 @@ func (r *SlbAliyuncsComSetLoadBalancerName2013_02_21APIRequest) SetLoadBalancerN
 	return nil
 }
 
-// Get LoadBalancerName Getter
+// GetLoadBalancerName LoadBalancerName Getter
 func (r SlbAliyuncsComSetLoadBalancerName2013_02_21APIRequest) GetLoadBalancerName() string {
 	return r._loadBalancerName
 }

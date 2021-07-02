@@ -43,7 +43,7 @@ func (r TaobaoMobilePromotionCouponSellerSearchAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is TraceId Setter
+// SetTraceId is TraceId Setter
 // 请求id 排查线索 需保证单次调用唯一
 func (r *TaobaoMobilePromotionCouponSellerSearchAPIRequest) SetTraceId(_traceId string) error {
 	r._traceId = _traceId
@@ -51,12 +51,12 @@ func (r *TaobaoMobilePromotionCouponSellerSearchAPIRequest) SetTraceId(_traceId 
 	return nil
 }
 
-// Get TraceId Getter
+// GetTraceId TraceId Getter
 func (r TaobaoMobilePromotionCouponSellerSearchAPIRequest) GetTraceId() string {
 	return r._traceId
 }
 
-// Set is SpreadIds Setter
+// SetSpreadIds is SpreadIds Setter
 // 券id集合
 func (r *TaobaoMobilePromotionCouponSellerSearchAPIRequest) SetSpreadIds(_spreadIds string) error {
 	r._spreadIds = _spreadIds
@@ -64,12 +64,12 @@ func (r *TaobaoMobilePromotionCouponSellerSearchAPIRequest) SetSpreadIds(_spread
 	return nil
 }
 
-// Get SpreadIds Getter
+// GetSpreadIds SpreadIds Getter
 func (r TaobaoMobilePromotionCouponSellerSearchAPIRequest) GetSpreadIds() string {
 	return r._spreadIds
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页数据 最大20左右
 func (r *TaobaoMobilePromotionCouponSellerSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *TaobaoMobilePromotionCouponSellerSearchAPIRequest) SetPageSize(_pageSiz
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoMobilePromotionCouponSellerSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前第几页 从第一页开始
 func (r *TaobaoMobilePromotionCouponSellerSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -90,7 +90,7 @@ func (r *TaobaoMobilePromotionCouponSellerSearchAPIRequest) SetCurrentPage(_curr
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TaobaoMobilePromotionCouponSellerSearchAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }

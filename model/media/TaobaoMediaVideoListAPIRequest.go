@@ -37,7 +37,7 @@ func (r TaobaoMediaVideoListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SearchCondition Setter
+// SetSearchCondition is SearchCondition Setter
 // 搜索条件
 func (r *TaobaoMediaVideoListAPIRequest) SetSearchCondition(_searchCondition *VideoSearchCondition2) error {
 	r._searchCondition = _searchCondition
@@ -45,7 +45,7 @@ func (r *TaobaoMediaVideoListAPIRequest) SetSearchCondition(_searchCondition *Vi
 	return nil
 }
 
-// Get SearchCondition Getter
+// GetSearchCondition SearchCondition Getter
 func (r TaobaoMediaVideoListAPIRequest) GetSearchCondition() *VideoSearchCondition2 {
 	return r._searchCondition
 }

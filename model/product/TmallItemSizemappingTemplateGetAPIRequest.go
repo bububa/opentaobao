@@ -37,7 +37,7 @@ func (r TmallItemSizemappingTemplateGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TemplateId Setter
+// SetTemplateId is TemplateId Setter
 // 尺码表模板ID
 func (r *TmallItemSizemappingTemplateGetAPIRequest) SetTemplateId(_templateId int64) error {
 	r._templateId = _templateId
@@ -45,7 +45,7 @@ func (r *TmallItemSizemappingTemplateGetAPIRequest) SetTemplateId(_templateId in
 	return nil
 }
 
-// Get TemplateId Getter
+// GetTemplateId TemplateId Getter
 func (r TmallItemSizemappingTemplateGetAPIRequest) GetTemplateId() int64 {
 	return r._templateId
 }

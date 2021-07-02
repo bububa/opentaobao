@@ -51,7 +51,7 @@ func (r TaobaoTmcMessageProduceAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 消息内容的JSON表述，必须按照topic的定义来填充
 func (r *TaobaoTmcMessageProduceAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -59,12 +59,12 @@ func (r *TaobaoTmcMessageProduceAPIRequest) SetContent(_content string) error {
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r TaobaoTmcMessageProduceAPIRequest) GetContent() string {
 	return r._content
 }
 
-// Set is Topic Setter
+// SetTopic is Topic Setter
 // 消息类型
 func (r *TaobaoTmcMessageProduceAPIRequest) SetTopic(_topic string) error {
 	r._topic = _topic
@@ -72,12 +72,12 @@ func (r *TaobaoTmcMessageProduceAPIRequest) SetTopic(_topic string) error {
 	return nil
 }
 
-// Get Topic Getter
+// GetTopic Topic Getter
 func (r TaobaoTmcMessageProduceAPIRequest) GetTopic() string {
 	return r._topic
 }
 
-// Set is MediaContent Setter
+// SetMediaContent is MediaContent Setter
 // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。
 func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent(_mediaContent *model.File) error {
 	r._mediaContent = _mediaContent
@@ -85,12 +85,12 @@ func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent(_mediaContent *model
 	return nil
 }
 
-// Get MediaContent Getter
+// GetMediaContent MediaContent Getter
 func (r TaobaoTmcMessageProduceAPIRequest) GetMediaContent() *model.File {
 	return r._mediaContent
 }
 
-// Set is MediaContent2 Setter
+// SetMediaContent2 is MediaContent2 Setter
 // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
 func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent2(_mediaContent2 *model.File) error {
 	r._mediaContent2 = _mediaContent2
@@ -98,12 +98,12 @@ func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent2(_mediaContent2 *mod
 	return nil
 }
 
-// Get MediaContent2 Getter
+// GetMediaContent2 MediaContent2 Getter
 func (r TaobaoTmcMessageProduceAPIRequest) GetMediaContent2() *model.File {
 	return r._mediaContent2
 }
 
-// Set is MediaContent3 Setter
+// SetMediaContent3 is MediaContent3 Setter
 // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
 func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent3(_mediaContent3 *model.File) error {
 	r._mediaContent3 = _mediaContent3
@@ -111,12 +111,12 @@ func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent3(_mediaContent3 *mod
 	return nil
 }
 
-// Get MediaContent3 Getter
+// GetMediaContent3 MediaContent3 Getter
 func (r TaobaoTmcMessageProduceAPIRequest) GetMediaContent3() *model.File {
 	return r._mediaContent3
 }
 
-// Set is MediaContent4 Setter
+// SetMediaContent4 is MediaContent4 Setter
 // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
 func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent4(_mediaContent4 *model.File) error {
 	r._mediaContent4 = _mediaContent4
@@ -124,12 +124,12 @@ func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent4(_mediaContent4 *mod
 	return nil
 }
 
-// Get MediaContent4 Getter
+// GetMediaContent4 MediaContent4 Getter
 func (r TaobaoTmcMessageProduceAPIRequest) GetMediaContent4() *model.File {
 	return r._mediaContent4
 }
 
-// Set is MediaContent5 Setter
+// SetMediaContent5 is MediaContent5 Setter
 // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
 func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent5(_mediaContent5 *model.File) error {
 	r._mediaContent5 = _mediaContent5
@@ -137,12 +137,12 @@ func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent5(_mediaContent5 *mod
 	return nil
 }
 
-// Get MediaContent5 Getter
+// GetMediaContent5 MediaContent5 Getter
 func (r TaobaoTmcMessageProduceAPIRequest) GetMediaContent5() *model.File {
 	return r._mediaContent5
 }
 
-// Set is TargetGroup Setter
+// SetTargetGroup is TargetGroup Setter
 // 目标分组，一般为default
 func (r *TaobaoTmcMessageProduceAPIRequest) SetTargetGroup(_targetGroup string) error {
 	r._targetGroup = _targetGroup
@@ -150,7 +150,7 @@ func (r *TaobaoTmcMessageProduceAPIRequest) SetTargetGroup(_targetGroup string) 
 	return nil
 }
 
-// Get TargetGroup Getter
+// GetTargetGroup TargetGroup Getter
 func (r TaobaoTmcMessageProduceAPIRequest) GetTargetGroup() string {
 	return r._targetGroup
 }

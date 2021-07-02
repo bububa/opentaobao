@@ -37,7 +37,7 @@ func (r AlibabaDamaiMaitixSeatInfoQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SeatQueryParam Setter
+// SetSeatQueryParam is SeatQueryParam Setter
 // 入参
 func (r *AlibabaDamaiMaitixSeatInfoQueryAPIRequest) SetSeatQueryParam(_seatQueryParam *SeatQueryParam) error {
 	r._seatQueryParam = _seatQueryParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMaitixSeatInfoQueryAPIRequest) SetSeatQueryParam(_seatQuery
 	return nil
 }
 
-// Get SeatQueryParam Getter
+// GetSeatQueryParam SeatQueryParam Getter
 func (r AlibabaDamaiMaitixSeatInfoQueryAPIRequest) GetSeatQueryParam() *SeatQueryParam {
 	return r._seatQueryParam
 }

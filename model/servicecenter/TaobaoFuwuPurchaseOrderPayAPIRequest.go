@@ -43,7 +43,7 @@ func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Appkey Setter
+// SetAppkey is Appkey Setter
 // APPKEY，必填
 func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) SetAppkey(_appkey string) error {
 	r._appkey = _appkey
@@ -51,12 +51,12 @@ func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) SetAppkey(_appkey string) error {
 	return nil
 }
 
-// Get Appkey Getter
+// GetAppkey Appkey Getter
 func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetAppkey() string {
 	return r._appkey
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单号，与外部订单号二选一
 func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -64,12 +64,12 @@ func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) SetOrderId(_orderId int64) error 
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is OutOrderId Setter
+// SetOutOrderId is OutOrderId Setter
 // 外部订单号，使用该参数完成查询订单等操作，与外部订单号二选一
 func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) SetOutOrderId(_outOrderId string) error {
 	r._outOrderId = _outOrderId
@@ -77,12 +77,12 @@ func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) SetOutOrderId(_outOrderId string)
 	return nil
 }
 
-// Get OutOrderId Getter
+// GetOutOrderId OutOrderId Getter
 func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 设备类型，目前只支持PC，可选
 func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) SetDeviceType(_deviceType string) error {
 	r._deviceType = _deviceType
@@ -90,7 +90,7 @@ func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) SetDeviceType(_deviceType string)
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetDeviceType() string {
 	return r._deviceType
 }

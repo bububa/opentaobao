@@ -37,7 +37,7 @@ func (r TaobaoDeliveryTemplateDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TemplateId Setter
+// SetTemplateId is TemplateId Setter
 // 运费模板ID
 func (r *TaobaoDeliveryTemplateDeleteAPIRequest) SetTemplateId(_templateId int64) error {
 	r._templateId = _templateId
@@ -45,7 +45,7 @@ func (r *TaobaoDeliveryTemplateDeleteAPIRequest) SetTemplateId(_templateId int64
 	return nil
 }
 
-// Get TemplateId Getter
+// GetTemplateId TemplateId Getter
 func (r TaobaoDeliveryTemplateDeleteAPIRequest) GetTemplateId() int64 {
 	return r._templateId
 }

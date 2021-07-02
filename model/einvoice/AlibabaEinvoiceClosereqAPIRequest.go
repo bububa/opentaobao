@@ -39,7 +39,7 @@ func (r AlibabaEinvoiceClosereqAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SerialNo Setter
+// SetSerialNo is SerialNo Setter
 // 流水号
 func (r *AlibabaEinvoiceClosereqAPIRequest) SetSerialNo(_serialNo string) error {
 	r._serialNo = _serialNo
@@ -47,12 +47,12 @@ func (r *AlibabaEinvoiceClosereqAPIRequest) SetSerialNo(_serialNo string) error 
 	return nil
 }
 
-// Get SerialNo Getter
+// GetSerialNo SerialNo Getter
 func (r AlibabaEinvoiceClosereqAPIRequest) GetSerialNo() string {
 	return r._serialNo
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 税号
 func (r *AlibabaEinvoiceClosereqAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -60,7 +60,7 @@ func (r *AlibabaEinvoiceClosereqAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo 
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceClosereqAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }

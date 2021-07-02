@@ -37,7 +37,7 @@ func (r TmallAliautoMetaReceiveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Command Setter
+// SetCommand is Command Setter
 // 元数据参数集
 func (r *TmallAliautoMetaReceiveAPIRequest) SetCommand(_command *ResourceMetaCommand) error {
 	r._command = _command
@@ -45,7 +45,7 @@ func (r *TmallAliautoMetaReceiveAPIRequest) SetCommand(_command *ResourceMetaCom
 	return nil
 }
 
-// Get Command Getter
+// GetCommand Command Getter
 func (r TmallAliautoMetaReceiveAPIRequest) GetCommand() *ResourceMetaCommand {
 	return r._command
 }

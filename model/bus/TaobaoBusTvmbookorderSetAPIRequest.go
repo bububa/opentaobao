@@ -51,7 +51,7 @@ func (r TaobaoBusTvmbookorderSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AlitripOrderId Setter
+// SetAlitripOrderId is AlitripOrderId Setter
 // 飞猪订单号
 func (r *TaobaoBusTvmbookorderSetAPIRequest) SetAlitripOrderId(_alitripOrderId string) error {
 	r._alitripOrderId = _alitripOrderId
@@ -59,12 +59,12 @@ func (r *TaobaoBusTvmbookorderSetAPIRequest) SetAlitripOrderId(_alitripOrderId s
 	return nil
 }
 
-// Get AlitripOrderId Getter
+// GetAlitripOrderId AlitripOrderId Getter
 func (r TaobaoBusTvmbookorderSetAPIRequest) GetAlitripOrderId() string {
 	return r._alitripOrderId
 }
 
-// Set is BookTime Setter
+// SetBookTime is BookTime Setter
 // 出票时间 2017-03-03 11:22:33
 func (r *TaobaoBusTvmbookorderSetAPIRequest) SetBookTime(_bookTime string) error {
 	r._bookTime = _bookTime
@@ -72,12 +72,12 @@ func (r *TaobaoBusTvmbookorderSetAPIRequest) SetBookTime(_bookTime string) error
 	return nil
 }
 
-// Get BookTime Getter
+// GetBookTime BookTime Getter
 func (r TaobaoBusTvmbookorderSetAPIRequest) GetBookTime() string {
 	return r._bookTime
 }
 
-// Set is Success Setter
+// SetSuccess is Success Setter
 // true代表出票成功；false代表出票失败
 func (r *TaobaoBusTvmbookorderSetAPIRequest) SetSuccess(_success bool) error {
 	r._success = _success
@@ -85,12 +85,12 @@ func (r *TaobaoBusTvmbookorderSetAPIRequest) SetSuccess(_success bool) error {
 	return nil
 }
 
-// Get Success Getter
+// GetSuccess Success Getter
 func (r TaobaoBusTvmbookorderSetAPIRequest) GetSuccess() bool {
 	return r._success
 }
 
-// Set is PayMode Setter
+// SetPayMode is PayMode Setter
 // 取值范围  ALIPAY （飞猪渠道）; WECHAT（微信）; BANKCARD（银行卡）;CASH（现金）; OWN_ALIPAY（自身支付宝渠道，非飞猪渠道）
 func (r *TaobaoBusTvmbookorderSetAPIRequest) SetPayMode(_payMode string) error {
 	r._payMode = _payMode
@@ -98,12 +98,12 @@ func (r *TaobaoBusTvmbookorderSetAPIRequest) SetPayMode(_payMode string) error {
 	return nil
 }
 
-// Get PayMode Getter
+// GetPayMode PayMode Getter
 func (r TaobaoBusTvmbookorderSetAPIRequest) GetPayMode() string {
 	return r._payMode
 }
 
-// Set is FetchPhone Setter
+// SetFetchPhone is FetchPhone Setter
 // 取票人手机号
 func (r *TaobaoBusTvmbookorderSetAPIRequest) SetFetchPhone(_fetchPhone string) error {
 	r._fetchPhone = _fetchPhone
@@ -111,12 +111,12 @@ func (r *TaobaoBusTvmbookorderSetAPIRequest) SetFetchPhone(_fetchPhone string) e
 	return nil
 }
 
-// Get FetchPhone Getter
+// GetFetchPhone FetchPhone Getter
 func (r TaobaoBusTvmbookorderSetAPIRequest) GetFetchPhone() string {
 	return r._fetchPhone
 }
 
-// Set is Passengers Setter
+// SetPassengers is Passengers Setter
 // 乘客票面信息
 func (r *TaobaoBusTvmbookorderSetAPIRequest) SetPassengers(_passengers []TvmPassengerVo) error {
 	r._passengers = _passengers
@@ -124,12 +124,12 @@ func (r *TaobaoBusTvmbookorderSetAPIRequest) SetPassengers(_passengers []TvmPass
 	return nil
 }
 
-// Get Passengers Getter
+// GetPassengers Passengers Getter
 func (r TaobaoBusTvmbookorderSetAPIRequest) GetPassengers() []TvmPassengerVo {
 	return r._passengers
 }
 
-// Set is SupportEticket Setter
+// SetSupportEticket is SupportEticket Setter
 // 是否支持电子票
 func (r *TaobaoBusTvmbookorderSetAPIRequest) SetSupportEticket(_supportEticket bool) error {
 	r._supportEticket = _supportEticket
@@ -137,12 +137,12 @@ func (r *TaobaoBusTvmbookorderSetAPIRequest) SetSupportEticket(_supportEticket b
 	return nil
 }
 
-// Get SupportEticket Getter
+// GetSupportEticket SupportEticket Getter
 func (r TaobaoBusTvmbookorderSetAPIRequest) GetSupportEticket() bool {
 	return r._supportEticket
 }
 
-// Set is TicketGate Setter
+// SetTicketGate is TicketGate Setter
 // 检票口
 func (r *TaobaoBusTvmbookorderSetAPIRequest) SetTicketGate(_ticketGate string) error {
 	r._ticketGate = _ticketGate
@@ -150,7 +150,7 @@ func (r *TaobaoBusTvmbookorderSetAPIRequest) SetTicketGate(_ticketGate string) e
 	return nil
 }
 
-// Get TicketGate Getter
+// GetTicketGate TicketGate Getter
 func (r TaobaoBusTvmbookorderSetAPIRequest) GetTicketGate() string {
 	return r._ticketGate
 }

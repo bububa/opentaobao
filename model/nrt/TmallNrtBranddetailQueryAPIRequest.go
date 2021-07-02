@@ -37,7 +37,7 @@ func (r TmallNrtBranddetailQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BrandId Setter
+// SetBrandId is BrandId Setter
 // 品牌id
 func (r *TmallNrtBranddetailQueryAPIRequest) SetBrandId(_brandId int64) error {
 	r._brandId = _brandId
@@ -45,7 +45,7 @@ func (r *TmallNrtBranddetailQueryAPIRequest) SetBrandId(_brandId int64) error {
 	return nil
 }
 
-// Get BrandId Getter
+// GetBrandId BrandId Getter
 func (r TmallNrtBranddetailQueryAPIRequest) GetBrandId() int64 {
 	return r._brandId
 }

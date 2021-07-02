@@ -39,7 +39,7 @@ func (r AlibabaAlihealthBabyBaseinfoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BabyId Setter
+// SetBabyId is BabyId Setter
 // 宝宝id
 func (r *AlibabaAlihealthBabyBaseinfoGetAPIRequest) SetBabyId(_babyId int64) error {
 	r._babyId = _babyId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthBabyBaseinfoGetAPIRequest) SetBabyId(_babyId int64) err
 	return nil
 }
 
-// Get BabyId Getter
+// GetBabyId BabyId Getter
 func (r AlibabaAlihealthBabyBaseinfoGetAPIRequest) GetBabyId() int64 {
 	return r._babyId
 }
 
-// Set is TpUserId Setter
+// SetTpUserId is TpUserId Setter
 // 宝宝所属的用户
 func (r *AlibabaAlihealthBabyBaseinfoGetAPIRequest) SetTpUserId(_tpUserId int64) error {
 	r._tpUserId = _tpUserId
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthBabyBaseinfoGetAPIRequest) SetTpUserId(_tpUserId int64)
 	return nil
 }
 
-// Get TpUserId Getter
+// GetTpUserId TpUserId Getter
 func (r AlibabaAlihealthBabyBaseinfoGetAPIRequest) GetTpUserId() int64 {
 	return r._tpUserId
 }

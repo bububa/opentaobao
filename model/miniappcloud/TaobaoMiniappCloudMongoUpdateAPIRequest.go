@@ -43,7 +43,7 @@ func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Collection Setter
+// SetCollection is Collection Setter
 // MongoDB表名
 func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetCollection(_collection string) error {
 	r._collection = _collection
@@ -51,12 +51,12 @@ func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetCollection(_collection stri
 	return nil
 }
 
-// Get Collection Getter
+// GetCollection Collection Getter
 func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetCollection() string {
 	return r._collection
 }
 
-// Set is Filter Setter
+// SetFilter is Filter Setter
 // 更新条件
 func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetFilter(_filter string) error {
 	r._filter = _filter
@@ -64,12 +64,12 @@ func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetFilter(_filter string) erro
 	return nil
 }
 
-// Get Filter Getter
+// GetFilter Filter Getter
 func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetFilter() string {
 	return r._filter
 }
 
-// Set is Record Setter
+// SetRecord is Record Setter
 // 待写入的数据
 func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetRecord(_record string) error {
 	r._record = _record
@@ -77,12 +77,12 @@ func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetRecord(_record string) erro
 	return nil
 }
 
-// Get Record Getter
+// GetRecord Record Getter
 func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetRecord() string {
 	return r._record
 }
 
-// Set is Env Setter
+// SetEnv is Env Setter
 // 要操作的环境，默认是测试环境
 func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetEnv(_env string) error {
 	r._env = _env
@@ -90,7 +90,7 @@ func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetEnv(_env string) error {
 	return nil
 }
 
-// Get Env Getter
+// GetEnv Env Getter
 func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetEnv() string {
 	return r._env
 }

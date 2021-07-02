@@ -37,7 +37,7 @@ func (r AlibabaWdkMemberQrcodeIdentifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QrCode Setter
+// SetQrCode is QrCode Setter
 // 付款码
 func (r *AlibabaWdkMemberQrcodeIdentifyAPIRequest) SetQrCode(_qrCode string) error {
 	r._qrCode = _qrCode
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMemberQrcodeIdentifyAPIRequest) SetQrCode(_qrCode string) err
 	return nil
 }
 
-// Get QrCode Getter
+// GetQrCode QrCode Getter
 func (r AlibabaWdkMemberQrcodeIdentifyAPIRequest) GetQrCode() string {
 	return r._qrCode
 }

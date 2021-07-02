@@ -37,7 +37,7 @@ func (r TaobaoMiniappMesssageReplyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参
 func (r *TaobaoMiniappMesssageReplyAPIRequest) SetParam(_param *ReplyMessageDto) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *TaobaoMiniappMesssageReplyAPIRequest) SetParam(_param *ReplyMessageDto)
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r TaobaoMiniappMesssageReplyAPIRequest) GetParam() *ReplyMessageDto {
 	return r._param
 }

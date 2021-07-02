@@ -39,7 +39,7 @@ func (r AlibabaWdkSyncedorderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *AlibabaWdkSyncedorderQueryAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -47,12 +47,12 @@ func (r *AlibabaWdkSyncedorderQueryAPIRequest) SetStoreId(_storeId string) error
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaWdkSyncedorderQueryAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is SerialNum Setter
+// SetSerialNum is SerialNum Setter
 // 序列号
 func (r *AlibabaWdkSyncedorderQueryAPIRequest) SetSerialNum(_serialNum string) error {
 	r._serialNum = _serialNum
@@ -60,7 +60,7 @@ func (r *AlibabaWdkSyncedorderQueryAPIRequest) SetSerialNum(_serialNum string) e
 	return nil
 }
 
-// Get SerialNum Getter
+// GetSerialNum SerialNum Getter
 func (r AlibabaWdkSyncedorderQueryAPIRequest) GetSerialNum() string {
 	return r._serialNum
 }

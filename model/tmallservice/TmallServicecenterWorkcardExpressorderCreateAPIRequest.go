@@ -41,7 +41,7 @@ func (r TmallServicecenterWorkcardExpressorderCreateAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is WorkcardIdList Setter
+// SetWorkcardIdList is WorkcardIdList Setter
 // 物流单关联的工单List
 func (r *TmallServicecenterWorkcardExpressorderCreateAPIRequest) SetWorkcardIdList(_workcardIdList []int64) error {
 	r._workcardIdList = _workcardIdList
@@ -49,12 +49,12 @@ func (r *TmallServicecenterWorkcardExpressorderCreateAPIRequest) SetWorkcardIdLi
 	return nil
 }
 
-// Get WorkcardIdList Getter
+// GetWorkcardIdList WorkcardIdList Getter
 func (r TmallServicecenterWorkcardExpressorderCreateAPIRequest) GetWorkcardIdList() []int64 {
 	return r._workcardIdList
 }
 
-// Set is RealTpNick Setter
+// SetRealTpNick is RealTpNick Setter
 // 真实履约服务商Nick（非ERP系统不要填写）
 func (r *TmallServicecenterWorkcardExpressorderCreateAPIRequest) SetRealTpNick(_realTpNick string) error {
 	r._realTpNick = _realTpNick
@@ -62,12 +62,12 @@ func (r *TmallServicecenterWorkcardExpressorderCreateAPIRequest) SetRealTpNick(_
 	return nil
 }
 
-// Get RealTpNick Getter
+// GetRealTpNick RealTpNick Getter
 func (r TmallServicecenterWorkcardExpressorderCreateAPIRequest) GetRealTpNick() string {
 	return r._realTpNick
 }
 
-// Set is ExternalLogisticsOrderId Setter
+// SetExternalLogisticsOrderId is ExternalLogisticsOrderId Setter
 // erp外部物流订单号
 func (r *TmallServicecenterWorkcardExpressorderCreateAPIRequest) SetExternalLogisticsOrderId(_externalLogisticsOrderId string) error {
 	r._externalLogisticsOrderId = _externalLogisticsOrderId
@@ -75,7 +75,7 @@ func (r *TmallServicecenterWorkcardExpressorderCreateAPIRequest) SetExternalLogi
 	return nil
 }
 
-// Get ExternalLogisticsOrderId Getter
+// GetExternalLogisticsOrderId ExternalLogisticsOrderId Getter
 func (r TmallServicecenterWorkcardExpressorderCreateAPIRequest) GetExternalLogisticsOrderId() string {
 	return r._externalLogisticsOrderId
 }

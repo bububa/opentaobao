@@ -39,7 +39,7 @@ func (r AlitripAgentFlightSellTicketingDetailAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is DomesticIntl Setter
+// SetDomesticIntl is DomesticIntl Setter
 // 国内国际标识
 func (r *AlitripAgentFlightSellTicketingDetailAPIRequest) SetDomesticIntl(_domesticIntl int64) error {
 	r._domesticIntl = _domesticIntl
@@ -47,12 +47,12 @@ func (r *AlitripAgentFlightSellTicketingDetailAPIRequest) SetDomesticIntl(_domes
 	return nil
 }
 
-// Get DomesticIntl Getter
+// GetDomesticIntl DomesticIntl Getter
 func (r AlitripAgentFlightSellTicketingDetailAPIRequest) GetDomesticIntl() int64 {
 	return r._domesticIntl
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 飞猪订单号
 func (r *AlitripAgentFlightSellTicketingDetailAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -60,7 +60,7 @@ func (r *AlitripAgentFlightSellTicketingDetailAPIRequest) SetOrderId(_orderId st
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlitripAgentFlightSellTicketingDetailAPIRequest) GetOrderId() string {
 	return r._orderId
 }

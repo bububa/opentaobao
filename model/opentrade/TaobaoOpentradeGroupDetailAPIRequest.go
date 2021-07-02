@@ -37,7 +37,7 @@ func (r TaobaoOpentradeGroupDetailAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupId Setter
+// SetGroupId is GroupId Setter
 // 团id
 func (r *TaobaoOpentradeGroupDetailAPIRequest) SetGroupId(_groupId int64) error {
 	r._groupId = _groupId
@@ -45,7 +45,7 @@ func (r *TaobaoOpentradeGroupDetailAPIRequest) SetGroupId(_groupId int64) error 
 	return nil
 }
 
-// Get GroupId Getter
+// GetGroupId GroupId Getter
 func (r TaobaoOpentradeGroupDetailAPIRequest) GetGroupId() int64 {
 	return r._groupId
 }

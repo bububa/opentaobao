@@ -39,7 +39,7 @@ func (r TaobaoPlaceStoregroupCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 库名
 func (r *TaobaoPlaceStoregroupCreateAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -47,12 +47,12 @@ func (r *TaobaoPlaceStoregroupCreateAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoPlaceStoregroupCreateAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Desc Setter
+// SetDesc is Desc Setter
 // 备注
 func (r *TaobaoPlaceStoregroupCreateAPIRequest) SetDesc(_desc string) error {
 	r._desc = _desc
@@ -60,7 +60,7 @@ func (r *TaobaoPlaceStoregroupCreateAPIRequest) SetDesc(_desc string) error {
 	return nil
 }
 
-// Get Desc Getter
+// GetDesc Desc Getter
 func (r TaobaoPlaceStoregroupCreateAPIRequest) GetDesc() string {
 	return r._desc
 }

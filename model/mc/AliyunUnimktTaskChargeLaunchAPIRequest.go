@@ -45,7 +45,7 @@ func (r AliyunUnimktTaskChargeLaunchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Extra Setter
+// SetExtra is Extra Setter
 // 服务商附加url参数
 func (r *AliyunUnimktTaskChargeLaunchAPIRequest) SetExtra(_extra string) error {
 	r._extra = _extra
@@ -53,12 +53,12 @@ func (r *AliyunUnimktTaskChargeLaunchAPIRequest) SetExtra(_extra string) error {
 	return nil
 }
 
-// Get Extra Getter
+// GetExtra Extra Getter
 func (r AliyunUnimktTaskChargeLaunchAPIRequest) GetExtra() string {
 	return r._extra
 }
 
-// Set is UrlId Setter
+// SetUrlId is UrlId Setter
 // urlID
 func (r *AliyunUnimktTaskChargeLaunchAPIRequest) SetUrlId(_urlId string) error {
 	r._urlId = _urlId
@@ -66,12 +66,12 @@ func (r *AliyunUnimktTaskChargeLaunchAPIRequest) SetUrlId(_urlId string) error {
 	return nil
 }
 
-// Get UrlId Getter
+// GetUrlId UrlId Getter
 func (r AliyunUnimktTaskChargeLaunchAPIRequest) GetUrlId() string {
 	return r._urlId
 }
 
-// Set is AlipayOpenId Setter
+// SetAlipayOpenId is AlipayOpenId Setter
 // 支付宝openID
 func (r *AliyunUnimktTaskChargeLaunchAPIRequest) SetAlipayOpenId(_alipayOpenId string) error {
 	r._alipayOpenId = _alipayOpenId
@@ -79,12 +79,12 @@ func (r *AliyunUnimktTaskChargeLaunchAPIRequest) SetAlipayOpenId(_alipayOpenId s
 	return nil
 }
 
-// Get AlipayOpenId Getter
+// GetAlipayOpenId AlipayOpenId Getter
 func (r AliyunUnimktTaskChargeLaunchAPIRequest) GetAlipayOpenId() string {
 	return r._alipayOpenId
 }
 
-// Set is ChannelId Setter
+// SetChannelId is ChannelId Setter
 // 渠道ID
 func (r *AliyunUnimktTaskChargeLaunchAPIRequest) SetChannelId(_channelId string) error {
 	r._channelId = _channelId
@@ -92,12 +92,12 @@ func (r *AliyunUnimktTaskChargeLaunchAPIRequest) SetChannelId(_channelId string)
 	return nil
 }
 
-// Get ChannelId Getter
+// GetChannelId ChannelId Getter
 func (r AliyunUnimktTaskChargeLaunchAPIRequest) GetChannelId() string {
 	return r._channelId
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 淘宝ID
 func (r *AliyunUnimktTaskChargeLaunchAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -105,7 +105,7 @@ func (r *AliyunUnimktTaskChargeLaunchAPIRequest) SetUserId(_userId string) error
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AliyunUnimktTaskChargeLaunchAPIRequest) GetUserId() string {
 	return r._userId
 }

@@ -37,7 +37,7 @@ func (r AlibabaAliqinAxbVendorCallControlAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartCallRequest Setter
+// SetStartCallRequest is StartCallRequest Setter
 // 转接控制接口request对象
 func (r *AlibabaAliqinAxbVendorCallControlAPIRequest) SetStartCallRequest(_startCallRequest *StartCallRequest) error {
 	r._startCallRequest = _startCallRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAliqinAxbVendorCallControlAPIRequest) SetStartCallRequest(_start
 	return nil
 }
 
-// Get StartCallRequest Getter
+// GetStartCallRequest StartCallRequest Getter
 func (r AlibabaAliqinAxbVendorCallControlAPIRequest) GetStartCallRequest() *StartCallRequest {
 	return r._startCallRequest
 }

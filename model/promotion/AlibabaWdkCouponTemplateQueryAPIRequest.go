@@ -37,7 +37,7 @@ func (r AlibabaWdkCouponTemplateQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamCouponTemplateQueryRequest Setter
+// SetParamCouponTemplateQueryRequest is ParamCouponTemplateQueryRequest Setter
 // 系统自动生成
 func (r *AlibabaWdkCouponTemplateQueryAPIRequest) SetParamCouponTemplateQueryRequest(_paramCouponTemplateQueryRequest *CouponTemplateQueryRequest) error {
 	r._paramCouponTemplateQueryRequest = _paramCouponTemplateQueryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkCouponTemplateQueryAPIRequest) SetParamCouponTemplateQueryReq
 	return nil
 }
 
-// Get ParamCouponTemplateQueryRequest Getter
+// GetParamCouponTemplateQueryRequest ParamCouponTemplateQueryRequest Getter
 func (r AlibabaWdkCouponTemplateQueryAPIRequest) GetParamCouponTemplateQueryRequest() *CouponTemplateQueryRequest {
 	return r._paramCouponTemplateQueryRequest
 }

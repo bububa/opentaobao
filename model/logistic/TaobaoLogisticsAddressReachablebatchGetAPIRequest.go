@@ -37,7 +37,7 @@ func (r TaobaoLogisticsAddressReachablebatchGetAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is AddressList Setter
+// SetAddressList is AddressList Setter
 // 筛单用户输入地址结构
 func (r *TaobaoLogisticsAddressReachablebatchGetAPIRequest) SetAddressList(_addressList []AddressReachable) error {
 	r._addressList = _addressList
@@ -45,7 +45,7 @@ func (r *TaobaoLogisticsAddressReachablebatchGetAPIRequest) SetAddressList(_addr
 	return nil
 }
 
-// Get AddressList Getter
+// GetAddressList AddressList Getter
 func (r TaobaoLogisticsAddressReachablebatchGetAPIRequest) GetAddressList() []AddressReachable {
 	return r._addressList
 }

@@ -37,7 +37,7 @@ func (r AlibabaEinvoiceIncomeAgentCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 阿里发票平台分配的agentId
 func (r *AlibabaEinvoiceIncomeAgentCheckAPIRequest) SetAgentId(_agentId string) error {
 	r._agentId = _agentId
@@ -45,7 +45,7 @@ func (r *AlibabaEinvoiceIncomeAgentCheckAPIRequest) SetAgentId(_agentId string) 
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r AlibabaEinvoiceIncomeAgentCheckAPIRequest) GetAgentId() string {
 	return r._agentId
 }

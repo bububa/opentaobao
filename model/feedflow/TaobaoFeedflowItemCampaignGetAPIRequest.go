@@ -37,7 +37,7 @@ func (r TaobaoFeedflowItemCampaignGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CampaginId Setter
+// SetCampaginId is CampaginId Setter
 // 计划id
 func (r *TaobaoFeedflowItemCampaignGetAPIRequest) SetCampaginId(_campaginId int64) error {
 	r._campaginId = _campaginId
@@ -45,7 +45,7 @@ func (r *TaobaoFeedflowItemCampaignGetAPIRequest) SetCampaginId(_campaginId int6
 	return nil
 }
 
-// Get CampaginId Getter
+// GetCampaginId CampaginId Getter
 func (r TaobaoFeedflowItemCampaignGetAPIRequest) GetCampaginId() int64 {
 	return r._campaginId
 }

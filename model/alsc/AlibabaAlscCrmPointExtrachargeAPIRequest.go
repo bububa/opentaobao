@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmPointExtrachargeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamExtraChargePointOpenReq Setter
+// SetParamExtraChargePointOpenReq is ParamExtraChargePointOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmPointExtrachargeAPIRequest) SetParamExtraChargePointOpenReq(_paramExtraChargePointOpenReq *ExtraChargePointOpenReq) error {
 	r._paramExtraChargePointOpenReq = _paramExtraChargePointOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmPointExtrachargeAPIRequest) SetParamExtraChargePointOpenR
 	return nil
 }
 
-// Get ParamExtraChargePointOpenReq Getter
+// GetParamExtraChargePointOpenReq ParamExtraChargePointOpenReq Getter
 func (r AlibabaAlscCrmPointExtrachargeAPIRequest) GetParamExtraChargePointOpenReq() *ExtraChargePointOpenReq {
 	return r._paramExtraChargePointOpenReq
 }

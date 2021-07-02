@@ -39,7 +39,7 @@ func (r TaobaoAilabAicloudTopMessagePushAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MessageBroadcastRequest Setter
+// SetMessageBroadcastRequest is MessageBroadcastRequest Setter
 // 消息推送请求
 func (r *TaobaoAilabAicloudTopMessagePushAPIRequest) SetMessageBroadcastRequest(_messageBroadcastRequest *MessageBroadcastRequest) error {
 	r._messageBroadcastRequest = _messageBroadcastRequest
@@ -47,12 +47,12 @@ func (r *TaobaoAilabAicloudTopMessagePushAPIRequest) SetMessageBroadcastRequest(
 	return nil
 }
 
-// Get MessageBroadcastRequest Getter
+// GetMessageBroadcastRequest MessageBroadcastRequest Getter
 func (r TaobaoAilabAicloudTopMessagePushAPIRequest) GetMessageBroadcastRequest() *MessageBroadcastRequest {
 	return r._messageBroadcastRequest
 }
 
-// Set is UserInfoContext Setter
+// SetUserInfoContext is UserInfoContext Setter
 // 当前用户信息
 func (r *TaobaoAilabAicloudTopMessagePushAPIRequest) SetUserInfoContext(_userInfoContext *OpsRequestUserInfoContext) error {
 	r._userInfoContext = _userInfoContext
@@ -60,7 +60,7 @@ func (r *TaobaoAilabAicloudTopMessagePushAPIRequest) SetUserInfoContext(_userInf
 	return nil
 }
 
-// Get UserInfoContext Getter
+// GetUserInfoContext UserInfoContext Getter
 func (r TaobaoAilabAicloudTopMessagePushAPIRequest) GetUserInfoContext() *OpsRequestUserInfoContext {
 	return r._userInfoContext
 }

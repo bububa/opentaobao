@@ -37,7 +37,7 @@ func (r AlibabaLstLogisticsThirdpartSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参
 func (r *AlibabaLstLogisticsThirdpartSendAPIRequest) SetParam(_param *SendOfflineOrderParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaLstLogisticsThirdpartSendAPIRequest) SetParam(_param *SendOfflin
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaLstLogisticsThirdpartSendAPIRequest) GetParam() *SendOfflineOrderParam {
 	return r._param
 }

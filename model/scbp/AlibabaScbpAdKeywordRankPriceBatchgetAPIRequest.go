@@ -39,7 +39,7 @@ func (r AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Context Setter
+// SetContext is Context Setter
 // 上下文
 func (r *AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) SetContext(_context *ContextDto) error {
 	r._context = _context
@@ -47,12 +47,12 @@ func (r *AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) SetContext(_context *C
 	return nil
 }
 
-// Get Context Getter
+// GetContext Context Getter
 func (r AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) GetContext() *ContextDto {
 	return r._context
 }
 
-// Set is KeywordRequest Setter
+// SetKeywordRequest is KeywordRequest Setter
 // keyword_request
 func (r *AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) SetKeywordRequest(_keywordRequest *TopKeywordListDto) error {
 	r._keywordRequest = _keywordRequest
@@ -60,7 +60,7 @@ func (r *AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) SetKeywordRequest(_key
 	return nil
 }
 
-// Get KeywordRequest Getter
+// GetKeywordRequest KeywordRequest Getter
 func (r AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) GetKeywordRequest() *TopKeywordListDto {
 	return r._keywordRequest
 }

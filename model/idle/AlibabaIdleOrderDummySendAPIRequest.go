@@ -37,7 +37,7 @@ func (r AlibabaIdleOrderDummySendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOrderDummySendRequest Setter
+// SetParamOrderDummySendRequest is ParamOrderDummySendRequest Setter
 // 请求
 func (r *AlibabaIdleOrderDummySendAPIRequest) SetParamOrderDummySendRequest(_paramOrderDummySendRequest *OrderDummySendRequest) error {
 	r._paramOrderDummySendRequest = _paramOrderDummySendRequest
@@ -45,7 +45,7 @@ func (r *AlibabaIdleOrderDummySendAPIRequest) SetParamOrderDummySendRequest(_par
 	return nil
 }
 
-// Get ParamOrderDummySendRequest Getter
+// GetParamOrderDummySendRequest ParamOrderDummySendRequest Getter
 func (r AlibabaIdleOrderDummySendAPIRequest) GetParamOrderDummySendRequest() *OrderDummySendRequest {
 	return r._paramOrderDummySendRequest
 }

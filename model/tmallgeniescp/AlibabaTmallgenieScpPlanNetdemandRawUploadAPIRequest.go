@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanNetdemandRawUploadAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is NetDemandRawRequest Setter
+// SetNetDemandRawRequest is NetDemandRawRequest Setter
 // 对象
 func (r *AlibabaTmallgenieScpPlanNetdemandRawUploadAPIRequest) SetNetDemandRawRequest(_netDemandRawRequest *NetDemandRawRequest) error {
 	r._netDemandRawRequest = _netDemandRawRequest
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanNetdemandRawUploadAPIRequest) SetNetDemandRawRe
 	return nil
 }
 
-// Get NetDemandRawRequest Getter
+// GetNetDemandRawRequest NetDemandRawRequest Getter
 func (r AlibabaTmallgenieScpPlanNetdemandRawUploadAPIRequest) GetNetDemandRawRequest() *NetDemandRawRequest {
 	return r._netDemandRawRequest
 }

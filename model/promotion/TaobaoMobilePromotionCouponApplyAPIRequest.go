@@ -43,7 +43,7 @@ func (r TaobaoMobilePromotionCouponApplyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TraceId Setter
+// SetTraceId is TraceId Setter
 // 请求唯一id，问题排查
 func (r *TaobaoMobilePromotionCouponApplyAPIRequest) SetTraceId(_traceId string) error {
 	r._traceId = _traceId
@@ -51,12 +51,12 @@ func (r *TaobaoMobilePromotionCouponApplyAPIRequest) SetTraceId(_traceId string)
 	return nil
 }
 
-// Get TraceId Getter
+// GetTraceId TraceId Getter
 func (r TaobaoMobilePromotionCouponApplyAPIRequest) GetTraceId() string {
 	return r._traceId
 }
 
-// Set is SpreadId Setter
+// SetSpreadId is SpreadId Setter
 // 传播id
 func (r *TaobaoMobilePromotionCouponApplyAPIRequest) SetSpreadId(_spreadId int64) error {
 	r._spreadId = _spreadId
@@ -64,12 +64,12 @@ func (r *TaobaoMobilePromotionCouponApplyAPIRequest) SetSpreadId(_spreadId int64
 	return nil
 }
 
-// Get SpreadId Getter
+// GetSpreadId SpreadId Getter
 func (r TaobaoMobilePromotionCouponApplyAPIRequest) GetSpreadId() int64 {
 	return r._spreadId
 }
 
-// Set is FeedId Setter
+// SetFeedId is FeedId Setter
 // 广播id
 func (r *TaobaoMobilePromotionCouponApplyAPIRequest) SetFeedId(_feedId string) error {
 	r._feedId = _feedId
@@ -77,12 +77,12 @@ func (r *TaobaoMobilePromotionCouponApplyAPIRequest) SetFeedId(_feedId string) e
 	return nil
 }
 
-// Get FeedId Getter
+// GetFeedId FeedId Getter
 func (r TaobaoMobilePromotionCouponApplyAPIRequest) GetFeedId() string {
 	return r._feedId
 }
 
-// Set is BizId Setter
+// SetBizId is BizId Setter
 // 三方活动id
 func (r *TaobaoMobilePromotionCouponApplyAPIRequest) SetBizId(_bizId string) error {
 	r._bizId = _bizId
@@ -90,7 +90,7 @@ func (r *TaobaoMobilePromotionCouponApplyAPIRequest) SetBizId(_bizId string) err
 	return nil
 }
 
-// Get BizId Getter
+// GetBizId BizId Getter
 func (r TaobaoMobilePromotionCouponApplyAPIRequest) GetBizId() string {
 	return r._bizId
 }

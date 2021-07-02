@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentTableauditQuerylauncherAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is TableAuditQuery Setter
+// SetTableAuditQuery is TableAuditQuery Setter
 // 桌面坑位审核查询条件,json格式
 func (r *YunosTvpubadminContentTableauditQuerylauncherAPIRequest) SetTableAuditQuery(_tableAuditQuery string) error {
 	r._tableAuditQuery = _tableAuditQuery
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentTableauditQuerylauncherAPIRequest) SetTableAuditQ
 	return nil
 }
 
-// Get TableAuditQuery Getter
+// GetTableAuditQuery TableAuditQuery Getter
 func (r YunosTvpubadminContentTableauditQuerylauncherAPIRequest) GetTableAuditQuery() string {
 	return r._tableAuditQuery
 }

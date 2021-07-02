@@ -39,7 +39,7 @@ func (r AlibabaWdkUmsRetrieveConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WarehouseCode Setter
+// SetWarehouseCode is WarehouseCode Setter
 // 店仓code，指的是作业对象，对应一个物理店或仓编码
 func (r *AlibabaWdkUmsRetrieveConfirmAPIRequest) SetWarehouseCode(_warehouseCode string) error {
 	r._warehouseCode = _warehouseCode
@@ -47,12 +47,12 @@ func (r *AlibabaWdkUmsRetrieveConfirmAPIRequest) SetWarehouseCode(_warehouseCode
 	return nil
 }
 
-// Get WarehouseCode Getter
+// GetWarehouseCode WarehouseCode Getter
 func (r AlibabaWdkUmsRetrieveConfirmAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 唯一识别码
 func (r *AlibabaWdkUmsRetrieveConfirmAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -60,7 +60,7 @@ func (r *AlibabaWdkUmsRetrieveConfirmAPIRequest) SetUuid(_uuid string) error {
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r AlibabaWdkUmsRetrieveConfirmAPIRequest) GetUuid() string {
 	return r._uuid
 }

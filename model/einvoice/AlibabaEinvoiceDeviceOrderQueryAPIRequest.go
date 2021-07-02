@@ -37,7 +37,7 @@ func (r AlibabaEinvoiceDeviceOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FlowId Setter
+// SetFlowId is FlowId Setter
 // 税控设备订购单ID
 func (r *AlibabaEinvoiceDeviceOrderQueryAPIRequest) SetFlowId(_flowId string) error {
 	r._flowId = _flowId
@@ -45,7 +45,7 @@ func (r *AlibabaEinvoiceDeviceOrderQueryAPIRequest) SetFlowId(_flowId string) er
 	return nil
 }
 
-// Get FlowId Getter
+// GetFlowId FlowId Getter
 func (r AlibabaEinvoiceDeviceOrderQueryAPIRequest) GetFlowId() string {
 	return r._flowId
 }

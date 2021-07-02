@@ -37,7 +37,7 @@ func (r AlibabaAlihealthOutflowFrequencySaveorupdateAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is FrequencyRequest Setter
+// SetFrequencyRequest is FrequencyRequest Setter
 // 系统自动生成
 func (r *AlibabaAlihealthOutflowFrequencySaveorupdateAPIRequest) SetFrequencyRequest(_frequencyRequest *FrequencyRequest) error {
 	r._frequencyRequest = _frequencyRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthOutflowFrequencySaveorupdateAPIRequest) SetFrequencyReq
 	return nil
 }
 
-// Get FrequencyRequest Getter
+// GetFrequencyRequest FrequencyRequest Getter
 func (r AlibabaAlihealthOutflowFrequencySaveorupdateAPIRequest) GetFrequencyRequest() *FrequencyRequest {
 	return r._frequencyRequest
 }

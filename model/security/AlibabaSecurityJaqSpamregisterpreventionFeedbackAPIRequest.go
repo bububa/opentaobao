@@ -45,7 +45,7 @@ func (r AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) GetApiParams
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 查询接口返回的id
 func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetItemId(_itemId string) error {
 	r._itemId = _itemId
@@ -53,12 +53,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetItemId(_
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) GetItemId() string {
 	return r._itemId
 }
 
-// Set is JaqDecision Setter
+// SetJaqDecision is JaqDecision Setter
 // 聚安全返回的决定信息。当feedBack为0时可以不添
 func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetJaqDecision(_jaqDecision int64) error {
 	r._jaqDecision = _jaqDecision
@@ -66,12 +66,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetJaqDecis
 	return nil
 }
 
-// Get JaqDecision Getter
+// GetJaqDecision JaqDecision Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) GetJaqDecision() int64 {
 	return r._jaqDecision
 }
 
-// Set is CustomerDecision Setter
+// SetCustomerDecision is CustomerDecision Setter
 // 用户自己的决定信息。当feedBack为0时可以不添。
 func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetCustomerDecision(_customerDecision int64) error {
 	r._customerDecision = _customerDecision
@@ -79,12 +79,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetCustomer
 	return nil
 }
 
-// Get CustomerDecision Getter
+// GetCustomerDecision CustomerDecision Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) GetCustomerDecision() int64 {
 	return r._customerDecision
 }
 
-// Set is FeedBack Setter
+// SetFeedBack is FeedBack Setter
 // 用户不认同聚安全返回结果的原因类型。0：同意判定；1：和三方结果不符；2：用户投诉；3:经过人工review判断;9:	其他。
 func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetFeedBack(_feedBack int64) error {
 	r._feedBack = _feedBack
@@ -92,12 +92,12 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetFeedBack
 	return nil
 }
 
-// Get FeedBack Getter
+// GetFeedBack FeedBack Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) GetFeedBack() int64 {
 	return r._feedBack
 }
 
-// Set is DenyReason Setter
+// SetDenyReason is DenyReason Setter
 // 用户不认同聚安全返回结果的原因描述
 func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetDenyReason(_denyReason string) error {
 	r._denyReason = _denyReason
@@ -105,7 +105,7 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetDenyReas
 	return nil
 }
 
-// Get DenyReason Getter
+// GetDenyReason DenyReason Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) GetDenyReason() string {
 	return r._denyReason
 }

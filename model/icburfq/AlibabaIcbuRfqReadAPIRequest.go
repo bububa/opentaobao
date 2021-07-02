@@ -37,7 +37,7 @@ func (r AlibabaIcbuRfqReadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RfqIdList Setter
+// SetRfqIdList is RfqIdList Setter
 // 查询RFQID列表
 func (r *AlibabaIcbuRfqReadAPIRequest) SetRfqIdList(_rfqIdList []string) error {
 	r._rfqIdList = _rfqIdList
@@ -45,7 +45,7 @@ func (r *AlibabaIcbuRfqReadAPIRequest) SetRfqIdList(_rfqIdList []string) error {
 	return nil
 }
 
-// Get RfqIdList Getter
+// GetRfqIdList RfqIdList Getter
 func (r AlibabaIcbuRfqReadAPIRequest) GetRfqIdList() []string {
 	return r._rfqIdList
 }

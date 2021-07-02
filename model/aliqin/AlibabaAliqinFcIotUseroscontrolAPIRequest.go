@@ -39,7 +39,7 @@ func (r AlibabaAliqinFcIotUseroscontrolAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Iccid Setter
+// SetIccid is Iccid Setter
 // 物联卡的iccid
 func (r *AlibabaAliqinFcIotUseroscontrolAPIRequest) SetIccid(_iccid string) error {
 	r._iccid = _iccid
@@ -47,12 +47,12 @@ func (r *AlibabaAliqinFcIotUseroscontrolAPIRequest) SetIccid(_iccid string) erro
 	return nil
 }
 
-// Get Iccid Getter
+// GetIccid Iccid Getter
 func (r AlibabaAliqinFcIotUseroscontrolAPIRequest) GetIccid() string {
 	return r._iccid
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // 用户停开的操作类型：MANAGE_RESUME、MANAGE_STOP
 func (r *AlibabaAliqinFcIotUseroscontrolAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -60,7 +60,7 @@ func (r *AlibabaAliqinFcIotUseroscontrolAPIRequest) SetAction(_action string) er
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r AlibabaAliqinFcIotUseroscontrolAPIRequest) GetAction() string {
 	return r._action
 }

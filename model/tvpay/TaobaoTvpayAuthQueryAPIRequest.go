@@ -47,7 +47,7 @@ func (r TaobaoTvpayAuthQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备号
 func (r *TaobaoTvpayAuthQueryAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -55,12 +55,12 @@ func (r *TaobaoTvpayAuthQueryAPIRequest) SetDeviceId(_deviceId string) error {
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r TaobaoTvpayAuthQueryAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is From Setter
+// SetFrom is From Setter
 // 来源
 func (r *TaobaoTvpayAuthQueryAPIRequest) SetFrom(_from string) error {
 	r._from = _from
@@ -68,12 +68,12 @@ func (r *TaobaoTvpayAuthQueryAPIRequest) SetFrom(_from string) error {
 	return nil
 }
 
-// Get From Getter
+// GetFrom From Getter
 func (r TaobaoTvpayAuthQueryAPIRequest) GetFrom() string {
 	return r._from
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 业务订单号
 func (r *TaobaoTvpayAuthQueryAPIRequest) SetBizOrderId(_bizOrderId string) error {
 	r._bizOrderId = _bizOrderId
@@ -81,12 +81,12 @@ func (r *TaobaoTvpayAuthQueryAPIRequest) SetBizOrderId(_bizOrderId string) error
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r TaobaoTvpayAuthQueryAPIRequest) GetBizOrderId() string {
 	return r._bizOrderId
 }
 
-// Set is IsTao Setter
+// SetIsTao is IsTao Setter
 // 是否淘系
 func (r *TaobaoTvpayAuthQueryAPIRequest) SetIsTao(_isTao bool) error {
 	r._isTao = _isTao
@@ -94,12 +94,12 @@ func (r *TaobaoTvpayAuthQueryAPIRequest) SetIsTao(_isTao bool) error {
 	return nil
 }
 
-// Get IsTao Getter
+// GetIsTao IsTao Getter
 func (r TaobaoTvpayAuthQueryAPIRequest) GetIsTao() bool {
 	return r._isTao
 }
 
-// Set is OrderNo Setter
+// SetOrderNo is OrderNo Setter
 // 支付宝订单号
 func (r *TaobaoTvpayAuthQueryAPIRequest) SetOrderNo(_orderNo string) error {
 	r._orderNo = _orderNo
@@ -107,12 +107,12 @@ func (r *TaobaoTvpayAuthQueryAPIRequest) SetOrderNo(_orderNo string) error {
 	return nil
 }
 
-// Get OrderNo Getter
+// GetOrderNo OrderNo Getter
 func (r TaobaoTvpayAuthQueryAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }
 
-// Set is OutOrderNo Setter
+// SetOutOrderNo is OutOrderNo Setter
 // 外部订单号
 func (r *TaobaoTvpayAuthQueryAPIRequest) SetOutOrderNo(_outOrderNo string) error {
 	r._outOrderNo = _outOrderNo
@@ -120,7 +120,7 @@ func (r *TaobaoTvpayAuthQueryAPIRequest) SetOutOrderNo(_outOrderNo string) error
 	return nil
 }
 
-// Get OutOrderNo Getter
+// GetOutOrderNo OutOrderNo Getter
 func (r TaobaoTvpayAuthQueryAPIRequest) GetOutOrderNo() string {
 	return r._outOrderNo
 }

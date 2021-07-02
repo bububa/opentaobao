@@ -39,7 +39,7 @@ func (r TmallPromotagTaguserJudgeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TagId Setter
+// SetTagId is TagId Setter
 // 标签ID
 func (r *TmallPromotagTaguserJudgeAPIRequest) SetTagId(_tagId int64) error {
 	r._tagId = _tagId
@@ -47,12 +47,12 @@ func (r *TmallPromotagTaguserJudgeAPIRequest) SetTagId(_tagId int64) error {
 	return nil
 }
 
-// Get TagId Getter
+// GetTagId TagId Getter
 func (r TmallPromotagTaguserJudgeAPIRequest) GetTagId() int64 {
 	return r._tagId
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 买家昵称
 func (r *TmallPromotagTaguserJudgeAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -60,7 +60,7 @@ func (r *TmallPromotagTaguserJudgeAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TmallPromotagTaguserJudgeAPIRequest) GetNick() string {
 	return r._nick
 }

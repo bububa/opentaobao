@@ -45,7 +45,7 @@ func (r YoukuOttPayOrderAuthpayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Buyer Setter
+// SetBuyer is Buyer Setter
 // cp用户名
 func (r *YoukuOttPayOrderAuthpayAPIRequest) SetBuyer(_buyer string) error {
 	r._buyer = _buyer
@@ -53,12 +53,12 @@ func (r *YoukuOttPayOrderAuthpayAPIRequest) SetBuyer(_buyer string) error {
 	return nil
 }
 
-// Get Buyer Getter
+// GetBuyer Buyer Getter
 func (r YoukuOttPayOrderAuthpayAPIRequest) GetBuyer() string {
 	return r._buyer
 }
 
-// Set is OriginalOrderNo Setter
+// SetOriginalOrderNo is OriginalOrderNo Setter
 // 连续包月原始cp订单号
 func (r *YoukuOttPayOrderAuthpayAPIRequest) SetOriginalOrderNo(_originalOrderNo string) error {
 	r._originalOrderNo = _originalOrderNo
@@ -66,12 +66,12 @@ func (r *YoukuOttPayOrderAuthpayAPIRequest) SetOriginalOrderNo(_originalOrderNo 
 	return nil
 }
 
-// Get OriginalOrderNo Getter
+// GetOriginalOrderNo OriginalOrderNo Getter
 func (r YoukuOttPayOrderAuthpayAPIRequest) GetOriginalOrderNo() string {
 	return r._originalOrderNo
 }
 
-// Set is OrderNo Setter
+// SetOrderNo is OrderNo Setter
 // 委托扣款cp订单号
 func (r *YoukuOttPayOrderAuthpayAPIRequest) SetOrderNo(_orderNo string) error {
 	r._orderNo = _orderNo
@@ -79,12 +79,12 @@ func (r *YoukuOttPayOrderAuthpayAPIRequest) SetOrderNo(_orderNo string) error {
 	return nil
 }
 
-// Get OrderNo Getter
+// GetOrderNo OrderNo Getter
 func (r YoukuOttPayOrderAuthpayAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 已配置开通连续包月的产品id
 func (r *YoukuOttPayOrderAuthpayAPIRequest) SetProductId(_productId string) error {
 	r._productId = _productId
@@ -92,12 +92,12 @@ func (r *YoukuOttPayOrderAuthpayAPIRequest) SetProductId(_productId string) erro
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r YoukuOttPayOrderAuthpayAPIRequest) GetProductId() string {
 	return r._productId
 }
 
-// Set is CallbackUrl Setter
+// SetCallbackUrl is CallbackUrl Setter
 // 回调
 func (r *YoukuOttPayOrderAuthpayAPIRequest) SetCallbackUrl(_callbackUrl string) error {
 	r._callbackUrl = _callbackUrl
@@ -105,7 +105,7 @@ func (r *YoukuOttPayOrderAuthpayAPIRequest) SetCallbackUrl(_callbackUrl string) 
 	return nil
 }
 
-// Get CallbackUrl Getter
+// GetCallbackUrl CallbackUrl Getter
 func (r YoukuOttPayOrderAuthpayAPIRequest) GetCallbackUrl() string {
 	return r._callbackUrl
 }

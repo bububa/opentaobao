@@ -37,7 +37,7 @@ func (r TaobaoQimenItemsTagQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemIds Setter
+// SetItemIds is ItemIds Setter
 // 线上淘宝商品ID，long，必填
 func (r *TaobaoQimenItemsTagQueryAPIRequest) SetItemIds(_itemIds []int64) error {
 	r._itemIds = _itemIds
@@ -45,7 +45,7 @@ func (r *TaobaoQimenItemsTagQueryAPIRequest) SetItemIds(_itemIds []int64) error 
 	return nil
 }
 
-// Get ItemIds Getter
+// GetItemIds ItemIds Getter
 func (r TaobaoQimenItemsTagQueryAPIRequest) GetItemIds() []int64 {
 	return r._itemIds
 }

@@ -39,7 +39,7 @@ func (r TmallWorkcardIdentifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is VerifyRequestDTO Setter
+// SetVerifyRequestDTO is VerifyRequestDTO Setter
 // 核销dto
 func (r *TmallWorkcardIdentifyAPIRequest) SetVerifyRequestDTO(_verifyRequestDTO *VerifyRequestDto) error {
 	r._verifyRequestDTO = _verifyRequestDTO
@@ -47,7 +47,7 @@ func (r *TmallWorkcardIdentifyAPIRequest) SetVerifyRequestDTO(_verifyRequestDTO 
 	return nil
 }
 
-// Get VerifyRequestDTO Getter
+// GetVerifyRequestDTO VerifyRequestDTO Getter
 func (r TmallWorkcardIdentifyAPIRequest) GetVerifyRequestDTO() *VerifyRequestDto {
 	return r._verifyRequestDTO
 }

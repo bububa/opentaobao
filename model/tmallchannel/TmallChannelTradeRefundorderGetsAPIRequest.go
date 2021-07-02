@@ -43,7 +43,7 @@ func (r TmallChannelTradeRefundorderGetsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款单号
 func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -51,12 +51,12 @@ func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetRefundId(_refundId int64
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TmallChannelTradeRefundorderGetsAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }
 
-// Set is MainChannelOrderNo Setter
+// SetMainChannelOrderNo is MainChannelOrderNo Setter
 // 采购单号
 func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetMainChannelOrderNo(_mainChannelOrderNo string) error {
 	r._mainChannelOrderNo = _mainChannelOrderNo
@@ -64,12 +64,12 @@ func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetMainChannelOrderNo(_main
 	return nil
 }
 
-// Get MainChannelOrderNo Getter
+// GetMainChannelOrderNo MainChannelOrderNo Getter
 func (r TmallChannelTradeRefundorderGetsAPIRequest) GetMainChannelOrderNo() string {
 	return r._mainChannelOrderNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页数据条数
 func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetPageSize(_pageSize int64
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TmallChannelTradeRefundorderGetsAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNumber Setter
+// SetPageNumber is PageNumber Setter
 // 页码
 func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetPageNumber(_pageNumber int64) error {
 	r._pageNumber = _pageNumber
@@ -90,7 +90,7 @@ func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetPageNumber(_pageNumber i
 	return nil
 }
 
-// Get PageNumber Getter
+// GetPageNumber PageNumber Getter
 func (r TmallChannelTradeRefundorderGetsAPIRequest) GetPageNumber() int64 {
 	return r._pageNumber
 }

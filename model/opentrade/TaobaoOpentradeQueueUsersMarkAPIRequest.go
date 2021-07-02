@@ -47,7 +47,7 @@ func (r TaobaoOpentradeQueueUsersMarkAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 用户状态，可任意传入，后续查询返回
 func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -55,12 +55,12 @@ func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetStatus(_status string) erro
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoOpentradeQueueUsersMarkAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 排队活动ID，排队时如传入，这里需要填写；若未传，这里也可以不传
 func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetActivityId(_activityId string) error {
 	r._activityId = _activityId
@@ -68,12 +68,12 @@ func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetActivityId(_activityId stri
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoOpentradeQueueUsersMarkAPIRequest) GetActivityId() string {
 	return r._activityId
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // 排队商品SKU ID，不存在传0
 func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
@@ -81,12 +81,12 @@ func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetSkuId(_skuId int64) error {
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TaobaoOpentradeQueueUsersMarkAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 排队商品ID
 func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -94,12 +94,12 @@ func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetItemId(_itemId int64) error
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoOpentradeQueueUsersMarkAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is OpenUserIds Setter
+// SetOpenUserIds is OpenUserIds Setter
 // 本次待标记的用户列表，多个以逗号(,)分割，最大20个
 func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetOpenUserIds(_openUserIds []string) error {
 	r._openUserIds = _openUserIds
@@ -107,12 +107,12 @@ func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetOpenUserIds(_openUserIds []
 	return nil
 }
 
-// Get OpenUserIds Getter
+// GetOpenUserIds OpenUserIds Getter
 func (r TaobaoOpentradeQueueUsersMarkAPIRequest) GetOpenUserIds() []string {
 	return r._openUserIds
 }
 
-// Set is Hit Setter
+// SetHit is Hit Setter
 // 是否目标用户，传入true后，用户可购买商品
 func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetHit(_hit bool) error {
 	r._hit = _hit
@@ -120,7 +120,7 @@ func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetHit(_hit bool) error {
 	return nil
 }
 
-// Get Hit Getter
+// GetHit Hit Getter
 func (r TaobaoOpentradeQueueUsersMarkAPIRequest) GetHit() bool {
 	return r._hit
 }

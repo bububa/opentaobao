@@ -43,7 +43,7 @@ func (r AlibabaAliqinFcIotDevicePostAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Imei Setter
+// SetImei is Imei Setter
 // 15位imei号
 func (r *AlibabaAliqinFcIotDevicePostAPIRequest) SetImei(_imei string) error {
 	r._imei = _imei
@@ -51,12 +51,12 @@ func (r *AlibabaAliqinFcIotDevicePostAPIRequest) SetImei(_imei string) error {
 	return nil
 }
 
-// Get Imei Getter
+// GetImei Imei Getter
 func (r AlibabaAliqinFcIotDevicePostAPIRequest) GetImei() string {
 	return r._imei
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 设备类型（将来扩展）
 func (r *AlibabaAliqinFcIotDevicePostAPIRequest) SetDeviceType(_deviceType string) error {
 	r._deviceType = _deviceType
@@ -64,12 +64,12 @@ func (r *AlibabaAliqinFcIotDevicePostAPIRequest) SetDeviceType(_deviceType strin
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r AlibabaAliqinFcIotDevicePostAPIRequest) GetDeviceType() string {
 	return r._deviceType
 }
 
-// Set is Comments Setter
+// SetComments is Comments Setter
 // 备注
 func (r *AlibabaAliqinFcIotDevicePostAPIRequest) SetComments(_comments string) error {
 	r._comments = _comments
@@ -77,12 +77,12 @@ func (r *AlibabaAliqinFcIotDevicePostAPIRequest) SetComments(_comments string) e
 	return nil
 }
 
-// Get Comments Getter
+// GetComments Comments Getter
 func (r AlibabaAliqinFcIotDevicePostAPIRequest) GetComments() string {
 	return r._comments
 }
 
-// Set is MidPatChannel Setter
+// SetMidPatChannel is MidPatChannel Setter
 // 扩展字段
 func (r *AlibabaAliqinFcIotDevicePostAPIRequest) SetMidPatChannel(_midPatChannel string) error {
 	r._midPatChannel = _midPatChannel
@@ -90,7 +90,7 @@ func (r *AlibabaAliqinFcIotDevicePostAPIRequest) SetMidPatChannel(_midPatChannel
 	return nil
 }
 
-// Get MidPatChannel Getter
+// GetMidPatChannel MidPatChannel Getter
 func (r AlibabaAliqinFcIotDevicePostAPIRequest) GetMidPatChannel() string {
 	return r._midPatChannel
 }

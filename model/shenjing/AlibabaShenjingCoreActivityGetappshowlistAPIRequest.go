@@ -43,7 +43,7 @@ func (r AlibabaShenjingCoreActivityGetappshowlistAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is WorkBenchContext Setter
+// SetWorkBenchContext is WorkBenchContext Setter
 // 验权对象
 func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
 	r._workBenchContext = _workBenchContext
@@ -51,12 +51,12 @@ func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) SetWorkBenchContex
 	return nil
 }
 
-// Get WorkBenchContext Getter
+// GetWorkBenchContext WorkBenchContext Getter
 func (r AlibabaShenjingCoreActivityGetappshowlistAPIRequest) GetWorkBenchContext() *WorkBenchContext {
 	return r._workBenchContext
 }
 
-// Set is Timestamp1 Setter
+// SetTimestamp1 is Timestamp1 Setter
 // 时间戳
 func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) SetTimestamp1(_timestamp1 int64) error {
 	r._timestamp1 = _timestamp1
@@ -64,12 +64,12 @@ func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) SetTimestamp1(_tim
 	return nil
 }
 
-// Get Timestamp1 Getter
+// GetTimestamp1 Timestamp1 Getter
 func (r AlibabaShenjingCoreActivityGetappshowlistAPIRequest) GetTimestamp1() int64 {
 	return r._timestamp1
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 页码
 func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -77,12 +77,12 @@ func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) SetPage(_page int6
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaShenjingCoreActivityGetappshowlistAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is Size Setter
+// SetSize is Size Setter
 // 一页行数
 func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) SetSize(_size int64) error {
 	r._size = _size
@@ -90,7 +90,7 @@ func (r *AlibabaShenjingCoreActivityGetappshowlistAPIRequest) SetSize(_size int6
 	return nil
 }
 
-// Get Size Getter
+// GetSize Size Getter
 func (r AlibabaShenjingCoreActivityGetappshowlistAPIRequest) GetSize() int64 {
 	return r._size
 }

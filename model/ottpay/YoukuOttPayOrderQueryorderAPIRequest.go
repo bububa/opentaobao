@@ -37,7 +37,7 @@ func (r YoukuOttPayOrderQueryorderAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderNo Setter
+// SetOrderNo is OrderNo Setter
 // 订单号
 func (r *YoukuOttPayOrderQueryorderAPIRequest) SetOrderNo(_orderNo string) error {
 	r._orderNo = _orderNo
@@ -45,7 +45,7 @@ func (r *YoukuOttPayOrderQueryorderAPIRequest) SetOrderNo(_orderNo string) error
 	return nil
 }
 
-// Get OrderNo Getter
+// GetOrderNo OrderNo Getter
 func (r YoukuOttPayOrderQueryorderAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }

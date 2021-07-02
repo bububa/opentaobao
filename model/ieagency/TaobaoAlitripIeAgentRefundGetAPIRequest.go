@@ -39,7 +39,7 @@ func (r TaobaoAlitripIeAgentRefundGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ApplyId Setter
+// SetApplyId is ApplyId Setter
 // 退票申请单id
 func (r *TaobaoAlitripIeAgentRefundGetAPIRequest) SetApplyId(_applyId int64) error {
 	r._applyId = _applyId
@@ -47,12 +47,12 @@ func (r *TaobaoAlitripIeAgentRefundGetAPIRequest) SetApplyId(_applyId int64) err
 	return nil
 }
 
-// Get ApplyId Getter
+// GetApplyId ApplyId Getter
 func (r TaobaoAlitripIeAgentRefundGetAPIRequest) GetApplyId() int64 {
 	return r._applyId
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商id
 func (r *TaobaoAlitripIeAgentRefundGetAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -60,7 +60,7 @@ func (r *TaobaoAlitripIeAgentRefundGetAPIRequest) SetAgentId(_agentId int64) err
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r TaobaoAlitripIeAgentRefundGetAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }

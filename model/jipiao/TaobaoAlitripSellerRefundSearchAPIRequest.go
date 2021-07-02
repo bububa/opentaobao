@@ -41,7 +41,7 @@ func (r TaobaoAlitripSellerRefundSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间
 func (r *TaobaoAlitripSellerRefundSearchAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -49,12 +49,12 @@ func (r *TaobaoAlitripSellerRefundSearchAPIRequest) SetEndTime(_endTime string) 
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoAlitripSellerRefundSearchAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 开始时间
 func (r *TaobaoAlitripSellerRefundSearchAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -62,12 +62,12 @@ func (r *TaobaoAlitripSellerRefundSearchAPIRequest) SetStartTime(_startTime stri
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoAlitripSellerRefundSearchAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 申请单状态（如果为空查询所有状态，1初始 2接受 3确认 4失败 5买家处理 6卖家处理 7等待小二回填 8退款成功）
 func (r *TaobaoAlitripSellerRefundSearchAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -75,7 +75,7 @@ func (r *TaobaoAlitripSellerRefundSearchAPIRequest) SetStatus(_status int64) err
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoAlitripSellerRefundSearchAPIRequest) GetStatus() int64 {
 	return r._status
 }

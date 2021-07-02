@@ -37,7 +37,7 @@ func (r AlitripBtripHotelOrderSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 请求
 func (r *AlitripBtripHotelOrderSearchAPIRequest) SetRq(_rq *OpenSearchRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripHotelOrderSearchAPIRequest) SetRq(_rq *OpenSearchRq) error 
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripHotelOrderSearchAPIRequest) GetRq() *OpenSearchRq {
 	return r._rq
 }

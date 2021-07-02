@@ -37,7 +37,7 @@ func (r AlibabaWdkPosAfterbuyBenefitSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SendBenefitParam Setter
+// SetSendBenefitParam is SendBenefitParam Setter
 // 入参
 func (r *AlibabaWdkPosAfterbuyBenefitSendAPIRequest) SetSendBenefitParam(_sendBenefitParam *IsvSendBenefitParam) error {
 	r._sendBenefitParam = _sendBenefitParam
@@ -45,7 +45,7 @@ func (r *AlibabaWdkPosAfterbuyBenefitSendAPIRequest) SetSendBenefitParam(_sendBe
 	return nil
 }
 
-// Get SendBenefitParam Getter
+// GetSendBenefitParam SendBenefitParam Getter
 func (r AlibabaWdkPosAfterbuyBenefitSendAPIRequest) GetSendBenefitParam() *IsvSendBenefitParam {
 	return r._sendBenefitParam
 }

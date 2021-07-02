@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeReviewSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Review Setter
+// SetReview is Review Setter
 // 测评草稿信息
 func (r *AlibabaAlihouseNewhomeReviewSyncAPIRequest) SetReview(_review *ProjectReviewDraftDto) error {
 	r._review = _review
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeReviewSyncAPIRequest) SetReview(_review *ProjectR
 	return nil
 }
 
-// Get Review Getter
+// GetReview Review Getter
 func (r AlibabaAlihouseNewhomeReviewSyncAPIRequest) GetReview() *ProjectReviewDraftDto {
 	return r._review
 }

@@ -41,7 +41,7 @@ func (r TaobaoOmniitemSkuGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *TaobaoOmniitemSkuGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -49,12 +49,12 @@ func (r *TaobaoOmniitemSkuGetAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoOmniitemSkuGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // skuId
 func (r *TaobaoOmniitemSkuGetAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
@@ -62,12 +62,12 @@ func (r *TaobaoOmniitemSkuGetAPIRequest) SetSkuId(_skuId int64) error {
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TaobaoOmniitemSkuGetAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }
 
-// Set is SkuOuterId Setter
+// SetSkuOuterId is SkuOuterId Setter
 // sku商家编码
 func (r *TaobaoOmniitemSkuGetAPIRequest) SetSkuOuterId(_skuOuterId string) error {
 	r._skuOuterId = _skuOuterId
@@ -75,7 +75,7 @@ func (r *TaobaoOmniitemSkuGetAPIRequest) SetSkuOuterId(_skuOuterId string) error
 	return nil
 }
 
-// Get SkuOuterId Getter
+// GetSkuOuterId SkuOuterId Getter
 func (r TaobaoOmniitemSkuGetAPIRequest) GetSkuOuterId() string {
 	return r._skuOuterId
 }

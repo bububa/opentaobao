@@ -39,7 +39,7 @@ func (r TaobaoTbkSkuBestCouponAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TaobaoTbkSkuBestCouponAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -47,12 +47,12 @@ func (r *TaobaoTbkSkuBestCouponAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoTbkSkuBestCouponAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // 商品对应的skuId
 func (r *TaobaoTbkSkuBestCouponAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
@@ -60,7 +60,7 @@ func (r *TaobaoTbkSkuBestCouponAPIRequest) SetSkuId(_skuId int64) error {
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TaobaoTbkSkuBestCouponAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkReverseReversedetailAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReverseId Setter
+// SetReverseId is ReverseId Setter
 // 退款单id
 func (r *AlibabaWdkReverseReversedetailAPIRequest) SetReverseId(_reverseId string) error {
 	r._reverseId = _reverseId
@@ -45,7 +45,7 @@ func (r *AlibabaWdkReverseReversedetailAPIRequest) SetReverseId(_reverseId strin
 	return nil
 }
 
-// Get ReverseId Getter
+// GetReverseId ReverseId Getter
 func (r AlibabaWdkReverseReversedetailAPIRequest) GetReverseId() string {
 	return r._reverseId
 }

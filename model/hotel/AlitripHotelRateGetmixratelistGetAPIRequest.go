@@ -37,7 +37,7 @@ func (r AlitripHotelRateGetmixratelistGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamGetMixRateListParam Setter
+// SetParamGetMixRateListParam is ParamGetMixRateListParam Setter
 // 评论参数
 func (r *AlitripHotelRateGetmixratelistGetAPIRequest) SetParamGetMixRateListParam(_paramGetMixRateListParam *GetMixRateListParam) error {
 	r._paramGetMixRateListParam = _paramGetMixRateListParam
@@ -45,7 +45,7 @@ func (r *AlitripHotelRateGetmixratelistGetAPIRequest) SetParamGetMixRateListPara
 	return nil
 }
 
-// Get ParamGetMixRateListParam Getter
+// GetParamGetMixRateListParam ParamGetMixRateListParam Getter
 func (r AlitripHotelRateGetmixratelistGetAPIRequest) GetParamGetMixRateListParam() *GetMixRateListParam {
 	return r._paramGetMixRateListParam
 }

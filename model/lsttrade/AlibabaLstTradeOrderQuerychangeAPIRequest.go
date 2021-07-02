@@ -37,7 +37,7 @@ func (r AlibabaLstTradeOrderQuerychangeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 入参包装类
 func (r *AlibabaLstTradeOrderQuerychangeAPIRequest) SetQuery(_query *LstOrderQuery) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *AlibabaLstTradeOrderQuerychangeAPIRequest) SetQuery(_query *LstOrderQue
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaLstTradeOrderQuerychangeAPIRequest) GetQuery() *LstOrderQuery {
 	return r._query
 }

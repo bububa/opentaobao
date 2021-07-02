@@ -37,7 +37,7 @@ func (r AlibabaWdkItemMerchantCategoryQueryAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is QueryRequest Setter
+// SetQueryRequest is QueryRequest Setter
 // 请求
 func (r *AlibabaWdkItemMerchantCategoryQueryAPIRequest) SetQueryRequest(_queryRequest *WdkOpenSkuMerchantCatServiceQueryRequest) error {
 	r._queryRequest = _queryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkItemMerchantCategoryQueryAPIRequest) SetQueryRequest(_queryRe
 	return nil
 }
 
-// Get QueryRequest Getter
+// GetQueryRequest QueryRequest Getter
 func (r AlibabaWdkItemMerchantCategoryQueryAPIRequest) GetQueryRequest() *WdkOpenSkuMerchantCatServiceQueryRequest {
 	return r._queryRequest
 }

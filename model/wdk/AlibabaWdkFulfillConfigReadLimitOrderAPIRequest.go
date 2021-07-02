@@ -37,7 +37,7 @@ func (r AlibabaWdkFulfillConfigReadLimitOrderAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is WarehouseCodeList Setter
+// SetWarehouseCodeList is WarehouseCodeList Setter
 // 仓code集合
 func (r *AlibabaWdkFulfillConfigReadLimitOrderAPIRequest) SetWarehouseCodeList(_warehouseCodeList []string) error {
 	r._warehouseCodeList = _warehouseCodeList
@@ -45,7 +45,7 @@ func (r *AlibabaWdkFulfillConfigReadLimitOrderAPIRequest) SetWarehouseCodeList(_
 	return nil
 }
 
-// Get WarehouseCodeList Getter
+// GetWarehouseCodeList WarehouseCodeList Getter
 func (r AlibabaWdkFulfillConfigReadLimitOrderAPIRequest) GetWarehouseCodeList() []string {
 	return r._warehouseCodeList
 }

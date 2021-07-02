@@ -37,7 +37,7 @@ func (r TaobaoFenxiaoProductSkusGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品ID
 func (r *TaobaoFenxiaoProductSkusGetAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -45,7 +45,7 @@ func (r *TaobaoFenxiaoProductSkusGetAPIRequest) SetProductId(_productId int64) e
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TaobaoFenxiaoProductSkusGetAPIRequest) GetProductId() int64 {
 	return r._productId
 }

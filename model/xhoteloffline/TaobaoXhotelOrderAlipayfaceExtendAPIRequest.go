@@ -45,7 +45,7 @@ func (r TaobaoXhotelOrderAlipayfaceExtendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CheckOut Setter
+// SetCheckOut is CheckOut Setter
 // 延住后的离店日期(最多总共入住天数不能超过9间夜)
 func (r *TaobaoXhotelOrderAlipayfaceExtendAPIRequest) SetCheckOut(_checkOut string) error {
 	r._checkOut = _checkOut
@@ -53,12 +53,12 @@ func (r *TaobaoXhotelOrderAlipayfaceExtendAPIRequest) SetCheckOut(_checkOut stri
 	return nil
 }
 
-// Get CheckOut Getter
+// GetCheckOut CheckOut Getter
 func (r TaobaoXhotelOrderAlipayfaceExtendAPIRequest) GetCheckOut() string {
 	return r._checkOut
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 阿里旅行订单id,和outOrderId必须至少传入一个
 func (r *TaobaoXhotelOrderAlipayfaceExtendAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -66,12 +66,12 @@ func (r *TaobaoXhotelOrderAlipayfaceExtendAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoXhotelOrderAlipayfaceExtendAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is OutOrderId Setter
+// SetOutOrderId is OutOrderId Setter
 // 卖家系统订单号,和tid必须至少传入一个
 func (r *TaobaoXhotelOrderAlipayfaceExtendAPIRequest) SetOutOrderId(_outOrderId string) error {
 	r._outOrderId = _outOrderId
@@ -79,12 +79,12 @@ func (r *TaobaoXhotelOrderAlipayfaceExtendAPIRequest) SetOutOrderId(_outOrderId 
 	return nil
 }
 
-// Get OutOrderId Getter
+// GetOutOrderId OutOrderId Getter
 func (r TaobaoXhotelOrderAlipayfaceExtendAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
 }
 
-// Set is ExtendFee Setter
+// SetExtendFee is ExtendFee Setter
 // 延住房费,注意不包含原有的房费金额,单位为分
 func (r *TaobaoXhotelOrderAlipayfaceExtendAPIRequest) SetExtendFee(_extendFee int64) error {
 	r._extendFee = _extendFee
@@ -92,12 +92,12 @@ func (r *TaobaoXhotelOrderAlipayfaceExtendAPIRequest) SetExtendFee(_extendFee in
 	return nil
 }
 
-// Get ExtendFee Getter
+// GetExtendFee ExtendFee Getter
 func (r TaobaoXhotelOrderAlipayfaceExtendAPIRequest) GetExtendFee() int64 {
 	return r._extendFee
 }
 
-// Set is ExtendDailyPriceInfo Setter
+// SetExtendDailyPriceInfo is ExtendDailyPriceInfo Setter
 // 延住日期段的每日房价信息,注意不包括原有的日期房价
 func (r *TaobaoXhotelOrderAlipayfaceExtendAPIRequest) SetExtendDailyPriceInfo(_extendDailyPriceInfo string) error {
 	r._extendDailyPriceInfo = _extendDailyPriceInfo
@@ -105,7 +105,7 @@ func (r *TaobaoXhotelOrderAlipayfaceExtendAPIRequest) SetExtendDailyPriceInfo(_e
 	return nil
 }
 
-// Get ExtendDailyPriceInfo Getter
+// GetExtendDailyPriceInfo ExtendDailyPriceInfo Getter
 func (r TaobaoXhotelOrderAlipayfaceExtendAPIRequest) GetExtendDailyPriceInfo() string {
 	return r._extendDailyPriceInfo
 }

@@ -63,7 +63,7 @@ func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TotalFee Setter
+// SetTotalFee is TotalFee Setter
 // 总房费,单位为分
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetTotalFee(_totalFee int64) error {
 	r._totalFee = _totalFee
@@ -71,12 +71,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetTotalFee(_totalFee int6
 	return nil
 }
 
-// Get TotalFee Getter
+// GetTotalFee TotalFee Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetTotalFee() int64 {
 	return r._totalFee
 }
 
-// Set is CheckOut Setter
+// SetCheckOut is CheckOut Setter
 // 离店日期(最多允许9天)
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetCheckOut(_checkOut string) error {
 	r._checkOut = _checkOut
@@ -84,12 +84,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetCheckOut(_checkOut stri
 	return nil
 }
 
-// Get CheckOut Getter
+// GetCheckOut CheckOut Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetCheckOut() string {
 	return r._checkOut
 }
 
-// Set is HotelCode Setter
+// SetHotelCode is HotelCode Setter
 // 发布到阿里旅行的酒店编码
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetHotelCode(_hotelCode string) error {
 	r._hotelCode = _hotelCode
@@ -97,12 +97,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetHotelCode(_hotelCode st
 	return nil
 }
 
-// Get HotelCode Getter
+// GetHotelCode HotelCode Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetHotelCode() string {
 	return r._hotelCode
 }
 
-// Set is CheckIn Setter
+// SetCheckIn is CheckIn Setter
 // 入住日期
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetCheckIn(_checkIn string) error {
 	r._checkIn = _checkIn
@@ -110,12 +110,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetCheckIn(_checkIn string
 	return nil
 }
 
-// Get CheckIn Getter
+// GetCheckIn CheckIn Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetCheckIn() string {
 	return r._checkIn
 }
 
-// Set is DailyPriceInfo Setter
+// SetDailyPriceInfo is DailyPriceInfo Setter
 // 每日房价,json格式
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetDailyPriceInfo(_dailyPriceInfo string) error {
 	r._dailyPriceInfo = _dailyPriceInfo
@@ -123,12 +123,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetDailyPriceInfo(_dailyPr
 	return nil
 }
 
-// Get DailyPriceInfo Getter
+// GetDailyPriceInfo DailyPriceInfo Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetDailyPriceInfo() string {
 	return r._dailyPriceInfo
 }
 
-// Set is OutOrderId Setter
+// SetOutOrderId is OutOrderId Setter
 // 商家系统的订单号，必须全局唯一，重复会按照相同订单处理
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetOutOrderId(_outOrderId string) error {
 	r._outOrderId = _outOrderId
@@ -136,12 +136,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetOutOrderId(_outOrderId 
 	return nil
 }
 
-// Get OutOrderId Getter
+// GetOutOrderId OutOrderId Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
 }
 
-// Set is RoomQuantity Setter
+// SetRoomQuantity is RoomQuantity Setter
 // 预定的房间数量
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetRoomQuantity(_roomQuantity int64) error {
 	r._roomQuantity = _roomQuantity
@@ -149,12 +149,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetRoomQuantity(_roomQuant
 	return nil
 }
 
-// Get RoomQuantity Getter
+// GetRoomQuantity RoomQuantity Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetRoomQuantity() int64 {
 	return r._roomQuantity
 }
 
-// Set is Guests Setter
+// SetGuests is Guests Setter
 // 入住人信息, 注意必须有且只有一个设置为主入住人, 用于信用住结算扣款. 对于java版本的SDK可以使用setGuests(List &lt Guest &gt guests)赋值; 对于.net等其他版本SDK可以通过将List &lt Guest&gt结构数据转为json串赋值.
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetGuests(_guests []Guest) error {
 	r._guests = _guests
@@ -162,12 +162,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetGuests(_guests []Guest)
 	return nil
 }
 
-// Get Guests Getter
+// GetGuests Guests Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetGuests() []Guest {
 	return r._guests
 }
 
-// Set is AlipayNumber Setter
+// SetAlipayNumber is AlipayNumber Setter
 // 扫描用户支付宝得到的串号, 该字段不为空时会采用串号对应的支付宝账号进行信用住结算
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetAlipayNumber(_alipayNumber string) error {
 	r._alipayNumber = _alipayNumber
@@ -175,12 +175,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetAlipayNumber(_alipayNum
 	return nil
 }
 
-// Get AlipayNumber Getter
+// GetAlipayNumber AlipayNumber Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetAlipayNumber() string {
 	return r._alipayNumber
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 订单渠道信息,可以留空
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -188,12 +188,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetChannel(_channel string
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetChannel() string {
 	return r._channel
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 不清楚请留空, 用于和outHid共同定位一个酒店
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -201,12 +201,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetVendor(_vendor string) 
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is RoomtypeName Setter
+// SetRoomtypeName is RoomtypeName Setter
 // 房型名称
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetRoomtypeName(_roomtypeName string) error {
 	r._roomtypeName = _roomtypeName
@@ -214,12 +214,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetRoomtypeName(_roomtypeN
 	return nil
 }
 
-// Get RoomtypeName Getter
+// GetRoomtypeName RoomtypeName Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetRoomtypeName() string {
 	return r._roomtypeName
 }
 
-// Set is RateplanName Setter
+// SetRateplanName is RateplanName Setter
 // rateplan名称(不清楚可以留空)
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetRateplanName(_rateplanName string) error {
 	r._rateplanName = _rateplanName
@@ -227,12 +227,12 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetRateplanName(_rateplanN
 	return nil
 }
 
-// Get RateplanName Getter
+// GetRateplanName RateplanName Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetRateplanName() string {
 	return r._rateplanName
 }
 
-// Set is SelfCheckin Setter
+// SetSelfCheckin is SelfCheckin Setter
 // 是否为自助入住模式下创建订单，是：true,否：false
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetSelfCheckin(_selfCheckin bool) error {
 	r._selfCheckin = _selfCheckin
@@ -240,7 +240,7 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetSelfCheckin(_selfChecki
 	return nil
 }
 
-// Get SelfCheckin Getter
+// GetSelfCheckin SelfCheckin Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetSelfCheckin() bool {
 	return r._selfCheckin
 }

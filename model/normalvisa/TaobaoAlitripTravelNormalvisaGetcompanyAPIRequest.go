@@ -37,7 +37,7 @@ func (r TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // true：取5个重要的物流公司 false：取所有的物流公司
 func (r *TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest) SetParam0(_param0 bool) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest) SetParam0(_param0 bo
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoAlitripTravelNormalvisaGetcompanyAPIRequest) GetParam0() bool {
 	return r._param0
 }

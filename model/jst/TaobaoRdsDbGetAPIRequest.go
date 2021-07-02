@@ -39,7 +39,7 @@ func (r TaobaoRdsDbGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InstanceName Setter
+// SetInstanceName is InstanceName Setter
 // rds的实例名
 func (r *TaobaoRdsDbGetAPIRequest) SetInstanceName(_instanceName string) error {
 	r._instanceName = _instanceName
@@ -47,12 +47,12 @@ func (r *TaobaoRdsDbGetAPIRequest) SetInstanceName(_instanceName string) error {
 	return nil
 }
 
-// Get InstanceName Getter
+// GetInstanceName InstanceName Getter
 func (r TaobaoRdsDbGetAPIRequest) GetInstanceName() string {
 	return r._instanceName
 }
 
-// Set is DbStatus Setter
+// SetDbStatus is DbStatus Setter
 // 数据库状态，默认值1
 func (r *TaobaoRdsDbGetAPIRequest) SetDbStatus(_dbStatus int64) error {
 	r._dbStatus = _dbStatus
@@ -60,7 +60,7 @@ func (r *TaobaoRdsDbGetAPIRequest) SetDbStatus(_dbStatus int64) error {
 	return nil
 }
 
-// Get DbStatus Getter
+// GetDbStatus DbStatus Getter
 func (r TaobaoRdsDbGetAPIRequest) GetDbStatus() int64 {
 	return r._dbStatus
 }

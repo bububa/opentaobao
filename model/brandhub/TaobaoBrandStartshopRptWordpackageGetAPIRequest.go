@@ -47,7 +47,7 @@ func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 开始日期
 func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -55,12 +55,12 @@ func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetStartDate(_startDat
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 结束日期
 func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -68,12 +68,12 @@ func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetEndDate(_endDate st
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is Effect Setter
+// SetEffect is Effect Setter
 // 转化周期
 func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetEffect(_effect string) error {
 	r._effect = _effect
@@ -81,12 +81,12 @@ func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetEffect(_effect stri
 	return nil
 }
 
-// Get Effect Getter
+// GetEffect Effect Getter
 func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetEffect() string {
 	return r._effect
 }
 
-// Set is TrafficType Setter
+// SetTrafficType is TrafficType Setter
 // 流量类型
 func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetTrafficType(_trafficType string) error {
 	r._trafficType = _trafficType
@@ -94,12 +94,12 @@ func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetTrafficType(_traffi
 	return nil
 }
 
-// Get TrafficType Getter
+// GetTrafficType TrafficType Getter
 func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetTrafficType() string {
 	return r._trafficType
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页显示条数(0,200]
 func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetPageSize(_pageSize string) error {
 	r._pageSize = _pageSize
@@ -107,12 +107,12 @@ func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetPageSize(_pageSize 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetPageSize() string {
 	return r._pageSize
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 当前页数 ,从1开始
 func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetPageIndex(_pageIndex string) error {
 	r._pageIndex = _pageIndex
@@ -120,7 +120,7 @@ func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetPageIndex(_pageInde
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetPageIndex() string {
 	return r._pageIndex
 }

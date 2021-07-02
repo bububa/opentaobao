@@ -43,7 +43,7 @@ func (r TmallSupplychainChannelProductPriceGetAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品ID
 func (r *TmallSupplychainChannelProductPriceGetAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -51,12 +51,12 @@ func (r *TmallSupplychainChannelProductPriceGetAPIRequest) SetProductId(_product
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TmallSupplychainChannelProductPriceGetAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is PriceType Setter
+// SetPriceType is PriceType Setter
 // 区域价、指导价
 func (r *TmallSupplychainChannelProductPriceGetAPIRequest) SetPriceType(_priceType int64) error {
 	r._priceType = _priceType
@@ -64,12 +64,12 @@ func (r *TmallSupplychainChannelProductPriceGetAPIRequest) SetPriceType(_priceTy
 	return nil
 }
 
-// Get PriceType Getter
+// GetPriceType PriceType Getter
 func (r TmallSupplychainChannelProductPriceGetAPIRequest) GetPriceType() int64 {
 	return r._priceType
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // SKU ID
 func (r *TmallSupplychainChannelProductPriceGetAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
@@ -77,12 +77,12 @@ func (r *TmallSupplychainChannelProductPriceGetAPIRequest) SetSkuId(_skuId int64
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TmallSupplychainChannelProductPriceGetAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }
 
-// Set is ChannelCode Setter
+// SetChannelCode is ChannelCode Setter
 // 渠道ID（台湾市场/供销平台/大农业…..）
 func (r *TmallSupplychainChannelProductPriceGetAPIRequest) SetChannelCode(_channelCode int64) error {
 	r._channelCode = _channelCode
@@ -90,7 +90,7 @@ func (r *TmallSupplychainChannelProductPriceGetAPIRequest) SetChannelCode(_chann
 	return nil
 }
 
-// Get ChannelCode Getter
+// GetChannelCode ChannelCode Getter
 func (r TmallSupplychainChannelProductPriceGetAPIRequest) GetChannelCode() int64 {
 	return r._channelCode
 }

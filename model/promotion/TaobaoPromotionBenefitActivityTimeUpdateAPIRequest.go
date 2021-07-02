@@ -41,7 +41,7 @@ func (r TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is RelationId Setter
+// SetRelationId is RelationId Setter
 // ISV活动关联权益后获得的关联ID
 func (r *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) SetRelationId(_relationId int64) error {
 	r._relationId = _relationId
@@ -49,12 +49,12 @@ func (r *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) SetRelationId(_rela
 	return nil
 }
 
-// Get RelationId Getter
+// GetRelationId RelationId Getter
 func (r TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) GetRelationId() int64 {
 	return r._relationId
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 活动的开始时间
 func (r *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -62,12 +62,12 @@ func (r *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) SetStartTime(_start
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 活动的i结束时间
 func (r *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -75,7 +75,7 @@ func (r *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) SetEndTime(_endTime
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) GetEndTime() string {
 	return r._endTime
 }

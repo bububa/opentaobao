@@ -43,7 +43,7 @@ func (r AlibabaCampusAclGetmenubyempidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 账户id
 func (r *AlibabaCampusAclGetmenubyempidAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -51,12 +51,12 @@ func (r *AlibabaCampusAclGetmenubyempidAPIRequest) SetUserId(_userId int64) erro
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaCampusAclGetmenubyempidAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is SystemId Setter
+// SetSystemId is SystemId Setter
 // 系统id
 func (r *AlibabaCampusAclGetmenubyempidAPIRequest) SetSystemId(_systemId string) error {
 	r._systemId = _systemId
@@ -64,12 +64,12 @@ func (r *AlibabaCampusAclGetmenubyempidAPIRequest) SetSystemId(_systemId string)
 	return nil
 }
 
-// Get SystemId Getter
+// GetSystemId SystemId Getter
 func (r AlibabaCampusAclGetmenubyempidAPIRequest) GetSystemId() string {
 	return r._systemId
 }
 
-// Set is CompanyId Setter
+// SetCompanyId is CompanyId Setter
 // 公司id
 func (r *AlibabaCampusAclGetmenubyempidAPIRequest) SetCompanyId(_companyId int64) error {
 	r._companyId = _companyId
@@ -77,12 +77,12 @@ func (r *AlibabaCampusAclGetmenubyempidAPIRequest) SetCompanyId(_companyId int64
 	return nil
 }
 
-// Get CompanyId Getter
+// GetCompanyId CompanyId Getter
 func (r AlibabaCampusAclGetmenubyempidAPIRequest) GetCompanyId() int64 {
 	return r._companyId
 }
 
-// Set is CampusId Setter
+// SetCampusId is CampusId Setter
 // 园区id
 func (r *AlibabaCampusAclGetmenubyempidAPIRequest) SetCampusId(_campusId int64) error {
 	r._campusId = _campusId
@@ -90,7 +90,7 @@ func (r *AlibabaCampusAclGetmenubyempidAPIRequest) SetCampusId(_campusId int64) 
 	return nil
 }
 
-// Get CampusId Getter
+// GetCampusId CampusId Getter
 func (r AlibabaCampusAclGetmenubyempidAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }

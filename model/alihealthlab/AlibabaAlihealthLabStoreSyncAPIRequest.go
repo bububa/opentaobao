@@ -71,7 +71,7 @@ func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IsvStoreStatus Setter
+// SetIsvStoreStatus is IsvStoreStatus Setter
 // EFFECTIVE 生效，INVALID 失效
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetIsvStoreStatus(_isvStoreStatus string) error {
 	r._isvStoreStatus = _isvStoreStatus
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetIsvStoreStatus(_isvStoreStat
 	return nil
 }
 
-// Get IsvStoreStatus Getter
+// GetIsvStoreStatus IsvStoreStatus Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetIsvStoreStatus() string {
 	return r._isvStoreStatus
 }
 
-// Set is ReserveNotice Setter
+// SetReserveNotice is ReserveNotice Setter
 // 预约须知
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetReserveNotice(_reserveNotice string) error {
 	r._reserveNotice = _reserveNotice
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetReserveNotice(_reserveNotice
 	return nil
 }
 
-// Get ReserveNotice Getter
+// GetReserveNotice ReserveNotice Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetReserveNotice() string {
 	return r._reserveNotice
 }
 
-// Set is SupportOnlineReport Setter
+// SetSupportOnlineReport is SupportOnlineReport Setter
 // 支持在线报告
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetSupportOnlineReport(_supportOnlineReport bool) error {
 	r._supportOnlineReport = _supportOnlineReport
@@ -105,12 +105,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetSupportOnlineReport(_support
 	return nil
 }
 
-// Get SupportOnlineReport Getter
+// GetSupportOnlineReport SupportOnlineReport Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetSupportOnlineReport() bool {
 	return r._supportOnlineReport
 }
 
-// Set is StoreTypeDesc Setter
+// SetStoreTypeDesc is StoreTypeDesc Setter
 // 门店类型描述
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetStoreTypeDesc(_storeTypeDesc string) error {
 	r._storeTypeDesc = _storeTypeDesc
@@ -118,12 +118,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetStoreTypeDesc(_storeTypeDesc
 	return nil
 }
 
-// Get StoreTypeDesc Getter
+// GetStoreTypeDesc StoreTypeDesc Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetStoreTypeDesc() string {
 	return r._storeTypeDesc
 }
 
-// Set is SocialCreditCode Setter
+// SetSocialCreditCode is SocialCreditCode Setter
 // 企业社会征信号
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetSocialCreditCode(_socialCreditCode string) error {
 	r._socialCreditCode = _socialCreditCode
@@ -131,12 +131,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetSocialCreditCode(_socialCred
 	return nil
 }
 
-// Get SocialCreditCode Getter
+// GetSocialCreditCode SocialCreditCode Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetSocialCreditCode() string {
 	return r._socialCreditCode
 }
 
-// Set is LicenseNo Setter
+// SetLicenseNo is LicenseNo Setter
 // 营业执照编号
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetLicenseNo(_licenseNo string) error {
 	r._licenseNo = _licenseNo
@@ -144,12 +144,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetLicenseNo(_licenseNo string)
 	return nil
 }
 
-// Get LicenseNo Getter
+// GetLicenseNo LicenseNo Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetLicenseNo() string {
 	return r._licenseNo
 }
 
-// Set is LicenseName Setter
+// SetLicenseName is LicenseName Setter
 // 营业执照名称
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetLicenseName(_licenseName string) error {
 	r._licenseName = _licenseName
@@ -157,12 +157,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetLicenseName(_licenseName str
 	return nil
 }
 
-// Get LicenseName Getter
+// GetLicenseName LicenseName Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetLicenseName() string {
 	return r._licenseName
 }
 
-// Set is StoreRoutesDesc Setter
+// SetStoreRoutesDesc is StoreRoutesDesc Setter
 // 门店交通路线
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetStoreRoutesDesc(_storeRoutesDesc string) error {
 	r._storeRoutesDesc = _storeRoutesDesc
@@ -170,12 +170,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetStoreRoutesDesc(_storeRoutes
 	return nil
 }
 
-// Get StoreRoutesDesc Getter
+// GetStoreRoutesDesc StoreRoutesDesc Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetStoreRoutesDesc() string {
 	return r._storeRoutesDesc
 }
 
-// Set is WorkTimeDesc Setter
+// SetWorkTimeDesc is WorkTimeDesc Setter
 // 营业时间描述
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetWorkTimeDesc(_workTimeDesc string) error {
 	r._workTimeDesc = _workTimeDesc
@@ -183,12 +183,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetWorkTimeDesc(_workTimeDesc s
 	return nil
 }
 
-// Get WorkTimeDesc Getter
+// GetWorkTimeDesc WorkTimeDesc Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetWorkTimeDesc() string {
 	return r._workTimeDesc
 }
 
-// Set is StorePhone Setter
+// SetStorePhone is StorePhone Setter
 // 门店电话号码
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetStorePhone(_storePhone string) error {
 	r._storePhone = _storePhone
@@ -196,12 +196,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetStorePhone(_storePhone strin
 	return nil
 }
 
-// Get StorePhone Getter
+// GetStorePhone StorePhone Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetStorePhone() string {
 	return r._storePhone
 }
 
-// Set is StoreIntro Setter
+// SetStoreIntro is StoreIntro Setter
 // 门店介绍
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetStoreIntro(_storeIntro string) error {
 	r._storeIntro = _storeIntro
@@ -209,12 +209,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetStoreIntro(_storeIntro strin
 	return nil
 }
 
-// Get StoreIntro Getter
+// GetStoreIntro StoreIntro Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetStoreIntro() string {
 	return r._storeIntro
 }
 
-// Set is Longitude Setter
+// SetLongitude is Longitude Setter
 // 经度
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetLongitude(_longitude *BigDecimal) error {
 	r._longitude = _longitude
@@ -222,12 +222,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetLongitude(_longitude *BigDec
 	return nil
 }
 
-// Get Longitude Getter
+// GetLongitude Longitude Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetLongitude() *BigDecimal {
 	return r._longitude
 }
 
-// Set is Latitude Setter
+// SetLatitude is Latitude Setter
 // 纬度
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetLatitude(_latitude *BigDecimal) error {
 	r._latitude = _latitude
@@ -235,12 +235,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetLatitude(_latitude *BigDecim
 	return nil
 }
 
-// Get Latitude Getter
+// GetLatitude Latitude Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetLatitude() *BigDecimal {
 	return r._latitude
 }
 
-// Set is CityCode Setter
+// SetCityCode is CityCode Setter
 // 城市编码
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetCityCode(_cityCode int64) error {
 	r._cityCode = _cityCode
@@ -248,12 +248,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetCityCode(_cityCode int64) er
 	return nil
 }
 
-// Get CityCode Getter
+// GetCityCode CityCode Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetCityCode() int64 {
 	return r._cityCode
 }
 
-// Set is StoreAddress Setter
+// SetStoreAddress is StoreAddress Setter
 // 门店地址
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetStoreAddress(_storeAddress string) error {
 	r._storeAddress = _storeAddress
@@ -261,12 +261,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetStoreAddress(_storeAddress s
 	return nil
 }
 
-// Get StoreAddress Getter
+// GetStoreAddress StoreAddress Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetStoreAddress() string {
 	return r._storeAddress
 }
 
-// Set is IsvStoreCode Setter
+// SetIsvStoreCode is IsvStoreCode Setter
 // isv门店编码
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetIsvStoreCode(_isvStoreCode string) error {
 	r._isvStoreCode = _isvStoreCode
@@ -274,12 +274,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetIsvStoreCode(_isvStoreCode s
 	return nil
 }
 
-// Get IsvStoreCode Getter
+// GetIsvStoreCode IsvStoreCode Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetIsvStoreCode() string {
 	return r._isvStoreCode
 }
 
-// Set is StoreName Setter
+// SetStoreName is StoreName Setter
 // 门店名称
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetStoreName(_storeName string) error {
 	r._storeName = _storeName
@@ -287,12 +287,12 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetStoreName(_storeName string)
 	return nil
 }
 
-// Get StoreName Getter
+// GetStoreName StoreName Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetStoreName() string {
 	return r._storeName
 }
 
-// Set is AllowedTbItemCategoryIds Setter
+// SetAllowedTbItemCategoryIds is AllowedTbItemCategoryIds Setter
 // 支持的淘宝商品类目ID，阿里医院场景
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetAllowedTbItemCategoryIds(_allowedTbItemCategoryIds []int64) error {
 	r._allowedTbItemCategoryIds = _allowedTbItemCategoryIds
@@ -300,7 +300,7 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetAllowedTbItemCategoryIds(_al
 	return nil
 }
 
-// Get AllowedTbItemCategoryIds Getter
+// GetAllowedTbItemCategoryIds AllowedTbItemCategoryIds Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetAllowedTbItemCategoryIds() []int64 {
 	return r._allowedTbItemCategoryIds
 }

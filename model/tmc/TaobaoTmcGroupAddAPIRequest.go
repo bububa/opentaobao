@@ -41,7 +41,7 @@ func (r TaobaoTmcGroupAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupName Setter
+// SetGroupName is GroupName Setter
 // 分组名称，同一个应用下需要保证唯一性，最长32个字符。添加分组后，消息通道会为用户的消息分配独立分组，但之前的消息还是存储于默认分组中。不能以default开头，default开头为系统默认组。
 func (r *TaobaoTmcGroupAddAPIRequest) SetGroupName(_groupName string) error {
 	r._groupName = _groupName
@@ -49,12 +49,12 @@ func (r *TaobaoTmcGroupAddAPIRequest) SetGroupName(_groupName string) error {
 	return nil
 }
 
-// Get GroupName Getter
+// GetGroupName GroupName Getter
 func (r TaobaoTmcGroupAddAPIRequest) GetGroupName() string {
 	return r._groupName
 }
 
-// Set is Nicks Setter
+// SetNicks is Nicks Setter
 // 用户昵称列表，以半角逗号分隔，支持子账号，支持增量添加用户
 func (r *TaobaoTmcGroupAddAPIRequest) SetNicks(_nicks []string) error {
 	r._nicks = _nicks
@@ -62,12 +62,12 @@ func (r *TaobaoTmcGroupAddAPIRequest) SetNicks(_nicks []string) error {
 	return nil
 }
 
-// Get Nicks Getter
+// GetNicks Nicks Getter
 func (r TaobaoTmcGroupAddAPIRequest) GetNicks() []string {
 	return r._nicks
 }
 
-// Set is UserPlatform Setter
+// SetUserPlatform is UserPlatform Setter
 // 用户所属于的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户
 func (r *TaobaoTmcGroupAddAPIRequest) SetUserPlatform(_userPlatform string) error {
 	r._userPlatform = _userPlatform
@@ -75,7 +75,7 @@ func (r *TaobaoTmcGroupAddAPIRequest) SetUserPlatform(_userPlatform string) erro
 	return nil
 }
 
-// Get UserPlatform Getter
+// GetUserPlatform UserPlatform Getter
 func (r TaobaoTmcGroupAddAPIRequest) GetUserPlatform() string {
 	return r._userPlatform
 }

@@ -37,7 +37,7 @@ func (r TaobaoUmpToolsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ToolCode Setter
+// SetToolCode is ToolCode Setter
 // 工具编码
 func (r *TaobaoUmpToolsGetAPIRequest) SetToolCode(_toolCode string) error {
 	r._toolCode = _toolCode
@@ -45,7 +45,7 @@ func (r *TaobaoUmpToolsGetAPIRequest) SetToolCode(_toolCode string) error {
 	return nil
 }
 
-// Get ToolCode Getter
+// GetToolCode ToolCode Getter
 func (r TaobaoUmpToolsGetAPIRequest) GetToolCode() string {
 	return r._toolCode
 }

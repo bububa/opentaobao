@@ -37,7 +37,7 @@ func (r AlibabaMoziAclPermissionPageRolepermissionAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is PageRolePermisions Setter
+// SetPageRolePermisions is PageRolePermisions Setter
 // 分页查询角色下包含的权限列表
 func (r *AlibabaMoziAclPermissionPageRolepermissionAPIRequest) SetPageRolePermisions(_pageRolePermisions *PageRolePermissionRequest) error {
 	r._pageRolePermisions = _pageRolePermisions
@@ -45,7 +45,7 @@ func (r *AlibabaMoziAclPermissionPageRolepermissionAPIRequest) SetPageRolePermis
 	return nil
 }
 
-// Get PageRolePermisions Getter
+// GetPageRolePermisions PageRolePermisions Getter
 func (r AlibabaMoziAclPermissionPageRolepermissionAPIRequest) GetPageRolePermisions() *PageRolePermissionRequest {
 	return r._pageRolePermisions
 }

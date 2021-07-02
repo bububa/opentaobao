@@ -37,7 +37,7 @@ func (r AlibabaDamaiMaitixOrderDirectrefundAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 退票入参
 func (r *AlibabaDamaiMaitixOrderDirectrefundAPIRequest) SetParam(_param *MoaRefundAuditParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMaitixOrderDirectrefundAPIRequest) SetParam(_param *MoaRefu
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaDamaiMaitixOrderDirectrefundAPIRequest) GetParam() *MoaRefundAuditParam {
 	return r._param
 }

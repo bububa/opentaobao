@@ -37,7 +37,7 @@ func (r AlibabaLsyCrmCustomerAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReqDto Setter
+// SetReqDto is ReqDto Setter
 // 入参对象
 func (r *AlibabaLsyCrmCustomerAddAPIRequest) SetReqDto(_reqDto *NrtCrmCreateCustomerReq) error {
 	r._reqDto = _reqDto
@@ -45,7 +45,7 @@ func (r *AlibabaLsyCrmCustomerAddAPIRequest) SetReqDto(_reqDto *NrtCrmCreateCust
 	return nil
 }
 
-// Get ReqDto Getter
+// GetReqDto ReqDto Getter
 func (r AlibabaLsyCrmCustomerAddAPIRequest) GetReqDto() *NrtCrmCreateCustomerReq {
 	return r._reqDto
 }

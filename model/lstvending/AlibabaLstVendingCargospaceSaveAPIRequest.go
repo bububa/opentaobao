@@ -37,7 +37,7 @@ func (r AlibabaLstVendingCargospaceSaveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CargoSpaceDTOList Setter
+// SetCargoSpaceDTOList is CargoSpaceDTOList Setter
 // 货道信息
 func (r *AlibabaLstVendingCargospaceSaveAPIRequest) SetCargoSpaceDTOList(_cargoSpaceDTOList []VendingCargoSpaceDto) error {
 	r._cargoSpaceDTOList = _cargoSpaceDTOList
@@ -45,7 +45,7 @@ func (r *AlibabaLstVendingCargospaceSaveAPIRequest) SetCargoSpaceDTOList(_cargoS
 	return nil
 }
 
-// Get CargoSpaceDTOList Getter
+// GetCargoSpaceDTOList CargoSpaceDTOList Getter
 func (r AlibabaLstVendingCargospaceSaveAPIRequest) GetCargoSpaceDTOList() []VendingCargoSpaceDto {
 	return r._cargoSpaceDTOList
 }

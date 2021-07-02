@@ -37,7 +37,7 @@ func (r AlibabaAlihealthNrDeliveryHistorySaveAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is DeliveryEvent Setter
+// SetDeliveryEvent is DeliveryEvent Setter
 // 入参
 func (r *AlibabaAlihealthNrDeliveryHistorySaveAPIRequest) SetDeliveryEvent(_deliveryEvent *DeliveryEventDto) error {
 	r._deliveryEvent = _deliveryEvent
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthNrDeliveryHistorySaveAPIRequest) SetDeliveryEvent(_deli
 	return nil
 }
 
-// Get DeliveryEvent Getter
+// GetDeliveryEvent DeliveryEvent Getter
 func (r AlibabaAlihealthNrDeliveryHistorySaveAPIRequest) GetDeliveryEvent() *DeliveryEventDto {
 	return r._deliveryEvent
 }

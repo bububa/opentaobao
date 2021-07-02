@@ -39,7 +39,7 @@ func (r TaobaoJdsHluserUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpenForBuyer Setter
+// SetOpenForBuyer is OpenForBuyer Setter
 // 回流信息是否开通买家端展示,可选值open,close
 func (r *TaobaoJdsHluserUpdateAPIRequest) SetOpenForBuyer(_openForBuyer string) error {
 	r._openForBuyer = _openForBuyer
@@ -47,12 +47,12 @@ func (r *TaobaoJdsHluserUpdateAPIRequest) SetOpenForBuyer(_openForBuyer string) 
 	return nil
 }
 
-// Get OpenForBuyer Getter
+// GetOpenForBuyer OpenForBuyer Getter
 func (r TaobaoJdsHluserUpdateAPIRequest) GetOpenForBuyer() string {
 	return r._openForBuyer
 }
 
-// Set is OpenNodes Setter
+// SetOpenNodes is OpenNodes Setter
 // 为空,则默认是X_TO_SYSTEM,X_WAIT_ALLOCATION,X_OUT_WAREHOUSE 可选值是X_DOWNLOADED,X_TO_SYSTEM,X_SERVICE_AUDITED,X_FINANCE_AUDITED,X_ALLOCATION_NOTIFIED,X_WAIT_ALLOCATION,X_SORT_PRINTED,X_SEND_PRINTED,X_LOGISTICS_PRINTED,X_SORTED,X_EXAMINED,X_PACKAGED,X_WEIGHED,X_OUT_WAREHOUS
 func (r *TaobaoJdsHluserUpdateAPIRequest) SetOpenNodes(_openNodes string) error {
 	r._openNodes = _openNodes
@@ -60,7 +60,7 @@ func (r *TaobaoJdsHluserUpdateAPIRequest) SetOpenNodes(_openNodes string) error 
 	return nil
 }
 
-// Get OpenNodes Getter
+// GetOpenNodes OpenNodes Getter
 func (r TaobaoJdsHluserUpdateAPIRequest) GetOpenNodes() string {
 	return r._openNodes
 }

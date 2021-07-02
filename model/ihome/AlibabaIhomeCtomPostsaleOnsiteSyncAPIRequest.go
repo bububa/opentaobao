@@ -57,7 +57,7 @@ func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is DeliveryPhone Setter
+// SetDeliveryPhone is DeliveryPhone Setter
 // 预约后展示给客户的员工联系方式
 func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetDeliveryPhone(_deliveryPhone string) error {
 	r._deliveryPhone = _deliveryPhone
@@ -65,12 +65,12 @@ func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetDeliveryPhone(_deliver
 	return nil
 }
 
-// Get DeliveryPhone Getter
+// GetDeliveryPhone DeliveryPhone Getter
 func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetDeliveryPhone() string {
 	return r._deliveryPhone
 }
 
-// Set is UnitId Setter
+// SetUnitId is UnitId Setter
 // 提交部门ID（预约的操作人所属部门）
 func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetUnitId(_unitId string) error {
 	r._unitId = _unitId
@@ -78,12 +78,12 @@ func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetUnitId(_unitId string)
 	return nil
 }
 
-// Get UnitId Getter
+// GetUnitId UnitId Getter
 func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetUnitId() string {
 	return r._unitId
 }
 
-// Set is Memo Setter
+// SetMemo is Memo Setter
 // 备注
 func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
@@ -91,12 +91,12 @@ func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetMemo(_memo string) err
 	return nil
 }
 
-// Get Memo Getter
+// GetMemo Memo Getter
 func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetMemo() string {
 	return r._memo
 }
 
-// Set is Time Setter
+// SetTime is Time Setter
 // 预约事件发生时间
 func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetTime(_time int64) error {
 	r._time = _time
@@ -104,12 +104,12 @@ func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetTime(_time int64) erro
 	return nil
 }
 
-// Get Time Getter
+// GetTime Time Getter
 func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetTime() int64 {
 	return r._time
 }
 
-// Set is ServiceId Setter
+// SetServiceId is ServiceId Setter
 // 服务ID
 func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetServiceId(_serviceId string) error {
 	r._serviceId = _serviceId
@@ -117,12 +117,12 @@ func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetServiceId(_serviceId s
 	return nil
 }
 
-// Get ServiceId Getter
+// GetServiceId ServiceId Getter
 func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetServiceId() string {
 	return r._serviceId
 }
 
-// Set is DeliveryDate Setter
+// SetDeliveryDate is DeliveryDate Setter
 // 预约目标时间
 func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetDeliveryDate(_deliveryDate int64) error {
 	r._deliveryDate = _deliveryDate
@@ -130,12 +130,12 @@ func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetDeliveryDate(_delivery
 	return nil
 }
 
-// Get DeliveryDate Getter
+// GetDeliveryDate DeliveryDate Getter
 func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetDeliveryDate() int64 {
 	return r._deliveryDate
 }
 
-// Set is OperatorId Setter
+// SetOperatorId is OperatorId Setter
 // 具体操作人ID（预约人）
 func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetOperatorId(_operatorId string) error {
 	r._operatorId = _operatorId
@@ -143,12 +143,12 @@ func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetOperatorId(_operatorId
 	return nil
 }
 
-// Get OperatorId Getter
+// GetOperatorId OperatorId Getter
 func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetOperatorId() string {
 	return r._operatorId
 }
 
-// Set is DeliveryName Setter
+// SetDeliveryName is DeliveryName Setter
 // 联系人员名字
 func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetDeliveryName(_deliveryName string) error {
 	r._deliveryName = _deliveryName
@@ -156,12 +156,12 @@ func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetDeliveryName(_delivery
 	return nil
 }
 
-// Get DeliveryName Getter
+// GetDeliveryName DeliveryName Getter
 func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetDeliveryName() string {
 	return r._deliveryName
 }
 
-// Set is PostSalesId Setter
+// SetPostSalesId is PostSalesId Setter
 // 售后单ID
 func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetPostSalesId(_postSalesId string) error {
 	r._postSalesId = _postSalesId
@@ -169,12 +169,12 @@ func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetPostSalesId(_postSales
 	return nil
 }
 
-// Get PostSalesId Getter
+// GetPostSalesId PostSalesId Getter
 func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetPostSalesId() string {
 	return r._postSalesId
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 配送、安装或上门
 func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -182,12 +182,12 @@ func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetType(_type string) err
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is AdditionalOrderId Setter
+// SetAdditionalOrderId is AdditionalOrderId Setter
 // 三维家补单ID
 func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetAdditionalOrderId(_additionalOrderId string) error {
 	r._additionalOrderId = _additionalOrderId
@@ -195,7 +195,7 @@ func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetAdditionalOrderId(_add
 	return nil
 }
 
-// Get AdditionalOrderId Getter
+// GetAdditionalOrderId AdditionalOrderId Getter
 func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetAdditionalOrderId() string {
 	return r._additionalOrderId
 }

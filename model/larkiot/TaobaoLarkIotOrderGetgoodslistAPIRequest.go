@@ -39,7 +39,7 @@ func (r TaobaoLarkIotOrderGetgoodslistAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChannelCode Setter
+// SetChannelCode is ChannelCode Setter
 // 渠道编码
 func (r *TaobaoLarkIotOrderGetgoodslistAPIRequest) SetChannelCode(_channelCode string) error {
 	r._channelCode = _channelCode
@@ -47,12 +47,12 @@ func (r *TaobaoLarkIotOrderGetgoodslistAPIRequest) SetChannelCode(_channelCode s
 	return nil
 }
 
-// Get ChannelCode Getter
+// GetChannelCode ChannelCode Getter
 func (r TaobaoLarkIotOrderGetgoodslistAPIRequest) GetChannelCode() string {
 	return r._channelCode
 }
 
-// Set is CinemaLinkId Setter
+// SetCinemaLinkId is CinemaLinkId Setter
 // 影院内码
 func (r *TaobaoLarkIotOrderGetgoodslistAPIRequest) SetCinemaLinkId(_cinemaLinkId string) error {
 	r._cinemaLinkId = _cinemaLinkId
@@ -60,7 +60,7 @@ func (r *TaobaoLarkIotOrderGetgoodslistAPIRequest) SetCinemaLinkId(_cinemaLinkId
 	return nil
 }
 
-// Get CinemaLinkId Getter
+// GetCinemaLinkId CinemaLinkId Getter
 func (r TaobaoLarkIotOrderGetgoodslistAPIRequest) GetCinemaLinkId() string {
 	return r._cinemaLinkId
 }

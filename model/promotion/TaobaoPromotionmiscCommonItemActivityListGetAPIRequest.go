@@ -39,7 +39,7 @@ func (r TaobaoPromotionmiscCommonItemActivityListGetAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 分页页码，页码从1开始
 func (r *TaobaoPromotionmiscCommonItemActivityListGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -47,12 +47,12 @@ func (r *TaobaoPromotionmiscCommonItemActivityListGetAPIRequest) SetPageNo(_page
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoPromotionmiscCommonItemActivityListGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小，不能超过50
 func (r *TaobaoPromotionmiscCommonItemActivityListGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -60,7 +60,7 @@ func (r *TaobaoPromotionmiscCommonItemActivityListGetAPIRequest) SetPageSize(_pa
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoPromotionmiscCommonItemActivityListGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

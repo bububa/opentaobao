@@ -37,7 +37,7 @@ func (r TmallNrFulfillCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Req Setter
+// SetReq is Req Setter
 // 入参
 func (r *TmallNrFulfillCancelAPIRequest) SetReq(_req *NrCancelFulfillReqDto) error {
 	r._req = _req
@@ -45,7 +45,7 @@ func (r *TmallNrFulfillCancelAPIRequest) SetReq(_req *NrCancelFulfillReqDto) err
 	return nil
 }
 
-// Get Req Getter
+// GetReq Req Getter
 func (r TmallNrFulfillCancelAPIRequest) GetReq() *NrCancelFulfillReqDto {
 	return r._req
 }

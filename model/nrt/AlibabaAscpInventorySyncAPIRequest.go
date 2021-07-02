@@ -37,7 +37,7 @@ func (r AlibabaAscpInventorySyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InvSingleItemSyncDto Setter
+// SetInvSingleItemSyncDto is InvSingleItemSyncDto Setter
 // 库存同步DTO
 func (r *AlibabaAscpInventorySyncAPIRequest) SetInvSingleItemSyncDto(_invSingleItemSyncDto *InvSingleItemSyncDto) error {
 	r._invSingleItemSyncDto = _invSingleItemSyncDto
@@ -45,7 +45,7 @@ func (r *AlibabaAscpInventorySyncAPIRequest) SetInvSingleItemSyncDto(_invSingleI
 	return nil
 }
 
-// Get InvSingleItemSyncDto Getter
+// GetInvSingleItemSyncDto InvSingleItemSyncDto Getter
 func (r AlibabaAscpInventorySyncAPIRequest) GetInvSingleItemSyncDto() *InvSingleItemSyncDto {
 	return r._invSingleItemSyncDto
 }

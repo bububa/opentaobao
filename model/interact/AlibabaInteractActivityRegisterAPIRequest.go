@@ -51,7 +51,7 @@ func (r AlibabaInteractActivityRegisterAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EntryUrl Setter
+// SetEntryUrl is EntryUrl Setter
 // 页面内容链接，仅允许ascii字符
 func (r *AlibabaInteractActivityRegisterAPIRequest) SetEntryUrl(_entryUrl string) error {
 	r._entryUrl = _entryUrl
@@ -59,12 +59,12 @@ func (r *AlibabaInteractActivityRegisterAPIRequest) SetEntryUrl(_entryUrl string
 	return nil
 }
 
-// Get EntryUrl Getter
+// GetEntryUrl EntryUrl Getter
 func (r AlibabaInteractActivityRegisterAPIRequest) GetEntryUrl() string {
 	return r._entryUrl
 }
 
-// Set is BizId Setter
+// SetBizId is BizId Setter
 // 活动ID
 func (r *AlibabaInteractActivityRegisterAPIRequest) SetBizId(_bizId string) error {
 	r._bizId = _bizId
@@ -72,12 +72,12 @@ func (r *AlibabaInteractActivityRegisterAPIRequest) SetBizId(_bizId string) erro
 	return nil
 }
 
-// Get BizId Getter
+// GetBizId BizId Getter
 func (r AlibabaInteractActivityRegisterAPIRequest) GetBizId() string {
 	return r._bizId
 }
 
-// Set is Description Setter
+// SetDescription is Description Setter
 // 活动描述文字
 func (r *AlibabaInteractActivityRegisterAPIRequest) SetDescription(_description string) error {
 	r._description = _description
@@ -85,12 +85,12 @@ func (r *AlibabaInteractActivityRegisterAPIRequest) SetDescription(_description 
 	return nil
 }
 
-// Get Description Getter
+// GetDescription Description Getter
 func (r AlibabaInteractActivityRegisterAPIRequest) GetDescription() string {
 	return r._description
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 活动结束时间
 func (r *AlibabaInteractActivityRegisterAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -98,12 +98,12 @@ func (r *AlibabaInteractActivityRegisterAPIRequest) SetEndTime(_endTime string) 
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r AlibabaInteractActivityRegisterAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 活动名称
 func (r *AlibabaInteractActivityRegisterAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -111,12 +111,12 @@ func (r *AlibabaInteractActivityRegisterAPIRequest) SetName(_name string) error 
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlibabaInteractActivityRegisterAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Picture Setter
+// SetPicture is Picture Setter
 // 活动封面图片（非必填）
 func (r *AlibabaInteractActivityRegisterAPIRequest) SetPicture(_picture string) error {
 	r._picture = _picture
@@ -124,12 +124,12 @@ func (r *AlibabaInteractActivityRegisterAPIRequest) SetPicture(_picture string) 
 	return nil
 }
 
-// Get Picture Getter
+// GetPicture Picture Getter
 func (r AlibabaInteractActivityRegisterAPIRequest) GetPicture() string {
 	return r._picture
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 活动开始时间
 func (r *AlibabaInteractActivityRegisterAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -137,12 +137,12 @@ func (r *AlibabaInteractActivityRegisterAPIRequest) SetStartTime(_startTime stri
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r AlibabaInteractActivityRegisterAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is HasValidTime Setter
+// SetHasValidTime is HasValidTime Setter
 // 是否有有效时间，若为真开始时间和结束时间必填，默认为真
 func (r *AlibabaInteractActivityRegisterAPIRequest) SetHasValidTime(_hasValidTime bool) error {
 	r._hasValidTime = _hasValidTime
@@ -150,7 +150,7 @@ func (r *AlibabaInteractActivityRegisterAPIRequest) SetHasValidTime(_hasValidTim
 	return nil
 }
 
-// Get HasValidTime Getter
+// GetHasValidTime HasValidTime Getter
 func (r AlibabaInteractActivityRegisterAPIRequest) GetHasValidTime() bool {
 	return r._hasValidTime
 }

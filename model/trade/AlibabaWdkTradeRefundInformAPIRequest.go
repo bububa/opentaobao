@@ -37,7 +37,7 @@ func (r AlibabaWdkTradeRefundInformAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InformRefundSuccessRequest Setter
+// SetInformRefundSuccessRequest is InformRefundSuccessRequest Setter
 // 通知退款成功请求
 func (r *AlibabaWdkTradeRefundInformAPIRequest) SetInformRefundSuccessRequest(_informRefundSuccessRequest *InformRefundSuccessRequest) error {
 	r._informRefundSuccessRequest = _informRefundSuccessRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkTradeRefundInformAPIRequest) SetInformRefundSuccessRequest(_i
 	return nil
 }
 
-// Get InformRefundSuccessRequest Getter
+// GetInformRefundSuccessRequest InformRefundSuccessRequest Getter
 func (r AlibabaWdkTradeRefundInformAPIRequest) GetInformRefundSuccessRequest() *InformRefundSuccessRequest {
 	return r._informRefundSuccessRequest
 }

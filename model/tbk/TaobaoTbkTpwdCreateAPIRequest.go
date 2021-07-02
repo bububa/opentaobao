@@ -45,7 +45,7 @@ func (r TaobaoTbkTpwdCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 联盟官方渠道获取的淘客推广链接，请注意，不要随意篡改官方生成的链接，否则可能无法生成淘口令
 func (r *TaobaoTbkTpwdCreateAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -53,12 +53,12 @@ func (r *TaobaoTbkTpwdCreateAPIRequest) SetUrl(_url string) error {
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r TaobaoTbkTpwdCreateAPIRequest) GetUrl() string {
 	return r._url
 }
 
-// Set is Text Setter
+// SetText is Text Setter
 // 兼容旧版本api参数，无实际作用
 func (r *TaobaoTbkTpwdCreateAPIRequest) SetText(_text string) error {
 	r._text = _text
@@ -66,12 +66,12 @@ func (r *TaobaoTbkTpwdCreateAPIRequest) SetText(_text string) error {
 	return nil
 }
 
-// Get Text Getter
+// GetText Text Getter
 func (r TaobaoTbkTpwdCreateAPIRequest) GetText() string {
 	return r._text
 }
 
-// Set is Logo Setter
+// SetLogo is Logo Setter
 // 兼容旧版本api参数，无实际作用
 func (r *TaobaoTbkTpwdCreateAPIRequest) SetLogo(_logo string) error {
 	r._logo = _logo
@@ -79,12 +79,12 @@ func (r *TaobaoTbkTpwdCreateAPIRequest) SetLogo(_logo string) error {
 	return nil
 }
 
-// Get Logo Getter
+// GetLogo Logo Getter
 func (r TaobaoTbkTpwdCreateAPIRequest) GetLogo() string {
 	return r._logo
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 兼容旧版本api参数，无实际作用
 func (r *TaobaoTbkTpwdCreateAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -92,12 +92,12 @@ func (r *TaobaoTbkTpwdCreateAPIRequest) SetExt(_ext string) error {
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoTbkTpwdCreateAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 兼容旧版本api参数，无实际作用
 func (r *TaobaoTbkTpwdCreateAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -105,7 +105,7 @@ func (r *TaobaoTbkTpwdCreateAPIRequest) SetUserId(_userId string) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoTbkTpwdCreateAPIRequest) GetUserId() string {
 	return r._userId
 }

@@ -37,7 +37,7 @@ func (r AlibabaFundplatformCardordersStatusMakeFinishAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is CardOrderId Setter
+// SetCardOrderId is CardOrderId Setter
 // 子制卡单ID
 func (r *AlibabaFundplatformCardordersStatusMakeFinishAPIRequest) SetCardOrderId(_cardOrderId int64) error {
 	r._cardOrderId = _cardOrderId
@@ -45,7 +45,7 @@ func (r *AlibabaFundplatformCardordersStatusMakeFinishAPIRequest) SetCardOrderId
 	return nil
 }
 
-// Get CardOrderId Getter
+// GetCardOrderId CardOrderId Getter
 func (r AlibabaFundplatformCardordersStatusMakeFinishAPIRequest) GetCardOrderId() int64 {
 	return r._cardOrderId
 }

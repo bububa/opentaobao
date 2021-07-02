@@ -39,7 +39,7 @@ func (r TmallNrtSimpleitemQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Ids Setter
+// SetIds is Ids Setter
 // 商品编码数组
 func (r *TmallNrtSimpleitemQueryAPIRequest) SetIds(_ids []int64) error {
 	r._ids = _ids
@@ -47,7 +47,7 @@ func (r *TmallNrtSimpleitemQueryAPIRequest) SetIds(_ids []int64) error {
 	return nil
 }
 
-// Get Ids Getter
+// GetIds Ids Getter
 func (r TmallNrtSimpleitemQueryAPIRequest) GetIds() []int64 {
 	return r._ids
 }

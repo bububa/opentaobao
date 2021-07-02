@@ -39,7 +39,7 @@ func (r TmallChannelTradeOrderStopAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MainPurchaseOrderNo Setter
+// SetMainPurchaseOrderNo is MainPurchaseOrderNo Setter
 // 主采购单号
 func (r *TmallChannelTradeOrderStopAPIRequest) SetMainPurchaseOrderNo(_mainPurchaseOrderNo int64) error {
 	r._mainPurchaseOrderNo = _mainPurchaseOrderNo
@@ -47,12 +47,12 @@ func (r *TmallChannelTradeOrderStopAPIRequest) SetMainPurchaseOrderNo(_mainPurch
 	return nil
 }
 
-// Get MainPurchaseOrderNo Getter
+// GetMainPurchaseOrderNo MainPurchaseOrderNo Getter
 func (r TmallChannelTradeOrderStopAPIRequest) GetMainPurchaseOrderNo() int64 {
 	return r._mainPurchaseOrderNo
 }
 
-// Set is RequestNo Setter
+// SetRequestNo is RequestNo Setter
 // 幂等单号
 func (r *TmallChannelTradeOrderStopAPIRequest) SetRequestNo(_requestNo string) error {
 	r._requestNo = _requestNo
@@ -60,7 +60,7 @@ func (r *TmallChannelTradeOrderStopAPIRequest) SetRequestNo(_requestNo string) e
 	return nil
 }
 
-// Get RequestNo Getter
+// GetRequestNo RequestNo Getter
 func (r TmallChannelTradeOrderStopAPIRequest) GetRequestNo() string {
 	return r._requestNo
 }

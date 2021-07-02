@@ -45,7 +45,7 @@ func (r TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is OaidMd5 Setter
+// SetOaidMd5 is OaidMd5 Setter
 // md5加密后的oaid列表， 32位小写， 多个使用,分隔， 最多支持20个
 func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) SetOaidMd5(_oaidMd5 string) error {
 	r._oaidMd5 = _oaidMd5
@@ -53,12 +53,12 @@ func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) SetOaidMd5(_oaidMd5 stri
 	return nil
 }
 
-// Get OaidMd5 Getter
+// GetOaidMd5 OaidMd5 Getter
 func (r TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) GetOaidMd5() string {
 	return r._oaidMd5
 }
 
-// Set is IdfaMd5 Setter
+// SetIdfaMd5 is IdfaMd5 Setter
 // md5加密后的oaid列表， 32位小写， 多个使用,分隔， 最多支持20个
 func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) SetIdfaMd5(_idfaMd5 string) error {
 	r._idfaMd5 = _idfaMd5
@@ -66,12 +66,12 @@ func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) SetIdfaMd5(_idfaMd5 stri
 	return nil
 }
 
-// Get IdfaMd5 Getter
+// GetIdfaMd5 IdfaMd5 Getter
 func (r TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) GetIdfaMd5() string {
 	return r._idfaMd5
 }
 
-// Set is ImeiMd5 Setter
+// SetImeiMd5 is ImeiMd5 Setter
 // md5加密后的imei列表， 32位小写， 多个使用,分隔， 最多支持20个
 func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) SetImeiMd5(_imeiMd5 string) error {
 	r._imeiMd5 = _imeiMd5
@@ -79,12 +79,12 @@ func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) SetImeiMd5(_imeiMd5 stri
 	return nil
 }
 
-// Get ImeiMd5 Getter
+// GetImeiMd5 ImeiMd5 Getter
 func (r TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) GetImeiMd5() string {
 	return r._imeiMd5
 }
 
-// Set is AdvertisingSpaceId Setter
+// SetAdvertisingSpaceId is AdvertisingSpaceId Setter
 // 巨浪广告位id,在巨浪平台申请
 func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) SetAdvertisingSpaceId(_advertisingSpaceId string) error {
 	r._advertisingSpaceId = _advertisingSpaceId
@@ -92,12 +92,12 @@ func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) SetAdvertisingSpaceId(_a
 	return nil
 }
 
-// Get AdvertisingSpaceId Getter
+// GetAdvertisingSpaceId AdvertisingSpaceId Getter
 func (r TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) GetAdvertisingSpaceId() string {
 	return r._advertisingSpaceId
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 巨浪渠道id,在巨浪平台申请
 func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -105,7 +105,7 @@ func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) SetChannel(_channel stri
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) GetChannel() string {
 	return r._channel
 }

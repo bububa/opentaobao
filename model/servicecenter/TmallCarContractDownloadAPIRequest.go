@@ -40,7 +40,7 @@ func (r TmallCarContractDownloadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 天猫订单号
 func (r *TmallCarContractDownloadAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -48,12 +48,12 @@ func (r *TmallCarContractDownloadAPIRequest) SetOrderId(_orderId int64) error {
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TmallCarContractDownloadAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is Html Setter
+// SetHtml is Html Setter
 // 是否下载html，true是html，false是pdf， html速度会快一点
 func (r *TmallCarContractDownloadAPIRequest) SetHtml(_html bool) error {
 	r._html = _html
@@ -61,7 +61,7 @@ func (r *TmallCarContractDownloadAPIRequest) SetHtml(_html bool) error {
 	return nil
 }
 
-// Get Html Getter
+// GetHtml Html Getter
 func (r TmallCarContractDownloadAPIRequest) GetHtml() bool {
 	return r._html
 }

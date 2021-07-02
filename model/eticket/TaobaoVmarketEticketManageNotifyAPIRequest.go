@@ -41,7 +41,7 @@ func (r TaobaoVmarketEticketManageNotifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单编号
 func (r *TaobaoVmarketEticketManageNotifyAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -49,12 +49,12 @@ func (r *TaobaoVmarketEticketManageNotifyAPIRequest) SetOrderId(_orderId int64) 
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoVmarketEticketManageNotifyAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is CodemerchantId Setter
+// SetCodemerchantId is CodemerchantId Setter
 // 码商ID，如果是码商，必须传，如果是信任卖家，不需要传
 func (r *TaobaoVmarketEticketManageNotifyAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
 	r._codemerchantId = _codemerchantId
@@ -62,12 +62,12 @@ func (r *TaobaoVmarketEticketManageNotifyAPIRequest) SetCodemerchantId(_codemerc
 	return nil
 }
 
-// Get CodemerchantId Getter
+// GetCodemerchantId CodemerchantId Getter
 func (r TaobaoVmarketEticketManageNotifyAPIRequest) GetCodemerchantId() int64 {
 	return r._codemerchantId
 }
 
-// Set is NotifyMethod Setter
+// SetNotifyMethod is NotifyMethod Setter
 // 需要调用的通知方法，目前仅支持是send（发码）或resend（重新发码）
 func (r *TaobaoVmarketEticketManageNotifyAPIRequest) SetNotifyMethod(_notifyMethod string) error {
 	r._notifyMethod = _notifyMethod
@@ -75,7 +75,7 @@ func (r *TaobaoVmarketEticketManageNotifyAPIRequest) SetNotifyMethod(_notifyMeth
 	return nil
 }
 
-// Get NotifyMethod Getter
+// GetNotifyMethod NotifyMethod Getter
 func (r TaobaoVmarketEticketManageNotifyAPIRequest) GetNotifyMethod() string {
 	return r._notifyMethod
 }

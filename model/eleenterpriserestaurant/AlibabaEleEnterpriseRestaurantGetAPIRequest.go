@@ -39,7 +39,7 @@ func (r AlibabaEleEnterpriseRestaurantGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Geo Setter
+// SetGeo is Geo Setter
 // longitude和latitude用英文逗号分隔
 func (r *AlibabaEleEnterpriseRestaurantGetAPIRequest) SetGeo(_geo string) error {
 	r._geo = _geo
@@ -47,12 +47,12 @@ func (r *AlibabaEleEnterpriseRestaurantGetAPIRequest) SetGeo(_geo string) error 
 	return nil
 }
 
-// Get Geo Getter
+// GetGeo Geo Getter
 func (r AlibabaEleEnterpriseRestaurantGetAPIRequest) GetGeo() string {
 	return r._geo
 }
 
-// Set is ErestaurantId Setter
+// SetErestaurantId is ErestaurantId Setter
 // 餐厅ID
 func (r *AlibabaEleEnterpriseRestaurantGetAPIRequest) SetErestaurantId(_erestaurantId string) error {
 	r._erestaurantId = _erestaurantId
@@ -60,7 +60,7 @@ func (r *AlibabaEleEnterpriseRestaurantGetAPIRequest) SetErestaurantId(_erestaur
 	return nil
 }
 
-// Get ErestaurantId Getter
+// GetErestaurantId ErestaurantId Getter
 func (r AlibabaEleEnterpriseRestaurantGetAPIRequest) GetErestaurantId() string {
 	return r._erestaurantId
 }

@@ -39,7 +39,7 @@ func (r AlibabaWholesaleShippinglineTemplateListAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is PageNum Setter
+// SetPageNum is PageNum Setter
 // 第几页从1开始
 func (r *AlibabaWholesaleShippinglineTemplateListAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
@@ -47,12 +47,12 @@ func (r *AlibabaWholesaleShippinglineTemplateListAPIRequest) SetPageNum(_pageNum
 	return nil
 }
 
-// Get PageNum Getter
+// GetPageNum PageNum Getter
 func (r AlibabaWholesaleShippinglineTemplateListAPIRequest) GetPageNum() int64 {
 	return r._pageNum
 }
 
-// Set is Count Setter
+// SetCount is Count Setter
 // 每页返回的数据个数
 func (r *AlibabaWholesaleShippinglineTemplateListAPIRequest) SetCount(_count int64) error {
 	r._count = _count
@@ -60,7 +60,7 @@ func (r *AlibabaWholesaleShippinglineTemplateListAPIRequest) SetCount(_count int
 	return nil
 }
 
-// Get Count Getter
+// GetCount Count Getter
 func (r AlibabaWholesaleShippinglineTemplateListAPIRequest) GetCount() int64 {
 	return r._count
 }

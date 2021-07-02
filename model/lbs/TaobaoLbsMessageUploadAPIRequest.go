@@ -39,7 +39,7 @@ func (r TaobaoLbsMessageUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Topic Setter
+// SetTopic is Topic Setter
 // 消息TOPIC
 func (r *TaobaoLbsMessageUploadAPIRequest) SetTopic(_topic string) error {
 	r._topic = _topic
@@ -47,12 +47,12 @@ func (r *TaobaoLbsMessageUploadAPIRequest) SetTopic(_topic string) error {
 	return nil
 }
 
-// Get Topic Getter
+// GetTopic Topic Getter
 func (r TaobaoLbsMessageUploadAPIRequest) GetTopic() string {
 	return r._topic
 }
 
-// Set is Body Setter
+// SetBody is Body Setter
 // 消息体 json结构
 func (r *TaobaoLbsMessageUploadAPIRequest) SetBody(_body string) error {
 	r._body = _body
@@ -60,7 +60,7 @@ func (r *TaobaoLbsMessageUploadAPIRequest) SetBody(_body string) error {
 	return nil
 }
 
-// Get Body Getter
+// GetBody Body Getter
 func (r TaobaoLbsMessageUploadAPIRequest) GetBody() string {
 	return r._body
 }

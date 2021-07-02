@@ -39,7 +39,7 @@ func (r TaobaoAlitripFlightchangeAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FlightChangeDataDo Setter
+// SetFlightChangeDataDo is FlightChangeDataDo Setter
 // 录入参数类
 func (r *TaobaoAlitripFlightchangeAddAPIRequest) SetFlightChangeDataDo(_flightChangeDataDo *FlightChangeDataDo) error {
 	r._flightChangeDataDo = _flightChangeDataDo
@@ -47,7 +47,7 @@ func (r *TaobaoAlitripFlightchangeAddAPIRequest) SetFlightChangeDataDo(_flightCh
 	return nil
 }
 
-// Get FlightChangeDataDo Getter
+// GetFlightChangeDataDo FlightChangeDataDo Getter
 func (r TaobaoAlitripFlightchangeAddAPIRequest) GetFlightChangeDataDo() *FlightChangeDataDo {
 	return r._flightChangeDataDo
 }

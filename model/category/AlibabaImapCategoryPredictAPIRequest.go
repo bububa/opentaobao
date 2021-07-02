@@ -41,7 +41,7 @@ func (r AlibabaImapCategoryPredictAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TopImapItemDo Setter
+// SetTopImapItemDo is TopImapItemDo Setter
 // 入参DO
 func (r *AlibabaImapCategoryPredictAPIRequest) SetTopImapItemDo(_topImapItemDo *TopImapItemDo) error {
 	r._topImapItemDo = _topImapItemDo
@@ -49,12 +49,12 @@ func (r *AlibabaImapCategoryPredictAPIRequest) SetTopImapItemDo(_topImapItemDo *
 	return nil
 }
 
-// Get TopImapItemDo Getter
+// GetTopImapItemDo TopImapItemDo Getter
 func (r AlibabaImapCategoryPredictAPIRequest) GetTopImapItemDo() *TopImapItemDo {
 	return r._topImapItemDo
 }
 
-// Set is FixedMappingAppInfo Setter
+// SetFixedMappingAppInfo is FixedMappingAppInfo Setter
 // 账号信息
 func (r *AlibabaImapCategoryPredictAPIRequest) SetFixedMappingAppInfo(_fixedMappingAppInfo *FixedMappingAppInfo) error {
 	r._fixedMappingAppInfo = _fixedMappingAppInfo
@@ -62,7 +62,7 @@ func (r *AlibabaImapCategoryPredictAPIRequest) SetFixedMappingAppInfo(_fixedMapp
 	return nil
 }
 
-// Get FixedMappingAppInfo Getter
+// GetFixedMappingAppInfo FixedMappingAppInfo Getter
 func (r AlibabaImapCategoryPredictAPIRequest) GetFixedMappingAppInfo() *FixedMappingAppInfo {
 	return r._fixedMappingAppInfo
 }

@@ -37,7 +37,7 @@ func (r AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参
 func (r *AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest) SetParam(_param *OpenApiPostFeeParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest) SetParam(_pa
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaDamaiMaitixDistributionDeliveryCalculateAPIRequest) GetParam() *OpenApiPostFeeParam {
 	return r._param
 }

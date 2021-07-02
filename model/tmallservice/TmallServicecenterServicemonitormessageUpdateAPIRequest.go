@@ -41,7 +41,7 @@ func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is ServiceMonitorMessageId Setter
+// SetServiceMonitorMessageId is ServiceMonitorMessageId Setter
 // 预警消息id
 func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetServiceMonitorMessageId(_serviceMonitorMessageId int64) error {
 	r._serviceMonitorMessageId = _serviceMonitorMessageId
@@ -49,12 +49,12 @@ func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetServiceMoni
 	return nil
 }
 
-// Get ServiceMonitorMessageId Getter
+// GetServiceMonitorMessageId ServiceMonitorMessageId Getter
 func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetServiceMonitorMessageId() int64 {
 	return r._serviceMonitorMessageId
 }
 
-// Set is Memo Setter
+// SetMemo is Memo Setter
 // 预警处理备注
 func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
@@ -62,12 +62,12 @@ func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetMemo(_memo 
 	return nil
 }
 
-// Get Memo Getter
+// GetMemo Memo Getter
 func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetMemo() string {
 	return r._memo
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 可更新状态：3、已读
 func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -75,7 +75,7 @@ func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetStatus(_sta
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetStatus() int64 {
 	return r._status
 }

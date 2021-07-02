@@ -45,7 +45,7 @@ func (r AlibabaAlisportsEfspUserwriteoffAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderNo Setter
+// SetOrderNo is OrderNo Setter
 // 订单编号
 func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetOrderNo(_orderNo string) error {
 	r._orderNo = _orderNo
@@ -53,12 +53,12 @@ func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetOrderNo(_orderNo string)
 	return nil
 }
 
-// Get OrderNo Getter
+// GetOrderNo OrderNo Getter
 func (r AlibabaAlisportsEfspUserwriteoffAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }
 
-// Set is SumAmount Setter
+// SetSumAmount is SumAmount Setter
 // 订单金额
 func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetSumAmount(_sumAmount int64) error {
 	r._sumAmount = _sumAmount
@@ -66,12 +66,12 @@ func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetSumAmount(_sumAmount int
 	return nil
 }
 
-// Get SumAmount Getter
+// GetSumAmount SumAmount Getter
 func (r AlibabaAlisportsEfspUserwriteoffAPIRequest) GetSumAmount() int64 {
 	return r._sumAmount
 }
 
-// Set is GymId Setter
+// SetGymId is GymId Setter
 // 健身房Id
 func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetGymId(_gymId string) error {
 	r._gymId = _gymId
@@ -79,12 +79,12 @@ func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetGymId(_gymId string) err
 	return nil
 }
 
-// Get GymId Getter
+// GetGymId GymId Getter
 func (r AlibabaAlisportsEfspUserwriteoffAPIRequest) GetGymId() string {
 	return r._gymId
 }
 
-// Set is AlipayId Setter
+// SetAlipayId is AlipayId Setter
 // 用户支付宝ID
 func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetAlipayId(_alipayId string) error {
 	r._alipayId = _alipayId
@@ -92,12 +92,12 @@ func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetAlipayId(_alipayId strin
 	return nil
 }
 
-// Get AlipayId Getter
+// GetAlipayId AlipayId Getter
 func (r AlibabaAlisportsEfspUserwriteoffAPIRequest) GetAlipayId() string {
 	return r._alipayId
 }
 
-// Set is SubsidyAmount Setter
+// SetSubsidyAmount is SubsidyAmount Setter
 // 补助金额
 func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetSubsidyAmount(_subsidyAmount int64) error {
 	r._subsidyAmount = _subsidyAmount
@@ -105,7 +105,7 @@ func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetSubsidyAmount(_subsidyAm
 	return nil
 }
 
-// Get SubsidyAmount Getter
+// GetSubsidyAmount SubsidyAmount Getter
 func (r AlibabaAlisportsEfspUserwriteoffAPIRequest) GetSubsidyAmount() int64 {
 	return r._subsidyAmount
 }

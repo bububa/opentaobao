@@ -39,7 +39,7 @@ func (r TaobaoTmcMessagesConsumeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupName Setter
+// SetGroupName is GroupName Setter
 // 用户分组名称，不传表示消费默认分组，如果应用没有设置用户分组，传入分组名称将会返回错误
 func (r *TaobaoTmcMessagesConsumeAPIRequest) SetGroupName(_groupName string) error {
 	r._groupName = _groupName
@@ -47,12 +47,12 @@ func (r *TaobaoTmcMessagesConsumeAPIRequest) SetGroupName(_groupName string) err
 	return nil
 }
 
-// Get GroupName Getter
+// GetGroupName GroupName Getter
 func (r TaobaoTmcMessagesConsumeAPIRequest) GetGroupName() string {
 	return r._groupName
 }
 
-// Set is Quantity Setter
+// SetQuantity is Quantity Setter
 // 每次批量消费消息的条数，最小值：10；最大值：200
 func (r *TaobaoTmcMessagesConsumeAPIRequest) SetQuantity(_quantity int64) error {
 	r._quantity = _quantity
@@ -60,7 +60,7 @@ func (r *TaobaoTmcMessagesConsumeAPIRequest) SetQuantity(_quantity int64) error 
 	return nil
 }
 
-// Get Quantity Getter
+// GetQuantity Quantity Getter
 func (r TaobaoTmcMessagesConsumeAPIRequest) GetQuantity() int64 {
 	return r._quantity
 }

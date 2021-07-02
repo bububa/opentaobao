@@ -55,7 +55,7 @@ func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is GroupId Setter
+// SetGroupId is GroupId Setter
 // 商品id，机构保证全局唯一
 func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetGroupId(_groupId string) error {
 	r._groupId = _groupId
@@ -63,12 +63,12 @@ func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetGroupId(_groupId 
 	return nil
 }
 
-// Get GroupId Getter
+// GetGroupId GroupId Getter
 func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetGroupId() string {
 	return r._groupId
 }
 
-// Set is GroupName Setter
+// SetGroupName is GroupName Setter
 // 商品名称
 func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetGroupName(_groupName string) error {
 	r._groupName = _groupName
@@ -76,12 +76,12 @@ func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetGroupName(_groupN
 	return nil
 }
 
-// Get GroupName Getter
+// GetGroupName GroupName Getter
 func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetGroupName() string {
 	return r._groupName
 }
 
-// Set is PackageList Setter
+// SetPackageList is PackageList Setter
 // 套餐列表
 func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetPackageList(_packageList []Package) error {
 	r._packageList = _packageList
@@ -89,12 +89,12 @@ func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetPackageList(_pack
 	return nil
 }
 
-// Get PackageList Getter
+// GetPackageList PackageList Getter
 func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetPackageList() []Package {
 	return r._packageList
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 操作类型: publish=发布，update=更新
 func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -102,12 +102,12 @@ func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetType(_type string
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is GoodsDesc Setter
+// SetGoodsDesc is GoodsDesc Setter
 // 最多200个字，界面对应商品详情页描述
 func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetGoodsDesc(_goodsDesc string) error {
 	r._goodsDesc = _goodsDesc
@@ -115,12 +115,12 @@ func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetGoodsDesc(_goodsD
 	return nil
 }
 
-// Get GoodsDesc Getter
+// GetGoodsDesc GoodsDesc Getter
 func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetGoodsDesc() string {
 	return r._goodsDesc
 }
 
-// Set is TargetGroup Setter
+// SetTargetGroup is TargetGroup Setter
 // 最多256个字，界面对应列表文字
 func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetTargetGroup(_targetGroup string) error {
 	r._targetGroup = _targetGroup
@@ -128,12 +128,12 @@ func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetTargetGroup(_targ
 	return nil
 }
 
-// Get TargetGroup Getter
+// GetTargetGroup TargetGroup Getter
 func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetTargetGroup() string {
 	return r._targetGroup
 }
 
-// Set is Label Setter
+// SetLabel is Label Setter
 // 联调中正式上线前标签给B；联调后正式上线后标签给C
 func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetLabel(_label string) error {
 	r._label = _label
@@ -141,12 +141,12 @@ func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetLabel(_label stri
 	return nil
 }
 
-// Get Label Getter
+// GetLabel Label Getter
 func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetLabel() string {
 	return r._label
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 商品类目，1：体检 ，2：核酸，4 ：健康证
 func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetCategoryId(_categoryId string) error {
 	r._categoryId = _categoryId
@@ -154,12 +154,12 @@ func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetCategoryId(_categ
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetCategoryId() string {
 	return r._categoryId
 }
 
-// Set is Mode Setter
+// SetMode is Mode Setter
 // 0自营商品，1平台商品
 func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetMode(_mode string) error {
 	r._mode = _mode
@@ -167,12 +167,12 @@ func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetMode(_mode string
 	return nil
 }
 
-// Get Mode Getter
+// GetMode Mode Getter
 func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetMode() string {
 	return r._mode
 }
 
-// Set is BackendCategoryId Setter
+// SetBackendCategoryId is BackendCategoryId Setter
 // 类目ID，填入叶子类目ID，儿童体检: 20210204000004, 中青年体检: 20210204000005, 老年体检: 20210204000006, 证件体检（含入职）: 20210204000007, 核酸检测（到店服务）: 20210204000008, 专科服务（不包含核酸检测）: 20210204000009, 上门检测: 202102040000010, 上门护理: 202102040000011, 上门体检 202102040000012
 func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetBackendCategoryId(_backendCategoryId int64) error {
 	r._backendCategoryId = _backendCategoryId
@@ -180,7 +180,7 @@ func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetBackendCategoryId
 	return nil
 }
 
-// Get BackendCategoryId Getter
+// GetBackendCategoryId BackendCategoryId Getter
 func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetBackendCategoryId() int64 {
 	return r._backendCategoryId
 }

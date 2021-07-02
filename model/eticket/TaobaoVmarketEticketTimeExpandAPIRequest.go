@@ -39,7 +39,7 @@ func (r TaobaoVmarketEticketTimeExpandAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单ID
 func (r *TaobaoVmarketEticketTimeExpandAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *TaobaoVmarketEticketTimeExpandAPIRequest) SetOrderId(_orderId int64) er
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoVmarketEticketTimeExpandAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is ExpandDays Setter
+// SetExpandDays is ExpandDays Setter
 // 延长天数，延长时间=当前过期时间+延长天数
 func (r *TaobaoVmarketEticketTimeExpandAPIRequest) SetExpandDays(_expandDays int64) error {
 	r._expandDays = _expandDays
@@ -60,7 +60,7 @@ func (r *TaobaoVmarketEticketTimeExpandAPIRequest) SetExpandDays(_expandDays int
 	return nil
 }
 
-// Get ExpandDays Getter
+// GetExpandDays ExpandDays Getter
 func (r TaobaoVmarketEticketTimeExpandAPIRequest) GetExpandDays() int64 {
 	return r._expandDays
 }

@@ -37,7 +37,7 @@ func (r AlibabaMosOcTradeSyncbanksaleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PosBankSaleInfoDto Setter
+// SetPosBankSaleInfoDto is PosBankSaleInfoDto Setter
 // pos云闪付、银行卡销售数据
 func (r *AlibabaMosOcTradeSyncbanksaleAPIRequest) SetPosBankSaleInfoDto(_posBankSaleInfoDto *PosBankSaleInfoDto) error {
 	r._posBankSaleInfoDto = _posBankSaleInfoDto
@@ -45,7 +45,7 @@ func (r *AlibabaMosOcTradeSyncbanksaleAPIRequest) SetPosBankSaleInfoDto(_posBank
 	return nil
 }
 
-// Get PosBankSaleInfoDto Getter
+// GetPosBankSaleInfoDto PosBankSaleInfoDto Getter
 func (r AlibabaMosOcTradeSyncbanksaleAPIRequest) GetPosBankSaleInfoDto() *PosBankSaleInfoDto {
 	return r._posBankSaleInfoDto
 }

@@ -39,7 +39,7 @@ func (r TaobaoSimbaCreativeDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaCreativeDeleteAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -47,12 +47,12 @@ func (r *TaobaoSimbaCreativeDeleteAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaCreativeDeleteAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is CreativeId Setter
+// SetCreativeId is CreativeId Setter
 // 创意Id
 func (r *TaobaoSimbaCreativeDeleteAPIRequest) SetCreativeId(_creativeId int64) error {
 	r._creativeId = _creativeId
@@ -60,7 +60,7 @@ func (r *TaobaoSimbaCreativeDeleteAPIRequest) SetCreativeId(_creativeId int64) e
 	return nil
 }
 
-// Get CreativeId Getter
+// GetCreativeId CreativeId Getter
 func (r TaobaoSimbaCreativeDeleteAPIRequest) GetCreativeId() int64 {
 	return r._creativeId
 }

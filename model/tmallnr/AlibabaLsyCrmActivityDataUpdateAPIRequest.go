@@ -37,7 +37,7 @@ func (r AlibabaLsyCrmActivityDataUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReqDTO Setter
+// SetReqDTO is ReqDTO Setter
 // 入参对象
 func (r *AlibabaLsyCrmActivityDataUpdateAPIRequest) SetReqDTO(_reqDTO *NrtCrmActivityStatisticsDataReq) error {
 	r._reqDTO = _reqDTO
@@ -45,7 +45,7 @@ func (r *AlibabaLsyCrmActivityDataUpdateAPIRequest) SetReqDTO(_reqDTO *NrtCrmAct
 	return nil
 }
 
-// Get ReqDTO Getter
+// GetReqDTO ReqDTO Getter
 func (r AlibabaLsyCrmActivityDataUpdateAPIRequest) GetReqDTO() *NrtCrmActivityStatisticsDataReq {
 	return r._reqDTO
 }

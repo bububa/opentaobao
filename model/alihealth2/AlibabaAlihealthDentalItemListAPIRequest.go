@@ -37,7 +37,7 @@ func (r AlibabaAlihealthDentalItemListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NeedTestItem Setter
+// SetNeedTestItem is NeedTestItem Setter
 // 是否需要测试商品
 func (r *AlibabaAlihealthDentalItemListAPIRequest) SetNeedTestItem(_needTestItem bool) error {
 	r._needTestItem = _needTestItem
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthDentalItemListAPIRequest) SetNeedTestItem(_needTestItem
 	return nil
 }
 
-// Get NeedTestItem Getter
+// GetNeedTestItem NeedTestItem Getter
 func (r AlibabaAlihealthDentalItemListAPIRequest) GetNeedTestItem() bool {
 	return r._needTestItem
 }

@@ -41,7 +41,7 @@ func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 账号昵称
 func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -49,12 +49,12 @@ func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) SetNick(_nick stri
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is AdGroupId Setter
+// SetAdGroupId is AdGroupId Setter
 // 推广组id
 func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) SetAdGroupId(_adGroupId int64) error {
 	r._adGroupId = _adGroupId
@@ -62,12 +62,12 @@ func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) SetAdGroupId(_adGr
 	return nil
 }
 
-// Get AdGroupId Getter
+// GetAdGroupId AdGroupId Getter
 func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) GetAdGroupId() int64 {
 	return r._adGroupId
 }
 
-// Set is BidwordIds Setter
+// SetBidwordIds is BidwordIds Setter
 // 词id数组（最多批量获取20个）
 func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) SetBidwordIds(_bidwordIds []int64) error {
 	r._bidwordIds = _bidwordIds
@@ -75,7 +75,7 @@ func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) SetBidwordIds(_bid
 	return nil
 }
 
-// Get BidwordIds Getter
+// GetBidwordIds BidwordIds Getter
 func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) GetBidwordIds() []int64 {
 	return r._bidwordIds
 }

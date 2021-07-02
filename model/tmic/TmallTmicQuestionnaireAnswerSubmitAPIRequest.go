@@ -47,7 +47,7 @@ func (r TmallTmicQuestionnaireAnswerSubmitAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is RecordId Setter
+// SetRecordId is RecordId Setter
 // 问卷填答id，从问卷信息接口的应答中获取
 func (r *TmallTmicQuestionnaireAnswerSubmitAPIRequest) SetRecordId(_recordId int64) error {
 	r._recordId = _recordId
@@ -55,12 +55,12 @@ func (r *TmallTmicQuestionnaireAnswerSubmitAPIRequest) SetRecordId(_recordId int
 	return nil
 }
 
-// Get RecordId Getter
+// GetRecordId RecordId Getter
 func (r TmallTmicQuestionnaireAnswerSubmitAPIRequest) GetRecordId() int64 {
 	return r._recordId
 }
 
-// Set is UserAnswerList Setter
+// SetUserAnswerList is UserAnswerList Setter
 // 用户填写的回答，类型为数组
 func (r *TmallTmicQuestionnaireAnswerSubmitAPIRequest) SetUserAnswerList(_userAnswerList []AnswerBo) error {
 	r._userAnswerList = _userAnswerList
@@ -68,12 +68,12 @@ func (r *TmallTmicQuestionnaireAnswerSubmitAPIRequest) SetUserAnswerList(_userAn
 	return nil
 }
 
-// Get UserAnswerList Getter
+// GetUserAnswerList UserAnswerList Getter
 func (r TmallTmicQuestionnaireAnswerSubmitAPIRequest) GetUserAnswerList() []AnswerBo {
 	return r._userAnswerList
 }
 
-// Set is HashCode Setter
+// SetHashCode is HashCode Setter
 // 问卷唯一编码，从问卷信息接口应答中获取
 func (r *TmallTmicQuestionnaireAnswerSubmitAPIRequest) SetHashCode(_hashCode string) error {
 	r._hashCode = _hashCode
@@ -81,12 +81,12 @@ func (r *TmallTmicQuestionnaireAnswerSubmitAPIRequest) SetHashCode(_hashCode str
 	return nil
 }
 
-// Get HashCode Getter
+// GetHashCode HashCode Getter
 func (r TmallTmicQuestionnaireAnswerSubmitAPIRequest) GetHashCode() string {
 	return r._hashCode
 }
 
-// Set is Biz Setter
+// SetBiz is Biz Setter
 // 业务参数，区分问卷分组投放，1024表示分组投放id，fav表示用户动作类型为收藏
 func (r *TmallTmicQuestionnaireAnswerSubmitAPIRequest) SetBiz(_biz string) error {
 	r._biz = _biz
@@ -94,12 +94,12 @@ func (r *TmallTmicQuestionnaireAnswerSubmitAPIRequest) SetBiz(_biz string) error
 	return nil
 }
 
-// Get Biz Getter
+// GetBiz Biz Getter
 func (r TmallTmicQuestionnaireAnswerSubmitAPIRequest) GetBiz() string {
 	return r._biz
 }
 
-// Set is Version Setter
+// SetVersion is Version Setter
 // 问卷版本号，从问卷信息接口的应答中获取
 func (r *TmallTmicQuestionnaireAnswerSubmitAPIRequest) SetVersion(_version int64) error {
 	r._version = _version
@@ -107,12 +107,12 @@ func (r *TmallTmicQuestionnaireAnswerSubmitAPIRequest) SetVersion(_version int64
 	return nil
 }
 
-// Get Version Getter
+// GetVersion Version Getter
 func (r TmallTmicQuestionnaireAnswerSubmitAPIRequest) GetVersion() int64 {
 	return r._version
 }
 
-// Set is OpenUserId Setter
+// SetOpenUserId is OpenUserId Setter
 // openId
 func (r *TmallTmicQuestionnaireAnswerSubmitAPIRequest) SetOpenUserId(_openUserId string) error {
 	r._openUserId = _openUserId
@@ -120,7 +120,7 @@ func (r *TmallTmicQuestionnaireAnswerSubmitAPIRequest) SetOpenUserId(_openUserId
 	return nil
 }
 
-// Get OpenUserId Getter
+// GetOpenUserId OpenUserId Getter
 func (r TmallTmicQuestionnaireAnswerSubmitAPIRequest) GetOpenUserId() string {
 	return r._openUserId
 }

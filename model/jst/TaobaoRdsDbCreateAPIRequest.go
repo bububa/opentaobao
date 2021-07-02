@@ -41,7 +41,7 @@ func (r TaobaoRdsDbCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InstanceName Setter
+// SetInstanceName is InstanceName Setter
 // rds的实例名
 func (r *TaobaoRdsDbCreateAPIRequest) SetInstanceName(_instanceName string) error {
 	r._instanceName = _instanceName
@@ -49,12 +49,12 @@ func (r *TaobaoRdsDbCreateAPIRequest) SetInstanceName(_instanceName string) erro
 	return nil
 }
 
-// Get InstanceName Getter
+// GetInstanceName InstanceName Getter
 func (r TaobaoRdsDbCreateAPIRequest) GetInstanceName() string {
 	return r._instanceName
 }
 
-// Set is DbName Setter
+// SetDbName is DbName Setter
 // 数据库名
 func (r *TaobaoRdsDbCreateAPIRequest) SetDbName(_dbName string) error {
 	r._dbName = _dbName
@@ -62,12 +62,12 @@ func (r *TaobaoRdsDbCreateAPIRequest) SetDbName(_dbName string) error {
 	return nil
 }
 
-// Get DbName Getter
+// GetDbName DbName Getter
 func (r TaobaoRdsDbCreateAPIRequest) GetDbName() string {
 	return r._dbName
 }
 
-// Set is AccountName Setter
+// SetAccountName is AccountName Setter
 // 已存在账号名
 func (r *TaobaoRdsDbCreateAPIRequest) SetAccountName(_accountName string) error {
 	r._accountName = _accountName
@@ -75,7 +75,7 @@ func (r *TaobaoRdsDbCreateAPIRequest) SetAccountName(_accountName string) error 
 	return nil
 }
 
-// Get AccountName Getter
+// GetAccountName AccountName Getter
 func (r TaobaoRdsDbCreateAPIRequest) GetAccountName() string {
 	return r._accountName
 }

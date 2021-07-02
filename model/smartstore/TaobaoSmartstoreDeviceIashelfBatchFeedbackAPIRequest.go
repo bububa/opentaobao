@@ -43,7 +43,7 @@ func (r TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 硬件CODE
 func (r *TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -51,12 +51,12 @@ func (r *TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) SetDeviceCode(_de
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is Datas Setter
+// SetDatas is Datas Setter
 // 回流数据数组，一次最多100条
 func (r *TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) SetDatas(_datas []DeviceBizDataDo) error {
 	r._datas = _datas
@@ -64,7 +64,7 @@ func (r *TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) SetDatas(_datas [
 	return nil
 }
 
-// Get Datas Getter
+// GetDatas Datas Getter
 func (r TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) GetDatas() []DeviceBizDataDo {
 	return r._datas
 }

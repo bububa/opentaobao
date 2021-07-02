@@ -38,7 +38,7 @@ func (r AlibabaTaobaoWtUserCrowdAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 手机号
 func (r *AlibabaTaobaoWtUserCrowdAPIRequest) SetPhone(_phone int64) error {
 	r._phone = _phone
@@ -46,7 +46,7 @@ func (r *AlibabaTaobaoWtUserCrowdAPIRequest) SetPhone(_phone int64) error {
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r AlibabaTaobaoWtUserCrowdAPIRequest) GetPhone() int64 {
 	return r._phone
 }

@@ -37,7 +37,7 @@ func (r AlitripReceiptSellerInvoiceRedAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RedReceiptParam Setter
+// SetRedReceiptParam is RedReceiptParam Setter
 // 入参对象
 func (r *AlitripReceiptSellerInvoiceRedAPIRequest) SetRedReceiptParam(_redReceiptParam *RedReceiptParam) error {
 	r._redReceiptParam = _redReceiptParam
@@ -45,7 +45,7 @@ func (r *AlitripReceiptSellerInvoiceRedAPIRequest) SetRedReceiptParam(_redReceip
 	return nil
 }
 
-// Get RedReceiptParam Getter
+// GetRedReceiptParam RedReceiptParam Getter
 func (r AlitripReceiptSellerInvoiceRedAPIRequest) GetRedReceiptParam() *RedReceiptParam {
 	return r._redReceiptParam
 }

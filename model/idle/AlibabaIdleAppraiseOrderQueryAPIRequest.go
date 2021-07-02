@@ -37,7 +37,7 @@ func (r AlibabaIdleAppraiseOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // orderId
 func (r *AlibabaIdleAppraiseOrderQueryAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
@@ -45,7 +45,7 @@ func (r *AlibabaIdleAppraiseOrderQueryAPIRequest) SetBizOrderId(_bizOrderId int6
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r AlibabaIdleAppraiseOrderQueryAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }

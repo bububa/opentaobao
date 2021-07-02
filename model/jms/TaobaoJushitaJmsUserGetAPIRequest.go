@@ -37,7 +37,7 @@ func (r TaobaoJushitaJmsUserGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 需要查询的用户名
 func (r *TaobaoJushitaJmsUserGetAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -45,7 +45,7 @@ func (r *TaobaoJushitaJmsUserGetAPIRequest) SetUserNick(_userNick string) error 
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r TaobaoJushitaJmsUserGetAPIRequest) GetUserNick() string {
 	return r._userNick
 }

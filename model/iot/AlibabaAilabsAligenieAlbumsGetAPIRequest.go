@@ -49,7 +49,7 @@ func (r AlibabaAilabsAligenieAlbumsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 账户体系隔离
 func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -57,12 +57,12 @@ func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetSchema(_schema string) err
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r AlibabaAilabsAligenieAlbumsGetAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
 func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -70,12 +70,12 @@ func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetUserId(_userId string) err
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaAilabsAligenieAlbumsGetAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is UtdId Setter
+// SetUtdId is UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
 func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
@@ -83,12 +83,12 @@ func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetUtdId(_utdId string) error
 	return nil
 }
 
-// Get UtdId Getter
+// GetUtdId UtdId Getter
 func (r AlibabaAilabsAligenieAlbumsGetAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息，用于存放APP类型等
 func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -96,12 +96,12 @@ func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetExt(_ext string) error {
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r AlibabaAilabsAligenieAlbumsGetAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is Param1 Setter
+// SetParam1 is Param1 Setter
 // 专辑 id
 func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetParam1(_param1 int64) error {
 	r._param1 = _param1
@@ -109,12 +109,12 @@ func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetParam1(_param1 int64) erro
 	return nil
 }
 
-// Get Param1 Getter
+// GetParam1 Param1 Getter
 func (r AlibabaAilabsAligenieAlbumsGetAPIRequest) GetParam1() int64 {
 	return r._param1
 }
 
-// Set is Param2 Setter
+// SetParam2 is Param2 Setter
 // 当前页（从1开始, 目前由于底层引擎限制，实际最多能查5000个，超过5000返回为空，请确保页码*分页大小不超过5000）
 func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetParam2(_param2 int64) error {
 	r._param2 = _param2
@@ -122,12 +122,12 @@ func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetParam2(_param2 int64) erro
 	return nil
 }
 
-// Get Param2 Getter
+// GetParam2 Param2 Getter
 func (r AlibabaAilabsAligenieAlbumsGetAPIRequest) GetParam2() int64 {
 	return r._param2
 }
 
-// Set is Param3 Setter
+// SetParam3 is Param3 Setter
 // 每页数量（不超过50）
 func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetParam3(_param3 int64) error {
 	r._param3 = _param3
@@ -135,7 +135,7 @@ func (r *AlibabaAilabsAligenieAlbumsGetAPIRequest) SetParam3(_param3 int64) erro
 	return nil
 }
 
-// Get Param3 Getter
+// GetParam3 Param3 Getter
 func (r AlibabaAilabsAligenieAlbumsGetAPIRequest) GetParam3() int64 {
 	return r._param3
 }

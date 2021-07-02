@@ -43,7 +43,7 @@ func (r YoukuOttAlicbFacadeserviceGetdataAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ServiceList Setter
+// SetServiceList is ServiceList Setter
 // 能力维度
 func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) SetServiceList(_serviceList []string) error {
 	r._serviceList = _serviceList
@@ -51,12 +51,12 @@ func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) SetServiceList(_serviceLis
 	return nil
 }
 
-// Get ServiceList Getter
+// GetServiceList ServiceList Getter
 func (r YoukuOttAlicbFacadeserviceGetdataAPIRequest) GetServiceList() []string {
 	return r._serviceList
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 设备唯一标识
 func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -64,12 +64,12 @@ func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) SetUuid(_uuid string) erro
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r YoukuOttAlicbFacadeserviceGetdataAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is PropertyMapJson Setter
+// SetPropertyMapJson is PropertyMapJson Setter
 // 属性MAP JSON串
 func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) SetPropertyMapJson(_propertyMapJson string) error {
 	r._propertyMapJson = _propertyMapJson
@@ -77,12 +77,12 @@ func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) SetPropertyMapJson(_proper
 	return nil
 }
 
-// Get PropertyMapJson Getter
+// GetPropertyMapJson PropertyMapJson Getter
 func (r YoukuOttAlicbFacadeserviceGetdataAPIRequest) GetPropertyMapJson() string {
 	return r._propertyMapJson
 }
 
-// Set is ExtraInfoMap Setter
+// SetExtraInfoMap is ExtraInfoMap Setter
 // 扩展属性
 func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) SetExtraInfoMap(_extraInfoMap string) error {
 	r._extraInfoMap = _extraInfoMap
@@ -90,7 +90,7 @@ func (r *YoukuOttAlicbFacadeserviceGetdataAPIRequest) SetExtraInfoMap(_extraInfo
 	return nil
 }
 
-// Get ExtraInfoMap Getter
+// GetExtraInfoMap ExtraInfoMap Getter
 func (r YoukuOttAlicbFacadeserviceGetdataAPIRequest) GetExtraInfoMap() string {
 	return r._extraInfoMap
 }

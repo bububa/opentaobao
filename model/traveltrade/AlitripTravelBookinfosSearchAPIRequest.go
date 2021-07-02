@@ -43,7 +43,7 @@ func (r AlitripTravelBookinfosSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页面大小，最大支持的页面大小为100。如查询旅行购订单，则最大支持的页面大小为30
 func (r *AlitripTravelBookinfosSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -51,12 +51,12 @@ func (r *AlitripTravelBookinfosSearchAPIRequest) SetPageSize(_pageSize int64) er
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlitripTravelBookinfosSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前页
 func (r *AlitripTravelBookinfosSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -64,12 +64,12 @@ func (r *AlitripTravelBookinfosSearchAPIRequest) SetCurrentPage(_currentPage int
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r AlitripTravelBookinfosSearchAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is ApplyTimeEnd Setter
+// SetApplyTimeEnd is ApplyTimeEnd Setter
 // 申请时间_结束，精确到分钟
 func (r *AlitripTravelBookinfosSearchAPIRequest) SetApplyTimeEnd(_applyTimeEnd string) error {
 	r._applyTimeEnd = _applyTimeEnd
@@ -77,12 +77,12 @@ func (r *AlitripTravelBookinfosSearchAPIRequest) SetApplyTimeEnd(_applyTimeEnd s
 	return nil
 }
 
-// Get ApplyTimeEnd Getter
+// GetApplyTimeEnd ApplyTimeEnd Getter
 func (r AlitripTravelBookinfosSearchAPIRequest) GetApplyTimeEnd() string {
 	return r._applyTimeEnd
 }
 
-// Set is ApplyTimeStart Setter
+// SetApplyTimeStart is ApplyTimeStart Setter
 // 申请时间_开始，精确到分钟
 func (r *AlitripTravelBookinfosSearchAPIRequest) SetApplyTimeStart(_applyTimeStart string) error {
 	r._applyTimeStart = _applyTimeStart
@@ -90,7 +90,7 @@ func (r *AlitripTravelBookinfosSearchAPIRequest) SetApplyTimeStart(_applyTimeSta
 	return nil
 }
 
-// Get ApplyTimeStart Getter
+// GetApplyTimeStart ApplyTimeStart Getter
 func (r AlitripTravelBookinfosSearchAPIRequest) GetApplyTimeStart() string {
 	return r._applyTimeStart
 }

@@ -37,7 +37,7 @@ func (r TmallNrtMemberSynchronizeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NrtMemberDto Setter
+// SetNrtMemberDto is NrtMemberDto Setter
 // 会员DTO
 func (r *TmallNrtMemberSynchronizeAPIRequest) SetNrtMemberDto(_nrtMemberDto *NrtMemberDto) error {
 	r._nrtMemberDto = _nrtMemberDto
@@ -45,7 +45,7 @@ func (r *TmallNrtMemberSynchronizeAPIRequest) SetNrtMemberDto(_nrtMemberDto *Nrt
 	return nil
 }
 
-// Get NrtMemberDto Getter
+// GetNrtMemberDto NrtMemberDto Getter
 func (r TmallNrtMemberSynchronizeAPIRequest) GetNrtMemberDto() *NrtMemberDto {
 	return r._nrtMemberDto
 }

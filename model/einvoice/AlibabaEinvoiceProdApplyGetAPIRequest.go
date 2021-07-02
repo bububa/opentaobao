@@ -38,7 +38,7 @@ func (r AlibabaEinvoiceProdApplyGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InvoiceApplyQueryDto Setter
+// SetInvoiceApplyQueryDto is InvoiceApplyQueryDto Setter
 // 查询申请请求
 func (r *AlibabaEinvoiceProdApplyGetAPIRequest) SetInvoiceApplyQueryDto(_invoiceApplyQueryDto *InvoiceApplyDtlQueryDto) error {
 	r._invoiceApplyQueryDto = _invoiceApplyQueryDto
@@ -46,7 +46,7 @@ func (r *AlibabaEinvoiceProdApplyGetAPIRequest) SetInvoiceApplyQueryDto(_invoice
 	return nil
 }
 
-// Get InvoiceApplyQueryDto Getter
+// GetInvoiceApplyQueryDto InvoiceApplyQueryDto Getter
 func (r AlibabaEinvoiceProdApplyGetAPIRequest) GetInvoiceApplyQueryDto() *InvoiceApplyDtlQueryDto {
 	return r._invoiceApplyQueryDto
 }

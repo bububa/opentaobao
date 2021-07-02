@@ -46,7 +46,7 @@ func (r TaobaoOpenmallRefundBatchGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EndCreated Setter
+// SetEndCreated is EndCreated Setter
 // 查询范围结束时间，闭区间
 func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetEndCreated(_endCreated string) error {
 	r._endCreated = _endCreated
@@ -54,12 +54,12 @@ func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetEndCreated(_endCreated strin
 	return nil
 }
 
-// Get EndCreated Getter
+// GetEndCreated EndCreated Getter
 func (r TaobaoOpenmallRefundBatchGetAPIRequest) GetEndCreated() string {
 	return r._endCreated
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 翻页页码，从1开始
 func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -67,12 +67,12 @@ func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetPageIndex(_pageIndex int64) 
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoOpenmallRefundBatchGetAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页面大小，不超过100
 func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -80,12 +80,12 @@ func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetPageSize(_pageSize int64) er
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoOpenmallRefundBatchGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Distributor Setter
+// SetDistributor is Distributor Setter
 // 查询的渠道商Nick
 func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
@@ -93,12 +93,12 @@ func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetDistributor(_distributor str
 	return nil
 }
 
-// Get Distributor Getter
+// GetDistributor Distributor Getter
 func (r TaobaoOpenmallRefundBatchGetAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
-// Set is StartCreated Setter
+// SetStartCreated is StartCreated Setter
 // 查询范围开始时间，闭区间
 func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetStartCreated(_startCreated string) error {
 	r._startCreated = _startCreated
@@ -106,7 +106,7 @@ func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetStartCreated(_startCreated s
 	return nil
 }
 
-// Get StartCreated Getter
+// GetStartCreated StartCreated Getter
 func (r TaobaoOpenmallRefundBatchGetAPIRequest) GetStartCreated() string {
 	return r._startCreated
 }

@@ -39,7 +39,7 @@ func (r TaobaoTopSdkFeedbackUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 1、回传加密信息
 func (r *TaobaoTopSdkFeedbackUploadAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -47,12 +47,12 @@ func (r *TaobaoTopSdkFeedbackUploadAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoTopSdkFeedbackUploadAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 具体内容，json形式
 func (r *TaobaoTopSdkFeedbackUploadAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -60,7 +60,7 @@ func (r *TaobaoTopSdkFeedbackUploadAPIRequest) SetContent(_content string) error
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r TaobaoTopSdkFeedbackUploadAPIRequest) GetContent() string {
 	return r._content
 }

@@ -39,7 +39,7 @@ func (r AlibabaAilabsAligenieOpencontentPushAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is SkillId Setter
+// SetSkillId is SkillId Setter
 // 在Aligenie开放平台创建的技能的ID
 func (r *AlibabaAilabsAligenieOpencontentPushAPIRequest) SetSkillId(_skillId int64) error {
 	r._skillId = _skillId
@@ -47,12 +47,12 @@ func (r *AlibabaAilabsAligenieOpencontentPushAPIRequest) SetSkillId(_skillId int
 	return nil
 }
 
-// Get SkillId Getter
+// GetSkillId SkillId Getter
 func (r AlibabaAilabsAligenieOpencontentPushAPIRequest) GetSkillId() int64 {
 	return r._skillId
 }
 
-// Set is Contents Setter
+// SetContents is Contents Setter
 // 详细内容列表
 func (r *AlibabaAilabsAligenieOpencontentPushAPIRequest) SetContents(_contents *BatchContent) error {
 	r._contents = _contents
@@ -60,7 +60,7 @@ func (r *AlibabaAilabsAligenieOpencontentPushAPIRequest) SetContents(_contents *
 	return nil
 }
 
-// Get Contents Getter
+// GetContents Contents Getter
 func (r AlibabaAilabsAligenieOpencontentPushAPIRequest) GetContents() *BatchContent {
 	return r._contents
 }

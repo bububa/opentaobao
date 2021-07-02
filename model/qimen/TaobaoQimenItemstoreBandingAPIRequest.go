@@ -43,7 +43,7 @@ func (r TaobaoQimenItemstoreBandingAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreIds Setter
+// SetStoreIds is StoreIds Setter
 // 门店列表
 func (r *TaobaoQimenItemstoreBandingAPIRequest) SetStoreIds(_storeIds []int64) error {
 	r._storeIds = _storeIds
@@ -51,12 +51,12 @@ func (r *TaobaoQimenItemstoreBandingAPIRequest) SetStoreIds(_storeIds []int64) e
 	return nil
 }
 
-// Get StoreIds Getter
+// GetStoreIds StoreIds Getter
 func (r TaobaoQimenItemstoreBandingAPIRequest) GetStoreIds() []int64 {
 	return r._storeIds
 }
 
-// Set is Remark Setter
+// SetRemark is Remark Setter
 // 备注信息
 func (r *TaobaoQimenItemstoreBandingAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
@@ -64,12 +64,12 @@ func (r *TaobaoQimenItemstoreBandingAPIRequest) SetRemark(_remark string) error 
 	return nil
 }
 
-// Get Remark Getter
+// GetRemark Remark Getter
 func (r TaobaoQimenItemstoreBandingAPIRequest) GetRemark() string {
 	return r._remark
 }
 
-// Set is ActionType Setter
+// SetActionType is ActionType Setter
 // 操作类型
 func (r *TaobaoQimenItemstoreBandingAPIRequest) SetActionType(_actionType string) error {
 	r._actionType = _actionType
@@ -77,12 +77,12 @@ func (r *TaobaoQimenItemstoreBandingAPIRequest) SetActionType(_actionType string
 	return nil
 }
 
-// Get ActionType Getter
+// GetActionType ActionType Getter
 func (r TaobaoQimenItemstoreBandingAPIRequest) GetActionType() string {
 	return r._actionType
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 线上商品ID
 func (r *TaobaoQimenItemstoreBandingAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -90,7 +90,7 @@ func (r *TaobaoQimenItemstoreBandingAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoQimenItemstoreBandingAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

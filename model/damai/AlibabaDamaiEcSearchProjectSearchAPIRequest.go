@@ -37,7 +37,7 @@ func (r AlibabaDamaiEcSearchProjectSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参对象
 func (r *AlibabaDamaiEcSearchProjectSearchAPIRequest) SetParam(_param *TopSearchProjectParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiEcSearchProjectSearchAPIRequest) SetParam(_param *TopSearch
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaDamaiEcSearchProjectSearchAPIRequest) GetParam() *TopSearchProjectParam {
 	return r._param
 }

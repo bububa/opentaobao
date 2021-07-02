@@ -39,7 +39,7 @@ func (r TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is CreativeBindList Setter
+// SetCreativeBindList is CreativeBindList Setter
 // 新增绑定的创意，一次最多2个
 func (r *TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) SetCreativeBindList(_creativeBindList []CreativeBindDto) error {
 	r._creativeBindList = _creativeBindList
@@ -47,12 +47,12 @@ func (r *TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) SetCreativeBindList
 	return nil
 }
 
-// Get CreativeBindList Getter
+// GetCreativeBindList CreativeBindList Getter
 func (r TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) GetCreativeBindList() []CreativeBindDto {
 	return r._creativeBindList
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 单元id
 func (r *TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -60,7 +60,7 @@ func (r *TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) SetAdgroupId(_adgro
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoFeedflowItemAdgroupCreativeAddBindAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

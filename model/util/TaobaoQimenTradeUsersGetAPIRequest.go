@@ -39,7 +39,7 @@ func (r TaobaoQimenTradeUsersGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 每页的数量
 func (r *TaobaoQimenTradeUsersGetAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -47,12 +47,12 @@ func (r *TaobaoQimenTradeUsersGetAPIRequest) SetPageIndex(_pageIndex int64) erro
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoQimenTradeUsersGetAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页数
 func (r *TaobaoQimenTradeUsersGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -60,7 +60,7 @@ func (r *TaobaoQimenTradeUsersGetAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoQimenTradeUsersGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

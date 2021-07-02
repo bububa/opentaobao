@@ -37,7 +37,7 @@ func (r AlibabaAscpQccSampleUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UpdateRequest Setter
+// SetUpdateRequest is UpdateRequest Setter
 // 更新请求参数
 func (r *AlibabaAscpQccSampleUpdateAPIRequest) SetUpdateRequest(_updateRequest *UpdateSampleRequest) error {
 	r._updateRequest = _updateRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpQccSampleUpdateAPIRequest) SetUpdateRequest(_updateRequest *
 	return nil
 }
 
-// Get UpdateRequest Getter
+// GetUpdateRequest UpdateRequest Getter
 func (r AlibabaAscpQccSampleUpdateAPIRequest) GetUpdateRequest() *UpdateSampleRequest {
 	return r._updateRequest
 }

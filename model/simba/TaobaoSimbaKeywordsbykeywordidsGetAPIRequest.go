@@ -39,7 +39,7 @@ func (r TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -47,12 +47,12 @@ func (r *TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) SetNick(_nick string) err
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is KeywordIds Setter
+// SetKeywordIds is KeywordIds Setter
 // 关键词Id数组，最多200个；
 func (r *TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) SetKeywordIds(_keywordIds []int64) error {
 	r._keywordIds = _keywordIds
@@ -60,7 +60,7 @@ func (r *TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) SetKeywordIds(_keywordIds
 	return nil
 }
 
-// Get KeywordIds Getter
+// GetKeywordIds KeywordIds Getter
 func (r TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) GetKeywordIds() []int64 {
 	return r._keywordIds
 }

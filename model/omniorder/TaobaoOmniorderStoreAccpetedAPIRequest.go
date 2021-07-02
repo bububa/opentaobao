@@ -43,7 +43,7 @@ func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝交易主订单ID
 func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -51,12 +51,12 @@ func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is SubOrderList Setter
+// SetSubOrderList is SubOrderList Setter
 // 子订单列表
 func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetSubOrderList(_subOrderList []StoreAcceptedResult) error {
 	r._subOrderList = _subOrderList
@@ -64,12 +64,12 @@ func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetSubOrderList(_subOrderList [
 	return nil
 }
 
-// Get SubOrderList Getter
+// GetSubOrderList SubOrderList Getter
 func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetSubOrderList() []StoreAcceptedResult {
 	return r._subOrderList
 }
 
-// Set is ReportTimestamp Setter
+// SetReportTimestamp is ReportTimestamp Setter
 // ISV系统上报时间
 func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetReportTimestamp(_reportTimestamp int64) error {
 	r._reportTimestamp = _reportTimestamp
@@ -77,12 +77,12 @@ func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetReportTimestamp(_reportTimes
 	return nil
 }
 
-// Get ReportTimestamp Getter
+// GetReportTimestamp ReportTimestamp Getter
 func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetReportTimestamp() int64 {
 	return r._reportTimestamp
 }
 
-// Set is TraceId Setter
+// SetTraceId is TraceId Setter
 // 跟踪Id
 func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetTraceId(_traceId string) error {
 	r._traceId = _traceId
@@ -90,7 +90,7 @@ func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetTraceId(_traceId string) err
 	return nil
 }
 
-// Get TraceId Getter
+// GetTraceId TraceId Getter
 func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetTraceId() string {
 	return r._traceId
 }

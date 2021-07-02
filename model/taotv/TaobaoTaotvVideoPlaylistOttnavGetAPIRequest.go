@@ -41,7 +41,7 @@ func (r TaobaoTaotvVideoPlaylistOttnavGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PlayListId Setter
+// SetPlayListId is PlayListId Setter
 // 播单id
 func (r *TaobaoTaotvVideoPlaylistOttnavGetAPIRequest) SetPlayListId(_playListId int64) error {
 	r._playListId = _playListId
@@ -49,12 +49,12 @@ func (r *TaobaoTaotvVideoPlaylistOttnavGetAPIRequest) SetPlayListId(_playListId 
 	return nil
 }
 
-// Get PlayListId Getter
+// GetPlayListId PlayListId Getter
 func (r TaobaoTaotvVideoPlaylistOttnavGetAPIRequest) GetPlayListId() int64 {
 	return r._playListId
 }
 
-// Set is PlayListNav Setter
+// SetPlayListNav is PlayListNav Setter
 // 播单列表
 func (r *TaobaoTaotvVideoPlaylistOttnavGetAPIRequest) SetPlayListNav(_playListNav []string) error {
 	r._playListNav = _playListNav
@@ -62,12 +62,12 @@ func (r *TaobaoTaotvVideoPlaylistOttnavGetAPIRequest) SetPlayListNav(_playListNa
 	return nil
 }
 
-// Get PlayListNav Getter
+// GetPlayListNav PlayListNav Getter
 func (r TaobaoTaotvVideoPlaylistOttnavGetAPIRequest) GetPlayListNav() []string {
 	return r._playListNav
 }
 
-// Set is SystemInfo Setter
+// SetSystemInfo is SystemInfo Setter
 // 系统信息
 func (r *TaobaoTaotvVideoPlaylistOttnavGetAPIRequest) SetSystemInfo(_systemInfo string) error {
 	r._systemInfo = _systemInfo
@@ -75,7 +75,7 @@ func (r *TaobaoTaotvVideoPlaylistOttnavGetAPIRequest) SetSystemInfo(_systemInfo 
 	return nil
 }
 
-// Get SystemInfo Getter
+// GetSystemInfo SystemInfo Getter
 func (r TaobaoTaotvVideoPlaylistOttnavGetAPIRequest) GetSystemInfo() string {
 	return r._systemInfo
 }

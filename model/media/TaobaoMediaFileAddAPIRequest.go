@@ -45,7 +45,7 @@ func (r TaobaoMediaFileAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DirId Setter
+// SetDirId is DirId Setter
 // 文件属于的那个目录的目录编号
 func (r *TaobaoMediaFileAddAPIRequest) SetDirId(_dirId int64) error {
 	r._dirId = _dirId
@@ -53,12 +53,12 @@ func (r *TaobaoMediaFileAddAPIRequest) SetDirId(_dirId int64) error {
 	return nil
 }
 
-// Get DirId Getter
+// GetDirId DirId Getter
 func (r TaobaoMediaFileAddAPIRequest) GetDirId() int64 {
 	return r._dirId
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 上传文件的名称
 func (r *TaobaoMediaFileAddAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -66,12 +66,12 @@ func (r *TaobaoMediaFileAddAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoMediaFileAddAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 额外信息
 func (r *TaobaoMediaFileAddAPIRequest) SetExt(_ext int64) error {
 	r._ext = _ext
@@ -79,12 +79,12 @@ func (r *TaobaoMediaFileAddAPIRequest) SetExt(_ext int64) error {
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoMediaFileAddAPIRequest) GetExt() int64 {
 	return r._ext
 }
 
-// Set is FileData Setter
+// SetFileData is FileData Setter
 // 文件
 func (r *TaobaoMediaFileAddAPIRequest) SetFileData(_fileData *model.File) error {
 	r._fileData = _fileData
@@ -92,12 +92,12 @@ func (r *TaobaoMediaFileAddAPIRequest) SetFileData(_fileData *model.File) error 
 	return nil
 }
 
-// Get FileData Getter
+// GetFileData FileData Getter
 func (r TaobaoMediaFileAddAPIRequest) GetFileData() *model.File {
 	return r._fileData
 }
 
-// Set is BizCode Setter
+// SetBizCode is BizCode Setter
 // 接入多媒体平台的业务code每个应用有一个特有的业务code
 func (r *TaobaoMediaFileAddAPIRequest) SetBizCode(_bizCode string) error {
 	r._bizCode = _bizCode
@@ -105,7 +105,7 @@ func (r *TaobaoMediaFileAddAPIRequest) SetBizCode(_bizCode string) error {
 	return nil
 }
 
-// Get BizCode Getter
+// GetBizCode BizCode Getter
 func (r TaobaoMediaFileAddAPIRequest) GetBizCode() string {
 	return r._bizCode
 }

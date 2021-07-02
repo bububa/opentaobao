@@ -39,7 +39,7 @@ func (r TmallServicecenterServicemonitormessageSearchAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is Start Setter
+// SetStart is Start Setter
 // 开始时间long值
 func (r *TmallServicecenterServicemonitormessageSearchAPIRequest) SetStart(_start int64) error {
 	r._start = _start
@@ -47,12 +47,12 @@ func (r *TmallServicecenterServicemonitormessageSearchAPIRequest) SetStart(_star
 	return nil
 }
 
-// Get Start Getter
+// GetStart Start Getter
 func (r TmallServicecenterServicemonitormessageSearchAPIRequest) GetStart() int64 {
 	return r._start
 }
 
-// Set is End Setter
+// SetEnd is End Setter
 // 结束时间long值，与start相差15分钟
 func (r *TmallServicecenterServicemonitormessageSearchAPIRequest) SetEnd(_end int64) error {
 	r._end = _end
@@ -60,7 +60,7 @@ func (r *TmallServicecenterServicemonitormessageSearchAPIRequest) SetEnd(_end in
 	return nil
 }
 
-// Get End Getter
+// GetEnd End Getter
 func (r TmallServicecenterServicemonitormessageSearchAPIRequest) GetEnd() int64 {
 	return r._end
 }

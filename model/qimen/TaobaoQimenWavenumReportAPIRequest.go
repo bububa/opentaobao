@@ -37,7 +37,7 @@ func (r TaobaoQimenWavenumReportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Request Setter
+// SetRequest is Request Setter
 //
 func (r *TaobaoQimenWavenumReportAPIRequest) SetRequest(_request *WaveNumReportRequest) error {
 	r._request = _request
@@ -45,7 +45,7 @@ func (r *TaobaoQimenWavenumReportAPIRequest) SetRequest(_request *WaveNumReportR
 	return nil
 }
 
-// Get Request Getter
+// GetRequest Request Getter
 func (r TaobaoQimenWavenumReportAPIRequest) GetRequest() *WaveNumReportRequest {
 	return r._request
 }

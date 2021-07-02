@@ -51,7 +51,7 @@ func (r TaobaoAilabAicloudTopLikeAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息，用于存放APP类型等
 func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -59,12 +59,12 @@ func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetExt(_ext string) error {
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoAilabAicloudTopLikeAddAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is UtdId Setter
+// SetUtdId is UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
 func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
@@ -72,12 +72,12 @@ func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetUtdId(_utdId string) error {
 	return nil
 }
 
-// Get UtdId Getter
+// GetUtdId UtdId Getter
 func (r TaobaoAilabAicloudTopLikeAddAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
 func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -85,12 +85,12 @@ func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetUserId(_userId string) error
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopLikeAddAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 账户体系隔离
 func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -98,12 +98,12 @@ func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetSchema(_schema string) error
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopLikeAddAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 收藏类型，目前支持四种：story,children_song,music,program，分别表示故事、儿童、音乐和节目
 func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -111,12 +111,12 @@ func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoAilabAicloudTopLikeAddAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 来源
 func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -124,12 +124,12 @@ func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetSource(_source string) error
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r TaobaoAilabAicloudTopLikeAddAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 收藏的资源的ID
 func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetItemId(_itemId string) error {
 	r._itemId = _itemId
@@ -137,12 +137,12 @@ func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetItemId(_itemId string) error
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoAilabAicloudTopLikeAddAPIRequest) GetItemId() string {
 	return r._itemId
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 内容，必须要是一个json格式：{"song":"走过1999","singer":"张学友","album":"走过1999"}
 func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -150,7 +150,7 @@ func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetContent(_content string) err
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r TaobaoAilabAicloudTopLikeAddAPIRequest) GetContent() string {
 	return r._content
 }

@@ -37,7 +37,7 @@ func (r CainiaoIotTicketSpMaintainUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 请求参数
 func (r *CainiaoIotTicketSpMaintainUpdateAPIRequest) SetParam(_param *UpdateMaintainPlanTopRequest) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *CainiaoIotTicketSpMaintainUpdateAPIRequest) SetParam(_param *UpdateMain
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r CainiaoIotTicketSpMaintainUpdateAPIRequest) GetParam() *UpdateMaintainPlanTopRequest {
 	return r._param
 }

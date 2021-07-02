@@ -37,7 +37,7 @@ func (r TaobaoSimbaLoginAuthsignGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaLoginAuthsignGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -45,7 +45,7 @@ func (r *TaobaoSimbaLoginAuthsignGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaLoginAuthsignGetAPIRequest) GetNick() string {
 	return r._nick
 }

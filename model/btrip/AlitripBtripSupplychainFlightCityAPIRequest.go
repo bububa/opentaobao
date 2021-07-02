@@ -37,7 +37,7 @@ func (r AlitripBtripSupplychainFlightCityAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 请求对象
 func (r *AlitripBtripSupplychainFlightCityAPIRequest) SetRq(_rq *OpenSuggestRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripSupplychainFlightCityAPIRequest) SetRq(_rq *OpenSuggestRq) 
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripSupplychainFlightCityAPIRequest) GetRq() *OpenSuggestRq {
 	return r._rq
 }

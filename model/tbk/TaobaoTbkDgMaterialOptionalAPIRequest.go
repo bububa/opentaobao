@@ -117,7 +117,7 @@ func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartDsr Setter
+// SetStartDsr is StartDsr Setter
 // 商品筛选(特定媒体支持)-店铺dsr评分。筛选大于等于当前设置的店铺dsr评分的商品0-50000之间
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetStartDsr(_startDsr int64) error {
 	r._startDsr = _startDsr
@@ -125,12 +125,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetStartDsr(_startDsr int64) err
 	return nil
 }
 
-// Get StartDsr Getter
+// GetStartDsr StartDsr Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetStartDsr() int64 {
 	return r._startDsr
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小，默认20，1~100
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -138,12 +138,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetPageSize(_pageSize int64) err
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 第几页，默认：１
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -151,12 +151,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is Platform Setter
+// SetPlatform is Platform Setter
 // 链接形式：1：PC，2：无线，默认：１
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetPlatform(_platform int64) error {
 	r._platform = _platform
@@ -164,12 +164,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetPlatform(_platform int64) err
 	return nil
 }
 
-// Get Platform Getter
+// GetPlatform Platform Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetPlatform() int64 {
 	return r._platform
 }
 
-// Set is EndTkRate Setter
+// SetEndTkRate is EndTkRate Setter
 // 商品筛选-淘客佣金比率上限。如：1234表示12.34%
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetEndTkRate(_endTkRate int64) error {
 	r._endTkRate = _endTkRate
@@ -177,12 +177,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetEndTkRate(_endTkRate int64) e
 	return nil
 }
 
-// Get EndTkRate Getter
+// GetEndTkRate EndTkRate Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetEndTkRate() int64 {
 	return r._endTkRate
 }
 
-// Set is StartTkRate Setter
+// SetStartTkRate is StartTkRate Setter
 // 商品筛选-淘客佣金比率下限。如：1234表示12.34%
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetStartTkRate(_startTkRate int64) error {
 	r._startTkRate = _startTkRate
@@ -190,12 +190,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetStartTkRate(_startTkRate int6
 	return nil
 }
 
-// Get StartTkRate Getter
+// GetStartTkRate StartTkRate Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetStartTkRate() int64 {
 	return r._startTkRate
 }
 
-// Set is EndPrice Setter
+// SetEndPrice is EndPrice Setter
 // 商品筛选-折扣价范围上限。单位：元
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetEndPrice(_endPrice int64) error {
 	r._endPrice = _endPrice
@@ -203,12 +203,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetEndPrice(_endPrice int64) err
 	return nil
 }
 
-// Get EndPrice Getter
+// GetEndPrice EndPrice Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetEndPrice() int64 {
 	return r._endPrice
 }
 
-// Set is StartPrice Setter
+// SetStartPrice is StartPrice Setter
 // 商品筛选-折扣价范围下限。单位：元
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetStartPrice(_startPrice int64) error {
 	r._startPrice = _startPrice
@@ -216,12 +216,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetStartPrice(_startPrice int64)
 	return nil
 }
 
-// Get StartPrice Getter
+// GetStartPrice StartPrice Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetStartPrice() int64 {
 	return r._startPrice
 }
 
-// Set is IsOverseas Setter
+// SetIsOverseas is IsOverseas Setter
 // 商品筛选-是否海外商品。true表示属于海外商品，false或不设置表示不限
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetIsOverseas(_isOverseas bool) error {
 	r._isOverseas = _isOverseas
@@ -229,12 +229,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetIsOverseas(_isOverseas bool) 
 	return nil
 }
 
-// Get IsOverseas Getter
+// GetIsOverseas IsOverseas Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetIsOverseas() bool {
 	return r._isOverseas
 }
 
-// Set is IsTmall Setter
+// SetIsTmall is IsTmall Setter
 // 商品筛选-是否天猫商品。true表示属于天猫商品，false或不设置表示不限
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetIsTmall(_isTmall bool) error {
 	r._isTmall = _isTmall
@@ -242,12 +242,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetIsTmall(_isTmall bool) error 
 	return nil
 }
 
-// Get IsTmall Getter
+// GetIsTmall IsTmall Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetIsTmall() bool {
 	return r._isTmall
 }
 
-// Set is Sort Setter
+// SetSort is Sort Setter
 // 排序_des（降序），排序_asc（升序），销量（total_sales），淘客佣金比率（tk_rate）， 累计推广量（tk_total_sales），总支出佣金（tk_total_commi），价格（price），匹配分（match）
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetSort(_sort string) error {
 	r._sort = _sort
@@ -255,12 +255,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetSort(_sort string) error {
 	return nil
 }
 
-// Get Sort Getter
+// GetSort Sort Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetSort() string {
 	return r._sort
 }
 
-// Set is Itemloc Setter
+// SetItemloc is Itemloc Setter
 // 商品筛选-所在地
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetItemloc(_itemloc string) error {
 	r._itemloc = _itemloc
@@ -268,12 +268,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetItemloc(_itemloc string) erro
 	return nil
 }
 
-// Get Itemloc Getter
+// GetItemloc Itemloc Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetItemloc() string {
 	return r._itemloc
 }
 
-// Set is Cat Setter
+// SetCat is Cat Setter
 // 商品筛选-后台类目ID。用,分割，最大10个，该ID可以通过taobao.itemcats.get接口获取到
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetCat(_cat string) error {
 	r._cat = _cat
@@ -281,12 +281,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetCat(_cat string) error {
 	return nil
 }
 
-// Get Cat Getter
+// GetCat Cat Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetCat() string {
 	return r._cat
 }
 
-// Set is Q Setter
+// SetQ is Q Setter
 // 商品筛选-查询词
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetQ(_q string) error {
 	r._q = _q
@@ -294,12 +294,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetQ(_q string) error {
 	return nil
 }
 
-// Get Q Getter
+// GetQ Q Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetQ() string {
 	return r._q
 }
 
-// Set is MaterialId Setter
+// SetMaterialId is MaterialId Setter
 // 不传时默认物料id=2836；如果直接对消费者投放，可使用官方个性化算法优化的搜索物料id=17004
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetMaterialId(_materialId int64) error {
 	r._materialId = _materialId
@@ -307,12 +307,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetMaterialId(_materialId int64)
 	return nil
 }
 
-// Get MaterialId Getter
+// GetMaterialId MaterialId Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetMaterialId() int64 {
 	return r._materialId
 }
 
-// Set is HasCoupon Setter
+// SetHasCoupon is HasCoupon Setter
 // 优惠券筛选-是否有优惠券。true表示该商品有优惠券，false或不设置表示不限
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetHasCoupon(_hasCoupon bool) error {
 	r._hasCoupon = _hasCoupon
@@ -320,12 +320,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetHasCoupon(_hasCoupon bool) er
 	return nil
 }
 
-// Get HasCoupon Getter
+// GetHasCoupon HasCoupon Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetHasCoupon() bool {
 	return r._hasCoupon
 }
 
-// Set is Ip Setter
+// SetIp is Ip Setter
 // ip参数影响邮费获取，如果不传或者传入不准确，邮费无法精准提供
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetIp(_ip string) error {
 	r._ip = _ip
@@ -333,12 +333,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetIp(_ip string) error {
 	return nil
 }
 
-// Get Ip Getter
+// GetIp Ip Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetIp() string {
 	return r._ip
 }
 
-// Set is AdzoneId Setter
+// SetAdzoneId is AdzoneId Setter
 // mm_xxx_xxx_12345678三段式的最后一段数字
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetAdzoneId(_adzoneId int64) error {
 	r._adzoneId = _adzoneId
@@ -346,12 +346,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetAdzoneId(_adzoneId int64) err
 	return nil
 }
 
-// Get AdzoneId Getter
+// GetAdzoneId AdzoneId Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetAdzoneId() int64 {
 	return r._adzoneId
 }
 
-// Set is NeedFreeShipment Setter
+// SetNeedFreeShipment is NeedFreeShipment Setter
 // 商品筛选-是否包邮。true表示包邮，false或不设置表示不限
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetNeedFreeShipment(_needFreeShipment bool) error {
 	r._needFreeShipment = _needFreeShipment
@@ -359,12 +359,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetNeedFreeShipment(_needFreeShi
 	return nil
 }
 
-// Get NeedFreeShipment Getter
+// GetNeedFreeShipment NeedFreeShipment Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetNeedFreeShipment() bool {
 	return r._needFreeShipment
 }
 
-// Set is NeedPrepay Setter
+// SetNeedPrepay is NeedPrepay Setter
 // 商品筛选-是否加入消费者保障。true表示加入，false或不设置表示不限
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetNeedPrepay(_needPrepay bool) error {
 	r._needPrepay = _needPrepay
@@ -372,12 +372,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetNeedPrepay(_needPrepay bool) 
 	return nil
 }
 
-// Get NeedPrepay Getter
+// GetNeedPrepay NeedPrepay Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetNeedPrepay() bool {
 	return r._needPrepay
 }
 
-// Set is IncludePayRate30 Setter
+// SetIncludePayRate30 is IncludePayRate30 Setter
 // 商品筛选(特定媒体支持)-成交转化是否高于行业均值。True表示大于等于，false或不设置表示不限
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetIncludePayRate30(_includePayRate30 bool) error {
 	r._includePayRate30 = _includePayRate30
@@ -385,12 +385,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetIncludePayRate30(_includePayR
 	return nil
 }
 
-// Get IncludePayRate30 Getter
+// GetIncludePayRate30 IncludePayRate30 Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetIncludePayRate30() bool {
 	return r._includePayRate30
 }
 
-// Set is IncludeGoodRate Setter
+// SetIncludeGoodRate is IncludeGoodRate Setter
 // 商品筛选-好评率是否高于行业均值。True表示大于等于，false或不设置表示不限
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetIncludeGoodRate(_includeGoodRate bool) error {
 	r._includeGoodRate = _includeGoodRate
@@ -398,12 +398,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetIncludeGoodRate(_includeGoodR
 	return nil
 }
 
-// Get IncludeGoodRate Getter
+// GetIncludeGoodRate IncludeGoodRate Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetIncludeGoodRate() bool {
 	return r._includeGoodRate
 }
 
-// Set is IncludeRfdRate Setter
+// SetIncludeRfdRate is IncludeRfdRate Setter
 // 商品筛选(特定媒体支持)-退款率是否低于行业均值。True表示大于等于，false或不设置表示不限
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetIncludeRfdRate(_includeRfdRate bool) error {
 	r._includeRfdRate = _includeRfdRate
@@ -411,12 +411,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetIncludeRfdRate(_includeRfdRat
 	return nil
 }
 
-// Get IncludeRfdRate Getter
+// GetIncludeRfdRate IncludeRfdRate Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetIncludeRfdRate() bool {
 	return r._includeRfdRate
 }
 
-// Set is NpxLevel Setter
+// SetNpxLevel is NpxLevel Setter
 // 商品筛选-牛皮癣程度。取值：1不限，2无，3轻微
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetNpxLevel(_npxLevel int64) error {
 	r._npxLevel = _npxLevel
@@ -424,12 +424,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetNpxLevel(_npxLevel int64) err
 	return nil
 }
 
-// Get NpxLevel Getter
+// GetNpxLevel NpxLevel Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetNpxLevel() int64 {
 	return r._npxLevel
 }
 
-// Set is EndKaTkRate Setter
+// SetEndKaTkRate is EndKaTkRate Setter
 // 商品筛选-KA媒体淘客佣金比率上限。如：1234表示12.34%
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetEndKaTkRate(_endKaTkRate int64) error {
 	r._endKaTkRate = _endKaTkRate
@@ -437,12 +437,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetEndKaTkRate(_endKaTkRate int6
 	return nil
 }
 
-// Get EndKaTkRate Getter
+// GetEndKaTkRate EndKaTkRate Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetEndKaTkRate() int64 {
 	return r._endKaTkRate
 }
 
-// Set is StartKaTkRate Setter
+// SetStartKaTkRate is StartKaTkRate Setter
 // 商品筛选-KA媒体淘客佣金比率下限。如：1234表示12.34%
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetStartKaTkRate(_startKaTkRate int64) error {
 	r._startKaTkRate = _startKaTkRate
@@ -450,12 +450,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetStartKaTkRate(_startKaTkRate 
 	return nil
 }
 
-// Get StartKaTkRate Getter
+// GetStartKaTkRate StartKaTkRate Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetStartKaTkRate() int64 {
 	return r._startKaTkRate
 }
 
-// Set is DeviceEncrypt Setter
+// SetDeviceEncrypt is DeviceEncrypt Setter
 // 智能匹配-设备号加密类型：MD5
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetDeviceEncrypt(_deviceEncrypt string) error {
 	r._deviceEncrypt = _deviceEncrypt
@@ -463,12 +463,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetDeviceEncrypt(_deviceEncrypt 
 	return nil
 }
 
-// Get DeviceEncrypt Getter
+// GetDeviceEncrypt DeviceEncrypt Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetDeviceEncrypt() string {
 	return r._deviceEncrypt
 }
 
-// Set is DeviceValue Setter
+// SetDeviceValue is DeviceValue Setter
 // 智能匹配-设备号加密后的值（MD5加密需32位小写）
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetDeviceValue(_deviceValue string) error {
 	r._deviceValue = _deviceValue
@@ -476,12 +476,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetDeviceValue(_deviceValue stri
 	return nil
 }
 
-// Get DeviceValue Getter
+// GetDeviceValue DeviceValue Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetDeviceValue() string {
 	return r._deviceValue
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 智能匹配-设备号类型：IMEI，或者IDFA，或者UTDID（UTDID不支持MD5加密），或者OAID
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetDeviceType(_deviceType string) error {
 	r._deviceType = _deviceType
@@ -489,12 +489,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetDeviceType(_deviceType string
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetDeviceType() string {
 	return r._deviceType
 }
 
-// Set is LockRateEndTime Setter
+// SetLockRateEndTime is LockRateEndTime Setter
 // 锁佣结束时间
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetLockRateEndTime(_lockRateEndTime int64) error {
 	r._lockRateEndTime = _lockRateEndTime
@@ -502,12 +502,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetLockRateEndTime(_lockRateEndT
 	return nil
 }
 
-// Get LockRateEndTime Getter
+// GetLockRateEndTime LockRateEndTime Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetLockRateEndTime() int64 {
 	return r._lockRateEndTime
 }
 
-// Set is LockRateStartTime Setter
+// SetLockRateStartTime is LockRateStartTime Setter
 // 锁佣开始时间
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetLockRateStartTime(_lockRateStartTime int64) error {
 	r._lockRateStartTime = _lockRateStartTime
@@ -515,12 +515,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetLockRateStartTime(_lockRateSt
 	return nil
 }
 
-// Get LockRateStartTime Getter
+// GetLockRateStartTime LockRateStartTime Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetLockRateStartTime() int64 {
 	return r._lockRateStartTime
 }
 
-// Set is Longitude Setter
+// SetLongitude is Longitude Setter
 // 本地化业务入参-LBS信息-经度
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetLongitude(_longitude string) error {
 	r._longitude = _longitude
@@ -528,12 +528,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetLongitude(_longitude string) 
 	return nil
 }
 
-// Get Longitude Getter
+// GetLongitude Longitude Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetLongitude() string {
 	return r._longitude
 }
 
-// Set is Latitude Setter
+// SetLatitude is Latitude Setter
 // 本地化业务入参-LBS信息-纬度
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetLatitude(_latitude string) error {
 	r._latitude = _latitude
@@ -541,12 +541,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetLatitude(_latitude string) er
 	return nil
 }
 
-// Get Latitude Getter
+// GetLatitude Latitude Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetLatitude() string {
 	return r._latitude
 }
 
-// Set is CityCode Setter
+// SetCityCode is CityCode Setter
 // 本地化业务入参-LBS信息-国标城市码，仅支持单个请求，请求饿了么卡券物料时，该字段必填。 （详细城市ID见：https://mo.m.taobao.com/page_2020010315120200508）
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetCityCode(_cityCode string) error {
 	r._cityCode = _cityCode
@@ -554,12 +554,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetCityCode(_cityCode string) er
 	return nil
 }
 
-// Get CityCode Getter
+// GetCityCode CityCode Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetCityCode() string {
 	return r._cityCode
 }
 
-// Set is SellerIds Setter
+// SetSellerIds is SellerIds Setter
 // 商家id，仅支持饿了么卡券商家ID，支持批量请求1-100以内，多个商家ID使用英文逗号分隔
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetSellerIds(_sellerIds string) error {
 	r._sellerIds = _sellerIds
@@ -567,12 +567,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetSellerIds(_sellerIds string) 
 	return nil
 }
 
-// Get SellerIds Getter
+// GetSellerIds SellerIds Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetSellerIds() string {
 	return r._sellerIds
 }
 
-// Set is SpecialId Setter
+// SetSpecialId is SpecialId Setter
 // 会员运营ID
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetSpecialId(_specialId string) error {
 	r._specialId = _specialId
@@ -580,12 +580,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetSpecialId(_specialId string) 
 	return nil
 }
 
-// Get SpecialId Getter
+// GetSpecialId SpecialId Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetSpecialId() string {
 	return r._specialId
 }
 
-// Set is RelationId Setter
+// SetRelationId is RelationId Setter
 // 渠道关系ID，仅适用于渠道推广场景
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetRelationId(_relationId string) error {
 	r._relationId = _relationId
@@ -593,12 +593,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetRelationId(_relationId string
 	return nil
 }
 
-// Get RelationId Getter
+// GetRelationId RelationId Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetRelationId() string {
 	return r._relationId
 }
 
-// Set is PageResultKey Setter
+// SetPageResultKey is PageResultKey Setter
 // 本地化业务入参-分页唯一标识，非首页的请求必传，值为上一页返回结果中的page_result_key字段值
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetPageResultKey(_pageResultKey string) error {
 	r._pageResultKey = _pageResultKey
@@ -606,12 +606,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetPageResultKey(_pageResultKey 
 	return nil
 }
 
-// Get PageResultKey Getter
+// GetPageResultKey PageResultKey Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetPageResultKey() string {
 	return r._pageResultKey
 }
 
-// Set is UcrowdId Setter
+// SetUcrowdId is UcrowdId Setter
 // 人群ID，仅适用于物料评估场景material_id=41377
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetUcrowdId(_ucrowdId int64) error {
 	r._ucrowdId = _ucrowdId
@@ -619,12 +619,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetUcrowdId(_ucrowdId int64) err
 	return nil
 }
 
-// Get UcrowdId Getter
+// GetUcrowdId UcrowdId Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetUcrowdId() int64 {
 	return r._ucrowdId
 }
 
-// Set is UcrowdRankItems Setter
+// SetUcrowdRankItems is UcrowdRankItems Setter
 // 物料评估-商品列表
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetUcrowdRankItems(_ucrowdRankItems []Ucrowdrankitems) error {
 	r._ucrowdRankItems = _ucrowdRankItems
@@ -632,12 +632,12 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetUcrowdRankItems(_ucrowdRankIt
 	return nil
 }
 
-// Get UcrowdRankItems Getter
+// GetUcrowdRankItems UcrowdRankItems Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetUcrowdRankItems() []Ucrowdrankitems {
 	return r._ucrowdRankItems
 }
 
-// Set is GetTopnRate Setter
+// SetGetTopnRate is GetTopnRate Setter
 // 是否获取前N件佣金信息	0否，1是，其他值否
 func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetGetTopnRate(_getTopnRate int64) error {
 	r._getTopnRate = _getTopnRate
@@ -645,7 +645,7 @@ func (r *TaobaoTbkDgMaterialOptionalAPIRequest) SetGetTopnRate(_getTopnRate int6
 	return nil
 }
 
-// Get GetTopnRate Getter
+// GetGetTopnRate GetTopnRate Getter
 func (r TaobaoTbkDgMaterialOptionalAPIRequest) GetGetTopnRate() int64 {
 	return r._getTopnRate
 }

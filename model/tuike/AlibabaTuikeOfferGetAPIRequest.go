@@ -39,7 +39,7 @@ func (r AlibabaTuikeOfferGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IsvCode Setter
+// SetIsvCode is IsvCode Setter
 // 标识调用方
 func (r *AlibabaTuikeOfferGetAPIRequest) SetIsvCode(_isvCode string) error {
 	r._isvCode = _isvCode
@@ -47,12 +47,12 @@ func (r *AlibabaTuikeOfferGetAPIRequest) SetIsvCode(_isvCode string) error {
 	return nil
 }
 
-// Get IsvCode Getter
+// GetIsvCode IsvCode Getter
 func (r AlibabaTuikeOfferGetAPIRequest) GetIsvCode() string {
 	return r._isvCode
 }
 
-// Set is QueryString Setter
+// SetQueryString is QueryString Setter
 // 搜索查询参数(json)
 func (r *AlibabaTuikeOfferGetAPIRequest) SetQueryString(_queryString string) error {
 	r._queryString = _queryString
@@ -60,7 +60,7 @@ func (r *AlibabaTuikeOfferGetAPIRequest) SetQueryString(_queryString string) err
 	return nil
 }
 
-// Get QueryString Getter
+// GetQueryString QueryString Getter
 func (r AlibabaTuikeOfferGetAPIRequest) GetQueryString() string {
 	return r._queryString
 }

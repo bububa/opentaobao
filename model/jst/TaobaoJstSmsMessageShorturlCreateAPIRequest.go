@@ -43,7 +43,7 @@ func (r TaobaoJstSmsMessageShorturlCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NeedHttpsPrefix Setter
+// SetNeedHttpsPrefix is NeedHttpsPrefix Setter
 // 是否需要https前缀： true-要  false-不要
 func (r *TaobaoJstSmsMessageShorturlCreateAPIRequest) SetNeedHttpsPrefix(_needHttpsPrefix bool) error {
 	r._needHttpsPrefix = _needHttpsPrefix
@@ -51,12 +51,12 @@ func (r *TaobaoJstSmsMessageShorturlCreateAPIRequest) SetNeedHttpsPrefix(_needHt
 	return nil
 }
 
-// Get NeedHttpsPrefix Getter
+// GetNeedHttpsPrefix NeedHttpsPrefix Getter
 func (r TaobaoJstSmsMessageShorturlCreateAPIRequest) GetNeedHttpsPrefix() bool {
 	return r._needHttpsPrefix
 }
 
-// Set is Tag Setter
+// SetTag is Tag Setter
 // 人群标签
 func (r *TaobaoJstSmsMessageShorturlCreateAPIRequest) SetTag(_tag string) error {
 	r._tag = _tag
@@ -64,12 +64,12 @@ func (r *TaobaoJstSmsMessageShorturlCreateAPIRequest) SetTag(_tag string) error 
 	return nil
 }
 
-// Get Tag Getter
+// GetTag Tag Getter
 func (r TaobaoJstSmsMessageShorturlCreateAPIRequest) GetTag() string {
 	return r._tag
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 商品或者店铺的H5地址，只支持长链
 func (r *TaobaoJstSmsMessageShorturlCreateAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -77,12 +77,12 @@ func (r *TaobaoJstSmsMessageShorturlCreateAPIRequest) SetUrl(_url string) error 
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r TaobaoJstSmsMessageShorturlCreateAPIRequest) GetUrl() string {
 	return r._url
 }
 
-// Set is BatchNumber Setter
+// SetBatchNumber is BatchNumber Setter
 // 批次号
 func (r *TaobaoJstSmsMessageShorturlCreateAPIRequest) SetBatchNumber(_batchNumber string) error {
 	r._batchNumber = _batchNumber
@@ -90,7 +90,7 @@ func (r *TaobaoJstSmsMessageShorturlCreateAPIRequest) SetBatchNumber(_batchNumbe
 	return nil
 }
 
-// Get BatchNumber Getter
+// GetBatchNumber BatchNumber Getter
 func (r TaobaoJstSmsMessageShorturlCreateAPIRequest) GetBatchNumber() string {
 	return r._batchNumber
 }

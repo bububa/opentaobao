@@ -41,7 +41,7 @@ func (r TmallItemUpdateSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 需要编辑的商品ID
 func (r *TmallItemUpdateSchemaGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -49,12 +49,12 @@ func (r *TmallItemUpdateSchemaGetAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallItemUpdateSchemaGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 商品发布的目标类目，必须是叶子类目。如果没有切换类目需求，不需要填写。
 func (r *TmallItemUpdateSchemaGetAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
@@ -62,12 +62,12 @@ func (r *TmallItemUpdateSchemaGetAPIRequest) SetCategoryId(_categoryId int64) er
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r TmallItemUpdateSchemaGetAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 商品发布的目标product_id。如果没有切换产品的需求，参数可以不填写。
 func (r *TmallItemUpdateSchemaGetAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -75,7 +75,7 @@ func (r *TmallItemUpdateSchemaGetAPIRequest) SetProductId(_productId int64) erro
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TmallItemUpdateSchemaGetAPIRequest) GetProductId() int64 {
 	return r._productId
 }

@@ -37,7 +37,7 @@ func (r AlibabaMoziBucAccountPageallAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageAll Setter
+// SetPageAll is PageAll Setter
 // 查询租户内所有人员和账号
 func (r *AlibabaMoziBucAccountPageallAPIRequest) SetPageAll(_pageAll *PageAllAccountsRequest) error {
 	r._pageAll = _pageAll
@@ -45,7 +45,7 @@ func (r *AlibabaMoziBucAccountPageallAPIRequest) SetPageAll(_pageAll *PageAllAcc
 	return nil
 }
 
-// Get PageAll Getter
+// GetPageAll PageAll Getter
 func (r AlibabaMoziBucAccountPageallAPIRequest) GetPageAll() *PageAllAccountsRequest {
 	return r._pageAll
 }

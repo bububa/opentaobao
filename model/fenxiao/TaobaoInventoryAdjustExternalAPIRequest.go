@@ -52,7 +52,7 @@ func (r TaobaoInventoryAdjustExternalAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReduceType Setter
+// SetReduceType is ReduceType Setter
 // test
 func (r *TaobaoInventoryAdjustExternalAPIRequest) SetReduceType(_reduceType string) error {
 	r._reduceType = _reduceType
@@ -60,12 +60,12 @@ func (r *TaobaoInventoryAdjustExternalAPIRequest) SetReduceType(_reduceType stri
 	return nil
 }
 
-// Get ReduceType Getter
+// GetReduceType ReduceType Getter
 func (r TaobaoInventoryAdjustExternalAPIRequest) GetReduceType() string {
 	return r._reduceType
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 外部订单类型, BALANCE:盘点、NON_TAOBAO_TRADE:非淘宝交易、ALLOCATE:调拨、OTHERS:其他
 func (r *TaobaoInventoryAdjustExternalAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -73,12 +73,12 @@ func (r *TaobaoInventoryAdjustExternalAPIRequest) SetBizType(_bizType string) er
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TaobaoInventoryAdjustExternalAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is OperateType Setter
+// SetOperateType is OperateType Setter
 // test
 func (r *TaobaoInventoryAdjustExternalAPIRequest) SetOperateType(_operateType string) error {
 	r._operateType = _operateType
@@ -86,12 +86,12 @@ func (r *TaobaoInventoryAdjustExternalAPIRequest) SetOperateType(_operateType st
 	return nil
 }
 
-// Get OperateType Getter
+// GetOperateType OperateType Getter
 func (r TaobaoInventoryAdjustExternalAPIRequest) GetOperateType() string {
 	return r._operateType
 }
 
-// Set is BizUniqueCode Setter
+// SetBizUniqueCode is BizUniqueCode Setter
 // 商家外部定单号
 func (r *TaobaoInventoryAdjustExternalAPIRequest) SetBizUniqueCode(_bizUniqueCode string) error {
 	r._bizUniqueCode = _bizUniqueCode
@@ -99,12 +99,12 @@ func (r *TaobaoInventoryAdjustExternalAPIRequest) SetBizUniqueCode(_bizUniqueCod
 	return nil
 }
 
-// Get BizUniqueCode Getter
+// GetBizUniqueCode BizUniqueCode Getter
 func (r TaobaoInventoryAdjustExternalAPIRequest) GetBizUniqueCode() string {
 	return r._bizUniqueCode
 }
 
-// Set is Items Setter
+// SetItems is Items Setter
 // 商品初始库存信息： [{"scItemId":"商品后端ID，如果有传scItemCode,参数可以为0","scItemCode":"商品商家编码","inventoryType":"库存类型  1：正常,”direction”: 1: 盘盈 -1: 盘亏,参数可选,"quantity":"数量(正数)"}]
 func (r *TaobaoInventoryAdjustExternalAPIRequest) SetItems(_items string) error {
 	r._items = _items
@@ -112,12 +112,12 @@ func (r *TaobaoInventoryAdjustExternalAPIRequest) SetItems(_items string) error 
 	return nil
 }
 
-// Get Items Getter
+// GetItems Items Getter
 func (r TaobaoInventoryAdjustExternalAPIRequest) GetItems() string {
 	return r._items
 }
 
-// Set is OccupyOperateCode Setter
+// SetOccupyOperateCode is OccupyOperateCode Setter
 // 库存占用返回的操作码.operate_type 为OUTBOUND时，如果是确认事先进行过的库存占用，需要传入当时返回的操作码，并且明细必须与申请时保持一致
 func (r *TaobaoInventoryAdjustExternalAPIRequest) SetOccupyOperateCode(_occupyOperateCode string) error {
 	r._occupyOperateCode = _occupyOperateCode
@@ -125,12 +125,12 @@ func (r *TaobaoInventoryAdjustExternalAPIRequest) SetOccupyOperateCode(_occupyOp
 	return nil
 }
 
-// Get OccupyOperateCode Getter
+// GetOccupyOperateCode OccupyOperateCode Getter
 func (r TaobaoInventoryAdjustExternalAPIRequest) GetOccupyOperateCode() string {
 	return r._occupyOperateCode
 }
 
-// Set is OperateTime Setter
+// SetOperateTime is OperateTime Setter
 // 业务操作时间
 func (r *TaobaoInventoryAdjustExternalAPIRequest) SetOperateTime(_operateTime string) error {
 	r._operateTime = _operateTime
@@ -138,12 +138,12 @@ func (r *TaobaoInventoryAdjustExternalAPIRequest) SetOperateTime(_operateTime st
 	return nil
 }
 
-// Get OperateTime Getter
+// GetOperateTime OperateTime Getter
 func (r TaobaoInventoryAdjustExternalAPIRequest) GetOperateTime() string {
 	return r._operateTime
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 商家仓库编码
 func (r *TaobaoInventoryAdjustExternalAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -151,7 +151,7 @@ func (r *TaobaoInventoryAdjustExternalAPIRequest) SetStoreCode(_storeCode string
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r TaobaoInventoryAdjustExternalAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }

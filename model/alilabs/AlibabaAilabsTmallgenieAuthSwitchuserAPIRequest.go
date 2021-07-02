@@ -43,7 +43,7 @@ func (r AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ClientId Setter
+// SetClientId is ClientId Setter
 // client_id
 func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) SetClientId(_clientId string) error {
 	r._clientId = _clientId
@@ -51,12 +51,12 @@ func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) SetClientId(_clientId 
 	return nil
 }
 
-// Get ClientId Getter
+// GetClientId ClientId Getter
 func (r AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) GetClientId() string {
 	return r._clientId
 }
 
-// Set is NewUserOpenId Setter
+// SetNewUserOpenId is NewUserOpenId Setter
 // 目标用户openId
 func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) SetNewUserOpenId(_newUserOpenId string) error {
 	r._newUserOpenId = _newUserOpenId
@@ -64,12 +64,12 @@ func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) SetNewUserOpenId(_newU
 	return nil
 }
 
-// Get NewUserOpenId Getter
+// GetNewUserOpenId NewUserOpenId Getter
 func (r AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) GetNewUserOpenId() string {
 	return r._newUserOpenId
 }
 
-// Set is OldUserOpenId Setter
+// SetOldUserOpenId is OldUserOpenId Setter
 // 当前拥有设备权限的用户openId
 func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) SetOldUserOpenId(_oldUserOpenId string) error {
 	r._oldUserOpenId = _oldUserOpenId
@@ -77,12 +77,12 @@ func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) SetOldUserOpenId(_oldU
 	return nil
 }
 
-// Get OldUserOpenId Getter
+// GetOldUserOpenId OldUserOpenId Getter
 func (r AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) GetOldUserOpenId() string {
 	return r._oldUserOpenId
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 设备uuid
 func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -90,7 +90,7 @@ func (r *AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) SetUuid(_uuid string) 
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r AlibabaAilabsTmallgenieAuthSwitchuserAPIRequest) GetUuid() string {
 	return r._uuid
 }

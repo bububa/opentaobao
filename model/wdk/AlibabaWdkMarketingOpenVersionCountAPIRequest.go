@@ -39,7 +39,7 @@ func (r AlibabaWdkMarketingOpenVersionCountAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is VersionId Setter
+// SetVersionId is VersionId Setter
 // 查询版本号
 func (r *AlibabaWdkMarketingOpenVersionCountAPIRequest) SetVersionId(_versionId int64) error {
 	r._versionId = _versionId
@@ -47,12 +47,12 @@ func (r *AlibabaWdkMarketingOpenVersionCountAPIRequest) SetVersionId(_versionId 
 	return nil
 }
 
-// Get VersionId Getter
+// GetVersionId VersionId Getter
 func (r AlibabaWdkMarketingOpenVersionCountAPIRequest) GetVersionId() int64 {
 	return r._versionId
 }
 
-// Set is OperateId Setter
+// SetOperateId is OperateId Setter
 // 操作Id
 func (r *AlibabaWdkMarketingOpenVersionCountAPIRequest) SetOperateId(_operateId string) error {
 	r._operateId = _operateId
@@ -60,7 +60,7 @@ func (r *AlibabaWdkMarketingOpenVersionCountAPIRequest) SetOperateId(_operateId 
 	return nil
 }
 
-// Get OperateId Getter
+// GetOperateId OperateId Getter
 func (r AlibabaWdkMarketingOpenVersionCountAPIRequest) GetOperateId() string {
 	return r._operateId
 }

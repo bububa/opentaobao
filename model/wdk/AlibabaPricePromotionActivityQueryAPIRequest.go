@@ -43,7 +43,7 @@ func (r AlibabaPricePromotionActivityQueryAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 页码
 func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -51,12 +51,12 @@ func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetPage(_page int64) erro
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaPricePromotionActivityQueryAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is OuterPromotionCode Setter
+// SetOuterPromotionCode is OuterPromotionCode Setter
 // 外部档期code
 func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetOuterPromotionCode(_outerPromotionCode string) error {
 	r._outerPromotionCode = _outerPromotionCode
@@ -64,12 +64,12 @@ func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetOuterPromotionCode(_ou
 	return nil
 }
 
-// Get OuterPromotionCode Getter
+// GetOuterPromotionCode OuterPromotionCode Getter
 func (r AlibabaPricePromotionActivityQueryAPIRequest) GetOuterPromotionCode() string {
 	return r._outerPromotionCode
 }
 
-// Set is OuCode Setter
+// SetOuCode is OuCode Setter
 // TOB店仓编码
 func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetOuCode(_ouCode string) error {
 	r._ouCode = _ouCode
@@ -77,12 +77,12 @@ func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetOuCode(_ouCode string)
 	return nil
 }
 
-// Get OuCode Getter
+// GetOuCode OuCode Getter
 func (r AlibabaPricePromotionActivityQueryAPIRequest) GetOuCode() string {
 	return r._ouCode
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页码大小
 func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -90,7 +90,7 @@ func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetPageSize(_pageSize int
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaPricePromotionActivityQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

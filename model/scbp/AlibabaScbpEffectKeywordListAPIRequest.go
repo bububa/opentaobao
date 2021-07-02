@@ -37,7 +37,7 @@ func (r AlibabaScbpEffectKeywordListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is P4pKeywordReportQuery Setter
+// SetP4pKeywordReportQuery is P4pKeywordReportQuery Setter
 // IKeywordQuery
 func (r *AlibabaScbpEffectKeywordListAPIRequest) SetP4pKeywordReportQuery(_p4pKeywordReportQuery *IKeywordQuery) error {
 	r._p4pKeywordReportQuery = _p4pKeywordReportQuery
@@ -45,7 +45,7 @@ func (r *AlibabaScbpEffectKeywordListAPIRequest) SetP4pKeywordReportQuery(_p4pKe
 	return nil
 }
 
-// Get P4pKeywordReportQuery Getter
+// GetP4pKeywordReportQuery P4pKeywordReportQuery Getter
 func (r AlibabaScbpEffectKeywordListAPIRequest) GetP4pKeywordReportQuery() *IKeywordQuery {
 	return r._p4pKeywordReportQuery
 }

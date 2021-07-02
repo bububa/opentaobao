@@ -153,7 +153,7 @@ func (r TaobaoXhotelRateplanUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 在淘宝搜索页面展示的房价名称；（添加RP时为必须）。注意该名称不要包含早餐相关信息，如果想维护早餐信息，请设置breakfast_count字段即可。
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -161,12 +161,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is BreakfastCount Setter
+// SetBreakfastCount is BreakfastCount Setter
 // -1,状态早餐，和入住人数有关系，几人价就是几份早餐；0：不含早1：含单早2：含双早N：含N早（1-99可选）；（添加RP时为必须）
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetBreakfastCount(_breakfastCount int64) error {
 	r._breakfastCount = _breakfastCount
@@ -174,12 +174,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetBreakfastCount(_breakfastCount
 	return nil
 }
 
-// Get BreakfastCount Getter
+// GetBreakfastCount BreakfastCount Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetBreakfastCount() int64 {
 	return r._breakfastCount
 }
 
-// Set is MinDays Setter
+// SetMinDays is MinDays Setter
 // 最小入住天数（1-90）。默认1,小时房RP请设置为1
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMinDays(_minDays int64) error {
 	r._minDays = _minDays
@@ -187,12 +187,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMinDays(_minDays int64) error 
 	return nil
 }
 
-// Get MinDays Getter
+// GetMinDays MinDays Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetMinDays() int64 {
 	return r._minDays
 }
 
-// Set is MaxDays Setter
+// SetMaxDays is MaxDays Setter
 // 最大入住天数（1-90）。默认90,信用住最大入住天数不超过9天,小时房RP请设置为1
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMaxDays(_maxDays int64) error {
 	r._maxDays = _maxDays
@@ -200,12 +200,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMaxDays(_maxDays int64) error 
 	return nil
 }
 
-// Get MaxDays Getter
+// GetMaxDays MaxDays Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetMaxDays() int64 {
 	return r._maxDays
 }
 
-// Set is MinAmount Setter
+// SetMinAmount is MinAmount Setter
 // 首日入住房间数（1-99）。默认1。【废弃】
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMinAmount(_minAmount int64) error {
 	r._minAmount = _minAmount
@@ -213,12 +213,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMinAmount(_minAmount int64) er
 	return nil
 }
 
-// Get MinAmount Getter
+// GetMinAmount MinAmount Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetMinAmount() int64 {
 	return r._minAmount
 }
 
-// Set is MinAdvHours Setter
+// SetMinAdvHours is MinAdvHours Setter
 // 最小提前预定小时数，从入住当天的24点往前计算。例如如果这个字段设置了48，代表必须至少提前两天预定，那么如果想预定24号入住，,必须在23号零点前下单。
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMinAdvHours(_minAdvHours int64) error {
 	r._minAdvHours = _minAdvHours
@@ -226,12 +226,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMinAdvHours(_minAdvHours int64
 	return nil
 }
 
-// Get MinAdvHours Getter
+// GetMinAdvHours MinAdvHours Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetMinAdvHours() int64 {
 	return r._minAdvHours
 }
 
-// Set is MaxAdvHours Setter
+// SetMaxAdvHours is MaxAdvHours Setter
 // 最大提前预定小时数，从入住当天的24点往前计算。例如如果这个字段设置了48，代表最多提前两天预定，那么如果想预定24号入住，,必须在23号零点以后下单。
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMaxAdvHours(_maxAdvHours int64) error {
 	r._maxAdvHours = _maxAdvHours
@@ -239,12 +239,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMaxAdvHours(_maxAdvHours int64
 	return nil
 }
 
-// Get MaxAdvHours Getter
+// GetMaxAdvHours MaxAdvHours Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetMaxAdvHours() int64 {
 	return r._maxAdvHours
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 产品每日开始销售时间，start_time一定为当天时间
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -252,12 +252,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetStartTime(_startTime string) e
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 产品每日开始销售时间，start_time一定为当天时间
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -265,12 +265,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetEndTime(_endTime string) error
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is CancelPolicy Setter
+// SetCancelPolicy is CancelPolicy Setter
 // 退订政策字段，是个json串，参考示例值设置改字段的值。允许变更/取消：在XX年XX月XX日XX时前取消收取Y%的手续费，100>Y>=0允许变更/取消：在入住前X小时前取消收取Y%的手续费，100>Y>=0（不超过10条）。1.表示任意退{"cancelPolicyType":1};2.表示不能退{"cancelPolicyType":2};4.从入住当天24点往前推X小时前取消收取Y%手续费，否则不可取消{"cancelPolicyType":4,"policyInfo":{"48":10,"24":20}}表示，从入住日24点往前推提前至少48小时取消，收取10%的手续费，从入住日24点往前推提前至少24小时取消，收取20%的手续费;5.从24点往前推多少小时可退{"cancelPolicyType":5,"policyInfo":{"timeBefore":6}}表示从入住日24点往前推至少6个小时即入住日18点前可免费取消;6.从入住日24点往前推，至少提前小时数扣取首晚房费{"cancelPolicyType":6,"policyInfo":{"14":1}}表示入住日24点往前推14小时，即入住日10点前取消收取首晚房费。 注意：支付类型为预付，那么可以使用所有的退订类型,但是必须是非担保；支付类型为面付或者信任住并且是无担保，那么只能使用1类型的退订；支付类型为面付或者信任住并且为担保，那么只能使用2,5类型的退订；支付类型为在线预约，那么只能使用1,2,5类型的退改。如果支付类型是面付或者信任住并且为担保，那么如果传了4或者6的退订，那么会强制转成类型5。支持多段时间、多间夜扣款
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCancelPolicy(_cancelPolicy string) error {
 	r._cancelPolicy = _cancelPolicy
@@ -278,12 +278,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCancelPolicy(_cancelPolicy str
 	return nil
 }
 
-// Get CancelPolicy Getter
+// GetCancelPolicy CancelPolicy Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetCancelPolicy() string {
 	return r._cancelPolicy
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 1：开启（默认）2：关闭。如果没传值那么默认默认值为1；（添加RP时为必须）
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -291,12 +291,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetStatus(_status int64) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is EnglishName Setter
+// SetEnglishName is EnglishName Setter
 // RP的英文名称
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetEnglishName(_englishName string) error {
 	r._englishName = _englishName
@@ -304,12 +304,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetEnglishName(_englishName strin
 	return nil
 }
 
-// Get EnglishName Getter
+// GetEnglishName EnglishName Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetEnglishName() string {
 	return r._englishName
 }
 
-// Set is GuaranteeType Setter
+// SetGuaranteeType is GuaranteeType Setter
 // 担保类型，只支持： 0 无担保 1 峰时首晚担保 2峰时全额担保 3全天首晚担保 4全天全额担保
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetGuaranteeType(_guaranteeType int64) error {
 	r._guaranteeType = _guaranteeType
@@ -317,12 +317,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetGuaranteeType(_guaranteeType i
 	return nil
 }
 
-// Get GuaranteeType Getter
+// GetGuaranteeType GuaranteeType Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetGuaranteeType() int64 {
 	return r._guaranteeType
 }
 
-// Set is GuaranteeStartTime Setter
+// SetGuaranteeStartTime is GuaranteeStartTime Setter
 // 分时担保每日开始担保时间。 （如果设置了峰时担保类型，那么峰时担保时间不能为空，并且必须大于等于8点）
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetGuaranteeStartTime(_guaranteeStartTime string) error {
 	r._guaranteeStartTime = _guaranteeStartTime
@@ -330,12 +330,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetGuaranteeStartTime(_guaranteeS
 	return nil
 }
 
-// Get GuaranteeStartTime Getter
+// GetGuaranteeStartTime GuaranteeStartTime Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetGuaranteeStartTime() string {
 	return r._guaranteeStartTime
 }
 
-// Set is MemberLevel Setter
+// SetMemberLevel is MemberLevel Setter
 // 双方映射后的会员等级。如需开通，需要申请权限，取值范围为：1,2,3,4,5,none。比如飞猪F3对应商家V4,则传4.（如果有疑问请联系对接技术支持）
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMemberLevel(_memberLevel string) error {
 	r._memberLevel = _memberLevel
@@ -343,12 +343,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMemberLevel(_memberLevel strin
 	return nil
 }
 
-// Get MemberLevel Getter
+// GetMemberLevel MemberLevel Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetMemberLevel() string {
 	return r._memberLevel
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 销售渠道。如需开通，需要申请权限。目前支持的渠道有 H:飞猪 O:钉钉商旅 A:集团内部商旅 M:无线专享价。如果只投放飞猪，改字段不用填写或者只填H；如果有多个用","分开。如果需要投放其他渠道，请联系飞猪运营或者技术支持。
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -356,12 +356,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetChannel(_channel string) error
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetChannel() string {
 	return r._channel
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 系统商，一般不用填写，使用须申请
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -369,12 +369,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetVendor(_vendor string) error {
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is RateplanCode Setter
+// SetRateplanCode is RateplanCode Setter
 // 商家价格政策编码
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetRateplanCode(_rateplanCode string) error {
 	r._rateplanCode = _rateplanCode
@@ -382,12 +382,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetRateplanCode(_rateplanCode str
 	return nil
 }
 
-// Get RateplanCode Getter
+// GetRateplanCode RateplanCode Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetRateplanCode() string {
 	return r._rateplanCode
 }
 
-// Set is FirstStay Setter
+// SetFirstStay is FirstStay Setter
 // 需申请会员权限。是否是新用户首住优惠rp。1-代表是。0-代表否。不填写代表不更新该字段。
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetFirstStay(_firstStay int64) error {
 	r._firstStay = _firstStay
@@ -395,12 +395,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetFirstStay(_firstStay int64) er
 	return nil
 }
 
-// Get FirstStay Getter
+// GetFirstStay FirstStay Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetFirstStay() int64 {
 	return r._firstStay
 }
 
-// Set is Agreement Setter
+// SetAgreement is Agreement Setter
 // 价格类型字段：0.非协议价；1.集采协议价；如果不是协议价，请不要填写该字段。该字段有权限控制，如需使用，请联系阿里旅行运营。 如果不填写或者填写为0，默认是阿里旅行价
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetAgreement(_agreement int64) error {
 	r._agreement = _agreement
@@ -408,12 +408,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetAgreement(_agreement int64) er
 	return nil
 }
 
-// Get Agreement Getter
+// GetAgreement Agreement Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetAgreement() int64 {
 	return r._agreement
 }
 
-// Set is BreakfastCal Setter
+// SetBreakfastCal is BreakfastCal Setter
 // 在更新rateplan时，同时新增或更新早餐日历。 date：早餐政策属于具体哪一天 breakfast_count：这一天早餐的数量。>=0,<=99 如果date为空，那么会去读取startDate和endDate（格式都为"yyyy-MM-dd"），即早餐正常属于一个时间段。-1为状态早餐，和最终绑定的几人价有关，如果是一人价那么就是我一份早餐，二人价就是两份早餐。请注意，该字段仅能维护从当前时间开始，10年以内的数据，如果超过10年，会报错。
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetBreakfastCal(_breakfastCal string) error {
 	r._breakfastCal = _breakfastCal
@@ -421,12 +421,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetBreakfastCal(_breakfastCal str
 	return nil
 }
 
-// Get BreakfastCal Getter
+// GetBreakfastCal BreakfastCal Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetBreakfastCal() string {
 	return r._breakfastCal
 }
 
-// Set is CancelPolicyCal Setter
+// SetCancelPolicyCal is CancelPolicyCal Setter
 // 在新增rateplan的同时新增取消政策日历。 json格式。 date：日历的某一天，格式为"yyyy-MM-dd" cancel_policy：日历某一天的价格政策。格式和限制同cancel_policy。 如果date为空，那么会读取startDate和endDate（格式都为"yyyy-MM-dd"），即取消政策属于某一个时间段。 注意：支付类型为预付，那么可以使用所有的退订类型，但是必须是非担保；支付类型为面付或者信任住并且是无担保，那么只能使用1类型的退订；支付类型为面付或者信任住并且为担保，那么只能使用2,5类型的退订；支付类型为在线预约，那么只能使用1,2,5类型的退改。如果支付类型是面付或者信任住并且为担保，那么如果传了4或者6的退订，那么会强制转成类型5。请注意，该字段仅能维护从当前时间开始，10年以内的数据，如果超过10年，会报错。
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCancelPolicyCal(_cancelPolicyCal string) error {
 	r._cancelPolicyCal = _cancelPolicyCal
@@ -434,12 +434,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCancelPolicyCal(_cancelPolicyC
 	return nil
 }
 
-// Get CancelPolicyCal Getter
+// GetCancelPolicyCal CancelPolicyCal Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetCancelPolicyCal() string {
 	return r._cancelPolicyCal
 }
 
-// Set is GuaranteeCal Setter
+// SetGuaranteeCal is GuaranteeCal Setter
 // 在更新rateplan的同时，新增或更新担保日历。 date：担保日历的某一天。 guarantee:担保政策。 其中有两个属性：guaranteeType,guaranteeStartTime。 guaranteeType的可选值同guaranteeType字段，详见guaranteeType字段。guaranteeStartTime格式为"HH:mm" 。如果date为空，那么会读取startDate和endDate（格式都为"yyyy-MM-dd"），即担保政策属于某一个时间段。（如果设置了峰时担保类型，那么峰时担保时间不能为空，并且必须大于等于8点） 请注意，该字段仅能维护从当前时间开始，10年以内的数据，如果超过10年，会报错。
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetGuaranteeCal(_guaranteeCal string) error {
 	r._guaranteeCal = _guaranteeCal
@@ -447,12 +447,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetGuaranteeCal(_guaranteeCal str
 	return nil
 }
 
-// Get GuaranteeCal Getter
+// GetGuaranteeCal GuaranteeCal Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetGuaranteeCal() string {
 	return r._guaranteeCal
 }
 
-// Set is EffectiveTime Setter
+// SetEffectiveTime is EffectiveTime Setter
 // 生效开始时间，用来控制此rateplan生效的开始时间，配合字段deadline_time一起限定rp的有效期
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetEffectiveTime(_effectiveTime string) error {
 	r._effectiveTime = _effectiveTime
@@ -460,12 +460,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetEffectiveTime(_effectiveTime s
 	return nil
 }
 
-// Get EffectiveTime Getter
+// GetEffectiveTime EffectiveTime Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetEffectiveTime() string {
 	return r._effectiveTime
 }
 
-// Set is DeadlineTime Setter
+// SetDeadlineTime is DeadlineTime Setter
 // 生效截止时间，用来控制此rateplan生效的截止时间，配合字段effective_time一起限定rp的有效期
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetDeadlineTime(_deadlineTime string) error {
 	r._deadlineTime = _deadlineTime
@@ -473,12 +473,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetDeadlineTime(_deadlineTime str
 	return nil
 }
 
-// Get DeadlineTime Getter
+// GetDeadlineTime DeadlineTime Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetDeadlineTime() string {
 	return r._deadlineTime
 }
 
-// Set is PaymentType Setter
+// SetPaymentType is PaymentType Setter
 // 支付类型，只支持：1：预付5：现付6: 信用住7:在线预约8:在线预约信用住。其中5,6,7,8三种类型需要申请权限
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetPaymentType(_paymentType int64) error {
 	r._paymentType = _paymentType
@@ -486,12 +486,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetPaymentType(_paymentType int64
 	return nil
 }
 
-// Get PaymentType Getter
+// GetPaymentType PaymentType Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetPaymentType() int64 {
 	return r._paymentType
 }
 
-// Set is RpType Setter
+// SetRpType is RpType Setter
 // rp类型，1为小时房。目前只支持小时房。如果不是小时房rateplan,则不要填写。如果想要清空该字段可以传入none
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetRpType(_rpType string) error {
 	r._rpType = _rpType
@@ -499,12 +499,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetRpType(_rpType string) error {
 	return nil
 }
 
-// Get RpType Getter
+// GetRpType RpType Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetRpType() string {
 	return r._rpType
 }
 
-// Set is Hourage Setter
+// SetHourage is Hourage Setter
 // 小时房入住时间跨度。小时房特有字段。比如4小时的小时房，那么值为4
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetHourage(_hourage string) error {
 	r._hourage = _hourage
@@ -512,12 +512,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetHourage(_hourage string) error
 	return nil
 }
 
-// Get Hourage Getter
+// GetHourage Hourage Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetHourage() string {
 	return r._hourage
 }
 
-// Set is CanCheckinEnd Setter
+// SetCanCheckinEnd is CanCheckinEnd Setter
 // 最晚可选入住时间，小时房特有字段。格式为HH:mm
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCanCheckinEnd(_canCheckinEnd string) error {
 	r._canCheckinEnd = _canCheckinEnd
@@ -525,12 +525,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCanCheckinEnd(_canCheckinEnd s
 	return nil
 }
 
-// Get CanCheckinEnd Getter
+// GetCanCheckinEnd CanCheckinEnd Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetCanCheckinEnd() string {
 	return r._canCheckinEnd
 }
 
-// Set is CanCheckinStart Setter
+// SetCanCheckinStart is CanCheckinStart Setter
 // 最早可选入住时间，小时房特有字段。格式为HH:mm
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCanCheckinStart(_canCheckinStart string) error {
 	r._canCheckinStart = _canCheckinStart
@@ -538,12 +538,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCanCheckinStart(_canCheckinSta
 	return nil
 }
 
-// Get CanCheckinStart Getter
+// GetCanCheckinStart CanCheckinStart Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetCanCheckinStart() string {
 	return r._canCheckinStart
 }
 
-// Set is IsStudent Setter
+// SetIsStudent is IsStudent Setter
 // 学生价，1：是；0：否
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetIsStudent(_isStudent int64) error {
 	r._isStudent = _isStudent
@@ -551,12 +551,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetIsStudent(_isStudent int64) er
 	return nil
 }
 
-// Get IsStudent Getter
+// GetIsStudent IsStudent Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetIsStudent() int64 {
 	return r._isStudent
 }
 
-// Set is Hid Setter
+// SetHid is Hid Setter
 // 酒店id
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetHid(_hid int64) error {
 	r._hid = _hid
@@ -564,12 +564,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetHid(_hid int64) error {
 	return nil
 }
 
-// Get Hid Getter
+// GetHid Hid Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetHid() int64 {
 	return r._hid
 }
 
-// Set is Rid Setter
+// SetRid is Rid Setter
 // 房型id
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetRid(_rid int64) error {
 	r._rid = _rid
@@ -577,12 +577,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetRid(_rid int64) error {
 	return nil
 }
 
-// Get Rid Getter
+// GetRid Rid Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetRid() int64 {
 	return r._rid
 }
 
-// Set is OutRid Setter
+// SetOutRid is OutRid Setter
 // 外部房型id
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetOutRid(_outRid string) error {
 	r._outRid = _outRid
@@ -590,12 +590,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetOutRid(_outRid string) error {
 	return nil
 }
 
-// Get OutRid Getter
+// GetOutRid OutRid Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetOutRid() string {
 	return r._outRid
 }
 
-// Set is OutHid Setter
+// SetOutHid is OutHid Setter
 // 外部酒店id
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetOutHid(_outHid string) error {
 	r._outHid = _outHid
@@ -603,12 +603,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetOutHid(_outHid string) error {
 	return nil
 }
 
-// Get OutHid Getter
+// GetOutHid OutHid Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetOutHid() string {
 	return r._outHid
 }
 
-// Set is SuperRpFlag Setter
+// SetSuperRpFlag is SuperRpFlag Setter
 // super rp标记，1是；0否
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetSuperRpFlag(_superRpFlag int64) error {
 	r._superRpFlag = _superRpFlag
@@ -616,12 +616,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetSuperRpFlag(_superRpFlag int64
 	return nil
 }
 
-// Get SuperRpFlag Getter
+// GetSuperRpFlag SuperRpFlag Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetSuperRpFlag() int64 {
 	return r._superRpFlag
 }
 
-// Set is BaseRpFlag Setter
+// SetBaseRpFlag is BaseRpFlag Setter
 // base rp标记，1是；0否
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetBaseRpFlag(_baseRpFlag int64) error {
 	r._baseRpFlag = _baseRpFlag
@@ -629,12 +629,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetBaseRpFlag(_baseRpFlag int64) 
 	return nil
 }
 
-// Get BaseRpFlag Getter
+// GetBaseRpFlag BaseRpFlag Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetBaseRpFlag() int64 {
 	return r._baseRpFlag
 }
 
-// Set is GuaranteeMode Setter
+// SetGuaranteeMode is GuaranteeMode Setter
 // -9999 清空担保, 2 VCC担保, 1 PCI担保，0 支付宝担保(信用住产品担保方式只能为支付宝担保)
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetGuaranteeMode(_guaranteeMode int64) error {
 	r._guaranteeMode = _guaranteeMode
@@ -642,12 +642,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetGuaranteeMode(_guaranteeMode i
 	return nil
 }
 
-// Get GuaranteeMode Getter
+// GetGuaranteeMode GuaranteeMode Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetGuaranteeMode() int64 {
 	return r._guaranteeMode
 }
 
-// Set is Operator Setter
+// SetOperator is Operator Setter
 // operator
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
@@ -655,12 +655,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetOperator(_operator string) err
 	return nil
 }
 
-// Get Operator Getter
+// GetOperator Operator Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetOperator() string {
 	return r._operator
 }
 
-// Set is ParentRpCode Setter
+// SetParentRpCode is ParentRpCode Setter
 // 父rpcode，使用场景：当一个rp发布变价rate的时候，用于下单时候传递约定的rpcode给外部
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetParentRpCode(_parentRpCode string) error {
 	r._parentRpCode = _parentRpCode
@@ -668,12 +668,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetParentRpCode(_parentRpCode str
 	return nil
 }
 
-// Get ParentRpCode Getter
+// GetParentRpCode ParentRpCode Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetParentRpCode() string {
 	return r._parentRpCode
 }
 
-// Set is ParentRpid Setter
+// SetParentRpid is ParentRpid Setter
 // 父rpid，使用场景：当一个rp发布变价rate的时候，记录父rp信息，用于下单时候传递约定的rpcode给外部
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetParentRpid(_parentRpid int64) error {
 	r._parentRpid = _parentRpid
@@ -681,12 +681,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetParentRpid(_parentRpid int64) 
 	return nil
 }
 
-// Get ParentRpid Getter
+// GetParentRpid ParentRpid Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetParentRpid() int64 {
 	return r._parentRpid
 }
 
-// Set is TagJson Setter
+// SetTagJson is TagJson Setter
 // 更新RP时的 打标和去标 需求, 0 就是 去标, 1 就是打标,    key的含义:    non-direct-RP 表示非直连RP,,     super-could-price-change-RP 表示rp的super标，打上这个tag，表明这个rateplan下单的时候支持变价，商家系统直接放开价格校验。   base-could-derived-RP 表示base rateplan标签，打上了这个tag，表明这是一个base的rateplan，基于该rateplan可以衍生出子rateplan,       ebk-tail-room-RP 表示 ebk尾房rate plan级别标
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetTagJson(_tagJson string) error {
 	r._tagJson = _tagJson
@@ -694,12 +694,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetTagJson(_tagJson string) error
 	return nil
 }
 
-// Get TagJson Getter
+// GetTagJson TagJson Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetTagJson() string {
 	return r._tagJson
 }
 
-// Set is AllotmentReleaseTime Setter
+// SetAllotmentReleaseTime is AllotmentReleaseTime Setter
 // 协议保留房提前x小时自动确认时间 比如设置为6 那么从入住当日24点往前推6小时即18:00以前可以自动确认有房，否则是待确认
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetAllotmentReleaseTime(_allotmentReleaseTime string) error {
 	r._allotmentReleaseTime = _allotmentReleaseTime
@@ -707,12 +707,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetAllotmentReleaseTime(_allotmen
 	return nil
 }
 
-// Get AllotmentReleaseTime Getter
+// GetAllotmentReleaseTime AllotmentReleaseTime Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetAllotmentReleaseTime() string {
 	return r._allotmentReleaseTime
 }
 
-// Set is PackRoomFlag Setter
+// SetPackRoomFlag is PackRoomFlag Setter
 // 是否包房RP 1包房RP,0 非包房rp
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetPackRoomFlag(_packRoomFlag string) error {
 	r._packRoomFlag = _packRoomFlag
@@ -720,12 +720,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetPackRoomFlag(_packRoomFlag str
 	return nil
 }
 
-// Get PackRoomFlag Getter
+// GetPackRoomFlag PackRoomFlag Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetPackRoomFlag() string {
 	return r._packRoomFlag
 }
 
-// Set is BottomPriceFlag Setter
+// SetBottomPriceFlag is BottomPriceFlag Setter
 // 是否底价加价，1是底价加价,0 非底价加价rp
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetBottomPriceFlag(_bottomPriceFlag string) error {
 	r._bottomPriceFlag = _bottomPriceFlag
@@ -733,12 +733,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetBottomPriceFlag(_bottomPriceFl
 	return nil
 }
 
-// Get BottomPriceFlag Getter
+// GetBottomPriceFlag BottomPriceFlag Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetBottomPriceFlag() string {
 	return r._bottomPriceFlag
 }
 
-// Set is DisplayName Setter
+// SetDisplayName is DisplayName Setter
 // 价格计划名称name通过加工处理以后的值
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetDisplayName(_displayName string) error {
 	r._displayName = _displayName
@@ -746,12 +746,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetDisplayName(_displayName strin
 	return nil
 }
 
-// Get DisplayName Getter
+// GetDisplayName DisplayName Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetDisplayName() string {
 	return r._displayName
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 来源
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetSource(_source int64) error {
 	r._source = _source
@@ -759,12 +759,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetSource(_source int64) error {
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetSource() int64 {
 	return r._source
 }
 
-// Set is CommonAllotReleaseTime Setter
+// SetCommonAllotReleaseTime is CommonAllotReleaseTime Setter
 // 普通保留房提前x小时自动确认时间 比如设置为6 那么从入住当日24点往前推6小时即18:00以前可以自动确认有房，否则是待确认
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCommonAllotReleaseTime(_commonAllotReleaseTime string) error {
 	r._commonAllotReleaseTime = _commonAllotReleaseTime
@@ -772,12 +772,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCommonAllotReleaseTime(_common
 	return nil
 }
 
-// Get CommonAllotReleaseTime Getter
+// GetCommonAllotReleaseTime CommonAllotReleaseTime Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetCommonAllotReleaseTime() string {
 	return r._commonAllotReleaseTime
 }
 
-// Set is CompanyAssist Setter
+// SetCompanyAssist is CompanyAssist Setter
 // 是否企业托管RP 0-普通rp,1-企业托管rp
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCompanyAssist(_companyAssist int64) error {
 	r._companyAssist = _companyAssist
@@ -785,12 +785,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCompanyAssist(_companyAssist i
 	return nil
 }
 
-// Get CompanyAssist Getter
+// GetCompanyAssist CompanyAssist Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetCompanyAssist() int64 {
 	return r._companyAssist
 }
 
-// Set is HotelCompanyMappingDOS Setter
+// SetHotelCompanyMappingDOS is HotelCompanyMappingDOS Setter
 // 酒店-企业-rp映射实体集合
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetHotelCompanyMappingDOS(_hotelCompanyMappingDOS string) error {
 	r._hotelCompanyMappingDOS = _hotelCompanyMappingDOS
@@ -798,12 +798,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetHotelCompanyMappingDOS(_hotelC
 	return nil
 }
 
-// Get HotelCompanyMappingDOS Getter
+// GetHotelCompanyMappingDOS HotelCompanyMappingDOS Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetHotelCompanyMappingDOS() string {
 	return r._hotelCompanyMappingDOS
 }
 
-// Set is ResourceType Setter
+// SetResourceType is ResourceType Setter
 // 商品来源渠道。1：直采（直连酒店PMS）, 1-1：直采（非直连） 2：携程系, 3：美团, 4：国内旅行社分销, 5：海外供应商。非酒店资源方卖家必须提供商品来源渠道，携程系包括携程、去哪儿、艺龙。
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetResourceType(_resourceType string) error {
 	r._resourceType = _resourceType
@@ -811,12 +811,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetResourceType(_resourceType str
 	return nil
 }
 
-// Get ResourceType Getter
+// GetResourceType ResourceType Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetResourceType() string {
 	return r._resourceType
 }
 
-// Set is CanCheckoutEnd Setter
+// SetCanCheckoutEnd is CanCheckoutEnd Setter
 // 最晚可选离店时间，小时房特有字段。格式为HH:mm
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCanCheckoutEnd(_canCheckoutEnd string) error {
 	r._canCheckoutEnd = _canCheckoutEnd
@@ -824,12 +824,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCanCheckoutEnd(_canCheckoutEnd
 	return nil
 }
 
-// Get CanCheckoutEnd Getter
+// GetCanCheckoutEnd CanCheckoutEnd Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetCanCheckoutEnd() string {
 	return r._canCheckoutEnd
 }
 
-// Set is MemDiscFlag Setter
+// SetMemDiscFlag is MemDiscFlag Setter
 // 会员价支持标识,1表示支持会员价规则
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMemDiscFlag(_memDiscFlag int64) error {
 	r._memDiscFlag = _memDiscFlag
@@ -837,12 +837,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMemDiscFlag(_memDiscFlag int64
 	return nil
 }
 
-// Get MemDiscFlag Getter
+// GetMemDiscFlag MemDiscFlag Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetMemDiscFlag() int64 {
 	return r._memDiscFlag
 }
 
-// Set is MemberDiscountCal Setter
+// SetMemberDiscountCal is MemberDiscountCal Setter
 // 会员价加价规则。c:表示折扣百分比,例子8,意为会员价优惠8%,s:标识起始日期,e:表示截止日期，t:表示加价类型，0:代表折扣。会员价=售价*(1-c%)。该字段使用需要联系小二
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMemberDiscountCal(_memberDiscountCal string) error {
 	r._memberDiscountCal = _memberDiscountCal
@@ -850,12 +850,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMemberDiscountCal(_memberDisco
 	return nil
 }
 
-// Get MemberDiscountCal Getter
+// GetMemberDiscountCal MemberDiscountCal Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetMemberDiscountCal() string {
 	return r._memberDiscountCal
 }
 
-// Set is Benefits Setter
+// SetBenefits is Benefits Setter
 // 卖点
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetBenefits(_benefits string) error {
 	r._benefits = _benefits
@@ -863,12 +863,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetBenefits(_benefits string) err
 	return nil
 }
 
-// Get Benefits Getter
+// GetBenefits Benefits Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetBenefits() string {
 	return r._benefits
 }
 
-// Set is ActivityType Setter
+// SetActivityType is ActivityType Setter
 // 活动类型。1通兑, 4:超级房券
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetActivityType(_activityType string) error {
 	r._activityType = _activityType
@@ -876,12 +876,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetActivityType(_activityType str
 	return nil
 }
 
-// Get ActivityType Getter
+// GetActivityType ActivityType Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetActivityType() string {
 	return r._activityType
 }
 
-// Set is GuestLimit Setter
+// SetGuestLimit is GuestLimit Setter
 // 入住人限制
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetGuestLimit(_guestLimit string) error {
 	r._guestLimit = _guestLimit
@@ -889,12 +889,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetGuestLimit(_guestLimit string)
 	return nil
 }
 
-// Get GuestLimit Getter
+// GetGuestLimit GuestLimit Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetGuestLimit() string {
 	return r._guestLimit
 }
 
-// Set is OnlineBookingBindingInfo Setter
+// SetOnlineBookingBindingInfo is OnlineBookingBindingInfo Setter
 // 在线预约关联关系推送，priceRuleNumber：加价规则序号
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetOnlineBookingBindingInfo(_onlineBookingBindingInfo string) error {
 	r._onlineBookingBindingInfo = _onlineBookingBindingInfo
@@ -902,12 +902,12 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetOnlineBookingBindingInfo(_onli
 	return nil
 }
 
-// Get OnlineBookingBindingInfo Getter
+// GetOnlineBookingBindingInfo OnlineBookingBindingInfo Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetOnlineBookingBindingInfo() string {
 	return r._onlineBookingBindingInfo
 }
 
-// Set is Rpid Setter
+// SetRpid is Rpid Setter
 // 不推荐使用，使用ratePlanCode来标识要修改的RP
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetRpid(_rpid int64) error {
 	r._rpid = _rpid
@@ -915,7 +915,7 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetRpid(_rpid int64) error {
 	return nil
 }
 
-// Get Rpid Getter
+// GetRpid Rpid Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetRpid() int64 {
 	return r._rpid
 }

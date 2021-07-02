@@ -37,7 +37,7 @@ func (r AliexpressSocialCountryGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Language Setter
+// SetLanguage is Language Setter
 // 语言
 func (r *AliexpressSocialCountryGetAPIRequest) SetLanguage(_language string) error {
 	r._language = _language
@@ -45,7 +45,7 @@ func (r *AliexpressSocialCountryGetAPIRequest) SetLanguage(_language string) err
 	return nil
 }
 
-// Get Language Getter
+// GetLanguage Language Getter
 func (r AliexpressSocialCountryGetAPIRequest) GetLanguage() string {
 	return r._language
 }

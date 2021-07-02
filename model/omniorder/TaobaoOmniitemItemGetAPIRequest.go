@@ -43,7 +43,7 @@ func (r TaobaoOmniitemItemGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 分页当前页数
 func (r *TaobaoOmniitemItemGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -51,12 +51,12 @@ func (r *TaobaoOmniitemItemGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoOmniitemItemGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页单页大小
 func (r *TaobaoOmniitemItemGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -64,12 +64,12 @@ func (r *TaobaoOmniitemItemGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoOmniitemItemGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 可选，指定获取的商品id
 func (r *TaobaoOmniitemItemGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -77,12 +77,12 @@ func (r *TaobaoOmniitemItemGetAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoOmniitemItemGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 可选，指定获取的商品外部id
 func (r *TaobaoOmniitemItemGetAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -90,7 +90,7 @@ func (r *TaobaoOmniitemItemGetAPIRequest) SetOuterId(_outerId string) error {
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoOmniitemItemGetAPIRequest) GetOuterId() string {
 	return r._outerId
 }

@@ -37,7 +37,7 @@ func (r AlitripXhotelChannelNotifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderNotifyQuery Setter
+// SetOrderNotifyQuery is OrderNotifyQuery Setter
 // 通知类型查询条件
 func (r *AlitripXhotelChannelNotifyAPIRequest) SetOrderNotifyQuery(_orderNotifyQuery *OrderNotifyQuery) error {
 	r._orderNotifyQuery = _orderNotifyQuery
@@ -45,7 +45,7 @@ func (r *AlitripXhotelChannelNotifyAPIRequest) SetOrderNotifyQuery(_orderNotifyQ
 	return nil
 }
 
-// Get OrderNotifyQuery Getter
+// GetOrderNotifyQuery OrderNotifyQuery Getter
 func (r AlitripXhotelChannelNotifyAPIRequest) GetOrderNotifyQuery() *OrderNotifyQuery {
 	return r._orderNotifyQuery
 }

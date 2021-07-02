@@ -45,7 +45,7 @@ func (r AlibabaSecurityJaqRpGetverifytokenAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is AccountId Setter
+// SetAccountId is AccountId Setter
 // 账号，强烈建议填写，区别用户的唯一标识
 func (r *AlibabaSecurityJaqRpGetverifytokenAPIRequest) SetAccountId(_accountId string) error {
 	r._accountId = _accountId
@@ -53,12 +53,12 @@ func (r *AlibabaSecurityJaqRpGetverifytokenAPIRequest) SetAccountId(_accountId s
 	return nil
 }
 
-// Get AccountId Getter
+// GetAccountId AccountId Getter
 func (r AlibabaSecurityJaqRpGetverifytokenAPIRequest) GetAccountId() string {
 	return r._accountId
 }
 
-// Set is TicketId Setter
+// SetTicketId is TicketId Setter
 // 选填，作为一次验证的唯一标识，每次验证需更换。如果不是验证类型可不填
 func (r *AlibabaSecurityJaqRpGetverifytokenAPIRequest) SetTicketId(_ticketId string) error {
 	r._ticketId = _ticketId
@@ -66,12 +66,12 @@ func (r *AlibabaSecurityJaqRpGetverifytokenAPIRequest) SetTicketId(_ticketId str
 	return nil
 }
 
-// Get TicketId Getter
+// GetTicketId TicketId Getter
 func (r AlibabaSecurityJaqRpGetverifytokenAPIRequest) GetTicketId() string {
 	return r._ticketId
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 客户端来源
 func (r *AlibabaSecurityJaqRpGetverifytokenAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -79,12 +79,12 @@ func (r *AlibabaSecurityJaqRpGetverifytokenAPIRequest) SetSource(_source string)
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r AlibabaSecurityJaqRpGetverifytokenAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is Biz Setter
+// SetBiz is Biz Setter
 // 业务点
 func (r *AlibabaSecurityJaqRpGetverifytokenAPIRequest) SetBiz(_biz string) error {
 	r._biz = _biz
@@ -92,12 +92,12 @@ func (r *AlibabaSecurityJaqRpGetverifytokenAPIRequest) SetBiz(_biz string) error
 	return nil
 }
 
-// Get Biz Getter
+// GetBiz Biz Getter
 func (r AlibabaSecurityJaqRpGetverifytokenAPIRequest) GetBiz() string {
 	return r._biz
 }
 
-// Set is ExtraData Setter
+// SetExtraData is ExtraData Setter
 // 额外信息
 func (r *AlibabaSecurityJaqRpGetverifytokenAPIRequest) SetExtraData(_extraData string) error {
 	r._extraData = _extraData
@@ -105,7 +105,7 @@ func (r *AlibabaSecurityJaqRpGetverifytokenAPIRequest) SetExtraData(_extraData s
 	return nil
 }
 
-// Get ExtraData Getter
+// GetExtraData ExtraData Getter
 func (r AlibabaSecurityJaqRpGetverifytokenAPIRequest) GetExtraData() string {
 	return r._extraData
 }

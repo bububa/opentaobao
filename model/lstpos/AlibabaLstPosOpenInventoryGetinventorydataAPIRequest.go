@@ -39,7 +39,7 @@ func (r AlibabaLstPosOpenInventoryGetinventorydataAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is IsvGoodsIdList Setter
+// SetIsvGoodsIdList is IsvGoodsIdList Setter
 // ISV商品Id列表
 func (r *AlibabaLstPosOpenInventoryGetinventorydataAPIRequest) SetIsvGoodsIdList(_isvGoodsIdList []string) error {
 	r._isvGoodsIdList = _isvGoodsIdList
@@ -47,12 +47,12 @@ func (r *AlibabaLstPosOpenInventoryGetinventorydataAPIRequest) SetIsvGoodsIdList
 	return nil
 }
 
-// Get IsvGoodsIdList Getter
+// GetIsvGoodsIdList IsvGoodsIdList Getter
 func (r AlibabaLstPosOpenInventoryGetinventorydataAPIRequest) GetIsvGoodsIdList() []string {
 	return r._isvGoodsIdList
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 门店主账号Id
 func (r *AlibabaLstPosOpenInventoryGetinventorydataAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -60,7 +60,7 @@ func (r *AlibabaLstPosOpenInventoryGetinventorydataAPIRequest) SetUserId(_userId
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaLstPosOpenInventoryGetinventorydataAPIRequest) GetUserId() int64 {
 	return r._userId
 }

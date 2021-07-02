@@ -41,7 +41,7 @@ func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 计划id
 func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -49,12 +49,12 @@ func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) SetCampaignId(_camp
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is ForbiddenProductBatchOperation Setter
+// SetForbiddenProductBatchOperation is ForbiddenProductBatchOperation Setter
 // 查询条件
 func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) SetForbiddenProductBatchOperation(_forbiddenProductBatchOperation *ForbiddenProductBatchOperationDto) error {
 	r._forbiddenProductBatchOperation = _forbiddenProductBatchOperation
@@ -62,12 +62,12 @@ func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) SetForbiddenProduct
 	return nil
 }
 
-// Get ForbiddenProductBatchOperation Getter
+// GetForbiddenProductBatchOperation ForbiddenProductBatchOperation Getter
 func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetForbiddenProductBatchOperation() *ForbiddenProductBatchOperationDto {
 	return r._forbiddenProductBatchOperation
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -75,7 +75,7 @@ func (r *AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) SetTopContext(_topC
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdGroupCreateForbiddenProductAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }

@@ -37,7 +37,7 @@ func (r TaobaoQimenShopSynchronizeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Request Setter
+// SetRequest is Request Setter
 // 请求
 func (r *TaobaoQimenShopSynchronizeAPIRequest) SetRequest(_request *TaobaoQimenShopSynchronizeRequest) error {
 	r._request = _request
@@ -45,7 +45,7 @@ func (r *TaobaoQimenShopSynchronizeAPIRequest) SetRequest(_request *TaobaoQimenS
 	return nil
 }
 
-// Get Request Getter
+// GetRequest Request Getter
 func (r TaobaoQimenShopSynchronizeAPIRequest) GetRequest() *TaobaoQimenShopSynchronizeRequest {
 	return r._request
 }

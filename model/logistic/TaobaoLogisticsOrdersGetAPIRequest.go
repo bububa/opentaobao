@@ -59,7 +59,7 @@ func (r TaobaoLogisticsOrdersGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需返回的字段列表.可选值:Shipping 物流数据结构中的以下字段: <br><br/>tid,order_code,seller_nick,buyer_nick,delivery_start, delivery_end,out_sid,item_title,receiver_name, created,modified,status,type,freight_payer,seller_confirm,company_name,sub_tids,is_spilt；<br>多个字段之间用","分隔。如tid,seller_nick,buyer_nick,delivery_start。
 func (r *TaobaoLogisticsOrdersGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -67,12 +67,12 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 交易ID.如果加入tid参数的话,不用传其他的参数,若传入tid：非拆单场景，仅会返回一条物流订单信息；拆单场景，会返回多条物流订单信息
 func (r *TaobaoLogisticsOrdersGetAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -80,12 +80,12 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 买家昵称
 func (r *TaobaoLogisticsOrdersGetAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -93,12 +93,12 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetBuyerNick(_buyerNick string) err
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 物流状态.查看数据结构 Shipping 中的status字段.
 func (r *TaobaoLogisticsOrdersGetAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -106,12 +106,12 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetStatus(_status string) error {
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is SellerConfirm Setter
+// SetSellerConfirm is SellerConfirm Setter
 // 卖家是否发货.可选值:yes(是),no(否).如:yes
 func (r *TaobaoLogisticsOrdersGetAPIRequest) SetSellerConfirm(_sellerConfirm string) error {
 	r._sellerConfirm = _sellerConfirm
@@ -119,12 +119,12 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetSellerConfirm(_sellerConfirm str
 	return nil
 }
 
-// Get SellerConfirm Getter
+// GetSellerConfirm SellerConfirm Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetSellerConfirm() string {
 	return r._sellerConfirm
 }
 
-// Set is ReceiverName Setter
+// SetReceiverName is ReceiverName Setter
 // 收货人姓名
 func (r *TaobaoLogisticsOrdersGetAPIRequest) SetReceiverName(_receiverName string) error {
 	r._receiverName = _receiverName
@@ -132,12 +132,12 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetReceiverName(_receiverName strin
 	return nil
 }
 
-// Get ReceiverName Getter
+// GetReceiverName ReceiverName Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetReceiverName() string {
 	return r._receiverName
 }
 
-// Set is StartCreated Setter
+// SetStartCreated is StartCreated Setter
 // 创建时间开始
 func (r *TaobaoLogisticsOrdersGetAPIRequest) SetStartCreated(_startCreated string) error {
 	r._startCreated = _startCreated
@@ -145,12 +145,12 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetStartCreated(_startCreated strin
 	return nil
 }
 
-// Get StartCreated Getter
+// GetStartCreated StartCreated Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetStartCreated() string {
 	return r._startCreated
 }
 
-// Set is EndCreated Setter
+// SetEndCreated is EndCreated Setter
 // 创建时间结束
 func (r *TaobaoLogisticsOrdersGetAPIRequest) SetEndCreated(_endCreated string) error {
 	r._endCreated = _endCreated
@@ -158,12 +158,12 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetEndCreated(_endCreated string) e
 	return nil
 }
 
-// Get EndCreated Getter
+// GetEndCreated EndCreated Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetEndCreated() string {
 	return r._endCreated
 }
 
-// Set is FreightPayer Setter
+// SetFreightPayer is FreightPayer Setter
 // 谁承担运费.可选值:buyer(买家),seller(卖家).如:buyer
 func (r *TaobaoLogisticsOrdersGetAPIRequest) SetFreightPayer(_freightPayer string) error {
 	r._freightPayer = _freightPayer
@@ -171,12 +171,12 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetFreightPayer(_freightPayer strin
 	return nil
 }
 
-// Get FreightPayer Getter
+// GetFreightPayer FreightPayer Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetFreightPayer() string {
 	return r._freightPayer
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 物流方式.可选值:post(平邮),express(快递),ems(EMS).如:post
 func (r *TaobaoLogisticsOrdersGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -184,12 +184,12 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码.该字段没传 或 值<1 ,则默认page_no为1
 func (r *TaobaoLogisticsOrdersGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -197,12 +197,12 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数.该字段没传 或 值<1 ,则默认page_size为40
 func (r *TaobaoLogisticsOrdersGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -210,7 +210,7 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

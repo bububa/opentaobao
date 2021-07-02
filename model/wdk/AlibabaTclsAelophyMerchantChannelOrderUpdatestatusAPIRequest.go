@@ -37,7 +37,7 @@ func (r AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest) GetApiPara
 	return params
 }
 
-// Set is OrderStatusInfo Setter
+// SetOrderStatusInfo is OrderStatusInfo Setter
 // 修改信息
 func (r *AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest) SetOrderStatusInfo(_orderStatusInfo *OrderStatusInfo) error {
 	r._orderStatusInfo = _orderStatusInfo
@@ -45,7 +45,7 @@ func (r *AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest) SetOrderS
 	return nil
 }
 
-// Get OrderStatusInfo Getter
+// GetOrderStatusInfo OrderStatusInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIRequest) GetOrderStatusInfo() *OrderStatusInfo {
 	return r._orderStatusInfo
 }

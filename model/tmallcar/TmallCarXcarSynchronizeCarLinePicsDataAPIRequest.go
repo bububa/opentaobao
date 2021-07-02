@@ -37,7 +37,7 @@ func (r TmallCarXcarSynchronizeCarLinePicsDataAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ParamXCarSysLinePicsDTO Setter
+// SetParamXCarSysLinePicsDTO is ParamXCarSysLinePicsDTO Setter
 // 入参对象
 func (r *TmallCarXcarSynchronizeCarLinePicsDataAPIRequest) SetParamXCarSysLinePicsDTO(_paramXCarSysLinePicsDTO *XCarSysLinePicsDto) error {
 	r._paramXCarSysLinePicsDTO = _paramXCarSysLinePicsDTO
@@ -45,7 +45,7 @@ func (r *TmallCarXcarSynchronizeCarLinePicsDataAPIRequest) SetParamXCarSysLinePi
 	return nil
 }
 
-// Get ParamXCarSysLinePicsDTO Getter
+// GetParamXCarSysLinePicsDTO ParamXCarSysLinePicsDTO Getter
 func (r TmallCarXcarSynchronizeCarLinePicsDataAPIRequest) GetParamXCarSysLinePicsDTO() *XCarSysLinePicsDto {
 	return r._paramXCarSysLinePicsDTO
 }

@@ -45,7 +45,7 @@ func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderStatus Setter
+// SetOrderStatus is OrderStatus Setter
 // 订单状态；ALL（全部），WAIT_PAY（代付款），WAIT_CONSUME（代消费）
 func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetOrderStatus(_orderStatus string) error {
 	r._orderStatus = _orderStatus
@@ -53,12 +53,12 @@ func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetOrderStatus(_orderStatus s
 	return nil
 }
 
-// Get OrderStatus Getter
+// GetOrderStatus OrderStatus Getter
 func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetOrderStatus() string {
 	return r._orderStatus
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页大小
 func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -66,12 +66,12 @@ func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetPageSize(_pageSize int64) 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 起始页
 func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -79,12 +79,12 @@ func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetPageNo(_pageNo int64) erro
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is DataSetId Setter
+// SetDataSetId is DataSetId Setter
 // 数据集Id
 func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetDataSetId(_dataSetId string) error {
 	r._dataSetId = _dataSetId
@@ -92,12 +92,12 @@ func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetDataSetId(_dataSetId strin
 	return nil
 }
 
-// Get DataSetId Getter
+// GetDataSetId DataSetId Getter
 func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetDataSetId() string {
 	return r._dataSetId
 }
 
-// Set is OpenId Setter
+// SetOpenId is OpenId Setter
 // 用户openId
 func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetOpenId(_openId string) error {
 	r._openId = _openId
@@ -105,7 +105,7 @@ func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetOpenId(_openId string) err
 	return nil
 }
 
-// Get OpenId Getter
+// GetOpenId OpenId Getter
 func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetOpenId() string {
 	return r._openId
 }

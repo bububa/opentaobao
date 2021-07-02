@@ -37,7 +37,7 @@ func (r AlibabaMemberCheckmerchantAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpenMerchantId Setter
+// SetOpenMerchantId is OpenMerchantId Setter
 // 混淆后的商家id
 func (r *AlibabaMemberCheckmerchantAPIRequest) SetOpenMerchantId(_openMerchantId string) error {
 	r._openMerchantId = _openMerchantId
@@ -45,7 +45,7 @@ func (r *AlibabaMemberCheckmerchantAPIRequest) SetOpenMerchantId(_openMerchantId
 	return nil
 }
 
-// Get OpenMerchantId Getter
+// GetOpenMerchantId OpenMerchantId Getter
 func (r AlibabaMemberCheckmerchantAPIRequest) GetOpenMerchantId() string {
 	return r._openMerchantId
 }

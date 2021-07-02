@@ -37,7 +37,7 @@ func (r AlibabaAlihealthBookingReserveRiseAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is RiseRequest Setter
+// SetRiseRequest is RiseRequest Setter
 // 参数
 func (r *AlibabaAlihealthBookingReserveRiseAPIRequest) SetRiseRequest(_riseRequest *IsvRiseReserveRequest) error {
 	r._riseRequest = _riseRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthBookingReserveRiseAPIRequest) SetRiseRequest(_riseReque
 	return nil
 }
 
-// Get RiseRequest Getter
+// GetRiseRequest RiseRequest Getter
 func (r AlibabaAlihealthBookingReserveRiseAPIRequest) GetRiseRequest() *IsvRiseReserveRequest {
 	return r._riseRequest
 }

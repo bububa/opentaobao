@@ -42,7 +42,7 @@ func (r TaobaoUmpShoutaotagAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TaobaoUmpShoutaotagAddAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -50,12 +50,12 @@ func (r *TaobaoUmpShoutaotagAddAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoUmpShoutaotagAddAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is BuyerId Setter
+// SetBuyerId is BuyerId Setter
 // 买家ID
 func (r *TaobaoUmpShoutaotagAddAPIRequest) SetBuyerId(_buyerId int64) error {
 	r._buyerId = _buyerId
@@ -63,12 +63,12 @@ func (r *TaobaoUmpShoutaotagAddAPIRequest) SetBuyerId(_buyerId int64) error {
 	return nil
 }
 
-// Get BuyerId Getter
+// GetBuyerId BuyerId Getter
 func (r TaobaoUmpShoutaotagAddAPIRequest) GetBuyerId() int64 {
 	return r._buyerId
 }
 
-// Set is ChannelKey Setter
+// SetChannelKey is ChannelKey Setter
 // 渠道KEY
 func (r *TaobaoUmpShoutaotagAddAPIRequest) SetChannelKey(_channelKey string) error {
 	r._channelKey = _channelKey
@@ -76,7 +76,7 @@ func (r *TaobaoUmpShoutaotagAddAPIRequest) SetChannelKey(_channelKey string) err
 	return nil
 }
 
-// Get ChannelKey Getter
+// GetChannelKey ChannelKey Getter
 func (r TaobaoUmpShoutaotagAddAPIRequest) GetChannelKey() string {
 	return r._channelKey
 }

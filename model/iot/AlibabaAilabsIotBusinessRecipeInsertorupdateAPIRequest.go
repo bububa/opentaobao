@@ -37,7 +37,7 @@ func (r AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is ParamBusinessRecipeOpenParam Setter
+// SetParamBusinessRecipeOpenParam is ParamBusinessRecipeOpenParam Setter
 // 行业食谱开放参数
 func (r *AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest) SetParamBusinessRecipeOpenParam(_paramBusinessRecipeOpenParam *BusinessRecipeOpenParam) error {
 	r._paramBusinessRecipeOpenParam = _paramBusinessRecipeOpenParam
@@ -45,7 +45,7 @@ func (r *AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest) SetParamBusines
 	return nil
 }
 
-// Get ParamBusinessRecipeOpenParam Getter
+// GetParamBusinessRecipeOpenParam ParamBusinessRecipeOpenParam Getter
 func (r AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest) GetParamBusinessRecipeOpenParam() *BusinessRecipeOpenParam {
 	return r._paramBusinessRecipeOpenParam
 }

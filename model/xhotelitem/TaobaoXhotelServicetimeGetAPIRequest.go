@@ -37,7 +37,7 @@ func (r TaobaoXhotelServicetimeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Hid Setter
+// SetHid is Hid Setter
 // 酒店id
 func (r *TaobaoXhotelServicetimeGetAPIRequest) SetHid(_hid int64) error {
 	r._hid = _hid
@@ -45,7 +45,7 @@ func (r *TaobaoXhotelServicetimeGetAPIRequest) SetHid(_hid int64) error {
 	return nil
 }
 
-// Get Hid Getter
+// GetHid Hid Getter
 func (r TaobaoXhotelServicetimeGetAPIRequest) GetHid() int64 {
 	return r._hid
 }

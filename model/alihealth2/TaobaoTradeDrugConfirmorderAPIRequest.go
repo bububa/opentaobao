@@ -43,7 +43,7 @@ func (r TaobaoTradeDrugConfirmorderAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeliveryId Setter
+// SetDeliveryId is DeliveryId Setter
 // 代送宝 代送商ID
 func (r *TaobaoTradeDrugConfirmorderAPIRequest) SetDeliveryId(_deliveryId int64) error {
 	r._deliveryId = _deliveryId
@@ -51,12 +51,12 @@ func (r *TaobaoTradeDrugConfirmorderAPIRequest) SetDeliveryId(_deliveryId int64)
 	return nil
 }
 
-// Get DeliveryId Getter
+// GetDeliveryId DeliveryId Getter
 func (r TaobaoTradeDrugConfirmorderAPIRequest) GetDeliveryId() int64 {
 	return r._deliveryId
 }
 
-// Set is ConfirmType Setter
+// SetConfirmType is ConfirmType Setter
 // public static int NORMAL_TYPE=0; 普通发货 默认 public static int DD_DAI_SONG=2; 代送宝	public static int DD_SONG_TYPE_V2=3; 点点送发货
 func (r *TaobaoTradeDrugConfirmorderAPIRequest) SetConfirmType(_confirmType int64) error {
 	r._confirmType = _confirmType
@@ -64,12 +64,12 @@ func (r *TaobaoTradeDrugConfirmorderAPIRequest) SetConfirmType(_confirmType int6
 	return nil
 }
 
-// Get ConfirmType Getter
+// GetConfirmType ConfirmType Getter
 func (r TaobaoTradeDrugConfirmorderAPIRequest) GetConfirmType() int64 {
 	return r._confirmType
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单ID
 func (r *TaobaoTradeDrugConfirmorderAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -77,12 +77,12 @@ func (r *TaobaoTradeDrugConfirmorderAPIRequest) SetOrderId(_orderId int64) error
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoTradeDrugConfirmorderAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is SubUserNick Setter
+// SetSubUserNick is SubUserNick Setter
 // 子账号nick
 func (r *TaobaoTradeDrugConfirmorderAPIRequest) SetSubUserNick(_subUserNick string) error {
 	r._subUserNick = _subUserNick
@@ -90,7 +90,7 @@ func (r *TaobaoTradeDrugConfirmorderAPIRequest) SetSubUserNick(_subUserNick stri
 	return nil
 }
 
-// Get SubUserNick Getter
+// GetSubUserNick SubUserNick Getter
 func (r TaobaoTradeDrugConfirmorderAPIRequest) GetSubUserNick() string {
 	return r._subUserNick
 }

@@ -45,7 +45,7 @@ func (r TaobaoMiniappTemplateRollbackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Clients Setter
+// SetClients is Clients Setter
 // 要回滚的投放端,目前可投放： taobao,tmall
 func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetClients(_clients []string) error {
 	r._clients = _clients
@@ -53,12 +53,12 @@ func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetClients(_clients []string) 
 	return nil
 }
 
-// Get Clients Getter
+// GetClients Clients Getter
 func (r TaobaoMiniappTemplateRollbackAPIRequest) GetClients() []string {
 	return r._clients
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 小程序app_id
 func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
@@ -66,12 +66,12 @@ func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetAppId(_appId string) error 
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r TaobaoMiniappTemplateRollbackAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// Set is AppVersion Setter
+// SetAppVersion is AppVersion Setter
 // 回到到该app_version
 func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetAppVersion(_appVersion string) error {
 	r._appVersion = _appVersion
@@ -79,12 +79,12 @@ func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetAppVersion(_appVersion stri
 	return nil
 }
 
-// Get AppVersion Getter
+// GetAppVersion AppVersion Getter
 func (r TaobaoMiniappTemplateRollbackAPIRequest) GetAppVersion() string {
 	return r._appVersion
 }
 
-// Set is TemplateId Setter
+// SetTemplateId is TemplateId Setter
 // 实例化小程序对应的模板id
 func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetTemplateId(_templateId string) error {
 	r._templateId = _templateId
@@ -92,12 +92,12 @@ func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetTemplateId(_templateId stri
 	return nil
 }
 
-// Get TemplateId Getter
+// GetTemplateId TemplateId Getter
 func (r TaobaoMiniappTemplateRollbackAPIRequest) GetTemplateId() string {
 	return r._templateId
 }
 
-// Set is TemplateVersion Setter
+// SetTemplateVersion is TemplateVersion Setter
 // 与app_version对应的模板版本
 func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetTemplateVersion(_templateVersion string) error {
 	r._templateVersion = _templateVersion
@@ -105,7 +105,7 @@ func (r *TaobaoMiniappTemplateRollbackAPIRequest) SetTemplateVersion(_templateVe
 	return nil
 }
 
-// Get TemplateVersion Getter
+// GetTemplateVersion TemplateVersion Getter
 func (r TaobaoMiniappTemplateRollbackAPIRequest) GetTemplateVersion() string {
 	return r._templateVersion
 }

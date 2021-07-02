@@ -39,7 +39,7 @@ func (r AlibabaCampusSpaceGetbyidsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Context Setter
+// SetContext is Context Setter
 // 上下文
 func (r *AlibabaCampusSpaceGetbyidsAPIRequest) SetContext(_context *WorkBenchContext) error {
 	r._context = _context
@@ -47,12 +47,12 @@ func (r *AlibabaCampusSpaceGetbyidsAPIRequest) SetContext(_context *WorkBenchCon
 	return nil
 }
 
-// Get Context Getter
+// GetContext Context Getter
 func (r AlibabaCampusSpaceGetbyidsAPIRequest) GetContext() *WorkBenchContext {
 	return r._context
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 查询条件
 func (r *AlibabaCampusSpaceGetbyidsAPIRequest) SetQuery(_query *SpaceIdsQuery) error {
 	r._query = _query
@@ -60,7 +60,7 @@ func (r *AlibabaCampusSpaceGetbyidsAPIRequest) SetQuery(_query *SpaceIdsQuery) e
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaCampusSpaceGetbyidsAPIRequest) GetQuery() *SpaceIdsQuery {
 	return r._query
 }

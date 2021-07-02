@@ -63,7 +63,7 @@ func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Flat Setter
+// SetFlat is Flat Setter
 // 出发地纬度
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetFlat(_flat string) error {
 	r._flat = _flat
@@ -71,12 +71,12 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetFlat(_flat string) error {
 	return nil
 }
 
-// Get Flat Getter
+// GetFlat Flat Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetFlat() string {
 	return r._flat
 }
 
-// Set is Flng Setter
+// SetFlng is Flng Setter
 // 出发地经度
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetFlng(_flng string) error {
 	r._flng = _flng
@@ -84,12 +84,12 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetFlng(_flng string) error {
 	return nil
 }
 
-// Get Flng Getter
+// GetFlng Flng Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetFlng() string {
 	return r._flng
 }
 
-// Set is Tlat Setter
+// SetTlat is Tlat Setter
 // 目的地纬度
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetTlat(_tlat string) error {
 	r._tlat = _tlat
@@ -97,12 +97,12 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetTlat(_tlat string) error {
 	return nil
 }
 
-// Get Tlat Getter
+// GetTlat Tlat Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetTlat() string {
 	return r._tlat
 }
 
-// Set is Tlng Setter
+// SetTlng is Tlng Setter
 // 目的地经度
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetTlng(_tlng string) error {
 	r._tlng = _tlng
@@ -110,12 +110,12 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetTlng(_tlng string) error {
 	return nil
 }
 
-// Get Tlng Getter
+// GetTlng Tlng Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetTlng() string {
 	return r._tlng
 }
 
-// Set is MapType Setter
+// SetMapType is MapType Setter
 // 地图类型:amap：高德，默认高德地图
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetMapType(_mapType string) error {
 	r._mapType = _mapType
@@ -123,12 +123,12 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetMapType(_mapType string) err
 	return nil
 }
 
-// Get MapType Getter
+// GetMapType MapType Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetMapType() string {
 	return r._mapType
 }
 
-// Set is City Setter
+// SetCity is City Setter
 // 出发城市id
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetCity(_city string) error {
 	r._city = _city
@@ -136,12 +136,12 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetCity(_city string) error {
 	return nil
 }
 
-// Get City Getter
+// GetCity City Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetCity() string {
 	return r._city
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 0:实时单 1:预约单
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -149,12 +149,12 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is DepartureTime Setter
+// SetDepartureTime is DepartureTime Setter
 // 预约单必须传（格式例如：2015-06-16 12:00:09）
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetDepartureTime(_departureTime string) error {
 	r._departureTime = _departureTime
@@ -162,12 +162,12 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetDepartureTime(_departureTime
 	return nil
 }
 
-// Get DepartureTime Getter
+// GetDepartureTime DepartureTime Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetDepartureTime() string {
 	return r._departureTime
 }
 
-// Set is CostCenter Setter
+// SetCostCenter is CostCenter Setter
 // 成本中心代码，用于区分不同的分账账号
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetCostCenter(_costCenter string) error {
 	r._costCenter = _costCenter
@@ -175,12 +175,12 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetCostCenter(_costCenter strin
 	return nil
 }
 
-// Get CostCenter Getter
+// GetCostCenter CostCenter Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetCostCenter() string {
 	return r._costCenter
 }
 
-// Set is RequireLevel Setter
+// SetRequireLevel is RequireLevel Setter
 // 供应商车型代码
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetRequireLevel(_requireLevel string) error {
 	r._requireLevel = _requireLevel
@@ -188,12 +188,12 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetRequireLevel(_requireLevel s
 	return nil
 }
 
-// Get RequireLevel Getter
+// GetRequireLevel RequireLevel Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetRequireLevel() string {
 	return r._requireLevel
 }
 
-// Set is CarpoolType Setter
+// SetCarpoolType is CarpoolType Setter
 // 0：不拼车 1:允许拼车，默认不拼车
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetCarpoolType(_carpoolType int64) error {
 	r._carpoolType = _carpoolType
@@ -201,12 +201,12 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetCarpoolType(_carpoolType int
 	return nil
 }
 
-// Get CarpoolType Getter
+// GetCarpoolType CarpoolType Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetCarpoolType() int64 {
 	return r._carpoolType
 }
 
-// Set is PassengerNumber Setter
+// SetPassengerNumber is PassengerNumber Setter
 // 乘车人数
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetPassengerNumber(_passengerNumber int64) error {
 	r._passengerNumber = _passengerNumber
@@ -214,12 +214,12 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetPassengerNumber(_passengerNu
 	return nil
 }
 
-// Get PassengerNumber Getter
+// GetPassengerNumber PassengerNumber Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetPassengerNumber() int64 {
 	return r._passengerNumber
 }
 
-// Set is Uid Setter
+// SetUid is Uid Setter
 // 用户唯一标识
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetUid(_uid string) error {
 	r._uid = _uid
@@ -227,12 +227,12 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetUid(_uid string) error {
 	return nil
 }
 
-// Get Uid Getter
+// GetUid Uid Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetUid() string {
 	return r._uid
 }
 
-// Set is PassengerPhone Setter
+// SetPassengerPhone is PassengerPhone Setter
 // 乘客手机号
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetPassengerPhone(_passengerPhone string) error {
 	r._passengerPhone = _passengerPhone
@@ -240,7 +240,7 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetPassengerPhone(_passengerPho
 	return nil
 }
 
-// Get PassengerPhone Getter
+// GetPassengerPhone PassengerPhone Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetPassengerPhone() string {
 	return r._passengerPhone
 }

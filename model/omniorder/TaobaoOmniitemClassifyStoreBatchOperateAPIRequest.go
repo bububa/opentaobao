@@ -43,7 +43,7 @@ func (r TaobaoOmniitemClassifyStoreBatchOperateAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is StoreIds Setter
+// SetStoreIds is StoreIds Setter
 // 商家门店ID
 func (r *TaobaoOmniitemClassifyStoreBatchOperateAPIRequest) SetStoreIds(_storeIds []int64) error {
 	r._storeIds = _storeIds
@@ -51,12 +51,12 @@ func (r *TaobaoOmniitemClassifyStoreBatchOperateAPIRequest) SetStoreIds(_storeId
 	return nil
 }
 
-// Get StoreIds Getter
+// GetStoreIds StoreIds Getter
 func (r TaobaoOmniitemClassifyStoreBatchOperateAPIRequest) GetStoreIds() []int64 {
 	return r._storeIds
 }
 
-// Set is AddCategoryIds Setter
+// SetAddCategoryIds is AddCategoryIds Setter
 // 需要添加的分类ID
 func (r *TaobaoOmniitemClassifyStoreBatchOperateAPIRequest) SetAddCategoryIds(_addCategoryIds []int64) error {
 	r._addCategoryIds = _addCategoryIds
@@ -64,12 +64,12 @@ func (r *TaobaoOmniitemClassifyStoreBatchOperateAPIRequest) SetAddCategoryIds(_a
 	return nil
 }
 
-// Get AddCategoryIds Getter
+// GetAddCategoryIds AddCategoryIds Getter
 func (r TaobaoOmniitemClassifyStoreBatchOperateAPIRequest) GetAddCategoryIds() []int64 {
 	return r._addCategoryIds
 }
 
-// Set is RemoveCategoryIds Setter
+// SetRemoveCategoryIds is RemoveCategoryIds Setter
 // 需要删除的分类ID
 func (r *TaobaoOmniitemClassifyStoreBatchOperateAPIRequest) SetRemoveCategoryIds(_removeCategoryIds []int64) error {
 	r._removeCategoryIds = _removeCategoryIds
@@ -77,12 +77,12 @@ func (r *TaobaoOmniitemClassifyStoreBatchOperateAPIRequest) SetRemoveCategoryIds
 	return nil
 }
 
-// Get RemoveCategoryIds Getter
+// GetRemoveCategoryIds RemoveCategoryIds Getter
 func (r TaobaoOmniitemClassifyStoreBatchOperateAPIRequest) GetRemoveCategoryIds() []int64 {
 	return r._removeCategoryIds
 }
 
-// Set is Operator Setter
+// SetOperator is Operator Setter
 // 操作信息（暂时不填）
 func (r *TaobaoOmniitemClassifyStoreBatchOperateAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
@@ -90,7 +90,7 @@ func (r *TaobaoOmniitemClassifyStoreBatchOperateAPIRequest) SetOperator(_operato
 	return nil
 }
 
-// Get Operator Getter
+// GetOperator Operator Getter
 func (r TaobaoOmniitemClassifyStoreBatchOperateAPIRequest) GetOperator() string {
 	return r._operator
 }

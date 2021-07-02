@@ -37,7 +37,7 @@ func (r TaobaoOcOrderApUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OcOrderId Setter
+// SetOcOrderId is OcOrderId Setter
 // 调用创建OC订单接口生成的id
 func (r *TaobaoOcOrderApUpdateAPIRequest) SetOcOrderId(_ocOrderId int64) error {
 	r._ocOrderId = _ocOrderId
@@ -45,7 +45,7 @@ func (r *TaobaoOcOrderApUpdateAPIRequest) SetOcOrderId(_ocOrderId int64) error {
 	return nil
 }
 
-// Get OcOrderId Getter
+// GetOcOrderId OcOrderId Getter
 func (r TaobaoOcOrderApUpdateAPIRequest) GetOcOrderId() int64 {
 	return r._ocOrderId
 }

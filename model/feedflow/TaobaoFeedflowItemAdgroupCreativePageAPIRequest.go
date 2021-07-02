@@ -37,7 +37,7 @@ func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is CreativeBindQuery Setter
+// SetCreativeBindQuery is CreativeBindQuery Setter
 // 绑定查询条件
 func (r *TaobaoFeedflowItemAdgroupCreativePageAPIRequest) SetCreativeBindQuery(_creativeBindQuery *CreativeBindQueryDto) error {
 	r._creativeBindQuery = _creativeBindQuery
@@ -45,7 +45,7 @@ func (r *TaobaoFeedflowItemAdgroupCreativePageAPIRequest) SetCreativeBindQuery(_
 	return nil
 }
 
-// Get CreativeBindQuery Getter
+// GetCreativeBindQuery CreativeBindQuery Getter
 func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetCreativeBindQuery() *CreativeBindQueryDto {
 	return r._creativeBindQuery
 }

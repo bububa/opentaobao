@@ -45,7 +45,7 @@ func (r AlitripMerchantGalaxyOrderBookAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TenantKey Setter
+// SetTenantKey is TenantKey Setter
 // 租户身份信息
 func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
@@ -53,12 +53,12 @@ func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetTenantKey(_tenantKey strin
 	return nil
 }
 
-// Get TenantKey Getter
+// GetTenantKey TenantKey Getter
 func (r AlitripMerchantGalaxyOrderBookAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 用户登录token
 func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -66,12 +66,12 @@ func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetToken(_token string) error
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlitripMerchantGalaxyOrderBookAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is OrderParam Setter
+// SetOrderParam is OrderParam Setter
 // 预订参数
 func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetOrderParam(_orderParam *CreateOrderParam) error {
 	r._orderParam = _orderParam
@@ -79,12 +79,12 @@ func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetOrderParam(_orderParam *Cr
 	return nil
 }
 
-// Get OrderParam Getter
+// GetOrderParam OrderParam Getter
 func (r AlitripMerchantGalaxyOrderBookAPIRequest) GetOrderParam() *CreateOrderParam {
 	return r._orderParam
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // 订单编号
 func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -92,12 +92,12 @@ func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetOrderCode(_orderCode strin
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r AlitripMerchantGalaxyOrderBookAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// Set is SourceQuery Setter
+// SetSourceQuery is SourceQuery Setter
 // 广告追踪信息
 func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetSourceQuery(_sourceQuery string) error {
 	r._sourceQuery = _sourceQuery
@@ -105,7 +105,7 @@ func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetSourceQuery(_sourceQuery s
 	return nil
 }
 
-// Get SourceQuery Getter
+// GetSourceQuery SourceQuery Getter
 func (r AlitripMerchantGalaxyOrderBookAPIRequest) GetSourceQuery() string {
 	return r._sourceQuery
 }

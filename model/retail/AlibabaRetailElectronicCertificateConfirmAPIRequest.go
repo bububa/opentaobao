@@ -41,7 +41,7 @@ func (r AlibabaRetailElectronicCertificateConfirmAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 核销码
 func (r *AlibabaRetailElectronicCertificateConfirmAPIRequest) SetCode(_code int64) error {
 	r._code = _code
@@ -49,12 +49,12 @@ func (r *AlibabaRetailElectronicCertificateConfirmAPIRequest) SetCode(_code int6
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaRetailElectronicCertificateConfirmAPIRequest) GetCode() int64 {
 	return r._code
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *AlibabaRetailElectronicCertificateConfirmAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -62,12 +62,12 @@ func (r *AlibabaRetailElectronicCertificateConfirmAPIRequest) SetItemId(_itemId 
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlibabaRetailElectronicCertificateConfirmAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备ID
 func (r *AlibabaRetailElectronicCertificateConfirmAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -75,7 +75,7 @@ func (r *AlibabaRetailElectronicCertificateConfirmAPIRequest) SetDeviceId(_devic
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r AlibabaRetailElectronicCertificateConfirmAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }

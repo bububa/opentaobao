@@ -37,7 +37,7 @@ func (r AlibabaDamaiMaitixProjectDistributionDetailQueryAPIRequest) GetApiParams
 	return params
 }
 
-// Set is ProjectId Setter
+// SetProjectId is ProjectId Setter
 // 项目ID，前提已授权
 func (r *AlibabaDamaiMaitixProjectDistributionDetailQueryAPIRequest) SetProjectId(_projectId int64) error {
 	r._projectId = _projectId
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMaitixProjectDistributionDetailQueryAPIRequest) SetProjectI
 	return nil
 }
 
-// Get ProjectId Getter
+// GetProjectId ProjectId Getter
 func (r AlibabaDamaiMaitixProjectDistributionDetailQueryAPIRequest) GetProjectId() int64 {
 	return r._projectId
 }

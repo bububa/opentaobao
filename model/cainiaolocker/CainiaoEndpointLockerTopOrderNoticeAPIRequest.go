@@ -43,7 +43,7 @@ func (r CainiaoEndpointLockerTopOrderNoticeAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // 合作公司唯一订单编号
 func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -51,12 +51,12 @@ func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) SetOrderCode(_orderCode 
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r CainiaoEndpointLockerTopOrderNoticeAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// Set is StationId Setter
+// SetStationId is StationId Setter
 // 站点ID
 func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) SetStationId(_stationId string) error {
 	r._stationId = _stationId
@@ -64,12 +64,12 @@ func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) SetStationId(_stationId 
 	return nil
 }
 
-// Get StationId Getter
+// GetStationId StationId Getter
 func (r CainiaoEndpointLockerTopOrderNoticeAPIRequest) GetStationId() string {
 	return r._stationId
 }
 
-// Set is MailNo Setter
+// SetMailNo is MailNo Setter
 // 运单号
 func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) SetMailNo(_mailNo string) error {
 	r._mailNo = _mailNo
@@ -77,12 +77,12 @@ func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) SetMailNo(_mailNo string
 	return nil
 }
 
-// Get MailNo Getter
+// GetMailNo MailNo Getter
 func (r CainiaoEndpointLockerTopOrderNoticeAPIRequest) GetMailNo() string {
 	return r._mailNo
 }
 
-// Set is SceneCode Setter
+// SetSceneCode is SceneCode Setter
 // 场景编号：0：重发短信，1：催取短信
 func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) SetSceneCode(_sceneCode int64) error {
 	r._sceneCode = _sceneCode
@@ -90,7 +90,7 @@ func (r *CainiaoEndpointLockerTopOrderNoticeAPIRequest) SetSceneCode(_sceneCode 
 	return nil
 }
 
-// Get SceneCode Getter
+// GetSceneCode SceneCode Getter
 func (r CainiaoEndpointLockerTopOrderNoticeAPIRequest) GetSceneCode() int64 {
 	return r._sceneCode
 }

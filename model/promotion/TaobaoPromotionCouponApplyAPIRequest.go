@@ -39,7 +39,7 @@ func (r TaobaoPromotionCouponApplyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 卖家id
 func (r *TaobaoPromotionCouponApplyAPIRequest) SetSellerId(_sellerId string) error {
 	r._sellerId = _sellerId
@@ -47,12 +47,12 @@ func (r *TaobaoPromotionCouponApplyAPIRequest) SetSellerId(_sellerId string) err
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r TaobaoPromotionCouponApplyAPIRequest) GetSellerId() string {
 	return r._sellerId
 }
 
-// Set is SpreadId Setter
+// SetSpreadId is SpreadId Setter
 // 传播id
 func (r *TaobaoPromotionCouponApplyAPIRequest) SetSpreadId(_spreadId string) error {
 	r._spreadId = _spreadId
@@ -60,7 +60,7 @@ func (r *TaobaoPromotionCouponApplyAPIRequest) SetSpreadId(_spreadId string) err
 	return nil
 }
 
-// Get SpreadId Getter
+// GetSpreadId SpreadId Getter
 func (r TaobaoPromotionCouponApplyAPIRequest) GetSpreadId() string {
 	return r._spreadId
 }

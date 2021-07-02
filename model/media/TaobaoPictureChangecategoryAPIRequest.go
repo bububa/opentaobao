@@ -39,7 +39,7 @@ func (r TaobaoPictureChangecategoryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PictureIds Setter
+// SetPictureIds is PictureIds Setter
 // 要移动的图片的id
 func (r *TaobaoPictureChangecategoryAPIRequest) SetPictureIds(_pictureIds []int64) error {
 	r._pictureIds = _pictureIds
@@ -47,12 +47,12 @@ func (r *TaobaoPictureChangecategoryAPIRequest) SetPictureIds(_pictureIds []int6
 	return nil
 }
 
-// Get PictureIds Getter
+// GetPictureIds PictureIds Getter
 func (r TaobaoPictureChangecategoryAPIRequest) GetPictureIds() []int64 {
 	return r._pictureIds
 }
 
-// Set is PictureCategoryId Setter
+// SetPictureCategoryId is PictureCategoryId Setter
 // 目标分类的id
 func (r *TaobaoPictureChangecategoryAPIRequest) SetPictureCategoryId(_pictureCategoryId int64) error {
 	r._pictureCategoryId = _pictureCategoryId
@@ -60,7 +60,7 @@ func (r *TaobaoPictureChangecategoryAPIRequest) SetPictureCategoryId(_pictureCat
 	return nil
 }
 
-// Get PictureCategoryId Getter
+// GetPictureCategoryId PictureCategoryId Getter
 func (r TaobaoPictureChangecategoryAPIRequest) GetPictureCategoryId() int64 {
 	return r._pictureCategoryId
 }

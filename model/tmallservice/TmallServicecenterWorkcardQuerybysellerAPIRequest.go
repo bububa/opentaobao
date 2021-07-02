@@ -51,7 +51,7 @@ func (r TmallServicecenterWorkcardQuerybysellerAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ServiceStoreId Setter
+// SetServiceStoreId is ServiceStoreId Setter
 // 门店/网点id
 func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetServiceStoreId(_serviceStoreId int64) error {
 	r._serviceStoreId = _serviceStoreId
@@ -59,12 +59,12 @@ func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetServiceStoreId(_s
 	return nil
 }
 
-// Get ServiceStoreId Getter
+// GetServiceStoreId ServiceStoreId Getter
 func (r TmallServicecenterWorkcardQuerybysellerAPIRequest) GetServiceStoreId() int64 {
 	return r._serviceStoreId
 }
 
-// Set is IdentifyCode Setter
+// SetIdentifyCode is IdentifyCode Setter
 // 核销码
 func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetIdentifyCode(_identifyCode string) error {
 	r._identifyCode = _identifyCode
@@ -72,12 +72,12 @@ func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetIdentifyCode(_ide
 	return nil
 }
 
-// Get IdentifyCode Getter
+// GetIdentifyCode IdentifyCode Getter
 func (r TmallServicecenterWorkcardQuerybysellerAPIRequest) GetIdentifyCode() string {
 	return r._identifyCode
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 工单id
 func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -85,12 +85,12 @@ func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetId(_id int64) err
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TmallServicecenterWorkcardQuerybysellerAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is GmtCreateStart Setter
+// SetGmtCreateStart is GmtCreateStart Setter
 // 工单创建开始时间
 func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetGmtCreateStart(_gmtCreateStart string) error {
 	r._gmtCreateStart = _gmtCreateStart
@@ -98,12 +98,12 @@ func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetGmtCreateStart(_g
 	return nil
 }
 
-// Get GmtCreateStart Getter
+// GetGmtCreateStart GmtCreateStart Getter
 func (r TmallServicecenterWorkcardQuerybysellerAPIRequest) GetGmtCreateStart() string {
 	return r._gmtCreateStart
 }
 
-// Set is GmtCreateEnd Setter
+// SetGmtCreateEnd is GmtCreateEnd Setter
 // 工单创建结束时间，必须与工单创建开始时间一起传入，且间隔不超过15分钟
 func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetGmtCreateEnd(_gmtCreateEnd string) error {
 	r._gmtCreateEnd = _gmtCreateEnd
@@ -111,12 +111,12 @@ func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetGmtCreateEnd(_gmt
 	return nil
 }
 
-// Get GmtCreateEnd Getter
+// GetGmtCreateEnd GmtCreateEnd Getter
 func (r TmallServicecenterWorkcardQuerybysellerAPIRequest) GetGmtCreateEnd() string {
 	return r._gmtCreateEnd
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 淘宝交易订单号。主订单或子订单均可
 func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
@@ -124,12 +124,12 @@ func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetBizOrderId(_bizOr
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r TmallServicecenterWorkcardQuerybysellerAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前页数
 func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -137,12 +137,12 @@ func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetCurrentPage(_curr
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TmallServicecenterWorkcardQuerybysellerAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页大小
 func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -150,7 +150,7 @@ func (r *TmallServicecenterWorkcardQuerybysellerAPIRequest) SetPageSize(_pageSiz
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TmallServicecenterWorkcardQuerybysellerAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

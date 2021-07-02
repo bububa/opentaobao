@@ -37,7 +37,7 @@ func (r TmallSupplychainChannelProductDownshelfAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品ID
 func (r *TmallSupplychainChannelProductDownshelfAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -45,7 +45,7 @@ func (r *TmallSupplychainChannelProductDownshelfAPIRequest) SetProductId(_produc
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TmallSupplychainChannelProductDownshelfAPIRequest) GetProductId() int64 {
 	return r._productId
 }

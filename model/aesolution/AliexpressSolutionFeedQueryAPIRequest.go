@@ -37,7 +37,7 @@ func (r AliexpressSolutionFeedQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is JobId Setter
+// SetJobId is JobId Setter
 // job id
 func (r *AliexpressSolutionFeedQueryAPIRequest) SetJobId(_jobId int64) error {
 	r._jobId = _jobId
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionFeedQueryAPIRequest) SetJobId(_jobId int64) error {
 	return nil
 }
 
-// Get JobId Getter
+// GetJobId JobId Getter
 func (r AliexpressSolutionFeedQueryAPIRequest) GetJobId() int64 {
 	return r._jobId
 }

@@ -57,7 +57,7 @@ func (r AlibabaServiceSettlementQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GmtCreateStart Setter
+// SetGmtCreateStart is GmtCreateStart Setter
 // 账单查询开始时间。格式示例 2019-03-26 17:15:28
 func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtCreateStart(_gmtCreateStart string) error {
 	r._gmtCreateStart = _gmtCreateStart
@@ -65,12 +65,12 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtCreateStart(_gmtCreateSt
 	return nil
 }
 
-// Get GmtCreateStart Getter
+// GetGmtCreateStart GmtCreateStart Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetGmtCreateStart() string {
 	return r._gmtCreateStart
 }
 
-// Set is GmtCreateEnd Setter
+// SetGmtCreateEnd is GmtCreateEnd Setter
 // 账单查询结束时间，时间区间限制未15分钟。 格式示例 2019-03-26 17:15:28
 func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtCreateEnd(_gmtCreateEnd string) error {
 	r._gmtCreateEnd = _gmtCreateEnd
@@ -78,12 +78,12 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtCreateEnd(_gmtCreateEnd 
 	return nil
 }
 
-// Get GmtCreateEnd Getter
+// GetGmtCreateEnd GmtCreateEnd Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetGmtCreateEnd() string {
 	return r._gmtCreateEnd
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前页面，开始值为1
 func (r *AlibabaServiceSettlementQueryAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -91,12 +91,12 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetCurrentPage(_currentPage in
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页面展示条数大小
 func (r *AlibabaServiceSettlementQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -104,12 +104,12 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetPageSize(_pageSize int64) e
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 工单ID
 func (r *AlibabaServiceSettlementQueryAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -117,12 +117,12 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetWorkcardId(_workcardId int6
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }
 
-// Set is ParentTradeOrderId Setter
+// SetParentTradeOrderId is ParentTradeOrderId Setter
 // 交易主订单号码
 func (r *AlibabaServiceSettlementQueryAPIRequest) SetParentTradeOrderId(_parentTradeOrderId int64) error {
 	r._parentTradeOrderId = _parentTradeOrderId
@@ -130,12 +130,12 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetParentTradeOrderId(_parentT
 	return nil
 }
 
-// Get ParentTradeOrderId Getter
+// GetParentTradeOrderId ParentTradeOrderId Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetParentTradeOrderId() int64 {
 	return r._parentTradeOrderId
 }
 
-// Set is ServiceOrderId Setter
+// SetServiceOrderId is ServiceOrderId Setter
 // 服务单号
 func (r *AlibabaServiceSettlementQueryAPIRequest) SetServiceOrderId(_serviceOrderId int64) error {
 	r._serviceOrderId = _serviceOrderId
@@ -143,12 +143,12 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetServiceOrderId(_serviceOrde
 	return nil
 }
 
-// Get ServiceOrderId Getter
+// GetServiceOrderId ServiceOrderId Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetServiceOrderId() int64 {
 	return r._serviceOrderId
 }
 
-// Set is MasterTradeOrderId Setter
+// SetMasterTradeOrderId is MasterTradeOrderId Setter
 // 交易实物订单号
 func (r *AlibabaServiceSettlementQueryAPIRequest) SetMasterTradeOrderId(_masterTradeOrderId int64) error {
 	r._masterTradeOrderId = _masterTradeOrderId
@@ -156,12 +156,12 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetMasterTradeOrderId(_masterT
 	return nil
 }
 
-// Get MasterTradeOrderId Getter
+// GetMasterTradeOrderId MasterTradeOrderId Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetMasterTradeOrderId() int64 {
 	return r._masterTradeOrderId
 }
 
-// Set is ServiceTradeOrderId Setter
+// SetServiceTradeOrderId is ServiceTradeOrderId Setter
 // 交易服务订单号
 func (r *AlibabaServiceSettlementQueryAPIRequest) SetServiceTradeOrderId(_serviceTradeOrderId int64) error {
 	r._serviceTradeOrderId = _serviceTradeOrderId
@@ -169,12 +169,12 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetServiceTradeOrderId(_servic
 	return nil
 }
 
-// Get ServiceTradeOrderId Getter
+// GetServiceTradeOrderId ServiceTradeOrderId Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetServiceTradeOrderId() int64 {
 	return r._serviceTradeOrderId
 }
 
-// Set is GmtModifiedEnd Setter
+// SetGmtModifiedEnd is GmtModifiedEnd Setter
 // 账单修改开始时间。
 func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtModifiedEnd(_gmtModifiedEnd string) error {
 	r._gmtModifiedEnd = _gmtModifiedEnd
@@ -182,12 +182,12 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtModifiedEnd(_gmtModified
 	return nil
 }
 
-// Get GmtModifiedEnd Getter
+// GetGmtModifiedEnd GmtModifiedEnd Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetGmtModifiedEnd() string {
 	return r._gmtModifiedEnd
 }
 
-// Set is GmtModifiedStart Setter
+// SetGmtModifiedStart is GmtModifiedStart Setter
 // 账单修改结束时间，时间区间限制未15分钟。
 func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtModifiedStart(_gmtModifiedStart string) error {
 	r._gmtModifiedStart = _gmtModifiedStart
@@ -195,7 +195,7 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtModifiedStart(_gmtModifi
 	return nil
 }
 
-// Get GmtModifiedStart Getter
+// GetGmtModifiedStart GmtModifiedStart Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetGmtModifiedStart() string {
 	return r._gmtModifiedStart
 }

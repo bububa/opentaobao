@@ -37,7 +37,7 @@ func (r YunosTvpubadminDeviceApksAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照
 func (r *YunosTvpubadminDeviceApksAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminDeviceApksAPIRequest) SetLicense(_license int64) error {
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminDeviceApksAPIRequest) GetLicense() int64 {
 	return r._license
 }

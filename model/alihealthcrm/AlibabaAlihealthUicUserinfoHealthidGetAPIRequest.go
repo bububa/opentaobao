@@ -37,7 +37,7 @@ func (r AlibabaAlihealthUicUserinfoHealthidGetAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is AlipayUserId Setter
+// SetAlipayUserId is AlipayUserId Setter
 // 支付宝用户ID
 func (r *AlibabaAlihealthUicUserinfoHealthidGetAPIRequest) SetAlipayUserId(_alipayUserId string) error {
 	r._alipayUserId = _alipayUserId
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthUicUserinfoHealthidGetAPIRequest) SetAlipayUserId(_alip
 	return nil
 }
 
-// Get AlipayUserId Getter
+// GetAlipayUserId AlipayUserId Getter
 func (r AlibabaAlihealthUicUserinfoHealthidGetAPIRequest) GetAlipayUserId() string {
 	return r._alipayUserId
 }

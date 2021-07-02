@@ -37,7 +37,7 @@ func (r AlibabaLsyCrmUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NrtUpdateRecordStatusDto Setter
+// SetNrtUpdateRecordStatusDto is NrtUpdateRecordStatusDto Setter
 // 更新客资状态对象
 func (r *AlibabaLsyCrmUpdateAPIRequest) SetNrtUpdateRecordStatusDto(_nrtUpdateRecordStatusDto *NrtUpdateRecordStatusDto) error {
 	r._nrtUpdateRecordStatusDto = _nrtUpdateRecordStatusDto
@@ -45,7 +45,7 @@ func (r *AlibabaLsyCrmUpdateAPIRequest) SetNrtUpdateRecordStatusDto(_nrtUpdateRe
 	return nil
 }
 
-// Get NrtUpdateRecordStatusDto Getter
+// GetNrtUpdateRecordStatusDto NrtUpdateRecordStatusDto Getter
 func (r AlibabaLsyCrmUpdateAPIRequest) GetNrtUpdateRecordStatusDto() *NrtUpdateRecordStatusDto {
 	return r._nrtUpdateRecordStatusDto
 }

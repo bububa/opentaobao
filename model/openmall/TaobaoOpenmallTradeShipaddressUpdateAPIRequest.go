@@ -55,7 +55,7 @@ func (r TaobaoOpenmallTradeShipaddressUpdateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Distributor Setter
+// SetDistributor is Distributor Setter
 // 媒体渠道，代表分销者的身份，签约支付宝代扣的渠道商淘宝账号nick
 func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
@@ -63,12 +63,12 @@ func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetDistributor(_distrib
 	return nil
 }
 
-// Get Distributor Getter
+// GetDistributor Distributor Getter
 func (r TaobaoOpenmallTradeShipaddressUpdateAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
-// Set is ReceiverAddress Setter
+// SetReceiverAddress is ReceiverAddress Setter
 // 收货地址。最大长度为228个字节。
 func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverAddress(_receiverAddress string) error {
 	r._receiverAddress = _receiverAddress
@@ -76,12 +76,12 @@ func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverAddress(_rec
 	return nil
 }
 
-// Get ReceiverAddress Getter
+// GetReceiverAddress ReceiverAddress Getter
 func (r TaobaoOpenmallTradeShipaddressUpdateAPIRequest) GetReceiverAddress() string {
 	return r._receiverAddress
 }
 
-// Set is ReceiverCity Setter
+// SetReceiverCity is ReceiverCity Setter
 // 城市。最大长度为32个字节。如：杭州
 func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverCity(_receiverCity string) error {
 	r._receiverCity = _receiverCity
@@ -89,12 +89,12 @@ func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverCity(_receiv
 	return nil
 }
 
-// Get ReceiverCity Getter
+// GetReceiverCity ReceiverCity Getter
 func (r TaobaoOpenmallTradeShipaddressUpdateAPIRequest) GetReceiverCity() string {
 	return r._receiverCity
 }
 
-// Set is ReceiverDistrict Setter
+// SetReceiverDistrict is ReceiverDistrict Setter
 // 区/县。最大长度为32个字节。如：西湖区
 func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverDistrict(_receiverDistrict string) error {
 	r._receiverDistrict = _receiverDistrict
@@ -102,12 +102,12 @@ func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverDistrict(_re
 	return nil
 }
 
-// Get ReceiverDistrict Getter
+// GetReceiverDistrict ReceiverDistrict Getter
 func (r TaobaoOpenmallTradeShipaddressUpdateAPIRequest) GetReceiverDistrict() string {
 	return r._receiverDistrict
 }
 
-// Set is ReceiverMobile Setter
+// SetReceiverMobile is ReceiverMobile Setter
 // 移动电话。最大长度为11个字节。
 func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverMobile(_receiverMobile string) error {
 	r._receiverMobile = _receiverMobile
@@ -115,12 +115,12 @@ func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverMobile(_rece
 	return nil
 }
 
-// Get ReceiverMobile Getter
+// GetReceiverMobile ReceiverMobile Getter
 func (r TaobaoOpenmallTradeShipaddressUpdateAPIRequest) GetReceiverMobile() string {
 	return r._receiverMobile
 }
 
-// Set is ReceiverName Setter
+// SetReceiverName is ReceiverName Setter
 // 收货人全名。最大长度为50个字节。
 func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverName(_receiverName string) error {
 	r._receiverName = _receiverName
@@ -128,12 +128,12 @@ func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverName(_receiv
 	return nil
 }
 
-// Get ReceiverName Getter
+// GetReceiverName ReceiverName Getter
 func (r TaobaoOpenmallTradeShipaddressUpdateAPIRequest) GetReceiverName() string {
 	return r._receiverName
 }
 
-// Set is ReceiverPhone Setter
+// SetReceiverPhone is ReceiverPhone Setter
 // 固定电话。最大长度为30个字节。
 func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverPhone(_receiverPhone string) error {
 	r._receiverPhone = _receiverPhone
@@ -141,12 +141,12 @@ func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverPhone(_recei
 	return nil
 }
 
-// Get ReceiverPhone Getter
+// GetReceiverPhone ReceiverPhone Getter
 func (r TaobaoOpenmallTradeShipaddressUpdateAPIRequest) GetReceiverPhone() string {
 	return r._receiverPhone
 }
 
-// Set is ReceiverState Setter
+// SetReceiverState is ReceiverState Setter
 // 省份。最大长度为32个字节。如：浙江
 func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverState(_receiverState string) error {
 	r._receiverState = _receiverState
@@ -154,12 +154,12 @@ func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverState(_recei
 	return nil
 }
 
-// Get ReceiverState Getter
+// GetReceiverState ReceiverState Getter
 func (r TaobaoOpenmallTradeShipaddressUpdateAPIRequest) GetReceiverState() string {
 	return r._receiverState
 }
 
-// Set is ReceiverZip Setter
+// SetReceiverZip is ReceiverZip Setter
 // 6位数字的邮编
 func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverZip(_receiverZip string) error {
 	r._receiverZip = _receiverZip
@@ -167,12 +167,12 @@ func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetReceiverZip(_receive
 	return nil
 }
 
-// Get ReceiverZip Getter
+// GetReceiverZip ReceiverZip Getter
 func (r TaobaoOpenmallTradeShipaddressUpdateAPIRequest) GetReceiverZip() string {
 	return r._receiverZip
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝订单号
 func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -180,7 +180,7 @@ func (r *TaobaoOpenmallTradeShipaddressUpdateAPIRequest) SetTid(_tid int64) erro
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoOpenmallTradeShipaddressUpdateAPIRequest) GetTid() int64 {
 	return r._tid
 }

@@ -45,7 +45,7 @@ func (r TaobaoUsceslBizLightUpAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *TaobaoUsceslBizLightUpAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -53,12 +53,12 @@ func (r *TaobaoUsceslBizLightUpAPIRequest) SetStoreId(_storeId int64) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoUsceslBizLightUpAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is BizBrandKey Setter
+// SetBizBrandKey is BizBrandKey Setter
 // 商家编号
 func (r *TaobaoUsceslBizLightUpAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
 	r._bizBrandKey = _bizBrandKey
@@ -66,12 +66,12 @@ func (r *TaobaoUsceslBizLightUpAPIRequest) SetBizBrandKey(_bizBrandKey string) e
 	return nil
 }
 
-// Get BizBrandKey Getter
+// GetBizBrandKey BizBrandKey Getter
 func (r TaobaoUsceslBizLightUpAPIRequest) GetBizBrandKey() string {
 	return r._bizBrandKey
 }
 
-// Set is EslBarCode Setter
+// SetEslBarCode is EslBarCode Setter
 // 价签条码
 func (r *TaobaoUsceslBizLightUpAPIRequest) SetEslBarCode(_eslBarCode string) error {
 	r._eslBarCode = _eslBarCode
@@ -79,12 +79,12 @@ func (r *TaobaoUsceslBizLightUpAPIRequest) SetEslBarCode(_eslBarCode string) err
 	return nil
 }
 
-// Get EslBarCode Getter
+// GetEslBarCode EslBarCode Getter
 func (r TaobaoUsceslBizLightUpAPIRequest) GetEslBarCode() string {
 	return r._eslBarCode
 }
 
-// Set is LedColor Setter
+// SetLedColor is LedColor Setter
 // 亮灯颜色，绿：值为2；红：值为4
 func (r *TaobaoUsceslBizLightUpAPIRequest) SetLedColor(_ledColor string) error {
 	r._ledColor = _ledColor
@@ -92,12 +92,12 @@ func (r *TaobaoUsceslBizLightUpAPIRequest) SetLedColor(_ledColor string) error {
 	return nil
 }
 
-// Get LedColor Getter
+// GetLedColor LedColor Getter
 func (r TaobaoUsceslBizLightUpAPIRequest) GetLedColor() string {
 	return r._ledColor
 }
 
-// Set is LightUpTime Setter
+// SetLightUpTime is LightUpTime Setter
 // 亮灯时长，单位：秒，最大长度3600秒
 func (r *TaobaoUsceslBizLightUpAPIRequest) SetLightUpTime(_lightUpTime int64) error {
 	r._lightUpTime = _lightUpTime
@@ -105,7 +105,7 @@ func (r *TaobaoUsceslBizLightUpAPIRequest) SetLightUpTime(_lightUpTime int64) er
 	return nil
 }
 
-// Get LightUpTime Getter
+// GetLightUpTime LightUpTime Getter
 func (r TaobaoUsceslBizLightUpAPIRequest) GetLightUpTime() int64 {
 	return r._lightUpTime
 }

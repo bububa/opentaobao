@@ -37,7 +37,7 @@ func (r TaobaoTmcUserPermitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Topics Setter
+// SetTopics is Topics Setter
 // 消息主题列表，用半角逗号分隔。当用户订阅的topic是应用订阅的子集时才需要设置，不设置表示继承应用所订阅的所有topic，一般情况建议不要设置。
 func (r *TaobaoTmcUserPermitAPIRequest) SetTopics(_topics []string) error {
 	r._topics = _topics
@@ -45,7 +45,7 @@ func (r *TaobaoTmcUserPermitAPIRequest) SetTopics(_topics []string) error {
 	return nil
 }
 
-// Get Topics Getter
+// GetTopics Topics Getter
 func (r TaobaoTmcUserPermitAPIRequest) GetTopics() []string {
 	return r._topics
 }

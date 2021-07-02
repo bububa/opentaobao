@@ -41,7 +41,7 @@ func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划Id
 func (r *TaobaoSimbaCampaignAreaUpdateAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -49,12 +49,12 @@ func (r *TaobaoSimbaCampaignAreaUpdateAPIRequest) SetCampaignId(_campaignId int6
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is Area Setter
+// SetArea is Area Setter
 // 值为：“all”；或者用“,”分割的数字，数字必须是直通车全国省市列表的AreaID；
 func (r *TaobaoSimbaCampaignAreaUpdateAPIRequest) SetArea(_area string) error {
 	r._area = _area
@@ -62,12 +62,12 @@ func (r *TaobaoSimbaCampaignAreaUpdateAPIRequest) SetArea(_area string) error {
 	return nil
 }
 
-// Get Area Getter
+// GetArea Area Getter
 func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetArea() string {
 	return r._area
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaCampaignAreaUpdateAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -75,7 +75,7 @@ func (r *TaobaoSimbaCampaignAreaUpdateAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetNick() string {
 	return r._nick
 }

@@ -48,7 +48,7 @@ func (r TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 优惠活动ID
 func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -56,12 +56,12 @@ func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetActivityId(_act
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }
 
-// Set is DetailId Setter
+// SetDetailId is DetailId Setter
 // 优惠详情ID
 func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetDetailId(_detailId int64) error {
 	r._detailId = _detailId
@@ -69,12 +69,12 @@ func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetDetailId(_detai
 	return nil
 }
 
-// Get DetailId Getter
+// GetDetailId DetailId Getter
 func (r TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) GetDetailId() int64 {
 	return r._detailId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -82,12 +82,12 @@ func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetItemId(_itemId 
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is PromotionType Setter
+// SetPromotionType is PromotionType Setter
 // 优惠类型，只有两种可选值：0-减钱；1-打折
 func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetPromotionType(_promotionType int64) error {
 	r._promotionType = _promotionType
@@ -95,12 +95,12 @@ func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetPromotionType(_
 	return nil
 }
 
-// Get PromotionType Getter
+// GetPromotionType PromotionType Getter
 func (r TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) GetPromotionType() int64 {
 	return r._promotionType
 }
 
-// Set is PromotionValue Setter
+// SetPromotionValue is PromotionValue Setter
 // 优惠力度，其值的解释方式由promotion_type定义：当为减钱时解释成减钱数量，如：900表示减9元；当为打折时解释成打折折扣，如：900表示打9折
 func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetPromotionValue(_promotionValue int64) error {
 	r._promotionValue = _promotionValue
@@ -108,7 +108,7 @@ func (r *TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) SetPromotionValue(
 	return nil
 }
 
-// Get PromotionValue Getter
+// GetPromotionValue PromotionValue Getter
 func (r TaobaoPromotionmiscCommonItemDetailUpdateAPIRequest) GetPromotionValue() int64 {
 	return r._promotionValue
 }

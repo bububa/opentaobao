@@ -37,7 +37,7 @@ func (r AlibabaXiamiApiSearchHotwordsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Limit Setter
+// SetLimit is Limit Setter
 // 数量
 func (r *AlibabaXiamiApiSearchHotwordsGetAPIRequest) SetLimit(_limit int64) error {
 	r._limit = _limit
@@ -45,7 +45,7 @@ func (r *AlibabaXiamiApiSearchHotwordsGetAPIRequest) SetLimit(_limit int64) erro
 	return nil
 }
 
-// Get Limit Getter
+// GetLimit Limit Getter
 func (r AlibabaXiamiApiSearchHotwordsGetAPIRequest) GetLimit() int64 {
 	return r._limit
 }

@@ -37,7 +37,7 @@ func (r AlibabaMoziAclRoleRemoveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeleteRolesRequest Setter
+// SetDeleteRolesRequest is DeleteRolesRequest Setter
 // 删除角色请求对象
 func (r *AlibabaMoziAclRoleRemoveAPIRequest) SetDeleteRolesRequest(_deleteRolesRequest *DeleteRolesRequest) error {
 	r._deleteRolesRequest = _deleteRolesRequest
@@ -45,7 +45,7 @@ func (r *AlibabaMoziAclRoleRemoveAPIRequest) SetDeleteRolesRequest(_deleteRolesR
 	return nil
 }
 
-// Get DeleteRolesRequest Getter
+// GetDeleteRolesRequest DeleteRolesRequest Getter
 func (r AlibabaMoziAclRoleRemoveAPIRequest) GetDeleteRolesRequest() *DeleteRolesRequest {
 	return r._deleteRolesRequest
 }

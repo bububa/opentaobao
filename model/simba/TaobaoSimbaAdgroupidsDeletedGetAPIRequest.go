@@ -43,7 +43,7 @@ func (r TaobaoSimbaAdgroupidsDeletedGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -51,12 +51,12 @@ func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) SetNick(_nick string) error 
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaAdgroupidsDeletedGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 得到此时间点之后的数据，不能大于一个月
 func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -64,12 +64,12 @@ func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) SetStartTime(_startTime stri
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoSimbaAdgroupidsDeletedGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 返回的每页数据量大小,默认200最大1000
 func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) SetPageSize(_pageSize int64)
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoSimbaAdgroupidsDeletedGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 返回的第几页数据，默认为1
 func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -90,7 +90,7 @@ func (r *TaobaoSimbaAdgroupidsDeletedGetAPIRequest) SetPageNo(_pageNo int64) err
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoSimbaAdgroupidsDeletedGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

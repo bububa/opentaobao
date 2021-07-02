@@ -37,7 +37,7 @@ func (r AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is QueryCodeRequest Setter
+// SetQueryCodeRequest is QueryCodeRequest Setter
 // 请求入参
 func (r *AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest) SetQueryCodeRequest(_queryCodeRequest *QueryCodeBizAttrRequest) error {
 	r._queryCodeRequest = _queryCodeRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest) SetQueryCodeRequest(_quer
 	return nil
 }
 
-// Get QueryCodeRequest Getter
+// GetQueryCodeRequest QueryCodeRequest Getter
 func (r AlibabaAlscSaasCodecCodeAttrsQueryAPIRequest) GetQueryCodeRequest() *QueryCodeBizAttrRequest {
 	return r._queryCodeRequest
 }

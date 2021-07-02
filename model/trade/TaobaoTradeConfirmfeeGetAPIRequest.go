@@ -37,7 +37,7 @@ func (r TaobaoTradeConfirmfeeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 交易主订单或子订单ID
 func (r *TaobaoTradeConfirmfeeGetAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -45,7 +45,7 @@ func (r *TaobaoTradeConfirmfeeGetAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoTradeConfirmfeeGetAPIRequest) GetTid() int64 {
 	return r._tid
 }

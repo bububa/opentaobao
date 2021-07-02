@@ -41,7 +41,7 @@ func (r TaobaoTbkCouponGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Me Setter
+// SetMe is Me Setter
 // 带券ID与商品ID的加密串
 func (r *TaobaoTbkCouponGetAPIRequest) SetMe(_me string) error {
 	r._me = _me
@@ -49,12 +49,12 @@ func (r *TaobaoTbkCouponGetAPIRequest) SetMe(_me string) error {
 	return nil
 }
 
-// Get Me Getter
+// GetMe Me Getter
 func (r TaobaoTbkCouponGetAPIRequest) GetMe() string {
 	return r._me
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TaobaoTbkCouponGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -62,12 +62,12 @@ func (r *TaobaoTbkCouponGetAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoTbkCouponGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 券ID
 func (r *TaobaoTbkCouponGetAPIRequest) SetActivityId(_activityId string) error {
 	r._activityId = _activityId
@@ -75,7 +75,7 @@ func (r *TaobaoTbkCouponGetAPIRequest) SetActivityId(_activityId string) error {
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoTbkCouponGetAPIRequest) GetActivityId() string {
 	return r._activityId
 }

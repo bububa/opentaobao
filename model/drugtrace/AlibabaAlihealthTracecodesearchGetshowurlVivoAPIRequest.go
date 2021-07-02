@@ -39,7 +39,7 @@ func (r AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 追溯码
 func (r *AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest) SetCode(_code 
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 来源
 func (r *AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest) SetChannel(_ch
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r AlibabaAlihealthTracecodesearchGetshowurlVivoAPIRequest) GetChannel() string {
 	return r._channel
 }

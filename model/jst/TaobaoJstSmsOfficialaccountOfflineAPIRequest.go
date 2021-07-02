@@ -37,7 +37,7 @@ func (r TaobaoJstSmsOfficialaccountOfflineAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is OfficialAccountOffline Setter
+// SetOfficialAccountOffline is OfficialAccountOffline Setter
 // 公众号下线请求
 func (r *TaobaoJstSmsOfficialaccountOfflineAPIRequest) SetOfficialAccountOffline(_officialAccountOffline *JstBaseRequest) error {
 	r._officialAccountOffline = _officialAccountOffline
@@ -45,7 +45,7 @@ func (r *TaobaoJstSmsOfficialaccountOfflineAPIRequest) SetOfficialAccountOffline
 	return nil
 }
 
-// Get OfficialAccountOffline Getter
+// GetOfficialAccountOffline OfficialAccountOffline Getter
 func (r TaobaoJstSmsOfficialaccountOfflineAPIRequest) GetOfficialAccountOffline() *JstBaseRequest {
 	return r._officialAccountOffline
 }

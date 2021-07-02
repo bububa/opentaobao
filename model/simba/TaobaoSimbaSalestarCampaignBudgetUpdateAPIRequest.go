@@ -39,7 +39,7 @@ func (r TaobaoSimbaSalestarCampaignBudgetUpdateAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划Id
 func (r *TaobaoSimbaSalestarCampaignBudgetUpdateAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -47,12 +47,12 @@ func (r *TaobaoSimbaSalestarCampaignBudgetUpdateAPIRequest) SetCampaignId(_campa
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaSalestarCampaignBudgetUpdateAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is Budget Setter
+// SetBudget is Budget Setter
 // 如果为空则取消限额；否则必须为整数，单位是元，不得小于30；
 func (r *TaobaoSimbaSalestarCampaignBudgetUpdateAPIRequest) SetBudget(_budget int64) error {
 	r._budget = _budget
@@ -60,7 +60,7 @@ func (r *TaobaoSimbaSalestarCampaignBudgetUpdateAPIRequest) SetBudget(_budget in
 	return nil
 }
 
-// Get Budget Getter
+// GetBudget Budget Getter
 func (r TaobaoSimbaSalestarCampaignBudgetUpdateAPIRequest) GetBudget() int64 {
 	return r._budget
 }

@@ -49,7 +49,7 @@ func (r AliexpressUsergrowthRecommendItemsGetAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is TrackingId Setter
+// SetTrackingId is TrackingId Setter
 // third party trackingId
 func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetTrackingId(_trackingId string) error {
 	r._trackingId = _trackingId
@@ -57,12 +57,12 @@ func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetTrackingId(_trackin
 	return nil
 }
 
-// Get TrackingId Getter
+// GetTrackingId TrackingId Getter
 func (r AliexpressUsergrowthRecommendItemsGetAPIRequest) GetTrackingId() string {
 	return r._trackingId
 }
 
-// Set is CurrencyCode Setter
+// SetCurrencyCode is CurrencyCode Setter
 // currency Code
 func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetCurrencyCode(_currencyCode string) error {
 	r._currencyCode = _currencyCode
@@ -70,12 +70,12 @@ func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetCurrencyCode(_curre
 	return nil
 }
 
-// Get CurrencyCode Getter
+// GetCurrencyCode CurrencyCode Getter
 func (r AliexpressUsergrowthRecommendItemsGetAPIRequest) GetCurrencyCode() string {
 	return r._currencyCode
 }
 
-// Set is Language Setter
+// SetLanguage is Language Setter
 // language
 func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetLanguage(_language string) error {
 	r._language = _language
@@ -83,12 +83,12 @@ func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetLanguage(_language 
 	return nil
 }
 
-// Get Language Getter
+// GetLanguage Language Getter
 func (r AliexpressUsergrowthRecommendItemsGetAPIRequest) GetLanguage() string {
 	return r._language
 }
 
-// Set is UserTypeCode Setter
+// SetUserTypeCode is UserTypeCode Setter
 // user type
 func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetUserTypeCode(_userTypeCode string) error {
 	r._userTypeCode = _userTypeCode
@@ -96,12 +96,12 @@ func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetUserTypeCode(_userT
 	return nil
 }
 
-// Get UserTypeCode Getter
+// GetUserTypeCode UserTypeCode Getter
 func (r AliexpressUsergrowthRecommendItemsGetAPIRequest) GetUserTypeCode() string {
 	return r._userTypeCode
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // page index,start from 1
 func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetPageIndex(_pageIndex string) error {
 	r._pageIndex = _pageIndex
@@ -109,12 +109,12 @@ func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetPageIndex(_pageInde
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r AliexpressUsergrowthRecommendItemsGetAPIRequest) GetPageIndex() string {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // page size
 func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetPageSize(_pageSize string) error {
 	r._pageSize = _pageSize
@@ -122,12 +122,12 @@ func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetPageSize(_pageSize 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AliexpressUsergrowthRecommendItemsGetAPIRequest) GetPageSize() string {
 	return r._pageSize
 }
 
-// Set is CountryCode Setter
+// SetCountryCode is CountryCode Setter
 // country code
 func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetCountryCode(_countryCode string) error {
 	r._countryCode = _countryCode
@@ -135,7 +135,7 @@ func (r *AliexpressUsergrowthRecommendItemsGetAPIRequest) SetCountryCode(_countr
 	return nil
 }
 
-// Get CountryCode Getter
+// GetCountryCode CountryCode Getter
 func (r AliexpressUsergrowthRecommendItemsGetAPIRequest) GetCountryCode() string {
 	return r._countryCode
 }

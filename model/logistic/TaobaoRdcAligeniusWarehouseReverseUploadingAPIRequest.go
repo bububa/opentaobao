@@ -37,7 +37,7 @@ func (r TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 参数
 func (r *TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest) SetParam0(_param0 *WarehouseReverseUploadingDto) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest) SetParam0(_param
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoRdcAligeniusWarehouseReverseUploadingAPIRequest) GetParam0() *WarehouseReverseUploadingDto {
 	return r._param0
 }

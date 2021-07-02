@@ -39,7 +39,7 @@ func (r TaobaoBusTvmpayorderSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AlipayAuthCode Setter
+// SetAlipayAuthCode is AlipayAuthCode Setter
 // 条形码认证码
 func (r *TaobaoBusTvmpayorderSetAPIRequest) SetAlipayAuthCode(_alipayAuthCode string) error {
 	r._alipayAuthCode = _alipayAuthCode
@@ -47,12 +47,12 @@ func (r *TaobaoBusTvmpayorderSetAPIRequest) SetAlipayAuthCode(_alipayAuthCode st
 	return nil
 }
 
-// Get AlipayAuthCode Getter
+// GetAlipayAuthCode AlipayAuthCode Getter
 func (r TaobaoBusTvmpayorderSetAPIRequest) GetAlipayAuthCode() string {
 	return r._alipayAuthCode
 }
 
-// Set is AlitripOrderId Setter
+// SetAlitripOrderId is AlitripOrderId Setter
 // 飞猪订单号
 func (r *TaobaoBusTvmpayorderSetAPIRequest) SetAlitripOrderId(_alitripOrderId string) error {
 	r._alitripOrderId = _alitripOrderId
@@ -60,7 +60,7 @@ func (r *TaobaoBusTvmpayorderSetAPIRequest) SetAlitripOrderId(_alitripOrderId st
 	return nil
 }
 
-// Get AlitripOrderId Getter
+// GetAlitripOrderId AlitripOrderId Getter
 func (r TaobaoBusTvmpayorderSetAPIRequest) GetAlitripOrderId() string {
 	return r._alitripOrderId
 }

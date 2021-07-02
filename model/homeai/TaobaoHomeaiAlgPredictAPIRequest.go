@@ -39,7 +39,7 @@ func (r TaobaoHomeaiAlgPredictAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FromCase Setter
+// SetFromCase is FromCase Setter
 // 来源房间json
 func (r *TaobaoHomeaiAlgPredictAPIRequest) SetFromCase(_fromCase string) error {
 	r._fromCase = _fromCase
@@ -47,12 +47,12 @@ func (r *TaobaoHomeaiAlgPredictAPIRequest) SetFromCase(_fromCase string) error {
 	return nil
 }
 
-// Get FromCase Getter
+// GetFromCase FromCase Getter
 func (r TaobaoHomeaiAlgPredictAPIRequest) GetFromCase() string {
 	return r._fromCase
 }
 
-// Set is ToCase Setter
+// SetToCase is ToCase Setter
 // 我的家房间json
 func (r *TaobaoHomeaiAlgPredictAPIRequest) SetToCase(_toCase string) error {
 	r._toCase = _toCase
@@ -60,7 +60,7 @@ func (r *TaobaoHomeaiAlgPredictAPIRequest) SetToCase(_toCase string) error {
 	return nil
 }
 
-// Get ToCase Getter
+// GetToCase ToCase Getter
 func (r TaobaoHomeaiAlgPredictAPIRequest) GetToCase() string {
 	return r._toCase
 }

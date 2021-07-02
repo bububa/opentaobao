@@ -43,7 +43,7 @@ func (r AlibabaPricePromotionItemDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SkuCodes Setter
+// SetSkuCodes is SkuCodes Setter
 // 商品code
 func (r *AlibabaPricePromotionItemDeleteAPIRequest) SetSkuCodes(_skuCodes []string) error {
 	r._skuCodes = _skuCodes
@@ -51,12 +51,12 @@ func (r *AlibabaPricePromotionItemDeleteAPIRequest) SetSkuCodes(_skuCodes []stri
 	return nil
 }
 
-// Get SkuCodes Getter
+// GetSkuCodes SkuCodes Getter
 func (r AlibabaPricePromotionItemDeleteAPIRequest) GetSkuCodes() []string {
 	return r._skuCodes
 }
 
-// Set is OuCode Setter
+// SetOuCode is OuCode Setter
 // toB渠道店OU
 func (r *AlibabaPricePromotionItemDeleteAPIRequest) SetOuCode(_ouCode string) error {
 	r._ouCode = _ouCode
@@ -64,12 +64,12 @@ func (r *AlibabaPricePromotionItemDeleteAPIRequest) SetOuCode(_ouCode string) er
 	return nil
 }
 
-// Get OuCode Getter
+// GetOuCode OuCode Getter
 func (r AlibabaPricePromotionItemDeleteAPIRequest) GetOuCode() string {
 	return r._ouCode
 }
 
-// Set is OuterPromotionCode Setter
+// SetOuterPromotionCode is OuterPromotionCode Setter
 // 外部档期编码
 func (r *AlibabaPricePromotionItemDeleteAPIRequest) SetOuterPromotionCode(_outerPromotionCode string) error {
 	r._outerPromotionCode = _outerPromotionCode
@@ -77,12 +77,12 @@ func (r *AlibabaPricePromotionItemDeleteAPIRequest) SetOuterPromotionCode(_outer
 	return nil
 }
 
-// Get OuterPromotionCode Getter
+// GetOuterPromotionCode OuterPromotionCode Getter
 func (r AlibabaPricePromotionItemDeleteAPIRequest) GetOuterPromotionCode() string {
 	return r._outerPromotionCode
 }
 
-// Set is UniqueId Setter
+// SetUniqueId is UniqueId Setter
 // 盒马唯一标识
 func (r *AlibabaPricePromotionItemDeleteAPIRequest) SetUniqueId(_uniqueId string) error {
 	r._uniqueId = _uniqueId
@@ -90,7 +90,7 @@ func (r *AlibabaPricePromotionItemDeleteAPIRequest) SetUniqueId(_uniqueId string
 	return nil
 }
 
-// Get UniqueId Getter
+// GetUniqueId UniqueId Getter
 func (r AlibabaPricePromotionItemDeleteAPIRequest) GetUniqueId() string {
 	return r._uniqueId
 }

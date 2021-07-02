@@ -37,7 +37,7 @@ func (r AlitripBtripEmployeeQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOpenEmployeeQueryRequest Setter
+// SetParamOpenEmployeeQueryRequest is ParamOpenEmployeeQueryRequest Setter
 // 入参对象。
 func (r *AlitripBtripEmployeeQueryAPIRequest) SetParamOpenEmployeeQueryRequest(_paramOpenEmployeeQueryRequest *OpenEmployeeQueryRequest) error {
 	r._paramOpenEmployeeQueryRequest = _paramOpenEmployeeQueryRequest
@@ -45,7 +45,7 @@ func (r *AlitripBtripEmployeeQueryAPIRequest) SetParamOpenEmployeeQueryRequest(_
 	return nil
 }
 
-// Get ParamOpenEmployeeQueryRequest Getter
+// GetParamOpenEmployeeQueryRequest ParamOpenEmployeeQueryRequest Getter
 func (r AlitripBtripEmployeeQueryAPIRequest) GetParamOpenEmployeeQueryRequest() *OpenEmployeeQueryRequest {
 	return r._paramOpenEmployeeQueryRequest
 }

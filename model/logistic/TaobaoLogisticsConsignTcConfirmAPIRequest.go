@@ -51,7 +51,7 @@ func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProviderId Setter
+// SetProviderId is ProviderId Setter
 // 货主id
 func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetProviderId(_providerId int64) error {
 	r._providerId = _providerId
@@ -59,12 +59,12 @@ func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetProviderId(_providerId in
 	return nil
 }
 
-// Get ProviderId Getter
+// GetProviderId ProviderId Getter
 func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetProviderId() int64 {
 	return r._providerId
 }
 
-// Set is AppName Setter
+// SetAppName is AppName Setter
 // ERP的名称
 func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
@@ -72,12 +72,12 @@ func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetAppName(_appName string) 
 	return nil
 }
 
-// Get AppName Getter
+// GetAppName AppName Getter
 func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetAppName() string {
 	return r._appName
 }
 
-// Set is ExtendFields Setter
+// SetExtendFields is ExtendFields Setter
 // 扩展字段 K:V;
 func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetExtendFields(_extendFields string) error {
 	r._extendFields = _extendFields
@@ -85,12 +85,12 @@ func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetExtendFields(_extendField
 	return nil
 }
 
-// Get ExtendFields Getter
+// GetExtendFields ExtendFields Getter
 func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetExtendFields() string {
 	return r._extendFields
 }
 
-// Set is GoodsList Setter
+// SetGoodsList is GoodsList Setter
 // 发货的包裹
 func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetGoodsList(_goodsList []ConfirmConsignGoodsDto) error {
 	r._goodsList = _goodsList
@@ -98,12 +98,12 @@ func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetGoodsList(_goodsList []Co
 	return nil
 }
 
-// Get GoodsList Getter
+// GetGoodsList GoodsList Getter
 func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetGoodsList() []ConfirmConsignGoodsDto {
 	return r._goodsList
 }
 
-// Set is OutTradeNo Setter
+// SetOutTradeNo is OutTradeNo Setter
 // 已发货的外部订单号
 func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetOutTradeNo(_outTradeNo string) error {
 	r._outTradeNo = _outTradeNo
@@ -111,12 +111,12 @@ func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetOutTradeNo(_outTradeNo st
 	return nil
 }
 
-// Get OutTradeNo Getter
+// GetOutTradeNo OutTradeNo Getter
 func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetOutTradeNo() string {
 	return r._outTradeNo
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 卖家id
 func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
@@ -124,12 +124,12 @@ func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetSellerId(_sellerId int64)
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }
 
-// Set is TradeId Setter
+// SetTradeId is TradeId Setter
 // 待发货的淘宝主交易号
 func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetTradeId(_tradeId int64) error {
 	r._tradeId = _tradeId
@@ -137,7 +137,7 @@ func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetTradeId(_tradeId int64) e
 	return nil
 }
 
-// Get TradeId Getter
+// GetTradeId TradeId Getter
 func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetTradeId() int64 {
 	return r._tradeId
 }

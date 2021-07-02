@@ -37,7 +37,7 @@ func (r TaobaoBusSeatpriceGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamBusSeatPriceRQ Setter
+// SetParamBusSeatPriceRQ is ParamBusSeatPriceRQ Setter
 // 余票请求参数
 func (r *TaobaoBusSeatpriceGetAPIRequest) SetParamBusSeatPriceRQ(_paramBusSeatPriceRQ *BusSeatPriceRq) error {
 	r._paramBusSeatPriceRQ = _paramBusSeatPriceRQ
@@ -45,7 +45,7 @@ func (r *TaobaoBusSeatpriceGetAPIRequest) SetParamBusSeatPriceRQ(_paramBusSeatPr
 	return nil
 }
 
-// Get ParamBusSeatPriceRQ Getter
+// GetParamBusSeatPriceRQ ParamBusSeatPriceRQ Getter
 func (r TaobaoBusSeatpriceGetAPIRequest) GetParamBusSeatPriceRQ() *BusSeatPriceRq {
 	return r._paramBusSeatPriceRQ
 }

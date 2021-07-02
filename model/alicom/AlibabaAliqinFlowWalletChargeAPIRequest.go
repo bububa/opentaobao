@@ -45,7 +45,7 @@ func (r AlibabaAliqinFlowWalletChargeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PhoneNum Setter
+// SetPhoneNum is PhoneNum Setter
 // 充值号码
 func (r *AlibabaAliqinFlowWalletChargeAPIRequest) SetPhoneNum(_phoneNum string) error {
 	r._phoneNum = _phoneNum
@@ -53,12 +53,12 @@ func (r *AlibabaAliqinFlowWalletChargeAPIRequest) SetPhoneNum(_phoneNum string) 
 	return nil
 }
 
-// Get PhoneNum Getter
+// GetPhoneNum PhoneNum Getter
 func (r AlibabaAliqinFlowWalletChargeAPIRequest) GetPhoneNum() string {
 	return r._phoneNum
 }
 
-// Set is Reason Setter
+// SetReason is Reason Setter
 // 原因
 func (r *AlibabaAliqinFlowWalletChargeAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
@@ -66,12 +66,12 @@ func (r *AlibabaAliqinFlowWalletChargeAPIRequest) SetReason(_reason string) erro
 	return nil
 }
 
-// Get Reason Getter
+// GetReason Reason Getter
 func (r AlibabaAliqinFlowWalletChargeAPIRequest) GetReason() string {
 	return r._reason
 }
 
-// Set is GradeId Setter
+// SetGradeId is GradeId Setter
 // 档位id
 func (r *AlibabaAliqinFlowWalletChargeAPIRequest) SetGradeId(_gradeId string) error {
 	r._gradeId = _gradeId
@@ -79,12 +79,12 @@ func (r *AlibabaAliqinFlowWalletChargeAPIRequest) SetGradeId(_gradeId string) er
 	return nil
 }
 
-// Get GradeId Getter
+// GetGradeId GradeId Getter
 func (r AlibabaAliqinFlowWalletChargeAPIRequest) GetGradeId() string {
 	return r._gradeId
 }
 
-// Set is OutRechargeId Setter
+// SetOutRechargeId is OutRechargeId Setter
 // 唯一流水号
 func (r *AlibabaAliqinFlowWalletChargeAPIRequest) SetOutRechargeId(_outRechargeId string) error {
 	r._outRechargeId = _outRechargeId
@@ -92,12 +92,12 @@ func (r *AlibabaAliqinFlowWalletChargeAPIRequest) SetOutRechargeId(_outRechargeI
 	return nil
 }
 
-// Get OutRechargeId Getter
+// GetOutRechargeId OutRechargeId Getter
 func (r AlibabaAliqinFlowWalletChargeAPIRequest) GetOutRechargeId() string {
 	return r._outRechargeId
 }
 
-// Set is ChannelId Setter
+// SetChannelId is ChannelId Setter
 // 渠道id
 func (r *AlibabaAliqinFlowWalletChargeAPIRequest) SetChannelId(_channelId string) error {
 	r._channelId = _channelId
@@ -105,7 +105,7 @@ func (r *AlibabaAliqinFlowWalletChargeAPIRequest) SetChannelId(_channelId string
 	return nil
 }
 
-// Get ChannelId Getter
+// GetChannelId ChannelId Getter
 func (r AlibabaAliqinFlowWalletChargeAPIRequest) GetChannelId() string {
 	return r._channelId
 }

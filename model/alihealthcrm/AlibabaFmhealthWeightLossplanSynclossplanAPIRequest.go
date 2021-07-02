@@ -61,7 +61,7 @@ func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is TpUserId Setter
+// SetTpUserId is TpUserId Setter
 // 用户id
 func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetTpUserId(_tpUserId int64) error {
 	r._tpUserId = _tpUserId
@@ -69,12 +69,12 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetTpUserId(_tpUse
 	return nil
 }
 
-// Get TpUserId Getter
+// GetTpUserId TpUserId Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetTpUserId() int64 {
 	return r._tpUserId
 }
 
-// Set is Gender Setter
+// SetGender is Gender Setter
 // 性别0女 1男
 func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetGender(_gender int64) error {
 	r._gender = _gender
@@ -82,12 +82,12 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetGender(_gender 
 	return nil
 }
 
-// Get Gender Getter
+// GetGender Gender Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetGender() int64 {
 	return r._gender
 }
 
-// Set is Birthday Setter
+// SetBirthday is Birthday Setter
 // 生日
 func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetBirthday(_birthday string) error {
 	r._birthday = _birthday
@@ -95,12 +95,12 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetBirthday(_birth
 	return nil
 }
 
-// Get Birthday Getter
+// GetBirthday Birthday Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetBirthday() string {
 	return r._birthday
 }
 
-// Set is Height Setter
+// SetHeight is Height Setter
 // 身高170 即一米七
 func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetHeight(_height int64) error {
 	r._height = _height
@@ -108,12 +108,12 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetHeight(_height 
 	return nil
 }
 
-// Get Height Getter
+// GetHeight Height Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetHeight() int64 {
 	return r._height
 }
 
-// Set is Weight Setter
+// SetWeight is Weight Setter
 // 当前体重（今天的体重），单位kg
 func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetWeight(_weight string) error {
 	r._weight = _weight
@@ -121,12 +121,12 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetWeight(_weight 
 	return nil
 }
 
-// Get Weight Getter
+// GetWeight Weight Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetWeight() string {
 	return r._weight
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 0创建减肥计划调用；1修改调用；
 func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -134,12 +134,12 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetType(_type int6
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is BodyAge Setter
+// SetBodyAge is BodyAge Setter
 // 体年龄
 func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetBodyAge(_bodyAge int64) error {
 	r._bodyAge = _bodyAge
@@ -147,12 +147,12 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetBodyAge(_bodyAg
 	return nil
 }
 
-// Get BodyAge Getter
+// GetBodyAge BodyAge Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetBodyAge() int64 {
 	return r._bodyAge
 }
 
-// Set is FinishDate Setter
+// SetFinishDate is FinishDate Setter
 // 完成时间
 func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetFinishDate(_finishDate string) error {
 	r._finishDate = _finishDate
@@ -160,12 +160,12 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetFinishDate(_fin
 	return nil
 }
 
-// Get FinishDate Getter
+// GetFinishDate FinishDate Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetFinishDate() string {
 	return r._finishDate
 }
 
-// Set is LossPerWeek Setter
+// SetLossPerWeek is LossPerWeek Setter
 // 每周减重
 func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetLossPerWeek(_lossPerWeek string) error {
 	r._lossPerWeek = _lossPerWeek
@@ -173,12 +173,12 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetLossPerWeek(_lo
 	return nil
 }
 
-// Get LossPerWeek Getter
+// GetLossPerWeek LossPerWeek Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetLossPerWeek() string {
 	return r._lossPerWeek
 }
 
-// Set is WeightGoal Setter
+// SetWeightGoal is WeightGoal Setter
 // 目标体重
 func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetWeightGoal(_weightGoal string) error {
 	r._weightGoal = _weightGoal
@@ -186,12 +186,12 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetWeightGoal(_wei
 	return nil
 }
 
-// Get WeightGoal Getter
+// GetWeightGoal WeightGoal Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetWeightGoal() string {
 	return r._weightGoal
 }
 
-// Set is LossLevel Setter
+// SetLossLevel is LossLevel Setter
 // 减重类型0保持 1减肥
 func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetLossLevel(_lossLevel int64) error {
 	r._lossLevel = _lossLevel
@@ -199,12 +199,12 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetLossLevel(_loss
 	return nil
 }
 
-// Get LossLevel Getter
+// GetLossLevel LossLevel Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetLossLevel() int64 {
 	return r._lossLevel
 }
 
-// Set is TotalCalorie Setter
+// SetTotalCalorie is TotalCalorie Setter
 // 每日可以摄入的标准总量
 func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetTotalCalorie(_totalCalorie int64) error {
 	r._totalCalorie = _totalCalorie
@@ -212,12 +212,12 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetTotalCalorie(_t
 	return nil
 }
 
-// Get TotalCalorie Getter
+// GetTotalCalorie TotalCalorie Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetTotalCalorie() int64 {
 	return r._totalCalorie
 }
 
-// Set is BeginDate Setter
+// SetBeginDate is BeginDate Setter
 // 减重计划开始时间
 func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetBeginDate(_beginDate string) error {
 	r._beginDate = _beginDate
@@ -225,7 +225,7 @@ func (r *AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) SetBeginDate(_begi
 	return nil
 }
 
-// Get BeginDate Getter
+// GetBeginDate BeginDate Getter
 func (r AlibabaFmhealthWeightLossplanSynclossplanAPIRequest) GetBeginDate() string {
 	return r._beginDate
 }

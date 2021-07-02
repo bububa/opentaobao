@@ -37,7 +37,7 @@ func (r AlibabaLstLogisticsThirdpartCompanyListAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 入参
 func (r *AlibabaLstLogisticsThirdpartCompanyListAPIRequest) SetQuery(_query *LstLogisticsCompanyQuery) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *AlibabaLstLogisticsThirdpartCompanyListAPIRequest) SetQuery(_query *Lst
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaLstLogisticsThirdpartCompanyListAPIRequest) GetQuery() *LstLogisticsCompanyQuery {
 	return r._query
 }

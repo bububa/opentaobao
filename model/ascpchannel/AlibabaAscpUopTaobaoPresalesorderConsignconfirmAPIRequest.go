@@ -37,7 +37,7 @@ func (r AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is PresalesOrderConsignConfirmRequest Setter
+// SetPresalesOrderConsignConfirmRequest is PresalesOrderConsignConfirmRequest Setter
 // 预售订单商家仓出库对象
 func (r *AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest) SetPresalesOrderConsignConfirmRequest(_presalesOrderConsignConfirmRequest *Presalesorderconsignconfirmrequest) error {
 	r._presalesOrderConsignConfirmRequest = _presalesOrderConsignConfirmRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest) SetPresalesO
 	return nil
 }
 
-// Get PresalesOrderConsignConfirmRequest Getter
+// GetPresalesOrderConsignConfirmRequest PresalesOrderConsignConfirmRequest Getter
 func (r AlibabaAscpUopTaobaoPresalesorderConsignconfirmAPIRequest) GetPresalesOrderConsignConfirmRequest() *Presalesorderconsignconfirmrequest {
 	return r._presalesOrderConsignConfirmRequest
 }

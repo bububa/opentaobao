@@ -37,7 +37,7 @@ func (r AlitripBtripHotelDistributionOrderPayAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ParamBtripHotelOrderOperateRq Setter
+// SetParamBtripHotelOrderOperateRq is ParamBtripHotelOrderOperateRq Setter
 // 通知商旅支付成功接口参数
 func (r *AlitripBtripHotelDistributionOrderPayAPIRequest) SetParamBtripHotelOrderOperateRq(_paramBtripHotelOrderOperateRq *BtripHotelOrderOperateRq) error {
 	r._paramBtripHotelOrderOperateRq = _paramBtripHotelOrderOperateRq
@@ -45,7 +45,7 @@ func (r *AlitripBtripHotelDistributionOrderPayAPIRequest) SetParamBtripHotelOrde
 	return nil
 }
 
-// Get ParamBtripHotelOrderOperateRq Getter
+// GetParamBtripHotelOrderOperateRq ParamBtripHotelOrderOperateRq Getter
 func (r AlitripBtripHotelDistributionOrderPayAPIRequest) GetParamBtripHotelOrderOperateRq() *BtripHotelOrderOperateRq {
 	return r._paramBtripHotelOrderOperateRq
 }

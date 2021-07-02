@@ -41,7 +41,7 @@ func (r TaobaoOmniitemItemDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BarCode Setter
+// SetBarCode is BarCode Setter
 // 条形码
 func (r *TaobaoOmniitemItemDeleteAPIRequest) SetBarCode(_barCode string) error {
 	r._barCode = _barCode
@@ -49,12 +49,12 @@ func (r *TaobaoOmniitemItemDeleteAPIRequest) SetBarCode(_barCode string) error {
 	return nil
 }
 
-// Get BarCode Getter
+// GetBarCode BarCode Getter
 func (r TaobaoOmniitemItemDeleteAPIRequest) GetBarCode() string {
 	return r._barCode
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID，若填入则以该字段为准，否则以outerId+barcode为准
 func (r *TaobaoOmniitemItemDeleteAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -62,12 +62,12 @@ func (r *TaobaoOmniitemItemDeleteAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoOmniitemItemDeleteAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 商品outerId
 func (r *TaobaoOmniitemItemDeleteAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -75,7 +75,7 @@ func (r *TaobaoOmniitemItemDeleteAPIRequest) SetOuterId(_outerId string) error {
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoOmniitemItemDeleteAPIRequest) GetOuterId() string {
 	return r._outerId
 }

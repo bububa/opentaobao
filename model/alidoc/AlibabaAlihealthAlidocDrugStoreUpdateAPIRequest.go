@@ -37,7 +37,7 @@ func (r AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is DrugStoreUpdateTopRequest Setter
+// SetDrugStoreUpdateTopRequest is DrugStoreUpdateTopRequest Setter
 // 更新对象
 func (r *AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) SetDrugStoreUpdateTopRequest(_drugStoreUpdateTopRequest *DrugStoreUpdateTopRequest) error {
 	r._drugStoreUpdateTopRequest = _drugStoreUpdateTopRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) SetDrugStoreUpdateTopR
 	return nil
 }
 
-// Get DrugStoreUpdateTopRequest Getter
+// GetDrugStoreUpdateTopRequest DrugStoreUpdateTopRequest Getter
 func (r AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) GetDrugStoreUpdateTopRequest() *DrugStoreUpdateTopRequest {
 	return r._drugStoreUpdateTopRequest
 }

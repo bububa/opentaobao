@@ -39,7 +39,7 @@ func (r TaobaoSimbaSalestarAdgroupUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OnlineStatus Setter
+// SetOnlineStatus is OnlineStatus Setter
 // 用户设置的上下线状态 offline-下线(暂停竞价)； online-上线；默认为online
 func (r *TaobaoSimbaSalestarAdgroupUpdateAPIRequest) SetOnlineStatus(_onlineStatus string) error {
 	r._onlineStatus = _onlineStatus
@@ -47,12 +47,12 @@ func (r *TaobaoSimbaSalestarAdgroupUpdateAPIRequest) SetOnlineStatus(_onlineStat
 	return nil
 }
 
-// Get OnlineStatus Getter
+// GetOnlineStatus OnlineStatus Getter
 func (r TaobaoSimbaSalestarAdgroupUpdateAPIRequest) GetOnlineStatus() string {
 	return r._onlineStatus
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广组Id
 func (r *TaobaoSimbaSalestarAdgroupUpdateAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -60,7 +60,7 @@ func (r *TaobaoSimbaSalestarAdgroupUpdateAPIRequest) SetAdgroupId(_adgroupId int
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaSalestarAdgroupUpdateAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

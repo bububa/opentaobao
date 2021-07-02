@@ -37,7 +37,7 @@ func (r AlibabaWdkMarketingExpirePromotionDeleteAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 删除短保优惠
 func (r *AlibabaWdkMarketingExpirePromotionDeleteAPIRequest) SetParam0(_param0 *ExpirePromotionBo) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMarketingExpirePromotionDeleteAPIRequest) SetParam0(_param0 *
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaWdkMarketingExpirePromotionDeleteAPIRequest) GetParam0() *ExpirePromotionBo {
 	return r._param0
 }

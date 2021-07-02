@@ -37,7 +37,7 @@ func (r AlibabaIdleRentItemSkuUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Sku Setter
+// SetSku is Sku Setter
 // sku信息，更新后skuId保持不变
 func (r *AlibabaIdleRentItemSkuUpdateAPIRequest) SetSku(_sku *ItemSkuDto) error {
 	r._sku = _sku
@@ -45,7 +45,7 @@ func (r *AlibabaIdleRentItemSkuUpdateAPIRequest) SetSku(_sku *ItemSkuDto) error 
 	return nil
 }
 
-// Get Sku Getter
+// GetSku Sku Getter
 func (r AlibabaIdleRentItemSkuUpdateAPIRequest) GetSku() *ItemSkuDto {
 	return r._sku
 }

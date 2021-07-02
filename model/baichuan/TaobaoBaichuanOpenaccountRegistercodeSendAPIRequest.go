@@ -37,7 +37,7 @@ func (r TaobaoBaichuanOpenaccountRegistercodeSendAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // name
 func (r *TaobaoBaichuanOpenaccountRegistercodeSendAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -45,7 +45,7 @@ func (r *TaobaoBaichuanOpenaccountRegistercodeSendAPIRequest) SetName(_name stri
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoBaichuanOpenaccountRegistercodeSendAPIRequest) GetName() string {
 	return r._name
 }

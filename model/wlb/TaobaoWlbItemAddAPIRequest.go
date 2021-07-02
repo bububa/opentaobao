@@ -77,7 +77,7 @@ func (r TaobaoWlbItemAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 商品名称
 func (r *TaobaoWlbItemAddAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -85,12 +85,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoWlbItemAddAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 商品标题
 func (r *TaobaoWlbItemAddAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -98,12 +98,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoWlbItemAddAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// Set is ItemCode Setter
+// SetItemCode is ItemCode Setter
 // 商品编码
 func (r *TaobaoWlbItemAddAPIRequest) SetItemCode(_itemCode string) error {
 	r._itemCode = _itemCode
@@ -111,12 +111,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetItemCode(_itemCode string) error {
 	return nil
 }
 
-// Get ItemCode Getter
+// GetItemCode ItemCode Getter
 func (r TaobaoWlbItemAddAPIRequest) GetItemCode() string {
 	return r._itemCode
 }
 
-// Set is Remark Setter
+// SetRemark is Remark Setter
 // 商品备注
 func (r *TaobaoWlbItemAddAPIRequest) SetRemark(_remark string) error {
 	r._remark = _remark
@@ -124,12 +124,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetRemark(_remark string) error {
 	return nil
 }
 
-// Get Remark Getter
+// GetRemark Remark Getter
 func (r TaobaoWlbItemAddAPIRequest) GetRemark() string {
 	return r._remark
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // NORMAL--普通商品<br/>COMBINE--组合商品<br/>DISTRIBUTION--分销
 func (r *TaobaoWlbItemAddAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -137,12 +137,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoWlbItemAddAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is IsSku Setter
+// SetIsSku is IsSku Setter
 // 是否sku
 func (r *TaobaoWlbItemAddAPIRequest) SetIsSku(_isSku string) error {
 	r._isSku = _isSku
@@ -150,12 +150,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetIsSku(_isSku string) error {
 	return nil
 }
 
-// Get IsSku Getter
+// GetIsSku IsSku Getter
 func (r TaobaoWlbItemAddAPIRequest) GetIsSku() string {
 	return r._isSku
 }
 
-// Set is ProNameList Setter
+// SetProNameList is ProNameList Setter
 // 属性名列表,目前支持的属性：<br/>毛重:GWeight	<br/>净重:Nweight<br/>皮重: Tweight<br/>自定义属性：<br/>paramkey1<br/>paramkey2<br/>paramkey3<br/>paramkey4
 func (r *TaobaoWlbItemAddAPIRequest) SetProNameList(_proNameList string) error {
 	r._proNameList = _proNameList
@@ -163,12 +163,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetProNameList(_proNameList string) error {
 	return nil
 }
 
-// Get ProNameList Getter
+// GetProNameList ProNameList Getter
 func (r TaobaoWlbItemAddAPIRequest) GetProNameList() string {
 	return r._proNameList
 }
 
-// Set is ProValueList Setter
+// SetProValueList is ProValueList Setter
 // 属性值列表：<br/>10,8
 func (r *TaobaoWlbItemAddAPIRequest) SetProValueList(_proValueList string) error {
 	r._proValueList = _proValueList
@@ -176,12 +176,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetProValueList(_proValueList string) error
 	return nil
 }
 
-// Get ProValueList Getter
+// GetProValueList ProValueList Getter
 func (r TaobaoWlbItemAddAPIRequest) GetProValueList() string {
 	return r._proValueList
 }
 
-// Set is IsFriable Setter
+// SetIsFriable is IsFriable Setter
 // 是否易碎品
 func (r *TaobaoWlbItemAddAPIRequest) SetIsFriable(_isFriable bool) error {
 	r._isFriable = _isFriable
@@ -189,12 +189,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetIsFriable(_isFriable bool) error {
 	return nil
 }
 
-// Get IsFriable Getter
+// GetIsFriable IsFriable Getter
 func (r TaobaoWlbItemAddAPIRequest) GetIsFriable() bool {
 	return r._isFriable
 }
 
-// Set is IsDangerous Setter
+// SetIsDangerous is IsDangerous Setter
 // 是否危险品
 func (r *TaobaoWlbItemAddAPIRequest) SetIsDangerous(_isDangerous bool) error {
 	r._isDangerous = _isDangerous
@@ -202,12 +202,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetIsDangerous(_isDangerous bool) error {
 	return nil
 }
 
-// Get IsDangerous Getter
+// GetIsDangerous IsDangerous Getter
 func (r TaobaoWlbItemAddAPIRequest) GetIsDangerous() bool {
 	return r._isDangerous
 }
 
-// Set is Color Setter
+// SetColor is Color Setter
 // 商品颜色
 func (r *TaobaoWlbItemAddAPIRequest) SetColor(_color string) error {
 	r._color = _color
@@ -215,12 +215,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetColor(_color string) error {
 	return nil
 }
 
-// Get Color Getter
+// GetColor Color Getter
 func (r TaobaoWlbItemAddAPIRequest) GetColor() string {
 	return r._color
 }
 
-// Set is Weight Setter
+// SetWeight is Weight Setter
 // 商品重量，单位G
 func (r *TaobaoWlbItemAddAPIRequest) SetWeight(_weight int64) error {
 	r._weight = _weight
@@ -228,12 +228,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetWeight(_weight int64) error {
 	return nil
 }
 
-// Get Weight Getter
+// GetWeight Weight Getter
 func (r TaobaoWlbItemAddAPIRequest) GetWeight() int64 {
 	return r._weight
 }
 
-// Set is Length Setter
+// SetLength is Length Setter
 // 商品长度，单位毫米
 func (r *TaobaoWlbItemAddAPIRequest) SetLength(_length int64) error {
 	r._length = _length
@@ -241,12 +241,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetLength(_length int64) error {
 	return nil
 }
 
-// Get Length Getter
+// GetLength Length Getter
 func (r TaobaoWlbItemAddAPIRequest) GetLength() int64 {
 	return r._length
 }
 
-// Set is Width Setter
+// SetWidth is Width Setter
 // 商品宽度，单位毫米
 func (r *TaobaoWlbItemAddAPIRequest) SetWidth(_width int64) error {
 	r._width = _width
@@ -254,12 +254,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetWidth(_width int64) error {
 	return nil
 }
 
-// Get Width Getter
+// GetWidth Width Getter
 func (r TaobaoWlbItemAddAPIRequest) GetWidth() int64 {
 	return r._width
 }
 
-// Set is Height Setter
+// SetHeight is Height Setter
 // 商品高度，单位毫米
 func (r *TaobaoWlbItemAddAPIRequest) SetHeight(_height int64) error {
 	r._height = _height
@@ -267,12 +267,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetHeight(_height int64) error {
 	return nil
 }
 
-// Get Height Getter
+// GetHeight Height Getter
 func (r TaobaoWlbItemAddAPIRequest) GetHeight() int64 {
 	return r._height
 }
 
-// Set is Volume Setter
+// SetVolume is Volume Setter
 // 商品体积，单位立方厘米
 func (r *TaobaoWlbItemAddAPIRequest) SetVolume(_volume int64) error {
 	r._volume = _volume
@@ -280,12 +280,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetVolume(_volume int64) error {
 	return nil
 }
 
-// Get Volume Getter
+// GetVolume Volume Getter
 func (r TaobaoWlbItemAddAPIRequest) GetVolume() int64 {
 	return r._volume
 }
 
-// Set is GoodsCat Setter
+// SetGoodsCat is GoodsCat Setter
 // 货类
 func (r *TaobaoWlbItemAddAPIRequest) SetGoodsCat(_goodsCat string) error {
 	r._goodsCat = _goodsCat
@@ -293,12 +293,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetGoodsCat(_goodsCat string) error {
 	return nil
 }
 
-// Get GoodsCat Getter
+// GetGoodsCat GoodsCat Getter
 func (r TaobaoWlbItemAddAPIRequest) GetGoodsCat() string {
 	return r._goodsCat
 }
 
-// Set is PricingCat Setter
+// SetPricingCat is PricingCat Setter
 // 计价货类
 func (r *TaobaoWlbItemAddAPIRequest) SetPricingCat(_pricingCat string) error {
 	r._pricingCat = _pricingCat
@@ -306,12 +306,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetPricingCat(_pricingCat string) error {
 	return nil
 }
 
-// Get PricingCat Getter
+// GetPricingCat PricingCat Getter
 func (r TaobaoWlbItemAddAPIRequest) GetPricingCat() string {
 	return r._pricingCat
 }
 
-// Set is PackageMaterial Setter
+// SetPackageMaterial is PackageMaterial Setter
 // 商品包装材料类型
 func (r *TaobaoWlbItemAddAPIRequest) SetPackageMaterial(_packageMaterial string) error {
 	r._packageMaterial = _packageMaterial
@@ -319,12 +319,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetPackageMaterial(_packageMaterial string)
 	return nil
 }
 
-// Get PackageMaterial Getter
+// GetPackageMaterial PackageMaterial Getter
 func (r TaobaoWlbItemAddAPIRequest) GetPackageMaterial() string {
 	return r._packageMaterial
 }
 
-// Set is Price Setter
+// SetPrice is Price Setter
 // 商品价格，单位：分
 func (r *TaobaoWlbItemAddAPIRequest) SetPrice(_price int64) error {
 	r._price = _price
@@ -332,12 +332,12 @@ func (r *TaobaoWlbItemAddAPIRequest) SetPrice(_price int64) error {
 	return nil
 }
 
-// Get Price Getter
+// GetPrice Price Getter
 func (r TaobaoWlbItemAddAPIRequest) GetPrice() int64 {
 	return r._price
 }
 
-// Set is SupportBatch Setter
+// SetSupportBatch is SupportBatch Setter
 // 是否支持批次
 func (r *TaobaoWlbItemAddAPIRequest) SetSupportBatch(_supportBatch bool) error {
 	r._supportBatch = _supportBatch
@@ -345,7 +345,7 @@ func (r *TaobaoWlbItemAddAPIRequest) SetSupportBatch(_supportBatch bool) error {
 	return nil
 }
 
-// Get SupportBatch Getter
+// GetSupportBatch SupportBatch Getter
 func (r TaobaoWlbItemAddAPIRequest) GetSupportBatch() bool {
 	return r._supportBatch
 }

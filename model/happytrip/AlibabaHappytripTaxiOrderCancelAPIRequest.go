@@ -41,7 +41,7 @@ func (r AlibabaHappytripTaxiOrderCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *AlibabaHappytripTaxiOrderCancelAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -49,12 +49,12 @@ func (r *AlibabaHappytripTaxiOrderCancelAPIRequest) SetOrderId(_orderId string) 
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaHappytripTaxiOrderCancelAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is Force Setter
+// SetForce is Force Setter
 // 是否强制取消(true 或 false)默认false
 func (r *AlibabaHappytripTaxiOrderCancelAPIRequest) SetForce(_force string) error {
 	r._force = _force
@@ -62,12 +62,12 @@ func (r *AlibabaHappytripTaxiOrderCancelAPIRequest) SetForce(_force string) erro
 	return nil
 }
 
-// Get Force Getter
+// GetForce Force Getter
 func (r AlibabaHappytripTaxiOrderCancelAPIRequest) GetForce() string {
 	return r._force
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 取消类型，0：系统取消，非0：用户取消
 func (r *AlibabaHappytripTaxiOrderCancelAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -75,7 +75,7 @@ func (r *AlibabaHappytripTaxiOrderCancelAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaHappytripTaxiOrderCancelAPIRequest) GetType() int64 {
 	return r._type
 }

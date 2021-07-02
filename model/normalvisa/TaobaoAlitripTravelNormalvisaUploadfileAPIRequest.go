@@ -41,7 +41,7 @@ func (r TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is FileBytes Setter
+// SetFileBytes is FileBytes Setter
 // 文件
 func (r *TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) SetFileBytes(_fileBytes *model.File) error {
 	r._fileBytes = _fileBytes
@@ -49,12 +49,12 @@ func (r *TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) SetFileBytes(_fileBy
 	return nil
 }
 
-// Get FileBytes Getter
+// GetFileBytes FileBytes Getter
 func (r TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) GetFileBytes() *model.File {
 	return r._fileBytes
 }
 
-// Set is FileName Setter
+// SetFileName is FileName Setter
 // 文件名：注意文件名请保证和上传的文件一直
 func (r *TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) SetFileName(_fileName string) error {
 	r._fileName = _fileName
@@ -62,12 +62,12 @@ func (r *TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) SetFileName(_fileNam
 	return nil
 }
 
-// Get FileName Getter
+// GetFileName FileName Getter
 func (r TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) GetFileName() string {
 	return r._fileName
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 订单id
 func (r *TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
@@ -75,7 +75,7 @@ func (r *TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) SetBizOrderId(_bizOr
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }

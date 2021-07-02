@@ -37,7 +37,7 @@ func (r AlibabaLegalCaseEntrustGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is EntrustId Setter
+// SetEntrustId is EntrustId Setter
 // 委托id
 func (r *AlibabaLegalCaseEntrustGetAPIRequest) SetEntrustId(_entrustId int64) error {
 	r._entrustId = _entrustId
@@ -45,7 +45,7 @@ func (r *AlibabaLegalCaseEntrustGetAPIRequest) SetEntrustId(_entrustId int64) er
 	return nil
 }
 
-// Get EntrustId Getter
+// GetEntrustId EntrustId Getter
 func (r AlibabaLegalCaseEntrustGetAPIRequest) GetEntrustId() int64 {
 	return r._entrustId
 }

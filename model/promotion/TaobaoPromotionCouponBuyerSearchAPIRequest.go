@@ -45,7 +45,7 @@ func (r TaobaoPromotionCouponBuyerSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SellerNick Setter
+// SetSellerNick is SellerNick Setter
 // 卖家昵称
 func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetSellerNick(_sellerNick string) error {
 	r._sellerNick = _sellerNick
@@ -53,12 +53,12 @@ func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetSellerNick(_sellerNick s
 	return nil
 }
 
-// Get SellerNick Getter
+// GetSellerNick SellerNick Getter
 func (r TaobaoPromotionCouponBuyerSearchAPIRequest) GetSellerNick() string {
 	return r._sellerNick
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 券状态  "正常",1 "已删除",-1 "已使用",-2 "冻结",0
 func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -66,12 +66,12 @@ func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetStatus(_status int64) er
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoPromotionCouponBuyerSearchAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页数据 建议20左右
 func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -79,12 +79,12 @@ func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetPageSize(_pageSize int64
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoPromotionCouponBuyerSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前第几页  从第一页开始
 func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -92,12 +92,12 @@ func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetCurrentPage(_currentPage
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TaobaoPromotionCouponBuyerSearchAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间
 func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -105,7 +105,7 @@ func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetEndTime(_endTime string)
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoPromotionCouponBuyerSearchAPIRequest) GetEndTime() string {
 	return r._endTime
 }

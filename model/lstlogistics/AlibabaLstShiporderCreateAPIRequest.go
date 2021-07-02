@@ -37,7 +37,7 @@ func (r AlibabaLstShiporderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ShipOrder Setter
+// SetShipOrder is ShipOrder Setter
 // 创建发货单入参
 func (r *AlibabaLstShiporderCreateAPIRequest) SetShipOrder(_shipOrder *LstThirdPartMainShipOrderCreateDto) error {
 	r._shipOrder = _shipOrder
@@ -45,7 +45,7 @@ func (r *AlibabaLstShiporderCreateAPIRequest) SetShipOrder(_shipOrder *LstThirdP
 	return nil
 }
 
-// Get ShipOrder Getter
+// GetShipOrder ShipOrder Getter
 func (r AlibabaLstShiporderCreateAPIRequest) GetShipOrder() *LstThirdPartMainShipOrderCreateDto {
 	return r._shipOrder
 }

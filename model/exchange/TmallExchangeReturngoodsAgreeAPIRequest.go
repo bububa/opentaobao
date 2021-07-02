@@ -39,7 +39,7 @@ func (r TmallExchangeReturngoodsAgreeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DisputeId Setter
+// SetDisputeId is DisputeId Setter
 // 换货单号ID
 func (r *TmallExchangeReturngoodsAgreeAPIRequest) SetDisputeId(_disputeId int64) error {
 	r._disputeId = _disputeId
@@ -47,12 +47,12 @@ func (r *TmallExchangeReturngoodsAgreeAPIRequest) SetDisputeId(_disputeId int64)
 	return nil
 }
 
-// Get DisputeId Getter
+// GetDisputeId DisputeId Getter
 func (r TmallExchangeReturngoodsAgreeAPIRequest) GetDisputeId() int64 {
 	return r._disputeId
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回字段。目前支持dispute_id（换货单号ID）,bizorder_id（正向交易单号ID）, modified（订单修改时间）, status（当前换货状态）
 func (r *TmallExchangeReturngoodsAgreeAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -60,7 +60,7 @@ func (r *TmallExchangeReturngoodsAgreeAPIRequest) SetFields(_fields []string) er
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TmallExchangeReturngoodsAgreeAPIRequest) GetFields() []string {
 	return r._fields
 }

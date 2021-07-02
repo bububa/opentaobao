@@ -39,7 +39,7 @@ func (r TaobaoQimenItemstoreQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 当前查询的页面编码
 func (r *TaobaoQimenItemstoreQueryAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -47,12 +47,12 @@ func (r *TaobaoQimenItemstoreQueryAPIRequest) SetPage(_page int64) error {
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r TaobaoQimenItemstoreQueryAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 线上商品ID
 func (r *TaobaoQimenItemstoreQueryAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -60,7 +60,7 @@ func (r *TaobaoQimenItemstoreQueryAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoQimenItemstoreQueryAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

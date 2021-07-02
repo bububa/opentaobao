@@ -39,7 +39,7 @@ func (r AlibabaWdkMarketingItempoolAddcategoryAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ItemPoolActivityCategory Setter
+// SetItemPoolActivityCategory is ItemPoolActivityCategory Setter
 // 类目对象
 func (r *AlibabaWdkMarketingItempoolAddcategoryAPIRequest) SetItemPoolActivityCategory(_itemPoolActivityCategory *ItemPoolActivityCategory) error {
 	r._itemPoolActivityCategory = _itemPoolActivityCategory
@@ -47,12 +47,12 @@ func (r *AlibabaWdkMarketingItempoolAddcategoryAPIRequest) SetItemPoolActivityCa
 	return nil
 }
 
-// Get ItemPoolActivityCategory Getter
+// GetItemPoolActivityCategory ItemPoolActivityCategory Getter
 func (r AlibabaWdkMarketingItempoolAddcategoryAPIRequest) GetItemPoolActivityCategory() *ItemPoolActivityCategory {
 	return r._itemPoolActivityCategory
 }
 
-// Set is CommonActivityParam Setter
+// SetCommonActivityParam is CommonActivityParam Setter
 // 活动对象
 func (r *AlibabaWdkMarketingItempoolAddcategoryAPIRequest) SetCommonActivityParam(_commonActivityParam *CommonActivityParam) error {
 	r._commonActivityParam = _commonActivityParam
@@ -60,7 +60,7 @@ func (r *AlibabaWdkMarketingItempoolAddcategoryAPIRequest) SetCommonActivityPara
 	return nil
 }
 
-// Get CommonActivityParam Getter
+// GetCommonActivityParam CommonActivityParam Getter
 func (r AlibabaWdkMarketingItempoolAddcategoryAPIRequest) GetCommonActivityParam() *CommonActivityParam {
 	return r._commonActivityParam
 }

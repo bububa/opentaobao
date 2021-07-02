@@ -43,7 +43,7 @@ func (r TaobaoBrandStartshopRptAccountGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TrafficType Setter
+// SetTrafficType is TrafficType Setter
 // 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5
 func (r *TaobaoBrandStartshopRptAccountGetAPIRequest) SetTrafficType(_trafficType string) error {
 	r._trafficType = _trafficType
@@ -51,12 +51,12 @@ func (r *TaobaoBrandStartshopRptAccountGetAPIRequest) SetTrafficType(_trafficTyp
 	return nil
 }
 
-// Get TrafficType Getter
+// GetTrafficType TrafficType Getter
 func (r TaobaoBrandStartshopRptAccountGetAPIRequest) GetTrafficType() string {
 	return r._trafficType
 }
 
-// Set is Effect Setter
+// SetEffect is Effect Setter
 // 默认15天
 func (r *TaobaoBrandStartshopRptAccountGetAPIRequest) SetEffect(_effect string) error {
 	r._effect = _effect
@@ -64,12 +64,12 @@ func (r *TaobaoBrandStartshopRptAccountGetAPIRequest) SetEffect(_effect string) 
 	return nil
 }
 
-// Get Effect Getter
+// GetEffect Effect Getter
 func (r TaobaoBrandStartshopRptAccountGetAPIRequest) GetEffect() string {
 	return r._effect
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 开始时间(最多可查询最近90天)
 func (r *TaobaoBrandStartshopRptAccountGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -77,12 +77,12 @@ func (r *TaobaoBrandStartshopRptAccountGetAPIRequest) SetEndDate(_endDate string
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoBrandStartshopRptAccountGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 截至时间(最晚到昨天)
 func (r *TaobaoBrandStartshopRptAccountGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -90,7 +90,7 @@ func (r *TaobaoBrandStartshopRptAccountGetAPIRequest) SetStartDate(_startDate st
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoBrandStartshopRptAccountGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }

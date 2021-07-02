@@ -37,7 +37,7 @@ func (r TaobaoAlitripFlightchangeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SearchOption Setter
+// SetSearchOption is SearchOption Setter
 // 查询信息封装
 func (r *TaobaoAlitripFlightchangeGetAPIRequest) SetSearchOption(_searchOption *FlightChangeDataQueryOption) error {
 	r._searchOption = _searchOption
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripFlightchangeGetAPIRequest) SetSearchOption(_searchOption *
 	return nil
 }
 
-// Get SearchOption Getter
+// GetSearchOption SearchOption Getter
 func (r TaobaoAlitripFlightchangeGetAPIRequest) GetSearchOption() *FlightChangeDataQueryOption {
 	return r._searchOption
 }

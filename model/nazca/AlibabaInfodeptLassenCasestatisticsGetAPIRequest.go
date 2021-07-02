@@ -41,7 +41,7 @@ func (r AlibabaInfodeptLassenCasestatisticsGetAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is AreaCode Setter
+// SetAreaCode is AreaCode Setter
 // 地区代码
 func (r *AlibabaInfodeptLassenCasestatisticsGetAPIRequest) SetAreaCode(_areaCode string) error {
 	r._areaCode = _areaCode
@@ -49,12 +49,12 @@ func (r *AlibabaInfodeptLassenCasestatisticsGetAPIRequest) SetAreaCode(_areaCode
 	return nil
 }
 
-// Get AreaCode Getter
+// GetAreaCode AreaCode Getter
 func (r AlibabaInfodeptLassenCasestatisticsGetAPIRequest) GetAreaCode() string {
 	return r._areaCode
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 开始时间
 func (r *AlibabaInfodeptLassenCasestatisticsGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -62,12 +62,12 @@ func (r *AlibabaInfodeptLassenCasestatisticsGetAPIRequest) SetStartTime(_startTi
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r AlibabaInfodeptLassenCasestatisticsGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间
 func (r *AlibabaInfodeptLassenCasestatisticsGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -75,7 +75,7 @@ func (r *AlibabaInfodeptLassenCasestatisticsGetAPIRequest) SetEndTime(_endTime s
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r AlibabaInfodeptLassenCasestatisticsGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }

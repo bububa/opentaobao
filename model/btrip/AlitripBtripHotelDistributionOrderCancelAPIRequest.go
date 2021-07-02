@@ -37,7 +37,7 @@ func (r AlitripBtripHotelDistributionOrderCancelAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ParamBtripHotelOrderOperateRq Setter
+// SetParamBtripHotelOrderOperateRq is ParamBtripHotelOrderOperateRq Setter
 // 取消订单接口入参
 func (r *AlitripBtripHotelDistributionOrderCancelAPIRequest) SetParamBtripHotelOrderOperateRq(_paramBtripHotelOrderOperateRq *BtripHotelOrderOperateRq) error {
 	r._paramBtripHotelOrderOperateRq = _paramBtripHotelOrderOperateRq
@@ -45,7 +45,7 @@ func (r *AlitripBtripHotelDistributionOrderCancelAPIRequest) SetParamBtripHotelO
 	return nil
 }
 
-// Get ParamBtripHotelOrderOperateRq Getter
+// GetParamBtripHotelOrderOperateRq ParamBtripHotelOrderOperateRq Getter
 func (r AlitripBtripHotelDistributionOrderCancelAPIRequest) GetParamBtripHotelOrderOperateRq() *BtripHotelOrderOperateRq {
 	return r._paramBtripHotelOrderOperateRq
 }

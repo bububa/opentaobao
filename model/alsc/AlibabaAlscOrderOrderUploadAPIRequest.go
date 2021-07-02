@@ -37,7 +37,7 @@ func (r AlibabaAlscOrderOrderUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamBackflowRequest Setter
+// SetParamBackflowRequest is ParamBackflowRequest Setter
 // 订单回流参数
 func (r *AlibabaAlscOrderOrderUploadAPIRequest) SetParamBackflowRequest(_paramBackflowRequest *BackflowRequest) error {
 	r._paramBackflowRequest = _paramBackflowRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlscOrderOrderUploadAPIRequest) SetParamBackflowRequest(_paramBa
 	return nil
 }
 
-// Get ParamBackflowRequest Getter
+// GetParamBackflowRequest ParamBackflowRequest Getter
 func (r AlibabaAlscOrderOrderUploadAPIRequest) GetParamBackflowRequest() *BackflowRequest {
 	return r._paramBackflowRequest
 }

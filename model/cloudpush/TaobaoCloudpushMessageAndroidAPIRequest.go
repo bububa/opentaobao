@@ -41,7 +41,7 @@ func (r TaobaoCloudpushMessageAndroidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Body Setter
+// SetBody is Body Setter
 // 发送的消息内容.
 func (r *TaobaoCloudpushMessageAndroidAPIRequest) SetBody(_body string) error {
 	r._body = _body
@@ -49,12 +49,12 @@ func (r *TaobaoCloudpushMessageAndroidAPIRequest) SetBody(_body string) error {
 	return nil
 }
 
-// Get Body Getter
+// GetBody Body Getter
 func (r TaobaoCloudpushMessageAndroidAPIRequest) GetBody() string {
 	return r._body
 }
 
-// Set is Target Setter
+// SetTarget is Target Setter
 // 推送目标: device:推送给设备; account:推送给指定帐号,all: 推送给全部
 func (r *TaobaoCloudpushMessageAndroidAPIRequest) SetTarget(_target string) error {
 	r._target = _target
@@ -62,12 +62,12 @@ func (r *TaobaoCloudpushMessageAndroidAPIRequest) SetTarget(_target string) erro
 	return nil
 }
 
-// Get Target Getter
+// GetTarget Target Getter
 func (r TaobaoCloudpushMessageAndroidAPIRequest) GetTarget() string {
 	return r._target
 }
 
-// Set is TargetValue Setter
+// SetTargetValue is TargetValue Setter
 // 根据Target来设定，如Target=device, 则对应的值为 设备id1,设备id2. 多个值使用逗号分隔
 func (r *TaobaoCloudpushMessageAndroidAPIRequest) SetTargetValue(_targetValue string) error {
 	r._targetValue = _targetValue
@@ -75,7 +75,7 @@ func (r *TaobaoCloudpushMessageAndroidAPIRequest) SetTargetValue(_targetValue st
 	return nil
 }
 
-// Get TargetValue Getter
+// GetTargetValue TargetValue Getter
 func (r TaobaoCloudpushMessageAndroidAPIRequest) GetTargetValue() string {
 	return r._targetValue
 }

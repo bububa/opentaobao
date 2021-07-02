@@ -37,7 +37,7 @@ func (r TaobaoPromotionmiscItemActivityGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动id。
 func (r *TaobaoPromotionmiscItemActivityGetAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -45,7 +45,7 @@ func (r *TaobaoPromotionmiscItemActivityGetAPIRequest) SetActivityId(_activityId
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoPromotionmiscItemActivityGetAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }

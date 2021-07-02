@@ -49,7 +49,7 @@ func (r TaobaoSmartstoreDeviceAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Mac Setter
+// SetMac is Mac Setter
 // mac地址
 func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetMac(_mac string) error {
 	r._mac = _mac
@@ -57,12 +57,12 @@ func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetMac(_mac string) error {
 	return nil
 }
 
-// Get Mac Getter
+// GetMac Mac Getter
 func (r TaobaoSmartstoreDeviceAddAPIRequest) GetMac() string {
 	return r._mac
 }
 
-// Set is IndoorPosition Setter
+// SetIndoorPosition is IndoorPosition Setter
 // 设备在店内的位置，以文字描述
 func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetIndoorPosition(_indoorPosition string) error {
 	r._indoorPosition = _indoorPosition
@@ -70,12 +70,12 @@ func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetIndoorPosition(_indoorPosition 
 	return nil
 }
 
-// Get IndoorPosition Getter
+// GetIndoorPosition IndoorPosition Getter
 func (r TaobaoSmartstoreDeviceAddAPIRequest) GetIndoorPosition() string {
 	return r._indoorPosition
 }
 
-// Set is DeviceName Setter
+// SetDeviceName is DeviceName Setter
 // 设备名称
 func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetDeviceName(_deviceName string) error {
 	r._deviceName = _deviceName
@@ -83,12 +83,12 @@ func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetDeviceName(_deviceName string) 
 	return nil
 }
 
-// Get DeviceName Getter
+// GetDeviceName DeviceName Getter
 func (r TaobaoSmartstoreDeviceAddAPIRequest) GetDeviceName() string {
 	return r._deviceName
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -96,12 +96,12 @@ func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetStoreId(_storeId int64) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoSmartstoreDeviceAddAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is OsType Setter
+// SetOsType is OsType Setter
 // 操作系统类型：WINDOWS("WINDOWS", "WINDOWS"),     ANDROID("ANDROID", "ANDROID"),     IOS("IOS", "IOS"),     LINUX("LINUX", "LINUX"),     OTHER("OTHER", "OTHER");
 func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetOsType(_osType string) error {
 	r._osType = _osType
@@ -109,12 +109,12 @@ func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetOsType(_osType string) error {
 	return nil
 }
 
-// Get OsType Getter
+// GetOsType OsType Getter
 func (r TaobaoSmartstoreDeviceAddAPIRequest) GetOsType() string {
 	return r._osType
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 设备类型：     CAMERA("CAMERA", "客流摄像头"),     SHELF("SHELF", "云货架"),     MAKEUP_MIRROR("MAKEUP_MIRROR", "试妆镜"),     FITTING_MIRROR("FITTING_MIRROR", "试衣镜"),     VENDOR("VENDOR", "售货机"),     SAMPLE_MACHINE("SAMPLE_MACHINE","派样机"),     DOLL_MACHINE("DOLL_MACHINE", "娃娃机"),     INTERACTIVE_PHOTO("INTERACTIVE_PHOTO", "互动拍照"),     INTERACTIVE_GAME("INTERACTIVE_GAME", "互动游戏"),     USHER_SCREEN("USHER_SCREEN", "智慧迎宾屏"),     DRESSING("DRESSING", "闪电换装"),     MAGIC_MIRROR("MAGIC_MIRROR", "百搭魔镜"),     SHOES_FITTING_MIRROR("SHOES_FITTING_MIRROR", "试鞋镜"),     SKIN_DETECTION("SKIN_DETECTION", "肌肤测试仪"),     FOOT_DETECTION("FOOT_DETECTION", "测脚仪"),     RFID_SENSOR("RFID_SENSOR", "RFID"),touch_machine("touch_machine","导购一体屏")
 func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetDeviceType(_deviceType string) error {
 	r._deviceType = _deviceType
@@ -122,12 +122,12 @@ func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetDeviceType(_deviceType string) 
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r TaobaoSmartstoreDeviceAddAPIRequest) GetDeviceType() string {
 	return r._deviceType
 }
 
-// Set is OuterCode Setter
+// SetOuterCode is OuterCode Setter
 // 商家自定义设备编码
 func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetOuterCode(_outerCode string) error {
 	r._outerCode = _outerCode
@@ -135,7 +135,7 @@ func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetOuterCode(_outerCode string) er
 	return nil
 }
 
-// Get OuterCode Getter
+// GetOuterCode OuterCode Getter
 func (r TaobaoSmartstoreDeviceAddAPIRequest) GetOuterCode() string {
 	return r._outerCode
 }

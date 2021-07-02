@@ -37,7 +37,7 @@ func (r AlibabaPricePromotionCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PromotionActivityDo Setter
+// SetPromotionActivityDo is PromotionActivityDo Setter
 // 档期活动参数
 func (r *AlibabaPricePromotionCreateAPIRequest) SetPromotionActivityDo(_promotionActivityDo *PromotionActivityDo) error {
 	r._promotionActivityDo = _promotionActivityDo
@@ -45,7 +45,7 @@ func (r *AlibabaPricePromotionCreateAPIRequest) SetPromotionActivityDo(_promotio
 	return nil
 }
 
-// Get PromotionActivityDo Getter
+// GetPromotionActivityDo PromotionActivityDo Getter
 func (r AlibabaPricePromotionCreateAPIRequest) GetPromotionActivityDo() *PromotionActivityDo {
 	return r._promotionActivityDo
 }

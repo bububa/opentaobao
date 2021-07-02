@@ -41,7 +41,7 @@ func (r AlitripTuanHotelItemSkuUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 宝贝ID
 func (r *AlitripTuanHotelItemSkuUpdateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -49,12 +49,12 @@ func (r *AlitripTuanHotelItemSkuUpdateAPIRequest) SetItemId(_itemId int64) error
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlitripTuanHotelItemSkuUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 宝贝所属类目
 func (r *AlitripTuanHotelItemSkuUpdateAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -62,12 +62,12 @@ func (r *AlitripTuanHotelItemSkuUpdateAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r AlitripTuanHotelItemSkuUpdateAPIRequest) GetCatId() int64 {
 	return r._catId
 }
 
-// Set is ItemSkuList Setter
+// SetItemSkuList is ItemSkuList Setter
 // 关于sku（价格策略）的字段填写的说明  国内酒店套餐类目(日历库存必填选项：套餐名称、原价、间夜;普通库存必填选项：套餐名称、价格、原价、库存、间夜)。  国际酒店套餐类目(日历库存必填选型：套餐名称、原价、间夜、人数;普通库存必填选项：套餐名称、价格、原件、库存、间夜、人数)。  酒店餐饮美食类目(日历库存必填选项：套餐名称、原价、人数、次数;普通库存必填选项：套餐名称、价格、原价、库存、人数，次数)。  酒店服务类目(日历库存必填选项：套餐名称、原价、使用次数;普通库存必填选项：套餐名称、价格、原价、库存、使用次数)。  酒店客房优惠券类目(无sku（价格策略）选项，不填写)。
 func (r *AlitripTuanHotelItemSkuUpdateAPIRequest) SetItemSkuList(_itemSkuList []TopTuanItemSkuVO) error {
 	r._itemSkuList = _itemSkuList
@@ -75,7 +75,7 @@ func (r *AlitripTuanHotelItemSkuUpdateAPIRequest) SetItemSkuList(_itemSkuList []
 	return nil
 }
 
-// Get ItemSkuList Getter
+// GetItemSkuList ItemSkuList Getter
 func (r AlitripTuanHotelItemSkuUpdateAPIRequest) GetItemSkuList() []TopTuanItemSkuVO {
 	return r._itemSkuList
 }

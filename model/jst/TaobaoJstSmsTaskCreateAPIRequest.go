@@ -37,7 +37,7 @@ func (r TaobaoJstSmsTaskCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamCreateSmsTaskRequest Setter
+// SetParamCreateSmsTaskRequest is ParamCreateSmsTaskRequest Setter
 // 创建任务的入参
 func (r *TaobaoJstSmsTaskCreateAPIRequest) SetParamCreateSmsTaskRequest(_paramCreateSmsTaskRequest *CreateSmsTaskRequest) error {
 	r._paramCreateSmsTaskRequest = _paramCreateSmsTaskRequest
@@ -45,7 +45,7 @@ func (r *TaobaoJstSmsTaskCreateAPIRequest) SetParamCreateSmsTaskRequest(_paramCr
 	return nil
 }
 
-// Get ParamCreateSmsTaskRequest Getter
+// GetParamCreateSmsTaskRequest ParamCreateSmsTaskRequest Getter
 func (r TaobaoJstSmsTaskCreateAPIRequest) GetParamCreateSmsTaskRequest() *CreateSmsTaskRequest {
 	return r._paramCreateSmsTaskRequest
 }

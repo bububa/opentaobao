@@ -37,7 +37,7 @@ func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) GetApiParams
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 请求参数
 func (r *TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) SetParam(_param *SyncIdentifyRefundCaseResultDto) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) SetParam(_p
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) GetParam() *SyncIdentifyRefundCaseResultDto {
 	return r._param
 }

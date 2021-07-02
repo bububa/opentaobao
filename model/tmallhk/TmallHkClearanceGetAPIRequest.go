@@ -39,7 +39,7 @@ func (r TmallHkClearanceGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 天猫国际订单号
 func (r *TmallHkClearanceGetAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *TmallHkClearanceGetAPIRequest) SetOrderId(_orderId int64) error {
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TmallHkClearanceGetAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is NeedImage Setter
+// SetNeedImage is NeedImage Setter
 // 是否需要身份证图片，不需要可以缩短接口响应时间
 func (r *TmallHkClearanceGetAPIRequest) SetNeedImage(_needImage bool) error {
 	r._needImage = _needImage
@@ -60,7 +60,7 @@ func (r *TmallHkClearanceGetAPIRequest) SetNeedImage(_needImage bool) error {
 	return nil
 }
 
-// Get NeedImage Getter
+// GetNeedImage NeedImage Getter
 func (r TmallHkClearanceGetAPIRequest) GetNeedImage() bool {
 	return r._needImage
 }

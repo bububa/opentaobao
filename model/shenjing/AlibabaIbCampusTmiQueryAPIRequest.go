@@ -37,7 +37,7 @@ func (r AlibabaIbCampusTmiQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AccountQueryReqDto Setter
+// SetAccountQueryReqDto is AccountQueryReqDto Setter
 // 查询参数
 func (r *AlibabaIbCampusTmiQueryAPIRequest) SetAccountQueryReqDto(_accountQueryReqDto *AccountQueryReqDto) error {
 	r._accountQueryReqDto = _accountQueryReqDto
@@ -45,7 +45,7 @@ func (r *AlibabaIbCampusTmiQueryAPIRequest) SetAccountQueryReqDto(_accountQueryR
 	return nil
 }
 
-// Get AccountQueryReqDto Getter
+// GetAccountQueryReqDto AccountQueryReqDto Getter
 func (r AlibabaIbCampusTmiQueryAPIRequest) GetAccountQueryReqDto() *AccountQueryReqDto {
 	return r._accountQueryReqDto
 }

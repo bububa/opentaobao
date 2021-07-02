@@ -37,7 +37,7 @@ func (r TaobaoFeedflowItemOptionPageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LabelQuery Setter
+// SetLabelQuery is LabelQuery Setter
 // 标签查询条件
 func (r *TaobaoFeedflowItemOptionPageAPIRequest) SetLabelQuery(_labelQuery *LabelQueryDto) error {
 	r._labelQuery = _labelQuery
@@ -45,7 +45,7 @@ func (r *TaobaoFeedflowItemOptionPageAPIRequest) SetLabelQuery(_labelQuery *Labe
 	return nil
 }
 
-// Get LabelQuery Getter
+// GetLabelQuery LabelQuery Getter
 func (r TaobaoFeedflowItemOptionPageAPIRequest) GetLabelQuery() *LabelQueryDto {
 	return r._labelQuery
 }

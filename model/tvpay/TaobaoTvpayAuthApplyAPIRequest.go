@@ -49,7 +49,7 @@ func (r TaobaoTvpayAuthApplyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备id
 func (r *TaobaoTvpayAuthApplyAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -57,12 +57,12 @@ func (r *TaobaoTvpayAuthApplyAPIRequest) SetDeviceId(_deviceId string) error {
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r TaobaoTvpayAuthApplyAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is From Setter
+// SetFrom is From Setter
 // 请求来源
 func (r *TaobaoTvpayAuthApplyAPIRequest) SetFrom(_from string) error {
 	r._from = _from
@@ -70,12 +70,12 @@ func (r *TaobaoTvpayAuthApplyAPIRequest) SetFrom(_from string) error {
 	return nil
 }
 
-// Get From Getter
+// GetFrom From Getter
 func (r TaobaoTvpayAuthApplyAPIRequest) GetFrom() string {
 	return r._from
 }
 
-// Set is BizScene Setter
+// SetBizScene is BizScene Setter
 // 场景
 func (r *TaobaoTvpayAuthApplyAPIRequest) SetBizScene(_bizScene string) error {
 	r._bizScene = _bizScene
@@ -83,12 +83,12 @@ func (r *TaobaoTvpayAuthApplyAPIRequest) SetBizScene(_bizScene string) error {
 	return nil
 }
 
-// Get BizScene Getter
+// GetBizScene BizScene Getter
 func (r TaobaoTvpayAuthApplyAPIRequest) GetBizScene() string {
 	return r._bizScene
 }
 
-// Set is ItemName Setter
+// SetItemName is ItemName Setter
 // 商品名称
 func (r *TaobaoTvpayAuthApplyAPIRequest) SetItemName(_itemName string) error {
 	r._itemName = _itemName
@@ -96,12 +96,12 @@ func (r *TaobaoTvpayAuthApplyAPIRequest) SetItemName(_itemName string) error {
 	return nil
 }
 
-// Get ItemName Getter
+// GetItemName ItemName Getter
 func (r TaobaoTvpayAuthApplyAPIRequest) GetItemName() string {
 	return r._itemName
 }
 
-// Set is OperateType Setter
+// SetOperateType is OperateType Setter
 // 授权类型
 func (r *TaobaoTvpayAuthApplyAPIRequest) SetOperateType(_operateType string) error {
 	r._operateType = _operateType
@@ -109,12 +109,12 @@ func (r *TaobaoTvpayAuthApplyAPIRequest) SetOperateType(_operateType string) err
 	return nil
 }
 
-// Get OperateType Getter
+// GetOperateType OperateType Getter
 func (r TaobaoTvpayAuthApplyAPIRequest) GetOperateType() string {
 	return r._operateType
 }
 
-// Set is OutApproveId Setter
+// SetOutApproveId is OutApproveId Setter
 // 外部订单号
 func (r *TaobaoTvpayAuthApplyAPIRequest) SetOutApproveId(_outApproveId string) error {
 	r._outApproveId = _outApproveId
@@ -122,12 +122,12 @@ func (r *TaobaoTvpayAuthApplyAPIRequest) SetOutApproveId(_outApproveId string) e
 	return nil
 }
 
-// Get OutApproveId Getter
+// GetOutApproveId OutApproveId Getter
 func (r TaobaoTvpayAuthApplyAPIRequest) GetOutApproveId() string {
 	return r._outApproveId
 }
 
-// Set is TotalFee Setter
+// SetTotalFee is TotalFee Setter
 // 金额
 func (r *TaobaoTvpayAuthApplyAPIRequest) SetTotalFee(_totalFee string) error {
 	r._totalFee = _totalFee
@@ -135,7 +135,7 @@ func (r *TaobaoTvpayAuthApplyAPIRequest) SetTotalFee(_totalFee string) error {
 	return nil
 }
 
-// Get TotalFee Getter
+// GetTotalFee TotalFee Getter
 func (r TaobaoTvpayAuthApplyAPIRequest) GetTotalFee() string {
 	return r._totalFee
 }

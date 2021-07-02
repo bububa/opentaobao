@@ -37,7 +37,7 @@ func (r AlibabaWdkMerchantRoutingRegisterAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MerchantRoutingInfoRegister Setter
+// SetMerchantRoutingInfoRegister is MerchantRoutingInfoRegister Setter
 // 接口入参
 func (r *AlibabaWdkMerchantRoutingRegisterAPIRequest) SetMerchantRoutingInfoRegister(_merchantRoutingInfoRegister *MerchantRoutingInfoRegisterDo) error {
 	r._merchantRoutingInfoRegister = _merchantRoutingInfoRegister
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMerchantRoutingRegisterAPIRequest) SetMerchantRoutingInfoRegi
 	return nil
 }
 
-// Get MerchantRoutingInfoRegister Getter
+// GetMerchantRoutingInfoRegister MerchantRoutingInfoRegister Getter
 func (r AlibabaWdkMerchantRoutingRegisterAPIRequest) GetMerchantRoutingInfoRegister() *MerchantRoutingInfoRegisterDo {
 	return r._merchantRoutingInfoRegister
 }

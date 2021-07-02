@@ -37,7 +37,7 @@ func (r AlibabaInteractWindvaneCallAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UnNamed Setter
+// SetUnNamed is UnNamed Setter
 // 客户端鉴权使用，实际不会发送或接收数据
 func (r *AlibabaInteractWindvaneCallAPIRequest) SetUnNamed(_unNamed string) error {
 	r._unNamed = _unNamed
@@ -45,7 +45,7 @@ func (r *AlibabaInteractWindvaneCallAPIRequest) SetUnNamed(_unNamed string) erro
 	return nil
 }
 
-// Get UnNamed Getter
+// GetUnNamed UnNamed Getter
 func (r AlibabaInteractWindvaneCallAPIRequest) GetUnNamed() string {
 	return r._unNamed
 }

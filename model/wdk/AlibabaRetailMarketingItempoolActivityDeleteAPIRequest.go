@@ -41,7 +41,7 @@ func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is ActId Setter
+// SetActId is ActId Setter
 // 同城零售活动Id
 func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetActId(_actId int64) error {
 	r._actId = _actId
@@ -49,12 +49,12 @@ func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetActId(_actId
 	return nil
 }
 
-// Get ActId Getter
+// GetActId ActId Getter
 func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetActId() int64 {
 	return r._actId
 }
 
-// Set is CreatorId Setter
+// SetCreatorId is CreatorId Setter
 // 操作人id
 func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetCreatorId(_creatorId string) error {
 	r._creatorId = _creatorId
@@ -62,12 +62,12 @@ func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetCreatorId(_c
 	return nil
 }
 
-// Get CreatorId Getter
+// GetCreatorId CreatorId Getter
 func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetCreatorId() string {
 	return r._creatorId
 }
 
-// Set is CreatorName Setter
+// SetCreatorName is CreatorName Setter
 // 操作人名称
 func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetCreatorName(_creatorName string) error {
 	r._creatorName = _creatorName
@@ -75,7 +75,7 @@ func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetCreatorName(
 	return nil
 }
 
-// Get CreatorName Getter
+// GetCreatorName CreatorName Getter
 func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetCreatorName() string {
 	return r._creatorName
 }

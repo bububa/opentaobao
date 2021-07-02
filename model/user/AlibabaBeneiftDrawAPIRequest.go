@@ -41,7 +41,7 @@ func (r AlibabaBeneiftDrawAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Ename Setter
+// SetEname is Ename Setter
 // 奖池唯一标识，奖池创建时即生成
 func (r *AlibabaBeneiftDrawAPIRequest) SetEname(_ename string) error {
 	r._ename = _ename
@@ -49,12 +49,12 @@ func (r *AlibabaBeneiftDrawAPIRequest) SetEname(_ename string) error {
 	return nil
 }
 
-// Get Ename Getter
+// GetEname Ename Getter
 func (r AlibabaBeneiftDrawAPIRequest) GetEname() string {
 	return r._ename
 }
 
-// Set is AppName Setter
+// SetAppName is AppName Setter
 // 调用方AppName：规定为promotioncenter-${appId}
 func (r *AlibabaBeneiftDrawAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
@@ -62,12 +62,12 @@ func (r *AlibabaBeneiftDrawAPIRequest) SetAppName(_appName string) error {
 	return nil
 }
 
-// Get AppName Getter
+// GetAppName AppName Getter
 func (r AlibabaBeneiftDrawAPIRequest) GetAppName() string {
 	return r._appName
 }
 
-// Set is Ip Setter
+// SetIp is Ip Setter
 // 调用方应用ip，非必填
 func (r *AlibabaBeneiftDrawAPIRequest) SetIp(_ip string) error {
 	r._ip = _ip
@@ -75,7 +75,7 @@ func (r *AlibabaBeneiftDrawAPIRequest) SetIp(_ip string) error {
 	return nil
 }
 
-// Get Ip Getter
+// GetIp Ip Getter
 func (r AlibabaBeneiftDrawAPIRequest) GetIp() string {
 	return r._ip
 }

@@ -37,7 +37,7 @@ func (r TaobaoMessageaccountMesssageMassSendAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 参数
 func (r *TaobaoMessageaccountMesssageMassSendAPIRequest) SetParam(_param *MassMessageDto) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *TaobaoMessageaccountMesssageMassSendAPIRequest) SetParam(_param *MassMe
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r TaobaoMessageaccountMesssageMassSendAPIRequest) GetParam() *MassMessageDto {
 	return r._param
 }

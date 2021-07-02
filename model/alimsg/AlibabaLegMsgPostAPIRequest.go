@@ -59,7 +59,7 @@ func (r AlibabaLegMsgPostAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 应用标识
 func (r *AlibabaLegMsgPostAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
@@ -67,12 +67,12 @@ func (r *AlibabaLegMsgPostAPIRequest) SetAppId(_appId string) error {
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r AlibabaLegMsgPostAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// Set is AccessKey Setter
+// SetAccessKey is AccessKey Setter
 // 认证的code
 func (r *AlibabaLegMsgPostAPIRequest) SetAccessKey(_accessKey string) error {
 	r._accessKey = _accessKey
@@ -80,12 +80,12 @@ func (r *AlibabaLegMsgPostAPIRequest) SetAccessKey(_accessKey string) error {
 	return nil
 }
 
-// Get AccessKey Getter
+// GetAccessKey AccessKey Getter
 func (r AlibabaLegMsgPostAPIRequest) GetAccessKey() string {
 	return r._accessKey
 }
 
-// Set is MessageDefinitionCode Setter
+// SetMessageDefinitionCode is MessageDefinitionCode Setter
 // 消息定义code
 func (r *AlibabaLegMsgPostAPIRequest) SetMessageDefinitionCode(_messageDefinitionCode string) error {
 	r._messageDefinitionCode = _messageDefinitionCode
@@ -93,12 +93,12 @@ func (r *AlibabaLegMsgPostAPIRequest) SetMessageDefinitionCode(_messageDefinitio
 	return nil
 }
 
-// Get MessageDefinitionCode Getter
+// GetMessageDefinitionCode MessageDefinitionCode Getter
 func (r AlibabaLegMsgPostAPIRequest) GetMessageDefinitionCode() string {
 	return r._messageDefinitionCode
 }
 
-// Set is ReceiverType Setter
+// SetReceiverType is ReceiverType Setter
 // 接收人类型
 func (r *AlibabaLegMsgPostAPIRequest) SetReceiverType(_receiverType string) error {
 	r._receiverType = _receiverType
@@ -106,12 +106,12 @@ func (r *AlibabaLegMsgPostAPIRequest) SetReceiverType(_receiverType string) erro
 	return nil
 }
 
-// Get ReceiverType Getter
+// GetReceiverType ReceiverType Getter
 func (r AlibabaLegMsgPostAPIRequest) GetReceiverType() string {
 	return r._receiverType
 }
 
-// Set is Receivers Setter
+// SetReceivers is Receivers Setter
 // 接收人数组
 func (r *AlibabaLegMsgPostAPIRequest) SetReceivers(_receivers string) error {
 	r._receivers = _receivers
@@ -119,12 +119,12 @@ func (r *AlibabaLegMsgPostAPIRequest) SetReceivers(_receivers string) error {
 	return nil
 }
 
-// Get Receivers Getter
+// GetReceivers Receivers Getter
 func (r AlibabaLegMsgPostAPIRequest) GetReceivers() string {
 	return r._receivers
 }
 
-// Set is MessageBodyListStr Setter
+// SetMessageBodyListStr is MessageBodyListStr Setter
 // 发送的渠道类型数组
 func (r *AlibabaLegMsgPostAPIRequest) SetMessageBodyListStr(_messageBodyListStr string) error {
 	r._messageBodyListStr = _messageBodyListStr
@@ -132,12 +132,12 @@ func (r *AlibabaLegMsgPostAPIRequest) SetMessageBodyListStr(_messageBodyListStr 
 	return nil
 }
 
-// Get MessageBodyListStr Getter
+// GetMessageBodyListStr MessageBodyListStr Getter
 func (r AlibabaLegMsgPostAPIRequest) GetMessageBodyListStr() string {
 	return r._messageBodyListStr
 }
 
-// Set is BusinessId Setter
+// SetBusinessId is BusinessId Setter
 // 业务id
 func (r *AlibabaLegMsgPostAPIRequest) SetBusinessId(_businessId string) error {
 	r._businessId = _businessId
@@ -145,12 +145,12 @@ func (r *AlibabaLegMsgPostAPIRequest) SetBusinessId(_businessId string) error {
 	return nil
 }
 
-// Get BusinessId Getter
+// GetBusinessId BusinessId Getter
 func (r AlibabaLegMsgPostAPIRequest) GetBusinessId() string {
 	return r._businessId
 }
 
-// Set is BusinessType Setter
+// SetBusinessType is BusinessType Setter
 // 业务类型
 func (r *AlibabaLegMsgPostAPIRequest) SetBusinessType(_businessType string) error {
 	r._businessType = _businessType
@@ -158,12 +158,12 @@ func (r *AlibabaLegMsgPostAPIRequest) SetBusinessType(_businessType string) erro
 	return nil
 }
 
-// Get BusinessType Getter
+// GetBusinessType BusinessType Getter
 func (r AlibabaLegMsgPostAPIRequest) GetBusinessType() string {
 	return r._businessType
 }
 
-// Set is MessageParams Setter
+// SetMessageParams is MessageParams Setter
 // 模版里定义的变量
 func (r *AlibabaLegMsgPostAPIRequest) SetMessageParams(_messageParams string) error {
 	r._messageParams = _messageParams
@@ -171,12 +171,12 @@ func (r *AlibabaLegMsgPostAPIRequest) SetMessageParams(_messageParams string) er
 	return nil
 }
 
-// Get MessageParams Getter
+// GetMessageParams MessageParams Getter
 func (r AlibabaLegMsgPostAPIRequest) GetMessageParams() string {
 	return r._messageParams
 }
 
-// Set is CorpId Setter
+// SetCorpId is CorpId Setter
 // 三方租户id
 func (r *AlibabaLegMsgPostAPIRequest) SetCorpId(_corpId string) error {
 	r._corpId = _corpId
@@ -184,12 +184,12 @@ func (r *AlibabaLegMsgPostAPIRequest) SetCorpId(_corpId string) error {
 	return nil
 }
 
-// Get CorpId Getter
+// GetCorpId CorpId Getter
 func (r AlibabaLegMsgPostAPIRequest) GetCorpId() string {
 	return r._corpId
 }
 
-// Set is SendTime Setter
+// SetSendTime is SendTime Setter
 // 发送时间
 func (r *AlibabaLegMsgPostAPIRequest) SetSendTime(_sendTime string) error {
 	r._sendTime = _sendTime
@@ -197,12 +197,12 @@ func (r *AlibabaLegMsgPostAPIRequest) SetSendTime(_sendTime string) error {
 	return nil
 }
 
-// Get SendTime Getter
+// GetSendTime SendTime Getter
 func (r AlibabaLegMsgPostAPIRequest) GetSendTime() string {
 	return r._sendTime
 }
 
-// Set is ExpandParamsMapStr Setter
+// SetExpandParamsMapStr is ExpandParamsMapStr Setter
 // 扩展参数
 func (r *AlibabaLegMsgPostAPIRequest) SetExpandParamsMapStr(_expandParamsMapStr string) error {
 	r._expandParamsMapStr = _expandParamsMapStr
@@ -210,7 +210,7 @@ func (r *AlibabaLegMsgPostAPIRequest) SetExpandParamsMapStr(_expandParamsMapStr 
 	return nil
 }
 
-// Get ExpandParamsMapStr Getter
+// GetExpandParamsMapStr ExpandParamsMapStr Getter
 func (r AlibabaLegMsgPostAPIRequest) GetExpandParamsMapStr() string {
 	return r._expandParamsMapStr
 }

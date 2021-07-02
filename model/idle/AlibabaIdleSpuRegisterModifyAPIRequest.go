@@ -37,7 +37,7 @@ func (r AlibabaIdleSpuRegisterModifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IdleSpuRegister4TopDto Setter
+// SetIdleSpuRegister4TopDto is IdleSpuRegister4TopDto Setter
 // 入参
 func (r *AlibabaIdleSpuRegisterModifyAPIRequest) SetIdleSpuRegister4TopDto(_idleSpuRegister4TopDto *IdleSpuRegister4TopDto) error {
 	r._idleSpuRegister4TopDto = _idleSpuRegister4TopDto
@@ -45,7 +45,7 @@ func (r *AlibabaIdleSpuRegisterModifyAPIRequest) SetIdleSpuRegister4TopDto(_idle
 	return nil
 }
 
-// Get IdleSpuRegister4TopDto Getter
+// GetIdleSpuRegister4TopDto IdleSpuRegister4TopDto Getter
 func (r AlibabaIdleSpuRegisterModifyAPIRequest) GetIdleSpuRegister4TopDto() *IdleSpuRegister4TopDto {
 	return r._idleSpuRegister4TopDto
 }

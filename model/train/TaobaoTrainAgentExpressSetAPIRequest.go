@@ -47,7 +47,7 @@ func (r TaobaoTrainAgentExpressSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 订单号
 func (r *TaobaoTrainAgentExpressSetAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
@@ -55,12 +55,12 @@ func (r *TaobaoTrainAgentExpressSetAPIRequest) SetMainOrderId(_mainOrderId int64
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r TaobaoTrainAgentExpressSetAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }
 
-// Set is ExpressId Setter
+// SetExpressId is ExpressId Setter
 // 物流单号
 func (r *TaobaoTrainAgentExpressSetAPIRequest) SetExpressId(_expressId string) error {
 	r._expressId = _expressId
@@ -68,12 +68,12 @@ func (r *TaobaoTrainAgentExpressSetAPIRequest) SetExpressId(_expressId string) e
 	return nil
 }
 
-// Get ExpressId Getter
+// GetExpressId ExpressId Getter
 func (r TaobaoTrainAgentExpressSetAPIRequest) GetExpressId() string {
 	return r._expressId
 }
 
-// Set is Addr Setter
+// SetAddr is Addr Setter
 // 发货地址
 func (r *TaobaoTrainAgentExpressSetAPIRequest) SetAddr(_addr string) error {
 	r._addr = _addr
@@ -81,12 +81,12 @@ func (r *TaobaoTrainAgentExpressSetAPIRequest) SetAddr(_addr string) error {
 	return nil
 }
 
-// Get Addr Getter
+// GetAddr Addr Getter
 func (r TaobaoTrainAgentExpressSetAPIRequest) GetAddr() string {
 	return r._addr
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 手机号
 func (r *TaobaoTrainAgentExpressSetAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -94,12 +94,12 @@ func (r *TaobaoTrainAgentExpressSetAPIRequest) SetMobile(_mobile string) error {
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r TaobaoTrainAgentExpressSetAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商id
 func (r *TaobaoTrainAgentExpressSetAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -107,12 +107,12 @@ func (r *TaobaoTrainAgentExpressSetAPIRequest) SetAgentId(_agentId int64) error 
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r TaobaoTrainAgentExpressSetAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is ExpressName Setter
+// SetExpressName is ExpressName Setter
 // 物流公司:SF,EMS
 func (r *TaobaoTrainAgentExpressSetAPIRequest) SetExpressName(_expressName string) error {
 	r._expressName = _expressName
@@ -120,7 +120,7 @@ func (r *TaobaoTrainAgentExpressSetAPIRequest) SetExpressName(_expressName strin
 	return nil
 }
 
-// Get ExpressName Getter
+// GetExpressName ExpressName Getter
 func (r TaobaoTrainAgentExpressSetAPIRequest) GetExpressName() string {
 	return r._expressName
 }

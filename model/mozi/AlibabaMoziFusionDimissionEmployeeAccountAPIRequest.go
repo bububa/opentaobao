@@ -37,7 +37,7 @@ func (r AlibabaMoziFusionDimissionEmployeeAccountAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is DimissionEmployee Setter
+// SetDimissionEmployee is DimissionEmployee Setter
 // 入参
 func (r *AlibabaMoziFusionDimissionEmployeeAccountAPIRequest) SetDimissionEmployee(_dimissionEmployee *RemoveTenantEmployeeAndAccountRequest) error {
 	r._dimissionEmployee = _dimissionEmployee
@@ -45,7 +45,7 @@ func (r *AlibabaMoziFusionDimissionEmployeeAccountAPIRequest) SetDimissionEmploy
 	return nil
 }
 
-// Get DimissionEmployee Getter
+// GetDimissionEmployee DimissionEmployee Getter
 func (r AlibabaMoziFusionDimissionEmployeeAccountAPIRequest) GetDimissionEmployee() *RemoveTenantEmployeeAndAccountRequest {
 	return r._dimissionEmployee
 }

@@ -43,7 +43,7 @@ func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is TaskId Setter
+// SetTaskId is TaskId Setter
 // 任务ID
 func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetTaskId(_taskId string) error {
 	r._taskId = _taskId
@@ -51,12 +51,12 @@ func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetTaskId(_taskId strin
 	return nil
 }
 
-// Get TaskId Getter
+// GetTaskId TaskId Getter
 func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetTaskId() string {
 	return r._taskId
 }
 
-// Set is BizId Setter
+// SetBizId is BizId Setter
 // 幂等ID
 func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetBizId(_bizId string) error {
 	r._bizId = _bizId
@@ -64,12 +64,12 @@ func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetBizId(_bizId string)
 	return nil
 }
 
-// Get BizId Getter
+// GetBizId BizId Getter
 func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetBizId() string {
 	return r._bizId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 状态
 func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -77,12 +77,12 @@ func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetStatus(_status int64
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 内容
 func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -90,7 +90,7 @@ func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetContent(_content str
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetContent() string {
 	return r._content
 }

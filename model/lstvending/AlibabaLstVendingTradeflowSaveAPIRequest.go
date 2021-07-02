@@ -37,7 +37,7 @@ func (r AlibabaLstVendingTradeflowSaveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TradeFlowDTOList Setter
+// SetTradeFlowDTOList is TradeFlowDTOList Setter
 // 交易流水信息
 func (r *AlibabaLstVendingTradeflowSaveAPIRequest) SetTradeFlowDTOList(_tradeFlowDTOList []VendingTradeFlowDto) error {
 	r._tradeFlowDTOList = _tradeFlowDTOList
@@ -45,7 +45,7 @@ func (r *AlibabaLstVendingTradeflowSaveAPIRequest) SetTradeFlowDTOList(_tradeFlo
 	return nil
 }
 
-// Get TradeFlowDTOList Getter
+// GetTradeFlowDTOList TradeFlowDTOList Getter
 func (r AlibabaLstVendingTradeflowSaveAPIRequest) GetTradeFlowDTOList() []VendingTradeFlowDto {
 	return r._tradeFlowDTOList
 }

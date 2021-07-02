@@ -39,7 +39,7 @@ func (r TaobaoQianniuTaskMessageSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TaskId Setter
+// SetTaskId is TaskId Setter
 // 任务ID。如果taskid不为空，则只发给task对应的单个接收人。如果taskid为空，则发给metadata_id对应的所有接收人。
 func (r *TaobaoQianniuTaskMessageSendAPIRequest) SetTaskId(_taskId int64) error {
 	r._taskId = _taskId
@@ -47,12 +47,12 @@ func (r *TaobaoQianniuTaskMessageSendAPIRequest) SetTaskId(_taskId int64) error 
 	return nil
 }
 
-// Get TaskId Getter
+// GetTaskId TaskId Getter
 func (r TaobaoQianniuTaskMessageSendAPIRequest) GetTaskId() int64 {
 	return r._taskId
 }
 
-// Set is MetadataId Setter
+// SetMetadataId is MetadataId Setter
 // 任务元id，如果taskid不为空，则只发给task对应的单个接收人。如果taskid为空，则发给metadata_id对应的所有接收人。
 func (r *TaobaoQianniuTaskMessageSendAPIRequest) SetMetadataId(_metadataId int64) error {
 	r._metadataId = _metadataId
@@ -60,7 +60,7 @@ func (r *TaobaoQianniuTaskMessageSendAPIRequest) SetMetadataId(_metadataId int64
 	return nil
 }
 
-// Get MetadataId Getter
+// GetMetadataId MetadataId Getter
 func (r TaobaoQianniuTaskMessageSendAPIRequest) GetMetadataId() int64 {
 	return r._metadataId
 }

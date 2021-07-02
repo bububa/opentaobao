@@ -39,7 +39,7 @@ func (r AlibabaMosflowWorkStartprocessAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Variables Setter
+// SetVariables is Variables Setter
 // 参数二:额外业务参数,Map的JSON串
 func (r *AlibabaMosflowWorkStartprocessAPIRequest) SetVariables(_variables string) error {
 	r._variables = _variables
@@ -47,12 +47,12 @@ func (r *AlibabaMosflowWorkStartprocessAPIRequest) SetVariables(_variables strin
 	return nil
 }
 
-// Get Variables Getter
+// GetVariables Variables Getter
 func (r AlibabaMosflowWorkStartprocessAPIRequest) GetVariables() string {
 	return r._variables
 }
 
-// Set is ParameterEntity Setter
+// SetParameterEntity is ParameterEntity Setter
 // 流程必传参数
 func (r *AlibabaMosflowWorkStartprocessAPIRequest) SetParameterEntity(_parameterEntity *ParameterEntity) error {
 	r._parameterEntity = _parameterEntity
@@ -60,7 +60,7 @@ func (r *AlibabaMosflowWorkStartprocessAPIRequest) SetParameterEntity(_parameter
 	return nil
 }
 
-// Get ParameterEntity Getter
+// GetParameterEntity ParameterEntity Getter
 func (r AlibabaMosflowWorkStartprocessAPIRequest) GetParameterEntity() *ParameterEntity {
 	return r._parameterEntity
 }

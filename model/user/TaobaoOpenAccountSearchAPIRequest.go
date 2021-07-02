@@ -37,7 +37,7 @@ func (r TaobaoOpenAccountSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 基于阿里云OpenSearch服务，openSearch查询语法:https://help.aliyun.com/document_detail/29157.html，搜索服务能够基于id，loginId，mobile，email，isvAccountId，display_name,create_app_key,做搜索查询，示例中mobile可以基于模糊搜素，搜索135的账号，该搜索是分页返回，start表示开始行，hit表示一页返回值，最大500
 func (r *TaobaoOpenAccountSearchAPIRequest) SetQuery(_query string) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *TaobaoOpenAccountSearchAPIRequest) SetQuery(_query string) error {
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r TaobaoOpenAccountSearchAPIRequest) GetQuery() string {
 	return r._query
 }

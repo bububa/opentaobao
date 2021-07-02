@@ -47,7 +47,7 @@ func (r AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is StoreNo Setter
+// SetStoreNo is StoreNo Setter
 // 门店号
 func (r *AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) SetStoreNo(_storeNo string) error {
 	r._storeNo = _storeNo
@@ -55,12 +55,12 @@ func (r *AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) SetStoreNo(_storeNo
 	return nil
 }
 
-// Get StoreNo Getter
+// GetStoreNo StoreNo Getter
 func (r AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) GetStoreNo() string {
 	return r._storeNo
 }
 
-// Set is Amount Setter
+// SetAmount is Amount Setter
 // 调账金额
 func (r *AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) SetAmount(_amount int64) error {
 	r._amount = _amount
@@ -68,12 +68,12 @@ func (r *AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) SetAmount(_amount i
 	return nil
 }
 
-// Get Amount Getter
+// GetAmount Amount Getter
 func (r AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) GetAmount() int64 {
 	return r._amount
 }
 
-// Set is CardNo Setter
+// SetCardNo is CardNo Setter
 // 卡号
 func (r *AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) SetCardNo(_cardNo string) error {
 	r._cardNo = _cardNo
@@ -81,12 +81,12 @@ func (r *AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) SetCardNo(_cardNo s
 	return nil
 }
 
-// Get CardNo Getter
+// GetCardNo CardNo Getter
 func (r AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) GetCardNo() string {
 	return r._cardNo
 }
 
-// Set is OperTime Setter
+// SetOperTime is OperTime Setter
 // 交易时间
 func (r *AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) SetOperTime(_operTime string) error {
 	r._operTime = _operTime
@@ -94,12 +94,12 @@ func (r *AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) SetOperTime(_operTi
 	return nil
 }
 
-// Get OperTime Getter
+// GetOperTime OperTime Getter
 func (r AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) GetOperTime() string {
 	return r._operTime
 }
 
-// Set is Operator Setter
+// SetOperator is Operator Setter
 // 收银员号
 func (r *AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) SetOperator(_operator string) error {
 	r._operator = _operator
@@ -107,12 +107,12 @@ func (r *AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) SetOperator(_operat
 	return nil
 }
 
-// Get Operator Getter
+// GetOperator Operator Getter
 func (r AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) GetOperator() string {
 	return r._operator
 }
 
-// Set is PosNo Setter
+// SetPosNo is PosNo Setter
 // 调账收银机号
 func (r *AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) SetPosNo(_posNo string) error {
 	r._posNo = _posNo
@@ -120,7 +120,7 @@ func (r *AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) SetPosNo(_posNo str
 	return nil
 }
 
-// Get PosNo Getter
+// GetPosNo PosNo Getter
 func (r AlibabaMjOcBigposBanksaleAdjustmentApplyAPIRequest) GetPosNo() string {
 	return r._posNo
 }

@@ -63,7 +63,7 @@ func (r YunosTvpubadminContentShowGetlistAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ExtType Setter
+// SetExtType is ExtType Setter
 // 视频外部来源类型: 1:YOUKU, 2:MONGO_TV, 3:TAOTVMEDIA, 4:GOLIVE
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetExtType(_extType int64) error {
 	r._extType = _extType
@@ -71,12 +71,12 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetExtType(_extType int64)
 	return nil
 }
 
-// Get ExtType Getter
+// GetExtType ExtType Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetExtType() int64 {
 	return r._extType
 }
 
-// Set is GmtEnd Setter
+// SetGmtEnd is GmtEnd Setter
 // 时间查询范围，结束时间
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetGmtEnd(_gmtEnd string) error {
 	r._gmtEnd = _gmtEnd
@@ -84,12 +84,12 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetGmtEnd(_gmtEnd string) 
 	return nil
 }
 
-// Get GmtEnd Getter
+// GetGmtEnd GmtEnd Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetGmtEnd() string {
 	return r._gmtEnd
 }
 
-// Set is LicenseState Setter
+// SetLicenseState is LicenseState Setter
 // 审核状态：1未提审，2审核中，3通过，4不通过，5已下线
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetLicenseState(_licenseState int64) error {
 	r._licenseState = _licenseState
@@ -97,12 +97,12 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetLicenseState(_licenseSt
 	return nil
 }
 
-// Get LicenseState Getter
+// GetLicenseState LicenseState Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetLicenseState() int64 {
 	return r._licenseState
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -110,12 +110,12 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetPageSize(_pageSize int6
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is ShowId Setter
+// SetShowId is ShowId Setter
 // 节目ID
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetShowId(_showId string) error {
 	r._showId = _showId
@@ -123,12 +123,12 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetShowId(_showId string) 
 	return nil
 }
 
-// Get ShowId Getter
+// GetShowId ShowId Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetShowId() string {
 	return r._showId
 }
 
-// Set is ExtVideoStrId Setter
+// SetExtVideoStrId is ExtVideoStrId Setter
 // 视频ID
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetExtVideoStrId(_extVideoStrId string) error {
 	r._extVideoStrId = _extVideoStrId
@@ -136,12 +136,12 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetExtVideoStrId(_extVideo
 	return nil
 }
 
-// Get ExtVideoStrId Getter
+// GetExtVideoStrId ExtVideoStrId Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetExtVideoStrId() string {
 	return r._extVideoStrId
 }
 
-// Set is DateType Setter
+// SetDateType is DateType Setter
 // 时间类型：1-licenseSubmitTime, 2-licenseAuditTime, 3-youkuPublishTime
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetDateType(_dateType int64) error {
 	r._dateType = _dateType
@@ -149,12 +149,12 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetDateType(_dateType int6
 	return nil
 }
 
-// Get DateType Getter
+// GetDateType DateType Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetDateType() int64 {
 	return r._dateType
 }
 
-// Set is Category Setter
+// SetCategory is Category Setter
 // 主分类
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetCategory(_category int64) error {
 	r._category = _category
@@ -162,12 +162,12 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetCategory(_category int6
 	return nil
 }
 
-// Get Category Getter
+// GetCategory Category Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetCategory() int64 {
 	return r._category
 }
 
-// Set is ShowName Setter
+// SetShowName is ShowName Setter
 // 节目名称
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetShowName(_showName string) error {
 	r._showName = _showName
@@ -175,12 +175,12 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetShowName(_showName stri
 	return nil
 }
 
-// Get ShowName Getter
+// GetShowName ShowName Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetShowName() string {
 	return r._showName
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 分页，页码
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -188,12 +188,12 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetPageNo(_pageNo int64) e
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is GmtStart Setter
+// SetGmtStart is GmtStart Setter
 // 时间查询范围，开始时间
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetGmtStart(_gmtStart string) error {
 	r._gmtStart = _gmtStart
@@ -201,12 +201,12 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetGmtStart(_gmtStart stri
 	return nil
 }
 
-// Get GmtStart Getter
+// GetGmtStart GmtStart Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetGmtStart() string {
 	return r._gmtStart
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照方
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -214,12 +214,12 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetLicense(_license int64)
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetLicense() int64 {
 	return r._license
 }
 
-// Set is VideoTitleLike Setter
+// SetVideoTitleLike is VideoTitleLike Setter
 // 视频名称
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetVideoTitleLike(_videoTitleLike string) error {
 	r._videoTitleLike = _videoTitleLike
@@ -227,12 +227,12 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetVideoTitleLike(_videoTi
 	return nil
 }
 
-// Get VideoTitleLike Getter
+// GetVideoTitleLike VideoTitleLike Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetVideoTitleLike() string {
 	return r._videoTitleLike
 }
 
-// Set is VmacLongId Setter
+// SetVmacLongId is VmacLongId Setter
 // 老媒资ID(program_id)
 func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetVmacLongId(_vmacLongId int64) error {
 	r._vmacLongId = _vmacLongId
@@ -240,7 +240,7 @@ func (r *YunosTvpubadminContentShowGetlistAPIRequest) SetVmacLongId(_vmacLongId 
 	return nil
 }
 
-// Get VmacLongId Getter
+// GetVmacLongId VmacLongId Getter
 func (r YunosTvpubadminContentShowGetlistAPIRequest) GetVmacLongId() int64 {
 	return r._vmacLongId
 }

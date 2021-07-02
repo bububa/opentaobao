@@ -39,7 +39,7 @@ func (r TaobaoJstInteractiveAssetsConfigAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AssetsConfigList Setter
+// SetAssetsConfigList is AssetsConfigList Setter
 // []
 func (r *TaobaoJstInteractiveAssetsConfigAPIRequest) SetAssetsConfigList(_assetsConfigList []AssetsConfig) error {
 	r._assetsConfigList = _assetsConfigList
@@ -47,12 +47,12 @@ func (r *TaobaoJstInteractiveAssetsConfigAPIRequest) SetAssetsConfigList(_assets
 	return nil
 }
 
-// Get AssetsConfigList Getter
+// GetAssetsConfigList AssetsConfigList Getter
 func (r TaobaoJstInteractiveAssetsConfigAPIRequest) GetAssetsConfigList() []AssetsConfig {
 	return r._assetsConfigList
 }
 
-// Set is MiniAppId Setter
+// SetMiniAppId is MiniAppId Setter
 // 小程序id
 func (r *TaobaoJstInteractiveAssetsConfigAPIRequest) SetMiniAppId(_miniAppId string) error {
 	r._miniAppId = _miniAppId
@@ -60,7 +60,7 @@ func (r *TaobaoJstInteractiveAssetsConfigAPIRequest) SetMiniAppId(_miniAppId str
 	return nil
 }
 
-// Get MiniAppId Getter
+// GetMiniAppId MiniAppId Getter
 func (r TaobaoJstInteractiveAssetsConfigAPIRequest) GetMiniAppId() string {
 	return r._miniAppId
 }

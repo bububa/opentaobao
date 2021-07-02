@@ -47,7 +47,7 @@ func (r AlibabaAilabsAligenieSkillEntityImportAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is SkillId Setter
+// SetSkillId is SkillId Setter
 // 技能Id
 func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetSkillId(_skillId int64) error {
 	r._skillId = _skillId
@@ -55,12 +55,12 @@ func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetSkillId(_skillId i
 	return nil
 }
 
-// Get SkillId Getter
+// GetSkillId SkillId Getter
 func (r AlibabaAilabsAligenieSkillEntityImportAPIRequest) GetSkillId() int64 {
 	return r._skillId
 }
 
-// Set is Append Setter
+// SetAppend is Append Setter
 // 是否增量更新，true为增量，否则上传数据中没有的实体值将被删除
 func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetAppend(_append bool) error {
 	r._append = _append
@@ -68,12 +68,12 @@ func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetAppend(_append boo
 	return nil
 }
 
-// Get Append Getter
+// GetAppend Append Getter
 func (r AlibabaAilabsAligenieSkillEntityImportAPIRequest) GetAppend() bool {
 	return r._append
 }
 
-// Set is Test Setter
+// SetTest is Test Setter
 // 测试，目前没有此功能，此参数无效
 func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetTest(_test bool) error {
 	r._test = _test
@@ -81,12 +81,12 @@ func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetTest(_test bool) e
 	return nil
 }
 
-// Get Test Getter
+// GetTest Test Getter
 func (r AlibabaAilabsAligenieSkillEntityImportAPIRequest) GetTest() bool {
 	return r._test
 }
 
-// Set is FileData Setter
+// SetFileData is FileData Setter
 // 文件内容
 func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetFileData(_fileData *model.File) error {
 	r._fileData = _fileData
@@ -94,12 +94,12 @@ func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetFileData(_fileData
 	return nil
 }
 
-// Get FileData Getter
+// GetFileData FileData Getter
 func (r AlibabaAilabsAligenieSkillEntityImportAPIRequest) GetFileData() *model.File {
 	return r._fileData
 }
 
-// Set is EntityName Setter
+// SetEntityName is EntityName Setter
 // 要更新的实体名
 func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetEntityName(_entityName string) error {
 	r._entityName = _entityName
@@ -107,12 +107,12 @@ func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetEntityName(_entity
 	return nil
 }
 
-// Get EntityName Getter
+// GetEntityName EntityName Getter
 func (r AlibabaAilabsAligenieSkillEntityImportAPIRequest) GetEntityName() string {
 	return r._entityName
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 固定值，ISV
 func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -120,7 +120,7 @@ func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetType(_type string)
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaAilabsAligenieSkillEntityImportAPIRequest) GetType() string {
 	return r._type
 }

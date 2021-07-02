@@ -43,7 +43,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydListupoutDetailAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业id
 func (r *AlibabaAlihealthDrugtraceTopLsydListupoutDetailAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydListupoutDetailAPIRequest) SetRefEntId(
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutDetailAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据编码
 func (r *AlibabaAlihealthDrugtraceTopLsydListupoutDetailAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydListupoutDetailAPIRequest) SetBillCode(
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutDetailAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is FromRefUserId Setter
+// SetFromRefUserId is FromRefUserId Setter
 // 发货企业renEntId
 func (r *AlibabaAlihealthDrugtraceTopLsydListupoutDetailAPIRequest) SetFromRefUserId(_fromRefUserId string) error {
 	r._fromRefUserId = _fromRefUserId
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthDrugtraceTopLsydListupoutDetailAPIRequest) SetFromRefUs
 	return nil
 }
 
-// Get FromRefUserId Getter
+// GetFromRefUserId FromRefUserId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutDetailAPIRequest) GetFromRefUserId() string {
 	return r._fromRefUserId
 }
 
-// Set is ToRefUserId Setter
+// SetToRefUserId is ToRefUserId Setter
 // 收货企业refEntId
 func (r *AlibabaAlihealthDrugtraceTopLsydListupoutDetailAPIRequest) SetToRefUserId(_toRefUserId string) error {
 	r._toRefUserId = _toRefUserId
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthDrugtraceTopLsydListupoutDetailAPIRequest) SetToRefUser
 	return nil
 }
 
-// Get ToRefUserId Getter
+// GetToRefUserId ToRefUserId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutDetailAPIRequest) GetToRefUserId() string {
 	return r._toRefUserId
 }

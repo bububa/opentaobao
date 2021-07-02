@@ -39,7 +39,7 @@ func (r TaobaoMixnickWetoplayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TraceId Setter
+// SetTraceId is TraceId Setter
 // 排查问题id
 func (r *TaobaoMixnickWetoplayAPIRequest) SetTraceId(_traceId string) error {
 	r._traceId = _traceId
@@ -47,12 +47,12 @@ func (r *TaobaoMixnickWetoplayAPIRequest) SetTraceId(_traceId string) error {
 	return nil
 }
 
-// Get TraceId Getter
+// GetTraceId TraceId Getter
 func (r TaobaoMixnickWetoplayAPIRequest) GetTraceId() string {
 	return r._traceId
 }
 
-// Set is WeMixnick Setter
+// SetWeMixnick is WeMixnick Setter
 // 微淘混淆nick
 func (r *TaobaoMixnickWetoplayAPIRequest) SetWeMixnick(_weMixnick string) error {
 	r._weMixnick = _weMixnick
@@ -60,7 +60,7 @@ func (r *TaobaoMixnickWetoplayAPIRequest) SetWeMixnick(_weMixnick string) error 
 	return nil
 }
 
-// Get WeMixnick Getter
+// GetWeMixnick WeMixnick Getter
 func (r TaobaoMixnickWetoplayAPIRequest) GetWeMixnick() string {
 	return r._weMixnick
 }

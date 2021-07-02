@@ -37,7 +37,7 @@ func (r TmallAliautoServiceReceiptGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReceiptId Setter
+// SetReceiptId is ReceiptId Setter
 // 工单号
 func (r *TmallAliautoServiceReceiptGetAPIRequest) SetReceiptId(_receiptId int64) error {
 	r._receiptId = _receiptId
@@ -45,7 +45,7 @@ func (r *TmallAliautoServiceReceiptGetAPIRequest) SetReceiptId(_receiptId int64)
 	return nil
 }
 
-// Get ReceiptId Getter
+// GetReceiptId ReceiptId Getter
 func (r TmallAliautoServiceReceiptGetAPIRequest) GetReceiptId() int64 {
 	return r._receiptId
 }

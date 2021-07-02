@@ -43,7 +43,7 @@ func (r TaobaoTradeVoucherUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FileName Setter
+// SetFileName is FileName Setter
 // 上传文件的名称
 func (r *TaobaoTradeVoucherUploadAPIRequest) SetFileName(_fileName string) error {
 	r._fileName = _fileName
@@ -51,12 +51,12 @@ func (r *TaobaoTradeVoucherUploadAPIRequest) SetFileName(_fileName string) error
 	return nil
 }
 
-// Get FileName Getter
+// GetFileName FileName Getter
 func (r TaobaoTradeVoucherUploadAPIRequest) GetFileName() string {
 	return r._fileName
 }
 
-// Set is FileData Setter
+// SetFileData is FileData Setter
 // 文件
 func (r *TaobaoTradeVoucherUploadAPIRequest) SetFileData(_fileData *model.File) error {
 	r._fileData = _fileData
@@ -64,12 +64,12 @@ func (r *TaobaoTradeVoucherUploadAPIRequest) SetFileData(_fileData *model.File) 
 	return nil
 }
 
-// Get FileData Getter
+// GetFileData FileData Getter
 func (r TaobaoTradeVoucherUploadAPIRequest) GetFileData() *model.File {
 	return r._fileData
 }
 
-// Set is SellerNick Setter
+// SetSellerNick is SellerNick Setter
 // 该笔订单的卖家Nick
 func (r *TaobaoTradeVoucherUploadAPIRequest) SetSellerNick(_sellerNick string) error {
 	r._sellerNick = _sellerNick
@@ -77,12 +77,12 @@ func (r *TaobaoTradeVoucherUploadAPIRequest) SetSellerNick(_sellerNick string) e
 	return nil
 }
 
-// Get SellerNick Getter
+// GetSellerNick SellerNick Getter
 func (r TaobaoTradeVoucherUploadAPIRequest) GetSellerNick() string {
 	return r._sellerNick
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 该笔订单的买家Nick（混淆nick）
 func (r *TaobaoTradeVoucherUploadAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -90,7 +90,7 @@ func (r *TaobaoTradeVoucherUploadAPIRequest) SetBuyerNick(_buyerNick string) err
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r TaobaoTradeVoucherUploadAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }

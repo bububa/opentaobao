@@ -37,7 +37,7 @@ func (r AlibabaAscpAicSupplierAicinventoryPublishAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is AicInventoryPublishRequest Setter
+// SetAicInventoryPublishRequest is AicInventoryPublishRequest Setter
 // 库存发布请求参数
 func (r *AlibabaAscpAicSupplierAicinventoryPublishAPIRequest) SetAicInventoryPublishRequest(_aicInventoryPublishRequest *Aicinventorypublishrequest) error {
 	r._aicInventoryPublishRequest = _aicInventoryPublishRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpAicSupplierAicinventoryPublishAPIRequest) SetAicInventoryPub
 	return nil
 }
 
-// Get AicInventoryPublishRequest Getter
+// GetAicInventoryPublishRequest AicInventoryPublishRequest Getter
 func (r AlibabaAscpAicSupplierAicinventoryPublishAPIRequest) GetAicInventoryPublishRequest() *Aicinventorypublishrequest {
 	return r._aicInventoryPublishRequest
 }

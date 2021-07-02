@@ -37,7 +37,7 @@ func (r AlibabaWdkCouponTemplateTerminateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamCouponTemplateTerminateRequest Setter
+// SetParamCouponTemplateTerminateRequest is ParamCouponTemplateTerminateRequest Setter
 // 参数
 func (r *AlibabaWdkCouponTemplateTerminateAPIRequest) SetParamCouponTemplateTerminateRequest(_paramCouponTemplateTerminateRequest *CouponTemplateTerminateRequest) error {
 	r._paramCouponTemplateTerminateRequest = _paramCouponTemplateTerminateRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkCouponTemplateTerminateAPIRequest) SetParamCouponTemplateTerm
 	return nil
 }
 
-// Get ParamCouponTemplateTerminateRequest Getter
+// GetParamCouponTemplateTerminateRequest ParamCouponTemplateTerminateRequest Getter
 func (r AlibabaWdkCouponTemplateTerminateAPIRequest) GetParamCouponTemplateTerminateRequest() *CouponTemplateTerminateRequest {
 	return r._paramCouponTemplateTerminateRequest
 }

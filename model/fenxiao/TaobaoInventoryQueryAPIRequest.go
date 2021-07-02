@@ -44,7 +44,7 @@ func (r TaobaoInventoryQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ScItemIds Setter
+// SetScItemIds is ScItemIds Setter
 // 后端商品ID 列表，控制到50个
 func (r *TaobaoInventoryQueryAPIRequest) SetScItemIds(_scItemIds string) error {
 	r._scItemIds = _scItemIds
@@ -52,12 +52,12 @@ func (r *TaobaoInventoryQueryAPIRequest) SetScItemIds(_scItemIds string) error {
 	return nil
 }
 
-// Get ScItemIds Getter
+// GetScItemIds ScItemIds Getter
 func (r TaobaoInventoryQueryAPIRequest) GetScItemIds() string {
 	return r._scItemIds
 }
 
-// Set is ScItemCodes Setter
+// SetScItemCodes is ScItemCodes Setter
 // 后端商品的商家编码列表，控制到50个
 func (r *TaobaoInventoryQueryAPIRequest) SetScItemCodes(_scItemCodes string) error {
 	r._scItemCodes = _scItemCodes
@@ -65,12 +65,12 @@ func (r *TaobaoInventoryQueryAPIRequest) SetScItemCodes(_scItemCodes string) err
 	return nil
 }
 
-// Get ScItemCodes Getter
+// GetScItemCodes ScItemCodes Getter
 func (r TaobaoInventoryQueryAPIRequest) GetScItemCodes() string {
 	return r._scItemCodes
 }
 
-// Set is SellerNick Setter
+// SetSellerNick is SellerNick Setter
 // 卖家昵称
 func (r *TaobaoInventoryQueryAPIRequest) SetSellerNick(_sellerNick string) error {
 	r._sellerNick = _sellerNick
@@ -78,12 +78,12 @@ func (r *TaobaoInventoryQueryAPIRequest) SetSellerNick(_sellerNick string) error
 	return nil
 }
 
-// Get SellerNick Getter
+// GetSellerNick SellerNick Getter
 func (r TaobaoInventoryQueryAPIRequest) GetSellerNick() string {
 	return r._sellerNick
 }
 
-// Set is StoreCodes Setter
+// SetStoreCodes is StoreCodes Setter
 // 仓库列表:GLY001^GLY002
 func (r *TaobaoInventoryQueryAPIRequest) SetStoreCodes(_storeCodes string) error {
 	r._storeCodes = _storeCodes
@@ -91,7 +91,7 @@ func (r *TaobaoInventoryQueryAPIRequest) SetStoreCodes(_storeCodes string) error
 	return nil
 }
 
-// Get StoreCodes Getter
+// GetStoreCodes StoreCodes Getter
 func (r TaobaoInventoryQueryAPIRequest) GetStoreCodes() string {
 	return r._storeCodes
 }

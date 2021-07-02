@@ -37,7 +37,7 @@ func (r AlibabaTaobaoShopCatNeoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UnNamed Setter
+// SetUnNamed is UnNamed Setter
 // 客户端鉴权虚拟api
 func (r *AlibabaTaobaoShopCatNeoGetAPIRequest) SetUnNamed(_unNamed string) error {
 	r._unNamed = _unNamed
@@ -45,7 +45,7 @@ func (r *AlibabaTaobaoShopCatNeoGetAPIRequest) SetUnNamed(_unNamed string) error
 	return nil
 }
 
-// Get UnNamed Getter
+// GetUnNamed UnNamed Getter
 func (r AlibabaTaobaoShopCatNeoGetAPIRequest) GetUnNamed() string {
 	return r._unNamed
 }

@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is SupplierForecastRawRequest Setter
+// SetSupplierForecastRawRequest is SupplierForecastRawRequest Setter
 // 入参对象
 func (r *AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest) SetSupplierForecastRawRequest(_supplierForecastRawRequest *SupplierForecastRawRequest) error {
 	r._supplierForecastRawRequest = _supplierForecastRawRequest
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest) SetSupplierForecas
 	return nil
 }
 
-// Get SupplierForecastRawRequest Getter
+// GetSupplierForecastRawRequest SupplierForecastRawRequest Getter
 func (r AlibabaTmallgenieScpPlanForecastRawUploadAPIRequest) GetSupplierForecastRawRequest() *SupplierForecastRawRequest {
 	return r._supplierForecastRawRequest
 }

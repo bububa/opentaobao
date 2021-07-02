@@ -43,7 +43,7 @@ func (r TmallMarketingFaceSkindetectAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Image Setter
+// SetImage is Image Setter
 // 图片的base64（必须以base64,开头）
 func (r *TmallMarketingFaceSkindetectAPIRequest) SetImage(_image string) error {
 	r._image = _image
@@ -51,12 +51,12 @@ func (r *TmallMarketingFaceSkindetectAPIRequest) SetImage(_image string) error {
 	return nil
 }
 
-// Get Image Getter
+// GetImage Image Getter
 func (r TmallMarketingFaceSkindetectAPIRequest) GetImage() string {
 	return r._image
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // isv标识
 func (r *TmallMarketingFaceSkindetectAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -64,12 +64,12 @@ func (r *TmallMarketingFaceSkindetectAPIRequest) SetSource(_source string) error
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r TmallMarketingFaceSkindetectAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is FrontCamera Setter
+// SetFrontCamera is FrontCamera Setter
 // 前置摄像头1，后置摄像头0
 func (r *TmallMarketingFaceSkindetectAPIRequest) SetFrontCamera(_frontCamera string) error {
 	r._frontCamera = _frontCamera
@@ -77,12 +77,12 @@ func (r *TmallMarketingFaceSkindetectAPIRequest) SetFrontCamera(_frontCamera str
 	return nil
 }
 
-// Get FrontCamera Getter
+// GetFrontCamera FrontCamera Getter
 func (r TmallMarketingFaceSkindetectAPIRequest) GetFrontCamera() string {
 	return r._frontCamera
 }
 
-// Set is Mixnick Setter
+// SetMixnick is Mixnick Setter
 // 混淆nick
 func (r *TmallMarketingFaceSkindetectAPIRequest) SetMixnick(_mixnick string) error {
 	r._mixnick = _mixnick
@@ -90,7 +90,7 @@ func (r *TmallMarketingFaceSkindetectAPIRequest) SetMixnick(_mixnick string) err
 	return nil
 }
 
-// Get Mixnick Getter
+// GetMixnick Mixnick Getter
 func (r TmallMarketingFaceSkindetectAPIRequest) GetMixnick() string {
 	return r._mixnick
 }

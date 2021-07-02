@@ -37,7 +37,7 @@ func (r AlibabaWdkMarketingItembuygiftQueryitemsAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 查询入参
 func (r *AlibabaWdkMarketingItembuygiftQueryitemsAPIRequest) SetParam(_param *ActivitySkuQuery) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMarketingItembuygiftQueryitemsAPIRequest) SetParam(_param *Ac
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaWdkMarketingItembuygiftQueryitemsAPIRequest) GetParam() *ActivitySkuQuery {
 	return r._param
 }

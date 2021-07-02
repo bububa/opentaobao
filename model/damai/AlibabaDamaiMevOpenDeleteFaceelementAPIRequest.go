@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenDeleteFaceelementAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is DeleteFaceElementParam Setter
+// SetDeleteFaceElementParam is DeleteFaceElementParam Setter
 // 入参deleteFaceElementParam
 func (r *AlibabaDamaiMevOpenDeleteFaceelementAPIRequest) SetDeleteFaceElementParam(_deleteFaceElementParam *FaceElementIdOpenParam) error {
 	r._deleteFaceElementParam = _deleteFaceElementParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenDeleteFaceelementAPIRequest) SetDeleteFaceElementPar
 	return nil
 }
 
-// Get DeleteFaceElementParam Getter
+// GetDeleteFaceElementParam DeleteFaceElementParam Getter
 func (r AlibabaDamaiMevOpenDeleteFaceelementAPIRequest) GetDeleteFaceElementParam() *FaceElementIdOpenParam {
 	return r._deleteFaceElementParam
 }

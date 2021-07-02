@@ -37,7 +37,7 @@ func (r AlitripBtripCostCenterEntitySetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Rq Setter
+// SetRq is Rq Setter
 // 请求对象
 func (r *AlitripBtripCostCenterEntitySetAPIRequest) SetRq(_rq *OpenCostCenterSetEntityRq) error {
 	r._rq = _rq
@@ -45,7 +45,7 @@ func (r *AlitripBtripCostCenterEntitySetAPIRequest) SetRq(_rq *OpenCostCenterSet
 	return nil
 }
 
-// Get Rq Getter
+// GetRq Rq Getter
 func (r AlitripBtripCostCenterEntitySetAPIRequest) GetRq() *OpenCostCenterSetEntityRq {
 	return r._rq
 }

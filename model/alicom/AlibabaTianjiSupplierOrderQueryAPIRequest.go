@@ -37,7 +37,7 @@ func (r AlibabaTianjiSupplierOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamSupplierTopQueryModel Setter
+// SetParamSupplierTopQueryModel is ParamSupplierTopQueryModel Setter
 // 订单查询入参
 func (r *AlibabaTianjiSupplierOrderQueryAPIRequest) SetParamSupplierTopQueryModel(_paramSupplierTopQueryModel *SupplierTopQueryModel) error {
 	r._paramSupplierTopQueryModel = _paramSupplierTopQueryModel
@@ -45,7 +45,7 @@ func (r *AlibabaTianjiSupplierOrderQueryAPIRequest) SetParamSupplierTopQueryMode
 	return nil
 }
 
-// Get ParamSupplierTopQueryModel Getter
+// GetParamSupplierTopQueryModel ParamSupplierTopQueryModel Getter
 func (r AlibabaTianjiSupplierOrderQueryAPIRequest) GetParamSupplierTopQueryModel() *SupplierTopQueryModel {
 	return r._paramSupplierTopQueryModel
 }

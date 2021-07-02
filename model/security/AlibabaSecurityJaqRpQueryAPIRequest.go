@@ -37,7 +37,7 @@ func (r AlibabaSecurityJaqRpQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is VerifyToken Setter
+// SetVerifyToken is VerifyToken Setter
 // token
 func (r *AlibabaSecurityJaqRpQueryAPIRequest) SetVerifyToken(_verifyToken string) error {
 	r._verifyToken = _verifyToken
@@ -45,7 +45,7 @@ func (r *AlibabaSecurityJaqRpQueryAPIRequest) SetVerifyToken(_verifyToken string
 	return nil
 }
 
-// Get VerifyToken Getter
+// GetVerifyToken VerifyToken Getter
 func (r AlibabaSecurityJaqRpQueryAPIRequest) GetVerifyToken() string {
 	return r._verifyToken
 }

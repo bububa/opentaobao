@@ -37,7 +37,7 @@ func (r AlitripPlatformPoiRawPoioutAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FliggyPoiOutParam Setter
+// SetFliggyPoiOutParam is FliggyPoiOutParam Setter
 // 查询参数
 func (r *AlitripPlatformPoiRawPoioutAPIRequest) SetFliggyPoiOutParam(_fliggyPoiOutParam *FliggyPoiOutParam) error {
 	r._fliggyPoiOutParam = _fliggyPoiOutParam
@@ -45,7 +45,7 @@ func (r *AlitripPlatformPoiRawPoioutAPIRequest) SetFliggyPoiOutParam(_fliggyPoiO
 	return nil
 }
 
-// Get FliggyPoiOutParam Getter
+// GetFliggyPoiOutParam FliggyPoiOutParam Getter
 func (r AlitripPlatformPoiRawPoioutAPIRequest) GetFliggyPoiOutParam() *FliggyPoiOutParam {
 	return r._fliggyPoiOutParam
 }

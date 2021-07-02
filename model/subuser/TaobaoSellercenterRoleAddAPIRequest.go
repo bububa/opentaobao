@@ -43,7 +43,7 @@ func (r TaobaoSellercenterRoleAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 角色名
 func (r *TaobaoSellercenterRoleAddAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -51,12 +51,12 @@ func (r *TaobaoSellercenterRoleAddAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoSellercenterRoleAddAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Description Setter
+// SetDescription is Description Setter
 // 角色描述
 func (r *TaobaoSellercenterRoleAddAPIRequest) SetDescription(_description string) error {
 	r._description = _description
@@ -64,12 +64,12 @@ func (r *TaobaoSellercenterRoleAddAPIRequest) SetDescription(_description string
 	return nil
 }
 
-// Get Description Getter
+// GetDescription Description Getter
 func (r TaobaoSellercenterRoleAddAPIRequest) GetDescription() string {
 	return r._description
 }
 
-// Set is PermissionCodes Setter
+// SetPermissionCodes is PermissionCodes Setter
 // 需要授权的权限点permission_code列表,以","分割.其code值可以通过调用taobao.sellercenter.user.permissions.get返回，其中permission.is_authorize=1的权限点可以通过本接口授权给对应角色。
 func (r *TaobaoSellercenterRoleAddAPIRequest) SetPermissionCodes(_permissionCodes []string) error {
 	r._permissionCodes = _permissionCodes
@@ -77,12 +77,12 @@ func (r *TaobaoSellercenterRoleAddAPIRequest) SetPermissionCodes(_permissionCode
 	return nil
 }
 
-// Get PermissionCodes Getter
+// GetPermissionCodes PermissionCodes Getter
 func (r TaobaoSellercenterRoleAddAPIRequest) GetPermissionCodes() []string {
 	return r._permissionCodes
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 表示卖家昵称
 func (r *TaobaoSellercenterRoleAddAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -90,7 +90,7 @@ func (r *TaobaoSellercenterRoleAddAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSellercenterRoleAddAPIRequest) GetNick() string {
 	return r._nick
 }

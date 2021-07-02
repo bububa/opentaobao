@@ -37,7 +37,7 @@ func (r YunosTvpubadminManageTopicContentaddAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ContentJson Setter
+// SetContentJson is ContentJson Setter
 // 新增的专题内容
 func (r *YunosTvpubadminManageTopicContentaddAPIRequest) SetContentJson(_contentJson string) error {
 	r._contentJson = _contentJson
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminManageTopicContentaddAPIRequest) SetContentJson(_content
 	return nil
 }
 
-// Get ContentJson Getter
+// GetContentJson ContentJson Getter
 func (r YunosTvpubadminManageTopicContentaddAPIRequest) GetContentJson() string {
 	return r._contentJson
 }

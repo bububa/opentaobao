@@ -39,7 +39,7 @@ func (r AlibabaWttOfflineRecordQueryagentinfoAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 淘宝订单号
 func (r *AlibabaWttOfflineRecordQueryagentinfoAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *AlibabaWttOfflineRecordQueryagentinfoAPIRequest) SetOrderId(_orderId in
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaWttOfflineRecordQueryagentinfoAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 业务号码
 func (r *AlibabaWttOfflineRecordQueryagentinfoAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -60,7 +60,7 @@ func (r *AlibabaWttOfflineRecordQueryagentinfoAPIRequest) SetPhone(_phone string
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r AlibabaWttOfflineRecordQueryagentinfoAPIRequest) GetPhone() string {
 	return r._phone
 }

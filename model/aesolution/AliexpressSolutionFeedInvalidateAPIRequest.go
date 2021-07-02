@@ -37,7 +37,7 @@ func (r AliexpressSolutionFeedInvalidateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is JobIdList Setter
+// SetJobIdList is JobIdList Setter
 // job id separated by ;  No more than 100 job Ids could be passed in one request.
 func (r *AliexpressSolutionFeedInvalidateAPIRequest) SetJobIdList(_jobIdList string) error {
 	r._jobIdList = _jobIdList
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionFeedInvalidateAPIRequest) SetJobIdList(_jobIdList str
 	return nil
 }
 
-// Get JobIdList Getter
+// GetJobIdList JobIdList Getter
 func (r AliexpressSolutionFeedInvalidateAPIRequest) GetJobIdList() string {
 	return r._jobIdList
 }

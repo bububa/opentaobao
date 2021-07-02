@@ -39,7 +39,7 @@ func (r TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is WarehouseCode Setter
+// SetWarehouseCode is WarehouseCode Setter
 // 仓库code
 func (r *TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) SetWarehouseCode(_warehouseCode string) error {
 	r._warehouseCode = _warehouseCode
@@ -47,12 +47,12 @@ func (r *TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) SetWarehouseCode(_war
 	return nil
 }
 
-// Get WarehouseCode Getter
+// GetWarehouseCode WarehouseCode Getter
 func (r TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
 }
 
-// Set is Uuids Setter
+// SetUuids is Uuids Setter
 // 待确认的uuid列表
 func (r *TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) SetUuids(_uuids []string) error {
 	r._uuids = _uuids
@@ -60,7 +60,7 @@ func (r *TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) SetUuids(_uuids []str
 	return nil
 }
 
-// Get Uuids Getter
+// GetUuids Uuids Getter
 func (r TaobaoWdkEquipmentConveyorBatchconfirmAPIRequest) GetUuids() []string {
 	return r._uuids
 }

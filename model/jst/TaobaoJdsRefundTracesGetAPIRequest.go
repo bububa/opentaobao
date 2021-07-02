@@ -37,7 +37,7 @@ func (r TaobaoJdsRefundTracesGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 淘宝的退款编号
 func (r *TaobaoJdsRefundTracesGetAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -45,7 +45,7 @@ func (r *TaobaoJdsRefundTracesGetAPIRequest) SetRefundId(_refundId int64) error 
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoJdsRefundTracesGetAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }

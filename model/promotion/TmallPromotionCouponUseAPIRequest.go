@@ -47,7 +47,7 @@ func (r TmallPromotionCouponUseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Extra Setter
+// SetExtra is Extra Setter
 // 扩展字段
 func (r *TmallPromotionCouponUseAPIRequest) SetExtra(_extra string) error {
 	r._extra = _extra
@@ -55,12 +55,12 @@ func (r *TmallPromotionCouponUseAPIRequest) SetExtra(_extra string) error {
 	return nil
 }
 
-// Get Extra Getter
+// GetExtra Extra Getter
 func (r TmallPromotionCouponUseAPIRequest) GetExtra() string {
 	return r._extra
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务类型
 func (r *TmallPromotionCouponUseAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -68,12 +68,12 @@ func (r *TmallPromotionCouponUseAPIRequest) SetBizType(_bizType string) error {
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TmallPromotionCouponUseAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is BuyerId Setter
+// SetBuyerId is BuyerId Setter
 // buyer_id、buyer_nick至少填一个， 都填写以id为准
 func (r *TmallPromotionCouponUseAPIRequest) SetBuyerId(_buyerId string) error {
 	r._buyerId = _buyerId
@@ -81,12 +81,12 @@ func (r *TmallPromotionCouponUseAPIRequest) SetBuyerId(_buyerId string) error {
 	return nil
 }
 
-// Get BuyerId Getter
+// GetBuyerId BuyerId Getter
 func (r TmallPromotionCouponUseAPIRequest) GetBuyerId() string {
 	return r._buyerId
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // buyer_id、buyer_nick至少填一个， 都填写以id为准
 func (r *TmallPromotionCouponUseAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -94,12 +94,12 @@ func (r *TmallPromotionCouponUseAPIRequest) SetBuyerNick(_buyerNick string) erro
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r TmallPromotionCouponUseAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 商家id
 func (r *TmallPromotionCouponUseAPIRequest) SetSellerId(_sellerId string) error {
 	r._sellerId = _sellerId
@@ -107,12 +107,12 @@ func (r *TmallPromotionCouponUseAPIRequest) SetSellerId(_sellerId string) error 
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r TmallPromotionCouponUseAPIRequest) GetSellerId() string {
 	return r._sellerId
 }
 
-// Set is CouponId Setter
+// SetCouponId is CouponId Setter
 // 优惠券id
 func (r *TmallPromotionCouponUseAPIRequest) SetCouponId(_couponId string) error {
 	r._couponId = _couponId
@@ -120,7 +120,7 @@ func (r *TmallPromotionCouponUseAPIRequest) SetCouponId(_couponId string) error 
 	return nil
 }
 
-// Get CouponId Getter
+// GetCouponId CouponId Getter
 func (r TmallPromotionCouponUseAPIRequest) GetCouponId() string {
 	return r._couponId
 }

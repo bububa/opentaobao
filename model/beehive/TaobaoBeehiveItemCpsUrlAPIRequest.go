@@ -45,7 +45,7 @@ func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Platform Setter
+// SetPlatform is Platform Setter
 // 平台，一般为手机
 func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetPlatform(_platform string) error {
 	r._platform = _platform
@@ -53,12 +53,12 @@ func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetPlatform(_platform string) error 
 	return nil
 }
 
-// Get Platform Getter
+// GetPlatform Platform Getter
 func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetPlatform() string {
 	return r._platform
 }
 
-// Set is AdUserId Setter
+// SetAdUserId is AdUserId Setter
 // 达人ID
 func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetAdUserId(_adUserId int64) error {
 	r._adUserId = _adUserId
@@ -66,12 +66,12 @@ func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetAdUserId(_adUserId int64) error {
 	return nil
 }
 
-// Get AdUserId Getter
+// GetAdUserId AdUserId Getter
 func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetAdUserId() int64 {
 	return r._adUserId
 }
 
-// Set is SourceType Setter
+// SetSourceType is SourceType Setter
 // 站外是1
 func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetSourceType(_sourceType int64) error {
 	r._sourceType = _sourceType
@@ -79,12 +79,12 @@ func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetSourceType(_sourceType int64) err
 	return nil
 }
 
-// Get SourceType Getter
+// GetSourceType SourceType Getter
 func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetSourceType() int64 {
 	return r._sourceType
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务方，新浪为sina
 func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -92,12 +92,12 @@ func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetBizType(_bizType string) error {
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -105,7 +105,7 @@ func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

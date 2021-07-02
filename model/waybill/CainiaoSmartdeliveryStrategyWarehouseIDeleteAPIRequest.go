@@ -37,7 +37,7 @@ func (r CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is WarehouseId Setter
+// SetWarehouseId is WarehouseId Setter
 // 仓id
 func (r *CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest) SetWarehouseId(_warehouseId int64) error {
 	r._warehouseId = _warehouseId
@@ -45,7 +45,7 @@ func (r *CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest) SetWarehouseId(
 	return nil
 }
 
-// Get WarehouseId Getter
+// GetWarehouseId WarehouseId Getter
 func (r CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIRequest) GetWarehouseId() int64 {
 	return r._warehouseId
 }

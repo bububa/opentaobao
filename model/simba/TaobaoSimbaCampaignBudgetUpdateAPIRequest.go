@@ -43,7 +43,7 @@ func (r TaobaoSimbaCampaignBudgetUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UseSmooth Setter
+// SetUseSmooth is UseSmooth Setter
 // 是否平滑消耗：false-否，true-是
 func (r *TaobaoSimbaCampaignBudgetUpdateAPIRequest) SetUseSmooth(_useSmooth bool) error {
 	r._useSmooth = _useSmooth
@@ -51,12 +51,12 @@ func (r *TaobaoSimbaCampaignBudgetUpdateAPIRequest) SetUseSmooth(_useSmooth bool
 	return nil
 }
 
-// Get UseSmooth Getter
+// GetUseSmooth UseSmooth Getter
 func (r TaobaoSimbaCampaignBudgetUpdateAPIRequest) GetUseSmooth() bool {
 	return r._useSmooth
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划Id
 func (r *TaobaoSimbaCampaignBudgetUpdateAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -64,12 +64,12 @@ func (r *TaobaoSimbaCampaignBudgetUpdateAPIRequest) SetCampaignId(_campaignId in
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaCampaignBudgetUpdateAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is Budget Setter
+// SetBudget is Budget Setter
 // 如果为空则取消限额；否则必须为整数，单位是元，不得小于30；
 func (r *TaobaoSimbaCampaignBudgetUpdateAPIRequest) SetBudget(_budget int64) error {
 	r._budget = _budget
@@ -77,12 +77,12 @@ func (r *TaobaoSimbaCampaignBudgetUpdateAPIRequest) SetBudget(_budget int64) err
 	return nil
 }
 
-// Get Budget Getter
+// GetBudget Budget Getter
 func (r TaobaoSimbaCampaignBudgetUpdateAPIRequest) GetBudget() int64 {
 	return r._budget
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaCampaignBudgetUpdateAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -90,7 +90,7 @@ func (r *TaobaoSimbaCampaignBudgetUpdateAPIRequest) SetNick(_nick string) error 
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaCampaignBudgetUpdateAPIRequest) GetNick() string {
 	return r._nick
 }

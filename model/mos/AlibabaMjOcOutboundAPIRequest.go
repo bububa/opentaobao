@@ -37,7 +37,7 @@ func (r AlibabaMjOcOutboundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GoodsOutbound Setter
+// SetGoodsOutbound is GoodsOutbound Setter
 // 发货信息
 func (r *AlibabaMjOcOutboundAPIRequest) SetGoodsOutbound(_goodsOutbound *GoodsOutboundDto) error {
 	r._goodsOutbound = _goodsOutbound
@@ -45,7 +45,7 @@ func (r *AlibabaMjOcOutboundAPIRequest) SetGoodsOutbound(_goodsOutbound *GoodsOu
 	return nil
 }
 
-// Get GoodsOutbound Getter
+// GetGoodsOutbound GoodsOutbound Getter
 func (r AlibabaMjOcOutboundAPIRequest) GetGoodsOutbound() *GoodsOutboundDto {
 	return r._goodsOutbound
 }

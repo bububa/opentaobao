@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmRechargeQryruleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamPullRechargeRuleByShopReq Setter
+// SetParamPullRechargeRuleByShopReq is ParamPullRechargeRuleByShopReq Setter
 // 请求对象
 func (r *AlibabaAlscCrmRechargeQryruleAPIRequest) SetParamPullRechargeRuleByShopReq(_paramPullRechargeRuleByShopReq *PullRechargeRuleByShopReq) error {
 	r._paramPullRechargeRuleByShopReq = _paramPullRechargeRuleByShopReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmRechargeQryruleAPIRequest) SetParamPullRechargeRuleByShop
 	return nil
 }
 
-// Get ParamPullRechargeRuleByShopReq Getter
+// GetParamPullRechargeRuleByShopReq ParamPullRechargeRuleByShopReq Getter
 func (r AlibabaAlscCrmRechargeQryruleAPIRequest) GetParamPullRechargeRuleByShopReq() *PullRechargeRuleByShopReq {
 	return r._paramPullRechargeRuleByShopReq
 }

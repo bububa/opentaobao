@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmCustomerResetppwAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ResetPayPwdRequest Setter
+// SetResetPayPwdRequest is ResetPayPwdRequest Setter
 // 系统自动生成
 func (r *AlibabaAlscCrmCustomerResetppwAPIRequest) SetResetPayPwdRequest(_resetPayPwdRequest *ResetPayPasswdOpenReq) error {
 	r._resetPayPwdRequest = _resetPayPwdRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmCustomerResetppwAPIRequest) SetResetPayPwdRequest(_resetP
 	return nil
 }
 
-// Get ResetPayPwdRequest Getter
+// GetResetPayPwdRequest ResetPayPwdRequest Getter
 func (r AlibabaAlscCrmCustomerResetppwAPIRequest) GetResetPayPwdRequest() *ResetPayPasswdOpenReq {
 	return r._resetPayPwdRequest
 }

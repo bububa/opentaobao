@@ -39,7 +39,7 @@ func (r AlibabaScbpAdKeywordPriceUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AdKeyword Setter
+// SetAdKeyword is AdKeyword Setter
 // 只能取ascci字符
 func (r *AlibabaScbpAdKeywordPriceUpdateAPIRequest) SetAdKeyword(_adKeyword string) error {
 	r._adKeyword = _adKeyword
@@ -47,12 +47,12 @@ func (r *AlibabaScbpAdKeywordPriceUpdateAPIRequest) SetAdKeyword(_adKeyword stri
 	return nil
 }
 
-// Get AdKeyword Getter
+// GetAdKeyword AdKeyword Getter
 func (r AlibabaScbpAdKeywordPriceUpdateAPIRequest) GetAdKeyword() string {
 	return r._adKeyword
 }
 
-// Set is PriceStr Setter
+// SetPriceStr is PriceStr Setter
 // 关键词价格单位元，一位小数
 func (r *AlibabaScbpAdKeywordPriceUpdateAPIRequest) SetPriceStr(_priceStr string) error {
 	r._priceStr = _priceStr
@@ -60,7 +60,7 @@ func (r *AlibabaScbpAdKeywordPriceUpdateAPIRequest) SetPriceStr(_priceStr string
 	return nil
 }
 
-// Get PriceStr Getter
+// GetPriceStr PriceStr Getter
 func (r AlibabaScbpAdKeywordPriceUpdateAPIRequest) GetPriceStr() string {
 	return r._priceStr
 }

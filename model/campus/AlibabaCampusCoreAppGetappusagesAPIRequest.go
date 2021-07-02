@@ -39,7 +39,7 @@ func (r AlibabaCampusCoreAppGetappusagesAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Appid Setter
+// SetAppid is Appid Setter
 // 应用id
 func (r *AlibabaCampusCoreAppGetappusagesAPIRequest) SetAppid(_appid int64) error {
 	r._appid = _appid
@@ -47,12 +47,12 @@ func (r *AlibabaCampusCoreAppGetappusagesAPIRequest) SetAppid(_appid int64) erro
 	return nil
 }
 
-// Get Appid Getter
+// GetAppid Appid Getter
 func (r AlibabaCampusCoreAppGetappusagesAPIRequest) GetAppid() int64 {
 	return r._appid
 }
 
-// Set is WorkBenchContext Setter
+// SetWorkBenchContext is WorkBenchContext Setter
 // WorkBenchContext
 func (r *AlibabaCampusCoreAppGetappusagesAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
 	r._workBenchContext = _workBenchContext
@@ -60,7 +60,7 @@ func (r *AlibabaCampusCoreAppGetappusagesAPIRequest) SetWorkBenchContext(_workBe
 	return nil
 }
 
-// Get WorkBenchContext Getter
+// GetWorkBenchContext WorkBenchContext Getter
 func (r AlibabaCampusCoreAppGetappusagesAPIRequest) GetWorkBenchContext() *WorkBenchContext {
 	return r._workBenchContext
 }

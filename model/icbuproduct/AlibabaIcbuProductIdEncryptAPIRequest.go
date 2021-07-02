@@ -39,7 +39,7 @@ func (r AlibabaIcbuProductIdEncryptAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Language Setter
+// SetLanguage is Language Setter
 // 语种
 func (r *AlibabaIcbuProductIdEncryptAPIRequest) SetLanguage(_language string) error {
 	r._language = _language
@@ -47,12 +47,12 @@ func (r *AlibabaIcbuProductIdEncryptAPIRequest) SetLanguage(_language string) er
 	return nil
 }
 
-// Get Language Getter
+// GetLanguage Language Getter
 func (r AlibabaIcbuProductIdEncryptAPIRequest) GetLanguage() string {
 	return r._language
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 明文id
 func (r *AlibabaIcbuProductIdEncryptAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -60,7 +60,7 @@ func (r *AlibabaIcbuProductIdEncryptAPIRequest) SetProductId(_productId int64) e
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r AlibabaIcbuProductIdEncryptAPIRequest) GetProductId() int64 {
 	return r._productId
 }

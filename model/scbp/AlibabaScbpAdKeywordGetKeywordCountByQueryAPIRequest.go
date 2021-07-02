@@ -39,7 +39,7 @@ func (r AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -47,12 +47,12 @@ func (r *AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) SetTopContext(_to
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }
 
-// Set is CampaignKeywordQuery Setter
+// SetCampaignKeywordQuery is CampaignKeywordQuery Setter
 // 请求参数
 func (r *AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) SetCampaignKeywordQuery(_campaignKeywordQuery *CampaignKeywordQuery) error {
 	r._campaignKeywordQuery = _campaignKeywordQuery
@@ -60,7 +60,7 @@ func (r *AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) SetCampaignKeywor
 	return nil
 }
 
-// Get CampaignKeywordQuery Getter
+// GetCampaignKeywordQuery CampaignKeywordQuery Getter
 func (r AlibabaScbpAdKeywordGetKeywordCountByQueryAPIRequest) GetCampaignKeywordQuery() *CampaignKeywordQuery {
 	return r._campaignKeywordQuery
 }

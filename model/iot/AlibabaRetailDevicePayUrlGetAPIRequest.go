@@ -45,7 +45,7 @@ func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IsvOrderId Setter
+// SetIsvOrderId is IsvOrderId Setter
 // 外部订单id
 func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetIsvOrderId(_isvOrderId string) error {
 	r._isvOrderId = _isvOrderId
@@ -53,12 +53,12 @@ func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetIsvOrderId(_isvOrderId strin
 	return nil
 }
 
-// Get IsvOrderId Getter
+// GetIsvOrderId IsvOrderId Getter
 func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetIsvOrderId() string {
 	return r._isvOrderId
 }
 
-// Set is BizName Setter
+// SetBizName is BizName Setter
 // 业务名称
 func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetBizName(_bizName string) error {
 	r._bizName = _bizName
@@ -66,12 +66,12 @@ func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetBizName(_bizName string) err
 	return nil
 }
 
-// Get BizName Getter
+// GetBizName BizName Getter
 func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetBizName() string {
 	return r._bizName
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -79,12 +79,12 @@ func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetItemId(_itemId int64) error 
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备sn
 func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -92,12 +92,12 @@ func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetDeviceId(_deviceId string) e
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is ItemType Setter
+// SetItemType is ItemType Setter
 // 1表示商品box，0或者为空表示普通商品
 func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetItemType(_itemType int64) error {
 	r._itemType = _itemType
@@ -105,7 +105,7 @@ func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetItemType(_itemType int64) er
 	return nil
 }
 
-// Get ItemType Getter
+// GetItemType ItemType Getter
 func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetItemType() int64 {
 	return r._itemType
 }

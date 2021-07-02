@@ -37,7 +37,7 @@ func (r TaobaoCrmGroupDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupId Setter
+// SetGroupId is GroupId Setter
 // 要删除的分组id
 func (r *TaobaoCrmGroupDeleteAPIRequest) SetGroupId(_groupId int64) error {
 	r._groupId = _groupId
@@ -45,7 +45,7 @@ func (r *TaobaoCrmGroupDeleteAPIRequest) SetGroupId(_groupId int64) error {
 	return nil
 }
 
-// Get GroupId Getter
+// GetGroupId GroupId Getter
 func (r TaobaoCrmGroupDeleteAPIRequest) GetGroupId() int64 {
 	return r._groupId
 }

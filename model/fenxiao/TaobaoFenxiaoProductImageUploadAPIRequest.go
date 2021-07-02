@@ -45,7 +45,7 @@ func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品ID
 func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -53,12 +53,12 @@ func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetProductId(_productId int6
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is PicPath Setter
+// SetPicPath is PicPath Setter
 // 产品主图图片空间相对路径或绝对路径
 func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetPicPath(_picPath string) error {
 	r._picPath = _picPath
@@ -66,12 +66,12 @@ func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetPicPath(_picPath string) 
 	return nil
 }
 
-// Get PicPath Getter
+// GetPicPath PicPath Getter
 func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetPicPath() string {
 	return r._picPath
 }
 
-// Set is Image Setter
+// SetImage is Image Setter
 // 产品图片
 func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetImage(_image *model.File) error {
 	r._image = _image
@@ -79,12 +79,12 @@ func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetImage(_image *model.File)
 	return nil
 }
 
-// Get Image Getter
+// GetImage Image Getter
 func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetImage() *model.File {
 	return r._image
 }
 
-// Set is Position Setter
+// SetPosition is Position Setter
 // 图片位置，0-14之间。0：操作sku属性图片，1：主图，2-5：细节图，6-14：额外主图
 func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetPosition(_position int64) error {
 	r._position = _position
@@ -92,12 +92,12 @@ func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetPosition(_position int64)
 	return nil
 }
 
-// Get Position Getter
+// GetPosition Position Getter
 func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetPosition() int64 {
 	return r._position
 }
 
-// Set is Properties Setter
+// SetProperties is Properties Setter
 // properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
 func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetProperties(_properties string) error {
 	r._properties = _properties
@@ -105,7 +105,7 @@ func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetProperties(_properties st
 	return nil
 }
 
-// Get Properties Getter
+// GetProperties Properties Getter
 func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetProperties() string {
 	return r._properties
 }

@@ -41,7 +41,7 @@ func (r YoukuOttDvbFirstorderFeedbackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *YoukuOttDvbFirstorderFeedbackAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -49,12 +49,12 @@ func (r *YoukuOttDvbFirstorderFeedbackAPIRequest) SetOrderId(_orderId int64) err
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r YoukuOttDvbFirstorderFeedbackAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is OccureTime Setter
+// SetOccureTime is OccureTime Setter
 // 反馈时间（时间戳，精确到毫秒），调用接口的时间有时候并非是反馈时间，所以增加反馈时间字段作为反馈时间
 func (r *YoukuOttDvbFirstorderFeedbackAPIRequest) SetOccureTime(_occureTime int64) error {
 	r._occureTime = _occureTime
@@ -62,12 +62,12 @@ func (r *YoukuOttDvbFirstorderFeedbackAPIRequest) SetOccureTime(_occureTime int6
 	return nil
 }
 
-// Get OccureTime Getter
+// GetOccureTime OccureTime Getter
 func (r YoukuOttDvbFirstorderFeedbackAPIRequest) GetOccureTime() int64 {
 	return r._occureTime
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 反馈类型， 200：广电接单
 func (r *YoukuOttDvbFirstorderFeedbackAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -75,7 +75,7 @@ func (r *YoukuOttDvbFirstorderFeedbackAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r YoukuOttDvbFirstorderFeedbackAPIRequest) GetType() int64 {
 	return r._type
 }

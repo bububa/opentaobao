@@ -41,7 +41,7 @@ func (r TaobaoWlbTmsorderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // 物流订单编号
 func (r *TaobaoWlbTmsorderQueryAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -49,12 +49,12 @@ func (r *TaobaoWlbTmsorderQueryAPIRequest) SetOrderCode(_orderCode string) error
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r TaobaoWlbTmsorderQueryAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 当前页
 func (r *TaobaoWlbTmsorderQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -62,12 +62,12 @@ func (r *TaobaoWlbTmsorderQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoWlbTmsorderQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页记录个数，如果用户输入的记录数大于50，则一页显示50条记录
 func (r *TaobaoWlbTmsorderQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *TaobaoWlbTmsorderQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoWlbTmsorderQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

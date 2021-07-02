@@ -57,7 +57,7 @@ func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is SendCityName Setter
+// SetSendCityName is SendCityName Setter
 // 发货城市
 func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetSendCityName(_sendCityName string) error {
 	r._sendCityName = _sendCityName
@@ -65,12 +65,12 @@ func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetSendCityName(_se
 	return nil
 }
 
-// Get SendCityName Getter
+// GetSendCityName SendCityName Getter
 func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetSendCityName() string {
 	return r._sendCityName
 }
 
-// Set is SendCountyName Setter
+// SetSendCountyName is SendCountyName Setter
 // 发货区
 func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetSendCountyName(_sendCountyName string) error {
 	r._sendCountyName = _sendCountyName
@@ -78,12 +78,12 @@ func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetSendCountyName(_
 	return nil
 }
 
-// Get SendCountyName Getter
+// GetSendCountyName SendCountyName Getter
 func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetSendCountyName() string {
 	return r._sendCountyName
 }
 
-// Set is SendAddr Setter
+// SetSendAddr is SendAddr Setter
 // 发货详细地址
 func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetSendAddr(_sendAddr string) error {
 	r._sendAddr = _sendAddr
@@ -91,12 +91,12 @@ func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetSendAddr(_sendAd
 	return nil
 }
 
-// Get SendAddr Getter
+// GetSendAddr SendAddr Getter
 func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetSendAddr() string {
 	return r._sendAddr
 }
 
-// Set is SendProvName Setter
+// SetSendProvName is SendProvName Setter
 // 发货省
 func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetSendProvName(_sendProvName string) error {
 	r._sendProvName = _sendProvName
@@ -104,12 +104,12 @@ func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetSendProvName(_se
 	return nil
 }
 
-// Get SendProvName Getter
+// GetSendProvName SendProvName Getter
 func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetSendProvName() string {
 	return r._sendProvName
 }
 
-// Set is RecCityName Setter
+// SetRecCityName is RecCityName Setter
 // 收货市
 func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecCityName(_recCityName string) error {
 	r._recCityName = _recCityName
@@ -117,12 +117,12 @@ func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecCityName(_rec
 	return nil
 }
 
-// Get RecCityName Getter
+// GetRecCityName RecCityName Getter
 func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetRecCityName() string {
 	return r._recCityName
 }
 
-// Set is RecAddr Setter
+// SetRecAddr is RecAddr Setter
 // 收货详细地址
 func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecAddr(_recAddr string) error {
 	r._recAddr = _recAddr
@@ -130,12 +130,12 @@ func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecAddr(_recAddr
 	return nil
 }
 
-// Get RecAddr Getter
+// GetRecAddr RecAddr Getter
 func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetRecAddr() string {
 	return r._recAddr
 }
 
-// Set is RecCountyName Setter
+// SetRecCountyName is RecCountyName Setter
 // 收货区
 func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecCountyName(_recCountyName string) error {
 	r._recCountyName = _recCountyName
@@ -143,12 +143,12 @@ func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecCountyName(_r
 	return nil
 }
 
-// Get RecCountyName Getter
+// GetRecCountyName RecCountyName Getter
 func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetRecCountyName() string {
 	return r._recCountyName
 }
 
-// Set is RecProvName Setter
+// SetRecProvName is RecProvName Setter
 // 收货省
 func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecProvName(_recProvName string) error {
 	r._recProvName = _recProvName
@@ -156,12 +156,12 @@ func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecProvName(_rec
 	return nil
 }
 
-// Get RecProvName Getter
+// GetRecProvName RecProvName Getter
 func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetRecProvName() string {
 	return r._recProvName
 }
 
-// Set is RecTownName Setter
+// SetRecTownName is RecTownName Setter
 // 收货街道
 func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecTownName(_recTownName string) error {
 	r._recTownName = _recTownName
@@ -169,7 +169,7 @@ func (r *CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) SetRecTownName(_rec
 	return nil
 }
 
-// Get RecTownName Getter
+// GetRecTownName RecTownName Getter
 func (r CainiaoDataLogisticsDeliveryAgingPredictAPIRequest) GetRecTownName() string {
 	return r._recTownName
 }

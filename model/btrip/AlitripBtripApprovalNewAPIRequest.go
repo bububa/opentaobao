@@ -37,7 +37,7 @@ func (r AlitripBtripApprovalNewAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AddApplyRequest Setter
+// SetAddApplyRequest is AddApplyRequest Setter
 // 申请单
 func (r *AlitripBtripApprovalNewAPIRequest) SetAddApplyRequest(_addApplyRequest *OpenAddApplyRq) error {
 	r._addApplyRequest = _addApplyRequest
@@ -45,7 +45,7 @@ func (r *AlitripBtripApprovalNewAPIRequest) SetAddApplyRequest(_addApplyRequest 
 	return nil
 }
 
-// Get AddApplyRequest Getter
+// GetAddApplyRequest AddApplyRequest Getter
 func (r AlitripBtripApprovalNewAPIRequest) GetAddApplyRequest() *OpenAddApplyRq {
 	return r._addApplyRequest
 }

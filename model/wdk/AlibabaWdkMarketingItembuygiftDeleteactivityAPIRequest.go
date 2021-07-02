@@ -37,7 +37,7 @@ func (r AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 要删除的活动信息
 func (r *AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest) SetParam(_param *CommonActivityParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest) SetParam(_param
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaWdkMarketingItembuygiftDeleteactivityAPIRequest) GetParam() *CommonActivityParam {
 	return r._param
 }

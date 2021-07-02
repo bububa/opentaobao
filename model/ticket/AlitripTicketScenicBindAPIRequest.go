@@ -49,7 +49,7 @@ func (r AlitripTicketScenicBindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AliScenicId Setter
+// SetAliScenicId is AliScenicId Setter
 // 必填，阿里旅行对应的景点编码
 func (r *AlitripTicketScenicBindAPIRequest) SetAliScenicId(_aliScenicId int64) error {
 	r._aliScenicId = _aliScenicId
@@ -57,12 +57,12 @@ func (r *AlitripTicketScenicBindAPIRequest) SetAliScenicId(_aliScenicId int64) e
 	return nil
 }
 
-// Get AliScenicId Getter
+// GetAliScenicId AliScenicId Getter
 func (r AlitripTicketScenicBindAPIRequest) GetAliScenicId() int64 {
 	return r._aliScenicId
 }
 
-// Set is City Setter
+// SetCity is City Setter
 // 商户景点城市
 func (r *AlitripTicketScenicBindAPIRequest) SetCity(_city string) error {
 	r._city = _city
@@ -70,12 +70,12 @@ func (r *AlitripTicketScenicBindAPIRequest) SetCity(_city string) error {
 	return nil
 }
 
-// Get City Getter
+// GetCity City Getter
 func (r AlitripTicketScenicBindAPIRequest) GetCity() string {
 	return r._city
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 商户景点地址
 func (r *AlitripTicketScenicBindAPIRequest) SetAddress(_address string) error {
 	r._address = _address
@@ -83,12 +83,12 @@ func (r *AlitripTicketScenicBindAPIRequest) SetAddress(_address string) error {
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r AlitripTicketScenicBindAPIRequest) GetAddress() string {
 	return r._address
 }
 
-// Set is OutScenicName Setter
+// SetOutScenicName is OutScenicName Setter
 // 商户景点名称
 func (r *AlitripTicketScenicBindAPIRequest) SetOutScenicName(_outScenicName string) error {
 	r._outScenicName = _outScenicName
@@ -96,12 +96,12 @@ func (r *AlitripTicketScenicBindAPIRequest) SetOutScenicName(_outScenicName stri
 	return nil
 }
 
-// Get OutScenicName Getter
+// GetOutScenicName OutScenicName Getter
 func (r AlitripTicketScenicBindAPIRequest) GetOutScenicName() string {
 	return r._outScenicName
 }
 
-// Set is Province Setter
+// SetProvince is Province Setter
 // 商户景点省份
 func (r *AlitripTicketScenicBindAPIRequest) SetProvince(_province string) error {
 	r._province = _province
@@ -109,12 +109,12 @@ func (r *AlitripTicketScenicBindAPIRequest) SetProvince(_province string) error 
 	return nil
 }
 
-// Get Province Getter
+// GetProvince Province Getter
 func (r AlitripTicketScenicBindAPIRequest) GetProvince() string {
 	return r._province
 }
 
-// Set is OutScenicId Setter
+// SetOutScenicId is OutScenicId Setter
 // 必填，商户系统中的景点编码，用于与ali_scenic_id建立映射关系
 func (r *AlitripTicketScenicBindAPIRequest) SetOutScenicId(_outScenicId string) error {
 	r._outScenicId = _outScenicId
@@ -122,12 +122,12 @@ func (r *AlitripTicketScenicBindAPIRequest) SetOutScenicId(_outScenicId string) 
 	return nil
 }
 
-// Get OutScenicId Getter
+// GetOutScenicId OutScenicId Getter
 func (r AlitripTicketScenicBindAPIRequest) GetOutScenicId() string {
 	return r._outScenicId
 }
 
-// Set is UpdateOutScenicId Setter
+// SetUpdateOutScenicId is UpdateOutScenicId Setter
 // 可选，如果需要更新out_scenic_id与ali_scenic_id的映射关系时 需要填写
 func (r *AlitripTicketScenicBindAPIRequest) SetUpdateOutScenicId(_updateOutScenicId string) error {
 	r._updateOutScenicId = _updateOutScenicId
@@ -135,7 +135,7 @@ func (r *AlitripTicketScenicBindAPIRequest) SetUpdateOutScenicId(_updateOutSceni
 	return nil
 }
 
-// Get UpdateOutScenicId Getter
+// GetUpdateOutScenicId UpdateOutScenicId Getter
 func (r AlitripTicketScenicBindAPIRequest) GetUpdateOutScenicId() string {
 	return r._updateOutScenicId
 }

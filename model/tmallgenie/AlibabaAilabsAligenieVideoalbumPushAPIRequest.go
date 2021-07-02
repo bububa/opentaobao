@@ -37,7 +37,7 @@ func (r AlibabaAilabsAligenieVideoalbumPushAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Param1 Setter
+// SetParam1 is Param1 Setter
 // 视频合辑数据
 func (r *AlibabaAilabsAligenieVideoalbumPushAPIRequest) SetParam1(_param1 []RawVideoAlbum) error {
 	r._param1 = _param1
@@ -45,7 +45,7 @@ func (r *AlibabaAilabsAligenieVideoalbumPushAPIRequest) SetParam1(_param1 []RawV
 	return nil
 }
 
-// Get Param1 Getter
+// GetParam1 Param1 Getter
 func (r AlibabaAilabsAligenieVideoalbumPushAPIRequest) GetParam1() []RawVideoAlbum {
 	return r._param1
 }

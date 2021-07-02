@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanRawpoGapReturnAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is RawPogapRequest Setter
+// SetRawPogapRequest is RawPogapRequest Setter
 // 请求对象
 func (r *AlibabaTmallgenieScpPlanRawpoGapReturnAPIRequest) SetRawPogapRequest(_rawPogapRequest *RawPurchaseOrderGapRequest) error {
 	r._rawPogapRequest = _rawPogapRequest
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanRawpoGapReturnAPIRequest) SetRawPogapRequest(_r
 	return nil
 }
 
-// Get RawPogapRequest Getter
+// GetRawPogapRequest RawPogapRequest Getter
 func (r AlibabaTmallgenieScpPlanRawpoGapReturnAPIRequest) GetRawPogapRequest() *RawPurchaseOrderGapRequest {
 	return r._rawPogapRequest
 }

@@ -37,7 +37,7 @@ func (r TmallNrtEasyhomememberSynAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参
 func (r *TmallNrtEasyhomememberSynAPIRequest) SetParam(_param *ExternalMemberDto) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *TmallNrtEasyhomememberSynAPIRequest) SetParam(_param *ExternalMemberDto
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r TmallNrtEasyhomememberSynAPIRequest) GetParam() *ExternalMemberDto {
 	return r._param
 }

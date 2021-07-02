@@ -133,7 +133,7 @@ func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SumTax Setter
+// SetSumTax is SumTax Setter
 // 合计税额，格式为2位小数。  当开红票时，该字段为负数
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetSumTax(_sumTax string) error {
 	r._sumTax = _sumTax
@@ -141,12 +141,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetSumTax(_sumTax string) error
 	return nil
 }
 
-// Get SumTax Getter
+// GetSumTax SumTax Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetSumTax() string {
 	return r._sumTax
 }
 
-// Set is PayeePhone Setter
+// SetPayeePhone is PayeePhone Setter
 // 销方联系电话。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeePhone(_payeePhone string) error {
 	r._payeePhone = _payeePhone
@@ -154,12 +154,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeePhone(_payeePhone strin
 	return nil
 }
 
-// Get PayeePhone Getter
+// GetPayeePhone PayeePhone Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayeePhone() string {
 	return r._payeePhone
 }
 
-// Set is PlatformTid Setter
+// SetPlatformTid is PlatformTid Setter
 // 业务平台发票申请对应的订单号。  用于source=upload时区分业务平台订单号。  source=apply时可空
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPlatformTid(_platformTid string) error {
 	r._platformTid = _platformTid
@@ -167,12 +167,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPlatformTid(_platformTid str
 	return nil
 }
 
-// Get PlatformTid Getter
+// GetPlatformTid PlatformTid Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPlatformTid() string {
 	return r._platformTid
 }
 
-// Set is SumPrice Setter
+// SetSumPrice is SumPrice Setter
 // 合计金额（不含税），格式为2位小数。  当开红票时，该字段为负数
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetSumPrice(_sumPrice string) error {
 	r._sumPrice = _sumPrice
@@ -180,12 +180,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetSumPrice(_sumPrice string) e
 	return nil
 }
 
-// Get SumPrice Getter
+// GetSumPrice SumPrice Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetSumPrice() string {
 	return r._sumPrice
 }
 
-// Set is InvoiceAmount Setter
+// SetInvoiceAmount is InvoiceAmount Setter
 // 合计含税金额（开票金额），格式为2位小数。  当开红票时，该字段为负数。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceAmount(_invoiceAmount string) error {
 	r._invoiceAmount = _invoiceAmount
@@ -193,12 +193,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceAmount(_invoiceAmount
 	return nil
 }
 
-// Get InvoiceAmount Getter
+// GetInvoiceAmount InvoiceAmount Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceAmount() string {
 	return r._invoiceAmount
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 发票来源，可选值：  apply: 间连模式，服务商基于申请开具的发票；async：直连开票模式，ISV回传开票结果；upload：直接回传，进行归集与交付的发票；
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -206,12 +206,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetSource(_source string) error
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is InvoiceFileType Setter
+// SetInvoiceFileType is InvoiceFileType Setter
 // 发票板式文件类型。可选值：  PDF, OFD。  电票时必传。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceFileType(_invoiceFileType string) error {
 	r._invoiceFileType = _invoiceFileType
@@ -219,12 +219,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceFileType(_invoiceFile
 	return nil
 }
 
-// Get InvoiceFileType Getter
+// GetInvoiceFileType InvoiceFileType Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceFileType() string {
 	return r._invoiceFileType
 }
 
-// Set is PayeeReceiver Setter
+// SetPayeeReceiver is PayeeReceiver Setter
 // 收款人
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeReceiver(_payeeReceiver string) error {
 	r._payeeReceiver = _payeeReceiver
@@ -232,12 +232,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeReceiver(_payeeReceiver
 	return nil
 }
 
-// Get PayeeReceiver Getter
+// GetPayeeReceiver PayeeReceiver Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayeeReceiver() string {
 	return r._payeeReceiver
 }
 
-// Set is RedNoticeNo Setter
+// SetRedNoticeNo is RedNoticeNo Setter
 // 红字通知单号
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetRedNoticeNo(_redNoticeNo string) error {
 	r._redNoticeNo = _redNoticeNo
@@ -245,12 +245,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetRedNoticeNo(_redNoticeNo str
 	return nil
 }
 
-// Get RedNoticeNo Getter
+// GetRedNoticeNo RedNoticeNo Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetRedNoticeNo() string {
 	return r._redNoticeNo
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 销方税务登记证号。由大写字母或数字组成，长度要求15~20位。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -258,12 +258,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeRegisterNo(_payeeRegist
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is ReceiveMobile Setter
+// SetReceiveMobile is ReceiveMobile Setter
 // 购方手机号码，用于收票
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetReceiveMobile(_receiveMobile string) error {
 	r._receiveMobile = _receiveMobile
@@ -271,12 +271,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetReceiveMobile(_receiveMobile
 	return nil
 }
 
-// Get ReceiveMobile Getter
+// GetReceiveMobile ReceiveMobile Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetReceiveMobile() string {
 	return r._receiveMobile
 }
 
-// Set is ApplyId Setter
+// SetApplyId is ApplyId Setter
 // 发票申请ID, 由阿里发票平台生成。  source=apply时 必填。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetApplyId(_applyId string) error {
 	r._applyId = _applyId
@@ -284,12 +284,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetApplyId(_applyId string) err
 	return nil
 }
 
-// Get ApplyId Getter
+// GetApplyId ApplyId Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetApplyId() string {
 	return r._applyId
 }
 
-// Set is PayeeName Setter
+// SetPayeeName is PayeeName Setter
 // 销方名称
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeName(_payeeName string) error {
 	r._payeeName = _payeeName
@@ -297,12 +297,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeName(_payeeName string)
 	return nil
 }
 
-// Get PayeeName Getter
+// GetPayeeName PayeeName Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayeeName() string {
 	return r._payeeName
 }
 
-// Set is QrCode Setter
+// SetQrCode is QrCode Setter
 // 二维码
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetQrCode(_qrCode string) error {
 	r._qrCode = _qrCode
@@ -310,12 +310,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetQrCode(_qrCode string) error
 	return nil
 }
 
-// Get QrCode Getter
+// GetQrCode QrCode Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetQrCode() string {
 	return r._qrCode
 }
 
-// Set is LevyType Setter
+// SetLevyType is LevyType Setter
 // 征税方式，0普通征收，1减按征收，2差额征收
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetLevyType(_levyType string) error {
 	r._levyType = _levyType
@@ -323,12 +323,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetLevyType(_levyType string) e
 	return nil
 }
 
-// Get LevyType Getter
+// GetLevyType LevyType Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetLevyType() string {
 	return r._levyType
 }
 
-// Set is InvoiceType Setter
+// SetInvoiceType is InvoiceType Setter
 // 发票(开票)类型，可选值：  blue: 蓝票  red: 红票
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceType(_invoiceType string) error {
 	r._invoiceType = _invoiceType
@@ -336,12 +336,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceType(_invoiceType str
 	return nil
 }
 
-// Get InvoiceType Getter
+// GetInvoiceType InvoiceType Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceType() string {
 	return r._invoiceType
 }
 
-// Set is PayerName Setter
+// SetPayerName is PayerName Setter
 // 购方抬头
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerName(_payerName string) error {
 	r._payerName = _payerName
@@ -349,12 +349,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerName(_payerName string)
 	return nil
 }
 
-// Get PayerName Getter
+// GetPayerName PayerName Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayerName() string {
 	return r._payerName
 }
 
-// Set is InvoiceNo Setter
+// SetInvoiceNo is InvoiceNo Setter
 // 发票号码
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceNo(_invoiceNo string) error {
 	r._invoiceNo = _invoiceNo
@@ -362,12 +362,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceNo(_invoiceNo string)
 	return nil
 }
 
-// Get InvoiceNo Getter
+// GetInvoiceNo InvoiceNo Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceNo() string {
 	return r._invoiceNo
 }
 
-// Set is InvoiceMemo Setter
+// SetInvoiceMemo is InvoiceMemo Setter
 // 发票备注，会显示在票面
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceMemo(_invoiceMemo string) error {
 	r._invoiceMemo = _invoiceMemo
@@ -375,12 +375,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceMemo(_invoiceMemo str
 	return nil
 }
 
-// Get InvoiceMemo Getter
+// GetInvoiceMemo InvoiceMemo Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceMemo() string {
 	return r._invoiceMemo
 }
 
-// Set is PayerEmail Setter
+// SetPayerEmail is PayerEmail Setter
 // 购方电子邮箱，需满足邮箱格式。  格式要求：\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerEmail(_payerEmail string) error {
 	r._payerEmail = _payerEmail
@@ -388,12 +388,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerEmail(_payerEmail strin
 	return nil
 }
 
-// Get PayerEmail Getter
+// GetPayerEmail PayerEmail Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayerEmail() string {
 	return r._payerEmail
 }
 
-// Set is AntiFakeCode Setter
+// SetAntiFakeCode is AntiFakeCode Setter
 // 发票防伪码/密码
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetAntiFakeCode(_antiFakeCode string) error {
 	r._antiFakeCode = _antiFakeCode
@@ -401,12 +401,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetAntiFakeCode(_antiFakeCode s
 	return nil
 }
 
-// Get AntiFakeCode Getter
+// GetAntiFakeCode AntiFakeCode Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetAntiFakeCode() string {
 	return r._antiFakeCode
 }
 
-// Set is PayerBankAccountId Setter
+// SetPayerBankAccountId is PayerBankAccountId Setter
 // 购方银行账号， 专票必填。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerBankAccountId(_payerBankAccountId string) error {
 	r._payerBankAccountId = _payerBankAccountId
@@ -414,12 +414,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerBankAccountId(_payerBan
 	return nil
 }
 
-// Get PayerBankAccountId Getter
+// GetPayerBankAccountId PayerBankAccountId Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayerBankAccountId() string {
 	return r._payerBankAccountId
 }
 
-// Set is PayerBankName Setter
+// SetPayerBankName is PayerBankName Setter
 // 购方开户行名称，  专票必填。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerBankName(_payerBankName string) error {
 	r._payerBankName = _payerBankName
@@ -427,12 +427,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerBankName(_payerBankName
 	return nil
 }
 
-// Get PayerBankName Getter
+// GetPayerBankName PayerBankName Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayerBankName() string {
 	return r._payerBankName
 }
 
-// Set is PayeeBankAccountId Setter
+// SetPayeeBankAccountId is PayeeBankAccountId Setter
 // 销方银行账号
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeBankAccountId(_payeeBankAccountId string) error {
 	r._payeeBankAccountId = _payeeBankAccountId
@@ -440,12 +440,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeBankAccountId(_payeeBan
 	return nil
 }
 
-// Get PayeeBankAccountId Getter
+// GetPayeeBankAccountId PayeeBankAccountId Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayeeBankAccountId() string {
 	return r._payeeBankAccountId
 }
 
-// Set is PayeeChecker Setter
+// SetPayeeChecker is PayeeChecker Setter
 // 复核人
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeChecker(_payeeChecker string) error {
 	r._payeeChecker = _payeeChecker
@@ -453,12 +453,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeChecker(_payeeChecker s
 	return nil
 }
 
-// Get PayeeChecker Getter
+// GetPayeeChecker PayeeChecker Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayeeChecker() string {
 	return r._payeeChecker
 }
 
-// Set is PayerPhone Setter
+// SetPayerPhone is PayerPhone Setter
 // 购方联系电话，  专票必填。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerPhone(_payerPhone string) error {
 	r._payerPhone = _payerPhone
@@ -466,12 +466,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerPhone(_payerPhone strin
 	return nil
 }
 
-// Get PayerPhone Getter
+// GetPayerPhone PayerPhone Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayerPhone() string {
 	return r._payerPhone
 }
 
-// Set is NormalInvoiceCode Setter
+// SetNormalInvoiceCode is NormalInvoiceCode Setter
 // 原发票代码(开红票时必须)
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetNormalInvoiceCode(_normalInvoiceCode string) error {
 	r._normalInvoiceCode = _normalInvoiceCode
@@ -479,12 +479,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetNormalInvoiceCode(_normalInv
 	return nil
 }
 
-// Get NormalInvoiceCode Getter
+// GetNormalInvoiceCode NormalInvoiceCode Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetNormalInvoiceCode() string {
 	return r._normalInvoiceCode
 }
 
-// Set is DeviceNo Setter
+// SetDeviceNo is DeviceNo Setter
 // 开票分机号/机器编号
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetDeviceNo(_deviceNo string) error {
 	r._deviceNo = _deviceNo
@@ -492,12 +492,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetDeviceNo(_deviceNo string) e
 	return nil
 }
 
-// Get DeviceNo Getter
+// GetDeviceNo DeviceNo Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetDeviceNo() string {
 	return r._deviceNo
 }
 
-// Set is InvoiceDate Setter
+// SetInvoiceDate is InvoiceDate Setter
 // 开票日期，格式 yyyy-MM-dd
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceDate(_invoiceDate string) error {
 	r._invoiceDate = _invoiceDate
@@ -505,12 +505,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceDate(_invoiceDate str
 	return nil
 }
 
-// Get InvoiceDate Getter
+// GetInvoiceDate InvoiceDate Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceDate() string {
 	return r._invoiceDate
 }
 
-// Set is InvoiceCode Setter
+// SetInvoiceCode is InvoiceCode Setter
 // 发票代码
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceCode(_invoiceCode string) error {
 	r._invoiceCode = _invoiceCode
@@ -518,12 +518,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceCode(_invoiceCode str
 	return nil
 }
 
-// Get InvoiceCode Getter
+// GetInvoiceCode InvoiceCode Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceCode() string {
 	return r._invoiceCode
 }
 
-// Set is CheckCode Setter
+// SetCheckCode is CheckCode Setter
 // 校验码
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetCheckCode(_checkCode string) error {
 	r._checkCode = _checkCode
@@ -531,12 +531,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetCheckCode(_checkCode string)
 	return nil
 }
 
-// Get CheckCode Getter
+// GetCheckCode CheckCode Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetCheckCode() string {
 	return r._checkCode
 }
 
-// Set is PayeeAddress Setter
+// SetPayeeAddress is PayeeAddress Setter
 // 销方地址。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeAddress(_payeeAddress string) error {
 	r._payeeAddress = _payeeAddress
@@ -544,12 +544,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeAddress(_payeeAddress s
 	return nil
 }
 
-// Get PayeeAddress Getter
+// GetPayeeAddress PayeeAddress Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayeeAddress() string {
 	return r._payeeAddress
 }
 
-// Set is NormalInvoiceNo Setter
+// SetNormalInvoiceNo is NormalInvoiceNo Setter
 // 原发票号码(开红票时必须)
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetNormalInvoiceNo(_normalInvoiceNo string) error {
 	r._normalInvoiceNo = _normalInvoiceNo
@@ -557,12 +557,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetNormalInvoiceNo(_normalInvoi
 	return nil
 }
 
-// Get NormalInvoiceNo Getter
+// GetNormalInvoiceNo NormalInvoiceNo Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetNormalInvoiceNo() string {
 	return r._normalInvoiceNo
 }
 
-// Set is PayerAddress Setter
+// SetPayerAddress is PayerAddress Setter
 // 购方地址，  专票必填。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerAddress(_payerAddress string) error {
 	r._payerAddress = _payerAddress
@@ -570,12 +570,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerAddress(_payerAddress s
 	return nil
 }
 
-// Get PayerAddress Getter
+// GetPayerAddress PayerAddress Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayerAddress() string {
 	return r._payerAddress
 }
 
-// Set is PayeeBankName Setter
+// SetPayeeBankName is PayeeBankName Setter
 // 销方开户行名称。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeBankName(_payeeBankName string) error {
 	r._payeeBankName = _payeeBankName
@@ -583,12 +583,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeBankName(_payeeBankName
 	return nil
 }
 
-// Get PayeeBankName Getter
+// GetPayeeBankName PayeeBankName Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayeeBankName() string {
 	return r._payeeBankName
 }
 
-// Set is InvoiceItems Setter
+// SetInvoiceItems is InvoiceItems Setter
 // 发票明细。source=apply时必填，其他source可为空
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceItems(_invoiceItems []InvoiceResultItemDto) error {
 	r._invoiceItems = _invoiceItems
@@ -596,12 +596,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceItems(_invoiceItems [
 	return nil
 }
 
-// Get InvoiceItems Getter
+// GetInvoiceItems InvoiceItems Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceItems() []InvoiceResultItemDto {
 	return r._invoiceItems
 }
 
-// Set is PayeeOperator Setter
+// SetPayeeOperator is PayeeOperator Setter
 // 开票人
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeOperator(_payeeOperator string) error {
 	r._payeeOperator = _payeeOperator
@@ -609,12 +609,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeOperator(_payeeOperator
 	return nil
 }
 
-// Get PayeeOperator Getter
+// GetPayeeOperator PayeeOperator Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayeeOperator() string {
 	return r._payeeOperator
 }
 
-// Set is InvoiceFileData Setter
+// SetInvoiceFileData is InvoiceFileData Setter
 // 发票板式文件数据，字节数据。  电票时必传。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceFileData(_invoiceFileData *model.File) error {
 	r._invoiceFileData = _invoiceFileData
@@ -622,12 +622,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceFileData(_invoiceFile
 	return nil
 }
 
-// Get InvoiceFileData Getter
+// GetInvoiceFileData InvoiceFileData Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceFileData() *model.File {
 	return r._invoiceFileData
 }
 
-// Set is PayerRegisterNo Setter
+// SetPayerRegisterNo is PayerRegisterNo Setter
 // 购方税务登记证号，由大写字母或数字组成，长度要求15~20位。  开企业抬头时必填， 专票必填。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerRegisterNo(_payerRegisterNo string) error {
 	r._payerRegisterNo = _payerRegisterNo
@@ -635,12 +635,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerRegisterNo(_payerRegist
 	return nil
 }
 
-// Get PayerRegisterNo Getter
+// GetPayerRegisterNo PayerRegisterNo Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayerRegisterNo() string {
 	return r._payerRegisterNo
 }
 
-// Set is InvoiceKind Setter
+// SetInvoiceKind is InvoiceKind Setter
 // 开票发票类型  可选值：  0: 电票  1：纸质普票  2：纸质专票
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceKind(_invoiceKind int64) error {
 	r._invoiceKind = _invoiceKind
@@ -648,12 +648,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceKind(_invoiceKind int
 	return nil
 }
 
-// Get InvoiceKind Getter
+// GetInvoiceKind InvoiceKind Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceKind() int64 {
 	return r._invoiceKind
 }
 
-// Set is BusinessType Setter
+// SetBusinessType is BusinessType Setter
 // 抬头类型。可选值：  0：个人  1：企业
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetBusinessType(_businessType int64) error {
 	r._businessType = _businessType
@@ -661,12 +661,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetBusinessType(_businessType i
 	return nil
 }
 
-// Get BusinessType Getter
+// GetBusinessType BusinessType Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetBusinessType() int64 {
 	return r._businessType
 }
 
-// Set is SpecialFlag Setter
+// SetSpecialFlag is SpecialFlag Setter
 // 特殊票种标识，可选值：  02: 农产品收购票
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetSpecialFlag(_specialFlag string) error {
 	r._specialFlag = _specialFlag
@@ -674,12 +674,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetSpecialFlag(_specialFlag str
 	return nil
 }
 
-// Get SpecialFlag Getter
+// GetSpecialFlag SpecialFlag Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetSpecialFlag() string {
 	return r._specialFlag
 }
 
-// Set is PlatformCode Setter
+// SetPlatformCode is PlatformCode Setter
 // 业务平台Code, 由发票中台分配。  用于source=upload时标识需交付发票的业务平台。  source=apply时可空
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPlatformCode(_platformCode string) error {
 	r._platformCode = _platformCode
@@ -687,12 +687,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPlatformCode(_platformCode s
 	return nil
 }
 
-// Get PlatformCode Getter
+// GetPlatformCode PlatformCode Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPlatformCode() string {
 	return r._platformCode
 }
 
-// Set is PlatformUserId Setter
+// SetPlatformUserId is PlatformUserId Setter
 // 业务平台uid
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPlatformUserId(_platformUserId string) error {
 	r._platformUserId = _platformUserId
@@ -700,12 +700,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPlatformUserId(_platformUser
 	return nil
 }
 
-// Get PlatformUserId Getter
+// GetPlatformUserId PlatformUserId Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPlatformUserId() string {
 	return r._platformUserId
 }
 
-// Set is BizErrorMsg Setter
+// SetBizErrorMsg is BizErrorMsg Setter
 // 开票失败错误信息，  开票失败(create_result=fail)时必填。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetBizErrorMsg(_bizErrorMsg string) error {
 	r._bizErrorMsg = _bizErrorMsg
@@ -713,12 +713,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetBizErrorMsg(_bizErrorMsg str
 	return nil
 }
 
-// Get BizErrorMsg Getter
+// GetBizErrorMsg BizErrorMsg Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetBizErrorMsg() string {
 	return r._bizErrorMsg
 }
 
-// Set is BizErrorCode Setter
+// SetBizErrorCode is BizErrorCode Setter
 // 开票失败错误码，  开票失败(create_result=fail)时必填。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetBizErrorCode(_bizErrorCode string) error {
 	r._bizErrorCode = _bizErrorCode
@@ -726,12 +726,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetBizErrorCode(_bizErrorCode s
 	return nil
 }
 
-// Get BizErrorCode Getter
+// GetBizErrorCode BizErrorCode Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetBizErrorCode() string {
 	return r._bizErrorCode
 }
 
-// Set is CreateResult Setter
+// SetCreateResult is CreateResult Setter
 // 开票结果，枚举值：  success: 发票开具成功；  fail: 开票失败；  source=async时必填，传实际的开票结果。其他source可不传，默认为success
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetCreateResult(_createResult string) error {
 	r._createResult = _createResult
@@ -739,12 +739,12 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetCreateResult(_createResult s
 	return nil
 }
 
-// Get CreateResult Getter
+// GetCreateResult CreateResult Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetCreateResult() string {
 	return r._createResult
 }
 
-// Set is SerialNo Setter
+// SetSerialNo is SerialNo Setter
 // 开票流水号/序列号，唯一标志一笔开票请求，由于阿里发票中台生成。  source=async时必填，其他source可为空
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetSerialNo(_serialNo string) error {
 	r._serialNo = _serialNo
@@ -752,7 +752,7 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetSerialNo(_serialNo string) e
 	return nil
 }
 
-// Get SerialNo Getter
+// GetSerialNo SerialNo Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetSerialNo() string {
 	return r._serialNo
 }

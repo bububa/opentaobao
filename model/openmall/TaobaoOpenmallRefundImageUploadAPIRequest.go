@@ -41,7 +41,7 @@ func (r TaobaoOpenmallRefundImageUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Image Setter
+// SetImage is Image Setter
 // 上传图片，必须为jpg或png格式，建议小于2M
 func (r *TaobaoOpenmallRefundImageUploadAPIRequest) SetImage(_image *model.File) error {
 	r._image = _image
@@ -49,12 +49,12 @@ func (r *TaobaoOpenmallRefundImageUploadAPIRequest) SetImage(_image *model.File)
 	return nil
 }
 
-// Get Image Getter
+// GetImage Image Getter
 func (r TaobaoOpenmallRefundImageUploadAPIRequest) GetImage() *model.File {
 	return r._image
 }
 
-// Set is Distributor Setter
+// SetDistributor is Distributor Setter
 // 渠道商Nick
 func (r *TaobaoOpenmallRefundImageUploadAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
@@ -62,12 +62,12 @@ func (r *TaobaoOpenmallRefundImageUploadAPIRequest) SetDistributor(_distributor 
 	return nil
 }
 
-// Get Distributor Getter
+// GetDistributor Distributor Getter
 func (r TaobaoOpenmallRefundImageUploadAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 该图片归属的退款单ID
 func (r *TaobaoOpenmallRefundImageUploadAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -75,7 +75,7 @@ func (r *TaobaoOpenmallRefundImageUploadAPIRequest) SetRefundId(_refundId int64)
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoOpenmallRefundImageUploadAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }

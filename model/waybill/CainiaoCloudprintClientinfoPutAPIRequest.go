@@ -37,7 +37,7 @@ func (r CainiaoCloudprintClientinfoPutAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is JsonData Setter
+// SetJsonData is JsonData Setter
 // 客户端上传json数据
 func (r *CainiaoCloudprintClientinfoPutAPIRequest) SetJsonData(_jsonData string) error {
 	r._jsonData = _jsonData
@@ -45,7 +45,7 @@ func (r *CainiaoCloudprintClientinfoPutAPIRequest) SetJsonData(_jsonData string)
 	return nil
 }
 
-// Get JsonData Getter
+// GetJsonData JsonData Getter
 func (r CainiaoCloudprintClientinfoPutAPIRequest) GetJsonData() string {
 	return r._jsonData
 }

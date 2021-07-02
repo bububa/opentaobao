@@ -41,7 +41,7 @@ func (r AlibabaItemEditSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务扩展参数，需与平台约定好
 func (r *AlibabaItemEditSchemaGetAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -49,12 +49,12 @@ func (r *AlibabaItemEditSchemaGetAPIRequest) SetBizType(_bizType string) error {
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r AlibabaItemEditSchemaGetAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *AlibabaItemEditSchemaGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -62,12 +62,12 @@ func (r *AlibabaItemEditSchemaGetAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r AlibabaItemEditSchemaGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 制定返回schema中field字段列表，可用于裁剪返回的schema信息。不填则为全部field
 func (r *AlibabaItemEditSchemaGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -75,7 +75,7 @@ func (r *AlibabaItemEditSchemaGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r AlibabaItemEditSchemaGetAPIRequest) GetFields() []string {
 	return r._fields
 }

@@ -43,7 +43,7 @@ func (r TaobaoWlbOrderJzQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 交易id
 func (r *TaobaoWlbOrderJzQueryAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -51,12 +51,12 @@ func (r *TaobaoWlbOrderJzQueryAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoWlbOrderJzQueryAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is JzReceiverTo Setter
+// SetJzReceiverTo is JzReceiverTo Setter
 // 家装收货人信息
 func (r *TaobaoWlbOrderJzQueryAPIRequest) SetJzReceiverTo(_jzReceiverTo *JzReceiverTo) error {
 	r._jzReceiverTo = _jzReceiverTo
@@ -64,12 +64,12 @@ func (r *TaobaoWlbOrderJzQueryAPIRequest) SetJzReceiverTo(_jzReceiverTo *JzRecei
 	return nil
 }
 
-// Get JzReceiverTo Getter
+// GetJzReceiverTo JzReceiverTo Getter
 func (r TaobaoWlbOrderJzQueryAPIRequest) GetJzReceiverTo() *JzReceiverTo {
 	return r._jzReceiverTo
 }
 
-// Set is SenderId Setter
+// SetSenderId is SenderId Setter
 // 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。如果为空，取的卖家的默认取货地址
 func (r *TaobaoWlbOrderJzQueryAPIRequest) SetSenderId(_senderId int64) error {
 	r._senderId = _senderId
@@ -77,12 +77,12 @@ func (r *TaobaoWlbOrderJzQueryAPIRequest) SetSenderId(_senderId int64) error {
 	return nil
 }
 
-// Get SenderId Getter
+// GetSenderId SenderId Getter
 func (r TaobaoWlbOrderJzQueryAPIRequest) GetSenderId() int64 {
 	return r._senderId
 }
 
-// Set is InsJzReceiverTO Setter
+// SetInsJzReceiverTO is InsJzReceiverTO Setter
 // 家装安装服务收货人信息
 func (r *TaobaoWlbOrderJzQueryAPIRequest) SetInsJzReceiverTO(_insJzReceiverTO *JzReceiverTo) error {
 	r._insJzReceiverTO = _insJzReceiverTO
@@ -90,7 +90,7 @@ func (r *TaobaoWlbOrderJzQueryAPIRequest) SetInsJzReceiverTO(_insJzReceiverTO *J
 	return nil
 }
 
-// Get InsJzReceiverTO Getter
+// GetInsJzReceiverTO InsJzReceiverTO Getter
 func (r TaobaoWlbOrderJzQueryAPIRequest) GetInsJzReceiverTO() *JzReceiverTo {
 	return r._insJzReceiverTO
 }

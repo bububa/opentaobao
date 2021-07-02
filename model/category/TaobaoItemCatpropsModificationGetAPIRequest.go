@@ -41,7 +41,7 @@ func (r TaobaoItemCatpropsModificationGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 类目Id（与商品Id二选一即可）
 func (r *TaobaoItemCatpropsModificationGetAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
@@ -49,12 +49,12 @@ func (r *TaobaoItemCatpropsModificationGetAPIRequest) SetCategoryId(_categoryId 
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r TaobaoItemCatpropsModificationGetAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品Id（与类目Id二选一即可。若同时传入商品Id和类目Id，则优先使用商品Id。若填写商品Id，则起始时间设为该商品最近修改时间）
 func (r *TaobaoItemCatpropsModificationGetAPIRequest) SetItemId(_itemId string) error {
 	r._itemId = _itemId
@@ -62,12 +62,12 @@ func (r *TaobaoItemCatpropsModificationGetAPIRequest) SetItemId(_itemId string) 
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoItemCatpropsModificationGetAPIRequest) GetItemId() string {
 	return r._itemId
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 起始请求时间（建议传入，默认为90天内）
 func (r *TaobaoItemCatpropsModificationGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -75,7 +75,7 @@ func (r *TaobaoItemCatpropsModificationGetAPIRequest) SetStartTime(_startTime st
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoItemCatpropsModificationGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }

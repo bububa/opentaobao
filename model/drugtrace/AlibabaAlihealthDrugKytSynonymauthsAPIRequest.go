@@ -45,7 +45,7 @@ func (r AlibabaAlihealthDrugKytSynonymauthsAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugKytSynonymauthsAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -53,12 +53,12 @@ func (r *AlibabaAlihealthDrugKytSynonymauthsAPIRequest) SetRefEntId(_refEntId st
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytSynonymauthsAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is EntName Setter
+// SetEntName is EntName Setter
 // 企业名称
 func (r *AlibabaAlihealthDrugKytSynonymauthsAPIRequest) SetEntName(_entName string) error {
 	r._entName = _entName
@@ -66,12 +66,12 @@ func (r *AlibabaAlihealthDrugKytSynonymauthsAPIRequest) SetEntName(_entName stri
 	return nil
 }
 
-// Get EntName Getter
+// GetEntName EntName Getter
 func (r AlibabaAlihealthDrugKytSynonymauthsAPIRequest) GetEntName() string {
 	return r._entName
 }
 
-// Set is SynOwnEntId Setter
+// SetSynOwnEntId is SynOwnEntId Setter
 // 货主自定义编号
 func (r *AlibabaAlihealthDrugKytSynonymauthsAPIRequest) SetSynOwnEntId(_synOwnEntId string) error {
 	r._synOwnEntId = _synOwnEntId
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthDrugKytSynonymauthsAPIRequest) SetSynOwnEntId(_synOwnEn
 	return nil
 }
 
-// Get SynOwnEntId Getter
+// GetSynOwnEntId SynOwnEntId Getter
 func (r AlibabaAlihealthDrugKytSynonymauthsAPIRequest) GetSynOwnEntId() string {
 	return r._synOwnEntId
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页码
 func (r *AlibabaAlihealthDrugKytSynonymauthsAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthDrugKytSynonymauthsAPIRequest) SetPageSize(_pageSize in
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaAlihealthDrugKytSynonymauthsAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 页面大小
 func (r *AlibabaAlihealthDrugKytSynonymauthsAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -105,7 +105,7 @@ func (r *AlibabaAlihealthDrugKytSynonymauthsAPIRequest) SetPage(_page int64) err
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaAlihealthDrugKytSynonymauthsAPIRequest) GetPage() int64 {
 	return r._page
 }

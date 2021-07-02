@@ -39,7 +39,7 @@ func (r TmallServicecenterSettlementStoretransferAuditAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is AuditPass Setter
+// SetAuditPass is AuditPass Setter
 // 审批通过
 func (r *TmallServicecenterSettlementStoretransferAuditAPIRequest) SetAuditPass(_auditPass bool) error {
 	r._auditPass = _auditPass
@@ -47,12 +47,12 @@ func (r *TmallServicecenterSettlementStoretransferAuditAPIRequest) SetAuditPass(
 	return nil
 }
 
-// Get AuditPass Getter
+// GetAuditPass AuditPass Getter
 func (r TmallServicecenterSettlementStoretransferAuditAPIRequest) GetAuditPass() bool {
 	return r._auditPass
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *TmallServicecenterSettlementStoretransferAuditAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -60,7 +60,7 @@ func (r *TmallServicecenterSettlementStoretransferAuditAPIRequest) SetWorkcardId
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterSettlementStoretransferAuditAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }

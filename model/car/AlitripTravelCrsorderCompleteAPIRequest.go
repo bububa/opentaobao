@@ -37,7 +37,7 @@ func (r AlitripTravelCrsorderCompleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CrsOrderCompleteParam Setter
+// SetCrsOrderCompleteParam is CrsOrderCompleteParam Setter
 // 请求对象
 func (r *AlitripTravelCrsorderCompleteAPIRequest) SetCrsOrderCompleteParam(_crsOrderCompleteParam *CrsOrderCompleteParam) error {
 	r._crsOrderCompleteParam = _crsOrderCompleteParam
@@ -45,7 +45,7 @@ func (r *AlitripTravelCrsorderCompleteAPIRequest) SetCrsOrderCompleteParam(_crsO
 	return nil
 }
 
-// Get CrsOrderCompleteParam Getter
+// GetCrsOrderCompleteParam CrsOrderCompleteParam Getter
 func (r AlitripTravelCrsorderCompleteAPIRequest) GetCrsOrderCompleteParam() *CrsOrderCompleteParam {
 	return r._crsOrderCompleteParam
 }

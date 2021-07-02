@@ -57,7 +57,7 @@ func (r AlibabaLatourStrategyIssueAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ExtraData Setter
+// SetExtraData is ExtraData Setter
 // 扩展参数
 func (r *AlibabaLatourStrategyIssueAPIRequest) SetExtraData(_extraData string) error {
 	r._extraData = _extraData
@@ -65,12 +65,12 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetExtraData(_extraData string) e
 	return nil
 }
 
-// Get ExtraData Getter
+// GetExtraData ExtraData Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetExtraData() string {
 	return r._extraData
 }
 
-// Set is FailoverAlgorithmResult Setter
+// SetFailoverAlgorithmResult is FailoverAlgorithmResult Setter
 // 算法容灾
 func (r *AlibabaLatourStrategyIssueAPIRequest) SetFailoverAlgorithmResult(_failoverAlgorithmResult bool) error {
 	r._failoverAlgorithmResult = _failoverAlgorithmResult
@@ -78,12 +78,12 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetFailoverAlgorithmResult(_failo
 	return nil
 }
 
-// Get FailoverAlgorithmResult Getter
+// GetFailoverAlgorithmResult FailoverAlgorithmResult Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetFailoverAlgorithmResult() bool {
 	return r._failoverAlgorithmResult
 }
 
-// Set is IdempotentId Setter
+// SetIdempotentId is IdempotentId Setter
 // 幂等id
 func (r *AlibabaLatourStrategyIssueAPIRequest) SetIdempotentId(_idempotentId string) error {
 	r._idempotentId = _idempotentId
@@ -91,12 +91,12 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetIdempotentId(_idempotentId str
 	return nil
 }
 
-// Get IdempotentId Getter
+// GetIdempotentId IdempotentId Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetIdempotentId() string {
 	return r._idempotentId
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 发放渠道
 func (r *AlibabaLatourStrategyIssueAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -104,12 +104,12 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetChannel(_channel string) error
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetChannel() string {
 	return r._channel
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 除非有特殊申请，默认不允许使用该参数，请通过用户授权token传递用户信息
 func (r *AlibabaLatourStrategyIssueAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -117,12 +117,12 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetUserId(_userId string) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is TransformedUserType Setter
+// SetTransformedUserType is TransformedUserType Setter
 // 转换用户类型
 func (r *AlibabaLatourStrategyIssueAPIRequest) SetTransformedUserType(_transformedUserType string) error {
 	r._transformedUserType = _transformedUserType
@@ -130,12 +130,12 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetTransformedUserType(_transform
 	return nil
 }
 
-// Get TransformedUserType Getter
+// GetTransformedUserType TransformedUserType Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetTransformedUserType() string {
 	return r._transformedUserType
 }
 
-// Set is NeedIdentifyRisk Setter
+// SetNeedIdentifyRisk is NeedIdentifyRisk Setter
 // 是否需要过安全
 func (r *AlibabaLatourStrategyIssueAPIRequest) SetNeedIdentifyRisk(_needIdentifyRisk bool) error {
 	r._needIdentifyRisk = _needIdentifyRisk
@@ -143,12 +143,12 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetNeedIdentifyRisk(_needIdentify
 	return nil
 }
 
-// Get NeedIdentifyRisk Getter
+// GetNeedIdentifyRisk NeedIdentifyRisk Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetNeedIdentifyRisk() bool {
 	return r._needIdentifyRisk
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 除非有特殊申请，默认不允许使用该参数，请通过用户授权token传递用户信息
 func (r *AlibabaLatourStrategyIssueAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -156,12 +156,12 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetUserNick(_userNick string) err
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetUserNick() string {
 	return r._userNick
 }
 
-// Set is StrategyCode Setter
+// SetStrategyCode is StrategyCode Setter
 // 投放计划code
 func (r *AlibabaLatourStrategyIssueAPIRequest) SetStrategyCode(_strategyCode string) error {
 	r._strategyCode = _strategyCode
@@ -169,12 +169,12 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetStrategyCode(_strategyCode str
 	return nil
 }
 
-// Get StrategyCode Getter
+// GetStrategyCode StrategyCode Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetStrategyCode() string {
 	return r._strategyCode
 }
 
-// Set is UserType Setter
+// SetUserType is UserType Setter
 // 用户类型
 func (r *AlibabaLatourStrategyIssueAPIRequest) SetUserType(_userType string) error {
 	r._userType = _userType
@@ -182,12 +182,12 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetUserType(_userType string) err
 	return nil
 }
 
-// Get UserType Getter
+// GetUserType UserType Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetUserType() string {
 	return r._userType
 }
 
-// Set is SelectedBenefitCode Setter
+// SetSelectedBenefitCode is SelectedBenefitCode Setter
 // 指定发放权益code
 func (r *AlibabaLatourStrategyIssueAPIRequest) SetSelectedBenefitCode(_selectedBenefitCode string) error {
 	r._selectedBenefitCode = _selectedBenefitCode
@@ -195,7 +195,7 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetSelectedBenefitCode(_selectedB
 	return nil
 }
 
-// Get SelectedBenefitCode Getter
+// GetSelectedBenefitCode SelectedBenefitCode Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetSelectedBenefitCode() string {
 	return r._selectedBenefitCode
 }

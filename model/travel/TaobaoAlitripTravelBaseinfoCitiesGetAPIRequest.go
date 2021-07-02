@@ -39,7 +39,7 @@ func (r TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is IocType Setter
+// SetIocType is IocType Setter
 // 1-获取目的地城市列表 2-获取出发地城市列表
 func (r *TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) SetIocType(_iocType int64) error {
 	r._iocType = _iocType
@@ -47,12 +47,12 @@ func (r *TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) SetIocType(_iocType int
 	return nil
 }
 
-// Get IocType Getter
+// GetIocType IocType Getter
 func (r TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) GetIocType() int64 {
 	return r._iocType
 }
 
-// Set is CatType Setter
+// SetCatType is CatType Setter
 // 1-境内跟团游 2-境内自由行 3-出境跟团游 4-出境自由行 5-境外当地玩乐 6-国际邮轮 9-境内邮轮
 func (r *TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) SetCatType(_catType int64) error {
 	r._catType = _catType
@@ -60,7 +60,7 @@ func (r *TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) SetCatType(_catType int
 	return nil
 }
 
-// Get CatType Getter
+// GetCatType CatType Getter
 func (r TaobaoAlitripTravelBaseinfoCitiesGetAPIRequest) GetCatType() int64 {
 	return r._catType
 }

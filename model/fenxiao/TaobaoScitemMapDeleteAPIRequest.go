@@ -39,7 +39,7 @@ func (r TaobaoScitemMapDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ScItemId Setter
+// SetScItemId is ScItemId Setter
 // 后台商品ID
 func (r *TaobaoScitemMapDeleteAPIRequest) SetScItemId(_scItemId int64) error {
 	r._scItemId = _scItemId
@@ -47,12 +47,12 @@ func (r *TaobaoScitemMapDeleteAPIRequest) SetScItemId(_scItemId int64) error {
 	return nil
 }
 
-// Get ScItemId Getter
+// GetScItemId ScItemId Getter
 func (r TaobaoScitemMapDeleteAPIRequest) GetScItemId() int64 {
 	return r._scItemId
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 店铺用户nick。 如果该参数为空则删除后端商品与当前调用人的商品映射关系;如果不为空则删除指定用户与后端商品的映射关系
 func (r *TaobaoScitemMapDeleteAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -60,7 +60,7 @@ func (r *TaobaoScitemMapDeleteAPIRequest) SetUserNick(_userNick string) error {
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r TaobaoScitemMapDeleteAPIRequest) GetUserNick() string {
 	return r._userNick
 }

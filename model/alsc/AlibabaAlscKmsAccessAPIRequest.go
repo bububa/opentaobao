@@ -37,7 +37,7 @@ func (r AlibabaAlscKmsAccessAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Requestdata Setter
+// SetRequestdata is Requestdata Setter
 // 接入参数
 func (r *AlibabaAlscKmsAccessAPIRequest) SetRequestdata(_requestdata string) error {
 	r._requestdata = _requestdata
@@ -45,7 +45,7 @@ func (r *AlibabaAlscKmsAccessAPIRequest) SetRequestdata(_requestdata string) err
 	return nil
 }
 
-// Get Requestdata Getter
+// GetRequestdata Requestdata Getter
 func (r AlibabaAlscKmsAccessAPIRequest) GetRequestdata() string {
 	return r._requestdata
 }

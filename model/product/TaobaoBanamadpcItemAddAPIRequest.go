@@ -39,7 +39,7 @@ func (r TaobaoBanamadpcItemAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CatId Setter
+// SetCatId is CatId Setter
 // 类目id
 func (r *TaobaoBanamadpcItemAddAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
@@ -47,12 +47,12 @@ func (r *TaobaoBanamadpcItemAddAPIRequest) SetCatId(_catId int64) error {
 	return nil
 }
 
-// Get CatId Getter
+// GetCatId CatId Getter
 func (r TaobaoBanamadpcItemAddAPIRequest) GetCatId() int64 {
 	return r._catId
 }
 
-// Set is Xml Setter
+// SetXml is Xml Setter
 // 商品的schema xml
 func (r *TaobaoBanamadpcItemAddAPIRequest) SetXml(_xml string) error {
 	r._xml = _xml
@@ -60,7 +60,7 @@ func (r *TaobaoBanamadpcItemAddAPIRequest) SetXml(_xml string) error {
 	return nil
 }
 
-// Get Xml Getter
+// GetXml Xml Getter
 func (r TaobaoBanamadpcItemAddAPIRequest) GetXml() string {
 	return r._xml
 }

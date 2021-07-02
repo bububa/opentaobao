@@ -43,7 +43,7 @@ func (r TmallItemPriceUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TmallItemPriceUpdateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -51,12 +51,12 @@ func (r *TmallItemPriceUpdateAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallItemPriceUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is ItemPrice Setter
+// SetItemPrice is ItemPrice Setter
 // 被更新商品价格
 func (r *TmallItemPriceUpdateAPIRequest) SetItemPrice(_itemPrice float64) error {
 	r._itemPrice = _itemPrice
@@ -64,12 +64,12 @@ func (r *TmallItemPriceUpdateAPIRequest) SetItemPrice(_itemPrice float64) error 
 	return nil
 }
 
-// Get ItemPrice Getter
+// GetItemPrice ItemPrice Getter
 func (r TmallItemPriceUpdateAPIRequest) GetItemPrice() float64 {
 	return r._itemPrice
 }
 
-// Set is SkuPrices Setter
+// SetSkuPrices is SkuPrices Setter
 // 更新SKU价格时候的SKU价格对象；如果没有SKU或者不更新SKU价格，可以不填;查找SKU目前支持ID，属性串和商家编码三种模式，建议选用一种最合适的，切勿滥用，一次调用中如果混合使用，更新结果不可预期！
 func (r *TmallItemPriceUpdateAPIRequest) SetSkuPrices(_skuPrices []UpdateSkuPrice) error {
 	r._skuPrices = _skuPrices
@@ -77,12 +77,12 @@ func (r *TmallItemPriceUpdateAPIRequest) SetSkuPrices(_skuPrices []UpdateSkuPric
 	return nil
 }
 
-// Get SkuPrices Getter
+// GetSkuPrices SkuPrices Getter
 func (r TmallItemPriceUpdateAPIRequest) GetSkuPrices() []UpdateSkuPrice {
 	return r._skuPrices
 }
 
-// Set is Options Setter
+// SetOptions is Options Setter
 // 商品价格更新时候的可选参数
 func (r *TmallItemPriceUpdateAPIRequest) SetOptions(_options *UpdateItemPriceOption) error {
 	r._options = _options
@@ -90,7 +90,7 @@ func (r *TmallItemPriceUpdateAPIRequest) SetOptions(_options *UpdateItemPriceOpt
 	return nil
 }
 
-// Get Options Getter
+// GetOptions Options Getter
 func (r TmallItemPriceUpdateAPIRequest) GetOptions() *UpdateItemPriceOption {
 	return r._options
 }

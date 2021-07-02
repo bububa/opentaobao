@@ -39,7 +39,7 @@ func (r TaobaoSimbaInsightCatsinfoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 表示请求的类型：0表示请求所有顶级类目的信息，这时可以忽略第二个参数，1表示获取给定的类目id的详细信息，2表示获取给定类目id的所有子类目的详细信息
 func (r *TaobaoSimbaInsightCatsinfoGetAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -47,12 +47,12 @@ func (r *TaobaoSimbaInsightCatsinfoGetAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoSimbaInsightCatsinfoGetAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is CategoryIdList Setter
+// SetCategoryIdList is CategoryIdList Setter
 // 需要查询的类目id
 func (r *TaobaoSimbaInsightCatsinfoGetAPIRequest) SetCategoryIdList(_categoryIdList []string) error {
 	r._categoryIdList = _categoryIdList
@@ -60,7 +60,7 @@ func (r *TaobaoSimbaInsightCatsinfoGetAPIRequest) SetCategoryIdList(_categoryIdL
 	return nil
 }
 
-// Get CategoryIdList Getter
+// GetCategoryIdList CategoryIdList Getter
 func (r TaobaoSimbaInsightCatsinfoGetAPIRequest) GetCategoryIdList() []string {
 	return r._categoryIdList
 }

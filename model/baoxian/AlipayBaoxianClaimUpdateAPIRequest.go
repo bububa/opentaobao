@@ -55,7 +55,7 @@ func (r AlipayBaoxianClaimUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizData Setter
+// SetBizData is BizData Setter
 // 业务数据
 func (r *AlipayBaoxianClaimUpdateAPIRequest) SetBizData(_bizData string) error {
 	r._bizData = _bizData
@@ -63,12 +63,12 @@ func (r *AlipayBaoxianClaimUpdateAPIRequest) SetBizData(_bizData string) error {
 	return nil
 }
 
-// Get BizData Getter
+// GetBizData BizData Getter
 func (r AlipayBaoxianClaimUpdateAPIRequest) GetBizData() string {
 	return r._bizData
 }
 
-// Set is ProgressList Setter
+// SetProgressList is ProgressList Setter
 // 进度列表
 func (r *AlipayBaoxianClaimUpdateAPIRequest) SetProgressList(_progressList []string) error {
 	r._progressList = _progressList
@@ -76,12 +76,12 @@ func (r *AlipayBaoxianClaimUpdateAPIRequest) SetProgressList(_progressList []str
 	return nil
 }
 
-// Get ProgressList Getter
+// GetProgressList ProgressList Getter
 func (r AlipayBaoxianClaimUpdateAPIRequest) GetProgressList() []string {
 	return r._progressList
 }
 
-// Set is ClaimAttachments Setter
+// SetClaimAttachments is ClaimAttachments Setter
 // 附件列表
 func (r *AlipayBaoxianClaimUpdateAPIRequest) SetClaimAttachments(_claimAttachments []ClaimAttachment) error {
 	r._claimAttachments = _claimAttachments
@@ -89,12 +89,12 @@ func (r *AlipayBaoxianClaimUpdateAPIRequest) SetClaimAttachments(_claimAttachmen
 	return nil
 }
 
-// Get ClaimAttachments Getter
+// GetClaimAttachments ClaimAttachments Getter
 func (r AlipayBaoxianClaimUpdateAPIRequest) GetClaimAttachments() []ClaimAttachment {
 	return r._claimAttachments
 }
 
-// Set is PolicyBizNo Setter
+// SetPolicyBizNo is PolicyBizNo Setter
 // 保单业务单号
 func (r *AlipayBaoxianClaimUpdateAPIRequest) SetPolicyBizNo(_policyBizNo string) error {
 	r._policyBizNo = _policyBizNo
@@ -102,12 +102,12 @@ func (r *AlipayBaoxianClaimUpdateAPIRequest) SetPolicyBizNo(_policyBizNo string)
 	return nil
 }
 
-// Get PolicyBizNo Getter
+// GetPolicyBizNo PolicyBizNo Getter
 func (r AlipayBaoxianClaimUpdateAPIRequest) GetPolicyBizNo() string {
 	return r._policyBizNo
 }
 
-// Set is OutBizNo Setter
+// SetOutBizNo is OutBizNo Setter
 // 外部业务单号
 func (r *AlipayBaoxianClaimUpdateAPIRequest) SetOutBizNo(_outBizNo string) error {
 	r._outBizNo = _outBizNo
@@ -115,12 +115,12 @@ func (r *AlipayBaoxianClaimUpdateAPIRequest) SetOutBizNo(_outBizNo string) error
 	return nil
 }
 
-// Get OutBizNo Getter
+// GetOutBizNo OutBizNo Getter
 func (r AlipayBaoxianClaimUpdateAPIRequest) GetOutBizNo() string {
 	return r._outBizNo
 }
 
-// Set is BizSource Setter
+// SetBizSource is BizSource Setter
 // 业务来源
 func (r *AlipayBaoxianClaimUpdateAPIRequest) SetBizSource(_bizSource string) error {
 	r._bizSource = _bizSource
@@ -128,12 +128,12 @@ func (r *AlipayBaoxianClaimUpdateAPIRequest) SetBizSource(_bizSource string) err
 	return nil
 }
 
-// Get BizSource Getter
+// GetBizSource BizSource Getter
 func (r AlipayBaoxianClaimUpdateAPIRequest) GetBizSource() string {
 	return r._bizSource
 }
 
-// Set is ClaimFee Setter
+// SetClaimFee is ClaimFee Setter
 // 理赔金额(单位为分)
 func (r *AlipayBaoxianClaimUpdateAPIRequest) SetClaimFee(_claimFee int64) error {
 	r._claimFee = _claimFee
@@ -141,12 +141,12 @@ func (r *AlipayBaoxianClaimUpdateAPIRequest) SetClaimFee(_claimFee int64) error 
 	return nil
 }
 
-// Get ClaimFee Getter
+// GetClaimFee ClaimFee Getter
 func (r AlipayBaoxianClaimUpdateAPIRequest) GetClaimFee() int64 {
 	return r._claimFee
 }
 
-// Set is ClaimNo Setter
+// SetClaimNo is ClaimNo Setter
 // 理赔单号
 func (r *AlipayBaoxianClaimUpdateAPIRequest) SetClaimNo(_claimNo string) error {
 	r._claimNo = _claimNo
@@ -154,12 +154,12 @@ func (r *AlipayBaoxianClaimUpdateAPIRequest) SetClaimNo(_claimNo string) error {
 	return nil
 }
 
-// Get ClaimNo Getter
+// GetClaimNo ClaimNo Getter
 func (r AlipayBaoxianClaimUpdateAPIRequest) GetClaimNo() string {
 	return r._claimNo
 }
 
-// Set is ClaimOutBizNo Setter
+// SetClaimOutBizNo is ClaimOutBizNo Setter
 // 理赔外部业务单号
 func (r *AlipayBaoxianClaimUpdateAPIRequest) SetClaimOutBizNo(_claimOutBizNo string) error {
 	r._claimOutBizNo = _claimOutBizNo
@@ -167,12 +167,12 @@ func (r *AlipayBaoxianClaimUpdateAPIRequest) SetClaimOutBizNo(_claimOutBizNo str
 	return nil
 }
 
-// Get ClaimOutBizNo Getter
+// GetClaimOutBizNo ClaimOutBizNo Getter
 func (r AlipayBaoxianClaimUpdateAPIRequest) GetClaimOutBizNo() string {
 	return r._claimOutBizNo
 }
 
-// Set is SpNo Setter
+// SetSpNo is SpNo Setter
 // 标准产品ID
 func (r *AlipayBaoxianClaimUpdateAPIRequest) SetSpNo(_spNo string) error {
 	r._spNo = _spNo
@@ -180,7 +180,7 @@ func (r *AlipayBaoxianClaimUpdateAPIRequest) SetSpNo(_spNo string) error {
 	return nil
 }
 
-// Get SpNo Getter
+// GetSpNo SpNo Getter
 func (r AlipayBaoxianClaimUpdateAPIRequest) GetSpNo() string {
 	return r._spNo
 }

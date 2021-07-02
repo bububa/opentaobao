@@ -39,7 +39,7 @@ func (r TaobaoOpentradeSpecialRuleUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LimitNum Setter
+// SetLimitNum is LimitNum Setter
 // 最大限购数量
 func (r *TaobaoOpentradeSpecialRuleUpdateAPIRequest) SetLimitNum(_limitNum int64) error {
 	r._limitNum = _limitNum
@@ -47,12 +47,12 @@ func (r *TaobaoOpentradeSpecialRuleUpdateAPIRequest) SetLimitNum(_limitNum int64
 	return nil
 }
 
-// Get LimitNum Getter
+// GetLimitNum LimitNum Getter
 func (r TaobaoOpentradeSpecialRuleUpdateAPIRequest) GetLimitNum() int64 {
 	return r._limitNum
 }
 
-// Set is ItemIds Setter
+// SetItemIds is ItemIds Setter
 // 商品id列表
 func (r *TaobaoOpentradeSpecialRuleUpdateAPIRequest) SetItemIds(_itemIds []int64) error {
 	r._itemIds = _itemIds
@@ -60,7 +60,7 @@ func (r *TaobaoOpentradeSpecialRuleUpdateAPIRequest) SetItemIds(_itemIds []int64
 	return nil
 }
 
-// Get ItemIds Getter
+// GetItemIds ItemIds Getter
 func (r TaobaoOpentradeSpecialRuleUpdateAPIRequest) GetItemIds() []int64 {
 	return r._itemIds
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ParamUndedutOpenReq Setter
+// SetParamUndedutOpenReq is ParamUndedutOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) SetParamUndedutOpenReq(_paramUndedutOpenReq *UndedutOpenReq) error {
 	r._paramUndedutOpenReq = _paramUndedutOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) SetParamUndedutOpenReq(_
 	return nil
 }
 
-// Get ParamUndedutOpenReq Getter
+// GetParamUndedutOpenReq ParamUndedutOpenReq Getter
 func (r AlibabaAlscCrmRechargeUndedutUpdateAPIRequest) GetParamUndedutOpenReq() *UndedutOpenReq {
 	return r._paramUndedutOpenReq
 }

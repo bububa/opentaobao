@@ -45,7 +45,7 @@ func (r TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 开始时间(最多可查询最近90天)
 func (r *TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -53,12 +53,12 @@ func (r *TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) SetStartDate(_startD
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is SolutionId Setter
+// SetSolutionId is SolutionId Setter
 // 指定计划id
 func (r *TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) SetSolutionId(_solutionId string) error {
 	r._solutionId = _solutionId
@@ -66,12 +66,12 @@ func (r *TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) SetSolutionId(_solut
 	return nil
 }
 
-// Get SolutionId Getter
+// GetSolutionId SolutionId Getter
 func (r TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) GetSolutionId() string {
 	return r._solutionId
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 截至时间(最晚到昨天)
 func (r *TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -79,12 +79,12 @@ func (r *TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) SetEndDate(_endDate 
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 当前页数
 func (r *TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) SetPageIndex(_pageIndex string) error {
 	r._pageIndex = _pageIndex
@@ -92,12 +92,12 @@ func (r *TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) SetPageIndex(_pageIn
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) GetPageIndex() string {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数
 func (r *TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) SetPageSize(_pageSize string) error {
 	r._pageSize = _pageSize
@@ -105,7 +105,7 @@ func (r *TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) SetPageSize(_pageSiz
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoBrandhubSpecialshowRptCampaignGetAPIRequest) GetPageSize() string {
 	return r._pageSize
 }

@@ -47,7 +47,7 @@ func (r TaobaoAlitripItPolicyBatchdeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Airline Setter
+// SetAirline is Airline Setter
 // 航司二字码，完整匹配
 func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetAirline(_airline string) error {
 	r._airline = _airline
@@ -55,12 +55,12 @@ func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetAirline(_airline string)
 	return nil
 }
 
-// Get Airline Getter
+// GetAirline Airline Getter
 func (r TaobaoAlitripItPolicyBatchdeleteAPIRequest) GetAirline() string {
 	return r._airline
 }
 
-// Set is ArrCity Setter
+// SetArrCity is ArrCity Setter
 // 到达，，完整匹配
 func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetArrCity(_arrCity string) error {
 	r._arrCity = _arrCity
@@ -68,12 +68,12 @@ func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetArrCity(_arrCity string)
 	return nil
 }
 
-// Get ArrCity Getter
+// GetArrCity ArrCity Getter
 func (r TaobaoAlitripItPolicyBatchdeleteAPIRequest) GetArrCity() string {
 	return r._arrCity
 }
 
-// Set is Cabin Setter
+// SetCabin is Cabin Setter
 // 舱位，，完整匹配
 func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetCabin(_cabin string) error {
 	r._cabin = _cabin
@@ -81,12 +81,12 @@ func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetCabin(_cabin string) err
 	return nil
 }
 
-// Get Cabin Getter
+// GetCabin Cabin Getter
 func (r TaobaoAlitripItPolicyBatchdeleteAPIRequest) GetCabin() string {
 	return r._cabin
 }
 
-// Set is DepCity Setter
+// SetDepCity is DepCity Setter
 // 出发，，完整匹配
 func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetDepCity(_depCity string) error {
 	r._depCity = _depCity
@@ -94,12 +94,12 @@ func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetDepCity(_depCity string)
 	return nil
 }
 
-// Get DepCity Getter
+// GetDepCity DepCity Getter
 func (r TaobaoAlitripItPolicyBatchdeleteAPIRequest) GetDepCity() string {
 	return r._depCity
 }
 
-// Set is PolicyId Setter
+// SetPolicyId is PolicyId Setter
 // 产品id，，完整匹配
 func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetPolicyId(_policyId string) error {
 	r._policyId = _policyId
@@ -107,12 +107,12 @@ func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetPolicyId(_policyId strin
 	return nil
 }
 
-// Get PolicyId Getter
+// GetPolicyId PolicyId Getter
 func (r TaobaoAlitripItPolicyBatchdeleteAPIRequest) GetPolicyId() string {
 	return r._policyId
 }
 
-// Set is StatusList Setter
+// SetStatusList is StatusList Setter
 // 0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据
 func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetStatusList(_statusList []int64) error {
 	r._statusList = _statusList
@@ -120,7 +120,7 @@ func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetStatusList(_statusList [
 	return nil
 }
 
-// Get StatusList Getter
+// GetStatusList StatusList Getter
 func (r TaobaoAlitripItPolicyBatchdeleteAPIRequest) GetStatusList() []int64 {
 	return r._statusList
 }

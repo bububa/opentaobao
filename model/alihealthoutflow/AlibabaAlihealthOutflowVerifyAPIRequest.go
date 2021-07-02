@@ -37,7 +37,7 @@ func (r AlibabaAlihealthOutflowVerifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PrescriptionVerifyRequest Setter
+// SetPrescriptionVerifyRequest is PrescriptionVerifyRequest Setter
 // 入参
 func (r *AlibabaAlihealthOutflowVerifyAPIRequest) SetPrescriptionVerifyRequest(_prescriptionVerifyRequest *PrescriptionVerifyRequest) error {
 	r._prescriptionVerifyRequest = _prescriptionVerifyRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthOutflowVerifyAPIRequest) SetPrescriptionVerifyRequest(_
 	return nil
 }
 
-// Get PrescriptionVerifyRequest Getter
+// GetPrescriptionVerifyRequest PrescriptionVerifyRequest Getter
 func (r AlibabaAlihealthOutflowVerifyAPIRequest) GetPrescriptionVerifyRequest() *PrescriptionVerifyRequest {
 	return r._prescriptionVerifyRequest
 }

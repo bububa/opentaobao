@@ -37,7 +37,7 @@ func (r AliexpressSolutionBatchProductDeleteAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ProductIds Setter
+// SetProductIds is ProductIds Setter
 // maximum 100
 func (r *AliexpressSolutionBatchProductDeleteAPIRequest) SetProductIds(_productIds []int64) error {
 	r._productIds = _productIds
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionBatchProductDeleteAPIRequest) SetProductIds(_productI
 	return nil
 }
 
-// Get ProductIds Getter
+// GetProductIds ProductIds Getter
 func (r AliexpressSolutionBatchProductDeleteAPIRequest) GetProductIds() []int64 {
 	return r._productIds
 }

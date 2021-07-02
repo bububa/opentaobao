@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenDeleteperformAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeletePerformParam Setter
+// SetDeletePerformParam is DeletePerformParam Setter
 // 入参deletePerformParam
 func (r *AlibabaDamaiMevOpenDeleteperformAPIRequest) SetDeletePerformParam(_deletePerformParam *PerformIdOpenParam) error {
 	r._deletePerformParam = _deletePerformParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenDeleteperformAPIRequest) SetDeletePerformParam(_dele
 	return nil
 }
 
-// Get DeletePerformParam Getter
+// GetDeletePerformParam DeletePerformParam Getter
 func (r AlibabaDamaiMevOpenDeleteperformAPIRequest) GetDeletePerformParam() *PerformIdOpenParam {
 	return r._deletePerformParam
 }

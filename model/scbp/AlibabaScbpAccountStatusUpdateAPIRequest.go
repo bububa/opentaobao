@@ -37,7 +37,7 @@ func (r AlibabaScbpAccountStatusUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // on:开启,off:暂停
 func (r *AlibabaScbpAccountStatusUpdateAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -45,7 +45,7 @@ func (r *AlibabaScbpAccountStatusUpdateAPIRequest) SetStatus(_status string) err
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaScbpAccountStatusUpdateAPIRequest) GetStatus() string {
 	return r._status
 }

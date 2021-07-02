@@ -37,7 +37,7 @@ func (r AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is ParamTaxOptimizationSalaryBillCommitReqDTO Setter
+// SetParamTaxOptimizationSalaryBillCommitReqDTO is ParamTaxOptimizationSalaryBillCommitReqDTO Setter
 // 入参
 func (r *AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest) SetParamTaxOptimizationSalaryBillCommitReqDTO(_paramTaxOptimizationSalaryBillCommitReqDTO *TaxOptimizationSalaryBillCommitReqDto) error {
 	r._paramTaxOptimizationSalaryBillCommitReqDTO = _paramTaxOptimizationSalaryBillCommitReqDTO
@@ -45,7 +45,7 @@ func (r *AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest) SetParamTaxOptimiz
 	return nil
 }
 
-// Get ParamTaxOptimizationSalaryBillCommitReqDTO Getter
+// GetParamTaxOptimizationSalaryBillCommitReqDTO ParamTaxOptimizationSalaryBillCommitReqDTO Getter
 func (r AlibabaEinvoiceTaxOptSalarybillCommitbillAPIRequest) GetParamTaxOptimizationSalaryBillCommitReqDTO() *TaxOptimizationSalaryBillCommitReqDto {
 	return r._paramTaxOptimizationSalaryBillCommitReqDTO
 }

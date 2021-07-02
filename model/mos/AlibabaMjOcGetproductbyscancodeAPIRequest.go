@@ -43,7 +43,7 @@ func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 码, 对应的信息可能是款号，也有可能是具体的某一个商品
 func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -51,12 +51,12 @@ func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetCode(_code string) error 
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is CodeType Setter
+// SetCodeType is CodeType Setter
 // 条码/二维码/rfid(电子标签),货号、条码、零售+唯一码;ARTNO、BARCODE、UNIQUECODE
 func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetCodeType(_codeType string) error {
 	r._codeType = _codeType
@@ -64,12 +64,12 @@ func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetCodeType(_codeType string
 	return nil
 }
 
-// Get CodeType Getter
+// GetCodeType CodeType Getter
 func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetCodeType() string {
 	return r._codeType
 }
 
-// Set is ShopCode Setter
+// SetShopCode is ShopCode Setter
 // 专柜编码
 func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetShopCode(_shopCode string) error {
 	r._shopCode = _shopCode
@@ -77,12 +77,12 @@ func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetShopCode(_shopCode string
 	return nil
 }
 
-// Get ShopCode Getter
+// GetShopCode ShopCode Getter
 func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetShopCode() string {
 	return r._shopCode
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 门店编码
 func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -90,7 +90,7 @@ func (r *AlibabaMjOcGetproductbyscancodeAPIRequest) SetStoreCode(_storeCode stri
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r AlibabaMjOcGetproductbyscancodeAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }

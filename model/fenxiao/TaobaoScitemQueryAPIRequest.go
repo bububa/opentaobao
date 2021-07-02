@@ -49,7 +49,7 @@ func (r TaobaoScitemQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemName Setter
+// SetItemName is ItemName Setter
 // 商品名称
 func (r *TaobaoScitemQueryAPIRequest) SetItemName(_itemName string) error {
 	r._itemName = _itemName
@@ -57,12 +57,12 @@ func (r *TaobaoScitemQueryAPIRequest) SetItemName(_itemName string) error {
 	return nil
 }
 
-// Get ItemName Getter
+// GetItemName ItemName Getter
 func (r TaobaoScitemQueryAPIRequest) GetItemName() string {
 	return r._itemName
 }
 
-// Set is OuterCode Setter
+// SetOuterCode is OuterCode Setter
 // 商家给商品的一个编码
 func (r *TaobaoScitemQueryAPIRequest) SetOuterCode(_outerCode string) error {
 	r._outerCode = _outerCode
@@ -70,12 +70,12 @@ func (r *TaobaoScitemQueryAPIRequest) SetOuterCode(_outerCode string) error {
 	return nil
 }
 
-// Get OuterCode Getter
+// GetOuterCode OuterCode Getter
 func (r TaobaoScitemQueryAPIRequest) GetOuterCode() string {
 	return r._outerCode
 }
 
-// Set is BarCode Setter
+// SetBarCode is BarCode Setter
 // 条形码
 func (r *TaobaoScitemQueryAPIRequest) SetBarCode(_barCode string) error {
 	r._barCode = _barCode
@@ -83,12 +83,12 @@ func (r *TaobaoScitemQueryAPIRequest) SetBarCode(_barCode string) error {
 	return nil
 }
 
-// Get BarCode Getter
+// GetBarCode BarCode Getter
 func (r TaobaoScitemQueryAPIRequest) GetBarCode() string {
 	return r._barCode
 }
 
-// Set is ItemType Setter
+// SetItemType is ItemType Setter
 // ITEM类型(只允许输入以下英文或空) NORMAL 0:普通商品; COMBINE 1:是否是组合商品 DISTRIBUTION
 func (r *TaobaoScitemQueryAPIRequest) SetItemType(_itemType int64) error {
 	r._itemType = _itemType
@@ -96,12 +96,12 @@ func (r *TaobaoScitemQueryAPIRequest) SetItemType(_itemType int64) error {
 	return nil
 }
 
-// Get ItemType Getter
+// GetItemType ItemType Getter
 func (r TaobaoScitemQueryAPIRequest) GetItemType() int64 {
 	return r._itemType
 }
 
-// Set is WmsCode Setter
+// SetWmsCode is WmsCode Setter
 // 仓库编码
 func (r *TaobaoScitemQueryAPIRequest) SetWmsCode(_wmsCode string) error {
 	r._wmsCode = _wmsCode
@@ -109,12 +109,12 @@ func (r *TaobaoScitemQueryAPIRequest) SetWmsCode(_wmsCode string) error {
 	return nil
 }
 
-// Get WmsCode Getter
+// GetWmsCode WmsCode Getter
 func (r TaobaoScitemQueryAPIRequest) GetWmsCode() string {
 	return r._wmsCode
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 当前页码数
 func (r *TaobaoScitemQueryAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -122,12 +122,12 @@ func (r *TaobaoScitemQueryAPIRequest) SetPageIndex(_pageIndex int64) error {
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoScitemQueryAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页记录个数，如果用户输入的记录数大于50，则一页显示50条记录
 func (r *TaobaoScitemQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -135,7 +135,7 @@ func (r *TaobaoScitemQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoScitemQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

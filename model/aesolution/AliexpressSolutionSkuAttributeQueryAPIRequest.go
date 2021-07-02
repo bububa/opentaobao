@@ -37,7 +37,7 @@ func (r AliexpressSolutionSkuAttributeQueryAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is QuerySkuAttributeInfoRequest Setter
+// SetQuerySkuAttributeInfoRequest is QuerySkuAttributeInfoRequest Setter
 // input parameters
 func (r *AliexpressSolutionSkuAttributeQueryAPIRequest) SetQuerySkuAttributeInfoRequest(_querySkuAttributeInfoRequest *SkuAttributeInfoQueryRequest) error {
 	r._querySkuAttributeInfoRequest = _querySkuAttributeInfoRequest
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionSkuAttributeQueryAPIRequest) SetQuerySkuAttributeInfo
 	return nil
 }
 
-// Get QuerySkuAttributeInfoRequest Getter
+// GetQuerySkuAttributeInfoRequest QuerySkuAttributeInfoRequest Getter
 func (r AliexpressSolutionSkuAttributeQueryAPIRequest) GetQuerySkuAttributeInfoRequest() *SkuAttributeInfoQueryRequest {
 	return r._querySkuAttributeInfoRequest
 }

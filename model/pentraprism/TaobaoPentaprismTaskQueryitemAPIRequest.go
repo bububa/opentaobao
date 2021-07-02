@@ -37,7 +37,7 @@ func (r TaobaoPentaprismTaskQueryitemAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpenPo Setter
+// SetOpenPo is OpenPo Setter
 // TOP接口标准入参
 func (r *TaobaoPentaprismTaskQueryitemAPIRequest) SetOpenPo(_openPo *OpenTaskPo) error {
 	r._openPo = _openPo
@@ -45,7 +45,7 @@ func (r *TaobaoPentaprismTaskQueryitemAPIRequest) SetOpenPo(_openPo *OpenTaskPo)
 	return nil
 }
 
-// Get OpenPo Getter
+// GetOpenPo OpenPo Getter
 func (r TaobaoPentaprismTaskQueryitemAPIRequest) GetOpenPo() *OpenTaskPo {
 	return r._openPo
 }

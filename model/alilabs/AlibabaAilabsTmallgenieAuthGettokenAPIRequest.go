@@ -41,7 +41,7 @@ func (r AlibabaAilabsTmallgenieAuthGettokenAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ClientId Setter
+// SetClientId is ClientId Setter
 // clientId
 func (r *AlibabaAilabsTmallgenieAuthGettokenAPIRequest) SetClientId(_clientId string) error {
 	r._clientId = _clientId
@@ -49,12 +49,12 @@ func (r *AlibabaAilabsTmallgenieAuthGettokenAPIRequest) SetClientId(_clientId st
 	return nil
 }
 
-// Get ClientId Getter
+// GetClientId ClientId Getter
 func (r AlibabaAilabsTmallgenieAuthGettokenAPIRequest) GetClientId() string {
 	return r._clientId
 }
 
-// Set is AuthCode Setter
+// SetAuthCode is AuthCode Setter
 // 授权码
 func (r *AlibabaAilabsTmallgenieAuthGettokenAPIRequest) SetAuthCode(_authCode string) error {
 	r._authCode = _authCode
@@ -62,12 +62,12 @@ func (r *AlibabaAilabsTmallgenieAuthGettokenAPIRequest) SetAuthCode(_authCode st
 	return nil
 }
 
-// Get AuthCode Getter
+// GetAuthCode AuthCode Getter
 func (r AlibabaAilabsTmallgenieAuthGettokenAPIRequest) GetAuthCode() string {
 	return r._authCode
 }
 
-// Set is GrantType Setter
+// SetGrantType is GrantType Setter
 // 授权类型，只支持authorization_code
 func (r *AlibabaAilabsTmallgenieAuthGettokenAPIRequest) SetGrantType(_grantType string) error {
 	r._grantType = _grantType
@@ -75,7 +75,7 @@ func (r *AlibabaAilabsTmallgenieAuthGettokenAPIRequest) SetGrantType(_grantType 
 	return nil
 }
 
-// Get GrantType Getter
+// GetGrantType GrantType Getter
 func (r AlibabaAilabsTmallgenieAuthGettokenAPIRequest) GetGrantType() string {
 	return r._grantType
 }

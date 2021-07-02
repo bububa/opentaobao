@@ -37,7 +37,7 @@ func (r TaobaoUmpActivitiesListGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Ids Setter
+// SetIds is Ids Setter
 // 营销活动id列表。
 func (r *TaobaoUmpActivitiesListGetAPIRequest) SetIds(_ids []int64) error {
 	r._ids = _ids
@@ -45,7 +45,7 @@ func (r *TaobaoUmpActivitiesListGetAPIRequest) SetIds(_ids []int64) error {
 	return nil
 }
 
-// Get Ids Getter
+// GetIds Ids Getter
 func (r TaobaoUmpActivitiesListGetAPIRequest) GetIds() []int64 {
 	return r._ids
 }

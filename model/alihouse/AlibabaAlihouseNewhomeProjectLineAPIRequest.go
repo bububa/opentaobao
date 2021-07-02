@@ -39,7 +39,7 @@ func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 外部id
 func (r *AlibabaAlihouseNewhomeProjectLineAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihouseNewhomeProjectLineAPIRequest) SetOuterId(_outerId string
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 0-下架 1-上架
 func (r *AlibabaAlihouseNewhomeProjectLineAPIRequest) SetType(_type *model.File) error {
 	r._type = _type
@@ -60,7 +60,7 @@ func (r *AlibabaAlihouseNewhomeProjectLineAPIRequest) SetType(_type *model.File)
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetType() *model.File {
 	return r._type
 }

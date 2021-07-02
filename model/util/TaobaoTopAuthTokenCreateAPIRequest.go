@@ -39,7 +39,7 @@ func (r TaobaoTopAuthTokenCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 授权code，grantType==authorization_code 时需要
 func (r *TaobaoTopAuthTokenCreateAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -47,12 +47,12 @@ func (r *TaobaoTopAuthTokenCreateAPIRequest) SetCode(_code string) error {
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r TaobaoTopAuthTokenCreateAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 与生成code的uuid配对
 func (r *TaobaoTopAuthTokenCreateAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -60,7 +60,7 @@ func (r *TaobaoTopAuthTokenCreateAPIRequest) SetUuid(_uuid string) error {
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r TaobaoTopAuthTokenCreateAPIRequest) GetUuid() string {
 	return r._uuid
 }

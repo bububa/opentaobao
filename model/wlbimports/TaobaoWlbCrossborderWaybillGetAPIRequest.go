@@ -38,7 +38,7 @@ func (r TaobaoWlbCrossborderWaybillGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // 菜鸟物流单号
 func (r *TaobaoWlbCrossborderWaybillGetAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -46,7 +46,7 @@ func (r *TaobaoWlbCrossborderWaybillGetAPIRequest) SetOrderCode(_orderCode strin
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r TaobaoWlbCrossborderWaybillGetAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }

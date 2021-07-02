@@ -37,7 +37,7 @@ func (r TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is IsOverseas Setter
+// SetIsOverseas is IsOverseas Setter
 // true-获取国际邮轮类目扩展信息；false-获取国内邮轮类目扩展信息
 func (r *TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest) SetIsOverseas(_isOverseas bool) error {
 	r._isOverseas = _isOverseas
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest) SetIsOverseas(_isOverse
 	return nil
 }
 
-// Get IsOverseas Getter
+// GetIsOverseas IsOverseas Getter
 func (r TaobaoAlitripTravelBaseinfoCruiseGetAPIRequest) GetIsOverseas() bool {
 	return r._isOverseas
 }

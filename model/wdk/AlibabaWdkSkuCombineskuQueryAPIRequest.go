@@ -37,7 +37,7 @@ func (r AlibabaWdkSkuCombineskuQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 请求参数
 func (r *AlibabaWdkSkuCombineskuQueryAPIRequest) SetParam(_param *SkuQueryDo) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaWdkSkuCombineskuQueryAPIRequest) SetParam(_param *SkuQueryDo) er
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaWdkSkuCombineskuQueryAPIRequest) GetParam() *SkuQueryDo {
 	return r._param
 }

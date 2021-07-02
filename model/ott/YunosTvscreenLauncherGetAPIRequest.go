@@ -39,7 +39,7 @@ func (r YunosTvscreenLauncherGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Property Setter
+// SetProperty is Property Setter
 // 设备属性
 func (r *YunosTvscreenLauncherGetAPIRequest) SetProperty(_property string) error {
 	r._property = _property
@@ -47,12 +47,12 @@ func (r *YunosTvscreenLauncherGetAPIRequest) SetProperty(_property string) error
 	return nil
 }
 
-// Get Property Getter
+// GetProperty Property Getter
 func (r YunosTvscreenLauncherGetAPIRequest) GetProperty() string {
 	return r._property
 }
 
-// Set is Ip Setter
+// SetIp is Ip Setter
 // IP来源
 func (r *YunosTvscreenLauncherGetAPIRequest) SetIp(_ip string) error {
 	r._ip = _ip
@@ -60,7 +60,7 @@ func (r *YunosTvscreenLauncherGetAPIRequest) SetIp(_ip string) error {
 	return nil
 }
 
-// Get Ip Getter
+// GetIp Ip Getter
 func (r YunosTvscreenLauncherGetAPIRequest) GetIp() string {
 	return r._ip
 }

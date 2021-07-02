@@ -37,7 +37,7 @@ func (r TaobaoLogisticsAddressRemoveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ContactId Setter
+// SetContactId is ContactId Setter
 // 地址库ID
 func (r *TaobaoLogisticsAddressRemoveAPIRequest) SetContactId(_contactId int64) error {
 	r._contactId = _contactId
@@ -45,7 +45,7 @@ func (r *TaobaoLogisticsAddressRemoveAPIRequest) SetContactId(_contactId int64) 
 	return nil
 }
 
-// Get ContactId Getter
+// GetContactId ContactId Getter
 func (r TaobaoLogisticsAddressRemoveAPIRequest) GetContactId() int64 {
 	return r._contactId
 }

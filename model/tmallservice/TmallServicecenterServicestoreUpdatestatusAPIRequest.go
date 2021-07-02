@@ -41,7 +41,7 @@ func (r TmallServicecenterServicestoreUpdatestatusAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 门店id
 func (r *TmallServicecenterServicestoreUpdatestatusAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -49,12 +49,12 @@ func (r *TmallServicecenterServicestoreUpdatestatusAPIRequest) SetId(_id int64) 
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TmallServicecenterServicestoreUpdatestatusAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 状态。1 营业，0歇业，-1彻底关店
 func (r *TmallServicecenterServicestoreUpdatestatusAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -62,12 +62,12 @@ func (r *TmallServicecenterServicestoreUpdatestatusAPIRequest) SetStatus(_status
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TmallServicecenterServicestoreUpdatestatusAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 业务类型。不同业务传不同的值
 func (r *TmallServicecenterServicestoreUpdatestatusAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -75,7 +75,7 @@ func (r *TmallServicecenterServicestoreUpdatestatusAPIRequest) SetBizType(_bizTy
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TmallServicecenterServicestoreUpdatestatusAPIRequest) GetBizType() string {
 	return r._bizType
 }

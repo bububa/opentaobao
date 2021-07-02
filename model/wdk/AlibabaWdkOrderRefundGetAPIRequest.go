@@ -45,7 +45,7 @@ func (r AlibabaWdkOrderRefundGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizOrderIds Setter
+// SetBizOrderIds is BizOrderIds Setter
 // 五道口订单列表（子订单）
 func (r *AlibabaWdkOrderRefundGetAPIRequest) SetBizOrderIds(_bizOrderIds []int64) error {
 	r._bizOrderIds = _bizOrderIds
@@ -53,12 +53,12 @@ func (r *AlibabaWdkOrderRefundGetAPIRequest) SetBizOrderIds(_bizOrderIds []int64
 	return nil
 }
 
-// Get BizOrderIds Getter
+// GetBizOrderIds BizOrderIds Getter
 func (r AlibabaWdkOrderRefundGetAPIRequest) GetBizOrderIds() []int64 {
 	return r._bizOrderIds
 }
 
-// Set is RefundIds Setter
+// SetRefundIds is RefundIds Setter
 // 退款订单列表
 func (r *AlibabaWdkOrderRefundGetAPIRequest) SetRefundIds(_refundIds []int64) error {
 	r._refundIds = _refundIds
@@ -66,12 +66,12 @@ func (r *AlibabaWdkOrderRefundGetAPIRequest) SetRefundIds(_refundIds []int64) er
 	return nil
 }
 
-// Get RefundIds Getter
+// GetRefundIds RefundIds Getter
 func (r AlibabaWdkOrderRefundGetAPIRequest) GetRefundIds() []int64 {
 	return r._refundIds
 }
 
-// Set is OrderFrom Setter
+// SetOrderFrom is OrderFrom Setter
 // 渠道来源 3：饿了么 4：盒马
 func (r *AlibabaWdkOrderRefundGetAPIRequest) SetOrderFrom(_orderFrom int64) error {
 	r._orderFrom = _orderFrom
@@ -79,12 +79,12 @@ func (r *AlibabaWdkOrderRefundGetAPIRequest) SetOrderFrom(_orderFrom int64) erro
 	return nil
 }
 
-// Get OrderFrom Getter
+// GetOrderFrom OrderFrom Getter
 func (r AlibabaWdkOrderRefundGetAPIRequest) GetOrderFrom() int64 {
 	return r._orderFrom
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 渠道店id
 func (r *AlibabaWdkOrderRefundGetAPIRequest) SetShopId(_shopId string) error {
 	r._shopId = _shopId
@@ -92,12 +92,12 @@ func (r *AlibabaWdkOrderRefundGetAPIRequest) SetShopId(_shopId string) error {
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r AlibabaWdkOrderRefundGetAPIRequest) GetShopId() string {
 	return r._shopId
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 经营店id
 func (r *AlibabaWdkOrderRefundGetAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -105,7 +105,7 @@ func (r *AlibabaWdkOrderRefundGetAPIRequest) SetStoreId(_storeId string) error {
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaWdkOrderRefundGetAPIRequest) GetStoreId() string {
 	return r._storeId
 }

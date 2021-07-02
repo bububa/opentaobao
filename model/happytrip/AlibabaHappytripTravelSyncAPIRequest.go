@@ -37,7 +37,7 @@ func (r AlibabaHappytripTravelSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TravelHeadDto Setter
+// SetTravelHeadDto is TravelHeadDto Setter
 // 差旅申请单对象
 func (r *AlibabaHappytripTravelSyncAPIRequest) SetTravelHeadDto(_travelHeadDto *TravelHeadDto) error {
 	r._travelHeadDto = _travelHeadDto
@@ -45,7 +45,7 @@ func (r *AlibabaHappytripTravelSyncAPIRequest) SetTravelHeadDto(_travelHeadDto *
 	return nil
 }
 
-// Get TravelHeadDto Getter
+// GetTravelHeadDto TravelHeadDto Getter
 func (r AlibabaHappytripTravelSyncAPIRequest) GetTravelHeadDto() *TravelHeadDto {
 	return r._travelHeadDto
 }

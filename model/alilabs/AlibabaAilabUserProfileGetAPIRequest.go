@@ -39,7 +39,7 @@ func (r AlibabaAilabUserProfileGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpenUid Setter
+// SetOpenUid is OpenUid Setter
 // open uid
 func (r *AlibabaAilabUserProfileGetAPIRequest) SetOpenUid(_openUid string) error {
 	r._openUid = _openUid
@@ -47,12 +47,12 @@ func (r *AlibabaAilabUserProfileGetAPIRequest) SetOpenUid(_openUid string) error
 	return nil
 }
 
-// Get OpenUid Getter
+// GetOpenUid OpenUid Getter
 func (r AlibabaAilabUserProfileGetAPIRequest) GetOpenUid() string {
 	return r._openUid
 }
 
-// Set is ClientId Setter
+// SetClientId is ClientId Setter
 // client id
 func (r *AlibabaAilabUserProfileGetAPIRequest) SetClientId(_clientId string) error {
 	r._clientId = _clientId
@@ -60,7 +60,7 @@ func (r *AlibabaAilabUserProfileGetAPIRequest) SetClientId(_clientId string) err
 	return nil
 }
 
-// Get ClientId Getter
+// GetClientId ClientId Getter
 func (r AlibabaAilabUserProfileGetAPIRequest) GetClientId() string {
 	return r._clientId
 }

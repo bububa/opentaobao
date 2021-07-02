@@ -37,7 +37,7 @@ func (r AlibabaIdleIsvOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamAppraiseIsvOrderQuery Setter
+// SetParamAppraiseIsvOrderQuery is ParamAppraiseIsvOrderQuery Setter
 // 系统自动生成
 func (r *AlibabaIdleIsvOrderQueryAPIRequest) SetParamAppraiseIsvOrderQuery(_paramAppraiseIsvOrderQuery *AppraiseIsvOrderQuery) error {
 	r._paramAppraiseIsvOrderQuery = _paramAppraiseIsvOrderQuery
@@ -45,7 +45,7 @@ func (r *AlibabaIdleIsvOrderQueryAPIRequest) SetParamAppraiseIsvOrderQuery(_para
 	return nil
 }
 
-// Get ParamAppraiseIsvOrderQuery Getter
+// GetParamAppraiseIsvOrderQuery ParamAppraiseIsvOrderQuery Getter
 func (r AlibabaIdleIsvOrderQueryAPIRequest) GetParamAppraiseIsvOrderQuery() *AppraiseIsvOrderQuery {
 	return r._paramAppraiseIsvOrderQuery
 }

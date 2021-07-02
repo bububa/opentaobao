@@ -37,7 +37,7 @@ func (r AlibabaNewretailPurchasePriceSaveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SavePurchasePriceRequest Setter
+// SetSavePurchasePriceRequest is SavePurchasePriceRequest Setter
 // 接口入参
 func (r *AlibabaNewretailPurchasePriceSaveAPIRequest) SetSavePurchasePriceRequest(_savePurchasePriceRequest *SavePurchasePriceRequest) error {
 	r._savePurchasePriceRequest = _savePurchasePriceRequest
@@ -45,7 +45,7 @@ func (r *AlibabaNewretailPurchasePriceSaveAPIRequest) SetSavePurchasePriceReques
 	return nil
 }
 
-// Get SavePurchasePriceRequest Getter
+// GetSavePurchasePriceRequest SavePurchasePriceRequest Getter
 func (r AlibabaNewretailPurchasePriceSaveAPIRequest) GetSavePurchasePriceRequest() *SavePurchasePriceRequest {
 	return r._savePurchasePriceRequest
 }

@@ -37,7 +37,7 @@ func (r AlitripHotelHstdfShotelExportsroomtypeAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Hid Setter
+// SetHid is Hid Setter
 // 卖家酒店id
 func (r *AlitripHotelHstdfShotelExportsroomtypeAPIRequest) SetHid(_hid int64) error {
 	r._hid = _hid
@@ -45,7 +45,7 @@ func (r *AlitripHotelHstdfShotelExportsroomtypeAPIRequest) SetHid(_hid int64) er
 	return nil
 }
 
-// Get Hid Getter
+// GetHid Hid Getter
 func (r AlitripHotelHstdfShotelExportsroomtypeAPIRequest) GetHid() int64 {
 	return r._hid
 }

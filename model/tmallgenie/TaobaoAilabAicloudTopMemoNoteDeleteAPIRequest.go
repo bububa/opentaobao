@@ -45,7 +45,7 @@ func (r TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // schema
 func (r *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -53,12 +53,12 @@ func (r *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) SetSchema(_schema string
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 企业用户ID
 func (r *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -66,12 +66,12 @@ func (r *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) SetUserId(_userId string
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is UtdId Setter
+// SetUtdId is UtdId Setter
 // 手持设备ID
 func (r *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) SetUtdId(_utdId string) error {
 	r._utdId = _utdId
@@ -79,12 +79,12 @@ func (r *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) SetUtdId(_utdId string) 
 	return nil
 }
 
-// Get UtdId Getter
+// GetUtdId UtdId Getter
 func (r TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) GetUtdId() string {
 	return r._utdId
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息json段，用于存放APP类型，APP版本等等信息。
 func (r *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -92,12 +92,12 @@ func (r *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) SetExt(_ext string) erro
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is MemoId Setter
+// SetMemoId is MemoId Setter
 // 备忘录ID
 func (r *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) SetMemoId(_memoId int64) error {
 	r._memoId = _memoId
@@ -105,7 +105,7 @@ func (r *TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) SetMemoId(_memoId int64)
 	return nil
 }
 
-// Get MemoId Getter
+// GetMemoId MemoId Getter
 func (r TaobaoAilabAicloudTopMemoNoteDeleteAPIRequest) GetMemoId() int64 {
 	return r._memoId
 }

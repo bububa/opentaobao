@@ -39,7 +39,7 @@ func (r TaobaoOpenimTribelogsImportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TribeId Setter
+// SetTribeId is TribeId Setter
 // 群号。必须为已存在的群，且群主属于本app
 func (r *TaobaoOpenimTribelogsImportAPIRequest) SetTribeId(_tribeId int64) error {
 	r._tribeId = _tribeId
@@ -47,12 +47,12 @@ func (r *TaobaoOpenimTribelogsImportAPIRequest) SetTribeId(_tribeId int64) error
 	return nil
 }
 
-// Get TribeId Getter
+// GetTribeId TribeId Getter
 func (r TaobaoOpenimTribelogsImportAPIRequest) GetTribeId() int64 {
 	return r._tribeId
 }
 
-// Set is Messages Setter
+// SetMessages is Messages Setter
 // 消息列表
 func (r *TaobaoOpenimTribelogsImportAPIRequest) SetMessages(_messages []TribeTextMessage) error {
 	r._messages = _messages
@@ -60,7 +60,7 @@ func (r *TaobaoOpenimTribelogsImportAPIRequest) SetMessages(_messages []TribeTex
 	return nil
 }
 
-// Get Messages Getter
+// GetMessages Messages Getter
 func (r TaobaoOpenimTribelogsImportAPIRequest) GetMessages() []TribeTextMessage {
 	return r._messages
 }

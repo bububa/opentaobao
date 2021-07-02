@@ -37,7 +37,7 @@ func (r AlibabaAscpPresalespackageConsignAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RequestParams Setter
+// SetRequestParams is RequestParams Setter
 // 入参
 func (r *AlibabaAscpPresalespackageConsignAPIRequest) SetRequestParams(_requestParams *Requestparams) error {
 	r._requestParams = _requestParams
@@ -45,7 +45,7 @@ func (r *AlibabaAscpPresalespackageConsignAPIRequest) SetRequestParams(_requestP
 	return nil
 }
 
-// Get RequestParams Getter
+// GetRequestParams RequestParams Getter
 func (r AlibabaAscpPresalespackageConsignAPIRequest) GetRequestParams() *Requestparams {
 	return r._requestParams
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeProjectSubmitAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is EbbasProjectDto Setter
+// SetEbbasProjectDto is EbbasProjectDto Setter
 // 楼盘对象
 func (r *AlibabaAlihouseNewhomeProjectSubmitAPIRequest) SetEbbasProjectDto(_ebbasProjectDto *EbbasProjectDto) error {
 	r._ebbasProjectDto = _ebbasProjectDto
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeProjectSubmitAPIRequest) SetEbbasProjectDto(_ebba
 	return nil
 }
 
-// Get EbbasProjectDto Getter
+// GetEbbasProjectDto EbbasProjectDto Getter
 func (r AlibabaAlihouseNewhomeProjectSubmitAPIRequest) GetEbbasProjectDto() *EbbasProjectDto {
 	return r._ebbasProjectDto
 }

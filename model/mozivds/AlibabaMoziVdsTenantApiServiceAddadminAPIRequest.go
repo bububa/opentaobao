@@ -38,7 +38,7 @@ func (r AlibabaMoziVdsTenantApiServiceAddadminAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 请求参数
 func (r *AlibabaMoziVdsTenantApiServiceAddadminAPIRequest) SetParam0(_param0 *AddTenantAdminsRequest) error {
 	r._param0 = _param0
@@ -46,7 +46,7 @@ func (r *AlibabaMoziVdsTenantApiServiceAddadminAPIRequest) SetParam0(_param0 *Ad
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaMoziVdsTenantApiServiceAddadminAPIRequest) GetParam0() *AddTenantAdminsRequest {
 	return r._param0
 }

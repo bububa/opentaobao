@@ -39,7 +39,7 @@ func (r AliyunCosmoGatewayInvokeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Context Setter
+// SetContext is Context Setter
 // 请求上下文参数
 func (r *AliyunCosmoGatewayInvokeAPIRequest) SetContext(_context *RdamContext) error {
 	r._context = _context
@@ -47,12 +47,12 @@ func (r *AliyunCosmoGatewayInvokeAPIRequest) SetContext(_context *RdamContext) e
 	return nil
 }
 
-// Get Context Getter
+// GetContext Context Getter
 func (r AliyunCosmoGatewayInvokeAPIRequest) GetContext() *RdamContext {
 	return r._context
 }
 
-// Set is RdamRequest Setter
+// SetRdamRequest is RdamRequest Setter
 // 请求对象
 func (r *AliyunCosmoGatewayInvokeAPIRequest) SetRdamRequest(_rdamRequest *RdamGenericRequest) error {
 	r._rdamRequest = _rdamRequest
@@ -60,7 +60,7 @@ func (r *AliyunCosmoGatewayInvokeAPIRequest) SetRdamRequest(_rdamRequest *RdamGe
 	return nil
 }
 
-// Get RdamRequest Getter
+// GetRdamRequest RdamRequest Getter
 func (r AliyunCosmoGatewayInvokeAPIRequest) GetRdamRequest() *RdamGenericRequest {
 	return r._rdamRequest
 }

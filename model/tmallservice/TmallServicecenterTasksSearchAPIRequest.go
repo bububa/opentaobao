@@ -39,7 +39,7 @@ func (r TmallServicecenterTasksSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Start Setter
+// SetStart is Start Setter
 // 开始时间:  开始时间和结束时间不能超过15分钟
 func (r *TmallServicecenterTasksSearchAPIRequest) SetStart(_start int64) error {
 	r._start = _start
@@ -47,12 +47,12 @@ func (r *TmallServicecenterTasksSearchAPIRequest) SetStart(_start int64) error {
 	return nil
 }
 
-// Get Start Getter
+// GetStart Start Getter
 func (r TmallServicecenterTasksSearchAPIRequest) GetStart() int64 {
 	return r._start
 }
 
-// Set is End Setter
+// SetEnd is End Setter
 // 结束时间:  开始时间和结束时间不能超过15分钟
 func (r *TmallServicecenterTasksSearchAPIRequest) SetEnd(_end int64) error {
 	r._end = _end
@@ -60,7 +60,7 @@ func (r *TmallServicecenterTasksSearchAPIRequest) SetEnd(_end int64) error {
 	return nil
 }
 
-// Get End Getter
+// GetEnd End Getter
 func (r TmallServicecenterTasksSearchAPIRequest) GetEnd() int64 {
 	return r._end
 }

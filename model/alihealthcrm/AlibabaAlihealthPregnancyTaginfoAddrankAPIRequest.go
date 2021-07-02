@@ -39,7 +39,7 @@ func (r AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户id
 func (r *AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest) SetUserId(_userId in
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest) GetUserId() int64 {
 	return r._userId
 }
 
-// Set is TagCode Setter
+// SetTagCode is TagCode Setter
 // 标签编码，例如备孕标签为5122
 func (r *AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest) SetTagCode(_tagCode string) error {
 	r._tagCode = _tagCode
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest) SetTagCode(_tagCode 
 	return nil
 }
 
-// Get TagCode Getter
+// GetTagCode TagCode Getter
 func (r AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest) GetTagCode() string {
 	return r._tagCode
 }

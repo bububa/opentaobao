@@ -37,7 +37,7 @@ func (r TaobaoWlbWaybillIFullupdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WaybillApplyFullUpdateRequest Setter
+// SetWaybillApplyFullUpdateRequest is WaybillApplyFullUpdateRequest Setter
 // 更新面单信息请求
 func (r *TaobaoWlbWaybillIFullupdateAPIRequest) SetWaybillApplyFullUpdateRequest(_waybillApplyFullUpdateRequest *WaybillApplyFullUpdateRequest) error {
 	r._waybillApplyFullUpdateRequest = _waybillApplyFullUpdateRequest
@@ -45,7 +45,7 @@ func (r *TaobaoWlbWaybillIFullupdateAPIRequest) SetWaybillApplyFullUpdateRequest
 	return nil
 }
 
-// Get WaybillApplyFullUpdateRequest Getter
+// GetWaybillApplyFullUpdateRequest WaybillApplyFullUpdateRequest Getter
 func (r TaobaoWlbWaybillIFullupdateAPIRequest) GetWaybillApplyFullUpdateRequest() *WaybillApplyFullUpdateRequest {
 	return r._waybillApplyFullUpdateRequest
 }

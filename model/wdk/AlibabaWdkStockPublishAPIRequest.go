@@ -37,7 +37,7 @@ func (r AlibabaWdkStockPublishAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BatchStockPublishDto Setter
+// SetBatchStockPublishDto is BatchStockPublishDto Setter
 // 批量参数
 func (r *AlibabaWdkStockPublishAPIRequest) SetBatchStockPublishDto(_batchStockPublishDto *BatchStockPublishDto) error {
 	r._batchStockPublishDto = _batchStockPublishDto
@@ -45,7 +45,7 @@ func (r *AlibabaWdkStockPublishAPIRequest) SetBatchStockPublishDto(_batchStockPu
 	return nil
 }
 
-// Get BatchStockPublishDto Getter
+// GetBatchStockPublishDto BatchStockPublishDto Getter
 func (r AlibabaWdkStockPublishAPIRequest) GetBatchStockPublishDto() *BatchStockPublishDto {
 	return r._batchStockPublishDto
 }

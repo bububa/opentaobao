@@ -41,7 +41,7 @@ func (r TaobaoUsceslBizStoreInsertAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreName Setter
+// SetStoreName is StoreName Setter
 // 门店名称
 func (r *TaobaoUsceslBizStoreInsertAPIRequest) SetStoreName(_storeName string) error {
 	r._storeName = _storeName
@@ -49,12 +49,12 @@ func (r *TaobaoUsceslBizStoreInsertAPIRequest) SetStoreName(_storeName string) e
 	return nil
 }
 
-// Get StoreName Getter
+// GetStoreName StoreName Getter
 func (r TaobaoUsceslBizStoreInsertAPIRequest) GetStoreName() string {
 	return r._storeName
 }
 
-// Set is StoreOutId Setter
+// SetStoreOutId is StoreOutId Setter
 // 门店外部ID，要保持同一商家下的唯一性
 func (r *TaobaoUsceslBizStoreInsertAPIRequest) SetStoreOutId(_storeOutId string) error {
 	r._storeOutId = _storeOutId
@@ -62,12 +62,12 @@ func (r *TaobaoUsceslBizStoreInsertAPIRequest) SetStoreOutId(_storeOutId string)
 	return nil
 }
 
-// Get StoreOutId Getter
+// GetStoreOutId StoreOutId Getter
 func (r TaobaoUsceslBizStoreInsertAPIRequest) GetStoreOutId() string {
 	return r._storeOutId
 }
 
-// Set is BizBrandKey Setter
+// SetBizBrandKey is BizBrandKey Setter
 // 商家标识key
 func (r *TaobaoUsceslBizStoreInsertAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
 	r._bizBrandKey = _bizBrandKey
@@ -75,7 +75,7 @@ func (r *TaobaoUsceslBizStoreInsertAPIRequest) SetBizBrandKey(_bizBrandKey strin
 	return nil
 }
 
-// Get BizBrandKey Getter
+// GetBizBrandKey BizBrandKey Getter
 func (r TaobaoUsceslBizStoreInsertAPIRequest) GetBizBrandKey() string {
 	return r._bizBrandKey
 }

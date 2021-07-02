@@ -47,7 +47,7 @@ func (r TaobaoTanxQualificationFindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MemberId Setter
+// SetMemberId is MemberId Setter
 // dsp客户在tanx的memberId
 func (r *TaobaoTanxQualificationFindAPIRequest) SetMemberId(_memberId int64) error {
 	r._memberId = _memberId
@@ -55,12 +55,12 @@ func (r *TaobaoTanxQualificationFindAPIRequest) SetMemberId(_memberId int64) err
 	return nil
 }
 
-// Get MemberId Getter
+// GetMemberId MemberId Getter
 func (r TaobaoTanxQualificationFindAPIRequest) GetMemberId() int64 {
 	return r._memberId
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // dsp客户在tanx签名的token
 func (r *TaobaoTanxQualificationFindAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -68,12 +68,12 @@ func (r *TaobaoTanxQualificationFindAPIRequest) SetToken(_token string) error {
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoTanxQualificationFindAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is SignTime Setter
+// SetSignTime is SignTime Setter
 // 当前时间,从1970年算的毫秒
 func (r *TaobaoTanxQualificationFindAPIRequest) SetSignTime(_signTime int64) error {
 	r._signTime = _signTime
@@ -81,12 +81,12 @@ func (r *TaobaoTanxQualificationFindAPIRequest) SetSignTime(_signTime int64) err
 	return nil
 }
 
-// Get SignTime Getter
+// GetSignTime SignTime Getter
 func (r TaobaoTanxQualificationFindAPIRequest) GetSignTime() int64 {
 	return r._signTime
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 分页的第几页，从1开始
 func (r *TaobaoTanxQualificationFindAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -94,12 +94,12 @@ func (r *TaobaoTanxQualificationFindAPIRequest) SetPage(_page int64) error {
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r TaobaoTanxQualificationFindAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小，限制200
 func (r *TaobaoTanxQualificationFindAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -107,12 +107,12 @@ func (r *TaobaoTanxQualificationFindAPIRequest) SetPageSize(_pageSize int64) err
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTanxQualificationFindAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 广告主资质查询dto
 func (r *TaobaoTanxQualificationFindAPIRequest) SetQuery(_query *QualificationQuery) error {
 	r._query = _query
@@ -120,7 +120,7 @@ func (r *TaobaoTanxQualificationFindAPIRequest) SetQuery(_query *QualificationQu
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r TaobaoTanxQualificationFindAPIRequest) GetQuery() *QualificationQuery {
 	return r._query
 }

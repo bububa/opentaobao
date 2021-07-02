@@ -37,7 +37,7 @@ func (r AlibabaInteractLotteryactivityRegisterAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ParamTopUpdateActivityLotteryInfoParam Setter
+// SetParamTopUpdateActivityLotteryInfoParam is ParamTopUpdateActivityLotteryInfoParam Setter
 // 入参
 func (r *AlibabaInteractLotteryactivityRegisterAPIRequest) SetParamTopUpdateActivityLotteryInfoParam(_paramTopUpdateActivityLotteryInfoParam *TopUpdateActivityLotteryInfoParam) error {
 	r._paramTopUpdateActivityLotteryInfoParam = _paramTopUpdateActivityLotteryInfoParam
@@ -45,7 +45,7 @@ func (r *AlibabaInteractLotteryactivityRegisterAPIRequest) SetParamTopUpdateActi
 	return nil
 }
 
-// Get ParamTopUpdateActivityLotteryInfoParam Getter
+// GetParamTopUpdateActivityLotteryInfoParam ParamTopUpdateActivityLotteryInfoParam Getter
 func (r AlibabaInteractLotteryactivityRegisterAPIRequest) GetParamTopUpdateActivityLotteryInfoParam() *TopUpdateActivityLotteryInfoParam {
 	return r._paramTopUpdateActivityLotteryInfoParam
 }

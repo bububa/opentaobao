@@ -39,7 +39,7 @@ func (r TaobaoLifeReservationTradeConsumeNoticeAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is TradeNo Setter
+// SetTradeNo is TradeNo Setter
 // 淘宝主单号
 func (r *TaobaoLifeReservationTradeConsumeNoticeAPIRequest) SetTradeNo(_tradeNo string) error {
 	r._tradeNo = _tradeNo
@@ -47,12 +47,12 @@ func (r *TaobaoLifeReservationTradeConsumeNoticeAPIRequest) SetTradeNo(_tradeNo 
 	return nil
 }
 
-// Get TradeNo Getter
+// GetTradeNo TradeNo Getter
 func (r TaobaoLifeReservationTradeConsumeNoticeAPIRequest) GetTradeNo() string {
 	return r._tradeNo
 }
 
-// Set is TicketId Setter
+// SetTicketId is TicketId Setter
 // 凭证ID
 func (r *TaobaoLifeReservationTradeConsumeNoticeAPIRequest) SetTicketId(_ticketId string) error {
 	r._ticketId = _ticketId
@@ -60,7 +60,7 @@ func (r *TaobaoLifeReservationTradeConsumeNoticeAPIRequest) SetTicketId(_ticketI
 	return nil
 }
 
-// Get TicketId Getter
+// GetTicketId TicketId Getter
 func (r TaobaoLifeReservationTradeConsumeNoticeAPIRequest) GetTicketId() string {
 	return r._ticketId
 }

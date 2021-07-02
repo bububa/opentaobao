@@ -41,7 +41,7 @@ func (r AlitripRailIrStationGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 商家id
 func (r *AlitripRailIrStationGetAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -49,12 +49,12 @@ func (r *AlitripRailIrStationGetAPIRequest) SetAgentId(_agentId int64) error {
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r AlitripRailIrStationGetAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 页数 从1开始
 func (r *AlitripRailIrStationGetAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -62,12 +62,12 @@ func (r *AlitripRailIrStationGetAPIRequest) SetPageIndex(_pageIndex int64) error
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r AlitripRailIrStationGetAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数
 func (r *AlitripRailIrStationGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *AlitripRailIrStationGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlitripRailIrStationGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

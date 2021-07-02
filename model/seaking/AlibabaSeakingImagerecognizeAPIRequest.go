@@ -43,7 +43,7 @@ func (r AlibabaSeakingImagerecognizeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Extra Setter
+// SetExtra is Extra Setter
 // 扩展信息
 func (r *AlibabaSeakingImagerecognizeAPIRequest) SetExtra(_extra *Extra) error {
 	r._extra = _extra
@@ -51,12 +51,12 @@ func (r *AlibabaSeakingImagerecognizeAPIRequest) SetExtra(_extra *Extra) error {
 	return nil
 }
 
-// Get Extra Getter
+// GetExtra Extra Getter
 func (r AlibabaSeakingImagerecognizeAPIRequest) GetExtra() *Extra {
 	return r._extra
 }
 
-// Set is Identifier Setter
+// SetIdentifier is Identifier Setter
 // erp用户id
 func (r *AlibabaSeakingImagerecognizeAPIRequest) SetIdentifier(_identifier string) error {
 	r._identifier = _identifier
@@ -64,12 +64,12 @@ func (r *AlibabaSeakingImagerecognizeAPIRequest) SetIdentifier(_identifier strin
 	return nil
 }
 
-// Get Identifier Getter
+// GetIdentifier Identifier Getter
 func (r AlibabaSeakingImagerecognizeAPIRequest) GetIdentifier() string {
 	return r._identifier
 }
 
-// Set is IdentifierType Setter
+// SetIdentifierType is IdentifierType Setter
 // 调用来源(erp名称)
 func (r *AlibabaSeakingImagerecognizeAPIRequest) SetIdentifierType(_identifierType string) error {
 	r._identifierType = _identifierType
@@ -77,12 +77,12 @@ func (r *AlibabaSeakingImagerecognizeAPIRequest) SetIdentifierType(_identifierTy
 	return nil
 }
 
-// Get IdentifierType Getter
+// GetIdentifierType IdentifierType Getter
 func (r AlibabaSeakingImagerecognizeAPIRequest) GetIdentifierType() string {
 	return r._identifierType
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 图片url
 func (r *AlibabaSeakingImagerecognizeAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -90,7 +90,7 @@ func (r *AlibabaSeakingImagerecognizeAPIRequest) SetUrl(_url string) error {
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r AlibabaSeakingImagerecognizeAPIRequest) GetUrl() string {
 	return r._url
 }

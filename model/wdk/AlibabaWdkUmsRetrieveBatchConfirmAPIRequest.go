@@ -39,7 +39,7 @@ func (r AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WarehouseCode Setter
+// SetWarehouseCode is WarehouseCode Setter
 // warehouse_code
 func (r *AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) SetWarehouseCode(_warehouseCode string) error {
 	r._warehouseCode = _warehouseCode
@@ -47,12 +47,12 @@ func (r *AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) SetWarehouseCode(_warehous
 	return nil
 }
 
-// Get WarehouseCode Getter
+// GetWarehouseCode WarehouseCode Getter
 func (r AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
 }
 
-// Set is Uuids Setter
+// SetUuids is Uuids Setter
 // warehouse_code
 func (r *AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) SetUuids(_uuids []string) error {
 	r._uuids = _uuids
@@ -60,7 +60,7 @@ func (r *AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) SetUuids(_uuids []string) 
 	return nil
 }
 
-// Get Uuids Getter
+// GetUuids Uuids Getter
 func (r AlibabaWdkUmsRetrieveBatchConfirmAPIRequest) GetUuids() []string {
 	return r._uuids
 }

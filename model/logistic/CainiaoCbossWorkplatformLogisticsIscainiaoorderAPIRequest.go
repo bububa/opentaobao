@@ -37,7 +37,7 @@ func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is TradeId Setter
+// SetTradeId is TradeId Setter
 // 交易单号
 func (r *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) SetTradeId(_tradeId string) error {
 	r._tradeId = _tradeId
@@ -45,7 +45,7 @@ func (r *CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) SetTradeId(_
 	return nil
 }
 
-// Get TradeId Getter
+// GetTradeId TradeId Getter
 func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIRequest) GetTradeId() string {
 	return r._tradeId
 }

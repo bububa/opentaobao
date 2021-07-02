@@ -39,7 +39,7 @@ func (r TaobaoBillAccountsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的字段
 func (r *TaobaoBillAccountsGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -47,12 +47,12 @@ func (r *TaobaoBillAccountsGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoBillAccountsGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is Aids Setter
+// SetAids is Aids Setter
 // 需要获取的科目ID
 func (r *TaobaoBillAccountsGetAPIRequest) SetAids(_aids []int64) error {
 	r._aids = _aids
@@ -60,7 +60,7 @@ func (r *TaobaoBillAccountsGetAPIRequest) SetAids(_aids []int64) error {
 	return nil
 }
 
-// Get Aids Getter
+// GetAids Aids Getter
 func (r TaobaoBillAccountsGetAPIRequest) GetAids() []int64 {
 	return r._aids
 }

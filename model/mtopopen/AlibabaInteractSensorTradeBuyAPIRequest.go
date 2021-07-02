@@ -37,7 +37,7 @@ func (r AlibabaInteractSensorTradeBuyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 系统自动生成
 func (r *AlibabaInteractSensorTradeBuyAPIRequest) SetId(_id string) error {
 	r._id = _id
@@ -45,7 +45,7 @@ func (r *AlibabaInteractSensorTradeBuyAPIRequest) SetId(_id string) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaInteractSensorTradeBuyAPIRequest) GetId() string {
 	return r._id
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is OuterConsultantId Setter
+// SetOuterConsultantId is OuterConsultantId Setter
 // 外部顾问ID
 func (r *AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) SetOuterConsultantId(_outerConsultantId string) error {
 	r._outerConsultantId = _outerConsultantId
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) SetOuterConsultan
 	return nil
 }
 
-// Get OuterConsultantId Getter
+// GetOuterConsultantId OuterConsultantId Getter
 func (r AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) GetOuterConsultantId() string {
 	return r._outerConsultantId
 }

@@ -43,7 +43,7 @@ func (r TaobaoSimbaCampaignUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OnlineStatus Setter
+// SetOnlineStatus is OnlineStatus Setter
 // 用户设置的上下限状态；offline-下线；online-上线；
 func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetOnlineStatus(_onlineStatus string) error {
 	r._onlineStatus = _onlineStatus
@@ -51,12 +51,12 @@ func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetOnlineStatus(_onlineStatus stri
 	return nil
 }
 
-// Get OnlineStatus Getter
+// GetOnlineStatus OnlineStatus Getter
 func (r TaobaoSimbaCampaignUpdateAPIRequest) GetOnlineStatus() string {
 	return r._onlineStatus
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划Id
 func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -64,12 +64,12 @@ func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetCampaignId(_campaignId int64) e
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaCampaignUpdateAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 推广计划名称，不能多余40个字符，不能和客户其他推广计划同名。
 func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -77,12 +77,12 @@ func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoSimbaCampaignUpdateAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -90,7 +90,7 @@ func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaCampaignUpdateAPIRequest) GetNick() string {
 	return r._nick
 }

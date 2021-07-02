@@ -47,7 +47,7 @@ func (r AlibabaEinvoiceIncomeScanReturnAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BatchNo Setter
+// SetBatchNo is BatchNo Setter
 // 扫描的批次号
 func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetBatchNo(_batchNo string) error {
 	r._batchNo = _batchNo
@@ -55,12 +55,12 @@ func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetBatchNo(_batchNo string) 
 	return nil
 }
 
-// Get BatchNo Getter
+// GetBatchNo BatchNo Getter
 func (r AlibabaEinvoiceIncomeScanReturnAPIRequest) GetBatchNo() string {
 	return r._batchNo
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 扫描状态，0=开始ocr，1=ocr结束，2=开始查验，3=查验结束
 func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -68,12 +68,12 @@ func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetStatus(_status int64) err
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaEinvoiceIncomeScanReturnAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is InvoiceCount Setter
+// SetInvoiceCount is InvoiceCount Setter
 // 该批次对应的发票数量，扫描结束和查验结束status=1，3时必填
 func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetInvoiceCount(_invoiceCount int64) error {
 	r._invoiceCount = _invoiceCount
@@ -81,12 +81,12 @@ func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetInvoiceCount(_invoiceCoun
 	return nil
 }
 
-// Get InvoiceCount Getter
+// GetInvoiceCount InvoiceCount Getter
 func (r AlibabaEinvoiceIncomeScanReturnAPIRequest) GetInvoiceCount() int64 {
 	return r._invoiceCount
 }
 
-// Set is Success Setter
+// SetSuccess is Success Setter
 // 驱动是否成功，true=成功，false=失败
 func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetSuccess(_success bool) error {
 	r._success = _success
@@ -94,12 +94,12 @@ func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetSuccess(_success bool) er
 	return nil
 }
 
-// Get Success Getter
+// GetSuccess Success Getter
 func (r AlibabaEinvoiceIncomeScanReturnAPIRequest) GetSuccess() bool {
 	return r._success
 }
 
-// Set is ErrorCode Setter
+// SetErrorCode is ErrorCode Setter
 // 错误码，success=false时填入
 func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetErrorCode(_errorCode string) error {
 	r._errorCode = _errorCode
@@ -107,12 +107,12 @@ func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetErrorCode(_errorCode stri
 	return nil
 }
 
-// Get ErrorCode Getter
+// GetErrorCode ErrorCode Getter
 func (r AlibabaEinvoiceIncomeScanReturnAPIRequest) GetErrorCode() string {
 	return r._errorCode
 }
 
-// Set is ErrorMessage Setter
+// SetErrorMessage is ErrorMessage Setter
 // 错误信息，success=false时必填
 func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetErrorMessage(_errorMessage string) error {
 	r._errorMessage = _errorMessage
@@ -120,7 +120,7 @@ func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetErrorMessage(_errorMessag
 	return nil
 }
 
-// Get ErrorMessage Getter
+// GetErrorMessage ErrorMessage Getter
 func (r AlibabaEinvoiceIncomeScanReturnAPIRequest) GetErrorMessage() string {
 	return r._errorMessage
 }

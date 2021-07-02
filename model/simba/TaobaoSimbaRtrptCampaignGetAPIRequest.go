@@ -39,7 +39,7 @@ func (r TaobaoSimbaRtrptCampaignGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 用户名
 func (r *TaobaoSimbaRtrptCampaignGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -47,12 +47,12 @@ func (r *TaobaoSimbaRtrptCampaignGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaRtrptCampaignGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is TheDate Setter
+// SetTheDate is TheDate Setter
 // 日期，格式yyyy-mm-dd
 func (r *TaobaoSimbaRtrptCampaignGetAPIRequest) SetTheDate(_theDate string) error {
 	r._theDate = _theDate
@@ -60,7 +60,7 @@ func (r *TaobaoSimbaRtrptCampaignGetAPIRequest) SetTheDate(_theDate string) erro
 	return nil
 }
 
-// Get TheDate Getter
+// GetTheDate TheDate Getter
 func (r TaobaoSimbaRtrptCampaignGetAPIRequest) GetTheDate() string {
 	return r._theDate
 }

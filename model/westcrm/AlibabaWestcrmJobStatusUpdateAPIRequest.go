@@ -43,7 +43,7 @@ func (r AlibabaWestcrmJobStatusUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 状态
 func (r *AlibabaWestcrmJobStatusUpdateAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -51,12 +51,12 @@ func (r *AlibabaWestcrmJobStatusUpdateAPIRequest) SetStatus(_status int64) error
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaWestcrmJobStatusUpdateAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is CampusId Setter
+// SetCampusId is CampusId Setter
 // 园区id
 func (r *AlibabaWestcrmJobStatusUpdateAPIRequest) SetCampusId(_campusId int64) error {
 	r._campusId = _campusId
@@ -64,12 +64,12 @@ func (r *AlibabaWestcrmJobStatusUpdateAPIRequest) SetCampusId(_campusId int64) e
 	return nil
 }
 
-// Get CampusId Getter
+// GetCampusId CampusId Getter
 func (r AlibabaWestcrmJobStatusUpdateAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }
 
-// Set is CrmComplaintId Setter
+// SetCrmComplaintId is CrmComplaintId Setter
 // 反馈id
 func (r *AlibabaWestcrmJobStatusUpdateAPIRequest) SetCrmComplaintId(_crmComplaintId int64) error {
 	r._crmComplaintId = _crmComplaintId
@@ -77,12 +77,12 @@ func (r *AlibabaWestcrmJobStatusUpdateAPIRequest) SetCrmComplaintId(_crmComplain
 	return nil
 }
 
-// Get CrmComplaintId Getter
+// GetCrmComplaintId CrmComplaintId Getter
 func (r AlibabaWestcrmJobStatusUpdateAPIRequest) GetCrmComplaintId() int64 {
 	return r._crmComplaintId
 }
 
-// Set is ReplyContent Setter
+// SetReplyContent is ReplyContent Setter
 // 回复内容
 func (r *AlibabaWestcrmJobStatusUpdateAPIRequest) SetReplyContent(_replyContent string) error {
 	r._replyContent = _replyContent
@@ -90,7 +90,7 @@ func (r *AlibabaWestcrmJobStatusUpdateAPIRequest) SetReplyContent(_replyContent 
 	return nil
 }
 
-// Get ReplyContent Getter
+// GetReplyContent ReplyContent Getter
 func (r AlibabaWestcrmJobStatusUpdateAPIRequest) GetReplyContent() string {
 	return r._replyContent
 }

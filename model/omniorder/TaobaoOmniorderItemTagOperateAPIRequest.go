@@ -43,7 +43,7 @@ func (r TaobaoOmniorderItemTagOperateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -51,12 +51,12 @@ func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetItemId(_itemId int64) error
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoOmniorderItemTagOperateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is Types Setter
+// SetTypes is Types Setter
 // 商品标,storeDeliver代表门店发货, AllocateByFront代表前置拆单, storeCollect代表门店自提
 func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetTypes(_types []string) error {
 	r._types = _types
@@ -64,12 +64,12 @@ func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetTypes(_types []string) erro
 	return nil
 }
 
-// Get Types Getter
+// GetTypes Types Getter
 func (r TaobaoOmniorderItemTagOperateAPIRequest) GetTypes() []string {
 	return r._types
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 操作状态， 填 1 代表打标，填 -1 代表去标
 func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -77,12 +77,12 @@ func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetStatus(_status int64) error
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoOmniorderItemTagOperateAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is OmniSetting Setter
+// SetOmniSetting is OmniSetting Setter
 // 分单&接单设置
 func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetOmniSetting(_omniSetting *OmniSettingDto) error {
 	r._omniSetting = _omniSetting
@@ -90,7 +90,7 @@ func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetOmniSetting(_omniSetting *O
 	return nil
 }
 
-// Get OmniSetting Getter
+// GetOmniSetting OmniSetting Getter
 func (r TaobaoOmniorderItemTagOperateAPIRequest) GetOmniSetting() *OmniSettingDto {
 	return r._omniSetting
 }

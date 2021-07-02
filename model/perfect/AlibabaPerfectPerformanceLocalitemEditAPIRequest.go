@@ -37,7 +37,7 @@ func (r AlibabaPerfectPerformanceLocalitemEditAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ParamPerfectPerformanceItemPublishReq Setter
+// SetParamPerfectPerformanceItemPublishReq is ParamPerfectPerformanceItemPublishReq Setter
 // 请求参数
 func (r *AlibabaPerfectPerformanceLocalitemEditAPIRequest) SetParamPerfectPerformanceItemPublishReq(_paramPerfectPerformanceItemPublishReq *PerfectPerformanceItemPublishReq) error {
 	r._paramPerfectPerformanceItemPublishReq = _paramPerfectPerformanceItemPublishReq
@@ -45,7 +45,7 @@ func (r *AlibabaPerfectPerformanceLocalitemEditAPIRequest) SetParamPerfectPerfor
 	return nil
 }
 
-// Get ParamPerfectPerformanceItemPublishReq Getter
+// GetParamPerfectPerformanceItemPublishReq ParamPerfectPerformanceItemPublishReq Getter
 func (r AlibabaPerfectPerformanceLocalitemEditAPIRequest) GetParamPerfectPerformanceItemPublishReq() *PerfectPerformanceItemPublishReq {
 	return r._paramPerfectPerformanceItemPublishReq
 }

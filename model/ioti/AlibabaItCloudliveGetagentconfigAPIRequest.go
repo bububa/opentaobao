@@ -43,7 +43,7 @@ func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // agent标识信息
 func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetAgentId(_agentId string) error {
 	r._agentId = _agentId
@@ -51,12 +51,12 @@ func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetAgentId(_agentId string)
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetAgentId() string {
 	return r._agentId
 }
 
-// Set is TimeStamp Setter
+// SetTimeStamp is TimeStamp Setter
 // 时间戳
 func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetTimeStamp(_timeStamp int64) error {
 	r._timeStamp = _timeStamp
@@ -64,12 +64,12 @@ func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetTimeStamp(_timeStamp int
 	return nil
 }
 
-// Get TimeStamp Getter
+// GetTimeStamp TimeStamp Getter
 func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetTimeStamp() int64 {
 	return r._timeStamp
 }
 
-// Set is Signature Setter
+// SetSignature is Signature Setter
 // 签名
 func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetSignature(_signature string) error {
 	r._signature = _signature
@@ -77,12 +77,12 @@ func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetSignature(_signature str
 	return nil
 }
 
-// Get Signature Getter
+// GetSignature Signature Getter
 func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetSignature() string {
 	return r._signature
 }
 
-// Set is AgentIp Setter
+// SetAgentIp is AgentIp Setter
 // 设备所在IP地址
 func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetAgentIp(_agentIp string) error {
 	r._agentIp = _agentIp
@@ -90,7 +90,7 @@ func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetAgentIp(_agentIp string)
 	return nil
 }
 
-// Get AgentIp Getter
+// GetAgentIp AgentIp Getter
 func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetAgentIp() string {
 	return r._agentIp
 }

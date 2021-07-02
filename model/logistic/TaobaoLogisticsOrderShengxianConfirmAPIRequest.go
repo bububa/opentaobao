@@ -51,7 +51,7 @@ func (r TaobaoLogisticsOrderShengxianConfirmAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝交易ID
 func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -59,12 +59,12 @@ func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetTid(_tid int64) erro
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoLogisticsOrderShengxianConfirmAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is OutSid Setter
+// SetOutSid is OutSid Setter
 // 运单号.具体一个物流公司的真实运单号码。支持多个运单号，多个运单号之间用英文分号（;）隔开，不能重复。淘宝官方物流会校验，请谨慎传入；
 func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetOutSid(_outSid string) error {
 	r._outSid = _outSid
@@ -72,12 +72,12 @@ func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetOutSid(_outSid strin
 	return nil
 }
 
-// Get OutSid Getter
+// GetOutSid OutSid Getter
 func (r TaobaoLogisticsOrderShengxianConfirmAPIRequest) GetOutSid() string {
 	return r._outSid
 }
 
-// Set is SenderId Setter
+// SetSenderId is SenderId Setter
 // 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。<font color='red'>如果为空，取的卖家的默认取货地址</font>如果service_code不为空，默认使用service_code如果service_code为空，sender_id不为空，使用sender_id对应的地址发货如果service_code与sender_id都为空，使用默认地址发货
 func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetSenderId(_senderId int64) error {
 	r._senderId = _senderId
@@ -85,12 +85,12 @@ func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetSenderId(_senderId i
 	return nil
 }
 
-// Get SenderId Getter
+// GetSenderId SenderId Getter
 func (r TaobaoLogisticsOrderShengxianConfirmAPIRequest) GetSenderId() int64 {
 	return r._senderId
 }
 
-// Set is CancelId Setter
+// SetCancelId is CancelId Setter
 // 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。<br><font color='red'>如果为空，取的卖家的默认退货地址</font><br>
 func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetCancelId(_cancelId int64) error {
 	r._cancelId = _cancelId
@@ -98,12 +98,12 @@ func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetCancelId(_cancelId i
 	return nil
 }
 
-// Get CancelId Getter
+// GetCancelId CancelId Getter
 func (r TaobaoLogisticsOrderShengxianConfirmAPIRequest) GetCancelId() int64 {
 	return r._cancelId
 }
 
-// Set is SellerIp Setter
+// SetSellerIp is SellerIp Setter
 // 商家的IP地址
 func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetSellerIp(_sellerIp string) error {
 	r._sellerIp = _sellerIp
@@ -111,12 +111,12 @@ func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetSellerIp(_sellerIp s
 	return nil
 }
 
-// Get SellerIp Getter
+// GetSellerIp SellerIp Getter
 func (r TaobaoLogisticsOrderShengxianConfirmAPIRequest) GetSellerIp() string {
 	return r._sellerIp
 }
 
-// Set is LogisId Setter
+// SetLogisId is LogisId Setter
 // 物流订单ID 。同淘宝交易订单互斥，淘宝交易号存在，，以淘宝交易号为准
 func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetLogisId(_logisId int64) error {
 	r._logisId = _logisId
@@ -124,12 +124,12 @@ func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetLogisId(_logisId int
 	return nil
 }
 
-// Get LogisId Getter
+// GetLogisId LogisId Getter
 func (r TaobaoLogisticsOrderShengxianConfirmAPIRequest) GetLogisId() int64 {
 	return r._logisId
 }
 
-// Set is ServiceCode Setter
+// SetServiceCode is ServiceCode Setter
 // 仓库的服务代码标示，代码一个仓库的实体。(可以通过taobao.wlb.stores.baseinfo.get接口查询)如果service_code为空，默认通过sender_id来发货
 func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetServiceCode(_serviceCode string) error {
 	r._serviceCode = _serviceCode
@@ -137,12 +137,12 @@ func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetServiceCode(_service
 	return nil
 }
 
-// Get ServiceCode Getter
+// GetServiceCode ServiceCode Getter
 func (r TaobaoLogisticsOrderShengxianConfirmAPIRequest) GetServiceCode() string {
 	return r._serviceCode
 }
 
-// Set is DeliveryType Setter
+// SetDeliveryType is DeliveryType Setter
 // 1：冷链。0：常温
 func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetDeliveryType(_deliveryType int64) error {
 	r._deliveryType = _deliveryType
@@ -150,7 +150,7 @@ func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetDeliveryType(_delive
 	return nil
 }
 
-// Get DeliveryType Getter
+// GetDeliveryType DeliveryType Getter
 func (r TaobaoLogisticsOrderShengxianConfirmAPIRequest) GetDeliveryType() int64 {
 	return r._deliveryType
 }

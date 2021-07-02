@@ -37,7 +37,7 @@ func (r AlibabaIcbuProductScoreGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 混淆后的商品ID
 func (r *AlibabaIcbuProductScoreGetAPIRequest) SetProductId(_productId string) error {
 	r._productId = _productId
@@ -45,7 +45,7 @@ func (r *AlibabaIcbuProductScoreGetAPIRequest) SetProductId(_productId string) e
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r AlibabaIcbuProductScoreGetAPIRequest) GetProductId() string {
 	return r._productId
 }

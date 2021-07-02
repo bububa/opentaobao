@@ -41,7 +41,7 @@ func (r AlibabaCampusSpaceUnitGetbyidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 空间单元ID
 func (r *AlibabaCampusSpaceUnitGetbyidAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
 	r._param0 = _param0
@@ -49,12 +49,12 @@ func (r *AlibabaCampusSpaceUnitGetbyidAPIRequest) SetParam0(_param0 *WorkBenchCo
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaCampusSpaceUnitGetbyidAPIRequest) GetParam0() *WorkBenchContext {
 	return r._param0
 }
 
-// Set is Param1 Setter
+// SetParam1 is Param1 Setter
 // 空间单元ID
 func (r *AlibabaCampusSpaceUnitGetbyidAPIRequest) SetParam1(_param1 int64) error {
 	r._param1 = _param1
@@ -62,7 +62,7 @@ func (r *AlibabaCampusSpaceUnitGetbyidAPIRequest) SetParam1(_param1 int64) error
 	return nil
 }
 
-// Get Param1 Getter
+// GetParam1 Param1 Getter
 func (r AlibabaCampusSpaceUnitGetbyidAPIRequest) GetParam1() int64 {
 	return r._param1
 }

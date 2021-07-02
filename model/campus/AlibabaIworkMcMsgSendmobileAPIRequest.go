@@ -37,7 +37,7 @@ func (r AlibabaIworkMcMsgSendmobileAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MobileReceiverMessageEvent Setter
+// SetMobileReceiverMessageEvent is MobileReceiverMessageEvent Setter
 // 消息对象
 func (r *AlibabaIworkMcMsgSendmobileAPIRequest) SetMobileReceiverMessageEvent(_mobileReceiverMessageEvent *MobileReceiverMessageEvent) error {
 	r._mobileReceiverMessageEvent = _mobileReceiverMessageEvent
@@ -45,7 +45,7 @@ func (r *AlibabaIworkMcMsgSendmobileAPIRequest) SetMobileReceiverMessageEvent(_m
 	return nil
 }
 
-// Get MobileReceiverMessageEvent Getter
+// GetMobileReceiverMessageEvent MobileReceiverMessageEvent Getter
 func (r AlibabaIworkMcMsgSendmobileAPIRequest) GetMobileReceiverMessageEvent() *MobileReceiverMessageEvent {
 	return r._mobileReceiverMessageEvent
 }

@@ -39,7 +39,7 @@ func (r AlibabaScbpAdCampaignFindRealCostAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CampaignQuery Setter
+// SetCampaignQuery is CampaignQuery Setter
 // 系统自动生成
 func (r *AlibabaScbpAdCampaignFindRealCostAPIRequest) SetCampaignQuery(_campaignQuery *CampaignQueryDto) error {
 	r._campaignQuery = _campaignQuery
@@ -47,12 +47,12 @@ func (r *AlibabaScbpAdCampaignFindRealCostAPIRequest) SetCampaignQuery(_campaign
 	return nil
 }
 
-// Get CampaignQuery Getter
+// GetCampaignQuery CampaignQuery Getter
 func (r AlibabaScbpAdCampaignFindRealCostAPIRequest) GetCampaignQuery() *CampaignQueryDto {
 	return r._campaignQuery
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdCampaignFindRealCostAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -60,7 +60,7 @@ func (r *AlibabaScbpAdCampaignFindRealCostAPIRequest) SetTopContext(_topContext 
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdCampaignFindRealCostAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }

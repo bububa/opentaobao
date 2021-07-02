@@ -37,7 +37,7 @@ func (r TaobaoBusBusnumberSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PushParam Setter
+// SetPushParam is PushParam Setter
 // 车次更新通知参数
 func (r *TaobaoBusBusnumberSetAPIRequest) SetPushParam(_pushParam *TopBusNumerPushRq) error {
 	r._pushParam = _pushParam
@@ -45,7 +45,7 @@ func (r *TaobaoBusBusnumberSetAPIRequest) SetPushParam(_pushParam *TopBusNumerPu
 	return nil
 }
 
-// Get PushParam Getter
+// GetPushParam PushParam Getter
 func (r TaobaoBusBusnumberSetAPIRequest) GetPushParam() *TopBusNumerPushRq {
 	return r._pushParam
 }

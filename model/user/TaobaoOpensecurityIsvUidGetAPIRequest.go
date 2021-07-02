@@ -37,7 +37,7 @@ func (r TaobaoOpensecurityIsvUidGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpenUid Setter
+// SetOpenUid is OpenUid Setter
 // 基于Appkey生成的open security淘宝用户Id
 func (r *TaobaoOpensecurityIsvUidGetAPIRequest) SetOpenUid(_openUid string) error {
 	r._openUid = _openUid
@@ -45,7 +45,7 @@ func (r *TaobaoOpensecurityIsvUidGetAPIRequest) SetOpenUid(_openUid string) erro
 	return nil
 }
 
-// Get OpenUid Getter
+// GetOpenUid OpenUid Getter
 func (r TaobaoOpensecurityIsvUidGetAPIRequest) GetOpenUid() string {
 	return r._openUid
 }

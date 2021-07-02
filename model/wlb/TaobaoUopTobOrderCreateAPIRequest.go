@@ -37,7 +37,7 @@ func (r TaobaoUopTobOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeliveryOrder Setter
+// SetDeliveryOrder is DeliveryOrder Setter
 // ERP出库对象
 func (r *TaobaoUopTobOrderCreateAPIRequest) SetDeliveryOrder(_deliveryOrder *DeliveryOrder) error {
 	r._deliveryOrder = _deliveryOrder
@@ -45,7 +45,7 @@ func (r *TaobaoUopTobOrderCreateAPIRequest) SetDeliveryOrder(_deliveryOrder *Del
 	return nil
 }
 
-// Get DeliveryOrder Getter
+// GetDeliveryOrder DeliveryOrder Getter
 func (r TaobaoUopTobOrderCreateAPIRequest) GetDeliveryOrder() *DeliveryOrder {
 	return r._deliveryOrder
 }

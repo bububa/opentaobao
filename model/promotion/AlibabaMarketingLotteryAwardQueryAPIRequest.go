@@ -37,7 +37,7 @@ func (r AlibabaMarketingLotteryAwardQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LotteryAwardInstQuery Setter
+// SetLotteryAwardInstQuery is LotteryAwardInstQuery Setter
 // 查询奖品请求对象
 func (r *AlibabaMarketingLotteryAwardQueryAPIRequest) SetLotteryAwardInstQuery(_lotteryAwardInstQuery *LotteryAwardInstQueryDto) error {
 	r._lotteryAwardInstQuery = _lotteryAwardInstQuery
@@ -45,7 +45,7 @@ func (r *AlibabaMarketingLotteryAwardQueryAPIRequest) SetLotteryAwardInstQuery(_
 	return nil
 }
 
-// Get LotteryAwardInstQuery Getter
+// GetLotteryAwardInstQuery LotteryAwardInstQuery Getter
 func (r AlibabaMarketingLotteryAwardQueryAPIRequest) GetLotteryAwardInstQuery() *LotteryAwardInstQueryDto {
 	return r._lotteryAwardInstQuery
 }

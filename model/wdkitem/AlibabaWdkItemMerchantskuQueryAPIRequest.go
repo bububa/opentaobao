@@ -39,7 +39,7 @@ func (r AlibabaWdkItemMerchantskuQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SkuCode Setter
+// SetSkuCode is SkuCode Setter
 // 商品编码
 func (r *AlibabaWdkItemMerchantskuQueryAPIRequest) SetSkuCode(_skuCode string) error {
 	r._skuCode = _skuCode
@@ -47,12 +47,12 @@ func (r *AlibabaWdkItemMerchantskuQueryAPIRequest) SetSkuCode(_skuCode string) e
 	return nil
 }
 
-// Get SkuCode Getter
+// GetSkuCode SkuCode Getter
 func (r AlibabaWdkItemMerchantskuQueryAPIRequest) GetSkuCode() string {
 	return r._skuCode
 }
 
-// Set is OrgCode Setter
+// SetOrgCode is OrgCode Setter
 // 机构编码
 func (r *AlibabaWdkItemMerchantskuQueryAPIRequest) SetOrgCode(_orgCode string) error {
 	r._orgCode = _orgCode
@@ -60,7 +60,7 @@ func (r *AlibabaWdkItemMerchantskuQueryAPIRequest) SetOrgCode(_orgCode string) e
 	return nil
 }
 
-// Get OrgCode Getter
+// GetOrgCode OrgCode Getter
 func (r AlibabaWdkItemMerchantskuQueryAPIRequest) GetOrgCode() string {
 	return r._orgCode
 }

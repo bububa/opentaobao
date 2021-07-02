@@ -37,7 +37,7 @@ func (r TaobaoInventoryPlanInvalidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PlanStopTop Setter
+// SetPlanStopTop is PlanStopTop Setter
 // 计划库存失效入参
 func (r *TaobaoInventoryPlanInvalidAPIRequest) SetPlanStopTop(_planStopTop *PlanStopTopDto) error {
 	r._planStopTop = _planStopTop
@@ -45,7 +45,7 @@ func (r *TaobaoInventoryPlanInvalidAPIRequest) SetPlanStopTop(_planStopTop *Plan
 	return nil
 }
 
-// Get PlanStopTop Getter
+// GetPlanStopTop PlanStopTop Getter
 func (r TaobaoInventoryPlanInvalidAPIRequest) GetPlanStopTop() *PlanStopTopDto {
 	return r._planStopTop
 }

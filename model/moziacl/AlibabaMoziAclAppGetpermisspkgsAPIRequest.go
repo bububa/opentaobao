@@ -37,7 +37,7 @@ func (r AlibabaMoziAclAppGetpermisspkgsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GetAppPermissionPackagesRequest Setter
+// SetGetAppPermissionPackagesRequest is GetAppPermissionPackagesRequest Setter
 // 获取应用的权限套餐请求对象
 func (r *AlibabaMoziAclAppGetpermisspkgsAPIRequest) SetGetAppPermissionPackagesRequest(_getAppPermissionPackagesRequest *GetAppPermissionPackageRequest) error {
 	r._getAppPermissionPackagesRequest = _getAppPermissionPackagesRequest
@@ -45,7 +45,7 @@ func (r *AlibabaMoziAclAppGetpermisspkgsAPIRequest) SetGetAppPermissionPackagesR
 	return nil
 }
 
-// Get GetAppPermissionPackagesRequest Getter
+// GetGetAppPermissionPackagesRequest GetAppPermissionPackagesRequest Getter
 func (r AlibabaMoziAclAppGetpermisspkgsAPIRequest) GetGetAppPermissionPackagesRequest() *GetAppPermissionPackageRequest {
 	return r._getAppPermissionPackagesRequest
 }

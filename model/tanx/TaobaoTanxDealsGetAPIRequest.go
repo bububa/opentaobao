@@ -47,7 +47,7 @@ func (r TaobaoTanxDealsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DspId Setter
+// SetDspId is DspId Setter
 // dsp用户id
 func (r *TaobaoTanxDealsGetAPIRequest) SetDspId(_dspId int64) error {
 	r._dspId = _dspId
@@ -55,12 +55,12 @@ func (r *TaobaoTanxDealsGetAPIRequest) SetDspId(_dspId int64) error {
 	return nil
 }
 
-// Get DspId Getter
+// GetDspId DspId Getter
 func (r TaobaoTanxDealsGetAPIRequest) GetDspId() int64 {
 	return r._dspId
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // dsp用户验证token
 func (r *TaobaoTanxDealsGetAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -68,12 +68,12 @@ func (r *TaobaoTanxDealsGetAPIRequest) SetToken(_token string) error {
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoTanxDealsGetAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小
 func (r *TaobaoTanxDealsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -81,12 +81,12 @@ func (r *TaobaoTanxDealsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTanxDealsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is DealType Setter
+// SetDealType is DealType Setter
 // 交易类型
 func (r *TaobaoTanxDealsGetAPIRequest) SetDealType(_dealType int64) error {
 	r._dealType = _dealType
@@ -94,12 +94,12 @@ func (r *TaobaoTanxDealsGetAPIRequest) SetDealType(_dealType int64) error {
 	return nil
 }
 
-// Get DealType Getter
+// GetDealType DealType Getter
 func (r TaobaoTanxDealsGetAPIRequest) GetDealType() int64 {
 	return r._dealType
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 页码
 func (r *TaobaoTanxDealsGetAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -107,12 +107,12 @@ func (r *TaobaoTanxDealsGetAPIRequest) SetPage(_page int64) error {
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r TaobaoTanxDealsGetAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is SignTime Setter
+// SetSignTime is SignTime Setter
 // 1970年到现在的时间，毫秒
 func (r *TaobaoTanxDealsGetAPIRequest) SetSignTime(_signTime int64) error {
 	r._signTime = _signTime
@@ -120,7 +120,7 @@ func (r *TaobaoTanxDealsGetAPIRequest) SetSignTime(_signTime int64) error {
 	return nil
 }
 
-// Get SignTime Getter
+// GetSignTime SignTime Getter
 func (r TaobaoTanxDealsGetAPIRequest) GetSignTime() int64 {
 	return r._signTime
 }

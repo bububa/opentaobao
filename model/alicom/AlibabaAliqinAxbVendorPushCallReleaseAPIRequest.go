@@ -37,7 +37,7 @@ func (r AlibabaAliqinAxbVendorPushCallReleaseAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is EndCallRequest Setter
+// SetEndCallRequest is EndCallRequest Setter
 // end_call_request
 func (r *AlibabaAliqinAxbVendorPushCallReleaseAPIRequest) SetEndCallRequest(_endCallRequest *EndCallRequest) error {
 	r._endCallRequest = _endCallRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAliqinAxbVendorPushCallReleaseAPIRequest) SetEndCallRequest(_end
 	return nil
 }
 
-// Get EndCallRequest Getter
+// GetEndCallRequest EndCallRequest Getter
 func (r AlibabaAliqinAxbVendorPushCallReleaseAPIRequest) GetEndCallRequest() *EndCallRequest {
 	return r._endCallRequest
 }

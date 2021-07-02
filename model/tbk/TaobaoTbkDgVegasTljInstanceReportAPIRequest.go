@@ -37,7 +37,7 @@ func (r TaobaoTbkDgVegasTljInstanceReportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RightsId Setter
+// SetRightsId is RightsId Setter
 // 实例ID
 func (r *TaobaoTbkDgVegasTljInstanceReportAPIRequest) SetRightsId(_rightsId string) error {
 	r._rightsId = _rightsId
@@ -45,7 +45,7 @@ func (r *TaobaoTbkDgVegasTljInstanceReportAPIRequest) SetRightsId(_rightsId stri
 	return nil
 }
 
-// Get RightsId Getter
+// GetRightsId RightsId Getter
 func (r TaobaoTbkDgVegasTljInstanceReportAPIRequest) GetRightsId() string {
 	return r._rightsId
 }

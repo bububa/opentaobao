@@ -37,7 +37,7 @@ func (r AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // WorkBenchContext
 func (r *AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest) SetParam0(_param
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaCampusCoreCompanycampusGetcombycamidAPIRequest) GetParam0() *WorkBenchContext {
 	return r._param0
 }

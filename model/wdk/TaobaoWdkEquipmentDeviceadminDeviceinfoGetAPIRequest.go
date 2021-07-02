@@ -39,7 +39,7 @@ func (r TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is WarehouseCode Setter
+// SetWarehouseCode is WarehouseCode Setter
 // 仓编码
 func (r *TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) SetWarehouseCode(_warehouseCode string) error {
 	r._warehouseCode = _warehouseCode
@@ -47,12 +47,12 @@ func (r *TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) SetWarehouseCode(
 	return nil
 }
 
-// Get WarehouseCode Getter
+// GetWarehouseCode WarehouseCode Getter
 func (r TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 设备类型
 func (r *TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) SetDeviceType(_deviceType int64) error {
 	r._deviceType = _deviceType
@@ -60,7 +60,7 @@ func (r *TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) SetDeviceType(_de
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIRequest) GetDeviceType() int64 {
 	return r._deviceType
 }

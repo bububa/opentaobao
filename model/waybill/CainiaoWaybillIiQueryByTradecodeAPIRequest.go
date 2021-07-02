@@ -37,7 +37,7 @@ func (r CainiaoWaybillIiQueryByTradecodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamList Setter
+// SetParamList is ParamList Setter
 // 订单号列表
 func (r *CainiaoWaybillIiQueryByTradecodeAPIRequest) SetParamList(_paramList []WaybillDetailQueryByBizSubCodeRequest) error {
 	r._paramList = _paramList
@@ -45,7 +45,7 @@ func (r *CainiaoWaybillIiQueryByTradecodeAPIRequest) SetParamList(_paramList []W
 	return nil
 }
 
-// Get ParamList Getter
+// GetParamList ParamList Getter
 func (r CainiaoWaybillIiQueryByTradecodeAPIRequest) GetParamList() []WaybillDetailQueryByBizSubCodeRequest {
 	return r._paramList
 }

@@ -37,7 +37,7 @@ func (r CainiaoBmsOrderConsignConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 通知消息主体
 func (r *CainiaoBmsOrderConsignConfirmAPIRequest) SetContent(_content *BmsConsignOrderConfirm) error {
 	r._content = _content
@@ -45,7 +45,7 @@ func (r *CainiaoBmsOrderConsignConfirmAPIRequest) SetContent(_content *BmsConsig
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r CainiaoBmsOrderConsignConfirmAPIRequest) GetContent() *BmsConsignOrderConfirm {
 	return r._content
 }

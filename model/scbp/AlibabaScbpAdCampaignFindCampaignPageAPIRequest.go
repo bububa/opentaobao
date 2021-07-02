@@ -39,7 +39,7 @@ func (r AlibabaScbpAdCampaignFindCampaignPageAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is CampaignQuery Setter
+// SetCampaignQuery is CampaignQuery Setter
 // 请求实体类
 func (r *AlibabaScbpAdCampaignFindCampaignPageAPIRequest) SetCampaignQuery(_campaignQuery *CampaignQueryDto) error {
 	r._campaignQuery = _campaignQuery
@@ -47,12 +47,12 @@ func (r *AlibabaScbpAdCampaignFindCampaignPageAPIRequest) SetCampaignQuery(_camp
 	return nil
 }
 
-// Get CampaignQuery Getter
+// GetCampaignQuery CampaignQuery Getter
 func (r AlibabaScbpAdCampaignFindCampaignPageAPIRequest) GetCampaignQuery() *CampaignQueryDto {
 	return r._campaignQuery
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdCampaignFindCampaignPageAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -60,7 +60,7 @@ func (r *AlibabaScbpAdCampaignFindCampaignPageAPIRequest) SetTopContext(_topCont
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdCampaignFindCampaignPageAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }

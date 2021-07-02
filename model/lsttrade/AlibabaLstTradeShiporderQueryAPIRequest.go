@@ -37,7 +37,7 @@ func (r AlibabaLstTradeShiporderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamLstShipOrderQuery Setter
+// SetParamLstShipOrderQuery is ParamLstShipOrderQuery Setter
 // 入参
 func (r *AlibabaLstTradeShiporderQueryAPIRequest) SetParamLstShipOrderQuery(_paramLstShipOrderQuery *LstShipOrderQuery) error {
 	r._paramLstShipOrderQuery = _paramLstShipOrderQuery
@@ -45,7 +45,7 @@ func (r *AlibabaLstTradeShiporderQueryAPIRequest) SetParamLstShipOrderQuery(_par
 	return nil
 }
 
-// Get ParamLstShipOrderQuery Getter
+// GetParamLstShipOrderQuery ParamLstShipOrderQuery Getter
 func (r AlibabaLstTradeShiporderQueryAPIRequest) GetParamLstShipOrderQuery() *LstShipOrderQuery {
 	return r._paramLstShipOrderQuery
 }

@@ -45,7 +45,7 @@ func (r AlibabaLegalSuitFileUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is File Setter
+// SetFile is File Setter
 // 文件
 func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFile(_file *model.File) error {
 	r._file = _file
@@ -53,12 +53,12 @@ func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFile(_file *model.File) error 
 	return nil
 }
 
-// Get File Getter
+// GetFile File Getter
 func (r AlibabaLegalSuitFileUploadAPIRequest) GetFile() *model.File {
 	return r._file
 }
 
-// Set is TimeStamp Setter
+// SetTimeStamp is TimeStamp Setter
 // 时间搓
 func (r *AlibabaLegalSuitFileUploadAPIRequest) SetTimeStamp(_timeStamp int64) error {
 	r._timeStamp = _timeStamp
@@ -66,12 +66,12 @@ func (r *AlibabaLegalSuitFileUploadAPIRequest) SetTimeStamp(_timeStamp int64) er
 	return nil
 }
 
-// Get TimeStamp Getter
+// GetTimeStamp TimeStamp Getter
 func (r AlibabaLegalSuitFileUploadAPIRequest) GetTimeStamp() int64 {
 	return r._timeStamp
 }
 
-// Set is FileName Setter
+// SetFileName is FileName Setter
 // 文件名称
 func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFileName(_fileName string) error {
 	r._fileName = _fileName
@@ -79,12 +79,12 @@ func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFileName(_fileName string) err
 	return nil
 }
 
-// Get FileName Getter
+// GetFileName FileName Getter
 func (r AlibabaLegalSuitFileUploadAPIRequest) GetFileName() string {
 	return r._fileName
 }
 
-// Set is FileSize Setter
+// SetFileSize is FileSize Setter
 // 文件大小
 func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFileSize(_fileSize int64) error {
 	r._fileSize = _fileSize
@@ -92,12 +92,12 @@ func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFileSize(_fileSize int64) erro
 	return nil
 }
 
-// Get FileSize Getter
+// GetFileSize FileSize Getter
 func (r AlibabaLegalSuitFileUploadAPIRequest) GetFileSize() int64 {
 	return r._fileSize
 }
 
-// Set is Signature Setter
+// SetSignature is Signature Setter
 // 签名
 func (r *AlibabaLegalSuitFileUploadAPIRequest) SetSignature(_signature string) error {
 	r._signature = _signature
@@ -105,7 +105,7 @@ func (r *AlibabaLegalSuitFileUploadAPIRequest) SetSignature(_signature string) e
 	return nil
 }
 
-// Get Signature Getter
+// GetSignature Signature Getter
 func (r AlibabaLegalSuitFileUploadAPIRequest) GetSignature() string {
 	return r._signature
 }

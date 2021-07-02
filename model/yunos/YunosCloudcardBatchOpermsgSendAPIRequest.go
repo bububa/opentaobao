@@ -37,7 +37,7 @@ func (r YunosCloudcardBatchOpermsgSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OperBatchMsg Setter
+// SetOperBatchMsg is OperBatchMsg Setter
 // YUNOS生活服务群消息
 func (r *YunosCloudcardBatchOpermsgSendAPIRequest) SetOperBatchMsg(_operBatchMsg *OperBatchMsg) error {
 	r._operBatchMsg = _operBatchMsg
@@ -45,7 +45,7 @@ func (r *YunosCloudcardBatchOpermsgSendAPIRequest) SetOperBatchMsg(_operBatchMsg
 	return nil
 }
 
-// Get OperBatchMsg Getter
+// GetOperBatchMsg OperBatchMsg Getter
 func (r YunosCloudcardBatchOpermsgSendAPIRequest) GetOperBatchMsg() *OperBatchMsg {
 	return r._operBatchMsg
 }

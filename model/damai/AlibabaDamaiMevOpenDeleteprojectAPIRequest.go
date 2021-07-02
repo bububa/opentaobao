@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenDeleteprojectAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeleteProjectParam Setter
+// SetDeleteProjectParam is DeleteProjectParam Setter
 // 入参deleteProjectParam
 func (r *AlibabaDamaiMevOpenDeleteprojectAPIRequest) SetDeleteProjectParam(_deleteProjectParam *ProjectIdOpenParam) error {
 	r._deleteProjectParam = _deleteProjectParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenDeleteprojectAPIRequest) SetDeleteProjectParam(_dele
 	return nil
 }
 
-// Get DeleteProjectParam Getter
+// GetDeleteProjectParam DeleteProjectParam Getter
 func (r AlibabaDamaiMevOpenDeleteprojectAPIRequest) GetDeleteProjectParam() *ProjectIdOpenParam {
 	return r._deleteProjectParam
 }

@@ -37,7 +37,7 @@ func (r AlibabaMosGoodsInventoryGetinventorysAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ParamVirtualInventoryQueryDto Setter
+// SetParamVirtualInventoryQueryDto is ParamVirtualInventoryQueryDto Setter
 // 查询对象
 func (r *AlibabaMosGoodsInventoryGetinventorysAPIRequest) SetParamVirtualInventoryQueryDto(_paramVirtualInventoryQueryDto *VirtualInventoryQueryDto) error {
 	r._paramVirtualInventoryQueryDto = _paramVirtualInventoryQueryDto
@@ -45,7 +45,7 @@ func (r *AlibabaMosGoodsInventoryGetinventorysAPIRequest) SetParamVirtualInvento
 	return nil
 }
 
-// Get ParamVirtualInventoryQueryDto Getter
+// GetParamVirtualInventoryQueryDto ParamVirtualInventoryQueryDto Getter
 func (r AlibabaMosGoodsInventoryGetinventorysAPIRequest) GetParamVirtualInventoryQueryDto() *VirtualInventoryQueryDto {
 	return r._paramVirtualInventoryQueryDto
 }

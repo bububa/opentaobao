@@ -37,7 +37,7 @@ func (r TaobaoMobilePromotionBenefitActivitySendAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is SingleBenefitRequest Setter
+// SetSingleBenefitRequest is SingleBenefitRequest Setter
 // 单用户权益发放请求
 func (r *TaobaoMobilePromotionBenefitActivitySendAPIRequest) SetSingleBenefitRequest(_singleBenefitRequest *SingleBenefitRequest) error {
 	r._singleBenefitRequest = _singleBenefitRequest
@@ -45,7 +45,7 @@ func (r *TaobaoMobilePromotionBenefitActivitySendAPIRequest) SetSingleBenefitReq
 	return nil
 }
 
-// Get SingleBenefitRequest Getter
+// GetSingleBenefitRequest SingleBenefitRequest Getter
 func (r TaobaoMobilePromotionBenefitActivitySendAPIRequest) GetSingleBenefitRequest() *SingleBenefitRequest {
 	return r._singleBenefitRequest
 }

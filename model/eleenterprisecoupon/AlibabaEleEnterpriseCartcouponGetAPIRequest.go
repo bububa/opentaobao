@@ -39,7 +39,7 @@ func (r AlibabaEleEnterpriseCartcouponGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 手机号
 func (r *AlibabaEleEnterpriseCartcouponGetAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -47,12 +47,12 @@ func (r *AlibabaEleEnterpriseCartcouponGetAPIRequest) SetPhone(_phone string) er
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r AlibabaEleEnterpriseCartcouponGetAPIRequest) GetPhone() string {
 	return r._phone
 }
 
-// Set is CartId Setter
+// SetCartId is CartId Setter
 // 购物车id
 func (r *AlibabaEleEnterpriseCartcouponGetAPIRequest) SetCartId(_cartId string) error {
 	r._cartId = _cartId
@@ -60,7 +60,7 @@ func (r *AlibabaEleEnterpriseCartcouponGetAPIRequest) SetCartId(_cartId string) 
 	return nil
 }
 
-// Get CartId Getter
+// GetCartId CartId Getter
 func (r AlibabaEleEnterpriseCartcouponGetAPIRequest) GetCartId() string {
 	return r._cartId
 }

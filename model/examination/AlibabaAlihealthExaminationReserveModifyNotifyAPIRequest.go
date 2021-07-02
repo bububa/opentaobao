@@ -57,7 +57,7 @@ func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is OldReserveDate Setter
+// SetOldReserveDate is OldReserveDate Setter
 // 旧的预约日期
 func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetOldReserveDate(_oldReserveDate string) error {
 	r._oldReserveDate = _oldReserveDate
@@ -65,12 +65,12 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetOldReserve
 	return nil
 }
 
-// Get OldReserveDate Getter
+// GetOldReserveDate OldReserveDate Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetOldReserveDate() string {
 	return r._oldReserveDate
 }
 
-// Set is PackageCode Setter
+// SetPackageCode is PackageCode Setter
 // 套餐编码
 func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetPackageCode(_packageCode string) error {
 	r._packageCode = _packageCode
@@ -78,12 +78,12 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetPackageCod
 	return nil
 }
 
-// Get PackageCode Getter
+// GetPackageCode PackageCode Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetPackageCode() string {
 	return r._packageCode
 }
 
-// Set is ReserveNumber Setter
+// SetReserveNumber is ReserveNumber Setter
 // 健康预约凭证
 func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetReserveNumber(_reserveNumber string) error {
 	r._reserveNumber = _reserveNumber
@@ -91,12 +91,12 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetReserveNum
 	return nil
 }
 
-// Get ReserveNumber Getter
+// GetReserveNumber ReserveNumber Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetReserveNumber() string {
 	return r._reserveNumber
 }
 
-// Set is NewReserveDate Setter
+// SetNewReserveDate is NewReserveDate Setter
 // 新的预约日期
 func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetNewReserveDate(_newReserveDate string) error {
 	r._newReserveDate = _newReserveDate
@@ -104,12 +104,12 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetNewReserve
 	return nil
 }
 
-// Get NewReserveDate Getter
+// GetNewReserveDate NewReserveDate Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetNewReserveDate() string {
 	return r._newReserveDate
 }
 
-// Set is UniqReserveCode Setter
+// SetUniqReserveCode is UniqReserveCode Setter
 // 服务商预约凭证
 func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
 	r._uniqReserveCode = _uniqReserveCode
@@ -117,12 +117,12 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetUniqReserv
 	return nil
 }
 
-// Get UniqReserveCode Getter
+// GetUniqReserveCode UniqReserveCode Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetUniqReserveCode() string {
 	return r._uniqReserveCode
 }
 
-// Set is GoodsCode Setter
+// SetGoodsCode is GoodsCode Setter
 // 商品编码
 func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetGoodsCode(_goodsCode string) error {
 	r._goodsCode = _goodsCode
@@ -130,12 +130,12 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetGoodsCode(
 	return nil
 }
 
-// Get GoodsCode Getter
+// GetGoodsCode GoodsCode Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetGoodsCode() string {
 	return r._goodsCode
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 门店编码
 func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -143,12 +143,12 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetStoreCode(
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is Pass Setter
+// SetPass is Pass Setter
 // true:同意修改；false:拒绝修改
 func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetPass(_pass bool) error {
 	r._pass = _pass
@@ -156,12 +156,12 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetPass(_pass
 	return nil
 }
 
-// Get Pass Getter
+// GetPass Pass Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetPass() bool {
 	return r._pass
 }
 
-// Set is Reason Setter
+// SetReason is Reason Setter
 // 拒绝修改的时候需要传递拒绝原因
 func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
@@ -169,12 +169,12 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetReason(_re
 	return nil
 }
 
-// Get Reason Getter
+// GetReason Reason Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetReason() string {
 	return r._reason
 }
 
-// Set is NewReserveTimeStart Setter
+// SetNewReserveTimeStart is NewReserveTimeStart Setter
 // 新的预约时间段开始时间
 func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetNewReserveTimeStart(_newReserveTimeStart string) error {
 	r._newReserveTimeStart = _newReserveTimeStart
@@ -182,12 +182,12 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetNewReserve
 	return nil
 }
 
-// Get NewReserveTimeStart Getter
+// GetNewReserveTimeStart NewReserveTimeStart Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetNewReserveTimeStart() string {
 	return r._newReserveTimeStart
 }
 
-// Set is NewReserveTimeEnd Setter
+// SetNewReserveTimeEnd is NewReserveTimeEnd Setter
 // 新的预约时间段结束时间
 func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetNewReserveTimeEnd(_newReserveTimeEnd string) error {
 	r._newReserveTimeEnd = _newReserveTimeEnd
@@ -195,7 +195,7 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetNewReserve
 	return nil
 }
 
-// Get NewReserveTimeEnd Getter
+// GetNewReserveTimeEnd NewReserveTimeEnd Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetNewReserveTimeEnd() string {
 	return r._newReserveTimeEnd
 }

@@ -65,7 +65,7 @@ func (r TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID，item_id 在action为ITEM_CLICK时必须传入。 必须使用淘宝商品id，否则失败。
 func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetItemId(_itemId string) error {
 	r._itemId = _itemId
@@ -73,12 +73,12 @@ func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetItemId(_itemId st
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) GetItemId() string {
 	return r._itemId
 }
 
-// Set is GameName Setter
+// SetGameName is GameName Setter
 // 游戏名称
 func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetGameName(_gameName string) error {
 	r._gameName = _gameName
@@ -86,12 +86,12 @@ func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetGameName(_gameNam
 	return nil
 }
 
-// Get GameName Getter
+// GetGameName GameName Getter
 func (r TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) GetGameName() string {
 	return r._gameName
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 硬件CODE
 func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -99,12 +99,12 @@ func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetDeviceCode(_devic
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 字段废弃
 func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -112,12 +112,12 @@ func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetEndTime(_endTime 
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 字段废弃，考虑兼容，等同于op_time，两个必须传一个
 func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -125,12 +125,12 @@ func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetStartTime(_startT
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // ACTION枚举值：  BODY_SENSOR（通过人体感应、人脸识别成功识别到人） PHOTO_CLICK（用户在屏幕拍摄照片） GET_PHOTO（用户扫码获取照片，必须设置user_nick） ITEM_CLICK（商品点击时必须设置ITEM_ID）  GAME_START（开始游戏，可以 设置 user）  GAME_OVER_WITHOUT_PROMOTION（游戏结束）  WINNING_PRIZE（中奖，必须设置DRAW_RESULT） SHARE_CLICK（点击分享） RECEIVE_COUPONS (扫码领取优惠券时必须设置COUPON_ID)
 func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -138,12 +138,12 @@ func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetAction(_action st
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) GetAction() string {
 	return r._action
 }
 
-// Set is CouponId Setter
+// SetCouponId is CouponId Setter
 // 有则传入，没有可以不传。"例如官方领取优惠券链接里的activityId： https://taoquan.taobao.com/coupon/unify_apply.htm?sellerId=2649119619&activityId=9d390579777e41a981b54aa4d6154f5e"
 func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetCouponId(_couponId string) error {
 	r._couponId = _couponId
@@ -151,12 +151,12 @@ func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetCouponId(_couponI
 	return nil
 }
 
-// Get CouponId Getter
+// GetCouponId CouponId Getter
 func (r TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) GetCouponId() string {
 	return r._couponId
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 用户昵称，混淆的淘宝NIck
 func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -164,12 +164,12 @@ func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetUserNick(_userNic
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) GetUserNick() string {
 	return r._userNick
 }
 
-// Set is DrawResult Setter
+// SetDrawResult is DrawResult Setter
 // 抽奖结果 ，如果传入，0：表示没中奖，1：表示中奖。该值必须是0或者1，传入其他失败。
 func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetDrawResult(_drawResult string) error {
 	r._drawResult = _drawResult
@@ -177,12 +177,12 @@ func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetDrawResult(_drawR
 	return nil
 }
 
-// Get DrawResult Getter
+// GetDrawResult DrawResult Getter
 func (r TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) GetDrawResult() string {
 	return r._drawResult
 }
 
-// Set is OuterBizId Setter
+// SetOuterBizId is OuterBizId Setter
 // 数据外部编码，保证数据唯一性
 func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetOuterBizId(_outerBizId string) error {
 	r._outerBizId = _outerBizId
@@ -190,12 +190,12 @@ func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetOuterBizId(_outer
 	return nil
 }
 
-// Get OuterBizId Getter
+// GetOuterBizId OuterBizId Getter
 func (r TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) GetOuterBizId() string {
 	return r._outerBizId
 }
 
-// Set is OpTime Setter
+// SetOpTime is OpTime Setter
 // 操作时间，后续统一使用该字段，考虑兼容，start_time跟该字段含义一致
 func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetOpTime(_opTime string) error {
 	r._opTime = _opTime
@@ -203,12 +203,12 @@ func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetOpTime(_opTime st
 	return nil
 }
 
-// Get OpTime Getter
+// GetOpTime OpTime Getter
 func (r TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) GetOpTime() string {
 	return r._opTime
 }
 
-// Set is OuterUser Setter
+// SetOuterUser is OuterUser Setter
 // 硬件识别的用户标识
 func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetOuterUser(_outerUser string) error {
 	r._outerUser = _outerUser
@@ -216,7 +216,7 @@ func (r *TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) SetOuterUser(_outerU
 	return nil
 }
 
-// Get OuterUser Getter
+// GetOuterUser OuterUser Getter
 func (r TaobaoSmartstoreDeviceStoregameFeedbackAPIRequest) GetOuterUser() string {
 	return r._outerUser
 }

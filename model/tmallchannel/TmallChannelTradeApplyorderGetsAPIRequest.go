@@ -51,7 +51,7 @@ func (r TmallChannelTradeApplyorderGetsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TradeType Setter
+// SetTradeType is TradeType Setter
 // 交易类型
 func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetTradeType(_tradeType int64) error {
 	r._tradeType = _tradeType
@@ -59,12 +59,12 @@ func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetTradeType(_tradeType int6
 	return nil
 }
 
-// Get TradeType Getter
+// GetTradeType TradeType Getter
 func (r TmallChannelTradeApplyorderGetsAPIRequest) GetTradeType() int64 {
 	return r._tradeType
 }
 
-// Set is ChannelPurchaseApplyOrderNo Setter
+// SetChannelPurchaseApplyOrderNo is ChannelPurchaseApplyOrderNo Setter
 // 申请单号
 func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
 	r._channelPurchaseApplyOrderNo = _channelPurchaseApplyOrderNo
@@ -72,12 +72,12 @@ func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetChannelPurchaseApplyOrder
 	return nil
 }
 
-// Get ChannelPurchaseApplyOrderNo Getter
+// GetChannelPurchaseApplyOrderNo ChannelPurchaseApplyOrderNo Getter
 func (r TmallChannelTradeApplyorderGetsAPIRequest) GetChannelPurchaseApplyOrderNo() string {
 	return r._channelPurchaseApplyOrderNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页显示数量
 func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -85,12 +85,12 @@ func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetPageSize(_pageSize int64)
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TmallChannelTradeApplyorderGetsAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNumber Setter
+// SetPageNumber is PageNumber Setter
 // 查询第几页
 func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetPageNumber(_pageNumber int64) error {
 	r._pageNumber = _pageNumber
@@ -98,12 +98,12 @@ func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetPageNumber(_pageNumber in
 	return nil
 }
 
-// Get PageNumber Getter
+// GetPageNumber PageNumber Getter
 func (r TmallChannelTradeApplyorderGetsAPIRequest) GetPageNumber() int64 {
 	return r._pageNumber
 }
 
-// Set is NeedPagination Setter
+// SetNeedPagination is NeedPagination Setter
 // 是否需要分页
 func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetNeedPagination(_needPagination bool) error {
 	r._needPagination = _needPagination
@@ -111,12 +111,12 @@ func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetNeedPagination(_needPagin
 	return nil
 }
 
-// Get NeedPagination Getter
+// GetNeedPagination NeedPagination Getter
 func (r TmallChannelTradeApplyorderGetsAPIRequest) GetNeedPagination() bool {
 	return r._needPagination
 }
 
-// Set is AuditStatusList Setter
+// SetAuditStatusList is AuditStatusList Setter
 // 审核状态列表
 func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetAuditStatusList(_auditStatusList []int64) error {
 	r._auditStatusList = _auditStatusList
@@ -124,12 +124,12 @@ func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetAuditStatusList(_auditSta
 	return nil
 }
 
-// Get AuditStatusList Getter
+// GetAuditStatusList AuditStatusList Getter
 func (r TmallChannelTradeApplyorderGetsAPIRequest) GetAuditStatusList() []int64 {
 	return r._auditStatusList
 }
 
-// Set is DistributorNick Setter
+// SetDistributorNick is DistributorNick Setter
 // 分销商nick
 func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetDistributorNick(_distributorNick string) error {
 	r._distributorNick = _distributorNick
@@ -137,12 +137,12 @@ func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetDistributorNick(_distribu
 	return nil
 }
 
-// Get DistributorNick Getter
+// GetDistributorNick DistributorNick Getter
 func (r TmallChannelTradeApplyorderGetsAPIRequest) GetDistributorNick() string {
 	return r._distributorNick
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 渠道
 func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetChannel(_channel int64) error {
 	r._channel = _channel
@@ -150,7 +150,7 @@ func (r *TmallChannelTradeApplyorderGetsAPIRequest) SetChannel(_channel int64) e
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TmallChannelTradeApplyorderGetsAPIRequest) GetChannel() int64 {
 	return r._channel
 }

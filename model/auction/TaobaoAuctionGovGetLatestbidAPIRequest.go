@@ -41,7 +41,7 @@ func (r TaobaoAuctionGovGetLatestbidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CourtName Setter
+// SetCourtName is CourtName Setter
 // 法院名称
 func (r *TaobaoAuctionGovGetLatestbidAPIRequest) SetCourtName(_courtName string) error {
 	r._courtName = _courtName
@@ -49,12 +49,12 @@ func (r *TaobaoAuctionGovGetLatestbidAPIRequest) SetCourtName(_courtName string)
 	return nil
 }
 
-// Get CourtName Getter
+// GetCourtName CourtName Getter
 func (r TaobaoAuctionGovGetLatestbidAPIRequest) GetCourtName() string {
 	return r._courtName
 }
 
-// Set is ContainChild Setter
+// SetContainChild is ContainChild Setter
 // 死否包含下属法院
 func (r *TaobaoAuctionGovGetLatestbidAPIRequest) SetContainChild(_containChild bool) error {
 	r._containChild = _containChild
@@ -62,12 +62,12 @@ func (r *TaobaoAuctionGovGetLatestbidAPIRequest) SetContainChild(_containChild b
 	return nil
 }
 
-// Get ContainChild Getter
+// GetContainChild ContainChild Getter
 func (r TaobaoAuctionGovGetLatestbidAPIRequest) GetContainChild() bool {
 	return r._containChild
 }
 
-// Set is MaxCount Setter
+// SetMaxCount is MaxCount Setter
 // 获取最新出价条数
 func (r *TaobaoAuctionGovGetLatestbidAPIRequest) SetMaxCount(_maxCount int64) error {
 	r._maxCount = _maxCount
@@ -75,7 +75,7 @@ func (r *TaobaoAuctionGovGetLatestbidAPIRequest) SetMaxCount(_maxCount int64) er
 	return nil
 }
 
-// Get MaxCount Getter
+// GetMaxCount MaxCount Getter
 func (r TaobaoAuctionGovGetLatestbidAPIRequest) GetMaxCount() int64 {
 	return r._maxCount
 }

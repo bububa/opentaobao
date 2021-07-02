@@ -37,7 +37,7 @@ func (r AlibabaRetailCommissionStatusChangeAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 请求参数
 func (r *AlibabaRetailCommissionStatusChangeAPIRequest) SetParam0(_param0 *UniverseOrderVo) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *AlibabaRetailCommissionStatusChangeAPIRequest) SetParam0(_param0 *Unive
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaRetailCommissionStatusChangeAPIRequest) GetParam0() *UniverseOrderVo {
 	return r._param0
 }

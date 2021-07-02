@@ -51,7 +51,7 @@ func (r TaobaoWlbOrderPageGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页多少条
 func (r *TaobaoWlbOrderPageGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -59,12 +59,12 @@ func (r *TaobaoWlbOrderPageGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoWlbOrderPageGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 分页的第几页
 func (r *TaobaoWlbOrderPageGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -72,12 +72,12 @@ func (r *TaobaoWlbOrderPageGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoWlbOrderPageGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is OrderStatus Setter
+// SetOrderStatus is OrderStatus Setter
 // TMS拒签：-100 接收方拒签：-200
 func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderStatus(_orderStatus int64) error {
 	r._orderStatus = _orderStatus
@@ -85,12 +85,12 @@ func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderStatus(_orderStatus int64) err
 	return nil
 }
 
-// Get OrderStatus Getter
+// GetOrderStatus OrderStatus Getter
 func (r TaobaoWlbOrderPageGetAPIRequest) GetOrderStatus() int64 {
 	return r._orderStatus
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // 物流订单编号
 func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -98,12 +98,12 @@ func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderCode(_orderCode string) error 
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r TaobaoWlbOrderPageGetAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// Set is OrderType Setter
+// SetOrderType is OrderType Setter
 // 订单类型: （1）NORMAL_OUT ：正常出库 （2）NORMAL_IN：正常入库 （3）RETURN_IN：退货入库 （4）EXCHANGE_OUT：换货出库
 func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderType(_orderType string) error {
 	r._orderType = _orderType
@@ -111,12 +111,12 @@ func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderType(_orderType string) error 
 	return nil
 }
 
-// Get OrderType Getter
+// GetOrderType OrderType Getter
 func (r TaobaoWlbOrderPageGetAPIRequest) GetOrderType() string {
 	return r._orderType
 }
 
-// Set is OrderSubType Setter
+// SetOrderSubType is OrderSubType Setter
 // 订单子类型： （1）OTHER： 其他 （2）TAOBAO_TRADE： 淘宝交易 （3）OTHER_TRADE：其他交易 （4）ALLCOATE： 调拨 （5）CHECK: 盘点单 （6）PURCHASE: 采购单
 func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderSubType(_orderSubType string) error {
 	r._orderSubType = _orderSubType
@@ -124,12 +124,12 @@ func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderSubType(_orderSubType string) 
 	return nil
 }
 
-// Get OrderSubType Getter
+// GetOrderSubType OrderSubType Getter
 func (r TaobaoWlbOrderPageGetAPIRequest) GetOrderSubType() string {
 	return r._orderSubType
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 查询截止时间
 func (r *TaobaoWlbOrderPageGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -137,12 +137,12 @@ func (r *TaobaoWlbOrderPageGetAPIRequest) SetEndTime(_endTime string) error {
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoWlbOrderPageGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 查询开始时间
 func (r *TaobaoWlbOrderPageGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -150,7 +150,7 @@ func (r *TaobaoWlbOrderPageGetAPIRequest) SetStartTime(_startTime string) error 
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoWlbOrderPageGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }

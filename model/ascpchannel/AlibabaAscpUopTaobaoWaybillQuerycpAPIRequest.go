@@ -37,7 +37,7 @@ func (r AlibabaAscpUopTaobaoWaybillQuerycpAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is QueryCpRequest Setter
+// SetQueryCpRequest is QueryCpRequest Setter
 // 系统自动生成
 func (r *AlibabaAscpUopTaobaoWaybillQuerycpAPIRequest) SetQueryCpRequest(_queryCpRequest *Querycprequest) error {
 	r._queryCpRequest = _queryCpRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpUopTaobaoWaybillQuerycpAPIRequest) SetQueryCpRequest(_queryC
 	return nil
 }
 
-// Get QueryCpRequest Getter
+// GetQueryCpRequest QueryCpRequest Getter
 func (r AlibabaAscpUopTaobaoWaybillQuerycpAPIRequest) GetQueryCpRequest() *Querycprequest {
 	return r._queryCpRequest
 }

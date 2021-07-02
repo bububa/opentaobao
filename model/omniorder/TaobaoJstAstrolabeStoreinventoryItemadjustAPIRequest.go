@@ -39,7 +39,7 @@ func (r TaobaoJstAstrolabeStoreinventoryItemadjustAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is OperationTime Setter
+// SetOperationTime is OperationTime Setter
 // 操作时间
 func (r *TaobaoJstAstrolabeStoreinventoryItemadjustAPIRequest) SetOperationTime(_operationTime string) error {
 	r._operationTime = _operationTime
@@ -47,12 +47,12 @@ func (r *TaobaoJstAstrolabeStoreinventoryItemadjustAPIRequest) SetOperationTime(
 	return nil
 }
 
-// Get OperationTime Getter
+// GetOperationTime OperationTime Getter
 func (r TaobaoJstAstrolabeStoreinventoryItemadjustAPIRequest) GetOperationTime() string {
 	return r._operationTime
 }
 
-// Set is InventoryAdjustInfo Setter
+// SetInventoryAdjustInfo is InventoryAdjustInfo Setter
 // 库存调整信息
 func (r *TaobaoJstAstrolabeStoreinventoryItemadjustAPIRequest) SetInventoryAdjustInfo(_inventoryAdjustInfo *InventoryAdjustInfo) error {
 	r._inventoryAdjustInfo = _inventoryAdjustInfo
@@ -60,7 +60,7 @@ func (r *TaobaoJstAstrolabeStoreinventoryItemadjustAPIRequest) SetInventoryAdjus
 	return nil
 }
 
-// Get InventoryAdjustInfo Getter
+// GetInventoryAdjustInfo InventoryAdjustInfo Getter
 func (r TaobaoJstAstrolabeStoreinventoryItemadjustAPIRequest) GetInventoryAdjustInfo() *InventoryAdjustInfo {
 	return r._inventoryAdjustInfo
 }

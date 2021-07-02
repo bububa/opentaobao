@@ -39,7 +39,7 @@ func (r TaobaoQianniuTaskFinishAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TaskId Setter
+// SetTaskId is TaskId Setter
 // 任务ID
 func (r *TaobaoQianniuTaskFinishAPIRequest) SetTaskId(_taskId int64) error {
 	r._taskId = _taskId
@@ -47,12 +47,12 @@ func (r *TaobaoQianniuTaskFinishAPIRequest) SetTaskId(_taskId int64) error {
 	return nil
 }
 
-// Get TaskId Getter
+// GetTaskId TaskId Getter
 func (r TaobaoQianniuTaskFinishAPIRequest) GetTaskId() int64 {
 	return r._taskId
 }
 
-// Set is Memo Setter
+// SetMemo is Memo Setter
 // 任务备注
 func (r *TaobaoQianniuTaskFinishAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
@@ -60,7 +60,7 @@ func (r *TaobaoQianniuTaskFinishAPIRequest) SetMemo(_memo string) error {
 	return nil
 }
 
-// Get Memo Getter
+// GetMemo Memo Getter
 func (r TaobaoQianniuTaskFinishAPIRequest) GetMemo() string {
 	return r._memo
 }

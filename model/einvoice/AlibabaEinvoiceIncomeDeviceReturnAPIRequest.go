@@ -45,7 +45,7 @@ func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceList Setter
+// SetDeviceList is DeviceList Setter
 // 设备列表，success=true时必填
 func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetDeviceList(_deviceList []string) error {
 	r._deviceList = _deviceList
@@ -53,12 +53,12 @@ func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetDeviceList(_deviceList 
 	return nil
 }
 
-// Get DeviceList Getter
+// GetDeviceList DeviceList Getter
 func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetDeviceList() []string {
 	return r._deviceList
 }
 
-// Set is ErrorCode Setter
+// SetErrorCode is ErrorCode Setter
 // 错误码，success=false时必填
 func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetErrorCode(_errorCode string) error {
 	r._errorCode = _errorCode
@@ -66,12 +66,12 @@ func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetErrorCode(_errorCode st
 	return nil
 }
 
-// Get ErrorCode Getter
+// GetErrorCode ErrorCode Getter
 func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetErrorCode() string {
 	return r._errorCode
 }
 
-// Set is ErrorMessage Setter
+// SetErrorMessage is ErrorMessage Setter
 // 错误信息，success=false时必填
 func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetErrorMessage(_errorMessage string) error {
 	r._errorMessage = _errorMessage
@@ -79,12 +79,12 @@ func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetErrorMessage(_errorMess
 	return nil
 }
 
-// Get ErrorMessage Getter
+// GetErrorMessage ErrorMessage Getter
 func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetErrorMessage() string {
 	return r._errorMessage
 }
 
-// Set is ReqIndex Setter
+// SetReqIndex is ReqIndex Setter
 // 请求标识
 func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetReqIndex(_reqIndex string) error {
 	r._reqIndex = _reqIndex
@@ -92,12 +92,12 @@ func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetReqIndex(_reqIndex stri
 	return nil
 }
 
-// Get ReqIndex Getter
+// GetReqIndex ReqIndex Getter
 func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetReqIndex() string {
 	return r._reqIndex
 }
 
-// Set is Success Setter
+// SetSuccess is Success Setter
 // 查询设备是否成功，true=成功，false=失败
 func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetSuccess(_success bool) error {
 	r._success = _success
@@ -105,7 +105,7 @@ func (r *AlibabaEinvoiceIncomeDeviceReturnAPIRequest) SetSuccess(_success bool) 
 	return nil
 }
 
-// Get Success Getter
+// GetSuccess Success Getter
 func (r AlibabaEinvoiceIncomeDeviceReturnAPIRequest) GetSuccess() bool {
 	return r._success
 }

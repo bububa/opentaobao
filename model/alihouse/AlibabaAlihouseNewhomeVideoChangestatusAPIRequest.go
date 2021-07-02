@@ -39,7 +39,7 @@ func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 外部视频id
 func (r *AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) SetOuterId(_outerId 
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 0 失效 1 有效
 func (r *AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -60,7 +60,7 @@ func (r *AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) SetStatus(_status in
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetStatus() int64 {
 	return r._status
 }

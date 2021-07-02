@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmCardSearchcardAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamSearchCardOpenReq Setter
+// SetParamSearchCardOpenReq is ParamSearchCardOpenReq Setter
 // 请求对象
 func (r *AlibabaAlscCrmCardSearchcardAPIRequest) SetParamSearchCardOpenReq(_paramSearchCardOpenReq *SearchCardOpenReq) error {
 	r._paramSearchCardOpenReq = _paramSearchCardOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmCardSearchcardAPIRequest) SetParamSearchCardOpenReq(_para
 	return nil
 }
 
-// Get ParamSearchCardOpenReq Getter
+// GetParamSearchCardOpenReq ParamSearchCardOpenReq Getter
 func (r AlibabaAlscCrmCardSearchcardAPIRequest) GetParamSearchCardOpenReq() *SearchCardOpenReq {
 	return r._paramSearchCardOpenReq
 }

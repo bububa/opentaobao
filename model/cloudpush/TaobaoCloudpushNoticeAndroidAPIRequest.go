@@ -43,7 +43,7 @@ func (r TaobaoCloudpushNoticeAndroidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Summary Setter
+// SetSummary is Summary Setter
 // 通知摘要
 func (r *TaobaoCloudpushNoticeAndroidAPIRequest) SetSummary(_summary string) error {
 	r._summary = _summary
@@ -51,12 +51,12 @@ func (r *TaobaoCloudpushNoticeAndroidAPIRequest) SetSummary(_summary string) err
 	return nil
 }
 
-// Get Summary Getter
+// GetSummary Summary Getter
 func (r TaobaoCloudpushNoticeAndroidAPIRequest) GetSummary() string {
 	return r._summary
 }
 
-// Set is Target Setter
+// SetTarget is Target Setter
 // 推送目标: device:推送给设备; account:推送给指定帐号,all: 推送给全部
 func (r *TaobaoCloudpushNoticeAndroidAPIRequest) SetTarget(_target string) error {
 	r._target = _target
@@ -64,12 +64,12 @@ func (r *TaobaoCloudpushNoticeAndroidAPIRequest) SetTarget(_target string) error
 	return nil
 }
 
-// Get Target Getter
+// GetTarget Target Getter
 func (r TaobaoCloudpushNoticeAndroidAPIRequest) GetTarget() string {
 	return r._target
 }
 
-// Set is TargetValue Setter
+// SetTargetValue is TargetValue Setter
 // 根据Target来设定，如Target=device, 则对应的值为 设备id1,设备id2. 多个值使用逗号分隔
 func (r *TaobaoCloudpushNoticeAndroidAPIRequest) SetTargetValue(_targetValue string) error {
 	r._targetValue = _targetValue
@@ -77,12 +77,12 @@ func (r *TaobaoCloudpushNoticeAndroidAPIRequest) SetTargetValue(_targetValue str
 	return nil
 }
 
-// Get TargetValue Getter
+// GetTargetValue TargetValue Getter
 func (r TaobaoCloudpushNoticeAndroidAPIRequest) GetTargetValue() string {
 	return r._targetValue
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 通知的标题.
 func (r *TaobaoCloudpushNoticeAndroidAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -90,7 +90,7 @@ func (r *TaobaoCloudpushNoticeAndroidAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoCloudpushNoticeAndroidAPIRequest) GetTitle() string {
 	return r._title
 }

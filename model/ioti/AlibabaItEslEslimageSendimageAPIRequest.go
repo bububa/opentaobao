@@ -37,7 +37,7 @@ func (r AlibabaItEslEslimageSendimageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Mac Setter
+// SetMac is Mac Setter
 // 价签地址
 func (r *AlibabaItEslEslimageSendimageAPIRequest) SetMac(_mac string) error {
 	r._mac = _mac
@@ -45,7 +45,7 @@ func (r *AlibabaItEslEslimageSendimageAPIRequest) SetMac(_mac string) error {
 	return nil
 }
 
-// Get Mac Getter
+// GetMac Mac Getter
 func (r AlibabaItEslEslimageSendimageAPIRequest) GetMac() string {
 	return r._mac
 }

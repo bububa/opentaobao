@@ -37,7 +37,7 @@ func (r AlibabaAscpIndustryLogisticsSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 参数
 func (r *AlibabaAscpIndustryLogisticsSyncAPIRequest) SetParam(_param *LogisticsSyncSellerRequest) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaAscpIndustryLogisticsSyncAPIRequest) SetParam(_param *LogisticsS
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaAscpIndustryLogisticsSyncAPIRequest) GetParam() *LogisticsSyncSellerRequest {
 	return r._param
 }

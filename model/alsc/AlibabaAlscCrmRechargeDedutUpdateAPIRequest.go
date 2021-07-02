@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmRechargeDedutUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamDedutOpenReq Setter
+// SetParamDedutOpenReq is ParamDedutOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmRechargeDedutUpdateAPIRequest) SetParamDedutOpenReq(_paramDedutOpenReq *DedutOpenReq) error {
 	r._paramDedutOpenReq = _paramDedutOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmRechargeDedutUpdateAPIRequest) SetParamDedutOpenReq(_para
 	return nil
 }
 
-// Get ParamDedutOpenReq Getter
+// GetParamDedutOpenReq ParamDedutOpenReq Getter
 func (r AlibabaAlscCrmRechargeDedutUpdateAPIRequest) GetParamDedutOpenReq() *DedutOpenReq {
 	return r._paramDedutOpenReq
 }

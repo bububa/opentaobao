@@ -39,7 +39,7 @@ func (r AlibabaCampusAclNewPageuserroleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Workbenchcontext Setter
+// SetWorkbenchcontext is Workbenchcontext Setter
 // 系统入参
 func (r *AlibabaCampusAclNewPageuserroleAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
 	r._workbenchcontext = _workbenchcontext
@@ -47,12 +47,12 @@ func (r *AlibabaCampusAclNewPageuserroleAPIRequest) SetWorkbenchcontext(_workben
 	return nil
 }
 
-// Get Workbenchcontext Getter
+// GetWorkbenchcontext Workbenchcontext Getter
 func (r AlibabaCampusAclNewPageuserroleAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
 }
 
-// Set is UsersRoleQueryParam Setter
+// SetUsersRoleQueryParam is UsersRoleQueryParam Setter
 // 入参
 func (r *AlibabaCampusAclNewPageuserroleAPIRequest) SetUsersRoleQueryParam(_usersRoleQueryParam *UsersRoleQueryParam) error {
 	r._usersRoleQueryParam = _usersRoleQueryParam
@@ -60,7 +60,7 @@ func (r *AlibabaCampusAclNewPageuserroleAPIRequest) SetUsersRoleQueryParam(_user
 	return nil
 }
 
-// Get UsersRoleQueryParam Getter
+// GetUsersRoleQueryParam UsersRoleQueryParam Getter
 func (r AlibabaCampusAclNewPageuserroleAPIRequest) GetUsersRoleQueryParam() *UsersRoleQueryParam {
 	return r._usersRoleQueryParam
 }

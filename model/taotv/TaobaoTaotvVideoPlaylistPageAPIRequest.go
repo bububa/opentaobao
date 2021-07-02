@@ -39,7 +39,7 @@ func (r TaobaoTaotvVideoPlaylistPageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SystemInfo Setter
+// SetSystemInfo is SystemInfo Setter
 // 客户端信息
 func (r *TaobaoTaotvVideoPlaylistPageAPIRequest) SetSystemInfo(_systemInfo string) error {
 	r._systemInfo = _systemInfo
@@ -47,12 +47,12 @@ func (r *TaobaoTaotvVideoPlaylistPageAPIRequest) SetSystemInfo(_systemInfo strin
 	return nil
 }
 
-// Get SystemInfo Getter
+// GetSystemInfo SystemInfo Getter
 func (r TaobaoTaotvVideoPlaylistPageAPIRequest) GetSystemInfo() string {
 	return r._systemInfo
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 当前页（从1开始）
 func (r *TaobaoTaotvVideoPlaylistPageAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -60,7 +60,7 @@ func (r *TaobaoTaotvVideoPlaylistPageAPIRequest) SetPageNo(_pageNo int64) error 
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoTaotvVideoPlaylistPageAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

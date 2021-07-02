@@ -41,7 +41,7 @@ func (r AlibabaEinvoiceAmountCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 税号
 func (r *AlibabaEinvoiceAmountCheckAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -49,12 +49,12 @@ func (r *AlibabaEinvoiceAmountCheckAPIRequest) SetPayeeRegisterNo(_payeeRegister
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceAmountCheckAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 开票日期开始时间
 func (r *AlibabaEinvoiceAmountCheckAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -62,12 +62,12 @@ func (r *AlibabaEinvoiceAmountCheckAPIRequest) SetStartDate(_startDate string) e
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r AlibabaEinvoiceAmountCheckAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 开票日期结束时间
 func (r *AlibabaEinvoiceAmountCheckAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -75,7 +75,7 @@ func (r *AlibabaEinvoiceAmountCheckAPIRequest) SetEndDate(_endDate string) error
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r AlibabaEinvoiceAmountCheckAPIRequest) GetEndDate() string {
 	return r._endDate
 }

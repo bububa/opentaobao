@@ -39,7 +39,7 @@ func (r AlibabaCampusSpaceUnitGetlistwithattrbygroupidAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is Context Setter
+// SetContext is Context Setter
 // 操作用户上下文
 func (r *AlibabaCampusSpaceUnitGetlistwithattrbygroupidAPIRequest) SetContext(_context *WorkBenchContext) error {
 	r._context = _context
@@ -47,12 +47,12 @@ func (r *AlibabaCampusSpaceUnitGetlistwithattrbygroupidAPIRequest) SetContext(_c
 	return nil
 }
 
-// Get Context Getter
+// GetContext Context Getter
 func (r AlibabaCampusSpaceUnitGetlistwithattrbygroupidAPIRequest) GetContext() *WorkBenchContext {
 	return r._context
 }
 
-// Set is GroupId Setter
+// SetGroupId is GroupId Setter
 // 分组id
 func (r *AlibabaCampusSpaceUnitGetlistwithattrbygroupidAPIRequest) SetGroupId(_groupId int64) error {
 	r._groupId = _groupId
@@ -60,7 +60,7 @@ func (r *AlibabaCampusSpaceUnitGetlistwithattrbygroupidAPIRequest) SetGroupId(_g
 	return nil
 }
 
-// Get GroupId Getter
+// GetGroupId GroupId Getter
 func (r AlibabaCampusSpaceUnitGetlistwithattrbygroupidAPIRequest) GetGroupId() int64 {
 	return r._groupId
 }

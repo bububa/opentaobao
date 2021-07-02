@@ -45,7 +45,7 @@ func (r YunosTvpubadminCommonFileUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Bytes Setter
+// SetBytes is Bytes Setter
 // 文件字节流
 func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetBytes(_bytes *model.File) error {
 	r._bytes = _bytes
@@ -53,12 +53,12 @@ func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetBytes(_bytes *model.File)
 	return nil
 }
 
-// Get Bytes Getter
+// GetBytes Bytes Getter
 func (r YunosTvpubadminCommonFileUploadAPIRequest) GetBytes() *model.File {
 	return r._bytes
 }
 
-// Set is OriginalFilename Setter
+// SetOriginalFilename is OriginalFilename Setter
 // 原文件名
 func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetOriginalFilename(_originalFilename string) error {
 	r._originalFilename = _originalFilename
@@ -66,12 +66,12 @@ func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetOriginalFilename(_origina
 	return nil
 }
 
-// Get OriginalFilename Getter
+// GetOriginalFilename OriginalFilename Getter
 func (r YunosTvpubadminCommonFileUploadAPIRequest) GetOriginalFilename() string {
 	return r._originalFilename
 }
 
-// Set is Size Setter
+// SetSize is Size Setter
 // 文件大小
 func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetSize(_size string) error {
 	r._size = _size
@@ -79,12 +79,12 @@ func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetSize(_size string) error 
 	return nil
 }
 
-// Get Size Getter
+// GetSize Size Getter
 func (r YunosTvpubadminCommonFileUploadAPIRequest) GetSize() string {
 	return r._size
 }
 
-// Set is ContentType Setter
+// SetContentType is ContentType Setter
 // 文件类型
 func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetContentType(_contentType string) error {
 	r._contentType = _contentType
@@ -92,12 +92,12 @@ func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetContentType(_contentType 
 	return nil
 }
 
-// Get ContentType Getter
+// GetContentType ContentType Getter
 func (r YunosTvpubadminCommonFileUploadAPIRequest) GetContentType() string {
 	return r._contentType
 }
 
-// Set is UploadPath Setter
+// SetUploadPath is UploadPath Setter
 // 上传地址
 func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetUploadPath(_uploadPath string) error {
 	r._uploadPath = _uploadPath
@@ -105,7 +105,7 @@ func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetUploadPath(_uploadPath st
 	return nil
 }
 
-// Get UploadPath Getter
+// GetUploadPath UploadPath Getter
 func (r YunosTvpubadminCommonFileUploadAPIRequest) GetUploadPath() string {
 	return r._uploadPath
 }

@@ -53,7 +53,7 @@ func (r TaobaoWlbInventorylogQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TaobaoWlbInventorylogQueryAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -61,12 +61,12 @@ func (r *TaobaoWlbInventorylogQueryAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoWlbInventorylogQueryAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 仓库编码
 func (r *TaobaoWlbInventorylogQueryAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -74,12 +74,12 @@ func (r *TaobaoWlbInventorylogQueryAPIRequest) SetStoreCode(_storeCode string) e
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r TaobaoWlbInventorylogQueryAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // 单号
 func (r *TaobaoWlbInventorylogQueryAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -87,12 +87,12 @@ func (r *TaobaoWlbInventorylogQueryAPIRequest) SetOrderCode(_orderCode string) e
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r TaobaoWlbInventorylogQueryAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// Set is GmtStart Setter
+// SetGmtStart is GmtStart Setter
 // 起始修改时间,大于等于该时间
 func (r *TaobaoWlbInventorylogQueryAPIRequest) SetGmtStart(_gmtStart string) error {
 	r._gmtStart = _gmtStart
@@ -100,12 +100,12 @@ func (r *TaobaoWlbInventorylogQueryAPIRequest) SetGmtStart(_gmtStart string) err
 	return nil
 }
 
-// Get GmtStart Getter
+// GetGmtStart GmtStart Getter
 func (r TaobaoWlbInventorylogQueryAPIRequest) GetGmtStart() string {
 	return r._gmtStart
 }
 
-// Set is GmtEnd Setter
+// SetGmtEnd is GmtEnd Setter
 // 结束修改时间,小于等于该时间
 func (r *TaobaoWlbInventorylogQueryAPIRequest) SetGmtEnd(_gmtEnd string) error {
 	r._gmtEnd = _gmtEnd
@@ -113,12 +113,12 @@ func (r *TaobaoWlbInventorylogQueryAPIRequest) SetGmtEnd(_gmtEnd string) error {
 	return nil
 }
 
-// Get GmtEnd Getter
+// GetGmtEnd GmtEnd Getter
 func (r TaobaoWlbInventorylogQueryAPIRequest) GetGmtEnd() string {
 	return r._gmtEnd
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 当前页
 func (r *TaobaoWlbInventorylogQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -126,12 +126,12 @@ func (r *TaobaoWlbInventorylogQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoWlbInventorylogQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页记录个数
 func (r *TaobaoWlbInventorylogQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -139,12 +139,12 @@ func (r *TaobaoWlbInventorylogQueryAPIRequest) SetPageSize(_pageSize int64) erro
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoWlbInventorylogQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is OpUserId Setter
+// SetOpUserId is OpUserId Setter
 // 可指定授权的用户来查询
 func (r *TaobaoWlbInventorylogQueryAPIRequest) SetOpUserId(_opUserId int64) error {
 	r._opUserId = _opUserId
@@ -152,12 +152,12 @@ func (r *TaobaoWlbInventorylogQueryAPIRequest) SetOpUserId(_opUserId int64) erro
 	return nil
 }
 
-// Get OpUserId Getter
+// GetOpUserId OpUserId Getter
 func (r TaobaoWlbInventorylogQueryAPIRequest) GetOpUserId() int64 {
 	return r._opUserId
 }
 
-// Set is OpType Setter
+// SetOpType is OpType Setter
 // 库存操作作类型(可以为空) CHU_KU 1-出库 RU_KU 2-入库 FREEZE 3-冻结 THAW 4-解冻 CHECK_FREEZE 5-冻结确认 CHANGE_KU 6-库存类型变更 若值不在范围内，则按CHU_KU处理
 func (r *TaobaoWlbInventorylogQueryAPIRequest) SetOpType(_opType string) error {
 	r._opType = _opType
@@ -165,7 +165,7 @@ func (r *TaobaoWlbInventorylogQueryAPIRequest) SetOpType(_opType string) error {
 	return nil
 }
 
-// Get OpType Getter
+// GetOpType OpType Getter
 func (r TaobaoWlbInventorylogQueryAPIRequest) GetOpType() string {
 	return r._opType
 }

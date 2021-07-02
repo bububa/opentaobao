@@ -37,7 +37,7 @@ func (r TmallCarXcarSynchronizeCarModelDataAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ParamXCarSysModelDTO Setter
+// SetParamXCarSysModelDTO is ParamXCarSysModelDTO Setter
 // 传入对象描述
 func (r *TmallCarXcarSynchronizeCarModelDataAPIRequest) SetParamXCarSysModelDTO(_paramXCarSysModelDTO *XCarSysModelDto) error {
 	r._paramXCarSysModelDTO = _paramXCarSysModelDTO
@@ -45,7 +45,7 @@ func (r *TmallCarXcarSynchronizeCarModelDataAPIRequest) SetParamXCarSysModelDTO(
 	return nil
 }
 
-// Get ParamXCarSysModelDTO Getter
+// GetParamXCarSysModelDTO ParamXCarSysModelDTO Getter
 func (r TmallCarXcarSynchronizeCarModelDataAPIRequest) GetParamXCarSysModelDTO() *XCarSysModelDto {
 	return r._paramXCarSysModelDTO
 }

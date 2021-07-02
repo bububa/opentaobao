@@ -59,7 +59,7 @@ func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is App Setter
+// SetApp is App Setter
 // app
 func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetApp(_app string) error {
 	r._app = _app
@@ -67,12 +67,12 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetApp(_app string) error {
 	return nil
 }
 
-// Get App Getter
+// GetApp App Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetApp() string {
 	return r._app
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // type
 func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -80,12 +80,12 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is TbUid Setter
+// SetTbUid is TbUid Setter
 // 优酷道长绑定的淘宝账号ID
 func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetTbUid(_tbUid string) error {
 	r._tbUid = _tbUid
@@ -93,12 +93,12 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetTbUid(_tbUid string) error 
 	return nil
 }
 
-// Get TbUid Getter
+// GetTbUid TbUid Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetTbUid() string {
 	return r._tbUid
 }
 
-// Set is VideoId Setter
+// SetVideoId is VideoId Setter
 // 视频VID，若为多个视频，则支持分组上传多个VID
 func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetVideoId(_videoId string) error {
 	r._videoId = _videoId
@@ -106,12 +106,12 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetVideoId(_videoId string) er
 	return nil
 }
 
-// Get VideoId Getter
+// GetVideoId VideoId Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetVideoId() string {
 	return r._videoId
 }
 
-// Set is OwnerName Setter
+// SetOwnerName is OwnerName Setter
 // 作者名称
 func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetOwnerName(_ownerName string) error {
 	r._ownerName = _ownerName
@@ -119,12 +119,12 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetOwnerName(_ownerName string
 	return nil
 }
 
-// Get OwnerName Getter
+// GetOwnerName OwnerName Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetOwnerName() string {
 	return r._ownerName
 }
 
-// Set is PublishTime Setter
+// SetPublishTime is PublishTime Setter
 // 发布时间
 func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetPublishTime(_publishTime string) error {
 	r._publishTime = _publishTime
@@ -132,12 +132,12 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetPublishTime(_publishTime st
 	return nil
 }
 
-// Get PublishTime Getter
+// GetPublishTime PublishTime Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetPublishTime() string {
 	return r._publishTime
 }
 
-// Set is UploadTime Setter
+// SetUploadTime is UploadTime Setter
 // 上传时间
 func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetUploadTime(_uploadTime string) error {
 	r._uploadTime = _uploadTime
@@ -145,12 +145,12 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetUploadTime(_uploadTime stri
 	return nil
 }
 
-// Get UploadTime Getter
+// GetUploadTime UploadTime Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetUploadTime() string {
 	return r._uploadTime
 }
 
-// Set is VideoTitle Setter
+// SetVideoTitle is VideoTitle Setter
 // 视频标题
 func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetVideoTitle(_videoTitle string) error {
 	r._videoTitle = _videoTitle
@@ -158,12 +158,12 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetVideoTitle(_videoTitle stri
 	return nil
 }
 
-// Get VideoTitle Getter
+// GetVideoTitle VideoTitle Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetVideoTitle() string {
 	return r._videoTitle
 }
 
-// Set is VideoInfo Setter
+// SetVideoInfo is VideoInfo Setter
 // 视频描述
 func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetVideoInfo(_videoInfo string) error {
 	r._videoInfo = _videoInfo
@@ -171,12 +171,12 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetVideoInfo(_videoInfo string
 	return nil
 }
 
-// Get VideoInfo Getter
+// GetVideoInfo VideoInfo Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetVideoInfo() string {
 	return r._videoInfo
 }
 
-// Set is VideoCategory Setter
+// SetVideoCategory is VideoCategory Setter
 // 视频的分类ID，目前是优酷的分类ID
 func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetVideoCategory(_videoCategory string) error {
 	r._videoCategory = _videoCategory
@@ -184,12 +184,12 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetVideoCategory(_videoCategor
 	return nil
 }
 
-// Get VideoCategory Getter
+// GetVideoCategory VideoCategory Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetVideoCategory() string {
 	return r._videoCategory
 }
 
-// Set is VideoTag Setter
+// SetVideoTag is VideoTag Setter
 // 视频标签
 func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetVideoTag(_videoTag string) error {
 	r._videoTag = _videoTag
@@ -197,12 +197,12 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetVideoTag(_videoTag string) 
 	return nil
 }
 
-// Get VideoTag Getter
+// GetVideoTag VideoTag Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetVideoTag() string {
 	return r._videoTag
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 视频的平台来源，如，优酷
 func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -210,7 +210,7 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetSource(_source string) erro
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetSource() string {
 	return r._source
 }

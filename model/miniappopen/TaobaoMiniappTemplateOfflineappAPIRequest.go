@@ -43,7 +43,7 @@ func (r TaobaoMiniappTemplateOfflineappAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Clients Setter
+// SetClients is Clients Setter
 // 要下线的投放端,目前可投放： taobao(淘宝),tmall(天猫)
 func (r *TaobaoMiniappTemplateOfflineappAPIRequest) SetClients(_clients []string) error {
 	r._clients = _clients
@@ -51,12 +51,12 @@ func (r *TaobaoMiniappTemplateOfflineappAPIRequest) SetClients(_clients []string
 	return nil
 }
 
-// Get Clients Getter
+// GetClients Clients Getter
 func (r TaobaoMiniappTemplateOfflineappAPIRequest) GetClients() []string {
 	return r._clients
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 要下线的小程序app_id
 func (r *TaobaoMiniappTemplateOfflineappAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
@@ -64,12 +64,12 @@ func (r *TaobaoMiniappTemplateOfflineappAPIRequest) SetAppId(_appId string) erro
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r TaobaoMiniappTemplateOfflineappAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// Set is AppVersion Setter
+// SetAppVersion is AppVersion Setter
 // 要下线的小程序版本号
 func (r *TaobaoMiniappTemplateOfflineappAPIRequest) SetAppVersion(_appVersion string) error {
 	r._appVersion = _appVersion
@@ -77,12 +77,12 @@ func (r *TaobaoMiniappTemplateOfflineappAPIRequest) SetAppVersion(_appVersion st
 	return nil
 }
 
-// Get AppVersion Getter
+// GetAppVersion AppVersion Getter
 func (r TaobaoMiniappTemplateOfflineappAPIRequest) GetAppVersion() string {
 	return r._appVersion
 }
 
-// Set is TemplateId Setter
+// SetTemplateId is TemplateId Setter
 // 模板id
 func (r *TaobaoMiniappTemplateOfflineappAPIRequest) SetTemplateId(_templateId string) error {
 	r._templateId = _templateId
@@ -90,7 +90,7 @@ func (r *TaobaoMiniappTemplateOfflineappAPIRequest) SetTemplateId(_templateId st
 	return nil
 }
 
-// Get TemplateId Getter
+// GetTemplateId TemplateId Getter
 func (r TaobaoMiniappTemplateOfflineappAPIRequest) GetTemplateId() string {
 	return r._templateId
 }

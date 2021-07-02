@@ -39,7 +39,7 @@ func (r TaobaoFenxiaoDiscountsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DiscountId Setter
+// SetDiscountId is DiscountId Setter
 // 折扣ID
 func (r *TaobaoFenxiaoDiscountsGetAPIRequest) SetDiscountId(_discountId int64) error {
 	r._discountId = _discountId
@@ -47,12 +47,12 @@ func (r *TaobaoFenxiaoDiscountsGetAPIRequest) SetDiscountId(_discountId int64) e
 	return nil
 }
 
-// Get DiscountId Getter
+// GetDiscountId DiscountId Getter
 func (r TaobaoFenxiaoDiscountsGetAPIRequest) GetDiscountId() int64 {
 	return r._discountId
 }
 
-// Set is ExtFields Setter
+// SetExtFields is ExtFields Setter
 // 指定查询额外的信息，可选值：DETAIL（查询折扣详情），多个可选值用逗号分割。（只允许指定折扣ID情况下使用）
 func (r *TaobaoFenxiaoDiscountsGetAPIRequest) SetExtFields(_extFields string) error {
 	r._extFields = _extFields
@@ -60,7 +60,7 @@ func (r *TaobaoFenxiaoDiscountsGetAPIRequest) SetExtFields(_extFields string) er
 	return nil
 }
 
-// Get ExtFields Getter
+// GetExtFields ExtFields Getter
 func (r TaobaoFenxiaoDiscountsGetAPIRequest) GetExtFields() string {
 	return r._extFields
 }

@@ -39,7 +39,7 @@ func (r AlibabaCampusSpaceUnitGetspaceunitwithattrAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Context Setter
+// SetContext is Context Setter
 // 操作用户上下文
 func (r *AlibabaCampusSpaceUnitGetspaceunitwithattrAPIRequest) SetContext(_context *WorkBenchContext) error {
 	r._context = _context
@@ -47,12 +47,12 @@ func (r *AlibabaCampusSpaceUnitGetspaceunitwithattrAPIRequest) SetContext(_conte
 	return nil
 }
 
-// Get Context Getter
+// GetContext Context Getter
 func (r AlibabaCampusSpaceUnitGetspaceunitwithattrAPIRequest) GetContext() *WorkBenchContext {
 	return r._context
 }
 
-// Set is SpaceUnitId Setter
+// SetSpaceUnitId is SpaceUnitId Setter
 // 空间单元id
 func (r *AlibabaCampusSpaceUnitGetspaceunitwithattrAPIRequest) SetSpaceUnitId(_spaceUnitId int64) error {
 	r._spaceUnitId = _spaceUnitId
@@ -60,7 +60,7 @@ func (r *AlibabaCampusSpaceUnitGetspaceunitwithattrAPIRequest) SetSpaceUnitId(_s
 	return nil
 }
 
-// Get SpaceUnitId Getter
+// GetSpaceUnitId SpaceUnitId Getter
 func (r AlibabaCampusSpaceUnitGetspaceunitwithattrAPIRequest) GetSpaceUnitId() int64 {
 	return r._spaceUnitId
 }

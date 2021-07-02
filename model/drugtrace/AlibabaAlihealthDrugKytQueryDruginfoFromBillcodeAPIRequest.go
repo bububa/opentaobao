@@ -39,7 +39,7 @@ func (r AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest) GetApiParams
 	return params
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据号
 func (r *AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest) SetBillCode
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业id
 func (r *AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest) SetRefEntId
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }

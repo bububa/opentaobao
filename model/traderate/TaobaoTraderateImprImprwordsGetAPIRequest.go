@@ -39,7 +39,7 @@ func (r TaobaoTraderateImprImprwordsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CatRootId Setter
+// SetCatRootId is CatRootId Setter
 // 淘宝一级类目id
 func (r *TaobaoTraderateImprImprwordsGetAPIRequest) SetCatRootId(_catRootId int64) error {
 	r._catRootId = _catRootId
@@ -47,12 +47,12 @@ func (r *TaobaoTraderateImprImprwordsGetAPIRequest) SetCatRootId(_catRootId int6
 	return nil
 }
 
-// Get CatRootId Getter
+// GetCatRootId CatRootId Getter
 func (r TaobaoTraderateImprImprwordsGetAPIRequest) GetCatRootId() int64 {
 	return r._catRootId
 }
 
-// Set is CatLeafId Setter
+// SetCatLeafId is CatLeafId Setter
 // 淘宝叶子类目id
 func (r *TaobaoTraderateImprImprwordsGetAPIRequest) SetCatLeafId(_catLeafId int64) error {
 	r._catLeafId = _catLeafId
@@ -60,7 +60,7 @@ func (r *TaobaoTraderateImprImprwordsGetAPIRequest) SetCatLeafId(_catLeafId int6
 	return nil
 }
 
-// Get CatLeafId Getter
+// GetCatLeafId CatLeafId Getter
 func (r TaobaoTraderateImprImprwordsGetAPIRequest) GetCatLeafId() int64 {
 	return r._catLeafId
 }

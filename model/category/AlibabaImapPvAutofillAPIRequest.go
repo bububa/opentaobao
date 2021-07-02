@@ -37,7 +37,7 @@ func (r AlibabaImapPvAutofillAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TopImapItemDo Setter
+// SetTopImapItemDo is TopImapItemDo Setter
 // 系统入参
 func (r *AlibabaImapPvAutofillAPIRequest) SetTopImapItemDo(_topImapItemDo *TopImapItemDo) error {
 	r._topImapItemDo = _topImapItemDo
@@ -45,7 +45,7 @@ func (r *AlibabaImapPvAutofillAPIRequest) SetTopImapItemDo(_topImapItemDo *TopIm
 	return nil
 }
 
-// Get TopImapItemDo Getter
+// GetTopImapItemDo TopImapItemDo Getter
 func (r AlibabaImapPvAutofillAPIRequest) GetTopImapItemDo() *TopImapItemDo {
 	return r._topImapItemDo
 }

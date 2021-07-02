@@ -45,7 +45,7 @@ func (r AlibabaEinvoicePaperPrintAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DialogSettingFlag Setter
+// SetDialogSettingFlag is DialogSettingFlag Setter
 // 打印框设置，0=不弹打印设置框，1=弹出打印设置框
 func (r *AlibabaEinvoicePaperPrintAPIRequest) SetDialogSettingFlag(_dialogSettingFlag int64) error {
 	r._dialogSettingFlag = _dialogSettingFlag
@@ -53,12 +53,12 @@ func (r *AlibabaEinvoicePaperPrintAPIRequest) SetDialogSettingFlag(_dialogSettin
 	return nil
 }
 
-// Get DialogSettingFlag Getter
+// GetDialogSettingFlag DialogSettingFlag Getter
 func (r AlibabaEinvoicePaperPrintAPIRequest) GetDialogSettingFlag() int64 {
 	return r._dialogSettingFlag
 }
 
-// Set is ForcePrint Setter
+// SetForcePrint is ForcePrint Setter
 // 是否强制打印，一般发票只能打印一次，但是因为打印机发票号码与待打印发票号码不一致，导致打印错误，需要重新打印
 func (r *AlibabaEinvoicePaperPrintAPIRequest) SetForcePrint(_forcePrint bool) error {
 	r._forcePrint = _forcePrint
@@ -66,12 +66,12 @@ func (r *AlibabaEinvoicePaperPrintAPIRequest) SetForcePrint(_forcePrint bool) er
 	return nil
 }
 
-// Get ForcePrint Getter
+// GetForcePrint ForcePrint Getter
 func (r AlibabaEinvoicePaperPrintAPIRequest) GetForcePrint() bool {
 	return r._forcePrint
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 销售方纳税人识别号
 func (r *AlibabaEinvoicePaperPrintAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -79,12 +79,12 @@ func (r *AlibabaEinvoicePaperPrintAPIRequest) SetPayeeRegisterNo(_payeeRegisterN
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoicePaperPrintAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is PrintFlag Setter
+// SetPrintFlag is PrintFlag Setter
 // 打印标记，0=打印发票；1=打印清单。发票明细超过8行时会生成清单页，需要打印清单。
 func (r *AlibabaEinvoicePaperPrintAPIRequest) SetPrintFlag(_printFlag int64) error {
 	r._printFlag = _printFlag
@@ -92,12 +92,12 @@ func (r *AlibabaEinvoicePaperPrintAPIRequest) SetPrintFlag(_printFlag int64) err
 	return nil
 }
 
-// Get PrintFlag Getter
+// GetPrintFlag PrintFlag Getter
 func (r AlibabaEinvoicePaperPrintAPIRequest) GetPrintFlag() int64 {
 	return r._printFlag
 }
 
-// Set is SerialNo Setter
+// SetSerialNo is SerialNo Setter
 // 开票流水号
 func (r *AlibabaEinvoicePaperPrintAPIRequest) SetSerialNo(_serialNo string) error {
 	r._serialNo = _serialNo
@@ -105,7 +105,7 @@ func (r *AlibabaEinvoicePaperPrintAPIRequest) SetSerialNo(_serialNo string) erro
 	return nil
 }
 
-// Get SerialNo Getter
+// GetSerialNo SerialNo Getter
 func (r AlibabaEinvoicePaperPrintAPIRequest) GetSerialNo() string {
 	return r._serialNo
 }

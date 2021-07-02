@@ -73,7 +73,7 @@ func (r TmallItemShiptimeUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TmallItemShiptimeUpdateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -81,12 +81,12 @@ func (r *TmallItemShiptimeUpdateAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallItemShiptimeUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is ShipTime Setter
+// SetShipTime is ShipTime Setter
 // 被更新发货时间（商品级）；格式和具体设置的发货时间格式相关。绝对发货时间填写yyyy-MM-dd;相对发货时间填写数字。发货时间必须在当前时间后三天。如果设置的绝对时间小于当前时间的三天后，会清除该商品的发货时间设置。如果是相对时间小于3，则会提示出错。如果shiptimeType为0，要清除商品上的发货时间，该字段可以填任意字符,也可以不填。
 func (r *TmallItemShiptimeUpdateAPIRequest) SetShipTime(_shipTime string) error {
 	r._shipTime = _shipTime
@@ -94,12 +94,12 @@ func (r *TmallItemShiptimeUpdateAPIRequest) SetShipTime(_shipTime string) error 
 	return nil
 }
 
-// Get ShipTime Getter
+// GetShipTime ShipTime Getter
 func (r TmallItemShiptimeUpdateAPIRequest) GetShipTime() string {
 	return r._shipTime
 }
 
-// Set is SkuShipTimes Setter
+// SetSkuShipTimes is SkuShipTimes Setter
 // 被更新SKU的发货时间，后台会根据三个子属性去查找匹配的sku，如果找到就默认对sku进行更新，当无匹配sku且更新类型针对sku，会报错。
 func (r *TmallItemShiptimeUpdateAPIRequest) SetSkuShipTimes(_skuShipTimes []UpdateSkuShipTime) error {
 	r._skuShipTimes = _skuShipTimes
@@ -107,12 +107,12 @@ func (r *TmallItemShiptimeUpdateAPIRequest) SetSkuShipTimes(_skuShipTimes []Upda
 	return nil
 }
 
-// Get SkuShipTimes Getter
+// GetSkuShipTimes SkuShipTimes Getter
 func (r TmallItemShiptimeUpdateAPIRequest) GetSkuShipTimes() []UpdateSkuShipTime {
 	return r._skuShipTimes
 }
 
-// Set is Option Setter
+// SetOption is Option Setter
 // 批量更新商品/SKU发货时间的备选项
 func (r *TmallItemShiptimeUpdateAPIRequest) SetOption(_option *UpdateItemShipTimeOption) error {
 	r._option = _option
@@ -120,7 +120,7 @@ func (r *TmallItemShiptimeUpdateAPIRequest) SetOption(_option *UpdateItemShipTim
 	return nil
 }
 
-// Get Option Getter
+// GetOption Option Getter
 func (r TmallItemShiptimeUpdateAPIRequest) GetOption() *UpdateItemShipTimeOption {
 	return r._option
 }

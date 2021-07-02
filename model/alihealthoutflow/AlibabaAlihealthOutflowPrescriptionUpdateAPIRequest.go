@@ -37,7 +37,7 @@ func (r AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is UpdateRequest Setter
+// SetUpdateRequest is UpdateRequest Setter
 // 入参对象
 func (r *AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest) SetUpdateRequest(_updateRequest *PrescriptionOutflowUpdateRequest) error {
 	r._updateRequest = _updateRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest) SetUpdateRequest(_
 	return nil
 }
 
-// Get UpdateRequest Getter
+// GetUpdateRequest UpdateRequest Getter
 func (r AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest) GetUpdateRequest() *PrescriptionOutflowUpdateRequest {
 	return r._updateRequest
 }

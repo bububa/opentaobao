@@ -39,7 +39,7 @@ func (r TaobaoRpRefundsAgreeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 短信验证码，如果退款金额达到一定的数量，后端会返回调用失败，并同时往卖家的手机发送一条短信验证码。接下来用收到的短信验证码再次发起API调用即可完成退款操作。
 func (r *TaobaoRpRefundsAgreeAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -47,12 +47,12 @@ func (r *TaobaoRpRefundsAgreeAPIRequest) SetCode(_code string) error {
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r TaobaoRpRefundsAgreeAPIRequest) GetCode() string {
 	return r._code
 }
 
-// Set is RefundInfos Setter
+// SetRefundInfos is RefundInfos Setter
 // 退款信息，格式：refund_id|amount|version|phase，其中refund_id为退款编号，amount为退款金额（以分为单位），version为退款最后更新时间（时间戳格式），phase为退款阶段（可选值为：onsale, aftersale，天猫退款必值，淘宝退款不需要传），多个退款以半角逗号分隔。
 func (r *TaobaoRpRefundsAgreeAPIRequest) SetRefundInfos(_refundInfos string) error {
 	r._refundInfos = _refundInfos
@@ -60,7 +60,7 @@ func (r *TaobaoRpRefundsAgreeAPIRequest) SetRefundInfos(_refundInfos string) err
 	return nil
 }
 
-// Get RefundInfos Getter
+// GetRefundInfos RefundInfos Getter
 func (r TaobaoRpRefundsAgreeAPIRequest) GetRefundInfos() string {
 	return r._refundInfos
 }

@@ -39,7 +39,7 @@ func (r TaobaoOpenimTribeGetalltribesAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is User Setter
+// SetUser is User Setter
 // 用户信息
 func (r *TaobaoOpenimTribeGetalltribesAPIRequest) SetUser(_user *OpenImUser) error {
 	r._user = _user
@@ -47,12 +47,12 @@ func (r *TaobaoOpenimTribeGetalltribesAPIRequest) SetUser(_user *OpenImUser) err
 	return nil
 }
 
-// Get User Getter
+// GetUser User Getter
 func (r TaobaoOpenimTribeGetalltribesAPIRequest) GetUser() *OpenImUser {
 	return r._user
 }
 
-// Set is TribeTypes Setter
+// SetTribeTypes is TribeTypes Setter
 // 群类型
 func (r *TaobaoOpenimTribeGetalltribesAPIRequest) SetTribeTypes(_tribeTypes []int64) error {
 	r._tribeTypes = _tribeTypes
@@ -60,7 +60,7 @@ func (r *TaobaoOpenimTribeGetalltribesAPIRequest) SetTribeTypes(_tribeTypes []in
 	return nil
 }
 
-// Get TribeTypes Getter
+// GetTribeTypes TribeTypes Getter
 func (r TaobaoOpenimTribeGetalltribesAPIRequest) GetTribeTypes() []int64 {
 	return r._tribeTypes
 }

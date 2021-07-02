@@ -37,7 +37,7 @@ func (r AlibabaWdkTradeOrderCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Trade Setter
+// SetTrade is Trade Setter
 // 待取消的订单
 func (r *AlibabaWdkTradeOrderCancelAPIRequest) SetTrade(_trade *TradeOrder) error {
 	r._trade = _trade
@@ -45,7 +45,7 @@ func (r *AlibabaWdkTradeOrderCancelAPIRequest) SetTrade(_trade *TradeOrder) erro
 	return nil
 }
 
-// Get Trade Getter
+// GetTrade Trade Getter
 func (r AlibabaWdkTradeOrderCancelAPIRequest) GetTrade() *TradeOrder {
 	return r._trade
 }

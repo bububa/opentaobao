@@ -37,7 +37,7 @@ func (r TmallProductMatchSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 商品发布的目标类目，必须是叶子类目
 func (r *TmallProductMatchSchemaGetAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
@@ -45,7 +45,7 @@ func (r *TmallProductMatchSchemaGetAPIRequest) SetCategoryId(_categoryId int64) 
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r TmallProductMatchSchemaGetAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }

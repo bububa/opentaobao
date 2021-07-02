@@ -37,7 +37,7 @@ func (r AlibabaWdkReverseRefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpenRefundReqDTO Setter
+// SetOpenRefundReqDTO is OpenRefundReqDTO Setter
 // 退款打款请求
 func (r *AlibabaWdkReverseRefundAPIRequest) SetOpenRefundReqDTO(_openRefundReqDTO *OpenRefundReqDto) error {
 	r._openRefundReqDTO = _openRefundReqDTO
@@ -45,7 +45,7 @@ func (r *AlibabaWdkReverseRefundAPIRequest) SetOpenRefundReqDTO(_openRefundReqDT
 	return nil
 }
 
-// Get OpenRefundReqDTO Getter
+// GetOpenRefundReqDTO OpenRefundReqDTO Getter
 func (r AlibabaWdkReverseRefundAPIRequest) GetOpenRefundReqDTO() *OpenRefundReqDto {
 	return r._openRefundReqDTO
 }

@@ -41,7 +41,7 @@ func (r TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 优惠活动ID
 func (r *TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -49,12 +49,12 @@ func (r *TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) SetActivityId(_ac
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 分页页码，页码从1开始
 func (r *TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -62,12 +62,12 @@ func (r *TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) SetPageNo(_pageNo
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小，不能超过50
 func (r *TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) SetPageSize(_page
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoPromotionmiscCommonItemDetailListGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

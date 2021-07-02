@@ -47,7 +47,7 @@ func (r TmallServicecenterWorkcardCompleteAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -55,12 +55,12 @@ func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetWorkcardId(_workcardId
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterWorkcardCompleteAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }
 
-// Set is CompleteCount Setter
+// SetCompleteCount is CompleteCount Setter
 // 完结次数
 func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetCompleteCount(_completeCount int64) error {
 	r._completeCount = _completeCount
@@ -68,12 +68,12 @@ func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetCompleteCount(_complet
 	return nil
 }
 
-// Get CompleteCount Getter
+// GetCompleteCount CompleteCount Getter
 func (r TmallServicecenterWorkcardCompleteAPIRequest) GetCompleteCount() int64 {
 	return r._completeCount
 }
 
-// Set is ExtJson Setter
+// SetExtJson is ExtJson Setter
 // 扩展信息
 func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetExtJson(_extJson string) error {
 	r._extJson = _extJson
@@ -81,12 +81,12 @@ func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetExtJson(_extJson strin
 	return nil
 }
 
-// Get ExtJson Getter
+// GetExtJson ExtJson Getter
 func (r TmallServicecenterWorkcardCompleteAPIRequest) GetExtJson() string {
 	return r._extJson
 }
 
-// Set is Sequence Setter
+// SetSequence is Sequence Setter
 // 工单完结号
 func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetSequence(_sequence int64) error {
 	r._sequence = _sequence
@@ -94,12 +94,12 @@ func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetSequence(_sequence int
 	return nil
 }
 
-// Get Sequence Getter
+// GetSequence Sequence Getter
 func (r TmallServicecenterWorkcardCompleteAPIRequest) GetSequence() int64 {
 	return r._sequence
 }
 
-// Set is Latitude Setter
+// SetLatitude is Latitude Setter
 // 核销地纬度
 func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetLatitude(_latitude string) error {
 	r._latitude = _latitude
@@ -107,12 +107,12 @@ func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetLatitude(_latitude str
 	return nil
 }
 
-// Get Latitude Getter
+// GetLatitude Latitude Getter
 func (r TmallServicecenterWorkcardCompleteAPIRequest) GetLatitude() string {
 	return r._latitude
 }
 
-// Set is Longitude Setter
+// SetLongitude is Longitude Setter
 // 核销地经度
 func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetLongitude(_longitude string) error {
 	r._longitude = _longitude
@@ -120,7 +120,7 @@ func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetLongitude(_longitude s
 	return nil
 }
 
-// Get Longitude Getter
+// GetLongitude Longitude Getter
 func (r TmallServicecenterWorkcardCompleteAPIRequest) GetLongitude() string {
 	return r._longitude
 }

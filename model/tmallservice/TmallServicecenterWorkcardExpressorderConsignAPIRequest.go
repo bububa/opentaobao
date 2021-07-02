@@ -43,7 +43,7 @@ func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is ExpressOrderId Setter
+// SetExpressOrderId is ExpressOrderId Setter
 // 物流寄件单号（废弃）
 func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetExpressOrderId(_expressOrderId int64) error {
 	r._expressOrderId = _expressOrderId
@@ -51,12 +51,12 @@ func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetExpressOrde
 	return nil
 }
 
-// Get ExpressOrderId Getter
+// GetExpressOrderId ExpressOrderId Getter
 func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetExpressOrderId() int64 {
 	return r._expressOrderId
 }
 
-// Set is WorkcardIdList Setter
+// SetWorkcardIdList is WorkcardIdList Setter
 // 工单List
 func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetWorkcardIdList(_workcardIdList []int64) error {
 	r._workcardIdList = _workcardIdList
@@ -64,12 +64,12 @@ func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetWorkcardIdL
 	return nil
 }
 
-// Get WorkcardIdList Getter
+// GetWorkcardIdList WorkcardIdList Getter
 func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetWorkcardIdList() []int64 {
 	return r._workcardIdList
 }
 
-// Set is RealTpNick Setter
+// SetRealTpNick is RealTpNick Setter
 // 真实接单服务商
 func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetRealTpNick(_realTpNick string) error {
 	r._realTpNick = _realTpNick
@@ -77,12 +77,12 @@ func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetRealTpNick(
 	return nil
 }
 
-// Get RealTpNick Getter
+// GetRealTpNick RealTpNick Getter
 func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetRealTpNick() string {
 	return r._realTpNick
 }
 
-// Set is LogisticsOrderId Setter
+// SetLogisticsOrderId is LogisticsOrderId Setter
 // 物流订单号
 func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetLogisticsOrderId(_logisticsOrderId int64) error {
 	r._logisticsOrderId = _logisticsOrderId
@@ -90,7 +90,7 @@ func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetLogisticsOr
 	return nil
 }
 
-// Get LogisticsOrderId Getter
+// GetLogisticsOrderId LogisticsOrderId Getter
 func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetLogisticsOrderId() int64 {
 	return r._logisticsOrderId
 }

@@ -37,7 +37,7 @@ func (r AlibabaSecurityJaqRpFetchmaterialAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SecurityKey Setter
+// SetSecurityKey is SecurityKey Setter
 // 消息服务推送的key
 func (r *AlibabaSecurityJaqRpFetchmaterialAPIRequest) SetSecurityKey(_securityKey string) error {
 	r._securityKey = _securityKey
@@ -45,7 +45,7 @@ func (r *AlibabaSecurityJaqRpFetchmaterialAPIRequest) SetSecurityKey(_securityKe
 	return nil
 }
 
-// Get SecurityKey Getter
+// GetSecurityKey SecurityKey Getter
 func (r AlibabaSecurityJaqRpFetchmaterialAPIRequest) GetSecurityKey() string {
 	return r._securityKey
 }

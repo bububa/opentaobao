@@ -53,7 +53,7 @@ func (r TmallNrtItemMainSynchronizeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BoothId Setter
+// SetBoothId is BoothId Setter
 // 摊位id
 func (r *TmallNrtItemMainSynchronizeAPIRequest) SetBoothId(_boothId string) error {
 	r._boothId = _boothId
@@ -61,12 +61,12 @@ func (r *TmallNrtItemMainSynchronizeAPIRequest) SetBoothId(_boothId string) erro
 	return nil
 }
 
-// Get BoothId Getter
+// GetBoothId BoothId Getter
 func (r TmallNrtItemMainSynchronizeAPIRequest) GetBoothId() string {
 	return r._boothId
 }
 
-// Set is Cid Setter
+// SetCid is Cid Setter
 // 叶子类目id
 func (r *TmallNrtItemMainSynchronizeAPIRequest) SetCid(_cid int64) error {
 	r._cid = _cid
@@ -74,12 +74,12 @@ func (r *TmallNrtItemMainSynchronizeAPIRequest) SetCid(_cid int64) error {
 	return nil
 }
 
-// Get Cid Getter
+// GetCid Cid Getter
 func (r TmallNrtItemMainSynchronizeAPIRequest) GetCid() int64 {
 	return r._cid
 }
 
-// Set is Props Setter
+// SetProps is Props Setter
 // 类目属性
 func (r *TmallNrtItemMainSynchronizeAPIRequest) SetProps(_props []CategoryPropDto) error {
 	r._props = _props
@@ -87,12 +87,12 @@ func (r *TmallNrtItemMainSynchronizeAPIRequest) SetProps(_props []CategoryPropDt
 	return nil
 }
 
-// Get Props Getter
+// GetProps Props Getter
 func (r TmallNrtItemMainSynchronizeAPIRequest) GetProps() []CategoryPropDto {
 	return r._props
 }
 
-// Set is DealerCode Setter
+// SetDealerCode is DealerCode Setter
 // 经销商编码
 func (r *TmallNrtItemMainSynchronizeAPIRequest) SetDealerCode(_dealerCode string) error {
 	r._dealerCode = _dealerCode
@@ -100,12 +100,12 @@ func (r *TmallNrtItemMainSynchronizeAPIRequest) SetDealerCode(_dealerCode string
 	return nil
 }
 
-// Get DealerCode Getter
+// GetDealerCode DealerCode Getter
 func (r TmallNrtItemMainSynchronizeAPIRequest) GetDealerCode() string {
 	return r._dealerCode
 }
 
-// Set is MallId Setter
+// SetMallId is MallId Setter
 // 卖场id
 func (r *TmallNrtItemMainSynchronizeAPIRequest) SetMallId(_mallId string) error {
 	r._mallId = _mallId
@@ -113,12 +113,12 @@ func (r *TmallNrtItemMainSynchronizeAPIRequest) SetMallId(_mallId string) error 
 	return nil
 }
 
-// Get MallId Getter
+// GetMallId MallId Getter
 func (r TmallNrtItemMainSynchronizeAPIRequest) GetMallId() string {
 	return r._mallId
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 商家编码
 func (r *TmallNrtItemMainSynchronizeAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -126,12 +126,12 @@ func (r *TmallNrtItemMainSynchronizeAPIRequest) SetOuterId(_outerId string) erro
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TmallNrtItemMainSynchronizeAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is OuterProps Setter
+// SetOuterProps is OuterProps Setter
 // 系统自动生成
 func (r *TmallNrtItemMainSynchronizeAPIRequest) SetOuterProps(_outerProps *MacallineItemExtDto) error {
 	r._outerProps = _outerProps
@@ -139,12 +139,12 @@ func (r *TmallNrtItemMainSynchronizeAPIRequest) SetOuterProps(_outerProps *Macal
 	return nil
 }
 
-// Get OuterProps Getter
+// GetOuterProps OuterProps Getter
 func (r TmallNrtItemMainSynchronizeAPIRequest) GetOuterProps() *MacallineItemExtDto {
 	return r._outerProps
 }
 
-// Set is Price Setter
+// SetPrice is Price Setter
 // 价格
 func (r *TmallNrtItemMainSynchronizeAPIRequest) SetPrice(_price string) error {
 	r._price = _price
@@ -152,12 +152,12 @@ func (r *TmallNrtItemMainSynchronizeAPIRequest) SetPrice(_price string) error {
 	return nil
 }
 
-// Get Price Getter
+// GetPrice Price Getter
 func (r TmallNrtItemMainSynchronizeAPIRequest) GetPrice() string {
 	return r._price
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 商品名
 func (r *TmallNrtItemMainSynchronizeAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -165,7 +165,7 @@ func (r *TmallNrtItemMainSynchronizeAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TmallNrtItemMainSynchronizeAPIRequest) GetTitle() string {
 	return r._title
 }

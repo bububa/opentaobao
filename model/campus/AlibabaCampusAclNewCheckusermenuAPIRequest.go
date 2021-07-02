@@ -39,7 +39,7 @@ func (r AlibabaCampusAclNewCheckusermenuAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Workbenchcontext Setter
+// SetWorkbenchcontext is Workbenchcontext Setter
 // 系统入参
 func (r *AlibabaCampusAclNewCheckusermenuAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
 	r._workbenchcontext = _workbenchcontext
@@ -47,12 +47,12 @@ func (r *AlibabaCampusAclNewCheckusermenuAPIRequest) SetWorkbenchcontext(_workbe
 	return nil
 }
 
-// Get Workbenchcontext Getter
+// GetWorkbenchcontext Workbenchcontext Getter
 func (r AlibabaCampusAclNewCheckusermenuAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参
 func (r *AlibabaCampusAclNewCheckusermenuAPIRequest) SetParam(_param *CheckUserMenuParam) error {
 	r._param = _param
@@ -60,7 +60,7 @@ func (r *AlibabaCampusAclNewCheckusermenuAPIRequest) SetParam(_param *CheckUserM
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaCampusAclNewCheckusermenuAPIRequest) GetParam() *CheckUserMenuParam {
 	return r._param
 }

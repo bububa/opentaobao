@@ -37,7 +37,7 @@ func (r TaobaoJstInteractiveAssetsConfiguredQueryAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is MiniAppId Setter
+// SetMiniAppId is MiniAppId Setter
 // 小程序id
 func (r *TaobaoJstInteractiveAssetsConfiguredQueryAPIRequest) SetMiniAppId(_miniAppId string) error {
 	r._miniAppId = _miniAppId
@@ -45,7 +45,7 @@ func (r *TaobaoJstInteractiveAssetsConfiguredQueryAPIRequest) SetMiniAppId(_mini
 	return nil
 }
 
-// Get MiniAppId Getter
+// GetMiniAppId MiniAppId Getter
 func (r TaobaoJstInteractiveAssetsConfiguredQueryAPIRequest) GetMiniAppId() string {
 	return r._miniAppId
 }

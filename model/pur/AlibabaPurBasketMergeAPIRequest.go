@@ -37,7 +37,7 @@ func (r AlibabaPurBasketMergeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamMallMergeCartRequestDTO Setter
+// SetParamMallMergeCartRequestDTO is ParamMallMergeCartRequestDTO Setter
 // 合并购物车入参
 func (r *AlibabaPurBasketMergeAPIRequest) SetParamMallMergeCartRequestDTO(_paramMallMergeCartRequestDTO *MallMergeCartRequestDto) error {
 	r._paramMallMergeCartRequestDTO = _paramMallMergeCartRequestDTO
@@ -45,7 +45,7 @@ func (r *AlibabaPurBasketMergeAPIRequest) SetParamMallMergeCartRequestDTO(_param
 	return nil
 }
 
-// Get ParamMallMergeCartRequestDTO Getter
+// GetParamMallMergeCartRequestDTO ParamMallMergeCartRequestDTO Getter
 func (r AlibabaPurBasketMergeAPIRequest) GetParamMallMergeCartRequestDTO() *MallMergeCartRequestDto {
 	return r._paramMallMergeCartRequestDTO
 }

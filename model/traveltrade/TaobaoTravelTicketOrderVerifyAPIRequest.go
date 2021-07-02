@@ -43,7 +43,7 @@ func (r TaobaoTravelTicketOrderVerifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 下单订单ID
 func (r *TaobaoTravelTicketOrderVerifyAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -51,12 +51,12 @@ func (r *TaobaoTravelTicketOrderVerifyAPIRequest) SetOrderId(_orderId int64) err
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoTravelTicketOrderVerifyAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is OutOrderId Setter
+// SetOutOrderId is OutOrderId Setter
 // 外部订单ID
 func (r *TaobaoTravelTicketOrderVerifyAPIRequest) SetOutOrderId(_outOrderId string) error {
 	r._outOrderId = _outOrderId
@@ -64,12 +64,12 @@ func (r *TaobaoTravelTicketOrderVerifyAPIRequest) SetOutOrderId(_outOrderId stri
 	return nil
 }
 
-// Get OutOrderId Getter
+// GetOutOrderId OutOrderId Getter
 func (r TaobaoTravelTicketOrderVerifyAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
 }
 
-// Set is VoucherInfos Setter
+// SetVoucherInfos is VoucherInfos Setter
 // 使用凭证信息
 func (r *TaobaoTravelTicketOrderVerifyAPIRequest) SetVoucherInfos(_voucherInfos []VoucherInfoDto) error {
 	r._voucherInfos = _voucherInfos
@@ -77,12 +77,12 @@ func (r *TaobaoTravelTicketOrderVerifyAPIRequest) SetVoucherInfos(_voucherInfos 
 	return nil
 }
 
-// Get VoucherInfos Getter
+// GetVoucherInfos VoucherInfos Getter
 func (r TaobaoTravelTicketOrderVerifyAPIRequest) GetVoucherInfos() []VoucherInfoDto {
 	return r._voucherInfos
 }
 
-// Set is WriteOffType Setter
+// SetWriteOffType is WriteOffType Setter
 // 供应商核销回调类型：0表示使用本次核销数量（常规），1表示使用总核销数量（已使用+本次）
 func (r *TaobaoTravelTicketOrderVerifyAPIRequest) SetWriteOffType(_writeOffType int64) error {
 	r._writeOffType = _writeOffType
@@ -90,7 +90,7 @@ func (r *TaobaoTravelTicketOrderVerifyAPIRequest) SetWriteOffType(_writeOffType 
 	return nil
 }
 
-// Get WriteOffType Getter
+// GetWriteOffType WriteOffType Getter
 func (r TaobaoTravelTicketOrderVerifyAPIRequest) GetWriteOffType() int64 {
 	return r._writeOffType
 }

@@ -37,7 +37,7 @@ func (r TaobaoJstSmsMenuinfoReportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MenuInfoReportRequest Setter
+// SetMenuInfoReportRequest is MenuInfoReportRequest Setter
 // 菜单信息上报接口的请求参数
 func (r *TaobaoJstSmsMenuinfoReportAPIRequest) SetMenuInfoReportRequest(_menuInfoReportRequest *MenuInfoReportRequest) error {
 	r._menuInfoReportRequest = _menuInfoReportRequest
@@ -45,7 +45,7 @@ func (r *TaobaoJstSmsMenuinfoReportAPIRequest) SetMenuInfoReportRequest(_menuInf
 	return nil
 }
 
-// Get MenuInfoReportRequest Getter
+// GetMenuInfoReportRequest MenuInfoReportRequest Getter
 func (r TaobaoJstSmsMenuinfoReportAPIRequest) GetMenuInfoReportRequest() *MenuInfoReportRequest {
 	return r._menuInfoReportRequest
 }

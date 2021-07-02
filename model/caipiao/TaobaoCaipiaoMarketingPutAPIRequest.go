@@ -47,7 +47,7 @@ func (r TaobaoCaipiaoMarketingPutAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Detail Setter
+// SetDetail is Detail Setter
 // 活动详情设置
 func (r *TaobaoCaipiaoMarketingPutAPIRequest) SetDetail(_detail *WangcaiMarketingDetail) error {
 	r._detail = _detail
@@ -55,7 +55,7 @@ func (r *TaobaoCaipiaoMarketingPutAPIRequest) SetDetail(_detail *WangcaiMarketin
 	return nil
 }
 
-// Get Detail Getter
+// GetDetail Detail Getter
 func (r TaobaoCaipiaoMarketingPutAPIRequest) GetDetail() *WangcaiMarketingDetail {
 	return r._detail
 }

@@ -37,7 +37,7 @@ func (r TaobaoCarVehicleinfoRegisterAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamList Setter
+// SetParamList is ParamList Setter
 // 参数集合
 func (r *TaobaoCarVehicleinfoRegisterAPIRequest) SetParamList(_paramList []FullInfoCarModelDto) error {
 	r._paramList = _paramList
@@ -45,7 +45,7 @@ func (r *TaobaoCarVehicleinfoRegisterAPIRequest) SetParamList(_paramList []FullI
 	return nil
 }
 
-// Get ParamList Getter
+// GetParamList ParamList Getter
 func (r TaobaoCarVehicleinfoRegisterAPIRequest) GetParamList() []FullInfoCarModelDto {
 	return r._paramList
 }

@@ -37,7 +37,7 @@ func (r AlibabaWdkPosTradePayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PayRequest Setter
+// SetPayRequest is PayRequest Setter
 // 支付请求
 func (r *AlibabaWdkPosTradePayAPIRequest) SetPayRequest(_payRequest *FastBuyPosPayRequest) error {
 	r._payRequest = _payRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkPosTradePayAPIRequest) SetPayRequest(_payRequest *FastBuyPosP
 	return nil
 }
 
-// Get PayRequest Getter
+// GetPayRequest PayRequest Getter
 func (r AlibabaWdkPosTradePayAPIRequest) GetPayRequest() *FastBuyPosPayRequest {
 	return r._payRequest
 }

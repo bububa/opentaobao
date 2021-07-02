@@ -45,7 +45,7 @@ func (r TaobaoItemJointPropimgAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Properties Setter
+// SetProperties is Properties Setter
 // 属性列表。调用taobao.itemprops.get获取，属性必须是颜色属性，格式:pid:vid。
 func (r *TaobaoItemJointPropimgAPIRequest) SetProperties(_properties string) error {
 	r._properties = _properties
@@ -53,12 +53,12 @@ func (r *TaobaoItemJointPropimgAPIRequest) SetProperties(_properties string) err
 	return nil
 }
 
-// Get Properties Getter
+// GetProperties Properties Getter
 func (r TaobaoItemJointPropimgAPIRequest) GetProperties() string {
 	return r._properties
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 属性图片ID。如果是新增不需要填写
 func (r *TaobaoItemJointPropimgAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -66,12 +66,12 @@ func (r *TaobaoItemJointPropimgAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TaobaoItemJointPropimgAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is PicPath Setter
+// SetPicPath is PicPath Setter
 // 图片地址(传入图片相对地址即可,即不需包含 http://img02.taobao.net/bao/uploaded )
 func (r *TaobaoItemJointPropimgAPIRequest) SetPicPath(_picPath string) error {
 	r._picPath = _picPath
@@ -79,12 +79,12 @@ func (r *TaobaoItemJointPropimgAPIRequest) SetPicPath(_picPath string) error {
 	return nil
 }
 
-// Get PicPath Getter
+// GetPicPath PicPath Getter
 func (r TaobaoItemJointPropimgAPIRequest) GetPicPath() string {
 	return r._picPath
 }
 
-// Set is NumIid Setter
+// SetNumIid is NumIid Setter
 // 商品数字ID，必选
 func (r *TaobaoItemJointPropimgAPIRequest) SetNumIid(_numIid int64) error {
 	r._numIid = _numIid
@@ -92,12 +92,12 @@ func (r *TaobaoItemJointPropimgAPIRequest) SetNumIid(_numIid int64) error {
 	return nil
 }
 
-// Get NumIid Getter
+// GetNumIid NumIid Getter
 func (r TaobaoItemJointPropimgAPIRequest) GetNumIid() int64 {
 	return r._numIid
 }
 
-// Set is Position Setter
+// SetPosition is Position Setter
 // 图片序号
 func (r *TaobaoItemJointPropimgAPIRequest) SetPosition(_position int64) error {
 	r._position = _position
@@ -105,7 +105,7 @@ func (r *TaobaoItemJointPropimgAPIRequest) SetPosition(_position int64) error {
 	return nil
 }
 
-// Get Position Getter
+// GetPosition Position Getter
 func (r TaobaoItemJointPropimgAPIRequest) GetPosition() int64 {
 	return r._position
 }

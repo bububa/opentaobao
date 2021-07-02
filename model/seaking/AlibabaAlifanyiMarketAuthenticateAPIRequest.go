@@ -37,7 +37,7 @@ func (r AlibabaAlifanyiMarketAuthenticateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ExpireTime Setter
+// SetExpireTime is ExpireTime Setter
 // 有效时长
 func (r *AlibabaAlifanyiMarketAuthenticateAPIRequest) SetExpireTime(_expireTime int64) error {
 	r._expireTime = _expireTime
@@ -45,7 +45,7 @@ func (r *AlibabaAlifanyiMarketAuthenticateAPIRequest) SetExpireTime(_expireTime 
 	return nil
 }
 
-// Get ExpireTime Getter
+// GetExpireTime ExpireTime Getter
 func (r AlibabaAlifanyiMarketAuthenticateAPIRequest) GetExpireTime() int64 {
 	return r._expireTime
 }

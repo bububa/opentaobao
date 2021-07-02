@@ -37,7 +37,7 @@ func (r WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest) GetAp
 	return params
 }
 
-// Set is ParamYxWarehouseResourceRelationQueryRequest Setter
+// SetParamYxWarehouseResourceRelationQueryRequest is ParamYxWarehouseResourceRelationQueryRequest Setter
 // 入参
 func (r *WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest) SetParamYxWarehouseResourceRelationQueryRequest(_paramYxWarehouseResourceRelationQueryRequest *YxWarehouseResourceRelationQueryRequest) error {
 	r._paramYxWarehouseResourceRelationQueryRequest = _paramYxWarehouseResourceRelationQueryRequest
@@ -45,7 +45,7 @@ func (r *WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest) SetP
 	return nil
 }
 
-// Get ParamYxWarehouseResourceRelationQueryRequest Getter
+// GetParamYxWarehouseResourceRelationQueryRequest ParamYxWarehouseResourceRelationQueryRequest Getter
 func (r WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIRequest) GetParamYxWarehouseResourceRelationQueryRequest() *YxWarehouseResourceRelationQueryRequest {
 	return r._paramYxWarehouseResourceRelationQueryRequest
 }

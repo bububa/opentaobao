@@ -37,7 +37,7 @@ func (r AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest) G
 	return params
 }
 
-// Set is LogisticOrderStateUpdateRequest Setter
+// SetLogisticOrderStateUpdateRequest is LogisticOrderStateUpdateRequest Setter
 // Logistic order state update request
 func (r *AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest) SetLogisticOrderStateUpdateRequest(_logisticOrderStateUpdateRequest *LogisticOrderStateUpdateRequest) error {
 	r._logisticOrderStateUpdateRequest = _logisticOrderStateUpdateRequest
@@ -45,7 +45,7 @@ func (r *AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest) 
 	return nil
 }
 
-// Get LogisticOrderStateUpdateRequest Getter
+// GetLogisticOrderStateUpdateRequest LogisticOrderStateUpdateRequest Getter
 func (r AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest) GetLogisticOrderStateUpdateRequest() *LogisticOrderStateUpdateRequest {
 	return r._logisticOrderStateUpdateRequest
 }

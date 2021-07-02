@@ -37,7 +37,7 @@ func (r CainiaoWaybillIiSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CpCode Setter
+// SetCpCode is CpCode Setter
 // 物流公司code
 func (r *CainiaoWaybillIiSearchAPIRequest) SetCpCode(_cpCode string) error {
 	r._cpCode = _cpCode
@@ -45,7 +45,7 @@ func (r *CainiaoWaybillIiSearchAPIRequest) SetCpCode(_cpCode string) error {
 	return nil
 }
 
-// Get CpCode Getter
+// GetCpCode CpCode Getter
 func (r CainiaoWaybillIiSearchAPIRequest) GetCpCode() string {
 	return r._cpCode
 }

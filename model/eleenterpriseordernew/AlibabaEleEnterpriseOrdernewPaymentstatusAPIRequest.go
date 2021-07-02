@@ -39,7 +39,7 @@ func (r AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) SetOrderId(_orderI
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is PaySerialNumber Setter
+// SetPaySerialNumber is PaySerialNumber Setter
 // 支付流水号
 func (r *AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) SetPaySerialNumber(_paySerialNumber string) error {
 	r._paySerialNumber = _paySerialNumber
@@ -60,7 +60,7 @@ func (r *AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) SetPaySerialNumber
 	return nil
 }
 
-// Get PaySerialNumber Getter
+// GetPaySerialNumber PaySerialNumber Getter
 func (r AlibabaEleEnterpriseOrdernewPaymentstatusAPIRequest) GetPaySerialNumber() string {
 	return r._paySerialNumber
 }

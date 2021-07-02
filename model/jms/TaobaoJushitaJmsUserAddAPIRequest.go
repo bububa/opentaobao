@@ -37,7 +37,7 @@ func (r TaobaoJushitaJmsUserAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TopicNames Setter
+// SetTopicNames is TopicNames Setter
 // topic列表,不填则继承appkey所订阅的topic
 func (r *TaobaoJushitaJmsUserAddAPIRequest) SetTopicNames(_topicNames []string) error {
 	r._topicNames = _topicNames
@@ -45,7 +45,7 @@ func (r *TaobaoJushitaJmsUserAddAPIRequest) SetTopicNames(_topicNames []string) 
 	return nil
 }
 
-// Get TopicNames Getter
+// GetTopicNames TopicNames Getter
 func (r TaobaoJushitaJmsUserAddAPIRequest) GetTopicNames() []string {
 	return r._topicNames
 }

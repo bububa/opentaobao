@@ -39,7 +39,7 @@ func (r TaobaoAlitripIeAgentTicketIssueAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商id
 func (r *TaobaoAlitripIeAgentTicketIssueAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -47,12 +47,12 @@ func (r *TaobaoAlitripIeAgentTicketIssueAPIRequest) SetAgentId(_agentId int64) e
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r TaobaoAlitripIeAgentTicketIssueAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is IssueTicketVO Setter
+// SetIssueTicketVO is IssueTicketVO Setter
 // 出票信息
 func (r *TaobaoAlitripIeAgentTicketIssueAPIRequest) SetIssueTicketVO(_issueTicketVO *IeIssueTicketVO) error {
 	r._issueTicketVO = _issueTicketVO
@@ -60,7 +60,7 @@ func (r *TaobaoAlitripIeAgentTicketIssueAPIRequest) SetIssueTicketVO(_issueTicke
 	return nil
 }
 
-// Get IssueTicketVO Getter
+// GetIssueTicketVO IssueTicketVO Getter
 func (r TaobaoAlitripIeAgentTicketIssueAPIRequest) GetIssueTicketVO() *IeIssueTicketVO {
 	return r._issueTicketVO
 }

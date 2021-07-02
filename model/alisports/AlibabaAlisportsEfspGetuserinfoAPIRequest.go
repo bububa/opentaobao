@@ -37,7 +37,7 @@ func (r AlibabaAlisportsEfspGetuserinfoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AlipayId Setter
+// SetAlipayId is AlipayId Setter
 // 支付宝ID
 func (r *AlibabaAlisportsEfspGetuserinfoAPIRequest) SetAlipayId(_alipayId string) error {
 	r._alipayId = _alipayId
@@ -45,7 +45,7 @@ func (r *AlibabaAlisportsEfspGetuserinfoAPIRequest) SetAlipayId(_alipayId string
 	return nil
 }
 
-// Get AlipayId Getter
+// GetAlipayId AlipayId Getter
 func (r AlibabaAlisportsEfspGetuserinfoAPIRequest) GetAlipayId() string {
 	return r._alipayId
 }

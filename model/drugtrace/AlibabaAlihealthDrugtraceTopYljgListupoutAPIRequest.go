@@ -59,7 +59,7 @@ func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -67,12 +67,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetRefEntId(_refEn
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is BeginDate Setter
+// SetBeginDate is BeginDate Setter
 // 开始日期（不写时分秒）
 func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetBeginDate(_beginDate string) error {
 	r._beginDate = _beginDate
@@ -80,12 +80,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetBeginDate(_begi
 	return nil
 }
 
-// Get BeginDate Getter
+// GetBeginDate BeginDate Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetBeginDate() string {
 	return r._beginDate
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 结束日期（不写时分秒）
 func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -93,12 +93,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetEndDate(_endDat
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is ProduceBatchNo Setter
+// SetProduceBatchNo is ProduceBatchNo Setter
 // 生产批号
 func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetProduceBatchNo(_produceBatchNo string) error {
 	r._produceBatchNo = _produceBatchNo
@@ -106,12 +106,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetProduceBatchNo(
 	return nil
 }
 
-// Get ProduceBatchNo Getter
+// GetProduceBatchNo ProduceBatchNo Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetProduceBatchNo() string {
 	return r._produceBatchNo
 }
 
-// Set is DrugEntBaseInfoId Setter
+// SetDrugEntBaseInfoId is DrugEntBaseInfoId Setter
 // 药品ID
 func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetDrugEntBaseInfoId(_drugEntBaseInfoId string) error {
 	r._drugEntBaseInfoId = _drugEntBaseInfoId
@@ -119,12 +119,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetDrugEntBaseInfo
 	return nil
 }
 
-// Get DrugEntBaseInfoId Getter
+// GetDrugEntBaseInfoId DrugEntBaseInfoId Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetDrugEntBaseInfoId() string {
 	return r._drugEntBaseInfoId
 }
 
-// Set is BillType Setter
+// SetBillType is BillType Setter
 // 单据类型
 func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetBillType(_billType string) error {
 	r._billType = _billType
@@ -132,12 +132,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetBillType(_billT
 	return nil
 }
 
-// Get BillType Getter
+// GetBillType BillType Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetBillType() string {
 	return r._billType
 }
 
-// Set is PhysicType Setter
+// SetPhysicType is PhysicType Setter
 // 药品类型
 func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetPhysicType(_physicType string) error {
 	r._physicType = _physicType
@@ -145,12 +145,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetPhysicType(_phy
 	return nil
 }
 
-// Get PhysicType Getter
+// GetPhysicType PhysicType Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetPhysicType() string {
 	return r._physicType
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 状态
 func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -158,12 +158,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetStatus(_status 
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据号
 func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -171,12 +171,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetBillCode(_billC
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小
 func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -184,12 +184,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetPageSize(_pageS
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 页码
 func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -197,12 +197,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetPage(_page int6
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is FromUserId Setter
+// SetFromUserId is FromUserId Setter
 // 发货单位
 func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetFromUserId(_fromUserId string) error {
 	r._fromUserId = _fromUserId
@@ -210,7 +210,7 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetFromUserId(_fro
 	return nil
 }
 
-// Get FromUserId Getter
+// GetFromUserId FromUserId Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetFromUserId() string {
 	return r._fromUserId
 }

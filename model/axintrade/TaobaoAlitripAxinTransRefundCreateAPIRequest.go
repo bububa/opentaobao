@@ -37,7 +37,7 @@ func (r TaobaoAlitripAxinTransRefundCreateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is AxinRefundCreateDTO Setter
+// SetAxinRefundCreateDTO is AxinRefundCreateDTO Setter
 // 阿信创建退款单入参
 func (r *TaobaoAlitripAxinTransRefundCreateAPIRequest) SetAxinRefundCreateDTO(_axinRefundCreateDTO *AxinRefundCreateDto) error {
 	r._axinRefundCreateDTO = _axinRefundCreateDTO
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripAxinTransRefundCreateAPIRequest) SetAxinRefundCreateDTO(_a
 	return nil
 }
 
-// Get AxinRefundCreateDTO Getter
+// GetAxinRefundCreateDTO AxinRefundCreateDTO Getter
 func (r TaobaoAlitripAxinTransRefundCreateAPIRequest) GetAxinRefundCreateDTO() *AxinRefundCreateDto {
 	return r._axinRefundCreateDTO
 }

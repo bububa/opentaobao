@@ -37,7 +37,7 @@ func (r AlitripTravelCrsdriverArrangeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CrsDriverArrangeParam Setter
+// SetCrsDriverArrangeParam is CrsDriverArrangeParam Setter
 // 请求对象
 func (r *AlitripTravelCrsdriverArrangeAPIRequest) SetCrsDriverArrangeParam(_crsDriverArrangeParam *CrsDriverArrangeParam) error {
 	r._crsDriverArrangeParam = _crsDriverArrangeParam
@@ -45,7 +45,7 @@ func (r *AlitripTravelCrsdriverArrangeAPIRequest) SetCrsDriverArrangeParam(_crsD
 	return nil
 }
 
-// Get CrsDriverArrangeParam Getter
+// GetCrsDriverArrangeParam CrsDriverArrangeParam Getter
 func (r AlitripTravelCrsdriverArrangeAPIRequest) GetCrsDriverArrangeParam() *CrsDriverArrangeParam {
 	return r._crsDriverArrangeParam
 }

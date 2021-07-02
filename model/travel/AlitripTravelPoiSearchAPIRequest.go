@@ -41,7 +41,7 @@ func (r AlitripTravelPoiSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // POI信息ID；
 func (r *AlitripTravelPoiSearchAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -49,12 +49,12 @@ func (r *AlitripTravelPoiSearchAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlitripTravelPoiSearchAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // POI信息名称
 func (r *AlitripTravelPoiSearchAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -62,12 +62,12 @@ func (r *AlitripTravelPoiSearchAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlitripTravelPoiSearchAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // POI类型；1->机场,2->火车站,3->汽车站,4->酒店,5->景点,6->购物，7->美食，9->玩乐，10->阿里旅行服务站，11->服务，100->其他
 func (r *AlitripTravelPoiSearchAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -75,7 +75,7 @@ func (r *AlitripTravelPoiSearchAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlitripTravelPoiSearchAPIRequest) GetType() int64 {
 	return r._type
 }

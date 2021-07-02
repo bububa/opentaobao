@@ -41,7 +41,7 @@ func (r TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 用户信息
 func (r *TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
 	r._param0 = _param0
@@ -49,12 +49,12 @@ func (r *TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) SetParam0(_param0 *
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) GetParam0() *OpenBaseInfo {
 	return r._param0
 }
 
-// Set is Param1 Setter
+// SetParam1 is Param1 Setter
 // 设备id
 func (r *TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) SetParam1(_param1 string) error {
 	r._param1 = _param1
@@ -62,12 +62,12 @@ func (r *TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) SetParam1(_param1 s
 	return nil
 }
 
-// Get Param1 Getter
+// GetParam1 Param1 Getter
 func (r TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) GetParam1() string {
 	return r._param1
 }
 
-// Set is Param2 Setter
+// SetParam2 is Param2 Setter
 // 音量0-100
 func (r *TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) SetParam2(_param2 int64) error {
 	r._param2 = _param2
@@ -75,7 +75,7 @@ func (r *TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) SetParam2(_param2 i
 	return nil
 }
 
-// Get Param2 Getter
+// GetParam2 Param2 Getter
 func (r TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) GetParam2() int64 {
 	return r._param2
 }

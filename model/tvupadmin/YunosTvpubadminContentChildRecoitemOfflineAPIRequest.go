@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentChildRecoitemOfflineAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is RecItemId Setter
+// SetRecItemId is RecItemId Setter
 // 推荐内容ID
 func (r *YunosTvpubadminContentChildRecoitemOfflineAPIRequest) SetRecItemId(_recItemId int64) error {
 	r._recItemId = _recItemId
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentChildRecoitemOfflineAPIRequest) SetRecItemId(_rec
 	return nil
 }
 
-// Get RecItemId Getter
+// GetRecItemId RecItemId Getter
 func (r YunosTvpubadminContentChildRecoitemOfflineAPIRequest) GetRecItemId() int64 {
 	return r._recItemId
 }

@@ -43,7 +43,7 @@ func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is WarehouseId Setter
+// SetWarehouseId is WarehouseId Setter
 // 仓库id
 func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetWarehouseId(_warehouseId int64) error {
 	r._warehouseId = _warehouseId
@@ -51,12 +51,12 @@ func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetWarehouseId(_w
 	return nil
 }
 
-// Get WarehouseId Getter
+// GetWarehouseId WarehouseId Getter
 func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetWarehouseId() int64 {
 	return r._warehouseId
 }
 
-// Set is ContainerCode Setter
+// SetContainerCode is ContainerCode Setter
 // 容器号
 func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetContainerCode(_containerCode string) error {
 	r._containerCode = _containerCode
@@ -64,12 +64,12 @@ func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetContainerCode(
 	return nil
 }
 
-// Get ContainerCode Getter
+// GetContainerCode ContainerCode Getter
 func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetContainerCode() string {
 	return r._containerCode
 }
 
-// Set is BatchCode Setter
+// SetBatchCode is BatchCode Setter
 // 批次号，可以为空串
 func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetBatchCode(_batchCode string) error {
 	r._batchCode = _batchCode
@@ -77,12 +77,12 @@ func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetBatchCode(_bat
 	return nil
 }
 
-// Get BatchCode Getter
+// GetBatchCode BatchCode Getter
 func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetBatchCode() string {
 	return r._batchCode
 }
 
-// Set is WaveCode Setter
+// SetWaveCode is WaveCode Setter
 // 波次号，可以为空串
 func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetWaveCode(_waveCode string) error {
 	r._waveCode = _waveCode
@@ -90,7 +90,7 @@ func (r *TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) SetWaveCode(_wave
 	return nil
 }
 
-// Get WaveCode Getter
+// GetWaveCode WaveCode Getter
 func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetWaveCode() string {
 	return r._waveCode
 }

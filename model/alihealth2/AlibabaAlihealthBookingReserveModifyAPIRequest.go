@@ -37,7 +37,7 @@ func (r AlibabaAlihealthBookingReserveModifyAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Modify Setter
+// SetModify is Modify Setter
 // modify
 func (r *AlibabaAlihealthBookingReserveModifyAPIRequest) SetModify(_modify *IsvReserveRequest) error {
 	r._modify = _modify
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthBookingReserveModifyAPIRequest) SetModify(_modify *IsvR
 	return nil
 }
 
-// Get Modify Getter
+// GetModify Modify Getter
 func (r AlibabaAlihealthBookingReserveModifyAPIRequest) GetModify() *IsvReserveRequest {
 	return r._modify
 }

@@ -41,7 +41,7 @@ func (r TaobaoPromotionmiscMjsActivityListGetAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is ActivityType Setter
+// SetActivityType is ActivityType Setter
 // 活动类型： 1表示商品级别的活动；2表示店铺级别的活动。
 func (r *TaobaoPromotionmiscMjsActivityListGetAPIRequest) SetActivityType(_activityType int64) error {
 	r._activityType = _activityType
@@ -49,12 +49,12 @@ func (r *TaobaoPromotionmiscMjsActivityListGetAPIRequest) SetActivityType(_activ
 	return nil
 }
 
-// Get ActivityType Getter
+// GetActivityType ActivityType Getter
 func (r TaobaoPromotionmiscMjsActivityListGetAPIRequest) GetActivityType() int64 {
 	return r._activityType
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码。
 func (r *TaobaoPromotionmiscMjsActivityListGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -62,12 +62,12 @@ func (r *TaobaoPromotionmiscMjsActivityListGetAPIRequest) SetPageNo(_pageNo int6
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoPromotionmiscMjsActivityListGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页记录数，最大支持50 。
 func (r *TaobaoPromotionmiscMjsActivityListGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *TaobaoPromotionmiscMjsActivityListGetAPIRequest) SetPageSize(_pageSize 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoPromotionmiscMjsActivityListGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

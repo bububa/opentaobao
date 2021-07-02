@@ -41,7 +41,7 @@ func (r TaobaoAppleNewuserSignNotifyNewversionAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ResultCode Setter
+// SetResultCode is ResultCode Setter
 // 结果code
 func (r *TaobaoAppleNewuserSignNotifyNewversionAPIRequest) SetResultCode(_resultCode string) error {
 	r._resultCode = _resultCode
@@ -49,12 +49,12 @@ func (r *TaobaoAppleNewuserSignNotifyNewversionAPIRequest) SetResultCode(_result
 	return nil
 }
 
-// Get ResultCode Getter
+// GetResultCode ResultCode Getter
 func (r TaobaoAppleNewuserSignNotifyNewversionAPIRequest) GetResultCode() string {
 	return r._resultCode
 }
 
-// Set is ResultMsg Setter
+// SetResultMsg is ResultMsg Setter
 // 结果信息说明
 func (r *TaobaoAppleNewuserSignNotifyNewversionAPIRequest) SetResultMsg(_resultMsg string) error {
 	r._resultMsg = _resultMsg
@@ -62,12 +62,12 @@ func (r *TaobaoAppleNewuserSignNotifyNewversionAPIRequest) SetResultMsg(_resultM
 	return nil
 }
 
-// Get ResultMsg Getter
+// GetResultMsg ResultMsg Getter
 func (r TaobaoAppleNewuserSignNotifyNewversionAPIRequest) GetResultMsg() string {
 	return r._resultMsg
 }
 
-// Set is MainData Setter
+// SetMainData is MainData Setter
 // 业务参数
 func (r *TaobaoAppleNewuserSignNotifyNewversionAPIRequest) SetMainData(_mainData *AppleTopNewSignNotifyDo) error {
 	r._mainData = _mainData
@@ -75,7 +75,7 @@ func (r *TaobaoAppleNewuserSignNotifyNewversionAPIRequest) SetMainData(_mainData
 	return nil
 }
 
-// Get MainData Getter
+// GetMainData MainData Getter
 func (r TaobaoAppleNewuserSignNotifyNewversionAPIRequest) GetMainData() *AppleTopNewSignNotifyDo {
 	return r._mainData
 }

@@ -41,7 +41,7 @@ func (r AlibabaOverseaTranslateGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Text Setter
+// SetText is Text Setter
 // 待翻译文本
 func (r *AlibabaOverseaTranslateGetAPIRequest) SetText(_text string) error {
 	r._text = _text
@@ -49,12 +49,12 @@ func (r *AlibabaOverseaTranslateGetAPIRequest) SetText(_text string) error {
 	return nil
 }
 
-// Get Text Getter
+// GetText Text Getter
 func (r AlibabaOverseaTranslateGetAPIRequest) GetText() string {
 	return r._text
 }
 
-// Set is SourceLang Setter
+// SetSourceLang is SourceLang Setter
 // 源语种英文
 func (r *AlibabaOverseaTranslateGetAPIRequest) SetSourceLang(_sourceLang string) error {
 	r._sourceLang = _sourceLang
@@ -62,12 +62,12 @@ func (r *AlibabaOverseaTranslateGetAPIRequest) SetSourceLang(_sourceLang string)
 	return nil
 }
 
-// Get SourceLang Getter
+// GetSourceLang SourceLang Getter
 func (r AlibabaOverseaTranslateGetAPIRequest) GetSourceLang() string {
 	return r._sourceLang
 }
 
-// Set is TargetLang Setter
+// SetTargetLang is TargetLang Setter
 // 目标语种中文
 func (r *AlibabaOverseaTranslateGetAPIRequest) SetTargetLang(_targetLang string) error {
 	r._targetLang = _targetLang
@@ -75,7 +75,7 @@ func (r *AlibabaOverseaTranslateGetAPIRequest) SetTargetLang(_targetLang string)
 	return nil
 }
 
-// Get TargetLang Getter
+// GetTargetLang TargetLang Getter
 func (r AlibabaOverseaTranslateGetAPIRequest) GetTargetLang() string {
 	return r._targetLang
 }

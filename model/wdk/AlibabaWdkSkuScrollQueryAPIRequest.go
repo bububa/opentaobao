@@ -43,7 +43,7 @@ func (r AlibabaWdkSkuScrollQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MerchantCatCode Setter
+// SetMerchantCatCode is MerchantCatCode Setter
 // 商家类目编码
 func (r *AlibabaWdkSkuScrollQueryAPIRequest) SetMerchantCatCode(_merchantCatCode string) error {
 	r._merchantCatCode = _merchantCatCode
@@ -51,12 +51,12 @@ func (r *AlibabaWdkSkuScrollQueryAPIRequest) SetMerchantCatCode(_merchantCatCode
 	return nil
 }
 
-// Get MerchantCatCode Getter
+// GetMerchantCatCode MerchantCatCode Getter
 func (r AlibabaWdkSkuScrollQueryAPIRequest) GetMerchantCatCode() string {
 	return r._merchantCatCode
 }
 
-// Set is OuCode Setter
+// SetOuCode is OuCode Setter
 // 门店编码
 func (r *AlibabaWdkSkuScrollQueryAPIRequest) SetOuCode(_ouCode string) error {
 	r._ouCode = _ouCode
@@ -64,12 +64,12 @@ func (r *AlibabaWdkSkuScrollQueryAPIRequest) SetOuCode(_ouCode string) error {
 	return nil
 }
 
-// Get OuCode Getter
+// GetOuCode OuCode Getter
 func (r AlibabaWdkSkuScrollQueryAPIRequest) GetOuCode() string {
 	return r._ouCode
 }
 
-// Set is ScrollId Setter
+// SetScrollId is ScrollId Setter
 // 游标：第一次请求不用填写，否则请填写上一次请求返回的值，直到获取到足够的数据
 func (r *AlibabaWdkSkuScrollQueryAPIRequest) SetScrollId(_scrollId string) error {
 	r._scrollId = _scrollId
@@ -77,12 +77,12 @@ func (r *AlibabaWdkSkuScrollQueryAPIRequest) SetScrollId(_scrollId string) error
 	return nil
 }
 
-// Get ScrollId Getter
+// GetScrollId ScrollId Getter
 func (r AlibabaWdkSkuScrollQueryAPIRequest) GetScrollId() string {
 	return r._scrollId
 }
 
-// Set is SkuCodes Setter
+// SetSkuCodes is SkuCodes Setter
 // 英文逗号分隔的商品编码，最多20个。如果配合门店字段使用，直接非游标方式返回商品数据
 func (r *AlibabaWdkSkuScrollQueryAPIRequest) SetSkuCodes(_skuCodes string) error {
 	r._skuCodes = _skuCodes
@@ -90,7 +90,7 @@ func (r *AlibabaWdkSkuScrollQueryAPIRequest) SetSkuCodes(_skuCodes string) error
 	return nil
 }
 
-// Get SkuCodes Getter
+// GetSkuCodes SkuCodes Getter
 func (r AlibabaWdkSkuScrollQueryAPIRequest) GetSkuCodes() string {
 	return r._skuCodes
 }

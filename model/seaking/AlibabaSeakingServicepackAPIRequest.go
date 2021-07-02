@@ -39,7 +39,7 @@ func (r AlibabaSeakingServicepackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IdentifyType Setter
+// SetIdentifyType is IdentifyType Setter
 // 验证类型
 func (r *AlibabaSeakingServicepackAPIRequest) SetIdentifyType(_identifyType string) error {
 	r._identifyType = _identifyType
@@ -47,12 +47,12 @@ func (r *AlibabaSeakingServicepackAPIRequest) SetIdentifyType(_identifyType stri
 	return nil
 }
 
-// Get IdentifyType Getter
+// GetIdentifyType IdentifyType Getter
 func (r AlibabaSeakingServicepackAPIRequest) GetIdentifyType() string {
 	return r._identifyType
 }
 
-// Set is Identifier Setter
+// SetIdentifier is Identifier Setter
 // 验证类型下的唯一id
 func (r *AlibabaSeakingServicepackAPIRequest) SetIdentifier(_identifier string) error {
 	r._identifier = _identifier
@@ -60,7 +60,7 @@ func (r *AlibabaSeakingServicepackAPIRequest) SetIdentifier(_identifier string) 
 	return nil
 }
 
-// Get Identifier Getter
+// GetIdentifier Identifier Getter
 func (r AlibabaSeakingServicepackAPIRequest) GetIdentifier() string {
 	return r._identifier
 }

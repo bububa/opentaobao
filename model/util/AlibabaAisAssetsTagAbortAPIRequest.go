@@ -37,7 +37,7 @@ func (r AlibabaAisAssetsTagAbortAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RequestParam Setter
+// SetRequestParam is RequestParam Setter
 // 请求资产信息
 func (r *AlibabaAisAssetsTagAbortAPIRequest) SetRequestParam(_requestParam string) error {
 	r._requestParam = _requestParam
@@ -45,7 +45,7 @@ func (r *AlibabaAisAssetsTagAbortAPIRequest) SetRequestParam(_requestParam strin
 	return nil
 }
 
-// Get RequestParam Getter
+// GetRequestParam RequestParam Getter
 func (r AlibabaAisAssetsTagAbortAPIRequest) GetRequestParam() string {
 	return r._requestParam
 }

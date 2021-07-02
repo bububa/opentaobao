@@ -53,7 +53,7 @@ func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is DataSetId Setter
+// SetDataSetId is DataSetId Setter
 // 身份ID，识别合作方身份（可联系口碑综合体业务获取）
 func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetDataSetId(_dataSetId string) error {
 	r._dataSetId = _dataSetId
@@ -61,12 +61,12 @@ func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetDataSetId(_da
 	return nil
 }
 
-// Get DataSetId Getter
+// GetDataSetId DataSetId Getter
 func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetDataSetId() string {
 	return r._dataSetId
 }
 
-// Set is MallId Setter
+// SetMallId is MallId Setter
 // 商圈ID
 func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetMallId(_mallId string) error {
 	r._mallId = _mallId
@@ -74,12 +74,12 @@ func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetMallId(_mallI
 	return nil
 }
 
-// Get MallId Getter
+// GetMallId MallId Getter
 func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetMallId() string {
 	return r._mallId
 }
 
-// Set is ItemSize Setter
+// SetItemSize is ItemSize Setter
 // 查询商品最大个数，最大值50
 func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetItemSize(_itemSize int64) error {
 	r._itemSize = _itemSize
@@ -87,12 +87,12 @@ func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetItemSize(_ite
 	return nil
 }
 
-// Get ItemSize Getter
+// GetItemSize ItemSize Getter
 func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetItemSize() int64 {
 	return r._itemSize
 }
 
-// Set is Longitude Setter
+// SetLongitude is Longitude Setter
 // 经度（终端设备地理位置）
 func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetLongitude(_longitude string) error {
 	r._longitude = _longitude
@@ -100,12 +100,12 @@ func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetLongitude(_lo
 	return nil
 }
 
-// Get Longitude Getter
+// GetLongitude Longitude Getter
 func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetLongitude() string {
 	return r._longitude
 }
 
-// Set is Latitude Setter
+// SetLatitude is Latitude Setter
 // 纬度（终端设备地理位置）
 func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetLatitude(_latitude string) error {
 	r._latitude = _latitude
@@ -113,12 +113,12 @@ func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetLatitude(_lat
 	return nil
 }
 
-// Get Latitude Getter
+// GetLatitude Latitude Getter
 func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetLatitude() string {
 	return r._latitude
 }
 
-// Set is CityCode Setter
+// SetCityCode is CityCode Setter
 // 口碑城市编码（示例：杭州市330100）
 func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetCityCode(_cityCode string) error {
 	r._cityCode = _cityCode
@@ -126,12 +126,12 @@ func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetCityCode(_cit
 	return nil
 }
 
-// Get CityCode Getter
+// GetCityCode CityCode Getter
 func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetCityCode() string {
 	return r._cityCode
 }
 
-// Set is TerminalType Setter
+// SetTerminalType is TerminalType Setter
 // 终端设备描述(中、英文均可)
 func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetTerminalType(_terminalType string) error {
 	r._terminalType = _terminalType
@@ -139,12 +139,12 @@ func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetTerminalType(
 	return nil
 }
 
-// Get TerminalType Getter
+// GetTerminalType TerminalType Getter
 func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetTerminalType() string {
 	return r._terminalType
 }
 
-// Set is AppVersion Setter
+// SetAppVersion is AppVersion Setter
 // 支付宝/口碑/淘宝app版本号
 func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetAppVersion(_appVersion string) error {
 	r._appVersion = _appVersion
@@ -152,12 +152,12 @@ func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetAppVersion(_a
 	return nil
 }
 
-// Get AppVersion Getter
+// GetAppVersion AppVersion Getter
 func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetAppVersion() string {
 	return r._appVersion
 }
 
-// Set is DisplayChannel Setter
+// SetDisplayChannel is DisplayChannel Setter
 // 展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）
 func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetDisplayChannel(_displayChannel string) error {
 	r._displayChannel = _displayChannel
@@ -165,7 +165,7 @@ func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetDisplayChanne
 	return nil
 }
 
-// Get DisplayChannel Getter
+// GetDisplayChannel DisplayChannel Getter
 func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetDisplayChannel() string {
 	return r._displayChannel
 }

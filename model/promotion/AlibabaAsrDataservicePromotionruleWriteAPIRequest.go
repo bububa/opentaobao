@@ -37,7 +37,7 @@ func (r AlibabaAsrDataservicePromotionruleWriteAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is PoskeyPromotionRuleDto Setter
+// SetPoskeyPromotionRuleDto is PoskeyPromotionRuleDto Setter
 // 入参对象
 func (r *AlibabaAsrDataservicePromotionruleWriteAPIRequest) SetPoskeyPromotionRuleDto(_poskeyPromotionRuleDto *PosKeyPromotionRuleDto) error {
 	r._poskeyPromotionRuleDto = _poskeyPromotionRuleDto
@@ -45,7 +45,7 @@ func (r *AlibabaAsrDataservicePromotionruleWriteAPIRequest) SetPoskeyPromotionRu
 	return nil
 }
 
-// Get PoskeyPromotionRuleDto Getter
+// GetPoskeyPromotionRuleDto PoskeyPromotionRuleDto Getter
 func (r AlibabaAsrDataservicePromotionruleWriteAPIRequest) GetPoskeyPromotionRuleDto() *PosKeyPromotionRuleDto {
 	return r._poskeyPromotionRuleDto
 }

@@ -45,7 +45,7 @@ func (r TaobaoAppleCardActiveApplyNotifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppleCards Setter
+// SetAppleCards is AppleCards Setter
 // 卡列表
 func (r *TaobaoAppleCardActiveApplyNotifyAPIRequest) SetAppleCards(_appleCards []AppleCardDto) error {
 	r._appleCards = _appleCards
@@ -53,12 +53,12 @@ func (r *TaobaoAppleCardActiveApplyNotifyAPIRequest) SetAppleCards(_appleCards [
 	return nil
 }
 
-// Get AppleCards Getter
+// GetAppleCards AppleCards Getter
 func (r TaobaoAppleCardActiveApplyNotifyAPIRequest) GetAppleCards() []AppleCardDto {
 	return r._appleCards
 }
 
-// Set is GatewayOrderNo Setter
+// SetGatewayOrderNo is GatewayOrderNo Setter
 // 网关订单号
 func (r *TaobaoAppleCardActiveApplyNotifyAPIRequest) SetGatewayOrderNo(_gatewayOrderNo string) error {
 	r._gatewayOrderNo = _gatewayOrderNo
@@ -66,12 +66,12 @@ func (r *TaobaoAppleCardActiveApplyNotifyAPIRequest) SetGatewayOrderNo(_gatewayO
 	return nil
 }
 
-// Get GatewayOrderNo Getter
+// GetGatewayOrderNo GatewayOrderNo Getter
 func (r TaobaoAppleCardActiveApplyNotifyAPIRequest) GetGatewayOrderNo() string {
 	return r._gatewayOrderNo
 }
 
-// Set is ResultMsg Setter
+// SetResultMsg is ResultMsg Setter
 // 描述
 func (r *TaobaoAppleCardActiveApplyNotifyAPIRequest) SetResultMsg(_resultMsg string) error {
 	r._resultMsg = _resultMsg
@@ -79,12 +79,12 @@ func (r *TaobaoAppleCardActiveApplyNotifyAPIRequest) SetResultMsg(_resultMsg str
 	return nil
 }
 
-// Get ResultMsg Getter
+// GetResultMsg ResultMsg Getter
 func (r TaobaoAppleCardActiveApplyNotifyAPIRequest) GetResultMsg() string {
 	return r._resultMsg
 }
 
-// Set is OrderNo Setter
+// SetOrderNo is OrderNo Setter
 // 商户唯一订单号
 func (r *TaobaoAppleCardActiveApplyNotifyAPIRequest) SetOrderNo(_orderNo string) error {
 	r._orderNo = _orderNo
@@ -92,12 +92,12 @@ func (r *TaobaoAppleCardActiveApplyNotifyAPIRequest) SetOrderNo(_orderNo string)
 	return nil
 }
 
-// Get OrderNo Getter
+// GetOrderNo OrderNo Getter
 func (r TaobaoAppleCardActiveApplyNotifyAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }
 
-// Set is ResultCode Setter
+// SetResultCode is ResultCode Setter
 // 结果，000：成功，其他皆为错误 04： 订单处理失败(商户可退款，其他不可退款)
 func (r *TaobaoAppleCardActiveApplyNotifyAPIRequest) SetResultCode(_resultCode string) error {
 	r._resultCode = _resultCode
@@ -105,7 +105,7 @@ func (r *TaobaoAppleCardActiveApplyNotifyAPIRequest) SetResultCode(_resultCode s
 	return nil
 }
 
-// Get ResultCode Getter
+// GetResultCode ResultCode Getter
 func (r TaobaoAppleCardActiveApplyNotifyAPIRequest) GetResultCode() string {
 	return r._resultCode
 }

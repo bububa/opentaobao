@@ -37,7 +37,7 @@ func (r AlibabaTclsAelophyMerchantChannelOrderCancelAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is UserCancelInfo Setter
+// SetUserCancelInfo is UserCancelInfo Setter
 // 取消信息
 func (r *AlibabaTclsAelophyMerchantChannelOrderCancelAPIRequest) SetUserCancelInfo(_userCancelInfo *OrderUserCancelInfo) error {
 	r._userCancelInfo = _userCancelInfo
@@ -45,7 +45,7 @@ func (r *AlibabaTclsAelophyMerchantChannelOrderCancelAPIRequest) SetUserCancelIn
 	return nil
 }
 
-// Get UserCancelInfo Getter
+// GetUserCancelInfo UserCancelInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelOrderCancelAPIRequest) GetUserCancelInfo() *OrderUserCancelInfo {
 	return r._userCancelInfo
 }

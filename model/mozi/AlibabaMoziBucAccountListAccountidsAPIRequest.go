@@ -37,7 +37,7 @@ func (r AlibabaMoziBucAccountListAccountidsAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ListAccountIds Setter
+// SetListAccountIds is ListAccountIds Setter
 // 请求参数
 func (r *AlibabaMoziBucAccountListAccountidsAPIRequest) SetListAccountIds(_listAccountIds *ListAccountsByAccountIdsRequest) error {
 	r._listAccountIds = _listAccountIds
@@ -45,7 +45,7 @@ func (r *AlibabaMoziBucAccountListAccountidsAPIRequest) SetListAccountIds(_listA
 	return nil
 }
 
-// Get ListAccountIds Getter
+// GetListAccountIds ListAccountIds Getter
 func (r AlibabaMoziBucAccountListAccountidsAPIRequest) GetListAccountIds() *ListAccountsByAccountIdsRequest {
 	return r._listAccountIds
 }

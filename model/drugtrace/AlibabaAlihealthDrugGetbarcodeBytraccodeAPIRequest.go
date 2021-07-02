@@ -37,7 +37,7 @@ func (r AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is TraceCode Setter
+// SetTraceCode is TraceCode Setter
 // 追溯码
 func (r *AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest) SetTraceCode(_traceCode string) error {
 	r._traceCode = _traceCode
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest) SetTraceCode(_trace
 	return nil
 }
 
-// Get TraceCode Getter
+// GetTraceCode TraceCode Getter
 func (r AlibabaAlihealthDrugGetbarcodeBytraccodeAPIRequest) GetTraceCode() string {
 	return r._traceCode
 }

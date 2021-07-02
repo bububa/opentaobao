@@ -37,7 +37,7 @@ func (r YunosTvpubadminManageDialogDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 全局弹窗id
 func (r *YunosTvpubadminManageDialogDeleteAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminManageDialogDeleteAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r YunosTvpubadminManageDialogDeleteAPIRequest) GetId() int64 {
 	return r._id
 }

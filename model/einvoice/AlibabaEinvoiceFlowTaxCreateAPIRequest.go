@@ -37,7 +37,7 @@ func (r AlibabaEinvoiceFlowTaxCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InvoiceTaxFlowCreateDto Setter
+// SetInvoiceTaxFlowCreateDto is InvoiceTaxFlowCreateDto Setter
 // 工单请求
 func (r *AlibabaEinvoiceFlowTaxCreateAPIRequest) SetInvoiceTaxFlowCreateDto(_invoiceTaxFlowCreateDto *InvoiceTaxFlowCreateDto) error {
 	r._invoiceTaxFlowCreateDto = _invoiceTaxFlowCreateDto
@@ -45,7 +45,7 @@ func (r *AlibabaEinvoiceFlowTaxCreateAPIRequest) SetInvoiceTaxFlowCreateDto(_inv
 	return nil
 }
 
-// Get InvoiceTaxFlowCreateDto Getter
+// GetInvoiceTaxFlowCreateDto InvoiceTaxFlowCreateDto Getter
 func (r AlibabaEinvoiceFlowTaxCreateAPIRequest) GetInvoiceTaxFlowCreateDto() *InvoiceTaxFlowCreateDto {
 	return r._invoiceTaxFlowCreateDto
 }

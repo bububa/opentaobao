@@ -39,7 +39,7 @@ func (r AlibabaAlihealthDrugKytGetbyentidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 接口调用企业的唯一标识（接口调用者）
 func (r *AlibabaAlihealthDrugKytGetbyentidAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthDrugKytGetbyentidAPIRequest) SetRefEntId(_refEntId stri
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytGetbyentidAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is EntId Setter
+// SetEntId is EntId Setter
 // 准备要查询的企业ID（返回该企业ID的详细信息）
 func (r *AlibabaAlihealthDrugKytGetbyentidAPIRequest) SetEntId(_entId string) error {
 	r._entId = _entId
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthDrugKytGetbyentidAPIRequest) SetEntId(_entId string) er
 	return nil
 }
 
-// Get EntId Getter
+// GetEntId EntId Getter
 func (r AlibabaAlihealthDrugKytGetbyentidAPIRequest) GetEntId() string {
 	return r._entId
 }

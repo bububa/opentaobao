@@ -37,7 +37,7 @@ func (r AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest) GetApiParams() 
 	return params
 }
 
-// Set is SyncStatusRequest Setter
+// SetSyncStatusRequest is SyncStatusRequest Setter
 // 入参
 func (r *AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest) SetSyncStatusRequest(_syncStatusRequest *SyncPrescriptionStatusRequest) error {
 	r._syncStatusRequest = _syncStatusRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest) SetSyncStatusR
 	return nil
 }
 
-// Get SyncStatusRequest Getter
+// GetSyncStatusRequest SyncStatusRequest Getter
 func (r AlibabaAlihealthOutflowPrescriptionSyncstatusAPIRequest) GetSyncStatusRequest() *SyncPrescriptionStatusRequest {
 	return r._syncStatusRequest
 }

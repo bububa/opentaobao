@@ -37,7 +37,7 @@ func (r TaobaoRhinoSupplychainInboundConfirmAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is ClothingInboundConfirm Setter
+// SetClothingInboundConfirm is ClothingInboundConfirm Setter
 // 入库单确认对象
 func (r *TaobaoRhinoSupplychainInboundConfirmAPIRequest) SetClothingInboundConfirm(_clothingInboundConfirm *ClothingInboundConfirmDto) error {
 	r._clothingInboundConfirm = _clothingInboundConfirm
@@ -45,7 +45,7 @@ func (r *TaobaoRhinoSupplychainInboundConfirmAPIRequest) SetClothingInboundConfi
 	return nil
 }
 
-// Get ClothingInboundConfirm Getter
+// GetClothingInboundConfirm ClothingInboundConfirm Getter
 func (r TaobaoRhinoSupplychainInboundConfirmAPIRequest) GetClothingInboundConfirm() *ClothingInboundConfirmDto {
 	return r._clothingInboundConfirm
 }

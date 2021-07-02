@@ -41,7 +41,7 @@ func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 被操作者的淘宝昵称
 func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -49,12 +49,12 @@ func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广单元id
 func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -62,12 +62,12 @@ func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetAdgroupId(_adgroupId int64
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }
 
-// Set is AdgroupTargetingTags Setter
+// SetAdgroupTargetingTags is AdgroupTargetingTags Setter
 // 新增人群信息,批量接口,入参为list,溢价(discount)范围为[105,400]
 func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetAdgroupTargetingTags(_adgroupTargetingTags string) error {
 	r._adgroupTargetingTags = _adgroupTargetingTags
@@ -75,7 +75,7 @@ func (r *TaobaoSimbaSearchcrowdBatchAddAPIRequest) SetAdgroupTargetingTags(_adgr
 	return nil
 }
 
-// Get AdgroupTargetingTags Getter
+// GetAdgroupTargetingTags AdgroupTargetingTags Getter
 func (r TaobaoSimbaSearchcrowdBatchAddAPIRequest) GetAdgroupTargetingTags() string {
 	return r._adgroupTargetingTags
 }

@@ -39,7 +39,7 @@ func (r TaobaoOpentradeToolsItemsUnbindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MiniappId Setter
+// SetMiniappId is MiniappId Setter
 // 绑定交易开放场景的C端小程序ID
 func (r *TaobaoOpentradeToolsItemsUnbindAPIRequest) SetMiniappId(_miniappId int64) error {
 	r._miniappId = _miniappId
@@ -47,12 +47,12 @@ func (r *TaobaoOpentradeToolsItemsUnbindAPIRequest) SetMiniappId(_miniappId int6
 	return nil
 }
 
-// Get MiniappId Getter
+// GetMiniappId MiniappId Getter
 func (r TaobaoOpentradeToolsItemsUnbindAPIRequest) GetMiniappId() int64 {
 	return r._miniappId
 }
 
-// Set is ItemIds Setter
+// SetItemIds is ItemIds Setter
 // 商品id
 func (r *TaobaoOpentradeToolsItemsUnbindAPIRequest) SetItemIds(_itemIds []int64) error {
 	r._itemIds = _itemIds
@@ -60,7 +60,7 @@ func (r *TaobaoOpentradeToolsItemsUnbindAPIRequest) SetItemIds(_itemIds []int64)
 	return nil
 }
 
-// Get ItemIds Getter
+// GetItemIds ItemIds Getter
 func (r TaobaoOpentradeToolsItemsUnbindAPIRequest) GetItemIds() []int64 {
 	return r._itemIds
 }

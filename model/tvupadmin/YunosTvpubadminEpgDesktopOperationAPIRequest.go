@@ -41,7 +41,7 @@ func (r YunosTvpubadminEpgDesktopOperationAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is EntityType Setter
+// SetEntityType is EntityType Setter
 // 操作对象实体
 func (r *YunosTvpubadminEpgDesktopOperationAPIRequest) SetEntityType(_entityType string) error {
 	r._entityType = _entityType
@@ -49,12 +49,12 @@ func (r *YunosTvpubadminEpgDesktopOperationAPIRequest) SetEntityType(_entityType
 	return nil
 }
 
-// Get EntityType Getter
+// GetEntityType EntityType Getter
 func (r YunosTvpubadminEpgDesktopOperationAPIRequest) GetEntityType() string {
 	return r._entityType
 }
 
-// Set is ActionType Setter
+// SetActionType is ActionType Setter
 // 操作类型
 func (r *YunosTvpubadminEpgDesktopOperationAPIRequest) SetActionType(_actionType string) error {
 	r._actionType = _actionType
@@ -62,12 +62,12 @@ func (r *YunosTvpubadminEpgDesktopOperationAPIRequest) SetActionType(_actionType
 	return nil
 }
 
-// Get ActionType Getter
+// GetActionType ActionType Getter
 func (r YunosTvpubadminEpgDesktopOperationAPIRequest) GetActionType() string {
 	return r._actionType
 }
 
-// Set is Parameter Setter
+// SetParameter is Parameter Setter
 // 具体入参
 func (r *YunosTvpubadminEpgDesktopOperationAPIRequest) SetParameter(_parameter string) error {
 	r._parameter = _parameter
@@ -75,7 +75,7 @@ func (r *YunosTvpubadminEpgDesktopOperationAPIRequest) SetParameter(_parameter s
 	return nil
 }
 
-// Get Parameter Getter
+// GetParameter Parameter Getter
 func (r YunosTvpubadminEpgDesktopOperationAPIRequest) GetParameter() string {
 	return r._parameter
 }

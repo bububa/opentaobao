@@ -37,7 +37,7 @@ func (r TaobaoAlitripTravelNormalvisaGetdetailAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 订单id
 func (r *TaobaoAlitripTravelNormalvisaGetdetailAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripTravelNormalvisaGetdetailAPIRequest) SetBizOrderId(_bizOrd
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r TaobaoAlitripTravelNormalvisaGetdetailAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }

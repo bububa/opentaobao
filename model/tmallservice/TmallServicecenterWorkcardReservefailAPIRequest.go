@@ -45,7 +45,7 @@ func (r TmallServicecenterWorkcardReservefailAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is IdentifyTaskId Setter
+// SetIdentifyTaskId is IdentifyTaskId Setter
 // 核销单外部id
 func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetIdentifyTaskId(_identifyTaskId int64) error {
 	r._identifyTaskId = _identifyTaskId
@@ -53,12 +53,12 @@ func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetIdentifyTaskId(_ide
 	return nil
 }
 
-// Get IdentifyTaskId Getter
+// GetIdentifyTaskId IdentifyTaskId Getter
 func (r TmallServicecenterWorkcardReservefailAPIRequest) GetIdentifyTaskId() int64 {
 	return r._identifyTaskId
 }
 
-// Set is GmtNextContact Setter
+// SetGmtNextContact is GmtNextContact Setter
 // 下次联系时间
 func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetGmtNextContact(_gmtNextContact string) error {
 	r._gmtNextContact = _gmtNextContact
@@ -66,12 +66,12 @@ func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetGmtNextContact(_gmt
 	return nil
 }
 
-// Get GmtNextContact Getter
+// GetGmtNextContact GmtNextContact Getter
 func (r TmallServicecenterWorkcardReservefailAPIRequest) GetGmtNextContact() string {
 	return r._gmtNextContact
 }
 
-// Set is FailCode Setter
+// SetFailCode is FailCode Setter
 // 预约失败原因码
 func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetFailCode(_failCode int64) error {
 	r._failCode = _failCode
@@ -79,12 +79,12 @@ func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetFailCode(_failCode 
 	return nil
 }
 
-// Get FailCode Getter
+// GetFailCode FailCode Getter
 func (r TmallServicecenterWorkcardReservefailAPIRequest) GetFailCode() int64 {
 	return r._failCode
 }
 
-// Set is FailDesc Setter
+// SetFailDesc is FailDesc Setter
 // 预约失败原因描述
 func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetFailDesc(_failDesc string) error {
 	r._failDesc = _failDesc
@@ -92,12 +92,12 @@ func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetFailDesc(_failDesc 
 	return nil
 }
 
-// Get FailDesc Getter
+// GetFailDesc FailDesc Getter
 func (r TmallServicecenterWorkcardReservefailAPIRequest) GetFailDesc() string {
 	return r._failDesc
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -105,7 +105,7 @@ func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetWorkcardId(_workcar
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterWorkcardReservefailAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }

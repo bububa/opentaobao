@@ -55,7 +55,7 @@ func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Profile Setter
+// SetProfile is Profile Setter
 // 预留json参数，与手淘团队单独沟通
 func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetProfile(_profile string) error {
 	r._profile = _profile
@@ -63,12 +63,12 @@ func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetProfile(_profile string) e
 	return nil
 }
 
-// Get Profile Getter
+// GetProfile Profile Getter
 func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetProfile() string {
 	return r._profile
 }
 
-// Set is OaidMd5 Setter
+// SetOaidMd5 is OaidMd5 Setter
 // oaid的md5值， 32位小写
 func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetOaidMd5(_oaidMd5 string) error {
 	r._oaidMd5 = _oaidMd5
@@ -76,12 +76,12 @@ func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetOaidMd5(_oaidMd5 string) e
 	return nil
 }
 
-// Get OaidMd5 Getter
+// GetOaidMd5 OaidMd5 Getter
 func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetOaidMd5() string {
 	return r._oaidMd5
 }
 
-// Set is IdfaMd5 Setter
+// SetIdfaMd5 is IdfaMd5 Setter
 // idfa的md5值， 32位小写
 func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetIdfaMd5(_idfaMd5 string) error {
 	r._idfaMd5 = _idfaMd5
@@ -89,12 +89,12 @@ func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetIdfaMd5(_idfaMd5 string) e
 	return nil
 }
 
-// Get IdfaMd5 Getter
+// GetIdfaMd5 IdfaMd5 Getter
 func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetIdfaMd5() string {
 	return r._idfaMd5
 }
 
-// Set is ImeiMd5 Setter
+// SetImeiMd5 is ImeiMd5 Setter
 // imei的md5值， 32位小写
 func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetImeiMd5(_imeiMd5 string) error {
 	r._imeiMd5 = _imeiMd5
@@ -102,12 +102,12 @@ func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetImeiMd5(_imeiMd5 string) e
 	return nil
 }
 
-// Get ImeiMd5 Getter
+// GetImeiMd5 ImeiMd5 Getter
 func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetImeiMd5() string {
 	return r._imeiMd5
 }
 
-// Set is Oaid Setter
+// SetOaid is Oaid Setter
 // oaid的原生值
 func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetOaid(_oaid string) error {
 	r._oaid = _oaid
@@ -115,12 +115,12 @@ func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetOaid(_oaid string) error {
 	return nil
 }
 
-// Get Oaid Getter
+// GetOaid Oaid Getter
 func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetOaid() string {
 	return r._oaid
 }
 
-// Set is Idfa Setter
+// SetIdfa is Idfa Setter
 // idfa的原生值
 func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetIdfa(_idfa string) error {
 	r._idfa = _idfa
@@ -128,12 +128,12 @@ func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetIdfa(_idfa string) error {
 	return nil
 }
 
-// Get Idfa Getter
+// GetIdfa Idfa Getter
 func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetIdfa() string {
 	return r._idfa
 }
 
-// Set is Imei Setter
+// SetImei is Imei Setter
 // imei的原生值
 func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetImei(_imei string) error {
 	r._imei = _imei
@@ -141,12 +141,12 @@ func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetImei(_imei string) error {
 	return nil
 }
 
-// Get Imei Getter
+// GetImei Imei Getter
 func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetImei() string {
 	return r._imei
 }
 
-// Set is Os Setter
+// SetOs is Os Setter
 // 用户所使用设备的系统， 0： android, 1: ios, 2: windowsphone, 3: other
 func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetOs(_os string) error {
 	r._os = _os
@@ -154,12 +154,12 @@ func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetOs(_os string) error {
 	return nil
 }
 
-// Get Os Getter
+// GetOs Os Getter
 func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetOs() string {
 	return r._os
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 渠道标识，在大航海平台申请
 func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -167,12 +167,12 @@ func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetChannel(_channel string) e
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetChannel() string {
 	return r._channel
 }
 
-// Set is AdvertisingSpaceId Setter
+// SetAdvertisingSpaceId is AdvertisingSpaceId Setter
 // 大航海广告位，在大航海平台申请
 func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetAdvertisingSpaceId(_advertisingSpaceId string) error {
 	r._advertisingSpaceId = _advertisingSpaceId
@@ -180,7 +180,7 @@ func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetAdvertisingSpaceId(_advert
 	return nil
 }
 
-// Get AdvertisingSpaceId Getter
+// GetAdvertisingSpaceId AdvertisingSpaceId Getter
 func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetAdvertisingSpaceId() string {
 	return r._advertisingSpaceId
 }

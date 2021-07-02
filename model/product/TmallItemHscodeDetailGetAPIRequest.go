@@ -37,7 +37,7 @@ func (r TmallItemHscodeDetailGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Hscode Setter
+// SetHscode is Hscode Setter
 // hscode
 func (r *TmallItemHscodeDetailGetAPIRequest) SetHscode(_hscode string) error {
 	r._hscode = _hscode
@@ -45,7 +45,7 @@ func (r *TmallItemHscodeDetailGetAPIRequest) SetHscode(_hscode string) error {
 	return nil
 }
 
-// Get Hscode Getter
+// GetHscode Hscode Getter
 func (r TmallItemHscodeDetailGetAPIRequest) GetHscode() string {
 	return r._hscode
 }

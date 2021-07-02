@@ -41,7 +41,7 @@ func (r AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) GetApiParam
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 天猫id
 func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -49,12 +49,12 @@ func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) SetId(_id 
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 第几页
 func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -62,12 +62,12 @@ func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) SetCurrent
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数
 func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) SetPageSiz
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaMallitemcenterEntitledserviceSupplierQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

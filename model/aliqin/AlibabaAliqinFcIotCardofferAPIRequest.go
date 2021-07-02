@@ -39,7 +39,7 @@ func (r AlibabaAliqinFcIotCardofferAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Billreal Setter
+// SetBillreal is Billreal Setter
 // 具体ICCID的值
 func (r *AlibabaAliqinFcIotCardofferAPIRequest) SetBillreal(_billreal string) error {
 	r._billreal = _billreal
@@ -47,12 +47,12 @@ func (r *AlibabaAliqinFcIotCardofferAPIRequest) SetBillreal(_billreal string) er
 	return nil
 }
 
-// Get Billreal Getter
+// GetBillreal Billreal Getter
 func (r AlibabaAliqinFcIotCardofferAPIRequest) GetBillreal() string {
 	return r._billreal
 }
 
-// Set is Billsource Setter
+// SetBillsource is Billsource Setter
 // ICCID
 func (r *AlibabaAliqinFcIotCardofferAPIRequest) SetBillsource(_billsource string) error {
 	r._billsource = _billsource
@@ -60,7 +60,7 @@ func (r *AlibabaAliqinFcIotCardofferAPIRequest) SetBillsource(_billsource string
 	return nil
 }
 
-// Get Billsource Getter
+// GetBillsource Billsource Getter
 func (r AlibabaAliqinFcIotCardofferAPIRequest) GetBillsource() string {
 	return r._billsource
 }

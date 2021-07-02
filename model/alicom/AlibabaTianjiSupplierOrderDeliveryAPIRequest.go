@@ -37,7 +37,7 @@ func (r AlibabaTianjiSupplierOrderDeliveryAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ParamDistributionOrderLogisticsModel Setter
+// SetParamDistributionOrderLogisticsModel is ParamDistributionOrderLogisticsModel Setter
 // 物流信息
 func (r *AlibabaTianjiSupplierOrderDeliveryAPIRequest) SetParamDistributionOrderLogisticsModel(_paramDistributionOrderLogisticsModel *DistributionOrderLogisticsModel) error {
 	r._paramDistributionOrderLogisticsModel = _paramDistributionOrderLogisticsModel
@@ -45,7 +45,7 @@ func (r *AlibabaTianjiSupplierOrderDeliveryAPIRequest) SetParamDistributionOrder
 	return nil
 }
 
-// Get ParamDistributionOrderLogisticsModel Getter
+// GetParamDistributionOrderLogisticsModel ParamDistributionOrderLogisticsModel Getter
 func (r AlibabaTianjiSupplierOrderDeliveryAPIRequest) GetParamDistributionOrderLogisticsModel() *DistributionOrderLogisticsModel {
 	return r._paramDistributionOrderLogisticsModel
 }

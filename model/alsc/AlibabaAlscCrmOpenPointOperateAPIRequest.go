@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamPointOperateOpenReq Setter
+// SetParamPointOperateOpenReq is ParamPointOperateOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmOpenPointOperateAPIRequest) SetParamPointOperateOpenReq(_paramPointOperateOpenReq *PointOperateOpenReq) error {
 	r._paramPointOperateOpenReq = _paramPointOperateOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmOpenPointOperateAPIRequest) SetParamPointOperateOpenReq(_
 	return nil
 }
 
-// Get ParamPointOperateOpenReq Getter
+// GetParamPointOperateOpenReq ParamPointOperateOpenReq Getter
 func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetParamPointOperateOpenReq() *PointOperateOpenReq {
 	return r._paramPointOperateOpenReq
 }

@@ -47,7 +47,7 @@ func (r AlibabaEinvoicePaperInvalidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InvoiceCode Setter
+// SetInvoiceCode is InvoiceCode Setter
 // 发票代码，空白作废时必填
 func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvoiceCode(_invoiceCode string) error {
 	r._invoiceCode = _invoiceCode
@@ -55,12 +55,12 @@ func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvoiceCode(_invoiceCode stri
 	return nil
 }
 
-// Get InvoiceCode Getter
+// GetInvoiceCode InvoiceCode Getter
 func (r AlibabaEinvoicePaperInvalidAPIRequest) GetInvoiceCode() string {
 	return r._invoiceCode
 }
 
-// Set is InvoiceNo Setter
+// SetInvoiceNo is InvoiceNo Setter
 // 发票号码，空白作废时必填
 func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvoiceNo(_invoiceNo string) error {
 	r._invoiceNo = _invoiceNo
@@ -68,12 +68,12 @@ func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvoiceNo(_invoiceNo string) 
 	return nil
 }
 
-// Get InvoiceNo Getter
+// GetInvoiceNo InvoiceNo Getter
 func (r AlibabaEinvoicePaperInvalidAPIRequest) GetInvoiceNo() string {
 	return r._invoiceNo
 }
 
-// Set is InvalidOperator Setter
+// SetInvalidOperator is InvalidOperator Setter
 // 作废操作人
 func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvalidOperator(_invalidOperator string) error {
 	r._invalidOperator = _invalidOperator
@@ -81,12 +81,12 @@ func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvalidOperator(_invalidOpera
 	return nil
 }
 
-// Get InvalidOperator Getter
+// GetInvalidOperator InvalidOperator Getter
 func (r AlibabaEinvoicePaperInvalidAPIRequest) GetInvalidOperator() string {
 	return r._invalidOperator
 }
 
-// Set is InvalidType Setter
+// SetInvalidType is InvalidType Setter
 // 作废类型, 0=空白发票(有残缺 的纸张发票，不能做为有效报销)作废, 1=已开发票作废
 func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvalidType(_invalidType int64) error {
 	r._invalidType = _invalidType
@@ -94,12 +94,12 @@ func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvalidType(_invalidType int6
 	return nil
 }
 
-// Get InvalidType Getter
+// GetInvalidType InvalidType Getter
 func (r AlibabaEinvoicePaperInvalidAPIRequest) GetInvalidType() int64 {
 	return r._invalidType
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 销售方纳税人识别号
 func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -107,12 +107,12 @@ func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetPayeeRegisterNo(_payeeRegiste
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoicePaperInvalidAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is SerialNo Setter
+// SetSerialNo is SerialNo Setter
 // 开票流水号
 func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetSerialNo(_serialNo string) error {
 	r._serialNo = _serialNo
@@ -120,7 +120,7 @@ func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetSerialNo(_serialNo string) er
 	return nil
 }
 
-// Get SerialNo Getter
+// GetSerialNo SerialNo Getter
 func (r AlibabaEinvoicePaperInvalidAPIRequest) GetSerialNo() string {
 	return r._serialNo
 }

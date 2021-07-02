@@ -52,7 +52,7 @@ func (r TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 硬件CODE
 func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -60,12 +60,12 @@ func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetDeviceCode(_deviceCod
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 本次操作结束时间
 func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -73,12 +73,12 @@ func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetEndTime(_endTime stri
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 本次操作开始时间
 func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -86,12 +86,12 @@ func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetStartTime(_startTime 
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is Action Setter
+// SetAction is Action Setter
 // 操作，枚举值：ACTION枚举值： ITEM_CLICK（商品点击时必须设置ITEM_ID） RECEIVE_COUPONS（领取优惠券时必须设置COUPON_ID） BUY_CLICK（点击购买） SHARE_CLICK（点击分享）
 func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetAction(_action string) error {
 	r._action = _action
@@ -99,12 +99,12 @@ func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetAction(_action string
 	return nil
 }
 
-// Get Action Getter
+// GetAction Action Getter
 func (r TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) GetAction() string {
 	return r._action
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID，action为item_click必填
 func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetItemId(_itemId string) error {
 	r._itemId = _itemId
@@ -112,12 +112,12 @@ func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetItemId(_itemId string
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) GetItemId() string {
 	return r._itemId
 }
 
-// Set is CouponId Setter
+// SetCouponId is CouponId Setter
 // "例如官方领取优惠券链接里的activityId： https://taoquan.taobao.com/coupon/unify_apply.htm?sellerId=2649119619&activityId=9d390579777e41a981b54aa4d6154f5e"
 func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetCouponId(_couponId string) error {
 	r._couponId = _couponId
@@ -125,12 +125,12 @@ func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetCouponId(_couponId st
 	return nil
 }
 
-// Get CouponId Getter
+// GetCouponId CouponId Getter
 func (r TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) GetCouponId() string {
 	return r._couponId
 }
 
-// Set is OuterUser Setter
+// SetOuterUser is OuterUser Setter
 // 硬件识别的用户标识
 func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetOuterUser(_outerUser string) error {
 	r._outerUser = _outerUser
@@ -138,7 +138,7 @@ func (r *TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) SetOuterUser(_outerUser 
 	return nil
 }
 
-// Get OuterUser Getter
+// GetOuterUser OuterUser Getter
 func (r TaobaoSmartstoreDeviceShelfFeedbackAPIRequest) GetOuterUser() string {
 	return r._outerUser
 }

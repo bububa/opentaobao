@@ -43,7 +43,7 @@ func (r AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 登录时返回给前端的token
 func (r *AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -51,12 +51,12 @@ func (r *AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) SetToken(_token s
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is AlispTime Setter
+// SetAlispTime is AlispTime Setter
 // 时间戳
 func (r *AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) SetAlispTime(_alispTime string) error {
 	r._alispTime = _alispTime
@@ -64,12 +64,12 @@ func (r *AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) SetAlispTime(_ali
 	return nil
 }
 
-// Get AlispTime Getter
+// GetAlispTime AlispTime Getter
 func (r AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) GetAlispTime() string {
 	return r._alispTime
 }
 
-// Set is AlispAppKey Setter
+// SetAlispAppKey is AlispAppKey Setter
 // 应用的appkey
 func (r *AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) SetAlispAppKey(_alispAppKey string) error {
 	r._alispAppKey = _alispAppKey
@@ -77,12 +77,12 @@ func (r *AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) SetAlispAppKey(_a
 	return nil
 }
 
-// Get AlispAppKey Getter
+// GetAlispAppKey AlispAppKey Getter
 func (r AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) GetAlispAppKey() string {
 	return r._alispAppKey
 }
 
-// Set is AlispSign Setter
+// SetAlispSign is AlispSign Setter
 // 参数加密之后的串
 func (r *AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) SetAlispSign(_alispSign string) error {
 	r._alispSign = _alispSign
@@ -90,7 +90,7 @@ func (r *AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) SetAlispSign(_ali
 	return nil
 }
 
-// Get AlispSign Getter
+// GetAlispSign AlispSign Getter
 func (r AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) GetAlispSign() string {
 	return r._alispSign
 }

@@ -37,7 +37,7 @@ func (r TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is PoiId Setter
+// SetPoiId is PoiId Setter
 // poiId
 func (r *TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest) SetPoiId(_poiId int64) error {
 	r._poiId = _poiId
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest) SetPoiId(_poiId int64)
 	return nil
 }
 
-// Get PoiId Getter
+// GetPoiId PoiId Getter
 func (r TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest) GetPoiId() int64 {
 	return r._poiId
 }

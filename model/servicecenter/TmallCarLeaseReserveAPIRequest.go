@@ -47,7 +47,7 @@ func (r TmallCarLeaseReserveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BuyerId Setter
+// SetBuyerId is BuyerId Setter
 // 买家id
 func (r *TmallCarLeaseReserveAPIRequest) SetBuyerId(_buyerId int64) error {
 	r._buyerId = _buyerId
@@ -55,12 +55,12 @@ func (r *TmallCarLeaseReserveAPIRequest) SetBuyerId(_buyerId int64) error {
 	return nil
 }
 
-// Get BuyerId Getter
+// GetBuyerId BuyerId Getter
 func (r TmallCarLeaseReserveAPIRequest) GetBuyerId() int64 {
 	return r._buyerId
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *TmallCarLeaseReserveAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -68,12 +68,12 @@ func (r *TmallCarLeaseReserveAPIRequest) SetOrderId(_orderId int64) error {
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TmallCarLeaseReserveAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is Text Setter
+// SetText is Text Setter
 // 文案
 func (r *TmallCarLeaseReserveAPIRequest) SetText(_text string) error {
 	r._text = _text
@@ -81,12 +81,12 @@ func (r *TmallCarLeaseReserveAPIRequest) SetText(_text string) error {
 	return nil
 }
 
-// Get Text Getter
+// GetText Text Getter
 func (r TmallCarLeaseReserveAPIRequest) GetText() string {
 	return r._text
 }
 
-// Set is Vin Setter
+// SetVin is Vin Setter
 // 车架号
 func (r *TmallCarLeaseReserveAPIRequest) SetVin(_vin string) error {
 	r._vin = _vin
@@ -94,12 +94,12 @@ func (r *TmallCarLeaseReserveAPIRequest) SetVin(_vin string) error {
 	return nil
 }
 
-// Get Vin Getter
+// GetVin Vin Getter
 func (r TmallCarLeaseReserveAPIRequest) GetVin() string {
 	return r._vin
 }
 
-// Set is Flag Setter
+// SetFlag is Flag Setter
 // 1 代表 车辆到店，已预约用户到店提车   ; 2 车辆到店，未能联系到用户
 func (r *TmallCarLeaseReserveAPIRequest) SetFlag(_flag int64) error {
 	r._flag = _flag
@@ -107,12 +107,12 @@ func (r *TmallCarLeaseReserveAPIRequest) SetFlag(_flag int64) error {
 	return nil
 }
 
-// Get Flag Getter
+// GetFlag Flag Getter
 func (r TmallCarLeaseReserveAPIRequest) GetFlag() int64 {
 	return r._flag
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 买家昵称
 func (r *TmallCarLeaseReserveAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -120,7 +120,7 @@ func (r *TmallCarLeaseReserveAPIRequest) SetBuyerNick(_buyerNick string) error {
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r TmallCarLeaseReserveAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }

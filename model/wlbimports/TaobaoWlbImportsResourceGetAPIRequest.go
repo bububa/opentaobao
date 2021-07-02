@@ -39,7 +39,7 @@ func (r TaobaoWlbImportsResourceGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FromId Setter
+// SetFromId is FromId Setter
 // 卖家发货地区域ID
 func (r *TaobaoWlbImportsResourceGetAPIRequest) SetFromId(_fromId int64) error {
 	r._fromId = _fromId
@@ -47,12 +47,12 @@ func (r *TaobaoWlbImportsResourceGetAPIRequest) SetFromId(_fromId int64) error {
 	return nil
 }
 
-// Get FromId Getter
+// GetFromId FromId Getter
 func (r TaobaoWlbImportsResourceGetAPIRequest) GetFromId() int64 {
 	return r._fromId
 }
 
-// Set is ToAddress Setter
+// SetToAddress is ToAddress Setter
 // 买家收货地信息
 func (r *TaobaoWlbImportsResourceGetAPIRequest) SetToAddress(_toAddress *ReciverAddressDo) error {
 	r._toAddress = _toAddress
@@ -60,7 +60,7 @@ func (r *TaobaoWlbImportsResourceGetAPIRequest) SetToAddress(_toAddress *Reciver
 	return nil
 }
 
-// Get ToAddress Getter
+// GetToAddress ToAddress Getter
 func (r TaobaoWlbImportsResourceGetAPIRequest) GetToAddress() *ReciverAddressDo {
 	return r._toAddress
 }

@@ -43,7 +43,7 @@ func (r AlibabaAilabsAligenieDeviceUnbindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Ext Setter
+// SetExt is Ext Setter
 // 扩展信息，用于存放APP类型等
 func (r *AlibabaAilabsAligenieDeviceUnbindAPIRequest) SetExt(_ext string) error {
 	r._ext = _ext
@@ -51,12 +51,12 @@ func (r *AlibabaAilabsAligenieDeviceUnbindAPIRequest) SetExt(_ext string) error 
 	return nil
 }
 
-// Get Ext Getter
+// GetExt Ext Getter
 func (r AlibabaAilabsAligenieDeviceUnbindAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
 func (r *AlibabaAilabsAligenieDeviceUnbindAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -64,12 +64,12 @@ func (r *AlibabaAilabsAligenieDeviceUnbindAPIRequest) SetUserId(_userId string) 
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaAilabsAligenieDeviceUnbindAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // 账户体系隔离字符串
 func (r *AlibabaAilabsAligenieDeviceUnbindAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -77,12 +77,12 @@ func (r *AlibabaAilabsAligenieDeviceUnbindAPIRequest) SetSchema(_schema string) 
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r AlibabaAilabsAligenieDeviceUnbindAPIRequest) GetSchema() string {
 	return r._schema
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 欲解绑的设备ID
 func (r *AlibabaAilabsAligenieDeviceUnbindAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -90,7 +90,7 @@ func (r *AlibabaAilabsAligenieDeviceUnbindAPIRequest) SetUuid(_uuid string) erro
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r AlibabaAilabsAligenieDeviceUnbindAPIRequest) GetUuid() string {
 	return r._uuid
 }

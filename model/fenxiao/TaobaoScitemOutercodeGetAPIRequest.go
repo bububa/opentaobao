@@ -37,7 +37,7 @@ func (r TaobaoScitemOutercodeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuterCode Setter
+// SetOuterCode is OuterCode Setter
 // 商品编码
 func (r *TaobaoScitemOutercodeGetAPIRequest) SetOuterCode(_outerCode string) error {
 	r._outerCode = _outerCode
@@ -45,7 +45,7 @@ func (r *TaobaoScitemOutercodeGetAPIRequest) SetOuterCode(_outerCode string) err
 	return nil
 }
 
-// Get OuterCode Getter
+// GetOuterCode OuterCode Getter
 func (r TaobaoScitemOutercodeGetAPIRequest) GetOuterCode() string {
 	return r._outerCode
 }

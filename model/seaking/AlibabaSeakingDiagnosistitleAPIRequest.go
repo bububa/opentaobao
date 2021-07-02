@@ -49,7 +49,7 @@ func (r AlibabaSeakingDiagnosistitleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 类目id,没有的时候传-1
 func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
@@ -57,12 +57,12 @@ func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetCategoryId(_categoryId int64
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r AlibabaSeakingDiagnosistitleAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }
 
-// Set is Extra Setter
+// SetExtra is Extra Setter
 // 扩展信息
 func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetExtra(_extra *Extra) error {
 	r._extra = _extra
@@ -70,12 +70,12 @@ func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetExtra(_extra *Extra) error {
 	return nil
 }
 
-// Get Extra Getter
+// GetExtra Extra Getter
 func (r AlibabaSeakingDiagnosistitleAPIRequest) GetExtra() *Extra {
 	return r._extra
 }
 
-// Set is Identifier Setter
+// SetIdentifier is Identifier Setter
 // erp用户id
 func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetIdentifier(_identifier string) error {
 	r._identifier = _identifier
@@ -83,12 +83,12 @@ func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetIdentifier(_identifier strin
 	return nil
 }
 
-// Get Identifier Getter
+// GetIdentifier Identifier Getter
 func (r AlibabaSeakingDiagnosistitleAPIRequest) GetIdentifier() string {
 	return r._identifier
 }
 
-// Set is IdentifierType Setter
+// SetIdentifierType is IdentifierType Setter
 // 调用来源(erp名称)
 func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetIdentifierType(_identifierType string) error {
 	r._identifierType = _identifierType
@@ -96,12 +96,12 @@ func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetIdentifierType(_identifierTy
 	return nil
 }
 
-// Get IdentifierType Getter
+// GetIdentifierType IdentifierType Getter
 func (r AlibabaSeakingDiagnosistitleAPIRequest) GetIdentifierType() string {
 	return r._identifierType
 }
 
-// Set is Language Setter
+// SetLanguage is Language Setter
 // 语种
 func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetLanguage(_language string) error {
 	r._language = _language
@@ -109,12 +109,12 @@ func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetLanguage(_language string) e
 	return nil
 }
 
-// Get Language Getter
+// GetLanguage Language Getter
 func (r AlibabaSeakingDiagnosistitleAPIRequest) GetLanguage() string {
 	return r._language
 }
 
-// Set is Platform Setter
+// SetPlatform is Platform Setter
 // 商品所在平台（ae/icbu）
 func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetPlatform(_platform string) error {
 	r._platform = _platform
@@ -122,12 +122,12 @@ func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetPlatform(_platform string) e
 	return nil
 }
 
-// Get Platform Getter
+// GetPlatform Platform Getter
 func (r AlibabaSeakingDiagnosistitleAPIRequest) GetPlatform() string {
 	return r._platform
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 标题
 func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -135,7 +135,7 @@ func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r AlibabaSeakingDiagnosistitleAPIRequest) GetTitle() string {
 	return r._title
 }

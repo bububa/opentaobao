@@ -53,7 +53,7 @@ func (r AlibabaMoutonActivityListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartTimeEnd Setter
+// SetStartTimeEnd is StartTimeEnd Setter
 // 开始时间
 func (r *AlibabaMoutonActivityListAPIRequest) SetStartTimeEnd(_startTimeEnd string) error {
 	r._startTimeEnd = _startTimeEnd
@@ -61,12 +61,12 @@ func (r *AlibabaMoutonActivityListAPIRequest) SetStartTimeEnd(_startTimeEnd stri
 	return nil
 }
 
-// Get StartTimeEnd Getter
+// GetStartTimeEnd StartTimeEnd Getter
 func (r AlibabaMoutonActivityListAPIRequest) GetStartTimeEnd() string {
 	return r._startTimeEnd
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页记录数
 func (r *AlibabaMoutonActivityListAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -74,12 +74,12 @@ func (r *AlibabaMoutonActivityListAPIRequest) SetPageSize(_pageSize int64) error
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaMoutonActivityListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 来源
 func (r *AlibabaMoutonActivityListAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -87,12 +87,12 @@ func (r *AlibabaMoutonActivityListAPIRequest) SetSource(_source string) error {
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r AlibabaMoutonActivityListAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is StartTimeBegin Setter
+// SetStartTimeBegin is StartTimeBegin Setter
 // 开始时间
 func (r *AlibabaMoutonActivityListAPIRequest) SetStartTimeBegin(_startTimeBegin string) error {
 	r._startTimeBegin = _startTimeBegin
@@ -100,12 +100,12 @@ func (r *AlibabaMoutonActivityListAPIRequest) SetStartTimeBegin(_startTimeBegin 
 	return nil
 }
 
-// Get StartTimeBegin Getter
+// GetStartTimeBegin StartTimeBegin Getter
 func (r AlibabaMoutonActivityListAPIRequest) GetStartTimeBegin() string {
 	return r._startTimeBegin
 }
 
-// Set is EndTimeBegin Setter
+// SetEndTimeBegin is EndTimeBegin Setter
 // 结束时间
 func (r *AlibabaMoutonActivityListAPIRequest) SetEndTimeBegin(_endTimeBegin string) error {
 	r._endTimeBegin = _endTimeBegin
@@ -113,12 +113,12 @@ func (r *AlibabaMoutonActivityListAPIRequest) SetEndTimeBegin(_endTimeBegin stri
 	return nil
 }
 
-// Get EndTimeBegin Getter
+// GetEndTimeBegin EndTimeBegin Getter
 func (r AlibabaMoutonActivityListAPIRequest) GetEndTimeBegin() string {
 	return r._endTimeBegin
 }
 
-// Set is EndTimeEnd Setter
+// SetEndTimeEnd is EndTimeEnd Setter
 // 结束时间
 func (r *AlibabaMoutonActivityListAPIRequest) SetEndTimeEnd(_endTimeEnd string) error {
 	r._endTimeEnd = _endTimeEnd
@@ -126,12 +126,12 @@ func (r *AlibabaMoutonActivityListAPIRequest) SetEndTimeEnd(_endTimeEnd string) 
 	return nil
 }
 
-// Get EndTimeEnd Getter
+// GetEndTimeEnd EndTimeEnd Getter
 func (r AlibabaMoutonActivityListAPIRequest) GetEndTimeEnd() string {
 	return r._endTimeEnd
 }
 
-// Set is SourceRecordId Setter
+// SetSourceRecordId is SourceRecordId Setter
 // 来源记录id
 func (r *AlibabaMoutonActivityListAPIRequest) SetSourceRecordId(_sourceRecordId int64) error {
 	r._sourceRecordId = _sourceRecordId
@@ -139,12 +139,12 @@ func (r *AlibabaMoutonActivityListAPIRequest) SetSourceRecordId(_sourceRecordId 
 	return nil
 }
 
-// Get SourceRecordId Getter
+// GetSourceRecordId SourceRecordId Getter
 func (r AlibabaMoutonActivityListAPIRequest) GetSourceRecordId() int64 {
 	return r._sourceRecordId
 }
 
-// Set is StatusList Setter
+// SetStatusList is StatusList Setter
 // 状态
 func (r *AlibabaMoutonActivityListAPIRequest) SetStatusList(_statusList []string) error {
 	r._statusList = _statusList
@@ -152,12 +152,12 @@ func (r *AlibabaMoutonActivityListAPIRequest) SetStatusList(_statusList []string
 	return nil
 }
 
-// Get StatusList Getter
+// GetStatusList StatusList Getter
 func (r AlibabaMoutonActivityListAPIRequest) GetStatusList() []string {
 	return r._statusList
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前页
 func (r *AlibabaMoutonActivityListAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -165,7 +165,7 @@ func (r *AlibabaMoutonActivityListAPIRequest) SetCurrentPage(_currentPage int64)
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r AlibabaMoutonActivityListAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }

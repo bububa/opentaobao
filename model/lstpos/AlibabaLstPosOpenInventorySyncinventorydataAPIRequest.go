@@ -39,7 +39,7 @@ func (r AlibabaLstPosOpenInventorySyncinventorydataAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is InventoryDTOList Setter
+// SetInventoryDTOList is InventoryDTOList Setter
 // 库存对象列表
 func (r *AlibabaLstPosOpenInventorySyncinventorydataAPIRequest) SetInventoryDTOList(_inventoryDTOList []InventoryDto) error {
 	r._inventoryDTOList = _inventoryDTOList
@@ -47,12 +47,12 @@ func (r *AlibabaLstPosOpenInventorySyncinventorydataAPIRequest) SetInventoryDTOL
 	return nil
 }
 
-// Get InventoryDTOList Getter
+// GetInventoryDTOList InventoryDTOList Getter
 func (r AlibabaLstPosOpenInventorySyncinventorydataAPIRequest) GetInventoryDTOList() []InventoryDto {
 	return r._inventoryDTOList
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 门店对应的主账号id
 func (r *AlibabaLstPosOpenInventorySyncinventorydataAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -60,7 +60,7 @@ func (r *AlibabaLstPosOpenInventorySyncinventorydataAPIRequest) SetUserId(_userI
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaLstPosOpenInventorySyncinventorydataAPIRequest) GetUserId() int64 {
 	return r._userId
 }

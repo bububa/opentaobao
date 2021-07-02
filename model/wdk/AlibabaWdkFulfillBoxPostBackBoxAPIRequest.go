@@ -37,7 +37,7 @@ func (r AlibabaWdkFulfillBoxPostBackBoxAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReturnBoxContainerRequest Setter
+// SetReturnBoxContainerRequest is ReturnBoxContainerRequest Setter
 // RT收箱回传请求参数
 func (r *AlibabaWdkFulfillBoxPostBackBoxAPIRequest) SetReturnBoxContainerRequest(_returnBoxContainerRequest *ReturnBoxContainerRequest) error {
 	r._returnBoxContainerRequest = _returnBoxContainerRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkFulfillBoxPostBackBoxAPIRequest) SetReturnBoxContainerRequest
 	return nil
 }
 
-// Get ReturnBoxContainerRequest Getter
+// GetReturnBoxContainerRequest ReturnBoxContainerRequest Getter
 func (r AlibabaWdkFulfillBoxPostBackBoxAPIRequest) GetReturnBoxContainerRequest() *ReturnBoxContainerRequest {
 	return r._returnBoxContainerRequest
 }

@@ -37,7 +37,7 @@ func (r AlibabaIdleAppraiseSpuRegisterModifyAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is IdleAppraiseSpuRegister4TopDto Setter
+// SetIdleAppraiseSpuRegister4TopDto is IdleAppraiseSpuRegister4TopDto Setter
 // 入参
 func (r *AlibabaIdleAppraiseSpuRegisterModifyAPIRequest) SetIdleAppraiseSpuRegister4TopDto(_idleAppraiseSpuRegister4TopDto *IdleAppraiseSpuRegister4TopDto) error {
 	r._idleAppraiseSpuRegister4TopDto = _idleAppraiseSpuRegister4TopDto
@@ -45,7 +45,7 @@ func (r *AlibabaIdleAppraiseSpuRegisterModifyAPIRequest) SetIdleAppraiseSpuRegis
 	return nil
 }
 
-// Get IdleAppraiseSpuRegister4TopDto Getter
+// GetIdleAppraiseSpuRegister4TopDto IdleAppraiseSpuRegister4TopDto Getter
 func (r AlibabaIdleAppraiseSpuRegisterModifyAPIRequest) GetIdleAppraiseSpuRegister4TopDto() *IdleAppraiseSpuRegister4TopDto {
 	return r._idleAppraiseSpuRegister4TopDto
 }

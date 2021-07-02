@@ -37,7 +37,7 @@ func (r AlibabaHappytripTaxiIdGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Uid Setter
+// SetUid is Uid Setter
 // 用户唯一标识
 func (r *AlibabaHappytripTaxiIdGetAPIRequest) SetUid(_uid string) error {
 	r._uid = _uid
@@ -45,7 +45,7 @@ func (r *AlibabaHappytripTaxiIdGetAPIRequest) SetUid(_uid string) error {
 	return nil
 }
 
-// Get Uid Getter
+// GetUid Uid Getter
 func (r AlibabaHappytripTaxiIdGetAPIRequest) GetUid() string {
 	return r._uid
 }

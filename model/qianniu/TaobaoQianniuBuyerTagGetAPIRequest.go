@@ -39,7 +39,7 @@ func (r TaobaoQianniuBuyerTagGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 买家nick
 func (r *TaobaoQianniuBuyerTagGetAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -47,12 +47,12 @@ func (r *TaobaoQianniuBuyerTagGetAPIRequest) SetBuyerNick(_buyerNick string) err
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r TaobaoQianniuBuyerTagGetAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }
 
-// Set is TagList Setter
+// SetTagList is TagList Setter
 // 支持的表，多个tag用英文逗号切割
 func (r *TaobaoQianniuBuyerTagGetAPIRequest) SetTagList(_tagList string) error {
 	r._tagList = _tagList
@@ -60,7 +60,7 @@ func (r *TaobaoQianniuBuyerTagGetAPIRequest) SetTagList(_tagList string) error {
 	return nil
 }
 
-// Get TagList Getter
+// GetTagList TagList Getter
 func (r TaobaoQianniuBuyerTagGetAPIRequest) GetTagList() string {
 	return r._tagList
 }

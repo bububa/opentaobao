@@ -37,7 +37,7 @@ func (r AlibabaInteractAopdataRegisterAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamTopIsvDecorateParam Setter
+// SetParamTopIsvDecorateParam is ParamTopIsvDecorateParam Setter
 // 入参
 func (r *AlibabaInteractAopdataRegisterAPIRequest) SetParamTopIsvDecorateParam(_paramTopIsvDecorateParam *TopIsvDecorateParam) error {
 	r._paramTopIsvDecorateParam = _paramTopIsvDecorateParam
@@ -45,7 +45,7 @@ func (r *AlibabaInteractAopdataRegisterAPIRequest) SetParamTopIsvDecorateParam(_
 	return nil
 }
 
-// Get ParamTopIsvDecorateParam Getter
+// GetParamTopIsvDecorateParam ParamTopIsvDecorateParam Getter
 func (r AlibabaInteractAopdataRegisterAPIRequest) GetParamTopIsvDecorateParam() *TopIsvDecorateParam {
 	return r._paramTopIsvDecorateParam
 }

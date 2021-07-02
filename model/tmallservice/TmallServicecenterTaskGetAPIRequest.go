@@ -37,7 +37,7 @@ func (r TmallServicecenterTaskGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParentBizOrderId Setter
+// SetParentBizOrderId is ParentBizOrderId Setter
 // Taobao主交易订单ID
 func (r *TmallServicecenterTaskGetAPIRequest) SetParentBizOrderId(_parentBizOrderId int64) error {
 	r._parentBizOrderId = _parentBizOrderId
@@ -45,7 +45,7 @@ func (r *TmallServicecenterTaskGetAPIRequest) SetParentBizOrderId(_parentBizOrde
 	return nil
 }
 
-// Get ParentBizOrderId Getter
+// GetParentBizOrderId ParentBizOrderId Getter
 func (r TmallServicecenterTaskGetAPIRequest) GetParentBizOrderId() int64 {
 	return r._parentBizOrderId
 }

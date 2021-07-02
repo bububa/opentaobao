@@ -37,7 +37,7 @@ func (r TaobaoShopcatsListGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需要返回的字段列表，见ShopCat，默认返回：cid,parent_cid,name,is_parent
 func (r *TaobaoShopcatsListGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -45,7 +45,7 @@ func (r *TaobaoShopcatsListGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoShopcatsListGetAPIRequest) GetFields() []string {
 	return r._fields
 }

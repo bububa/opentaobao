@@ -37,7 +37,7 @@ func (r TaobaoWlbOrderCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WlbOrderCode Setter
+// SetWlbOrderCode is WlbOrderCode Setter
 // 物流宝订单编号
 func (r *TaobaoWlbOrderCancelAPIRequest) SetWlbOrderCode(_wlbOrderCode string) error {
 	r._wlbOrderCode = _wlbOrderCode
@@ -45,7 +45,7 @@ func (r *TaobaoWlbOrderCancelAPIRequest) SetWlbOrderCode(_wlbOrderCode string) e
 	return nil
 }
 
-// Get WlbOrderCode Getter
+// GetWlbOrderCode WlbOrderCode Getter
 func (r TaobaoWlbOrderCancelAPIRequest) GetWlbOrderCode() string {
 	return r._wlbOrderCode
 }

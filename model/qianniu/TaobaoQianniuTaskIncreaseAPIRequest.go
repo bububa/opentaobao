@@ -39,7 +39,7 @@ func (r TaobaoQianniuTaskIncreaseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MetadataId Setter
+// SetMetadataId is MetadataId Setter
 // 任务元id
 func (r *TaobaoQianniuTaskIncreaseAPIRequest) SetMetadataId(_metadataId int64) error {
 	r._metadataId = _metadataId
@@ -47,12 +47,12 @@ func (r *TaobaoQianniuTaskIncreaseAPIRequest) SetMetadataId(_metadataId int64) e
 	return nil
 }
 
-// Get MetadataId Getter
+// GetMetadataId MetadataId Getter
 func (r TaobaoQianniuTaskIncreaseAPIRequest) GetMetadataId() int64 {
 	return r._metadataId
 }
 
-// Set is Tasks Setter
+// SetTasks is Tasks Setter
 // 任务列表，JSON格式，例如： tasks =[{ "receiver_uid" : 123, "receiver_nick" : "nick"}, { "receiver_uid" : 456, "receiver_nick" : "nick2"} ]
 func (r *TaobaoQianniuTaskIncreaseAPIRequest) SetTasks(_tasks string) error {
 	r._tasks = _tasks
@@ -60,7 +60,7 @@ func (r *TaobaoQianniuTaskIncreaseAPIRequest) SetTasks(_tasks string) error {
 	return nil
 }
 
-// Get Tasks Getter
+// GetTasks Tasks Getter
 func (r TaobaoQianniuTaskIncreaseAPIRequest) GetTasks() string {
 	return r._tasks
 }

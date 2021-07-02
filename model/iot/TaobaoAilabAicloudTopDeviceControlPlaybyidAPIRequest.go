@@ -45,7 +45,7 @@ func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 用户信息
 func (r *TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
 	r._param0 = _param0
@@ -53,12 +53,12 @@ func (r *TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) SetParam0(_param0
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetParam0() *OpenBaseInfo {
 	return r._param0
 }
 
-// Set is Param1 Setter
+// SetParam1 is Param1 Setter
 // 设备id
 func (r *TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) SetParam1(_param1 string) error {
 	r._param1 = _param1
@@ -66,12 +66,12 @@ func (r *TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) SetParam1(_param1
 	return nil
 }
 
-// Get Param1 Getter
+// GetParam1 Param1 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetParam1() string {
 	return r._param1
 }
 
-// Set is Param2 Setter
+// SetParam2 is Param2 Setter
 // 音频id
 func (r *TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) SetParam2(_param2 string) error {
 	r._param2 = _param2
@@ -79,12 +79,12 @@ func (r *TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) SetParam2(_param2
 	return nil
 }
 
-// Get Param2 Getter
+// GetParam2 Param2 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetParam2() string {
 	return r._param2
 }
 
-// Set is Param3 Setter
+// SetParam3 is Param3 Setter
 // 音频来源
 func (r *TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) SetParam3(_param3 string) error {
 	r._param3 = _param3
@@ -92,12 +92,12 @@ func (r *TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) SetParam3(_param3
 	return nil
 }
 
-// Get Param3 Getter
+// GetParam3 Param3 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetParam3() string {
 	return r._param3
 }
 
-// Set is Param4 Setter
+// SetParam4 is Param4 Setter
 // 音频类型，如果没有音频类型默认填children_song
 func (r *TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) SetParam4(_param4 string) error {
 	r._param4 = _param4
@@ -105,7 +105,7 @@ func (r *TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) SetParam4(_param4
 	return nil
 }
 
-// Get Param4 Getter
+// GetParam4 Param4 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetParam4() string {
 	return r._param4
 }

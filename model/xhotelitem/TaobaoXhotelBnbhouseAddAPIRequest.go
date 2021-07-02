@@ -107,7 +107,7 @@ func (r TaobaoXhotelBnbhouseAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutOwnerId Setter
+// SetOutOwnerId is OutOwnerId Setter
 // 外部房东id
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetOutOwnerId(_outOwnerId string) error {
 	r._outOwnerId = _outOwnerId
@@ -115,12 +115,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetOutOwnerId(_outOwnerId string) er
 	return nil
 }
 
-// Get OutOwnerId Getter
+// GetOutOwnerId OutOwnerId Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetOutOwnerId() string {
 	return r._outOwnerId
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 对接系统商名称：可为空不要乱填，需要申请后使用
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -128,12 +128,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetVendor(_vendor string) error {
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 供应商渠道门店ID
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -141,12 +141,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetOuterId(_outerId string) error {
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 门店名称
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -154,12 +154,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is NameE Setter
+// SetNameE is NameE Setter
 // 门店英文名称
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetNameE(_nameE string) error {
 	r._nameE = _nameE
@@ -167,12 +167,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetNameE(_nameE string) error {
 	return nil
 }
 
-// Get NameE Getter
+// GetNameE NameE Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetNameE() string {
 	return r._nameE
 }
 
-// Set is Attributes Setter
+// SetAttributes is Attributes Setter
 // 门店属性 1 个人房源 2 城市公寓 3 乡村民宿等
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetAttributes(_attributes int64) error {
 	r._attributes = _attributes
@@ -180,12 +180,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetAttributes(_attributes int64) err
 	return nil
 }
 
-// Get Attributes Getter
+// GetAttributes Attributes Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetAttributes() int64 {
 	return r._attributes
 }
 
-// Set is ProductType Setter
+// SetProductType is ProductType Setter
 // 门店类型，详见“房源类型list
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetProductType(_productType int64) error {
 	r._productType = _productType
@@ -193,12 +193,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetProductType(_productType int64) e
 	return nil
 }
 
-// Get ProductType Getter
+// GetProductType ProductType Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetProductType() int64 {
 	return r._productType
 }
 
-// Set is HasLicense Setter
+// SetHasLicense is HasLicense Setter
 // 有无资质执照 0 无资质 1有资质
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetHasLicense(_hasLicense int64) error {
 	r._hasLicense = _hasLicense
@@ -206,12 +206,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetHasLicense(_hasLicense int64) err
 	return nil
 }
 
-// Get HasLicense Getter
+// GetHasLicense HasLicense Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetHasLicense() int64 {
 	return r._hasLicense
 }
 
-// Set is HouseSize Setter
+// SetHouseSize is HouseSize Setter
 // 面积大小
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetHouseSize(_houseSize int64) error {
 	r._houseSize = _houseSize
@@ -219,12 +219,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetHouseSize(_houseSize int64) error
 	return nil
 }
 
-// Get HouseSize Getter
+// GetHouseSize HouseSize Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetHouseSize() int64 {
 	return r._houseSize
 }
 
-// Set is Floors Setter
+// SetFloors is Floors Setter
 // 楼层
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetFloors(_floors string) error {
 	r._floors = _floors
@@ -232,12 +232,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetFloors(_floors string) error {
 	return nil
 }
 
-// Get Floors Getter
+// GetFloors Floors Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetFloors() string {
 	return r._floors
 }
 
-// Set is Description Setter
+// SetDescription is Description Setter
 // 门店简介
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDescription(_description string) error {
 	r._description = _description
@@ -245,12 +245,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDescription(_description string) 
 	return nil
 }
 
-// Get Description Getter
+// GetDescription Description Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetDescription() string {
 	return r._description
 }
 
-// Set is Facilities Setter
+// SetFacilities is Facilities Setter
 // 酒店设施。json格式示例值：{"24152":true,"24149":true,"24150":true}，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&docType=1&articleId=108416&previewCode=987A11324A278EF679E24102BA30D426 中type=20的分类
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetFacilities(_facilities string) error {
 	r._facilities = _facilities
@@ -258,12 +258,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetFacilities(_facilities string) er
 	return nil
 }
 
-// Get Facilities Getter
+// GetFacilities Facilities Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetFacilities() string {
 	return r._facilities
 }
 
-// Set is Brand Setter
+// SetBrand is Brand Setter
 // 品牌名称
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetBrand(_brand string) error {
 	r._brand = _brand
@@ -271,12 +271,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetBrand(_brand string) error {
 	return nil
 }
 
-// Get Brand Getter
+// GetBrand Brand Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetBrand() string {
 	return r._brand
 }
 
-// Set is OpeningTime Setter
+// SetOpeningTime is OpeningTime Setter
 // 开业时间，格式为2015-01-01
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetOpeningTime(_openingTime string) error {
 	r._openingTime = _openingTime
@@ -284,12 +284,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetOpeningTime(_openingTime string) 
 	return nil
 }
 
-// Get OpeningTime Getter
+// GetOpeningTime OpeningTime Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetOpeningTime() string {
 	return r._openingTime
 }
 
-// Set is DecorateLevel Setter
+// SetDecorateLevel is DecorateLevel Setter
 // 装修等级 1 精装 2普通 3简装
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDecorateLevel(_decorateLevel int64) error {
 	r._decorateLevel = _decorateLevel
@@ -297,12 +297,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDecorateLevel(_decorateLevel int6
 	return nil
 }
 
-// Get DecorateLevel Getter
+// GetDecorateLevel DecorateLevel Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetDecorateLevel() int64 {
 	return r._decorateLevel
 }
 
-// Set is DecorateTime Setter
+// SetDecorateTime is DecorateTime Setter
 // 装修时间，格式为2015-01-01
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDecorateTime(_decorateTime string) error {
 	r._decorateTime = _decorateTime
@@ -310,12 +310,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDecorateTime(_decorateTime string
 	return nil
 }
 
-// Get DecorateTime Getter
+// GetDecorateTime DecorateTime Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetDecorateTime() string {
 	return r._decorateTime
 }
 
-// Set is DecorateStyle Setter
+// SetDecorateStyle is DecorateStyle Setter
 // 装修风格，详见装修风格枚举表
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDecorateStyle(_decorateStyle int64) error {
 	r._decorateStyle = _decorateStyle
@@ -323,12 +323,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDecorateStyle(_decorateStyle int6
 	return nil
 }
 
-// Get DecorateStyle Getter
+// GetDecorateStyle DecorateStyle Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetDecorateStyle() int64 {
 	return r._decorateStyle
 }
 
-// Set is ScenicFeature Setter
+// SetScenicFeature is ScenicFeature Setter
 // 风景类型，详见风景类型枚举表
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetScenicFeature(_scenicFeature int64) error {
 	r._scenicFeature = _scenicFeature
@@ -336,12 +336,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetScenicFeature(_scenicFeature int6
 	return nil
 }
 
-// Get ScenicFeature Getter
+// GetScenicFeature ScenicFeature Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetScenicFeature() int64 {
 	return r._scenicFeature
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 房型状态。0:正常，-1:删除，-2:停售
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetStatus(_status *model.File) error {
 	r._status = _status
@@ -349,12 +349,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetStatus(_status *model.File) error
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetStatus() *model.File {
 	return r._status
 }
 
-// Set is Tel Setter
+// SetTel is Tel Setter
 // 联系方式。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetTel(_tel string) error {
 	r._tel = _tel
@@ -362,12 +362,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetTel(_tel string) error {
 	return nil
 }
 
-// Get Tel Getter
+// GetTel Tel Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetTel() string {
 	return r._tel
 }
 
-// Set is RealTel Setter
+// SetRealTel is RealTel Setter
 // 真实联系方式
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetRealTel(_realTel string) error {
 	r._realTel = _realTel
@@ -375,12 +375,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetRealTel(_realTel string) error {
 	return nil
 }
 
-// Get RealTel Getter
+// GetRealTel RealTel Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetRealTel() string {
 	return r._realTel
 }
 
-// Set is SettlementCurrency Setter
+// SetSettlementCurrency is SettlementCurrency Setter
 // 结算过程中的结算币种符合，如需对接请联系飞猪技术支持，请谨慎使用
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetSettlementCurrency(_settlementCurrency string) error {
 	r._settlementCurrency = _settlementCurrency
@@ -388,12 +388,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetSettlementCurrency(_settlementCur
 	return nil
 }
 
-// Get SettlementCurrency Getter
+// GetSettlementCurrency SettlementCurrency Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetSettlementCurrency() string {
 	return r._settlementCurrency
 }
 
-// Set is Pictures Setter
+// SetPictures is Pictures Setter
 // 民宿门店添加
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetPictures(_pictures []BnbPictureDto) error {
 	r._pictures = _pictures
@@ -401,12 +401,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetPictures(_pictures []BnbPictureDt
 	return nil
 }
 
-// Get Pictures Getter
+// GetPictures Pictures Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetPictures() []BnbPictureDto {
 	return r._pictures
 }
 
-// Set is Tags Setter
+// SetTags is Tags Setter
 // 门店标签 标签信息，逗号(,)分隔
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetTags(_tags string) error {
 	r._tags = _tags
@@ -414,12 +414,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetTags(_tags string) error {
 	return nil
 }
 
-// Get Tags Getter
+// GetTags Tags Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetTags() string {
 	return r._tags
 }
 
-// Set is IsUseShootImage Setter
+// SetIsUseShootImage is IsUseShootImage Setter
 // 是否使用实拍图片 0不使用 1使用
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetIsUseShootImage(_isUseShootImage int64) error {
 	r._isUseShootImage = _isUseShootImage
@@ -427,12 +427,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetIsUseShootImage(_isUseShootImage 
 	return nil
 }
 
-// Get IsUseShootImage Getter
+// GetIsUseShootImage IsUseShootImage Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetIsUseShootImage() int64 {
 	return r._isUseShootImage
 }
 
-// Set is VideoUrl Setter
+// SetVideoUrl is VideoUrl Setter
 // 视频地址
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetVideoUrl(_videoUrl string) error {
 	r._videoUrl = _videoUrl
@@ -440,12 +440,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetVideoUrl(_videoUrl string) error 
 	return nil
 }
 
-// Get VideoUrl Getter
+// GetVideoUrl VideoUrl Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetVideoUrl() string {
 	return r._videoUrl
 }
 
-// Set is HasFrontDesk Setter
+// SetHasFrontDesk is HasFrontDesk Setter
 // 是否有前台 0没有 1有
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetHasFrontDesk(_hasFrontDesk int64) error {
 	r._hasFrontDesk = _hasFrontDesk
@@ -453,12 +453,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetHasFrontDesk(_hasFrontDesk int64)
 	return nil
 }
 
-// Get HasFrontDesk Getter
+// GetHasFrontDesk HasFrontDesk Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetHasFrontDesk() int64 {
 	return r._hasFrontDesk
 }
 
-// Set is Location Setter
+// SetLocation is Location Setter
 // 位置信息
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetLocation(_location *BnbLocationDto) error {
 	r._location = _location
@@ -466,12 +466,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetLocation(_location *BnbLocationDt
 	return nil
 }
 
-// Get Location Getter
+// GetLocation Location Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetLocation() *BnbLocationDto {
 	return r._location
 }
 
-// Set is BnbBookingTime Setter
+// SetBnbBookingTime is BnbBookingTime Setter
 // 入住要求&附加信息
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetBnbBookingTime(_bnbBookingTime *BnbBookingTimeDto) error {
 	r._bnbBookingTime = _bnbBookingTime
@@ -479,12 +479,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetBnbBookingTime(_bnbBookingTime *B
 	return nil
 }
 
-// Get BnbBookingTime Getter
+// GetBnbBookingTime BnbBookingTime Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetBnbBookingTime() *BnbBookingTimeDto {
 	return r._bnbBookingTime
 }
 
-// Set is CheckInNotes Setter
+// SetCheckInNotes is CheckInNotes Setter
 // 入住须知
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetCheckInNotes(_checkInNotes string) error {
 	r._checkInNotes = _checkInNotes
@@ -492,12 +492,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetCheckInNotes(_checkInNotes string
 	return nil
 }
 
-// Get CheckInNotes Getter
+// GetCheckInNotes CheckInNotes Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetCheckInNotes() string {
 	return r._checkInNotes
 }
 
-// Set is GuestGender Setter
+// SetGuestGender is GuestGender Setter
 // 可接待客人性别 0：不限制，1：只限男性，2：只限女性'
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetGuestGender(_guestGender int64) error {
 	r._guestGender = _guestGender
@@ -505,12 +505,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetGuestGender(_guestGender int64) e
 	return nil
 }
 
-// Get GuestGender Getter
+// GetGuestGender GuestGender Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetGuestGender() int64 {
 	return r._guestGender
 }
 
-// Set is GuestAge Setter
+// SetGuestAge is GuestAge Setter
 // 可接待客人年龄情况：是否接待儿童、老人；成年人必接待，详见“可接待客人”list
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetGuestAge(_guestAge int64) error {
 	r._guestAge = _guestAge
@@ -518,12 +518,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetGuestAge(_guestAge int64) error {
 	return nil
 }
 
-// Get GuestAge Getter
+// GetGuestAge GuestAge Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetGuestAge() int64 {
 	return r._guestAge
 }
 
-// Set is ReceiveForeigners Setter
+// SetReceiveForeigners is ReceiveForeigners Setter
 // 是否可接待外宾 0不接待 1接待
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetReceiveForeigners(_receiveForeigners int64) error {
 	r._receiveForeigners = _receiveForeigners
@@ -531,12 +531,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetReceiveForeigners(_receiveForeign
 	return nil
 }
 
-// Get ReceiveForeigners Getter
+// GetReceiveForeigners ReceiveForeigners Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetReceiveForeigners() int64 {
 	return r._receiveForeigners
 }
 
-// Set is ActivitiesAllowed Setter
+// SetActivitiesAllowed is ActivitiesAllowed Setter
 // 详见“允许活动”list 12,32,33,
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetActivitiesAllowed(_activitiesAllowed string) error {
 	r._activitiesAllowed = _activitiesAllowed
@@ -544,12 +544,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetActivitiesAllowed(_activitiesAllo
 	return nil
 }
 
-// Get ActivitiesAllowed Getter
+// GetActivitiesAllowed ActivitiesAllowed Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetActivitiesAllowed() string {
 	return r._activitiesAllowed
 }
 
-// Set is ExtraBedsNum Setter
+// SetExtraBedsNum is ExtraBedsNum Setter
 // 可加床数
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetExtraBedsNum(_extraBedsNum int64) error {
 	r._extraBedsNum = _extraBedsNum
@@ -557,12 +557,12 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetExtraBedsNum(_extraBedsNum int64)
 	return nil
 }
 
-// Get ExtraBedsNum Getter
+// GetExtraBedsNum ExtraBedsNum Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetExtraBedsNum() int64 {
 	return r._extraBedsNum
 }
 
-// Set is Charge Setter
+// SetCharge is Charge Setter
 // 加人收费信息
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetCharge(_charge *BnbChargeDto) error {
 	r._charge = _charge
@@ -570,7 +570,7 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetCharge(_charge *BnbChargeDto) err
 	return nil
 }
 
-// Get Charge Getter
+// GetCharge Charge Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetCharge() *BnbChargeDto {
 	return r._charge
 }

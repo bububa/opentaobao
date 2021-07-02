@@ -39,7 +39,7 @@ func (r TaobaoSimbaInsightRelatedwordsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BidwordList Setter
+// SetBidwordList is BidwordList Setter
 // 要查询的词列表
 func (r *TaobaoSimbaInsightRelatedwordsGetAPIRequest) SetBidwordList(_bidwordList []string) error {
 	r._bidwordList = _bidwordList
@@ -47,12 +47,12 @@ func (r *TaobaoSimbaInsightRelatedwordsGetAPIRequest) SetBidwordList(_bidwordLis
 	return nil
 }
 
-// Get BidwordList Getter
+// GetBidwordList BidwordList Getter
 func (r TaobaoSimbaInsightRelatedwordsGetAPIRequest) GetBidwordList() []string {
 	return r._bidwordList
 }
 
-// Set is Number Setter
+// SetNumber is Number Setter
 // 表示返回数据的条数
 func (r *TaobaoSimbaInsightRelatedwordsGetAPIRequest) SetNumber(_number int64) error {
 	r._number = _number
@@ -60,7 +60,7 @@ func (r *TaobaoSimbaInsightRelatedwordsGetAPIRequest) SetNumber(_number int64) e
 	return nil
 }
 
-// Get Number Getter
+// GetNumber Number Getter
 func (r TaobaoSimbaInsightRelatedwordsGetAPIRequest) GetNumber() int64 {
 	return r._number
 }

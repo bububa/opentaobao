@@ -53,7 +53,7 @@ func (r AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -61,12 +61,12 @@ func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetRefEntId(_refEntId 
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is EntId Setter
+// SetEntId is EntId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetEntId(_entId string) error {
 	r._entId = _entId
@@ -74,12 +74,12 @@ func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetEntId(_entId string
 	return nil
 }
 
-// Get EntId Getter
+// GetEntId EntId Getter
 func (r AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) GetEntId() string {
 	return r._entId
 }
 
-// Set is IcCode Setter
+// SetIcCode is IcCode Setter
 // 操作人编码
 func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetIcCode(_icCode string) error {
 	r._icCode = _icCode
@@ -87,12 +87,12 @@ func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetIcCode(_icCode stri
 	return nil
 }
 
-// Get IcCode Getter
+// GetIcCode IcCode Getter
 func (r AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) GetIcCode() string {
 	return r._icCode
 }
 
-// Set is BillId Setter
+// SetBillId is BillId Setter
 // 单据ID
 func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetBillId(_billId string) error {
 	r._billId = _billId
@@ -100,12 +100,12 @@ func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetBillId(_billId stri
 	return nil
 }
 
-// Get BillId Getter
+// GetBillId BillId Getter
 func (r AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) GetBillId() string {
 	return r._billId
 }
 
-// Set is BillType Setter
+// SetBillType is BillType Setter
 // 单据类型
 func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetBillType(_billType string) error {
 	r._billType = _billType
@@ -113,12 +113,12 @@ func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetBillType(_billType 
 	return nil
 }
 
-// Get BillType Getter
+// GetBillType BillType Getter
 func (r AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) GetBillType() string {
 	return r._billType
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据编码
 func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -126,12 +126,12 @@ func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetBillCode(_billCode 
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is PartnerIdSend Setter
+// SetPartnerIdSend is PartnerIdSend Setter
 // 发货单位ID
 func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetPartnerIdSend(_partnerIdSend string) error {
 	r._partnerIdSend = _partnerIdSend
@@ -139,12 +139,12 @@ func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetPartnerIdSend(_part
 	return nil
 }
 
-// Get PartnerIdSend Getter
+// GetPartnerIdSend PartnerIdSend Getter
 func (r AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) GetPartnerIdSend() string {
 	return r._partnerIdSend
 }
 
-// Set is PartnerIdRecv Setter
+// SetPartnerIdRecv is PartnerIdRecv Setter
 // 收货单信ID
 func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetPartnerIdRecv(_partnerIdRecv string) error {
 	r._partnerIdRecv = _partnerIdRecv
@@ -152,12 +152,12 @@ func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetPartnerIdRecv(_part
 	return nil
 }
 
-// Get PartnerIdRecv Getter
+// GetPartnerIdRecv PartnerIdRecv Getter
 func (r AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) GetPartnerIdRecv() string {
 	return r._partnerIdRecv
 }
 
-// Set is Note Setter
+// SetNote is Note Setter
 // 详情
 func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetNote(_note string) error {
 	r._note = _note
@@ -165,7 +165,7 @@ func (r *AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) SetNote(_note string) 
 	return nil
 }
 
-// Get Note Getter
+// GetNote Note Getter
 func (r AlibabaAlihealthDrugKytUpdatebillinfoAPIRequest) GetNote() string {
 	return r._note
 }

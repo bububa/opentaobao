@@ -43,7 +43,7 @@ func (r TaobaoOcTradesBytagGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
 func (r *TaobaoOcTradesBytagGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -51,12 +51,12 @@ func (r *TaobaoOcTradesBytagGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoOcTradesBytagGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is TagType Setter
+// SetTagType is TagType Setter
 // 标签类型，1官方，2自定义
 func (r *TaobaoOcTradesBytagGetAPIRequest) SetTagType(_tagType int64) error {
 	r._tagType = _tagType
@@ -64,12 +64,12 @@ func (r *TaobaoOcTradesBytagGetAPIRequest) SetTagType(_tagType int64) error {
 	return nil
 }
 
-// Get TagType Getter
+// GetTagType TagType Getter
 func (r TaobaoOcTradesBytagGetAPIRequest) GetTagType() int64 {
 	return r._tagType
 }
 
-// Set is Page Setter
+// SetPage is Page Setter
 // 当前页
 func (r *TaobaoOcTradesBytagGetAPIRequest) SetPage(_page int64) error {
 	r._page = _page
@@ -77,12 +77,12 @@ func (r *TaobaoOcTradesBytagGetAPIRequest) SetPage(_page int64) error {
 	return nil
 }
 
-// Get Page Getter
+// GetPage Page Getter
 func (r TaobaoOcTradesBytagGetAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// Set is TagName Setter
+// SetTagName is TagName Setter
 // 标签名称
 func (r *TaobaoOcTradesBytagGetAPIRequest) SetTagName(_tagName string) error {
 	r._tagName = _tagName
@@ -90,7 +90,7 @@ func (r *TaobaoOcTradesBytagGetAPIRequest) SetTagName(_tagName string) error {
 	return nil
 }
 
-// Get TagName Getter
+// GetTagName TagName Getter
 func (r TaobaoOcTradesBytagGetAPIRequest) GetTagName() string {
 	return r._tagName
 }

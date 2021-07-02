@@ -37,7 +37,7 @@ func (r AlibabaAlisportsLdlserverWxeventPostAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Rawstr Setter
+// SetRawstr is Rawstr Setter
 // 微信服务器消息数据
 func (r *AlibabaAlisportsLdlserverWxeventPostAPIRequest) SetRawstr(_rawstr string) error {
 	r._rawstr = _rawstr
@@ -45,7 +45,7 @@ func (r *AlibabaAlisportsLdlserverWxeventPostAPIRequest) SetRawstr(_rawstr strin
 	return nil
 }
 
-// Get Rawstr Getter
+// GetRawstr Rawstr Getter
 func (r AlibabaAlisportsLdlserverWxeventPostAPIRequest) GetRawstr() string {
 	return r._rawstr
 }

@@ -53,7 +53,7 @@ func (r TaobaoSimbaRptCampaignbaseGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SubwayToken Setter
+// SetSubwayToken is SubwayToken Setter
 // 权限校验参数
 func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetSubwayToken(_subwayToken string) error {
 	r._subwayToken = _subwayToken
@@ -61,12 +61,12 @@ func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetSubwayToken(_subwayToken st
 	return nil
 }
 
-// Get SubwayToken Getter
+// GetSubwayToken SubwayToken Getter
 func (r TaobaoSimbaRptCampaignbaseGetAPIRequest) GetSubwayToken() string {
 	return r._subwayToken
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 昵称
 func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -74,12 +74,12 @@ func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaRptCampaignbaseGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 开始时间，格式yyyy-mm-dd
 func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -87,12 +87,12 @@ func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetStartTime(_startTime string
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoSimbaRptCampaignbaseGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间，格式yyyy-mm-dd
 func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -100,12 +100,12 @@ func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetEndTime(_endTime string) er
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoSimbaRptCampaignbaseGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is SearchType Setter
+// SetSearchType is SearchType Setter
 // 报表类型（搜索：SEARCH,类目出价：CAT, 定向投放：NOSEARCH 全部：ALL）可以一次取多个例如：SEARCH,CAT
 func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetSearchType(_searchType string) error {
 	r._searchType = _searchType
@@ -113,12 +113,12 @@ func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetSearchType(_searchType stri
 	return nil
 }
 
-// Get SearchType Getter
+// GetSearchType SearchType Getter
 func (r TaobaoSimbaRptCampaignbaseGetAPIRequest) GetSearchType() string {
 	return r._searchType
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 数据来源（站内：1，站外：2）可多选以逗号分隔，默认值为：1,2
 func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -126,12 +126,12 @@ func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetSource(_source string) erro
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r TaobaoSimbaRptCampaignbaseGetAPIRequest) GetSource() string {
 	return r._source
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -139,12 +139,12 @@ func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetPageNo(_pageNo int64) error
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoSimbaRptCampaignbaseGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页大小
 func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -152,12 +152,12 @@ func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetPageSize(_pageSize int64) e
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoSimbaRptCampaignbaseGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划id
 func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -165,7 +165,7 @@ func (r *TaobaoSimbaRptCampaignbaseGetAPIRequest) SetCampaignId(_campaignId int6
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaRptCampaignbaseGetAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }

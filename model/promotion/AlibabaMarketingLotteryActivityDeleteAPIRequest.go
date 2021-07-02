@@ -37,7 +37,7 @@ func (r AlibabaMarketingLotteryActivityDeleteAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is LotteryActivityDelete Setter
+// SetLotteryActivityDelete is LotteryActivityDelete Setter
 // 抽奖活动删除对象
 func (r *AlibabaMarketingLotteryActivityDeleteAPIRequest) SetLotteryActivityDelete(_lotteryActivityDelete *LotteryActivityDeleteDto) error {
 	r._lotteryActivityDelete = _lotteryActivityDelete
@@ -45,7 +45,7 @@ func (r *AlibabaMarketingLotteryActivityDeleteAPIRequest) SetLotteryActivityDele
 	return nil
 }
 
-// Get LotteryActivityDelete Getter
+// GetLotteryActivityDelete LotteryActivityDelete Getter
 func (r AlibabaMarketingLotteryActivityDeleteAPIRequest) GetLotteryActivityDelete() *LotteryActivityDeleteDto {
 	return r._lotteryActivityDelete
 }

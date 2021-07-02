@@ -37,7 +37,7 @@ func (r AlibabaNrsItemRtdataBackflowAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RtItemPriceTagBackParam Setter
+// SetRtItemPriceTagBackParam is RtItemPriceTagBackParam Setter
 // 入参
 func (r *AlibabaNrsItemRtdataBackflowAPIRequest) SetRtItemPriceTagBackParam(_rtItemPriceTagBackParam *RtItemPriceTagBackParam) error {
 	r._rtItemPriceTagBackParam = _rtItemPriceTagBackParam
@@ -45,7 +45,7 @@ func (r *AlibabaNrsItemRtdataBackflowAPIRequest) SetRtItemPriceTagBackParam(_rtI
 	return nil
 }
 
-// Get RtItemPriceTagBackParam Getter
+// GetRtItemPriceTagBackParam RtItemPriceTagBackParam Getter
 func (r AlibabaNrsItemRtdataBackflowAPIRequest) GetRtItemPriceTagBackParam() *RtItemPriceTagBackParam {
 	return r._rtItemPriceTagBackParam
 }

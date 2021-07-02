@@ -37,7 +37,7 @@ func (r AlibabaMoziVdsTenantApiServiceMatchempcodesAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is Par0 Setter
+// SetPar0 is Par0 Setter
 // 入参
 func (r *AlibabaMoziVdsTenantApiServiceMatchempcodesAPIRequest) SetPar0(_par0 *MatchWithEmployeeRequest) error {
 	r._par0 = _par0
@@ -45,7 +45,7 @@ func (r *AlibabaMoziVdsTenantApiServiceMatchempcodesAPIRequest) SetPar0(_par0 *M
 	return nil
 }
 
-// Get Par0 Getter
+// GetPar0 Par0 Getter
 func (r AlibabaMoziVdsTenantApiServiceMatchempcodesAPIRequest) GetPar0() *MatchWithEmployeeRequest {
 	return r._par0
 }

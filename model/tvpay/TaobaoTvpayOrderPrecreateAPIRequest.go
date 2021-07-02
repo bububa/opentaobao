@@ -43,7 +43,7 @@ func (r TaobaoTvpayOrderPrecreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备id
 func (r *TaobaoTvpayOrderPrecreateAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -51,12 +51,12 @@ func (r *TaobaoTvpayOrderPrecreateAPIRequest) SetDeviceId(_deviceId string) erro
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r TaobaoTvpayOrderPrecreateAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is From Setter
+// SetFrom is From Setter
 // 来源
 func (r *TaobaoTvpayOrderPrecreateAPIRequest) SetFrom(_from string) error {
 	r._from = _from
@@ -64,12 +64,12 @@ func (r *TaobaoTvpayOrderPrecreateAPIRequest) SetFrom(_from string) error {
 	return nil
 }
 
-// Get From Getter
+// GetFrom From Getter
 func (r TaobaoTvpayOrderPrecreateAPIRequest) GetFrom() string {
 	return r._from
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // 订单详情
 func (r *TaobaoTvpayOrderPrecreateAPIRequest) SetData(_data string) error {
 	r._data = _data
@@ -77,12 +77,12 @@ func (r *TaobaoTvpayOrderPrecreateAPIRequest) SetData(_data string) error {
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r TaobaoTvpayOrderPrecreateAPIRequest) GetData() string {
 	return r._data
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照方
 func (r *TaobaoTvpayOrderPrecreateAPIRequest) SetLicense(_license string) error {
 	r._license = _license
@@ -90,7 +90,7 @@ func (r *TaobaoTvpayOrderPrecreateAPIRequest) SetLicense(_license string) error 
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r TaobaoTvpayOrderPrecreateAPIRequest) GetLicense() string {
 	return r._license
 }

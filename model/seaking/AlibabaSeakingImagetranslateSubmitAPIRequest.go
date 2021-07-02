@@ -41,7 +41,7 @@ func (r AlibabaSeakingImagetranslateSubmitAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is TokenFrom Setter
+// SetTokenFrom is TokenFrom Setter
 // token来源站点
 func (r *AlibabaSeakingImagetranslateSubmitAPIRequest) SetTokenFrom(_tokenFrom string) error {
 	r._tokenFrom = _tokenFrom
@@ -49,12 +49,12 @@ func (r *AlibabaSeakingImagetranslateSubmitAPIRequest) SetTokenFrom(_tokenFrom s
 	return nil
 }
 
-// Get TokenFrom Getter
+// GetTokenFrom TokenFrom Getter
 func (r AlibabaSeakingImagetranslateSubmitAPIRequest) GetTokenFrom() string {
 	return r._tokenFrom
 }
 
-// Set is ImageTranslateDetailList Setter
+// SetImageTranslateDetailList is ImageTranslateDetailList Setter
 // 子任务列表
 func (r *AlibabaSeakingImagetranslateSubmitAPIRequest) SetImageTranslateDetailList(_imageTranslateDetailList []ImageTranslateDetailDto) error {
 	r._imageTranslateDetailList = _imageTranslateDetailList
@@ -62,12 +62,12 @@ func (r *AlibabaSeakingImagetranslateSubmitAPIRequest) SetImageTranslateDetailLi
 	return nil
 }
 
-// Get ImageTranslateDetailList Getter
+// GetImageTranslateDetailList ImageTranslateDetailList Getter
 func (r AlibabaSeakingImagetranslateSubmitAPIRequest) GetImageTranslateDetailList() []ImageTranslateDetailDto {
 	return r._imageTranslateDetailList
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 用户token
 func (r *AlibabaSeakingImagetranslateSubmitAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -75,7 +75,7 @@ func (r *AlibabaSeakingImagetranslateSubmitAPIRequest) SetToken(_token string) e
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlibabaSeakingImagetranslateSubmitAPIRequest) GetToken() string {
 	return r._token
 }

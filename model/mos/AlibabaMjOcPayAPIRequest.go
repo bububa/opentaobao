@@ -37,7 +37,7 @@ func (r AlibabaMjOcPayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PosOrder Setter
+// SetPosOrder is PosOrder Setter
 // 订单数据
 func (r *AlibabaMjOcPayAPIRequest) SetPosOrder(_posOrder *PosOrderDto) error {
 	r._posOrder = _posOrder
@@ -45,7 +45,7 @@ func (r *AlibabaMjOcPayAPIRequest) SetPosOrder(_posOrder *PosOrderDto) error {
 	return nil
 }
 
-// Get PosOrder Getter
+// GetPosOrder PosOrder Getter
 func (r AlibabaMjOcPayAPIRequest) GetPosOrder() *PosOrderDto {
 	return r._posOrder
 }

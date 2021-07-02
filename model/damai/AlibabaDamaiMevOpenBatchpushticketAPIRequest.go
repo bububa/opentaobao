@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenBatchpushticketAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ThirdTicketSetOpenParamList Setter
+// SetThirdTicketSetOpenParamList is ThirdTicketSetOpenParamList Setter
 // 入参thirdTicketSetOpenParamList
 func (r *AlibabaDamaiMevOpenBatchpushticketAPIRequest) SetThirdTicketSetOpenParamList(_thirdTicketSetOpenParamList []ThirdTicketPushOpenParam) error {
 	r._thirdTicketSetOpenParamList = _thirdTicketSetOpenParamList
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenBatchpushticketAPIRequest) SetThirdTicketSetOpenPara
 	return nil
 }
 
-// Get ThirdTicketSetOpenParamList Getter
+// GetThirdTicketSetOpenParamList ThirdTicketSetOpenParamList Getter
 func (r AlibabaDamaiMevOpenBatchpushticketAPIRequest) GetThirdTicketSetOpenParamList() []ThirdTicketPushOpenParam {
 	return r._thirdTicketSetOpenParamList
 }

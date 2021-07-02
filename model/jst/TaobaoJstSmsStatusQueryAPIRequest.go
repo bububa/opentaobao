@@ -37,7 +37,7 @@ func (r TaobaoJstSmsStatusQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OfficialAccountStatusQueryRequest Setter
+// SetOfficialAccountStatusQueryRequest is OfficialAccountStatusQueryRequest Setter
 // 公众号状态信息查询请求
 func (r *TaobaoJstSmsStatusQueryAPIRequest) SetOfficialAccountStatusQueryRequest(_officialAccountStatusQueryRequest *JstBaseRequest) error {
 	r._officialAccountStatusQueryRequest = _officialAccountStatusQueryRequest
@@ -45,7 +45,7 @@ func (r *TaobaoJstSmsStatusQueryAPIRequest) SetOfficialAccountStatusQueryRequest
 	return nil
 }
 
-// Get OfficialAccountStatusQueryRequest Getter
+// GetOfficialAccountStatusQueryRequest OfficialAccountStatusQueryRequest Getter
 func (r TaobaoJstSmsStatusQueryAPIRequest) GetOfficialAccountStatusQueryRequest() *JstBaseRequest {
 	return r._officialAccountStatusQueryRequest
 }

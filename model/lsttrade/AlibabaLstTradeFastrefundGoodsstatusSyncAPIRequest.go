@@ -41,7 +41,7 @@ func (r AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 主订单id
 func (r *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
@@ -49,12 +49,12 @@ func (r *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) SetMainOrderId(_mai
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款单id
 func (r *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) SetRefundId(_refundId string) error {
 	r._refundId = _refundId
@@ -62,12 +62,12 @@ func (r *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) SetRefundId(_refund
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) GetRefundId() string {
 	return r._refundId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 未发货，枚举类型：UNSEND
 func (r *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -75,7 +75,7 @@ func (r *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) SetStatus(_status s
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) GetStatus() string {
 	return r._status
 }

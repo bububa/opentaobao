@@ -50,7 +50,7 @@ func (r TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is OpenAppKey Setter
+// SetOpenAppKey is OpenAppKey Setter
 // 自运营开放平台APPKEY
 func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetOpenAppKey(_openAppKey string) error {
 	r._openAppKey = _openAppKey
@@ -58,12 +58,12 @@ func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetOpenAppKey(_openA
 	return nil
 }
 
-// Get OpenAppKey Getter
+// GetOpenAppKey OpenAppKey Getter
 func (r TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) GetOpenAppKey() string {
 	return r._openAppKey
 }
 
-// Set is CinemaId Setter
+// SetCinemaId is CinemaId Setter
 // 影院ID
 func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetCinemaId(_cinemaId int64) error {
 	r._cinemaId = _cinemaId
@@ -71,12 +71,12 @@ func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetCinemaId(_cinemaI
 	return nil
 }
 
-// Get CinemaId Getter
+// GetCinemaId CinemaId Getter
 func (r TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) GetCinemaId() int64 {
 	return r._cinemaId
 }
 
-// Set is BeginTime Setter
+// SetBeginTime is BeginTime Setter
 // 开始时间
 func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetBeginTime(_beginTime string) error {
 	r._beginTime = _beginTime
@@ -84,12 +84,12 @@ func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetBeginTime(_beginT
 	return nil
 }
 
-// Get BeginTime Getter
+// GetBeginTime BeginTime Getter
 func (r TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) GetBeginTime() string {
 	return r._beginTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间
 func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -97,12 +97,12 @@ func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetEndTime(_endTime 
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is IncludedOrderStatus Setter
+// SetIncludedOrderStatus is IncludedOrderStatus Setter
 // 包含的订单状态, 默认不填
 func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetIncludedOrderStatus(_includedOrderStatus []string) error {
 	r._includedOrderStatus = _includedOrderStatus
@@ -110,12 +110,12 @@ func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetIncludedOrderStat
 	return nil
 }
 
-// Get IncludedOrderStatus Getter
+// GetIncludedOrderStatus IncludedOrderStatus Getter
 func (r TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) GetIncludedOrderStatus() []string {
 	return r._includedOrderStatus
 }
 
-// Set is Offset Setter
+// SetOffset is Offset Setter
 // offset 下标, 从0开始
 func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetOffset(_offset int64) error {
 	r._offset = _offset
@@ -123,12 +123,12 @@ func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetOffset(_offset in
 	return nil
 }
 
-// Get Offset Getter
+// GetOffset Offset Getter
 func (r TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) GetOffset() int64 {
 	return r._offset
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小
 func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -136,7 +136,7 @@ func (r *TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) SetPageSize(_pageSiz
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoFilmTfavatarBillTicketRefundQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

@@ -37,7 +37,7 @@ func (r YunosTvpubadminAdmOttQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 查询参数json格式
 func (r *YunosTvpubadminAdmOttQueryAPIRequest) SetQuery(_query string) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminAdmOttQueryAPIRequest) SetQuery(_query string) error {
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r YunosTvpubadminAdmOttQueryAPIRequest) GetQuery() string {
 	return r._query
 }

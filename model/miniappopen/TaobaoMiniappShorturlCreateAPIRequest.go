@@ -38,7 +38,7 @@ func (r TaobaoMiniappShorturlCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MiniappUrl Setter
+// SetMiniappUrl is MiniappUrl Setter
 // 小程序链接地址。说明：链接地址，只允许https协议，域名只支持m.duanqu.com，链接必须包含_ariver_appid参数，链接不能够包含spm、short_name、app、tb_url_time_stamp这些系统保留参数
 func (r *TaobaoMiniappShorturlCreateAPIRequest) SetMiniappUrl(_miniappUrl string) error {
 	r._miniappUrl = _miniappUrl
@@ -46,7 +46,7 @@ func (r *TaobaoMiniappShorturlCreateAPIRequest) SetMiniappUrl(_miniappUrl string
 	return nil
 }
 
-// Get MiniappUrl Getter
+// GetMiniappUrl MiniappUrl Getter
 func (r TaobaoMiniappShorturlCreateAPIRequest) GetMiniappUrl() string {
 	return r._miniappUrl
 }

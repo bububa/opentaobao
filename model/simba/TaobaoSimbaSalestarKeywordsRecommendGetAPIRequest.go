@@ -39,7 +39,7 @@ func (r TaobaoSimbaSalestarKeywordsRecommendGetAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广组ID
 func (r *TaobaoSimbaSalestarKeywordsRecommendGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -47,12 +47,12 @@ func (r *TaobaoSimbaSalestarKeywordsRecommendGetAPIRequest) SetAdgroupId(_adgrou
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaSalestarKeywordsRecommendGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品类型101001005代表标准推广，101001014代表销量明星
 func (r *TaobaoSimbaSalestarKeywordsRecommendGetAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -60,7 +60,7 @@ func (r *TaobaoSimbaSalestarKeywordsRecommendGetAPIRequest) SetProductId(_produc
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TaobaoSimbaSalestarKeywordsRecommendGetAPIRequest) GetProductId() int64 {
 	return r._productId
 }

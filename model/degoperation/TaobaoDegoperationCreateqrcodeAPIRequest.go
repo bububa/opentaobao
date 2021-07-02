@@ -45,7 +45,7 @@ func (r TaobaoDegoperationCreateqrcodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 设备id
 func (r *TaobaoDegoperationCreateqrcodeAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -53,12 +53,12 @@ func (r *TaobaoDegoperationCreateqrcodeAPIRequest) SetUuid(_uuid string) error {
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r TaobaoDegoperationCreateqrcodeAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is DegAccessToken Setter
+// SetDegAccessToken is DegAccessToken Setter
 // 系统信息
 func (r *TaobaoDegoperationCreateqrcodeAPIRequest) SetDegAccessToken(_degAccessToken string) error {
 	r._degAccessToken = _degAccessToken
@@ -66,12 +66,12 @@ func (r *TaobaoDegoperationCreateqrcodeAPIRequest) SetDegAccessToken(_degAccessT
 	return nil
 }
 
-// Get DegAccessToken Getter
+// GetDegAccessToken DegAccessToken Getter
 func (r TaobaoDegoperationCreateqrcodeAPIRequest) GetDegAccessToken() string {
 	return r._degAccessToken
 }
 
-// Set is SequenceNo Setter
+// SetSequenceNo is SequenceNo Setter
 // 奖品唯一标识
 func (r *TaobaoDegoperationCreateqrcodeAPIRequest) SetSequenceNo(_sequenceNo string) error {
 	r._sequenceNo = _sequenceNo
@@ -79,12 +79,12 @@ func (r *TaobaoDegoperationCreateqrcodeAPIRequest) SetSequenceNo(_sequenceNo str
 	return nil
 }
 
-// Get SequenceNo Getter
+// GetSequenceNo SequenceNo Getter
 func (r TaobaoDegoperationCreateqrcodeAPIRequest) GetSequenceNo() string {
 	return r._sequenceNo
 }
 
-// Set is Activity Setter
+// SetActivity is Activity Setter
 // 活动名称
 func (r *TaobaoDegoperationCreateqrcodeAPIRequest) SetActivity(_activity string) error {
 	r._activity = _activity
@@ -92,12 +92,12 @@ func (r *TaobaoDegoperationCreateqrcodeAPIRequest) SetActivity(_activity string)
 	return nil
 }
 
-// Get Activity Getter
+// GetActivity Activity Getter
 func (r TaobaoDegoperationCreateqrcodeAPIRequest) GetActivity() string {
 	return r._activity
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 奖品名称
 func (r *TaobaoDegoperationCreateqrcodeAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -105,7 +105,7 @@ func (r *TaobaoDegoperationCreateqrcodeAPIRequest) SetTitle(_title string) error
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoDegoperationCreateqrcodeAPIRequest) GetTitle() string {
 	return r._title
 }

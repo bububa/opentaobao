@@ -37,7 +37,7 @@ func (r TaobaoOpensecurityUidGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TbUserId Setter
+// SetTbUserId is TbUserId Setter
 // 淘宝用户ID
 func (r *TaobaoOpensecurityUidGetAPIRequest) SetTbUserId(_tbUserId int64) error {
 	r._tbUserId = _tbUserId
@@ -45,7 +45,7 @@ func (r *TaobaoOpensecurityUidGetAPIRequest) SetTbUserId(_tbUserId int64) error 
 	return nil
 }
 
-// Get TbUserId Getter
+// GetTbUserId TbUserId Getter
 func (r TaobaoOpensecurityUidGetAPIRequest) GetTbUserId() int64 {
 	return r._tbUserId
 }

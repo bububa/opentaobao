@@ -37,7 +37,7 @@ func (r AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 饿了么订单ID
 func (r *AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -45,7 +45,7 @@ func (r *AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest) SetOrderId(_orderI
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaEleEnterpriseOrdernewGetrefundinfoAPIRequest) GetOrderId() string {
 	return r._orderId
 }

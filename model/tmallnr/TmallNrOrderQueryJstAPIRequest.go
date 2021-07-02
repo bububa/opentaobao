@@ -41,7 +41,7 @@ func (r TmallNrOrderQueryJstAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizIdentity Setter
+// SetBizIdentity is BizIdentity Setter
 // 业务标识，dss标识定时送业务；jsd表示极速达业务
 func (r *TmallNrOrderQueryJstAPIRequest) SetBizIdentity(_bizIdentity string) error {
 	r._bizIdentity = _bizIdentity
@@ -49,12 +49,12 @@ func (r *TmallNrOrderQueryJstAPIRequest) SetBizIdentity(_bizIdentity string) err
 	return nil
 }
 
-// Get BizIdentity Getter
+// GetBizIdentity BizIdentity Getter
 func (r TmallNrOrderQueryJstAPIRequest) GetBizIdentity() string {
 	return r._bizIdentity
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 交易主订单号
 func (r *TmallNrOrderQueryJstAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -62,12 +62,12 @@ func (r *TmallNrOrderQueryJstAPIRequest) SetOrderId(_orderId int64) error {
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TmallNrOrderQueryJstAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is ExtParam Setter
+// SetExtParam is ExtParam Setter
 // 预留-扩展信息
 func (r *TmallNrOrderQueryJstAPIRequest) SetExtParam(_extParam string) error {
 	r._extParam = _extParam
@@ -75,7 +75,7 @@ func (r *TmallNrOrderQueryJstAPIRequest) SetExtParam(_extParam string) error {
 	return nil
 }
 
-// Get ExtParam Getter
+// GetExtParam ExtParam Getter
 func (r TmallNrOrderQueryJstAPIRequest) GetExtParam() string {
 	return r._extParam
 }

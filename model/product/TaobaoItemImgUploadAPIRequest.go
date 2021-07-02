@@ -51,7 +51,7 @@ func (r TaobaoItemImgUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 商品图片id(如果是更新图片，则需要传该参数)
 func (r *TaobaoItemImgUploadAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -59,12 +59,12 @@ func (r *TaobaoItemImgUploadAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TaobaoItemImgUploadAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is NumIid Setter
+// SetNumIid is NumIid Setter
 // 商品数字ID，该参数必须
 func (r *TaobaoItemImgUploadAPIRequest) SetNumIid(_numIid int64) error {
 	r._numIid = _numIid
@@ -72,12 +72,12 @@ func (r *TaobaoItemImgUploadAPIRequest) SetNumIid(_numIid int64) error {
 	return nil
 }
 
-// Get NumIid Getter
+// GetNumIid NumIid Getter
 func (r TaobaoItemImgUploadAPIRequest) GetNumIid() int64 {
 	return r._numIid
 }
 
-// Set is Position Setter
+// SetPosition is Position Setter
 // 图片序号
 func (r *TaobaoItemImgUploadAPIRequest) SetPosition(_position int64) error {
 	r._position = _position
@@ -85,12 +85,12 @@ func (r *TaobaoItemImgUploadAPIRequest) SetPosition(_position int64) error {
 	return nil
 }
 
-// Get Position Getter
+// GetPosition Position Getter
 func (r TaobaoItemImgUploadAPIRequest) GetPosition() int64 {
 	return r._position
 }
 
-// Set is Image Setter
+// SetImage is Image Setter
 // 商品图片内容类型:JPG;最大:3M 。支持的文件类型：jpg,jpeg,png
 func (r *TaobaoItemImgUploadAPIRequest) SetImage(_image *model.File) error {
 	r._image = _image
@@ -98,12 +98,12 @@ func (r *TaobaoItemImgUploadAPIRequest) SetImage(_image *model.File) error {
 	return nil
 }
 
-// Get Image Getter
+// GetImage Image Getter
 func (r TaobaoItemImgUploadAPIRequest) GetImage() *model.File {
 	return r._image
 }
 
-// Set is IsMajor Setter
+// SetIsMajor is IsMajor Setter
 // 是否将该图片设为主图,可选值:true,false;默认值:false(非主图)
 func (r *TaobaoItemImgUploadAPIRequest) SetIsMajor(_isMajor bool) error {
 	r._isMajor = _isMajor
@@ -111,12 +111,12 @@ func (r *TaobaoItemImgUploadAPIRequest) SetIsMajor(_isMajor bool) error {
 	return nil
 }
 
-// Get IsMajor Getter
+// GetIsMajor IsMajor Getter
 func (r TaobaoItemImgUploadAPIRequest) GetIsMajor() bool {
 	return r._isMajor
 }
 
-// Set is IsRectangle Setter
+// SetIsRectangle is IsRectangle Setter
 // 是否3:4长方形图片，绑定3:4主图视频时用于上传3:4商品主图
 func (r *TaobaoItemImgUploadAPIRequest) SetIsRectangle(_isRectangle bool) error {
 	r._isRectangle = _isRectangle
@@ -124,7 +124,7 @@ func (r *TaobaoItemImgUploadAPIRequest) SetIsRectangle(_isRectangle bool) error 
 	return nil
 }
 
-// Get IsRectangle Getter
+// GetIsRectangle IsRectangle Getter
 func (r TaobaoItemImgUploadAPIRequest) GetIsRectangle() bool {
 	return r._isRectangle
 }

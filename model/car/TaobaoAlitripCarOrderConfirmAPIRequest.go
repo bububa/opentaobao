@@ -37,7 +37,7 @@ func (r TaobaoAlitripCarOrderConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOrderConfirm Setter
+// SetParamOrderConfirm is ParamOrderConfirm Setter
 // 请求对象
 func (r *TaobaoAlitripCarOrderConfirmAPIRequest) SetParamOrderConfirm(_paramOrderConfirm *OrderConfirm) error {
 	r._paramOrderConfirm = _paramOrderConfirm
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripCarOrderConfirmAPIRequest) SetParamOrderConfirm(_paramOrde
 	return nil
 }
 
-// Get ParamOrderConfirm Getter
+// GetParamOrderConfirm ParamOrderConfirm Getter
 func (r TaobaoAlitripCarOrderConfirmAPIRequest) GetParamOrderConfirm() *OrderConfirm {
 	return r._paramOrderConfirm
 }

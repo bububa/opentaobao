@@ -39,7 +39,7 @@ func (r AlibabaXiamiApiArtistMusiclistGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 语种, 有all, chinese, musician, english, japanese, korea
 func (r *AlibabaXiamiApiArtistMusiclistGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -47,12 +47,12 @@ func (r *AlibabaXiamiApiArtistMusiclistGetAPIRequest) SetType(_type string) erro
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaXiamiApiArtistMusiclistGetAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is Order Setter
+// SetOrder is Order Setter
 // 所有、男、女、组合分别为(all、male、female、combination)
 func (r *AlibabaXiamiApiArtistMusiclistGetAPIRequest) SetOrder(_order string) error {
 	r._order = _order
@@ -60,7 +60,7 @@ func (r *AlibabaXiamiApiArtistMusiclistGetAPIRequest) SetOrder(_order string) er
 	return nil
 }
 
-// Get Order Getter
+// GetOrder Order Getter
 func (r AlibabaXiamiApiArtistMusiclistGetAPIRequest) GetOrder() string {
 	return r._order
 }

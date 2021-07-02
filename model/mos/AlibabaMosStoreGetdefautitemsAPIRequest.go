@@ -41,7 +41,7 @@ func (r AlibabaMosStoreGetdefautitemsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ScreenNo Setter
+// SetScreenNo is ScreenNo Setter
 // 屏编号
 func (r *AlibabaMosStoreGetdefautitemsAPIRequest) SetScreenNo(_screenNo string) error {
 	r._screenNo = _screenNo
@@ -49,12 +49,12 @@ func (r *AlibabaMosStoreGetdefautitemsAPIRequest) SetScreenNo(_screenNo string) 
 	return nil
 }
 
-// Get ScreenNo Getter
+// GetScreenNo ScreenNo Getter
 func (r AlibabaMosStoreGetdefautitemsAPIRequest) GetScreenNo() string {
 	return r._screenNo
 }
 
-// Set is Start Setter
+// SetStart is Start Setter
 // 分页查询开始index
 func (r *AlibabaMosStoreGetdefautitemsAPIRequest) SetStart(_start int64) error {
 	r._start = _start
@@ -62,12 +62,12 @@ func (r *AlibabaMosStoreGetdefautitemsAPIRequest) SetStart(_start int64) error {
 	return nil
 }
 
-// Get Start Getter
+// GetStart Start Getter
 func (r AlibabaMosStoreGetdefautitemsAPIRequest) GetStart() int64 {
 	return r._start
 }
 
-// Set is LimitCount Setter
+// SetLimitCount is LimitCount Setter
 // 分页查询每页记录数
 func (r *AlibabaMosStoreGetdefautitemsAPIRequest) SetLimitCount(_limitCount int64) error {
 	r._limitCount = _limitCount
@@ -75,7 +75,7 @@ func (r *AlibabaMosStoreGetdefautitemsAPIRequest) SetLimitCount(_limitCount int6
 	return nil
 }
 
-// Get LimitCount Getter
+// GetLimitCount LimitCount Getter
 func (r AlibabaMosStoreGetdefautitemsAPIRequest) GetLimitCount() int64 {
 	return r._limitCount
 }

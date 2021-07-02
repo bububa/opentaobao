@@ -37,7 +37,7 @@ func (r TmallAliautoAutofinanceLoanReceiveAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is LoanReceiveDto Setter
+// SetLoanReceiveDto is LoanReceiveDto Setter
 // 接收外部金融结构的放款结果通知参数
 func (r *TmallAliautoAutofinanceLoanReceiveAPIRequest) SetLoanReceiveDto(_loanReceiveDto *LoanReceiveDto) error {
 	r._loanReceiveDto = _loanReceiveDto
@@ -45,7 +45,7 @@ func (r *TmallAliautoAutofinanceLoanReceiveAPIRequest) SetLoanReceiveDto(_loanRe
 	return nil
 }
 
-// Get LoanReceiveDto Getter
+// GetLoanReceiveDto LoanReceiveDto Getter
 func (r TmallAliautoAutofinanceLoanReceiveAPIRequest) GetLoanReceiveDto() *LoanReceiveDto {
 	return r._loanReceiveDto
 }

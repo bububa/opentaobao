@@ -37,7 +37,7 @@ func (r TmallNrtMemberOpenidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NrtMemberDto Setter
+// SetNrtMemberDto is NrtMemberDto Setter
 // 会员DTO
 func (r *TmallNrtMemberOpenidAPIRequest) SetNrtMemberDto(_nrtMemberDto *NrtMemberDto) error {
 	r._nrtMemberDto = _nrtMemberDto
@@ -45,7 +45,7 @@ func (r *TmallNrtMemberOpenidAPIRequest) SetNrtMemberDto(_nrtMemberDto *NrtMembe
 	return nil
 }
 
-// Get NrtMemberDto Getter
+// GetNrtMemberDto NrtMemberDto Getter
 func (r TmallNrtMemberOpenidAPIRequest) GetNrtMemberDto() *NrtMemberDto {
 	return r._nrtMemberDto
 }

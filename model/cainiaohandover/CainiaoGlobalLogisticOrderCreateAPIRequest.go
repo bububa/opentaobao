@@ -39,7 +39,7 @@ func (r CainiaoGlobalLogisticOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderParam Setter
+// SetOrderParam is OrderParam Setter
 // 订单参数
 func (r *CainiaoGlobalLogisticOrderCreateAPIRequest) SetOrderParam(_orderParam *OpenOrderParam) error {
 	r._orderParam = _orderParam
@@ -47,12 +47,12 @@ func (r *CainiaoGlobalLogisticOrderCreateAPIRequest) SetOrderParam(_orderParam *
 	return nil
 }
 
-// Get OrderParam Getter
+// GetOrderParam OrderParam Getter
 func (r CainiaoGlobalLogisticOrderCreateAPIRequest) GetOrderParam() *OpenOrderParam {
 	return r._orderParam
 }
 
-// Set is Locale Setter
+// SetLocale is Locale Setter
 // 多语言
 func (r *CainiaoGlobalLogisticOrderCreateAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
@@ -60,7 +60,7 @@ func (r *CainiaoGlobalLogisticOrderCreateAPIRequest) SetLocale(_locale string) e
 	return nil
 }
 
-// Get Locale Getter
+// GetLocale Locale Getter
 func (r CainiaoGlobalLogisticOrderCreateAPIRequest) GetLocale() string {
 	return r._locale
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlinkDeviceBindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 设备id
 func (r *AlibabaAlinkDeviceBindAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -45,7 +45,7 @@ func (r *AlibabaAlinkDeviceBindAPIRequest) SetUuid(_uuid string) error {
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r AlibabaAlinkDeviceBindAPIRequest) GetUuid() string {
 	return r._uuid
 }

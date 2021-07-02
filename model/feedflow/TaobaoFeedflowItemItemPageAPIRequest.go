@@ -37,7 +37,7 @@ func (r TaobaoFeedflowItemItemPageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemQuery Setter
+// SetItemQuery is ItemQuery Setter
 // 查询条件
 func (r *TaobaoFeedflowItemItemPageAPIRequest) SetItemQuery(_itemQuery *ItemQueryDto) error {
 	r._itemQuery = _itemQuery
@@ -45,7 +45,7 @@ func (r *TaobaoFeedflowItemItemPageAPIRequest) SetItemQuery(_itemQuery *ItemQuer
 	return nil
 }
 
-// Get ItemQuery Getter
+// GetItemQuery ItemQuery Getter
 func (r TaobaoFeedflowItemItemPageAPIRequest) GetItemQuery() *ItemQueryDto {
 	return r._itemQuery
 }

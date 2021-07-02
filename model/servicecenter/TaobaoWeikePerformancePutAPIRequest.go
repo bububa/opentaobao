@@ -39,7 +39,7 @@ func (r TaobaoWeikePerformancePutAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 订单id
 func (r *TaobaoWeikePerformancePutAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -47,12 +47,12 @@ func (r *TaobaoWeikePerformancePutAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TaobaoWeikePerformancePutAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is PerInfoWrapper Setter
+// SetPerInfoWrapper is PerInfoWrapper Setter
 // 绩效数据封装类
 func (r *TaobaoWeikePerformancePutAPIRequest) SetPerInfoWrapper(_perInfoWrapper *PerformanceInfoWrapper) error {
 	r._perInfoWrapper = _perInfoWrapper
@@ -60,7 +60,7 @@ func (r *TaobaoWeikePerformancePutAPIRequest) SetPerInfoWrapper(_perInfoWrapper 
 	return nil
 }
 
-// Get PerInfoWrapper Getter
+// GetPerInfoWrapper PerInfoWrapper Getter
 func (r TaobaoWeikePerformancePutAPIRequest) GetPerInfoWrapper() *PerformanceInfoWrapper {
 	return r._perInfoWrapper
 }

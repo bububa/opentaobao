@@ -43,7 +43,7 @@ func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店id
 func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -51,12 +51,12 @@ func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetStoreId(_storeId int64) error
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is LabelIdList Setter
+// SetLabelIdList is LabelIdList Setter
 // 标签id
 func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetLabelIdList(_labelIdList []int64) error {
 	r._labelIdList = _labelIdList
@@ -64,12 +64,12 @@ func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetLabelIdList(_labelIdList []in
 	return nil
 }
 
-// Get LabelIdList Getter
+// GetLabelIdList LabelIdList Getter
 func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetLabelIdList() []int64 {
 	return r._labelIdList
 }
 
-// Set is BusinessCode Setter
+// SetBusinessCode is BusinessCode Setter
 // 行业code
 func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetBusinessCode(_businessCode string) error {
 	r._businessCode = _businessCode
@@ -77,12 +77,12 @@ func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetBusinessCode(_businessCode st
 	return nil
 }
 
-// Get BusinessCode Getter
+// GetBusinessCode BusinessCode Getter
 func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetBusinessCode() string {
 	return r._businessCode
 }
 
-// Set is LabelType Setter
+// SetLabelType is LabelType Setter
 // 标签类型
 func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetLabelType(_labelType string) error {
 	r._labelType = _labelType
@@ -90,7 +90,7 @@ func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetLabelType(_labelType string) 
 	return nil
 }
 
-// Get LabelType Getter
+// GetLabelType LabelType Getter
 func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetLabelType() string {
 	return r._labelType
 }

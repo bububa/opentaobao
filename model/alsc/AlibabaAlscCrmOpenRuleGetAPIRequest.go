@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmOpenRuleGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamRuleOpenReq Setter
+// SetParamRuleOpenReq is ParamRuleOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmOpenRuleGetAPIRequest) SetParamRuleOpenReq(_paramRuleOpenReq *RuleOpenReq) error {
 	r._paramRuleOpenReq = _paramRuleOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmOpenRuleGetAPIRequest) SetParamRuleOpenReq(_paramRuleOpen
 	return nil
 }
 
-// Get ParamRuleOpenReq Getter
+// GetParamRuleOpenReq ParamRuleOpenReq Getter
 func (r AlibabaAlscCrmOpenRuleGetAPIRequest) GetParamRuleOpenReq() *RuleOpenReq {
 	return r._paramRuleOpenReq
 }

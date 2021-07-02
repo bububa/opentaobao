@@ -49,7 +49,7 @@ func (r TaobaoOpentradeGroupQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *TaobaoOpentradeGroupQueryAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -57,12 +57,12 @@ func (r *TaobaoOpentradeGroupQueryAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoOpentradeGroupQueryAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is OpenUserId Setter
+// SetOpenUserId is OpenUserId Setter
 // 用户openId
 func (r *TaobaoOpentradeGroupQueryAPIRequest) SetOpenUserId(_openUserId string) error {
 	r._openUserId = _openUserId
@@ -70,12 +70,12 @@ func (r *TaobaoOpentradeGroupQueryAPIRequest) SetOpenUserId(_openUserId string) 
 	return nil
 }
 
-// Get OpenUserId Getter
+// GetOpenUserId OpenUserId Getter
 func (r TaobaoOpentradeGroupQueryAPIRequest) GetOpenUserId() string {
 	return r._openUserId
 }
 
-// Set is OrderBy Setter
+// SetOrderBy is OrderBy Setter
 // 0 返回未成团列表，1 返回已成团列表
 func (r *TaobaoOpentradeGroupQueryAPIRequest) SetOrderBy(_orderBy int64) error {
 	r._orderBy = _orderBy
@@ -83,12 +83,12 @@ func (r *TaobaoOpentradeGroupQueryAPIRequest) SetOrderBy(_orderBy int64) error {
 	return nil
 }
 
-// Get OrderBy Getter
+// GetOrderBy OrderBy Getter
 func (r TaobaoOpentradeGroupQueryAPIRequest) GetOrderBy() int64 {
 	return r._orderBy
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 页数
 func (r *TaobaoOpentradeGroupQueryAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -96,12 +96,12 @@ func (r *TaobaoOpentradeGroupQueryAPIRequest) SetPageIndex(_pageIndex int64) err
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoOpentradeGroupQueryAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页展示条数，不能超过100
 func (r *TaobaoOpentradeGroupQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -109,12 +109,12 @@ func (r *TaobaoOpentradeGroupQueryAPIRequest) SetPageSize(_pageSize int64) error
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoOpentradeGroupQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is GroupActivityId Setter
+// SetGroupActivityId is GroupActivityId Setter
 // 组团活动id
 func (r *TaobaoOpentradeGroupQueryAPIRequest) SetGroupActivityId(_groupActivityId int64) error {
 	r._groupActivityId = _groupActivityId
@@ -122,12 +122,12 @@ func (r *TaobaoOpentradeGroupQueryAPIRequest) SetGroupActivityId(_groupActivityI
 	return nil
 }
 
-// Get GroupActivityId Getter
+// GetGroupActivityId GroupActivityId Getter
 func (r TaobaoOpentradeGroupQueryAPIRequest) GetGroupActivityId() int64 {
 	return r._groupActivityId
 }
 
-// Set is WithExpire Setter
+// SetWithExpire is WithExpire Setter
 // 是否返回已过期的团，true 返回，false 不返回
 func (r *TaobaoOpentradeGroupQueryAPIRequest) SetWithExpire(_withExpire bool) error {
 	r._withExpire = _withExpire
@@ -135,7 +135,7 @@ func (r *TaobaoOpentradeGroupQueryAPIRequest) SetWithExpire(_withExpire bool) er
 	return nil
 }
 
-// Get WithExpire Getter
+// GetWithExpire WithExpire Getter
 func (r TaobaoOpentradeGroupQueryAPIRequest) GetWithExpire() bool {
 	return r._withExpire
 }

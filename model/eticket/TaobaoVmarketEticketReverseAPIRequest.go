@@ -53,7 +53,7 @@ func (r TaobaoVmarketEticketReverseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 进行验码的电子凭证订单的订单ID
 func (r *TaobaoVmarketEticketReverseAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -61,12 +61,12 @@ func (r *TaobaoVmarketEticketReverseAPIRequest) SetOrderId(_orderId int64) error
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoVmarketEticketReverseAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is ReverseCode Setter
+// SetReverseCode is ReverseCode Setter
 // 冲正的码，只支持单个码
 func (r *TaobaoVmarketEticketReverseAPIRequest) SetReverseCode(_reverseCode string) error {
 	r._reverseCode = _reverseCode
@@ -74,12 +74,12 @@ func (r *TaobaoVmarketEticketReverseAPIRequest) SetReverseCode(_reverseCode stri
 	return nil
 }
 
-// Get ReverseCode Getter
+// GetReverseCode ReverseCode Getter
 func (r TaobaoVmarketEticketReverseAPIRequest) GetReverseCode() string {
 	return r._reverseCode
 }
 
-// Set is ReverseNum Setter
+// SetReverseNum is ReverseNum Setter
 // 冲正份数（必须是和被冲正的核销记录的份数一致）
 func (r *TaobaoVmarketEticketReverseAPIRequest) SetReverseNum(_reverseNum int64) error {
 	r._reverseNum = _reverseNum
@@ -87,12 +87,12 @@ func (r *TaobaoVmarketEticketReverseAPIRequest) SetReverseNum(_reverseNum int64)
 	return nil
 }
 
-// Get ReverseNum Getter
+// GetReverseNum ReverseNum Getter
 func (r TaobaoVmarketEticketReverseAPIRequest) GetReverseNum() int64 {
 	return r._reverseNum
 }
 
-// Set is ConsumeSecialNum Setter
+// SetConsumeSecialNum is ConsumeSecialNum Setter
 // 需要冲正的核销记录对应核销流水号（对应的核销操作时候传递的自定义流水号）
 func (r *TaobaoVmarketEticketReverseAPIRequest) SetConsumeSecialNum(_consumeSecialNum string) error {
 	r._consumeSecialNum = _consumeSecialNum
@@ -100,12 +100,12 @@ func (r *TaobaoVmarketEticketReverseAPIRequest) SetConsumeSecialNum(_consumeSeci
 	return nil
 }
 
-// Get ConsumeSecialNum Getter
+// GetConsumeSecialNum ConsumeSecialNum Getter
 func (r TaobaoVmarketEticketReverseAPIRequest) GetConsumeSecialNum() string {
 	return r._consumeSecialNum
 }
 
-// Set is VerifyCodes Setter
+// SetVerifyCodes is VerifyCodes Setter
 // 所有冲正后需要重新生成的码和对应的次数。码和次数之间用英文冒号分隔，多个码之间用英文逗号分隔。如果冲正后不需要重新生成码，留空
 func (r *TaobaoVmarketEticketReverseAPIRequest) SetVerifyCodes(_verifyCodes string) error {
 	r._verifyCodes = _verifyCodes
@@ -113,12 +113,12 @@ func (r *TaobaoVmarketEticketReverseAPIRequest) SetVerifyCodes(_verifyCodes stri
 	return nil
 }
 
-// Get VerifyCodes Getter
+// GetVerifyCodes VerifyCodes Getter
 func (r TaobaoVmarketEticketReverseAPIRequest) GetVerifyCodes() string {
 	return r._verifyCodes
 }
 
-// Set is QrImages Setter
+// SetQrImages is QrImages Setter
 // 不需要上传二维码图片或者冲正后不需要变更码的请不要传，需要传入二维码的码商请先调用taobao.vmarket.eticket.qrcode.upload接口，将返回的img_filename文件名称作为参数，多个文件名用逗号隔开且与参数verify_codes按从左到有的顺序一一对应。
 func (r *TaobaoVmarketEticketReverseAPIRequest) SetQrImages(_qrImages string) error {
 	r._qrImages = _qrImages
@@ -126,12 +126,12 @@ func (r *TaobaoVmarketEticketReverseAPIRequest) SetQrImages(_qrImages string) er
 	return nil
 }
 
-// Get QrImages Getter
+// GetQrImages QrImages Getter
 func (r TaobaoVmarketEticketReverseAPIRequest) GetQrImages() string {
 	return r._qrImages
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 安全验证token，需要和该订单发码通知中的token一致
 func (r *TaobaoVmarketEticketReverseAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -139,12 +139,12 @@ func (r *TaobaoVmarketEticketReverseAPIRequest) SetToken(_token string) error {
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r TaobaoVmarketEticketReverseAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is CodemerchantId Setter
+// SetCodemerchantId is CodemerchantId Setter
 // 码商ID，是码商的话必须传递，如果是信任卖家不要传
 func (r *TaobaoVmarketEticketReverseAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
 	r._codemerchantId = _codemerchantId
@@ -152,12 +152,12 @@ func (r *TaobaoVmarketEticketReverseAPIRequest) SetCodemerchantId(_codemerchantI
 	return nil
 }
 
-// Get CodemerchantId Getter
+// GetCodemerchantId CodemerchantId Getter
 func (r TaobaoVmarketEticketReverseAPIRequest) GetCodemerchantId() int64 {
 	return r._codemerchantId
 }
 
-// Set is Posid Setter
+// SetPosid is Posid Setter
 // 机具id，如果是码商必须传，如果是信任卖家不要传
 func (r *TaobaoVmarketEticketReverseAPIRequest) SetPosid(_posid string) error {
 	r._posid = _posid
@@ -165,7 +165,7 @@ func (r *TaobaoVmarketEticketReverseAPIRequest) SetPosid(_posid string) error {
 	return nil
 }
 
-// Get Posid Getter
+// GetPosid Posid Getter
 func (r TaobaoVmarketEticketReverseAPIRequest) GetPosid() string {
 	return r._posid
 }

@@ -41,7 +41,7 @@ func (r AlitripBtripInvoiceSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CorpId Setter
+// SetCorpId is CorpId Setter
 // 企业id
 func (r *AlitripBtripInvoiceSearchAPIRequest) SetCorpId(_corpId string) error {
 	r._corpId = _corpId
@@ -49,12 +49,12 @@ func (r *AlitripBtripInvoiceSearchAPIRequest) SetCorpId(_corpId string) error {
 	return nil
 }
 
-// Get CorpId Getter
+// GetCorpId CorpId Getter
 func (r AlitripBtripInvoiceSearchAPIRequest) GetCorpId() string {
 	return r._corpId
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户id
 func (r *AlitripBtripInvoiceSearchAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -62,12 +62,12 @@ func (r *AlitripBtripInvoiceSearchAPIRequest) SetUserId(_userId string) error {
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlitripBtripInvoiceSearchAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 发票抬头
 func (r *AlitripBtripInvoiceSearchAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -75,7 +75,7 @@ func (r *AlitripBtripInvoiceSearchAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r AlitripBtripInvoiceSearchAPIRequest) GetTitle() string {
 	return r._title
 }

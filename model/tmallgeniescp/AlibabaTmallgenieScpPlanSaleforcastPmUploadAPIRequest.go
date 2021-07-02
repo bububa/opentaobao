@@ -37,7 +37,7 @@ func (r AlibabaTmallgenieScpPlanSaleforcastPmUploadAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is SalesForecastRequest Setter
+// SetSalesForecastRequest is SalesForecastRequest Setter
 // 入参
 func (r *AlibabaTmallgenieScpPlanSaleforcastPmUploadAPIRequest) SetSalesForecastRequest(_salesForecastRequest *SalesForecastRequest) error {
 	r._salesForecastRequest = _salesForecastRequest
@@ -45,7 +45,7 @@ func (r *AlibabaTmallgenieScpPlanSaleforcastPmUploadAPIRequest) SetSalesForecast
 	return nil
 }
 
-// Get SalesForecastRequest Getter
+// GetSalesForecastRequest SalesForecastRequest Getter
 func (r AlibabaTmallgenieScpPlanSaleforcastPmUploadAPIRequest) GetSalesForecastRequest() *SalesForecastRequest {
 	return r._salesForecastRequest
 }

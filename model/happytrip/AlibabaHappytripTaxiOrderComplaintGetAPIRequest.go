@@ -39,7 +39,7 @@ func (r AlibabaHappytripTaxiOrderComplaintGetAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 供应商订单号
 func (r *AlibabaHappytripTaxiOrderComplaintGetAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *AlibabaHappytripTaxiOrderComplaintGetAPIRequest) SetOrderId(_orderId st
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaHappytripTaxiOrderComplaintGetAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is CaseId Setter
+// SetCaseId is CaseId Setter
 // 供应商工单号
 func (r *AlibabaHappytripTaxiOrderComplaintGetAPIRequest) SetCaseId(_caseId string) error {
 	r._caseId = _caseId
@@ -60,7 +60,7 @@ func (r *AlibabaHappytripTaxiOrderComplaintGetAPIRequest) SetCaseId(_caseId stri
 	return nil
 }
 
-// Get CaseId Getter
+// GetCaseId CaseId Getter
 func (r AlibabaHappytripTaxiOrderComplaintGetAPIRequest) GetCaseId() string {
 	return r._caseId
 }

@@ -37,7 +37,7 @@ func (r TmallItemSizemappingTemplateDeleteAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is TemplateId Setter
+// SetTemplateId is TemplateId Setter
 // 尺码表模板ID
 func (r *TmallItemSizemappingTemplateDeleteAPIRequest) SetTemplateId(_templateId int64) error {
 	r._templateId = _templateId
@@ -45,7 +45,7 @@ func (r *TmallItemSizemappingTemplateDeleteAPIRequest) SetTemplateId(_templateId
 	return nil
 }
 
-// Get TemplateId Getter
+// GetTemplateId TemplateId Getter
 func (r TmallItemSizemappingTemplateDeleteAPIRequest) GetTemplateId() int64 {
 	return r._templateId
 }

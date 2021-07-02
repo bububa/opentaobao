@@ -39,7 +39,7 @@ func (r AlibabaWholesaleGoodsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CountryCode Setter
+// SetCountryCode is CountryCode Setter
 // country_code
 func (r *AlibabaWholesaleGoodsGetAPIRequest) SetCountryCode(_countryCode string) error {
 	r._countryCode = _countryCode
@@ -47,12 +47,12 @@ func (r *AlibabaWholesaleGoodsGetAPIRequest) SetCountryCode(_countryCode string)
 	return nil
 }
 
-// Get CountryCode Getter
+// GetCountryCode CountryCode Getter
 func (r AlibabaWholesaleGoodsGetAPIRequest) GetCountryCode() string {
 	return r._countryCode
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // id
 func (r *AlibabaWholesaleGoodsGetAPIRequest) SetId(_id string) error {
 	r._id = _id
@@ -60,7 +60,7 @@ func (r *AlibabaWholesaleGoodsGetAPIRequest) SetId(_id string) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaWholesaleGoodsGetAPIRequest) GetId() string {
 	return r._id
 }

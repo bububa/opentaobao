@@ -41,7 +41,7 @@ func (r TaobaoSimbaHourReportAccountGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 昵称
 func (r *TaobaoSimbaHourReportAccountGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -49,12 +49,12 @@ func (r *TaobaoSimbaHourReportAccountGetAPIRequest) SetNick(_nick string) error 
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaHourReportAccountGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is TheDate Setter
+// SetTheDate is TheDate Setter
 // 时间
 func (r *TaobaoSimbaHourReportAccountGetAPIRequest) SetTheDate(_theDate string) error {
 	r._theDate = _theDate
@@ -62,12 +62,12 @@ func (r *TaobaoSimbaHourReportAccountGetAPIRequest) SetTheDate(_theDate string) 
 	return nil
 }
 
-// Get TheDate Getter
+// GetTheDate TheDate Getter
 func (r TaobaoSimbaHourReportAccountGetAPIRequest) GetTheDate() string {
 	return r._theDate
 }
 
-// Set is Hour Setter
+// SetHour is Hour Setter
 // 当前小时
 func (r *TaobaoSimbaHourReportAccountGetAPIRequest) SetHour(_hour string) error {
 	r._hour = _hour
@@ -75,7 +75,7 @@ func (r *TaobaoSimbaHourReportAccountGetAPIRequest) SetHour(_hour string) error 
 	return nil
 }
 
-// Get Hour Getter
+// GetHour Hour Getter
 func (r TaobaoSimbaHourReportAccountGetAPIRequest) GetHour() string {
 	return r._hour
 }

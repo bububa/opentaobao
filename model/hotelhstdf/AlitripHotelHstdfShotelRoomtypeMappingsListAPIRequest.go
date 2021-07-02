@@ -37,7 +37,7 @@ func (r AlitripHotelHstdfShotelRoomtypeMappingsListAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is Hid Setter
+// SetHid is Hid Setter
 // HID
 func (r *AlitripHotelHstdfShotelRoomtypeMappingsListAPIRequest) SetHid(_hid int64) error {
 	r._hid = _hid
@@ -45,7 +45,7 @@ func (r *AlitripHotelHstdfShotelRoomtypeMappingsListAPIRequest) SetHid(_hid int6
 	return nil
 }
 
-// Get Hid Getter
+// GetHid Hid Getter
 func (r AlitripHotelHstdfShotelRoomtypeMappingsListAPIRequest) GetHid() int64 {
 	return r._hid
 }

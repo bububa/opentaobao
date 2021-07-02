@@ -37,7 +37,7 @@ func (r AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is BindList Setter
+// SetBindList is BindList Setter
 // bind_list
 func (r *AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) SetBindList(_bindList []BindDto) error {
 	r._bindList = _bindList
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) SetBindList(_bi
 	return nil
 }
 
-// Get BindList Getter
+// GetBindList BindList Getter
 func (r AlibabaAlihealthReserveDentalBindshopanditemAPIRequest) GetBindList() []BindDto {
 	return r._bindList
 }

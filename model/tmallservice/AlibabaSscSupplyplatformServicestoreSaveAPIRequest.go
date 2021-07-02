@@ -37,7 +37,7 @@ func (r AlibabaSscSupplyplatformServicestoreSaveAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ServiceStoreSaveReq Setter
+// SetServiceStoreSaveReq is ServiceStoreSaveReq Setter
 // 入参
 func (r *AlibabaSscSupplyplatformServicestoreSaveAPIRequest) SetServiceStoreSaveReq(_serviceStoreSaveReq *ServiceStoreSaveForTopReqDto) error {
 	r._serviceStoreSaveReq = _serviceStoreSaveReq
@@ -45,7 +45,7 @@ func (r *AlibabaSscSupplyplatformServicestoreSaveAPIRequest) SetServiceStoreSave
 	return nil
 }
 
-// Get ServiceStoreSaveReq Getter
+// GetServiceStoreSaveReq ServiceStoreSaveReq Getter
 func (r AlibabaSscSupplyplatformServicestoreSaveAPIRequest) GetServiceStoreSaveReq() *ServiceStoreSaveForTopReqDto {
 	return r._serviceStoreSaveReq
 }

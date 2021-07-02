@@ -37,7 +37,7 @@ func (r TaobaoMarketPictureGetuserpicturesAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单ID
 func (r *TaobaoMarketPictureGetuserpicturesAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -45,7 +45,7 @@ func (r *TaobaoMarketPictureGetuserpicturesAPIRequest) SetOrderId(_orderId int64
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoMarketPictureGetuserpicturesAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }

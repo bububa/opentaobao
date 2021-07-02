@@ -37,7 +37,7 @@ func (r AlibabaAlihealthBookingReserveCancelAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Cancel Setter
+// SetCancel is Cancel Setter
 // cancel
 func (r *AlibabaAlihealthBookingReserveCancelAPIRequest) SetCancel(_cancel *IsvReserveRequest) error {
 	r._cancel = _cancel
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthBookingReserveCancelAPIRequest) SetCancel(_cancel *IsvR
 	return nil
 }
 
-// Get Cancel Getter
+// GetCancel Cancel Getter
 func (r AlibabaAlihealthBookingReserveCancelAPIRequest) GetCancel() *IsvReserveRequest {
 	return r._cancel
 }

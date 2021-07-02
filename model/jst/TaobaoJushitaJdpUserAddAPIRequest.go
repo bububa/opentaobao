@@ -39,7 +39,7 @@ func (r TaobaoJushitaJdpUserAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RdsName Setter
+// SetRdsName is RdsName Setter
 // RDS实例名称
 func (r *TaobaoJushitaJdpUserAddAPIRequest) SetRdsName(_rdsName string) error {
 	r._rdsName = _rdsName
@@ -47,12 +47,12 @@ func (r *TaobaoJushitaJdpUserAddAPIRequest) SetRdsName(_rdsName string) error {
 	return nil
 }
 
-// Get RdsName Getter
+// GetRdsName RdsName Getter
 func (r TaobaoJushitaJdpUserAddAPIRequest) GetRdsName() string {
 	return r._rdsName
 }
 
-// Set is HistoryDays Setter
+// SetHistoryDays is HistoryDays Setter
 // 推送历史数据天数，只能为90天内，包含90天。当此参数不填时，表示以页面中应用配置的历史天数为准；如果为0表示这个用户不推送历史数据；其它表示推送的历史天数。
 func (r *TaobaoJushitaJdpUserAddAPIRequest) SetHistoryDays(_historyDays int64) error {
 	r._historyDays = _historyDays
@@ -60,7 +60,7 @@ func (r *TaobaoJushitaJdpUserAddAPIRequest) SetHistoryDays(_historyDays int64) e
 	return nil
 }
 
-// Get HistoryDays Getter
+// GetHistoryDays HistoryDays Getter
 func (r TaobaoJushitaJdpUserAddAPIRequest) GetHistoryDays() int64 {
 	return r._historyDays
 }

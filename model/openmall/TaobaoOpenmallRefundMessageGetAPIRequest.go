@@ -43,7 +43,7 @@ func (r TaobaoOpenmallRefundMessageGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Distributor Setter
+// SetDistributor is Distributor Setter
 // 分销者身份
 func (r *TaobaoOpenmallRefundMessageGetAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
@@ -51,12 +51,12 @@ func (r *TaobaoOpenmallRefundMessageGetAPIRequest) SetDistributor(_distributor s
 	return nil
 }
 
-// Get Distributor Getter
+// GetDistributor Distributor Getter
 func (r TaobaoOpenmallRefundMessageGetAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 翻页页码
 func (r *TaobaoOpenmallRefundMessageGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -64,12 +64,12 @@ func (r *TaobaoOpenmallRefundMessageGetAPIRequest) SetPageNo(_pageNo int64) erro
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoOpenmallRefundMessageGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 翻页大小
 func (r *TaobaoOpenmallRefundMessageGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *TaobaoOpenmallRefundMessageGetAPIRequest) SetPageSize(_pageSize int64) 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoOpenmallRefundMessageGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is RefundId Setter
+// SetRefundId is RefundId Setter
 // 退款单号
 func (r *TaobaoOpenmallRefundMessageGetAPIRequest) SetRefundId(_refundId int64) error {
 	r._refundId = _refundId
@@ -90,7 +90,7 @@ func (r *TaobaoOpenmallRefundMessageGetAPIRequest) SetRefundId(_refundId int64) 
 	return nil
 }
 
-// Get RefundId Getter
+// GetRefundId RefundId Getter
 func (r TaobaoOpenmallRefundMessageGetAPIRequest) GetRefundId() int64 {
 	return r._refundId
 }

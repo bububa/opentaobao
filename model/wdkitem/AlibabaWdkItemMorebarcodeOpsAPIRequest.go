@@ -37,7 +37,7 @@ func (r AlibabaWdkItemMorebarcodeOpsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UpdateMoreBarCodeRequestBean Setter
+// SetUpdateMoreBarCodeRequestBean is UpdateMoreBarCodeRequestBean Setter
 // bean
 func (r *AlibabaWdkItemMorebarcodeOpsAPIRequest) SetUpdateMoreBarCodeRequestBean(_updateMoreBarCodeRequestBean *UpdateMoreBarCodeRequestBean) error {
 	r._updateMoreBarCodeRequestBean = _updateMoreBarCodeRequestBean
@@ -45,7 +45,7 @@ func (r *AlibabaWdkItemMorebarcodeOpsAPIRequest) SetUpdateMoreBarCodeRequestBean
 	return nil
 }
 
-// Get UpdateMoreBarCodeRequestBean Getter
+// GetUpdateMoreBarCodeRequestBean UpdateMoreBarCodeRequestBean Getter
 func (r AlibabaWdkItemMorebarcodeOpsAPIRequest) GetUpdateMoreBarCodeRequestBean() *UpdateMoreBarCodeRequestBean {
 	return r._updateMoreBarCodeRequestBean
 }

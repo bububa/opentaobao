@@ -47,7 +47,7 @@ func (r AlibabaAliqinFlowWalletSendFlowAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BuyerNick Setter
+// SetBuyerNick is BuyerNick Setter
 // 混淆用户名
 func (r *AlibabaAliqinFlowWalletSendFlowAPIRequest) SetBuyerNick(_buyerNick string) error {
 	r._buyerNick = _buyerNick
@@ -55,12 +55,12 @@ func (r *AlibabaAliqinFlowWalletSendFlowAPIRequest) SetBuyerNick(_buyerNick stri
 	return nil
 }
 
-// Get BuyerNick Getter
+// GetBuyerNick BuyerNick Getter
 func (r AlibabaAliqinFlowWalletSendFlowAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }
 
-// Set is RealNick Setter
+// SetRealNick is RealNick Setter
 // 真实用户名称，如果填写这个字段，buyer_nick失效
 func (r *AlibabaAliqinFlowWalletSendFlowAPIRequest) SetRealNick(_realNick string) error {
 	r._realNick = _realNick
@@ -68,12 +68,12 @@ func (r *AlibabaAliqinFlowWalletSendFlowAPIRequest) SetRealNick(_realNick string
 	return nil
 }
 
-// Get RealNick Getter
+// GetRealNick RealNick Getter
 func (r AlibabaAliqinFlowWalletSendFlowAPIRequest) GetRealNick() string {
 	return r._realNick
 }
 
-// Set is Serial Setter
+// SetSerial is Serial Setter
 // 唯一流水号，字母+数字组合
 func (r *AlibabaAliqinFlowWalletSendFlowAPIRequest) SetSerial(_serial string) error {
 	r._serial = _serial
@@ -81,12 +81,12 @@ func (r *AlibabaAliqinFlowWalletSendFlowAPIRequest) SetSerial(_serial string) er
 	return nil
 }
 
-// Get Serial Getter
+// GetSerial Serial Getter
 func (r AlibabaAliqinFlowWalletSendFlowAPIRequest) GetSerial() string {
 	return r._serial
 }
 
-// Set is Flow Setter
+// SetFlow is Flow Setter
 // 流量
 func (r *AlibabaAliqinFlowWalletSendFlowAPIRequest) SetFlow(_flow string) error {
 	r._flow = _flow
@@ -94,12 +94,12 @@ func (r *AlibabaAliqinFlowWalletSendFlowAPIRequest) SetFlow(_flow string) error 
 	return nil
 }
 
-// Get Flow Getter
+// GetFlow Flow Getter
 func (r AlibabaAliqinFlowWalletSendFlowAPIRequest) GetFlow() string {
 	return r._flow
 }
 
-// Set is Reason Setter
+// SetReason is Reason Setter
 // 购物送
 func (r *AlibabaAliqinFlowWalletSendFlowAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
@@ -107,12 +107,12 @@ func (r *AlibabaAliqinFlowWalletSendFlowAPIRequest) SetReason(_reason string) er
 	return nil
 }
 
-// Get Reason Getter
+// GetReason Reason Getter
 func (r AlibabaAliqinFlowWalletSendFlowAPIRequest) GetReason() string {
 	return r._reason
 }
 
-// Set is Always Setter
+// SetAlways is Always Setter
 // 设置true为始终发送成功
 func (r *AlibabaAliqinFlowWalletSendFlowAPIRequest) SetAlways(_always string) error {
 	r._always = _always
@@ -120,7 +120,7 @@ func (r *AlibabaAliqinFlowWalletSendFlowAPIRequest) SetAlways(_always string) er
 	return nil
 }
 
-// Get Always Getter
+// GetAlways Always Getter
 func (r AlibabaAliqinFlowWalletSendFlowAPIRequest) GetAlways() string {
 	return r._always
 }

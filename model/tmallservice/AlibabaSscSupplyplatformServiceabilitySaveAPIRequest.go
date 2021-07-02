@@ -45,7 +45,7 @@ func (r AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is ProviderType Setter
+// SetProviderType is ProviderType Setter
 // 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
 func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) SetProviderType(_providerType string) error {
 	r._providerType = _providerType
@@ -53,12 +53,12 @@ func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) SetProviderType(_
 	return nil
 }
 
-// Get ProviderType Getter
+// GetProviderType ProviderType Getter
 func (r AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) GetProviderType() string {
 	return r._providerType
 }
 
-// Set is ProviderId Setter
+// SetProviderId is ProviderId Setter
 // 服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id
 func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) SetProviderId(_providerId int64) error {
 	r._providerId = _providerId
@@ -66,12 +66,12 @@ func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) SetProviderId(_pr
 	return nil
 }
 
-// Get ProviderId Getter
+// GetProviderId ProviderId Getter
 func (r AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) GetProviderId() int64 {
 	return r._providerId
 }
 
-// Set is FulfilTypeList Setter
+// SetFulfilTypeList is FulfilTypeList Setter
 // 目前包含三种。in_store 到店；at_home 上门；transmit_service 寄修。请根据实际支持的履约类型填写
 func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) SetFulfilTypeList(_fulfilTypeList []string) error {
 	r._fulfilTypeList = _fulfilTypeList
@@ -79,12 +79,12 @@ func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) SetFulfilTypeList
 	return nil
 }
 
-// Get FulfilTypeList Getter
+// GetFulfilTypeList FulfilTypeList Getter
 func (r AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) GetFulfilTypeList() []string {
 	return r._fulfilTypeList
 }
 
-// Set is ServiceSkuCodeList Setter
+// SetServiceSkuCodeList is ServiceSkuCodeList Setter
 // 服务sku，具体的sku列表可以从服务商工作台的类目树获取
 func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) SetServiceSkuCodeList(_serviceSkuCodeList []string) error {
 	r._serviceSkuCodeList = _serviceSkuCodeList
@@ -92,12 +92,12 @@ func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) SetServiceSkuCode
 	return nil
 }
 
-// Get ServiceSkuCodeList Getter
+// GetServiceSkuCodeList ServiceSkuCodeList Getter
 func (r AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) GetServiceSkuCodeList() []string {
 	return r._serviceSkuCodeList
 }
 
-// Set is AreaCodeList Setter
+// SetAreaCodeList is AreaCodeList Setter
 // 菜鸟地址编码，各级地址均可（全国、省、市、区、街道），根据实际支持的地区填写。当支持的履约类型包含上门时，必填
 func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) SetAreaCodeList(_areaCodeList []int64) error {
 	r._areaCodeList = _areaCodeList
@@ -105,7 +105,7 @@ func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) SetAreaCodeList(_
 	return nil
 }
 
-// Get AreaCodeList Getter
+// GetAreaCodeList AreaCodeList Getter
 func (r AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) GetAreaCodeList() []int64 {
 	return r._areaCodeList
 }

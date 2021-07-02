@@ -45,7 +45,7 @@ func (r AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业RefEntid，是指该单据的所有者。         如企业A上传了一个出库单，您为A的单据上传运输温度，那么此时RefEntid即为A的ID。         若您本企业上传了一个单据，您为这个单据上传温度，此时RefEntid即为您本企业的ID。
 func (r *AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -53,12 +53,12 @@ func (r *AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) SetRefEntId(_refEntId
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is EquipmentCode Setter
+// SetEquipmentCode is EquipmentCode Setter
 // 设备编号
 func (r *AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) SetEquipmentCode(_equipmentCode string) error {
 	r._equipmentCode = _equipmentCode
@@ -66,12 +66,12 @@ func (r *AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) SetEquipmentCode(_equ
 	return nil
 }
 
-// Get EquipmentCode Getter
+// GetEquipmentCode EquipmentCode Getter
 func (r AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) GetEquipmentCode() string {
 	return r._equipmentCode
 }
 
-// Set is EquipmentName Setter
+// SetEquipmentName is EquipmentName Setter
 // 设备名称
 func (r *AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) SetEquipmentName(_equipmentName string) error {
 	r._equipmentName = _equipmentName
@@ -79,12 +79,12 @@ func (r *AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) SetEquipmentName(_equ
 	return nil
 }
 
-// Get EquipmentName Getter
+// GetEquipmentName EquipmentName Getter
 func (r AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) GetEquipmentName() string {
 	return r._equipmentName
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 温度信息
 func (r *AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -92,12 +92,12 @@ func (r *AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) SetContent(_content s
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) GetContent() string {
 	return r._content
 }
 
-// Set is AgentRefEntId Setter
+// SetAgentRefEntId is AgentRefEntId Setter
 // 代上传的企业agent_ref_ent_id，特指“代上传温度”的企业。         如企业A上传了一个出库单，您代为A的单据上传运输温度，那么此时Agent_RefEntid即为您的ID。         若您本企业上传了一个单据，您本企业为这个单据上传温度，不存在“代上传”概念，此时agent_ref_ent_id即为空。
 func (r *AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) SetAgentRefEntId(_agentRefEntId string) error {
 	r._agentRefEntId = _agentRefEntId
@@ -105,7 +105,7 @@ func (r *AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) SetAgentRefEntId(_age
 	return nil
 }
 
-// Get AgentRefEntId Getter
+// GetAgentRefEntId AgentRefEntId Getter
 func (r AlibabaAlihealthDrugKytDrStorageuploadAPIRequest) GetAgentRefEntId() string {
 	return r._agentRefEntId
 }

@@ -54,7 +54,7 @@ func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TradeOrderId Setter
+// SetTradeOrderId is TradeOrderId Setter
 // 交易订单id
 func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetTradeOrderId(_tradeOrderId int64) error {
 	r._tradeOrderId = _tradeOrderId
@@ -62,12 +62,12 @@ func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetTradeOrderId(_tradeOrderId
 	return nil
 }
 
-// Get TradeOrderId Getter
+// GetTradeOrderId TradeOrderId Getter
 func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetTradeOrderId() int64 {
 	return r._tradeOrderId
 }
 
-// Set is ResourceId Setter
+// SetResourceId is ResourceId Setter
 // 物流资源ID
 func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetResourceId(_resourceId int64) error {
 	r._resourceId = _resourceId
@@ -75,12 +75,12 @@ func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetResourceId(_resourceId int
 	return nil
 }
 
-// Get ResourceId Getter
+// GetResourceId ResourceId Getter
 func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetResourceId() int64 {
 	return r._resourceId
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 仓库编码
 func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -88,12 +88,12 @@ func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetStoreCode(_storeCode strin
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is FirstLogistics Setter
+// SetFirstLogistics is FirstLogistics Setter
 // 第1段物流承运商
 func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetFirstLogistics(_firstLogistics string) error {
 	r._firstLogistics = _firstLogistics
@@ -101,12 +101,12 @@ func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetFirstLogistics(_firstLogis
 	return nil
 }
 
-// Get FirstLogistics Getter
+// GetFirstLogistics FirstLogistics Getter
 func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetFirstLogistics() string {
 	return r._firstLogistics
 }
 
-// Set is FirstWaybillno Setter
+// SetFirstWaybillno is FirstWaybillno Setter
 // 第1段物流运单号
 func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetFirstWaybillno(_firstWaybillno string) error {
 	r._firstWaybillno = _firstWaybillno
@@ -114,12 +114,12 @@ func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetFirstWaybillno(_firstWaybi
 	return nil
 }
 
-// Get FirstWaybillno Getter
+// GetFirstWaybillno FirstWaybillno Getter
 func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetFirstWaybillno() string {
 	return r._firstWaybillno
 }
 
-// Set is SenderId Setter
+// SetSenderId is SenderId Setter
 // 卖家发货地址库ID；不填的话取默认发货地址；如果填写的senderId对应多个地址，取第一个
 func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetSenderId(_senderId int64) error {
 	r._senderId = _senderId
@@ -127,12 +127,12 @@ func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetSenderId(_senderId int64) 
 	return nil
 }
 
-// Get SenderId Getter
+// GetSenderId SenderId Getter
 func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetSenderId() int64 {
 	return r._senderId
 }
 
-// Set is CancelId Setter
+// SetCancelId is CancelId Setter
 // 卖家退货地址库ID；不填写的话取默认退货地址；如果填写的cancelId对应多个地址，取第一个
 func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetCancelId(_cancelId int64) error {
 	r._cancelId = _cancelId
@@ -140,12 +140,12 @@ func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetCancelId(_cancelId int64) 
 	return nil
 }
 
-// Get CancelId Getter
+// GetCancelId CancelId Getter
 func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetCancelId() int64 {
 	return r._cancelId
 }
 
-// Set is VasCode Setter
+// SetVasCode is VasCode Setter
 // 增值服务编码.多个以逗号分隔
 func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetVasCode(_vasCode string) error {
 	r._vasCode = _vasCode
@@ -153,7 +153,7 @@ func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetVasCode(_vasCode string) e
 	return nil
 }
 
-// Get VasCode Getter
+// GetVasCode VasCode Getter
 func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetVasCode() string {
 	return r._vasCode
 }

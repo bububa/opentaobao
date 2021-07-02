@@ -37,7 +37,7 @@ func (r AlibabaSscServicecenterServicestoreQueryAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 天猫id
 func (r *AlibabaSscServicecenterServicestoreQueryAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -45,7 +45,7 @@ func (r *AlibabaSscServicecenterServicestoreQueryAPIRequest) SetId(_id int64) er
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaSscServicecenterServicestoreQueryAPIRequest) GetId() int64 {
 	return r._id
 }

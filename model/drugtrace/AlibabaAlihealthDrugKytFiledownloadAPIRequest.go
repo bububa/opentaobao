@@ -43,7 +43,7 @@ func (r AlibabaAlihealthDrugKytFiledownloadAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is RefUserId Setter
+// SetRefUserId is RefUserId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugKytFiledownloadAPIRequest) SetRefUserId(_refUserId string) error {
 	r._refUserId = _refUserId
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthDrugKytFiledownloadAPIRequest) SetRefUserId(_refUserId 
 	return nil
 }
 
-// Get RefUserId Getter
+// GetRefUserId RefUserId Getter
 func (r AlibabaAlihealthDrugKytFiledownloadAPIRequest) GetRefUserId() string {
 	return r._refUserId
 }
 
-// Set is Url Setter
+// SetUrl is Url Setter
 // 文件地址
 func (r *AlibabaAlihealthDrugKytFiledownloadAPIRequest) SetUrl(_url string) error {
 	r._url = _url
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthDrugKytFiledownloadAPIRequest) SetUrl(_url string) erro
 	return nil
 }
 
-// Get Url Getter
+// GetUrl Url Getter
 func (r AlibabaAlihealthDrugKytFiledownloadAPIRequest) GetUrl() string {
 	return r._url
 }
 
-// Set is BillType Setter
+// SetBillType is BillType Setter
 // 单据类型
 func (r *AlibabaAlihealthDrugKytFiledownloadAPIRequest) SetBillType(_billType string) error {
 	r._billType = _billType
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthDrugKytFiledownloadAPIRequest) SetBillType(_billType st
 	return nil
 }
 
-// Get BillType Getter
+// GetBillType BillType Getter
 func (r AlibabaAlihealthDrugKytFiledownloadAPIRequest) GetBillType() string {
 	return r._billType
 }
 
-// Set is BillQueueId Setter
+// SetBillQueueId is BillQueueId Setter
 // 单据队列ID
 func (r *AlibabaAlihealthDrugKytFiledownloadAPIRequest) SetBillQueueId(_billQueueId string) error {
 	r._billQueueId = _billQueueId
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthDrugKytFiledownloadAPIRequest) SetBillQueueId(_billQueu
 	return nil
 }
 
-// Get BillQueueId Getter
+// GetBillQueueId BillQueueId Getter
 func (r AlibabaAlihealthDrugKytFiledownloadAPIRequest) GetBillQueueId() string {
 	return r._billQueueId
 }

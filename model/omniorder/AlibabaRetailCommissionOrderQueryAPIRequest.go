@@ -43,7 +43,7 @@ func (r AlibabaRetailCommissionOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码，默认第一页
 func (r *AlibabaRetailCommissionOrderQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -51,12 +51,12 @@ func (r *AlibabaRetailCommissionOrderQueryAPIRequest) SetPageNo(_pageNo int64) e
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r AlibabaRetailCommissionOrderQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小，默认每页十条
 func (r *AlibabaRetailCommissionOrderQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -64,12 +64,12 @@ func (r *AlibabaRetailCommissionOrderQueryAPIRequest) SetPageSize(_pageSize int6
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaRetailCommissionOrderQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is EndPayTime Setter
+// SetEndPayTime is EndPayTime Setter
 // 查询三个月内交易创建时间开始。格式:yyyy-MM-dd HH:mm:ss
 func (r *AlibabaRetailCommissionOrderQueryAPIRequest) SetEndPayTime(_endPayTime string) error {
 	r._endPayTime = _endPayTime
@@ -77,12 +77,12 @@ func (r *AlibabaRetailCommissionOrderQueryAPIRequest) SetEndPayTime(_endPayTime 
 	return nil
 }
 
-// Get EndPayTime Getter
+// GetEndPayTime EndPayTime Getter
 func (r AlibabaRetailCommissionOrderQueryAPIRequest) GetEndPayTime() string {
 	return r._endPayTime
 }
 
-// Set is StartPayTime Setter
+// SetStartPayTime is StartPayTime Setter
 // 查询交易创建时间结束。格式:yyyy-MM-dd HH:mm:ss
 func (r *AlibabaRetailCommissionOrderQueryAPIRequest) SetStartPayTime(_startPayTime string) error {
 	r._startPayTime = _startPayTime
@@ -90,7 +90,7 @@ func (r *AlibabaRetailCommissionOrderQueryAPIRequest) SetStartPayTime(_startPayT
 	return nil
 }
 
-// Get StartPayTime Getter
+// GetStartPayTime StartPayTime Getter
 func (r AlibabaRetailCommissionOrderQueryAPIRequest) GetStartPayTime() string {
 	return r._startPayTime
 }

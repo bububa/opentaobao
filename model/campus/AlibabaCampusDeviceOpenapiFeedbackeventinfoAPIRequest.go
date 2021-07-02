@@ -39,7 +39,7 @@ func (r AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 系统上下文
 func (r *AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
 	r._param0 = _param0
@@ -47,12 +47,12 @@ func (r *AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest) SetParam0(_param
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest) GetParam0() *WorkBenchContext {
 	return r._param0
 }
 
-// Set is Param1 Setter
+// SetParam1 is Param1 Setter
 // 请求封装类
 func (r *AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest) SetParam1(_param1 *EventInfoApiDto) error {
 	r._param1 = _param1
@@ -60,7 +60,7 @@ func (r *AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest) SetParam1(_param
 	return nil
 }
 
-// Get Param1 Getter
+// GetParam1 Param1 Getter
 func (r AlibabaCampusDeviceOpenapiFeedbackeventinfoAPIRequest) GetParam1() *EventInfoApiDto {
 	return r._param1
 }

@@ -39,7 +39,7 @@ func (r TaobaoKaolaScitemAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Cnsku Setter
+// SetCnsku is Cnsku Setter
 // 待新增的货品
 func (r *TaobaoKaolaScitemAddAPIRequest) SetCnsku(_cnsku *CnskuDto) error {
 	r._cnsku = _cnsku
@@ -47,12 +47,12 @@ func (r *TaobaoKaolaScitemAddAPIRequest) SetCnsku(_cnsku *CnskuDto) error {
 	return nil
 }
 
-// Get Cnsku Getter
+// GetCnsku Cnsku Getter
 func (r TaobaoKaolaScitemAddAPIRequest) GetCnsku() *CnskuDto {
 	return r._cnsku
 }
 
-// Set is Option Setter
+// SetOption is Option Setter
 // 新增选项
 func (r *TaobaoKaolaScitemAddAPIRequest) SetOption(_option *AddCnskuOption) error {
 	r._option = _option
@@ -60,7 +60,7 @@ func (r *TaobaoKaolaScitemAddAPIRequest) SetOption(_option *AddCnskuOption) erro
 	return nil
 }
 
-// Get Option Getter
+// GetOption Option Getter
 func (r TaobaoKaolaScitemAddAPIRequest) GetOption() *AddCnskuOption {
 	return r._option
 }

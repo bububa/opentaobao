@@ -53,7 +53,7 @@ func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商ID
 func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -61,12 +61,12 @@ func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetAgentId(_agentId int64) e
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is BeginTime Setter
+// SetBeginTime is BeginTime Setter
 // 订单起始日期
 func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetBeginTime(_beginTime string) error {
 	r._beginTime = _beginTime
@@ -74,12 +74,12 @@ func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetBeginTime(_beginTime stri
 	return nil
 }
 
-// Get BeginTime Getter
+// GetBeginTime BeginTime Getter
 func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetBeginTime() string {
 	return r._beginTime
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前页码
 func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -87,12 +87,12 @@ func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetCurrentPage(_currentPage 
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 订单结束日期
 func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -100,12 +100,12 @@ func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetEndTime(_endTime string) 
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is OrderStatus Setter
+// SetOrderStatus is OrderStatus Setter
 // 订单状态（只能传入一个状态，不支持多个一起传）
 func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetOrderStatus(_orderStatus string) error {
 	r._orderStatus = _orderStatus
@@ -113,12 +113,12 @@ func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetOrderStatus(_orderStatus 
 	return nil
 }
 
-// Get OrderStatus Getter
+// GetOrderStatus OrderStatus Getter
 func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetOrderStatus() string {
 	return r._orderStatus
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
 func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -126,12 +126,12 @@ func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetPageSize(_pageSize int64)
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is FareSource Setter
+// SetFareSource is FareSource Setter
 // 0:自有运价;3:公布运价;9:大卖家API;11私有库存
 func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetFareSource(_fareSource int64) error {
 	r._fareSource = _fareSource
@@ -139,12 +139,12 @@ func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetFareSource(_fareSource in
 	return nil
 }
 
-// Get FareSource Getter
+// GetFareSource FareSource Getter
 func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetFareSource() int64 {
 	return r._fareSource
 }
 
-// Set is ResourceCode Setter
+// SetResourceCode is ResourceCode Setter
 // 供应渠道/资源码
 func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetResourceCode(_resourceCode string) error {
 	r._resourceCode = _resourceCode
@@ -152,12 +152,12 @@ func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetResourceCode(_resourceCod
 	return nil
 }
 
-// Get ResourceCode Getter
+// GetResourceCode ResourceCode Getter
 func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetResourceCode() string {
 	return r._resourceCode
 }
 
-// Set is OfficeNo Setter
+// SetOfficeNo is OfficeNo Setter
 // officeNo
 func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetOfficeNo(_officeNo string) error {
 	r._officeNo = _officeNo
@@ -165,7 +165,7 @@ func (r *TaobaoAlitripIeAgentOrderSearchAPIRequest) SetOfficeNo(_officeNo string
 	return nil
 }
 
-// Get OfficeNo Getter
+// GetOfficeNo OfficeNo Getter
 func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetOfficeNo() string {
 	return r._officeNo
 }

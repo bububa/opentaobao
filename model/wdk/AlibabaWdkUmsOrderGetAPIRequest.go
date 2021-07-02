@@ -37,7 +37,7 @@ func (r AlibabaWdkUmsOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryErpbillDto Setter
+// SetQueryErpbillDto is QueryErpbillDto Setter
 // 查询单据的dto
 func (r *AlibabaWdkUmsOrderGetAPIRequest) SetQueryErpbillDto(_queryErpbillDto *QueryErpBillDto) error {
 	r._queryErpbillDto = _queryErpbillDto
@@ -45,7 +45,7 @@ func (r *AlibabaWdkUmsOrderGetAPIRequest) SetQueryErpbillDto(_queryErpbillDto *Q
 	return nil
 }
 
-// Get QueryErpbillDto Getter
+// GetQueryErpbillDto QueryErpbillDto Getter
 func (r AlibabaWdkUmsOrderGetAPIRequest) GetQueryErpbillDto() *QueryErpBillDto {
 	return r._queryErpbillDto
 }

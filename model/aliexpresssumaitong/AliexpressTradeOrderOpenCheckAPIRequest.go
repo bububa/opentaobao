@@ -39,7 +39,7 @@ func (r AliexpressTradeOrderOpenCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamPreCreateOrderRequest Setter
+// SetParamPreCreateOrderRequest is ParamPreCreateOrderRequest Setter
 // 预下单入参
 func (r *AliexpressTradeOrderOpenCheckAPIRequest) SetParamPreCreateOrderRequest(_paramPreCreateOrderRequest *PreCreateOrderRequest) error {
 	r._paramPreCreateOrderRequest = _paramPreCreateOrderRequest
@@ -47,12 +47,12 @@ func (r *AliexpressTradeOrderOpenCheckAPIRequest) SetParamPreCreateOrderRequest(
 	return nil
 }
 
-// Get ParamPreCreateOrderRequest Getter
+// GetParamPreCreateOrderRequest ParamPreCreateOrderRequest Getter
 func (r AliexpressTradeOrderOpenCheckAPIRequest) GetParamPreCreateOrderRequest() *PreCreateOrderRequest {
 	return r._paramPreCreateOrderRequest
 }
 
-// Set is ParamClientInfo Setter
+// SetParamClientInfo is ParamClientInfo Setter
 // 客户端信息
 func (r *AliexpressTradeOrderOpenCheckAPIRequest) SetParamClientInfo(_paramClientInfo *ClientInfo) error {
 	r._paramClientInfo = _paramClientInfo
@@ -60,7 +60,7 @@ func (r *AliexpressTradeOrderOpenCheckAPIRequest) SetParamClientInfo(_paramClien
 	return nil
 }
 
-// Get ParamClientInfo Getter
+// GetParamClientInfo ParamClientInfo Getter
 func (r AliexpressTradeOrderOpenCheckAPIRequest) GetParamClientInfo() *ClientInfo {
 	return r._paramClientInfo
 }

@@ -39,7 +39,7 @@ func (r YunosOsupdateModelSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 应用ID
 func (r *YunosOsupdateModelSearchAPIRequest) SetAppId(_appId int64) error {
 	r._appId = _appId
@@ -47,12 +47,12 @@ func (r *YunosOsupdateModelSearchAPIRequest) SetAppId(_appId int64) error {
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r YunosOsupdateModelSearchAPIRequest) GetAppId() int64 {
 	return r._appId
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 关键词
 func (r *YunosOsupdateModelSearchAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -60,7 +60,7 @@ func (r *YunosOsupdateModelSearchAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r YunosOsupdateModelSearchAPIRequest) GetName() string {
 	return r._name
 }

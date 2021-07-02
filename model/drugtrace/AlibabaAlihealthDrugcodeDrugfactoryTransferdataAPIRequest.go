@@ -43,7 +43,7 @@ func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) GetApiParams(
 	return params
 }
 
-// Set is TimestampYl Setter
+// SetTimestampYl is TimestampYl Setter
 // 时间戳(毫秒级别)
 func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) SetTimestampYl(_timestampYl int64) error {
 	r._timestampYl = _timestampYl
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) SetTimestamp
 	return nil
 }
 
-// Get TimestampYl Getter
+// GetTimestampYl TimestampYl Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) GetTimestampYl() int64 {
 	return r._timestampYl
 }
 
-// Set is SignValue Setter
+// SetSignValue is SignValue Setter
 // 签名值
 func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) SetSignValue(_signValue string) error {
 	r._signValue = _signValue
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) SetSignValue
 	return nil
 }
 
-// Get SignValue Getter
+// GetSignValue SignValue Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) GetSignValue() string {
 	return r._signValue
 }
 
-// Set is CipherText Setter
+// SetCipherText is CipherText Setter
 // 密文
 func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) SetCipherText(_cipherText string) error {
 	r._cipherText = _cipherText
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) SetCipherTex
 	return nil
 }
 
-// Get CipherText Getter
+// GetCipherText CipherText Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) GetCipherText() string {
 	return r._cipherText
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业Id
 func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) SetRefEntId(
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }

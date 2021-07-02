@@ -37,7 +37,7 @@ func (r AlibabaAscpUopSupplierWaybillQueryAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is WaybillQueryRequest Setter
+// SetWaybillQueryRequest is WaybillQueryRequest Setter
 // 查询面单请求参数
 func (r *AlibabaAscpUopSupplierWaybillQueryAPIRequest) SetWaybillQueryRequest(_waybillQueryRequest *Waybillqueryrequest) error {
 	r._waybillQueryRequest = _waybillQueryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpUopSupplierWaybillQueryAPIRequest) SetWaybillQueryRequest(_w
 	return nil
 }
 
-// Get WaybillQueryRequest Getter
+// GetWaybillQueryRequest WaybillQueryRequest Getter
 func (r AlibabaAscpUopSupplierWaybillQueryAPIRequest) GetWaybillQueryRequest() *Waybillqueryrequest {
 	return r._waybillQueryRequest
 }

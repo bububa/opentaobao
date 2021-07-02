@@ -39,7 +39,7 @@ func (r AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 饿了么订单ID
 func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) SetOrderId(_orde
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 用户手机号
 func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -60,7 +60,7 @@ func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) SetPhone(_phone 
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r AlibabaEleEnterpriseOrdernewGettrackinginfoAPIRequest) GetPhone() string {
 	return r._phone
 }

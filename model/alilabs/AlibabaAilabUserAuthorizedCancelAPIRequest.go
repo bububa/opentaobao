@@ -39,7 +39,7 @@ func (r AlibabaAilabUserAuthorizedCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MerchantUserId Setter
+// SetMerchantUserId is MerchantUserId Setter
 // 三方用户的唯一ID
 func (r *AlibabaAilabUserAuthorizedCancelAPIRequest) SetMerchantUserId(_merchantUserId string) error {
 	r._merchantUserId = _merchantUserId
@@ -47,12 +47,12 @@ func (r *AlibabaAilabUserAuthorizedCancelAPIRequest) SetMerchantUserId(_merchant
 	return nil
 }
 
-// Get MerchantUserId Getter
+// GetMerchantUserId MerchantUserId Getter
 func (r AlibabaAilabUserAuthorizedCancelAPIRequest) GetMerchantUserId() string {
 	return r._merchantUserId
 }
 
-// Set is SchemaKey Setter
+// SetSchemaKey is SchemaKey Setter
 // 开放平台申请的schema
 func (r *AlibabaAilabUserAuthorizedCancelAPIRequest) SetSchemaKey(_schemaKey string) error {
 	r._schemaKey = _schemaKey
@@ -60,7 +60,7 @@ func (r *AlibabaAilabUserAuthorizedCancelAPIRequest) SetSchemaKey(_schemaKey str
 	return nil
 }
 
-// Get SchemaKey Getter
+// GetSchemaKey SchemaKey Getter
 func (r AlibabaAilabUserAuthorizedCancelAPIRequest) GetSchemaKey() string {
 	return r._schemaKey
 }

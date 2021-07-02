@@ -45,7 +45,7 @@ func (r CainiaoVmsServiceVehicleinfoUploadAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备号
 func (r *CainiaoVmsServiceVehicleinfoUploadAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -53,12 +53,12 @@ func (r *CainiaoVmsServiceVehicleinfoUploadAPIRequest) SetDeviceId(_deviceId str
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r CainiaoVmsServiceVehicleinfoUploadAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is ProviderName Setter
+// SetProviderName is ProviderName Setter
 // 厂家标识
 func (r *CainiaoVmsServiceVehicleinfoUploadAPIRequest) SetProviderName(_providerName string) error {
 	r._providerName = _providerName
@@ -66,12 +66,12 @@ func (r *CainiaoVmsServiceVehicleinfoUploadAPIRequest) SetProviderName(_provider
 	return nil
 }
 
-// Get ProviderName Getter
+// GetProviderName ProviderName Getter
 func (r CainiaoVmsServiceVehicleinfoUploadAPIRequest) GetProviderName() string {
 	return r._providerName
 }
 
-// Set is DataSource Setter
+// SetDataSource is DataSource Setter
 // 数据源标识
 func (r *CainiaoVmsServiceVehicleinfoUploadAPIRequest) SetDataSource(_dataSource string) error {
 	r._dataSource = _dataSource
@@ -79,12 +79,12 @@ func (r *CainiaoVmsServiceVehicleinfoUploadAPIRequest) SetDataSource(_dataSource
 	return nil
 }
 
-// Get DataSource Getter
+// GetDataSource DataSource Getter
 func (r CainiaoVmsServiceVehicleinfoUploadAPIRequest) GetDataSource() string {
 	return r._dataSource
 }
 
-// Set is ProtocolVersion Setter
+// SetProtocolVersion is ProtocolVersion Setter
 // 协议版本标识
 func (r *CainiaoVmsServiceVehicleinfoUploadAPIRequest) SetProtocolVersion(_protocolVersion string) error {
 	r._protocolVersion = _protocolVersion
@@ -92,12 +92,12 @@ func (r *CainiaoVmsServiceVehicleinfoUploadAPIRequest) SetProtocolVersion(_proto
 	return nil
 }
 
-// Get ProtocolVersion Getter
+// GetProtocolVersion ProtocolVersion Getter
 func (r CainiaoVmsServiceVehicleinfoUploadAPIRequest) GetProtocolVersion() string {
 	return r._protocolVersion
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // 上传的信息
 func (r *CainiaoVmsServiceVehicleinfoUploadAPIRequest) SetData(_data string) error {
 	r._data = _data
@@ -105,7 +105,7 @@ func (r *CainiaoVmsServiceVehicleinfoUploadAPIRequest) SetData(_data string) err
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r CainiaoVmsServiceVehicleinfoUploadAPIRequest) GetData() string {
 	return r._data
 }

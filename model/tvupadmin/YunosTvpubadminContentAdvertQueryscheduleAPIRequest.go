@@ -49,7 +49,7 @@ func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Range Setter
+// SetRange is Range Setter
 // 查询范围: 1-牌照，4-uuid
 func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetRange(_range int64) error {
 	r._range = _range
@@ -57,12 +57,12 @@ func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetRange(_range in
 	return nil
 }
 
-// Get Range Getter
+// GetRange Range Getter
 func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetRange() int64 {
 	return r._range
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 分页，页码
 func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -70,12 +70,12 @@ func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetPageNo(_pageNo 
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页，单页数量
 func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -83,12 +83,12 @@ func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetPageSize(_pageS
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is GmtStart Setter
+// SetGmtStart is GmtStart Setter
 // 日期
 func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetGmtStart(_gmtStart string) error {
 	r._gmtStart = _gmtStart
@@ -96,12 +96,12 @@ func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetGmtStart(_gmtSt
 	return nil
 }
 
-// Get GmtStart Getter
+// GetGmtStart GmtStart Getter
 func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetGmtStart() string {
 	return r._gmtStart
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // uuid
 func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -109,12 +109,12 @@ func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetUuid(_uuid stri
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照方，1-华数，7-CIBN
 func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -122,12 +122,12 @@ func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetLicense(_licens
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetLicense() int64 {
 	return r._license
 }
 
-// Set is SityType Setter
+// SetSityType is SityType Setter
 // 广告类型
 func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetSityType(_sityType int64) error {
 	r._sityType = _sityType
@@ -135,7 +135,7 @@ func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetSityType(_sityT
 	return nil
 }
 
-// Get SityType Getter
+// GetSityType SityType Getter
 func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetSityType() int64 {
 	return r._sityType
 }

@@ -39,7 +39,7 @@ func (r TaobaoAuctionGovDataRealtimeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CourtName Setter
+// SetCourtName is CourtName Setter
 // 法院名称
 func (r *TaobaoAuctionGovDataRealtimeGetAPIRequest) SetCourtName(_courtName string) error {
 	r._courtName = _courtName
@@ -47,12 +47,12 @@ func (r *TaobaoAuctionGovDataRealtimeGetAPIRequest) SetCourtName(_courtName stri
 	return nil
 }
 
-// Get CourtName Getter
+// GetCourtName CourtName Getter
 func (r TaobaoAuctionGovDataRealtimeGetAPIRequest) GetCourtName() string {
 	return r._courtName
 }
 
-// Set is IsIncludeSub Setter
+// SetIsIncludeSub is IsIncludeSub Setter
 // 统计数据是否包含下级法院
 func (r *TaobaoAuctionGovDataRealtimeGetAPIRequest) SetIsIncludeSub(_isIncludeSub bool) error {
 	r._isIncludeSub = _isIncludeSub
@@ -60,7 +60,7 @@ func (r *TaobaoAuctionGovDataRealtimeGetAPIRequest) SetIsIncludeSub(_isIncludeSu
 	return nil
 }
 
-// Get IsIncludeSub Getter
+// GetIsIncludeSub IsIncludeSub Getter
 func (r TaobaoAuctionGovDataRealtimeGetAPIRequest) GetIsIncludeSub() bool {
 	return r._isIncludeSub
 }

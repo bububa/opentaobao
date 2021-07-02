@@ -39,7 +39,7 @@ func (r TmallChannelTradeApplyorderAgreeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OperateDesc Setter
+// SetOperateDesc is OperateDesc Setter
 // 操作描述
 func (r *TmallChannelTradeApplyorderAgreeAPIRequest) SetOperateDesc(_operateDesc string) error {
 	r._operateDesc = _operateDesc
@@ -47,12 +47,12 @@ func (r *TmallChannelTradeApplyorderAgreeAPIRequest) SetOperateDesc(_operateDesc
 	return nil
 }
 
-// Get OperateDesc Getter
+// GetOperateDesc OperateDesc Getter
 func (r TmallChannelTradeApplyorderAgreeAPIRequest) GetOperateDesc() string {
 	return r._operateDesc
 }
 
-// Set is ChannelPurchaseApplyOrderNo Setter
+// SetChannelPurchaseApplyOrderNo is ChannelPurchaseApplyOrderNo Setter
 // 采购申请单号
 func (r *TmallChannelTradeApplyorderAgreeAPIRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
 	r._channelPurchaseApplyOrderNo = _channelPurchaseApplyOrderNo
@@ -60,7 +60,7 @@ func (r *TmallChannelTradeApplyorderAgreeAPIRequest) SetChannelPurchaseApplyOrde
 	return nil
 }
 
-// Get ChannelPurchaseApplyOrderNo Getter
+// GetChannelPurchaseApplyOrderNo ChannelPurchaseApplyOrderNo Getter
 func (r TmallChannelTradeApplyorderAgreeAPIRequest) GetChannelPurchaseApplyOrderNo() string {
 	return r._channelPurchaseApplyOrderNo
 }

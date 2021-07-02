@@ -37,7 +37,7 @@ func (r YunosTvpubadminManageTopicEditAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TopicJson Setter
+// SetTopicJson is TopicJson Setter
 // 待编辑专题
 func (r *YunosTvpubadminManageTopicEditAPIRequest) SetTopicJson(_topicJson string) error {
 	r._topicJson = _topicJson
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminManageTopicEditAPIRequest) SetTopicJson(_topicJson strin
 	return nil
 }
 
-// Get TopicJson Getter
+// GetTopicJson TopicJson Getter
 func (r YunosTvpubadminManageTopicEditAPIRequest) GetTopicJson() string {
 	return r._topicJson
 }

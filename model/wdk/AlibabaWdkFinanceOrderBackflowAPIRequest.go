@@ -37,7 +37,7 @@ func (r AlibabaWdkFinanceOrderBackflowAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FinanceOrderDetailRequest Setter
+// SetFinanceOrderDetailRequest is FinanceOrderDetailRequest Setter
 // 财务订单回流入参
 func (r *AlibabaWdkFinanceOrderBackflowAPIRequest) SetFinanceOrderDetailRequest(_financeOrderDetailRequest *FinanceOrderDetailRequest) error {
 	r._financeOrderDetailRequest = _financeOrderDetailRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkFinanceOrderBackflowAPIRequest) SetFinanceOrderDetailRequest(
 	return nil
 }
 
-// Get FinanceOrderDetailRequest Getter
+// GetFinanceOrderDetailRequest FinanceOrderDetailRequest Getter
 func (r AlibabaWdkFinanceOrderBackflowAPIRequest) GetFinanceOrderDetailRequest() *FinanceOrderDetailRequest {
 	return r._financeOrderDetailRequest
 }

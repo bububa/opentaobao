@@ -37,7 +37,7 @@ func (r CainiaoCloudprintCmdprintRenderAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Params Setter
+// SetParams is Params Setter
 // 参数对象
 func (r *CainiaoCloudprintCmdprintRenderAPIRequest) SetParams(_params *CmdRenderParams) error {
 	r._params = _params
@@ -45,7 +45,7 @@ func (r *CainiaoCloudprintCmdprintRenderAPIRequest) SetParams(_params *CmdRender
 	return nil
 }
 
-// Get Params Getter
+// GetParams Params Getter
 func (r CainiaoCloudprintCmdprintRenderAPIRequest) GetParams() *CmdRenderParams {
 	return r._params
 }

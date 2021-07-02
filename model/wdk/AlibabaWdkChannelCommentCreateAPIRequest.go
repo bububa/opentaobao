@@ -37,7 +37,7 @@ func (r AlibabaWdkChannelCommentCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CommentCreateInfo Setter
+// SetCommentCreateInfo is CommentCreateInfo Setter
 // 差评信息
 func (r *AlibabaWdkChannelCommentCreateAPIRequest) SetCommentCreateInfo(_commentCreateInfo *CommentCreateInfo) error {
 	r._commentCreateInfo = _commentCreateInfo
@@ -45,7 +45,7 @@ func (r *AlibabaWdkChannelCommentCreateAPIRequest) SetCommentCreateInfo(_comment
 	return nil
 }
 
-// Get CommentCreateInfo Getter
+// GetCommentCreateInfo CommentCreateInfo Getter
 func (r AlibabaWdkChannelCommentCreateAPIRequest) GetCommentCreateInfo() *CommentCreateInfo {
 	return r._commentCreateInfo
 }

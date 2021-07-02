@@ -41,7 +41,7 @@ func (r AlibabaXiamiApiCollectDetailGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 精选集ID
 func (r *AlibabaXiamiApiCollectDetailGetAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -49,12 +49,12 @@ func (r *AlibabaXiamiApiCollectDetailGetAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaXiamiApiCollectDetailGetAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is FullDes Setter
+// SetFullDes is FullDes Setter
 // 是否获取完整描述
 func (r *AlibabaXiamiApiCollectDetailGetAPIRequest) SetFullDes(_fullDes bool) error {
 	r._fullDes = _fullDes
@@ -62,12 +62,12 @@ func (r *AlibabaXiamiApiCollectDetailGetAPIRequest) SetFullDes(_fullDes bool) er
 	return nil
 }
 
-// Get FullDes Getter
+// GetFullDes FullDes Getter
 func (r AlibabaXiamiApiCollectDetailGetAPIRequest) GetFullDes() bool {
 	return r._fullDes
 }
 
-// Set is Tag Setter
+// SetTag is Tag Setter
 // 是否需要tag, show为需要, 其他为不需要
 func (r *AlibabaXiamiApiCollectDetailGetAPIRequest) SetTag(_tag string) error {
 	r._tag = _tag
@@ -75,7 +75,7 @@ func (r *AlibabaXiamiApiCollectDetailGetAPIRequest) SetTag(_tag string) error {
 	return nil
 }
 
-// Get Tag Getter
+// GetTag Tag Getter
 func (r AlibabaXiamiApiCollectDetailGetAPIRequest) GetTag() string {
 	return r._tag
 }

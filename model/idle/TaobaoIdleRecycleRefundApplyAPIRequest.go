@@ -37,7 +37,7 @@ func (r TaobaoIdleRecycleRefundApplyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RefundApply Setter
+// SetRefundApply is RefundApply Setter
 // 退款申请
 func (r *TaobaoIdleRecycleRefundApplyAPIRequest) SetRefundApply(_refundApply *RecycleRefundTopRequest) error {
 	r._refundApply = _refundApply
@@ -45,7 +45,7 @@ func (r *TaobaoIdleRecycleRefundApplyAPIRequest) SetRefundApply(_refundApply *Re
 	return nil
 }
 
-// Get RefundApply Getter
+// GetRefundApply RefundApply Getter
 func (r TaobaoIdleRecycleRefundApplyAPIRequest) GetRefundApply() *RecycleRefundTopRequest {
 	return r._refundApply
 }

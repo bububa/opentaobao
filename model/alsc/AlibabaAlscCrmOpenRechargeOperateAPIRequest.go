@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmOpenRechargeOperateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamRechargeOperateOpenReq Setter
+// SetParamRechargeOperateOpenReq is ParamRechargeOperateOpenReq Setter
 // 储值操作参数
 func (r *AlibabaAlscCrmOpenRechargeOperateAPIRequest) SetParamRechargeOperateOpenReq(_paramRechargeOperateOpenReq *RechargeOperateOpenReq) error {
 	r._paramRechargeOperateOpenReq = _paramRechargeOperateOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmOpenRechargeOperateAPIRequest) SetParamRechargeOperateOpe
 	return nil
 }
 
-// Get ParamRechargeOperateOpenReq Getter
+// GetParamRechargeOperateOpenReq ParamRechargeOperateOpenReq Getter
 func (r AlibabaAlscCrmOpenRechargeOperateAPIRequest) GetParamRechargeOperateOpenReq() *RechargeOperateOpenReq {
 	return r._paramRechargeOperateOpenReq
 }

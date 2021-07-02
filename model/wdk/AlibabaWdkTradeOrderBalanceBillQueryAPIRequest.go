@@ -37,7 +37,7 @@ func (r AlibabaWdkTradeOrderBalanceBillQueryAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is OrderBalanceBillRequest Setter
+// SetOrderBalanceBillRequest is OrderBalanceBillRequest Setter
 // 入参
 func (r *AlibabaWdkTradeOrderBalanceBillQueryAPIRequest) SetOrderBalanceBillRequest(_orderBalanceBillRequest *OrderBalanceBillRequest) error {
 	r._orderBalanceBillRequest = _orderBalanceBillRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkTradeOrderBalanceBillQueryAPIRequest) SetOrderBalanceBillRequ
 	return nil
 }
 
-// Get OrderBalanceBillRequest Getter
+// GetOrderBalanceBillRequest OrderBalanceBillRequest Getter
 func (r AlibabaWdkTradeOrderBalanceBillQueryAPIRequest) GetOrderBalanceBillRequest() *OrderBalanceBillRequest {
 	return r._orderBalanceBillRequest
 }

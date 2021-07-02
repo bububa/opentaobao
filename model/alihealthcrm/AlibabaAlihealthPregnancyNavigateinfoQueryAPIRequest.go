@@ -37,7 +37,7 @@ func (r AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户id
 func (r *AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest) SetUserId(_userId
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlibabaAlihealthPregnancyNavigateinfoQueryAPIRequest) GetUserId() int64 {
 	return r._userId
 }

@@ -41,7 +41,7 @@ func (r YunosAdAuditCreativeGetlistAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MemberId Setter
+// SetMemberId is MemberId Setter
 // 第三方DSP的id
 func (r *YunosAdAuditCreativeGetlistAPIRequest) SetMemberId(_memberId int64) error {
 	r._memberId = _memberId
@@ -49,12 +49,12 @@ func (r *YunosAdAuditCreativeGetlistAPIRequest) SetMemberId(_memberId int64) err
 	return nil
 }
 
-// Get MemberId Getter
+// GetMemberId MemberId Getter
 func (r YunosAdAuditCreativeGetlistAPIRequest) GetMemberId() int64 {
 	return r._memberId
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 状态
 func (r *YunosAdAuditCreativeGetlistAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -62,12 +62,12 @@ func (r *YunosAdAuditCreativeGetlistAPIRequest) SetStatus(_status string) error 
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r YunosAdAuditCreativeGetlistAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// Set is CreativeIds Setter
+// SetCreativeIds is CreativeIds Setter
 // 创意列表
 func (r *YunosAdAuditCreativeGetlistAPIRequest) SetCreativeIds(_creativeIds []string) error {
 	r._creativeIds = _creativeIds
@@ -75,7 +75,7 @@ func (r *YunosAdAuditCreativeGetlistAPIRequest) SetCreativeIds(_creativeIds []st
 	return nil
 }
 
-// Get CreativeIds Getter
+// GetCreativeIds CreativeIds Getter
 func (r YunosAdAuditCreativeGetlistAPIRequest) GetCreativeIds() []string {
 	return r._creativeIds
 }

@@ -47,7 +47,7 @@ func (r TaobaoItemBarcodeUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 被更新商品的ID
 func (r *TaobaoItemBarcodeUpdateAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -55,12 +55,12 @@ func (r *TaobaoItemBarcodeUpdateAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoItemBarcodeUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is ItemBarcode Setter
+// SetItemBarcode is ItemBarcode Setter
 // 商品条形码，如果不用更新，可选择不填
 func (r *TaobaoItemBarcodeUpdateAPIRequest) SetItemBarcode(_itemBarcode string) error {
 	r._itemBarcode = _itemBarcode
@@ -68,12 +68,12 @@ func (r *TaobaoItemBarcodeUpdateAPIRequest) SetItemBarcode(_itemBarcode string) 
 	return nil
 }
 
-// Get ItemBarcode Getter
+// GetItemBarcode ItemBarcode Getter
 func (r TaobaoItemBarcodeUpdateAPIRequest) GetItemBarcode() string {
 	return r._itemBarcode
 }
 
-// Set is SkuIds Setter
+// SetSkuIds is SkuIds Setter
 // 被更新SKU的ID列表，中间以英文逗号进行分隔。如果没有SKU或者不需要更新SKU的条形码，不需要设置
 func (r *TaobaoItemBarcodeUpdateAPIRequest) SetSkuIds(_skuIds string) error {
 	r._skuIds = _skuIds
@@ -81,12 +81,12 @@ func (r *TaobaoItemBarcodeUpdateAPIRequest) SetSkuIds(_skuIds string) error {
 	return nil
 }
 
-// Get SkuIds Getter
+// GetSkuIds SkuIds Getter
 func (r TaobaoItemBarcodeUpdateAPIRequest) GetSkuIds() string {
 	return r._skuIds
 }
 
-// Set is SkuBarcodes Setter
+// SetSkuBarcodes is SkuBarcodes Setter
 // SKU维度的条形码，和sku_ids字段一一对应，中间以英文逗号分隔
 func (r *TaobaoItemBarcodeUpdateAPIRequest) SetSkuBarcodes(_skuBarcodes string) error {
 	r._skuBarcodes = _skuBarcodes
@@ -94,12 +94,12 @@ func (r *TaobaoItemBarcodeUpdateAPIRequest) SetSkuBarcodes(_skuBarcodes string) 
 	return nil
 }
 
-// Get SkuBarcodes Getter
+// GetSkuBarcodes SkuBarcodes Getter
 func (r TaobaoItemBarcodeUpdateAPIRequest) GetSkuBarcodes() string {
 	return r._skuBarcodes
 }
 
-// Set is Isforce Setter
+// SetIsforce is Isforce Setter
 // 是否强制保存商品条码。true：强制保存false ：需要执行条码库校验
 func (r *TaobaoItemBarcodeUpdateAPIRequest) SetIsforce(_isforce bool) error {
 	r._isforce = _isforce
@@ -107,12 +107,12 @@ func (r *TaobaoItemBarcodeUpdateAPIRequest) SetIsforce(_isforce bool) error {
 	return nil
 }
 
-// Get Isforce Getter
+// GetIsforce Isforce Getter
 func (r TaobaoItemBarcodeUpdateAPIRequest) GetIsforce() bool {
 	return r._isforce
 }
 
-// Set is Src Setter
+// SetSrc is Src Setter
 // 访问来源，这字段提供给千牛扫码枪用，其他调用方，不需要填写
 func (r *TaobaoItemBarcodeUpdateAPIRequest) SetSrc(_src string) error {
 	r._src = _src
@@ -120,7 +120,7 @@ func (r *TaobaoItemBarcodeUpdateAPIRequest) SetSrc(_src string) error {
 	return nil
 }
 
-// Get Src Getter
+// GetSrc Src Getter
 func (r TaobaoItemBarcodeUpdateAPIRequest) GetSrc() string {
 	return r._src
 }

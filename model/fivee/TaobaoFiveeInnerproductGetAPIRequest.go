@@ -39,7 +39,7 @@ func (r TaobaoFiveeInnerproductGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamBucode Setter
+// SetParamBucode is ParamBucode Setter
 // bu身份标识
 func (r *TaobaoFiveeInnerproductGetAPIRequest) SetParamBucode(_paramBucode string) error {
 	r._paramBucode = _paramBucode
@@ -47,12 +47,12 @@ func (r *TaobaoFiveeInnerproductGetAPIRequest) SetParamBucode(_paramBucode strin
 	return nil
 }
 
-// Get ParamBucode Getter
+// GetParamBucode ParamBucode Getter
 func (r TaobaoFiveeInnerproductGetAPIRequest) GetParamBucode() string {
 	return r._paramBucode
 }
 
-// Set is ParamBarcode Setter
+// SetParamBarcode is ParamBarcode Setter
 // 条形码
 func (r *TaobaoFiveeInnerproductGetAPIRequest) SetParamBarcode(_paramBarcode string) error {
 	r._paramBarcode = _paramBarcode
@@ -60,7 +60,7 @@ func (r *TaobaoFiveeInnerproductGetAPIRequest) SetParamBarcode(_paramBarcode str
 	return nil
 }
 
-// Get ParamBarcode Getter
+// GetParamBarcode ParamBarcode Getter
 func (r TaobaoFiveeInnerproductGetAPIRequest) GetParamBarcode() string {
 	return r._paramBarcode
 }

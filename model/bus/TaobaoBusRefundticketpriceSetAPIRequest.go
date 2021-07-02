@@ -37,7 +37,7 @@ func (r TaobaoBusRefundticketpriceSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OfflineRefundTicketRq Setter
+// SetOfflineRefundTicketRq is OfflineRefundTicketRq Setter
 // 退票申请入参
 func (r *TaobaoBusRefundticketpriceSetAPIRequest) SetOfflineRefundTicketRq(_offlineRefundTicketRq *OfflineRefundTicketPriceRq) error {
 	r._offlineRefundTicketRq = _offlineRefundTicketRq
@@ -45,7 +45,7 @@ func (r *TaobaoBusRefundticketpriceSetAPIRequest) SetOfflineRefundTicketRq(_offl
 	return nil
 }
 
-// Get OfflineRefundTicketRq Getter
+// GetOfflineRefundTicketRq OfflineRefundTicketRq Getter
 func (r TaobaoBusRefundticketpriceSetAPIRequest) GetOfflineRefundTicketRq() *OfflineRefundTicketPriceRq {
 	return r._offlineRefundTicketRq
 }

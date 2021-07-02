@@ -47,7 +47,7 @@ func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小，默认20，1~100
 func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -55,12 +55,12 @@ func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetPageSize(_pageSize int64) erro
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is AdzoneId Setter
+// SetAdzoneId is AdzoneId Setter
 // mm_xxx_xxx_xxx的第三位
 func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetAdzoneId(_adzoneId int64) error {
 	r._adzoneId = _adzoneId
@@ -68,12 +68,12 @@ func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetAdzoneId(_adzoneId int64) erro
 	return nil
 }
 
-// Get AdzoneId Getter
+// GetAdzoneId AdzoneId Getter
 func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetAdzoneId() int64 {
 	return r._adzoneId
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码，默认1
 func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -81,12 +81,12 @@ func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 开始时间，当活动为淘宝活动，表示最早注册时间；当活动为支付宝活动，表示最早绑定时间；当活动为天猫活动，表示最早领取红包时间
 func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -94,12 +94,12 @@ func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetStartTime(_startTime string) e
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间，当活动为淘宝活动，表示最晚结束时间；当活动为支付宝活动，表示最晚绑定时间；当活动为天猫活动，表示最晚领取红包的时间
 func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -107,12 +107,12 @@ func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetEndTime(_endTime string) error
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=8599277
 func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetActivityId(_activityId string) error {
 	r._activityId = _activityId
@@ -120,7 +120,7 @@ func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetActivityId(_activityId string)
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetActivityId() string {
 	return r._activityId
 }

@@ -37,7 +37,7 @@ func (r AlibabaAliqinFcIotCardInfoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Iccid Setter
+// SetIccid is Iccid Setter
 // SIM卡号
 func (r *AlibabaAliqinFcIotCardInfoAPIRequest) SetIccid(_iccid string) error {
 	r._iccid = _iccid
@@ -45,7 +45,7 @@ func (r *AlibabaAliqinFcIotCardInfoAPIRequest) SetIccid(_iccid string) error {
 	return nil
 }
 
-// Get Iccid Getter
+// GetIccid Iccid Getter
 func (r AlibabaAliqinFcIotCardInfoAPIRequest) GetIccid() string {
 	return r._iccid
 }

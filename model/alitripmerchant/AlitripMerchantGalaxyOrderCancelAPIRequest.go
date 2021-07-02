@@ -43,7 +43,7 @@ func (r AlitripMerchantGalaxyOrderCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TenantKey Setter
+// SetTenantKey is TenantKey Setter
 // 租户标识
 func (r *AlitripMerchantGalaxyOrderCancelAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
@@ -51,12 +51,12 @@ func (r *AlitripMerchantGalaxyOrderCancelAPIRequest) SetTenantKey(_tenantKey str
 	return nil
 }
 
-// Get TenantKey Getter
+// GetTenantKey TenantKey Getter
 func (r AlitripMerchantGalaxyOrderCancelAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 用户登录标识
 func (r *AlitripMerchantGalaxyOrderCancelAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -64,12 +64,12 @@ func (r *AlitripMerchantGalaxyOrderCancelAPIRequest) SetToken(_token string) err
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlitripMerchantGalaxyOrderCancelAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单编号
 func (r *AlitripMerchantGalaxyOrderCancelAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -77,12 +77,12 @@ func (r *AlitripMerchantGalaxyOrderCancelAPIRequest) SetOrderId(_orderId string)
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlitripMerchantGalaxyOrderCancelAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is Reason Setter
+// SetReason is Reason Setter
 // 退款原因
 func (r *AlitripMerchantGalaxyOrderCancelAPIRequest) SetReason(_reason string) error {
 	r._reason = _reason
@@ -90,7 +90,7 @@ func (r *AlitripMerchantGalaxyOrderCancelAPIRequest) SetReason(_reason string) e
 	return nil
 }
 
-// Get Reason Getter
+// GetReason Reason Getter
 func (r AlitripMerchantGalaxyOrderCancelAPIRequest) GetReason() string {
 	return r._reason
 }

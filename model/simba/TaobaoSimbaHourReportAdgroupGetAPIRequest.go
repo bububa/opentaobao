@@ -45,7 +45,7 @@ func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 昵称
 func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -53,12 +53,12 @@ func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetNick(_nick string) error 
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is TheDate Setter
+// SetTheDate is TheDate Setter
 // 时间
 func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetTheDate(_theDate string) error {
 	r._theDate = _theDate
@@ -66,12 +66,12 @@ func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetTheDate(_theDate string) 
 	return nil
 }
 
-// Get TheDate Getter
+// GetTheDate TheDate Getter
 func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetTheDate() string {
 	return r._theDate
 }
 
-// Set is Hour Setter
+// SetHour is Hour Setter
 // 当前小时
 func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetHour(_hour string) error {
 	r._hour = _hour
@@ -79,12 +79,12 @@ func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetHour(_hour string) error 
 	return nil
 }
 
-// Get Hour Getter
+// GetHour Hour Getter
 func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetHour() string {
 	return r._hour
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 计划id
 func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetCampaignId(_campaignId string) error {
 	r._campaignId = _campaignId
@@ -92,12 +92,12 @@ func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetCampaignId(_campaignId st
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetCampaignId() string {
 	return r._campaignId
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广单元id
 func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetAdgroupId(_adgroupId string) error {
 	r._adgroupId = _adgroupId
@@ -105,7 +105,7 @@ func (r *TaobaoSimbaHourReportAdgroupGetAPIRequest) SetAdgroupId(_adgroupId stri
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaHourReportAdgroupGetAPIRequest) GetAdgroupId() string {
 	return r._adgroupId
 }

@@ -37,7 +37,7 @@ func (r AlibabaLstTradeSellerWarehouseQueryAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is WarehouseQueryParam Setter
+// SetWarehouseQueryParam is WarehouseQueryParam Setter
 // 入参
 func (r *AlibabaLstTradeSellerWarehouseQueryAPIRequest) SetWarehouseQueryParam(_warehouseQueryParam *WarehouseQueryParam) error {
 	r._warehouseQueryParam = _warehouseQueryParam
@@ -45,7 +45,7 @@ func (r *AlibabaLstTradeSellerWarehouseQueryAPIRequest) SetWarehouseQueryParam(_
 	return nil
 }
 
-// Get WarehouseQueryParam Getter
+// GetWarehouseQueryParam WarehouseQueryParam Getter
 func (r AlibabaLstTradeSellerWarehouseQueryAPIRequest) GetWarehouseQueryParam() *WarehouseQueryParam {
 	return r._warehouseQueryParam
 }

@@ -37,7 +37,7 @@ func (r TaobaoInventoryPlanQuantityIncreaseAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is PlanInvAdjustTop Setter
+// SetPlanInvAdjustTop is PlanInvAdjustTop Setter
 // 增量编辑计划库存入参
 func (r *TaobaoInventoryPlanQuantityIncreaseAPIRequest) SetPlanInvAdjustTop(_planInvAdjustTop *PlanInvAdjustTopDto) error {
 	r._planInvAdjustTop = _planInvAdjustTop
@@ -45,7 +45,7 @@ func (r *TaobaoInventoryPlanQuantityIncreaseAPIRequest) SetPlanInvAdjustTop(_pla
 	return nil
 }
 
-// Get PlanInvAdjustTop Getter
+// GetPlanInvAdjustTop PlanInvAdjustTop Getter
 func (r TaobaoInventoryPlanQuantityIncreaseAPIRequest) GetPlanInvAdjustTop() *PlanInvAdjustTopDto {
 	return r._planInvAdjustTop
 }

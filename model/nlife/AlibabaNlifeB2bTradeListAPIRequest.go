@@ -45,7 +45,7 @@ func (r AlibabaNlifeB2bTradeListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartEffectiveDate Setter
+// SetStartEffectiveDate is StartEffectiveDate Setter
 // 采购单生效时间开始范围
 func (r *AlibabaNlifeB2bTradeListAPIRequest) SetStartEffectiveDate(_startEffectiveDate string) error {
 	r._startEffectiveDate = _startEffectiveDate
@@ -53,12 +53,12 @@ func (r *AlibabaNlifeB2bTradeListAPIRequest) SetStartEffectiveDate(_startEffecti
 	return nil
 }
 
-// Get StartEffectiveDate Getter
+// GetStartEffectiveDate StartEffectiveDate Getter
 func (r AlibabaNlifeB2bTradeListAPIRequest) GetStartEffectiveDate() string {
 	return r._startEffectiveDate
 }
 
-// Set is EndEffectiveDate Setter
+// SetEndEffectiveDate is EndEffectiveDate Setter
 // 采购单生效时间结束范围
 func (r *AlibabaNlifeB2bTradeListAPIRequest) SetEndEffectiveDate(_endEffectiveDate string) error {
 	r._endEffectiveDate = _endEffectiveDate
@@ -66,12 +66,12 @@ func (r *AlibabaNlifeB2bTradeListAPIRequest) SetEndEffectiveDate(_endEffectiveDa
 	return nil
 }
 
-// Get EndEffectiveDate Getter
+// GetEndEffectiveDate EndEffectiveDate Getter
 func (r AlibabaNlifeB2bTradeListAPIRequest) GetEndEffectiveDate() string {
 	return r._endEffectiveDate
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 查询的页码
 func (r *AlibabaNlifeB2bTradeListAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -79,12 +79,12 @@ func (r *AlibabaNlifeB2bTradeListAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r AlibabaNlifeB2bTradeListAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页的数量
 func (r *AlibabaNlifeB2bTradeListAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -92,12 +92,12 @@ func (r *AlibabaNlifeB2bTradeListAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaNlifeB2bTradeListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is EntId Setter
+// SetEntId is EntId Setter
 // 企业ID
 func (r *AlibabaNlifeB2bTradeListAPIRequest) SetEntId(_entId int64) error {
 	r._entId = _entId
@@ -105,7 +105,7 @@ func (r *AlibabaNlifeB2bTradeListAPIRequest) SetEntId(_entId int64) error {
 	return nil
 }
 
-// Get EntId Getter
+// GetEntId EntId Getter
 func (r AlibabaNlifeB2bTradeListAPIRequest) GetEntId() int64 {
 	return r._entId
 }

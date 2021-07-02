@@ -43,7 +43,7 @@ func (r AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单ID
 func (r *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -51,12 +51,12 @@ func (r *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) SetOrderId(_orderId
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is CpCode Setter
+// SetCpCode is CpCode Setter
 // 快递公司代码
 func (r *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) SetCpCode(_cpCode string) error {
 	r._cpCode = _cpCode
@@ -64,12 +64,12 @@ func (r *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) SetCpCode(_cpCode s
 	return nil
 }
 
-// Get CpCode Getter
+// GetCpCode CpCode Getter
 func (r AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) GetCpCode() string {
 	return r._cpCode
 }
 
-// Set is CourierNo Setter
+// SetCourierNo is CourierNo Setter
 // 快递单号
 func (r *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) SetCourierNo(_courierNo string) error {
 	r._courierNo = _courierNo
@@ -77,12 +77,12 @@ func (r *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) SetCourierNo(_couri
 	return nil
 }
 
-// Get CourierNo Getter
+// GetCourierNo CourierNo Getter
 func (r AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) GetCourierNo() string {
 	return r._courierNo
 }
 
-// Set is Force Setter
+// SetForce is Force Setter
 // 是否强制上传，1代表强制，其他值代表需要进行cp_code合法性校验
 func (r *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) SetForce(_force int64) error {
 	r._force = _force
@@ -90,7 +90,7 @@ func (r *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) SetForce(_force int
 	return nil
 }
 
-// Get Force Getter
+// GetForce Force Getter
 func (r AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) GetForce() int64 {
 	return r._force
 }

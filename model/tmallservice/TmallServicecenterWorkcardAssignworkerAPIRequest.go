@@ -51,7 +51,7 @@ func (r TmallServicecenterWorkcardAssignworkerAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is TargetWorkerId Setter
+// SetTargetWorkerId is TargetWorkerId Setter
 // 需要指派的工人id
 func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetTargetWorkerId(_targetWorkerId int64) error {
 	r._targetWorkerId = _targetWorkerId
@@ -59,12 +59,12 @@ func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetTargetWorkerId(_ta
 	return nil
 }
 
-// Get TargetWorkerId Getter
+// GetTargetWorkerId TargetWorkerId Getter
 func (r TmallServicecenterWorkcardAssignworkerAPIRequest) GetTargetWorkerId() int64 {
 	return r._targetWorkerId
 }
 
-// Set is TargetWorkerMobile Setter
+// SetTargetWorkerMobile is TargetWorkerMobile Setter
 // 需要指派的工人手机
 func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetTargetWorkerMobile(_targetWorkerMobile string) error {
 	r._targetWorkerMobile = _targetWorkerMobile
@@ -72,12 +72,12 @@ func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetTargetWorkerMobile
 	return nil
 }
 
-// Get TargetWorkerMobile Getter
+// GetTargetWorkerMobile TargetWorkerMobile Getter
 func (r TmallServicecenterWorkcardAssignworkerAPIRequest) GetTargetWorkerMobile() string {
 	return r._targetWorkerMobile
 }
 
-// Set is WorkcardId Setter
+// SetWorkcardId is WorkcardId Setter
 // 需要派工人的工单id
 func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetWorkcardId(_workcardId int64) error {
 	r._workcardId = _workcardId
@@ -85,12 +85,12 @@ func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetWorkcardId(_workca
 	return nil
 }
 
-// Get WorkcardId Getter
+// GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterWorkcardAssignworkerAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }
 
-// Set is TargetWorkerName Setter
+// SetTargetWorkerName is TargetWorkerName Setter
 // 需要指派的工人姓名
 func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetTargetWorkerName(_targetWorkerName string) error {
 	r._targetWorkerName = _targetWorkerName
@@ -98,12 +98,12 @@ func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetTargetWorkerName(_
 	return nil
 }
 
-// Get TargetWorkerName Getter
+// GetTargetWorkerName TargetWorkerName Getter
 func (r TmallServicecenterWorkcardAssignworkerAPIRequest) GetTargetWorkerName() string {
 	return r._targetWorkerName
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 核销单外部id
 func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -111,12 +111,12 @@ func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetOuterId(_outerId s
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TmallServicecenterWorkcardAssignworkerAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is StopOrderTypeCheckReason Setter
+// SetStopOrderTypeCheckReason is StopOrderTypeCheckReason Setter
 // 不检查订单类型的原因ID由运营提供，服务商不可自由传
 func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetStopOrderTypeCheckReason(_stopOrderTypeCheckReason int64) error {
 	r._stopOrderTypeCheckReason = _stopOrderTypeCheckReason
@@ -124,12 +124,12 @@ func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetStopOrderTypeCheck
 	return nil
 }
 
-// Get StopOrderTypeCheckReason Getter
+// GetStopOrderTypeCheckReason StopOrderTypeCheckReason Getter
 func (r TmallServicecenterWorkcardAssignworkerAPIRequest) GetStopOrderTypeCheckReason() int64 {
 	return r._stopOrderTypeCheckReason
 }
 
-// Set is FulfilTaskId Setter
+// SetFulfilTaskId is FulfilTaskId Setter
 // 核销单id
 func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetFulfilTaskId(_fulfilTaskId int64) error {
 	r._fulfilTaskId = _fulfilTaskId
@@ -137,12 +137,12 @@ func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetFulfilTaskId(_fulf
 	return nil
 }
 
-// Get FulfilTaskId Getter
+// GetFulfilTaskId FulfilTaskId Getter
 func (r TmallServicecenterWorkcardAssignworkerAPIRequest) GetFulfilTaskId() int64 {
 	return r._fulfilTaskId
 }
 
-// Set is ExtJson Setter
+// SetExtJson is ExtJson Setter
 // 扩展信息
 func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetExtJson(_extJson string) error {
 	r._extJson = _extJson
@@ -150,7 +150,7 @@ func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetExtJson(_extJson s
 	return nil
 }
 
-// Get ExtJson Getter
+// GetExtJson ExtJson Getter
 func (r TmallServicecenterWorkcardAssignworkerAPIRequest) GetExtJson() string {
 	return r._extJson
 }

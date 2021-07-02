@@ -37,7 +37,7 @@ func (r TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is RecommendReq Setter
+// SetRecommendReq is RecommendReq Setter
 // 请求对象
 func (r *TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest) SetRecommendReq(_recommendReq *TopStandardInsRecommendRequest) error {
 	r._recommendReq = _recommendReq
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest) SetRecommendReq(_r
 	return nil
 }
 
-// Get RecommendReq Getter
+// GetRecommendReq RecommendReq Getter
 func (r TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest) GetRecommendReq() *TopStandardInsRecommendRequest {
 	return r._recommendReq
 }

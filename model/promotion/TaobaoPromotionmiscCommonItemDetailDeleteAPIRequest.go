@@ -39,7 +39,7 @@ func (r TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 优惠活动ID
 func (r *TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -47,12 +47,12 @@ func (r *TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) SetActivityId(_act
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }
 
-// Set is DetailId Setter
+// SetDetailId is DetailId Setter
 // 优惠详情ID
 func (r *TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) SetDetailId(_detailId int64) error {
 	r._detailId = _detailId
@@ -60,7 +60,7 @@ func (r *TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) SetDetailId(_detai
 	return nil
 }
 
-// Get DetailId Getter
+// GetDetailId DetailId Getter
 func (r TaobaoPromotionmiscCommonItemDetailDeleteAPIRequest) GetDetailId() int64 {
 	return r._detailId
 }

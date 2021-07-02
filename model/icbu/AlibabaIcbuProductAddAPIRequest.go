@@ -69,7 +69,7 @@ func (r AlibabaIcbuProductAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Attributes Setter
+// SetAttributes is Attributes Setter
 // 商品属性和属性值
 func (r *AlibabaIcbuProductAddAPIRequest) SetAttributes(_attributes []ProductAttribute) error {
 	r._attributes = _attributes
@@ -77,12 +77,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetAttributes(_attributes []ProductAtt
 	return nil
 }
 
-// Get Attributes Getter
+// GetAttributes Attributes Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetAttributes() []ProductAttribute {
 	return r._attributes
 }
 
-// Set is BulkDiscountPrices Setter
+// SetBulkDiscountPrices is BulkDiscountPrices Setter
 // 根据数量设置的折扣价
 func (r *AlibabaIcbuProductAddAPIRequest) SetBulkDiscountPrices(_bulkDiscountPrices []BulkDiscountPrice) error {
 	r._bulkDiscountPrices = _bulkDiscountPrices
@@ -90,12 +90,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetBulkDiscountPrices(_bulkDiscountPri
 	return nil
 }
 
-// Get BulkDiscountPrices Getter
+// GetBulkDiscountPrices BulkDiscountPrices Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetBulkDiscountPrices() []BulkDiscountPrice {
 	return r._bulkDiscountPrices
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 类目ID
 func (r *AlibabaIcbuProductAddAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
@@ -103,12 +103,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetCategoryId(_categoryId int64) error
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }
 
-// Set is Description Setter
+// SetDescription is Description Setter
 // 商品详情描述，可包含图片中心的图片URL
 func (r *AlibabaIcbuProductAddAPIRequest) SetDescription(_description string) error {
 	r._description = _description
@@ -116,12 +116,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetDescription(_description string) er
 	return nil
 }
 
-// Get Description Getter
+// GetDescription Description Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetDescription() string {
 	return r._description
 }
 
-// Set is ExtraContext Setter
+// SetExtraContext is ExtraContext Setter
 // 补充信息
 func (r *AlibabaIcbuProductAddAPIRequest) SetExtraContext(_extraContext string) error {
 	r._extraContext = _extraContext
@@ -129,12 +129,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetExtraContext(_extraContext string) 
 	return nil
 }
 
-// Get ExtraContext Getter
+// GetExtraContext ExtraContext Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetExtraContext() string {
 	return r._extraContext
 }
 
-// Set is GroupId Setter
+// SetGroupId is GroupId Setter
 // 分组ID
 func (r *AlibabaIcbuProductAddAPIRequest) SetGroupId(_groupId int64) error {
 	r._groupId = _groupId
@@ -142,12 +142,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetGroupId(_groupId int64) error {
 	return nil
 }
 
-// Get GroupId Getter
+// GetGroupId GroupId Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetGroupId() int64 {
 	return r._groupId
 }
 
-// Set is Keywords Setter
+// SetKeywords is Keywords Setter
 // 关键词，不要包含特殊符号（如,;），最多三个
 func (r *AlibabaIcbuProductAddAPIRequest) SetKeywords(_keywords []string) error {
 	r._keywords = _keywords
@@ -155,12 +155,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetKeywords(_keywords []string) error 
 	return nil
 }
 
-// Get Keywords Getter
+// GetKeywords Keywords Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetKeywords() []string {
 	return r._keywords
 }
 
-// Set is Language Setter
+// SetLanguage is Language Setter
 // 语种，参见FAQ 语种枚举值
 func (r *AlibabaIcbuProductAddAPIRequest) SetLanguage(_language string) error {
 	r._language = _language
@@ -168,12 +168,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetLanguage(_language string) error {
 	return nil
 }
 
-// Get Language Getter
+// GetLanguage Language Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetLanguage() string {
 	return r._language
 }
 
-// Set is MainImage Setter
+// SetMainImage is MainImage Setter
 // 商品主图
 func (r *AlibabaIcbuProductAddAPIRequest) SetMainImage(_mainImage *MainImage) error {
 	r._mainImage = _mainImage
@@ -181,12 +181,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetMainImage(_mainImage *MainImage) er
 	return nil
 }
 
-// Get MainImage Getter
+// GetMainImage MainImage Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetMainImage() *MainImage {
 	return r._mainImage
 }
 
-// Set is ProductSku Setter
+// SetProductSku is ProductSku Setter
 // 商品SKU定义
 func (r *AlibabaIcbuProductAddAPIRequest) SetProductSku(_productSku *ProductSku) error {
 	r._productSku = _productSku
@@ -194,12 +194,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetProductSku(_productSku *ProductSku)
 	return nil
 }
 
-// Get ProductSku Getter
+// GetProductSku ProductSku Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetProductSku() *ProductSku {
 	return r._productSku
 }
 
-// Set is ProductType Setter
+// SetProductType is ProductType Setter
 // 商品类型，在线批发商品(wholesale)或者询盘商品(sourcing)，值为wholesale时，必须填写wholesale_trade
 func (r *AlibabaIcbuProductAddAPIRequest) SetProductType(_productType string) error {
 	r._productType = _productType
@@ -207,12 +207,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetProductType(_productType string) er
 	return nil
 }
 
-// Get ProductType Getter
+// GetProductType ProductType Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetProductType() string {
 	return r._productType
 }
 
-// Set is SourcingTrade Setter
+// SetSourcingTrade is SourcingTrade Setter
 // 询盘商品交易信息
 func (r *AlibabaIcbuProductAddAPIRequest) SetSourcingTrade(_sourcingTrade *SourcingTrade) error {
 	r._sourcingTrade = _sourcingTrade
@@ -220,12 +220,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetSourcingTrade(_sourcingTrade *Sourc
 	return nil
 }
 
-// Get SourcingTrade Getter
+// GetSourcingTrade SourcingTrade Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetSourcingTrade() *SourcingTrade {
 	return r._sourcingTrade
 }
 
-// Set is Subject Setter
+// SetSubject is Subject Setter
 // 商品名称，最多128个字符
 func (r *AlibabaIcbuProductAddAPIRequest) SetSubject(_subject string) error {
 	r._subject = _subject
@@ -233,12 +233,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetSubject(_subject string) error {
 	return nil
 }
 
-// Get Subject Getter
+// GetSubject Subject Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetSubject() string {
 	return r._subject
 }
 
-// Set is WholesaleTrade Setter
+// SetWholesaleTrade is WholesaleTrade Setter
 // 在线批发商品交易信息
 func (r *AlibabaIcbuProductAddAPIRequest) SetWholesaleTrade(_wholesaleTrade *WholesaleTrade) error {
 	r._wholesaleTrade = _wholesaleTrade
@@ -246,12 +246,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetWholesaleTrade(_wholesaleTrade *Who
 	return nil
 }
 
-// Get WholesaleTrade Getter
+// GetWholesaleTrade WholesaleTrade Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetWholesaleTrade() *WholesaleTrade {
 	return r._wholesaleTrade
 }
 
-// Set is Market Setter
+// SetMarket is Market Setter
 // 发布的市场，支持main，发到主市场
 func (r *AlibabaIcbuProductAddAPIRequest) SetMarket(_market string) error {
 	r._market = _market
@@ -259,12 +259,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetMarket(_market string) error {
 	return nil
 }
 
-// Get Market Getter
+// GetMarket Market Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetMarket() string {
 	return r._market
 }
 
-// Set is IsSmartEdit Setter
+// SetIsSmartEdit is IsSmartEdit Setter
 // 是否智能编辑，如果不传，默认为false
 func (r *AlibabaIcbuProductAddAPIRequest) SetIsSmartEdit(_isSmartEdit bool) error {
 	r._isSmartEdit = _isSmartEdit
@@ -272,12 +272,12 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetIsSmartEdit(_isSmartEdit bool) erro
 	return nil
 }
 
-// Get IsSmartEdit Getter
+// GetIsSmartEdit IsSmartEdit Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetIsSmartEdit() bool {
 	return r._isSmartEdit
 }
 
-// Set is CustomInfo Setter
+// SetCustomInfo is CustomInfo Setter
 // 定制信息
 func (r *AlibabaIcbuProductAddAPIRequest) SetCustomInfo(_customInfo *CustomInfo) error {
 	r._customInfo = _customInfo
@@ -285,7 +285,7 @@ func (r *AlibabaIcbuProductAddAPIRequest) SetCustomInfo(_customInfo *CustomInfo)
 	return nil
 }
 
-// Get CustomInfo Getter
+// GetCustomInfo CustomInfo Getter
 func (r AlibabaIcbuProductAddAPIRequest) GetCustomInfo() *CustomInfo {
 	return r._customInfo
 }

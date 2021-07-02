@@ -37,7 +37,7 @@ func (r TaobaoWmsOrderWarehouseRouteGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // 订单编号
 func (r *TaobaoWmsOrderWarehouseRouteGetAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -45,7 +45,7 @@ func (r *TaobaoWmsOrderWarehouseRouteGetAPIRequest) SetOrderCode(_orderCode stri
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r TaobaoWmsOrderWarehouseRouteGetAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }

@@ -49,7 +49,7 @@ func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CourtName Setter
+// SetCourtName is CourtName Setter
 // 法院名称
 func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetCourtName(_courtName string) error {
 	r._courtName = _courtName
@@ -57,12 +57,12 @@ func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetCourtName(_courtName strin
 	return nil
 }
 
-// Get CourtName Getter
+// GetCourtName CourtName Getter
 func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetCourtName() string {
 	return r._courtName
 }
 
-// Set is IsIncludeSub Setter
+// SetIsIncludeSub is IsIncludeSub Setter
 // 统计数据是够包含下属法院
 func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetIsIncludeSub(_isIncludeSub bool) error {
 	r._isIncludeSub = _isIncludeSub
@@ -70,12 +70,12 @@ func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetIsIncludeSub(_isIncludeSub
 	return nil
 }
 
-// Get IsIncludeSub Getter
+// GetIsIncludeSub IsIncludeSub Getter
 func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetIsIncludeSub() bool {
 	return r._isIncludeSub
 }
 
-// Set is StartMonth Setter
+// SetStartMonth is StartMonth Setter
 // 开始月份
 func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetStartMonth(_startMonth string) error {
 	r._startMonth = _startMonth
@@ -83,12 +83,12 @@ func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetStartMonth(_startMonth str
 	return nil
 }
 
-// Get StartMonth Getter
+// GetStartMonth StartMonth Getter
 func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetStartMonth() string {
 	return r._startMonth
 }
 
-// Set is EndMonth Setter
+// SetEndMonth is EndMonth Setter
 // 截止月份(统计数据包含这个月)
 func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetEndMonth(_endMonth string) error {
 	r._endMonth = _endMonth
@@ -96,7 +96,7 @@ func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetEndMonth(_endMonth string)
 	return nil
 }
 
-// Get EndMonth Getter
+// GetEndMonth EndMonth Getter
 func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetEndMonth() string {
 	return r._endMonth
 }

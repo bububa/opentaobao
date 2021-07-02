@@ -39,7 +39,7 @@ func (r AlibabaWestcrmActivityInfoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CampusId Setter
+// SetCampusId is CampusId Setter
 // 园区id
 func (r *AlibabaWestcrmActivityInfoGetAPIRequest) SetCampusId(_campusId int64) error {
 	r._campusId = _campusId
@@ -47,12 +47,12 @@ func (r *AlibabaWestcrmActivityInfoGetAPIRequest) SetCampusId(_campusId int64) e
 	return nil
 }
 
-// Get CampusId Getter
+// GetCampusId CampusId Getter
 func (r AlibabaWestcrmActivityInfoGetAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动id
 func (r *AlibabaWestcrmActivityInfoGetAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
@@ -60,7 +60,7 @@ func (r *AlibabaWestcrmActivityInfoGetAPIRequest) SetActivityId(_activityId int6
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r AlibabaWestcrmActivityInfoGetAPIRequest) GetActivityId() int64 {
 	return r._activityId
 }

@@ -91,7 +91,7 @@ func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Checksum Setter
+// SetChecksum is Checksum Setter
 // 校验码，success=true时必填
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetChecksum(_checksum string) error {
 	r._checksum = _checksum
@@ -99,12 +99,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetChecksum(_checksum stri
 	return nil
 }
 
-// Get Checksum Getter
+// GetChecksum Checksum Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetChecksum() string {
 	return r._checksum
 }
 
-// Set is ErrorCode Setter
+// SetErrorCode is ErrorCode Setter
 // 错误码，success=false时必填
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetErrorCode(_errorCode string) error {
 	r._errorCode = _errorCode
@@ -112,12 +112,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetErrorCode(_errorCode st
 	return nil
 }
 
-// Get ErrorCode Getter
+// GetErrorCode ErrorCode Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetErrorCode() string {
 	return r._errorCode
 }
 
-// Set is ErrorMessage Setter
+// SetErrorMessage is ErrorMessage Setter
 // 错误信息，success=false时必填
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetErrorMessage(_errorMessage string) error {
 	r._errorMessage = _errorMessage
@@ -125,12 +125,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetErrorMessage(_errorMess
 	return nil
 }
 
-// Get ErrorMessage Getter
+// GetErrorMessage ErrorMessage Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetErrorMessage() string {
 	return r._errorMessage
 }
 
-// Set is ImageId Setter
+// SetImageId is ImageId Setter
 // 发票影像编号，type=1时必填
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetImageId(_imageId string) error {
 	r._imageId = _imageId
@@ -138,12 +138,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetImageId(_imageId string
 	return nil
 }
 
-// Get ImageId Getter
+// GetImageId ImageId Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetImageId() string {
 	return r._imageId
 }
 
-// Set is InvoiceAmount Setter
+// SetInvoiceAmount is InvoiceAmount Setter
 // 价税合计金额，success=true时必填，invoiceAmount=sumPrice+sumTax
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceAmount(_invoiceAmount string) error {
 	r._invoiceAmount = _invoiceAmount
@@ -151,12 +151,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceAmount(_invoiceA
 	return nil
 }
 
-// Get InvoiceAmount Getter
+// GetInvoiceAmount InvoiceAmount Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetInvoiceAmount() string {
 	return r._invoiceAmount
 }
 
-// Set is InvoiceCode Setter
+// SetInvoiceCode is InvoiceCode Setter
 // 发票代码，success=true时必填
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceCode(_invoiceCode string) error {
 	r._invoiceCode = _invoiceCode
@@ -164,12 +164,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceCode(_invoiceCod
 	return nil
 }
 
-// Get InvoiceCode Getter
+// GetInvoiceCode InvoiceCode Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetInvoiceCode() string {
 	return r._invoiceCode
 }
 
-// Set is InvoiceDate Setter
+// SetInvoiceDate is InvoiceDate Setter
 // 开票日期，格式为yyyy-MM-dd，success=true时必填
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceDate(_invoiceDate string) error {
 	r._invoiceDate = _invoiceDate
@@ -177,12 +177,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceDate(_invoiceDat
 	return nil
 }
 
-// Get InvoiceDate Getter
+// GetInvoiceDate InvoiceDate Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetInvoiceDate() string {
 	return r._invoiceDate
 }
 
-// Set is InvoiceItems Setter
+// SetInvoiceItems is InvoiceItems Setter
 // 发票明细
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceItems(_invoiceItems []InvoiceItem) error {
 	r._invoiceItems = _invoiceItems
@@ -190,12 +190,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceItems(_invoiceIt
 	return nil
 }
 
-// Get InvoiceItems Getter
+// GetInvoiceItems InvoiceItems Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetInvoiceItems() []InvoiceItem {
 	return r._invoiceItems
 }
 
-// Set is InvoiceMemo Setter
+// SetInvoiceMemo is InvoiceMemo Setter
 // 发票备注
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceMemo(_invoiceMemo string) error {
 	r._invoiceMemo = _invoiceMemo
@@ -203,12 +203,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceMemo(_invoiceMem
 	return nil
 }
 
-// Get InvoiceMemo Getter
+// GetInvoiceMemo InvoiceMemo Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetInvoiceMemo() string {
 	return r._invoiceMemo
 }
 
-// Set is InvoiceNo Setter
+// SetInvoiceNo is InvoiceNo Setter
 // 发票号码，success=true时必填
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceNo(_invoiceNo string) error {
 	r._invoiceNo = _invoiceNo
@@ -216,12 +216,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceNo(_invoiceNo st
 	return nil
 }
 
-// Get InvoiceNo Getter
+// GetInvoiceNo InvoiceNo Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetInvoiceNo() string {
 	return r._invoiceNo
 }
 
-// Set is MachineNo Setter
+// SetMachineNo is MachineNo Setter
 // 机器编号
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetMachineNo(_machineNo string) error {
 	r._machineNo = _machineNo
@@ -229,12 +229,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetMachineNo(_machineNo st
 	return nil
 }
 
-// Get MachineNo Getter
+// GetMachineNo MachineNo Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetMachineNo() string {
 	return r._machineNo
 }
 
-// Set is PayeeAddressPhone Setter
+// SetPayeeAddressPhone is PayeeAddressPhone Setter
 // 销售方地址电话
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeAddressPhone(_payeeAddressPhone string) error {
 	r._payeeAddressPhone = _payeeAddressPhone
@@ -242,12 +242,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeAddressPhone(_paye
 	return nil
 }
 
-// Get PayeeAddressPhone Getter
+// GetPayeeAddressPhone PayeeAddressPhone Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetPayeeAddressPhone() string {
 	return r._payeeAddressPhone
 }
 
-// Set is PayeeBankAccount Setter
+// SetPayeeBankAccount is PayeeBankAccount Setter
 // 销售方银行及账号
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeBankAccount(_payeeBankAccount string) error {
 	r._payeeBankAccount = _payeeBankAccount
@@ -255,12 +255,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeBankAccount(_payee
 	return nil
 }
 
-// Get PayeeBankAccount Getter
+// GetPayeeBankAccount PayeeBankAccount Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetPayeeBankAccount() string {
 	return r._payeeBankAccount
 }
 
-// Set is PayeeChecker Setter
+// SetPayeeChecker is PayeeChecker Setter
 // 复核人
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeChecker(_payeeChecker string) error {
 	r._payeeChecker = _payeeChecker
@@ -268,12 +268,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeChecker(_payeeChec
 	return nil
 }
 
-// Get PayeeChecker Getter
+// GetPayeeChecker PayeeChecker Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetPayeeChecker() string {
 	return r._payeeChecker
 }
 
-// Set is PayeeName Setter
+// SetPayeeName is PayeeName Setter
 // 销售方名称，success=true时必填
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeName(_payeeName string) error {
 	r._payeeName = _payeeName
@@ -281,12 +281,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeName(_payeeName st
 	return nil
 }
 
-// Get PayeeName Getter
+// GetPayeeName PayeeName Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetPayeeName() string {
 	return r._payeeName
 }
 
-// Set is PayeeOperator Setter
+// SetPayeeOperator is PayeeOperator Setter
 // 开票人
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeOperator(_payeeOperator string) error {
 	r._payeeOperator = _payeeOperator
@@ -294,12 +294,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeOperator(_payeeOpe
 	return nil
 }
 
-// Get PayeeOperator Getter
+// GetPayeeOperator PayeeOperator Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetPayeeOperator() string {
 	return r._payeeOperator
 }
 
-// Set is PayeeReceiver Setter
+// SetPayeeReceiver is PayeeReceiver Setter
 // 收款人
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeReceiver(_payeeReceiver string) error {
 	r._payeeReceiver = _payeeReceiver
@@ -307,12 +307,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeReceiver(_payeeRec
 	return nil
 }
 
-// Get PayeeReceiver Getter
+// GetPayeeReceiver PayeeReceiver Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetPayeeReceiver() string {
 	return r._payeeReceiver
 }
 
-// Set is PayeeRegisterNo Setter
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 销售方纳税人识别号，success=true时必填
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
 	r._payeeRegisterNo = _payeeRegisterNo
@@ -320,12 +320,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayeeRegisterNo(_payeeR
 	return nil
 }
 
-// Get PayeeRegisterNo Getter
+// GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// Set is PayerAddressPhone Setter
+// SetPayerAddressPhone is PayerAddressPhone Setter
 // 购买方地址电话
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayerAddressPhone(_payerAddressPhone string) error {
 	r._payerAddressPhone = _payerAddressPhone
@@ -333,12 +333,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayerAddressPhone(_paye
 	return nil
 }
 
-// Get PayerAddressPhone Getter
+// GetPayerAddressPhone PayerAddressPhone Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetPayerAddressPhone() string {
 	return r._payerAddressPhone
 }
 
-// Set is PayerBankAccount Setter
+// SetPayerBankAccount is PayerBankAccount Setter
 // 购买方银行及账号
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayerBankAccount(_payerBankAccount string) error {
 	r._payerBankAccount = _payerBankAccount
@@ -346,12 +346,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayerBankAccount(_payer
 	return nil
 }
 
-// Get PayerBankAccount Getter
+// GetPayerBankAccount PayerBankAccount Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetPayerBankAccount() string {
 	return r._payerBankAccount
 }
 
-// Set is PayerName Setter
+// SetPayerName is PayerName Setter
 // 购买方名称，即发票抬头，success=true时必填
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayerName(_payerName string) error {
 	r._payerName = _payerName
@@ -359,12 +359,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayerName(_payerName st
 	return nil
 }
 
-// Get PayerName Getter
+// GetPayerName PayerName Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetPayerName() string {
 	return r._payerName
 }
 
-// Set is PayerRegisterNo Setter
+// SetPayerRegisterNo is PayerRegisterNo Setter
 // 购买方纳税人识别号
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayerRegisterNo(_payerRegisterNo string) error {
 	r._payerRegisterNo = _payerRegisterNo
@@ -372,12 +372,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetPayerRegisterNo(_payerR
 	return nil
 }
 
-// Get PayerRegisterNo Getter
+// GetPayerRegisterNo PayerRegisterNo Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetPayerRegisterNo() string {
 	return r._payerRegisterNo
 }
 
-// Set is ReqIndex Setter
+// SetReqIndex is ReqIndex Setter
 // 开票请求标识，扫描驱动回传type=1时填批次号
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetReqIndex(_reqIndex string) error {
 	r._reqIndex = _reqIndex
@@ -385,12 +385,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetReqIndex(_reqIndex stri
 	return nil
 }
 
-// Get ReqIndex Getter
+// GetReqIndex ReqIndex Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetReqIndex() string {
 	return r._reqIndex
 }
 
-// Set is Success Setter
+// SetSuccess is Success Setter
 // 查验结果，true=成功，false=失败
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetSuccess(_success bool) error {
 	r._success = _success
@@ -398,12 +398,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetSuccess(_success bool) 
 	return nil
 }
 
-// Get Success Getter
+// GetSuccess Success Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetSuccess() bool {
 	return r._success
 }
 
-// Set is SumPrice Setter
+// SetSumPrice is SumPrice Setter
 // 发票不含税金额，success=true时必填
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetSumPrice(_sumPrice string) error {
 	r._sumPrice = _sumPrice
@@ -411,12 +411,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetSumPrice(_sumPrice stri
 	return nil
 }
 
-// Get SumPrice Getter
+// GetSumPrice SumPrice Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetSumPrice() string {
 	return r._sumPrice
 }
 
-// Set is SumTax Setter
+// SetSumTax is SumTax Setter
 // 发票税额，success=true时必填
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetSumTax(_sumTax string) error {
 	r._sumTax = _sumTax
@@ -424,12 +424,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetSumTax(_sumTax string) 
 	return nil
 }
 
-// Get SumTax Getter
+// GetSumTax SumTax Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetSumTax() string {
 	return r._sumTax
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 请求类型，0=阿里主动发起的查验，1=扫描驱动服务商主动回传查验结果
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -437,12 +437,12 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetType(_type int64) error
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is InvoiceStatus Setter
+// SetInvoiceStatus is InvoiceStatus Setter
 // 发票状态，0=无效（作废），1=有效
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceStatus(_invoiceStatus int64) error {
 	r._invoiceStatus = _invoiceStatus
@@ -450,7 +450,7 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceStatus(_invoiceS
 	return nil
 }
 
-// Get InvoiceStatus Getter
+// GetInvoiceStatus InvoiceStatus Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetInvoiceStatus() int64 {
 	return r._invoiceStatus
 }

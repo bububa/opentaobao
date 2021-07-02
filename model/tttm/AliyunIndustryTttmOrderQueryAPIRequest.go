@@ -39,7 +39,7 @@ func (r AliyunIndustryTttmOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单号
 func (r *AliyunIndustryTttmOrderQueryAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *AliyunIndustryTttmOrderQueryAPIRequest) SetOrderId(_orderId string) err
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AliyunIndustryTttmOrderQueryAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is ExternalId Setter
+// SetExternalId is ExternalId Setter
 // 外部采购单号
 func (r *AliyunIndustryTttmOrderQueryAPIRequest) SetExternalId(_externalId string) error {
 	r._externalId = _externalId
@@ -60,7 +60,7 @@ func (r *AliyunIndustryTttmOrderQueryAPIRequest) SetExternalId(_externalId strin
 	return nil
 }
 
-// Get ExternalId Getter
+// GetExternalId ExternalId Getter
 func (r AliyunIndustryTttmOrderQueryAPIRequest) GetExternalId() string {
 	return r._externalId
 }

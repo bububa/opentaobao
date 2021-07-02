@@ -45,7 +45,7 @@ func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is UserInfo Setter
+// SetUserInfo is UserInfo Setter
 // 用户信息
 func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
 	r._userInfo = _userInfo
@@ -53,12 +53,12 @@ func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetUserInfo(_userInfo *Us
 	return nil
 }
 
-// Get UserInfo Getter
+// GetUserInfo UserInfo Getter
 func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetUserInfo() *UserInfoDto {
 	return r._userInfo
 }
 
-// Set is TrackingNumber Setter
+// SetTrackingNumber is TrackingNumber Setter
 // 大包运单号
 func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetTrackingNumber(_trackingNumber string) error {
 	r._trackingNumber = _trackingNumber
@@ -66,12 +66,12 @@ func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetTrackingNumber(_tracki
 	return nil
 }
 
-// Get TrackingNumber Getter
+// GetTrackingNumber TrackingNumber Getter
 func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetTrackingNumber() string {
 	return r._trackingNumber
 }
 
-// Set is Client Setter
+// SetClient is Client Setter
 // ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
 func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetClient(_client string) error {
 	r._client = _client
@@ -79,12 +79,12 @@ func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetClient(_client string)
 	return nil
 }
 
-// Get Client Getter
+// GetClient Client Getter
 func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetClient() string {
 	return r._client
 }
 
-// Set is OrderCode Setter
+// SetOrderCode is OrderCode Setter
 // 大包物流单LP号
 func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetOrderCode(_orderCode string) error {
 	r._orderCode = _orderCode
@@ -92,12 +92,12 @@ func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetOrderCode(_orderCode s
 	return nil
 }
 
-// Get OrderCode Getter
+// GetOrderCode OrderCode Getter
 func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// Set is Locale Setter
+// SetLocale is Locale Setter
 // 多语言
 func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
@@ -105,7 +105,7 @@ func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetLocale(_locale string)
 	return nil
 }
 
-// Get Locale Getter
+// GetLocale Locale Getter
 func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetLocale() string {
 	return r._locale
 }

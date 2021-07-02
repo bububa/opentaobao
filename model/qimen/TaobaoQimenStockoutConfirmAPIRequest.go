@@ -37,7 +37,7 @@ func (r TaobaoQimenStockoutConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Request Setter
+// SetRequest is Request Setter
 //
 func (r *TaobaoQimenStockoutConfirmAPIRequest) SetRequest(_request *TaobaoQimenStockoutConfirmStruct) error {
 	r._request = _request
@@ -45,7 +45,7 @@ func (r *TaobaoQimenStockoutConfirmAPIRequest) SetRequest(_request *TaobaoQimenS
 	return nil
 }
 
-// Get Request Getter
+// GetRequest Request Getter
 func (r TaobaoQimenStockoutConfirmAPIRequest) GetRequest() *TaobaoQimenStockoutConfirmStruct {
 	return r._request
 }

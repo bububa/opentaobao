@@ -39,7 +39,7 @@ func (r TaobaoOpenAccountDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OpenAccountIds Setter
+// SetOpenAccountIds is OpenAccountIds Setter
 // Open Account的id列表
 func (r *TaobaoOpenAccountDeleteAPIRequest) SetOpenAccountIds(_openAccountIds []int64) error {
 	r._openAccountIds = _openAccountIds
@@ -47,12 +47,12 @@ func (r *TaobaoOpenAccountDeleteAPIRequest) SetOpenAccountIds(_openAccountIds []
 	return nil
 }
 
-// Get OpenAccountIds Getter
+// GetOpenAccountIds OpenAccountIds Getter
 func (r TaobaoOpenAccountDeleteAPIRequest) GetOpenAccountIds() []int64 {
 	return r._openAccountIds
 }
 
-// Set is IsvAccountIds Setter
+// SetIsvAccountIds is IsvAccountIds Setter
 // ISV自己账号的id列表
 func (r *TaobaoOpenAccountDeleteAPIRequest) SetIsvAccountIds(_isvAccountIds []string) error {
 	r._isvAccountIds = _isvAccountIds
@@ -60,7 +60,7 @@ func (r *TaobaoOpenAccountDeleteAPIRequest) SetIsvAccountIds(_isvAccountIds []st
 	return nil
 }
 
-// Get IsvAccountIds Getter
+// GetIsvAccountIds IsvAccountIds Getter
 func (r TaobaoOpenAccountDeleteAPIRequest) GetIsvAccountIds() []string {
 	return r._isvAccountIds
 }

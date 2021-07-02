@@ -41,7 +41,7 @@ func (r AlibabaHappytripTaxiDriverBlacklistAddAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 供应商单号
 func (r *AlibabaHappytripTaxiDriverBlacklistAddAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -49,12 +49,12 @@ func (r *AlibabaHappytripTaxiDriverBlacklistAddAPIRequest) SetOrderId(_orderId s
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaHappytripTaxiDriverBlacklistAddAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is Uid Setter
+// SetUid is Uid Setter
 // 用户唯一标识
 func (r *AlibabaHappytripTaxiDriverBlacklistAddAPIRequest) SetUid(_uid string) error {
 	r._uid = _uid
@@ -62,12 +62,12 @@ func (r *AlibabaHappytripTaxiDriverBlacklistAddAPIRequest) SetUid(_uid string) e
 	return nil
 }
 
-// Get Uid Getter
+// GetUid Uid Getter
 func (r AlibabaHappytripTaxiDriverBlacklistAddAPIRequest) GetUid() string {
 	return r._uid
 }
 
-// Set is DriverId Setter
+// SetDriverId is DriverId Setter
 // 司机唯一标识
 func (r *AlibabaHappytripTaxiDriverBlacklistAddAPIRequest) SetDriverId(_driverId string) error {
 	r._driverId = _driverId
@@ -75,7 +75,7 @@ func (r *AlibabaHappytripTaxiDriverBlacklistAddAPIRequest) SetDriverId(_driverId
 	return nil
 }
 
-// Get DriverId Getter
+// GetDriverId DriverId Getter
 func (r AlibabaHappytripTaxiDriverBlacklistAddAPIRequest) GetDriverId() string {
 	return r._driverId
 }

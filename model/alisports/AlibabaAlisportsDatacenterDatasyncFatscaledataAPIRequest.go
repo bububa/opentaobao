@@ -83,7 +83,7 @@ func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is Aliuid Setter
+// SetAliuid is Aliuid Setter
 // 阿里体育用户id
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetAliuid(_aliuid string) error {
 	r._aliuid = _aliuid
@@ -91,12 +91,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetAliuid(_al
 	return nil
 }
 
-// Get Aliuid Getter
+// GetAliuid Aliuid Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetAliuid() string {
 	return r._aliuid
 }
 
-// Set is Time Setter
+// SetTime is Time Setter
 // 测量时间，秒级别时间戳
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetTime(_time int64) error {
 	r._time = _time
@@ -104,12 +104,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetTime(_time
 	return nil
 }
 
-// Get Time Getter
+// GetTime Time Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetTime() int64 {
 	return r._time
 }
 
-// Set is Age Setter
+// SetAge is Age Setter
 // 年龄
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetAge(_age int64) error {
 	r._age = _age
@@ -117,12 +117,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetAge(_age i
 	return nil
 }
 
-// Get Age Getter
+// GetAge Age Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetAge() int64 {
 	return r._age
 }
 
-// Set is Height Setter
+// SetHeight is Height Setter
 // 身高，单位cm
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetHeight(_height int64) error {
 	r._height = _height
@@ -130,12 +130,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetHeight(_he
 	return nil
 }
 
-// Get Height Getter
+// GetHeight Height Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetHeight() int64 {
 	return r._height
 }
 
-// Set is Weight Setter
+// SetWeight is Weight Setter
 // 体重，单位kg
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetWeight(_weight *BigDecimal) error {
 	r._weight = _weight
@@ -143,12 +143,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetWeight(_we
 	return nil
 }
 
-// Get Weight Getter
+// GetWeight Weight Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetWeight() *BigDecimal {
 	return r._weight
 }
 
-// Set is Bmi Setter
+// SetBmi is Bmi Setter
 // bmi
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetBmi(_bmi *BigDecimal) error {
 	r._bmi = _bmi
@@ -156,12 +156,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetBmi(_bmi *
 	return nil
 }
 
-// Get Bmi Getter
+// GetBmi Bmi Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetBmi() *BigDecimal {
 	return r._bmi
 }
 
-// Set is BasalMetabolicRate Setter
+// SetBasalMetabolicRate is BasalMetabolicRate Setter
 // 基础代谢率,单位卡
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetBasalMetabolicRate(_basalMetabolicRate *BigDecimal) error {
 	r._basalMetabolicRate = _basalMetabolicRate
@@ -169,12 +169,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetBasalMetab
 	return nil
 }
 
-// Get BasalMetabolicRate Getter
+// GetBasalMetabolicRate BasalMetabolicRate Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetBasalMetabolicRate() *BigDecimal {
 	return r._basalMetabolicRate
 }
 
-// Set is FatFreeMass Setter
+// SetFatFreeMass is FatFreeMass Setter
 // 去脂体重，单位kg
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetFatFreeMass(_fatFreeMass *BigDecimal) error {
 	r._fatFreeMass = _fatFreeMass
@@ -182,12 +182,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetFatFreeMas
 	return nil
 }
 
-// Get FatFreeMass Getter
+// GetFatFreeMass FatFreeMass Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetFatFreeMass() *BigDecimal {
 	return r._fatFreeMass
 }
 
-// Set is BodyFatRate Setter
+// SetBodyFatRate is BodyFatRate Setter
 // 体脂率，百分比12.4%，传12.4
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetBodyFatRate(_bodyFatRate *BigDecimal) error {
 	r._bodyFatRate = _bodyFatRate
@@ -195,12 +195,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetBodyFatRat
 	return nil
 }
 
-// Get BodyFatRate Getter
+// GetBodyFatRate BodyFatRate Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetBodyFatRate() *BigDecimal {
 	return r._bodyFatRate
 }
 
-// Set is FatMass Setter
+// SetFatMass is FatMass Setter
 // 脂肪重量，单位kg
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetFatMass(_fatMass *BigDecimal) error {
 	r._fatMass = _fatMass
@@ -208,12 +208,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetFatMass(_f
 	return nil
 }
 
-// Get FatMass Getter
+// GetFatMass FatMass Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetFatMass() *BigDecimal {
 	return r._fatMass
 }
 
-// Set is SubcutaneousFatRate Setter
+// SetSubcutaneousFatRate is SubcutaneousFatRate Setter
 // 皮下脂肪率，百分比
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetSubcutaneousFatRate(_subcutaneousFatRate *BigDecimal) error {
 	r._subcutaneousFatRate = _subcutaneousFatRate
@@ -221,12 +221,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetSubcutaneo
 	return nil
 }
 
-// Get SubcutaneousFatRate Getter
+// GetSubcutaneousFatRate SubcutaneousFatRate Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetSubcutaneousFatRate() *BigDecimal {
 	return r._subcutaneousFatRate
 }
 
-// Set is VisceralFatIndex Setter
+// SetVisceralFatIndex is VisceralFatIndex Setter
 // 内脏脂肪率，百分比
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetVisceralFatIndex(_visceralFatIndex *BigDecimal) error {
 	r._visceralFatIndex = _visceralFatIndex
@@ -234,12 +234,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetVisceralFa
 	return nil
 }
 
-// Get VisceralFatIndex Getter
+// GetVisceralFatIndex VisceralFatIndex Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetVisceralFatIndex() *BigDecimal {
 	return r._visceralFatIndex
 }
 
-// Set is MuscleRate Setter
+// SetMuscleRate is MuscleRate Setter
 // 肌肉率，百分比
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetMuscleRate(_muscleRate *BigDecimal) error {
 	r._muscleRate = _muscleRate
@@ -247,12 +247,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetMuscleRate
 	return nil
 }
 
-// Get MuscleRate Getter
+// GetMuscleRate MuscleRate Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetMuscleRate() *BigDecimal {
 	return r._muscleRate
 }
 
-// Set is MuscleMass Setter
+// SetMuscleMass is MuscleMass Setter
 // 肌肉重量，单位kg
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetMuscleMass(_muscleMass *BigDecimal) error {
 	r._muscleMass = _muscleMass
@@ -260,12 +260,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetMuscleMass
 	return nil
 }
 
-// Get MuscleMass Getter
+// GetMuscleMass MuscleMass Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetMuscleMass() *BigDecimal {
 	return r._muscleMass
 }
 
-// Set is SkeletalMuscleRate Setter
+// SetSkeletalMuscleRate is SkeletalMuscleRate Setter
 // 骨骼肌率，百分比
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetSkeletalMuscleRate(_skeletalMuscleRate *BigDecimal) error {
 	r._skeletalMuscleRate = _skeletalMuscleRate
@@ -273,12 +273,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetSkeletalMu
 	return nil
 }
 
-// Get SkeletalMuscleRate Getter
+// GetSkeletalMuscleRate SkeletalMuscleRate Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetSkeletalMuscleRate() *BigDecimal {
 	return r._skeletalMuscleRate
 }
 
-// Set is MoistureRate Setter
+// SetMoistureRate is MoistureRate Setter
 // 水分率，百分比
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetMoistureRate(_moistureRate *BigDecimal) error {
 	r._moistureRate = _moistureRate
@@ -286,12 +286,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetMoistureRa
 	return nil
 }
 
-// Get MoistureRate Getter
+// GetMoistureRate MoistureRate Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetMoistureRate() *BigDecimal {
 	return r._moistureRate
 }
 
-// Set is ProteinRate Setter
+// SetProteinRate is ProteinRate Setter
 // 蛋白质率，百分比
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetProteinRate(_proteinRate *BigDecimal) error {
 	r._proteinRate = _proteinRate
@@ -299,12 +299,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetProteinRat
 	return nil
 }
 
-// Get ProteinRate Getter
+// GetProteinRate ProteinRate Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetProteinRate() *BigDecimal {
 	return r._proteinRate
 }
 
-// Set is BoneMass Setter
+// SetBoneMass is BoneMass Setter
 // 骨量，单位kg
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetBoneMass(_boneMass *BigDecimal) error {
 	r._boneMass = _boneMass
@@ -312,12 +312,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetBoneMass(_
 	return nil
 }
 
-// Get BoneMass Getter
+// GetBoneMass BoneMass Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetBoneMass() *BigDecimal {
 	return r._boneMass
 }
 
-// Set is WeightIndex Setter
+// SetWeightIndex is WeightIndex Setter
 // 体重指数
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetWeightIndex(_weightIndex int64) error {
 	r._weightIndex = _weightIndex
@@ -325,12 +325,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetWeightInde
 	return nil
 }
 
-// Get WeightIndex Getter
+// GetWeightIndex WeightIndex Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetWeightIndex() int64 {
 	return r._weightIndex
 }
 
-// Set is BodyAge Setter
+// SetBodyAge is BodyAge Setter
 // 身体年龄
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetBodyAge(_bodyAge int64) error {
 	r._bodyAge = _bodyAge
@@ -338,12 +338,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetBodyAge(_b
 	return nil
 }
 
-// Get BodyAge Getter
+// GetBodyAge BodyAge Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetBodyAge() int64 {
 	return r._bodyAge
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 设备类型：1.体脂秤，2智能手表，3智能手环
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetDeviceType(_deviceType int64) error {
 	r._deviceType = _deviceType
@@ -351,12 +351,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetDeviceType
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetDeviceType() int64 {
 	return r._deviceType
 }
 
-// Set is DeviceName Setter
+// SetDeviceName is DeviceName Setter
 // 设备名称
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetDeviceName(_deviceName string) error {
 	r._deviceName = _deviceName
@@ -364,12 +364,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetDeviceName
 	return nil
 }
 
-// Get DeviceName Getter
+// GetDeviceName DeviceName Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetDeviceName() string {
 	return r._deviceName
 }
 
-// Set is DeviceModel Setter
+// SetDeviceModel is DeviceModel Setter
 // 设备编号
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetDeviceModel(_deviceModel string) error {
 	r._deviceModel = _deviceModel
@@ -377,12 +377,12 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetDeviceMode
 	return nil
 }
 
-// Get DeviceModel Getter
+// GetDeviceModel DeviceModel Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetDeviceModel() string {
 	return r._deviceModel
 }
 
-// Set is MessageId Setter
+// SetMessageId is MessageId Setter
 // 三方唯一id
 func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetMessageId(_messageId string) error {
 	r._messageId = _messageId
@@ -390,7 +390,7 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetMessageId(
 	return nil
 }
 
-// Get MessageId Getter
+// GetMessageId MessageId Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetMessageId() string {
 	return r._messageId
 }

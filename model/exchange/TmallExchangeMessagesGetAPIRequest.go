@@ -45,7 +45,7 @@ func (r TmallExchangeMessagesGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OperatorRoles Setter
+// SetOperatorRoles is OperatorRoles Setter
 // 留言创建角色。具体包括：卖家主账户(1)、卖家子账户(2)、小二(3)、买家(4)、系统(5)、系统超时(6)
 func (r *TmallExchangeMessagesGetAPIRequest) SetOperatorRoles(_operatorRoles []int64) error {
 	r._operatorRoles = _operatorRoles
@@ -53,12 +53,12 @@ func (r *TmallExchangeMessagesGetAPIRequest) SetOperatorRoles(_operatorRoles []i
 	return nil
 }
 
-// Get OperatorRoles Getter
+// GetOperatorRoles OperatorRoles Getter
 func (r TmallExchangeMessagesGetAPIRequest) GetOperatorRoles() []int64 {
 	return r._operatorRoles
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页条数
 func (r *TmallExchangeMessagesGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -66,12 +66,12 @@ func (r *TmallExchangeMessagesGetAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TmallExchangeMessagesGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is DisputeId Setter
+// SetDisputeId is DisputeId Setter
 // 换货单号ID
 func (r *TmallExchangeMessagesGetAPIRequest) SetDisputeId(_disputeId int64) error {
 	r._disputeId = _disputeId
@@ -79,12 +79,12 @@ func (r *TmallExchangeMessagesGetAPIRequest) SetDisputeId(_disputeId int64) erro
 	return nil
 }
 
-// Get DisputeId Getter
+// GetDisputeId DisputeId Getter
 func (r TmallExchangeMessagesGetAPIRequest) GetDisputeId() int64 {
 	return r._disputeId
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码
 func (r *TmallExchangeMessagesGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -92,12 +92,12 @@ func (r *TmallExchangeMessagesGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TmallExchangeMessagesGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 返回的字段。具体包括：id,refund_id,owner_id,owner_nick,owner_role,content,pic_urls,created,message_type
 func (r *TmallExchangeMessagesGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -105,7 +105,7 @@ func (r *TmallExchangeMessagesGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TmallExchangeMessagesGetAPIRequest) GetFields() []string {
 	return r._fields
 }

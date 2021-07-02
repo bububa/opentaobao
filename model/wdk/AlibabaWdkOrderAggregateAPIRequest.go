@@ -37,7 +37,7 @@ func (r AlibabaWdkOrderAggregateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderAggregateQueryRequest Setter
+// SetOrderAggregateQueryRequest is OrderAggregateQueryRequest Setter
 // 系统自动生成
 func (r *AlibabaWdkOrderAggregateAPIRequest) SetOrderAggregateQueryRequest(_orderAggregateQueryRequest *OrderAggregateQueryRequest) error {
 	r._orderAggregateQueryRequest = _orderAggregateQueryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkOrderAggregateAPIRequest) SetOrderAggregateQueryRequest(_orde
 	return nil
 }
 
-// Get OrderAggregateQueryRequest Getter
+// GetOrderAggregateQueryRequest OrderAggregateQueryRequest Getter
 func (r AlibabaWdkOrderAggregateAPIRequest) GetOrderAggregateQueryRequest() *OrderAggregateQueryRequest {
 	return r._orderAggregateQueryRequest
 }

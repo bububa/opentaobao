@@ -43,7 +43,7 @@ func (r AlibabaNlifeStoreItemdetailsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID/设备号
 func (r *AlibabaNlifeStoreItemdetailsGetAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -51,12 +51,12 @@ func (r *AlibabaNlifeStoreItemdetailsGetAPIRequest) SetStoreId(_storeId string) 
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaNlifeStoreItemdetailsGetAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is StoreIdType Setter
+// SetStoreIdType is StoreIdType Setter
 // 门店类型: 零售加的门店-RETAIL_PLUS_STORE ; 商户中心门店-PLACE_STORE ; 门店设备号-STORE_DEVICE
 func (r *AlibabaNlifeStoreItemdetailsGetAPIRequest) SetStoreIdType(_storeIdType string) error {
 	r._storeIdType = _storeIdType
@@ -64,12 +64,12 @@ func (r *AlibabaNlifeStoreItemdetailsGetAPIRequest) SetStoreIdType(_storeIdType 
 	return nil
 }
 
-// Get StoreIdType Getter
+// GetStoreIdType StoreIdType Getter
 func (r AlibabaNlifeStoreItemdetailsGetAPIRequest) GetStoreIdType() string {
 	return r._storeIdType
 }
 
-// Set is ItemQueryDOList Setter
+// SetItemQueryDOList is ItemQueryDOList Setter
 // 查询参数list
 func (r *AlibabaNlifeStoreItemdetailsGetAPIRequest) SetItemQueryDOList(_itemQueryDOList []ItemQueryDOList) error {
 	r._itemQueryDOList = _itemQueryDOList
@@ -77,12 +77,12 @@ func (r *AlibabaNlifeStoreItemdetailsGetAPIRequest) SetItemQueryDOList(_itemQuer
 	return nil
 }
 
-// Get ItemQueryDOList Getter
+// GetItemQueryDOList ItemQueryDOList Getter
 func (r AlibabaNlifeStoreItemdetailsGetAPIRequest) GetItemQueryDOList() []ItemQueryDOList {
 	return r._itemQueryDOList
 }
 
-// Set is ItemType Setter
+// SetItemType is ItemType Setter
 // 商品来源类型: 0-线上商品; 1-商户导入的线下商品. 如果为空则默认值为0
 func (r *AlibabaNlifeStoreItemdetailsGetAPIRequest) SetItemType(_itemType *model.File) error {
 	r._itemType = _itemType
@@ -90,7 +90,7 @@ func (r *AlibabaNlifeStoreItemdetailsGetAPIRequest) SetItemType(_itemType *model
 	return nil
 }
 
-// Get ItemType Getter
+// GetItemType ItemType Getter
 func (r AlibabaNlifeStoreItemdetailsGetAPIRequest) GetItemType() *model.File {
 	return r._itemType
 }

@@ -39,7 +39,7 @@ func (r YoukuWenyuvideoPersionGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SystemInfo Setter
+// SetSystemInfo is SystemInfo Setter
 // 设备信息
 func (r *YoukuWenyuvideoPersionGetAPIRequest) SetSystemInfo(_systemInfo string) error {
 	r._systemInfo = _systemInfo
@@ -47,12 +47,12 @@ func (r *YoukuWenyuvideoPersionGetAPIRequest) SetSystemInfo(_systemInfo string) 
 	return nil
 }
 
-// Get SystemInfo Getter
+// GetSystemInfo SystemInfo Getter
 func (r YoukuWenyuvideoPersionGetAPIRequest) GetSystemInfo() string {
 	return r._systemInfo
 }
 
-// Set is PersonId Setter
+// SetPersonId is PersonId Setter
 // 人物ID
 func (r *YoukuWenyuvideoPersionGetAPIRequest) SetPersonId(_personId int64) error {
 	r._personId = _personId
@@ -60,7 +60,7 @@ func (r *YoukuWenyuvideoPersionGetAPIRequest) SetPersonId(_personId int64) error
 	return nil
 }
 
-// Get PersonId Getter
+// GetPersonId PersonId Getter
 func (r YoukuWenyuvideoPersionGetAPIRequest) GetPersonId() int64 {
 	return r._personId
 }

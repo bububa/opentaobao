@@ -37,7 +37,7 @@ func (r TaobaoWdkEquipmentConveyorInfoUploadAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 上传信息
 func (r *TaobaoWdkEquipmentConveyorInfoUploadAPIRequest) SetParam0(_param0 string) error {
 	r._param0 = _param0
@@ -45,7 +45,7 @@ func (r *TaobaoWdkEquipmentConveyorInfoUploadAPIRequest) SetParam0(_param0 strin
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r TaobaoWdkEquipmentConveyorInfoUploadAPIRequest) GetParam0() string {
 	return r._param0
 }

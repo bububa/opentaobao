@@ -41,7 +41,7 @@ func (r TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) GetApiParam
 	return params
 }
 
-// Set is WarehouseId Setter
+// SetWarehouseId is WarehouseId Setter
 // 仓库Id
 func (r *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) SetWarehouseId(_warehouseId int64) error {
 	r._warehouseId = _warehouseId
@@ -49,12 +49,12 @@ func (r *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) SetWarehou
 	return nil
 }
 
-// Get WarehouseId Getter
+// GetWarehouseId WarehouseId Getter
 func (r TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) GetWarehouseId() int64 {
 	return r._warehouseId
 }
 
-// Set is ConveyorId Setter
+// SetConveyorId is ConveyorId Setter
 // 悬挂链Id，即wcsNum
 func (r *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) SetConveyorId(_conveyorId int64) error {
 	r._conveyorId = _conveyorId
@@ -62,12 +62,12 @@ func (r *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) SetConveyo
 	return nil
 }
 
-// Get ConveyorId Getter
+// GetConveyorId ConveyorId Getter
 func (r TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) GetConveyorId() int64 {
 	return r._conveyorId
 }
 
-// Set is StartId Setter
+// SetStartId is StartId Setter
 // 数据库id最小值
 func (r *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) SetStartId(_startId int64) error {
 	r._startId = _startId
@@ -75,7 +75,7 @@ func (r *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) SetStartId
 	return nil
 }
 
-// Get StartId Getter
+// GetStartId StartId Getter
 func (r TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIRequest) GetStartId() int64 {
 	return r._startId
 }

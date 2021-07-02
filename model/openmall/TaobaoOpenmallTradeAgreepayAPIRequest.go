@@ -39,7 +39,7 @@ func (r TaobaoOpenmallTradeAgreepayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Distributor Setter
+// SetDistributor is Distributor Setter
 // 媒体渠道，代表分销者的身份，签约支付宝代扣的渠道商淘宝账号nick
 func (r *TaobaoOpenmallTradeAgreepayAPIRequest) SetDistributor(_distributor string) error {
 	r._distributor = _distributor
@@ -47,12 +47,12 @@ func (r *TaobaoOpenmallTradeAgreepayAPIRequest) SetDistributor(_distributor stri
 	return nil
 }
 
-// Get Distributor Getter
+// GetDistributor Distributor Getter
 func (r TaobaoOpenmallTradeAgreepayAPIRequest) GetDistributor() string {
 	return r._distributor
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝交易单号
 func (r *TaobaoOpenmallTradeAgreepayAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -60,7 +60,7 @@ func (r *TaobaoOpenmallTradeAgreepayAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoOpenmallTradeAgreepayAPIRequest) GetTid() int64 {
 	return r._tid
 }

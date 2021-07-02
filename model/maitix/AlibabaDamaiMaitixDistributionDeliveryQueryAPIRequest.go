@@ -37,7 +37,7 @@ func (r AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 主订单号
 func (r *AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest) SetMainOrderId(_mainOrderId string) error {
 	r._mainOrderId = _mainOrderId
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest) SetMainOrderId(_
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r AlibabaDamaiMaitixDistributionDeliveryQueryAPIRequest) GetMainOrderId() string {
 	return r._mainOrderId
 }

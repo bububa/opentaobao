@@ -37,7 +37,7 @@ func (r AlibabaAlihealthMedicalItemStatusAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Shelfrequest Setter
+// SetShelfrequest is Shelfrequest Setter
 // 请求入参
 func (r *AlibabaAlihealthMedicalItemStatusAPIRequest) SetShelfrequest(_shelfrequest *ThirdAgencyUpDownShelfRequest) error {
 	r._shelfrequest = _shelfrequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthMedicalItemStatusAPIRequest) SetShelfrequest(_shelfrequ
 	return nil
 }
 
-// Get Shelfrequest Getter
+// GetShelfrequest Shelfrequest Getter
 func (r AlibabaAlihealthMedicalItemStatusAPIRequest) GetShelfrequest() *ThirdAgencyUpDownShelfRequest {
 	return r._shelfrequest
 }

@@ -37,7 +37,7 @@ func (r AlibabaIcbuProductInventoryUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RequestParam Setter
+// SetRequestParam is RequestParam Setter
 // 更新请求
 func (r *AlibabaIcbuProductInventoryUpdateAPIRequest) SetRequestParam(_requestParam *ProductInventoryRequest) error {
 	r._requestParam = _requestParam
@@ -45,7 +45,7 @@ func (r *AlibabaIcbuProductInventoryUpdateAPIRequest) SetRequestParam(_requestPa
 	return nil
 }
 
-// Get RequestParam Getter
+// GetRequestParam RequestParam Getter
 func (r AlibabaIcbuProductInventoryUpdateAPIRequest) GetRequestParam() *ProductInventoryRequest {
 	return r._requestParam
 }

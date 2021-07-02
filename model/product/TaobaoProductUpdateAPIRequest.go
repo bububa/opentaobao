@@ -55,7 +55,7 @@ func (r TaobaoProductUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品ID
 func (r *TaobaoProductUpdateAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -63,12 +63,12 @@ func (r *TaobaoProductUpdateAPIRequest) SetProductId(_productId int64) error {
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TaobaoProductUpdateAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 外部产品ID
 func (r *TaobaoProductUpdateAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -76,12 +76,12 @@ func (r *TaobaoProductUpdateAPIRequest) SetOuterId(_outerId string) error {
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoProductUpdateAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is Binds Setter
+// SetBinds is Binds Setter
 // 非关键属性.调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid;格式:pid:vid;pid:vid
 func (r *TaobaoProductUpdateAPIRequest) SetBinds(_binds string) error {
 	r._binds = _binds
@@ -89,12 +89,12 @@ func (r *TaobaoProductUpdateAPIRequest) SetBinds(_binds string) error {
 	return nil
 }
 
-// Get Binds Getter
+// GetBinds Binds Getter
 func (r TaobaoProductUpdateAPIRequest) GetBinds() string {
 	return r._binds
 }
 
-// Set is SaleProps Setter
+// SetSaleProps is SaleProps Setter
 // 销售属性.调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid;格式:pid:vid;pid:vid
 func (r *TaobaoProductUpdateAPIRequest) SetSaleProps(_saleProps string) error {
 	r._saleProps = _saleProps
@@ -102,12 +102,12 @@ func (r *TaobaoProductUpdateAPIRequest) SetSaleProps(_saleProps string) error {
 	return nil
 }
 
-// Get SaleProps Getter
+// GetSaleProps SaleProps Getter
 func (r TaobaoProductUpdateAPIRequest) GetSaleProps() string {
 	return r._saleProps
 }
 
-// Set is Price Setter
+// SetPrice is Price Setter
 // 产品市场价.精确到2位小数;单位为元.如:200.07
 func (r *TaobaoProductUpdateAPIRequest) SetPrice(_price string) error {
 	r._price = _price
@@ -115,12 +115,12 @@ func (r *TaobaoProductUpdateAPIRequest) SetPrice(_price string) error {
 	return nil
 }
 
-// Get Price Getter
+// GetPrice Price Getter
 func (r TaobaoProductUpdateAPIRequest) GetPrice() string {
 	return r._price
 }
 
-// Set is Desc Setter
+// SetDesc is Desc Setter
 // 产品描述.最大不超过25000个字符
 func (r *TaobaoProductUpdateAPIRequest) SetDesc(_desc string) error {
 	r._desc = _desc
@@ -128,12 +128,12 @@ func (r *TaobaoProductUpdateAPIRequest) SetDesc(_desc string) error {
 	return nil
 }
 
-// Get Desc Getter
+// GetDesc Desc Getter
 func (r TaobaoProductUpdateAPIRequest) GetDesc() string {
 	return r._desc
 }
 
-// Set is Image Setter
+// SetImage is Image Setter
 // 产品主图.最大500K,目前仅支持GIF,JPG
 func (r *TaobaoProductUpdateAPIRequest) SetImage(_image *model.File) error {
 	r._image = _image
@@ -141,12 +141,12 @@ func (r *TaobaoProductUpdateAPIRequest) SetImage(_image *model.File) error {
 	return nil
 }
 
-// Get Image Getter
+// GetImage Image Getter
 func (r TaobaoProductUpdateAPIRequest) GetImage() *model.File {
 	return r._image
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 产品名称.最大不超过30个字符
 func (r *TaobaoProductUpdateAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -154,12 +154,12 @@ func (r *TaobaoProductUpdateAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoProductUpdateAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Major Setter
+// SetMajor is Major Setter
 // 是否是主图
 func (r *TaobaoProductUpdateAPIRequest) SetMajor(_major bool) error {
 	r._major = _major
@@ -167,12 +167,12 @@ func (r *TaobaoProductUpdateAPIRequest) SetMajor(_major bool) error {
 	return nil
 }
 
-// Get Major Getter
+// GetMajor Major Getter
 func (r TaobaoProductUpdateAPIRequest) GetMajor() bool {
 	return r._major
 }
 
-// Set is NativeUnkeyprops Setter
+// SetNativeUnkeyprops is NativeUnkeyprops Setter
 // 自定义非关键属性
 func (r *TaobaoProductUpdateAPIRequest) SetNativeUnkeyprops(_nativeUnkeyprops string) error {
 	r._nativeUnkeyprops = _nativeUnkeyprops
@@ -180,7 +180,7 @@ func (r *TaobaoProductUpdateAPIRequest) SetNativeUnkeyprops(_nativeUnkeyprops st
 	return nil
 }
 
-// Get NativeUnkeyprops Getter
+// GetNativeUnkeyprops NativeUnkeyprops Getter
 func (r TaobaoProductUpdateAPIRequest) GetNativeUnkeyprops() string {
 	return r._nativeUnkeyprops
 }

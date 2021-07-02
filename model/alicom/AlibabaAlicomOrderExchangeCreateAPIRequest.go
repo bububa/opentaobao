@@ -37,7 +37,7 @@ func (r AlibabaAlicomOrderExchangeCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ExchangeModel Setter
+// SetExchangeModel is ExchangeModel Setter
 // 入参
 func (r *AlibabaAlicomOrderExchangeCreateAPIRequest) SetExchangeModel(_exchangeModel *ExchangeModel) error {
 	r._exchangeModel = _exchangeModel
@@ -45,7 +45,7 @@ func (r *AlibabaAlicomOrderExchangeCreateAPIRequest) SetExchangeModel(_exchangeM
 	return nil
 }
 
-// Get ExchangeModel Getter
+// GetExchangeModel ExchangeModel Getter
 func (r AlibabaAlicomOrderExchangeCreateAPIRequest) GetExchangeModel() *ExchangeModel {
 	return r._exchangeModel
 }

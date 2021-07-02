@@ -37,7 +37,7 @@ func (r TmallMsfReservationAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ReservInfo Setter
+// SetReservInfo is ReservInfo Setter
 // 预约内容
 func (r *TmallMsfReservationAPIRequest) SetReservInfo(_reservInfo *ReservationDto) error {
 	r._reservInfo = _reservInfo
@@ -45,7 +45,7 @@ func (r *TmallMsfReservationAPIRequest) SetReservInfo(_reservInfo *ReservationDt
 	return nil
 }
 
-// Get ReservInfo Getter
+// GetReservInfo ReservInfo Getter
 func (r TmallMsfReservationAPIRequest) GetReservInfo() *ReservationDto {
 	return r._reservInfo
 }

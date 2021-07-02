@@ -37,7 +37,7 @@ func (r TaobaoJstAstrolabeStoreinventoryQueryAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Stores Setter
+// SetStores is Stores Setter
 // 门店
 func (r *TaobaoJstAstrolabeStoreinventoryQueryAPIRequest) SetStores(_stores []Store) error {
 	r._stores = _stores
@@ -45,7 +45,7 @@ func (r *TaobaoJstAstrolabeStoreinventoryQueryAPIRequest) SetStores(_stores []St
 	return nil
 }
 
-// Get Stores Getter
+// GetStores Stores Getter
 func (r TaobaoJstAstrolabeStoreinventoryQueryAPIRequest) GetStores() []Store {
 	return r._stores
 }

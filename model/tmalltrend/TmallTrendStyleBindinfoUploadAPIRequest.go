@@ -37,7 +37,7 @@ func (r TmallTrendStyleBindinfoUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TrendStyleBindInfoBoList Setter
+// SetTrendStyleBindInfoBoList is TrendStyleBindInfoBoList Setter
 // 趋势词&款式绑定信息列表，一次最多1000条
 func (r *TmallTrendStyleBindinfoUploadAPIRequest) SetTrendStyleBindInfoBoList(_trendStyleBindInfoBoList []TrendStyleBindInfoBO) error {
 	r._trendStyleBindInfoBoList = _trendStyleBindInfoBoList
@@ -45,7 +45,7 @@ func (r *TmallTrendStyleBindinfoUploadAPIRequest) SetTrendStyleBindInfoBoList(_t
 	return nil
 }
 
-// Get TrendStyleBindInfoBoList Getter
+// GetTrendStyleBindInfoBoList TrendStyleBindInfoBoList Getter
 func (r TmallTrendStyleBindinfoUploadAPIRequest) GetTrendStyleBindInfoBoList() []TrendStyleBindInfoBO {
 	return r._trendStyleBindInfoBoList
 }

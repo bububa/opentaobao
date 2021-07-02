@@ -41,7 +41,7 @@ func (r TmallPromotionCouponUserAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 例如：suning
 func (r *TmallPromotionCouponUserAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -49,12 +49,12 @@ func (r *TmallPromotionCouponUserAPIRequest) SetBizType(_bizType string) error {
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TmallPromotionCouponUserAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is PayCode Setter
+// SetPayCode is PayCode Setter
 // 会员付款码
 func (r *TmallPromotionCouponUserAPIRequest) SetPayCode(_payCode string) error {
 	r._payCode = _payCode
@@ -62,12 +62,12 @@ func (r *TmallPromotionCouponUserAPIRequest) SetPayCode(_payCode string) error {
 	return nil
 }
 
-// Get PayCode Getter
+// GetPayCode PayCode Getter
 func (r TmallPromotionCouponUserAPIRequest) GetPayCode() string {
 	return r._payCode
 }
 
-// Set is Extra Setter
+// SetExtra is Extra Setter
 // 扩展字段
 func (r *TmallPromotionCouponUserAPIRequest) SetExtra(_extra string) error {
 	r._extra = _extra
@@ -75,7 +75,7 @@ func (r *TmallPromotionCouponUserAPIRequest) SetExtra(_extra string) error {
 	return nil
 }
 
-// Get Extra Getter
+// GetExtra Extra Getter
 func (r TmallPromotionCouponUserAPIRequest) GetExtra() string {
 	return r._extra
 }

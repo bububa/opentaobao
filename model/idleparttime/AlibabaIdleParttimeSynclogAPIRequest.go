@@ -47,7 +47,7 @@ func (r AlibabaIdleParttimeSynclogAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 查询岗位同步开始时间
 func (r *AlibabaIdleParttimeSynclogAPIRequest) SetStartTime(_startTime int64) error {
 	r._startTime = _startTime
@@ -55,12 +55,12 @@ func (r *AlibabaIdleParttimeSynclogAPIRequest) SetStartTime(_startTime int64) er
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r AlibabaIdleParttimeSynclogAPIRequest) GetStartTime() int64 {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 查询岗位同步结束时间
 func (r *AlibabaIdleParttimeSynclogAPIRequest) SetEndTime(_endTime int64) error {
 	r._endTime = _endTime
@@ -68,12 +68,12 @@ func (r *AlibabaIdleParttimeSynclogAPIRequest) SetEndTime(_endTime int64) error 
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r AlibabaIdleParttimeSynclogAPIRequest) GetEndTime() int64 {
 	return r._endTime
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 查询的类型, 0:岗位
 func (r *AlibabaIdleParttimeSynclogAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -81,12 +81,12 @@ func (r *AlibabaIdleParttimeSynclogAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaIdleParttimeSynclogAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小
 func (r *AlibabaIdleParttimeSynclogAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -94,12 +94,12 @@ func (r *AlibabaIdleParttimeSynclogAPIRequest) SetPageSize(_pageSize int64) erro
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaIdleParttimeSynclogAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNum Setter
+// SetPageNum is PageNum Setter
 // 第几页, 从0开始
 func (r *AlibabaIdleParttimeSynclogAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
@@ -107,12 +107,12 @@ func (r *AlibabaIdleParttimeSynclogAPIRequest) SetPageNum(_pageNum int64) error 
 	return nil
 }
 
-// Get PageNum Getter
+// GetPageNum PageNum Getter
 func (r AlibabaIdleParttimeSynclogAPIRequest) GetPageNum() int64 {
 	return r._pageNum
 }
 
-// Set is SyncIds Setter
+// SetSyncIds is SyncIds Setter
 // 同步的id
 func (r *AlibabaIdleParttimeSynclogAPIRequest) SetSyncIds(_syncIds []int64) error {
 	r._syncIds = _syncIds
@@ -120,7 +120,7 @@ func (r *AlibabaIdleParttimeSynclogAPIRequest) SetSyncIds(_syncIds []int64) erro
 	return nil
 }
 
-// Get SyncIds Getter
+// GetSyncIds SyncIds Getter
 func (r AlibabaIdleParttimeSynclogAPIRequest) GetSyncIds() []int64 {
 	return r._syncIds
 }

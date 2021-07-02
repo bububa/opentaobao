@@ -39,7 +39,7 @@ func (r AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is Context Setter
+// SetContext is Context Setter
 // 上下文
 func (r *AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest) SetContext(_context *WorkBenchContext) error {
 	r._context = _context
@@ -47,12 +47,12 @@ func (r *AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest) SetContext(_conte
 	return nil
 }
 
-// Get Context Getter
+// GetContext Context Getter
 func (r AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest) GetContext() *WorkBenchContext {
 	return r._context
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 查询对象
 func (r *AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest) SetQuery(_query *SpaceUnitQuery) error {
 	r._query = _query
@@ -60,7 +60,7 @@ func (r *AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest) SetQuery(_query *
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r AlibabaCampusAdminmapPoiinfoGetlistbygroupAPIRequest) GetQuery() *SpaceUnitQuery {
 	return r._query
 }

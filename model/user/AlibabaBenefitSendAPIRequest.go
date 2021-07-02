@@ -47,7 +47,7 @@ func (r AlibabaBenefitSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RightEname Setter
+// SetRightEname is RightEname Setter
 // 发放的权益(奖品)唯一标识
 func (r *AlibabaBenefitSendAPIRequest) SetRightEname(_rightEname string) error {
 	r._rightEname = _rightEname
@@ -55,12 +55,12 @@ func (r *AlibabaBenefitSendAPIRequest) SetRightEname(_rightEname string) error {
 	return nil
 }
 
-// Get RightEname Getter
+// GetRightEname RightEname Getter
 func (r AlibabaBenefitSendAPIRequest) GetRightEname() string {
 	return r._rightEname
 }
 
-// Set is ReceiverId Setter
+// SetReceiverId is ReceiverId Setter
 // 接收奖品的用户openId
 func (r *AlibabaBenefitSendAPIRequest) SetReceiverId(_receiverId string) error {
 	r._receiverId = _receiverId
@@ -68,12 +68,12 @@ func (r *AlibabaBenefitSendAPIRequest) SetReceiverId(_receiverId string) error {
 	return nil
 }
 
-// Get ReceiverId Getter
+// GetReceiverId ReceiverId Getter
 func (r AlibabaBenefitSendAPIRequest) GetReceiverId() string {
 	return r._receiverId
 }
 
-// Set is UserType Setter
+// SetUserType is UserType Setter
 // 规定填taobao即可
 func (r *AlibabaBenefitSendAPIRequest) SetUserType(_userType string) error {
 	r._userType = _userType
@@ -81,12 +81,12 @@ func (r *AlibabaBenefitSendAPIRequest) SetUserType(_userType string) error {
 	return nil
 }
 
-// Get UserType Getter
+// GetUserType UserType Getter
 func (r AlibabaBenefitSendAPIRequest) GetUserType() string {
 	return r._userType
 }
 
-// Set is UniqueId Setter
+// SetUniqueId is UniqueId Setter
 // 幂等校验id，业务重试需要，自定义唯一字段即可
 func (r *AlibabaBenefitSendAPIRequest) SetUniqueId(_uniqueId string) error {
 	r._uniqueId = _uniqueId
@@ -94,12 +94,12 @@ func (r *AlibabaBenefitSendAPIRequest) SetUniqueId(_uniqueId string) error {
 	return nil
 }
 
-// Get UniqueId Getter
+// GetUniqueId UniqueId Getter
 func (r AlibabaBenefitSendAPIRequest) GetUniqueId() string {
 	return r._uniqueId
 }
 
-// Set is AppName Setter
+// SetAppName is AppName Setter
 // mtop
 func (r *AlibabaBenefitSendAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
@@ -107,12 +107,12 @@ func (r *AlibabaBenefitSendAPIRequest) SetAppName(_appName string) error {
 	return nil
 }
 
-// Get AppName Getter
+// GetAppName AppName Getter
 func (r AlibabaBenefitSendAPIRequest) GetAppName() string {
 	return r._appName
 }
 
-// Set is Ip Setter
+// SetIp is Ip Setter
 // 调用应用ip，非必填
 func (r *AlibabaBenefitSendAPIRequest) SetIp(_ip string) error {
 	r._ip = _ip
@@ -120,7 +120,7 @@ func (r *AlibabaBenefitSendAPIRequest) SetIp(_ip string) error {
 	return nil
 }
 
-// Get Ip Getter
+// GetIp Ip Getter
 func (r AlibabaBenefitSendAPIRequest) GetIp() string {
 	return r._ip
 }

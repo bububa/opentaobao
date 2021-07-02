@@ -37,7 +37,7 @@ func (r TaobaoAlitripTravelItemElementQueryAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is OuterIds Setter
+// SetOuterIds is OuterIds Setter
 // 需要查询的资源元素列表，最大列表长度为50
 func (r *TaobaoAlitripTravelItemElementQueryAPIRequest) SetOuterIds(_outerIds []string) error {
 	r._outerIds = _outerIds
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripTravelItemElementQueryAPIRequest) SetOuterIds(_outerIds []
 	return nil
 }
 
-// Get OuterIds Getter
+// GetOuterIds OuterIds Getter
 func (r TaobaoAlitripTravelItemElementQueryAPIRequest) GetOuterIds() []string {
 	return r._outerIds
 }

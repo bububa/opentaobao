@@ -45,7 +45,7 @@ func (r TaobaoItemPropimgUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NumIid Setter
+// SetNumIid is NumIid Setter
 // 商品数字ID，必选
 func (r *TaobaoItemPropimgUploadAPIRequest) SetNumIid(_numIid int64) error {
 	r._numIid = _numIid
@@ -53,12 +53,12 @@ func (r *TaobaoItemPropimgUploadAPIRequest) SetNumIid(_numIid int64) error {
 	return nil
 }
 
-// Get NumIid Getter
+// GetNumIid NumIid Getter
 func (r TaobaoItemPropimgUploadAPIRequest) GetNumIid() int64 {
 	return r._numIid
 }
 
-// Set is Properties Setter
+// SetProperties is Properties Setter
 // 属性列表。调用taobao.itemprops.get获取类目属性，属性必须是颜色属性，再用taobao.itempropvalues.get取得vid。格式:pid:vid。
 func (r *TaobaoItemPropimgUploadAPIRequest) SetProperties(_properties string) error {
 	r._properties = _properties
@@ -66,12 +66,12 @@ func (r *TaobaoItemPropimgUploadAPIRequest) SetProperties(_properties string) er
 	return nil
 }
 
-// Get Properties Getter
+// GetProperties Properties Getter
 func (r TaobaoItemPropimgUploadAPIRequest) GetProperties() string {
 	return r._properties
 }
 
-// Set is Image Setter
+// SetImage is Image Setter
 // 属性图片内容。类型:JPG,GIF;图片大小不超过:3M
 func (r *TaobaoItemPropimgUploadAPIRequest) SetImage(_image *model.File) error {
 	r._image = _image
@@ -79,12 +79,12 @@ func (r *TaobaoItemPropimgUploadAPIRequest) SetImage(_image *model.File) error {
 	return nil
 }
 
-// Get Image Getter
+// GetImage Image Getter
 func (r TaobaoItemPropimgUploadAPIRequest) GetImage() *model.File {
 	return r._image
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 属性图片ID。如果是新增不需要填写
 func (r *TaobaoItemPropimgUploadAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -92,12 +92,12 @@ func (r *TaobaoItemPropimgUploadAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TaobaoItemPropimgUploadAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is Position Setter
+// SetPosition is Position Setter
 // 图片位置
 func (r *TaobaoItemPropimgUploadAPIRequest) SetPosition(_position int64) error {
 	r._position = _position
@@ -105,7 +105,7 @@ func (r *TaobaoItemPropimgUploadAPIRequest) SetPosition(_position int64) error {
 	return nil
 }
 
-// Get Position Getter
+// GetPosition Position Getter
 func (r TaobaoItemPropimgUploadAPIRequest) GetPosition() int64 {
 	return r._position
 }

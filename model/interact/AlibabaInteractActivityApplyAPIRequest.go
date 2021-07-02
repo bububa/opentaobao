@@ -49,7 +49,7 @@ func (r AlibabaInteractActivityApplyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BenefitType Setter
+// SetBenefitType is BenefitType Setter
 // 活动发放的权益类型，1:支付宝红包2:流量包3:淘金币4:集分宝5:优惠卷
 func (r *AlibabaInteractActivityApplyAPIRequest) SetBenefitType(_benefitType string) error {
 	r._benefitType = _benefitType
@@ -57,12 +57,12 @@ func (r *AlibabaInteractActivityApplyAPIRequest) SetBenefitType(_benefitType str
 	return nil
 }
 
-// Get BenefitType Getter
+// GetBenefitType BenefitType Getter
 func (r AlibabaInteractActivityApplyAPIRequest) GetBenefitType() string {
 	return r._benefitType
 }
 
-// Set is BenefitDenomination Setter
+// SetBenefitDenomination is BenefitDenomination Setter
 // 权益对应的面额
 func (r *AlibabaInteractActivityApplyAPIRequest) SetBenefitDenomination(_benefitDenomination string) error {
 	r._benefitDenomination = _benefitDenomination
@@ -70,12 +70,12 @@ func (r *AlibabaInteractActivityApplyAPIRequest) SetBenefitDenomination(_benefit
 	return nil
 }
 
-// Get BenefitDenomination Getter
+// GetBenefitDenomination BenefitDenomination Getter
 func (r AlibabaInteractActivityApplyAPIRequest) GetBenefitDenomination() string {
 	return r._benefitDenomination
 }
 
-// Set is BannerUrl Setter
+// SetBannerUrl is BannerUrl Setter
 // 报名参加的中心化流量活动的banner 地址
 func (r *AlibabaInteractActivityApplyAPIRequest) SetBannerUrl(_bannerUrl string) error {
 	r._bannerUrl = _bannerUrl
@@ -83,12 +83,12 @@ func (r *AlibabaInteractActivityApplyAPIRequest) SetBannerUrl(_bannerUrl string)
 	return nil
 }
 
-// Get BannerUrl Getter
+// GetBannerUrl BannerUrl Getter
 func (r AlibabaInteractActivityApplyAPIRequest) GetBannerUrl() string {
 	return r._bannerUrl
 }
 
-// Set is ActivityBizId Setter
+// SetActivityBizId is ActivityBizId Setter
 // 报名参加中心化流量活动的活动id
 func (r *AlibabaInteractActivityApplyAPIRequest) SetActivityBizId(_activityBizId string) error {
 	r._activityBizId = _activityBizId
@@ -96,12 +96,12 @@ func (r *AlibabaInteractActivityApplyAPIRequest) SetActivityBizId(_activityBizId
 	return nil
 }
 
-// Get ActivityBizId Getter
+// GetActivityBizId ActivityBizId Getter
 func (r AlibabaInteractActivityApplyAPIRequest) GetActivityBizId() string {
 	return r._activityBizId
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 该活动参与的中心化流量活动。1:代表每日赢宝箱2:微淘广场
 func (r *AlibabaInteractActivityApplyAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -109,12 +109,12 @@ func (r *AlibabaInteractActivityApplyAPIRequest) SetBizType(_bizType string) err
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r AlibabaInteractActivityApplyAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is BenefitAmount Setter
+// SetBenefitAmount is BenefitAmount Setter
 // 权益总额
 func (r *AlibabaInteractActivityApplyAPIRequest) SetBenefitAmount(_benefitAmount string) error {
 	r._benefitAmount = _benefitAmount
@@ -122,12 +122,12 @@ func (r *AlibabaInteractActivityApplyAPIRequest) SetBenefitAmount(_benefitAmount
 	return nil
 }
 
-// Get BenefitAmount Getter
+// GetBenefitAmount BenefitAmount Getter
 func (r AlibabaInteractActivityApplyAPIRequest) GetBenefitAmount() string {
 	return r._benefitAmount
 }
 
-// Set is BenefitAttribute Setter
+// SetBenefitAttribute is BenefitAttribute Setter
 // 权益属性(如红包，则为relationid)
 func (r *AlibabaInteractActivityApplyAPIRequest) SetBenefitAttribute(_benefitAttribute string) error {
 	r._benefitAttribute = _benefitAttribute
@@ -135,7 +135,7 @@ func (r *AlibabaInteractActivityApplyAPIRequest) SetBenefitAttribute(_benefitAtt
 	return nil
 }
 
-// Get BenefitAttribute Getter
+// GetBenefitAttribute BenefitAttribute Getter
 func (r AlibabaInteractActivityApplyAPIRequest) GetBenefitAttribute() string {
 	return r._benefitAttribute
 }

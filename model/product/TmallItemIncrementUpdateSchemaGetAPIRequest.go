@@ -39,7 +39,7 @@ func (r TmallItemIncrementUpdateSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 需要编辑的商品ID
 func (r *TmallItemIncrementUpdateSchemaGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -47,12 +47,12 @@ func (r *TmallItemIncrementUpdateSchemaGetAPIRequest) SetItemId(_itemId int64) e
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TmallItemIncrementUpdateSchemaGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is XmlData Setter
+// SetXmlData is XmlData Setter
 // 如果入参xml_data指定了更新的字段，则只返回指定字段的规则（ISV如果功能性很强，如明确更新Title，请拼装好此字段以提升API整体性能）
 func (r *TmallItemIncrementUpdateSchemaGetAPIRequest) SetXmlData(_xmlData string) error {
 	r._xmlData = _xmlData
@@ -60,7 +60,7 @@ func (r *TmallItemIncrementUpdateSchemaGetAPIRequest) SetXmlData(_xmlData string
 	return nil
 }
 
-// Get XmlData Getter
+// GetXmlData XmlData Getter
 func (r TmallItemIncrementUpdateSchemaGetAPIRequest) GetXmlData() string {
 	return r._xmlData
 }

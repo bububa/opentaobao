@@ -37,7 +37,7 @@ func (r TaobaoAlitripAxinTransFundQueryByOrderAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ParamAxinFundListQueryDTO Setter
+// SetParamAxinFundListQueryDTO is ParamAxinFundListQueryDTO Setter
 // 入参
 func (r *TaobaoAlitripAxinTransFundQueryByOrderAPIRequest) SetParamAxinFundListQueryDTO(_paramAxinFundListQueryDTO *AxinFundListQueryDto) error {
 	r._paramAxinFundListQueryDTO = _paramAxinFundListQueryDTO
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripAxinTransFundQueryByOrderAPIRequest) SetParamAxinFundListQ
 	return nil
 }
 
-// Get ParamAxinFundListQueryDTO Getter
+// GetParamAxinFundListQueryDTO ParamAxinFundListQueryDTO Getter
 func (r TaobaoAlitripAxinTransFundQueryByOrderAPIRequest) GetParamAxinFundListQueryDTO() *AxinFundListQueryDto {
 	return r._paramAxinFundListQueryDTO
 }

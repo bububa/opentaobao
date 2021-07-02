@@ -45,7 +45,7 @@ func (r AlibabaRetailDeviceTradeShipAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 设备类型
 func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetDeviceType(_deviceType string) error {
 	r._deviceType = _deviceType
@@ -53,12 +53,12 @@ func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetDeviceType(_deviceType strin
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r AlibabaRetailDeviceTradeShipAPIRequest) GetDeviceType() string {
 	return r._deviceType
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备ID
 func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -66,12 +66,12 @@ func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetDeviceId(_deviceId string) e
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r AlibabaRetailDeviceTradeShipAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is TradeNo Setter
+// SetTradeNo is TradeNo Setter
 // 内部订单编号
 func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetTradeNo(_tradeNo string) error {
 	r._tradeNo = _tradeNo
@@ -79,12 +79,12 @@ func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetTradeNo(_tradeNo string) err
 	return nil
 }
 
-// Get TradeNo Getter
+// GetTradeNo TradeNo Getter
 func (r AlibabaRetailDeviceTradeShipAPIRequest) GetTradeNo() string {
 	return r._tradeNo
 }
 
-// Set is ShipDetailList Setter
+// SetShipDetailList is ShipDetailList Setter
 // 详情
 func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetShipDetailList(_shipDetailList []ShipDetailDto) error {
 	r._shipDetailList = _shipDetailList
@@ -92,12 +92,12 @@ func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetShipDetailList(_shipDetailLi
 	return nil
 }
 
-// Get ShipDetailList Getter
+// GetShipDetailList ShipDetailList Getter
 func (r AlibabaRetailDeviceTradeShipAPIRequest) GetShipDetailList() []ShipDetailDto {
 	return r._shipDetailList
 }
 
-// Set is OrderUpdateOption Setter
+// SetOrderUpdateOption is OrderUpdateOption Setter
 // 选项
 func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetOrderUpdateOption(_orderUpdateOption *OrderUpdateOption) error {
 	r._orderUpdateOption = _orderUpdateOption
@@ -105,7 +105,7 @@ func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetOrderUpdateOption(_orderUpda
 	return nil
 }
 
-// Get OrderUpdateOption Getter
+// GetOrderUpdateOption OrderUpdateOption Getter
 func (r AlibabaRetailDeviceTradeShipAPIRequest) GetOrderUpdateOption() *OrderUpdateOption {
 	return r._orderUpdateOption
 }

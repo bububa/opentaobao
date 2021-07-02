@@ -37,7 +37,7 @@ func (r TaobaoBusInvoiceReturnAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InvoiceParam Setter
+// SetInvoiceParam is InvoiceParam Setter
 // 入参对象
 func (r *TaobaoBusInvoiceReturnAPIRequest) SetInvoiceParam(_invoiceParam *ReceiptDo) error {
 	r._invoiceParam = _invoiceParam
@@ -45,7 +45,7 @@ func (r *TaobaoBusInvoiceReturnAPIRequest) SetInvoiceParam(_invoiceParam *Receip
 	return nil
 }
 
-// Get InvoiceParam Getter
+// GetInvoiceParam InvoiceParam Getter
 func (r TaobaoBusInvoiceReturnAPIRequest) GetInvoiceParam() *ReceiptDo {
 	return r._invoiceParam
 }

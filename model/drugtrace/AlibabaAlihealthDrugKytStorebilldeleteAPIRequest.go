@@ -43,7 +43,7 @@ func (r AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -51,12 +51,12 @@ func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) SetRefEntId(_refEntId
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }
 
-// Set is IcCode Setter
+// SetIcCode is IcCode Setter
 // 操作人编码
 func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) SetIcCode(_icCode string) error {
 	r._icCode = _icCode
@@ -64,12 +64,12 @@ func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) SetIcCode(_icCode str
 	return nil
 }
 
-// Get IcCode Getter
+// GetIcCode IcCode Getter
 func (r AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) GetIcCode() string {
 	return r._icCode
 }
 
-// Set is BillId Setter
+// SetBillId is BillId Setter
 // 单据ID
 func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) SetBillId(_billId string) error {
 	r._billId = _billId
@@ -77,12 +77,12 @@ func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) SetBillId(_billId str
 	return nil
 }
 
-// Get BillId Getter
+// GetBillId BillId Getter
 func (r AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) GetBillId() string {
 	return r._billId
 }
 
-// Set is BillType Setter
+// SetBillType is BillType Setter
 // 单据类型
 func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) SetBillType(_billType string) error {
 	r._billType = _billType
@@ -90,7 +90,7 @@ func (r *AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) SetBillType(_billType
 	return nil
 }
 
-// Get BillType Getter
+// GetBillType BillType Getter
 func (r AlibabaAlihealthDrugKytStorebilldeleteAPIRequest) GetBillType() string {
 	return r._billType
 }

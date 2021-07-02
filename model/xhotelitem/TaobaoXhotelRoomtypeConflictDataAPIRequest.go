@@ -37,7 +37,7 @@ func (r TaobaoXhotelRoomtypeConflictDataAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 查询第几页数据
 func (r *TaobaoXhotelRoomtypeConflictDataAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -45,7 +45,7 @@ func (r *TaobaoXhotelRoomtypeConflictDataAPIRequest) SetCurrentPage(_currentPage
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TaobaoXhotelRoomtypeConflictDataAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }

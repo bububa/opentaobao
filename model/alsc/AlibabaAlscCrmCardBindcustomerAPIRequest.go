@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmCardBindcustomerAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamBindCustomerOpenReq Setter
+// SetParamBindCustomerOpenReq is ParamBindCustomerOpenReq Setter
 // 请求参数
 func (r *AlibabaAlscCrmCardBindcustomerAPIRequest) SetParamBindCustomerOpenReq(_paramBindCustomerOpenReq *BindCustomerOpenReq) error {
 	r._paramBindCustomerOpenReq = _paramBindCustomerOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmCardBindcustomerAPIRequest) SetParamBindCustomerOpenReq(_
 	return nil
 }
 
-// Get ParamBindCustomerOpenReq Getter
+// GetParamBindCustomerOpenReq ParamBindCustomerOpenReq Getter
 func (r AlibabaAlscCrmCardBindcustomerAPIRequest) GetParamBindCustomerOpenReq() *BindCustomerOpenReq {
 	return r._paramBindCustomerOpenReq
 }

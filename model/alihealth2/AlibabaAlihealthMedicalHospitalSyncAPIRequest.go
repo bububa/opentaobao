@@ -37,7 +37,7 @@ func (r AlibabaAlihealthMedicalHospitalSyncAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is SaveRequest Setter
+// SetSaveRequest is SaveRequest Setter
 // top保存入参
 func (r *AlibabaAlihealthMedicalHospitalSyncAPIRequest) SetSaveRequest(_saveRequest *CommonRequest4Top) error {
 	r._saveRequest = _saveRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthMedicalHospitalSyncAPIRequest) SetSaveRequest(_saveRequ
 	return nil
 }
 
-// Get SaveRequest Getter
+// GetSaveRequest SaveRequest Getter
 func (r AlibabaAlihealthMedicalHospitalSyncAPIRequest) GetSaveRequest() *CommonRequest4Top {
 	return r._saveRequest
 }

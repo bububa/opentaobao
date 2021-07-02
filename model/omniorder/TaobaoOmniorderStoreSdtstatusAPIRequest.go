@@ -37,7 +37,7 @@ func (r TaobaoOmniorderStoreSdtstatusAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PackageId Setter
+// SetPackageId is PackageId Setter
 // 菜鸟裹裹的包裹ID
 func (r *TaobaoOmniorderStoreSdtstatusAPIRequest) SetPackageId(_packageId int64) error {
 	r._packageId = _packageId
@@ -45,7 +45,7 @@ func (r *TaobaoOmniorderStoreSdtstatusAPIRequest) SetPackageId(_packageId int64)
 	return nil
 }
 
-// Get PackageId Getter
+// GetPackageId PackageId Getter
 func (r TaobaoOmniorderStoreSdtstatusAPIRequest) GetPackageId() int64 {
 	return r._packageId
 }

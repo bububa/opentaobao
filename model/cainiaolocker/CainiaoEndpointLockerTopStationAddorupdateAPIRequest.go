@@ -37,7 +37,7 @@ func (r CainiaoEndpointLockerTopStationAddorupdateAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is StationInfo Setter
+// SetStationInfo is StationInfo Setter
 // 站点信息
 func (r *CainiaoEndpointLockerTopStationAddorupdateAPIRequest) SetStationInfo(_stationInfo *StationInfo) error {
 	r._stationInfo = _stationInfo
@@ -45,7 +45,7 @@ func (r *CainiaoEndpointLockerTopStationAddorupdateAPIRequest) SetStationInfo(_s
 	return nil
 }
 
-// Get StationInfo Getter
+// GetStationInfo StationInfo Getter
 func (r CainiaoEndpointLockerTopStationAddorupdateAPIRequest) GetStationInfo() *StationInfo {
 	return r._stationInfo
 }

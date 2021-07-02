@@ -37,7 +37,7 @@ func (r TaobaoAlitripAxinTransPayRegisterCreateAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is CreateDTO Setter
+// SetCreateDTO is CreateDTO Setter
 // 提交支付服务开通接口入参
 func (r *TaobaoAlitripAxinTransPayRegisterCreateAPIRequest) SetCreateDTO(_createDTO *AxinPayRegisterCreateDto) error {
 	r._createDTO = _createDTO
@@ -45,7 +45,7 @@ func (r *TaobaoAlitripAxinTransPayRegisterCreateAPIRequest) SetCreateDTO(_create
 	return nil
 }
 
-// Get CreateDTO Getter
+// GetCreateDTO CreateDTO Getter
 func (r TaobaoAlitripAxinTransPayRegisterCreateAPIRequest) GetCreateDTO() *AxinPayRegisterCreateDto {
 	return r._createDTO
 }

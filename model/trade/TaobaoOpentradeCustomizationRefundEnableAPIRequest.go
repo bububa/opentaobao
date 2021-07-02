@@ -37,7 +37,7 @@ func (r TaobaoOpentradeCustomizationRefundEnableAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is TradeId Setter
+// SetTradeId is TradeId Setter
 // 主订单ID
 func (r *TaobaoOpentradeCustomizationRefundEnableAPIRequest) SetTradeId(_tradeId int64) error {
 	r._tradeId = _tradeId
@@ -45,7 +45,7 @@ func (r *TaobaoOpentradeCustomizationRefundEnableAPIRequest) SetTradeId(_tradeId
 	return nil
 }
 
-// Get TradeId Getter
+// GetTradeId TradeId Getter
 func (r TaobaoOpentradeCustomizationRefundEnableAPIRequest) GetTradeId() int64 {
 	return r._tradeId
 }

@@ -41,7 +41,7 @@ func (r TaobaoXhotelBaseinfoRoomGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutHid Setter
+// SetOutHid is OutHid Setter
 // 卖家系统中的酒店ID。
 func (r *TaobaoXhotelBaseinfoRoomGetAPIRequest) SetOutHid(_outHid string) error {
 	r._outHid = _outHid
@@ -49,12 +49,12 @@ func (r *TaobaoXhotelBaseinfoRoomGetAPIRequest) SetOutHid(_outHid string) error 
 	return nil
 }
 
-// Get OutHid Getter
+// GetOutHid OutHid Getter
 func (r TaobaoXhotelBaseinfoRoomGetAPIRequest) GetOutHid() string {
 	return r._outHid
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 用于标示该酒店发布的渠道信息
 func (r *TaobaoXhotelBaseinfoRoomGetAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -62,12 +62,12 @@ func (r *TaobaoXhotelBaseinfoRoomGetAPIRequest) SetVendor(_vendor string) error 
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelBaseinfoRoomGetAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is IsNeedRatePlan Setter
+// SetIsNeedRatePlan is IsNeedRatePlan Setter
 // 是否需要房价基本信息（false为不需要），默认为需要
 func (r *TaobaoXhotelBaseinfoRoomGetAPIRequest) SetIsNeedRatePlan(_isNeedRatePlan bool) error {
 	r._isNeedRatePlan = _isNeedRatePlan
@@ -75,7 +75,7 @@ func (r *TaobaoXhotelBaseinfoRoomGetAPIRequest) SetIsNeedRatePlan(_isNeedRatePla
 	return nil
 }
 
-// Get IsNeedRatePlan Getter
+// GetIsNeedRatePlan IsNeedRatePlan Getter
 func (r TaobaoXhotelBaseinfoRoomGetAPIRequest) GetIsNeedRatePlan() bool {
 	return r._isNeedRatePlan
 }

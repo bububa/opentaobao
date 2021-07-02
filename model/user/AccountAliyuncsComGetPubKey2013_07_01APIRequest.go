@@ -37,7 +37,7 @@ func (r AccountAliyuncsComGetPubKey2013_07_01APIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is OwnerAppkey Setter
+// SetOwnerAppkey is OwnerAppkey Setter
 // appkey
 func (r *AccountAliyuncsComGetPubKey2013_07_01APIRequest) SetOwnerAppkey(_ownerAppkey string) error {
 	r._ownerAppkey = _ownerAppkey
@@ -45,7 +45,7 @@ func (r *AccountAliyuncsComGetPubKey2013_07_01APIRequest) SetOwnerAppkey(_ownerA
 	return nil
 }
 
-// Get OwnerAppkey Getter
+// GetOwnerAppkey OwnerAppkey Getter
 func (r AccountAliyuncsComGetPubKey2013_07_01APIRequest) GetOwnerAppkey() string {
 	return r._ownerAppkey
 }

@@ -37,7 +37,7 @@ func (r AlibabaLstBranddatashareStockdataQueryAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参
 func (r *AlibabaLstBranddatashareStockdataQueryAPIRequest) SetParam(_param *BmSupplierStockDataParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaLstBranddatashareStockdataQueryAPIRequest) SetParam(_param *BmSu
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaLstBranddatashareStockdataQueryAPIRequest) GetParam() *BmSupplierStockDataParam {
 	return r._param
 }

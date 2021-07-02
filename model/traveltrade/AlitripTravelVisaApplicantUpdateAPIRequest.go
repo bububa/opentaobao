@@ -63,7 +63,7 @@ func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SubOrderId Setter
+// SetSubOrderId is SubOrderId Setter
 // 必填，子订单id
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetSubOrderId(_subOrderId string) error {
 	r._subOrderId = _subOrderId
@@ -71,12 +71,12 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetSubOrderId(_subOrderId s
 	return nil
 }
 
-// Get SubOrderId Getter
+// GetSubOrderId SubOrderId Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetSubOrderId() string {
 	return r._subOrderId
 }
 
-// Set is OperType Setter
+// SetOperType is OperType Setter
 // 必填，操作类型。1-上传新申请人基本信息（商家代填申请人），2-更新已有申请人基本信息，3-更新已有申请人的签证进度，4-商家代传申请人信息和材料(使馆直连订单)
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetOperType(_operType int64) error {
 	r._operType = _operType
@@ -84,12 +84,12 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetOperType(_operType int64
 	return nil
 }
 
-// Get OperType Getter
+// GetOperType OperType Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetOperType() int64 {
 	return r._operType
 }
 
-// Set is ApplicantInfos Setter
+// SetApplicantInfos is ApplicantInfos Setter
 // 特殊必填，申请人基本信息（证件号，姓名，手机号）列表。当operType为1或2或4时必填
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetApplicantInfos(_applicantInfos []NormalVisaApplicantInfo) error {
 	r._applicantInfos = _applicantInfos
@@ -97,12 +97,12 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetApplicantInfos(_applican
 	return nil
 }
 
-// Get ApplicantInfos Getter
+// GetApplicantInfos ApplicantInfos Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetApplicantInfos() []NormalVisaApplicantInfo {
 	return r._applicantInfos
 }
 
-// Set is ApplicantOp Setter
+// SetApplicantOp is ApplicantOp Setter
 // 特殊必填，签证申请人进度推进操作（目前只支持对单个申请人状态进行推进）。当operType为3时必填
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetApplicantOp(_applicantOp *NormalVisaApplicantOperation) error {
 	r._applicantOp = _applicantOp
@@ -110,12 +110,12 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetApplicantOp(_applicantOp
 	return nil
 }
 
-// Get ApplicantOp Getter
+// GetApplicantOp ApplicantOp Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetApplicantOp() *NormalVisaApplicantOperation {
 	return r._applicantOp
 }
 
-// Set is FileBytes Setter
+// SetFileBytes is FileBytes Setter
 // 特殊必填，pdf文件字节流。用于上传电子签pdf结果 或者 预约面试信pdf文件。
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetFileBytes(_fileBytes *model.File) error {
 	r._fileBytes = _fileBytes
@@ -123,12 +123,12 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetFileBytes(_fileBytes *mo
 	return nil
 }
 
-// Get FileBytes Getter
+// GetFileBytes FileBytes Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetFileBytes() *model.File {
 	return r._fileBytes
 }
 
-// Set is PhotoBytes Setter
+// SetPhotoBytes is PhotoBytes Setter
 // 特殊必填，文件字节流，用于上传证件照，必须和photoType同时传
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetPhotoBytes(_photoBytes *model.File) error {
 	r._photoBytes = _photoBytes
@@ -136,12 +136,12 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetPhotoBytes(_photoBytes *
 	return nil
 }
 
-// Get PhotoBytes Getter
+// GetPhotoBytes PhotoBytes Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetPhotoBytes() *model.File {
 	return r._photoBytes
 }
 
-// Set is PhotoType Setter
+// SetPhotoType is PhotoType Setter
 // 证件照文件类型
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetPhotoType(_photoType string) error {
 	r._photoType = _photoType
@@ -149,12 +149,12 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetPhotoType(_photoType str
 	return nil
 }
 
-// Get PhotoType Getter
+// GetPhotoType PhotoType Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetPhotoType() string {
 	return r._photoType
 }
 
-// Set is PassportBytes Setter
+// SetPassportBytes is PassportBytes Setter
 // 特殊必填，文件字节流，用于上传护照，必须和passportType同时传
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetPassportBytes(_passportBytes *model.File) error {
 	r._passportBytes = _passportBytes
@@ -162,12 +162,12 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetPassportBytes(_passportB
 	return nil
 }
 
-// Get PassportBytes Getter
+// GetPassportBytes PassportBytes Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetPassportBytes() *model.File {
 	return r._passportBytes
 }
 
-// Set is PassportType Setter
+// SetPassportType is PassportType Setter
 // 护照文件类型
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetPassportType(_passportType string) error {
 	r._passportType = _passportType
@@ -175,12 +175,12 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetPassportType(_passportTy
 	return nil
 }
 
-// Get PassportType Getter
+// GetPassportType PassportType Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetPassportType() string {
 	return r._passportType
 }
 
-// Set is HotelBookingFormType Setter
+// SetHotelBookingFormType is HotelBookingFormType Setter
 // 酒店预订文件类型
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetHotelBookingFormType(_hotelBookingFormType string) error {
 	r._hotelBookingFormType = _hotelBookingFormType
@@ -188,12 +188,12 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetHotelBookingFormType(_ho
 	return nil
 }
 
-// Get HotelBookingFormType Getter
+// GetHotelBookingFormType HotelBookingFormType Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetHotelBookingFormType() string {
 	return r._hotelBookingFormType
 }
 
-// Set is HotelBookingFormBytes Setter
+// SetHotelBookingFormBytes is HotelBookingFormBytes Setter
 // 特殊必填，文件字节流，用于上传酒店预订，必须和hotelBookingFormType同时传
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetHotelBookingFormBytes(_hotelBookingFormBytes *model.File) error {
 	r._hotelBookingFormBytes = _hotelBookingFormBytes
@@ -201,12 +201,12 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetHotelBookingFormBytes(_h
 	return nil
 }
 
-// Get HotelBookingFormBytes Getter
+// GetHotelBookingFormBytes HotelBookingFormBytes Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetHotelBookingFormBytes() *model.File {
 	return r._hotelBookingFormBytes
 }
 
-// Set is FlightBookingFormType Setter
+// SetFlightBookingFormType is FlightBookingFormType Setter
 // 机票预订文件类型
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetFlightBookingFormType(_flightBookingFormType string) error {
 	r._flightBookingFormType = _flightBookingFormType
@@ -214,12 +214,12 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetFlightBookingFormType(_f
 	return nil
 }
 
-// Get FlightBookingFormType Getter
+// GetFlightBookingFormType FlightBookingFormType Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetFlightBookingFormType() string {
 	return r._flightBookingFormType
 }
 
-// Set is FlightBookingFormBytes Setter
+// SetFlightBookingFormBytes is FlightBookingFormBytes Setter
 // 特殊必填，文件字节流，用于上传机票预订，必须和flightBookingFormType同时传
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetFlightBookingFormBytes(_flightBookingFormBytes *model.File) error {
 	r._flightBookingFormBytes = _flightBookingFormBytes
@@ -227,12 +227,12 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetFlightBookingFormBytes(_
 	return nil
 }
 
-// Get FlightBookingFormBytes Getter
+// GetFlightBookingFormBytes FlightBookingFormBytes Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetFlightBookingFormBytes() *model.File {
 	return r._flightBookingFormBytes
 }
 
-// Set is DocumentInfos Setter
+// SetDocumentInfos is DocumentInfos Setter
 // 特殊必填，更多材料
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetDocumentInfos(_documentInfos []NormalVisaDocumentInfo) error {
 	r._documentInfos = _documentInfos
@@ -240,7 +240,7 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetDocumentInfos(_documentI
 	return nil
 }
 
-// Get DocumentInfos Getter
+// GetDocumentInfos DocumentInfos Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetDocumentInfos() []NormalVisaDocumentInfo {
 	return r._documentInfos
 }

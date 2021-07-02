@@ -37,7 +37,7 @@ func (r TmallProductTemplateGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Cid Setter
+// SetCid is Cid Setter
 // 类目ID
 func (r *TmallProductTemplateGetAPIRequest) SetCid(_cid int64) error {
 	r._cid = _cid
@@ -45,7 +45,7 @@ func (r *TmallProductTemplateGetAPIRequest) SetCid(_cid int64) error {
 	return nil
 }
 
-// Get Cid Getter
+// GetCid Cid Getter
 func (r TmallProductTemplateGetAPIRequest) GetCid() int64 {
 	return r._cid
 }

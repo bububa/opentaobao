@@ -41,7 +41,7 @@ func (r TaobaoWlbInventoryDetailGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InventoryTypeList Setter
+// SetInventoryTypeList is InventoryTypeList Setter
 // 库存类型列表，值包括：<br/>VENDIBLE--可销售库存<br/>FREEZE--冻结库存<br/>ONWAY--在途库存<br/>DEFECT--残次品库存<br/>ENGINE_DAMAGE--机损<br/>BOX_DAMAGE--箱损<br/>EXPIRATION--过保
 func (r *TaobaoWlbInventoryDetailGetAPIRequest) SetInventoryTypeList(_inventoryTypeList []string) error {
 	r._inventoryTypeList = _inventoryTypeList
@@ -49,12 +49,12 @@ func (r *TaobaoWlbInventoryDetailGetAPIRequest) SetInventoryTypeList(_inventoryT
 	return nil
 }
 
-// Get InventoryTypeList Getter
+// GetInventoryTypeList InventoryTypeList Getter
 func (r TaobaoWlbInventoryDetailGetAPIRequest) GetInventoryTypeList() []string {
 	return r._inventoryTypeList
 }
 
-// Set is StoreCode Setter
+// SetStoreCode is StoreCode Setter
 // 仓库编码
 func (r *TaobaoWlbInventoryDetailGetAPIRequest) SetStoreCode(_storeCode string) error {
 	r._storeCode = _storeCode
@@ -62,12 +62,12 @@ func (r *TaobaoWlbInventoryDetailGetAPIRequest) SetStoreCode(_storeCode string) 
 	return nil
 }
 
-// Get StoreCode Getter
+// GetStoreCode StoreCode Getter
 func (r TaobaoWlbInventoryDetailGetAPIRequest) GetStoreCode() string {
 	return r._storeCode
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品ID
 func (r *TaobaoWlbInventoryDetailGetAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -75,7 +75,7 @@ func (r *TaobaoWlbInventoryDetailGetAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoWlbInventoryDetailGetAPIRequest) GetItemId() int64 {
 	return r._itemId
 }

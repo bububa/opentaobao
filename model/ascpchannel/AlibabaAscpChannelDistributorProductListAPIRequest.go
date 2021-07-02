@@ -37,7 +37,7 @@ func (r AlibabaAscpChannelDistributorProductListAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ProductListRequest Setter
+// SetProductListRequest is ProductListRequest Setter
 // 列表请求
 func (r *AlibabaAscpChannelDistributorProductListAPIRequest) SetProductListRequest(_productListRequest *Productlistrequest) error {
 	r._productListRequest = _productListRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpChannelDistributorProductListAPIRequest) SetProductListReque
 	return nil
 }
 
-// Get ProductListRequest Getter
+// GetProductListRequest ProductListRequest Getter
 func (r AlibabaAscpChannelDistributorProductListAPIRequest) GetProductListRequest() *Productlistrequest {
 	return r._productListRequest
 }

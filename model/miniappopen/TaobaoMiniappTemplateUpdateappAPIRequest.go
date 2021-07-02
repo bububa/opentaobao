@@ -51,7 +51,7 @@ func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Clients Setter
+// SetClients is Clients Setter
 // 要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)
 func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetClients(_clients []string) error {
 	r._clients = _clients
@@ -59,12 +59,12 @@ func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetClients(_clients []string)
 	return nil
 }
 
-// Get Clients Getter
+// GetClients Clients Getter
 func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetClients() []string {
 	return r._clients
 }
 
-// Set is AppId Setter
+// SetAppId is AppId Setter
 // 应用id，如果应用在对应端上已有的最新版本所使用的模板id,模板version和extjson，与本次入参一致，则认为不需要更新，返回已有的版本。
 func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetAppId(_appId string) error {
 	r._appId = _appId
@@ -72,12 +72,12 @@ func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetAppId(_appId string) error
 	return nil
 }
 
-// Get AppId Getter
+// GetAppId AppId Getter
 func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// Set is ExtJson Setter
+// SetExtJson is ExtJson Setter
 // 扩展信息。线上版本使用的template_id与传入的template_id一致时，可不填。
 func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetExtJson(_extJson string) error {
 	r._extJson = _extJson
@@ -85,12 +85,12 @@ func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetExtJson(_extJson string) e
 	return nil
 }
 
-// Get ExtJson Getter
+// GetExtJson ExtJson Getter
 func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetExtJson() string {
 	return r._extJson
 }
 
-// Set is TemplateId Setter
+// SetTemplateId is TemplateId Setter
 // 模板id
 func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetTemplateId(_templateId string) error {
 	r._templateId = _templateId
@@ -98,12 +98,12 @@ func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetTemplateId(_templateId str
 	return nil
 }
 
-// Get TemplateId Getter
+// GetTemplateId TemplateId Getter
 func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetTemplateId() string {
 	return r._templateId
 }
 
-// Set is TemplateVersion Setter
+// SetTemplateVersion is TemplateVersion Setter
 // 模板版本
 func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetTemplateVersion(_templateVersion string) error {
 	r._templateVersion = _templateVersion
@@ -111,12 +111,12 @@ func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetTemplateVersion(_templateV
 	return nil
 }
 
-// Get TemplateVersion Getter
+// GetTemplateVersion TemplateVersion Getter
 func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetTemplateVersion() string {
 	return r._templateVersion
 }
 
-// Set is Icon Setter
+// SetIcon is Icon Setter
 // Logo更新，1月5次
 func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetIcon(_icon string) error {
 	r._icon = _icon
@@ -124,12 +124,12 @@ func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetIcon(_icon string) error {
 	return nil
 }
 
-// Get Icon Getter
+// GetIcon Icon Getter
 func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetIcon() string {
 	return r._icon
 }
 
-// Set is Desc Setter
+// SetDesc is Desc Setter
 // 描述更新，1年5次
 func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetDesc(_desc string) error {
 	r._desc = _desc
@@ -137,12 +137,12 @@ func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetDesc(_desc string) error {
 	return nil
 }
 
-// Get Desc Getter
+// GetDesc Desc Getter
 func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetDesc() string {
 	return r._desc
 }
 
-// Set is Alias Setter
+// SetAlias is Alias Setter
 // 简称更新，1年5次
 func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetAlias(_alias string) error {
 	r._alias = _alias
@@ -150,7 +150,7 @@ func (r *TaobaoMiniappTemplateUpdateappAPIRequest) SetAlias(_alias string) error
 	return nil
 }
 
-// Get Alias Getter
+// GetAlias Alias Getter
 func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetAlias() string {
 	return r._alias
 }

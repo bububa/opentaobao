@@ -37,7 +37,7 @@ func (r AlibabaEinvoiceFlowRefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is InvoiceFlowRefund Setter
+// SetInvoiceFlowRefund is InvoiceFlowRefund Setter
 // 退订请求参数
 func (r *AlibabaEinvoiceFlowRefundAPIRequest) SetInvoiceFlowRefund(_invoiceFlowRefund *InvoiceFlowRefundDto) error {
 	r._invoiceFlowRefund = _invoiceFlowRefund
@@ -45,7 +45,7 @@ func (r *AlibabaEinvoiceFlowRefundAPIRequest) SetInvoiceFlowRefund(_invoiceFlowR
 	return nil
 }
 
-// Get InvoiceFlowRefund Getter
+// GetInvoiceFlowRefund InvoiceFlowRefund Getter
 func (r AlibabaEinvoiceFlowRefundAPIRequest) GetInvoiceFlowRefund() *InvoiceFlowRefundDto {
 	return r._invoiceFlowRefund
 }

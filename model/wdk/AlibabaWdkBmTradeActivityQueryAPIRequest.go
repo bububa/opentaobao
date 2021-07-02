@@ -37,7 +37,7 @@ func (r AlibabaWdkBmTradeActivityQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is QueryParam Setter
+// SetQueryParam is QueryParam Setter
 // 入参
 func (r *AlibabaWdkBmTradeActivityQueryAPIRequest) SetQueryParam(_queryParam *IsvOrderQueryParam) error {
 	r._queryParam = _queryParam
@@ -45,7 +45,7 @@ func (r *AlibabaWdkBmTradeActivityQueryAPIRequest) SetQueryParam(_queryParam *Is
 	return nil
 }
 
-// Get QueryParam Getter
+// GetQueryParam QueryParam Getter
 func (r AlibabaWdkBmTradeActivityQueryAPIRequest) GetQueryParam() *IsvOrderQueryParam {
 	return r._queryParam
 }

@@ -37,7 +37,7 @@ func (r TmallItemSimpleschemaAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SchemaXmlFields Setter
+// SetSchemaXmlFields is SchemaXmlFields Setter
 // 根据tmall.item.add.simpleschema.get生成的商品发布规则入参数据
 func (r *TmallItemSimpleschemaAddAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
 	r._schemaXmlFields = _schemaXmlFields
@@ -45,7 +45,7 @@ func (r *TmallItemSimpleschemaAddAPIRequest) SetSchemaXmlFields(_schemaXmlFields
 	return nil
 }
 
-// Get SchemaXmlFields Getter
+// GetSchemaXmlFields SchemaXmlFields Getter
 func (r TmallItemSimpleschemaAddAPIRequest) GetSchemaXmlFields() string {
 	return r._schemaXmlFields
 }

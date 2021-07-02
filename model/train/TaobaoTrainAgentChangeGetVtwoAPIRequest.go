@@ -39,7 +39,7 @@ func (r TaobaoTrainAgentChangeGetVtwoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商id
 func (r *TaobaoTrainAgentChangeGetVtwoAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -47,12 +47,12 @@ func (r *TaobaoTrainAgentChangeGetVtwoAPIRequest) SetAgentId(_agentId int64) err
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r TaobaoTrainAgentChangeGetVtwoAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is ApplyId Setter
+// SetApplyId is ApplyId Setter
 // 申请单id
 func (r *TaobaoTrainAgentChangeGetVtwoAPIRequest) SetApplyId(_applyId int64) error {
 	r._applyId = _applyId
@@ -60,7 +60,7 @@ func (r *TaobaoTrainAgentChangeGetVtwoAPIRequest) SetApplyId(_applyId int64) err
 	return nil
 }
 
-// Get ApplyId Getter
+// GetApplyId ApplyId Getter
 func (r TaobaoTrainAgentChangeGetVtwoAPIRequest) GetApplyId() int64 {
 	return r._applyId
 }

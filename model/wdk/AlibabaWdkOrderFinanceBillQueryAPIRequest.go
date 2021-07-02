@@ -37,7 +37,7 @@ func (r AlibabaWdkOrderFinanceBillQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BillQueryRequest Setter
+// SetBillQueryRequest is BillQueryRequest Setter
 // 入参
 func (r *AlibabaWdkOrderFinanceBillQueryAPIRequest) SetBillQueryRequest(_billQueryRequest *WdkOpenOrderFinanceBillQueryRequest) error {
 	r._billQueryRequest = _billQueryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkOrderFinanceBillQueryAPIRequest) SetBillQueryRequest(_billQue
 	return nil
 }
 
-// Get BillQueryRequest Getter
+// GetBillQueryRequest BillQueryRequest Getter
 func (r AlibabaWdkOrderFinanceBillQueryAPIRequest) GetBillQueryRequest() *WdkOpenOrderFinanceBillQueryRequest {
 	return r._billQueryRequest
 }

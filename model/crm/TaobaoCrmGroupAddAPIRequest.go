@@ -37,7 +37,7 @@ func (r TaobaoCrmGroupAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is GroupName Setter
+// SetGroupName is GroupName Setter
 // 分组名称，每个卖家最多可以拥有100个分组
 func (r *TaobaoCrmGroupAddAPIRequest) SetGroupName(_groupName string) error {
 	r._groupName = _groupName
@@ -45,7 +45,7 @@ func (r *TaobaoCrmGroupAddAPIRequest) SetGroupName(_groupName string) error {
 	return nil
 }
 
-// Get GroupName Getter
+// GetGroupName GroupName Getter
 func (r TaobaoCrmGroupAddAPIRequest) GetGroupName() string {
 	return r._groupName
 }

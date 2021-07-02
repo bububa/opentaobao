@@ -46,7 +46,7 @@ func (r TaobaoProductGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 需返回的字段列表.可选值:Product数据结构中的所有字段;多个字段之间用","分隔.
 func (r *TaobaoProductGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
@@ -54,12 +54,12 @@ func (r *TaobaoProductGetAPIRequest) SetFields(_fields string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoProductGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // Product的id.两种方式来查看一个产品:1.传入product_id来查询 2.传入cid和props来查询
 func (r *TaobaoProductGetAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -67,12 +67,12 @@ func (r *TaobaoProductGetAPIRequest) SetProductId(_productId int64) error {
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TaobaoProductGetAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is Cid Setter
+// SetCid is Cid Setter
 // 商品类目id.调用taobao.itemcats.get获取;必须是叶子类目id,如果没有传product_id,那么cid和props必须要传.
 func (r *TaobaoProductGetAPIRequest) SetCid(_cid int64) error {
 	r._cid = _cid
@@ -80,12 +80,12 @@ func (r *TaobaoProductGetAPIRequest) SetCid(_cid int64) error {
 	return nil
 }
 
-// Get Cid Getter
+// GetCid Cid Getter
 func (r TaobaoProductGetAPIRequest) GetCid() int64 {
 	return r._cid
 }
 
-// Set is Props Setter
+// SetProps is Props Setter
 // 比如:诺基亚N73这个产品的关键属性列表就是:品牌:诺基亚;型号:N73,对应的PV值就是10005:10027;10006:29729.
 func (r *TaobaoProductGetAPIRequest) SetProps(_props string) error {
 	r._props = _props
@@ -93,7 +93,7 @@ func (r *TaobaoProductGetAPIRequest) SetProps(_props string) error {
 	return nil
 }
 
-// Get Props Getter
+// GetProps Props Getter
 func (r TaobaoProductGetAPIRequest) GetProps() string {
 	return r._props
 }

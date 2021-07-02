@@ -37,7 +37,7 @@ func (r YoukuCgameScoreReportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ScoreReportDto Setter
+// SetScoreReportDto is ScoreReportDto Setter
 // 战绩上传Dto
 func (r *YoukuCgameScoreReportAPIRequest) SetScoreReportDto(_scoreReportDto *ScoreReportDto) error {
 	r._scoreReportDto = _scoreReportDto
@@ -45,7 +45,7 @@ func (r *YoukuCgameScoreReportAPIRequest) SetScoreReportDto(_scoreReportDto *Sco
 	return nil
 }
 
-// Get ScoreReportDto Getter
+// GetScoreReportDto ScoreReportDto Getter
 func (r YoukuCgameScoreReportAPIRequest) GetScoreReportDto() *ScoreReportDto {
 	return r._scoreReportDto
 }

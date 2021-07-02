@@ -53,7 +53,7 @@ func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceSnList Setter
+// SetDeviceSnList is DeviceSnList Setter
 // 阿里设备物理ID
 func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetDeviceSnList(_deviceSnList []string) error {
 	r._deviceSnList = _deviceSnList
@@ -61,12 +61,12 @@ func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetDeviceSnList(_deviceSnList 
 	return nil
 }
 
-// Get DeviceSnList Getter
+// GetDeviceSnList DeviceSnList Getter
 func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetDeviceSnList() []string {
 	return r._deviceSnList
 }
 
-// Set is DeviceUuid Setter
+// SetDeviceUuid is DeviceUuid Setter
 // 外部设备编码
 func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetDeviceUuid(_deviceUuid string) error {
 	r._deviceUuid = _deviceUuid
@@ -74,12 +74,12 @@ func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetDeviceUuid(_deviceUuid stri
 	return nil
 }
 
-// Get DeviceUuid Getter
+// GetDeviceUuid DeviceUuid Getter
 func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetDeviceUuid() string {
 	return r._deviceUuid
 }
 
-// Set is DeviceCode Setter
+// SetDeviceCode is DeviceCode Setter
 // 阿里设备编码
 func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetDeviceCode(_deviceCode string) error {
 	r._deviceCode = _deviceCode
@@ -87,12 +87,12 @@ func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetDeviceCode(_deviceCode stri
 	return nil
 }
 
-// Get DeviceCode Getter
+// GetDeviceCode DeviceCode Getter
 func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // -20 已退款，-10 交易关闭 ，10 创单 20 已支付  30 已出货  40 交易完成
 func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -100,12 +100,12 @@ func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetStatus(_status int64) error
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is PayType Setter
+// SetPayType is PayType Setter
 // CASH 现金，ALIPAY_FACE_PAY_QR 支付宝，VENDING_PRIZE 抽奖，FACE_PAY 人脸
 func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPayType(_payType string) error {
 	r._payType = _payType
@@ -113,12 +113,12 @@ func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPayType(_payType string) er
 	return nil
 }
 
-// Get PayType Getter
+// GetPayType PayType Getter
 func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetPayType() string {
 	return r._payType
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
 func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -126,12 +126,12 @@ func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPageSize(_pageSize int64) e
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNum Setter
+// SetPageNum is PageNum Setter
 // 页码
 func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
@@ -139,12 +139,12 @@ func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPageNum(_pageNum int64) err
 	return nil
 }
 
-// Get PageNum Getter
+// GetPageNum PageNum Getter
 func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetPageNum() int64 {
 	return r._pageNum
 }
 
-// Set is Starts Setter
+// SetStarts is Starts Setter
 // 查询订单开始时间
 func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetStarts(_starts string) error {
 	r._starts = _starts
@@ -152,12 +152,12 @@ func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetStarts(_starts string) erro
 	return nil
 }
 
-// Get Starts Getter
+// GetStarts Starts Getter
 func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetStarts() string {
 	return r._starts
 }
 
-// Set is Ends Setter
+// SetEnds is Ends Setter
 // 查询订单结束时间
 func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetEnds(_ends string) error {
 	r._ends = _ends
@@ -165,7 +165,7 @@ func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetEnds(_ends string) error {
 	return nil
 }
 
-// Get Ends Getter
+// GetEnds Ends Getter
 func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetEnds() string {
 	return r._ends
 }

@@ -39,7 +39,7 @@ func (r TaobaoXhotelOrderDetailSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutOid Setter
+// SetOutOid is OutOid Setter
 // 外部订单号
 func (r *TaobaoXhotelOrderDetailSearchAPIRequest) SetOutOid(_outOid string) error {
 	r._outOid = _outOid
@@ -47,12 +47,12 @@ func (r *TaobaoXhotelOrderDetailSearchAPIRequest) SetOutOid(_outOid string) erro
 	return nil
 }
 
-// Get OutOid Getter
+// GetOutOid OutOid Getter
 func (r TaobaoXhotelOrderDetailSearchAPIRequest) GetOutOid() string {
 	return r._outOid
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 外部订单号
 func (r *TaobaoXhotelOrderDetailSearchAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -60,7 +60,7 @@ func (r *TaobaoXhotelOrderDetailSearchAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoXhotelOrderDetailSearchAPIRequest) GetTid() int64 {
 	return r._tid
 }

@@ -69,7 +69,7 @@ func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetApiParams()
 	return params
 }
 
-// Set is Volume Setter
+// SetVolume is Volume Setter
 // 体积 单位 立方毫米
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetVolume(_volume int64) error {
 	r._volume = _volume
@@ -77,12 +77,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetVolume(_vo
 	return nil
 }
 
-// Get Volume Getter
+// GetVolume Volume Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetVolume() int64 {
 	return r._volume
 }
 
-// Set is Weight Setter
+// SetWeight is Weight Setter
 // 重量 单位 克
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetWeight(_weight int64) error {
 	r._weight = _weight
@@ -90,12 +90,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetWeight(_we
 	return nil
 }
 
-// Get Weight Getter
+// GetWeight Weight Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetWeight() int64 {
 	return r._weight
 }
 
-// Set is Comment Setter
+// SetComment is Comment Setter
 // 备注说明
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetComment(_comment string) error {
 	r._comment = _comment
@@ -103,12 +103,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetComment(_c
 	return nil
 }
 
-// Get Comment Getter
+// GetComment Comment Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetComment() string {
 	return r._comment
 }
 
-// Set is ExpressCode Setter
+// SetExpressCode is ExpressCode Setter
 // 物流单号（展示给消费者）
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetExpressCode(_expressCode string) error {
 	r._expressCode = _expressCode
@@ -116,12 +116,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetExpressCod
 	return nil
 }
 
-// Get ExpressCode Getter
+// GetExpressCode ExpressCode Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetExpressCode() string {
 	return r._expressCode
 }
 
-// Set is ExpressCompany Setter
+// SetExpressCompany is ExpressCompany Setter
 // 物流公司名词（展示给消费者）
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetExpressCompany(_expressCompany string) error {
 	r._expressCompany = _expressCompany
@@ -129,12 +129,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetExpressCom
 	return nil
 }
 
-// Get ExpressCompany Getter
+// GetExpressCompany ExpressCompany Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetExpressCompany() string {
 	return r._expressCompany
 }
 
-// Set is CourierMobile Setter
+// SetCourierMobile is CourierMobile Setter
 // 小件员手机号码
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetCourierMobile(_courierMobile string) error {
 	r._courierMobile = _courierMobile
@@ -142,12 +142,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetCourierMob
 	return nil
 }
 
-// Get CourierMobile Getter
+// GetCourierMobile CourierMobile Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetCourierMobile() string {
 	return r._courierMobile
 }
 
-// Set is CourierName Setter
+// SetCourierName is CourierName Setter
 // 小件员姓名
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetCourierName(_courierName string) error {
 	r._courierName = _courierName
@@ -155,12 +155,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetCourierNam
 	return nil
 }
 
-// Get CourierName Getter
+// GetCourierName CourierName Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetCourierName() string {
 	return r._courierName
 }
 
-// Set is GotCode Setter
+// SetGotCode is GotCode Setter
 // 取件码
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetGotCode(_gotCode string) error {
 	r._gotCode = _gotCode
@@ -168,12 +168,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetGotCode(_g
 	return nil
 }
 
-// Get GotCode Getter
+// GetGotCode GotCode Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetGotCode() string {
 	return r._gotCode
 }
 
-// Set is LogisticsOrderId Setter
+// SetLogisticsOrderId is LogisticsOrderId Setter
 // 物流订单号
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetLogisticsOrderId(_logisticsOrderId int64) error {
 	r._logisticsOrderId = _logisticsOrderId
@@ -181,12 +181,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetLogisticsO
 	return nil
 }
 
-// Get LogisticsOrderId Getter
+// GetLogisticsOrderId LogisticsOrderId Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetLogisticsOrderId() int64 {
 	return r._logisticsOrderId
 }
 
-// Set is Cost Setter
+// SetCost is Cost Setter
 // 金额 单位分
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetCost(_cost int64) error {
 	r._cost = _cost
@@ -194,12 +194,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetCost(_cost
 	return nil
 }
 
-// Get Cost Getter
+// GetCost Cost Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetCost() int64 {
 	return r._cost
 }
 
-// Set is GoodsInfo Setter
+// SetGoodsInfo is GoodsInfo Setter
 // 1、以下状态时必填： 包裹已揽收完成 2、字符串格式为：json 串 例子： [{ "name": "上衣", "count": 1 }, { "name": "裤子", "count": 2 }]
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetGoodsInfo(_goodsInfo string) error {
 	r._goodsInfo = _goodsInfo
@@ -207,12 +207,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetGoodsInfo(
 	return nil
 }
 
-// Get GoodsInfo Getter
+// GetGoodsInfo GoodsInfo Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetGoodsInfo() string {
 	return r._goodsInfo
 }
 
-// Set is StatusCode Setter
+// SetStatusCode is StatusCode Setter
 // 物流创建 ：create 物流取消 ：cancel 分派小件员：assign 已经分派小件员: assigned 包裹上门揽收: pickup_door 包裹已揽收完成: pickup_finished 包裹派送中: dispatching 包裹已签收: signed
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetStatusCode(_statusCode string) error {
 	r._statusCode = _statusCode
@@ -220,12 +220,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetStatusCode
 	return nil
 }
 
-// Get StatusCode Getter
+// GetStatusCode StatusCode Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetStatusCode() string {
 	return r._statusCode
 }
 
-// Set is SubExpressCodes Setter
+// SetSubExpressCodes is SubExpressCodes Setter
 // 物流子单号
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetSubExpressCodes(_subExpressCodes []string) error {
 	r._subExpressCodes = _subExpressCodes
@@ -233,12 +233,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetSubExpress
 	return nil
 }
 
-// Get SubExpressCodes Getter
+// GetSubExpressCodes SubExpressCodes Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetSubExpressCodes() []string {
 	return r._subExpressCodes
 }
 
-// Set is DeliveryTime Setter
+// SetDeliveryTime is DeliveryTime Setter
 // 预计送达时间  dispatching节点时必填
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetDeliveryTime(_deliveryTime string) error {
 	r._deliveryTime = _deliveryTime
@@ -246,12 +246,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetDeliveryTi
 	return nil
 }
 
-// Get DeliveryTime Getter
+// GetDeliveryTime DeliveryTime Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetDeliveryTime() string {
 	return r._deliveryTime
 }
 
-// Set is SignTime Setter
+// SetSignTime is SignTime Setter
 // 签收时间 signed节点时必填
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetSignTime(_signTime string) error {
 	r._signTime = _signTime
@@ -259,12 +259,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetSignTime(_
 	return nil
 }
 
-// Get SignTime Getter
+// GetSignTime SignTime Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetSignTime() string {
 	return r._signTime
 }
 
-// Set is PickupFinishTime Setter
+// SetPickupFinishTime is PickupFinishTime Setter
 // 揽收完成时间 pickup_finished节点时必填
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetPickupFinishTime(_pickupFinishTime string) error {
 	r._pickupFinishTime = _pickupFinishTime
@@ -272,12 +272,12 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetPickupFini
 	return nil
 }
 
-// Get PickupFinishTime Getter
+// GetPickupFinishTime PickupFinishTime Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetPickupFinishTime() string {
 	return r._pickupFinishTime
 }
 
-// Set is PickupDoorTime Setter
+// SetPickupDoorTime is PickupDoorTime Setter
 // 上门揽收时间 pickup_door节点时必填
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetPickupDoorTime(_pickupDoorTime string) error {
 	r._pickupDoorTime = _pickupDoorTime
@@ -285,7 +285,7 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetPickupDoor
 	return nil
 }
 
-// Get PickupDoorTime Getter
+// GetPickupDoorTime PickupDoorTime Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetPickupDoorTime() string {
 	return r._pickupDoorTime
 }

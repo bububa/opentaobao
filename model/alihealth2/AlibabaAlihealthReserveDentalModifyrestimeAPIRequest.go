@@ -39,7 +39,7 @@ func (r AlibabaAlihealthReserveDentalModifyrestimeAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is ReserveId Setter
+// SetReserveId is ReserveId Setter
 // 预约单ID
 func (r *AlibabaAlihealthReserveDentalModifyrestimeAPIRequest) SetReserveId(_reserveId int64) error {
 	r._reserveId = _reserveId
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthReserveDentalModifyrestimeAPIRequest) SetReserveId(_res
 	return nil
 }
 
-// Get ReserveId Getter
+// GetReserveId ReserveId Getter
 func (r AlibabaAlihealthReserveDentalModifyrestimeAPIRequest) GetReserveId() int64 {
 	return r._reserveId
 }
 
-// Set is ReserveTime Setter
+// SetReserveTime is ReserveTime Setter
 // 预约时间
 func (r *AlibabaAlihealthReserveDentalModifyrestimeAPIRequest) SetReserveTime(_reserveTime string) error {
 	r._reserveTime = _reserveTime
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthReserveDentalModifyrestimeAPIRequest) SetReserveTime(_r
 	return nil
 }
 
-// Get ReserveTime Getter
+// GetReserveTime ReserveTime Getter
 func (r AlibabaAlihealthReserveDentalModifyrestimeAPIRequest) GetReserveTime() string {
 	return r._reserveTime
 }

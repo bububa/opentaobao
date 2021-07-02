@@ -37,7 +37,7 @@ func (r WdkMealPosGetfetchmealcodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChannelShopId Setter
+// SetChannelShopId is ChannelShopId Setter
 // 渠道店id
 func (r *WdkMealPosGetfetchmealcodeAPIRequest) SetChannelShopId(_channelShopId string) error {
 	r._channelShopId = _channelShopId
@@ -45,7 +45,7 @@ func (r *WdkMealPosGetfetchmealcodeAPIRequest) SetChannelShopId(_channelShopId s
 	return nil
 }
 
-// Get ChannelShopId Getter
+// GetChannelShopId ChannelShopId Getter
 func (r WdkMealPosGetfetchmealcodeAPIRequest) GetChannelShopId() string {
 	return r._channelShopId
 }

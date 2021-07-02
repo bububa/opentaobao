@@ -37,7 +37,7 @@ func (r TaobaoLogisticsOnlineCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝交易ID
 func (r *TaobaoLogisticsOnlineCancelAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -45,7 +45,7 @@ func (r *TaobaoLogisticsOnlineCancelAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoLogisticsOnlineCancelAPIRequest) GetTid() int64 {
 	return r._tid
 }

@@ -45,7 +45,7 @@ func (r AlibabaEleEnterpriseCartnewSaveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Phone Setter
+// SetPhone is Phone Setter
 // 用户11位手机号
 func (r *AlibabaEleEnterpriseCartnewSaveAPIRequest) SetPhone(_phone string) error {
 	r._phone = _phone
@@ -53,12 +53,12 @@ func (r *AlibabaEleEnterpriseCartnewSaveAPIRequest) SetPhone(_phone string) erro
 	return nil
 }
 
-// Get Phone Getter
+// GetPhone Phone Getter
 func (r AlibabaEleEnterpriseCartnewSaveAPIRequest) GetPhone() string {
 	return r._phone
 }
 
-// Set is Latitude Setter
+// SetLatitude is Latitude Setter
 // 用户所在纬度
 func (r *AlibabaEleEnterpriseCartnewSaveAPIRequest) SetLatitude(_latitude string) error {
 	r._latitude = _latitude
@@ -66,12 +66,12 @@ func (r *AlibabaEleEnterpriseCartnewSaveAPIRequest) SetLatitude(_latitude string
 	return nil
 }
 
-// Get Latitude Getter
+// GetLatitude Latitude Getter
 func (r AlibabaEleEnterpriseCartnewSaveAPIRequest) GetLatitude() string {
 	return r._latitude
 }
 
-// Set is Food Setter
+// SetFood is Food Setter
 // [[{\"id\": 1526467414,\"new_specs\": [{\"name\": \"规格\",\"value\": \"那么大鲜柠特饮(雪碧) 660ml\"}],\"attrs\": [{\"name\": \"可选小食\",\"value\": \"金黄脆薯格\"}],\"quantity\": 2}]]
 func (r *AlibabaEleEnterpriseCartnewSaveAPIRequest) SetFood(_food string) error {
 	r._food = _food
@@ -79,12 +79,12 @@ func (r *AlibabaEleEnterpriseCartnewSaveAPIRequest) SetFood(_food string) error 
 	return nil
 }
 
-// Get Food Getter
+// GetFood Food Getter
 func (r AlibabaEleEnterpriseCartnewSaveAPIRequest) GetFood() string {
 	return r._food
 }
 
-// Set is Longitude Setter
+// SetLongitude is Longitude Setter
 // 用户所在经度
 func (r *AlibabaEleEnterpriseCartnewSaveAPIRequest) SetLongitude(_longitude string) error {
 	r._longitude = _longitude
@@ -92,12 +92,12 @@ func (r *AlibabaEleEnterpriseCartnewSaveAPIRequest) SetLongitude(_longitude stri
 	return nil
 }
 
-// Get Longitude Getter
+// GetLongitude Longitude Getter
 func (r AlibabaEleEnterpriseCartnewSaveAPIRequest) GetLongitude() string {
 	return r._longitude
 }
 
-// Set is ErestaurantId Setter
+// SetErestaurantId is ErestaurantId Setter
 // 餐厅id
 func (r *AlibabaEleEnterpriseCartnewSaveAPIRequest) SetErestaurantId(_erestaurantId string) error {
 	r._erestaurantId = _erestaurantId
@@ -105,7 +105,7 @@ func (r *AlibabaEleEnterpriseCartnewSaveAPIRequest) SetErestaurantId(_erestauran
 	return nil
 }
 
-// Get ErestaurantId Getter
+// GetErestaurantId ErestaurantId Getter
 func (r AlibabaEleEnterpriseCartnewSaveAPIRequest) GetErestaurantId() string {
 	return r._erestaurantId
 }

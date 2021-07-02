@@ -39,7 +39,7 @@ func (r AlibabaAilabUserOpenUidGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SkillAccessToken Setter
+// SetSkillAccessToken is SkillAccessToken Setter
 // access token
 func (r *AlibabaAilabUserOpenUidGetAPIRequest) SetSkillAccessToken(_skillAccessToken string) error {
 	r._skillAccessToken = _skillAccessToken
@@ -47,12 +47,12 @@ func (r *AlibabaAilabUserOpenUidGetAPIRequest) SetSkillAccessToken(_skillAccessT
 	return nil
 }
 
-// Get SkillAccessToken Getter
+// GetSkillAccessToken SkillAccessToken Getter
 func (r AlibabaAilabUserOpenUidGetAPIRequest) GetSkillAccessToken() string {
 	return r._skillAccessToken
 }
 
-// Set is SkillId Setter
+// SetSkillId is SkillId Setter
 // skill id
 func (r *AlibabaAilabUserOpenUidGetAPIRequest) SetSkillId(_skillId int64) error {
 	r._skillId = _skillId
@@ -60,7 +60,7 @@ func (r *AlibabaAilabUserOpenUidGetAPIRequest) SetSkillId(_skillId int64) error 
 	return nil
 }
 
-// Get SkillId Getter
+// GetSkillId SkillId Getter
 func (r AlibabaAilabUserOpenUidGetAPIRequest) GetSkillId() int64 {
 	return r._skillId
 }

@@ -43,7 +43,7 @@ func (r TaobaoJstInteractiveActivityUpdateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is MiniAppId Setter
+// SetMiniAppId is MiniAppId Setter
 // 小程序id
 func (r *TaobaoJstInteractiveActivityUpdateAPIRequest) SetMiniAppId(_miniAppId string) error {
 	r._miniAppId = _miniAppId
@@ -51,12 +51,12 @@ func (r *TaobaoJstInteractiveActivityUpdateAPIRequest) SetMiniAppId(_miniAppId s
 	return nil
 }
 
-// Get MiniAppId Getter
+// GetMiniAppId MiniAppId Getter
 func (r TaobaoJstInteractiveActivityUpdateAPIRequest) GetMiniAppId() string {
 	return r._miniAppId
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 活动开始时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回
 func (r *TaobaoJstInteractiveActivityUpdateAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -64,12 +64,12 @@ func (r *TaobaoJstInteractiveActivityUpdateAPIRequest) SetStartTime(_startTime s
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoJstInteractiveActivityUpdateAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 活动结束时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回
 func (r *TaobaoJstInteractiveActivityUpdateAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -77,12 +77,12 @@ func (r *TaobaoJstInteractiveActivityUpdateAPIRequest) SetEndTime(_endTime strin
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoJstInteractiveActivityUpdateAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 活动状态，0=无效，1=有效，status设为0即代表删除此活动，需创建新的活动
 func (r *TaobaoJstInteractiveActivityUpdateAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -90,7 +90,7 @@ func (r *TaobaoJstInteractiveActivityUpdateAPIRequest) SetStatus(_status int64) 
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoJstInteractiveActivityUpdateAPIRequest) GetStatus() int64 {
 	return r._status
 }

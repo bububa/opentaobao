@@ -53,7 +53,7 @@ func (r TaobaoBillBillsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Fields Setter
+// SetFields is Fields Setter
 // 传入需要返回的字段,参见Bill结构体
 func (r *TaobaoBillBillsGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
@@ -61,12 +61,12 @@ func (r *TaobaoBillBillsGetAPIRequest) SetFields(_fields []string) error {
 	return nil
 }
 
-// Get Fields Getter
+// GetFields Fields Getter
 func (r TaobaoBillBillsGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// Set is AccountId Setter
+// SetAccountId is AccountId Setter
 // 科目编号
 func (r *TaobaoBillBillsGetAPIRequest) SetAccountId(_accountId int64) error {
 	r._accountId = _accountId
@@ -74,12 +74,12 @@ func (r *TaobaoBillBillsGetAPIRequest) SetAccountId(_accountId int64) error {
 	return nil
 }
 
-// Get AccountId Getter
+// GetAccountId AccountId Getter
 func (r TaobaoBillBillsGetAPIRequest) GetAccountId() int64 {
 	return r._accountId
 }
 
-// Set is TradeId Setter
+// SetTradeId is TradeId Setter
 // 交易编号
 func (r *TaobaoBillBillsGetAPIRequest) SetTradeId(_tradeId int64) error {
 	r._tradeId = _tradeId
@@ -87,12 +87,12 @@ func (r *TaobaoBillBillsGetAPIRequest) SetTradeId(_tradeId int64) error {
 	return nil
 }
 
-// Get TradeId Getter
+// GetTradeId TradeId Getter
 func (r TaobaoBillBillsGetAPIRequest) GetTradeId() int64 {
 	return r._tradeId
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 子订单编号
 func (r *TaobaoBillBillsGetAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -100,12 +100,12 @@ func (r *TaobaoBillBillsGetAPIRequest) SetOrderId(_orderId int64) error {
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoBillBillsGetAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 开始时间
 func (r *TaobaoBillBillsGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -113,12 +113,12 @@ func (r *TaobaoBillBillsGetAPIRequest) SetStartTime(_startTime string) error {
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoBillBillsGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 结束时间,限制:结束时间-开始时间不能大于1天(根据order_id或者trade_id查询除外)
 func (r *TaobaoBillBillsGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -126,12 +126,12 @@ func (r *TaobaoBillBillsGetAPIRequest) SetEndTime(_endTime string) error {
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoBillBillsGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is TimeType Setter
+// SetTimeType is TimeType Setter
 // 查询条件中的时间类型:1-交易订单完成时间biz_time 2-支付宝扣款时间pay_time 如果不填默认为2即根据支付时间查询,查询的结果会根据该时间倒排序
 func (r *TaobaoBillBillsGetAPIRequest) SetTimeType(_timeType int64) error {
 	r._timeType = _timeType
@@ -139,12 +139,12 @@ func (r *TaobaoBillBillsGetAPIRequest) SetTimeType(_timeType int64) error {
 	return nil
 }
 
-// Get TimeType Getter
+// GetTimeType TimeType Getter
 func (r TaobaoBillBillsGetAPIRequest) GetTimeType() int64 {
 	return r._timeType
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页数,建议不要超过100页,越大性能越低,有可能会超时
 func (r *TaobaoBillBillsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -152,12 +152,12 @@ func (r *TaobaoBillBillsGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoBillBillsGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页大小,默认40条,可选范围 ：40~100
 func (r *TaobaoBillBillsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -165,7 +165,7 @@ func (r *TaobaoBillBillsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoBillBillsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

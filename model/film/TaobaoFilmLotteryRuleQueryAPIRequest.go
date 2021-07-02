@@ -41,7 +41,7 @@ func (r TaobaoFilmLotteryRuleQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AccountType Setter
+// SetAccountType is AccountType Setter
 // 账号类型（TAOBAO\ALIPAY\PHONE）
 func (r *TaobaoFilmLotteryRuleQueryAPIRequest) SetAccountType(_accountType string) error {
 	r._accountType = _accountType
@@ -49,12 +49,12 @@ func (r *TaobaoFilmLotteryRuleQueryAPIRequest) SetAccountType(_accountType strin
 	return nil
 }
 
-// Get AccountType Getter
+// GetAccountType AccountType Getter
 func (r TaobaoFilmLotteryRuleQueryAPIRequest) GetAccountType() string {
 	return r._accountType
 }
 
-// Set is Channel Setter
+// SetChannel is Channel Setter
 // 渠道来源
 func (r *TaobaoFilmLotteryRuleQueryAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
@@ -62,12 +62,12 @@ func (r *TaobaoFilmLotteryRuleQueryAPIRequest) SetChannel(_channel string) error
 	return nil
 }
 
-// Get Channel Getter
+// GetChannel Channel Getter
 func (r TaobaoFilmLotteryRuleQueryAPIRequest) GetChannel() string {
 	return r._channel
 }
 
-// Set is AccountNo Setter
+// SetAccountNo is AccountNo Setter
 // 账号ID
 func (r *TaobaoFilmLotteryRuleQueryAPIRequest) SetAccountNo(_accountNo string) error {
 	r._accountNo = _accountNo
@@ -75,7 +75,7 @@ func (r *TaobaoFilmLotteryRuleQueryAPIRequest) SetAccountNo(_accountNo string) e
 	return nil
 }
 
-// Get AccountNo Getter
+// GetAccountNo AccountNo Getter
 func (r TaobaoFilmLotteryRuleQueryAPIRequest) GetAccountNo() string {
 	return r._accountNo
 }

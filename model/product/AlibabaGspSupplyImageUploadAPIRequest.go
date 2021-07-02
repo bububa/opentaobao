@@ -39,7 +39,7 @@ func (r AlibabaGspSupplyImageUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FileName Setter
+// SetFileName is FileName Setter
 // 图片名称
 func (r *AlibabaGspSupplyImageUploadAPIRequest) SetFileName(_fileName string) error {
 	r._fileName = _fileName
@@ -47,12 +47,12 @@ func (r *AlibabaGspSupplyImageUploadAPIRequest) SetFileName(_fileName string) er
 	return nil
 }
 
-// Get FileName Getter
+// GetFileName FileName Getter
 func (r AlibabaGspSupplyImageUploadAPIRequest) GetFileName() string {
 	return r._fileName
 }
 
-// Set is FileContent Setter
+// SetFileContent is FileContent Setter
 // 图片文件流，像素宽度不小于500，不大于2000，像素长度不小于500，不大于2000
 func (r *AlibabaGspSupplyImageUploadAPIRequest) SetFileContent(_fileContent *model.File) error {
 	r._fileContent = _fileContent
@@ -60,7 +60,7 @@ func (r *AlibabaGspSupplyImageUploadAPIRequest) SetFileContent(_fileContent *mod
 	return nil
 }
 
-// Get FileContent Getter
+// GetFileContent FileContent Getter
 func (r AlibabaGspSupplyImageUploadAPIRequest) GetFileContent() *model.File {
 	return r._fileContent
 }

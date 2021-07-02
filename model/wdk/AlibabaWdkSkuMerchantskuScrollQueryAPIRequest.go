@@ -39,7 +39,7 @@ func (r AlibabaWdkSkuMerchantskuScrollQueryAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is OrgNo Setter
+// SetOrgNo is OrgNo Setter
 // HM
 func (r *AlibabaWdkSkuMerchantskuScrollQueryAPIRequest) SetOrgNo(_orgNo string) error {
 	r._orgNo = _orgNo
@@ -47,12 +47,12 @@ func (r *AlibabaWdkSkuMerchantskuScrollQueryAPIRequest) SetOrgNo(_orgNo string) 
 	return nil
 }
 
-// Get OrgNo Getter
+// GetOrgNo OrgNo Getter
 func (r AlibabaWdkSkuMerchantskuScrollQueryAPIRequest) GetOrgNo() string {
 	return r._orgNo
 }
 
-// Set is ScrollId Setter
+// SetScrollId is ScrollId Setter
 // 第一次为null，后面从结果中获取
 func (r *AlibabaWdkSkuMerchantskuScrollQueryAPIRequest) SetScrollId(_scrollId string) error {
 	r._scrollId = _scrollId
@@ -60,7 +60,7 @@ func (r *AlibabaWdkSkuMerchantskuScrollQueryAPIRequest) SetScrollId(_scrollId st
 	return nil
 }
 
-// Get ScrollId Getter
+// GetScrollId ScrollId Getter
 func (r AlibabaWdkSkuMerchantskuScrollQueryAPIRequest) GetScrollId() string {
 	return r._scrollId
 }

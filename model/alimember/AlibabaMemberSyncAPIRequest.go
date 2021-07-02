@@ -37,7 +37,7 @@ func (r AlibabaMemberSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SyncMember Setter
+// SetSyncMember is SyncMember Setter
 // 会员同步信息
 func (r *AlibabaMemberSyncAPIRequest) SetSyncMember(_syncMember *SyncMemberDto) error {
 	r._syncMember = _syncMember
@@ -45,7 +45,7 @@ func (r *AlibabaMemberSyncAPIRequest) SetSyncMember(_syncMember *SyncMemberDto) 
 	return nil
 }
 
-// Get SyncMember Getter
+// GetSyncMember SyncMember Getter
 func (r AlibabaMemberSyncAPIRequest) GetSyncMember() *SyncMemberDto {
 	return r._syncMember
 }

@@ -41,7 +41,7 @@ func (r TaobaoCrmServiceChannelShortlinkCreateAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ShortLinkName Setter
+// SetShortLinkName is ShortLinkName Setter
 // 淘短链名称（最多只能16个中文字符，类型为订单链接时传入订单ID）。
 func (r *TaobaoCrmServiceChannelShortlinkCreateAPIRequest) SetShortLinkName(_shortLinkName string) error {
 	r._shortLinkName = _shortLinkName
@@ -49,12 +49,12 @@ func (r *TaobaoCrmServiceChannelShortlinkCreateAPIRequest) SetShortLinkName(_sho
 	return nil
 }
 
-// Get ShortLinkName Getter
+// GetShortLinkName ShortLinkName Getter
 func (r TaobaoCrmServiceChannelShortlinkCreateAPIRequest) GetShortLinkName() string {
 	return r._shortLinkName
 }
 
-// Set is LinkType Setter
+// SetLinkType is LinkType Setter
 // 淘短链类型：LT_ITEM（商品淘短链）,LT_SHOP（店铺首页淘短链）,LT_ACTIVITY（活动页淘短链）,LT_TRADE（订单详情页淘短链）。
 func (r *TaobaoCrmServiceChannelShortlinkCreateAPIRequest) SetLinkType(_linkType string) error {
 	r._linkType = _linkType
@@ -62,12 +62,12 @@ func (r *TaobaoCrmServiceChannelShortlinkCreateAPIRequest) SetLinkType(_linkType
 	return nil
 }
 
-// Get LinkType Getter
+// GetLinkType LinkType Getter
 func (r TaobaoCrmServiceChannelShortlinkCreateAPIRequest) GetLinkType() string {
 	return r._linkType
 }
 
-// Set is ShortLinkData Setter
+// SetShortLinkData is ShortLinkData Setter
 // 类型为LT_ITEM时必须传入商品ID，类型为LT_SHOP时必须传入空值，类型为LT_ACTIVITY时传入活动页URL（URL必须是taobao.com,tmall.com,jaeapp.com这三个域名下的URL），类型为LT_TRADE时传入订单ID。
 func (r *TaobaoCrmServiceChannelShortlinkCreateAPIRequest) SetShortLinkData(_shortLinkData string) error {
 	r._shortLinkData = _shortLinkData
@@ -75,7 +75,7 @@ func (r *TaobaoCrmServiceChannelShortlinkCreateAPIRequest) SetShortLinkData(_sho
 	return nil
 }
 
-// Get ShortLinkData Getter
+// GetShortLinkData ShortLinkData Getter
 func (r TaobaoCrmServiceChannelShortlinkCreateAPIRequest) GetShortLinkData() string {
 	return r._shortLinkData
 }

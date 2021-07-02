@@ -39,7 +39,7 @@ func (r AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest) GetApiParam
 	return params
 }
 
-// Set is BillCode Setter
+// SetBillCode is BillCode Setter
 // 单据号码
 func (r *AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest) SetBillCode(_billCode string) error {
 	r._billCode = _billCode
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest) SetBillCod
 	return nil
 }
 
-// Get BillCode Getter
+// GetBillCode BillCode Getter
 func (r AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 本企业refEntId
 func (r *AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest) SetRefEntI
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopYljgQueryUpbilldetailAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }

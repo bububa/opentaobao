@@ -37,7 +37,7 @@ func (r YunosOsupdateOsfotaPublishAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PublishJson Setter
+// SetPublishJson is PublishJson Setter
 // 入参json格式
 func (r *YunosOsupdateOsfotaPublishAPIRequest) SetPublishJson(_publishJson string) error {
 	r._publishJson = _publishJson
@@ -45,7 +45,7 @@ func (r *YunosOsupdateOsfotaPublishAPIRequest) SetPublishJson(_publishJson strin
 	return nil
 }
 
-// Get PublishJson Getter
+// GetPublishJson PublishJson Getter
 func (r YunosOsupdateOsfotaPublishAPIRequest) GetPublishJson() string {
 	return r._publishJson
 }

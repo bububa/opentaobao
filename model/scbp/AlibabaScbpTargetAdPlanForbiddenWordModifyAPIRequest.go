@@ -37,7 +37,7 @@ func (r AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is TopP4pQuickForbiddenWord Setter
+// SetTopP4pQuickForbiddenWord is TopP4pQuickForbiddenWord Setter
 // TopP4pQuickForbiddenWord
 func (r *AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) SetTopP4pQuickForbiddenWord(_topP4pQuickForbiddenWord *TopP4pQuickForbiddenWordDto) error {
 	r._topP4pQuickForbiddenWord = _topP4pQuickForbiddenWord
@@ -45,7 +45,7 @@ func (r *AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) SetTopP4pQuickFor
 	return nil
 }
 
-// Get TopP4pQuickForbiddenWord Getter
+// GetTopP4pQuickForbiddenWord TopP4pQuickForbiddenWord Getter
 func (r AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) GetTopP4pQuickForbiddenWord() *TopP4pQuickForbiddenWordDto {
 	return r._topP4pQuickForbiddenWord
 }

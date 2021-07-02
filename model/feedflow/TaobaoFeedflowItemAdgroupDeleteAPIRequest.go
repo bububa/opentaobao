@@ -39,7 +39,7 @@ func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 计划id
 func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -47,12 +47,12 @@ func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) SetCampaignId(_campaignId in
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is AdgroupIdList Setter
+// SetAdgroupIdList is AdgroupIdList Setter
 // 单元id列表
 func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) SetAdgroupIdList(_adgroupIdList []int64) error {
 	r._adgroupIdList = _adgroupIdList
@@ -60,7 +60,7 @@ func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) SetAdgroupIdList(_adgroupIdL
 	return nil
 }
 
-// Get AdgroupIdList Getter
+// GetAdgroupIdList AdgroupIdList Getter
 func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetAdgroupIdList() []int64 {
 	return r._adgroupIdList
 }

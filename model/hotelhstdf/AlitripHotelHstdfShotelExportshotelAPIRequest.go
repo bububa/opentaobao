@@ -49,7 +49,7 @@ func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is Hid Setter
+// SetHid is Hid Setter
 // HID，卖家酒店上传到平台后的ID
 func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetHid(_hid int64) error {
 	r._hid = _hid
@@ -57,12 +57,12 @@ func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetHid(_hid int64) error
 	return nil
 }
 
-// Get Hid Getter
+// GetHid Hid Getter
 func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetHid() int64 {
 	return r._hid
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 酒店名称，必填
 func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -70,12 +70,12 @@ func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetName(_name string) er
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is CityCode Setter
+// SetCityCode is CityCode Setter
 // 酒店所在行政区划，对应平台ID，为空时会使用经纬度来定位
 func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetCityCode(_cityCode int64) error {
 	r._cityCode = _cityCode
@@ -83,12 +83,12 @@ func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetCityCode(_cityCode in
 	return nil
 }
 
-// Get CityCode Getter
+// GetCityCode CityCode Getter
 func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetCityCode() int64 {
 	return r._cityCode
 }
 
-// Set is TelNumber Setter
+// SetTelNumber is TelNumber Setter
 // 电话
 func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetTelNumber(_telNumber string) error {
 	r._telNumber = _telNumber
@@ -96,12 +96,12 @@ func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetTelNumber(_telNumber 
 	return nil
 }
 
-// Get TelNumber Getter
+// GetTelNumber TelNumber Getter
 func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetTelNumber() string {
 	return r._telNumber
 }
 
-// Set is Longitude Setter
+// SetLongitude is Longitude Setter
 // 经度
 func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetLongitude(_longitude string) error {
 	r._longitude = _longitude
@@ -109,12 +109,12 @@ func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetLongitude(_longitude 
 	return nil
 }
 
-// Get Longitude Getter
+// GetLongitude Longitude Getter
 func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetLongitude() string {
 	return r._longitude
 }
 
-// Set is Latitude Setter
+// SetLatitude is Latitude Setter
 // 纬度
 func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetLatitude(_latitude string) error {
 	r._latitude = _latitude
@@ -122,12 +122,12 @@ func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetLatitude(_latitude st
 	return nil
 }
 
-// Get Latitude Getter
+// GetLatitude Latitude Getter
 func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetLatitude() string {
 	return r._latitude
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 地址
 func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetAddress(_address string) error {
 	r._address = _address
@@ -135,7 +135,7 @@ func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetAddress(_address stri
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetAddress() string {
 	return r._address
 }

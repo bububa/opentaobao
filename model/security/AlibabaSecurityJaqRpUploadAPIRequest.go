@@ -39,7 +39,7 @@ func (r AlibabaSecurityJaqRpUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is VerifyToken Setter
+// SetVerifyToken is VerifyToken Setter
 // 认证会话token
 func (r *AlibabaSecurityJaqRpUploadAPIRequest) SetVerifyToken(_verifyToken string) error {
 	r._verifyToken = _verifyToken
@@ -47,12 +47,12 @@ func (r *AlibabaSecurityJaqRpUploadAPIRequest) SetVerifyToken(_verifyToken strin
 	return nil
 }
 
-// Get VerifyToken Getter
+// GetVerifyToken VerifyToken Getter
 func (r AlibabaSecurityJaqRpUploadAPIRequest) GetVerifyToken() string {
 	return r._verifyToken
 }
 
-// Set is Elements Setter
+// SetElements is Elements Setter
 // 此次需要上传的认证信息的列表
 func (r *AlibabaSecurityJaqRpUploadAPIRequest) SetElements(_elements []Element) error {
 	r._elements = _elements
@@ -60,7 +60,7 @@ func (r *AlibabaSecurityJaqRpUploadAPIRequest) SetElements(_elements []Element) 
 	return nil
 }
 
-// Get Elements Getter
+// GetElements Elements Getter
 func (r AlibabaSecurityJaqRpUploadAPIRequest) GetElements() []Element {
 	return r._elements
 }

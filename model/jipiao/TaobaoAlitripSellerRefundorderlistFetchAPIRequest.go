@@ -41,7 +41,7 @@ func (r TaobaoAlitripSellerRefundorderlistFetchAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 提取数据的开始时间
 func (r *TaobaoAlitripSellerRefundorderlistFetchAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -49,12 +49,12 @@ func (r *TaobaoAlitripSellerRefundorderlistFetchAPIRequest) SetStartDate(_startD
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoAlitripSellerRefundorderlistFetchAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 1：初始，2：接受，3：确认，4：失败，5：买家处理，6：卖家处理，7：等待小二回填，8：退款成功
 func (r *TaobaoAlitripSellerRefundorderlistFetchAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -62,12 +62,12 @@ func (r *TaobaoAlitripSellerRefundorderlistFetchAPIRequest) SetStatus(_status in
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoAlitripSellerRefundorderlistFetchAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 提取数据的结束时间
 func (r *TaobaoAlitripSellerRefundorderlistFetchAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -75,7 +75,7 @@ func (r *TaobaoAlitripSellerRefundorderlistFetchAPIRequest) SetEndDate(_endDate 
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoAlitripSellerRefundorderlistFetchAPIRequest) GetEndDate() string {
 	return r._endDate
 }

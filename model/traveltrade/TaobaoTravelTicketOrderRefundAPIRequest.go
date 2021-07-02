@@ -41,7 +41,7 @@ func (r TaobaoTravelTicketOrderRefundAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 下单时订单ID
 func (r *TaobaoTravelTicketOrderRefundAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -49,12 +49,12 @@ func (r *TaobaoTravelTicketOrderRefundAPIRequest) SetOrderId(_orderId int64) err
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoTravelTicketOrderRefundAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is RefundStatus Setter
+// SetRefundStatus is RefundStatus Setter
 // 退票结果；1: 退票成功；2: 退票失败
 func (r *TaobaoTravelTicketOrderRefundAPIRequest) SetRefundStatus(_refundStatus int64) error {
 	r._refundStatus = _refundStatus
@@ -62,12 +62,12 @@ func (r *TaobaoTravelTicketOrderRefundAPIRequest) SetRefundStatus(_refundStatus 
 	return nil
 }
 
-// Get RefundStatus Getter
+// GetRefundStatus RefundStatus Getter
 func (r TaobaoTravelTicketOrderRefundAPIRequest) GetRefundStatus() int64 {
 	return r._refundStatus
 }
 
-// Set is RefundFailureReason Setter
+// SetRefundFailureReason is RefundFailureReason Setter
 // 退票失败理由
 func (r *TaobaoTravelTicketOrderRefundAPIRequest) SetRefundFailureReason(_refundFailureReason string) error {
 	r._refundFailureReason = _refundFailureReason
@@ -75,7 +75,7 @@ func (r *TaobaoTravelTicketOrderRefundAPIRequest) SetRefundFailureReason(_refund
 	return nil
 }
 
-// Get RefundFailureReason Getter
+// GetRefundFailureReason RefundFailureReason Getter
 func (r TaobaoTravelTicketOrderRefundAPIRequest) GetRefundFailureReason() string {
 	return r._refundFailureReason
 }

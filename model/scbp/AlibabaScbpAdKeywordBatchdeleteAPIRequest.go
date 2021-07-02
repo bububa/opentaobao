@@ -37,7 +37,7 @@ func (r AlibabaScbpAdKeywordBatchdeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is KeywordIdList Setter
+// SetKeywordIdList is KeywordIdList Setter
 // 关键词Id列表
 func (r *AlibabaScbpAdKeywordBatchdeleteAPIRequest) SetKeywordIdList(_keywordIdList []int64) error {
 	r._keywordIdList = _keywordIdList
@@ -45,7 +45,7 @@ func (r *AlibabaScbpAdKeywordBatchdeleteAPIRequest) SetKeywordIdList(_keywordIdL
 	return nil
 }
 
-// Get KeywordIdList Getter
+// GetKeywordIdList KeywordIdList Getter
 func (r AlibabaScbpAdKeywordBatchdeleteAPIRequest) GetKeywordIdList() []int64 {
 	return r._keywordIdList
 }

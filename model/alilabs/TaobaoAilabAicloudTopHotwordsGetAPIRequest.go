@@ -41,7 +41,7 @@ func (r TaobaoAilabAicloudTopHotwordsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 三方用户id
 func (r *TaobaoAilabAicloudTopHotwordsGetAPIRequest) SetUserId(_userId string) error {
 	r._userId = _userId
@@ -49,12 +49,12 @@ func (r *TaobaoAilabAicloudTopHotwordsGetAPIRequest) SetUserId(_userId string) e
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r TaobaoAilabAicloudTopHotwordsGetAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// Set is BizClass Setter
+// SetBizClass is BizClass Setter
 // 业务类型
 func (r *TaobaoAilabAicloudTopHotwordsGetAPIRequest) SetBizClass(_bizClass string) error {
 	r._bizClass = _bizClass
@@ -62,12 +62,12 @@ func (r *TaobaoAilabAicloudTopHotwordsGetAPIRequest) SetBizClass(_bizClass strin
 	return nil
 }
 
-// Get BizClass Getter
+// GetBizClass BizClass Getter
 func (r TaobaoAilabAicloudTopHotwordsGetAPIRequest) GetBizClass() string {
 	return r._bizClass
 }
 
-// Set is Schema Setter
+// SetSchema is Schema Setter
 // schemeKey
 func (r *TaobaoAilabAicloudTopHotwordsGetAPIRequest) SetSchema(_schema string) error {
 	r._schema = _schema
@@ -75,7 +75,7 @@ func (r *TaobaoAilabAicloudTopHotwordsGetAPIRequest) SetSchema(_schema string) e
 	return nil
 }
 
-// Get Schema Getter
+// GetSchema Schema Getter
 func (r TaobaoAilabAicloudTopHotwordsGetAPIRequest) GetSchema() string {
 	return r._schema
 }

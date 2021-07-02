@@ -37,7 +37,7 @@ func (r TmallServicecenterWorkerCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WorkerDto Setter
+// SetWorkerDto is WorkerDto Setter
 // 11
 func (r *TmallServicecenterWorkerCreateAPIRequest) SetWorkerDto(_workerDto *WorkerDto) error {
 	r._workerDto = _workerDto
@@ -45,7 +45,7 @@ func (r *TmallServicecenterWorkerCreateAPIRequest) SetWorkerDto(_workerDto *Work
 	return nil
 }
 
-// Get WorkerDto Getter
+// GetWorkerDto WorkerDto Getter
 func (r TmallServicecenterWorkerCreateAPIRequest) GetWorkerDto() *WorkerDto {
 	return r._workerDto
 }

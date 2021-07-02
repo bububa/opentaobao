@@ -37,7 +37,7 @@ func (r AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest) GetAp
 	return params
 }
 
-// Set is MerchantInventoryQueryRequest Setter
+// SetMerchantInventoryQueryRequest is MerchantInventoryQueryRequest Setter
 // 商家仓库存查询请求参数
 func (r *AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest) SetMerchantInventoryQueryRequest(_merchantInventoryQueryRequest *MerchantInventoryQuery) error {
 	r._merchantInventoryQueryRequest = _merchantInventoryQueryRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest) SetM
 	return nil
 }
 
-// Get MerchantInventoryQueryRequest Getter
+// GetMerchantInventoryQueryRequest MerchantInventoryQueryRequest Getter
 func (r AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryAPIRequest) GetMerchantInventoryQueryRequest() *MerchantInventoryQuery {
 	return r._merchantInventoryQueryRequest
 }

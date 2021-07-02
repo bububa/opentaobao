@@ -37,7 +37,7 @@ func (r TmallServicecenterReservecondDeleteAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is ReserveOpenConditionDelDto Setter
+// SetReserveOpenConditionDelDto is ReserveOpenConditionDelDto Setter
 // 主动预约条件删除
 func (r *TmallServicecenterReservecondDeleteAPIRequest) SetReserveOpenConditionDelDto(_reserveOpenConditionDelDto *ReserveOpenConditionDelDto) error {
 	r._reserveOpenConditionDelDto = _reserveOpenConditionDelDto
@@ -45,7 +45,7 @@ func (r *TmallServicecenterReservecondDeleteAPIRequest) SetReserveOpenConditionD
 	return nil
 }
 
-// Get ReserveOpenConditionDelDto Getter
+// GetReserveOpenConditionDelDto ReserveOpenConditionDelDto Getter
 func (r TmallServicecenterReservecondDeleteAPIRequest) GetReserveOpenConditionDelDto() *ReserveOpenConditionDelDto {
 	return r._reserveOpenConditionDelDto
 }

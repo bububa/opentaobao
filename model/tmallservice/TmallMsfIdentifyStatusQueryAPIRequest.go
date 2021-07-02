@@ -39,7 +39,7 @@ func (r TmallMsfIdentifyStatusQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 天猫订单号
 func (r *TmallMsfIdentifyStatusQueryAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -47,12 +47,12 @@ func (r *TmallMsfIdentifyStatusQueryAPIRequest) SetOrderId(_orderId int64) error
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TmallMsfIdentifyStatusQueryAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is ServiceType Setter
+// SetServiceType is ServiceType Setter
 // 服务类型，0 家装的送货上门并安装 1 单向安装 2 建材的送货上门 3 建材的安装
 func (r *TmallMsfIdentifyStatusQueryAPIRequest) SetServiceType(_serviceType int64) error {
 	r._serviceType = _serviceType
@@ -60,7 +60,7 @@ func (r *TmallMsfIdentifyStatusQueryAPIRequest) SetServiceType(_serviceType int6
 	return nil
 }
 
-// Get ServiceType Getter
+// GetServiceType ServiceType Getter
 func (r TmallMsfIdentifyStatusQueryAPIRequest) GetServiceType() int64 {
 	return r._serviceType
 }

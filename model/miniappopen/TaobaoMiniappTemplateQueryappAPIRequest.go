@@ -41,7 +41,7 @@ func (r TaobaoMiniappTemplateQueryappAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小，最大50，按照小程序Id倒序
 func (r *TaobaoMiniappTemplateQueryappAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -49,12 +49,12 @@ func (r *TaobaoMiniappTemplateQueryappAPIRequest) SetPageSize(_pageSize int64) e
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoMiniappTemplateQueryappAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is TemplateId Setter
+// SetTemplateId is TemplateId Setter
 // 模板id
 func (r *TaobaoMiniappTemplateQueryappAPIRequest) SetTemplateId(_templateId string) error {
 	r._templateId = _templateId
@@ -62,12 +62,12 @@ func (r *TaobaoMiniappTemplateQueryappAPIRequest) SetTemplateId(_templateId stri
 	return nil
 }
 
-// Get TemplateId Getter
+// GetTemplateId TemplateId Getter
 func (r TaobaoMiniappTemplateQueryappAPIRequest) GetTemplateId() string {
 	return r._templateId
 }
 
-// Set is PageNum Setter
+// SetPageNum is PageNum Setter
 // 分页号,>=1
 func (r *TaobaoMiniappTemplateQueryappAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
@@ -75,7 +75,7 @@ func (r *TaobaoMiniappTemplateQueryappAPIRequest) SetPageNum(_pageNum int64) err
 	return nil
 }
 
-// Get PageNum Getter
+// GetPageNum PageNum Getter
 func (r TaobaoMiniappTemplateQueryappAPIRequest) GetPageNum() int64 {
 	return r._pageNum
 }

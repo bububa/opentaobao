@@ -39,7 +39,7 @@ func (r YunosServiceCmnsCoaDeviceGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 设备id类型,可以是uuid,imei,deviceToken,kp
 func (r *YunosServiceCmnsCoaDeviceGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -47,12 +47,12 @@ func (r *YunosServiceCmnsCoaDeviceGetAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r YunosServiceCmnsCoaDeviceGetAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is Value Setter
+// SetValue is Value Setter
 // 设备id
 func (r *YunosServiceCmnsCoaDeviceGetAPIRequest) SetValue(_value string) error {
 	r._value = _value
@@ -60,7 +60,7 @@ func (r *YunosServiceCmnsCoaDeviceGetAPIRequest) SetValue(_value string) error {
 	return nil
 }
 
-// Get Value Getter
+// GetValue Value Getter
 func (r YunosServiceCmnsCoaDeviceGetAPIRequest) GetValue() string {
 	return r._value
 }

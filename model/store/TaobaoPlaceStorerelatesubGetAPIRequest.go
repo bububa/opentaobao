@@ -43,7 +43,7 @@ func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店Id
 func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -51,12 +51,12 @@ func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetStoreId(_storeId int64) erro
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 查询语句
 func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetQuery(_query string) error {
 	r._query = _query
@@ -64,12 +64,12 @@ func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetQuery(_query string) error {
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetQuery() string {
 	return r._query
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 第几页
 func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -77,12 +77,12 @@ func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetPageNo(_pageNo int64) error 
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 页大小
 func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -90,7 +90,7 @@ func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetPageSize(_pageSize int64) er
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

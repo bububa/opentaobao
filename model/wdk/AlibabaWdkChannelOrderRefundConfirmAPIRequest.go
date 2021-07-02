@@ -37,7 +37,7 @@ func (r AlibabaWdkChannelOrderRefundConfirmAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is OrderRefundConfirmInfo Setter
+// SetOrderRefundConfirmInfo is OrderRefundConfirmInfo Setter
 // 退款确认信息
 func (r *AlibabaWdkChannelOrderRefundConfirmAPIRequest) SetOrderRefundConfirmInfo(_orderRefundConfirmInfo *OrderRefundConfirmInfo) error {
 	r._orderRefundConfirmInfo = _orderRefundConfirmInfo
@@ -45,7 +45,7 @@ func (r *AlibabaWdkChannelOrderRefundConfirmAPIRequest) SetOrderRefundConfirmInf
 	return nil
 }
 
-// Get OrderRefundConfirmInfo Getter
+// GetOrderRefundConfirmInfo OrderRefundConfirmInfo Getter
 func (r AlibabaWdkChannelOrderRefundConfirmAPIRequest) GetOrderRefundConfirmInfo() *OrderRefundConfirmInfo {
 	return r._orderRefundConfirmInfo
 }

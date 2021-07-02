@@ -51,7 +51,7 @@ func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is AlipayUserId Setter
+// SetAlipayUserId is AlipayUserId Setter
 // 支付宝用户 ID
 func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetAlipayUserId(_alipayUserId string) error {
 	r._alipayUserId = _alipayUserId
@@ -59,12 +59,12 @@ func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetAlipayUserId(_alipay
 	return nil
 }
 
-// Get AlipayUserId Getter
+// GetAlipayUserId AlipayUserId Getter
 func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetAlipayUserId() string {
 	return r._alipayUserId
 }
 
-// Set is IsvUserId Setter
+// SetIsvUserId is IsvUserId Setter
 // ISV 侧用户 ID
 func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetIsvUserId(_isvUserId string) error {
 	r._isvUserId = _isvUserId
@@ -72,12 +72,12 @@ func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetIsvUserId(_isvUserId
 	return nil
 }
 
-// Get IsvUserId Getter
+// GetIsvUserId IsvUserId Getter
 func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetIsvUserId() string {
 	return r._isvUserId
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单 ID
 func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -85,12 +85,12 @@ func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetOrderId(_orderId str
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 接种人姓名
 func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -98,12 +98,12 @@ func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetName(_name string) e
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 联系电话
 func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -111,12 +111,12 @@ func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetMobile(_mobile strin
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
-// Set is VaccinateDate Setter
+// SetVaccinateDate is VaccinateDate Setter
 // 接种日期
 func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetVaccinateDate(_vaccinateDate string) error {
 	r._vaccinateDate = _vaccinateDate
@@ -124,12 +124,12 @@ func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetVaccinateDate(_vacci
 	return nil
 }
 
-// Get VaccinateDate Getter
+// GetVaccinateDate VaccinateDate Getter
 func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetVaccinateDate() string {
 	return r._vaccinateDate
 }
 
-// Set is VaccinateTime Setter
+// SetVaccinateTime is VaccinateTime Setter
 // 接种时间
 func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetVaccinateTime(_vaccinateTime string) error {
 	r._vaccinateTime = _vaccinateTime
@@ -137,12 +137,12 @@ func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetVaccinateTime(_vacci
 	return nil
 }
 
-// Get VaccinateTime Getter
+// GetVaccinateTime VaccinateTime Getter
 func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetVaccinateTime() string {
 	return r._vaccinateTime
 }
 
-// Set is VaccineList Setter
+// SetVaccineList is VaccineList Setter
 // 接种的疫苗信息
 func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetVaccineList(_vaccineList []VaccineInfo) error {
 	r._vaccineList = _vaccineList
@@ -150,7 +150,7 @@ func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetVaccineList(_vaccine
 	return nil
 }
 
-// Get VaccineList Getter
+// GetVaccineList VaccineList Getter
 func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetVaccineList() []VaccineInfo {
 	return r._vaccineList
 }

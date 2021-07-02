@@ -41,7 +41,7 @@ func (r TmallServicecenterIdentifytaskCreateAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is WorkcardIds Setter
+// SetWorkcardIds is WorkcardIds Setter
 // 工单列表
 func (r *TmallServicecenterIdentifytaskCreateAPIRequest) SetWorkcardIds(_workcardIds []int64) error {
 	r._workcardIds = _workcardIds
@@ -49,12 +49,12 @@ func (r *TmallServicecenterIdentifytaskCreateAPIRequest) SetWorkcardIds(_workcar
 	return nil
 }
 
-// Get WorkcardIds Getter
+// GetWorkcardIds WorkcardIds Getter
 func (r TmallServicecenterIdentifytaskCreateAPIRequest) GetWorkcardIds() []int64 {
 	return r._workcardIds
 }
 
-// Set is Reassign Setter
+// SetReassign is Reassign Setter
 // 是否改派
 func (r *TmallServicecenterIdentifytaskCreateAPIRequest) SetReassign(_reassign bool) error {
 	r._reassign = _reassign
@@ -62,12 +62,12 @@ func (r *TmallServicecenterIdentifytaskCreateAPIRequest) SetReassign(_reassign b
 	return nil
 }
 
-// Get Reassign Getter
+// GetReassign Reassign Getter
 func (r TmallServicecenterIdentifytaskCreateAPIRequest) GetReassign() bool {
 	return r._reassign
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 服务商自定义的外部核销单id
 func (r *TmallServicecenterIdentifytaskCreateAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -75,7 +75,7 @@ func (r *TmallServicecenterIdentifytaskCreateAPIRequest) SetOuterId(_outerId str
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TmallServicecenterIdentifytaskCreateAPIRequest) GetOuterId() string {
 	return r._outerId
 }

@@ -37,7 +37,7 @@ func (r AlibabaScbpTargetAdPlanTagGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划Id
 func (r *AlibabaScbpTargetAdPlanTagGetAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -45,7 +45,7 @@ func (r *AlibabaScbpTargetAdPlanTagGetAPIRequest) SetCampaignId(_campaignId int6
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r AlibabaScbpTargetAdPlanTagGetAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }

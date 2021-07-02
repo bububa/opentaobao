@@ -43,7 +43,7 @@ func (r TaobaoSebpIsvUserSignAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserName Setter
+// SetUserName is UserName Setter
 // 淘宝账号
 func (r *TaobaoSebpIsvUserSignAPIRequest) SetUserName(_userName string) error {
 	r._userName = _userName
@@ -51,12 +51,12 @@ func (r *TaobaoSebpIsvUserSignAPIRequest) SetUserName(_userName string) error {
 	return nil
 }
 
-// Get UserName Getter
+// GetUserName UserName Getter
 func (r TaobaoSebpIsvUserSignAPIRequest) GetUserName() string {
 	return r._userName
 }
 
-// Set is Identity Setter
+// SetIdentity is Identity Setter
 // 身份证
 func (r *TaobaoSebpIsvUserSignAPIRequest) SetIdentity(_identity string) error {
 	r._identity = _identity
@@ -64,12 +64,12 @@ func (r *TaobaoSebpIsvUserSignAPIRequest) SetIdentity(_identity string) error {
 	return nil
 }
 
-// Get Identity Getter
+// GetIdentity Identity Getter
 func (r TaobaoSebpIsvUserSignAPIRequest) GetIdentity() string {
 	return r._identity
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 到期日期
 func (r *TaobaoSebpIsvUserSignAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -77,12 +77,12 @@ func (r *TaobaoSebpIsvUserSignAPIRequest) SetEndTime(_endTime string) error {
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoSebpIsvUserSignAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 签约日期
 func (r *TaobaoSebpIsvUserSignAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -90,7 +90,7 @@ func (r *TaobaoSebpIsvUserSignAPIRequest) SetStartTime(_startTime string) error 
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoSebpIsvUserSignAPIRequest) GetStartTime() string {
 	return r._startTime
 }

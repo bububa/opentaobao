@@ -39,7 +39,7 @@ func (r AlibabaAlinkDeviceInfoUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Uuid Setter
+// SetUuid is Uuid Setter
 // 设备id
 func (r *AlibabaAlinkDeviceInfoUpdateAPIRequest) SetUuid(_uuid string) error {
 	r._uuid = _uuid
@@ -47,12 +47,12 @@ func (r *AlibabaAlinkDeviceInfoUpdateAPIRequest) SetUuid(_uuid string) error {
 	return nil
 }
 
-// Get Uuid Getter
+// GetUuid Uuid Getter
 func (r AlibabaAlinkDeviceInfoUpdateAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// Set is NickName Setter
+// SetNickName is NickName Setter
 // 设备昵称
 func (r *AlibabaAlinkDeviceInfoUpdateAPIRequest) SetNickName(_nickName string) error {
 	r._nickName = _nickName
@@ -60,7 +60,7 @@ func (r *AlibabaAlinkDeviceInfoUpdateAPIRequest) SetNickName(_nickName string) e
 	return nil
 }
 
-// Get NickName Getter
+// GetNickName NickName Getter
 func (r AlibabaAlinkDeviceInfoUpdateAPIRequest) GetNickName() string {
 	return r._nickName
 }

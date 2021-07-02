@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentVideoSubmitauditresultAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is LicenseAuditResult Setter
+// SetLicenseAuditResult is LicenseAuditResult Setter
 // 审核结果，json格式
 func (r *YunosTvpubadminContentVideoSubmitauditresultAPIRequest) SetLicenseAuditResult(_licenseAuditResult string) error {
 	r._licenseAuditResult = _licenseAuditResult
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentVideoSubmitauditresultAPIRequest) SetLicenseAudit
 	return nil
 }
 
-// Get LicenseAuditResult Getter
+// GetLicenseAuditResult LicenseAuditResult Getter
 func (r YunosTvpubadminContentVideoSubmitauditresultAPIRequest) GetLicenseAuditResult() string {
 	return r._licenseAuditResult
 }

@@ -41,7 +41,7 @@ func (r YunosTvpubadminContentShowSetexemptauditAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ShowLongId Setter
+// SetShowLongId is ShowLongId Setter
 // 节目longid
 func (r *YunosTvpubadminContentShowSetexemptauditAPIRequest) SetShowLongId(_showLongId int64) error {
 	r._showLongId = _showLongId
@@ -49,12 +49,12 @@ func (r *YunosTvpubadminContentShowSetexemptauditAPIRequest) SetShowLongId(_show
 	return nil
 }
 
-// Get ShowLongId Getter
+// GetShowLongId ShowLongId Getter
 func (r YunosTvpubadminContentShowSetexemptauditAPIRequest) GetShowLongId() int64 {
 	return r._showLongId
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照id：1CIBN，2WASU
 func (r *YunosTvpubadminContentShowSetexemptauditAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -62,12 +62,12 @@ func (r *YunosTvpubadminContentShowSetexemptauditAPIRequest) SetLicense(_license
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminContentShowSetexemptauditAPIRequest) GetLicense() int64 {
 	return r._license
 }
 
-// Set is ExemptAudit Setter
+// SetExemptAudit is ExemptAudit Setter
 // 牌照免审：1-开启节目免审，2-关闭节目免审
 func (r *YunosTvpubadminContentShowSetexemptauditAPIRequest) SetExemptAudit(_exemptAudit int64) error {
 	r._exemptAudit = _exemptAudit
@@ -75,7 +75,7 @@ func (r *YunosTvpubadminContentShowSetexemptauditAPIRequest) SetExemptAudit(_exe
 	return nil
 }
 
-// Get ExemptAudit Getter
+// GetExemptAudit ExemptAudit Getter
 func (r YunosTvpubadminContentShowSetexemptauditAPIRequest) GetExemptAudit() int64 {
 	return r._exemptAudit
 }

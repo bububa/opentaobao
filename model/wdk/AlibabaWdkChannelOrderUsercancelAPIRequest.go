@@ -37,7 +37,7 @@ func (r AlibabaWdkChannelOrderUsercancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserCancelInfo Setter
+// SetUserCancelInfo is UserCancelInfo Setter
 // 取消信息
 func (r *AlibabaWdkChannelOrderUsercancelAPIRequest) SetUserCancelInfo(_userCancelInfo *OrderUserCancelInfo) error {
 	r._userCancelInfo = _userCancelInfo
@@ -45,7 +45,7 @@ func (r *AlibabaWdkChannelOrderUsercancelAPIRequest) SetUserCancelInfo(_userCanc
 	return nil
 }
 
-// Get UserCancelInfo Getter
+// GetUserCancelInfo UserCancelInfo Getter
 func (r AlibabaWdkChannelOrderUsercancelAPIRequest) GetUserCancelInfo() *OrderUserCancelInfo {
 	return r._userCancelInfo
 }

@@ -43,7 +43,7 @@ func (r AlibabaSeakingAuthmachineapiAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is IdentifyType Setter
+// SetIdentifyType is IdentifyType Setter
 // erp名称
 func (r *AlibabaSeakingAuthmachineapiAPIRequest) SetIdentifyType(_identifyType string) error {
 	r._identifyType = _identifyType
@@ -51,12 +51,12 @@ func (r *AlibabaSeakingAuthmachineapiAPIRequest) SetIdentifyType(_identifyType s
 	return nil
 }
 
-// Get IdentifyType Getter
+// GetIdentifyType IdentifyType Getter
 func (r AlibabaSeakingAuthmachineapiAPIRequest) GetIdentifyType() string {
 	return r._identifyType
 }
 
-// Set is Identifier Setter
+// SetIdentifier is Identifier Setter
 // erp用户id
 func (r *AlibabaSeakingAuthmachineapiAPIRequest) SetIdentifier(_identifier string) error {
 	r._identifier = _identifier
@@ -64,12 +64,12 @@ func (r *AlibabaSeakingAuthmachineapiAPIRequest) SetIdentifier(_identifier strin
 	return nil
 }
 
-// Get Identifier Getter
+// GetIdentifier Identifier Getter
 func (r AlibabaSeakingAuthmachineapiAPIRequest) GetIdentifier() string {
 	return r._identifier
 }
 
-// Set is SubIdentifyType Setter
+// SetSubIdentifyType is SubIdentifyType Setter
 // 店铺所在平台
 func (r *AlibabaSeakingAuthmachineapiAPIRequest) SetSubIdentifyType(_subIdentifyType string) error {
 	r._subIdentifyType = _subIdentifyType
@@ -77,12 +77,12 @@ func (r *AlibabaSeakingAuthmachineapiAPIRequest) SetSubIdentifyType(_subIdentify
 	return nil
 }
 
-// Get SubIdentifyType Getter
+// GetSubIdentifyType SubIdentifyType Getter
 func (r AlibabaSeakingAuthmachineapiAPIRequest) GetSubIdentifyType() string {
 	return r._subIdentifyType
 }
 
-// Set is SubIdentifier Setter
+// SetSubIdentifier is SubIdentifier Setter
 // 店铺id(ae为cn开头的店铺id, lazada为邮箱)
 func (r *AlibabaSeakingAuthmachineapiAPIRequest) SetSubIdentifier(_subIdentifier string) error {
 	r._subIdentifier = _subIdentifier
@@ -90,7 +90,7 @@ func (r *AlibabaSeakingAuthmachineapiAPIRequest) SetSubIdentifier(_subIdentifier
 	return nil
 }
 
-// Get SubIdentifier Getter
+// GetSubIdentifier SubIdentifier Getter
 func (r AlibabaSeakingAuthmachineapiAPIRequest) GetSubIdentifier() string {
 	return r._subIdentifier
 }

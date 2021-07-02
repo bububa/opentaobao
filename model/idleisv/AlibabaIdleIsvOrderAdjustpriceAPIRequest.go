@@ -37,7 +37,7 @@ func (r AlibabaIdleIsvOrderAdjustpriceAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamAdjustOrderPrice Setter
+// SetParamAdjustOrderPrice is ParamAdjustOrderPrice Setter
 // 输入参数
 func (r *AlibabaIdleIsvOrderAdjustpriceAPIRequest) SetParamAdjustOrderPrice(_paramAdjustOrderPrice *IsvAdjustOrderPriceDto) error {
 	r._paramAdjustOrderPrice = _paramAdjustOrderPrice
@@ -45,7 +45,7 @@ func (r *AlibabaIdleIsvOrderAdjustpriceAPIRequest) SetParamAdjustOrderPrice(_par
 	return nil
 }
 
-// Get ParamAdjustOrderPrice Getter
+// GetParamAdjustOrderPrice ParamAdjustOrderPrice Getter
 func (r AlibabaIdleIsvOrderAdjustpriceAPIRequest) GetParamAdjustOrderPrice() *IsvAdjustOrderPriceDto {
 	return r._paramAdjustOrderPrice
 }

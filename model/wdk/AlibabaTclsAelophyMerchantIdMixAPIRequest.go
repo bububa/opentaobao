@@ -37,7 +37,7 @@ func (r AlibabaTclsAelophyMerchantIdMixAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UnionUid Setter
+// SetUnionUid is UnionUid Setter
 // 商家用户id
 func (r *AlibabaTclsAelophyMerchantIdMixAPIRequest) SetUnionUid(_unionUid string) error {
 	r._unionUid = _unionUid
@@ -45,7 +45,7 @@ func (r *AlibabaTclsAelophyMerchantIdMixAPIRequest) SetUnionUid(_unionUid string
 	return nil
 }
 
-// Get UnionUid Getter
+// GetUnionUid UnionUid Getter
 func (r AlibabaTclsAelophyMerchantIdMixAPIRequest) GetUnionUid() string {
 	return r._unionUid
 }

@@ -39,7 +39,7 @@ func (r AlitripTripvpAgentOrderIssueAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商ID
 func (r *AlitripTripvpAgentOrderIssueAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -47,12 +47,12 @@ func (r *AlitripTripvpAgentOrderIssueAPIRequest) SetAgentId(_agentId int64) erro
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r AlitripTripvpAgentOrderIssueAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is IssueProOrderVo Setter
+// SetIssueProOrderVo is IssueProOrderVo Setter
 // 出货通知信息
 func (r *AlitripTripvpAgentOrderIssueAPIRequest) SetIssueProOrderVo(_issueProOrderVo *IssueProOrderVo) error {
 	r._issueProOrderVo = _issueProOrderVo
@@ -60,7 +60,7 @@ func (r *AlitripTripvpAgentOrderIssueAPIRequest) SetIssueProOrderVo(_issueProOrd
 	return nil
 }
 
-// Get IssueProOrderVo Getter
+// GetIssueProOrderVo IssueProOrderVo Getter
 func (r AlitripTripvpAgentOrderIssueAPIRequest) GetIssueProOrderVo() *IssueProOrderVo {
 	return r._issueProOrderVo
 }

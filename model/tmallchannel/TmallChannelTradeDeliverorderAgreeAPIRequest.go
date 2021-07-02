@@ -39,7 +39,7 @@ func (r TmallChannelTradeDeliverorderAgreeAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is MainDeliverOrderNo Setter
+// SetMainDeliverOrderNo is MainDeliverOrderNo Setter
 // 发货单号
 func (r *TmallChannelTradeDeliverorderAgreeAPIRequest) SetMainDeliverOrderNo(_mainDeliverOrderNo int64) error {
 	r._mainDeliverOrderNo = _mainDeliverOrderNo
@@ -47,12 +47,12 @@ func (r *TmallChannelTradeDeliverorderAgreeAPIRequest) SetMainDeliverOrderNo(_ma
 	return nil
 }
 
-// Get MainDeliverOrderNo Getter
+// GetMainDeliverOrderNo MainDeliverOrderNo Getter
 func (r TmallChannelTradeDeliverorderAgreeAPIRequest) GetMainDeliverOrderNo() int64 {
 	return r._mainDeliverOrderNo
 }
 
-// Set is OperateDesc Setter
+// SetOperateDesc is OperateDesc Setter
 // 同意理由
 func (r *TmallChannelTradeDeliverorderAgreeAPIRequest) SetOperateDesc(_operateDesc string) error {
 	r._operateDesc = _operateDesc
@@ -60,7 +60,7 @@ func (r *TmallChannelTradeDeliverorderAgreeAPIRequest) SetOperateDesc(_operateDe
 	return nil
 }
 
-// Get OperateDesc Getter
+// GetOperateDesc OperateDesc Getter
 func (r TmallChannelTradeDeliverorderAgreeAPIRequest) GetOperateDesc() string {
 	return r._operateDesc
 }

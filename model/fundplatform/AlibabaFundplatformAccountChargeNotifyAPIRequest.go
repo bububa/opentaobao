@@ -37,7 +37,7 @@ func (r AlibabaFundplatformAccountChargeNotifyAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is Request Setter
+// SetRequest is Request Setter
 // 入参对象
 func (r *AlibabaFundplatformAccountChargeNotifyAPIRequest) SetRequest(_request *AlibabaFundplatformAccountChargeNotifyStruct) error {
 	r._request = _request
@@ -45,7 +45,7 @@ func (r *AlibabaFundplatformAccountChargeNotifyAPIRequest) SetRequest(_request *
 	return nil
 }
 
-// Get Request Getter
+// GetRequest Request Getter
 func (r AlibabaFundplatformAccountChargeNotifyAPIRequest) GetRequest() *AlibabaFundplatformAccountChargeNotifyStruct {
 	return r._request
 }

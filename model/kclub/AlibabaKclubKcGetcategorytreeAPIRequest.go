@@ -39,7 +39,7 @@ func (r AlibabaKclubKcGetcategorytreeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TenantId Setter
+// SetTenantId is TenantId Setter
 // 租户id
 func (r *AlibabaKclubKcGetcategorytreeAPIRequest) SetTenantId(_tenantId int64) error {
 	r._tenantId = _tenantId
@@ -47,12 +47,12 @@ func (r *AlibabaKclubKcGetcategorytreeAPIRequest) SetTenantId(_tenantId int64) e
 	return nil
 }
 
-// Get TenantId Getter
+// GetTenantId TenantId Getter
 func (r AlibabaKclubKcGetcategorytreeAPIRequest) GetTenantId() int64 {
 	return r._tenantId
 }
 
-// Set is Auth Setter
+// SetAuth is Auth Setter
 // 鉴权参数
 func (r *AlibabaKclubKcGetcategorytreeAPIRequest) SetAuth(_auth *TenancyAuth) error {
 	r._auth = _auth
@@ -60,7 +60,7 @@ func (r *AlibabaKclubKcGetcategorytreeAPIRequest) SetAuth(_auth *TenancyAuth) er
 	return nil
 }
 
-// Get Auth Getter
+// GetAuth Auth Getter
 func (r AlibabaKclubKcGetcategorytreeAPIRequest) GetAuth() *TenancyAuth {
 	return r._auth
 }

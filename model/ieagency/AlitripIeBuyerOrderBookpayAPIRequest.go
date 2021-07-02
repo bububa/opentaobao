@@ -37,7 +37,7 @@ func (r AlitripIeBuyerOrderBookpayAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BookPayOrderParam Setter
+// SetBookPayOrderParam is BookPayOrderParam Setter
 // 生单支付请求参数
 func (r *AlitripIeBuyerOrderBookpayAPIRequest) SetBookPayOrderParam(_bookPayOrderParam *BookPayOrderRq) error {
 	r._bookPayOrderParam = _bookPayOrderParam
@@ -45,7 +45,7 @@ func (r *AlitripIeBuyerOrderBookpayAPIRequest) SetBookPayOrderParam(_bookPayOrde
 	return nil
 }
 
-// Get BookPayOrderParam Getter
+// GetBookPayOrderParam BookPayOrderParam Getter
 func (r AlitripIeBuyerOrderBookpayAPIRequest) GetBookPayOrderParam() *BookPayOrderRq {
 	return r._bookPayOrderParam
 }

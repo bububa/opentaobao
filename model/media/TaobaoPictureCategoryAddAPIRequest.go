@@ -39,7 +39,7 @@ func (r TaobaoPictureCategoryAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PictureCategoryName Setter
+// SetPictureCategoryName is PictureCategoryName Setter
 // 图片分类名称，最大长度20字符，中文字符算2个字符，不能为空
 func (r *TaobaoPictureCategoryAddAPIRequest) SetPictureCategoryName(_pictureCategoryName string) error {
 	r._pictureCategoryName = _pictureCategoryName
@@ -47,12 +47,12 @@ func (r *TaobaoPictureCategoryAddAPIRequest) SetPictureCategoryName(_pictureCate
 	return nil
 }
 
-// Get PictureCategoryName Getter
+// GetPictureCategoryName PictureCategoryName Getter
 func (r TaobaoPictureCategoryAddAPIRequest) GetPictureCategoryName() string {
 	return r._pictureCategoryName
 }
 
-// Set is ParentId Setter
+// SetParentId is ParentId Setter
 // 图片分类的父分类,一级分类的parent_id为0,二级分类的则为其父分类的picture_category_id
 func (r *TaobaoPictureCategoryAddAPIRequest) SetParentId(_parentId int64) error {
 	r._parentId = _parentId
@@ -60,7 +60,7 @@ func (r *TaobaoPictureCategoryAddAPIRequest) SetParentId(_parentId int64) error 
 	return nil
 }
 
-// Get ParentId Getter
+// GetParentId ParentId Getter
 func (r TaobaoPictureCategoryAddAPIRequest) GetParentId() int64 {
 	return r._parentId
 }

@@ -39,7 +39,7 @@ func (r AlibabaSellerCouponAuthVerifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ServiceCode Setter
+// SetServiceCode is ServiceCode Setter
 // 服务代码
 func (r *AlibabaSellerCouponAuthVerifyAPIRequest) SetServiceCode(_serviceCode string) error {
 	r._serviceCode = _serviceCode
@@ -47,12 +47,12 @@ func (r *AlibabaSellerCouponAuthVerifyAPIRequest) SetServiceCode(_serviceCode st
 	return nil
 }
 
-// Get ServiceCode Getter
+// GetServiceCode ServiceCode Getter
 func (r AlibabaSellerCouponAuthVerifyAPIRequest) GetServiceCode() string {
 	return r._serviceCode
 }
 
-// Set is CouponSeqNumber Setter
+// SetCouponSeqNumber is CouponSeqNumber Setter
 // 卡券验证码
 func (r *AlibabaSellerCouponAuthVerifyAPIRequest) SetCouponSeqNumber(_couponSeqNumber string) error {
 	r._couponSeqNumber = _couponSeqNumber
@@ -60,7 +60,7 @@ func (r *AlibabaSellerCouponAuthVerifyAPIRequest) SetCouponSeqNumber(_couponSeqN
 	return nil
 }
 
-// Get CouponSeqNumber Getter
+// GetCouponSeqNumber CouponSeqNumber Getter
 func (r AlibabaSellerCouponAuthVerifyAPIRequest) GetCouponSeqNumber() string {
 	return r._couponSeqNumber
 }

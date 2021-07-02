@@ -41,7 +41,7 @@ func (r YoukuOttDvbRenewFeedbackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *YoukuOttDvbRenewFeedbackAPIRequest) SetOrderId(_orderId int64) error {
 	r._orderId = _orderId
@@ -49,12 +49,12 @@ func (r *YoukuOttDvbRenewFeedbackAPIRequest) SetOrderId(_orderId int64) error {
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r YoukuOttDvbRenewFeedbackAPIRequest) GetOrderId() int64 {
 	return r._orderId
 }
 
-// Set is IsSuccess Setter
+// SetIsSuccess is IsSuccess Setter
 // 是否成功
 func (r *YoukuOttDvbRenewFeedbackAPIRequest) SetIsSuccess(_isSuccess bool) error {
 	r._isSuccess = _isSuccess
@@ -62,12 +62,12 @@ func (r *YoukuOttDvbRenewFeedbackAPIRequest) SetIsSuccess(_isSuccess bool) error
 	return nil
 }
 
-// Get IsSuccess Getter
+// GetIsSuccess IsSuccess Getter
 func (r YoukuOttDvbRenewFeedbackAPIRequest) GetIsSuccess() bool {
 	return r._isSuccess
 }
 
-// Set is FailReason Setter
+// SetFailReason is FailReason Setter
 // 失败原因（可无）
 func (r *YoukuOttDvbRenewFeedbackAPIRequest) SetFailReason(_failReason string) error {
 	r._failReason = _failReason
@@ -75,7 +75,7 @@ func (r *YoukuOttDvbRenewFeedbackAPIRequest) SetFailReason(_failReason string) e
 	return nil
 }
 
-// Get FailReason Getter
+// GetFailReason FailReason Getter
 func (r YoukuOttDvbRenewFeedbackAPIRequest) GetFailReason() string {
 	return r._failReason
 }

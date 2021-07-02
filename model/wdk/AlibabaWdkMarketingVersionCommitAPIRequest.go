@@ -37,7 +37,7 @@ func (r AlibabaWdkMarketingVersionCommitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 版本号提交参数
 func (r *AlibabaWdkMarketingVersionCommitAPIRequest) SetParam(_param *SeasonVersionCommitParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaWdkMarketingVersionCommitAPIRequest) SetParam(_param *SeasonVers
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaWdkMarketingVersionCommitAPIRequest) GetParam() *SeasonVersionCommitParam {
 	return r._param
 }

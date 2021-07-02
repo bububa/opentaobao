@@ -39,7 +39,7 @@ func (r AlitripMerchantGalaxyMemberRegisterAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is TenantKey Setter
+// SetTenantKey is TenantKey Setter
 // 租户身份信息
 func (r *AlitripMerchantGalaxyMemberRegisterAPIRequest) SetTenantKey(_tenantKey string) error {
 	r._tenantKey = _tenantKey
@@ -47,12 +47,12 @@ func (r *AlitripMerchantGalaxyMemberRegisterAPIRequest) SetTenantKey(_tenantKey 
 	return nil
 }
 
-// Get TenantKey Getter
+// GetTenantKey TenantKey Getter
 func (r AlitripMerchantGalaxyMemberRegisterAPIRequest) GetTenantKey() string {
 	return r._tenantKey
 }
 
-// Set is MemberParam Setter
+// SetMemberParam is MemberParam Setter
 // 注册入参
 func (r *AlitripMerchantGalaxyMemberRegisterAPIRequest) SetMemberParam(_memberParam *MemberParam) error {
 	r._memberParam = _memberParam
@@ -60,7 +60,7 @@ func (r *AlitripMerchantGalaxyMemberRegisterAPIRequest) SetMemberParam(_memberPa
 	return nil
 }
 
-// Get MemberParam Getter
+// GetMemberParam MemberParam Getter
 func (r AlitripMerchantGalaxyMemberRegisterAPIRequest) GetMemberParam() *MemberParam {
 	return r._memberParam
 }

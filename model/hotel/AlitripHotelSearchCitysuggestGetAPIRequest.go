@@ -39,7 +39,7 @@ func (r AlitripHotelSearchCitysuggestGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is KeyWords Setter
+// SetKeyWords is KeyWords Setter
 // 用户输入的词
 func (r *AlitripHotelSearchCitysuggestGetAPIRequest) SetKeyWords(_keyWords string) error {
 	r._keyWords = _keyWords
@@ -47,12 +47,12 @@ func (r *AlitripHotelSearchCitysuggestGetAPIRequest) SetKeyWords(_keyWords strin
 	return nil
 }
 
-// Get KeyWords Getter
+// GetKeyWords KeyWords Getter
 func (r AlitripHotelSearchCitysuggestGetAPIRequest) GetKeyWords() string {
 	return r._keyWords
 }
 
-// Set is UserId Setter
+// SetUserId is UserId Setter
 // 用户id
 func (r *AlitripHotelSearchCitysuggestGetAPIRequest) SetUserId(_userId int64) error {
 	r._userId = _userId
@@ -60,7 +60,7 @@ func (r *AlitripHotelSearchCitysuggestGetAPIRequest) SetUserId(_userId int64) er
 	return nil
 }
 
-// Get UserId Getter
+// GetUserId UserId Getter
 func (r AlitripHotelSearchCitysuggestGetAPIRequest) GetUserId() int64 {
 	return r._userId
 }

@@ -39,7 +39,7 @@ func (r TmallHkOrderClearanceQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizOrderId Setter
+// SetBizOrderId is BizOrderId Setter
 // 交易主订单号
 func (r *TmallHkOrderClearanceQueryAPIRequest) SetBizOrderId(_bizOrderId int64) error {
 	r._bizOrderId = _bizOrderId
@@ -47,12 +47,12 @@ func (r *TmallHkOrderClearanceQueryAPIRequest) SetBizOrderId(_bizOrderId int64) 
 	return nil
 }
 
-// Get BizOrderId Getter
+// GetBizOrderId BizOrderId Getter
 func (r TmallHkOrderClearanceQueryAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
 }
 
-// Set is BusinessSymbol Setter
+// SetBusinessSymbol is BusinessSymbol Setter
 // 调用方业务身份(由国际侧配置提供给调用方)
 func (r *TmallHkOrderClearanceQueryAPIRequest) SetBusinessSymbol(_businessSymbol string) error {
 	r._businessSymbol = _businessSymbol
@@ -60,7 +60,7 @@ func (r *TmallHkOrderClearanceQueryAPIRequest) SetBusinessSymbol(_businessSymbol
 	return nil
 }
 
-// Get BusinessSymbol Getter
+// GetBusinessSymbol BusinessSymbol Getter
 func (r TmallHkOrderClearanceQueryAPIRequest) GetBusinessSymbol() string {
 	return r._businessSymbol
 }

@@ -41,7 +41,7 @@ func (r AlibabaSecurityJaqAppRiskScanAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppInfo Setter
+// SetAppInfo is AppInfo Setter
 // 应用信息
 func (r *AlibabaSecurityJaqAppRiskScanAPIRequest) SetAppInfo(_appInfo *ScanAppInfo) error {
 	r._appInfo = _appInfo
@@ -49,12 +49,12 @@ func (r *AlibabaSecurityJaqAppRiskScanAPIRequest) SetAppInfo(_appInfo *ScanAppIn
 	return nil
 }
 
-// Get AppInfo Getter
+// GetAppInfo AppInfo Getter
 func (r AlibabaSecurityJaqAppRiskScanAPIRequest) GetAppInfo() *ScanAppInfo {
 	return r._appInfo
 }
 
-// Set is ScanTypes Setter
+// SetScanTypes is ScanTypes Setter
 // 扫描类型：vuln-漏洞扫描 malware-恶意代码检测 fake-仿冒监测 plugin-插件扫描 注: dataType为2时 不支持 仿冒监测
 func (r *AlibabaSecurityJaqAppRiskScanAPIRequest) SetScanTypes(_scanTypes []string) error {
 	r._scanTypes = _scanTypes
@@ -62,12 +62,12 @@ func (r *AlibabaSecurityJaqAppRiskScanAPIRequest) SetScanTypes(_scanTypes []stri
 	return nil
 }
 
-// Get ScanTypes Getter
+// GetScanTypes ScanTypes Getter
 func (r AlibabaSecurityJaqAppRiskScanAPIRequest) GetScanTypes() []string {
 	return r._scanTypes
 }
 
-// Set is ExtParam Setter
+// SetExtParam is ExtParam Setter
 // 额外的信息，根据具体业务定
 func (r *AlibabaSecurityJaqAppRiskScanAPIRequest) SetExtParam(_extParam string) error {
 	r._extParam = _extParam
@@ -75,7 +75,7 @@ func (r *AlibabaSecurityJaqAppRiskScanAPIRequest) SetExtParam(_extParam string) 
 	return nil
 }
 
-// Get ExtParam Getter
+// GetExtParam ExtParam Getter
 func (r AlibabaSecurityJaqAppRiskScanAPIRequest) GetExtParam() string {
 	return r._extParam
 }

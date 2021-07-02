@@ -41,7 +41,7 @@ func (r TaobaoOpenimTribeUnsetmanagerAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is User Setter
+// SetUser is User Setter
 // 用户信息
 func (r *TaobaoOpenimTribeUnsetmanagerAPIRequest) SetUser(_user *OpenImUser) error {
 	r._user = _user
@@ -49,12 +49,12 @@ func (r *TaobaoOpenimTribeUnsetmanagerAPIRequest) SetUser(_user *OpenImUser) err
 	return nil
 }
 
-// Get User Getter
+// GetUser User Getter
 func (r TaobaoOpenimTribeUnsetmanagerAPIRequest) GetUser() *OpenImUser {
 	return r._user
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 群id
 func (r *TaobaoOpenimTribeUnsetmanagerAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -62,12 +62,12 @@ func (r *TaobaoOpenimTribeUnsetmanagerAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoOpenimTribeUnsetmanagerAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is Member Setter
+// SetMember is Member Setter
 // 用户信息
 func (r *TaobaoOpenimTribeUnsetmanagerAPIRequest) SetMember(_member *OpenImUser) error {
 	r._member = _member
@@ -75,7 +75,7 @@ func (r *TaobaoOpenimTribeUnsetmanagerAPIRequest) SetMember(_member *OpenImUser)
 	return nil
 }
 
-// Get Member Getter
+// GetMember Member Getter
 func (r TaobaoOpenimTribeUnsetmanagerAPIRequest) GetMember() *OpenImUser {
 	return r._member
 }

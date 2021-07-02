@@ -37,7 +37,7 @@ func (r AlibabaLstLogisticsNotraceSendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参
 func (r *AlibabaLstLogisticsNotraceSendAPIRequest) SetParam(_param *SendDummyOrderParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaLstLogisticsNotraceSendAPIRequest) SetParam(_param *SendDummyOrd
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaLstLogisticsNotraceSendAPIRequest) GetParam() *SendDummyOrderParam {
 	return r._param
 }

@@ -41,7 +41,7 @@ func (r TmallMsfVerifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 111
 func (r *TmallMsfVerifyAPIRequest) SetShopId(_shopId string) error {
 	r._shopId = _shopId
@@ -49,12 +49,12 @@ func (r *TmallMsfVerifyAPIRequest) SetShopId(_shopId string) error {
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r TmallMsfVerifyAPIRequest) GetShopId() string {
 	return r._shopId
 }
 
-// Set is BizType Setter
+// SetBizType is BizType Setter
 // 111
 func (r *TmallMsfVerifyAPIRequest) SetBizType(_bizType string) error {
 	r._bizType = _bizType
@@ -62,12 +62,12 @@ func (r *TmallMsfVerifyAPIRequest) SetBizType(_bizType string) error {
 	return nil
 }
 
-// Get BizType Getter
+// GetBizType BizType Getter
 func (r TmallMsfVerifyAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
-// Set is Code Setter
+// SetCode is Code Setter
 // 111
 func (r *TmallMsfVerifyAPIRequest) SetCode(_code string) error {
 	r._code = _code
@@ -75,7 +75,7 @@ func (r *TmallMsfVerifyAPIRequest) SetCode(_code string) error {
 	return nil
 }
 
-// Get Code Getter
+// GetCode Code Getter
 func (r TmallMsfVerifyAPIRequest) GetCode() string {
 	return r._code
 }

@@ -37,7 +37,7 @@ func (r AliexpressInteractiveTaskDeliveryQueryAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is RequestDto Setter
+// SetRequestDto is RequestDto Setter
 // 返回结果
 func (r *AliexpressInteractiveTaskDeliveryQueryAPIRequest) SetRequestDto(_requestDto *QueryDeliveryRequestDto) error {
 	r._requestDto = _requestDto
@@ -45,7 +45,7 @@ func (r *AliexpressInteractiveTaskDeliveryQueryAPIRequest) SetRequestDto(_reques
 	return nil
 }
 
-// Get RequestDto Getter
+// GetRequestDto RequestDto Getter
 func (r AliexpressInteractiveTaskDeliveryQueryAPIRequest) GetRequestDto() *QueryDeliveryRequestDto {
 	return r._requestDto
 }

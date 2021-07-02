@@ -51,7 +51,7 @@ func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is OutBizNo Setter
+// SetOutBizNo is OutBizNo Setter
 // 外部业务号，唯一
 func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetOutBizNo(_outBizNo string) error {
 	r._outBizNo = _outBizNo
@@ -59,12 +59,12 @@ func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetOutBizNo(_outBizNo str
 	return nil
 }
 
-// Get OutBizNo Getter
+// GetOutBizNo OutBizNo Getter
 func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetOutBizNo() string {
 	return r._outBizNo
 }
 
-// Set is BizSource Setter
+// SetBizSource is BizSource Setter
 // 业务来源
 func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetBizSource(_bizSource string) error {
 	r._bizSource = _bizSource
@@ -72,12 +72,12 @@ func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetBizSource(_bizSource s
 	return nil
 }
 
-// Get BizSource Getter
+// GetBizSource BizSource Getter
 func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetBizSource() string {
 	return r._bizSource
 }
 
-// Set is SpNo Setter
+// SetSpNo is SpNo Setter
 // 标准产品ID
 func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetSpNo(_spNo string) error {
 	r._spNo = _spNo
@@ -85,12 +85,12 @@ func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetSpNo(_spNo string) err
 	return nil
 }
 
-// Get SpNo Getter
+// GetSpNo SpNo Getter
 func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetSpNo() string {
 	return r._spNo
 }
 
-// Set is AttachmentKey Setter
+// SetAttachmentKey is AttachmentKey Setter
 // 文件名,必须带后缀名。例如：test.png,test.doc,test.pdf
 func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetAttachmentKey(_attachmentKey string) error {
 	r._attachmentKey = _attachmentKey
@@ -98,12 +98,12 @@ func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetAttachmentKey(_attachm
 	return nil
 }
 
-// Get AttachmentKey Getter
+// GetAttachmentKey AttachmentKey Getter
 func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetAttachmentKey() string {
 	return r._attachmentKey
 }
 
-// Set is AttachmentByte Setter
+// SetAttachmentByte is AttachmentByte Setter
 // 文件字节数组
 func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetAttachmentByte(_attachmentByte *model.File) error {
 	r._attachmentByte = _attachmentByte
@@ -111,12 +111,12 @@ func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetAttachmentByte(_attach
 	return nil
 }
 
-// Get AttachmentByte Getter
+// GetAttachmentByte AttachmentByte Getter
 func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetAttachmentByte() *model.File {
 	return r._attachmentByte
 }
 
-// Set is Base64Bytes Setter
+// SetBase64Bytes is Base64Bytes Setter
 // 是否base格式的字节数组
 func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetBase64Bytes(_base64Bytes bool) error {
 	r._base64Bytes = _base64Bytes
@@ -124,12 +124,12 @@ func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetBase64Bytes(_base64Byt
 	return nil
 }
 
-// Get Base64Bytes Getter
+// GetBase64Bytes Base64Bytes Getter
 func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetBase64Bytes() bool {
 	return r._base64Bytes
 }
 
-// Set is PolicyBizNo Setter
+// SetPolicyBizNo is PolicyBizNo Setter
 // 保单外部业务单号
 func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetPolicyBizNo(_policyBizNo string) error {
 	r._policyBizNo = _policyBizNo
@@ -137,12 +137,12 @@ func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetPolicyBizNo(_policyBiz
 	return nil
 }
 
-// Get PolicyBizNo Getter
+// GetPolicyBizNo PolicyBizNo Getter
 func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetPolicyBizNo() string {
 	return r._policyBizNo
 }
 
-// Set is UploadUser Setter
+// SetUploadUser is UploadUser Setter
 // 上传者用户标识
 func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetUploadUser(_uploadUser string) error {
 	r._uploadUser = _uploadUser
@@ -150,7 +150,7 @@ func (r *AlipayBaoxianClaimUploadattachmentAPIRequest) SetUploadUser(_uploadUser
 	return nil
 }
 
-// Get UploadUser Getter
+// GetUploadUser UploadUser Getter
 func (r AlipayBaoxianClaimUploadattachmentAPIRequest) GetUploadUser() string {
 	return r._uploadUser
 }

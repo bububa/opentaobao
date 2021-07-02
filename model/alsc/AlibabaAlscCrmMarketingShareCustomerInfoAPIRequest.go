@@ -53,7 +53,7 @@ func (r AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is ActivityId Setter
+// SetActivityId is ActivityId Setter
 // 活动id
 func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetActivityId(_activityId string) error {
 	r._activityId = _activityId
@@ -61,12 +61,12 @@ func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetActivityId(_acti
 	return nil
 }
 
-// Get ActivityId Getter
+// GetActivityId ActivityId Getter
 func (r AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) GetActivityId() string {
 	return r._activityId
 }
 
-// Set is CustomerId Setter
+// SetCustomerId is CustomerId Setter
 // 会员id
 func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetCustomerId(_customerId string) error {
 	r._customerId = _customerId
@@ -74,12 +74,12 @@ func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetCustomerId(_cust
 	return nil
 }
 
-// Get CustomerId Getter
+// GetCustomerId CustomerId Getter
 func (r AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) GetCustomerId() string {
 	return r._customerId
 }
 
-// Set is BrandId Setter
+// SetBrandId is BrandId Setter
 // 品牌id(brandId和outerBrandId必传其一)
 func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetBrandId(_brandId string) error {
 	r._brandId = _brandId
@@ -87,12 +87,12 @@ func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetBrandId(_brandId
 	return nil
 }
 
-// Get BrandId Getter
+// GetBrandId BrandId Getter
 func (r AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) GetBrandId() string {
 	return r._brandId
 }
 
-// Set is OperatorId Setter
+// SetOperatorId is OperatorId Setter
 // 操作人
 func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetOperatorId(_operatorId string) error {
 	r._operatorId = _operatorId
@@ -100,12 +100,12 @@ func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetOperatorId(_oper
 	return nil
 }
 
-// Get OperatorId Getter
+// GetOperatorId OperatorId Getter
 func (r AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) GetOperatorId() string {
 	return r._operatorId
 }
 
-// Set is OperatorName Setter
+// SetOperatorName is OperatorName Setter
 // 操作人姓名
 func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetOperatorName(_operatorName string) error {
 	r._operatorName = _operatorName
@@ -113,12 +113,12 @@ func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetOperatorName(_op
 	return nil
 }
 
-// Get OperatorName Getter
+// GetOperatorName OperatorName Getter
 func (r AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) GetOperatorName() string {
 	return r._operatorName
 }
 
-// Set is OutBrandId Setter
+// SetOutBrandId is OutBrandId Setter
 // 外部品牌id
 func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetOutBrandId(_outBrandId string) error {
 	r._outBrandId = _outBrandId
@@ -126,12 +126,12 @@ func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetOutBrandId(_outB
 	return nil
 }
 
-// Get OutBrandId Getter
+// GetOutBrandId OutBrandId Getter
 func (r AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) GetOutBrandId() string {
 	return r._outBrandId
 }
 
-// Set is OutShopId Setter
+// SetOutShopId is OutShopId Setter
 // 外部门店id
 func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetOutShopId(_outShopId string) error {
 	r._outShopId = _outShopId
@@ -139,12 +139,12 @@ func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetOutShopId(_outSh
 	return nil
 }
 
-// Get OutShopId Getter
+// GetOutShopId OutShopId Getter
 func (r AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) GetOutShopId() string {
 	return r._outShopId
 }
 
-// Set is RequestId Setter
+// SetRequestId is RequestId Setter
 // 请求幂等id
 func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetRequestId(_requestId string) error {
 	r._requestId = _requestId
@@ -152,12 +152,12 @@ func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetRequestId(_reque
 	return nil
 }
 
-// Get RequestId Getter
+// GetRequestId RequestId Getter
 func (r AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) GetRequestId() string {
 	return r._requestId
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 门店id
 func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetShopId(_shopId string) error {
 	r._shopId = _shopId
@@ -165,7 +165,7 @@ func (r *AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) SetShopId(_shopId s
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r AlibabaAlscCrmMarketingShareCustomerInfoAPIRequest) GetShopId() string {
 	return r._shopId
 }

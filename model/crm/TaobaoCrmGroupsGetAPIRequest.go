@@ -39,7 +39,7 @@ func (r TaobaoCrmGroupsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页显示的记录数，其最大值不能超过100条，最小值为1，默认20条
 func (r *TaobaoCrmGroupsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -47,12 +47,12 @@ func (r *TaobaoCrmGroupsGetAPIRequest) SetPageSize(_pageSize int64) error {
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoCrmGroupsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 显示第几页的分组，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页码为1
 func (r *TaobaoCrmGroupsGetAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -60,7 +60,7 @@ func (r *TaobaoCrmGroupsGetAPIRequest) SetCurrentPage(_currentPage int64) error 
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r TaobaoCrmGroupsGetAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }

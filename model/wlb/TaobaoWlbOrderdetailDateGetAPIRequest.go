@@ -43,7 +43,7 @@ func (r TaobaoWlbOrderdetailDateGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // 创建时间起始
 func (r *TaobaoWlbOrderdetailDateGetAPIRequest) SetStartTime(_startTime string) error {
 	r._startTime = _startTime
@@ -51,12 +51,12 @@ func (r *TaobaoWlbOrderdetailDateGetAPIRequest) SetStartTime(_startTime string) 
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoWlbOrderdetailDateGetAPIRequest) GetStartTime() string {
 	return r._startTime
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // 创建时间结束
 func (r *TaobaoWlbOrderdetailDateGetAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
@@ -64,12 +64,12 @@ func (r *TaobaoWlbOrderdetailDateGetAPIRequest) SetEndTime(_endTime string) erro
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoWlbOrderdetailDateGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小
 func (r *TaobaoWlbOrderdetailDateGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -77,12 +77,12 @@ func (r *TaobaoWlbOrderdetailDateGetAPIRequest) SetPageSize(_pageSize int64) err
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoWlbOrderdetailDateGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 分页下标
 func (r *TaobaoWlbOrderdetailDateGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -90,7 +90,7 @@ func (r *TaobaoWlbOrderdetailDateGetAPIRequest) SetPageNo(_pageNo int64) error {
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r TaobaoWlbOrderdetailDateGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }

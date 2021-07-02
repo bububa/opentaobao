@@ -37,7 +37,7 @@ func (r TaobaoNlpSimilarityAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Texts Setter
+// SetTexts is Texts Setter
 // 多文本内容
 func (r *TaobaoNlpSimilarityAPIRequest) SetTexts(_texts *Texts) error {
 	r._texts = _texts
@@ -45,7 +45,7 @@ func (r *TaobaoNlpSimilarityAPIRequest) SetTexts(_texts *Texts) error {
 	return nil
 }
 
-// Get Texts Getter
+// GetTexts Texts Getter
 func (r TaobaoNlpSimilarityAPIRequest) GetTexts() *Texts {
 	return r._texts
 }

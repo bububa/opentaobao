@@ -69,7 +69,7 @@ func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Memo Setter
+// SetMemo is Memo Setter
 // 备注
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
@@ -77,12 +77,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetMemo(_memo string) erro
 	return nil
 }
 
-// Get Memo Getter
+// GetMemo Memo Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetMemo() string {
 	return r._memo
 }
 
-// Set is OutId Setter
+// SetOutId is OutId Setter
 // 商家订单号
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetOutId(_outId string) error {
 	r._outId = _outId
@@ -90,12 +90,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetOutId(_outId string) er
 	return nil
 }
 
-// Get OutId Getter
+// GetOutId OutId Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetOutId() string {
 	return r._outId
 }
 
-// Set is RoomNo Setter
+// SetRoomNo is RoomNo Setter
 // 入住房间号
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetRoomNo(_roomNo string) error {
 	r._roomNo = _roomNo
@@ -103,12 +103,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetRoomNo(_roomNo string) 
 	return nil
 }
 
-// Get RoomNo Getter
+// GetRoomNo RoomNo Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetRoomNo() string {
 	return r._roomNo
 }
 
-// Set is OtherFee Setter
+// SetOtherFee is OtherFee Setter
 // 杂费总额(不能为负数)
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetOtherFee(_otherFee int64) error {
 	r._otherFee = _otherFee
@@ -116,12 +116,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetOtherFee(_otherFee int6
 	return nil
 }
 
-// Get OtherFee Getter
+// GetOtherFee OtherFee Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetOtherFee() int64 {
 	return r._otherFee
 }
 
-// Set is TotalRoomFee Setter
+// SetTotalRoomFee is TotalRoomFee Setter
 // 房费总额(必须大于0)。结账时请按订单原价发起结账卖家优惠由飞猪平台发起扣减
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetTotalRoomFee(_totalRoomFee int64) error {
 	r._totalRoomFee = _totalRoomFee
@@ -129,12 +129,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetTotalRoomFee(_totalRoom
 	return nil
 }
 
-// Get TotalRoomFee Getter
+// GetTotalRoomFee TotalRoomFee Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetTotalRoomFee() int64 {
 	return r._totalRoomFee
 }
 
-// Set is DailyPriceInfo Setter
+// SetDailyPriceInfo is DailyPriceInfo Setter
 // 每日房价,json格式(包含日期，价格，税费，低价加价前费用等),如果房价和在阿里旅行下单时发生了变化，必须设置该字段.用于更新阿里旅行端的房价信息,涉及到对用户的优惠信息处理等环节(多间房的时候dailyPriceInfo留空)
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetDailyPriceInfo(_dailyPriceInfo string) error {
 	r._dailyPriceInfo = _dailyPriceInfo
@@ -142,12 +142,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetDailyPriceInfo(_dailyPr
 	return nil
 }
 
-// Get DailyPriceInfo Getter
+// GetDailyPriceInfo DailyPriceInfo Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetDailyPriceInfo() string {
 	return r._dailyPriceInfo
 }
 
-// Set is CheckOut Setter
+// SetCheckOut is CheckOut Setter
 // 实际离店日期，用于校验总房费收取
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetCheckOut(_checkOut string) error {
 	r._checkOut = _checkOut
@@ -155,12 +155,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetCheckOut(_checkOut stri
 	return nil
 }
 
-// Get CheckOut Getter
+// GetCheckOut CheckOut Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetCheckOut() string {
 	return r._checkOut
 }
 
-// Set is Tid Setter
+// SetTid is Tid Setter
 // 淘宝订单id,必须填写
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetTid(_tid int64) error {
 	r._tid = _tid
@@ -168,12 +168,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetTid(_tid int64) error {
 	return nil
 }
 
-// Get Tid Getter
+// GetTid Tid Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// Set is OtherFeeDetail Setter
+// SetOtherFeeDetail is OtherFeeDetail Setter
 // 杂费明细,如果otherFee>0则该字段必须设置,并和杂费金额相吻合
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetOtherFeeDetail(_otherFeeDetail string) error {
 	r._otherFeeDetail = _otherFeeDetail
@@ -181,12 +181,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetOtherFeeDetail(_otherFe
 	return nil
 }
 
-// Get OtherFeeDetail Getter
+// GetOtherFeeDetail OtherFeeDetail Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetOtherFeeDetail() string {
 	return r._otherFeeDetail
 }
 
-// Set is RoomSettleInfoList Setter
+// SetRoomSettleInfoList is RoomSettleInfoList Setter
 // 单间房明细
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetRoomSettleInfoList(_roomSettleInfoList []RoomSettleInfo) error {
 	r._roomSettleInfoList = _roomSettleInfoList
@@ -194,12 +194,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetRoomSettleInfoList(_roo
 	return nil
 }
 
-// Get RoomSettleInfoList Getter
+// GetRoomSettleInfoList RoomSettleInfoList Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetRoomSettleInfoList() []RoomSettleInfo {
 	return r._roomSettleInfoList
 }
 
-// Set is ContainGuarantee Setter
+// SetContainGuarantee is ContainGuarantee Setter
 // 此金额是否包含担保金 0：默认值无意义；1：包含；2：不包含
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetContainGuarantee(_containGuarantee int64) error {
 	r._containGuarantee = _containGuarantee
@@ -207,12 +207,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetContainGuarantee(_conta
 	return nil
 }
 
-// Get ContainGuarantee Getter
+// GetContainGuarantee ContainGuarantee Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetContainGuarantee() int64 {
 	return r._containGuarantee
 }
 
-// Set is PriceChange Setter
+// SetPriceChange is PriceChange Setter
 // 结账变价标识，0未变价，1变价
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetPriceChange(_priceChange int64) error {
 	r._priceChange = _priceChange
@@ -220,12 +220,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetPriceChange(_priceChang
 	return nil
 }
 
-// Get PriceChange Getter
+// GetPriceChange PriceChange Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetPriceChange() int64 {
 	return r._priceChange
 }
 
-// Set is CurrencyCode Setter
+// SetCurrencyCode is CurrencyCode Setter
 // 币种标识，默认人民币
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetCurrencyCode(_currencyCode string) error {
 	r._currencyCode = _currencyCode
@@ -233,12 +233,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetCurrencyCode(_currencyC
 	return nil
 }
 
-// Get CurrencyCode Getter
+// GetCurrencyCode CurrencyCode Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetCurrencyCode() string {
 	return r._currencyCode
 }
 
-// Set is CurrencyRate Setter
+// SetCurrencyRate is CurrencyRate Setter
 // 汇率
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetCurrencyRate(_currencyRate string) error {
 	r._currencyRate = _currencyRate
@@ -246,12 +246,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetCurrencyRate(_currencyR
 	return nil
 }
 
-// Get CurrencyRate Getter
+// GetCurrencyRate CurrencyRate Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetCurrencyRate() string {
 	return r._currencyRate
 }
 
-// Set is TaxAndFee Setter
+// SetTaxAndFee is TaxAndFee Setter
 // 税和服务费
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetTaxAndFee(_taxAndFee int64) error {
 	r._taxAndFee = _taxAndFee
@@ -259,12 +259,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetTaxAndFee(_taxAndFee in
 	return nil
 }
 
-// Get TaxAndFee Getter
+// GetTaxAndFee TaxAndFee Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetTaxAndFee() int64 {
 	return r._taxAndFee
 }
 
-// Set is Amount Setter
+// SetAmount is Amount Setter
 // 应收金额,大于0时，直接按照此金额扣款，忽略房费和杂费金额。该字段仅适用于自助入住订单场景
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetAmount(_amount int64) error {
 	r._amount = _amount
@@ -272,12 +272,12 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetAmount(_amount int64) e
 	return nil
 }
 
-// Get Amount Getter
+// GetAmount Amount Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetAmount() int64 {
 	return r._amount
 }
 
-// Set is HotelCode Setter
+// SetHotelCode is HotelCode Setter
 // 酒店外部编码
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetHotelCode(_hotelCode string) error {
 	r._hotelCode = _hotelCode
@@ -285,7 +285,7 @@ func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetHotelCode(_hotelCode st
 	return nil
 }
 
-// Get HotelCode Getter
+// GetHotelCode HotelCode Getter
 func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetHotelCode() string {
 	return r._hotelCode
 }

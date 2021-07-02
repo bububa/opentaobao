@@ -45,7 +45,7 @@ func (r TaobaoFilmLotteryDrawAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AccountNo Setter
+// SetAccountNo is AccountNo Setter
 // 账号ID
 func (r *TaobaoFilmLotteryDrawAPIRequest) SetAccountNo(_accountNo string) error {
 	r._accountNo = _accountNo
@@ -53,12 +53,12 @@ func (r *TaobaoFilmLotteryDrawAPIRequest) SetAccountNo(_accountNo string) error 
 	return nil
 }
 
-// Get AccountNo Getter
+// GetAccountNo AccountNo Getter
 func (r TaobaoFilmLotteryDrawAPIRequest) GetAccountNo() string {
 	return r._accountNo
 }
 
-// Set is AccountType Setter
+// SetAccountType is AccountType Setter
 // 账号类型（TAOBAO\ALIPAY\PHONE\TAOBAO_NAME\OPEN_ID）
 func (r *TaobaoFilmLotteryDrawAPIRequest) SetAccountType(_accountType string) error {
 	r._accountType = _accountType
@@ -66,12 +66,12 @@ func (r *TaobaoFilmLotteryDrawAPIRequest) SetAccountType(_accountType string) er
 	return nil
 }
 
-// Get AccountType Getter
+// GetAccountType AccountType Getter
 func (r TaobaoFilmLotteryDrawAPIRequest) GetAccountType() string {
 	return r._accountType
 }
 
-// Set is LotteryMixId Setter
+// SetLotteryMixId is LotteryMixId Setter
 // 活动ID
 func (r *TaobaoFilmLotteryDrawAPIRequest) SetLotteryMixId(_lotteryMixId string) error {
 	r._lotteryMixId = _lotteryMixId
@@ -79,12 +79,12 @@ func (r *TaobaoFilmLotteryDrawAPIRequest) SetLotteryMixId(_lotteryMixId string) 
 	return nil
 }
 
-// Get LotteryMixId Getter
+// GetLotteryMixId LotteryMixId Getter
 func (r TaobaoFilmLotteryDrawAPIRequest) GetLotteryMixId() string {
 	return r._lotteryMixId
 }
 
-// Set is Platform Setter
+// SetPlatform is Platform Setter
 // 平台类型
 func (r *TaobaoFilmLotteryDrawAPIRequest) SetPlatform(_platform int64) error {
 	r._platform = _platform
@@ -92,12 +92,12 @@ func (r *TaobaoFilmLotteryDrawAPIRequest) SetPlatform(_platform int64) error {
 	return nil
 }
 
-// Get Platform Getter
+// GetPlatform Platform Getter
 func (r TaobaoFilmLotteryDrawAPIRequest) GetPlatform() int64 {
 	return r._platform
 }
 
-// Set is BizData Setter
+// SetBizData is BizData Setter
 // 扩展参数
 func (r *TaobaoFilmLotteryDrawAPIRequest) SetBizData(_bizData string) error {
 	r._bizData = _bizData
@@ -105,7 +105,7 @@ func (r *TaobaoFilmLotteryDrawAPIRequest) SetBizData(_bizData string) error {
 	return nil
 }
 
-// Get BizData Getter
+// GetBizData BizData Getter
 func (r TaobaoFilmLotteryDrawAPIRequest) GetBizData() string {
 	return r._bizData
 }

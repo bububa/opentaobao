@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmCardQryphysicalAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamQueryPhyCardOpenReq Setter
+// SetParamQueryPhyCardOpenReq is ParamQueryPhyCardOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmCardQryphysicalAPIRequest) SetParamQueryPhyCardOpenReq(_paramQueryPhyCardOpenReq *QueryPhyCardOpenReq) error {
 	r._paramQueryPhyCardOpenReq = _paramQueryPhyCardOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmCardQryphysicalAPIRequest) SetParamQueryPhyCardOpenReq(_p
 	return nil
 }
 
-// Get ParamQueryPhyCardOpenReq Getter
+// GetParamQueryPhyCardOpenReq ParamQueryPhyCardOpenReq Getter
 func (r AlibabaAlscCrmCardQryphysicalAPIRequest) GetParamQueryPhyCardOpenReq() *QueryPhyCardOpenReq {
 	return r._paramQueryPhyCardOpenReq
 }

@@ -37,7 +37,7 @@ func (r AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest) GetApiParams
 	return params
 }
 
-// Set is ConsignorderCancelFeedbackRequest Setter
+// SetConsignorderCancelFeedbackRequest is ConsignorderCancelFeedbackRequest Setter
 // 取消发货反馈回告请求
 func (r *AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest) SetConsignorderCancelFeedbackRequest(_consignorderCancelFeedbackRequest *Consignordercancelfeedbackrequest) error {
 	r._consignorderCancelFeedbackRequest = _consignorderCancelFeedbackRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest) SetConsigno
 	return nil
 }
 
-// Get ConsignorderCancelFeedbackRequest Getter
+// GetConsignorderCancelFeedbackRequest ConsignorderCancelFeedbackRequest Getter
 func (r AlibabaAscpUopSupplierConsignorderCancelFeedbackAPIRequest) GetConsignorderCancelFeedbackRequest() *Consignordercancelfeedbackrequest {
 	return r._consignorderCancelFeedbackRequest
 }

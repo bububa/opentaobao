@@ -40,7 +40,7 @@ func (r TmallServiceSettleadjustmentCancelAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 结算调整单ID
 func (r *TmallServiceSettleadjustmentCancelAPIRequest) SetId(_id int64) error {
 	r._id = _id
@@ -48,12 +48,12 @@ func (r *TmallServiceSettleadjustmentCancelAPIRequest) SetId(_id int64) error {
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r TmallServiceSettleadjustmentCancelAPIRequest) GetId() int64 {
 	return r._id
 }
 
-// Set is Comments Setter
+// SetComments is Comments Setter
 // 取消原因说明
 func (r *TmallServiceSettleadjustmentCancelAPIRequest) SetComments(_comments string) error {
 	r._comments = _comments
@@ -61,7 +61,7 @@ func (r *TmallServiceSettleadjustmentCancelAPIRequest) SetComments(_comments str
 	return nil
 }
 
-// Get Comments Getter
+// GetComments Comments Getter
 func (r TmallServiceSettleadjustmentCancelAPIRequest) GetComments() string {
 	return r._comments
 }

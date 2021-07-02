@@ -41,7 +41,7 @@ func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) GetApiPa
 	return params
 }
 
-// Set is EntInfoId Setter
+// SetEntInfoId is EntInfoId Setter
 // 企业id
 func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) SetEntInfoId(_entInfoId string) error {
 	r._entInfoId = _entInfoId
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) SetEntI
 	return nil
 }
 
-// Get EntInfoId Getter
+// GetEntInfoId EntInfoId Getter
 func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) GetEntInfoId() string {
 	return r._entInfoId
 }
 
-// Set is NewCode Setter
+// SetNewCode is NewCode Setter
 // 新码
 func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) SetNewCode(_newCode string) error {
 	r._newCode = _newCode
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) SetNewC
 	return nil
 }
 
-// Get NewCode Getter
+// GetNewCode NewCode Getter
 func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) GetNewCode() string {
 	return r._newCode
 }
 
-// Set is OldCode Setter
+// SetOldCode is OldCode Setter
 // 老码
 func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) SetOldCode(_oldCode string) error {
 	r._oldCode = _oldCode
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) SetOldC
 	return nil
 }
 
-// Get OldCode Getter
+// GetOldCode OldCode Getter
 func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceAPIRequest) GetOldCode() string {
 	return r._oldCode
 }

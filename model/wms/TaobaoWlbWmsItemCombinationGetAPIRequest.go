@@ -37,7 +37,7 @@ func (r TaobaoWlbWmsItemCombinationGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Itemid Setter
+// SetItemid is Itemid Setter
 // 货品Id
 func (r *TaobaoWlbWmsItemCombinationGetAPIRequest) SetItemid(_itemid int64) error {
 	r._itemid = _itemid
@@ -45,7 +45,7 @@ func (r *TaobaoWlbWmsItemCombinationGetAPIRequest) SetItemid(_itemid int64) erro
 	return nil
 }
 
-// Get Itemid Getter
+// GetItemid Itemid Getter
 func (r TaobaoWlbWmsItemCombinationGetAPIRequest) GetItemid() int64 {
 	return r._itemid
 }

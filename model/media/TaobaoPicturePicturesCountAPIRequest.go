@@ -51,7 +51,7 @@ func (r TaobaoPicturePicturesCountAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StartDate Setter
+// SetStartDate is StartDate Setter
 // 查询上传开始时间点,格式:yyyy-MM-dd HH:mm:ss
 func (r *TaobaoPicturePicturesCountAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
@@ -59,12 +59,12 @@ func (r *TaobaoPicturePicturesCountAPIRequest) SetStartDate(_startDate string) e
 	return nil
 }
 
-// Get StartDate Getter
+// GetStartDate StartDate Getter
 func (r TaobaoPicturePicturesCountAPIRequest) GetStartDate() string {
 	return r._startDate
 }
 
-// Set is PictureCategoryId Setter
+// SetPictureCategoryId is PictureCategoryId Setter
 // 图片分类
 func (r *TaobaoPicturePicturesCountAPIRequest) SetPictureCategoryId(_pictureCategoryId int64) error {
 	r._pictureCategoryId = _pictureCategoryId
@@ -72,12 +72,12 @@ func (r *TaobaoPicturePicturesCountAPIRequest) SetPictureCategoryId(_pictureCate
 	return nil
 }
 
-// Get PictureCategoryId Getter
+// GetPictureCategoryId PictureCategoryId Getter
 func (r TaobaoPicturePicturesCountAPIRequest) GetPictureCategoryId() int64 {
 	return r._pictureCategoryId
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // 文件名
 func (r *TaobaoPicturePicturesCountAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -85,12 +85,12 @@ func (r *TaobaoPicturePicturesCountAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoPicturePicturesCountAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// Set is EndDate Setter
+// SetEndDate is EndDate Setter
 // 查询上传结束时间点,格式:yyyy-MM-dd HH:mm:ss
 func (r *TaobaoPicturePicturesCountAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
@@ -98,12 +98,12 @@ func (r *TaobaoPicturePicturesCountAPIRequest) SetEndDate(_endDate string) error
 	return nil
 }
 
-// Get EndDate Getter
+// GetEndDate EndDate Getter
 func (r TaobaoPicturePicturesCountAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// Set is StartModifiedDate Setter
+// SetStartModifiedDate is StartModifiedDate Setter
 // 图片被修改的时间点，格式:yyyy-MM-dd HH:mm:ss。查询此修改时间点之后到目前的图片。
 func (r *TaobaoPicturePicturesCountAPIRequest) SetStartModifiedDate(_startModifiedDate string) error {
 	r._startModifiedDate = _startModifiedDate
@@ -111,12 +111,12 @@ func (r *TaobaoPicturePicturesCountAPIRequest) SetStartModifiedDate(_startModifi
 	return nil
 }
 
-// Get StartModifiedDate Getter
+// GetStartModifiedDate StartModifiedDate Getter
 func (r TaobaoPicturePicturesCountAPIRequest) GetStartModifiedDate() string {
 	return r._startModifiedDate
 }
 
-// Set is Deleted Setter
+// SetDeleted is Deleted Setter
 // 是否删除,undeleted代表没有删除,deleted表示删除
 func (r *TaobaoPicturePicturesCountAPIRequest) SetDeleted(_deleted string) error {
 	r._deleted = _deleted
@@ -124,12 +124,12 @@ func (r *TaobaoPicturePicturesCountAPIRequest) SetDeleted(_deleted string) error
 	return nil
 }
 
-// Get Deleted Getter
+// GetDeleted Deleted Getter
 func (r TaobaoPicturePicturesCountAPIRequest) GetDeleted() string {
 	return r._deleted
 }
 
-// Set is PictureId Setter
+// SetPictureId is PictureId Setter
 // 图片ID
 func (r *TaobaoPicturePicturesCountAPIRequest) SetPictureId(_pictureId int64) error {
 	r._pictureId = _pictureId
@@ -137,12 +137,12 @@ func (r *TaobaoPicturePicturesCountAPIRequest) SetPictureId(_pictureId int64) er
 	return nil
 }
 
-// Get PictureId Getter
+// GetPictureId PictureId Getter
 func (r TaobaoPicturePicturesCountAPIRequest) GetPictureId() int64 {
 	return r._pictureId
 }
 
-// Set is ClientType Setter
+// SetClientType is ClientType Setter
 // 图片使用，如果是pc宝贝detail使用，设置为client:computer，查询出来的图片是符合pc的宝贝detail显示的如果是手机宝贝detail使用，设置为client:phone，查询出来的图片是符合手机的宝贝detail显示的,默认值是全部
 func (r *TaobaoPicturePicturesCountAPIRequest) SetClientType(_clientType string) error {
 	r._clientType = _clientType
@@ -150,7 +150,7 @@ func (r *TaobaoPicturePicturesCountAPIRequest) SetClientType(_clientType string)
 	return nil
 }
 
-// Get ClientType Getter
+// GetClientType ClientType Getter
 func (r TaobaoPicturePicturesCountAPIRequest) GetClientType() string {
 	return r._clientType
 }

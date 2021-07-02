@@ -123,7 +123,7 @@ func (r TaobaoXhotelAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OuterId Setter
+// SetOuterId is OuterId Setter
 // 外部酒店ID, 这是卖家自己系统中的ID
 func (r *TaobaoXhotelAddAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
@@ -131,12 +131,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetOuterId(_outerId string) error {
 	return nil
 }
 
-// Get OuterId Getter
+// GetOuterId OuterId Getter
 func (r TaobaoXhotelAddAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 酒店名称,国内酒店请传中文名称
 func (r *TaobaoXhotelAddAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -144,12 +144,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoXhotelAddAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is UsedName Setter
+// SetUsedName is UsedName Setter
 // 酒店曾用名
 func (r *TaobaoXhotelAddAPIRequest) SetUsedName(_usedName string) error {
 	r._usedName = _usedName
@@ -157,12 +157,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetUsedName(_usedName string) error {
 	return nil
 }
 
-// Get UsedName Getter
+// GetUsedName UsedName Getter
 func (r TaobaoXhotelAddAPIRequest) GetUsedName() string {
 	return r._usedName
 }
 
-// Set is Domestic Setter
+// SetDomestic is Domestic Setter
 // 是否国内酒店。0:国内;1:国外。默认是国内
 func (r *TaobaoXhotelAddAPIRequest) SetDomestic(_domestic int64) error {
 	r._domestic = _domestic
@@ -170,12 +170,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetDomestic(_domestic int64) error {
 	return nil
 }
 
-// Get Domestic Getter
+// GetDomestic Domestic Getter
 func (r TaobaoXhotelAddAPIRequest) GetDomestic() int64 {
 	return r._domestic
 }
 
-// Set is Country Setter
+// SetCountry is Country Setter
 // domestic为0时，固定China； domestic为1时，必须传定义的海外国家编码值。参见：http://hotel.alitrip.com/area.htm
 func (r *TaobaoXhotelAddAPIRequest) SetCountry(_country string) error {
 	r._country = _country
@@ -183,12 +183,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetCountry(_country string) error {
 	return nil
 }
 
-// Get Country Getter
+// GetCountry Country Getter
 func (r TaobaoXhotelAddAPIRequest) GetCountry() string {
 	return r._country
 }
 
-// Set is Province Setter
+// SetProvince is Province Setter
 // 省份编码。选填，不填入的时候已city字段为准.参见：http://hotel.alitrip.com/area.htm，domestic为false时默认为0
 func (r *TaobaoXhotelAddAPIRequest) SetProvince(_province int64) error {
 	r._province = _province
@@ -196,12 +196,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetProvince(_province int64) error {
 	return nil
 }
 
-// Get Province Getter
+// GetProvince Province Getter
 func (r TaobaoXhotelAddAPIRequest) GetProvince() int64 {
 	return r._province
 }
 
-// Set is City Setter
+// SetCity is City Setter
 // 城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新酒店时为可选）
 func (r *TaobaoXhotelAddAPIRequest) SetCity(_city int64) error {
 	r._city = _city
@@ -209,12 +209,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetCity(_city int64) error {
 	return nil
 }
 
-// Get City Getter
+// GetCity City Getter
 func (r TaobaoXhotelAddAPIRequest) GetCity() int64 {
 	return r._city
 }
 
-// Set is District Setter
+// SetDistrict is District Setter
 // 区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm
 func (r *TaobaoXhotelAddAPIRequest) SetDistrict(_district int64) error {
 	r._district = _district
@@ -222,12 +222,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetDistrict(_district int64) error {
 	return nil
 }
 
-// Get District Getter
+// GetDistrict District Getter
 func (r TaobaoXhotelAddAPIRequest) GetDistrict() int64 {
 	return r._district
 }
 
-// Set is Business Setter
+// SetBusiness is Business Setter
 // 商业区（圈）长度不超过20字
 func (r *TaobaoXhotelAddAPIRequest) SetBusiness(_business string) error {
 	r._business = _business
@@ -235,12 +235,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetBusiness(_business string) error {
 	return nil
 }
 
-// Get Business Getter
+// GetBusiness Business Getter
 func (r TaobaoXhotelAddAPIRequest) GetBusiness() string {
 	return r._business
 }
 
-// Set is Address Setter
+// SetAddress is Address Setter
 // 酒店地址。长度不能超过255。不填入会导致不能自动匹配。
 func (r *TaobaoXhotelAddAPIRequest) SetAddress(_address string) error {
 	r._address = _address
@@ -248,12 +248,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetAddress(_address string) error {
 	return nil
 }
 
-// Get Address Getter
+// GetAddress Address Getter
 func (r TaobaoXhotelAddAPIRequest) GetAddress() string {
 	return r._address
 }
 
-// Set is Longitude Setter
+// SetLongitude is Longitude Setter
 // 经度
 func (r *TaobaoXhotelAddAPIRequest) SetLongitude(_longitude string) error {
 	r._longitude = _longitude
@@ -261,12 +261,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetLongitude(_longitude string) error {
 	return nil
 }
 
-// Get Longitude Getter
+// GetLongitude Longitude Getter
 func (r TaobaoXhotelAddAPIRequest) GetLongitude() string {
 	return r._longitude
 }
 
-// Set is Latitude Setter
+// SetLatitude is Latitude Setter
 // 纬度
 func (r *TaobaoXhotelAddAPIRequest) SetLatitude(_latitude string) error {
 	r._latitude = _latitude
@@ -274,12 +274,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetLatitude(_latitude string) error {
 	return nil
 }
 
-// Get Latitude Getter
+// GetLatitude Latitude Getter
 func (r TaobaoXhotelAddAPIRequest) GetLatitude() string {
 	return r._latitude
 }
 
-// Set is PositionType Setter
+// SetPositionType is PositionType Setter
 // 坐标类型，现在支持：G – GoogleB – 百度A – 高德M – MapbarL – 灵图
 func (r *TaobaoXhotelAddAPIRequest) SetPositionType(_positionType string) error {
 	r._positionType = _positionType
@@ -287,12 +287,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetPositionType(_positionType string) error 
 	return nil
 }
 
-// Get PositionType Getter
+// GetPositionType PositionType Getter
 func (r TaobaoXhotelAddAPIRequest) GetPositionType() string {
 	return r._positionType
 }
 
-// Set is Tel Setter
+// SetTel is Tel Setter
 // 酒店电话。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886
 func (r *TaobaoXhotelAddAPIRequest) SetTel(_tel string) error {
 	r._tel = _tel
@@ -300,12 +300,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetTel(_tel string) error {
 	return nil
 }
 
-// Get Tel Getter
+// GetTel Tel Getter
 func (r TaobaoXhotelAddAPIRequest) GetTel() string {
 	return r._tel
 }
 
-// Set is Extend Setter
+// SetExtend is Extend Setter
 // 扩展信息的JSON。注：此字段的值需要ISV在接入前与淘宝沟通，且确认能解析
 func (r *TaobaoXhotelAddAPIRequest) SetExtend(_extend string) error {
 	r._extend = _extend
@@ -313,12 +313,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetExtend(_extend string) error {
 	return nil
 }
 
-// Get Extend Getter
+// GetExtend Extend Getter
 func (r TaobaoXhotelAddAPIRequest) GetExtend() string {
 	return r._extend
 }
 
-// Set is Shid Setter
+// SetShid is Shid Setter
 // 该字段只有确定的时候，才允许填入。用于标示和淘宝酒店的匹配关系。目前尚未启动该字段。
 func (r *TaobaoXhotelAddAPIRequest) SetShid(_shid int64) error {
 	r._shid = _shid
@@ -326,12 +326,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetShid(_shid int64) error {
 	return nil
 }
 
-// Get Shid Getter
+// GetShid Shid Getter
 func (r TaobaoXhotelAddAPIRequest) GetShid() int64 {
 	return r._shid
 }
 
-// Set is Vendor Setter
+// SetVendor is Vendor Setter
 // 对接系统商名称：可为空不要乱填，需要申请后使用
 func (r *TaobaoXhotelAddAPIRequest) SetVendor(_vendor string) error {
 	r._vendor = _vendor
@@ -339,12 +339,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetVendor(_vendor string) error {
 	return nil
 }
 
-// Get Vendor Getter
+// GetVendor Vendor Getter
 func (r TaobaoXhotelAddAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// Set is Star Setter
+// SetStar is Star Setter
 // 酒店档次，星级。取值范围为1,1.5,2,2.5,3,3.5,4,4.5,5
 func (r *TaobaoXhotelAddAPIRequest) SetStar(_star string) error {
 	r._star = _star
@@ -352,12 +352,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetStar(_star string) error {
 	return nil
 }
 
-// Get Star Getter
+// GetStar Star Getter
 func (r TaobaoXhotelAddAPIRequest) GetStar() string {
 	return r._star
 }
 
-// Set is OpeningTime Setter
+// SetOpeningTime is OpeningTime Setter
 // 开业时间，格式为2015-01-01
 func (r *TaobaoXhotelAddAPIRequest) SetOpeningTime(_openingTime string) error {
 	r._openingTime = _openingTime
@@ -365,12 +365,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetOpeningTime(_openingTime string) error {
 	return nil
 }
 
-// Get OpeningTime Getter
+// GetOpeningTime OpeningTime Getter
 func (r TaobaoXhotelAddAPIRequest) GetOpeningTime() string {
 	return r._openingTime
 }
 
-// Set is DecorateTime Setter
+// SetDecorateTime is DecorateTime Setter
 // 装修时间，格式为2015-01-01装修时间
 func (r *TaobaoXhotelAddAPIRequest) SetDecorateTime(_decorateTime string) error {
 	r._decorateTime = _decorateTime
@@ -378,12 +378,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetDecorateTime(_decorateTime string) error 
 	return nil
 }
 
-// Get DecorateTime Getter
+// GetDecorateTime DecorateTime Getter
 func (r TaobaoXhotelAddAPIRequest) GetDecorateTime() string {
 	return r._decorateTime
 }
 
-// Set is Floors Setter
+// SetFloors is Floors Setter
 // 楼层信息。
 func (r *TaobaoXhotelAddAPIRequest) SetFloors(_floors string) error {
 	r._floors = _floors
@@ -391,12 +391,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetFloors(_floors string) error {
 	return nil
 }
 
-// Get Floors Getter
+// GetFloors Floors Getter
 func (r TaobaoXhotelAddAPIRequest) GetFloors() string {
 	return r._floors
 }
 
-// Set is Rooms Setter
+// SetRooms is Rooms Setter
 // 房间数 0~9999之内的数字
 func (r *TaobaoXhotelAddAPIRequest) SetRooms(_rooms int64) error {
 	r._rooms = _rooms
@@ -404,12 +404,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetRooms(_rooms int64) error {
 	return nil
 }
 
-// Get Rooms Getter
+// GetRooms Rooms Getter
 func (r TaobaoXhotelAddAPIRequest) GetRooms() int64 {
 	return r._rooms
 }
 
-// Set is Description Setter
+// SetDescription is Description Setter
 // 酒店描述
 func (r *TaobaoXhotelAddAPIRequest) SetDescription(_description string) error {
 	r._description = _description
@@ -417,12 +417,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetDescription(_description string) error {
 	return nil
 }
 
-// Get Description Getter
+// GetDescription Description Getter
 func (r TaobaoXhotelAddAPIRequest) GetDescription() string {
 	return r._description
 }
 
-// Set is Pics Setter
+// SetPics is Pics Setter
 // 酒店图片只支持远程图片，格式如下：[{"url":"http://123.jpg","ismain":"false","type":"大堂","attribute":"普通图"},{"url":"http://456.jpg","ismain":"true","type":"公共区域","attribute":"全景图"},{"url":"http://789.jpg","ismain":"false","type":"大堂","attribute":"普通图"}] 其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图（主图只能有一个，如果有多个或者没有，则会报错）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]，图片数量最多是能是10张。
 func (r *TaobaoXhotelAddAPIRequest) SetPics(_pics string) error {
 	r._pics = _pics
@@ -430,12 +430,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetPics(_pics string) error {
 	return nil
 }
 
-// Get Pics Getter
+// GetPics Pics Getter
 func (r TaobaoXhotelAddAPIRequest) GetPics() string {
 	return r._pics
 }
 
-// Set is Brand Setter
+// SetBrand is Brand Setter
 // 酒店品牌。取值为数字。枚举如下（只给出top30，如果不满足，请联系去啊接口人）：    ruJia("1", "rujiakuaijie", "如家快捷", 1),    qiTian("2", "7 days", "7天连锁", 1),    hanTing("3", "Hanting Inns & Hotels", "汉庭酒店", 1),    geLinHaoTai("4", "Green Tree Inn", "格林豪泰", 1),    jinJiang("5", "Jinjiang Inn", "锦江之星", 1),    su8("6", "Super 8", "速8", 1),    moTai("7", "Motel", "莫泰", 1),    zhouji("8", "InterContinental", "洲际", 4),    budint("9", "Pod Inn", "布丁", 1),    jiuJiu("10", "jiujiuliansuo", "99连锁", 1),    piaoHome("11", "Piao Home Inn", "飘HOME", 1),    juzi("12", "Orange Hotels", "桔子酒店", 1),    yibai("13", "yibai", "易佰", 1),    weiyena("14","weiyena","维也纳",2),    huangguanjiari("15", "huangguanjiari", "皇冠假日", 4),    xidawu("16", "xidawu", "喜达屋", 3),    chengshiBJ("17", "chengshibianjie", "城市便捷", 1),    shagnKeYou("18", "shagnkeyou", "尚客优", 1),    jinjiang("19", "jinjiang", "锦江酒店", 3),    wendemu("20", "Hawthorn Suites", "温德姆", 4),    yibisi("21", "Ibis Hotels", "宜必思", 1),    wanhao("22", "JM Hoteles", "万豪", 4),    yijia365("23", "yijia365", "驿家365", 1),    shoulv("24", "shoulvjituan", "首旅建国", 3),    kaiyuan("25", "New Century Hotel", "开元大酒店", 4),    yagao("26", "yagao", "雅高", 3),    daisi("27", "daisi", "戴斯", 3),    jinling("28", "jinlingliansuo", "金陵", 4),    xianggelila("29", "Shangri-La City Hotels", "香格里拉", 4),    xierdun("30", "Hilton", "希尔顿", 4),
 func (r *TaobaoXhotelAddAPIRequest) SetBrand(_brand string) error {
 	r._brand = _brand
@@ -443,12 +443,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetBrand(_brand string) error {
 	return nil
 }
 
-// Get Brand Getter
+// GetBrand Brand Getter
 func (r TaobaoXhotelAddAPIRequest) GetBrand() string {
 	return r._brand
 }
 
-// Set is PostalCode Setter
+// SetPostalCode is PostalCode Setter
 // 邮政编码。
 func (r *TaobaoXhotelAddAPIRequest) SetPostalCode(_postalCode string) error {
 	r._postalCode = _postalCode
@@ -456,12 +456,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetPostalCode(_postalCode string) error {
 	return nil
 }
 
-// Get PostalCode Getter
+// GetPostalCode PostalCode Getter
 func (r TaobaoXhotelAddAPIRequest) GetPostalCode() string {
 	return r._postalCode
 }
 
-// Set is BookingNotice Setter
+// SetBookingNotice is BookingNotice Setter
 // 预订须知。json字段描述：hotelInMountaintop 酒店位于山顶 1在山顶、0不在；needBoat 酒店需要坐船前往 1需要、0不需要；酒店位于景区内 1在景区、0不在；extraBed 加床收费；extraCharge 额外收费；arrivalTime 到店时间；extend 其他补充项
 func (r *TaobaoXhotelAddAPIRequest) SetBookingNotice(_bookingNotice string) error {
 	r._bookingNotice = _bookingNotice
@@ -469,12 +469,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetBookingNotice(_bookingNotice string) erro
 	return nil
 }
 
-// Get BookingNotice Getter
+// GetBookingNotice BookingNotice Getter
 func (r TaobaoXhotelAddAPIRequest) GetBookingNotice() string {
 	return r._bookingNotice
 }
 
-// Set is CreditCardTypes Setter
+// SetCreditCardTypes is CreditCardTypes Setter
 // 逗号分隔的字符串 1visa；2万事达卡；3美国运通卡；4发现卡；5大来卡；6JCB卡；7银联卡
 func (r *TaobaoXhotelAddAPIRequest) SetCreditCardTypes(_creditCardTypes string) error {
 	r._creditCardTypes = _creditCardTypes
@@ -482,12 +482,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetCreditCardTypes(_creditCardTypes string) 
 	return nil
 }
 
-// Get CreditCardTypes Getter
+// GetCreditCardTypes CreditCardTypes Getter
 func (r TaobaoXhotelAddAPIRequest) GetCreditCardTypes() string {
 	return r._creditCardTypes
 }
 
-// Set is OrbitTrack Setter
+// SetOrbitTrack is OrbitTrack Setter
 // 扩展信息的JSON。 orbitTrack 业务字段是指从飞猪到酒店说经过平台名以及方式的一个数组，按顺序，从飞猪，再经过若干平台，最后到酒店， platform是指定当前平台名，ways 是指通过哪种方式到该平台 其中，飞猪到下一个平台里, ways 字段只能是【直连】、【人工】两个方式之一； 从最后一个平台到酒店的ways字段只能是【电话】、【传真】、【人工】、【系统】之一； 第一个 飞猪平台 和 最后具体酒店是至少得填的
 func (r *TaobaoXhotelAddAPIRequest) SetOrbitTrack(_orbitTrack string) error {
 	r._orbitTrack = _orbitTrack
@@ -495,12 +495,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetOrbitTrack(_orbitTrack string) error {
 	return nil
 }
 
-// Get OrbitTrack Getter
+// GetOrbitTrack OrbitTrack Getter
 func (r TaobaoXhotelAddAPIRequest) GetOrbitTrack() string {
 	return r._orbitTrack
 }
 
-// Set is NameE Setter
+// SetNameE is NameE Setter
 // 卖家酒店英文名称
 func (r *TaobaoXhotelAddAPIRequest) SetNameE(_nameE string) error {
 	r._nameE = _nameE
@@ -508,12 +508,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetNameE(_nameE string) error {
 	return nil
 }
 
-// Get NameE Getter
+// GetNameE NameE Getter
 func (r TaobaoXhotelAddAPIRequest) GetNameE() string {
 	return r._nameE
 }
 
-// Set is Supplier Setter
+// SetSupplier is Supplier Setter
 // 供应商标识，需要提前开通权限，如果需要对接请联系技术支持，请谨慎使用。注：如商家申请的应用类型为“飞猪-新业务”，此项则必填。
 func (r *TaobaoXhotelAddAPIRequest) SetSupplier(_supplier string) error {
 	r._supplier = _supplier
@@ -521,12 +521,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetSupplier(_supplier string) error {
 	return nil
 }
 
-// Get Supplier Getter
+// GetSupplier Supplier Getter
 func (r TaobaoXhotelAddAPIRequest) GetSupplier() string {
 	return r._supplier
 }
 
-// Set is SettlementCurrency Setter
+// SetSettlementCurrency is SettlementCurrency Setter
 // 结算过程中的结算币种符合，如需对接请联系飞猪技术支持，请谨慎使用
 func (r *TaobaoXhotelAddAPIRequest) SetSettlementCurrency(_settlementCurrency string) error {
 	r._settlementCurrency = _settlementCurrency
@@ -534,12 +534,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetSettlementCurrency(_settlementCurrency st
 	return nil
 }
 
-// Get SettlementCurrency Getter
+// GetSettlementCurrency SettlementCurrency Getter
 func (r TaobaoXhotelAddAPIRequest) GetSettlementCurrency() string {
 	return r._settlementCurrency
 }
 
-// Set is StandardAmuseFacilities Setter
+// SetStandardAmuseFacilities is StandardAmuseFacilities Setter
 // 标准娱乐设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
 func (r *TaobaoXhotelAddAPIRequest) SetStandardAmuseFacilities(_standardAmuseFacilities string) error {
 	r._standardAmuseFacilities = _standardAmuseFacilities
@@ -547,12 +547,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetStandardAmuseFacilities(_standardAmuseFac
 	return nil
 }
 
-// Get StandardAmuseFacilities Getter
+// GetStandardAmuseFacilities StandardAmuseFacilities Getter
 func (r TaobaoXhotelAddAPIRequest) GetStandardAmuseFacilities() string {
 	return r._standardAmuseFacilities
 }
 
-// Set is StandardRoomFacilities Setter
+// SetStandardRoomFacilities is StandardRoomFacilities Setter
 // 标准房型设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
 func (r *TaobaoXhotelAddAPIRequest) SetStandardRoomFacilities(_standardRoomFacilities string) error {
 	r._standardRoomFacilities = _standardRoomFacilities
@@ -560,12 +560,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetStandardRoomFacilities(_standardRoomFacil
 	return nil
 }
 
-// Get StandardRoomFacilities Getter
+// GetStandardRoomFacilities StandardRoomFacilities Getter
 func (r TaobaoXhotelAddAPIRequest) GetStandardRoomFacilities() string {
 	return r._standardRoomFacilities
 }
 
-// Set is StandardHotelService Setter
+// SetStandardHotelService is StandardHotelService Setter
 // 标准酒店服务,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
 func (r *TaobaoXhotelAddAPIRequest) SetStandardHotelService(_standardHotelService string) error {
 	r._standardHotelService = _standardHotelService
@@ -573,12 +573,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetStandardHotelService(_standardHotelServic
 	return nil
 }
 
-// Get StandardHotelService Getter
+// GetStandardHotelService StandardHotelService Getter
 func (r TaobaoXhotelAddAPIRequest) GetStandardHotelService() string {
 	return r._standardHotelService
 }
 
-// Set is StandardHotelFacilities Setter
+// SetStandardHotelFacilities is StandardHotelFacilities Setter
 // 标准酒店设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
 func (r *TaobaoXhotelAddAPIRequest) SetStandardHotelFacilities(_standardHotelFacilities string) error {
 	r._standardHotelFacilities = _standardHotelFacilities
@@ -586,12 +586,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetStandardHotelFacilities(_standardHotelFac
 	return nil
 }
 
-// Get StandardHotelFacilities Getter
+// GetStandardHotelFacilities StandardHotelFacilities Getter
 func (r TaobaoXhotelAddAPIRequest) GetStandardHotelFacilities() string {
 	return r._standardHotelFacilities
 }
 
-// Set is StandardBookingNotice Setter
+// SetStandardBookingNotice is StandardBookingNotice Setter
 // 标准预订须知,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
 func (r *TaobaoXhotelAddAPIRequest) SetStandardBookingNotice(_standardBookingNotice string) error {
 	r._standardBookingNotice = _standardBookingNotice
@@ -599,12 +599,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetStandardBookingNotice(_standardBookingNot
 	return nil
 }
 
-// Get StandardBookingNotice Getter
+// GetStandardBookingNotice StandardBookingNotice Getter
 func (r TaobaoXhotelAddAPIRequest) GetStandardBookingNotice() string {
 	return r._standardBookingNotice
 }
 
-// Set is ServiceType Setter
+// SetServiceType is ServiceType Setter
 // 0:可以接待外宾；1:仅内宾
 func (r *TaobaoXhotelAddAPIRequest) SetServiceType(_serviceType int64) error {
 	r._serviceType = _serviceType
@@ -612,12 +612,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetServiceType(_serviceType int64) error {
 	return nil
 }
 
-// Get ServiceType Getter
+// GetServiceType ServiceType Getter
 func (r TaobaoXhotelAddAPIRequest) GetServiceType() int64 {
 	return r._serviceType
 }
 
-// Set is HotelType Setter
+// SetHotelType is HotelType Setter
 // 0:酒店；1:客栈
 func (r *TaobaoXhotelAddAPIRequest) SetHotelType(_hotelType int64) error {
 	r._hotelType = _hotelType
@@ -625,12 +625,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetHotelType(_hotelType int64) error {
 	return nil
 }
 
-// Get HotelType Getter
+// GetHotelType HotelType Getter
 func (r TaobaoXhotelAddAPIRequest) GetHotelType() int64 {
 	return r._hotelType
 }
 
-// Set is CoordinateSystem Setter
+// SetCoordinateSystem is CoordinateSystem Setter
 // 标识坐标系类型。WGS84，表示地球坐标系 ；GCJ02，表示火星坐标系
 func (r *TaobaoXhotelAddAPIRequest) SetCoordinateSystem(_coordinateSystem string) error {
 	r._coordinateSystem = _coordinateSystem
@@ -638,12 +638,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetCoordinateSystem(_coordinateSystem string
 	return nil
 }
 
-// Get CoordinateSystem Getter
+// GetCoordinateSystem CoordinateSystem Getter
 func (r TaobaoXhotelAddAPIRequest) GetCoordinateSystem() string {
 	return r._coordinateSystem
 }
 
-// Set is RoomFacilities Setter
+// SetRoomFacilities is RoomFacilities Setter
 // 废弃
 func (r *TaobaoXhotelAddAPIRequest) SetRoomFacilities(_roomFacilities string) error {
 	r._roomFacilities = _roomFacilities
@@ -651,12 +651,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetRoomFacilities(_roomFacilities string) er
 	return nil
 }
 
-// Get RoomFacilities Getter
+// GetRoomFacilities RoomFacilities Getter
 func (r TaobaoXhotelAddAPIRequest) GetRoomFacilities() string {
 	return r._roomFacilities
 }
 
-// Set is Service Setter
+// SetService is Service Setter
 // 废弃
 func (r *TaobaoXhotelAddAPIRequest) SetService(_service string) error {
 	r._service = _service
@@ -664,12 +664,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetService(_service string) error {
 	return nil
 }
 
-// Get Service Getter
+// GetService Service Getter
 func (r TaobaoXhotelAddAPIRequest) GetService() string {
 	return r._service
 }
 
-// Set is HotelFacilities Setter
+// SetHotelFacilities is HotelFacilities Setter
 // 废弃
 func (r *TaobaoXhotelAddAPIRequest) SetHotelFacilities(_hotelFacilities string) error {
 	r._hotelFacilities = _hotelFacilities
@@ -677,12 +677,12 @@ func (r *TaobaoXhotelAddAPIRequest) SetHotelFacilities(_hotelFacilities string) 
 	return nil
 }
 
-// Get HotelFacilities Getter
+// GetHotelFacilities HotelFacilities Getter
 func (r TaobaoXhotelAddAPIRequest) GetHotelFacilities() string {
 	return r._hotelFacilities
 }
 
-// Set is HotelPolicies Setter
+// SetHotelPolicies is HotelPolicies Setter
 // 废弃
 func (r *TaobaoXhotelAddAPIRequest) SetHotelPolicies(_hotelPolicies string) error {
 	r._hotelPolicies = _hotelPolicies
@@ -690,7 +690,7 @@ func (r *TaobaoXhotelAddAPIRequest) SetHotelPolicies(_hotelPolicies string) erro
 	return nil
 }
 
-// Get HotelPolicies Getter
+// GetHotelPolicies HotelPolicies Getter
 func (r TaobaoXhotelAddAPIRequest) GetHotelPolicies() string {
 	return r._hotelPolicies
 }

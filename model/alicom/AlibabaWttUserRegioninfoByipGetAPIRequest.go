@@ -37,7 +37,7 @@ func (r AlibabaWttUserRegioninfoByipGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Ip Setter
+// SetIp is Ip Setter
 // ip地址
 func (r *AlibabaWttUserRegioninfoByipGetAPIRequest) SetIp(_ip string) error {
 	r._ip = _ip
@@ -45,7 +45,7 @@ func (r *AlibabaWttUserRegioninfoByipGetAPIRequest) SetIp(_ip string) error {
 	return nil
 }
 
-// Get Ip Getter
+// GetIp Ip Getter
 func (r AlibabaWttUserRegioninfoByipGetAPIRequest) GetIp() string {
 	return r._ip
 }

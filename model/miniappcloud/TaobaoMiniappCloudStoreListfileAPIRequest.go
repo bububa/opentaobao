@@ -39,7 +39,7 @@ func (r TaobaoMiniappCloudStoreListfileAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Env Setter
+// SetEnv is Env Setter
 // 环境(online/test)
 func (r *TaobaoMiniappCloudStoreListfileAPIRequest) SetEnv(_env string) error {
 	r._env = _env
@@ -47,12 +47,12 @@ func (r *TaobaoMiniappCloudStoreListfileAPIRequest) SetEnv(_env string) error {
 	return nil
 }
 
-// Get Env Getter
+// GetEnv Env Getter
 func (r TaobaoMiniappCloudStoreListfileAPIRequest) GetEnv() string {
 	return r._env
 }
 
-// Set is FilePath Setter
+// SetFilePath is FilePath Setter
 // 文件全路径名
 func (r *TaobaoMiniappCloudStoreListfileAPIRequest) SetFilePath(_filePath string) error {
 	r._filePath = _filePath
@@ -60,7 +60,7 @@ func (r *TaobaoMiniappCloudStoreListfileAPIRequest) SetFilePath(_filePath string
 	return nil
 }
 
-// Get FilePath Getter
+// GetFilePath FilePath Getter
 func (r TaobaoMiniappCloudStoreListfileAPIRequest) GetFilePath() string {
 	return r._filePath
 }

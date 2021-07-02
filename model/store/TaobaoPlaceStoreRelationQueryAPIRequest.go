@@ -37,7 +37,7 @@ func (r TaobaoPlaceStoreRelationQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamStoreRelationSimpleQuery Setter
+// SetParamStoreRelationSimpleQuery is ParamStoreRelationSimpleQuery Setter
 // 系统自动生成
 func (r *TaobaoPlaceStoreRelationQueryAPIRequest) SetParamStoreRelationSimpleQuery(_paramStoreRelationSimpleQuery *StoreRelationSimpleQuery) error {
 	r._paramStoreRelationSimpleQuery = _paramStoreRelationSimpleQuery
@@ -45,7 +45,7 @@ func (r *TaobaoPlaceStoreRelationQueryAPIRequest) SetParamStoreRelationSimpleQue
 	return nil
 }
 
-// Get ParamStoreRelationSimpleQuery Getter
+// GetParamStoreRelationSimpleQuery ParamStoreRelationSimpleQuery Getter
 func (r TaobaoPlaceStoreRelationQueryAPIRequest) GetParamStoreRelationSimpleQuery() *StoreRelationSimpleQuery {
 	return r._paramStoreRelationSimpleQuery
 }

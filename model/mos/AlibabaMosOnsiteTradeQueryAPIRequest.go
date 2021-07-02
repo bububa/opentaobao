@@ -44,7 +44,7 @@ func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TradeNo Setter
+// SetTradeNo is TradeNo Setter
 // 喵街交易流水号。与商户支付流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号  > 商户支付流水号。
 func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetTradeNo(_tradeNo string) error {
 	r._tradeNo = _tradeNo
@@ -52,12 +52,12 @@ func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetTradeNo(_tradeNo string) error
 	return nil
 }
 
-// Get TradeNo Getter
+// GetTradeNo TradeNo Getter
 func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetTradeNo() string {
 	return r._tradeNo
 }
 
-// Set is StoreIdType Setter
+// SetStoreIdType is StoreIdType Setter
 // 商户ID类型，取值为miaojie或out
 func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetStoreIdType(_storeIdType string) error {
 	r._storeIdType = _storeIdType
@@ -65,12 +65,12 @@ func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetStoreIdType(_storeIdType strin
 	return nil
 }
 
-// Get StoreIdType Getter
+// GetStoreIdType StoreIdType Getter
 func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetStoreIdType() string {
 	return r._storeIdType
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店号或喵街商户ID
 func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetStoreId(_storeId string) error {
 	r._storeId = _storeId
@@ -78,12 +78,12 @@ func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetStoreId(_storeId string) error
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// Set is OutTradeNo Setter
+// SetOutTradeNo is OutTradeNo Setter
 // 原支付请求的商户支付流水号。与喵街交易流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号 >  商户支付流水号。
 func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetOutTradeNo(_outTradeNo string) error {
 	r._outTradeNo = _outTradeNo
@@ -91,7 +91,7 @@ func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetOutTradeNo(_outTradeNo string)
 	return nil
 }
 
-// Get OutTradeNo Getter
+// GetOutTradeNo OutTradeNo Getter
 func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetOutTradeNo() string {
 	return r._outTradeNo
 }

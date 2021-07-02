@@ -37,7 +37,7 @@ func (r AlibabaAscpChannelMainRefundCreateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is RefundCreateRequest Setter
+// SetRefundCreateRequest is RefundCreateRequest Setter
 // 逆向单创建请求
 func (r *AlibabaAscpChannelMainRefundCreateAPIRequest) SetRefundCreateRequest(_refundCreateRequest *ExternalCreateRefundOrderRequest) error {
 	r._refundCreateRequest = _refundCreateRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAscpChannelMainRefundCreateAPIRequest) SetRefundCreateRequest(_r
 	return nil
 }
 
-// Get RefundCreateRequest Getter
+// GetRefundCreateRequest RefundCreateRequest Getter
 func (r AlibabaAscpChannelMainRefundCreateAPIRequest) GetRefundCreateRequest() *ExternalCreateRefundOrderRequest {
 	return r._refundCreateRequest
 }

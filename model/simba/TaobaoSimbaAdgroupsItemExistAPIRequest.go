@@ -43,7 +43,7 @@ func (r TaobaoSimbaAdgroupsItemExistAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 主人昵称
 func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -51,12 +51,12 @@ func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaAdgroupsItemExistAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划Id
 func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -64,12 +64,12 @@ func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) SetCampaignId(_campaignId int64
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaAdgroupsItemExistAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品Id
 func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -77,12 +77,12 @@ func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) SetItemId(_itemId int64) error 
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoSimbaAdgroupsItemExistAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品类型 101001005 代表普通推广，101001014代表销量明星
 func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -90,7 +90,7 @@ func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) SetProductId(_productId int64) 
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TaobaoSimbaAdgroupsItemExistAPIRequest) GetProductId() int64 {
 	return r._productId
 }

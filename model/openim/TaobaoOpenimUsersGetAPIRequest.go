@@ -37,7 +37,7 @@ func (r TaobaoOpenimUsersGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Userids Setter
+// SetUserids is Userids Setter
 // 用户id序列
 func (r *TaobaoOpenimUsersGetAPIRequest) SetUserids(_userids []string) error {
 	r._userids = _userids
@@ -45,7 +45,7 @@ func (r *TaobaoOpenimUsersGetAPIRequest) SetUserids(_userids []string) error {
 	return nil
 }
 
-// Get Userids Getter
+// GetUserids Userids Getter
 func (r TaobaoOpenimUsersGetAPIRequest) GetUserids() []string {
 	return r._userids
 }

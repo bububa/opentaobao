@@ -39,7 +39,7 @@ func (r YunosTvpubadminDeviceYksSkillDeleteAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is BotSkillRelId Setter
+// SetBotSkillRelId is BotSkillRelId Setter
 // bot与技能关系表id
 func (r *YunosTvpubadminDeviceYksSkillDeleteAPIRequest) SetBotSkillRelId(_botSkillRelId int64) error {
 	r._botSkillRelId = _botSkillRelId
@@ -47,12 +47,12 @@ func (r *YunosTvpubadminDeviceYksSkillDeleteAPIRequest) SetBotSkillRelId(_botSki
 	return nil
 }
 
-// Get BotSkillRelId Getter
+// GetBotSkillRelId BotSkillRelId Getter
 func (r YunosTvpubadminDeviceYksSkillDeleteAPIRequest) GetBotSkillRelId() int64 {
 	return r._botSkillRelId
 }
 
-// Set is SkillId Setter
+// SetSkillId is SkillId Setter
 // 技能id
 func (r *YunosTvpubadminDeviceYksSkillDeleteAPIRequest) SetSkillId(_skillId int64) error {
 	r._skillId = _skillId
@@ -60,7 +60,7 @@ func (r *YunosTvpubadminDeviceYksSkillDeleteAPIRequest) SetSkillId(_skillId int6
 	return nil
 }
 
-// Get SkillId Getter
+// GetSkillId SkillId Getter
 func (r YunosTvpubadminDeviceYksSkillDeleteAPIRequest) GetSkillId() int64 {
 	return r._skillId
 }

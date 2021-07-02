@@ -37,7 +37,7 @@ func (r CainiaoCloudprintCustomaresGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TemplateId Setter
+// SetTemplateId is TemplateId Setter
 // 用户使用的标准模板id
 func (r *CainiaoCloudprintCustomaresGetAPIRequest) SetTemplateId(_templateId int64) error {
 	r._templateId = _templateId
@@ -45,7 +45,7 @@ func (r *CainiaoCloudprintCustomaresGetAPIRequest) SetTemplateId(_templateId int
 	return nil
 }
 
-// Get TemplateId Getter
+// GetTemplateId TemplateId Getter
 func (r CainiaoCloudprintCustomaresGetAPIRequest) GetTemplateId() int64 {
 	return r._templateId
 }

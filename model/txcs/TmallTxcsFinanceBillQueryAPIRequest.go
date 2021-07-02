@@ -37,7 +37,7 @@ func (r TmallTxcsFinanceBillQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is StatementBillQuery Setter
+// SetStatementBillQuery is StatementBillQuery Setter
 // 对账单号
 func (r *TmallTxcsFinanceBillQueryAPIRequest) SetStatementBillQuery(_statementBillQuery *StatementBillQuery) error {
 	r._statementBillQuery = _statementBillQuery
@@ -45,7 +45,7 @@ func (r *TmallTxcsFinanceBillQueryAPIRequest) SetStatementBillQuery(_statementBi
 	return nil
 }
 
-// Get StatementBillQuery Getter
+// GetStatementBillQuery StatementBillQuery Getter
 func (r TmallTxcsFinanceBillQueryAPIRequest) GetStatementBillQuery() *StatementBillQuery {
 	return r._statementBillQuery
 }

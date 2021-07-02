@@ -37,7 +37,7 @@ func (r AlibabaBuynowOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamOrderCreateRequest Setter
+// SetParamOrderCreateRequest is ParamOrderCreateRequest Setter
 // Order creation parameter
 func (r *AlibabaBuynowOrderCreateAPIRequest) SetParamOrderCreateRequest(_paramOrderCreateRequest *OrderCreateRequest) error {
 	r._paramOrderCreateRequest = _paramOrderCreateRequest
@@ -45,7 +45,7 @@ func (r *AlibabaBuynowOrderCreateAPIRequest) SetParamOrderCreateRequest(_paramOr
 	return nil
 }
 
-// Get ParamOrderCreateRequest Getter
+// GetParamOrderCreateRequest ParamOrderCreateRequest Getter
 func (r AlibabaBuynowOrderCreateAPIRequest) GetParamOrderCreateRequest() *OrderCreateRequest {
 	return r._paramOrderCreateRequest
 }

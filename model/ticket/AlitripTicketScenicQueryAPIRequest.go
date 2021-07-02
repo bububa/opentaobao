@@ -41,7 +41,7 @@ func (r AlitripTicketScenicQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AliScenicId Setter
+// SetAliScenicId is AliScenicId Setter
 // 标准景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个
 func (r *AlitripTicketScenicQueryAPIRequest) SetAliScenicId(_aliScenicId int64) error {
 	r._aliScenicId = _aliScenicId
@@ -49,12 +49,12 @@ func (r *AlitripTicketScenicQueryAPIRequest) SetAliScenicId(_aliScenicId int64) 
 	return nil
 }
 
-// Get AliScenicId Getter
+// GetAliScenicId AliScenicId Getter
 func (r AlitripTicketScenicQueryAPIRequest) GetAliScenicId() int64 {
 	return r._aliScenicId
 }
 
-// Set is CurrentPage Setter
+// SetCurrentPage is CurrentPage Setter
 // 当前分页。每页默认最多返回20条数据
 func (r *AlitripTicketScenicQueryAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
@@ -62,12 +62,12 @@ func (r *AlitripTicketScenicQueryAPIRequest) SetCurrentPage(_currentPage int64) 
 	return nil
 }
 
-// Get CurrentPage Getter
+// GetCurrentPage CurrentPage Getter
 func (r AlitripTicketScenicQueryAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
 }
 
-// Set is OutScenicId Setter
+// SetOutScenicId is OutScenicId Setter
 // 商家景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个
 func (r *AlitripTicketScenicQueryAPIRequest) SetOutScenicId(_outScenicId string) error {
 	r._outScenicId = _outScenicId
@@ -75,7 +75,7 @@ func (r *AlitripTicketScenicQueryAPIRequest) SetOutScenicId(_outScenicId string)
 	return nil
 }
 
-// Get OutScenicId Getter
+// GetOutScenicId OutScenicId Getter
 func (r AlitripTicketScenicQueryAPIRequest) GetOutScenicId() string {
 	return r._outScenicId
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ParamDeductPreCheckOpenReq Setter
+// SetParamDeductPreCheckOpenReq is ParamDeductPreCheckOpenReq Setter
 // 入参
 func (r *AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) SetParamDeductPreCheckOpenReq(_paramDeductPreCheckOpenReq *DeductPreCheckOpenReq) error {
 	r._paramDeductPreCheckOpenReq = _paramDeductPreCheckOpenReq
@@ -45,7 +45,7 @@ func (r *AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) SetParamDeductPreChec
 	return nil
 }
 
-// Get ParamDeductPreCheckOpenReq Getter
+// GetParamDeductPreCheckOpenReq ParamDeductPreCheckOpenReq Getter
 func (r AlibabaAlscCrmRechargeDedutprecheckGetAPIRequest) GetParamDeductPreCheckOpenReq() *DeductPreCheckOpenReq {
 	return r._paramDeductPreCheckOpenReq
 }

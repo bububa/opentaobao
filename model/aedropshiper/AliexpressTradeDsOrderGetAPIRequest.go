@@ -37,7 +37,7 @@ func (r AliexpressTradeDsOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SingleOrderQuery Setter
+// SetSingleOrderQuery is SingleOrderQuery Setter
 // 订单查询条件
 func (r *AliexpressTradeDsOrderGetAPIRequest) SetSingleOrderQuery(_singleOrderQuery *AeopSingleOrderQuery) error {
 	r._singleOrderQuery = _singleOrderQuery
@@ -45,7 +45,7 @@ func (r *AliexpressTradeDsOrderGetAPIRequest) SetSingleOrderQuery(_singleOrderQu
 	return nil
 }
 
-// Get SingleOrderQuery Getter
+// GetSingleOrderQuery SingleOrderQuery Getter
 func (r AliexpressTradeDsOrderGetAPIRequest) GetSingleOrderQuery() *AeopSingleOrderQuery {
 	return r._singleOrderQuery
 }

@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomeLineSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BaseLoopLineDto Setter
+// SetBaseLoopLineDto is BaseLoopLineDto Setter
 // 环线入参
 func (r *AlibabaAlihouseNewhomeLineSyncAPIRequest) SetBaseLoopLineDto(_baseLoopLineDto *BaseLoopLineDto) error {
 	r._baseLoopLineDto = _baseLoopLineDto
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomeLineSyncAPIRequest) SetBaseLoopLineDto(_baseLoopL
 	return nil
 }
 
-// Get BaseLoopLineDto Getter
+// GetBaseLoopLineDto BaseLoopLineDto Getter
 func (r AlibabaAlihouseNewhomeLineSyncAPIRequest) GetBaseLoopLineDto() *BaseLoopLineDto {
 	return r._baseLoopLineDto
 }

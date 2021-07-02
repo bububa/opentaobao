@@ -39,7 +39,7 @@ func (r CainiaoIotTicketDetailQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SpCode Setter
+// SetSpCode is SpCode Setter
 // 服务商唯一编码
 func (r *CainiaoIotTicketDetailQueryAPIRequest) SetSpCode(_spCode string) error {
 	r._spCode = _spCode
@@ -47,12 +47,12 @@ func (r *CainiaoIotTicketDetailQueryAPIRequest) SetSpCode(_spCode string) error 
 	return nil
 }
 
-// Get SpCode Getter
+// GetSpCode SpCode Getter
 func (r CainiaoIotTicketDetailQueryAPIRequest) GetSpCode() string {
 	return r._spCode
 }
 
-// Set is TicketId Setter
+// SetTicketId is TicketId Setter
 // 工单Id
 func (r *CainiaoIotTicketDetailQueryAPIRequest) SetTicketId(_ticketId int64) error {
 	r._ticketId = _ticketId
@@ -60,7 +60,7 @@ func (r *CainiaoIotTicketDetailQueryAPIRequest) SetTicketId(_ticketId int64) err
 	return nil
 }
 
-// Get TicketId Getter
+// GetTicketId TicketId Getter
 func (r CainiaoIotTicketDetailQueryAPIRequest) GetTicketId() int64 {
 	return r._ticketId
 }

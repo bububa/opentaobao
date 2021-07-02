@@ -37,7 +37,7 @@ func (r AlibabaInteractUiVideoAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Unnamed Setter
+// SetUnnamed is Unnamed Setter
 // 仅作鉴权使用，没有实际数据传输
 func (r *AlibabaInteractUiVideoAPIRequest) SetUnnamed(_unnamed string) error {
 	r._unnamed = _unnamed
@@ -45,7 +45,7 @@ func (r *AlibabaInteractUiVideoAPIRequest) SetUnnamed(_unnamed string) error {
 	return nil
 }
 
-// Get Unnamed Getter
+// GetUnnamed Unnamed Getter
 func (r AlibabaInteractUiVideoAPIRequest) GetUnnamed() string {
 	return r._unnamed
 }

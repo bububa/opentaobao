@@ -45,7 +45,7 @@ func (r TaobaoBusHistoryorderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FromDate Setter
+// SetFromDate is FromDate Setter
 // 开始时间 2017-04-23 13:33:43
 func (r *TaobaoBusHistoryorderGetAPIRequest) SetFromDate(_fromDate string) error {
 	r._fromDate = _fromDate
@@ -53,12 +53,12 @@ func (r *TaobaoBusHistoryorderGetAPIRequest) SetFromDate(_fromDate string) error
 	return nil
 }
 
-// Get FromDate Getter
+// GetFromDate FromDate Getter
 func (r TaobaoBusHistoryorderGetAPIRequest) GetFromDate() string {
 	return r._fromDate
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 分页大小 不超过1w
 func (r *TaobaoBusHistoryorderGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -66,12 +66,12 @@ func (r *TaobaoBusHistoryorderGetAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoBusHistoryorderGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is ToDate Setter
+// SetToDate is ToDate Setter
 // 结束时间 2017-04-23 13:33:43
 func (r *TaobaoBusHistoryorderGetAPIRequest) SetToDate(_toDate string) error {
 	r._toDate = _toDate
@@ -79,12 +79,12 @@ func (r *TaobaoBusHistoryorderGetAPIRequest) SetToDate(_toDate string) error {
 	return nil
 }
 
-// Get ToDate Getter
+// GetToDate ToDate Getter
 func (r TaobaoBusHistoryorderGetAPIRequest) GetToDate() string {
 	return r._toDate
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // offline_ticket 线下自助机； online_ticket：线上售票； 空 代表查全部
 func (r *TaobaoBusHistoryorderGetAPIRequest) SetType(_type string) error {
 	r._type = _type
@@ -92,12 +92,12 @@ func (r *TaobaoBusHistoryorderGetAPIRequest) SetType(_type string) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoBusHistoryorderGetAPIRequest) GetType() string {
 	return r._type
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 第几页 从1开始
 func (r *TaobaoBusHistoryorderGetAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -105,7 +105,7 @@ func (r *TaobaoBusHistoryorderGetAPIRequest) SetPageIndex(_pageIndex int64) erro
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoBusHistoryorderGetAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }

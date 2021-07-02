@@ -37,7 +37,7 @@ func (r AlitripBtripHotelDistributionSearchLowPriceAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is ParamHotelSearchListRQ Setter
+// SetParamHotelSearchListRQ is ParamHotelSearchListRQ Setter
 // 列表最低价入参
 func (r *AlitripBtripHotelDistributionSearchLowPriceAPIRequest) SetParamHotelSearchListRQ(_paramHotelSearchListRQ *HotelSearchListRq) error {
 	r._paramHotelSearchListRQ = _paramHotelSearchListRQ
@@ -45,7 +45,7 @@ func (r *AlitripBtripHotelDistributionSearchLowPriceAPIRequest) SetParamHotelSea
 	return nil
 }
 
-// Get ParamHotelSearchListRQ Getter
+// GetParamHotelSearchListRQ ParamHotelSearchListRQ Getter
 func (r AlitripBtripHotelDistributionSearchLowPriceAPIRequest) GetParamHotelSearchListRQ() *HotelSearchListRq {
 	return r._paramHotelSearchListRQ
 }

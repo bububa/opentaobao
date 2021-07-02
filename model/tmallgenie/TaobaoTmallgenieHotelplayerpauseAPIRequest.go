@@ -39,7 +39,7 @@ func (r TaobaoTmallgenieHotelplayerpauseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is RoomNo Setter
+// SetRoomNo is RoomNo Setter
 // 房间号
 func (r *TaobaoTmallgenieHotelplayerpauseAPIRequest) SetRoomNo(_roomNo string) error {
 	r._roomNo = _roomNo
@@ -47,12 +47,12 @@ func (r *TaobaoTmallgenieHotelplayerpauseAPIRequest) SetRoomNo(_roomNo string) e
 	return nil
 }
 
-// Get RoomNo Getter
+// GetRoomNo RoomNo Getter
 func (r TaobaoTmallgenieHotelplayerpauseAPIRequest) GetRoomNo() string {
 	return r._roomNo
 }
 
-// Set is HotelId Setter
+// SetHotelId is HotelId Setter
 // 酒店ID
 func (r *TaobaoTmallgenieHotelplayerpauseAPIRequest) SetHotelId(_hotelId int64) error {
 	r._hotelId = _hotelId
@@ -60,7 +60,7 @@ func (r *TaobaoTmallgenieHotelplayerpauseAPIRequest) SetHotelId(_hotelId int64) 
 	return nil
 }
 
-// Get HotelId Getter
+// GetHotelId HotelId Getter
 func (r TaobaoTmallgenieHotelplayerpauseAPIRequest) GetHotelId() int64 {
 	return r._hotelId
 }

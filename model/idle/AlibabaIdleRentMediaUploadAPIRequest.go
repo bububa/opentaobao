@@ -41,7 +41,7 @@ func (r AlibabaIdleRentMediaUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Data Setter
+// SetData is Data Setter
 // 多媒体字节数组
 func (r *AlibabaIdleRentMediaUploadAPIRequest) SetData(_data *model.File) error {
 	r._data = _data
@@ -49,12 +49,12 @@ func (r *AlibabaIdleRentMediaUploadAPIRequest) SetData(_data *model.File) error 
 	return nil
 }
 
-// Get Data Getter
+// GetData Data Getter
 func (r AlibabaIdleRentMediaUploadAPIRequest) GetData() *model.File {
 	return r._data
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 文件名
 func (r *AlibabaIdleRentMediaUploadAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -62,12 +62,12 @@ func (r *AlibabaIdleRentMediaUploadAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r AlibabaIdleRentMediaUploadAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 0-表示图片，1-表示视频（暂不支持）
 func (r *AlibabaIdleRentMediaUploadAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -75,7 +75,7 @@ func (r *AlibabaIdleRentMediaUploadAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaIdleRentMediaUploadAPIRequest) GetType() int64 {
 	return r._type
 }

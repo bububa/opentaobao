@@ -47,7 +47,7 @@ func (r AlibabaAiUserQuickTokenBindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AccessTokenValue Setter
+// SetAccessTokenValue is AccessTokenValue Setter
 // Oauth协议访问令牌
 func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetAccessTokenValue(_accessTokenValue string) error {
 	r._accessTokenValue = _accessTokenValue
@@ -55,12 +55,12 @@ func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetAccessTokenValue(_accessToken
 	return nil
 }
 
-// Get AccessTokenValue Getter
+// GetAccessTokenValue AccessTokenValue Getter
 func (r AlibabaAiUserQuickTokenBindAPIRequest) GetAccessTokenValue() string {
 	return r._accessTokenValue
 }
 
-// Set is ExpiredTime Setter
+// SetExpiredTime is ExpiredTime Setter
 // 令牌有效期（秒）
 func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetExpiredTime(_expiredTime int64) error {
 	r._expiredTime = _expiredTime
@@ -68,12 +68,12 @@ func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetExpiredTime(_expiredTime int6
 	return nil
 }
 
-// Get ExpiredTime Getter
+// GetExpiredTime ExpiredTime Getter
 func (r AlibabaAiUserQuickTokenBindAPIRequest) GetExpiredTime() int64 {
 	return r._expiredTime
 }
 
-// Set is MerchantUserId Setter
+// SetMerchantUserId is MerchantUserId Setter
 // 第三方用户账号唯一ID
 func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetMerchantUserId(_merchantUserId string) error {
 	r._merchantUserId = _merchantUserId
@@ -81,12 +81,12 @@ func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetMerchantUserId(_merchantUserI
 	return nil
 }
 
-// Get MerchantUserId Getter
+// GetMerchantUserId MerchantUserId Getter
 func (r AlibabaAiUserQuickTokenBindAPIRequest) GetMerchantUserId() string {
 	return r._merchantUserId
 }
 
-// Set is SkillId Setter
+// SetSkillId is SkillId Setter
 // 技能ID
 func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetSkillId(_skillId string) error {
 	r._skillId = _skillId
@@ -94,12 +94,12 @@ func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetSkillId(_skillId string) erro
 	return nil
 }
 
-// Get SkillId Getter
+// GetSkillId SkillId Getter
 func (r AlibabaAiUserQuickTokenBindAPIRequest) GetSkillId() string {
 	return r._skillId
 }
 
-// Set is SchemaKey Setter
+// SetSchemaKey is SchemaKey Setter
 // 账号隔离属性
 func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetSchemaKey(_schemaKey string) error {
 	r._schemaKey = _schemaKey
@@ -107,12 +107,12 @@ func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetSchemaKey(_schemaKey string) 
 	return nil
 }
 
-// Get SchemaKey Getter
+// GetSchemaKey SchemaKey Getter
 func (r AlibabaAiUserQuickTokenBindAPIRequest) GetSchemaKey() string {
 	return r._schemaKey
 }
 
-// Set is RefreshToken Setter
+// SetRefreshToken is RefreshToken Setter
 // Oauth协议刷新令牌
 func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetRefreshToken(_refreshToken string) error {
 	r._refreshToken = _refreshToken
@@ -120,7 +120,7 @@ func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetRefreshToken(_refreshToken st
 	return nil
 }
 
-// Get RefreshToken Getter
+// GetRefreshToken RefreshToken Getter
 func (r AlibabaAiUserQuickTokenBindAPIRequest) GetRefreshToken() string {
 	return r._refreshToken
 }

@@ -45,7 +45,7 @@ func (r AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// Set is ContractNum Setter
+// SetContractNum is ContractNum Setter
 // 合同编号
 func (r *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) SetContractNum(_contractNum string) error {
 	r._contractNum = _contractNum
@@ -53,12 +53,12 @@ func (r *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) SetContractNum(_contr
 	return nil
 }
 
-// Get ContractNum Getter
+// GetContractNum ContractNum Getter
 func (r AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) GetContractNum() string {
 	return r._contractNum
 }
 
-// Set is IssueOrg Setter
+// SetIssueOrg is IssueOrg Setter
 // 出证机构
 func (r *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) SetIssueOrg(_issueOrg string) error {
 	r._issueOrg = _issueOrg
@@ -66,12 +66,12 @@ func (r *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) SetIssueOrg(_issueOrg
 	return nil
 }
 
-// Get IssueOrg Getter
+// GetIssueOrg IssueOrg Getter
 func (r AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) GetIssueOrg() string {
 	return r._issueOrg
 }
 
-// Set is PlatformUserId Setter
+// SetPlatformUserId is PlatformUserId Setter
 // 客户在1688的唯一标识
 func (r *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) SetPlatformUserId(_platformUserId string) error {
 	r._platformUserId = _platformUserId
@@ -79,12 +79,12 @@ func (r *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) SetPlatformUserId(_pl
 	return nil
 }
 
-// Get PlatformUserId Getter
+// GetPlatformUserId PlatformUserId Getter
 func (r AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) GetPlatformUserId() string {
 	return r._platformUserId
 }
 
-// Set is ReportUrl Setter
+// SetReportUrl is ReportUrl Setter
 // 出证报告下载地址
 func (r *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) SetReportUrl(_reportUrl string) error {
 	r._reportUrl = _reportUrl
@@ -92,12 +92,12 @@ func (r *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) SetReportUrl(_reportU
 	return nil
 }
 
-// Get ReportUrl Getter
+// GetReportUrl ReportUrl Getter
 func (r AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) GetReportUrl() string {
 	return r._reportUrl
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 出证状态
 func (r *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) SetStatus(_status string) error {
 	r._status = _status
@@ -105,7 +105,7 @@ func (r *AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) SetStatus(_status str
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r AlibabaNazcaAuthIssueauthapplyCallbackAPIRequest) GetStatus() string {
 	return r._status
 }

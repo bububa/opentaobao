@@ -37,7 +37,7 @@ func (r TaobaoWlbWaybillIGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WaybillApplyNewRequest Setter
+// SetWaybillApplyNewRequest is WaybillApplyNewRequest Setter
 // 面单申请
 func (r *TaobaoWlbWaybillIGetAPIRequest) SetWaybillApplyNewRequest(_waybillApplyNewRequest *WaybillApplyNewRequest) error {
 	r._waybillApplyNewRequest = _waybillApplyNewRequest
@@ -45,7 +45,7 @@ func (r *TaobaoWlbWaybillIGetAPIRequest) SetWaybillApplyNewRequest(_waybillApply
 	return nil
 }
 
-// Get WaybillApplyNewRequest Getter
+// GetWaybillApplyNewRequest WaybillApplyNewRequest Getter
 func (r TaobaoWlbWaybillIGetAPIRequest) GetWaybillApplyNewRequest() *WaybillApplyNewRequest {
 	return r._waybillApplyNewRequest
 }

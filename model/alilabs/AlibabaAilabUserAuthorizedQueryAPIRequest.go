@@ -39,7 +39,7 @@ func (r AlibabaAilabUserAuthorizedQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SchemaKey Setter
+// SetSchemaKey is SchemaKey Setter
 // 开放平台申请的schema
 func (r *AlibabaAilabUserAuthorizedQueryAPIRequest) SetSchemaKey(_schemaKey string) error {
 	r._schemaKey = _schemaKey
@@ -47,12 +47,12 @@ func (r *AlibabaAilabUserAuthorizedQueryAPIRequest) SetSchemaKey(_schemaKey stri
 	return nil
 }
 
-// Get SchemaKey Getter
+// GetSchemaKey SchemaKey Getter
 func (r AlibabaAilabUserAuthorizedQueryAPIRequest) GetSchemaKey() string {
 	return r._schemaKey
 }
 
-// Set is MerchantUserId Setter
+// SetMerchantUserId is MerchantUserId Setter
 // 三方用户的唯一ID
 func (r *AlibabaAilabUserAuthorizedQueryAPIRequest) SetMerchantUserId(_merchantUserId string) error {
 	r._merchantUserId = _merchantUserId
@@ -60,7 +60,7 @@ func (r *AlibabaAilabUserAuthorizedQueryAPIRequest) SetMerchantUserId(_merchantU
 	return nil
 }
 
-// Get MerchantUserId Getter
+// GetMerchantUserId MerchantUserId Getter
 func (r AlibabaAilabUserAuthorizedQueryAPIRequest) GetMerchantUserId() string {
 	return r._merchantUserId
 }

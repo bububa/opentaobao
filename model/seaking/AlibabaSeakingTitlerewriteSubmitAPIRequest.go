@@ -41,7 +41,7 @@ func (r AlibabaSeakingTitlerewriteSubmitAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TitleRewriteDetailList Setter
+// SetTitleRewriteDetailList is TitleRewriteDetailList Setter
 // 任务详情列表
 func (r *AlibabaSeakingTitlerewriteSubmitAPIRequest) SetTitleRewriteDetailList(_titleRewriteDetailList []TitleRewriteDetailDto) error {
 	r._titleRewriteDetailList = _titleRewriteDetailList
@@ -49,12 +49,12 @@ func (r *AlibabaSeakingTitlerewriteSubmitAPIRequest) SetTitleRewriteDetailList(_
 	return nil
 }
 
-// Get TitleRewriteDetailList Getter
+// GetTitleRewriteDetailList TitleRewriteDetailList Getter
 func (r AlibabaSeakingTitlerewriteSubmitAPIRequest) GetTitleRewriteDetailList() []TitleRewriteDetailDto {
 	return r._titleRewriteDetailList
 }
 
-// Set is TokenFrom Setter
+// SetTokenFrom is TokenFrom Setter
 // token来源站点
 func (r *AlibabaSeakingTitlerewriteSubmitAPIRequest) SetTokenFrom(_tokenFrom string) error {
 	r._tokenFrom = _tokenFrom
@@ -62,12 +62,12 @@ func (r *AlibabaSeakingTitlerewriteSubmitAPIRequest) SetTokenFrom(_tokenFrom str
 	return nil
 }
 
-// Get TokenFrom Getter
+// GetTokenFrom TokenFrom Getter
 func (r AlibabaSeakingTitlerewriteSubmitAPIRequest) GetTokenFrom() string {
 	return r._tokenFrom
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // 用户token
 func (r *AlibabaSeakingTitlerewriteSubmitAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -75,7 +75,7 @@ func (r *AlibabaSeakingTitlerewriteSubmitAPIRequest) SetToken(_token string) err
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlibabaSeakingTitlerewriteSubmitAPIRequest) GetToken() string {
 	return r._token
 }

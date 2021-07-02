@@ -39,7 +39,7 @@ func (r TaobaoPictureUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PictureId Setter
+// SetPictureId is PictureId Setter
 // 要更改名字的图片的id
 func (r *TaobaoPictureUpdateAPIRequest) SetPictureId(_pictureId int64) error {
 	r._pictureId = _pictureId
@@ -47,12 +47,12 @@ func (r *TaobaoPictureUpdateAPIRequest) SetPictureId(_pictureId int64) error {
 	return nil
 }
 
-// Get PictureId Getter
+// GetPictureId PictureId Getter
 func (r TaobaoPictureUpdateAPIRequest) GetPictureId() int64 {
 	return r._pictureId
 }
 
-// Set is NewName Setter
+// SetNewName is NewName Setter
 // 新的图片名，最大长度50字符，不能为空
 func (r *TaobaoPictureUpdateAPIRequest) SetNewName(_newName string) error {
 	r._newName = _newName
@@ -60,7 +60,7 @@ func (r *TaobaoPictureUpdateAPIRequest) SetNewName(_newName string) error {
 	return nil
 }
 
-// Get NewName Getter
+// GetNewName NewName Getter
 func (r TaobaoPictureUpdateAPIRequest) GetNewName() string {
 	return r._newName
 }

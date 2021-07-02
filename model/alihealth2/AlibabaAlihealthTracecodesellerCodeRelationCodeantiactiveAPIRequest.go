@@ -41,7 +41,7 @@ func (r AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) Get
 	return params
 }
 
-// Set is TopCode Setter
+// SetTopCode is TopCode Setter
 // 顶层码
 func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) SetTopCode(_topCode string) error {
 	r._topCode = _topCode
@@ -49,12 +49,12 @@ func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) Se
 	return nil
 }
 
-// Get TopCode Getter
+// GetTopCode TopCode Getter
 func (r AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) GetTopCode() string {
 	return r._topCode
 }
 
-// Set is TbUserId Setter
+// SetTbUserId is TbUserId Setter
 // 淘宝名
 func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) SetTbUserId(_tbUserId string) error {
 	r._tbUserId = _tbUserId
@@ -62,12 +62,12 @@ func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) Se
 	return nil
 }
 
-// Get TbUserId Getter
+// GetTbUserId TbUserId Getter
 func (r AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) GetTbUserId() string {
 	return r._tbUserId
 }
 
-// Set is EntInfoId Setter
+// SetEntInfoId is EntInfoId Setter
 // 企业id
 func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) SetEntInfoId(_entInfoId int64) error {
 	r._entInfoId = _entInfoId
@@ -75,7 +75,7 @@ func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) Se
 	return nil
 }
 
-// Get EntInfoId Getter
+// GetEntInfoId EntInfoId Getter
 func (r AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveAPIRequest) GetEntInfoId() int64 {
 	return r._entInfoId
 }

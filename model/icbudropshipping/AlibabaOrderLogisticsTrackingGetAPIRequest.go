@@ -37,7 +37,7 @@ func (r AlibabaOrderLogisticsTrackingGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TradeId Setter
+// SetTradeId is TradeId Setter
 // order id
 func (r *AlibabaOrderLogisticsTrackingGetAPIRequest) SetTradeId(_tradeId int64) error {
 	r._tradeId = _tradeId
@@ -45,7 +45,7 @@ func (r *AlibabaOrderLogisticsTrackingGetAPIRequest) SetTradeId(_tradeId int64) 
 	return nil
 }
 
-// Get TradeId Getter
+// GetTradeId TradeId Getter
 func (r AlibabaOrderLogisticsTrackingGetAPIRequest) GetTradeId() int64 {
 	return r._tradeId
 }

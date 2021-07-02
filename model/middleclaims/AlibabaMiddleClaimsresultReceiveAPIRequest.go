@@ -37,7 +37,7 @@ func (r AlibabaMiddleClaimsresultReceiveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ClaimsResultDTO Setter
+// SetClaimsResultDTO is ClaimsResultDTO Setter
 // 理赔结果实体
 func (r *AlibabaMiddleClaimsresultReceiveAPIRequest) SetClaimsResultDTO(_claimsResultDTO *ClaimsResultDto) error {
 	r._claimsResultDTO = _claimsResultDTO
@@ -45,7 +45,7 @@ func (r *AlibabaMiddleClaimsresultReceiveAPIRequest) SetClaimsResultDTO(_claimsR
 	return nil
 }
 
-// Get ClaimsResultDTO Getter
+// GetClaimsResultDTO ClaimsResultDTO Getter
 func (r AlibabaMiddleClaimsresultReceiveAPIRequest) GetClaimsResultDTO() *ClaimsResultDto {
 	return r._claimsResultDTO
 }

@@ -37,7 +37,7 @@ func (r AlibabaMarketingLotteryActivityUnbindAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is LotteryActivityRel Setter
+// SetLotteryActivityRel is LotteryActivityRel Setter
 // 解绑抽奖活动请求对象
 func (r *AlibabaMarketingLotteryActivityUnbindAPIRequest) SetLotteryActivityRel(_lotteryActivityRel *LotteryActivityRelDto) error {
 	r._lotteryActivityRel = _lotteryActivityRel
@@ -45,7 +45,7 @@ func (r *AlibabaMarketingLotteryActivityUnbindAPIRequest) SetLotteryActivityRel(
 	return nil
 }
 
-// Get LotteryActivityRel Getter
+// GetLotteryActivityRel LotteryActivityRel Getter
 func (r AlibabaMarketingLotteryActivityUnbindAPIRequest) GetLotteryActivityRel() *LotteryActivityRelDto {
 	return r._lotteryActivityRel
 }

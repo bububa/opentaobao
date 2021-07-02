@@ -37,7 +37,7 @@ func (r AlibabaPerfectPerformanceItemQueryAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is ItemPerfectPerformanceQueryReq Setter
+// SetItemPerfectPerformanceQueryReq is ItemPerfectPerformanceQueryReq Setter
 // 查询入参
 func (r *AlibabaPerfectPerformanceItemQueryAPIRequest) SetItemPerfectPerformanceQueryReq(_itemPerfectPerformanceQueryReq *ItemPerfectPerformanceQueryReq) error {
 	r._itemPerfectPerformanceQueryReq = _itemPerfectPerformanceQueryReq
@@ -45,7 +45,7 @@ func (r *AlibabaPerfectPerformanceItemQueryAPIRequest) SetItemPerfectPerformance
 	return nil
 }
 
-// Get ItemPerfectPerformanceQueryReq Getter
+// GetItemPerfectPerformanceQueryReq ItemPerfectPerformanceQueryReq Getter
 func (r AlibabaPerfectPerformanceItemQueryAPIRequest) GetItemPerfectPerformanceQueryReq() *ItemPerfectPerformanceQueryReq {
 	return r._itemPerfectPerformanceQueryReq
 }

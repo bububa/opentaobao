@@ -37,7 +37,7 @@ func (r AlibabaMosGoodsSetpriceAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PriceDtoList Setter
+// SetPriceDtoList is PriceDtoList Setter
 // 价格变更对象列表
 func (r *AlibabaMosGoodsSetpriceAPIRequest) SetPriceDtoList(_priceDtoList []PriceDto) error {
 	r._priceDtoList = _priceDtoList
@@ -45,7 +45,7 @@ func (r *AlibabaMosGoodsSetpriceAPIRequest) SetPriceDtoList(_priceDtoList []Pric
 	return nil
 }
 
-// Get PriceDtoList Getter
+// GetPriceDtoList PriceDtoList Getter
 func (r AlibabaMosGoodsSetpriceAPIRequest) GetPriceDtoList() []PriceDto {
 	return r._priceDtoList
 }

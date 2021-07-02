@@ -37,7 +37,7 @@ func (r AlibabaMjMosFundCancelbillAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CancelBillDTO Setter
+// SetCancelBillDTO is CancelBillDTO Setter
 // 取消入参
 func (r *AlibabaMjMosFundCancelbillAPIRequest) SetCancelBillDTO(_cancelBillDTO *CancelBillDto) error {
 	r._cancelBillDTO = _cancelBillDTO
@@ -45,7 +45,7 @@ func (r *AlibabaMjMosFundCancelbillAPIRequest) SetCancelBillDTO(_cancelBillDTO *
 	return nil
 }
 
-// Get CancelBillDTO Getter
+// GetCancelBillDTO CancelBillDTO Getter
 func (r AlibabaMjMosFundCancelbillAPIRequest) GetCancelBillDTO() *CancelBillDto {
 	return r._cancelBillDTO
 }

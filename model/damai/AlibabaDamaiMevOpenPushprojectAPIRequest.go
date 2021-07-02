@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenPushprojectAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PushProjectParam Setter
+// SetPushProjectParam is PushProjectParam Setter
 // 入参pushProjectParam
 func (r *AlibabaDamaiMevOpenPushprojectAPIRequest) SetPushProjectParam(_pushProjectParam *ThirdProjectPushOpenParam) error {
 	r._pushProjectParam = _pushProjectParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenPushprojectAPIRequest) SetPushProjectParam(_pushProj
 	return nil
 }
 
-// Get PushProjectParam Getter
+// GetPushProjectParam PushProjectParam Getter
 func (r AlibabaDamaiMevOpenPushprojectAPIRequest) GetPushProjectParam() *ThirdProjectPushOpenParam {
 	return r._pushProjectParam
 }

@@ -49,7 +49,7 @@ func (r CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) GetApiParams() u
 	return params
 }
 
-// Set is CpCode Setter
+// SetCpCode is CpCode Setter
 // 小件员所在公司编号
 func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetCpCode(_cpCode string) error {
 	r._cpCode = _cpCode
@@ -57,12 +57,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetCpCode(_cpCo
 	return nil
 }
 
-// Get CpCode Getter
+// GetCpCode CpCode Getter
 func (r CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) GetCpCode() string {
 	return r._cpCode
 }
 
-// Set is CpUserId Setter
+// SetCpUserId is CpUserId Setter
 // 小件员员工编号
 func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetCpUserId(_cpUserId string) error {
 	r._cpUserId = _cpUserId
@@ -70,12 +70,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetCpUserId(_cp
 	return nil
 }
 
-// Get CpUserId Getter
+// GetCpUserId CpUserId Getter
 func (r CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) GetCpUserId() string {
 	return r._cpUserId
 }
 
-// Set is TimeStamp Setter
+// SetTimeStamp is TimeStamp Setter
 // 上报时间，格式：yyyy-MM-dd HH:mm:ss
 func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetTimeStamp(_timeStamp string) error {
 	r._timeStamp = _timeStamp
@@ -83,12 +83,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetTimeStamp(_t
 	return nil
 }
 
-// Get TimeStamp Getter
+// GetTimeStamp TimeStamp Getter
 func (r CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) GetTimeStamp() string {
 	return r._timeStamp
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 来源：1.小件员app sdk 2.驿站 3. 裹裹 10001.圆通行者
 func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetSource(_source int64) error {
 	r._source = _source
@@ -96,12 +96,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetSource(_sour
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) GetSource() int64 {
 	return r._source
 }
 
-// Set is Lng Setter
+// SetLng is Lng Setter
 // 经度
 func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetLng(_lng string) error {
 	r._lng = _lng
@@ -109,12 +109,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetLng(_lng str
 	return nil
 }
 
-// Get Lng Getter
+// GetLng Lng Getter
 func (r CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) GetLng() string {
 	return r._lng
 }
 
-// Set is Lat Setter
+// SetLat is Lat Setter
 // 纬度
 func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetLat(_lat string) error {
 	r._lat = _lat
@@ -122,12 +122,12 @@ func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetLat(_lat str
 	return nil
 }
 
-// Get Lat Getter
+// GetLat Lat Getter
 func (r CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) GetLat() string {
 	return r._lat
 }
 
-// Set is GpsType Setter
+// SetGpsType is GpsType Setter
 // 0 安卓定位，     1 苹果定位，  2 其他系统定位，   10 高德定位，  11 百度定位，  12 google定位     13 其他
 func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetGpsType(_gpsType string) error {
 	r._gpsType = _gpsType
@@ -135,7 +135,7 @@ func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetGpsType(_gps
 	return nil
 }
 
-// Get GpsType Getter
+// GetGpsType GpsType Getter
 func (r CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) GetGpsType() string {
 	return r._gpsType
 }

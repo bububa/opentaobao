@@ -39,7 +39,7 @@ func (r TaobaoTrainAgentReturnordersGetVtwoAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 卖家ID
 func (r *TaobaoTrainAgentReturnordersGetVtwoAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -47,12 +47,12 @@ func (r *TaobaoTrainAgentReturnordersGetVtwoAPIRequest) SetAgentId(_agentId int6
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r TaobaoTrainAgentReturnordersGetVtwoAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }
 
-// Set is Offline Setter
+// SetOffline is Offline Setter
 // 0 线上退票 1线下退票
 func (r *TaobaoTrainAgentReturnordersGetVtwoAPIRequest) SetOffline(_offline int64) error {
 	r._offline = _offline
@@ -60,7 +60,7 @@ func (r *TaobaoTrainAgentReturnordersGetVtwoAPIRequest) SetOffline(_offline int6
 	return nil
 }
 
-// Get Offline Getter
+// GetOffline Offline Getter
 func (r TaobaoTrainAgentReturnordersGetVtwoAPIRequest) GetOffline() int64 {
 	return r._offline
 }

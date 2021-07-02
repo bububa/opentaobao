@@ -37,7 +37,7 @@ func (r TaobaoJdsTradesStatisticsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Date Setter
+// SetDate is Date Setter
 // 查询的日期，格式如YYYYMMDD的日期对应的数字
 func (r *TaobaoJdsTradesStatisticsGetAPIRequest) SetDate(_date int64) error {
 	r._date = _date
@@ -45,7 +45,7 @@ func (r *TaobaoJdsTradesStatisticsGetAPIRequest) SetDate(_date int64) error {
 	return nil
 }
 
-// Get Date Getter
+// GetDate Date Getter
 func (r TaobaoJdsTradesStatisticsGetAPIRequest) GetDate() int64 {
 	return r._date
 }

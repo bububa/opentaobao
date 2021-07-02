@@ -37,7 +37,7 @@ func (r AlibabaAilabsTmallgenieAuthRefreshAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is RefreshTokenRequest Setter
+// SetRefreshTokenRequest is RefreshTokenRequest Setter
 // refresh_token_request
 func (r *AlibabaAilabsTmallgenieAuthRefreshAPIRequest) SetRefreshTokenRequest(_refreshTokenRequest *TopRefreshReqDto) error {
 	r._refreshTokenRequest = _refreshTokenRequest
@@ -45,7 +45,7 @@ func (r *AlibabaAilabsTmallgenieAuthRefreshAPIRequest) SetRefreshTokenRequest(_r
 	return nil
 }
 
-// Get RefreshTokenRequest Getter
+// GetRefreshTokenRequest RefreshTokenRequest Getter
 func (r AlibabaAilabsTmallgenieAuthRefreshAPIRequest) GetRefreshTokenRequest() *TopRefreshReqDto {
 	return r._refreshTokenRequest
 }

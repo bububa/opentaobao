@@ -37,7 +37,7 @@ func (r AliexpressAscpFroItemQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is FulfillmentReverseOrderItemQuery Setter
+// SetFulfillmentReverseOrderItemQuery is FulfillmentReverseOrderItemQuery Setter
 // dto
 func (r *AliexpressAscpFroItemQueryAPIRequest) SetFulfillmentReverseOrderItemQuery(_fulfillmentReverseOrderItemQuery *FulfillmentReverseOrderItemQueryDto) error {
 	r._fulfillmentReverseOrderItemQuery = _fulfillmentReverseOrderItemQuery
@@ -45,7 +45,7 @@ func (r *AliexpressAscpFroItemQueryAPIRequest) SetFulfillmentReverseOrderItemQue
 	return nil
 }
 
-// Get FulfillmentReverseOrderItemQuery Getter
+// GetFulfillmentReverseOrderItemQuery FulfillmentReverseOrderItemQuery Getter
 func (r AliexpressAscpFroItemQueryAPIRequest) GetFulfillmentReverseOrderItemQuery() *FulfillmentReverseOrderItemQueryDto {
 	return r._fulfillmentReverseOrderItemQuery
 }

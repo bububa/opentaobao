@@ -37,7 +37,7 @@ func (r AlibabaWdkOrderRefundListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BatchQueryRefundRequest Setter
+// SetBatchQueryRefundRequest is BatchQueryRefundRequest Setter
 // 查询条件
 func (r *AlibabaWdkOrderRefundListAPIRequest) SetBatchQueryRefundRequest(_batchQueryRefundRequest *BatchQueryRefundRequest) error {
 	r._batchQueryRefundRequest = _batchQueryRefundRequest
@@ -45,7 +45,7 @@ func (r *AlibabaWdkOrderRefundListAPIRequest) SetBatchQueryRefundRequest(_batchQ
 	return nil
 }
 
-// Get BatchQueryRefundRequest Getter
+// GetBatchQueryRefundRequest BatchQueryRefundRequest Getter
 func (r AlibabaWdkOrderRefundListAPIRequest) GetBatchQueryRefundRequest() *BatchQueryRefundRequest {
 	return r._batchQueryRefundRequest
 }

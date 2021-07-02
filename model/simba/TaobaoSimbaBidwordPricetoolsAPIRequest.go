@@ -43,7 +43,7 @@ func (r TaobaoSimbaBidwordPricetoolsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BidwordId Setter
+// SetBidwordId is BidwordId Setter
 // 关键词id
 func (r *TaobaoSimbaBidwordPricetoolsAPIRequest) SetBidwordId(_bidwordId int64) error {
 	r._bidwordId = _bidwordId
@@ -51,12 +51,12 @@ func (r *TaobaoSimbaBidwordPricetoolsAPIRequest) SetBidwordId(_bidwordId int64) 
 	return nil
 }
 
-// Get BidwordId Getter
+// GetBidwordId BidwordId Getter
 func (r TaobaoSimbaBidwordPricetoolsAPIRequest) GetBidwordId() int64 {
 	return r._bidwordId
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 出价目标 ，1：争取排名；2：提升展现；3：提示点击；4：提升转化
 func (r *TaobaoSimbaBidwordPricetoolsAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -64,12 +64,12 @@ func (r *TaobaoSimbaBidwordPricetoolsAPIRequest) SetType(_type int64) error {
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r TaobaoSimbaBidwordPricetoolsAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is TrafficType Setter
+// SetTrafficType is TrafficType Setter
 // 区分渠道 ，计算机：PC，无线 ：WL
 func (r *TaobaoSimbaBidwordPricetoolsAPIRequest) SetTrafficType(_trafficType string) error {
 	r._trafficType = _trafficType
@@ -77,12 +77,12 @@ func (r *TaobaoSimbaBidwordPricetoolsAPIRequest) SetTrafficType(_trafficType str
 	return nil
 }
 
-// Get TrafficType Getter
+// GetTrafficType TrafficType Getter
 func (r TaobaoSimbaBidwordPricetoolsAPIRequest) GetTrafficType() string {
 	return r._trafficType
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广单元id
 func (r *TaobaoSimbaBidwordPricetoolsAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -90,7 +90,7 @@ func (r *TaobaoSimbaBidwordPricetoolsAPIRequest) SetAdgroupId(_adgroupId int64) 
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaBidwordPricetoolsAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }

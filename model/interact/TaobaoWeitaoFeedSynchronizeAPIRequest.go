@@ -49,7 +49,7 @@ func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BizId Setter
+// SetBizId is BizId Setter
 // 活动id
 func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetBizId(_bizId int64) error {
 	r._bizId = _bizId
@@ -57,12 +57,12 @@ func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetBizId(_bizId int64) error {
 	return nil
 }
 
-// Get BizId Getter
+// GetBizId BizId Getter
 func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetBizId() int64 {
 	return r._bizId
 }
 
-// Set is CoverPath Setter
+// SetCoverPath is CoverPath Setter
 // feed封面图片url
 func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetCoverPath(_coverPath string) error {
 	r._coverPath = _coverPath
@@ -70,12 +70,12 @@ func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetCoverPath(_coverPath string) 
 	return nil
 }
 
-// Get CoverPath Getter
+// GetCoverPath CoverPath Getter
 func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetCoverPath() string {
 	return r._coverPath
 }
 
-// Set is DetailUrl Setter
+// SetDetailUrl is DetailUrl Setter
 // feed点击跳转的活动地址
 func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetDetailUrl(_detailUrl string) error {
 	r._detailUrl = _detailUrl
@@ -83,12 +83,12 @@ func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetDetailUrl(_detailUrl string) 
 	return nil
 }
 
-// Get DetailUrl Getter
+// GetDetailUrl DetailUrl Getter
 func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetDetailUrl() string {
 	return r._detailUrl
 }
 
-// Set is EndTime Setter
+// SetEndTime is EndTime Setter
 // feed展示结束时间
 func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetEndTime(_endTime int64) error {
 	r._endTime = _endTime
@@ -96,12 +96,12 @@ func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetEndTime(_endTime int64) error
 	return nil
 }
 
-// Get EndTime Getter
+// GetEndTime EndTime Getter
 func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetEndTime() int64 {
 	return r._endTime
 }
 
-// Set is StartTime Setter
+// SetStartTime is StartTime Setter
 // feed展示开始时间
 func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetStartTime(_startTime int64) error {
 	r._startTime = _startTime
@@ -109,12 +109,12 @@ func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetStartTime(_startTime int64) e
 	return nil
 }
 
-// Get StartTime Getter
+// GetStartTime StartTime Getter
 func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetStartTime() int64 {
 	return r._startTime
 }
 
-// Set is Summary Setter
+// SetSummary is Summary Setter
 // feed描述
 func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetSummary(_summary string) error {
 	r._summary = _summary
@@ -122,12 +122,12 @@ func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetSummary(_summary string) erro
 	return nil
 }
 
-// Get Summary Getter
+// GetSummary Summary Getter
 func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetSummary() string {
 	return r._summary
 }
 
-// Set is Title Setter
+// SetTitle is Title Setter
 // feed标题
 func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetTitle(_title string) error {
 	r._title = _title
@@ -135,7 +135,7 @@ func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetTitle(_title string) error {
 	return nil
 }
 
-// Get Title Getter
+// GetTitle Title Getter
 func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetTitle() string {
 	return r._title
 }

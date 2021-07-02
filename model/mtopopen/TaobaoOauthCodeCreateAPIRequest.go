@@ -37,7 +37,7 @@ func (r TaobaoOauthCodeCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Test Setter
+// SetTest is Test Setter
 // mock param
 func (r *TaobaoOauthCodeCreateAPIRequest) SetTest(_test int64) error {
 	r._test = _test
@@ -45,7 +45,7 @@ func (r *TaobaoOauthCodeCreateAPIRequest) SetTest(_test int64) error {
 	return nil
 }
 
-// Get Test Getter
+// GetTest Test Getter
 func (r TaobaoOauthCodeCreateAPIRequest) GetTest() int64 {
 	return r._test
 }

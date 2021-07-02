@@ -37,7 +37,7 @@ func (r AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest) GetApiPara
 	return params
 }
 
-// Set is DisTicketItemStatusQueryParam Setter
+// SetDisTicketItemStatusQueryParam is DisTicketItemStatusQueryParam Setter
 // 入参
 func (r *AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest) SetDisTicketItemStatusQueryParam(_disTicketItemStatusQueryParam *DisTicketItemStatusQueryDto) error {
 	r._disTicketItemStatusQueryParam = _disTicketItemStatusQueryParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest) SetDisTic
 	return nil
 }
 
-// Get DisTicketItemStatusQueryParam Getter
+// GetDisTicketItemStatusQueryParam DisTicketItemStatusQueryParam Getter
 func (r AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest) GetDisTicketItemStatusQueryParam() *DisTicketItemStatusQueryDto {
 	return r._disTicketItemStatusQueryParam
 }

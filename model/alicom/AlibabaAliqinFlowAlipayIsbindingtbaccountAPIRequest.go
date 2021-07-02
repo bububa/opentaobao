@@ -37,7 +37,7 @@ func (r AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is AlipayId Setter
+// SetAlipayId is AlipayId Setter
 // 支付宝ID
 func (r *AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest) SetAlipayId(_alipayId string) error {
 	r._alipayId = _alipayId
@@ -45,7 +45,7 @@ func (r *AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest) SetAlipayId(_alipa
 	return nil
 }
 
-// Get AlipayId Getter
+// GetAlipayId AlipayId Getter
 func (r AlibabaAliqinFlowAlipayIsbindingtbaccountAPIRequest) GetAlipayId() string {
 	return r._alipayId
 }

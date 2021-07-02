@@ -37,7 +37,7 @@ func (r AlibabaIdleAgreementPayQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Param Setter
+// SetParam is Param Setter
 // 入参
 func (r *AlibabaIdleAgreementPayQueryAPIRequest) SetParam(_param *AgreementPayBillQueryParam) error {
 	r._param = _param
@@ -45,7 +45,7 @@ func (r *AlibabaIdleAgreementPayQueryAPIRequest) SetParam(_param *AgreementPayBi
 	return nil
 }
 
-// Get Param Getter
+// GetParam Param Getter
 func (r AlibabaIdleAgreementPayQueryAPIRequest) GetParam() *AgreementPayBillQueryParam {
 	return r._param
 }

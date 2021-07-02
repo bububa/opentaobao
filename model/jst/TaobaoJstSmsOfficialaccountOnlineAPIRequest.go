@@ -37,7 +37,7 @@ func (r TaobaoJstSmsOfficialaccountOnlineAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OfficialAccountOnlineRequest Setter
+// SetOfficialAccountOnlineRequest is OfficialAccountOnlineRequest Setter
 // 公众号上线请求参数
 func (r *TaobaoJstSmsOfficialaccountOnlineAPIRequest) SetOfficialAccountOnlineRequest(_officialAccountOnlineRequest *JstBaseRequest) error {
 	r._officialAccountOnlineRequest = _officialAccountOnlineRequest
@@ -45,7 +45,7 @@ func (r *TaobaoJstSmsOfficialaccountOnlineAPIRequest) SetOfficialAccountOnlineRe
 	return nil
 }
 
-// Get OfficialAccountOnlineRequest Getter
+// GetOfficialAccountOnlineRequest OfficialAccountOnlineRequest Getter
 func (r TaobaoJstSmsOfficialaccountOnlineAPIRequest) GetOfficialAccountOnlineRequest() *JstBaseRequest {
 	return r._officialAccountOnlineRequest
 }

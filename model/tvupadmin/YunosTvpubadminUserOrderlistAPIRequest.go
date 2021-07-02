@@ -47,7 +47,7 @@ func (r YunosTvpubadminUserOrderlistAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Uid Setter
+// SetUid is Uid Setter
 // 用户ID
 func (r *YunosTvpubadminUserOrderlistAPIRequest) SetUid(_uid int64) error {
 	r._uid = _uid
@@ -55,12 +55,12 @@ func (r *YunosTvpubadminUserOrderlistAPIRequest) SetUid(_uid int64) error {
 	return nil
 }
 
-// Get Uid Getter
+// GetUid Uid Getter
 func (r YunosTvpubadminUserOrderlistAPIRequest) GetUid() int64 {
 	return r._uid
 }
 
-// Set is CreateTimeStartStr Setter
+// SetCreateTimeStartStr is CreateTimeStartStr Setter
 // 开始时间
 func (r *YunosTvpubadminUserOrderlistAPIRequest) SetCreateTimeStartStr(_createTimeStartStr string) error {
 	r._createTimeStartStr = _createTimeStartStr
@@ -68,12 +68,12 @@ func (r *YunosTvpubadminUserOrderlistAPIRequest) SetCreateTimeStartStr(_createTi
 	return nil
 }
 
-// Get CreateTimeStartStr Getter
+// GetCreateTimeStartStr CreateTimeStartStr Getter
 func (r YunosTvpubadminUserOrderlistAPIRequest) GetCreateTimeStartStr() string {
 	return r._createTimeStartStr
 }
 
-// Set is CreateTimeEndStr Setter
+// SetCreateTimeEndStr is CreateTimeEndStr Setter
 // 结束时间
 func (r *YunosTvpubadminUserOrderlistAPIRequest) SetCreateTimeEndStr(_createTimeEndStr string) error {
 	r._createTimeEndStr = _createTimeEndStr
@@ -81,12 +81,12 @@ func (r *YunosTvpubadminUserOrderlistAPIRequest) SetCreateTimeEndStr(_createTime
 	return nil
 }
 
-// Get CreateTimeEndStr Getter
+// GetCreateTimeEndStr CreateTimeEndStr Getter
 func (r YunosTvpubadminUserOrderlistAPIRequest) GetCreateTimeEndStr() string {
 	return r._createTimeEndStr
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照方
 func (r *YunosTvpubadminUserOrderlistAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -94,12 +94,12 @@ func (r *YunosTvpubadminUserOrderlistAPIRequest) SetLicense(_license int64) erro
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminUserOrderlistAPIRequest) GetLicense() int64 {
 	return r._license
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 页码值
 func (r *YunosTvpubadminUserOrderlistAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -107,12 +107,12 @@ func (r *YunosTvpubadminUserOrderlistAPIRequest) SetPageNo(_pageNo int64) error 
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r YunosTvpubadminUserOrderlistAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页行数
 func (r *YunosTvpubadminUserOrderlistAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -120,7 +120,7 @@ func (r *YunosTvpubadminUserOrderlistAPIRequest) SetPageSize(_pageSize int64) er
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r YunosTvpubadminUserOrderlistAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

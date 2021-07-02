@@ -41,7 +41,7 @@ func (r TaobaoFenxiaoProductGradepriceGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品id
 func (r *TaobaoFenxiaoProductGradepriceGetAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -49,12 +49,12 @@ func (r *TaobaoFenxiaoProductGradepriceGetAPIRequest) SetProductId(_productId in
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TaobaoFenxiaoProductGradepriceGetAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is SkuId Setter
+// SetSkuId is SkuId Setter
 // skuId
 func (r *TaobaoFenxiaoProductGradepriceGetAPIRequest) SetSkuId(_skuId int64) error {
 	r._skuId = _skuId
@@ -62,12 +62,12 @@ func (r *TaobaoFenxiaoProductGradepriceGetAPIRequest) SetSkuId(_skuId int64) err
 	return nil
 }
 
-// Get SkuId Getter
+// GetSkuId SkuId Getter
 func (r TaobaoFenxiaoProductGradepriceGetAPIRequest) GetSkuId() int64 {
 	return r._skuId
 }
 
-// Set is TradeType Setter
+// SetTradeType is TradeType Setter
 // 经、代销模式（1：代销、2：经销）
 func (r *TaobaoFenxiaoProductGradepriceGetAPIRequest) SetTradeType(_tradeType int64) error {
 	r._tradeType = _tradeType
@@ -75,7 +75,7 @@ func (r *TaobaoFenxiaoProductGradepriceGetAPIRequest) SetTradeType(_tradeType in
 	return nil
 }
 
-// Get TradeType Getter
+// GetTradeType TradeType Getter
 func (r TaobaoFenxiaoProductGradepriceGetAPIRequest) GetTradeType() int64 {
 	return r._tradeType
 }

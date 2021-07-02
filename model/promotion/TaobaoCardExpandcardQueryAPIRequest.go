@@ -39,7 +39,7 @@ func (r TaobaoCardExpandcardQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UsedScopeCode Setter
+// SetUsedScopeCode is UsedScopeCode Setter
 // 卡使用范围，不传则会查询所有
 func (r *TaobaoCardExpandcardQueryAPIRequest) SetUsedScopeCode(_usedScopeCode string) error {
 	r._usedScopeCode = _usedScopeCode
@@ -47,12 +47,12 @@ func (r *TaobaoCardExpandcardQueryAPIRequest) SetUsedScopeCode(_usedScopeCode st
 	return nil
 }
 
-// Get UsedScopeCode Getter
+// GetUsedScopeCode UsedScopeCode Getter
 func (r TaobaoCardExpandcardQueryAPIRequest) GetUsedScopeCode() string {
 	return r._usedScopeCode
 }
 
-// Set is AccountNo Setter
+// SetAccountNo is AccountNo Setter
 // 支付宝accountNo
 func (r *TaobaoCardExpandcardQueryAPIRequest) SetAccountNo(_accountNo string) error {
 	r._accountNo = _accountNo
@@ -60,7 +60,7 @@ func (r *TaobaoCardExpandcardQueryAPIRequest) SetAccountNo(_accountNo string) er
 	return nil
 }
 
-// Get AccountNo Getter
+// GetAccountNo AccountNo Getter
 func (r TaobaoCardExpandcardQueryAPIRequest) GetAccountNo() string {
 	return r._accountNo
 }

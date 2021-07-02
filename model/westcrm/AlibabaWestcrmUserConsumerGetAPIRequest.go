@@ -43,7 +43,7 @@ func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CampusId Setter
+// SetCampusId is CampusId Setter
 // 园区id
 func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetCampusId(_campusId int64) error {
 	r._campusId = _campusId
@@ -51,12 +51,12 @@ func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetCampusId(_campusId int64) e
 	return nil
 }
 
-// Get CampusId Getter
+// GetCampusId CampusId Getter
 func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }
 
-// Set is IbUserId Setter
+// SetIbUserId is IbUserId Setter
 // 用户id
 func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetIbUserId(_ibUserId int64) error {
 	r._ibUserId = _ibUserId
@@ -64,12 +64,12 @@ func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetIbUserId(_ibUserId int64) e
 	return nil
 }
 
-// Get IbUserId Getter
+// GetIbUserId IbUserId Getter
 func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetIbUserId() int64 {
 	return r._ibUserId
 }
 
-// Set is TimeBegin Setter
+// SetTimeBegin is TimeBegin Setter
 // 开始时间
 func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetTimeBegin(_timeBegin string) error {
 	r._timeBegin = _timeBegin
@@ -77,12 +77,12 @@ func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetTimeBegin(_timeBegin string
 	return nil
 }
 
-// Get TimeBegin Getter
+// GetTimeBegin TimeBegin Getter
 func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetTimeBegin() string {
 	return r._timeBegin
 }
 
-// Set is TimeEnd Setter
+// SetTimeEnd is TimeEnd Setter
 // 结束时间
 func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetTimeEnd(_timeEnd string) error {
 	r._timeEnd = _timeEnd
@@ -90,7 +90,7 @@ func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetTimeEnd(_timeEnd string) er
 	return nil
 }
 
-// Get TimeEnd Getter
+// GetTimeEnd TimeEnd Getter
 func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetTimeEnd() string {
 	return r._timeEnd
 }

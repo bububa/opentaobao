@@ -37,7 +37,7 @@ func (r AlibabaAlihouseNewhomePictureSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProjectPictureData Setter
+// SetProjectPictureData is ProjectPictureData Setter
 // 数据
 func (r *AlibabaAlihouseNewhomePictureSyncAPIRequest) SetProjectPictureData(_projectPictureData *ProjectPictureDto) error {
 	r._projectPictureData = _projectPictureData
@@ -45,7 +45,7 @@ func (r *AlibabaAlihouseNewhomePictureSyncAPIRequest) SetProjectPictureData(_pro
 	return nil
 }
 
-// Get ProjectPictureData Getter
+// GetProjectPictureData ProjectPictureData Getter
 func (r AlibabaAlihouseNewhomePictureSyncAPIRequest) GetProjectPictureData() *ProjectPictureDto {
 	return r._projectPictureData
 }

@@ -45,7 +45,7 @@ func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is TradeId Setter
+// SetTradeId is TradeId Setter
 // 交易单号
 func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetTradeId(_tradeId int64) error {
 	r._tradeId = _tradeId
@@ -53,12 +53,12 @@ func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetTradeId(_tradeId int
 	return nil
 }
 
-// Get TradeId Getter
+// GetTradeId TradeId Getter
 func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetTradeId() int64 {
 	return r._tradeId
 }
 
-// Set is ResId Setter
+// SetResId is ResId Setter
 // 资源id
 func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetResId(_resId int64) error {
 	r._resId = _resId
@@ -66,12 +66,12 @@ func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetResId(_resId int64) 
 	return nil
 }
 
-// Get ResId Getter
+// GetResId ResId Getter
 func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetResId() int64 {
 	return r._resId
 }
 
-// Set is ResCode Setter
+// SetResCode is ResCode Setter
 // 资源code
 func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetResCode(_resCode string) error {
 	r._resCode = _resCode
@@ -79,12 +79,12 @@ func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetResCode(_resCode str
 	return nil
 }
 
-// Get ResCode Getter
+// GetResCode ResCode Getter
 func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetResCode() string {
 	return r._resCode
 }
 
-// Set is WaybillNo Setter
+// SetWaybillNo is WaybillNo Setter
 // 运单号
 func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetWaybillNo(_waybillNo string) error {
 	r._waybillNo = _waybillNo
@@ -92,12 +92,12 @@ func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetWaybillNo(_waybillNo
 	return nil
 }
 
-// Get WaybillNo Getter
+// GetWaybillNo WaybillNo Getter
 func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetWaybillNo() string {
 	return r._waybillNo
 }
 
-// Set is FromId Setter
+// SetFromId is FromId Setter
 // 发件人地址库id
 func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetFromId(_fromId int64) error {
 	r._fromId = _fromId
@@ -105,7 +105,7 @@ func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetFromId(_fromId int64
 	return nil
 }
 
-// Get FromId Getter
+// GetFromId FromId Getter
 func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetFromId() int64 {
 	return r._fromId
 }

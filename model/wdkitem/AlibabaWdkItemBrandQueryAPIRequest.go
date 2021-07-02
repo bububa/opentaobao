@@ -41,7 +41,7 @@ func (r AlibabaWdkItemBrandQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Keyword Setter
+// SetKeyword is Keyword Setter
 // 查询关键词，不填则查询全部
 func (r *AlibabaWdkItemBrandQueryAPIRequest) SetKeyword(_keyword string) error {
 	r._keyword = _keyword
@@ -49,12 +49,12 @@ func (r *AlibabaWdkItemBrandQueryAPIRequest) SetKeyword(_keyword string) error {
 	return nil
 }
 
-// Get Keyword Getter
+// GetKeyword Keyword Getter
 func (r AlibabaWdkItemBrandQueryAPIRequest) GetKeyword() string {
 	return r._keyword
 }
 
-// Set is Offset Setter
+// SetOffset is Offset Setter
 // 起始位置
 func (r *AlibabaWdkItemBrandQueryAPIRequest) SetOffset(_offset int64) error {
 	r._offset = _offset
@@ -62,12 +62,12 @@ func (r *AlibabaWdkItemBrandQueryAPIRequest) SetOffset(_offset int64) error {
 	return nil
 }
 
-// Get Offset Getter
+// GetOffset Offset Getter
 func (r AlibabaWdkItemBrandQueryAPIRequest) GetOffset() int64 {
 	return r._offset
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 一页大小
 func (r *AlibabaWdkItemBrandQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -75,7 +75,7 @@ func (r *AlibabaWdkItemBrandQueryAPIRequest) SetPageSize(_pageSize int64) error 
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaWdkItemBrandQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

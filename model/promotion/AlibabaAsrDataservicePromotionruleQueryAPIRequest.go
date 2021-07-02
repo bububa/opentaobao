@@ -39,7 +39,7 @@ func (r AlibabaAsrDataservicePromotionruleQueryAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is PageNo Setter
+// SetPageNo is PageNo Setter
 // 当前页
 func (r *AlibabaAsrDataservicePromotionruleQueryAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
@@ -47,12 +47,12 @@ func (r *AlibabaAsrDataservicePromotionruleQueryAPIRequest) SetPageNo(_pageNo in
 	return nil
 }
 
-// Get PageNo Getter
+// GetPageNo PageNo Getter
 func (r AlibabaAsrDataservicePromotionruleQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页数量
 func (r *AlibabaAsrDataservicePromotionruleQueryAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -60,7 +60,7 @@ func (r *AlibabaAsrDataservicePromotionruleQueryAPIRequest) SetPageSize(_pageSiz
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r AlibabaAsrDataservicePromotionruleQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }

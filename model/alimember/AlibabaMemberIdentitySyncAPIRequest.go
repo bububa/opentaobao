@@ -37,7 +37,7 @@ func (r AlibabaMemberIdentitySyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is SyncDto Setter
+// SetSyncDto is SyncDto Setter
 // 会员身份同步信息
 func (r *AlibabaMemberIdentitySyncAPIRequest) SetSyncDto(_syncDto *SyncMemberIdentityDto) error {
 	r._syncDto = _syncDto
@@ -45,7 +45,7 @@ func (r *AlibabaMemberIdentitySyncAPIRequest) SetSyncDto(_syncDto *SyncMemberIde
 	return nil
 }
 
-// Get SyncDto Getter
+// GetSyncDto SyncDto Getter
 func (r AlibabaMemberIdentitySyncAPIRequest) GetSyncDto() *SyncMemberIdentityDto {
 	return r._syncDto
 }

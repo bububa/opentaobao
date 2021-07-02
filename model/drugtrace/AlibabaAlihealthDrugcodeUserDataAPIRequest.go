@@ -39,7 +39,7 @@ func (r AlibabaAlihealthDrugcodeUserDataAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is List Setter
+// SetList is List Setter
 // 用户信息
 func (r *AlibabaAlihealthDrugcodeUserDataAPIRequest) SetList(_list []HaoxinqingDataDto) error {
 	r._list = _list
@@ -47,12 +47,12 @@ func (r *AlibabaAlihealthDrugcodeUserDataAPIRequest) SetList(_list []HaoxinqingD
 	return nil
 }
 
-// Get List Getter
+// GetList List Getter
 func (r AlibabaAlihealthDrugcodeUserDataAPIRequest) GetList() []HaoxinqingDataDto {
 	return r._list
 }
 
-// Set is RefEntId Setter
+// SetRefEntId is RefEntId Setter
 // 企业ID，用户区分 appkey下不同企业数据隔离的
 func (r *AlibabaAlihealthDrugcodeUserDataAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
@@ -60,7 +60,7 @@ func (r *AlibabaAlihealthDrugcodeUserDataAPIRequest) SetRefEntId(_refEntId strin
 	return nil
 }
 
-// Get RefEntId Getter
+// GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugcodeUserDataAPIRequest) GetRefEntId() string {
 	return r._refEntId
 }

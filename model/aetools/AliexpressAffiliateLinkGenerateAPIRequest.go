@@ -43,7 +43,7 @@ func (r AliexpressAffiliateLinkGenerateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is AppSignature Setter
+// SetAppSignature is AppSignature Setter
 // API请求签名
 func (r *AliexpressAffiliateLinkGenerateAPIRequest) SetAppSignature(_appSignature string) error {
 	r._appSignature = _appSignature
@@ -51,12 +51,12 @@ func (r *AliexpressAffiliateLinkGenerateAPIRequest) SetAppSignature(_appSignatur
 	return nil
 }
 
-// Get AppSignature Getter
+// GetAppSignature AppSignature Getter
 func (r AliexpressAffiliateLinkGenerateAPIRequest) GetAppSignature() string {
 	return r._appSignature
 }
 
-// Set is PromotionLinkType Setter
+// SetPromotionLinkType is PromotionLinkType Setter
 // 转换的链接类型：0代表普通Link，1代表Search Link，2代表 hot link
 func (r *AliexpressAffiliateLinkGenerateAPIRequest) SetPromotionLinkType(_promotionLinkType int64) error {
 	r._promotionLinkType = _promotionLinkType
@@ -64,12 +64,12 @@ func (r *AliexpressAffiliateLinkGenerateAPIRequest) SetPromotionLinkType(_promot
 	return nil
 }
 
-// Get PromotionLinkType Getter
+// GetPromotionLinkType PromotionLinkType Getter
 func (r AliexpressAffiliateLinkGenerateAPIRequest) GetPromotionLinkType() int64 {
 	return r._promotionLinkType
 }
 
-// Set is SourceValues Setter
+// SetSourceValues is SourceValues Setter
 // 原始链接或者值
 func (r *AliexpressAffiliateLinkGenerateAPIRequest) SetSourceValues(_sourceValues string) error {
 	r._sourceValues = _sourceValues
@@ -77,12 +77,12 @@ func (r *AliexpressAffiliateLinkGenerateAPIRequest) SetSourceValues(_sourceValue
 	return nil
 }
 
-// Get SourceValues Getter
+// GetSourceValues SourceValues Getter
 func (r AliexpressAffiliateLinkGenerateAPIRequest) GetSourceValues() string {
 	return r._sourceValues
 }
 
-// Set is TrackingId Setter
+// SetTrackingId is TrackingId Setter
 // 推广者原始trackingID
 func (r *AliexpressAffiliateLinkGenerateAPIRequest) SetTrackingId(_trackingId string) error {
 	r._trackingId = _trackingId
@@ -90,7 +90,7 @@ func (r *AliexpressAffiliateLinkGenerateAPIRequest) SetTrackingId(_trackingId st
 	return nil
 }
 
-// Get TrackingId Getter
+// GetTrackingId TrackingId Getter
 func (r AliexpressAffiliateLinkGenerateAPIRequest) GetTrackingId() string {
 	return r._trackingId
 }

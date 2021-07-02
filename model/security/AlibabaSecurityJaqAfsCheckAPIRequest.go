@@ -45,7 +45,7 @@ func (r AlibabaSecurityJaqAfsCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Platform Setter
+// SetPlatform is Platform Setter
 // 上报平台枚举值 1标识Android端 2标识iOS端 3标识PC端及其他
 func (r *AlibabaSecurityJaqAfsCheckAPIRequest) SetPlatform(_platform int64) error {
 	r._platform = _platform
@@ -53,12 +53,12 @@ func (r *AlibabaSecurityJaqAfsCheckAPIRequest) SetPlatform(_platform int64) erro
 	return nil
 }
 
-// Get Platform Getter
+// GetPlatform Platform Getter
 func (r AlibabaSecurityJaqAfsCheckAPIRequest) GetPlatform() int64 {
 	return r._platform
 }
 
-// Set is Token Setter
+// SetToken is Token Setter
 // token，来自客户端上报
 func (r *AlibabaSecurityJaqAfsCheckAPIRequest) SetToken(_token string) error {
 	r._token = _token
@@ -66,12 +66,12 @@ func (r *AlibabaSecurityJaqAfsCheckAPIRequest) SetToken(_token string) error {
 	return nil
 }
 
-// Get Token Getter
+// GetToken Token Getter
 func (r AlibabaSecurityJaqAfsCheckAPIRequest) GetToken() string {
 	return r._token
 }
 
-// Set is SessionId Setter
+// SetSessionId is SessionId Setter
 // 会话ID，来自客户端上报
 func (r *AlibabaSecurityJaqAfsCheckAPIRequest) SetSessionId(_sessionId string) error {
 	r._sessionId = _sessionId
@@ -79,12 +79,12 @@ func (r *AlibabaSecurityJaqAfsCheckAPIRequest) SetSessionId(_sessionId string) e
 	return nil
 }
 
-// Get SessionId Getter
+// GetSessionId SessionId Getter
 func (r AlibabaSecurityJaqAfsCheckAPIRequest) GetSessionId() string {
 	return r._sessionId
 }
 
-// Set is Sig Setter
+// SetSig is Sig Setter
 // 签名串，来自客户端上报
 func (r *AlibabaSecurityJaqAfsCheckAPIRequest) SetSig(_sig string) error {
 	r._sig = _sig
@@ -92,12 +92,12 @@ func (r *AlibabaSecurityJaqAfsCheckAPIRequest) SetSig(_sig string) error {
 	return nil
 }
 
-// Get Sig Getter
+// GetSig Sig Getter
 func (r AlibabaSecurityJaqAfsCheckAPIRequest) GetSig() string {
 	return r._sig
 }
 
-// Set is AfsKey Setter
+// SetAfsKey is AfsKey Setter
 // 用户接入的时候获取的风控key
 func (r *AlibabaSecurityJaqAfsCheckAPIRequest) SetAfsKey(_afsKey string) error {
 	r._afsKey = _afsKey
@@ -105,7 +105,7 @@ func (r *AlibabaSecurityJaqAfsCheckAPIRequest) SetAfsKey(_afsKey string) error {
 	return nil
 }
 
-// Get AfsKey Getter
+// GetAfsKey AfsKey Getter
 func (r AlibabaSecurityJaqAfsCheckAPIRequest) GetAfsKey() string {
 	return r._afsKey
 }

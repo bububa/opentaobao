@@ -37,7 +37,7 @@ func (r TaobaoWlbWaybillIProductAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is WaybillProductTypeRequest Setter
+// SetWaybillProductTypeRequest is WaybillProductTypeRequest Setter
 // 查询物流商电子面单产品类型入参
 func (r *TaobaoWlbWaybillIProductAPIRequest) SetWaybillProductTypeRequest(_waybillProductTypeRequest *WaybillProductTypeRequest) error {
 	r._waybillProductTypeRequest = _waybillProductTypeRequest
@@ -45,7 +45,7 @@ func (r *TaobaoWlbWaybillIProductAPIRequest) SetWaybillProductTypeRequest(_waybi
 	return nil
 }
 
-// Get WaybillProductTypeRequest Getter
+// GetWaybillProductTypeRequest WaybillProductTypeRequest Getter
 func (r TaobaoWlbWaybillIProductAPIRequest) GetWaybillProductTypeRequest() *WaybillProductTypeRequest {
 	return r._waybillProductTypeRequest
 }

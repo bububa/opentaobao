@@ -43,7 +43,7 @@ func (r TaobaoSimbaRtrptCreativeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Nick Setter
+// SetNick is Nick Setter
 // 用户名
 func (r *TaobaoSimbaRtrptCreativeGetAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
@@ -51,12 +51,12 @@ func (r *TaobaoSimbaRtrptCreativeGetAPIRequest) SetNick(_nick string) error {
 	return nil
 }
 
-// Get Nick Getter
+// GetNick Nick Getter
 func (r TaobaoSimbaRtrptCreativeGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// Set is CampaignId Setter
+// SetCampaignId is CampaignId Setter
 // 推广计划id
 func (r *TaobaoSimbaRtrptCreativeGetAPIRequest) SetCampaignId(_campaignId int64) error {
 	r._campaignId = _campaignId
@@ -64,12 +64,12 @@ func (r *TaobaoSimbaRtrptCreativeGetAPIRequest) SetCampaignId(_campaignId int64)
 	return nil
 }
 
-// Get CampaignId Getter
+// GetCampaignId CampaignId Getter
 func (r TaobaoSimbaRtrptCreativeGetAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
 }
 
-// Set is AdgroupId Setter
+// SetAdgroupId is AdgroupId Setter
 // 推广组id
 func (r *TaobaoSimbaRtrptCreativeGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
 	r._adgroupId = _adgroupId
@@ -77,12 +77,12 @@ func (r *TaobaoSimbaRtrptCreativeGetAPIRequest) SetAdgroupId(_adgroupId int64) e
 	return nil
 }
 
-// Get AdgroupId Getter
+// GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaRtrptCreativeGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }
 
-// Set is TheDate Setter
+// SetTheDate is TheDate Setter
 // 日期，格式yyyy-mm-dd
 func (r *TaobaoSimbaRtrptCreativeGetAPIRequest) SetTheDate(_theDate string) error {
 	r._theDate = _theDate
@@ -90,7 +90,7 @@ func (r *TaobaoSimbaRtrptCreativeGetAPIRequest) SetTheDate(_theDate string) erro
 	return nil
 }
 
-// Get TheDate Getter
+// GetTheDate TheDate Getter
 func (r TaobaoSimbaRtrptCreativeGetAPIRequest) GetTheDate() string {
 	return r._theDate
 }

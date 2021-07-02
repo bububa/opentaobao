@@ -37,7 +37,7 @@ func (r AlibabaDamaiMevOpenDeletefloorAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeleteFloorParam Setter
+// SetDeleteFloorParam is DeleteFloorParam Setter
 // 入参deleteFloorParam
 func (r *AlibabaDamaiMevOpenDeletefloorAPIRequest) SetDeleteFloorParam(_deleteFloorParam *FloorIdOpenParam) error {
 	r._deleteFloorParam = _deleteFloorParam
@@ -45,7 +45,7 @@ func (r *AlibabaDamaiMevOpenDeletefloorAPIRequest) SetDeleteFloorParam(_deleteFl
 	return nil
 }
 
-// Get DeleteFloorParam Getter
+// GetDeleteFloorParam DeleteFloorParam Getter
 func (r AlibabaDamaiMevOpenDeletefloorAPIRequest) GetDeleteFloorParam() *FloorIdOpenParam {
 	return r._deleteFloorParam
 }

@@ -37,7 +37,7 @@ func (r TaobaoSubuserDutysGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is UserNick Setter
+// SetUserNick is UserNick Setter
 // 主账号用户名
 func (r *TaobaoSubuserDutysGetAPIRequest) SetUserNick(_userNick string) error {
 	r._userNick = _userNick
@@ -45,7 +45,7 @@ func (r *TaobaoSubuserDutysGetAPIRequest) SetUserNick(_userNick string) error {
 	return nil
 }
 
-// Get UserNick Getter
+// GetUserNick UserNick Getter
 func (r TaobaoSubuserDutysGetAPIRequest) GetUserNick() string {
 	return r._userNick
 }

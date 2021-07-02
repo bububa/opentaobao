@@ -37,7 +37,7 @@ func (r TmallCampusIndustryAppAuditQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Source Setter
+// SetSource is Source Setter
 // 调用来源
 func (r *TmallCampusIndustryAppAuditQueryAPIRequest) SetSource(_source string) error {
 	r._source = _source
@@ -45,7 +45,7 @@ func (r *TmallCampusIndustryAppAuditQueryAPIRequest) SetSource(_source string) e
 	return nil
 }
 
-// Get Source Getter
+// GetSource Source Getter
 func (r TmallCampusIndustryAppAuditQueryAPIRequest) GetSource() string {
 	return r._source
 }

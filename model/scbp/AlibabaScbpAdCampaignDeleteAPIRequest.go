@@ -39,7 +39,7 @@ func (r AlibabaScbpAdCampaignDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is BatchOperation Setter
+// SetBatchOperation is BatchOperation Setter
 // 操作对象
 func (r *AlibabaScbpAdCampaignDeleteAPIRequest) SetBatchOperation(_batchOperation *CampaignBatchOperationDto) error {
 	r._batchOperation = _batchOperation
@@ -47,12 +47,12 @@ func (r *AlibabaScbpAdCampaignDeleteAPIRequest) SetBatchOperation(_batchOperatio
 	return nil
 }
 
-// Get BatchOperation Getter
+// GetBatchOperation BatchOperation Getter
 func (r AlibabaScbpAdCampaignDeleteAPIRequest) GetBatchOperation() *CampaignBatchOperationDto {
 	return r._batchOperation
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdCampaignDeleteAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -60,7 +60,7 @@ func (r *AlibabaScbpAdCampaignDeleteAPIRequest) SetTopContext(_topContext *TopCo
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdCampaignDeleteAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }

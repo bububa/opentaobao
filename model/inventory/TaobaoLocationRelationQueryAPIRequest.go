@@ -38,7 +38,7 @@ func (r TaobaoLocationRelationQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is LocationRelation Setter
+// SetLocationRelation is LocationRelation Setter
 // 关系查询
 func (r *TaobaoLocationRelationQueryAPIRequest) SetLocationRelation(_locationRelation *LocationRelationDto) error {
 	r._locationRelation = _locationRelation
@@ -46,7 +46,7 @@ func (r *TaobaoLocationRelationQueryAPIRequest) SetLocationRelation(_locationRel
 	return nil
 }
 
-// Get LocationRelation Getter
+// GetLocationRelation LocationRelation Getter
 func (r TaobaoLocationRelationQueryAPIRequest) GetLocationRelation() *LocationRelationDto {
 	return r._locationRelation
 }

@@ -41,7 +41,7 @@ func (r AlibabaEinvoiceUnitorderCheckAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Orders Setter
+// SetOrders is Orders Setter
 // 订购单列表
 func (r *AlibabaEinvoiceUnitorderCheckAPIRequest) SetOrders(_orders []SimpleUnitOrder) error {
 	r._orders = _orders
@@ -49,12 +49,12 @@ func (r *AlibabaEinvoiceUnitorderCheckAPIRequest) SetOrders(_orders []SimpleUnit
 	return nil
 }
 
-// Get Orders Getter
+// GetOrders Orders Getter
 func (r AlibabaEinvoiceUnitorderCheckAPIRequest) GetOrders() []SimpleUnitOrder {
 	return r._orders
 }
 
-// Set is Begin Setter
+// SetBegin is Begin Setter
 // 开始时间,来自于查询消息
 func (r *AlibabaEinvoiceUnitorderCheckAPIRequest) SetBegin(_begin string) error {
 	r._begin = _begin
@@ -62,12 +62,12 @@ func (r *AlibabaEinvoiceUnitorderCheckAPIRequest) SetBegin(_begin string) error 
 	return nil
 }
 
-// Get Begin Getter
+// GetBegin Begin Getter
 func (r AlibabaEinvoiceUnitorderCheckAPIRequest) GetBegin() string {
 	return r._begin
 }
 
-// Set is End Setter
+// SetEnd is End Setter
 // 结束时间,来自于查询消息
 func (r *AlibabaEinvoiceUnitorderCheckAPIRequest) SetEnd(_end string) error {
 	r._end = _end
@@ -75,7 +75,7 @@ func (r *AlibabaEinvoiceUnitorderCheckAPIRequest) SetEnd(_end string) error {
 	return nil
 }
 
-// Get End Getter
+// GetEnd End Getter
 func (r AlibabaEinvoiceUnitorderCheckAPIRequest) GetEnd() string {
 	return r._end
 }

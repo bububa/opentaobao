@@ -41,7 +41,7 @@ func (r TaobaoOpentradeGroupJoinAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemId Setter
+// SetItemId is ItemId Setter
 // 商品id
 func (r *TaobaoOpentradeGroupJoinAPIRequest) SetItemId(_itemId int64) error {
 	r._itemId = _itemId
@@ -49,12 +49,12 @@ func (r *TaobaoOpentradeGroupJoinAPIRequest) SetItemId(_itemId int64) error {
 	return nil
 }
 
-// Get ItemId Getter
+// GetItemId ItemId Getter
 func (r TaobaoOpentradeGroupJoinAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// Set is GroupId Setter
+// SetGroupId is GroupId Setter
 // 团id
 func (r *TaobaoOpentradeGroupJoinAPIRequest) SetGroupId(_groupId int64) error {
 	r._groupId = _groupId
@@ -62,12 +62,12 @@ func (r *TaobaoOpentradeGroupJoinAPIRequest) SetGroupId(_groupId int64) error {
 	return nil
 }
 
-// Get GroupId Getter
+// GetGroupId GroupId Getter
 func (r TaobaoOpentradeGroupJoinAPIRequest) GetGroupId() int64 {
 	return r._groupId
 }
 
-// Set is OpenUserId Setter
+// SetOpenUserId is OpenUserId Setter
 // 用户openId
 func (r *TaobaoOpentradeGroupJoinAPIRequest) SetOpenUserId(_openUserId string) error {
 	r._openUserId = _openUserId
@@ -75,7 +75,7 @@ func (r *TaobaoOpentradeGroupJoinAPIRequest) SetOpenUserId(_openUserId string) e
 	return nil
 }
 
-// Get OpenUserId Getter
+// GetOpenUserId OpenUserId Getter
 func (r TaobaoOpentradeGroupJoinAPIRequest) GetOpenUserId() string {
 	return r._openUserId
 }

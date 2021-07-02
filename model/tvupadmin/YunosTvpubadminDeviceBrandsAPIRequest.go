@@ -39,7 +39,7 @@ func (r YunosTvpubadminDeviceBrandsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TerminalType Setter
+// SetTerminalType is TerminalType Setter
 // 终端类型
 func (r *YunosTvpubadminDeviceBrandsAPIRequest) SetTerminalType(_terminalType string) error {
 	r._terminalType = _terminalType
@@ -47,12 +47,12 @@ func (r *YunosTvpubadminDeviceBrandsAPIRequest) SetTerminalType(_terminalType st
 	return nil
 }
 
-// Get TerminalType Getter
+// GetTerminalType TerminalType Getter
 func (r YunosTvpubadminDeviceBrandsAPIRequest) GetTerminalType() string {
 	return r._terminalType
 }
 
-// Set is License Setter
+// SetLicense is License Setter
 // 牌照方
 func (r *YunosTvpubadminDeviceBrandsAPIRequest) SetLicense(_license int64) error {
 	r._license = _license
@@ -60,7 +60,7 @@ func (r *YunosTvpubadminDeviceBrandsAPIRequest) SetLicense(_license int64) error
 	return nil
 }
 
-// Get License Getter
+// GetLicense License Getter
 func (r YunosTvpubadminDeviceBrandsAPIRequest) GetLicense() int64 {
 	return r._license
 }

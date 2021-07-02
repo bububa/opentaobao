@@ -37,7 +37,7 @@ func (r AlitripTicketRuleQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutRuleId Setter
+// SetOutRuleId is OutRuleId Setter
 // 卖家景点规则编码
 func (r *AlitripTicketRuleQueryAPIRequest) SetOutRuleId(_outRuleId string) error {
 	r._outRuleId = _outRuleId
@@ -45,7 +45,7 @@ func (r *AlitripTicketRuleQueryAPIRequest) SetOutRuleId(_outRuleId string) error
 	return nil
 }
 
-// Get OutRuleId Getter
+// GetOutRuleId OutRuleId Getter
 func (r AlitripTicketRuleQueryAPIRequest) GetOutRuleId() string {
 	return r._outRuleId
 }

@@ -37,7 +37,7 @@ func (r AlibabaIdleIsvItemPublishAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ItemParam Setter
+// SetItemParam is ItemParam Setter
 // 商品数据参数
 func (r *AlibabaIdleIsvItemPublishAPIRequest) SetItemParam(_itemParam *IdleItemApiDo) error {
 	r._itemParam = _itemParam
@@ -45,7 +45,7 @@ func (r *AlibabaIdleIsvItemPublishAPIRequest) SetItemParam(_itemParam *IdleItemA
 	return nil
 }
 
-// Get ItemParam Getter
+// GetItemParam ItemParam Getter
 func (r AlibabaIdleIsvItemPublishAPIRequest) GetItemParam() *IdleItemApiDo {
 	return r._itemParam
 }

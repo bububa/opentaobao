@@ -37,7 +37,7 @@ func (r YoukuWenyuvideoPersionSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is PersonName Setter
+// SetPersonName is PersonName Setter
 // 人物名字，搜索规则是完全匹配，即只返回同名人物列表
 func (r *YoukuWenyuvideoPersionSearchAPIRequest) SetPersonName(_personName string) error {
 	r._personName = _personName
@@ -45,7 +45,7 @@ func (r *YoukuWenyuvideoPersionSearchAPIRequest) SetPersonName(_personName strin
 	return nil
 }
 
-// Get PersonName Getter
+// GetPersonName PersonName Getter
 func (r YoukuWenyuvideoPersionSearchAPIRequest) GetPersonName() string {
 	return r._personName
 }

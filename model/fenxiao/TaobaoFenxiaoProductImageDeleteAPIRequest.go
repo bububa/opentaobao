@@ -41,7 +41,7 @@ func (r TaobaoFenxiaoProductImageDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductId Setter
+// SetProductId is ProductId Setter
 // 产品ID
 func (r *TaobaoFenxiaoProductImageDeleteAPIRequest) SetProductId(_productId int64) error {
 	r._productId = _productId
@@ -49,12 +49,12 @@ func (r *TaobaoFenxiaoProductImageDeleteAPIRequest) SetProductId(_productId int6
 	return nil
 }
 
-// Get ProductId Getter
+// GetProductId ProductId Getter
 func (r TaobaoFenxiaoProductImageDeleteAPIRequest) GetProductId() int64 {
 	return r._productId
 }
 
-// Set is Position Setter
+// SetPosition is Position Setter
 // 图片位置
 func (r *TaobaoFenxiaoProductImageDeleteAPIRequest) SetPosition(_position int64) error {
 	r._position = _position
@@ -62,12 +62,12 @@ func (r *TaobaoFenxiaoProductImageDeleteAPIRequest) SetPosition(_position int64)
 	return nil
 }
 
-// Get Position Getter
+// GetPosition Position Getter
 func (r TaobaoFenxiaoProductImageDeleteAPIRequest) GetPosition() int64 {
 	return r._position
 }
 
-// Set is Properties Setter
+// SetProperties is Properties Setter
 // properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
 func (r *TaobaoFenxiaoProductImageDeleteAPIRequest) SetProperties(_properties string) error {
 	r._properties = _properties
@@ -75,7 +75,7 @@ func (r *TaobaoFenxiaoProductImageDeleteAPIRequest) SetProperties(_properties st
 	return nil
 }
 
-// Get Properties Getter
+// GetProperties Properties Getter
 func (r TaobaoFenxiaoProductImageDeleteAPIRequest) GetProperties() string {
 	return r._properties
 }

@@ -45,7 +45,7 @@ func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetApiParams() ur
 	return params
 }
 
-// Set is RequestToken Setter
+// SetRequestToken is RequestToken Setter
 // 请求token
 func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetRequestToken(_requestToken string) error {
 	r._requestToken = _requestToken
@@ -53,12 +53,12 @@ func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetRequestToken(
 	return nil
 }
 
-// Get RequestToken Getter
+// GetRequestToken RequestToken Getter
 func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetRequestToken() string {
 	return r._requestToken
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 设备ID
 func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -66,12 +66,12 @@ func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetDeviceId(_dev
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 操作类型 1：控制操作 0:查询
 func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -79,12 +79,12 @@ func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetType(_type in
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is Control Setter
+// SetControl is Control Setter
 // 控制成功
 func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetControl(_control bool) error {
 	r._control = _control
@@ -92,12 +92,12 @@ func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetControl(_cont
 	return nil
 }
 
-// Get Control Getter
+// GetControl Control Getter
 func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetControl() bool {
 	return r._control
 }
 
-// Set is AckCode Setter
+// SetAckCode is AckCode Setter
 // 厂商执行返回ackCode
 func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetAckCode(_ackCode string) error {
 	r._ackCode = _ackCode
@@ -105,7 +105,7 @@ func (r *AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) SetAckCode(_ackC
 	return nil
 }
 
-// Get AckCode Getter
+// GetAckCode AckCode Getter
 func (r AlibabaAilabsAligenieIotDeviceControlResultAPIRequest) GetAckCode() string {
 	return r._ackCode
 }

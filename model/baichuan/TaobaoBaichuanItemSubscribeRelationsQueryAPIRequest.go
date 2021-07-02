@@ -37,7 +37,7 @@ func (r TaobaoBaichuanItemSubscribeRelationsQueryAPIRequest) GetApiParams() url.
 	return params
 }
 
-// Set is Condition Setter
+// SetCondition is Condition Setter
 // 查询条件
 func (r *TaobaoBaichuanItemSubscribeRelationsQueryAPIRequest) SetCondition(_condition *Condition) error {
 	r._condition = _condition
@@ -45,7 +45,7 @@ func (r *TaobaoBaichuanItemSubscribeRelationsQueryAPIRequest) SetCondition(_cond
 	return nil
 }
 
-// Get Condition Getter
+// GetCondition Condition Getter
 func (r TaobaoBaichuanItemSubscribeRelationsQueryAPIRequest) GetCondition() *Condition {
 	return r._condition
 }

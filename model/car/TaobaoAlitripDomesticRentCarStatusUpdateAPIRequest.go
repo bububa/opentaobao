@@ -43,7 +43,7 @@ func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is Status Setter
+// SetStatus is Status Setter
 // 121-用车中（用户取车成功） 122-待结算（用户还车成功）
 func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
@@ -51,12 +51,12 @@ func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetStatus(_status i
 	return nil
 }
 
-// Get Status Getter
+// GetStatus Status Getter
 func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetStatus() int64 {
 	return r._status
 }
 
-// Set is ThirdOrderId Setter
+// SetThirdOrderId is ThirdOrderId Setter
 // 服务商平台订单号
 func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetThirdOrderId(_thirdOrderId string) error {
 	r._thirdOrderId = _thirdOrderId
@@ -64,12 +64,12 @@ func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetThirdOrderId(_th
 	return nil
 }
 
-// Get ThirdOrderId Getter
+// GetThirdOrderId ThirdOrderId Getter
 func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetThirdOrderId() string {
 	return r._thirdOrderId
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 飞猪平台订单号
 func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -77,12 +77,12 @@ func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetOrderId(_orderId
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is ProviderId Setter
+// SetProviderId is ProviderId Setter
 // 服务商标识，由飞猪提供给到各服务商
 func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetProviderId(_providerId string) error {
 	r._providerId = _providerId
@@ -90,7 +90,7 @@ func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetProviderId(_prov
 	return nil
 }
 
-// Get ProviderId Getter
+// GetProviderId ProviderId Getter
 func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetProviderId() string {
 	return r._providerId
 }

@@ -37,7 +37,7 @@ func (r AlibabaLegalCaseStandpointFeedbackAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is FeedbackRequestModel Setter
+// SetFeedbackRequestModel is FeedbackRequestModel Setter
 // 反馈对象
 func (r *AlibabaLegalCaseStandpointFeedbackAPIRequest) SetFeedbackRequestModel(_feedbackRequestModel *FeedbackRequestModel) error {
 	r._feedbackRequestModel = _feedbackRequestModel
@@ -45,7 +45,7 @@ func (r *AlibabaLegalCaseStandpointFeedbackAPIRequest) SetFeedbackRequestModel(_
 	return nil
 }
 
-// Get FeedbackRequestModel Getter
+// GetFeedbackRequestModel FeedbackRequestModel Getter
 func (r AlibabaLegalCaseStandpointFeedbackAPIRequest) GetFeedbackRequestModel() *FeedbackRequestModel {
 	return r._feedbackRequestModel
 }

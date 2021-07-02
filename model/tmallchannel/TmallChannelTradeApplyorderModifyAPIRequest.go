@@ -39,7 +39,7 @@ func (r TmallChannelTradeApplyorderModifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ChannelPurchaseApplyOrderNo Setter
+// SetChannelPurchaseApplyOrderNo is ChannelPurchaseApplyOrderNo Setter
 // 采购申请单号
 func (r *TmallChannelTradeApplyorderModifyAPIRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
 	r._channelPurchaseApplyOrderNo = _channelPurchaseApplyOrderNo
@@ -47,12 +47,12 @@ func (r *TmallChannelTradeApplyorderModifyAPIRequest) SetChannelPurchaseApplyOrd
 	return nil
 }
 
-// Get ChannelPurchaseApplyOrderNo Getter
+// GetChannelPurchaseApplyOrderNo ChannelPurchaseApplyOrderNo Getter
 func (r TmallChannelTradeApplyorderModifyAPIRequest) GetChannelPurchaseApplyOrderNo() string {
 	return r._channelPurchaseApplyOrderNo
 }
 
-// Set is ApplyOrderRelateItemModifyParamList Setter
+// SetApplyOrderRelateItemModifyParamList is ApplyOrderRelateItemModifyParamList Setter
 // 修改关联的的宝贝信息
 func (r *TmallChannelTradeApplyorderModifyAPIRequest) SetApplyOrderRelateItemModifyParamList(_applyOrderRelateItemModifyParamList []TopChannelApplyOrderRelateItemModifyParam) error {
 	r._applyOrderRelateItemModifyParamList = _applyOrderRelateItemModifyParamList
@@ -60,7 +60,7 @@ func (r *TmallChannelTradeApplyorderModifyAPIRequest) SetApplyOrderRelateItemMod
 	return nil
 }
 
-// Get ApplyOrderRelateItemModifyParamList Getter
+// GetApplyOrderRelateItemModifyParamList ApplyOrderRelateItemModifyParamList Getter
 func (r TmallChannelTradeApplyorderModifyAPIRequest) GetApplyOrderRelateItemModifyParamList() []TopChannelApplyOrderRelateItemModifyParam {
 	return r._applyOrderRelateItemModifyParamList
 }

@@ -39,7 +39,7 @@ func (r AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// Set is Id Setter
+// SetId is Id Setter
 // 访客ID
 func (r *AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) SetId(_id string) error {
 	r._id = _id
@@ -47,12 +47,12 @@ func (r *AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) SetId(_id string) erro
 	return nil
 }
 
-// Get Id Getter
+// GetId Id Getter
 func (r AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) GetId() string {
 	return r._id
 }
 
-// Set is Image Setter
+// SetImage is Image Setter
 // 图片URL
 func (r *AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) SetImage(_image string) error {
 	r._image = _image
@@ -60,7 +60,7 @@ func (r *AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) SetImage(_image string
 	return nil
 }
 
-// Get Image Getter
+// GetImage Image Getter
 func (r AlibabaIbShenjingVisitorPadUploadfaceAPIRequest) GetImage() string {
 	return r._image
 }

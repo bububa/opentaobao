@@ -37,7 +37,7 @@ func (r TaobaoOmniitemCategoryGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CategoryId Setter
+// SetCategoryId is CategoryId Setter
 // 全渠道商品类目ID，不填表示获取所有全渠道商品类目信息
 func (r *TaobaoOmniitemCategoryGetAPIRequest) SetCategoryId(_categoryId int64) error {
 	r._categoryId = _categoryId
@@ -45,7 +45,7 @@ func (r *TaobaoOmniitemCategoryGetAPIRequest) SetCategoryId(_categoryId int64) e
 	return nil
 }
 
-// Get CategoryId Getter
+// GetCategoryId CategoryId Getter
 func (r TaobaoOmniitemCategoryGetAPIRequest) GetCategoryId() int64 {
 	return r._categoryId
 }

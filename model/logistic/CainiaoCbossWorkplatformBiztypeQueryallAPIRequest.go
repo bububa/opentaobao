@@ -39,7 +39,7 @@ func (r CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// Set is Level Setter
+// SetLevel is Level Setter
 // level
 func (r *CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) SetLevel(_level int64) error {
 	r._level = _level
@@ -47,12 +47,12 @@ func (r *CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) SetLevel(_level int6
 	return nil
 }
 
-// Get Level Getter
+// GetLevel Level Getter
 func (r CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) GetLevel() int64 {
 	return r._level
 }
 
-// Set is TradeId Setter
+// SetTradeId is TradeId Setter
 // tradeId
 func (r *CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) SetTradeId(_tradeId string) error {
 	r._tradeId = _tradeId
@@ -60,7 +60,7 @@ func (r *CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) SetTradeId(_tradeId 
 	return nil
 }
 
-// Get TradeId Getter
+// GetTradeId TradeId Getter
 func (r CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) GetTradeId() string {
 	return r._tradeId
 }

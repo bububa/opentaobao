@@ -37,7 +37,7 @@ func (r TaobaoAlihealthDrugStoreGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ShopId Setter
+// SetShopId is ShopId Setter
 // 店铺ID
 func (r *TaobaoAlihealthDrugStoreGetAPIRequest) SetShopId(_shopId int64) error {
 	r._shopId = _shopId
@@ -45,7 +45,7 @@ func (r *TaobaoAlihealthDrugStoreGetAPIRequest) SetShopId(_shopId int64) error {
 	return nil
 }
 
-// Get ShopId Getter
+// GetShopId ShopId Getter
 func (r TaobaoAlihealthDrugStoreGetAPIRequest) GetShopId() int64 {
 	return r._shopId
 }

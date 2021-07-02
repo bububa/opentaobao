@@ -47,7 +47,7 @@ func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DeviceId Setter
+// SetDeviceId is DeviceId Setter
 // 终端id
 func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetDeviceId(_deviceId string) error {
 	r._deviceId = _deviceId
@@ -55,12 +55,12 @@ func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetDeviceId(_deviceId stri
 	return nil
 }
 
-// Get DeviceId Getter
+// GetDeviceId DeviceId Getter
 func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetDeviceId() string {
 	return r._deviceId
 }
 
-// Set is DeviceType Setter
+// SetDeviceType is DeviceType Setter
 // 终端类型
 func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetDeviceType(_deviceType string) error {
 	r._deviceType = _deviceType
@@ -68,12 +68,12 @@ func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetDeviceType(_deviceType 
 	return nil
 }
 
-// Get DeviceType Getter
+// GetDeviceType DeviceType Getter
 func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetDeviceType() string {
 	return r._deviceType
 }
 
-// Set is CreateUser Setter
+// SetCreateUser is CreateUser Setter
 // 912874323429834
 func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetCreateUser(_createUser string) error {
 	r._createUser = _createUser
@@ -81,12 +81,12 @@ func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetCreateUser(_createUser 
 	return nil
 }
 
-// Get CreateUser Getter
+// GetCreateUser CreateUser Getter
 func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetCreateUser() string {
 	return r._createUser
 }
 
-// Set is LeaseCode Setter
+// SetLeaseCode is LeaseCode Setter
 // 租户编码
 func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetLeaseCode(_leaseCode string) error {
 	r._leaseCode = _leaseCode
@@ -94,12 +94,12 @@ func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetLeaseCode(_leaseCode st
 	return nil
 }
 
-// Get LeaseCode Getter
+// GetLeaseCode LeaseCode Getter
 func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetLeaseCode() string {
 	return r._leaseCode
 }
 
-// Set is CinemaId Setter
+// SetCinemaId is CinemaId Setter
 // 影城id
 func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetCinemaId(_cinemaId string) error {
 	r._cinemaId = _cinemaId
@@ -107,12 +107,12 @@ func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetCinemaId(_cinemaId stri
 	return nil
 }
 
-// Get CinemaId Getter
+// GetCinemaId CinemaId Getter
 func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetCinemaId() string {
 	return r._cinemaId
 }
 
-// Set is CinemaName Setter
+// SetCinemaName is CinemaName Setter
 // 影城名称
 func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetCinemaName(_cinemaName string) error {
 	r._cinemaName = _cinemaName
@@ -120,7 +120,7 @@ func (r *TaobaoLarkPosItemprodFindterminalAPIRequest) SetCinemaName(_cinemaName 
 	return nil
 }
 
-// Get CinemaName Getter
+// GetCinemaName CinemaName Getter
 func (r TaobaoLarkPosItemprodFindterminalAPIRequest) GetCinemaName() string {
 	return r._cinemaName
 }

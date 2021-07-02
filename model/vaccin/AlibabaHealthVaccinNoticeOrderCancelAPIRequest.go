@@ -39,7 +39,7 @@ func (r AlibabaHealthVaccinNoticeOrderCancelAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is AlipayUserId Setter
+// SetAlipayUserId is AlipayUserId Setter
 // 支付宝用户id
 func (r *AlibabaHealthVaccinNoticeOrderCancelAPIRequest) SetAlipayUserId(_alipayUserId string) error {
 	r._alipayUserId = _alipayUserId
@@ -47,12 +47,12 @@ func (r *AlibabaHealthVaccinNoticeOrderCancelAPIRequest) SetAlipayUserId(_alipay
 	return nil
 }
 
-// Get AlipayUserId Getter
+// GetAlipayUserId AlipayUserId Getter
 func (r AlibabaHealthVaccinNoticeOrderCancelAPIRequest) GetAlipayUserId() string {
 	return r._alipayUserId
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 预约id
 func (r *AlibabaHealthVaccinNoticeOrderCancelAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -60,7 +60,7 @@ func (r *AlibabaHealthVaccinNoticeOrderCancelAPIRequest) SetOrderId(_orderId str
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaHealthVaccinNoticeOrderCancelAPIRequest) GetOrderId() string {
 	return r._orderId
 }

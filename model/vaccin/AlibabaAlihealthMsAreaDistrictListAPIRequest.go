@@ -37,7 +37,7 @@ func (r AlibabaAlihealthMsAreaDistrictListAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is DivisionId Setter
+// SetDivisionId is DivisionId Setter
 // 省份ID
 func (r *AlibabaAlihealthMsAreaDistrictListAPIRequest) SetDivisionId(_divisionId int64) error {
 	r._divisionId = _divisionId
@@ -45,7 +45,7 @@ func (r *AlibabaAlihealthMsAreaDistrictListAPIRequest) SetDivisionId(_divisionId
 	return nil
 }
 
-// Get DivisionId Getter
+// GetDivisionId DivisionId Getter
 func (r AlibabaAlihealthMsAreaDistrictListAPIRequest) GetDivisionId() int64 {
 	return r._divisionId
 }

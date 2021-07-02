@@ -37,7 +37,7 @@ func (r AlibabaMydataOverviewIndustryGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is DateRange Setter
+// SetDateRange is DateRange Setter
 // 系统自动生成
 func (r *AlibabaMydataOverviewIndustryGetAPIRequest) SetDateRange(_dateRange *DateRange) error {
 	r._dateRange = _dateRange
@@ -45,7 +45,7 @@ func (r *AlibabaMydataOverviewIndustryGetAPIRequest) SetDateRange(_dateRange *Da
 	return nil
 }
 
-// Get DateRange Getter
+// GetDateRange DateRange Getter
 func (r AlibabaMydataOverviewIndustryGetAPIRequest) GetDateRange() *DateRange {
 	return r._dateRange
 }

@@ -37,7 +37,7 @@ func (r YoukuWenyuvideoSeetaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is VideoStrId Setter
+// SetVideoStrId is VideoStrId Setter
 // 视频字符串形式id
 func (r *YoukuWenyuvideoSeetaGetAPIRequest) SetVideoStrId(_videoStrId string) error {
 	r._videoStrId = _videoStrId
@@ -45,7 +45,7 @@ func (r *YoukuWenyuvideoSeetaGetAPIRequest) SetVideoStrId(_videoStrId string) er
 	return nil
 }
 
-// Get VideoStrId Getter
+// GetVideoStrId VideoStrId Getter
 func (r YoukuWenyuvideoSeetaGetAPIRequest) GetVideoStrId() string {
 	return r._videoStrId
 }

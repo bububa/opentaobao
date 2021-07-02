@@ -37,7 +37,7 @@ func (r AlibabaScbpShowcaseAddproductAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ProductIdList Setter
+// SetProductIdList is ProductIdList Setter
 // 需要添加的产品ids
 func (r *AlibabaScbpShowcaseAddproductAPIRequest) SetProductIdList(_productIdList []int64) error {
 	r._productIdList = _productIdList
@@ -45,7 +45,7 @@ func (r *AlibabaScbpShowcaseAddproductAPIRequest) SetProductIdList(_productIdLis
 	return nil
 }
 
-// Get ProductIdList Getter
+// GetProductIdList ProductIdList Getter
 func (r AlibabaScbpShowcaseAddproductAPIRequest) GetProductIdList() []int64 {
 	return r._productIdList
 }

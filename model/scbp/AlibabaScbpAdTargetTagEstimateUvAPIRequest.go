@@ -39,7 +39,7 @@ func (r AlibabaScbpAdTargetTagEstimateUvAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is TagEstimateOperation Setter
+// SetTagEstimateOperation is TagEstimateOperation Setter
 // 请求参数
 func (r *AlibabaScbpAdTargetTagEstimateUvAPIRequest) SetTagEstimateOperation(_tagEstimateOperation *TagEstimateOperationDto) error {
 	r._tagEstimateOperation = _tagEstimateOperation
@@ -47,12 +47,12 @@ func (r *AlibabaScbpAdTargetTagEstimateUvAPIRequest) SetTagEstimateOperation(_ta
 	return nil
 }
 
-// Get TagEstimateOperation Getter
+// GetTagEstimateOperation TagEstimateOperation Getter
 func (r AlibabaScbpAdTargetTagEstimateUvAPIRequest) GetTagEstimateOperation() *TagEstimateOperationDto {
 	return r._tagEstimateOperation
 }
 
-// Set is TopContext Setter
+// SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdTargetTagEstimateUvAPIRequest) SetTopContext(_topContext *TopContextDto) error {
 	r._topContext = _topContext
@@ -60,7 +60,7 @@ func (r *AlibabaScbpAdTargetTagEstimateUvAPIRequest) SetTopContext(_topContext *
 	return nil
 }
 
-// Get TopContext Getter
+// GetTopContext TopContext Getter
 func (r AlibabaScbpAdTargetTagEstimateUvAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
 }

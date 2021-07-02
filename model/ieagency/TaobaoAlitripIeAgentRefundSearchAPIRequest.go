@@ -47,7 +47,7 @@ func (r TaobaoAlitripIeAgentRefundSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is CreateStartTime Setter
+// SetCreateStartTime is CreateStartTime Setter
 // 查询起始时间
 func (r *TaobaoAlitripIeAgentRefundSearchAPIRequest) SetCreateStartTime(_createStartTime string) error {
 	r._createStartTime = _createStartTime
@@ -55,12 +55,12 @@ func (r *TaobaoAlitripIeAgentRefundSearchAPIRequest) SetCreateStartTime(_createS
 	return nil
 }
 
-// Get CreateStartTime Getter
+// GetCreateStartTime CreateStartTime Getter
 func (r TaobaoAlitripIeAgentRefundSearchAPIRequest) GetCreateStartTime() string {
 	return r._createStartTime
 }
 
-// Set is CreateEndTime Setter
+// SetCreateEndTime is CreateEndTime Setter
 // 查询结束时间
 func (r *TaobaoAlitripIeAgentRefundSearchAPIRequest) SetCreateEndTime(_createEndTime string) error {
 	r._createEndTime = _createEndTime
@@ -68,12 +68,12 @@ func (r *TaobaoAlitripIeAgentRefundSearchAPIRequest) SetCreateEndTime(_createEnd
 	return nil
 }
 
-// Get CreateEndTime Getter
+// GetCreateEndTime CreateEndTime Getter
 func (r TaobaoAlitripIeAgentRefundSearchAPIRequest) GetCreateEndTime() string {
 	return r._createEndTime
 }
 
-// Set is RefundStatus Setter
+// SetRefundStatus is RefundStatus Setter
 // WAIT(1,"待处理"), AGREED(2, "已同意"),REFUSE(3, "已拒绝"),PROCESS(6, "已受理"), SUCCESS(7, "已退款");
 func (r *TaobaoAlitripIeAgentRefundSearchAPIRequest) SetRefundStatus(_refundStatus int64) error {
 	r._refundStatus = _refundStatus
@@ -81,12 +81,12 @@ func (r *TaobaoAlitripIeAgentRefundSearchAPIRequest) SetRefundStatus(_refundStat
 	return nil
 }
 
-// Get RefundStatus Getter
+// GetRefundStatus RefundStatus Getter
 func (r TaobaoAlitripIeAgentRefundSearchAPIRequest) GetRefundStatus() int64 {
 	return r._refundStatus
 }
 
-// Set is PageIndex Setter
+// SetPageIndex is PageIndex Setter
 // 从1开始
 func (r *TaobaoAlitripIeAgentRefundSearchAPIRequest) SetPageIndex(_pageIndex int64) error {
 	r._pageIndex = _pageIndex
@@ -94,12 +94,12 @@ func (r *TaobaoAlitripIeAgentRefundSearchAPIRequest) SetPageIndex(_pageIndex int
 	return nil
 }
 
-// Get PageIndex Getter
+// GetPageIndex PageIndex Getter
 func (r TaobaoAlitripIeAgentRefundSearchAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
-// Set is PageSize Setter
+// SetPageSize is PageSize Setter
 // 每页大小
 func (r *TaobaoAlitripIeAgentRefundSearchAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
@@ -107,12 +107,12 @@ func (r *TaobaoAlitripIeAgentRefundSearchAPIRequest) SetPageSize(_pageSize int64
 	return nil
 }
 
-// Get PageSize Getter
+// GetPageSize PageSize Getter
 func (r TaobaoAlitripIeAgentRefundSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// Set is AgentId Setter
+// SetAgentId is AgentId Setter
 // 代理商id
 func (r *TaobaoAlitripIeAgentRefundSearchAPIRequest) SetAgentId(_agentId int64) error {
 	r._agentId = _agentId
@@ -120,7 +120,7 @@ func (r *TaobaoAlitripIeAgentRefundSearchAPIRequest) SetAgentId(_agentId int64) 
 	return nil
 }
 
-// Get AgentId Getter
+// GetAgentId AgentId Getter
 func (r TaobaoAlitripIeAgentRefundSearchAPIRequest) GetAgentId() int64 {
 	return r._agentId
 }

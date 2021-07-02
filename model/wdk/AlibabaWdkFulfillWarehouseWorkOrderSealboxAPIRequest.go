@@ -37,7 +37,7 @@ func (r AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest) GetApiParams() url
 	return params
 }
 
-// Set is SameTownBox Setter
+// SetSameTownBox is SameTownBox Setter
 // 同城交付物箱
 func (r *AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest) SetSameTownBox(_sameTownBox *SameTownBox) error {
 	r._sameTownBox = _sameTownBox
@@ -45,7 +45,7 @@ func (r *AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest) SetSameTownBox(_s
 	return nil
 }
 
-// Get SameTownBox Getter
+// GetSameTownBox SameTownBox Getter
 func (r AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIRequest) GetSameTownBox() *SameTownBox {
 	return r._sameTownBox
 }

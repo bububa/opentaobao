@@ -41,7 +41,7 @@ func (r TaobaoTbkItemInfoGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is NumIids Setter
+// SetNumIids is NumIids Setter
 // 商品ID串，用,分割，最大40个
 func (r *TaobaoTbkItemInfoGetAPIRequest) SetNumIids(_numIids string) error {
 	r._numIids = _numIids
@@ -49,12 +49,12 @@ func (r *TaobaoTbkItemInfoGetAPIRequest) SetNumIids(_numIids string) error {
 	return nil
 }
 
-// Get NumIids Getter
+// GetNumIids NumIids Getter
 func (r TaobaoTbkItemInfoGetAPIRequest) GetNumIids() string {
 	return r._numIids
 }
 
-// Set is Platform Setter
+// SetPlatform is Platform Setter
 // 链接形式：1：PC，2：无线，默认：１
 func (r *TaobaoTbkItemInfoGetAPIRequest) SetPlatform(_platform int64) error {
 	r._platform = _platform
@@ -62,12 +62,12 @@ func (r *TaobaoTbkItemInfoGetAPIRequest) SetPlatform(_platform int64) error {
 	return nil
 }
 
-// Get Platform Getter
+// GetPlatform Platform Getter
 func (r TaobaoTbkItemInfoGetAPIRequest) GetPlatform() int64 {
 	return r._platform
 }
 
-// Set is Ip Setter
+// SetIp is Ip Setter
 // ip地址，影响邮费获取，如果不传或者传入不准确，邮费无法精准提供
 func (r *TaobaoTbkItemInfoGetAPIRequest) SetIp(_ip string) error {
 	r._ip = _ip
@@ -75,7 +75,7 @@ func (r *TaobaoTbkItemInfoGetAPIRequest) SetIp(_ip string) error {
 	return nil
 }
 
-// Get Ip Getter
+// GetIp Ip Getter
 func (r TaobaoTbkItemInfoGetAPIRequest) GetIp() string {
 	return r._ip
 }

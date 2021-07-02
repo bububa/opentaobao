@@ -61,7 +61,7 @@ func (r AlibabaHappytripTaxiOrderComplainAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OrderId Setter
+// SetOrderId is OrderId Setter
 // 订单id
 func (r *AlibabaHappytripTaxiOrderComplainAPIRequest) SetOrderId(_orderId string) error {
 	r._orderId = _orderId
@@ -69,12 +69,12 @@ func (r *AlibabaHappytripTaxiOrderComplainAPIRequest) SetOrderId(_orderId string
 	return nil
 }
 
-// Get OrderId Getter
+// GetOrderId OrderId Getter
 func (r AlibabaHappytripTaxiOrderComplainAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// Set is Type Setter
+// SetType is Type Setter
 // 投诉选项 0	其他原因； 1	司机原因导致行程被取消； 2	服务态度恶劣；	 3	未坐车产生费用；	 4	额外收取不合理费用； 5	路不熟多产生费用；	 6	提前计费； 7	未及时结束计费；	 8	司机绕路；	 9	司机迟到；	 10	司机爽约或拒载；	 11	骚扰乘客；	 12	危险驾驶；	 13	不是订单显示车辆或司机；
 func (r *AlibabaHappytripTaxiOrderComplainAPIRequest) SetType(_type int64) error {
 	r._type = _type
@@ -82,12 +82,12 @@ func (r *AlibabaHappytripTaxiOrderComplainAPIRequest) SetType(_type int64) error
 	return nil
 }
 
-// Get Type Getter
+// GetType Type Getter
 func (r AlibabaHappytripTaxiOrderComplainAPIRequest) GetType() int64 {
 	return r._type
 }
 
-// Set is Content Setter
+// SetContent is Content Setter
 // 投诉选项外的其他投诉内容,不能多于40个汉字
 func (r *AlibabaHappytripTaxiOrderComplainAPIRequest) SetContent(_content string) error {
 	r._content = _content
@@ -95,12 +95,12 @@ func (r *AlibabaHappytripTaxiOrderComplainAPIRequest) SetContent(_content string
 	return nil
 }
 
-// Get Content Getter
+// GetContent Content Getter
 func (r AlibabaHappytripTaxiOrderComplainAPIRequest) GetContent() string {
 	return r._content
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 该用户的真实号码
 func (r *AlibabaHappytripTaxiOrderComplainAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -108,12 +108,12 @@ func (r *AlibabaHappytripTaxiOrderComplainAPIRequest) SetMobile(_mobile string) 
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r AlibabaHappytripTaxiOrderComplainAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
-// Set is Time Setter
+// SetTime is Time Setter
 // 投诉时间（毫秒）
 func (r *AlibabaHappytripTaxiOrderComplainAPIRequest) SetTime(_time int64) error {
 	r._time = _time
@@ -121,7 +121,7 @@ func (r *AlibabaHappytripTaxiOrderComplainAPIRequest) SetTime(_time int64) error
 	return nil
 }
 
-// Get Time Getter
+// GetTime Time Getter
 func (r AlibabaHappytripTaxiOrderComplainAPIRequest) GetTime() int64 {
 	return r._time
 }

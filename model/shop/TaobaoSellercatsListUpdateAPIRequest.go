@@ -43,7 +43,7 @@ func (r TaobaoSellercatsListUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Cid Setter
+// SetCid is Cid Setter
 // 卖家自定义类目编号
 func (r *TaobaoSellercatsListUpdateAPIRequest) SetCid(_cid int64) error {
 	r._cid = _cid
@@ -51,12 +51,12 @@ func (r *TaobaoSellercatsListUpdateAPIRequest) SetCid(_cid int64) error {
 	return nil
 }
 
-// Get Cid Getter
+// GetCid Cid Getter
 func (r TaobaoSellercatsListUpdateAPIRequest) GetCid() int64 {
 	return r._cid
 }
 
-// Set is Name Setter
+// SetName is Name Setter
 // 卖家自定义类目名称。不超过20个字符
 func (r *TaobaoSellercatsListUpdateAPIRequest) SetName(_name string) error {
 	r._name = _name
@@ -64,12 +64,12 @@ func (r *TaobaoSellercatsListUpdateAPIRequest) SetName(_name string) error {
 	return nil
 }
 
-// Get Name Getter
+// GetName Name Getter
 func (r TaobaoSellercatsListUpdateAPIRequest) GetName() string {
 	return r._name
 }
 
-// Set is PictUrl Setter
+// SetPictUrl is PictUrl Setter
 // 链接图片URL地址
 func (r *TaobaoSellercatsListUpdateAPIRequest) SetPictUrl(_pictUrl string) error {
 	r._pictUrl = _pictUrl
@@ -77,12 +77,12 @@ func (r *TaobaoSellercatsListUpdateAPIRequest) SetPictUrl(_pictUrl string) error
 	return nil
 }
 
-// Get PictUrl Getter
+// GetPictUrl PictUrl Getter
 func (r TaobaoSellercatsListUpdateAPIRequest) GetPictUrl() string {
 	return r._pictUrl
 }
 
-// Set is SortOrder Setter
+// SetSortOrder is SortOrder Setter
 // 该类目在页面上的排序位置,取值范围:大于零的整数
 func (r *TaobaoSellercatsListUpdateAPIRequest) SetSortOrder(_sortOrder int64) error {
 	r._sortOrder = _sortOrder
@@ -90,7 +90,7 @@ func (r *TaobaoSellercatsListUpdateAPIRequest) SetSortOrder(_sortOrder int64) er
 	return nil
 }
 
-// Get SortOrder Getter
+// GetSortOrder SortOrder Getter
 func (r TaobaoSellercatsListUpdateAPIRequest) GetSortOrder() int64 {
 	return r._sortOrder
 }

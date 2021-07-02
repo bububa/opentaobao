@@ -41,7 +41,7 @@ func (r TaobaoOpenimSnfilterwordSetfilterAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Creator Setter
+// SetCreator is Creator Setter
 // 上传者身份信息，区分不同上传者;只是记录，没有身份校验功能
 func (r *TaobaoOpenimSnfilterwordSetfilterAPIRequest) SetCreator(_creator string) error {
 	r._creator = _creator
@@ -49,12 +49,12 @@ func (r *TaobaoOpenimSnfilterwordSetfilterAPIRequest) SetCreator(_creator string
 	return nil
 }
 
-// Get Creator Getter
+// GetCreator Creator Getter
 func (r TaobaoOpenimSnfilterwordSetfilterAPIRequest) GetCreator() string {
 	return r._creator
 }
 
-// Set is Filterword Setter
+// SetFilterword is Filterword Setter
 // 需要过滤的关键词
 func (r *TaobaoOpenimSnfilterwordSetfilterAPIRequest) SetFilterword(_filterword string) error {
 	r._filterword = _filterword
@@ -62,12 +62,12 @@ func (r *TaobaoOpenimSnfilterwordSetfilterAPIRequest) SetFilterword(_filterword 
 	return nil
 }
 
-// Get Filterword Getter
+// GetFilterword Filterword Getter
 func (r TaobaoOpenimSnfilterwordSetfilterAPIRequest) GetFilterword() string {
 	return r._filterword
 }
 
-// Set is Desc Setter
+// SetDesc is Desc Setter
 // 过滤原因描述
 func (r *TaobaoOpenimSnfilterwordSetfilterAPIRequest) SetDesc(_desc string) error {
 	r._desc = _desc
@@ -75,7 +75,7 @@ func (r *TaobaoOpenimSnfilterwordSetfilterAPIRequest) SetDesc(_desc string) erro
 	return nil
 }
 
-// Get Desc Getter
+// GetDesc Desc Getter
 func (r TaobaoOpenimSnfilterwordSetfilterAPIRequest) GetDesc() string {
 	return r._desc
 }

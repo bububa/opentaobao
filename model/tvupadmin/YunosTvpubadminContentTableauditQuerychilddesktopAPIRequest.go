@@ -37,7 +37,7 @@ func (r YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest) GetApiParam
 	return params
 }
 
-// Set is Query Setter
+// SetQuery is Query Setter
 // 小酷宝桌面坑位查询参数
 func (r *YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest) SetQuery(_query string) error {
 	r._query = _query
@@ -45,7 +45,7 @@ func (r *YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest) SetQuery(_
 	return nil
 }
 
-// Get Query Getter
+// GetQuery Query Getter
 func (r YunosTvpubadminContentTableauditQuerychilddesktopAPIRequest) GetQuery() string {
 	return r._query
 }

@@ -49,7 +49,7 @@ func (r CainiaoGuoguoCpBackupAssigncourierAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is CpCode Setter
+// SetCpCode is CpCode Setter
 // 小件员所在公司编号
 func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetCpCode(_cpCode string) error {
 	r._cpCode = _cpCode
@@ -57,12 +57,12 @@ func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetCpCode(_cpCode string)
 	return nil
 }
 
-// Get CpCode Getter
+// GetCpCode CpCode Getter
 func (r CainiaoGuoguoCpBackupAssigncourierAPIRequest) GetCpCode() string {
 	return r._cpCode
 }
 
-// Set is CpUserId Setter
+// SetCpUserId is CpUserId Setter
 // 小件员员工编号
 func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetCpUserId(_cpUserId string) error {
 	r._cpUserId = _cpUserId
@@ -70,12 +70,12 @@ func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetCpUserId(_cpUserId str
 	return nil
 }
 
-// Get CpUserId Getter
+// GetCpUserId CpUserId Getter
 func (r CainiaoGuoguoCpBackupAssigncourierAPIRequest) GetCpUserId() string {
 	return r._cpUserId
 }
 
-// Set is LpCode Setter
+// SetLpCode is LpCode Setter
 // LP订单号
 func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetLpCode(_lpCode string) error {
 	r._lpCode = _lpCode
@@ -83,12 +83,12 @@ func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetLpCode(_lpCode string)
 	return nil
 }
 
-// Get LpCode Getter
+// GetLpCode LpCode Getter
 func (r CainiaoGuoguoCpBackupAssigncourierAPIRequest) GetLpCode() string {
 	return r._lpCode
 }
 
-// Set is TaskId Setter
+// SetTaskId is TaskId Setter
 // 任务ID
 func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetTaskId(_taskId int64) error {
 	r._taskId = _taskId
@@ -96,12 +96,12 @@ func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetTaskId(_taskId int64) 
 	return nil
 }
 
-// Get TaskId Getter
+// GetTaskId TaskId Getter
 func (r CainiaoGuoguoCpBackupAssigncourierAPIRequest) GetTaskId() int64 {
 	return r._taskId
 }
 
-// Set is AssignReasonCode Setter
+// SetAssignReasonCode is AssignReasonCode Setter
 // 指派/改派原因编码
 func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetAssignReasonCode(_assignReasonCode string) error {
 	r._assignReasonCode = _assignReasonCode
@@ -109,12 +109,12 @@ func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetAssignReasonCode(_assi
 	return nil
 }
 
-// Get AssignReasonCode Getter
+// GetAssignReasonCode AssignReasonCode Getter
 func (r CainiaoGuoguoCpBackupAssigncourierAPIRequest) GetAssignReasonCode() string {
 	return r._assignReasonCode
 }
 
-// Set is AssignReason Setter
+// SetAssignReason is AssignReason Setter
 // 指派/改派原因
 func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetAssignReason(_assignReason string) error {
 	r._assignReason = _assignReason
@@ -122,12 +122,12 @@ func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetAssignReason(_assignRe
 	return nil
 }
 
-// Get AssignReason Getter
+// GetAssignReason AssignReason Getter
 func (r CainiaoGuoguoCpBackupAssigncourierAPIRequest) GetAssignReason() string {
 	return r._assignReason
 }
 
-// Set is Mobile Setter
+// SetMobile is Mobile Setter
 // 小件员手机号
 func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetMobile(_mobile string) error {
 	r._mobile = _mobile
@@ -135,7 +135,7 @@ func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetMobile(_mobile string)
 	return nil
 }
 
-// Get Mobile Getter
+// GetMobile Mobile Getter
 func (r CainiaoGuoguoCpBackupAssigncourierAPIRequest) GetMobile() string {
 	return r._mobile
 }

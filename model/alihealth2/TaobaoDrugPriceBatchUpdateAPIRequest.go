@@ -39,7 +39,7 @@ func (r TaobaoDrugPriceBatchUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is OutStoreId Setter
+// SetOutStoreId is OutStoreId Setter
 // 外部店铺ID
 func (r *TaobaoDrugPriceBatchUpdateAPIRequest) SetOutStoreId(_outStoreId string) error {
 	r._outStoreId = _outStoreId
@@ -47,12 +47,12 @@ func (r *TaobaoDrugPriceBatchUpdateAPIRequest) SetOutStoreId(_outStoreId string)
 	return nil
 }
 
-// Get OutStoreId Getter
+// GetOutStoreId OutStoreId Getter
 func (r TaobaoDrugPriceBatchUpdateAPIRequest) GetOutStoreId() string {
 	return r._outStoreId
 }
 
-// Set is OutItemIdPriceMap Setter
+// SetOutItemIdPriceMap is OutItemIdPriceMap Setter
 // 商品ID和价格
 func (r *TaobaoDrugPriceBatchUpdateAPIRequest) SetOutItemIdPriceMap(_outItemIdPriceMap string) error {
 	r._outItemIdPriceMap = _outItemIdPriceMap
@@ -60,7 +60,7 @@ func (r *TaobaoDrugPriceBatchUpdateAPIRequest) SetOutItemIdPriceMap(_outItemIdPr
 	return nil
 }
 
-// Get OutItemIdPriceMap Getter
+// GetOutItemIdPriceMap OutItemIdPriceMap Getter
 func (r TaobaoDrugPriceBatchUpdateAPIRequest) GetOutItemIdPriceMap() string {
 	return r._outItemIdPriceMap
 }

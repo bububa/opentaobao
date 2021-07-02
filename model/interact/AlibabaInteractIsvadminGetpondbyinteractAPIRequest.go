@@ -37,7 +37,7 @@ func (r AlibabaInteractIsvadminGetpondbyinteractAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// Set is InteractId Setter
+// SetInteractId is InteractId Setter
 // 互动实例ID
 func (r *AlibabaInteractIsvadminGetpondbyinteractAPIRequest) SetInteractId(_interactId string) error {
 	r._interactId = _interactId
@@ -45,7 +45,7 @@ func (r *AlibabaInteractIsvadminGetpondbyinteractAPIRequest) SetInteractId(_inte
 	return nil
 }
 
-// Get InteractId Getter
+// GetInteractId InteractId Getter
 func (r AlibabaInteractIsvadminGetpondbyinteractAPIRequest) GetInteractId() string {
 	return r._interactId
 }

@@ -39,7 +39,7 @@ func (r TaobaoOmniorderStoreSwitchstatusGetAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *TaobaoOmniorderStoreSwitchstatusGetAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -47,12 +47,12 @@ func (r *TaobaoOmniorderStoreSwitchstatusGetAPIRequest) SetStoreId(_storeId int6
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoOmniorderStoreSwitchstatusGetAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is SellerId Setter
+// SetSellerId is SellerId Setter
 // 卖家ID
 func (r *TaobaoOmniorderStoreSwitchstatusGetAPIRequest) SetSellerId(_sellerId int64) error {
 	r._sellerId = _sellerId
@@ -60,7 +60,7 @@ func (r *TaobaoOmniorderStoreSwitchstatusGetAPIRequest) SetSellerId(_sellerId in
 	return nil
 }
 
-// Get SellerId Getter
+// GetSellerId SellerId Getter
 func (r TaobaoOmniorderStoreSwitchstatusGetAPIRequest) GetSellerId() int64 {
 	return r._sellerId
 }

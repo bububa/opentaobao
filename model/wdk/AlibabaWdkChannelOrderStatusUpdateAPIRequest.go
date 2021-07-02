@@ -37,7 +37,7 @@ func (r AlibabaWdkChannelOrderStatusUpdateAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// Set is OrderStatusInfo Setter
+// SetOrderStatusInfo is OrderStatusInfo Setter
 // 修改信息
 func (r *AlibabaWdkChannelOrderStatusUpdateAPIRequest) SetOrderStatusInfo(_orderStatusInfo *OrderStatusInfo) error {
 	r._orderStatusInfo = _orderStatusInfo
@@ -45,7 +45,7 @@ func (r *AlibabaWdkChannelOrderStatusUpdateAPIRequest) SetOrderStatusInfo(_order
 	return nil
 }
 
-// Get OrderStatusInfo Getter
+// GetOrderStatusInfo OrderStatusInfo Getter
 func (r AlibabaWdkChannelOrderStatusUpdateAPIRequest) GetOrderStatusInfo() *OrderStatusInfo {
 	return r._orderStatusInfo
 }

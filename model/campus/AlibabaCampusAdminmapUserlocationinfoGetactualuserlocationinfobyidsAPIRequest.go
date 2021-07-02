@@ -41,7 +41,7 @@ func (r AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRe
 	return params
 }
 
-// Set is Param0 Setter
+// SetParam0 is Param0 Setter
 // 环境参数
 func (r *AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
 	r._param0 = _param0
@@ -49,12 +49,12 @@ func (r *AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIR
 	return nil
 }
 
-// Get Param0 Getter
+// GetParam0 Param0 Getter
 func (r AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest) GetParam0() *WorkBenchContext {
 	return r._param0
 }
 
-// Set is Param1 Setter
+// SetParam1 is Param1 Setter
 // 查询参数
 func (r *AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest) SetParam1(_param1 *UserLocationInfoQuery) error {
 	r._param1 = _param1
@@ -62,7 +62,7 @@ func (r *AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIR
 	return nil
 }
 
-// Get Param1 Getter
+// GetParam1 Param1 Getter
 func (r AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRequest) GetParam1() *UserLocationInfoQuery {
 	return r._param1
 }

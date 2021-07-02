@@ -37,7 +37,7 @@ func (r TaobaoTmcAuthGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is Group Setter
+// SetGroup is Group Setter
 // tmc组名
 func (r *TaobaoTmcAuthGetAPIRequest) SetGroup(_group string) error {
 	r._group = _group
@@ -45,7 +45,7 @@ func (r *TaobaoTmcAuthGetAPIRequest) SetGroup(_group string) error {
 	return nil
 }
 
-// Get Group Getter
+// GetGroup Group Getter
 func (r TaobaoTmcAuthGetAPIRequest) GetGroup() string {
 	return r._group
 }

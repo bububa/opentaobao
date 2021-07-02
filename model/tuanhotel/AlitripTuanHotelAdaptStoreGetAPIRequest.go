@@ -39,7 +39,7 @@ func (r AlitripTuanHotelAdaptStoreGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ShidList Setter
+// SetShidList is ShidList Setter
 // 标准酒店ID列表,逗号分割。与hid_list二者只能选一
 func (r *AlitripTuanHotelAdaptStoreGetAPIRequest) SetShidList(_shidList []int64) error {
 	r._shidList = _shidList
@@ -47,12 +47,12 @@ func (r *AlitripTuanHotelAdaptStoreGetAPIRequest) SetShidList(_shidList []int64)
 	return nil
 }
 
-// Get ShidList Getter
+// GetShidList ShidList Getter
 func (r AlitripTuanHotelAdaptStoreGetAPIRequest) GetShidList() []int64 {
 	return r._shidList
 }
 
-// Set is HidList Setter
+// SetHidList is HidList Setter
 // 物理酒店ID列表，逗号分割。与shid_list二者只能选一
 func (r *AlitripTuanHotelAdaptStoreGetAPIRequest) SetHidList(_hidList []int64) error {
 	r._hidList = _hidList
@@ -60,7 +60,7 @@ func (r *AlitripTuanHotelAdaptStoreGetAPIRequest) SetHidList(_hidList []int64) e
 	return nil
 }
 
-// Get HidList Getter
+// GetHidList HidList Getter
 func (r AlitripTuanHotelAdaptStoreGetAPIRequest) GetHidList() []int64 {
 	return r._hidList
 }

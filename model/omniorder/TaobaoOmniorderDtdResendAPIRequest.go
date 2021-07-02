@@ -37,7 +37,7 @@ func (r TaobaoOmniorderDtdResendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is MainOrderId Setter
+// SetMainOrderId is MainOrderId Setter
 // 淘宝主订单ID
 func (r *TaobaoOmniorderDtdResendAPIRequest) SetMainOrderId(_mainOrderId int64) error {
 	r._mainOrderId = _mainOrderId
@@ -45,7 +45,7 @@ func (r *TaobaoOmniorderDtdResendAPIRequest) SetMainOrderId(_mainOrderId int64) 
 	return nil
 }
 
-// Get MainOrderId Getter
+// GetMainOrderId MainOrderId Getter
 func (r TaobaoOmniorderDtdResendAPIRequest) GetMainOrderId() int64 {
 	return r._mainOrderId
 }

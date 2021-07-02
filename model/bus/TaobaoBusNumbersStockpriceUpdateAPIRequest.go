@@ -37,7 +37,7 @@ func (r TaobaoBusNumbersStockpriceUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// Set is ParamTopBusPriceAndStockUpdateRQ Setter
+// SetParamTopBusPriceAndStockUpdateRQ is ParamTopBusPriceAndStockUpdateRQ Setter
 // 请求参数
 func (r *TaobaoBusNumbersStockpriceUpdateAPIRequest) SetParamTopBusPriceAndStockUpdateRQ(_paramTopBusPriceAndStockUpdateRQ *TopBusPriceAndStockUpdateRq) error {
 	r._paramTopBusPriceAndStockUpdateRQ = _paramTopBusPriceAndStockUpdateRQ
@@ -45,7 +45,7 @@ func (r *TaobaoBusNumbersStockpriceUpdateAPIRequest) SetParamTopBusPriceAndStock
 	return nil
 }
 
-// Get ParamTopBusPriceAndStockUpdateRQ Getter
+// GetParamTopBusPriceAndStockUpdateRQ ParamTopBusPriceAndStockUpdateRQ Getter
 func (r TaobaoBusNumbersStockpriceUpdateAPIRequest) GetParamTopBusPriceAndStockUpdateRQ() *TopBusPriceAndStockUpdateRq {
 	return r._paramTopBusPriceAndStockUpdateRQ
 }

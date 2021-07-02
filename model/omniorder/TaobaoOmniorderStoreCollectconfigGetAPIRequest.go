@@ -39,7 +39,7 @@ func (r TaobaoOmniorderStoreCollectconfigGetAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// Set is StoreId Setter
+// SetStoreId is StoreId Setter
 // 门店ID
 func (r *TaobaoOmniorderStoreCollectconfigGetAPIRequest) SetStoreId(_storeId int64) error {
 	r._storeId = _storeId
@@ -47,12 +47,12 @@ func (r *TaobaoOmniorderStoreCollectconfigGetAPIRequest) SetStoreId(_storeId int
 	return nil
 }
 
-// Get StoreId Getter
+// GetStoreId StoreId Getter
 func (r TaobaoOmniorderStoreCollectconfigGetAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// Set is Activity Setter
+// SetActivity is Activity Setter
 // 是否是活动期
 func (r *TaobaoOmniorderStoreCollectconfigGetAPIRequest) SetActivity(_activity bool) error {
 	r._activity = _activity
@@ -60,7 +60,7 @@ func (r *TaobaoOmniorderStoreCollectconfigGetAPIRequest) SetActivity(_activity b
 	return nil
 }
 
-// Get Activity Getter
+// GetActivity Activity Getter
 func (r TaobaoOmniorderStoreCollectconfigGetAPIRequest) GetActivity() bool {
 	return r._activity
 }
