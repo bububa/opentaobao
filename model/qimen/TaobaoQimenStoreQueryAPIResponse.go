@@ -24,8 +24,6 @@ type TaobaoQimenStoreQueryAPIResponseModel struct {
 	StoreName string `json:"store_name,omitempty" xml:"store_name,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
-	// 门店主营类目
-	MainCategory int64 `json:"main_category,omitempty" xml:"main_category,omitempty"`
 	// 响应code
 	QimenCode string `json:"qimen_code,omitempty" xml:"qimen_code,omitempty"`
 	// 关闭营业时间
@@ -42,14 +40,16 @@ type TaobaoQimenStoreQueryAPIResponseModel struct {
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 商户介绍
 	StoreDescription string `json:"store_description,omitempty" xml:"store_description,omitempty"`
-	// 地址信息
-	Address *Address `json:"address,omitempty" xml:"address,omitempty"`
 	// 需要关联的线上店铺ID
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
-	// 所有者信息
-	StoreKeeper *StoreKeeper `json:"store_keeper,omitempty" xml:"store_keeper,omitempty"`
 	// 类型
 	StoreType string `json:"store_type,omitempty" xml:"store_type,omitempty"`
 	// ERP系统中 门店编码
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
+	// 门店主营类目
+	MainCategory int64 `json:"main_category,omitempty" xml:"main_category,omitempty"`
+	// 地址信息
+	Address *Address `json:"address,omitempty" xml:"address,omitempty"`
+	// 所有者信息
+	StoreKeeper *StoreKeeper `json:"store_keeper,omitempty" xml:"store_keeper,omitempty"`
 }

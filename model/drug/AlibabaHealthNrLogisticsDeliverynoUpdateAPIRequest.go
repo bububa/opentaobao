@@ -12,12 +12,12 @@ import (
 // 上传订单同城快递单号
 type AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest struct {
 	model.Params
-	// 订单ID
-	_orderId int64
 	// 快递公司代码
 	_cpCode string
 	// 快递单号
 	_courierNo string
+	// 订单ID
+	_orderId int64
 	// 是否强制上传，1代表强制，其他值代表需要进行cp_code合法性校验
 	_force int64
 }
@@ -41,19 +41,6 @@ func (r AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) GetApiParams() url.V
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetOrderId is OrderId Setter
-// 订单ID
-func (r *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) SetOrderId(_orderId int64) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
-	return nil
-}
-
-// GetOrderId OrderId Getter
-func (r AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) GetOrderId() int64 {
-	return r._orderId
 }
 
 // SetCpCode is CpCode Setter
@@ -80,6 +67,19 @@ func (r *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) SetCourierNo(_couri
 // GetCourierNo CourierNo Getter
 func (r AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) GetCourierNo() string {
 	return r._courierNo
+}
+
+// SetOrderId is OrderId Setter
+// 订单ID
+func (r *AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// GetOrderId OrderId Getter
+func (r AlibabaHealthNrLogisticsDeliverynoUpdateAPIRequest) GetOrderId() int64 {
+	return r._orderId
 }
 
 // SetForce is Force Setter

@@ -12,18 +12,18 @@ import (
 // 提供给ISV通过该接口取消交接单
 type CainiaoGlobalHandoverCancelAPIRequest struct {
 	model.Params
-	// 系统自动生成
-	_userInfo *UserInfoDto
 	// 要取消的交接物运单号，即大包运单号
 	_trackingNumber string
-	// 要取消的交接单id
-	_handoverOrderId int64
-	// 要取消的交接物id，即大包id
-	_handoverContentId int64
 	// ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
 	_client string
 	// 多语言
 	_locale string
+	// 系统自动生成
+	_userInfo *UserInfoDto
+	// 要取消的交接单id
+	_handoverOrderId int64
+	// 要取消的交接物id，即大包id
+	_handoverContentId int64
 }
 
 // NewCainiaoGlobalHandoverCancelRequest 初始化CainiaoGlobalHandoverCancelAPIRequest对象
@@ -47,19 +47,6 @@ func (r CainiaoGlobalHandoverCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetUserInfo is UserInfo Setter
-// 系统自动生成
-func (r *CainiaoGlobalHandoverCancelAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
-	r._userInfo = _userInfo
-	r.Set("user_info", _userInfo)
-	return nil
-}
-
-// GetUserInfo UserInfo Getter
-func (r CainiaoGlobalHandoverCancelAPIRequest) GetUserInfo() *UserInfoDto {
-	return r._userInfo
-}
-
 // SetTrackingNumber is TrackingNumber Setter
 // 要取消的交接物运单号，即大包运单号
 func (r *CainiaoGlobalHandoverCancelAPIRequest) SetTrackingNumber(_trackingNumber string) error {
@@ -71,32 +58,6 @@ func (r *CainiaoGlobalHandoverCancelAPIRequest) SetTrackingNumber(_trackingNumbe
 // GetTrackingNumber TrackingNumber Getter
 func (r CainiaoGlobalHandoverCancelAPIRequest) GetTrackingNumber() string {
 	return r._trackingNumber
-}
-
-// SetHandoverOrderId is HandoverOrderId Setter
-// 要取消的交接单id
-func (r *CainiaoGlobalHandoverCancelAPIRequest) SetHandoverOrderId(_handoverOrderId int64) error {
-	r._handoverOrderId = _handoverOrderId
-	r.Set("handover_order_id", _handoverOrderId)
-	return nil
-}
-
-// GetHandoverOrderId HandoverOrderId Getter
-func (r CainiaoGlobalHandoverCancelAPIRequest) GetHandoverOrderId() int64 {
-	return r._handoverOrderId
-}
-
-// SetHandoverContentId is HandoverContentId Setter
-// 要取消的交接物id，即大包id
-func (r *CainiaoGlobalHandoverCancelAPIRequest) SetHandoverContentId(_handoverContentId int64) error {
-	r._handoverContentId = _handoverContentId
-	r.Set("handover_content_id", _handoverContentId)
-	return nil
-}
-
-// GetHandoverContentId HandoverContentId Getter
-func (r CainiaoGlobalHandoverCancelAPIRequest) GetHandoverContentId() int64 {
-	return r._handoverContentId
 }
 
 // SetClient is Client Setter
@@ -123,4 +84,43 @@ func (r *CainiaoGlobalHandoverCancelAPIRequest) SetLocale(_locale string) error 
 // GetLocale Locale Getter
 func (r CainiaoGlobalHandoverCancelAPIRequest) GetLocale() string {
 	return r._locale
+}
+
+// SetUserInfo is UserInfo Setter
+// 系统自动生成
+func (r *CainiaoGlobalHandoverCancelAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+	r._userInfo = _userInfo
+	r.Set("user_info", _userInfo)
+	return nil
+}
+
+// GetUserInfo UserInfo Getter
+func (r CainiaoGlobalHandoverCancelAPIRequest) GetUserInfo() *UserInfoDto {
+	return r._userInfo
+}
+
+// SetHandoverOrderId is HandoverOrderId Setter
+// 要取消的交接单id
+func (r *CainiaoGlobalHandoverCancelAPIRequest) SetHandoverOrderId(_handoverOrderId int64) error {
+	r._handoverOrderId = _handoverOrderId
+	r.Set("handover_order_id", _handoverOrderId)
+	return nil
+}
+
+// GetHandoverOrderId HandoverOrderId Getter
+func (r CainiaoGlobalHandoverCancelAPIRequest) GetHandoverOrderId() int64 {
+	return r._handoverOrderId
+}
+
+// SetHandoverContentId is HandoverContentId Setter
+// 要取消的交接物id，即大包id
+func (r *CainiaoGlobalHandoverCancelAPIRequest) SetHandoverContentId(_handoverContentId int64) error {
+	r._handoverContentId = _handoverContentId
+	r.Set("handover_content_id", _handoverContentId)
+	return nil
+}
+
+// GetHandoverContentId HandoverContentId Getter
+func (r CainiaoGlobalHandoverCancelAPIRequest) GetHandoverContentId() int64 {
+	return r._handoverContentId
 }

@@ -16,16 +16,16 @@ type TaobaoJipiaoAgentOrderSearchAPIRequest struct {
 	_beginTime string
 	// 创建订单时间范围的结束时间，注意：当前搜索条件开始结束时间范围不能超过三天，默认为当前时间 （具体天数可能调整）
 	_endTime string
+	// 扩展字段:<br/>needFilterAutobook：默认true。待出票状态下，会根据此值过滤掉自动出票状态下订单，以防止重复出票的问题。对于精选票，此值需要设置成false，并由API使用者保证不会重复出票。
+	_extra string
 	// 订单状态，默认为空，查询所有状态的订单<br/>1:待确认<br/>2:待出票<br/>3:强制成功<br/>4:未付款<br/>5:预订成功<br/>6:已失效
 	_status int64
 	// 航程类型： 0.单程；1.往返
 	_tripType int64
-	// 是否需要行程单，true表示需要行程单；false表示不许要
-	_hasItinerary bool
 	// 页码，默认第一页；注意：页大小固定，搜索结果中返回页大小pageSize，和是否包含下一页hasNext
 	_page int64
-	// 扩展字段:<br/>needFilterAutobook：默认true。待出票状态下，会根据此值过滤掉自动出票状态下订单，以防止重复出票的问题。对于精选票，此值需要设置成false，并由API使用者保证不会重复出票。
-	_extra string
+	// 是否需要行程单，true表示需要行程单；false表示不许要
+	_hasItinerary bool
 }
 
 // NewTaobaoJipiaoAgentOrderSearchRequest 初始化TaobaoJipiaoAgentOrderSearchAPIRequest对象
@@ -75,6 +75,19 @@ func (r TaobaoJipiaoAgentOrderSearchAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
+// SetExtra is Extra Setter
+// 扩展字段:<br/>needFilterAutobook：默认true。待出票状态下，会根据此值过滤掉自动出票状态下订单，以防止重复出票的问题。对于精选票，此值需要设置成false，并由API使用者保证不会重复出票。
+func (r *TaobaoJipiaoAgentOrderSearchAPIRequest) SetExtra(_extra string) error {
+	r._extra = _extra
+	r.Set("extra", _extra)
+	return nil
+}
+
+// GetExtra Extra Getter
+func (r TaobaoJipiaoAgentOrderSearchAPIRequest) GetExtra() string {
+	return r._extra
+}
+
 // SetStatus is Status Setter
 // 订单状态，默认为空，查询所有状态的订单<br/>1:待确认<br/>2:待出票<br/>3:强制成功<br/>4:未付款<br/>5:预订成功<br/>6:已失效
 func (r *TaobaoJipiaoAgentOrderSearchAPIRequest) SetStatus(_status int64) error {
@@ -101,19 +114,6 @@ func (r TaobaoJipiaoAgentOrderSearchAPIRequest) GetTripType() int64 {
 	return r._tripType
 }
 
-// SetHasItinerary is HasItinerary Setter
-// 是否需要行程单，true表示需要行程单；false表示不许要
-func (r *TaobaoJipiaoAgentOrderSearchAPIRequest) SetHasItinerary(_hasItinerary bool) error {
-	r._hasItinerary = _hasItinerary
-	r.Set("has_itinerary", _hasItinerary)
-	return nil
-}
-
-// GetHasItinerary HasItinerary Getter
-func (r TaobaoJipiaoAgentOrderSearchAPIRequest) GetHasItinerary() bool {
-	return r._hasItinerary
-}
-
 // SetPage is Page Setter
 // 页码，默认第一页；注意：页大小固定，搜索结果中返回页大小pageSize，和是否包含下一页hasNext
 func (r *TaobaoJipiaoAgentOrderSearchAPIRequest) SetPage(_page int64) error {
@@ -127,15 +127,15 @@ func (r TaobaoJipiaoAgentOrderSearchAPIRequest) GetPage() int64 {
 	return r._page
 }
 
-// SetExtra is Extra Setter
-// 扩展字段:<br/>needFilterAutobook：默认true。待出票状态下，会根据此值过滤掉自动出票状态下订单，以防止重复出票的问题。对于精选票，此值需要设置成false，并由API使用者保证不会重复出票。
-func (r *TaobaoJipiaoAgentOrderSearchAPIRequest) SetExtra(_extra string) error {
-	r._extra = _extra
-	r.Set("extra", _extra)
+// SetHasItinerary is HasItinerary Setter
+// 是否需要行程单，true表示需要行程单；false表示不许要
+func (r *TaobaoJipiaoAgentOrderSearchAPIRequest) SetHasItinerary(_hasItinerary bool) error {
+	r._hasItinerary = _hasItinerary
+	r.Set("has_itinerary", _hasItinerary)
 	return nil
 }
 
-// GetExtra Extra Getter
-func (r TaobaoJipiaoAgentOrderSearchAPIRequest) GetExtra() string {
-	return r._extra
+// GetHasItinerary HasItinerary Getter
+func (r TaobaoJipiaoAgentOrderSearchAPIRequest) GetHasItinerary() bool {
+	return r._hasItinerary
 }

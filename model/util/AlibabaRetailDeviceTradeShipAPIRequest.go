@@ -12,14 +12,14 @@ import (
 // 贩卖机发货
 type AlibabaRetailDeviceTradeShipAPIRequest struct {
 	model.Params
+	// 详情
+	_shipDetailList []ShipDetailDto
 	// 设备类型
 	_deviceType string
 	// 设备ID
 	_deviceId string
 	// 内部订单编号
 	_tradeNo string
-	// 详情
-	_shipDetailList []ShipDetailDto
 	// 选项
 	_orderUpdateOption *OrderUpdateOption
 }
@@ -43,6 +43,19 @@ func (r AlibabaRetailDeviceTradeShipAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetShipDetailList is ShipDetailList Setter
+// 详情
+func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetShipDetailList(_shipDetailList []ShipDetailDto) error {
+	r._shipDetailList = _shipDetailList
+	r.Set("ship_detail_list", _shipDetailList)
+	return nil
+}
+
+// GetShipDetailList ShipDetailList Getter
+func (r AlibabaRetailDeviceTradeShipAPIRequest) GetShipDetailList() []ShipDetailDto {
+	return r._shipDetailList
 }
 
 // SetDeviceType is DeviceType Setter
@@ -82,19 +95,6 @@ func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetTradeNo(_tradeNo string) err
 // GetTradeNo TradeNo Getter
 func (r AlibabaRetailDeviceTradeShipAPIRequest) GetTradeNo() string {
 	return r._tradeNo
-}
-
-// SetShipDetailList is ShipDetailList Setter
-// 详情
-func (r *AlibabaRetailDeviceTradeShipAPIRequest) SetShipDetailList(_shipDetailList []ShipDetailDto) error {
-	r._shipDetailList = _shipDetailList
-	r.Set("ship_detail_list", _shipDetailList)
-	return nil
-}
-
-// GetShipDetailList ShipDetailList Getter
-func (r AlibabaRetailDeviceTradeShipAPIRequest) GetShipDetailList() []ShipDetailDto {
-	return r._shipDetailList
 }
 
 // SetOrderUpdateOption is OrderUpdateOption Setter

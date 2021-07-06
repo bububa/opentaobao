@@ -2,8 +2,8 @@ package tvupadmin
 
 // OsVersionAuditDo 结构体
 type OsVersionAuditDo struct {
-	// 主键ID
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 升级包列表
+	OsRomList []OsRomDo `json:"os_rom_list,omitempty" xml:"os_rom_list>os_rom_do,omitempty"`
 	// 型号名
 	ModelName string `json:"model_name,omitempty" xml:"model_name,omitempty"`
 	// 内部型号名
@@ -22,6 +22,6 @@ type OsVersionAuditDo struct {
 	GmtModify string `json:"gmt_modify,omitempty" xml:"gmt_modify,omitempty"`
 	// 审核时间
 	GmtAudit string `json:"gmt_audit,omitempty" xml:"gmt_audit,omitempty"`
-	// 升级包列表
-	OsRomList []OsRomDo `json:"os_rom_list,omitempty" xml:"os_rom_list>os_rom_do,omitempty"`
+	// 主键ID
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 }

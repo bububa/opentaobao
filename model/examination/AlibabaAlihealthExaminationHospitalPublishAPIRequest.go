@@ -42,8 +42,6 @@ type AlibabaAlihealthExaminationHospitalPublishAPIRequest struct {
 	_routes string
 	// http://images.aliyun.com/image?id=123
 	_logo string
-	// 是否支持在线报告。0:不支持;1:支持
-	_onlineReport int64
 	// 社会统一信用代码
 	_socialCreditCode string
 	// 线下报告获取说明（必填）
@@ -68,6 +66,8 @@ type AlibabaAlihealthExaminationHospitalPublishAPIRequest struct {
 	_medicalLicense string
 	// 类目:1=体检；2=核酸；3=上门；4=健康证；多个类目以逗号分割
 	_category string
+	// 是否支持在线报告。0:不支持;1:支持
+	_onlineReport int64
 }
 
 // NewAlibabaAlihealthExaminationHospitalPublishRequest 初始化AlibabaAlihealthExaminationHospitalPublishAPIRequest对象
@@ -286,19 +286,6 @@ func (r AlibabaAlihealthExaminationHospitalPublishAPIRequest) GetLogo() string {
 	return r._logo
 }
 
-// SetOnlineReport is OnlineReport Setter
-// 是否支持在线报告。0:不支持;1:支持
-func (r *AlibabaAlihealthExaminationHospitalPublishAPIRequest) SetOnlineReport(_onlineReport int64) error {
-	r._onlineReport = _onlineReport
-	r.Set("online_report", _onlineReport)
-	return nil
-}
-
-// GetOnlineReport OnlineReport Getter
-func (r AlibabaAlihealthExaminationHospitalPublishAPIRequest) GetOnlineReport() int64 {
-	return r._onlineReport
-}
-
 // SetSocialCreditCode is SocialCreditCode Setter
 // 社会统一信用代码
 func (r *AlibabaAlihealthExaminationHospitalPublishAPIRequest) SetSocialCreditCode(_socialCreditCode string) error {
@@ -453,4 +440,17 @@ func (r *AlibabaAlihealthExaminationHospitalPublishAPIRequest) SetCategory(_cate
 // GetCategory Category Getter
 func (r AlibabaAlihealthExaminationHospitalPublishAPIRequest) GetCategory() string {
 	return r._category
+}
+
+// SetOnlineReport is OnlineReport Setter
+// 是否支持在线报告。0:不支持;1:支持
+func (r *AlibabaAlihealthExaminationHospitalPublishAPIRequest) SetOnlineReport(_onlineReport int64) error {
+	r._onlineReport = _onlineReport
+	r.Set("online_report", _onlineReport)
+	return nil
+}
+
+// GetOnlineReport OnlineReport Getter
+func (r AlibabaAlihealthExaminationHospitalPublishAPIRequest) GetOnlineReport() int64 {
+	return r._onlineReport
 }

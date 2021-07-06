@@ -12,10 +12,10 @@ import (
 // 租赁公司同步还款计划
 type TmallCarLeaseSynchronizeplansAPIRequest struct {
 	model.Params
-	// 商品id
-	_itemId int64
 	// 租赁计划
 	_plans []CarLeasePlanDo
+	// 商品id
+	_itemId int64
 }
 
 // NewTmallCarLeaseSynchronizeplansRequest 初始化TmallCarLeaseSynchronizeplansAPIRequest对象
@@ -39,19 +39,6 @@ func (r TmallCarLeaseSynchronizeplansAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetItemId is ItemId Setter
-// 商品id
-func (r *TmallCarLeaseSynchronizeplansAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
-	return nil
-}
-
-// GetItemId ItemId Getter
-func (r TmallCarLeaseSynchronizeplansAPIRequest) GetItemId() int64 {
-	return r._itemId
-}
-
 // SetPlans is Plans Setter
 // 租赁计划
 func (r *TmallCarLeaseSynchronizeplansAPIRequest) SetPlans(_plans []CarLeasePlanDo) error {
@@ -63,4 +50,17 @@ func (r *TmallCarLeaseSynchronizeplansAPIRequest) SetPlans(_plans []CarLeasePlan
 // GetPlans Plans Getter
 func (r TmallCarLeaseSynchronizeplansAPIRequest) GetPlans() []CarLeasePlanDo {
 	return r._plans
+}
+
+// SetItemId is ItemId Setter
+// 商品id
+func (r *TmallCarLeaseSynchronizeplansAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r TmallCarLeaseSynchronizeplansAPIRequest) GetItemId() int64 {
+	return r._itemId
 }

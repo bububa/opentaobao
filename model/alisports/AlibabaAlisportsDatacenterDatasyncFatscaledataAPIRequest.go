@@ -14,6 +14,12 @@ type AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest struct {
 	model.Params
 	// 阿里体育用户id
 	_aliuid string
+	// 设备名称
+	_deviceName string
+	// 设备编号
+	_deviceModel string
+	// 三方唯一id
+	_messageId string
 	// 测量时间，秒级别时间戳
 	_time int64
 	// 年龄
@@ -54,12 +60,6 @@ type AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest struct {
 	_bodyAge int64
 	// 设备类型：1.体脂秤，2智能手表，3智能手环
 	_deviceType int64
-	// 设备名称
-	_deviceName string
-	// 设备编号
-	_deviceModel string
-	// 三方唯一id
-	_messageId string
 }
 
 // NewAlibabaAlisportsDatacenterDatasyncFatscaledataRequest 初始化AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest对象
@@ -94,6 +94,45 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetAliuid(_al
 // GetAliuid Aliuid Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetAliuid() string {
 	return r._aliuid
+}
+
+// SetDeviceName is DeviceName Setter
+// 设备名称
+func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetDeviceName(_deviceName string) error {
+	r._deviceName = _deviceName
+	r.Set("device_name", _deviceName)
+	return nil
+}
+
+// GetDeviceName DeviceName Getter
+func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetDeviceName() string {
+	return r._deviceName
+}
+
+// SetDeviceModel is DeviceModel Setter
+// 设备编号
+func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetDeviceModel(_deviceModel string) error {
+	r._deviceModel = _deviceModel
+	r.Set("device_model", _deviceModel)
+	return nil
+}
+
+// GetDeviceModel DeviceModel Getter
+func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetDeviceModel() string {
+	return r._deviceModel
+}
+
+// SetMessageId is MessageId Setter
+// 三方唯一id
+func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetMessageId(_messageId string) error {
+	r._messageId = _messageId
+	r.Set("message_id", _messageId)
+	return nil
+}
+
+// GetMessageId MessageId Getter
+func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetMessageId() string {
+	return r._messageId
 }
 
 // SetTime is Time Setter
@@ -354,43 +393,4 @@ func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetDeviceType
 // GetDeviceType DeviceType Getter
 func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetDeviceType() int64 {
 	return r._deviceType
-}
-
-// SetDeviceName is DeviceName Setter
-// 设备名称
-func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetDeviceName(_deviceName string) error {
-	r._deviceName = _deviceName
-	r.Set("device_name", _deviceName)
-	return nil
-}
-
-// GetDeviceName DeviceName Getter
-func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetDeviceName() string {
-	return r._deviceName
-}
-
-// SetDeviceModel is DeviceModel Setter
-// 设备编号
-func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetDeviceModel(_deviceModel string) error {
-	r._deviceModel = _deviceModel
-	r.Set("device_model", _deviceModel)
-	return nil
-}
-
-// GetDeviceModel DeviceModel Getter
-func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetDeviceModel() string {
-	return r._deviceModel
-}
-
-// SetMessageId is MessageId Setter
-// 三方唯一id
-func (r *AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) SetMessageId(_messageId string) error {
-	r._messageId = _messageId
-	r.Set("message_id", _messageId)
-	return nil
-}
-
-// GetMessageId MessageId Getter
-func (r AlibabaAlisportsDatacenterDatasyncFatscaledataAPIRequest) GetMessageId() string {
-	return r._messageId
 }

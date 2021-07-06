@@ -16,12 +16,12 @@ type RefundFundDetailInfo struct {
 	OutRefundNo string `json:"out_refund_no,omitempty" xml:"out_refund_no,omitempty"`
 	// 外部退款单id
 	OutRefundOrderNo string `json:"out_refund_order_no,omitempty" xml:"out_refund_order_no,omitempty"`
-	// 退款金额
-	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// SUCCESS成功  FAIL失败
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
-	// 退款成功时间
-	SuccessTime int64 `json:"success_time,omitempty" xml:"success_time,omitempty"`
 	// 扩展信息
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
+	// 退款金额
+	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
+	// 退款成功时间
+	SuccessTime int64 `json:"success_time,omitempty" xml:"success_time,omitempty"`
 }

@@ -20,8 +20,6 @@ type SupplierPreInvoiceInfoVO struct {
 	Payee string `json:"payee,omitempty" xml:"payee,omitempty"`
 	// 币种
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
-	// 发票附件
-	Attachment *model.File `json:"attachment,omitempty" xml:"attachment,omitempty"`
 	// 关闭原因
 	CloseReason string `json:"close_reason,omitempty" xml:"close_reason,omitempty"`
 	// 价税合计
@@ -68,4 +66,6 @@ type SupplierPreInvoiceInfoVO struct {
 	SupplierName string `json:"supplier_name,omitempty" xml:"supplier_name,omitempty"`
 	// 供应商编码
 	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`
+	// 发票附件
+	Attachment *model.File `json:"attachment,omitempty" xml:"attachment,omitempty"`
 }

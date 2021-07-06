@@ -14,8 +14,6 @@ import (
 // 2、使用该接口时需要把未做修改的字段值也传入
 type TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest struct {
 	model.Params
-	// 优惠活动ID
-	_activityId int64
 	// 活动名称，不能超过32字符
 	_name string
 	// 活动描述，不能超过100字符
@@ -24,10 +22,12 @@ type TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest struct {
 	_startTime string
 	// 活动结束时间
 	_endTime string
-	// 是否指定人群标签
-	_isUserTag bool
 	// 用户标签。当is_user_tag为true时，该值才有意义。
 	_userTag string
+	// 优惠活动ID
+	_activityId int64
+	// 是否指定人群标签
+	_isUserTag bool
 }
 
 // NewTaobaoPromotionmiscCommonItemActivityUpdateRequest 初始化TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest对象
@@ -49,19 +49,6 @@ func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetApiParams() ur
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetActivityId is ActivityId Setter
-// 优惠活动ID
-func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetActivityId(_activityId int64) error {
-	r._activityId = _activityId
-	r.Set("activity_id", _activityId)
-	return nil
-}
-
-// GetActivityId ActivityId Getter
-func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetActivityId() int64 {
-	return r._activityId
 }
 
 // SetName is Name Setter
@@ -116,19 +103,6 @@ func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetEndTime() stri
 	return r._endTime
 }
 
-// SetIsUserTag is IsUserTag Setter
-// 是否指定人群标签
-func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetIsUserTag(_isUserTag bool) error {
-	r._isUserTag = _isUserTag
-	r.Set("is_user_tag", _isUserTag)
-	return nil
-}
-
-// GetIsUserTag IsUserTag Getter
-func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetIsUserTag() bool {
-	return r._isUserTag
-}
-
 // SetUserTag is UserTag Setter
 // 用户标签。当is_user_tag为true时，该值才有意义。
 func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetUserTag(_userTag string) error {
@@ -140,4 +114,30 @@ func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetUserTag(_user
 // GetUserTag UserTag Getter
 func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetUserTag() string {
 	return r._userTag
+}
+
+// SetActivityId is ActivityId Setter
+// 优惠活动ID
+func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetActivityId(_activityId int64) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
+	return nil
+}
+
+// GetActivityId ActivityId Getter
+func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetActivityId() int64 {
+	return r._activityId
+}
+
+// SetIsUserTag is IsUserTag Setter
+// 是否指定人群标签
+func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetIsUserTag(_isUserTag bool) error {
+	r._isUserTag = _isUserTag
+	r.Set("is_user_tag", _isUserTag)
+	return nil
+}
+
+// GetIsUserTag IsUserTag Getter
+func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetIsUserTag() bool {
+	return r._isUserTag
 }

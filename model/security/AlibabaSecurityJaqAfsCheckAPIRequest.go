@@ -12,8 +12,6 @@ import (
 // 反欺诈二次验证接口
 type AlibabaSecurityJaqAfsCheckAPIRequest struct {
 	model.Params
-	// 上报平台枚举值 1标识Android端 2标识iOS端 3标识PC端及其他
-	_platform int64
 	// token，来自客户端上报
 	_token string
 	// 会话ID，来自客户端上报
@@ -22,6 +20,8 @@ type AlibabaSecurityJaqAfsCheckAPIRequest struct {
 	_sig string
 	// 用户接入的时候获取的风控key
 	_afsKey string
+	// 上报平台枚举值 1标识Android端 2标识iOS端 3标识PC端及其他
+	_platform int64
 }
 
 // NewAlibabaSecurityJaqAfsCheckRequest 初始化AlibabaSecurityJaqAfsCheckAPIRequest对象
@@ -43,19 +43,6 @@ func (r AlibabaSecurityJaqAfsCheckAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetPlatform is Platform Setter
-// 上报平台枚举值 1标识Android端 2标识iOS端 3标识PC端及其他
-func (r *AlibabaSecurityJaqAfsCheckAPIRequest) SetPlatform(_platform int64) error {
-	r._platform = _platform
-	r.Set("platform", _platform)
-	return nil
-}
-
-// GetPlatform Platform Getter
-func (r AlibabaSecurityJaqAfsCheckAPIRequest) GetPlatform() int64 {
-	return r._platform
 }
 
 // SetToken is Token Setter
@@ -108,4 +95,17 @@ func (r *AlibabaSecurityJaqAfsCheckAPIRequest) SetAfsKey(_afsKey string) error {
 // GetAfsKey AfsKey Getter
 func (r AlibabaSecurityJaqAfsCheckAPIRequest) GetAfsKey() string {
 	return r._afsKey
+}
+
+// SetPlatform is Platform Setter
+// 上报平台枚举值 1标识Android端 2标识iOS端 3标识PC端及其他
+func (r *AlibabaSecurityJaqAfsCheckAPIRequest) SetPlatform(_platform int64) error {
+	r._platform = _platform
+	r.Set("platform", _platform)
+	return nil
+}
+
+// GetPlatform Platform Getter
+func (r AlibabaSecurityJaqAfsCheckAPIRequest) GetPlatform() int64 {
+	return r._platform
 }

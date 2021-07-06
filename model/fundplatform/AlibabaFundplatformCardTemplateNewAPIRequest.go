@@ -20,10 +20,10 @@ type AlibabaFundplatformCardTemplateNewAPIRequest struct {
 	_parValue string
 	// 卡外观图片地址
 	_pictureUrl string
-	// 是否为测试卡模板，true表示是，如果是测试卡模板则请求制卡时无需真正去制作实体卡
-	_isTest bool
 	// 环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）
 	_ownSign string
+	// 是否为测试卡模板，true表示是，如果是测试卡模板则请求制卡时无需真正去制作实体卡
+	_isTest bool
 }
 
 // NewAlibabaFundplatformCardTemplateNewRequest 初始化AlibabaFundplatformCardTemplateNewAPIRequest对象
@@ -99,19 +99,6 @@ func (r AlibabaFundplatformCardTemplateNewAPIRequest) GetPictureUrl() string {
 	return r._pictureUrl
 }
 
-// SetIsTest is IsTest Setter
-// 是否为测试卡模板，true表示是，如果是测试卡模板则请求制卡时无需真正去制作实体卡
-func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetIsTest(_isTest bool) error {
-	r._isTest = _isTest
-	r.Set("is_test", _isTest)
-	return nil
-}
-
-// GetIsTest IsTest Getter
-func (r AlibabaFundplatformCardTemplateNewAPIRequest) GetIsTest() bool {
-	return r._isTest
-}
-
 // SetOwnSign is OwnSign Setter
 // 环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）
 func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetOwnSign(_ownSign string) error {
@@ -123,4 +110,17 @@ func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetOwnSign(_ownSign strin
 // GetOwnSign OwnSign Getter
 func (r AlibabaFundplatformCardTemplateNewAPIRequest) GetOwnSign() string {
 	return r._ownSign
+}
+
+// SetIsTest is IsTest Setter
+// 是否为测试卡模板，true表示是，如果是测试卡模板则请求制卡时无需真正去制作实体卡
+func (r *AlibabaFundplatformCardTemplateNewAPIRequest) SetIsTest(_isTest bool) error {
+	r._isTest = _isTest
+	r.Set("is_test", _isTest)
+	return nil
+}
+
+// GetIsTest IsTest Getter
+func (r AlibabaFundplatformCardTemplateNewAPIRequest) GetIsTest() bool {
+	return r._isTest
 }

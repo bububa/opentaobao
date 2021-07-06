@@ -6,14 +6,10 @@ type OrderInfo struct {
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
 	// 城市id
 	City string `json:"city,omitempty" xml:"city,omitempty"`
-	// 订单类型
-	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 叫车人手机号
 	CallPhone string `json:"call_phone,omitempty" xml:"call_phone,omitempty"`
 	// 乘车人手机号
 	PassengerPhone string `json:"passenger_phone,omitempty" xml:"passenger_phone,omitempty"`
-	// 订单状态
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 出发地纬度
 	Flat string `json:"flat,omitempty" xml:"flat,omitempty"`
 	// 出发地经度
@@ -46,16 +42,12 @@ type OrderInfo struct {
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 成本中心代码，用于区分不同的分账账号
 	CostCenter string `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
-	// 订单详细状态码
-	SubStatus int64 `json:"sub_status,omitempty" xml:"sub_status,omitempty"`
 	// 司机称呼
 	DriverName string `json:"driver_name,omitempty" xml:"driver_name,omitempty"`
 	// 号码保护中间号（如无号码保护，为司机真实手机号）
 	DriverPhone string `json:"driver_phone,omitempty" xml:"driver_phone,omitempty"`
 	// 司机真实手机号
 	DriverPhoneReal string `json:"driver_phone_real,omitempty" xml:"driver_phone_real,omitempty"`
-	// 已通知司机数量
-	DriverNum int64 `json:"driver_num,omitempty" xml:"driver_num,omitempty"`
 	// 司机车型
 	DriverCarType string `json:"driver_car_type,omitempty" xml:"driver_car_type,omitempty"`
 	// 司机车牌
@@ -64,8 +56,6 @@ type OrderInfo struct {
 	DriverAvatar string `json:"driver_avatar,omitempty" xml:"driver_avatar,omitempty"`
 	// 司机星级
 	DriverLevel string `json:"driver_level,omitempty" xml:"driver_level,omitempty"`
-	// 司机抢单数
-	DriverOrderCount int64 `json:"driver_order_count,omitempty" xml:"driver_order_count,omitempty"`
 	// 司机当前实时经度
 	Dlng string `json:"dlng,omitempty" xml:"dlng,omitempty"`
 	// 司机当前实时纬度
@@ -82,10 +72,20 @@ type OrderInfo struct {
 	DelayTimeStart string `json:"delay_time_start,omitempty" xml:"delay_time_start,omitempty"`
 	// 实际行驶公里数
 	NormalDistance string `json:"normal_distance,omitempty" xml:"normal_distance,omitempty"`
-	// 实际行驶时长（分钟）
-	NormalTime int64 `json:"normal_time,omitempty" xml:"normal_time,omitempty"`
 	// 实际车型代码
 	StriveLevel string `json:"strive_level,omitempty" xml:"strive_level,omitempty"`
 	// 汽车的颜色
 	DriverCarColor string `json:"driver_car_color,omitempty" xml:"driver_car_color,omitempty"`
+	// 订单类型
+	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+	// 订单状态
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 订单详细状态码
+	SubStatus int64 `json:"sub_status,omitempty" xml:"sub_status,omitempty"`
+	// 已通知司机数量
+	DriverNum int64 `json:"driver_num,omitempty" xml:"driver_num,omitempty"`
+	// 司机抢单数
+	DriverOrderCount int64 `json:"driver_order_count,omitempty" xml:"driver_order_count,omitempty"`
+	// 实际行驶时长（分钟）
+	NormalTime int64 `json:"normal_time,omitempty" xml:"normal_time,omitempty"`
 }

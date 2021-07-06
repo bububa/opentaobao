@@ -12,10 +12,10 @@ import (
 // 组团购场景下，查询商品开团详情
 type TaobaoOpentradeGroupQueryAPIRequest struct {
 	model.Params
-	// 商品id
-	_itemId int64
 	// 用户openId
 	_openUserId string
+	// 商品id
+	_itemId int64
 	// 0 返回未成团列表，1 返回已成团列表
 	_orderBy int64
 	// 页数
@@ -49,19 +49,6 @@ func (r TaobaoOpentradeGroupQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetItemId is ItemId Setter
-// 商品id
-func (r *TaobaoOpentradeGroupQueryAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
-	return nil
-}
-
-// GetItemId ItemId Getter
-func (r TaobaoOpentradeGroupQueryAPIRequest) GetItemId() int64 {
-	return r._itemId
-}
-
 // SetOpenUserId is OpenUserId Setter
 // 用户openId
 func (r *TaobaoOpentradeGroupQueryAPIRequest) SetOpenUserId(_openUserId string) error {
@@ -73,6 +60,19 @@ func (r *TaobaoOpentradeGroupQueryAPIRequest) SetOpenUserId(_openUserId string) 
 // GetOpenUserId OpenUserId Getter
 func (r TaobaoOpentradeGroupQueryAPIRequest) GetOpenUserId() string {
 	return r._openUserId
+}
+
+// SetItemId is ItemId Setter
+// 商品id
+func (r *TaobaoOpentradeGroupQueryAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r TaobaoOpentradeGroupQueryAPIRequest) GetItemId() int64 {
+	return r._itemId
 }
 
 // SetOrderBy is OrderBy Setter

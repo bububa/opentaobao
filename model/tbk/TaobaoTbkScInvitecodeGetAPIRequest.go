@@ -12,10 +12,10 @@ import (
 // 私域用户管理(即渠道管理或会员运营管理)功能中，通过此API可生成淘宝客自身的邀请码。
 type TaobaoTbkScInvitecodeGetAPIRequest struct {
 	model.Params
-	// 渠道关系ID
-	_relationId int64
 	// 渠道推广的物料类型
 	_relationApp string
+	// 渠道关系ID
+	_relationId int64
 	// 邀请码类型，1 - 渠道邀请，2 - 渠道裂变，3 -会员邀请
 	_codeType int64
 }
@@ -41,19 +41,6 @@ func (r TaobaoTbkScInvitecodeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetRelationId is RelationId Setter
-// 渠道关系ID
-func (r *TaobaoTbkScInvitecodeGetAPIRequest) SetRelationId(_relationId int64) error {
-	r._relationId = _relationId
-	r.Set("relation_id", _relationId)
-	return nil
-}
-
-// GetRelationId RelationId Getter
-func (r TaobaoTbkScInvitecodeGetAPIRequest) GetRelationId() int64 {
-	return r._relationId
-}
-
 // SetRelationApp is RelationApp Setter
 // 渠道推广的物料类型
 func (r *TaobaoTbkScInvitecodeGetAPIRequest) SetRelationApp(_relationApp string) error {
@@ -65,6 +52,19 @@ func (r *TaobaoTbkScInvitecodeGetAPIRequest) SetRelationApp(_relationApp string)
 // GetRelationApp RelationApp Getter
 func (r TaobaoTbkScInvitecodeGetAPIRequest) GetRelationApp() string {
 	return r._relationApp
+}
+
+// SetRelationId is RelationId Setter
+// 渠道关系ID
+func (r *TaobaoTbkScInvitecodeGetAPIRequest) SetRelationId(_relationId int64) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
+	return nil
+}
+
+// GetRelationId RelationId Getter
+func (r TaobaoTbkScInvitecodeGetAPIRequest) GetRelationId() int64 {
+	return r._relationId
 }
 
 // SetCodeType is CodeType Setter

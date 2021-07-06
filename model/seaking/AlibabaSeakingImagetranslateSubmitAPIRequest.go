@@ -12,10 +12,10 @@ import (
 // 提交图片翻译任务
 type AlibabaSeakingImagetranslateSubmitAPIRequest struct {
 	model.Params
-	// token来源站点
-	_tokenFrom string
 	// 子任务列表
 	_imageTranslateDetailList []ImageTranslateDetailDto
+	// token来源站点
+	_tokenFrom string
 	// 用户token
 	_token string
 }
@@ -41,19 +41,6 @@ func (r AlibabaSeakingImagetranslateSubmitAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// SetTokenFrom is TokenFrom Setter
-// token来源站点
-func (r *AlibabaSeakingImagetranslateSubmitAPIRequest) SetTokenFrom(_tokenFrom string) error {
-	r._tokenFrom = _tokenFrom
-	r.Set("token_from", _tokenFrom)
-	return nil
-}
-
-// GetTokenFrom TokenFrom Getter
-func (r AlibabaSeakingImagetranslateSubmitAPIRequest) GetTokenFrom() string {
-	return r._tokenFrom
-}
-
 // SetImageTranslateDetailList is ImageTranslateDetailList Setter
 // 子任务列表
 func (r *AlibabaSeakingImagetranslateSubmitAPIRequest) SetImageTranslateDetailList(_imageTranslateDetailList []ImageTranslateDetailDto) error {
@@ -65,6 +52,19 @@ func (r *AlibabaSeakingImagetranslateSubmitAPIRequest) SetImageTranslateDetailLi
 // GetImageTranslateDetailList ImageTranslateDetailList Getter
 func (r AlibabaSeakingImagetranslateSubmitAPIRequest) GetImageTranslateDetailList() []ImageTranslateDetailDto {
 	return r._imageTranslateDetailList
+}
+
+// SetTokenFrom is TokenFrom Setter
+// token来源站点
+func (r *AlibabaSeakingImagetranslateSubmitAPIRequest) SetTokenFrom(_tokenFrom string) error {
+	r._tokenFrom = _tokenFrom
+	r.Set("token_from", _tokenFrom)
+	return nil
+}
+
+// GetTokenFrom TokenFrom Getter
+func (r AlibabaSeakingImagetranslateSubmitAPIRequest) GetTokenFrom() string {
+	return r._tokenFrom
 }
 
 // SetToken is Token Setter

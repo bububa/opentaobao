@@ -2,6 +2,8 @@ package c2m
 
 // PageInfo 结构体
 type PageInfo struct {
+	// 订单信息
+	List []CompanyOrderInfoVo `json:"list,omitempty" xml:"list>company_order_info_vo,omitempty"`
 	// 总条数
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// 总页数
@@ -10,6 +12,4 @@ type PageInfo struct {
 	Pages int64 `json:"pages,omitempty" xml:"pages,omitempty"`
 	// 第几页
 	PageNum int64 `json:"page_num,omitempty" xml:"page_num,omitempty"`
-	// 订单信息
-	List []CompanyOrderInfoVo `json:"list,omitempty" xml:"list>company_order_info_vo,omitempty"`
 }

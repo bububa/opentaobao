@@ -14,12 +14,12 @@ type CreativeParamDto struct {
 	AdboardData string `json:"adboard_data,omitempty" xml:"adboard_data,omitempty"`
 	// 目标地址
 	DestinationUrl string `json:"destination_url,omitempty" xml:"destination_url,omitempty"`
-	// 创意封装类型：1 Htmlsnippet(pc网页),2 vast-nonlinear（视频暂停）,5 无线创意, 8 移动网页
-	CreativePackageFormat int64 `json:"creative_package_format,omitempty" xml:"creative_package_format,omitempty"`
 	// 广告主id,多值使用逗号分隔
 	AdvertiserIds string `json:"advertiser_ids,omitempty" xml:"advertiser_ids,omitempty"`
-	// 创意类型。1. mraid, 2. native, 3.H5，4.富媒体
-	DisType int64 `json:"dis_type,omitempty" xml:"dis_type,omitempty"`
 	// 模板Id
 	TemplateId string `json:"template_id,omitempty" xml:"template_id,omitempty"`
+	// 创意封装类型：1 Htmlsnippet(pc网页),2 vast-nonlinear（视频暂停）,5 无线创意, 8 移动网页
+	CreativePackageFormat int64 `json:"creative_package_format,omitempty" xml:"creative_package_format,omitempty"`
+	// 创意类型。1. mraid, 2. native, 3.H5，4.富媒体
+	DisType int64 `json:"dis_type,omitempty" xml:"dis_type,omitempty"`
 }

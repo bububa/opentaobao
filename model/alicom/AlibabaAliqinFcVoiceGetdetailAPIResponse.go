@@ -24,8 +24,8 @@ type AlibabaAliqinFcVoiceGetdetailAPIResponseModel struct {
 	AlicomCode string `json:"alicom_code,omitempty" xml:"alicom_code,omitempty"`
 	// 错误信息
 	AlicomMsg string `json:"alicom_msg,omitempty" xml:"alicom_msg,omitempty"`
-	// 请求是否成功
-	AlicomSuccess bool `json:"alicom_success,omitempty" xml:"alicom_success,omitempty"`
 	// 返回值，在没有结果时为空。recordFile表示的是录音文件地址
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
+	// 请求是否成功
+	AlicomSuccess bool `json:"alicom_success,omitempty" xml:"alicom_success,omitempty"`
 }

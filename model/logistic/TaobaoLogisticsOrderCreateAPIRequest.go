@@ -28,10 +28,10 @@ type TaobaoLogisticsOrderCreateAPIRequest struct {
 	_sellerWangwangId string
 	// 订单的交易号码
 	_tradeId int64
-	// 创建订单同时是否进行发货，默认发货。
-	_isConsign bool
 	// 运费承担方式。1为买家承担运费，2为卖家承担运费，其他值为错误参数。
 	_shipping int64
+	// 创建订单同时是否进行发货，默认发货。
+	_isConsign bool
 }
 
 // NewTaobaoLogisticsOrderCreateRequest 初始化TaobaoLogisticsOrderCreateAPIRequest对象
@@ -159,19 +159,6 @@ func (r TaobaoLogisticsOrderCreateAPIRequest) GetTradeId() int64 {
 	return r._tradeId
 }
 
-// SetIsConsign is IsConsign Setter
-// 创建订单同时是否进行发货，默认发货。
-func (r *TaobaoLogisticsOrderCreateAPIRequest) SetIsConsign(_isConsign bool) error {
-	r._isConsign = _isConsign
-	r.Set("is_consign", _isConsign)
-	return nil
-}
-
-// GetIsConsign IsConsign Getter
-func (r TaobaoLogisticsOrderCreateAPIRequest) GetIsConsign() bool {
-	return r._isConsign
-}
-
 // SetShipping is Shipping Setter
 // 运费承担方式。1为买家承担运费，2为卖家承担运费，其他值为错误参数。
 func (r *TaobaoLogisticsOrderCreateAPIRequest) SetShipping(_shipping int64) error {
@@ -183,4 +170,17 @@ func (r *TaobaoLogisticsOrderCreateAPIRequest) SetShipping(_shipping int64) erro
 // GetShipping Shipping Getter
 func (r TaobaoLogisticsOrderCreateAPIRequest) GetShipping() int64 {
 	return r._shipping
+}
+
+// SetIsConsign is IsConsign Setter
+// 创建订单同时是否进行发货，默认发货。
+func (r *TaobaoLogisticsOrderCreateAPIRequest) SetIsConsign(_isConsign bool) error {
+	r._isConsign = _isConsign
+	r.Set("is_consign", _isConsign)
+	return nil
+}
+
+// GetIsConsign IsConsign Getter
+func (r TaobaoLogisticsOrderCreateAPIRequest) GetIsConsign() bool {
+	return r._isConsign
 }

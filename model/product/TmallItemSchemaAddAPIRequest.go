@@ -12,12 +12,12 @@ import (
 // 天猫TopSchema发布商品。
 type TmallItemSchemaAddAPIRequest struct {
 	model.Params
+	// 根据tmall.item.add.schema.get生成的商品发布规则入参数据
+	_xmlData string
 	// 商品发布的目标类目，必须是叶子类目
 	_categoryId int64
 	// 发布商品的productId，如果tmall.product.match.schema.get获取到得字段为空，这个参数传入0，否则需要通过tmall.product.schema.match查询到得可用productId
 	_productId int64
-	// 根据tmall.item.add.schema.get生成的商品发布规则入参数据
-	_xmlData string
 }
 
 // NewTmallItemSchemaAddRequest 初始化TmallItemSchemaAddAPIRequest对象
@@ -39,6 +39,19 @@ func (r TmallItemSchemaAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetXmlData is XmlData Setter
+// 根据tmall.item.add.schema.get生成的商品发布规则入参数据
+func (r *TmallItemSchemaAddAPIRequest) SetXmlData(_xmlData string) error {
+	r._xmlData = _xmlData
+	r.Set("xml_data", _xmlData)
+	return nil
+}
+
+// GetXmlData XmlData Getter
+func (r TmallItemSchemaAddAPIRequest) GetXmlData() string {
+	return r._xmlData
 }
 
 // SetCategoryId is CategoryId Setter
@@ -65,17 +78,4 @@ func (r *TmallItemSchemaAddAPIRequest) SetProductId(_productId int64) error {
 // GetProductId ProductId Getter
 func (r TmallItemSchemaAddAPIRequest) GetProductId() int64 {
 	return r._productId
-}
-
-// SetXmlData is XmlData Setter
-// 根据tmall.item.add.schema.get生成的商品发布规则入参数据
-func (r *TmallItemSchemaAddAPIRequest) SetXmlData(_xmlData string) error {
-	r._xmlData = _xmlData
-	r.Set("xml_data", _xmlData)
-	return nil
-}
-
-// GetXmlData XmlData Getter
-func (r TmallItemSchemaAddAPIRequest) GetXmlData() string {
-	return r._xmlData
 }

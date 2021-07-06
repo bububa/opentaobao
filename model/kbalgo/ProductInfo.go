@@ -2,8 +2,6 @@ package kbalgo
 
 // ProductInfo 结构体
 type ProductInfo struct {
-	// schema
-	Schema *Schema `json:"schema,omitempty" xml:"schema,omitempty"`
 	// ext
 	Ext string `json:"ext,omitempty" xml:"ext,omitempty"`
 	// 开始时间
@@ -24,4 +22,6 @@ type ProductInfo struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 商品id
 	ProductId string `json:"product_id,omitempty" xml:"product_id,omitempty"`
+	// schema
+	Schema *Schema `json:"schema,omitempty" xml:"schema,omitempty"`
 }

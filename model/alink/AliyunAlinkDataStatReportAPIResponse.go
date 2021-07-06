@@ -22,10 +22,10 @@ type AliyunAlinkDataStatReportAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 错误消息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
-	// 数据入库状态
-	Module bool `json:"module,omitempty" xml:"module,omitempty"`
 	// 状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 数据入库状态
+	Module bool `json:"module,omitempty" xml:"module,omitempty"`
 	// 调用是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

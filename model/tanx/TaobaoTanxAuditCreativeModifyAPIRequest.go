@@ -12,10 +12,10 @@ import (
 // 创意修改接口
 type TaobaoTanxAuditCreativeModifyAPIRequest struct {
 	model.Params
-	// DSP用户ID
-	_memberId int64
 	// dsp用户身份认证的TOKEN
 	_token string
+	// DSP用户ID
+	_memberId int64
 	// 当前时间戳，1970-01-01后的秒数
 	_signTime int64
 }
@@ -41,19 +41,6 @@ func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetMemberId is MemberId Setter
-// DSP用户ID
-func (r *TaobaoTanxAuditCreativeModifyAPIRequest) SetMemberId(_memberId int64) error {
-	r._memberId = _memberId
-	r.Set("member_id", _memberId)
-	return nil
-}
-
-// GetMemberId MemberId Getter
-func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetMemberId() int64 {
-	return r._memberId
-}
-
 // SetToken is Token Setter
 // dsp用户身份认证的TOKEN
 func (r *TaobaoTanxAuditCreativeModifyAPIRequest) SetToken(_token string) error {
@@ -65,6 +52,19 @@ func (r *TaobaoTanxAuditCreativeModifyAPIRequest) SetToken(_token string) error 
 // GetToken Token Getter
 func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetMemberId is MemberId Setter
+// DSP用户ID
+func (r *TaobaoTanxAuditCreativeModifyAPIRequest) SetMemberId(_memberId int64) error {
+	r._memberId = _memberId
+	r.Set("member_id", _memberId)
+	return nil
+}
+
+// GetMemberId MemberId Getter
+func (r TaobaoTanxAuditCreativeModifyAPIRequest) GetMemberId() int64 {
+	return r._memberId
 }
 
 // SetSignTime is SignTime Setter

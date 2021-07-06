@@ -14,10 +14,10 @@ type TaobaoSimbaRtrptAdgroupGetAPIRequest struct {
 	model.Params
 	// 用户名
 	_nick string
-	// 推广计划id
-	_campaignId int64
 	// 日期，格式yyyy-mm-dd
 	_theDate string
+	// 推广计划id
+	_campaignId int64
 	// 每页大小
 	_pageSize int64
 	// 页码
@@ -58,19 +58,6 @@ func (r TaobaoSimbaRtrptAdgroupGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// SetCampaignId is CampaignId Setter
-// 推广计划id
-func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetCampaignId(_campaignId int64) error {
-	r._campaignId = _campaignId
-	r.Set("campaign_id", _campaignId)
-	return nil
-}
-
-// GetCampaignId CampaignId Getter
-func (r TaobaoSimbaRtrptAdgroupGetAPIRequest) GetCampaignId() int64 {
-	return r._campaignId
-}
-
 // SetTheDate is TheDate Setter
 // 日期，格式yyyy-mm-dd
 func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetTheDate(_theDate string) error {
@@ -82,6 +69,19 @@ func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetTheDate(_theDate string) error
 // GetTheDate TheDate Getter
 func (r TaobaoSimbaRtrptAdgroupGetAPIRequest) GetTheDate() string {
 	return r._theDate
+}
+
+// SetCampaignId is CampaignId Setter
+// 推广计划id
+func (r *TaobaoSimbaRtrptAdgroupGetAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// GetCampaignId CampaignId Getter
+func (r TaobaoSimbaRtrptAdgroupGetAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
 }
 
 // SetPageSize is PageSize Setter

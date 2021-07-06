@@ -14,10 +14,10 @@ type TmallNrOrderQueryJstAPIRequest struct {
 	model.Params
 	// 业务标识，dss标识定时送业务；jsd表示极速达业务
 	_bizIdentity string
-	// 交易主订单号
-	_orderId int64
 	// 预留-扩展信息
 	_extParam string
+	// 交易主订单号
+	_orderId int64
 }
 
 // NewTmallNrOrderQueryJstRequest 初始化TmallNrOrderQueryJstAPIRequest对象
@@ -54,19 +54,6 @@ func (r TmallNrOrderQueryJstAPIRequest) GetBizIdentity() string {
 	return r._bizIdentity
 }
 
-// SetOrderId is OrderId Setter
-// 交易主订单号
-func (r *TmallNrOrderQueryJstAPIRequest) SetOrderId(_orderId int64) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
-	return nil
-}
-
-// GetOrderId OrderId Getter
-func (r TmallNrOrderQueryJstAPIRequest) GetOrderId() int64 {
-	return r._orderId
-}
-
 // SetExtParam is ExtParam Setter
 // 预留-扩展信息
 func (r *TmallNrOrderQueryJstAPIRequest) SetExtParam(_extParam string) error {
@@ -78,4 +65,17 @@ func (r *TmallNrOrderQueryJstAPIRequest) SetExtParam(_extParam string) error {
 // GetExtParam ExtParam Getter
 func (r TmallNrOrderQueryJstAPIRequest) GetExtParam() string {
 	return r._extParam
+}
+
+// SetOrderId is OrderId Setter
+// 交易主订单号
+func (r *TmallNrOrderQueryJstAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// GetOrderId OrderId Getter
+func (r TmallNrOrderQueryJstAPIRequest) GetOrderId() int64 {
+	return r._orderId
 }

@@ -26,14 +26,10 @@ type AlibabaAlisportsDataSportsSyncuserdataAPIRequest struct {
 	_muscle string
 	// 体脂率
 	_fat string
-	// 静息心率，单位：次/每分
-	_heartRate int64
 	// 体重，单位kg
 	_weight string
 	// 身高，单位m
 	_height string
-	// 年龄
-	_age int64
 	// 三方主键id，唯一标识数据
 	_dataId string
 	// 阿里体育用户id
@@ -44,6 +40,10 @@ type AlibabaAlisportsDataSportsSyncuserdataAPIRequest struct {
 	_alispTime string
 	// 日期 格式：y-m-d h:i:s
 	_time string
+	// 静息心率，单位：次/每分
+	_heartRate int64
+	// 年龄
+	_age int64
 }
 
 // NewAlibabaAlisportsDataSportsSyncuserdataRequest 初始化AlibabaAlisportsDataSportsSyncuserdataAPIRequest对象
@@ -158,19 +158,6 @@ func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetFat() string {
 	return r._fat
 }
 
-// SetHeartRate is HeartRate Setter
-// 静息心率，单位：次/每分
-func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetHeartRate(_heartRate int64) error {
-	r._heartRate = _heartRate
-	r.Set("heart_rate", _heartRate)
-	return nil
-}
-
-// GetHeartRate HeartRate Getter
-func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetHeartRate() int64 {
-	return r._heartRate
-}
-
 // SetWeight is Weight Setter
 // 体重，单位kg
 func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetWeight(_weight string) error {
@@ -195,19 +182,6 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetHeight(_height str
 // GetHeight Height Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetHeight() string {
 	return r._height
-}
-
-// SetAge is Age Setter
-// 年龄
-func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetAge(_age int64) error {
-	r._age = _age
-	r.Set("age", _age)
-	return nil
-}
-
-// GetAge Age Getter
-func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetAge() int64 {
-	return r._age
 }
 
 // SetDataId is DataId Setter
@@ -273,4 +247,30 @@ func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetTime(_time string)
 // GetTime Time Getter
 func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetTime() string {
 	return r._time
+}
+
+// SetHeartRate is HeartRate Setter
+// 静息心率，单位：次/每分
+func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetHeartRate(_heartRate int64) error {
+	r._heartRate = _heartRate
+	r.Set("heart_rate", _heartRate)
+	return nil
+}
+
+// GetHeartRate HeartRate Getter
+func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetHeartRate() int64 {
+	return r._heartRate
+}
+
+// SetAge is Age Setter
+// 年龄
+func (r *AlibabaAlisportsDataSportsSyncuserdataAPIRequest) SetAge(_age int64) error {
+	r._age = _age
+	r.Set("age", _age)
+	return nil
+}
+
+// GetAge Age Getter
+func (r AlibabaAlisportsDataSportsSyncuserdataAPIRequest) GetAge() int64 {
+	return r._age
 }

@@ -12,10 +12,10 @@ import (
 // 当消费者反馈自己的服务地址错误时，可以电话联系服务商修改为正确地址，服务商只能修改派给自己的单子
 type AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest struct {
 	model.Params
-	// 核销单id
-	_fulfilTaskId int64
 	// 详细地址
 	_addressDetail string
+	// 核销单id
+	_fulfilTaskId int64
 	// 地址编码
 	_location int64
 }
@@ -41,19 +41,6 @@ func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetApiParams
 	return params
 }
 
-// SetFulfilTaskId is FulfilTaskId Setter
-// 核销单id
-func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetFulfilTaskId(_fulfilTaskId int64) error {
-	r._fulfilTaskId = _fulfilTaskId
-	r.Set("fulfil_task_id", _fulfilTaskId)
-	return nil
-}
-
-// GetFulfilTaskId FulfilTaskId Getter
-func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetFulfilTaskId() int64 {
-	return r._fulfilTaskId
-}
-
 // SetAddressDetail is AddressDetail Setter
 // 详细地址
 func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetAddressDetail(_addressDetail string) error {
@@ -65,6 +52,19 @@ func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetAddressD
 // GetAddressDetail AddressDetail Getter
 func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetAddressDetail() string {
 	return r._addressDetail
+}
+
+// SetFulfilTaskId is FulfilTaskId Setter
+// 核销单id
+func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) SetFulfilTaskId(_fulfilTaskId int64) error {
+	r._fulfilTaskId = _fulfilTaskId
+	r.Set("fulfil_task_id", _fulfilTaskId)
+	return nil
+}
+
+// GetFulfilTaskId FulfilTaskId Getter
+func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIRequest) GetFulfilTaskId() int64 {
+	return r._fulfilTaskId
 }
 
 // SetLocation is Location Setter

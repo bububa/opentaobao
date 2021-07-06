@@ -14,14 +14,14 @@ type TaobaoSimbaRptTargetingtageffectGetAPIRequest struct {
 	model.Params
 	// 被操作者昵称
 	_nick string
-	// 计划id
-	_campaignId int64
-	// 推广组id
-	_adgroupId int64
 	// 起始时间
 	_startTime string
 	// 终止时间 ,必须小于今天
 	_endTime string
+	// 计划id
+	_campaignId int64
+	// 推广组id
+	_adgroupId int64
 	// 页面大小
 	_pageSize int64
 	// 页码
@@ -62,32 +62,6 @@ func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// SetCampaignId is CampaignId Setter
-// 计划id
-func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetCampaignId(_campaignId int64) error {
-	r._campaignId = _campaignId
-	r.Set("campaign_id", _campaignId)
-	return nil
-}
-
-// GetCampaignId CampaignId Getter
-func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetCampaignId() int64 {
-	return r._campaignId
-}
-
-// SetAdgroupId is AdgroupId Setter
-// 推广组id
-func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
-	r._adgroupId = _adgroupId
-	r.Set("adgroup_id", _adgroupId)
-	return nil
-}
-
-// GetAdgroupId AdgroupId Getter
-func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetAdgroupId() int64 {
-	return r._adgroupId
-}
-
 // SetStartTime is StartTime Setter
 // 起始时间
 func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetStartTime(_startTime string) error {
@@ -112,6 +86,32 @@ func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetEndTime(_endTime stri
 // GetEndTime EndTime Getter
 func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetEndTime() string {
 	return r._endTime
+}
+
+// SetCampaignId is CampaignId Setter
+// 计划id
+func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// GetCampaignId CampaignId Getter
+func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
+}
+
+// SetAdgroupId is AdgroupId Setter
+// 推广组id
+func (r *TaobaoSimbaRptTargetingtageffectGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// GetAdgroupId AdgroupId Getter
+func (r TaobaoSimbaRptTargetingtageffectGetAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
 }
 
 // SetPageSize is PageSize Setter

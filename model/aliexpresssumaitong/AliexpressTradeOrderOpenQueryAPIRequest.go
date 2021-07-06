@@ -12,8 +12,6 @@ import (
 // Aliexpress开放平台订单信息查询
 type AliexpressTradeOrderOpenQueryAPIRequest struct {
 	model.Params
-	// 买家用户id
-	_buyerId int64
 	// 订单号
 	_orderIds []int64
 	// 外部订单号
@@ -22,6 +20,8 @@ type AliexpressTradeOrderOpenQueryAPIRequest struct {
 	_openAppKey string
 	// 业务编码
 	_bizCode string
+	// 买家用户id
+	_buyerId int64
 }
 
 // NewAliexpressTradeOrderOpenQueryRequest 初始化AliexpressTradeOrderOpenQueryAPIRequest对象
@@ -43,19 +43,6 @@ func (r AliexpressTradeOrderOpenQueryAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetBuyerId is BuyerId Setter
-// 买家用户id
-func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetBuyerId(_buyerId int64) error {
-	r._buyerId = _buyerId
-	r.Set("buyer_id", _buyerId)
-	return nil
-}
-
-// GetBuyerId BuyerId Getter
-func (r AliexpressTradeOrderOpenQueryAPIRequest) GetBuyerId() int64 {
-	return r._buyerId
 }
 
 // SetOrderIds is OrderIds Setter
@@ -108,4 +95,17 @@ func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetBizCode(_bizCode string) er
 // GetBizCode BizCode Getter
 func (r AliexpressTradeOrderOpenQueryAPIRequest) GetBizCode() string {
 	return r._bizCode
+}
+
+// SetBuyerId is BuyerId Setter
+// 买家用户id
+func (r *AliexpressTradeOrderOpenQueryAPIRequest) SetBuyerId(_buyerId int64) error {
+	r._buyerId = _buyerId
+	r.Set("buyer_id", _buyerId)
+	return nil
+}
+
+// GetBuyerId BuyerId Getter
+func (r AliexpressTradeOrderOpenQueryAPIRequest) GetBuyerId() int64 {
+	return r._buyerId
 }

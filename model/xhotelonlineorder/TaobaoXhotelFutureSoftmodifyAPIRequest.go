@@ -12,22 +12,22 @@ import (
 // 未来酒店信息下发，包含PMS订单查询和自助入住
 type TaobaoXhotelFutureSoftmodifyAPIRequest struct {
 	model.Params
-	// 超时时长，默认3s
-	_expireTime int64
-	// 淘宝订单号
-	_tid int64
 	// 外部订单号
 	_outOrderId string
 	// 酒店code
 	_hotelCode string
-	// 酒店Id
-	_hid int64
 	// 请求报文
 	_context string
 	// 操作类型
 	_operateType string
 	// 请求唯一标识值
 	_requestId string
+	// 超时时长，默认3s
+	_expireTime int64
+	// 淘宝订单号
+	_tid int64
+	// 酒店Id
+	_hid int64
 }
 
 // NewTaobaoXhotelFutureSoftmodifyRequest 初始化TaobaoXhotelFutureSoftmodifyAPIRequest对象
@@ -49,32 +49,6 @@ func (r TaobaoXhotelFutureSoftmodifyAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetExpireTime is ExpireTime Setter
-// 超时时长，默认3s
-func (r *TaobaoXhotelFutureSoftmodifyAPIRequest) SetExpireTime(_expireTime int64) error {
-	r._expireTime = _expireTime
-	r.Set("expire_time", _expireTime)
-	return nil
-}
-
-// GetExpireTime ExpireTime Getter
-func (r TaobaoXhotelFutureSoftmodifyAPIRequest) GetExpireTime() int64 {
-	return r._expireTime
-}
-
-// SetTid is Tid Setter
-// 淘宝订单号
-func (r *TaobaoXhotelFutureSoftmodifyAPIRequest) SetTid(_tid int64) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
-	return nil
-}
-
-// GetTid Tid Getter
-func (r TaobaoXhotelFutureSoftmodifyAPIRequest) GetTid() int64 {
-	return r._tid
 }
 
 // SetOutOrderId is OutOrderId Setter
@@ -101,19 +75,6 @@ func (r *TaobaoXhotelFutureSoftmodifyAPIRequest) SetHotelCode(_hotelCode string)
 // GetHotelCode HotelCode Getter
 func (r TaobaoXhotelFutureSoftmodifyAPIRequest) GetHotelCode() string {
 	return r._hotelCode
-}
-
-// SetHid is Hid Setter
-// 酒店Id
-func (r *TaobaoXhotelFutureSoftmodifyAPIRequest) SetHid(_hid int64) error {
-	r._hid = _hid
-	r.Set("hid", _hid)
-	return nil
-}
-
-// GetHid Hid Getter
-func (r TaobaoXhotelFutureSoftmodifyAPIRequest) GetHid() int64 {
-	return r._hid
 }
 
 // SetContext is Context Setter
@@ -153,4 +114,43 @@ func (r *TaobaoXhotelFutureSoftmodifyAPIRequest) SetRequestId(_requestId string)
 // GetRequestId RequestId Getter
 func (r TaobaoXhotelFutureSoftmodifyAPIRequest) GetRequestId() string {
 	return r._requestId
+}
+
+// SetExpireTime is ExpireTime Setter
+// 超时时长，默认3s
+func (r *TaobaoXhotelFutureSoftmodifyAPIRequest) SetExpireTime(_expireTime int64) error {
+	r._expireTime = _expireTime
+	r.Set("expire_time", _expireTime)
+	return nil
+}
+
+// GetExpireTime ExpireTime Getter
+func (r TaobaoXhotelFutureSoftmodifyAPIRequest) GetExpireTime() int64 {
+	return r._expireTime
+}
+
+// SetTid is Tid Setter
+// 淘宝订单号
+func (r *TaobaoXhotelFutureSoftmodifyAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoXhotelFutureSoftmodifyAPIRequest) GetTid() int64 {
+	return r._tid
+}
+
+// SetHid is Hid Setter
+// 酒店Id
+func (r *TaobaoXhotelFutureSoftmodifyAPIRequest) SetHid(_hid int64) error {
+	r._hid = _hid
+	r.Set("hid", _hid)
+	return nil
+}
+
+// GetHid Hid Getter
+func (r TaobaoXhotelFutureSoftmodifyAPIRequest) GetHid() int64 {
+	return r._hid
 }

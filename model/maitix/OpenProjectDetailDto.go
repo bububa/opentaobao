@@ -2,16 +2,10 @@ package maitix
 
 // OpenProjectDetailDto 结构体
 type OpenProjectDetailDto struct {
-	// 项目id
-	ProjectId int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
 	// 项目名称
 	ProjectName string `json:"project_name,omitempty" xml:"project_name,omitempty"`
-	// 项目分类编码
-	ClassifyCode int64 `json:"classify_code,omitempty" xml:"classify_code,omitempty"`
 	// 项目分类名称
 	ClassifyName string `json:"classify_name,omitempty" xml:"classify_name,omitempty"`
-	// 二级项目分类编码
-	SubClassifyCode int64 `json:"sub_classify_code,omitempty" xml:"sub_classify_code,omitempty"`
 	// 二级项目分类名称
 	SubClassifyName string `json:"sub_classify_name,omitempty" xml:"sub_classify_name,omitempty"`
 	// 演出海报图
@@ -56,6 +50,12 @@ type OpenProjectDetailDto struct {
 	PickupAddressList string `json:"pickup_address_list,omitempty" xml:"pickup_address_list,omitempty"`
 	// 演出时间说明
 	PerformTimeDetailList string `json:"perform_time_detail_list,omitempty" xml:"perform_time_detail_list,omitempty"`
+	// 项目id
+	ProjectId int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
+	// 项目分类编码
+	ClassifyCode int64 `json:"classify_code,omitempty" xml:"classify_code,omitempty"`
+	// 二级项目分类编码
+	SubClassifyCode int64 `json:"sub_classify_code,omitempty" xml:"sub_classify_code,omitempty"`
 	// 项目单次限购数量
 	PurchaseLimitationOnce int64 `json:"purchase_limitation_once,omitempty" xml:"purchase_limitation_once,omitempty"`
 }

@@ -4,6 +4,8 @@ package wms
 type Tmsorder struct {
 	// 包材信息
 	PackageMaterialList []Packagemateriallist `json:"package_material_list,omitempty" xml:"package_material_list>packagemateriallist,omitempty"`
+	// 包裹里面的商品信息列表
+	TmsItemList []Tmsitemlist `json:"tms_item_list,omitempty" xml:"tms_item_list>tmsitemlist,omitempty"`
 	// 快递公司服务编码
 	TmsCode string `json:"tms_code,omitempty" xml:"tms_code,omitempty"`
 	// 运单编码
@@ -18,6 +20,4 @@ type Tmsorder struct {
 	PackageWidth int64 `json:"package_width,omitempty" xml:"package_width,omitempty"`
 	// 包裹高度，单位：毫米
 	PackageHeight int64 `json:"package_height,omitempty" xml:"package_height,omitempty"`
-	// 包裹里面的商品信息列表
-	TmsItemList []Tmsitemlist `json:"tms_item_list,omitempty" xml:"tms_item_list>tmsitemlist,omitempty"`
 }

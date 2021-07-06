@@ -10,8 +10,8 @@ type CityVo struct {
 	City string `json:"city,omitempty" xml:"city,omitempty"`
 	// 所属省份
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
-	// 与搜索城市距离，单位千米，只在邻近机场推荐有值
-	Distance int64 `json:"distance,omitempty" xml:"distance,omitempty"`
 	// 邻近机场城市，只在邻近机场推荐有值
 	TravelName string `json:"travel_name,omitempty" xml:"travel_name,omitempty"`
+	// 与搜索城市距离，单位千米，只在邻近机场推荐有值
+	Distance int64 `json:"distance,omitempty" xml:"distance,omitempty"`
 }

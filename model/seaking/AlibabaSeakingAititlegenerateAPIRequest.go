@@ -14,8 +14,6 @@ type AlibabaSeakingAititlegenerateAPIRequest struct {
 	model.Params
 	// erp用户id
 	_identifier string
-	// 扩展信息
-	_extra *Extra
 	// 语种
 	_language string
 	// 商品属性
@@ -26,6 +24,8 @@ type AlibabaSeakingAititlegenerateAPIRequest struct {
 	_title string
 	// 商品所在平台（ae/icbu）
 	_platform string
+	// 扩展信息
+	_extra *Extra
 	// 类目id,没有的时候传-1
 	_categoryId int64
 }
@@ -62,19 +62,6 @@ func (r *AlibabaSeakingAititlegenerateAPIRequest) SetIdentifier(_identifier stri
 // GetIdentifier Identifier Getter
 func (r AlibabaSeakingAititlegenerateAPIRequest) GetIdentifier() string {
 	return r._identifier
-}
-
-// SetExtra is Extra Setter
-// 扩展信息
-func (r *AlibabaSeakingAititlegenerateAPIRequest) SetExtra(_extra *Extra) error {
-	r._extra = _extra
-	r.Set("extra", _extra)
-	return nil
-}
-
-// GetExtra Extra Getter
-func (r AlibabaSeakingAititlegenerateAPIRequest) GetExtra() *Extra {
-	return r._extra
 }
 
 // SetLanguage is Language Setter
@@ -140,6 +127,19 @@ func (r *AlibabaSeakingAititlegenerateAPIRequest) SetPlatform(_platform string) 
 // GetPlatform Platform Getter
 func (r AlibabaSeakingAititlegenerateAPIRequest) GetPlatform() string {
 	return r._platform
+}
+
+// SetExtra is Extra Setter
+// 扩展信息
+func (r *AlibabaSeakingAititlegenerateAPIRequest) SetExtra(_extra *Extra) error {
+	r._extra = _extra
+	r.Set("extra", _extra)
+	return nil
+}
+
+// GetExtra Extra Getter
+func (r AlibabaSeakingAititlegenerateAPIRequest) GetExtra() *Extra {
+	return r._extra
 }
 
 // SetCategoryId is CategoryId Setter

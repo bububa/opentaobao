@@ -12,10 +12,10 @@ import (
 // 数字短信模板创建，给阿里云一方产品使用，类型：9
 type AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest struct {
 	model.Params
-	// 模板名称
-	_templateName string
 	// 系统自动生成
 	_templateContents []DigitalSmsTemplateContentDto
+	// 模板名称
+	_templateName string
 	// 申请说明
 	_applyRemark string
 }
@@ -41,19 +41,6 @@ func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetApiParams() url
 	return params
 }
 
-// SetTemplateName is TemplateName Setter
-// 模板名称
-func (r *AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) SetTemplateName(_templateName string) error {
-	r._templateName = _templateName
-	r.Set("template_name", _templateName)
-	return nil
-}
-
-// GetTemplateName TemplateName Getter
-func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetTemplateName() string {
-	return r._templateName
-}
-
 // SetTemplateContents is TemplateContents Setter
 // 系统自动生成
 func (r *AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) SetTemplateContents(_templateContents []DigitalSmsTemplateContentDto) error {
@@ -65,6 +52,19 @@ func (r *AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) SetTemplateConten
 // GetTemplateContents TemplateContents Getter
 func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetTemplateContents() []DigitalSmsTemplateContentDto {
 	return r._templateContents
+}
+
+// SetTemplateName is TemplateName Setter
+// 模板名称
+func (r *AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) SetTemplateName(_templateName string) error {
+	r._templateName = _templateName
+	r.Set("template_name", _templateName)
+	return nil
+}
+
+// GetTemplateName TemplateName Getter
+func (r AlibabaAliyunindepDigitalsmsCreatetemplateAPIRequest) GetTemplateName() string {
+	return r._templateName
 }
 
 // SetApplyRemark is ApplyRemark Setter

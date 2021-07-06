@@ -28,8 +28,8 @@ type AlibabaEleFengniaoOrderQueryAPIResponseModel struct {
 	TransportLatitude string `json:"transport_latitude,omitempty" xml:"transport_latitude,omitempty"`
 	// 寄件人经度
 	TransportLongitude string `json:"transport_longitude,omitempty" xml:"transport_longitude,omitempty"`
-	// 订单号
-	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 收件人纬度
 	ReceiverLatitude string `json:"receiver_latitude,omitempty" xml:"receiver_latitude,omitempty"`
+	// 订单号
+	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 }

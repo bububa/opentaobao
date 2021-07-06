@@ -22,10 +22,10 @@ type AlibabaNlifeB2cTradestatusDriveAPIRequest struct {
 	_tradeNo string
 	// 接口类型：CONFIRM（收货）DELIVER（发货）
 	_action string
-	// 货流信息
-	_logisticsInfo *LogisticsInfo
 	// 扩展参数 JSON格式
 	_extendParams string
+	// 货流信息
+	_logisticsInfo *LogisticsInfo
 }
 
 // NewAlibabaNlifeB2cTradestatusDriveRequest 初始化AlibabaNlifeB2cTradestatusDriveAPIRequest对象
@@ -114,19 +114,6 @@ func (r AlibabaNlifeB2cTradestatusDriveAPIRequest) GetAction() string {
 	return r._action
 }
 
-// SetLogisticsInfo is LogisticsInfo Setter
-// 货流信息
-func (r *AlibabaNlifeB2cTradestatusDriveAPIRequest) SetLogisticsInfo(_logisticsInfo *LogisticsInfo) error {
-	r._logisticsInfo = _logisticsInfo
-	r.Set("logistics_info", _logisticsInfo)
-	return nil
-}
-
-// GetLogisticsInfo LogisticsInfo Getter
-func (r AlibabaNlifeB2cTradestatusDriveAPIRequest) GetLogisticsInfo() *LogisticsInfo {
-	return r._logisticsInfo
-}
-
 // SetExtendParams is ExtendParams Setter
 // 扩展参数 JSON格式
 func (r *AlibabaNlifeB2cTradestatusDriveAPIRequest) SetExtendParams(_extendParams string) error {
@@ -138,4 +125,17 @@ func (r *AlibabaNlifeB2cTradestatusDriveAPIRequest) SetExtendParams(_extendParam
 // GetExtendParams ExtendParams Getter
 func (r AlibabaNlifeB2cTradestatusDriveAPIRequest) GetExtendParams() string {
 	return r._extendParams
+}
+
+// SetLogisticsInfo is LogisticsInfo Setter
+// 货流信息
+func (r *AlibabaNlifeB2cTradestatusDriveAPIRequest) SetLogisticsInfo(_logisticsInfo *LogisticsInfo) error {
+	r._logisticsInfo = _logisticsInfo
+	r.Set("logistics_info", _logisticsInfo)
+	return nil
+}
+
+// GetLogisticsInfo LogisticsInfo Getter
+func (r AlibabaNlifeB2cTradestatusDriveAPIRequest) GetLogisticsInfo() *LogisticsInfo {
+	return r._logisticsInfo
 }

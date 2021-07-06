@@ -12,20 +12,20 @@ import (
 // 库存更新接口
 type TaobaoXhotelQuotaUpdateAPIRequest struct {
 	model.Params
+	// 修改日期列表
+	_dates []string
 	// 库存类型,0: 普通库存, 1: 普通保留房库存, 2:协议保留房库存
 	_quotaType int64
-	// 是否使用room库存,true使用，false不使用
-	_useRoomInventory bool
 	// room的gid
 	_gid int64
 	// 增减的值
 	_quota int64
 	// 数量类型, 2:增加房量,3:减少房量
 	_quotaNumType int64
-	// 修改日期列表
-	_dates []string
 	// rate的id, rate库存时必填
 	_rateId int64
+	// 是否使用room库存,true使用，false不使用
+	_useRoomInventory bool
 }
 
 // NewTaobaoXhotelQuotaUpdateRequest 初始化TaobaoXhotelQuotaUpdateAPIRequest对象
@@ -49,6 +49,19 @@ func (r TaobaoXhotelQuotaUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetDates is Dates Setter
+// 修改日期列表
+func (r *TaobaoXhotelQuotaUpdateAPIRequest) SetDates(_dates []string) error {
+	r._dates = _dates
+	r.Set("dates", _dates)
+	return nil
+}
+
+// GetDates Dates Getter
+func (r TaobaoXhotelQuotaUpdateAPIRequest) GetDates() []string {
+	return r._dates
+}
+
 // SetQuotaType is QuotaType Setter
 // 库存类型,0: 普通库存, 1: 普通保留房库存, 2:协议保留房库存
 func (r *TaobaoXhotelQuotaUpdateAPIRequest) SetQuotaType(_quotaType int64) error {
@@ -60,19 +73,6 @@ func (r *TaobaoXhotelQuotaUpdateAPIRequest) SetQuotaType(_quotaType int64) error
 // GetQuotaType QuotaType Getter
 func (r TaobaoXhotelQuotaUpdateAPIRequest) GetQuotaType() int64 {
 	return r._quotaType
-}
-
-// SetUseRoomInventory is UseRoomInventory Setter
-// 是否使用room库存,true使用，false不使用
-func (r *TaobaoXhotelQuotaUpdateAPIRequest) SetUseRoomInventory(_useRoomInventory bool) error {
-	r._useRoomInventory = _useRoomInventory
-	r.Set("use_room_inventory", _useRoomInventory)
-	return nil
-}
-
-// GetUseRoomInventory UseRoomInventory Getter
-func (r TaobaoXhotelQuotaUpdateAPIRequest) GetUseRoomInventory() bool {
-	return r._useRoomInventory
 }
 
 // SetGid is Gid Setter
@@ -114,19 +114,6 @@ func (r TaobaoXhotelQuotaUpdateAPIRequest) GetQuotaNumType() int64 {
 	return r._quotaNumType
 }
 
-// SetDates is Dates Setter
-// 修改日期列表
-func (r *TaobaoXhotelQuotaUpdateAPIRequest) SetDates(_dates []string) error {
-	r._dates = _dates
-	r.Set("dates", _dates)
-	return nil
-}
-
-// GetDates Dates Getter
-func (r TaobaoXhotelQuotaUpdateAPIRequest) GetDates() []string {
-	return r._dates
-}
-
 // SetRateId is RateId Setter
 // rate的id, rate库存时必填
 func (r *TaobaoXhotelQuotaUpdateAPIRequest) SetRateId(_rateId int64) error {
@@ -138,4 +125,17 @@ func (r *TaobaoXhotelQuotaUpdateAPIRequest) SetRateId(_rateId int64) error {
 // GetRateId RateId Getter
 func (r TaobaoXhotelQuotaUpdateAPIRequest) GetRateId() int64 {
 	return r._rateId
+}
+
+// SetUseRoomInventory is UseRoomInventory Setter
+// 是否使用room库存,true使用，false不使用
+func (r *TaobaoXhotelQuotaUpdateAPIRequest) SetUseRoomInventory(_useRoomInventory bool) error {
+	r._useRoomInventory = _useRoomInventory
+	r.Set("use_room_inventory", _useRoomInventory)
+	return nil
+}
+
+// GetUseRoomInventory UseRoomInventory Getter
+func (r TaobaoXhotelQuotaUpdateAPIRequest) GetUseRoomInventory() bool {
+	return r._useRoomInventory
 }

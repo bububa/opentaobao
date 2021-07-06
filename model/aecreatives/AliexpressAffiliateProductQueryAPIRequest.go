@@ -20,14 +20,6 @@ type AliexpressAffiliateProductQueryAPIRequest struct {
 	_fields string
 	// 关键词
 	_keywords string
-	// 最大售价
-	_maxSalePrice int64
-	// 最小售价
-	_minSalePrice int64
-	// 查询页码
-	_pageNo int64
-	// 每页记录数
-	_pageSize int64
 	// 平台商品类型：ALL,PLAZA,TMALL
 	_platformProductType string
 	// 排序方式:SALE_PRICE_ASC, SALE_PRICE_DESC, LAST_VOLUME_ASC, LAST_VOLUME_DESC
@@ -42,6 +34,14 @@ type AliexpressAffiliateProductQueryAPIRequest struct {
 	_shipToCountry string
 	// 物流到达时间。3：3日达，5：5 日达，7：7日达，10：10日达
 	_deliveryDays string
+	// 最大售价
+	_maxSalePrice int64
+	// 最小售价
+	_minSalePrice int64
+	// 查询页码
+	_pageNo int64
+	// 每页记录数
+	_pageSize int64
 }
 
 // NewAliexpressAffiliateProductQueryRequest 初始化AliexpressAffiliateProductQueryAPIRequest对象
@@ -115,58 +115,6 @@ func (r *AliexpressAffiliateProductQueryAPIRequest) SetKeywords(_keywords string
 // GetKeywords Keywords Getter
 func (r AliexpressAffiliateProductQueryAPIRequest) GetKeywords() string {
 	return r._keywords
-}
-
-// SetMaxSalePrice is MaxSalePrice Setter
-// 最大售价
-func (r *AliexpressAffiliateProductQueryAPIRequest) SetMaxSalePrice(_maxSalePrice int64) error {
-	r._maxSalePrice = _maxSalePrice
-	r.Set("max_sale_price", _maxSalePrice)
-	return nil
-}
-
-// GetMaxSalePrice MaxSalePrice Getter
-func (r AliexpressAffiliateProductQueryAPIRequest) GetMaxSalePrice() int64 {
-	return r._maxSalePrice
-}
-
-// SetMinSalePrice is MinSalePrice Setter
-// 最小售价
-func (r *AliexpressAffiliateProductQueryAPIRequest) SetMinSalePrice(_minSalePrice int64) error {
-	r._minSalePrice = _minSalePrice
-	r.Set("min_sale_price", _minSalePrice)
-	return nil
-}
-
-// GetMinSalePrice MinSalePrice Getter
-func (r AliexpressAffiliateProductQueryAPIRequest) GetMinSalePrice() int64 {
-	return r._minSalePrice
-}
-
-// SetPageNo is PageNo Setter
-// 查询页码
-func (r *AliexpressAffiliateProductQueryAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r AliexpressAffiliateProductQueryAPIRequest) GetPageNo() int64 {
-	return r._pageNo
-}
-
-// SetPageSize is PageSize Setter
-// 每页记录数
-func (r *AliexpressAffiliateProductQueryAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AliexpressAffiliateProductQueryAPIRequest) GetPageSize() int64 {
-	return r._pageSize
 }
 
 // SetPlatformProductType is PlatformProductType Setter
@@ -258,4 +206,56 @@ func (r *AliexpressAffiliateProductQueryAPIRequest) SetDeliveryDays(_deliveryDay
 // GetDeliveryDays DeliveryDays Getter
 func (r AliexpressAffiliateProductQueryAPIRequest) GetDeliveryDays() string {
 	return r._deliveryDays
+}
+
+// SetMaxSalePrice is MaxSalePrice Setter
+// 最大售价
+func (r *AliexpressAffiliateProductQueryAPIRequest) SetMaxSalePrice(_maxSalePrice int64) error {
+	r._maxSalePrice = _maxSalePrice
+	r.Set("max_sale_price", _maxSalePrice)
+	return nil
+}
+
+// GetMaxSalePrice MaxSalePrice Getter
+func (r AliexpressAffiliateProductQueryAPIRequest) GetMaxSalePrice() int64 {
+	return r._maxSalePrice
+}
+
+// SetMinSalePrice is MinSalePrice Setter
+// 最小售价
+func (r *AliexpressAffiliateProductQueryAPIRequest) SetMinSalePrice(_minSalePrice int64) error {
+	r._minSalePrice = _minSalePrice
+	r.Set("min_sale_price", _minSalePrice)
+	return nil
+}
+
+// GetMinSalePrice MinSalePrice Getter
+func (r AliexpressAffiliateProductQueryAPIRequest) GetMinSalePrice() int64 {
+	return r._minSalePrice
+}
+
+// SetPageNo is PageNo Setter
+// 查询页码
+func (r *AliexpressAffiliateProductQueryAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r AliexpressAffiliateProductQueryAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// SetPageSize is PageSize Setter
+// 每页记录数
+func (r *AliexpressAffiliateProductQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AliexpressAffiliateProductQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

@@ -2,6 +2,8 @@ package alihealth2
 
 // TakeoutShopPage 结构体
 type TakeoutShopPage struct {
+	// 店铺信息列表
+	TakeoutSummaryInfos []TakeoutShopSummaryInfo `json:"takeout_summary_infos,omitempty" xml:"takeout_summary_infos>takeout_shop_summary_info,omitempty"`
 	// 总条数
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 当前页码
@@ -14,6 +16,4 @@ type TakeoutShopPage struct {
 	PrevPage int64 `json:"prev_page,omitempty" xml:"prev_page,omitempty"`
 	// 下一页页码
 	NextPage int64 `json:"next_page,omitempty" xml:"next_page,omitempty"`
-	// 店铺信息列表
-	TakeoutSummaryInfos []TakeoutShopSummaryInfo `json:"takeout_summary_infos,omitempty" xml:"takeout_summary_infos>takeout_shop_summary_info,omitempty"`
 }

@@ -12,16 +12,16 @@ import (
 // 优酷实时获取可投放设备资源信息,为第三方渠道提供素材获取人群识别的api,支持批量获取
 type YoukuDspDeliveryResourceMultigetAPIRequest struct {
 	model.Params
-	// 渠道id
-	_channelId int64
-	// 子渠道id
-	_subChannelId int64
 	// 设备id串(md5加密)，多个设备逗号隔开
 	_deviceIds string
 	// 设备类型imei或者idfa
 	_deviceIdType string
 	// 投放类型push或者feed
 	_deliveryType string
+	// 渠道id
+	_channelId int64
+	// 子渠道id
+	_subChannelId int64
 }
 
 // NewYoukuDspDeliveryResourceMultigetRequest 初始化YoukuDspDeliveryResourceMultigetAPIRequest对象
@@ -43,32 +43,6 @@ func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetChannelId is ChannelId Setter
-// 渠道id
-func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetChannelId(_channelId int64) error {
-	r._channelId = _channelId
-	r.Set("channel_id", _channelId)
-	return nil
-}
-
-// GetChannelId ChannelId Getter
-func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetChannelId() int64 {
-	return r._channelId
-}
-
-// SetSubChannelId is SubChannelId Setter
-// 子渠道id
-func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetSubChannelId(_subChannelId int64) error {
-	r._subChannelId = _subChannelId
-	r.Set("sub_channel_id", _subChannelId)
-	return nil
-}
-
-// GetSubChannelId SubChannelId Getter
-func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetSubChannelId() int64 {
-	return r._subChannelId
 }
 
 // SetDeviceIds is DeviceIds Setter
@@ -108,4 +82,30 @@ func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetDeliveryType(_deliveryTy
 // GetDeliveryType DeliveryType Getter
 func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetDeliveryType() string {
 	return r._deliveryType
+}
+
+// SetChannelId is ChannelId Setter
+// 渠道id
+func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetChannelId(_channelId int64) error {
+	r._channelId = _channelId
+	r.Set("channel_id", _channelId)
+	return nil
+}
+
+// GetChannelId ChannelId Getter
+func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetChannelId() int64 {
+	return r._channelId
+}
+
+// SetSubChannelId is SubChannelId Setter
+// 子渠道id
+func (r *YoukuDspDeliveryResourceMultigetAPIRequest) SetSubChannelId(_subChannelId int64) error {
+	r._subChannelId = _subChannelId
+	r.Set("sub_channel_id", _subChannelId)
+	return nil
+}
+
+// GetSubChannelId SubChannelId Getter
+func (r YoukuDspDeliveryResourceMultigetAPIRequest) GetSubChannelId() int64 {
+	return r._subChannelId
 }

@@ -12,26 +12,26 @@ import (
 // 更新保险理赔单
 type AlipayBaoxianClaimUpdateAPIRequest struct {
 	model.Params
-	// 业务数据
-	_bizData string
 	// 进度列表
 	_progressList []string
 	// 附件列表
 	_claimAttachments []ClaimAttachment
+	// 业务数据
+	_bizData string
 	// 保单业务单号
 	_policyBizNo string
 	// 外部业务单号
 	_outBizNo string
 	// 业务来源
 	_bizSource string
-	// 理赔金额(单位为分)
-	_claimFee int64
 	// 理赔单号
 	_claimNo string
 	// 理赔外部业务单号
 	_claimOutBizNo string
 	// 标准产品ID
 	_spNo string
+	// 理赔金额(单位为分)
+	_claimFee int64
 }
 
 // NewAlipayBaoxianClaimUpdateRequest 初始化AlipayBaoxianClaimUpdateAPIRequest对象
@@ -53,19 +53,6 @@ func (r AlipayBaoxianClaimUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetBizData is BizData Setter
-// 业务数据
-func (r *AlipayBaoxianClaimUpdateAPIRequest) SetBizData(_bizData string) error {
-	r._bizData = _bizData
-	r.Set("biz_data", _bizData)
-	return nil
-}
-
-// GetBizData BizData Getter
-func (r AlipayBaoxianClaimUpdateAPIRequest) GetBizData() string {
-	return r._bizData
 }
 
 // SetProgressList is ProgressList Setter
@@ -92,6 +79,19 @@ func (r *AlipayBaoxianClaimUpdateAPIRequest) SetClaimAttachments(_claimAttachmen
 // GetClaimAttachments ClaimAttachments Getter
 func (r AlipayBaoxianClaimUpdateAPIRequest) GetClaimAttachments() []ClaimAttachment {
 	return r._claimAttachments
+}
+
+// SetBizData is BizData Setter
+// 业务数据
+func (r *AlipayBaoxianClaimUpdateAPIRequest) SetBizData(_bizData string) error {
+	r._bizData = _bizData
+	r.Set("biz_data", _bizData)
+	return nil
+}
+
+// GetBizData BizData Getter
+func (r AlipayBaoxianClaimUpdateAPIRequest) GetBizData() string {
+	return r._bizData
 }
 
 // SetPolicyBizNo is PolicyBizNo Setter
@@ -133,19 +133,6 @@ func (r AlipayBaoxianClaimUpdateAPIRequest) GetBizSource() string {
 	return r._bizSource
 }
 
-// SetClaimFee is ClaimFee Setter
-// 理赔金额(单位为分)
-func (r *AlipayBaoxianClaimUpdateAPIRequest) SetClaimFee(_claimFee int64) error {
-	r._claimFee = _claimFee
-	r.Set("claim_fee", _claimFee)
-	return nil
-}
-
-// GetClaimFee ClaimFee Getter
-func (r AlipayBaoxianClaimUpdateAPIRequest) GetClaimFee() int64 {
-	return r._claimFee
-}
-
 // SetClaimNo is ClaimNo Setter
 // 理赔单号
 func (r *AlipayBaoxianClaimUpdateAPIRequest) SetClaimNo(_claimNo string) error {
@@ -183,4 +170,17 @@ func (r *AlipayBaoxianClaimUpdateAPIRequest) SetSpNo(_spNo string) error {
 // GetSpNo SpNo Getter
 func (r AlipayBaoxianClaimUpdateAPIRequest) GetSpNo() string {
 	return r._spNo
+}
+
+// SetClaimFee is ClaimFee Setter
+// 理赔金额(单位为分)
+func (r *AlipayBaoxianClaimUpdateAPIRequest) SetClaimFee(_claimFee int64) error {
+	r._claimFee = _claimFee
+	r.Set("claim_fee", _claimFee)
+	return nil
+}
+
+// GetClaimFee ClaimFee Getter
+func (r AlipayBaoxianClaimUpdateAPIRequest) GetClaimFee() int64 {
+	return r._claimFee
 }

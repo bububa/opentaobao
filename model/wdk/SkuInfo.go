@@ -2,6 +2,8 @@ package wdk
 
 // SkuInfo 结构体
 type SkuInfo struct {
+	// 容器
+	Containers []ContainerDto `json:"containers,omitempty" xml:"containers>container_dto,omitempty"`
 	// 销售单位拣货数量(若还未开始拣货可空)
 	ActualSaleQuantity string `json:"actual_sale_quantity,omitempty" xml:"actual_sale_quantity,omitempty"`
 	// 库存单位拣货数量(若还未开始拣货可空)
@@ -10,12 +12,8 @@ type SkuInfo struct {
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// 履约子单ID
 	FulfillSubOrderId string `json:"fulfill_sub_order_id,omitempty" xml:"fulfill_sub_order_id,omitempty"`
-	// 是否缺货
-	IsShortage bool `json:"is_shortage,omitempty" xml:"is_shortage,omitempty"`
 	// 扩展属性：exchangeGoods代表换货信息；containerType代表箱子标识（正常传0、禁止开箱传1）；containerCodes代表箱码数组（不存在为空）；
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
-	// 容器
-	Containers []ContainerDto `json:"containers,omitempty" xml:"containers>container_dto,omitempty"`
 	// 商品名称
 	SkuName string `json:"sku_name,omitempty" xml:"sku_name,omitempty"`
 	// 商品单个价格，单位分
@@ -32,8 +30,6 @@ type SkuInfo struct {
 	OutOfStockQuantity string `json:"out_of_stock_quantity,omitempty" xml:"out_of_stock_quantity,omitempty"`
 	// 取消金额
 	CancelAmount string `json:"cancel_amount,omitempty" xml:"cancel_amount,omitempty"`
-	// 是否是标品：true（“标品”），false（“非标品”）
-	IsStandardSku bool `json:"is_standard_sku,omitempty" xml:"is_standard_sku,omitempty"`
 	// 取消数量
 	CancelSaleQuantity string `json:"cancel_sale_quantity,omitempty" xml:"cancel_sale_quantity,omitempty"`
 	// 缺货金额
@@ -46,4 +42,8 @@ type SkuInfo struct {
 	DiscountAmount string `json:"discount_amount,omitempty" xml:"discount_amount,omitempty"`
 	// 库存单位
 	SkuStockUnit string `json:"sku_stock_unit,omitempty" xml:"sku_stock_unit,omitempty"`
+	// 是否缺货
+	IsShortage bool `json:"is_shortage,omitempty" xml:"is_shortage,omitempty"`
+	// 是否是标品：true（“标品”），false（“非标品”）
+	IsStandardSku bool `json:"is_standard_sku,omitempty" xml:"is_standard_sku,omitempty"`
 }

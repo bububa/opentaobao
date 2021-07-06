@@ -20,10 +20,10 @@ type AlibabaHappytripTaxiOrderCancelAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_taxi_order_cancel_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 错误码
-	Errno int64 `json:"errno,omitempty" xml:"errno,omitempty"`
 	// 错误信息
 	Errmsg string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
+	// 错误码
+	Errno int64 `json:"errno,omitempty" xml:"errno,omitempty"`
 	// 订单取消结果
 	Data *OrderCancelResult `json:"data,omitempty" xml:"data,omitempty"`
 }

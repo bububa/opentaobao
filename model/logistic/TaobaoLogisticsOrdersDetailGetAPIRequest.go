@@ -14,8 +14,6 @@ type TaobaoLogisticsOrdersDetailGetAPIRequest struct {
 	model.Params
 	// 需返回的字段列表.可选值:Shipping 物流数据结构中所有字段.fileds中可以指定返回以上任意一个或者多个字段,以","分隔.
 	_fields string
-	// 交易ID.如果加入tid参数的话,不用传其他的参数,但是仅会返回一条物流订单信息.
-	_tid int64
 	// 买家昵称
 	_buyerNick string
 	// 物流状态.可查看数据结构 Shipping 中的status字段.
@@ -32,6 +30,8 @@ type TaobaoLogisticsOrdersDetailGetAPIRequest struct {
 	_freightPayer string
 	// 物流方式.可选值:post(平邮),express(快递),ems(EMS).如:post
 	_type string
+	// 交易ID.如果加入tid参数的话,不用传其他的参数,但是仅会返回一条物流订单信息.
+	_tid int64
 	// 页码.该字段没传 或 值<1 ,则默认page_no为1
 	_pageNo int64
 	// 每页条数.该字段没传 或 值<1 ，则默认page_size为40
@@ -70,19 +70,6 @@ func (r *TaobaoLogisticsOrdersDetailGetAPIRequest) SetFields(_fields string) err
 // GetFields Fields Getter
 func (r TaobaoLogisticsOrdersDetailGetAPIRequest) GetFields() string {
 	return r._fields
-}
-
-// SetTid is Tid Setter
-// 交易ID.如果加入tid参数的话,不用传其他的参数,但是仅会返回一条物流订单信息.
-func (r *TaobaoLogisticsOrdersDetailGetAPIRequest) SetTid(_tid int64) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
-	return nil
-}
-
-// GetTid Tid Getter
-func (r TaobaoLogisticsOrdersDetailGetAPIRequest) GetTid() int64 {
-	return r._tid
 }
 
 // SetBuyerNick is BuyerNick Setter
@@ -187,6 +174,19 @@ func (r *TaobaoLogisticsOrdersDetailGetAPIRequest) SetType(_type string) error {
 // GetType Type Getter
 func (r TaobaoLogisticsOrdersDetailGetAPIRequest) GetType() string {
 	return r._type
+}
+
+// SetTid is Tid Setter
+// 交易ID.如果加入tid参数的话,不用传其他的参数,但是仅会返回一条物流订单信息.
+func (r *TaobaoLogisticsOrdersDetailGetAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoLogisticsOrdersDetailGetAPIRequest) GetTid() int64 {
+	return r._tid
 }
 
 // SetPageNo is PageNo Setter

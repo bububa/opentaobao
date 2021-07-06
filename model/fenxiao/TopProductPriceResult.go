@@ -2,6 +2,10 @@ package fenxiao
 
 // TopProductPriceResult 结构体
 type TopProductPriceResult struct {
+	// 价格
+	Price string `json:"price,omitempty" xml:"price,omitempty"`
+	// 币种
+	CurrencyType string `json:"currency_type,omitempty" xml:"currency_type,omitempty"`
 	// 产品ID
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// SKU ID
@@ -10,8 +14,4 @@ type TopProductPriceResult struct {
 	ChannelCode int64 `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
 	// 价格类型，区域价、指导价
 	PriceType int64 `json:"price_type,omitempty" xml:"price_type,omitempty"`
-	// 价格
-	Price string `json:"price,omitempty" xml:"price,omitempty"`
-	// 币种
-	CurrencyType string `json:"currency_type,omitempty" xml:"currency_type,omitempty"`
 }

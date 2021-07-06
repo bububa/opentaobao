@@ -2,8 +2,6 @@ package wdk
 
 // EleOrderInfoBo 结构体
 type EleOrderInfoBo struct {
-	// 订单费用明细
-	OrderDetailFee *OrderDetailFee `json:"order_detail_fee,omitempty" xml:"order_detail_fee,omitempty"`
 	// 损失承担方
 	ResponsibleParty string `json:"responsible_party,omitempty" xml:"responsible_party,omitempty"`
 	// 金额
@@ -22,4 +20,6 @@ type EleOrderInfoBo struct {
 	OrderFrom string `json:"order_from,omitempty" xml:"order_from,omitempty"`
 	// 订单序号
 	OrderIndex string `json:"order_index,omitempty" xml:"order_index,omitempty"`
+	// 订单费用明细
+	OrderDetailFee *OrderDetailFee `json:"order_detail_fee,omitempty" xml:"order_detail_fee,omitempty"`
 }

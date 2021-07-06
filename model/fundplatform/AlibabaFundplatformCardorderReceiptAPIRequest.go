@@ -12,10 +12,10 @@ import (
 // 告知卡商这一批储值卡已经被用户确认收货
 type AlibabaFundplatformCardorderReceiptAPIRequest struct {
 	model.Params
-	// 通知制卡成功的子卡子单号
-	_cardOrderId int64
 	// 环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）
 	_ownSign string
+	// 通知制卡成功的子卡子单号
+	_cardOrderId int64
 }
 
 // NewAlibabaFundplatformCardorderReceiptRequest 初始化AlibabaFundplatformCardorderReceiptAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaFundplatformCardorderReceiptAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// SetCardOrderId is CardOrderId Setter
-// 通知制卡成功的子卡子单号
-func (r *AlibabaFundplatformCardorderReceiptAPIRequest) SetCardOrderId(_cardOrderId int64) error {
-	r._cardOrderId = _cardOrderId
-	r.Set("card_order_id", _cardOrderId)
-	return nil
-}
-
-// GetCardOrderId CardOrderId Getter
-func (r AlibabaFundplatformCardorderReceiptAPIRequest) GetCardOrderId() int64 {
-	return r._cardOrderId
-}
-
 // SetOwnSign is OwnSign Setter
 // 环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）
 func (r *AlibabaFundplatformCardorderReceiptAPIRequest) SetOwnSign(_ownSign string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaFundplatformCardorderReceiptAPIRequest) SetOwnSign(_ownSign stri
 // GetOwnSign OwnSign Getter
 func (r AlibabaFundplatformCardorderReceiptAPIRequest) GetOwnSign() string {
 	return r._ownSign
+}
+
+// SetCardOrderId is CardOrderId Setter
+// 通知制卡成功的子卡子单号
+func (r *AlibabaFundplatformCardorderReceiptAPIRequest) SetCardOrderId(_cardOrderId int64) error {
+	r._cardOrderId = _cardOrderId
+	r.Set("card_order_id", _cardOrderId)
+	return nil
+}
+
+// GetCardOrderId CardOrderId Getter
+func (r AlibabaFundplatformCardorderReceiptAPIRequest) GetCardOrderId() int64 {
+	return r._cardOrderId
 }

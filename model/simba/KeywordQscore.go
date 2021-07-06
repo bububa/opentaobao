@@ -4,12 +4,6 @@ package simba
 type KeywordQscore struct {
 	// 主人昵称
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
-	// 推广计划id
-	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
-	// 推广组id
-	AdgroupId int64 `json:"adgroup_id,omitempty" xml:"adgroup_id,omitempty"`
-	// 关键词id
-	KeywordId int64 `json:"keyword_id,omitempty" xml:"keyword_id,omitempty"`
 	// 关键词
 	Word string `json:"word,omitempty" xml:"word,omitempty"`
 	// 质量总分
@@ -22,4 +16,10 @@ type KeywordQscore struct {
 	CustScore string `json:"cust_score,omitempty" xml:"cust_score,omitempty"`
 	// 创意得分
 	CreativeScore string `json:"creative_score,omitempty" xml:"creative_score,omitempty"`
+	// 推广计划id
+	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
+	// 推广组id
+	AdgroupId int64 `json:"adgroup_id,omitempty" xml:"adgroup_id,omitempty"`
+	// 关键词id
+	KeywordId int64 `json:"keyword_id,omitempty" xml:"keyword_id,omitempty"`
 }

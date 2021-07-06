@@ -4,8 +4,6 @@ package btrip
 type BtripTrainOpenTicketDo struct {
 	// 车次号
 	TrainNo string `json:"train_no,omitempty" xml:"train_no,omitempty"`
-	// 是否退改
-	IsChanged bool `json:"is_changed,omitempty" xml:"is_changed,omitempty"`
 	// 车次类型
 	TrainType string `json:"train_type,omitempty" xml:"train_type,omitempty"`
 	// 出发时间
@@ -24,12 +22,14 @@ type BtripTrainOpenTicketDo struct {
 	ArrStation string `json:"arr_station,omitempty" xml:"arr_station,omitempty"`
 	// 坐席
 	Seat string `json:"seat,omitempty" xml:"seat,omitempty"`
+	// 乘客名字
+	PassengerName string `json:"passenger_name,omitempty" xml:"passenger_name,omitempty"`
 	// 票价（分）
 	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
 	// tmc收取的服务费（分）
 	ServiceFee int64 `json:"service_fee,omitempty" xml:"service_fee,omitempty"`
-	// 乘客名字
-	PassengerName string `json:"passenger_name,omitempty" xml:"passenger_name,omitempty"`
 	// 原票价（分）
 	OriginTicketPrice int64 `json:"origin_ticket_price,omitempty" xml:"origin_ticket_price,omitempty"`
+	// 是否退改
+	IsChanged bool `json:"is_changed,omitempty" xml:"is_changed,omitempty"`
 }

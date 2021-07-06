@@ -12,14 +12,14 @@ import (
 // 【国际机票】查询辅营订单列表
 type AlitripTripvpAgentOrderSearchAPIRequest struct {
 	model.Params
-	// 代理商ID
-	_agentId int64
 	// 辅营创建开始时间
 	_beginTime string
-	// 当前页码
-	_currentPage int64
 	// 辅营创建结束时间
 	_endTime string
+	// 代理商ID
+	_agentId int64
+	// 当前页码
+	_currentPage int64
 	// 订单状态，1-待支付 2-支付成功 3-	辅营出货成功 4-订单取消
 	_orderStatus int64
 	// 分页行数
@@ -47,19 +47,6 @@ func (r AlitripTripvpAgentOrderSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetAgentId is AgentId Setter
-// 代理商ID
-func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetAgentId(_agentId int64) error {
-	r._agentId = _agentId
-	r.Set("agent_id", _agentId)
-	return nil
-}
-
-// GetAgentId AgentId Getter
-func (r AlitripTripvpAgentOrderSearchAPIRequest) GetAgentId() int64 {
-	return r._agentId
-}
-
 // SetBeginTime is BeginTime Setter
 // 辅营创建开始时间
 func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetBeginTime(_beginTime string) error {
@@ -73,19 +60,6 @@ func (r AlitripTripvpAgentOrderSearchAPIRequest) GetBeginTime() string {
 	return r._beginTime
 }
 
-// SetCurrentPage is CurrentPage Setter
-// 当前页码
-func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
-	r._currentPage = _currentPage
-	r.Set("current_page", _currentPage)
-	return nil
-}
-
-// GetCurrentPage CurrentPage Getter
-func (r AlitripTripvpAgentOrderSearchAPIRequest) GetCurrentPage() int64 {
-	return r._currentPage
-}
-
 // SetEndTime is EndTime Setter
 // 辅营创建结束时间
 func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetEndTime(_endTime string) error {
@@ -97,6 +71,32 @@ func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetEndTime(_endTime string) er
 // GetEndTime EndTime Getter
 func (r AlitripTripvpAgentOrderSearchAPIRequest) GetEndTime() string {
 	return r._endTime
+}
+
+// SetAgentId is AgentId Setter
+// 代理商ID
+func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetAgentId(_agentId int64) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// GetAgentId AgentId Getter
+func (r AlitripTripvpAgentOrderSearchAPIRequest) GetAgentId() int64 {
+	return r._agentId
+}
+
+// SetCurrentPage is CurrentPage Setter
+// 当前页码
+func (r *AlitripTripvpAgentOrderSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// GetCurrentPage CurrentPage Getter
+func (r AlitripTripvpAgentOrderSearchAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
 }
 
 // SetOrderStatus is OrderStatus Setter

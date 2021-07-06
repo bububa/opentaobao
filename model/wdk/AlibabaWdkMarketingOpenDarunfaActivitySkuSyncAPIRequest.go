@@ -14,12 +14,12 @@ type AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest struct {
 	model.Params
 	// 淘鲜达活动商品信息
 	_activitySkuList []DrfTxdActivitySkuBo
-	// 数据版本Id
-	_versionId int64
 	// 大润发活动Id
 	_activityId string
 	// 活动对应的门店Id
 	_shopId string
+	// 数据版本Id
+	_versionId int64
 }
 
 // NewAlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest 初始化AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest对象
@@ -56,19 +56,6 @@ func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetActivitySkuL
 	return r._activitySkuList
 }
 
-// SetVersionId is VersionId Setter
-// 数据版本Id
-func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) SetVersionId(_versionId int64) error {
-	r._versionId = _versionId
-	r.Set("version_id", _versionId)
-	return nil
-}
-
-// GetVersionId VersionId Getter
-func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetVersionId() int64 {
-	return r._versionId
-}
-
 // SetActivityId is ActivityId Setter
 // 大润发活动Id
 func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) SetActivityId(_activityId string) error {
@@ -93,4 +80,17 @@ func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) SetShopId(_sho
 // GetShopId ShopId Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetShopId() string {
 	return r._shopId
+}
+
+// SetVersionId is VersionId Setter
+// 数据版本Id
+func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) SetVersionId(_versionId int64) error {
+	r._versionId = _versionId
+	r.Set("version_id", _versionId)
+	return nil
+}
+
+// GetVersionId VersionId Getter
+func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetVersionId() int64 {
+	return r._versionId
 }

@@ -2,10 +2,6 @@ package drug
 
 // Itemlist 结构体
 type Itemlist struct {
-	// rx
-	Rx bool `json:"rx,omitempty" xml:"rx,omitempty"`
-	// backCate
-	BackCate int64 `json:"back_cate,omitempty" xml:"back_cate,omitempty"`
 	// itemId
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// isO2O
@@ -24,10 +20,14 @@ type Itemlist struct {
 	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// deliveryTime
 	DeliveryTime string `json:"delivery_time,omitempty" xml:"delivery_time,omitempty"`
+	// deliveryTypeDesc
+	DeliveryTypeDesc string `json:"delivery_type_desc,omitempty" xml:"delivery_type_desc,omitempty"`
+	// backCate
+	BackCate int64 `json:"back_cate,omitempty" xml:"back_cate,omitempty"`
 	// atLimit
 	AtLimit int64 `json:"at_limit,omitempty" xml:"at_limit,omitempty"`
 	// deliveryType
 	DeliveryType int64 `json:"delivery_type,omitempty" xml:"delivery_type,omitempty"`
-	// deliveryTypeDesc
-	DeliveryTypeDesc string `json:"delivery_type_desc,omitempty" xml:"delivery_type_desc,omitempty"`
+	// rx
+	Rx bool `json:"rx,omitempty" xml:"rx,omitempty"`
 }

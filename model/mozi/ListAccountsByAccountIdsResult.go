@@ -10,8 +10,8 @@ type ListAccountsByAccountIdsResult struct {
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
 	// 返回的状态消息
 	ResponseMessage string `json:"response_message,omitempty" xml:"response_message,omitempty"`
-	// 是否成功
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 返回的附件信息
 	ResponseMetaData string `json:"response_meta_data,omitempty" xml:"response_meta_data,omitempty"`
+	// 是否成功
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

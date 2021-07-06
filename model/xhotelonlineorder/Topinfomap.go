@@ -82,18 +82,18 @@ type Topinfomap struct {
 	IsFzMemberOrder string `json:"is_fz_member_order,omitempty" xml:"is_fz_member_order,omitempty"`
 	// 会员卡卡号
 	BookerMemberCardNo string `json:"booker_member_card_no,omitempty" xml:"booker_member_card_no,omitempty"`
-	// 信用支付因取消的扣款费用的人民币，单位：分
-	CreditPayCancelFee int64 `json:"credit_pay_cancel_fee,omitempty" xml:"credit_pay_cancel_fee,omitempty"`
 	// 渠道企业id
 	HbsOutSourceCorpId string `json:"hbs_out_source_corp_id,omitempty" xml:"hbs_out_source_corp_id,omitempty"`
-	// 售卖会员价
-	SellingMemberPrice int64 `json:"selling_member_price,omitempty" xml:"selling_member_price,omitempty"`
-	// 售卖价
-	SellingPrice int64 `json:"selling_price,omitempty" xml:"selling_price,omitempty"`
 	// 飞猪会员等级
 	FliggyMemberLevel string `json:"fliggy_member_level,omitempty" xml:"fliggy_member_level,omitempty"`
 	// 是否是菲住会员
 	IsFzMember string `json:"is_fz_member,omitempty" xml:"is_fz_member,omitempty"`
 	// 合并支付会员卡订单号
 	MemberCardOrderId string `json:"member_card_order_id,omitempty" xml:"member_card_order_id,omitempty"`
+	// 信用支付因取消的扣款费用的人民币，单位：分
+	CreditPayCancelFee int64 `json:"credit_pay_cancel_fee,omitempty" xml:"credit_pay_cancel_fee,omitempty"`
+	// 售卖会员价
+	SellingMemberPrice int64 `json:"selling_member_price,omitempty" xml:"selling_member_price,omitempty"`
+	// 售卖价
+	SellingPrice int64 `json:"selling_price,omitempty" xml:"selling_price,omitempty"`
 }

@@ -14,10 +14,10 @@ type AlibabaEinvoiceInvoiceapplyUpdateAPIRequest struct {
 	model.Params
 	// 申请单id
 	_applyId string
-	// 申请单状态：1：待确认，2：开票中，3：拒绝开票，4：发票已发出，0：完成开票
-	_status int64
 	// 扩展信息,目前用于回传文本及物流消息
 	_exInfo string
+	// 申请单状态：1：待确认，2：开票中，3：拒绝开票，4：发票已发出，0：完成开票
+	_status int64
 }
 
 // NewAlibabaEinvoiceInvoiceapplyUpdateRequest 初始化AlibabaEinvoiceInvoiceapplyUpdateAPIRequest对象
@@ -54,19 +54,6 @@ func (r AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) GetApplyId() string {
 	return r._applyId
 }
 
-// SetStatus is Status Setter
-// 申请单状态：1：待确认，2：开票中，3：拒绝开票，4：发票已发出，0：完成开票
-func (r *AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) SetStatus(_status int64) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) GetStatus() int64 {
-	return r._status
-}
-
 // SetExInfo is ExInfo Setter
 // 扩展信息,目前用于回传文本及物流消息
 func (r *AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) SetExInfo(_exInfo string) error {
@@ -78,4 +65,17 @@ func (r *AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) SetExInfo(_exInfo string) 
 // GetExInfo ExInfo Getter
 func (r AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) GetExInfo() string {
 	return r._exInfo
+}
+
+// SetStatus is Status Setter
+// 申请单状态：1：待确认，2：开票中，3：拒绝开票，4：发票已发出，0：完成开票
+func (r *AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r AlibabaEinvoiceInvoiceapplyUpdateAPIRequest) GetStatus() int64 {
+	return r._status
 }

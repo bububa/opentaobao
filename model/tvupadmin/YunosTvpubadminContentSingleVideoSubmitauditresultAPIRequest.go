@@ -14,12 +14,12 @@ type YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest struct {
 	model.Params
 	// 审核人
 	_auditor string
+	// 备注说明
+	_auditComment string
 	// 审核状态：1未提审，2审核中，3通过，4不通过，5已下线
 	_licenseState int64
 	// 牌照方
 	_license int64
-	// 备注说明
-	_auditComment string
 	// 视频审核ID
 	_videoAuditId int64
 }
@@ -58,6 +58,19 @@ func (r YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) GetAuditor
 	return r._auditor
 }
 
+// SetAuditComment is AuditComment Setter
+// 备注说明
+func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetAuditComment(_auditComment string) error {
+	r._auditComment = _auditComment
+	r.Set("audit_comment", _auditComment)
+	return nil
+}
+
+// GetAuditComment AuditComment Getter
+func (r YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) GetAuditComment() string {
+	return r._auditComment
+}
+
 // SetLicenseState is LicenseState Setter
 // 审核状态：1未提审，2审核中，3通过，4不通过，5已下线
 func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetLicenseState(_licenseState int64) error {
@@ -82,19 +95,6 @@ func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetLicens
 // GetLicense License Getter
 func (r YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) GetLicense() int64 {
 	return r._license
-}
-
-// SetAuditComment is AuditComment Setter
-// 备注说明
-func (r *YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) SetAuditComment(_auditComment string) error {
-	r._auditComment = _auditComment
-	r.Set("audit_comment", _auditComment)
-	return nil
-}
-
-// GetAuditComment AuditComment Getter
-func (r YunosTvpubadminContentSingleVideoSubmitauditresultAPIRequest) GetAuditComment() string {
-	return r._auditComment
 }
 
 // SetVideoAuditId is VideoAuditId Setter

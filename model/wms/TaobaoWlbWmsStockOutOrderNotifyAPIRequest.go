@@ -12,22 +12,18 @@ import (
 // 出库单通知
 type TaobaoWlbWmsStockOutOrderNotifyAPIRequest struct {
 	model.Params
+	// 订单商品信息列表
+	_orderItemList []Orderitemlistwlbwmsstockoutordernotify
 	// 仓储编码
 	_storeCode string
 	// ERP单据ID
 	_orderCode string
-	// 单据类型 301 调拨出库单、901普通出库单、903 其他出库单 305 B2B出库
-	_orderType int64
 	// ERP可选择性文本透传至WMS
 	_outboundTypeDesc string
 	// 订单创建时间
 	_orderCreateTime string
 	// 要求出库日期
 	_sendTime string
-	// 收件人信息
-	_receiverInfo *Receiverwlbwmsstockoutordernotify
-	// 发货方信息
-	_senderInfo *Senderwlbwmsstockoutordernotify
 	// 出库方式
 	_transportMode string
 	// 承运商名称
@@ -40,14 +36,18 @@ type TaobaoWlbWmsStockOutOrderNotifyAPIRequest struct {
 	_pickId string
 	// 车牌号
 	_carNo string
-	// 订单商品信息列表
-	_orderItemList []Orderitemlistwlbwmsstockoutordernotify
 	// 备注
 	_remark string
 	// 前物流订单号，如退货入库单可能会用到
 	_prevOrderCode string
 	// 拓展属性
 	_extendFields string
+	// 单据类型 301 调拨出库单、901普通出库单、903 其他出库单 305 B2B出库
+	_orderType int64
+	// 收件人信息
+	_receiverInfo *Receiverwlbwmsstockoutordernotify
+	// 发货方信息
+	_senderInfo *Senderwlbwmsstockoutordernotify
 }
 
 // NewTaobaoWlbWmsStockOutOrderNotifyRequest 初始化TaobaoWlbWmsStockOutOrderNotifyAPIRequest对象
@@ -69,6 +69,19 @@ func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetOrderItemList is OrderItemList Setter
+// 订单商品信息列表
+func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) SetOrderItemList(_orderItemList []Orderitemlistwlbwmsstockoutordernotify) error {
+	r._orderItemList = _orderItemList
+	r.Set("order_item_list", _orderItemList)
+	return nil
+}
+
+// GetOrderItemList OrderItemList Getter
+func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetOrderItemList() []Orderitemlistwlbwmsstockoutordernotify {
+	return r._orderItemList
 }
 
 // SetStoreCode is StoreCode Setter
@@ -95,19 +108,6 @@ func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) SetOrderCode(_orderCode stri
 // GetOrderCode OrderCode Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetOrderCode() string {
 	return r._orderCode
-}
-
-// SetOrderType is OrderType Setter
-// 单据类型 301 调拨出库单、901普通出库单、903 其他出库单 305 B2B出库
-func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) SetOrderType(_orderType int64) error {
-	r._orderType = _orderType
-	r.Set("order_type", _orderType)
-	return nil
-}
-
-// GetOrderType OrderType Getter
-func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetOrderType() int64 {
-	return r._orderType
 }
 
 // SetOutboundTypeDesc is OutboundTypeDesc Setter
@@ -147,32 +147,6 @@ func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) SetSendTime(_sendTime string
 // GetSendTime SendTime Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetSendTime() string {
 	return r._sendTime
-}
-
-// SetReceiverInfo is ReceiverInfo Setter
-// 收件人信息
-func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo *Receiverwlbwmsstockoutordernotify) error {
-	r._receiverInfo = _receiverInfo
-	r.Set("receiver_info", _receiverInfo)
-	return nil
-}
-
-// GetReceiverInfo ReceiverInfo Getter
-func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetReceiverInfo() *Receiverwlbwmsstockoutordernotify {
-	return r._receiverInfo
-}
-
-// SetSenderInfo is SenderInfo Setter
-// 发货方信息
-func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *Senderwlbwmsstockoutordernotify) error {
-	r._senderInfo = _senderInfo
-	r.Set("sender_info", _senderInfo)
-	return nil
-}
-
-// GetSenderInfo SenderInfo Getter
-func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetSenderInfo() *Senderwlbwmsstockoutordernotify {
-	return r._senderInfo
 }
 
 // SetTransportMode is TransportMode Setter
@@ -253,19 +227,6 @@ func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetCarNo() string {
 	return r._carNo
 }
 
-// SetOrderItemList is OrderItemList Setter
-// 订单商品信息列表
-func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) SetOrderItemList(_orderItemList []Orderitemlistwlbwmsstockoutordernotify) error {
-	r._orderItemList = _orderItemList
-	r.Set("order_item_list", _orderItemList)
-	return nil
-}
-
-// GetOrderItemList OrderItemList Getter
-func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetOrderItemList() []Orderitemlistwlbwmsstockoutordernotify {
-	return r._orderItemList
-}
-
 // SetRemark is Remark Setter
 // 备注
 func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) SetRemark(_remark string) error {
@@ -303,4 +264,43 @@ func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) SetExtendFields(_extendField
 // GetExtendFields ExtendFields Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetExtendFields() string {
 	return r._extendFields
+}
+
+// SetOrderType is OrderType Setter
+// 单据类型 301 调拨出库单、901普通出库单、903 其他出库单 305 B2B出库
+func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) SetOrderType(_orderType int64) error {
+	r._orderType = _orderType
+	r.Set("order_type", _orderType)
+	return nil
+}
+
+// GetOrderType OrderType Getter
+func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetOrderType() int64 {
+	return r._orderType
+}
+
+// SetReceiverInfo is ReceiverInfo Setter
+// 收件人信息
+func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo *Receiverwlbwmsstockoutordernotify) error {
+	r._receiverInfo = _receiverInfo
+	r.Set("receiver_info", _receiverInfo)
+	return nil
+}
+
+// GetReceiverInfo ReceiverInfo Getter
+func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetReceiverInfo() *Receiverwlbwmsstockoutordernotify {
+	return r._receiverInfo
+}
+
+// SetSenderInfo is SenderInfo Setter
+// 发货方信息
+func (r *TaobaoWlbWmsStockOutOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *Senderwlbwmsstockoutordernotify) error {
+	r._senderInfo = _senderInfo
+	r.Set("sender_info", _senderInfo)
+	return nil
+}
+
+// GetSenderInfo SenderInfo Getter
+func (r TaobaoWlbWmsStockOutOrderNotifyAPIRequest) GetSenderInfo() *Senderwlbwmsstockoutordernotify {
+	return r._senderInfo
 }

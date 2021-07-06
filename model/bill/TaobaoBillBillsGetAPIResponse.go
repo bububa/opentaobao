@@ -22,8 +22,8 @@ type TaobaoBillBillsGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 账单列表
 	Bills []Bill `json:"bills,omitempty" xml:"bills>bill,omitempty"`
-	// 是否存在下一页
-	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 	// 当前页查询返回的结果数(0-100)。相同的查询时间段条件下，最大只能获取总共5000条记录。所以当大于等于5000时 ISV可以通过start_time及end_time来进行拆分，以保证可以查询到全部数据
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+	// 是否存在下一页
+	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 }

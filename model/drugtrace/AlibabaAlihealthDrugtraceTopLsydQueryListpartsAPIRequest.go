@@ -18,14 +18,14 @@ type AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest struct {
 	_entName string
 	// 企业自定义编号
 	_refPartnerId string
-	// 页大小
-	_pageSize int64
-	// 页码
-	_page int64
 	// 开始时间
 	_beginDate string
 	// 结束时间
 	_endDate string
+	// 页大小
+	_pageSize int64
+	// 页码
+	_page int64
 }
 
 // NewAlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest 初始化AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest对象
@@ -88,32 +88,6 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetRefPartnerI
 	return r._refPartnerId
 }
 
-// SetPageSize is PageSize Setter
-// 页大小
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetPage is Page Setter
-// 页码
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetPage(_page int64) error {
-	r._page = _page
-	r.Set("page", _page)
-	return nil
-}
-
-// GetPage Page Getter
-func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetPage() int64 {
-	return r._page
-}
-
 // SetBeginDate is BeginDate Setter
 // 开始时间
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetBeginDate(_beginDate string) error {
@@ -138,4 +112,30 @@ func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetEndDate(_e
 // GetEndDate EndDate Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetEndDate() string {
 	return r._endDate
+}
+
+// SetPageSize is PageSize Setter
+// 页大小
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetPage is Page Setter
+// 页码
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) SetPage(_page int64) error {
+	r._page = _page
+	r.Set("page", _page)
+	return nil
+}
+
+// GetPage Page Getter
+func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsAPIRequest) GetPage() int64 {
+	return r._page
 }

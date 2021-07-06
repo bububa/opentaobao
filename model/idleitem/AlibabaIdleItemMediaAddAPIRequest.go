@@ -12,12 +12,12 @@ import (
 // 上传图片
 type AlibabaIdleItemMediaAddAPIRequest struct {
 	model.Params
+	// 废弃，不用再输入
+	_userNick string
 	// 多媒体文件字节流，图片<5M,视频<8M
 	_mediaData *model.File
 	// 类型：0 - 图片 ，仅支持图片
 	_mediaType int64
-	// 废弃，不用再输入
-	_userNick string
 }
 
 // NewAlibabaIdleItemMediaAddRequest 初始化AlibabaIdleItemMediaAddAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaIdleItemMediaAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetUserNick is UserNick Setter
+// 废弃，不用再输入
+func (r *AlibabaIdleItemMediaAddAPIRequest) SetUserNick(_userNick string) error {
+	r._userNick = _userNick
+	r.Set("user_nick", _userNick)
+	return nil
+}
+
+// GetUserNick UserNick Getter
+func (r AlibabaIdleItemMediaAddAPIRequest) GetUserNick() string {
+	return r._userNick
 }
 
 // SetMediaData is MediaData Setter
@@ -65,17 +78,4 @@ func (r *AlibabaIdleItemMediaAddAPIRequest) SetMediaType(_mediaType int64) error
 // GetMediaType MediaType Getter
 func (r AlibabaIdleItemMediaAddAPIRequest) GetMediaType() int64 {
 	return r._mediaType
-}
-
-// SetUserNick is UserNick Setter
-// 废弃，不用再输入
-func (r *AlibabaIdleItemMediaAddAPIRequest) SetUserNick(_userNick string) error {
-	r._userNick = _userNick
-	r.Set("user_nick", _userNick)
-	return nil
-}
-
-// GetUserNick UserNick Getter
-func (r AlibabaIdleItemMediaAddAPIRequest) GetUserNick() string {
-	return r._userNick
 }

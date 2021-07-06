@@ -12,10 +12,10 @@ import (
 // 去除活动参与的商品
 type TaobaoPromotionmiscActivityRangeRemoveAPIRequest struct {
 	model.Params
-	// 活动id。
-	_activityId int64
 	// 商品id,多个id用逗号隔开。
 	_ids string
+	// 活动id。
+	_activityId int64
 }
 
 // NewTaobaoPromotionmiscActivityRangeRemoveRequest 初始化TaobaoPromotionmiscActivityRangeRemoveAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoPromotionmiscActivityRangeRemoveAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// SetActivityId is ActivityId Setter
-// 活动id。
-func (r *TaobaoPromotionmiscActivityRangeRemoveAPIRequest) SetActivityId(_activityId int64) error {
-	r._activityId = _activityId
-	r.Set("activity_id", _activityId)
-	return nil
-}
-
-// GetActivityId ActivityId Getter
-func (r TaobaoPromotionmiscActivityRangeRemoveAPIRequest) GetActivityId() int64 {
-	return r._activityId
-}
-
 // SetIds is Ids Setter
 // 商品id,多个id用逗号隔开。
 func (r *TaobaoPromotionmiscActivityRangeRemoveAPIRequest) SetIds(_ids string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoPromotionmiscActivityRangeRemoveAPIRequest) SetIds(_ids string) e
 // GetIds Ids Getter
 func (r TaobaoPromotionmiscActivityRangeRemoveAPIRequest) GetIds() string {
 	return r._ids
+}
+
+// SetActivityId is ActivityId Setter
+// 活动id。
+func (r *TaobaoPromotionmiscActivityRangeRemoveAPIRequest) SetActivityId(_activityId int64) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
+	return nil
+}
+
+// GetActivityId ActivityId Getter
+func (r TaobaoPromotionmiscActivityRangeRemoveAPIRequest) GetActivityId() int64 {
+	return r._activityId
 }

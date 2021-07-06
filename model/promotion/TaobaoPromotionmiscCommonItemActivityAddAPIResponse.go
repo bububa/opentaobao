@@ -22,8 +22,8 @@ type TaobaoPromotionmiscCommonItemActivityAddAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotionmisc_common_item_activity_add_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 是否创建成功
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 优惠活动ID
 	ActivityId int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
+	// 是否创建成功
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

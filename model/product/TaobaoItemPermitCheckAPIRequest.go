@@ -12,12 +12,12 @@ import (
 // 对淘宝商品发品、编辑前的预校验接口
 type TaobaoItemPermitCheckAPIRequest struct {
 	model.Params
+	// 发布类型。可选值:fixed(一口价),auction(拍卖)
+	_type string
 	// 商品id
 	_itemId int64
 	// 类目id
 	_cid int64
-	// 发布类型。可选值:fixed(一口价),auction(拍卖)
-	_type string
 }
 
 // NewTaobaoItemPermitCheckRequest 初始化TaobaoItemPermitCheckAPIRequest对象
@@ -39,6 +39,19 @@ func (r TaobaoItemPermitCheckAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetType is Type Setter
+// 发布类型。可选值:fixed(一口价),auction(拍卖)
+func (r *TaobaoItemPermitCheckAPIRequest) SetType(_type string) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r TaobaoItemPermitCheckAPIRequest) GetType() string {
+	return r._type
 }
 
 // SetItemId is ItemId Setter
@@ -65,17 +78,4 @@ func (r *TaobaoItemPermitCheckAPIRequest) SetCid(_cid int64) error {
 // GetCid Cid Getter
 func (r TaobaoItemPermitCheckAPIRequest) GetCid() int64 {
 	return r._cid
-}
-
-// SetType is Type Setter
-// 发布类型。可选值:fixed(一口价),auction(拍卖)
-func (r *TaobaoItemPermitCheckAPIRequest) SetType(_type string) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r TaobaoItemPermitCheckAPIRequest) GetType() string {
-	return r._type
 }

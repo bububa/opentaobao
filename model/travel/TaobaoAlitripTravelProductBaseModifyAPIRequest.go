@@ -14,14 +14,14 @@ type TaobaoAlitripTravelProductBaseModifyAPIRequest struct {
 	model.Params
 	// 详细行程描述结构
 	_itineraries []ItemItineraryInfo
+	// 预定规则结构。示例： [{ "rule_type": "fee_excluded", "rule_desc": "费用包含描述"},{ "rule_type": "fee_included", "rule_desc": "费用不含描述"},{ "rule_type": "order_info", "rule_desc": "预定须知描述"}]
+	_bookingRules []BookingRuleInfo
 	// 产品基本信息
 	_baseInfo *ProductBaseInfo
 	// 产品id
 	_itemId int64
 	// 退款规则结构
 	_refundInfo *ItemRefundInfo
-	// 预定规则结构。示例： [{ "rule_type": "fee_excluded", "rule_desc": "费用包含描述"},{ "rule_type": "fee_included", "rule_desc": "费用不含描述"},{ "rule_type": "order_info", "rule_desc": "预定须知描述"}]
-	_bookingRules []BookingRuleInfo
 	// 邮轮商品相关信息
 	_cruiseProductExt *CruiseProductExt
 	// 商品的销售属性相关信息
@@ -62,6 +62,19 @@ func (r TaobaoAlitripTravelProductBaseModifyAPIRequest) GetItineraries() []ItemI
 	return r._itineraries
 }
 
+// SetBookingRules is BookingRules Setter
+// 预定规则结构。示例： [{ "rule_type": "fee_excluded", "rule_desc": "费用包含描述"},{ "rule_type": "fee_included", "rule_desc": "费用不含描述"},{ "rule_type": "order_info", "rule_desc": "预定须知描述"}]
+func (r *TaobaoAlitripTravelProductBaseModifyAPIRequest) SetBookingRules(_bookingRules []BookingRuleInfo) error {
+	r._bookingRules = _bookingRules
+	r.Set("booking_rules", _bookingRules)
+	return nil
+}
+
+// GetBookingRules BookingRules Getter
+func (r TaobaoAlitripTravelProductBaseModifyAPIRequest) GetBookingRules() []BookingRuleInfo {
+	return r._bookingRules
+}
+
 // SetBaseInfo is BaseInfo Setter
 // 产品基本信息
 func (r *TaobaoAlitripTravelProductBaseModifyAPIRequest) SetBaseInfo(_baseInfo *ProductBaseInfo) error {
@@ -99,19 +112,6 @@ func (r *TaobaoAlitripTravelProductBaseModifyAPIRequest) SetRefundInfo(_refundIn
 // GetRefundInfo RefundInfo Getter
 func (r TaobaoAlitripTravelProductBaseModifyAPIRequest) GetRefundInfo() *ItemRefundInfo {
 	return r._refundInfo
-}
-
-// SetBookingRules is BookingRules Setter
-// 预定规则结构。示例： [{ "rule_type": "fee_excluded", "rule_desc": "费用包含描述"},{ "rule_type": "fee_included", "rule_desc": "费用不含描述"},{ "rule_type": "order_info", "rule_desc": "预定须知描述"}]
-func (r *TaobaoAlitripTravelProductBaseModifyAPIRequest) SetBookingRules(_bookingRules []BookingRuleInfo) error {
-	r._bookingRules = _bookingRules
-	r.Set("booking_rules", _bookingRules)
-	return nil
-}
-
-// GetBookingRules BookingRules Getter
-func (r TaobaoAlitripTravelProductBaseModifyAPIRequest) GetBookingRules() []BookingRuleInfo {
-	return r._bookingRules
 }
 
 // SetCruiseProductExt is CruiseProductExt Setter

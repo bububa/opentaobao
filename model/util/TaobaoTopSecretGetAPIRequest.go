@@ -12,10 +12,10 @@ import (
 // top sdk通过api获取对应解密秘钥
 type TaobaoTopSecretGetAPIRequest struct {
 	model.Params
-	// 秘钥版本号
-	_secretVersion int64
 	// 伪随机数
 	_randomNum string
+	// 秘钥版本号
+	_secretVersion int64
 	// 自定义用户id
 	_customerUserId int64
 }
@@ -41,19 +41,6 @@ func (r TaobaoTopSecretGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetSecretVersion is SecretVersion Setter
-// 秘钥版本号
-func (r *TaobaoTopSecretGetAPIRequest) SetSecretVersion(_secretVersion int64) error {
-	r._secretVersion = _secretVersion
-	r.Set("secret_version", _secretVersion)
-	return nil
-}
-
-// GetSecretVersion SecretVersion Getter
-func (r TaobaoTopSecretGetAPIRequest) GetSecretVersion() int64 {
-	return r._secretVersion
-}
-
 // SetRandomNum is RandomNum Setter
 // 伪随机数
 func (r *TaobaoTopSecretGetAPIRequest) SetRandomNum(_randomNum string) error {
@@ -65,6 +52,19 @@ func (r *TaobaoTopSecretGetAPIRequest) SetRandomNum(_randomNum string) error {
 // GetRandomNum RandomNum Getter
 func (r TaobaoTopSecretGetAPIRequest) GetRandomNum() string {
 	return r._randomNum
+}
+
+// SetSecretVersion is SecretVersion Setter
+// 秘钥版本号
+func (r *TaobaoTopSecretGetAPIRequest) SetSecretVersion(_secretVersion int64) error {
+	r._secretVersion = _secretVersion
+	r.Set("secret_version", _secretVersion)
+	return nil
+}
+
+// GetSecretVersion SecretVersion Getter
+func (r TaobaoTopSecretGetAPIRequest) GetSecretVersion() int64 {
+	return r._secretVersion
 }
 
 // SetCustomerUserId is CustomerUserId Setter

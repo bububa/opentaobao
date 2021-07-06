@@ -2,8 +2,12 @@ package retail
 
 // ItemLineDto 结构体
 type ItemLineDto struct {
+	// 服务子订单
+	ServiceList []ServiceItemLineDto `json:"service_list,omitempty" xml:"service_list>service_item_line_dto,omitempty"`
 	// 百安居id
 	OutLineId string `json:"out_line_id,omitempty" xml:"out_line_id,omitempty"`
+	// 外部skuId
+	OutSkuId string `json:"out_sku_id,omitempty" xml:"out_sku_id,omitempty"`
 	// 门店商品行id
 	StoreOrderLineId int64 `json:"store_order_line_id,omitempty" xml:"store_order_line_id,omitempty"`
 	// 商品id
@@ -16,8 +20,4 @@ type ItemLineDto struct {
 	BuyAmount int64 `json:"buy_amount,omitempty" xml:"buy_amount,omitempty"`
 	// 实际付款价格
 	PayFee int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
-	// 外部skuId
-	OutSkuId string `json:"out_sku_id,omitempty" xml:"out_sku_id,omitempty"`
-	// 服务子订单
-	ServiceList []ServiceItemLineDto `json:"service_list,omitempty" xml:"service_list>service_item_line_dto,omitempty"`
 }

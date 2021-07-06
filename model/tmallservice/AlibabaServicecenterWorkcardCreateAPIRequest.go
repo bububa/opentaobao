@@ -12,16 +12,16 @@ import (
 // 创建服务平台工单
 type AlibabaServicecenterWorkcardCreateAPIRequest struct {
 	model.Params
+	// 工单属性，json格式字符串
+	_attributes string
+	// 工单外部唯一键单号
+	_outerId string
 	// 服务单id
 	_spServiceOrderId int64
 	// 申请工单时的序号，对应服务单上的serviceSequence。用于控制幂等，防重复提交
 	_serviceSequence int64
 	// 申请次数
 	_serviceCount int64
-	// 工单属性，json格式字符串
-	_attributes string
-	// 工单外部唯一键单号
-	_outerId string
 	// 服务提供者信息
 	_serviceProvider *ServiceProviderDto
 }
@@ -45,6 +45,32 @@ func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetApiParams() url.Values 
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetAttributes is Attributes Setter
+// 工单属性，json格式字符串
+func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetAttributes(_attributes string) error {
+	r._attributes = _attributes
+	r.Set("attributes", _attributes)
+	return nil
+}
+
+// GetAttributes Attributes Getter
+func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetAttributes() string {
+	return r._attributes
+}
+
+// SetOuterId is OuterId Setter
+// 工单外部唯一键单号
+func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetOuterId(_outerId string) error {
+	r._outerId = _outerId
+	r.Set("outer_id", _outerId)
+	return nil
+}
+
+// GetOuterId OuterId Getter
+func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetOuterId() string {
+	return r._outerId
 }
 
 // SetSpServiceOrderId is SpServiceOrderId Setter
@@ -84,32 +110,6 @@ func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetServiceCount(_serviceC
 // GetServiceCount ServiceCount Getter
 func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetServiceCount() int64 {
 	return r._serviceCount
-}
-
-// SetAttributes is Attributes Setter
-// 工单属性，json格式字符串
-func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetAttributes(_attributes string) error {
-	r._attributes = _attributes
-	r.Set("attributes", _attributes)
-	return nil
-}
-
-// GetAttributes Attributes Getter
-func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetAttributes() string {
-	return r._attributes
-}
-
-// SetOuterId is OuterId Setter
-// 工单外部唯一键单号
-func (r *AlibabaServicecenterWorkcardCreateAPIRequest) SetOuterId(_outerId string) error {
-	r._outerId = _outerId
-	r.Set("outer_id", _outerId)
-	return nil
-}
-
-// GetOuterId OuterId Getter
-func (r AlibabaServicecenterWorkcardCreateAPIRequest) GetOuterId() string {
-	return r._outerId
 }
 
 // SetServiceProvider is ServiceProvider Setter

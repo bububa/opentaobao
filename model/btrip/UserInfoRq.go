@@ -6,8 +6,6 @@ type UserInfoRq struct {
 	UserId string `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 职务
 	Position string `json:"position,omitempty" xml:"position,omitempty"`
-	// 用户所在部门ID（注册签约时必填）
-	DepartId int64 `json:"depart_id,omitempty" xml:"depart_id,omitempty"`
 	// 用户真实姓名（注册签约时必填）
 	RealName string `json:"real_name,omitempty" xml:"real_name,omitempty"`
 	// 英文姓名请用"/"分隔，中间不能含有空格。顺序：姓/名(last_name/first_name))
@@ -20,4 +18,6 @@ type UserInfoRq struct {
 	Email string `json:"email,omitempty" xml:"email,omitempty"`
 	// 职务等级
 	PositionLevel string `json:"position_level,omitempty" xml:"position_level,omitempty"`
+	// 用户所在部门ID（注册签约时必填）
+	DepartId int64 `json:"depart_id,omitempty" xml:"depart_id,omitempty"`
 }

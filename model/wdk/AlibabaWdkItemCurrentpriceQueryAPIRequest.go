@@ -12,12 +12,12 @@ import (
 // 通过渠道店id/sku编码/渠道查询商品当前价格，一次请求商品数量<=20,返回结果key为skuCode
 type AlibabaWdkItemCurrentpriceQueryAPIRequest struct {
 	model.Params
-	// 渠道店id
-	_shopId int64
 	// sku编码列表
 	_skuCodes []string
 	// 渠道
 	_orderChannelCode string
+	// 渠道店id
+	_shopId int64
 }
 
 // NewAlibabaWdkItemCurrentpriceQueryRequest 初始化AlibabaWdkItemCurrentpriceQueryAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaWdkItemCurrentpriceQueryAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetShopId is ShopId Setter
-// 渠道店id
-func (r *AlibabaWdkItemCurrentpriceQueryAPIRequest) SetShopId(_shopId int64) error {
-	r._shopId = _shopId
-	r.Set("shop_id", _shopId)
-	return nil
-}
-
-// GetShopId ShopId Getter
-func (r AlibabaWdkItemCurrentpriceQueryAPIRequest) GetShopId() int64 {
-	return r._shopId
 }
 
 // SetSkuCodes is SkuCodes Setter
@@ -78,4 +65,17 @@ func (r *AlibabaWdkItemCurrentpriceQueryAPIRequest) SetOrderChannelCode(_orderCh
 // GetOrderChannelCode OrderChannelCode Getter
 func (r AlibabaWdkItemCurrentpriceQueryAPIRequest) GetOrderChannelCode() string {
 	return r._orderChannelCode
+}
+
+// SetShopId is ShopId Setter
+// 渠道店id
+func (r *AlibabaWdkItemCurrentpriceQueryAPIRequest) SetShopId(_shopId int64) error {
+	r._shopId = _shopId
+	r.Set("shop_id", _shopId)
+	return nil
+}
+
+// GetShopId ShopId Getter
+func (r AlibabaWdkItemCurrentpriceQueryAPIRequest) GetShopId() int64 {
+	return r._shopId
 }

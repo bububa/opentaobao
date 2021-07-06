@@ -2,10 +2,10 @@ package lstlogistics
 
 // LstThirdPartMainShipOrderCreateDto 结构体
 type LstThirdPartMainShipOrderCreateDto struct {
+	// 货品明细
+	Details []LstThirdPartDetailShipOrderCreateDto `json:"details,omitempty" xml:"details>lst_third_part_detail_ship_order_create_dto,omitempty"`
 	// 区
 	ReceiverDistrict string `json:"receiver_district,omitempty" xml:"receiver_district,omitempty"`
-	// 收货人手机号
-	ReceiverMobile int64 `json:"receiver_mobile,omitempty" xml:"receiver_mobile,omitempty"`
 	// 省
 	ReceiverProvince string `json:"receiver_province,omitempty" xml:"receiver_province,omitempty"`
 	// 买家留言
@@ -18,10 +18,6 @@ type LstThirdPartMainShipOrderCreateDto struct {
 	OrderCreateTime string `json:"order_create_time,omitempty" xml:"order_create_time,omitempty"`
 	// 市
 	ReceiverCity string `json:"receiver_city,omitempty" xml:"receiver_city,omitempty"`
-	// 货品明细
-	Details []LstThirdPartDetailShipOrderCreateDto `json:"details,omitempty" xml:"details>lst_third_part_detail_ship_order_create_dto,omitempty"`
-	// 订单实付金额，单位为分
-	PayFee int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
 	// 街道
 	ReceiverTown string `json:"receiver_town,omitempty" xml:"receiver_town,omitempty"`
 	// 收货人姓名
@@ -32,4 +28,8 @@ type LstThirdPartMainShipOrderCreateDto struct {
 	OutOrderId string `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
 	// 电话
 	ReceiverPhone string `json:"receiver_phone,omitempty" xml:"receiver_phone,omitempty"`
+	// 收货人手机号
+	ReceiverMobile int64 `json:"receiver_mobile,omitempty" xml:"receiver_mobile,omitempty"`
+	// 订单实付金额，单位为分
+	PayFee int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
 }

@@ -22,10 +22,10 @@ type TaobaoWlbWmsStockOutOrderNotifyAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 错误编码
 	WlErrorCode string `json:"wl_error_code,omitempty" xml:"wl_error_code,omitempty"`
-	// 是否成功
-	WlSuccess bool `json:"wl_success,omitempty" xml:"wl_success,omitempty"`
 	// 错误详细
 	WlErrorMsg string `json:"wl_error_msg,omitempty" xml:"wl_error_msg,omitempty"`
 	// 仓储订单编码
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
+	// 是否成功
+	WlSuccess bool `json:"wl_success,omitempty" xml:"wl_success,omitempty"`
 }

@@ -12,18 +12,18 @@ import (
 // 修改用户到角色关系
 type AlibabaCampusAclUpdategrantroletouserAPIRequest struct {
 	model.Params
-	// 公司id
-	_companyId int64
-	// 系统id
-	_systemId string
-	// 园区id
-	_campusId int64
-	// 用户账号
-	_accountId string
 	// 角色
 	_role []RoleReq
+	// 系统id
+	_systemId string
+	// 用户账号
+	_accountId string
 	// 操作人id(不填默认appCode)
 	_userId string
+	// 公司id
+	_companyId int64
+	// 园区id
+	_campusId int64
 }
 
 // NewAlibabaCampusAclUpdategrantroletouserRequest 初始化AlibabaCampusAclUpdategrantroletouserAPIRequest对象
@@ -47,17 +47,17 @@ func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// SetCompanyId is CompanyId Setter
-// 公司id
-func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetCompanyId(_companyId int64) error {
-	r._companyId = _companyId
-	r.Set("company_id", _companyId)
+// SetRole is Role Setter
+// 角色
+func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetRole(_role []RoleReq) error {
+	r._role = _role
+	r.Set("role", _role)
 	return nil
 }
 
-// GetCompanyId CompanyId Getter
-func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetCompanyId() int64 {
-	return r._companyId
+// GetRole Role Getter
+func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetRole() []RoleReq {
+	return r._role
 }
 
 // SetSystemId is SystemId Setter
@@ -73,19 +73,6 @@ func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetSystemId() string {
 	return r._systemId
 }
 
-// SetCampusId is CampusId Setter
-// 园区id
-func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetCampusId(_campusId int64) error {
-	r._campusId = _campusId
-	r.Set("campus_id", _campusId)
-	return nil
-}
-
-// GetCampusId CampusId Getter
-func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetCampusId() int64 {
-	return r._campusId
-}
-
 // SetAccountId is AccountId Setter
 // 用户账号
 func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetAccountId(_accountId string) error {
@@ -99,19 +86,6 @@ func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetAccountId() string {
 	return r._accountId
 }
 
-// SetRole is Role Setter
-// 角色
-func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetRole(_role []RoleReq) error {
-	r._role = _role
-	r.Set("role", _role)
-	return nil
-}
-
-// GetRole Role Getter
-func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetRole() []RoleReq {
-	return r._role
-}
-
 // SetUserId is UserId Setter
 // 操作人id(不填默认appCode)
 func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetUserId(_userId string) error {
@@ -123,4 +97,30 @@ func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetUserId(_userId stri
 // GetUserId UserId Getter
 func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetUserId() string {
 	return r._userId
+}
+
+// SetCompanyId is CompanyId Setter
+// 公司id
+func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetCompanyId(_companyId int64) error {
+	r._companyId = _companyId
+	r.Set("company_id", _companyId)
+	return nil
+}
+
+// GetCompanyId CompanyId Getter
+func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetCompanyId() int64 {
+	return r._companyId
+}
+
+// SetCampusId is CampusId Setter
+// 园区id
+func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetCampusId(_campusId int64) error {
+	r._campusId = _campusId
+	r.Set("campus_id", _campusId)
+	return nil
+}
+
+// GetCampusId CampusId Getter
+func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetCampusId() int64 {
+	return r._campusId
 }

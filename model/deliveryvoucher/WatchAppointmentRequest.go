@@ -12,12 +12,12 @@ type WatchAppointmentRequest struct {
 	Provider string `json:"provider,omitempty" xml:"provider,omitempty"`
 	// 日期
 	Date string `json:"date,omitempty" xml:"date,omitempty"`
+	// 商家名称
+	MerchantName string `json:"merchant_name,omitempty" xml:"merchant_name,omitempty"`
 	// 数据类型0：初始化，1：修改，2：每天同步	必填
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 当前预约容量上限，type为0和1是必填
 	CurrentCapacity int64 `json:"current_capacity,omitempty" xml:"current_capacity,omitempty"`
-	// 商家名称
-	MerchantName string `json:"merchant_name,omitempty" xml:"merchant_name,omitempty"`
 	// 商家id
 	MerchantId int64 `json:"merchant_id,omitempty" xml:"merchant_id,omitempty"`
 	// 修改前预约容量上限	type为0和1是必填

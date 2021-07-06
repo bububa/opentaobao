@@ -12,10 +12,10 @@ import (
 // 村淘物料下沉，更新物料制作状态
 type AlibabaCuntaoInteractRequisitionUpdateAPIRequest struct {
 	model.Params
-	// 物料制作状态
-	_status string
 	// 申请单id列表
 	_uuidList []string
+	// 物料制作状态
+	_status string
 }
 
 // NewAlibabaCuntaoInteractRequisitionUpdateRequest 初始化AlibabaCuntaoInteractRequisitionUpdateAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaCuntaoInteractRequisitionUpdateAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// SetStatus is Status Setter
-// 物料制作状态
-func (r *AlibabaCuntaoInteractRequisitionUpdateAPIRequest) SetStatus(_status string) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r AlibabaCuntaoInteractRequisitionUpdateAPIRequest) GetStatus() string {
-	return r._status
-}
-
 // SetUuidList is UuidList Setter
 // 申请单id列表
 func (r *AlibabaCuntaoInteractRequisitionUpdateAPIRequest) SetUuidList(_uuidList []string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaCuntaoInteractRequisitionUpdateAPIRequest) SetUuidList(_uuidList
 // GetUuidList UuidList Getter
 func (r AlibabaCuntaoInteractRequisitionUpdateAPIRequest) GetUuidList() []string {
 	return r._uuidList
+}
+
+// SetStatus is Status Setter
+// 物料制作状态
+func (r *AlibabaCuntaoInteractRequisitionUpdateAPIRequest) SetStatus(_status string) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r AlibabaCuntaoInteractRequisitionUpdateAPIRequest) GetStatus() string {
+	return r._status
 }

@@ -2,24 +2,18 @@ package tmallservice
 
 // WorkerDto 结构体
 type WorkerDto struct {
-	// 工人居住地址
-	Address *AddressDto `json:"address,omitempty" xml:"address,omitempty"`
-	// 111
-	IdentityId string `json:"identity_id,omitempty" xml:"identity_id,omitempty"`
-	// 11
-	Name string `json:"name,omitempty" xml:"name,omitempty"`
-	// 1
-	Phone int64 `json:"phone,omitempty" xml:"phone,omitempty"`
-	// 111
-	ProviderId int64 `json:"provider_id,omitempty" xml:"provider_id,omitempty"`
-	// 1111
-	ProviderName string `json:"provider_name,omitempty" xml:"provider_name,omitempty"`
-	// 111
-	RegisterTime string `json:"register_time,omitempty" xml:"register_time,omitempty"`
 	// 1111
 	ServiceAreas []DivisionDto `json:"service_areas,omitempty" xml:"service_areas>division_dto,omitempty"`
 	// 11
 	ServiceTypes []string `json:"service_types,omitempty" xml:"service_types>string,omitempty"`
+	// 111
+	IdentityId string `json:"identity_id,omitempty" xml:"identity_id,omitempty"`
+	// 11
+	Name string `json:"name,omitempty" xml:"name,omitempty"`
+	// 1111
+	ProviderName string `json:"provider_name,omitempty" xml:"provider_name,omitempty"`
+	// 111
+	RegisterTime string `json:"register_time,omitempty" xml:"register_time,omitempty"`
 	// 1111
 	WorkType string `json:"work_type,omitempty" xml:"work_type,omitempty"`
 	// 111
@@ -38,4 +32,10 @@ type WorkerDto struct {
 	CoverCategoryIds string `json:"cover_category_ids,omitempty" xml:"cover_category_ids,omitempty"`
 	// 网点编码
 	ServiceStoreCode string `json:"service_store_code,omitempty" xml:"service_store_code,omitempty"`
+	// 工人居住地址
+	Address *AddressDto `json:"address,omitempty" xml:"address,omitempty"`
+	// 1
+	Phone int64 `json:"phone,omitempty" xml:"phone,omitempty"`
+	// 111
+	ProviderId int64 `json:"provider_id,omitempty" xml:"provider_id,omitempty"`
 }

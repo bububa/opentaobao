@@ -14,12 +14,12 @@ type TaobaoSimbaRtrptCreativeGetAPIRequest struct {
 	model.Params
 	// 用户名
 	_nick string
+	// 日期，格式yyyy-mm-dd
+	_theDate string
 	// 推广计划id
 	_campaignId int64
 	// 推广组id
 	_adgroupId int64
-	// 日期，格式yyyy-mm-dd
-	_theDate string
 }
 
 // NewTaobaoSimbaRtrptCreativeGetRequest 初始化TaobaoSimbaRtrptCreativeGetAPIRequest对象
@@ -56,6 +56,19 @@ func (r TaobaoSimbaRtrptCreativeGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
+// SetTheDate is TheDate Setter
+// 日期，格式yyyy-mm-dd
+func (r *TaobaoSimbaRtrptCreativeGetAPIRequest) SetTheDate(_theDate string) error {
+	r._theDate = _theDate
+	r.Set("the_date", _theDate)
+	return nil
+}
+
+// GetTheDate TheDate Getter
+func (r TaobaoSimbaRtrptCreativeGetAPIRequest) GetTheDate() string {
+	return r._theDate
+}
+
 // SetCampaignId is CampaignId Setter
 // 推广计划id
 func (r *TaobaoSimbaRtrptCreativeGetAPIRequest) SetCampaignId(_campaignId int64) error {
@@ -80,17 +93,4 @@ func (r *TaobaoSimbaRtrptCreativeGetAPIRequest) SetAdgroupId(_adgroupId int64) e
 // GetAdgroupId AdgroupId Getter
 func (r TaobaoSimbaRtrptCreativeGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
-}
-
-// SetTheDate is TheDate Setter
-// 日期，格式yyyy-mm-dd
-func (r *TaobaoSimbaRtrptCreativeGetAPIRequest) SetTheDate(_theDate string) error {
-	r._theDate = _theDate
-	r.Set("the_date", _theDate)
-	return nil
-}
-
-// GetTheDate TheDate Getter
-func (r TaobaoSimbaRtrptCreativeGetAPIRequest) GetTheDate() string {
-	return r._theDate
 }

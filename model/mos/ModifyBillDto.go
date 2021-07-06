@@ -2,6 +2,8 @@ package mos
 
 // ModifyBillDto 结构体
 type ModifyBillDto struct {
+	// 结算行号list
+	SettleLineNos []string `json:"settle_line_nos,omitempty" xml:"settle_line_nos>string,omitempty"`
 	// 收款方开户支行code
 	BankBranchCode string `json:"bank_branch_code,omitempty" xml:"bank_branch_code,omitempty"`
 	// 供应商名称（可空）
@@ -20,8 +22,6 @@ type ModifyBillDto struct {
 	BankProvince string `json:"bank_province,omitempty" xml:"bank_province,omitempty"`
 	// //银行号
 	BankCode string `json:"bank_code,omitempty" xml:"bank_code,omitempty"`
-	// 结算行号list
-	SettleLineNos []string `json:"settle_line_nos,omitempty" xml:"settle_line_nos>string,omitempty"`
 	// 收款方账号名称
 	AccountName string `json:"account_name,omitempty" xml:"account_name,omitempty"`
 	// 收款方开户支行

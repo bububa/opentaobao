@@ -22,8 +22,8 @@ type AlitripBtripOpenCostCenterQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 成本中心列表
 	CostCenterList []OpenCostCenterQueryRs `json:"cost_center_list,omitempty" xml:"cost_center_list>open_cost_center_query_rs,omitempty"`
-	// 结果码
-	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 结果描述
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
+	// 结果码
+	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
 }

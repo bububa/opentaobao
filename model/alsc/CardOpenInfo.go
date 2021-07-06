@@ -4,6 +4,8 @@ package alsc
 type CardOpenInfo struct {
 	// 资产账户列表
 	Accounts []AccountOpenInfo `json:"accounts,omitempty" xml:"accounts>account_open_info,omitempty"`
+	// 关联的物理卡列表
+	PhysicalCards []PhysicalCardOpenInfo `json:"physical_cards,omitempty" xml:"physical_cards>physical_card_open_info,omitempty"`
 	// 激活操作人ID
 	ActiveOperatorId string `json:"active_operator_id,omitempty" xml:"active_operator_id,omitempty"`
 	// 激活操作人名
@@ -12,8 +14,6 @@ type CardOpenInfo struct {
 	ActiveShopId string `json:"active_shop_id,omitempty" xml:"active_shop_id,omitempty"`
 	// 激活时间
 	ActiveTime string `json:"active_time,omitempty" xml:"active_time,omitempty"`
-	// 是否主动购买（是则赠送开卡礼包）
-	Buy bool `json:"buy,omitempty" xml:"buy,omitempty"`
 	// 卡实例ID
 	CardId string `json:"card_id,omitempty" xml:"card_id,omitempty"`
 	// 卡模板ID
@@ -24,8 +24,6 @@ type CardOpenInfo struct {
 	CreateBy string `json:"create_by,omitempty" xml:"create_by,omitempty"`
 	// 顾客id
 	CustomerId string `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
-	// 逻辑删除
-	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
 	// 有效期结束时间
 	ExpireEnd string `json:"expire_end,omitempty" xml:"expire_end,omitempty"`
 	// 有效期起始时间
@@ -48,8 +46,6 @@ type CardOpenInfo struct {
 	OperatorId string `json:"operator_id,omitempty" xml:"operator_id,omitempty"`
 	// 运营计划ID
 	OptPlanId string `json:"opt_plan_id,omitempty" xml:"opt_plan_id,omitempty"`
-	// 关联的物理卡列表
-	PhysicalCards []PhysicalCardOpenInfo `json:"physical_cards,omitempty" xml:"physical_cards>physical_card_open_info,omitempty"`
 	// 会员计划ID
 	PlanId string `json:"plan_id,omitempty" xml:"plan_id,omitempty"`
 	// SOLD("SOLD", "已出售"),     ACTIVED("ACTIVED", "已激活"),     STOP("STOP", "已停用"),     INVALID("INVALID", "已作废"),     EXPIRED("EXPIRED", "已过期"),     REFUND("REFUND", "已退卡")
@@ -58,4 +54,8 @@ type CardOpenInfo struct {
 	UpdateBy string `json:"update_by,omitempty" xml:"update_by,omitempty"`
 	// 扩展信息
 	ExtInfo *Extinfo `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
+	// 是否主动购买（是则赠送开卡礼包）
+	Buy bool `json:"buy,omitempty" xml:"buy,omitempty"`
+	// 逻辑删除
+	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
 }

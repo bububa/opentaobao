@@ -20,8 +20,8 @@ type LoginParam struct {
 	RawData string `json:"raw_data,omitempty" xml:"raw_data,omitempty"`
 	// 用户注册来源
 	Channel int64 `json:"channel,omitempty" xml:"channel,omitempty"`
-	// 是否是老版本
-	OldVersion bool `json:"old_version,omitempty" xml:"old_version,omitempty"`
 	// 新版本用户信息
 	NewUserinfo *NewUserInfo `json:"new_userinfo,omitempty" xml:"new_userinfo,omitempty"`
+	// 是否是老版本
+	OldVersion bool `json:"old_version,omitempty" xml:"old_version,omitempty"`
 }

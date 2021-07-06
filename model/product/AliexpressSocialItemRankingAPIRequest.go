@@ -12,10 +12,10 @@ import (
 // 社交商品成交排行榜
 type AliexpressSocialItemRankingAPIRequest struct {
 	model.Params
-	// 币种
-	_currency string
 	// 国家列表
 	_countryList []string
+	// 币种
+	_currency string
 	// locale，格式为language+"_"+country
 	_locale string
 	// 页码
@@ -47,19 +47,6 @@ func (r AliexpressSocialItemRankingAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetCurrency is Currency Setter
-// 币种
-func (r *AliexpressSocialItemRankingAPIRequest) SetCurrency(_currency string) error {
-	r._currency = _currency
-	r.Set("currency", _currency)
-	return nil
-}
-
-// GetCurrency Currency Getter
-func (r AliexpressSocialItemRankingAPIRequest) GetCurrency() string {
-	return r._currency
-}
-
 // SetCountryList is CountryList Setter
 // 国家列表
 func (r *AliexpressSocialItemRankingAPIRequest) SetCountryList(_countryList []string) error {
@@ -71,6 +58,19 @@ func (r *AliexpressSocialItemRankingAPIRequest) SetCountryList(_countryList []st
 // GetCountryList CountryList Getter
 func (r AliexpressSocialItemRankingAPIRequest) GetCountryList() []string {
 	return r._countryList
+}
+
+// SetCurrency is Currency Setter
+// 币种
+func (r *AliexpressSocialItemRankingAPIRequest) SetCurrency(_currency string) error {
+	r._currency = _currency
+	r.Set("currency", _currency)
+	return nil
+}
+
+// GetCurrency Currency Getter
+func (r AliexpressSocialItemRankingAPIRequest) GetCurrency() string {
+	return r._currency
 }
 
 // SetLocale is Locale Setter

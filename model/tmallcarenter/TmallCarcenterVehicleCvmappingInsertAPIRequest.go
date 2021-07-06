@@ -12,12 +12,12 @@ import (
 // EPC车辆版本信息与底盘信息库关系绑定
 type TmallCarcenterVehicleCvmappingInsertAPIRequest struct {
 	model.Params
-	// 状态
-	_status int64
 	// 版本ID
 	_supplierVersionCid string
 	// 底盘ID
 	_supplierChassisCid string
+	// 状态
+	_status int64
 }
 
 // NewTmallCarcenterVehicleCvmappingInsertRequest 初始化TmallCarcenterVehicleCvmappingInsertAPIRequest对象
@@ -39,19 +39,6 @@ func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetApiParams() url.Value
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetStatus is Status Setter
-// 状态
-func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetStatus(_status int64) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetStatus() int64 {
-	return r._status
 }
 
 // SetSupplierVersionCid is SupplierVersionCid Setter
@@ -78,4 +65,17 @@ func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetSupplierChassisCid(_
 // GetSupplierChassisCid SupplierChassisCid Getter
 func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetSupplierChassisCid() string {
 	return r._supplierChassisCid
+}
+
+// SetStatus is Status Setter
+// 状态
+func (r *TmallCarcenterVehicleCvmappingInsertAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TmallCarcenterVehicleCvmappingInsertAPIRequest) GetStatus() int64 {
+	return r._status
 }

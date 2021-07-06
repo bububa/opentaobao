@@ -12,14 +12,14 @@ import (
 // 码商重发电子凭证回调接口
 type TaobaoEticketMerchantMaResendAPIRequest struct {
 	model.Params
-	// 业务类型
-	_bizType int64
 	// 待重发的码列表
 	_isvMaList []IsvMa
 	// 业务id（订单号）
 	_outerId string
 	// 需要跟发码通知获取到的参数一致
 	_token string
+	// 业务类型
+	_bizType int64
 }
 
 // NewTaobaoEticketMerchantMaResendRequest 初始化TaobaoEticketMerchantMaResendAPIRequest对象
@@ -41,19 +41,6 @@ func (r TaobaoEticketMerchantMaResendAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetBizType is BizType Setter
-// 业务类型
-func (r *TaobaoEticketMerchantMaResendAPIRequest) SetBizType(_bizType int64) error {
-	r._bizType = _bizType
-	r.Set("biz_type", _bizType)
-	return nil
-}
-
-// GetBizType BizType Getter
-func (r TaobaoEticketMerchantMaResendAPIRequest) GetBizType() int64 {
-	return r._bizType
 }
 
 // SetIsvMaList is IsvMaList Setter
@@ -93,4 +80,17 @@ func (r *TaobaoEticketMerchantMaResendAPIRequest) SetToken(_token string) error 
 // GetToken Token Getter
 func (r TaobaoEticketMerchantMaResendAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetBizType is BizType Setter
+// 业务类型
+func (r *TaobaoEticketMerchantMaResendAPIRequest) SetBizType(_bizType int64) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// GetBizType BizType Getter
+func (r TaobaoEticketMerchantMaResendAPIRequest) GetBizType() int64 {
+	return r._bizType
 }

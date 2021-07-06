@@ -12,16 +12,16 @@ import (
 // 工单查询接口
 type TmallServicecenterWorkcardQueryAPIRequest struct {
 	model.Params
-	// 门店/网点id
-	_serviceStoreId int64
 	// 核销码
 	_identifyCode string
-	// 工单id
-	_id int64
 	// 工单创建开始时间
 	_gmtCreateStart string
 	// 工单创建结束时间，必须与工单创建开始时间一起传入，且间隔不超过15分钟
 	_gmtCreateEnd string
+	// 门店/网点id
+	_serviceStoreId int64
+	// 工单id
+	_id int64
 	// 淘宝交易订单号。主订单或子订单均可
 	_bizOrderId int64
 	// 当前页数
@@ -51,19 +51,6 @@ func (r TmallServicecenterWorkcardQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetServiceStoreId is ServiceStoreId Setter
-// 门店/网点id
-func (r *TmallServicecenterWorkcardQueryAPIRequest) SetServiceStoreId(_serviceStoreId int64) error {
-	r._serviceStoreId = _serviceStoreId
-	r.Set("service_store_id", _serviceStoreId)
-	return nil
-}
-
-// GetServiceStoreId ServiceStoreId Getter
-func (r TmallServicecenterWorkcardQueryAPIRequest) GetServiceStoreId() int64 {
-	return r._serviceStoreId
-}
-
 // SetIdentifyCode is IdentifyCode Setter
 // 核销码
 func (r *TmallServicecenterWorkcardQueryAPIRequest) SetIdentifyCode(_identifyCode string) error {
@@ -75,19 +62,6 @@ func (r *TmallServicecenterWorkcardQueryAPIRequest) SetIdentifyCode(_identifyCod
 // GetIdentifyCode IdentifyCode Getter
 func (r TmallServicecenterWorkcardQueryAPIRequest) GetIdentifyCode() string {
 	return r._identifyCode
-}
-
-// SetId is Id Setter
-// 工单id
-func (r *TmallServicecenterWorkcardQueryAPIRequest) SetId(_id int64) error {
-	r._id = _id
-	r.Set("id", _id)
-	return nil
-}
-
-// GetId Id Getter
-func (r TmallServicecenterWorkcardQueryAPIRequest) GetId() int64 {
-	return r._id
 }
 
 // SetGmtCreateStart is GmtCreateStart Setter
@@ -114,6 +88,32 @@ func (r *TmallServicecenterWorkcardQueryAPIRequest) SetGmtCreateEnd(_gmtCreateEn
 // GetGmtCreateEnd GmtCreateEnd Getter
 func (r TmallServicecenterWorkcardQueryAPIRequest) GetGmtCreateEnd() string {
 	return r._gmtCreateEnd
+}
+
+// SetServiceStoreId is ServiceStoreId Setter
+// 门店/网点id
+func (r *TmallServicecenterWorkcardQueryAPIRequest) SetServiceStoreId(_serviceStoreId int64) error {
+	r._serviceStoreId = _serviceStoreId
+	r.Set("service_store_id", _serviceStoreId)
+	return nil
+}
+
+// GetServiceStoreId ServiceStoreId Getter
+func (r TmallServicecenterWorkcardQueryAPIRequest) GetServiceStoreId() int64 {
+	return r._serviceStoreId
+}
+
+// SetId is Id Setter
+// 工单id
+func (r *TmallServicecenterWorkcardQueryAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// GetId Id Getter
+func (r TmallServicecenterWorkcardQueryAPIRequest) GetId() int64 {
+	return r._id
 }
 
 // SetBizOrderId is BizOrderId Setter

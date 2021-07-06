@@ -2,6 +2,8 @@ package alitrippoi
 
 // TripPoiRawSaveParam 结构体
 type TripPoiRawSaveParam struct {
+	// 图片urls
+	PhotoUrls []string `json:"photo_urls,omitempty" xml:"photo_urls>string,omitempty"`
 	// 国家名称
 	CountryName string `json:"country_name,omitempty" xml:"country_name,omitempty"`
 	// 当地poi名称
@@ -44,12 +46,10 @@ type TripPoiRawSaveParam struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 省
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
-	// poi状态
-	OpenStatus int64 `json:"open_status,omitempty" xml:"open_status,omitempty"`
-	// 图片urls
-	PhotoUrls []string `json:"photo_urls,omitempty" xml:"photo_urls>string,omitempty"`
 	// 外部网站url
 	WebSiteUrl string `json:"web_site_url,omitempty" xml:"web_site_url,omitempty"`
 	// 纬度
 	Lat string `json:"lat,omitempty" xml:"lat,omitempty"`
+	// poi状态
+	OpenStatus int64 `json:"open_status,omitempty" xml:"open_status,omitempty"`
 }

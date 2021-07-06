@@ -18,14 +18,14 @@ type RefundOrderInfo struct {
 	OutOrderNo string `json:"out_order_no,omitempty" xml:"out_order_no,omitempty"`
 	// 业务方退款单号
 	OutRefundOrderNo string `json:"out_refund_order_no,omitempty" xml:"out_refund_order_no,omitempty"`
-	// 退款金额
-	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 退款原因
 	RefundReason string `json:"refund_reason,omitempty" xml:"refund_reason,omitempty"`
 	// 退款类型 REFUND_ITEM 退菜退款 ONLY_REFUND仅退款款ANTI_SEELEMENT 反结账
 	RefundType string `json:"refund_type,omitempty" xml:"refund_type,omitempty"`
 	// 退款单状态 SUCCESS 成功；  FAIL失败
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+	// 退款金额
+	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 退款成功时间
 	SuccessTime int64 `json:"success_time,omitempty" xml:"success_time,omitempty"`
 }

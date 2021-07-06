@@ -22,10 +22,10 @@ type YunosTvscreenLauncherGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// headers
 	Headers string `json:"headers,omitempty" xml:"headers,omitempty"`
+	// 业务扩展
+	BizExtMap string `json:"biz_ext_map,omitempty" xml:"biz_ext_map,omitempty"`
 	// model
 	Model *LauncherDo `json:"model,omitempty" xml:"model,omitempty"`
 	// 状态码
 	HttpStatusCode int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
-	// 业务扩展
-	BizExtMap string `json:"biz_ext_map,omitempty" xml:"biz_ext_map,omitempty"`
 }

@@ -4,8 +4,6 @@ package einvoice
 type SalaryDetailDto struct {
 	// 账期
 	AccountDate string `json:"account_date,omitempty" xml:"account_date,omitempty"`
-	// 发薪金额
-	ApplyAmount int64 `json:"apply_amount,omitempty" xml:"apply_amount,omitempty"`
 	// 收款账号
 	AssetSymbol string `json:"asset_symbol,omitempty" xml:"asset_symbol,omitempty"`
 	// 账号类型
@@ -22,8 +20,10 @@ type SalaryDetailDto struct {
 	IdentificationInBelongingEmployer string `json:"identification_in_belonging_employer,omitempty" xml:"identification_in_belonging_employer,omitempty"`
 	// 执行时间
 	ProcessTime string `json:"process_time,omitempty" xml:"process_time,omitempty"`
-	// 已发金额
-	SalaryAmount int64 `json:"salary_amount,omitempty" xml:"salary_amount,omitempty"`
 	// 发薪状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+	// 发薪金额
+	ApplyAmount int64 `json:"apply_amount,omitempty" xml:"apply_amount,omitempty"`
+	// 已发金额
+	SalaryAmount int64 `json:"salary_amount,omitempty" xml:"salary_amount,omitempty"`
 }

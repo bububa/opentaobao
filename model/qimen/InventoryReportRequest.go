@@ -2,12 +2,8 @@ package qimen
 
 // InventoryReportRequest 结构体
 type InventoryReportRequest struct {
-	// 总页数
-	TotalPage int64 `json:"totalPage,omitempty" xml:"totalPage,omitempty"`
-	// 当前页(从1开始)
-	CurrentPage int64 `json:"currentPage,omitempty" xml:"currentPage,omitempty"`
-	// 每页记录的条数
-	PageSize int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+	// 商品库存信息列表
+	Items []Item `json:"items,omitempty" xml:"items>item,omitempty"`
 	// 仓库编码
 	WarehouseCode string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
 	// 盘点单编码
@@ -22,10 +18,14 @@ type InventoryReportRequest struct {
 	OutBizCode string `json:"outBizCode,omitempty" xml:"outBizCode,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
-	// 商品库存信息列表
-	Items []Item `json:"items,omitempty" xml:"items>item,omitempty"`
-	// 扩展属性
-	ExtendProps *TaobaoQimenInventoryReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 	// 变动类型：CHECK=盘点 ADJUST=调整
 	AdjustType string `json:"adjustType,omitempty" xml:"adjustType,omitempty"`
+	// 总页数
+	TotalPage int64 `json:"totalPage,omitempty" xml:"totalPage,omitempty"`
+	// 当前页(从1开始)
+	CurrentPage int64 `json:"currentPage,omitempty" xml:"currentPage,omitempty"`
+	// 每页记录的条数
+	PageSize int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+	// 扩展属性
+	ExtendProps *TaobaoQimenInventoryReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

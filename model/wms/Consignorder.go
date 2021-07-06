@@ -12,8 +12,8 @@ type Consignorder struct {
 	TmsCode string `json:"tms_code,omitempty" xml:"tms_code,omitempty"`
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
-	// 是否成功
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 仓库编码
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
+	// 是否成功
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

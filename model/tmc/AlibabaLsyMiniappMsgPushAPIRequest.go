@@ -14,14 +14,14 @@ type AlibabaLsyMiniappMsgPushAPIRequest struct {
 	model.Params
 	// 小程序ID
 	_appId string
-	// 消息ID
-	_msgId int64
-	// 摊位ID
-	_storeId int64
 	// 消息模板，miaoling_msg_isv_clue - 线索通知消息
 	_templateId string
 	// 消息参数
 	_params string
+	// 消息ID
+	_msgId int64
+	// 摊位ID
+	_storeId int64
 }
 
 // NewAlibabaLsyMiniappMsgPushRequest 初始化AlibabaLsyMiniappMsgPushAPIRequest对象
@@ -58,32 +58,6 @@ func (r AlibabaLsyMiniappMsgPushAPIRequest) GetAppId() string {
 	return r._appId
 }
 
-// SetMsgId is MsgId Setter
-// 消息ID
-func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetMsgId(_msgId int64) error {
-	r._msgId = _msgId
-	r.Set("msg_id", _msgId)
-	return nil
-}
-
-// GetMsgId MsgId Getter
-func (r AlibabaLsyMiniappMsgPushAPIRequest) GetMsgId() int64 {
-	return r._msgId
-}
-
-// SetStoreId is StoreId Setter
-// 摊位ID
-func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetStoreId(_storeId int64) error {
-	r._storeId = _storeId
-	r.Set("store_id", _storeId)
-	return nil
-}
-
-// GetStoreId StoreId Getter
-func (r AlibabaLsyMiniappMsgPushAPIRequest) GetStoreId() int64 {
-	return r._storeId
-}
-
 // SetTemplateId is TemplateId Setter
 // 消息模板，miaoling_msg_isv_clue - 线索通知消息
 func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetTemplateId(_templateId string) error {
@@ -108,4 +82,30 @@ func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetParams(_params string) error {
 // GetParams Params Getter
 func (r AlibabaLsyMiniappMsgPushAPIRequest) GetParams() string {
 	return r._params
+}
+
+// SetMsgId is MsgId Setter
+// 消息ID
+func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetMsgId(_msgId int64) error {
+	r._msgId = _msgId
+	r.Set("msg_id", _msgId)
+	return nil
+}
+
+// GetMsgId MsgId Getter
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetMsgId() int64 {
+	return r._msgId
+}
+
+// SetStoreId is StoreId Setter
+// 摊位ID
+func (r *AlibabaLsyMiniappMsgPushAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// GetStoreId StoreId Getter
+func (r AlibabaLsyMiniappMsgPushAPIRequest) GetStoreId() int64 {
+	return r._storeId
 }

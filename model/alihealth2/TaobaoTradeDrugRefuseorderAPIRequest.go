@@ -12,10 +12,10 @@ import (
 // 阿里健康020拒单
 type TaobaoTradeDrugRefuseorderAPIRequest struct {
 	model.Params
-	// 订单ID
-	_orderId int64
 	// 拒单原因
 	_refuseReason string
+	// 订单ID
+	_orderId int64
 }
 
 // NewTaobaoTradeDrugRefuseorderRequest 初始化TaobaoTradeDrugRefuseorderAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoTradeDrugRefuseorderAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetOrderId is OrderId Setter
-// 订单ID
-func (r *TaobaoTradeDrugRefuseorderAPIRequest) SetOrderId(_orderId int64) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
-	return nil
-}
-
-// GetOrderId OrderId Getter
-func (r TaobaoTradeDrugRefuseorderAPIRequest) GetOrderId() int64 {
-	return r._orderId
-}
-
 // SetRefuseReason is RefuseReason Setter
 // 拒单原因
 func (r *TaobaoTradeDrugRefuseorderAPIRequest) SetRefuseReason(_refuseReason string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoTradeDrugRefuseorderAPIRequest) SetRefuseReason(_refuseReason str
 // GetRefuseReason RefuseReason Getter
 func (r TaobaoTradeDrugRefuseorderAPIRequest) GetRefuseReason() string {
 	return r._refuseReason
+}
+
+// SetOrderId is OrderId Setter
+// 订单ID
+func (r *TaobaoTradeDrugRefuseorderAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// GetOrderId OrderId Getter
+func (r TaobaoTradeDrugRefuseorderAPIRequest) GetOrderId() int64 {
+	return r._orderId
 }

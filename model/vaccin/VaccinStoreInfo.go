@@ -18,12 +18,12 @@ type VaccinStoreInfo struct {
 	Qty string `json:"qty,omitempty" xml:"qty,omitempty"`
 	// storeName
 	StoreName string `json:"store_name,omitempty" xml:"store_name,omitempty"`
-	// storePacket
-	StorePacket int64 `json:"store_packet,omitempty" xml:"store_packet,omitempty"`
 	// businessTime
 	BusinessTime string `json:"business_time,omitempty" xml:"business_time,omitempty"`
-	// storeId
-	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// distN
 	DistN string `json:"dist_n,omitempty" xml:"dist_n,omitempty"`
+	// storePacket
+	StorePacket int64 `json:"store_packet,omitempty" xml:"store_packet,omitempty"`
+	// storeId
+	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 }

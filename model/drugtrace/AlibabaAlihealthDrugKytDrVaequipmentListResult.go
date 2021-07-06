@@ -2,10 +2,6 @@ package drugtrace
 
 // AlibabaAlihealthDrugKytDrVaequipmentListResult 结构体
 type AlibabaAlihealthDrugKytDrVaequipmentListResult struct {
-	// 是否成功
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
-	// model
-	Model *AlibabaAlihealthDrugKytDrVaequipmentListModel `json:"model,omitempty" xml:"model,omitempty"`
 	// msgInfo
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// msgCode
@@ -42,4 +38,8 @@ type AlibabaAlihealthDrugKytDrVaequipmentListResult struct {
 	VaEquipmentId string `json:"va_equipment_id,omitempty" xml:"va_equipment_id,omitempty"`
 	// 设备状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+	// model
+	Model *AlibabaAlihealthDrugKytDrVaequipmentListModel `json:"model,omitempty" xml:"model,omitempty"`
+	// 是否成功
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

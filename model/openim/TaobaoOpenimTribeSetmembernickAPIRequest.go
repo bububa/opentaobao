@@ -14,14 +14,14 @@ import (
 // 2 群成员设置自己的昵称，该功能对群所有成员开放
 type TaobaoOpenimTribeSetmembernickAPIRequest struct {
 	model.Params
+	// 设置的昵称
+	_nick string
 	// 发起设置昵称的操作者，如果是设置其他成员的昵称，只有普通组的群主和管理员有权限
 	_user *User
 	// 群id
 	_tribeId int64
 	// 被设置昵称的群成员
 	_member *User
-	// 设置的昵称
-	_nick string
 }
 
 // NewTaobaoOpenimTribeSetmembernickRequest 初始化TaobaoOpenimTribeSetmembernickAPIRequest对象
@@ -43,6 +43,19 @@ func (r TaobaoOpenimTribeSetmembernickAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetNick is Nick Setter
+// 设置的昵称
+func (r *TaobaoOpenimTribeSetmembernickAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// GetNick Nick Getter
+func (r TaobaoOpenimTribeSetmembernickAPIRequest) GetNick() string {
+	return r._nick
 }
 
 // SetUser is User Setter
@@ -82,17 +95,4 @@ func (r *TaobaoOpenimTribeSetmembernickAPIRequest) SetMember(_member *User) erro
 // GetMember Member Getter
 func (r TaobaoOpenimTribeSetmembernickAPIRequest) GetMember() *User {
 	return r._member
-}
-
-// SetNick is Nick Setter
-// 设置的昵称
-func (r *TaobaoOpenimTribeSetmembernickAPIRequest) SetNick(_nick string) error {
-	r._nick = _nick
-	r.Set("nick", _nick)
-	return nil
-}
-
-// GetNick Nick Getter
-func (r TaobaoOpenimTribeSetmembernickAPIRequest) GetNick() string {
-	return r._nick
 }

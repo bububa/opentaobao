@@ -12,8 +12,6 @@ import (
 // 回填手续费
 type TaobaoAlitripSellerRefundFillfeeAPIRequest struct {
 	model.Params
-	// 申请单ID
-	_applyId int64
 	// 费对于关系，格式：{apply_fee_id:123,value:费用,金额单位分}
 	_feePriceMap string
 	// 改签费用，格式：{detail_id:123,value:费用,金额单位分}
@@ -22,6 +20,8 @@ type TaobaoAlitripSellerRefundFillfeeAPIRequest struct {
 	_ticketPriceMap string
 	// 升舱费用，格式：{detail_id:123,value:费用,金额单位分}
 	_upgradeFee string
+	// 申请单ID
+	_applyId int64
 }
 
 // NewTaobaoAlitripSellerRefundFillfeeRequest 初始化TaobaoAlitripSellerRefundFillfeeAPIRequest对象
@@ -43,19 +43,6 @@ func (r TaobaoAlitripSellerRefundFillfeeAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetApplyId is ApplyId Setter
-// 申请单ID
-func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetApplyId(_applyId int64) error {
-	r._applyId = _applyId
-	r.Set("apply_id", _applyId)
-	return nil
-}
-
-// GetApplyId ApplyId Getter
-func (r TaobaoAlitripSellerRefundFillfeeAPIRequest) GetApplyId() int64 {
-	return r._applyId
 }
 
 // SetFeePriceMap is FeePriceMap Setter
@@ -108,4 +95,17 @@ func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetUpgradeFee(_upgradeFee s
 // GetUpgradeFee UpgradeFee Getter
 func (r TaobaoAlitripSellerRefundFillfeeAPIRequest) GetUpgradeFee() string {
 	return r._upgradeFee
+}
+
+// SetApplyId is ApplyId Setter
+// 申请单ID
+func (r *TaobaoAlitripSellerRefundFillfeeAPIRequest) SetApplyId(_applyId int64) error {
+	r._applyId = _applyId
+	r.Set("apply_id", _applyId)
+	return nil
+}
+
+// GetApplyId ApplyId Getter
+func (r TaobaoAlitripSellerRefundFillfeeAPIRequest) GetApplyId() int64 {
+	return r._applyId
 }

@@ -12,14 +12,14 @@ import (
 // 更新商户门店标签（服务、权益、标签）接口
 type TaobaoPlaceStoreUpdateLabelAPIRequest struct {
 	model.Params
-	// 门店id
-	_storeId int64
 	// 标签id
 	_labelIdList []int64
 	// 行业code
 	_businessCode string
 	// 标签类型
 	_labelType string
+	// 门店id
+	_storeId int64
 }
 
 // NewTaobaoPlaceStoreUpdateLabelRequest 初始化TaobaoPlaceStoreUpdateLabelAPIRequest对象
@@ -41,19 +41,6 @@ func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetStoreId is StoreId Setter
-// 门店id
-func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetStoreId(_storeId int64) error {
-	r._storeId = _storeId
-	r.Set("store_id", _storeId)
-	return nil
-}
-
-// GetStoreId StoreId Getter
-func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetStoreId() int64 {
-	return r._storeId
 }
 
 // SetLabelIdList is LabelIdList Setter
@@ -93,4 +80,17 @@ func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetLabelType(_labelType string) 
 // GetLabelType LabelType Getter
 func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetLabelType() string {
 	return r._labelType
+}
+
+// SetStoreId is StoreId Setter
+// 门店id
+func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// GetStoreId StoreId Getter
+func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetStoreId() int64 {
+	return r._storeId
 }

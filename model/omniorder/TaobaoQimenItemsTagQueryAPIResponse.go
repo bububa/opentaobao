@@ -20,10 +20,10 @@ type TaobaoQimenItemsTagQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_items_tag_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// flag
-	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// itemTags
 	ItemTags []ItemTag `json:"item_tags,omitempty" xml:"item_tags>item_tag,omitempty"`
+	// flag
+	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 }

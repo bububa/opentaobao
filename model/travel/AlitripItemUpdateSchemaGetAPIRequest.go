@@ -12,10 +12,10 @@ import (
 // 获取编辑商品的schema模板。目前支持类目：出境自由行(50278002)、境内自由行(50272002)、出境跟团游(50258005)、境内跟团游(50258004)、境外一日游/多日游(50276003)
 type AlitripItemUpdateSchemaGetAPIRequest struct {
 	model.Params
-	// 商品id
-	_itemId int64
 	// 需要获取的编辑schema，不填默认返回全部
 	_updateFieldIds []string
+	// 商品id
+	_itemId int64
 }
 
 // NewAlitripItemUpdateSchemaGetRequest 初始化AlitripItemUpdateSchemaGetAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlitripItemUpdateSchemaGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetItemId is ItemId Setter
-// 商品id
-func (r *AlitripItemUpdateSchemaGetAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
-	return nil
-}
-
-// GetItemId ItemId Getter
-func (r AlitripItemUpdateSchemaGetAPIRequest) GetItemId() int64 {
-	return r._itemId
-}
-
 // SetUpdateFieldIds is UpdateFieldIds Setter
 // 需要获取的编辑schema，不填默认返回全部
 func (r *AlitripItemUpdateSchemaGetAPIRequest) SetUpdateFieldIds(_updateFieldIds []string) error {
@@ -63,4 +50,17 @@ func (r *AlitripItemUpdateSchemaGetAPIRequest) SetUpdateFieldIds(_updateFieldIds
 // GetUpdateFieldIds UpdateFieldIds Getter
 func (r AlitripItemUpdateSchemaGetAPIRequest) GetUpdateFieldIds() []string {
 	return r._updateFieldIds
+}
+
+// SetItemId is ItemId Setter
+// 商品id
+func (r *AlitripItemUpdateSchemaGetAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r AlitripItemUpdateSchemaGetAPIRequest) GetItemId() int64 {
+	return r._itemId
 }

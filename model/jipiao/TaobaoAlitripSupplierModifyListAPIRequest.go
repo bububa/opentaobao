@@ -12,8 +12,6 @@ import (
 // 提供供应商查询改签通知单列表
 type TaobaoAlitripSupplierModifyListAPIRequest struct {
 	model.Params
-	// 页码
-	_currentPage int64
 	// 乘客出发时间查询结束日期
 	_depEnd string
 	// 乘客出发时间查询开始日期
@@ -22,6 +20,8 @@ type TaobaoAlitripSupplierModifyListAPIRequest struct {
 	_gmtCreateEnd string
 	// 申请单创建时间查询开始日期
 	_gmtCreateStart string
+	// 页码
+	_currentPage int64
 	// 每页记录数
 	_pageSize int64
 	// 1：改签申请列表，2：改签已支付列表，3：改签成功列表
@@ -47,19 +47,6 @@ func (r TaobaoAlitripSupplierModifyListAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetCurrentPage is CurrentPage Setter
-// 页码
-func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetCurrentPage(_currentPage int64) error {
-	r._currentPage = _currentPage
-	r.Set("current_page", _currentPage)
-	return nil
-}
-
-// GetCurrentPage CurrentPage Getter
-func (r TaobaoAlitripSupplierModifyListAPIRequest) GetCurrentPage() int64 {
-	return r._currentPage
 }
 
 // SetDepEnd is DepEnd Setter
@@ -112,6 +99,19 @@ func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetGmtCreateStart(_gmtCreate
 // GetGmtCreateStart GmtCreateStart Getter
 func (r TaobaoAlitripSupplierModifyListAPIRequest) GetGmtCreateStart() string {
 	return r._gmtCreateStart
+}
+
+// SetCurrentPage is CurrentPage Setter
+// 页码
+func (r *TaobaoAlitripSupplierModifyListAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// GetCurrentPage CurrentPage Getter
+func (r TaobaoAlitripSupplierModifyListAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
 }
 
 // SetPageSize is PageSize Setter

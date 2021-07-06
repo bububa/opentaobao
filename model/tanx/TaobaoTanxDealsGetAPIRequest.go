@@ -12,10 +12,10 @@ import (
 // 批量获取交易信息
 type TaobaoTanxDealsGetAPIRequest struct {
 	model.Params
-	// dsp用户id
-	_dspId int64
 	// dsp用户验证token
 	_token string
+	// dsp用户id
+	_dspId int64
 	// 页大小
 	_pageSize int64
 	// 交易类型
@@ -47,19 +47,6 @@ func (r TaobaoTanxDealsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetDspId is DspId Setter
-// dsp用户id
-func (r *TaobaoTanxDealsGetAPIRequest) SetDspId(_dspId int64) error {
-	r._dspId = _dspId
-	r.Set("dsp_id", _dspId)
-	return nil
-}
-
-// GetDspId DspId Getter
-func (r TaobaoTanxDealsGetAPIRequest) GetDspId() int64 {
-	return r._dspId
-}
-
 // SetToken is Token Setter
 // dsp用户验证token
 func (r *TaobaoTanxDealsGetAPIRequest) SetToken(_token string) error {
@@ -71,6 +58,19 @@ func (r *TaobaoTanxDealsGetAPIRequest) SetToken(_token string) error {
 // GetToken Token Getter
 func (r TaobaoTanxDealsGetAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetDspId is DspId Setter
+// dsp用户id
+func (r *TaobaoTanxDealsGetAPIRequest) SetDspId(_dspId int64) error {
+	r._dspId = _dspId
+	r.Set("dsp_id", _dspId)
+	return nil
+}
+
+// GetDspId DspId Getter
+func (r TaobaoTanxDealsGetAPIRequest) GetDspId() int64 {
+	return r._dspId
 }
 
 // SetPageSize is PageSize Setter

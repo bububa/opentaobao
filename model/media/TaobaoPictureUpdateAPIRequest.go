@@ -12,10 +12,10 @@ import (
 // 修改指定图片的图片名
 type TaobaoPictureUpdateAPIRequest struct {
 	model.Params
-	// 要更改名字的图片的id
-	_pictureId int64
 	// 新的图片名，最大长度50字符，不能为空
 	_newName string
+	// 要更改名字的图片的id
+	_pictureId int64
 }
 
 // NewTaobaoPictureUpdateRequest 初始化TaobaoPictureUpdateAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoPictureUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetPictureId is PictureId Setter
-// 要更改名字的图片的id
-func (r *TaobaoPictureUpdateAPIRequest) SetPictureId(_pictureId int64) error {
-	r._pictureId = _pictureId
-	r.Set("picture_id", _pictureId)
-	return nil
-}
-
-// GetPictureId PictureId Getter
-func (r TaobaoPictureUpdateAPIRequest) GetPictureId() int64 {
-	return r._pictureId
-}
-
 // SetNewName is NewName Setter
 // 新的图片名，最大长度50字符，不能为空
 func (r *TaobaoPictureUpdateAPIRequest) SetNewName(_newName string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoPictureUpdateAPIRequest) SetNewName(_newName string) error {
 // GetNewName NewName Getter
 func (r TaobaoPictureUpdateAPIRequest) GetNewName() string {
 	return r._newName
+}
+
+// SetPictureId is PictureId Setter
+// 要更改名字的图片的id
+func (r *TaobaoPictureUpdateAPIRequest) SetPictureId(_pictureId int64) error {
+	r._pictureId = _pictureId
+	r.Set("picture_id", _pictureId)
+	return nil
+}
+
+// GetPictureId PictureId Getter
+func (r TaobaoPictureUpdateAPIRequest) GetPictureId() int64 {
+	return r._pictureId
 }

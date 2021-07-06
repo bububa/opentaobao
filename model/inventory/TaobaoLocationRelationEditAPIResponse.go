@@ -22,8 +22,8 @@ type TaobaoLocationRelationEditAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
-	// 是否成功
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 错误码
 	Errorcode string `json:"errorcode,omitempty" xml:"errorcode,omitempty"`
+	// 是否成功
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

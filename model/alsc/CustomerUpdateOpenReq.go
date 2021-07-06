@@ -2,6 +2,8 @@ package alsc
 
 // CustomerUpdateOpenReq 结构体
 type CustomerUpdateOpenReq struct {
+	// 人群标签
+	TagIds []string `json:"tag_ids,omitempty" xml:"tag_ids>string,omitempty"`
 	// 顾客ID
 	CustomerId string `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
 	// 品牌ID 外部品牌id  2选1
@@ -14,8 +16,6 @@ type CustomerUpdateOpenReq struct {
 	Email string `json:"email,omitempty" xml:"email,omitempty"`
 	// 扩展信息
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
-	// 性别
-	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
 	// 发票抬头
 	Invoice string `json:"invoice,omitempty" xml:"invoice,omitempty"`
 	// 等级ID
@@ -34,10 +34,10 @@ type CustomerUpdateOpenReq struct {
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 请求ID，幂等处理
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 人群标签
-	TagIds []string `json:"tag_ids,omitempty" xml:"tag_ids>string,omitempty"`
 	// 外部品牌id
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
+	// 性别
+	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
 	// 0顾客，1会员
 	CustomerType int64 `json:"customer_type,omitempty" xml:"customer_type,omitempty"`
 }

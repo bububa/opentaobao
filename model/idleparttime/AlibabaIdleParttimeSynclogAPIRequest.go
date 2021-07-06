@@ -12,6 +12,8 @@ import (
 // 提供给供应商查询的接口
 type AlibabaIdleParttimeSynclogAPIRequest struct {
 	model.Params
+	// 同步的id
+	_syncIds []int64
 	// 查询岗位同步开始时间
 	_startTime int64
 	// 查询岗位同步结束时间
@@ -22,8 +24,6 @@ type AlibabaIdleParttimeSynclogAPIRequest struct {
 	_pageSize int64
 	// 第几页, 从0开始
 	_pageNum int64
-	// 同步的id
-	_syncIds []int64
 }
 
 // NewAlibabaIdleParttimeSynclogRequest 初始化AlibabaIdleParttimeSynclogAPIRequest对象
@@ -45,6 +45,19 @@ func (r AlibabaIdleParttimeSynclogAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSyncIds is SyncIds Setter
+// 同步的id
+func (r *AlibabaIdleParttimeSynclogAPIRequest) SetSyncIds(_syncIds []int64) error {
+	r._syncIds = _syncIds
+	r.Set("sync_ids", _syncIds)
+	return nil
+}
+
+// GetSyncIds SyncIds Getter
+func (r AlibabaIdleParttimeSynclogAPIRequest) GetSyncIds() []int64 {
+	return r._syncIds
 }
 
 // SetStartTime is StartTime Setter
@@ -110,17 +123,4 @@ func (r *AlibabaIdleParttimeSynclogAPIRequest) SetPageNum(_pageNum int64) error 
 // GetPageNum PageNum Getter
 func (r AlibabaIdleParttimeSynclogAPIRequest) GetPageNum() int64 {
 	return r._pageNum
-}
-
-// SetSyncIds is SyncIds Setter
-// 同步的id
-func (r *AlibabaIdleParttimeSynclogAPIRequest) SetSyncIds(_syncIds []int64) error {
-	r._syncIds = _syncIds
-	r.Set("sync_ids", _syncIds)
-	return nil
-}
-
-// GetSyncIds SyncIds Getter
-func (r AlibabaIdleParttimeSynclogAPIRequest) GetSyncIds() []int64 {
-	return r._syncIds
 }

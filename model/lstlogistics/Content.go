@@ -2,6 +2,8 @@ package lstlogistics
 
 // Content 结构体
 type Content struct {
+	// 子订单列表
+	SubOrderIdList []int64 `json:"sub_order_id_list,omitempty" xml:"sub_order_id_list>int64,omitempty"`
 	// 运单编号
 	MailNo string `json:"mail_no,omitempty" xml:"mail_no,omitempty"`
 	// 物流编号
@@ -10,8 +12,6 @@ type Content struct {
 	CpCompanyCode string `json:"cp_company_code,omitempty" xml:"cp_company_code,omitempty"`
 	// 物流公司name
 	CpCompanyName string `json:"cp_company_name,omitempty" xml:"cp_company_name,omitempty"`
-	// 子订单列表
-	SubOrderIdList []int64 `json:"sub_order_id_list,omitempty" xml:"sub_order_id_list>int64,omitempty"`
 	// 描述
 	StatusDesc string `json:"status_desc,omitempty" xml:"status_desc,omitempty"`
 	// 时间

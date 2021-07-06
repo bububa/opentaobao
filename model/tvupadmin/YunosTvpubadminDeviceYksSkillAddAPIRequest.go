@@ -12,14 +12,14 @@ import (
 // 添加技能
 type YunosTvpubadminDeviceYksSkillAddAPIRequest struct {
 	model.Params
-	// 技能id
-	_skillId int64
-	// 设备id
-	_botId int64
 	// 技能名称
 	_name string
 	// 图片地址
 	_iconImageUrl string
+	// 技能id
+	_skillId int64
+	// 设备id
+	_botId int64
 }
 
 // NewYunosTvpubadminDeviceYksSkillAddRequest 初始化YunosTvpubadminDeviceYksSkillAddAPIRequest对象
@@ -41,32 +41,6 @@ func (r YunosTvpubadminDeviceYksSkillAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetSkillId is SkillId Setter
-// 技能id
-func (r *YunosTvpubadminDeviceYksSkillAddAPIRequest) SetSkillId(_skillId int64) error {
-	r._skillId = _skillId
-	r.Set("skill_id", _skillId)
-	return nil
-}
-
-// GetSkillId SkillId Getter
-func (r YunosTvpubadminDeviceYksSkillAddAPIRequest) GetSkillId() int64 {
-	return r._skillId
-}
-
-// SetBotId is BotId Setter
-// 设备id
-func (r *YunosTvpubadminDeviceYksSkillAddAPIRequest) SetBotId(_botId int64) error {
-	r._botId = _botId
-	r.Set("bot_id", _botId)
-	return nil
-}
-
-// GetBotId BotId Getter
-func (r YunosTvpubadminDeviceYksSkillAddAPIRequest) GetBotId() int64 {
-	return r._botId
 }
 
 // SetName is Name Setter
@@ -93,4 +67,30 @@ func (r *YunosTvpubadminDeviceYksSkillAddAPIRequest) SetIconImageUrl(_iconImageU
 // GetIconImageUrl IconImageUrl Getter
 func (r YunosTvpubadminDeviceYksSkillAddAPIRequest) GetIconImageUrl() string {
 	return r._iconImageUrl
+}
+
+// SetSkillId is SkillId Setter
+// 技能id
+func (r *YunosTvpubadminDeviceYksSkillAddAPIRequest) SetSkillId(_skillId int64) error {
+	r._skillId = _skillId
+	r.Set("skill_id", _skillId)
+	return nil
+}
+
+// GetSkillId SkillId Getter
+func (r YunosTvpubadminDeviceYksSkillAddAPIRequest) GetSkillId() int64 {
+	return r._skillId
+}
+
+// SetBotId is BotId Setter
+// 设备id
+func (r *YunosTvpubadminDeviceYksSkillAddAPIRequest) SetBotId(_botId int64) error {
+	r._botId = _botId
+	r.Set("bot_id", _botId)
+	return nil
+}
+
+// GetBotId BotId Getter
+func (r YunosTvpubadminDeviceYksSkillAddAPIRequest) GetBotId() int64 {
+	return r._botId
 }

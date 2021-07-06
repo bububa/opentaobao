@@ -16,12 +16,8 @@ type BusSearchRq struct {
 	PeriodTime string `json:"period_time,omitempty" xml:"period_time,omitempty"`
 	// 汽车票场景 普通 common 机场巴士 airport
 	Scene string `json:"scene,omitempty" xml:"scene,omitempty"`
-	// 是否显示不可售车次
-	ShowNoSell int64 `json:"show_no_sell,omitempty" xml:"show_no_sell,omitempty"`
 	// 标准出发城市编码
 	StandardFromAreaCode string `json:"standard_from_area_code,omitempty" xml:"standard_from_area_code,omitempty"`
-	// 标准出发站编码
-	StandardFromStationId int64 `json:"standard_from_station_id,omitempty" xml:"standard_from_station_id,omitempty"`
 	// 出发车站名称
 	StandardFromStationName string `json:"standard_from_station_name,omitempty" xml:"standard_from_station_name,omitempty"`
 	// 标准到达城市编码
@@ -30,4 +26,8 @@ type BusSearchRq struct {
 	ToStationName string `json:"to_station_name,omitempty" xml:"to_station_name,omitempty"`
 	// 第三方企业ID
 	CorpId string `json:"corp_id,omitempty" xml:"corp_id,omitempty"`
+	// 是否显示不可售车次
+	ShowNoSell int64 `json:"show_no_sell,omitempty" xml:"show_no_sell,omitempty"`
+	// 标准出发站编码
+	StandardFromStationId int64 `json:"standard_from_station_id,omitempty" xml:"standard_from_station_id,omitempty"`
 }

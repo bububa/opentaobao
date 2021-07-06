@@ -12,14 +12,14 @@ import (
 // 价签LED等点亮
 type TaobaoUsceslBizLightUpAPIRequest struct {
 	model.Params
-	// 门店ID
-	_storeId int64
 	// 商家编号
 	_bizBrandKey string
 	// 价签条码
 	_eslBarCode string
 	// 亮灯颜色，绿：值为2；红：值为4
 	_ledColor string
+	// 门店ID
+	_storeId int64
 	// 亮灯时长，单位：秒，最大长度3600秒
 	_lightUpTime int64
 }
@@ -43,19 +43,6 @@ func (r TaobaoUsceslBizLightUpAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetStoreId is StoreId Setter
-// 门店ID
-func (r *TaobaoUsceslBizLightUpAPIRequest) SetStoreId(_storeId int64) error {
-	r._storeId = _storeId
-	r.Set("store_id", _storeId)
-	return nil
-}
-
-// GetStoreId StoreId Getter
-func (r TaobaoUsceslBizLightUpAPIRequest) GetStoreId() int64 {
-	return r._storeId
 }
 
 // SetBizBrandKey is BizBrandKey Setter
@@ -95,6 +82,19 @@ func (r *TaobaoUsceslBizLightUpAPIRequest) SetLedColor(_ledColor string) error {
 // GetLedColor LedColor Getter
 func (r TaobaoUsceslBizLightUpAPIRequest) GetLedColor() string {
 	return r._ledColor
+}
+
+// SetStoreId is StoreId Setter
+// 门店ID
+func (r *TaobaoUsceslBizLightUpAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// GetStoreId StoreId Getter
+func (r TaobaoUsceslBizLightUpAPIRequest) GetStoreId() int64 {
+	return r._storeId
 }
 
 // SetLightUpTime is LightUpTime Setter

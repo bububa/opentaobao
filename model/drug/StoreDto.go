@@ -12,14 +12,8 @@ type StoreDto struct {
 	PicUrl string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
 	// businessStatus
 	BusinessStatus string `json:"business_status,omitempty" xml:"business_status,omitempty"`
-	// orderCount
-	OrderCount int64 `json:"order_count,omitempty" xml:"order_count,omitempty"`
 	// orderCountDesc
 	OrderCountDesc string `json:"order_count_desc,omitempty" xml:"order_count_desc,omitempty"`
-	// minimumAccount
-	MinimumAccount int64 `json:"minimum_account,omitempty" xml:"minimum_account,omitempty"`
-	// deliveryAccount
-	DeliveryAccount int64 `json:"delivery_account,omitempty" xml:"delivery_account,omitempty"`
 	// notice
 	Notice string `json:"notice,omitempty" xml:"notice,omitempty"`
 	// deliveryTime
@@ -42,8 +36,14 @@ type StoreDto struct {
 	Areas string `json:"areas,omitempty" xml:"areas,omitempty"`
 	// sellerNick
 	SellerNick string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
-	// deliveryType
-	DeliveryType int64 `json:"delivery_type,omitempty" xml:"delivery_type,omitempty"`
 	// deliveryTypeDesc
 	DeliveryTypeDesc string `json:"delivery_type_desc,omitempty" xml:"delivery_type_desc,omitempty"`
+	// orderCount
+	OrderCount int64 `json:"order_count,omitempty" xml:"order_count,omitempty"`
+	// minimumAccount
+	MinimumAccount int64 `json:"minimum_account,omitempty" xml:"minimum_account,omitempty"`
+	// deliveryAccount
+	DeliveryAccount int64 `json:"delivery_account,omitempty" xml:"delivery_account,omitempty"`
+	// deliveryType
+	DeliveryType int64 `json:"delivery_type,omitempty" xml:"delivery_type,omitempty"`
 }

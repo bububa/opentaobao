@@ -14,10 +14,10 @@ type AlibabaIcbuAnnexUploadAPIRequest struct {
 	model.Params
 	// 文件名
 	_fileName string
-	// 文件字节流
-	_fileInputStreamBytes *model.File
 	// 来源
 	_source string
+	// 文件字节流
+	_fileInputStreamBytes *model.File
 }
 
 // NewAlibabaIcbuAnnexUploadRequest 初始化AlibabaIcbuAnnexUploadAPIRequest对象
@@ -54,19 +54,6 @@ func (r AlibabaIcbuAnnexUploadAPIRequest) GetFileName() string {
 	return r._fileName
 }
 
-// SetFileInputStreamBytes is FileInputStreamBytes Setter
-// 文件字节流
-func (r *AlibabaIcbuAnnexUploadAPIRequest) SetFileInputStreamBytes(_fileInputStreamBytes *model.File) error {
-	r._fileInputStreamBytes = _fileInputStreamBytes
-	r.Set("file_input_stream_bytes", _fileInputStreamBytes)
-	return nil
-}
-
-// GetFileInputStreamBytes FileInputStreamBytes Getter
-func (r AlibabaIcbuAnnexUploadAPIRequest) GetFileInputStreamBytes() *model.File {
-	return r._fileInputStreamBytes
-}
-
 // SetSource is Source Setter
 // 来源
 func (r *AlibabaIcbuAnnexUploadAPIRequest) SetSource(_source string) error {
@@ -78,4 +65,17 @@ func (r *AlibabaIcbuAnnexUploadAPIRequest) SetSource(_source string) error {
 // GetSource Source Getter
 func (r AlibabaIcbuAnnexUploadAPIRequest) GetSource() string {
 	return r._source
+}
+
+// SetFileInputStreamBytes is FileInputStreamBytes Setter
+// 文件字节流
+func (r *AlibabaIcbuAnnexUploadAPIRequest) SetFileInputStreamBytes(_fileInputStreamBytes *model.File) error {
+	r._fileInputStreamBytes = _fileInputStreamBytes
+	r.Set("file_input_stream_bytes", _fileInputStreamBytes)
+	return nil
+}
+
+// GetFileInputStreamBytes FileInputStreamBytes Getter
+func (r AlibabaIcbuAnnexUploadAPIRequest) GetFileInputStreamBytes() *model.File {
+	return r._fileInputStreamBytes
 }

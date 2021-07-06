@@ -48,8 +48,6 @@ type AlibabaNlifeB2cItemDetailGetAPIResponseModel struct {
 	SupplierName string `json:"supplier_name,omitempty" xml:"supplier_name,omitempty"`
 	// 商品级别
 	GoodsNo string `json:"goods_no,omitempty" xml:"goods_no,omitempty"`
-	// 结算码是否可变
-	CodeChangeable bool `json:"code_changeable,omitempty" xml:"code_changeable,omitempty"`
 	// 结算码
 	SettleCode string `json:"settle_code,omitempty" xml:"settle_code,omitempty"`
 	// 销售属性
@@ -60,4 +58,6 @@ type AlibabaNlifeB2cItemDetailGetAPIResponseModel struct {
 	CatName string `json:"cat_name,omitempty" xml:"cat_name,omitempty"`
 	// 当前sku库存
 	CurrentInventory string `json:"current_inventory,omitempty" xml:"current_inventory,omitempty"`
+	// 结算码是否可变
+	CodeChangeable bool `json:"code_changeable,omitempty" xml:"code_changeable,omitempty"`
 }

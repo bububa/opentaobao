@@ -12,24 +12,24 @@ import (
 // 组团购场景中创建团购活动
 type TaobaoOpentradeGroupSyncAPIRequest struct {
 	model.Params
+	// 允许开团的淘宝账号列表
+	_allowWhiteList []string
 	// 组团活动开始时间
 	_startTime string
 	// 组团活动结束时间
 	_endTime string
+	// 是否任何账号可开团。whitelist：仅白名单账号可开团  all：任何账号可开团
+	_allowType string
+	// 未成团处理办法，close：系统关单；continue：订单继续下行
+	_failProcess string
 	// 成团有效期，单位为妙
 	_expiration int64
 	// 成团的目标人数
 	_goal int64
 	// 组团类型，0：拼团；1：团购
 	_groupType int64
-	// 是否任何账号可开团。whitelist：仅白名单账号可开团  all：任何账号可开团
-	_allowType string
-	// 允许开团的淘宝账号列表
-	_allowWhiteList []string
 	// 组团类型为团购，可限制团长针对一个商品的开团数量上限
 	_openLimit int64
-	// 未成团处理办法，close：系统关单；continue：订单继续下行
-	_failProcess string
 	// 组团购买的折扣价，单位为分
 	_discountPrice int64
 	// 商品ID
@@ -59,6 +59,19 @@ func (r TaobaoOpentradeGroupSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetAllowWhiteList is AllowWhiteList Setter
+// 允许开团的淘宝账号列表
+func (r *TaobaoOpentradeGroupSyncAPIRequest) SetAllowWhiteList(_allowWhiteList []string) error {
+	r._allowWhiteList = _allowWhiteList
+	r.Set("allow_white_list", _allowWhiteList)
+	return nil
+}
+
+// GetAllowWhiteList AllowWhiteList Getter
+func (r TaobaoOpentradeGroupSyncAPIRequest) GetAllowWhiteList() []string {
+	return r._allowWhiteList
+}
+
 // SetStartTime is StartTime Setter
 // 组团活动开始时间
 func (r *TaobaoOpentradeGroupSyncAPIRequest) SetStartTime(_startTime string) error {
@@ -83,6 +96,32 @@ func (r *TaobaoOpentradeGroupSyncAPIRequest) SetEndTime(_endTime string) error {
 // GetEndTime EndTime Getter
 func (r TaobaoOpentradeGroupSyncAPIRequest) GetEndTime() string {
 	return r._endTime
+}
+
+// SetAllowType is AllowType Setter
+// 是否任何账号可开团。whitelist：仅白名单账号可开团  all：任何账号可开团
+func (r *TaobaoOpentradeGroupSyncAPIRequest) SetAllowType(_allowType string) error {
+	r._allowType = _allowType
+	r.Set("allow_type", _allowType)
+	return nil
+}
+
+// GetAllowType AllowType Getter
+func (r TaobaoOpentradeGroupSyncAPIRequest) GetAllowType() string {
+	return r._allowType
+}
+
+// SetFailProcess is FailProcess Setter
+// 未成团处理办法，close：系统关单；continue：订单继续下行
+func (r *TaobaoOpentradeGroupSyncAPIRequest) SetFailProcess(_failProcess string) error {
+	r._failProcess = _failProcess
+	r.Set("fail_process", _failProcess)
+	return nil
+}
+
+// GetFailProcess FailProcess Getter
+func (r TaobaoOpentradeGroupSyncAPIRequest) GetFailProcess() string {
+	return r._failProcess
 }
 
 // SetExpiration is Expiration Setter
@@ -124,32 +163,6 @@ func (r TaobaoOpentradeGroupSyncAPIRequest) GetGroupType() int64 {
 	return r._groupType
 }
 
-// SetAllowType is AllowType Setter
-// 是否任何账号可开团。whitelist：仅白名单账号可开团  all：任何账号可开团
-func (r *TaobaoOpentradeGroupSyncAPIRequest) SetAllowType(_allowType string) error {
-	r._allowType = _allowType
-	r.Set("allow_type", _allowType)
-	return nil
-}
-
-// GetAllowType AllowType Getter
-func (r TaobaoOpentradeGroupSyncAPIRequest) GetAllowType() string {
-	return r._allowType
-}
-
-// SetAllowWhiteList is AllowWhiteList Setter
-// 允许开团的淘宝账号列表
-func (r *TaobaoOpentradeGroupSyncAPIRequest) SetAllowWhiteList(_allowWhiteList []string) error {
-	r._allowWhiteList = _allowWhiteList
-	r.Set("allow_white_list", _allowWhiteList)
-	return nil
-}
-
-// GetAllowWhiteList AllowWhiteList Getter
-func (r TaobaoOpentradeGroupSyncAPIRequest) GetAllowWhiteList() []string {
-	return r._allowWhiteList
-}
-
 // SetOpenLimit is OpenLimit Setter
 // 组团类型为团购，可限制团长针对一个商品的开团数量上限
 func (r *TaobaoOpentradeGroupSyncAPIRequest) SetOpenLimit(_openLimit int64) error {
@@ -161,19 +174,6 @@ func (r *TaobaoOpentradeGroupSyncAPIRequest) SetOpenLimit(_openLimit int64) erro
 // GetOpenLimit OpenLimit Getter
 func (r TaobaoOpentradeGroupSyncAPIRequest) GetOpenLimit() int64 {
 	return r._openLimit
-}
-
-// SetFailProcess is FailProcess Setter
-// 未成团处理办法，close：系统关单；continue：订单继续下行
-func (r *TaobaoOpentradeGroupSyncAPIRequest) SetFailProcess(_failProcess string) error {
-	r._failProcess = _failProcess
-	r.Set("fail_process", _failProcess)
-	return nil
-}
-
-// GetFailProcess FailProcess Getter
-func (r TaobaoOpentradeGroupSyncAPIRequest) GetFailProcess() string {
-	return r._failProcess
 }
 
 // SetDiscountPrice is DiscountPrice Setter

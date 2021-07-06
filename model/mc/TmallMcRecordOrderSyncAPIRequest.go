@@ -14,16 +14,16 @@ type TmallMcRecordOrderSyncAPIRequest struct {
 	model.Params
 	// 设备编码
 	_deviceCode string
-	// 原价
-	_originPrice int64
-	// 实付价
-	_payPrice int64
 	// 用户openId
 	_openId string
 	// 核销结果
 	_result string
 	// 云码版本号
 	_version string
+	// 原价
+	_originPrice int64
+	// 实付价
+	_payPrice int64
 }
 
 // NewTmallMcRecordOrderSyncRequest 初始化TmallMcRecordOrderSyncAPIRequest对象
@@ -58,32 +58,6 @@ func (r *TmallMcRecordOrderSyncAPIRequest) SetDeviceCode(_deviceCode string) err
 // GetDeviceCode DeviceCode Getter
 func (r TmallMcRecordOrderSyncAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
-}
-
-// SetOriginPrice is OriginPrice Setter
-// 原价
-func (r *TmallMcRecordOrderSyncAPIRequest) SetOriginPrice(_originPrice int64) error {
-	r._originPrice = _originPrice
-	r.Set("origin_price", _originPrice)
-	return nil
-}
-
-// GetOriginPrice OriginPrice Getter
-func (r TmallMcRecordOrderSyncAPIRequest) GetOriginPrice() int64 {
-	return r._originPrice
-}
-
-// SetPayPrice is PayPrice Setter
-// 实付价
-func (r *TmallMcRecordOrderSyncAPIRequest) SetPayPrice(_payPrice int64) error {
-	r._payPrice = _payPrice
-	r.Set("pay_price", _payPrice)
-	return nil
-}
-
-// GetPayPrice PayPrice Getter
-func (r TmallMcRecordOrderSyncAPIRequest) GetPayPrice() int64 {
-	return r._payPrice
 }
 
 // SetOpenId is OpenId Setter
@@ -123,4 +97,30 @@ func (r *TmallMcRecordOrderSyncAPIRequest) SetVersion(_version string) error {
 // GetVersion Version Getter
 func (r TmallMcRecordOrderSyncAPIRequest) GetVersion() string {
 	return r._version
+}
+
+// SetOriginPrice is OriginPrice Setter
+// 原价
+func (r *TmallMcRecordOrderSyncAPIRequest) SetOriginPrice(_originPrice int64) error {
+	r._originPrice = _originPrice
+	r.Set("origin_price", _originPrice)
+	return nil
+}
+
+// GetOriginPrice OriginPrice Getter
+func (r TmallMcRecordOrderSyncAPIRequest) GetOriginPrice() int64 {
+	return r._originPrice
+}
+
+// SetPayPrice is PayPrice Setter
+// 实付价
+func (r *TmallMcRecordOrderSyncAPIRequest) SetPayPrice(_payPrice int64) error {
+	r._payPrice = _payPrice
+	r.Set("pay_price", _payPrice)
+	return nil
+}
+
+// GetPayPrice PayPrice Getter
+func (r TmallMcRecordOrderSyncAPIRequest) GetPayPrice() int64 {
+	return r._payPrice
 }

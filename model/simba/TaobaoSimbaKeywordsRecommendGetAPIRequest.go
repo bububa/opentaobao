@@ -14,18 +14,18 @@ type TaobaoSimbaKeywordsRecommendGetAPIRequest struct {
 	model.Params
 	// 主人昵称
 	_nick string
+	// 相关度
+	_pertinence string
+	// 排序方式: 搜索量 search_volume 市场平均价格 average_price 相关度 relevance 不排序 non 默认为 non
+	_orderBy string
 	// 推广组ID
 	_adgroupId int64
 	// 搜索量,设置此值后返回的就是大于此搜索量的词列表
 	_search int64
-	// 相关度
-	_pertinence string
 	// 返回的每页数据量大小,最大200
 	_pageSize int64
 	// 返回的第几页数据，默认为1
 	_pageNo int64
-	// 排序方式: 搜索量 search_volume 市场平均价格 average_price 相关度 relevance 不排序 non 默认为 non
-	_orderBy string
 }
 
 // NewTaobaoSimbaKeywordsRecommendGetRequest 初始化TaobaoSimbaKeywordsRecommendGetAPIRequest对象
@@ -62,6 +62,32 @@ func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
+// SetPertinence is Pertinence Setter
+// 相关度
+func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetPertinence(_pertinence string) error {
+	r._pertinence = _pertinence
+	r.Set("pertinence", _pertinence)
+	return nil
+}
+
+// GetPertinence Pertinence Getter
+func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetPertinence() string {
+	return r._pertinence
+}
+
+// SetOrderBy is OrderBy Setter
+// 排序方式: 搜索量 search_volume 市场平均价格 average_price 相关度 relevance 不排序 non 默认为 non
+func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetOrderBy(_orderBy string) error {
+	r._orderBy = _orderBy
+	r.Set("order_by", _orderBy)
+	return nil
+}
+
+// GetOrderBy OrderBy Getter
+func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetOrderBy() string {
+	return r._orderBy
+}
+
 // SetAdgroupId is AdgroupId Setter
 // 推广组ID
 func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
@@ -88,19 +114,6 @@ func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetSearch() int64 {
 	return r._search
 }
 
-// SetPertinence is Pertinence Setter
-// 相关度
-func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetPertinence(_pertinence string) error {
-	r._pertinence = _pertinence
-	r.Set("pertinence", _pertinence)
-	return nil
-}
-
-// GetPertinence Pertinence Getter
-func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetPertinence() string {
-	return r._pertinence
-}
-
 // SetPageSize is PageSize Setter
 // 返回的每页数据量大小,最大200
 func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetPageSize(_pageSize int64) error {
@@ -125,17 +138,4 @@ func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetPageNo(_pageNo int64) err
 // GetPageNo PageNo Getter
 func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
-}
-
-// SetOrderBy is OrderBy Setter
-// 排序方式: 搜索量 search_volume 市场平均价格 average_price 相关度 relevance 不排序 non 默认为 non
-func (r *TaobaoSimbaKeywordsRecommendGetAPIRequest) SetOrderBy(_orderBy string) error {
-	r._orderBy = _orderBy
-	r.Set("order_by", _orderBy)
-	return nil
-}
-
-// GetOrderBy OrderBy Getter
-func (r TaobaoSimbaKeywordsRecommendGetAPIRequest) GetOrderBy() string {
-	return r._orderBy
 }

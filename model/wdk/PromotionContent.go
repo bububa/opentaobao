@@ -2,10 +2,10 @@ package wdk
 
 // PromotionContent 结构体
 type PromotionContent struct {
-	// 客户商家编码
-	CustomerMerchantCode string `json:"customer_merchant_code,omitempty" xml:"customer_merchant_code,omitempty"`
 	// sku列表
 	PromotionSkuList []PromotionSku `json:"promotion_sku_list,omitempty" xml:"promotion_sku_list>promotion_sku,omitempty"`
+	// 客户商家编码
+	CustomerMerchantCode string `json:"customer_merchant_code,omitempty" xml:"customer_merchant_code,omitempty"`
 	// 客户编码
 	CustomerCode string `json:"customer_code,omitempty" xml:"customer_code,omitempty"`
 	// 客户门店

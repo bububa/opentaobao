@@ -2,18 +2,14 @@ package scbp
 
 // KeywordResultDto 结构体
 type KeywordResultDto struct {
+	// 关键词所属分组名称列表
+	TagList []string `json:"tag_list,omitempty" xml:"tag_list>string,omitempty"`
 	// 底价，单位元，保留一位小数, 例如3.5表示3.5元
 	BasePrice string `json:"base_price,omitempty" xml:"base_price,omitempty"`
 	// 出价，单位元，保留一位小数, 例如3.5表示3.5元
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
 	// 关键词推广状态,取值stopped和in_promotion
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
-	// 关键词所属分组名称列表
-	TagList []string `json:"tag_list,omitempty" xml:"tag_list>string,omitempty"`
-	// 推广评分星级[0-5]
-	QsStar int64 `json:"qs_star,omitempty" xml:"qs_star,omitempty"`
-	// 和关键词有匹配且处于推广中的产品的个数
-	MatchCount int64 `json:"match_count,omitempty" xml:"match_count,omitempty"`
 	// 关键词
 	Word string `json:"word,omitempty" xml:"word,omitempty"`
 	// 购买竞争度[1-6]
@@ -32,6 +28,10 @@ type KeywordResultDto struct {
 	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
 	// 平均点击花费，单位元，保留两位小数, 例如3.75表示3.75元
 	ClickCostAvg string `json:"click_cost_avg,omitempty" xml:"click_cost_avg,omitempty"`
+	// 推广评分星级[0-5]
+	QsStar int64 `json:"qs_star,omitempty" xml:"qs_star,omitempty"`
+	// 和关键词有匹配且处于推广中的产品的个数
+	MatchCount int64 `json:"match_count,omitempty" xml:"match_count,omitempty"`
 	// 关键词id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 }

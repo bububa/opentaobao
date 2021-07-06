@@ -14,12 +14,12 @@ type AlibabaAlisportsEfspUserwriteoffAPIRequest struct {
 	model.Params
 	// 订单编号
 	_orderNo string
-	// 订单金额
-	_sumAmount int64
 	// 健身房Id
 	_gymId string
 	// 用户支付宝ID
 	_alipayId string
+	// 订单金额
+	_sumAmount int64
 	// 补助金额
 	_subsidyAmount int64
 }
@@ -58,19 +58,6 @@ func (r AlibabaAlisportsEfspUserwriteoffAPIRequest) GetOrderNo() string {
 	return r._orderNo
 }
 
-// SetSumAmount is SumAmount Setter
-// 订单金额
-func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetSumAmount(_sumAmount int64) error {
-	r._sumAmount = _sumAmount
-	r.Set("sum_amount", _sumAmount)
-	return nil
-}
-
-// GetSumAmount SumAmount Getter
-func (r AlibabaAlisportsEfspUserwriteoffAPIRequest) GetSumAmount() int64 {
-	return r._sumAmount
-}
-
 // SetGymId is GymId Setter
 // 健身房Id
 func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetGymId(_gymId string) error {
@@ -95,6 +82,19 @@ func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetAlipayId(_alipayId strin
 // GetAlipayId AlipayId Getter
 func (r AlibabaAlisportsEfspUserwriteoffAPIRequest) GetAlipayId() string {
 	return r._alipayId
+}
+
+// SetSumAmount is SumAmount Setter
+// 订单金额
+func (r *AlibabaAlisportsEfspUserwriteoffAPIRequest) SetSumAmount(_sumAmount int64) error {
+	r._sumAmount = _sumAmount
+	r.Set("sum_amount", _sumAmount)
+	return nil
+}
+
+// GetSumAmount SumAmount Getter
+func (r AlibabaAlisportsEfspUserwriteoffAPIRequest) GetSumAmount() int64 {
+	return r._sumAmount
 }
 
 // SetSubsidyAmount is SubsidyAmount Setter

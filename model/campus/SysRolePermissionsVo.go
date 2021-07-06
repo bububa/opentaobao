@@ -2,8 +2,8 @@ package campus
 
 // SysRolePermissionsVo 结构体
 type SysRolePermissionsVo struct {
-	// id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// permissions
+	Permissions []TreeNodeDto `json:"permissions,omitempty" xml:"permissions>tree_node_dto,omitempty"`
 	// 角色key
 	RoleKey string `json:"role_key,omitempty" xml:"role_key,omitempty"`
 	// 租户
@@ -20,6 +20,6 @@ type SysRolePermissionsVo struct {
 	RoleType string `json:"role_type,omitempty" xml:"role_type,omitempty"`
 	// 角色描述
 	RoleDesc string `json:"role_desc,omitempty" xml:"role_desc,omitempty"`
-	// permissions
-	Permissions []TreeNodeDto `json:"permissions,omitempty" xml:"permissions>tree_node_dto,omitempty"`
+	// id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 }

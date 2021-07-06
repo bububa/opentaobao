@@ -2,8 +2,6 @@ package wdk
 
 // OrderPredict 结构体
 type OrderPredict struct {
-	// 实际总单量
-	ActualOrderQuantity int64 `json:"actual_order_quantity,omitempty" xml:"actual_order_quantity,omitempty"`
 	// 分渠道实际单量，JSON结构
 	ChannelActualQuantity string `json:"channel_actual_quantity,omitempty" xml:"channel_actual_quantity,omitempty"`
 	// 分渠道预测单量，JSON结构
@@ -14,8 +12,6 @@ type OrderPredict struct {
 	DeliveryStationName string `json:"delivery_station_name,omitempty" xml:"delivery_station_name,omitempty"`
 	// 预测日期
 	PredictDate string `json:"predict_date,omitempty" xml:"predict_date,omitempty"`
-	// 预测总单量
-	PredictOrderQuantity int64 `json:"predict_order_quantity,omitempty" xml:"predict_order_quantity,omitempty"`
 	// 子公司编码
 	SubCompanyCode string `json:"sub_company_code,omitempty" xml:"sub_company_code,omitempty"`
 	// 子公司名称
@@ -26,4 +22,8 @@ type OrderPredict struct {
 	WarehouseCode string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
 	// 门店名称
 	WarehouseName string `json:"warehouse_name,omitempty" xml:"warehouse_name,omitempty"`
+	// 实际总单量
+	ActualOrderQuantity int64 `json:"actual_order_quantity,omitempty" xml:"actual_order_quantity,omitempty"`
+	// 预测总单量
+	PredictOrderQuantity int64 `json:"predict_order_quantity,omitempty" xml:"predict_order_quantity,omitempty"`
 }

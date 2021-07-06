@@ -12,10 +12,10 @@ import (
 // 门店和子门店关系删除
 type TaobaoPlaceStorerelatesubDeleteAPIRequest struct {
 	model.Params
-	// 门店Id
-	_storeId int64
 	// 子门店id
 	_subStoreIds []int64
+	// 门店Id
+	_storeId int64
 }
 
 // NewTaobaoPlaceStorerelatesubDeleteRequest 初始化TaobaoPlaceStorerelatesubDeleteAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoPlaceStorerelatesubDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetStoreId is StoreId Setter
-// 门店Id
-func (r *TaobaoPlaceStorerelatesubDeleteAPIRequest) SetStoreId(_storeId int64) error {
-	r._storeId = _storeId
-	r.Set("store_id", _storeId)
-	return nil
-}
-
-// GetStoreId StoreId Getter
-func (r TaobaoPlaceStorerelatesubDeleteAPIRequest) GetStoreId() int64 {
-	return r._storeId
-}
-
 // SetSubStoreIds is SubStoreIds Setter
 // 子门店id
 func (r *TaobaoPlaceStorerelatesubDeleteAPIRequest) SetSubStoreIds(_subStoreIds []int64) error {
@@ -63,4 +50,17 @@ func (r *TaobaoPlaceStorerelatesubDeleteAPIRequest) SetSubStoreIds(_subStoreIds 
 // GetSubStoreIds SubStoreIds Getter
 func (r TaobaoPlaceStorerelatesubDeleteAPIRequest) GetSubStoreIds() []int64 {
 	return r._subStoreIds
+}
+
+// SetStoreId is StoreId Setter
+// 门店Id
+func (r *TaobaoPlaceStorerelatesubDeleteAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// GetStoreId StoreId Getter
+func (r TaobaoPlaceStorerelatesubDeleteAPIRequest) GetStoreId() int64 {
+	return r._storeId
 }

@@ -2,8 +2,6 @@ package wdk
 
 // UserSyncInfo 结构体
 type UserSyncInfo struct {
-	// 用户Id
-	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 手机号
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
 	// 会员名
@@ -16,4 +14,6 @@ type UserSyncInfo struct {
 	Gender string `json:"gender,omitempty" xml:"gender,omitempty"`
 	// 操作类型 （create/update/delete）
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
+	// 用户Id
+	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 }

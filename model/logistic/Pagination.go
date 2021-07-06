@@ -4,8 +4,6 @@ package logistic
 type Pagination struct {
 	// 数据列表
 	Results []ResourceGroupDto `json:"results,omitempty" xml:"results>resource_group_dto,omitempty"`
-	// 总数
-	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// from外部资源编码
 	FromOrgResourceCode string `json:"from_org_resource_code,omitempty" xml:"from_org_resource_code,omitempty"`
 	// from资源来源
@@ -32,4 +30,6 @@ type Pagination struct {
 	ToResourceName string `json:"to_resource_name,omitempty" xml:"to_resource_name,omitempty"`
 	// to资源类型
 	ToResourceType string `json:"to_resource_type,omitempty" xml:"to_resource_type,omitempty"`
+	// 总数
+	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 }

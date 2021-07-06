@@ -2,8 +2,6 @@ package alicom
 
 // OrderStatusNotifyRequest 结构体
 type OrderStatusNotifyRequest struct {
-	// 订单状态
-	Orderstatus bool `json:"orderstatus,omitempty" xml:"orderstatus,omitempty"`
 	// 错误描述
 	ErrDesc string `json:"err_desc,omitempty" xml:"err_desc,omitempty"`
 	// 卖家id
@@ -16,4 +14,6 @@ type OrderStatusNotifyRequest struct {
 	BizOrderId string `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 外部流水号
 	OutSerialNumber string `json:"out_serial_number,omitempty" xml:"out_serial_number,omitempty"`
+	// 订单状态
+	Orderstatus bool `json:"orderstatus,omitempty" xml:"orderstatus,omitempty"`
 }

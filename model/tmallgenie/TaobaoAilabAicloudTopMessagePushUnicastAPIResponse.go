@@ -22,8 +22,8 @@ type TaobaoAilabAicloudTopMessagePushUnicastAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 本次调用trace
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
-	// 调用结果code 0:成功 非0：失败
-	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 	// 调用结果描述
 	RetMsg string `json:"ret_msg,omitempty" xml:"ret_msg,omitempty"`
+	// 调用结果code 0:成功 非0：失败
+	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 }

@@ -12,12 +12,8 @@ import (
 // 电子凭证平台冲正接口
 type TaobaoVmarketEticketReverseAPIRequest struct {
 	model.Params
-	// 进行验码的电子凭证订单的订单ID
-	_orderId int64
 	// 冲正的码，只支持单个码
 	_reverseCode string
-	// 冲正份数（必须是和被冲正的核销记录的份数一致）
-	_reverseNum int64
 	// 需要冲正的核销记录对应核销流水号（对应的核销操作时候传递的自定义流水号）
 	_consumeSecialNum string
 	// 所有冲正后需要重新生成的码和对应的次数。码和次数之间用英文冒号分隔，多个码之间用英文逗号分隔。如果冲正后不需要重新生成码，留空
@@ -26,10 +22,14 @@ type TaobaoVmarketEticketReverseAPIRequest struct {
 	_qrImages string
 	// 安全验证token，需要和该订单发码通知中的token一致
 	_token string
-	// 码商ID，是码商的话必须传递，如果是信任卖家不要传
-	_codemerchantId int64
 	// 机具id，如果是码商必须传，如果是信任卖家不要传
 	_posid string
+	// 进行验码的电子凭证订单的订单ID
+	_orderId int64
+	// 冲正份数（必须是和被冲正的核销记录的份数一致）
+	_reverseNum int64
+	// 码商ID，是码商的话必须传递，如果是信任卖家不要传
+	_codemerchantId int64
 }
 
 // NewTaobaoVmarketEticketReverseRequest 初始化TaobaoVmarketEticketReverseAPIRequest对象
@@ -53,19 +53,6 @@ func (r TaobaoVmarketEticketReverseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetOrderId is OrderId Setter
-// 进行验码的电子凭证订单的订单ID
-func (r *TaobaoVmarketEticketReverseAPIRequest) SetOrderId(_orderId int64) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
-	return nil
-}
-
-// GetOrderId OrderId Getter
-func (r TaobaoVmarketEticketReverseAPIRequest) GetOrderId() int64 {
-	return r._orderId
-}
-
 // SetReverseCode is ReverseCode Setter
 // 冲正的码，只支持单个码
 func (r *TaobaoVmarketEticketReverseAPIRequest) SetReverseCode(_reverseCode string) error {
@@ -77,19 +64,6 @@ func (r *TaobaoVmarketEticketReverseAPIRequest) SetReverseCode(_reverseCode stri
 // GetReverseCode ReverseCode Getter
 func (r TaobaoVmarketEticketReverseAPIRequest) GetReverseCode() string {
 	return r._reverseCode
-}
-
-// SetReverseNum is ReverseNum Setter
-// 冲正份数（必须是和被冲正的核销记录的份数一致）
-func (r *TaobaoVmarketEticketReverseAPIRequest) SetReverseNum(_reverseNum int64) error {
-	r._reverseNum = _reverseNum
-	r.Set("reverse_num", _reverseNum)
-	return nil
-}
-
-// GetReverseNum ReverseNum Getter
-func (r TaobaoVmarketEticketReverseAPIRequest) GetReverseNum() int64 {
-	return r._reverseNum
 }
 
 // SetConsumeSecialNum is ConsumeSecialNum Setter
@@ -144,19 +118,6 @@ func (r TaobaoVmarketEticketReverseAPIRequest) GetToken() string {
 	return r._token
 }
 
-// SetCodemerchantId is CodemerchantId Setter
-// 码商ID，是码商的话必须传递，如果是信任卖家不要传
-func (r *TaobaoVmarketEticketReverseAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
-	r._codemerchantId = _codemerchantId
-	r.Set("codemerchant_id", _codemerchantId)
-	return nil
-}
-
-// GetCodemerchantId CodemerchantId Getter
-func (r TaobaoVmarketEticketReverseAPIRequest) GetCodemerchantId() int64 {
-	return r._codemerchantId
-}
-
 // SetPosid is Posid Setter
 // 机具id，如果是码商必须传，如果是信任卖家不要传
 func (r *TaobaoVmarketEticketReverseAPIRequest) SetPosid(_posid string) error {
@@ -168,4 +129,43 @@ func (r *TaobaoVmarketEticketReverseAPIRequest) SetPosid(_posid string) error {
 // GetPosid Posid Getter
 func (r TaobaoVmarketEticketReverseAPIRequest) GetPosid() string {
 	return r._posid
+}
+
+// SetOrderId is OrderId Setter
+// 进行验码的电子凭证订单的订单ID
+func (r *TaobaoVmarketEticketReverseAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// GetOrderId OrderId Getter
+func (r TaobaoVmarketEticketReverseAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}
+
+// SetReverseNum is ReverseNum Setter
+// 冲正份数（必须是和被冲正的核销记录的份数一致）
+func (r *TaobaoVmarketEticketReverseAPIRequest) SetReverseNum(_reverseNum int64) error {
+	r._reverseNum = _reverseNum
+	r.Set("reverse_num", _reverseNum)
+	return nil
+}
+
+// GetReverseNum ReverseNum Getter
+func (r TaobaoVmarketEticketReverseAPIRequest) GetReverseNum() int64 {
+	return r._reverseNum
+}
+
+// SetCodemerchantId is CodemerchantId Setter
+// 码商ID，是码商的话必须传递，如果是信任卖家不要传
+func (r *TaobaoVmarketEticketReverseAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
+	r._codemerchantId = _codemerchantId
+	r.Set("codemerchant_id", _codemerchantId)
+	return nil
+}
+
+// GetCodemerchantId CodemerchantId Getter
+func (r TaobaoVmarketEticketReverseAPIRequest) GetCodemerchantId() int64 {
+	return r._codemerchantId
 }

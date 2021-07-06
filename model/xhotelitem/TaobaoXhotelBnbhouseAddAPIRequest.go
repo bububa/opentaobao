@@ -12,6 +12,8 @@ import (
 // 添加和更新民宿门店的信息
 type TaobaoXhotelBnbhouseAddAPIRequest struct {
 	model.Params
+	// 民宿门店添加
+	_pictures []BnbPictureDto
 	// 外部房东id
 	_outOwnerId string
 	// 对接系统商名称：可为空不要乱填，需要申请后使用
@@ -22,14 +24,6 @@ type TaobaoXhotelBnbhouseAddAPIRequest struct {
 	_name string
 	// 门店英文名称
 	_nameE string
-	// 门店属性 1 个人房源 2 城市公寓 3 乡村民宿等
-	_attributes int64
-	// 门店类型，详见“房源类型list
-	_productType int64
-	// 有无资质执照 0 无资质 1有资质
-	_hasLicense int64
-	// 面积大小
-	_houseSize int64
 	// 楼层
 	_floors string
 	// 门店简介
@@ -40,46 +34,52 @@ type TaobaoXhotelBnbhouseAddAPIRequest struct {
 	_brand string
 	// 开业时间，格式为2015-01-01
 	_openingTime string
-	// 装修等级 1 精装 2普通 3简装
-	_decorateLevel int64
 	// 装修时间，格式为2015-01-01
 	_decorateTime string
-	// 装修风格，详见装修风格枚举表
-	_decorateStyle int64
-	// 风景类型，详见风景类型枚举表
-	_scenicFeature int64
-	// 房型状态。0:正常，-1:删除，-2:停售
-	_status *model.File
 	// 联系方式。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886
 	_tel string
 	// 真实联系方式
 	_realTel string
 	// 结算过程中的结算币种符合，如需对接请联系飞猪技术支持，请谨慎使用
 	_settlementCurrency string
-	// 民宿门店添加
-	_pictures []BnbPictureDto
 	// 门店标签 标签信息，逗号(,)分隔
 	_tags string
-	// 是否使用实拍图片 0不使用 1使用
-	_isUseShootImage int64
 	// 视频地址
 	_videoUrl string
+	// 入住须知
+	_checkInNotes string
+	// 详见“允许活动”list 12,32,33,
+	_activitiesAllowed string
+	// 门店属性 1 个人房源 2 城市公寓 3 乡村民宿等
+	_attributes int64
+	// 门店类型，详见“房源类型list
+	_productType int64
+	// 有无资质执照 0 无资质 1有资质
+	_hasLicense int64
+	// 面积大小
+	_houseSize int64
+	// 装修等级 1 精装 2普通 3简装
+	_decorateLevel int64
+	// 装修风格，详见装修风格枚举表
+	_decorateStyle int64
+	// 风景类型，详见风景类型枚举表
+	_scenicFeature int64
+	// 房型状态。0:正常，-1:删除，-2:停售
+	_status *model.File
+	// 是否使用实拍图片 0不使用 1使用
+	_isUseShootImage int64
 	// 是否有前台 0没有 1有
 	_hasFrontDesk int64
 	// 位置信息
 	_location *BnbLocationDto
 	// 入住要求&附加信息
 	_bnbBookingTime *BnbBookingTimeDto
-	// 入住须知
-	_checkInNotes string
 	// 可接待客人性别 0：不限制，1：只限男性，2：只限女性'
 	_guestGender int64
 	// 可接待客人年龄情况：是否接待儿童、老人；成年人必接待，详见“可接待客人”list
 	_guestAge int64
 	// 是否可接待外宾 0不接待 1接待
 	_receiveForeigners int64
-	// 详见“允许活动”list 12,32,33,
-	_activitiesAllowed string
 	// 可加床数
 	_extraBedsNum int64
 	// 加人收费信息
@@ -105,6 +105,19 @@ func (r TaobaoXhotelBnbhouseAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetPictures is Pictures Setter
+// 民宿门店添加
+func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetPictures(_pictures []BnbPictureDto) error {
+	r._pictures = _pictures
+	r.Set("pictures", _pictures)
+	return nil
+}
+
+// GetPictures Pictures Getter
+func (r TaobaoXhotelBnbhouseAddAPIRequest) GetPictures() []BnbPictureDto {
+	return r._pictures
 }
 
 // SetOutOwnerId is OutOwnerId Setter
@@ -172,58 +185,6 @@ func (r TaobaoXhotelBnbhouseAddAPIRequest) GetNameE() string {
 	return r._nameE
 }
 
-// SetAttributes is Attributes Setter
-// 门店属性 1 个人房源 2 城市公寓 3 乡村民宿等
-func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetAttributes(_attributes int64) error {
-	r._attributes = _attributes
-	r.Set("attributes", _attributes)
-	return nil
-}
-
-// GetAttributes Attributes Getter
-func (r TaobaoXhotelBnbhouseAddAPIRequest) GetAttributes() int64 {
-	return r._attributes
-}
-
-// SetProductType is ProductType Setter
-// 门店类型，详见“房源类型list
-func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetProductType(_productType int64) error {
-	r._productType = _productType
-	r.Set("product_type", _productType)
-	return nil
-}
-
-// GetProductType ProductType Getter
-func (r TaobaoXhotelBnbhouseAddAPIRequest) GetProductType() int64 {
-	return r._productType
-}
-
-// SetHasLicense is HasLicense Setter
-// 有无资质执照 0 无资质 1有资质
-func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetHasLicense(_hasLicense int64) error {
-	r._hasLicense = _hasLicense
-	r.Set("has_license", _hasLicense)
-	return nil
-}
-
-// GetHasLicense HasLicense Getter
-func (r TaobaoXhotelBnbhouseAddAPIRequest) GetHasLicense() int64 {
-	return r._hasLicense
-}
-
-// SetHouseSize is HouseSize Setter
-// 面积大小
-func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetHouseSize(_houseSize int64) error {
-	r._houseSize = _houseSize
-	r.Set("house_size", _houseSize)
-	return nil
-}
-
-// GetHouseSize HouseSize Getter
-func (r TaobaoXhotelBnbhouseAddAPIRequest) GetHouseSize() int64 {
-	return r._houseSize
-}
-
 // SetFloors is Floors Setter
 // 楼层
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetFloors(_floors string) error {
@@ -289,19 +250,6 @@ func (r TaobaoXhotelBnbhouseAddAPIRequest) GetOpeningTime() string {
 	return r._openingTime
 }
 
-// SetDecorateLevel is DecorateLevel Setter
-// 装修等级 1 精装 2普通 3简装
-func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDecorateLevel(_decorateLevel int64) error {
-	r._decorateLevel = _decorateLevel
-	r.Set("decorate_level", _decorateLevel)
-	return nil
-}
-
-// GetDecorateLevel DecorateLevel Getter
-func (r TaobaoXhotelBnbhouseAddAPIRequest) GetDecorateLevel() int64 {
-	return r._decorateLevel
-}
-
 // SetDecorateTime is DecorateTime Setter
 // 装修时间，格式为2015-01-01
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDecorateTime(_decorateTime string) error {
@@ -313,45 +261,6 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDecorateTime(_decorateTime string
 // GetDecorateTime DecorateTime Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetDecorateTime() string {
 	return r._decorateTime
-}
-
-// SetDecorateStyle is DecorateStyle Setter
-// 装修风格，详见装修风格枚举表
-func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDecorateStyle(_decorateStyle int64) error {
-	r._decorateStyle = _decorateStyle
-	r.Set("decorate_style", _decorateStyle)
-	return nil
-}
-
-// GetDecorateStyle DecorateStyle Getter
-func (r TaobaoXhotelBnbhouseAddAPIRequest) GetDecorateStyle() int64 {
-	return r._decorateStyle
-}
-
-// SetScenicFeature is ScenicFeature Setter
-// 风景类型，详见风景类型枚举表
-func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetScenicFeature(_scenicFeature int64) error {
-	r._scenicFeature = _scenicFeature
-	r.Set("scenic_feature", _scenicFeature)
-	return nil
-}
-
-// GetScenicFeature ScenicFeature Getter
-func (r TaobaoXhotelBnbhouseAddAPIRequest) GetScenicFeature() int64 {
-	return r._scenicFeature
-}
-
-// SetStatus is Status Setter
-// 房型状态。0:正常，-1:删除，-2:停售
-func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetStatus(_status *model.File) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TaobaoXhotelBnbhouseAddAPIRequest) GetStatus() *model.File {
-	return r._status
 }
 
 // SetTel is Tel Setter
@@ -393,19 +302,6 @@ func (r TaobaoXhotelBnbhouseAddAPIRequest) GetSettlementCurrency() string {
 	return r._settlementCurrency
 }
 
-// SetPictures is Pictures Setter
-// 民宿门店添加
-func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetPictures(_pictures []BnbPictureDto) error {
-	r._pictures = _pictures
-	r.Set("pictures", _pictures)
-	return nil
-}
-
-// GetPictures Pictures Getter
-func (r TaobaoXhotelBnbhouseAddAPIRequest) GetPictures() []BnbPictureDto {
-	return r._pictures
-}
-
 // SetTags is Tags Setter
 // 门店标签 标签信息，逗号(,)分隔
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetTags(_tags string) error {
@@ -419,19 +315,6 @@ func (r TaobaoXhotelBnbhouseAddAPIRequest) GetTags() string {
 	return r._tags
 }
 
-// SetIsUseShootImage is IsUseShootImage Setter
-// 是否使用实拍图片 0不使用 1使用
-func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetIsUseShootImage(_isUseShootImage int64) error {
-	r._isUseShootImage = _isUseShootImage
-	r.Set("is_use_shoot_image", _isUseShootImage)
-	return nil
-}
-
-// GetIsUseShootImage IsUseShootImage Getter
-func (r TaobaoXhotelBnbhouseAddAPIRequest) GetIsUseShootImage() int64 {
-	return r._isUseShootImage
-}
-
 // SetVideoUrl is VideoUrl Setter
 // 视频地址
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetVideoUrl(_videoUrl string) error {
@@ -443,6 +326,149 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetVideoUrl(_videoUrl string) error 
 // GetVideoUrl VideoUrl Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetVideoUrl() string {
 	return r._videoUrl
+}
+
+// SetCheckInNotes is CheckInNotes Setter
+// 入住须知
+func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetCheckInNotes(_checkInNotes string) error {
+	r._checkInNotes = _checkInNotes
+	r.Set("check_in_notes", _checkInNotes)
+	return nil
+}
+
+// GetCheckInNotes CheckInNotes Getter
+func (r TaobaoXhotelBnbhouseAddAPIRequest) GetCheckInNotes() string {
+	return r._checkInNotes
+}
+
+// SetActivitiesAllowed is ActivitiesAllowed Setter
+// 详见“允许活动”list 12,32,33,
+func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetActivitiesAllowed(_activitiesAllowed string) error {
+	r._activitiesAllowed = _activitiesAllowed
+	r.Set("activities_allowed", _activitiesAllowed)
+	return nil
+}
+
+// GetActivitiesAllowed ActivitiesAllowed Getter
+func (r TaobaoXhotelBnbhouseAddAPIRequest) GetActivitiesAllowed() string {
+	return r._activitiesAllowed
+}
+
+// SetAttributes is Attributes Setter
+// 门店属性 1 个人房源 2 城市公寓 3 乡村民宿等
+func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetAttributes(_attributes int64) error {
+	r._attributes = _attributes
+	r.Set("attributes", _attributes)
+	return nil
+}
+
+// GetAttributes Attributes Getter
+func (r TaobaoXhotelBnbhouseAddAPIRequest) GetAttributes() int64 {
+	return r._attributes
+}
+
+// SetProductType is ProductType Setter
+// 门店类型，详见“房源类型list
+func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetProductType(_productType int64) error {
+	r._productType = _productType
+	r.Set("product_type", _productType)
+	return nil
+}
+
+// GetProductType ProductType Getter
+func (r TaobaoXhotelBnbhouseAddAPIRequest) GetProductType() int64 {
+	return r._productType
+}
+
+// SetHasLicense is HasLicense Setter
+// 有无资质执照 0 无资质 1有资质
+func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetHasLicense(_hasLicense int64) error {
+	r._hasLicense = _hasLicense
+	r.Set("has_license", _hasLicense)
+	return nil
+}
+
+// GetHasLicense HasLicense Getter
+func (r TaobaoXhotelBnbhouseAddAPIRequest) GetHasLicense() int64 {
+	return r._hasLicense
+}
+
+// SetHouseSize is HouseSize Setter
+// 面积大小
+func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetHouseSize(_houseSize int64) error {
+	r._houseSize = _houseSize
+	r.Set("house_size", _houseSize)
+	return nil
+}
+
+// GetHouseSize HouseSize Getter
+func (r TaobaoXhotelBnbhouseAddAPIRequest) GetHouseSize() int64 {
+	return r._houseSize
+}
+
+// SetDecorateLevel is DecorateLevel Setter
+// 装修等级 1 精装 2普通 3简装
+func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDecorateLevel(_decorateLevel int64) error {
+	r._decorateLevel = _decorateLevel
+	r.Set("decorate_level", _decorateLevel)
+	return nil
+}
+
+// GetDecorateLevel DecorateLevel Getter
+func (r TaobaoXhotelBnbhouseAddAPIRequest) GetDecorateLevel() int64 {
+	return r._decorateLevel
+}
+
+// SetDecorateStyle is DecorateStyle Setter
+// 装修风格，详见装修风格枚举表
+func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetDecorateStyle(_decorateStyle int64) error {
+	r._decorateStyle = _decorateStyle
+	r.Set("decorate_style", _decorateStyle)
+	return nil
+}
+
+// GetDecorateStyle DecorateStyle Getter
+func (r TaobaoXhotelBnbhouseAddAPIRequest) GetDecorateStyle() int64 {
+	return r._decorateStyle
+}
+
+// SetScenicFeature is ScenicFeature Setter
+// 风景类型，详见风景类型枚举表
+func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetScenicFeature(_scenicFeature int64) error {
+	r._scenicFeature = _scenicFeature
+	r.Set("scenic_feature", _scenicFeature)
+	return nil
+}
+
+// GetScenicFeature ScenicFeature Getter
+func (r TaobaoXhotelBnbhouseAddAPIRequest) GetScenicFeature() int64 {
+	return r._scenicFeature
+}
+
+// SetStatus is Status Setter
+// 房型状态。0:正常，-1:删除，-2:停售
+func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetStatus(_status *model.File) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TaobaoXhotelBnbhouseAddAPIRequest) GetStatus() *model.File {
+	return r._status
+}
+
+// SetIsUseShootImage is IsUseShootImage Setter
+// 是否使用实拍图片 0不使用 1使用
+func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetIsUseShootImage(_isUseShootImage int64) error {
+	r._isUseShootImage = _isUseShootImage
+	r.Set("is_use_shoot_image", _isUseShootImage)
+	return nil
+}
+
+// GetIsUseShootImage IsUseShootImage Getter
+func (r TaobaoXhotelBnbhouseAddAPIRequest) GetIsUseShootImage() int64 {
+	return r._isUseShootImage
 }
 
 // SetHasFrontDesk is HasFrontDesk Setter
@@ -484,19 +510,6 @@ func (r TaobaoXhotelBnbhouseAddAPIRequest) GetBnbBookingTime() *BnbBookingTimeDt
 	return r._bnbBookingTime
 }
 
-// SetCheckInNotes is CheckInNotes Setter
-// 入住须知
-func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetCheckInNotes(_checkInNotes string) error {
-	r._checkInNotes = _checkInNotes
-	r.Set("check_in_notes", _checkInNotes)
-	return nil
-}
-
-// GetCheckInNotes CheckInNotes Getter
-func (r TaobaoXhotelBnbhouseAddAPIRequest) GetCheckInNotes() string {
-	return r._checkInNotes
-}
-
 // SetGuestGender is GuestGender Setter
 // 可接待客人性别 0：不限制，1：只限男性，2：只限女性'
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetGuestGender(_guestGender int64) error {
@@ -534,19 +547,6 @@ func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetReceiveForeigners(_receiveForeign
 // GetReceiveForeigners ReceiveForeigners Getter
 func (r TaobaoXhotelBnbhouseAddAPIRequest) GetReceiveForeigners() int64 {
 	return r._receiveForeigners
-}
-
-// SetActivitiesAllowed is ActivitiesAllowed Setter
-// 详见“允许活动”list 12,32,33,
-func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetActivitiesAllowed(_activitiesAllowed string) error {
-	r._activitiesAllowed = _activitiesAllowed
-	r.Set("activities_allowed", _activitiesAllowed)
-	return nil
-}
-
-// GetActivitiesAllowed ActivitiesAllowed Getter
-func (r TaobaoXhotelBnbhouseAddAPIRequest) GetActivitiesAllowed() string {
-	return r._activitiesAllowed
 }
 
 // SetExtraBedsNum is ExtraBedsNum Setter

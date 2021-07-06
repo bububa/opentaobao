@@ -14,14 +14,14 @@ type TaobaoKoubeiTribeOpenOrderPageAPIRequest struct {
 	model.Params
 	// 订单状态；ALL（全部），WAIT_PAY（代付款），WAIT_CONSUME（代消费）
 	_orderStatus string
-	// 每页大小
-	_pageSize int64
-	// 起始页
-	_pageNo int64
 	// 数据集Id
 	_dataSetId string
 	// 用户openId
 	_openId string
+	// 每页大小
+	_pageSize int64
+	// 起始页
+	_pageNo int64
 }
 
 // NewTaobaoKoubeiTribeOpenOrderPageRequest 初始化TaobaoKoubeiTribeOpenOrderPageAPIRequest对象
@@ -58,32 +58,6 @@ func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetOrderStatus() string {
 	return r._orderStatus
 }
 
-// SetPageSize is PageSize Setter
-// 每页大小
-func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetPageNo is PageNo Setter
-// 起始页
-func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetPageNo() int64 {
-	return r._pageNo
-}
-
 // SetDataSetId is DataSetId Setter
 // 数据集Id
 func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetDataSetId(_dataSetId string) error {
@@ -108,4 +82,30 @@ func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetOpenId(_openId string) err
 // GetOpenId OpenId Getter
 func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetOpenId() string {
 	return r._openId
+}
+
+// SetPageSize is PageSize Setter
+// 每页大小
+func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetPageNo is PageNo Setter
+// 起始页
+func (r *TaobaoKoubeiTribeOpenOrderPageAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r TaobaoKoubeiTribeOpenOrderPageAPIRequest) GetPageNo() int64 {
+	return r._pageNo
 }

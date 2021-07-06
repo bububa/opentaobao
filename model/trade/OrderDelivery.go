@@ -2,8 +2,6 @@ package trade
 
 // OrderDelivery 结构体
 type OrderDelivery struct {
-	// 配送费用金额
-	DeliveryFee int64 `json:"delivery_fee,omitempty" xml:"delivery_fee,omitempty"`
 	// 配送开始时间
 	DeliveryStartTime string `json:"delivery_start_time,omitempty" xml:"delivery_start_time,omitempty"`
 	// 收货人姓名
@@ -22,4 +20,6 @@ type OrderDelivery struct {
 	DelivererPhone string `json:"deliverer_phone,omitempty" xml:"deliverer_phone,omitempty"`
 	// 配送员姓名
 	DelivererName string `json:"deliverer_name,omitempty" xml:"deliverer_name,omitempty"`
+	// 配送费用金额
+	DeliveryFee int64 `json:"delivery_fee,omitempty" xml:"delivery_fee,omitempty"`
 }

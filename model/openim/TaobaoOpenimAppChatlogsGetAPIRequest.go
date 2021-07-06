@@ -12,14 +12,14 @@ import (
 // 查询openim应用的聊天记录
 type TaobaoOpenimAppChatlogsGetAPIRequest struct {
 	model.Params
+	// 迭代key
+	_next string
 	// 查询结束时间。UTC时间。精度到秒
 	_beg int64
 	// 查询结束时间。UTC时间。精度到秒
 	_end int64
 	// 查询最大条数
 	_count int64
-	// 迭代key
-	_next string
 }
 
 // NewTaobaoOpenimAppChatlogsGetRequest 初始化TaobaoOpenimAppChatlogsGetAPIRequest对象
@@ -41,6 +41,19 @@ func (r TaobaoOpenimAppChatlogsGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetNext is Next Setter
+// 迭代key
+func (r *TaobaoOpenimAppChatlogsGetAPIRequest) SetNext(_next string) error {
+	r._next = _next
+	r.Set("next", _next)
+	return nil
+}
+
+// GetNext Next Getter
+func (r TaobaoOpenimAppChatlogsGetAPIRequest) GetNext() string {
+	return r._next
 }
 
 // SetBeg is Beg Setter
@@ -80,17 +93,4 @@ func (r *TaobaoOpenimAppChatlogsGetAPIRequest) SetCount(_count int64) error {
 // GetCount Count Getter
 func (r TaobaoOpenimAppChatlogsGetAPIRequest) GetCount() int64 {
 	return r._count
-}
-
-// SetNext is Next Setter
-// 迭代key
-func (r *TaobaoOpenimAppChatlogsGetAPIRequest) SetNext(_next string) error {
-	r._next = _next
-	r.Set("next", _next)
-	return nil
-}
-
-// GetNext Next Getter
-func (r TaobaoOpenimAppChatlogsGetAPIRequest) GetNext() string {
-	return r._next
 }

@@ -12,26 +12,12 @@ import (
 // 创建物流订单，并发货。
 type TaobaoLogisticsConsignOrderCreateandsendAPIRequest struct {
 	model.Params
-	// 用户ID
-	_userId int64
-	// 订单来源，值选择：30
-	_orderSource int64
-	// 订单类型，值固定选择：30
-	_orderType int64
-	// 物流订单物流类型，值固定选择：2
-	_logisType int64
-	// 物流公司ID
-	_companyId int64
-	// 交易流水号，淘外订单号或者商家内部交易流水号
-	_tradeId int64
 	// 运单号
 	_mailNo string
 	// 费用承担方式 1买家承担运费 2卖家承担运费
 	_shipping string
 	// 发件人名称
 	_sName string
-	// 发件人区域ID
-	_sAreaId int64
 	// 发件人街道地址
 	_sAddress string
 	// 发件人出编
@@ -48,8 +34,6 @@ type TaobaoLogisticsConsignOrderCreateandsendAPIRequest struct {
 	_sDistName string
 	// 收件人名称
 	_rName string
-	// 收件人区域ID
-	_rAreaId int64
 	// 收件人街道地址
 	_rAddress string
 	// 收件人邮编
@@ -66,6 +50,22 @@ type TaobaoLogisticsConsignOrderCreateandsendAPIRequest struct {
 	_rDistName string
 	// 物品的json数据。
 	_itemJsonString string
+	// 用户ID
+	_userId int64
+	// 订单来源，值选择：30
+	_orderSource int64
+	// 订单类型，值固定选择：30
+	_orderType int64
+	// 物流订单物流类型，值固定选择：2
+	_logisType int64
+	// 物流公司ID
+	_companyId int64
+	// 交易流水号，淘外订单号或者商家内部交易流水号
+	_tradeId int64
+	// 发件人区域ID
+	_sAreaId int64
+	// 收件人区域ID
+	_rAreaId int64
 }
 
 // NewTaobaoLogisticsConsignOrderCreateandsendRequest 初始化TaobaoLogisticsConsignOrderCreateandsendAPIRequest对象
@@ -87,84 +87,6 @@ func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetApiParams() url.V
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetUserId is UserId Setter
-// 用户ID
-func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetUserId(_userId int64) error {
-	r._userId = _userId
-	r.Set("user_id", _userId)
-	return nil
-}
-
-// GetUserId UserId Getter
-func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetUserId() int64 {
-	return r._userId
-}
-
-// SetOrderSource is OrderSource Setter
-// 订单来源，值选择：30
-func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetOrderSource(_orderSource int64) error {
-	r._orderSource = _orderSource
-	r.Set("order_source", _orderSource)
-	return nil
-}
-
-// GetOrderSource OrderSource Getter
-func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetOrderSource() int64 {
-	return r._orderSource
-}
-
-// SetOrderType is OrderType Setter
-// 订单类型，值固定选择：30
-func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetOrderType(_orderType int64) error {
-	r._orderType = _orderType
-	r.Set("order_type", _orderType)
-	return nil
-}
-
-// GetOrderType OrderType Getter
-func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetOrderType() int64 {
-	return r._orderType
-}
-
-// SetLogisType is LogisType Setter
-// 物流订单物流类型，值固定选择：2
-func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetLogisType(_logisType int64) error {
-	r._logisType = _logisType
-	r.Set("logis_type", _logisType)
-	return nil
-}
-
-// GetLogisType LogisType Getter
-func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetLogisType() int64 {
-	return r._logisType
-}
-
-// SetCompanyId is CompanyId Setter
-// 物流公司ID
-func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetCompanyId(_companyId int64) error {
-	r._companyId = _companyId
-	r.Set("company_id", _companyId)
-	return nil
-}
-
-// GetCompanyId CompanyId Getter
-func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetCompanyId() int64 {
-	return r._companyId
-}
-
-// SetTradeId is TradeId Setter
-// 交易流水号，淘外订单号或者商家内部交易流水号
-func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetTradeId(_tradeId int64) error {
-	r._tradeId = _tradeId
-	r.Set("trade_id", _tradeId)
-	return nil
-}
-
-// GetTradeId TradeId Getter
-func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetTradeId() int64 {
-	return r._tradeId
 }
 
 // SetMailNo is MailNo Setter
@@ -204,19 +126,6 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSName(_sName str
 // GetSName SName Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetSName() string {
 	return r._sName
-}
-
-// SetSAreaId is SAreaId Setter
-// 发件人区域ID
-func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSAreaId(_sAreaId int64) error {
-	r._sAreaId = _sAreaId
-	r.Set("s_area_id", _sAreaId)
-	return nil
-}
-
-// GetSAreaId SAreaId Getter
-func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetSAreaId() int64 {
-	return r._sAreaId
 }
 
 // SetSAddress is SAddress Setter
@@ -323,19 +232,6 @@ func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetRName() string {
 	return r._rName
 }
 
-// SetRAreaId is RAreaId Setter
-// 收件人区域ID
-func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRAreaId(_rAreaId int64) error {
-	r._rAreaId = _rAreaId
-	r.Set("r_area_id", _rAreaId)
-	return nil
-}
-
-// GetRAreaId RAreaId Getter
-func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetRAreaId() int64 {
-	return r._rAreaId
-}
-
 // SetRAddress is RAddress Setter
 // 收件人街道地址
 func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRAddress(_rAddress string) error {
@@ -438,4 +334,108 @@ func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetItemJsonString(_
 // GetItemJsonString ItemJsonString Getter
 func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetItemJsonString() string {
 	return r._itemJsonString
+}
+
+// SetUserId is UserId Setter
+// 用户ID
+func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// GetUserId UserId Getter
+func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetUserId() int64 {
+	return r._userId
+}
+
+// SetOrderSource is OrderSource Setter
+// 订单来源，值选择：30
+func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetOrderSource(_orderSource int64) error {
+	r._orderSource = _orderSource
+	r.Set("order_source", _orderSource)
+	return nil
+}
+
+// GetOrderSource OrderSource Getter
+func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetOrderSource() int64 {
+	return r._orderSource
+}
+
+// SetOrderType is OrderType Setter
+// 订单类型，值固定选择：30
+func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetOrderType(_orderType int64) error {
+	r._orderType = _orderType
+	r.Set("order_type", _orderType)
+	return nil
+}
+
+// GetOrderType OrderType Getter
+func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetOrderType() int64 {
+	return r._orderType
+}
+
+// SetLogisType is LogisType Setter
+// 物流订单物流类型，值固定选择：2
+func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetLogisType(_logisType int64) error {
+	r._logisType = _logisType
+	r.Set("logis_type", _logisType)
+	return nil
+}
+
+// GetLogisType LogisType Getter
+func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetLogisType() int64 {
+	return r._logisType
+}
+
+// SetCompanyId is CompanyId Setter
+// 物流公司ID
+func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetCompanyId(_companyId int64) error {
+	r._companyId = _companyId
+	r.Set("company_id", _companyId)
+	return nil
+}
+
+// GetCompanyId CompanyId Getter
+func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetCompanyId() int64 {
+	return r._companyId
+}
+
+// SetTradeId is TradeId Setter
+// 交易流水号，淘外订单号或者商家内部交易流水号
+func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetTradeId(_tradeId int64) error {
+	r._tradeId = _tradeId
+	r.Set("trade_id", _tradeId)
+	return nil
+}
+
+// GetTradeId TradeId Getter
+func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetTradeId() int64 {
+	return r._tradeId
+}
+
+// SetSAreaId is SAreaId Setter
+// 发件人区域ID
+func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetSAreaId(_sAreaId int64) error {
+	r._sAreaId = _sAreaId
+	r.Set("s_area_id", _sAreaId)
+	return nil
+}
+
+// GetSAreaId SAreaId Getter
+func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetSAreaId() int64 {
+	return r._sAreaId
+}
+
+// SetRAreaId is RAreaId Setter
+// 收件人区域ID
+func (r *TaobaoLogisticsConsignOrderCreateandsendAPIRequest) SetRAreaId(_rAreaId int64) error {
+	r._rAreaId = _rAreaId
+	r.Set("r_area_id", _rAreaId)
+	return nil
+}
+
+// GetRAreaId RAreaId Getter
+func (r TaobaoLogisticsConsignOrderCreateandsendAPIRequest) GetRAreaId() int64 {
+	return r._rAreaId
 }

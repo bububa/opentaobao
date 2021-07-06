@@ -2,6 +2,8 @@ package deliveryvoucher
 
 // RollbackVoucherRequest 结构体
 type RollbackVoucherRequest struct {
+	// 券信息,最多100条券记录
+	VoucherInfos []DeliveryVoucherInfoDto `json:"voucher_infos,omitempty" xml:"voucher_infos>delivery_voucher_info_dto,omitempty"`
 	// 操作时间
 	OperateDate string `json:"operate_date,omitempty" xml:"operate_date,omitempty"`
 	// 扩展参数
@@ -12,6 +14,4 @@ type RollbackVoucherRequest struct {
 	Provider string `json:"provider,omitempty" xml:"provider,omitempty"`
 	// 主订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
-	// 券信息,最多100条券记录
-	VoucherInfos []DeliveryVoucherInfoDto `json:"voucher_infos,omitempty" xml:"voucher_infos>delivery_voucher_info_dto,omitempty"`
 }

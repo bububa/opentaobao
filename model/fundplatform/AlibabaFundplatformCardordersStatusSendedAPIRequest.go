@@ -12,12 +12,12 @@ import (
 // 当制卡商将实体卡发货完成后，需要调用该接口，通知我们已发货。
 type AlibabaFundplatformCardordersStatusSendedAPIRequest struct {
 	model.Params
-	// 子制卡单ID
-	_cardOrderId int64
 	// 物流单号
 	_logisticsOrderId string
 	// 物流商名称
 	_logisticsCompany string
+	// 子制卡单ID
+	_cardOrderId int64
 }
 
 // NewAlibabaFundplatformCardordersStatusSendedRequest 初始化AlibabaFundplatformCardordersStatusSendedAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaFundplatformCardordersStatusSendedAPIRequest) GetApiParams() url.
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetCardOrderId is CardOrderId Setter
-// 子制卡单ID
-func (r *AlibabaFundplatformCardordersStatusSendedAPIRequest) SetCardOrderId(_cardOrderId int64) error {
-	r._cardOrderId = _cardOrderId
-	r.Set("card_order_id", _cardOrderId)
-	return nil
-}
-
-// GetCardOrderId CardOrderId Getter
-func (r AlibabaFundplatformCardordersStatusSendedAPIRequest) GetCardOrderId() int64 {
-	return r._cardOrderId
 }
 
 // SetLogisticsOrderId is LogisticsOrderId Setter
@@ -78,4 +65,17 @@ func (r *AlibabaFundplatformCardordersStatusSendedAPIRequest) SetLogisticsCompan
 // GetLogisticsCompany LogisticsCompany Getter
 func (r AlibabaFundplatformCardordersStatusSendedAPIRequest) GetLogisticsCompany() string {
 	return r._logisticsCompany
+}
+
+// SetCardOrderId is CardOrderId Setter
+// 子制卡单ID
+func (r *AlibabaFundplatformCardordersStatusSendedAPIRequest) SetCardOrderId(_cardOrderId int64) error {
+	r._cardOrderId = _cardOrderId
+	r.Set("card_order_id", _cardOrderId)
+	return nil
+}
+
+// GetCardOrderId CardOrderId Getter
+func (r AlibabaFundplatformCardordersStatusSendedAPIRequest) GetCardOrderId() int64 {
+	return r._cardOrderId
 }

@@ -12,12 +12,12 @@ import (
 // 通过类目以及productId获取商品发布规则；
 type TmallItemAddSchemaGetAPIRequest struct {
 	model.Params
+	// 发布商品类型，一口价填“b”，拍卖填"a"
+	_type string
 	// 商品发布的目标类目，必须是叶子类目
 	_categoryId int64
 	// 商品发布的目标product_id
 	_productId int64
-	// 发布商品类型，一口价填“b”，拍卖填"a"
-	_type string
 	// 正常接口调用时，请忽略这个参数或者填FALSE。这个参数提供给ISV对接Schema时，如果想先获取了解所有字段和规则，可以将此字段设置为true，product_id也就不需要提供了，设置为0即可
 	_isvInit bool
 }
@@ -41,6 +41,19 @@ func (r TmallItemAddSchemaGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetType is Type Setter
+// 发布商品类型，一口价填“b”，拍卖填"a"
+func (r *TmallItemAddSchemaGetAPIRequest) SetType(_type string) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r TmallItemAddSchemaGetAPIRequest) GetType() string {
+	return r._type
 }
 
 // SetCategoryId is CategoryId Setter
@@ -67,19 +80,6 @@ func (r *TmallItemAddSchemaGetAPIRequest) SetProductId(_productId int64) error {
 // GetProductId ProductId Getter
 func (r TmallItemAddSchemaGetAPIRequest) GetProductId() int64 {
 	return r._productId
-}
-
-// SetType is Type Setter
-// 发布商品类型，一口价填“b”，拍卖填"a"
-func (r *TmallItemAddSchemaGetAPIRequest) SetType(_type string) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r TmallItemAddSchemaGetAPIRequest) GetType() string {
-	return r._type
 }
 
 // SetIsvInit is IsvInit Setter

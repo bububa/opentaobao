@@ -2,6 +2,8 @@ package einvoice
 
 // UserInvoiceApplyDto 结构体
 type UserInvoiceApplyDto struct {
+	// 开票明细列表
+	InvoiceItemList []UserInvoiceItemDto `json:"invoice_item_list,omitempty" xml:"invoice_item_list>user_invoice_item_dto,omitempty"`
 	// 开票申请id
 	ApplyId string `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 开票金额
@@ -14,8 +16,6 @@ type UserInvoiceApplyDto struct {
 	Bank string `json:"bank,omitempty" xml:"bank,omitempty"`
 	// 申请企业开户账号
 	BankAccount string `json:"bank_account,omitempty" xml:"bank_account,omitempty"`
-	// 申请单状态：1：待确认，2：开票中，3：拒绝开票，4：发票已发出，0：完成开票
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 商家收货地址
 	ReceiverAddress string `json:"receiver_address,omitempty" xml:"receiver_address,omitempty"`
 	// 商家收货人
@@ -30,14 +30,14 @@ type UserInvoiceApplyDto struct {
 	SenderLogisticsCompany string `json:"sender_logistics_company,omitempty" xml:"sender_logistics_company,omitempty"`
 	// 服务商发货快递单号
 	SenderLogisticsNo string `json:"sender_logistics_no,omitempty" xml:"sender_logistics_no,omitempty"`
-	// 发票类型：1:增值税普通发票，2:增值税专用发票
-	InvoiceType int64 `json:"invoice_type,omitempty" xml:"invoice_type,omitempty"`
-	// 开票明细列表
-	InvoiceItemList []UserInvoiceItemDto `json:"invoice_item_list,omitempty" xml:"invoice_item_list>user_invoice_item_dto,omitempty"`
 	// 购方票面税号
 	InvoicePayeeRegisterNo string `json:"invoice_payee_register_no,omitempty" xml:"invoice_payee_register_no,omitempty"`
 	// 购方票面地址
 	InvoiceAddress string `json:"invoice_address,omitempty" xml:"invoice_address,omitempty"`
 	// 购方票面电话
 	InvoicePhone string `json:"invoice_phone,omitempty" xml:"invoice_phone,omitempty"`
+	// 申请单状态：1：待确认，2：开票中，3：拒绝开票，4：发票已发出，0：完成开票
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 发票类型：1:增值税普通发票，2:增值税专用发票
+	InvoiceType int64 `json:"invoice_type,omitempty" xml:"invoice_type,omitempty"`
 }

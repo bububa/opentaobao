@@ -4,8 +4,6 @@ package alsc
 type ExtraConsumePointOpenReq struct {
 	// 品牌id
 	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
-	// 变更积分数
-	ChangePoint int64 `json:"change_point,omitempty" xml:"change_point,omitempty"`
 	// 顾客id
 	CustomerId string `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
 	// 操作人ID
@@ -24,4 +22,6 @@ type ExtraConsumePointOpenReq struct {
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
 	// CS是辰森，KRY是客如云
 	BizChannel string `json:"biz_channel,omitempty" xml:"biz_channel,omitempty"`
+	// 变更积分数
+	ChangePoint int64 `json:"change_point,omitempty" xml:"change_point,omitempty"`
 }

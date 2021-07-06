@@ -12,18 +12,18 @@ import (
 // 汽车票线下自助机 逆向退票接口；用于已出票完成后，再发起退款（注意这是售后退款，如出票异常但是告诉我们出票成功，后续给客户退款，需要调用这个接口，一般开放给财务。出票过程中的失败，请直接调用出票接口并且传递false标志，我们会自动退款。）
 type TaobaoBusTvmrefundorderSetAPIRequest struct {
 	model.Params
-	// 飞猪订单号
-	_alitripOrderId string
 	// 分账退款明细
 	_refundAccountInDetails []RefundAccountInDetail
-	// 退款金额（单位分） 票金额
-	_refundAmount int64
+	// 保险退款详情
+	_insuranceRefundDetails []InsuranceRefundDetail
+	// 飞猪订单号
+	_alitripOrderId string
 	// 退款原因
 	_refundReason string
 	// 批次号必须唯一，同一批次号只能退款一次 （多账号分润的该值 填写refundAccountInDetails中批次号的任意一个即可
 	_refundBatchNo string
-	// 保险退款详情
-	_insuranceRefundDetails []InsuranceRefundDetail
+	// 退款金额（单位分） 票金额
+	_refundAmount int64
 }
 
 // NewTaobaoBusTvmrefundorderSetRequest 初始化TaobaoBusTvmrefundorderSetAPIRequest对象
@@ -47,19 +47,6 @@ func (r TaobaoBusTvmrefundorderSetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetAlitripOrderId is AlitripOrderId Setter
-// 飞猪订单号
-func (r *TaobaoBusTvmrefundorderSetAPIRequest) SetAlitripOrderId(_alitripOrderId string) error {
-	r._alitripOrderId = _alitripOrderId
-	r.Set("alitrip_order_id", _alitripOrderId)
-	return nil
-}
-
-// GetAlitripOrderId AlitripOrderId Getter
-func (r TaobaoBusTvmrefundorderSetAPIRequest) GetAlitripOrderId() string {
-	return r._alitripOrderId
-}
-
 // SetRefundAccountInDetails is RefundAccountInDetails Setter
 // 分账退款明细
 func (r *TaobaoBusTvmrefundorderSetAPIRequest) SetRefundAccountInDetails(_refundAccountInDetails []RefundAccountInDetail) error {
@@ -73,17 +60,30 @@ func (r TaobaoBusTvmrefundorderSetAPIRequest) GetRefundAccountInDetails() []Refu
 	return r._refundAccountInDetails
 }
 
-// SetRefundAmount is RefundAmount Setter
-// 退款金额（单位分） 票金额
-func (r *TaobaoBusTvmrefundorderSetAPIRequest) SetRefundAmount(_refundAmount int64) error {
-	r._refundAmount = _refundAmount
-	r.Set("refund_amount", _refundAmount)
+// SetInsuranceRefundDetails is InsuranceRefundDetails Setter
+// 保险退款详情
+func (r *TaobaoBusTvmrefundorderSetAPIRequest) SetInsuranceRefundDetails(_insuranceRefundDetails []InsuranceRefundDetail) error {
+	r._insuranceRefundDetails = _insuranceRefundDetails
+	r.Set("insurance_refund_details", _insuranceRefundDetails)
 	return nil
 }
 
-// GetRefundAmount RefundAmount Getter
-func (r TaobaoBusTvmrefundorderSetAPIRequest) GetRefundAmount() int64 {
-	return r._refundAmount
+// GetInsuranceRefundDetails InsuranceRefundDetails Getter
+func (r TaobaoBusTvmrefundorderSetAPIRequest) GetInsuranceRefundDetails() []InsuranceRefundDetail {
+	return r._insuranceRefundDetails
+}
+
+// SetAlitripOrderId is AlitripOrderId Setter
+// 飞猪订单号
+func (r *TaobaoBusTvmrefundorderSetAPIRequest) SetAlitripOrderId(_alitripOrderId string) error {
+	r._alitripOrderId = _alitripOrderId
+	r.Set("alitrip_order_id", _alitripOrderId)
+	return nil
+}
+
+// GetAlitripOrderId AlitripOrderId Getter
+func (r TaobaoBusTvmrefundorderSetAPIRequest) GetAlitripOrderId() string {
+	return r._alitripOrderId
 }
 
 // SetRefundReason is RefundReason Setter
@@ -112,15 +112,15 @@ func (r TaobaoBusTvmrefundorderSetAPIRequest) GetRefundBatchNo() string {
 	return r._refundBatchNo
 }
 
-// SetInsuranceRefundDetails is InsuranceRefundDetails Setter
-// 保险退款详情
-func (r *TaobaoBusTvmrefundorderSetAPIRequest) SetInsuranceRefundDetails(_insuranceRefundDetails []InsuranceRefundDetail) error {
-	r._insuranceRefundDetails = _insuranceRefundDetails
-	r.Set("insurance_refund_details", _insuranceRefundDetails)
+// SetRefundAmount is RefundAmount Setter
+// 退款金额（单位分） 票金额
+func (r *TaobaoBusTvmrefundorderSetAPIRequest) SetRefundAmount(_refundAmount int64) error {
+	r._refundAmount = _refundAmount
+	r.Set("refund_amount", _refundAmount)
 	return nil
 }
 
-// GetInsuranceRefundDetails InsuranceRefundDetails Getter
-func (r TaobaoBusTvmrefundorderSetAPIRequest) GetInsuranceRefundDetails() []InsuranceRefundDetail {
-	return r._insuranceRefundDetails
+// GetRefundAmount RefundAmount Getter
+func (r TaobaoBusTvmrefundorderSetAPIRequest) GetRefundAmount() int64 {
+	return r._refundAmount
 }

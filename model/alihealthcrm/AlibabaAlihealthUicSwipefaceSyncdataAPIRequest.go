@@ -12,6 +12,8 @@ import (
 // 刷脸测睡眠数据同步，三方数据回传
 type AlibabaAlihealthUicSwipefaceSyncdataAPIRequest struct {
 	model.Params
+	// 嘴唇颜色
+	_lipColor string
 	// 用户ID
 	_tpUserId int64
 	// 缺觉小时数
@@ -22,8 +24,6 @@ type AlibabaAlihealthUicSwipefaceSyncdataAPIRequest struct {
 	_eyeBagSwollenLevel int64
 	// 鱼尾纹数
 	_fishTail int64
-	// 嘴唇颜色
-	_lipColor string
 }
 
 // NewAlibabaAlihealthUicSwipefaceSyncdataRequest 初始化AlibabaAlihealthUicSwipefaceSyncdataAPIRequest对象
@@ -45,6 +45,19 @@ func (r AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) GetApiParams() url.Value
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetLipColor is LipColor Setter
+// 嘴唇颜色
+func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetLipColor(_lipColor string) error {
+	r._lipColor = _lipColor
+	r.Set("lip_color", _lipColor)
+	return nil
+}
+
+// GetLipColor LipColor Getter
+func (r AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) GetLipColor() string {
+	return r._lipColor
 }
 
 // SetTpUserId is TpUserId Setter
@@ -110,17 +123,4 @@ func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetFishTail(_fishTail i
 // GetFishTail FishTail Getter
 func (r AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) GetFishTail() int64 {
 	return r._fishTail
-}
-
-// SetLipColor is LipColor Setter
-// 嘴唇颜色
-func (r *AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) SetLipColor(_lipColor string) error {
-	r._lipColor = _lipColor
-	r.Set("lip_color", _lipColor)
-	return nil
-}
-
-// GetLipColor LipColor Getter
-func (r AlibabaAlihealthUicSwipefaceSyncdataAPIRequest) GetLipColor() string {
-	return r._lipColor
 }

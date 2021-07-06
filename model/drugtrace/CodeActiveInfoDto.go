@@ -36,16 +36,16 @@ type CodeActiveInfoDto struct {
 	CrtDate string `json:"crt_date,omitempty" xml:"crt_date,omitempty"`
 	// 处理数量
 	ProcessCount string `json:"process_count,omitempty" xml:"process_count,omitempty"`
-	// 总激活数量
-	ActiveCount int64 `json:"active_count,omitempty" xml:"active_count,omitempty"`
-	// 最大包装数量
-	OtherNum int64 `json:"other_num,omitempty" xml:"other_num,omitempty"`
-	// 小码数量
-	SmallNum int64 `json:"small_num,omitempty" xml:"small_num,omitempty"`
 	// 关联关系文件上传日期
 	CrtDateString string `json:"crt_date_string,omitempty" xml:"crt_date_string,omitempty"`
 	// 单据id
 	BillInId string `json:"bill_in_id,omitempty" xml:"bill_in_id,omitempty"`
 	// 激活信息id
 	CodeActiveInfoId string `json:"code_active_info_id,omitempty" xml:"code_active_info_id,omitempty"`
+	// 总激活数量
+	ActiveCount int64 `json:"active_count,omitempty" xml:"active_count,omitempty"`
+	// 最大包装数量
+	OtherNum int64 `json:"other_num,omitempty" xml:"other_num,omitempty"`
+	// 小码数量
+	SmallNum int64 `json:"small_num,omitempty" xml:"small_num,omitempty"`
 }

@@ -12,10 +12,10 @@ import (
 // 专属下单场景商品绑定
 type TaobaoOpentradeSpecialItemsBindAPIRequest struct {
 	model.Params
-	// 绑定专属下单场景的C端小程序ID
-	_miniappId int64
 	// 本次待绑定的商品ID列表
 	_itemIds []int64
+	// 绑定专属下单场景的C端小程序ID
+	_miniappId int64
 }
 
 // NewTaobaoOpentradeSpecialItemsBindRequest 初始化TaobaoOpentradeSpecialItemsBindAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoOpentradeSpecialItemsBindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetMiniappId is MiniappId Setter
-// 绑定专属下单场景的C端小程序ID
-func (r *TaobaoOpentradeSpecialItemsBindAPIRequest) SetMiniappId(_miniappId int64) error {
-	r._miniappId = _miniappId
-	r.Set("miniapp_id", _miniappId)
-	return nil
-}
-
-// GetMiniappId MiniappId Getter
-func (r TaobaoOpentradeSpecialItemsBindAPIRequest) GetMiniappId() int64 {
-	return r._miniappId
-}
-
 // SetItemIds is ItemIds Setter
 // 本次待绑定的商品ID列表
 func (r *TaobaoOpentradeSpecialItemsBindAPIRequest) SetItemIds(_itemIds []int64) error {
@@ -63,4 +50,17 @@ func (r *TaobaoOpentradeSpecialItemsBindAPIRequest) SetItemIds(_itemIds []int64)
 // GetItemIds ItemIds Getter
 func (r TaobaoOpentradeSpecialItemsBindAPIRequest) GetItemIds() []int64 {
 	return r._itemIds
+}
+
+// SetMiniappId is MiniappId Setter
+// 绑定专属下单场景的C端小程序ID
+func (r *TaobaoOpentradeSpecialItemsBindAPIRequest) SetMiniappId(_miniappId int64) error {
+	r._miniappId = _miniappId
+	r.Set("miniapp_id", _miniappId)
+	return nil
+}
+
+// GetMiniappId MiniappId Getter
+func (r TaobaoOpentradeSpecialItemsBindAPIRequest) GetMiniappId() int64 {
+	return r._miniappId
 }

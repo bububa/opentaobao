@@ -14,16 +14,16 @@ type TaobaoUsceslBizApSearchAPIRequest struct {
 	model.Params
 	// 商家编码
 	_bizBrandKey string
-	// 每页显示数
-	_limit int64
-	// 是否激活
-	_isActivate bool
 	// 价签条码
 	_mac string
+	// 每页显示数
+	_limit int64
 	// 页码
 	_currentPage int64
 	// 门店ID
 	_storeId int64
+	// 是否激活
+	_isActivate bool
 }
 
 // NewTaobaoUsceslBizApSearchRequest 初始化TaobaoUsceslBizApSearchAPIRequest对象
@@ -60,32 +60,6 @@ func (r TaobaoUsceslBizApSearchAPIRequest) GetBizBrandKey() string {
 	return r._bizBrandKey
 }
 
-// SetLimit is Limit Setter
-// 每页显示数
-func (r *TaobaoUsceslBizApSearchAPIRequest) SetLimit(_limit int64) error {
-	r._limit = _limit
-	r.Set("limit", _limit)
-	return nil
-}
-
-// GetLimit Limit Getter
-func (r TaobaoUsceslBizApSearchAPIRequest) GetLimit() int64 {
-	return r._limit
-}
-
-// SetIsActivate is IsActivate Setter
-// 是否激活
-func (r *TaobaoUsceslBizApSearchAPIRequest) SetIsActivate(_isActivate bool) error {
-	r._isActivate = _isActivate
-	r.Set("is_activate", _isActivate)
-	return nil
-}
-
-// GetIsActivate IsActivate Getter
-func (r TaobaoUsceslBizApSearchAPIRequest) GetIsActivate() bool {
-	return r._isActivate
-}
-
 // SetMac is Mac Setter
 // 价签条码
 func (r *TaobaoUsceslBizApSearchAPIRequest) SetMac(_mac string) error {
@@ -97,6 +71,19 @@ func (r *TaobaoUsceslBizApSearchAPIRequest) SetMac(_mac string) error {
 // GetMac Mac Getter
 func (r TaobaoUsceslBizApSearchAPIRequest) GetMac() string {
 	return r._mac
+}
+
+// SetLimit is Limit Setter
+// 每页显示数
+func (r *TaobaoUsceslBizApSearchAPIRequest) SetLimit(_limit int64) error {
+	r._limit = _limit
+	r.Set("limit", _limit)
+	return nil
+}
+
+// GetLimit Limit Getter
+func (r TaobaoUsceslBizApSearchAPIRequest) GetLimit() int64 {
+	return r._limit
 }
 
 // SetCurrentPage is CurrentPage Setter
@@ -123,4 +110,17 @@ func (r *TaobaoUsceslBizApSearchAPIRequest) SetStoreId(_storeId int64) error {
 // GetStoreId StoreId Getter
 func (r TaobaoUsceslBizApSearchAPIRequest) GetStoreId() int64 {
 	return r._storeId
+}
+
+// SetIsActivate is IsActivate Setter
+// 是否激活
+func (r *TaobaoUsceslBizApSearchAPIRequest) SetIsActivate(_isActivate bool) error {
+	r._isActivate = _isActivate
+	r.Set("is_activate", _isActivate)
+	return nil
+}
+
+// GetIsActivate IsActivate Getter
+func (r TaobaoUsceslBizApSearchAPIRequest) GetIsActivate() bool {
+	return r._isActivate
 }

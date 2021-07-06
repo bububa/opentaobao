@@ -20,8 +20,8 @@ type TaobaoLogisticsOrderShengxianConfirmAPIResponseModel struct {
 	XMLName xml.Name `xml:"logistics_order_shengxian_confirm_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 是否成功
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 发货成功后，返回承运商的信息
 	ShipFresh *ShipFresh `json:"ship_fresh,omitempty" xml:"ship_fresh,omitempty"`
+	// 是否成功
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

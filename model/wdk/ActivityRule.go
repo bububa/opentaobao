@@ -4,6 +4,8 @@ package wdk
 type ActivityRule struct {
 	// 封顶金额
 	CeilingAmount int64 `json:"ceiling_amount,omitempty" xml:"ceiling_amount,omitempty"`
+	// 1-可贬值，0-不可贬值
+	DiscountFeeMode int64 `json:"discount_fee_mode,omitempty" xml:"discount_fee_mode,omitempty"`
 	// 多阶梯是否可叠加
 	IsMultiMix bool `json:"is_multi_mix,omitempty" xml:"is_multi_mix,omitempty"`
 	// 单商品是否累计
@@ -14,6 +16,4 @@ type ActivityRule struct {
 	EnableMultiple bool `json:"enable_multiple,omitempty" xml:"enable_multiple,omitempty"`
 	// 是否叠加计算逻辑分组与阶梯满元【件】条件
 	IsCheckAllCond bool `json:"is_check_all_cond,omitempty" xml:"is_check_all_cond,omitempty"`
-	// 1-可贬值，0-不可贬值
-	DiscountFeeMode int64 `json:"discount_fee_mode,omitempty" xml:"discount_fee_mode,omitempty"`
 }

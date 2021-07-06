@@ -12,20 +12,20 @@ import (
 // 查询复杂房价，支持通过入住人数，连住天数，商品信息，房价信息查询
 type TaobaoXhotelMultiplerateGetAPIRequest struct {
 	model.Params
+	// 卖家的房价code
+	_ratePlanCode string
+	// 卖家的房型code
+	_outRid string
+	// 系统商，一般不填写，使用须申请
+	_vendor string
 	// 连住天数(范围1~10)
 	_nod int64
 	// 入住人数(范围1~10)
 	_nop int64
-	// 卖家的房价code
-	_ratePlanCode string
 	// 废弃，使用rate_plan_code
 	_ratePlanId int64
-	// 卖家的房型code
-	_outRid string
 	// 废弃，使用out_rid
 	_gid int64
-	// 系统商，一般不填写，使用须申请
-	_vendor string
 }
 
 // NewTaobaoXhotelMultiplerateGetRequest 初始化TaobaoXhotelMultiplerateGetAPIRequest对象
@@ -47,6 +47,45 @@ func (r TaobaoXhotelMultiplerateGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetRatePlanCode is RatePlanCode Setter
+// 卖家的房价code
+func (r *TaobaoXhotelMultiplerateGetAPIRequest) SetRatePlanCode(_ratePlanCode string) error {
+	r._ratePlanCode = _ratePlanCode
+	r.Set("rate_plan_code", _ratePlanCode)
+	return nil
+}
+
+// GetRatePlanCode RatePlanCode Getter
+func (r TaobaoXhotelMultiplerateGetAPIRequest) GetRatePlanCode() string {
+	return r._ratePlanCode
+}
+
+// SetOutRid is OutRid Setter
+// 卖家的房型code
+func (r *TaobaoXhotelMultiplerateGetAPIRequest) SetOutRid(_outRid string) error {
+	r._outRid = _outRid
+	r.Set("out_rid", _outRid)
+	return nil
+}
+
+// GetOutRid OutRid Getter
+func (r TaobaoXhotelMultiplerateGetAPIRequest) GetOutRid() string {
+	return r._outRid
+}
+
+// SetVendor is Vendor Setter
+// 系统商，一般不填写，使用须申请
+func (r *TaobaoXhotelMultiplerateGetAPIRequest) SetVendor(_vendor string) error {
+	r._vendor = _vendor
+	r.Set("vendor", _vendor)
+	return nil
+}
+
+// GetVendor Vendor Getter
+func (r TaobaoXhotelMultiplerateGetAPIRequest) GetVendor() string {
+	return r._vendor
 }
 
 // SetNod is Nod Setter
@@ -75,19 +114,6 @@ func (r TaobaoXhotelMultiplerateGetAPIRequest) GetNop() int64 {
 	return r._nop
 }
 
-// SetRatePlanCode is RatePlanCode Setter
-// 卖家的房价code
-func (r *TaobaoXhotelMultiplerateGetAPIRequest) SetRatePlanCode(_ratePlanCode string) error {
-	r._ratePlanCode = _ratePlanCode
-	r.Set("rate_plan_code", _ratePlanCode)
-	return nil
-}
-
-// GetRatePlanCode RatePlanCode Getter
-func (r TaobaoXhotelMultiplerateGetAPIRequest) GetRatePlanCode() string {
-	return r._ratePlanCode
-}
-
 // SetRatePlanId is RatePlanId Setter
 // 废弃，使用rate_plan_code
 func (r *TaobaoXhotelMultiplerateGetAPIRequest) SetRatePlanId(_ratePlanId int64) error {
@@ -101,19 +127,6 @@ func (r TaobaoXhotelMultiplerateGetAPIRequest) GetRatePlanId() int64 {
 	return r._ratePlanId
 }
 
-// SetOutRid is OutRid Setter
-// 卖家的房型code
-func (r *TaobaoXhotelMultiplerateGetAPIRequest) SetOutRid(_outRid string) error {
-	r._outRid = _outRid
-	r.Set("out_rid", _outRid)
-	return nil
-}
-
-// GetOutRid OutRid Getter
-func (r TaobaoXhotelMultiplerateGetAPIRequest) GetOutRid() string {
-	return r._outRid
-}
-
 // SetGid is Gid Setter
 // 废弃，使用out_rid
 func (r *TaobaoXhotelMultiplerateGetAPIRequest) SetGid(_gid int64) error {
@@ -125,17 +138,4 @@ func (r *TaobaoXhotelMultiplerateGetAPIRequest) SetGid(_gid int64) error {
 // GetGid Gid Getter
 func (r TaobaoXhotelMultiplerateGetAPIRequest) GetGid() int64 {
 	return r._gid
-}
-
-// SetVendor is Vendor Setter
-// 系统商，一般不填写，使用须申请
-func (r *TaobaoXhotelMultiplerateGetAPIRequest) SetVendor(_vendor string) error {
-	r._vendor = _vendor
-	r.Set("vendor", _vendor)
-	return nil
-}
-
-// GetVendor Vendor Getter
-func (r TaobaoXhotelMultiplerateGetAPIRequest) GetVendor() string {
-	return r._vendor
 }

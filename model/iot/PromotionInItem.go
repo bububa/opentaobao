@@ -2,6 +2,8 @@ package iot
 
 // PromotionInItem 结构体
 type PromotionInItem struct {
+	// sku价格对应的id（保证二者顺序相同）
+	SkuIdList []string `json:"sku_id_list,omitempty" xml:"sku_id_list>string,omitempty"`
 	// idValue的值
 	PromotionId string `json:"promotion_id,omitempty" xml:"promotion_id,omitempty"`
 	// 优惠展示名称
@@ -20,6 +22,4 @@ type PromotionInItem struct {
 	OtherNeed string `json:"other_need,omitempty" xml:"other_need,omitempty"`
 	// 赠送东西。如：送10商城积分
 	OtherSend string `json:"other_send,omitempty" xml:"other_send,omitempty"`
-	// sku价格对应的id（保证二者顺序相同）
-	SkuIdList []string `json:"sku_id_list,omitempty" xml:"sku_id_list>string,omitempty"`
 }

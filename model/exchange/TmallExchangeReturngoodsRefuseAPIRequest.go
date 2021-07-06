@@ -12,10 +12,10 @@ import (
 // 卖家拒绝买家换货申请
 type TmallExchangeReturngoodsRefuseAPIRequest struct {
 	model.Params
-	// 凭证图片
-	_leaveMessagePics *model.File
 	// 留言说明
 	_leaveMessage string
+	// 凭证图片
+	_leaveMessagePics *model.File
 	// 换货单号ID
 	_disputeId int64
 	// 拒绝原因ID
@@ -43,19 +43,6 @@ func (r TmallExchangeReturngoodsRefuseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetLeaveMessagePics is LeaveMessagePics Setter
-// 凭证图片
-func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetLeaveMessagePics(_leaveMessagePics *model.File) error {
-	r._leaveMessagePics = _leaveMessagePics
-	r.Set("leave_message_pics", _leaveMessagePics)
-	return nil
-}
-
-// GetLeaveMessagePics LeaveMessagePics Getter
-func (r TmallExchangeReturngoodsRefuseAPIRequest) GetLeaveMessagePics() *model.File {
-	return r._leaveMessagePics
-}
-
 // SetLeaveMessage is LeaveMessage Setter
 // 留言说明
 func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetLeaveMessage(_leaveMessage string) error {
@@ -67,6 +54,19 @@ func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetLeaveMessage(_leaveMessage
 // GetLeaveMessage LeaveMessage Getter
 func (r TmallExchangeReturngoodsRefuseAPIRequest) GetLeaveMessage() string {
 	return r._leaveMessage
+}
+
+// SetLeaveMessagePics is LeaveMessagePics Setter
+// 凭证图片
+func (r *TmallExchangeReturngoodsRefuseAPIRequest) SetLeaveMessagePics(_leaveMessagePics *model.File) error {
+	r._leaveMessagePics = _leaveMessagePics
+	r.Set("leave_message_pics", _leaveMessagePics)
+	return nil
+}
+
+// GetLeaveMessagePics LeaveMessagePics Getter
+func (r TmallExchangeReturngoodsRefuseAPIRequest) GetLeaveMessagePics() *model.File {
+	return r._leaveMessagePics
 }
 
 // SetDisputeId is DisputeId Setter

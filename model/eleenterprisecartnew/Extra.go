@@ -6,8 +6,6 @@ type Extra struct {
 	IdStr string `json:"id_str,omitempty" xml:"id_str,omitempty"`
 	// 原价
 	Total string `json:"total,omitempty" xml:"total,omitempty"`
-	// 数量
-	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 费用
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
 	// 商品id
@@ -16,6 +14,8 @@ type Extra struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 描述
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
+	// 数量
+	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 减
 	Reduced int64 `json:"reduced,omitempty" xml:"reduced,omitempty"`
 	// 费用项Id

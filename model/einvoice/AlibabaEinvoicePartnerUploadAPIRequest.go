@@ -18,8 +18,6 @@ type AlibabaEinvoicePartnerUploadAPIRequest struct {
 	_normalInvoiceCode string
 	// 销方税号
 	_payeeRegisterNo string
-	// 发票数据，upload_type=0且invoiceKind=0电子发票时必填
-	_invoiceFileData *model.File
 	// 发票号码，upload_type=0时必填
 	_invoiceNo string
 	// 发票代码，upload_type=0时必填
@@ -36,6 +34,8 @@ type AlibabaEinvoicePartnerUploadAPIRequest struct {
 	_fileDataType string
 	// 原蓝票的reqIndex
 	_reqIndex string
+	// 发票数据，upload_type=0且invoiceKind=0电子发票时必填
+	_invoiceFileData *model.File
 	// 发票种类，0=电子发票，1=纸质普票，2=纸质专票
 	_invoiceKind int64
 	// 上传的类型，0=冲红上传，1=作废上传
@@ -100,19 +100,6 @@ func (r *AlibabaEinvoicePartnerUploadAPIRequest) SetPayeeRegisterNo(_payeeRegist
 // GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoicePartnerUploadAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
-}
-
-// SetInvoiceFileData is InvoiceFileData Setter
-// 发票数据，upload_type=0且invoiceKind=0电子发票时必填
-func (r *AlibabaEinvoicePartnerUploadAPIRequest) SetInvoiceFileData(_invoiceFileData *model.File) error {
-	r._invoiceFileData = _invoiceFileData
-	r.Set("invoice_file_data", _invoiceFileData)
-	return nil
-}
-
-// GetInvoiceFileData InvoiceFileData Getter
-func (r AlibabaEinvoicePartnerUploadAPIRequest) GetInvoiceFileData() *model.File {
-	return r._invoiceFileData
 }
 
 // SetInvoiceNo is InvoiceNo Setter
@@ -217,6 +204,19 @@ func (r *AlibabaEinvoicePartnerUploadAPIRequest) SetReqIndex(_reqIndex string) e
 // GetReqIndex ReqIndex Getter
 func (r AlibabaEinvoicePartnerUploadAPIRequest) GetReqIndex() string {
 	return r._reqIndex
+}
+
+// SetInvoiceFileData is InvoiceFileData Setter
+// 发票数据，upload_type=0且invoiceKind=0电子发票时必填
+func (r *AlibabaEinvoicePartnerUploadAPIRequest) SetInvoiceFileData(_invoiceFileData *model.File) error {
+	r._invoiceFileData = _invoiceFileData
+	r.Set("invoice_file_data", _invoiceFileData)
+	return nil
+}
+
+// GetInvoiceFileData InvoiceFileData Getter
+func (r AlibabaEinvoicePartnerUploadAPIRequest) GetInvoiceFileData() *model.File {
+	return r._invoiceFileData
 }
 
 // SetInvoiceKind is InvoiceKind Setter

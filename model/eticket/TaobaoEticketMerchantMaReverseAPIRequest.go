@@ -12,20 +12,20 @@ import (
 // 电子凭证平台冲正接口
 type TaobaoEticketMerchantMaReverseAPIRequest struct {
 	model.Params
-	// 业务类型
-	_bizType int64
 	// 码值
 	_code string
 	// 业务id（订单号）
 	_outerId string
 	// 机具编号，如果核销时有则必传
 	_posId string
-	// 冲正份数，需要与核销份数一致
-	_reverseNum int64
 	// 需要冲正的核销序列号
 	_serialNum string
 	// 需要跟发码通知获取到的参数一致
 	_token string
+	// 业务类型
+	_bizType int64
+	// 冲正份数，需要与核销份数一致
+	_reverseNum int64
 }
 
 // NewTaobaoEticketMerchantMaReverseRequest 初始化TaobaoEticketMerchantMaReverseAPIRequest对象
@@ -47,19 +47,6 @@ func (r TaobaoEticketMerchantMaReverseAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetBizType is BizType Setter
-// 业务类型
-func (r *TaobaoEticketMerchantMaReverseAPIRequest) SetBizType(_bizType int64) error {
-	r._bizType = _bizType
-	r.Set("biz_type", _bizType)
-	return nil
-}
-
-// GetBizType BizType Getter
-func (r TaobaoEticketMerchantMaReverseAPIRequest) GetBizType() int64 {
-	return r._bizType
 }
 
 // SetCode is Code Setter
@@ -101,19 +88,6 @@ func (r TaobaoEticketMerchantMaReverseAPIRequest) GetPosId() string {
 	return r._posId
 }
 
-// SetReverseNum is ReverseNum Setter
-// 冲正份数，需要与核销份数一致
-func (r *TaobaoEticketMerchantMaReverseAPIRequest) SetReverseNum(_reverseNum int64) error {
-	r._reverseNum = _reverseNum
-	r.Set("reverse_num", _reverseNum)
-	return nil
-}
-
-// GetReverseNum ReverseNum Getter
-func (r TaobaoEticketMerchantMaReverseAPIRequest) GetReverseNum() int64 {
-	return r._reverseNum
-}
-
 // SetSerialNum is SerialNum Setter
 // 需要冲正的核销序列号
 func (r *TaobaoEticketMerchantMaReverseAPIRequest) SetSerialNum(_serialNum string) error {
@@ -138,4 +112,30 @@ func (r *TaobaoEticketMerchantMaReverseAPIRequest) SetToken(_token string) error
 // GetToken Token Getter
 func (r TaobaoEticketMerchantMaReverseAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetBizType is BizType Setter
+// 业务类型
+func (r *TaobaoEticketMerchantMaReverseAPIRequest) SetBizType(_bizType int64) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// GetBizType BizType Getter
+func (r TaobaoEticketMerchantMaReverseAPIRequest) GetBizType() int64 {
+	return r._bizType
+}
+
+// SetReverseNum is ReverseNum Setter
+// 冲正份数，需要与核销份数一致
+func (r *TaobaoEticketMerchantMaReverseAPIRequest) SetReverseNum(_reverseNum int64) error {
+	r._reverseNum = _reverseNum
+	r.Set("reverse_num", _reverseNum)
+	return nil
+}
+
+// GetReverseNum ReverseNum Getter
+func (r TaobaoEticketMerchantMaReverseAPIRequest) GetReverseNum() int64 {
+	return r._reverseNum
 }

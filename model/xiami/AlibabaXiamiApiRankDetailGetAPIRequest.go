@@ -12,10 +12,10 @@ import (
 // 虾米排行榜详情数据
 type AlibabaXiamiApiRankDetailGetAPIRequest struct {
 	model.Params
-	// 榜单ID
-	_billboardId int64
 	// 调用来源
 	_bizCode string
+	// 榜单ID
+	_billboardId int64
 }
 
 // NewAlibabaXiamiApiRankDetailGetRequest 初始化AlibabaXiamiApiRankDetailGetAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaXiamiApiRankDetailGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetBillboardId is BillboardId Setter
-// 榜单ID
-func (r *AlibabaXiamiApiRankDetailGetAPIRequest) SetBillboardId(_billboardId int64) error {
-	r._billboardId = _billboardId
-	r.Set("billboard_id", _billboardId)
-	return nil
-}
-
-// GetBillboardId BillboardId Getter
-func (r AlibabaXiamiApiRankDetailGetAPIRequest) GetBillboardId() int64 {
-	return r._billboardId
-}
-
 // SetBizCode is BizCode Setter
 // 调用来源
 func (r *AlibabaXiamiApiRankDetailGetAPIRequest) SetBizCode(_bizCode string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaXiamiApiRankDetailGetAPIRequest) SetBizCode(_bizCode string) err
 // GetBizCode BizCode Getter
 func (r AlibabaXiamiApiRankDetailGetAPIRequest) GetBizCode() string {
 	return r._bizCode
+}
+
+// SetBillboardId is BillboardId Setter
+// 榜单ID
+func (r *AlibabaXiamiApiRankDetailGetAPIRequest) SetBillboardId(_billboardId int64) error {
+	r._billboardId = _billboardId
+	r.Set("billboard_id", _billboardId)
+	return nil
+}
+
+// GetBillboardId BillboardId Getter
+func (r AlibabaXiamiApiRankDetailGetAPIRequest) GetBillboardId() int64 {
+	return r._billboardId
 }

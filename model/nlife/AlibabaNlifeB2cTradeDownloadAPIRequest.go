@@ -12,16 +12,16 @@ import (
 // 下载零售商在零售+平台创建的订单
 type AlibabaNlifeB2cTradeDownloadAPIRequest struct {
 	model.Params
-	// 页码
-	_pageNo int64
-	// 分页大小
-	_pageSize int64
 	// 零售门店在零售+平台对应的ID
 	_storeId string
 	// 开始时间
 	_startDate string
 	// 结束时间
 	_endDate string
+	// 页码
+	_pageNo int64
+	// 分页大小
+	_pageSize int64
 }
 
 // NewAlibabaNlifeB2cTradeDownloadRequest 初始化AlibabaNlifeB2cTradeDownloadAPIRequest对象
@@ -43,32 +43,6 @@ func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetPageNo is PageNo Setter
-// 页码
-func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetPageNo() int64 {
-	return r._pageNo
-}
-
-// SetPageSize is PageSize Setter
-// 分页大小
-func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetPageSize() int64 {
-	return r._pageSize
 }
 
 // SetStoreId is StoreId Setter
@@ -108,4 +82,30 @@ func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetEndDate(_endDate string) err
 // GetEndDate EndDate Getter
 func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetEndDate() string {
 	return r._endDate
+}
+
+// SetPageNo is PageNo Setter
+// 页码
+func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// SetPageSize is PageSize Setter
+// 分页大小
+func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

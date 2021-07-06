@@ -24,18 +24,18 @@ type RefundGoodsSubOrderDetail struct {
 	FulfilRefundAmount string `json:"fulfil_refund_amount,omitempty" xml:"fulfil_refund_amount,omitempty"`
 	// 同意退货件数
 	AgreeRefundAmount string `json:"agree_refund_amount,omitempty" xml:"agree_refund_amount,omitempty"`
-	// 退货类型(1:"闪退";2: "标准")
-	RefundSpeedType int64 `json:"refund_speed_type,omitempty" xml:"refund_speed_type,omitempty"`
 	// 退货商品skuId
 	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 商品名称
 	AuctionTitle string `json:"auction_title,omitempty" xml:"auction_title,omitempty"`
-	// 是否称重商品 1：是，0:否
-	WeightItem int64 `json:"weight_item,omitempty" xml:"weight_item,omitempty"`
 	// 商品主计价单位
 	ItemIu string `json:"item_iu,omitempty" xml:"item_iu,omitempty"`
 	// 商品销售单位
 	ItemBu string `json:"item_bu,omitempty" xml:"item_bu,omitempty"`
+	// 退货类型(1:"闪退";2: "标准")
+	RefundSpeedType int64 `json:"refund_speed_type,omitempty" xml:"refund_speed_type,omitempty"`
+	// 是否称重商品 1：是，0:否
+	WeightItem int64 `json:"weight_item,omitempty" xml:"weight_item,omitempty"`
 	// Create(10, "已发起退货"),SellerAgree(20, "卖家已同意"),OperatorAccept(30, "配送员已接单"),OperatorReceive(40, "配送员已取货"),Finish(50, "退货结束");
 	RefundStatus int64 `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// Init(0,"初始状态"),NoTakeGoods(1, "无需取货"),FailTakeGoods(2, "取货失败"),Timeout(3, "超时关闭"),EnterDock(4, "已入站");

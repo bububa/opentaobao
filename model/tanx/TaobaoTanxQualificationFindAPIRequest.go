@@ -12,10 +12,10 @@ import (
 // 资质查询接口
 type TaobaoTanxQualificationFindAPIRequest struct {
 	model.Params
-	// dsp客户在tanx的memberId
-	_memberId int64
 	// dsp客户在tanx签名的token
 	_token string
+	// dsp客户在tanx的memberId
+	_memberId int64
 	// 当前时间,从1970年算的毫秒
 	_signTime int64
 	// 分页的第几页，从1开始
@@ -47,19 +47,6 @@ func (r TaobaoTanxQualificationFindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetMemberId is MemberId Setter
-// dsp客户在tanx的memberId
-func (r *TaobaoTanxQualificationFindAPIRequest) SetMemberId(_memberId int64) error {
-	r._memberId = _memberId
-	r.Set("member_id", _memberId)
-	return nil
-}
-
-// GetMemberId MemberId Getter
-func (r TaobaoTanxQualificationFindAPIRequest) GetMemberId() int64 {
-	return r._memberId
-}
-
 // SetToken is Token Setter
 // dsp客户在tanx签名的token
 func (r *TaobaoTanxQualificationFindAPIRequest) SetToken(_token string) error {
@@ -71,6 +58,19 @@ func (r *TaobaoTanxQualificationFindAPIRequest) SetToken(_token string) error {
 // GetToken Token Getter
 func (r TaobaoTanxQualificationFindAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetMemberId is MemberId Setter
+// dsp客户在tanx的memberId
+func (r *TaobaoTanxQualificationFindAPIRequest) SetMemberId(_memberId int64) error {
+	r._memberId = _memberId
+	r.Set("member_id", _memberId)
+	return nil
+}
+
+// GetMemberId MemberId Getter
+func (r TaobaoTanxQualificationFindAPIRequest) GetMemberId() int64 {
+	return r._memberId
 }
 
 // SetSignTime is SignTime Setter

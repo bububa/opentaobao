@@ -46,16 +46,12 @@ type AppraiseOrderInfoDto struct {
 	BuyerPhone string `json:"buyer_phone,omitempty" xml:"buyer_phone,omitempty"`
 	// 买家收货姓名。主状态>=6，买家确认购买时有值
 	BuyerReceiptName string `json:"buyer_receipt_name,omitempty" xml:"buyer_receipt_name,omitempty"`
-	// 需付给买家的赔付金额，单位分。状态为：已付款后发货超时（101-1 101-2）、卖家取消订单（101-3 101-4）、鉴定为赝品（主状态105）时有值。
-	Compensation2buyer int64 `json:"compensation2buyer,omitempty" xml:"compensation2buyer,omitempty"`
 	// 二手卖家承诺验货项。数组，每条记录的keyId代表验货项id，比如1001可能代表内存。valueId和valueName分别代表验货项值的id和描述。keyId、valueId的取值参考对接文档
 	IdleAppraiseCheckpoints string `json:"idle_appraise_checkpoints,omitempty" xml:"idle_appraise_checkpoints,omitempty"`
 	// 品牌Id
 	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
 	// spuId
 	SpuId string `json:"spu_id,omitempty" xml:"spu_id,omitempty"`
-	// 服务商应收实时分账金额，分。仅当交易成功或者卖家无责买家不买 这两个状态有效，其余为0。当保证金被罚没的状态时，不会实时分账而是线下结算，所以只有上述两个状态有值。
-	SupplierChargeFeeCent int64 `json:"supplier_charge_fee_cent,omitempty" xml:"supplier_charge_fee_cent,omitempty"`
 	// 商品详情页
 	ItemDetailInfo string `json:"item_detail_info,omitempty" xml:"item_detail_info,omitempty"`
 	// 买家村庄
@@ -74,8 +70,12 @@ type AppraiseOrderInfoDto struct {
 	SellerCity string `json:"seller_city,omitempty" xml:"seller_city,omitempty"`
 	// 卖家省份
 	SellerProvince string `json:"seller_province,omitempty" xml:"seller_province,omitempty"`
-	// 是否是经主发发布/编辑的验货宝商品
-	AppraiseFromNewPublisher bool `json:"appraise_from_new_publisher,omitempty" xml:"appraise_from_new_publisher,omitempty"`
 	// 类目聚合场景,如"YHB_3C"
 	CateAggScene string `json:"cate_agg_scene,omitempty" xml:"cate_agg_scene,omitempty"`
+	// 需付给买家的赔付金额，单位分。状态为：已付款后发货超时（101-1 101-2）、卖家取消订单（101-3 101-4）、鉴定为赝品（主状态105）时有值。
+	Compensation2buyer int64 `json:"compensation2buyer,omitempty" xml:"compensation2buyer,omitempty"`
+	// 服务商应收实时分账金额，分。仅当交易成功或者卖家无责买家不买 这两个状态有效，其余为0。当保证金被罚没的状态时，不会实时分账而是线下结算，所以只有上述两个状态有值。
+	SupplierChargeFeeCent int64 `json:"supplier_charge_fee_cent,omitempty" xml:"supplier_charge_fee_cent,omitempty"`
+	// 是否是经主发发布/编辑的验货宝商品
+	AppraiseFromNewPublisher bool `json:"appraise_from_new_publisher,omitempty" xml:"appraise_from_new_publisher,omitempty"`
 }

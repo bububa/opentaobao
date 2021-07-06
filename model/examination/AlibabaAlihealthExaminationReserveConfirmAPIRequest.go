@@ -12,6 +12,10 @@ import (
 // 向体检机构确认用户购买的体检套餐信息
 type AlibabaAlihealthExaminationReserveConfirmAPIRequest struct {
 	model.Params
+	// 加项列表
+	_addItems []AddItem
+	// 加项包列表
+	_addPacks []AddPack
 	// 商户唯一码
 	_merchantCode string
 	// 体检人姓名
@@ -42,22 +46,18 @@ type AlibabaAlihealthExaminationReserveConfirmAPIRequest struct {
 	_department string
 	// 报告邮寄地址
 	_address string
-	// 加项列表
-	_addItems []AddItem
-	// 加项包列表
-	_addPacks []AddPack
 	// 0没报告1有报告
 	_havaReport string
 	// 员工号
 	_employeeNumber string
 	// 服务类型，ONSITE_SERVICE（到店检测）、DOOR_TO_DOOR_SERVICE（上门检测）
 	_serviceType string
-	// 上门服务的上门地址
-	_serviceAddress *AddAddress
 	// 预约时间段开始
 	_reserveTimeStart string
 	// 预约时间段截止
 	_reserveTimeEnd string
+	// 上门服务的上门地址
+	_serviceAddress *AddAddress
 }
 
 // NewAlibabaAlihealthExaminationReserveConfirmRequest 初始化AlibabaAlihealthExaminationReserveConfirmAPIRequest对象
@@ -79,6 +79,32 @@ func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetApiParams() url.
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetAddItems is AddItems Setter
+// 加项列表
+func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetAddItems(_addItems []AddItem) error {
+	r._addItems = _addItems
+	r.Set("add_items", _addItems)
+	return nil
+}
+
+// GetAddItems AddItems Getter
+func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetAddItems() []AddItem {
+	return r._addItems
+}
+
+// SetAddPacks is AddPacks Setter
+// 加项包列表
+func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetAddPacks(_addPacks []AddPack) error {
+	r._addPacks = _addPacks
+	r.Set("add_packs", _addPacks)
+	return nil
+}
+
+// GetAddPacks AddPacks Getter
+func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetAddPacks() []AddPack {
+	return r._addPacks
 }
 
 // SetMerchantCode is MerchantCode Setter
@@ -276,32 +302,6 @@ func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetAddress() string
 	return r._address
 }
 
-// SetAddItems is AddItems Setter
-// 加项列表
-func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetAddItems(_addItems []AddItem) error {
-	r._addItems = _addItems
-	r.Set("add_items", _addItems)
-	return nil
-}
-
-// GetAddItems AddItems Getter
-func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetAddItems() []AddItem {
-	return r._addItems
-}
-
-// SetAddPacks is AddPacks Setter
-// 加项包列表
-func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetAddPacks(_addPacks []AddPack) error {
-	r._addPacks = _addPacks
-	r.Set("add_packs", _addPacks)
-	return nil
-}
-
-// GetAddPacks AddPacks Getter
-func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetAddPacks() []AddPack {
-	return r._addPacks
-}
-
 // SetHavaReport is HavaReport Setter
 // 0没报告1有报告
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetHavaReport(_havaReport string) error {
@@ -341,19 +341,6 @@ func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetServiceType() st
 	return r._serviceType
 }
 
-// SetServiceAddress is ServiceAddress Setter
-// 上门服务的上门地址
-func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetServiceAddress(_serviceAddress *AddAddress) error {
-	r._serviceAddress = _serviceAddress
-	r.Set("service_address", _serviceAddress)
-	return nil
-}
-
-// GetServiceAddress ServiceAddress Getter
-func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetServiceAddress() *AddAddress {
-	return r._serviceAddress
-}
-
 // SetReserveTimeStart is ReserveTimeStart Setter
 // 预约时间段开始
 func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetReserveTimeStart(_reserveTimeStart string) error {
@@ -378,4 +365,17 @@ func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetReserveTimeEnd(
 // GetReserveTimeEnd ReserveTimeEnd Getter
 func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetReserveTimeEnd() string {
 	return r._reserveTimeEnd
+}
+
+// SetServiceAddress is ServiceAddress Setter
+// 上门服务的上门地址
+func (r *AlibabaAlihealthExaminationReserveConfirmAPIRequest) SetServiceAddress(_serviceAddress *AddAddress) error {
+	r._serviceAddress = _serviceAddress
+	r.Set("service_address", _serviceAddress)
+	return nil
+}
+
+// GetServiceAddress ServiceAddress Getter
+func (r AlibabaAlihealthExaminationReserveConfirmAPIRequest) GetServiceAddress() *AddAddress {
+	return r._serviceAddress
 }

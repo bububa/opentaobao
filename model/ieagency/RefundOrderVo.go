@@ -2,6 +2,10 @@ package ieagency
 
 // RefundOrderVo 结构体
 type RefundOrderVo struct {
+	// 乘机人费用列表
+	RefundPassengerFeeVos []RefundPassengerFeeVo `json:"refund_passenger_fee_vos,omitempty" xml:"refund_passenger_fee_vos>refund_passenger_fee_vo,omitempty"`
+	// 退票乘机人列表
+	RefundPassengerVos []RefundPassengerVo `json:"refund_passenger_vos,omitempty" xml:"refund_passenger_vos>refund_passenger_vo,omitempty"`
 	// 代理商ID
 	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
 	// 正向订单ID
@@ -16,10 +20,6 @@ type RefundOrderVo struct {
 	RefundOrderId int64 `json:"refund_order_id,omitempty" xml:"refund_order_id,omitempty"`
 	// 申请单状态(WAIT(1,"待处理"), AGREED(2, "已同意"),REFUSE(3, "已拒绝"),PROCESS(6, "已受理"), SUCCESS(7, "已退款")
 	RefundOrderStatus int64 `json:"refund_order_status,omitempty" xml:"refund_order_status,omitempty"`
-	// 乘机人费用列表
-	RefundPassengerFeeVos []RefundPassengerFeeVo `json:"refund_passenger_fee_vos,omitempty" xml:"refund_passenger_fee_vos>refund_passenger_fee_vo,omitempty"`
-	// 退票乘机人列表
-	RefundPassengerVos []RefundPassengerVo `json:"refund_passenger_vos,omitempty" xml:"refund_passenger_vos>refund_passenger_vo,omitempty"`
 	// 支付状态(INIT(1, "初始化"),     REFUND_FAIL(2, "退款失败"),     REFUND_SUCCESS(3, "退款成功")
 	RefundPayStatus int64 `json:"refund_pay_status,omitempty" xml:"refund_pay_status,omitempty"`
 	// 原因

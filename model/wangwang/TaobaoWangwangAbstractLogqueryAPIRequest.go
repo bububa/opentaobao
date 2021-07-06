@@ -16,12 +16,12 @@ type TaobaoWangwangAbstractLogqueryAPIRequest struct {
 	_toId string
 	// 卖家id，有cntaobao前缀
 	_fromId string
-	// 获取记录条数，默认值是1000
-	_count int64
 	// 设置了这个值，那么聊天记录就从这个点开始查询
 	_nextKey string
 	// 传入参数的字符集
 	_charset string
+	// 获取记录条数，默认值是1000
+	_count int64
 	// utc
 	_startDate int64
 	// utc
@@ -75,19 +75,6 @@ func (r TaobaoWangwangAbstractLogqueryAPIRequest) GetFromId() string {
 	return r._fromId
 }
 
-// SetCount is Count Setter
-// 获取记录条数，默认值是1000
-func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetCount(_count int64) error {
-	r._count = _count
-	r.Set("count", _count)
-	return nil
-}
-
-// GetCount Count Getter
-func (r TaobaoWangwangAbstractLogqueryAPIRequest) GetCount() int64 {
-	return r._count
-}
-
 // SetNextKey is NextKey Setter
 // 设置了这个值，那么聊天记录就从这个点开始查询
 func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetNextKey(_nextKey string) error {
@@ -112,6 +99,19 @@ func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetCharset(_charset string) e
 // GetCharset Charset Getter
 func (r TaobaoWangwangAbstractLogqueryAPIRequest) GetCharset() string {
 	return r._charset
+}
+
+// SetCount is Count Setter
+// 获取记录条数，默认值是1000
+func (r *TaobaoWangwangAbstractLogqueryAPIRequest) SetCount(_count int64) error {
+	r._count = _count
+	r.Set("count", _count)
+	return nil
+}
+
+// GetCount Count Getter
+func (r TaobaoWangwangAbstractLogqueryAPIRequest) GetCount() int64 {
+	return r._count
 }
 
 // SetStartDate is StartDate Setter

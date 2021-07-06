@@ -2,8 +2,6 @@ package aesolution
 
 // BaseResult 结构体
 type BaseResult struct {
-	// success
-	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
 	// error message
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// time stamp
@@ -12,4 +10,6 @@ type BaseResult struct {
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// data
 	Data *GlobalAeopTpOrderDetailDto `json:"data,omitempty" xml:"data,omitempty"`
+	// success
+	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
 }

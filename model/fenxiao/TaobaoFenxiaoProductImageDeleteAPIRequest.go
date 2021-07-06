@@ -12,12 +12,12 @@ import (
 // 产品图片删除，只删除图片信息，不真正删除图片
 type TaobaoFenxiaoProductImageDeleteAPIRequest struct {
 	model.Params
+	// properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
+	_properties string
 	// 产品ID
 	_productId int64
 	// 图片位置
 	_position int64
-	// properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
-	_properties string
 }
 
 // NewTaobaoFenxiaoProductImageDeleteRequest 初始化TaobaoFenxiaoProductImageDeleteAPIRequest对象
@@ -39,6 +39,19 @@ func (r TaobaoFenxiaoProductImageDeleteAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetProperties is Properties Setter
+// properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
+func (r *TaobaoFenxiaoProductImageDeleteAPIRequest) SetProperties(_properties string) error {
+	r._properties = _properties
+	r.Set("properties", _properties)
+	return nil
+}
+
+// GetProperties Properties Getter
+func (r TaobaoFenxiaoProductImageDeleteAPIRequest) GetProperties() string {
+	return r._properties
 }
 
 // SetProductId is ProductId Setter
@@ -65,17 +78,4 @@ func (r *TaobaoFenxiaoProductImageDeleteAPIRequest) SetPosition(_position int64)
 // GetPosition Position Getter
 func (r TaobaoFenxiaoProductImageDeleteAPIRequest) GetPosition() int64 {
 	return r._position
-}
-
-// SetProperties is Properties Setter
-// properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
-func (r *TaobaoFenxiaoProductImageDeleteAPIRequest) SetProperties(_properties string) error {
-	r._properties = _properties
-	r.Set("properties", _properties)
-	return nil
-}
-
-// GetProperties Properties Getter
-func (r TaobaoFenxiaoProductImageDeleteAPIRequest) GetProperties() string {
-	return r._properties
 }

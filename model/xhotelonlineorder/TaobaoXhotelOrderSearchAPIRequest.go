@@ -18,14 +18,14 @@ type TaobaoXhotelOrderSearchAPIRequest struct {
 	_createdEnd string
 	// 订单创建时间查询起始时间，格式为：yyyy-MM-dd HH:mm:ss
 	_createdStart string
-	// 分页页码。取值范围，大于零的整数，默认值1，即返回第一页的数据。页面大小为20
-	_pageNo int64
 	// 酒店订单tids列表，多个tid用英文逗号隔开，一次不超过20个。oids和tids都传的情况下默认使用tids
 	_orderTids string
 	// 系统商标识
 	_vendor string
 	// 外部订单号out_oids列表，多个oid用英文逗号隔开，一次不超过20个。
 	_outOids string
+	// 分页页码。取值范围，大于零的整数，默认值1，即返回第一页的数据。页面大小为20
+	_pageNo int64
 }
 
 // NewTaobaoXhotelOrderSearchRequest 初始化TaobaoXhotelOrderSearchAPIRequest对象
@@ -88,19 +88,6 @@ func (r TaobaoXhotelOrderSearchAPIRequest) GetCreatedStart() string {
 	return r._createdStart
 }
 
-// SetPageNo is PageNo Setter
-// 分页页码。取值范围，大于零的整数，默认值1，即返回第一页的数据。页面大小为20
-func (r *TaobaoXhotelOrderSearchAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r TaobaoXhotelOrderSearchAPIRequest) GetPageNo() int64 {
-	return r._pageNo
-}
-
 // SetOrderTids is OrderTids Setter
 // 酒店订单tids列表，多个tid用英文逗号隔开，一次不超过20个。oids和tids都传的情况下默认使用tids
 func (r *TaobaoXhotelOrderSearchAPIRequest) SetOrderTids(_orderTids string) error {
@@ -138,4 +125,17 @@ func (r *TaobaoXhotelOrderSearchAPIRequest) SetOutOids(_outOids string) error {
 // GetOutOids OutOids Getter
 func (r TaobaoXhotelOrderSearchAPIRequest) GetOutOids() string {
 	return r._outOids
+}
+
+// SetPageNo is PageNo Setter
+// 分页页码。取值范围，大于零的整数，默认值1，即返回第一页的数据。页面大小为20
+func (r *TaobaoXhotelOrderSearchAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r TaobaoXhotelOrderSearchAPIRequest) GetPageNo() int64 {
+	return r._pageNo
 }

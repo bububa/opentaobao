@@ -12,10 +12,10 @@ import (
 // 暂停或启用单品推广搜索人群溢价
 type TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest struct {
 	model.Params
-	// 被操作者的淘宝昵称
-	_nick string
 	// 需要修改出价的人群包id,批量传入时用,分割
 	_adgroupCrowdIds []int64
+	// 被操作者的淘宝昵称
+	_nick string
 	// 推广单元id
 	_adgroupId int64
 	// 人群状态,0:暂停;1:启用
@@ -43,19 +43,6 @@ func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// SetNick is Nick Setter
-// 被操作者的淘宝昵称
-func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetNick(_nick string) error {
-	r._nick = _nick
-	r.Set("nick", _nick)
-	return nil
-}
-
-// GetNick Nick Getter
-func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetNick() string {
-	return r._nick
-}
-
 // SetAdgroupCrowdIds is AdgroupCrowdIds Setter
 // 需要修改出价的人群包id,批量传入时用,分割
 func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetAdgroupCrowdIds(_adgroupCrowdIds []int64) error {
@@ -67,6 +54,19 @@ func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetAdgroupCrowdIds(_ad
 // GetAdgroupCrowdIds AdgroupCrowdIds Getter
 func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetAdgroupCrowdIds() []int64 {
 	return r._adgroupCrowdIds
+}
+
+// SetNick is Nick Setter
+// 被操作者的淘宝昵称
+func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// GetNick Nick Getter
+func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetNick() string {
+	return r._nick
 }
 
 // SetAdgroupId is AdgroupId Setter

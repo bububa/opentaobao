@@ -6,6 +6,8 @@ type Detailoperationdtos struct {
 	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
 	// 库存数量
 	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
+	// 协议ID
+	TradeInvId string `json:"trade_inv_id,omitempty" xml:"trade_inv_id,omitempty"`
 	// 操作子单
 	DetailOrderDto *Detailorderdto `json:"detail_order_dto,omitempty" xml:"detail_order_dto,omitempty"`
 	// 期货计划信息
@@ -18,8 +20,6 @@ type Detailoperationdtos struct {
 	OwnerDto *Ownerdto `json:"owner_dto,omitempty" xml:"owner_dto,omitempty"`
 	// 策略
 	StrategyDto *Strategydto `json:"strategy_dto,omitempty" xml:"strategy_dto,omitempty"`
-	// 协议ID
-	TradeInvId string `json:"trade_inv_id,omitempty" xml:"trade_inv_id,omitempty"`
 	// 库存类型
 	InventoryType int64 `json:"inventory_type,omitempty" xml:"inventory_type,omitempty"`
 	// 附加数据信息

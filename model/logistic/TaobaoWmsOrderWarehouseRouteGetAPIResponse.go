@@ -22,12 +22,12 @@ type TaobaoWmsOrderWarehouseRouteGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 商品列表
 	Items []OrderWarehouseRouteGetItems `json:"items,omitempty" xml:"items>order_warehouse_route_get_items,omitempty"`
-	// 是否成功
-	WlSuccess bool `json:"wl_success,omitempty" xml:"wl_success,omitempty"`
 	// 错误信息
 	WlErrorCode string `json:"wl_error_code,omitempty" xml:"wl_error_code,omitempty"`
 	// 错误信息
 	WlErrorMsg string `json:"wl_error_msg,omitempty" xml:"wl_error_msg,omitempty"`
 	// 订单编号
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
+	// 是否成功
+	WlSuccess bool `json:"wl_success,omitempty" xml:"wl_success,omitempty"`
 }

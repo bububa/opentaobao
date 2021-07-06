@@ -2,12 +2,12 @@ package drugtrace
 
 // SubTypeList 结构体
 type SubTypeList struct {
+	// 码列表
+	CodeResList []CodeResList `json:"code_res_list,omitempty" xml:"code_res_list>code_res_list,omitempty"`
 	// 制剂单位
 	PrepnUnit string `json:"prepn_unit,omitempty" xml:"prepn_unit,omitempty"`
 	// 包装规格
 	PackageSpec string `json:"package_spec,omitempty" xml:"package_spec,omitempty"`
-	// 码列表
-	CodeResList []CodeResList `json:"code_res_list,omitempty" xml:"code_res_list>code_res_list,omitempty"`
 	// 制剂规格
 	PrepnSpec string `json:"prepn_spec,omitempty" xml:"prepn_spec,omitempty"`
 	// 企业药品ID

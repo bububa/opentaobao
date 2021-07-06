@@ -14,8 +14,6 @@ type TaobaoXhotelRoomtypeUpdateAPIRequest struct {
 	model.Params
 	// 房型名称。不能超过30字；添加房型时为必须
 	_name string
-	// 最大入住人数，默认2（1-99）
-	_maxOccupancy int64
 	// 具体面积大小，请按照正确格式填写。两种格式，例如：40 或者 10-20
 	_area string
 	// 客房在建筑的第几层，隔层为1-2层，4-5层，7-8层
@@ -30,36 +28,38 @@ type TaobaoXhotelRoomtypeUpdateAPIRequest struct {
 	_service string
 	// 扩展信息的JSON。注：此字段的值需要ISV在接入前与淘宝沟通，且确认能解析
 	_extend string
-	// （已废弃）
-	_rid int64
-	// 0:无窗/1:有窗
-	_windowType int64
-	// 该字段只有确定的时候，才允许填入。用于标示和淘宝房型的匹配关系。目前尚未启动该字段。
-	_srid int64
 	// （必传）商家房型ID
 	_outerId string
 	// 系统商，不要使用，只有申请才可用
 	_vendor string
-	// （已废弃）
-	_hid int64
 	// 商家酒店ID(如果更新房型的时候房型不存在，会拿该code去新增房型)
 	_hotelCode string
 	// 房型图片只支持远程图片，格式如下：[{"url":"http://taobao.com/123.jpg","ismain":"true"},{"url":"http://taobao.com/456.jpg","ismain":"false"},{"url":"http://taobao.com/789.jpg","ismain":"false"}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。要求：无logo、水印、边框、人物，不模糊，不重复，不歪斜，房间图清晰，图片尺寸不小于300*225，不小于5M
 	_pics string
-	// 房型状态。0:正常，-1:删除，-2:停售
-	_status *model.File
 	// 卖家房型英文名称
 	_nameE string
 	// 操作人信息
 	_operator string
-	// 属性值为1: 含义是非直连房型
-	_connectionType int64
 	// main_bed_type母床型,sub_bed_type子床型。详情参见文档： https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.yN2mES&docType=1&articleId=118712&previewCode=1DABB73EA935608455E203BA06CF3566
 	_bedInfo string
 	// 新的房型编码，请确实需要修改某个房型的编码的时候才使用，如需使用，请联系飞猪技术支持开通权限，否则会更新失败
 	_newOuterId string
 	// 房间设施
 	_standardRoomFacilities string
+	// 最大入住人数，默认2（1-99）
+	_maxOccupancy int64
+	// （已废弃）
+	_rid int64
+	// 0:无窗/1:有窗
+	_windowType int64
+	// 该字段只有确定的时候，才允许填入。用于标示和淘宝房型的匹配关系。目前尚未启动该字段。
+	_srid int64
+	// （已废弃）
+	_hid int64
+	// 房型状态。0:正常，-1:删除，-2:停售
+	_status *model.File
+	// 属性值为1: 含义是非直连房型
+	_connectionType int64
 }
 
 // NewTaobaoXhotelRoomtypeUpdateRequest 初始化TaobaoXhotelRoomtypeUpdateAPIRequest对象
@@ -94,19 +94,6 @@ func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetName(_name string) error {
 // GetName Name Getter
 func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetName() string {
 	return r._name
-}
-
-// SetMaxOccupancy is MaxOccupancy Setter
-// 最大入住人数，默认2（1-99）
-func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetMaxOccupancy(_maxOccupancy int64) error {
-	r._maxOccupancy = _maxOccupancy
-	r.Set("max_occupancy", _maxOccupancy)
-	return nil
-}
-
-// GetMaxOccupancy MaxOccupancy Getter
-func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetMaxOccupancy() int64 {
-	return r._maxOccupancy
 }
 
 // SetArea is Area Setter
@@ -200,45 +187,6 @@ func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetExtend() string {
 	return r._extend
 }
 
-// SetRid is Rid Setter
-// （已废弃）
-func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetRid(_rid int64) error {
-	r._rid = _rid
-	r.Set("rid", _rid)
-	return nil
-}
-
-// GetRid Rid Getter
-func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetRid() int64 {
-	return r._rid
-}
-
-// SetWindowType is WindowType Setter
-// 0:无窗/1:有窗
-func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetWindowType(_windowType int64) error {
-	r._windowType = _windowType
-	r.Set("window_type", _windowType)
-	return nil
-}
-
-// GetWindowType WindowType Getter
-func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetWindowType() int64 {
-	return r._windowType
-}
-
-// SetSrid is Srid Setter
-// 该字段只有确定的时候，才允许填入。用于标示和淘宝房型的匹配关系。目前尚未启动该字段。
-func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetSrid(_srid int64) error {
-	r._srid = _srid
-	r.Set("srid", _srid)
-	return nil
-}
-
-// GetSrid Srid Getter
-func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetSrid() int64 {
-	return r._srid
-}
-
 // SetOuterId is OuterId Setter
 // （必传）商家房型ID
 func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetOuterId(_outerId string) error {
@@ -263,19 +211,6 @@ func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetVendor(_vendor string) error {
 // GetVendor Vendor Getter
 func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetVendor() string {
 	return r._vendor
-}
-
-// SetHid is Hid Setter
-// （已废弃）
-func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetHid(_hid int64) error {
-	r._hid = _hid
-	r.Set("hid", _hid)
-	return nil
-}
-
-// GetHid Hid Getter
-func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetHid() int64 {
-	return r._hid
 }
 
 // SetHotelCode is HotelCode Setter
@@ -304,19 +239,6 @@ func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetPics() string {
 	return r._pics
 }
 
-// SetStatus is Status Setter
-// 房型状态。0:正常，-1:删除，-2:停售
-func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetStatus(_status *model.File) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetStatus() *model.File {
-	return r._status
-}
-
 // SetNameE is NameE Setter
 // 卖家房型英文名称
 func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetNameE(_nameE string) error {
@@ -341,19 +263,6 @@ func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetOperator(_operator string) err
 // GetOperator Operator Getter
 func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetOperator() string {
 	return r._operator
-}
-
-// SetConnectionType is ConnectionType Setter
-// 属性值为1: 含义是非直连房型
-func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetConnectionType(_connectionType int64) error {
-	r._connectionType = _connectionType
-	r.Set("connection_type", _connectionType)
-	return nil
-}
-
-// GetConnectionType ConnectionType Getter
-func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetConnectionType() int64 {
-	return r._connectionType
 }
 
 // SetBedInfo is BedInfo Setter
@@ -393,4 +302,95 @@ func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetStandardRoomFacilities(_standa
 // GetStandardRoomFacilities StandardRoomFacilities Getter
 func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetStandardRoomFacilities() string {
 	return r._standardRoomFacilities
+}
+
+// SetMaxOccupancy is MaxOccupancy Setter
+// 最大入住人数，默认2（1-99）
+func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetMaxOccupancy(_maxOccupancy int64) error {
+	r._maxOccupancy = _maxOccupancy
+	r.Set("max_occupancy", _maxOccupancy)
+	return nil
+}
+
+// GetMaxOccupancy MaxOccupancy Getter
+func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetMaxOccupancy() int64 {
+	return r._maxOccupancy
+}
+
+// SetRid is Rid Setter
+// （已废弃）
+func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetRid(_rid int64) error {
+	r._rid = _rid
+	r.Set("rid", _rid)
+	return nil
+}
+
+// GetRid Rid Getter
+func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetRid() int64 {
+	return r._rid
+}
+
+// SetWindowType is WindowType Setter
+// 0:无窗/1:有窗
+func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetWindowType(_windowType int64) error {
+	r._windowType = _windowType
+	r.Set("window_type", _windowType)
+	return nil
+}
+
+// GetWindowType WindowType Getter
+func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetWindowType() int64 {
+	return r._windowType
+}
+
+// SetSrid is Srid Setter
+// 该字段只有确定的时候，才允许填入。用于标示和淘宝房型的匹配关系。目前尚未启动该字段。
+func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetSrid(_srid int64) error {
+	r._srid = _srid
+	r.Set("srid", _srid)
+	return nil
+}
+
+// GetSrid Srid Getter
+func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetSrid() int64 {
+	return r._srid
+}
+
+// SetHid is Hid Setter
+// （已废弃）
+func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetHid(_hid int64) error {
+	r._hid = _hid
+	r.Set("hid", _hid)
+	return nil
+}
+
+// GetHid Hid Getter
+func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetHid() int64 {
+	return r._hid
+}
+
+// SetStatus is Status Setter
+// 房型状态。0:正常，-1:删除，-2:停售
+func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetStatus(_status *model.File) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetStatus() *model.File {
+	return r._status
+}
+
+// SetConnectionType is ConnectionType Setter
+// 属性值为1: 含义是非直连房型
+func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetConnectionType(_connectionType int64) error {
+	r._connectionType = _connectionType
+	r.Set("connection_type", _connectionType)
+	return nil
+}
+
+// GetConnectionType ConnectionType Getter
+func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetConnectionType() int64 {
+	return r._connectionType
 }

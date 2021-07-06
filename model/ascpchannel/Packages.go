@@ -2,6 +2,8 @@ package ascpchannel
 
 // Packages 结构体
 type Packages struct {
+	// 商品信息
+	Items []Items `json:"items,omitempty" xml:"items>items,omitempty"`
 	// 物流公司编码
 	LogisticsCode string `json:"logistics_code,omitempty" xml:"logistics_code,omitempty"`
 	// 运单号
@@ -18,6 +20,4 @@ type Packages struct {
 	Weight string `json:"weight,omitempty" xml:"weight,omitempty"`
 	// 包裹体积 (升, L)
 	Volume string `json:"volume,omitempty" xml:"volume,omitempty"`
-	// 商品信息
-	Items []Items `json:"items,omitempty" xml:"items>items,omitempty"`
 }

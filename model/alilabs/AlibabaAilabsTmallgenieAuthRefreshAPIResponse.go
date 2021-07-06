@@ -20,12 +20,12 @@ type AlibabaAilabsTmallgenieAuthRefreshAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_tmallgenie_auth_refresh_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// access token过期时间，相对时间，单位为秒
-	AccessExpiresIn int64 `json:"access_expires_in,omitempty" xml:"access_expires_in,omitempty"`
 	// access_token
 	AccessToken string `json:"access_token,omitempty" xml:"access_token,omitempty"`
-	// refresh token过期时间，相对时间，单位为秒
-	RefreshExpiresIn int64 `json:"refresh_expires_in,omitempty" xml:"refresh_expires_in,omitempty"`
 	// refresh_token
 	RefreshToken string `json:"refresh_token,omitempty" xml:"refresh_token,omitempty"`
+	// access token过期时间，相对时间，单位为秒
+	AccessExpiresIn int64 `json:"access_expires_in,omitempty" xml:"access_expires_in,omitempty"`
+	// refresh token过期时间，相对时间，单位为秒
+	RefreshExpiresIn int64 `json:"refresh_expires_in,omitempty" xml:"refresh_expires_in,omitempty"`
 }

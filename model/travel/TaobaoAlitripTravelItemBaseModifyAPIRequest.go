@@ -12,24 +12,24 @@ import (
 // 旅行度假新商品基本信息修改接口 第三版。提供商家通过TOP API方式修改商品除sku外的基本信息。
 type TaobaoAlitripTravelItemBaseModifyAPIRequest struct {
 	model.Params
+	// 详细行程描述结构
+	_itineraries []PontusTravelItemItineraryInfo
+	// 预定规则结构
+	_bookingRules []PontusTravelBookingRuleInfo
+	// 可选，支持清空商品某些字段内容。多个待清空字段名之间以英文逗号分隔。目前支持清除以下字段内容：seller_cids表示删除关联的店铺类目id
+	_fieldsToClean string
 	// 跟团游商品相关信息
 	_groupItemExt *PontusTravelGroupItemExt
 	// 商品基本信息
 	_baseInfo *PontusTravelItemBaseInfo
-	// 详细行程描述结构
-	_itineraries []PontusTravelItemItineraryInfo
 	// 商品id
 	_itemId int64
 	// 退款规则结构
 	_refundInfo *PontusTravelItemRefundInfo
-	// 预定规则结构
-	_bookingRules []PontusTravelBookingRuleInfo
 	// 自由行商品相关信息
 	_freedomItemExt *PontusTravelFreedomItemExt
 	// 商品的销售属性相关信息
 	_salesInfo *PontusTravelItemSaleInfo
-	// 可选，支持清空商品某些字段内容。多个待清空字段名之间以英文逗号分隔。目前支持清除以下字段内容：seller_cids表示删除关联的店铺类目id
-	_fieldsToClean string
 	// 邮轮商品相关扩展信息
 	_cruiseItemExt *CruiseItemExt
 	// 同城活动商品相关扩展信息
@@ -55,6 +55,45 @@ func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetItineraries is Itineraries Setter
+// 详细行程描述结构
+func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetItineraries(_itineraries []PontusTravelItemItineraryInfo) error {
+	r._itineraries = _itineraries
+	r.Set("itineraries", _itineraries)
+	return nil
+}
+
+// GetItineraries Itineraries Getter
+func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetItineraries() []PontusTravelItemItineraryInfo {
+	return r._itineraries
+}
+
+// SetBookingRules is BookingRules Setter
+// 预定规则结构
+func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetBookingRules(_bookingRules []PontusTravelBookingRuleInfo) error {
+	r._bookingRules = _bookingRules
+	r.Set("booking_rules", _bookingRules)
+	return nil
+}
+
+// GetBookingRules BookingRules Getter
+func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetBookingRules() []PontusTravelBookingRuleInfo {
+	return r._bookingRules
+}
+
+// SetFieldsToClean is FieldsToClean Setter
+// 可选，支持清空商品某些字段内容。多个待清空字段名之间以英文逗号分隔。目前支持清除以下字段内容：seller_cids表示删除关联的店铺类目id
+func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetFieldsToClean(_fieldsToClean string) error {
+	r._fieldsToClean = _fieldsToClean
+	r.Set("fields_to_clean", _fieldsToClean)
+	return nil
+}
+
+// GetFieldsToClean FieldsToClean Getter
+func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetFieldsToClean() string {
+	return r._fieldsToClean
 }
 
 // SetGroupItemExt is GroupItemExt Setter
@@ -83,19 +122,6 @@ func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetBaseInfo() *PontusTravel
 	return r._baseInfo
 }
 
-// SetItineraries is Itineraries Setter
-// 详细行程描述结构
-func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetItineraries(_itineraries []PontusTravelItemItineraryInfo) error {
-	r._itineraries = _itineraries
-	r.Set("itineraries", _itineraries)
-	return nil
-}
-
-// GetItineraries Itineraries Getter
-func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetItineraries() []PontusTravelItemItineraryInfo {
-	return r._itineraries
-}
-
 // SetItemId is ItemId Setter
 // 商品id
 func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetItemId(_itemId int64) error {
@@ -122,19 +148,6 @@ func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetRefundInfo() *PontusTrav
 	return r._refundInfo
 }
 
-// SetBookingRules is BookingRules Setter
-// 预定规则结构
-func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetBookingRules(_bookingRules []PontusTravelBookingRuleInfo) error {
-	r._bookingRules = _bookingRules
-	r.Set("booking_rules", _bookingRules)
-	return nil
-}
-
-// GetBookingRules BookingRules Getter
-func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetBookingRules() []PontusTravelBookingRuleInfo {
-	return r._bookingRules
-}
-
 // SetFreedomItemExt is FreedomItemExt Setter
 // 自由行商品相关信息
 func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetFreedomItemExt(_freedomItemExt *PontusTravelFreedomItemExt) error {
@@ -159,19 +172,6 @@ func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetSalesInfo(_salesInfo *P
 // GetSalesInfo SalesInfo Getter
 func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetSalesInfo() *PontusTravelItemSaleInfo {
 	return r._salesInfo
-}
-
-// SetFieldsToClean is FieldsToClean Setter
-// 可选，支持清空商品某些字段内容。多个待清空字段名之间以英文逗号分隔。目前支持清除以下字段内容：seller_cids表示删除关联的店铺类目id
-func (r *TaobaoAlitripTravelItemBaseModifyAPIRequest) SetFieldsToClean(_fieldsToClean string) error {
-	r._fieldsToClean = _fieldsToClean
-	r.Set("fields_to_clean", _fieldsToClean)
-	return nil
-}
-
-// GetFieldsToClean FieldsToClean Getter
-func (r TaobaoAlitripTravelItemBaseModifyAPIRequest) GetFieldsToClean() string {
-	return r._fieldsToClean
 }
 
 // SetCruiseItemExt is CruiseItemExt Setter

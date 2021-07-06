@@ -14,10 +14,10 @@ type TaobaoTanxQualificationAdvertiserAddAPIRequest struct {
 	model.Params
 	// 广告主对象
 	_advertisers []AdvertiserDto
-	// dsp用户memberId
-	_memberId int64
 	// dsp用户验证token
 	_token string
+	// dsp用户memberId
+	_memberId int64
 	// 从1970年到当前时间的秒
 	_signTime int64
 }
@@ -56,19 +56,6 @@ func (r TaobaoTanxQualificationAdvertiserAddAPIRequest) GetAdvertisers() []Adver
 	return r._advertisers
 }
 
-// SetMemberId is MemberId Setter
-// dsp用户memberId
-func (r *TaobaoTanxQualificationAdvertiserAddAPIRequest) SetMemberId(_memberId int64) error {
-	r._memberId = _memberId
-	r.Set("member_id", _memberId)
-	return nil
-}
-
-// GetMemberId MemberId Getter
-func (r TaobaoTanxQualificationAdvertiserAddAPIRequest) GetMemberId() int64 {
-	return r._memberId
-}
-
 // SetToken is Token Setter
 // dsp用户验证token
 func (r *TaobaoTanxQualificationAdvertiserAddAPIRequest) SetToken(_token string) error {
@@ -80,6 +67,19 @@ func (r *TaobaoTanxQualificationAdvertiserAddAPIRequest) SetToken(_token string)
 // GetToken Token Getter
 func (r TaobaoTanxQualificationAdvertiserAddAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetMemberId is MemberId Setter
+// dsp用户memberId
+func (r *TaobaoTanxQualificationAdvertiserAddAPIRequest) SetMemberId(_memberId int64) error {
+	r._memberId = _memberId
+	r.Set("member_id", _memberId)
+	return nil
+}
+
+// GetMemberId MemberId Getter
+func (r TaobaoTanxQualificationAdvertiserAddAPIRequest) GetMemberId() int64 {
+	return r._memberId
 }
 
 // SetSignTime is SignTime Setter

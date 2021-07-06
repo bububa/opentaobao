@@ -4,8 +4,6 @@ package waybill
 type WaybillApplyNewInfo struct {
 	// 根据收货地址返回大头笔信息
 	ShortAddress string `json:"short_address,omitempty" xml:"short_address,omitempty"`
-	// 面单对应的订单列
-	TradeOrderInfo *TradeOrderInfo `json:"trade_order_info,omitempty" xml:"trade_order_info,omitempty"`
 	// 返回的面单号
 	WaybillCode string `json:"waybill_code,omitempty" xml:"waybill_code,omitempty"`
 	// 集包地代码
@@ -22,4 +20,6 @@ type WaybillApplyNewInfo struct {
 	ShippingBranchName string `json:"shipping_branch_name,omitempty" xml:"shipping_branch_name,omitempty"`
 	// 包裹对应的派件（收件）物流服务商网点（分支机构）代码
 	ConsigneeBranchCode string `json:"consignee_branch_code,omitempty" xml:"consignee_branch_code,omitempty"`
+	// 面单对应的订单列
+	TradeOrderInfo *TradeOrderInfo `json:"trade_order_info,omitempty" xml:"trade_order_info,omitempty"`
 }

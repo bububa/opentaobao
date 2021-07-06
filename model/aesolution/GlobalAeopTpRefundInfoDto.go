@@ -6,12 +6,12 @@ type GlobalAeopTpRefundInfoDto struct {
 	RefundReason string `json:"refund_reason,omitempty" xml:"refund_reason,omitempty"`
 	// refund status: wait_refund, refund_ok, refund_cancel,  close,  refund_frozen
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
-	// refund coupon amount
-	RefundCouponAmt *GlobalMoneyStr `json:"refund_coupon_amt,omitempty" xml:"refund_coupon_amt,omitempty"`
-	// refund cash amount
-	RefundCashAmt *GlobalMoneyStr `json:"refund_cash_amt,omitempty" xml:"refund_cash_amt,omitempty"`
 	// refund type
 	RefundType string `json:"refund_type,omitempty" xml:"refund_type,omitempty"`
 	// refund time
 	RefundTime string `json:"refund_time,omitempty" xml:"refund_time,omitempty"`
+	// refund coupon amount
+	RefundCouponAmt *GlobalMoneyStr `json:"refund_coupon_amt,omitempty" xml:"refund_coupon_amt,omitempty"`
+	// refund cash amount
+	RefundCashAmt *GlobalMoneyStr `json:"refund_cash_amt,omitempty" xml:"refund_cash_amt,omitempty"`
 }

@@ -16,8 +16,6 @@ type PhysicalCardOpenInfo struct {
 	CardType string `json:"card_type,omitempty" xml:"card_type,omitempty"`
 	// 创建人
 	CreateBy string `json:"create_by,omitempty" xml:"create_by,omitempty"`
-	// 逻辑删除
-	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 修改时间
@@ -36,4 +34,6 @@ type PhysicalCardOpenInfo struct {
 	UpdateBy string `json:"update_by,omitempty" xml:"update_by,omitempty"`
 	// 扩展信息
 	ExtInfo *Extinfo `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
+	// 逻辑删除
+	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
 }

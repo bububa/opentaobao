@@ -12,10 +12,10 @@ import (
 // 对于专属下单的交易场景更新限购规则
 type TaobaoOpentradeSpecialRuleUpdateAPIRequest struct {
 	model.Params
-	// 最大限购数量
-	_limitNum int64
 	// 商品id列表
 	_itemIds []int64
+	// 最大限购数量
+	_limitNum int64
 }
 
 // NewTaobaoOpentradeSpecialRuleUpdateRequest 初始化TaobaoOpentradeSpecialRuleUpdateAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoOpentradeSpecialRuleUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetLimitNum is LimitNum Setter
-// 最大限购数量
-func (r *TaobaoOpentradeSpecialRuleUpdateAPIRequest) SetLimitNum(_limitNum int64) error {
-	r._limitNum = _limitNum
-	r.Set("limit_num", _limitNum)
-	return nil
-}
-
-// GetLimitNum LimitNum Getter
-func (r TaobaoOpentradeSpecialRuleUpdateAPIRequest) GetLimitNum() int64 {
-	return r._limitNum
-}
-
 // SetItemIds is ItemIds Setter
 // 商品id列表
 func (r *TaobaoOpentradeSpecialRuleUpdateAPIRequest) SetItemIds(_itemIds []int64) error {
@@ -63,4 +50,17 @@ func (r *TaobaoOpentradeSpecialRuleUpdateAPIRequest) SetItemIds(_itemIds []int64
 // GetItemIds ItemIds Getter
 func (r TaobaoOpentradeSpecialRuleUpdateAPIRequest) GetItemIds() []int64 {
 	return r._itemIds
+}
+
+// SetLimitNum is LimitNum Setter
+// 最大限购数量
+func (r *TaobaoOpentradeSpecialRuleUpdateAPIRequest) SetLimitNum(_limitNum int64) error {
+	r._limitNum = _limitNum
+	r.Set("limit_num", _limitNum)
+	return nil
+}
+
+// GetLimitNum LimitNum Getter
+func (r TaobaoOpentradeSpecialRuleUpdateAPIRequest) GetLimitNum() int64 {
+	return r._limitNum
 }

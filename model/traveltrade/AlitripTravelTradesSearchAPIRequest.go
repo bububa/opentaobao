@@ -12,16 +12,16 @@ import (
 // 订单列表搜索接口：以订单创建、结束时间、订单状态为搜索条件，搜索过滤出满足条件的卖家订单列表。
 type AlitripTravelTradesSearchAPIRequest struct {
 	model.Params
-	// 页面大小，最大支持的页面大小为100。如查询旅行购订单，则最大支持的页面大小为30
-	_pageSize int64
 	// 订单创建 结束时间
 	_endCreatedTime string
+	// 订单创建 开始时间
+	_startCreatedTime string
+	// 页面大小，最大支持的页面大小为100。如查询旅行购订单，则最大支持的页面大小为30
+	_pageSize int64
 	// 订单状态 过滤。1-等待买家付款，2-等待卖家发货（买家已付款），3-等待买家确认收货，4-交易关闭（买家发起的退款），6-交易成功，8-交易关闭（订单超时 自动关单）
 	_orderStatus int64
 	// 当前页
 	_currentPage int64
-	// 订单创建 开始时间
-	_startCreatedTime string
 	// 类目筛选, 1、旅行购，旅行购定制专用字段，表示搜索旅行购订单。
 	_category int64
 }
@@ -47,19 +47,6 @@ func (r AlitripTravelTradesSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetPageSize is PageSize Setter
-// 页面大小，最大支持的页面大小为100。如查询旅行购订单，则最大支持的页面大小为30
-func (r *AlitripTravelTradesSearchAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlitripTravelTradesSearchAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetEndCreatedTime is EndCreatedTime Setter
 // 订单创建 结束时间
 func (r *AlitripTravelTradesSearchAPIRequest) SetEndCreatedTime(_endCreatedTime string) error {
@@ -71,6 +58,32 @@ func (r *AlitripTravelTradesSearchAPIRequest) SetEndCreatedTime(_endCreatedTime 
 // GetEndCreatedTime EndCreatedTime Getter
 func (r AlitripTravelTradesSearchAPIRequest) GetEndCreatedTime() string {
 	return r._endCreatedTime
+}
+
+// SetStartCreatedTime is StartCreatedTime Setter
+// 订单创建 开始时间
+func (r *AlitripTravelTradesSearchAPIRequest) SetStartCreatedTime(_startCreatedTime string) error {
+	r._startCreatedTime = _startCreatedTime
+	r.Set("start_created_time", _startCreatedTime)
+	return nil
+}
+
+// GetStartCreatedTime StartCreatedTime Getter
+func (r AlitripTravelTradesSearchAPIRequest) GetStartCreatedTime() string {
+	return r._startCreatedTime
+}
+
+// SetPageSize is PageSize Setter
+// 页面大小，最大支持的页面大小为100。如查询旅行购订单，则最大支持的页面大小为30
+func (r *AlitripTravelTradesSearchAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlitripTravelTradesSearchAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
 // SetOrderStatus is OrderStatus Setter
@@ -97,19 +110,6 @@ func (r *AlitripTravelTradesSearchAPIRequest) SetCurrentPage(_currentPage int64)
 // GetCurrentPage CurrentPage Getter
 func (r AlitripTravelTradesSearchAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
-}
-
-// SetStartCreatedTime is StartCreatedTime Setter
-// 订单创建 开始时间
-func (r *AlitripTravelTradesSearchAPIRequest) SetStartCreatedTime(_startCreatedTime string) error {
-	r._startCreatedTime = _startCreatedTime
-	r.Set("start_created_time", _startCreatedTime)
-	return nil
-}
-
-// GetStartCreatedTime StartCreatedTime Getter
-func (r AlitripTravelTradesSearchAPIRequest) GetStartCreatedTime() string {
-	return r._startCreatedTime
 }
 
 // SetCategory is Category Setter

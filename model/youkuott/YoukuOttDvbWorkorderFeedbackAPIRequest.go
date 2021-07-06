@@ -12,10 +12,10 @@ import (
 // dvb工单处理结果反馈
 type YoukuOttDvbWorkorderFeedbackAPIRequest struct {
 	model.Params
-	// 工单id
-	_workorderId int64
 	// 反馈内容
 	_content string
+	// 工单id
+	_workorderId int64
 	// 操作发生时间（时间戳：毫秒）
 	_occureTime int64
 }
@@ -41,19 +41,6 @@ func (r YoukuOttDvbWorkorderFeedbackAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetWorkorderId is WorkorderId Setter
-// 工单id
-func (r *YoukuOttDvbWorkorderFeedbackAPIRequest) SetWorkorderId(_workorderId int64) error {
-	r._workorderId = _workorderId
-	r.Set("workorder_id", _workorderId)
-	return nil
-}
-
-// GetWorkorderId WorkorderId Getter
-func (r YoukuOttDvbWorkorderFeedbackAPIRequest) GetWorkorderId() int64 {
-	return r._workorderId
-}
-
 // SetContent is Content Setter
 // 反馈内容
 func (r *YoukuOttDvbWorkorderFeedbackAPIRequest) SetContent(_content string) error {
@@ -65,6 +52,19 @@ func (r *YoukuOttDvbWorkorderFeedbackAPIRequest) SetContent(_content string) err
 // GetContent Content Getter
 func (r YoukuOttDvbWorkorderFeedbackAPIRequest) GetContent() string {
 	return r._content
+}
+
+// SetWorkorderId is WorkorderId Setter
+// 工单id
+func (r *YoukuOttDvbWorkorderFeedbackAPIRequest) SetWorkorderId(_workorderId int64) error {
+	r._workorderId = _workorderId
+	r.Set("workorder_id", _workorderId)
+	return nil
+}
+
+// GetWorkorderId WorkorderId Getter
+func (r YoukuOttDvbWorkorderFeedbackAPIRequest) GetWorkorderId() int64 {
+	return r._workorderId
 }
 
 // SetOccureTime is OccureTime Setter

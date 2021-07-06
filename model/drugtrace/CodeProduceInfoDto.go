@@ -2,6 +2,8 @@ package drugtrace
 
 // CodeProduceInfoDto 结构体
 type CodeProduceInfoDto struct {
+	// 生产信息集合
+	ProduceInfoList []ProduceInfoDto `json:"produce_info_list,omitempty" xml:"produce_info_list>produce_info_dto,omitempty"`
 	// 码生产日期
 	ProduceDate string `json:"produce_date,omitempty" xml:"produce_date,omitempty"`
 	// 码批次号
@@ -10,8 +12,6 @@ type CodeProduceInfoDto struct {
 	ProduceInfoId string `json:"produce_info_id,omitempty" xml:"produce_info_id,omitempty"`
 	// 包装比例
 	PkgRatio string `json:"pkg_ratio,omitempty" xml:"pkg_ratio,omitempty"`
-	// 生产信息集合
-	ProduceInfoList []ProduceInfoDto `json:"produce_info_list,omitempty" xml:"produce_info_list>produce_info_dto,omitempty"`
 	// 产品序列码
 	ProdSeqNo string `json:"prod_seq_no,omitempty" xml:"prod_seq_no,omitempty"`
 	// 企业唯一标识
@@ -22,14 +22,6 @@ type CodeProduceInfoDto struct {
 	ProductEntName string `json:"product_ent_name,omitempty" xml:"product_ent_name,omitempty"`
 	// 制剂单位类型描述
 	PrepnUnitDesc string `json:"prepn_unit_desc,omitempty" xml:"prepn_unit_desc,omitempty"`
-	// 制剂单位类型(详见码表)
-	PrepnUnit int64 `json:"prepn_unit,omitempty" xml:"prepn_unit,omitempty"`
-	// 最小制剂数量，单个
-	PkgNum int64 `json:"pkg_num,omitempty" xml:"pkg_num,omitempty"`
-	// 最小制剂数量的总数
-	SmallMeasureNum int64 `json:"small_measure_num,omitempty" xml:"small_measure_num,omitempty"`
-	// 该生产信息对应的最小包装数量
-	SmallPkgNum int64 `json:"small_pkg_num,omitempty" xml:"small_pkg_num,omitempty"`
 	// 药品信息
 	PhysicInfo string `json:"physic_info,omitempty" xml:"physic_info,omitempty"`
 	// 包装规格
@@ -58,4 +50,12 @@ type CodeProduceInfoDto struct {
 	CurrEntId string `json:"curr_ent_id,omitempty" xml:"curr_ent_id,omitempty"`
 	// 有效期至
 	ExprieDate string `json:"exprie_date,omitempty" xml:"exprie_date,omitempty"`
+	// 制剂单位类型(详见码表)
+	PrepnUnit int64 `json:"prepn_unit,omitempty" xml:"prepn_unit,omitempty"`
+	// 最小制剂数量，单个
+	PkgNum int64 `json:"pkg_num,omitempty" xml:"pkg_num,omitempty"`
+	// 最小制剂数量的总数
+	SmallMeasureNum int64 `json:"small_measure_num,omitempty" xml:"small_measure_num,omitempty"`
+	// 该生产信息对应的最小包装数量
+	SmallPkgNum int64 `json:"small_pkg_num,omitempty" xml:"small_pkg_num,omitempty"`
 }

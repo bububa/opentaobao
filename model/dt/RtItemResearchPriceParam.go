@@ -10,12 +10,8 @@ type RtItemResearchPriceParam struct {
 	ExtMap string `json:"ext_map,omitempty" xml:"ext_map,omitempty"`
 	// 门店名称
 	StoreName string `json:"store_name,omitempty" xml:"store_name,omitempty"`
-	// 门店Id
-	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 区域名称
 	AreaName string `json:"area_name,omitempty" xml:"area_name,omitempty"`
-	// 区域id
-	AreaId int64 `json:"area_id,omitempty" xml:"area_id,omitempty"`
 	// 原产地
 	OriginPlace string `json:"origin_place,omitempty" xml:"origin_place,omitempty"`
 	// 优惠结束时间
@@ -26,20 +22,24 @@ type RtItemResearchPriceParam struct {
 	SpecDesc string `json:"spec_desc,omitempty" xml:"spec_desc,omitempty"`
 	// 优惠描述
 	PromotionDesc string `json:"promotion_desc,omitempty" xml:"promotion_desc,omitempty"`
-	// 优惠类型
-	PromotionType int64 `json:"promotion_type,omitempty" xml:"promotion_type,omitempty"`
-	// 是否促销
-	InPromotion int64 `json:"in_promotion,omitempty" xml:"in_promotion,omitempty"`
-	// 促销价
-	PromotionPrice int64 `json:"promotion_price,omitempty" xml:"promotion_price,omitempty"`
 	// 条码
 	BarCode string `json:"bar_code,omitempty" xml:"bar_code,omitempty"`
-	// 正常价格
-	SalePrice int64 `json:"sale_price,omitempty" xml:"sale_price,omitempty"`
 	// 品牌
 	BrandName string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
 	// 品名
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// rt货号
 	RtItemNo string `json:"rt_item_no,omitempty" xml:"rt_item_no,omitempty"`
+	// 门店Id
+	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
+	// 区域id
+	AreaId int64 `json:"area_id,omitempty" xml:"area_id,omitempty"`
+	// 优惠类型
+	PromotionType int64 `json:"promotion_type,omitempty" xml:"promotion_type,omitempty"`
+	// 是否促销
+	InPromotion int64 `json:"in_promotion,omitempty" xml:"in_promotion,omitempty"`
+	// 促销价
+	PromotionPrice int64 `json:"promotion_price,omitempty" xml:"promotion_price,omitempty"`
+	// 正常价格
+	SalePrice int64 `json:"sale_price,omitempty" xml:"sale_price,omitempty"`
 }

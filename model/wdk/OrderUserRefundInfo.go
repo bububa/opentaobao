@@ -2,6 +2,8 @@ package wdk
 
 // OrderUserRefundInfo 结构体
 type OrderUserRefundInfo struct {
+	// 退款子单
+	SubRefundOrders []SubRefundOrder `json:"sub_refund_orders,omitempty" xml:"sub_refund_orders>sub_refund_order,omitempty"`
 	// 退款原因
 	RefundReason string `json:"refund_reason,omitempty" xml:"refund_reason,omitempty"`
 	// 用户备注
@@ -14,6 +16,4 @@ type OrderUserRefundInfo struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 经营店Id
 	StoreId string `json:"store_id,omitempty" xml:"store_id,omitempty"`
-	// 退款子单
-	SubRefundOrders []SubRefundOrder `json:"sub_refund_orders,omitempty" xml:"sub_refund_orders>sub_refund_order,omitempty"`
 }

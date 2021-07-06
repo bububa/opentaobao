@@ -20,8 +20,8 @@ type TaobaoMixnickChangeAPIResponseModel struct {
 	XMLName xml.Name `xml:"mixnick_change_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 是否成功
-	RetSuccess bool `json:"ret_success,omitempty" xml:"ret_success,omitempty"`
 	// 根据dstAppkey算出的mixnick
 	Mixnick string `json:"mixnick,omitempty" xml:"mixnick,omitempty"`
+	// 是否成功
+	RetSuccess bool `json:"ret_success,omitempty" xml:"ret_success,omitempty"`
 }

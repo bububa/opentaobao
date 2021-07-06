@@ -2,12 +2,12 @@ package simba
 
 // CrowdDto 结构体
 type CrowdDto struct {
+	// 用户所选择的人群名称
+	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 业务类型
 	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
 	// 用户在直通车的ID
 	CustId int64 `json:"cust_id,omitempty" xml:"cust_id,omitempty"`
-	// 用户所选择的人群名称
-	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 人群包模版类型
 	TemplateId int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
 	// 人群包类型

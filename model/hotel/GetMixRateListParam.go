@@ -2,6 +2,8 @@ package hotel
 
 // GetMixRateListParam 结构体
 type GetMixRateListParam struct {
+	// 酒店评论类型筛选
+	TabFilter string `json:"tab_filter,omitempty" xml:"tab_filter,omitempty"`
 	// 业务类型
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 用于嵌入页截断显示
@@ -14,6 +16,4 @@ type GetMixRateListParam struct {
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// 页面包含的记录数
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
-	// 酒店评论类型筛选
-	TabFilter string `json:"tab_filter,omitempty" xml:"tab_filter,omitempty"`
 }

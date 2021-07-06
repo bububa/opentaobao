@@ -2,16 +2,8 @@ package trade
 
 // ServiceOrder 结构体
 type ServiceOrder struct {
-	// 虚拟服务子订单订单号
-	Oid int64 `json:"oid,omitempty" xml:"oid,omitempty"`
-	// 服务所属的交易订单号。如果服务为一年包换，则item_oid这笔订单享受改服务的保护
-	ItemOid int64 `json:"item_oid,omitempty" xml:"item_oid,omitempty"`
-	// 服务数字id
-	ServiceId int64 `json:"service_id,omitempty" xml:"service_id,omitempty"`
 	// 服务详情的URL地址
 	ServiceDetailUrl string `json:"service_detail_url,omitempty" xml:"service_detail_url,omitempty"`
-	// 购买数量，取值范围为大于0的整数
-	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
 	// 服务价格，精确到小数点后两位：单位:元
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
 	// 子订单实付金额。精确到2位小数，单位:元。如:200.07，表示:200元7分。
@@ -42,4 +34,12 @@ type ServiceOrder struct {
 	ServiceOrderType string `json:"service_order_type,omitempty" xml:"service_order_type,omitempty"`
 	// 服务供应链-服务商外部编码标
 	ServiceOuterId string `json:"service_outer_id,omitempty" xml:"service_outer_id,omitempty"`
+	// 虚拟服务子订单订单号
+	Oid int64 `json:"oid,omitempty" xml:"oid,omitempty"`
+	// 服务所属的交易订单号。如果服务为一年包换，则item_oid这笔订单享受改服务的保护
+	ItemOid int64 `json:"item_oid,omitempty" xml:"item_oid,omitempty"`
+	// 服务数字id
+	ServiceId int64 `json:"service_id,omitempty" xml:"service_id,omitempty"`
+	// 购买数量，取值范围为大于0的整数
+	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
 }

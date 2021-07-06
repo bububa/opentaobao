@@ -12,8 +12,6 @@ import (
 // 体检机构对接_单项/加项包信息发布／更新
 type AlibabaAlihealthExaminationItemsPublishAPIRequest struct {
 	model.Params
-	// 商品id，机构保证全局唯一
-	_groupId string
 	// 套餐列表
 	_isvPackages []IsvPackage
 	// 单项之间关系
@@ -26,6 +24,8 @@ type AlibabaAlihealthExaminationItemsPublishAPIRequest struct {
 	_isvItemDTOS []IsvItemDto
 	// 加项包关系列表
 	_isvPackRelationDTOS []IsvPackRelationDto
+	// 商品id，机构保证全局唯一
+	_groupId string
 }
 
 // NewAlibabaAlihealthExaminationItemsPublishRequest 初始化AlibabaAlihealthExaminationItemsPublishAPIRequest对象
@@ -47,19 +47,6 @@ func (r AlibabaAlihealthExaminationItemsPublishAPIRequest) GetApiParams() url.Va
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetGroupId is GroupId Setter
-// 商品id，机构保证全局唯一
-func (r *AlibabaAlihealthExaminationItemsPublishAPIRequest) SetGroupId(_groupId string) error {
-	r._groupId = _groupId
-	r.Set("group_id", _groupId)
-	return nil
-}
-
-// GetGroupId GroupId Getter
-func (r AlibabaAlihealthExaminationItemsPublishAPIRequest) GetGroupId() string {
-	return r._groupId
 }
 
 // SetIsvPackages is IsvPackages Setter
@@ -138,4 +125,17 @@ func (r *AlibabaAlihealthExaminationItemsPublishAPIRequest) SetIsvPackRelationDT
 // GetIsvPackRelationDTOS IsvPackRelationDTOS Getter
 func (r AlibabaAlihealthExaminationItemsPublishAPIRequest) GetIsvPackRelationDTOS() []IsvPackRelationDto {
 	return r._isvPackRelationDTOS
+}
+
+// SetGroupId is GroupId Setter
+// 商品id，机构保证全局唯一
+func (r *AlibabaAlihealthExaminationItemsPublishAPIRequest) SetGroupId(_groupId string) error {
+	r._groupId = _groupId
+	r.Set("group_id", _groupId)
+	return nil
+}
+
+// GetGroupId GroupId Getter
+func (r AlibabaAlihealthExaminationItemsPublishAPIRequest) GetGroupId() string {
+	return r._groupId
 }

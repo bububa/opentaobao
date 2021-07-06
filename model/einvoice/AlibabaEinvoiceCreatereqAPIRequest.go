@@ -12,8 +12,8 @@ import (
 // ERP发起开票请求
 type AlibabaEinvoiceCreatereqAPIRequest struct {
 	model.Params
-	// 默认：0。对于商家对个人开具，为0;对于商家对企业开具，为1;
-	_businessType int64
+	// 电子发票明细
+	_invoiceItems []InvoiceItem
 	// ERP系统中的单据号。如果没有erp的唯一单据号。建议使用platform_code+”_”+ platform_tid的组合方式
 	_erpTid string
 	// 电商平台代码。TB=淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、OTHER=其他,  (只传英文编码)
@@ -34,8 +34,6 @@ type AlibabaEinvoiceCreatereqAPIRequest struct {
 	_payeeOperator string
 	// 开票金额； <span style="color:red;font-weight: bold;">当开红票时，该字段为负数</span>
 	_invoiceAmount string
-	// 电子发票明细
-	_invoiceItems []InvoiceItem
 	// 发票备注，有些省市会把此信息打印到PDF中
 	_invoiceMemo string
 	// 开票日期, 格式"YYYY-MM-DD HH:SS:MM"
@@ -72,14 +70,16 @@ type AlibabaEinvoiceCreatereqAPIRequest struct {
 	_applyId string
 	// 外部平台店铺名称，需要在阿里发票平台配置，只有当platform_code不为TB和TM时，这个字段才生效。注意：后台配置的店铺平台必须和入参platform_code一致
 	_outShopName string
-	// 发票种类，0=电子发票,1=纸质发票,2=专票。注意：未订购纸票服务的税号无法开具纸票
-	_invoiceKind int64
 	// 红字通知单号，专票冲红时需要，商家跟税局申请
 	_redNoticeNo string
 	// 开票角色，supplier=供应商，只有platform_code=TB|TM时生效，供应商开票时允许使用A店铺开具B店铺的订单号
 	_requestRole string
 	// 分销订单号，request_role=supplier供应商开票时必填，分销订单号必须属于platform_tid，同时分销订单号的供应商必须和开票的授权账号一致
 	_distributionTid string
+	// 默认：0。对于商家对个人开具，为0;对于商家对企业开具，为1;
+	_businessType int64
+	// 发票种类，0=电子发票,1=纸质发票,2=专票。注意：未订购纸票服务的税号无法开具纸票
+	_invoiceKind int64
 }
 
 // NewAlibabaEinvoiceCreatereqRequest 初始化AlibabaEinvoiceCreatereqAPIRequest对象
@@ -103,17 +103,17 @@ func (r AlibabaEinvoiceCreatereqAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetBusinessType is BusinessType Setter
-// 默认：0。对于商家对个人开具，为0;对于商家对企业开具，为1;
-func (r *AlibabaEinvoiceCreatereqAPIRequest) SetBusinessType(_businessType int64) error {
-	r._businessType = _businessType
-	r.Set("business_type", _businessType)
+// SetInvoiceItems is InvoiceItems Setter
+// 电子发票明细
+func (r *AlibabaEinvoiceCreatereqAPIRequest) SetInvoiceItems(_invoiceItems []InvoiceItem) error {
+	r._invoiceItems = _invoiceItems
+	r.Set("invoice_items", _invoiceItems)
 	return nil
 }
 
-// GetBusinessType BusinessType Getter
-func (r AlibabaEinvoiceCreatereqAPIRequest) GetBusinessType() int64 {
-	return r._businessType
+// GetInvoiceItems InvoiceItems Getter
+func (r AlibabaEinvoiceCreatereqAPIRequest) GetInvoiceItems() []InvoiceItem {
+	return r._invoiceItems
 }
 
 // SetErpTid is ErpTid Setter
@@ -244,19 +244,6 @@ func (r *AlibabaEinvoiceCreatereqAPIRequest) SetInvoiceAmount(_invoiceAmount str
 // GetInvoiceAmount InvoiceAmount Getter
 func (r AlibabaEinvoiceCreatereqAPIRequest) GetInvoiceAmount() string {
 	return r._invoiceAmount
-}
-
-// SetInvoiceItems is InvoiceItems Setter
-// 电子发票明细
-func (r *AlibabaEinvoiceCreatereqAPIRequest) SetInvoiceItems(_invoiceItems []InvoiceItem) error {
-	r._invoiceItems = _invoiceItems
-	r.Set("invoice_items", _invoiceItems)
-	return nil
-}
-
-// GetInvoiceItems InvoiceItems Getter
-func (r AlibabaEinvoiceCreatereqAPIRequest) GetInvoiceItems() []InvoiceItem {
-	return r._invoiceItems
 }
 
 // SetInvoiceMemo is InvoiceMemo Setter
@@ -493,19 +480,6 @@ func (r AlibabaEinvoiceCreatereqAPIRequest) GetOutShopName() string {
 	return r._outShopName
 }
 
-// SetInvoiceKind is InvoiceKind Setter
-// 发票种类，0=电子发票,1=纸质发票,2=专票。注意：未订购纸票服务的税号无法开具纸票
-func (r *AlibabaEinvoiceCreatereqAPIRequest) SetInvoiceKind(_invoiceKind int64) error {
-	r._invoiceKind = _invoiceKind
-	r.Set("invoice_kind", _invoiceKind)
-	return nil
-}
-
-// GetInvoiceKind InvoiceKind Getter
-func (r AlibabaEinvoiceCreatereqAPIRequest) GetInvoiceKind() int64 {
-	return r._invoiceKind
-}
-
 // SetRedNoticeNo is RedNoticeNo Setter
 // 红字通知单号，专票冲红时需要，商家跟税局申请
 func (r *AlibabaEinvoiceCreatereqAPIRequest) SetRedNoticeNo(_redNoticeNo string) error {
@@ -543,4 +517,30 @@ func (r *AlibabaEinvoiceCreatereqAPIRequest) SetDistributionTid(_distributionTid
 // GetDistributionTid DistributionTid Getter
 func (r AlibabaEinvoiceCreatereqAPIRequest) GetDistributionTid() string {
 	return r._distributionTid
+}
+
+// SetBusinessType is BusinessType Setter
+// 默认：0。对于商家对个人开具，为0;对于商家对企业开具，为1;
+func (r *AlibabaEinvoiceCreatereqAPIRequest) SetBusinessType(_businessType int64) error {
+	r._businessType = _businessType
+	r.Set("business_type", _businessType)
+	return nil
+}
+
+// GetBusinessType BusinessType Getter
+func (r AlibabaEinvoiceCreatereqAPIRequest) GetBusinessType() int64 {
+	return r._businessType
+}
+
+// SetInvoiceKind is InvoiceKind Setter
+// 发票种类，0=电子发票,1=纸质发票,2=专票。注意：未订购纸票服务的税号无法开具纸票
+func (r *AlibabaEinvoiceCreatereqAPIRequest) SetInvoiceKind(_invoiceKind int64) error {
+	r._invoiceKind = _invoiceKind
+	r.Set("invoice_kind", _invoiceKind)
+	return nil
+}
+
+// GetInvoiceKind InvoiceKind Getter
+func (r AlibabaEinvoiceCreatereqAPIRequest) GetInvoiceKind() int64 {
+	return r._invoiceKind
 }

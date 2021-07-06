@@ -12,12 +12,12 @@ import (
 // 卖家确认订单或者取消订单，适用于预付、面付、信用住订单
 type TaobaoXhotelOrderUpdateAPIRequest struct {
 	model.Params
+	// 是否把代理直签的订单同步到酒店，Y为同步，N不同步
+	_syncToHotel string
 	// 订单号
 	_tid int64
 	// 操作的类型：1.确认无房（取消预订，710发送短信提醒买家申请退款）2.确认预订 3.入住 4.离店 5.noshow 6.关单
 	_optType int64
-	// 是否把代理直签的订单同步到酒店，Y为同步，N不同步
-	_syncToHotel string
 	// 退款费用
 	_refundFee int64
 	// 取消类型，6 代表的是用户取消，reasonType=7代表的是小二协商
@@ -47,6 +47,19 @@ func (r TaobaoXhotelOrderUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetSyncToHotel is SyncToHotel Setter
+// 是否把代理直签的订单同步到酒店，Y为同步，N不同步
+func (r *TaobaoXhotelOrderUpdateAPIRequest) SetSyncToHotel(_syncToHotel string) error {
+	r._syncToHotel = _syncToHotel
+	r.Set("sync_to_hotel", _syncToHotel)
+	return nil
+}
+
+// GetSyncToHotel SyncToHotel Getter
+func (r TaobaoXhotelOrderUpdateAPIRequest) GetSyncToHotel() string {
+	return r._syncToHotel
+}
+
 // SetTid is Tid Setter
 // 订单号
 func (r *TaobaoXhotelOrderUpdateAPIRequest) SetTid(_tid int64) error {
@@ -71,19 +84,6 @@ func (r *TaobaoXhotelOrderUpdateAPIRequest) SetOptType(_optType int64) error {
 // GetOptType OptType Getter
 func (r TaobaoXhotelOrderUpdateAPIRequest) GetOptType() int64 {
 	return r._optType
-}
-
-// SetSyncToHotel is SyncToHotel Setter
-// 是否把代理直签的订单同步到酒店，Y为同步，N不同步
-func (r *TaobaoXhotelOrderUpdateAPIRequest) SetSyncToHotel(_syncToHotel string) error {
-	r._syncToHotel = _syncToHotel
-	r.Set("sync_to_hotel", _syncToHotel)
-	return nil
-}
-
-// GetSyncToHotel SyncToHotel Getter
-func (r TaobaoXhotelOrderUpdateAPIRequest) GetSyncToHotel() string {
-	return r._syncToHotel
 }
 
 // SetRefundFee is RefundFee Setter

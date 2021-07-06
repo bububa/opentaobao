@@ -12,14 +12,14 @@ import (
 // 聚石塔生成淘短链接口
 type TaobaoJstSmsMessageShorturlCreateAPIRequest struct {
 	model.Params
-	// 是否需要https前缀： true-要  false-不要
-	_needHttpsPrefix bool
 	// 人群标签
 	_tag string
 	// 商品或者店铺的H5地址，只支持长链
 	_url string
 	// 批次号
 	_batchNumber string
+	// 是否需要https前缀： true-要  false-不要
+	_needHttpsPrefix bool
 }
 
 // NewTaobaoJstSmsMessageShorturlCreateRequest 初始化TaobaoJstSmsMessageShorturlCreateAPIRequest对象
@@ -41,19 +41,6 @@ func (r TaobaoJstSmsMessageShorturlCreateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetNeedHttpsPrefix is NeedHttpsPrefix Setter
-// 是否需要https前缀： true-要  false-不要
-func (r *TaobaoJstSmsMessageShorturlCreateAPIRequest) SetNeedHttpsPrefix(_needHttpsPrefix bool) error {
-	r._needHttpsPrefix = _needHttpsPrefix
-	r.Set("need_https_prefix", _needHttpsPrefix)
-	return nil
-}
-
-// GetNeedHttpsPrefix NeedHttpsPrefix Getter
-func (r TaobaoJstSmsMessageShorturlCreateAPIRequest) GetNeedHttpsPrefix() bool {
-	return r._needHttpsPrefix
 }
 
 // SetTag is Tag Setter
@@ -93,4 +80,17 @@ func (r *TaobaoJstSmsMessageShorturlCreateAPIRequest) SetBatchNumber(_batchNumbe
 // GetBatchNumber BatchNumber Getter
 func (r TaobaoJstSmsMessageShorturlCreateAPIRequest) GetBatchNumber() string {
 	return r._batchNumber
+}
+
+// SetNeedHttpsPrefix is NeedHttpsPrefix Setter
+// 是否需要https前缀： true-要  false-不要
+func (r *TaobaoJstSmsMessageShorturlCreateAPIRequest) SetNeedHttpsPrefix(_needHttpsPrefix bool) error {
+	r._needHttpsPrefix = _needHttpsPrefix
+	r.Set("need_https_prefix", _needHttpsPrefix)
+	return nil
+}
+
+// GetNeedHttpsPrefix NeedHttpsPrefix Getter
+func (r TaobaoJstSmsMessageShorturlCreateAPIRequest) GetNeedHttpsPrefix() bool {
+	return r._needHttpsPrefix
 }

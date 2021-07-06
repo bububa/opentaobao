@@ -14,10 +14,10 @@ type TaobaoOmniorderStorecollectConsumeAPIRequest struct {
 	model.Params
 	// 核销码
 	_code string
-	// 淘宝主订单ID
-	_mainOrderId int64
 	// 核销操作人信息
 	_operator string
+	// 淘宝主订单ID
+	_mainOrderId int64
 }
 
 // NewTaobaoOmniorderStorecollectConsumeRequest 初始化TaobaoOmniorderStorecollectConsumeAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoOmniorderStorecollectConsumeAPIRequest) GetCode() string {
 	return r._code
 }
 
-// SetMainOrderId is MainOrderId Setter
-// 淘宝主订单ID
-func (r *TaobaoOmniorderStorecollectConsumeAPIRequest) SetMainOrderId(_mainOrderId int64) error {
-	r._mainOrderId = _mainOrderId
-	r.Set("main_order_id", _mainOrderId)
-	return nil
-}
-
-// GetMainOrderId MainOrderId Getter
-func (r TaobaoOmniorderStorecollectConsumeAPIRequest) GetMainOrderId() int64 {
-	return r._mainOrderId
-}
-
 // SetOperator is Operator Setter
 // 核销操作人信息
 func (r *TaobaoOmniorderStorecollectConsumeAPIRequest) SetOperator(_operator string) error {
@@ -78,4 +65,17 @@ func (r *TaobaoOmniorderStorecollectConsumeAPIRequest) SetOperator(_operator str
 // GetOperator Operator Getter
 func (r TaobaoOmniorderStorecollectConsumeAPIRequest) GetOperator() string {
 	return r._operator
+}
+
+// SetMainOrderId is MainOrderId Setter
+// 淘宝主订单ID
+func (r *TaobaoOmniorderStorecollectConsumeAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+	r._mainOrderId = _mainOrderId
+	r.Set("main_order_id", _mainOrderId)
+	return nil
+}
+
+// GetMainOrderId MainOrderId Getter
+func (r TaobaoOmniorderStorecollectConsumeAPIRequest) GetMainOrderId() int64 {
+	return r._mainOrderId
 }

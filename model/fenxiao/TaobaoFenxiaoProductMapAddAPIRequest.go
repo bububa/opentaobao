@@ -12,14 +12,14 @@ import (
 // 创建分销和供应链商品映射关系。
 type TaobaoFenxiaoProductMapAddAPIRequest struct {
 	model.Params
-	// 分销产品id。
-	_productId int64
-	// 后端商品id（如果当前分销产品没有sku和后端商品时需要指定）。
-	_scItemId int64
 	// 分销产品的sku id。逗号分隔，顺序需要保证与sc_item_ids一致（没有sku就不传）。
 	_skuIds string
 	// 在有sku的情况下，与各个sku对应的后端商品id列表。逗号分隔，顺序需要保证与sku_ids一致。
 	_scItemIds string
+	// 分销产品id。
+	_productId int64
+	// 后端商品id（如果当前分销产品没有sku和后端商品时需要指定）。
+	_scItemId int64
 	// 是否需要校验商家编码，true不校验，false校验。
 	_notCheckOuterCode bool
 }
@@ -43,32 +43,6 @@ func (r TaobaoFenxiaoProductMapAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetProductId is ProductId Setter
-// 分销产品id。
-func (r *TaobaoFenxiaoProductMapAddAPIRequest) SetProductId(_productId int64) error {
-	r._productId = _productId
-	r.Set("product_id", _productId)
-	return nil
-}
-
-// GetProductId ProductId Getter
-func (r TaobaoFenxiaoProductMapAddAPIRequest) GetProductId() int64 {
-	return r._productId
-}
-
-// SetScItemId is ScItemId Setter
-// 后端商品id（如果当前分销产品没有sku和后端商品时需要指定）。
-func (r *TaobaoFenxiaoProductMapAddAPIRequest) SetScItemId(_scItemId int64) error {
-	r._scItemId = _scItemId
-	r.Set("sc_item_id", _scItemId)
-	return nil
-}
-
-// GetScItemId ScItemId Getter
-func (r TaobaoFenxiaoProductMapAddAPIRequest) GetScItemId() int64 {
-	return r._scItemId
 }
 
 // SetSkuIds is SkuIds Setter
@@ -95,6 +69,32 @@ func (r *TaobaoFenxiaoProductMapAddAPIRequest) SetScItemIds(_scItemIds string) e
 // GetScItemIds ScItemIds Getter
 func (r TaobaoFenxiaoProductMapAddAPIRequest) GetScItemIds() string {
 	return r._scItemIds
+}
+
+// SetProductId is ProductId Setter
+// 分销产品id。
+func (r *TaobaoFenxiaoProductMapAddAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// GetProductId ProductId Getter
+func (r TaobaoFenxiaoProductMapAddAPIRequest) GetProductId() int64 {
+	return r._productId
+}
+
+// SetScItemId is ScItemId Setter
+// 后端商品id（如果当前分销产品没有sku和后端商品时需要指定）。
+func (r *TaobaoFenxiaoProductMapAddAPIRequest) SetScItemId(_scItemId int64) error {
+	r._scItemId = _scItemId
+	r.Set("sc_item_id", _scItemId)
+	return nil
+}
+
+// GetScItemId ScItemId Getter
+func (r TaobaoFenxiaoProductMapAddAPIRequest) GetScItemId() int64 {
+	return r._scItemId
 }
 
 // SetNotCheckOuterCode is NotCheckOuterCode Setter

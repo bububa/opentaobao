@@ -24,8 +24,8 @@ type AlibabaEleEnterpriseCartcouponGetAPIResponseModel struct {
 	EnterpriseCode string `json:"enterprise_code,omitempty" xml:"enterprise_code,omitempty"`
 	// 响应信息
 	EnterpriseMsg string `json:"enterprise_msg,omitempty" xml:"enterprise_msg,omitempty"`
-	// 返回值信息
-	EnterpriseDatas *MyCouponsResDto `json:"enterprise_datas,omitempty" xml:"enterprise_datas,omitempty"`
 	// 请求id
 	EnterpriseRequestid string `json:"enterprise_requestid,omitempty" xml:"enterprise_requestid,omitempty"`
+	// 返回值信息
+	EnterpriseDatas *MyCouponsResDto `json:"enterprise_datas,omitempty" xml:"enterprise_datas,omitempty"`
 }

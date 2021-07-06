@@ -28,8 +28,6 @@ type PosLogDto struct {
 	HappenTime string `json:"happen_time,omitempty" xml:"happen_time,omitempty"`
 	// 云pos序列号
 	Sn string `json:"sn,omitempty" xml:"sn,omitempty"`
-	// 请求状态码
-	HttpStatus int64 `json:"http_status,omitempty" xml:"http_status,omitempty"`
 	// 小票号码
 	ReceiptNo string `json:"receipt_no,omitempty" xml:"receipt_no,omitempty"`
 	// 错误码
@@ -56,4 +54,6 @@ type PosLogDto struct {
 	RequestContent string `json:"request_content,omitempty" xml:"request_content,omitempty"`
 	// 告警级别
 	BizAlarmLevel string `json:"biz_alarm_level,omitempty" xml:"biz_alarm_level,omitempty"`
+	// 请求状态码
+	HttpStatus int64 `json:"http_status,omitempty" xml:"http_status,omitempty"`
 }

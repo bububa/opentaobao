@@ -2,6 +2,8 @@ package mos
 
 // BillSettlementDto 结构体
 type BillSettlementDto struct {
+	// 发票列表
+	InvoiceDTOList []SettleInvoiceDto `json:"invoice_d_t_o_list,omitempty" xml:"invoice_d_t_o_list>settle_invoice_dto,omitempty"`
 	// 行号
 	LineNo string `json:"line_no,omitempty" xml:"line_no,omitempty"`
 	// 结算单金额
@@ -44,8 +46,6 @@ type BillSettlementDto struct {
 	Comments string `json:"comments,omitempty" xml:"comments,omitempty"`
 	// 扩展
 	ExtendParams string `json:"extend_params,omitempty" xml:"extend_params,omitempty"`
-	// 发票列表
-	InvoiceDTOList []SettleInvoiceDto `json:"invoice_d_t_o_list,omitempty" xml:"invoice_d_t_o_list>settle_invoice_dto,omitempty"`
 	// 受益部门coa
 	DepartmentCoa string `json:"department_coa,omitempty" xml:"department_coa,omitempty"`
 	// 区域科目段

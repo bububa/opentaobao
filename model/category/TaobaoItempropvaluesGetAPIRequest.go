@@ -14,14 +14,14 @@ type TaobaoItempropvaluesGetAPIRequest struct {
 	model.Params
 	// 需要返回的字段。目前支持有：cid,pid,prop_name,vid,name,name_alias,status,sort_order
 	_fields []string
-	// 叶子类目ID ,通过taobao.itemcats.get获得叶子类目ID
-	_cid int64
-	// 属性和属性值 id串，格式例如(pid1;pid2)或(pid1:vid1;pid2:vid2)或(pid1;pid2:vid2)
-	_pvs string
-	// 获取类目的类型：1代表集市、2代表天猫
-	_type int64
 	// 属性的Key，支持多条，以“,”分隔
 	_attrKeys []string
+	// 属性和属性值 id串，格式例如(pid1;pid2)或(pid1:vid1;pid2:vid2)或(pid1;pid2:vid2)
+	_pvs string
+	// 叶子类目ID ,通过taobao.itemcats.get获得叶子类目ID
+	_cid int64
+	// 获取类目的类型：1代表集市、2代表天猫
+	_type int64
 }
 
 // NewTaobaoItempropvaluesGetRequest 初始化TaobaoItempropvaluesGetAPIRequest对象
@@ -58,17 +58,17 @@ func (r TaobaoItempropvaluesGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// SetCid is Cid Setter
-// 叶子类目ID ,通过taobao.itemcats.get获得叶子类目ID
-func (r *TaobaoItempropvaluesGetAPIRequest) SetCid(_cid int64) error {
-	r._cid = _cid
-	r.Set("cid", _cid)
+// SetAttrKeys is AttrKeys Setter
+// 属性的Key，支持多条，以“,”分隔
+func (r *TaobaoItempropvaluesGetAPIRequest) SetAttrKeys(_attrKeys []string) error {
+	r._attrKeys = _attrKeys
+	r.Set("attr_keys", _attrKeys)
 	return nil
 }
 
-// GetCid Cid Getter
-func (r TaobaoItempropvaluesGetAPIRequest) GetCid() int64 {
-	return r._cid
+// GetAttrKeys AttrKeys Getter
+func (r TaobaoItempropvaluesGetAPIRequest) GetAttrKeys() []string {
+	return r._attrKeys
 }
 
 // SetPvs is Pvs Setter
@@ -84,6 +84,19 @@ func (r TaobaoItempropvaluesGetAPIRequest) GetPvs() string {
 	return r._pvs
 }
 
+// SetCid is Cid Setter
+// 叶子类目ID ,通过taobao.itemcats.get获得叶子类目ID
+func (r *TaobaoItempropvaluesGetAPIRequest) SetCid(_cid int64) error {
+	r._cid = _cid
+	r.Set("cid", _cid)
+	return nil
+}
+
+// GetCid Cid Getter
+func (r TaobaoItempropvaluesGetAPIRequest) GetCid() int64 {
+	return r._cid
+}
+
 // SetType is Type Setter
 // 获取类目的类型：1代表集市、2代表天猫
 func (r *TaobaoItempropvaluesGetAPIRequest) SetType(_type int64) error {
@@ -95,17 +108,4 @@ func (r *TaobaoItempropvaluesGetAPIRequest) SetType(_type int64) error {
 // GetType Type Getter
 func (r TaobaoItempropvaluesGetAPIRequest) GetType() int64 {
 	return r._type
-}
-
-// SetAttrKeys is AttrKeys Setter
-// 属性的Key，支持多条，以“,”分隔
-func (r *TaobaoItempropvaluesGetAPIRequest) SetAttrKeys(_attrKeys []string) error {
-	r._attrKeys = _attrKeys
-	r.Set("attr_keys", _attrKeys)
-	return nil
-}
-
-// GetAttrKeys AttrKeys Getter
-func (r TaobaoItempropvaluesGetAPIRequest) GetAttrKeys() []string {
-	return r._attrKeys
 }

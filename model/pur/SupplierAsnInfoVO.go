@@ -2,6 +2,8 @@ package pur
 
 // SupplierAsnInfoVO 结构体
 type SupplierAsnInfoVO struct {
+	// asn行信息
+	AsnItemList []SupplierAsnItem `json:"asn_item_list,omitempty" xml:"asn_item_list>supplier_asn_item,omitempty"`
 	// 关闭原因
 	CloseReason string `json:"close_reason,omitempty" xml:"close_reason,omitempty"`
 	// asn状态
@@ -50,6 +52,4 @@ type SupplierAsnInfoVO struct {
 	SupplierName string `json:"supplier_name,omitempty" xml:"supplier_name,omitempty"`
 	// 供应商编码
 	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`
-	// asn行信息
-	AsnItemList []SupplierAsnItem `json:"asn_item_list,omitempty" xml:"asn_item_list>supplier_asn_item,omitempty"`
 }

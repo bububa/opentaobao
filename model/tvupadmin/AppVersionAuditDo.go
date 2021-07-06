@@ -2,8 +2,6 @@ package tvupadmin
 
 // AppVersionAuditDo 结构体
 type AppVersionAuditDo struct {
-	// 主键ID
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 应用名
 	AppName string `json:"app_name,omitempty" xml:"app_name,omitempty"`
 	// 应用包名
@@ -28,4 +26,6 @@ type AppVersionAuditDo struct {
 	GmtModify string `json:"gmt_modify,omitempty" xml:"gmt_modify,omitempty"`
 	// 审核时间
 	GmtAudit string `json:"gmt_audit,omitempty" xml:"gmt_audit,omitempty"`
+	// 主键ID
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 }

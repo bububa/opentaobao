@@ -12,10 +12,10 @@ import (
 // 喵街检测用户是否为数字化会员
 type AlibabaMjMemberHasbindAPIRequest struct {
 	model.Params
-	// user_id
-	_userId int64
 	// open_id
 	_openId string
+	// user_id
+	_userId int64
 }
 
 // NewAlibabaMjMemberHasbindRequest 初始化AlibabaMjMemberHasbindAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaMjMemberHasbindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetUserId is UserId Setter
-// user_id
-func (r *AlibabaMjMemberHasbindAPIRequest) SetUserId(_userId int64) error {
-	r._userId = _userId
-	r.Set("user_id", _userId)
-	return nil
-}
-
-// GetUserId UserId Getter
-func (r AlibabaMjMemberHasbindAPIRequest) GetUserId() int64 {
-	return r._userId
-}
-
 // SetOpenId is OpenId Setter
 // open_id
 func (r *AlibabaMjMemberHasbindAPIRequest) SetOpenId(_openId string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaMjMemberHasbindAPIRequest) SetOpenId(_openId string) error {
 // GetOpenId OpenId Getter
 func (r AlibabaMjMemberHasbindAPIRequest) GetOpenId() string {
 	return r._openId
+}
+
+// SetUserId is UserId Setter
+// user_id
+func (r *AlibabaMjMemberHasbindAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// GetUserId UserId Getter
+func (r AlibabaMjMemberHasbindAPIRequest) GetUserId() int64 {
+	return r._userId
 }

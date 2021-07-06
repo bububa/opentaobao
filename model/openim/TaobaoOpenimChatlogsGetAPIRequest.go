@@ -12,6 +12,8 @@ import (
 // 查询openim账号聊天记录
 type TaobaoOpenimChatlogsGetAPIRequest struct {
 	model.Params
+	// 迭代key
+	_nextKey string
 	// 用户1信息
 	_user1 *OpenImUser
 	// 用户2信息
@@ -22,8 +24,6 @@ type TaobaoOpenimChatlogsGetAPIRequest struct {
 	_end int64
 	// 查询条数
 	_count int64
-	// 迭代key
-	_nextKey string
 }
 
 // NewTaobaoOpenimChatlogsGetRequest 初始化TaobaoOpenimChatlogsGetAPIRequest对象
@@ -45,6 +45,19 @@ func (r TaobaoOpenimChatlogsGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetNextKey is NextKey Setter
+// 迭代key
+func (r *TaobaoOpenimChatlogsGetAPIRequest) SetNextKey(_nextKey string) error {
+	r._nextKey = _nextKey
+	r.Set("next_key", _nextKey)
+	return nil
+}
+
+// GetNextKey NextKey Getter
+func (r TaobaoOpenimChatlogsGetAPIRequest) GetNextKey() string {
+	return r._nextKey
 }
 
 // SetUser1 is User1 Setter
@@ -110,17 +123,4 @@ func (r *TaobaoOpenimChatlogsGetAPIRequest) SetCount(_count int64) error {
 // GetCount Count Getter
 func (r TaobaoOpenimChatlogsGetAPIRequest) GetCount() int64 {
 	return r._count
-}
-
-// SetNextKey is NextKey Setter
-// 迭代key
-func (r *TaobaoOpenimChatlogsGetAPIRequest) SetNextKey(_nextKey string) error {
-	r._nextKey = _nextKey
-	r.Set("next_key", _nextKey)
-	return nil
-}
-
-// GetNextKey NextKey Getter
-func (r TaobaoOpenimChatlogsGetAPIRequest) GetNextKey() string {
-	return r._nextKey
 }

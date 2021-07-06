@@ -12,10 +12,10 @@ import (
 // 机型检索
 type YunosOsupdateModelSearchAPIRequest struct {
 	model.Params
-	// 应用ID
-	_appId int64
 	// 关键词
 	_name string
+	// 应用ID
+	_appId int64
 }
 
 // NewYunosOsupdateModelSearchRequest 初始化YunosOsupdateModelSearchAPIRequest对象
@@ -39,19 +39,6 @@ func (r YunosOsupdateModelSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetAppId is AppId Setter
-// 应用ID
-func (r *YunosOsupdateModelSearchAPIRequest) SetAppId(_appId int64) error {
-	r._appId = _appId
-	r.Set("app_id", _appId)
-	return nil
-}
-
-// GetAppId AppId Getter
-func (r YunosOsupdateModelSearchAPIRequest) GetAppId() int64 {
-	return r._appId
-}
-
 // SetName is Name Setter
 // 关键词
 func (r *YunosOsupdateModelSearchAPIRequest) SetName(_name string) error {
@@ -63,4 +50,17 @@ func (r *YunosOsupdateModelSearchAPIRequest) SetName(_name string) error {
 // GetName Name Getter
 func (r YunosOsupdateModelSearchAPIRequest) GetName() string {
 	return r._name
+}
+
+// SetAppId is AppId Setter
+// 应用ID
+func (r *YunosOsupdateModelSearchAPIRequest) SetAppId(_appId int64) error {
+	r._appId = _appId
+	r.Set("app_id", _appId)
+	return nil
+}
+
+// GetAppId AppId Getter
+func (r YunosOsupdateModelSearchAPIRequest) GetAppId() int64 {
+	return r._appId
 }

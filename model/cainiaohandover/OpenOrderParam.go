@@ -2,6 +2,8 @@ package cainiaohandover
 
 // OpenOrderParam 结构体
 type OpenOrderParam struct {
+	// 包裹参数
+	PackageParams []OpenPackageParam `json:"package_params,omitempty" xml:"package_params>open_package_param,omitempty"`
 	// 交易单参数
 	TradeOrderParam *OpenTradeOrderParam `json:"trade_order_param,omitempty" xml:"trade_order_param,omitempty"`
 	// 解决方案参数
@@ -16,6 +18,4 @@ type OpenOrderParam struct {
 	ReceiverParam *ReceiverParam `json:"receiver_param,omitempty" xml:"receiver_param,omitempty"`
 	// 揽收信息参数
 	PickupInfoParam *OpenPickupInfoParam `json:"pickup_info_param,omitempty" xml:"pickup_info_param,omitempty"`
-	// 包裹参数
-	PackageParams []OpenPackageParam `json:"package_params,omitempty" xml:"package_params>open_package_param,omitempty"`
 }

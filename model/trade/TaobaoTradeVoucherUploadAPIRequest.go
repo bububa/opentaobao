@@ -14,12 +14,12 @@ type TaobaoTradeVoucherUploadAPIRequest struct {
 	model.Params
 	// 上传文件的名称
 	_fileName string
-	// 文件
-	_fileData *model.File
 	// 该笔订单的卖家Nick
 	_sellerNick string
 	// 该笔订单的买家Nick（混淆nick）
 	_buyerNick string
+	// 文件
+	_fileData *model.File
 }
 
 // NewTaobaoTradeVoucherUploadRequest 初始化TaobaoTradeVoucherUploadAPIRequest对象
@@ -56,19 +56,6 @@ func (r TaobaoTradeVoucherUploadAPIRequest) GetFileName() string {
 	return r._fileName
 }
 
-// SetFileData is FileData Setter
-// 文件
-func (r *TaobaoTradeVoucherUploadAPIRequest) SetFileData(_fileData *model.File) error {
-	r._fileData = _fileData
-	r.Set("file_data", _fileData)
-	return nil
-}
-
-// GetFileData FileData Getter
-func (r TaobaoTradeVoucherUploadAPIRequest) GetFileData() *model.File {
-	return r._fileData
-}
-
 // SetSellerNick is SellerNick Setter
 // 该笔订单的卖家Nick
 func (r *TaobaoTradeVoucherUploadAPIRequest) SetSellerNick(_sellerNick string) error {
@@ -93,4 +80,17 @@ func (r *TaobaoTradeVoucherUploadAPIRequest) SetBuyerNick(_buyerNick string) err
 // GetBuyerNick BuyerNick Getter
 func (r TaobaoTradeVoucherUploadAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
+}
+
+// SetFileData is FileData Setter
+// 文件
+func (r *TaobaoTradeVoucherUploadAPIRequest) SetFileData(_fileData *model.File) error {
+	r._fileData = _fileData
+	r.Set("file_data", _fileData)
+	return nil
+}
+
+// GetFileData FileData Getter
+func (r TaobaoTradeVoucherUploadAPIRequest) GetFileData() *model.File {
+	return r._fileData
 }

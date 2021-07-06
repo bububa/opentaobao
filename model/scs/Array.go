@@ -12,10 +12,10 @@ type Array struct {
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 创意ID(调用方暂不用关心)
 	CrtId string `json:"crt_id,omitempty" xml:"crt_id,omitempty"`
-	// 模板ID(调用方暂不用关心)
-	TemplateId int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
 	// 标题(调用方暂不用关心)
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 扩展信息(即抠图结果，fg字段即BASE64编码的图片二进制数据)
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
+	// 模板ID(调用方暂不用关心)
+	TemplateId int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
 }

@@ -16,14 +16,18 @@ type TaobaoScitemAddAPIRequest struct {
 	_itemName string
 	// 商家编码
 	_outerCode string
-	// 0.普通供应链商品 1.供应链组合主商品
-	_itemType int64
 	// 商品属性格式是  p1:v1,p2:v2,p3:v3
 	_properties string
 	// 条形码
 	_barCode string
 	// 仓储商编码
 	_wmsCode string
+	// remark
+	_remark string
+	// brand_Name
+	_brandName string
+	// 0.普通供应链商品 1.供应链组合主商品
+	_itemType int64
 	// 是否易碎 0：不是  1：是
 	_isFriable int64
 	// 是否危险 0：不是  1：是
@@ -44,14 +48,10 @@ type TaobaoScitemAddAPIRequest struct {
 	_volume int64
 	// 价格 单位：分
 	_price int64
-	// remark
-	_remark string
 	// 0:液体，1：粉体，2：固体
 	_matterStatus int64
 	// 品牌id
 	_brandId int64
-	// brand_Name
-	_brandName string
 	// spuId或是cspuid
 	_spuId int64
 	// 1表示区域销售，0或是空是非区域销售
@@ -105,19 +105,6 @@ func (r TaobaoScitemAddAPIRequest) GetOuterCode() string {
 	return r._outerCode
 }
 
-// SetItemType is ItemType Setter
-// 0.普通供应链商品 1.供应链组合主商品
-func (r *TaobaoScitemAddAPIRequest) SetItemType(_itemType int64) error {
-	r._itemType = _itemType
-	r.Set("item_type", _itemType)
-	return nil
-}
-
-// GetItemType ItemType Getter
-func (r TaobaoScitemAddAPIRequest) GetItemType() int64 {
-	return r._itemType
-}
-
 // SetProperties is Properties Setter
 // 商品属性格式是  p1:v1,p2:v2,p3:v3
 func (r *TaobaoScitemAddAPIRequest) SetProperties(_properties string) error {
@@ -155,6 +142,45 @@ func (r *TaobaoScitemAddAPIRequest) SetWmsCode(_wmsCode string) error {
 // GetWmsCode WmsCode Getter
 func (r TaobaoScitemAddAPIRequest) GetWmsCode() string {
 	return r._wmsCode
+}
+
+// SetRemark is Remark Setter
+// remark
+func (r *TaobaoScitemAddAPIRequest) SetRemark(_remark string) error {
+	r._remark = _remark
+	r.Set("remark", _remark)
+	return nil
+}
+
+// GetRemark Remark Getter
+func (r TaobaoScitemAddAPIRequest) GetRemark() string {
+	return r._remark
+}
+
+// SetBrandName is BrandName Setter
+// brand_Name
+func (r *TaobaoScitemAddAPIRequest) SetBrandName(_brandName string) error {
+	r._brandName = _brandName
+	r.Set("brand_name", _brandName)
+	return nil
+}
+
+// GetBrandName BrandName Getter
+func (r TaobaoScitemAddAPIRequest) GetBrandName() string {
+	return r._brandName
+}
+
+// SetItemType is ItemType Setter
+// 0.普通供应链商品 1.供应链组合主商品
+func (r *TaobaoScitemAddAPIRequest) SetItemType(_itemType int64) error {
+	r._itemType = _itemType
+	r.Set("item_type", _itemType)
+	return nil
+}
+
+// GetItemType ItemType Getter
+func (r TaobaoScitemAddAPIRequest) GetItemType() int64 {
+	return r._itemType
 }
 
 // SetIsFriable is IsFriable Setter
@@ -287,19 +313,6 @@ func (r TaobaoScitemAddAPIRequest) GetPrice() int64 {
 	return r._price
 }
 
-// SetRemark is Remark Setter
-// remark
-func (r *TaobaoScitemAddAPIRequest) SetRemark(_remark string) error {
-	r._remark = _remark
-	r.Set("remark", _remark)
-	return nil
-}
-
-// GetRemark Remark Getter
-func (r TaobaoScitemAddAPIRequest) GetRemark() string {
-	return r._remark
-}
-
 // SetMatterStatus is MatterStatus Setter
 // 0:液体，1：粉体，2：固体
 func (r *TaobaoScitemAddAPIRequest) SetMatterStatus(_matterStatus int64) error {
@@ -324,19 +337,6 @@ func (r *TaobaoScitemAddAPIRequest) SetBrandId(_brandId int64) error {
 // GetBrandId BrandId Getter
 func (r TaobaoScitemAddAPIRequest) GetBrandId() int64 {
 	return r._brandId
-}
-
-// SetBrandName is BrandName Setter
-// brand_Name
-func (r *TaobaoScitemAddAPIRequest) SetBrandName(_brandName string) error {
-	r._brandName = _brandName
-	r.Set("brand_name", _brandName)
-	return nil
-}
-
-// GetBrandName BrandName Getter
-func (r TaobaoScitemAddAPIRequest) GetBrandName() string {
-	return r._brandName
 }
 
 // SetSpuId is SpuId Setter

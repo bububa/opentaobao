@@ -12,14 +12,14 @@ import (
 // 服务商调用该接口回传工单预约失败
 type TmallServicecenterWorkcardReservefailAPIRequest struct {
 	model.Params
-	// 核销单外部id
-	_identifyTaskId int64
 	// 下次联系时间
 	_gmtNextContact string
-	// 预约失败原因码
-	_failCode int64
 	// 预约失败原因描述
 	_failDesc string
+	// 核销单外部id
+	_identifyTaskId int64
+	// 预约失败原因码
+	_failCode int64
 	// 工单id
 	_workcardId int64
 }
@@ -45,19 +45,6 @@ func (r TmallServicecenterWorkcardReservefailAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// SetIdentifyTaskId is IdentifyTaskId Setter
-// 核销单外部id
-func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetIdentifyTaskId(_identifyTaskId int64) error {
-	r._identifyTaskId = _identifyTaskId
-	r.Set("identify_task_id", _identifyTaskId)
-	return nil
-}
-
-// GetIdentifyTaskId IdentifyTaskId Getter
-func (r TmallServicecenterWorkcardReservefailAPIRequest) GetIdentifyTaskId() int64 {
-	return r._identifyTaskId
-}
-
 // SetGmtNextContact is GmtNextContact Setter
 // 下次联系时间
 func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetGmtNextContact(_gmtNextContact string) error {
@@ -71,19 +58,6 @@ func (r TmallServicecenterWorkcardReservefailAPIRequest) GetGmtNextContact() str
 	return r._gmtNextContact
 }
 
-// SetFailCode is FailCode Setter
-// 预约失败原因码
-func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetFailCode(_failCode int64) error {
-	r._failCode = _failCode
-	r.Set("fail_code", _failCode)
-	return nil
-}
-
-// GetFailCode FailCode Getter
-func (r TmallServicecenterWorkcardReservefailAPIRequest) GetFailCode() int64 {
-	return r._failCode
-}
-
 // SetFailDesc is FailDesc Setter
 // 预约失败原因描述
 func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetFailDesc(_failDesc string) error {
@@ -95,6 +69,32 @@ func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetFailDesc(_failDesc 
 // GetFailDesc FailDesc Getter
 func (r TmallServicecenterWorkcardReservefailAPIRequest) GetFailDesc() string {
 	return r._failDesc
+}
+
+// SetIdentifyTaskId is IdentifyTaskId Setter
+// 核销单外部id
+func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetIdentifyTaskId(_identifyTaskId int64) error {
+	r._identifyTaskId = _identifyTaskId
+	r.Set("identify_task_id", _identifyTaskId)
+	return nil
+}
+
+// GetIdentifyTaskId IdentifyTaskId Getter
+func (r TmallServicecenterWorkcardReservefailAPIRequest) GetIdentifyTaskId() int64 {
+	return r._identifyTaskId
+}
+
+// SetFailCode is FailCode Setter
+// 预约失败原因码
+func (r *TmallServicecenterWorkcardReservefailAPIRequest) SetFailCode(_failCode int64) error {
+	r._failCode = _failCode
+	r.Set("fail_code", _failCode)
+	return nil
+}
+
+// GetFailCode FailCode Getter
+func (r TmallServicecenterWorkcardReservefailAPIRequest) GetFailCode() int64 {
+	return r._failCode
 }
 
 // SetWorkcardId is WorkcardId Setter

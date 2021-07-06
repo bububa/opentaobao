@@ -12,10 +12,10 @@ import (
 // 组团购场景下，获取用户参团信息
 type TaobaoOpentradeGroupMemberInfosAPIRequest struct {
 	model.Params
-	// 团id
-	_groupId int64
 	// 用户openId列表
 	_openUserIds []string
+	// 团id
+	_groupId int64
 }
 
 // NewTaobaoOpentradeGroupMemberInfosRequest 初始化TaobaoOpentradeGroupMemberInfosAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoOpentradeGroupMemberInfosAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetGroupId is GroupId Setter
-// 团id
-func (r *TaobaoOpentradeGroupMemberInfosAPIRequest) SetGroupId(_groupId int64) error {
-	r._groupId = _groupId
-	r.Set("group_id", _groupId)
-	return nil
-}
-
-// GetGroupId GroupId Getter
-func (r TaobaoOpentradeGroupMemberInfosAPIRequest) GetGroupId() int64 {
-	return r._groupId
-}
-
 // SetOpenUserIds is OpenUserIds Setter
 // 用户openId列表
 func (r *TaobaoOpentradeGroupMemberInfosAPIRequest) SetOpenUserIds(_openUserIds []string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoOpentradeGroupMemberInfosAPIRequest) SetOpenUserIds(_openUserIds 
 // GetOpenUserIds OpenUserIds Getter
 func (r TaobaoOpentradeGroupMemberInfosAPIRequest) GetOpenUserIds() []string {
 	return r._openUserIds
+}
+
+// SetGroupId is GroupId Setter
+// 团id
+func (r *TaobaoOpentradeGroupMemberInfosAPIRequest) SetGroupId(_groupId int64) error {
+	r._groupId = _groupId
+	r.Set("group_id", _groupId)
+	return nil
+}
+
+// GetGroupId GroupId Getter
+func (r TaobaoOpentradeGroupMemberInfosAPIRequest) GetGroupId() int64 {
+	return r._groupId
 }

@@ -14,14 +14,14 @@ type YunosAppstoreOpenReportadAPIRequest struct {
 	model.Params
 	// 广告跟踪id列表
 	_traceIds []string
+	// 客户端设备标识
+	_deviceId string
 	// 事件时间，当前毫秒数
 	_time int64
 	// 事件类型：0 代表曝光事件；1 代表点击下载事件；2 代表下载完成事件；3 代表安装完成事件
 	_action int64
 	// 客户端版本号
 	_clientVerCode int64
-	// 客户端设备标识
-	_deviceId string
 }
 
 // NewYunosAppstoreOpenReportadRequest 初始化YunosAppstoreOpenReportadAPIRequest对象
@@ -56,6 +56,19 @@ func (r *YunosAppstoreOpenReportadAPIRequest) SetTraceIds(_traceIds []string) er
 // GetTraceIds TraceIds Getter
 func (r YunosAppstoreOpenReportadAPIRequest) GetTraceIds() []string {
 	return r._traceIds
+}
+
+// SetDeviceId is DeviceId Setter
+// 客户端设备标识
+func (r *YunosAppstoreOpenReportadAPIRequest) SetDeviceId(_deviceId string) error {
+	r._deviceId = _deviceId
+	r.Set("device_id", _deviceId)
+	return nil
+}
+
+// GetDeviceId DeviceId Getter
+func (r YunosAppstoreOpenReportadAPIRequest) GetDeviceId() string {
+	return r._deviceId
 }
 
 // SetTime is Time Setter
@@ -95,17 +108,4 @@ func (r *YunosAppstoreOpenReportadAPIRequest) SetClientVerCode(_clientVerCode in
 // GetClientVerCode ClientVerCode Getter
 func (r YunosAppstoreOpenReportadAPIRequest) GetClientVerCode() int64 {
 	return r._clientVerCode
-}
-
-// SetDeviceId is DeviceId Setter
-// 客户端设备标识
-func (r *YunosAppstoreOpenReportadAPIRequest) SetDeviceId(_deviceId string) error {
-	r._deviceId = _deviceId
-	r.Set("device_id", _deviceId)
-	return nil
-}
-
-// GetDeviceId DeviceId Getter
-func (r YunosAppstoreOpenReportadAPIRequest) GetDeviceId() string {
-	return r._deviceId
 }

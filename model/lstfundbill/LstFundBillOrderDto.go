@@ -46,8 +46,6 @@ type LstFundBillOrderDto struct {
 	SettleAmt string `json:"settle_amt,omitempty" xml:"settle_amt,omitempty"`
 	// 销售单价
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
-	// 销售数量
-	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 销售金额
 	ItemAmt string `json:"item_amt,omitempty" xml:"item_amt,omitempty"`
 	// 商品佣金
@@ -62,8 +60,6 @@ type LstFundBillOrderDto struct {
 	RefundId string `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
 	// 订单退款状态
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
-	// 退货数量
-	RefundQuantity int64 `json:"refund_quantity,omitempty" xml:"refund_quantity,omitempty"`
 	// 货款退款金额
 	RefundAmt string `json:"refund_amt,omitempty" xml:"refund_amt,omitempty"`
 	// 优惠金额
@@ -116,4 +112,8 @@ type LstFundBillOrderDto struct {
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 单位
 	Unit string `json:"unit,omitempty" xml:"unit,omitempty"`
+	// 销售数量
+	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+	// 退货数量
+	RefundQuantity int64 `json:"refund_quantity,omitempty" xml:"refund_quantity,omitempty"`
 }

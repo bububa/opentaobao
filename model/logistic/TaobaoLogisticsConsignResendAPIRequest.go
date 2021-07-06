@@ -12,12 +12,8 @@ import (
 // 支持卖家发货后修改运单号;支持在线下单和自己联系两种发货方式;使用条件：<br><br/>1、必须是已发货订单，自己联系发货的必须24小时内才可修改；在线下单的，必须下单后物流公司未揽收成功前才可修改；<br/>2、自己联系只能切换为自己联系的公司，在线下单也只能切换为在线下单的物流公司。
 type TaobaoLogisticsConsignResendAPIRequest struct {
 	model.Params
-	// 淘宝交易ID
-	_tid int64
 	// 拆单子订单列表，对应的数据是：子订单号列表。可以不传，但是如果传了则必须符合传递的规则。子订单必须是操作的物流订单的子订单的真子集！
 	_subTid []int64
-	// 表明是否是拆单，默认值0，1表示拆单
-	_isSplit int64
 	// 运单号.具体一个物流公司的真实运单号码。淘宝官方物流会校验，请谨慎传入；
 	_outSid string
 	// 物流公司代码.如"POST"代表中国邮政,"ZJS"代表宅急送。调用 taobao.logistics.companies.get 获取。<br><font color='red'>如果是货到付款订单，选择的物流公司必须支持货到付款发货方式</font>
@@ -26,6 +22,10 @@ type TaobaoLogisticsConsignResendAPIRequest struct {
 	_feature string
 	// 商家的IP地址
 	_sellerIp string
+	// 淘宝交易ID
+	_tid int64
+	// 表明是否是拆单，默认值0，1表示拆单
+	_isSplit int64
 }
 
 // NewTaobaoLogisticsConsignResendRequest 初始化TaobaoLogisticsConsignResendAPIRequest对象
@@ -49,19 +49,6 @@ func (r TaobaoLogisticsConsignResendAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetTid is Tid Setter
-// 淘宝交易ID
-func (r *TaobaoLogisticsConsignResendAPIRequest) SetTid(_tid int64) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
-	return nil
-}
-
-// GetTid Tid Getter
-func (r TaobaoLogisticsConsignResendAPIRequest) GetTid() int64 {
-	return r._tid
-}
-
 // SetSubTid is SubTid Setter
 // 拆单子订单列表，对应的数据是：子订单号列表。可以不传，但是如果传了则必须符合传递的规则。子订单必须是操作的物流订单的子订单的真子集！
 func (r *TaobaoLogisticsConsignResendAPIRequest) SetSubTid(_subTid []int64) error {
@@ -73,19 +60,6 @@ func (r *TaobaoLogisticsConsignResendAPIRequest) SetSubTid(_subTid []int64) erro
 // GetSubTid SubTid Getter
 func (r TaobaoLogisticsConsignResendAPIRequest) GetSubTid() []int64 {
 	return r._subTid
-}
-
-// SetIsSplit is IsSplit Setter
-// 表明是否是拆单，默认值0，1表示拆单
-func (r *TaobaoLogisticsConsignResendAPIRequest) SetIsSplit(_isSplit int64) error {
-	r._isSplit = _isSplit
-	r.Set("is_split", _isSplit)
-	return nil
-}
-
-// GetIsSplit IsSplit Getter
-func (r TaobaoLogisticsConsignResendAPIRequest) GetIsSplit() int64 {
-	return r._isSplit
 }
 
 // SetOutSid is OutSid Setter
@@ -138,4 +112,30 @@ func (r *TaobaoLogisticsConsignResendAPIRequest) SetSellerIp(_sellerIp string) e
 // GetSellerIp SellerIp Getter
 func (r TaobaoLogisticsConsignResendAPIRequest) GetSellerIp() string {
 	return r._sellerIp
+}
+
+// SetTid is Tid Setter
+// 淘宝交易ID
+func (r *TaobaoLogisticsConsignResendAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoLogisticsConsignResendAPIRequest) GetTid() int64 {
+	return r._tid
+}
+
+// SetIsSplit is IsSplit Setter
+// 表明是否是拆单，默认值0，1表示拆单
+func (r *TaobaoLogisticsConsignResendAPIRequest) SetIsSplit(_isSplit int64) error {
+	r._isSplit = _isSplit
+	r.Set("is_split", _isSplit)
+	return nil
+}
+
+// GetIsSplit IsSplit Getter
+func (r TaobaoLogisticsConsignResendAPIRequest) GetIsSplit() int64 {
+	return r._isSplit
 }

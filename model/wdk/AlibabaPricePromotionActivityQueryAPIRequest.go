@@ -12,12 +12,12 @@ import (
 // 查询盒马帮档期活动详情
 type AlibabaPricePromotionActivityQueryAPIRequest struct {
 	model.Params
-	// 页码
-	_page int64
 	// 外部档期code
 	_outerPromotionCode string
 	// TOB店仓编码
 	_ouCode string
+	// 页码
+	_page int64
 	// 页码大小
 	_pageSize int64
 }
@@ -41,19 +41,6 @@ func (r AlibabaPricePromotionActivityQueryAPIRequest) GetApiParams() url.Values 
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetPage is Page Setter
-// 页码
-func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetPage(_page int64) error {
-	r._page = _page
-	r.Set("page", _page)
-	return nil
-}
-
-// GetPage Page Getter
-func (r AlibabaPricePromotionActivityQueryAPIRequest) GetPage() int64 {
-	return r._page
 }
 
 // SetOuterPromotionCode is OuterPromotionCode Setter
@@ -80,6 +67,19 @@ func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetOuCode(_ouCode string)
 // GetOuCode OuCode Getter
 func (r AlibabaPricePromotionActivityQueryAPIRequest) GetOuCode() string {
 	return r._ouCode
+}
+
+// SetPage is Page Setter
+// 页码
+func (r *AlibabaPricePromotionActivityQueryAPIRequest) SetPage(_page int64) error {
+	r._page = _page
+	r.Set("page", _page)
+	return nil
+}
+
+// GetPage Page Getter
+func (r AlibabaPricePromotionActivityQueryAPIRequest) GetPage() int64 {
+	return r._page
 }
 
 // SetPageSize is PageSize Setter

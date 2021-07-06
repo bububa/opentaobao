@@ -12,14 +12,14 @@ import (
 // 查询订单预定信息列表
 type AlitripTravelBookinfosSearchAPIRequest struct {
 	model.Params
-	// 页面大小，最大支持的页面大小为100。如查询旅行购订单，则最大支持的页面大小为30
-	_pageSize int64
-	// 当前页
-	_currentPage int64
 	// 申请时间_结束，精确到分钟
 	_applyTimeEnd string
 	// 申请时间_开始，精确到分钟
 	_applyTimeStart string
+	// 页面大小，最大支持的页面大小为100。如查询旅行购订单，则最大支持的页面大小为30
+	_pageSize int64
+	// 当前页
+	_currentPage int64
 }
 
 // NewAlitripTravelBookinfosSearchRequest 初始化AlitripTravelBookinfosSearchAPIRequest对象
@@ -41,32 +41,6 @@ func (r AlitripTravelBookinfosSearchAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetPageSize is PageSize Setter
-// 页面大小，最大支持的页面大小为100。如查询旅行购订单，则最大支持的页面大小为30
-func (r *AlitripTravelBookinfosSearchAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlitripTravelBookinfosSearchAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetCurrentPage is CurrentPage Setter
-// 当前页
-func (r *AlitripTravelBookinfosSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
-	r._currentPage = _currentPage
-	r.Set("current_page", _currentPage)
-	return nil
-}
-
-// GetCurrentPage CurrentPage Getter
-func (r AlitripTravelBookinfosSearchAPIRequest) GetCurrentPage() int64 {
-	return r._currentPage
 }
 
 // SetApplyTimeEnd is ApplyTimeEnd Setter
@@ -93,4 +67,30 @@ func (r *AlitripTravelBookinfosSearchAPIRequest) SetApplyTimeStart(_applyTimeSta
 // GetApplyTimeStart ApplyTimeStart Getter
 func (r AlitripTravelBookinfosSearchAPIRequest) GetApplyTimeStart() string {
 	return r._applyTimeStart
+}
+
+// SetPageSize is PageSize Setter
+// 页面大小，最大支持的页面大小为100。如查询旅行购订单，则最大支持的页面大小为30
+func (r *AlitripTravelBookinfosSearchAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlitripTravelBookinfosSearchAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetCurrentPage is CurrentPage Setter
+// 当前页
+func (r *AlitripTravelBookinfosSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// GetCurrentPage CurrentPage Getter
+func (r AlitripTravelBookinfosSearchAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
 }

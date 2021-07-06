@@ -4,8 +4,6 @@ package simba
 type Campaign struct {
 	// 主人昵称
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
-	// 推广计划ID
-	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
 	// 推广计划名称，不能多余20个汉字
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 推广计划结算状态，offline-下线；online-上线，
@@ -18,6 +16,8 @@ type Campaign struct {
 	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
 	// 用户设置的上下限状态；offline-下线；online-上线；
 	OnlineStatus string `json:"online_status,omitempty" xml:"online_status,omitempty"`
+	// 推广计划ID
+	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
 	// 计划类型0 标准计划，16 销量明星
 	CampaignType int64 `json:"campaign_type,omitempty" xml:"campaign_type,omitempty"`
 }

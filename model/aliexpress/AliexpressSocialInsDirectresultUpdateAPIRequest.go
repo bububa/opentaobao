@@ -12,12 +12,12 @@ import (
 // ISV更新INS私信发送的结果
 type AliexpressSocialInsDirectresultUpdateAPIRequest struct {
 	model.Params
-	// 回调id,在获取图片时会返回
-	_id int64
 	// 接受消息人INS_ID，也就是查询图片时的request_ins_id
 	_receiveInsId string
 	// ISV发送私信人的INS_ID
 	_senderInsId string
+	// 回调id,在获取图片时会返回
+	_id int64
 	// 1.成功，2.失败。
 	_result int64
 }
@@ -41,19 +41,6 @@ func (r AliexpressSocialInsDirectresultUpdateAPIRequest) GetApiParams() url.Valu
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetId is Id Setter
-// 回调id,在获取图片时会返回
-func (r *AliexpressSocialInsDirectresultUpdateAPIRequest) SetId(_id int64) error {
-	r._id = _id
-	r.Set("id", _id)
-	return nil
-}
-
-// GetId Id Getter
-func (r AliexpressSocialInsDirectresultUpdateAPIRequest) GetId() int64 {
-	return r._id
 }
 
 // SetReceiveInsId is ReceiveInsId Setter
@@ -80,6 +67,19 @@ func (r *AliexpressSocialInsDirectresultUpdateAPIRequest) SetSenderInsId(_sender
 // GetSenderInsId SenderInsId Getter
 func (r AliexpressSocialInsDirectresultUpdateAPIRequest) GetSenderInsId() string {
 	return r._senderInsId
+}
+
+// SetId is Id Setter
+// 回调id,在获取图片时会返回
+func (r *AliexpressSocialInsDirectresultUpdateAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// GetId Id Getter
+func (r AliexpressSocialInsDirectresultUpdateAPIRequest) GetId() int64 {
+	return r._id
 }
 
 // SetResult is Result Setter

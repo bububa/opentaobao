@@ -12,8 +12,6 @@ import (
 // 官网信用住订单取消
 type TaobaoXhotelOrderOfficialCancelAPIRequest struct {
 	model.Params
-	// 淘宝订单号,必选
-	_tid int64
 	// 原因描述
 	_reasonText string
 	// 外部订单号
@@ -22,6 +20,8 @@ type TaobaoXhotelOrderOfficialCancelAPIRequest struct {
 	_outUuid string
 	// 暂无意义，无需传入
 	_notifyUrl string
+	// 淘宝订单号,必选
+	_tid int64
 }
 
 // NewTaobaoXhotelOrderOfficialCancelRequest 初始化TaobaoXhotelOrderOfficialCancelAPIRequest对象
@@ -43,19 +43,6 @@ func (r TaobaoXhotelOrderOfficialCancelAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetTid is Tid Setter
-// 淘宝订单号,必选
-func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetTid(_tid int64) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
-	return nil
-}
-
-// GetTid Tid Getter
-func (r TaobaoXhotelOrderOfficialCancelAPIRequest) GetTid() int64 {
-	return r._tid
 }
 
 // SetReasonText is ReasonText Setter
@@ -108,4 +95,17 @@ func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetNotifyUrl(_notifyUrl stri
 // GetNotifyUrl NotifyUrl Getter
 func (r TaobaoXhotelOrderOfficialCancelAPIRequest) GetNotifyUrl() string {
 	return r._notifyUrl
+}
+
+// SetTid is Tid Setter
+// 淘宝订单号,必选
+func (r *TaobaoXhotelOrderOfficialCancelAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoXhotelOrderOfficialCancelAPIRequest) GetTid() int64 {
+	return r._tid
 }

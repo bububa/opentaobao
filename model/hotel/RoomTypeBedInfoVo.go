@@ -4,10 +4,10 @@ package hotel
 type RoomTypeBedInfoVo struct {
 	// 或关系床型集合
 	BedInfoGroups []BedInfoGroupVo `json:"bed_info_groups,omitempty" xml:"bed_info_groups>bed_info_group_vo,omitempty"`
-	// 简短描述，用于详情页报价前面的床型展示。
-	BriefDesc string `json:"brief_desc,omitempty" xml:"brief_desc,omitempty"`
 	// 分类，大类，用于搜索的筛选项
 	Classifications []string `json:"classifications,omitempty" xml:"classifications>string,omitempty"`
+	// 简短描述，用于详情页报价前面的床型展示。
+	BriefDesc string `json:"brief_desc,omitempty" xml:"brief_desc,omitempty"`
 	// 分类描述
 	ClassificationDesc string `json:"classification_desc,omitempty" xml:"classification_desc,omitempty"`
 	// 描述，长描述，描述为最详细的内容，用于详情页房型详情Dialog，下单页，订单页展示

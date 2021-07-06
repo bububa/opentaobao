@@ -2,8 +2,6 @@ package alsc
 
 // DishGrowOpenRuleInfo 结构体
 type DishGrowOpenRuleInfo struct {
-	// 是否已删除
-	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
 	// 规则ID
 	DishRuleId string `json:"dish_rule_id,omitempty" xml:"dish_rule_id,omitempty"`
 	// 扩展信息
@@ -20,4 +18,6 @@ type DishGrowOpenRuleInfo struct {
 	ToLevelId string `json:"to_level_id,omitempty" xml:"to_level_id,omitempty"`
 	// 外部菜品ID
 	OutSkuId string `json:"out_sku_id,omitempty" xml:"out_sku_id,omitempty"`
+	// 是否已删除
+	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
 }

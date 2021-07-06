@@ -25,8 +25,8 @@ type TaobaoPromotionBenefitSelectorAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotion_benefit_selector_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 接口调用是否成功
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 权益列表信息
 	BenefitList []BenefitSelectorVo `json:"benefit_list,omitempty" xml:"benefit_list>benefit_selector_vo,omitempty"`
+	// 接口调用是否成功
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

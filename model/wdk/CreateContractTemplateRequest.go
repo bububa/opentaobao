@@ -4,6 +4,10 @@ package wdk
 type CreateContractTemplateRequest struct {
 	// 提货券配置列表
 	CouponConfigList []Couponconfiglist `json:"coupon_config_list,omitempty" xml:"coupon_config_list>couponconfiglist,omitempty"`
+	// 不提供的商品信息，传入格式同providerItemInfos
+	NotProviderItemInfos []string `json:"not_provider_item_infos,omitempty" xml:"not_provider_item_infos>string,omitempty"`
+	// 提供的商品信息，需要传入一个String的List，每个字符串描述一个商品
+	ProviderItemInfos []string `json:"provider_item_infos,omitempty" xml:"provider_item_infos>string,omitempty"`
 	// 乙方签约日期-日
 	SecondSignDay string `json:"second_sign_day,omitempty" xml:"second_sign_day,omitempty"`
 	// 乙方签约日期-月
@@ -74,10 +78,6 @@ type CreateContractTemplateRequest struct {
 	PoiArea string `json:"poi_area,omitempty" xml:"poi_area,omitempty"`
 	// 门店所在市
 	PoiCity string `json:"poi_city,omitempty" xml:"poi_city,omitempty"`
-	// 不提供的商品信息，传入格式同providerItemInfos
-	NotProviderItemInfos []string `json:"not_provider_item_infos,omitempty" xml:"not_provider_item_infos>string,omitempty"`
-	// 提供的商品信息，需要传入一个String的List，每个字符串描述一个商品
-	ProviderItemInfos []string `json:"provider_item_infos,omitempty" xml:"provider_item_infos>string,omitempty"`
 	// 大润发超市名称
 	PoiName string `json:"poi_name,omitempty" xml:"poi_name,omitempty"`
 	// 乙方公司地址

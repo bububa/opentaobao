@@ -22,12 +22,12 @@ type PayDetailInfo struct {
 	PayAccountId string `json:"pay_account_id,omitempty" xml:"pay_account_id,omitempty"`
 	// 支付卡号
 	PayCardId string `json:"pay_card_id,omitempty" xml:"pay_card_id,omitempty"`
-	// 支付金额，单位“分”
-	PayFee int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
 	// 支付来源 HANDHELD_DEVICES手持设备 SAMPLE_ORDER扫码点餐 POS POS端 MSTORE 移动门店 THIRDPARTY第三方 OTHER 其他
 	PaySource string `json:"pay_source,omitempty" xml:"pay_source,omitempty"`
 	// 支付状态 SUCCESS 成功  FAIL 失败
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+	// 支付金额，单位“分”
+	PayFee int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
 	// 支付完成时间
 	SuccessTime int64 `json:"success_time,omitempty" xml:"success_time,omitempty"`
 }

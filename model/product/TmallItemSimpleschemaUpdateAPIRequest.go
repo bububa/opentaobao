@@ -12,10 +12,10 @@ import (
 // 国外大商家天猫简化编辑商品
 type TmallItemSimpleschemaUpdateAPIRequest struct {
 	model.Params
-	// 商品id
-	_itemId int64
 	// 编辑商品时提交的xml信息
 	_schemaXmlFields string
+	// 商品id
+	_itemId int64
 }
 
 // NewTmallItemSimpleschemaUpdateRequest 初始化TmallItemSimpleschemaUpdateAPIRequest对象
@@ -39,19 +39,6 @@ func (r TmallItemSimpleschemaUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetItemId is ItemId Setter
-// 商品id
-func (r *TmallItemSimpleschemaUpdateAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
-	return nil
-}
-
-// GetItemId ItemId Getter
-func (r TmallItemSimpleschemaUpdateAPIRequest) GetItemId() int64 {
-	return r._itemId
-}
-
 // SetSchemaXmlFields is SchemaXmlFields Setter
 // 编辑商品时提交的xml信息
 func (r *TmallItemSimpleschemaUpdateAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
@@ -63,4 +50,17 @@ func (r *TmallItemSimpleschemaUpdateAPIRequest) SetSchemaXmlFields(_schemaXmlFie
 // GetSchemaXmlFields SchemaXmlFields Getter
 func (r TmallItemSimpleschemaUpdateAPIRequest) GetSchemaXmlFields() string {
 	return r._schemaXmlFields
+}
+
+// SetItemId is ItemId Setter
+// 商品id
+func (r *TmallItemSimpleschemaUpdateAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r TmallItemSimpleschemaUpdateAPIRequest) GetItemId() int64 {
+	return r._itemId
 }

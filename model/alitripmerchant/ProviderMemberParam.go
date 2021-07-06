@@ -14,18 +14,18 @@ type ProviderMemberParam struct {
 	PhoneNum string `json:"phone_num,omitempty" xml:"phone_num,omitempty"`
 	// 语言
 	Language string `json:"language,omitempty" xml:"language,omitempty"`
-	// 是否订阅信息
-	Subscription bool `json:"subscription,omitempty" xml:"subscription,omitempty"`
 	// 请求路径
 	Url string `json:"url,omitempty" xml:"url,omitempty"`
 	// 英文名
 	FirstName string `json:"first_name,omitempty" xml:"first_name,omitempty"`
 	// 请求应用的id
 	AppId string `json:"app_id,omitempty" xml:"app_id,omitempty"`
-	// 是否接受协议
-	AcceptedTandC bool `json:"accepted_tand_c,omitempty" xml:"accepted_tand_c,omitempty"`
 	// 邮箱（加密）
 	Email string `json:"email,omitempty" xml:"email,omitempty"`
 	// 追踪信息
 	PromoteInfo string `json:"promote_info,omitempty" xml:"promote_info,omitempty"`
+	// 是否订阅信息
+	Subscription bool `json:"subscription,omitempty" xml:"subscription,omitempty"`
+	// 是否接受协议
+	AcceptedTandC bool `json:"accepted_tand_c,omitempty" xml:"accepted_tand_c,omitempty"`
 }

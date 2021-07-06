@@ -12,6 +12,12 @@ import (
 // 发回帖子信息同步
 type AlibabaAlihealthPregnancyPostsDataAPIRequest struct {
 	model.Params
+	// 标题
+	_title string
+	// 内容
+	_content string
+	// 图片url
+	_picUrl string
 	// 用户id
 	_userId int64
 	// 事件类型 0发帖 1回帖
@@ -20,12 +26,6 @@ type AlibabaAlihealthPregnancyPostsDataAPIRequest struct {
 	_mainId int64
 	// 回帖id
 	_replyId int64
-	// 标题
-	_title string
-	// 内容
-	_content string
-	// 图片url
-	_picUrl string
 	// 发帖时间
 	_date int64
 }
@@ -49,6 +49,45 @@ func (r AlibabaAlihealthPregnancyPostsDataAPIRequest) GetApiParams() url.Values 
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTitle is Title Setter
+// 标题
+func (r *AlibabaAlihealthPregnancyPostsDataAPIRequest) SetTitle(_title string) error {
+	r._title = _title
+	r.Set("title", _title)
+	return nil
+}
+
+// GetTitle Title Getter
+func (r AlibabaAlihealthPregnancyPostsDataAPIRequest) GetTitle() string {
+	return r._title
+}
+
+// SetContent is Content Setter
+// 内容
+func (r *AlibabaAlihealthPregnancyPostsDataAPIRequest) SetContent(_content string) error {
+	r._content = _content
+	r.Set("content", _content)
+	return nil
+}
+
+// GetContent Content Getter
+func (r AlibabaAlihealthPregnancyPostsDataAPIRequest) GetContent() string {
+	return r._content
+}
+
+// SetPicUrl is PicUrl Setter
+// 图片url
+func (r *AlibabaAlihealthPregnancyPostsDataAPIRequest) SetPicUrl(_picUrl string) error {
+	r._picUrl = _picUrl
+	r.Set("pic_url", _picUrl)
+	return nil
+}
+
+// GetPicUrl PicUrl Getter
+func (r AlibabaAlihealthPregnancyPostsDataAPIRequest) GetPicUrl() string {
+	return r._picUrl
 }
 
 // SetUserId is UserId Setter
@@ -101,45 +140,6 @@ func (r *AlibabaAlihealthPregnancyPostsDataAPIRequest) SetReplyId(_replyId int64
 // GetReplyId ReplyId Getter
 func (r AlibabaAlihealthPregnancyPostsDataAPIRequest) GetReplyId() int64 {
 	return r._replyId
-}
-
-// SetTitle is Title Setter
-// 标题
-func (r *AlibabaAlihealthPregnancyPostsDataAPIRequest) SetTitle(_title string) error {
-	r._title = _title
-	r.Set("title", _title)
-	return nil
-}
-
-// GetTitle Title Getter
-func (r AlibabaAlihealthPregnancyPostsDataAPIRequest) GetTitle() string {
-	return r._title
-}
-
-// SetContent is Content Setter
-// 内容
-func (r *AlibabaAlihealthPregnancyPostsDataAPIRequest) SetContent(_content string) error {
-	r._content = _content
-	r.Set("content", _content)
-	return nil
-}
-
-// GetContent Content Getter
-func (r AlibabaAlihealthPregnancyPostsDataAPIRequest) GetContent() string {
-	return r._content
-}
-
-// SetPicUrl is PicUrl Setter
-// 图片url
-func (r *AlibabaAlihealthPregnancyPostsDataAPIRequest) SetPicUrl(_picUrl string) error {
-	r._picUrl = _picUrl
-	r.Set("pic_url", _picUrl)
-	return nil
-}
-
-// GetPicUrl PicUrl Getter
-func (r AlibabaAlihealthPregnancyPostsDataAPIRequest) GetPicUrl() string {
-	return r._picUrl
 }
 
 // SetDate is Date Setter

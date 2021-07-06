@@ -12,8 +12,6 @@ import (
 // 中药片关联关系上传
 type AlibabaAlihealthZyUploadrelationAPIRequest struct {
 	model.Params
-	// 关联关系文件信息
-	_saveCodeRelation *SaveCodeRelationType
 	// affirmFlag
 	_affirmFlag string
 	// fileContent
@@ -24,6 +22,8 @@ type AlibabaAlihealthZyUploadrelationAPIRequest struct {
 	_refEntId string
 	// 客户端类型
 	_clientType string
+	// 关联关系文件信息
+	_saveCodeRelation *SaveCodeRelationType
 }
 
 // NewAlibabaAlihealthZyUploadrelationRequest 初始化AlibabaAlihealthZyUploadrelationAPIRequest对象
@@ -45,19 +45,6 @@ func (r AlibabaAlihealthZyUploadrelationAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetSaveCodeRelation is SaveCodeRelation Setter
-// 关联关系文件信息
-func (r *AlibabaAlihealthZyUploadrelationAPIRequest) SetSaveCodeRelation(_saveCodeRelation *SaveCodeRelationType) error {
-	r._saveCodeRelation = _saveCodeRelation
-	r.Set("save_code_relation", _saveCodeRelation)
-	return nil
-}
-
-// GetSaveCodeRelation SaveCodeRelation Getter
-func (r AlibabaAlihealthZyUploadrelationAPIRequest) GetSaveCodeRelation() *SaveCodeRelationType {
-	return r._saveCodeRelation
 }
 
 // SetAffirmFlag is AffirmFlag Setter
@@ -123,4 +110,17 @@ func (r *AlibabaAlihealthZyUploadrelationAPIRequest) SetClientType(_clientType s
 // GetClientType ClientType Getter
 func (r AlibabaAlihealthZyUploadrelationAPIRequest) GetClientType() string {
 	return r._clientType
+}
+
+// SetSaveCodeRelation is SaveCodeRelation Setter
+// 关联关系文件信息
+func (r *AlibabaAlihealthZyUploadrelationAPIRequest) SetSaveCodeRelation(_saveCodeRelation *SaveCodeRelationType) error {
+	r._saveCodeRelation = _saveCodeRelation
+	r.Set("save_code_relation", _saveCodeRelation)
+	return nil
+}
+
+// GetSaveCodeRelation SaveCodeRelation Getter
+func (r AlibabaAlihealthZyUploadrelationAPIRequest) GetSaveCodeRelation() *SaveCodeRelationType {
+	return r._saveCodeRelation
 }

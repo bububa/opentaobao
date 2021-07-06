@@ -16,10 +16,6 @@ type AlibabaNlifeStoreItemsGetAPIRequest struct {
 	_storeIdType string
 	// 门店ID/设备号
 	_storeId string
-	// 商品类目ID
-	_cid int64
-	// 品牌ID
-	_brandId int64
 	// 商品状态: ON_SALE-在售 ; OFF_SALE-已下架 ; ALL-全部
 	_status string
 	// 商品类型: STORE_GOODS-经销/现货 ; SUPPLIER_GOODS-代销/网直供 ; TAOKE-淘宝客 ; ALL-全部商品
@@ -30,6 +26,10 @@ type AlibabaNlifeStoreItemsGetAPIRequest struct {
 	_startModified string
 	// 查询结束时间
 	_endModified string
+	// 商品类目ID
+	_cid int64
+	// 品牌ID
+	_brandId int64
 	// 分页的页码
 	_pageNo int64
 	// 分页时每页的数量
@@ -83,32 +83,6 @@ func (r *AlibabaNlifeStoreItemsGetAPIRequest) SetStoreId(_storeId string) error 
 // GetStoreId StoreId Getter
 func (r AlibabaNlifeStoreItemsGetAPIRequest) GetStoreId() string {
 	return r._storeId
-}
-
-// SetCid is Cid Setter
-// 商品类目ID
-func (r *AlibabaNlifeStoreItemsGetAPIRequest) SetCid(_cid int64) error {
-	r._cid = _cid
-	r.Set("cid", _cid)
-	return nil
-}
-
-// GetCid Cid Getter
-func (r AlibabaNlifeStoreItemsGetAPIRequest) GetCid() int64 {
-	return r._cid
-}
-
-// SetBrandId is BrandId Setter
-// 品牌ID
-func (r *AlibabaNlifeStoreItemsGetAPIRequest) SetBrandId(_brandId int64) error {
-	r._brandId = _brandId
-	r.Set("brand_id", _brandId)
-	return nil
-}
-
-// GetBrandId BrandId Getter
-func (r AlibabaNlifeStoreItemsGetAPIRequest) GetBrandId() int64 {
-	return r._brandId
 }
 
 // SetStatus is Status Setter
@@ -174,6 +148,32 @@ func (r *AlibabaNlifeStoreItemsGetAPIRequest) SetEndModified(_endModified string
 // GetEndModified EndModified Getter
 func (r AlibabaNlifeStoreItemsGetAPIRequest) GetEndModified() string {
 	return r._endModified
+}
+
+// SetCid is Cid Setter
+// 商品类目ID
+func (r *AlibabaNlifeStoreItemsGetAPIRequest) SetCid(_cid int64) error {
+	r._cid = _cid
+	r.Set("cid", _cid)
+	return nil
+}
+
+// GetCid Cid Getter
+func (r AlibabaNlifeStoreItemsGetAPIRequest) GetCid() int64 {
+	return r._cid
+}
+
+// SetBrandId is BrandId Setter
+// 品牌ID
+func (r *AlibabaNlifeStoreItemsGetAPIRequest) SetBrandId(_brandId int64) error {
+	r._brandId = _brandId
+	r.Set("brand_id", _brandId)
+	return nil
+}
+
+// GetBrandId BrandId Getter
+func (r AlibabaNlifeStoreItemsGetAPIRequest) GetBrandId() int64 {
+	return r._brandId
 }
 
 // SetPageNo is PageNo Setter

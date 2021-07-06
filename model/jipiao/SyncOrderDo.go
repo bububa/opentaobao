@@ -2,14 +2,14 @@ package jipiao
 
 // SyncOrderDo 结构体
 type SyncOrderDo struct {
-	// 申请单id
-	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 改签后的舱位
 	Cabin string `json:"cabin,omitempty" xml:"cabin,omitempty"`
 	// 改签前的舱位
 	LastCabin string `json:"last_cabin,omitempty" xml:"last_cabin,omitempty"`
 	// 改签备注信息
 	Memo string `json:"memo,omitempty" xml:"memo,omitempty"`
+	// 申请单id
+	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 改签后航班信息
 	ModifyAfterFlight *Flight `json:"modify_after_flight,omitempty" xml:"modify_after_flight,omitempty"`
 	// 改签前航班信息

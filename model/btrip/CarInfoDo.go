@@ -14,8 +14,6 @@ type CarInfoDo struct {
 	RealFromCityName string `json:"real_from_city_name,omitempty" xml:"real_from_city_name,omitempty"`
 	// 实际到达城市
 	RealToCityName string `json:"real_to_city_name,omitempty" xml:"real_to_city_name,omitempty"`
-	// 2:滴滴出行 8:滴滴出行 100087:滴滴出行 100000:滴滴出行 100003:曹操出行 3:曹操出行 100085:曹操出行 100007:阳光出行 5:阳光出行 0：其他
-	Provider int64 `json:"provider,omitempty" xml:"provider,omitempty"`
 	// 滴滴出行 曹操出行 阳光出行 其他
 	ProviderName string `json:"provider_name,omitempty" xml:"provider_name,omitempty"`
 	// 打车是由
@@ -36,4 +34,6 @@ type CarInfoDo struct {
 	RealFromAddr string `json:"real_from_addr,omitempty" xml:"real_from_addr,omitempty"`
 	// 实际到达地
 	RealToAddr string `json:"real_to_addr,omitempty" xml:"real_to_addr,omitempty"`
+	// 2:滴滴出行 8:滴滴出行 100087:滴滴出行 100000:滴滴出行 100003:曹操出行 3:曹操出行 100085:曹操出行 100007:阳光出行 5:阳光出行 0：其他
+	Provider int64 `json:"provider,omitempty" xml:"provider,omitempty"`
 }

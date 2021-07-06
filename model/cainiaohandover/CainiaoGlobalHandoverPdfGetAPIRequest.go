@@ -12,12 +12,12 @@ import (
 // 返回指定大包面单的PDF文件数据
 type CainiaoGlobalHandoverPdfGetAPIRequest struct {
 	model.Params
-	// 用户信息
-	_userInfo *UserInfoDto
 	// 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
 	_client string
 	// 多语言
 	_locale string
+	// 用户信息
+	_userInfo *UserInfoDto
 	// 大包编号id
 	_handoverContentId int64
 	// 打印数据类型，1：面单、4：发货标签、512：交接清单
@@ -45,19 +45,6 @@ func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetUserInfo is UserInfo Setter
-// 用户信息
-func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
-	r._userInfo = _userInfo
-	r.Set("user_info", _userInfo)
-	return nil
-}
-
-// GetUserInfo UserInfo Getter
-func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetUserInfo() *UserInfoDto {
-	return r._userInfo
-}
-
 // SetClient is Client Setter
 // 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
 func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetClient(_client string) error {
@@ -82,6 +69,19 @@ func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetLocale(_locale string) error 
 // GetLocale Locale Getter
 func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetLocale() string {
 	return r._locale
+}
+
+// SetUserInfo is UserInfo Setter
+// 用户信息
+func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+	r._userInfo = _userInfo
+	r.Set("user_info", _userInfo)
+	return nil
+}
+
+// GetUserInfo UserInfo Getter
+func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetUserInfo() *UserInfoDto {
+	return r._userInfo
 }
 
 // SetHandoverContentId is HandoverContentId Setter

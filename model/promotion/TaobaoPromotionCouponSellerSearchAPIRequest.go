@@ -12,14 +12,14 @@ import (
 // 查询绑定卖家相关优惠券信息  如isv  百川 等外部业务方
 type TaobaoPromotionCouponSellerSearchAPIRequest struct {
 	model.Params
+	// 券id集合
+	_spreadIds []string
 	// 卖家昵称
 	_sellerNick string
 	// 当前第几页  从第一页开始
 	_currentPage int64
 	// 每页数据 最大20左右
 	_pageSize int64
-	// 券id集合
-	_spreadIds []string
 }
 
 // NewTaobaoPromotionCouponSellerSearchRequest 初始化TaobaoPromotionCouponSellerSearchAPIRequest对象
@@ -41,6 +41,19 @@ func (r TaobaoPromotionCouponSellerSearchAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSpreadIds is SpreadIds Setter
+// 券id集合
+func (r *TaobaoPromotionCouponSellerSearchAPIRequest) SetSpreadIds(_spreadIds []string) error {
+	r._spreadIds = _spreadIds
+	r.Set("spread_ids", _spreadIds)
+	return nil
+}
+
+// GetSpreadIds SpreadIds Getter
+func (r TaobaoPromotionCouponSellerSearchAPIRequest) GetSpreadIds() []string {
+	return r._spreadIds
 }
 
 // SetSellerNick is SellerNick Setter
@@ -80,17 +93,4 @@ func (r *TaobaoPromotionCouponSellerSearchAPIRequest) SetPageSize(_pageSize int6
 // GetPageSize PageSize Getter
 func (r TaobaoPromotionCouponSellerSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetSpreadIds is SpreadIds Setter
-// 券id集合
-func (r *TaobaoPromotionCouponSellerSearchAPIRequest) SetSpreadIds(_spreadIds []string) error {
-	r._spreadIds = _spreadIds
-	r.Set("spread_ids", _spreadIds)
-	return nil
-}
-
-// GetSpreadIds SpreadIds Getter
-func (r TaobaoPromotionCouponSellerSearchAPIRequest) GetSpreadIds() []string {
-	return r._spreadIds
 }

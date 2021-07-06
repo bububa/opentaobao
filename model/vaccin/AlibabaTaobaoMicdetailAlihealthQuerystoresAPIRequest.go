@@ -12,6 +12,12 @@ import (
 // 微信小程序疫苗预约门店列表查询
 type AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest struct {
 	model.Params
+	// 经度
+	_lon string
+	// 维度
+	_lat string
+	// 商品ID
+	_itemId string
 	// 0不查询库存1查询库存
 	_invType int64
 	// 包ID
@@ -20,12 +26,6 @@ type AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest struct {
 	_pageSize int64
 	// 页码
 	_pageNum int64
-	// 经度
-	_lon string
-	// 维度
-	_lat string
-	// 商品ID
-	_itemId string
 	// 用户ID
 	_userId int64
 	// 地区ID
@@ -55,6 +55,45 @@ func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetApiParams() url
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetLon is Lon Setter
+// 经度
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetLon(_lon string) error {
+	r._lon = _lon
+	r.Set("lon", _lon)
+	return nil
+}
+
+// GetLon Lon Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetLon() string {
+	return r._lon
+}
+
+// SetLat is Lat Setter
+// 维度
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetLat(_lat string) error {
+	r._lat = _lat
+	r.Set("lat", _lat)
+	return nil
+}
+
+// GetLat Lat Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetLat() string {
+	return r._lat
+}
+
+// SetItemId is ItemId Setter
+// 商品ID
+func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetItemId(_itemId string) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetItemId() string {
+	return r._itemId
 }
 
 // SetInvType is InvType Setter
@@ -107,45 +146,6 @@ func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetPageNum(_pageN
 // GetPageNum PageNum Getter
 func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetPageNum() int64 {
 	return r._pageNum
-}
-
-// SetLon is Lon Setter
-// 经度
-func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetLon(_lon string) error {
-	r._lon = _lon
-	r.Set("lon", _lon)
-	return nil
-}
-
-// GetLon Lon Getter
-func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetLon() string {
-	return r._lon
-}
-
-// SetLat is Lat Setter
-// 维度
-func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetLat(_lat string) error {
-	r._lat = _lat
-	r.Set("lat", _lat)
-	return nil
-}
-
-// GetLat Lat Getter
-func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetLat() string {
-	return r._lat
-}
-
-// SetItemId is ItemId Setter
-// 商品ID
-func (r *AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) SetItemId(_itemId string) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
-	return nil
-}
-
-// GetItemId ItemId Getter
-func (r AlibabaTaobaoMicdetailAlihealthQuerystoresAPIRequest) GetItemId() string {
-	return r._itemId
 }
 
 // SetUserId is UserId Setter

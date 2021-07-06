@@ -84,10 +84,6 @@ type TaobaoAlitripItFareAddrtAPIRequest struct {
 	_maxStay string
 	// 成人旅客身份，1.不得为空 2.普通/学生  3.当输入学生时，儿童价格项输入无效 4.当为小团产品时，此适用身份类别必须为 普通。5、后期支持劳工、移民、海员、老人、青年
 	_adultPassengerIdentity string
-	// 最小出行人数,数字1-9
-	_minTravelPerson int64
-	// 最大出行人数,数字1-9
-	_maxTravelPerson int64
 	// （后期字段，预留）,小团儿童计数规则，可选值：1个儿童计1个成人、2个儿童计1个成人、儿童不计
 	_gv2ChildRule string
 	// 国籍，可录入多个用","隔开表示或的关系 1、可录入国家二字代码，为空表示不限制，最多录20个 *默认为空，不输入为不限制
@@ -96,24 +92,10 @@ type TaobaoAlitripItFareAddrtAPIRequest struct {
 	_excludeNationality string
 	// 乘客年龄,1、可录入范围如21-25表示21周岁至25周岁,1-表示1岁以上，-99表示99岁以下
 	_passengerAge string
-	// 销售票面价,1.不得为空 2.价格区间为【0-999999】 3、销售票面价为10的整数倍(向下取整，如录入3002，则实际录入数值为3000)
-	_ticketPrice int64
-	// （后期字段，预留）,成人税费，1、整数金额（包机切位产品适用）
-	_adultTax int64
 	// 儿童价，1、可不输入，空表示不适用儿童价 2、可输入大于0的正整数及百分比，输入百分比时，成人价格必须录入 例如：2000或70%。 3. 百分比计算的数值，个位向上取整 当"乘客类型"输入非“普通”（成人）时，此项输入无效。
 	_childPrice string
-	// （后期字段，预留）,儿童税费，1、整数金额（包机切位产品适用）
-	_childTax int64
-	// 返点,1.不得为空 2.只允许填写数字，支持到小数点后两位；不用填写% 3.返点需小于100 成人价=销售票面价*（1-返点）+留钱
-	_returnPoint float64
-	// 留钱，1.0或正负数字2.-20表示返20元；20代表留20元
-	_adjustMoney int64
 	// 1/2RT佣金计算方式,1、各取各，取严； 默认为 取严
 	_rtCommissionFormula string
-	// 提前出票时限，默认为空，代表无限制； 输入为小于等于365的正整数。 小于或等于最晚出票时限。 单位为天
-	_earlyTicketingTimeLimit int64
-	// 最晚出票时限,默认为空，代表无限制； 输入为小于等于365的正整数。 大于或等于提前出票时限。 单位为天
-	_lateTicketingTimeLimit int64
 	// 大客户编码，文本框
 	_vipCode string
 	// （后期字段，预留）,运价发布渠道,1、可填写 PC、无线、都适用 2、默认为都适用
@@ -150,22 +132,14 @@ type TaobaoAlitripItFareAddrtAPIRequest struct {
 	_reissuePrice4Ret string
 	// （已废除字段）,回程部分未使用改期费用，可输入空，*或正整数，其中空表示按照航空公司规定执行，*表示不支持部分改期
 	_reissuePartPrice4Ret string
-	// （已废除字段）,去程NOSHOW规定时限，输入正整数
-	_noShowTimeLimit4Dep int64
 	// （已废除字段）,去程NOSHOW能否退票，输入是或否；默认为否
 	_isNoShowCanRefund4Dep string
 	// （已废除字段）,去程NOSHOW能否改期，输入是或否；默认为否
 	_isNoShowCanReissue4Dep string
-	// （已废除字段）,去程NOSHOW罚金，可为空，若输入则为正整数；其中空表示按航空公司规定执行
-	_noShowPenalty4Dep int64
-	// （已废除字段）,回程NOSHOW规定时限，输入正整数
-	_noShowTimeLimit4Ret int64
 	// （已废除字段）,回程NOSHOW能否退票，输入是或否；默认为否
 	_isNoShowCanRefund4Ret string
 	// （已废除字段）,回程NOSHOW能否改期，输入是或否；默认为否
 	_isNoShowCanReissue4Ret string
-	// （已废除字段）,回程NOSHOW罚金，可为空，若输入则为正整数；其中空表示按航空公司规定执行
-	_noShowPenalty4Ret int64
 	// （后期字段，预留）,去程行李额规定,可输入1-23,1-23 中间用","隔开，表示第一程和第二程（中转）支持行李额为1PC，23KG。若某段为空表示该段按照航空公司规定执行，逗号不可缺少；若不提供免费行李额直接输入空
 	_luggageRule4Dep string
 	// （后期字段，预留）,回程行李额规定,可输入1-23,1-23 中间用","隔开，表示第一程和第二程（中转）支持行李额为1PC，23KG。若某段为空表示该段按照航空公司规定执行，逗号不可缺少；若不提供免费行李额直接输入空
@@ -244,6 +218,32 @@ type TaobaoAlitripItFareAddrtAPIRequest struct {
 	_tariff string
 	// 运价规则id，最大长度4
 	_ruleId string
+	// 最小出行人数,数字1-9
+	_minTravelPerson int64
+	// 最大出行人数,数字1-9
+	_maxTravelPerson int64
+	// 销售票面价,1.不得为空 2.价格区间为【0-999999】 3、销售票面价为10的整数倍(向下取整，如录入3002，则实际录入数值为3000)
+	_ticketPrice int64
+	// （后期字段，预留）,成人税费，1、整数金额（包机切位产品适用）
+	_adultTax int64
+	// （后期字段，预留）,儿童税费，1、整数金额（包机切位产品适用）
+	_childTax int64
+	// 返点,1.不得为空 2.只允许填写数字，支持到小数点后两位；不用填写% 3.返点需小于100 成人价=销售票面价*（1-返点）+留钱
+	_returnPoint float64
+	// 留钱，1.0或正负数字2.-20表示返20元；20代表留20元
+	_adjustMoney int64
+	// 提前出票时限，默认为空，代表无限制； 输入为小于等于365的正整数。 小于或等于最晚出票时限。 单位为天
+	_earlyTicketingTimeLimit int64
+	// 最晚出票时限,默认为空，代表无限制； 输入为小于等于365的正整数。 大于或等于提前出票时限。 单位为天
+	_lateTicketingTimeLimit int64
+	// （已废除字段）,去程NOSHOW规定时限，输入正整数
+	_noShowTimeLimit4Dep int64
+	// （已废除字段）,去程NOSHOW罚金，可为空，若输入则为正整数；其中空表示按航空公司规定执行
+	_noShowPenalty4Dep int64
+	// （已废除字段）,回程NOSHOW规定时限，输入正整数
+	_noShowTimeLimit4Ret int64
+	// （已废除字段）,回程NOSHOW罚金，可为空，若输入则为正整数；其中空表示按航空公司规定执行
+	_noShowPenalty4Ret int64
 	// 运价组合适用方向,0(或者字段不存在):不限制/1:仅作用在去程/2:仅作用在回程
 	_fareDirectDestrict int64
 }
@@ -737,32 +737,6 @@ func (r TaobaoAlitripItFareAddrtAPIRequest) GetAdultPassengerIdentity() string {
 	return r._adultPassengerIdentity
 }
 
-// SetMinTravelPerson is MinTravelPerson Setter
-// 最小出行人数,数字1-9
-func (r *TaobaoAlitripItFareAddrtAPIRequest) SetMinTravelPerson(_minTravelPerson int64) error {
-	r._minTravelPerson = _minTravelPerson
-	r.Set("minTravelPerson", _minTravelPerson)
-	return nil
-}
-
-// GetMinTravelPerson MinTravelPerson Getter
-func (r TaobaoAlitripItFareAddrtAPIRequest) GetMinTravelPerson() int64 {
-	return r._minTravelPerson
-}
-
-// SetMaxTravelPerson is MaxTravelPerson Setter
-// 最大出行人数,数字1-9
-func (r *TaobaoAlitripItFareAddrtAPIRequest) SetMaxTravelPerson(_maxTravelPerson int64) error {
-	r._maxTravelPerson = _maxTravelPerson
-	r.Set("maxTravelPerson", _maxTravelPerson)
-	return nil
-}
-
-// GetMaxTravelPerson MaxTravelPerson Getter
-func (r TaobaoAlitripItFareAddrtAPIRequest) GetMaxTravelPerson() int64 {
-	return r._maxTravelPerson
-}
-
 // SetGv2ChildRule is Gv2ChildRule Setter
 // （后期字段，预留）,小团儿童计数规则，可选值：1个儿童计1个成人、2个儿童计1个成人、儿童不计
 func (r *TaobaoAlitripItFareAddrtAPIRequest) SetGv2ChildRule(_gv2ChildRule string) error {
@@ -815,32 +789,6 @@ func (r TaobaoAlitripItFareAddrtAPIRequest) GetPassengerAge() string {
 	return r._passengerAge
 }
 
-// SetTicketPrice is TicketPrice Setter
-// 销售票面价,1.不得为空 2.价格区间为【0-999999】 3、销售票面价为10的整数倍(向下取整，如录入3002，则实际录入数值为3000)
-func (r *TaobaoAlitripItFareAddrtAPIRequest) SetTicketPrice(_ticketPrice int64) error {
-	r._ticketPrice = _ticketPrice
-	r.Set("ticketPrice", _ticketPrice)
-	return nil
-}
-
-// GetTicketPrice TicketPrice Getter
-func (r TaobaoAlitripItFareAddrtAPIRequest) GetTicketPrice() int64 {
-	return r._ticketPrice
-}
-
-// SetAdultTax is AdultTax Setter
-// （后期字段，预留）,成人税费，1、整数金额（包机切位产品适用）
-func (r *TaobaoAlitripItFareAddrtAPIRequest) SetAdultTax(_adultTax int64) error {
-	r._adultTax = _adultTax
-	r.Set("adultTax", _adultTax)
-	return nil
-}
-
-// GetAdultTax AdultTax Getter
-func (r TaobaoAlitripItFareAddrtAPIRequest) GetAdultTax() int64 {
-	return r._adultTax
-}
-
 // SetChildPrice is ChildPrice Setter
 // 儿童价，1、可不输入，空表示不适用儿童价 2、可输入大于0的正整数及百分比，输入百分比时，成人价格必须录入 例如：2000或70%。 3. 百分比计算的数值，个位向上取整 当"乘客类型"输入非“普通”（成人）时，此项输入无效。
 func (r *TaobaoAlitripItFareAddrtAPIRequest) SetChildPrice(_childPrice string) error {
@@ -854,45 +802,6 @@ func (r TaobaoAlitripItFareAddrtAPIRequest) GetChildPrice() string {
 	return r._childPrice
 }
 
-// SetChildTax is ChildTax Setter
-// （后期字段，预留）,儿童税费，1、整数金额（包机切位产品适用）
-func (r *TaobaoAlitripItFareAddrtAPIRequest) SetChildTax(_childTax int64) error {
-	r._childTax = _childTax
-	r.Set("childTax", _childTax)
-	return nil
-}
-
-// GetChildTax ChildTax Getter
-func (r TaobaoAlitripItFareAddrtAPIRequest) GetChildTax() int64 {
-	return r._childTax
-}
-
-// SetReturnPoint is ReturnPoint Setter
-// 返点,1.不得为空 2.只允许填写数字，支持到小数点后两位；不用填写% 3.返点需小于100 成人价=销售票面价*（1-返点）+留钱
-func (r *TaobaoAlitripItFareAddrtAPIRequest) SetReturnPoint(_returnPoint float64) error {
-	r._returnPoint = _returnPoint
-	r.Set("returnPoint", _returnPoint)
-	return nil
-}
-
-// GetReturnPoint ReturnPoint Getter
-func (r TaobaoAlitripItFareAddrtAPIRequest) GetReturnPoint() float64 {
-	return r._returnPoint
-}
-
-// SetAdjustMoney is AdjustMoney Setter
-// 留钱，1.0或正负数字2.-20表示返20元；20代表留20元
-func (r *TaobaoAlitripItFareAddrtAPIRequest) SetAdjustMoney(_adjustMoney int64) error {
-	r._adjustMoney = _adjustMoney
-	r.Set("adjustMoney", _adjustMoney)
-	return nil
-}
-
-// GetAdjustMoney AdjustMoney Getter
-func (r TaobaoAlitripItFareAddrtAPIRequest) GetAdjustMoney() int64 {
-	return r._adjustMoney
-}
-
 // SetRtCommissionFormula is RtCommissionFormula Setter
 // 1/2RT佣金计算方式,1、各取各，取严； 默认为 取严
 func (r *TaobaoAlitripItFareAddrtAPIRequest) SetRtCommissionFormula(_rtCommissionFormula string) error {
@@ -904,32 +813,6 @@ func (r *TaobaoAlitripItFareAddrtAPIRequest) SetRtCommissionFormula(_rtCommissio
 // GetRtCommissionFormula RtCommissionFormula Getter
 func (r TaobaoAlitripItFareAddrtAPIRequest) GetRtCommissionFormula() string {
 	return r._rtCommissionFormula
-}
-
-// SetEarlyTicketingTimeLimit is EarlyTicketingTimeLimit Setter
-// 提前出票时限，默认为空，代表无限制； 输入为小于等于365的正整数。 小于或等于最晚出票时限。 单位为天
-func (r *TaobaoAlitripItFareAddrtAPIRequest) SetEarlyTicketingTimeLimit(_earlyTicketingTimeLimit int64) error {
-	r._earlyTicketingTimeLimit = _earlyTicketingTimeLimit
-	r.Set("earlyTicketingTimeLimit", _earlyTicketingTimeLimit)
-	return nil
-}
-
-// GetEarlyTicketingTimeLimit EarlyTicketingTimeLimit Getter
-func (r TaobaoAlitripItFareAddrtAPIRequest) GetEarlyTicketingTimeLimit() int64 {
-	return r._earlyTicketingTimeLimit
-}
-
-// SetLateTicketingTimeLimit is LateTicketingTimeLimit Setter
-// 最晚出票时限,默认为空，代表无限制； 输入为小于等于365的正整数。 大于或等于提前出票时限。 单位为天
-func (r *TaobaoAlitripItFareAddrtAPIRequest) SetLateTicketingTimeLimit(_lateTicketingTimeLimit int64) error {
-	r._lateTicketingTimeLimit = _lateTicketingTimeLimit
-	r.Set("lateTicketingTimeLimit", _lateTicketingTimeLimit)
-	return nil
-}
-
-// GetLateTicketingTimeLimit LateTicketingTimeLimit Getter
-func (r TaobaoAlitripItFareAddrtAPIRequest) GetLateTicketingTimeLimit() int64 {
-	return r._lateTicketingTimeLimit
 }
 
 // SetVipCode is VipCode Setter
@@ -1166,19 +1049,6 @@ func (r TaobaoAlitripItFareAddrtAPIRequest) GetReissuePartPrice4Ret() string {
 	return r._reissuePartPrice4Ret
 }
 
-// SetNoShowTimeLimit4Dep is NoShowTimeLimit4Dep Setter
-// （已废除字段）,去程NOSHOW规定时限，输入正整数
-func (r *TaobaoAlitripItFareAddrtAPIRequest) SetNoShowTimeLimit4Dep(_noShowTimeLimit4Dep int64) error {
-	r._noShowTimeLimit4Dep = _noShowTimeLimit4Dep
-	r.Set("noShowTimeLimit4Dep", _noShowTimeLimit4Dep)
-	return nil
-}
-
-// GetNoShowTimeLimit4Dep NoShowTimeLimit4Dep Getter
-func (r TaobaoAlitripItFareAddrtAPIRequest) GetNoShowTimeLimit4Dep() int64 {
-	return r._noShowTimeLimit4Dep
-}
-
 // SetIsNoShowCanRefund4Dep is IsNoShowCanRefund4Dep Setter
 // （已废除字段）,去程NOSHOW能否退票，输入是或否；默认为否
 func (r *TaobaoAlitripItFareAddrtAPIRequest) SetIsNoShowCanRefund4Dep(_isNoShowCanRefund4Dep string) error {
@@ -1205,32 +1075,6 @@ func (r TaobaoAlitripItFareAddrtAPIRequest) GetIsNoShowCanReissue4Dep() string {
 	return r._isNoShowCanReissue4Dep
 }
 
-// SetNoShowPenalty4Dep is NoShowPenalty4Dep Setter
-// （已废除字段）,去程NOSHOW罚金，可为空，若输入则为正整数；其中空表示按航空公司规定执行
-func (r *TaobaoAlitripItFareAddrtAPIRequest) SetNoShowPenalty4Dep(_noShowPenalty4Dep int64) error {
-	r._noShowPenalty4Dep = _noShowPenalty4Dep
-	r.Set("noShowPenalty4Dep", _noShowPenalty4Dep)
-	return nil
-}
-
-// GetNoShowPenalty4Dep NoShowPenalty4Dep Getter
-func (r TaobaoAlitripItFareAddrtAPIRequest) GetNoShowPenalty4Dep() int64 {
-	return r._noShowPenalty4Dep
-}
-
-// SetNoShowTimeLimit4Ret is NoShowTimeLimit4Ret Setter
-// （已废除字段）,回程NOSHOW规定时限，输入正整数
-func (r *TaobaoAlitripItFareAddrtAPIRequest) SetNoShowTimeLimit4Ret(_noShowTimeLimit4Ret int64) error {
-	r._noShowTimeLimit4Ret = _noShowTimeLimit4Ret
-	r.Set("noShowTimeLimit4Ret", _noShowTimeLimit4Ret)
-	return nil
-}
-
-// GetNoShowTimeLimit4Ret NoShowTimeLimit4Ret Getter
-func (r TaobaoAlitripItFareAddrtAPIRequest) GetNoShowTimeLimit4Ret() int64 {
-	return r._noShowTimeLimit4Ret
-}
-
 // SetIsNoShowCanRefund4Ret is IsNoShowCanRefund4Ret Setter
 // （已废除字段）,回程NOSHOW能否退票，输入是或否；默认为否
 func (r *TaobaoAlitripItFareAddrtAPIRequest) SetIsNoShowCanRefund4Ret(_isNoShowCanRefund4Ret string) error {
@@ -1255,19 +1099,6 @@ func (r *TaobaoAlitripItFareAddrtAPIRequest) SetIsNoShowCanReissue4Ret(_isNoShow
 // GetIsNoShowCanReissue4Ret IsNoShowCanReissue4Ret Getter
 func (r TaobaoAlitripItFareAddrtAPIRequest) GetIsNoShowCanReissue4Ret() string {
 	return r._isNoShowCanReissue4Ret
-}
-
-// SetNoShowPenalty4Ret is NoShowPenalty4Ret Setter
-// （已废除字段）,回程NOSHOW罚金，可为空，若输入则为正整数；其中空表示按航空公司规定执行
-func (r *TaobaoAlitripItFareAddrtAPIRequest) SetNoShowPenalty4Ret(_noShowPenalty4Ret int64) error {
-	r._noShowPenalty4Ret = _noShowPenalty4Ret
-	r.Set("noShowPenalty4Ret", _noShowPenalty4Ret)
-	return nil
-}
-
-// GetNoShowPenalty4Ret NoShowPenalty4Ret Getter
-func (r TaobaoAlitripItFareAddrtAPIRequest) GetNoShowPenalty4Ret() int64 {
-	return r._noShowPenalty4Ret
 }
 
 // SetLuggageRule4Dep is LuggageRule4Dep Setter
@@ -1775,6 +1606,175 @@ func (r *TaobaoAlitripItFareAddrtAPIRequest) SetRuleId(_ruleId string) error {
 // GetRuleId RuleId Getter
 func (r TaobaoAlitripItFareAddrtAPIRequest) GetRuleId() string {
 	return r._ruleId
+}
+
+// SetMinTravelPerson is MinTravelPerson Setter
+// 最小出行人数,数字1-9
+func (r *TaobaoAlitripItFareAddrtAPIRequest) SetMinTravelPerson(_minTravelPerson int64) error {
+	r._minTravelPerson = _minTravelPerson
+	r.Set("minTravelPerson", _minTravelPerson)
+	return nil
+}
+
+// GetMinTravelPerson MinTravelPerson Getter
+func (r TaobaoAlitripItFareAddrtAPIRequest) GetMinTravelPerson() int64 {
+	return r._minTravelPerson
+}
+
+// SetMaxTravelPerson is MaxTravelPerson Setter
+// 最大出行人数,数字1-9
+func (r *TaobaoAlitripItFareAddrtAPIRequest) SetMaxTravelPerson(_maxTravelPerson int64) error {
+	r._maxTravelPerson = _maxTravelPerson
+	r.Set("maxTravelPerson", _maxTravelPerson)
+	return nil
+}
+
+// GetMaxTravelPerson MaxTravelPerson Getter
+func (r TaobaoAlitripItFareAddrtAPIRequest) GetMaxTravelPerson() int64 {
+	return r._maxTravelPerson
+}
+
+// SetTicketPrice is TicketPrice Setter
+// 销售票面价,1.不得为空 2.价格区间为【0-999999】 3、销售票面价为10的整数倍(向下取整，如录入3002，则实际录入数值为3000)
+func (r *TaobaoAlitripItFareAddrtAPIRequest) SetTicketPrice(_ticketPrice int64) error {
+	r._ticketPrice = _ticketPrice
+	r.Set("ticketPrice", _ticketPrice)
+	return nil
+}
+
+// GetTicketPrice TicketPrice Getter
+func (r TaobaoAlitripItFareAddrtAPIRequest) GetTicketPrice() int64 {
+	return r._ticketPrice
+}
+
+// SetAdultTax is AdultTax Setter
+// （后期字段，预留）,成人税费，1、整数金额（包机切位产品适用）
+func (r *TaobaoAlitripItFareAddrtAPIRequest) SetAdultTax(_adultTax int64) error {
+	r._adultTax = _adultTax
+	r.Set("adultTax", _adultTax)
+	return nil
+}
+
+// GetAdultTax AdultTax Getter
+func (r TaobaoAlitripItFareAddrtAPIRequest) GetAdultTax() int64 {
+	return r._adultTax
+}
+
+// SetChildTax is ChildTax Setter
+// （后期字段，预留）,儿童税费，1、整数金额（包机切位产品适用）
+func (r *TaobaoAlitripItFareAddrtAPIRequest) SetChildTax(_childTax int64) error {
+	r._childTax = _childTax
+	r.Set("childTax", _childTax)
+	return nil
+}
+
+// GetChildTax ChildTax Getter
+func (r TaobaoAlitripItFareAddrtAPIRequest) GetChildTax() int64 {
+	return r._childTax
+}
+
+// SetReturnPoint is ReturnPoint Setter
+// 返点,1.不得为空 2.只允许填写数字，支持到小数点后两位；不用填写% 3.返点需小于100 成人价=销售票面价*（1-返点）+留钱
+func (r *TaobaoAlitripItFareAddrtAPIRequest) SetReturnPoint(_returnPoint float64) error {
+	r._returnPoint = _returnPoint
+	r.Set("returnPoint", _returnPoint)
+	return nil
+}
+
+// GetReturnPoint ReturnPoint Getter
+func (r TaobaoAlitripItFareAddrtAPIRequest) GetReturnPoint() float64 {
+	return r._returnPoint
+}
+
+// SetAdjustMoney is AdjustMoney Setter
+// 留钱，1.0或正负数字2.-20表示返20元；20代表留20元
+func (r *TaobaoAlitripItFareAddrtAPIRequest) SetAdjustMoney(_adjustMoney int64) error {
+	r._adjustMoney = _adjustMoney
+	r.Set("adjustMoney", _adjustMoney)
+	return nil
+}
+
+// GetAdjustMoney AdjustMoney Getter
+func (r TaobaoAlitripItFareAddrtAPIRequest) GetAdjustMoney() int64 {
+	return r._adjustMoney
+}
+
+// SetEarlyTicketingTimeLimit is EarlyTicketingTimeLimit Setter
+// 提前出票时限，默认为空，代表无限制； 输入为小于等于365的正整数。 小于或等于最晚出票时限。 单位为天
+func (r *TaobaoAlitripItFareAddrtAPIRequest) SetEarlyTicketingTimeLimit(_earlyTicketingTimeLimit int64) error {
+	r._earlyTicketingTimeLimit = _earlyTicketingTimeLimit
+	r.Set("earlyTicketingTimeLimit", _earlyTicketingTimeLimit)
+	return nil
+}
+
+// GetEarlyTicketingTimeLimit EarlyTicketingTimeLimit Getter
+func (r TaobaoAlitripItFareAddrtAPIRequest) GetEarlyTicketingTimeLimit() int64 {
+	return r._earlyTicketingTimeLimit
+}
+
+// SetLateTicketingTimeLimit is LateTicketingTimeLimit Setter
+// 最晚出票时限,默认为空，代表无限制； 输入为小于等于365的正整数。 大于或等于提前出票时限。 单位为天
+func (r *TaobaoAlitripItFareAddrtAPIRequest) SetLateTicketingTimeLimit(_lateTicketingTimeLimit int64) error {
+	r._lateTicketingTimeLimit = _lateTicketingTimeLimit
+	r.Set("lateTicketingTimeLimit", _lateTicketingTimeLimit)
+	return nil
+}
+
+// GetLateTicketingTimeLimit LateTicketingTimeLimit Getter
+func (r TaobaoAlitripItFareAddrtAPIRequest) GetLateTicketingTimeLimit() int64 {
+	return r._lateTicketingTimeLimit
+}
+
+// SetNoShowTimeLimit4Dep is NoShowTimeLimit4Dep Setter
+// （已废除字段）,去程NOSHOW规定时限，输入正整数
+func (r *TaobaoAlitripItFareAddrtAPIRequest) SetNoShowTimeLimit4Dep(_noShowTimeLimit4Dep int64) error {
+	r._noShowTimeLimit4Dep = _noShowTimeLimit4Dep
+	r.Set("noShowTimeLimit4Dep", _noShowTimeLimit4Dep)
+	return nil
+}
+
+// GetNoShowTimeLimit4Dep NoShowTimeLimit4Dep Getter
+func (r TaobaoAlitripItFareAddrtAPIRequest) GetNoShowTimeLimit4Dep() int64 {
+	return r._noShowTimeLimit4Dep
+}
+
+// SetNoShowPenalty4Dep is NoShowPenalty4Dep Setter
+// （已废除字段）,去程NOSHOW罚金，可为空，若输入则为正整数；其中空表示按航空公司规定执行
+func (r *TaobaoAlitripItFareAddrtAPIRequest) SetNoShowPenalty4Dep(_noShowPenalty4Dep int64) error {
+	r._noShowPenalty4Dep = _noShowPenalty4Dep
+	r.Set("noShowPenalty4Dep", _noShowPenalty4Dep)
+	return nil
+}
+
+// GetNoShowPenalty4Dep NoShowPenalty4Dep Getter
+func (r TaobaoAlitripItFareAddrtAPIRequest) GetNoShowPenalty4Dep() int64 {
+	return r._noShowPenalty4Dep
+}
+
+// SetNoShowTimeLimit4Ret is NoShowTimeLimit4Ret Setter
+// （已废除字段）,回程NOSHOW规定时限，输入正整数
+func (r *TaobaoAlitripItFareAddrtAPIRequest) SetNoShowTimeLimit4Ret(_noShowTimeLimit4Ret int64) error {
+	r._noShowTimeLimit4Ret = _noShowTimeLimit4Ret
+	r.Set("noShowTimeLimit4Ret", _noShowTimeLimit4Ret)
+	return nil
+}
+
+// GetNoShowTimeLimit4Ret NoShowTimeLimit4Ret Getter
+func (r TaobaoAlitripItFareAddrtAPIRequest) GetNoShowTimeLimit4Ret() int64 {
+	return r._noShowTimeLimit4Ret
+}
+
+// SetNoShowPenalty4Ret is NoShowPenalty4Ret Setter
+// （已废除字段）,回程NOSHOW罚金，可为空，若输入则为正整数；其中空表示按航空公司规定执行
+func (r *TaobaoAlitripItFareAddrtAPIRequest) SetNoShowPenalty4Ret(_noShowPenalty4Ret int64) error {
+	r._noShowPenalty4Ret = _noShowPenalty4Ret
+	r.Set("noShowPenalty4Ret", _noShowPenalty4Ret)
+	return nil
+}
+
+// GetNoShowPenalty4Ret NoShowPenalty4Ret Getter
+func (r TaobaoAlitripItFareAddrtAPIRequest) GetNoShowPenalty4Ret() int64 {
+	return r._noShowPenalty4Ret
 }
 
 // SetFareDirectDestrict is FareDirectDestrict Setter

@@ -12,6 +12,8 @@ import (
 // 添加民宿房源
 type TaobaoXhotelBnbroomtypeAddAPIRequest struct {
 	model.Params
+	// 房型图片只支持远程图片，格式如下：[{"url":"http://taobao.com/123.jpg","ismain":"true"},{"url":"http://taobao.com/456.jpg","ismain":"false"},{"url":"http://taobao.com/789.jpg","ismain":"false"}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。
+	_pics []BnbPictureDto
 	// 销售渠道,默认taobao
 	_vendor string
 	// 房型id, 这是卖家自己系统中的ID
@@ -22,12 +24,6 @@ type TaobaoXhotelBnbroomtypeAddAPIRequest struct {
 	_name string
 	// 房型英文名
 	_nameE string
-	// 房型类型,见https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
-	_productType int64
-	// 有无资质执照 0 没有 1有
-	_hasLicense int64
-	// 单间面积，单位平方米
-	_houseSize int64
 	// 客房在建筑的第几层，隔层为1-2层，4-5层，7-8层
 	_floor string
 	// 房型介绍
@@ -44,6 +40,34 @@ type TaobaoXhotelBnbroomtypeAddAPIRequest struct {
 	_openingTime string
 	// 装修时间，格式为2015-01-01装修时间
 	_decorateTime string
+	// 酒店电话。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886
+	_tel string
+	// 真实联系方式
+	_realTel string
+	// 结算过程中的结算币种符合，如需对接请联系飞猪技术支持，请谨慎使用
+	_settlementCurrency string
+	// 床信息: bedType:床型, desc: 床型名, width:床宽, length：床长, bedNum: 床数。床型取值见链接https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.4zBOVn&docType=1&articleId=108347
+	_bedInfo string
+	// 房屋户型， bedroom: 室, bathroom: 卫, livingroom: 厅, study: 书房, balcony: 阳台,kitchen: 厨房,bedroom和livingroom不能为空
+	_houseModel string
+	// 房型外部标签 标签信息，逗号(,)分隔
+	_outerTags string
+	// 视频地址
+	_videoUrl string
+	// 入住须知
+	_checkInNotes string
+	// 详见“允许活动”：https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
+	_activitiesAllowed string
+	// 如果要变更商品房型编码请使用该字段。
+	_newOuterId string
+	// 设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {"bar":false,"catv":false,"ddd":false,"idd":false,"pubtoilet":false,"toilet":false}，见https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
+	_service string
+	// 房型类型,见https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
+	_productType int64
+	// 有无资质执照 0 没有 1有
+	_hasLicense int64
+	// 单间面积，单位平方米
+	_houseSize int64
 	// 装修等级 1 精装；2普通；3简装
 	_decorateLevel int64
 	// 装修风格https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
@@ -56,40 +80,22 @@ type TaobaoXhotelBnbroomtypeAddAPIRequest struct {
 	_rentSize int64
 	// 是否与房东同住 0 不同住 1同住
 	_hasLandlord int64
-	// 酒店电话。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886
-	_tel string
-	// 真实联系方式
-	_realTel string
 	// 状态 0：在线 -1：不在线 -2:停售
 	_status *model.File
-	// 结算过程中的结算币种符合，如需对接请联系飞猪技术支持，请谨慎使用
-	_settlementCurrency string
 	// 是否支持IM聊天 0不支持 1支持
 	_supportIm int64
 	// 是否开启闪订 0不开启 1开启
 	_quickOrder int64
-	// 床信息: bedType:床型, desc: 床型名, width:床宽, length：床长, bedNum: 床数。床型取值见链接https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.4zBOVn&docType=1&articleId=108347
-	_bedInfo string
-	// 房屋户型， bedroom: 室, bathroom: 卫, livingroom: 厅, study: 书房, balcony: 阳台,kitchen: 厨房,bedroom和livingroom不能为空
-	_houseModel string
 	// 窗型-1.有窗；2.无窗；3.部分有窗
 	_windowType int64
-	// 房型图片只支持远程图片，格式如下：[{"url":"http://taobao.com/123.jpg","ismain":"true"},{"url":"http://taobao.com/456.jpg","ismain":"false"},{"url":"http://taobao.com/789.jpg","ismain":"false"}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。
-	_pics []BnbPictureDto
-	// 房型外部标签 标签信息，逗号(,)分隔
-	_outerTags string
 	// 是否使用实拍图片 0不使用 1使用
 	_isUseShootImage int64
-	// 视频地址
-	_videoUrl string
 	// 民宿房源位置信息
 	_location *BnbLocationDto
 	// 最大入住人数 1-50
 	_maxOccupancy int64
 	// 民宿入住要求&附加信息
 	_bnbBookingTime *BnbBookingTimeDto
-	// 入住须知
-	_checkInNotes string
 	// 0：不限制，1：只限男性，2：只限女性'
 	_guestGender int64
 	// 是否接待儿童、老人；成年人必接待，详见“可接待客人”https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
@@ -98,8 +104,6 @@ type TaobaoXhotelBnbroomtypeAddAPIRequest struct {
 	_receiveForeigners int64
 	// “打扫类型1(1客1扫/换),2(1天1扫/换),https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
 	_cleaningFrequency int64
-	// 详见“允许活动”：https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
-	_activitiesAllowed string
 	// 0-n；若不可加床，值为0
 	_extraBedsNum int64
 	// 押金类型0.线下；1.线上
@@ -122,10 +126,6 @@ type TaobaoXhotelBnbroomtypeAddAPIRequest struct {
 	_invoiceType int64
 	// 是否有前台 0没有 1有
 	_hasFrontDesk int64
-	// 如果要变更商品房型编码请使用该字段。
-	_newOuterId string
-	// 设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {"bar":false,"catv":false,"ddd":false,"idd":false,"pubtoilet":false,"toilet":false}，见https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
-	_service string
 }
 
 // NewTaobaoXhotelBnbroomtypeAddRequest 初始化TaobaoXhotelBnbroomtypeAddAPIRequest对象
@@ -147,6 +147,19 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetPics is Pics Setter
+// 房型图片只支持远程图片，格式如下：[{"url":"http://taobao.com/123.jpg","ismain":"true"},{"url":"http://taobao.com/456.jpg","ismain":"false"},{"url":"http://taobao.com/789.jpg","ismain":"false"}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetPics(_pics []BnbPictureDto) error {
+	r._pics = _pics
+	r.Set("pics", _pics)
+	return nil
+}
+
+// GetPics Pics Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetPics() []BnbPictureDto {
+	return r._pics
 }
 
 // SetVendor is Vendor Setter
@@ -212,45 +225,6 @@ func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetNameE(_nameE string) error {
 // GetNameE NameE Getter
 func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetNameE() string {
 	return r._nameE
-}
-
-// SetProductType is ProductType Setter
-// 房型类型,见https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetProductType(_productType int64) error {
-	r._productType = _productType
-	r.Set("product_type", _productType)
-	return nil
-}
-
-// GetProductType ProductType Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetProductType() int64 {
-	return r._productType
-}
-
-// SetHasLicense is HasLicense Setter
-// 有无资质执照 0 没有 1有
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetHasLicense(_hasLicense int64) error {
-	r._hasLicense = _hasLicense
-	r.Set("has_license", _hasLicense)
-	return nil
-}
-
-// GetHasLicense HasLicense Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetHasLicense() int64 {
-	return r._hasLicense
-}
-
-// SetHouseSize is HouseSize Setter
-// 单间面积，单位平方米
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetHouseSize(_houseSize int64) error {
-	r._houseSize = _houseSize
-	r.Set("house_size", _houseSize)
-	return nil
-}
-
-// GetHouseSize HouseSize Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetHouseSize() int64 {
-	return r._houseSize
 }
 
 // SetFloor is Floor Setter
@@ -357,6 +331,188 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetDecorateTime() string {
 	return r._decorateTime
 }
 
+// SetTel is Tel Setter
+// 酒店电话。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetTel(_tel string) error {
+	r._tel = _tel
+	r.Set("tel", _tel)
+	return nil
+}
+
+// GetTel Tel Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetTel() string {
+	return r._tel
+}
+
+// SetRealTel is RealTel Setter
+// 真实联系方式
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetRealTel(_realTel string) error {
+	r._realTel = _realTel
+	r.Set("real_tel", _realTel)
+	return nil
+}
+
+// GetRealTel RealTel Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetRealTel() string {
+	return r._realTel
+}
+
+// SetSettlementCurrency is SettlementCurrency Setter
+// 结算过程中的结算币种符合，如需对接请联系飞猪技术支持，请谨慎使用
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetSettlementCurrency(_settlementCurrency string) error {
+	r._settlementCurrency = _settlementCurrency
+	r.Set("settlement_currency", _settlementCurrency)
+	return nil
+}
+
+// GetSettlementCurrency SettlementCurrency Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetSettlementCurrency() string {
+	return r._settlementCurrency
+}
+
+// SetBedInfo is BedInfo Setter
+// 床信息: bedType:床型, desc: 床型名, width:床宽, length：床长, bedNum: 床数。床型取值见链接https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.4zBOVn&docType=1&articleId=108347
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetBedInfo(_bedInfo string) error {
+	r._bedInfo = _bedInfo
+	r.Set("bed_info", _bedInfo)
+	return nil
+}
+
+// GetBedInfo BedInfo Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetBedInfo() string {
+	return r._bedInfo
+}
+
+// SetHouseModel is HouseModel Setter
+// 房屋户型， bedroom: 室, bathroom: 卫, livingroom: 厅, study: 书房, balcony: 阳台,kitchen: 厨房,bedroom和livingroom不能为空
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetHouseModel(_houseModel string) error {
+	r._houseModel = _houseModel
+	r.Set("house_model", _houseModel)
+	return nil
+}
+
+// GetHouseModel HouseModel Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetHouseModel() string {
+	return r._houseModel
+}
+
+// SetOuterTags is OuterTags Setter
+// 房型外部标签 标签信息，逗号(,)分隔
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetOuterTags(_outerTags string) error {
+	r._outerTags = _outerTags
+	r.Set("outer_tags", _outerTags)
+	return nil
+}
+
+// GetOuterTags OuterTags Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetOuterTags() string {
+	return r._outerTags
+}
+
+// SetVideoUrl is VideoUrl Setter
+// 视频地址
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetVideoUrl(_videoUrl string) error {
+	r._videoUrl = _videoUrl
+	r.Set("video_url", _videoUrl)
+	return nil
+}
+
+// GetVideoUrl VideoUrl Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetVideoUrl() string {
+	return r._videoUrl
+}
+
+// SetCheckInNotes is CheckInNotes Setter
+// 入住须知
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetCheckInNotes(_checkInNotes string) error {
+	r._checkInNotes = _checkInNotes
+	r.Set("check_in_notes", _checkInNotes)
+	return nil
+}
+
+// GetCheckInNotes CheckInNotes Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetCheckInNotes() string {
+	return r._checkInNotes
+}
+
+// SetActivitiesAllowed is ActivitiesAllowed Setter
+// 详见“允许活动”：https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetActivitiesAllowed(_activitiesAllowed string) error {
+	r._activitiesAllowed = _activitiesAllowed
+	r.Set("activities_allowed", _activitiesAllowed)
+	return nil
+}
+
+// GetActivitiesAllowed ActivitiesAllowed Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetActivitiesAllowed() string {
+	return r._activitiesAllowed
+}
+
+// SetNewOuterId is NewOuterId Setter
+// 如果要变更商品房型编码请使用该字段。
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetNewOuterId(_newOuterId string) error {
+	r._newOuterId = _newOuterId
+	r.Set("new_outer_id", _newOuterId)
+	return nil
+}
+
+// GetNewOuterId NewOuterId Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetNewOuterId() string {
+	return r._newOuterId
+}
+
+// SetService is Service Setter
+// 设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {"bar":false,"catv":false,"ddd":false,"idd":false,"pubtoilet":false,"toilet":false}，见https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetService(_service string) error {
+	r._service = _service
+	r.Set("service", _service)
+	return nil
+}
+
+// GetService Service Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetService() string {
+	return r._service
+}
+
+// SetProductType is ProductType Setter
+// 房型类型,见https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetProductType(_productType int64) error {
+	r._productType = _productType
+	r.Set("product_type", _productType)
+	return nil
+}
+
+// GetProductType ProductType Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetProductType() int64 {
+	return r._productType
+}
+
+// SetHasLicense is HasLicense Setter
+// 有无资质执照 0 没有 1有
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetHasLicense(_hasLicense int64) error {
+	r._hasLicense = _hasLicense
+	r.Set("has_license", _hasLicense)
+	return nil
+}
+
+// GetHasLicense HasLicense Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetHasLicense() int64 {
+	return r._hasLicense
+}
+
+// SetHouseSize is HouseSize Setter
+// 单间面积，单位平方米
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetHouseSize(_houseSize int64) error {
+	r._houseSize = _houseSize
+	r.Set("house_size", _houseSize)
+	return nil
+}
+
+// GetHouseSize HouseSize Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetHouseSize() int64 {
+	return r._houseSize
+}
+
 // SetDecorateLevel is DecorateLevel Setter
 // 装修等级 1 精装；2普通；3简装
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetDecorateLevel(_decorateLevel int64) error {
@@ -435,32 +591,6 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetHasLandlord() int64 {
 	return r._hasLandlord
 }
 
-// SetTel is Tel Setter
-// 酒店电话。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetTel(_tel string) error {
-	r._tel = _tel
-	r.Set("tel", _tel)
-	return nil
-}
-
-// GetTel Tel Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetTel() string {
-	return r._tel
-}
-
-// SetRealTel is RealTel Setter
-// 真实联系方式
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetRealTel(_realTel string) error {
-	r._realTel = _realTel
-	r.Set("real_tel", _realTel)
-	return nil
-}
-
-// GetRealTel RealTel Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetRealTel() string {
-	return r._realTel
-}
-
 // SetStatus is Status Setter
 // 状态 0：在线 -1：不在线 -2:停售
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetStatus(_status *model.File) error {
@@ -472,19 +602,6 @@ func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetStatus(_status *model.File) er
 // GetStatus Status Getter
 func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetStatus() *model.File {
 	return r._status
-}
-
-// SetSettlementCurrency is SettlementCurrency Setter
-// 结算过程中的结算币种符合，如需对接请联系飞猪技术支持，请谨慎使用
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetSettlementCurrency(_settlementCurrency string) error {
-	r._settlementCurrency = _settlementCurrency
-	r.Set("settlement_currency", _settlementCurrency)
-	return nil
-}
-
-// GetSettlementCurrency SettlementCurrency Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetSettlementCurrency() string {
-	return r._settlementCurrency
 }
 
 // SetSupportIm is SupportIm Setter
@@ -513,32 +630,6 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetQuickOrder() int64 {
 	return r._quickOrder
 }
 
-// SetBedInfo is BedInfo Setter
-// 床信息: bedType:床型, desc: 床型名, width:床宽, length：床长, bedNum: 床数。床型取值见链接https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.4zBOVn&docType=1&articleId=108347
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetBedInfo(_bedInfo string) error {
-	r._bedInfo = _bedInfo
-	r.Set("bed_info", _bedInfo)
-	return nil
-}
-
-// GetBedInfo BedInfo Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetBedInfo() string {
-	return r._bedInfo
-}
-
-// SetHouseModel is HouseModel Setter
-// 房屋户型， bedroom: 室, bathroom: 卫, livingroom: 厅, study: 书房, balcony: 阳台,kitchen: 厨房,bedroom和livingroom不能为空
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetHouseModel(_houseModel string) error {
-	r._houseModel = _houseModel
-	r.Set("house_model", _houseModel)
-	return nil
-}
-
-// GetHouseModel HouseModel Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetHouseModel() string {
-	return r._houseModel
-}
-
 // SetWindowType is WindowType Setter
 // 窗型-1.有窗；2.无窗；3.部分有窗
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetWindowType(_windowType int64) error {
@@ -552,32 +643,6 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetWindowType() int64 {
 	return r._windowType
 }
 
-// SetPics is Pics Setter
-// 房型图片只支持远程图片，格式如下：[{"url":"http://taobao.com/123.jpg","ismain":"true"},{"url":"http://taobao.com/456.jpg","ismain":"false"},{"url":"http://taobao.com/789.jpg","ismain":"false"}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetPics(_pics []BnbPictureDto) error {
-	r._pics = _pics
-	r.Set("pics", _pics)
-	return nil
-}
-
-// GetPics Pics Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetPics() []BnbPictureDto {
-	return r._pics
-}
-
-// SetOuterTags is OuterTags Setter
-// 房型外部标签 标签信息，逗号(,)分隔
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetOuterTags(_outerTags string) error {
-	r._outerTags = _outerTags
-	r.Set("outer_tags", _outerTags)
-	return nil
-}
-
-// GetOuterTags OuterTags Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetOuterTags() string {
-	return r._outerTags
-}
-
 // SetIsUseShootImage is IsUseShootImage Setter
 // 是否使用实拍图片 0不使用 1使用
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetIsUseShootImage(_isUseShootImage int64) error {
@@ -589,19 +654,6 @@ func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetIsUseShootImage(_isUseShootIma
 // GetIsUseShootImage IsUseShootImage Getter
 func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetIsUseShootImage() int64 {
 	return r._isUseShootImage
-}
-
-// SetVideoUrl is VideoUrl Setter
-// 视频地址
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetVideoUrl(_videoUrl string) error {
-	r._videoUrl = _videoUrl
-	r.Set("video_url", _videoUrl)
-	return nil
-}
-
-// GetVideoUrl VideoUrl Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetVideoUrl() string {
-	return r._videoUrl
 }
 
 // SetLocation is Location Setter
@@ -641,19 +693,6 @@ func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetBnbBookingTime(_bnbBookingTime
 // GetBnbBookingTime BnbBookingTime Getter
 func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetBnbBookingTime() *BnbBookingTimeDto {
 	return r._bnbBookingTime
-}
-
-// SetCheckInNotes is CheckInNotes Setter
-// 入住须知
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetCheckInNotes(_checkInNotes string) error {
-	r._checkInNotes = _checkInNotes
-	r.Set("check_in_notes", _checkInNotes)
-	return nil
-}
-
-// GetCheckInNotes CheckInNotes Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetCheckInNotes() string {
-	return r._checkInNotes
 }
 
 // SetGuestGender is GuestGender Setter
@@ -706,19 +745,6 @@ func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetCleaningFrequency(_cleaningFre
 // GetCleaningFrequency CleaningFrequency Getter
 func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetCleaningFrequency() int64 {
 	return r._cleaningFrequency
-}
-
-// SetActivitiesAllowed is ActivitiesAllowed Setter
-// 详见“允许活动”：https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetActivitiesAllowed(_activitiesAllowed string) error {
-	r._activitiesAllowed = _activitiesAllowed
-	r.Set("activities_allowed", _activitiesAllowed)
-	return nil
-}
-
-// GetActivitiesAllowed ActivitiesAllowed Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetActivitiesAllowed() string {
-	return r._activitiesAllowed
 }
 
 // SetExtraBedsNum is ExtraBedsNum Setter
@@ -862,30 +888,4 @@ func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetHasFrontDesk(_hasFrontDesk int
 // GetHasFrontDesk HasFrontDesk Getter
 func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetHasFrontDesk() int64 {
 	return r._hasFrontDesk
-}
-
-// SetNewOuterId is NewOuterId Setter
-// 如果要变更商品房型编码请使用该字段。
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetNewOuterId(_newOuterId string) error {
-	r._newOuterId = _newOuterId
-	r.Set("new_outer_id", _newOuterId)
-	return nil
-}
-
-// GetNewOuterId NewOuterId Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetNewOuterId() string {
-	return r._newOuterId
-}
-
-// SetService is Service Setter
-// 设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {"bar":false,"catv":false,"ddd":false,"idd":false,"pubtoilet":false,"toilet":false}，见https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
-func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetService(_service string) error {
-	r._service = _service
-	r.Set("service", _service)
-	return nil
-}
-
-// GetService Service Getter
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetService() string {
-	return r._service
 }

@@ -14,20 +14,20 @@ type XiamiContentResourceActionReportAPIRequest struct {
 	model.Params
 	// 资源ID
 	_resourceId string
-	// 行为数量
-	_num int64
 	// 资源类型（可枚举）: song(歌曲)
 	_resourceType string
 	// 行为类型（可枚举）：LISTEN（主动试听）、PASSIVE_LISTEN（被动试听）
 	_action string
 	// 来源id，如歌单id
 	_fromId string
-	// 1推荐2歌单3标签
-	_fromType int64
 	// 用户id
 	_openId string
 	// 用户设备id
 	_utdid string
+	// 行为数量
+	_num int64
+	// 1推荐2歌单3标签
+	_fromType int64
 }
 
 // NewXiamiContentResourceActionReportRequest 初始化XiamiContentResourceActionReportAPIRequest对象
@@ -62,19 +62,6 @@ func (r *XiamiContentResourceActionReportAPIRequest) SetResourceId(_resourceId s
 // GetResourceId ResourceId Getter
 func (r XiamiContentResourceActionReportAPIRequest) GetResourceId() string {
 	return r._resourceId
-}
-
-// SetNum is Num Setter
-// 行为数量
-func (r *XiamiContentResourceActionReportAPIRequest) SetNum(_num int64) error {
-	r._num = _num
-	r.Set("num", _num)
-	return nil
-}
-
-// GetNum Num Getter
-func (r XiamiContentResourceActionReportAPIRequest) GetNum() int64 {
-	return r._num
 }
 
 // SetResourceType is ResourceType Setter
@@ -116,19 +103,6 @@ func (r XiamiContentResourceActionReportAPIRequest) GetFromId() string {
 	return r._fromId
 }
 
-// SetFromType is FromType Setter
-// 1推荐2歌单3标签
-func (r *XiamiContentResourceActionReportAPIRequest) SetFromType(_fromType int64) error {
-	r._fromType = _fromType
-	r.Set("from_type", _fromType)
-	return nil
-}
-
-// GetFromType FromType Getter
-func (r XiamiContentResourceActionReportAPIRequest) GetFromType() int64 {
-	return r._fromType
-}
-
 // SetOpenId is OpenId Setter
 // 用户id
 func (r *XiamiContentResourceActionReportAPIRequest) SetOpenId(_openId string) error {
@@ -153,4 +127,30 @@ func (r *XiamiContentResourceActionReportAPIRequest) SetUtdid(_utdid string) err
 // GetUtdid Utdid Getter
 func (r XiamiContentResourceActionReportAPIRequest) GetUtdid() string {
 	return r._utdid
+}
+
+// SetNum is Num Setter
+// 行为数量
+func (r *XiamiContentResourceActionReportAPIRequest) SetNum(_num int64) error {
+	r._num = _num
+	r.Set("num", _num)
+	return nil
+}
+
+// GetNum Num Getter
+func (r XiamiContentResourceActionReportAPIRequest) GetNum() int64 {
+	return r._num
+}
+
+// SetFromType is FromType Setter
+// 1推荐2歌单3标签
+func (r *XiamiContentResourceActionReportAPIRequest) SetFromType(_fromType int64) error {
+	r._fromType = _fromType
+	r.Set("from_type", _fromType)
+	return nil
+}
+
+// GetFromType FromType Getter
+func (r XiamiContentResourceActionReportAPIRequest) GetFromType() int64 {
+	return r._fromType
 }

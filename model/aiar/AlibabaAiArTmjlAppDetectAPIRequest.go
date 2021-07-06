@@ -12,16 +12,16 @@ import (
 // 天猫精灵扫一扫入口的图像检测服务
 type AlibabaAiArTmjlAppDetectAPIRequest struct {
 	model.Params
-	// 原始图像数据
-	_imgData *model.File
-	// 最多返回的结果数，默认为1
-	_num int64
 	// 本地已cache的target，多个target间以|||分隔
 	_cachedTargets string
 	// map，描述所有设备相关信息，如设备ID，分辨率等
 	_deviceInfo string
 	// 版本，默认1.0
 	_version string
+	// 原始图像数据
+	_imgData *model.File
+	// 最多返回的结果数，默认为1
+	_num int64
 }
 
 // NewAlibabaAiArTmjlAppDetectRequest 初始化AlibabaAiArTmjlAppDetectAPIRequest对象
@@ -43,32 +43,6 @@ func (r AlibabaAiArTmjlAppDetectAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetImgData is ImgData Setter
-// 原始图像数据
-func (r *AlibabaAiArTmjlAppDetectAPIRequest) SetImgData(_imgData *model.File) error {
-	r._imgData = _imgData
-	r.Set("img_data", _imgData)
-	return nil
-}
-
-// GetImgData ImgData Getter
-func (r AlibabaAiArTmjlAppDetectAPIRequest) GetImgData() *model.File {
-	return r._imgData
-}
-
-// SetNum is Num Setter
-// 最多返回的结果数，默认为1
-func (r *AlibabaAiArTmjlAppDetectAPIRequest) SetNum(_num int64) error {
-	r._num = _num
-	r.Set("num", _num)
-	return nil
-}
-
-// GetNum Num Getter
-func (r AlibabaAiArTmjlAppDetectAPIRequest) GetNum() int64 {
-	return r._num
 }
 
 // SetCachedTargets is CachedTargets Setter
@@ -108,4 +82,30 @@ func (r *AlibabaAiArTmjlAppDetectAPIRequest) SetVersion(_version string) error {
 // GetVersion Version Getter
 func (r AlibabaAiArTmjlAppDetectAPIRequest) GetVersion() string {
 	return r._version
+}
+
+// SetImgData is ImgData Setter
+// 原始图像数据
+func (r *AlibabaAiArTmjlAppDetectAPIRequest) SetImgData(_imgData *model.File) error {
+	r._imgData = _imgData
+	r.Set("img_data", _imgData)
+	return nil
+}
+
+// GetImgData ImgData Getter
+func (r AlibabaAiArTmjlAppDetectAPIRequest) GetImgData() *model.File {
+	return r._imgData
+}
+
+// SetNum is Num Setter
+// 最多返回的结果数，默认为1
+func (r *AlibabaAiArTmjlAppDetectAPIRequest) SetNum(_num int64) error {
+	r._num = _num
+	r.Set("num", _num)
+	return nil
+}
+
+// GetNum Num Getter
+func (r AlibabaAiArTmjlAppDetectAPIRequest) GetNum() int64 {
+	return r._num
 }

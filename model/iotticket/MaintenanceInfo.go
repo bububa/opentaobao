@@ -2,6 +2,10 @@ package iotticket
 
 // MaintenanceInfo 结构体
 type MaintenanceInfo struct {
+	// 维修配件信息
+	PartItemList []PartItemList `json:"part_item_list,omitempty" xml:"part_item_list>part_item_list,omitempty"`
+	// 事件类型列表
+	EventTypeList []string `json:"event_type_list,omitempty" xml:"event_type_list>string,omitempty"`
 	// 维修方式
 	MaintainMethod string `json:"maintain_method,omitempty" xml:"maintain_method,omitempty"`
 	// 修理方式
@@ -12,10 +16,6 @@ type MaintenanceInfo struct {
 	OtherFee string `json:"other_fee,omitempty" xml:"other_fee,omitempty"`
 	// 费用描述
 	FeeRemark string `json:"fee_remark,omitempty" xml:"fee_remark,omitempty"`
-	// 维修配件信息
-	PartItemList []PartItemList `json:"part_item_list,omitempty" xml:"part_item_list>part_item_list,omitempty"`
 	// 承保类型
 	WarrantyType string `json:"warranty_type,omitempty" xml:"warranty_type,omitempty"`
-	// 事件类型列表
-	EventTypeList []string `json:"event_type_list,omitempty" xml:"event_type_list>string,omitempty"`
 }

@@ -14,10 +14,10 @@ import (
 // 核查平台优先过滤非8开头的，长度非20位数字的码信息。
 type AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest struct {
 	model.Params
-	// 企业唯一标识（或appkey）
-	_refEntId string
 	// 码列表
 	_codes []string
+	// 企业唯一标识（或appkey）
+	_refEntId string
 }
 
 // NewAlibabaAlihealthDrugtraceTopLsydQueryCodedetailRequest 初始化AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest对象
@@ -41,19 +41,6 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest) GetApiParams(
 	return params
 }
 
-// SetRefEntId is RefEntId Setter
-// 企业唯一标识（或appkey）
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest) SetRefEntId(_refEntId string) error {
-	r._refEntId = _refEntId
-	r.Set("ref_ent_id", _refEntId)
-	return nil
-}
-
-// GetRefEntId RefEntId Getter
-func (r AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest) GetRefEntId() string {
-	return r._refEntId
-}
-
 // SetCodes is Codes Setter
 // 码列表
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest) SetCodes(_codes []string) error {
@@ -65,4 +52,17 @@ func (r *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest) SetCodes(_co
 // GetCodes Codes Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest) GetCodes() []string {
 	return r._codes
+}
+
+// SetRefEntId is RefEntId Setter
+// 企业唯一标识（或appkey）
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest) SetRefEntId(_refEntId string) error {
+	r._refEntId = _refEntId
+	r.Set("ref_ent_id", _refEntId)
+	return nil
+}
+
+// GetRefEntId RefEntId Getter
+func (r AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest) GetRefEntId() string {
+	return r._refEntId
 }

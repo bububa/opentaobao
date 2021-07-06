@@ -12,10 +12,10 @@ import (
 // 查询用户的菜单
 type AlibabaCampusAclGetmenubyempidAPIRequest struct {
 	model.Params
-	// 账户id
-	_userId int64
 	// 系统id
 	_systemId string
+	// 账户id
+	_userId int64
 	// 公司id
 	_companyId int64
 	// 园区id
@@ -43,19 +43,6 @@ func (r AlibabaCampusAclGetmenubyempidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetUserId is UserId Setter
-// 账户id
-func (r *AlibabaCampusAclGetmenubyempidAPIRequest) SetUserId(_userId int64) error {
-	r._userId = _userId
-	r.Set("user_id", _userId)
-	return nil
-}
-
-// GetUserId UserId Getter
-func (r AlibabaCampusAclGetmenubyempidAPIRequest) GetUserId() int64 {
-	return r._userId
-}
-
 // SetSystemId is SystemId Setter
 // 系统id
 func (r *AlibabaCampusAclGetmenubyempidAPIRequest) SetSystemId(_systemId string) error {
@@ -67,6 +54,19 @@ func (r *AlibabaCampusAclGetmenubyempidAPIRequest) SetSystemId(_systemId string)
 // GetSystemId SystemId Getter
 func (r AlibabaCampusAclGetmenubyempidAPIRequest) GetSystemId() string {
 	return r._systemId
+}
+
+// SetUserId is UserId Setter
+// 账户id
+func (r *AlibabaCampusAclGetmenubyempidAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// GetUserId UserId Getter
+func (r AlibabaCampusAclGetmenubyempidAPIRequest) GetUserId() int64 {
+	return r._userId
 }
 
 // SetCompanyId is CompanyId Setter

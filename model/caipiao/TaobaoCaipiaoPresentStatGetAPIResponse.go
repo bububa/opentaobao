@@ -20,8 +20,8 @@ type TaobaoCaipiaoPresentStatGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"caipiao_present_stat_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 查询的结果集大小
-	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 查询的结果集
 	Results []LotteryWangcaiPresentStat `json:"results,omitempty" xml:"results>lottery_wangcai_present_stat,omitempty"`
+	// 查询的结果集大小
+	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 }

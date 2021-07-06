@@ -12,14 +12,14 @@ import (
 // 对外部dsp提供交易id查询接口
 type TaobaoTanxDealGetAPIRequest struct {
 	model.Params
+	// 验证token
+	_token string
 	// dsp用户id
 	_dspId int64
 	// 交易id
 	_dealId int64
 	// 1970年到现在的时间，毫秒
 	_signTime int64
-	// 验证token
-	_token string
 }
 
 // NewTaobaoTanxDealGetRequest 初始化TaobaoTanxDealGetAPIRequest对象
@@ -41,6 +41,19 @@ func (r TaobaoTanxDealGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetToken is Token Setter
+// 验证token
+func (r *TaobaoTanxDealGetAPIRequest) SetToken(_token string) error {
+	r._token = _token
+	r.Set("token", _token)
+	return nil
+}
+
+// GetToken Token Getter
+func (r TaobaoTanxDealGetAPIRequest) GetToken() string {
+	return r._token
 }
 
 // SetDspId is DspId Setter
@@ -80,17 +93,4 @@ func (r *TaobaoTanxDealGetAPIRequest) SetSignTime(_signTime int64) error {
 // GetSignTime SignTime Getter
 func (r TaobaoTanxDealGetAPIRequest) GetSignTime() int64 {
 	return r._signTime
-}
-
-// SetToken is Token Setter
-// 验证token
-func (r *TaobaoTanxDealGetAPIRequest) SetToken(_token string) error {
-	r._token = _token
-	r.Set("token", _token)
-	return nil
-}
-
-// GetToken Token Getter
-func (r TaobaoTanxDealGetAPIRequest) GetToken() string {
-	return r._token
 }

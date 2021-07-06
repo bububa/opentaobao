@@ -20,12 +20,12 @@ type TaobaoXhotelOrderFutureInfoGetAPIRequest struct {
 	_hotelCode string
 	// 系统商分配的身份识别
 	_vendor string
-	// 操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令
-	_operateType int64
 	// 开始时间
 	_createdStart string
 	// 结束时间
 	_createdEnd string
+	// 操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令
+	_operateType int64
 }
 
 // NewTaobaoXhotelOrderFutureInfoGetRequest 初始化TaobaoXhotelOrderFutureInfoGetAPIRequest对象
@@ -101,19 +101,6 @@ func (r TaobaoXhotelOrderFutureInfoGetAPIRequest) GetVendor() string {
 	return r._vendor
 }
 
-// SetOperateType is OperateType Setter
-// 操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令
-func (r *TaobaoXhotelOrderFutureInfoGetAPIRequest) SetOperateType(_operateType int64) error {
-	r._operateType = _operateType
-	r.Set("operate_type", _operateType)
-	return nil
-}
-
-// GetOperateType OperateType Getter
-func (r TaobaoXhotelOrderFutureInfoGetAPIRequest) GetOperateType() int64 {
-	return r._operateType
-}
-
 // SetCreatedStart is CreatedStart Setter
 // 开始时间
 func (r *TaobaoXhotelOrderFutureInfoGetAPIRequest) SetCreatedStart(_createdStart string) error {
@@ -138,4 +125,17 @@ func (r *TaobaoXhotelOrderFutureInfoGetAPIRequest) SetCreatedEnd(_createdEnd str
 // GetCreatedEnd CreatedEnd Getter
 func (r TaobaoXhotelOrderFutureInfoGetAPIRequest) GetCreatedEnd() string {
 	return r._createdEnd
+}
+
+// SetOperateType is OperateType Setter
+// 操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令
+func (r *TaobaoXhotelOrderFutureInfoGetAPIRequest) SetOperateType(_operateType int64) error {
+	r._operateType = _operateType
+	r.Set("operate_type", _operateType)
+	return nil
+}
+
+// GetOperateType OperateType Getter
+func (r TaobaoXhotelOrderFutureInfoGetAPIRequest) GetOperateType() int64 {
+	return r._operateType
 }

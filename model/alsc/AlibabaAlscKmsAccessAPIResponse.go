@@ -22,8 +22,8 @@ type AlibabaAlscKmsAccessAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// code
 	Resultcode string `json:"resultcode,omitempty" xml:"resultcode,omitempty"`
-	// 是否成功
-	Resultsuccess bool `json:"resultsuccess,omitempty" xml:"resultsuccess,omitempty"`
 	// message
 	Resultmessage string `json:"resultmessage,omitempty" xml:"resultmessage,omitempty"`
+	// 是否成功
+	Resultsuccess bool `json:"resultsuccess,omitempty" xml:"resultsuccess,omitempty"`
 }

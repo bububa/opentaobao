@@ -12,12 +12,12 @@ import (
 // 修改网点/门店状态
 type TmallServicecenterServicestoreUpdatestatusAPIRequest struct {
 	model.Params
+	// 业务类型。不同业务传不同的值
+	_bizType string
 	// 门店id
 	_id int64
 	// 状态。1 营业，0歇业，-1彻底关店
 	_status int64
-	// 业务类型。不同业务传不同的值
-	_bizType string
 }
 
 // NewTmallServicecenterServicestoreUpdatestatusRequest 初始化TmallServicecenterServicestoreUpdatestatusAPIRequest对象
@@ -39,6 +39,19 @@ func (r TmallServicecenterServicestoreUpdatestatusAPIRequest) GetApiParams() url
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetBizType is BizType Setter
+// 业务类型。不同业务传不同的值
+func (r *TmallServicecenterServicestoreUpdatestatusAPIRequest) SetBizType(_bizType string) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// GetBizType BizType Getter
+func (r TmallServicecenterServicestoreUpdatestatusAPIRequest) GetBizType() string {
+	return r._bizType
 }
 
 // SetId is Id Setter
@@ -65,17 +78,4 @@ func (r *TmallServicecenterServicestoreUpdatestatusAPIRequest) SetStatus(_status
 // GetStatus Status Getter
 func (r TmallServicecenterServicestoreUpdatestatusAPIRequest) GetStatus() int64 {
 	return r._status
-}
-
-// SetBizType is BizType Setter
-// 业务类型。不同业务传不同的值
-func (r *TmallServicecenterServicestoreUpdatestatusAPIRequest) SetBizType(_bizType string) error {
-	r._bizType = _bizType
-	r.Set("biz_type", _bizType)
-	return nil
-}
-
-// GetBizType BizType Getter
-func (r TmallServicecenterServicestoreUpdatestatusAPIRequest) GetBizType() string {
-	return r._bizType
 }

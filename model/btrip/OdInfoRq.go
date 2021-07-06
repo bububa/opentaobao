@@ -4,10 +4,10 @@ package btrip
 type OdInfoRq struct {
 	// 到达机场三字码
 	ArrAirportCode []string `json:"arr_airport_code,omitempty" xml:"arr_airport_code>string,omitempty"`
-	// 到达城市三字码
-	ArrCityCode string `json:"arr_city_code,omitempty" xml:"arr_city_code,omitempty"`
 	// 出发机场三字码
 	DepAirportCode []string `json:"dep_airport_code,omitempty" xml:"dep_airport_code>string,omitempty"`
+	// 到达城市三字码
+	ArrCityCode string `json:"arr_city_code,omitempty" xml:"arr_city_code,omitempty"`
 	// 出发城市三字码
 	DepCityCode string `json:"dep_city_code,omitempty" xml:"dep_city_code,omitempty"`
 	// 起飞日期

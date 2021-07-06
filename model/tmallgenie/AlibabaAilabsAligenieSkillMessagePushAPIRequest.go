@@ -14,20 +14,20 @@ type AlibabaAilabsAligenieSkillMessagePushAPIRequest struct {
 	model.Params
 	// 要推送的消息内容
 	_content string
-	// 智能应用平台创建的技能id
-	_skillId int64
 	// 接收方的用户Id，从技能WebHook中取得的userOpenId
 	_accountType string
 	// 消息推送的方式，和技能中申请的权限相关，可选值为TO_USER，TO_APP_BOX，BROADCAST
 	_pushType string
-	// 是否是测试消息
-	_test bool
 	// TO_USER时必填，接收方的用户Id，从技能WebHook中取得的userOpenId
 	_userId string
 	// 接收方的用户设备id，从技能WebHook中取得的deviceOpenId，填写设备id，则用户id必填，否则无法推送
 	_uuid string
 	// 鉴权用户类型
 	_authAccountType string
+	// 智能应用平台创建的技能id
+	_skillId int64
+	// 是否是测试消息
+	_test bool
 }
 
 // NewAlibabaAilabsAligenieSkillMessagePushRequest 初始化AlibabaAilabsAligenieSkillMessagePushAPIRequest对象
@@ -64,19 +64,6 @@ func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetContent() string {
 	return r._content
 }
 
-// SetSkillId is SkillId Setter
-// 智能应用平台创建的技能id
-func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetSkillId(_skillId int64) error {
-	r._skillId = _skillId
-	r.Set("skill_id", _skillId)
-	return nil
-}
-
-// GetSkillId SkillId Getter
-func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetSkillId() int64 {
-	return r._skillId
-}
-
 // SetAccountType is AccountType Setter
 // 接收方的用户Id，从技能WebHook中取得的userOpenId
 func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetAccountType(_accountType string) error {
@@ -101,19 +88,6 @@ func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetPushType(_pushType 
 // GetPushType PushType Getter
 func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetPushType() string {
 	return r._pushType
-}
-
-// SetTest is Test Setter
-// 是否是测试消息
-func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetTest(_test bool) error {
-	r._test = _test
-	r.Set("test", _test)
-	return nil
-}
-
-// GetTest Test Getter
-func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetTest() bool {
-	return r._test
 }
 
 // SetUserId is UserId Setter
@@ -153,4 +127,30 @@ func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetAuthAccountType(_au
 // GetAuthAccountType AuthAccountType Getter
 func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetAuthAccountType() string {
 	return r._authAccountType
+}
+
+// SetSkillId is SkillId Setter
+// 智能应用平台创建的技能id
+func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetSkillId(_skillId int64) error {
+	r._skillId = _skillId
+	r.Set("skill_id", _skillId)
+	return nil
+}
+
+// GetSkillId SkillId Getter
+func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetSkillId() int64 {
+	return r._skillId
+}
+
+// SetTest is Test Setter
+// 是否是测试消息
+func (r *AlibabaAilabsAligenieSkillMessagePushAPIRequest) SetTest(_test bool) error {
+	r._test = _test
+	r.Set("test", _test)
+	return nil
+}
+
+// GetTest Test Getter
+func (r AlibabaAilabsAligenieSkillMessagePushAPIRequest) GetTest() bool {
+	return r._test
 }

@@ -30,8 +30,6 @@ type TradeOrderDetailDto struct {
 	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
 	// 交易状态可选值:TRADE_NO_CREATE_PAY(没有创建支付宝交易)，WAIT_BUYER_PAY(等待买家付款)，SELLER_CONSIGNED_PART(卖家部分发货)，WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)，WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)，TRADE_BUYER_SIGNED(买家已签收,货到付款专用)，TRADE_FINISHED(交易成功)，TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)，TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)，PAY_PENDING(国际信用卡支付付款确认中) * WAIT_PRE_AUTH_CONFIRM(0元购合约中)，PAID_FORBID_CONSIGN(拼团中订单或者发货强管控的订单，已付款但禁止发货)
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
-	// 主订单
-	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// createTime
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 买家昵称
@@ -44,4 +42,6 @@ type TradeOrderDetailDto struct {
 	PostFee string `json:"post_fee,omitempty" xml:"post_fee,omitempty"`
 	// 买家留言
 	BuyerMemo string `json:"buyer_memo,omitempty" xml:"buyer_memo,omitempty"`
+	// 主订单
+	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 }

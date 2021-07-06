@@ -12,12 +12,12 @@ import (
 // 使用Schema文件发布一个产品
 type AlibabaGpuSchemaAddAPIRequest struct {
 	model.Params
+	// 根据alibaba.gpu.add.schema.get获取的规则提交上来的schema
+	_schemaXmlFields string
 	// 叶子类目ID
 	_leafCatId int64
 	// 品牌ID
 	_brandId int64
-	// 根据alibaba.gpu.add.schema.get获取的规则提交上来的schema
-	_schemaXmlFields string
 	// 当前用户所在渠道如0代表天猫，8代表淘宝
 	_providerId int64
 }
@@ -41,6 +41,19 @@ func (r AlibabaGpuSchemaAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSchemaXmlFields is SchemaXmlFields Setter
+// 根据alibaba.gpu.add.schema.get获取的规则提交上来的schema
+func (r *AlibabaGpuSchemaAddAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
+	r._schemaXmlFields = _schemaXmlFields
+	r.Set("schema_xml_fields", _schemaXmlFields)
+	return nil
+}
+
+// GetSchemaXmlFields SchemaXmlFields Getter
+func (r AlibabaGpuSchemaAddAPIRequest) GetSchemaXmlFields() string {
+	return r._schemaXmlFields
 }
 
 // SetLeafCatId is LeafCatId Setter
@@ -67,19 +80,6 @@ func (r *AlibabaGpuSchemaAddAPIRequest) SetBrandId(_brandId int64) error {
 // GetBrandId BrandId Getter
 func (r AlibabaGpuSchemaAddAPIRequest) GetBrandId() int64 {
 	return r._brandId
-}
-
-// SetSchemaXmlFields is SchemaXmlFields Setter
-// 根据alibaba.gpu.add.schema.get获取的规则提交上来的schema
-func (r *AlibabaGpuSchemaAddAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
-	r._schemaXmlFields = _schemaXmlFields
-	r.Set("schema_xml_fields", _schemaXmlFields)
-	return nil
-}
-
-// GetSchemaXmlFields SchemaXmlFields Getter
-func (r AlibabaGpuSchemaAddAPIRequest) GetSchemaXmlFields() string {
-	return r._schemaXmlFields
 }
 
 // SetProviderId is ProviderId Setter

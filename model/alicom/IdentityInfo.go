@@ -4,8 +4,6 @@ package alicom
 type IdentityInfo struct {
 	// 身份证背面图片
 	BackImageUrl string `json:"back_image_url,omitempty" xml:"back_image_url,omitempty"`
-	// 订单id
-	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 身份证号码
 	CardNum string `json:"card_num,omitempty" xml:"card_num,omitempty"`
 	// 身份证正面图片
@@ -16,8 +14,6 @@ type IdentityInfo struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
-	// 是否长期有效
-	LongTerm bool `json:"long_term,omitempty" xml:"long_term,omitempty"`
 	// 卡类型
 	CardType string `json:"card_type,omitempty" xml:"card_type,omitempty"`
 	// 失效时间
@@ -28,4 +24,8 @@ type IdentityInfo struct {
 	EndDate string `json:"end_date,omitempty" xml:"end_date,omitempty"`
 	// biometricSeq
 	BiometricSeq string `json:"biometric_seq,omitempty" xml:"biometric_seq,omitempty"`
+	// 订单id
+	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
+	// 是否长期有效
+	LongTerm bool `json:"long_term,omitempty" xml:"long_term,omitempty"`
 }

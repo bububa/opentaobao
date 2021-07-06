@@ -12,12 +12,12 @@ import (
 // 给盒马可靠软件服务商Cdp系统，做非阿里编员工数据一致性核对检查
 type AlibabaWdkHrworkbenchCdpempsQueryAPIRequest struct {
 	model.Params
-	// 页面大小
-	_pageSize int64
 	// 业务授权key
 	_bizKey string
 	// 业务授权code
 	_bizCode string
+	// 页面大小
+	_pageSize int64
 	// 起始页
 	_currentPage int64
 }
@@ -41,19 +41,6 @@ func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetPageSize is PageSize Setter
-// 页面大小
-func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetPageSize() int64 {
-	return r._pageSize
 }
 
 // SetBizKey is BizKey Setter
@@ -80,6 +67,19 @@ func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetBizCode(_bizCode string
 // GetBizCode BizCode Getter
 func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetBizCode() string {
 	return r._bizCode
+}
+
+// SetPageSize is PageSize Setter
+// 页面大小
+func (r *AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlibabaWdkHrworkbenchCdpempsQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
 // SetCurrentPage is CurrentPage Setter

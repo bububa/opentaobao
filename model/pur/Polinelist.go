@@ -2,6 +2,8 @@ package pur
 
 // Polinelist 结构体
 type Polinelist struct {
+	// BOM节点列表，节点之间使用父节点id维护层级关系
+	ItemList []Polinestructureitemdtolist `json:"item_list,omitempty" xml:"item_list>polinestructureitemdtolist,omitempty"`
 	// 物品名称
 	GoodsName string `json:"goods_name,omitempty" xml:"goods_name,omitempty"`
 	// 规格
@@ -32,14 +34,12 @@ type Polinelist struct {
 	ReceiverPhone string `json:"receiver_phone,omitempty" xml:"receiver_phone,omitempty"`
 	// 收货人手机
 	ReceiverMobile string `json:"receiver_mobile,omitempty" xml:"receiver_mobile,omitempty"`
-	// lineNum
-	LineNum int64 `json:"line_num,omitempty" xml:"line_num,omitempty"`
 	// additionalInfo
 	AdditionalInfo string `json:"additional_info,omitempty" xml:"additional_info,omitempty"`
 	// 订单行商品报价币种和订单头币种之间的汇率
 	ExchangeRate string `json:"exchange_rate,omitempty" xml:"exchange_rate,omitempty"`
 	// 订单行商品报价币种
 	GoodsCurrencyCode string `json:"goods_currency_code,omitempty" xml:"goods_currency_code,omitempty"`
-	// BOM节点列表，节点之间使用父节点id维护层级关系
-	ItemList []Polinestructureitemdtolist `json:"item_list,omitempty" xml:"item_list>polinestructureitemdtolist,omitempty"`
+	// lineNum
+	LineNum int64 `json:"line_num,omitempty" xml:"line_num,omitempty"`
 }

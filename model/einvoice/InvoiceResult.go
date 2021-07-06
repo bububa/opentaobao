@@ -2,6 +2,8 @@ package einvoice
 
 // InvoiceResult 结构体
 type InvoiceResult struct {
+	// 电子发票明细，erp开票默认不返回，如果erp需要获取阿里发票平台自动开票的结果，需要先找阿里小二开通权限
+	InvoiceItems []InvoiceItem `json:"invoice_items,omitempty" xml:"invoice_items>invoice_item,omitempty"`
 	// 开票日期
 	InvoiceDate string `json:"invoice_date,omitempty" xml:"invoice_date,omitempty"`
 	// 电商平台代码。淘宝：taobao，天猫：tmall
@@ -34,12 +36,8 @@ type InvoiceResult struct {
 	BizErrorMsg string `json:"biz_error_msg,omitempty" xml:"biz_error_msg,omitempty"`
 	// 错误编码
 	BizErrorCode string `json:"biz_error_code,omitempty" xml:"biz_error_code,omitempty"`
-	// 电子发票明细，erp开票默认不返回，如果erp需要获取阿里发票平台自动开票的结果，需要先找阿里小二开通权限
-	InvoiceItems []InvoiceItem `json:"invoice_items,omitempty" xml:"invoice_items>invoice_item,omitempty"`
 	// 发票类型，blue=蓝票，red=红票
 	InvoiceType string `json:"invoice_type,omitempty" xml:"invoice_type,omitempty"`
-	// 发票种类，0=电子发票，1=纸质发票，2=纸质专票
-	InvoiceKind int64 `json:"invoice_kind,omitempty" xml:"invoice_kind,omitempty"`
 	// 原蓝票发票代码，invoiceType=red时有值
 	NormalInvoiceCode string `json:"normal_invoice_code,omitempty" xml:"normal_invoice_code,omitempty"`
 	// 原蓝票发票号码，invoiceType=red时有值
@@ -66,4 +64,6 @@ type InvoiceResult struct {
 	InvoiceTime string `json:"invoice_time,omitempty" xml:"invoice_time,omitempty"`
 	// 二维码
 	QrCode string `json:"qr_code,omitempty" xml:"qr_code,omitempty"`
+	// 发票种类，0=电子发票，1=纸质发票，2=纸质专票
+	InvoiceKind int64 `json:"invoice_kind,omitempty" xml:"invoice_kind,omitempty"`
 }

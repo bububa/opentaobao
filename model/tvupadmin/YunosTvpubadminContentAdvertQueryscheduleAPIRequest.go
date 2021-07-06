@@ -12,16 +12,16 @@ import (
 // 广告牌照管控查询
 type YunosTvpubadminContentAdvertQueryscheduleAPIRequest struct {
 	model.Params
+	// 日期
+	_gmtStart string
+	// uuid
+	_uuid string
 	// 查询范围: 1-牌照，4-uuid
 	_range int64
 	// 分页，页码
 	_pageNo int64
 	// 分页，单页数量
 	_pageSize int64
-	// 日期
-	_gmtStart string
-	// uuid
-	_uuid string
 	// 牌照方，1-华数，7-CIBN
 	_license int64
 	// 广告类型
@@ -47,6 +47,32 @@ func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetApiParams() url.
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetGmtStart is GmtStart Setter
+// 日期
+func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetGmtStart(_gmtStart string) error {
+	r._gmtStart = _gmtStart
+	r.Set("gmt_start", _gmtStart)
+	return nil
+}
+
+// GetGmtStart GmtStart Getter
+func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetGmtStart() string {
+	return r._gmtStart
+}
+
+// SetUuid is Uuid Setter
+// uuid
+func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetUuid(_uuid string) error {
+	r._uuid = _uuid
+	r.Set("uuid", _uuid)
+	return nil
+}
+
+// GetUuid Uuid Getter
+func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetUuid() string {
+	return r._uuid
 }
 
 // SetRange is Range Setter
@@ -86,32 +112,6 @@ func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetPageSize(_pageS
 // GetPageSize PageSize Getter
 func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetGmtStart is GmtStart Setter
-// 日期
-func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetGmtStart(_gmtStart string) error {
-	r._gmtStart = _gmtStart
-	r.Set("gmt_start", _gmtStart)
-	return nil
-}
-
-// GetGmtStart GmtStart Getter
-func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetGmtStart() string {
-	return r._gmtStart
-}
-
-// SetUuid is Uuid Setter
-// uuid
-func (r *YunosTvpubadminContentAdvertQueryscheduleAPIRequest) SetUuid(_uuid string) error {
-	r._uuid = _uuid
-	r.Set("uuid", _uuid)
-	return nil
-}
-
-// GetUuid Uuid Getter
-func (r YunosTvpubadminContentAdvertQueryscheduleAPIRequest) GetUuid() string {
-	return r._uuid
 }
 
 // SetLicense is License Setter

@@ -12,6 +12,8 @@ import (
 // 快易通零售B2C单据上传
 type AlibabaAlihealthDrugKytUploadb2cbillAPIRequest struct {
 	model.Params
+	// 追溯码[多个时用逗号分开]
+	_traceCodes []string
 	// 单据号【20位以内的唯一编码，可以使用16位UUID】
 	_billCode string
 	// 单据时间【一般情况下写当前时间】
@@ -28,8 +30,6 @@ type AlibabaAlihealthDrugKytUploadb2cbillAPIRequest struct {
 	_warehouseId string
 	// 药品ID
 	_drugId string
-	// 追溯码[多个时用逗号分开]
-	_traceCodes []string
 	// 订单来源
 	_orderSource string
 }
@@ -53,6 +53,19 @@ func (r AlibabaAlihealthDrugKytUploadb2cbillAPIRequest) GetApiParams() url.Value
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTraceCodes is TraceCodes Setter
+// 追溯码[多个时用逗号分开]
+func (r *AlibabaAlihealthDrugKytUploadb2cbillAPIRequest) SetTraceCodes(_traceCodes []string) error {
+	r._traceCodes = _traceCodes
+	r.Set("trace_codes", _traceCodes)
+	return nil
+}
+
+// GetTraceCodes TraceCodes Getter
+func (r AlibabaAlihealthDrugKytUploadb2cbillAPIRequest) GetTraceCodes() []string {
+	return r._traceCodes
 }
 
 // SetBillCode is BillCode Setter
@@ -157,19 +170,6 @@ func (r *AlibabaAlihealthDrugKytUploadb2cbillAPIRequest) SetDrugId(_drugId strin
 // GetDrugId DrugId Getter
 func (r AlibabaAlihealthDrugKytUploadb2cbillAPIRequest) GetDrugId() string {
 	return r._drugId
-}
-
-// SetTraceCodes is TraceCodes Setter
-// 追溯码[多个时用逗号分开]
-func (r *AlibabaAlihealthDrugKytUploadb2cbillAPIRequest) SetTraceCodes(_traceCodes []string) error {
-	r._traceCodes = _traceCodes
-	r.Set("trace_codes", _traceCodes)
-	return nil
-}
-
-// GetTraceCodes TraceCodes Getter
-func (r AlibabaAlihealthDrugKytUploadb2cbillAPIRequest) GetTraceCodes() []string {
-	return r._traceCodes
 }
 
 // SetOrderSource is OrderSource Setter

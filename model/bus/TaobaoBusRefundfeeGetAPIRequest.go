@@ -12,10 +12,10 @@ import (
 // 查询退票的费用信息
 type TaobaoBusRefundfeeGetAPIRequest struct {
 	model.Params
-	// 飞猪订单号
-	_aliTripOrderId string
 	// 飞猪子订单号
 	_subOrderIds []int64
+	// 飞猪订单号
+	_aliTripOrderId string
 }
 
 // NewTaobaoBusRefundfeeGetRequest 初始化TaobaoBusRefundfeeGetAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoBusRefundfeeGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetAliTripOrderId is AliTripOrderId Setter
-// 飞猪订单号
-func (r *TaobaoBusRefundfeeGetAPIRequest) SetAliTripOrderId(_aliTripOrderId string) error {
-	r._aliTripOrderId = _aliTripOrderId
-	r.Set("ali_trip_order_id", _aliTripOrderId)
-	return nil
-}
-
-// GetAliTripOrderId AliTripOrderId Getter
-func (r TaobaoBusRefundfeeGetAPIRequest) GetAliTripOrderId() string {
-	return r._aliTripOrderId
-}
-
 // SetSubOrderIds is SubOrderIds Setter
 // 飞猪子订单号
 func (r *TaobaoBusRefundfeeGetAPIRequest) SetSubOrderIds(_subOrderIds []int64) error {
@@ -63,4 +50,17 @@ func (r *TaobaoBusRefundfeeGetAPIRequest) SetSubOrderIds(_subOrderIds []int64) e
 // GetSubOrderIds SubOrderIds Getter
 func (r TaobaoBusRefundfeeGetAPIRequest) GetSubOrderIds() []int64 {
 	return r._subOrderIds
+}
+
+// SetAliTripOrderId is AliTripOrderId Setter
+// 飞猪订单号
+func (r *TaobaoBusRefundfeeGetAPIRequest) SetAliTripOrderId(_aliTripOrderId string) error {
+	r._aliTripOrderId = _aliTripOrderId
+	r.Set("ali_trip_order_id", _aliTripOrderId)
+	return nil
+}
+
+// GetAliTripOrderId AliTripOrderId Getter
+func (r TaobaoBusRefundfeeGetAPIRequest) GetAliTripOrderId() string {
+	return r._aliTripOrderId
 }

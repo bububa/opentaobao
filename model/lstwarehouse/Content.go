@@ -2,12 +2,12 @@ package lstwarehouse
 
 // Content 结构体
 type Content struct {
+	// 品牌名称列表
+	BrandNameList []string `json:"brand_name_list,omitempty" xml:"brand_name_list>string,omitempty"`
 	// 是否禁止补货
 	IsNoRm string `json:"is_no_rm,omitempty" xml:"is_no_rm,omitempty"`
 	// 报价状态
 	ProductQuoteStatus string `json:"product_quote_status,omitempty" xml:"product_quote_status,omitempty"`
-	// 连续缺货天数
-	OssDaysStd001 int64 `json:"oss_days_std001,omitempty" xml:"oss_days_std001,omitempty"`
 	// 单品编码
 	CspuId string `json:"cspu_id,omitempty" xml:"cspu_id,omitempty"`
 	// 是否在售
@@ -46,10 +46,6 @@ type Content struct {
 	BackOfferId string `json:"back_offer_id,omitempty" xml:"back_offer_id,omitempty"`
 	// 箱规数
 	CartonPcs string `json:"carton_pcs,omitempty" xml:"carton_pcs,omitempty"`
-	// 可售库存
-	DeportItmQtyStd008 int64 `json:"deport_itm_qty_std008,omitempty" xml:"deport_itm_qty_std008,omitempty"`
-	// 残次品在仓商品件数
-	DeportItmQtyStd005 int64 `json:"deport_itm_qty_std005,omitempty" xml:"deport_itm_qty_std005,omitempty"`
 	// 是否缺货
 	IsOos string `json:"is_oos,omitempty" xml:"is_oos,omitempty"`
 	// 首次入库时间
@@ -66,22 +62,14 @@ type Content struct {
 	ParentWhName string `json:"parent_wh_name,omitempty" xml:"parent_wh_name,omitempty"`
 	// 大区名称
 	BigAreaName string `json:"big_area_name,omitempty" xml:"big_area_name,omitempty"`
-	// 首次入库天数
-	FstInboundDays int64 `json:"fst_inbound_days,omitempty" xml:"fst_inbound_days,omitempty"`
 	// 一级类目名称
 	CateLv1Name string `json:"cate_lv1_name,omitempty" xml:"cate_lv1_name,omitempty"`
 	// 三级类目名称
 	CateLv3Name string `json:"cate_lv3_name,omitempty" xml:"cate_lv3_name,omitempty"`
 	// 滞销库存临界天数
 	UnsaleInstockDays string `json:"unsale_instock_days,omitempty" xml:"unsale_instock_days,omitempty"`
-	// 品牌名称列表
-	BrandNameList []string `json:"brand_name_list,omitempty" xml:"brand_name_list>string,omitempty"`
 	// 供应商memberId
 	SupplierMemberId string `json:"supplier_member_id,omitempty" xml:"supplier_member_id,omitempty"`
-	// 成功/失败
-	Result bool `json:"result,omitempty" xml:"result,omitempty"`
-	// 商品Id
-	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 错误code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 错误描述
@@ -92,4 +80,16 @@ type Content struct {
 	WarehouseName string `json:"warehouse_name,omitempty" xml:"warehouse_name,omitempty"`
 	// 仓库code
 	WarehouseCode string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
+	// 连续缺货天数
+	OssDaysStd001 int64 `json:"oss_days_std001,omitempty" xml:"oss_days_std001,omitempty"`
+	// 可售库存
+	DeportItmQtyStd008 int64 `json:"deport_itm_qty_std008,omitempty" xml:"deport_itm_qty_std008,omitempty"`
+	// 残次品在仓商品件数
+	DeportItmQtyStd005 int64 `json:"deport_itm_qty_std005,omitempty" xml:"deport_itm_qty_std005,omitempty"`
+	// 首次入库天数
+	FstInboundDays int64 `json:"fst_inbound_days,omitempty" xml:"fst_inbound_days,omitempty"`
+	// 商品Id
+	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+	// 成功/失败
+	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 }

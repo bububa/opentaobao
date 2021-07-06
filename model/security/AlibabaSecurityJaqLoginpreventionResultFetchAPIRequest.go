@@ -18,12 +18,8 @@ type AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest struct {
 	_email string
 	// 账号的全局唯一标识，为了提高准确率，建议带上该字段。【phone_number ,email, (user_id,id_type)三种必选其一】
 	_userId string
-	// 账号的全局唯一标识，为了提高准确率，建议带上该字段。【phone_number ,email, (user_id,id_type)三种必选其一】
-	_idType int64
 	// 登录时候的IP地址
 	_ip string
-	// 登录来源。1：PC网页；2：移动网页；3：APP;4:其它
-	_source int64
 	// 当前操作的页面URL。Source为1，2时，该参数必选
 	_currentUrl string
 	// 发送HTTP请求的代理
@@ -54,18 +50,22 @@ type AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest struct {
 	_protocolVersion string
 	// 扩展字段。json格式的字符串，根据具体情况而定 。
 	_extendData string
+	// 将密码加盐hash后传递，用于弱密码检测
+	_passwordHash string
+	// 注册时候的ip
+	_registerIp string
+	// 账号的全局唯一标识，为了提高准确率，建议带上该字段。【phone_number ,email, (user_id,id_type)三种必选其一】
+	_idType int64
+	// 登录来源。1：PC网页；2：移动网页；3：APP;4:其它
+	_source int64
 	// 账号在系统里面是否存在。0：不存在；1：存在
 	_accountExist int64
 	// 登录场景。1：账密登陆；2：扫码登录；3：短信验证码登录；0：其它
 	_loginType int64
 	// 密码是否正确。0：不正确；1：正确
 	_passwordCorrect int64
-	// 将密码加盐hash后传递，用于弱密码检测
-	_passwordHash string
 	// 注册的时间（秒）
 	_registerDate int64
-	// 注册时候的ip
-	_registerIp string
 }
 
 // NewAlibabaSecurityJaqLoginpreventionResultFetchRequest 初始化AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest对象
@@ -128,19 +128,6 @@ func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetUserId() stri
 	return r._userId
 }
 
-// SetIdType is IdType Setter
-// 账号的全局唯一标识，为了提高准确率，建议带上该字段。【phone_number ,email, (user_id,id_type)三种必选其一】
-func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetIdType(_idType int64) error {
-	r._idType = _idType
-	r.Set("id_type", _idType)
-	return nil
-}
-
-// GetIdType IdType Getter
-func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetIdType() int64 {
-	return r._idType
-}
-
 // SetIp is Ip Setter
 // 登录时候的IP地址
 func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetIp(_ip string) error {
@@ -152,19 +139,6 @@ func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetIp(_ip strin
 // GetIp Ip Getter
 func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetIp() string {
 	return r._ip
-}
-
-// SetSource is Source Setter
-// 登录来源。1：PC网页；2：移动网页；3：APP;4:其它
-func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetSource(_source int64) error {
-	r._source = _source
-	r.Set("source", _source)
-	return nil
-}
-
-// GetSource Source Getter
-func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetSource() int64 {
-	return r._source
 }
 
 // SetCurrentUrl is CurrentUrl Setter
@@ -362,6 +336,58 @@ func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetExtendData() 
 	return r._extendData
 }
 
+// SetPasswordHash is PasswordHash Setter
+// 将密码加盐hash后传递，用于弱密码检测
+func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetPasswordHash(_passwordHash string) error {
+	r._passwordHash = _passwordHash
+	r.Set("password_hash", _passwordHash)
+	return nil
+}
+
+// GetPasswordHash PasswordHash Getter
+func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetPasswordHash() string {
+	return r._passwordHash
+}
+
+// SetRegisterIp is RegisterIp Setter
+// 注册时候的ip
+func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetRegisterIp(_registerIp string) error {
+	r._registerIp = _registerIp
+	r.Set("register_ip", _registerIp)
+	return nil
+}
+
+// GetRegisterIp RegisterIp Getter
+func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetRegisterIp() string {
+	return r._registerIp
+}
+
+// SetIdType is IdType Setter
+// 账号的全局唯一标识，为了提高准确率，建议带上该字段。【phone_number ,email, (user_id,id_type)三种必选其一】
+func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetIdType(_idType int64) error {
+	r._idType = _idType
+	r.Set("id_type", _idType)
+	return nil
+}
+
+// GetIdType IdType Getter
+func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetIdType() int64 {
+	return r._idType
+}
+
+// SetSource is Source Setter
+// 登录来源。1：PC网页；2：移动网页；3：APP;4:其它
+func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetSource(_source int64) error {
+	r._source = _source
+	r.Set("source", _source)
+	return nil
+}
+
+// GetSource Source Getter
+func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetSource() int64 {
+	return r._source
+}
+
 // SetAccountExist is AccountExist Setter
 // 账号在系统里面是否存在。0：不存在；1：存在
 func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetAccountExist(_accountExist int64) error {
@@ -401,19 +427,6 @@ func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetPasswordCorre
 	return r._passwordCorrect
 }
 
-// SetPasswordHash is PasswordHash Setter
-// 将密码加盐hash后传递，用于弱密码检测
-func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetPasswordHash(_passwordHash string) error {
-	r._passwordHash = _passwordHash
-	r.Set("password_hash", _passwordHash)
-	return nil
-}
-
-// GetPasswordHash PasswordHash Getter
-func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetPasswordHash() string {
-	return r._passwordHash
-}
-
 // SetRegisterDate is RegisterDate Setter
 // 注册的时间（秒）
 func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetRegisterDate(_registerDate int64) error {
@@ -425,17 +438,4 @@ func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetRegisterDate
 // GetRegisterDate RegisterDate Getter
 func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetRegisterDate() int64 {
 	return r._registerDate
-}
-
-// SetRegisterIp is RegisterIp Setter
-// 注册时候的ip
-func (r *AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) SetRegisterIp(_registerIp string) error {
-	r._registerIp = _registerIp
-	r.Set("register_ip", _registerIp)
-	return nil
-}
-
-// GetRegisterIp RegisterIp Getter
-func (r AlibabaSecurityJaqLoginpreventionResultFetchAPIRequest) GetRegisterIp() string {
-	return r._registerIp
 }

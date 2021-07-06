@@ -12,10 +12,10 @@ import (
 // 根据sku properties删除sku数据
 type TaobaoFenxiaoProductSkuDeleteAPIRequest struct {
 	model.Params
-	// 产品id
-	_productId int64
 	// sku属性
 	_properties string
+	// 产品id
+	_productId int64
 }
 
 // NewTaobaoFenxiaoProductSkuDeleteRequest 初始化TaobaoFenxiaoProductSkuDeleteAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoFenxiaoProductSkuDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetProductId is ProductId Setter
-// 产品id
-func (r *TaobaoFenxiaoProductSkuDeleteAPIRequest) SetProductId(_productId int64) error {
-	r._productId = _productId
-	r.Set("product_id", _productId)
-	return nil
-}
-
-// GetProductId ProductId Getter
-func (r TaobaoFenxiaoProductSkuDeleteAPIRequest) GetProductId() int64 {
-	return r._productId
-}
-
 // SetProperties is Properties Setter
 // sku属性
 func (r *TaobaoFenxiaoProductSkuDeleteAPIRequest) SetProperties(_properties string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoFenxiaoProductSkuDeleteAPIRequest) SetProperties(_properties stri
 // GetProperties Properties Getter
 func (r TaobaoFenxiaoProductSkuDeleteAPIRequest) GetProperties() string {
 	return r._properties
+}
+
+// SetProductId is ProductId Setter
+// 产品id
+func (r *TaobaoFenxiaoProductSkuDeleteAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// GetProductId ProductId Getter
+func (r TaobaoFenxiaoProductSkuDeleteAPIRequest) GetProductId() int64 {
+	return r._productId
 }

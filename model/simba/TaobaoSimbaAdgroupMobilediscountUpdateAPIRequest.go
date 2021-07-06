@@ -14,10 +14,10 @@ type TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest struct {
 	model.Params
 	// 推广组id数组(推广组id集合元素个数在1-200个之间，推广组id需要在同一个推广计划中)
 	_adgroupIds []int64
-	// 折扣（折扣值在1-400之间）
-	_mobileDiscount int64
 	// 昵称
 	_nick string
+	// 折扣（折扣值在1-400之间）
+	_mobileDiscount int64
 }
 
 // NewTaobaoSimbaAdgroupMobilediscountUpdateRequest 初始化TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) GetAdgroupIds() []int6
 	return r._adgroupIds
 }
 
-// SetMobileDiscount is MobileDiscount Setter
-// 折扣（折扣值在1-400之间）
-func (r *TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) SetMobileDiscount(_mobileDiscount int64) error {
-	r._mobileDiscount = _mobileDiscount
-	r.Set("mobile_discount", _mobileDiscount)
-	return nil
-}
-
-// GetMobileDiscount MobileDiscount Getter
-func (r TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) GetMobileDiscount() int64 {
-	return r._mobileDiscount
-}
-
 // SetNick is Nick Setter
 // 昵称
 func (r *TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) SetNick(_nick string) error {
@@ -78,4 +65,17 @@ func (r *TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) SetNick(_nick string)
 // GetNick Nick Getter
 func (r TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) GetNick() string {
 	return r._nick
+}
+
+// SetMobileDiscount is MobileDiscount Setter
+// 折扣（折扣值在1-400之间）
+func (r *TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) SetMobileDiscount(_mobileDiscount int64) error {
+	r._mobileDiscount = _mobileDiscount
+	r.Set("mobile_discount", _mobileDiscount)
+	return nil
+}
+
+// GetMobileDiscount MobileDiscount Getter
+func (r TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) GetMobileDiscount() int64 {
+	return r._mobileDiscount
 }

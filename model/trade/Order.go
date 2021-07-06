@@ -10,12 +10,8 @@ type Order struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
-	// 商品数字ID
-	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
 	// 商品的最小库存单位Sku的id.可以通过taobao.item.sku.get获取详细的Sku信息
 	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
-	// 购买数量。取值范围:大于零的整数
-	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
 	// 外部网店自己定义的Sku编号
 	OuterSkuId string `json:"outer_sku_id,omitempty" xml:"outer_sku_id,omitempty"`
 	// 应付金额（商品价格 * 商品数量 + 手工调整金额 - 子订单级订单优惠金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分
@@ -34,8 +30,6 @@ type Order struct {
 	DivideOrderFee string `json:"divide_order_fee,omitempty" xml:"divide_order_fee,omitempty"`
 	// 优惠分摊
 	PartMjzDiscount string `json:"part_mjz_discount,omitempty" xml:"part_mjz_discount,omitempty"`
-	// 最近退款的id
-	RefundId int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
 	// 退款状态。退款状态。可选值 WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 套餐的值。如：M8原装电池:便携支架:M8专用座充:莫凡保护袋
@@ -50,14 +44,8 @@ type Order struct {
 	Snapshot string `json:"snapshot,omitempty" xml:"snapshot,omitempty"`
 	// 订单超时到期时间。格式:yyyy-MM-dd HH:mm:ss
 	TimeoutActionTime string `json:"timeout_action_time,omitempty" xml:"timeout_action_time,omitempty"`
-	// 买家是否已评价。可选值：true(已评价)，false(未评价)
-	BuyerRate bool `json:"buyer_rate,omitempty" xml:"buyer_rate,omitempty"`
-	// 卖家是否已评价。可选值：true(已评价)，false(未评价)
-	SellerRate bool `json:"seller_rate,omitempty" xml:"seller_rate,omitempty"`
 	// 卖家类型，可选值为：B（商城商家），C（普通卖家）
 	SellerType string `json:"seller_type,omitempty" xml:"seller_type,omitempty"`
-	// 交易商品对应的类目ID
-	Cid int64 `json:"cid,omitempty" xml:"cid,omitempty"`
 	// 天猫国际官网直供子订单关税税费
 	SubOrderTaxFee string `json:"sub_order_tax_fee,omitempty" xml:"sub_order_tax_fee,omitempty"`
 	// 天猫国际官网直供子订单关税税率
@@ -92,16 +80,10 @@ type Order struct {
 	OsGiftCount string `json:"os_gift_count,omitempty" xml:"os_gift_count,omitempty"`
 	// 前N有礼中奖名次，获得奖品的订单才会有该字段
 	OsSortNum string `json:"os_sort_num,omitempty" xml:"os_sort_num,omitempty"`
-	// 服务所属的交易订单号。如果服务为一年包换，则item_oid这笔订单享受改服务的保护
-	ItemOid int64 `json:"item_oid,omitempty" xml:"item_oid,omitempty"`
 	// 交易类型
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 商品的字符串编号(注意：iid近期即将废弃，请用num_iid参数)
 	Iid string `json:"iid,omitempty" xml:"iid,omitempty"`
-	// 服务数字id
-	ServiceId int64 `json:"service_id,omitempty" xml:"service_id,omitempty"`
-	// 套餐ID
-	ItemMealId int64 `json:"item_meal_id,omitempty" xml:"item_meal_id,omitempty"`
 	// 子订单来源,如jhs(聚划算)、taobao(淘宝)、wap(无线)
 	OrderFrom string `json:"order_from,omitempty" xml:"order_from,omitempty"`
 	// 服务详情的URL地址
@@ -112,10 +94,6 @@ type Order struct {
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
 	// SKU的值。如：机身颜色:黑色;手机套餐:官方标配
 	SkuPropertiesName string `json:"sku_properties_name,omitempty" xml:"sku_properties_name,omitempty"`
-	// 是否超卖
-	IsOversold bool `json:"is_oversold,omitempty" xml:"is_oversold,omitempty"`
-	// 是否是服务订单，是返回true，否返回false。
-	IsServiceOrder bool `json:"is_service_order,omitempty" xml:"is_service_order,omitempty"`
 	// 子订单的交易结束时间说明：子订单有单独的结束时间，与主订单的结束时间可能有所不同，在有退款发起的时候或者是主订单分阶段付款的时候，子订单的结束时间会早于主订单的结束时间，所以开放这个字段便于订单结束状态的判断
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 子订单发货时间，当卖家对订单进行了多次发货，子订单的发货时间和主订单的发货时间可能不一样了，那么就需要以子订单的时间为准。（没有进行多次发货的订单，主订单的发货时间和子订单的发货时间都一样）
@@ -124,22 +102,16 @@ type Order struct {
 	OrderAttr string `json:"order_attr,omitempty" xml:"order_attr,omitempty"`
 	// 子订单的运送方式（卖家对订单进行多次发货之后，一个主订单下的子订单的运送方式可能不同，用order.shipping_type来区分子订单的运送方式）
 	ShippingType string `json:"shipping_type,omitempty" xml:"shipping_type,omitempty"`
-	// 捆绑的子订单号，表示该子订单要和捆绑的子订单一起发货，用于卖家子订单捆绑发货
-	BindOid int64 `json:"bind_oid,omitempty" xml:"bind_oid,omitempty"`
 	// 子订单发货的快递公司名称
 	LogisticsCompany string `json:"logistics_company,omitempty" xml:"logistics_company,omitempty"`
 	// 子订单所在包裹的运单号
 	InvoiceNo string `json:"invoice_no,omitempty" xml:"invoice_no,omitempty"`
-	// 表示订单交易是否含有对应的代销采购单。如果该订单中存在一个对应的代销采购单，那么该值为true；反之，该值为false。
-	IsDaixiao bool `json:"is_daixiao,omitempty" xml:"is_daixiao,omitempty"`
 	// 对应门票有效期的外部id
 	TicketOuterId string `json:"ticket_outer_id,omitempty" xml:"ticket_outer_id,omitempty"`
 	// 门票有效期的key
 	TicketExpdateKey string `json:"ticket_expdate_key,omitempty" xml:"ticket_expdate_key,omitempty"`
 	// 发货的仓库编码
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
-	// 子订单是否是www订单
-	IsWww bool `json:"is_www,omitempty" xml:"is_www,omitempty"`
 	// 支持家装类物流的类型
 	TmserSpuCode string `json:"tmser_spu_code,omitempty" xml:"tmser_spu_code,omitempty"`
 	// bind_oid字段的升级，支持返回绑定的多个子订单，多个子订单以半角逗号分隔
@@ -154,8 +126,6 @@ type Order struct {
 	InvType string `json:"inv_type,omitempty" xml:"inv_type,omitempty"`
 	// xxx
 	Xxx string `json:"xxx,omitempty" xml:"xxx,omitempty"`
-	// 是否发货
-	IsShShip bool `json:"is_sh_ship,omitempty" xml:"is_sh_ship,omitempty"`
 	// 仓储信息
 	Shipper string `json:"shipper,omitempty" xml:"shipper,omitempty"`
 	// 订单履行类型，如喵鲜生极速达（jsd）
@@ -230,12 +200,6 @@ type Order struct {
 	CarTakerId string `json:"car_taker_id,omitempty" xml:"car_taker_id,omitempty"`
 	// oidStr
 	OidStr string `json:"oid_str,omitempty" xml:"oid_str,omitempty"`
-	// 花呗分期期数
-	FqgNum int64 `json:"fqg_num,omitempty" xml:"fqg_num,omitempty"`
-	// 是否商家承担手续费
-	IsFqgSFee bool `json:"is_fqg_s_fee,omitempty" xml:"is_fqg_s_fee,omitempty"`
-	// 天猫国际订单是否包税
-	TaxFree bool `json:"tax_free,omitempty" xml:"tax_free,omitempty"`
 	// 天猫国际订单包税金额
 	TaxCouponDiscount string `json:"tax_coupon_discount,omitempty" xml:"tax_coupon_discount,omitempty"`
 	// 个人充值红包金额
@@ -296,8 +260,6 @@ type Order struct {
 	OmniJxsOuterid string `json:"omni_jxs_outerid,omitempty" xml:"omni_jxs_outerid,omitempty"`
 	// 使用淘金币的数量，以分为单位，和订单标propoint中间那一段一样
 	Propoint string `json:"propoint,omitempty" xml:"propoint,omitempty"`
-	// 是否是考拉商品订单
-	IsKaola bool `json:"is_kaola,omitempty" xml:"is_kaola,omitempty"`
 	// 同城购订单source
 	BrandLightShopSource string `json:"brand_light_shop_source,omitempty" xml:"brand_light_shop_source,omitempty"`
 	// 同城购门店id
@@ -306,8 +268,6 @@ type Order struct {
 	SpecialRefundType string `json:"special_refund_type,omitempty" xml:"special_refund_type,omitempty"`
 	// 透出的额外信息
 	ExtendInfo string `json:"extend_info,omitempty" xml:"extend_info,omitempty"`
-	// 子订单优惠贬值
-	IsDevalueFee bool `json:"is_devalue_fee,omitempty" xml:"is_devalue_fee,omitempty"`
 	// 服务供应链-服务订单类型,1:主子挂载；2：双主挂载；3：单独售卖
 	ServiceOrderType string `json:"service_order_type,omitempty" xml:"service_order_type,omitempty"`
 	// 服务供应链-服务商外部编码
@@ -316,4 +276,44 @@ type Order struct {
 	ExpandCardExpandPriceUsedSuborder string `json:"expand_card_expand_price_used_suborder,omitempty" xml:"expand_card_expand_price_used_suborder,omitempty"`
 	// 购物金核销子订单本金分摊金额（单位为分）
 	ExpandCardBasicPriceUsedSuborder string `json:"expand_card_basic_price_used_suborder,omitempty" xml:"expand_card_basic_price_used_suborder,omitempty"`
+	// 商品数字ID
+	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
+	// 购买数量。取值范围:大于零的整数
+	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
+	// 最近退款的id
+	RefundId int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
+	// 交易商品对应的类目ID
+	Cid int64 `json:"cid,omitempty" xml:"cid,omitempty"`
+	// 服务所属的交易订单号。如果服务为一年包换，则item_oid这笔订单享受改服务的保护
+	ItemOid int64 `json:"item_oid,omitempty" xml:"item_oid,omitempty"`
+	// 服务数字id
+	ServiceId int64 `json:"service_id,omitempty" xml:"service_id,omitempty"`
+	// 套餐ID
+	ItemMealId int64 `json:"item_meal_id,omitempty" xml:"item_meal_id,omitempty"`
+	// 捆绑的子订单号，表示该子订单要和捆绑的子订单一起发货，用于卖家子订单捆绑发货
+	BindOid int64 `json:"bind_oid,omitempty" xml:"bind_oid,omitempty"`
+	// 花呗分期期数
+	FqgNum int64 `json:"fqg_num,omitempty" xml:"fqg_num,omitempty"`
+	// 买家是否已评价。可选值：true(已评价)，false(未评价)
+	BuyerRate bool `json:"buyer_rate,omitempty" xml:"buyer_rate,omitempty"`
+	// 卖家是否已评价。可选值：true(已评价)，false(未评价)
+	SellerRate bool `json:"seller_rate,omitempty" xml:"seller_rate,omitempty"`
+	// 是否超卖
+	IsOversold bool `json:"is_oversold,omitempty" xml:"is_oversold,omitempty"`
+	// 是否是服务订单，是返回true，否返回false。
+	IsServiceOrder bool `json:"is_service_order,omitempty" xml:"is_service_order,omitempty"`
+	// 表示订单交易是否含有对应的代销采购单。如果该订单中存在一个对应的代销采购单，那么该值为true；反之，该值为false。
+	IsDaixiao bool `json:"is_daixiao,omitempty" xml:"is_daixiao,omitempty"`
+	// 子订单是否是www订单
+	IsWww bool `json:"is_www,omitempty" xml:"is_www,omitempty"`
+	// 是否发货
+	IsShShip bool `json:"is_sh_ship,omitempty" xml:"is_sh_ship,omitempty"`
+	// 是否商家承担手续费
+	IsFqgSFee bool `json:"is_fqg_s_fee,omitempty" xml:"is_fqg_s_fee,omitempty"`
+	// 天猫国际订单是否包税
+	TaxFree bool `json:"tax_free,omitempty" xml:"tax_free,omitempty"`
+	// 是否是考拉商品订单
+	IsKaola bool `json:"is_kaola,omitempty" xml:"is_kaola,omitempty"`
+	// 子订单优惠贬值
+	IsDevalueFee bool `json:"is_devalue_fee,omitempty" xml:"is_devalue_fee,omitempty"`
 }

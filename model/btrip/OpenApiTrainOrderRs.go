@@ -2,8 +2,10 @@ package btrip
 
 // OpenApiTrainOrderRs 结构体
 type OpenApiTrainOrderRs struct {
-	// 火车票订单id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 价目信息
+	PriceInfoList []OpenPriceInfo `json:"price_info_list,omitempty" xml:"price_info_list>open_price_info,omitempty"`
+	// 乘车人列表
+	UserAffiliateList []OpenUserAffiliateDo `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 更新时间
@@ -20,8 +22,6 @@ type OpenApiTrainOrderRs struct {
 	DepartId string `json:"depart_id,omitempty" xml:"depart_id,omitempty"`
 	// 部门名称
 	DepartName string `json:"depart_name,omitempty" xml:"depart_name,omitempty"`
-	// 商旅申请单id
-	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 联系人
 	ContactName string `json:"contact_name,omitempty" xml:"contact_name,omitempty"`
 	// 始发站
@@ -48,28 +48,28 @@ type OpenApiTrainOrderRs struct {
 	ArrCity string `json:"arr_city,omitempty" xml:"arr_city,omitempty"`
 	// 乘车人
 	RiderName string `json:"rider_name,omitempty" xml:"rider_name,omitempty"`
-	// 票数
-	TicketCount int64 `json:"ticket_count,omitempty" xml:"ticket_count,omitempty"`
-	// 订单状态：0待支付,1出票中,2已关闭,3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已发货,9出票失败,10改签失败,11退票失败
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
-	// 价目信息
-	PriceInfoList []OpenPriceInfo `json:"price_info_list,omitempty" xml:"price_info_list>open_price_info,omitempty"`
-	// 成本中心对象
-	CostCenter *OpenCostCenterDo `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
-	// 发票对象
-	Invoice *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
 	// 第三方行程id
 	ThirdpartItineraryId string `json:"thirdpart_itinerary_id,omitempty" xml:"thirdpart_itinerary_id,omitempty"`
-	// 乘车人列表
-	UserAffiliateList []OpenUserAffiliateDo `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
 	// 第三方行程id
 	ThirdpartApplyId string `json:"thirdpart_apply_id,omitempty" xml:"thirdpart_apply_id,omitempty"`
 	// 申请单名称
 	BtripTitle string `json:"btrip_title,omitempty" xml:"btrip_title,omitempty"`
-	// 项目id
-	ProjectId int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
 	// 项目code
 	ProjectCode string `json:"project_code,omitempty" xml:"project_code,omitempty"`
 	// 项目名称
 	ProjectTitle string `json:"project_title,omitempty" xml:"project_title,omitempty"`
+	// 火车票订单id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 商旅申请单id
+	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
+	// 票数
+	TicketCount int64 `json:"ticket_count,omitempty" xml:"ticket_count,omitempty"`
+	// 订单状态：0待支付,1出票中,2已关闭,3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已发货,9出票失败,10改签失败,11退票失败
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 成本中心对象
+	CostCenter *OpenCostCenterDo `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
+	// 发票对象
+	Invoice *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
+	// 项目id
+	ProjectId int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
 }

@@ -18,10 +18,10 @@ type TaobaoScitemQueryAPIRequest struct {
 	_outerCode string
 	// 条形码
 	_barCode string
-	// ITEM类型(只允许输入以下英文或空) NORMAL 0:普通商品; COMBINE 1:是否是组合商品 DISTRIBUTION
-	_itemType int64
 	// 仓库编码
 	_wmsCode string
+	// ITEM类型(只允许输入以下英文或空) NORMAL 0:普通商品; COMBINE 1:是否是组合商品 DISTRIBUTION
+	_itemType int64
 	// 当前页码数
 	_pageIndex int64
 	// 分页记录个数，如果用户输入的记录数大于50，则一页显示50条记录
@@ -88,19 +88,6 @@ func (r TaobaoScitemQueryAPIRequest) GetBarCode() string {
 	return r._barCode
 }
 
-// SetItemType is ItemType Setter
-// ITEM类型(只允许输入以下英文或空) NORMAL 0:普通商品; COMBINE 1:是否是组合商品 DISTRIBUTION
-func (r *TaobaoScitemQueryAPIRequest) SetItemType(_itemType int64) error {
-	r._itemType = _itemType
-	r.Set("item_type", _itemType)
-	return nil
-}
-
-// GetItemType ItemType Getter
-func (r TaobaoScitemQueryAPIRequest) GetItemType() int64 {
-	return r._itemType
-}
-
 // SetWmsCode is WmsCode Setter
 // 仓库编码
 func (r *TaobaoScitemQueryAPIRequest) SetWmsCode(_wmsCode string) error {
@@ -112,6 +99,19 @@ func (r *TaobaoScitemQueryAPIRequest) SetWmsCode(_wmsCode string) error {
 // GetWmsCode WmsCode Getter
 func (r TaobaoScitemQueryAPIRequest) GetWmsCode() string {
 	return r._wmsCode
+}
+
+// SetItemType is ItemType Setter
+// ITEM类型(只允许输入以下英文或空) NORMAL 0:普通商品; COMBINE 1:是否是组合商品 DISTRIBUTION
+func (r *TaobaoScitemQueryAPIRequest) SetItemType(_itemType int64) error {
+	r._itemType = _itemType
+	r.Set("item_type", _itemType)
+	return nil
+}
+
+// GetItemType ItemType Getter
+func (r TaobaoScitemQueryAPIRequest) GetItemType() int64 {
+	return r._itemType
 }
 
 // SetPageIndex is PageIndex Setter

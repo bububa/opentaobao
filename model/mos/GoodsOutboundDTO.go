@@ -2,6 +2,8 @@ package mos
 
 // GoodsOutboundDto 结构体
 type GoodsOutboundDto struct {
+	// 出库明细
+	OutboundDetails []OutboundDetailDto `json:"outbound_details,omitempty" xml:"outbound_details>outbound_detail_dto,omitempty"`
 	// 配送员
 	DelivererName string `json:"deliverer_name,omitempty" xml:"deliverer_name,omitempty"`
 	// 配送员电话
@@ -10,8 +12,6 @@ type GoodsOutboundDto struct {
 	LogisticsCompanyCode string `json:"logistics_company_code,omitempty" xml:"logistics_company_code,omitempty"`
 	// 物流单号
 	LogisticsNo string `json:"logistics_no,omitempty" xml:"logistics_no,omitempty"`
-	// 出库明细
-	OutboundDetails []OutboundDetailDto `json:"outbound_details,omitempty" xml:"outbound_details>outbound_detail_dto,omitempty"`
 	// 发货时间
 	SendOutTime string `json:"send_out_time,omitempty" xml:"send_out_time,omitempty"`
 	// OC订单号

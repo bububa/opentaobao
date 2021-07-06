@@ -14,10 +14,6 @@ type TmallTmicQuestionnaireOptionGetAPIRequest struct {
 	model.Params
 	// 问卷唯一编码，从问卷信息接口应答中获取
 	_hashCode string
-	// 问卷版本号，从问卷信息接口的应答中获取
-	_version int64
-	// 问卷填答id，从问卷信息接口的应答中获取
-	_recordId int64
 	// 业务参数，区分问卷分组投放，1024表示分组投放id，fav表示用户动作类型为收藏
 	_biz string
 	// 问题编码，问卷中的问题的唯一编码，从问卷信息接口的应答中获取
@@ -26,6 +22,10 @@ type TmallTmicQuestionnaireOptionGetAPIRequest struct {
 	_extraParameters string
 	// openId
 	_openUserId string
+	// 问卷版本号，从问卷信息接口的应答中获取
+	_version int64
+	// 问卷填答id，从问卷信息接口的应答中获取
+	_recordId int64
 }
 
 // NewTmallTmicQuestionnaireOptionGetRequest 初始化TmallTmicQuestionnaireOptionGetAPIRequest对象
@@ -60,32 +60,6 @@ func (r *TmallTmicQuestionnaireOptionGetAPIRequest) SetHashCode(_hashCode string
 // GetHashCode HashCode Getter
 func (r TmallTmicQuestionnaireOptionGetAPIRequest) GetHashCode() string {
 	return r._hashCode
-}
-
-// SetVersion is Version Setter
-// 问卷版本号，从问卷信息接口的应答中获取
-func (r *TmallTmicQuestionnaireOptionGetAPIRequest) SetVersion(_version int64) error {
-	r._version = _version
-	r.Set("version", _version)
-	return nil
-}
-
-// GetVersion Version Getter
-func (r TmallTmicQuestionnaireOptionGetAPIRequest) GetVersion() int64 {
-	return r._version
-}
-
-// SetRecordId is RecordId Setter
-// 问卷填答id，从问卷信息接口的应答中获取
-func (r *TmallTmicQuestionnaireOptionGetAPIRequest) SetRecordId(_recordId int64) error {
-	r._recordId = _recordId
-	r.Set("record_id", _recordId)
-	return nil
-}
-
-// GetRecordId RecordId Getter
-func (r TmallTmicQuestionnaireOptionGetAPIRequest) GetRecordId() int64 {
-	return r._recordId
 }
 
 // SetBiz is Biz Setter
@@ -138,4 +112,30 @@ func (r *TmallTmicQuestionnaireOptionGetAPIRequest) SetOpenUserId(_openUserId st
 // GetOpenUserId OpenUserId Getter
 func (r TmallTmicQuestionnaireOptionGetAPIRequest) GetOpenUserId() string {
 	return r._openUserId
+}
+
+// SetVersion is Version Setter
+// 问卷版本号，从问卷信息接口的应答中获取
+func (r *TmallTmicQuestionnaireOptionGetAPIRequest) SetVersion(_version int64) error {
+	r._version = _version
+	r.Set("version", _version)
+	return nil
+}
+
+// GetVersion Version Getter
+func (r TmallTmicQuestionnaireOptionGetAPIRequest) GetVersion() int64 {
+	return r._version
+}
+
+// SetRecordId is RecordId Setter
+// 问卷填答id，从问卷信息接口的应答中获取
+func (r *TmallTmicQuestionnaireOptionGetAPIRequest) SetRecordId(_recordId int64) error {
+	r._recordId = _recordId
+	r.Set("record_id", _recordId)
+	return nil
+}
+
+// GetRecordId RecordId Getter
+func (r TmallTmicQuestionnaireOptionGetAPIRequest) GetRecordId() int64 {
+	return r._recordId
 }

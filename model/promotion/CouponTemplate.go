@@ -2,6 +2,10 @@ package promotion
 
 // CouponTemplate 结构体
 type CouponTemplate struct {
+	// 优惠券模版uuid
+	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
+	// 幂等id，外部透传
+	UniqueId string `json:"unique_id,omitempty" xml:"unique_id,omitempty"`
 	// 领取限制
 	ApplyLimitConfig *CouponTemplateApplyLimitConfig `json:"apply_limit_config,omitempty" xml:"apply_limit_config,omitempty"`
 	// 基础信息
@@ -22,10 +26,6 @@ type CouponTemplate struct {
 	SourceId int64 `json:"source_id,omitempty" xml:"source_id,omitempty"`
 	// 实例有效时间配置
 	TimeLimitConfig *CouponTemplateTimeLimitConfig `json:"time_limit_config,omitempty" xml:"time_limit_config,omitempty"`
-	// 优惠券模版uuid
-	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
 	// 兼容历史逻辑配置
 	CompatibleConfig *CouponTemplateCompatibleConfig `json:"compatible_config,omitempty" xml:"compatible_config,omitempty"`
-	// 幂等id，外部透传
-	UniqueId string `json:"unique_id,omitempty" xml:"unique_id,omitempty"`
 }

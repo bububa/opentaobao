@@ -12,8 +12,6 @@ type InvoiceCompanyDto struct {
 	City string `json:"city,omitempty" xml:"city,omitempty"`
 	// 企业名称
 	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
-	// 企业类型，可选值：  一般纳税人：1;  小规模纳税人：2;  起征点以下纳税人：3;
-	CompanyType int64 `json:"company_type,omitempty" xml:"company_type,omitempty"`
 	// 默认商品名称
 	DefaultItemName string `json:"default_item_name,omitempty" xml:"default_item_name,omitempty"`
 	// 默认税收分类编码
@@ -36,4 +34,6 @@ type InvoiceCompanyDto struct {
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
 	// 0税率标识，只有税率为0的情况才有值，0=出口零税率，1=免税，2=不征收，3=普通零税率
 	ZeroTaxRateFlag string `json:"zero_tax_rate_flag,omitempty" xml:"zero_tax_rate_flag,omitempty"`
+	// 企业类型，可选值：  一般纳税人：1;  小规模纳税人：2;  起征点以下纳税人：3;
+	CompanyType int64 `json:"company_type,omitempty" xml:"company_type,omitempty"`
 }

@@ -28,12 +28,12 @@ type TaobaoWirelessShareTpwdQueryAPIResponseModel struct {
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
 	// 图片url
 	PicUrl string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
-	// 是否成功
-	Suc bool `json:"suc,omitempty" xml:"suc,omitempty"`
 	// 跳转url(长链)
 	Url string `json:"url,omitempty" xml:"url,omitempty"`
 	// nativeUrl
 	NativeUrl string `json:"native_url,omitempty" xml:"native_url,omitempty"`
 	// thumbPicUrl
 	ThumbPicUrl string `json:"thumb_pic_url,omitempty" xml:"thumb_pic_url,omitempty"`
+	// 是否成功
+	Suc bool `json:"suc,omitempty" xml:"suc,omitempty"`
 }

@@ -2,6 +2,10 @@ package logistic
 
 // ThreePlConsignResourceDto 结构体
 type ThreePlConsignResourceDto struct {
+	// 资源code
+	ResCode string `json:"res_code,omitempty" xml:"res_code,omitempty"`
+	// 资源名称
+	ResName string `json:"res_name,omitempty" xml:"res_name,omitempty"`
 	// 破损赔付
 	BrokenCompensatePrice int64 `json:"broken_compensate_price,omitempty" xml:"broken_compensate_price,omitempty"`
 	// 首重价格
@@ -12,10 +16,6 @@ type ThreePlConsignResourceDto struct {
 	StepWeight int64 `json:"step_weight,omitempty" xml:"step_weight,omitempty"`
 	// 首重价格
 	BasicWeightPrice int64 `json:"basic_weight_price,omitempty" xml:"basic_weight_price,omitempty"`
-	// 资源code
-	ResCode string `json:"res_code,omitempty" xml:"res_code,omitempty"`
-	// 资源名称
-	ResName string `json:"res_name,omitempty" xml:"res_name,omitempty"`
 	// 达成率
 	AchievingRate int64 `json:"achieving_rate,omitempty" xml:"achieving_rate,omitempty"`
 	// 续重价格

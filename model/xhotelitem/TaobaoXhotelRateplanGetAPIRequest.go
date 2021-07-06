@@ -12,12 +12,12 @@ import (
 // 酒店产品库rateplan查询
 type TaobaoXhotelRateplanGetAPIRequest struct {
 	model.Params
-	// 废弃，使用rateplan_code
-	_rpid int64
 	// 卖家自己系统的Code，简称RateCode
 	_rateplanCode string
 	// 系统商，一般不填写，使用须申请
 	_vendor string
+	// 废弃，使用rateplan_code
+	_rpid int64
 }
 
 // NewTaobaoXhotelRateplanGetRequest 初始化TaobaoXhotelRateplanGetAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoXhotelRateplanGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetRpid is Rpid Setter
-// 废弃，使用rateplan_code
-func (r *TaobaoXhotelRateplanGetAPIRequest) SetRpid(_rpid int64) error {
-	r._rpid = _rpid
-	r.Set("rpid", _rpid)
-	return nil
-}
-
-// GetRpid Rpid Getter
-func (r TaobaoXhotelRateplanGetAPIRequest) GetRpid() int64 {
-	return r._rpid
 }
 
 // SetRateplanCode is RateplanCode Setter
@@ -78,4 +65,17 @@ func (r *TaobaoXhotelRateplanGetAPIRequest) SetVendor(_vendor string) error {
 // GetVendor Vendor Getter
 func (r TaobaoXhotelRateplanGetAPIRequest) GetVendor() string {
 	return r._vendor
+}
+
+// SetRpid is Rpid Setter
+// 废弃，使用rateplan_code
+func (r *TaobaoXhotelRateplanGetAPIRequest) SetRpid(_rpid int64) error {
+	r._rpid = _rpid
+	r.Set("rpid", _rpid)
+	return nil
+}
+
+// GetRpid Rpid Getter
+func (r TaobaoXhotelRateplanGetAPIRequest) GetRpid() int64 {
+	return r._rpid
 }

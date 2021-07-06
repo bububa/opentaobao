@@ -22,16 +22,16 @@ type AlibabaAlihealthDrugKytDrugtableAPIRequest struct {
 	_startDate string
 	// 结束日期
 	_endDate string
-	// 页大小
-	_pageSize int64
-	// 页码
-	_page int64
 	// 企业名称
 	_entName string
 	// 包装规格
 	_packageSpec string
 	// 制剂规格
 	_prepnSpec string
+	// 页大小
+	_pageSize int64
+	// 页码
+	_page int64
 }
 
 // NewAlibabaAlihealthDrugKytDrugtableRequest 初始化AlibabaAlihealthDrugKytDrugtableAPIRequest对象
@@ -120,32 +120,6 @@ func (r AlibabaAlihealthDrugKytDrugtableAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// SetPageSize is PageSize Setter
-// 页大小
-func (r *AlibabaAlihealthDrugKytDrugtableAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlibabaAlihealthDrugKytDrugtableAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetPage is Page Setter
-// 页码
-func (r *AlibabaAlihealthDrugKytDrugtableAPIRequest) SetPage(_page int64) error {
-	r._page = _page
-	r.Set("page", _page)
-	return nil
-}
-
-// GetPage Page Getter
-func (r AlibabaAlihealthDrugKytDrugtableAPIRequest) GetPage() int64 {
-	return r._page
-}
-
 // SetEntName is EntName Setter
 // 企业名称
 func (r *AlibabaAlihealthDrugKytDrugtableAPIRequest) SetEntName(_entName string) error {
@@ -183,4 +157,30 @@ func (r *AlibabaAlihealthDrugKytDrugtableAPIRequest) SetPrepnSpec(_prepnSpec str
 // GetPrepnSpec PrepnSpec Getter
 func (r AlibabaAlihealthDrugKytDrugtableAPIRequest) GetPrepnSpec() string {
 	return r._prepnSpec
+}
+
+// SetPageSize is PageSize Setter
+// 页大小
+func (r *AlibabaAlihealthDrugKytDrugtableAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlibabaAlihealthDrugKytDrugtableAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetPage is Page Setter
+// 页码
+func (r *AlibabaAlihealthDrugKytDrugtableAPIRequest) SetPage(_page int64) error {
+	r._page = _page
+	r.Set("page", _page)
+	return nil
+}
+
+// GetPage Page Getter
+func (r AlibabaAlihealthDrugKytDrugtableAPIRequest) GetPage() int64 {
+	return r._page
 }

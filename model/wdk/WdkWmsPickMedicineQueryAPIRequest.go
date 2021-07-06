@@ -12,10 +12,10 @@ import (
 // 联营商药机查询拣货单中的药品信息
 type WdkWmsPickMedicineQueryAPIRequest struct {
 	model.Params
-	// shopId
-	_shopId int64
 	// uuid
 	_uuid string
+	// shopId
+	_shopId int64
 }
 
 // NewWdkWmsPickMedicineQueryRequest 初始化WdkWmsPickMedicineQueryAPIRequest对象
@@ -39,19 +39,6 @@ func (r WdkWmsPickMedicineQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetShopId is ShopId Setter
-// shopId
-func (r *WdkWmsPickMedicineQueryAPIRequest) SetShopId(_shopId int64) error {
-	r._shopId = _shopId
-	r.Set("shop_id", _shopId)
-	return nil
-}
-
-// GetShopId ShopId Getter
-func (r WdkWmsPickMedicineQueryAPIRequest) GetShopId() int64 {
-	return r._shopId
-}
-
 // SetUuid is Uuid Setter
 // uuid
 func (r *WdkWmsPickMedicineQueryAPIRequest) SetUuid(_uuid string) error {
@@ -63,4 +50,17 @@ func (r *WdkWmsPickMedicineQueryAPIRequest) SetUuid(_uuid string) error {
 // GetUuid Uuid Getter
 func (r WdkWmsPickMedicineQueryAPIRequest) GetUuid() string {
 	return r._uuid
+}
+
+// SetShopId is ShopId Setter
+// shopId
+func (r *WdkWmsPickMedicineQueryAPIRequest) SetShopId(_shopId int64) error {
+	r._shopId = _shopId
+	r.Set("shop_id", _shopId)
+	return nil
+}
+
+// GetShopId ShopId Getter
+func (r WdkWmsPickMedicineQueryAPIRequest) GetShopId() int64 {
+	return r._shopId
 }

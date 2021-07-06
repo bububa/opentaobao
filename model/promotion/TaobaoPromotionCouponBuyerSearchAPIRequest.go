@@ -14,14 +14,14 @@ type TaobaoPromotionCouponBuyerSearchAPIRequest struct {
 	model.Params
 	// 卖家昵称
 	_sellerNick string
+	// 结束时间
+	_endTime string
 	// 券状态  "正常",1 "已删除",-1 "已使用",-2 "冻结",0
 	_status int64
 	// 每页数据 建议20左右
 	_pageSize int64
 	// 当前第几页  从第一页开始
 	_currentPage int64
-	// 结束时间
-	_endTime string
 }
 
 // NewTaobaoPromotionCouponBuyerSearchRequest 初始化TaobaoPromotionCouponBuyerSearchAPIRequest对象
@@ -56,6 +56,19 @@ func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetSellerNick(_sellerNick s
 // GetSellerNick SellerNick Getter
 func (r TaobaoPromotionCouponBuyerSearchAPIRequest) GetSellerNick() string {
 	return r._sellerNick
+}
+
+// SetEndTime is EndTime Setter
+// 结束时间
+func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetEndTime(_endTime string) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
+	return nil
+}
+
+// GetEndTime EndTime Getter
+func (r TaobaoPromotionCouponBuyerSearchAPIRequest) GetEndTime() string {
+	return r._endTime
 }
 
 // SetStatus is Status Setter
@@ -95,17 +108,4 @@ func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetCurrentPage(_currentPage
 // GetCurrentPage CurrentPage Getter
 func (r TaobaoPromotionCouponBuyerSearchAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
-}
-
-// SetEndTime is EndTime Setter
-// 结束时间
-func (r *TaobaoPromotionCouponBuyerSearchAPIRequest) SetEndTime(_endTime string) error {
-	r._endTime = _endTime
-	r.Set("end_time", _endTime)
-	return nil
-}
-
-// GetEndTime EndTime Getter
-func (r TaobaoPromotionCouponBuyerSearchAPIRequest) GetEndTime() string {
-	return r._endTime
 }

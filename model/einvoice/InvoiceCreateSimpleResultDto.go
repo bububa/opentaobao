@@ -36,12 +36,12 @@ type InvoiceCreateSimpleResultDto struct {
 	InvoiceDate string `json:"invoice_date,omitempty" xml:"invoice_date,omitempty"`
 	// 发票预览图的下载地址。  need_download_url=true时返回。默认不生成。
 	InvoiceImageUrl string `json:"invoice_image_url,omitempty" xml:"invoice_image_url,omitempty"`
-	// 开票发票类型，可选值：  0: 电票  1：纸质普票  2：纸质专票
-	InvoiceKind int64 `json:"invoice_kind,omitempty" xml:"invoice_kind,omitempty"`
 	// 发票号码
 	InvoiceNo string `json:"invoice_no,omitempty" xml:"invoice_no,omitempty"`
 	// 红票申请ID
 	RedApplyId string `json:"red_apply_id,omitempty" xml:"red_apply_id,omitempty"`
 	// 红票申请状态，定义同create_status
 	RedCreateStatus string `json:"red_create_status,omitempty" xml:"red_create_status,omitempty"`
+	// 开票发票类型，可选值：  0: 电票  1：纸质普票  2：纸质专票
+	InvoiceKind int64 `json:"invoice_kind,omitempty" xml:"invoice_kind,omitempty"`
 }

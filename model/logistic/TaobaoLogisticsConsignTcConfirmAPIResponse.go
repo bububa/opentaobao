@@ -24,8 +24,8 @@ type TaobaoLogisticsConsignTcConfirmAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 菜鸟发货单据
 	OrderConsignCode string `json:"order_consign_code,omitempty" xml:"order_consign_code,omitempty"`
-	// 是否重试
-	Retry bool `json:"retry,omitempty" xml:"retry,omitempty"`
 	// 单次调用流程唯一id
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
+	// 是否重试
+	Retry bool `json:"retry,omitempty" xml:"retry,omitempty"`
 }

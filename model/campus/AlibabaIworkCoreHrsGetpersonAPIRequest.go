@@ -14,12 +14,12 @@ type AlibabaIworkCoreHrsGetpersonAPIRequest struct {
 	model.Params
 	// 用户ACCOUNT_ID
 	_accountId string
-	// 用户ID
-	_personId int64
 	// 应用ID
 	_appId string
 	// 操作人ID
 	_operatorId string
+	// 用户ID
+	_personId int64
 }
 
 // NewAlibabaIworkCoreHrsGetpersonRequest 初始化AlibabaIworkCoreHrsGetpersonAPIRequest对象
@@ -56,19 +56,6 @@ func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetAccountId() string {
 	return r._accountId
 }
 
-// SetPersonId is PersonId Setter
-// 用户ID
-func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetPersonId(_personId int64) error {
-	r._personId = _personId
-	r.Set("person_id", _personId)
-	return nil
-}
-
-// GetPersonId PersonId Getter
-func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetPersonId() int64 {
-	return r._personId
-}
-
 // SetAppId is AppId Setter
 // 应用ID
 func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetAppId(_appId string) error {
@@ -93,4 +80,17 @@ func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetOperatorId(_operatorId strin
 // GetOperatorId OperatorId Getter
 func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetOperatorId() string {
 	return r._operatorId
+}
+
+// SetPersonId is PersonId Setter
+// 用户ID
+func (r *AlibabaIworkCoreHrsGetpersonAPIRequest) SetPersonId(_personId int64) error {
+	r._personId = _personId
+	r.Set("person_id", _personId)
+	return nil
+}
+
+// GetPersonId PersonId Getter
+func (r AlibabaIworkCoreHrsGetpersonAPIRequest) GetPersonId() int64 {
+	return r._personId
 }

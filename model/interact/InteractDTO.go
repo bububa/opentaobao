@@ -6,10 +6,6 @@ type InteractDto struct {
 	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 互动游戏app name
 	AppName string `json:"app_name,omitempty" xml:"app_name,omitempty"`
-	// 店铺ID
-	ShopId int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
-	// 卖家ID
-	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 互动描述
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// 互动实例ID
@@ -20,4 +16,8 @@ type InteractDto struct {
 	AppKey string `json:"app_key,omitempty" xml:"app_key,omitempty"`
 	// 互动实例名称
 	InstanceName string `json:"instance_name,omitempty" xml:"instance_name,omitempty"`
+	// 店铺ID
+	ShopId int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+	// 卖家ID
+	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 }

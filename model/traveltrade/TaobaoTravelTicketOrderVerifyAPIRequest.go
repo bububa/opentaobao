@@ -12,12 +12,12 @@ import (
 // 系统商通过TOP接口调用通知飞猪门票核销情况
 type TaobaoTravelTicketOrderVerifyAPIRequest struct {
 	model.Params
-	// 下单订单ID
-	_orderId int64
-	// 外部订单ID
-	_outOrderId string
 	// 使用凭证信息
 	_voucherInfos []VoucherInfoDto
+	// 外部订单ID
+	_outOrderId string
+	// 下单订单ID
+	_orderId int64
 	// 供应商核销回调类型：0表示使用本次核销数量（常规），1表示使用总核销数量（已使用+本次）
 	_writeOffType int64
 }
@@ -43,17 +43,17 @@ func (r TaobaoTravelTicketOrderVerifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetOrderId is OrderId Setter
-// 下单订单ID
-func (r *TaobaoTravelTicketOrderVerifyAPIRequest) SetOrderId(_orderId int64) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
+// SetVoucherInfos is VoucherInfos Setter
+// 使用凭证信息
+func (r *TaobaoTravelTicketOrderVerifyAPIRequest) SetVoucherInfos(_voucherInfos []VoucherInfoDto) error {
+	r._voucherInfos = _voucherInfos
+	r.Set("voucher_infos", _voucherInfos)
 	return nil
 }
 
-// GetOrderId OrderId Getter
-func (r TaobaoTravelTicketOrderVerifyAPIRequest) GetOrderId() int64 {
-	return r._orderId
+// GetVoucherInfos VoucherInfos Getter
+func (r TaobaoTravelTicketOrderVerifyAPIRequest) GetVoucherInfos() []VoucherInfoDto {
+	return r._voucherInfos
 }
 
 // SetOutOrderId is OutOrderId Setter
@@ -69,17 +69,17 @@ func (r TaobaoTravelTicketOrderVerifyAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
 }
 
-// SetVoucherInfos is VoucherInfos Setter
-// 使用凭证信息
-func (r *TaobaoTravelTicketOrderVerifyAPIRequest) SetVoucherInfos(_voucherInfos []VoucherInfoDto) error {
-	r._voucherInfos = _voucherInfos
-	r.Set("voucher_infos", _voucherInfos)
+// SetOrderId is OrderId Setter
+// 下单订单ID
+func (r *TaobaoTravelTicketOrderVerifyAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
 	return nil
 }
 
-// GetVoucherInfos VoucherInfos Getter
-func (r TaobaoTravelTicketOrderVerifyAPIRequest) GetVoucherInfos() []VoucherInfoDto {
-	return r._voucherInfos
+// GetOrderId OrderId Getter
+func (r TaobaoTravelTicketOrderVerifyAPIRequest) GetOrderId() int64 {
+	return r._orderId
 }
 
 // SetWriteOffType is WriteOffType Setter

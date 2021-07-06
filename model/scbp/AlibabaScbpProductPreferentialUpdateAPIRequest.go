@@ -12,12 +12,12 @@ import (
 // 设置P4P产品优先推广状态
 type AlibabaScbpProductPreferentialUpdateAPIRequest struct {
 	model.Params
+	// Y:设置优推,N:取消优推
+	_status string
 	// 关键词ID
 	_keywordId int64
 	// 产品ID
 	_productId int64
-	// Y:设置优推,N:取消优推
-	_status string
 }
 
 // NewAlibabaScbpProductPreferentialUpdateRequest 初始化AlibabaScbpProductPreferentialUpdateAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaScbpProductPreferentialUpdateAPIRequest) GetApiParams() url.Value
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetStatus is Status Setter
+// Y:设置优推,N:取消优推
+func (r *AlibabaScbpProductPreferentialUpdateAPIRequest) SetStatus(_status string) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r AlibabaScbpProductPreferentialUpdateAPIRequest) GetStatus() string {
+	return r._status
 }
 
 // SetKeywordId is KeywordId Setter
@@ -65,17 +78,4 @@ func (r *AlibabaScbpProductPreferentialUpdateAPIRequest) SetProductId(_productId
 // GetProductId ProductId Getter
 func (r AlibabaScbpProductPreferentialUpdateAPIRequest) GetProductId() int64 {
 	return r._productId
-}
-
-// SetStatus is Status Setter
-// Y:设置优推,N:取消优推
-func (r *AlibabaScbpProductPreferentialUpdateAPIRequest) SetStatus(_status string) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r AlibabaScbpProductPreferentialUpdateAPIRequest) GetStatus() string {
-	return r._status
 }

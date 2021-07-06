@@ -12,10 +12,10 @@ import (
 // 商家查询自己配置的活动列表
 type AlibabaMoutonActivityListAPIRequest struct {
 	model.Params
+	// 状态
+	_statusList []string
 	// 开始时间
 	_startTimeEnd string
-	// 每页记录数
-	_pageSize int64
 	// 来源
 	_source string
 	// 开始时间
@@ -24,10 +24,10 @@ type AlibabaMoutonActivityListAPIRequest struct {
 	_endTimeBegin string
 	// 结束时间
 	_endTimeEnd string
+	// 每页记录数
+	_pageSize int64
 	// 来源记录id
 	_sourceRecordId int64
-	// 状态
-	_statusList []string
 	// 当前页
 	_currentPage int64
 }
@@ -53,6 +53,19 @@ func (r AlibabaMoutonActivityListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetStatusList is StatusList Setter
+// 状态
+func (r *AlibabaMoutonActivityListAPIRequest) SetStatusList(_statusList []string) error {
+	r._statusList = _statusList
+	r.Set("status_list", _statusList)
+	return nil
+}
+
+// GetStatusList StatusList Getter
+func (r AlibabaMoutonActivityListAPIRequest) GetStatusList() []string {
+	return r._statusList
+}
+
 // SetStartTimeEnd is StartTimeEnd Setter
 // 开始时间
 func (r *AlibabaMoutonActivityListAPIRequest) SetStartTimeEnd(_startTimeEnd string) error {
@@ -64,19 +77,6 @@ func (r *AlibabaMoutonActivityListAPIRequest) SetStartTimeEnd(_startTimeEnd stri
 // GetStartTimeEnd StartTimeEnd Getter
 func (r AlibabaMoutonActivityListAPIRequest) GetStartTimeEnd() string {
 	return r._startTimeEnd
-}
-
-// SetPageSize is PageSize Setter
-// 每页记录数
-func (r *AlibabaMoutonActivityListAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlibabaMoutonActivityListAPIRequest) GetPageSize() int64 {
-	return r._pageSize
 }
 
 // SetSource is Source Setter
@@ -131,6 +131,19 @@ func (r AlibabaMoutonActivityListAPIRequest) GetEndTimeEnd() string {
 	return r._endTimeEnd
 }
 
+// SetPageSize is PageSize Setter
+// 每页记录数
+func (r *AlibabaMoutonActivityListAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlibabaMoutonActivityListAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
 // SetSourceRecordId is SourceRecordId Setter
 // 来源记录id
 func (r *AlibabaMoutonActivityListAPIRequest) SetSourceRecordId(_sourceRecordId int64) error {
@@ -142,19 +155,6 @@ func (r *AlibabaMoutonActivityListAPIRequest) SetSourceRecordId(_sourceRecordId 
 // GetSourceRecordId SourceRecordId Getter
 func (r AlibabaMoutonActivityListAPIRequest) GetSourceRecordId() int64 {
 	return r._sourceRecordId
-}
-
-// SetStatusList is StatusList Setter
-// 状态
-func (r *AlibabaMoutonActivityListAPIRequest) SetStatusList(_statusList []string) error {
-	r._statusList = _statusList
-	r.Set("status_list", _statusList)
-	return nil
-}
-
-// GetStatusList StatusList Getter
-func (r AlibabaMoutonActivityListAPIRequest) GetStatusList() []string {
-	return r._statusList
 }
 
 // SetCurrentPage is CurrentPage Setter

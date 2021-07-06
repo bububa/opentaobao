@@ -12,12 +12,12 @@ import (
 // 酒店查询接口
 type TaobaoXhotelGetAPIRequest struct {
 	model.Params
-	// 废弃，请使用outer_id
-	_hid int64
 	// 卖家系统中的酒店ID。
 	_outerId string
 	// 系统商，一般不用填写，使用须申请
 	_vendor string
+	// 废弃，请使用outer_id
+	_hid int64
 	// 是否需要在售状态(默认false不需要)
 	_needSaleInfo bool
 }
@@ -41,19 +41,6 @@ func (r TaobaoXhotelGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetHid is Hid Setter
-// 废弃，请使用outer_id
-func (r *TaobaoXhotelGetAPIRequest) SetHid(_hid int64) error {
-	r._hid = _hid
-	r.Set("hid", _hid)
-	return nil
-}
-
-// GetHid Hid Getter
-func (r TaobaoXhotelGetAPIRequest) GetHid() int64 {
-	return r._hid
 }
 
 // SetOuterId is OuterId Setter
@@ -80,6 +67,19 @@ func (r *TaobaoXhotelGetAPIRequest) SetVendor(_vendor string) error {
 // GetVendor Vendor Getter
 func (r TaobaoXhotelGetAPIRequest) GetVendor() string {
 	return r._vendor
+}
+
+// SetHid is Hid Setter
+// 废弃，请使用outer_id
+func (r *TaobaoXhotelGetAPIRequest) SetHid(_hid int64) error {
+	r._hid = _hid
+	r.Set("hid", _hid)
+	return nil
+}
+
+// GetHid Hid Getter
+func (r TaobaoXhotelGetAPIRequest) GetHid() int64 {
+	return r._hid
 }
 
 // SetNeedSaleInfo is NeedSaleInfo Setter

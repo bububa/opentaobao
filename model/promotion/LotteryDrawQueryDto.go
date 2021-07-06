@@ -10,8 +10,6 @@ type LotteryDrawQueryDto struct {
 	RaffleCode string `json:"raffle_code,omitempty" xml:"raffle_code,omitempty"`
 	// 前台appKey
 	RaffleIdentity string `json:"raffle_identity,omitempty" xml:"raffle_identity,omitempty"`
-	// 方案ID
-	SchemaId int64 `json:"schema_id,omitempty" xml:"schema_id,omitempty"`
 	// 抽奖参数
 	UmidToken string `json:"umid_token,omitempty" xml:"umid_token,omitempty"`
 	// 抽奖参数
@@ -22,4 +20,6 @@ type LotteryDrawQueryDto struct {
 	RemoteIp string `json:"remote_ip,omitempty" xml:"remote_ip,omitempty"`
 	// 买家混淆Nick
 	BuyerMixNick string `json:"buyer_mix_nick,omitempty" xml:"buyer_mix_nick,omitempty"`
+	// 方案ID
+	SchemaId int64 `json:"schema_id,omitempty" xml:"schema_id,omitempty"`
 }

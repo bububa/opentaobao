@@ -20,12 +20,12 @@ type CainiaoCbossWorkplatformLogisticsIscainiaoorderAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_cboss_workplatform_logistics_iscainiaoorder_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// isCainiaoOrder
-	IsCainiaoOrder bool `json:"is_cainiao_order,omitempty" xml:"is_cainiao_order,omitempty"`
-	// success
-	ResSuccess bool `json:"res_success,omitempty" xml:"res_success,omitempty"`
 	// errorCode
 	ResErrorCode string `json:"res_error_code,omitempty" xml:"res_error_code,omitempty"`
 	// errorMsg
 	ResErrorMsg string `json:"res_error_msg,omitempty" xml:"res_error_msg,omitempty"`
+	// isCainiaoOrder
+	IsCainiaoOrder bool `json:"is_cainiao_order,omitempty" xml:"is_cainiao_order,omitempty"`
+	// success
+	ResSuccess bool `json:"res_success,omitempty" xml:"res_success,omitempty"`
 }

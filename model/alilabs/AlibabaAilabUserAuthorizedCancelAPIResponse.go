@@ -22,8 +22,8 @@ type AlibabaAilabUserAuthorizedCancelAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
-	// 返回码
-	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
 	// 错误中文描述
 	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
+	// 返回码
+	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
 }

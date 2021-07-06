@@ -20,12 +20,12 @@ type CainiaoNbaddAppointdeliverFeedbackcodesAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_nbadd_appointdeliver_feedbackcodes_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 返回的具体数据
+	ResultList []FeedbackCodeDto `json:"result_list,omitempty" xml:"result_list>feedback_code_dto,omitempty"`
 	// 错误描述
 	ResultDesc string `json:"result_desc,omitempty" xml:"result_desc,omitempty"`
 	// 错误编码
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 接口调用是否成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-	// 返回的具体数据
-	ResultList []FeedbackCodeDto `json:"result_list,omitempty" xml:"result_list>feedback_code_dto,omitempty"`
 }

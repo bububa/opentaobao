@@ -12,12 +12,12 @@ type Specfood struct {
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
 	// 食物id
 	FoodId string `json:"food_id,omitempty" xml:"food_id,omitempty"`
-	// 是否必点, 必点分类下只要点一个 food 就好了, 如果必点商品售完, 不需要必点
-	IsEssential bool `json:"is_essential,omitempty" xml:"is_essential,omitempty"`
-	// 库存
-	Stock int64 `json:"stock,omitempty" xml:"stock,omitempty"`
-	// 是否售完
-	SoldOut bool `json:"sold_out,omitempty" xml:"sold_out,omitempty"`
 	// 商品规格id
 	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
+	// 库存
+	Stock int64 `json:"stock,omitempty" xml:"stock,omitempty"`
+	// 是否必点, 必点分类下只要点一个 food 就好了, 如果必点商品售完, 不需要必点
+	IsEssential bool `json:"is_essential,omitempty" xml:"is_essential,omitempty"`
+	// 是否售完
+	SoldOut bool `json:"sold_out,omitempty" xml:"sold_out,omitempty"`
 }

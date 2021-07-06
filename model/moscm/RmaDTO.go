@@ -2,6 +2,8 @@ package moscm
 
 // RmaDto 结构体
 type RmaDto struct {
+	// 商品明细
+	RmaItems []RmaItemDto `json:"rma_items,omitempty" xml:"rma_items>rma_item_dto,omitempty"`
 	// 快递单号
 	ExpressNo string `json:"express_no,omitempty" xml:"express_no,omitempty"`
 	// 快递公司名称
@@ -22,8 +24,6 @@ type RmaDto struct {
 	Reason string `json:"reason,omitempty" xml:"reason,omitempty"`
 	// 商品寄回方式，可选值：RETURNTOSTORE（到店退）, EXPRESSDELIVERY(邮寄退)
 	ReturnTheWay string `json:"return_the_way,omitempty" xml:"return_the_way,omitempty"`
-	// 商品明细
-	RmaItems []RmaItemDto `json:"rma_items,omitempty" xml:"rma_items>rma_item_dto,omitempty"`
 	// 运费，单位:元
 	Freight string `json:"freight,omitempty" xml:"freight,omitempty"`
 	// 金额，单位:元

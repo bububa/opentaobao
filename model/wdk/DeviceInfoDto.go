@@ -8,14 +8,14 @@ type DeviceInfoDto struct {
 	DisplayName string `json:"display_name,omitempty" xml:"display_name,omitempty"`
 	// 开发商名称
 	VendorName string `json:"vendor_name,omitempty" xml:"vendor_name,omitempty"`
-	// 设备类型
-	DeviceType int64 `json:"device_type,omitempty" xml:"device_type,omitempty"`
-	// 是否车载设备
-	IsOnVehicle int64 `json:"is_on_vehicle,omitempty" xml:"is_on_vehicle,omitempty"`
 	// 仓编码
 	WarehouseCode string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
 	// 车牌号码
 	PlateNumber string `json:"plate_number,omitempty" xml:"plate_number,omitempty"`
+	// 设备类型
+	DeviceType int64 `json:"device_type,omitempty" xml:"device_type,omitempty"`
+	// 是否车载设备
+	IsOnVehicle int64 `json:"is_on_vehicle,omitempty" xml:"is_on_vehicle,omitempty"`
 	// 业务代码
 	BusinessCode int64 `json:"business_code,omitempty" xml:"business_code,omitempty"`
 	// 安装位置

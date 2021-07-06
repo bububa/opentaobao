@@ -12,12 +12,12 @@ import (
 // 查询卖家已发布过的门票商品列表，根据景点维度聚合查询。如果卖家在该景点下未发布过任何商品，则查询不到数据！
 type AlitripTicketScenicQueryAPIRequest struct {
 	model.Params
+	// 商家景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个
+	_outScenicId string
 	// 标准景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个
 	_aliScenicId int64
 	// 当前分页。每页默认最多返回20条数据
 	_currentPage int64
-	// 商家景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个
-	_outScenicId string
 }
 
 // NewAlitripTicketScenicQueryRequest 初始化AlitripTicketScenicQueryAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlitripTicketScenicQueryAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetOutScenicId is OutScenicId Setter
+// 商家景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个
+func (r *AlitripTicketScenicQueryAPIRequest) SetOutScenicId(_outScenicId string) error {
+	r._outScenicId = _outScenicId
+	r.Set("out_scenic_id", _outScenicId)
+	return nil
+}
+
+// GetOutScenicId OutScenicId Getter
+func (r AlitripTicketScenicQueryAPIRequest) GetOutScenicId() string {
+	return r._outScenicId
 }
 
 // SetAliScenicId is AliScenicId Setter
@@ -65,17 +78,4 @@ func (r *AlitripTicketScenicQueryAPIRequest) SetCurrentPage(_currentPage int64) 
 // GetCurrentPage CurrentPage Getter
 func (r AlitripTicketScenicQueryAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
-}
-
-// SetOutScenicId is OutScenicId Setter
-// 商家景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个
-func (r *AlitripTicketScenicQueryAPIRequest) SetOutScenicId(_outScenicId string) error {
-	r._outScenicId = _outScenicId
-	r.Set("out_scenic_id", _outScenicId)
-	return nil
-}
-
-// GetOutScenicId OutScenicId Getter
-func (r AlitripTicketScenicQueryAPIRequest) GetOutScenicId() string {
-	return r._outScenicId
 }

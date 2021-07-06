@@ -10,10 +10,6 @@ type PageQueryPointFlowOpenReq struct {
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 关联交易ID,模糊查询
 	OutBizId string `json:"out_biz_id,omitempty" xml:"out_biz_id,omitempty"`
-	// 第几页,从1开始计数
-	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
-	// 每页大小，默认20
-	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 积分流水类型,类型参考枚举类
 	PointFlowType string `json:"point_flow_type,omitempty" xml:"point_flow_type,omitempty"`
 	// 门店id
@@ -26,4 +22,8 @@ type PageQueryPointFlowOpenReq struct {
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
 	// CS是辰森，KRY是客如云
 	BizChannel string `json:"biz_channel,omitempty" xml:"biz_channel,omitempty"`
+	// 第几页,从1开始计数
+	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
+	// 每页大小，默认20
+	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 }

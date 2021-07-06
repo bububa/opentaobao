@@ -12,12 +12,12 @@ import (
 // 查询app在设备上的安装信息
 type AlibabaBaichuanAsoQueryAPIRequest struct {
 	model.Params
+	// 设备信息，ios为idfa ，android 为imei + imsi
+	_deviceInfoList []AsoDeviceInfoDo
 	// 1-tmail,2-taobao
 	_appId string
 	// 1-android,2-ios
 	_appOs int64
-	// 设备信息，ios为idfa ，android 为imei + imsi
-	_deviceInfoList []AsoDeviceInfoDo
 }
 
 // NewAlibabaBaichuanAsoQueryRequest 初始化AlibabaBaichuanAsoQueryAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaBaichuanAsoQueryAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetDeviceInfoList is DeviceInfoList Setter
+// 设备信息，ios为idfa ，android 为imei + imsi
+func (r *AlibabaBaichuanAsoQueryAPIRequest) SetDeviceInfoList(_deviceInfoList []AsoDeviceInfoDo) error {
+	r._deviceInfoList = _deviceInfoList
+	r.Set("device_info_list", _deviceInfoList)
+	return nil
+}
+
+// GetDeviceInfoList DeviceInfoList Getter
+func (r AlibabaBaichuanAsoQueryAPIRequest) GetDeviceInfoList() []AsoDeviceInfoDo {
+	return r._deviceInfoList
 }
 
 // SetAppId is AppId Setter
@@ -65,17 +78,4 @@ func (r *AlibabaBaichuanAsoQueryAPIRequest) SetAppOs(_appOs int64) error {
 // GetAppOs AppOs Getter
 func (r AlibabaBaichuanAsoQueryAPIRequest) GetAppOs() int64 {
 	return r._appOs
-}
-
-// SetDeviceInfoList is DeviceInfoList Setter
-// 设备信息，ios为idfa ，android 为imei + imsi
-func (r *AlibabaBaichuanAsoQueryAPIRequest) SetDeviceInfoList(_deviceInfoList []AsoDeviceInfoDo) error {
-	r._deviceInfoList = _deviceInfoList
-	r.Set("device_info_list", _deviceInfoList)
-	return nil
-}
-
-// GetDeviceInfoList DeviceInfoList Getter
-func (r AlibabaBaichuanAsoQueryAPIRequest) GetDeviceInfoList() []AsoDeviceInfoDo {
-	return r._deviceInfoList
 }

@@ -2,6 +2,8 @@ package moziacl
 
 // PermissionPackageEntity 结构体
 type PermissionPackageEntity struct {
+	// 注册的租户列表
+	RegistRealmList []RealmEntity `json:"regist_realm_list,omitempty" xml:"regist_realm_list>realm_entity,omitempty"`
 	// 权限套餐code
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 权限套餐中文名
@@ -24,8 +26,6 @@ type PermissionPackageEntity struct {
 	RoleCount int64 `json:"role_count,omitempty" xml:"role_count,omitempty"`
 	// 包含数据权限数量
 	DataPermissionCount int64 `json:"data_permission_count,omitempty" xml:"data_permission_count,omitempty"`
-	// 注册的租户列表
-	RegistRealmList []RealmEntity `json:"regist_realm_list,omitempty" xml:"regist_realm_list>realm_entity,omitempty"`
 	// 权限套餐创建人
 	Creator *BucUser `json:"creator,omitempty" xml:"creator,omitempty"`
 }

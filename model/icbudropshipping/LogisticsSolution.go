@@ -8,8 +8,6 @@ type LogisticsSolution struct {
 	DestinationCountry string `json:"destination_country,omitempty" xml:"destination_country,omitempty"`
 	// dispatch country
 	DispatchCountry string `json:"dispatch_country,omitempty" xml:"dispatch_country,omitempty"`
-	// shipping fee
-	Fee float64 `json:"fee,omitempty" xml:"fee,omitempty"`
 	// shipping type
 	ShippingType string `json:"shipping_type,omitempty" xml:"shipping_type,omitempty"`
 	// trade term
@@ -18,4 +16,6 @@ type LogisticsSolution struct {
 	VendorCode string `json:"vendor_code,omitempty" xml:"vendor_code,omitempty"`
 	// vendor name
 	VendorName string `json:"vendor_name,omitempty" xml:"vendor_name,omitempty"`
+	// shipping fee
+	Fee float64 `json:"fee,omitempty" xml:"fee,omitempty"`
 }

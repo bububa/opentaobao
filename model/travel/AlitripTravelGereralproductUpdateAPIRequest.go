@@ -12,16 +12,16 @@ import (
 // 提供给飞猪供销平台供应商发布编辑通用类目产品的API
 type AlitripTravelGereralproductUpdateAPIRequest struct {
 	model.Params
+	// 必填，预定规则结构。示例： [{ "rule_type": "fee_excluded", "rule_desc": "费用包含描述"},{ "rule_type": "fee_included", "rule_desc": "费用不含描述"},{ "rule_type": "order_info", "rule_desc": "预定须知描述"}]
+	_bookingRules []BookingRuleInfo
+	// 更新sku信息，仅限日历商品使用
+	_dateSkuInfoList []DateSkuInfo
 	// 产品基本信息
 	_baseInfo *GeneralProductBaseInfo
 	// 退款规则结构
 	_refundInfo *ItemRefundInfo
-	// 必填，预定规则结构。示例： [{ "rule_type": "fee_excluded", "rule_desc": "费用包含描述"},{ "rule_type": "fee_included", "rule_desc": "费用不含描述"},{ "rule_type": "order_info", "rule_desc": "预定须知描述"}]
-	_bookingRules []BookingRuleInfo
 	// 产品销售信息
 	_productSaleInfo *ProductSaleInfo
-	// 更新sku信息，仅限日历商品使用
-	_dateSkuInfoList []DateSkuInfo
 }
 
 // NewAlitripTravelGereralproductUpdateRequest 初始化AlitripTravelGereralproductUpdateAPIRequest对象
@@ -43,6 +43,32 @@ func (r AlitripTravelGereralproductUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetBookingRules is BookingRules Setter
+// 必填，预定规则结构。示例： [{ "rule_type": "fee_excluded", "rule_desc": "费用包含描述"},{ "rule_type": "fee_included", "rule_desc": "费用不含描述"},{ "rule_type": "order_info", "rule_desc": "预定须知描述"}]
+func (r *AlitripTravelGereralproductUpdateAPIRequest) SetBookingRules(_bookingRules []BookingRuleInfo) error {
+	r._bookingRules = _bookingRules
+	r.Set("booking_rules", _bookingRules)
+	return nil
+}
+
+// GetBookingRules BookingRules Getter
+func (r AlitripTravelGereralproductUpdateAPIRequest) GetBookingRules() []BookingRuleInfo {
+	return r._bookingRules
+}
+
+// SetDateSkuInfoList is DateSkuInfoList Setter
+// 更新sku信息，仅限日历商品使用
+func (r *AlitripTravelGereralproductUpdateAPIRequest) SetDateSkuInfoList(_dateSkuInfoList []DateSkuInfo) error {
+	r._dateSkuInfoList = _dateSkuInfoList
+	r.Set("date_sku_info_list", _dateSkuInfoList)
+	return nil
+}
+
+// GetDateSkuInfoList DateSkuInfoList Getter
+func (r AlitripTravelGereralproductUpdateAPIRequest) GetDateSkuInfoList() []DateSkuInfo {
+	return r._dateSkuInfoList
 }
 
 // SetBaseInfo is BaseInfo Setter
@@ -71,19 +97,6 @@ func (r AlitripTravelGereralproductUpdateAPIRequest) GetRefundInfo() *ItemRefund
 	return r._refundInfo
 }
 
-// SetBookingRules is BookingRules Setter
-// 必填，预定规则结构。示例： [{ "rule_type": "fee_excluded", "rule_desc": "费用包含描述"},{ "rule_type": "fee_included", "rule_desc": "费用不含描述"},{ "rule_type": "order_info", "rule_desc": "预定须知描述"}]
-func (r *AlitripTravelGereralproductUpdateAPIRequest) SetBookingRules(_bookingRules []BookingRuleInfo) error {
-	r._bookingRules = _bookingRules
-	r.Set("booking_rules", _bookingRules)
-	return nil
-}
-
-// GetBookingRules BookingRules Getter
-func (r AlitripTravelGereralproductUpdateAPIRequest) GetBookingRules() []BookingRuleInfo {
-	return r._bookingRules
-}
-
 // SetProductSaleInfo is ProductSaleInfo Setter
 // 产品销售信息
 func (r *AlitripTravelGereralproductUpdateAPIRequest) SetProductSaleInfo(_productSaleInfo *ProductSaleInfo) error {
@@ -95,17 +108,4 @@ func (r *AlitripTravelGereralproductUpdateAPIRequest) SetProductSaleInfo(_produc
 // GetProductSaleInfo ProductSaleInfo Getter
 func (r AlitripTravelGereralproductUpdateAPIRequest) GetProductSaleInfo() *ProductSaleInfo {
 	return r._productSaleInfo
-}
-
-// SetDateSkuInfoList is DateSkuInfoList Setter
-// 更新sku信息，仅限日历商品使用
-func (r *AlitripTravelGereralproductUpdateAPIRequest) SetDateSkuInfoList(_dateSkuInfoList []DateSkuInfo) error {
-	r._dateSkuInfoList = _dateSkuInfoList
-	r.Set("date_sku_info_list", _dateSkuInfoList)
-	return nil
-}
-
-// GetDateSkuInfoList DateSkuInfoList Getter
-func (r AlitripTravelGereralproductUpdateAPIRequest) GetDateSkuInfoList() []DateSkuInfo {
-	return r._dateSkuInfoList
 }

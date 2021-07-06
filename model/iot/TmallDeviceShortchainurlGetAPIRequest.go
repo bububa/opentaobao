@@ -12,16 +12,16 @@ import (
 // 获取二维码短链接
 type TmallDeviceShortchainurlGetAPIRequest struct {
 	model.Params
-	// 是否需要长期二维码，默认否
-	_longterm bool
 	// 需要生成短链接的url
 	_url string
 	// 设备DeviceCode
 	_deviceCode string
-	// 商户中心门店ID
-	_storeId int64
 	// 动作类型，支持自定义
 	_action string
+	// 商户中心门店ID
+	_storeId int64
+	// 是否需要长期二维码，默认否
+	_longterm bool
 }
 
 // NewTmallDeviceShortchainurlGetRequest 初始化TmallDeviceShortchainurlGetAPIRequest对象
@@ -43,19 +43,6 @@ func (r TmallDeviceShortchainurlGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetLongterm is Longterm Setter
-// 是否需要长期二维码，默认否
-func (r *TmallDeviceShortchainurlGetAPIRequest) SetLongterm(_longterm bool) error {
-	r._longterm = _longterm
-	r.Set("longterm", _longterm)
-	return nil
-}
-
-// GetLongterm Longterm Getter
-func (r TmallDeviceShortchainurlGetAPIRequest) GetLongterm() bool {
-	return r._longterm
 }
 
 // SetUrl is Url Setter
@@ -84,6 +71,19 @@ func (r TmallDeviceShortchainurlGetAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
+// SetAction is Action Setter
+// 动作类型，支持自定义
+func (r *TmallDeviceShortchainurlGetAPIRequest) SetAction(_action string) error {
+	r._action = _action
+	r.Set("action", _action)
+	return nil
+}
+
+// GetAction Action Getter
+func (r TmallDeviceShortchainurlGetAPIRequest) GetAction() string {
+	return r._action
+}
+
 // SetStoreId is StoreId Setter
 // 商户中心门店ID
 func (r *TmallDeviceShortchainurlGetAPIRequest) SetStoreId(_storeId int64) error {
@@ -97,15 +97,15 @@ func (r TmallDeviceShortchainurlGetAPIRequest) GetStoreId() int64 {
 	return r._storeId
 }
 
-// SetAction is Action Setter
-// 动作类型，支持自定义
-func (r *TmallDeviceShortchainurlGetAPIRequest) SetAction(_action string) error {
-	r._action = _action
-	r.Set("action", _action)
+// SetLongterm is Longterm Setter
+// 是否需要长期二维码，默认否
+func (r *TmallDeviceShortchainurlGetAPIRequest) SetLongterm(_longterm bool) error {
+	r._longterm = _longterm
+	r.Set("longterm", _longterm)
 	return nil
 }
 
-// GetAction Action Getter
-func (r TmallDeviceShortchainurlGetAPIRequest) GetAction() string {
-	return r._action
+// GetLongterm Longterm Getter
+func (r TmallDeviceShortchainurlGetAPIRequest) GetLongterm() bool {
+	return r._longterm
 }

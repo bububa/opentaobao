@@ -12,12 +12,12 @@ import (
 // 天猫商品/SKU商家编码更新接口；支持商品、SKU的商家编码同时更新；支持同一商品下的SKU批量更新。（感谢sample小雨提供接口命名）
 type TmallItemOuteridUpdateAPIRequest struct {
 	model.Params
-	// 商品ID
-	_itemId int64
-	// 商品维度商家编码，如果不修改可以不传；清空请设置空串
-	_outerId string
 	// 商品SKU更新OuterId时候用的数据
 	_skuOuters []UpdateSkuOuterId
+	// 商品维度商家编码，如果不修改可以不传；清空请设置空串
+	_outerId string
+	// 商品ID
+	_itemId int64
 }
 
 // NewTmallItemOuteridUpdateRequest 初始化TmallItemOuteridUpdateAPIRequest对象
@@ -41,17 +41,17 @@ func (r TmallItemOuteridUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetItemId is ItemId Setter
-// 商品ID
-func (r *TmallItemOuteridUpdateAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
+// SetSkuOuters is SkuOuters Setter
+// 商品SKU更新OuterId时候用的数据
+func (r *TmallItemOuteridUpdateAPIRequest) SetSkuOuters(_skuOuters []UpdateSkuOuterId) error {
+	r._skuOuters = _skuOuters
+	r.Set("sku_outers", _skuOuters)
 	return nil
 }
 
-// GetItemId ItemId Getter
-func (r TmallItemOuteridUpdateAPIRequest) GetItemId() int64 {
-	return r._itemId
+// GetSkuOuters SkuOuters Getter
+func (r TmallItemOuteridUpdateAPIRequest) GetSkuOuters() []UpdateSkuOuterId {
+	return r._skuOuters
 }
 
 // SetOuterId is OuterId Setter
@@ -67,15 +67,15 @@ func (r TmallItemOuteridUpdateAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// SetSkuOuters is SkuOuters Setter
-// 商品SKU更新OuterId时候用的数据
-func (r *TmallItemOuteridUpdateAPIRequest) SetSkuOuters(_skuOuters []UpdateSkuOuterId) error {
-	r._skuOuters = _skuOuters
-	r.Set("sku_outers", _skuOuters)
+// SetItemId is ItemId Setter
+// 商品ID
+func (r *TmallItemOuteridUpdateAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
 	return nil
 }
 
-// GetSkuOuters SkuOuters Getter
-func (r TmallItemOuteridUpdateAPIRequest) GetSkuOuters() []UpdateSkuOuterId {
-	return r._skuOuters
+// GetItemId ItemId Getter
+func (r TmallItemOuteridUpdateAPIRequest) GetItemId() int64 {
+	return r._itemId
 }

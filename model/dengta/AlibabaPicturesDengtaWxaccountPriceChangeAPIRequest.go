@@ -24,8 +24,6 @@ type AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest struct {
 	_second string
 	// 多图文第一条
 	_first string
-	// 账号id
-	_id int64
 	// 多图文第一条 折后价
 	_firstAli string
 	// 多图文第二条 折后价
@@ -34,6 +32,8 @@ type AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest struct {
 	_singleAli string
 	// 多图文第三条及以后 折后价
 	_otherAli string
+	// 账号id
+	_id int64
 }
 
 // NewAlibabaPicturesDengtaWxaccountPriceChangeRequest 初始化AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest对象
@@ -135,19 +135,6 @@ func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetFirst() string {
 	return r._first
 }
 
-// SetId is Id Setter
-// 账号id
-func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetId(_id int64) error {
-	r._id = _id
-	r.Set("id", _id)
-	return nil
-}
-
-// GetId Id Getter
-func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetId() int64 {
-	return r._id
-}
-
 // SetFirstAli is FirstAli Setter
 // 多图文第一条 折后价
 func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetFirstAli(_firstAli string) error {
@@ -198,4 +185,17 @@ func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetOtherAli(_other
 // GetOtherAli OtherAli Getter
 func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetOtherAli() string {
 	return r._otherAli
+}
+
+// SetId is Id Setter
+// 账号id
+func (r *AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// GetId Id Getter
+func (r AlibabaPicturesDengtaWxaccountPriceChangeAPIRequest) GetId() int64 {
+	return r._id
 }

@@ -12,12 +12,12 @@ import (
 // 门店库修改基本信息
 type TaobaoPlaceStoregroupUpdateAPIRequest struct {
 	model.Params
-	// 库id
-	_id int64
 	// 库名称
 	_name string
 	// 库备注
 	_desc string
+	// 库id
+	_id int64
 }
 
 // NewTaobaoPlaceStoregroupUpdateRequest 初始化TaobaoPlaceStoregroupUpdateAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetId is Id Setter
-// 库id
-func (r *TaobaoPlaceStoregroupUpdateAPIRequest) SetId(_id int64) error {
-	r._id = _id
-	r.Set("id", _id)
-	return nil
-}
-
-// GetId Id Getter
-func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetId() int64 {
-	return r._id
 }
 
 // SetName is Name Setter
@@ -78,4 +65,17 @@ func (r *TaobaoPlaceStoregroupUpdateAPIRequest) SetDesc(_desc string) error {
 // GetDesc Desc Getter
 func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetDesc() string {
 	return r._desc
+}
+
+// SetId is Id Setter
+// 库id
+func (r *TaobaoPlaceStoregroupUpdateAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// GetId Id Getter
+func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetId() int64 {
+	return r._id
 }

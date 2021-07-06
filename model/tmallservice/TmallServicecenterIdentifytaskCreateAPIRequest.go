@@ -14,10 +14,10 @@ type TmallServicecenterIdentifytaskCreateAPIRequest struct {
 	model.Params
 	// 工单列表
 	_workcardIds []int64
-	// 是否改派
-	_reassign bool
 	// 服务商自定义的外部核销单id
 	_outerId string
+	// 是否改派
+	_reassign bool
 }
 
 // NewTmallServicecenterIdentifytaskCreateRequest 初始化TmallServicecenterIdentifytaskCreateAPIRequest对象
@@ -54,19 +54,6 @@ func (r TmallServicecenterIdentifytaskCreateAPIRequest) GetWorkcardIds() []int64
 	return r._workcardIds
 }
 
-// SetReassign is Reassign Setter
-// 是否改派
-func (r *TmallServicecenterIdentifytaskCreateAPIRequest) SetReassign(_reassign bool) error {
-	r._reassign = _reassign
-	r.Set("reassign", _reassign)
-	return nil
-}
-
-// GetReassign Reassign Getter
-func (r TmallServicecenterIdentifytaskCreateAPIRequest) GetReassign() bool {
-	return r._reassign
-}
-
 // SetOuterId is OuterId Setter
 // 服务商自定义的外部核销单id
 func (r *TmallServicecenterIdentifytaskCreateAPIRequest) SetOuterId(_outerId string) error {
@@ -78,4 +65,17 @@ func (r *TmallServicecenterIdentifytaskCreateAPIRequest) SetOuterId(_outerId str
 // GetOuterId OuterId Getter
 func (r TmallServicecenterIdentifytaskCreateAPIRequest) GetOuterId() string {
 	return r._outerId
+}
+
+// SetReassign is Reassign Setter
+// 是否改派
+func (r *TmallServicecenterIdentifytaskCreateAPIRequest) SetReassign(_reassign bool) error {
+	r._reassign = _reassign
+	r.Set("reassign", _reassign)
+	return nil
+}
+
+// GetReassign Reassign Getter
+func (r TmallServicecenterIdentifytaskCreateAPIRequest) GetReassign() bool {
+	return r._reassign
 }

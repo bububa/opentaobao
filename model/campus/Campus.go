@@ -2,8 +2,6 @@ package campus
 
 // Campus 结构体
 type Campus struct {
-	// id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// gmtCreate
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// gmtModified
@@ -12,16 +10,6 @@ type Campus struct {
 	Creator string `json:"creator,omitempty" xml:"creator,omitempty"`
 	// modifier
 	Modifier string `json:"modifier,omitempty" xml:"modifier,omitempty"`
-	// 是否删除，0未删除，1删除
-	IsDelete bool `json:"is_delete,omitempty" xml:"is_delete,omitempty"`
-	// 来源，0自建 1租赁
-	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
-	// 状态，0停用，1启用
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
-	// 面积
-	Area *BigDecimal `json:"area,omitempty" xml:"area,omitempty"`
-	// 排序号
-	OrderNo int64 `json:"order_no,omitempty" xml:"order_no,omitempty"`
 	// 地址信息
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 城市编码
@@ -44,8 +32,20 @@ type Campus struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 所属公司名称
 	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
-	// 所属公司ID
-	CompanyId int64 `json:"company_id,omitempty" xml:"company_id,omitempty"`
 	// 室内面积
 	IndoorArea string `json:"indoor_area,omitempty" xml:"indoor_area,omitempty"`
+	// id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 来源，0自建 1租赁
+	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+	// 状态，0停用，1启用
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 面积
+	Area *BigDecimal `json:"area,omitempty" xml:"area,omitempty"`
+	// 排序号
+	OrderNo int64 `json:"order_no,omitempty" xml:"order_no,omitempty"`
+	// 所属公司ID
+	CompanyId int64 `json:"company_id,omitempty" xml:"company_id,omitempty"`
+	// 是否删除，0未删除，1删除
+	IsDelete bool `json:"is_delete,omitempty" xml:"is_delete,omitempty"`
 }

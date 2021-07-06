@@ -2,6 +2,12 @@ package wdk
 
 // SkuDo 结构体
 type SkuDo struct {
+	// 供货商信息
+	SkuSuppliers []SkuSupplierDo `json:"sku_suppliers,omitempty" xml:"sku_suppliers>sku_supplier_do,omitempty"`
+	// 渠道属性
+	ChannelProps []ChannelProp `json:"channel_props,omitempty" xml:"channel_props>channel_prop,omitempty"`
+	// 子商品信息
+	SubSkus []SubSkuDo `json:"sub_skus,omitempty" xml:"sub_skus>sub_sku_do,omitempty"`
 	// 条码，支持一品多码,多个条码以半角逗号分隔
 	Barcodes string `json:"barcodes,omitempty" xml:"barcodes,omitempty"`
 	// 品牌名称
@@ -20,26 +26,18 @@ type SkuDo struct {
 	ManufacturerName string `json:"manufacturer_name,omitempty" xml:"manufacturer_name,omitempty"`
 	// 产地，商品生产地点的描述，用于APP和电子价签展示，如果是可售，则必填
 	ProducerPlace string `json:"producer_place,omitempty" xml:"producer_place,omitempty"`
-	// 保质期天数，商品的保质期（单位：天）,0表示没有保质期
-	ShelfLife int64 `json:"shelf_life,omitempty" xml:"shelf_life,omitempty"`
 	// 商品唯一编码
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// 名称，对商品直观的描述，通常包含了品牌、规格等信息
 	SkuName string `json:"sku_name,omitempty" xml:"sku_name,omitempty"`
-	// 类型 1:普通商品、2:加工半成品、3:加工成品、4:原材料、5:耗材； 如果是新增商家产品，字段含义是货品类型，1普通商品、2赠品、3包材、4耗材、5组合商品、6分销商品、7附属品、8虚拟商品、9其他、10直投广告、11原材料、13加工产成品
-	SkuType int64 `json:"sku_type,omitempty" xml:"sku_type,omitempty"`
 	// 产品标准号
 	StandardNo string `json:"standard_no,omitempty" xml:"standard_no,omitempty"`
-	// 存储条件类型 241=常温,242=冷藏,243=冷冻,635=热链,636=室温,637=鲜活
-	StorageType int64 `json:"storage_type,omitempty" xml:"storage_type,omitempty"`
 	// 建议零售价，单位:元
 	SuggestedPrice string `json:"suggested_price,omitempty" xml:"suggested_price,omitempty"`
 	// 销项税率
 	TaxRate string `json:"tax_rate,omitempty" xml:"tax_rate,omitempty"`
 	// 单品重量 单位为克/g，必须为整数
 	Weight string `json:"weight,omitempty" xml:"weight,omitempty"`
-	// 是否称重 标识商品是否是称重商品? 1：是0：否（默认为0）
-	WeightFlag int64 `json:"weight_flag,omitempty" xml:"weight_flag,omitempty"`
 	// 宽度（宽）
 	Width string `json:"width,omitempty" xml:"width,omitempty"`
 	// 主图图片地址
@@ -62,8 +60,6 @@ type SkuDo struct {
 	AccountingCategory string `json:"accounting_category,omitempty" xml:"accounting_category,omitempty"`
 	// 净含量
 	NetContent string `json:"net_content,omitempty" xml:"net_content,omitempty"`
-	// 是否进口，是1，否0，默认非进口
-	ImportFlag int64 `json:"import_flag,omitempty" xml:"import_flag,omitempty"`
 	// 销售单位
 	SaleUnit string `json:"sale_unit,omitempty" xml:"sale_unit,omitempty"`
 	// 商品销售价格，单位:元
@@ -76,14 +72,8 @@ type SkuDo struct {
 	AvgWeight string `json:"avg_weight,omitempty" xml:"avg_weight,omitempty"`
 	// 预扣款重量（购买一个售卖单位按照多少个库存单位来扣款），计算金额时，按照购买的售卖单位数量/预扣款重量*售价 来计算；非称重品填1。若库存单位是kg，销售单位是g，填0.001
 	PreMinusWeight string `json:"pre_minus_weight,omitempty" xml:"pre_minus_weight,omitempty"`
-	// app购买时每增加一次购买数量至少要增加多少个售卖单位。非称重品填1。称重品根据实际货品情况填写。步长除了是加购物车的数量之外还承载了最小售卖数量的意义。
-	StepQuantity int64 `json:"step_quantity,omitempty" xml:"step_quantity,omitempty"`
-	// APP销售时，基于销售单位的起购量
-	PurchaseQuantity int64 `json:"purchase_quantity,omitempty" xml:"purchase_quantity,omitempty"`
 	// 标价签类型
 	SkuLabelType string `json:"sku_label_type,omitempty" xml:"sku_label_type,omitempty"`
-	// 商品是否适合在app销售，机构商品层级为总控，此字段为总开关，控制所有门店的是否APP可见，商品本身不可售，则app可售必须关闭。App可售关闭，则门店商品维度的app可见不允许打开。1：是? 0：否，（默认否）
-	AllowAppSale int64 `json:"allow_app_sale,omitempty" xml:"allow_app_sale,omitempty"`
 	// 商品卖点；商品副标题，显示在APP商品详情页的标题下方。如可口可乐商品的副标题可以是“夏日必备 解暑神器”。不超过80个字符。双方业务沟通一下，是否生鲜商品要定为必填
 	SubTitle string `json:"sub_title,omitempty" xml:"sub_title,omitempty"`
 	// 卖点1内容
@@ -94,8 +84,6 @@ type SkuDo struct {
 	Title1 string `json:"title1,omitempty" xml:"title1,omitempty"`
 	// 卖点2名称
 	Title2 string `json:"title2,omitempty" xml:"title2,omitempty"`
-	// 门店来控制本门店是否在app上让该商品可见，? 1可见? 0不可见
-	OnlineSaleFlag int64 `json:"online_sale_flag,omitempty" xml:"online_sale_flag,omitempty"`
 	// 大仓向门店配货的单位；淘鲜达合作商家默认填与库存单位一致的值
 	DeliveryUnit string `json:"delivery_unit,omitempty" xml:"delivery_unit,omitempty"`
 	// 一个配货单位等于多少个库存单位；淘鲜达合作商家填默认值1
@@ -126,18 +114,8 @@ type SkuDo struct {
 	Storage string `json:"storage,omitempty" xml:"storage,omitempty"`
 	// 商品拣货时可以超拣的比例，针对非标品。建议淘鲜达商家填默认值0
 	PickFloatRate string `json:"pick_float_rate,omitempty" xml:"pick_float_rate,omitempty"`
-	// 禁收时限；收货日期-商品生产日期<限收时限 才允许收货。建议淘鲜达商家填默认值为保质期天数。或按进口商品保质期天数的2/3、非进口商品的1/2填写
-	ForbidReceiveDays int64 `json:"forbid_receive_days,omitempty" xml:"forbid_receive_days,omitempty"`
-	// 商品生产日期+保质期-当前日期<禁售时限，不能出库销售。建议淘鲜达商家填默认值0。
-	ForbidSalesDays int64 `json:"forbid_sales_days,omitempty" xml:"forbid_sales_days,omitempty"`
 	// 商品收货时可以超过订货数量多少百分比进行收货；非标品供应商送货入库时，允许超收的比例。淘鲜达合作商家填默认值0
 	OverloadRate string `json:"overload_rate,omitempty" xml:"overload_rate,omitempty"`
-	// 库存监控报表中，剩余天数少于该天数时需要预警，建议淘鲜达商家填默认值0
-	WarnDays int64 `json:"warn_days,omitempty" xml:"warn_days,omitempty"`
-	// 商品在门店是否在前场陈列；淘鲜达合作商家用不到， 0：否? 1：是
-	FrontDisplayFlag int64 `json:"front_display_flag,omitempty" xml:"front_display_flag,omitempty"`
-	// 商品是否是供应商为企业进行定制；淘鲜达合作商家填默认值0， 0 否? 1 是
-	FixedFlag int64 `json:"fixed_flag,omitempty" xml:"fixed_flag,omitempty"`
 	// 一个采购单位等于多少个库存单位，淘鲜达合作商家默认填1
 	PurchaseSpec string `json:"purchase_spec,omitempty" xml:"purchase_spec,omitempty"`
 	// 商品针对供应商订货时，对应的单位；淘鲜达合作商家默认填与库存单位一致的值
@@ -148,48 +126,28 @@ type SkuDo struct {
 	BackCatCode string `json:"back_cat_code,omitempty" xml:"back_cat_code,omitempty"`
 	// 门店商品售价（同字段sale_price），单位:元；优先使用本字段
 	SkuPrice string `json:"sku_price,omitempty" xml:"sku_price,omitempty"`
-	// 商品的保质期天数（同字段shelf_life），必须为整数，0代表不管理保质期；优先使用本字段
-	Period int64 `json:"period,omitempty" xml:"period,omitempty"`
-	// 商品类型（同字段sku_type）1:普通商品、2:加工半成品、3:加工成品、4:原材料、5:耗材；优先使用本字段
-	ItemTypeNew int64 `json:"item_type_new,omitempty" xml:"item_type_new,omitempty"`
 	// 商家后台类目编码（同字段category_code），优先使用本字段
 	MerchantCatCode string `json:"merchant_cat_code,omitempty" xml:"merchant_cat_code,omitempty"`
 	// 在app上显示的商品图片cdn地址（同字段main_pic_urls和detail_pic_urls），https开头，多个图片用英文逗号切割。第一张图片会作为主图；优先使用本字段
 	SkuPicUrls string `json:"sku_pic_urls,omitempty" xml:"sku_pic_urls,omitempty"`
-	// 供货商信息
-	SkuSuppliers []SkuSupplierDo `json:"sku_suppliers,omitempty" xml:"sku_suppliers>sku_supplier_do,omitempty"`
 	// 文描,（同字段txt_desc）；优先使用本字段
 	RichText string `json:"rich_text,omitempty" xml:"rich_text,omitempty"`
-	// 行业属性
-	IndustryProps *IndustryPropDo `json:"industry_props,omitempty" xml:"industry_props,omitempty"`
-	// forest类目id
-	ForestCateId int64 `json:"forest_cate_id,omitempty" xml:"forest_cate_id,omitempty"`
 	// 税收编码
 	TaxCode string `json:"tax_code,omitempty" xml:"tax_code,omitempty"`
-	// 是否易碎品标记，0否1是
-	FragileFlag int64 `json:"fragile_flag,omitempty" xml:"fragile_flag,omitempty"`
 	// 配送条件；填常温、冷藏、冷冻
 	DeliveryStorage string `json:"delivery_storage,omitempty" xml:"delivery_storage,omitempty"`
 	// 淘宝旗舰店同品信息，同城零售使用
 	FlagshipStoreItemInfo string `json:"flagship_store_item_info,omitempty" xml:"flagship_store_item_info,omitempty"`
-	// 是否现制现卖，0否1是；比如蛋糕只有下了单才能开始制作
-	TemporaryFlag int64 `json:"temporary_flag,omitempty" xml:"temporary_flag,omitempty"`
 	// 产品聚合码，程序会把聚合码相同的sku聚合到一起；比如衣服有大中小号3中sku，通过聚合码聚合到一起；该字段在同城零售发布场景才能使用
 	ProductIdentity string `json:"product_identity,omitempty" xml:"product_identity,omitempty"`
 	// 业务类型：txd淘鲜达，elm饿了么，shareStore共享库存，默认txd
 	BizType string `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
-	// 渠道属性
-	ChannelProps []ChannelProp `json:"channel_props,omitempty" xml:"channel_props>channel_prop,omitempty"`
 	// 渠道店id
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
-	// 商品价格（单位分）和字段sale_price两者只能选其一
-	SalePriceUnitCent int64 `json:"sale_price_unit_cent,omitempty" xml:"sale_price_unit_cent,omitempty"`
 	// 线上生效开始时间
 	AppEffectBeginTime string `json:"app_effect_begin_time,omitempty" xml:"app_effect_begin_time,omitempty"`
 	// 线上生效过期时间
 	AppEffectEndTime string `json:"app_effect_end_time,omitempty" xml:"app_effect_end_time,omitempty"`
-	// 子商品信息
-	SubSkus []SubSkuDo `json:"sub_skus,omitempty" xml:"sub_skus>sub_sku_do,omitempty"`
 	// 机构编号
 	OrgNo string `json:"org_no,omitempty" xml:"org_no,omitempty"`
 	// 商品别名
@@ -228,8 +186,6 @@ type SkuDo struct {
 	CostUnitCode string `json:"cost_unit_code,omitempty" xml:"cost_unit_code,omitempty"`
 	// 商品标编码
 	SkuLabelTypeCode string `json:"sku_label_type_code,omitempty" xml:"sku_label_type_code,omitempty"`
-	// 1、普通商品 2、预售商品
-	ItemSaleType int64 `json:"item_sale_type,omitempty" xml:"item_sale_type,omitempty"`
 	// 销售单位（取值选项和采购单位的可选项一致）
 	SaleUnitCode string `json:"sale_unit_code,omitempty" xml:"sale_unit_code,omitempty"`
 	// 标价签类型编码
@@ -254,18 +210,62 @@ type SkuDo struct {
 	ReturnWarehouseName string `json:"return_warehouse_name,omitempty" xml:"return_warehouse_name,omitempty"`
 	// 配送方式名称
 	DeliveryWayName string `json:"delivery_way_name,omitempty" xml:"delivery_way_name,omitempty"`
-	// 加工时间
-	ProcessingTime int64 `json:"processing_time,omitempty" xml:"processing_time,omitempty"`
 	// 服务商品,skucode
 	ServiceItems string `json:"service_items,omitempty" xml:"service_items,omitempty"`
 	// 默认商品价格（同SKU在当前渠道的价格）
 	DefaultSkuPrice string `json:"default_sku_price,omitempty" xml:"default_sku_price,omitempty"`
-	// 是否可售，用于查询商品的时候标识商品的可售状态,1可售 0不可售
-	SaleFlagForQuery int64 `json:"sale_flag_for_query,omitempty" xml:"sale_flag_for_query,omitempty"`
 	// 存储条件编码
 	StorageCode string `json:"storage_code,omitempty" xml:"storage_code,omitempty"`
 	// 渠道编码，默认为4淘鲜达渠道、3对应饿了么渠道、-1对应批发渠道
 	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
+	// 保质期天数，商品的保质期（单位：天）,0表示没有保质期
+	ShelfLife int64 `json:"shelf_life,omitempty" xml:"shelf_life,omitempty"`
+	// 类型 1:普通商品、2:加工半成品、3:加工成品、4:原材料、5:耗材； 如果是新增商家产品，字段含义是货品类型，1普通商品、2赠品、3包材、4耗材、5组合商品、6分销商品、7附属品、8虚拟商品、9其他、10直投广告、11原材料、13加工产成品
+	SkuType int64 `json:"sku_type,omitempty" xml:"sku_type,omitempty"`
+	// 存储条件类型 241=常温,242=冷藏,243=冷冻,635=热链,636=室温,637=鲜活
+	StorageType int64 `json:"storage_type,omitempty" xml:"storage_type,omitempty"`
+	// 是否称重 标识商品是否是称重商品? 1：是0：否（默认为0）
+	WeightFlag int64 `json:"weight_flag,omitempty" xml:"weight_flag,omitempty"`
+	// 是否进口，是1，否0，默认非进口
+	ImportFlag int64 `json:"import_flag,omitempty" xml:"import_flag,omitempty"`
+	// app购买时每增加一次购买数量至少要增加多少个售卖单位。非称重品填1。称重品根据实际货品情况填写。步长除了是加购物车的数量之外还承载了最小售卖数量的意义。
+	StepQuantity int64 `json:"step_quantity,omitempty" xml:"step_quantity,omitempty"`
+	// APP销售时，基于销售单位的起购量
+	PurchaseQuantity int64 `json:"purchase_quantity,omitempty" xml:"purchase_quantity,omitempty"`
+	// 商品是否适合在app销售，机构商品层级为总控，此字段为总开关，控制所有门店的是否APP可见，商品本身不可售，则app可售必须关闭。App可售关闭，则门店商品维度的app可见不允许打开。1：是? 0：否，（默认否）
+	AllowAppSale int64 `json:"allow_app_sale,omitempty" xml:"allow_app_sale,omitempty"`
+	// 门店来控制本门店是否在app上让该商品可见，? 1可见? 0不可见
+	OnlineSaleFlag int64 `json:"online_sale_flag,omitempty" xml:"online_sale_flag,omitempty"`
+	// 禁收时限；收货日期-商品生产日期<限收时限 才允许收货。建议淘鲜达商家填默认值为保质期天数。或按进口商品保质期天数的2/3、非进口商品的1/2填写
+	ForbidReceiveDays int64 `json:"forbid_receive_days,omitempty" xml:"forbid_receive_days,omitempty"`
+	// 商品生产日期+保质期-当前日期<禁售时限，不能出库销售。建议淘鲜达商家填默认值0。
+	ForbidSalesDays int64 `json:"forbid_sales_days,omitempty" xml:"forbid_sales_days,omitempty"`
+	// 库存监控报表中，剩余天数少于该天数时需要预警，建议淘鲜达商家填默认值0
+	WarnDays int64 `json:"warn_days,omitempty" xml:"warn_days,omitempty"`
+	// 商品在门店是否在前场陈列；淘鲜达合作商家用不到， 0：否? 1：是
+	FrontDisplayFlag int64 `json:"front_display_flag,omitempty" xml:"front_display_flag,omitempty"`
+	// 商品是否是供应商为企业进行定制；淘鲜达合作商家填默认值0， 0 否? 1 是
+	FixedFlag int64 `json:"fixed_flag,omitempty" xml:"fixed_flag,omitempty"`
+	// 商品的保质期天数（同字段shelf_life），必须为整数，0代表不管理保质期；优先使用本字段
+	Period int64 `json:"period,omitempty" xml:"period,omitempty"`
+	// 商品类型（同字段sku_type）1:普通商品、2:加工半成品、3:加工成品、4:原材料、5:耗材；优先使用本字段
+	ItemTypeNew int64 `json:"item_type_new,omitempty" xml:"item_type_new,omitempty"`
+	// 行业属性
+	IndustryProps *IndustryPropDo `json:"industry_props,omitempty" xml:"industry_props,omitempty"`
+	// forest类目id
+	ForestCateId int64 `json:"forest_cate_id,omitempty" xml:"forest_cate_id,omitempty"`
+	// 是否易碎品标记，0否1是
+	FragileFlag int64 `json:"fragile_flag,omitempty" xml:"fragile_flag,omitempty"`
+	// 是否现制现卖，0否1是；比如蛋糕只有下了单才能开始制作
+	TemporaryFlag int64 `json:"temporary_flag,omitempty" xml:"temporary_flag,omitempty"`
+	// 商品价格（单位分）和字段sale_price两者只能选其一
+	SalePriceUnitCent int64 `json:"sale_price_unit_cent,omitempty" xml:"sale_price_unit_cent,omitempty"`
+	// 1、普通商品 2、预售商品
+	ItemSaleType int64 `json:"item_sale_type,omitempty" xml:"item_sale_type,omitempty"`
+	// 加工时间
+	ProcessingTime int64 `json:"processing_time,omitempty" xml:"processing_time,omitempty"`
+	// 是否可售，用于查询商品的时候标识商品的可售状态,1可售 0不可售
+	SaleFlagForQuery int64 `json:"sale_flag_for_query,omitempty" xml:"sale_flag_for_query,omitempty"`
 	// 是否清空会员价, 1清空会员价（操作之后没有会员价），0不清空会员价
 	CleanSkuMemberPrice int64 `json:"clean_sku_member_price,omitempty" xml:"clean_sku_member_price,omitempty"`
 	// 修改条码策略，默认为策略3。<br/>如商品现有主条码barcode1、非主条码barcode2<br/>1、新增barcodes指定了新的主条码barcode3,会将原主条码barcde1改为非主条码,最终商品有三个条码,即:非主条码barcde1、非主条码barcode2、主条码barcode3<br/> 2、删除barcodes对应条码，除了主条码<br/> 3、替换主条码 则会将现有主条码删除,新增指定主条码,只认barcodes中第一个条码，商品最终结果条码个数为两个条码:非主条码barcode2、主条码barcode3<br/> 4、除主条码外,所有条码替换为指定barcodes,不支持主条码修改。如果barcodes中为barcode3,barcode4,则商品最终条码为:主条码barcode1,非barcode3,barcode4。其中非主条码barcode2被删除

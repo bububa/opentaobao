@@ -2,12 +2,12 @@ package tmallnr
 
 // SendCouponResponse 结构体
 type SendCouponResponse struct {
+	// 券名称
+	CouponName string `json:"coupon_name,omitempty" xml:"coupon_name,omitempty"`
 	// 面额
 	Discount int64 `json:"discount,omitempty" xml:"discount,omitempty"`
 	// 门槛
 	StartFee int64 `json:"start_fee,omitempty" xml:"start_fee,omitempty"`
-	// 券名称
-	CouponName string `json:"coupon_name,omitempty" xml:"coupon_name,omitempty"`
 	// 券模板ID
 	CouponTemplateId int64 `json:"coupon_template_id,omitempty" xml:"coupon_template_id,omitempty"`
 	// 券实例ID

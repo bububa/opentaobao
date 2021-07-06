@@ -2,12 +2,14 @@ package fenxiao
 
 // FenxiaoProduct 结构体
 type FenxiaoProduct struct {
-	// 产品ID
-	Pid int64 `json:"pid,omitempty" xml:"pid,omitempty"`
+	// sku列表
+	Skus []SkuList `json:"skus,omitempty" xml:"skus>sku_list,omitempty"`
+	// 产品分销商信息
+	Pdus []PduList `json:"pdus,omitempty" xml:"pdus>pdu_list,omitempty"`
+	// 产品图片
+	Images []ProductImageList `json:"images,omitempty" xml:"images>product_image_list,omitempty"`
 	// 产品名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
-	// 产品线ID
-	ProductcatId int64 `json:"productcat_id,omitempty" xml:"productcat_id,omitempty"`
 	// 采购价格，单位：元。
 	CostPrice string `json:"cost_price,omitempty" xml:"cost_price,omitempty"`
 	// 最低零售价，单位：分。
@@ -16,8 +18,6 @@ type FenxiaoProduct struct {
 	RetailPriceHigh string `json:"retail_price_high,omitempty" xml:"retail_price_high,omitempty"`
 	// 商家编码
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
-	// 产品库存
-	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 产品图片路径
 	Pictures string `json:"pictures,omitempty" xml:"pictures,omitempty"`
 	// 产品描述路径，通过http请求获取
@@ -28,32 +28,18 @@ type FenxiaoProduct struct {
 	City string `json:"city,omitempty" xml:"city,omitempty"`
 	// 运费类型，可选值：seller（供应商承担运费）、buyer（分销商承担运费）
 	PostageType string `json:"postage_type,omitempty" xml:"postage_type,omitempty"`
-	// 运费模板ID
-	PostageId int64 `json:"postage_id,omitempty" xml:"postage_id,omitempty"`
 	// 平邮费用，单位：元
 	PostageOrdinary string `json:"postage_ordinary,omitempty" xml:"postage_ordinary,omitempty"`
 	// 快递费用，单位：元
 	PostageFast string `json:"postage_fast,omitempty" xml:"postage_fast,omitempty"`
 	// ems费用，单位：元
 	PostageEms string `json:"postage_ems,omitempty" xml:"postage_ems,omitempty"`
-	// 是否有发票，可选值：false（否）、true（是）
-	HaveInvoice bool `json:"have_invoice,omitempty" xml:"have_invoice,omitempty"`
-	// 是否有保修，可选值：false（否）、true（是）
-	HaveQuarantee bool `json:"have_quarantee,omitempty" xml:"have_quarantee,omitempty"`
 	// 发布状态，可选值：up（上架）、down（下架）
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
-	// 下载人数
-	ItemsCount int64 `json:"items_count,omitempty" xml:"items_count,omitempty"`
-	// 累计采购次数
-	OrdersCount int64 `json:"orders_count,omitempty" xml:"orders_count,omitempty"`
 	// 创建时间
 	Created string `json:"created,omitempty" xml:"created,omitempty"`
 	// 更新时间
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
-	// sku列表
-	Skus []SkuList `json:"skus,omitempty" xml:"skus>sku_list,omitempty"`
-	// 折扣ID（新增参数）
-	DiscountId int64 `json:"discount_id,omitempty" xml:"discount_id,omitempty"`
 	// 分销方式：AGENT（只做代销，默认值）、DEALER（只做经销）、ALL（代销和经销都做）
 	TradeType string `json:"trade_type,omitempty" xml:"trade_type,omitempty"`
 	// 采购基准价，单位：元。
@@ -74,14 +60,24 @@ type FenxiaoProduct struct {
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// 经销采购价
 	DealerCostPrice string `json:"dealer_cost_price,omitempty" xml:"dealer_cost_price,omitempty"`
-	// 产品分销商信息
-	Pdus []PduList `json:"pdus,omitempty" xml:"pdus>pdu_list,omitempty"`
-	// 关联的后端商品id
-	ScitemId int64 `json:"scitem_id,omitempty" xml:"scitem_id,omitempty"`
 	// 零售基准价，单位：元
 	StandardRetailPrice string `json:"standard_retail_price,omitempty" xml:"standard_retail_price,omitempty"`
-	// 产品图片
-	Images []ProductImageList `json:"images,omitempty" xml:"images>product_image_list,omitempty"`
+	// 产品ID
+	Pid int64 `json:"pid,omitempty" xml:"pid,omitempty"`
+	// 产品线ID
+	ProductcatId int64 `json:"productcat_id,omitempty" xml:"productcat_id,omitempty"`
+	// 产品库存
+	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+	// 运费模板ID
+	PostageId int64 `json:"postage_id,omitempty" xml:"postage_id,omitempty"`
+	// 下载人数
+	ItemsCount int64 `json:"items_count,omitempty" xml:"items_count,omitempty"`
+	// 累计采购次数
+	OrdersCount int64 `json:"orders_count,omitempty" xml:"orders_count,omitempty"`
+	// 折扣ID（新增参数）
+	DiscountId int64 `json:"discount_id,omitempty" xml:"discount_id,omitempty"`
+	// 关联的后端商品id
+	ScitemId int64 `json:"scitem_id,omitempty" xml:"scitem_id,omitempty"`
 	// 根据商品ID查询时，返回这个产品对应的商品ID，只对分销商查询接口有效
 	QueryItemId int64 `json:"query_item_id,omitempty" xml:"query_item_id,omitempty"`
 	// 产品spu id
@@ -92,4 +88,8 @@ type FenxiaoProduct struct {
 	ReservedQuantity int64 `json:"reserved_quantity,omitempty" xml:"reserved_quantity,omitempty"`
 	// 配额可用库存
 	QuotaQuantity int64 `json:"quota_quantity,omitempty" xml:"quota_quantity,omitempty"`
+	// 是否有发票，可选值：false（否）、true（是）
+	HaveInvoice bool `json:"have_invoice,omitempty" xml:"have_invoice,omitempty"`
+	// 是否有保修，可选值：false（否）、true（是）
+	HaveQuarantee bool `json:"have_quarantee,omitempty" xml:"have_quarantee,omitempty"`
 }

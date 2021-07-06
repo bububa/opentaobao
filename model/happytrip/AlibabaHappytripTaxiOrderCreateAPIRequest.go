@@ -16,8 +16,6 @@ type AlibabaHappytripTaxiOrderCreateAPIRequest struct {
 	_uid string
 	// 请求id 获取请参见
 	_orderId string
-	// 叫车车型，0(实时)；1(预约)
-	_type int64
 	// 乘客手机号
 	_passengerPhone string
 	// 出发地城市
@@ -50,14 +48,16 @@ type AlibabaHappytripTaxiOrderCreateAPIRequest struct {
 	_appTime string
 	// 地图类型:amap：高德，默认高德地图
 	_mapType string
-	// 发送短信策略(0,为叫车人和乘车人都发送，1，乘车人发送叫车人不发，2乘车人不发叫车人发，3乘车人和叫车人都不发)
-	_smsPolicy int64
 	// 备注
 	_extraInfo string
 	// 价格md5,通过 预估价接口获得
 	_dynamicMd5 string
 	// 成本中心代码，用于区分不同的分账账号
 	_costCenter string
+	// 叫车车型，0(实时)；1(预约)
+	_type int64
+	// 发送短信策略(0,为叫车人和乘车人都发送，1，乘车人发送叫车人不发，2乘车人不发叫车人发，3乘车人和叫车人都不发)
+	_smsPolicy int64
 	// 线路类型，0或空表示普通线路；1，表示一口价路线
 	_lineType int64
 	// 0：不拼车 1:允许拼车，默认不拼车
@@ -111,19 +111,6 @@ func (r *AlibabaHappytripTaxiOrderCreateAPIRequest) SetOrderId(_orderId string) 
 // GetOrderId OrderId Getter
 func (r AlibabaHappytripTaxiOrderCreateAPIRequest) GetOrderId() string {
 	return r._orderId
-}
-
-// SetType is Type Setter
-// 叫车车型，0(实时)；1(预约)
-func (r *AlibabaHappytripTaxiOrderCreateAPIRequest) SetType(_type int64) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r AlibabaHappytripTaxiOrderCreateAPIRequest) GetType() int64 {
-	return r._type
 }
 
 // SetPassengerPhone is PassengerPhone Setter
@@ -334,19 +321,6 @@ func (r AlibabaHappytripTaxiOrderCreateAPIRequest) GetMapType() string {
 	return r._mapType
 }
 
-// SetSmsPolicy is SmsPolicy Setter
-// 发送短信策略(0,为叫车人和乘车人都发送，1，乘车人发送叫车人不发，2乘车人不发叫车人发，3乘车人和叫车人都不发)
-func (r *AlibabaHappytripTaxiOrderCreateAPIRequest) SetSmsPolicy(_smsPolicy int64) error {
-	r._smsPolicy = _smsPolicy
-	r.Set("sms_policy", _smsPolicy)
-	return nil
-}
-
-// GetSmsPolicy SmsPolicy Getter
-func (r AlibabaHappytripTaxiOrderCreateAPIRequest) GetSmsPolicy() int64 {
-	return r._smsPolicy
-}
-
 // SetExtraInfo is ExtraInfo Setter
 // 备注
 func (r *AlibabaHappytripTaxiOrderCreateAPIRequest) SetExtraInfo(_extraInfo string) error {
@@ -384,6 +358,32 @@ func (r *AlibabaHappytripTaxiOrderCreateAPIRequest) SetCostCenter(_costCenter st
 // GetCostCenter CostCenter Getter
 func (r AlibabaHappytripTaxiOrderCreateAPIRequest) GetCostCenter() string {
 	return r._costCenter
+}
+
+// SetType is Type Setter
+// 叫车车型，0(实时)；1(预约)
+func (r *AlibabaHappytripTaxiOrderCreateAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r AlibabaHappytripTaxiOrderCreateAPIRequest) GetType() int64 {
+	return r._type
+}
+
+// SetSmsPolicy is SmsPolicy Setter
+// 发送短信策略(0,为叫车人和乘车人都发送，1，乘车人发送叫车人不发，2乘车人不发叫车人发，3乘车人和叫车人都不发)
+func (r *AlibabaHappytripTaxiOrderCreateAPIRequest) SetSmsPolicy(_smsPolicy int64) error {
+	r._smsPolicy = _smsPolicy
+	r.Set("sms_policy", _smsPolicy)
+	return nil
+}
+
+// GetSmsPolicy SmsPolicy Getter
+func (r AlibabaHappytripTaxiOrderCreateAPIRequest) GetSmsPolicy() int64 {
+	return r._smsPolicy
 }
 
 // SetLineType is LineType Setter

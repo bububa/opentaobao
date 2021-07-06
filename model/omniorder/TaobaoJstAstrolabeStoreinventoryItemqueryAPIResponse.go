@@ -20,12 +20,12 @@ type TaobaoJstAstrolabeStoreinventoryItemqueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_astrolabe_storeinventory_itemquery_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 门店列表
+	Stores []Store `json:"stores,omitempty" xml:"stores>store,omitempty"`
 	// 响应标示
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应编码
 	QimenCode string `json:"qimen_code,omitempty" xml:"qimen_code,omitempty"`
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
-	// 门店列表
-	Stores []Store `json:"stores,omitempty" xml:"stores>store,omitempty"`
 }

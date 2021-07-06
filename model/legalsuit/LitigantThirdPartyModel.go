@@ -10,8 +10,6 @@ type LitigantThirdPartyModel struct {
 	LawFirmName string `json:"law_firm_name,omitempty" xml:"law_firm_name,omitempty"`
 	// 是否为集团公司
 	IsAlibabaCompany string `json:"is_alibaba_company,omitempty" xml:"is_alibaba_company,omitempty"`
-	// 住所地
-	Address bool `json:"address,omitempty" xml:"address,omitempty"`
 	// 证件编号
 	CertifyNumber string `json:"certify_number,omitempty" xml:"certify_number,omitempty"`
 	// 证件类型
@@ -22,4 +20,6 @@ type LitigantThirdPartyModel struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 序号
 	SerialNumber int64 `json:"serial_number,omitempty" xml:"serial_number,omitempty"`
+	// 住所地
+	Address bool `json:"address,omitempty" xml:"address,omitempty"`
 }

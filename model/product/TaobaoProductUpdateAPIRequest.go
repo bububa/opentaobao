@@ -12,8 +12,6 @@ import (
 // 传入产品ID <br/>可修改字段：outer_id,binds,sale_props,name,price,desc,image <br/>注意：1.可以修改主图,不能修改子图片,主图最大500K,目前仅支持GIF,JPG<br/>      2.商城卖家产品发布24小时后不能作删除或修改操作
 type TaobaoProductUpdateAPIRequest struct {
 	model.Params
-	// 产品ID
-	_productId int64
 	// 外部产品ID
 	_outerId string
 	// 非关键属性.调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid;格式:pid:vid;pid:vid
@@ -24,14 +22,16 @@ type TaobaoProductUpdateAPIRequest struct {
 	_price string
 	// 产品描述.最大不超过25000个字符
 	_desc string
-	// 产品主图.最大500K,目前仅支持GIF,JPG
-	_image *model.File
 	// 产品名称.最大不超过30个字符
 	_name string
-	// 是否是主图
-	_major bool
 	// 自定义非关键属性
 	_nativeUnkeyprops string
+	// 产品ID
+	_productId int64
+	// 产品主图.最大500K,目前仅支持GIF,JPG
+	_image *model.File
+	// 是否是主图
+	_major bool
 }
 
 // NewTaobaoProductUpdateRequest 初始化TaobaoProductUpdateAPIRequest对象
@@ -53,19 +53,6 @@ func (r TaobaoProductUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetProductId is ProductId Setter
-// 产品ID
-func (r *TaobaoProductUpdateAPIRequest) SetProductId(_productId int64) error {
-	r._productId = _productId
-	r.Set("product_id", _productId)
-	return nil
-}
-
-// GetProductId ProductId Getter
-func (r TaobaoProductUpdateAPIRequest) GetProductId() int64 {
-	return r._productId
 }
 
 // SetOuterId is OuterId Setter
@@ -133,19 +120,6 @@ func (r TaobaoProductUpdateAPIRequest) GetDesc() string {
 	return r._desc
 }
 
-// SetImage is Image Setter
-// 产品主图.最大500K,目前仅支持GIF,JPG
-func (r *TaobaoProductUpdateAPIRequest) SetImage(_image *model.File) error {
-	r._image = _image
-	r.Set("image", _image)
-	return nil
-}
-
-// GetImage Image Getter
-func (r TaobaoProductUpdateAPIRequest) GetImage() *model.File {
-	return r._image
-}
-
 // SetName is Name Setter
 // 产品名称.最大不超过30个字符
 func (r *TaobaoProductUpdateAPIRequest) SetName(_name string) error {
@@ -159,19 +133,6 @@ func (r TaobaoProductUpdateAPIRequest) GetName() string {
 	return r._name
 }
 
-// SetMajor is Major Setter
-// 是否是主图
-func (r *TaobaoProductUpdateAPIRequest) SetMajor(_major bool) error {
-	r._major = _major
-	r.Set("major", _major)
-	return nil
-}
-
-// GetMajor Major Getter
-func (r TaobaoProductUpdateAPIRequest) GetMajor() bool {
-	return r._major
-}
-
 // SetNativeUnkeyprops is NativeUnkeyprops Setter
 // 自定义非关键属性
 func (r *TaobaoProductUpdateAPIRequest) SetNativeUnkeyprops(_nativeUnkeyprops string) error {
@@ -183,4 +144,43 @@ func (r *TaobaoProductUpdateAPIRequest) SetNativeUnkeyprops(_nativeUnkeyprops st
 // GetNativeUnkeyprops NativeUnkeyprops Getter
 func (r TaobaoProductUpdateAPIRequest) GetNativeUnkeyprops() string {
 	return r._nativeUnkeyprops
+}
+
+// SetProductId is ProductId Setter
+// 产品ID
+func (r *TaobaoProductUpdateAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// GetProductId ProductId Getter
+func (r TaobaoProductUpdateAPIRequest) GetProductId() int64 {
+	return r._productId
+}
+
+// SetImage is Image Setter
+// 产品主图.最大500K,目前仅支持GIF,JPG
+func (r *TaobaoProductUpdateAPIRequest) SetImage(_image *model.File) error {
+	r._image = _image
+	r.Set("image", _image)
+	return nil
+}
+
+// GetImage Image Getter
+func (r TaobaoProductUpdateAPIRequest) GetImage() *model.File {
+	return r._image
+}
+
+// SetMajor is Major Setter
+// 是否是主图
+func (r *TaobaoProductUpdateAPIRequest) SetMajor(_major bool) error {
+	r._major = _major
+	r.Set("major", _major)
+	return nil
+}
+
+// GetMajor Major Getter
+func (r TaobaoProductUpdateAPIRequest) GetMajor() bool {
+	return r._major
 }

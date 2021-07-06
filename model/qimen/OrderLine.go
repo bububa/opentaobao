@@ -2,6 +2,8 @@ package qimen
 
 // OrderLine 结构体
 type OrderLine struct {
+	// 批次列表
+	Batchs []TaobaoQimenDeliveryorderBatchconfirmBatch `json:"batchs,omitempty" xml:"batchs>taobao_qimen_deliveryorder_batchconfirm_batch,omitempty"`
 	// 单据行号
 	OrderLineNo string `json:"orderLineNo,omitempty" xml:"orderLineNo,omitempty"`
 	// 平台交易订单编码
@@ -20,10 +22,6 @@ type OrderLine struct {
 	ItemName string `json:"itemName,omitempty" xml:"itemName,omitempty"`
 	// 交易平台商品编码
 	ExtCode string `json:"extCode,omitempty" xml:"extCode,omitempty"`
-	// 应发商品数量
-	PlanQty int64 `json:"planQty,omitempty" xml:"planQty,omitempty"`
-	// 实发商品数量
-	ActualQty int64 `json:"actualQty,omitempty" xml:"actualQty,omitempty"`
 	// 批次编号
 	BatchCode string `json:"batchCode,omitempty" xml:"batchCode,omitempty"`
 	// 生产日期(YYYY-MM-DD)
@@ -32,14 +30,10 @@ type OrderLine struct {
 	ExpireDate string `json:"expireDate,omitempty" xml:"expireDate,omitempty"`
 	// 生产批号
 	ProduceCode string `json:"produceCode,omitempty" xml:"produceCode,omitempty"`
-	// 批次列表
-	Batchs []TaobaoQimenDeliveryorderBatchconfirmBatch `json:"batchs,omitempty" xml:"batchs>taobao_qimen_deliveryorder_batchconfirm_batch,omitempty"`
 	// 商品的二维码(类似电子产品的SN码;用来进行商品的溯源;多个二维码之间用分号;隔开)
 	QrCode string `json:"qrCode,omitempty" xml:"qrCode,omitempty"`
 	// 仓库拆单子发货单号
 	SubDeliveryOrderId string `json:"subDeliveryOrderId,omitempty" xml:"subDeliveryOrderId,omitempty"`
-	// snList
-	SnList *SnList `json:"snList,omitempty" xml:"snList,omitempty"`
 	// 供应商编码
 	SupplierCode string `json:"supplierCode,omitempty" xml:"supplierCode,omitempty"`
 	// 供应商名称
@@ -118,6 +112,12 @@ type OrderLine struct {
 	ReturnReason string `json:"returnReason,omitempty" xml:"returnReason,omitempty"`
 	// 交易平台商品编码
 	PlatformCode string `json:"platformCode,omitempty" xml:"platformCode,omitempty"`
+	// 应发商品数量
+	PlanQty int64 `json:"planQty,omitempty" xml:"planQty,omitempty"`
+	// 实发商品数量
+	ActualQty int64 `json:"actualQty,omitempty" xml:"actualQty,omitempty"`
+	// snList
+	SnList *SnList `json:"snList,omitempty" xml:"snList,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenStockoutCreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

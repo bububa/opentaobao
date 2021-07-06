@@ -4,10 +4,6 @@ package happytrip
 type OrderDto struct {
 	// 航旅交易号
 	AlipayTradeNo string `json:"alipay_trade_no,omitempty" xml:"alipay_trade_no,omitempty"`
-	// 是否B2G的标记位0不是 1是
-	B2gFlag int64 `json:"b2g_flag,omitempty" xml:"b2g_flag,omitempty"`
-	// 订单业务类型，各个业务自定义使用
-	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
 	// 订单业务类型，各个业务自定义使用
 	BizTypeDesc string `json:"biz_type_desc,omitempty" xml:"biz_type_desc,omitempty"`
 	// 外系统下单时间
@@ -30,20 +26,12 @@ type OrderDto struct {
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 修改时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
-	// 订单id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 系统出票时间
 	IssueTime string `json:"issue_time,omitempty" xml:"issue_time,omitempty"`
 	// 备注
 	Memo string `json:"memo,omitempty" xml:"memo,omitempty"`
-	// 线上线下标记0线下 1线上
-	OnlineFlag int64 `json:"online_flag,omitempty" xml:"online_flag,omitempty"`
-	// 订单一级类型 (一级类型，一级类型描述，二级类型，二级类型描述)  (-1, "未知", -1, "未知")  (4, "机票", 24, "飞猪国内机票")  (4, "机票", 47, "飞猪国际机票")  (4, "机票", 48, "飞猪国际询价单机票")  (4, "机票", 49, "GT国际机票")  (5, "酒店", 14, "飞猪国内酒店")  (5, "酒店", 34, "HRS国际酒店")  (6, "用车", 23, "国内用车")
-	OrderClassId int64 `json:"order_class_id,omitempty" xml:"order_class_id,omitempty"`
 	// 订单一级类型描述 定义参考一级类型
 	OrderClassName string `json:"order_class_name,omitempty" xml:"order_class_name,omitempty"`
-	// 订单二级类型 定义参考一级类型
-	OrderClassSecondId int64 `json:"order_class_second_id,omitempty" xml:"order_class_second_id,omitempty"`
 	// 订单二级类型描述 定义参考一级类型
 	OrderClassSecondName string `json:"order_class_second_name,omitempty" xml:"order_class_second_name,omitempty"`
 	// 外系统订单号
@@ -70,8 +58,20 @@ type OrderDto struct {
 	TotalPriceCurrencyCode string `json:"total_price_currency_code,omitempty" xml:"total_price_currency_code,omitempty"`
 	// 总金额小数点位数
 	TotalPriceDecimalPlaces string `json:"total_price_decimal_places,omitempty" xml:"total_price_decimal_places,omitempty"`
-	// 是否有效订单0无效，1有效
-	ValidFlag int64 `json:"valid_flag,omitempty" xml:"valid_flag,omitempty"`
 	// 关联的差旅申请单的数据同步关联id
 	OuterTravelHeadId string `json:"outer_travel_head_id,omitempty" xml:"outer_travel_head_id,omitempty"`
+	// 是否B2G的标记位0不是 1是
+	B2gFlag int64 `json:"b2g_flag,omitempty" xml:"b2g_flag,omitempty"`
+	// 订单业务类型，各个业务自定义使用
+	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
+	// 订单id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 线上线下标记0线下 1线上
+	OnlineFlag int64 `json:"online_flag,omitempty" xml:"online_flag,omitempty"`
+	// 订单一级类型 (一级类型，一级类型描述，二级类型，二级类型描述)  (-1, "未知", -1, "未知")  (4, "机票", 24, "飞猪国内机票")  (4, "机票", 47, "飞猪国际机票")  (4, "机票", 48, "飞猪国际询价单机票")  (4, "机票", 49, "GT国际机票")  (5, "酒店", 14, "飞猪国内酒店")  (5, "酒店", 34, "HRS国际酒店")  (6, "用车", 23, "国内用车")
+	OrderClassId int64 `json:"order_class_id,omitempty" xml:"order_class_id,omitempty"`
+	// 订单二级类型 定义参考一级类型
+	OrderClassSecondId int64 `json:"order_class_second_id,omitempty" xml:"order_class_second_id,omitempty"`
+	// 是否有效订单0无效，1有效
+	ValidFlag int64 `json:"valid_flag,omitempty" xml:"valid_flag,omitempty"`
 }

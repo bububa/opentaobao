@@ -12,16 +12,16 @@ import (
 // 喵师傅工人任务批量完成接口
 type TmallServicecenterMsfTasksUpdateAPIRequest struct {
 	model.Params
-	// 工人手机号
-	_workerMobile int64
-	// 服务编码
-	_serviceCode string
-	// 调用来源
-	_source string
 	// 子订单号列表。最多100个
 	_bizOrderIds []int64
 	// 周期序号。必须与子订单列表对应
 	_seqs []int64
+	// 服务编码
+	_serviceCode string
+	// 调用来源
+	_source string
+	// 工人手机号
+	_workerMobile int64
 }
 
 // NewTmallServicecenterMsfTasksUpdateRequest 初始化TmallServicecenterMsfTasksUpdateAPIRequest对象
@@ -45,17 +45,30 @@ func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetWorkerMobile is WorkerMobile Setter
-// 工人手机号
-func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetWorkerMobile(_workerMobile int64) error {
-	r._workerMobile = _workerMobile
-	r.Set("worker_mobile", _workerMobile)
+// SetBizOrderIds is BizOrderIds Setter
+// 子订单号列表。最多100个
+func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetBizOrderIds(_bizOrderIds []int64) error {
+	r._bizOrderIds = _bizOrderIds
+	r.Set("biz_order_ids", _bizOrderIds)
 	return nil
 }
 
-// GetWorkerMobile WorkerMobile Getter
-func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetWorkerMobile() int64 {
-	return r._workerMobile
+// GetBizOrderIds BizOrderIds Getter
+func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetBizOrderIds() []int64 {
+	return r._bizOrderIds
+}
+
+// SetSeqs is Seqs Setter
+// 周期序号。必须与子订单列表对应
+func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetSeqs(_seqs []int64) error {
+	r._seqs = _seqs
+	r.Set("seqs", _seqs)
+	return nil
+}
+
+// GetSeqs Seqs Getter
+func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetSeqs() []int64 {
+	return r._seqs
 }
 
 // SetServiceCode is ServiceCode Setter
@@ -84,28 +97,15 @@ func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetSource() string {
 	return r._source
 }
 
-// SetBizOrderIds is BizOrderIds Setter
-// 子订单号列表。最多100个
-func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetBizOrderIds(_bizOrderIds []int64) error {
-	r._bizOrderIds = _bizOrderIds
-	r.Set("biz_order_ids", _bizOrderIds)
+// SetWorkerMobile is WorkerMobile Setter
+// 工人手机号
+func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetWorkerMobile(_workerMobile int64) error {
+	r._workerMobile = _workerMobile
+	r.Set("worker_mobile", _workerMobile)
 	return nil
 }
 
-// GetBizOrderIds BizOrderIds Getter
-func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetBizOrderIds() []int64 {
-	return r._bizOrderIds
-}
-
-// SetSeqs is Seqs Setter
-// 周期序号。必须与子订单列表对应
-func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetSeqs(_seqs []int64) error {
-	r._seqs = _seqs
-	r.Set("seqs", _seqs)
-	return nil
-}
-
-// GetSeqs Seqs Getter
-func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetSeqs() []int64 {
-	return r._seqs
+// GetWorkerMobile WorkerMobile Getter
+func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetWorkerMobile() int64 {
+	return r._workerMobile
 }

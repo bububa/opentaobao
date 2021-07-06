@@ -26,12 +26,12 @@ type AlibabaBenefitDrawAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_benefit_draw_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 接口返回model
-	Result *AlibabaBenefitDrawResult `json:"result,omitempty" xml:"result,omitempty"`
 	// 权益id
 	PrizeId string `json:"prize_id,omitempty" xml:"prize_id,omitempty"`
 	// 奖品id
 	RightId string `json:"right_id,omitempty" xml:"right_id,omitempty"`
 	// 扩展信息
 	ExtAttribute string `json:"ext_attribute,omitempty" xml:"ext_attribute,omitempty"`
+	// 接口返回model
+	Result *AlibabaBenefitDrawResult `json:"result,omitempty" xml:"result,omitempty"`
 }

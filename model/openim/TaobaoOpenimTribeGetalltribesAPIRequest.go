@@ -12,10 +12,10 @@ import (
 // OPENIM群服务获取用户群列表
 type TaobaoOpenimTribeGetalltribesAPIRequest struct {
 	model.Params
-	// 用户信息
-	_user *OpenImUser
 	// 群类型
 	_tribeTypes []int64
+	// 用户信息
+	_user *OpenImUser
 }
 
 // NewTaobaoOpenimTribeGetalltribesRequest 初始化TaobaoOpenimTribeGetalltribesAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoOpenimTribeGetalltribesAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetUser is User Setter
-// 用户信息
-func (r *TaobaoOpenimTribeGetalltribesAPIRequest) SetUser(_user *OpenImUser) error {
-	r._user = _user
-	r.Set("user", _user)
-	return nil
-}
-
-// GetUser User Getter
-func (r TaobaoOpenimTribeGetalltribesAPIRequest) GetUser() *OpenImUser {
-	return r._user
-}
-
 // SetTribeTypes is TribeTypes Setter
 // 群类型
 func (r *TaobaoOpenimTribeGetalltribesAPIRequest) SetTribeTypes(_tribeTypes []int64) error {
@@ -63,4 +50,17 @@ func (r *TaobaoOpenimTribeGetalltribesAPIRequest) SetTribeTypes(_tribeTypes []in
 // GetTribeTypes TribeTypes Getter
 func (r TaobaoOpenimTribeGetalltribesAPIRequest) GetTribeTypes() []int64 {
 	return r._tribeTypes
+}
+
+// SetUser is User Setter
+// 用户信息
+func (r *TaobaoOpenimTribeGetalltribesAPIRequest) SetUser(_user *OpenImUser) error {
+	r._user = _user
+	r.Set("user", _user)
+	return nil
+}
+
+// GetUser User Getter
+func (r TaobaoOpenimTribeGetalltribesAPIRequest) GetUser() *OpenImUser {
+	return r._user
 }

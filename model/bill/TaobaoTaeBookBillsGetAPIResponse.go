@@ -22,8 +22,8 @@ type TaobaoTaeBookBillsGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 虚拟账户账单列表
 	Bills []TopAcctCashJourDto `json:"bills,omitempty" xml:"bills>top_acct_cash_jour_dto,omitempty"`
-	// 是否有下一页
-	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 	// 当前查询的结果数,非总数
 	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+	// 是否有下一页
+	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 }

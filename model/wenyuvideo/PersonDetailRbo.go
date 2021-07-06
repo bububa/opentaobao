@@ -2,8 +2,20 @@ package wenyuvideo
 
 // PersonDetailRbo 结构体
 type PersonDetailRbo struct {
-	// 主键(优酷人物ID)
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 人物类型：unknow,director,starring,performer,singer,lyricswriter,composer,screenwriter,producer,host,voice,      * executive_producer,teacher,original, interview,paike
+	PersonTypeList []string `json:"person_type_list,omitempty" xml:"person_type_list>string,omitempty"`
+	// 人物国籍
+	NationalityList []string `json:"nationality_list,omitempty" xml:"nationality_list>string,omitempty"`
+	// 职业
+	OccupationList []string `json:"occupation_list,omitempty" xml:"occupation_list>string,omitempty"`
+	// 人物性质：牛人,拍客,网络红人
+	PersonKindList []string `json:"person_kind_list,omitempty" xml:"person_kind_list>string,omitempty"`
+	// 组合成员，如果人物是一个组合，则允许设置下面的成员，人员也是一人物记录。输出格式[{'id':20349,'name':'张宇凡'},{'id':35994,'name':'袁泉'}]
+	MemberList []string `json:"member_list,omitempty" xml:"member_list>string,omitempty"`
+	// 人物相关视频推荐
+	RefShows []ShowBaseRbo `json:"ref_shows,omitempty" xml:"ref_shows>show_base_rbo,omitempty"`
+	// 人物相关人物推荐
+	RefPersons []PersonRbo `json:"ref_persons,omitempty" xml:"ref_persons>person_rbo,omitempty"`
 	// 人物名字
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 图片
@@ -28,20 +40,8 @@ type PersonDetailRbo struct {
 	Height string `json:"height,omitempty" xml:"height,omitempty"`
 	// 血型 A、B、AB、O
 	BloodType string `json:"blood_type,omitempty" xml:"blood_type,omitempty"`
-	// 人物类型：unknow,director,starring,performer,singer,lyricswriter,composer,screenwriter,producer,host,voice,      * executive_producer,teacher,original, interview,paike
-	PersonTypeList []string `json:"person_type_list,omitempty" xml:"person_type_list>string,omitempty"`
-	// 人物国籍
-	NationalityList []string `json:"nationality_list,omitempty" xml:"nationality_list>string,omitempty"`
-	// 职业
-	OccupationList []string `json:"occupation_list,omitempty" xml:"occupation_list>string,omitempty"`
-	// 人物性质：牛人,拍客,网络红人
-	PersonKindList []string `json:"person_kind_list,omitempty" xml:"person_kind_list>string,omitempty"`
-	// 组合成员，如果人物是一个组合，则允许设置下面的成员，人员也是一人物记录。输出格式[{'id':20349,'name':'张宇凡'},{'id':35994,'name':'袁泉'}]
-	MemberList []string `json:"member_list,omitempty" xml:"member_list>string,omitempty"`
-	// 人物相关视频推荐
-	RefShows []ShowBaseRbo `json:"ref_shows,omitempty" xml:"ref_shows>show_base_rbo,omitempty"`
-	// 人物相关人物推荐
-	RefPersons []PersonRbo `json:"ref_persons,omitempty" xml:"ref_persons>person_rbo,omitempty"`
 	// 星座
 	Constellation string `json:"constellation,omitempty" xml:"constellation,omitempty"`
+	// 主键(优酷人物ID)
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 }

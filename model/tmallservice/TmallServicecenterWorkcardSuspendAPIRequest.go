@@ -16,12 +16,12 @@ type TmallServicecenterWorkcardSuspendAPIRequest struct {
 	_reserveServiceDate string
 	// 下次联系时间
 	_gmtNextContact string
+	// 挂起原因描述
+	_failDesc string
 	// 工单id
 	_workcardId int64
 	// 挂起原因类型code
 	_failCode int64
-	// 挂起原因描述
-	_failDesc string
 }
 
 // NewTmallServicecenterWorkcardSuspendRequest 初始化TmallServicecenterWorkcardSuspendAPIRequest对象
@@ -71,6 +71,19 @@ func (r TmallServicecenterWorkcardSuspendAPIRequest) GetGmtNextContact() string 
 	return r._gmtNextContact
 }
 
+// SetFailDesc is FailDesc Setter
+// 挂起原因描述
+func (r *TmallServicecenterWorkcardSuspendAPIRequest) SetFailDesc(_failDesc string) error {
+	r._failDesc = _failDesc
+	r.Set("fail_desc", _failDesc)
+	return nil
+}
+
+// GetFailDesc FailDesc Getter
+func (r TmallServicecenterWorkcardSuspendAPIRequest) GetFailDesc() string {
+	return r._failDesc
+}
+
 // SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *TmallServicecenterWorkcardSuspendAPIRequest) SetWorkcardId(_workcardId int64) error {
@@ -95,17 +108,4 @@ func (r *TmallServicecenterWorkcardSuspendAPIRequest) SetFailCode(_failCode int6
 // GetFailCode FailCode Getter
 func (r TmallServicecenterWorkcardSuspendAPIRequest) GetFailCode() int64 {
 	return r._failCode
-}
-
-// SetFailDesc is FailDesc Setter
-// 挂起原因描述
-func (r *TmallServicecenterWorkcardSuspendAPIRequest) SetFailDesc(_failDesc string) error {
-	r._failDesc = _failDesc
-	r.Set("fail_desc", _failDesc)
-	return nil
-}
-
-// GetFailDesc FailDesc Getter
-func (r TmallServicecenterWorkcardSuspendAPIRequest) GetFailDesc() string {
-	return r._failDesc
 }

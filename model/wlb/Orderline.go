@@ -16,8 +16,6 @@ type OrderLine struct {
 	ExpireDate string `json:"expire_date,omitempty" xml:"expire_date,omitempty"`
 	// 生产批号
 	ProduceCode string `json:"produce_code,omitempty" xml:"produce_code,omitempty"`
-	// 商品数量
-	ItemQuantity int64 `json:"item_quantity,omitempty" xml:"item_quantity,omitempty"`
 	// 商品编码
 	ItemCode string `json:"item_code,omitempty" xml:"item_code,omitempty"`
 	// 商品名称
@@ -28,4 +26,6 @@ type OrderLine struct {
 	OrderLineNo string `json:"order_line_no,omitempty" xml:"order_line_no,omitempty"`
 	// 数量
 	Amount string `json:"amount,omitempty" xml:"amount,omitempty"`
+	// 商品数量
+	ItemQuantity int64 `json:"item_quantity,omitempty" xml:"item_quantity,omitempty"`
 }

@@ -8,12 +8,12 @@ type MediaItem struct {
 	AlbumId string `json:"album_id,omitempty" xml:"album_id,omitempty"`
 	// 歌曲源
 	Source string `json:"source,omitempty" xml:"source,omitempty"`
-	// 歌曲长度
-	Length int64 `json:"length,omitempty" xml:"length,omitempty"`
-	// 是否为专辑
-	IsAlbum bool `json:"is_album,omitempty" xml:"is_album,omitempty"`
 	// 歌曲id
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 扩展字段
 	ExtendInfo string `json:"extend_info,omitempty" xml:"extend_info,omitempty"`
+	// 歌曲长度
+	Length int64 `json:"length,omitempty" xml:"length,omitempty"`
+	// 是否为专辑
+	IsAlbum bool `json:"is_album,omitempty" xml:"is_album,omitempty"`
 }

@@ -18,12 +18,12 @@ type StockQueryRequest struct {
 	ProductDate string `json:"productDate,omitempty" xml:"productDate,omitempty"`
 	// 商品过期日期(YYYY-MM-DD)
 	ExpireDate string `json:"expireDate,omitempty" xml:"expireDate,omitempty"`
+	// 备注
+	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 当前页(从1开始)
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
 	// 每页条数(最多100条)
 	PageSize int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenStockQueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
-	// 备注
-	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 }

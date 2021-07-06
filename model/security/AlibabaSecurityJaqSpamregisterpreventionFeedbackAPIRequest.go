@@ -14,14 +14,14 @@ type AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest struct {
 	model.Params
 	// 查询接口返回的id
 	_itemId string
+	// 用户不认同聚安全返回结果的原因描述
+	_denyReason string
 	// 聚安全返回的决定信息。当feedBack为0时可以不添
 	_jaqDecision int64
 	// 用户自己的决定信息。当feedBack为0时可以不添。
 	_customerDecision int64
 	// 用户不认同聚安全返回结果的原因类型。0：同意判定；1：和三方结果不符；2：用户投诉；3:经过人工review判断;9:	其他。
 	_feedBack int64
-	// 用户不认同聚安全返回结果的原因描述
-	_denyReason string
 }
 
 // NewAlibabaSecurityJaqSpamregisterpreventionFeedbackRequest 初始化AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest对象
@@ -56,6 +56,19 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetItemId(_
 // GetItemId ItemId Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) GetItemId() string {
 	return r._itemId
+}
+
+// SetDenyReason is DenyReason Setter
+// 用户不认同聚安全返回结果的原因描述
+func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetDenyReason(_denyReason string) error {
+	r._denyReason = _denyReason
+	r.Set("deny_reason", _denyReason)
+	return nil
+}
+
+// GetDenyReason DenyReason Getter
+func (r AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) GetDenyReason() string {
+	return r._denyReason
 }
 
 // SetJaqDecision is JaqDecision Setter
@@ -95,17 +108,4 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetFeedBack
 // GetFeedBack FeedBack Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) GetFeedBack() int64 {
 	return r._feedBack
-}
-
-// SetDenyReason is DenyReason Setter
-// 用户不认同聚安全返回结果的原因描述
-func (r *AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) SetDenyReason(_denyReason string) error {
-	r._denyReason = _denyReason
-	r.Set("deny_reason", _denyReason)
-	return nil
-}
-
-// GetDenyReason DenyReason Getter
-func (r AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIRequest) GetDenyReason() string {
-	return r._denyReason
 }

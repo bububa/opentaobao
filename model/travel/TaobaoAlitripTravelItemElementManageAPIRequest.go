@@ -12,12 +12,8 @@ import (
 // 资源元素管理接口：提供商家管理（增删改）基本资源元素信息。基本资源元素可供多个商品共享
 type TaobaoAlitripTravelItemElementManageAPIRequest struct {
 	model.Params
-	// 必填，操作类型：1-新增，2-修改，3-删除。。特别注意：删除 为逻辑删除，即该outer_id所对应的元素还存在但是会置为无效状态，重新编辑修改即可恢复为有效状态。因此该id一旦使用将不可重复
-	_operation int64
 	// 必填，元素的外部商家编码，必须唯一。编辑、删除时将根据该编码找到对应元素。
 	_outerId string
-	// 资源元素类型，新增时必填：1-景点，2-酒店，5-交通接驳，6-WIFI库，7-电话卡，8-餐饮，9-签证库，11-特色活动，999-其他
-	_elementType int64
 	// 元素名称，新增时必填； 注意：Wifi库的使用地和签证库所在国家均适用这个字段
 	_name string
 	// 元素所在城市，景点、酒店在新增时必填
@@ -26,6 +22,10 @@ type TaobaoAlitripTravelItemElementManageAPIRequest struct {
 	_type string
 	// 当新增“交通接驳、餐饮、特色活动、其他”资源类型时 必填
 	_desc string
+	// 必填，操作类型：1-新增，2-修改，3-删除。。特别注意：删除 为逻辑删除，即该outer_id所对应的元素还存在但是会置为无效状态，重新编辑修改即可恢复为有效状态。因此该id一旦使用将不可重复
+	_operation int64
+	// 资源元素类型，新增时必填：1-景点，2-酒店，5-交通接驳，6-WIFI库，7-电话卡，8-餐饮，9-签证库，11-特色活动，999-其他
+	_elementType int64
 }
 
 // NewTaobaoAlitripTravelItemElementManageRequest 初始化TaobaoAlitripTravelItemElementManageAPIRequest对象
@@ -49,19 +49,6 @@ func (r TaobaoAlitripTravelItemElementManageAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// SetOperation is Operation Setter
-// 必填，操作类型：1-新增，2-修改，3-删除。。特别注意：删除 为逻辑删除，即该outer_id所对应的元素还存在但是会置为无效状态，重新编辑修改即可恢复为有效状态。因此该id一旦使用将不可重复
-func (r *TaobaoAlitripTravelItemElementManageAPIRequest) SetOperation(_operation int64) error {
-	r._operation = _operation
-	r.Set("operation", _operation)
-	return nil
-}
-
-// GetOperation Operation Getter
-func (r TaobaoAlitripTravelItemElementManageAPIRequest) GetOperation() int64 {
-	return r._operation
-}
-
 // SetOuterId is OuterId Setter
 // 必填，元素的外部商家编码，必须唯一。编辑、删除时将根据该编码找到对应元素。
 func (r *TaobaoAlitripTravelItemElementManageAPIRequest) SetOuterId(_outerId string) error {
@@ -73,19 +60,6 @@ func (r *TaobaoAlitripTravelItemElementManageAPIRequest) SetOuterId(_outerId str
 // GetOuterId OuterId Getter
 func (r TaobaoAlitripTravelItemElementManageAPIRequest) GetOuterId() string {
 	return r._outerId
-}
-
-// SetElementType is ElementType Setter
-// 资源元素类型，新增时必填：1-景点，2-酒店，5-交通接驳，6-WIFI库，7-电话卡，8-餐饮，9-签证库，11-特色活动，999-其他
-func (r *TaobaoAlitripTravelItemElementManageAPIRequest) SetElementType(_elementType int64) error {
-	r._elementType = _elementType
-	r.Set("element_type", _elementType)
-	return nil
-}
-
-// GetElementType ElementType Getter
-func (r TaobaoAlitripTravelItemElementManageAPIRequest) GetElementType() int64 {
-	return r._elementType
 }
 
 // SetName is Name Setter
@@ -138,4 +112,30 @@ func (r *TaobaoAlitripTravelItemElementManageAPIRequest) SetDesc(_desc string) e
 // GetDesc Desc Getter
 func (r TaobaoAlitripTravelItemElementManageAPIRequest) GetDesc() string {
 	return r._desc
+}
+
+// SetOperation is Operation Setter
+// 必填，操作类型：1-新增，2-修改，3-删除。。特别注意：删除 为逻辑删除，即该outer_id所对应的元素还存在但是会置为无效状态，重新编辑修改即可恢复为有效状态。因此该id一旦使用将不可重复
+func (r *TaobaoAlitripTravelItemElementManageAPIRequest) SetOperation(_operation int64) error {
+	r._operation = _operation
+	r.Set("operation", _operation)
+	return nil
+}
+
+// GetOperation Operation Getter
+func (r TaobaoAlitripTravelItemElementManageAPIRequest) GetOperation() int64 {
+	return r._operation
+}
+
+// SetElementType is ElementType Setter
+// 资源元素类型，新增时必填：1-景点，2-酒店，5-交通接驳，6-WIFI库，7-电话卡，8-餐饮，9-签证库，11-特色活动，999-其他
+func (r *TaobaoAlitripTravelItemElementManageAPIRequest) SetElementType(_elementType int64) error {
+	r._elementType = _elementType
+	r.Set("element_type", _elementType)
+	return nil
+}
+
+// GetElementType ElementType Getter
+func (r TaobaoAlitripTravelItemElementManageAPIRequest) GetElementType() int64 {
+	return r._elementType
 }

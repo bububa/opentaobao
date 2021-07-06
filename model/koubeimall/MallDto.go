@@ -12,8 +12,6 @@ type MallDto struct {
 	MallCover string `json:"mall_cover,omitempty" xml:"mall_cover,omitempty"`
 	// 商圈ID
 	MallId string `json:"mall_id,omitempty" xml:"mall_id,omitempty"`
-	// 地理位置信息模型
-	DistrictInfo *DistrictInfo `json:"district_info,omitempty" xml:"district_info,omitempty"`
 	// 商圈主页小程序URL，根据入参参数display_channel信息，获取对应端小程序URL，默认支付宝小程序链接
 	MallHomePageUrl string `json:"mall_home_page_url,omitempty" xml:"mall_home_page_url,omitempty"`
 	// 营业时间
@@ -24,4 +22,6 @@ type MallDto struct {
 	MallLabel string `json:"mall_label,omitempty" xml:"mall_label,omitempty"`
 	// 距离
 	Distance string `json:"distance,omitempty" xml:"distance,omitempty"`
+	// 地理位置信息模型
+	DistrictInfo *DistrictInfo `json:"district_info,omitempty" xml:"district_info,omitempty"`
 }

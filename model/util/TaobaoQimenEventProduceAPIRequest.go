@@ -20,10 +20,10 @@ type TaobaoQimenEventProduceAPIRequest struct {
 	_ext string
 	// 商家平台编码.MAIN:官方渠道,JD:京东,DD:当当,PP:拍拍,YX:易讯,EBAY:ebay,AMAZON:亚马逊,SN:苏宁,GM:国美,WPH:唯品会,JM:聚美,MGJ:蘑菇街,YT:银泰,YHD:1号店,1688:1688,POS:POS门店,OTHER:其他
 	_platform string
-	// 订单创建时间,数字
-	_create int64
 	// 外部商家名称。必须同时填写platform
 	_nick string
+	// 订单创建时间,数字
+	_create int64
 }
 
 // NewTaobaoQimenEventProduceRequest 初始化TaobaoQimenEventProduceAPIRequest对象
@@ -99,19 +99,6 @@ func (r TaobaoQimenEventProduceAPIRequest) GetPlatform() string {
 	return r._platform
 }
 
-// SetCreate is Create Setter
-// 订单创建时间,数字
-func (r *TaobaoQimenEventProduceAPIRequest) SetCreate(_create int64) error {
-	r._create = _create
-	r.Set("create", _create)
-	return nil
-}
-
-// GetCreate Create Getter
-func (r TaobaoQimenEventProduceAPIRequest) GetCreate() int64 {
-	return r._create
-}
-
 // SetNick is Nick Setter
 // 外部商家名称。必须同时填写platform
 func (r *TaobaoQimenEventProduceAPIRequest) SetNick(_nick string) error {
@@ -123,4 +110,17 @@ func (r *TaobaoQimenEventProduceAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoQimenEventProduceAPIRequest) GetNick() string {
 	return r._nick
+}
+
+// SetCreate is Create Setter
+// 订单创建时间,数字
+func (r *TaobaoQimenEventProduceAPIRequest) SetCreate(_create int64) error {
+	r._create = _create
+	r.Set("create", _create)
+	return nil
+}
+
+// GetCreate Create Getter
+func (r TaobaoQimenEventProduceAPIRequest) GetCreate() int64 {
+	return r._create
 }

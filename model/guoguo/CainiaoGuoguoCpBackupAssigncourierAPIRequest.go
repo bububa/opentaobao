@@ -18,14 +18,14 @@ type CainiaoGuoguoCpBackupAssigncourierAPIRequest struct {
 	_cpUserId string
 	// LP订单号
 	_lpCode string
-	// 任务ID
-	_taskId int64
 	// 指派/改派原因编码
 	_assignReasonCode string
 	// 指派/改派原因
 	_assignReason string
 	// 小件员手机号
 	_mobile string
+	// 任务ID
+	_taskId int64
 }
 
 // NewCainiaoGuoguoCpBackupAssigncourierRequest 初始化CainiaoGuoguoCpBackupAssigncourierAPIRequest对象
@@ -88,19 +88,6 @@ func (r CainiaoGuoguoCpBackupAssigncourierAPIRequest) GetLpCode() string {
 	return r._lpCode
 }
 
-// SetTaskId is TaskId Setter
-// 任务ID
-func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetTaskId(_taskId int64) error {
-	r._taskId = _taskId
-	r.Set("task_id", _taskId)
-	return nil
-}
-
-// GetTaskId TaskId Getter
-func (r CainiaoGuoguoCpBackupAssigncourierAPIRequest) GetTaskId() int64 {
-	return r._taskId
-}
-
 // SetAssignReasonCode is AssignReasonCode Setter
 // 指派/改派原因编码
 func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetAssignReasonCode(_assignReasonCode string) error {
@@ -138,4 +125,17 @@ func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetMobile(_mobile string)
 // GetMobile Mobile Getter
 func (r CainiaoGuoguoCpBackupAssigncourierAPIRequest) GetMobile() string {
 	return r._mobile
+}
+
+// SetTaskId is TaskId Setter
+// 任务ID
+func (r *CainiaoGuoguoCpBackupAssigncourierAPIRequest) SetTaskId(_taskId int64) error {
+	r._taskId = _taskId
+	r.Set("task_id", _taskId)
+	return nil
+}
+
+// GetTaskId TaskId Getter
+func (r CainiaoGuoguoCpBackupAssigncourierAPIRequest) GetTaskId() int64 {
+	return r._taskId
 }

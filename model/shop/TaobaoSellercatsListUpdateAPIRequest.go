@@ -12,12 +12,12 @@ import (
 // 此API更新卖家店铺内自定义类目 <br/>注：因为缓存的关系，添加的新类目需8个小时后才可以在淘宝页面上正常显示，但是不影响在该类目下商品发布
 type TaobaoSellercatsListUpdateAPIRequest struct {
 	model.Params
-	// 卖家自定义类目编号
-	_cid int64
 	// 卖家自定义类目名称。不超过20个字符
 	_name string
 	// 链接图片URL地址
 	_pictUrl string
+	// 卖家自定义类目编号
+	_cid int64
 	// 该类目在页面上的排序位置,取值范围:大于零的整数
 	_sortOrder int64
 }
@@ -41,19 +41,6 @@ func (r TaobaoSellercatsListUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetCid is Cid Setter
-// 卖家自定义类目编号
-func (r *TaobaoSellercatsListUpdateAPIRequest) SetCid(_cid int64) error {
-	r._cid = _cid
-	r.Set("cid", _cid)
-	return nil
-}
-
-// GetCid Cid Getter
-func (r TaobaoSellercatsListUpdateAPIRequest) GetCid() int64 {
-	return r._cid
 }
 
 // SetName is Name Setter
@@ -80,6 +67,19 @@ func (r *TaobaoSellercatsListUpdateAPIRequest) SetPictUrl(_pictUrl string) error
 // GetPictUrl PictUrl Getter
 func (r TaobaoSellercatsListUpdateAPIRequest) GetPictUrl() string {
 	return r._pictUrl
+}
+
+// SetCid is Cid Setter
+// 卖家自定义类目编号
+func (r *TaobaoSellercatsListUpdateAPIRequest) SetCid(_cid int64) error {
+	r._cid = _cid
+	r.Set("cid", _cid)
+	return nil
+}
+
+// GetCid Cid Getter
+func (r TaobaoSellercatsListUpdateAPIRequest) GetCid() int64 {
+	return r._cid
 }
 
 // SetSortOrder is SortOrder Setter

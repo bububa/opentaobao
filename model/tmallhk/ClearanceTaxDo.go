@@ -2,6 +2,8 @@ package tmallhk
 
 // ClearanceTaxDo 结构体
 type ClearanceTaxDo struct {
+	// 海关税收编码
+	Hscode string `json:"hscode,omitempty" xml:"hscode,omitempty"`
 	// 关税，主&子
 	CustomDutyFee int64 `json:"custom_duty_fee,omitempty" xml:"custom_duty_fee,omitempty"`
 	// 优惠，主&子
@@ -14,8 +16,6 @@ type ClearanceTaxDo struct {
 	CustomsTotalFee int64 `json:"customs_total_fee,omitempty" xml:"customs_total_fee,omitempty"`
 	// 消费税，主&子
 	ExciseDutyFee int64 `json:"excise_duty_fee,omitempty" xml:"excise_duty_fee,omitempty"`
-	// 海关税收编码
-	Hscode string `json:"hscode,omitempty" xml:"hscode,omitempty"`
 	// 税费，子订单
 	OrderLineTotalTaxFee int64 `json:"order_line_total_tax_fee,omitempty" xml:"order_line_total_tax_fee,omitempty"`
 	// 总税费，主订单

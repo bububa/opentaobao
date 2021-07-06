@@ -14,10 +14,10 @@ import (
 // HSF方法名称：getByCode
 type AlibabaCampusSpaceTypeGetbycodeAPIRequest struct {
 	model.Params
-	// 查询条件封装
-	_param0 *WorkBenchContext
 	// 空间类别编码
 	_typeCode string
+	// 查询条件封装
+	_param0 *WorkBenchContext
 }
 
 // NewAlibabaCampusSpaceTypeGetbycodeRequest 初始化AlibabaCampusSpaceTypeGetbycodeAPIRequest对象
@@ -41,19 +41,6 @@ func (r AlibabaCampusSpaceTypeGetbycodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetParam0 is Param0 Setter
-// 查询条件封装
-func (r *AlibabaCampusSpaceTypeGetbycodeAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
-	r._param0 = _param0
-	r.Set("param0", _param0)
-	return nil
-}
-
-// GetParam0 Param0 Getter
-func (r AlibabaCampusSpaceTypeGetbycodeAPIRequest) GetParam0() *WorkBenchContext {
-	return r._param0
-}
-
 // SetTypeCode is TypeCode Setter
 // 空间类别编码
 func (r *AlibabaCampusSpaceTypeGetbycodeAPIRequest) SetTypeCode(_typeCode string) error {
@@ -65,4 +52,17 @@ func (r *AlibabaCampusSpaceTypeGetbycodeAPIRequest) SetTypeCode(_typeCode string
 // GetTypeCode TypeCode Getter
 func (r AlibabaCampusSpaceTypeGetbycodeAPIRequest) GetTypeCode() string {
 	return r._typeCode
+}
+
+// SetParam0 is Param0 Setter
+// 查询条件封装
+func (r *AlibabaCampusSpaceTypeGetbycodeAPIRequest) SetParam0(_param0 *WorkBenchContext) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// GetParam0 Param0 Getter
+func (r AlibabaCampusSpaceTypeGetbycodeAPIRequest) GetParam0() *WorkBenchContext {
+	return r._param0
 }

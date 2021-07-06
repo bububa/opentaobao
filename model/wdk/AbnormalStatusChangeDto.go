@@ -22,8 +22,8 @@ type AbnormalStatusChangeDto struct {
 	AbnormalOrderId string `json:"abnormal_order_id,omitempty" xml:"abnormal_order_id,omitempty"`
 	// 状态变更类型
 	StatusChangeType string `json:"status_change_type,omitempty" xml:"status_change_type,omitempty"`
-	// 参数
-	AbnormalContentDto *AbnormalContentDto `json:"abnormal_content_dto,omitempty" xml:"abnormal_content_dto,omitempty"`
 	// 异常协同单ID
 	AbnormalCoordinationId string `json:"abnormal_coordination_id,omitempty" xml:"abnormal_coordination_id,omitempty"`
+	// 参数
+	AbnormalContentDto *AbnormalContentDto `json:"abnormal_content_dto,omitempty" xml:"abnormal_content_dto,omitempty"`
 }

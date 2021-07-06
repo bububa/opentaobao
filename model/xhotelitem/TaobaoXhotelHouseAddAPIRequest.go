@@ -18,16 +18,8 @@ type TaobaoXhotelHouseAddAPIRequest struct {
 	_name string
 	// 酒店曾用名
 	_usedName string
-	// 是否国内酒店。0:国内;1:国外。默认是国内
-	_domestic int64
 	// domestic为0时，固定China； domestic为1时，必须传定义的海外国家编码值。参见：http://hotel.alitrip.com/area.htm
 	_country string
-	// 省份编码。选填，不填入的时候已city字段为准.参见：http://hotel.alitrip.com/area.htm，domestic为false时默认为0
-	_province int64
-	// 城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新酒店时为可选）
-	_city int64
-	// 区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm
-	_district int64
 	// 商业区（圈）长度不超过20字
 	_business string
 	// 酒店地址。长度不能超过120。不填入会导致不能自动匹配,此地址为下单前展示给用户地址
@@ -42,8 +34,6 @@ type TaobaoXhotelHouseAddAPIRequest struct {
 	_tel string
 	// 扩展信息的JSON。注：此字段的值需要ISV在接入前与淘宝沟通，且确认能解析
 	_extend string
-	// 该字段只有确定的时候，才允许填入。用于标示和淘宝酒店的匹配关系。目前尚未启动该字段。
-	_shid int64
 	// 对接系统商名称：可为空不要乱填，需要申请后使用
 	_vendor string
 	// 酒店档次，星级。取值范围为1,1.5,2,2.5,3,3.5,4,4.5,5
@@ -54,8 +44,6 @@ type TaobaoXhotelHouseAddAPIRequest struct {
 	_decorateTime string
 	// 楼层信息。
 	_floors string
-	// 房间数 0~9999之内的数字
-	_rooms int64
 	// 酒店描述
 	_description string
 	// 酒店入住政策，{"10003":"仅2岁以上儿童可随同入住"}，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&docType=1&articleId=108416&previewCode=987A11324A278EF679E24102BA30D426 中type=10、code=10003,value为文字描述
@@ -90,6 +78,18 @@ type TaobaoXhotelHouseAddAPIRequest struct {
 	_arroundDesc string
 	// 用户下单之后展示的详细地址
 	_realAddress string
+	// 是否国内酒店。0:国内;1:国外。默认是国内
+	_domestic int64
+	// 省份编码。选填，不填入的时候已city字段为准.参见：http://hotel.alitrip.com/area.htm，domestic为false时默认为0
+	_province int64
+	// 城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新酒店时为可选）
+	_city int64
+	// 区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm
+	_district int64
+	// 该字段只有确定的时候，才允许填入。用于标示和淘宝酒店的匹配关系。目前尚未启动该字段。
+	_shid int64
+	// 房间数 0~9999之内的数字
+	_rooms int64
 	// 数据状态 0:正常，-1:删除，-2:停售
 	_status int64
 }
@@ -154,19 +154,6 @@ func (r TaobaoXhotelHouseAddAPIRequest) GetUsedName() string {
 	return r._usedName
 }
 
-// SetDomestic is Domestic Setter
-// 是否国内酒店。0:国内;1:国外。默认是国内
-func (r *TaobaoXhotelHouseAddAPIRequest) SetDomestic(_domestic int64) error {
-	r._domestic = _domestic
-	r.Set("domestic", _domestic)
-	return nil
-}
-
-// GetDomestic Domestic Getter
-func (r TaobaoXhotelHouseAddAPIRequest) GetDomestic() int64 {
-	return r._domestic
-}
-
 // SetCountry is Country Setter
 // domestic为0时，固定China； domestic为1时，必须传定义的海外国家编码值。参见：http://hotel.alitrip.com/area.htm
 func (r *TaobaoXhotelHouseAddAPIRequest) SetCountry(_country string) error {
@@ -178,45 +165,6 @@ func (r *TaobaoXhotelHouseAddAPIRequest) SetCountry(_country string) error {
 // GetCountry Country Getter
 func (r TaobaoXhotelHouseAddAPIRequest) GetCountry() string {
 	return r._country
-}
-
-// SetProvince is Province Setter
-// 省份编码。选填，不填入的时候已city字段为准.参见：http://hotel.alitrip.com/area.htm，domestic为false时默认为0
-func (r *TaobaoXhotelHouseAddAPIRequest) SetProvince(_province int64) error {
-	r._province = _province
-	r.Set("province", _province)
-	return nil
-}
-
-// GetProvince Province Getter
-func (r TaobaoXhotelHouseAddAPIRequest) GetProvince() int64 {
-	return r._province
-}
-
-// SetCity is City Setter
-// 城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新酒店时为可选）
-func (r *TaobaoXhotelHouseAddAPIRequest) SetCity(_city int64) error {
-	r._city = _city
-	r.Set("city", _city)
-	return nil
-}
-
-// GetCity City Getter
-func (r TaobaoXhotelHouseAddAPIRequest) GetCity() int64 {
-	return r._city
-}
-
-// SetDistrict is District Setter
-// 区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm
-func (r *TaobaoXhotelHouseAddAPIRequest) SetDistrict(_district int64) error {
-	r._district = _district
-	r.Set("district", _district)
-	return nil
-}
-
-// GetDistrict District Getter
-func (r TaobaoXhotelHouseAddAPIRequest) GetDistrict() int64 {
-	return r._district
 }
 
 // SetBusiness is Business Setter
@@ -310,19 +258,6 @@ func (r TaobaoXhotelHouseAddAPIRequest) GetExtend() string {
 	return r._extend
 }
 
-// SetShid is Shid Setter
-// 该字段只有确定的时候，才允许填入。用于标示和淘宝酒店的匹配关系。目前尚未启动该字段。
-func (r *TaobaoXhotelHouseAddAPIRequest) SetShid(_shid int64) error {
-	r._shid = _shid
-	r.Set("shid", _shid)
-	return nil
-}
-
-// GetShid Shid Getter
-func (r TaobaoXhotelHouseAddAPIRequest) GetShid() int64 {
-	return r._shid
-}
-
 // SetVendor is Vendor Setter
 // 对接系统商名称：可为空不要乱填，需要申请后使用
 func (r *TaobaoXhotelHouseAddAPIRequest) SetVendor(_vendor string) error {
@@ -386,19 +321,6 @@ func (r *TaobaoXhotelHouseAddAPIRequest) SetFloors(_floors string) error {
 // GetFloors Floors Getter
 func (r TaobaoXhotelHouseAddAPIRequest) GetFloors() string {
 	return r._floors
-}
-
-// SetRooms is Rooms Setter
-// 房间数 0~9999之内的数字
-func (r *TaobaoXhotelHouseAddAPIRequest) SetRooms(_rooms int64) error {
-	r._rooms = _rooms
-	r.Set("rooms", _rooms)
-	return nil
-}
-
-// GetRooms Rooms Getter
-func (r TaobaoXhotelHouseAddAPIRequest) GetRooms() int64 {
-	return r._rooms
 }
 
 // SetDescription is Description Setter
@@ -620,6 +542,84 @@ func (r *TaobaoXhotelHouseAddAPIRequest) SetRealAddress(_realAddress string) err
 // GetRealAddress RealAddress Getter
 func (r TaobaoXhotelHouseAddAPIRequest) GetRealAddress() string {
 	return r._realAddress
+}
+
+// SetDomestic is Domestic Setter
+// 是否国内酒店。0:国内;1:国外。默认是国内
+func (r *TaobaoXhotelHouseAddAPIRequest) SetDomestic(_domestic int64) error {
+	r._domestic = _domestic
+	r.Set("domestic", _domestic)
+	return nil
+}
+
+// GetDomestic Domestic Getter
+func (r TaobaoXhotelHouseAddAPIRequest) GetDomestic() int64 {
+	return r._domestic
+}
+
+// SetProvince is Province Setter
+// 省份编码。选填，不填入的时候已city字段为准.参见：http://hotel.alitrip.com/area.htm，domestic为false时默认为0
+func (r *TaobaoXhotelHouseAddAPIRequest) SetProvince(_province int64) error {
+	r._province = _province
+	r.Set("province", _province)
+	return nil
+}
+
+// GetProvince Province Getter
+func (r TaobaoXhotelHouseAddAPIRequest) GetProvince() int64 {
+	return r._province
+}
+
+// SetCity is City Setter
+// 城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新酒店时为可选）
+func (r *TaobaoXhotelHouseAddAPIRequest) SetCity(_city int64) error {
+	r._city = _city
+	r.Set("city", _city)
+	return nil
+}
+
+// GetCity City Getter
+func (r TaobaoXhotelHouseAddAPIRequest) GetCity() int64 {
+	return r._city
+}
+
+// SetDistrict is District Setter
+// 区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm
+func (r *TaobaoXhotelHouseAddAPIRequest) SetDistrict(_district int64) error {
+	r._district = _district
+	r.Set("district", _district)
+	return nil
+}
+
+// GetDistrict District Getter
+func (r TaobaoXhotelHouseAddAPIRequest) GetDistrict() int64 {
+	return r._district
+}
+
+// SetShid is Shid Setter
+// 该字段只有确定的时候，才允许填入。用于标示和淘宝酒店的匹配关系。目前尚未启动该字段。
+func (r *TaobaoXhotelHouseAddAPIRequest) SetShid(_shid int64) error {
+	r._shid = _shid
+	r.Set("shid", _shid)
+	return nil
+}
+
+// GetShid Shid Getter
+func (r TaobaoXhotelHouseAddAPIRequest) GetShid() int64 {
+	return r._shid
+}
+
+// SetRooms is Rooms Setter
+// 房间数 0~9999之内的数字
+func (r *TaobaoXhotelHouseAddAPIRequest) SetRooms(_rooms int64) error {
+	r._rooms = _rooms
+	r.Set("rooms", _rooms)
+	return nil
+}
+
+// GetRooms Rooms Getter
+func (r TaobaoXhotelHouseAddAPIRequest) GetRooms() int64 {
+	return r._rooms
 }
 
 // SetStatus is Status Setter

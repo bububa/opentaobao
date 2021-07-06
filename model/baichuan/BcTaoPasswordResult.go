@@ -12,8 +12,6 @@ type BcTaoPasswordResult struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 查询结果code
 	ResultMessage string `json:"result_message,omitempty" xml:"result_message,omitempty"`
-	// 是否成功
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 跳转url(长链)
 	Url string `json:"url,omitempty" xml:"url,omitempty"`
 	// 如果是宝贝，则为宝贝价格
@@ -22,4 +20,6 @@ type BcTaoPasswordResult struct {
 	NativeUrl string `json:"native_url,omitempty" xml:"native_url,omitempty"`
 	// thumbPicUrl
 	ThumbPicUrl string `json:"thumb_pic_url,omitempty" xml:"thumb_pic_url,omitempty"`
+	// 是否成功
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

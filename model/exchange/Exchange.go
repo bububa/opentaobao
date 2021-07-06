@@ -28,20 +28,12 @@ type Exchange struct {
 	Created string `json:"created,omitempty" xml:"created,omitempty"`
 	// 卖家昵称
 	SellerNick string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
-	// 先行垫付状态
-	AdvanceStatus int64 `json:"advance_status,omitempty" xml:"advance_status,omitempty"`
 	// 买家昵称
 	BuyerNick string `json:"buyer_nick,omitempty" xml:"buyer_nick,omitempty"`
-	// 换货版本
-	RefundVersion int64 `json:"refund_version,omitempty" xml:"refund_version,omitempty"`
-	// 换货数量
-	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
 	// 卖家发货快递单号
 	SellerLogisticNo string `json:"seller_logistic_no,omitempty" xml:"seller_logistic_no,omitempty"`
 	// 价格
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
-	// 小二托管状态
-	CsStatus int64 `json:"cs_status,omitempty" xml:"cs_status,omitempty"`
 	// 卖家换货地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 商品状态
@@ -66,4 +58,12 @@ type Exchange struct {
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 支付费用
 	Payment string `json:"payment,omitempty" xml:"payment,omitempty"`
+	// 先行垫付状态
+	AdvanceStatus int64 `json:"advance_status,omitempty" xml:"advance_status,omitempty"`
+	// 换货版本
+	RefundVersion int64 `json:"refund_version,omitempty" xml:"refund_version,omitempty"`
+	// 换货数量
+	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
+	// 小二托管状态
+	CsStatus int64 `json:"cs_status,omitempty" xml:"cs_status,omitempty"`
 }

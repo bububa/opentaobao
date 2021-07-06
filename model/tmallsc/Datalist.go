@@ -2,16 +2,8 @@ package tmallsc
 
 // Datalist 结构体
 type Datalist struct {
-	// 工单ID
-	WorkcardId int64 `json:"workcard_id,omitempty" xml:"workcard_id,omitempty"`
-	// 工单多次作业时的批次号
-	WorkcardSequence int64 `json:"workcard_sequence,omitempty" xml:"workcard_sequence,omitempty"`
-	// 转帐金额，单位分
-	TransferAmount int64 `json:"transfer_amount,omitempty" xml:"transfer_amount,omitempty"`
 	// 入款方支付宝账号
 	InUserAlipayAccountId string `json:"in_user_alipay_account_id,omitempty" xml:"in_user_alipay_account_id,omitempty"`
-	// 交易服务子订单ID
-	ServiceTradeOrderId int64 `json:"service_trade_order_id,omitempty" xml:"service_trade_order_id,omitempty"`
 	// 货币类型 人民币(CNY)
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
 	// 账单ID
@@ -24,8 +16,6 @@ type Datalist struct {
 	OutUserAlipayAccountId string `json:"out_user_alipay_account_id,omitempty" xml:"out_user_alipay_account_id,omitempty"`
 	// 入款方nick
 	InUserNick string `json:"in_user_nick,omitempty" xml:"in_user_nick,omitempty"`
-	// 交易实物订单号
-	MasterTradeOrderId int64 `json:"master_trade_order_id,omitempty" xml:"master_trade_order_id,omitempty"`
 	// 卖家nick
 	SellerNick string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
 	// 出款方用户角色 BUYER:买家 SELLER:卖家, STORE：门店, TP：服务商, PLATFORM：平台
@@ -36,22 +26,32 @@ type Datalist struct {
 	ServiceStoreCode string `json:"service_store_code,omitempty" xml:"service_store_code,omitempty"`
 	// 支付宝交易订单号
 	AlipayOrderId string `json:"alipay_order_id,omitempty" xml:"alipay_order_id,omitempty"`
-	// 交易主订单号
-	ParentTradeOrderId int64 `json:"parent_trade_order_id,omitempty" xml:"parent_trade_order_id,omitempty"`
-	// 创建时间，单位毫秒
-	PayTime int64 `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
 	// 入款方用户角色 BUYER:买家 SELLER:卖家, STORE：门店, TP：服务商, PLATFORM：平台
 	InUserRole string `json:"in_user_role,omitempty" xml:"in_user_role,omitempty"`
-	// 创建时间，单位毫秒
-	CreateTime int64 `json:"create_time,omitempty" xml:"create_time,omitempty"`
-	// 服务单号
-	ServiceOrderId int64 `json:"service_order_id,omitempty" xml:"service_order_id,omitempty"`
 	// 门店名称
 	ServiceStoreName string `json:"service_store_name,omitempty" xml:"service_store_name,omitempty"`
 	// 扩展信息；json格式
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
-	// 门店Id
-	ServiceStoreId int64 `json:"service_store_id,omitempty" xml:"service_store_id,omitempty"`
 	// 打款备注
 	Comment string `json:"comment,omitempty" xml:"comment,omitempty"`
+	// 工单ID
+	WorkcardId int64 `json:"workcard_id,omitempty" xml:"workcard_id,omitempty"`
+	// 工单多次作业时的批次号
+	WorkcardSequence int64 `json:"workcard_sequence,omitempty" xml:"workcard_sequence,omitempty"`
+	// 转帐金额，单位分
+	TransferAmount int64 `json:"transfer_amount,omitempty" xml:"transfer_amount,omitempty"`
+	// 交易服务子订单ID
+	ServiceTradeOrderId int64 `json:"service_trade_order_id,omitempty" xml:"service_trade_order_id,omitempty"`
+	// 交易实物订单号
+	MasterTradeOrderId int64 `json:"master_trade_order_id,omitempty" xml:"master_trade_order_id,omitempty"`
+	// 交易主订单号
+	ParentTradeOrderId int64 `json:"parent_trade_order_id,omitempty" xml:"parent_trade_order_id,omitempty"`
+	// 创建时间，单位毫秒
+	PayTime int64 `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
+	// 创建时间，单位毫秒
+	CreateTime int64 `json:"create_time,omitempty" xml:"create_time,omitempty"`
+	// 服务单号
+	ServiceOrderId int64 `json:"service_order_id,omitempty" xml:"service_order_id,omitempty"`
+	// 门店Id
+	ServiceStoreId int64 `json:"service_store_id,omitempty" xml:"service_store_id,omitempty"`
 }

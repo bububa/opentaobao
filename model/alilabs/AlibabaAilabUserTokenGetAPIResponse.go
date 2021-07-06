@@ -22,8 +22,8 @@ type AlibabaAilabUserTokenGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
-	// statusCode
-	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
 	// 随机 uuid，token 在5分钟后失效，token 在授权成功后失效；建议每次调用 api 获取最新 token
 	Token string `json:"token,omitempty" xml:"token,omitempty"`
+	// statusCode
+	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
 }

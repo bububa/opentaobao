@@ -14,12 +14,12 @@ type TaobaoTmallgenieHotelwelcomeAPIRequest struct {
 	model.Params
 	// 房间号
 	_roomNo string
-	// 酒店ID
-	_hotelId int64
 	// 模板ID
 	_templateId string
 	// 模板变量
 	_templateVariable string
+	// 酒店ID
+	_hotelId int64
 }
 
 // NewTaobaoTmallgenieHotelwelcomeRequest 初始化TaobaoTmallgenieHotelwelcomeAPIRequest对象
@@ -56,19 +56,6 @@ func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetRoomNo() string {
 	return r._roomNo
 }
 
-// SetHotelId is HotelId Setter
-// 酒店ID
-func (r *TaobaoTmallgenieHotelwelcomeAPIRequest) SetHotelId(_hotelId int64) error {
-	r._hotelId = _hotelId
-	r.Set("hotel_id", _hotelId)
-	return nil
-}
-
-// GetHotelId HotelId Getter
-func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetHotelId() int64 {
-	return r._hotelId
-}
-
 // SetTemplateId is TemplateId Setter
 // 模板ID
 func (r *TaobaoTmallgenieHotelwelcomeAPIRequest) SetTemplateId(_templateId string) error {
@@ -93,4 +80,17 @@ func (r *TaobaoTmallgenieHotelwelcomeAPIRequest) SetTemplateVariable(_templateVa
 // GetTemplateVariable TemplateVariable Getter
 func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetTemplateVariable() string {
 	return r._templateVariable
+}
+
+// SetHotelId is HotelId Setter
+// 酒店ID
+func (r *TaobaoTmallgenieHotelwelcomeAPIRequest) SetHotelId(_hotelId int64) error {
+	r._hotelId = _hotelId
+	r.Set("hotel_id", _hotelId)
+	return nil
+}
+
+// GetHotelId HotelId Getter
+func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetHotelId() int64 {
+	return r._hotelId
 }

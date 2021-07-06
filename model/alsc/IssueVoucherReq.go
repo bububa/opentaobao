@@ -10,8 +10,6 @@ type IssueVoucherReq struct {
 	FromUserId string `json:"from_user_id,omitempty" xml:"from_user_id,omitempty"`
 	// 进店领券订单id
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
-	// 进店领券订单来源
-	OrderSrc int64 `json:"order_src,omitempty" xml:"order_src,omitempty"`
 	// 门店id
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 品牌id(brandId和outerBrandId必传其一)
@@ -26,4 +24,6 @@ type IssueVoucherReq struct {
 	OutShopId string `json:"out_shop_id,omitempty" xml:"out_shop_id,omitempty"`
 	// 幂等请求id
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 进店领券订单来源
+	OrderSrc int64 `json:"order_src,omitempty" xml:"order_src,omitempty"`
 }

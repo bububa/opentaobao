@@ -4,6 +4,22 @@ package wdk
 type DrfTxdActivityBo struct {
 	// 换购机台
 	ActivityChannel string `json:"activity_channel,omitempty" xml:"activity_channel,omitempty"`
+	// 商品池规则
+	PoolRules string `json:"pool_rules,omitempty" xml:"pool_rules,omitempty"`
+	// 商家人群编码
+	MerchantCrowdCode string `json:"merchant_crowd_code,omitempty" xml:"merchant_crowd_code,omitempty"`
+	// 1--pos,2--App;1,2--pos&App
+	Terminals string `json:"terminals,omitempty" xml:"terminals,omitempty"`
+	// 门店Id
+	StoreIds string `json:"store_ids,omitempty" xml:"store_ids,omitempty"`
+	// 活动描述
+	ActivityContent string `json:"activity_content,omitempty" xml:"activity_content,omitempty"`
+	// 活动名称
+	ActivityName string `json:"activity_name,omitempty" xml:"activity_name,omitempty"`
+	// 中台活动Id（全局唯一）
+	PromotionId string `json:"promotion_id,omitempty" xml:"promotion_id,omitempty"`
+	// 商品池阶梯规则
+	StairRules string `json:"stair_rules,omitempty" xml:"stair_rules,omitempty"`
 	// 封顶金额，单位：分
 	CellingAmount int64 `json:"celling_amount,omitempty" xml:"celling_amount,omitempty"`
 	// 是否多阶梯可叠加，0--否，1--是
@@ -14,12 +30,8 @@ type DrfTxdActivityBo struct {
 	DiscountFeeModel int64 `json:"discount_fee_model,omitempty" xml:"discount_fee_model,omitempty"`
 	// 是否上不封顶；0--否，1--是
 	EnableMultiple int64 `json:"enable_multiple,omitempty" xml:"enable_multiple,omitempty"`
-	// 商品池规则
-	PoolRules string `json:"pool_rules,omitempty" xml:"pool_rules,omitempty"`
 	// 商品池数量
 	PoolNum int64 `json:"pool_num,omitempty" xml:"pool_num,omitempty"`
-	// 商家人群编码
-	MerchantCrowdCode string `json:"merchant_crowd_code,omitempty" xml:"merchant_crowd_code,omitempty"`
 	// 活动每日限购
 	TotalDayLimit int64 `json:"total_day_limit,omitempty" xml:"total_day_limit,omitempty"`
 	// 用户每日限购
@@ -36,16 +48,6 @@ type DrfTxdActivityBo struct {
 	DiscountType int64 `json:"discount_type,omitempty" xml:"discount_type,omitempty"`
 	// ?营销中台活动类型
 	ActivityType int64 `json:"activity_type,omitempty" xml:"activity_type,omitempty"`
-	// 1--pos,2--App;1,2--pos&App
-	Terminals string `json:"terminals,omitempty" xml:"terminals,omitempty"`
-	// 门店Id
-	StoreIds string `json:"store_ids,omitempty" xml:"store_ids,omitempty"`
-	// 活动描述
-	ActivityContent string `json:"activity_content,omitempty" xml:"activity_content,omitempty"`
-	// 活动名称
-	ActivityName string `json:"activity_name,omitempty" xml:"activity_name,omitempty"`
-	// 中台活动Id（全局唯一）
-	PromotionId string `json:"promotion_id,omitempty" xml:"promotion_id,omitempty"`
 	// 限购权重，实际限购=限购值/限购权重
 	LimitWeight int64 `json:"limit_weight,omitempty" xml:"limit_weight,omitempty"`
 	// 更新时间
@@ -58,8 +60,6 @@ type DrfTxdActivityBo struct {
 	EndDate int64 `json:"end_date,omitempty" xml:"end_date,omitempty"`
 	// 活动开始时间
 	StartDate int64 `json:"start_date,omitempty" xml:"start_date,omitempty"`
-	// 商品池阶梯规则
-	StairRules string `json:"stair_rules,omitempty" xml:"stair_rules,omitempty"`
 	// 是否叠加逻辑分组与阶梯条件；0-否，1-是
 	IsCheckAllCond int64 `json:"is_check_all_cond,omitempty" xml:"is_check_all_cond,omitempty"`
 	// 淘鲜达活动Id

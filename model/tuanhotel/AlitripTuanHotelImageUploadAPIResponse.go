@@ -24,8 +24,8 @@ type AlitripTuanHotelImageUploadAPIResponseModel struct {
 	ImagePathResultList []ImagePathResultVoList `json:"image_path_result_list,omitempty" xml:"image_path_result_list>image_path_result_vo_list,omitempty"`
 	// 上传操作错误码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
-	// 上传操作是否成功
-	Status bool `json:"status,omitempty" xml:"status,omitempty"`
 	// 上传操作异常信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// 上传操作是否成功
+	Status bool `json:"status,omitempty" xml:"status,omitempty"`
 }

@@ -12,18 +12,18 @@ import (
 // 给人直接授权
 type AlibabaCampusAclGrantpermiitemstouserAPIRequest struct {
 	model.Params
-	// 公司id不填统一默认生成SYS_000
-	_companyId int64
-	// 系统id
-	_systemId string
-	// 园区id
-	_campusId int64
-	// 用户id
-	_empId string
 	// 权限
 	_priv []PermissionReq
+	// 系统id
+	_systemId string
+	// 用户id
+	_empId string
 	// 操作人id(不填默认appCode)
 	_userId string
+	// 公司id不填统一默认生成SYS_000
+	_companyId int64
+	// 园区id
+	_campusId int64
 }
 
 // NewAlibabaCampusAclGrantpermiitemstouserRequest 初始化AlibabaCampusAclGrantpermiitemstouserAPIRequest对象
@@ -47,17 +47,17 @@ func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// SetCompanyId is CompanyId Setter
-// 公司id不填统一默认生成SYS_000
-func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetCompanyId(_companyId int64) error {
-	r._companyId = _companyId
-	r.Set("company_id", _companyId)
+// SetPriv is Priv Setter
+// 权限
+func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetPriv(_priv []PermissionReq) error {
+	r._priv = _priv
+	r.Set("priv", _priv)
 	return nil
 }
 
-// GetCompanyId CompanyId Getter
-func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetCompanyId() int64 {
-	return r._companyId
+// GetPriv Priv Getter
+func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetPriv() []PermissionReq {
+	return r._priv
 }
 
 // SetSystemId is SystemId Setter
@@ -73,19 +73,6 @@ func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetSystemId() string {
 	return r._systemId
 }
 
-// SetCampusId is CampusId Setter
-// 园区id
-func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetCampusId(_campusId int64) error {
-	r._campusId = _campusId
-	r.Set("campus_id", _campusId)
-	return nil
-}
-
-// GetCampusId CampusId Getter
-func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetCampusId() int64 {
-	return r._campusId
-}
-
 // SetEmpId is EmpId Setter
 // 用户id
 func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetEmpId(_empId string) error {
@@ -99,19 +86,6 @@ func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetEmpId() string {
 	return r._empId
 }
 
-// SetPriv is Priv Setter
-// 权限
-func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetPriv(_priv []PermissionReq) error {
-	r._priv = _priv
-	r.Set("priv", _priv)
-	return nil
-}
-
-// GetPriv Priv Getter
-func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetPriv() []PermissionReq {
-	return r._priv
-}
-
 // SetUserId is UserId Setter
 // 操作人id(不填默认appCode)
 func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetUserId(_userId string) error {
@@ -123,4 +97,30 @@ func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetUserId(_userId stri
 // GetUserId UserId Getter
 func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetUserId() string {
 	return r._userId
+}
+
+// SetCompanyId is CompanyId Setter
+// 公司id不填统一默认生成SYS_000
+func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetCompanyId(_companyId int64) error {
+	r._companyId = _companyId
+	r.Set("company_id", _companyId)
+	return nil
+}
+
+// GetCompanyId CompanyId Getter
+func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetCompanyId() int64 {
+	return r._companyId
+}
+
+// SetCampusId is CampusId Setter
+// 园区id
+func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetCampusId(_campusId int64) error {
+	r._campusId = _campusId
+	r.Set("campus_id", _campusId)
+	return nil
+}
+
+// GetCampusId CampusId Getter
+func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetCampusId() int64 {
+	return r._campusId
 }

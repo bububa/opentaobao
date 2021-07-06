@@ -12,10 +12,10 @@ import (
 // 由任务执行者调用
 type TaobaoQianniuTaskFinishAPIRequest struct {
 	model.Params
-	// 任务ID
-	_taskId int64
 	// 任务备注
 	_memo string
+	// 任务ID
+	_taskId int64
 }
 
 // NewTaobaoQianniuTaskFinishRequest 初始化TaobaoQianniuTaskFinishAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoQianniuTaskFinishAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetTaskId is TaskId Setter
-// 任务ID
-func (r *TaobaoQianniuTaskFinishAPIRequest) SetTaskId(_taskId int64) error {
-	r._taskId = _taskId
-	r.Set("task_id", _taskId)
-	return nil
-}
-
-// GetTaskId TaskId Getter
-func (r TaobaoQianniuTaskFinishAPIRequest) GetTaskId() int64 {
-	return r._taskId
-}
-
 // SetMemo is Memo Setter
 // 任务备注
 func (r *TaobaoQianniuTaskFinishAPIRequest) SetMemo(_memo string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoQianniuTaskFinishAPIRequest) SetMemo(_memo string) error {
 // GetMemo Memo Getter
 func (r TaobaoQianniuTaskFinishAPIRequest) GetMemo() string {
 	return r._memo
+}
+
+// SetTaskId is TaskId Setter
+// 任务ID
+func (r *TaobaoQianniuTaskFinishAPIRequest) SetTaskId(_taskId int64) error {
+	r._taskId = _taskId
+	r.Set("task_id", _taskId)
+	return nil
+}
+
+// GetTaskId TaskId Getter
+func (r TaobaoQianniuTaskFinishAPIRequest) GetTaskId() int64 {
+	return r._taskId
 }

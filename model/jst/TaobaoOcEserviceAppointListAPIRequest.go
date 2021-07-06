@@ -12,8 +12,6 @@ import (
 // 允许外部的isv通过该接口读取门店预约信息
 type TaobaoOcEserviceAppointListAPIRequest struct {
 	model.Params
-	// 预约信息唯一编码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
-	_code int64
 	// 门店编码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
 	_mallCode string
 	// 查询预约的起始时间，格式yyyyMMddHHmmss，默认为当前时间
@@ -24,10 +22,12 @@ type TaobaoOcEserviceAppointListAPIRequest struct {
 	_customerPhone string
 	// 买家客户装修房屋所在的市(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
 	_houseAddressCity string
-	// 卖家主账号id
-	_sellerId int64
 	// 返回结果按预约时间排序，指示升序还是降息，取值asc和desc
 	_sortOrder string
+	// 预约信息唯一编码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
+	_code int64
+	// 卖家主账号id
+	_sellerId int64
 }
 
 // NewTaobaoOcEserviceAppointListRequest 初始化TaobaoOcEserviceAppointListAPIRequest对象
@@ -49,19 +49,6 @@ func (r TaobaoOcEserviceAppointListAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetCode is Code Setter
-// 预约信息唯一编码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
-func (r *TaobaoOcEserviceAppointListAPIRequest) SetCode(_code int64) error {
-	r._code = _code
-	r.Set("code", _code)
-	return nil
-}
-
-// GetCode Code Getter
-func (r TaobaoOcEserviceAppointListAPIRequest) GetCode() int64 {
-	return r._code
 }
 
 // SetMallCode is MallCode Setter
@@ -129,19 +116,6 @@ func (r TaobaoOcEserviceAppointListAPIRequest) GetHouseAddressCity() string {
 	return r._houseAddressCity
 }
 
-// SetSellerId is SellerId Setter
-// 卖家主账号id
-func (r *TaobaoOcEserviceAppointListAPIRequest) SetSellerId(_sellerId int64) error {
-	r._sellerId = _sellerId
-	r.Set("seller_id", _sellerId)
-	return nil
-}
-
-// GetSellerId SellerId Getter
-func (r TaobaoOcEserviceAppointListAPIRequest) GetSellerId() int64 {
-	return r._sellerId
-}
-
 // SetSortOrder is SortOrder Setter
 // 返回结果按预约时间排序，指示升序还是降息，取值asc和desc
 func (r *TaobaoOcEserviceAppointListAPIRequest) SetSortOrder(_sortOrder string) error {
@@ -153,4 +127,30 @@ func (r *TaobaoOcEserviceAppointListAPIRequest) SetSortOrder(_sortOrder string) 
 // GetSortOrder SortOrder Getter
 func (r TaobaoOcEserviceAppointListAPIRequest) GetSortOrder() string {
 	return r._sortOrder
+}
+
+// SetCode is Code Setter
+// 预约信息唯一编码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
+func (r *TaobaoOcEserviceAppointListAPIRequest) SetCode(_code int64) error {
+	r._code = _code
+	r.Set("code", _code)
+	return nil
+}
+
+// GetCode Code Getter
+func (r TaobaoOcEserviceAppointListAPIRequest) GetCode() int64 {
+	return r._code
+}
+
+// SetSellerId is SellerId Setter
+// 卖家主账号id
+func (r *TaobaoOcEserviceAppointListAPIRequest) SetSellerId(_sellerId int64) error {
+	r._sellerId = _sellerId
+	r.Set("seller_id", _sellerId)
+	return nil
+}
+
+// GetSellerId SellerId Getter
+func (r TaobaoOcEserviceAppointListAPIRequest) GetSellerId() int64 {
+	return r._sellerId
 }

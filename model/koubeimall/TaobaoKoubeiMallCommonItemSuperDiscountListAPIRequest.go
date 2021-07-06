@@ -16,8 +16,6 @@ type TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest struct {
 	_dataSetId string
 	// 商圈ID
 	_mallId string
-	// 查询商品最大个数，最大值50
-	_itemSize int64
 	// 经度（终端设备地理位置）
 	_longitude string
 	// 纬度（终端设备地理位置）
@@ -30,6 +28,8 @@ type TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest struct {
 	_appVersion string
 	// 展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）
 	_displayChannel string
+	// 查询商品最大个数，最大值50
+	_itemSize int64
 }
 
 // NewTaobaoKoubeiMallCommonItemSuperDiscountListRequest 初始化TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest对象
@@ -77,19 +77,6 @@ func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetMallId(_mallI
 // GetMallId MallId Getter
 func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetMallId() string {
 	return r._mallId
-}
-
-// SetItemSize is ItemSize Setter
-// 查询商品最大个数，最大值50
-func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetItemSize(_itemSize int64) error {
-	r._itemSize = _itemSize
-	r.Set("item_size", _itemSize)
-	return nil
-}
-
-// GetItemSize ItemSize Getter
-func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetItemSize() int64 {
-	return r._itemSize
 }
 
 // SetLongitude is Longitude Setter
@@ -168,4 +155,17 @@ func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetDisplayChanne
 // GetDisplayChannel DisplayChannel Getter
 func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetDisplayChannel() string {
 	return r._displayChannel
+}
+
+// SetItemSize is ItemSize Setter
+// 查询商品最大个数，最大值50
+func (r *TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) SetItemSize(_itemSize int64) error {
+	r._itemSize = _itemSize
+	r.Set("item_size", _itemSize)
+	return nil
+}
+
+// GetItemSize ItemSize Getter
+func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetItemSize() int64 {
+	return r._itemSize
 }

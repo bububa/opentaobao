@@ -10,10 +10,10 @@ type NrStoreGoodsReadyReqDto struct {
 	CompanyOrderNo string `json:"company_order_no,omitempty" xml:"company_order_no,omitempty"`
 	// 发货公司
 	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
-	// 交易主订单号
-	MainOrderId int64 `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
 	// 业务标识，dss标识定时送业务；jsd表示极速达业务
 	BizIdentity string `json:"biz_identity,omitempty" xml:"biz_identity,omitempty"`
 	// 发货公司编码
 	CompanyCode string `json:"company_code,omitempty" xml:"company_code,omitempty"`
+	// 交易主订单号
+	MainOrderId int64 `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
 }

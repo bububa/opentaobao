@@ -12,16 +12,16 @@ import (
 // 活动权益发放接口，用于卖家针对活动进行权益发放
 type TaobaoPromotionBenefitActivitySendAPIRequest struct {
 	model.Params
-	// 单个权益发放请求
-	_sendRequest *BenefitSingleSendRequest
-	// 非混淆的接收者id
-	_receiverId int64
 	// 混淆的接收者nick
 	_nick string
 	// 非混淆的接收者nick
 	_platNick string
 	// 混淆的接收者id
 	_mixReceiverId string
+	// 单个权益发放请求
+	_sendRequest *BenefitSingleSendRequest
+	// 非混淆的接收者id
+	_receiverId int64
 }
 
 // NewTaobaoPromotionBenefitActivitySendRequest 初始化TaobaoPromotionBenefitActivitySendAPIRequest对象
@@ -43,32 +43,6 @@ func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetApiParams() url.Values 
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetSendRequest is SendRequest Setter
-// 单个权益发放请求
-func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetSendRequest(_sendRequest *BenefitSingleSendRequest) error {
-	r._sendRequest = _sendRequest
-	r.Set("send_request", _sendRequest)
-	return nil
-}
-
-// GetSendRequest SendRequest Getter
-func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetSendRequest() *BenefitSingleSendRequest {
-	return r._sendRequest
-}
-
-// SetReceiverId is ReceiverId Setter
-// 非混淆的接收者id
-func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetReceiverId(_receiverId int64) error {
-	r._receiverId = _receiverId
-	r.Set("receiver_id", _receiverId)
-	return nil
-}
-
-// GetReceiverId ReceiverId Getter
-func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetReceiverId() int64 {
-	return r._receiverId
 }
 
 // SetNick is Nick Setter
@@ -108,4 +82,30 @@ func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetMixReceiverId(_mixRece
 // GetMixReceiverId MixReceiverId Getter
 func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetMixReceiverId() string {
 	return r._mixReceiverId
+}
+
+// SetSendRequest is SendRequest Setter
+// 单个权益发放请求
+func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetSendRequest(_sendRequest *BenefitSingleSendRequest) error {
+	r._sendRequest = _sendRequest
+	r.Set("send_request", _sendRequest)
+	return nil
+}
+
+// GetSendRequest SendRequest Getter
+func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetSendRequest() *BenefitSingleSendRequest {
+	return r._sendRequest
+}
+
+// SetReceiverId is ReceiverId Setter
+// 非混淆的接收者id
+func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetReceiverId(_receiverId int64) error {
+	r._receiverId = _receiverId
+	r.Set("receiver_id", _receiverId)
+	return nil
+}
+
+// GetReceiverId ReceiverId Getter
+func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetReceiverId() int64 {
+	return r._receiverId
 }

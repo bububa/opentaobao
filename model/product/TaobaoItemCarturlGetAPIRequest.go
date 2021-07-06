@@ -18,12 +18,12 @@ type TaobaoItemCarturlGetAPIRequest struct {
 	_callbackUrl string
 	// 商家Nick，优先使用user_id
 	_userNick string
-	// 商家ID
-	_userId int64
 	// 扩展属性，关注店铺的时候会传递下去，格式为K:V|K:V格式
 	_extParams string
 	// 端类型，默认是tb，可选tb,hm
 	_type string
+	// 商家ID
+	_userId int64
 }
 
 // NewTaobaoItemCarturlGetRequest 初始化TaobaoItemCarturlGetAPIRequest对象
@@ -86,19 +86,6 @@ func (r TaobaoItemCarturlGetAPIRequest) GetUserNick() string {
 	return r._userNick
 }
 
-// SetUserId is UserId Setter
-// 商家ID
-func (r *TaobaoItemCarturlGetAPIRequest) SetUserId(_userId int64) error {
-	r._userId = _userId
-	r.Set("user_id", _userId)
-	return nil
-}
-
-// GetUserId UserId Getter
-func (r TaobaoItemCarturlGetAPIRequest) GetUserId() int64 {
-	return r._userId
-}
-
 // SetExtParams is ExtParams Setter
 // 扩展属性，关注店铺的时候会传递下去，格式为K:V|K:V格式
 func (r *TaobaoItemCarturlGetAPIRequest) SetExtParams(_extParams string) error {
@@ -123,4 +110,17 @@ func (r *TaobaoItemCarturlGetAPIRequest) SetType(_type string) error {
 // GetType Type Getter
 func (r TaobaoItemCarturlGetAPIRequest) GetType() string {
 	return r._type
+}
+
+// SetUserId is UserId Setter
+// 商家ID
+func (r *TaobaoItemCarturlGetAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// GetUserId UserId Getter
+func (r TaobaoItemCarturlGetAPIRequest) GetUserId() int64 {
+	return r._userId
 }

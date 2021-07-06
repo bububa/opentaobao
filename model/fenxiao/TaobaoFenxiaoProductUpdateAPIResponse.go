@@ -20,8 +20,8 @@ type TaobaoFenxiaoProductUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_product_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 产品ID
-	Pid int64 `json:"pid,omitempty" xml:"pid,omitempty"`
 	// 更新时间，时间格式：yyyy-MM-dd HH:mm:ss
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
+	// 产品ID
+	Pid int64 `json:"pid,omitempty" xml:"pid,omitempty"`
 }

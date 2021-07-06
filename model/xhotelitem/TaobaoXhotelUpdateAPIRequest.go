@@ -12,22 +12,12 @@ import (
 // 酒店更新接口
 type TaobaoXhotelUpdateAPIRequest struct {
 	model.Params
-	// （已废弃）请使用outer_id来标识要修改的酒店
-	_hid int64
 	// 酒店名称；（新增酒店时为必须）,国内酒店请传中文名称
 	_name string
 	// 酒店曾用名
 	_usedName string
-	// 是否国内酒店。0:国内;1:国外
-	_domestic int64
 	// domestic为true时，固定China； domestic为false时，必须传定义的海外国家编码值。参见：http://kezhan.trip.taobao.com/countrys.html
 	_country string
-	// 省份编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3，domestic为false时默认为0
-	_province int64
-	// 城市编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（新增酒店时为必须）
-	_city int64
-	// 区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3
-	_district int64
 	// 商业区（圈）长度不超过20字
 	_business string
 	// 酒店地址。长度不能超过255
@@ -42,8 +32,6 @@ type TaobaoXhotelUpdateAPIRequest struct {
 	_tel string
 	// 不要使用
 	_extend string
-	// 该字段只有确定的时候，才允许填入。用于标示和淘宝酒店的匹配关系。目前尚未启动该字段。
-	_shid int64
 	// 必传，酒店标识，商家酒店ID
 	_outerId string
 	// 系统商，一般情况不用，需申请使用
@@ -56,8 +44,6 @@ type TaobaoXhotelUpdateAPIRequest struct {
 	_decorateTime string
 	// 楼层信息
 	_floors string
-	// 房间数 0~9999之内的数字
-	_rooms int64
 	// 酒店描述
 	_description string
 	// 酒店设施。json格式示例值：{"free Wi-Fi in all rooms":"true","massage":"true","meetingRoom":"true"}目前支持维护的设施枚举有：free Wi-Fi in all rooms 所有房间设有免费无线网络;meetingRoom 会议室;massage  按摩室;fitnessClub 健身房;bar 酒吧;cafe 咖啡厅;frontDeskSafe 前台贵重物品保险柜wifi 无线上网公共区域;casino 娱乐场/棋牌室;restaurant 餐厅;smoking area 吸烟区;Business Facilities 商务设施
@@ -76,8 +62,6 @@ type TaobaoXhotelUpdateAPIRequest struct {
 	_hotelPolicies string
 	// 预订须知。json字段描述：hotelInMountaintop 酒店位于山顶 1在山顶、0不在；needBoat 酒店需要坐船前往 1需要、0不需要；酒店位于景区内 1在景区、0不在；extraBed 加床收费；extraCharge 额外收费；arrivalTime 到店时间；extend 其他补充项
 	_bookingNotice string
-	// 酒店状态 0:正常，-1:删除，-2:停售
-	_status *model.File
 	// 逗号分隔的字符串 1visa；2万事达卡；3美国运通卡；4发现卡；5大来卡；6JCB卡；7银联卡
 	_creditCardTypes string
 	// 扩展信息的JSON。 orbitTrack 业务字段是指从飞猪到酒店说经过平台名以及方式的一个数组，按顺序，从飞猪，再经过若干平台，最后到酒店， platform是指定当前平台名，ways 是指通过哪种方式到该平台 其中，飞猪到下一个平台里, ways 字段只能是【直连】、【人工】两个方式之一； 从最后一个平台到酒店的ways字段只能是【电话】、【传真】、【人工】、【系统】之一； 第一个 飞猪平台 和 最后具体酒店是至少得填的
@@ -102,12 +86,28 @@ type TaobaoXhotelUpdateAPIRequest struct {
 	_standardRoomFacilities string
 	// 资源方娱乐设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
 	_standardAmuseFacilities string
+	// 标识坐标系类型。WGS84，表示地球坐标系 ；GCJ02，表示火星坐标系
+	_coordinateSystem string
+	// （已废弃）请使用outer_id来标识要修改的酒店
+	_hid int64
+	// 是否国内酒店。0:国内;1:国外
+	_domestic int64
+	// 省份编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3，domestic为false时默认为0
+	_province int64
+	// 城市编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（新增酒店时为必须）
+	_city int64
+	// 区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3
+	_district int64
+	// 该字段只有确定的时候，才允许填入。用于标示和淘宝酒店的匹配关系。目前尚未启动该字段。
+	_shid int64
+	// 房间数 0~9999之内的数字
+	_rooms int64
+	// 酒店状态 0:正常，-1:删除，-2:停售
+	_status *model.File
 	// 0:酒店；1:客栈
 	_hotelType int64
 	// 0:可以接待外宾；1:仅内宾
 	_serviceType int64
-	// 标识坐标系类型。WGS84，表示地球坐标系 ；GCJ02，表示火星坐标系
-	_coordinateSystem string
 }
 
 // NewTaobaoXhotelUpdateRequest 初始化TaobaoXhotelUpdateAPIRequest对象
@@ -129,19 +129,6 @@ func (r TaobaoXhotelUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetHid is Hid Setter
-// （已废弃）请使用outer_id来标识要修改的酒店
-func (r *TaobaoXhotelUpdateAPIRequest) SetHid(_hid int64) error {
-	r._hid = _hid
-	r.Set("hid", _hid)
-	return nil
-}
-
-// GetHid Hid Getter
-func (r TaobaoXhotelUpdateAPIRequest) GetHid() int64 {
-	return r._hid
 }
 
 // SetName is Name Setter
@@ -170,19 +157,6 @@ func (r TaobaoXhotelUpdateAPIRequest) GetUsedName() string {
 	return r._usedName
 }
 
-// SetDomestic is Domestic Setter
-// 是否国内酒店。0:国内;1:国外
-func (r *TaobaoXhotelUpdateAPIRequest) SetDomestic(_domestic int64) error {
-	r._domestic = _domestic
-	r.Set("domestic", _domestic)
-	return nil
-}
-
-// GetDomestic Domestic Getter
-func (r TaobaoXhotelUpdateAPIRequest) GetDomestic() int64 {
-	return r._domestic
-}
-
 // SetCountry is Country Setter
 // domestic为true时，固定China； domestic为false时，必须传定义的海外国家编码值。参见：http://kezhan.trip.taobao.com/countrys.html
 func (r *TaobaoXhotelUpdateAPIRequest) SetCountry(_country string) error {
@@ -194,45 +168,6 @@ func (r *TaobaoXhotelUpdateAPIRequest) SetCountry(_country string) error {
 // GetCountry Country Getter
 func (r TaobaoXhotelUpdateAPIRequest) GetCountry() string {
 	return r._country
-}
-
-// SetProvince is Province Setter
-// 省份编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3，domestic为false时默认为0
-func (r *TaobaoXhotelUpdateAPIRequest) SetProvince(_province int64) error {
-	r._province = _province
-	r.Set("province", _province)
-	return nil
-}
-
-// GetProvince Province Getter
-func (r TaobaoXhotelUpdateAPIRequest) GetProvince() int64 {
-	return r._province
-}
-
-// SetCity is City Setter
-// 城市编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（新增酒店时为必须）
-func (r *TaobaoXhotelUpdateAPIRequest) SetCity(_city int64) error {
-	r._city = _city
-	r.Set("city", _city)
-	return nil
-}
-
-// GetCity City Getter
-func (r TaobaoXhotelUpdateAPIRequest) GetCity() int64 {
-	return r._city
-}
-
-// SetDistrict is District Setter
-// 区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3
-func (r *TaobaoXhotelUpdateAPIRequest) SetDistrict(_district int64) error {
-	r._district = _district
-	r.Set("district", _district)
-	return nil
-}
-
-// GetDistrict District Getter
-func (r TaobaoXhotelUpdateAPIRequest) GetDistrict() int64 {
-	return r._district
 }
 
 // SetBusiness is Business Setter
@@ -326,19 +261,6 @@ func (r TaobaoXhotelUpdateAPIRequest) GetExtend() string {
 	return r._extend
 }
 
-// SetShid is Shid Setter
-// 该字段只有确定的时候，才允许填入。用于标示和淘宝酒店的匹配关系。目前尚未启动该字段。
-func (r *TaobaoXhotelUpdateAPIRequest) SetShid(_shid int64) error {
-	r._shid = _shid
-	r.Set("shid", _shid)
-	return nil
-}
-
-// GetShid Shid Getter
-func (r TaobaoXhotelUpdateAPIRequest) GetShid() int64 {
-	return r._shid
-}
-
 // SetOuterId is OuterId Setter
 // 必传，酒店标识，商家酒店ID
 func (r *TaobaoXhotelUpdateAPIRequest) SetOuterId(_outerId string) error {
@@ -415,19 +337,6 @@ func (r *TaobaoXhotelUpdateAPIRequest) SetFloors(_floors string) error {
 // GetFloors Floors Getter
 func (r TaobaoXhotelUpdateAPIRequest) GetFloors() string {
 	return r._floors
-}
-
-// SetRooms is Rooms Setter
-// 房间数 0~9999之内的数字
-func (r *TaobaoXhotelUpdateAPIRequest) SetRooms(_rooms int64) error {
-	r._rooms = _rooms
-	r.Set("rooms", _rooms)
-	return nil
-}
-
-// GetRooms Rooms Getter
-func (r TaobaoXhotelUpdateAPIRequest) GetRooms() int64 {
-	return r._rooms
 }
 
 // SetDescription is Description Setter
@@ -545,19 +454,6 @@ func (r *TaobaoXhotelUpdateAPIRequest) SetBookingNotice(_bookingNotice string) e
 // GetBookingNotice BookingNotice Getter
 func (r TaobaoXhotelUpdateAPIRequest) GetBookingNotice() string {
 	return r._bookingNotice
-}
-
-// SetStatus is Status Setter
-// 酒店状态 0:正常，-1:删除，-2:停售
-func (r *TaobaoXhotelUpdateAPIRequest) SetStatus(_status *model.File) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TaobaoXhotelUpdateAPIRequest) GetStatus() *model.File {
-	return r._status
 }
 
 // SetCreditCardTypes is CreditCardTypes Setter
@@ -716,6 +612,123 @@ func (r TaobaoXhotelUpdateAPIRequest) GetStandardAmuseFacilities() string {
 	return r._standardAmuseFacilities
 }
 
+// SetCoordinateSystem is CoordinateSystem Setter
+// 标识坐标系类型。WGS84，表示地球坐标系 ；GCJ02，表示火星坐标系
+func (r *TaobaoXhotelUpdateAPIRequest) SetCoordinateSystem(_coordinateSystem string) error {
+	r._coordinateSystem = _coordinateSystem
+	r.Set("coordinate_system", _coordinateSystem)
+	return nil
+}
+
+// GetCoordinateSystem CoordinateSystem Getter
+func (r TaobaoXhotelUpdateAPIRequest) GetCoordinateSystem() string {
+	return r._coordinateSystem
+}
+
+// SetHid is Hid Setter
+// （已废弃）请使用outer_id来标识要修改的酒店
+func (r *TaobaoXhotelUpdateAPIRequest) SetHid(_hid int64) error {
+	r._hid = _hid
+	r.Set("hid", _hid)
+	return nil
+}
+
+// GetHid Hid Getter
+func (r TaobaoXhotelUpdateAPIRequest) GetHid() int64 {
+	return r._hid
+}
+
+// SetDomestic is Domestic Setter
+// 是否国内酒店。0:国内;1:国外
+func (r *TaobaoXhotelUpdateAPIRequest) SetDomestic(_domestic int64) error {
+	r._domestic = _domestic
+	r.Set("domestic", _domestic)
+	return nil
+}
+
+// GetDomestic Domestic Getter
+func (r TaobaoXhotelUpdateAPIRequest) GetDomestic() int64 {
+	return r._domestic
+}
+
+// SetProvince is Province Setter
+// 省份编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3，domestic为false时默认为0
+func (r *TaobaoXhotelUpdateAPIRequest) SetProvince(_province int64) error {
+	r._province = _province
+	r.Set("province", _province)
+	return nil
+}
+
+// GetProvince Province Getter
+func (r TaobaoXhotelUpdateAPIRequest) GetProvince() int64 {
+	return r._province
+}
+
+// SetCity is City Setter
+// 城市编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（新增酒店时为必须）
+func (r *TaobaoXhotelUpdateAPIRequest) SetCity(_city int64) error {
+	r._city = _city
+	r.Set("city", _city)
+	return nil
+}
+
+// GetCity City Getter
+func (r TaobaoXhotelUpdateAPIRequest) GetCity() int64 {
+	return r._city
+}
+
+// SetDistrict is District Setter
+// 区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3
+func (r *TaobaoXhotelUpdateAPIRequest) SetDistrict(_district int64) error {
+	r._district = _district
+	r.Set("district", _district)
+	return nil
+}
+
+// GetDistrict District Getter
+func (r TaobaoXhotelUpdateAPIRequest) GetDistrict() int64 {
+	return r._district
+}
+
+// SetShid is Shid Setter
+// 该字段只有确定的时候，才允许填入。用于标示和淘宝酒店的匹配关系。目前尚未启动该字段。
+func (r *TaobaoXhotelUpdateAPIRequest) SetShid(_shid int64) error {
+	r._shid = _shid
+	r.Set("shid", _shid)
+	return nil
+}
+
+// GetShid Shid Getter
+func (r TaobaoXhotelUpdateAPIRequest) GetShid() int64 {
+	return r._shid
+}
+
+// SetRooms is Rooms Setter
+// 房间数 0~9999之内的数字
+func (r *TaobaoXhotelUpdateAPIRequest) SetRooms(_rooms int64) error {
+	r._rooms = _rooms
+	r.Set("rooms", _rooms)
+	return nil
+}
+
+// GetRooms Rooms Getter
+func (r TaobaoXhotelUpdateAPIRequest) GetRooms() int64 {
+	return r._rooms
+}
+
+// SetStatus is Status Setter
+// 酒店状态 0:正常，-1:删除，-2:停售
+func (r *TaobaoXhotelUpdateAPIRequest) SetStatus(_status *model.File) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TaobaoXhotelUpdateAPIRequest) GetStatus() *model.File {
+	return r._status
+}
+
 // SetHotelType is HotelType Setter
 // 0:酒店；1:客栈
 func (r *TaobaoXhotelUpdateAPIRequest) SetHotelType(_hotelType int64) error {
@@ -740,17 +753,4 @@ func (r *TaobaoXhotelUpdateAPIRequest) SetServiceType(_serviceType int64) error 
 // GetServiceType ServiceType Getter
 func (r TaobaoXhotelUpdateAPIRequest) GetServiceType() int64 {
 	return r._serviceType
-}
-
-// SetCoordinateSystem is CoordinateSystem Setter
-// 标识坐标系类型。WGS84，表示地球坐标系 ；GCJ02，表示火星坐标系
-func (r *TaobaoXhotelUpdateAPIRequest) SetCoordinateSystem(_coordinateSystem string) error {
-	r._coordinateSystem = _coordinateSystem
-	r.Set("coordinate_system", _coordinateSystem)
-	return nil
-}
-
-// GetCoordinateSystem CoordinateSystem Getter
-func (r TaobaoXhotelUpdateAPIRequest) GetCoordinateSystem() string {
-	return r._coordinateSystem
 }

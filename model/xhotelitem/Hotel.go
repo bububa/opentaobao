@@ -2,8 +2,6 @@ package xhotelitem
 
 // Hotel 结构体
 type Hotel struct {
-	// 酒店ID
-	Hid int64 `json:"hid,omitempty" xml:"hid,omitempty"`
 	// 酒店修改备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 酒店电话。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886
@@ -14,8 +12,6 @@ type Hotel struct {
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 扩展信息
 	Ext string `json:"ext,omitempty" xml:"ext,omitempty"`
-	// 城市编码
-	City int64 `json:"city,omitempty" xml:"city,omitempty"`
 	// 邮编
 	PostalCode string `json:"postal_code,omitempty" xml:"postal_code,omitempty"`
 	// 楼层信息
@@ -24,18 +20,10 @@ type Hotel struct {
 	SellerNick string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
 	// 酒店中文描述
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
-	// 省份编码
-	Province int64 `json:"province,omitempty" xml:"province,omitempty"`
 	// 经度
 	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
-	// 匹配是否人工确认
-	DataConfirm int64 `json:"data_confirm,omitempty" xml:"data_confirm,omitempty"`
-	// 房间数
-	Rooms int64 `json:"rooms,omitempty" xml:"rooms,omitempty"`
 	// 货币类型（编码,字母编码）
 	CurrencyCodeName string `json:"currency_code_name,omitempty" xml:"currency_code_name,omitempty"`
-	// 酒店状态
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 酒店英文描述
 	EnDesc string `json:"en_desc,omitempty" xml:"en_desc,omitempty"`
 	// domestic=0时，固定China； domestic=1时，是海外国家编码值
@@ -50,12 +38,8 @@ type Hotel struct {
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 酒店修改时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
-	// 酒店下架类型
-	DownShelfType int64 `json:"down_shelf_type,omitempty" xml:"down_shelf_type,omitempty"`
 	// 酒店英文地址
 	EnAddr string `json:"en_addr,omitempty" xml:"en_addr,omitempty"`
-	// 标准酒店ID
-	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
 	// 商圈
 	Business string `json:"business,omitempty" xml:"business,omitempty"`
 	// 酒店曾用名
@@ -68,10 +52,6 @@ type Hotel struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 坐标类型，现在支持：G : Google:B : 百度;A : 高德;M : Mapbar;L : 灵图
 	PositionType string `json:"position_type,omitempty" xml:"position_type,omitempty"`
-	// 酒店支付结算类型
-	BillingProcessType int64 `json:"billing_process_type,omitempty" xml:"billing_process_type,omitempty"`
-	// 地区编码
-	District int64 `json:"district,omitempty" xml:"district,omitempty"`
 	// 酒店名称(英文)
 	NameE string `json:"name_e,omitempty" xml:"name_e,omitempty"`
 	// 酒店创建时间
@@ -84,24 +64,44 @@ type Hotel struct {
 	Star string `json:"star,omitempty" xml:"star,omitempty"`
 	// 预订须知
 	BookingNotice string `json:"booking_notice,omitempty" xml:"booking_notice,omitempty"`
-	// 是否国外。
-	Domestic int64 `json:"domestic,omitempty" xml:"domestic,omitempty"`
 	// 装修时间
 	DecorateTime string `json:"decorate_time,omitempty" xml:"decorate_time,omitempty"`
-	// 来源
-	Source int64 `json:"source,omitempty" xml:"source,omitempty"`
 	// 酒店地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
-	// 卖家ID
-	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
-	// 匹配状态
-	MatchStatus int64 `json:"match_status,omitempty" xml:"match_status,omitempty"`
 	// 酒店服务
 	Service string `json:"service,omitempty" xml:"service,omitempty"`
 	// 品牌
 	Brand string `json:"brand,omitempty" xml:"brand,omitempty"`
-	// 判断该酒店是不是对应的卖家直营
-	KzzyTag int64 `json:"kzzy_tag,omitempty" xml:"kzzy_tag,omitempty"`
 	// 开业时间
 	OpeningTime string `json:"opening_time,omitempty" xml:"opening_time,omitempty"`
+	// 酒店ID
+	Hid int64 `json:"hid,omitempty" xml:"hid,omitempty"`
+	// 城市编码
+	City int64 `json:"city,omitempty" xml:"city,omitempty"`
+	// 省份编码
+	Province int64 `json:"province,omitempty" xml:"province,omitempty"`
+	// 匹配是否人工确认
+	DataConfirm int64 `json:"data_confirm,omitempty" xml:"data_confirm,omitempty"`
+	// 房间数
+	Rooms int64 `json:"rooms,omitempty" xml:"rooms,omitempty"`
+	// 酒店状态
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 酒店下架类型
+	DownShelfType int64 `json:"down_shelf_type,omitempty" xml:"down_shelf_type,omitempty"`
+	// 标准酒店ID
+	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
+	// 酒店支付结算类型
+	BillingProcessType int64 `json:"billing_process_type,omitempty" xml:"billing_process_type,omitempty"`
+	// 地区编码
+	District int64 `json:"district,omitempty" xml:"district,omitempty"`
+	// 是否国外。
+	Domestic int64 `json:"domestic,omitempty" xml:"domestic,omitempty"`
+	// 来源
+	Source int64 `json:"source,omitempty" xml:"source,omitempty"`
+	// 卖家ID
+	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
+	// 匹配状态
+	MatchStatus int64 `json:"match_status,omitempty" xml:"match_status,omitempty"`
+	// 判断该酒店是不是对应的卖家直营
+	KzzyTag int64 `json:"kzzy_tag,omitempty" xml:"kzzy_tag,omitempty"`
 }

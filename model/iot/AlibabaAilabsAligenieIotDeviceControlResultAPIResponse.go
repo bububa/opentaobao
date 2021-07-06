@@ -20,10 +20,10 @@ type AlibabaAilabsAligenieIotDeviceControlResultAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_aligenie_iot_device_control_result_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// statusCode
-	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// statusCode
+	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
 	// result
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 }

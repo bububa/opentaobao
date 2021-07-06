@@ -2,8 +2,6 @@ package promotion
 
 // ExpandCardVo 结构体
 type ExpandCardVo struct {
-	// 店铺信息
-	ShopInfoVo *ShopInfoVo `json:"shop_info_vo,omitempty" xml:"shop_info_vo,omitempty"`
 	// 品牌色
 	BrandColor string `json:"brand_color,omitempty" xml:"brand_color,omitempty"`
 	// 目标跳转链接
@@ -26,4 +24,6 @@ type ExpandCardVo struct {
 	CardName string `json:"card_name,omitempty" xml:"card_name,omitempty"`
 	// 卡使用范围
 	CardUsedScope string `json:"card_used_scope,omitempty" xml:"card_used_scope,omitempty"`
+	// 店铺信息
+	ShopInfoVo *ShopInfoVo `json:"shop_info_vo,omitempty" xml:"shop_info_vo,omitempty"`
 }

@@ -2,8 +2,6 @@ package cainiaohandover
 
 // OpenAddressParam 结构体
 type OpenAddressParam struct {
-	// 最小区划地址库ID
-	DivisionId int64 `json:"division_id,omitempty" xml:"division_id,omitempty"`
 	// 邮编
 	ZipCode string `json:"zip_code,omitempty" xml:"zip_code,omitempty"`
 	// 国家名称
@@ -20,4 +18,6 @@ type OpenAddressParam struct {
 	DetailAddress string `json:"detail_address,omitempty" xml:"detail_address,omitempty"`
 	// 国家二字码，CN：中国、RU：俄罗斯
 	CountryCode string `json:"country_code,omitempty" xml:"country_code,omitempty"`
+	// 最小区划地址库ID
+	DivisionId int64 `json:"division_id,omitempty" xml:"division_id,omitempty"`
 }

@@ -12,12 +12,12 @@ import (
 // 根据用户ID和公司ID更新员工基本信息（头像、性别、昵称）
 type AlibabaCampusCoreEmployeeModifyemployeeAPIRequest struct {
 	model.Params
+	// 用户ID
+	_accountId string
 	// WorkBenchContext
 	_workBenchContext *WorkBenchContext
 	// EmployeeDto
 	_employeeDto *EmployeeDto
-	// 用户ID
-	_accountId string
 }
 
 // NewAlibabaCampusCoreEmployeeModifyemployeeRequest 初始化AlibabaCampusCoreEmployeeModifyemployeeAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetApiParams() url.Va
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetAccountId is AccountId Setter
+// 用户ID
+func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) SetAccountId(_accountId string) error {
+	r._accountId = _accountId
+	r.Set("account_id", _accountId)
+	return nil
+}
+
+// GetAccountId AccountId Getter
+func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetAccountId() string {
+	return r._accountId
 }
 
 // SetWorkBenchContext is WorkBenchContext Setter
@@ -65,17 +78,4 @@ func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) SetEmployeeDto(_empl
 // GetEmployeeDto EmployeeDto Getter
 func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetEmployeeDto() *EmployeeDto {
 	return r._employeeDto
-}
-
-// SetAccountId is AccountId Setter
-// 用户ID
-func (r *AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) SetAccountId(_accountId string) error {
-	r._accountId = _accountId
-	r.Set("account_id", _accountId)
-	return nil
-}
-
-// GetAccountId AccountId Getter
-func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetAccountId() string {
-	return r._accountId
 }

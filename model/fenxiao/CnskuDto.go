@@ -2,14 +2,26 @@ package fenxiao
 
 // CnskuDto 结构体
 type CnskuDto struct {
-	// 货品id
-	CnskuId int64 `json:"cnsku_id,omitempty" xml:"cnsku_id,omitempty"`
 	// 商品编码
 	ItemCode string `json:"item_code,omitempty" xml:"item_code,omitempty"`
-	// 货主id
-	OwnerId int64 `json:"owner_id,omitempty" xml:"owner_id,omitempty"`
 	// 品牌
 	Brand string `json:"brand,omitempty" xml:"brand,omitempty"`
+	// 条形码( 格式如：条码1#条码2#条码3，多条码中间用 # 分隔)
+	WhcBarCode string `json:"whc_bar_code,omitempty" xml:"whc_bar_code,omitempty"`
+	// 商品标题
+	Title string `json:"title,omitempty" xml:"title,omitempty"`
+	// 包装材料
+	PackageMaterial string `json:"package_material,omitempty" xml:"package_material,omitempty"`
+	// 需要向featureMap中增加的属性列表（新增&更新接口使用）
+	UpdateFeatureMap string `json:"update_feature_map,omitempty" xml:"update_feature_map,omitempty"`
+	// 需要向featureMap中删除的属性列表（更新接口使用）
+	RemoveFeatureMap string `json:"remove_feature_map,omitempty" xml:"remove_feature_map,omitempty"`
+	// 货品类型
+	Type string `json:"type,omitempty" xml:"type,omitempty"`
+	// 货品id
+	CnskuId int64 `json:"cnsku_id,omitempty" xml:"cnsku_id,omitempty"`
+	// 货主id
+	OwnerId int64 `json:"owner_id,omitempty" xml:"owner_id,omitempty"`
 	// 前端skuId
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 高度
@@ -24,12 +36,6 @@ type CnskuDto struct {
 	Volume int64 `json:"volume,omitempty" xml:"volume,omitempty"`
 	// 吊牌价
 	ReservePrice int64 `json:"reserve_price,omitempty" xml:"reserve_price,omitempty"`
-	// 条形码( 格式如：条码1#条码2#条码3，多条码中间用 # 分隔)
-	WhcBarCode string `json:"whc_bar_code,omitempty" xml:"whc_bar_code,omitempty"`
-	// 商品标题
-	Title string `json:"title,omitempty" xml:"title,omitempty"`
-	// 包装材料
-	PackageMaterial string `json:"package_material,omitempty" xml:"package_material,omitempty"`
 	// 扩展字段
 	CnskuExtendDTO *CnskuExtendDto `json:"cnsku_extend_d_t_o,omitempty" xml:"cnsku_extend_d_t_o,omitempty"`
 	// feature标签
@@ -40,10 +46,4 @@ type CnskuDto struct {
 	Width int64 `json:"width,omitempty" xml:"width,omitempty"`
 	// 淘系叶子类目id
 	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
-	// 需要向featureMap中增加的属性列表（新增&更新接口使用）
-	UpdateFeatureMap string `json:"update_feature_map,omitempty" xml:"update_feature_map,omitempty"`
-	// 需要向featureMap中删除的属性列表（更新接口使用）
-	RemoveFeatureMap string `json:"remove_feature_map,omitempty" xml:"remove_feature_map,omitempty"`
-	// 货品类型
-	Type string `json:"type,omitempty" xml:"type,omitempty"`
 }

@@ -20,8 +20,8 @@ type AlibabaInteractActivityAddcommentAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_activity_addcomment_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 返回成功
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 评论的楼层数
 	Floor int64 `json:"floor,omitempty" xml:"floor,omitempty"`
+	// 返回成功
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

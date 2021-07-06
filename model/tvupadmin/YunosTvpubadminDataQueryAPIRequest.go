@@ -18,10 +18,10 @@ type YunosTvpubadminDataQueryAPIRequest struct {
 	_columns string
 	// UUID
 	_uuid string
-	// 数据类型
-	_dataTypeId int64
 	// 日期
 	_date string
+	// 数据类型
+	_dataTypeId int64
 	// 页码
 	_pageNo int64
 	// 每页个数
@@ -88,19 +88,6 @@ func (r YunosTvpubadminDataQueryAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// SetDataTypeId is DataTypeId Setter
-// 数据类型
-func (r *YunosTvpubadminDataQueryAPIRequest) SetDataTypeId(_dataTypeId int64) error {
-	r._dataTypeId = _dataTypeId
-	r.Set("data_type_id", _dataTypeId)
-	return nil
-}
-
-// GetDataTypeId DataTypeId Getter
-func (r YunosTvpubadminDataQueryAPIRequest) GetDataTypeId() int64 {
-	return r._dataTypeId
-}
-
 // SetDate is Date Setter
 // 日期
 func (r *YunosTvpubadminDataQueryAPIRequest) SetDate(_date string) error {
@@ -112,6 +99,19 @@ func (r *YunosTvpubadminDataQueryAPIRequest) SetDate(_date string) error {
 // GetDate Date Getter
 func (r YunosTvpubadminDataQueryAPIRequest) GetDate() string {
 	return r._date
+}
+
+// SetDataTypeId is DataTypeId Setter
+// 数据类型
+func (r *YunosTvpubadminDataQueryAPIRequest) SetDataTypeId(_dataTypeId int64) error {
+	r._dataTypeId = _dataTypeId
+	r.Set("data_type_id", _dataTypeId)
+	return nil
+}
+
+// GetDataTypeId DataTypeId Getter
+func (r YunosTvpubadminDataQueryAPIRequest) GetDataTypeId() int64 {
+	return r._dataTypeId
 }
 
 // SetPageNo is PageNo Setter

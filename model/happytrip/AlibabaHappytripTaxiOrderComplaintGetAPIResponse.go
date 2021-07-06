@@ -20,10 +20,10 @@ type AlibabaHappytripTaxiOrderComplaintGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_happytrip_taxi_order_complaint_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 错误码
-	Errno int64 `json:"errno,omitempty" xml:"errno,omitempty"`
 	// 错误信息
 	Errmsg string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
+	// 错误码
+	Errno int64 `json:"errno,omitempty" xml:"errno,omitempty"`
 	// 投诉详情获取结果
 	Data *AlibabaHappytripTaxiOrderComplaintGetStruct `json:"data,omitempty" xml:"data,omitempty"`
 }

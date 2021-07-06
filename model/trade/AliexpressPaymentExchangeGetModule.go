@@ -12,12 +12,12 @@ type AliexpressPaymentExchangeGetModule struct {
 	ThresholdTime string `json:"threshold_time,omitempty" xml:"threshold_time,omitempty"`
 	// 汇率
 	Rate string `json:"rate,omitempty" xml:"rate,omitempty"`
-	// 是否可交易
-	Tradable bool `json:"tradable,omitempty" xml:"tradable,omitempty"`
 	// 有效时间
 	ValidTime string `json:"valid_time,omitempty" xml:"valid_time,omitempty"`
 	// 基准币种
 	BaseCurrency string `json:"base_currency,omitempty" xml:"base_currency,omitempty"`
 	// 汇率号
 	ExchangeRateNo string `json:"exchange_rate_no,omitempty" xml:"exchange_rate_no,omitempty"`
+	// 是否可交易
+	Tradable bool `json:"tradable,omitempty" xml:"tradable,omitempty"`
 }

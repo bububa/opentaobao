@@ -12,14 +12,14 @@ import (
 // 精灵代说
 type TaobaoAilabAicloudTopMessageAddtextAPIRequest struct {
 	model.Params
-	// 用户信息
-	_param0 *OpenBaseInfo
 	// 设备id
 	_param1 string
 	// 代说文本
 	_param2 string
 	// 扩展信息，可以为空
 	_param3 string
+	// 用户信息
+	_param0 *OpenBaseInfo
 }
 
 // NewTaobaoAilabAicloudTopMessageAddtextRequest 初始化TaobaoAilabAicloudTopMessageAddtextAPIRequest对象
@@ -41,19 +41,6 @@ func (r TaobaoAilabAicloudTopMessageAddtextAPIRequest) GetApiParams() url.Values
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetParam0 is Param0 Setter
-// 用户信息
-func (r *TaobaoAilabAicloudTopMessageAddtextAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
-	r._param0 = _param0
-	r.Set("param0", _param0)
-	return nil
-}
-
-// GetParam0 Param0 Getter
-func (r TaobaoAilabAicloudTopMessageAddtextAPIRequest) GetParam0() *OpenBaseInfo {
-	return r._param0
 }
 
 // SetParam1 is Param1 Setter
@@ -93,4 +80,17 @@ func (r *TaobaoAilabAicloudTopMessageAddtextAPIRequest) SetParam3(_param3 string
 // GetParam3 Param3 Getter
 func (r TaobaoAilabAicloudTopMessageAddtextAPIRequest) GetParam3() string {
 	return r._param3
+}
+
+// SetParam0 is Param0 Setter
+// 用户信息
+func (r *TaobaoAilabAicloudTopMessageAddtextAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// GetParam0 Param0 Getter
+func (r TaobaoAilabAicloudTopMessageAddtextAPIRequest) GetParam0() *OpenBaseInfo {
+	return r._param0
 }

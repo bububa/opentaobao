@@ -14,10 +14,10 @@ type WholesaleUser struct {
 	CompProvince string `json:"comp_province,omitempty" xml:"comp_province,omitempty"`
 	// company logo url公司logo 地址
 	LogoUrl string `json:"logo_url,omitempty" xml:"logo_url,omitempty"`
-	// golden_supplier_years公司成为金牌会员的年份
-	GoldenSupplierYears int64 `json:"golden_supplier_years,omitempty" xml:"golden_supplier_years,omitempty"`
 	// company name公司名
 	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
 	// 公司所在地邮政编码
 	CompZip string `json:"comp_zip,omitempty" xml:"comp_zip,omitempty"`
+	// golden_supplier_years公司成为金牌会员的年份
+	GoldenSupplierYears int64 `json:"golden_supplier_years,omitempty" xml:"golden_supplier_years,omitempty"`
 }

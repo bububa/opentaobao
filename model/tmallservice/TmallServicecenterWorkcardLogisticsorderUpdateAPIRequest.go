@@ -12,10 +12,8 @@ import (
 // 天猫寄送类服务对接外部物流服务商回传物流状态信息
 type TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest struct {
 	model.Params
-	// 体积 单位 立方毫米
-	_volume int64
-	// 重量 单位 克
-	_weight int64
+	// 物流子单号
+	_subExpressCodes []string
 	// 备注说明
 	_comment string
 	// 物流单号（展示给消费者）
@@ -28,16 +26,10 @@ type TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest struct {
 	_courierName string
 	// 取件码
 	_gotCode string
-	// 物流订单号
-	_logisticsOrderId int64
-	// 金额 单位分
-	_cost int64
 	// 1、以下状态时必填： 包裹已揽收完成 2、字符串格式为：json 串 例子： [{ "name": "上衣", "count": 1 }, { "name": "裤子", "count": 2 }]
 	_goodsInfo string
 	// 物流创建 ：create 物流取消 ：cancel 分派小件员：assign 已经分派小件员: assigned 包裹上门揽收: pickup_door 包裹已揽收完成: pickup_finished 包裹派送中: dispatching 包裹已签收: signed
 	_statusCode string
-	// 物流子单号
-	_subExpressCodes []string
 	// 预计送达时间  dispatching节点时必填
 	_deliveryTime string
 	// 签收时间 signed节点时必填
@@ -46,6 +38,14 @@ type TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest struct {
 	_pickupFinishTime string
 	// 上门揽收时间 pickup_door节点时必填
 	_pickupDoorTime string
+	// 体积 单位 立方毫米
+	_volume int64
+	// 重量 单位 克
+	_weight int64
+	// 物流订单号
+	_logisticsOrderId int64
+	// 金额 单位分
+	_cost int64
 }
 
 // NewTmallServicecenterWorkcardLogisticsorderUpdateRequest 初始化TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest对象
@@ -69,30 +69,17 @@ func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetApiParams()
 	return params
 }
 
-// SetVolume is Volume Setter
-// 体积 单位 立方毫米
-func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetVolume(_volume int64) error {
-	r._volume = _volume
-	r.Set("volume", _volume)
+// SetSubExpressCodes is SubExpressCodes Setter
+// 物流子单号
+func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetSubExpressCodes(_subExpressCodes []string) error {
+	r._subExpressCodes = _subExpressCodes
+	r.Set("sub_express_codes", _subExpressCodes)
 	return nil
 }
 
-// GetVolume Volume Getter
-func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetVolume() int64 {
-	return r._volume
-}
-
-// SetWeight is Weight Setter
-// 重量 单位 克
-func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetWeight(_weight int64) error {
-	r._weight = _weight
-	r.Set("weight", _weight)
-	return nil
-}
-
-// GetWeight Weight Getter
-func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetWeight() int64 {
-	return r._weight
+// GetSubExpressCodes SubExpressCodes Getter
+func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetSubExpressCodes() []string {
+	return r._subExpressCodes
 }
 
 // SetComment is Comment Setter
@@ -173,32 +160,6 @@ func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetGotCode() s
 	return r._gotCode
 }
 
-// SetLogisticsOrderId is LogisticsOrderId Setter
-// 物流订单号
-func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetLogisticsOrderId(_logisticsOrderId int64) error {
-	r._logisticsOrderId = _logisticsOrderId
-	r.Set("logistics_order_id", _logisticsOrderId)
-	return nil
-}
-
-// GetLogisticsOrderId LogisticsOrderId Getter
-func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetLogisticsOrderId() int64 {
-	return r._logisticsOrderId
-}
-
-// SetCost is Cost Setter
-// 金额 单位分
-func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetCost(_cost int64) error {
-	r._cost = _cost
-	r.Set("cost", _cost)
-	return nil
-}
-
-// GetCost Cost Getter
-func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetCost() int64 {
-	return r._cost
-}
-
 // SetGoodsInfo is GoodsInfo Setter
 // 1、以下状态时必填： 包裹已揽收完成 2、字符串格式为：json 串 例子： [{ "name": "上衣", "count": 1 }, { "name": "裤子", "count": 2 }]
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetGoodsInfo(_goodsInfo string) error {
@@ -223,19 +184,6 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetStatusCode
 // GetStatusCode StatusCode Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetStatusCode() string {
 	return r._statusCode
-}
-
-// SetSubExpressCodes is SubExpressCodes Setter
-// 物流子单号
-func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetSubExpressCodes(_subExpressCodes []string) error {
-	r._subExpressCodes = _subExpressCodes
-	r.Set("sub_express_codes", _subExpressCodes)
-	return nil
-}
-
-// GetSubExpressCodes SubExpressCodes Getter
-func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetSubExpressCodes() []string {
-	return r._subExpressCodes
 }
 
 // SetDeliveryTime is DeliveryTime Setter
@@ -288,4 +236,56 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetPickupDoor
 // GetPickupDoorTime PickupDoorTime Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetPickupDoorTime() string {
 	return r._pickupDoorTime
+}
+
+// SetVolume is Volume Setter
+// 体积 单位 立方毫米
+func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetVolume(_volume int64) error {
+	r._volume = _volume
+	r.Set("volume", _volume)
+	return nil
+}
+
+// GetVolume Volume Getter
+func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetVolume() int64 {
+	return r._volume
+}
+
+// SetWeight is Weight Setter
+// 重量 单位 克
+func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetWeight(_weight int64) error {
+	r._weight = _weight
+	r.Set("weight", _weight)
+	return nil
+}
+
+// GetWeight Weight Getter
+func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetWeight() int64 {
+	return r._weight
+}
+
+// SetLogisticsOrderId is LogisticsOrderId Setter
+// 物流订单号
+func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetLogisticsOrderId(_logisticsOrderId int64) error {
+	r._logisticsOrderId = _logisticsOrderId
+	r.Set("logistics_order_id", _logisticsOrderId)
+	return nil
+}
+
+// GetLogisticsOrderId LogisticsOrderId Getter
+func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetLogisticsOrderId() int64 {
+	return r._logisticsOrderId
+}
+
+// SetCost is Cost Setter
+// 金额 单位分
+func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetCost(_cost int64) error {
+	r._cost = _cost
+	r.Set("cost", _cost)
+	return nil
+}
+
+// GetCost Cost Getter
+func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetCost() int64 {
+	return r._cost
 }

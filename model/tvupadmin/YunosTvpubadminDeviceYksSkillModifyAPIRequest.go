@@ -12,12 +12,12 @@ import (
 // 修改技能
 type YunosTvpubadminDeviceYksSkillModifyAPIRequest struct {
 	model.Params
-	// 技能id
-	_skillId int64
 	// 图片地址
 	_iconImageUrl string
 	// 技能名称
 	_name string
+	// 技能id
+	_skillId int64
 }
 
 // NewYunosTvpubadminDeviceYksSkillModifyRequest 初始化YunosTvpubadminDeviceYksSkillModifyAPIRequest对象
@@ -39,19 +39,6 @@ func (r YunosTvpubadminDeviceYksSkillModifyAPIRequest) GetApiParams() url.Values
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetSkillId is SkillId Setter
-// 技能id
-func (r *YunosTvpubadminDeviceYksSkillModifyAPIRequest) SetSkillId(_skillId int64) error {
-	r._skillId = _skillId
-	r.Set("skill_id", _skillId)
-	return nil
-}
-
-// GetSkillId SkillId Getter
-func (r YunosTvpubadminDeviceYksSkillModifyAPIRequest) GetSkillId() int64 {
-	return r._skillId
 }
 
 // SetIconImageUrl is IconImageUrl Setter
@@ -78,4 +65,17 @@ func (r *YunosTvpubadminDeviceYksSkillModifyAPIRequest) SetName(_name string) er
 // GetName Name Getter
 func (r YunosTvpubadminDeviceYksSkillModifyAPIRequest) GetName() string {
 	return r._name
+}
+
+// SetSkillId is SkillId Setter
+// 技能id
+func (r *YunosTvpubadminDeviceYksSkillModifyAPIRequest) SetSkillId(_skillId int64) error {
+	r._skillId = _skillId
+	r.Set("skill_id", _skillId)
+	return nil
+}
+
+// GetSkillId SkillId Getter
+func (r YunosTvpubadminDeviceYksSkillModifyAPIRequest) GetSkillId() int64 {
+	return r._skillId
 }

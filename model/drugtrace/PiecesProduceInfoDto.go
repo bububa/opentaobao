@@ -2,6 +2,8 @@ package drugtrace
 
 // PiecesProduceInfoDto 结构体
 type PiecesProduceInfoDto struct {
+	// 生产管理图片（上传图片）图片建议尺寸：height: 310px;width: 670px;
+	ProductionPictures []string `json:"production_pictures,omitempty" xml:"production_pictures>string,omitempty"`
 	// 生产开始日期yyyy-MM-dd
 	ProductionStartDate string `json:"production_start_date,omitempty" xml:"production_start_date,omitempty"`
 	// 包装规格
@@ -14,6 +16,4 @@ type PiecesProduceInfoDto struct {
 	ProductionEndDate string `json:"production_end_date,omitempty" xml:"production_end_date,omitempty"`
 	// 包装材质
 	PackingMaterial string `json:"packing_material,omitempty" xml:"packing_material,omitempty"`
-	// 生产管理图片（上传图片）图片建议尺寸：height: 310px;width: 670px;
-	ProductionPictures []string `json:"production_pictures,omitempty" xml:"production_pictures>string,omitempty"`
 }

@@ -12,12 +12,12 @@ import (
 // 用于三方薄荷同步数据到健康会员
 type AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest struct {
 	model.Params
-	// 阿里健康id
-	_tpUserId int64
 	// 记录体重
 	_weight string
 	// 记录日期
 	_recordDate string
+	// 阿里健康id
+	_tpUserId int64
 }
 
 // NewAlibabaFmhealthWeightLossplanSyncweightdataRequest 初始化AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) GetApiParams() ur
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetTpUserId is TpUserId Setter
-// 阿里健康id
-func (r *AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) SetTpUserId(_tpUserId int64) error {
-	r._tpUserId = _tpUserId
-	r.Set("tp_user_id", _tpUserId)
-	return nil
-}
-
-// GetTpUserId TpUserId Getter
-func (r AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) GetTpUserId() int64 {
-	return r._tpUserId
 }
 
 // SetWeight is Weight Setter
@@ -78,4 +65,17 @@ func (r *AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) SetRecordDate(_r
 // GetRecordDate RecordDate Getter
 func (r AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) GetRecordDate() string {
 	return r._recordDate
+}
+
+// SetTpUserId is TpUserId Setter
+// 阿里健康id
+func (r *AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) SetTpUserId(_tpUserId int64) error {
+	r._tpUserId = _tpUserId
+	r.Set("tp_user_id", _tpUserId)
+	return nil
+}
+
+// GetTpUserId TpUserId Getter
+func (r AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) GetTpUserId() int64 {
+	return r._tpUserId
 }

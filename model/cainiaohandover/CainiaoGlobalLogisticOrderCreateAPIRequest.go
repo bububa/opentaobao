@@ -12,10 +12,10 @@ import (
 // 创建物流订单
 type CainiaoGlobalLogisticOrderCreateAPIRequest struct {
 	model.Params
-	// 订单参数
-	_orderParam *OpenOrderParam
 	// 多语言
 	_locale string
+	// 订单参数
+	_orderParam *OpenOrderParam
 }
 
 // NewCainiaoGlobalLogisticOrderCreateRequest 初始化CainiaoGlobalLogisticOrderCreateAPIRequest对象
@@ -39,19 +39,6 @@ func (r CainiaoGlobalLogisticOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetOrderParam is OrderParam Setter
-// 订单参数
-func (r *CainiaoGlobalLogisticOrderCreateAPIRequest) SetOrderParam(_orderParam *OpenOrderParam) error {
-	r._orderParam = _orderParam
-	r.Set("order_param", _orderParam)
-	return nil
-}
-
-// GetOrderParam OrderParam Getter
-func (r CainiaoGlobalLogisticOrderCreateAPIRequest) GetOrderParam() *OpenOrderParam {
-	return r._orderParam
-}
-
 // SetLocale is Locale Setter
 // 多语言
 func (r *CainiaoGlobalLogisticOrderCreateAPIRequest) SetLocale(_locale string) error {
@@ -63,4 +50,17 @@ func (r *CainiaoGlobalLogisticOrderCreateAPIRequest) SetLocale(_locale string) e
 // GetLocale Locale Getter
 func (r CainiaoGlobalLogisticOrderCreateAPIRequest) GetLocale() string {
 	return r._locale
+}
+
+// SetOrderParam is OrderParam Setter
+// 订单参数
+func (r *CainiaoGlobalLogisticOrderCreateAPIRequest) SetOrderParam(_orderParam *OpenOrderParam) error {
+	r._orderParam = _orderParam
+	r.Set("order_param", _orderParam)
+	return nil
+}
+
+// GetOrderParam OrderParam Getter
+func (r CainiaoGlobalLogisticOrderCreateAPIRequest) GetOrderParam() *OpenOrderParam {
+	return r._orderParam
 }

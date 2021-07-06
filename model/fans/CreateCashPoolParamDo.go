@@ -6,8 +6,6 @@ type CreateCashPoolParamDo struct {
 	UseEndTime string `json:"use_end_time,omitempty" xml:"use_end_time,omitempty"`
 	// 红包使用结束时间
 	UseStartTime string `json:"use_start_time,omitempty" xml:"use_start_time,omitempty"`
-	// 奖金池总额度
-	CashValue int64 `json:"cash_value,omitempty" xml:"cash_value,omitempty"`
 	// 奖金池标题
 	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
 	// 奖金池描述
@@ -24,4 +22,6 @@ type CreateCashPoolParamDo struct {
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 开始答题时间
 	BeginQaTime string `json:"begin_qa_time,omitempty" xml:"begin_qa_time,omitempty"`
+	// 奖金池总额度
+	CashValue int64 `json:"cash_value,omitempty" xml:"cash_value,omitempty"`
 }

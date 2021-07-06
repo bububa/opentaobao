@@ -8,10 +8,10 @@ type B2BTicketInfo struct {
 	RiderName string `json:"rider_name,omitempty" xml:"rider_name,omitempty"`
 	// 座位号
 	RiderSeatNumber string `json:"rider_seat_number,omitempty" xml:"rider_seat_number,omitempty"`
-	// 服务费
-	ServiceCharge int64 `json:"service_charge,omitempty" xml:"service_charge,omitempty"`
 	// 票ID
 	TicketId string `json:"ticket_id,omitempty" xml:"ticket_id,omitempty"`
+	// 服务费
+	ServiceCharge int64 `json:"service_charge,omitempty" xml:"service_charge,omitempty"`
 	// 票价
 	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
 	// 退票手续费

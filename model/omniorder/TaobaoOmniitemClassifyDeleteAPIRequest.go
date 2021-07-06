@@ -12,10 +12,10 @@ import (
 // 删除一个分类
 type TaobaoOmniitemClassifyDeleteAPIRequest struct {
 	model.Params
-	// 分类ID
-	_classifyId int64
 	// 操作人信息（暂时不填）
 	_operator string
+	// 分类ID
+	_classifyId int64
 }
 
 // NewTaobaoOmniitemClassifyDeleteRequest 初始化TaobaoOmniitemClassifyDeleteAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoOmniitemClassifyDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetClassifyId is ClassifyId Setter
-// 分类ID
-func (r *TaobaoOmniitemClassifyDeleteAPIRequest) SetClassifyId(_classifyId int64) error {
-	r._classifyId = _classifyId
-	r.Set("classify_id", _classifyId)
-	return nil
-}
-
-// GetClassifyId ClassifyId Getter
-func (r TaobaoOmniitemClassifyDeleteAPIRequest) GetClassifyId() int64 {
-	return r._classifyId
-}
-
 // SetOperator is Operator Setter
 // 操作人信息（暂时不填）
 func (r *TaobaoOmniitemClassifyDeleteAPIRequest) SetOperator(_operator string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoOmniitemClassifyDeleteAPIRequest) SetOperator(_operator string) e
 // GetOperator Operator Getter
 func (r TaobaoOmniitemClassifyDeleteAPIRequest) GetOperator() string {
 	return r._operator
+}
+
+// SetClassifyId is ClassifyId Setter
+// 分类ID
+func (r *TaobaoOmniitemClassifyDeleteAPIRequest) SetClassifyId(_classifyId int64) error {
+	r._classifyId = _classifyId
+	r.Set("classify_id", _classifyId)
+	return nil
+}
+
+// GetClassifyId ClassifyId Getter
+func (r TaobaoOmniitemClassifyDeleteAPIRequest) GetClassifyId() int64 {
+	return r._classifyId
 }

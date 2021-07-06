@@ -12,14 +12,14 @@ import (
 // 查询两个渠道之间的固定映射关系，不通过算法兜底
 type AlibabaImapFixedmappingQueryAPIRequest struct {
 	model.Params
+	// 目标渠道ID列表
+	_targetChannelIdList []int64
 	// 密码
 	_password string
 	// 账号
 	_appName string
 	// 源渠道ID
 	_srcChannelId int64
-	// 目标渠道ID列表
-	_targetChannelIdList []int64
 	// 目标渠道ID
 	_targetCategoryId int64
 	// 源类目ID
@@ -45,6 +45,19 @@ func (r AlibabaImapFixedmappingQueryAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTargetChannelIdList is TargetChannelIdList Setter
+// 目标渠道ID列表
+func (r *AlibabaImapFixedmappingQueryAPIRequest) SetTargetChannelIdList(_targetChannelIdList []int64) error {
+	r._targetChannelIdList = _targetChannelIdList
+	r.Set("target_channel_id_list", _targetChannelIdList)
+	return nil
+}
+
+// GetTargetChannelIdList TargetChannelIdList Getter
+func (r AlibabaImapFixedmappingQueryAPIRequest) GetTargetChannelIdList() []int64 {
+	return r._targetChannelIdList
 }
 
 // SetPassword is Password Setter
@@ -84,19 +97,6 @@ func (r *AlibabaImapFixedmappingQueryAPIRequest) SetSrcChannelId(_srcChannelId i
 // GetSrcChannelId SrcChannelId Getter
 func (r AlibabaImapFixedmappingQueryAPIRequest) GetSrcChannelId() int64 {
 	return r._srcChannelId
-}
-
-// SetTargetChannelIdList is TargetChannelIdList Setter
-// 目标渠道ID列表
-func (r *AlibabaImapFixedmappingQueryAPIRequest) SetTargetChannelIdList(_targetChannelIdList []int64) error {
-	r._targetChannelIdList = _targetChannelIdList
-	r.Set("target_channel_id_list", _targetChannelIdList)
-	return nil
-}
-
-// GetTargetChannelIdList TargetChannelIdList Getter
-func (r AlibabaImapFixedmappingQueryAPIRequest) GetTargetChannelIdList() []int64 {
-	return r._targetChannelIdList
 }
 
 // SetTargetCategoryId is TargetCategoryId Setter

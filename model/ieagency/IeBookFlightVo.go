@@ -20,12 +20,12 @@ type IeBookFlightVo struct {
 	OperatingAirLine string `json:"operating_air_line,omitempty" xml:"operating_air_line,omitempty"`
 	// 航班方向(Outbound:去程,Inbound:回程,行程类型,MultiCity:多程)
 	DirectionType string `json:"direction_type,omitempty" xml:"direction_type,omitempty"`
-	// 第几段
-	SegmentRph int64 `json:"segment_rph,omitempty" xml:"segment_rph,omitempty"`
 	// 到达时间
 	ArrTime string `json:"arr_time,omitempty" xml:"arr_time,omitempty"`
-	// 是否共享航班
-	CodeShare bool `json:"code_share,omitempty" xml:"code_share,omitempty"`
 	// 市场
 	MarketingAirline string `json:"marketing_airline,omitempty" xml:"marketing_airline,omitempty"`
+	// 第几段
+	SegmentRph int64 `json:"segment_rph,omitempty" xml:"segment_rph,omitempty"`
+	// 是否共享航班
+	CodeShare bool `json:"code_share,omitempty" xml:"code_share,omitempty"`
 }

@@ -12,14 +12,14 @@ import (
 // ISV Pos端门店发货，通知星盘
 type TaobaoOmniorderStoreConsignedAPIRequest struct {
 	model.Params
+	// 子订单列表
+	_subOrderList []StoreConsignedResult
 	// 跟踪Id
 	_traceId string
 	// 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。如果为空，取的卖家的默认取货地址
 	_senderId int64
 	// 家装物流-安装收货人信息,如果为空,则取默认收货人信息
 	_insReceiverTo *JzReceiverDto
-	// 子订单列表
-	_subOrderList []StoreConsignedResult
 	// 家装物流-发货参数
 	_jzTopArgs *JzTopArgsDto
 	// 家装物流-安装公司信息,需要安装时,才填写
@@ -53,6 +53,19 @@ func (r TaobaoOmniorderStoreConsignedAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSubOrderList is SubOrderList Setter
+// 子订单列表
+func (r *TaobaoOmniorderStoreConsignedAPIRequest) SetSubOrderList(_subOrderList []StoreConsignedResult) error {
+	r._subOrderList = _subOrderList
+	r.Set("sub_order_list", _subOrderList)
+	return nil
+}
+
+// GetSubOrderList SubOrderList Getter
+func (r TaobaoOmniorderStoreConsignedAPIRequest) GetSubOrderList() []StoreConsignedResult {
+	return r._subOrderList
 }
 
 // SetTraceId is TraceId Setter
@@ -92,19 +105,6 @@ func (r *TaobaoOmniorderStoreConsignedAPIRequest) SetInsReceiverTo(_insReceiverT
 // GetInsReceiverTo InsReceiverTo Getter
 func (r TaobaoOmniorderStoreConsignedAPIRequest) GetInsReceiverTo() *JzReceiverDto {
 	return r._insReceiverTo
-}
-
-// SetSubOrderList is SubOrderList Setter
-// 子订单列表
-func (r *TaobaoOmniorderStoreConsignedAPIRequest) SetSubOrderList(_subOrderList []StoreConsignedResult) error {
-	r._subOrderList = _subOrderList
-	r.Set("sub_order_list", _subOrderList)
-	return nil
-}
-
-// GetSubOrderList SubOrderList Getter
-func (r TaobaoOmniorderStoreConsignedAPIRequest) GetSubOrderList() []StoreConsignedResult {
-	return r._subOrderList
 }
 
 // SetJzTopArgs is JzTopArgs Setter

@@ -23,18 +23,10 @@ type TaobaoProductsSearchAPIRequest struct {
 	_fields []string
 	// 搜索的关键词是用来搜索产品的title.　注:q,cid和props至少传入一个
 	_q string
-	// 商品类目ID.调用taobao.itemcats.get获取.
-	_cid int64
 	// 属性,属性值的组合.格式:pid:vid;pid:vid;调用taobao.itemprops.get获取类目属性pid <br/>,再用taobao.itempropvalues.get取得vid.
 	_props string
 	// 想要获取的产品的状态列表，支持多个状态并列获取，多个状态之间用","分隔，最多同时指定5种状态。例如，只获取小二确认的spu传入"3",只要商家确认的传入"0"，既要小二确认又要商家确认的传入"0,3"。目前只支持者两种类型的状态搜索，输入其他状态无效。
 	_status string
-	// 页码.传入值为1代表第一页,传入值为2代表第二页,依此类推.默认返回的数据是从第一页开始.
-	_pageNo int64
-	// 每页条数.每页返回最多返回100条,默认值为40.
-	_pageSize int64
-	// 传入值为：3表示3C表示3C垂直市场产品，4表示鞋城垂直市场产品，8表示网游垂直市场产品。一次只能指定一种垂直市场类型
-	_verticalMarket int64
 	// 用户自定义关键属性,结构：pid1:value1;pid2:value2，如果有型号，系列等子属性用: 隔开 例如：“20000:优衣库:型号:001;632501:1234”，表示“品牌:优衣库:型号:001;货号:1234”
 	_customerProps string
 	// 按关联产品规格specs搜索套装产品
@@ -43,6 +35,14 @@ type TaobaoProductsSearchAPIRequest struct {
 	_barcodeStr string
 	// 市场ID，1为取C2C市场的产品信息， 2为取B2C市场的产品信息。  不填写此值则默认取C2C的产品信息。
 	_marketId string
+	// 商品类目ID.调用taobao.itemcats.get获取.
+	_cid int64
+	// 页码.传入值为1代表第一页,传入值为2代表第二页,依此类推.默认返回的数据是从第一页开始.
+	_pageNo int64
+	// 每页条数.每页返回最多返回100条,默认值为40.
+	_pageSize int64
+	// 传入值为：3表示3C表示3C垂直市场产品，4表示鞋城垂直市场产品，8表示网游垂直市场产品。一次只能指定一种垂直市场类型
+	_verticalMarket int64
 }
 
 // NewTaobaoProductsSearchRequest 初始化TaobaoProductsSearchAPIRequest对象
@@ -92,19 +92,6 @@ func (r TaobaoProductsSearchAPIRequest) GetQ() string {
 	return r._q
 }
 
-// SetCid is Cid Setter
-// 商品类目ID.调用taobao.itemcats.get获取.
-func (r *TaobaoProductsSearchAPIRequest) SetCid(_cid int64) error {
-	r._cid = _cid
-	r.Set("cid", _cid)
-	return nil
-}
-
-// GetCid Cid Getter
-func (r TaobaoProductsSearchAPIRequest) GetCid() int64 {
-	return r._cid
-}
-
 // SetProps is Props Setter
 // 属性,属性值的组合.格式:pid:vid;pid:vid;调用taobao.itemprops.get获取类目属性pid <br/>,再用taobao.itempropvalues.get取得vid.
 func (r *TaobaoProductsSearchAPIRequest) SetProps(_props string) error {
@@ -129,45 +116,6 @@ func (r *TaobaoProductsSearchAPIRequest) SetStatus(_status string) error {
 // GetStatus Status Getter
 func (r TaobaoProductsSearchAPIRequest) GetStatus() string {
 	return r._status
-}
-
-// SetPageNo is PageNo Setter
-// 页码.传入值为1代表第一页,传入值为2代表第二页,依此类推.默认返回的数据是从第一页开始.
-func (r *TaobaoProductsSearchAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r TaobaoProductsSearchAPIRequest) GetPageNo() int64 {
-	return r._pageNo
-}
-
-// SetPageSize is PageSize Setter
-// 每页条数.每页返回最多返回100条,默认值为40.
-func (r *TaobaoProductsSearchAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoProductsSearchAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetVerticalMarket is VerticalMarket Setter
-// 传入值为：3表示3C表示3C垂直市场产品，4表示鞋城垂直市场产品，8表示网游垂直市场产品。一次只能指定一种垂直市场类型
-func (r *TaobaoProductsSearchAPIRequest) SetVerticalMarket(_verticalMarket int64) error {
-	r._verticalMarket = _verticalMarket
-	r.Set("vertical_market", _verticalMarket)
-	return nil
-}
-
-// GetVerticalMarket VerticalMarket Getter
-func (r TaobaoProductsSearchAPIRequest) GetVerticalMarket() int64 {
-	return r._verticalMarket
 }
 
 // SetCustomerProps is CustomerProps Setter
@@ -220,4 +168,56 @@ func (r *TaobaoProductsSearchAPIRequest) SetMarketId(_marketId string) error {
 // GetMarketId MarketId Getter
 func (r TaobaoProductsSearchAPIRequest) GetMarketId() string {
 	return r._marketId
+}
+
+// SetCid is Cid Setter
+// 商品类目ID.调用taobao.itemcats.get获取.
+func (r *TaobaoProductsSearchAPIRequest) SetCid(_cid int64) error {
+	r._cid = _cid
+	r.Set("cid", _cid)
+	return nil
+}
+
+// GetCid Cid Getter
+func (r TaobaoProductsSearchAPIRequest) GetCid() int64 {
+	return r._cid
+}
+
+// SetPageNo is PageNo Setter
+// 页码.传入值为1代表第一页,传入值为2代表第二页,依此类推.默认返回的数据是从第一页开始.
+func (r *TaobaoProductsSearchAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r TaobaoProductsSearchAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// SetPageSize is PageSize Setter
+// 每页条数.每页返回最多返回100条,默认值为40.
+func (r *TaobaoProductsSearchAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoProductsSearchAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetVerticalMarket is VerticalMarket Setter
+// 传入值为：3表示3C表示3C垂直市场产品，4表示鞋城垂直市场产品，8表示网游垂直市场产品。一次只能指定一种垂直市场类型
+func (r *TaobaoProductsSearchAPIRequest) SetVerticalMarket(_verticalMarket int64) error {
+	r._verticalMarket = _verticalMarket
+	r.Set("vertical_market", _verticalMarket)
+	return nil
+}
+
+// GetVerticalMarket VerticalMarket Getter
+func (r TaobaoProductsSearchAPIRequest) GetVerticalMarket() int64 {
+	return r._verticalMarket
 }

@@ -2,8 +2,10 @@ package trade
 
 // TradeAmount 结构体
 type TradeAmount struct {
-	// 交易主订单编号
-	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+	// 主交易订单的系统级优惠详情
+	PromotionDetails []PromotionDetail `json:"promotion_details,omitempty" xml:"promotion_details>promotion_detail,omitempty"`
+	// 子订单的帐务金额详情列表
+	OrderAmounts []OrderAmount `json:"order_amounts,omitempty" xml:"order_amounts>order_amount,omitempty"`
 	// 支付宝交易号，如：2009112081173831
 	AlipayNo string `json:"alipay_no,omitempty" xml:"alipay_no,omitempty"`
 	// 交易创建时间
@@ -22,10 +24,6 @@ type TradeAmount struct {
 	Payment string `json:"payment,omitempty" xml:"payment,omitempty"`
 	// 交易佣金。精确到2位小数;单位:元。如:200.07，表示:200元7分
 	CommissionFee string `json:"commission_fee,omitempty" xml:"commission_fee,omitempty"`
-	// 主交易订单的系统级优惠详情
-	PromotionDetails []PromotionDetail `json:"promotion_details,omitempty" xml:"promotion_details>promotion_detail,omitempty"`
-	// 子订单的帐务金额详情列表
-	OrderAmounts []OrderAmount `json:"order_amounts,omitempty" xml:"order_amounts>order_amount,omitempty"`
 	// 买家获得积分,返点的积分。格式:100;单位:个
 	BuyerObtainPointFee string `json:"buyer_obtain_point_fee,omitempty" xml:"buyer_obtain_point_fee,omitempty"`
 	// 买家货到付款服务费。精确到2位小数;单位:元。如:12.07，表示:12元7分
@@ -34,4 +32,6 @@ type TradeAmount struct {
 	SellerCodFee string `json:"seller_cod_fee,omitempty" xml:"seller_cod_fee,omitempty"`
 	// 快递代收款。精确到2位小数;单位:元。如:212.07，表示:212元7分
 	ExpressAgencyFee string `json:"express_agency_fee,omitempty" xml:"express_agency_fee,omitempty"`
+	// 交易主订单编号
+	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 }

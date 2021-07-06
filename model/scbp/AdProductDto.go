@@ -2,6 +2,16 @@ package scbp
 
 // AdProductDto 结构体
 type AdProductDto struct {
+	// 创建时间
+	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
+	// 修改时间
+	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+	// 商品标题
+	Subject string `json:"subject,omitempty" xml:"subject,omitempty"`
+	// posting创建时间
+	GmtPostingCreate string `json:"gmt_posting_create,omitempty" xml:"gmt_posting_create,omitempty"`
+	// posting修改时间
+	GmtPostingModified string `json:"gmt_posting_modified,omitempty" xml:"gmt_posting_modified,omitempty"`
 	// 计划id
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
 	// 计划类型
@@ -18,14 +28,8 @@ type AdProductDto struct {
 	AdsId int64 `json:"ads_id,omitempty" xml:"ads_id,omitempty"`
 	// 主键id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
-	// 创建时间
-	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-	// 修改时间
-	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 商品id
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
-	// 商品标题
-	Subject string `json:"subject,omitempty" xml:"subject,omitempty"`
 	// 1级分组
 	GroupLv1Id int64 `json:"group_lv1_id,omitempty" xml:"group_lv1_id,omitempty"`
 	// 2级分组
@@ -38,10 +42,6 @@ type AdProductDto struct {
 	CateLv2Id int64 `json:"cate_lv2_id,omitempty" xml:"cate_lv2_id,omitempty"`
 	// 3级类目
 	CateLv3Id int64 `json:"cate_lv3_id,omitempty" xml:"cate_lv3_id,omitempty"`
-	// posting创建时间
-	GmtPostingCreate string `json:"gmt_posting_create,omitempty" xml:"gmt_posting_create,omitempty"`
-	// posting修改时间
-	GmtPostingModified string `json:"gmt_posting_modified,omitempty" xml:"gmt_posting_modified,omitempty"`
 	// 效果数据
 	Effect *AdProductEffectDto `json:"effect,omitempty" xml:"effect,omitempty"`
 }

@@ -16,18 +16,8 @@ type AlibabaPicturesDengtaOrderEffectImportAPIRequest struct {
 	_imsOrderId string
 	// 微博链接
 	_url string
-	// 阅读数
-	_readsCount int64
-	// 转发数
-	_repostsCount int64
-	// 评论数
-	_commentsCount int64
-	// 点赞数
-	_attitudesCount int64
 	// 微博昵称
 	_weiboNick string
-	// 粉丝数
-	_followersCount int64
 	// 传播关键节点
 	_nodesTop string
 	// 关键路径
@@ -50,10 +40,20 @@ type AlibabaPicturesDengtaOrderEffectImportAPIRequest struct {
 	_repostNumPerHour string
 	// 点赞量每小时趋势图
 	_attitudesNumPerHour string
-	// 是否成功
-	_isSuccess int64
 	// 失败原因
 	_failReason string
+	// 阅读数
+	_readsCount int64
+	// 转发数
+	_repostsCount int64
+	// 评论数
+	_commentsCount int64
+	// 点赞数
+	_attitudesCount int64
+	// 粉丝数
+	_followersCount int64
+	// 是否成功
+	_isSuccess int64
 }
 
 // NewAlibabaPicturesDengtaOrderEffectImportRequest 初始化AlibabaPicturesDengtaOrderEffectImportAPIRequest对象
@@ -103,58 +103,6 @@ func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetUrl() string {
 	return r._url
 }
 
-// SetReadsCount is ReadsCount Setter
-// 阅读数
-func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetReadsCount(_readsCount int64) error {
-	r._readsCount = _readsCount
-	r.Set("reads_count", _readsCount)
-	return nil
-}
-
-// GetReadsCount ReadsCount Getter
-func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetReadsCount() int64 {
-	return r._readsCount
-}
-
-// SetRepostsCount is RepostsCount Setter
-// 转发数
-func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetRepostsCount(_repostsCount int64) error {
-	r._repostsCount = _repostsCount
-	r.Set("reposts_count", _repostsCount)
-	return nil
-}
-
-// GetRepostsCount RepostsCount Getter
-func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetRepostsCount() int64 {
-	return r._repostsCount
-}
-
-// SetCommentsCount is CommentsCount Setter
-// 评论数
-func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetCommentsCount(_commentsCount int64) error {
-	r._commentsCount = _commentsCount
-	r.Set("comments_count", _commentsCount)
-	return nil
-}
-
-// GetCommentsCount CommentsCount Getter
-func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetCommentsCount() int64 {
-	return r._commentsCount
-}
-
-// SetAttitudesCount is AttitudesCount Setter
-// 点赞数
-func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetAttitudesCount(_attitudesCount int64) error {
-	r._attitudesCount = _attitudesCount
-	r.Set("attitudes_count", _attitudesCount)
-	return nil
-}
-
-// GetAttitudesCount AttitudesCount Getter
-func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetAttitudesCount() int64 {
-	return r._attitudesCount
-}
-
 // SetWeiboNick is WeiboNick Setter
 // 微博昵称
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetWeiboNick(_weiboNick string) error {
@@ -166,19 +114,6 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetWeiboNick(_weiboNi
 // GetWeiboNick WeiboNick Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetWeiboNick() string {
 	return r._weiboNick
-}
-
-// SetFollowersCount is FollowersCount Setter
-// 粉丝数
-func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetFollowersCount(_followersCount int64) error {
-	r._followersCount = _followersCount
-	r.Set("followers_count", _followersCount)
-	return nil
-}
-
-// GetFollowersCount FollowersCount Getter
-func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetFollowersCount() int64 {
-	return r._followersCount
 }
 
 // SetNodesTop is NodesTop Setter
@@ -324,19 +259,6 @@ func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetAttitudesNumPerHour
 	return r._attitudesNumPerHour
 }
 
-// SetIsSuccess is IsSuccess Setter
-// 是否成功
-func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetIsSuccess(_isSuccess int64) error {
-	r._isSuccess = _isSuccess
-	r.Set("is_success", _isSuccess)
-	return nil
-}
-
-// GetIsSuccess IsSuccess Getter
-func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetIsSuccess() int64 {
-	return r._isSuccess
-}
-
 // SetFailReason is FailReason Setter
 // 失败原因
 func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetFailReason(_failReason string) error {
@@ -348,4 +270,82 @@ func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetFailReason(_failRe
 // GetFailReason FailReason Getter
 func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetFailReason() string {
 	return r._failReason
+}
+
+// SetReadsCount is ReadsCount Setter
+// 阅读数
+func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetReadsCount(_readsCount int64) error {
+	r._readsCount = _readsCount
+	r.Set("reads_count", _readsCount)
+	return nil
+}
+
+// GetReadsCount ReadsCount Getter
+func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetReadsCount() int64 {
+	return r._readsCount
+}
+
+// SetRepostsCount is RepostsCount Setter
+// 转发数
+func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetRepostsCount(_repostsCount int64) error {
+	r._repostsCount = _repostsCount
+	r.Set("reposts_count", _repostsCount)
+	return nil
+}
+
+// GetRepostsCount RepostsCount Getter
+func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetRepostsCount() int64 {
+	return r._repostsCount
+}
+
+// SetCommentsCount is CommentsCount Setter
+// 评论数
+func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetCommentsCount(_commentsCount int64) error {
+	r._commentsCount = _commentsCount
+	r.Set("comments_count", _commentsCount)
+	return nil
+}
+
+// GetCommentsCount CommentsCount Getter
+func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetCommentsCount() int64 {
+	return r._commentsCount
+}
+
+// SetAttitudesCount is AttitudesCount Setter
+// 点赞数
+func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetAttitudesCount(_attitudesCount int64) error {
+	r._attitudesCount = _attitudesCount
+	r.Set("attitudes_count", _attitudesCount)
+	return nil
+}
+
+// GetAttitudesCount AttitudesCount Getter
+func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetAttitudesCount() int64 {
+	return r._attitudesCount
+}
+
+// SetFollowersCount is FollowersCount Setter
+// 粉丝数
+func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetFollowersCount(_followersCount int64) error {
+	r._followersCount = _followersCount
+	r.Set("followers_count", _followersCount)
+	return nil
+}
+
+// GetFollowersCount FollowersCount Getter
+func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetFollowersCount() int64 {
+	return r._followersCount
+}
+
+// SetIsSuccess is IsSuccess Setter
+// 是否成功
+func (r *AlibabaPicturesDengtaOrderEffectImportAPIRequest) SetIsSuccess(_isSuccess int64) error {
+	r._isSuccess = _isSuccess
+	r.Set("is_success", _isSuccess)
+	return nil
+}
+
+// GetIsSuccess IsSuccess Getter
+func (r AlibabaPicturesDengtaOrderEffectImportAPIRequest) GetIsSuccess() int64 {
+	return r._isSuccess
 }

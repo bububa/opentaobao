@@ -12,12 +12,12 @@ type DeliveryOrderQueryRequest struct {
 	OrderId string `json:"orderId,omitempty" xml:"orderId,omitempty"`
 	// 交易单号
 	OrderSourceCode string `json:"orderSourceCode,omitempty" xml:"orderSourceCode,omitempty"`
+	// 备注
+	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 当前页
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
 	// 每页orderLine条数(最多100条)
 	PageSize int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
 	// 扩展属性
 	ExtendProps *TaobaoQimenDeliveryorderQueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
-	// 备注
-	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 }

@@ -12,10 +12,10 @@ import (
 // 卖家拒绝退货，目前仅支持天猫退货。
 type TaobaoRpReturngoodsRefuseAPIRequest struct {
 	model.Params
-	// 退款编号
-	_refundId int64
 	// 退款服务状态，售后或者售中
 	_refundPhase string
+	// 退款编号
+	_refundId int64
 	// 退款版本号
 	_refundVersion int64
 	// 拒绝退货凭证图片，必须图片格式，大小不能超过5M
@@ -45,19 +45,6 @@ func (r TaobaoRpReturngoodsRefuseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetRefundId is RefundId Setter
-// 退款编号
-func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefundId(_refundId int64) error {
-	r._refundId = _refundId
-	r.Set("refund_id", _refundId)
-	return nil
-}
-
-// GetRefundId RefundId Getter
-func (r TaobaoRpReturngoodsRefuseAPIRequest) GetRefundId() int64 {
-	return r._refundId
-}
-
 // SetRefundPhase is RefundPhase Setter
 // 退款服务状态，售后或者售中
 func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefundPhase(_refundPhase string) error {
@@ -69,6 +56,19 @@ func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefundPhase(_refundPhase string
 // GetRefundPhase RefundPhase Getter
 func (r TaobaoRpReturngoodsRefuseAPIRequest) GetRefundPhase() string {
 	return r._refundPhase
+}
+
+// SetRefundId is RefundId Setter
+// 退款编号
+func (r *TaobaoRpReturngoodsRefuseAPIRequest) SetRefundId(_refundId int64) error {
+	r._refundId = _refundId
+	r.Set("refund_id", _refundId)
+	return nil
+}
+
+// GetRefundId RefundId Getter
+func (r TaobaoRpReturngoodsRefuseAPIRequest) GetRefundId() int64 {
+	return r._refundId
 }
 
 // SetRefundVersion is RefundVersion Setter

@@ -12,12 +12,12 @@ import (
 // 区域零售订单获取取件码，方便商家系统接入，获取取件码打印信息进行打印。
 type TmallNrOrderLogisInfoAPIRequest struct {
 	model.Params
-	// 卖家ID
-	_sellerId int64
 	// 主订单号
 	_mainOrderIds []int64
 	// 来源标识
 	_channel string
+	// 卖家ID
+	_sellerId int64
 }
 
 // NewTmallNrOrderLogisInfoRequest 初始化TmallNrOrderLogisInfoAPIRequest对象
@@ -39,19 +39,6 @@ func (r TmallNrOrderLogisInfoAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetSellerId is SellerId Setter
-// 卖家ID
-func (r *TmallNrOrderLogisInfoAPIRequest) SetSellerId(_sellerId int64) error {
-	r._sellerId = _sellerId
-	r.Set("seller_id", _sellerId)
-	return nil
-}
-
-// GetSellerId SellerId Getter
-func (r TmallNrOrderLogisInfoAPIRequest) GetSellerId() int64 {
-	return r._sellerId
 }
 
 // SetMainOrderIds is MainOrderIds Setter
@@ -78,4 +65,17 @@ func (r *TmallNrOrderLogisInfoAPIRequest) SetChannel(_channel string) error {
 // GetChannel Channel Getter
 func (r TmallNrOrderLogisInfoAPIRequest) GetChannel() string {
 	return r._channel
+}
+
+// SetSellerId is SellerId Setter
+// 卖家ID
+func (r *TmallNrOrderLogisInfoAPIRequest) SetSellerId(_sellerId int64) error {
+	r._sellerId = _sellerId
+	r.Set("seller_id", _sellerId)
+	return nil
+}
+
+// GetSellerId SellerId Getter
+func (r TmallNrOrderLogisInfoAPIRequest) GetSellerId() int64 {
+	return r._sellerId
 }

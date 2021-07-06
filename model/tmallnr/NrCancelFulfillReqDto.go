@@ -4,6 +4,8 @@ package tmallnr
 type NrCancelFulfillReqDto struct {
 	// 操作取消人员姓名
 	CancelOperUserName string `json:"cancel_oper_user_name,omitempty" xml:"cancel_oper_user_name,omitempty"`
+	// 取消原因的说明
+	CancelReason string `json:"cancel_reason,omitempty" xml:"cancel_reason,omitempty"`
 	// 操作取消人员ID号
 	CancelOperUserId int64 `json:"cancel_oper_user_id,omitempty" xml:"cancel_oper_user_id,omitempty"`
 	// 取消的对应编码
@@ -14,6 +16,4 @@ type NrCancelFulfillReqDto struct {
 	CancelOperType int64 `json:"cancel_oper_type,omitempty" xml:"cancel_oper_type,omitempty"`
 	// 淘宝交易的主订单号
 	MainOrderId int64 `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
-	// 取消原因的说明
-	CancelReason string `json:"cancel_reason,omitempty" xml:"cancel_reason,omitempty"`
 }

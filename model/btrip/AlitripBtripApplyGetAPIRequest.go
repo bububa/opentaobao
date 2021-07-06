@@ -14,12 +14,12 @@ type AlitripBtripApplyGetAPIRequest struct {
 	model.Params
 	// 外部审批单id
 	_thirdpartApplyId string
-	// 阿里商旅审批单id
-	_applyId int64
 	// 企业id
 	_corpId string
 	// 审批单展示id
 	_applyShowId string
+	// 阿里商旅审批单id
+	_applyId int64
 }
 
 // NewAlitripBtripApplyGetRequest 初始化AlitripBtripApplyGetAPIRequest对象
@@ -56,19 +56,6 @@ func (r AlitripBtripApplyGetAPIRequest) GetThirdpartApplyId() string {
 	return r._thirdpartApplyId
 }
 
-// SetApplyId is ApplyId Setter
-// 阿里商旅审批单id
-func (r *AlitripBtripApplyGetAPIRequest) SetApplyId(_applyId int64) error {
-	r._applyId = _applyId
-	r.Set("apply_id", _applyId)
-	return nil
-}
-
-// GetApplyId ApplyId Getter
-func (r AlitripBtripApplyGetAPIRequest) GetApplyId() int64 {
-	return r._applyId
-}
-
 // SetCorpId is CorpId Setter
 // 企业id
 func (r *AlitripBtripApplyGetAPIRequest) SetCorpId(_corpId string) error {
@@ -93,4 +80,17 @@ func (r *AlitripBtripApplyGetAPIRequest) SetApplyShowId(_applyShowId string) err
 // GetApplyShowId ApplyShowId Getter
 func (r AlitripBtripApplyGetAPIRequest) GetApplyShowId() string {
 	return r._applyShowId
+}
+
+// SetApplyId is ApplyId Setter
+// 阿里商旅审批单id
+func (r *AlitripBtripApplyGetAPIRequest) SetApplyId(_applyId int64) error {
+	r._applyId = _applyId
+	r.Set("apply_id", _applyId)
+	return nil
+}
+
+// GetApplyId ApplyId Getter
+func (r AlitripBtripApplyGetAPIRequest) GetApplyId() int64 {
+	return r._applyId
 }

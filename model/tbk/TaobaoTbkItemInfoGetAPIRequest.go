@@ -14,10 +14,10 @@ type TaobaoTbkItemInfoGetAPIRequest struct {
 	model.Params
 	// 商品ID串，用,分割，最大40个
 	_numIids string
-	// 链接形式：1：PC，2：无线，默认：１
-	_platform int64
 	// ip地址，影响邮费获取，如果不传或者传入不准确，邮费无法精准提供
 	_ip string
+	// 链接形式：1：PC，2：无线，默认：１
+	_platform int64
 }
 
 // NewTaobaoTbkItemInfoGetRequest 初始化TaobaoTbkItemInfoGetAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoTbkItemInfoGetAPIRequest) GetNumIids() string {
 	return r._numIids
 }
 
-// SetPlatform is Platform Setter
-// 链接形式：1：PC，2：无线，默认：１
-func (r *TaobaoTbkItemInfoGetAPIRequest) SetPlatform(_platform int64) error {
-	r._platform = _platform
-	r.Set("platform", _platform)
-	return nil
-}
-
-// GetPlatform Platform Getter
-func (r TaobaoTbkItemInfoGetAPIRequest) GetPlatform() int64 {
-	return r._platform
-}
-
 // SetIp is Ip Setter
 // ip地址，影响邮费获取，如果不传或者传入不准确，邮费无法精准提供
 func (r *TaobaoTbkItemInfoGetAPIRequest) SetIp(_ip string) error {
@@ -78,4 +65,17 @@ func (r *TaobaoTbkItemInfoGetAPIRequest) SetIp(_ip string) error {
 // GetIp Ip Getter
 func (r TaobaoTbkItemInfoGetAPIRequest) GetIp() string {
 	return r._ip
+}
+
+// SetPlatform is Platform Setter
+// 链接形式：1：PC，2：无线，默认：１
+func (r *TaobaoTbkItemInfoGetAPIRequest) SetPlatform(_platform int64) error {
+	r._platform = _platform
+	r.Set("platform", _platform)
+	return nil
+}
+
+// GetPlatform Platform Getter
+func (r TaobaoTbkItemInfoGetAPIRequest) GetPlatform() int64 {
+	return r._platform
 }

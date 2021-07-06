@@ -6,12 +6,12 @@ type RptQueryDto struct {
 	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 查询结束日期
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
+	// 查询日期
+	LogDate string `json:"log_date,omitempty" xml:"log_date,omitempty"`
 	// 归因日期（有效值为3、7、15、30）
 	Effect int64 `json:"effect,omitempty" xml:"effect,omitempty"`
 	// 结束小时
 	EndHourId int64 `json:"end_hour_id,omitempty" xml:"end_hour_id,omitempty"`
-	// 查询日期
-	LogDate string `json:"log_date,omitempty" xml:"log_date,omitempty"`
 	// 开始小时
 	StartHourId int64 `json:"start_hour_id,omitempty" xml:"start_hour_id,omitempty"`
 	// 计划id

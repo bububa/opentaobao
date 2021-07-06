@@ -12,14 +12,14 @@ import (
 // 通过门店id/类目id/商品id单个或多个参数组合查询全渠道门店商品信息
 type TaobaoOmniitemItemGetAPIRequest struct {
 	model.Params
+	// 可选，指定获取的商品外部id
+	_outerId string
 	// 分页当前页数
 	_pageNo int64
 	// 分页单页大小
 	_pageSize int64
 	// 可选，指定获取的商品id
 	_itemId int64
-	// 可选，指定获取的商品外部id
-	_outerId string
 }
 
 // NewTaobaoOmniitemItemGetRequest 初始化TaobaoOmniitemItemGetAPIRequest对象
@@ -41,6 +41,19 @@ func (r TaobaoOmniitemItemGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetOuterId is OuterId Setter
+// 可选，指定获取的商品外部id
+func (r *TaobaoOmniitemItemGetAPIRequest) SetOuterId(_outerId string) error {
+	r._outerId = _outerId
+	r.Set("outer_id", _outerId)
+	return nil
+}
+
+// GetOuterId OuterId Getter
+func (r TaobaoOmniitemItemGetAPIRequest) GetOuterId() string {
+	return r._outerId
 }
 
 // SetPageNo is PageNo Setter
@@ -80,17 +93,4 @@ func (r *TaobaoOmniitemItemGetAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TaobaoOmniitemItemGetAPIRequest) GetItemId() int64 {
 	return r._itemId
-}
-
-// SetOuterId is OuterId Setter
-// 可选，指定获取的商品外部id
-func (r *TaobaoOmniitemItemGetAPIRequest) SetOuterId(_outerId string) error {
-	r._outerId = _outerId
-	r.Set("outer_id", _outerId)
-	return nil
-}
-
-// GetOuterId OuterId Getter
-func (r TaobaoOmniitemItemGetAPIRequest) GetOuterId() string {
-	return r._outerId
 }

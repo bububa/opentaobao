@@ -12,10 +12,10 @@ type OrderComplete struct {
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 可选，卖家id
 	SellerId string `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
+	// 实际行驶公里数
+	Distance string `json:"distance,omitempty" xml:"distance,omitempty"`
 	// 0:接送机 1：实时打车 2：租车(不传值默认为0)
 	UseType int64 `json:"use_type,omitempty" xml:"use_type,omitempty"`
 	// 价格详情
 	PriceInfo *PriceInfo `json:"price_info,omitempty" xml:"price_info,omitempty"`
-	// 实际行驶公里数
-	Distance string `json:"distance,omitempty" xml:"distance,omitempty"`
 }

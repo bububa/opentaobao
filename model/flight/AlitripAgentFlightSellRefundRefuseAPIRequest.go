@@ -14,10 +14,10 @@ type AlitripAgentFlightSellRefundRefuseAPIRequest struct {
 	model.Params
 	// 申请单号
 	_applyId string
-	// 国内国际标识
-	_domesticIntl int64
 	// 拒绝原因
 	_refuseReason string
+	// 国内国际标识
+	_domesticIntl int64
 }
 
 // NewAlitripAgentFlightSellRefundRefuseRequest 初始化AlitripAgentFlightSellRefundRefuseAPIRequest对象
@@ -54,19 +54,6 @@ func (r AlitripAgentFlightSellRefundRefuseAPIRequest) GetApplyId() string {
 	return r._applyId
 }
 
-// SetDomesticIntl is DomesticIntl Setter
-// 国内国际标识
-func (r *AlitripAgentFlightSellRefundRefuseAPIRequest) SetDomesticIntl(_domesticIntl int64) error {
-	r._domesticIntl = _domesticIntl
-	r.Set("domestic_intl", _domesticIntl)
-	return nil
-}
-
-// GetDomesticIntl DomesticIntl Getter
-func (r AlitripAgentFlightSellRefundRefuseAPIRequest) GetDomesticIntl() int64 {
-	return r._domesticIntl
-}
-
 // SetRefuseReason is RefuseReason Setter
 // 拒绝原因
 func (r *AlitripAgentFlightSellRefundRefuseAPIRequest) SetRefuseReason(_refuseReason string) error {
@@ -78,4 +65,17 @@ func (r *AlitripAgentFlightSellRefundRefuseAPIRequest) SetRefuseReason(_refuseRe
 // GetRefuseReason RefuseReason Getter
 func (r AlitripAgentFlightSellRefundRefuseAPIRequest) GetRefuseReason() string {
 	return r._refuseReason
+}
+
+// SetDomesticIntl is DomesticIntl Setter
+// 国内国际标识
+func (r *AlitripAgentFlightSellRefundRefuseAPIRequest) SetDomesticIntl(_domesticIntl int64) error {
+	r._domesticIntl = _domesticIntl
+	r.Set("domestic_intl", _domesticIntl)
+	return nil
+}
+
+// GetDomesticIntl DomesticIntl Getter
+func (r AlitripAgentFlightSellRefundRefuseAPIRequest) GetDomesticIntl() int64 {
+	return r._domesticIntl
 }

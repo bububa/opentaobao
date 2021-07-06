@@ -16,14 +16,14 @@ type AlibabaItemPublishSubmitAPIRequest struct {
 	_bizType string
 	// 商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版
 	_market string
-	// 商品类目ID
-	_catId int64
-	// 产品ID，天猫市场(market=tmall)时必填
-	_spuId int64
 	// 商品条码
 	_barcode string
 	// 商品schema信息，通过alibaba.item.publish.props.get获取并补全后提交
 	_schema string
+	// 商品类目ID
+	_catId int64
+	// 产品ID，天猫市场(market=tmall)时必填
+	_spuId int64
 }
 
 // NewAlibabaItemPublishSubmitRequest 初始化AlibabaItemPublishSubmitAPIRequest对象
@@ -73,32 +73,6 @@ func (r AlibabaItemPublishSubmitAPIRequest) GetMarket() string {
 	return r._market
 }
 
-// SetCatId is CatId Setter
-// 商品类目ID
-func (r *AlibabaItemPublishSubmitAPIRequest) SetCatId(_catId int64) error {
-	r._catId = _catId
-	r.Set("cat_id", _catId)
-	return nil
-}
-
-// GetCatId CatId Getter
-func (r AlibabaItemPublishSubmitAPIRequest) GetCatId() int64 {
-	return r._catId
-}
-
-// SetSpuId is SpuId Setter
-// 产品ID，天猫市场(market=tmall)时必填
-func (r *AlibabaItemPublishSubmitAPIRequest) SetSpuId(_spuId int64) error {
-	r._spuId = _spuId
-	r.Set("spu_id", _spuId)
-	return nil
-}
-
-// GetSpuId SpuId Getter
-func (r AlibabaItemPublishSubmitAPIRequest) GetSpuId() int64 {
-	return r._spuId
-}
-
 // SetBarcode is Barcode Setter
 // 商品条码
 func (r *AlibabaItemPublishSubmitAPIRequest) SetBarcode(_barcode string) error {
@@ -123,4 +97,30 @@ func (r *AlibabaItemPublishSubmitAPIRequest) SetSchema(_schema string) error {
 // GetSchema Schema Getter
 func (r AlibabaItemPublishSubmitAPIRequest) GetSchema() string {
 	return r._schema
+}
+
+// SetCatId is CatId Setter
+// 商品类目ID
+func (r *AlibabaItemPublishSubmitAPIRequest) SetCatId(_catId int64) error {
+	r._catId = _catId
+	r.Set("cat_id", _catId)
+	return nil
+}
+
+// GetCatId CatId Getter
+func (r AlibabaItemPublishSubmitAPIRequest) GetCatId() int64 {
+	return r._catId
+}
+
+// SetSpuId is SpuId Setter
+// 产品ID，天猫市场(market=tmall)时必填
+func (r *AlibabaItemPublishSubmitAPIRequest) SetSpuId(_spuId int64) error {
+	r._spuId = _spuId
+	r.Set("spu_id", _spuId)
+	return nil
+}
+
+// GetSpuId SpuId Getter
+func (r AlibabaItemPublishSubmitAPIRequest) GetSpuId() int64 {
+	return r._spuId
 }

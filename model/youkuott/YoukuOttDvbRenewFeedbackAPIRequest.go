@@ -12,12 +12,12 @@ import (
 // dvb续费之后的反馈接口
 type YoukuOttDvbRenewFeedbackAPIRequest struct {
 	model.Params
+	// 失败原因（可无）
+	_failReason string
 	// 订单id
 	_orderId int64
 	// 是否成功
 	_isSuccess bool
-	// 失败原因（可无）
-	_failReason string
 }
 
 // NewYoukuOttDvbRenewFeedbackRequest 初始化YoukuOttDvbRenewFeedbackAPIRequest对象
@@ -39,6 +39,19 @@ func (r YoukuOttDvbRenewFeedbackAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetFailReason is FailReason Setter
+// 失败原因（可无）
+func (r *YoukuOttDvbRenewFeedbackAPIRequest) SetFailReason(_failReason string) error {
+	r._failReason = _failReason
+	r.Set("fail_reason", _failReason)
+	return nil
+}
+
+// GetFailReason FailReason Getter
+func (r YoukuOttDvbRenewFeedbackAPIRequest) GetFailReason() string {
+	return r._failReason
 }
 
 // SetOrderId is OrderId Setter
@@ -65,17 +78,4 @@ func (r *YoukuOttDvbRenewFeedbackAPIRequest) SetIsSuccess(_isSuccess bool) error
 // GetIsSuccess IsSuccess Getter
 func (r YoukuOttDvbRenewFeedbackAPIRequest) GetIsSuccess() bool {
 	return r._isSuccess
-}
-
-// SetFailReason is FailReason Setter
-// 失败原因（可无）
-func (r *YoukuOttDvbRenewFeedbackAPIRequest) SetFailReason(_failReason string) error {
-	r._failReason = _failReason
-	r.Set("fail_reason", _failReason)
-	return nil
-}
-
-// GetFailReason FailReason Getter
-func (r YoukuOttDvbRenewFeedbackAPIRequest) GetFailReason() string {
-	return r._failReason
 }

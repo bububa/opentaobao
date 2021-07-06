@@ -14,24 +14,24 @@ type TaobaoVmarketEticketCardConsumecardAPIRequest struct {
 	model.Params
 	// 卡号
 	_cardId string
-	// 卡内等级
-	_cardLevel int64
-	// 核销金额，精确到分，例如1.99元=199
-	_consumeValue int64
 	// 买家昵称
 	_buyerNick string
 	// 核销原因
 	_reason string
-	// 门店id
-	_storeId int64
-	// 操作人id
-	_operatorId int64
 	// 核销流水号，外部ISV全局唯一
 	_consumeSerialNum string
 	// 核销code
 	_consumeCode string
 	// 安全token
 	_token string
+	// 卡内等级
+	_cardLevel int64
+	// 核销金额，精确到分，例如1.99元=199
+	_consumeValue int64
+	// 门店id
+	_storeId int64
+	// 操作人id
+	_operatorId int64
 }
 
 // NewTaobaoVmarketEticketCardConsumecardRequest 初始化TaobaoVmarketEticketCardConsumecardAPIRequest对象
@@ -68,32 +68,6 @@ func (r TaobaoVmarketEticketCardConsumecardAPIRequest) GetCardId() string {
 	return r._cardId
 }
 
-// SetCardLevel is CardLevel Setter
-// 卡内等级
-func (r *TaobaoVmarketEticketCardConsumecardAPIRequest) SetCardLevel(_cardLevel int64) error {
-	r._cardLevel = _cardLevel
-	r.Set("card_level", _cardLevel)
-	return nil
-}
-
-// GetCardLevel CardLevel Getter
-func (r TaobaoVmarketEticketCardConsumecardAPIRequest) GetCardLevel() int64 {
-	return r._cardLevel
-}
-
-// SetConsumeValue is ConsumeValue Setter
-// 核销金额，精确到分，例如1.99元=199
-func (r *TaobaoVmarketEticketCardConsumecardAPIRequest) SetConsumeValue(_consumeValue int64) error {
-	r._consumeValue = _consumeValue
-	r.Set("consume_value", _consumeValue)
-	return nil
-}
-
-// GetConsumeValue ConsumeValue Getter
-func (r TaobaoVmarketEticketCardConsumecardAPIRequest) GetConsumeValue() int64 {
-	return r._consumeValue
-}
-
 // SetBuyerNick is BuyerNick Setter
 // 买家昵称
 func (r *TaobaoVmarketEticketCardConsumecardAPIRequest) SetBuyerNick(_buyerNick string) error {
@@ -118,32 +92,6 @@ func (r *TaobaoVmarketEticketCardConsumecardAPIRequest) SetReason(_reason string
 // GetReason Reason Getter
 func (r TaobaoVmarketEticketCardConsumecardAPIRequest) GetReason() string {
 	return r._reason
-}
-
-// SetStoreId is StoreId Setter
-// 门店id
-func (r *TaobaoVmarketEticketCardConsumecardAPIRequest) SetStoreId(_storeId int64) error {
-	r._storeId = _storeId
-	r.Set("store_id", _storeId)
-	return nil
-}
-
-// GetStoreId StoreId Getter
-func (r TaobaoVmarketEticketCardConsumecardAPIRequest) GetStoreId() int64 {
-	return r._storeId
-}
-
-// SetOperatorId is OperatorId Setter
-// 操作人id
-func (r *TaobaoVmarketEticketCardConsumecardAPIRequest) SetOperatorId(_operatorId int64) error {
-	r._operatorId = _operatorId
-	r.Set("operator_id", _operatorId)
-	return nil
-}
-
-// GetOperatorId OperatorId Getter
-func (r TaobaoVmarketEticketCardConsumecardAPIRequest) GetOperatorId() int64 {
-	return r._operatorId
 }
 
 // SetConsumeSerialNum is ConsumeSerialNum Setter
@@ -183,4 +131,56 @@ func (r *TaobaoVmarketEticketCardConsumecardAPIRequest) SetToken(_token string) 
 // GetToken Token Getter
 func (r TaobaoVmarketEticketCardConsumecardAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetCardLevel is CardLevel Setter
+// 卡内等级
+func (r *TaobaoVmarketEticketCardConsumecardAPIRequest) SetCardLevel(_cardLevel int64) error {
+	r._cardLevel = _cardLevel
+	r.Set("card_level", _cardLevel)
+	return nil
+}
+
+// GetCardLevel CardLevel Getter
+func (r TaobaoVmarketEticketCardConsumecardAPIRequest) GetCardLevel() int64 {
+	return r._cardLevel
+}
+
+// SetConsumeValue is ConsumeValue Setter
+// 核销金额，精确到分，例如1.99元=199
+func (r *TaobaoVmarketEticketCardConsumecardAPIRequest) SetConsumeValue(_consumeValue int64) error {
+	r._consumeValue = _consumeValue
+	r.Set("consume_value", _consumeValue)
+	return nil
+}
+
+// GetConsumeValue ConsumeValue Getter
+func (r TaobaoVmarketEticketCardConsumecardAPIRequest) GetConsumeValue() int64 {
+	return r._consumeValue
+}
+
+// SetStoreId is StoreId Setter
+// 门店id
+func (r *TaobaoVmarketEticketCardConsumecardAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// GetStoreId StoreId Getter
+func (r TaobaoVmarketEticketCardConsumecardAPIRequest) GetStoreId() int64 {
+	return r._storeId
+}
+
+// SetOperatorId is OperatorId Setter
+// 操作人id
+func (r *TaobaoVmarketEticketCardConsumecardAPIRequest) SetOperatorId(_operatorId int64) error {
+	r._operatorId = _operatorId
+	r.Set("operator_id", _operatorId)
+	return nil
+}
+
+// GetOperatorId OperatorId Getter
+func (r TaobaoVmarketEticketCardConsumecardAPIRequest) GetOperatorId() int64 {
+	return r._operatorId
 }

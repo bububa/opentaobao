@@ -20,16 +20,16 @@ type AliexpressUsergrowthSearchItemsGetData struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// sub category
 	SubCategory string `json:"sub_category,omitempty" xml:"sub_category,omitempty"`
-	// rating count
-	RatingCount int64 `json:"rating_count,omitempty" xml:"rating_count,omitempty"`
-	// photo height
-	PhotoHeight int64 `json:"photo_height,omitempty" xml:"photo_height,omitempty"`
 	// shop rating
 	ShopRating string `json:"shop_rating,omitempty" xml:"shop_rating,omitempty"`
 	// rating
 	RatingValue string `json:"rating_value,omitempty" xml:"rating_value,omitempty"`
 	// product category
 	Category string `json:"category,omitempty" xml:"category,omitempty"`
+	// rating count
+	RatingCount int64 `json:"rating_count,omitempty" xml:"rating_count,omitempty"`
+	// photo height
+	PhotoHeight int64 `json:"photo_height,omitempty" xml:"photo_height,omitempty"`
 	// photo width
 	PhotoWidth int64 `json:"photo_width,omitempty" xml:"photo_width,omitempty"`
 	// delivery freeShipping

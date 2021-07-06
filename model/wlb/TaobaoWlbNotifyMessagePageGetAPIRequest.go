@@ -14,16 +14,16 @@ type TaobaoWlbNotifyMessagePageGetAPIRequest struct {
 	model.Params
 	// 通知消息编码： STOCK_IN_NOT_CONSISTENT---入库单不一致 CANCEL_ORDER_SUCCESS---取消订单成功 INVENTORY_CHECK---盘点 CANCEL_ORDER_FAILURE---取消订单失败 ORDER_REJECT--wms拒单 ORDER_CONFIRMED--订单处理成功
 	_msgCode string
-	// 分页查询页数
-	_pageNo int64
-	// 分页查询的每页页数
-	_pageSize int64
 	// 记录开始时间
 	_startDate string
 	// 记录截至时间
 	_endDate string
 	// 消息状态： 不需要确认：NO_NEED_CONFIRM 已确认：CONFIRMED 待确认：TO_BE_CONFIRM
 	_status string
+	// 分页查询页数
+	_pageNo int64
+	// 分页查询的每页页数
+	_pageSize int64
 }
 
 // NewTaobaoWlbNotifyMessagePageGetRequest 初始化TaobaoWlbNotifyMessagePageGetAPIRequest对象
@@ -58,32 +58,6 @@ func (r *TaobaoWlbNotifyMessagePageGetAPIRequest) SetMsgCode(_msgCode string) er
 // GetMsgCode MsgCode Getter
 func (r TaobaoWlbNotifyMessagePageGetAPIRequest) GetMsgCode() string {
 	return r._msgCode
-}
-
-// SetPageNo is PageNo Setter
-// 分页查询页数
-func (r *TaobaoWlbNotifyMessagePageGetAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r TaobaoWlbNotifyMessagePageGetAPIRequest) GetPageNo() int64 {
-	return r._pageNo
-}
-
-// SetPageSize is PageSize Setter
-// 分页查询的每页页数
-func (r *TaobaoWlbNotifyMessagePageGetAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoWlbNotifyMessagePageGetAPIRequest) GetPageSize() int64 {
-	return r._pageSize
 }
 
 // SetStartDate is StartDate Setter
@@ -123,4 +97,30 @@ func (r *TaobaoWlbNotifyMessagePageGetAPIRequest) SetStatus(_status string) erro
 // GetStatus Status Getter
 func (r TaobaoWlbNotifyMessagePageGetAPIRequest) GetStatus() string {
 	return r._status
+}
+
+// SetPageNo is PageNo Setter
+// 分页查询页数
+func (r *TaobaoWlbNotifyMessagePageGetAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r TaobaoWlbNotifyMessagePageGetAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// SetPageSize is PageSize Setter
+// 分页查询的每页页数
+func (r *TaobaoWlbNotifyMessagePageGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoWlbNotifyMessagePageGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

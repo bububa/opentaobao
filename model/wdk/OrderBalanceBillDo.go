@@ -28,8 +28,6 @@ type OrderBalanceBillDo struct {
 	Thedate string `json:"thedate,omitempty" xml:"thedate,omitempty"`
 	// 创建时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
-	// 主键id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 订单技术服务费
 	PayTechFee string `json:"pay_tech_fee,omitempty" xml:"pay_tech_fee,omitempty"`
 	// 用户实付金额，减支付宝红包
@@ -82,6 +80,8 @@ type OrderBalanceBillDo struct {
 	PackageTime string `json:"package_time,omitempty" xml:"package_time,omitempty"`
 	// 正向打包状态
 	PackagedStatus string `json:"packaged_status,omitempty" xml:"packaged_status,omitempty"`
+	// 主键id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 是否退款计算收入(1:是，0:否) 这是逆向的
 	Income int64 `json:"income,omitempty" xml:"income,omitempty"`
 }

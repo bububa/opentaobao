@@ -14,8 +14,6 @@ type CommentCreateInfo struct {
 	SubBizOrderId string `json:"sub_biz_order_id,omitempty" xml:"sub_biz_order_id,omitempty"`
 	// 类目名称
 	Category string `json:"category,omitempty" xml:"category,omitempty"`
-	// 商品金额
-	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 商品名称
 	SkuName string `json:"sku_name,omitempty" xml:"sku_name,omitempty"`
 	// 商品编码
@@ -34,4 +32,6 @@ type CommentCreateInfo struct {
 	CommentReason string `json:"comment_reason,omitempty" xml:"comment_reason,omitempty"`
 	// 差评回评
 	ReviewReason string `json:"review_reason,omitempty" xml:"review_reason,omitempty"`
+	// 商品金额
+	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 }

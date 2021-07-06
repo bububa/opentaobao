@@ -2,6 +2,12 @@ package moscm
 
 // SpuInputDto 结构体
 type SpuInputDto struct {
+	// 产品的子图片.目前最多支持50张。
+	ProductImgs []ProductImgDto `json:"product_imgs,omitempty" xml:"product_imgs>product_img_dto,omitempty"`
+	// 产品参数描述，如：材质成分、裙长、年份季节等信息，最多50个属性
+	Props []PropertyDto `json:"props,omitempty" xml:"props>property_dto,omitempty"`
+	// 详情图（最大列表长度：60）
+	DescPicList []string `json:"desc_pic_list,omitempty" xml:"desc_pic_list>string,omitempty"`
 	// 产品条码信息
 	BarcodeStr string `json:"barcode_str,omitempty" xml:"barcode_str,omitempty"`
 	// 银泰品牌Id
@@ -14,8 +20,6 @@ type SpuInputDto struct {
 	Cid string `json:"cid,omitempty" xml:"cid,omitempty"`
 	// SPU ID
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
-	// 是否新品默认是true
-	IsNew bool `json:"is_new,omitempty" xml:"is_new,omitempty"`
 	// 透明素材图
 	Material string `json:"material,omitempty" xml:"material,omitempty"`
 	// 已废弃
@@ -28,10 +32,6 @@ type SpuInputDto struct {
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
 	// 产品ID
 	ProductId string `json:"product_id,omitempty" xml:"product_id,omitempty"`
-	// 产品的子图片.目前最多支持50张。
-	ProductImgs []ProductImgDto `json:"product_imgs,omitempty" xml:"product_imgs>product_img_dto,omitempty"`
-	// 产品参数描述，如：材质成分、裙长、年份季节等信息，最多50个属性
-	Props []PropertyDto `json:"props,omitempty" xml:"props>property_dto,omitempty"`
 	// 产品卖点描述，长度限制20个汉字
 	SellPt string `json:"sell_pt,omitempty" xml:"sell_pt,omitempty"`
 	// 款号
@@ -44,8 +44,8 @@ type SpuInputDto struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 天猫品牌Id
 	TmallBrandId string `json:"tmall_brand_id,omitempty" xml:"tmall_brand_id,omitempty"`
-	// 详情图（最大列表长度：60）
-	DescPicList []string `json:"desc_pic_list,omitempty" xml:"desc_pic_list>string,omitempty"`
 	// 天猫ItemId
 	TmallItemId int64 `json:"tmall_item_id,omitempty" xml:"tmall_item_id,omitempty"`
+	// 是否新品默认是true
+	IsNew bool `json:"is_new,omitempty" xml:"is_new,omitempty"`
 }

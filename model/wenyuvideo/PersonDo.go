@@ -2,8 +2,6 @@ package wenyuvideo
 
 // PersonDo 结构体
 type PersonDo struct {
-	// 人物ID
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 人物名字
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 图片
@@ -16,4 +14,6 @@ type PersonDo struct {
 	PosterUrlH string `json:"poster_url_h,omitempty" xml:"poster_url_h,omitempty"`
 	// 简介
 	PersonDesc string `json:"person_desc,omitempty" xml:"person_desc,omitempty"`
+	// 人物ID
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 }

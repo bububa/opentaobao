@@ -4,8 +4,6 @@ package drugtrace
 type BillUpOutDetailDo struct {
 	// 发货单位
 	FromEntName string `json:"from_ent_name,omitempty" xml:"from_ent_name,omitempty"`
-	// 最小码量
-	CodeCount int64 `json:"code_count,omitempty" xml:"code_count,omitempty"`
 	// 失效日期
 	ExprieDate string `json:"exprie_date,omitempty" xml:"exprie_date,omitempty"`
 	// 厂商
@@ -20,8 +18,6 @@ type BillUpOutDetailDo struct {
 	PhysicInfo string `json:"physic_info,omitempty" xml:"physic_info,omitempty"`
 	// 药品名称
 	PhysicName string `json:"physic_name,omitempty" xml:"physic_name,omitempty"`
-	// 制剂数量
-	PrepnCount int64 `json:"prepn_count,omitempty" xml:"prepn_count,omitempty"`
 	// 发货单位REF_ENT_ID
 	FromRefUserId string `json:"from_ref_user_id,omitempty" xml:"from_ref_user_id,omitempty"`
 	// 收货单位REF_ENT_ID
@@ -40,10 +36,6 @@ type BillUpOutDetailDo struct {
 	ExprieDateFormat string `json:"exprie_date_format,omitempty" xml:"exprie_date_format,omitempty"`
 	// 单据时间格式化
 	BillTimeFormat string `json:"bill_time_format,omitempty" xml:"bill_time_format,omitempty"`
-	// 单据ID
-	BillOutId int64 `json:"bill_out_id,omitempty" xml:"bill_out_id,omitempty"`
-	// 制剂单位
-	PrepnUnit int64 `json:"prepn_unit,omitempty" xml:"prepn_unit,omitempty"`
 	// 制剂规格
 	PrepnSpec string `json:"prepn_spec,omitempty" xml:"prepn_spec,omitempty"`
 	// 药品ID
@@ -56,4 +48,12 @@ type BillUpOutDetailDo struct {
 	ToUserId string `json:"to_user_id,omitempty" xml:"to_user_id,omitempty"`
 	// 发货企业ent_id
 	FromUserId string `json:"from_user_id,omitempty" xml:"from_user_id,omitempty"`
+	// 最小码量
+	CodeCount int64 `json:"code_count,omitempty" xml:"code_count,omitempty"`
+	// 制剂数量
+	PrepnCount int64 `json:"prepn_count,omitempty" xml:"prepn_count,omitempty"`
+	// 单据ID
+	BillOutId int64 `json:"bill_out_id,omitempty" xml:"bill_out_id,omitempty"`
+	// 制剂单位
+	PrepnUnit int64 `json:"prepn_unit,omitempty" xml:"prepn_unit,omitempty"`
 }

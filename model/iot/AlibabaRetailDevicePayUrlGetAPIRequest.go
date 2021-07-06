@@ -16,10 +16,10 @@ type AlibabaRetailDevicePayUrlGetAPIRequest struct {
 	_isvOrderId string
 	// 业务名称
 	_bizName string
-	// 商品id
-	_itemId int64
 	// 设备sn
 	_deviceId string
+	// 商品id
+	_itemId int64
 	// 1表示商品box，0或者为空表示普通商品
 	_itemType int64
 }
@@ -71,19 +71,6 @@ func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetBizName() string {
 	return r._bizName
 }
 
-// SetItemId is ItemId Setter
-// 商品id
-func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
-	return nil
-}
-
-// GetItemId ItemId Getter
-func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetItemId() int64 {
-	return r._itemId
-}
-
 // SetDeviceId is DeviceId Setter
 // 设备sn
 func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetDeviceId(_deviceId string) error {
@@ -95,6 +82,19 @@ func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetDeviceId(_deviceId string) e
 // GetDeviceId DeviceId Getter
 func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetDeviceId() string {
 	return r._deviceId
+}
+
+// SetItemId is ItemId Setter
+// 商品id
+func (r *AlibabaRetailDevicePayUrlGetAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r AlibabaRetailDevicePayUrlGetAPIRequest) GetItemId() int64 {
+	return r._itemId
 }
 
 // SetItemType is ItemType Setter

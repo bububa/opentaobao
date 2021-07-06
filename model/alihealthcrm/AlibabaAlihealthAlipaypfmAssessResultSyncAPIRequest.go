@@ -12,14 +12,14 @@ import (
 // 用户测评结果回传接口
 type AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest struct {
 	model.Params
-	// userId
-	_userId int64
 	// 测评类型
 	_assessType string
 	// 测评结果
 	_assessResult string
 	// 测评结果冗余字段
 	_refrenceResult string
+	// userId
+	_userId int64
 }
 
 // NewAlibabaAlihealthAlipaypfmAssessResultSyncRequest 初始化AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest对象
@@ -41,19 +41,6 @@ func (r AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) GetApiParams() url.
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetUserId is UserId Setter
-// userId
-func (r *AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) SetUserId(_userId int64) error {
-	r._userId = _userId
-	r.Set("user_id", _userId)
-	return nil
-}
-
-// GetUserId UserId Getter
-func (r AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) GetUserId() int64 {
-	return r._userId
 }
 
 // SetAssessType is AssessType Setter
@@ -93,4 +80,17 @@ func (r *AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) SetRefrenceResult(
 // GetRefrenceResult RefrenceResult Getter
 func (r AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) GetRefrenceResult() string {
 	return r._refrenceResult
+}
+
+// SetUserId is UserId Setter
+// userId
+func (r *AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// GetUserId UserId Getter
+func (r AlibabaAlihealthAlipaypfmAssessResultSyncAPIRequest) GetUserId() int64 {
+	return r._userId
 }

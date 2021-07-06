@@ -4,10 +4,6 @@ package alsc
 type PaymentInfo struct {
 	// 费用明细
 	FeeDetailList []FeeDetail `json:"fee_detail_list,omitempty" xml:"fee_detail_list>fee_detail,omitempty"`
-	// 订单总金额
-	OrderTotalAmount int64 `json:"order_total_amount,omitempty" xml:"order_total_amount,omitempty"`
-	// 外部付款方基础信息
-	OutPayer *OrderUser `json:"out_payer,omitempty" xml:"out_payer,omitempty"`
 	// 外部付款单号
 	OutPaymentNo string `json:"out_payment_no,omitempty" xml:"out_payment_no,omitempty"`
 	// 支付宝-ALIPAY  微信-WECHAT  其他-OTHER
@@ -18,6 +14,10 @@ type PaymentInfo struct {
 	PaymentStatus string `json:"payment_status,omitempty" xml:"payment_status,omitempty"`
 	// 支付时间
 	PaymentTime string `json:"payment_time,omitempty" xml:"payment_time,omitempty"`
+	// 订单总金额
+	OrderTotalAmount int64 `json:"order_total_amount,omitempty" xml:"order_total_amount,omitempty"`
+	// 外部付款方基础信息
+	OutPayer *OrderUser `json:"out_payer,omitempty" xml:"out_payer,omitempty"`
 	// 商家实收
 	SellerReceiveAmount int64 `json:"seller_receive_amount,omitempty" xml:"seller_receive_amount,omitempty"`
 	// 付款方实付金额

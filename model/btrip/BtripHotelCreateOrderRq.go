@@ -16,26 +16,26 @@ type BtripHotelCreateOrderRq struct {
 	DisOrderId string `json:"dis_order_id,omitempty" xml:"dis_order_id,omitempty"`
 	// 最早到店时间
 	EarliestArrivalTime string `json:"earliest_arrival_time,omitempty" xml:"earliest_arrival_time,omitempty"`
+	// 最晚到店时间
+	LatestArrivalTime string `json:"latest_arrival_time,omitempty" xml:"latest_arrival_time,omitempty"`
+	// 分销子渠道，商旅企业id
+	SubChannel string `json:"sub_channel,omitempty" xml:"sub_channel,omitempty"`
+	// 供应商标识码
+	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`
+	// 入住人信息
+	Customers string `json:"customers,omitempty" xml:"customers,omitempty"`
 	// 订单联系人信息
 	HotelContact *BtripHotelContactDto `json:"hotel_contact,omitempty" xml:"hotel_contact,omitempty"`
 	// 商旅商品唯一标识
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
-	// 最晚到店时间
-	LatestArrivalTime string `json:"latest_arrival_time,omitempty" xml:"latest_arrival_time,omitempty"`
 	// 每间房成人数
 	NumberOfAdultsPerRoom int64 `json:"number_of_adults_per_room,omitempty" xml:"number_of_adults_per_room,omitempty"`
 	// 销售计划id
 	RatePlanId int64 `json:"rate_plan_id,omitempty" xml:"rate_plan_id,omitempty"`
 	// 预订房间数
 	RoomNum int64 `json:"room_num,omitempty" xml:"room_num,omitempty"`
-	// 分销子渠道，商旅企业id
-	SubChannel string `json:"sub_channel,omitempty" xml:"sub_channel,omitempty"`
-	// 供应商标识码
-	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`
 	// 总优惠金额
 	TotalPromotion int64 `json:"total_promotion,omitempty" xml:"total_promotion,omitempty"`
 	// 总房价
 	TotalRoomPrice int64 `json:"total_room_price,omitempty" xml:"total_room_price,omitempty"`
-	// 入住人信息
-	Customers string `json:"customers,omitempty" xml:"customers,omitempty"`
 }

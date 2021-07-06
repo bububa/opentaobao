@@ -2,8 +2,6 @@ package nazca
 
 // ChangeAuthApplyDo 结构体
 type ChangeAuthApplyDo struct {
-	// 是否认证
-	Autherized bool `json:"autherized,omitempty" xml:"autherized,omitempty"`
 	// 企业名称
 	EnterpriseName string `json:"enterprise_name,omitempty" xml:"enterprise_name,omitempty"`
 	// 营业执照号
@@ -20,4 +18,6 @@ type ChangeAuthApplyDo struct {
 	ThreeCertNumber string `json:"three_cert_number,omitempty" xml:"three_cert_number,omitempty"`
 	// 证件类型 1：旧版三证 2：新版三证合一
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+	// 是否认证
+	Autherized bool `json:"autherized,omitempty" xml:"autherized,omitempty"`
 }

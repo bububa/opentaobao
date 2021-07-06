@@ -12,14 +12,14 @@ import (
 // 支持自有政策和销售规则批量添加，支持携程的数据格式。淘宝格式为list [object] to json string，object的属性和单条接口一致。每个接入方最多同时只能有1个处理中的导入任务，超过后直接返回失败。文件一定要zip压缩，压缩后大小不超过5M，编码格式utf-8
 type TaobaoAlitripItFareBatchaddAPIRequest struct {
 	model.Params
+	// json格式的字符串，扩展属性，预留
+	_extendAttributes string
 	// 新增类型，1 自有政策单程 2 自有政策往返 3 销售规则
 	_addType int64
 	// 文本zip压缩后的数据字节流
 	_bytes *model.File
 	// 数据格式类型，1 淘宝 2 携程
 	_dataType int64
-	// json格式的字符串，扩展属性，预留
-	_extendAttributes string
 }
 
 // NewTaobaoAlitripItFareBatchaddRequest 初始化TaobaoAlitripItFareBatchaddAPIRequest对象
@@ -41,6 +41,19 @@ func (r TaobaoAlitripItFareBatchaddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetExtendAttributes is ExtendAttributes Setter
+// json格式的字符串，扩展属性，预留
+func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetExtendAttributes(_extendAttributes string) error {
+	r._extendAttributes = _extendAttributes
+	r.Set("extendAttributes", _extendAttributes)
+	return nil
+}
+
+// GetExtendAttributes ExtendAttributes Getter
+func (r TaobaoAlitripItFareBatchaddAPIRequest) GetExtendAttributes() string {
+	return r._extendAttributes
 }
 
 // SetAddType is AddType Setter
@@ -80,17 +93,4 @@ func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetDataType(_dataType int64) err
 // GetDataType DataType Getter
 func (r TaobaoAlitripItFareBatchaddAPIRequest) GetDataType() int64 {
 	return r._dataType
-}
-
-// SetExtendAttributes is ExtendAttributes Setter
-// json格式的字符串，扩展属性，预留
-func (r *TaobaoAlitripItFareBatchaddAPIRequest) SetExtendAttributes(_extendAttributes string) error {
-	r._extendAttributes = _extendAttributes
-	r.Set("extendAttributes", _extendAttributes)
-	return nil
-}
-
-// GetExtendAttributes ExtendAttributes Getter
-func (r TaobaoAlitripItFareBatchaddAPIRequest) GetExtendAttributes() string {
-	return r._extendAttributes
 }

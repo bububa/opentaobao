@@ -2,6 +2,10 @@ package trade
 
 // TradeExt 结构体
 type TradeExt struct {
+	// 第三方个性化数据
+	ExtraData string `json:"extra_data,omitempty" xml:"extra_data,omitempty"`
+	// attributes标记
+	ExtAttributes string `json:"ext_attributes,omitempty" xml:"ext_attributes,omitempty"`
 	// enable前扩展标识位
 	BeforeEnableFlag int64 `json:"before_enable_flag,omitempty" xml:"before_enable_flag,omitempty"`
 	// 关闭订单前扩展标识位
@@ -20,8 +24,4 @@ type TradeExt struct {
 	BeforeModifyFlag int64 `json:"before_modify_flag,omitempty" xml:"before_modify_flag,omitempty"`
 	// 第三方状态，第三方自由定义
 	ThirdPartyStatus int64 `json:"third_party_status,omitempty" xml:"third_party_status,omitempty"`
-	// 第三方个性化数据
-	ExtraData string `json:"extra_data,omitempty" xml:"extra_data,omitempty"`
-	// attributes标记
-	ExtAttributes string `json:"ext_attributes,omitempty" xml:"ext_attributes,omitempty"`
 }

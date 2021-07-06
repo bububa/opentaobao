@@ -12,14 +12,14 @@ import (
 // 卖家收到货物回填物流信息，如果买家已经回填物流信息，则接口报错，目前仅支持天猫订单。
 type TaobaoRpReturngoodsRefillAPIRequest struct {
 	model.Params
-	// 退款单编号
-	_refundId int64
 	// 退款阶段，可选值：售中：onsale，售后：aftersale
 	_refundPhase string
 	// 物流公司运单号
 	_logisticsWaybillNo string
 	// 物流公司编号
 	_logisticsCompanyCode string
+	// 退款单编号
+	_refundId int64
 }
 
 // NewTaobaoRpReturngoodsRefillRequest 初始化TaobaoRpReturngoodsRefillAPIRequest对象
@@ -41,19 +41,6 @@ func (r TaobaoRpReturngoodsRefillAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetRefundId is RefundId Setter
-// 退款单编号
-func (r *TaobaoRpReturngoodsRefillAPIRequest) SetRefundId(_refundId int64) error {
-	r._refundId = _refundId
-	r.Set("refund_id", _refundId)
-	return nil
-}
-
-// GetRefundId RefundId Getter
-func (r TaobaoRpReturngoodsRefillAPIRequest) GetRefundId() int64 {
-	return r._refundId
 }
 
 // SetRefundPhase is RefundPhase Setter
@@ -93,4 +80,17 @@ func (r *TaobaoRpReturngoodsRefillAPIRequest) SetLogisticsCompanyCode(_logistics
 // GetLogisticsCompanyCode LogisticsCompanyCode Getter
 func (r TaobaoRpReturngoodsRefillAPIRequest) GetLogisticsCompanyCode() string {
 	return r._logisticsCompanyCode
+}
+
+// SetRefundId is RefundId Setter
+// 退款单编号
+func (r *TaobaoRpReturngoodsRefillAPIRequest) SetRefundId(_refundId int64) error {
+	r._refundId = _refundId
+	r.Set("refund_id", _refundId)
+	return nil
+}
+
+// GetRefundId RefundId Getter
+func (r TaobaoRpReturngoodsRefillAPIRequest) GetRefundId() int64 {
+	return r._refundId
 }

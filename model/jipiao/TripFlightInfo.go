@@ -2,12 +2,8 @@ package jipiao
 
 // TripFlightInfo 结构体
 type TripFlightInfo struct {
-	// 淘宝机票平台航班id
-	FlightId int64 `json:"flight_id,omitempty" xml:"flight_id,omitempty"`
-	// 航段类型：0，去程；1，回程
-	SegmentType int64 `json:"segment_type,omitempty" xml:"segment_type,omitempty"`
-	// 去程或回程第几段航班，0，第1段；1，第2段航班
-	SegmentNumber int64 `json:"segment_number,omitempty" xml:"segment_number,omitempty"`
+	// 乘机人信息列表
+	Passengers []TripFlightPassenger `json:"passengers,omitempty" xml:"passengers>trip_flight_passenger,omitempty"`
 	// 航班航空公司二字码
 	AirlineCode string `json:"airline_code,omitempty" xml:"airline_code,omitempty"`
 	// 航班号
@@ -28,12 +24,16 @@ type TripFlightInfo struct {
 	DepTime string `json:"dep_time,omitempty" xml:"dep_time,omitempty"`
 	// 航班到达时间，格式yyyy-mm-dd hh:mm:ss
 	ArrTime string `json:"arr_time,omitempty" xml:"arr_time,omitempty"`
-	// 当前航段票面价格，单位：分
-	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
-	// 乘机人信息列表
-	Passengers []TripFlightPassenger `json:"passengers,omitempty" xml:"passengers>trip_flight_passenger,omitempty"`
 	// 扩展信息
 	Extra string `json:"extra,omitempty" xml:"extra,omitempty"`
 	// 特殊说明
 	SpecialRule string `json:"special_rule,omitempty" xml:"special_rule,omitempty"`
+	// 淘宝机票平台航班id
+	FlightId int64 `json:"flight_id,omitempty" xml:"flight_id,omitempty"`
+	// 航段类型：0，去程；1，回程
+	SegmentType int64 `json:"segment_type,omitempty" xml:"segment_type,omitempty"`
+	// 去程或回程第几段航班，0，第1段；1，第2段航班
+	SegmentNumber int64 `json:"segment_number,omitempty" xml:"segment_number,omitempty"`
+	// 当前航段票面价格，单位：分
+	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
 }

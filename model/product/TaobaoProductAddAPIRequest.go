@@ -14,8 +14,6 @@ type TaobaoProductAddAPIRequest struct {
 	model.Params
 	// native_unkeyprops
 	_nativeUnkeyprops string
-	// 商品类目ID.调用taobao.itemcats.get获取;注意:必须是叶子类目 id.
-	_cid int64
 	// 外部产品ID
 	_outerId string
 	// 关键属性 结构:pid:vid;pid:vid.调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid;如果碰到用户自定义属性,请用customer_props.
@@ -28,18 +26,20 @@ type TaobaoProductAddAPIRequest struct {
 	_customerProps string
 	// 产品市场价.精确到2位小数;单位为元.如：200.07
 	_price string
-	// 产品主图片.最大1M,目前仅支持GIF,JPG.
-	_image *model.File
 	// 产品名称,最大30个字符.
 	_name string
 	// 产品描述.最大不超过25000个字符
 	_desc string
-	// 是不是主图
-	_major bool
 	// 上市时间。目前只支持鞋城类目传入此参数
 	_marketTime string
 	// 销售属性值别名。格式为pid1:vid1:alias1;pid1:vid2:alia2。只有少数销售属性值支持传入别名，比如颜色和尺寸
 	_propertyAlias string
+	// 商品类目ID.调用taobao.itemcats.get获取;注意:必须是叶子类目 id.
+	_cid int64
+	// 产品主图片.最大1M,目前仅支持GIF,JPG.
+	_image *model.File
+	// 是不是主图
+	_major bool
 }
 
 // NewTaobaoProductAddRequest 初始化TaobaoProductAddAPIRequest对象
@@ -74,19 +74,6 @@ func (r *TaobaoProductAddAPIRequest) SetNativeUnkeyprops(_nativeUnkeyprops strin
 // GetNativeUnkeyprops NativeUnkeyprops Getter
 func (r TaobaoProductAddAPIRequest) GetNativeUnkeyprops() string {
 	return r._nativeUnkeyprops
-}
-
-// SetCid is Cid Setter
-// 商品类目ID.调用taobao.itemcats.get获取;注意:必须是叶子类目 id.
-func (r *TaobaoProductAddAPIRequest) SetCid(_cid int64) error {
-	r._cid = _cid
-	r.Set("cid", _cid)
-	return nil
-}
-
-// GetCid Cid Getter
-func (r TaobaoProductAddAPIRequest) GetCid() int64 {
-	return r._cid
 }
 
 // SetOuterId is OuterId Setter
@@ -167,19 +154,6 @@ func (r TaobaoProductAddAPIRequest) GetPrice() string {
 	return r._price
 }
 
-// SetImage is Image Setter
-// 产品主图片.最大1M,目前仅支持GIF,JPG.
-func (r *TaobaoProductAddAPIRequest) SetImage(_image *model.File) error {
-	r._image = _image
-	r.Set("image", _image)
-	return nil
-}
-
-// GetImage Image Getter
-func (r TaobaoProductAddAPIRequest) GetImage() *model.File {
-	return r._image
-}
-
 // SetName is Name Setter
 // 产品名称,最大30个字符.
 func (r *TaobaoProductAddAPIRequest) SetName(_name string) error {
@@ -206,19 +180,6 @@ func (r TaobaoProductAddAPIRequest) GetDesc() string {
 	return r._desc
 }
 
-// SetMajor is Major Setter
-// 是不是主图
-func (r *TaobaoProductAddAPIRequest) SetMajor(_major bool) error {
-	r._major = _major
-	r.Set("major", _major)
-	return nil
-}
-
-// GetMajor Major Getter
-func (r TaobaoProductAddAPIRequest) GetMajor() bool {
-	return r._major
-}
-
 // SetMarketTime is MarketTime Setter
 // 上市时间。目前只支持鞋城类目传入此参数
 func (r *TaobaoProductAddAPIRequest) SetMarketTime(_marketTime string) error {
@@ -243,4 +204,43 @@ func (r *TaobaoProductAddAPIRequest) SetPropertyAlias(_propertyAlias string) err
 // GetPropertyAlias PropertyAlias Getter
 func (r TaobaoProductAddAPIRequest) GetPropertyAlias() string {
 	return r._propertyAlias
+}
+
+// SetCid is Cid Setter
+// 商品类目ID.调用taobao.itemcats.get获取;注意:必须是叶子类目 id.
+func (r *TaobaoProductAddAPIRequest) SetCid(_cid int64) error {
+	r._cid = _cid
+	r.Set("cid", _cid)
+	return nil
+}
+
+// GetCid Cid Getter
+func (r TaobaoProductAddAPIRequest) GetCid() int64 {
+	return r._cid
+}
+
+// SetImage is Image Setter
+// 产品主图片.最大1M,目前仅支持GIF,JPG.
+func (r *TaobaoProductAddAPIRequest) SetImage(_image *model.File) error {
+	r._image = _image
+	r.Set("image", _image)
+	return nil
+}
+
+// GetImage Image Getter
+func (r TaobaoProductAddAPIRequest) GetImage() *model.File {
+	return r._image
+}
+
+// SetMajor is Major Setter
+// 是不是主图
+func (r *TaobaoProductAddAPIRequest) SetMajor(_major bool) error {
+	r._major = _major
+	r.Set("major", _major)
+	return nil
+}
+
+// GetMajor Major Getter
+func (r TaobaoProductAddAPIRequest) GetMajor() bool {
+	return r._major
 }

@@ -12,14 +12,14 @@ import (
 // 卖家同意买家退票申请
 type TaobaoAlitripIeAgentRefundAgreeAPIRequest struct {
 	model.Params
+	// 回复信息
+	_agentAnswer string
 	// 退款金额
 	_refundMoney int64
 	// 申请单id
 	_applyId int64
 	// 订单id
 	_orderId int64
-	// 回复信息
-	_agentAnswer string
 	// 代理商id
 	_agentId int64
 }
@@ -43,6 +43,19 @@ func (r TaobaoAlitripIeAgentRefundAgreeAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetAgentAnswer is AgentAnswer Setter
+// 回复信息
+func (r *TaobaoAlitripIeAgentRefundAgreeAPIRequest) SetAgentAnswer(_agentAnswer string) error {
+	r._agentAnswer = _agentAnswer
+	r.Set("agent_answer", _agentAnswer)
+	return nil
+}
+
+// GetAgentAnswer AgentAnswer Getter
+func (r TaobaoAlitripIeAgentRefundAgreeAPIRequest) GetAgentAnswer() string {
+	return r._agentAnswer
 }
 
 // SetRefundMoney is RefundMoney Setter
@@ -82,19 +95,6 @@ func (r *TaobaoAlitripIeAgentRefundAgreeAPIRequest) SetOrderId(_orderId int64) e
 // GetOrderId OrderId Getter
 func (r TaobaoAlitripIeAgentRefundAgreeAPIRequest) GetOrderId() int64 {
 	return r._orderId
-}
-
-// SetAgentAnswer is AgentAnswer Setter
-// 回复信息
-func (r *TaobaoAlitripIeAgentRefundAgreeAPIRequest) SetAgentAnswer(_agentAnswer string) error {
-	r._agentAnswer = _agentAnswer
-	r.Set("agent_answer", _agentAnswer)
-	return nil
-}
-
-// GetAgentAnswer AgentAnswer Getter
-func (r TaobaoAlitripIeAgentRefundAgreeAPIRequest) GetAgentAnswer() string {
-	return r._agentAnswer
 }
 
 // SetAgentId is AgentId Setter

@@ -12,22 +12,18 @@ import (
 // 分页查询综合体内的门店列表信息
 type TaobaoKoubeiMallCommonStorePageAPIRequest struct {
 	model.Params
+	// 门店列表按照类目筛选条件过滤，可通过查询商圈详情获取类目信息
+	_categoryIds []string
+	// 店铺服务标签，用于列表过滤条件；比如：点餐/外卖/预定等服务筛选条件。预定：SERVICE_DING；排号：SERVICE_PAI；点菜：SERVICE_DIAN；外卖：SERVICE_WAI；
+	_serviceTag []string
 	// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
 	_dataSetId string
 	// 商圈ID
 	_mallId string
-	// 分页查询起始值，默认为0
-	_start int64
-	// 每页查询量，默认10（建议查询值为10的倍数，最大不超过20）
-	_pageSize int64
-	// 门店列表按照类目筛选条件过滤，可通过查询商圈详情获取类目信息
-	_categoryIds []string
 	// 商圈内的门店ID
 	_storeId string
 	// 门店列表排序规则；默认：门店质量分降序，暂无其它排序规则
 	_order string
-	// 店铺服务标签，用于列表过滤条件；比如：点餐/外卖/预定等服务筛选条件。预定：SERVICE_DING；排号：SERVICE_PAI；点菜：SERVICE_DIAN；外卖：SERVICE_WAI；
-	_serviceTag []string
 	// 口碑城市编码（示例：杭州市330100）
 	_cityCode string
 	// 经度（终端设备地理位置）
@@ -40,6 +36,10 @@ type TaobaoKoubeiMallCommonStorePageAPIRequest struct {
 	_appVersion string
 	// 展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）
 	_displayChannel string
+	// 分页查询起始值，默认为0
+	_start int64
+	// 每页查询量，默认10（建议查询值为10的倍数，最大不超过20）
+	_pageSize int64
 }
 
 // NewTaobaoKoubeiMallCommonStorePageRequest 初始化TaobaoKoubeiMallCommonStorePageAPIRequest对象
@@ -61,6 +61,32 @@ func (r TaobaoKoubeiMallCommonStorePageAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetCategoryIds is CategoryIds Setter
+// 门店列表按照类目筛选条件过滤，可通过查询商圈详情获取类目信息
+func (r *TaobaoKoubeiMallCommonStorePageAPIRequest) SetCategoryIds(_categoryIds []string) error {
+	r._categoryIds = _categoryIds
+	r.Set("category_ids", _categoryIds)
+	return nil
+}
+
+// GetCategoryIds CategoryIds Getter
+func (r TaobaoKoubeiMallCommonStorePageAPIRequest) GetCategoryIds() []string {
+	return r._categoryIds
+}
+
+// SetServiceTag is ServiceTag Setter
+// 店铺服务标签，用于列表过滤条件；比如：点餐/外卖/预定等服务筛选条件。预定：SERVICE_DING；排号：SERVICE_PAI；点菜：SERVICE_DIAN；外卖：SERVICE_WAI；
+func (r *TaobaoKoubeiMallCommonStorePageAPIRequest) SetServiceTag(_serviceTag []string) error {
+	r._serviceTag = _serviceTag
+	r.Set("service_tag", _serviceTag)
+	return nil
+}
+
+// GetServiceTag ServiceTag Getter
+func (r TaobaoKoubeiMallCommonStorePageAPIRequest) GetServiceTag() []string {
+	return r._serviceTag
 }
 
 // SetDataSetId is DataSetId Setter
@@ -89,45 +115,6 @@ func (r TaobaoKoubeiMallCommonStorePageAPIRequest) GetMallId() string {
 	return r._mallId
 }
 
-// SetStart is Start Setter
-// 分页查询起始值，默认为0
-func (r *TaobaoKoubeiMallCommonStorePageAPIRequest) SetStart(_start int64) error {
-	r._start = _start
-	r.Set("start", _start)
-	return nil
-}
-
-// GetStart Start Getter
-func (r TaobaoKoubeiMallCommonStorePageAPIRequest) GetStart() int64 {
-	return r._start
-}
-
-// SetPageSize is PageSize Setter
-// 每页查询量，默认10（建议查询值为10的倍数，最大不超过20）
-func (r *TaobaoKoubeiMallCommonStorePageAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoKoubeiMallCommonStorePageAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetCategoryIds is CategoryIds Setter
-// 门店列表按照类目筛选条件过滤，可通过查询商圈详情获取类目信息
-func (r *TaobaoKoubeiMallCommonStorePageAPIRequest) SetCategoryIds(_categoryIds []string) error {
-	r._categoryIds = _categoryIds
-	r.Set("category_ids", _categoryIds)
-	return nil
-}
-
-// GetCategoryIds CategoryIds Getter
-func (r TaobaoKoubeiMallCommonStorePageAPIRequest) GetCategoryIds() []string {
-	return r._categoryIds
-}
-
 // SetStoreId is StoreId Setter
 // 商圈内的门店ID
 func (r *TaobaoKoubeiMallCommonStorePageAPIRequest) SetStoreId(_storeId string) error {
@@ -152,19 +139,6 @@ func (r *TaobaoKoubeiMallCommonStorePageAPIRequest) SetOrder(_order string) erro
 // GetOrder Order Getter
 func (r TaobaoKoubeiMallCommonStorePageAPIRequest) GetOrder() string {
 	return r._order
-}
-
-// SetServiceTag is ServiceTag Setter
-// 店铺服务标签，用于列表过滤条件；比如：点餐/外卖/预定等服务筛选条件。预定：SERVICE_DING；排号：SERVICE_PAI；点菜：SERVICE_DIAN；外卖：SERVICE_WAI；
-func (r *TaobaoKoubeiMallCommonStorePageAPIRequest) SetServiceTag(_serviceTag []string) error {
-	r._serviceTag = _serviceTag
-	r.Set("service_tag", _serviceTag)
-	return nil
-}
-
-// GetServiceTag ServiceTag Getter
-func (r TaobaoKoubeiMallCommonStorePageAPIRequest) GetServiceTag() []string {
-	return r._serviceTag
 }
 
 // SetCityCode is CityCode Setter
@@ -243,4 +217,30 @@ func (r *TaobaoKoubeiMallCommonStorePageAPIRequest) SetDisplayChannel(_displayCh
 // GetDisplayChannel DisplayChannel Getter
 func (r TaobaoKoubeiMallCommonStorePageAPIRequest) GetDisplayChannel() string {
 	return r._displayChannel
+}
+
+// SetStart is Start Setter
+// 分页查询起始值，默认为0
+func (r *TaobaoKoubeiMallCommonStorePageAPIRequest) SetStart(_start int64) error {
+	r._start = _start
+	r.Set("start", _start)
+	return nil
+}
+
+// GetStart Start Getter
+func (r TaobaoKoubeiMallCommonStorePageAPIRequest) GetStart() int64 {
+	return r._start
+}
+
+// SetPageSize is PageSize Setter
+// 每页查询量，默认10（建议查询值为10的倍数，最大不超过20）
+func (r *TaobaoKoubeiMallCommonStorePageAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoKoubeiMallCommonStorePageAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

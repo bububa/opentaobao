@@ -2,8 +2,6 @@ package jipiao
 
 // Itinerary 结构体
 type Itinerary struct {
-	// 行程单类型：6，快递
-	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 收件人姓名
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 收件人手机号
@@ -22,12 +20,14 @@ type Itinerary struct {
 	ItineraryNo string `json:"itinerary_no,omitempty" xml:"itinerary_no,omitempty"`
 	// 邮寄时间
 	SendDate string `json:"send_date,omitempty" xml:"send_date,omitempty"`
-	// 行程单订单的状态 0：未付款 1：已付款 2：转交易成功 3：已邮寄 4：已取消
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 扩展字段
 	Extra string `json:"extra,omitempty" xml:"extra,omitempty"`
 	// 支付宝交易号
 	AlipayTradeNo string `json:"alipay_trade_no,omitempty" xml:"alipay_trade_no,omitempty"`
+	// 行程单类型：6，快递
+	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+	// 行程单订单的状态 0：未付款 1：已付款 2：转交易成功 3：已邮寄 4：已取消
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 淘宝主键id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 }

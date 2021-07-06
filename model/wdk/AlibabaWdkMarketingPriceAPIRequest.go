@@ -12,10 +12,6 @@ import (
 // 获取营销-促销商品中的实时价格
 type AlibabaWdkMarketingPriceAPIRequest struct {
 	model.Params
-	// 单页大小
-	_pageSize int64
-	// 页码
-	_pageIndex int64
 	// 商品sku
 	_skuCodes []string
 	// 门店标识数组
@@ -24,6 +20,10 @@ type AlibabaWdkMarketingPriceAPIRequest struct {
 	_endTime string
 	// 查询开始时间(sku_codes非空无效)
 	_beginTime string
+	// 单页大小
+	_pageSize int64
+	// 页码
+	_pageIndex int64
 }
 
 // NewAlibabaWdkMarketingPriceRequest 初始化AlibabaWdkMarketingPriceAPIRequest对象
@@ -45,32 +45,6 @@ func (r AlibabaWdkMarketingPriceAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetPageSize is PageSize Setter
-// 单页大小
-func (r *AlibabaWdkMarketingPriceAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlibabaWdkMarketingPriceAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetPageIndex is PageIndex Setter
-// 页码
-func (r *AlibabaWdkMarketingPriceAPIRequest) SetPageIndex(_pageIndex int64) error {
-	r._pageIndex = _pageIndex
-	r.Set("page_index", _pageIndex)
-	return nil
-}
-
-// GetPageIndex PageIndex Getter
-func (r AlibabaWdkMarketingPriceAPIRequest) GetPageIndex() int64 {
-	return r._pageIndex
 }
 
 // SetSkuCodes is SkuCodes Setter
@@ -123,4 +97,30 @@ func (r *AlibabaWdkMarketingPriceAPIRequest) SetBeginTime(_beginTime string) err
 // GetBeginTime BeginTime Getter
 func (r AlibabaWdkMarketingPriceAPIRequest) GetBeginTime() string {
 	return r._beginTime
+}
+
+// SetPageSize is PageSize Setter
+// 单页大小
+func (r *AlibabaWdkMarketingPriceAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlibabaWdkMarketingPriceAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetPageIndex is PageIndex Setter
+// 页码
+func (r *AlibabaWdkMarketingPriceAPIRequest) SetPageIndex(_pageIndex int64) error {
+	r._pageIndex = _pageIndex
+	r.Set("page_index", _pageIndex)
+	return nil
+}
+
+// GetPageIndex PageIndex Getter
+func (r AlibabaWdkMarketingPriceAPIRequest) GetPageIndex() int64 {
+	return r._pageIndex
 }

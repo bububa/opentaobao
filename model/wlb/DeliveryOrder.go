@@ -2,6 +2,10 @@ package wlb
 
 // DeliveryOrder 结构体
 type DeliveryOrder struct {
+	// 订单信息
+	OrderLine []OrderLine `json:"order_line,omitempty" xml:"order_line>order_line,omitempty"`
+	// 订单行
+	OrderLines []OrderLine `json:"order_lines,omitempty" xml:"order_lines>order_line,omitempty"`
 	// 发货单创建时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// ERP出库单号,ERP系统内本次出库的唯一标示
@@ -20,12 +24,8 @@ type DeliveryOrder struct {
 	LogisticsName string `json:"logistics_name,omitempty" xml:"logistics_name,omitempty"`
 	// 最晚到货时间
 	LastArriveDate string `json:"last_arrive_date,omitempty" xml:"last_arrive_date,omitempty"`
-	// 订单信息
-	OrderLine []OrderLine `json:"order_line,omitempty" xml:"order_line>order_line,omitempty"`
 	// 扩展信息
 	ExtendProps string `json:"extend_props,omitempty" xml:"extend_props,omitempty"`
-	// 收货人信息
-	ReceiverInfo *ReceiverInfo `json:"receiver_info,omitempty" xml:"receiver_info,omitempty"`
 	// 收货时间区间
 	SignTime string `json:"sign_time,omitempty" xml:"sign_time,omitempty"`
 	// 是否自提
@@ -34,6 +34,6 @@ type DeliveryOrder struct {
 	TransportMode string `json:"transport_mode,omitempty" xml:"transport_mode,omitempty"`
 	// 物流单号
 	CnOrderCode string `json:"cn_order_code,omitempty" xml:"cn_order_code,omitempty"`
-	// 订单行
-	OrderLines []OrderLine `json:"order_lines,omitempty" xml:"order_lines>order_line,omitempty"`
+	// 收货人信息
+	ReceiverInfo *ReceiverInfo `json:"receiver_info,omitempty" xml:"receiver_info,omitempty"`
 }

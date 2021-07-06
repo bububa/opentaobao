@@ -18,18 +18,18 @@ type AlibabaRetailDeviceOrderQueryAPIRequest struct {
 	_deviceUuid string
 	// 阿里设备编码
 	_deviceCode string
-	// -20 已退款，-10 交易关闭 ，10 创单 20 已支付  30 已出货  40 交易完成
-	_status int64
 	// CASH 现金，ALIPAY_FACE_PAY_QR 支付宝，VENDING_PRIZE 抽奖，FACE_PAY 人脸
 	_payType string
-	// 分页大小
-	_pageSize int64
-	// 页码
-	_pageNum int64
 	// 查询订单开始时间
 	_starts string
 	// 查询订单结束时间
 	_ends string
+	// -20 已退款，-10 交易关闭 ，10 创单 20 已支付  30 已出货  40 交易完成
+	_status int64
+	// 分页大小
+	_pageSize int64
+	// 页码
+	_pageNum int64
 }
 
 // NewAlibabaRetailDeviceOrderQueryRequest 初始化AlibabaRetailDeviceOrderQueryAPIRequest对象
@@ -92,19 +92,6 @@ func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// SetStatus is Status Setter
-// -20 已退款，-10 交易关闭 ，10 创单 20 已支付  30 已出货  40 交易完成
-func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetStatus(_status int64) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetStatus() int64 {
-	return r._status
-}
-
 // SetPayType is PayType Setter
 // CASH 现金，ALIPAY_FACE_PAY_QR 支付宝，VENDING_PRIZE 抽奖，FACE_PAY 人脸
 func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPayType(_payType string) error {
@@ -116,32 +103,6 @@ func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPayType(_payType string) er
 // GetPayType PayType Getter
 func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetPayType() string {
 	return r._payType
-}
-
-// SetPageSize is PageSize Setter
-// 分页大小
-func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetPageNum is PageNum Setter
-// 页码
-func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPageNum(_pageNum int64) error {
-	r._pageNum = _pageNum
-	r.Set("page_num", _pageNum)
-	return nil
-}
-
-// GetPageNum PageNum Getter
-func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetPageNum() int64 {
-	return r._pageNum
 }
 
 // SetStarts is Starts Setter
@@ -168,4 +129,43 @@ func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetEnds(_ends string) error {
 // GetEnds Ends Getter
 func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetEnds() string {
 	return r._ends
+}
+
+// SetStatus is Status Setter
+// -20 已退款，-10 交易关闭 ，10 创单 20 已支付  30 已出货  40 交易完成
+func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetStatus() int64 {
+	return r._status
+}
+
+// SetPageSize is PageSize Setter
+// 分页大小
+func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetPageNum is PageNum Setter
+// 页码
+func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPageNum(_pageNum int64) error {
+	r._pageNum = _pageNum
+	r.Set("page_num", _pageNum)
+	return nil
+}
+
+// GetPageNum PageNum Getter
+func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetPageNum() int64 {
+	return r._pageNum
 }

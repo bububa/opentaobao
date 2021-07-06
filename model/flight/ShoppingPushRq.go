@@ -2,12 +2,8 @@ package flight
 
 // ShoppingPushRq 结构体
 type ShoppingPushRq struct {
-	// 渠道id
-	ChannelId int64 `json:"channel_id,omitempty" xml:"channel_id,omitempty"`
 	// cid
 	Cid string `json:"cid,omitempty" xml:"cid,omitempty"`
-	// 行程类型，1：单程；2：往返；5:  多程
-	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
 	// 出发地 IATA 三字码代码; 如果为多程,最多三程六段，按照 PEK/HKG,HKG/SHA 格式请求
 	FromCity string `json:"from_city,omitempty" xml:"from_city,omitempty"`
 	// 目的地城市 、到达城市IATA 三字码代码 ；多程为空
@@ -18,4 +14,8 @@ type ShoppingPushRq struct {
 	RetDate string `json:"ret_date,omitempty" xml:"ret_date,omitempty"`
 	// 政策详情，同大卖家API搜索结果返回的json字符串格式；
 	SearchRs string `json:"search_rs,omitempty" xml:"search_rs,omitempty"`
+	// 渠道id
+	ChannelId int64 `json:"channel_id,omitempty" xml:"channel_id,omitempty"`
+	// 行程类型，1：单程；2：往返；5:  多程
+	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
 }

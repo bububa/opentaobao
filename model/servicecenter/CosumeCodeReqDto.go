@@ -12,10 +12,10 @@ type CosumeCodeReqDto struct {
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 身份证
 	IdentityNo string `json:"identity_no,omitempty" xml:"identity_no,omitempty"`
-	// 门店id
-	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 门店名字
 	StoreName string `json:"store_name,omitempty" xml:"store_name,omitempty"`
 	// 车架号
 	Vin string `json:"vin,omitempty" xml:"vin,omitempty"`
+	// 门店id
+	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 }

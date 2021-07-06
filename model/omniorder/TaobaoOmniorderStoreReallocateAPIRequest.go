@@ -12,14 +12,14 @@ import (
 // 门店发货提供改派接口
 type TaobaoOmniorderStoreReallocateAPIRequest struct {
 	model.Params
-	// 主订单号
-	_mainOrderId int64
 	// 子订单号
 	_subOrderIds []int64
-	// 门店Id
-	_storeId int64
 	// 电商仓code
 	_warehouseCode string
+	// 主订单号
+	_mainOrderId int64
+	// 门店Id
+	_storeId int64
 }
 
 // NewTaobaoOmniorderStoreReallocateRequest 初始化TaobaoOmniorderStoreReallocateAPIRequest对象
@@ -43,19 +43,6 @@ func (r TaobaoOmniorderStoreReallocateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetMainOrderId is MainOrderId Setter
-// 主订单号
-func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetMainOrderId(_mainOrderId int64) error {
-	r._mainOrderId = _mainOrderId
-	r.Set("main_order_id", _mainOrderId)
-	return nil
-}
-
-// GetMainOrderId MainOrderId Getter
-func (r TaobaoOmniorderStoreReallocateAPIRequest) GetMainOrderId() int64 {
-	return r._mainOrderId
-}
-
 // SetSubOrderIds is SubOrderIds Setter
 // 子订单号
 func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetSubOrderIds(_subOrderIds []int64) error {
@@ -69,19 +56,6 @@ func (r TaobaoOmniorderStoreReallocateAPIRequest) GetSubOrderIds() []int64 {
 	return r._subOrderIds
 }
 
-// SetStoreId is StoreId Setter
-// 门店Id
-func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetStoreId(_storeId int64) error {
-	r._storeId = _storeId
-	r.Set("store_id", _storeId)
-	return nil
-}
-
-// GetStoreId StoreId Getter
-func (r TaobaoOmniorderStoreReallocateAPIRequest) GetStoreId() int64 {
-	return r._storeId
-}
-
 // SetWarehouseCode is WarehouseCode Setter
 // 电商仓code
 func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetWarehouseCode(_warehouseCode string) error {
@@ -93,4 +67,30 @@ func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetWarehouseCode(_warehouseCo
 // GetWarehouseCode WarehouseCode Getter
 func (r TaobaoOmniorderStoreReallocateAPIRequest) GetWarehouseCode() string {
 	return r._warehouseCode
+}
+
+// SetMainOrderId is MainOrderId Setter
+// 主订单号
+func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+	r._mainOrderId = _mainOrderId
+	r.Set("main_order_id", _mainOrderId)
+	return nil
+}
+
+// GetMainOrderId MainOrderId Getter
+func (r TaobaoOmniorderStoreReallocateAPIRequest) GetMainOrderId() int64 {
+	return r._mainOrderId
+}
+
+// SetStoreId is StoreId Setter
+// 门店Id
+func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// GetStoreId StoreId Getter
+func (r TaobaoOmniorderStoreReallocateAPIRequest) GetStoreId() int64 {
+	return r._storeId
 }

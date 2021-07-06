@@ -2,10 +2,6 @@ package healthnr
 
 // LogisticsDetail 结构体
 type LogisticsDetail struct {
-	// 订单id
-	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
-	// 物流状态
-	LogisticsStatus int64 `json:"logistics_status,omitempty" xml:"logistics_status,omitempty"`
 	// 物流商
 	LogisticsName string `json:"logistics_name,omitempty" xml:"logistics_name,omitempty"`
 	// 配送单下单时间
@@ -22,4 +18,8 @@ type LogisticsDetail struct {
 	DispatcherName string `json:"dispatcher_name,omitempty" xml:"dispatcher_name,omitempty"`
 	// 骑手电话
 	DispatcherMobile string `json:"dispatcher_mobile,omitempty" xml:"dispatcher_mobile,omitempty"`
+	// 订单id
+	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+	// 物流状态
+	LogisticsStatus int64 `json:"logistics_status,omitempty" xml:"logistics_status,omitempty"`
 }

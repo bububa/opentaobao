@@ -12,10 +12,10 @@ import (
 // global virtual send code service
 type AlibabaGlobalVirtualSendcodeAPIRequest struct {
 	model.Params
-	// trade order id
-	_tradeOrderLineId int64
 	// code list
 	_codeList []VirtualCertificateDo
+	// trade order id
+	_tradeOrderLineId int64
 }
 
 // NewAlibabaGlobalVirtualSendcodeRequest 初始化AlibabaGlobalVirtualSendcodeAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaGlobalVirtualSendcodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetTradeOrderLineId is TradeOrderLineId Setter
-// trade order id
-func (r *AlibabaGlobalVirtualSendcodeAPIRequest) SetTradeOrderLineId(_tradeOrderLineId int64) error {
-	r._tradeOrderLineId = _tradeOrderLineId
-	r.Set("trade_order_line_id", _tradeOrderLineId)
-	return nil
-}
-
-// GetTradeOrderLineId TradeOrderLineId Getter
-func (r AlibabaGlobalVirtualSendcodeAPIRequest) GetTradeOrderLineId() int64 {
-	return r._tradeOrderLineId
-}
-
 // SetCodeList is CodeList Setter
 // code list
 func (r *AlibabaGlobalVirtualSendcodeAPIRequest) SetCodeList(_codeList []VirtualCertificateDo) error {
@@ -63,4 +50,17 @@ func (r *AlibabaGlobalVirtualSendcodeAPIRequest) SetCodeList(_codeList []Virtual
 // GetCodeList CodeList Getter
 func (r AlibabaGlobalVirtualSendcodeAPIRequest) GetCodeList() []VirtualCertificateDo {
 	return r._codeList
+}
+
+// SetTradeOrderLineId is TradeOrderLineId Setter
+// trade order id
+func (r *AlibabaGlobalVirtualSendcodeAPIRequest) SetTradeOrderLineId(_tradeOrderLineId int64) error {
+	r._tradeOrderLineId = _tradeOrderLineId
+	r.Set("trade_order_line_id", _tradeOrderLineId)
+	return nil
+}
+
+// GetTradeOrderLineId TradeOrderLineId Getter
+func (r AlibabaGlobalVirtualSendcodeAPIRequest) GetTradeOrderLineId() int64 {
+	return r._tradeOrderLineId
 }

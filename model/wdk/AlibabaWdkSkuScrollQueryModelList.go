@@ -30,12 +30,6 @@ type AlibabaWdkSkuScrollQueryModelList struct {
 	ChannelCodes string `json:"channel_codes,omitempty" xml:"channel_codes,omitempty"`
 	// 税收编码(查询返回使用)
 	TaxClassNo string `json:"tax_class_no,omitempty" xml:"tax_class_no,omitempty"`
-	// 业务类型 1：盒饭  2：生鲜
-	BusinessType int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
-	// 是否测试商品
-	TestFlag int64 `json:"test_flag,omitempty" xml:"test_flag,omitempty"`
-	// 是否服务商品
-	ServiceFlag int64 `json:"service_flag,omitempty" xml:"service_flag,omitempty"`
 	// 修改时间
 	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
 	// 商家编码
@@ -44,12 +38,8 @@ type AlibabaWdkSkuScrollQueryModelList struct {
 	SupplierNo string `json:"supplier_no,omitempty" xml:"supplier_no,omitempty"`
 	// 短标题
 	ShortTitle string `json:"short_title,omitempty" xml:"short_title,omitempty"`
-	// 是否线上可售 是 0：否 1：是
-	OnlineSaleFlag int64 `json:"online_sale_flag,omitempty" xml:"online_sale_flag,omitempty"`
 	// 销售规格描述
 	SaleSpec string `json:"sale_spec,omitempty" xml:"sale_spec,omitempty"`
-	// 加工时间 单位：分钟
-	ProcessingTime int64 `json:"processing_time,omitempty" xml:"processing_time,omitempty"`
 	// 后台平台类目编码
 	BackCatCode string `json:"back_cat_code,omitempty" xml:"back_cat_code,omitempty"`
 	// 进项税率
@@ -62,4 +52,14 @@ type AlibabaWdkSkuScrollQueryModelList struct {
 	BrandCode string `json:"brand_code,omitempty" xml:"brand_code,omitempty"`
 	// 保质期天数，商品的保质期（单位：天）,0表示没有保质期
 	ShelfLife string `json:"shelf_life,omitempty" xml:"shelf_life,omitempty"`
+	// 业务类型 1：盒饭  2：生鲜
+	BusinessType int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
+	// 是否测试商品
+	TestFlag int64 `json:"test_flag,omitempty" xml:"test_flag,omitempty"`
+	// 是否服务商品
+	ServiceFlag int64 `json:"service_flag,omitempty" xml:"service_flag,omitempty"`
+	// 是否线上可售 是 0：否 1：是
+	OnlineSaleFlag int64 `json:"online_sale_flag,omitempty" xml:"online_sale_flag,omitempty"`
+	// 加工时间 单位：分钟
+	ProcessingTime int64 `json:"processing_time,omitempty" xml:"processing_time,omitempty"`
 }

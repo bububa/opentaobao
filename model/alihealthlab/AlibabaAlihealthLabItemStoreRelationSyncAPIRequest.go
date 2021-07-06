@@ -12,10 +12,10 @@ import (
 // 阿里健康检验检测业务，isv检验检测项目门店关系同步到健康，支持检验检测项目门店关系的增加和删除
 type AlibabaAlihealthLabItemStoreRelationSyncAPIRequest struct {
 	model.Params
-	// EFFECTIVE 有效，INVALID 无效
-	_isvRelationStatus string
 	// isv门店编码
 	_isvStoreCodes []string
+	// EFFECTIVE 有效，INVALID 无效
+	_isvRelationStatus string
 	// 检验检测项目isv侧编码
 	_isvItemCode string
 }
@@ -41,19 +41,6 @@ func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// SetIsvRelationStatus is IsvRelationStatus Setter
-// EFFECTIVE 有效，INVALID 无效
-func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvRelationStatus(_isvRelationStatus string) error {
-	r._isvRelationStatus = _isvRelationStatus
-	r.Set("isv_relation_status", _isvRelationStatus)
-	return nil
-}
-
-// GetIsvRelationStatus IsvRelationStatus Getter
-func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetIsvRelationStatus() string {
-	return r._isvRelationStatus
-}
-
 // SetIsvStoreCodes is IsvStoreCodes Setter
 // isv门店编码
 func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvStoreCodes(_isvStoreCodes []string) error {
@@ -65,6 +52,19 @@ func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvStoreCodes(_i
 // GetIsvStoreCodes IsvStoreCodes Getter
 func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetIsvStoreCodes() []string {
 	return r._isvStoreCodes
+}
+
+// SetIsvRelationStatus is IsvRelationStatus Setter
+// EFFECTIVE 有效，INVALID 无效
+func (r *AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) SetIsvRelationStatus(_isvRelationStatus string) error {
+	r._isvRelationStatus = _isvRelationStatus
+	r.Set("isv_relation_status", _isvRelationStatus)
+	return nil
+}
+
+// GetIsvRelationStatus IsvRelationStatus Getter
+func (r AlibabaAlihealthLabItemStoreRelationSyncAPIRequest) GetIsvRelationStatus() string {
+	return r._isvRelationStatus
 }
 
 // SetIsvItemCode is IsvItemCode Setter

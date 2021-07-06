@@ -22,10 +22,6 @@ type TaobaoXhotelOrderOfficialQualificationGetAPIRequest struct {
 	_mobileNo string
 	// 商家在淘宝给分配的渠道名（建议填充较好）
 	_vendor string
-	// 证件类型, 默认0:身份证; 1: 护照; 2:警官证; 3:士兵证; 4: 回乡证。目前只支持身份证
-	_idType int64
-	// 加密方式, 默认0: 不加密, 信息会通过淘宝开放平台传输, 阿里旅行可以获取到具体信息;      * 目前只支持不加密
-	_encryptType int64
 	// 入住人姓名（必选）
 	_guestName string
 	// 用户支付宝唯一识别码(可选)
@@ -42,12 +38,16 @@ type TaobaoXhotelOrderOfficialQualificationGetAPIRequest struct {
 	_checkIn string
 	// 外部请求序列表号\流水号，单次请求的唯一标识(必须)
 	_outUUID string
-	// 总的收费金额，单位为分(必须)
-	_totalFee int64
 	// 酒店外部编码
 	_hotelCode string
 	// 外部订单号（必选），阿里旅行会根据此值进行幂等性校验
 	_outOid string
+	// 证件类型, 默认0:身份证; 1: 护照; 2:警官证; 3:士兵证; 4: 回乡证。目前只支持身份证
+	_idType int64
+	// 加密方式, 默认0: 不加密, 信息会通过淘宝开放平台传输, 阿里旅行可以获取到具体信息;      * 目前只支持不加密
+	_encryptType int64
+	// 总的收费金额，单位为分(必须)
+	_totalFee int64
 	// 房间数
 	_roomNum int64
 }
@@ -136,32 +136,6 @@ func (r *TaobaoXhotelOrderOfficialQualificationGetAPIRequest) SetVendor(_vendor 
 // GetVendor Vendor Getter
 func (r TaobaoXhotelOrderOfficialQualificationGetAPIRequest) GetVendor() string {
 	return r._vendor
-}
-
-// SetIdType is IdType Setter
-// 证件类型, 默认0:身份证; 1: 护照; 2:警官证; 3:士兵证; 4: 回乡证。目前只支持身份证
-func (r *TaobaoXhotelOrderOfficialQualificationGetAPIRequest) SetIdType(_idType int64) error {
-	r._idType = _idType
-	r.Set("id_type", _idType)
-	return nil
-}
-
-// GetIdType IdType Getter
-func (r TaobaoXhotelOrderOfficialQualificationGetAPIRequest) GetIdType() int64 {
-	return r._idType
-}
-
-// SetEncryptType is EncryptType Setter
-// 加密方式, 默认0: 不加密, 信息会通过淘宝开放平台传输, 阿里旅行可以获取到具体信息;      * 目前只支持不加密
-func (r *TaobaoXhotelOrderOfficialQualificationGetAPIRequest) SetEncryptType(_encryptType int64) error {
-	r._encryptType = _encryptType
-	r.Set("encrypt_type", _encryptType)
-	return nil
-}
-
-// GetEncryptType EncryptType Getter
-func (r TaobaoXhotelOrderOfficialQualificationGetAPIRequest) GetEncryptType() int64 {
-	return r._encryptType
 }
 
 // SetGuestName is GuestName Setter
@@ -268,19 +242,6 @@ func (r TaobaoXhotelOrderOfficialQualificationGetAPIRequest) GetOutUUID() string
 	return r._outUUID
 }
 
-// SetTotalFee is TotalFee Setter
-// 总的收费金额，单位为分(必须)
-func (r *TaobaoXhotelOrderOfficialQualificationGetAPIRequest) SetTotalFee(_totalFee int64) error {
-	r._totalFee = _totalFee
-	r.Set("total_fee", _totalFee)
-	return nil
-}
-
-// GetTotalFee TotalFee Getter
-func (r TaobaoXhotelOrderOfficialQualificationGetAPIRequest) GetTotalFee() int64 {
-	return r._totalFee
-}
-
 // SetHotelCode is HotelCode Setter
 // 酒店外部编码
 func (r *TaobaoXhotelOrderOfficialQualificationGetAPIRequest) SetHotelCode(_hotelCode string) error {
@@ -305,6 +266,45 @@ func (r *TaobaoXhotelOrderOfficialQualificationGetAPIRequest) SetOutOid(_outOid 
 // GetOutOid OutOid Getter
 func (r TaobaoXhotelOrderOfficialQualificationGetAPIRequest) GetOutOid() string {
 	return r._outOid
+}
+
+// SetIdType is IdType Setter
+// 证件类型, 默认0:身份证; 1: 护照; 2:警官证; 3:士兵证; 4: 回乡证。目前只支持身份证
+func (r *TaobaoXhotelOrderOfficialQualificationGetAPIRequest) SetIdType(_idType int64) error {
+	r._idType = _idType
+	r.Set("id_type", _idType)
+	return nil
+}
+
+// GetIdType IdType Getter
+func (r TaobaoXhotelOrderOfficialQualificationGetAPIRequest) GetIdType() int64 {
+	return r._idType
+}
+
+// SetEncryptType is EncryptType Setter
+// 加密方式, 默认0: 不加密, 信息会通过淘宝开放平台传输, 阿里旅行可以获取到具体信息;      * 目前只支持不加密
+func (r *TaobaoXhotelOrderOfficialQualificationGetAPIRequest) SetEncryptType(_encryptType int64) error {
+	r._encryptType = _encryptType
+	r.Set("encrypt_type", _encryptType)
+	return nil
+}
+
+// GetEncryptType EncryptType Getter
+func (r TaobaoXhotelOrderOfficialQualificationGetAPIRequest) GetEncryptType() int64 {
+	return r._encryptType
+}
+
+// SetTotalFee is TotalFee Setter
+// 总的收费金额，单位为分(必须)
+func (r *TaobaoXhotelOrderOfficialQualificationGetAPIRequest) SetTotalFee(_totalFee int64) error {
+	r._totalFee = _totalFee
+	r.Set("total_fee", _totalFee)
+	return nil
+}
+
+// GetTotalFee TotalFee Getter
+func (r TaobaoXhotelOrderOfficialQualificationGetAPIRequest) GetTotalFee() int64 {
+	return r._totalFee
 }
 
 // SetRoomNum is RoomNum Setter

@@ -12,14 +12,14 @@ import (
 // 菜鸟认证直邮线下发货
 type TaobaoWlbImportThreeplOfflineConsignAPIRequest struct {
 	model.Params
-	// 交易单号
-	_tradeId int64
-	// 资源id
-	_resId int64
 	// 资源code
 	_resCode string
 	// 运单号
 	_waybillNo string
+	// 交易单号
+	_tradeId int64
+	// 资源id
+	_resId int64
 	// 发件人地址库id
 	_fromId int64
 }
@@ -43,32 +43,6 @@ func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetApiParams() url.Value
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetTradeId is TradeId Setter
-// 交易单号
-func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetTradeId(_tradeId int64) error {
-	r._tradeId = _tradeId
-	r.Set("trade_id", _tradeId)
-	return nil
-}
-
-// GetTradeId TradeId Getter
-func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetTradeId() int64 {
-	return r._tradeId
-}
-
-// SetResId is ResId Setter
-// 资源id
-func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetResId(_resId int64) error {
-	r._resId = _resId
-	r.Set("res_id", _resId)
-	return nil
-}
-
-// GetResId ResId Getter
-func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetResId() int64 {
-	return r._resId
 }
 
 // SetResCode is ResCode Setter
@@ -95,6 +69,32 @@ func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetWaybillNo(_waybillNo
 // GetWaybillNo WaybillNo Getter
 func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetWaybillNo() string {
 	return r._waybillNo
+}
+
+// SetTradeId is TradeId Setter
+// 交易单号
+func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetTradeId(_tradeId int64) error {
+	r._tradeId = _tradeId
+	r.Set("trade_id", _tradeId)
+	return nil
+}
+
+// GetTradeId TradeId Getter
+func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetTradeId() int64 {
+	return r._tradeId
+}
+
+// SetResId is ResId Setter
+// 资源id
+func (r *TaobaoWlbImportThreeplOfflineConsignAPIRequest) SetResId(_resId int64) error {
+	r._resId = _resId
+	r.Set("res_id", _resId)
+	return nil
+}
+
+// GetResId ResId Getter
+func (r TaobaoWlbImportThreeplOfflineConsignAPIRequest) GetResId() int64 {
+	return r._resId
 }
 
 // SetFromId is FromId Setter

@@ -12,12 +12,12 @@ import (
 // 签证批量申请人送签接口，用于商家批量送签。
 type AlitripTravelVisaSignSendAPIRequest struct {
 	model.Params
+	// 申请人ids
+	_applyIds []string
 	// 国家id。目前只支持越南，越南国家id:27027
 	_nationId int64
 	// 送签类型：1-非加急，2-加急，默认非加急
 	_signType int64
-	// 申请人ids
-	_applyIds []string
 }
 
 // NewAlitripTravelVisaSignSendRequest 初始化AlitripTravelVisaSignSendAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlitripTravelVisaSignSendAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetApplyIds is ApplyIds Setter
+// 申请人ids
+func (r *AlitripTravelVisaSignSendAPIRequest) SetApplyIds(_applyIds []string) error {
+	r._applyIds = _applyIds
+	r.Set("apply_ids", _applyIds)
+	return nil
+}
+
+// GetApplyIds ApplyIds Getter
+func (r AlitripTravelVisaSignSendAPIRequest) GetApplyIds() []string {
+	return r._applyIds
 }
 
 // SetNationId is NationId Setter
@@ -65,17 +78,4 @@ func (r *AlitripTravelVisaSignSendAPIRequest) SetSignType(_signType int64) error
 // GetSignType SignType Getter
 func (r AlitripTravelVisaSignSendAPIRequest) GetSignType() int64 {
 	return r._signType
-}
-
-// SetApplyIds is ApplyIds Setter
-// 申请人ids
-func (r *AlitripTravelVisaSignSendAPIRequest) SetApplyIds(_applyIds []string) error {
-	r._applyIds = _applyIds
-	r.Set("apply_ids", _applyIds)
-	return nil
-}
-
-// GetApplyIds ApplyIds Getter
-func (r AlitripTravelVisaSignSendAPIRequest) GetApplyIds() []string {
-	return r._applyIds
 }

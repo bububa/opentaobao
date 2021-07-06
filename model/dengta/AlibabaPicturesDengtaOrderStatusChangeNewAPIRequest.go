@@ -14,8 +14,6 @@ type AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest struct {
 	model.Params
 	// 拒绝原因
 	_remark string
-	// 新状态
-	_status int64
 	// 变更时间
 	_changeTime string
 	// ims订单编号
@@ -28,6 +26,8 @@ type AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest struct {
 	_taskPic string
 	// 扩展字段。json结构
 	_extJson string
+	// 新状态
+	_status int64
 }
 
 // NewAlibabaPicturesDengtaOrderStatusChangeNewRequest 初始化AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest对象
@@ -62,19 +62,6 @@ func (r *AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest) SetRemark(_remark 
 // GetRemark Remark Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest) GetRemark() string {
 	return r._remark
-}
-
-// SetStatus is Status Setter
-// 新状态
-func (r *AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest) SetStatus(_status int64) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest) GetStatus() int64 {
-	return r._status
 }
 
 // SetChangeTime is ChangeTime Setter
@@ -153,4 +140,17 @@ func (r *AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest) SetExtJson(_extJso
 // GetExtJson ExtJson Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest) GetExtJson() string {
 	return r._extJson
+}
+
+// SetStatus is Status Setter
+// 新状态
+func (r *AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r AlibabaPicturesDengtaOrderStatusChangeNewAPIRequest) GetStatus() int64 {
+	return r._status
 }

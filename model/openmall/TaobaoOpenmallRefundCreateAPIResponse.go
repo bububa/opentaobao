@@ -21,8 +21,8 @@ type TaobaoOpenmallRefundCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"openmall_refund_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 退款ID
-	RefundId int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
 	// 退款单状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+	// 退款ID
+	RefundId int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
 }

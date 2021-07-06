@@ -12,12 +12,8 @@ import (
 // 商家验码之前的调用接口，用来判断是否可以进行核销操作
 type TaobaoEticketMerchantMaAvailableAPIRequest struct {
 	model.Params
-	// 业务类型
-	_bizType int64
 	// 需要被核销的码
 	_code string
-	// 核销份数
-	_consumeNum int64
 	// 业务id（订单号）
 	_outerId string
 	// 机具编号
@@ -26,6 +22,10 @@ type TaobaoEticketMerchantMaAvailableAPIRequest struct {
 	_serialNum string
 	// 需要跟发码通知获取到的参数一致
 	_token string
+	// 业务类型
+	_bizType int64
+	// 核销份数
+	_consumeNum int64
 }
 
 // NewTaobaoEticketMerchantMaAvailableRequest 初始化TaobaoEticketMerchantMaAvailableAPIRequest对象
@@ -49,19 +49,6 @@ func (r TaobaoEticketMerchantMaAvailableAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetBizType is BizType Setter
-// 业务类型
-func (r *TaobaoEticketMerchantMaAvailableAPIRequest) SetBizType(_bizType int64) error {
-	r._bizType = _bizType
-	r.Set("biz_type", _bizType)
-	return nil
-}
-
-// GetBizType BizType Getter
-func (r TaobaoEticketMerchantMaAvailableAPIRequest) GetBizType() int64 {
-	return r._bizType
-}
-
 // SetCode is Code Setter
 // 需要被核销的码
 func (r *TaobaoEticketMerchantMaAvailableAPIRequest) SetCode(_code string) error {
@@ -73,19 +60,6 @@ func (r *TaobaoEticketMerchantMaAvailableAPIRequest) SetCode(_code string) error
 // GetCode Code Getter
 func (r TaobaoEticketMerchantMaAvailableAPIRequest) GetCode() string {
 	return r._code
-}
-
-// SetConsumeNum is ConsumeNum Setter
-// 核销份数
-func (r *TaobaoEticketMerchantMaAvailableAPIRequest) SetConsumeNum(_consumeNum int64) error {
-	r._consumeNum = _consumeNum
-	r.Set("consume_num", _consumeNum)
-	return nil
-}
-
-// GetConsumeNum ConsumeNum Getter
-func (r TaobaoEticketMerchantMaAvailableAPIRequest) GetConsumeNum() int64 {
-	return r._consumeNum
 }
 
 // SetOuterId is OuterId Setter
@@ -138,4 +112,30 @@ func (r *TaobaoEticketMerchantMaAvailableAPIRequest) SetToken(_token string) err
 // GetToken Token Getter
 func (r TaobaoEticketMerchantMaAvailableAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetBizType is BizType Setter
+// 业务类型
+func (r *TaobaoEticketMerchantMaAvailableAPIRequest) SetBizType(_bizType int64) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// GetBizType BizType Getter
+func (r TaobaoEticketMerchantMaAvailableAPIRequest) GetBizType() int64 {
+	return r._bizType
+}
+
+// SetConsumeNum is ConsumeNum Setter
+// 核销份数
+func (r *TaobaoEticketMerchantMaAvailableAPIRequest) SetConsumeNum(_consumeNum int64) error {
+	r._consumeNum = _consumeNum
+	r.Set("consume_num", _consumeNum)
+	return nil
+}
+
+// GetConsumeNum ConsumeNum Getter
+func (r TaobaoEticketMerchantMaAvailableAPIRequest) GetConsumeNum() int64 {
+	return r._consumeNum
 }

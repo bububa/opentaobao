@@ -15,22 +15,22 @@ import (
 // 2）单笔订单多个商品，交易金额不能大于1000人民币。
 type TaobaoWlbImportsGeneralConsignAPIRequest struct {
 	model.Params
-	// 交易订单id
-	_tradeOrderId int64
-	// 物流资源ID
-	_resourceId int64
 	// 仓库编码
 	_storeCode string
 	// 第1段物流承运商
 	_firstLogistics string
 	// 第1段物流运单号
 	_firstWaybillno string
+	// 增值服务编码.多个以逗号分隔
+	_vasCode string
+	// 交易订单id
+	_tradeOrderId int64
+	// 物流资源ID
+	_resourceId int64
 	// 卖家发货地址库ID；不填的话取默认发货地址；如果填写的senderId对应多个地址，取第一个
 	_senderId int64
 	// 卖家退货地址库ID；不填写的话取默认退货地址；如果填写的cancelId对应多个地址，取第一个
 	_cancelId int64
-	// 增值服务编码.多个以逗号分隔
-	_vasCode string
 }
 
 // NewTaobaoWlbImportsGeneralConsignRequest 初始化TaobaoWlbImportsGeneralConsignAPIRequest对象
@@ -52,32 +52,6 @@ func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetTradeOrderId is TradeOrderId Setter
-// 交易订单id
-func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetTradeOrderId(_tradeOrderId int64) error {
-	r._tradeOrderId = _tradeOrderId
-	r.Set("trade_order_id", _tradeOrderId)
-	return nil
-}
-
-// GetTradeOrderId TradeOrderId Getter
-func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetTradeOrderId() int64 {
-	return r._tradeOrderId
-}
-
-// SetResourceId is ResourceId Setter
-// 物流资源ID
-func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetResourceId(_resourceId int64) error {
-	r._resourceId = _resourceId
-	r.Set("resource_id", _resourceId)
-	return nil
-}
-
-// GetResourceId ResourceId Getter
-func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetResourceId() int64 {
-	return r._resourceId
 }
 
 // SetStoreCode is StoreCode Setter
@@ -119,6 +93,45 @@ func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetFirstWaybillno() string {
 	return r._firstWaybillno
 }
 
+// SetVasCode is VasCode Setter
+// 增值服务编码.多个以逗号分隔
+func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetVasCode(_vasCode string) error {
+	r._vasCode = _vasCode
+	r.Set("vas_code", _vasCode)
+	return nil
+}
+
+// GetVasCode VasCode Getter
+func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetVasCode() string {
+	return r._vasCode
+}
+
+// SetTradeOrderId is TradeOrderId Setter
+// 交易订单id
+func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetTradeOrderId(_tradeOrderId int64) error {
+	r._tradeOrderId = _tradeOrderId
+	r.Set("trade_order_id", _tradeOrderId)
+	return nil
+}
+
+// GetTradeOrderId TradeOrderId Getter
+func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetTradeOrderId() int64 {
+	return r._tradeOrderId
+}
+
+// SetResourceId is ResourceId Setter
+// 物流资源ID
+func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetResourceId(_resourceId int64) error {
+	r._resourceId = _resourceId
+	r.Set("resource_id", _resourceId)
+	return nil
+}
+
+// GetResourceId ResourceId Getter
+func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetResourceId() int64 {
+	return r._resourceId
+}
+
 // SetSenderId is SenderId Setter
 // 卖家发货地址库ID；不填的话取默认发货地址；如果填写的senderId对应多个地址，取第一个
 func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetSenderId(_senderId int64) error {
@@ -143,17 +156,4 @@ func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetCancelId(_cancelId int64) 
 // GetCancelId CancelId Getter
 func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetCancelId() int64 {
 	return r._cancelId
-}
-
-// SetVasCode is VasCode Setter
-// 增值服务编码.多个以逗号分隔
-func (r *TaobaoWlbImportsGeneralConsignAPIRequest) SetVasCode(_vasCode string) error {
-	r._vasCode = _vasCode
-	r.Set("vas_code", _vasCode)
-	return nil
-}
-
-// GetVasCode VasCode Getter
-func (r TaobaoWlbImportsGeneralConsignAPIRequest) GetVasCode() string {
-	return r._vasCode
 }

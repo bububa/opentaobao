@@ -12,18 +12,18 @@ import (
 // 审核退款单，标志是否可用于批量退款，目前仅支持天猫订单。
 type TaobaoRpRefundReviewAPIRequest struct {
 	model.Params
-	// 退款单编号
-	_refundId int64
 	// 审核人姓名
 	_operator string
 	// 退款阶段，可选值：售中：onsale，售后：aftersale
 	_refundPhase string
+	// 审核留言
+	_message string
+	// 退款单编号
+	_refundId int64
 	// 退款最后更新时间，以时间戳的方式表示
 	_refundVersion int64
 	// 审核是否可用于批量退款，可选值：true（审核通过），false（审核不通过或反审核）
 	_result bool
-	// 审核留言
-	_message string
 }
 
 // NewTaobaoRpRefundReviewRequest 初始化TaobaoRpRefundReviewAPIRequest对象
@@ -45,19 +45,6 @@ func (r TaobaoRpRefundReviewAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetRefundId is RefundId Setter
-// 退款单编号
-func (r *TaobaoRpRefundReviewAPIRequest) SetRefundId(_refundId int64) error {
-	r._refundId = _refundId
-	r.Set("refund_id", _refundId)
-	return nil
-}
-
-// GetRefundId RefundId Getter
-func (r TaobaoRpRefundReviewAPIRequest) GetRefundId() int64 {
-	return r._refundId
 }
 
 // SetOperator is Operator Setter
@@ -86,6 +73,32 @@ func (r TaobaoRpRefundReviewAPIRequest) GetRefundPhase() string {
 	return r._refundPhase
 }
 
+// SetMessage is Message Setter
+// 审核留言
+func (r *TaobaoRpRefundReviewAPIRequest) SetMessage(_message string) error {
+	r._message = _message
+	r.Set("message", _message)
+	return nil
+}
+
+// GetMessage Message Getter
+func (r TaobaoRpRefundReviewAPIRequest) GetMessage() string {
+	return r._message
+}
+
+// SetRefundId is RefundId Setter
+// 退款单编号
+func (r *TaobaoRpRefundReviewAPIRequest) SetRefundId(_refundId int64) error {
+	r._refundId = _refundId
+	r.Set("refund_id", _refundId)
+	return nil
+}
+
+// GetRefundId RefundId Getter
+func (r TaobaoRpRefundReviewAPIRequest) GetRefundId() int64 {
+	return r._refundId
+}
+
 // SetRefundVersion is RefundVersion Setter
 // 退款最后更新时间，以时间戳的方式表示
 func (r *TaobaoRpRefundReviewAPIRequest) SetRefundVersion(_refundVersion int64) error {
@@ -110,17 +123,4 @@ func (r *TaobaoRpRefundReviewAPIRequest) SetResult(_result bool) error {
 // GetResult Result Getter
 func (r TaobaoRpRefundReviewAPIRequest) GetResult() bool {
 	return r._result
-}
-
-// SetMessage is Message Setter
-// 审核留言
-func (r *TaobaoRpRefundReviewAPIRequest) SetMessage(_message string) error {
-	r._message = _message
-	r.Set("message", _message)
-	return nil
-}
-
-// GetMessage Message Getter
-func (r TaobaoRpRefundReviewAPIRequest) GetMessage() string {
-	return r._message
 }

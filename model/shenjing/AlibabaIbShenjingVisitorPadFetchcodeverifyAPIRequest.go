@@ -12,10 +12,10 @@ import (
 // 访客通过PAD提交访客码，录脸进入园区。
 type AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest struct {
 	model.Params
-	// 访客码
-	_visitorCode int64
 	// 终端ID
 	_termId string
+	// 访客码
+	_visitorCode int64
 }
 
 // NewAlibabaIbShenjingVisitorPadFetchcodeverifyRequest 初始化AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) GetApiParams() url
 	return params
 }
 
-// SetVisitorCode is VisitorCode Setter
-// 访客码
-func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) SetVisitorCode(_visitorCode int64) error {
-	r._visitorCode = _visitorCode
-	r.Set("visitor_code", _visitorCode)
-	return nil
-}
-
-// GetVisitorCode VisitorCode Getter
-func (r AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) GetVisitorCode() int64 {
-	return r._visitorCode
-}
-
 // SetTermId is TermId Setter
 // 终端ID
 func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) SetTermId(_termId string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) SetTermId(_termId
 // GetTermId TermId Getter
 func (r AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) GetTermId() string {
 	return r._termId
+}
+
+// SetVisitorCode is VisitorCode Setter
+// 访客码
+func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) SetVisitorCode(_visitorCode int64) error {
+	r._visitorCode = _visitorCode
+	r.Set("visitor_code", _visitorCode)
+	return nil
+}
+
+// GetVisitorCode VisitorCode Getter
+func (r AlibabaIbShenjingVisitorPadFetchcodeverifyAPIRequest) GetVisitorCode() int64 {
+	return r._visitorCode
 }

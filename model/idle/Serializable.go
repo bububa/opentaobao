@@ -2,16 +2,16 @@ package idle
 
 // Serializable 结构体
 type Serializable struct {
+	// 明细
+	PayDetails []SubPayBillDto `json:"pay_details,omitempty" xml:"pay_details>sub_pay_bill_dto,omitempty"`
+	// 代扣计划列表
+	PlanIds []string `json:"plan_ids,omitempty" xml:"plan_ids>string,omitempty"`
 	// 商户订单号（唯一建）
 	BizOrderId string `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 支付宝流水号
 	AlipayTradeNo string `json:"alipay_trade_no,omitempty" xml:"alipay_trade_no,omitempty"`
 	// 支付时间
 	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
-	// 申请扣款金额（单位分）
-	TotalAmount int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
-	// 实际支付金额（单位分）
-	ReceiptAmount int64 `json:"receipt_amount,omitempty" xml:"receipt_amount,omitempty"`
 	// INIT:初始状态;PARTIAL_SUCCESSED:支付部分成功;SUCCESSED:支付成功;FAILED:支付失败
 	PayStatus string `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
 	// 代扣计划
@@ -20,32 +20,16 @@ type Serializable struct {
 	PayBizCode string `json:"pay_biz_code,omitempty" xml:"pay_biz_code,omitempty"`
 	// 状态描述
 	PayStatusDesc string `json:"pay_status_desc,omitempty" xml:"pay_status_desc,omitempty"`
-	// 明细
-	PayDetails []SubPayBillDto `json:"pay_details,omitempty" xml:"pay_details>sub_pay_bill_dto,omitempty"`
-	// 代扣计划列表
-	PlanIds []string `json:"plan_ids,omitempty" xml:"plan_ids>string,omitempty"`
 	// 回收商appkey
 	AppKey string `json:"app_key,omitempty" xml:"app_key,omitempty"`
-	// 回收订单状态
-	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
-	// 买家id,已脱敏处理返回0
-	BuyerId int64 `json:"buyer_id,omitempty" xml:"buyer_id,omitempty"`
 	// 买家nick
 	BuyerNick string `json:"buyer_nick,omitempty" xml:"buyer_nick,omitempty"`
-	// 卖家id,已脱敏处理返回0
-	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 卖家nick
 	SellerNick string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
 	// 卖家支付宝id,用于回收商支付宝打款
 	SellerAlipayUserId string `json:"seller_alipay_user_id,omitempty" xml:"seller_alipay_user_id,omitempty"`
 	// 卖家支付宝账号,已脱敏
 	SellerAlipayAccount string `json:"seller_alipay_account,omitempty" xml:"seller_alipay_account,omitempty"`
-	// 是否信用预付订单
-	CreditPay bool `json:"credit_pay,omitempty" xml:"credit_pay,omitempty"`
-	// 信用预付金额,单位分
-	CreditPayAmount int64 `json:"credit_pay_amount,omitempty" xml:"credit_pay_amount,omitempty"`
-	// 估价金额,单位分
-	ApprizeAmount int64 `json:"apprize_amount,omitempty" xml:"apprize_amount,omitempty"`
 	// 卖家收货地址
 	SellerAddress string `json:"seller_address,omitempty" xml:"seller_address,omitempty"`
 	// 卖家手机号码
@@ -56,8 +40,6 @@ type Serializable struct {
 	ShipTime string `json:"ship_time,omitempty" xml:"ship_time,omitempty"`
 	// 卖家姓名
 	SellerRealName string `json:"seller_real_name,omitempty" xml:"seller_real_name,omitempty"`
-	// 是否支付宝签约
-	ZfbDk bool `json:"zfb_dk,omitempty" xml:"zfb_dk,omitempty"`
 	// 支付宝签约code
 	ZfbDkCode string `json:"zfb_dk_code,omitempty" xml:"zfb_dk_code,omitempty"`
 	// 估价id
@@ -112,4 +94,22 @@ type Serializable struct {
 	Amount string `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 外部业务ID
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
+	// 申请扣款金额（单位分）
+	TotalAmount int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
+	// 实际支付金额（单位分）
+	ReceiptAmount int64 `json:"receipt_amount,omitempty" xml:"receipt_amount,omitempty"`
+	// 回收订单状态
+	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
+	// 买家id,已脱敏处理返回0
+	BuyerId int64 `json:"buyer_id,omitempty" xml:"buyer_id,omitempty"`
+	// 卖家id,已脱敏处理返回0
+	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
+	// 信用预付金额,单位分
+	CreditPayAmount int64 `json:"credit_pay_amount,omitempty" xml:"credit_pay_amount,omitempty"`
+	// 估价金额,单位分
+	ApprizeAmount int64 `json:"apprize_amount,omitempty" xml:"apprize_amount,omitempty"`
+	// 是否信用预付订单
+	CreditPay bool `json:"credit_pay,omitempty" xml:"credit_pay,omitempty"`
+	// 是否支付宝签约
+	ZfbDk bool `json:"zfb_dk,omitempty" xml:"zfb_dk,omitempty"`
 }

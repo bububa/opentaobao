@@ -14,12 +14,12 @@ type AliexpressAffiliateLinkGenerateAPIRequest struct {
 	model.Params
 	// API请求签名
 	_appSignature string
-	// 转换的链接类型：0代表普通Link，1代表Search Link，2代表 hot link
-	_promotionLinkType int64
 	// 原始链接或者值
 	_sourceValues string
 	// 推广者原始trackingID
 	_trackingId string
+	// 转换的链接类型：0代表普通Link，1代表Search Link，2代表 hot link
+	_promotionLinkType int64
 }
 
 // NewAliexpressAffiliateLinkGenerateRequest 初始化AliexpressAffiliateLinkGenerateAPIRequest对象
@@ -56,19 +56,6 @@ func (r AliexpressAffiliateLinkGenerateAPIRequest) GetAppSignature() string {
 	return r._appSignature
 }
 
-// SetPromotionLinkType is PromotionLinkType Setter
-// 转换的链接类型：0代表普通Link，1代表Search Link，2代表 hot link
-func (r *AliexpressAffiliateLinkGenerateAPIRequest) SetPromotionLinkType(_promotionLinkType int64) error {
-	r._promotionLinkType = _promotionLinkType
-	r.Set("promotion_link_type", _promotionLinkType)
-	return nil
-}
-
-// GetPromotionLinkType PromotionLinkType Getter
-func (r AliexpressAffiliateLinkGenerateAPIRequest) GetPromotionLinkType() int64 {
-	return r._promotionLinkType
-}
-
 // SetSourceValues is SourceValues Setter
 // 原始链接或者值
 func (r *AliexpressAffiliateLinkGenerateAPIRequest) SetSourceValues(_sourceValues string) error {
@@ -93,4 +80,17 @@ func (r *AliexpressAffiliateLinkGenerateAPIRequest) SetTrackingId(_trackingId st
 // GetTrackingId TrackingId Getter
 func (r AliexpressAffiliateLinkGenerateAPIRequest) GetTrackingId() string {
 	return r._trackingId
+}
+
+// SetPromotionLinkType is PromotionLinkType Setter
+// 转换的链接类型：0代表普通Link，1代表Search Link，2代表 hot link
+func (r *AliexpressAffiliateLinkGenerateAPIRequest) SetPromotionLinkType(_promotionLinkType int64) error {
+	r._promotionLinkType = _promotionLinkType
+	r.Set("promotion_link_type", _promotionLinkType)
+	return nil
+}
+
+// GetPromotionLinkType PromotionLinkType Getter
+func (r AliexpressAffiliateLinkGenerateAPIRequest) GetPromotionLinkType() int64 {
+	return r._promotionLinkType
 }

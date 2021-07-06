@@ -12,8 +12,6 @@ import (
 // 只能更新一笔交易里面的买家收货地址 <br/>只能更新发货前（即买家已付款，等待卖家发货状态）的交易的买家收货地址 <br/>更新后的发货地址可以通过taobao.trade.fullinfo.get查到 <br/>参数中所说的字节为GBK编码的（英文和数字占1字节，中文占2字节）
 type TaobaoTradeShippingaddressUpdateAPIRequest struct {
 	model.Params
-	// 交易编号。
-	_tid int64
 	// 收货人全名。最大长度为50个字节。
 	_receiverName string
 	// 固定电话。最大长度为30个字节。
@@ -32,6 +30,8 @@ type TaobaoTradeShippingaddressUpdateAPIRequest struct {
 	_receiverZip string
 	// 四级地址。最大长度为32个字节。如：五常街道
 	_receiverTown string
+	// 交易编号。
+	_tid int64
 }
 
 // NewTaobaoTradeShippingaddressUpdateRequest 初始化TaobaoTradeShippingaddressUpdateAPIRequest对象
@@ -53,19 +53,6 @@ func (r TaobaoTradeShippingaddressUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetTid is Tid Setter
-// 交易编号。
-func (r *TaobaoTradeShippingaddressUpdateAPIRequest) SetTid(_tid int64) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
-	return nil
-}
-
-// GetTid Tid Getter
-func (r TaobaoTradeShippingaddressUpdateAPIRequest) GetTid() int64 {
-	return r._tid
 }
 
 // SetReceiverName is ReceiverName Setter
@@ -183,4 +170,17 @@ func (r *TaobaoTradeShippingaddressUpdateAPIRequest) SetReceiverTown(_receiverTo
 // GetReceiverTown ReceiverTown Getter
 func (r TaobaoTradeShippingaddressUpdateAPIRequest) GetReceiverTown() string {
 	return r._receiverTown
+}
+
+// SetTid is Tid Setter
+// 交易编号。
+func (r *TaobaoTradeShippingaddressUpdateAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoTradeShippingaddressUpdateAPIRequest) GetTid() int64 {
+	return r._tid
 }

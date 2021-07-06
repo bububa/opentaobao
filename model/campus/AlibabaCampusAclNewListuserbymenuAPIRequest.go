@@ -12,10 +12,10 @@ import (
 // 查询拥有菜单权限的用户
 type AlibabaCampusAclNewListuserbymenuAPIRequest struct {
 	model.Params
-	// 系统入参
-	_context *WorkBenchContext
 	// /workbench/space/application
 	_menuUrl string
+	// 系统入参
+	_context *WorkBenchContext
 }
 
 // NewAlibabaCampusAclNewListuserbymenuRequest 初始化AlibabaCampusAclNewListuserbymenuAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaCampusAclNewListuserbymenuAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetContext is Context Setter
-// 系统入参
-func (r *AlibabaCampusAclNewListuserbymenuAPIRequest) SetContext(_context *WorkBenchContext) error {
-	r._context = _context
-	r.Set("context", _context)
-	return nil
-}
-
-// GetContext Context Getter
-func (r AlibabaCampusAclNewListuserbymenuAPIRequest) GetContext() *WorkBenchContext {
-	return r._context
-}
-
 // SetMenuUrl is MenuUrl Setter
 // /workbench/space/application
 func (r *AlibabaCampusAclNewListuserbymenuAPIRequest) SetMenuUrl(_menuUrl string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaCampusAclNewListuserbymenuAPIRequest) SetMenuUrl(_menuUrl string
 // GetMenuUrl MenuUrl Getter
 func (r AlibabaCampusAclNewListuserbymenuAPIRequest) GetMenuUrl() string {
 	return r._menuUrl
+}
+
+// SetContext is Context Setter
+// 系统入参
+func (r *AlibabaCampusAclNewListuserbymenuAPIRequest) SetContext(_context *WorkBenchContext) error {
+	r._context = _context
+	r.Set("context", _context)
+	return nil
+}
+
+// GetContext Context Getter
+func (r AlibabaCampusAclNewListuserbymenuAPIRequest) GetContext() *WorkBenchContext {
+	return r._context
 }

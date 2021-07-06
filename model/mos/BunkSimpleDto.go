@@ -6,8 +6,6 @@ type BunkSimpleDto struct {
 	StoreNo string `json:"store_no,omitempty" xml:"store_no,omitempty"`
 	// 铺位面积
 	Acreage string `json:"acreage,omitempty" xml:"acreage,omitempty"`
-	// 铺位类型
-	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 铺位编号
 	Number string `json:"number,omitempty" xml:"number,omitempty"`
 	// 铺位ID
@@ -20,4 +18,6 @@ type BunkSimpleDto struct {
 	FloorId string `json:"floor_id,omitempty" xml:"floor_id,omitempty"`
 	// 合同系统编号
 	ContractId string `json:"contract_id,omitempty" xml:"contract_id,omitempty"`
+	// 铺位类型
+	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 }

@@ -18,12 +18,8 @@ type AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest struct {
 	_unitId string
 	// 备注
 	_memo string
-	// 预约事件发生时间
-	_time int64
 	// 服务ID
 	_serviceId string
-	// 预约目标时间
-	_deliveryDate int64
 	// 具体操作人ID（预约人）
 	_operatorId string
 	// 联系人员名字
@@ -34,6 +30,10 @@ type AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest struct {
 	_type string
 	// 三维家补单ID
 	_additionalOrderId string
+	// 预约事件发生时间
+	_time int64
+	// 预约目标时间
+	_deliveryDate int64
 }
 
 // NewAlibabaIhomeCtomPostsaleOnsiteSyncRequest 初始化AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest对象
@@ -96,19 +96,6 @@ func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetMemo() string {
 	return r._memo
 }
 
-// SetTime is Time Setter
-// 预约事件发生时间
-func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetTime(_time int64) error {
-	r._time = _time
-	r.Set("time", _time)
-	return nil
-}
-
-// GetTime Time Getter
-func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetTime() int64 {
-	return r._time
-}
-
 // SetServiceId is ServiceId Setter
 // 服务ID
 func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetServiceId(_serviceId string) error {
@@ -120,19 +107,6 @@ func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetServiceId(_serviceId s
 // GetServiceId ServiceId Getter
 func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetServiceId() string {
 	return r._serviceId
-}
-
-// SetDeliveryDate is DeliveryDate Setter
-// 预约目标时间
-func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetDeliveryDate(_deliveryDate int64) error {
-	r._deliveryDate = _deliveryDate
-	r.Set("delivery_date", _deliveryDate)
-	return nil
-}
-
-// GetDeliveryDate DeliveryDate Getter
-func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetDeliveryDate() int64 {
-	return r._deliveryDate
 }
 
 // SetOperatorId is OperatorId Setter
@@ -198,4 +172,30 @@ func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetAdditionalOrderId(_add
 // GetAdditionalOrderId AdditionalOrderId Getter
 func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetAdditionalOrderId() string {
 	return r._additionalOrderId
+}
+
+// SetTime is Time Setter
+// 预约事件发生时间
+func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetTime(_time int64) error {
+	r._time = _time
+	r.Set("time", _time)
+	return nil
+}
+
+// GetTime Time Getter
+func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetTime() int64 {
+	return r._time
+}
+
+// SetDeliveryDate is DeliveryDate Setter
+// 预约目标时间
+func (r *AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) SetDeliveryDate(_deliveryDate int64) error {
+	r._deliveryDate = _deliveryDate
+	r.Set("delivery_date", _deliveryDate)
+	return nil
+}
+
+// GetDeliveryDate DeliveryDate Getter
+func (r AlibabaIhomeCtomPostsaleOnsiteSyncAPIRequest) GetDeliveryDate() int64 {
+	return r._deliveryDate
 }

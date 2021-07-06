@@ -20,6 +20,8 @@ type TaobaoUsergrowthOfflineConvertionSummaryEightGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"usergrowth_offline_convertion_summary_eight_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 集合
+	List []TaobaoUsergrowthOfflineConvertionSummaryEightGetE `json:"list,omitempty" xml:"list>taobao_usergrowth_offline_convertion_summary_eight_get_e,omitempty"`
 	// 跟踪id
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 总条数
@@ -28,6 +30,4 @@ type TaobaoUsergrowthOfflineConvertionSummaryEightGetAPIResponseModel struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 页码
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
-	// 集合
-	List []TaobaoUsergrowthOfflineConvertionSummaryEightGetE `json:"list,omitempty" xml:"list>taobao_usergrowth_offline_convertion_summary_eight_get_e,omitempty"`
 }

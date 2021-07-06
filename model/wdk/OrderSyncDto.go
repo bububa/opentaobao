@@ -2,6 +2,10 @@ package wdk
 
 // OrderSyncDto 结构体
 type OrderSyncDto struct {
+	// subOrders
+	SubOrders []SubOrderSyncDto `json:"sub_orders,omitempty" xml:"sub_orders>sub_order_sync_dto,omitempty"`
+	// payChannels
+	PayChannels []PayChannel `json:"pay_channels,omitempty" xml:"pay_channels>pay_channel,omitempty"`
 	// 渠道店id
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 外部订单号
@@ -24,34 +28,30 @@ type OrderSyncDto struct {
 	MerchantCode string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
 	// 收银员名称
 	OperatorName string `json:"operator_name,omitempty" xml:"operator_name,omitempty"`
-	// 淘宝订单号
-	TbBizOrderId int64 `json:"tb_biz_order_id,omitempty" xml:"tb_biz_order_id,omitempty"`
 	// 收银员id
 	OperatorId string `json:"operator_id,omitempty" xml:"operator_id,omitempty"`
 	// 会员卡号
 	MemberCardNum string `json:"member_card_num,omitempty" xml:"member_card_num,omitempty"`
-	// 会员优惠金额
-	MemberDiscountAmt int64 `json:"member_discount_amt,omitempty" xml:"member_discount_amt,omitempty"`
 	// 经营店id
 	StoreId string `json:"store_id,omitempty" xml:"store_id,omitempty"`
-	// 邮费
-	PostFee int64 `json:"post_fee,omitempty" xml:"post_fee,omitempty"`
 	// 支付时间
 	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
+	// 商场code
+	SourceMerchantCode string `json:"source_merchant_code,omitempty" xml:"source_merchant_code,omitempty"`
+	// 下单终端: APP,POS
+	OrderClient string `json:"order_client,omitempty" xml:"order_client,omitempty"`
+	// 淘宝订单号
+	TbBizOrderId int64 `json:"tb_biz_order_id,omitempty" xml:"tb_biz_order_id,omitempty"`
+	// 会员优惠金额
+	MemberDiscountAmt int64 `json:"member_discount_amt,omitempty" xml:"member_discount_amt,omitempty"`
+	// 邮费
+	PostFee int64 `json:"post_fee,omitempty" xml:"post_fee,omitempty"`
 	// 商家总原价
 	OriginalAmt int64 `json:"original_amt,omitempty" xml:"original_amt,omitempty"`
 	// 总优惠金额
 	DiscountAmt int64 `json:"discount_amt,omitempty" xml:"discount_amt,omitempty"`
 	// 盒马订单号
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
-	// 商场code
-	SourceMerchantCode string `json:"source_merchant_code,omitempty" xml:"source_merchant_code,omitempty"`
 	// 订单渠道来源
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
-	// subOrders
-	SubOrders []SubOrderSyncDto `json:"sub_orders,omitempty" xml:"sub_orders>sub_order_sync_dto,omitempty"`
-	// 下单终端: APP,POS
-	OrderClient string `json:"order_client,omitempty" xml:"order_client,omitempty"`
-	// payChannels
-	PayChannels []PayChannel `json:"pay_channels,omitempty" xml:"pay_channels>pay_channel,omitempty"`
 }

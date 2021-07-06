@@ -12,10 +12,10 @@ import (
 // 查询用户数娱礼包列表
 type TaobaoDegUserGamegiftQueryAPIRequest struct {
 	model.Params
-	// 状态，1为待发放，2为已发放，3为过期
-	_status int64
 	// cp item id列表
 	_cpItemIds []string
+	// 状态，1为待发放，2为已发放，3为过期
+	_status int64
 }
 
 // NewTaobaoDegUserGamegiftQueryRequest 初始化TaobaoDegUserGamegiftQueryAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoDegUserGamegiftQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetStatus is Status Setter
-// 状态，1为待发放，2为已发放，3为过期
-func (r *TaobaoDegUserGamegiftQueryAPIRequest) SetStatus(_status int64) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TaobaoDegUserGamegiftQueryAPIRequest) GetStatus() int64 {
-	return r._status
-}
-
 // SetCpItemIds is CpItemIds Setter
 // cp item id列表
 func (r *TaobaoDegUserGamegiftQueryAPIRequest) SetCpItemIds(_cpItemIds []string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoDegUserGamegiftQueryAPIRequest) SetCpItemIds(_cpItemIds []string)
 // GetCpItemIds CpItemIds Getter
 func (r TaobaoDegUserGamegiftQueryAPIRequest) GetCpItemIds() []string {
 	return r._cpItemIds
+}
+
+// SetStatus is Status Setter
+// 状态，1为待发放，2为已发放，3为过期
+func (r *TaobaoDegUserGamegiftQueryAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TaobaoDegUserGamegiftQueryAPIRequest) GetStatus() int64 {
+	return r._status
 }

@@ -19,10 +19,10 @@ type TaobaoLogisticsAddressReachableAPIRequest struct {
 	_address string
 	// 物流公司编码ID，可以从这个接口获取所有物流公司的标准编码taobao.logistics.companies.get，可以传入多个值，以英文逗号分隔，如“1000000952,1000000953”
 	_partnerIds string
-	// 服务对应的数字编码，如揽派范围对应88
-	_serviceType int64
 	// 发货地，标准区域编码(四级行政)，可以通过taobao.areas.get获取，如浙江省杭州市余杭区闲林街道为 330110011
 	_sourceAreaCode string
+	// 服务对应的数字编码，如揽派范围对应88
+	_serviceType int64
 }
 
 // NewTaobaoLogisticsAddressReachableRequest 初始化TaobaoLogisticsAddressReachableAPIRequest对象
@@ -85,19 +85,6 @@ func (r TaobaoLogisticsAddressReachableAPIRequest) GetPartnerIds() string {
 	return r._partnerIds
 }
 
-// SetServiceType is ServiceType Setter
-// 服务对应的数字编码，如揽派范围对应88
-func (r *TaobaoLogisticsAddressReachableAPIRequest) SetServiceType(_serviceType int64) error {
-	r._serviceType = _serviceType
-	r.Set("service_type", _serviceType)
-	return nil
-}
-
-// GetServiceType ServiceType Getter
-func (r TaobaoLogisticsAddressReachableAPIRequest) GetServiceType() int64 {
-	return r._serviceType
-}
-
 // SetSourceAreaCode is SourceAreaCode Setter
 // 发货地，标准区域编码(四级行政)，可以通过taobao.areas.get获取，如浙江省杭州市余杭区闲林街道为 330110011
 func (r *TaobaoLogisticsAddressReachableAPIRequest) SetSourceAreaCode(_sourceAreaCode string) error {
@@ -109,4 +96,17 @@ func (r *TaobaoLogisticsAddressReachableAPIRequest) SetSourceAreaCode(_sourceAre
 // GetSourceAreaCode SourceAreaCode Getter
 func (r TaobaoLogisticsAddressReachableAPIRequest) GetSourceAreaCode() string {
 	return r._sourceAreaCode
+}
+
+// SetServiceType is ServiceType Setter
+// 服务对应的数字编码，如揽派范围对应88
+func (r *TaobaoLogisticsAddressReachableAPIRequest) SetServiceType(_serviceType int64) error {
+	r._serviceType = _serviceType
+	r.Set("service_type", _serviceType)
+	return nil
+}
+
+// GetServiceType ServiceType Getter
+func (r TaobaoLogisticsAddressReachableAPIRequest) GetServiceType() int64 {
+	return r._serviceType
 }

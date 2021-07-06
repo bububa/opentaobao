@@ -2,8 +2,6 @@ package wdkitem
 
 // AlibabaWdkItemMerchantskuQueryResult 结构体
 type AlibabaWdkItemMerchantskuQueryResult struct {
-	// success
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// errorCode
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// errorDesc
@@ -12,4 +10,6 @@ type AlibabaWdkItemMerchantskuQueryResult struct {
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
+	// success
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

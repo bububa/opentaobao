@@ -2,6 +2,8 @@ package qimen
 
 // TransferOrderDetail 结构体
 type TransferOrderDetail struct {
+	// 调拨单货品明细记录集
+	Items []Item `json:"items,omitempty" xml:"items>item,omitempty"`
 	// 调拨单号,0,string(50),,
 	TransferOrderCode string `json:"transferOrderCode,omitempty" xml:"transferOrderCode,omitempty"`
 	// 外部ERP订单号,HZ1234,string(50),,
@@ -24,6 +26,4 @@ type TransferOrderDetail struct {
 	ToWarehouseCode string `json:"toWarehouseCode,omitempty" xml:"toWarehouseCode,omitempty"`
 	// 1111
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
-	// 调拨单货品明细记录集
-	Items []Item `json:"items,omitempty" xml:"items>item,omitempty"`
 }

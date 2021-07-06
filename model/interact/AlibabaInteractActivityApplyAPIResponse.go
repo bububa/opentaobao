@@ -20,10 +20,10 @@ type AlibabaInteractActivityApplyAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_interact_activity_apply_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 出错提示信息
+	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 	// 服务结果对象
 	Data *ActivityWriteResult `json:"data,omitempty" xml:"data,omitempty"`
 	// top接口执行成功与否
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-	// 出错提示信息
-	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
 }

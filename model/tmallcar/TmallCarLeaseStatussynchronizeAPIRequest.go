@@ -12,6 +12,8 @@ import (
 // 天猫开新车租后状态同步
 type TmallCarLeaseStatussynchronizeAPIRequest struct {
 	model.Params
+	// 拒绝原因
+	_refuseReason string
 	// 天猫开新车订单号
 	_orderId int64
 	// 业务类型:0.退车,1.买断,2.分期，3.续租
@@ -20,8 +22,6 @@ type TmallCarLeaseStatussynchronizeAPIRequest struct {
 	_actionType int64
 	// 1:通过，-1:拒绝
 	_actionValue int64
-	// 拒绝原因
-	_refuseReason string
 }
 
 // NewTmallCarLeaseStatussynchronizeRequest 初始化TmallCarLeaseStatussynchronizeAPIRequest对象
@@ -43,6 +43,19 @@ func (r TmallCarLeaseStatussynchronizeAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetRefuseReason is RefuseReason Setter
+// 拒绝原因
+func (r *TmallCarLeaseStatussynchronizeAPIRequest) SetRefuseReason(_refuseReason string) error {
+	r._refuseReason = _refuseReason
+	r.Set("refuse_reason", _refuseReason)
+	return nil
+}
+
+// GetRefuseReason RefuseReason Getter
+func (r TmallCarLeaseStatussynchronizeAPIRequest) GetRefuseReason() string {
+	return r._refuseReason
 }
 
 // SetOrderId is OrderId Setter
@@ -95,17 +108,4 @@ func (r *TmallCarLeaseStatussynchronizeAPIRequest) SetActionValue(_actionValue i
 // GetActionValue ActionValue Getter
 func (r TmallCarLeaseStatussynchronizeAPIRequest) GetActionValue() int64 {
 	return r._actionValue
-}
-
-// SetRefuseReason is RefuseReason Setter
-// 拒绝原因
-func (r *TmallCarLeaseStatussynchronizeAPIRequest) SetRefuseReason(_refuseReason string) error {
-	r._refuseReason = _refuseReason
-	r.Set("refuse_reason", _refuseReason)
-	return nil
-}
-
-// GetRefuseReason RefuseReason Getter
-func (r TmallCarLeaseStatussynchronizeAPIRequest) GetRefuseReason() string {
-	return r._refuseReason
 }

@@ -12,8 +12,6 @@ import (
 // 天猫开新车租后代客户还款
 type TmallCarLeasePayforcustomerAPIRequest struct {
 	model.Params
-	// 天猫开新车订单id
-	_orderId int64
 	// 贷款客户在网商的会员ID
 	_custIproleId string
 	// 还款日，精确到日，格式为yyyyMMdd，必须是当天
@@ -24,6 +22,8 @@ type TmallCarLeasePayforcustomerAPIRequest struct {
 	_prinAmt string
 	// 外部流水号格式：日期(8位)+序列号(8位）,序列号是数字，如00000001（必须是16位且符合该格式
 	_requestId string
+	// 天猫开新车订单id
+	_orderId int64
 }
 
 // NewTmallCarLeasePayforcustomerRequest 初始化TmallCarLeasePayforcustomerAPIRequest对象
@@ -45,19 +45,6 @@ func (r TmallCarLeasePayforcustomerAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetOrderId is OrderId Setter
-// 天猫开新车订单id
-func (r *TmallCarLeasePayforcustomerAPIRequest) SetOrderId(_orderId int64) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
-	return nil
-}
-
-// GetOrderId OrderId Getter
-func (r TmallCarLeasePayforcustomerAPIRequest) GetOrderId() int64 {
-	return r._orderId
 }
 
 // SetCustIproleId is CustIproleId Setter
@@ -123,4 +110,17 @@ func (r *TmallCarLeasePayforcustomerAPIRequest) SetRequestId(_requestId string) 
 // GetRequestId RequestId Getter
 func (r TmallCarLeasePayforcustomerAPIRequest) GetRequestId() string {
 	return r._requestId
+}
+
+// SetOrderId is OrderId Setter
+// 天猫开新车订单id
+func (r *TmallCarLeasePayforcustomerAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// GetOrderId OrderId Getter
+func (r TmallCarLeasePayforcustomerAPIRequest) GetOrderId() int64 {
+	return r._orderId
 }

@@ -2,6 +2,8 @@ package tbk
 
 // TopApiAfOrderOption 结构体
 type TopApiAfOrderOption struct {
+	// 查询开始时间，以taoke订单创建时间开始
+	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// pid中的第二段，siteId
 	SiteId int64 `json:"site_id,omitempty" xml:"site_id,omitempty"`
 	// 查询时间跨度，不超过30天，单位是天
@@ -16,8 +18,6 @@ type TopApiAfOrderOption struct {
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// pageNo
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
-	// 查询开始时间，以taoke订单创建时间开始
-	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 此参数不再使用，请勿入参
 	SpecialId int64 `json:"special_id,omitempty" xml:"special_id,omitempty"`
 	// 此参数不再使用，请勿入参

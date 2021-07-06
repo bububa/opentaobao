@@ -2,6 +2,8 @@ package logistic
 
 // Capacities 结构体
 type Capacities struct {
+	// 门店编码，对应大润发deliveryDockCode
+	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
 	// 配送中骑手
 	DeliveryKnightAmount int64 `json:"delivery_knight_amount,omitempty" xml:"delivery_knight_amount,omitempty"`
 	// 小休骑手
@@ -16,6 +18,4 @@ type Capacities struct {
 	BackKnightAmount int64 `json:"back_knight_amount,omitempty" xml:"back_knight_amount,omitempty"`
 	// 上班骑手数
 	WorkKnightAmount int64 `json:"work_knight_amount,omitempty" xml:"work_knight_amount,omitempty"`
-	// 门店编码，对应大润发deliveryDockCode
-	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
 }

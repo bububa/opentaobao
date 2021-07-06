@@ -4,8 +4,6 @@ package tmallcarenter
 type OriginVehicleInfoDto struct {
 	// 销售名称
 	SalesName string `json:"sales_name,omitempty" xml:"sales_name,omitempty"`
-	// 生产年份
-	ProductiveYear int64 `json:"productive_year,omitempty" xml:"productive_year,omitempty"`
 	// 厂家类型(国产,合资,进口)
 	ManufactureType string `json:"manufacture_type,omitempty" xml:"manufacture_type,omitempty"`
 	// 后轮胎规格
@@ -14,12 +12,8 @@ type OriginVehicleInfoDto struct {
 	BrandName string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
 	// 底盘压缩ID
 	ChassisCid string `json:"chassis_cid,omitempty" xml:"chassis_cid,omitempty"`
-	// 上市年份
-	ReleaseYear int64 `json:"release_year,omitempty" xml:"release_year,omitempty"`
 	// 厂家名称
 	ManufactureName string `json:"manufacture_name,omitempty" xml:"manufacture_name,omitempty"`
-	// 销售年款
-	SalesYear int64 `json:"sales_year,omitempty" xml:"sales_year,omitempty"`
 	// 前轮胎规格
 	FrontTyre string `json:"front_tyre,omitempty" xml:"front_tyre,omitempty"`
 	// 排量
@@ -32,10 +26,6 @@ type OriginVehicleInfoDto struct {
 	Emmission string `json:"emmission,omitempty" xml:"emmission,omitempty"`
 	// 生产状态
 	ProductiveStatus string `json:"productive_status,omitempty" xml:"productive_status,omitempty"`
-	// 停产年份
-	EndYear int64 `json:"end_year,omitempty" xml:"end_year,omitempty"`
-	// 状态(状态,0:删除,1:新增,2:修改)
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 发动起型号
 	EngineModel string `json:"engine_model,omitempty" xml:"engine_model,omitempty"`
 	// 扩展信息(json串)
@@ -56,8 +46,6 @@ type OriginVehicleInfoDto struct {
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
 	// 车型
 	ModelName string `json:"model_name,omitempty" xml:"model_name,omitempty"`
-	// 上市月份
-	ReleaseMonth int64 `json:"release_month,omitempty" xml:"release_month,omitempty"`
 	// 燃油类型
 	FuelType string `json:"fuel_type,omitempty" xml:"fuel_type,omitempty"`
 	// 变速箱类型
@@ -72,4 +60,16 @@ type OriginVehicleInfoDto struct {
 	VehicleType string `json:"vehicle_type,omitempty" xml:"vehicle_type,omitempty"`
 	// 代数
 	GenerationNum string `json:"generation_num,omitempty" xml:"generation_num,omitempty"`
+	// 生产年份
+	ProductiveYear int64 `json:"productive_year,omitempty" xml:"productive_year,omitempty"`
+	// 上市年份
+	ReleaseYear int64 `json:"release_year,omitempty" xml:"release_year,omitempty"`
+	// 销售年款
+	SalesYear int64 `json:"sales_year,omitempty" xml:"sales_year,omitempty"`
+	// 停产年份
+	EndYear int64 `json:"end_year,omitempty" xml:"end_year,omitempty"`
+	// 状态(状态,0:删除,1:新增,2:修改)
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 上市月份
+	ReleaseMonth int64 `json:"release_month,omitempty" xml:"release_month,omitempty"`
 }

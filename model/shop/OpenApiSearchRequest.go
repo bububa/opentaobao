@@ -18,8 +18,6 @@ type OpenApiSearchRequest struct {
 	CurrentDistrict string `json:"current_district,omitempty" xml:"current_district,omitempty"`
 	// 省
 	CurrentProvince string `json:"current_province,omitempty" xml:"current_province,omitempty"`
-	// 固定值
-	Forward bool `json:"forward,omitempty" xml:"forward,omitempty"`
 	// 纬度
 	Latitude string `json:"latitude,omitempty" xml:"latitude,omitempty"`
 	// 所在商圈
@@ -32,8 +30,6 @@ type OpenApiSearchRequest struct {
 	LocationAccuracy string `json:"location_accuracy,omitempty" xml:"location_accuracy,omitempty"`
 	// 经度
 	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
-	// 个数
-	OriginalSize int64 `json:"original_size,omitempty" xml:"original_size,omitempty"`
 	// OS 版本
 	OsVersion string `json:"os_version,omitempty" xml:"os_version,omitempty"`
 	// 扩展参数
@@ -52,18 +48,22 @@ type OpenApiSearchRequest struct {
 	SelectedMenus string `json:"selected_menus,omitempty" xml:"selected_menus,omitempty"`
 	// sessionid
 	SessionId string `json:"session_id,omitempty" xml:"session_id,omitempty"`
-	// 个数
-	Size int64 `json:"size,omitempty" xml:"size,omitempty"`
 	// 排序
 	Sort string `json:"sort,omitempty" xml:"sort,omitempty"`
 	// 来源埋点
 	SrcSpm string `json:"src_spm,omitempty" xml:"src_spm,omitempty"`
-	// 分页
-	Start int64 `json:"start,omitempty" xml:"start,omitempty"`
 	// 搜索TOKEN
 	TokenId string `json:"token_id,omitempty" xml:"token_id,omitempty"`
 	// traceID
 	Trace string `json:"trace,omitempty" xml:"trace,omitempty"`
 	// 用户ID
 	Uid string `json:"uid,omitempty" xml:"uid,omitempty"`
+	// 个数
+	OriginalSize int64 `json:"original_size,omitempty" xml:"original_size,omitempty"`
+	// 个数
+	Size int64 `json:"size,omitempty" xml:"size,omitempty"`
+	// 分页
+	Start int64 `json:"start,omitempty" xml:"start,omitempty"`
+	// 固定值
+	Forward bool `json:"forward,omitempty" xml:"forward,omitempty"`
 }

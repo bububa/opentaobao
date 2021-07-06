@@ -22,12 +22,12 @@ type TaobaoMaQrcodeCommonCreateAPIRequest struct {
 	_channelName string
 	// 二维码的样式名，支持普通码的颜色或官方模板的模板名；普通码的颜色可选输入：“000000”(黑色)、“EF4F2B”(橙色);官方模板的可选输入（实际尺寸比样例大）：“ww_color.png“ 尺寸290x320，样例：http://gtms03.alicdn.com/tps/i3/T1YLPRFRXXXXbsbYwb-100-102.png；“tb_scan.png“ 尺寸290x320，样例：http://gtms01.alicdn.com/tps/i1/T14vsEFThdXXbsbYwb-100-102.png；“ww_hide_color.png“  尺寸200x263，样例：http://gtms04.alicdn.com/tps/i4/TB1URvlFVXXXXbRXFXXwxcf6pXX-76-100.png；“tmall_hide_color.png“ 尺寸200x263，样例：http://gtms01.alicdn.com/tps/i1/TB1S5PiFVXXXXacXVXXwxcf6pXX-76-100.png。
 	_style string
+	// 二维码的logo地址，只允许淘宝官方图片空间的图片地址，其他非图片空间图片不支持。官方淘logo图片地址：http://img01.taobaocdn.com/imgextra/T1Od8YFT8eXXXXXXXX。
+	_logo string
 	// 二维码尺寸，只支持普通二维码，不支持官方模板，单位为像素，最小为60×60，最大为300×300，建议175×175。官方模板大小尺寸见style说明。
 	_size int64
 	// 是否需要矢量图，如果需要矢量图，设置为true；只支持普通二维码，官方模板不支持矢量图
 	_needEps bool
-	// 二维码的logo地址，只允许淘宝官方图片空间的图片地址，其他非图片空间图片不支持。官方淘logo图片地址：http://img01.taobaocdn.com/imgextra/T1Od8YFT8eXXXXXXXX。
-	_logo string
 }
 
 // NewTaobaoMaQrcodeCommonCreateRequest 初始化TaobaoMaQrcodeCommonCreateAPIRequest对象
@@ -116,6 +116,19 @@ func (r TaobaoMaQrcodeCommonCreateAPIRequest) GetStyle() string {
 	return r._style
 }
 
+// SetLogo is Logo Setter
+// 二维码的logo地址，只允许淘宝官方图片空间的图片地址，其他非图片空间图片不支持。官方淘logo图片地址：http://img01.taobaocdn.com/imgextra/T1Od8YFT8eXXXXXXXX。
+func (r *TaobaoMaQrcodeCommonCreateAPIRequest) SetLogo(_logo string) error {
+	r._logo = _logo
+	r.Set("logo", _logo)
+	return nil
+}
+
+// GetLogo Logo Getter
+func (r TaobaoMaQrcodeCommonCreateAPIRequest) GetLogo() string {
+	return r._logo
+}
+
 // SetSize is Size Setter
 // 二维码尺寸，只支持普通二维码，不支持官方模板，单位为像素，最小为60×60，最大为300×300，建议175×175。官方模板大小尺寸见style说明。
 func (r *TaobaoMaQrcodeCommonCreateAPIRequest) SetSize(_size int64) error {
@@ -140,17 +153,4 @@ func (r *TaobaoMaQrcodeCommonCreateAPIRequest) SetNeedEps(_needEps bool) error {
 // GetNeedEps NeedEps Getter
 func (r TaobaoMaQrcodeCommonCreateAPIRequest) GetNeedEps() bool {
 	return r._needEps
-}
-
-// SetLogo is Logo Setter
-// 二维码的logo地址，只允许淘宝官方图片空间的图片地址，其他非图片空间图片不支持。官方淘logo图片地址：http://img01.taobaocdn.com/imgextra/T1Od8YFT8eXXXXXXXX。
-func (r *TaobaoMaQrcodeCommonCreateAPIRequest) SetLogo(_logo string) error {
-	r._logo = _logo
-	r.Set("logo", _logo)
-	return nil
-}
-
-// GetLogo Logo Getter
-func (r TaobaoMaQrcodeCommonCreateAPIRequest) GetLogo() string {
-	return r._logo
 }

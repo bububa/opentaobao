@@ -14,14 +14,14 @@ type TmallMeiCrmCallbackPointChangeAPIRequest struct {
 	model.Params
 	// 混淆会员手机号码
 	_mixMobile string
-	// 变更记录ID
-	_recordId int64
-	// 0:成功。1：失败
-	_result int64
 	// 处理失败的错误码.
 	_errorCode string
 	// 拓展信息
 	_extInfo string
+	// 变更记录ID
+	_recordId int64
+	// 0:成功。1：失败
+	_result int64
 	// 积分信息
 	_point int64
 }
@@ -60,32 +60,6 @@ func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetMixMobile() string {
 	return r._mixMobile
 }
 
-// SetRecordId is RecordId Setter
-// 变更记录ID
-func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetRecordId(_recordId int64) error {
-	r._recordId = _recordId
-	r.Set("record_id", _recordId)
-	return nil
-}
-
-// GetRecordId RecordId Getter
-func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetRecordId() int64 {
-	return r._recordId
-}
-
-// SetResult is Result Setter
-// 0:成功。1：失败
-func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetResult(_result int64) error {
-	r._result = _result
-	r.Set("result", _result)
-	return nil
-}
-
-// GetResult Result Getter
-func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetResult() int64 {
-	return r._result
-}
-
 // SetErrorCode is ErrorCode Setter
 // 处理失败的错误码.
 func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetErrorCode(_errorCode string) error {
@@ -110,6 +84,32 @@ func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetExtInfo(_extInfo string) e
 // GetExtInfo ExtInfo Getter
 func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetExtInfo() string {
 	return r._extInfo
+}
+
+// SetRecordId is RecordId Setter
+// 变更记录ID
+func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetRecordId(_recordId int64) error {
+	r._recordId = _recordId
+	r.Set("record_id", _recordId)
+	return nil
+}
+
+// GetRecordId RecordId Getter
+func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetRecordId() int64 {
+	return r._recordId
+}
+
+// SetResult is Result Setter
+// 0:成功。1：失败
+func (r *TmallMeiCrmCallbackPointChangeAPIRequest) SetResult(_result int64) error {
+	r._result = _result
+	r.Set("result", _result)
+	return nil
+}
+
+// GetResult Result Getter
+func (r TmallMeiCrmCallbackPointChangeAPIRequest) GetResult() int64 {
+	return r._result
 }
 
 // SetPoint is Point Setter

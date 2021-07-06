@@ -20,12 +20,12 @@ type AlibabaFmhealthPressureReportCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_fmhealth_pressure_report_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// msgCode
-	MsgCode int64 `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// data
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// msgInfo
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
+	// msgCode
+	MsgCode int64 `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// success
 	Status bool `json:"status,omitempty" xml:"status,omitempty"`
 }

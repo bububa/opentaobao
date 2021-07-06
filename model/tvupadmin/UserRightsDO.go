@@ -4,10 +4,6 @@ package tvupadmin
 type UserRightsDo struct {
 	// 更新时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
-	// 用户ID
-	Uid int64 `json:"uid,omitempty" xml:"uid,omitempty"`
-	// 是否连续包月
-	RenewalSupport bool `json:"renewal_support,omitempty" xml:"renewal_support,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 权益截止时间
@@ -18,4 +14,8 @@ type UserRightsDo struct {
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 权益ID
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
+	// 用户ID
+	Uid int64 `json:"uid,omitempty" xml:"uid,omitempty"`
+	// 是否连续包月
+	RenewalSupport bool `json:"renewal_support,omitempty" xml:"renewal_support,omitempty"`
 }

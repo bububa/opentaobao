@@ -26,10 +26,10 @@ type YoukuOttPayOrderCreateorderAPIRequest struct {
 	_callbackUrl string
 	// 订单无关的其他参数,如埋点统计的utdid, mac地址等
 	_extra string
-	// 订单类型，1为连续包月类型
-	_orderType int64
 	// 连续包月实际参数
 	_realPrice string
+	// 订单类型，1为连续包月类型
+	_orderType int64
 }
 
 // NewYoukuOttPayOrderCreateorderRequest 初始化YoukuOttPayOrderCreateorderAPIRequest对象
@@ -144,19 +144,6 @@ func (r YoukuOttPayOrderCreateorderAPIRequest) GetExtra() string {
 	return r._extra
 }
 
-// SetOrderType is OrderType Setter
-// 订单类型，1为连续包月类型
-func (r *YoukuOttPayOrderCreateorderAPIRequest) SetOrderType(_orderType int64) error {
-	r._orderType = _orderType
-	r.Set("order_type", _orderType)
-	return nil
-}
-
-// GetOrderType OrderType Getter
-func (r YoukuOttPayOrderCreateorderAPIRequest) GetOrderType() int64 {
-	return r._orderType
-}
-
 // SetRealPrice is RealPrice Setter
 // 连续包月实际参数
 func (r *YoukuOttPayOrderCreateorderAPIRequest) SetRealPrice(_realPrice string) error {
@@ -168,4 +155,17 @@ func (r *YoukuOttPayOrderCreateorderAPIRequest) SetRealPrice(_realPrice string) 
 // GetRealPrice RealPrice Getter
 func (r YoukuOttPayOrderCreateorderAPIRequest) GetRealPrice() string {
 	return r._realPrice
+}
+
+// SetOrderType is OrderType Setter
+// 订单类型，1为连续包月类型
+func (r *YoukuOttPayOrderCreateorderAPIRequest) SetOrderType(_orderType int64) error {
+	r._orderType = _orderType
+	r.Set("order_type", _orderType)
+	return nil
+}
+
+// GetOrderType OrderType Getter
+func (r YoukuOttPayOrderCreateorderAPIRequest) GetOrderType() int64 {
+	return r._orderType
 }

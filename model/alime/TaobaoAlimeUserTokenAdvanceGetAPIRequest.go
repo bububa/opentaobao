@@ -12,14 +12,14 @@ import (
 // 根据第三账号信息获取用户的免登录令牌
 type TaobaoAlimeUserTokenAdvanceGetAPIRequest struct {
 	model.Params
-	// 路由id, 一般为用户id，用于异地容灾
-	_routing int64
-	// 用户类型，0为普通用户，1为访客用户
-	_type int64
 	// 用户在第三方账号中的唯一id
 	_foreignId string
 	// 用户昵称
 	_nick string
+	// 路由id, 一般为用户id，用于异地容灾
+	_routing int64
+	// 用户类型，0为普通用户，1为访客用户
+	_type int64
 	// 小蜜分配给第三方账号的来源
 	_source int64
 	// 用户在小蜜账号中的唯一id
@@ -49,32 +49,6 @@ func (r TaobaoAlimeUserTokenAdvanceGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetRouting is Routing Setter
-// 路由id, 一般为用户id，用于异地容灾
-func (r *TaobaoAlimeUserTokenAdvanceGetAPIRequest) SetRouting(_routing int64) error {
-	r._routing = _routing
-	r.Set("routing", _routing)
-	return nil
-}
-
-// GetRouting Routing Getter
-func (r TaobaoAlimeUserTokenAdvanceGetAPIRequest) GetRouting() int64 {
-	return r._routing
-}
-
-// SetType is Type Setter
-// 用户类型，0为普通用户，1为访客用户
-func (r *TaobaoAlimeUserTokenAdvanceGetAPIRequest) SetType(_type int64) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r TaobaoAlimeUserTokenAdvanceGetAPIRequest) GetType() int64 {
-	return r._type
-}
-
 // SetForeignId is ForeignId Setter
 // 用户在第三方账号中的唯一id
 func (r *TaobaoAlimeUserTokenAdvanceGetAPIRequest) SetForeignId(_foreignId string) error {
@@ -99,6 +73,32 @@ func (r *TaobaoAlimeUserTokenAdvanceGetAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoAlimeUserTokenAdvanceGetAPIRequest) GetNick() string {
 	return r._nick
+}
+
+// SetRouting is Routing Setter
+// 路由id, 一般为用户id，用于异地容灾
+func (r *TaobaoAlimeUserTokenAdvanceGetAPIRequest) SetRouting(_routing int64) error {
+	r._routing = _routing
+	r.Set("routing", _routing)
+	return nil
+}
+
+// GetRouting Routing Getter
+func (r TaobaoAlimeUserTokenAdvanceGetAPIRequest) GetRouting() int64 {
+	return r._routing
+}
+
+// SetType is Type Setter
+// 用户类型，0为普通用户，1为访客用户
+func (r *TaobaoAlimeUserTokenAdvanceGetAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r TaobaoAlimeUserTokenAdvanceGetAPIRequest) GetType() int64 {
+	return r._type
 }
 
 // SetSource is Source Setter

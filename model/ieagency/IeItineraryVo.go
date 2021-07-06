@@ -4,8 +4,6 @@ package ieagency
 type IeItineraryVo struct {
 	// 快递公司编号
 	ExpressCompanyName string `json:"express_company_name,omitempty" xml:"express_company_name,omitempty"`
-	// 退款金额
-	RefundMoney int64 `json:"refund_money,omitempty" xml:"refund_money,omitempty"`
 	// 行程单状态(INITIAL:初始状态,NOPAY(:未付款,PAYED:已付款,FINISHED:已完成,REFUND:已退款,CLOSED:已关闭（随主订单))
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 商家备注信息
@@ -22,12 +20,8 @@ type IeItineraryVo struct {
 	ProvinceName string `json:"province_name,omitempty" xml:"province_name,omitempty"`
 	// 邮编
 	Postcode string `json:"postcode,omitempty" xml:"postcode,omitempty"`
-	// 主键
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 区县名称
 	DistrictName string `json:"district_name,omitempty" xml:"district_name,omitempty"`
-	// 价格
-	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 收货地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 支付状态(INITIAL: 初始状态, CREATED:已创建担保交易, PAYED:已付款, TURNED:转交易成功)
@@ -38,10 +32,16 @@ type IeItineraryVo struct {
 	ItineraryNo string `json:"itinerary_no,omitempty" xml:"itinerary_no,omitempty"`
 	// 电话
 	Telephone string `json:"telephone,omitempty" xml:"telephone,omitempty"`
-	// 是否已经邮寄
-	IsPost bool `json:"is_post,omitempty" xml:"is_post,omitempty"`
 	// 快递公司编号
 	ExpressCompanyCode string `json:"express_company_code,omitempty" xml:"express_company_code,omitempty"`
 	// 移动电话
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
+	// 退款金额
+	RefundMoney int64 `json:"refund_money,omitempty" xml:"refund_money,omitempty"`
+	// 主键
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 价格
+	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
+	// 是否已经邮寄
+	IsPost bool `json:"is_post,omitempty" xml:"is_post,omitempty"`
 }

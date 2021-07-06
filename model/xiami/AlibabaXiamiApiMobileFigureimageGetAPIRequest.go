@@ -12,8 +12,6 @@ import (
 // 获取手机banner图
 type AlibabaXiamiApiMobileFigureimageGetAPIRequest struct {
 	model.Params
-	// 分页限制
-	_limit int64
 	// 类型
 	_type string
 	// 客户端版本
@@ -22,6 +20,8 @@ type AlibabaXiamiApiMobileFigureimageGetAPIRequest struct {
 	_deviceType string
 	// 设备ID
 	_deviceId string
+	// 分页限制
+	_limit int64
 }
 
 // NewAlibabaXiamiApiMobileFigureimageGetRequest 初始化AlibabaXiamiApiMobileFigureimageGetAPIRequest对象
@@ -43,19 +43,6 @@ func (r AlibabaXiamiApiMobileFigureimageGetAPIRequest) GetApiParams() url.Values
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetLimit is Limit Setter
-// 分页限制
-func (r *AlibabaXiamiApiMobileFigureimageGetAPIRequest) SetLimit(_limit int64) error {
-	r._limit = _limit
-	r.Set("limit", _limit)
-	return nil
-}
-
-// GetLimit Limit Getter
-func (r AlibabaXiamiApiMobileFigureimageGetAPIRequest) GetLimit() int64 {
-	return r._limit
 }
 
 // SetType is Type Setter
@@ -108,4 +95,17 @@ func (r *AlibabaXiamiApiMobileFigureimageGetAPIRequest) SetDeviceId(_deviceId st
 // GetDeviceId DeviceId Getter
 func (r AlibabaXiamiApiMobileFigureimageGetAPIRequest) GetDeviceId() string {
 	return r._deviceId
+}
+
+// SetLimit is Limit Setter
+// 分页限制
+func (r *AlibabaXiamiApiMobileFigureimageGetAPIRequest) SetLimit(_limit int64) error {
+	r._limit = _limit
+	r.Set("limit", _limit)
+	return nil
+}
+
+// GetLimit Limit Getter
+func (r AlibabaXiamiApiMobileFigureimageGetAPIRequest) GetLimit() int64 {
+	return r._limit
 }

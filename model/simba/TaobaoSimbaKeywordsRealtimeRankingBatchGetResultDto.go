@@ -6,10 +6,10 @@ type TaobaoSimbaKeywordsRealtimeRankingBatchGetResultDto struct {
 	RealtimeRankList []TaobaoSimbaKeywordsRealtimeRankingBatchGetResult `json:"realtime_rank_list,omitempty" xml:"realtime_rank_list>taobao_simba_keywords_realtime_ranking_batch_get_result,omitempty"`
 	// 错误码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
-	// 是否成功
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 错误消息
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 错误对应的消息Key
 	Key string `json:"key,omitempty" xml:"key,omitempty"`
+	// 是否成功
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

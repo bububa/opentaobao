@@ -12,10 +12,10 @@ import (
 // 变更门店发货、门店自提状态
 type TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest struct {
 	model.Params
-	// 门店ID
-	_storeId int64
 	// 门店发货自提状态
 	_status string
+	// 门店ID
+	_storeId int64
 }
 
 // NewTaobaoOmniorderStoreSwitchstatusUpdateRequest 初始化TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// SetStoreId is StoreId Setter
-// 门店ID
-func (r *TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) SetStoreId(_storeId int64) error {
-	r._storeId = _storeId
-	r.Set("store_id", _storeId)
-	return nil
-}
-
-// GetStoreId StoreId Getter
-func (r TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) GetStoreId() int64 {
-	return r._storeId
-}
-
 // SetStatus is Status Setter
 // 门店发货自提状态
 func (r *TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) SetStatus(_status string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) SetStatus(_status str
 // GetStatus Status Getter
 func (r TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) GetStatus() string {
 	return r._status
+}
+
+// SetStoreId is StoreId Setter
+// 门店ID
+func (r *TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// GetStoreId StoreId Getter
+func (r TaobaoOmniorderStoreSwitchstatusUpdateAPIRequest) GetStoreId() int64 {
+	return r._storeId
 }

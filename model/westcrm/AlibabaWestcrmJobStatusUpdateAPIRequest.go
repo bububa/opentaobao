@@ -12,14 +12,14 @@ import (
 // 更新工单处理状态
 type AlibabaWestcrmJobStatusUpdateAPIRequest struct {
 	model.Params
+	// 回复内容
+	_replyContent string
 	// 状态
 	_status int64
 	// 园区id
 	_campusId int64
 	// 反馈id
 	_crmComplaintId int64
-	// 回复内容
-	_replyContent string
 }
 
 // NewAlibabaWestcrmJobStatusUpdateRequest 初始化AlibabaWestcrmJobStatusUpdateAPIRequest对象
@@ -41,6 +41,19 @@ func (r AlibabaWestcrmJobStatusUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetReplyContent is ReplyContent Setter
+// 回复内容
+func (r *AlibabaWestcrmJobStatusUpdateAPIRequest) SetReplyContent(_replyContent string) error {
+	r._replyContent = _replyContent
+	r.Set("reply_content", _replyContent)
+	return nil
+}
+
+// GetReplyContent ReplyContent Getter
+func (r AlibabaWestcrmJobStatusUpdateAPIRequest) GetReplyContent() string {
+	return r._replyContent
 }
 
 // SetStatus is Status Setter
@@ -80,17 +93,4 @@ func (r *AlibabaWestcrmJobStatusUpdateAPIRequest) SetCrmComplaintId(_crmComplain
 // GetCrmComplaintId CrmComplaintId Getter
 func (r AlibabaWestcrmJobStatusUpdateAPIRequest) GetCrmComplaintId() int64 {
 	return r._crmComplaintId
-}
-
-// SetReplyContent is ReplyContent Setter
-// 回复内容
-func (r *AlibabaWestcrmJobStatusUpdateAPIRequest) SetReplyContent(_replyContent string) error {
-	r._replyContent = _replyContent
-	r.Set("reply_content", _replyContent)
-	return nil
-}
-
-// GetReplyContent ReplyContent Getter
-func (r AlibabaWestcrmJobStatusUpdateAPIRequest) GetReplyContent() string {
-	return r._replyContent
 }

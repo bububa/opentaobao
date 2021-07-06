@@ -10,20 +10,12 @@ type TopOrderVo struct {
 	EstimateConTime string `json:"estimate_con_time,omitempty" xml:"estimate_con_time,omitempty"`
 	// 商品备注
 	ItemMemo string `json:"item_memo,omitempty" xml:"item_memo,omitempty"`
-	// 购买数量。取值范围:大于零的整数
-	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
-	// 商品数字ID
-	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
-	// 子订单编号
-	Oid int64 `json:"oid,omitempty" xml:"oid,omitempty"`
 	// 外部网店自己定义的Sku编号
 	OuterSkuId string `json:"outer_sku_id,omitempty" xml:"outer_sku_id,omitempty"`
 	// 子订单实付金额。精确到2位小数，单位:元。如:200.07，表示:200元7分。对于多子订单的交易，计算公式如下：payment = price * num + adjust_fee - discount_fee ；单子订单交易，payment与主订单的payment一致，对于退款成功的子订单，由于主订单的优惠分摊金额，会造成该字段可能不为0.00元。建议使用退款前的实付金额减去退款单中的实际退款金额计算。
 	Payment string `json:"payment,omitempty" xml:"payment,omitempty"`
 	// 商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
-	// 最近退款ID
-	RefundId int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
 	// 退款状态。退款状态。可选值 WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// SKU的值。如：机身颜色:黑色;手机套餐:官方标配
@@ -34,12 +26,20 @@ type TopOrderVo struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 应付金额（商品价格 * 商品数量 + 手工调整金额 - 子订单级订单优惠金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分
 	TotalFee string `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
-	// 是否发货
-	IsShShip bool `json:"is_sh_ship,omitempty" xml:"is_sh_ship,omitempty"`
 	// 商品SKUID
 	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 物流公司名称
 	LogisticsCompany string `json:"logistics_company,omitempty" xml:"logistics_company,omitempty"`
 	// 子订单包裹运输号
 	InvoiceNo string `json:"invoice_no,omitempty" xml:"invoice_no,omitempty"`
+	// 购买数量。取值范围:大于零的整数
+	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
+	// 商品数字ID
+	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
+	// 子订单编号
+	Oid int64 `json:"oid,omitempty" xml:"oid,omitempty"`
+	// 最近退款ID
+	RefundId int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
+	// 是否发货
+	IsShShip bool `json:"is_sh_ship,omitempty" xml:"is_sh_ship,omitempty"`
 }

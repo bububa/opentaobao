@@ -12,10 +12,10 @@ import (
 // 用户完成任务
 type AliexpressInteractiveTaskCompleteAPIRequest struct {
 	model.Params
-	// 任务实例id
-	_taskInstanceId int64
 	// appkey
 	_projectAppKey string
+	// 任务实例id
+	_taskInstanceId int64
 }
 
 // NewAliexpressInteractiveTaskCompleteRequest 初始化AliexpressInteractiveTaskCompleteAPIRequest对象
@@ -39,19 +39,6 @@ func (r AliexpressInteractiveTaskCompleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetTaskInstanceId is TaskInstanceId Setter
-// 任务实例id
-func (r *AliexpressInteractiveTaskCompleteAPIRequest) SetTaskInstanceId(_taskInstanceId int64) error {
-	r._taskInstanceId = _taskInstanceId
-	r.Set("task_instance_id", _taskInstanceId)
-	return nil
-}
-
-// GetTaskInstanceId TaskInstanceId Getter
-func (r AliexpressInteractiveTaskCompleteAPIRequest) GetTaskInstanceId() int64 {
-	return r._taskInstanceId
-}
-
 // SetProjectAppKey is ProjectAppKey Setter
 // appkey
 func (r *AliexpressInteractiveTaskCompleteAPIRequest) SetProjectAppKey(_projectAppKey string) error {
@@ -63,4 +50,17 @@ func (r *AliexpressInteractiveTaskCompleteAPIRequest) SetProjectAppKey(_projectA
 // GetProjectAppKey ProjectAppKey Getter
 func (r AliexpressInteractiveTaskCompleteAPIRequest) GetProjectAppKey() string {
 	return r._projectAppKey
+}
+
+// SetTaskInstanceId is TaskInstanceId Setter
+// 任务实例id
+func (r *AliexpressInteractiveTaskCompleteAPIRequest) SetTaskInstanceId(_taskInstanceId int64) error {
+	r._taskInstanceId = _taskInstanceId
+	r.Set("task_instance_id", _taskInstanceId)
+	return nil
+}
+
+// GetTaskInstanceId TaskInstanceId Getter
+func (r AliexpressInteractiveTaskCompleteAPIRequest) GetTaskInstanceId() int64 {
+	return r._taskInstanceId
 }

@@ -2,8 +2,8 @@ package security
 
 // RpUploadStatus 结构体
 type RpUploadStatus struct {
-	// code
-	Code int64 `json:"code,omitempty" xml:"code,omitempty"`
 	// name
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
+	// code
+	Code int64 `json:"code,omitempty" xml:"code,omitempty"`
 }

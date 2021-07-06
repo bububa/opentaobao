@@ -14,14 +14,14 @@ type Segments struct {
 	DepCity string `json:"dep_city,omitempty" xml:"dep_city,omitempty"`
 	// 舱位
 	Cabin string `json:"cabin,omitempty" xml:"cabin,omitempty"`
-	// 航段序号
-	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
 	// 到达机场
 	ArrAirport string `json:"arr_airport,omitempty" xml:"arr_airport,omitempty"`
 	// 出发机场
 	DepAirport string `json:"dep_airport,omitempty" xml:"dep_airport,omitempty"`
-	// 航程序号
-	OdIndex int64 `json:"od_index,omitempty" xml:"od_index,omitempty"`
 	// 到达时间
 	ArrTime string `json:"arr_time,omitempty" xml:"arr_time,omitempty"`
+	// 航段序号
+	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
+	// 航程序号
+	OdIndex int64 `json:"od_index,omitempty" xml:"od_index,omitempty"`
 }

@@ -12,14 +12,14 @@ import (
 // 更新一个推广计划的日限额
 type TaobaoSimbaCampaignBudgetUpdateAPIRequest struct {
 	model.Params
-	// 是否平滑消耗：false-否，true-是
-	_useSmooth bool
+	// 主人昵称
+	_nick string
 	// 推广计划Id
 	_campaignId int64
 	// 如果为空则取消限额；否则必须为整数，单位是元，不得小于30；
 	_budget int64
-	// 主人昵称
-	_nick string
+	// 是否平滑消耗：false-否，true-是
+	_useSmooth bool
 }
 
 // NewTaobaoSimbaCampaignBudgetUpdateRequest 初始化TaobaoSimbaCampaignBudgetUpdateAPIRequest对象
@@ -43,17 +43,17 @@ func (r TaobaoSimbaCampaignBudgetUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetUseSmooth is UseSmooth Setter
-// 是否平滑消耗：false-否，true-是
-func (r *TaobaoSimbaCampaignBudgetUpdateAPIRequest) SetUseSmooth(_useSmooth bool) error {
-	r._useSmooth = _useSmooth
-	r.Set("use_smooth", _useSmooth)
+// SetNick is Nick Setter
+// 主人昵称
+func (r *TaobaoSimbaCampaignBudgetUpdateAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
 	return nil
 }
 
-// GetUseSmooth UseSmooth Getter
-func (r TaobaoSimbaCampaignBudgetUpdateAPIRequest) GetUseSmooth() bool {
-	return r._useSmooth
+// GetNick Nick Getter
+func (r TaobaoSimbaCampaignBudgetUpdateAPIRequest) GetNick() string {
+	return r._nick
 }
 
 // SetCampaignId is CampaignId Setter
@@ -82,15 +82,15 @@ func (r TaobaoSimbaCampaignBudgetUpdateAPIRequest) GetBudget() int64 {
 	return r._budget
 }
 
-// SetNick is Nick Setter
-// 主人昵称
-func (r *TaobaoSimbaCampaignBudgetUpdateAPIRequest) SetNick(_nick string) error {
-	r._nick = _nick
-	r.Set("nick", _nick)
+// SetUseSmooth is UseSmooth Setter
+// 是否平滑消耗：false-否，true-是
+func (r *TaobaoSimbaCampaignBudgetUpdateAPIRequest) SetUseSmooth(_useSmooth bool) error {
+	r._useSmooth = _useSmooth
+	r.Set("use_smooth", _useSmooth)
 	return nil
 }
 
-// GetNick Nick Getter
-func (r TaobaoSimbaCampaignBudgetUpdateAPIRequest) GetNick() string {
-	return r._nick
+// GetUseSmooth UseSmooth Getter
+func (r TaobaoSimbaCampaignBudgetUpdateAPIRequest) GetUseSmooth() bool {
+	return r._useSmooth
 }

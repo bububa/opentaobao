@@ -14,22 +14,22 @@ type Value struct {
 	GmtNextContact string `json:"gmt_next_contact,omitempty" xml:"gmt_next_contact,omitempty"`
 	// 备注
 	Memo string `json:"memo,omitempty" xml:"memo,omitempty"`
-	// 预约信息
-	Reservation *Reservation `json:"reservation,omitempty" xml:"reservation,omitempty"`
-	// 原因编码
-	ReasonCode int64 `json:"reason_code,omitempty" xml:"reason_code,omitempty"`
-	// 核销单id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-	// 买家信息
-	Buyer *Buyer `json:"buyer,omitempty" xml:"buyer,omitempty"`
-	// 服务提供者信息
-	ServiceProvider *ServiceProvider `json:"service_provider,omitempty" xml:"service_provider,omitempty"`
 	// 核销单外部单号
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 原因描述
 	ReasonDesc string `json:"reason_desc,omitempty" xml:"reason_desc,omitempty"`
 	// 状态编码
 	StatusCode string `json:"status_code,omitempty" xml:"status_code,omitempty"`
+	// 预约信息
+	Reservation *Reservation `json:"reservation,omitempty" xml:"reservation,omitempty"`
+	// 原因编码
+	ReasonCode int64 `json:"reason_code,omitempty" xml:"reason_code,omitempty"`
+	// 核销单id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 买家信息
+	Buyer *Buyer `json:"buyer,omitempty" xml:"buyer,omitempty"`
+	// 服务提供者信息
+	ServiceProvider *ServiceProvider `json:"service_provider,omitempty" xml:"service_provider,omitempty"`
 }

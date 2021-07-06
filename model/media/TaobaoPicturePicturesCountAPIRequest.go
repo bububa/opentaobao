@@ -14,8 +14,6 @@ type TaobaoPicturePicturesCountAPIRequest struct {
 	model.Params
 	// 查询上传开始时间点,格式:yyyy-MM-dd HH:mm:ss
 	_startDate string
-	// 图片分类
-	_pictureCategoryId int64
 	// 文件名
 	_title string
 	// 查询上传结束时间点,格式:yyyy-MM-dd HH:mm:ss
@@ -24,10 +22,12 @@ type TaobaoPicturePicturesCountAPIRequest struct {
 	_startModifiedDate string
 	// 是否删除,undeleted代表没有删除,deleted表示删除
 	_deleted string
-	// 图片ID
-	_pictureId int64
 	// 图片使用，如果是pc宝贝detail使用，设置为client:computer，查询出来的图片是符合pc的宝贝detail显示的如果是手机宝贝detail使用，设置为client:phone，查询出来的图片是符合手机的宝贝detail显示的,默认值是全部
 	_clientType string
+	// 图片分类
+	_pictureCategoryId int64
+	// 图片ID
+	_pictureId int64
 }
 
 // NewTaobaoPicturePicturesCountRequest 初始化TaobaoPicturePicturesCountAPIRequest对象
@@ -62,19 +62,6 @@ func (r *TaobaoPicturePicturesCountAPIRequest) SetStartDate(_startDate string) e
 // GetStartDate StartDate Getter
 func (r TaobaoPicturePicturesCountAPIRequest) GetStartDate() string {
 	return r._startDate
-}
-
-// SetPictureCategoryId is PictureCategoryId Setter
-// 图片分类
-func (r *TaobaoPicturePicturesCountAPIRequest) SetPictureCategoryId(_pictureCategoryId int64) error {
-	r._pictureCategoryId = _pictureCategoryId
-	r.Set("picture_category_id", _pictureCategoryId)
-	return nil
-}
-
-// GetPictureCategoryId PictureCategoryId Getter
-func (r TaobaoPicturePicturesCountAPIRequest) GetPictureCategoryId() int64 {
-	return r._pictureCategoryId
 }
 
 // SetTitle is Title Setter
@@ -129,19 +116,6 @@ func (r TaobaoPicturePicturesCountAPIRequest) GetDeleted() string {
 	return r._deleted
 }
 
-// SetPictureId is PictureId Setter
-// 图片ID
-func (r *TaobaoPicturePicturesCountAPIRequest) SetPictureId(_pictureId int64) error {
-	r._pictureId = _pictureId
-	r.Set("picture_id", _pictureId)
-	return nil
-}
-
-// GetPictureId PictureId Getter
-func (r TaobaoPicturePicturesCountAPIRequest) GetPictureId() int64 {
-	return r._pictureId
-}
-
 // SetClientType is ClientType Setter
 // 图片使用，如果是pc宝贝detail使用，设置为client:computer，查询出来的图片是符合pc的宝贝detail显示的如果是手机宝贝detail使用，设置为client:phone，查询出来的图片是符合手机的宝贝detail显示的,默认值是全部
 func (r *TaobaoPicturePicturesCountAPIRequest) SetClientType(_clientType string) error {
@@ -153,4 +127,30 @@ func (r *TaobaoPicturePicturesCountAPIRequest) SetClientType(_clientType string)
 // GetClientType ClientType Getter
 func (r TaobaoPicturePicturesCountAPIRequest) GetClientType() string {
 	return r._clientType
+}
+
+// SetPictureCategoryId is PictureCategoryId Setter
+// 图片分类
+func (r *TaobaoPicturePicturesCountAPIRequest) SetPictureCategoryId(_pictureCategoryId int64) error {
+	r._pictureCategoryId = _pictureCategoryId
+	r.Set("picture_category_id", _pictureCategoryId)
+	return nil
+}
+
+// GetPictureCategoryId PictureCategoryId Getter
+func (r TaobaoPicturePicturesCountAPIRequest) GetPictureCategoryId() int64 {
+	return r._pictureCategoryId
+}
+
+// SetPictureId is PictureId Setter
+// 图片ID
+func (r *TaobaoPicturePicturesCountAPIRequest) SetPictureId(_pictureId int64) error {
+	r._pictureId = _pictureId
+	r.Set("picture_id", _pictureId)
+	return nil
+}
+
+// GetPictureId PictureId Getter
+func (r TaobaoPicturePicturesCountAPIRequest) GetPictureId() int64 {
+	return r._pictureId
 }

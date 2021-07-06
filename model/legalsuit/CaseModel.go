@@ -4,12 +4,22 @@ package legalsuit
 type CaseModel struct {
 	// 原告信息
 	Accusers []AccuserModel `json:"accusers,omitempty" xml:"accusers>accuser_model,omitempty"`
-	// 费用信息
-	SuitFee *SuitFeeModel `json:"suit_fee,omitempty" xml:"suit_fee,omitempty"`
-	// 收案信息
-	CheckInMsg *CheckInModel `json:"check_in_msg,omitempty" xml:"check_in_msg,omitempty"`
-	// 法院信息
-	CourtModel *CourtModel `json:"court_model,omitempty" xml:"court_model,omitempty"`
+	// 原告诉请
+	AccuserAppealList []string `json:"accuser_appeal_list,omitempty" xml:"accuser_appeal_list>string,omitempty"`
+	// 被告
+	DefendantList []AppelleeModel `json:"defendant_list,omitempty" xml:"defendant_list>appellee_model,omitempty"`
+	// 第三人
+	ThirdList []LitigantThirdPartyModel `json:"third_list,omitempty" xml:"third_list>litigant_third_party_model,omitempty"`
+	// 案件事实调查附件
+	CaseFactFileList []FileModel `json:"case_fact_file_list,omitempty" xml:"case_fact_file_list>file_model,omitempty"`
+	// 其他附件
+	OtherFileList []FileModel `json:"other_file_list,omitempty" xml:"other_file_list>file_model,omitempty"`
+	// 证据附件
+	EvidenceFileList []FileModel `json:"evidence_file_list,omitempty" xml:"evidence_file_list>file_model,omitempty"`
+	// 法院相关附件
+	CourtFileList []FileModel `json:"court_file_list,omitempty" xml:"court_file_list>file_model,omitempty"`
+	// 起诉状附件
+	PleadingFileList []FileModel `json:"pleading_file_list,omitempty" xml:"pleading_file_list>file_model,omitempty"`
 	// 预立案号
 	PreCaseNumber string `json:"pre_case_number,omitempty" xml:"pre_case_number,omitempty"`
 	// 标签4
@@ -24,8 +34,6 @@ type CaseModel struct {
 	AccuserClaimLegalBasis string `json:"accuser_claim_legal_basis,omitempty" xml:"accuser_claim_legal_basis,omitempty"`
 	// 原告主张的事实
 	AccuserClaimFact string `json:"accuser_claim_fact,omitempty" xml:"accuser_claim_fact,omitempty"`
-	// 原告诉请
-	AccuserAppealList []string `json:"accuser_appeal_list,omitempty" xml:"accuser_appeal_list>string,omitempty"`
 	// 诉讼请求
 	SuitRequest string `json:"suit_request,omitempty" xml:"suit_request,omitempty"`
 	// 备注
@@ -58,20 +66,12 @@ type CaseModel struct {
 	CaseDetailCode string `json:"case_detail_code,omitempty" xml:"case_detail_code,omitempty"`
 	// 案号
 	CaseNumber string `json:"case_number,omitempty" xml:"case_number,omitempty"`
+	// 费用信息
+	SuitFee *SuitFeeModel `json:"suit_fee,omitempty" xml:"suit_fee,omitempty"`
+	// 收案信息
+	CheckInMsg *CheckInModel `json:"check_in_msg,omitempty" xml:"check_in_msg,omitempty"`
+	// 法院信息
+	CourtModel *CourtModel `json:"court_model,omitempty" xml:"court_model,omitempty"`
 	// 案件id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
-	// 被告
-	DefendantList []AppelleeModel `json:"defendant_list,omitempty" xml:"defendant_list>appellee_model,omitempty"`
-	// 第三人
-	ThirdList []LitigantThirdPartyModel `json:"third_list,omitempty" xml:"third_list>litigant_third_party_model,omitempty"`
-	// 案件事实调查附件
-	CaseFactFileList []FileModel `json:"case_fact_file_list,omitempty" xml:"case_fact_file_list>file_model,omitempty"`
-	// 其他附件
-	OtherFileList []FileModel `json:"other_file_list,omitempty" xml:"other_file_list>file_model,omitempty"`
-	// 证据附件
-	EvidenceFileList []FileModel `json:"evidence_file_list,omitempty" xml:"evidence_file_list>file_model,omitempty"`
-	// 法院相关附件
-	CourtFileList []FileModel `json:"court_file_list,omitempty" xml:"court_file_list>file_model,omitempty"`
-	// 起诉状附件
-	PleadingFileList []FileModel `json:"pleading_file_list,omitempty" xml:"pleading_file_list>file_model,omitempty"`
 }

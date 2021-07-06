@@ -2,6 +2,14 @@ package scbp
 
 // AdGroupQueryDto 结构体
 type AdGroupQueryDto struct {
+	// 标题
+	Subject string `json:"subject,omitempty" xml:"subject,omitempty"`
+	// 发品用户id
+	OwnerMemberId string `json:"owner_member_id,omitempty" xml:"owner_member_id,omitempty"`
+	// 排序字段
+	OrderBy string `json:"order_by,omitempty" xml:"order_by,omitempty"`
+	// 正序
+	Order string `json:"order,omitempty" xml:"order,omitempty"`
 	// adgroup上下线状态
 	AdgroupOnlineStatus int64 `json:"adgroup_online_status,omitempty" xml:"adgroup_online_status,omitempty"`
 	// FEED上下线状态
@@ -36,14 +44,6 @@ type AdGroupQueryDto struct {
 	AdsLineId int64 `json:"ads_line_id,omitempty" xml:"ads_line_id,omitempty"`
 	// 产品id
 	AdsId int64 `json:"ads_id,omitempty" xml:"ads_id,omitempty"`
-	// 标题
-	Subject string `json:"subject,omitempty" xml:"subject,omitempty"`
-	// 发品用户id
-	OwnerMemberId string `json:"owner_member_id,omitempty" xml:"owner_member_id,omitempty"`
-	// 排序字段
-	OrderBy string `json:"order_by,omitempty" xml:"order_by,omitempty"`
-	// 正序
-	Order string `json:"order,omitempty" xml:"order,omitempty"`
 	// 页码
 	Page int64 `json:"page,omitempty" xml:"page,omitempty"`
 	// 每页数量

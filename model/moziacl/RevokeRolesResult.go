@@ -2,8 +2,6 @@ package moziacl
 
 // RevokeRolesResult 结构体
 type RevokeRolesResult struct {
-	// 是否调用成功，成功则为true
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 请求唯一id
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 响应message，若失败则返回失败原因
@@ -12,4 +10,6 @@ type RevokeRolesResult struct {
 	ResponseMetaData string `json:"response_meta_data,omitempty" xml:"response_meta_data,omitempty"`
 	// 响应code
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
+	// 是否调用成功，成功则为true
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

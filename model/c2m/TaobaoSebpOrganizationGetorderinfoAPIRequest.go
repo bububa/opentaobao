@@ -14,12 +14,12 @@ type TaobaoSebpOrganizationGetorderinfoAPIRequest struct {
 	model.Params
 	// null-请求所有，20200616-请求2020年6月16号的变更信息
 	_modifyDate string
-	// 第几页
-	_pageNum int64
 	// 查询实时数据时，必传，开始时间结束时间间隔不能超过4个小时
 	_endTime string
 	// 查询实时数据时，必传，开始时间不能早于2天前
 	_startTime string
+	// 第几页
+	_pageNum int64
 }
 
 // NewTaobaoSebpOrganizationGetorderinfoRequest 初始化TaobaoSebpOrganizationGetorderinfoAPIRequest对象
@@ -56,19 +56,6 @@ func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetModifyDate() string {
 	return r._modifyDate
 }
 
-// SetPageNum is PageNum Setter
-// 第几页
-func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetPageNum(_pageNum int64) error {
-	r._pageNum = _pageNum
-	r.Set("page_num", _pageNum)
-	return nil
-}
-
-// GetPageNum PageNum Getter
-func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetPageNum() int64 {
-	return r._pageNum
-}
-
 // SetEndTime is EndTime Setter
 // 查询实时数据时，必传，开始时间结束时间间隔不能超过4个小时
 func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetEndTime(_endTime string) error {
@@ -93,4 +80,17 @@ func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetStartTime(_startTime s
 // GetStartTime StartTime Getter
 func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetStartTime() string {
 	return r._startTime
+}
+
+// SetPageNum is PageNum Setter
+// 第几页
+func (r *TaobaoSebpOrganizationGetorderinfoAPIRequest) SetPageNum(_pageNum int64) error {
+	r._pageNum = _pageNum
+	r.Set("page_num", _pageNum)
+	return nil
+}
+
+// GetPageNum PageNum Getter
+func (r TaobaoSebpOrganizationGetorderinfoAPIRequest) GetPageNum() int64 {
+	return r._pageNum
 }

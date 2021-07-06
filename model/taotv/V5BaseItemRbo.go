@@ -2,8 +2,6 @@ package taotv
 
 // V5BaseItemRbo 结构体
 type V5BaseItemRbo struct {
-	// 坑位ID
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 坑位标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 坑位子标题
@@ -24,8 +22,10 @@ type V5BaseItemRbo struct {
 	ItemType string `json:"item_type,omitempty" xml:"item_type,omitempty"`
 	// 评分
 	Score string `json:"score,omitempty" xml:"score,omitempty"`
-	// 推荐主题ID
-	RecommendRuleId int64 `json:"recommend_rule_id,omitempty" xml:"recommend_rule_id,omitempty"`
 	// 推荐理由
 	RecommendReason string `json:"recommend_reason,omitempty" xml:"recommend_reason,omitempty"`
+	// 坑位ID
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 推荐主题ID
+	RecommendRuleId int64 `json:"recommend_rule_id,omitempty" xml:"recommend_rule_id,omitempty"`
 }

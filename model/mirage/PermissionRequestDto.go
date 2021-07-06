@@ -2,20 +2,16 @@ package mirage
 
 // PermissionRequestDto 结构体
 type PermissionRequestDto struct {
+	// 资源id
+	ResourceIds []string `json:"resource_ids,omitempty" xml:"resource_ids>string,omitempty"`
 	// 播放场景
 	DisplayScene string `json:"display_scene,omitempty" xml:"display_scene,omitempty"`
 	// pid
 	Pid string `json:"pid,omitempty" xml:"pid,omitempty"`
-	// 需要展示形式配置
-	NeedDisplayConfig bool `json:"need_display_config,omitempty" xml:"need_display_config,omitempty"`
-	// 需要同步返回drm配置信息
-	NeedDrmConfig bool `json:"need_drm_config,omitempty" xml:"need_drm_config,omitempty"`
 	// 端对drm的能力
 	ClientDrmAbility string `json:"client_drm_ability,omitempty" xml:"client_drm_ability,omitempty"`
 	// app 版本
 	AppVersion string `json:"app_version,omitempty" xml:"app_version,omitempty"`
-	// 苹果
-	IsFromApple bool `json:"is_from_apple,omitempty" xml:"is_from_apple,omitempty"`
 	// 用户身份
 	UserIdentity string `json:"user_identity,omitempty" xml:"user_identity,omitempty"`
 	// ccode
@@ -38,12 +34,16 @@ type PermissionRequestDto struct {
 	CountryCode string `json:"country_code,omitempty" xml:"country_code,omitempty"`
 	// 网站
 	Site string `json:"site,omitempty" xml:"site,omitempty"`
-	// 资源id
-	ResourceIds []string `json:"resource_ids,omitempty" xml:"resource_ids>string,omitempty"`
 	// 资源类型
 	ResourceType string `json:"resource_type,omitempty" xml:"resource_type,omitempty"`
 	// 调用方
 	Caller string `json:"caller,omitempty" xml:"caller,omitempty"`
 	// 签名
 	Signature string `json:"signature,omitempty" xml:"signature,omitempty"`
+	// 需要展示形式配置
+	NeedDisplayConfig bool `json:"need_display_config,omitempty" xml:"need_display_config,omitempty"`
+	// 需要同步返回drm配置信息
+	NeedDrmConfig bool `json:"need_drm_config,omitempty" xml:"need_drm_config,omitempty"`
+	// 苹果
+	IsFromApple bool `json:"is_from_apple,omitempty" xml:"is_from_apple,omitempty"`
 }

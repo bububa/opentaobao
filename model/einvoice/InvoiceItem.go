@@ -30,8 +30,8 @@ type InvoiceItem struct {
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 淘宝子订单号，阿里发票平台自动开票时才有
 	BizOrderId string `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
-	// 是否为运费行，，阿里发票平台自动开票时才有
-	IsPostFeeRow bool `json:"is_post_fee_row,omitempty" xml:"is_post_fee_row,omitempty"`
 	// 商品IMIE号(不用传，将废弃)
 	Imei string `json:"imei,omitempty" xml:"imei,omitempty"`
+	// 是否为运费行，，阿里发票平台自动开票时才有
+	IsPostFeeRow bool `json:"is_post_fee_row,omitempty" xml:"is_post_fee_row,omitempty"`
 }

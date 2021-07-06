@@ -14,8 +14,6 @@ type TaobaoOpenmallRefundModifyAPIRequest struct {
 	model.Params
 	// 退款类型，可选值refund（仅退款）、return_and_refund（退款退货）
 	_refundType string
-	// 退款金额，分
-	_refundFee int64
 	// 买家的退货描述
 	_refundDesc string
 	// 货品状态，可选值 BUYER_NOT_RECEIVED（买家未收到货）、BUYER_RECEIVED（买家已收到货）、UNSHIPPED（未发货）
@@ -24,6 +22,8 @@ type TaobaoOpenmallRefundModifyAPIRequest struct {
 	_refundReason string
 	// 分销者联盟身份
 	_distributor string
+	// 退款金额，分
+	_refundFee int64
 	// 退款单ID
 	_refundId int64
 }
@@ -60,19 +60,6 @@ func (r *TaobaoOpenmallRefundModifyAPIRequest) SetRefundType(_refundType string)
 // GetRefundType RefundType Getter
 func (r TaobaoOpenmallRefundModifyAPIRequest) GetRefundType() string {
 	return r._refundType
-}
-
-// SetRefundFee is RefundFee Setter
-// 退款金额，分
-func (r *TaobaoOpenmallRefundModifyAPIRequest) SetRefundFee(_refundFee int64) error {
-	r._refundFee = _refundFee
-	r.Set("refund_fee", _refundFee)
-	return nil
-}
-
-// GetRefundFee RefundFee Getter
-func (r TaobaoOpenmallRefundModifyAPIRequest) GetRefundFee() int64 {
-	return r._refundFee
 }
 
 // SetRefundDesc is RefundDesc Setter
@@ -125,6 +112,19 @@ func (r *TaobaoOpenmallRefundModifyAPIRequest) SetDistributor(_distributor strin
 // GetDistributor Distributor Getter
 func (r TaobaoOpenmallRefundModifyAPIRequest) GetDistributor() string {
 	return r._distributor
+}
+
+// SetRefundFee is RefundFee Setter
+// 退款金额，分
+func (r *TaobaoOpenmallRefundModifyAPIRequest) SetRefundFee(_refundFee int64) error {
+	r._refundFee = _refundFee
+	r.Set("refund_fee", _refundFee)
+	return nil
+}
+
+// GetRefundFee RefundFee Getter
+func (r TaobaoOpenmallRefundModifyAPIRequest) GetRefundFee() int64 {
+	return r._refundFee
 }
 
 // SetRefundId is RefundId Setter

@@ -2,8 +2,6 @@ package alsc
 
 // QueryCardOpenReq 结构体
 type QueryCardOpenReq struct {
-	// 查询关联资产账户
-	AccountRequired bool `json:"account_required,omitempty" xml:"account_required,omitempty"`
 	// 品牌id
 	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
 	// 卡实例id
@@ -14,8 +12,10 @@ type QueryCardOpenReq struct {
 	OutShopId string `json:"out_shop_id,omitempty" xml:"out_shop_id,omitempty"`
 	// 物理卡号
 	PhysicalCardId string `json:"physical_card_id,omitempty" xml:"physical_card_id,omitempty"`
-	// 查询关联物理卡
-	PhysicalCardRequired bool `json:"physical_card_required,omitempty" xml:"physical_card_required,omitempty"`
 	// saas门店id
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+	// 查询关联资产账户
+	AccountRequired bool `json:"account_required,omitempty" xml:"account_required,omitempty"`
+	// 查询关联物理卡
+	PhysicalCardRequired bool `json:"physical_card_required,omitempty" xml:"physical_card_required,omitempty"`
 }

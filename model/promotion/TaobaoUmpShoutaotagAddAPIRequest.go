@@ -13,12 +13,12 @@ import (
 // 给特定的手淘买家打上优惠标记，标记承载在自己的业务标签库中，标签有效期为7天。
 type TaobaoUmpShoutaotagAddAPIRequest struct {
 	model.Params
+	// 渠道KEY
+	_channelKey string
 	// 商品ID
 	_itemId int64
 	// 买家ID
 	_buyerId int64
-	// 渠道KEY
-	_channelKey string
 }
 
 // NewTaobaoUmpShoutaotagAddRequest 初始化TaobaoUmpShoutaotagAddAPIRequest对象
@@ -40,6 +40,19 @@ func (r TaobaoUmpShoutaotagAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetChannelKey is ChannelKey Setter
+// 渠道KEY
+func (r *TaobaoUmpShoutaotagAddAPIRequest) SetChannelKey(_channelKey string) error {
+	r._channelKey = _channelKey
+	r.Set("channel_key", _channelKey)
+	return nil
+}
+
+// GetChannelKey ChannelKey Getter
+func (r TaobaoUmpShoutaotagAddAPIRequest) GetChannelKey() string {
+	return r._channelKey
 }
 
 // SetItemId is ItemId Setter
@@ -66,17 +79,4 @@ func (r *TaobaoUmpShoutaotagAddAPIRequest) SetBuyerId(_buyerId int64) error {
 // GetBuyerId BuyerId Getter
 func (r TaobaoUmpShoutaotagAddAPIRequest) GetBuyerId() int64 {
 	return r._buyerId
-}
-
-// SetChannelKey is ChannelKey Setter
-// 渠道KEY
-func (r *TaobaoUmpShoutaotagAddAPIRequest) SetChannelKey(_channelKey string) error {
-	r._channelKey = _channelKey
-	r.Set("channel_key", _channelKey)
-	return nil
-}
-
-// GetChannelKey ChannelKey Getter
-func (r TaobaoUmpShoutaotagAddAPIRequest) GetChannelKey() string {
-	return r._channelKey
 }

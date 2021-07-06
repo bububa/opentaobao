@@ -12,6 +12,8 @@ import (
 // 过滤出传入列表歌曲存在于收藏列表的
 type TaobaoAilabAicloudTopLikeFilterAPIRequest struct {
 	model.Params
+	// 传入的歌曲列表
+	_mediaItems []MediaItem
 	// 账户体系隔离
 	_schema string
 	// 用户ID，此处传入第三方账户体系的用户id
@@ -22,8 +24,6 @@ type TaobaoAilabAicloudTopLikeFilterAPIRequest struct {
 	_ext string
 	// 音频收藏类型, 四种类型：music,children_song,program,story
 	_type string
-	// 传入的歌曲列表
-	_mediaItems []MediaItem
 }
 
 // NewTaobaoAilabAicloudTopLikeFilterRequest 初始化TaobaoAilabAicloudTopLikeFilterAPIRequest对象
@@ -45,6 +45,19 @@ func (r TaobaoAilabAicloudTopLikeFilterAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetMediaItems is MediaItems Setter
+// 传入的歌曲列表
+func (r *TaobaoAilabAicloudTopLikeFilterAPIRequest) SetMediaItems(_mediaItems []MediaItem) error {
+	r._mediaItems = _mediaItems
+	r.Set("media_items", _mediaItems)
+	return nil
+}
+
+// GetMediaItems MediaItems Getter
+func (r TaobaoAilabAicloudTopLikeFilterAPIRequest) GetMediaItems() []MediaItem {
+	return r._mediaItems
 }
 
 // SetSchema is Schema Setter
@@ -110,17 +123,4 @@ func (r *TaobaoAilabAicloudTopLikeFilterAPIRequest) SetType(_type string) error 
 // GetType Type Getter
 func (r TaobaoAilabAicloudTopLikeFilterAPIRequest) GetType() string {
 	return r._type
-}
-
-// SetMediaItems is MediaItems Setter
-// 传入的歌曲列表
-func (r *TaobaoAilabAicloudTopLikeFilterAPIRequest) SetMediaItems(_mediaItems []MediaItem) error {
-	r._mediaItems = _mediaItems
-	r.Set("media_items", _mediaItems)
-	return nil
-}
-
-// GetMediaItems MediaItems Getter
-func (r TaobaoAilabAicloudTopLikeFilterAPIRequest) GetMediaItems() []MediaItem {
-	return r._mediaItems
 }

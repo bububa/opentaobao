@@ -24,8 +24,8 @@ type TaobaoBusTvmqueryorderGetAPIResponseModel struct {
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// errorMsg
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
-	// success
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// tvmBusOrderLineInfo
 	TvmBusOrderLineInfo *TvmBusOrderLineInfo `json:"tvm_bus_order_line_info,omitempty" xml:"tvm_bus_order_line_info,omitempty"`
+	// success
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

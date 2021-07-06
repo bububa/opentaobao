@@ -12,10 +12,10 @@ import (
 // 拒绝退票
 type TaobaoAlitripSellerRefundRefusereturnAPIRequest struct {
 	model.Params
-	// 申请单ID
-	_applyId int64
 	// 拒绝理由
 	_reason string
+	// 申请单ID
+	_applyId int64
 }
 
 // NewTaobaoAlitripSellerRefundRefusereturnRequest 初始化TaobaoAlitripSellerRefundRefusereturnAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoAlitripSellerRefundRefusereturnAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// SetApplyId is ApplyId Setter
-// 申请单ID
-func (r *TaobaoAlitripSellerRefundRefusereturnAPIRequest) SetApplyId(_applyId int64) error {
-	r._applyId = _applyId
-	r.Set("apply_id", _applyId)
-	return nil
-}
-
-// GetApplyId ApplyId Getter
-func (r TaobaoAlitripSellerRefundRefusereturnAPIRequest) GetApplyId() int64 {
-	return r._applyId
-}
-
 // SetReason is Reason Setter
 // 拒绝理由
 func (r *TaobaoAlitripSellerRefundRefusereturnAPIRequest) SetReason(_reason string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoAlitripSellerRefundRefusereturnAPIRequest) SetReason(_reason stri
 // GetReason Reason Getter
 func (r TaobaoAlitripSellerRefundRefusereturnAPIRequest) GetReason() string {
 	return r._reason
+}
+
+// SetApplyId is ApplyId Setter
+// 申请单ID
+func (r *TaobaoAlitripSellerRefundRefusereturnAPIRequest) SetApplyId(_applyId int64) error {
+	r._applyId = _applyId
+	r.Set("apply_id", _applyId)
+	return nil
+}
+
+// GetApplyId ApplyId Getter
+func (r TaobaoAlitripSellerRefundRefusereturnAPIRequest) GetApplyId() int64 {
+	return r._applyId
 }

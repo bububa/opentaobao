@@ -12,10 +12,10 @@ import (
 // 阿里实人认证卡片信息回传。ISP相关商家在线对接阿里通信的实人认证功能，在线提交订单对应运营商的合约订购相关信息，以便完成在线使用实人认证功能。
 type AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest struct {
 	model.Params
-	// 淘宝订单号
-	_orderNo int64
 	// sim卡iccid（一般为18位到20位）
 	_iccid string
+	// 淘宝订单号
+	_orderNo int64
 }
 
 // NewAlibabaAlitjOrderRealnamecardInfoSubmitRequest 初始化AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// SetOrderNo is OrderNo Setter
-// 淘宝订单号
-func (r *AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) SetOrderNo(_orderNo int64) error {
-	r._orderNo = _orderNo
-	r.Set("order_no", _orderNo)
-	return nil
-}
-
-// GetOrderNo OrderNo Getter
-func (r AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) GetOrderNo() int64 {
-	return r._orderNo
-}
-
 // SetIccid is Iccid Setter
 // sim卡iccid（一般为18位到20位）
 func (r *AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) SetIccid(_iccid string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) SetIccid(_iccid stri
 // GetIccid Iccid Getter
 func (r AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) GetIccid() string {
 	return r._iccid
+}
+
+// SetOrderNo is OrderNo Setter
+// 淘宝订单号
+func (r *AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) SetOrderNo(_orderNo int64) error {
+	r._orderNo = _orderNo
+	r.Set("order_no", _orderNo)
+	return nil
+}
+
+// GetOrderNo OrderNo Getter
+func (r AlibabaAlitjOrderRealnamecardInfoSubmitAPIRequest) GetOrderNo() int64 {
+	return r._orderNo
 }

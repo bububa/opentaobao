@@ -12,14 +12,14 @@ import (
 // 创建一个推广组
 type TaobaoSimbaSalestarAdgroupAddAPIRequest struct {
 	model.Params
-	// 推广计划Id
-	_campaignId int64
-	// 商品Id
-	_itemId int64
 	// 创意标题，最多20个汉字
 	_title string
 	// 创意图片地址，必须是商品的图片之一
 	_imgUrl string
+	// 推广计划Id
+	_campaignId int64
+	// 商品Id
+	_itemId int64
 }
 
 // NewTaobaoSimbaSalestarAdgroupAddRequest 初始化TaobaoSimbaSalestarAdgroupAddAPIRequest对象
@@ -41,32 +41,6 @@ func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetCampaignId is CampaignId Setter
-// 推广计划Id
-func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetCampaignId(_campaignId int64) error {
-	r._campaignId = _campaignId
-	r.Set("campaign_id", _campaignId)
-	return nil
-}
-
-// GetCampaignId CampaignId Getter
-func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetCampaignId() int64 {
-	return r._campaignId
-}
-
-// SetItemId is ItemId Setter
-// 商品Id
-func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
-	return nil
-}
-
-// GetItemId ItemId Getter
-func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetItemId() int64 {
-	return r._itemId
 }
 
 // SetTitle is Title Setter
@@ -93,4 +67,30 @@ func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetImgUrl(_imgUrl string) erro
 // GetImgUrl ImgUrl Getter
 func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetImgUrl() string {
 	return r._imgUrl
+}
+
+// SetCampaignId is CampaignId Setter
+// 推广计划Id
+func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// GetCampaignId CampaignId Getter
+func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
+}
+
+// SetItemId is ItemId Setter
+// 商品Id
+func (r *TaobaoSimbaSalestarAdgroupAddAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r TaobaoSimbaSalestarAdgroupAddAPIRequest) GetItemId() int64 {
+	return r._itemId
 }

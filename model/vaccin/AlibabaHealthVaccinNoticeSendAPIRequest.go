@@ -12,6 +12,8 @@ import (
 // ISV 通过免疫规划中心给用户发送短信或者支付宝 PUSH 提醒。
 type AlibabaHealthVaccinNoticeSendAPIRequest struct {
 	model.Params
+	// 接种的疫苗信息
+	_vaccineList []VaccineInfo
 	// 支付宝用户 ID
 	_alipayUserId string
 	// ISV 侧用户 ID
@@ -22,10 +24,6 @@ type AlibabaHealthVaccinNoticeSendAPIRequest struct {
 	_name string
 	// 联系电话
 	_mobile string
-	// 接种的疫苗信息
-	_vaccineList []VaccineInfo
-	// 接种人性别:1=男,2=女
-	_sex int64
 	// 接种人出生日期
 	_birthday string
 	// 接种点编码
@@ -44,10 +42,12 @@ type AlibabaHealthVaccinNoticeSendAPIRequest struct {
 	_reserveDate string
 	// 预约时间段
 	_reserveTime string
-	// 消息提醒类型：1=疫苗下一针预约提醒  2=预约成功提醒  3=接种提醒  4=补种提醒
-	_messageType int64
 	// 用户入口，支付宝或医鹿，alipay或yl
 	_appChannel string
+	// 接种人性别:1=男,2=女
+	_sex int64
+	// 消息提醒类型：1=疫苗下一针预约提醒  2=预约成功提醒  3=接种提醒  4=补种提醒
+	_messageType int64
 }
 
 // NewAlibabaHealthVaccinNoticeSendRequest 初始化AlibabaHealthVaccinNoticeSendAPIRequest对象
@@ -69,6 +69,19 @@ func (r AlibabaHealthVaccinNoticeSendAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetVaccineList is VaccineList Setter
+// 接种的疫苗信息
+func (r *AlibabaHealthVaccinNoticeSendAPIRequest) SetVaccineList(_vaccineList []VaccineInfo) error {
+	r._vaccineList = _vaccineList
+	r.Set("vaccine_list", _vaccineList)
+	return nil
+}
+
+// GetVaccineList VaccineList Getter
+func (r AlibabaHealthVaccinNoticeSendAPIRequest) GetVaccineList() []VaccineInfo {
+	return r._vaccineList
 }
 
 // SetAlipayUserId is AlipayUserId Setter
@@ -134,32 +147,6 @@ func (r *AlibabaHealthVaccinNoticeSendAPIRequest) SetMobile(_mobile string) erro
 // GetMobile Mobile Getter
 func (r AlibabaHealthVaccinNoticeSendAPIRequest) GetMobile() string {
 	return r._mobile
-}
-
-// SetVaccineList is VaccineList Setter
-// 接种的疫苗信息
-func (r *AlibabaHealthVaccinNoticeSendAPIRequest) SetVaccineList(_vaccineList []VaccineInfo) error {
-	r._vaccineList = _vaccineList
-	r.Set("vaccine_list", _vaccineList)
-	return nil
-}
-
-// GetVaccineList VaccineList Getter
-func (r AlibabaHealthVaccinNoticeSendAPIRequest) GetVaccineList() []VaccineInfo {
-	return r._vaccineList
-}
-
-// SetSex is Sex Setter
-// 接种人性别:1=男,2=女
-func (r *AlibabaHealthVaccinNoticeSendAPIRequest) SetSex(_sex int64) error {
-	r._sex = _sex
-	r.Set("sex", _sex)
-	return nil
-}
-
-// GetSex Sex Getter
-func (r AlibabaHealthVaccinNoticeSendAPIRequest) GetSex() int64 {
-	return r._sex
 }
 
 // SetBirthday is Birthday Setter
@@ -279,19 +266,6 @@ func (r AlibabaHealthVaccinNoticeSendAPIRequest) GetReserveTime() string {
 	return r._reserveTime
 }
 
-// SetMessageType is MessageType Setter
-// 消息提醒类型：1=疫苗下一针预约提醒  2=预约成功提醒  3=接种提醒  4=补种提醒
-func (r *AlibabaHealthVaccinNoticeSendAPIRequest) SetMessageType(_messageType int64) error {
-	r._messageType = _messageType
-	r.Set("message_type", _messageType)
-	return nil
-}
-
-// GetMessageType MessageType Getter
-func (r AlibabaHealthVaccinNoticeSendAPIRequest) GetMessageType() int64 {
-	return r._messageType
-}
-
 // SetAppChannel is AppChannel Setter
 // 用户入口，支付宝或医鹿，alipay或yl
 func (r *AlibabaHealthVaccinNoticeSendAPIRequest) SetAppChannel(_appChannel string) error {
@@ -303,4 +277,30 @@ func (r *AlibabaHealthVaccinNoticeSendAPIRequest) SetAppChannel(_appChannel stri
 // GetAppChannel AppChannel Getter
 func (r AlibabaHealthVaccinNoticeSendAPIRequest) GetAppChannel() string {
 	return r._appChannel
+}
+
+// SetSex is Sex Setter
+// 接种人性别:1=男,2=女
+func (r *AlibabaHealthVaccinNoticeSendAPIRequest) SetSex(_sex int64) error {
+	r._sex = _sex
+	r.Set("sex", _sex)
+	return nil
+}
+
+// GetSex Sex Getter
+func (r AlibabaHealthVaccinNoticeSendAPIRequest) GetSex() int64 {
+	return r._sex
+}
+
+// SetMessageType is MessageType Setter
+// 消息提醒类型：1=疫苗下一针预约提醒  2=预约成功提醒  3=接种提醒  4=补种提醒
+func (r *AlibabaHealthVaccinNoticeSendAPIRequest) SetMessageType(_messageType int64) error {
+	r._messageType = _messageType
+	r.Set("message_type", _messageType)
+	return nil
+}
+
+// GetMessageType MessageType Getter
+func (r AlibabaHealthVaccinNoticeSendAPIRequest) GetMessageType() int64 {
+	return r._messageType
 }

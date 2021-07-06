@@ -12,10 +12,10 @@ import (
 // 创建退款留言/凭证
 type TaobaoRefundMessageAddAPIRequest struct {
 	model.Params
-	// 退款编号。
-	_refundId int64
 	// 留言内容。最大长度: 400个字节
 	_content string
+	// 退款编号。
+	_refundId int64
 	// 图片（凭证）。类型: JPG,GIF,PNG;最大为: 500K
 	_image *model.File
 }
@@ -41,19 +41,6 @@ func (r TaobaoRefundMessageAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetRefundId is RefundId Setter
-// 退款编号。
-func (r *TaobaoRefundMessageAddAPIRequest) SetRefundId(_refundId int64) error {
-	r._refundId = _refundId
-	r.Set("refund_id", _refundId)
-	return nil
-}
-
-// GetRefundId RefundId Getter
-func (r TaobaoRefundMessageAddAPIRequest) GetRefundId() int64 {
-	return r._refundId
-}
-
 // SetContent is Content Setter
 // 留言内容。最大长度: 400个字节
 func (r *TaobaoRefundMessageAddAPIRequest) SetContent(_content string) error {
@@ -65,6 +52,19 @@ func (r *TaobaoRefundMessageAddAPIRequest) SetContent(_content string) error {
 // GetContent Content Getter
 func (r TaobaoRefundMessageAddAPIRequest) GetContent() string {
 	return r._content
+}
+
+// SetRefundId is RefundId Setter
+// 退款编号。
+func (r *TaobaoRefundMessageAddAPIRequest) SetRefundId(_refundId int64) error {
+	r._refundId = _refundId
+	r.Set("refund_id", _refundId)
+	return nil
+}
+
+// GetRefundId RefundId Getter
+func (r TaobaoRefundMessageAddAPIRequest) GetRefundId() int64 {
+	return r._refundId
 }
 
 // SetImage is Image Setter

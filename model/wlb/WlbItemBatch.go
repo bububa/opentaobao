@@ -2,16 +2,6 @@ package wlb
 
 // WlbItemBatch 结构体
 type WlbItemBatch struct {
-	// 商品批次记录id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
-	// 用户id
-	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
-	// 商品id
-	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
-	// 商品数量
-	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
-	// 残次数量
-	DefectQuantity int64 `json:"defect_quantity,omitempty" xml:"defect_quantity,omitempty"`
 	// 存储类型
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
 	// 批次编号
@@ -26,8 +16,6 @@ type WlbItemBatch struct {
 	ReceiveDate string `json:"receive_date,omitempty" xml:"receive_date,omitempty"`
 	// 保质期
 	GuaranteePeriod string `json:"guarantee_period,omitempty" xml:"guarantee_period,omitempty"`
-	// 天（单位）
-	GuaranteeUnit int64 `json:"guarantee_unit,omitempty" xml:"guarantee_unit,omitempty"`
 	// 产地
 	ProduceArea string `json:"produce_area,omitempty" xml:"produce_area,omitempty"`
 	// 描述
@@ -38,12 +26,24 @@ type WlbItemBatch struct {
 	Creator string `json:"creator,omitempty" xml:"creator,omitempty"`
 	// 最后修改者
 	LastModifier string `json:"last_modifier,omitempty" xml:"last_modifier,omitempty"`
-	// 版本
-	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 最后修改时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+	// 商品批次记录id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 用户id
+	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+	// 商品id
+	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+	// 商品数量
+	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+	// 残次数量
+	DefectQuantity int64 `json:"defect_quantity,omitempty" xml:"defect_quantity,omitempty"`
+	// 天（单位）
+	GuaranteeUnit int64 `json:"guarantee_unit,omitempty" xml:"guarantee_unit,omitempty"`
+	// 版本
+	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 是否删除。0：正常 1：删除
 	IsDeleted bool `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
 }

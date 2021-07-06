@@ -2,8 +2,6 @@ package promotion
 
 // LotteryAwardDto 结构体
 type LotteryAwardDto struct {
-	// totalResCount
-	TotalResCount int64 `json:"total_res_count,omitempty" xml:"total_res_count,omitempty"`
 	// awardDetailUrl
 	AwardDetailUrl string `json:"award_detail_url,omitempty" xml:"award_detail_url,omitempty"`
 	// useEndDate
@@ -16,18 +14,12 @@ type LotteryAwardDto struct {
 	StartDate string `json:"start_date,omitempty" xml:"start_date,omitempty"`
 	// 币种
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
-	// awardPrice
-	AwardPrice int64 `json:"award_price,omitempty" xml:"award_price,omitempty"`
-	// startFee
-	StartFee int64 `json:"start_fee,omitempty" xml:"start_fee,omitempty"`
 	// displayName
 	DisplayName string `json:"display_name,omitempty" xml:"display_name,omitempty"`
 	// name
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// awardTypeName
 	AwardTypeName string `json:"award_type_name,omitempty" xml:"award_type_name,omitempty"`
-	// canUseResCount
-	CanUseResCount int64 `json:"can_use_res_count,omitempty" xml:"can_use_res_count,omitempty"`
 	// condition
 	Condition string `json:"condition,omitempty" xml:"condition,omitempty"`
 	// 币种符号
@@ -36,6 +28,14 @@ type LotteryAwardDto struct {
 	PictUrl string `json:"pict_url,omitempty" xml:"pict_url,omitempty"`
 	// awardInstId
 	AwardInstId string `json:"award_inst_id,omitempty" xml:"award_inst_id,omitempty"`
+	// totalResCount
+	TotalResCount int64 `json:"total_res_count,omitempty" xml:"total_res_count,omitempty"`
+	// awardPrice
+	AwardPrice int64 `json:"award_price,omitempty" xml:"award_price,omitempty"`
+	// startFee
+	StartFee int64 `json:"start_fee,omitempty" xml:"start_fee,omitempty"`
+	// canUseResCount
+	CanUseResCount int64 `json:"can_use_res_count,omitempty" xml:"can_use_res_count,omitempty"`
 	// awardType
 	AwardType int64 `json:"award_type,omitempty" xml:"award_type,omitempty"`
 	// id

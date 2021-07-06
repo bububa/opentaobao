@@ -12,12 +12,12 @@ import (
 // 查询天猫服务的服务商发布的服务产品
 type TmallMallitemcenterServiceproductQueryAPIRequest struct {
 	model.Params
+	// 服务名称
+	_serviceCode string
 	// 服务产品id
 	_id int64
 	// 产品状态
 	_status int64
-	// 服务名称
-	_serviceCode string
 	// 产品类型
 	_serviceProductType int64
 }
@@ -41,6 +41,19 @@ func (r TmallMallitemcenterServiceproductQueryAPIRequest) GetApiParams() url.Val
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetServiceCode is ServiceCode Setter
+// 服务名称
+func (r *TmallMallitemcenterServiceproductQueryAPIRequest) SetServiceCode(_serviceCode string) error {
+	r._serviceCode = _serviceCode
+	r.Set("service_code", _serviceCode)
+	return nil
+}
+
+// GetServiceCode ServiceCode Getter
+func (r TmallMallitemcenterServiceproductQueryAPIRequest) GetServiceCode() string {
+	return r._serviceCode
 }
 
 // SetId is Id Setter
@@ -67,19 +80,6 @@ func (r *TmallMallitemcenterServiceproductQueryAPIRequest) SetStatus(_status int
 // GetStatus Status Getter
 func (r TmallMallitemcenterServiceproductQueryAPIRequest) GetStatus() int64 {
 	return r._status
-}
-
-// SetServiceCode is ServiceCode Setter
-// 服务名称
-func (r *TmallMallitemcenterServiceproductQueryAPIRequest) SetServiceCode(_serviceCode string) error {
-	r._serviceCode = _serviceCode
-	r.Set("service_code", _serviceCode)
-	return nil
-}
-
-// GetServiceCode ServiceCode Getter
-func (r TmallMallitemcenterServiceproductQueryAPIRequest) GetServiceCode() string {
-	return r._serviceCode
 }
 
 // SetServiceProductType is ServiceProductType Setter

@@ -30,8 +30,8 @@ type AlitripTravelVisaApplicantImportAPIResponseModel struct {
 	FirstNamePinyin string `json:"first_name_pinyin,omitempty" xml:"first_name_pinyin,omitempty"`
 	// 护照号
 	PassportNumber string `json:"passport_number,omitempty" xml:"passport_number,omitempty"`
-	// 错误类型:1-数据重复，2-数据错误
-	ErrorType int64 `json:"error_type,omitempty" xml:"error_type,omitempty"`
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
+	// 错误类型:1-数据重复，2-数据错误
+	ErrorType int64 `json:"error_type,omitempty" xml:"error_type,omitempty"`
 }

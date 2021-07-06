@@ -2,8 +2,6 @@ package jst
 
 // TradeTrace 结构体
 type TradeTrace struct {
-	// 交易tid
-	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 	// 子订单的id列表,以逗号分割
 	OrderIds string `json:"order_ids,omitempty" xml:"order_ids,omitempty"`
 	// 回流的订单状态
@@ -16,4 +14,6 @@ type TradeTrace struct {
 	SellerNick string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
 	// 应用标题
 	AppTitle string `json:"app_title,omitempty" xml:"app_title,omitempty"`
+	// 交易tid
+	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 }

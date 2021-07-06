@@ -4,10 +4,6 @@ package trade
 type Refund struct {
 	// 退款单号
 	RefundId string `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
-	// 淘宝交易单号
-	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
-	// 子订单号。如果是单笔交易oid会等于tid
-	Oid int64 `json:"oid,omitempty" xml:"oid,omitempty"`
 	// 交易总金额。精确到2位小数;单位:元。如:200.07，表示:200元7分
 	TotalFee string `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
 	// 买家昵称
@@ -24,8 +20,6 @@ type Refund struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 货物状态。可选值BUYER_NOT_RECEIVED (买家未收到货) BUYER_RECEIVED (买家已收到货) BUYER_RETURNED_GOODS (买家已退货)
 	GoodStatus string `json:"good_status,omitempty" xml:"good_status,omitempty"`
-	// 买家是否需要退货。可选值:true(是),false(否)
-	HasGoodReturn bool `json:"has_good_return,omitempty" xml:"has_good_return,omitempty"`
 	// 退还金额(退还给买家的金额)。精确到2位小数;单位:元。如:200.07，表示:200元7分
 	RefundFee string `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 支付给卖家的金额(交易总金额-退还给买家的金额)。精确到2位小数;单位:元。如:200.07，表示:200元7分
@@ -36,16 +30,12 @@ type Refund struct {
 	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
 	// 商品标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
-	// 商品购买数量
-	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
 	// 物流公司名称
 	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
 	// 退货运单号
 	Sid string `json:"sid,omitempty" xml:"sid,omitempty"`
 	// 退款阶段，可选值：onsale/aftersale
 	RefundPhase string `json:"refund_phase,omitempty" xml:"refund_phase,omitempty"`
-	// 退款版本号（时间戳）
-	RefundVersion int64 `json:"refund_version,omitempty" xml:"refund_version,omitempty"`
 	// 商品SKU信息
 	Sku string `json:"sku,omitempty" xml:"sku,omitempty"`
 	// 退款扩展属性
@@ -54,4 +44,14 @@ type Refund struct {
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 退款约束，可选值：cannot_refuse（不允许操作），refund_onweb（需要到网页版操作）
 	OperationContraint string `json:"operation_contraint,omitempty" xml:"operation_contraint,omitempty"`
+	// 淘宝交易单号
+	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+	// 子订单号。如果是单笔交易oid会等于tid
+	Oid int64 `json:"oid,omitempty" xml:"oid,omitempty"`
+	// 商品购买数量
+	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
+	// 退款版本号（时间戳）
+	RefundVersion int64 `json:"refund_version,omitempty" xml:"refund_version,omitempty"`
+	// 买家是否需要退货。可选值:true(是),false(否)
+	HasGoodReturn bool `json:"has_good_return,omitempty" xml:"has_good_return,omitempty"`
 }

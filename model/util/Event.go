@@ -10,8 +10,8 @@ type Event struct {
 	Ext string `json:"ext,omitempty" xml:"ext,omitempty"`
 	// 商家平台编码.MAIN:官方渠道,JD:京东,DD:当当,PP:拍拍,YX:易讯,EBAY:ebay,AMAZON:亚马逊,SN:苏宁,GM:国美,WPH:唯品会,JM:聚美,MGJ:蘑菇街,YT:银泰,YHD:1号店,1688:1688,POS:POS门店,OTHER:其他
 	Platform string `json:"platform,omitempty" xml:"platform,omitempty"`
-	// 订单创建时间,数字
-	Create int64 `json:"create,omitempty" xml:"create,omitempty"`
 	// 外部商家名称。必须同时填写platform
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
+	// 订单创建时间,数字
+	Create int64 `json:"create,omitempty" xml:"create,omitempty"`
 }

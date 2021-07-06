@@ -10,12 +10,12 @@ type OrderProcessQueryRequest struct {
 	OrderId string `json:"orderId,omitempty" xml:"orderId,omitempty"`
 	// 仓库编码
 	WarehouseCode string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
-	// 扩展属性
-	ExtendProps *TaobaoQimenOrderprocessQueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 交易单号
 	OrderSourceCode string `json:"orderSourceCode,omitempty" xml:"orderSourceCode,omitempty"`
 	// 货主编码
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
+	// 扩展属性
+	ExtendProps *TaobaoQimenOrderprocessQueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
 }

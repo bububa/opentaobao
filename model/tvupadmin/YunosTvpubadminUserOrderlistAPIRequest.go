@@ -12,12 +12,12 @@ import (
 // 获取用户订单列表
 type YunosTvpubadminUserOrderlistAPIRequest struct {
 	model.Params
-	// 用户ID
-	_uid int64
 	// 开始时间
 	_createTimeStartStr string
 	// 结束时间
 	_createTimeEndStr string
+	// 用户ID
+	_uid int64
 	// 牌照方
 	_license int64
 	// 页码值
@@ -47,19 +47,6 @@ func (r YunosTvpubadminUserOrderlistAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetUid is Uid Setter
-// 用户ID
-func (r *YunosTvpubadminUserOrderlistAPIRequest) SetUid(_uid int64) error {
-	r._uid = _uid
-	r.Set("uid", _uid)
-	return nil
-}
-
-// GetUid Uid Getter
-func (r YunosTvpubadminUserOrderlistAPIRequest) GetUid() int64 {
-	return r._uid
-}
-
 // SetCreateTimeStartStr is CreateTimeStartStr Setter
 // 开始时间
 func (r *YunosTvpubadminUserOrderlistAPIRequest) SetCreateTimeStartStr(_createTimeStartStr string) error {
@@ -84,6 +71,19 @@ func (r *YunosTvpubadminUserOrderlistAPIRequest) SetCreateTimeEndStr(_createTime
 // GetCreateTimeEndStr CreateTimeEndStr Getter
 func (r YunosTvpubadminUserOrderlistAPIRequest) GetCreateTimeEndStr() string {
 	return r._createTimeEndStr
+}
+
+// SetUid is Uid Setter
+// 用户ID
+func (r *YunosTvpubadminUserOrderlistAPIRequest) SetUid(_uid int64) error {
+	r._uid = _uid
+	r.Set("uid", _uid)
+	return nil
+}
+
+// GetUid Uid Getter
+func (r YunosTvpubadminUserOrderlistAPIRequest) GetUid() int64 {
+	return r._uid
 }
 
 // SetLicense is License Setter

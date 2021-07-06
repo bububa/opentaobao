@@ -12,14 +12,14 @@ import (
 // 航旅国内租车订单状态更新
 type TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest struct {
 	model.Params
-	// 121-用车中（用户取车成功） 122-待结算（用户还车成功）
-	_status int64
 	// 服务商平台订单号
 	_thirdOrderId string
 	// 飞猪平台订单号
 	_orderId string
 	// 服务商标识，由飞猪提供给到各服务商
 	_providerId string
+	// 121-用车中（用户取车成功） 122-待结算（用户还车成功）
+	_status int64
 }
 
 // NewTaobaoAlitripDomesticRentCarStatusUpdateRequest 初始化TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest对象
@@ -41,19 +41,6 @@ func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetApiParams() url.V
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetStatus is Status Setter
-// 121-用车中（用户取车成功） 122-待结算（用户还车成功）
-func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetStatus(_status int64) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetStatus() int64 {
-	return r._status
 }
 
 // SetThirdOrderId is ThirdOrderId Setter
@@ -93,4 +80,17 @@ func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetProviderId(_prov
 // GetProviderId ProviderId Getter
 func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetProviderId() string {
 	return r._providerId
+}
+
+// SetStatus is Status Setter
+// 121-用车中（用户取车成功） 122-待结算（用户还车成功）
+func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetStatus() int64 {
+	return r._status
 }

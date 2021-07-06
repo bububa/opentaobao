@@ -2,8 +2,6 @@ package einvoice
 
 // InvoiceResultItemDto 结构体
 type InvoiceResultItemDto struct {
-	// 发票行性质。0表示正常行，1表示折扣行，2表示被折扣行。  比如充电器单价100元，折扣10元，则明细为2行，充电器行性质为2，折扣行性质为1。如果充电器没有折扣，则值应为0
-	RowType int64 `json:"row_type,omitempty" xml:"row_type,omitempty"`
 	// 税率。格式为2位小数，如：0.00, 0.03, 0.13等等
 	TaxRate string `json:"tax_rate,omitempty" xml:"tax_rate,omitempty"`
 	// 发票项目名称（或商品名称）
@@ -26,4 +24,6 @@ type InvoiceResultItemDto struct {
 	Tax string `json:"tax,omitempty" xml:"tax,omitempty"`
 	// 发票项目编号（或商品编号）
 	ItemNo string `json:"item_no,omitempty" xml:"item_no,omitempty"`
+	// 发票行性质。0表示正常行，1表示折扣行，2表示被折扣行。  比如充电器单价100元，折扣10元，则明细为2行，充电器行性质为2，折扣行性质为1。如果充电器没有折扣，则值应为0
+	RowType int64 `json:"row_type,omitempty" xml:"row_type,omitempty"`
 }

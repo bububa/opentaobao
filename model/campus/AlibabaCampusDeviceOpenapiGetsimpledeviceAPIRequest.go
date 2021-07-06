@@ -12,10 +12,10 @@ import (
 // 获取指定设备的基础信息(仅包含设备id,code,是否启用,位置信息,描述等基础信息)
 type AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest struct {
 	model.Params
-	// 请求发送端信息
-	_workBenchContext *WorkBenchContext
 	// 设备uuid
 	_uuid string
+	// 请求发送端信息
+	_workBenchContext *WorkBenchContext
 }
 
 // NewAlibabaCampusDeviceOpenapiGetsimpledeviceRequest 初始化AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) GetApiParams() url.
 	return params
 }
 
-// SetWorkBenchContext is WorkBenchContext Setter
-// 请求发送端信息
-func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
-	r._workBenchContext = _workBenchContext
-	r.Set("work_bench_context", _workBenchContext)
-	return nil
-}
-
-// GetWorkBenchContext WorkBenchContext Getter
-func (r AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) GetWorkBenchContext() *WorkBenchContext {
-	return r._workBenchContext
-}
-
 // SetUuid is Uuid Setter
 // 设备uuid
 func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) SetUuid(_uuid string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) SetUuid(_uuid stri
 // GetUuid Uuid Getter
 func (r AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) GetUuid() string {
 	return r._uuid
+}
+
+// SetWorkBenchContext is WorkBenchContext Setter
+// 请求发送端信息
+func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+	r._workBenchContext = _workBenchContext
+	r.Set("work_bench_context", _workBenchContext)
+	return nil
+}
+
+// GetWorkBenchContext WorkBenchContext Getter
+func (r AlibabaCampusDeviceOpenapiGetsimpledeviceAPIRequest) GetWorkBenchContext() *WorkBenchContext {
+	return r._workBenchContext
 }

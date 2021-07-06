@@ -12,10 +12,16 @@ import (
 // 餐厅列表
 type AlibabaEleEnterpriseRestaurantSearchAPIRequest struct {
 	model.Params
+	// 餐厅分类ids
+	_categoryIds []int64
 	// longitude和latitude用英文逗号分隔
 	_geo string
 	// 首次查询无需传入，后续需要传入前次返回
 	_rankId string
+	// 是否筛选支持预定 0:不需要 1:需要（不传该字段则不筛选）
+	_isBookable string
+	// 是否支持跨天预定 1:需要（不传该字段则不筛选）
+	_crossDayBooking string
 	// 查询起始位置，默认为0。如果传的是10，那么餐厅会从第11个开始返回
 	_start int64
 	// 查询数量，默认是10，最大50
@@ -36,12 +42,6 @@ type AlibabaEleEnterpriseRestaurantSearchAPIRequest struct {
 	_deliveryMode int64
 	// 排序选项（1-默认排序（热门）， 2-评价星级由高到低， 3-起送价由低到高， 4-销量由高到低， 5-送餐速度由快到慢， 6-餐厅距离由近到远， 7-订单量由高到低）
 	_orderBy int64
-	// 餐厅分类ids
-	_categoryIds []int64
-	// 是否筛选支持预定 0:不需要 1:需要（不传该字段则不筛选）
-	_isBookable string
-	// 是否支持跨天预定 1:需要（不传该字段则不筛选）
-	_crossDayBooking string
 }
 
 // NewAlibabaEleEnterpriseRestaurantSearchRequest 初始化AlibabaEleEnterpriseRestaurantSearchAPIRequest对象
@@ -63,6 +63,19 @@ func (r AlibabaEleEnterpriseRestaurantSearchAPIRequest) GetApiParams() url.Value
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetCategoryIds is CategoryIds Setter
+// 餐厅分类ids
+func (r *AlibabaEleEnterpriseRestaurantSearchAPIRequest) SetCategoryIds(_categoryIds []int64) error {
+	r._categoryIds = _categoryIds
+	r.Set("category_ids", _categoryIds)
+	return nil
+}
+
+// GetCategoryIds CategoryIds Getter
+func (r AlibabaEleEnterpriseRestaurantSearchAPIRequest) GetCategoryIds() []int64 {
+	return r._categoryIds
 }
 
 // SetGeo is Geo Setter
@@ -89,6 +102,32 @@ func (r *AlibabaEleEnterpriseRestaurantSearchAPIRequest) SetRankId(_rankId strin
 // GetRankId RankId Getter
 func (r AlibabaEleEnterpriseRestaurantSearchAPIRequest) GetRankId() string {
 	return r._rankId
+}
+
+// SetIsBookable is IsBookable Setter
+// 是否筛选支持预定 0:不需要 1:需要（不传该字段则不筛选）
+func (r *AlibabaEleEnterpriseRestaurantSearchAPIRequest) SetIsBookable(_isBookable string) error {
+	r._isBookable = _isBookable
+	r.Set("is_bookable", _isBookable)
+	return nil
+}
+
+// GetIsBookable IsBookable Getter
+func (r AlibabaEleEnterpriseRestaurantSearchAPIRequest) GetIsBookable() string {
+	return r._isBookable
+}
+
+// SetCrossDayBooking is CrossDayBooking Setter
+// 是否支持跨天预定 1:需要（不传该字段则不筛选）
+func (r *AlibabaEleEnterpriseRestaurantSearchAPIRequest) SetCrossDayBooking(_crossDayBooking string) error {
+	r._crossDayBooking = _crossDayBooking
+	r.Set("cross_day_booking", _crossDayBooking)
+	return nil
+}
+
+// GetCrossDayBooking CrossDayBooking Getter
+func (r AlibabaEleEnterpriseRestaurantSearchAPIRequest) GetCrossDayBooking() string {
+	return r._crossDayBooking
 }
 
 // SetStart is Start Setter
@@ -219,43 +258,4 @@ func (r *AlibabaEleEnterpriseRestaurantSearchAPIRequest) SetOrderBy(_orderBy int
 // GetOrderBy OrderBy Getter
 func (r AlibabaEleEnterpriseRestaurantSearchAPIRequest) GetOrderBy() int64 {
 	return r._orderBy
-}
-
-// SetCategoryIds is CategoryIds Setter
-// 餐厅分类ids
-func (r *AlibabaEleEnterpriseRestaurantSearchAPIRequest) SetCategoryIds(_categoryIds []int64) error {
-	r._categoryIds = _categoryIds
-	r.Set("category_ids", _categoryIds)
-	return nil
-}
-
-// GetCategoryIds CategoryIds Getter
-func (r AlibabaEleEnterpriseRestaurantSearchAPIRequest) GetCategoryIds() []int64 {
-	return r._categoryIds
-}
-
-// SetIsBookable is IsBookable Setter
-// 是否筛选支持预定 0:不需要 1:需要（不传该字段则不筛选）
-func (r *AlibabaEleEnterpriseRestaurantSearchAPIRequest) SetIsBookable(_isBookable string) error {
-	r._isBookable = _isBookable
-	r.Set("is_bookable", _isBookable)
-	return nil
-}
-
-// GetIsBookable IsBookable Getter
-func (r AlibabaEleEnterpriseRestaurantSearchAPIRequest) GetIsBookable() string {
-	return r._isBookable
-}
-
-// SetCrossDayBooking is CrossDayBooking Setter
-// 是否支持跨天预定 1:需要（不传该字段则不筛选）
-func (r *AlibabaEleEnterpriseRestaurantSearchAPIRequest) SetCrossDayBooking(_crossDayBooking string) error {
-	r._crossDayBooking = _crossDayBooking
-	r.Set("cross_day_booking", _crossDayBooking)
-	return nil
-}
-
-// GetCrossDayBooking CrossDayBooking Getter
-func (r AlibabaEleEnterpriseRestaurantSearchAPIRequest) GetCrossDayBooking() string {
-	return r._crossDayBooking
 }

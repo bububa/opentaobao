@@ -6,8 +6,6 @@ type ReverseConsumePointOpenReq struct {
 	BizType string `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
 	// 品牌id
 	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
-	// 变更积分数
-	ChangePoint int64 `json:"change_point,omitempty" xml:"change_point,omitempty"`
 	// 顾客id
 	CustomerId string `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
 	// 操作人id
@@ -30,4 +28,6 @@ type ReverseConsumePointOpenReq struct {
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
 	// 外部渠道，CS是辰森，客如云是KRY
 	BizChannel string `json:"biz_channel,omitempty" xml:"biz_channel,omitempty"`
+	// 变更积分数
+	ChangePoint int64 `json:"change_point,omitempty" xml:"change_point,omitempty"`
 }

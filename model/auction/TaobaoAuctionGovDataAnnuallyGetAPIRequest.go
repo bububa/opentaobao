@@ -19,12 +19,12 @@ type TaobaoAuctionGovDataAnnuallyGetAPIRequest struct {
 	model.Params
 	// 法院名称
 	_courtName string
-	// 统计数据是够包含下属法院
-	_isIncludeSub bool
 	// 开始年份
 	_startYear string
 	// 结束年份
 	_endYear string
+	// 统计数据是够包含下属法院
+	_isIncludeSub bool
 }
 
 // NewTaobaoAuctionGovDataAnnuallyGetRequest 初始化TaobaoAuctionGovDataAnnuallyGetAPIRequest对象
@@ -61,19 +61,6 @@ func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetCourtName() string {
 	return r._courtName
 }
 
-// SetIsIncludeSub is IsIncludeSub Setter
-// 统计数据是够包含下属法院
-func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetIsIncludeSub(_isIncludeSub bool) error {
-	r._isIncludeSub = _isIncludeSub
-	r.Set("is_include_sub", _isIncludeSub)
-	return nil
-}
-
-// GetIsIncludeSub IsIncludeSub Getter
-func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetIsIncludeSub() bool {
-	return r._isIncludeSub
-}
-
 // SetStartYear is StartYear Setter
 // 开始年份
 func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetStartYear(_startYear string) error {
@@ -98,4 +85,17 @@ func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetEndYear(_endYear string) 
 // GetEndYear EndYear Getter
 func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetEndYear() string {
 	return r._endYear
+}
+
+// SetIsIncludeSub is IsIncludeSub Setter
+// 统计数据是够包含下属法院
+func (r *TaobaoAuctionGovDataAnnuallyGetAPIRequest) SetIsIncludeSub(_isIncludeSub bool) error {
+	r._isIncludeSub = _isIncludeSub
+	r.Set("is_include_sub", _isIncludeSub)
+	return nil
+}
+
+// GetIsIncludeSub IsIncludeSub Getter
+func (r TaobaoAuctionGovDataAnnuallyGetAPIRequest) GetIsIncludeSub() bool {
+	return r._isIncludeSub
 }

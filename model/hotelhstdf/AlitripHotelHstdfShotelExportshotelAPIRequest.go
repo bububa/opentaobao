@@ -12,12 +12,8 @@ import (
 // 商家通过给出自己的卖家酒店信息，通过接口可以返回相似度高的标准酒店信息
 type AlitripHotelHstdfShotelExportshotelAPIRequest struct {
 	model.Params
-	// HID，卖家酒店上传到平台后的ID
-	_hid int64
 	// 酒店名称，必填
 	_name string
-	// 酒店所在行政区划，对应平台ID，为空时会使用经纬度来定位
-	_cityCode int64
 	// 电话
 	_telNumber string
 	// 经度
@@ -26,6 +22,10 @@ type AlitripHotelHstdfShotelExportshotelAPIRequest struct {
 	_latitude string
 	// 地址
 	_address string
+	// HID，卖家酒店上传到平台后的ID
+	_hid int64
+	// 酒店所在行政区划，对应平台ID，为空时会使用经纬度来定位
+	_cityCode int64
 }
 
 // NewAlitripHotelHstdfShotelExportshotelRequest 初始化AlitripHotelHstdfShotelExportshotelAPIRequest对象
@@ -49,19 +49,6 @@ func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// SetHid is Hid Setter
-// HID，卖家酒店上传到平台后的ID
-func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetHid(_hid int64) error {
-	r._hid = _hid
-	r.Set("hid", _hid)
-	return nil
-}
-
-// GetHid Hid Getter
-func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetHid() int64 {
-	return r._hid
-}
-
 // SetName is Name Setter
 // 酒店名称，必填
 func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetName(_name string) error {
@@ -73,19 +60,6 @@ func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetName(_name string) er
 // GetName Name Getter
 func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetName() string {
 	return r._name
-}
-
-// SetCityCode is CityCode Setter
-// 酒店所在行政区划，对应平台ID，为空时会使用经纬度来定位
-func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetCityCode(_cityCode int64) error {
-	r._cityCode = _cityCode
-	r.Set("city_code", _cityCode)
-	return nil
-}
-
-// GetCityCode CityCode Getter
-func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetCityCode() int64 {
-	return r._cityCode
 }
 
 // SetTelNumber is TelNumber Setter
@@ -138,4 +112,30 @@ func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetAddress(_address stri
 // GetAddress Address Getter
 func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetAddress() string {
 	return r._address
+}
+
+// SetHid is Hid Setter
+// HID，卖家酒店上传到平台后的ID
+func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetHid(_hid int64) error {
+	r._hid = _hid
+	r.Set("hid", _hid)
+	return nil
+}
+
+// GetHid Hid Getter
+func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetHid() int64 {
+	return r._hid
+}
+
+// SetCityCode is CityCode Setter
+// 酒店所在行政区划，对应平台ID，为空时会使用经纬度来定位
+func (r *AlitripHotelHstdfShotelExportshotelAPIRequest) SetCityCode(_cityCode int64) error {
+	r._cityCode = _cityCode
+	r.Set("city_code", _cityCode)
+	return nil
+}
+
+// GetCityCode CityCode Getter
+func (r AlitripHotelHstdfShotelExportshotelAPIRequest) GetCityCode() int64 {
+	return r._cityCode
 }

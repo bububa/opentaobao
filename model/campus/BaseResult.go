@@ -8,10 +8,10 @@ type BaseResult struct {
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
-	// 调用信息
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 错误等级
 	ErrorLevel string `json:"error_level,omitempty" xml:"error_level,omitempty"`
 	// 错误描述
 	ErrorExtInfo string `json:"error_ext_info,omitempty" xml:"error_ext_info,omitempty"`
+	// 调用信息
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

@@ -18,12 +18,12 @@ type TaobaoAlitripCarDriverStatusUpdateAPIRequest struct {
 	_thirdOrderId string
 	// 服务商标识，由飞猪提供给到各服务商
 	_providerId string
-	// 司机服务状态。1-司机已出发，2-司机已到达，3-司机已开始服务
-	_status int64
 	// 状态变更相应时间（如司机出发时间、司机到达时间、服务开始时间），格式：yyyy-mm-dd hh:mm:ss
 	_time string
 	// 可选，卖家id
 	_sellerId string
+	// 司机服务状态。1-司机已出发，2-司机已到达，3-司机已开始服务
+	_status int64
 	// 0:接送机 1：实时打车 2：租车(不传值默认为0)
 	_useType int64
 }
@@ -88,19 +88,6 @@ func (r TaobaoAlitripCarDriverStatusUpdateAPIRequest) GetProviderId() string {
 	return r._providerId
 }
 
-// SetStatus is Status Setter
-// 司机服务状态。1-司机已出发，2-司机已到达，3-司机已开始服务
-func (r *TaobaoAlitripCarDriverStatusUpdateAPIRequest) SetStatus(_status int64) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TaobaoAlitripCarDriverStatusUpdateAPIRequest) GetStatus() int64 {
-	return r._status
-}
-
 // SetTime is Time Setter
 // 状态变更相应时间（如司机出发时间、司机到达时间、服务开始时间），格式：yyyy-mm-dd hh:mm:ss
 func (r *TaobaoAlitripCarDriverStatusUpdateAPIRequest) SetTime(_time string) error {
@@ -125,6 +112,19 @@ func (r *TaobaoAlitripCarDriverStatusUpdateAPIRequest) SetSellerId(_sellerId str
 // GetSellerId SellerId Getter
 func (r TaobaoAlitripCarDriverStatusUpdateAPIRequest) GetSellerId() string {
 	return r._sellerId
+}
+
+// SetStatus is Status Setter
+// 司机服务状态。1-司机已出发，2-司机已到达，3-司机已开始服务
+func (r *TaobaoAlitripCarDriverStatusUpdateAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TaobaoAlitripCarDriverStatusUpdateAPIRequest) GetStatus() int64 {
+	return r._status
 }
 
 // SetUseType is UseType Setter

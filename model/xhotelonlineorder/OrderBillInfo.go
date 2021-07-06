@@ -2,14 +2,6 @@ package xhotelonlineorder
 
 // OrderBillInfo 结构体
 type OrderBillInfo struct {
-	// 未结账房费
-	NoCheckoutPrice int64 `json:"no_checkout_price,omitempty" xml:"no_checkout_price,omitempty"`
-	// 已结账房费
-	CheckoutPrice int64 `json:"checkout_price,omitempty" xml:"checkout_price,omitempty"`
-	// 已结账总费用
-	CheckoutTotalFee int64 `json:"checkout_total_fee,omitempty" xml:"checkout_total_fee,omitempty"`
-	// 未结账总费用
-	NoCheckoutTotalFee int64 `json:"no_checkout_total_fee,omitempty" xml:"no_checkout_total_fee,omitempty"`
 	// 离店日期
 	CheckOutDate string `json:"check_out_date,omitempty" xml:"check_out_date,omitempty"`
 	// 入住日期
@@ -24,16 +16,24 @@ type OrderBillInfo struct {
 	HotelCode string `json:"hotel_code,omitempty" xml:"hotel_code,omitempty"`
 	// 外部订单号
 	OutOrderId string `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
-	// 淘宝订单号
-	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 	// 请求id (同入参)
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 备注
+	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
+	// 未结账房费
+	NoCheckoutPrice int64 `json:"no_checkout_price,omitempty" xml:"no_checkout_price,omitempty"`
+	// 已结账房费
+	CheckoutPrice int64 `json:"checkout_price,omitempty" xml:"checkout_price,omitempty"`
+	// 已结账总费用
+	CheckoutTotalFee int64 `json:"checkout_total_fee,omitempty" xml:"checkout_total_fee,omitempty"`
+	// 未结账总费用
+	NoCheckoutTotalFee int64 `json:"no_checkout_total_fee,omitempty" xml:"no_checkout_total_fee,omitempty"`
+	// 淘宝订单号
+	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 	// 未结账杂费
 	NoCheckoutOtherFee int64 `json:"no_checkout_other_fee,omitempty" xml:"no_checkout_other_fee,omitempty"`
 	// 已结账杂费
 	CheckoutOtherFee int64 `json:"checkout_other_fee,omitempty" xml:"checkout_other_fee,omitempty"`
-	// 备注
-	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 杂费明细列表
 	OtherFeeDetail *OtherFeeDetail `json:"other_fee_detail,omitempty" xml:"other_fee_detail,omitempty"`
 	// 每日房费类表

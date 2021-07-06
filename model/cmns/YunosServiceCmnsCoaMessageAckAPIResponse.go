@@ -20,10 +20,10 @@ type YunosServiceCmnsCoaMessageAckAPIResponseModel struct {
 	XMLName xml.Name `xml:"yunos_service_cmns_coa_message_ack_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 接口调用成功
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 接口出错提示信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// 接口调用成功
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 接口调用成功返回信息<br/>0:未到达 1：已到达
 	Data int64 `json:"data,omitempty" xml:"data,omitempty"`
 }

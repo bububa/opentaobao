@@ -2,6 +2,8 @@ package util
 
 // AssetQrCodeDto 结构体
 type AssetQrCodeDto struct {
+	// 生产二维码信息字符串
+	QrCodeStringList []string `json:"qr_code_string_list,omitempty" xml:"qr_code_string_list>string,omitempty"`
 	// 资产类型
 	AssetType string `json:"asset_type,omitempty" xml:"asset_type,omitempty"`
 	// 实物来源
@@ -16,8 +18,6 @@ type AssetQrCodeDto struct {
 	Sn string `json:"sn,omitempty" xml:"sn,omitempty"`
 	// 阿里侧部件型号(请求参数)
 	Mpn string `json:"mpn,omitempty" xml:"mpn,omitempty"`
-	// 生产二维码信息字符串
-	QrCodeStringList []string `json:"qr_code_string_list,omitempty" xml:"qr_code_string_list>string,omitempty"`
 	// 配件类型code(请求参数)
 	SpareCategoryCode string `json:"spare_category_code,omitempty" xml:"spare_category_code,omitempty"`
 	// 厂商代码(请求参数)

@@ -12,10 +12,10 @@ import (
 // 供应商拒绝收货确认单
 type TmallChannelTradeDeliverorderRejectAPIRequest struct {
 	model.Params
-	// 发货单号
-	_mainDeliverOrderNo int64
 	// 拒绝原因
 	_operateDesc string
+	// 发货单号
+	_mainDeliverOrderNo int64
 }
 
 // NewTmallChannelTradeDeliverorderRejectRequest 初始化TmallChannelTradeDeliverorderRejectAPIRequest对象
@@ -39,19 +39,6 @@ func (r TmallChannelTradeDeliverorderRejectAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// SetMainDeliverOrderNo is MainDeliverOrderNo Setter
-// 发货单号
-func (r *TmallChannelTradeDeliverorderRejectAPIRequest) SetMainDeliverOrderNo(_mainDeliverOrderNo int64) error {
-	r._mainDeliverOrderNo = _mainDeliverOrderNo
-	r.Set("main_deliver_order_no", _mainDeliverOrderNo)
-	return nil
-}
-
-// GetMainDeliverOrderNo MainDeliverOrderNo Getter
-func (r TmallChannelTradeDeliverorderRejectAPIRequest) GetMainDeliverOrderNo() int64 {
-	return r._mainDeliverOrderNo
-}
-
 // SetOperateDesc is OperateDesc Setter
 // 拒绝原因
 func (r *TmallChannelTradeDeliverorderRejectAPIRequest) SetOperateDesc(_operateDesc string) error {
@@ -63,4 +50,17 @@ func (r *TmallChannelTradeDeliverorderRejectAPIRequest) SetOperateDesc(_operateD
 // GetOperateDesc OperateDesc Getter
 func (r TmallChannelTradeDeliverorderRejectAPIRequest) GetOperateDesc() string {
 	return r._operateDesc
+}
+
+// SetMainDeliverOrderNo is MainDeliverOrderNo Setter
+// 发货单号
+func (r *TmallChannelTradeDeliverorderRejectAPIRequest) SetMainDeliverOrderNo(_mainDeliverOrderNo int64) error {
+	r._mainDeliverOrderNo = _mainDeliverOrderNo
+	r.Set("main_deliver_order_no", _mainDeliverOrderNo)
+	return nil
+}
+
+// GetMainDeliverOrderNo MainDeliverOrderNo Getter
+func (r TmallChannelTradeDeliverorderRejectAPIRequest) GetMainDeliverOrderNo() int64 {
+	return r._mainDeliverOrderNo
 }

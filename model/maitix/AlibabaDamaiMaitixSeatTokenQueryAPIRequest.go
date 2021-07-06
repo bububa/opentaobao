@@ -12,14 +12,14 @@ import (
 // 选座分销，分销商查询token
 type AlibabaDamaiMaitixSeatTokenQueryAPIRequest struct {
 	model.Params
-	// 场次ID-必填
-	_performId int64
-	// 项目ID-必填
-	_projectId int64
 	// 必填-选座结束跳转回去的url,这是渠道方自己的url地址,用于接收选座后的座位信息参数
 	_callbackUrl string
 	// 会话ID，保证一次选座会话,建议使用 appKey+随机串 生成 ；注意：同一个场次下的会话ID不能重复
 	_requestId string
+	// 场次ID-必填
+	_performId int64
+	// 项目ID-必填
+	_projectId int64
 }
 
 // NewAlibabaDamaiMaitixSeatTokenQueryRequest 初始化AlibabaDamaiMaitixSeatTokenQueryAPIRequest对象
@@ -41,32 +41,6 @@ func (r AlibabaDamaiMaitixSeatTokenQueryAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetPerformId is PerformId Setter
-// 场次ID-必填
-func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetPerformId(_performId int64) error {
-	r._performId = _performId
-	r.Set("perform_id", _performId)
-	return nil
-}
-
-// GetPerformId PerformId Getter
-func (r AlibabaDamaiMaitixSeatTokenQueryAPIRequest) GetPerformId() int64 {
-	return r._performId
-}
-
-// SetProjectId is ProjectId Setter
-// 项目ID-必填
-func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetProjectId(_projectId int64) error {
-	r._projectId = _projectId
-	r.Set("project_id", _projectId)
-	return nil
-}
-
-// GetProjectId ProjectId Getter
-func (r AlibabaDamaiMaitixSeatTokenQueryAPIRequest) GetProjectId() int64 {
-	return r._projectId
 }
 
 // SetCallbackUrl is CallbackUrl Setter
@@ -93,4 +67,30 @@ func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetRequestId(_requestId str
 // GetRequestId RequestId Getter
 func (r AlibabaDamaiMaitixSeatTokenQueryAPIRequest) GetRequestId() string {
 	return r._requestId
+}
+
+// SetPerformId is PerformId Setter
+// 场次ID-必填
+func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetPerformId(_performId int64) error {
+	r._performId = _performId
+	r.Set("perform_id", _performId)
+	return nil
+}
+
+// GetPerformId PerformId Getter
+func (r AlibabaDamaiMaitixSeatTokenQueryAPIRequest) GetPerformId() int64 {
+	return r._performId
+}
+
+// SetProjectId is ProjectId Setter
+// 项目ID-必填
+func (r *AlibabaDamaiMaitixSeatTokenQueryAPIRequest) SetProjectId(_projectId int64) error {
+	r._projectId = _projectId
+	r.Set("project_id", _projectId)
+	return nil
+}
+
+// GetProjectId ProjectId Getter
+func (r AlibabaDamaiMaitixSeatTokenQueryAPIRequest) GetProjectId() int64 {
+	return r._projectId
 }

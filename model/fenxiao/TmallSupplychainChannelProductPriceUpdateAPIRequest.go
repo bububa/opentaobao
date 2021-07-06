@@ -14,14 +14,14 @@ type TmallSupplychainChannelProductPriceUpdateAPIRequest struct {
 	model.Params
 	// 币种，非必填，仅支持当商品记为外币价格时使用
 	_currencyType string
-	// 产品数字ID
-	_productId int64
-	// 1.指导价(默认) 2.区域价
-	_priceType int64
 	// 属于这个sku的商品的价格 取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。
 	_skuPrice string
 	// 产品价格，必填
 	_productPrice string
+	// 产品数字ID
+	_productId int64
+	// 1.指导价(默认) 2.区域价
+	_priceType int64
 	// SKU ID
 	_skuId int64
 	// 渠道编码
@@ -62,32 +62,6 @@ func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetCurrencyType() s
 	return r._currencyType
 }
 
-// SetProductId is ProductId Setter
-// 产品数字ID
-func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetProductId(_productId int64) error {
-	r._productId = _productId
-	r.Set("product_id", _productId)
-	return nil
-}
-
-// GetProductId ProductId Getter
-func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetProductId() int64 {
-	return r._productId
-}
-
-// SetPriceType is PriceType Setter
-// 1.指导价(默认) 2.区域价
-func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetPriceType(_priceType int64) error {
-	r._priceType = _priceType
-	r.Set("price_type", _priceType)
-	return nil
-}
-
-// GetPriceType PriceType Getter
-func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetPriceType() int64 {
-	return r._priceType
-}
-
 // SetSkuPrice is SkuPrice Setter
 // 属于这个sku的商品的价格 取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。
 func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetSkuPrice(_skuPrice string) error {
@@ -112,6 +86,32 @@ func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetProductPrice(_p
 // GetProductPrice ProductPrice Getter
 func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetProductPrice() string {
 	return r._productPrice
+}
+
+// SetProductId is ProductId Setter
+// 产品数字ID
+func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// GetProductId ProductId Getter
+func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetProductId() int64 {
+	return r._productId
+}
+
+// SetPriceType is PriceType Setter
+// 1.指导价(默认) 2.区域价
+func (r *TmallSupplychainChannelProductPriceUpdateAPIRequest) SetPriceType(_priceType int64) error {
+	r._priceType = _priceType
+	r.Set("price_type", _priceType)
+	return nil
+}
+
+// GetPriceType PriceType Getter
+func (r TmallSupplychainChannelProductPriceUpdateAPIRequest) GetPriceType() int64 {
+	return r._priceType
 }
 
 // SetSkuId is SkuId Setter

@@ -16,40 +16,40 @@ type AlibabaIcbuProductUpdateFieldAPIRequest struct {
 	_attributes []ProductAttribute
 	// 根据数量设置的折扣价
 	_bulkDiscountPrices []BulkDiscountPrice
-	// 类目ID
-	_categoryId int64
+	// 关键词，不要包含特殊符号（如,;），最多三个
+	_keywords []string
 	// 商品详情描述，可包含图片中心的图片URL
 	_description string
 	// 补充信息
 	_extraContext string
-	// 分组ID
-	_groupId int64
-	// 关键词，不要包含特殊符号（如,;），最多三个
-	_keywords []string
 	// 语种，当前只有english
 	_language string
+	// 商品类型，在线批发商品(wholesale)或者询盘商品(sourcing)
+	_productType string
+	// 商品名称，最多128个字符
+	_subject string
+	// 发布的市场，支持main/onesite，默认main发到主市场，填onesite发布为商机通产品
+	_market string
+	// 混淆商品ID
+	_productId string
+	// 类目ID
+	_categoryId int64
+	// 分组ID
+	_groupId int64
 	// 商品主图
 	_mainImage *MainImage
 	// 商品SKU定义
 	_productSku *ProductSku
-	// 商品类型，在线批发商品(wholesale)或者询盘商品(sourcing)
-	_productType string
 	// 询盘商品交易信息
 	_sourcingTrade *SourcingTrade
-	// 商品名称，最多128个字符
-	_subject string
 	// 在线批发商品交易信息
 	_wholesaleTrade *WholesaleTrade
-	// 发布的市场，支持main/onesite，默认main发到主市场，填onesite发布为商机通产品
-	_market string
 	// 定制信息
 	_customInfo *CustomInfo
 	// 商品详情种类，true表示智能编辑，不填默认取商品原来的详情种类
 	_isSmartEdit bool
 	// 使用SKU价的时候需要传入这个参数
 	_useSkuPrice bool
-	// 混淆商品ID
-	_productId string
 }
 
 // NewAlibabaIcbuProductUpdateFieldRequest 初始化AlibabaIcbuProductUpdateFieldAPIRequest对象
@@ -99,17 +99,17 @@ func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetBulkDiscountPrices() []BulkD
 	return r._bulkDiscountPrices
 }
 
-// SetCategoryId is CategoryId Setter
-// 类目ID
-func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetCategoryId(_categoryId int64) error {
-	r._categoryId = _categoryId
-	r.Set("category_id", _categoryId)
+// SetKeywords is Keywords Setter
+// 关键词，不要包含特殊符号（如,;），最多三个
+func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetKeywords(_keywords []string) error {
+	r._keywords = _keywords
+	r.Set("keywords", _keywords)
 	return nil
 }
 
-// GetCategoryId CategoryId Getter
-func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetCategoryId() int64 {
-	return r._categoryId
+// GetKeywords Keywords Getter
+func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetKeywords() []string {
+	return r._keywords
 }
 
 // SetDescription is Description Setter
@@ -138,32 +138,6 @@ func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetExtraContext() string {
 	return r._extraContext
 }
 
-// SetGroupId is GroupId Setter
-// 分组ID
-func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetGroupId(_groupId int64) error {
-	r._groupId = _groupId
-	r.Set("group_id", _groupId)
-	return nil
-}
-
-// GetGroupId GroupId Getter
-func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetGroupId() int64 {
-	return r._groupId
-}
-
-// SetKeywords is Keywords Setter
-// 关键词，不要包含特殊符号（如,;），最多三个
-func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetKeywords(_keywords []string) error {
-	r._keywords = _keywords
-	r.Set("keywords", _keywords)
-	return nil
-}
-
-// GetKeywords Keywords Getter
-func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetKeywords() []string {
-	return r._keywords
-}
-
 // SetLanguage is Language Setter
 // 语种，当前只有english
 func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetLanguage(_language string) error {
@@ -175,6 +149,84 @@ func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetLanguage(_language string) 
 // GetLanguage Language Getter
 func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetLanguage() string {
 	return r._language
+}
+
+// SetProductType is ProductType Setter
+// 商品类型，在线批发商品(wholesale)或者询盘商品(sourcing)
+func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetProductType(_productType string) error {
+	r._productType = _productType
+	r.Set("product_type", _productType)
+	return nil
+}
+
+// GetProductType ProductType Getter
+func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetProductType() string {
+	return r._productType
+}
+
+// SetSubject is Subject Setter
+// 商品名称，最多128个字符
+func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetSubject(_subject string) error {
+	r._subject = _subject
+	r.Set("subject", _subject)
+	return nil
+}
+
+// GetSubject Subject Getter
+func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetSubject() string {
+	return r._subject
+}
+
+// SetMarket is Market Setter
+// 发布的市场，支持main/onesite，默认main发到主市场，填onesite发布为商机通产品
+func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetMarket(_market string) error {
+	r._market = _market
+	r.Set("market", _market)
+	return nil
+}
+
+// GetMarket Market Getter
+func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetMarket() string {
+	return r._market
+}
+
+// SetProductId is ProductId Setter
+// 混淆商品ID
+func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetProductId(_productId string) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// GetProductId ProductId Getter
+func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetProductId() string {
+	return r._productId
+}
+
+// SetCategoryId is CategoryId Setter
+// 类目ID
+func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetCategoryId(_categoryId int64) error {
+	r._categoryId = _categoryId
+	r.Set("category_id", _categoryId)
+	return nil
+}
+
+// GetCategoryId CategoryId Getter
+func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetCategoryId() int64 {
+	return r._categoryId
+}
+
+// SetGroupId is GroupId Setter
+// 分组ID
+func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetGroupId(_groupId int64) error {
+	r._groupId = _groupId
+	r.Set("group_id", _groupId)
+	return nil
+}
+
+// GetGroupId GroupId Getter
+func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetGroupId() int64 {
+	return r._groupId
 }
 
 // SetMainImage is MainImage Setter
@@ -203,19 +255,6 @@ func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetProductSku() *ProductSku {
 	return r._productSku
 }
 
-// SetProductType is ProductType Setter
-// 商品类型，在线批发商品(wholesale)或者询盘商品(sourcing)
-func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetProductType(_productType string) error {
-	r._productType = _productType
-	r.Set("product_type", _productType)
-	return nil
-}
-
-// GetProductType ProductType Getter
-func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetProductType() string {
-	return r._productType
-}
-
 // SetSourcingTrade is SourcingTrade Setter
 // 询盘商品交易信息
 func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetSourcingTrade(_sourcingTrade *SourcingTrade) error {
@@ -229,19 +268,6 @@ func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetSourcingTrade() *SourcingTra
 	return r._sourcingTrade
 }
 
-// SetSubject is Subject Setter
-// 商品名称，最多128个字符
-func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetSubject(_subject string) error {
-	r._subject = _subject
-	r.Set("subject", _subject)
-	return nil
-}
-
-// GetSubject Subject Getter
-func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetSubject() string {
-	return r._subject
-}
-
 // SetWholesaleTrade is WholesaleTrade Setter
 // 在线批发商品交易信息
 func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetWholesaleTrade(_wholesaleTrade *WholesaleTrade) error {
@@ -253,19 +279,6 @@ func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetWholesaleTrade(_wholesaleTr
 // GetWholesaleTrade WholesaleTrade Getter
 func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetWholesaleTrade() *WholesaleTrade {
 	return r._wholesaleTrade
-}
-
-// SetMarket is Market Setter
-// 发布的市场，支持main/onesite，默认main发到主市场，填onesite发布为商机通产品
-func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetMarket(_market string) error {
-	r._market = _market
-	r.Set("market", _market)
-	return nil
-}
-
-// GetMarket Market Getter
-func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetMarket() string {
-	return r._market
 }
 
 // SetCustomInfo is CustomInfo Setter
@@ -305,17 +318,4 @@ func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetUseSkuPrice(_useSkuPrice bo
 // GetUseSkuPrice UseSkuPrice Getter
 func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetUseSkuPrice() bool {
 	return r._useSkuPrice
-}
-
-// SetProductId is ProductId Setter
-// 混淆商品ID
-func (r *AlibabaIcbuProductUpdateFieldAPIRequest) SetProductId(_productId string) error {
-	r._productId = _productId
-	r.Set("product_id", _productId)
-	return nil
-}
-
-// GetProductId ProductId Getter
-func (r AlibabaIcbuProductUpdateFieldAPIRequest) GetProductId() string {
-	return r._productId
 }

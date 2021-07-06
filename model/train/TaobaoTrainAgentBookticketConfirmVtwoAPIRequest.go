@@ -12,20 +12,12 @@ import (
 // 火车票代理商接口——确认出票是否成功
 type TaobaoTrainAgentBookticketConfirmVtwoAPIRequest struct {
 	model.Params
-	// 错误的子订单号123434,123432
-	_subOrderId string
-	// 是否支持在线退改签
-	_canChange bool
-	// 主订单id
-	_mainOrderId int64
-	// 是否成功
-	_status bool
-	// 代理商id
-	_agentId int64
 	// 火车票id;单价;坐席;座次号;车次;乘车人姓名;证件类型;证件号码;保单号;保单价格特别注意:票价、保险价格必须到分,例如10元,输入为1000.
 	_tickets []string
-	// 订单中包含的票数量
-	_ticketNum int64
+	// 票信息列表
+	_ticketInfoList []OrderTicketInfo
+	// 错误的子订单号123434,123432
+	_subOrderId string
 	// 出发时间
 	_depDate string
 	// 12306成功出票id
@@ -34,8 +26,6 @@ type TaobaoTrainAgentBookticketConfirmVtwoAPIRequest struct {
 	_failMsg string
 	// 支付宝交易流水号
 	_alipayTradeNo string
-	// 订单类型0 代购 1直购 3抢票
-	_orderType int64
 	// 支付宝账号
 	_alipayAccount string
 	// 到达时间
@@ -50,8 +40,18 @@ type TaobaoTrainAgentBookticketConfirmVtwoAPIRequest struct {
 	_expectDeliveryTime string
 	// 扩展字段
 	_extendParams string
-	// 票信息列表
-	_ticketInfoList []OrderTicketInfo
+	// 主订单id
+	_mainOrderId int64
+	// 代理商id
+	_agentId int64
+	// 订单中包含的票数量
+	_ticketNum int64
+	// 订单类型0 代购 1直购 3抢票
+	_orderType int64
+	// 是否支持在线退改签
+	_canChange bool
+	// 是否成功
+	_status bool
 }
 
 // NewTaobaoTrainAgentBookticketConfirmVtwoRequest 初始化TaobaoTrainAgentBookticketConfirmVtwoAPIRequest对象
@@ -75,71 +75,6 @@ func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// SetSubOrderId is SubOrderId Setter
-// 错误的子订单号123434,123432
-func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetSubOrderId(_subOrderId string) error {
-	r._subOrderId = _subOrderId
-	r.Set("sub_order_id", _subOrderId)
-	return nil
-}
-
-// GetSubOrderId SubOrderId Getter
-func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetSubOrderId() string {
-	return r._subOrderId
-}
-
-// SetCanChange is CanChange Setter
-// 是否支持在线退改签
-func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetCanChange(_canChange bool) error {
-	r._canChange = _canChange
-	r.Set("can_change", _canChange)
-	return nil
-}
-
-// GetCanChange CanChange Getter
-func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetCanChange() bool {
-	return r._canChange
-}
-
-// SetMainOrderId is MainOrderId Setter
-// 主订单id
-func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetMainOrderId(_mainOrderId int64) error {
-	r._mainOrderId = _mainOrderId
-	r.Set("main_order_id", _mainOrderId)
-	return nil
-}
-
-// GetMainOrderId MainOrderId Getter
-func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetMainOrderId() int64 {
-	return r._mainOrderId
-}
-
-// SetStatus is Status Setter
-// 是否成功
-func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetStatus(_status bool) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetStatus() bool {
-	return r._status
-}
-
-// SetAgentId is AgentId Setter
-// 代理商id
-func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetAgentId(_agentId int64) error {
-	r._agentId = _agentId
-	r.Set("agent_id", _agentId)
-	return nil
-}
-
-// GetAgentId AgentId Getter
-func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetAgentId() int64 {
-	return r._agentId
-}
-
 // SetTickets is Tickets Setter
 // 火车票id;单价;坐席;座次号;车次;乘车人姓名;证件类型;证件号码;保单号;保单价格特别注意:票价、保险价格必须到分,例如10元,输入为1000.
 func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetTickets(_tickets []string) error {
@@ -153,17 +88,30 @@ func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetTickets() []string {
 	return r._tickets
 }
 
-// SetTicketNum is TicketNum Setter
-// 订单中包含的票数量
-func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetTicketNum(_ticketNum int64) error {
-	r._ticketNum = _ticketNum
-	r.Set("ticket_num", _ticketNum)
+// SetTicketInfoList is TicketInfoList Setter
+// 票信息列表
+func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetTicketInfoList(_ticketInfoList []OrderTicketInfo) error {
+	r._ticketInfoList = _ticketInfoList
+	r.Set("ticket_info_list", _ticketInfoList)
 	return nil
 }
 
-// GetTicketNum TicketNum Getter
-func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetTicketNum() int64 {
-	return r._ticketNum
+// GetTicketInfoList TicketInfoList Getter
+func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetTicketInfoList() []OrderTicketInfo {
+	return r._ticketInfoList
+}
+
+// SetSubOrderId is SubOrderId Setter
+// 错误的子订单号123434,123432
+func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetSubOrderId(_subOrderId string) error {
+	r._subOrderId = _subOrderId
+	r.Set("sub_order_id", _subOrderId)
+	return nil
+}
+
+// GetSubOrderId SubOrderId Getter
+func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetSubOrderId() string {
+	return r._subOrderId
 }
 
 // SetDepDate is DepDate Setter
@@ -216,19 +164,6 @@ func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetAlipayTradeNo(_alip
 // GetAlipayTradeNo AlipayTradeNo Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetAlipayTradeNo() string {
 	return r._alipayTradeNo
-}
-
-// SetOrderType is OrderType Setter
-// 订单类型0 代购 1直购 3抢票
-func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetOrderType(_orderType int64) error {
-	r._orderType = _orderType
-	r.Set("order_type", _orderType)
-	return nil
-}
-
-// GetOrderType OrderType Getter
-func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetOrderType() int64 {
-	return r._orderType
 }
 
 // SetAlipayAccount is AlipayAccount Setter
@@ -322,15 +257,80 @@ func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetExtendParams() strin
 	return r._extendParams
 }
 
-// SetTicketInfoList is TicketInfoList Setter
-// 票信息列表
-func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetTicketInfoList(_ticketInfoList []OrderTicketInfo) error {
-	r._ticketInfoList = _ticketInfoList
-	r.Set("ticket_info_list", _ticketInfoList)
+// SetMainOrderId is MainOrderId Setter
+// 主订单id
+func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+	r._mainOrderId = _mainOrderId
+	r.Set("main_order_id", _mainOrderId)
 	return nil
 }
 
-// GetTicketInfoList TicketInfoList Getter
-func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetTicketInfoList() []OrderTicketInfo {
-	return r._ticketInfoList
+// GetMainOrderId MainOrderId Getter
+func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetMainOrderId() int64 {
+	return r._mainOrderId
+}
+
+// SetAgentId is AgentId Setter
+// 代理商id
+func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetAgentId(_agentId int64) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// GetAgentId AgentId Getter
+func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetAgentId() int64 {
+	return r._agentId
+}
+
+// SetTicketNum is TicketNum Setter
+// 订单中包含的票数量
+func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetTicketNum(_ticketNum int64) error {
+	r._ticketNum = _ticketNum
+	r.Set("ticket_num", _ticketNum)
+	return nil
+}
+
+// GetTicketNum TicketNum Getter
+func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetTicketNum() int64 {
+	return r._ticketNum
+}
+
+// SetOrderType is OrderType Setter
+// 订单类型0 代购 1直购 3抢票
+func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetOrderType(_orderType int64) error {
+	r._orderType = _orderType
+	r.Set("order_type", _orderType)
+	return nil
+}
+
+// GetOrderType OrderType Getter
+func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetOrderType() int64 {
+	return r._orderType
+}
+
+// SetCanChange is CanChange Setter
+// 是否支持在线退改签
+func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetCanChange(_canChange bool) error {
+	r._canChange = _canChange
+	r.Set("can_change", _canChange)
+	return nil
+}
+
+// GetCanChange CanChange Getter
+func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetCanChange() bool {
+	return r._canChange
+}
+
+// SetStatus is Status Setter
+// 是否成功
+func (r *TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) SetStatus(_status bool) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TaobaoTrainAgentBookticketConfirmVtwoAPIRequest) GetStatus() bool {
+	return r._status
 }

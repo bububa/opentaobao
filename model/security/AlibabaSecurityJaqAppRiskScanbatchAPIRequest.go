@@ -12,10 +12,10 @@ import (
 // 批量提交应用进行风险扫描(含漏洞扫描、恶意代码检测),扫描完成后可通过对应的查询接口查询扫描结果
 type AlibabaSecurityJaqAppRiskScanbatchAPIRequest struct {
 	model.Params
-	// APP信息
-	_appInfo *AppInfoBatch
 	// 扫描类型
 	_scanTypes []string
+	// APP信息
+	_appInfo *AppInfoBatch
 }
 
 // NewAlibabaSecurityJaqAppRiskScanbatchRequest 初始化AlibabaSecurityJaqAppRiskScanbatchAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaSecurityJaqAppRiskScanbatchAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// SetAppInfo is AppInfo Setter
-// APP信息
-func (r *AlibabaSecurityJaqAppRiskScanbatchAPIRequest) SetAppInfo(_appInfo *AppInfoBatch) error {
-	r._appInfo = _appInfo
-	r.Set("app_info", _appInfo)
-	return nil
-}
-
-// GetAppInfo AppInfo Getter
-func (r AlibabaSecurityJaqAppRiskScanbatchAPIRequest) GetAppInfo() *AppInfoBatch {
-	return r._appInfo
-}
-
 // SetScanTypes is ScanTypes Setter
 // 扫描类型
 func (r *AlibabaSecurityJaqAppRiskScanbatchAPIRequest) SetScanTypes(_scanTypes []string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaSecurityJaqAppRiskScanbatchAPIRequest) SetScanTypes(_scanTypes [
 // GetScanTypes ScanTypes Getter
 func (r AlibabaSecurityJaqAppRiskScanbatchAPIRequest) GetScanTypes() []string {
 	return r._scanTypes
+}
+
+// SetAppInfo is AppInfo Setter
+// APP信息
+func (r *AlibabaSecurityJaqAppRiskScanbatchAPIRequest) SetAppInfo(_appInfo *AppInfoBatch) error {
+	r._appInfo = _appInfo
+	r.Set("app_info", _appInfo)
+	return nil
+}
+
+// GetAppInfo AppInfo Getter
+func (r AlibabaSecurityJaqAppRiskScanbatchAPIRequest) GetAppInfo() *AppInfoBatch {
+	return r._appInfo
 }

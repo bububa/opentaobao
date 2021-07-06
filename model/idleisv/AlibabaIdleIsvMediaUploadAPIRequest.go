@@ -12,10 +12,10 @@ import (
 // 供外部服务商ISV进行闲鱼商品发布时上传商品所需图片
 type AlibabaIdleIsvMediaUploadAPIRequest struct {
 	model.Params
-	// 多媒体字节数组
-	_data *model.File
 	// 文件名
 	_name string
+	// 多媒体字节数组
+	_data *model.File
 	// 0-表示图片，1-表示视频（暂不支持）
 	_type int64
 }
@@ -41,19 +41,6 @@ func (r AlibabaIdleIsvMediaUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetData is Data Setter
-// 多媒体字节数组
-func (r *AlibabaIdleIsvMediaUploadAPIRequest) SetData(_data *model.File) error {
-	r._data = _data
-	r.Set("data", _data)
-	return nil
-}
-
-// GetData Data Getter
-func (r AlibabaIdleIsvMediaUploadAPIRequest) GetData() *model.File {
-	return r._data
-}
-
 // SetName is Name Setter
 // 文件名
 func (r *AlibabaIdleIsvMediaUploadAPIRequest) SetName(_name string) error {
@@ -65,6 +52,19 @@ func (r *AlibabaIdleIsvMediaUploadAPIRequest) SetName(_name string) error {
 // GetName Name Getter
 func (r AlibabaIdleIsvMediaUploadAPIRequest) GetName() string {
 	return r._name
+}
+
+// SetData is Data Setter
+// 多媒体字节数组
+func (r *AlibabaIdleIsvMediaUploadAPIRequest) SetData(_data *model.File) error {
+	r._data = _data
+	r.Set("data", _data)
+	return nil
+}
+
+// GetData Data Getter
+func (r AlibabaIdleIsvMediaUploadAPIRequest) GetData() *model.File {
+	return r._data
 }
 
 // SetType is Type Setter

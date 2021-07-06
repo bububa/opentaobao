@@ -12,18 +12,12 @@ import (
 // 此接口用于更新一个酒店商品，根据传入的gid更新商品信息，该商品必须为对应的发布者才能执行更新操作。如果对应的商品在酒店系统中不存在，则会返回错误提示。
 type TaobaoXhotelRoomUpdateAPIRequest struct {
 	model.Params
-	// 废弃，使用out_rid
-	_gid int64
 	// 废弃，宝贝名称展示在店铺里
 	_title string
 	// 废弃，房型购买须知展示在PC购物路径
 	_guide string
 	// 废弃，宝贝描述展示在宝贝详情页面
 	_desc string
-	// 废弃，宝贝图片，没有默认使用标准酒店房型图片
-	_pic *model.File
-	// 废弃，房型是否提供发票
-	_hasReceipt bool
 	// 废弃，房型发票类型。A,B。分别代表： A:酒店住宿发票,B:其他
 	_receiptType string
 	// 废弃，房型发票类型为其他时的发票描述,不能超过30个字
@@ -46,8 +40,14 @@ type TaobaoXhotelRoomUpdateAPIRequest struct {
 	_allotmentEndTime string
 	// 保留房库存截止时间
 	_allotmentStartTime string
+	// 废弃，使用out_rid
+	_gid int64
+	// 废弃，宝贝图片，没有默认使用标准酒店房型图片
+	_pic *model.File
 	// 宝贝状态,1上架。
 	_status int64
+	// 废弃，房型是否提供发票
+	_hasReceipt bool
 }
 
 // NewTaobaoXhotelRoomUpdateRequest 初始化TaobaoXhotelRoomUpdateAPIRequest对象
@@ -69,19 +69,6 @@ func (r TaobaoXhotelRoomUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetGid is Gid Setter
-// 废弃，使用out_rid
-func (r *TaobaoXhotelRoomUpdateAPIRequest) SetGid(_gid int64) error {
-	r._gid = _gid
-	r.Set("gid", _gid)
-	return nil
-}
-
-// GetGid Gid Getter
-func (r TaobaoXhotelRoomUpdateAPIRequest) GetGid() int64 {
-	return r._gid
 }
 
 // SetTitle is Title Setter
@@ -121,32 +108,6 @@ func (r *TaobaoXhotelRoomUpdateAPIRequest) SetDesc(_desc string) error {
 // GetDesc Desc Getter
 func (r TaobaoXhotelRoomUpdateAPIRequest) GetDesc() string {
 	return r._desc
-}
-
-// SetPic is Pic Setter
-// 废弃，宝贝图片，没有默认使用标准酒店房型图片
-func (r *TaobaoXhotelRoomUpdateAPIRequest) SetPic(_pic *model.File) error {
-	r._pic = _pic
-	r.Set("pic", _pic)
-	return nil
-}
-
-// GetPic Pic Getter
-func (r TaobaoXhotelRoomUpdateAPIRequest) GetPic() *model.File {
-	return r._pic
-}
-
-// SetHasReceipt is HasReceipt Setter
-// 废弃，房型是否提供发票
-func (r *TaobaoXhotelRoomUpdateAPIRequest) SetHasReceipt(_hasReceipt bool) error {
-	r._hasReceipt = _hasReceipt
-	r.Set("has_receipt", _hasReceipt)
-	return nil
-}
-
-// GetHasReceipt HasReceipt Getter
-func (r TaobaoXhotelRoomUpdateAPIRequest) GetHasReceipt() bool {
-	return r._hasReceipt
 }
 
 // SetReceiptType is ReceiptType Setter
@@ -292,6 +253,32 @@ func (r TaobaoXhotelRoomUpdateAPIRequest) GetAllotmentStartTime() string {
 	return r._allotmentStartTime
 }
 
+// SetGid is Gid Setter
+// 废弃，使用out_rid
+func (r *TaobaoXhotelRoomUpdateAPIRequest) SetGid(_gid int64) error {
+	r._gid = _gid
+	r.Set("gid", _gid)
+	return nil
+}
+
+// GetGid Gid Getter
+func (r TaobaoXhotelRoomUpdateAPIRequest) GetGid() int64 {
+	return r._gid
+}
+
+// SetPic is Pic Setter
+// 废弃，宝贝图片，没有默认使用标准酒店房型图片
+func (r *TaobaoXhotelRoomUpdateAPIRequest) SetPic(_pic *model.File) error {
+	r._pic = _pic
+	r.Set("pic", _pic)
+	return nil
+}
+
+// GetPic Pic Getter
+func (r TaobaoXhotelRoomUpdateAPIRequest) GetPic() *model.File {
+	return r._pic
+}
+
 // SetStatus is Status Setter
 // 宝贝状态,1上架。
 func (r *TaobaoXhotelRoomUpdateAPIRequest) SetStatus(_status int64) error {
@@ -303,4 +290,17 @@ func (r *TaobaoXhotelRoomUpdateAPIRequest) SetStatus(_status int64) error {
 // GetStatus Status Getter
 func (r TaobaoXhotelRoomUpdateAPIRequest) GetStatus() int64 {
 	return r._status
+}
+
+// SetHasReceipt is HasReceipt Setter
+// 废弃，房型是否提供发票
+func (r *TaobaoXhotelRoomUpdateAPIRequest) SetHasReceipt(_hasReceipt bool) error {
+	r._hasReceipt = _hasReceipt
+	r.Set("has_receipt", _hasReceipt)
+	return nil
+}
+
+// GetHasReceipt HasReceipt Getter
+func (r TaobaoXhotelRoomUpdateAPIRequest) GetHasReceipt() bool {
+	return r._hasReceipt
 }

@@ -18,12 +18,12 @@ type BaseBusinessDto struct {
 	NamePinyinSimple string `json:"name_pinyin_simple,omitempty" xml:"name_pinyin_simple,omitempty"`
 	// 区域类型
 	RegionType string `json:"region_type,omitempty" xml:"region_type,omitempty"`
-	// 区域代码
-	RegionId int64 `json:"region_id,omitempty" xml:"region_id,omitempty"`
-	// 城市代码
-	AreaId int64 `json:"area_id,omitempty" xml:"area_id,omitempty"`
 	// 是否删除 1 删除 0 不删（默认为0）
 	IsDeleted string `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
 	// 外部ID -- 唯一
 	OuterBusinessId string `json:"outer_business_id,omitempty" xml:"outer_business_id,omitempty"`
+	// 区域代码
+	RegionId int64 `json:"region_id,omitempty" xml:"region_id,omitempty"`
+	// 城市代码
+	AreaId int64 `json:"area_id,omitempty" xml:"area_id,omitempty"`
 }

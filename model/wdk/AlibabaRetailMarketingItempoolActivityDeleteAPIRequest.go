@@ -12,12 +12,12 @@ import (
 // 同城零售商品池活动删除
 type AlibabaRetailMarketingItempoolActivityDeleteAPIRequest struct {
 	model.Params
-	// 同城零售活动Id
-	_actId int64
 	// 操作人id
 	_creatorId string
 	// 操作人名称
 	_creatorName string
+	// 同城零售活动Id
+	_actId int64
 }
 
 // NewAlibabaRetailMarketingItempoolActivityDeleteRequest 初始化AlibabaRetailMarketingItempoolActivityDeleteAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetApiParams() u
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetActId is ActId Setter
-// 同城零售活动Id
-func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetActId(_actId int64) error {
-	r._actId = _actId
-	r.Set("act_id", _actId)
-	return nil
-}
-
-// GetActId ActId Getter
-func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetActId() int64 {
-	return r._actId
 }
 
 // SetCreatorId is CreatorId Setter
@@ -78,4 +65,17 @@ func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetCreatorName(
 // GetCreatorName CreatorName Getter
 func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetCreatorName() string {
 	return r._creatorName
+}
+
+// SetActId is ActId Setter
+// 同城零售活动Id
+func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetActId(_actId int64) error {
+	r._actId = _actId
+	r.Set("act_id", _actId)
+	return nil
+}
+
+// GetActId ActId Getter
+func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetActId() int64 {
+	return r._actId
 }

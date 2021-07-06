@@ -12,30 +12,30 @@ import (
 // 阿里巴巴权益平台权益投放接口
 type AlibabaLatourStrategyShowAPIRequest struct {
 	model.Params
-	// 带出测试权益
-	_withTestBenefit bool
 	// 渠道
 	_channel string
-	// 每页权益数
-	_pageSize int64
 	// 要转换的账户类型
 	_transformedUserType string
-	// 是否需要调用安全校验服务
-	_needIdentifyRisk bool
 	// 用户昵称，除非有特殊申请，默认不允许使用该参数，请通过用户授权token传递用户信息
 	_userNick string
-	// 不带出hadWin状态
-	_skipWithHadWin bool
-	// 过滤无库存权益
-	_filterEmptyInventory bool
 	// 用户id，除非有特殊申请，默认不允许使用该参数，请通过用户授权token传递用户信息
 	_userId string
 	// 投放计划code
 	_strategyCode string
 	// 当面账户类型
 	_userType string
+	// 每页权益数
+	_pageSize int64
 	// 当面分页
 	_currentPage int64
+	// 带出测试权益
+	_withTestBenefit bool
+	// 是否需要调用安全校验服务
+	_needIdentifyRisk bool
+	// 不带出hadWin状态
+	_skipWithHadWin bool
+	// 过滤无库存权益
+	_filterEmptyInventory bool
 	// 过滤人群
 	_filterCrowd bool
 }
@@ -61,19 +61,6 @@ func (r AlibabaLatourStrategyShowAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetWithTestBenefit is WithTestBenefit Setter
-// 带出测试权益
-func (r *AlibabaLatourStrategyShowAPIRequest) SetWithTestBenefit(_withTestBenefit bool) error {
-	r._withTestBenefit = _withTestBenefit
-	r.Set("with_test_benefit", _withTestBenefit)
-	return nil
-}
-
-// GetWithTestBenefit WithTestBenefit Getter
-func (r AlibabaLatourStrategyShowAPIRequest) GetWithTestBenefit() bool {
-	return r._withTestBenefit
-}
-
 // SetChannel is Channel Setter
 // 渠道
 func (r *AlibabaLatourStrategyShowAPIRequest) SetChannel(_channel string) error {
@@ -85,19 +72,6 @@ func (r *AlibabaLatourStrategyShowAPIRequest) SetChannel(_channel string) error 
 // GetChannel Channel Getter
 func (r AlibabaLatourStrategyShowAPIRequest) GetChannel() string {
 	return r._channel
-}
-
-// SetPageSize is PageSize Setter
-// 每页权益数
-func (r *AlibabaLatourStrategyShowAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlibabaLatourStrategyShowAPIRequest) GetPageSize() int64 {
-	return r._pageSize
 }
 
 // SetTransformedUserType is TransformedUserType Setter
@@ -113,19 +87,6 @@ func (r AlibabaLatourStrategyShowAPIRequest) GetTransformedUserType() string {
 	return r._transformedUserType
 }
 
-// SetNeedIdentifyRisk is NeedIdentifyRisk Setter
-// 是否需要调用安全校验服务
-func (r *AlibabaLatourStrategyShowAPIRequest) SetNeedIdentifyRisk(_needIdentifyRisk bool) error {
-	r._needIdentifyRisk = _needIdentifyRisk
-	r.Set("need_identify_risk", _needIdentifyRisk)
-	return nil
-}
-
-// GetNeedIdentifyRisk NeedIdentifyRisk Getter
-func (r AlibabaLatourStrategyShowAPIRequest) GetNeedIdentifyRisk() bool {
-	return r._needIdentifyRisk
-}
-
 // SetUserNick is UserNick Setter
 // 用户昵称，除非有特殊申请，默认不允许使用该参数，请通过用户授权token传递用户信息
 func (r *AlibabaLatourStrategyShowAPIRequest) SetUserNick(_userNick string) error {
@@ -137,32 +98,6 @@ func (r *AlibabaLatourStrategyShowAPIRequest) SetUserNick(_userNick string) erro
 // GetUserNick UserNick Getter
 func (r AlibabaLatourStrategyShowAPIRequest) GetUserNick() string {
 	return r._userNick
-}
-
-// SetSkipWithHadWin is SkipWithHadWin Setter
-// 不带出hadWin状态
-func (r *AlibabaLatourStrategyShowAPIRequest) SetSkipWithHadWin(_skipWithHadWin bool) error {
-	r._skipWithHadWin = _skipWithHadWin
-	r.Set("skip_with_had_win", _skipWithHadWin)
-	return nil
-}
-
-// GetSkipWithHadWin SkipWithHadWin Getter
-func (r AlibabaLatourStrategyShowAPIRequest) GetSkipWithHadWin() bool {
-	return r._skipWithHadWin
-}
-
-// SetFilterEmptyInventory is FilterEmptyInventory Setter
-// 过滤无库存权益
-func (r *AlibabaLatourStrategyShowAPIRequest) SetFilterEmptyInventory(_filterEmptyInventory bool) error {
-	r._filterEmptyInventory = _filterEmptyInventory
-	r.Set("filter_empty_inventory", _filterEmptyInventory)
-	return nil
-}
-
-// GetFilterEmptyInventory FilterEmptyInventory Getter
-func (r AlibabaLatourStrategyShowAPIRequest) GetFilterEmptyInventory() bool {
-	return r._filterEmptyInventory
 }
 
 // SetUserId is UserId Setter
@@ -204,6 +139,19 @@ func (r AlibabaLatourStrategyShowAPIRequest) GetUserType() string {
 	return r._userType
 }
 
+// SetPageSize is PageSize Setter
+// 每页权益数
+func (r *AlibabaLatourStrategyShowAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlibabaLatourStrategyShowAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
 // SetCurrentPage is CurrentPage Setter
 // 当面分页
 func (r *AlibabaLatourStrategyShowAPIRequest) SetCurrentPage(_currentPage int64) error {
@@ -215,6 +163,58 @@ func (r *AlibabaLatourStrategyShowAPIRequest) SetCurrentPage(_currentPage int64)
 // GetCurrentPage CurrentPage Getter
 func (r AlibabaLatourStrategyShowAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
+}
+
+// SetWithTestBenefit is WithTestBenefit Setter
+// 带出测试权益
+func (r *AlibabaLatourStrategyShowAPIRequest) SetWithTestBenefit(_withTestBenefit bool) error {
+	r._withTestBenefit = _withTestBenefit
+	r.Set("with_test_benefit", _withTestBenefit)
+	return nil
+}
+
+// GetWithTestBenefit WithTestBenefit Getter
+func (r AlibabaLatourStrategyShowAPIRequest) GetWithTestBenefit() bool {
+	return r._withTestBenefit
+}
+
+// SetNeedIdentifyRisk is NeedIdentifyRisk Setter
+// 是否需要调用安全校验服务
+func (r *AlibabaLatourStrategyShowAPIRequest) SetNeedIdentifyRisk(_needIdentifyRisk bool) error {
+	r._needIdentifyRisk = _needIdentifyRisk
+	r.Set("need_identify_risk", _needIdentifyRisk)
+	return nil
+}
+
+// GetNeedIdentifyRisk NeedIdentifyRisk Getter
+func (r AlibabaLatourStrategyShowAPIRequest) GetNeedIdentifyRisk() bool {
+	return r._needIdentifyRisk
+}
+
+// SetSkipWithHadWin is SkipWithHadWin Setter
+// 不带出hadWin状态
+func (r *AlibabaLatourStrategyShowAPIRequest) SetSkipWithHadWin(_skipWithHadWin bool) error {
+	r._skipWithHadWin = _skipWithHadWin
+	r.Set("skip_with_had_win", _skipWithHadWin)
+	return nil
+}
+
+// GetSkipWithHadWin SkipWithHadWin Getter
+func (r AlibabaLatourStrategyShowAPIRequest) GetSkipWithHadWin() bool {
+	return r._skipWithHadWin
+}
+
+// SetFilterEmptyInventory is FilterEmptyInventory Setter
+// 过滤无库存权益
+func (r *AlibabaLatourStrategyShowAPIRequest) SetFilterEmptyInventory(_filterEmptyInventory bool) error {
+	r._filterEmptyInventory = _filterEmptyInventory
+	r.Set("filter_empty_inventory", _filterEmptyInventory)
+	return nil
+}
+
+// GetFilterEmptyInventory FilterEmptyInventory Getter
+func (r AlibabaLatourStrategyShowAPIRequest) GetFilterEmptyInventory() bool {
+	return r._filterEmptyInventory
 }
 
 // SetFilterCrowd is FilterCrowd Setter

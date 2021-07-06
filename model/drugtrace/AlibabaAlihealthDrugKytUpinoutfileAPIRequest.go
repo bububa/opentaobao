@@ -16,10 +16,6 @@ type AlibabaAlihealthDrugKytUpinoutfileAPIRequest struct {
 	_billCode string
 	// 单据时间
 	_billTime string
-	// 单据类型【102代表采购入库】
-	_billType int64
-	// 药品类型【3普药2特药】
-	_physicType int64
 	// 上传企业的单位编码
 	_refUserId string
 	// 代理企业REF标识
@@ -60,6 +56,10 @@ type AlibabaAlihealthDrugKytUpinoutfileAPIRequest struct {
 	_superviserName string
 	// 监督人证件号【销毁出库时填写】
 	_superviserCode string
+	// 单据类型【102代表采购入库】
+	_billType int64
+	// 药品类型【3普药2特药】
+	_physicType int64
 }
 
 // NewAlibabaAlihealthDrugKytUpinoutfileRequest 初始化AlibabaAlihealthDrugKytUpinoutfileAPIRequest对象
@@ -107,32 +107,6 @@ func (r *AlibabaAlihealthDrugKytUpinoutfileAPIRequest) SetBillTime(_billTime str
 // GetBillTime BillTime Getter
 func (r AlibabaAlihealthDrugKytUpinoutfileAPIRequest) GetBillTime() string {
 	return r._billTime
-}
-
-// SetBillType is BillType Setter
-// 单据类型【102代表采购入库】
-func (r *AlibabaAlihealthDrugKytUpinoutfileAPIRequest) SetBillType(_billType int64) error {
-	r._billType = _billType
-	r.Set("bill_type", _billType)
-	return nil
-}
-
-// GetBillType BillType Getter
-func (r AlibabaAlihealthDrugKytUpinoutfileAPIRequest) GetBillType() int64 {
-	return r._billType
-}
-
-// SetPhysicType is PhysicType Setter
-// 药品类型【3普药2特药】
-func (r *AlibabaAlihealthDrugKytUpinoutfileAPIRequest) SetPhysicType(_physicType int64) error {
-	r._physicType = _physicType
-	r.Set("physic_type", _physicType)
-	return nil
-}
-
-// GetPhysicType PhysicType Getter
-func (r AlibabaAlihealthDrugKytUpinoutfileAPIRequest) GetPhysicType() int64 {
-	return r._physicType
 }
 
 // SetRefUserId is RefUserId Setter
@@ -393,4 +367,30 @@ func (r *AlibabaAlihealthDrugKytUpinoutfileAPIRequest) SetSuperviserCode(_superv
 // GetSuperviserCode SuperviserCode Getter
 func (r AlibabaAlihealthDrugKytUpinoutfileAPIRequest) GetSuperviserCode() string {
 	return r._superviserCode
+}
+
+// SetBillType is BillType Setter
+// 单据类型【102代表采购入库】
+func (r *AlibabaAlihealthDrugKytUpinoutfileAPIRequest) SetBillType(_billType int64) error {
+	r._billType = _billType
+	r.Set("bill_type", _billType)
+	return nil
+}
+
+// GetBillType BillType Getter
+func (r AlibabaAlihealthDrugKytUpinoutfileAPIRequest) GetBillType() int64 {
+	return r._billType
+}
+
+// SetPhysicType is PhysicType Setter
+// 药品类型【3普药2特药】
+func (r *AlibabaAlihealthDrugKytUpinoutfileAPIRequest) SetPhysicType(_physicType int64) error {
+	r._physicType = _physicType
+	r.Set("physic_type", _physicType)
+	return nil
+}
+
+// GetPhysicType PhysicType Getter
+func (r AlibabaAlihealthDrugKytUpinoutfileAPIRequest) GetPhysicType() int64 {
+	return r._physicType
 }

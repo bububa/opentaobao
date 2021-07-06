@@ -2,14 +2,10 @@ package logistic
 
 // SendResendLogisticsMsgDto 结构体
 type SendResendLogisticsMsgDto struct {
-	// 运单号
-	MailNo string `json:"mail_no,omitempty" xml:"mail_no,omitempty"`
 	// 该运单所包含的货品列表
 	GoodsItemList []GoodsItem `json:"goods_item_list,omitempty" xml:"goods_item_list>goods_item,omitempty"`
-	// 运单状态（-1=废单，1=已下发）
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
-	// 主订单
-	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+	// 运单号
+	MailNo string `json:"mail_no,omitempty" xml:"mail_no,omitempty"`
 	// 描述
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 发货单唯一标识
@@ -20,4 +16,8 @@ type SendResendLogisticsMsgDto struct {
 	SourceId string `json:"source_id,omitempty" xml:"source_id,omitempty"`
 	// 成功发货的发货单运单号，菜鸟为LP单号
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
+	// 运单状态（-1=废单，1=已下发）
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 主订单
+	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 }

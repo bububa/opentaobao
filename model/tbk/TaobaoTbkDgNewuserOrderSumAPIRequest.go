@@ -12,6 +12,10 @@ import (
 // 拉新活动汇总API
 type TaobaoTbkDgNewuserOrderSumAPIRequest struct {
 	model.Params
+	// 活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=8599277
+	_activityId string
+	// 结算月份
+	_settleMonth string
 	// 页大小，默认20，1~100
 	_pageSize int64
 	// mm_xxx_xxx_xxx的第三位
@@ -20,10 +24,6 @@ type TaobaoTbkDgNewuserOrderSumAPIRequest struct {
 	_pageNo int64
 	// mm_xxx_xxx_xxx的第二位
 	_siteId int64
-	// 活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=8599277
-	_activityId string
-	// 结算月份
-	_settleMonth string
 }
 
 // NewTaobaoTbkDgNewuserOrderSumRequest 初始化TaobaoTbkDgNewuserOrderSumAPIRequest对象
@@ -45,6 +45,32 @@ func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetActivityId is ActivityId Setter
+// 活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=8599277
+func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetActivityId(_activityId string) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
+	return nil
+}
+
+// GetActivityId ActivityId Getter
+func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetActivityId() string {
+	return r._activityId
+}
+
+// SetSettleMonth is SettleMonth Setter
+// 结算月份
+func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetSettleMonth(_settleMonth string) error {
+	r._settleMonth = _settleMonth
+	r.Set("settle_month", _settleMonth)
+	return nil
+}
+
+// GetSettleMonth SettleMonth Getter
+func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetSettleMonth() string {
+	return r._settleMonth
 }
 
 // SetPageSize is PageSize Setter
@@ -97,30 +123,4 @@ func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetSiteId(_siteId int64) error {
 // GetSiteId SiteId Getter
 func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetSiteId() int64 {
 	return r._siteId
-}
-
-// SetActivityId is ActivityId Setter
-// 活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=8599277
-func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetActivityId(_activityId string) error {
-	r._activityId = _activityId
-	r.Set("activity_id", _activityId)
-	return nil
-}
-
-// GetActivityId ActivityId Getter
-func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetActivityId() string {
-	return r._activityId
-}
-
-// SetSettleMonth is SettleMonth Setter
-// 结算月份
-func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetSettleMonth(_settleMonth string) error {
-	r._settleMonth = _settleMonth
-	r.Set("settle_month", _settleMonth)
-	return nil
-}
-
-// GetSettleMonth SettleMonth Getter
-func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetSettleMonth() string {
-	return r._settleMonth
 }

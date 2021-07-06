@@ -12,8 +12,6 @@ import (
 // 生成用户血压测量报告
 type AlibabaFmhealthPressureReportCreateAPIRequest struct {
 	model.Params
-	// 用户id
-	_userId int64
 	// 报告类型
 	_reportType string
 	// 报告内容
@@ -26,6 +24,8 @@ type AlibabaFmhealthPressureReportCreateAPIRequest struct {
 	_reportPeriodDays string
 	// 数据来源
 	_reportSource string
+	// 用户id
+	_userId int64
 }
 
 // NewAlibabaFmhealthPressureReportCreateRequest 初始化AlibabaFmhealthPressureReportCreateAPIRequest对象
@@ -47,19 +47,6 @@ func (r AlibabaFmhealthPressureReportCreateAPIRequest) GetApiParams() url.Values
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetUserId is UserId Setter
-// 用户id
-func (r *AlibabaFmhealthPressureReportCreateAPIRequest) SetUserId(_userId int64) error {
-	r._userId = _userId
-	r.Set("user_id", _userId)
-	return nil
-}
-
-// GetUserId UserId Getter
-func (r AlibabaFmhealthPressureReportCreateAPIRequest) GetUserId() int64 {
-	return r._userId
 }
 
 // SetReportType is ReportType Setter
@@ -138,4 +125,17 @@ func (r *AlibabaFmhealthPressureReportCreateAPIRequest) SetReportSource(_reportS
 // GetReportSource ReportSource Getter
 func (r AlibabaFmhealthPressureReportCreateAPIRequest) GetReportSource() string {
 	return r._reportSource
+}
+
+// SetUserId is UserId Setter
+// 用户id
+func (r *AlibabaFmhealthPressureReportCreateAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// GetUserId UserId Getter
+func (r AlibabaFmhealthPressureReportCreateAPIRequest) GetUserId() int64 {
+	return r._userId
 }

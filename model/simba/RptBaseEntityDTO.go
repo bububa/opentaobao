@@ -16,14 +16,14 @@ type RptBaseEntityDto struct {
 	Cpc string `json:"cpc,omitempty" xml:"cpc,omitempty"`
 	// 每千次展现花费
 	Cpm string `json:"cpm,omitempty" xml:"cpm,omitempty"`
-	// 展现量
-	Impression int64 `json:"impression,omitempty" xml:"impression,omitempty"`
-	// 点击量
-	Click int64 `json:"click,omitempty" xml:"click,omitempty"`
 	// 人群名称
 	Crowdname string `json:"crowdname,omitempty" xml:"crowdname,omitempty"`
 	// 流量来源，设备和网络。值包含PC站内，PC站外,移动站内，移动站外
 	Source string `json:"source,omitempty" xml:"source,omitempty"`
 	// 人群id
 	Crowdid string `json:"crowdid,omitempty" xml:"crowdid,omitempty"`
+	// 展现量
+	Impression int64 `json:"impression,omitempty" xml:"impression,omitempty"`
+	// 点击量
+	Click int64 `json:"click,omitempty" xml:"click,omitempty"`
 }

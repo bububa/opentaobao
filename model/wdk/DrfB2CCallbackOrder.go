@@ -2,6 +2,10 @@ package wdk
 
 // DrfB2CCallbackOrder 结构体
 type DrfB2CCallbackOrder struct {
+	// 作业单元
+	CallbackUnits []DrfB2CCallbackUnit `json:"callback_units,omitempty" xml:"callback_units>drf_b2c_callback_unit,omitempty"`
+	// 容器列表
+	Containers []Container `json:"containers,omitempty" xml:"containers>container,omitempty"`
 	// 作业状态变更时间
 	StatusChangeTime string `json:"status_change_time,omitempty" xml:"status_change_time,omitempty"`
 	// 作业状态变更类型： START_PICK(“开始拣货”)， PICK_FINISH(“拣货完成”)， START_PACKAGE(“开始打包”), PACKAGE _FINISH(“打包完成”);
@@ -12,12 +16,8 @@ type DrfB2CCallbackOrder struct {
 	WorkOrderType string `json:"work_order_type,omitempty" xml:"work_order_type,omitempty"`
 	// 作业单号
 	WorkOrderId string `json:"work_order_id,omitempty" xml:"work_order_id,omitempty"`
-	// 作业单元
-	CallbackUnits []DrfB2CCallbackUnit `json:"callback_units,omitempty" xml:"callback_units>drf_b2c_callback_unit,omitempty"`
-	// 是否作业节点终态
-	IsFinal bool `json:"is_final,omitempty" xml:"is_final,omitempty"`
 	// 操作员
 	Operator *Operator `json:"operator,omitempty" xml:"operator,omitempty"`
-	// 容器列表
-	Containers []Container `json:"containers,omitempty" xml:"containers>container,omitempty"`
+	// 是否作业节点终态
+	IsFinal bool `json:"is_final,omitempty" xml:"is_final,omitempty"`
 }

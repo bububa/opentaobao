@@ -8,8 +8,6 @@ type SyncEntryReceiptRequest struct {
 	ContactInfo []ContactInfo `json:"contact_info,omitempty" xml:"contact_info>contact_info,omitempty"`
 	// 教育经历
 	EducationExpInfo []EducationExpInfo `json:"education_exp_info,omitempty" xml:"education_exp_info>education_exp_info,omitempty"`
-	// 员工主要信息
-	EmployeeBasic *EmployeeBasic `json:"employee_basic,omitempty" xml:"employee_basic,omitempty"`
 	// 家庭信息
 	FamilyInfo []FamilyInfo `json:"family_info,omitempty" xml:"family_info>family_info,omitempty"`
 	// 工作履历
@@ -20,4 +18,6 @@ type SyncEntryReceiptRequest struct {
 	RelatedPartyInfo []RelatedPartyInfo `json:"related_party_info,omitempty" xml:"related_party_info>related_party_info,omitempty"`
 	// 语言信息
 	LanguageInfo []LanguageInfo `json:"language_info,omitempty" xml:"language_info>language_info,omitempty"`
+	// 员工主要信息
+	EmployeeBasic *EmployeeBasic `json:"employee_basic,omitempty" xml:"employee_basic,omitempty"`
 }

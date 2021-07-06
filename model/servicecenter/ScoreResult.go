@@ -2,8 +2,6 @@ package servicecenter
 
 // ScoreResult 结构体
 type ScoreResult struct {
-	// 评价id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 平均分
 	AvgScore string `json:"avg_score,omitempty" xml:"avg_score,omitempty"`
 	// 评论内容
@@ -14,14 +12,10 @@ type ScoreResult struct {
 	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
 	// 评价时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-	// 是否为有效评分 1-有效评分 2-无效评分
-	IsValid int64 `json:"is_valid,omitempty" xml:"is_valid,omitempty"`
 	// 服务规格code
 	ItemCode string `json:"item_code,omitempty" xml:"item_code,omitempty"`
 	// 服务规格名称
 	ItemName string `json:"item_name,omitempty" xml:"item_name,omitempty"`
-	// 是否实际付费 1-实际付费 2-实际未付费
-	IsPay int64 `json:"is_pay,omitempty" xml:"is_pay,omitempty"`
 	// 服务态度评分
 	AttitudeScore string `json:"attitude_score,omitempty" xml:"attitude_score,omitempty"`
 	// 稳定性评分
@@ -34,4 +28,10 @@ type ScoreResult struct {
 	RapidScore string `json:"rapid_score,omitempty" xml:"rapid_score,omitempty"`
 	// 描述相符
 	MatchedScore string `json:"matched_score,omitempty" xml:"matched_score,omitempty"`
+	// 评价id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 是否为有效评分 1-有效评分 2-无效评分
+	IsValid int64 `json:"is_valid,omitempty" xml:"is_valid,omitempty"`
+	// 是否实际付费 1-实际付费 2-实际未付费
+	IsPay int64 `json:"is_pay,omitempty" xml:"is_pay,omitempty"`
 }

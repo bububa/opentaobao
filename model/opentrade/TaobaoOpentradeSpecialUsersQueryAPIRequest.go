@@ -14,14 +14,14 @@ type TaobaoOpentradeSpecialUsersQueryAPIRequest struct {
 	model.Params
 	// 用户openId列表，多个以逗号(,)分割
 	_openUserIds []string
+	// 用户状态
+	_status string
 	// 分页参数，每页大小
 	_pageSize int64
 	// 商品ID
 	_itemId int64
 	// 商品SKU ID，不存在传0
 	_skuId int64
-	// 用户状态
-	_status string
 	// 分页参数，当前页，以0开始
 	_pageIndex int64
 }
@@ -58,6 +58,19 @@ func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetOpenUserIds(_openUserIds
 // GetOpenUserIds OpenUserIds Getter
 func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetOpenUserIds() []string {
 	return r._openUserIds
+}
+
+// SetStatus is Status Setter
+// 用户状态
+func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetStatus(_status string) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetStatus() string {
+	return r._status
 }
 
 // SetPageSize is PageSize Setter
@@ -97,19 +110,6 @@ func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetSkuId(_skuId int64) erro
 // GetSkuId SkuId Getter
 func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetSkuId() int64 {
 	return r._skuId
-}
-
-// SetStatus is Status Setter
-// 用户状态
-func (r *TaobaoOpentradeSpecialUsersQueryAPIRequest) SetStatus(_status string) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TaobaoOpentradeSpecialUsersQueryAPIRequest) GetStatus() string {
-	return r._status
 }
 
 // SetPageIndex is PageIndex Setter

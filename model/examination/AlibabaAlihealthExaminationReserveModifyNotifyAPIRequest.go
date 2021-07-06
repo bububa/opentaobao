@@ -26,14 +26,14 @@ type AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest struct {
 	_goodsCode string
 	// 门店编码
 	_storeCode string
-	// true:同意修改；false:拒绝修改
-	_pass bool
 	// 拒绝修改的时候需要传递拒绝原因
 	_reason string
 	// 新的预约时间段开始时间
 	_newReserveTimeStart string
 	// 新的预约时间段结束时间
 	_newReserveTimeEnd string
+	// true:同意修改；false:拒绝修改
+	_pass bool
 }
 
 // NewAlibabaAlihealthExaminationReserveModifyNotifyRequest 初始化AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest对象
@@ -148,19 +148,6 @@ func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetStoreCode()
 	return r._storeCode
 }
 
-// SetPass is Pass Setter
-// true:同意修改；false:拒绝修改
-func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetPass(_pass bool) error {
-	r._pass = _pass
-	r.Set("pass", _pass)
-	return nil
-}
-
-// GetPass Pass Getter
-func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetPass() bool {
-	return r._pass
-}
-
 // SetReason is Reason Setter
 // 拒绝修改的时候需要传递拒绝原因
 func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetReason(_reason string) error {
@@ -198,4 +185,17 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetNewReserve
 // GetNewReserveTimeEnd NewReserveTimeEnd Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetNewReserveTimeEnd() string {
 	return r._newReserveTimeEnd
+}
+
+// SetPass is Pass Setter
+// true:同意修改；false:拒绝修改
+func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetPass(_pass bool) error {
+	r._pass = _pass
+	r.Set("pass", _pass)
+	return nil
+}
+
+// GetPass Pass Getter
+func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetPass() bool {
+	return r._pass
 }

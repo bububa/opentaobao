@@ -14,10 +14,10 @@ type TaobaoXhotelMemberrightUpdateAPIRequest struct {
 	model.Params
 	// 淘宝用户id
 	_taobaoUserId int64
-	// 表示用户是否有对应的权益，取值范围true、false
-	_hasRight bool
 	// 会员权益类型，1表示首住权益
 	_rightType int64
+	// 表示用户是否有对应的权益，取值范围true、false
+	_hasRight bool
 }
 
 // NewTaobaoXhotelMemberrightUpdateRequest 初始化TaobaoXhotelMemberrightUpdateAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoXhotelMemberrightUpdateAPIRequest) GetTaobaoUserId() int64 {
 	return r._taobaoUserId
 }
 
-// SetHasRight is HasRight Setter
-// 表示用户是否有对应的权益，取值范围true、false
-func (r *TaobaoXhotelMemberrightUpdateAPIRequest) SetHasRight(_hasRight bool) error {
-	r._hasRight = _hasRight
-	r.Set("has_right", _hasRight)
-	return nil
-}
-
-// GetHasRight HasRight Getter
-func (r TaobaoXhotelMemberrightUpdateAPIRequest) GetHasRight() bool {
-	return r._hasRight
-}
-
 // SetRightType is RightType Setter
 // 会员权益类型，1表示首住权益
 func (r *TaobaoXhotelMemberrightUpdateAPIRequest) SetRightType(_rightType int64) error {
@@ -78,4 +65,17 @@ func (r *TaobaoXhotelMemberrightUpdateAPIRequest) SetRightType(_rightType int64)
 // GetRightType RightType Getter
 func (r TaobaoXhotelMemberrightUpdateAPIRequest) GetRightType() int64 {
 	return r._rightType
+}
+
+// SetHasRight is HasRight Setter
+// 表示用户是否有对应的权益，取值范围true、false
+func (r *TaobaoXhotelMemberrightUpdateAPIRequest) SetHasRight(_hasRight bool) error {
+	r._hasRight = _hasRight
+	r.Set("has_right", _hasRight)
+	return nil
+}
+
+// GetHasRight HasRight Getter
+func (r TaobaoXhotelMemberrightUpdateAPIRequest) GetHasRight() bool {
+	return r._hasRight
 }

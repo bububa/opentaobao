@@ -16,14 +16,14 @@ type TmallServicecenterWorkcardRepairprogressUpdateAPIRequest struct {
 	_picUrlList []string
 	// 请求节点的动作描述，唯一标识一个节点
 	_action string
-	// 工单id
-	_workcardId int64
 	// 真实接单服务商账号Nick
 	_realTpNick string
 	// 服务目标物瑕疵信息
 	_targetGoodsDefects string
 	// 衣服，鞋子
 	_receivedGoods string
+	// 工单id
+	_workcardId int64
 }
 
 // NewTmallServicecenterWorkcardRepairprogressUpdateRequest 初始化TmallServicecenterWorkcardRepairprogressUpdateAPIRequest对象
@@ -73,19 +73,6 @@ func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetAction() st
 	return r._action
 }
 
-// SetWorkcardId is WorkcardId Setter
-// 工单id
-func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetWorkcardId(_workcardId int64) error {
-	r._workcardId = _workcardId
-	r.Set("workcard_id", _workcardId)
-	return nil
-}
-
-// GetWorkcardId WorkcardId Getter
-func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetWorkcardId() int64 {
-	return r._workcardId
-}
-
 // SetRealTpNick is RealTpNick Setter
 // 真实接单服务商账号Nick
 func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetRealTpNick(_realTpNick string) error {
@@ -123,4 +110,17 @@ func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetReceivedGo
 // GetReceivedGoods ReceivedGoods Getter
 func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetReceivedGoods() string {
 	return r._receivedGoods
+}
+
+// SetWorkcardId is WorkcardId Setter
+// 工单id
+func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetWorkcardId(_workcardId int64) error {
+	r._workcardId = _workcardId
+	r.Set("workcard_id", _workcardId)
+	return nil
+}
+
+// GetWorkcardId WorkcardId Getter
+func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetWorkcardId() int64 {
+	return r._workcardId
 }

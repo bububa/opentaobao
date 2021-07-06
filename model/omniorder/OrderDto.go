@@ -2,6 +2,16 @@ package omniorder
 
 // OrderDto 结构体
 type OrderDto struct {
+	// 子订单，属性与主订单相同
+	DetailOrderList []string `json:"detail_order_list,omitempty" xml:"detail_order_list>string,omitempty"`
+	// 消费者nick
+	BuyerNick string `json:"buyer_nick,omitempty" xml:"buyer_nick,omitempty"`
+	// 支付时间
+	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
+	// 结束时间
+	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
+	// 旗舰店名称
+	SellerNick string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
 	// 订单id
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 1-父订单，0-子订单
@@ -10,18 +20,10 @@ type OrderDto struct {
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 支付订单id
 	PayOrderId int64 `json:"pay_order_id,omitempty" xml:"pay_order_id,omitempty"`
-	// 消费者nick
-	BuyerNick string `json:"buyer_nick,omitempty" xml:"buyer_nick,omitempty"`
 	// 支付状态：1 - 未冻结/未付款 ->等待买家付款 2 - 已冻结/已付款 ->等待卖家发货 4 - 已退款 ->交易关闭 6 - 已转交易 -> 交易成功 7 - 没有创建外部交易(支付宝交易) 8 - 交易被淘宝关闭 9 - 不可付款
 	PayStatus int64 `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
 	// 物流状态：1 - 未发货 -> 等待卖家发货, 2 - 已发货 -> 等待买家确认收货, 3 - 已收货 -> 交易成功, 4 - 已经退货 -> 交易失败, 5 - 部分收货 -> 交易成功, 6 - 部分发货中, 8 - 还未创建物流订单, 9 - 配货中,目前周期购已经使用到
 	LogisticsStatus int64 `json:"logistics_status,omitempty" xml:"logistics_status,omitempty"`
-	// 支付时间
-	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
-	// 结束时间
-	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
-	// 旗舰店名称
-	SellerNick string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
 	// 商品id
 	AuctionId int64 `json:"auction_id,omitempty" xml:"auction_id,omitempty"`
 	// 单件商品价格，单位分
@@ -38,6 +40,4 @@ type OrderDto struct {
 	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 实付金额，单位是分
 	ActualPayFee int64 `json:"actual_pay_fee,omitempty" xml:"actual_pay_fee,omitempty"`
-	// 子订单，属性与主订单相同
-	DetailOrderList []string `json:"detail_order_list,omitempty" xml:"detail_order_list>string,omitempty"`
 }

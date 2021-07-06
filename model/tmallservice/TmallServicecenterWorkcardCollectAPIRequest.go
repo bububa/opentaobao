@@ -12,12 +12,12 @@ import (
 // 服务工单揽件接口
 type TmallServicecenterWorkcardCollectAPIRequest struct {
 	model.Params
+	// 扩展信息
+	_attributes string
 	// 工单id
 	_workcardId int64
 	// 买家id
 	_buyerId int64
-	// 扩展信息
-	_attributes string
 }
 
 // NewTmallServicecenterWorkcardCollectRequest 初始化TmallServicecenterWorkcardCollectAPIRequest对象
@@ -39,6 +39,19 @@ func (r TmallServicecenterWorkcardCollectAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetAttributes is Attributes Setter
+// 扩展信息
+func (r *TmallServicecenterWorkcardCollectAPIRequest) SetAttributes(_attributes string) error {
+	r._attributes = _attributes
+	r.Set("attributes", _attributes)
+	return nil
+}
+
+// GetAttributes Attributes Getter
+func (r TmallServicecenterWorkcardCollectAPIRequest) GetAttributes() string {
+	return r._attributes
 }
 
 // SetWorkcardId is WorkcardId Setter
@@ -65,17 +78,4 @@ func (r *TmallServicecenterWorkcardCollectAPIRequest) SetBuyerId(_buyerId int64)
 // GetBuyerId BuyerId Getter
 func (r TmallServicecenterWorkcardCollectAPIRequest) GetBuyerId() int64 {
 	return r._buyerId
-}
-
-// SetAttributes is Attributes Setter
-// 扩展信息
-func (r *TmallServicecenterWorkcardCollectAPIRequest) SetAttributes(_attributes string) error {
-	r._attributes = _attributes
-	r.Set("attributes", _attributes)
-	return nil
-}
-
-// GetAttributes Attributes Getter
-func (r TmallServicecenterWorkcardCollectAPIRequest) GetAttributes() string {
-	return r._attributes
 }

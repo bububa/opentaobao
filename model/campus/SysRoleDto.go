@@ -2,8 +2,6 @@ package campus
 
 // SysRoleDto 结构体
 type SysRoleDto struct {
-	// 角色主键id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 角色key
 	RoleKey string `json:"role_key,omitempty" xml:"role_key,omitempty"`
 	// 角色属于哪个租户
@@ -24,4 +22,6 @@ type SysRoleDto struct {
 	ModifierId string `json:"modifier_id,omitempty" xml:"modifier_id,omitempty"`
 	// 创建人id
 	CreatorId string `json:"creator_id,omitempty" xml:"creator_id,omitempty"`
+	// 角色主键id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 }

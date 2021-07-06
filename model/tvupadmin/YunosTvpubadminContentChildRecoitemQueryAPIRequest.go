@@ -12,6 +12,8 @@ import (
 // 查询少儿大厅推荐内容列表
 type YunosTvpubadminContentChildRecoitemQueryAPIRequest struct {
 	model.Params
+	// 名称
+	_name string
 	// 主键ID
 	_id int64
 	// 所属类目ID
@@ -20,8 +22,6 @@ type YunosTvpubadminContentChildRecoitemQueryAPIRequest struct {
 	_status int64
 	// 页码
 	_pageNo int64
-	// 名称
-	_name string
 	// 单页数量
 	_pageSize int64
 }
@@ -45,6 +45,19 @@ func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetApiParams() url.V
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetName is Name Setter
+// 名称
+func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// GetName Name Getter
+func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetName() string {
+	return r._name
 }
 
 // SetId is Id Setter
@@ -97,19 +110,6 @@ func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetPageNo(_pageNo i
 // GetPageNo PageNo Getter
 func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetPageNo() int64 {
 	return r._pageNo
-}
-
-// SetName is Name Setter
-// 名称
-func (r *YunosTvpubadminContentChildRecoitemQueryAPIRequest) SetName(_name string) error {
-	r._name = _name
-	r.Set("name", _name)
-	return nil
-}
-
-// GetName Name Getter
-func (r YunosTvpubadminContentChildRecoitemQueryAPIRequest) GetName() string {
-	return r._name
 }
 
 // SetPageSize is PageSize Setter

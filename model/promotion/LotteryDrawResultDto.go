@@ -2,8 +2,6 @@ package promotion
 
 // LotteryDrawResultDto 结构体
 type LotteryDrawResultDto struct {
-	// resultType
-	ResultType int64 `json:"result_type,omitempty" xml:"result_type,omitempty"`
 	// resultMsg
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// shopTitle
@@ -12,6 +10,8 @@ type LotteryDrawResultDto struct {
 	ShopLogo string `json:"shop_logo,omitempty" xml:"shop_logo,omitempty"`
 	// template
 	Template string `json:"template,omitempty" xml:"template,omitempty"`
+	// resultType
+	ResultType int64 `json:"result_type,omitempty" xml:"result_type,omitempty"`
 	// award
 	Award *LotteryAwardDto `json:"award,omitempty" xml:"award,omitempty"`
 }

@@ -12,10 +12,6 @@ import (
 // 标题诊断
 type AlibabaSeakingDiagnosistitleAPIRequest struct {
 	model.Params
-	// 类目id,没有的时候传-1
-	_categoryId int64
-	// 扩展信息
-	_extra *Extra
 	// erp用户id
 	_identifier string
 	// 调用来源(erp名称)
@@ -26,6 +22,10 @@ type AlibabaSeakingDiagnosistitleAPIRequest struct {
 	_platform string
 	// 标题
 	_title string
+	// 类目id,没有的时候传-1
+	_categoryId int64
+	// 扩展信息
+	_extra *Extra
 }
 
 // NewAlibabaSeakingDiagnosistitleRequest 初始化AlibabaSeakingDiagnosistitleAPIRequest对象
@@ -47,32 +47,6 @@ func (r AlibabaSeakingDiagnosistitleAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetCategoryId is CategoryId Setter
-// 类目id,没有的时候传-1
-func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetCategoryId(_categoryId int64) error {
-	r._categoryId = _categoryId
-	r.Set("category_id", _categoryId)
-	return nil
-}
-
-// GetCategoryId CategoryId Getter
-func (r AlibabaSeakingDiagnosistitleAPIRequest) GetCategoryId() int64 {
-	return r._categoryId
-}
-
-// SetExtra is Extra Setter
-// 扩展信息
-func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetExtra(_extra *Extra) error {
-	r._extra = _extra
-	r.Set("extra", _extra)
-	return nil
-}
-
-// GetExtra Extra Getter
-func (r AlibabaSeakingDiagnosistitleAPIRequest) GetExtra() *Extra {
-	return r._extra
 }
 
 // SetIdentifier is Identifier Setter
@@ -138,4 +112,30 @@ func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetTitle(_title string) error {
 // GetTitle Title Getter
 func (r AlibabaSeakingDiagnosistitleAPIRequest) GetTitle() string {
 	return r._title
+}
+
+// SetCategoryId is CategoryId Setter
+// 类目id,没有的时候传-1
+func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetCategoryId(_categoryId int64) error {
+	r._categoryId = _categoryId
+	r.Set("category_id", _categoryId)
+	return nil
+}
+
+// GetCategoryId CategoryId Getter
+func (r AlibabaSeakingDiagnosistitleAPIRequest) GetCategoryId() int64 {
+	return r._categoryId
+}
+
+// SetExtra is Extra Setter
+// 扩展信息
+func (r *AlibabaSeakingDiagnosistitleAPIRequest) SetExtra(_extra *Extra) error {
+	r._extra = _extra
+	r.Set("extra", _extra)
+	return nil
+}
+
+// GetExtra Extra Getter
+func (r AlibabaSeakingDiagnosistitleAPIRequest) GetExtra() *Extra {
+	return r._extra
 }

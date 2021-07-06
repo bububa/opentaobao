@@ -26,14 +26,14 @@ type AlibabaAlihealthDrugKytSearchbillAPIRequest struct {
 	_partnerIdRecv string
 	// 代理企业
 	_agentRefUserId string
-	// 当前页
-	_curPage int64
-	// 页大小
-	_pageSize int64
 	// 单据号码
 	_billCode string
 	// 单据类型  A : 所有  AI :入库    AO:出库
 	_billType string
+	// 当前页
+	_curPage int64
+	// 页大小
+	_pageSize int64
 }
 
 // NewAlibabaAlihealthDrugKytSearchbillRequest 初始化AlibabaAlihealthDrugKytSearchbillAPIRequest对象
@@ -148,32 +148,6 @@ func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetAgentRefUserId() string 
 	return r._agentRefUserId
 }
 
-// SetCurPage is CurPage Setter
-// 当前页
-func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetCurPage(_curPage int64) error {
-	r._curPage = _curPage
-	r.Set("cur_page", _curPage)
-	return nil
-}
-
-// GetCurPage CurPage Getter
-func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetCurPage() int64 {
-	return r._curPage
-}
-
-// SetPageSize is PageSize Setter
-// 页大小
-func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetBillCode is BillCode Setter
 // 单据号码
 func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetBillCode(_billCode string) error {
@@ -198,4 +172,30 @@ func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetBillType(_billType stri
 // GetBillType BillType Getter
 func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetBillType() string {
 	return r._billType
+}
+
+// SetCurPage is CurPage Setter
+// 当前页
+func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetCurPage(_curPage int64) error {
+	r._curPage = _curPage
+	r.Set("cur_page", _curPage)
+	return nil
+}
+
+// GetCurPage CurPage Getter
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetCurPage() int64 {
+	return r._curPage
+}
+
+// SetPageSize is PageSize Setter
+// 页大小
+func (r *AlibabaAlihealthDrugKytSearchbillAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlibabaAlihealthDrugKytSearchbillAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

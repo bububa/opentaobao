@@ -12,12 +12,12 @@ import (
 // 将表单中层级属性的子属性返回
 type AlibabaIcbuCategorySchemaLevelGetAPIRequest struct {
 	model.Params
-	// 类目id
-	_catId int64
 	// 返回的文案的语种，可以输入en_US或者zh
 	_language string
 	// 层级属性的当前层级属性
 	_xml string
+	// 类目id
+	_catId int64
 }
 
 // NewAlibabaIcbuCategorySchemaLevelGetRequest 初始化AlibabaIcbuCategorySchemaLevelGetAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetCatId is CatId Setter
-// 类目id
-func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) SetCatId(_catId int64) error {
-	r._catId = _catId
-	r.Set("cat_id", _catId)
-	return nil
-}
-
-// GetCatId CatId Getter
-func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetCatId() int64 {
-	return r._catId
 }
 
 // SetLanguage is Language Setter
@@ -78,4 +65,17 @@ func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) SetXml(_xml string) error 
 // GetXml Xml Getter
 func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetXml() string {
 	return r._xml
+}
+
+// SetCatId is CatId Setter
+// 类目id
+func (r *AlibabaIcbuCategorySchemaLevelGetAPIRequest) SetCatId(_catId int64) error {
+	r._catId = _catId
+	r.Set("cat_id", _catId)
+	return nil
+}
+
+// GetCatId CatId Getter
+func (r AlibabaIcbuCategorySchemaLevelGetAPIRequest) GetCatId() int64 {
+	return r._catId
 }

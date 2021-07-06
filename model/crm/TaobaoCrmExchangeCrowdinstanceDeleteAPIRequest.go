@@ -14,10 +14,10 @@ type TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest struct {
 	model.Params
 	// 操作原因
 	_reason string
-	// 人群实例ID
-	_crowdInstanceId int64
 	// 买家昵称
 	_buyerNick string
+	// 人群实例ID
+	_crowdInstanceId int64
 }
 
 // NewTaobaoCrmExchangeCrowdinstanceDeleteRequest 初始化TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest) GetReason() string {
 	return r._reason
 }
 
-// SetCrowdInstanceId is CrowdInstanceId Setter
-// 人群实例ID
-func (r *TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest) SetCrowdInstanceId(_crowdInstanceId int64) error {
-	r._crowdInstanceId = _crowdInstanceId
-	r.Set("crowd_instance_id", _crowdInstanceId)
-	return nil
-}
-
-// GetCrowdInstanceId CrowdInstanceId Getter
-func (r TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest) GetCrowdInstanceId() int64 {
-	return r._crowdInstanceId
-}
-
 // SetBuyerNick is BuyerNick Setter
 // 买家昵称
 func (r *TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest) SetBuyerNick(_buyerNick string) error {
@@ -78,4 +65,17 @@ func (r *TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest) SetBuyerNick(_buyerNick
 // GetBuyerNick BuyerNick Getter
 func (r TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
+}
+
+// SetCrowdInstanceId is CrowdInstanceId Setter
+// 人群实例ID
+func (r *TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest) SetCrowdInstanceId(_crowdInstanceId int64) error {
+	r._crowdInstanceId = _crowdInstanceId
+	r.Set("crowd_instance_id", _crowdInstanceId)
+	return nil
+}
+
+// GetCrowdInstanceId CrowdInstanceId Getter
+func (r TaobaoCrmExchangeCrowdinstanceDeleteAPIRequest) GetCrowdInstanceId() int64 {
+	return r._crowdInstanceId
 }

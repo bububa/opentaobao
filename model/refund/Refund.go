@@ -4,20 +4,12 @@ package refund
 type Refund struct {
 	// 物流方式.可选值:free(卖家包邮),post(平邮),express(快递),ems(EMS).
 	ShippingType string `json:"shipping_type,omitempty" xml:"shipping_type,omitempty"`
-	// 不需客服介入1;需要客服介入2;客服已经介入3;客服初审完成 4;客服主管复审失败5;客服处理完成6;
-	CsStatus int64 `json:"cs_status,omitempty" xml:"cs_status,omitempty"`
-	// 退款先行垫付默认的未申请状态 0;退款先行垫付申请中  1;退款先行垫付，垫付完成 2;退款先行垫付，卖家拒绝收货 3;退款先行垫付，垫付关闭 4;退款先行垫付，垫付分账成功 5;
-	AdvanceStatus int64 `json:"advance_status,omitempty" xml:"advance_status,omitempty"`
 	// 分账给淘宝的钱
 	SplitTaobaoFee string `json:"split_taobao_fee,omitempty" xml:"split_taobao_fee,omitempty"`
 	// 分账给卖家的钱
 	SplitSellerFee string `json:"split_seller_fee,omitempty" xml:"split_seller_fee,omitempty"`
 	// 退款单号
 	RefundId string `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
-	// 淘宝交易单号
-	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
-	// 子订单号。如果是单笔交易oid会等于tid
-	Oid int64 `json:"oid,omitempty" xml:"oid,omitempty"`
 	// 支付宝交易号
 	AlipayNo string `json:"alipay_no,omitempty" xml:"alipay_no,omitempty"`
 	// 交易总金额。精确到2位小数;单位:元。如:200.07，表示:200元7分
@@ -36,8 +28,6 @@ type Refund struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 货物状态。可选值BUYER_NOT_RECEIVED (买家未收到货) BUYER_RECEIVED (买家已收到货) BUYER_RETURNED_GOODS (买家已退货)
 	GoodStatus string `json:"good_status,omitempty" xml:"good_status,omitempty"`
-	// 买家是否需要退货。可选值:true(是),false(否)
-	HasGoodReturn bool `json:"has_good_return,omitempty" xml:"has_good_return,omitempty"`
 	// 退还金额(退还给买家的金额)。精确到2位小数;单位:元。如:200.07，表示:200元7分
 	RefundFee string `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 支付给卖家的金额(交易总金额-退还给买家的金额)。精确到2位小数;单位:元。如:200.07，表示:200元7分
@@ -50,8 +40,6 @@ type Refund struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
-	// 商品购买数量
-	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
 	// 退货时间。格式:yyyy-MM-dd HH:mm:ss
 	GoodReturnTime string `json:"good_return_time,omitempty" xml:"good_return_time,omitempty"`
 	// 物流公司名称
@@ -60,14 +48,8 @@ type Refund struct {
 	Sid string `json:"sid,omitempty" xml:"sid,omitempty"`
 	// 卖家收货地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
-	// 退款超时结构RefundRemindTimeout
-	RefundRemindTimeout *RefundRemindTimeout `json:"refund_remind_timeout,omitempty" xml:"refund_remind_timeout,omitempty"`
-	// 申请退款的商品数字编号
-	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
 	// 退款阶段，可选值：onsale/aftersale
 	RefundPhase string `json:"refund_phase,omitempty" xml:"refund_phase,omitempty"`
-	// 退款版本号（时间戳）
-	RefundVersion int64 `json:"refund_version,omitempty" xml:"refund_version,omitempty"`
 	// 商品SKU信息
 	Sku string `json:"sku,omitempty" xml:"sku,omitempty"`
 	// 退款扩展属性
@@ -80,4 +62,22 @@ type Refund struct {
 	BuyerOpenUid string `json:"buyer_open_uid,omitempty" xml:"buyer_open_uid,omitempty"`
 	// 逆向特殊部分退类型：价保服务、退差返现
 	SpecialRefundType string `json:"special_refund_type,omitempty" xml:"special_refund_type,omitempty"`
+	// 不需客服介入1;需要客服介入2;客服已经介入3;客服初审完成 4;客服主管复审失败5;客服处理完成6;
+	CsStatus int64 `json:"cs_status,omitempty" xml:"cs_status,omitempty"`
+	// 退款先行垫付默认的未申请状态 0;退款先行垫付申请中  1;退款先行垫付，垫付完成 2;退款先行垫付，卖家拒绝收货 3;退款先行垫付，垫付关闭 4;退款先行垫付，垫付分账成功 5;
+	AdvanceStatus int64 `json:"advance_status,omitempty" xml:"advance_status,omitempty"`
+	// 淘宝交易单号
+	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+	// 子订单号。如果是单笔交易oid会等于tid
+	Oid int64 `json:"oid,omitempty" xml:"oid,omitempty"`
+	// 商品购买数量
+	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
+	// 退款超时结构RefundRemindTimeout
+	RefundRemindTimeout *RefundRemindTimeout `json:"refund_remind_timeout,omitempty" xml:"refund_remind_timeout,omitempty"`
+	// 申请退款的商品数字编号
+	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
+	// 退款版本号（时间戳）
+	RefundVersion int64 `json:"refund_version,omitempty" xml:"refund_version,omitempty"`
+	// 买家是否需要退货。可选值:true(是),false(否)
+	HasGoodReturn bool `json:"has_good_return,omitempty" xml:"has_good_return,omitempty"`
 }

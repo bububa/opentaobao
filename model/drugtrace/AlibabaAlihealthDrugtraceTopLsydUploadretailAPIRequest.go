@@ -12,14 +12,12 @@ import (
 // 快易通多融零售上传接口
 type AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest struct {
 	model.Params
+	// 20位追溯码（多个时用半角逗号分隔）
+	_traceCodes []string
 	// 单据编号（唯一）
 	_billCode string
 	// 单据生成时间（一般写当前时间）
 	_billTime string
-	// 单据类型[321,零售出库][322,疫苗接种]
-	_billType int64
-	// 药品类型[2,特药，3,普药]
-	_physicType int64
 	// 码上放心平台企业唯一编码（门店或医疗机构）
 	_refUserId string
 	// 发货企业(可为空)
@@ -28,8 +26,6 @@ type AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest struct {
 	_operIcCode string
 	// 单据提交者姓名(可为空)
 	_operIcName string
-	// 20位追溯码（多个时用半角逗号分隔）
-	_traceCodes []string
 	// 购买人证件类型【1身份证2护照3 军官证4 医保卡5接种卡6学生证9其它】
 	_customerIdType string
 	// 购买人证件编号
@@ -46,6 +42,10 @@ type AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest struct {
 	_userName string
 	// 药品代理人
 	_userAgent string
+	// 单据类型[321,零售出库][322,疫苗接种]
+	_billType int64
+	// 药品类型[2,特药，3,普药]
+	_physicType int64
 }
 
 // NewAlibabaAlihealthDrugtraceTopLsydUploadretailRequest 初始化AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest对象
@@ -67,6 +67,19 @@ func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetApiParams() u
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTraceCodes is TraceCodes Setter
+// 20位追溯码（多个时用半角逗号分隔）
+func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetTraceCodes(_traceCodes []string) error {
+	r._traceCodes = _traceCodes
+	r.Set("trace_codes", _traceCodes)
+	return nil
+}
+
+// GetTraceCodes TraceCodes Getter
+func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetTraceCodes() []string {
+	return r._traceCodes
 }
 
 // SetBillCode is BillCode Setter
@@ -93,32 +106,6 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetBillTime(_bi
 // GetBillTime BillTime Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetBillTime() string {
 	return r._billTime
-}
-
-// SetBillType is BillType Setter
-// 单据类型[321,零售出库][322,疫苗接种]
-func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetBillType(_billType int64) error {
-	r._billType = _billType
-	r.Set("bill_type", _billType)
-	return nil
-}
-
-// GetBillType BillType Getter
-func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetBillType() int64 {
-	return r._billType
-}
-
-// SetPhysicType is PhysicType Setter
-// 药品类型[2,特药，3,普药]
-func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetPhysicType(_physicType int64) error {
-	r._physicType = _physicType
-	r.Set("physic_type", _physicType)
-	return nil
-}
-
-// GetPhysicType PhysicType Getter
-func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetPhysicType() int64 {
-	return r._physicType
 }
 
 // SetRefUserId is RefUserId Setter
@@ -171,19 +158,6 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetOperIcName(_
 // GetOperIcName OperIcName Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetOperIcName() string {
 	return r._operIcName
-}
-
-// SetTraceCodes is TraceCodes Setter
-// 20位追溯码（多个时用半角逗号分隔）
-func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetTraceCodes(_traceCodes []string) error {
-	r._traceCodes = _traceCodes
-	r.Set("trace_codes", _traceCodes)
-	return nil
-}
-
-// GetTraceCodes TraceCodes Getter
-func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetTraceCodes() []string {
-	return r._traceCodes
 }
 
 // SetCustomerIdType is CustomerIdType Setter
@@ -288,4 +262,30 @@ func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetUserAgent(_u
 // GetUserAgent UserAgent Getter
 func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetUserAgent() string {
 	return r._userAgent
+}
+
+// SetBillType is BillType Setter
+// 单据类型[321,零售出库][322,疫苗接种]
+func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetBillType(_billType int64) error {
+	r._billType = _billType
+	r.Set("bill_type", _billType)
+	return nil
+}
+
+// GetBillType BillType Getter
+func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetBillType() int64 {
+	return r._billType
+}
+
+// SetPhysicType is PhysicType Setter
+// 药品类型[2,特药，3,普药]
+func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetPhysicType(_physicType int64) error {
+	r._physicType = _physicType
+	r.Set("physic_type", _physicType)
+	return nil
+}
+
+// GetPhysicType PhysicType Getter
+func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetPhysicType() int64 {
+	return r._physicType
 }

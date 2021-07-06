@@ -4,8 +4,6 @@ package cainiaolocker
 type StationInfo struct {
 	// 邮编
 	Zip string `json:"zip,omitempty" xml:"zip,omitempty"`
-	// 0-上线，1-下线
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 小区
 	HousingEstate string `json:"housing_estate,omitempty" xml:"housing_estate,omitempty"`
 	// 城市
@@ -22,8 +20,6 @@ type StationInfo struct {
 	District string `json:"district,omitempty" xml:"district,omitempty"`
 	// 站点服务能力描述
 	Extra string `json:"extra,omitempty" xml:"extra,omitempty"`
-	// 站点类型：100-代收点
-	StationType int64 `json:"station_type,omitempty" xml:"station_type,omitempty"`
 	// 站点联系方式
 	Contact string `json:"contact,omitempty" xml:"contact,omitempty"`
 	// 站点经度
@@ -38,4 +34,8 @@ type StationInfo struct {
 	StationNo string `json:"station_no,omitempty" xml:"station_no,omitempty"`
 	// 站点纬度
 	StationLat string `json:"station_lat,omitempty" xml:"station_lat,omitempty"`
+	// 0-上线，1-下线
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 站点类型：100-代收点
+	StationType int64 `json:"station_type,omitempty" xml:"station_type,omitempty"`
 }

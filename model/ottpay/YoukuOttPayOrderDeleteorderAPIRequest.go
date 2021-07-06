@@ -24,10 +24,10 @@ type YoukuOttPayOrderDeleteorderAPIRequest struct {
 	_callbackUrl string
 	// 订单无关的其他参数,如埋点统计的utdid, mac地址等
 	_extra string
-	// 订单类型，1为连续包月类型,2为取消连续包月
-	_orderType int64
 	// 连续包月原始订单
 	_originalOrderNo string
+	// 订单类型，1为连续包月类型,2为取消连续包月
+	_orderType int64
 }
 
 // NewYoukuOttPayOrderDeleteorderRequest 初始化YoukuOttPayOrderDeleteorderAPIRequest对象
@@ -129,19 +129,6 @@ func (r YoukuOttPayOrderDeleteorderAPIRequest) GetExtra() string {
 	return r._extra
 }
 
-// SetOrderType is OrderType Setter
-// 订单类型，1为连续包月类型,2为取消连续包月
-func (r *YoukuOttPayOrderDeleteorderAPIRequest) SetOrderType(_orderType int64) error {
-	r._orderType = _orderType
-	r.Set("order_type", _orderType)
-	return nil
-}
-
-// GetOrderType OrderType Getter
-func (r YoukuOttPayOrderDeleteorderAPIRequest) GetOrderType() int64 {
-	return r._orderType
-}
-
 // SetOriginalOrderNo is OriginalOrderNo Setter
 // 连续包月原始订单
 func (r *YoukuOttPayOrderDeleteorderAPIRequest) SetOriginalOrderNo(_originalOrderNo string) error {
@@ -153,4 +140,17 @@ func (r *YoukuOttPayOrderDeleteorderAPIRequest) SetOriginalOrderNo(_originalOrde
 // GetOriginalOrderNo OriginalOrderNo Getter
 func (r YoukuOttPayOrderDeleteorderAPIRequest) GetOriginalOrderNo() string {
 	return r._originalOrderNo
+}
+
+// SetOrderType is OrderType Setter
+// 订单类型，1为连续包月类型,2为取消连续包月
+func (r *YoukuOttPayOrderDeleteorderAPIRequest) SetOrderType(_orderType int64) error {
+	r._orderType = _orderType
+	r.Set("order_type", _orderType)
+	return nil
+}
+
+// GetOrderType OrderType Getter
+func (r YoukuOttPayOrderDeleteorderAPIRequest) GetOrderType() int64 {
+	return r._orderType
 }

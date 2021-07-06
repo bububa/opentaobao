@@ -20,16 +20,10 @@ type TaobaoQianniuTasksCountAPIRequest struct {
 	_bizIds string
 	// 任务的ID列表，用逗号分隔
 	_taskIds string
-	// 任务发起者用户数字ID
-	_senderUid int64
-	// 任务执行者用户数字ID
-	_receiverUid int64
 	// 逗号分隔的任务状态：0-未执行，1-执行中，2-执行完成，3-超时，4-取消，5-忽略
 	_status string
 	// 逗号分隔的子任务状态，由业务方自定义
 	_subStatus string
-	// 0-不需要提醒，未设提醒时间 1-设置过提醒时间，需要提醒
-	_remindFlag int64
 	// 任务元id，多个以逗号分隔
 	_metadataIds string
 	// 与业务相关的买家nick
@@ -38,12 +32,18 @@ type TaobaoQianniuTasksCountAPIRequest struct {
 	_startDate string
 	// 按时间段搜索的结束日期。不填则不限。格式为2014-01-01
 	_endDate string
-	// 优先级
-	_priority int64
 	// 需要排除的任务类型
 	_excludeBizType string
 	// 关键词搜索。只对任务内容进行模糊匹配，以及bizid和biznick进行精准匹配
 	_keyWord string
+	// 任务发起者用户数字ID
+	_senderUid int64
+	// 任务执行者用户数字ID
+	_receiverUid int64
+	// 0-不需要提醒，未设提醒时间 1-设置过提醒时间，需要提醒
+	_remindFlag int64
+	// 优先级
+	_priority int64
 }
 
 // NewTaobaoQianniuTasksCountRequest 初始化TaobaoQianniuTasksCountAPIRequest对象
@@ -119,32 +119,6 @@ func (r TaobaoQianniuTasksCountAPIRequest) GetTaskIds() string {
 	return r._taskIds
 }
 
-// SetSenderUid is SenderUid Setter
-// 任务发起者用户数字ID
-func (r *TaobaoQianniuTasksCountAPIRequest) SetSenderUid(_senderUid int64) error {
-	r._senderUid = _senderUid
-	r.Set("sender_uid", _senderUid)
-	return nil
-}
-
-// GetSenderUid SenderUid Getter
-func (r TaobaoQianniuTasksCountAPIRequest) GetSenderUid() int64 {
-	return r._senderUid
-}
-
-// SetReceiverUid is ReceiverUid Setter
-// 任务执行者用户数字ID
-func (r *TaobaoQianniuTasksCountAPIRequest) SetReceiverUid(_receiverUid int64) error {
-	r._receiverUid = _receiverUid
-	r.Set("receiver_uid", _receiverUid)
-	return nil
-}
-
-// GetReceiverUid ReceiverUid Getter
-func (r TaobaoQianniuTasksCountAPIRequest) GetReceiverUid() int64 {
-	return r._receiverUid
-}
-
 // SetStatus is Status Setter
 // 逗号分隔的任务状态：0-未执行，1-执行中，2-执行完成，3-超时，4-取消，5-忽略
 func (r *TaobaoQianniuTasksCountAPIRequest) SetStatus(_status string) error {
@@ -169,19 +143,6 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetSubStatus(_subStatus string) erro
 // GetSubStatus SubStatus Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetSubStatus() string {
 	return r._subStatus
-}
-
-// SetRemindFlag is RemindFlag Setter
-// 0-不需要提醒，未设提醒时间 1-设置过提醒时间，需要提醒
-func (r *TaobaoQianniuTasksCountAPIRequest) SetRemindFlag(_remindFlag int64) error {
-	r._remindFlag = _remindFlag
-	r.Set("remind_flag", _remindFlag)
-	return nil
-}
-
-// GetRemindFlag RemindFlag Getter
-func (r TaobaoQianniuTasksCountAPIRequest) GetRemindFlag() int64 {
-	return r._remindFlag
 }
 
 // SetMetadataIds is MetadataIds Setter
@@ -236,19 +197,6 @@ func (r TaobaoQianniuTasksCountAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// SetPriority is Priority Setter
-// 优先级
-func (r *TaobaoQianniuTasksCountAPIRequest) SetPriority(_priority int64) error {
-	r._priority = _priority
-	r.Set("priority", _priority)
-	return nil
-}
-
-// GetPriority Priority Getter
-func (r TaobaoQianniuTasksCountAPIRequest) GetPriority() int64 {
-	return r._priority
-}
-
 // SetExcludeBizType is ExcludeBizType Setter
 // 需要排除的任务类型
 func (r *TaobaoQianniuTasksCountAPIRequest) SetExcludeBizType(_excludeBizType string) error {
@@ -273,4 +221,56 @@ func (r *TaobaoQianniuTasksCountAPIRequest) SetKeyWord(_keyWord string) error {
 // GetKeyWord KeyWord Getter
 func (r TaobaoQianniuTasksCountAPIRequest) GetKeyWord() string {
 	return r._keyWord
+}
+
+// SetSenderUid is SenderUid Setter
+// 任务发起者用户数字ID
+func (r *TaobaoQianniuTasksCountAPIRequest) SetSenderUid(_senderUid int64) error {
+	r._senderUid = _senderUid
+	r.Set("sender_uid", _senderUid)
+	return nil
+}
+
+// GetSenderUid SenderUid Getter
+func (r TaobaoQianniuTasksCountAPIRequest) GetSenderUid() int64 {
+	return r._senderUid
+}
+
+// SetReceiverUid is ReceiverUid Setter
+// 任务执行者用户数字ID
+func (r *TaobaoQianniuTasksCountAPIRequest) SetReceiverUid(_receiverUid int64) error {
+	r._receiverUid = _receiverUid
+	r.Set("receiver_uid", _receiverUid)
+	return nil
+}
+
+// GetReceiverUid ReceiverUid Getter
+func (r TaobaoQianniuTasksCountAPIRequest) GetReceiverUid() int64 {
+	return r._receiverUid
+}
+
+// SetRemindFlag is RemindFlag Setter
+// 0-不需要提醒，未设提醒时间 1-设置过提醒时间，需要提醒
+func (r *TaobaoQianniuTasksCountAPIRequest) SetRemindFlag(_remindFlag int64) error {
+	r._remindFlag = _remindFlag
+	r.Set("remind_flag", _remindFlag)
+	return nil
+}
+
+// GetRemindFlag RemindFlag Getter
+func (r TaobaoQianniuTasksCountAPIRequest) GetRemindFlag() int64 {
+	return r._remindFlag
+}
+
+// SetPriority is Priority Setter
+// 优先级
+func (r *TaobaoQianniuTasksCountAPIRequest) SetPriority(_priority int64) error {
+	r._priority = _priority
+	r.Set("priority", _priority)
+	return nil
+}
+
+// GetPriority Priority Getter
+func (r TaobaoQianniuTasksCountAPIRequest) GetPriority() int64 {
+	return r._priority
 }

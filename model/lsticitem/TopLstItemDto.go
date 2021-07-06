@@ -2,6 +2,12 @@ package lsticitem
 
 // TopLstItemDto 结构体
 type TopLstItemDto struct {
+	// 条码列表
+	BarCodeList []string `json:"bar_code_list,omitempty" xml:"bar_code_list>string,omitempty"`
+	// 图片列表
+	ImgList []string `json:"img_list,omitempty" xml:"img_list>string,omitempty"`
+	// 库存集合
+	AvailableStockList []Stock `json:"available_stock_list,omitempty" xml:"available_stock_list>stock,omitempty"`
 	// 商品类型（售卖属性） normal：通常品 gift：赠品（比如买a送a，买a送b，送的商品就是赠品
 	ItemType string `json:"item_type,omitempty" xml:"item_type,omitempty"`
 	// 品牌名
@@ -12,8 +18,6 @@ type TopLstItemDto struct {
 	CspuId string `json:"cspu_id,omitempty" xml:"cspu_id,omitempty"`
 	// 商家货号/商家商品编码
 	CargoNumber string `json:"cargo_number,omitempty" xml:"cargo_number,omitempty"`
-	// 商品Id
-	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 单位
 	Unit string `json:"unit,omitempty" xml:"unit,omitempty"`
 	// 商品修改时间
@@ -32,12 +36,8 @@ type TopLstItemDto struct {
 	WarehouseType string `json:"warehouse_type,omitempty" xml:"warehouse_type,omitempty"`
 	// 二级类目Id
 	SecondCategoryId string `json:"second_category_id,omitempty" xml:"second_category_id,omitempty"`
-	// 条码列表
-	BarCodeList []string `json:"bar_code_list,omitempty" xml:"bar_code_list>string,omitempty"`
 	// 短标题
 	ShortItemTitle string `json:"short_item_title,omitempty" xml:"short_item_title,omitempty"`
-	// 图片列表
-	ImgList []string `json:"img_list,omitempty" xml:"img_list>string,omitempty"`
-	// 库存集合
-	AvailableStockList []Stock `json:"available_stock_list,omitempty" xml:"available_stock_list>stock,omitempty"`
+	// 商品Id
+	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 }

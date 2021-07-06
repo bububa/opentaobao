@@ -2,8 +2,6 @@ package einvoice
 
 // InvoiceFwOrderDto 结构体
 type InvoiceFwOrderDto struct {
-	// 联系人对象
-	InvoiceContact *InvoiceContactDto `json:"invoice_contact,omitempty" xml:"invoice_contact,omitempty"`
 	// 订购时间，格式yyyy-MM-dd HH:mm:ss
 	BuyDate string `json:"buy_date,omitempty" xml:"buy_date,omitempty"`
 	// 实付总金额，单位元，最多2位小数
@@ -28,4 +26,6 @@ type InvoiceFwOrderDto struct {
 	ServStartTime string `json:"serv_start_time,omitempty" xml:"serv_start_time,omitempty"`
 	// 商品名称
 	ArticleName string `json:"article_name,omitempty" xml:"article_name,omitempty"`
+	// 联系人对象
+	InvoiceContact *InvoiceContactDto `json:"invoice_contact,omitempty" xml:"invoice_contact,omitempty"`
 }

@@ -4,8 +4,6 @@ package btrip
 type OpenTicketDo struct {
 	// 机票号
 	TicketNo string `json:"ticket_no,omitempty" xml:"ticket_no,omitempty"`
-	// 是否改签票（true：是；false：否）
-	IsChanged bool `json:"is_changed,omitempty" xml:"is_changed,omitempty"`
 	// 原改签票号
 	OriginTicketNo string `json:"origin_ticket_no,omitempty" xml:"origin_ticket_no,omitempty"`
 	// 航班号
@@ -36,12 +34,6 @@ type OpenTicketDo struct {
 	TicketPrice string `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
 	// 折扣
 	Discount string `json:"discount,omitempty" xml:"discount,omitempty"`
-	// 保险费（分）
-	InsuranceFee int64 `json:"insurance_fee,omitempty" xml:"insurance_fee,omitempty"`
-	// 燃油费（分）
-	Oil int64 `json:"oil,omitempty" xml:"oil,omitempty"`
-	// 基建（分）
-	Build int64 `json:"build,omitempty" xml:"build,omitempty"`
 	// 货币类型
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
 	// 行程单号
@@ -54,8 +46,16 @@ type OpenTicketDo struct {
 	InsureStatus string `json:"insure_status,omitempty" xml:"insure_status,omitempty"`
 	// 乘机人(保险人)姓名
 	InsureName string `json:"insure_name,omitempty" xml:"insure_name,omitempty"`
-	// 飞行时长（分钟），未去除经停时间
-	RideTime int64 `json:"ride_time,omitempty" xml:"ride_time,omitempty"`
 	// 到达时间
 	ArrTime string `json:"arr_time,omitempty" xml:"arr_time,omitempty"`
+	// 保险费（分）
+	InsuranceFee int64 `json:"insurance_fee,omitempty" xml:"insurance_fee,omitempty"`
+	// 燃油费（分）
+	Oil int64 `json:"oil,omitempty" xml:"oil,omitempty"`
+	// 基建（分）
+	Build int64 `json:"build,omitempty" xml:"build,omitempty"`
+	// 飞行时长（分钟），未去除经停时间
+	RideTime int64 `json:"ride_time,omitempty" xml:"ride_time,omitempty"`
+	// 是否改签票（true：是；false：否）
+	IsChanged bool `json:"is_changed,omitempty" xml:"is_changed,omitempty"`
 }

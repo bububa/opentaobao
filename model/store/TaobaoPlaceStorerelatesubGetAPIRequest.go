@@ -12,10 +12,10 @@ import (
 // 门店和子门店关系查找
 type TaobaoPlaceStorerelatesubGetAPIRequest struct {
 	model.Params
-	// 门店Id
-	_storeId int64
 	// 查询语句
 	_query string
+	// 门店Id
+	_storeId int64
 	// 第几页
 	_pageNo int64
 	// 页大小
@@ -43,19 +43,6 @@ func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetStoreId is StoreId Setter
-// 门店Id
-func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetStoreId(_storeId int64) error {
-	r._storeId = _storeId
-	r.Set("store_id", _storeId)
-	return nil
-}
-
-// GetStoreId StoreId Getter
-func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetStoreId() int64 {
-	return r._storeId
-}
-
 // SetQuery is Query Setter
 // 查询语句
 func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetQuery(_query string) error {
@@ -67,6 +54,19 @@ func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetQuery(_query string) error {
 // GetQuery Query Getter
 func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetQuery() string {
 	return r._query
+}
+
+// SetStoreId is StoreId Setter
+// 门店Id
+func (r *TaobaoPlaceStorerelatesubGetAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// GetStoreId StoreId Getter
+func (r TaobaoPlaceStorerelatesubGetAPIRequest) GetStoreId() int64 {
+	return r._storeId
 }
 
 // SetPageNo is PageNo Setter

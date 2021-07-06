@@ -2,6 +2,10 @@ package qimen
 
 // Package 结构体
 type Package struct {
+	// 包材信息
+	PackageMaterialList []PackageMaterial `json:"packageMaterialList,omitempty" xml:"packageMaterialList>package_material,omitempty"`
+	// 商品列表
+	Items []Item `json:"items,omitempty" xml:"items>item,omitempty"`
 	// 物流公司编码(SF=顺丰、EMS=标准快递、EYB=经济快件、ZJS=宅急送、YTO=圆通、ZTO=中通 (ZTO)、HTKY=百世汇通、 UC=优速、STO=申通、TTKDEX=天天快递、QFKD=全峰、FAST=快捷、POSTB=邮政小 包、GTO=国通、YUNDA=韵达、JD=京东配送、DD=当当宅配、 AMAZON=亚马逊物流、OTHER=其他;只传英文编码)
 	LogisticsCode string `json:"logisticsCode,omitempty" xml:"logisticsCode,omitempty"`
 	// 物流公司名称
@@ -24,10 +28,6 @@ type Package struct {
 	Volume string `json:"volume,omitempty" xml:"volume,omitempty"`
 	// 发票号
 	InvoiceNo string `json:"invoiceNo,omitempty" xml:"invoiceNo,omitempty"`
-	// 包材信息
-	PackageMaterialList []PackageMaterial `json:"packageMaterialList,omitempty" xml:"packageMaterialList>package_material,omitempty"`
-	// 商品列表
-	Items []Item `json:"items,omitempty" xml:"items>item,omitempty"`
 	// 签收人姓名, string (50) ，必填
 	SignUserName string `json:"signUserName,omitempty" xml:"signUserName,omitempty"`
 	// 当前状态操作时间, string (19) , YYYY-MM-DD HH:MM:SS

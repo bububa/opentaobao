@@ -16,12 +16,20 @@ type MaochaoWdkOrderDto struct {
 	SellUnit string `json:"sell_unit,omitempty" xml:"sell_unit,omitempty"`
 	// 非标品购买数量
 	NsQuantity string `json:"ns_quantity,omitempty" xml:"ns_quantity,omitempty"`
-	// 购买数量
-	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 商品id
 	AuctionId string `json:"auction_id,omitempty" xml:"auction_id,omitempty"`
 	// 商户编码
 	MerchantCode string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
+	// 商品名称
+	AuctionTitle string `json:"auction_title,omitempty" xml:"auction_title,omitempty"`
+	// 支付时间
+	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
+	// 渠道店ID
+	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+	// 子订单扩展字段, 订单商品采购价数据purchase_price
+	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
+	// 购买数量
+	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 五道口子订单ID
 	BizSubOrderId int64 `json:"biz_sub_order_id,omitempty" xml:"biz_sub_order_id,omitempty"`
 	// 主站子订单ID
@@ -32,12 +40,4 @@ type MaochaoWdkOrderDto struct {
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 商品价格
 	AuctionPrice int64 `json:"auction_price,omitempty" xml:"auction_price,omitempty"`
-	// 商品名称
-	AuctionTitle string `json:"auction_title,omitempty" xml:"auction_title,omitempty"`
-	// 支付时间
-	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
-	// 渠道店ID
-	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
-	// 子订单扩展字段, 订单商品采购价数据purchase_price
-	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 }

@@ -12,24 +12,24 @@ import (
 // 同步红星美凯龙存量商品到阿里
 type TmallNrtItemMainSynchronizeAPIRequest struct {
 	model.Params
-	// 摊位id
-	_boothId string
-	// 叶子类目id
-	_cid int64
 	// 类目属性
 	_props []CategoryPropDto
+	// 摊位id
+	_boothId string
 	// 经销商编码
 	_dealerCode string
 	// 卖场id
 	_mallId string
 	// 商家编码
 	_outerId string
-	// 系统自动生成
-	_outerProps *MacallineItemExtDto
 	// 价格
 	_price string
 	// 商品名
 	_title string
+	// 叶子类目id
+	_cid int64
+	// 系统自动生成
+	_outerProps *MacallineItemExtDto
 }
 
 // NewTmallNrtItemMainSynchronizeRequest 初始化TmallNrtItemMainSynchronizeAPIRequest对象
@@ -53,32 +53,6 @@ func (r TmallNrtItemMainSynchronizeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetBoothId is BoothId Setter
-// 摊位id
-func (r *TmallNrtItemMainSynchronizeAPIRequest) SetBoothId(_boothId string) error {
-	r._boothId = _boothId
-	r.Set("booth_id", _boothId)
-	return nil
-}
-
-// GetBoothId BoothId Getter
-func (r TmallNrtItemMainSynchronizeAPIRequest) GetBoothId() string {
-	return r._boothId
-}
-
-// SetCid is Cid Setter
-// 叶子类目id
-func (r *TmallNrtItemMainSynchronizeAPIRequest) SetCid(_cid int64) error {
-	r._cid = _cid
-	r.Set("cid", _cid)
-	return nil
-}
-
-// GetCid Cid Getter
-func (r TmallNrtItemMainSynchronizeAPIRequest) GetCid() int64 {
-	return r._cid
-}
-
 // SetProps is Props Setter
 // 类目属性
 func (r *TmallNrtItemMainSynchronizeAPIRequest) SetProps(_props []CategoryPropDto) error {
@@ -90,6 +64,19 @@ func (r *TmallNrtItemMainSynchronizeAPIRequest) SetProps(_props []CategoryPropDt
 // GetProps Props Getter
 func (r TmallNrtItemMainSynchronizeAPIRequest) GetProps() []CategoryPropDto {
 	return r._props
+}
+
+// SetBoothId is BoothId Setter
+// 摊位id
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetBoothId(_boothId string) error {
+	r._boothId = _boothId
+	r.Set("booth_id", _boothId)
+	return nil
+}
+
+// GetBoothId BoothId Getter
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetBoothId() string {
+	return r._boothId
 }
 
 // SetDealerCode is DealerCode Setter
@@ -131,19 +118,6 @@ func (r TmallNrtItemMainSynchronizeAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// SetOuterProps is OuterProps Setter
-// 系统自动生成
-func (r *TmallNrtItemMainSynchronizeAPIRequest) SetOuterProps(_outerProps *MacallineItemExtDto) error {
-	r._outerProps = _outerProps
-	r.Set("outer_props", _outerProps)
-	return nil
-}
-
-// GetOuterProps OuterProps Getter
-func (r TmallNrtItemMainSynchronizeAPIRequest) GetOuterProps() *MacallineItemExtDto {
-	return r._outerProps
-}
-
 // SetPrice is Price Setter
 // 价格
 func (r *TmallNrtItemMainSynchronizeAPIRequest) SetPrice(_price string) error {
@@ -168,4 +142,30 @@ func (r *TmallNrtItemMainSynchronizeAPIRequest) SetTitle(_title string) error {
 // GetTitle Title Getter
 func (r TmallNrtItemMainSynchronizeAPIRequest) GetTitle() string {
 	return r._title
+}
+
+// SetCid is Cid Setter
+// 叶子类目id
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetCid(_cid int64) error {
+	r._cid = _cid
+	r.Set("cid", _cid)
+	return nil
+}
+
+// GetCid Cid Getter
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetCid() int64 {
+	return r._cid
+}
+
+// SetOuterProps is OuterProps Setter
+// 系统自动生成
+func (r *TmallNrtItemMainSynchronizeAPIRequest) SetOuterProps(_outerProps *MacallineItemExtDto) error {
+	r._outerProps = _outerProps
+	r.Set("outer_props", _outerProps)
+	return nil
+}
+
+// GetOuterProps OuterProps Getter
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetOuterProps() *MacallineItemExtDto {
+	return r._outerProps
 }

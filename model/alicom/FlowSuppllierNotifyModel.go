@@ -16,12 +16,12 @@ type FlowSuppllierNotifyModel struct {
 	OrderNo string `json:"order_no,omitempty" xml:"order_no,omitempty"`
 	// 运营商外部订单号
 	OutOrderNo string `json:"out_order_no,omitempty" xml:"out_order_no,omitempty"`
-	// 运营商的收货状态，false：未收到
-	ReceiveStatus bool `json:"receive_status,omitempty" xml:"receive_status,omitempty"`
 	// iccid和卡的过期时间
 	SendGoodParam string `json:"send_good_param,omitempty" xml:"send_good_param,omitempty"`
 	// iccid
 	Iccid string `json:"iccid,omitempty" xml:"iccid,omitempty"`
 	// 买家ID，用户id
 	UserId string `json:"user_id,omitempty" xml:"user_id,omitempty"`
+	// 运营商的收货状态，false：未收到
+	ReceiveStatus bool `json:"receive_status,omitempty" xml:"receive_status,omitempty"`
 }

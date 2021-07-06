@@ -12,10 +12,10 @@ import (
 // 修改产品线
 type TaobaoFenxiaoProductcatUpdateAPIRequest struct {
 	model.Params
-	// 产品线ID
-	_productLineId int64
 	// 产品线名称
 	_name string
+	// 产品线ID
+	_productLineId int64
 	// 最低零售价比例，注意：100.00%，则输入为10000
 	_retailLowPercent int64
 	// 最高零售价比例，注意：100.00%，则输入为10000
@@ -47,19 +47,6 @@ func (r TaobaoFenxiaoProductcatUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetProductLineId is ProductLineId Setter
-// 产品线ID
-func (r *TaobaoFenxiaoProductcatUpdateAPIRequest) SetProductLineId(_productLineId int64) error {
-	r._productLineId = _productLineId
-	r.Set("product_line_id", _productLineId)
-	return nil
-}
-
-// GetProductLineId ProductLineId Getter
-func (r TaobaoFenxiaoProductcatUpdateAPIRequest) GetProductLineId() int64 {
-	return r._productLineId
-}
-
 // SetName is Name Setter
 // 产品线名称
 func (r *TaobaoFenxiaoProductcatUpdateAPIRequest) SetName(_name string) error {
@@ -71,6 +58,19 @@ func (r *TaobaoFenxiaoProductcatUpdateAPIRequest) SetName(_name string) error {
 // GetName Name Getter
 func (r TaobaoFenxiaoProductcatUpdateAPIRequest) GetName() string {
 	return r._name
+}
+
+// SetProductLineId is ProductLineId Setter
+// 产品线ID
+func (r *TaobaoFenxiaoProductcatUpdateAPIRequest) SetProductLineId(_productLineId int64) error {
+	r._productLineId = _productLineId
+	r.Set("product_line_id", _productLineId)
+	return nil
+}
+
+// GetProductLineId ProductLineId Getter
+func (r TaobaoFenxiaoProductcatUpdateAPIRequest) GetProductLineId() int64 {
+	return r._productLineId
 }
 
 // SetRetailLowPercent is RetailLowPercent Setter

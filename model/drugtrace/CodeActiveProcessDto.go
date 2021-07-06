@@ -12,8 +12,6 @@ type CodeActiveProcessDto struct {
 	PiatsCode string `json:"piats_code,omitempty" xml:"piats_code,omitempty"`
 	// 处理日期
 	ProcessDate string `json:"process_date,omitempty" xml:"process_date,omitempty"`
-	// 制剂单位
-	PrepnUnit int64 `json:"prepn_unit,omitempty" xml:"prepn_unit,omitempty"`
 	// 企业ID
 	RefEntId string `json:"ref_ent_id,omitempty" xml:"ref_ent_id,omitempty"`
 	// 处理错误原因
@@ -58,4 +56,6 @@ type CodeActiveProcessDto struct {
 	ProdSeqNo string `json:"prod_seq_no,omitempty" xml:"prod_seq_no,omitempty"`
 	// 激活信息主键
 	ActiveInfoSeqNo string `json:"active_info_seq_no,omitempty" xml:"active_info_seq_no,omitempty"`
+	// 制剂单位
+	PrepnUnit int64 `json:"prepn_unit,omitempty" xml:"prepn_unit,omitempty"`
 }

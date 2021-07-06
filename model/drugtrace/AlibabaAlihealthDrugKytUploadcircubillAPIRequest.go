@@ -17,10 +17,6 @@ type AlibabaAlihealthDrugKytUploadcircubillAPIRequest struct {
 	_billCode string
 	// 单据时间（扫码时间）
 	_billTime string
-	// 单据类型【102代表采购入库,201代表销售出库，其它单据类型详见文档】
-	_billType int64
-	// 药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药
-	_physicType int64
 	// 货主企业（单据的所有者，上传人）【注意：该入参是ref_ent_id，不是ent_id】
 	_refUserId string
 	// 第三方物流代理企业【注意：该入参是ref_ent_id，不是ent_id】，该字段兼容之前接口逻辑，后期将不允许使用，不要填值。
@@ -41,8 +37,6 @@ type AlibabaAlihealthDrugKytUploadcircubillAPIRequest struct {
 	_uploadFileName string
 	// 客户端类型【暂定都写2】
 	_clientType string
-	// （协同平台数据合规）应收货总数量
-	_quReceivable int64
 	// （协同平台数据合规）是否验证，0：未通过验证，1：已验证
 	_xtIsCheck string
 	// （协同平台数据合规）未验证通过原因【验证未通过时填写】
@@ -71,6 +65,12 @@ type AlibabaAlihealthDrugKytUploadcircubillAPIRequest struct {
 	_fromAddress string
 	// （协同平台数据合规）单据委托企业entId
 	_assEntId string
+	// 单据类型【102代表采购入库,201代表销售出库，其它单据类型详见文档】
+	_billType int64
+	// 药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药
+	_physicType int64
+	// （协同平台数据合规）应收货总数量
+	_quReceivable int64
 }
 
 // NewAlibabaAlihealthDrugKytUploadcircubillRequest 初始化AlibabaAlihealthDrugKytUploadcircubillAPIRequest对象
@@ -118,32 +118,6 @@ func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetBillTime(_billTime
 // GetBillTime BillTime Getter
 func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetBillTime() string {
 	return r._billTime
-}
-
-// SetBillType is BillType Setter
-// 单据类型【102代表采购入库,201代表销售出库，其它单据类型详见文档】
-func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetBillType(_billType int64) error {
-	r._billType = _billType
-	r.Set("bill_type", _billType)
-	return nil
-}
-
-// GetBillType BillType Getter
-func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetBillType() int64 {
-	return r._billType
-}
-
-// SetPhysicType is PhysicType Setter
-// 药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药
-func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetPhysicType(_physicType int64) error {
-	r._physicType = _physicType
-	r.Set("physic_type", _physicType)
-	return nil
-}
-
-// GetPhysicType PhysicType Getter
-func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetPhysicType() int64 {
-	return r._physicType
 }
 
 // SetRefUserId is RefUserId Setter
@@ -274,19 +248,6 @@ func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetClientType(_client
 // GetClientType ClientType Getter
 func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetClientType() string {
 	return r._clientType
-}
-
-// SetQuReceivable is QuReceivable Setter
-// （协同平台数据合规）应收货总数量
-func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetQuReceivable(_quReceivable int64) error {
-	r._quReceivable = _quReceivable
-	r.Set("qu_receivable", _quReceivable)
-	return nil
-}
-
-// GetQuReceivable QuReceivable Getter
-func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetQuReceivable() int64 {
-	return r._quReceivable
 }
 
 // SetXtIsCheck is XtIsCheck Setter
@@ -469,4 +430,43 @@ func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetAssEntId(_assEntId
 // GetAssEntId AssEntId Getter
 func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetAssEntId() string {
 	return r._assEntId
+}
+
+// SetBillType is BillType Setter
+// 单据类型【102代表采购入库,201代表销售出库，其它单据类型详见文档】
+func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetBillType(_billType int64) error {
+	r._billType = _billType
+	r.Set("bill_type", _billType)
+	return nil
+}
+
+// GetBillType BillType Getter
+func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetBillType() int64 {
+	return r._billType
+}
+
+// SetPhysicType is PhysicType Setter
+// 药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药
+func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetPhysicType(_physicType int64) error {
+	r._physicType = _physicType
+	r.Set("physic_type", _physicType)
+	return nil
+}
+
+// GetPhysicType PhysicType Getter
+func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetPhysicType() int64 {
+	return r._physicType
+}
+
+// SetQuReceivable is QuReceivable Setter
+// （协同平台数据合规）应收货总数量
+func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetQuReceivable(_quReceivable int64) error {
+	r._quReceivable = _quReceivable
+	r.Set("qu_receivable", _quReceivable)
+	return nil
+}
+
+// GetQuReceivable QuReceivable Getter
+func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetQuReceivable() int64 {
+	return r._quReceivable
 }

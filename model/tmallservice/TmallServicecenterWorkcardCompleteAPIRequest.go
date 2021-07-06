@@ -12,18 +12,18 @@ import (
 // 工单完结
 type TmallServicecenterWorkcardCompleteAPIRequest struct {
 	model.Params
-	// 工单id
-	_workcardId int64
-	// 完结次数
-	_completeCount int64
 	// 扩展信息
 	_extJson string
-	// 工单完结号
-	_sequence int64
 	// 核销地纬度
 	_latitude string
 	// 核销地经度
 	_longitude string
+	// 工单id
+	_workcardId int64
+	// 完结次数
+	_completeCount int64
+	// 工单完结号
+	_sequence int64
 }
 
 // NewTmallServicecenterWorkcardCompleteRequest 初始化TmallServicecenterWorkcardCompleteAPIRequest对象
@@ -45,6 +45,45 @@ func (r TmallServicecenterWorkcardCompleteAPIRequest) GetApiParams() url.Values 
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetExtJson is ExtJson Setter
+// 扩展信息
+func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetExtJson(_extJson string) error {
+	r._extJson = _extJson
+	r.Set("ext_json", _extJson)
+	return nil
+}
+
+// GetExtJson ExtJson Getter
+func (r TmallServicecenterWorkcardCompleteAPIRequest) GetExtJson() string {
+	return r._extJson
+}
+
+// SetLatitude is Latitude Setter
+// 核销地纬度
+func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetLatitude(_latitude string) error {
+	r._latitude = _latitude
+	r.Set("latitude", _latitude)
+	return nil
+}
+
+// GetLatitude Latitude Getter
+func (r TmallServicecenterWorkcardCompleteAPIRequest) GetLatitude() string {
+	return r._latitude
+}
+
+// SetLongitude is Longitude Setter
+// 核销地经度
+func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetLongitude(_longitude string) error {
+	r._longitude = _longitude
+	r.Set("longitude", _longitude)
+	return nil
+}
+
+// GetLongitude Longitude Getter
+func (r TmallServicecenterWorkcardCompleteAPIRequest) GetLongitude() string {
+	return r._longitude
 }
 
 // SetWorkcardId is WorkcardId Setter
@@ -73,19 +112,6 @@ func (r TmallServicecenterWorkcardCompleteAPIRequest) GetCompleteCount() int64 {
 	return r._completeCount
 }
 
-// SetExtJson is ExtJson Setter
-// 扩展信息
-func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetExtJson(_extJson string) error {
-	r._extJson = _extJson
-	r.Set("ext_json", _extJson)
-	return nil
-}
-
-// GetExtJson ExtJson Getter
-func (r TmallServicecenterWorkcardCompleteAPIRequest) GetExtJson() string {
-	return r._extJson
-}
-
 // SetSequence is Sequence Setter
 // 工单完结号
 func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetSequence(_sequence int64) error {
@@ -97,30 +123,4 @@ func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetSequence(_sequence int
 // GetSequence Sequence Getter
 func (r TmallServicecenterWorkcardCompleteAPIRequest) GetSequence() int64 {
 	return r._sequence
-}
-
-// SetLatitude is Latitude Setter
-// 核销地纬度
-func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetLatitude(_latitude string) error {
-	r._latitude = _latitude
-	r.Set("latitude", _latitude)
-	return nil
-}
-
-// GetLatitude Latitude Getter
-func (r TmallServicecenterWorkcardCompleteAPIRequest) GetLatitude() string {
-	return r._latitude
-}
-
-// SetLongitude is Longitude Setter
-// 核销地经度
-func (r *TmallServicecenterWorkcardCompleteAPIRequest) SetLongitude(_longitude string) error {
-	r._longitude = _longitude
-	r.Set("longitude", _longitude)
-	return nil
-}
-
-// GetLongitude Longitude Getter
-func (r TmallServicecenterWorkcardCompleteAPIRequest) GetLongitude() string {
-	return r._longitude
 }

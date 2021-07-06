@@ -20,12 +20,12 @@ type TaobaoAuctionGovDataMonthlyGetAPIRequest struct {
 	model.Params
 	// 法院名称
 	_courtName string
-	// 统计数据是够包含下属法院
-	_isIncludeSub bool
 	// 开始月份
 	_startMonth string
 	// 截止月份(统计数据包含这个月)
 	_endMonth string
+	// 统计数据是够包含下属法院
+	_isIncludeSub bool
 }
 
 // NewTaobaoAuctionGovDataMonthlyGetRequest 初始化TaobaoAuctionGovDataMonthlyGetAPIRequest对象
@@ -62,19 +62,6 @@ func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetCourtName() string {
 	return r._courtName
 }
 
-// SetIsIncludeSub is IsIncludeSub Setter
-// 统计数据是够包含下属法院
-func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetIsIncludeSub(_isIncludeSub bool) error {
-	r._isIncludeSub = _isIncludeSub
-	r.Set("is_include_sub", _isIncludeSub)
-	return nil
-}
-
-// GetIsIncludeSub IsIncludeSub Getter
-func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetIsIncludeSub() bool {
-	return r._isIncludeSub
-}
-
 // SetStartMonth is StartMonth Setter
 // 开始月份
 func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetStartMonth(_startMonth string) error {
@@ -99,4 +86,17 @@ func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetEndMonth(_endMonth string)
 // GetEndMonth EndMonth Getter
 func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetEndMonth() string {
 	return r._endMonth
+}
+
+// SetIsIncludeSub is IsIncludeSub Setter
+// 统计数据是够包含下属法院
+func (r *TaobaoAuctionGovDataMonthlyGetAPIRequest) SetIsIncludeSub(_isIncludeSub bool) error {
+	r._isIncludeSub = _isIncludeSub
+	r.Set("is_include_sub", _isIncludeSub)
+	return nil
+}
+
+// GetIsIncludeSub IsIncludeSub Getter
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetIsIncludeSub() bool {
+	return r._isIncludeSub
 }

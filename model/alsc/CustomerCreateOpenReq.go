@@ -2,6 +2,8 @@ package alsc
 
 // CustomerCreateOpenReq 结构体
 type CustomerCreateOpenReq struct {
+	// 标签列表
+	TagIdList []string `json:"tag_id_list,omitempty" xml:"tag_id_list>string,omitempty"`
 	// 外部ID
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 外部ID类型
@@ -14,8 +16,6 @@ type CustomerCreateOpenReq struct {
 	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
 	// 渠道
 	Channel string `json:"channel,omitempty" xml:"channel,omitempty"`
-	// 顾客类型，1:会员，0:顾客
-	CustomerType int64 `json:"customer_type,omitempty" xml:"customer_type,omitempty"`
 	// 邮箱
 	Email string `json:"email,omitempty" xml:"email,omitempty"`
 	// 性别  0女 1男
@@ -38,10 +38,10 @@ type CustomerCreateOpenReq struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 店铺ID
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
-	// 标签列表
-	TagIdList []string `json:"tag_id_list,omitempty" xml:"tag_id_list>string,omitempty"`
 	// 外部品牌id
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
 	// 外部门店id
 	OutShopId string `json:"out_shop_id,omitempty" xml:"out_shop_id,omitempty"`
+	// 顾客类型，1:会员，0:顾客
+	CustomerType int64 `json:"customer_type,omitempty" xml:"customer_type,omitempty"`
 }

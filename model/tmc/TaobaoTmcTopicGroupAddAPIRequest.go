@@ -13,10 +13,10 @@ import (
 // 如果是需要授权的消息，分组路由先判断用户分组路由(使用taobao.tmc.group.add添加的路由)，用户分组路由不存在时，才会判断topic分组路由
 type TaobaoTmcTopicGroupAddAPIRequest struct {
 	model.Params
-	// 消息分组名，如果不存在，会自动创建
-	_groupName string
 	// 消息topic名称，多个以逗号(,)分割
 	_topics []string
+	// 消息分组名，如果不存在，会自动创建
+	_groupName string
 }
 
 // NewTaobaoTmcTopicGroupAddRequest 初始化TaobaoTmcTopicGroupAddAPIRequest对象
@@ -40,19 +40,6 @@ func (r TaobaoTmcTopicGroupAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetGroupName is GroupName Setter
-// 消息分组名，如果不存在，会自动创建
-func (r *TaobaoTmcTopicGroupAddAPIRequest) SetGroupName(_groupName string) error {
-	r._groupName = _groupName
-	r.Set("group_name", _groupName)
-	return nil
-}
-
-// GetGroupName GroupName Getter
-func (r TaobaoTmcTopicGroupAddAPIRequest) GetGroupName() string {
-	return r._groupName
-}
-
 // SetTopics is Topics Setter
 // 消息topic名称，多个以逗号(,)分割
 func (r *TaobaoTmcTopicGroupAddAPIRequest) SetTopics(_topics []string) error {
@@ -64,4 +51,17 @@ func (r *TaobaoTmcTopicGroupAddAPIRequest) SetTopics(_topics []string) error {
 // GetTopics Topics Getter
 func (r TaobaoTmcTopicGroupAddAPIRequest) GetTopics() []string {
 	return r._topics
+}
+
+// SetGroupName is GroupName Setter
+// 消息分组名，如果不存在，会自动创建
+func (r *TaobaoTmcTopicGroupAddAPIRequest) SetGroupName(_groupName string) error {
+	r._groupName = _groupName
+	r.Set("group_name", _groupName)
+	return nil
+}
+
+// GetGroupName GroupName Getter
+func (r TaobaoTmcTopicGroupAddAPIRequest) GetGroupName() string {
+	return r._groupName
 }

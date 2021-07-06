@@ -14,8 +14,6 @@ type AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest struct {
 	model.Params
 	// top身份认证
 	_skeyCode string
-	// 商家id
-	_entInfoId int64
 	// 单据编号
 	_billCode string
 	// 查询开始日期
@@ -24,6 +22,8 @@ type AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest struct {
 	_endDate string
 	// 不需要
 	_sellerName string
+	// 商家id
+	_entInfoId int64
 	// 每页条数
 	_pageSize int64
 	// 当前页
@@ -62,19 +62,6 @@ func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetSkeyCode(
 // GetSkeyCode SkeyCode Getter
 func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetSkeyCode() string {
 	return r._skeyCode
-}
-
-// SetEntInfoId is EntInfoId Setter
-// 商家id
-func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetEntInfoId(_entInfoId int64) error {
-	r._entInfoId = _entInfoId
-	r.Set("ent_info_id", _entInfoId)
-	return nil
-}
-
-// GetEntInfoId EntInfoId Getter
-func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetEntInfoId() int64 {
-	return r._entInfoId
 }
 
 // SetBillCode is BillCode Setter
@@ -127,6 +114,19 @@ func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetSellerNam
 // GetSellerName SellerName Getter
 func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetSellerName() string {
 	return r._sellerName
+}
+
+// SetEntInfoId is EntInfoId Setter
+// 商家id
+func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetEntInfoId(_entInfoId int64) error {
+	r._entInfoId = _entInfoId
+	r.Set("ent_info_id", _entInfoId)
+	return nil
+}
+
+// GetEntInfoId EntInfoId Getter
+func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetEntInfoId() int64 {
+	return r._entInfoId
 }
 
 // SetPageSize is PageSize Setter

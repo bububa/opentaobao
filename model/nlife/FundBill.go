@@ -12,12 +12,12 @@ type FundBill struct {
 	BuyerIdType string `json:"buyer_id_type,omitempty" xml:"buyer_id_type,omitempty"`
 	// 标题：     * 1. type=CASH：现金支付；      * 2. type=UNIONPAY：银联刷卡支付；      * 3. type=ALIPAY：支付宝支付；      * 4. type=WECHAT_PAY：微信支付；      * 5. type=PROMOTION: 零售+平台的优惠名称；      * 6. type=CUSTOM_PROMOTION：零售商自有优惠名称；      * 7. type=CUSTOM_PREPAY_CARD：零售商自有储值卡；      * 8. type=MALING：抹零      *
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
-	// 金额/优惠抵扣金额，单位：分
-	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 货币种类：    CYN("人民币"),     USD("美元"),     HKD("港币");
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
 	// 扩展参数，JSON格式
 	ExtendParams string `json:"extend_params,omitempty" xml:"extend_params,omitempty"`
 	// 附加数据，在查询订单中原样返回，该字段主要用于商户携带订单的自定义数据
 	Attachment string `json:"attachment,omitempty" xml:"attachment,omitempty"`
+	// 金额/优惠抵扣金额，单位：分
+	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 }

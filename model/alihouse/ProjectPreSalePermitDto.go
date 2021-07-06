@@ -16,10 +16,6 @@ type ProjectPreSalePermitDto struct {
 	RegistrationStartTime string `json:"registration_start_time,omitempty" xml:"registration_start_time,omitempty"`
 	// 住宅拟售价格(分)
 	ProposedSalePrice string `json:"proposed_sale_price,omitempty" xml:"proposed_sale_price,omitempty"`
-	// 销售面积
-	SalesArea int64 `json:"sales_area,omitempty" xml:"sales_area,omitempty"`
-	// 销售套数
-	SalesSets int64 `json:"sales_sets,omitempty" xml:"sales_sets,omitempty"`
 	// 使用年限
 	ServiceLife string `json:"service_life,omitempty" xml:"service_life,omitempty"`
 	// 预售部位
@@ -38,4 +34,8 @@ type ProjectPreSalePermitDto struct {
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 预售楼幢
 	PreSaleBuild string `json:"pre_sale_build,omitempty" xml:"pre_sale_build,omitempty"`
+	// 销售面积
+	SalesArea int64 `json:"sales_area,omitempty" xml:"sales_area,omitempty"`
+	// 销售套数
+	SalesSets int64 `json:"sales_sets,omitempty" xml:"sales_sets,omitempty"`
 }

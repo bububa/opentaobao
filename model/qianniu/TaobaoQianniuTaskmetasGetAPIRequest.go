@@ -12,30 +12,30 @@ import (
 // 任务元查询接口
 type TaobaoQianniuTaskmetasGetAPIRequest struct {
 	model.Params
-	// 发起任务人的uid
-	_senderUid int64
 	// 逗号分隔的字段列表.如id,title,content,sender_uid,sender_nick,finish_strategy,biz_sys_Id,biz_sys_task_type,start_time,end_time,reminder_flag,priority
 	_fields string
-	// 分页数，最大100
-	_pageSize int64
-	// 当前页码
-	_currentPage int64
 	// 排序字段。gmt_create,priority等
 	_orderBy string
 	// 升降序。asc为升，desc为降
 	_orderType string
-	// 0为未完成。2为完成。4为取消。不填为所有
-	_status int64
 	// 任务类型
 	_bizType string
 	// 按关键字搜索
 	_keyWord string
 	// 客户端的版本信息
 	_clientInfo string
-	// 接收人uid
-	_receiverUid int64
 	// 任务元ID，多个以逗号分离
 	_metaIds string
+	// 发起任务人的uid
+	_senderUid int64
+	// 分页数，最大100
+	_pageSize int64
+	// 当前页码
+	_currentPage int64
+	// 0为未完成。2为完成。4为取消。不填为所有
+	_status int64
+	// 接收人uid
+	_receiverUid int64
 }
 
 // NewTaobaoQianniuTaskmetasGetRequest 初始化TaobaoQianniuTaskmetasGetAPIRequest对象
@@ -59,19 +59,6 @@ func (r TaobaoQianniuTaskmetasGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetSenderUid is SenderUid Setter
-// 发起任务人的uid
-func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetSenderUid(_senderUid int64) error {
-	r._senderUid = _senderUid
-	r.Set("sender_uid", _senderUid)
-	return nil
-}
-
-// GetSenderUid SenderUid Getter
-func (r TaobaoQianniuTaskmetasGetAPIRequest) GetSenderUid() int64 {
-	return r._senderUid
-}
-
 // SetFields is Fields Setter
 // 逗号分隔的字段列表.如id,title,content,sender_uid,sender_nick,finish_strategy,biz_sys_Id,biz_sys_task_type,start_time,end_time,reminder_flag,priority
 func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetFields(_fields string) error {
@@ -83,32 +70,6 @@ func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetFields(_fields string) error {
 // GetFields Fields Getter
 func (r TaobaoQianniuTaskmetasGetAPIRequest) GetFields() string {
 	return r._fields
-}
-
-// SetPageSize is PageSize Setter
-// 分页数，最大100
-func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoQianniuTaskmetasGetAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetCurrentPage is CurrentPage Setter
-// 当前页码
-func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetCurrentPage(_currentPage int64) error {
-	r._currentPage = _currentPage
-	r.Set("current_page", _currentPage)
-	return nil
-}
-
-// GetCurrentPage CurrentPage Getter
-func (r TaobaoQianniuTaskmetasGetAPIRequest) GetCurrentPage() int64 {
-	return r._currentPage
 }
 
 // SetOrderBy is OrderBy Setter
@@ -135,19 +96,6 @@ func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetOrderType(_orderType string) er
 // GetOrderType OrderType Getter
 func (r TaobaoQianniuTaskmetasGetAPIRequest) GetOrderType() string {
 	return r._orderType
-}
-
-// SetStatus is Status Setter
-// 0为未完成。2为完成。4为取消。不填为所有
-func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetStatus(_status int64) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TaobaoQianniuTaskmetasGetAPIRequest) GetStatus() int64 {
-	return r._status
 }
 
 // SetBizType is BizType Setter
@@ -189,19 +137,6 @@ func (r TaobaoQianniuTaskmetasGetAPIRequest) GetClientInfo() string {
 	return r._clientInfo
 }
 
-// SetReceiverUid is ReceiverUid Setter
-// 接收人uid
-func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetReceiverUid(_receiverUid int64) error {
-	r._receiverUid = _receiverUid
-	r.Set("receiver_uid", _receiverUid)
-	return nil
-}
-
-// GetReceiverUid ReceiverUid Getter
-func (r TaobaoQianniuTaskmetasGetAPIRequest) GetReceiverUid() int64 {
-	return r._receiverUid
-}
-
 // SetMetaIds is MetaIds Setter
 // 任务元ID，多个以逗号分离
 func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetMetaIds(_metaIds string) error {
@@ -213,4 +148,69 @@ func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetMetaIds(_metaIds string) error 
 // GetMetaIds MetaIds Getter
 func (r TaobaoQianniuTaskmetasGetAPIRequest) GetMetaIds() string {
 	return r._metaIds
+}
+
+// SetSenderUid is SenderUid Setter
+// 发起任务人的uid
+func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetSenderUid(_senderUid int64) error {
+	r._senderUid = _senderUid
+	r.Set("sender_uid", _senderUid)
+	return nil
+}
+
+// GetSenderUid SenderUid Getter
+func (r TaobaoQianniuTaskmetasGetAPIRequest) GetSenderUid() int64 {
+	return r._senderUid
+}
+
+// SetPageSize is PageSize Setter
+// 分页数，最大100
+func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoQianniuTaskmetasGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetCurrentPage is CurrentPage Setter
+// 当前页码
+func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// GetCurrentPage CurrentPage Getter
+func (r TaobaoQianniuTaskmetasGetAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
+}
+
+// SetStatus is Status Setter
+// 0为未完成。2为完成。4为取消。不填为所有
+func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TaobaoQianniuTaskmetasGetAPIRequest) GetStatus() int64 {
+	return r._status
+}
+
+// SetReceiverUid is ReceiverUid Setter
+// 接收人uid
+func (r *TaobaoQianniuTaskmetasGetAPIRequest) SetReceiverUid(_receiverUid int64) error {
+	r._receiverUid = _receiverUid
+	r.Set("receiver_uid", _receiverUid)
+	return nil
+}
+
+// GetReceiverUid ReceiverUid Getter
+func (r TaobaoQianniuTaskmetasGetAPIRequest) GetReceiverUid() int64 {
+	return r._receiverUid
 }

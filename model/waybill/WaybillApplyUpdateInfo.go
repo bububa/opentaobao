@@ -3,8 +3,6 @@ package waybill
 // WaybillApplyUpdateInfo 结构体
 type WaybillApplyUpdateInfo struct {
 	// --
-	TradeOrderInfo *TradeOrderInfo `json:"trade_order_info,omitempty" xml:"trade_order_info,omitempty"`
-	// --
 	WaybillCode string `json:"waybill_code,omitempty" xml:"waybill_code,omitempty"`
 	// 收货网点编码
 	ConsigneeBranchName string `json:"consignee_branch_name,omitempty" xml:"consignee_branch_name,omitempty"`
@@ -16,4 +14,6 @@ type WaybillApplyUpdateInfo struct {
 	PackageCenterCode string `json:"package_center_code,omitempty" xml:"package_center_code,omitempty"`
 	// 集包地、目的地中心名称
 	PackageCenterName string `json:"package_center_name,omitempty" xml:"package_center_name,omitempty"`
+	// --
+	TradeOrderInfo *TradeOrderInfo `json:"trade_order_info,omitempty" xml:"trade_order_info,omitempty"`
 }

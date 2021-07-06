@@ -20,8 +20,8 @@ type TaobaoFenxiaoOrdersGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"fenxiao_orders_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 搜索到的采购单记录总数
-	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 采购单及子采购单信息。返回 PurchaseOrder 包含的字段信息。
 	PurchaseOrders []TopDpOrderDo `json:"purchase_orders,omitempty" xml:"purchase_orders>top_dp_order_do,omitempty"`
+	// 搜索到的采购单记录总数
+	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 }

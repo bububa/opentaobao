@@ -2,14 +2,14 @@ package alihealthoutflow
 
 // PrescriptionMoreDataResponse 结构体
 type PrescriptionMoreDataResponse struct {
+	// 药品列表
+	DrugList []DrugDto `json:"drug_list,omitempty" xml:"drug_list>drug_dto,omitempty"`
 	// 状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 过期时间
 	ExpiredTime string `json:"expired_time,omitempty" xml:"expired_time,omitempty"`
 	// 费用类别
 	FeeType string `json:"fee_type,omitempty" xml:"fee_type,omitempty"`
-	// 药品列表
-	DrugList []DrugDto `json:"drug_list,omitempty" xml:"drug_list>drug_dto,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 处方类型

@@ -12,8 +12,6 @@ import (
 // 门票景点绑定接口，用于建立阿里标准景点id与商家系统景点id的映射关系。该接口同时支持新建和修改映射关系，当用户没有为ali_scenic_id建立过映射关系时，则判断为新建映射关系，否则为修改。可以通过设置update_out_scenic_id来修改ali_scenic_id与out_scenic_id的映射关系。
 type AlitripTicketScenicBindAPIRequest struct {
 	model.Params
-	// 必填，阿里旅行对应的景点编码
-	_aliScenicId int64
 	// 商户景点城市
 	_city string
 	// 商户景点地址
@@ -26,6 +24,8 @@ type AlitripTicketScenicBindAPIRequest struct {
 	_outScenicId string
 	// 可选，如果需要更新out_scenic_id与ali_scenic_id的映射关系时 需要填写
 	_updateOutScenicId string
+	// 必填，阿里旅行对应的景点编码
+	_aliScenicId int64
 }
 
 // NewAlitripTicketScenicBindRequest 初始化AlitripTicketScenicBindAPIRequest对象
@@ -47,19 +47,6 @@ func (r AlitripTicketScenicBindAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetAliScenicId is AliScenicId Setter
-// 必填，阿里旅行对应的景点编码
-func (r *AlitripTicketScenicBindAPIRequest) SetAliScenicId(_aliScenicId int64) error {
-	r._aliScenicId = _aliScenicId
-	r.Set("ali_scenic_id", _aliScenicId)
-	return nil
-}
-
-// GetAliScenicId AliScenicId Getter
-func (r AlitripTicketScenicBindAPIRequest) GetAliScenicId() int64 {
-	return r._aliScenicId
 }
 
 // SetCity is City Setter
@@ -138,4 +125,17 @@ func (r *AlitripTicketScenicBindAPIRequest) SetUpdateOutScenicId(_updateOutSceni
 // GetUpdateOutScenicId UpdateOutScenicId Getter
 func (r AlitripTicketScenicBindAPIRequest) GetUpdateOutScenicId() string {
 	return r._updateOutScenicId
+}
+
+// SetAliScenicId is AliScenicId Setter
+// 必填，阿里旅行对应的景点编码
+func (r *AlitripTicketScenicBindAPIRequest) SetAliScenicId(_aliScenicId int64) error {
+	r._aliScenicId = _aliScenicId
+	r.Set("ali_scenic_id", _aliScenicId)
+	return nil
+}
+
+// GetAliScenicId AliScenicId Getter
+func (r AlitripTicketScenicBindAPIRequest) GetAliScenicId() int64 {
+	return r._aliScenicId
 }

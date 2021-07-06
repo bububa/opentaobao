@@ -22,8 +22,8 @@ type AlibabaEinvoiceAmountCheckAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 开票量查询结果
 	EinvoiceAmountCheckResultList []EinvoiceAmountCheckResult `json:"einvoice_amount_check_result_list,omitempty" xml:"einvoice_amount_check_result_list>einvoice_amount_check_result,omitempty"`
-	// 是否成功
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 查询结果的数量
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+	// 是否成功
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

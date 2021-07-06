@@ -12,12 +12,12 @@ import (
 // 定向推广-获取计划维度推广效果
 type AlibabaScbpTargetAdCampaignEffectAPIRequest struct {
 	model.Params
-	// 统计区间 只能为1 7 30
-	_interval int64
 	// 结束时间 当inteval=7或30的时候 不需要填写，当inteval=1时需要填写（开始结束时间区间不允许大于180天）
 	_endDate string
 	// 开始时间 当inteval=7或30的时候 不需要填写，当inteval=1时需要填写（开始结束时间区间不允许大于180天）
 	_beginDate string
+	// 统计区间 只能为1 7 30
+	_interval int64
 	// 当填写时，展示指定id的数据，不填写，则展示全部计划总数据
 	_campaignId int64
 }
@@ -41,19 +41,6 @@ func (r AlibabaScbpTargetAdCampaignEffectAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetInterval is Interval Setter
-// 统计区间 只能为1 7 30
-func (r *AlibabaScbpTargetAdCampaignEffectAPIRequest) SetInterval(_interval int64) error {
-	r._interval = _interval
-	r.Set("interval", _interval)
-	return nil
-}
-
-// GetInterval Interval Getter
-func (r AlibabaScbpTargetAdCampaignEffectAPIRequest) GetInterval() int64 {
-	return r._interval
 }
 
 // SetEndDate is EndDate Setter
@@ -80,6 +67,19 @@ func (r *AlibabaScbpTargetAdCampaignEffectAPIRequest) SetBeginDate(_beginDate st
 // GetBeginDate BeginDate Getter
 func (r AlibabaScbpTargetAdCampaignEffectAPIRequest) GetBeginDate() string {
 	return r._beginDate
+}
+
+// SetInterval is Interval Setter
+// 统计区间 只能为1 7 30
+func (r *AlibabaScbpTargetAdCampaignEffectAPIRequest) SetInterval(_interval int64) error {
+	r._interval = _interval
+	r.Set("interval", _interval)
+	return nil
+}
+
+// GetInterval Interval Getter
+func (r AlibabaScbpTargetAdCampaignEffectAPIRequest) GetInterval() int64 {
+	return r._interval
 }
 
 // SetCampaignId is CampaignId Setter

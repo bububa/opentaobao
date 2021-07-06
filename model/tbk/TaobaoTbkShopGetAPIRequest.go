@@ -18,8 +18,6 @@ type TaobaoTbkShopGetAPIRequest struct {
 	_q string
 	// 排序_des（降序），排序_asc（升序），佣金比率（commission_rate）， 商品数量（auction_count），销售总数量（total_auction）
 	_sort string
-	// 是否商城的店铺，设置为true表示该是属于淘宝商城的店铺，设置为false或不设置表示不判断这个属性
-	_isTmall bool
 	// 信用等级下限，1~20
 	_startCredit int64
 	// 信用等级上限，1~20
@@ -42,6 +40,8 @@ type TaobaoTbkShopGetAPIRequest struct {
 	_pageNo int64
 	// 页大小，默认20，1~100
 	_pageSize int64
+	// 是否商城的店铺，设置为true表示该是属于淘宝商城的店铺，设置为false或不设置表示不判断这个属性
+	_isTmall bool
 }
 
 // NewTaobaoTbkShopGetRequest 初始化TaobaoTbkShopGetAPIRequest对象
@@ -102,19 +102,6 @@ func (r *TaobaoTbkShopGetAPIRequest) SetSort(_sort string) error {
 // GetSort Sort Getter
 func (r TaobaoTbkShopGetAPIRequest) GetSort() string {
 	return r._sort
-}
-
-// SetIsTmall is IsTmall Setter
-// 是否商城的店铺，设置为true表示该是属于淘宝商城的店铺，设置为false或不设置表示不判断这个属性
-func (r *TaobaoTbkShopGetAPIRequest) SetIsTmall(_isTmall bool) error {
-	r._isTmall = _isTmall
-	r.Set("is_tmall", _isTmall)
-	return nil
-}
-
-// GetIsTmall IsTmall Getter
-func (r TaobaoTbkShopGetAPIRequest) GetIsTmall() bool {
-	return r._isTmall
 }
 
 // SetStartCredit is StartCredit Setter
@@ -258,4 +245,17 @@ func (r *TaobaoTbkShopGetAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TaobaoTbkShopGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+// SetIsTmall is IsTmall Setter
+// 是否商城的店铺，设置为true表示该是属于淘宝商城的店铺，设置为false或不设置表示不判断这个属性
+func (r *TaobaoTbkShopGetAPIRequest) SetIsTmall(_isTmall bool) error {
+	r._isTmall = _isTmall
+	r.Set("is_tmall", _isTmall)
+	return nil
+}
+
+// GetIsTmall IsTmall Getter
+func (r TaobaoTbkShopGetAPIRequest) GetIsTmall() bool {
+	return r._isTmall
 }

@@ -16,8 +16,6 @@ type AlibabaAlisportsDataSportsSyncmatchdataAPIRequest struct {
 	_alispAppKey string
 	// 成绩(比赛用时)
 	_score string
-	// 组别 1001半程马拉松  1002全程马拉松
-	_matchGroup int64
 	// 国家
 	_country string
 	// 出生日期 格式：Y-m-d
@@ -26,20 +24,10 @@ type AlibabaAlisportsDataSportsSyncmatchdataAPIRequest struct {
 	_mobile string
 	// 证件ID
 	_cardId string
-	// 证件类型 1身份证 2军官证 4护照 8台胞证 16港澳通行证 32未设置  64 其他
-	_cardType int64
-	// 类型：1专业 2业余
-	_type int64
-	// 性别 0未知 1男 2女
-	_gender int64
 	// 姓名
 	_name string
-	// 排名
-	_ranking int64
 	// 比赛名（展示用）
 	_match string
-	// 比赛类型 1马拉松
-	_matchType int64
 	// 参赛号
 	_num string
 	// 阿里体育用户id
@@ -52,8 +40,6 @@ type AlibabaAlisportsDataSportsSyncmatchdataAPIRequest struct {
 	_matchTime string
 	// 枪声成绩
 	_gunshotScore string
-	// 枪声排名
-	_gunshotRanking int64
 	// 平均配速
 	_speed string
 	// 展示用，比如：男子半程马拉松
@@ -62,6 +48,20 @@ type AlibabaAlisportsDataSportsSyncmatchdataAPIRequest struct {
 	_subScore string
 	// 比如马拉松 5KM 10KM 15KM分段时间点，json key->value 格式
 	_subPoint string
+	// 组别 1001半程马拉松  1002全程马拉松
+	_matchGroup int64
+	// 证件类型 1身份证 2军官证 4护照 8台胞证 16港澳通行证 32未设置  64 其他
+	_cardType int64
+	// 类型：1专业 2业余
+	_type int64
+	// 性别 0未知 1男 2女
+	_gender int64
+	// 排名
+	_ranking int64
+	// 比赛类型 1马拉松
+	_matchType int64
+	// 枪声排名
+	_gunshotRanking int64
 }
 
 // NewAlibabaAlisportsDataSportsSyncmatchdataRequest 初始化AlibabaAlisportsDataSportsSyncmatchdataAPIRequest对象
@@ -109,19 +109,6 @@ func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetScore(_score stri
 // GetScore Score Getter
 func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetScore() string {
 	return r._score
-}
-
-// SetMatchGroup is MatchGroup Setter
-// 组别 1001半程马拉松  1002全程马拉松
-func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetMatchGroup(_matchGroup int64) error {
-	r._matchGroup = _matchGroup
-	r.Set("match_group", _matchGroup)
-	return nil
-}
-
-// GetMatchGroup MatchGroup Getter
-func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetMatchGroup() int64 {
-	return r._matchGroup
 }
 
 // SetCountry is Country Setter
@@ -176,45 +163,6 @@ func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetCardId() string {
 	return r._cardId
 }
 
-// SetCardType is CardType Setter
-// 证件类型 1身份证 2军官证 4护照 8台胞证 16港澳通行证 32未设置  64 其他
-func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetCardType(_cardType int64) error {
-	r._cardType = _cardType
-	r.Set("card_type", _cardType)
-	return nil
-}
-
-// GetCardType CardType Getter
-func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetCardType() int64 {
-	return r._cardType
-}
-
-// SetType is Type Setter
-// 类型：1专业 2业余
-func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetType(_type int64) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetType() int64 {
-	return r._type
-}
-
-// SetGender is Gender Setter
-// 性别 0未知 1男 2女
-func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetGender(_gender int64) error {
-	r._gender = _gender
-	r.Set("gender", _gender)
-	return nil
-}
-
-// GetGender Gender Getter
-func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetGender() int64 {
-	return r._gender
-}
-
 // SetName is Name Setter
 // 姓名
 func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetName(_name string) error {
@@ -228,19 +176,6 @@ func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetName() string {
 	return r._name
 }
 
-// SetRanking is Ranking Setter
-// 排名
-func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetRanking(_ranking int64) error {
-	r._ranking = _ranking
-	r.Set("ranking", _ranking)
-	return nil
-}
-
-// GetRanking Ranking Getter
-func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetRanking() int64 {
-	return r._ranking
-}
-
 // SetMatch is Match Setter
 // 比赛名（展示用）
 func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetMatch(_match string) error {
@@ -252,19 +187,6 @@ func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetMatch(_match stri
 // GetMatch Match Getter
 func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetMatch() string {
 	return r._match
-}
-
-// SetMatchType is MatchType Setter
-// 比赛类型 1马拉松
-func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetMatchType(_matchType int64) error {
-	r._matchType = _matchType
-	r.Set("match_type", _matchType)
-	return nil
-}
-
-// GetMatchType MatchType Getter
-func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetMatchType() int64 {
-	return r._matchType
 }
 
 // SetNum is Num Setter
@@ -345,19 +267,6 @@ func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetGunshotScore() str
 	return r._gunshotScore
 }
 
-// SetGunshotRanking is GunshotRanking Setter
-// 枪声排名
-func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetGunshotRanking(_gunshotRanking int64) error {
-	r._gunshotRanking = _gunshotRanking
-	r.Set("gunshot_ranking", _gunshotRanking)
-	return nil
-}
-
-// GetGunshotRanking GunshotRanking Getter
-func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetGunshotRanking() int64 {
-	return r._gunshotRanking
-}
-
 // SetSpeed is Speed Setter
 // 平均配速
 func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetSpeed(_speed string) error {
@@ -408,4 +317,95 @@ func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetSubPoint(_subPoin
 // GetSubPoint SubPoint Getter
 func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetSubPoint() string {
 	return r._subPoint
+}
+
+// SetMatchGroup is MatchGroup Setter
+// 组别 1001半程马拉松  1002全程马拉松
+func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetMatchGroup(_matchGroup int64) error {
+	r._matchGroup = _matchGroup
+	r.Set("match_group", _matchGroup)
+	return nil
+}
+
+// GetMatchGroup MatchGroup Getter
+func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetMatchGroup() int64 {
+	return r._matchGroup
+}
+
+// SetCardType is CardType Setter
+// 证件类型 1身份证 2军官证 4护照 8台胞证 16港澳通行证 32未设置  64 其他
+func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetCardType(_cardType int64) error {
+	r._cardType = _cardType
+	r.Set("card_type", _cardType)
+	return nil
+}
+
+// GetCardType CardType Getter
+func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetCardType() int64 {
+	return r._cardType
+}
+
+// SetType is Type Setter
+// 类型：1专业 2业余
+func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetType() int64 {
+	return r._type
+}
+
+// SetGender is Gender Setter
+// 性别 0未知 1男 2女
+func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetGender(_gender int64) error {
+	r._gender = _gender
+	r.Set("gender", _gender)
+	return nil
+}
+
+// GetGender Gender Getter
+func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetGender() int64 {
+	return r._gender
+}
+
+// SetRanking is Ranking Setter
+// 排名
+func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetRanking(_ranking int64) error {
+	r._ranking = _ranking
+	r.Set("ranking", _ranking)
+	return nil
+}
+
+// GetRanking Ranking Getter
+func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetRanking() int64 {
+	return r._ranking
+}
+
+// SetMatchType is MatchType Setter
+// 比赛类型 1马拉松
+func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetMatchType(_matchType int64) error {
+	r._matchType = _matchType
+	r.Set("match_type", _matchType)
+	return nil
+}
+
+// GetMatchType MatchType Getter
+func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetMatchType() int64 {
+	return r._matchType
+}
+
+// SetGunshotRanking is GunshotRanking Setter
+// 枪声排名
+func (r *AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) SetGunshotRanking(_gunshotRanking int64) error {
+	r._gunshotRanking = _gunshotRanking
+	r.Set("gunshot_ranking", _gunshotRanking)
+	return nil
+}
+
+// GetGunshotRanking GunshotRanking Getter
+func (r AlibabaAlisportsDataSportsSyncmatchdataAPIRequest) GetGunshotRanking() int64 {
+	return r._gunshotRanking
 }

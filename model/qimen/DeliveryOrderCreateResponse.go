@@ -2,6 +2,8 @@ package qimen
 
 // DeliveryOrderCreateResponse 结构体
 type DeliveryOrderCreateResponse struct {
+	// 发货单信息
+	DeliveryOrders []DeliveryOrder `json:"deliveryOrders,omitempty" xml:"deliveryOrders>delivery_order,omitempty"`
 	// 响应结果:success|failure
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应码
@@ -16,6 +18,4 @@ type DeliveryOrderCreateResponse struct {
 	WarehouseCode string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
 	// 物流公司编码(统仓统配使用)
 	LogisticsCode string `json:"logisticsCode,omitempty" xml:"logisticsCode,omitempty"`
-	// 发货单信息
-	DeliveryOrders []DeliveryOrder `json:"deliveryOrders,omitempty" xml:"deliveryOrders>delivery_order,omitempty"`
 }

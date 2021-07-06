@@ -20,12 +20,12 @@ type TaobaoFenxiaoCooperationGetAPIRequest struct {
 	_endDate string
 	// 分销方式：AGENT(代销) 、DEALER（经销）
 	_tradeType string
+	// 渠道code
+	_channelCode string
 	// 页码（大于0的整数，默认1）
 	_pageNo int64
 	// 每页记录数（默认20，最大50）
 	_pageSize int64
-	// 渠道code
-	_channelCode string
 	// 1是供应商，2 是分销商
 	_roleType int64
 }
@@ -103,6 +103,19 @@ func (r TaobaoFenxiaoCooperationGetAPIRequest) GetTradeType() string {
 	return r._tradeType
 }
 
+// SetChannelCode is ChannelCode Setter
+// 渠道code
+func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetChannelCode(_channelCode string) error {
+	r._channelCode = _channelCode
+	r.Set("channel_code", _channelCode)
+	return nil
+}
+
+// GetChannelCode ChannelCode Getter
+func (r TaobaoFenxiaoCooperationGetAPIRequest) GetChannelCode() string {
+	return r._channelCode
+}
+
 // SetPageNo is PageNo Setter
 // 页码（大于0的整数，默认1）
 func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetPageNo(_pageNo int64) error {
@@ -127,19 +140,6 @@ func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetPageSize(_pageSize int64) err
 // GetPageSize PageSize Getter
 func (r TaobaoFenxiaoCooperationGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetChannelCode is ChannelCode Setter
-// 渠道code
-func (r *TaobaoFenxiaoCooperationGetAPIRequest) SetChannelCode(_channelCode string) error {
-	r._channelCode = _channelCode
-	r.Set("channel_code", _channelCode)
-	return nil
-}
-
-// GetChannelCode ChannelCode Getter
-func (r TaobaoFenxiaoCooperationGetAPIRequest) GetChannelCode() string {
-	return r._channelCode
 }
 
 // SetRoleType is RoleType Setter

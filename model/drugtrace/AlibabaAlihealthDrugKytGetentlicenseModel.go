@@ -4,8 +4,6 @@ package drugtrace
 type AlibabaAlihealthDrugKytGetentlicenseModel struct {
 	// 资质名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
-	// 是否必须
-	Requisite int64 `json:"requisite,omitempty" xml:"requisite,omitempty"`
 	// 资质描述
 	DescInfo string `json:"desc_info,omitempty" xml:"desc_info,omitempty"`
 	// 主键ID
@@ -24,4 +22,6 @@ type AlibabaAlihealthDrugKytGetentlicenseModel struct {
 	LicenseType string `json:"license_type,omitempty" xml:"license_type,omitempty"`
 	// 资质图片访问地址
 	TruthUrl string `json:"truth_url,omitempty" xml:"truth_url,omitempty"`
+	// 是否必须
+	Requisite int64 `json:"requisite,omitempty" xml:"requisite,omitempty"`
 }

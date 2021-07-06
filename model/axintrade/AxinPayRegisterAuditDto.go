@@ -2,8 +2,6 @@ package axintrade
 
 // AxinPayRegisterAuditDto 结构体
 type AxinPayRegisterAuditDto struct {
-	// 审核结果
-	AuditResult bool `json:"audit_result,omitempty" xml:"audit_result,omitempty"`
 	// 商户code
 	ExternalId string `json:"external_id,omitempty" xml:"external_id,omitempty"`
 	// 备注
@@ -18,4 +16,6 @@ type AxinPayRegisterAuditDto struct {
 	RejectReasonDesc string `json:"reject_reason_desc,omitempty" xml:"reject_reason_desc,omitempty"`
 	// 支付平台商家编码,smid
 	PayMerchantCode string `json:"pay_merchant_code,omitempty" xml:"pay_merchant_code,omitempty"`
+	// 审核结果
+	AuditResult bool `json:"audit_result,omitempty" xml:"audit_result,omitempty"`
 }

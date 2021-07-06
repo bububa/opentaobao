@@ -2,8 +2,6 @@ package servicecenter
 
 // SubscInfo 结构体
 type SubscInfo struct {
-	// 订单id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 订单创建时间
 	SubscCreatedTime string `json:"subsc_created_time,omitempty" xml:"subsc_created_time,omitempty"`
 	// 服务商名称
@@ -18,8 +16,10 @@ type SubscInfo struct {
 	ServiceStartTime string `json:"service_start_time,omitempty" xml:"service_start_time,omitempty"`
 	// 订单修改时间
 	SubscModifiedTime string `json:"subsc_modified_time,omitempty" xml:"subsc_modified_time,omitempty"`
-	// 订单状态
-	ProcessStatus int64 `json:"process_status,omitempty" xml:"process_status,omitempty"`
 	// 销售提成
 	SaleBonus string `json:"sale_bonus,omitempty" xml:"sale_bonus,omitempty"`
+	// 订单id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 订单状态
+	ProcessStatus int64 `json:"process_status,omitempty" xml:"process_status,omitempty"`
 }

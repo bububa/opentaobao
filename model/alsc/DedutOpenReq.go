@@ -20,8 +20,6 @@ type DedutOpenReq struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// SaaS门店ID(不能和outshopid同时为空)
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
-	// 核销总资产
-	Value int64 `json:"value,omitempty" xml:"value,omitempty"`
 	// 外部品牌ID(不能和brandid同时为空)
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
 	// CS是辰森，KRY是客如云
@@ -30,4 +28,6 @@ type DedutOpenReq struct {
 	OutShopId string `json:"out_shop_id,omitempty" xml:"out_shop_id,omitempty"`
 	// 自定义参数按照json格式传入
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
+	// 核销总资产
+	Value int64 `json:"value,omitempty" xml:"value,omitempty"`
 }

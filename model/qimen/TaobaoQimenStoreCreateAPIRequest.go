@@ -14,8 +14,6 @@ type TaobaoQimenStoreCreateAPIRequest struct {
 	model.Params
 	// 门店名称
 	_storeName string
-	// 门店主营类目
-	_mainCategory int64
 	// 商户名称
 	_companyName string
 	// 关闭营业时间(只填时，分；只支持半点和整点)
@@ -26,18 +24,20 @@ type TaobaoQimenStoreCreateAPIRequest struct {
 	_storeStatus string
 	// 商户介绍
 	_storeDescription string
-	// 地址信息
-	_address *Address
-	// 需要关联的线上店铺ID
-	_shopId int64
-	// 门店所有者信息
-	_storeKeeper *StoreKeeper
 	// 门店的类型
 	_storeType string
 	// ERP系统中门店的编码
 	_storeCode string
 	// 备注
 	_remark string
+	// 门店主营类目
+	_mainCategory int64
+	// 地址信息
+	_address *Address
+	// 需要关联的线上店铺ID
+	_shopId int64
+	// 门店所有者信息
+	_storeKeeper *StoreKeeper
 }
 
 // NewTaobaoQimenStoreCreateRequest 初始化TaobaoQimenStoreCreateAPIRequest对象
@@ -72,19 +72,6 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreName(_storeName string) error
 // GetStoreName StoreName Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetStoreName() string {
 	return r._storeName
-}
-
-// SetMainCategory is MainCategory Setter
-// 门店主营类目
-func (r *TaobaoQimenStoreCreateAPIRequest) SetMainCategory(_mainCategory int64) error {
-	r._mainCategory = _mainCategory
-	r.Set("main_category", _mainCategory)
-	return nil
-}
-
-// GetMainCategory MainCategory Getter
-func (r TaobaoQimenStoreCreateAPIRequest) GetMainCategory() int64 {
-	return r._mainCategory
 }
 
 // SetCompanyName is CompanyName Setter
@@ -152,45 +139,6 @@ func (r TaobaoQimenStoreCreateAPIRequest) GetStoreDescription() string {
 	return r._storeDescription
 }
 
-// SetAddress is Address Setter
-// 地址信息
-func (r *TaobaoQimenStoreCreateAPIRequest) SetAddress(_address *Address) error {
-	r._address = _address
-	r.Set("address", _address)
-	return nil
-}
-
-// GetAddress Address Getter
-func (r TaobaoQimenStoreCreateAPIRequest) GetAddress() *Address {
-	return r._address
-}
-
-// SetShopId is ShopId Setter
-// 需要关联的线上店铺ID
-func (r *TaobaoQimenStoreCreateAPIRequest) SetShopId(_shopId int64) error {
-	r._shopId = _shopId
-	r.Set("shop_id", _shopId)
-	return nil
-}
-
-// GetShopId ShopId Getter
-func (r TaobaoQimenStoreCreateAPIRequest) GetShopId() int64 {
-	return r._shopId
-}
-
-// SetStoreKeeper is StoreKeeper Setter
-// 门店所有者信息
-func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreKeeper(_storeKeeper *StoreKeeper) error {
-	r._storeKeeper = _storeKeeper
-	r.Set("store_keeper", _storeKeeper)
-	return nil
-}
-
-// GetStoreKeeper StoreKeeper Getter
-func (r TaobaoQimenStoreCreateAPIRequest) GetStoreKeeper() *StoreKeeper {
-	return r._storeKeeper
-}
-
 // SetStoreType is StoreType Setter
 // 门店的类型
 func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreType(_storeType string) error {
@@ -228,4 +176,56 @@ func (r *TaobaoQimenStoreCreateAPIRequest) SetRemark(_remark string) error {
 // GetRemark Remark Getter
 func (r TaobaoQimenStoreCreateAPIRequest) GetRemark() string {
 	return r._remark
+}
+
+// SetMainCategory is MainCategory Setter
+// 门店主营类目
+func (r *TaobaoQimenStoreCreateAPIRequest) SetMainCategory(_mainCategory int64) error {
+	r._mainCategory = _mainCategory
+	r.Set("main_category", _mainCategory)
+	return nil
+}
+
+// GetMainCategory MainCategory Getter
+func (r TaobaoQimenStoreCreateAPIRequest) GetMainCategory() int64 {
+	return r._mainCategory
+}
+
+// SetAddress is Address Setter
+// 地址信息
+func (r *TaobaoQimenStoreCreateAPIRequest) SetAddress(_address *Address) error {
+	r._address = _address
+	r.Set("address", _address)
+	return nil
+}
+
+// GetAddress Address Getter
+func (r TaobaoQimenStoreCreateAPIRequest) GetAddress() *Address {
+	return r._address
+}
+
+// SetShopId is ShopId Setter
+// 需要关联的线上店铺ID
+func (r *TaobaoQimenStoreCreateAPIRequest) SetShopId(_shopId int64) error {
+	r._shopId = _shopId
+	r.Set("shop_id", _shopId)
+	return nil
+}
+
+// GetShopId ShopId Getter
+func (r TaobaoQimenStoreCreateAPIRequest) GetShopId() int64 {
+	return r._shopId
+}
+
+// SetStoreKeeper is StoreKeeper Setter
+// 门店所有者信息
+func (r *TaobaoQimenStoreCreateAPIRequest) SetStoreKeeper(_storeKeeper *StoreKeeper) error {
+	r._storeKeeper = _storeKeeper
+	r.Set("store_keeper", _storeKeeper)
+	return nil
+}
+
+// GetStoreKeeper StoreKeeper Getter
+func (r TaobaoQimenStoreCreateAPIRequest) GetStoreKeeper() *StoreKeeper {
+	return r._storeKeeper
 }

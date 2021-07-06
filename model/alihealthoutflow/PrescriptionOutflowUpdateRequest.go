@@ -2,6 +2,10 @@ package alihealthoutflow
 
 // PrescriptionOutflowUpdateRequest 结构体
 type PrescriptionOutflowUpdateRequest struct {
+	// 诊断(非空)
+	Diagnoses []Diagnose `json:"diagnoses,omitempty" xml:"diagnoses>diagnose,omitempty"`
+	// 药品
+	Drugs []Drugs `json:"drugs,omitempty" xml:"drugs>drugs,omitempty"`
 	// 患者姓名(非空)
 	PatientName string `json:"patient_name,omitempty" xml:"patient_name,omitempty"`
 	// 操作人或患者手机号-用于接收核销码短信(非空)
@@ -38,10 +42,6 @@ type PrescriptionOutflowUpdateRequest struct {
 	BodyCheck string `json:"body_check,omitempty" xml:"body_check,omitempty"`
 	// 医生嘱言(可空)
 	DoctorAdvice string `json:"doctor_advice,omitempty" xml:"doctor_advice,omitempty"`
-	// 诊断(非空)
-	Diagnoses []Diagnose `json:"diagnoses,omitempty" xml:"diagnoses>diagnose,omitempty"`
-	// 药品
-	Drugs []Drugs `json:"drugs,omitempty" xml:"drugs>drugs,omitempty"`
 	// 处方编号(非空)
 	RxNo string `json:"rx_no,omitempty" xml:"rx_no,omitempty"`
 	// 处方类型(可空) COMMON-普通处方（默认） CHILDREN-儿童处方
@@ -74,8 +74,8 @@ type PrescriptionOutflowUpdateRequest struct {
 	PatientInsuredRegion string `json:"patient_insured_region,omitempty" xml:"patient_insured_region,omitempty"`
 	// 医保结算发生地(可空)：医保中心代码（行政区域代码）
 	InsuranceSettlementRegion string `json:"insurance_settlement_region,omitempty" xml:"insurance_settlement_region,omitempty"`
-	// 同步his结果(非空)
-	SyncHisResult bool `json:"sync_his_result,omitempty" xml:"sync_his_result,omitempty"`
 	// 同步his错误信息(可空)
 	SyncHisErrMsg string `json:"sync_his_err_msg,omitempty" xml:"sync_his_err_msg,omitempty"`
+	// 同步his结果(非空)
+	SyncHisResult bool `json:"sync_his_result,omitempty" xml:"sync_his_result,omitempty"`
 }

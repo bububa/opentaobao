@@ -2,6 +2,8 @@ package security
 
 // ObfuscateResult 结构体
 type ObfuscateResult struct {
+	// 总混淆率
+	ObfuscatedPercent string `json:"obfuscated_percent,omitempty" xml:"obfuscated_percent,omitempty"`
 	// 总的类数量
 	TotalClasses int64 `json:"total_classes,omitempty" xml:"total_classes,omitempty"`
 	// 总的成员变量数量
@@ -14,6 +16,4 @@ type ObfuscateResult struct {
 	ObfuscatedFields int64 `json:"obfuscated_fields,omitempty" xml:"obfuscated_fields,omitempty"`
 	// 混淆方法的数量
 	ObfuscatedMethods int64 `json:"obfuscated_methods,omitempty" xml:"obfuscated_methods,omitempty"`
-	// 总混淆率
-	ObfuscatedPercent string `json:"obfuscated_percent,omitempty" xml:"obfuscated_percent,omitempty"`
 }

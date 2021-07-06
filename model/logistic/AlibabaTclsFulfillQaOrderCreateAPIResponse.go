@@ -24,10 +24,10 @@ type AlibabaTclsFulfillQaOrderCreateAPIResponseModel struct {
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
 	// 返回素材id
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
-	// 是否成功
-	RtSuccess bool `json:"rt_success,omitempty" xml:"rt_success,omitempty"`
-	// 错误码
-	RtErrorCode int64 `json:"rt_error_code,omitempty" xml:"rt_error_code,omitempty"`
 	// 错误信息
 	RtErrorMsg string `json:"rt_error_msg,omitempty" xml:"rt_error_msg,omitempty"`
+	// 错误码
+	RtErrorCode int64 `json:"rt_error_code,omitempty" xml:"rt_error_code,omitempty"`
+	// 是否成功
+	RtSuccess bool `json:"rt_success,omitempty" xml:"rt_success,omitempty"`
 }

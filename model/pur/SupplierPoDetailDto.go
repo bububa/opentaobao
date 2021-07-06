@@ -2,6 +2,8 @@ package pur
 
 // SupplierPoDetailDto 结构体
 type SupplierPoDetailDto struct {
+	// 订单行列表
+	PoLineList []Polinelist `json:"po_line_list,omitempty" xml:"po_line_list>polinelist,omitempty"`
 	// 供应商名称
 	SupplierName string `json:"supplier_name,omitempty" xml:"supplier_name,omitempty"`
 	// 订单编号
@@ -26,6 +28,4 @@ type SupplierPoDetailDto struct {
 	PrNo string `json:"pr_no,omitempty" xml:"pr_no,omitempty"`
 	// 注意事项
 	Comments string `json:"comments,omitempty" xml:"comments,omitempty"`
-	// 订单行列表
-	PoLineList []Polinelist `json:"po_line_list,omitempty" xml:"po_line_list>polinelist,omitempty"`
 }

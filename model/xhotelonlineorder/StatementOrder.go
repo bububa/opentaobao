@@ -2,8 +2,6 @@ package xhotelonlineorder
 
 // StatementOrder 结构体
 type StatementOrder struct {
-	// 淘宝订单ID
-	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 	// 外部订单ID
 	OutId string `json:"out_id,omitempty" xml:"out_id,omitempty"`
 	// 淘宝佣金
@@ -26,8 +24,6 @@ type StatementOrder struct {
 	OtherFee string `json:"other_fee,omitempty" xml:"other_fee,omitempty"`
 	// 结算日期
 	SettleDate string `json:"settle_date,omitempty" xml:"settle_date,omitempty"`
-	// 入住天数
-	RoomSumNights int64 `json:"room_sum_nights,omitempty" xml:"room_sum_nights,omitempty"`
 	// 分账状态 (0, "未分账"),(1, "分账成功"),(3, "分账失败"), (2, "无需分账"),(4,"预处理成功");
 	SettleStatus string `json:"settle_status,omitempty" xml:"settle_status,omitempty"`
 	// 入住时间
@@ -46,4 +42,8 @@ type StatementOrder struct {
 	HotelName string `json:"hotel_name,omitempty" xml:"hotel_name,omitempty"`
 	// 税和费，单位分
 	TaxAndFee string `json:"tax_and_fee,omitempty" xml:"tax_and_fee,omitempty"`
+	// 淘宝订单ID
+	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+	// 入住天数
+	RoomSumNights int64 `json:"room_sum_nights,omitempty" xml:"room_sum_nights,omitempty"`
 }

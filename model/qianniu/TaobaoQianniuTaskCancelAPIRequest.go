@@ -12,10 +12,10 @@ import (
 // 由任务发起者调用
 type TaobaoQianniuTaskCancelAPIRequest struct {
 	model.Params
-	// 任务元数据ID
-	_metaId int64
 	// 任务备注
 	_memo string
+	// 任务元数据ID
+	_metaId int64
 }
 
 // NewTaobaoQianniuTaskCancelRequest 初始化TaobaoQianniuTaskCancelAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoQianniuTaskCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetMetaId is MetaId Setter
-// 任务元数据ID
-func (r *TaobaoQianniuTaskCancelAPIRequest) SetMetaId(_metaId int64) error {
-	r._metaId = _metaId
-	r.Set("meta_id", _metaId)
-	return nil
-}
-
-// GetMetaId MetaId Getter
-func (r TaobaoQianniuTaskCancelAPIRequest) GetMetaId() int64 {
-	return r._metaId
-}
-
 // SetMemo is Memo Setter
 // 任务备注
 func (r *TaobaoQianniuTaskCancelAPIRequest) SetMemo(_memo string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoQianniuTaskCancelAPIRequest) SetMemo(_memo string) error {
 // GetMemo Memo Getter
 func (r TaobaoQianniuTaskCancelAPIRequest) GetMemo() string {
 	return r._memo
+}
+
+// SetMetaId is MetaId Setter
+// 任务元数据ID
+func (r *TaobaoQianniuTaskCancelAPIRequest) SetMetaId(_metaId int64) error {
+	r._metaId = _metaId
+	r.Set("meta_id", _metaId)
+	return nil
+}
+
+// GetMetaId MetaId Getter
+func (r TaobaoQianniuTaskCancelAPIRequest) GetMetaId() int64 {
+	return r._metaId
 }

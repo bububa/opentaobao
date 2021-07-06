@@ -12,16 +12,16 @@ import (
 // 卖家拒绝换货申请
 type TmallExchangeRefuseAPIRequest struct {
 	model.Params
-	// 凭证图片
-	_leaveMessagePics *model.File
+	// 返回字段。目前支持dispute_id, bizorder_id, modified, status
+	_fields []string
 	// 拒绝换货申请时的留言
 	_leaveMessage string
+	// 凭证图片
+	_leaveMessagePics *model.File
 	// 换货单号ID
 	_disputeId int64
 	// 换货原因对应ID
 	_sellerRefuseReasonId int64
-	// 返回字段。目前支持dispute_id, bizorder_id, modified, status
-	_fields []string
 }
 
 // NewTmallExchangeRefuseRequest 初始化TmallExchangeRefuseAPIRequest对象
@@ -45,17 +45,17 @@ func (r TmallExchangeRefuseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetLeaveMessagePics is LeaveMessagePics Setter
-// 凭证图片
-func (r *TmallExchangeRefuseAPIRequest) SetLeaveMessagePics(_leaveMessagePics *model.File) error {
-	r._leaveMessagePics = _leaveMessagePics
-	r.Set("leave_message_pics", _leaveMessagePics)
+// SetFields is Fields Setter
+// 返回字段。目前支持dispute_id, bizorder_id, modified, status
+func (r *TmallExchangeRefuseAPIRequest) SetFields(_fields []string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
 	return nil
 }
 
-// GetLeaveMessagePics LeaveMessagePics Getter
-func (r TmallExchangeRefuseAPIRequest) GetLeaveMessagePics() *model.File {
-	return r._leaveMessagePics
+// GetFields Fields Getter
+func (r TmallExchangeRefuseAPIRequest) GetFields() []string {
+	return r._fields
 }
 
 // SetLeaveMessage is LeaveMessage Setter
@@ -69,6 +69,19 @@ func (r *TmallExchangeRefuseAPIRequest) SetLeaveMessage(_leaveMessage string) er
 // GetLeaveMessage LeaveMessage Getter
 func (r TmallExchangeRefuseAPIRequest) GetLeaveMessage() string {
 	return r._leaveMessage
+}
+
+// SetLeaveMessagePics is LeaveMessagePics Setter
+// 凭证图片
+func (r *TmallExchangeRefuseAPIRequest) SetLeaveMessagePics(_leaveMessagePics *model.File) error {
+	r._leaveMessagePics = _leaveMessagePics
+	r.Set("leave_message_pics", _leaveMessagePics)
+	return nil
+}
+
+// GetLeaveMessagePics LeaveMessagePics Getter
+func (r TmallExchangeRefuseAPIRequest) GetLeaveMessagePics() *model.File {
+	return r._leaveMessagePics
 }
 
 // SetDisputeId is DisputeId Setter
@@ -95,17 +108,4 @@ func (r *TmallExchangeRefuseAPIRequest) SetSellerRefuseReasonId(_sellerRefuseRea
 // GetSellerRefuseReasonId SellerRefuseReasonId Getter
 func (r TmallExchangeRefuseAPIRequest) GetSellerRefuseReasonId() int64 {
 	return r._sellerRefuseReasonId
-}
-
-// SetFields is Fields Setter
-// 返回字段。目前支持dispute_id, bizorder_id, modified, status
-func (r *TmallExchangeRefuseAPIRequest) SetFields(_fields []string) error {
-	r._fields = _fields
-	r.Set("fields", _fields)
-	return nil
-}
-
-// GetFields Fields Getter
-func (r TmallExchangeRefuseAPIRequest) GetFields() []string {
-	return r._fields
 }

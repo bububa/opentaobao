@@ -12,12 +12,12 @@ import (
 // 视频专辑场景接入接口
 type AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest struct {
 	model.Params
-	// 接入场景 0 无应用 1 挂靠应用
-	_sceneType int64
-	// 如果场景是1 此处为应用id
-	_sceneValue string
 	// 视频合辑数据
 	_paramList []RawVideoAlbum
+	// 如果场景是1 此处为应用id
+	_sceneValue string
+	// 接入场景 0 无应用 1 挂靠应用
+	_sceneType int64
 }
 
 // NewAlibabaAilabsAligenieOpenvideoalbumScenepushRequest 初始化AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest对象
@@ -41,17 +41,17 @@ func (r AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) GetApiParams() u
 	return params
 }
 
-// SetSceneType is SceneType Setter
-// 接入场景 0 无应用 1 挂靠应用
-func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) SetSceneType(_sceneType int64) error {
-	r._sceneType = _sceneType
-	r.Set("scene_type", _sceneType)
+// SetParamList is ParamList Setter
+// 视频合辑数据
+func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) SetParamList(_paramList []RawVideoAlbum) error {
+	r._paramList = _paramList
+	r.Set("param_list", _paramList)
 	return nil
 }
 
-// GetSceneType SceneType Getter
-func (r AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) GetSceneType() int64 {
-	return r._sceneType
+// GetParamList ParamList Getter
+func (r AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) GetParamList() []RawVideoAlbum {
+	return r._paramList
 }
 
 // SetSceneValue is SceneValue Setter
@@ -67,15 +67,15 @@ func (r AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) GetSceneValue() 
 	return r._sceneValue
 }
 
-// SetParamList is ParamList Setter
-// 视频合辑数据
-func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) SetParamList(_paramList []RawVideoAlbum) error {
-	r._paramList = _paramList
-	r.Set("param_list", _paramList)
+// SetSceneType is SceneType Setter
+// 接入场景 0 无应用 1 挂靠应用
+func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) SetSceneType(_sceneType int64) error {
+	r._sceneType = _sceneType
+	r.Set("scene_type", _sceneType)
 	return nil
 }
 
-// GetParamList ParamList Getter
-func (r AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) GetParamList() []RawVideoAlbum {
-	return r._paramList
+// GetSceneType SceneType Getter
+func (r AlibabaAilabsAligenieOpenvideoalbumScenepushAPIRequest) GetSceneType() int64 {
+	return r._sceneType
 }

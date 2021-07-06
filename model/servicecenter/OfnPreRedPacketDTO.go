@@ -4,10 +4,12 @@ package servicecenter
 type OfnPreRedPacketDto struct {
 	// 操作列表
 	ActionList []OfnPreRedPacketActionDto `json:"action_list,omitempty" xml:"action_list>ofn_pre_red_packet_action_dto,omitempty"`
+	// 创建时间
+	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
+	// 修改时间
+	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 活动id
 	ActivityId int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
-	// 是否信用单
-	CreditPay bool `json:"credit_pay,omitempty" xml:"credit_pay,omitempty"`
 	// 信用额度，单位分
 	CreditPayLimit int64 `json:"credit_pay_limit,omitempty" xml:"credit_pay_limit,omitempty"`
 	// 尾款部分-已经发放的金额，单位分
@@ -16,10 +18,6 @@ type OfnPreRedPacketDto struct {
 	EndPlanSendAmount int64 `json:"end_plan_send_amount,omitempty" xml:"end_plan_send_amount,omitempty"`
 	// 尾款部分-等待发放的金额，单位分
 	EndWaitSendAmount int64 `json:"end_wait_send_amount,omitempty" xml:"end_wait_send_amount,omitempty"`
-	// 创建时间
-	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-	// 修改时间
-	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 主键
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 新机id
@@ -56,4 +54,6 @@ type OfnPreRedPacketDto struct {
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 新机优惠价
 	NewItemCouponPrice int64 `json:"new_item_coupon_price,omitempty" xml:"new_item_coupon_price,omitempty"`
+	// 是否信用单
+	CreditPay bool `json:"credit_pay,omitempty" xml:"credit_pay,omitempty"`
 }

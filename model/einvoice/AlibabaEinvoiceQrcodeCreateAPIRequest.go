@@ -24,14 +24,14 @@ type AlibabaEinvoiceQrcodeCreateAPIRequest struct {
 	_sourceId string
 	// 二维码图片中间的logo
 	_qrLogo string
+	// 请求方ERP系统平台，同结算单同步的platform，不填默认=platform
+	_platform string
 	// 二维码图片宽度，默认=450
 	_width int64
 	// 二维码图片高度，默认=450
 	_height int64
 	// 二维码返回类型：1=二维码背后的URL，2=二维码图片CDN URL，3=二维码二进制数据流
 	_qrType int64
-	// 请求方ERP系统平台，同结算单同步的platform，不填默认=platform
-	_platform string
 }
 
 // NewAlibabaEinvoiceQrcodeCreateRequest 初始化AlibabaEinvoiceQrcodeCreateAPIRequest对象
@@ -133,6 +133,19 @@ func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetQrLogo() string {
 	return r._qrLogo
 }
 
+// SetPlatform is Platform Setter
+// 请求方ERP系统平台，同结算单同步的platform，不填默认=platform
+func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetPlatform(_platform string) error {
+	r._platform = _platform
+	r.Set("platform", _platform)
+	return nil
+}
+
+// GetPlatform Platform Getter
+func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetPlatform() string {
+	return r._platform
+}
+
 // SetWidth is Width Setter
 // 二维码图片宽度，默认=450
 func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetWidth(_width int64) error {
@@ -170,17 +183,4 @@ func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetQrType(_qrType int64) error {
 // GetQrType QrType Getter
 func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetQrType() int64 {
 	return r._qrType
-}
-
-// SetPlatform is Platform Setter
-// 请求方ERP系统平台，同结算单同步的platform，不填默认=platform
-func (r *AlibabaEinvoiceQrcodeCreateAPIRequest) SetPlatform(_platform string) error {
-	r._platform = _platform
-	r.Set("platform", _platform)
-	return nil
-}
-
-// GetPlatform Platform Getter
-func (r AlibabaEinvoiceQrcodeCreateAPIRequest) GetPlatform() string {
-	return r._platform
 }

@@ -34,14 +34,14 @@ type TaobaoTradesSoldGetAPIRequest struct {
 	_rateStatus string
 	// 卖家对交易的自定义分组标签，目前可选值为：time_card（点卡软件代充），fee_card（话费软件代充）
 	_tag string
+	// 买家的openId
+	_buyerOpenId string
 	// 页码。默认值:1，可填整数，通过传入page_no来控制获取的页数，总页数=total_results÷page_size
 	_pageNo int64
 	// 每页条数。 默认值:40;最大值:100，可填整数。通过page_no和page_size组合多次调用实现翻页获取全量数据。
 	_pageSize int64
 	// 是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取增量交易，接口调用成功率在原有的基础上有所提升。
 	_useHasNext bool
-	// 买家的openId
-	_buyerOpenId string
 }
 
 // NewTaobaoTradesSoldGetRequest 初始化TaobaoTradesSoldGetAPIRequest对象
@@ -182,6 +182,19 @@ func (r TaobaoTradesSoldGetAPIRequest) GetTag() string {
 	return r._tag
 }
 
+// SetBuyerOpenId is BuyerOpenId Setter
+// 买家的openId
+func (r *TaobaoTradesSoldGetAPIRequest) SetBuyerOpenId(_buyerOpenId string) error {
+	r._buyerOpenId = _buyerOpenId
+	r.Set("buyer_open_id", _buyerOpenId)
+	return nil
+}
+
+// GetBuyerOpenId BuyerOpenId Getter
+func (r TaobaoTradesSoldGetAPIRequest) GetBuyerOpenId() string {
+	return r._buyerOpenId
+}
+
 // SetPageNo is PageNo Setter
 // 页码。默认值:1，可填整数，通过传入page_no来控制获取的页数，总页数=total_results÷page_size
 func (r *TaobaoTradesSoldGetAPIRequest) SetPageNo(_pageNo int64) error {
@@ -219,17 +232,4 @@ func (r *TaobaoTradesSoldGetAPIRequest) SetUseHasNext(_useHasNext bool) error {
 // GetUseHasNext UseHasNext Getter
 func (r TaobaoTradesSoldGetAPIRequest) GetUseHasNext() bool {
 	return r._useHasNext
-}
-
-// SetBuyerOpenId is BuyerOpenId Setter
-// 买家的openId
-func (r *TaobaoTradesSoldGetAPIRequest) SetBuyerOpenId(_buyerOpenId string) error {
-	r._buyerOpenId = _buyerOpenId
-	r.Set("buyer_open_id", _buyerOpenId)
-	return nil
-}
-
-// GetBuyerOpenId BuyerOpenId Getter
-func (r TaobaoTradesSoldGetAPIRequest) GetBuyerOpenId() string {
-	return r._buyerOpenId
 }

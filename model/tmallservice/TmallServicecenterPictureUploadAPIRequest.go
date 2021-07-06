@@ -12,10 +12,10 @@ import (
 // 给服务商ERP系统使用，用于上传图片保存在天猫，一般用于工单信息回传时候保存服务商的服务证明信息相关的图片。
 type TmallServicecenterPictureUploadAPIRequest struct {
 	model.Params
-	// 图片文件二进制流
-	_img *model.File
 	// 图片全称包括扩展名。目前支持 jpg jpeg png
 	_pictureName string
+	// 图片文件二进制流
+	_img *model.File
 	// true返回Https地址
 	_isHttps bool
 }
@@ -41,19 +41,6 @@ func (r TmallServicecenterPictureUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetImg is Img Setter
-// 图片文件二进制流
-func (r *TmallServicecenterPictureUploadAPIRequest) SetImg(_img *model.File) error {
-	r._img = _img
-	r.Set("img", _img)
-	return nil
-}
-
-// GetImg Img Getter
-func (r TmallServicecenterPictureUploadAPIRequest) GetImg() *model.File {
-	return r._img
-}
-
 // SetPictureName is PictureName Setter
 // 图片全称包括扩展名。目前支持 jpg jpeg png
 func (r *TmallServicecenterPictureUploadAPIRequest) SetPictureName(_pictureName string) error {
@@ -65,6 +52,19 @@ func (r *TmallServicecenterPictureUploadAPIRequest) SetPictureName(_pictureName 
 // GetPictureName PictureName Getter
 func (r TmallServicecenterPictureUploadAPIRequest) GetPictureName() string {
 	return r._pictureName
+}
+
+// SetImg is Img Setter
+// 图片文件二进制流
+func (r *TmallServicecenterPictureUploadAPIRequest) SetImg(_img *model.File) error {
+	r._img = _img
+	r.Set("img", _img)
+	return nil
+}
+
+// GetImg Img Getter
+func (r TmallServicecenterPictureUploadAPIRequest) GetImg() *model.File {
+	return r._img
 }
 
 // SetIsHttps is IsHttps Setter

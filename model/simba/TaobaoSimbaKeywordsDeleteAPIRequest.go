@@ -12,12 +12,12 @@ import (
 // 删除一批关键词
 type TaobaoSimbaKeywordsDeleteAPIRequest struct {
 	model.Params
+	// 关键词Id数组，最多100个
+	_keywordIds []int64
 	// 主人昵称
 	_nick string
 	// 推广计划Id
 	_campaignId int64
-	// 关键词Id数组，最多100个
-	_keywordIds []int64
 }
 
 // NewTaobaoSimbaKeywordsDeleteRequest 初始化TaobaoSimbaKeywordsDeleteAPIRequest对象
@@ -39,6 +39,19 @@ func (r TaobaoSimbaKeywordsDeleteAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetKeywordIds is KeywordIds Setter
+// 关键词Id数组，最多100个
+func (r *TaobaoSimbaKeywordsDeleteAPIRequest) SetKeywordIds(_keywordIds []int64) error {
+	r._keywordIds = _keywordIds
+	r.Set("keyword_ids", _keywordIds)
+	return nil
+}
+
+// GetKeywordIds KeywordIds Getter
+func (r TaobaoSimbaKeywordsDeleteAPIRequest) GetKeywordIds() []int64 {
+	return r._keywordIds
 }
 
 // SetNick is Nick Setter
@@ -65,17 +78,4 @@ func (r *TaobaoSimbaKeywordsDeleteAPIRequest) SetCampaignId(_campaignId int64) e
 // GetCampaignId CampaignId Getter
 func (r TaobaoSimbaKeywordsDeleteAPIRequest) GetCampaignId() int64 {
 	return r._campaignId
-}
-
-// SetKeywordIds is KeywordIds Setter
-// 关键词Id数组，最多100个
-func (r *TaobaoSimbaKeywordsDeleteAPIRequest) SetKeywordIds(_keywordIds []int64) error {
-	r._keywordIds = _keywordIds
-	r.Set("keyword_ids", _keywordIds)
-	return nil
-}
-
-// GetKeywordIds KeywordIds Getter
-func (r TaobaoSimbaKeywordsDeleteAPIRequest) GetKeywordIds() []int64 {
-	return r._keywordIds
 }

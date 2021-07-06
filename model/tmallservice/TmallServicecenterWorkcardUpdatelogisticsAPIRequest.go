@@ -12,14 +12,14 @@ import (
 // 提供给外部合作服务商的物流进度更改接口
 type TmallServicecenterWorkcardUpdatelogisticsAPIRequest struct {
 	model.Params
-	// 工单号
-	_workcardId int64
 	// 工单操作
 	_action string
 	// 快递公司
 	_expressCompany string
 	// 快递号
 	_expressCode string
+	// 工单号
+	_workcardId int64
 }
 
 // NewTmallServicecenterWorkcardUpdatelogisticsRequest 初始化TmallServicecenterWorkcardUpdatelogisticsAPIRequest对象
@@ -41,19 +41,6 @@ func (r TmallServicecenterWorkcardUpdatelogisticsAPIRequest) GetApiParams() url.
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetWorkcardId is WorkcardId Setter
-// 工单号
-func (r *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) SetWorkcardId(_workcardId int64) error {
-	r._workcardId = _workcardId
-	r.Set("workcard_id", _workcardId)
-	return nil
-}
-
-// GetWorkcardId WorkcardId Getter
-func (r TmallServicecenterWorkcardUpdatelogisticsAPIRequest) GetWorkcardId() int64 {
-	return r._workcardId
 }
 
 // SetAction is Action Setter
@@ -93,4 +80,17 @@ func (r *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) SetExpressCode(_ex
 // GetExpressCode ExpressCode Getter
 func (r TmallServicecenterWorkcardUpdatelogisticsAPIRequest) GetExpressCode() string {
 	return r._expressCode
+}
+
+// SetWorkcardId is WorkcardId Setter
+// 工单号
+func (r *TmallServicecenterWorkcardUpdatelogisticsAPIRequest) SetWorkcardId(_workcardId int64) error {
+	r._workcardId = _workcardId
+	r.Set("workcard_id", _workcardId)
+	return nil
+}
+
+// GetWorkcardId WorkcardId Getter
+func (r TmallServicecenterWorkcardUpdatelogisticsAPIRequest) GetWorkcardId() int64 {
+	return r._workcardId
 }

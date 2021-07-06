@@ -2,8 +2,6 @@ package maitix
 
 // OpenExchangePointDto 结构体
 type OpenExchangePointDto struct {
-	// 换票点id
-	PointId int64 `json:"point_id,omitempty" xml:"point_id,omitempty"`
 	// 换票点名称
 	PointName string `json:"point_name,omitempty" xml:"point_name,omitempty"`
 	// 详细地址
@@ -22,4 +20,6 @@ type OpenExchangePointDto struct {
 	ExchangeType string `json:"exchange_type,omitempty" xml:"exchange_type,omitempty"`
 	// 有效期
 	ValidPeriod string `json:"valid_period,omitempty" xml:"valid_period,omitempty"`
+	// 换票点id
+	PointId int64 `json:"point_id,omitempty" xml:"point_id,omitempty"`
 }

@@ -12,10 +12,10 @@ import (
 // 上传电子签证
 type TaobaoAlitripTravelNormalvisaUploadfileAPIRequest struct {
 	model.Params
-	// 文件
-	_fileBytes *model.File
 	// 文件名：注意文件名请保证和上传的文件一直
 	_fileName string
+	// 文件
+	_fileBytes *model.File
 	// 订单id
 	_bizOrderId int64
 }
@@ -41,19 +41,6 @@ func (r TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// SetFileBytes is FileBytes Setter
-// 文件
-func (r *TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) SetFileBytes(_fileBytes *model.File) error {
-	r._fileBytes = _fileBytes
-	r.Set("file_bytes", _fileBytes)
-	return nil
-}
-
-// GetFileBytes FileBytes Getter
-func (r TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) GetFileBytes() *model.File {
-	return r._fileBytes
-}
-
 // SetFileName is FileName Setter
 // 文件名：注意文件名请保证和上传的文件一直
 func (r *TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) SetFileName(_fileName string) error {
@@ -65,6 +52,19 @@ func (r *TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) SetFileName(_fileNam
 // GetFileName FileName Getter
 func (r TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) GetFileName() string {
 	return r._fileName
+}
+
+// SetFileBytes is FileBytes Setter
+// 文件
+func (r *TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) SetFileBytes(_fileBytes *model.File) error {
+	r._fileBytes = _fileBytes
+	r.Set("file_bytes", _fileBytes)
+	return nil
+}
+
+// GetFileBytes FileBytes Getter
+func (r TaobaoAlitripTravelNormalvisaUploadfileAPIRequest) GetFileBytes() *model.File {
+	return r._fileBytes
 }
 
 // SetBizOrderId is BizOrderId Setter

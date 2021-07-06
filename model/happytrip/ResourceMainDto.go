@@ -4,8 +4,6 @@ package happytrip
 type ResourceMainDto struct {
 	// 成人成本价
 	AdultCost string `json:"adult_cost,omitempty" xml:"adult_cost,omitempty"`
-	// 成人数
-	AdultCount int64 `json:"adult_count,omitempty" xml:"adult_count,omitempty"`
 	// 成人单价
 	AdultPrice string `json:"adult_price,omitempty" xml:"adult_price,omitempty"`
 	// 代理商ID
@@ -16,8 +14,6 @@ type ResourceMainDto struct {
 	AgencyOrderId string `json:"agency_order_id,omitempty" xml:"agency_order_id,omitempty"`
 	// 交易号
 	AlipayTradeNo string `json:"alipay_trade_no,omitempty" xml:"alipay_trade_no,omitempty"`
-	// 是否b2g 0不是 1是
-	B2gFlag int64 `json:"b2g_flag,omitempty" xml:"b2g_flag,omitempty"`
 	// 返回城市code
 	BackCityCode string `json:"back_city_code,omitempty" xml:"back_city_code,omitempty"`
 	// 返回城市名
@@ -36,8 +32,6 @@ type ResourceMainDto struct {
 	BookCityName string `json:"book_city_name,omitempty" xml:"book_city_name,omitempty"`
 	// 资源预定时间
 	BookTime string `json:"book_time,omitempty" xml:"book_time,omitempty"`
-	// 是否合约 0非合约 1合约
-	ContractFlag int64 `json:"contract_flag,omitempty" xml:"contract_flag,omitempty"`
 	// 合约价格
 	ContractPrice string `json:"contract_price,omitempty" xml:"contract_price,omitempty"`
 	// 结束地址
@@ -58,16 +52,12 @@ type ResourceMainDto struct {
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 修改时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
-	// 主键
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 最低价
 	LowerAmount string `json:"lower_amount,omitempty" xml:"lower_amount,omitempty"`
 	// 最低价货币代码
 	LowerAmountCurrencyCode string `json:"lower_amount_currency_code,omitempty" xml:"lower_amount_currency_code,omitempty"`
 	// 最低价小数点位数
 	LowerAmountDecimalPlaces string `json:"lower_amount_decimal_places,omitempty" xml:"lower_amount_decimal_places,omitempty"`
-	// 订单号
-	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 计划时间
 	PlanTime string `json:"plan_time,omitempty" xml:"plan_time,omitempty"`
 	// 飞猪询价单PNR
@@ -92,8 +82,6 @@ type ResourceMainDto struct {
 	ResourceStatus string `json:"resource_status,omitempty" xml:"resource_status,omitempty"`
 	// 资源状态描述
 	ResourceStatusDesc string `json:"resource_status_desc,omitempty" xml:"resource_status_desc,omitempty"`
-	// 资源类型  -1, "未知资源类型"  100110, "飞猪机票国内直订"  100210, "飞猪机票国际直订"  100211, "飞猪机票国际询价单"  101110, "飞猪酒店国内直订"  110210, "GT机票国际直订"  110211, "GT机票国际酒店"  110212, "GT机票国际火车"  110213, "GT机票国际用车"  121210, "HRS酒店国际酒店直订"  132110, "滴滴国内预约用车"  142110, "曹操国内预约用车"  152110, "快滴国内预约用车"
-	ResourceType int64 `json:"resource_type,omitempty" xml:"resource_type,omitempty"`
 	// 通用规则字段，比如机票退改签等
 	Rule string `json:"rule,omitempty" xml:"rule,omitempty"`
 	// 座位金额
@@ -130,4 +118,16 @@ type ResourceMainDto struct {
 	TotalAmountDecimalPlaces string `json:"total_amount_decimal_places,omitempty" xml:"total_amount_decimal_places,omitempty"`
 	// 资源更新时间
 	UpdateTime string `json:"update_time,omitempty" xml:"update_time,omitempty"`
+	// 成人数
+	AdultCount int64 `json:"adult_count,omitempty" xml:"adult_count,omitempty"`
+	// 是否b2g 0不是 1是
+	B2gFlag int64 `json:"b2g_flag,omitempty" xml:"b2g_flag,omitempty"`
+	// 是否合约 0非合约 1合约
+	ContractFlag int64 `json:"contract_flag,omitempty" xml:"contract_flag,omitempty"`
+	// 主键
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 订单号
+	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+	// 资源类型  -1, "未知资源类型"  100110, "飞猪机票国内直订"  100210, "飞猪机票国际直订"  100211, "飞猪机票国际询价单"  101110, "飞猪酒店国内直订"  110210, "GT机票国际直订"  110211, "GT机票国际酒店"  110212, "GT机票国际火车"  110213, "GT机票国际用车"  121210, "HRS酒店国际酒店直订"  132110, "滴滴国内预约用车"  142110, "曹操国内预约用车"  152110, "快滴国内预约用车"
+	ResourceType int64 `json:"resource_type,omitempty" xml:"resource_type,omitempty"`
 }

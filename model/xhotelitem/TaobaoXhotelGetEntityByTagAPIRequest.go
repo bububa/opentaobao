@@ -12,10 +12,10 @@ import (
 // 根据标签查询实体
 type TaobaoXhotelGetEntityByTagAPIRequest struct {
 	model.Params
-	// 标签
-	_tag int64
 	// 查询token，填入上一页查询的返回结果，只能按顺序单线程查询
 	_tokenStr string
+	// 标签
+	_tag int64
 }
 
 // NewTaobaoXhotelGetEntityByTagRequest 初始化TaobaoXhotelGetEntityByTagAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoXhotelGetEntityByTagAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetTag is Tag Setter
-// 标签
-func (r *TaobaoXhotelGetEntityByTagAPIRequest) SetTag(_tag int64) error {
-	r._tag = _tag
-	r.Set("tag", _tag)
-	return nil
-}
-
-// GetTag Tag Getter
-func (r TaobaoXhotelGetEntityByTagAPIRequest) GetTag() int64 {
-	return r._tag
-}
-
 // SetTokenStr is TokenStr Setter
 // 查询token，填入上一页查询的返回结果，只能按顺序单线程查询
 func (r *TaobaoXhotelGetEntityByTagAPIRequest) SetTokenStr(_tokenStr string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoXhotelGetEntityByTagAPIRequest) SetTokenStr(_tokenStr string) err
 // GetTokenStr TokenStr Getter
 func (r TaobaoXhotelGetEntityByTagAPIRequest) GetTokenStr() string {
 	return r._tokenStr
+}
+
+// SetTag is Tag Setter
+// 标签
+func (r *TaobaoXhotelGetEntityByTagAPIRequest) SetTag(_tag int64) error {
+	r._tag = _tag
+	r.Set("tag", _tag)
+	return nil
+}
+
+// GetTag Tag Getter
+func (r TaobaoXhotelGetEntityByTagAPIRequest) GetTag() int64 {
+	return r._tag
 }

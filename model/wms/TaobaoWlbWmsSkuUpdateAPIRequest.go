@@ -34,6 +34,16 @@ type TaobaoWlbWmsSkuUpdateAPIRequest struct {
 	_color string
 	// 尺码
 	_size string
+	// 批准文号
+	_approvalNumber string
+	// 拓展属性
+	_extendFields string
+	// 条形码，多条码请用”;”分隔；条码更新只技术增量更新，已有条码无法修改，只能在原条码基础上增加新的条码。例：原商品条码为：BAR001，要增加一条新条码BAR002时，此字段内容应填写为：BAR001;BAR002
+	_barCode string
+	// 商品属性编码
+	_attribute string
+	// 商品类型:NORMAL-普通商品、 COMBINE-组合商品、 DISTRIBUTION-分销商品
+	_type string
 	// 毛重，单位克
 	_grossWeight int64
 	// 净重，单位克
@@ -50,10 +60,6 @@ type TaobaoWlbWmsSkuUpdateAPIRequest struct {
 	_pcs int64
 	// 产地
 	_originAddress int64
-	// 批准文号
-	_approvalNumber string
-	// 是否启用保质期管理
-	_isShelflife bool
 	// 商品保质期天数
 	_lifecycle int64
 	// 保质期禁收天数
@@ -62,30 +68,24 @@ type TaobaoWlbWmsSkuUpdateAPIRequest struct {
 	_lockupLifecycle int64
 	// 保质期预警天数
 	_adventLifecycle int64
-	// 是否启用序列号管理
-	_isSnMgt bool
-	// 是否易碎品
-	_isHygroscopic bool
-	// 是否危险品
-	_isDanger bool
 	// 吊牌价，单位分
 	_tagPrice int64
 	// 零售价，单位分
 	_itemPrice int64
 	// 成本价，单位分
 	_costPrice int64
+	// 是否启用保质期管理
+	_isShelflife bool
+	// 是否启用序列号管理
+	_isSnMgt bool
+	// 是否易碎品
+	_isHygroscopic bool
+	// 是否危险品
+	_isDanger bool
 	// 是否启用批次管理
 	_isBatchMgt bool
 	// 启用标识
 	_useYn bool
-	// 拓展属性
-	_extendFields string
-	// 条形码，多条码请用”;”分隔；条码更新只技术增量更新，已有条码无法修改，只能在原条码基础上增加新的条码。例：原商品条码为：BAR001，要增加一条新条码BAR002时，此字段内容应填写为：BAR001;BAR002
-	_barCode string
-	// 商品属性编码
-	_attribute string
-	// 商品类型:NORMAL-普通商品、 COMBINE-组合商品、 DISTRIBUTION-分销商品
-	_type string
 	// 是否区域销售属性
 	_isAreaSale bool
 }
@@ -254,6 +254,71 @@ func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetSize() string {
 	return r._size
 }
 
+// SetApprovalNumber is ApprovalNumber Setter
+// 批准文号
+func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetApprovalNumber(_approvalNumber string) error {
+	r._approvalNumber = _approvalNumber
+	r.Set("approval_number", _approvalNumber)
+	return nil
+}
+
+// GetApprovalNumber ApprovalNumber Getter
+func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetApprovalNumber() string {
+	return r._approvalNumber
+}
+
+// SetExtendFields is ExtendFields Setter
+// 拓展属性
+func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetExtendFields(_extendFields string) error {
+	r._extendFields = _extendFields
+	r.Set("extend_fields", _extendFields)
+	return nil
+}
+
+// GetExtendFields ExtendFields Getter
+func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetExtendFields() string {
+	return r._extendFields
+}
+
+// SetBarCode is BarCode Setter
+// 条形码，多条码请用”;”分隔；条码更新只技术增量更新，已有条码无法修改，只能在原条码基础上增加新的条码。例：原商品条码为：BAR001，要增加一条新条码BAR002时，此字段内容应填写为：BAR001;BAR002
+func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetBarCode(_barCode string) error {
+	r._barCode = _barCode
+	r.Set("bar_code", _barCode)
+	return nil
+}
+
+// GetBarCode BarCode Getter
+func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetBarCode() string {
+	return r._barCode
+}
+
+// SetAttribute is Attribute Setter
+// 商品属性编码
+func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetAttribute(_attribute string) error {
+	r._attribute = _attribute
+	r.Set("attribute", _attribute)
+	return nil
+}
+
+// GetAttribute Attribute Getter
+func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetAttribute() string {
+	return r._attribute
+}
+
+// SetType is Type Setter
+// 商品类型:NORMAL-普通商品、 COMBINE-组合商品、 DISTRIBUTION-分销商品
+func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetType(_type string) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetType() string {
+	return r._type
+}
+
 // SetGrossWeight is GrossWeight Setter
 // 毛重，单位克
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetGrossWeight(_grossWeight int64) error {
@@ -358,32 +423,6 @@ func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetOriginAddress() int64 {
 	return r._originAddress
 }
 
-// SetApprovalNumber is ApprovalNumber Setter
-// 批准文号
-func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetApprovalNumber(_approvalNumber string) error {
-	r._approvalNumber = _approvalNumber
-	r.Set("approval_number", _approvalNumber)
-	return nil
-}
-
-// GetApprovalNumber ApprovalNumber Getter
-func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetApprovalNumber() string {
-	return r._approvalNumber
-}
-
-// SetIsShelflife is IsShelflife Setter
-// 是否启用保质期管理
-func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsShelflife(_isShelflife bool) error {
-	r._isShelflife = _isShelflife
-	r.Set("is_shelflife", _isShelflife)
-	return nil
-}
-
-// GetIsShelflife IsShelflife Getter
-func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsShelflife() bool {
-	return r._isShelflife
-}
-
 // SetLifecycle is Lifecycle Setter
 // 商品保质期天数
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetLifecycle(_lifecycle int64) error {
@@ -436,45 +475,6 @@ func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetAdventLifecycle() int64 {
 	return r._adventLifecycle
 }
 
-// SetIsSnMgt is IsSnMgt Setter
-// 是否启用序列号管理
-func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsSnMgt(_isSnMgt bool) error {
-	r._isSnMgt = _isSnMgt
-	r.Set("is_sn_mgt", _isSnMgt)
-	return nil
-}
-
-// GetIsSnMgt IsSnMgt Getter
-func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsSnMgt() bool {
-	return r._isSnMgt
-}
-
-// SetIsHygroscopic is IsHygroscopic Setter
-// 是否易碎品
-func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsHygroscopic(_isHygroscopic bool) error {
-	r._isHygroscopic = _isHygroscopic
-	r.Set("is_hygroscopic", _isHygroscopic)
-	return nil
-}
-
-// GetIsHygroscopic IsHygroscopic Getter
-func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsHygroscopic() bool {
-	return r._isHygroscopic
-}
-
-// SetIsDanger is IsDanger Setter
-// 是否危险品
-func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsDanger(_isDanger bool) error {
-	r._isDanger = _isDanger
-	r.Set("is_danger", _isDanger)
-	return nil
-}
-
-// GetIsDanger IsDanger Getter
-func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsDanger() bool {
-	return r._isDanger
-}
-
 // SetTagPrice is TagPrice Setter
 // 吊牌价，单位分
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetTagPrice(_tagPrice int64) error {
@@ -514,6 +514,58 @@ func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetCostPrice() int64 {
 	return r._costPrice
 }
 
+// SetIsShelflife is IsShelflife Setter
+// 是否启用保质期管理
+func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsShelflife(_isShelflife bool) error {
+	r._isShelflife = _isShelflife
+	r.Set("is_shelflife", _isShelflife)
+	return nil
+}
+
+// GetIsShelflife IsShelflife Getter
+func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsShelflife() bool {
+	return r._isShelflife
+}
+
+// SetIsSnMgt is IsSnMgt Setter
+// 是否启用序列号管理
+func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsSnMgt(_isSnMgt bool) error {
+	r._isSnMgt = _isSnMgt
+	r.Set("is_sn_mgt", _isSnMgt)
+	return nil
+}
+
+// GetIsSnMgt IsSnMgt Getter
+func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsSnMgt() bool {
+	return r._isSnMgt
+}
+
+// SetIsHygroscopic is IsHygroscopic Setter
+// 是否易碎品
+func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsHygroscopic(_isHygroscopic bool) error {
+	r._isHygroscopic = _isHygroscopic
+	r.Set("is_hygroscopic", _isHygroscopic)
+	return nil
+}
+
+// GetIsHygroscopic IsHygroscopic Getter
+func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsHygroscopic() bool {
+	return r._isHygroscopic
+}
+
+// SetIsDanger is IsDanger Setter
+// 是否危险品
+func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsDanger(_isDanger bool) error {
+	r._isDanger = _isDanger
+	r.Set("is_danger", _isDanger)
+	return nil
+}
+
+// GetIsDanger IsDanger Getter
+func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetIsDanger() bool {
+	return r._isDanger
+}
+
 // SetIsBatchMgt is IsBatchMgt Setter
 // 是否启用批次管理
 func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetIsBatchMgt(_isBatchMgt bool) error {
@@ -538,58 +590,6 @@ func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetUseYn(_useYn bool) error {
 // GetUseYn UseYn Getter
 func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetUseYn() bool {
 	return r._useYn
-}
-
-// SetExtendFields is ExtendFields Setter
-// 拓展属性
-func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetExtendFields(_extendFields string) error {
-	r._extendFields = _extendFields
-	r.Set("extend_fields", _extendFields)
-	return nil
-}
-
-// GetExtendFields ExtendFields Getter
-func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetExtendFields() string {
-	return r._extendFields
-}
-
-// SetBarCode is BarCode Setter
-// 条形码，多条码请用”;”分隔；条码更新只技术增量更新，已有条码无法修改，只能在原条码基础上增加新的条码。例：原商品条码为：BAR001，要增加一条新条码BAR002时，此字段内容应填写为：BAR001;BAR002
-func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetBarCode(_barCode string) error {
-	r._barCode = _barCode
-	r.Set("bar_code", _barCode)
-	return nil
-}
-
-// GetBarCode BarCode Getter
-func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetBarCode() string {
-	return r._barCode
-}
-
-// SetAttribute is Attribute Setter
-// 商品属性编码
-func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetAttribute(_attribute string) error {
-	r._attribute = _attribute
-	r.Set("attribute", _attribute)
-	return nil
-}
-
-// GetAttribute Attribute Getter
-func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetAttribute() string {
-	return r._attribute
-}
-
-// SetType is Type Setter
-// 商品类型:NORMAL-普通商品、 COMBINE-组合商品、 DISTRIBUTION-分销商品
-func (r *TaobaoWlbWmsSkuUpdateAPIRequest) SetType(_type string) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetType() string {
-	return r._type
 }
 
 // SetIsAreaSale is IsAreaSale Setter

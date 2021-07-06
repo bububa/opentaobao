@@ -12,8 +12,6 @@ import (
 // 查询大包详情
 type CainiaoGlobalHandoverContentQueryAPIRequest struct {
 	model.Params
-	// 用户信息
-	_userInfo *UserInfoDto
 	// 交接物运单号，和交接物物流订单编码参数任选其一即可
 	_trackingNumber string
 	// 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
@@ -22,6 +20,8 @@ type CainiaoGlobalHandoverContentQueryAPIRequest struct {
 	_orderCode string
 	// 多语言
 	_locale string
+	// 用户信息
+	_userInfo *UserInfoDto
 }
 
 // NewCainiaoGlobalHandoverContentQueryRequest 初始化CainiaoGlobalHandoverContentQueryAPIRequest对象
@@ -43,19 +43,6 @@ func (r CainiaoGlobalHandoverContentQueryAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetUserInfo is UserInfo Setter
-// 用户信息
-func (r *CainiaoGlobalHandoverContentQueryAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
-	r._userInfo = _userInfo
-	r.Set("user_info", _userInfo)
-	return nil
-}
-
-// GetUserInfo UserInfo Getter
-func (r CainiaoGlobalHandoverContentQueryAPIRequest) GetUserInfo() *UserInfoDto {
-	return r._userInfo
 }
 
 // SetTrackingNumber is TrackingNumber Setter
@@ -108,4 +95,17 @@ func (r *CainiaoGlobalHandoverContentQueryAPIRequest) SetLocale(_locale string) 
 // GetLocale Locale Getter
 func (r CainiaoGlobalHandoverContentQueryAPIRequest) GetLocale() string {
 	return r._locale
+}
+
+// SetUserInfo is UserInfo Setter
+// 用户信息
+func (r *CainiaoGlobalHandoverContentQueryAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+	r._userInfo = _userInfo
+	r.Set("user_info", _userInfo)
+	return nil
+}
+
+// GetUserInfo UserInfo Getter
+func (r CainiaoGlobalHandoverContentQueryAPIRequest) GetUserInfo() *UserInfoDto {
+	return r._userInfo
 }

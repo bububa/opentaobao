@@ -12,10 +12,10 @@ import (
 // 向用户发放互动积分
 type TaobaoJstInteractivePointIncreaseAPIRequest struct {
 	model.Params
-	// 发放的积分值
-	_amount int64
 	// 幂等操作码，要确保唯一性，同一个操作码只能使用一次，避免重复操作
 	_operateCode string
+	// 发放的积分值
+	_amount int64
 }
 
 // NewTaobaoJstInteractivePointIncreaseRequest 初始化TaobaoJstInteractivePointIncreaseAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoJstInteractivePointIncreaseAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetAmount is Amount Setter
-// 发放的积分值
-func (r *TaobaoJstInteractivePointIncreaseAPIRequest) SetAmount(_amount int64) error {
-	r._amount = _amount
-	r.Set("amount", _amount)
-	return nil
-}
-
-// GetAmount Amount Getter
-func (r TaobaoJstInteractivePointIncreaseAPIRequest) GetAmount() int64 {
-	return r._amount
-}
-
 // SetOperateCode is OperateCode Setter
 // 幂等操作码，要确保唯一性，同一个操作码只能使用一次，避免重复操作
 func (r *TaobaoJstInteractivePointIncreaseAPIRequest) SetOperateCode(_operateCode string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoJstInteractivePointIncreaseAPIRequest) SetOperateCode(_operateCod
 // GetOperateCode OperateCode Getter
 func (r TaobaoJstInteractivePointIncreaseAPIRequest) GetOperateCode() string {
 	return r._operateCode
+}
+
+// SetAmount is Amount Setter
+// 发放的积分值
+func (r *TaobaoJstInteractivePointIncreaseAPIRequest) SetAmount(_amount int64) error {
+	r._amount = _amount
+	r.Set("amount", _amount)
+	return nil
+}
+
+// GetAmount Amount Getter
+func (r TaobaoJstInteractivePointIncreaseAPIRequest) GetAmount() int64 {
+	return r._amount
 }

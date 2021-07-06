@@ -6,10 +6,6 @@ type AlitripFlightBasicDataCityQueryAllData struct {
 	CityName string `json:"city_name,omitempty" xml:"city_name,omitempty"`
 	// 城市三字码
 	CityCode string `json:"city_code,omitempty" xml:"city_code,omitempty"`
-	// 城市通航状态
-	NavigableStatus int64 `json:"navigable_status,omitempty" xml:"navigable_status,omitempty"`
-	// 搜索热度
-	SearchHeat int64 `json:"search_heat,omitempty" xml:"search_heat,omitempty"`
 	// 航空大区
 	AirZone string `json:"air_zone,omitempty" xml:"air_zone,omitempty"`
 	// 城市对应国家
@@ -44,4 +40,8 @@ type AlitripFlightBasicDataCityQueryAllData struct {
 	OagSummerPeriod string `json:"oag_summer_period,omitempty" xml:"oag_summer_period,omitempty"`
 	// 小次区
 	MiniIataCode string `json:"mini_iata_code,omitempty" xml:"mini_iata_code,omitempty"`
+	// 城市通航状态
+	NavigableStatus int64 `json:"navigable_status,omitempty" xml:"navigable_status,omitempty"`
+	// 搜索热度
+	SearchHeat int64 `json:"search_heat,omitempty" xml:"search_heat,omitempty"`
 }

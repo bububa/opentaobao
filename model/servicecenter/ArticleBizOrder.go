@@ -2,10 +2,6 @@ package servicecenter
 
 // ArticleBizOrder 结构体
 type ArticleBizOrder struct {
-	// 订单号
-	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
-	// 子订单号
-	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 淘宝会员名
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
 	// 应用名称
@@ -22,8 +18,6 @@ type ArticleBizOrder struct {
 	OrderCycleStart string `json:"order_cycle_start,omitempty" xml:"order_cycle_start,omitempty"`
 	// 订购周期结束时间
 	OrderCycleEnd string `json:"order_cycle_end,omitempty" xml:"order_cycle_end,omitempty"`
-	// 订单类型，1=新订 2=续订 3=升级 4=后台赠送 5=后台自动续订 6=订单审核后生成订购关系（暂时用不到）
-	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
 	// 原价（单位为分）
 	Fee string `json:"fee,omitempty" xml:"fee,omitempty"`
 	// 优惠（单位为分）
@@ -36,4 +30,10 @@ type ArticleBizOrder struct {
 	ArticleItemName string `json:"article_item_name,omitempty" xml:"article_item_name,omitempty"`
 	// activityCode
 	ActivityCode string `json:"activity_code,omitempty" xml:"activity_code,omitempty"`
+	// 订单号
+	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
+	// 子订单号
+	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+	// 订单类型，1=新订 2=续订 3=升级 4=后台赠送 5=后台自动续订 6=订单审核后生成订购关系（暂时用不到）
+	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
 }

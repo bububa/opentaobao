@@ -2,10 +2,10 @@ package feedflow
 
 // TaobaoFeedflowItemCreativeRpthourlistResultDto 结构体
 type TaobaoFeedflowItemCreativeRpthourlistResultDto struct {
-	// 描述信息
-	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 返回结果
 	RptList []RptResultDto `json:"rpt_list,omitempty" xml:"rpt_list>rpt_result_dto,omitempty"`
+	// 描述信息
+	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 总数
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// 返回信息

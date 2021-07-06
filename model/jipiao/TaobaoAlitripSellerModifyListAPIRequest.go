@@ -12,28 +12,28 @@ import (
 // 提供机票代理商查询改签订单列表
 type TaobaoAlitripSellerModifyListAPIRequest struct {
 	model.Params
-	// 申请单ID
-	_applyId int64
-	// 淘宝订单号
-	_orderId int64
 	// 改签发起时间的查询结束日期 和 更新时间必选其一
 	_applyDateEnd string
 	// 改签发起时间的查询开始日期 和 更新时间必选其一
 	_applyDateStart string
-	// 页码
-	_currentPage int64
 	// 乘客起飞时间的查询结束日期
 	_flyDateEnd string
 	// 乘客起飞时间的查询开始日期
 	_flyDateStart string
-	// 每页记录数
-	_pageSize int64
-	// 1：初始状态，2：已改签成功，3：已拒绝，4：未付款（已回填退票费），5：已付款
-	_status int64
 	// 记录修改结束时间  和 改签发起时间必选其一
 	_modifyDateEnd string
 	// 记录修改起始时间 和 改签发起时间必选其一
 	_modifyDateStart string
+	// 申请单ID
+	_applyId int64
+	// 淘宝订单号
+	_orderId int64
+	// 页码
+	_currentPage int64
+	// 每页记录数
+	_pageSize int64
+	// 1：初始状态，2：已改签成功，3：已拒绝，4：未付款（已回填退票费），5：已付款
+	_status int64
 }
 
 // NewTaobaoAlitripSellerModifyListRequest 初始化TaobaoAlitripSellerModifyListAPIRequest对象
@@ -55,32 +55,6 @@ func (r TaobaoAlitripSellerModifyListAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetApplyId is ApplyId Setter
-// 申请单ID
-func (r *TaobaoAlitripSellerModifyListAPIRequest) SetApplyId(_applyId int64) error {
-	r._applyId = _applyId
-	r.Set("apply_id", _applyId)
-	return nil
-}
-
-// GetApplyId ApplyId Getter
-func (r TaobaoAlitripSellerModifyListAPIRequest) GetApplyId() int64 {
-	return r._applyId
-}
-
-// SetOrderId is OrderId Setter
-// 淘宝订单号
-func (r *TaobaoAlitripSellerModifyListAPIRequest) SetOrderId(_orderId int64) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
-	return nil
-}
-
-// GetOrderId OrderId Getter
-func (r TaobaoAlitripSellerModifyListAPIRequest) GetOrderId() int64 {
-	return r._orderId
 }
 
 // SetApplyDateEnd is ApplyDateEnd Setter
@@ -109,19 +83,6 @@ func (r TaobaoAlitripSellerModifyListAPIRequest) GetApplyDateStart() string {
 	return r._applyDateStart
 }
 
-// SetCurrentPage is CurrentPage Setter
-// 页码
-func (r *TaobaoAlitripSellerModifyListAPIRequest) SetCurrentPage(_currentPage int64) error {
-	r._currentPage = _currentPage
-	r.Set("current_page", _currentPage)
-	return nil
-}
-
-// GetCurrentPage CurrentPage Getter
-func (r TaobaoAlitripSellerModifyListAPIRequest) GetCurrentPage() int64 {
-	return r._currentPage
-}
-
 // SetFlyDateEnd is FlyDateEnd Setter
 // 乘客起飞时间的查询结束日期
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetFlyDateEnd(_flyDateEnd string) error {
@@ -148,32 +109,6 @@ func (r TaobaoAlitripSellerModifyListAPIRequest) GetFlyDateStart() string {
 	return r._flyDateStart
 }
 
-// SetPageSize is PageSize Setter
-// 每页记录数
-func (r *TaobaoAlitripSellerModifyListAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoAlitripSellerModifyListAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetStatus is Status Setter
-// 1：初始状态，2：已改签成功，3：已拒绝，4：未付款（已回填退票费），5：已付款
-func (r *TaobaoAlitripSellerModifyListAPIRequest) SetStatus(_status int64) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TaobaoAlitripSellerModifyListAPIRequest) GetStatus() int64 {
-	return r._status
-}
-
 // SetModifyDateEnd is ModifyDateEnd Setter
 // 记录修改结束时间  和 改签发起时间必选其一
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetModifyDateEnd(_modifyDateEnd string) error {
@@ -198,4 +133,69 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetModifyDateStart(_modifyDate
 // GetModifyDateStart ModifyDateStart Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetModifyDateStart() string {
 	return r._modifyDateStart
+}
+
+// SetApplyId is ApplyId Setter
+// 申请单ID
+func (r *TaobaoAlitripSellerModifyListAPIRequest) SetApplyId(_applyId int64) error {
+	r._applyId = _applyId
+	r.Set("apply_id", _applyId)
+	return nil
+}
+
+// GetApplyId ApplyId Getter
+func (r TaobaoAlitripSellerModifyListAPIRequest) GetApplyId() int64 {
+	return r._applyId
+}
+
+// SetOrderId is OrderId Setter
+// 淘宝订单号
+func (r *TaobaoAlitripSellerModifyListAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// GetOrderId OrderId Getter
+func (r TaobaoAlitripSellerModifyListAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}
+
+// SetCurrentPage is CurrentPage Setter
+// 页码
+func (r *TaobaoAlitripSellerModifyListAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// GetCurrentPage CurrentPage Getter
+func (r TaobaoAlitripSellerModifyListAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
+}
+
+// SetPageSize is PageSize Setter
+// 每页记录数
+func (r *TaobaoAlitripSellerModifyListAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoAlitripSellerModifyListAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetStatus is Status Setter
+// 1：初始状态，2：已改签成功，3：已拒绝，4：未付款（已回填退票费），5：已付款
+func (r *TaobaoAlitripSellerModifyListAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TaobaoAlitripSellerModifyListAPIRequest) GetStatus() int64 {
+	return r._status
 }

@@ -12,8 +12,6 @@ import (
 // 卖家同意退货，支持淘宝和天猫的订单。
 type TaobaoRpReturngoodsAgreeAPIRequest struct {
 	model.Params
-	// 退款编号
-	_refundId int64
 	// 卖家姓名，淘宝退款为必填项。
 	_name string
 	// 卖家提供的退货地址，淘宝退款为必填项。
@@ -28,6 +26,8 @@ type TaobaoRpReturngoodsAgreeAPIRequest struct {
 	_remark string
 	// 售中：onsale，售后：aftersale，天猫退款为必填项。
 	_refundPhase string
+	// 退款编号
+	_refundId int64
 	// 退款版本号，天猫退款为必填项。
 	_refundVersion int64
 	// 卖家收货地址编号，天猫淘宝退款都为必填项。
@@ -57,19 +57,6 @@ func (r TaobaoRpReturngoodsAgreeAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetRefundId is RefundId Setter
-// 退款编号
-func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetRefundId(_refundId int64) error {
-	r._refundId = _refundId
-	r.Set("refund_id", _refundId)
-	return nil
-}
-
-// GetRefundId RefundId Getter
-func (r TaobaoRpReturngoodsAgreeAPIRequest) GetRefundId() int64 {
-	return r._refundId
 }
 
 // SetName is Name Setter
@@ -161,6 +148,19 @@ func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetRefundPhase(_refundPhase string)
 // GetRefundPhase RefundPhase Getter
 func (r TaobaoRpReturngoodsAgreeAPIRequest) GetRefundPhase() string {
 	return r._refundPhase
+}
+
+// SetRefundId is RefundId Setter
+// 退款编号
+func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetRefundId(_refundId int64) error {
+	r._refundId = _refundId
+	r.Set("refund_id", _refundId)
+	return nil
+}
+
+// GetRefundId RefundId Getter
+func (r TaobaoRpReturngoodsAgreeAPIRequest) GetRefundId() int64 {
+	return r._refundId
 }
 
 // SetRefundVersion is RefundVersion Setter

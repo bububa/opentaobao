@@ -2,8 +2,6 @@ package campus
 
 // PoiTypeWrap 结构体
 type PoiTypeWrap struct {
-	// isDelete
-	IsDelete bool `json:"is_delete,omitempty" xml:"is_delete,omitempty"`
 	// description
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// fullName
@@ -16,8 +14,6 @@ type PoiTypeWrap struct {
 	SecondTypeName string `json:"second_type_name,omitempty" xml:"second_type_name,omitempty"`
 	// 大类编码
 	SecondTypeCode string `json:"second_type_code,omitempty" xml:"second_type_code,omitempty"`
-	// 大类ID
-	SecondTypeId int64 `json:"second_type_id,omitempty" xml:"second_type_id,omitempty"`
 	// modifier
 	Modifier string `json:"modifier,omitempty" xml:"modifier,omitempty"`
 	// creator
@@ -26,8 +22,12 @@ type PoiTypeWrap struct {
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// gmtCreate
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-	// id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 类别的实际名称,空间或分组
 	Classify string `json:"classify,omitempty" xml:"classify,omitempty"`
+	// 大类ID
+	SecondTypeId int64 `json:"second_type_id,omitempty" xml:"second_type_id,omitempty"`
+	// id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// isDelete
+	IsDelete bool `json:"is_delete,omitempty" xml:"is_delete,omitempty"`
 }

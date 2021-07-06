@@ -4,8 +4,6 @@ package cainiaohandover
 type SolutionServiceResDto struct {
 	// 解决方案编码
 	SolutionCode string `json:"solution_code,omitempty" xml:"solution_code,omitempty"`
-	// 扩展字段
-	Features *Features `json:"features,omitempty" xml:"features,omitempty"`
 	// 优先级
 	Priority string `json:"priority,omitempty" xml:"priority,omitempty"`
 	// 联系人名称
@@ -22,4 +20,6 @@ type SolutionServiceResDto struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 资源编码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
+	// 扩展字段
+	Features *Features `json:"features,omitempty" xml:"features,omitempty"`
 }

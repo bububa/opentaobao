@@ -12,10 +12,10 @@ import (
 // 火车票代理商手动退款接口
 type TaobaoTrainAgentHandrefundRefundfeeAPIRequest struct {
 	model.Params
-	// 主订单id
-	_mainBizOrderId int64
 	// 外部订单号
 	_outTradeNo string
+	// 主订单id
+	_mainBizOrderId int64
 	// 退款金额,单位为分
 	_refundFee int64
 }
@@ -41,19 +41,6 @@ func (r TaobaoTrainAgentHandrefundRefundfeeAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// SetMainBizOrderId is MainBizOrderId Setter
-// 主订单id
-func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) SetMainBizOrderId(_mainBizOrderId int64) error {
-	r._mainBizOrderId = _mainBizOrderId
-	r.Set("main_biz_order_id", _mainBizOrderId)
-	return nil
-}
-
-// GetMainBizOrderId MainBizOrderId Getter
-func (r TaobaoTrainAgentHandrefundRefundfeeAPIRequest) GetMainBizOrderId() int64 {
-	return r._mainBizOrderId
-}
-
 // SetOutTradeNo is OutTradeNo Setter
 // 外部订单号
 func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) SetOutTradeNo(_outTradeNo string) error {
@@ -65,6 +52,19 @@ func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) SetOutTradeNo(_outTradeN
 // GetOutTradeNo OutTradeNo Getter
 func (r TaobaoTrainAgentHandrefundRefundfeeAPIRequest) GetOutTradeNo() string {
 	return r._outTradeNo
+}
+
+// SetMainBizOrderId is MainBizOrderId Setter
+// 主订单id
+func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) SetMainBizOrderId(_mainBizOrderId int64) error {
+	r._mainBizOrderId = _mainBizOrderId
+	r.Set("main_biz_order_id", _mainBizOrderId)
+	return nil
+}
+
+// GetMainBizOrderId MainBizOrderId Getter
+func (r TaobaoTrainAgentHandrefundRefundfeeAPIRequest) GetMainBizOrderId() int64 {
+	return r._mainBizOrderId
 }
 
 // SetRefundFee is RefundFee Setter

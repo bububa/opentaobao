@@ -12,10 +12,10 @@ import (
 // 创建经销采购申请
 type TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest struct {
 	model.Params
-	// 配送方式。SELF_PICKUP：自提；LOGISTICS：仓库发货
-	_logisticsType string
 	// 采购清单，存放多个采购明细，每个采购明细内部以‘:’隔开，多个采购明细之间以‘,’隔开. 例(分销产品id:skuid:购买数量:申请单价,分销产品id:skuid:购买数量:申请单价)，申请单价的单位为分。不存在sku请留空skuid，如（分销产品id::购买数量:申请单价）
 	_orderDetail []string
+	// 配送方式。SELF_PICKUP：自提；LOGISTICS：仓库发货
+	_logisticsType string
 	// 收货人所在省份
 	_province string
 	// 收货人所在市
@@ -57,19 +57,6 @@ func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetApiParams() url.
 	return params
 }
 
-// SetLogisticsType is LogisticsType Setter
-// 配送方式。SELF_PICKUP：自提；LOGISTICS：仓库发货
-func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetLogisticsType(_logisticsType string) error {
-	r._logisticsType = _logisticsType
-	r.Set("logistics_type", _logisticsType)
-	return nil
-}
-
-// GetLogisticsType LogisticsType Getter
-func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetLogisticsType() string {
-	return r._logisticsType
-}
-
 // SetOrderDetail is OrderDetail Setter
 // 采购清单，存放多个采购明细，每个采购明细内部以‘:’隔开，多个采购明细之间以‘,’隔开. 例(分销产品id:skuid:购买数量:申请单价,分销产品id:skuid:购买数量:申请单价)，申请单价的单位为分。不存在sku请留空skuid，如（分销产品id::购买数量:申请单价）
 func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetOrderDetail(_orderDetail []string) error {
@@ -81,6 +68,19 @@ func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetOrderDetail(_or
 // GetOrderDetail OrderDetail Getter
 func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetOrderDetail() []string {
 	return r._orderDetail
+}
+
+// SetLogisticsType is LogisticsType Setter
+// 配送方式。SELF_PICKUP：自提；LOGISTICS：仓库发货
+func (r *TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) SetLogisticsType(_logisticsType string) error {
+	r._logisticsType = _logisticsType
+	r.Set("logistics_type", _logisticsType)
+	return nil
+}
+
+// GetLogisticsType LogisticsType Getter
+func (r TaobaoFenxiaoDealerRequisitionorderCreateAPIRequest) GetLogisticsType() string {
+	return r._logisticsType
 }
 
 // SetProvince is Province Setter

@@ -12,10 +12,10 @@ import (
 // 设备音量
 type TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest struct {
 	model.Params
-	// 用户信息
-	_param0 *OpenBaseInfo
 	// 设备id
 	_param1 string
+	// 用户信息
+	_param0 *OpenBaseInfo
 	// 音量0-100
 	_param2 int64
 }
@@ -41,19 +41,6 @@ func (r TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) GetApiParams() url.V
 	return params
 }
 
-// SetParam0 is Param0 Setter
-// 用户信息
-func (r *TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
-	r._param0 = _param0
-	r.Set("param0", _param0)
-	return nil
-}
-
-// GetParam0 Param0 Getter
-func (r TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) GetParam0() *OpenBaseInfo {
-	return r._param0
-}
-
 // SetParam1 is Param1 Setter
 // 设备id
 func (r *TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) SetParam1(_param1 string) error {
@@ -65,6 +52,19 @@ func (r *TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) SetParam1(_param1 s
 // GetParam1 Param1 Getter
 func (r TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) GetParam1() string {
 	return r._param1
+}
+
+// SetParam0 is Param0 Setter
+// 用户信息
+func (r *TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// GetParam0 Param0 Getter
+func (r TaobaoAilabAicloudTopDeviceControlVolumeAPIRequest) GetParam0() *OpenBaseInfo {
+	return r._param0
 }
 
 // SetParam2 is Param2 Setter

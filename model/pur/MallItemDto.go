@@ -14,8 +14,6 @@ type MallItemDto struct {
 	ItemName string `json:"item_name,omitempty" xml:"item_name,omitempty"`
 	// 外部品类id
 	MallCategoryId string `json:"mall_category_id,omitempty" xml:"mall_category_id,omitempty"`
-	// 数量
-	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// skuid
 	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 外部订单行id
@@ -32,4 +30,6 @@ type MallItemDto struct {
 	ContractCode string `json:"contract_code,omitempty" xml:"contract_code,omitempty"`
 	// 产品详情链接
 	ItemUrl string `json:"item_url,omitempty" xml:"item_url,omitempty"`
+	// 数量
+	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 }

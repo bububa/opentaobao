@@ -12,12 +12,12 @@ import (
 // 体检机构对接_商品发布／更新
 type AlibabaAlihealthExaminationGoodsPublishAPIRequest struct {
 	model.Params
+	// 套餐列表
+	_packageList []Package
 	// 商品id，机构保证全局唯一
 	_groupId string
 	// 商品名称
 	_groupName string
-	// 套餐列表
-	_packageList []Package
 	// 操作类型: publish=发布，update=更新
 	_type string
 	// 最多200个字，界面对应商品详情页描述
@@ -55,6 +55,19 @@ func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetApiParams() url.Va
 	return params
 }
 
+// SetPackageList is PackageList Setter
+// 套餐列表
+func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetPackageList(_packageList []Package) error {
+	r._packageList = _packageList
+	r.Set("package_list", _packageList)
+	return nil
+}
+
+// GetPackageList PackageList Getter
+func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetPackageList() []Package {
+	return r._packageList
+}
+
 // SetGroupId is GroupId Setter
 // 商品id，机构保证全局唯一
 func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetGroupId(_groupId string) error {
@@ -79,19 +92,6 @@ func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetGroupName(_groupN
 // GetGroupName GroupName Getter
 func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetGroupName() string {
 	return r._groupName
-}
-
-// SetPackageList is PackageList Setter
-// 套餐列表
-func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetPackageList(_packageList []Package) error {
-	r._packageList = _packageList
-	r.Set("package_list", _packageList)
-	return nil
-}
-
-// GetPackageList PackageList Getter
-func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetPackageList() []Package {
-	return r._packageList
 }
 
 // SetType is Type Setter

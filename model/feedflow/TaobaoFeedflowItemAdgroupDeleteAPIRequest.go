@@ -12,10 +12,10 @@ import (
 // 根据单元id删除单元
 type TaobaoFeedflowItemAdgroupDeleteAPIRequest struct {
 	model.Params
-	// 计划id
-	_campaignId int64
 	// 单元id列表
 	_adgroupIdList []int64
+	// 计划id
+	_campaignId int64
 }
 
 // NewTaobaoFeedflowItemAdgroupDeleteRequest 初始化TaobaoFeedflowItemAdgroupDeleteAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetCampaignId is CampaignId Setter
-// 计划id
-func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) SetCampaignId(_campaignId int64) error {
-	r._campaignId = _campaignId
-	r.Set("campaign_id", _campaignId)
-	return nil
-}
-
-// GetCampaignId CampaignId Getter
-func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetCampaignId() int64 {
-	return r._campaignId
-}
-
 // SetAdgroupIdList is AdgroupIdList Setter
 // 单元id列表
 func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) SetAdgroupIdList(_adgroupIdList []int64) error {
@@ -63,4 +50,17 @@ func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) SetAdgroupIdList(_adgroupIdL
 // GetAdgroupIdList AdgroupIdList Getter
 func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetAdgroupIdList() []int64 {
 	return r._adgroupIdList
+}
+
+// SetCampaignId is CampaignId Setter
+// 计划id
+func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// GetCampaignId CampaignId Getter
+func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
 }

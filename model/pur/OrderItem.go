@@ -20,12 +20,12 @@ type OrderItem struct {
 	ItemName string `json:"item_name,omitempty" xml:"item_name,omitempty"`
 	// 单价(含税）
 	UnitPrice string `json:"unit_price,omitempty" xml:"unit_price,omitempty"`
-	// 数量
-	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 合同ID
 	ContractId string `json:"contract_id,omitempty" xml:"contract_id,omitempty"`
 	// 商品ID
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 商品描述
 	ItemDescription string `json:"item_description,omitempty" xml:"item_description,omitempty"`
+	// 数量
+	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 }

@@ -12,12 +12,12 @@ import (
 // 入库通知单
 type TaobaoWlbWmsStockInOrderNotifyAPIRequest struct {
 	model.Params
+	// 系统自动生成
+	_orderItemList []Orderitemlistwlbwmsstockinordernotifywl
 	// 仓库编码
 	_storeCode string
 	// 入库单据编码
 	_orderCode string
-	// 单据类型 601普通入库单、501销退入库单、302 调拨入库单、904其他入库单、306 B2B入库
-	_orderType int64
 	// 可选择性文本透传至WMS，比如加工归还、委外归还、借出归还、内部归还等
 	_inboundTypeDesc string
 	// 订单标记以逗号分隔：  9:上门退货入库 13: 退货时是否收取发票，默认不收取（即没13为多选项，如1,2,8,9）
@@ -42,16 +42,16 @@ type TaobaoWlbWmsStockInOrderNotifyAPIRequest struct {
 	_expectStartTime string
 	// 预期送达结束时间
 	_expectEndTime string
-	// 系统自动生成
-	_receiverInfo *Receiverinfowlbwmsstockinordernotifywl
-	// 系统自动生成
-	_senderInfo *Senderinfowlbwmsstockinordernotifywl
-	// 系统自动生成
-	_orderItemList []Orderitemlistwlbwmsstockinordernotifywl
 	// 扩展属性, key-value结构，格式要求： 以英文分号“;”分隔每组key-value，以英文冒号“:”分隔key与value。如果value中带有分号，需要转成下划线“_”，如果带有冒号，需要转成中划线“-”
 	_extendFields string
 	// 备注，销退入库订单需要留言备注填充到此字段
 	_remark string
+	// 单据类型 601普通入库单、501销退入库单、302 调拨入库单、904其他入库单、306 B2B入库
+	_orderType int64
+	// 系统自动生成
+	_receiverInfo *Receiverinfowlbwmsstockinordernotifywl
+	// 系统自动生成
+	_senderInfo *Senderinfowlbwmsstockinordernotifywl
 }
 
 // NewTaobaoWlbWmsStockInOrderNotifyRequest 初始化TaobaoWlbWmsStockInOrderNotifyAPIRequest对象
@@ -73,6 +73,19 @@ func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetOrderItemList is OrderItemList Setter
+// 系统自动生成
+func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderItemList(_orderItemList []Orderitemlistwlbwmsstockinordernotifywl) error {
+	r._orderItemList = _orderItemList
+	r.Set("order_item_list", _orderItemList)
+	return nil
+}
+
+// GetOrderItemList OrderItemList Getter
+func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetOrderItemList() []Orderitemlistwlbwmsstockinordernotifywl {
+	return r._orderItemList
 }
 
 // SetStoreCode is StoreCode Setter
@@ -99,19 +112,6 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderCode(_orderCode strin
 // GetOrderCode OrderCode Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetOrderCode() string {
 	return r._orderCode
-}
-
-// SetOrderType is OrderType Setter
-// 单据类型 601普通入库单、501销退入库单、302 调拨入库单、904其他入库单、306 B2B入库
-func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderType(_orderType int64) error {
-	r._orderType = _orderType
-	r.Set("order_type", _orderType)
-	return nil
-}
-
-// GetOrderType OrderType Getter
-func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetOrderType() int64 {
-	return r._orderType
 }
 
 // SetInboundTypeDesc is InboundTypeDesc Setter
@@ -270,45 +270,6 @@ func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetExpectEndTime() string {
 	return r._expectEndTime
 }
 
-// SetReceiverInfo is ReceiverInfo Setter
-// 系统自动生成
-func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo *Receiverinfowlbwmsstockinordernotifywl) error {
-	r._receiverInfo = _receiverInfo
-	r.Set("receiver_info", _receiverInfo)
-	return nil
-}
-
-// GetReceiverInfo ReceiverInfo Getter
-func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetReceiverInfo() *Receiverinfowlbwmsstockinordernotifywl {
-	return r._receiverInfo
-}
-
-// SetSenderInfo is SenderInfo Setter
-// 系统自动生成
-func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *Senderinfowlbwmsstockinordernotifywl) error {
-	r._senderInfo = _senderInfo
-	r.Set("sender_info", _senderInfo)
-	return nil
-}
-
-// GetSenderInfo SenderInfo Getter
-func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetSenderInfo() *Senderinfowlbwmsstockinordernotifywl {
-	return r._senderInfo
-}
-
-// SetOrderItemList is OrderItemList Setter
-// 系统自动生成
-func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderItemList(_orderItemList []Orderitemlistwlbwmsstockinordernotifywl) error {
-	r._orderItemList = _orderItemList
-	r.Set("order_item_list", _orderItemList)
-	return nil
-}
-
-// GetOrderItemList OrderItemList Getter
-func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetOrderItemList() []Orderitemlistwlbwmsstockinordernotifywl {
-	return r._orderItemList
-}
-
 // SetExtendFields is ExtendFields Setter
 // 扩展属性, key-value结构，格式要求： 以英文分号“;”分隔每组key-value，以英文冒号“:”分隔key与value。如果value中带有分号，需要转成下划线“_”，如果带有冒号，需要转成中划线“-”
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetExtendFields(_extendFields string) error {
@@ -333,4 +294,43 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetRemark(_remark string) err
 // GetRemark Remark Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetRemark() string {
 	return r._remark
+}
+
+// SetOrderType is OrderType Setter
+// 单据类型 601普通入库单、501销退入库单、302 调拨入库单、904其他入库单、306 B2B入库
+func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderType(_orderType int64) error {
+	r._orderType = _orderType
+	r.Set("order_type", _orderType)
+	return nil
+}
+
+// GetOrderType OrderType Getter
+func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetOrderType() int64 {
+	return r._orderType
+}
+
+// SetReceiverInfo is ReceiverInfo Setter
+// 系统自动生成
+func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo *Receiverinfowlbwmsstockinordernotifywl) error {
+	r._receiverInfo = _receiverInfo
+	r.Set("receiver_info", _receiverInfo)
+	return nil
+}
+
+// GetReceiverInfo ReceiverInfo Getter
+func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetReceiverInfo() *Receiverinfowlbwmsstockinordernotifywl {
+	return r._receiverInfo
+}
+
+// SetSenderInfo is SenderInfo Setter
+// 系统自动生成
+func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *Senderinfowlbwmsstockinordernotifywl) error {
+	r._senderInfo = _senderInfo
+	r.Set("sender_info", _senderInfo)
+	return nil
+}
+
+// GetSenderInfo SenderInfo Getter
+func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetSenderInfo() *Senderinfowlbwmsstockinordernotifywl {
+	return r._senderInfo
 }

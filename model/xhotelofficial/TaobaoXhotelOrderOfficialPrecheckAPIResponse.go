@@ -24,12 +24,12 @@ type TaobaoXhotelOrderOfficialPrecheckAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_official_precheck_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 是否符合信用住条件
-	MatchCondition bool `json:"match_condition,omitempty" xml:"match_condition,omitempty"`
 	// 当match_condition=false时该字段有意义,用于说明用户不符合信用住条件的原因。以下两种情况，请不要读取此字段值（1、match_condition=true；2、当match_condition=false并且action=1时候（action=1表示用户未签约信用住））
 	Reason string `json:"reason,omitempty" xml:"reason,omitempty"`
 	// 入参信息回传, 用于校验的证件号码
 	IdNumber string `json:"id_number,omitempty" xml:"id_number,omitempty"`
 	// 当match_condition=false时该字段有意义,用于标示当用户不符合条件时,应该进行的下一步动作.   0或者空: 用户没有资格使用信用住。可以读取reson字段查看原因。   1: 表示用户符合资格，但是未签约信用住。可以提示用户进行签约后重试。
 	Action int64 `json:"action,omitempty" xml:"action,omitempty"`
+	// 是否符合信用住条件
+	MatchCondition bool `json:"match_condition,omitempty" xml:"match_condition,omitempty"`
 }

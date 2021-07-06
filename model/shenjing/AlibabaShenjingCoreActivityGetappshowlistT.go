@@ -18,14 +18,14 @@ type AlibabaShenjingCoreActivityGetappshowlistT struct {
 	ActEndTime string `json:"act_end_time,omitempty" xml:"act_end_time,omitempty"`
 	// 活动开始时间
 	ActStartTime string `json:"act_start_time,omitempty" xml:"act_start_time,omitempty"`
+	// 宣传图片多个,分隔
+	Images string `json:"images,omitempty" xml:"images,omitempty"`
+	// 活动名
+	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 物业公司ID
 	WyCompanyId int64 `json:"wy_company_id,omitempty" xml:"wy_company_id,omitempty"`
 	// 活动主键ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
-	// 宣传图片多个,分隔
-	Images string `json:"images,omitempty" xml:"images,omitempty"`
 	// 活动创建的时间戳
 	Timestamp int64 `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
-	// 活动名
-	Name string `json:"name,omitempty" xml:"name,omitempty"`
 }

@@ -22,8 +22,8 @@ type TaobaoOmniorderStoreSdtconsignAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 异常信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
-	// data
-	Data *SdtConsignResponse `json:"data,omitempty" xml:"data,omitempty"`
 	// 异常码 0 为正常，否则异常
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
+	// data
+	Data *SdtConsignResponse `json:"data,omitempty" xml:"data,omitempty"`
 }

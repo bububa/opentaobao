@@ -14,10 +14,6 @@ type TaobaoKoubeiMallCommonMallAuthPageAPIRequest struct {
 	model.Params
 	// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
 	_dataSetId string
-	// 分页查询起始值，默认为0
-	_start int64
-	// 每页查询量，默认10（建议查询值为10的倍数，最大不超过30）
-	_pageSize int64
 	// 经度（终端设备地理位置）
 	_longitude string
 	// 纬度（终端设备地理位置）
@@ -30,6 +26,10 @@ type TaobaoKoubeiMallCommonMallAuthPageAPIRequest struct {
 	_terminalType string
 	// 展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）
 	_displayChannel string
+	// 分页查询起始值，默认为0
+	_start int64
+	// 每页查询量，默认10（建议查询值为10的倍数，最大不超过30）
+	_pageSize int64
 }
 
 // NewTaobaoKoubeiMallCommonMallAuthPageRequest 初始化TaobaoKoubeiMallCommonMallAuthPageAPIRequest对象
@@ -64,32 +64,6 @@ func (r *TaobaoKoubeiMallCommonMallAuthPageAPIRequest) SetDataSetId(_dataSetId s
 // GetDataSetId DataSetId Getter
 func (r TaobaoKoubeiMallCommonMallAuthPageAPIRequest) GetDataSetId() string {
 	return r._dataSetId
-}
-
-// SetStart is Start Setter
-// 分页查询起始值，默认为0
-func (r *TaobaoKoubeiMallCommonMallAuthPageAPIRequest) SetStart(_start int64) error {
-	r._start = _start
-	r.Set("start", _start)
-	return nil
-}
-
-// GetStart Start Getter
-func (r TaobaoKoubeiMallCommonMallAuthPageAPIRequest) GetStart() int64 {
-	return r._start
-}
-
-// SetPageSize is PageSize Setter
-// 每页查询量，默认10（建议查询值为10的倍数，最大不超过30）
-func (r *TaobaoKoubeiMallCommonMallAuthPageAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoKoubeiMallCommonMallAuthPageAPIRequest) GetPageSize() int64 {
-	return r._pageSize
 }
 
 // SetLongitude is Longitude Setter
@@ -168,4 +142,30 @@ func (r *TaobaoKoubeiMallCommonMallAuthPageAPIRequest) SetDisplayChannel(_displa
 // GetDisplayChannel DisplayChannel Getter
 func (r TaobaoKoubeiMallCommonMallAuthPageAPIRequest) GetDisplayChannel() string {
 	return r._displayChannel
+}
+
+// SetStart is Start Setter
+// 分页查询起始值，默认为0
+func (r *TaobaoKoubeiMallCommonMallAuthPageAPIRequest) SetStart(_start int64) error {
+	r._start = _start
+	r.Set("start", _start)
+	return nil
+}
+
+// GetStart Start Getter
+func (r TaobaoKoubeiMallCommonMallAuthPageAPIRequest) GetStart() int64 {
+	return r._start
+}
+
+// SetPageSize is PageSize Setter
+// 每页查询量，默认10（建议查询值为10的倍数，最大不超过30）
+func (r *TaobaoKoubeiMallCommonMallAuthPageAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoKoubeiMallCommonMallAuthPageAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

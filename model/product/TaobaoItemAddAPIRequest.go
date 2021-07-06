@@ -17,6 +17,8 @@ import (
 // <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
 type TaobaoItemAddAPIRequest struct {
 	model.Params
+	// 此字段已经废弃，不再使用
+	_imageUrls []string
 	// 此参数暂时不起作用
 	_skuSpecIds string
 	// 此参数暂时不起作用
@@ -93,10 +95,6 @@ type TaobaoItemAddAPIRequest struct {
 	_locationState string
 	// 所在地城市。如杭州 。
 	_locationCity string
-	// 商品数量。取值范围:0-900000000的整数。且需要等于Sku所有数量的和。拍卖商品中增加拍只能为1，荷兰拍要在[2,500)范围内。
-	_num int64
-	// 商品价格。取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。需要在正确的价格区间内。拍卖商品对应的起拍价。
-	_price float64
 	// 发布类型。可选值:fixed(一口价),auction(拍卖)。B商家不能发布拍卖商品，而且拍卖商品是没有SKU的。拍卖商品发布时需要附加拍卖商品信息：拍卖类型(paimai_info.mode，拍卖类型包括三种：增价拍[1]，荷兰拍[2]以及降价拍[3])，商品数量(num)，起拍价(price)，价格幅度(increament)，保证金(paimai_info.deposit)。另外拍卖商品支持自定义销售周期，通过paimai_info.valid_hour和paimai_info.valid_minute来指定。对于降价拍来说需要设置降价周期(paimai_info.interval)和拍卖保留价(paimai_info.reserve)。注意：通过taobao.item.get接口获取拍卖信息时，会返回除了valid_hour和valid_minute之外的所有拍卖信息。
 	_type string
 	// 新旧程度。可选值：new(新)，second(二手)。B商家不能发布二手商品。如果是二手商品，特定类目下属性里面必填新旧成色属性
@@ -107,72 +105,24 @@ type TaobaoItemAddAPIRequest struct {
 	_desc string
 	// 商品上传后的状态。可选值:onsale(出售中),instock(仓库中);默认值:onsale
 	_approveStatus string
-	// 叶子类目id
-	_cid int64
 	// 商品属性列表。格式:pid:vid;pid:vid。属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。 如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。所有属性加起来包括分割符不能超过549字节，单个属性没有限制。 如果有属性是可输入的话，则用字段input_str填入属性的值
 	_props string
 	// 运费承担方式。可选值:seller（卖家承担）,buyer(买家承担);默认值:seller。卖家承担不用设置邮费和postage_id.买家承担的时候，必填邮费和postage_id 如果用户设置了运费模板会优先使用运费模板，否则要同步设置邮费（post_fee,express_fee,ems_fee）
 	_freightPayer string
-	// 有效期。可选值:7,14;单位:天;默认值:14
-	_validThru int64
-	// 是否有发票。可选值:true,false (商城卖家此字段必须为true);默认值:false(无发票)
-	_hasInvoice bool
-	// 是否有保修。可选值:true,false;默认值:false(不保修)
-	_hasWarranty bool
-	// 橱窗推荐。可选值:true,false;默认值:false(不推荐)
-	_hasShowcase bool
 	// 商品所属的店铺类目列表。按逗号分隔。结构:",cid1,cid2,...,"，如果店铺类目存在二级类目，必须传入子类目cids。
 	_sellerCids string
-	// 支持会员打折。可选值:true,false;默认值:false(不打折)
-	_hasDiscount bool
-	// 平邮费用。取值范围:0.01-999.00;精确到2位小数;单位:元。如:5.07，表示:5元7分. 注:post_fee,express_fee,ems_fee需要一起填写
-	_postFee float64
-	// 快递费用。取值范围:0.01-999.00;精确到2位小数;单位:元。如:15.07，表示:15元7分
-	_expressFee float64
-	// ems费用。取值范围:0.01-999.00;精确到2位小数;单位:元。如:25.07，表示:25元7分
-	_emsFee float64
 	// 定时上架时间。(时间格式：yyyy-MM-dd HH:mm:ss)
 	_listTime string
-	// 加价(降价)幅度。如果为0，代表系统代理幅度。对于增价拍和荷兰拍来说是加价幅度，对于降价拍来说是降价幅度。
-	_increment float64
-	// 商品主图片。类型:JPG,GIF;最大长度:3M。（推荐使用pic_path字段，先把图片上传到卖家图片空间）
-	_image *model.File
-	// 宝贝所属的运费模板ID。取值范围：整数且必须是该卖家的运费模板的ID（可通过taobao.delivery.template.get获得当前会话用户的所有邮费模板）
-	_postageId int64
-	// 商品的积分返点比例。如:5,表示:返点比例0.5%. 注意：返点比例必须是>0的整数，而且最大是90,即为9%.B商家在发布非虚拟商品时，返点必须是 5的倍数，即0.5%的倍数。其它是1的倍数，即0.1%的倍数。无名良品商家发布商品时，复用该字段记录积分宝返点比例，返点必须是对应类目的返点步长的整数倍，默认是5，即0.5%。注意此时该字段值依旧必须是>0的整数，最高值不超过500，即50%
-	_auctionPoint int64
 	// 属性值别名。如pid:vid:别名;pid1:vid1:别名1 ，其中：pid是属性id vid是属性值id。总长度不超过800个字符，如"123:333:你好"，引号内的是10个字符。
 	_propertyAlias string
 	// 商品文字的字符集。繁体传入"zh_HK"，简体传入"zh_CN"，不传默认为简体
 	_lang string
 	// 商品外部编码，该字段的最大长度是64个字节
 	_outerId string
-	// 商品所属的产品ID(B商家发布商品需要用)
-	_productId int64
 	// （推荐）商品主图需要关联的图片空间的相对url。这个url所对应的图片必须要属于当前用户。pic_path和image只需要传入一个,如果两个都传，默认选择pic_path
 	_picPath string
 	// 代充商品类型。在代充商品的类目下，不传表示不标记商品类型（交易搜索中就不能通过标记搜到相关的交易了）。可选类型： no_mark(不做类型标记) time_card(点卡软件代充) fee_card(话费软件代充)
 	_autoFill string
-	// 是否在淘宝上显示（如果传FALSE，则在淘宝主站无法显示该商品）
-	_isTaobao bool
-	// 是否在外店显示
-	_isEx bool
-	// 是否是3D
-	_is3D bool
-	// 是否承诺退换货服务!虚拟商品无须设置此项!
-	_sellPromise bool
-	// 此为货到付款运费模板的ID，对应的JAVA类型是long,如果COD卖家应用了货到付款运费模板，此值要进行设置。该字段已经废弃
-	_codPostageId int64
-	// 实物闪电发货
-	_isLightningConsignment bool
-	// 商品的重量(商超卖家专用字段)
-	_weight int64
-	// 商品是否为新品。只有在当前类目开通新品,并且当前用户拥有该类目下发布新品权限时才能设置is_xinpin为true，否则设置true后会返回错误码:isv.invalid-permission:add-xinpin。同时只有一口价全新的宝贝才能设置为新品，否则会返回错误码：isv.invalid-parameter:xinpin。不设置该参数值或设置为false效果一致。
-	_isXinpin bool
-	// 商品是否支持拍下减库存:1支持;2取消支持(付款减库存);0(默认)不更改集市卖家默认拍下减库存;商城卖家默认付款减库存
-	_subStock int64
-	// 景区门票类宝贝发布时候，当卖家签订了支付宝代扣协议时候，需要选择支付方式：全额支付和订金支付。当scenic_ticket_pay_way为1时表示全额支付，为2时表示订金支付
-	_scenicTicketPayWay int64
 	// 景区门票在选择订金支付时候，需要交的预订费。传入的值是1到20之间的数值，小数点后最多可以保留两位（多余的部分将做四舍五入的处理）。这个数值表示的是预订费的比例，最终的预订费为 scenic_ticket_book_cost乘一口价除以100
 	_scenicTicketBookCost string
 	// 表示商品的体积，如果需要使用按体积计费的运费模板，一定要设置这个值。该值的单位为立方米（m3），如果是其他单位，请转换成成立方米。该值支持两种格式的设置：格式1：bulk:3,单位为立方米(m3),表示直接设置为商品的体积。格式2：length:10;breadth:10;height:10，单位为米（m）。体积和长宽高都支持小数类型。在传入体积或长宽高时候，不能带单位。体积的单位默认为立方米（m3），长宽高的单位默认为米(m)该值支持两种格式的设置：格式1：bulk:3,单位为立方米(m3),表示直接设置为商品的体积。格式2：length:10;breadth:10;height:10，单位为米（m）
@@ -187,14 +137,10 @@ type TaobaoItemAddAPIRequest struct {
 	_newprepay string
 	// 商品资质信息
 	_qualification string
-	// 汽车O2O绑定线下服务标记，如不为空，表示关联服务，否则，不关联服务。
-	_o2oBindService bool
 	// 宝贝特征值，格式为：【key1:value1;key2:value2;key3:value3;】，key和value用【:】分隔，key&value之间用【;】分隔，只有在Top支持的特征值才能保存到宝贝上，目前支持的Key列表为：mysize_tp
 	_features string
 	// 忽略警告提示.
 	_ignorewarning string
-	// 售后说明模板id
-	_afterSaleId int64
 	// 基础色数据，淘宝不使用
 	_changeProp string
 	// 已废弃
@@ -203,20 +149,12 @@ type TaobaoItemAddAPIRequest struct {
 	_isOffline string
 	// 无线的宝贝描述
 	_wirelessDesc string
-	// 手机类目spu 优化，信息确认字段
-	_spuConfirm bool
-	// 主图视频id
-	_videoId int64
-	// 主图视频互动信息id，必须填写主图视频id才能有互动信息id
-	_interactiveId int64
 	// 租赁扩展信息
 	_leaseExtendsInfo string
 	// 仅淘小铺卖家需要。佣金比例(15.3对应的佣金比例为15.3%).只支持小数点后1位。多余的位数四舍五入(15.32会保存为15.3%
 	_brokerage string
 	// 业务身份编码。淘小铺编码为"taobao-taoxiaopu"
 	_bizCode string
-	// 此字段已经废弃，不再使用
-	_imageUrls []string
 	// 发布电子凭证宝贝时候表示是否使用邮寄 0: 代表不使用邮寄； 1：代表使用邮寄；如果不设置这个值，代表不使用邮寄
 	_localityLifeChooseLogis string
 	// 本地生活电子交易凭证业务，目前此字段只涉及到的信息为有效期;如果有效期为起止日期类型，此值为2012-08-06,2012-08-16如果有效期为【购买成功日 至】类型则格式为2012-08-16如果有效期为天数类型则格式为15
@@ -227,14 +165,64 @@ type TaobaoItemAddAPIRequest struct {
 	_localityLifeMerchant string
 	// 核销打款 1代表核销打款 0代表非核销打款
 	_localityLifeVerification string
-	// 退款比例，百分比%前的数字,1-100的正整数值
-	_localityLifeRefundRatio int64
-	// 电子凭证售中自动退款比例，百分比%前的数字，介于1-100之间的整数
-	_localityLifeOnsaleAutoRefundRatio int64
 	// 退款码费承担方。发布电子凭证宝贝的时候会增加“退款码费承担方”配置项，可选填：(1)s（卖家承担） (2)b(买家承担)
 	_localityLifeRefundmafee string
 	// 电子凭证业务属性，数据字典是: 1、is_card:1 (暂时不用) 2、consume_way:4 （1 串码 ，4 身份证）3、consume_midmnick ：(核销放行账号:用户id-用户名，支持多个，用逗号分隔,例如 1234-测试账号35,1345-测试账号56）4、market:eticket (电子凭证商品标记) 5、has_pos:1 (1 表示商品配置线下门店，在detail上进行展示 ，没有或者其他值只不展示)格式是: k1:v2;k2:v2;........ 如：has_pos:1;market:eticket;consume_midmnick:901409638-OPPO;consume_way:4
 	_localityLifeEticket string
+	// 全球购商品采购地（库存类型），有两种库存类型：现货和代购参数值为1时代表现货，值为2时代表代购。注意：使用时请与 全球购商品采购地（地区/国家）配合使用
+	_globalStockType string
+	// 全球购商品采购地（地区/国家）,默认值只在全球购商品采购地（库存类型选择情况生效），地区国家值请填写法定的国家名称，类如（美国, 香港, 日本, 英国, 新西兰, 德国, 韩国, 荷兰, 法国, 意大利, 台湾, 澳门, 加拿大, 瑞士, 西班牙, 泰国, 新加坡, 马来西亚, 菲律宾），不要使用其他
+	_globalStockCountry string
+	// 定制工具Id如果支持定制市场，这个值不填写，就用之前的定制工具Id，之前的定制工具Id没有值就默认为-1
+	_customMadeTypeId string
+	// 全球购商品发货地，发货地现在有两种类型：“国内”和“海外及港澳台”，参数值为1时代表“国内”，值为2时代表“海外及港澳台”，默认为国内。注意：卖家必须已经签署并启用“海外直邮”合约，才能选择发货地为“海外及港澳台”
+	_globalStockDeliveryPlace string
+	// 针对当前商品的自定义属性值，目前是针对销售属性值自定义的，所以调用方需要把自定义属性值对应的虚拟属性值ID（负整数，例如例子中的 -1和-2）像标准属性值值的id一样设置到SKU上，如果自定义属性值有属性值图片，也要设置到属性图片上
+	_inputCustomCpv string
+	// 针对当前商品的标准属性值的补充说明，让买家更加了解商品信息减少交易纠纷
+	_cpvMemo string
+	// 商品数量。取值范围:0-900000000的整数。且需要等于Sku所有数量的和。拍卖商品中增加拍只能为1，荷兰拍要在[2,500)范围内。
+	_num int64
+	// 商品价格。取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。需要在正确的价格区间内。拍卖商品对应的起拍价。
+	_price float64
+	// 叶子类目id
+	_cid int64
+	// 有效期。可选值:7,14;单位:天;默认值:14
+	_validThru int64
+	// 平邮费用。取值范围:0.01-999.00;精确到2位小数;单位:元。如:5.07，表示:5元7分. 注:post_fee,express_fee,ems_fee需要一起填写
+	_postFee float64
+	// 快递费用。取值范围:0.01-999.00;精确到2位小数;单位:元。如:15.07，表示:15元7分
+	_expressFee float64
+	// ems费用。取值范围:0.01-999.00;精确到2位小数;单位:元。如:25.07，表示:25元7分
+	_emsFee float64
+	// 加价(降价)幅度。如果为0，代表系统代理幅度。对于增价拍和荷兰拍来说是加价幅度，对于降价拍来说是降价幅度。
+	_increment float64
+	// 商品主图片。类型:JPG,GIF;最大长度:3M。（推荐使用pic_path字段，先把图片上传到卖家图片空间）
+	_image *model.File
+	// 宝贝所属的运费模板ID。取值范围：整数且必须是该卖家的运费模板的ID（可通过taobao.delivery.template.get获得当前会话用户的所有邮费模板）
+	_postageId int64
+	// 商品的积分返点比例。如:5,表示:返点比例0.5%. 注意：返点比例必须是>0的整数，而且最大是90,即为9%.B商家在发布非虚拟商品时，返点必须是 5的倍数，即0.5%的倍数。其它是1的倍数，即0.1%的倍数。无名良品商家发布商品时，复用该字段记录积分宝返点比例，返点必须是对应类目的返点步长的整数倍，默认是5，即0.5%。注意此时该字段值依旧必须是>0的整数，最高值不超过500，即50%
+	_auctionPoint int64
+	// 商品所属的产品ID(B商家发布商品需要用)
+	_productId int64
+	// 此为货到付款运费模板的ID，对应的JAVA类型是long,如果COD卖家应用了货到付款运费模板，此值要进行设置。该字段已经废弃
+	_codPostageId int64
+	// 商品的重量(商超卖家专用字段)
+	_weight int64
+	// 商品是否支持拍下减库存:1支持;2取消支持(付款减库存);0(默认)不更改集市卖家默认拍下减库存;商城卖家默认付款减库存
+	_subStock int64
+	// 景区门票类宝贝发布时候，当卖家签订了支付宝代扣协议时候，需要选择支付方式：全额支付和订金支付。当scenic_ticket_pay_way为1时表示全额支付，为2时表示订金支付
+	_scenicTicketPayWay int64
+	// 售后说明模板id
+	_afterSaleId int64
+	// 主图视频id
+	_videoId int64
+	// 主图视频互动信息id，必须填写主图视频id才能有互动信息id
+	_interactiveId int64
+	// 退款比例，百分比%前的数字,1-100的正整数值
+	_localityLifeRefundRatio int64
+	// 电子凭证售中自动退款比例，百分比%前的数字，介于1-100之间的整数
+	_localityLifeOnsaleAutoRefundRatio int64
 	// 拍卖商品选择的拍卖类型，拍卖类型包括三种：增价拍(1)，荷兰拍(2)和降价拍(3)。
 	_paimaiInfoMode int64
 	// 拍卖宝贝的保证金。对于增价拍和荷兰拍来说保证金有两种模式：淘宝默认模式（首次出价金额的10%），自定义固定保证金（固定冻结金额只能输入不超过30万的正整数），并且保证金只冻结1次。对于降价拍来说保证金只有淘宝默认的（竞拍价格的10% * 竞拍数量），并且每次出价都需要冻结保证金。对于拍卖宝贝来说，保证金是必须的，但是默认使用淘宝默认保证金模式，只有用户需要使用自定义固定保证金的时候才需要使用到这个参数，如果该参数不传或传入0则代表使用默认。
@@ -247,22 +235,34 @@ type TaobaoItemAddAPIRequest struct {
 	_paimaiInfoValidHour int64
 	// 自定义销售周期的分钟数。拍卖宝贝可以自定义销售周期，这里是指定销售周期的分钟数。自定义销售周期的小时数。拍卖宝贝可以自定义销售周期，这里指定销售周期的小时数。注意，该参数只作为输入参数，不能通过taobao.item.get接口获取。
 	_paimaiInfoValidMinute int64
-	// 全球购商品采购地（库存类型），有两种库存类型：现货和代购参数值为1时代表现货，值为2时代表代购。注意：使用时请与 全球购商品采购地（地区/国家）配合使用
-	_globalStockType string
-	// 全球购商品采购地（地区/国家）,默认值只在全球购商品采购地（库存类型选择情况生效），地区国家值请填写法定的国家名称，类如（美国, 香港, 日本, 英国, 新西兰, 德国, 韩国, 荷兰, 法国, 意大利, 台湾, 澳门, 加拿大, 瑞士, 西班牙, 泰国, 新加坡, 马来西亚, 菲律宾），不要使用其他
-	_globalStockCountry string
+	// 是否有发票。可选值:true,false (商城卖家此字段必须为true);默认值:false(无发票)
+	_hasInvoice bool
+	// 是否有保修。可选值:true,false;默认值:false(不保修)
+	_hasWarranty bool
+	// 橱窗推荐。可选值:true,false;默认值:false(不推荐)
+	_hasShowcase bool
+	// 支持会员打折。可选值:true,false;默认值:false(不打折)
+	_hasDiscount bool
+	// 是否在淘宝上显示（如果传FALSE，则在淘宝主站无法显示该商品）
+	_isTaobao bool
+	// 是否在外店显示
+	_isEx bool
+	// 是否是3D
+	_is3D bool
+	// 是否承诺退换货服务!虚拟商品无须设置此项!
+	_sellPromise bool
+	// 实物闪电发货
+	_isLightningConsignment bool
+	// 商品是否为新品。只有在当前类目开通新品,并且当前用户拥有该类目下发布新品权限时才能设置is_xinpin为true，否则设置true后会返回错误码:isv.invalid-permission:add-xinpin。同时只有一口价全新的宝贝才能设置为新品，否则会返回错误码：isv.invalid-parameter:xinpin。不设置该参数值或设置为false效果一致。
+	_isXinpin bool
+	// 汽车O2O绑定线下服务标记，如不为空，表示关联服务，否则，不关联服务。
+	_o2oBindService bool
+	// 手机类目spu 优化，信息确认字段
+	_spuConfirm bool
 	// 是否支持定制市场 true代表支持，false代表支持,如果为空代表与之前保持不变不会修改
 	_supportCustomMade bool
-	// 定制工具Id如果支持定制市场，这个值不填写，就用之前的定制工具Id，之前的定制工具Id没有值就默认为-1
-	_customMadeTypeId string
-	// 全球购商品发货地，发货地现在有两种类型：“国内”和“海外及港澳台”，参数值为1时代表“国内”，值为2时代表“海外及港澳台”，默认为国内。注意：卖家必须已经签署并启用“海外直邮”合约，才能选择发货地为“海外及港澳台”
-	_globalStockDeliveryPlace string
 	// 全球购商品卖家包税承诺，当值为true时，代表卖家承诺包税。注意：请与“全球购商品发货地”配合使用，包税承诺必须满足：1、发货地为海外及港澳台 2、卖家已经签署并启用“包税合约”合约
 	_globalStockTaxFreePromise bool
-	// 针对当前商品的自定义属性值，目前是针对销售属性值自定义的，所以调用方需要把自定义属性值对应的虚拟属性值ID（负整数，例如例子中的 -1和-2）像标准属性值值的id一样设置到SKU上，如果自定义属性值有属性值图片，也要设置到属性图片上
-	_inputCustomCpv string
-	// 针对当前商品的标准属性值的补充说明，让买家更加了解商品信息减少交易纠纷
-	_cpvMemo string
 }
 
 // NewTaobaoItemAddRequest 初始化TaobaoItemAddAPIRequest对象
@@ -284,6 +284,19 @@ func (r TaobaoItemAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetImageUrls is ImageUrls Setter
+// 此字段已经废弃，不再使用
+func (r *TaobaoItemAddAPIRequest) SetImageUrls(_imageUrls []string) error {
+	r._imageUrls = _imageUrls
+	r.Set("image_urls", _imageUrls)
+	return nil
+}
+
+// GetImageUrls ImageUrls Getter
+func (r TaobaoItemAddAPIRequest) GetImageUrls() []string {
+	return r._imageUrls
 }
 
 // SetSkuSpecIds is SkuSpecIds Setter
@@ -780,32 +793,6 @@ func (r TaobaoItemAddAPIRequest) GetLocationCity() string {
 	return r._locationCity
 }
 
-// SetNum is Num Setter
-// 商品数量。取值范围:0-900000000的整数。且需要等于Sku所有数量的和。拍卖商品中增加拍只能为1，荷兰拍要在[2,500)范围内。
-func (r *TaobaoItemAddAPIRequest) SetNum(_num int64) error {
-	r._num = _num
-	r.Set("num", _num)
-	return nil
-}
-
-// GetNum Num Getter
-func (r TaobaoItemAddAPIRequest) GetNum() int64 {
-	return r._num
-}
-
-// SetPrice is Price Setter
-// 商品价格。取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。需要在正确的价格区间内。拍卖商品对应的起拍价。
-func (r *TaobaoItemAddAPIRequest) SetPrice(_price float64) error {
-	r._price = _price
-	r.Set("price", _price)
-	return nil
-}
-
-// GetPrice Price Getter
-func (r TaobaoItemAddAPIRequest) GetPrice() float64 {
-	return r._price
-}
-
 // SetType is Type Setter
 // 发布类型。可选值:fixed(一口价),auction(拍卖)。B商家不能发布拍卖商品，而且拍卖商品是没有SKU的。拍卖商品发布时需要附加拍卖商品信息：拍卖类型(paimai_info.mode，拍卖类型包括三种：增价拍[1]，荷兰拍[2]以及降价拍[3])，商品数量(num)，起拍价(price)，价格幅度(increament)，保证金(paimai_info.deposit)。另外拍卖商品支持自定义销售周期，通过paimai_info.valid_hour和paimai_info.valid_minute来指定。对于降价拍来说需要设置降价周期(paimai_info.interval)和拍卖保留价(paimai_info.reserve)。注意：通过taobao.item.get接口获取拍卖信息时，会返回除了valid_hour和valid_minute之外的所有拍卖信息。
 func (r *TaobaoItemAddAPIRequest) SetType(_type string) error {
@@ -871,19 +858,6 @@ func (r TaobaoItemAddAPIRequest) GetApproveStatus() string {
 	return r._approveStatus
 }
 
-// SetCid is Cid Setter
-// 叶子类目id
-func (r *TaobaoItemAddAPIRequest) SetCid(_cid int64) error {
-	r._cid = _cid
-	r.Set("cid", _cid)
-	return nil
-}
-
-// GetCid Cid Getter
-func (r TaobaoItemAddAPIRequest) GetCid() int64 {
-	return r._cid
-}
-
 // SetProps is Props Setter
 // 商品属性列表。格式:pid:vid;pid:vid。属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。 如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。所有属性加起来包括分割符不能超过549字节，单个属性没有限制。 如果有属性是可输入的话，则用字段input_str填入属性的值
 func (r *TaobaoItemAddAPIRequest) SetProps(_props string) error {
@@ -910,58 +884,6 @@ func (r TaobaoItemAddAPIRequest) GetFreightPayer() string {
 	return r._freightPayer
 }
 
-// SetValidThru is ValidThru Setter
-// 有效期。可选值:7,14;单位:天;默认值:14
-func (r *TaobaoItemAddAPIRequest) SetValidThru(_validThru int64) error {
-	r._validThru = _validThru
-	r.Set("valid_thru", _validThru)
-	return nil
-}
-
-// GetValidThru ValidThru Getter
-func (r TaobaoItemAddAPIRequest) GetValidThru() int64 {
-	return r._validThru
-}
-
-// SetHasInvoice is HasInvoice Setter
-// 是否有发票。可选值:true,false (商城卖家此字段必须为true);默认值:false(无发票)
-func (r *TaobaoItemAddAPIRequest) SetHasInvoice(_hasInvoice bool) error {
-	r._hasInvoice = _hasInvoice
-	r.Set("has_invoice", _hasInvoice)
-	return nil
-}
-
-// GetHasInvoice HasInvoice Getter
-func (r TaobaoItemAddAPIRequest) GetHasInvoice() bool {
-	return r._hasInvoice
-}
-
-// SetHasWarranty is HasWarranty Setter
-// 是否有保修。可选值:true,false;默认值:false(不保修)
-func (r *TaobaoItemAddAPIRequest) SetHasWarranty(_hasWarranty bool) error {
-	r._hasWarranty = _hasWarranty
-	r.Set("has_warranty", _hasWarranty)
-	return nil
-}
-
-// GetHasWarranty HasWarranty Getter
-func (r TaobaoItemAddAPIRequest) GetHasWarranty() bool {
-	return r._hasWarranty
-}
-
-// SetHasShowcase is HasShowcase Setter
-// 橱窗推荐。可选值:true,false;默认值:false(不推荐)
-func (r *TaobaoItemAddAPIRequest) SetHasShowcase(_hasShowcase bool) error {
-	r._hasShowcase = _hasShowcase
-	r.Set("has_showcase", _hasShowcase)
-	return nil
-}
-
-// GetHasShowcase HasShowcase Getter
-func (r TaobaoItemAddAPIRequest) GetHasShowcase() bool {
-	return r._hasShowcase
-}
-
 // SetSellerCids is SellerCids Setter
 // 商品所属的店铺类目列表。按逗号分隔。结构:",cid1,cid2,...,"，如果店铺类目存在二级类目，必须传入子类目cids。
 func (r *TaobaoItemAddAPIRequest) SetSellerCids(_sellerCids string) error {
@@ -975,58 +897,6 @@ func (r TaobaoItemAddAPIRequest) GetSellerCids() string {
 	return r._sellerCids
 }
 
-// SetHasDiscount is HasDiscount Setter
-// 支持会员打折。可选值:true,false;默认值:false(不打折)
-func (r *TaobaoItemAddAPIRequest) SetHasDiscount(_hasDiscount bool) error {
-	r._hasDiscount = _hasDiscount
-	r.Set("has_discount", _hasDiscount)
-	return nil
-}
-
-// GetHasDiscount HasDiscount Getter
-func (r TaobaoItemAddAPIRequest) GetHasDiscount() bool {
-	return r._hasDiscount
-}
-
-// SetPostFee is PostFee Setter
-// 平邮费用。取值范围:0.01-999.00;精确到2位小数;单位:元。如:5.07，表示:5元7分. 注:post_fee,express_fee,ems_fee需要一起填写
-func (r *TaobaoItemAddAPIRequest) SetPostFee(_postFee float64) error {
-	r._postFee = _postFee
-	r.Set("post_fee", _postFee)
-	return nil
-}
-
-// GetPostFee PostFee Getter
-func (r TaobaoItemAddAPIRequest) GetPostFee() float64 {
-	return r._postFee
-}
-
-// SetExpressFee is ExpressFee Setter
-// 快递费用。取值范围:0.01-999.00;精确到2位小数;单位:元。如:15.07，表示:15元7分
-func (r *TaobaoItemAddAPIRequest) SetExpressFee(_expressFee float64) error {
-	r._expressFee = _expressFee
-	r.Set("express_fee", _expressFee)
-	return nil
-}
-
-// GetExpressFee ExpressFee Getter
-func (r TaobaoItemAddAPIRequest) GetExpressFee() float64 {
-	return r._expressFee
-}
-
-// SetEmsFee is EmsFee Setter
-// ems费用。取值范围:0.01-999.00;精确到2位小数;单位:元。如:25.07，表示:25元7分
-func (r *TaobaoItemAddAPIRequest) SetEmsFee(_emsFee float64) error {
-	r._emsFee = _emsFee
-	r.Set("ems_fee", _emsFee)
-	return nil
-}
-
-// GetEmsFee EmsFee Getter
-func (r TaobaoItemAddAPIRequest) GetEmsFee() float64 {
-	return r._emsFee
-}
-
 // SetListTime is ListTime Setter
 // 定时上架时间。(时间格式：yyyy-MM-dd HH:mm:ss)
 func (r *TaobaoItemAddAPIRequest) SetListTime(_listTime string) error {
@@ -1038,58 +908,6 @@ func (r *TaobaoItemAddAPIRequest) SetListTime(_listTime string) error {
 // GetListTime ListTime Getter
 func (r TaobaoItemAddAPIRequest) GetListTime() string {
 	return r._listTime
-}
-
-// SetIncrement is Increment Setter
-// 加价(降价)幅度。如果为0，代表系统代理幅度。对于增价拍和荷兰拍来说是加价幅度，对于降价拍来说是降价幅度。
-func (r *TaobaoItemAddAPIRequest) SetIncrement(_increment float64) error {
-	r._increment = _increment
-	r.Set("increment", _increment)
-	return nil
-}
-
-// GetIncrement Increment Getter
-func (r TaobaoItemAddAPIRequest) GetIncrement() float64 {
-	return r._increment
-}
-
-// SetImage is Image Setter
-// 商品主图片。类型:JPG,GIF;最大长度:3M。（推荐使用pic_path字段，先把图片上传到卖家图片空间）
-func (r *TaobaoItemAddAPIRequest) SetImage(_image *model.File) error {
-	r._image = _image
-	r.Set("image", _image)
-	return nil
-}
-
-// GetImage Image Getter
-func (r TaobaoItemAddAPIRequest) GetImage() *model.File {
-	return r._image
-}
-
-// SetPostageId is PostageId Setter
-// 宝贝所属的运费模板ID。取值范围：整数且必须是该卖家的运费模板的ID（可通过taobao.delivery.template.get获得当前会话用户的所有邮费模板）
-func (r *TaobaoItemAddAPIRequest) SetPostageId(_postageId int64) error {
-	r._postageId = _postageId
-	r.Set("postage_id", _postageId)
-	return nil
-}
-
-// GetPostageId PostageId Getter
-func (r TaobaoItemAddAPIRequest) GetPostageId() int64 {
-	return r._postageId
-}
-
-// SetAuctionPoint is AuctionPoint Setter
-// 商品的积分返点比例。如:5,表示:返点比例0.5%. 注意：返点比例必须是>0的整数，而且最大是90,即为9%.B商家在发布非虚拟商品时，返点必须是 5的倍数，即0.5%的倍数。其它是1的倍数，即0.1%的倍数。无名良品商家发布商品时，复用该字段记录积分宝返点比例，返点必须是对应类目的返点步长的整数倍，默认是5，即0.5%。注意此时该字段值依旧必须是>0的整数，最高值不超过500，即50%
-func (r *TaobaoItemAddAPIRequest) SetAuctionPoint(_auctionPoint int64) error {
-	r._auctionPoint = _auctionPoint
-	r.Set("auction_point", _auctionPoint)
-	return nil
-}
-
-// GetAuctionPoint AuctionPoint Getter
-func (r TaobaoItemAddAPIRequest) GetAuctionPoint() int64 {
-	return r._auctionPoint
 }
 
 // SetPropertyAlias is PropertyAlias Setter
@@ -1131,19 +949,6 @@ func (r TaobaoItemAddAPIRequest) GetOuterId() string {
 	return r._outerId
 }
 
-// SetProductId is ProductId Setter
-// 商品所属的产品ID(B商家发布商品需要用)
-func (r *TaobaoItemAddAPIRequest) SetProductId(_productId int64) error {
-	r._productId = _productId
-	r.Set("product_id", _productId)
-	return nil
-}
-
-// GetProductId ProductId Getter
-func (r TaobaoItemAddAPIRequest) GetProductId() int64 {
-	return r._productId
-}
-
 // SetPicPath is PicPath Setter
 // （推荐）商品主图需要关联的图片空间的相对url。这个url所对应的图片必须要属于当前用户。pic_path和image只需要传入一个,如果两个都传，默认选择pic_path
 func (r *TaobaoItemAddAPIRequest) SetPicPath(_picPath string) error {
@@ -1168,136 +973,6 @@ func (r *TaobaoItemAddAPIRequest) SetAutoFill(_autoFill string) error {
 // GetAutoFill AutoFill Getter
 func (r TaobaoItemAddAPIRequest) GetAutoFill() string {
 	return r._autoFill
-}
-
-// SetIsTaobao is IsTaobao Setter
-// 是否在淘宝上显示（如果传FALSE，则在淘宝主站无法显示该商品）
-func (r *TaobaoItemAddAPIRequest) SetIsTaobao(_isTaobao bool) error {
-	r._isTaobao = _isTaobao
-	r.Set("is_taobao", _isTaobao)
-	return nil
-}
-
-// GetIsTaobao IsTaobao Getter
-func (r TaobaoItemAddAPIRequest) GetIsTaobao() bool {
-	return r._isTaobao
-}
-
-// SetIsEx is IsEx Setter
-// 是否在外店显示
-func (r *TaobaoItemAddAPIRequest) SetIsEx(_isEx bool) error {
-	r._isEx = _isEx
-	r.Set("is_ex", _isEx)
-	return nil
-}
-
-// GetIsEx IsEx Getter
-func (r TaobaoItemAddAPIRequest) GetIsEx() bool {
-	return r._isEx
-}
-
-// SetIs3D is Is3D Setter
-// 是否是3D
-func (r *TaobaoItemAddAPIRequest) SetIs3D(_is3D bool) error {
-	r._is3D = _is3D
-	r.Set("is_3D", _is3D)
-	return nil
-}
-
-// GetIs3D Is3D Getter
-func (r TaobaoItemAddAPIRequest) GetIs3D() bool {
-	return r._is3D
-}
-
-// SetSellPromise is SellPromise Setter
-// 是否承诺退换货服务!虚拟商品无须设置此项!
-func (r *TaobaoItemAddAPIRequest) SetSellPromise(_sellPromise bool) error {
-	r._sellPromise = _sellPromise
-	r.Set("sell_promise", _sellPromise)
-	return nil
-}
-
-// GetSellPromise SellPromise Getter
-func (r TaobaoItemAddAPIRequest) GetSellPromise() bool {
-	return r._sellPromise
-}
-
-// SetCodPostageId is CodPostageId Setter
-// 此为货到付款运费模板的ID，对应的JAVA类型是long,如果COD卖家应用了货到付款运费模板，此值要进行设置。该字段已经废弃
-func (r *TaobaoItemAddAPIRequest) SetCodPostageId(_codPostageId int64) error {
-	r._codPostageId = _codPostageId
-	r.Set("cod_postage_id", _codPostageId)
-	return nil
-}
-
-// GetCodPostageId CodPostageId Getter
-func (r TaobaoItemAddAPIRequest) GetCodPostageId() int64 {
-	return r._codPostageId
-}
-
-// SetIsLightningConsignment is IsLightningConsignment Setter
-// 实物闪电发货
-func (r *TaobaoItemAddAPIRequest) SetIsLightningConsignment(_isLightningConsignment bool) error {
-	r._isLightningConsignment = _isLightningConsignment
-	r.Set("is_lightning_consignment", _isLightningConsignment)
-	return nil
-}
-
-// GetIsLightningConsignment IsLightningConsignment Getter
-func (r TaobaoItemAddAPIRequest) GetIsLightningConsignment() bool {
-	return r._isLightningConsignment
-}
-
-// SetWeight is Weight Setter
-// 商品的重量(商超卖家专用字段)
-func (r *TaobaoItemAddAPIRequest) SetWeight(_weight int64) error {
-	r._weight = _weight
-	r.Set("weight", _weight)
-	return nil
-}
-
-// GetWeight Weight Getter
-func (r TaobaoItemAddAPIRequest) GetWeight() int64 {
-	return r._weight
-}
-
-// SetIsXinpin is IsXinpin Setter
-// 商品是否为新品。只有在当前类目开通新品,并且当前用户拥有该类目下发布新品权限时才能设置is_xinpin为true，否则设置true后会返回错误码:isv.invalid-permission:add-xinpin。同时只有一口价全新的宝贝才能设置为新品，否则会返回错误码：isv.invalid-parameter:xinpin。不设置该参数值或设置为false效果一致。
-func (r *TaobaoItemAddAPIRequest) SetIsXinpin(_isXinpin bool) error {
-	r._isXinpin = _isXinpin
-	r.Set("is_xinpin", _isXinpin)
-	return nil
-}
-
-// GetIsXinpin IsXinpin Getter
-func (r TaobaoItemAddAPIRequest) GetIsXinpin() bool {
-	return r._isXinpin
-}
-
-// SetSubStock is SubStock Setter
-// 商品是否支持拍下减库存:1支持;2取消支持(付款减库存);0(默认)不更改集市卖家默认拍下减库存;商城卖家默认付款减库存
-func (r *TaobaoItemAddAPIRequest) SetSubStock(_subStock int64) error {
-	r._subStock = _subStock
-	r.Set("sub_stock", _subStock)
-	return nil
-}
-
-// GetSubStock SubStock Getter
-func (r TaobaoItemAddAPIRequest) GetSubStock() int64 {
-	return r._subStock
-}
-
-// SetScenicTicketPayWay is ScenicTicketPayWay Setter
-// 景区门票类宝贝发布时候，当卖家签订了支付宝代扣协议时候，需要选择支付方式：全额支付和订金支付。当scenic_ticket_pay_way为1时表示全额支付，为2时表示订金支付
-func (r *TaobaoItemAddAPIRequest) SetScenicTicketPayWay(_scenicTicketPayWay int64) error {
-	r._scenicTicketPayWay = _scenicTicketPayWay
-	r.Set("scenic_ticket_pay_way", _scenicTicketPayWay)
-	return nil
-}
-
-// GetScenicTicketPayWay ScenicTicketPayWay Getter
-func (r TaobaoItemAddAPIRequest) GetScenicTicketPayWay() int64 {
-	return r._scenicTicketPayWay
 }
 
 // SetScenicTicketBookCost is ScenicTicketBookCost Setter
@@ -1391,19 +1066,6 @@ func (r TaobaoItemAddAPIRequest) GetQualification() string {
 	return r._qualification
 }
 
-// SetO2oBindService is O2oBindService Setter
-// 汽车O2O绑定线下服务标记，如不为空，表示关联服务，否则，不关联服务。
-func (r *TaobaoItemAddAPIRequest) SetO2oBindService(_o2oBindService bool) error {
-	r._o2oBindService = _o2oBindService
-	r.Set("o2o_bind_service", _o2oBindService)
-	return nil
-}
-
-// GetO2oBindService O2oBindService Getter
-func (r TaobaoItemAddAPIRequest) GetO2oBindService() bool {
-	return r._o2oBindService
-}
-
 // SetFeatures is Features Setter
 // 宝贝特征值，格式为：【key1:value1;key2:value2;key3:value3;】，key和value用【:】分隔，key&value之间用【;】分隔，只有在Top支持的特征值才能保存到宝贝上，目前支持的Key列表为：mysize_tp
 func (r *TaobaoItemAddAPIRequest) SetFeatures(_features string) error {
@@ -1428,19 +1090,6 @@ func (r *TaobaoItemAddAPIRequest) SetIgnorewarning(_ignorewarning string) error 
 // GetIgnorewarning Ignorewarning Getter
 func (r TaobaoItemAddAPIRequest) GetIgnorewarning() string {
 	return r._ignorewarning
-}
-
-// SetAfterSaleId is AfterSaleId Setter
-// 售后说明模板id
-func (r *TaobaoItemAddAPIRequest) SetAfterSaleId(_afterSaleId int64) error {
-	r._afterSaleId = _afterSaleId
-	r.Set("after_sale_id", _afterSaleId)
-	return nil
-}
-
-// GetAfterSaleId AfterSaleId Getter
-func (r TaobaoItemAddAPIRequest) GetAfterSaleId() int64 {
-	return r._afterSaleId
 }
 
 // SetChangeProp is ChangeProp Setter
@@ -1495,45 +1144,6 @@ func (r TaobaoItemAddAPIRequest) GetWirelessDesc() string {
 	return r._wirelessDesc
 }
 
-// SetSpuConfirm is SpuConfirm Setter
-// 手机类目spu 优化，信息确认字段
-func (r *TaobaoItemAddAPIRequest) SetSpuConfirm(_spuConfirm bool) error {
-	r._spuConfirm = _spuConfirm
-	r.Set("spu_confirm", _spuConfirm)
-	return nil
-}
-
-// GetSpuConfirm SpuConfirm Getter
-func (r TaobaoItemAddAPIRequest) GetSpuConfirm() bool {
-	return r._spuConfirm
-}
-
-// SetVideoId is VideoId Setter
-// 主图视频id
-func (r *TaobaoItemAddAPIRequest) SetVideoId(_videoId int64) error {
-	r._videoId = _videoId
-	r.Set("video_id", _videoId)
-	return nil
-}
-
-// GetVideoId VideoId Getter
-func (r TaobaoItemAddAPIRequest) GetVideoId() int64 {
-	return r._videoId
-}
-
-// SetInteractiveId is InteractiveId Setter
-// 主图视频互动信息id，必须填写主图视频id才能有互动信息id
-func (r *TaobaoItemAddAPIRequest) SetInteractiveId(_interactiveId int64) error {
-	r._interactiveId = _interactiveId
-	r.Set("interactive_id", _interactiveId)
-	return nil
-}
-
-// GetInteractiveId InteractiveId Getter
-func (r TaobaoItemAddAPIRequest) GetInteractiveId() int64 {
-	return r._interactiveId
-}
-
 // SetLeaseExtendsInfo is LeaseExtendsInfo Setter
 // 租赁扩展信息
 func (r *TaobaoItemAddAPIRequest) SetLeaseExtendsInfo(_leaseExtendsInfo string) error {
@@ -1571,19 +1181,6 @@ func (r *TaobaoItemAddAPIRequest) SetBizCode(_bizCode string) error {
 // GetBizCode BizCode Getter
 func (r TaobaoItemAddAPIRequest) GetBizCode() string {
 	return r._bizCode
-}
-
-// SetImageUrls is ImageUrls Setter
-// 此字段已经废弃，不再使用
-func (r *TaobaoItemAddAPIRequest) SetImageUrls(_imageUrls []string) error {
-	r._imageUrls = _imageUrls
-	r.Set("image_urls", _imageUrls)
-	return nil
-}
-
-// GetImageUrls ImageUrls Getter
-func (r TaobaoItemAddAPIRequest) GetImageUrls() []string {
-	return r._imageUrls
 }
 
 // SetLocalityLifeChooseLogis is LocalityLifeChooseLogis Setter
@@ -1651,32 +1248,6 @@ func (r TaobaoItemAddAPIRequest) GetLocalityLifeVerification() string {
 	return r._localityLifeVerification
 }
 
-// SetLocalityLifeRefundRatio is LocalityLifeRefundRatio Setter
-// 退款比例，百分比%前的数字,1-100的正整数值
-func (r *TaobaoItemAddAPIRequest) SetLocalityLifeRefundRatio(_localityLifeRefundRatio int64) error {
-	r._localityLifeRefundRatio = _localityLifeRefundRatio
-	r.Set("locality_life.refund_ratio", _localityLifeRefundRatio)
-	return nil
-}
-
-// GetLocalityLifeRefundRatio LocalityLifeRefundRatio Getter
-func (r TaobaoItemAddAPIRequest) GetLocalityLifeRefundRatio() int64 {
-	return r._localityLifeRefundRatio
-}
-
-// SetLocalityLifeOnsaleAutoRefundRatio is LocalityLifeOnsaleAutoRefundRatio Setter
-// 电子凭证售中自动退款比例，百分比%前的数字，介于1-100之间的整数
-func (r *TaobaoItemAddAPIRequest) SetLocalityLifeOnsaleAutoRefundRatio(_localityLifeOnsaleAutoRefundRatio int64) error {
-	r._localityLifeOnsaleAutoRefundRatio = _localityLifeOnsaleAutoRefundRatio
-	r.Set("locality_life.onsale_auto_refund_ratio", _localityLifeOnsaleAutoRefundRatio)
-	return nil
-}
-
-// GetLocalityLifeOnsaleAutoRefundRatio LocalityLifeOnsaleAutoRefundRatio Getter
-func (r TaobaoItemAddAPIRequest) GetLocalityLifeOnsaleAutoRefundRatio() int64 {
-	return r._localityLifeOnsaleAutoRefundRatio
-}
-
 // SetLocalityLifeRefundmafee is LocalityLifeRefundmafee Setter
 // 退款码费承担方。发布电子凭证宝贝的时候会增加“退款码费承担方”配置项，可选填：(1)s（卖家承担） (2)b(买家承担)
 func (r *TaobaoItemAddAPIRequest) SetLocalityLifeRefundmafee(_localityLifeRefundmafee string) error {
@@ -1701,6 +1272,357 @@ func (r *TaobaoItemAddAPIRequest) SetLocalityLifeEticket(_localityLifeEticket st
 // GetLocalityLifeEticket LocalityLifeEticket Getter
 func (r TaobaoItemAddAPIRequest) GetLocalityLifeEticket() string {
 	return r._localityLifeEticket
+}
+
+// SetGlobalStockType is GlobalStockType Setter
+// 全球购商品采购地（库存类型），有两种库存类型：现货和代购参数值为1时代表现货，值为2时代表代购。注意：使用时请与 全球购商品采购地（地区/国家）配合使用
+func (r *TaobaoItemAddAPIRequest) SetGlobalStockType(_globalStockType string) error {
+	r._globalStockType = _globalStockType
+	r.Set("global_stock_type", _globalStockType)
+	return nil
+}
+
+// GetGlobalStockType GlobalStockType Getter
+func (r TaobaoItemAddAPIRequest) GetGlobalStockType() string {
+	return r._globalStockType
+}
+
+// SetGlobalStockCountry is GlobalStockCountry Setter
+// 全球购商品采购地（地区/国家）,默认值只在全球购商品采购地（库存类型选择情况生效），地区国家值请填写法定的国家名称，类如（美国, 香港, 日本, 英国, 新西兰, 德国, 韩国, 荷兰, 法国, 意大利, 台湾, 澳门, 加拿大, 瑞士, 西班牙, 泰国, 新加坡, 马来西亚, 菲律宾），不要使用其他
+func (r *TaobaoItemAddAPIRequest) SetGlobalStockCountry(_globalStockCountry string) error {
+	r._globalStockCountry = _globalStockCountry
+	r.Set("global_stock_country", _globalStockCountry)
+	return nil
+}
+
+// GetGlobalStockCountry GlobalStockCountry Getter
+func (r TaobaoItemAddAPIRequest) GetGlobalStockCountry() string {
+	return r._globalStockCountry
+}
+
+// SetCustomMadeTypeId is CustomMadeTypeId Setter
+// 定制工具Id如果支持定制市场，这个值不填写，就用之前的定制工具Id，之前的定制工具Id没有值就默认为-1
+func (r *TaobaoItemAddAPIRequest) SetCustomMadeTypeId(_customMadeTypeId string) error {
+	r._customMadeTypeId = _customMadeTypeId
+	r.Set("custom_made_type_id", _customMadeTypeId)
+	return nil
+}
+
+// GetCustomMadeTypeId CustomMadeTypeId Getter
+func (r TaobaoItemAddAPIRequest) GetCustomMadeTypeId() string {
+	return r._customMadeTypeId
+}
+
+// SetGlobalStockDeliveryPlace is GlobalStockDeliveryPlace Setter
+// 全球购商品发货地，发货地现在有两种类型：“国内”和“海外及港澳台”，参数值为1时代表“国内”，值为2时代表“海外及港澳台”，默认为国内。注意：卖家必须已经签署并启用“海外直邮”合约，才能选择发货地为“海外及港澳台”
+func (r *TaobaoItemAddAPIRequest) SetGlobalStockDeliveryPlace(_globalStockDeliveryPlace string) error {
+	r._globalStockDeliveryPlace = _globalStockDeliveryPlace
+	r.Set("global_stock_delivery_place", _globalStockDeliveryPlace)
+	return nil
+}
+
+// GetGlobalStockDeliveryPlace GlobalStockDeliveryPlace Getter
+func (r TaobaoItemAddAPIRequest) GetGlobalStockDeliveryPlace() string {
+	return r._globalStockDeliveryPlace
+}
+
+// SetInputCustomCpv is InputCustomCpv Setter
+// 针对当前商品的自定义属性值，目前是针对销售属性值自定义的，所以调用方需要把自定义属性值对应的虚拟属性值ID（负整数，例如例子中的 -1和-2）像标准属性值值的id一样设置到SKU上，如果自定义属性值有属性值图片，也要设置到属性图片上
+func (r *TaobaoItemAddAPIRequest) SetInputCustomCpv(_inputCustomCpv string) error {
+	r._inputCustomCpv = _inputCustomCpv
+	r.Set("input_custom_cpv", _inputCustomCpv)
+	return nil
+}
+
+// GetInputCustomCpv InputCustomCpv Getter
+func (r TaobaoItemAddAPIRequest) GetInputCustomCpv() string {
+	return r._inputCustomCpv
+}
+
+// SetCpvMemo is CpvMemo Setter
+// 针对当前商品的标准属性值的补充说明，让买家更加了解商品信息减少交易纠纷
+func (r *TaobaoItemAddAPIRequest) SetCpvMemo(_cpvMemo string) error {
+	r._cpvMemo = _cpvMemo
+	r.Set("cpv_memo", _cpvMemo)
+	return nil
+}
+
+// GetCpvMemo CpvMemo Getter
+func (r TaobaoItemAddAPIRequest) GetCpvMemo() string {
+	return r._cpvMemo
+}
+
+// SetNum is Num Setter
+// 商品数量。取值范围:0-900000000的整数。且需要等于Sku所有数量的和。拍卖商品中增加拍只能为1，荷兰拍要在[2,500)范围内。
+func (r *TaobaoItemAddAPIRequest) SetNum(_num int64) error {
+	r._num = _num
+	r.Set("num", _num)
+	return nil
+}
+
+// GetNum Num Getter
+func (r TaobaoItemAddAPIRequest) GetNum() int64 {
+	return r._num
+}
+
+// SetPrice is Price Setter
+// 商品价格。取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。需要在正确的价格区间内。拍卖商品对应的起拍价。
+func (r *TaobaoItemAddAPIRequest) SetPrice(_price float64) error {
+	r._price = _price
+	r.Set("price", _price)
+	return nil
+}
+
+// GetPrice Price Getter
+func (r TaobaoItemAddAPIRequest) GetPrice() float64 {
+	return r._price
+}
+
+// SetCid is Cid Setter
+// 叶子类目id
+func (r *TaobaoItemAddAPIRequest) SetCid(_cid int64) error {
+	r._cid = _cid
+	r.Set("cid", _cid)
+	return nil
+}
+
+// GetCid Cid Getter
+func (r TaobaoItemAddAPIRequest) GetCid() int64 {
+	return r._cid
+}
+
+// SetValidThru is ValidThru Setter
+// 有效期。可选值:7,14;单位:天;默认值:14
+func (r *TaobaoItemAddAPIRequest) SetValidThru(_validThru int64) error {
+	r._validThru = _validThru
+	r.Set("valid_thru", _validThru)
+	return nil
+}
+
+// GetValidThru ValidThru Getter
+func (r TaobaoItemAddAPIRequest) GetValidThru() int64 {
+	return r._validThru
+}
+
+// SetPostFee is PostFee Setter
+// 平邮费用。取值范围:0.01-999.00;精确到2位小数;单位:元。如:5.07，表示:5元7分. 注:post_fee,express_fee,ems_fee需要一起填写
+func (r *TaobaoItemAddAPIRequest) SetPostFee(_postFee float64) error {
+	r._postFee = _postFee
+	r.Set("post_fee", _postFee)
+	return nil
+}
+
+// GetPostFee PostFee Getter
+func (r TaobaoItemAddAPIRequest) GetPostFee() float64 {
+	return r._postFee
+}
+
+// SetExpressFee is ExpressFee Setter
+// 快递费用。取值范围:0.01-999.00;精确到2位小数;单位:元。如:15.07，表示:15元7分
+func (r *TaobaoItemAddAPIRequest) SetExpressFee(_expressFee float64) error {
+	r._expressFee = _expressFee
+	r.Set("express_fee", _expressFee)
+	return nil
+}
+
+// GetExpressFee ExpressFee Getter
+func (r TaobaoItemAddAPIRequest) GetExpressFee() float64 {
+	return r._expressFee
+}
+
+// SetEmsFee is EmsFee Setter
+// ems费用。取值范围:0.01-999.00;精确到2位小数;单位:元。如:25.07，表示:25元7分
+func (r *TaobaoItemAddAPIRequest) SetEmsFee(_emsFee float64) error {
+	r._emsFee = _emsFee
+	r.Set("ems_fee", _emsFee)
+	return nil
+}
+
+// GetEmsFee EmsFee Getter
+func (r TaobaoItemAddAPIRequest) GetEmsFee() float64 {
+	return r._emsFee
+}
+
+// SetIncrement is Increment Setter
+// 加价(降价)幅度。如果为0，代表系统代理幅度。对于增价拍和荷兰拍来说是加价幅度，对于降价拍来说是降价幅度。
+func (r *TaobaoItemAddAPIRequest) SetIncrement(_increment float64) error {
+	r._increment = _increment
+	r.Set("increment", _increment)
+	return nil
+}
+
+// GetIncrement Increment Getter
+func (r TaobaoItemAddAPIRequest) GetIncrement() float64 {
+	return r._increment
+}
+
+// SetImage is Image Setter
+// 商品主图片。类型:JPG,GIF;最大长度:3M。（推荐使用pic_path字段，先把图片上传到卖家图片空间）
+func (r *TaobaoItemAddAPIRequest) SetImage(_image *model.File) error {
+	r._image = _image
+	r.Set("image", _image)
+	return nil
+}
+
+// GetImage Image Getter
+func (r TaobaoItemAddAPIRequest) GetImage() *model.File {
+	return r._image
+}
+
+// SetPostageId is PostageId Setter
+// 宝贝所属的运费模板ID。取值范围：整数且必须是该卖家的运费模板的ID（可通过taobao.delivery.template.get获得当前会话用户的所有邮费模板）
+func (r *TaobaoItemAddAPIRequest) SetPostageId(_postageId int64) error {
+	r._postageId = _postageId
+	r.Set("postage_id", _postageId)
+	return nil
+}
+
+// GetPostageId PostageId Getter
+func (r TaobaoItemAddAPIRequest) GetPostageId() int64 {
+	return r._postageId
+}
+
+// SetAuctionPoint is AuctionPoint Setter
+// 商品的积分返点比例。如:5,表示:返点比例0.5%. 注意：返点比例必须是>0的整数，而且最大是90,即为9%.B商家在发布非虚拟商品时，返点必须是 5的倍数，即0.5%的倍数。其它是1的倍数，即0.1%的倍数。无名良品商家发布商品时，复用该字段记录积分宝返点比例，返点必须是对应类目的返点步长的整数倍，默认是5，即0.5%。注意此时该字段值依旧必须是>0的整数，最高值不超过500，即50%
+func (r *TaobaoItemAddAPIRequest) SetAuctionPoint(_auctionPoint int64) error {
+	r._auctionPoint = _auctionPoint
+	r.Set("auction_point", _auctionPoint)
+	return nil
+}
+
+// GetAuctionPoint AuctionPoint Getter
+func (r TaobaoItemAddAPIRequest) GetAuctionPoint() int64 {
+	return r._auctionPoint
+}
+
+// SetProductId is ProductId Setter
+// 商品所属的产品ID(B商家发布商品需要用)
+func (r *TaobaoItemAddAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// GetProductId ProductId Getter
+func (r TaobaoItemAddAPIRequest) GetProductId() int64 {
+	return r._productId
+}
+
+// SetCodPostageId is CodPostageId Setter
+// 此为货到付款运费模板的ID，对应的JAVA类型是long,如果COD卖家应用了货到付款运费模板，此值要进行设置。该字段已经废弃
+func (r *TaobaoItemAddAPIRequest) SetCodPostageId(_codPostageId int64) error {
+	r._codPostageId = _codPostageId
+	r.Set("cod_postage_id", _codPostageId)
+	return nil
+}
+
+// GetCodPostageId CodPostageId Getter
+func (r TaobaoItemAddAPIRequest) GetCodPostageId() int64 {
+	return r._codPostageId
+}
+
+// SetWeight is Weight Setter
+// 商品的重量(商超卖家专用字段)
+func (r *TaobaoItemAddAPIRequest) SetWeight(_weight int64) error {
+	r._weight = _weight
+	r.Set("weight", _weight)
+	return nil
+}
+
+// GetWeight Weight Getter
+func (r TaobaoItemAddAPIRequest) GetWeight() int64 {
+	return r._weight
+}
+
+// SetSubStock is SubStock Setter
+// 商品是否支持拍下减库存:1支持;2取消支持(付款减库存);0(默认)不更改集市卖家默认拍下减库存;商城卖家默认付款减库存
+func (r *TaobaoItemAddAPIRequest) SetSubStock(_subStock int64) error {
+	r._subStock = _subStock
+	r.Set("sub_stock", _subStock)
+	return nil
+}
+
+// GetSubStock SubStock Getter
+func (r TaobaoItemAddAPIRequest) GetSubStock() int64 {
+	return r._subStock
+}
+
+// SetScenicTicketPayWay is ScenicTicketPayWay Setter
+// 景区门票类宝贝发布时候，当卖家签订了支付宝代扣协议时候，需要选择支付方式：全额支付和订金支付。当scenic_ticket_pay_way为1时表示全额支付，为2时表示订金支付
+func (r *TaobaoItemAddAPIRequest) SetScenicTicketPayWay(_scenicTicketPayWay int64) error {
+	r._scenicTicketPayWay = _scenicTicketPayWay
+	r.Set("scenic_ticket_pay_way", _scenicTicketPayWay)
+	return nil
+}
+
+// GetScenicTicketPayWay ScenicTicketPayWay Getter
+func (r TaobaoItemAddAPIRequest) GetScenicTicketPayWay() int64 {
+	return r._scenicTicketPayWay
+}
+
+// SetAfterSaleId is AfterSaleId Setter
+// 售后说明模板id
+func (r *TaobaoItemAddAPIRequest) SetAfterSaleId(_afterSaleId int64) error {
+	r._afterSaleId = _afterSaleId
+	r.Set("after_sale_id", _afterSaleId)
+	return nil
+}
+
+// GetAfterSaleId AfterSaleId Getter
+func (r TaobaoItemAddAPIRequest) GetAfterSaleId() int64 {
+	return r._afterSaleId
+}
+
+// SetVideoId is VideoId Setter
+// 主图视频id
+func (r *TaobaoItemAddAPIRequest) SetVideoId(_videoId int64) error {
+	r._videoId = _videoId
+	r.Set("video_id", _videoId)
+	return nil
+}
+
+// GetVideoId VideoId Getter
+func (r TaobaoItemAddAPIRequest) GetVideoId() int64 {
+	return r._videoId
+}
+
+// SetInteractiveId is InteractiveId Setter
+// 主图视频互动信息id，必须填写主图视频id才能有互动信息id
+func (r *TaobaoItemAddAPIRequest) SetInteractiveId(_interactiveId int64) error {
+	r._interactiveId = _interactiveId
+	r.Set("interactive_id", _interactiveId)
+	return nil
+}
+
+// GetInteractiveId InteractiveId Getter
+func (r TaobaoItemAddAPIRequest) GetInteractiveId() int64 {
+	return r._interactiveId
+}
+
+// SetLocalityLifeRefundRatio is LocalityLifeRefundRatio Setter
+// 退款比例，百分比%前的数字,1-100的正整数值
+func (r *TaobaoItemAddAPIRequest) SetLocalityLifeRefundRatio(_localityLifeRefundRatio int64) error {
+	r._localityLifeRefundRatio = _localityLifeRefundRatio
+	r.Set("locality_life.refund_ratio", _localityLifeRefundRatio)
+	return nil
+}
+
+// GetLocalityLifeRefundRatio LocalityLifeRefundRatio Getter
+func (r TaobaoItemAddAPIRequest) GetLocalityLifeRefundRatio() int64 {
+	return r._localityLifeRefundRatio
+}
+
+// SetLocalityLifeOnsaleAutoRefundRatio is LocalityLifeOnsaleAutoRefundRatio Setter
+// 电子凭证售中自动退款比例，百分比%前的数字，介于1-100之间的整数
+func (r *TaobaoItemAddAPIRequest) SetLocalityLifeOnsaleAutoRefundRatio(_localityLifeOnsaleAutoRefundRatio int64) error {
+	r._localityLifeOnsaleAutoRefundRatio = _localityLifeOnsaleAutoRefundRatio
+	r.Set("locality_life.onsale_auto_refund_ratio", _localityLifeOnsaleAutoRefundRatio)
+	return nil
+}
+
+// GetLocalityLifeOnsaleAutoRefundRatio LocalityLifeOnsaleAutoRefundRatio Getter
+func (r TaobaoItemAddAPIRequest) GetLocalityLifeOnsaleAutoRefundRatio() int64 {
+	return r._localityLifeOnsaleAutoRefundRatio
 }
 
 // SetPaimaiInfoMode is PaimaiInfoMode Setter
@@ -1781,30 +1703,160 @@ func (r TaobaoItemAddAPIRequest) GetPaimaiInfoValidMinute() int64 {
 	return r._paimaiInfoValidMinute
 }
 
-// SetGlobalStockType is GlobalStockType Setter
-// 全球购商品采购地（库存类型），有两种库存类型：现货和代购参数值为1时代表现货，值为2时代表代购。注意：使用时请与 全球购商品采购地（地区/国家）配合使用
-func (r *TaobaoItemAddAPIRequest) SetGlobalStockType(_globalStockType string) error {
-	r._globalStockType = _globalStockType
-	r.Set("global_stock_type", _globalStockType)
+// SetHasInvoice is HasInvoice Setter
+// 是否有发票。可选值:true,false (商城卖家此字段必须为true);默认值:false(无发票)
+func (r *TaobaoItemAddAPIRequest) SetHasInvoice(_hasInvoice bool) error {
+	r._hasInvoice = _hasInvoice
+	r.Set("has_invoice", _hasInvoice)
 	return nil
 }
 
-// GetGlobalStockType GlobalStockType Getter
-func (r TaobaoItemAddAPIRequest) GetGlobalStockType() string {
-	return r._globalStockType
+// GetHasInvoice HasInvoice Getter
+func (r TaobaoItemAddAPIRequest) GetHasInvoice() bool {
+	return r._hasInvoice
 }
 
-// SetGlobalStockCountry is GlobalStockCountry Setter
-// 全球购商品采购地（地区/国家）,默认值只在全球购商品采购地（库存类型选择情况生效），地区国家值请填写法定的国家名称，类如（美国, 香港, 日本, 英国, 新西兰, 德国, 韩国, 荷兰, 法国, 意大利, 台湾, 澳门, 加拿大, 瑞士, 西班牙, 泰国, 新加坡, 马来西亚, 菲律宾），不要使用其他
-func (r *TaobaoItemAddAPIRequest) SetGlobalStockCountry(_globalStockCountry string) error {
-	r._globalStockCountry = _globalStockCountry
-	r.Set("global_stock_country", _globalStockCountry)
+// SetHasWarranty is HasWarranty Setter
+// 是否有保修。可选值:true,false;默认值:false(不保修)
+func (r *TaobaoItemAddAPIRequest) SetHasWarranty(_hasWarranty bool) error {
+	r._hasWarranty = _hasWarranty
+	r.Set("has_warranty", _hasWarranty)
 	return nil
 }
 
-// GetGlobalStockCountry GlobalStockCountry Getter
-func (r TaobaoItemAddAPIRequest) GetGlobalStockCountry() string {
-	return r._globalStockCountry
+// GetHasWarranty HasWarranty Getter
+func (r TaobaoItemAddAPIRequest) GetHasWarranty() bool {
+	return r._hasWarranty
+}
+
+// SetHasShowcase is HasShowcase Setter
+// 橱窗推荐。可选值:true,false;默认值:false(不推荐)
+func (r *TaobaoItemAddAPIRequest) SetHasShowcase(_hasShowcase bool) error {
+	r._hasShowcase = _hasShowcase
+	r.Set("has_showcase", _hasShowcase)
+	return nil
+}
+
+// GetHasShowcase HasShowcase Getter
+func (r TaobaoItemAddAPIRequest) GetHasShowcase() bool {
+	return r._hasShowcase
+}
+
+// SetHasDiscount is HasDiscount Setter
+// 支持会员打折。可选值:true,false;默认值:false(不打折)
+func (r *TaobaoItemAddAPIRequest) SetHasDiscount(_hasDiscount bool) error {
+	r._hasDiscount = _hasDiscount
+	r.Set("has_discount", _hasDiscount)
+	return nil
+}
+
+// GetHasDiscount HasDiscount Getter
+func (r TaobaoItemAddAPIRequest) GetHasDiscount() bool {
+	return r._hasDiscount
+}
+
+// SetIsTaobao is IsTaobao Setter
+// 是否在淘宝上显示（如果传FALSE，则在淘宝主站无法显示该商品）
+func (r *TaobaoItemAddAPIRequest) SetIsTaobao(_isTaobao bool) error {
+	r._isTaobao = _isTaobao
+	r.Set("is_taobao", _isTaobao)
+	return nil
+}
+
+// GetIsTaobao IsTaobao Getter
+func (r TaobaoItemAddAPIRequest) GetIsTaobao() bool {
+	return r._isTaobao
+}
+
+// SetIsEx is IsEx Setter
+// 是否在外店显示
+func (r *TaobaoItemAddAPIRequest) SetIsEx(_isEx bool) error {
+	r._isEx = _isEx
+	r.Set("is_ex", _isEx)
+	return nil
+}
+
+// GetIsEx IsEx Getter
+func (r TaobaoItemAddAPIRequest) GetIsEx() bool {
+	return r._isEx
+}
+
+// SetIs3D is Is3D Setter
+// 是否是3D
+func (r *TaobaoItemAddAPIRequest) SetIs3D(_is3D bool) error {
+	r._is3D = _is3D
+	r.Set("is_3D", _is3D)
+	return nil
+}
+
+// GetIs3D Is3D Getter
+func (r TaobaoItemAddAPIRequest) GetIs3D() bool {
+	return r._is3D
+}
+
+// SetSellPromise is SellPromise Setter
+// 是否承诺退换货服务!虚拟商品无须设置此项!
+func (r *TaobaoItemAddAPIRequest) SetSellPromise(_sellPromise bool) error {
+	r._sellPromise = _sellPromise
+	r.Set("sell_promise", _sellPromise)
+	return nil
+}
+
+// GetSellPromise SellPromise Getter
+func (r TaobaoItemAddAPIRequest) GetSellPromise() bool {
+	return r._sellPromise
+}
+
+// SetIsLightningConsignment is IsLightningConsignment Setter
+// 实物闪电发货
+func (r *TaobaoItemAddAPIRequest) SetIsLightningConsignment(_isLightningConsignment bool) error {
+	r._isLightningConsignment = _isLightningConsignment
+	r.Set("is_lightning_consignment", _isLightningConsignment)
+	return nil
+}
+
+// GetIsLightningConsignment IsLightningConsignment Getter
+func (r TaobaoItemAddAPIRequest) GetIsLightningConsignment() bool {
+	return r._isLightningConsignment
+}
+
+// SetIsXinpin is IsXinpin Setter
+// 商品是否为新品。只有在当前类目开通新品,并且当前用户拥有该类目下发布新品权限时才能设置is_xinpin为true，否则设置true后会返回错误码:isv.invalid-permission:add-xinpin。同时只有一口价全新的宝贝才能设置为新品，否则会返回错误码：isv.invalid-parameter:xinpin。不设置该参数值或设置为false效果一致。
+func (r *TaobaoItemAddAPIRequest) SetIsXinpin(_isXinpin bool) error {
+	r._isXinpin = _isXinpin
+	r.Set("is_xinpin", _isXinpin)
+	return nil
+}
+
+// GetIsXinpin IsXinpin Getter
+func (r TaobaoItemAddAPIRequest) GetIsXinpin() bool {
+	return r._isXinpin
+}
+
+// SetO2oBindService is O2oBindService Setter
+// 汽车O2O绑定线下服务标记，如不为空，表示关联服务，否则，不关联服务。
+func (r *TaobaoItemAddAPIRequest) SetO2oBindService(_o2oBindService bool) error {
+	r._o2oBindService = _o2oBindService
+	r.Set("o2o_bind_service", _o2oBindService)
+	return nil
+}
+
+// GetO2oBindService O2oBindService Getter
+func (r TaobaoItemAddAPIRequest) GetO2oBindService() bool {
+	return r._o2oBindService
+}
+
+// SetSpuConfirm is SpuConfirm Setter
+// 手机类目spu 优化，信息确认字段
+func (r *TaobaoItemAddAPIRequest) SetSpuConfirm(_spuConfirm bool) error {
+	r._spuConfirm = _spuConfirm
+	r.Set("spu_confirm", _spuConfirm)
+	return nil
+}
+
+// GetSpuConfirm SpuConfirm Getter
+func (r TaobaoItemAddAPIRequest) GetSpuConfirm() bool {
+	return r._spuConfirm
 }
 
 // SetSupportCustomMade is SupportCustomMade Setter
@@ -1820,32 +1872,6 @@ func (r TaobaoItemAddAPIRequest) GetSupportCustomMade() bool {
 	return r._supportCustomMade
 }
 
-// SetCustomMadeTypeId is CustomMadeTypeId Setter
-// 定制工具Id如果支持定制市场，这个值不填写，就用之前的定制工具Id，之前的定制工具Id没有值就默认为-1
-func (r *TaobaoItemAddAPIRequest) SetCustomMadeTypeId(_customMadeTypeId string) error {
-	r._customMadeTypeId = _customMadeTypeId
-	r.Set("custom_made_type_id", _customMadeTypeId)
-	return nil
-}
-
-// GetCustomMadeTypeId CustomMadeTypeId Getter
-func (r TaobaoItemAddAPIRequest) GetCustomMadeTypeId() string {
-	return r._customMadeTypeId
-}
-
-// SetGlobalStockDeliveryPlace is GlobalStockDeliveryPlace Setter
-// 全球购商品发货地，发货地现在有两种类型：“国内”和“海外及港澳台”，参数值为1时代表“国内”，值为2时代表“海外及港澳台”，默认为国内。注意：卖家必须已经签署并启用“海外直邮”合约，才能选择发货地为“海外及港澳台”
-func (r *TaobaoItemAddAPIRequest) SetGlobalStockDeliveryPlace(_globalStockDeliveryPlace string) error {
-	r._globalStockDeliveryPlace = _globalStockDeliveryPlace
-	r.Set("global_stock_delivery_place", _globalStockDeliveryPlace)
-	return nil
-}
-
-// GetGlobalStockDeliveryPlace GlobalStockDeliveryPlace Getter
-func (r TaobaoItemAddAPIRequest) GetGlobalStockDeliveryPlace() string {
-	return r._globalStockDeliveryPlace
-}
-
 // SetGlobalStockTaxFreePromise is GlobalStockTaxFreePromise Setter
 // 全球购商品卖家包税承诺，当值为true时，代表卖家承诺包税。注意：请与“全球购商品发货地”配合使用，包税承诺必须满足：1、发货地为海外及港澳台 2、卖家已经签署并启用“包税合约”合约
 func (r *TaobaoItemAddAPIRequest) SetGlobalStockTaxFreePromise(_globalStockTaxFreePromise bool) error {
@@ -1857,30 +1883,4 @@ func (r *TaobaoItemAddAPIRequest) SetGlobalStockTaxFreePromise(_globalStockTaxFr
 // GetGlobalStockTaxFreePromise GlobalStockTaxFreePromise Getter
 func (r TaobaoItemAddAPIRequest) GetGlobalStockTaxFreePromise() bool {
 	return r._globalStockTaxFreePromise
-}
-
-// SetInputCustomCpv is InputCustomCpv Setter
-// 针对当前商品的自定义属性值，目前是针对销售属性值自定义的，所以调用方需要把自定义属性值对应的虚拟属性值ID（负整数，例如例子中的 -1和-2）像标准属性值值的id一样设置到SKU上，如果自定义属性值有属性值图片，也要设置到属性图片上
-func (r *TaobaoItemAddAPIRequest) SetInputCustomCpv(_inputCustomCpv string) error {
-	r._inputCustomCpv = _inputCustomCpv
-	r.Set("input_custom_cpv", _inputCustomCpv)
-	return nil
-}
-
-// GetInputCustomCpv InputCustomCpv Getter
-func (r TaobaoItemAddAPIRequest) GetInputCustomCpv() string {
-	return r._inputCustomCpv
-}
-
-// SetCpvMemo is CpvMemo Setter
-// 针对当前商品的标准属性值的补充说明，让买家更加了解商品信息减少交易纠纷
-func (r *TaobaoItemAddAPIRequest) SetCpvMemo(_cpvMemo string) error {
-	r._cpvMemo = _cpvMemo
-	r.Set("cpv_memo", _cpvMemo)
-	return nil
-}
-
-// GetCpvMemo CpvMemo Getter
-func (r TaobaoItemAddAPIRequest) GetCpvMemo() string {
-	return r._cpvMemo
 }

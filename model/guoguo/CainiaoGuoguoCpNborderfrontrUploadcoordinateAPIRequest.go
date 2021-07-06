@@ -18,14 +18,14 @@ type CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest struct {
 	_cpUserId string
 	// 上报时间，格式：yyyy-MM-dd HH:mm:ss
 	_timeStamp string
-	// 来源：1.小件员app sdk 2.驿站 3. 裹裹 10001.圆通行者
-	_source int64
 	// 经度
 	_lng string
 	// 纬度
 	_lat string
 	// 0 安卓定位，     1 苹果定位，  2 其他系统定位，   10 高德定位，  11 百度定位，  12 google定位     13 其他
 	_gpsType string
+	// 来源：1.小件员app sdk 2.驿站 3. 裹裹 10001.圆通行者
+	_source int64
 }
 
 // NewCainiaoGuoguoCpNborderfrontrUploadcoordinateRequest 初始化CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest对象
@@ -88,19 +88,6 @@ func (r CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) GetTimeStamp() s
 	return r._timeStamp
 }
 
-// SetSource is Source Setter
-// 来源：1.小件员app sdk 2.驿站 3. 裹裹 10001.圆通行者
-func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetSource(_source int64) error {
-	r._source = _source
-	r.Set("source", _source)
-	return nil
-}
-
-// GetSource Source Getter
-func (r CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) GetSource() int64 {
-	return r._source
-}
-
 // SetLng is Lng Setter
 // 经度
 func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetLng(_lng string) error {
@@ -138,4 +125,17 @@ func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetGpsType(_gps
 // GetGpsType GpsType Getter
 func (r CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) GetGpsType() string {
 	return r._gpsType
+}
+
+// SetSource is Source Setter
+// 来源：1.小件员app sdk 2.驿站 3. 裹裹 10001.圆通行者
+func (r *CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) SetSource(_source int64) error {
+	r._source = _source
+	r.Set("source", _source)
+	return nil
+}
+
+// GetSource Source Getter
+func (r CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIRequest) GetSource() int64 {
+	return r._source
 }

@@ -12,12 +12,12 @@ import (
 // 渠道中心，供应商查询其产品数据，返回同时符合所有查询条件的产品信息
 type TmallChannelProductsQueryAPIRequest struct {
 	model.Params
+	// 产品Id
+	_productIds []int64
 	// 商家产品编码
 	_productNumber string
 	// 商家SKU编码
 	_skuNumber string
-	// 产品Id
-	_productIds []int64
 	// 分页大小
 	_pageSize int64
 	// 产品线Id
@@ -47,6 +47,19 @@ func (r TmallChannelProductsQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetProductIds is ProductIds Setter
+// 产品Id
+func (r *TmallChannelProductsQueryAPIRequest) SetProductIds(_productIds []int64) error {
+	r._productIds = _productIds
+	r.Set("product_ids", _productIds)
+	return nil
+}
+
+// GetProductIds ProductIds Getter
+func (r TmallChannelProductsQueryAPIRequest) GetProductIds() []int64 {
+	return r._productIds
+}
+
 // SetProductNumber is ProductNumber Setter
 // 商家产品编码
 func (r *TmallChannelProductsQueryAPIRequest) SetProductNumber(_productNumber string) error {
@@ -71,19 +84,6 @@ func (r *TmallChannelProductsQueryAPIRequest) SetSkuNumber(_skuNumber string) er
 // GetSkuNumber SkuNumber Getter
 func (r TmallChannelProductsQueryAPIRequest) GetSkuNumber() string {
 	return r._skuNumber
-}
-
-// SetProductIds is ProductIds Setter
-// 产品Id
-func (r *TmallChannelProductsQueryAPIRequest) SetProductIds(_productIds []int64) error {
-	r._productIds = _productIds
-	r.Set("product_ids", _productIds)
-	return nil
-}
-
-// GetProductIds ProductIds Getter
-func (r TmallChannelProductsQueryAPIRequest) GetProductIds() []int64 {
-	return r._productIds
 }
 
 // SetPageSize is PageSize Setter

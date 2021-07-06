@@ -12,8 +12,12 @@ import (
 // tae查询账单明细
 type TaobaoTaeBillsGetAPIRequest struct {
 	model.Params
+	// 传入需要返回的字段,参见Bill结构体
+	_fields []string
 	// 开始时间
 	_queryStartDate string
+	// 结束时间,限制:结束时间-开始时间不能大于1天(根据order_id或者trade_id查询除外)
+	_queryEndDate string
 	// 交易编号
 	_pTradeId int64
 	// 子订单编号
@@ -26,10 +30,6 @@ type TaobaoTaeBillsGetAPIRequest struct {
 	_currentPage int64
 	// 科目编号
 	_itemId int64
-	// 结束时间,限制:结束时间-开始时间不能大于1天(根据order_id或者trade_id查询除外)
-	_queryEndDate string
-	// 传入需要返回的字段,参见Bill结构体
-	_fields []string
 }
 
 // NewTaobaoTaeBillsGetRequest 初始化TaobaoTaeBillsGetAPIRequest对象
@@ -53,6 +53,19 @@ func (r TaobaoTaeBillsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetFields is Fields Setter
+// 传入需要返回的字段,参见Bill结构体
+func (r *TaobaoTaeBillsGetAPIRequest) SetFields(_fields []string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// GetFields Fields Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetFields() []string {
+	return r._fields
+}
+
 // SetQueryStartDate is QueryStartDate Setter
 // 开始时间
 func (r *TaobaoTaeBillsGetAPIRequest) SetQueryStartDate(_queryStartDate string) error {
@@ -64,6 +77,19 @@ func (r *TaobaoTaeBillsGetAPIRequest) SetQueryStartDate(_queryStartDate string) 
 // GetQueryStartDate QueryStartDate Getter
 func (r TaobaoTaeBillsGetAPIRequest) GetQueryStartDate() string {
 	return r._queryStartDate
+}
+
+// SetQueryEndDate is QueryEndDate Setter
+// 结束时间,限制:结束时间-开始时间不能大于1天(根据order_id或者trade_id查询除外)
+func (r *TaobaoTaeBillsGetAPIRequest) SetQueryEndDate(_queryEndDate string) error {
+	r._queryEndDate = _queryEndDate
+	r.Set("query_end_date", _queryEndDate)
+	return nil
+}
+
+// GetQueryEndDate QueryEndDate Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetQueryEndDate() string {
+	return r._queryEndDate
 }
 
 // SetPTradeId is PTradeId Setter
@@ -142,30 +168,4 @@ func (r *TaobaoTaeBillsGetAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TaobaoTaeBillsGetAPIRequest) GetItemId() int64 {
 	return r._itemId
-}
-
-// SetQueryEndDate is QueryEndDate Setter
-// 结束时间,限制:结束时间-开始时间不能大于1天(根据order_id或者trade_id查询除外)
-func (r *TaobaoTaeBillsGetAPIRequest) SetQueryEndDate(_queryEndDate string) error {
-	r._queryEndDate = _queryEndDate
-	r.Set("query_end_date", _queryEndDate)
-	return nil
-}
-
-// GetQueryEndDate QueryEndDate Getter
-func (r TaobaoTaeBillsGetAPIRequest) GetQueryEndDate() string {
-	return r._queryEndDate
-}
-
-// SetFields is Fields Setter
-// 传入需要返回的字段,参见Bill结构体
-func (r *TaobaoTaeBillsGetAPIRequest) SetFields(_fields []string) error {
-	r._fields = _fields
-	r.Set("fields", _fields)
-	return nil
-}
-
-// GetFields Fields Getter
-func (r TaobaoTaeBillsGetAPIRequest) GetFields() []string {
-	return r._fields
 }

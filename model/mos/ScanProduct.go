@@ -2,6 +2,8 @@ package mos
 
 // ScanProduct 结构体
 type ScanProduct struct {
+	// 销售属性
+	SalePropertys []SaleProperty `json:"sale_propertys,omitempty" xml:"sale_propertys>sale_property,omitempty"`
 	// 货号
 	ArtNo string `json:"art_no,omitempty" xml:"art_no,omitempty"`
 	// 条码
@@ -14,8 +16,6 @@ type ScanProduct struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 销售价
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
-	// 销售属性
-	SalePropertys []SaleProperty `json:"sale_propertys,omitempty" xml:"sale_propertys>sale_property,omitempty"`
 	// 专柜Code
 	ShopCode string `json:"shop_code,omitempty" xml:"shop_code,omitempty"`
 	// 商品Id

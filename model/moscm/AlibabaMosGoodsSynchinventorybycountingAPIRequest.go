@@ -13,10 +13,10 @@ import (
 // 盘点单自动判断数量增减
 type AlibabaMosGoodsSynchinventorybycountingAPIRequest struct {
 	model.Params
-	// 专柜信息
-	_paramCountingInfoDto *CountingInfoDto
 	// 盘点库存项（最大列表长度：20）
 	_countingItemDto []CountingItemDto
+	// 专柜信息
+	_paramCountingInfoDto *CountingInfoDto
 }
 
 // NewAlibabaMosGoodsSynchinventorybycountingRequest 初始化AlibabaMosGoodsSynchinventorybycountingAPIRequest对象
@@ -40,19 +40,6 @@ func (r AlibabaMosGoodsSynchinventorybycountingAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// SetParamCountingInfoDto is ParamCountingInfoDto Setter
-// 专柜信息
-func (r *AlibabaMosGoodsSynchinventorybycountingAPIRequest) SetParamCountingInfoDto(_paramCountingInfoDto *CountingInfoDto) error {
-	r._paramCountingInfoDto = _paramCountingInfoDto
-	r.Set("param_counting_info_dto", _paramCountingInfoDto)
-	return nil
-}
-
-// GetParamCountingInfoDto ParamCountingInfoDto Getter
-func (r AlibabaMosGoodsSynchinventorybycountingAPIRequest) GetParamCountingInfoDto() *CountingInfoDto {
-	return r._paramCountingInfoDto
-}
-
 // SetCountingItemDto is CountingItemDto Setter
 // 盘点库存项（最大列表长度：20）
 func (r *AlibabaMosGoodsSynchinventorybycountingAPIRequest) SetCountingItemDto(_countingItemDto []CountingItemDto) error {
@@ -64,4 +51,17 @@ func (r *AlibabaMosGoodsSynchinventorybycountingAPIRequest) SetCountingItemDto(_
 // GetCountingItemDto CountingItemDto Getter
 func (r AlibabaMosGoodsSynchinventorybycountingAPIRequest) GetCountingItemDto() []CountingItemDto {
 	return r._countingItemDto
+}
+
+// SetParamCountingInfoDto is ParamCountingInfoDto Setter
+// 专柜信息
+func (r *AlibabaMosGoodsSynchinventorybycountingAPIRequest) SetParamCountingInfoDto(_paramCountingInfoDto *CountingInfoDto) error {
+	r._paramCountingInfoDto = _paramCountingInfoDto
+	r.Set("param_counting_info_dto", _paramCountingInfoDto)
+	return nil
+}
+
+// GetParamCountingInfoDto ParamCountingInfoDto Getter
+func (r AlibabaMosGoodsSynchinventorybycountingAPIRequest) GetParamCountingInfoDto() *CountingInfoDto {
+	return r._paramCountingInfoDto
 }

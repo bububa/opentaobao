@@ -12,12 +12,12 @@ type YunosAppstorePadHpApplistResult struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// developerName
 	DeveloperName string `json:"developer_name,omitempty" xml:"developer_name,omitempty"`
-	// versionCode
-	VersionCode int64 `json:"version_code,omitempty" xml:"version_code,omitempty"`
 	// uri
 	Uri string `json:"uri,omitempty" xml:"uri,omitempty"`
 	// url
 	Url string `json:"url,omitempty" xml:"url,omitempty"`
 	// intro
 	Intro string `json:"intro,omitempty" xml:"intro,omitempty"`
+	// versionCode
+	VersionCode int64 `json:"version_code,omitempty" xml:"version_code,omitempty"`
 }

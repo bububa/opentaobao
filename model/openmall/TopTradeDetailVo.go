@@ -2,18 +2,14 @@ package openmall
 
 // TopTradeDetailVo 结构体
 type TopTradeDetailVo struct {
-	// 订单ID
-	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+	// 订单列表
+	Orders []TopOrderVo `json:"orders,omitempty" xml:"orders>top_order_vo,omitempty"`
 	// 外部outid
 	OutId string `json:"out_id,omitempty" xml:"out_id,omitempty"`
 	// 实付金额
 	Payment string `json:"payment,omitempty" xml:"payment,omitempty"`
 	// 邮费
 	PostFee string `json:"post_fee,omitempty" xml:"post_fee,omitempty"`
-	// 商品ID
-	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
-	// 商品数量
-	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
 	// 订单状态，该字段存在延迟，请参考taoboa.openmall.trade.get
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 支付宝交易号
@@ -34,14 +30,10 @@ type TopTradeDetailVo struct {
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 商家的预计发货时间
 	EstConTime string `json:"est_con_time,omitempty" xml:"est_con_time,omitempty"`
-	// 是否包含邮费
-	HasPostFee bool `json:"has_post_fee,omitempty" xml:"has_post_fee,omitempty"`
 	// 订单出现异常问题的时候，给予用户的描述,没有异常的时候，此值为空
 	MarkDesc string `json:"mark_desc,omitempty" xml:"mark_desc,omitempty"`
 	// 交易修改时间(用户对订单的任何修改都会更新此字段)。格式:yyyy-MM-dd HH:mm:ss
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
-	// 订单列表
-	Orders []TopOrderVo `json:"orders,omitempty" xml:"orders>top_order_vo,omitempty"`
 	// 付款时间。格式:yyyy-MM-dd HH:mm:ss。订单的付款时间即为物流订单的创建时间。
 	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
 	// 商品价格。精确到2位小数；单位：元。如：200.07，表示：200元7分
@@ -78,4 +70,12 @@ type TopTradeDetailVo struct {
 	TotalFee string `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
 	// 交易备注。
 	TradeMemo string `json:"trade_memo,omitempty" xml:"trade_memo,omitempty"`
+	// 订单ID
+	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+	// 商品ID
+	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
+	// 商品数量
+	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
+	// 是否包含邮费
+	HasPostFee bool `json:"has_post_fee,omitempty" xml:"has_post_fee,omitempty"`
 }

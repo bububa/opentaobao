@@ -10,8 +10,6 @@ type AlibabaAscpAicSupplierAicinventoryNegativeSalePublishData struct {
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 	// 错误编码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
-	// 调用接口是否成功
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 期货库存账户id
 	AicChannelInvId string `json:"aic_channel_inv_id,omitempty" xml:"aic_channel_inv_id,omitempty"`
 	// 渠道编码
@@ -22,4 +20,6 @@ type AlibabaAscpAicSupplierAicinventoryNegativeSalePublishData struct {
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
 	// 物流货主ID
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
+	// 调用接口是否成功
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

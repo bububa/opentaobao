@@ -12,20 +12,20 @@ import (
 // 获取阿里体育会员信息
 type AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest struct {
 	model.Params
-	// 是否获取详情0否1是 默认0
-	_needDetail int64
 	// 当前时间戳
 	_alispTime string
 	// 业务appkey
 	_alispAppKey string
 	// 业务加密参数
 	_alispSign string
-	// 查询类型：1.用户的阿里体育id, 4.用户通过登录生成的sso_token
-	_type int64
 	// 要查询的值
 	_value string
 	// 决定返回值是否包含扩展字段
 	_extInfoType string
+	// 是否获取详情0否1是 默认0
+	_needDetail int64
+	// 查询类型：1.用户的阿里体育id, 4.用户通过登录生成的sso_token
+	_type int64
 }
 
 // NewAlibabaAlisportsPassportAccountGetaccountinfoRequest 初始化AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest对象
@@ -47,19 +47,6 @@ func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetApiParams() 
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetNeedDetail is NeedDetail Setter
-// 是否获取详情0否1是 默认0
-func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetNeedDetail(_needDetail int64) error {
-	r._needDetail = _needDetail
-	r.Set("need_detail", _needDetail)
-	return nil
-}
-
-// GetNeedDetail NeedDetail Getter
-func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetNeedDetail() int64 {
-	return r._needDetail
 }
 
 // SetAlispTime is AlispTime Setter
@@ -101,19 +88,6 @@ func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetAlispSign() 
 	return r._alispSign
 }
 
-// SetType is Type Setter
-// 查询类型：1.用户的阿里体育id, 4.用户通过登录生成的sso_token
-func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetType(_type int64) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetType() int64 {
-	return r._type
-}
-
 // SetValue is Value Setter
 // 要查询的值
 func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetValue(_value string) error {
@@ -138,4 +112,30 @@ func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetExtInfoType
 // GetExtInfoType ExtInfoType Getter
 func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetExtInfoType() string {
 	return r._extInfoType
+}
+
+// SetNeedDetail is NeedDetail Setter
+// 是否获取详情0否1是 默认0
+func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetNeedDetail(_needDetail int64) error {
+	r._needDetail = _needDetail
+	r.Set("need_detail", _needDetail)
+	return nil
+}
+
+// GetNeedDetail NeedDetail Getter
+func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetNeedDetail() int64 {
+	return r._needDetail
+}
+
+// SetType is Type Setter
+// 查询类型：1.用户的阿里体育id, 4.用户通过登录生成的sso_token
+func (r *AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r AlibabaAlisportsPassportAccountGetaccountinfoAPIRequest) GetType() int64 {
+	return r._type
 }

@@ -20,12 +20,12 @@ type AlibabaLstVendingOrderUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_vending_order_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 请求是否成功
-	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
 	// 错误码
 	ErrorNo string `json:"error_no,omitempty" xml:"error_no,omitempty"`
 	// 错误信息
 	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
+	// 请求是否成功
+	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
 	// 是否执行了更新操作
 	Module bool `json:"module,omitempty" xml:"module,omitempty"`
 }

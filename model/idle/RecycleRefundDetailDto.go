@@ -18,16 +18,16 @@ type RecycleRefundDetailDto struct {
 	ApplyReason string `json:"apply_reason,omitempty" xml:"apply_reason,omitempty"`
 	// 拒绝原因
 	RefuseReason string `json:"refuse_reason,omitempty" xml:"refuse_reason,omitempty"`
-	// 地址信息，交易状态为2时返回此字段
-	SellerAddress *ShippingAddressInfo `json:"seller_address,omitempty" xml:"seller_address,omitempty"`
-	// 实际退款金额，不包括追缴单
-	ActualRefundFee int64 `json:"actual_refund_fee,omitempty" xml:"actual_refund_fee,omitempty"`
 	// 退款完结时间
 	RefundEndTime string `json:"refund_end_time,omitempty" xml:"refund_end_time,omitempty"`
 	// 退款开始时间
 	RefundStartTime string `json:"refund_start_time,omitempty" xml:"refund_start_time,omitempty"`
 	// 卖家同意退货说明
 	SellerAgreeMsg string `json:"seller_agree_msg,omitempty" xml:"seller_agree_msg,omitempty"`
+	// 地址信息，交易状态为2时返回此字段
+	SellerAddress *ShippingAddressInfo `json:"seller_address,omitempty" xml:"seller_address,omitempty"`
+	// 实际退款金额，不包括追缴单
+	ActualRefundFee int64 `json:"actual_refund_fee,omitempty" xml:"actual_refund_fee,omitempty"`
 	// 追缴单
 	RecoverOrderInfo *AlipayOrderDto `json:"recover_order_info,omitempty" xml:"recover_order_info,omitempty"`
 }

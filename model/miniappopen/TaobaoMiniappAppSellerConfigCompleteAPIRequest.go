@@ -12,10 +12,10 @@ import (
 // 通过该接口告知平台商家已经完成小程序相关的必要设置，可进行后续操作。主要用于小部件、客服插件等场景。
 type TaobaoMiniappAppSellerConfigCompleteAPIRequest struct {
 	model.Params
-	// 商家已完成配置的小部件/B端插件的appid
-	_appId int64
 	// 小部件必传，B端插件不用传。与app_id对应的已完成配置的版本号
 	_version string
+	// 商家已完成配置的小部件/B端插件的appid
+	_appId int64
 }
 
 // NewTaobaoMiniappAppSellerConfigCompleteRequest 初始化TaobaoMiniappAppSellerConfigCompleteAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoMiniappAppSellerConfigCompleteAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// SetAppId is AppId Setter
-// 商家已完成配置的小部件/B端插件的appid
-func (r *TaobaoMiniappAppSellerConfigCompleteAPIRequest) SetAppId(_appId int64) error {
-	r._appId = _appId
-	r.Set("app_id", _appId)
-	return nil
-}
-
-// GetAppId AppId Getter
-func (r TaobaoMiniappAppSellerConfigCompleteAPIRequest) GetAppId() int64 {
-	return r._appId
-}
-
 // SetVersion is Version Setter
 // 小部件必传，B端插件不用传。与app_id对应的已完成配置的版本号
 func (r *TaobaoMiniappAppSellerConfigCompleteAPIRequest) SetVersion(_version string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoMiniappAppSellerConfigCompleteAPIRequest) SetVersion(_version str
 // GetVersion Version Getter
 func (r TaobaoMiniappAppSellerConfigCompleteAPIRequest) GetVersion() string {
 	return r._version
+}
+
+// SetAppId is AppId Setter
+// 商家已完成配置的小部件/B端插件的appid
+func (r *TaobaoMiniappAppSellerConfigCompleteAPIRequest) SetAppId(_appId int64) error {
+	r._appId = _appId
+	r.Set("app_id", _appId)
+	return nil
+}
+
+// GetAppId AppId Getter
+func (r TaobaoMiniappAppSellerConfigCompleteAPIRequest) GetAppId() int64 {
+	return r._appId
 }

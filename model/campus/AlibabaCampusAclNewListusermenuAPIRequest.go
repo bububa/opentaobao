@@ -12,10 +12,10 @@ import (
 // 查询用户有权限的菜单树
 type AlibabaCampusAclNewListusermenuAPIRequest struct {
 	model.Params
-	// 系统入参
-	_workbenchcontext *WorkBenchContext
 	// 用户账号
 	_userId string
+	// 系统入参
+	_workbenchcontext *WorkBenchContext
 }
 
 // NewAlibabaCampusAclNewListusermenuRequest 初始化AlibabaCampusAclNewListusermenuAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaCampusAclNewListusermenuAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetWorkbenchcontext is Workbenchcontext Setter
-// 系统入参
-func (r *AlibabaCampusAclNewListusermenuAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
-	r._workbenchcontext = _workbenchcontext
-	r.Set("workbenchcontext", _workbenchcontext)
-	return nil
-}
-
-// GetWorkbenchcontext Workbenchcontext Getter
-func (r AlibabaCampusAclNewListusermenuAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
-	return r._workbenchcontext
-}
-
 // SetUserId is UserId Setter
 // 用户账号
 func (r *AlibabaCampusAclNewListusermenuAPIRequest) SetUserId(_userId string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaCampusAclNewListusermenuAPIRequest) SetUserId(_userId string) er
 // GetUserId UserId Getter
 func (r AlibabaCampusAclNewListusermenuAPIRequest) GetUserId() string {
 	return r._userId
+}
+
+// SetWorkbenchcontext is Workbenchcontext Setter
+// 系统入参
+func (r *AlibabaCampusAclNewListusermenuAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+	r._workbenchcontext = _workbenchcontext
+	r.Set("workbenchcontext", _workbenchcontext)
+	return nil
+}
+
+// GetWorkbenchcontext Workbenchcontext Getter
+func (r AlibabaCampusAclNewListusermenuAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
+	return r._workbenchcontext
 }

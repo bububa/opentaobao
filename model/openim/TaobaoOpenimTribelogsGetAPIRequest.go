@@ -14,14 +14,14 @@ type TaobaoOpenimTribelogsGetAPIRequest struct {
 	model.Params
 	// 群号
 	_tribeId string
+	// 迭代key
+	_next string
 	// 查询起始时间，UTC秒数。必须在一个月内。
 	_begin int64
 	// 查询结束时间，UTC秒数。必须大于起始时间并小于当前时间
 	_end int64
 	// 查询条数
 	_count int64
-	// 迭代key
-	_next string
 }
 
 // NewTaobaoOpenimTribelogsGetRequest 初始化TaobaoOpenimTribelogsGetAPIRequest对象
@@ -56,6 +56,19 @@ func (r *TaobaoOpenimTribelogsGetAPIRequest) SetTribeId(_tribeId string) error {
 // GetTribeId TribeId Getter
 func (r TaobaoOpenimTribelogsGetAPIRequest) GetTribeId() string {
 	return r._tribeId
+}
+
+// SetNext is Next Setter
+// 迭代key
+func (r *TaobaoOpenimTribelogsGetAPIRequest) SetNext(_next string) error {
+	r._next = _next
+	r.Set("next", _next)
+	return nil
+}
+
+// GetNext Next Getter
+func (r TaobaoOpenimTribelogsGetAPIRequest) GetNext() string {
+	return r._next
 }
 
 // SetBegin is Begin Setter
@@ -95,17 +108,4 @@ func (r *TaobaoOpenimTribelogsGetAPIRequest) SetCount(_count int64) error {
 // GetCount Count Getter
 func (r TaobaoOpenimTribelogsGetAPIRequest) GetCount() int64 {
 	return r._count
-}
-
-// SetNext is Next Setter
-// 迭代key
-func (r *TaobaoOpenimTribelogsGetAPIRequest) SetNext(_next string) error {
-	r._next = _next
-	r.Set("next", _next)
-	return nil
-}
-
-// GetNext Next Getter
-func (r TaobaoOpenimTribelogsGetAPIRequest) GetNext() string {
-	return r._next
 }

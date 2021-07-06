@@ -24,8 +24,8 @@ type AlibabaItemEditFastupdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 商品更新时间
 	UpdateTime string `json:"update_time,omitempty" xml:"update_time,omitempty"`
-	// 商品ID
-	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 商品所属市场
 	Market string `json:"market,omitempty" xml:"market,omitempty"`
+	// 商品ID
+	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 }

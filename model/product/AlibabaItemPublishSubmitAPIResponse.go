@@ -22,8 +22,8 @@ type AlibabaItemPublishSubmitAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 商品创建时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
-	// 商品ID
-	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 商品所属市场
 	Market string `json:"market,omitempty" xml:"market,omitempty"`
+	// 商品ID
+	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 }

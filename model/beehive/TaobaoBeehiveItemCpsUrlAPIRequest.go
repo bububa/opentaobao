@@ -14,12 +14,12 @@ type TaobaoBeehiveItemCpsUrlAPIRequest struct {
 	model.Params
 	// 平台，一般为手机
 	_platform string
+	// 业务方，新浪为sina
+	_bizType string
 	// 达人ID
 	_adUserId int64
 	// 站外是1
 	_sourceType int64
-	// 业务方，新浪为sina
-	_bizType string
 	// 商品ID
 	_itemId int64
 }
@@ -58,6 +58,19 @@ func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetPlatform() string {
 	return r._platform
 }
 
+// SetBizType is BizType Setter
+// 业务方，新浪为sina
+func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetBizType(_bizType string) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// GetBizType BizType Getter
+func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetBizType() string {
+	return r._bizType
+}
+
 // SetAdUserId is AdUserId Setter
 // 达人ID
 func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetAdUserId(_adUserId int64) error {
@@ -82,19 +95,6 @@ func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetSourceType(_sourceType int64) err
 // GetSourceType SourceType Getter
 func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetSourceType() int64 {
 	return r._sourceType
-}
-
-// SetBizType is BizType Setter
-// 业务方，新浪为sina
-func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetBizType(_bizType string) error {
-	r._bizType = _bizType
-	r.Set("biz_type", _bizType)
-	return nil
-}
-
-// GetBizType BizType Getter
-func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetBizType() string {
-	return r._bizType
 }
 
 // SetItemId is ItemId Setter

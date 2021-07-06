@@ -2,6 +2,8 @@ package wlb
 
 // WlbOrderDetail 结构体
 type WlbOrderDetail struct {
+	// 物流宝订单对应的商品详情
+	OrderItemList []WlbOrderItem `json:"order_item_list,omitempty" xml:"order_item_list>wlb_order_item,omitempty"`
 	// 订单编码
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
 	// 对应创建物流宝订单top接口中的的out_biz_code字段，主要是用来去重用
@@ -20,16 +22,14 @@ type WlbOrderDetail struct {
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 订单备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
-	// 卖家ID
-	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 卖家NICK
 	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
 	// 如果是交易单，则显示交易中买家昵称
 	BuyerNick string `json:"buyer_nick,omitempty" xml:"buyer_nick,omitempty"`
-	// 物流宝订单对应的商品详情
-	OrderItemList []WlbOrderItem `json:"order_item_list,omitempty" xml:"order_item_list>wlb_order_item,omitempty"`
 	// 订单创建时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 订单最后一次修改时间
 	ModifyTime string `json:"modify_time,omitempty" xml:"modify_time,omitempty"`
+	// 卖家ID
+	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 }

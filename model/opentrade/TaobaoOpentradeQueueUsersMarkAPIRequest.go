@@ -12,6 +12,8 @@ import (
 // 尖货交易用户标记信息回传，根据openId标记用户可购买商品
 type TaobaoOpentradeQueueUsersMarkAPIRequest struct {
 	model.Params
+	// 本次待标记的用户列表，多个以逗号(,)分割，最大20个
+	_openUserIds []string
 	// 用户状态，可任意传入，后续查询返回
 	_status string
 	// 排队活动ID，排队时如传入，这里需要填写；若未传，这里也可以不传
@@ -20,8 +22,6 @@ type TaobaoOpentradeQueueUsersMarkAPIRequest struct {
 	_skuId int64
 	// 排队商品ID
 	_itemId int64
-	// 本次待标记的用户列表，多个以逗号(,)分割，最大20个
-	_openUserIds []string
 	// 是否目标用户，传入true后，用户可购买商品
 	_hit bool
 }
@@ -45,6 +45,19 @@ func (r TaobaoOpentradeQueueUsersMarkAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetOpenUserIds is OpenUserIds Setter
+// 本次待标记的用户列表，多个以逗号(,)分割，最大20个
+func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetOpenUserIds(_openUserIds []string) error {
+	r._openUserIds = _openUserIds
+	r.Set("open_user_ids", _openUserIds)
+	return nil
+}
+
+// GetOpenUserIds OpenUserIds Getter
+func (r TaobaoOpentradeQueueUsersMarkAPIRequest) GetOpenUserIds() []string {
+	return r._openUserIds
 }
 
 // SetStatus is Status Setter
@@ -97,19 +110,6 @@ func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetItemId(_itemId int64) error
 // GetItemId ItemId Getter
 func (r TaobaoOpentradeQueueUsersMarkAPIRequest) GetItemId() int64 {
 	return r._itemId
-}
-
-// SetOpenUserIds is OpenUserIds Setter
-// 本次待标记的用户列表，多个以逗号(,)分割，最大20个
-func (r *TaobaoOpentradeQueueUsersMarkAPIRequest) SetOpenUserIds(_openUserIds []string) error {
-	r._openUserIds = _openUserIds
-	r.Set("open_user_ids", _openUserIds)
-	return nil
-}
-
-// GetOpenUserIds OpenUserIds Getter
-func (r TaobaoOpentradeQueueUsersMarkAPIRequest) GetOpenUserIds() []string {
-	return r._openUserIds
 }
 
 // SetHit is Hit Setter

@@ -2,6 +2,10 @@ package icbu
 
 // SourcingTrade 结构体
 type SourcingTrade struct {
+	// 付款方式，枚举值
+	PaymentMethods []string `json:"payment_methods,omitempty" xml:"payment_methods>string,omitempty"`
+	// 发货周期，发货时间相关建议使用此项
+	DeliverPeriods []DeliverPeriod `json:"deliver_periods,omitempty" xml:"deliver_periods>deliver_period,omitempty"`
 	// FOB货币价格，枚举值
 	FobCurrency string `json:"fob_currency,omitempty" xml:"fob_currency,omitempty"`
 	// FOB最小价格
@@ -10,8 +14,6 @@ type SourcingTrade struct {
 	FobMaxPrice string `json:"fob_max_price,omitempty" xml:"fob_max_price,omitempty"`
 	// FOB计量单位，枚举值
 	FobUnitType string `json:"fob_unit_type,omitempty" xml:"fob_unit_type,omitempty"`
-	// 付款方式，枚举值
-	PaymentMethods []string `json:"payment_methods,omitempty" xml:"payment_methods>string,omitempty"`
 	// 最小起订量
 	MinOrderQuantity string `json:"min_order_quantity,omitempty" xml:"min_order_quantity,omitempty"`
 	// 最小起订量计量单位，枚举值
@@ -28,6 +30,4 @@ type SourcingTrade struct {
 	DeliveryTime string `json:"delivery_time,omitempty" xml:"delivery_time,omitempty"`
 	// 包装信息
 	PackagingDesc string `json:"packaging_desc,omitempty" xml:"packaging_desc,omitempty"`
-	// 发货周期，发货时间相关建议使用此项
-	DeliverPeriods []DeliverPeriod `json:"deliver_periods,omitempty" xml:"deliver_periods>deliver_period,omitempty"`
 }

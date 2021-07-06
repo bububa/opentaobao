@@ -2,12 +2,6 @@ package tmallchannel
 
 // TopOfflineReducePrepayDto 结构体
 type TopOfflineReducePrepayDto struct {
-	// 资金流水类型：1.纸质承兑； 2.电子承兑；3.现金；4.优惠返点；5.奖励
-	FlowType int64 `json:"flow_type,omitempty" xml:"flow_type,omitempty"`
-	// 线下流水类型 1票据作废 2线下使用
-	OfflinePrepayDetailType int64 `json:"offline_prepay_detail_type,omitempty" xml:"offline_prepay_detail_type,omitempty"`
-	// 金额，单位分（必须为负数）
-	TicketMoney int64 `json:"ticket_money,omitempty" xml:"ticket_money,omitempty"`
 	// 收款人账号
 	ReceiverAccountNum string `json:"receiver_account_num,omitempty" xml:"receiver_account_num,omitempty"`
 	// 外部系统支付流水Id，用于商家上传流水时去重(外部保证唯一）
@@ -34,4 +28,10 @@ type TopOfflineReducePrepayDto struct {
 	ReceiverFullName string `json:"receiver_full_name,omitempty" xml:"receiver_full_name,omitempty"`
 	// 付款行全称
 	PayBankFullName string `json:"pay_bank_full_name,omitempty" xml:"pay_bank_full_name,omitempty"`
+	// 资金流水类型：1.纸质承兑； 2.电子承兑；3.现金；4.优惠返点；5.奖励
+	FlowType int64 `json:"flow_type,omitempty" xml:"flow_type,omitempty"`
+	// 线下流水类型 1票据作废 2线下使用
+	OfflinePrepayDetailType int64 `json:"offline_prepay_detail_type,omitempty" xml:"offline_prepay_detail_type,omitempty"`
+	// 金额，单位分（必须为负数）
+	TicketMoney int64 `json:"ticket_money,omitempty" xml:"ticket_money,omitempty"`
 }

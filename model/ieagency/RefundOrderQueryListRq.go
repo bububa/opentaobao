@@ -2,12 +2,12 @@ package ieagency
 
 // RefundOrderQueryListRq 结构体
 type RefundOrderQueryListRq struct {
-	// 代理商ID
-	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
 	// 申请单创建开始时间
 	CreateEndTime string `json:"create_end_time,omitempty" xml:"create_end_time,omitempty"`
 	// 申请单创建结束时间
 	CreateStartTime string `json:"create_start_time,omitempty" xml:"create_start_time,omitempty"`
+	// 代理商ID
+	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
 	// 【必填】分页索引
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 【必填】分页大小

@@ -12,12 +12,12 @@ import (
 // 通用查询码接口
 type AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest struct {
 	model.Params
+	// 追溯码
+	_codeList []string
 	// 企业refEntId
 	_refEntId string
 	// 标示医院业务
 	_searchSource string
-	// 追溯码
-	_codeList []string
 	// 证件编号
 	_certIsvNo string
 	// 调用方式：formal-正式、test-测试
@@ -55,6 +55,19 @@ func (r AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) GetApiParams() url
 	return params
 }
 
+// SetCodeList is CodeList Setter
+// 追溯码
+func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) SetCodeList(_codeList []string) error {
+	r._codeList = _codeList
+	r.Set("code_list", _codeList)
+	return nil
+}
+
+// GetCodeList CodeList Getter
+func (r AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) GetCodeList() []string {
+	return r._codeList
+}
+
 // SetRefEntId is RefEntId Setter
 // 企业refEntId
 func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) SetRefEntId(_refEntId string) error {
@@ -79,19 +92,6 @@ func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) SetSearchSource(_
 // GetSearchSource SearchSource Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) GetSearchSource() string {
 	return r._searchSource
-}
-
-// SetCodeList is CodeList Setter
-// 追溯码
-func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) SetCodeList(_codeList []string) error {
-	r._codeList = _codeList
-	r.Set("code_list", _codeList)
-	return nil
-}
-
-// GetCodeList CodeList Getter
-func (r AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) GetCodeList() []string {
-	return r._codeList
 }
 
 // SetCertIsvNo is CertIsvNo Setter

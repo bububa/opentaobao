@@ -20,10 +20,10 @@ type TaobaoAlitripCarDriverStatusUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_car_driver_status_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 错误码
-	MessageCode int64 `json:"message_code,omitempty" xml:"message_code,omitempty"`
 	// 错误信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 其它数据，预留，暂不使用
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
+	// 错误码
+	MessageCode int64 `json:"message_code,omitempty" xml:"message_code,omitempty"`
 }

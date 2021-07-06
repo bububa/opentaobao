@@ -26,12 +26,12 @@ type SubType struct {
 	PrepnUnit string `json:"prepn_unit,omitempty" xml:"prepn_unit,omitempty"`
 	// 药品名称
 	ProductName string `json:"product_name,omitempty" xml:"product_name,omitempty"`
-	// 资源码信息
-	ResProdCodes *ResProdCodes `json:"res_prod_codes,omitempty" xml:"res_prod_codes,omitempty"`
 	// 制剂规格
 	Spec string `json:"spec,omitempty" xml:"spec,omitempty"`
 	// 类型
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 子类编码
 	TypeNo string `json:"type_no,omitempty" xml:"type_no,omitempty"`
+	// 资源码信息
+	ResProdCodes *ResProdCodes `json:"res_prod_codes,omitempty" xml:"res_prod_codes,omitempty"`
 }

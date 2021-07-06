@@ -2,6 +2,8 @@ package btrip
 
 // TrainSearchRs 结构体
 type TrainSearchRs struct {
+	// 直达车次列表
+	Trains []TrainStationVo `json:"trains,omitempty" xml:"trains>train_station_vo,omitempty"`
 	// 到达城市
 	ArrCity string `json:"arr_city,omitempty" xml:"arr_city,omitempty"`
 	// 到达站
@@ -16,6 +18,4 @@ type TrainSearchRs struct {
 	HasMoreTrain bool `json:"has_more_train,omitempty" xml:"has_more_train,omitempty"`
 	// 是否展示中转引导
 	ShowTransGuide bool `json:"show_trans_guide,omitempty" xml:"show_trans_guide,omitempty"`
-	// 直达车次列表
-	Trains []TrainStationVo `json:"trains,omitempty" xml:"trains>train_station_vo,omitempty"`
 }

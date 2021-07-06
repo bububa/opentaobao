@@ -20,28 +20,28 @@ type TaobaoItemsInventoryGetAPIRequest struct {
 	_q string
 	// 分类字段。可选值:<br>regular_shelved(定时上架)<br>never_on_shelf(从未上架)<br>off_shelf(我下架的)<br><font color='red'>for_shelved(等待所有上架)<br>sold_out(全部卖完)<br>violation_off_shelf(违规下架的)<br>默认查询for_shelved(等待所有上架)这个状态的商品<br></font>注：for_shelved(等待所有上架)=regular_shelved(定时上架)+never_on_shelf(从未上架)+off_shelf(我下架的)
 	_banner string
-	// 商品类目ID。ItemCat中的cid字段。可以通过taobao.itemcats.get取到
-	_cid int64
 	// 卖家店铺内自定义类目ID。多个之间用“,”分隔。可以根据taobao.sellercats.list.get获得.(<font color="red">注：目前最多支持32个ID号传入</font>)
 	_sellerCids string
-	// 页码。取值范围:大于零小于等于101的整数;默认值为1，即返回第一页数据。当页码超过101页时系统就会报错，故请大家在用此接口获取数据时尽可能的细化自己的搜索条件，例如根据修改时间分段获取商品。
-	_pageNo int64
-	// 每页条数。取值范围:大于零的整数;最大值：200；默认值：40。
-	_pageSize int64
-	// 是否参与会员折扣。可选值：true，false。默认不过滤该条件
-	_hasDiscount bool
 	// 排序方式。格式为column:asc/desc ，column可选值:list_time(上架时间),delist_time(下架时间),num(商品数量)，modified(最近修改时间);默认上架时间降序(即最新上架排在前面)。如按照上架时间降序排序方式为list_time:desc
 	_orderBy string
-	// 商品是否在淘宝显示
-	_isTaobao bool
-	// 商品是否在外部网店显示
-	_isEx bool
 	// 商品起始修改时间
 	_startModified string
 	// 商品结束修改时间
 	_endModified string
 	// 商品类型：a-拍卖,b-一口价
 	_auctionType string
+	// 商品类目ID。ItemCat中的cid字段。可以通过taobao.itemcats.get取到
+	_cid int64
+	// 页码。取值范围:大于零小于等于101的整数;默认值为1，即返回第一页数据。当页码超过101页时系统就会报错，故请大家在用此接口获取数据时尽可能的细化自己的搜索条件，例如根据修改时间分段获取商品。
+	_pageNo int64
+	// 每页条数。取值范围:大于零的整数;最大值：200；默认值：40。
+	_pageSize int64
+	// 是否参与会员折扣。可选值：true，false。默认不过滤该条件
+	_hasDiscount bool
+	// 商品是否在淘宝显示
+	_isTaobao bool
+	// 商品是否在外部网店显示
+	_isEx bool
 }
 
 // NewTaobaoItemsInventoryGetRequest 初始化TaobaoItemsInventoryGetAPIRequest对象
@@ -104,19 +104,6 @@ func (r TaobaoItemsInventoryGetAPIRequest) GetBanner() string {
 	return r._banner
 }
 
-// SetCid is Cid Setter
-// 商品类目ID。ItemCat中的cid字段。可以通过taobao.itemcats.get取到
-func (r *TaobaoItemsInventoryGetAPIRequest) SetCid(_cid int64) error {
-	r._cid = _cid
-	r.Set("cid", _cid)
-	return nil
-}
-
-// GetCid Cid Getter
-func (r TaobaoItemsInventoryGetAPIRequest) GetCid() int64 {
-	return r._cid
-}
-
 // SetSellerCids is SellerCids Setter
 // 卖家店铺内自定义类目ID。多个之间用“,”分隔。可以根据taobao.sellercats.list.get获得.(<font color="red">注：目前最多支持32个ID号传入</font>)
 func (r *TaobaoItemsInventoryGetAPIRequest) SetSellerCids(_sellerCids string) error {
@@ -128,6 +115,71 @@ func (r *TaobaoItemsInventoryGetAPIRequest) SetSellerCids(_sellerCids string) er
 // GetSellerCids SellerCids Getter
 func (r TaobaoItemsInventoryGetAPIRequest) GetSellerCids() string {
 	return r._sellerCids
+}
+
+// SetOrderBy is OrderBy Setter
+// 排序方式。格式为column:asc/desc ，column可选值:list_time(上架时间),delist_time(下架时间),num(商品数量)，modified(最近修改时间);默认上架时间降序(即最新上架排在前面)。如按照上架时间降序排序方式为list_time:desc
+func (r *TaobaoItemsInventoryGetAPIRequest) SetOrderBy(_orderBy string) error {
+	r._orderBy = _orderBy
+	r.Set("order_by", _orderBy)
+	return nil
+}
+
+// GetOrderBy OrderBy Getter
+func (r TaobaoItemsInventoryGetAPIRequest) GetOrderBy() string {
+	return r._orderBy
+}
+
+// SetStartModified is StartModified Setter
+// 商品起始修改时间
+func (r *TaobaoItemsInventoryGetAPIRequest) SetStartModified(_startModified string) error {
+	r._startModified = _startModified
+	r.Set("start_modified", _startModified)
+	return nil
+}
+
+// GetStartModified StartModified Getter
+func (r TaobaoItemsInventoryGetAPIRequest) GetStartModified() string {
+	return r._startModified
+}
+
+// SetEndModified is EndModified Setter
+// 商品结束修改时间
+func (r *TaobaoItemsInventoryGetAPIRequest) SetEndModified(_endModified string) error {
+	r._endModified = _endModified
+	r.Set("end_modified", _endModified)
+	return nil
+}
+
+// GetEndModified EndModified Getter
+func (r TaobaoItemsInventoryGetAPIRequest) GetEndModified() string {
+	return r._endModified
+}
+
+// SetAuctionType is AuctionType Setter
+// 商品类型：a-拍卖,b-一口价
+func (r *TaobaoItemsInventoryGetAPIRequest) SetAuctionType(_auctionType string) error {
+	r._auctionType = _auctionType
+	r.Set("auction_type", _auctionType)
+	return nil
+}
+
+// GetAuctionType AuctionType Getter
+func (r TaobaoItemsInventoryGetAPIRequest) GetAuctionType() string {
+	return r._auctionType
+}
+
+// SetCid is Cid Setter
+// 商品类目ID。ItemCat中的cid字段。可以通过taobao.itemcats.get取到
+func (r *TaobaoItemsInventoryGetAPIRequest) SetCid(_cid int64) error {
+	r._cid = _cid
+	r.Set("cid", _cid)
+	return nil
+}
+
+// GetCid Cid Getter
+func (r TaobaoItemsInventoryGetAPIRequest) GetCid() int64 {
+	return r._cid
 }
 
 // SetPageNo is PageNo Setter
@@ -169,19 +221,6 @@ func (r TaobaoItemsInventoryGetAPIRequest) GetHasDiscount() bool {
 	return r._hasDiscount
 }
 
-// SetOrderBy is OrderBy Setter
-// 排序方式。格式为column:asc/desc ，column可选值:list_time(上架时间),delist_time(下架时间),num(商品数量)，modified(最近修改时间);默认上架时间降序(即最新上架排在前面)。如按照上架时间降序排序方式为list_time:desc
-func (r *TaobaoItemsInventoryGetAPIRequest) SetOrderBy(_orderBy string) error {
-	r._orderBy = _orderBy
-	r.Set("order_by", _orderBy)
-	return nil
-}
-
-// GetOrderBy OrderBy Getter
-func (r TaobaoItemsInventoryGetAPIRequest) GetOrderBy() string {
-	return r._orderBy
-}
-
 // SetIsTaobao is IsTaobao Setter
 // 商品是否在淘宝显示
 func (r *TaobaoItemsInventoryGetAPIRequest) SetIsTaobao(_isTaobao bool) error {
@@ -206,43 +245,4 @@ func (r *TaobaoItemsInventoryGetAPIRequest) SetIsEx(_isEx bool) error {
 // GetIsEx IsEx Getter
 func (r TaobaoItemsInventoryGetAPIRequest) GetIsEx() bool {
 	return r._isEx
-}
-
-// SetStartModified is StartModified Setter
-// 商品起始修改时间
-func (r *TaobaoItemsInventoryGetAPIRequest) SetStartModified(_startModified string) error {
-	r._startModified = _startModified
-	r.Set("start_modified", _startModified)
-	return nil
-}
-
-// GetStartModified StartModified Getter
-func (r TaobaoItemsInventoryGetAPIRequest) GetStartModified() string {
-	return r._startModified
-}
-
-// SetEndModified is EndModified Setter
-// 商品结束修改时间
-func (r *TaobaoItemsInventoryGetAPIRequest) SetEndModified(_endModified string) error {
-	r._endModified = _endModified
-	r.Set("end_modified", _endModified)
-	return nil
-}
-
-// GetEndModified EndModified Getter
-func (r TaobaoItemsInventoryGetAPIRequest) GetEndModified() string {
-	return r._endModified
-}
-
-// SetAuctionType is AuctionType Setter
-// 商品类型：a-拍卖,b-一口价
-func (r *TaobaoItemsInventoryGetAPIRequest) SetAuctionType(_auctionType string) error {
-	r._auctionType = _auctionType
-	r.Set("auction_type", _auctionType)
-	return nil
-}
-
-// GetAuctionType AuctionType Getter
-func (r TaobaoItemsInventoryGetAPIRequest) GetAuctionType() string {
-	return r._auctionType
 }

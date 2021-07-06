@@ -12,8 +12,6 @@ import (
 // 提供给卖家进行线下信用住的订单取消。此接口仅仅支持线下信用住订单的取消
 type TaobaoXhotelOrderAlipayfaceCancelAPIRequest struct {
 	model.Params
-	// 淘宝订单ID，必选
-	_tid int64
 	// 原因描述
 	_reasonText string
 	// 外部订单号
@@ -22,6 +20,8 @@ type TaobaoXhotelOrderAlipayfaceCancelAPIRequest struct {
 	_notifyUrl string
 	// 请求流水号
 	_outUuid string
+	// 淘宝订单ID，必选
+	_tid int64
 }
 
 // NewTaobaoXhotelOrderAlipayfaceCancelRequest 初始化TaobaoXhotelOrderAlipayfaceCancelAPIRequest对象
@@ -43,19 +43,6 @@ func (r TaobaoXhotelOrderAlipayfaceCancelAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetTid is Tid Setter
-// 淘宝订单ID，必选
-func (r *TaobaoXhotelOrderAlipayfaceCancelAPIRequest) SetTid(_tid int64) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
-	return nil
-}
-
-// GetTid Tid Getter
-func (r TaobaoXhotelOrderAlipayfaceCancelAPIRequest) GetTid() int64 {
-	return r._tid
 }
 
 // SetReasonText is ReasonText Setter
@@ -108,4 +95,17 @@ func (r *TaobaoXhotelOrderAlipayfaceCancelAPIRequest) SetOutUuid(_outUuid string
 // GetOutUuid OutUuid Getter
 func (r TaobaoXhotelOrderAlipayfaceCancelAPIRequest) GetOutUuid() string {
 	return r._outUuid
+}
+
+// SetTid is Tid Setter
+// 淘宝订单ID，必选
+func (r *TaobaoXhotelOrderAlipayfaceCancelAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoXhotelOrderAlipayfaceCancelAPIRequest) GetTid() int64 {
+	return r._tid
 }

@@ -2,14 +2,12 @@ package wdk
 
 // EleBillBo 结构体
 type EleBillBo struct {
+	// 订单列表
+	OrderList []EleOrderInfoBo `json:"order_list,omitempty" xml:"order_list>ele_order_info_bo,omitempty"`
 	// 账单日期，时间戳
 	Date string `json:"date,omitempty" xml:"date,omitempty"`
 	// 渠道店id
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
-	// 订单列表
-	OrderList []EleOrderInfoBo `json:"order_list,omitempty" xml:"order_list>ele_order_info_bo,omitempty"`
-	// 订单费用明细
-	OrderDetailFee *OrderDetailFee `json:"order_detail_fee,omitempty" xml:"order_detail_fee,omitempty"`
 	// 应付金额
 	ExpendFee string `json:"expend_fee,omitempty" xml:"expend_fee,omitempty"`
 	// 单量
@@ -18,4 +16,6 @@ type EleBillBo struct {
 	PayFee string `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
 	// 实际付款主体
 	PayEntity string `json:"pay_entity,omitempty" xml:"pay_entity,omitempty"`
+	// 订单费用明细
+	OrderDetailFee *OrderDetailFee `json:"order_detail_fee,omitempty" xml:"order_detail_fee,omitempty"`
 }

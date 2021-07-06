@@ -14,14 +14,14 @@ type TaobaoXhotelDataServiceSellerServiceindexAPIRequest struct {
 	model.Params
 	// 渠道商名称
 	_vendor string
-	// 分页参数
-	_startRow int64
-	// 分页参数
-	_pageSize int64
 	// 查询截止日期
 	_reportEndDate string
 	// 查询开始日期
 	_reportStartDate string
+	// 分页参数
+	_startRow int64
+	// 分页参数
+	_pageSize int64
 }
 
 // NewTaobaoXhotelDataServiceSellerServiceindexRequest 初始化TaobaoXhotelDataServiceSellerServiceindexAPIRequest对象
@@ -58,32 +58,6 @@ func (r TaobaoXhotelDataServiceSellerServiceindexAPIRequest) GetVendor() string 
 	return r._vendor
 }
 
-// SetStartRow is StartRow Setter
-// 分页参数
-func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetStartRow(_startRow int64) error {
-	r._startRow = _startRow
-	r.Set("start_row", _startRow)
-	return nil
-}
-
-// GetStartRow StartRow Getter
-func (r TaobaoXhotelDataServiceSellerServiceindexAPIRequest) GetStartRow() int64 {
-	return r._startRow
-}
-
-// SetPageSize is PageSize Setter
-// 分页参数
-func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoXhotelDataServiceSellerServiceindexAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetReportEndDate is ReportEndDate Setter
 // 查询截止日期
 func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetReportEndDate(_reportEndDate string) error {
@@ -108,4 +82,30 @@ func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetReportStartDate
 // GetReportStartDate ReportStartDate Getter
 func (r TaobaoXhotelDataServiceSellerServiceindexAPIRequest) GetReportStartDate() string {
 	return r._reportStartDate
+}
+
+// SetStartRow is StartRow Setter
+// 分页参数
+func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetStartRow(_startRow int64) error {
+	r._startRow = _startRow
+	r.Set("start_row", _startRow)
+	return nil
+}
+
+// GetStartRow StartRow Getter
+func (r TaobaoXhotelDataServiceSellerServiceindexAPIRequest) GetStartRow() int64 {
+	return r._startRow
+}
+
+// SetPageSize is PageSize Setter
+// 分页参数
+func (r *TaobaoXhotelDataServiceSellerServiceindexAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoXhotelDataServiceSellerServiceindexAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

@@ -12,8 +12,6 @@ import (
 // 服务工单更新通用接口
 type TmallServicecenterWorkcardReserveAPIRequest struct {
 	model.Params
-	// 工单id
-	_workcardId int64
 	// 服务开始时间
 	_reserveTimeStart string
 	// 服务结束时间
@@ -34,6 +32,8 @@ type TmallServicecenterWorkcardReserveAPIRequest struct {
 	_serviceStoreCode string
 	// 门店名称
 	_serviceStoreName string
+	// 工单id
+	_workcardId int64
 	// 核销单id
 	_fulfilTaskId int64
 }
@@ -57,19 +57,6 @@ func (r TmallServicecenterWorkcardReserveAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetWorkcardId is WorkcardId Setter
-// 工单id
-func (r *TmallServicecenterWorkcardReserveAPIRequest) SetWorkcardId(_workcardId int64) error {
-	r._workcardId = _workcardId
-	r.Set("workcard_id", _workcardId)
-	return nil
-}
-
-// GetWorkcardId WorkcardId Getter
-func (r TmallServicecenterWorkcardReserveAPIRequest) GetWorkcardId() int64 {
-	return r._workcardId
 }
 
 // SetReserveTimeStart is ReserveTimeStart Setter
@@ -200,6 +187,19 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetServiceStoreName(_servi
 // GetServiceStoreName ServiceStoreName Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetServiceStoreName() string {
 	return r._serviceStoreName
+}
+
+// SetWorkcardId is WorkcardId Setter
+// 工单id
+func (r *TmallServicecenterWorkcardReserveAPIRequest) SetWorkcardId(_workcardId int64) error {
+	r._workcardId = _workcardId
+	r.Set("workcard_id", _workcardId)
+	return nil
+}
+
+// GetWorkcardId WorkcardId Getter
+func (r TmallServicecenterWorkcardReserveAPIRequest) GetWorkcardId() int64 {
+	return r._workcardId
 }
 
 // SetFulfilTaskId is FulfilTaskId Setter

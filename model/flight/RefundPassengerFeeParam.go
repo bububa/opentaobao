@@ -2,6 +2,8 @@ package flight
 
 // RefundPassengerFeeParam 结构体
 type RefundPassengerFeeParam struct {
+	// 乘机人姓名
+	PassengerName string `json:"passenger_name,omitempty" xml:"passenger_name,omitempty"`
 	// 机票已使用部分总价(单位:分)
 	AlreadyUsedTotalPirce int64 `json:"already_used_total_pirce,omitempty" xml:"already_used_total_pirce,omitempty"`
 	// 机票不可退税费(单位:分)
@@ -12,6 +14,4 @@ type RefundPassengerFeeParam struct {
 	NonRefundableTotalChangeServiceFee int64 `json:"non_refundable_total_change_service_fee,omitempty" xml:"non_refundable_total_change_service_fee,omitempty"`
 	// 机票不可退改签升舱费(单位:分)
 	NonRefundableTotalChangeUpgradeFee int64 `json:"non_refundable_total_change_upgrade_fee,omitempty" xml:"non_refundable_total_change_upgrade_fee,omitempty"`
-	// 乘机人姓名
-	PassengerName string `json:"passenger_name,omitempty" xml:"passenger_name,omitempty"`
 }

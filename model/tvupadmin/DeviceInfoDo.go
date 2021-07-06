@@ -6,8 +6,6 @@ type DeviceInfoDo struct {
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
 	// tvid
 	Tvid string `json:"tvid,omitempty" xml:"tvid,omitempty"`
-	// brandId
-	BrandId int64 `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
 	// brandName
 	BrandName string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
 	// deviceModel
@@ -30,4 +28,6 @@ type DeviceInfoDo struct {
 	UpdatedAt string `json:"updated_at,omitempty" xml:"updated_at,omitempty"`
 	// systemVersion
 	SystemVersion string `json:"system_version,omitempty" xml:"system_version,omitempty"`
+	// brandId
+	BrandId int64 `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
 }

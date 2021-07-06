@@ -2,14 +2,14 @@ package product
 
 // DapeiDo 结构体
 type DapeiDo struct {
-	// id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// items
+	Items []DapeiTemplateItem `json:"items,omitempty" xml:"items>dapei_template_item,omitempty"`
 	// title
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// desc
 	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
 	// url
 	Url string `json:"url,omitempty" xml:"url,omitempty"`
-	// items
-	Items []DapeiTemplateItem `json:"items,omitempty" xml:"items>dapei_template_item,omitempty"`
+	// id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 }

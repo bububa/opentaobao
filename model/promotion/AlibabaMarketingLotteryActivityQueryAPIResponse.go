@@ -20,12 +20,12 @@ type AlibabaMarketingLotteryActivityQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_marketing_lottery_activity_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// msg
+	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 分页结果
 	PagingDto *PagingDto `json:"paging_dto,omitempty" xml:"paging_dto,omitempty"`
 	// code
 	MsgCode int64 `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// success
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-	// msg
-	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 }

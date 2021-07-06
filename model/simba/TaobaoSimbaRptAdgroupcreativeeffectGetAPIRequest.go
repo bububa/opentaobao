@@ -20,18 +20,18 @@ type TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest struct {
 	_startTime string
 	// 结束日期，格式yyyy-mm-dd
 	_endTime string
+	// 数据来源（PC站内：1，PC站外：2，无线站内：4，无线站外 : 5，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2
+	_source string
+	// 报表类型（搜索：SEARCH,类目出价：CAT, 定向投放：NOSEARCH汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如：SEARCH,CAT
+	_searchType string
 	// 查询推广计划id
 	_campaignId int64
 	// 推广组id
 	_adgroupId int64
-	// 数据来源（PC站内：1，PC站外：2，无线站内：4，无线站外 : 5，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2
-	_source string
 	// 页码
 	_pageNo int64
 	// 每页大小
 	_pageSize int64
-	// 报表类型（搜索：SEARCH,类目出价：CAT, 定向投放：NOSEARCH汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如：SEARCH,CAT
-	_searchType string
 }
 
 // NewTaobaoSimbaRptAdgroupcreativeeffectGetRequest 初始化TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest对象
@@ -107,6 +107,32 @@ func (r TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
+// SetSource is Source Setter
+// 数据来源（PC站内：1，PC站外：2，无线站内：4，无线站外 : 5，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2
+func (r *TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) SetSource(_source string) error {
+	r._source = _source
+	r.Set("source", _source)
+	return nil
+}
+
+// GetSource Source Getter
+func (r TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) GetSource() string {
+	return r._source
+}
+
+// SetSearchType is SearchType Setter
+// 报表类型（搜索：SEARCH,类目出价：CAT, 定向投放：NOSEARCH汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如：SEARCH,CAT
+func (r *TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) SetSearchType(_searchType string) error {
+	r._searchType = _searchType
+	r.Set("search_type", _searchType)
+	return nil
+}
+
+// GetSearchType SearchType Getter
+func (r TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) GetSearchType() string {
+	return r._searchType
+}
+
 // SetCampaignId is CampaignId Setter
 // 查询推广计划id
 func (r *TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) SetCampaignId(_campaignId int64) error {
@@ -133,19 +159,6 @@ func (r TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) GetAdgroupId() int64 {
 	return r._adgroupId
 }
 
-// SetSource is Source Setter
-// 数据来源（PC站内：1，PC站外：2，无线站内：4，无线站外 : 5，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2
-func (r *TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) SetSource(_source string) error {
-	r._source = _source
-	r.Set("source", _source)
-	return nil
-}
-
-// GetSource Source Getter
-func (r TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) GetSource() string {
-	return r._source
-}
-
 // SetPageNo is PageNo Setter
 // 页码
 func (r *TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) SetPageNo(_pageNo int64) error {
@@ -170,17 +183,4 @@ func (r *TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) SetPageSize(_pageSize
 // GetPageSize PageSize Getter
 func (r TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetSearchType is SearchType Setter
-// 报表类型（搜索：SEARCH,类目出价：CAT, 定向投放：NOSEARCH汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如：SEARCH,CAT
-func (r *TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) SetSearchType(_searchType string) error {
-	r._searchType = _searchType
-	r.Set("search_type", _searchType)
-	return nil
-}
-
-// GetSearchType SearchType Getter
-func (r TaobaoSimbaRptAdgroupcreativeeffectGetAPIRequest) GetSearchType() string {
-	return r._searchType
 }

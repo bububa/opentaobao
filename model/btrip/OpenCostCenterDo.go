@@ -8,8 +8,8 @@ type OpenCostCenterDo struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 企业id
 	CorpId string `json:"corp_id,omitempty" xml:"corp_id,omitempty"`
-	// 商旅成本中心id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 商旅企业id
 	Corpid string `json:"corpid,omitempty" xml:"corpid,omitempty"`
+	// 商旅成本中心id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 }

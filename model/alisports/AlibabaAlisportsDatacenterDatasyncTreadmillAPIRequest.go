@@ -12,16 +12,32 @@ import (
 // 合作方向阿里体育同步跑步机设备的数据
 type AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest struct {
 	model.Params
+	// 速度过程数据,单位km/h
+	_speedDatas []string
+	// 步频/踏频/桨频过程数据
+	_motionFrequencyDatas []string
+	// 步幅/踏幅/桨幅过程数据
+	_hrzMotionRangeDatas []string
+	// 配速过程数据
+	_tempoDatas []string
+	// 心率过程数据
+	_heartrateDatas []int64
 	// 阿里体育用户id
 	_userId string
-	// 运动开始时间,秒级别时间戳
-	_startTime int64
-	// 运动结束时间，秒级别时间戳
-	_endTime int64
 	// 时区编码，不传默认东八区
 	_timezone string
 	// 运动位置经纬度
 	_location string
+	// 三方数据唯一id
+	_messageId string
+	// 设备名称
+	_deviceName string
+	// 设备型号
+	_deviceModel string
+	// 运动开始时间,秒级别时间戳
+	_startTime int64
+	// 运动结束时间，秒级别时间戳
+	_endTime int64
 	// 国家编码，https://zh.wikipedia.org/wiki/%E5%9C%8B%E5%AE%B6%E5%9C%B0%E5%8D%80%E4%BB%A3%E7%A2%BC
 	_countryCode int64
 	// 省编码， https://www.ip33.com/area_code.html
@@ -54,24 +70,8 @@ type AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest struct {
 	_collectTimeInterval int64
 	// 过程数据收集间隔时间单位，1.毫秒 2.秒 3.分 4.小时
 	_collectTimeUnit int64
-	// 速度过程数据,单位km/h
-	_speedDatas []string
-	// 步频/踏频/桨频过程数据
-	_motionFrequencyDatas []string
-	// 步幅/踏幅/桨幅过程数据
-	_hrzMotionRangeDatas []string
-	// 配速过程数据
-	_tempoDatas []string
-	// 心率过程数据
-	_heartrateDatas []int64
-	// 三方数据唯一id
-	_messageId string
 	// 设备类型：4.跑步机 5.单车 6.划船机
 	_deviceType int64
-	// 设备名称
-	_deviceName string
-	// 设备型号
-	_deviceModel string
 }
 
 // NewAlibabaAlisportsDatacenterDatasyncTreadmillRequest 初始化AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest对象
@@ -95,6 +95,71 @@ func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetApiParams() ur
 	return params
 }
 
+// SetSpeedDatas is SpeedDatas Setter
+// 速度过程数据,单位km/h
+func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetSpeedDatas(_speedDatas []string) error {
+	r._speedDatas = _speedDatas
+	r.Set("speed_datas", _speedDatas)
+	return nil
+}
+
+// GetSpeedDatas SpeedDatas Getter
+func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetSpeedDatas() []string {
+	return r._speedDatas
+}
+
+// SetMotionFrequencyDatas is MotionFrequencyDatas Setter
+// 步频/踏频/桨频过程数据
+func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetMotionFrequencyDatas(_motionFrequencyDatas []string) error {
+	r._motionFrequencyDatas = _motionFrequencyDatas
+	r.Set("motion_frequency_datas", _motionFrequencyDatas)
+	return nil
+}
+
+// GetMotionFrequencyDatas MotionFrequencyDatas Getter
+func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetMotionFrequencyDatas() []string {
+	return r._motionFrequencyDatas
+}
+
+// SetHrzMotionRangeDatas is HrzMotionRangeDatas Setter
+// 步幅/踏幅/桨幅过程数据
+func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetHrzMotionRangeDatas(_hrzMotionRangeDatas []string) error {
+	r._hrzMotionRangeDatas = _hrzMotionRangeDatas
+	r.Set("hrz_motion_range_datas", _hrzMotionRangeDatas)
+	return nil
+}
+
+// GetHrzMotionRangeDatas HrzMotionRangeDatas Getter
+func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetHrzMotionRangeDatas() []string {
+	return r._hrzMotionRangeDatas
+}
+
+// SetTempoDatas is TempoDatas Setter
+// 配速过程数据
+func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetTempoDatas(_tempoDatas []string) error {
+	r._tempoDatas = _tempoDatas
+	r.Set("tempo_datas", _tempoDatas)
+	return nil
+}
+
+// GetTempoDatas TempoDatas Getter
+func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetTempoDatas() []string {
+	return r._tempoDatas
+}
+
+// SetHeartrateDatas is HeartrateDatas Setter
+// 心率过程数据
+func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetHeartrateDatas(_heartrateDatas []int64) error {
+	r._heartrateDatas = _heartrateDatas
+	r.Set("heartrate_datas", _heartrateDatas)
+	return nil
+}
+
+// GetHeartrateDatas HeartrateDatas Getter
+func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetHeartrateDatas() []int64 {
+	return r._heartrateDatas
+}
+
 // SetUserId is UserId Setter
 // 阿里体育用户id
 func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetUserId(_userId string) error {
@@ -106,32 +171,6 @@ func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetUserId(_userI
 // GetUserId UserId Getter
 func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetUserId() string {
 	return r._userId
-}
-
-// SetStartTime is StartTime Setter
-// 运动开始时间,秒级别时间戳
-func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetStartTime(_startTime int64) error {
-	r._startTime = _startTime
-	r.Set("start_time", _startTime)
-	return nil
-}
-
-// GetStartTime StartTime Getter
-func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetStartTime() int64 {
-	return r._startTime
-}
-
-// SetEndTime is EndTime Setter
-// 运动结束时间，秒级别时间戳
-func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetEndTime(_endTime int64) error {
-	r._endTime = _endTime
-	r.Set("end_time", _endTime)
-	return nil
-}
-
-// GetEndTime EndTime Getter
-func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetEndTime() int64 {
-	return r._endTime
 }
 
 // SetTimezone is Timezone Setter
@@ -158,6 +197,71 @@ func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetLocation(_loc
 // GetLocation Location Getter
 func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetLocation() string {
 	return r._location
+}
+
+// SetMessageId is MessageId Setter
+// 三方数据唯一id
+func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetMessageId(_messageId string) error {
+	r._messageId = _messageId
+	r.Set("message_id", _messageId)
+	return nil
+}
+
+// GetMessageId MessageId Getter
+func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetMessageId() string {
+	return r._messageId
+}
+
+// SetDeviceName is DeviceName Setter
+// 设备名称
+func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetDeviceName(_deviceName string) error {
+	r._deviceName = _deviceName
+	r.Set("device_name", _deviceName)
+	return nil
+}
+
+// GetDeviceName DeviceName Getter
+func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetDeviceName() string {
+	return r._deviceName
+}
+
+// SetDeviceModel is DeviceModel Setter
+// 设备型号
+func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetDeviceModel(_deviceModel string) error {
+	r._deviceModel = _deviceModel
+	r.Set("device_model", _deviceModel)
+	return nil
+}
+
+// GetDeviceModel DeviceModel Getter
+func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetDeviceModel() string {
+	return r._deviceModel
+}
+
+// SetStartTime is StartTime Setter
+// 运动开始时间,秒级别时间戳
+func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetStartTime(_startTime int64) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
+	return nil
+}
+
+// GetStartTime StartTime Getter
+func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetStartTime() int64 {
+	return r._startTime
+}
+
+// SetEndTime is EndTime Setter
+// 运动结束时间，秒级别时间戳
+func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetEndTime(_endTime int64) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
+	return nil
+}
+
+// GetEndTime EndTime Getter
+func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetEndTime() int64 {
+	return r._endTime
 }
 
 // SetCountryCode is CountryCode Setter
@@ -368,84 +472,6 @@ func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetCollectTimeUni
 	return r._collectTimeUnit
 }
 
-// SetSpeedDatas is SpeedDatas Setter
-// 速度过程数据,单位km/h
-func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetSpeedDatas(_speedDatas []string) error {
-	r._speedDatas = _speedDatas
-	r.Set("speed_datas", _speedDatas)
-	return nil
-}
-
-// GetSpeedDatas SpeedDatas Getter
-func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetSpeedDatas() []string {
-	return r._speedDatas
-}
-
-// SetMotionFrequencyDatas is MotionFrequencyDatas Setter
-// 步频/踏频/桨频过程数据
-func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetMotionFrequencyDatas(_motionFrequencyDatas []string) error {
-	r._motionFrequencyDatas = _motionFrequencyDatas
-	r.Set("motion_frequency_datas", _motionFrequencyDatas)
-	return nil
-}
-
-// GetMotionFrequencyDatas MotionFrequencyDatas Getter
-func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetMotionFrequencyDatas() []string {
-	return r._motionFrequencyDatas
-}
-
-// SetHrzMotionRangeDatas is HrzMotionRangeDatas Setter
-// 步幅/踏幅/桨幅过程数据
-func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetHrzMotionRangeDatas(_hrzMotionRangeDatas []string) error {
-	r._hrzMotionRangeDatas = _hrzMotionRangeDatas
-	r.Set("hrz_motion_range_datas", _hrzMotionRangeDatas)
-	return nil
-}
-
-// GetHrzMotionRangeDatas HrzMotionRangeDatas Getter
-func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetHrzMotionRangeDatas() []string {
-	return r._hrzMotionRangeDatas
-}
-
-// SetTempoDatas is TempoDatas Setter
-// 配速过程数据
-func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetTempoDatas(_tempoDatas []string) error {
-	r._tempoDatas = _tempoDatas
-	r.Set("tempo_datas", _tempoDatas)
-	return nil
-}
-
-// GetTempoDatas TempoDatas Getter
-func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetTempoDatas() []string {
-	return r._tempoDatas
-}
-
-// SetHeartrateDatas is HeartrateDatas Setter
-// 心率过程数据
-func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetHeartrateDatas(_heartrateDatas []int64) error {
-	r._heartrateDatas = _heartrateDatas
-	r.Set("heartrate_datas", _heartrateDatas)
-	return nil
-}
-
-// GetHeartrateDatas HeartrateDatas Getter
-func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetHeartrateDatas() []int64 {
-	return r._heartrateDatas
-}
-
-// SetMessageId is MessageId Setter
-// 三方数据唯一id
-func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetMessageId(_messageId string) error {
-	r._messageId = _messageId
-	r.Set("message_id", _messageId)
-	return nil
-}
-
-// GetMessageId MessageId Getter
-func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetMessageId() string {
-	return r._messageId
-}
-
 // SetDeviceType is DeviceType Setter
 // 设备类型：4.跑步机 5.单车 6.划船机
 func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetDeviceType(_deviceType int64) error {
@@ -457,30 +483,4 @@ func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetDeviceType(_d
 // GetDeviceType DeviceType Getter
 func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetDeviceType() int64 {
 	return r._deviceType
-}
-
-// SetDeviceName is DeviceName Setter
-// 设备名称
-func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetDeviceName(_deviceName string) error {
-	r._deviceName = _deviceName
-	r.Set("device_name", _deviceName)
-	return nil
-}
-
-// GetDeviceName DeviceName Getter
-func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetDeviceName() string {
-	return r._deviceName
-}
-
-// SetDeviceModel is DeviceModel Setter
-// 设备型号
-func (r *AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) SetDeviceModel(_deviceModel string) error {
-	r._deviceModel = _deviceModel
-	r.Set("device_model", _deviceModel)
-	return nil
-}
-
-// GetDeviceModel DeviceModel Getter
-func (r AlibabaAlisportsDatacenterDatasyncTreadmillAPIRequest) GetDeviceModel() string {
-	return r._deviceModel
 }

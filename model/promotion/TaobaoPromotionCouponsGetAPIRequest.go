@@ -12,10 +12,10 @@ import (
 // 查询卖家已经创建的优惠券，接口返回信息：优惠券ID，面值，创建时间，有效期，使用条件，使用渠道，创建渠道，优惠券总数量
 type TaobaoPromotionCouponsGetAPIRequest struct {
 	model.Params
-	// 优惠券的id，唯一标识这个优惠券
-	_couponId int64
 	// 优惠券的截止日期
 	_endTime string
+	// 优惠券的id，唯一标识这个优惠券
+	_couponId int64
 	// 优惠券的面额，必须是3，5，10，20，50,100
 	_denominations int64
 	// 查询的页号，结果集是分页返回的，每页20条
@@ -45,19 +45,6 @@ func (r TaobaoPromotionCouponsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetCouponId is CouponId Setter
-// 优惠券的id，唯一标识这个优惠券
-func (r *TaobaoPromotionCouponsGetAPIRequest) SetCouponId(_couponId int64) error {
-	r._couponId = _couponId
-	r.Set("coupon_id", _couponId)
-	return nil
-}
-
-// GetCouponId CouponId Getter
-func (r TaobaoPromotionCouponsGetAPIRequest) GetCouponId() int64 {
-	return r._couponId
-}
-
 // SetEndTime is EndTime Setter
 // 优惠券的截止日期
 func (r *TaobaoPromotionCouponsGetAPIRequest) SetEndTime(_endTime string) error {
@@ -69,6 +56,19 @@ func (r *TaobaoPromotionCouponsGetAPIRequest) SetEndTime(_endTime string) error 
 // GetEndTime EndTime Getter
 func (r TaobaoPromotionCouponsGetAPIRequest) GetEndTime() string {
 	return r._endTime
+}
+
+// SetCouponId is CouponId Setter
+// 优惠券的id，唯一标识这个优惠券
+func (r *TaobaoPromotionCouponsGetAPIRequest) SetCouponId(_couponId int64) error {
+	r._couponId = _couponId
+	r.Set("coupon_id", _couponId)
+	return nil
+}
+
+// GetCouponId CouponId Getter
+func (r TaobaoPromotionCouponsGetAPIRequest) GetCouponId() int64 {
+	return r._couponId
 }
 
 // SetDenominations is Denominations Setter

@@ -2,18 +2,18 @@ package qimen
 
 // RequestDo 结构体
 type RequestDo struct {
-	// 奇门仓储字段,C123,string(50),,
-	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
 	// 奇门仓储字段
 	WarehouseCodes []string `json:"warehouseCodes,omitempty" xml:"warehouseCodes>string,omitempty"`
 	// 奇门仓储字段
 	ItemCodes []string `json:"itemCodes,omitempty" xml:"itemCodes>string,omitempty"`
 	// 奇门仓储字段
 	ChannelCodes []string `json:"channelCodes,omitempty" xml:"channelCodes>string,omitempty"`
-	// 奇门仓储字段,C123,string(50),,
-	ItemId string `json:"itemId,omitempty" xml:"itemId,omitempty"`
 	// inventoryRules
 	InventoryRules []InventoryRule `json:"inventoryRules,omitempty" xml:"inventoryRules>inventory_rule,omitempty"`
+	// 奇门仓储字段,C123,string(50),,
+	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
+	// 奇门仓储字段,C123,string(50),,
+	ItemId string `json:"itemId,omitempty" xml:"itemId,omitempty"`
 	// 奇门仓储字段,C123,string(50),必填,
 	ActionType string `json:"actionType,omitempty" xml:"actionType,omitempty"`
 	// 奇门仓储字段,C123,string(50),必填,

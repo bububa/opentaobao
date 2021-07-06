@@ -2,10 +2,6 @@ package alilabs
 
 // AlibabaAilabsTmallgenieAuthDeviceStatusGetResult 结构体
 type AlibabaAilabsTmallgenieAuthDeviceStatusGetResult struct {
-	// 接口返回model
-	Result *AlibabaAilabsTmallgenieAuthDeviceStatusGetResult `json:"result,omitempty" xml:"result,omitempty"`
-	// 状态码（200：成功，其他：失败）
-	Code int64 `json:"code,omitempty" xml:"code,omitempty"`
 	// 结果描述
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// IP地址
@@ -16,4 +12,8 @@ type AlibabaAilabsTmallgenieAuthDeviceStatusGetResult struct {
 	OnlineStatus string `json:"online_status,omitempty" xml:"online_status,omitempty"`
 	// 设备ID
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
+	// 接口返回model
+	Result *AlibabaAilabsTmallgenieAuthDeviceStatusGetResult `json:"result,omitempty" xml:"result,omitempty"`
+	// 状态码（200：成功，其他：失败）
+	Code int64 `json:"code,omitempty" xml:"code,omitempty"`
 }

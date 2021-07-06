@@ -12,10 +12,10 @@ type GetTokenRequest struct {
 	BizOrderId string `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 订单标题
 	Subject string `json:"subject,omitempty" xml:"subject,omitempty"`
+	// ORDER订单token，OTHER其他token
+	TokenType string `json:"token_type,omitempty" xml:"token_type,omitempty"`
 	// 订单总金额
 	TotalAmount int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
 	// 参与优惠计算的金额，用此字段用于让订单中部分金额不参与优惠的计算
 	DiscountableAmount int64 `json:"discountable_amount,omitempty" xml:"discountable_amount,omitempty"`
-	// ORDER订单token，OTHER其他token
-	TokenType string `json:"token_type,omitempty" xml:"token_type,omitempty"`
 }

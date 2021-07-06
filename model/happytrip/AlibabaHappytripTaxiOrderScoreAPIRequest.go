@@ -14,10 +14,10 @@ type AlibabaHappytripTaxiOrderScoreAPIRequest struct {
 	model.Params
 	// 订单id
 	_orderId string
-	// 司机评分 星级(1-5)
-	_level int64
 	// 司机评价最多40个汉字
 	_comment string
+	// 司机评分 星级(1-5)
+	_level int64
 }
 
 // NewAlibabaHappytripTaxiOrderScoreRequest 初始化AlibabaHappytripTaxiOrderScoreAPIRequest对象
@@ -54,19 +54,6 @@ func (r AlibabaHappytripTaxiOrderScoreAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
-// SetLevel is Level Setter
-// 司机评分 星级(1-5)
-func (r *AlibabaHappytripTaxiOrderScoreAPIRequest) SetLevel(_level int64) error {
-	r._level = _level
-	r.Set("level", _level)
-	return nil
-}
-
-// GetLevel Level Getter
-func (r AlibabaHappytripTaxiOrderScoreAPIRequest) GetLevel() int64 {
-	return r._level
-}
-
 // SetComment is Comment Setter
 // 司机评价最多40个汉字
 func (r *AlibabaHappytripTaxiOrderScoreAPIRequest) SetComment(_comment string) error {
@@ -78,4 +65,17 @@ func (r *AlibabaHappytripTaxiOrderScoreAPIRequest) SetComment(_comment string) e
 // GetComment Comment Getter
 func (r AlibabaHappytripTaxiOrderScoreAPIRequest) GetComment() string {
 	return r._comment
+}
+
+// SetLevel is Level Setter
+// 司机评分 星级(1-5)
+func (r *AlibabaHappytripTaxiOrderScoreAPIRequest) SetLevel(_level int64) error {
+	r._level = _level
+	r.Set("level", _level)
+	return nil
+}
+
+// GetLevel Level Getter
+func (r AlibabaHappytripTaxiOrderScoreAPIRequest) GetLevel() int64 {
+	return r._level
 }

@@ -12,6 +12,8 @@ import (
 // 菜鸟工单创建接口，目前调用者ISV
 type CainiaoCbossWorkplatformWorkorderCreateAPIRequest struct {
 	model.Params
+	// 凭证地址列表
+	_attachPathList []string
 	// 工单类型
 	_workOrderType string
 	// 业务类型
@@ -40,8 +42,6 @@ type CainiaoCbossWorkplatformWorkorderCreateAPIRequest struct {
 	_mailNo string
 	// 扩展字段
 	_features string
-	// 凭证地址列表
-	_attachPathList []string
 }
 
 // NewCainiaoCbossWorkplatformWorkorderCreateRequest 初始化CainiaoCbossWorkplatformWorkorderCreateAPIRequest对象
@@ -63,6 +63,19 @@ func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetApiParams() url.Va
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetAttachPathList is AttachPathList Setter
+// 凭证地址列表
+func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetAttachPathList(_attachPathList []string) error {
+	r._attachPathList = _attachPathList
+	r.Set("attach_path_list", _attachPathList)
+	return nil
+}
+
+// GetAttachPathList AttachPathList Getter
+func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetAttachPathList() []string {
+	return r._attachPathList
 }
 
 // SetWorkOrderType is WorkOrderType Setter
@@ -245,17 +258,4 @@ func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetFeatures(_feature
 // GetFeatures Features Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetFeatures() string {
 	return r._features
-}
-
-// SetAttachPathList is AttachPathList Setter
-// 凭证地址列表
-func (r *CainiaoCbossWorkplatformWorkorderCreateAPIRequest) SetAttachPathList(_attachPathList []string) error {
-	r._attachPathList = _attachPathList
-	r.Set("attach_path_list", _attachPathList)
-	return nil
-}
-
-// GetAttachPathList AttachPathList Getter
-func (r CainiaoCbossWorkplatformWorkorderCreateAPIRequest) GetAttachPathList() []string {
-	return r._attachPathList
 }

@@ -18,10 +18,6 @@ type OrderDetailDto struct {
 	OrderCreateTime string `json:"order_create_time,omitempty" xml:"order_create_time,omitempty"`
 	// 订单状态：WAIT_DIAGNOSE，  DIAGNOSING，  REFUNDED，  DIAGNOSED，  THIRD_SELLER_PAID
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
-	// 就诊人信息串
-	MedicalInfo *MedicalInfoDto `json:"medical_info,omitempty" xml:"medical_info,omitempty"`
-	// 评价综合得分：取值 1 - 5
-	Score int64 `json:"score,omitempty" xml:"score,omitempty"`
 	// 商品id
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 医生名字
@@ -38,4 +34,8 @@ type OrderDetailDto struct {
 	Comment string `json:"comment,omitempty" xml:"comment,omitempty"`
 	// 会话id
 	SessionId string `json:"session_id,omitempty" xml:"session_id,omitempty"`
+	// 就诊人信息串
+	MedicalInfo *MedicalInfoDto `json:"medical_info,omitempty" xml:"medical_info,omitempty"`
+	// 评价综合得分：取值 1 - 5
+	Score int64 `json:"score,omitempty" xml:"score,omitempty"`
 }

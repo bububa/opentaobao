@@ -18,8 +18,6 @@ type WdkOpenOrderFinanceBillDo struct {
 	Dt string `json:"dt,omitempty" xml:"dt,omitempty"`
 	// 支付宝二级商户ID
 	Smid string `json:"smid,omitempty" xml:"smid,omitempty"`
-	// 金额，正向交易时数值是正数，退款时数值是负数
-	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 支付时间
 	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
 	// 业务类型。PAY：支付， REFUND：退款
@@ -30,4 +28,6 @@ type WdkOpenOrderFinanceBillDo struct {
 	FinanceOrganizationName string `json:"finance_organization_name,omitempty" xml:"finance_organization_name,omitempty"`
 	// 财务组织code
 	FinanceOrganizationCode string `json:"finance_organization_code,omitempty" xml:"finance_organization_code,omitempty"`
+	// 金额，正向交易时数值是正数，退款时数值是负数
+	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 }

@@ -4,12 +4,8 @@ package tmallcarenter
 type VersionVehicleInfoOriginalDto struct {
 	// 换代
 	Replacement string `json:"replacement,omitempty" xml:"replacement,omitempty"`
-	// 停产年份
-	EndYear int64 `json:"end_year,omitempty" xml:"end_year,omitempty"`
 	// 销售名称
 	SalesName string `json:"sales_name,omitempty" xml:"sales_name,omitempty"`
-	// 生产年份
-	ProductiveYear int64 `json:"productive_year,omitempty" xml:"productive_year,omitempty"`
 	// 产地
 	Origin string `json:"origin,omitempty" xml:"origin,omitempty"`
 	// 品牌
@@ -42,4 +38,8 @@ type VersionVehicleInfoOriginalDto struct {
 	LineName string `json:"line_name,omitempty" xml:"line_name,omitempty"`
 	// 车辆类型
 	VehicleType string `json:"vehicle_type,omitempty" xml:"vehicle_type,omitempty"`
+	// 停产年份
+	EndYear int64 `json:"end_year,omitempty" xml:"end_year,omitempty"`
+	// 生产年份
+	ProductiveYear int64 `json:"productive_year,omitempty" xml:"productive_year,omitempty"`
 }

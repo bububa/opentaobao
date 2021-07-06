@@ -12,16 +12,16 @@ import (
 // 获取活动列表提供给友盟&互动屏
 type AlibabaWestcrmActivityListGetAPIRequest struct {
 	model.Params
+	// 排序方向
+	_sord string
+	// 排序字段
+	_sidx string
 	// 活动状态
 	_status int64
 	// 园区id
 	_campusId int64
-	// 排序方向
-	_sord string
 	// 页,默认第一页
 	_page int64
-	// 排序字段
-	_sidx string
 	// 分页偏移量 eq . limit offset ,rows
 	_offset int64
 	// 页大小,默认每页查询10条数据
@@ -47,6 +47,32 @@ func (r AlibabaWestcrmActivityListGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSord is Sord Setter
+// 排序方向
+func (r *AlibabaWestcrmActivityListGetAPIRequest) SetSord(_sord string) error {
+	r._sord = _sord
+	r.Set("sord", _sord)
+	return nil
+}
+
+// GetSord Sord Getter
+func (r AlibabaWestcrmActivityListGetAPIRequest) GetSord() string {
+	return r._sord
+}
+
+// SetSidx is Sidx Setter
+// 排序字段
+func (r *AlibabaWestcrmActivityListGetAPIRequest) SetSidx(_sidx string) error {
+	r._sidx = _sidx
+	r.Set("sidx", _sidx)
+	return nil
+}
+
+// GetSidx Sidx Getter
+func (r AlibabaWestcrmActivityListGetAPIRequest) GetSidx() string {
+	return r._sidx
 }
 
 // SetStatus is Status Setter
@@ -75,19 +101,6 @@ func (r AlibabaWestcrmActivityListGetAPIRequest) GetCampusId() int64 {
 	return r._campusId
 }
 
-// SetSord is Sord Setter
-// 排序方向
-func (r *AlibabaWestcrmActivityListGetAPIRequest) SetSord(_sord string) error {
-	r._sord = _sord
-	r.Set("sord", _sord)
-	return nil
-}
-
-// GetSord Sord Getter
-func (r AlibabaWestcrmActivityListGetAPIRequest) GetSord() string {
-	return r._sord
-}
-
 // SetPage is Page Setter
 // 页,默认第一页
 func (r *AlibabaWestcrmActivityListGetAPIRequest) SetPage(_page int64) error {
@@ -99,19 +112,6 @@ func (r *AlibabaWestcrmActivityListGetAPIRequest) SetPage(_page int64) error {
 // GetPage Page Getter
 func (r AlibabaWestcrmActivityListGetAPIRequest) GetPage() int64 {
 	return r._page
-}
-
-// SetSidx is Sidx Setter
-// 排序字段
-func (r *AlibabaWestcrmActivityListGetAPIRequest) SetSidx(_sidx string) error {
-	r._sidx = _sidx
-	r.Set("sidx", _sidx)
-	return nil
-}
-
-// GetSidx Sidx Getter
-func (r AlibabaWestcrmActivityListGetAPIRequest) GetSidx() string {
-	return r._sidx
 }
 
 // SetOffset is Offset Setter

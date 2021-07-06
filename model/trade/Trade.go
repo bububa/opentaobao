@@ -2,12 +2,18 @@ package trade
 
 // Trade 结构体
 type Trade struct {
+	// 订单列表
+	Orders []Order `json:"orders,omitempty" xml:"orders>order,omitempty"`
+	// 优惠详情
+	PromotionDetails []PromotionDetail `json:"promotion_details,omitempty" xml:"promotion_details>promotion_detail,omitempty"`
+	// 服务子订单列表
+	ServiceOrders []ServiceOrder `json:"service_orders,omitempty" xml:"service_orders>service_order,omitempty"`
+	// 物流标签
+	ServiceTags []LogisticsTag `json:"service_tags,omitempty" xml:"service_tags>logistics_tag,omitempty"`
+	// logisticsInfos
+	LogisticsInfos []LogisticsInfo `json:"logistics_infos,omitempty" xml:"logistics_infos>logistics_info,omitempty"`
 	// 交易编号 (父订单的交易编号)
 	Tid string `json:"tid,omitempty" xml:"tid,omitempty"`
-	// 商品购买数量。取值范围：大于零的整数,对于一个trade对应多个order的时候（一笔主订单，对应多笔子订单），num=0，num是一个跟商品关联的属性，一笔订单对应多比子订单的时候，主订单上的num无意义。
-	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
-	// 商品数字编号
-	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
 	// 交易状态。可选值:    * TRADE_NO_CREATE_PAY(没有创建支付宝交易)    * WAIT_BUYER_PAY(等待买家付款)    * SELLER_CONSIGNED_PART(卖家部分发货)    * WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)    * WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)    * TRADE_BUYER_SIGNED(买家已签收,货到付款专用)    * TRADE_FINISHED(交易成功)    * TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)    * TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)    * PAY_PENDING(国际信用卡支付付款确认中)    * WAIT_PRE_AUTH_CONFIRM(0元购合约中)	* PAID_FORBID_CONSIGN(拼团中订单或者发货强管控的订单，已付款但禁止发货)
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 交易类型列表，同时查询多种交易类型可用逗号分隔。默认同时查询guarantee_trade, auto_delivery, ec, cod的4种交易类型的数据 可选值 fixed(一口价) auction(拍卖) guarantee_trade(一口价、拍卖) auto_delivery(自动发货) independent_simple_trade(旺店入门版交易) independent_shop_trade(旺店标准版交易) ec(直冲) cod(货到付款) fenxiao(分销) game_equipment(游戏装备) shopex_trade(ShopEX交易) netcn_trade(万网交易) external_trade(统一外部交易)o2o_offlinetrade（O2O交易）step (万人团)nopaid(无付款订单)pre_auth_type(预授权0元购机交易)
@@ -18,8 +24,6 @@ type Trade struct {
 	TotalFee string `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
 	// 交易创建时间。格式:yyyy-MM-dd HH:mm:ss
 	Created string `json:"created,omitempty" xml:"created,omitempty"`
-	// 订单列表
-	Orders []Order `json:"orders,omitempty" xml:"orders>order,omitempty"`
 	// 买家的openuid,入参fields中传入buyer_nick ，才能返回
 	BuyerOpenUid string `json:"buyer_open_uid,omitempty" xml:"buyer_open_uid,omitempty"`
 	// 付款时间。格式:yyyy-MM-dd HH:mm:ss。订单的付款时间即为物流订单的创建时间。
@@ -30,10 +34,6 @@ type Trade struct {
 	BuyerMemo string `json:"buyer_memo,omitempty" xml:"buyer_memo,omitempty"`
 	// 邮费。精确到2位小数;单位:元。如:200.07，表示:200元7分
 	PostFee string `json:"post_fee,omitempty" xml:"post_fee,omitempty"`
-	// 是否包含邮费。与available_confirm_fee同时使用。可选值:true(包含),false(不包含)
-	HasPostFee bool `json:"has_post_fee,omitempty" xml:"has_post_fee,omitempty"`
-	// 优惠详情
-	PromotionDetails []PromotionDetail `json:"promotion_details,omitempty" xml:"promotion_details>promotion_detail,omitempty"`
 	// 分阶段付款的订单状态（例如万人团订单等），目前有三返回状态FRONT_NOPAID_FINAL_NOPAID(定金未付尾款未付)，FRONT_PAID_FINAL_NOPAID(定金已付尾款未付)，FRONT_PAID_FINAL_PAID(定金和尾款都付)
 	StepTradeStatus string `json:"step_trade_status,omitempty" xml:"step_trade_status,omitempty"`
 	// 分阶段付款的已付金额（万人团订单已付金额）
@@ -46,8 +46,6 @@ type Trade struct {
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
 	// 商品图片绝对途径
 	PicPath string `json:"pic_path,omitempty" xml:"pic_path,omitempty"`
-	// 卖家是否已评价。可选值:true(已评价),false(未评价)
-	SellerRate bool `json:"seller_rate,omitempty" xml:"seller_rate,omitempty"`
 	// 收货人的姓名
 	ReceiverName string `json:"receiver_name,omitempty" xml:"receiver_name,omitempty"`
 	// 收货人的所在省份
@@ -82,10 +80,6 @@ type Trade struct {
 	BizCode string `json:"biz_code,omitempty" xml:"biz_code,omitempty"`
 	// 值为1，且bizCode不为tmall.daogoubao.cloudstore时，为旗舰店订单
 	CloudStore string `json:"cloud_store,omitempty" xml:"cloud_store,omitempty"`
-	// 预售单为true，否则false (云店订单专用)
-	NewPresell bool `json:"new_presell,omitempty" xml:"new_presell,omitempty"`
-	// 优享购为true，否则false(云店订单专用)
-	YouXiang bool `json:"you_xiang,omitempty" xml:"you_xiang,omitempty"`
 	// 默认为0,0 表示用户主动支付1 表示系统代扣2 表示保险赔付
 	PayChannel string `json:"pay_channel,omitempty" xml:"pay_channel,omitempty"`
 	// 交易标题，以店铺名作为此标题的值。注:taobao.trades.get接口返回的Trade中的title是商品名称
@@ -96,16 +90,10 @@ type Trade struct {
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 买家留言
 	BuyerMessage string `json:"buyer_message,omitempty" xml:"buyer_message,omitempty"`
-	// 买家备注旗帜（与淘宝网上订单的买家备注旗帜对应，只有买家才能查看该字段）红、黄、绿、蓝、紫 分别对应 1、2、3、4、5
-	BuyerFlag int64 `json:"buyer_flag,omitempty" xml:"buyer_flag,omitempty"`
-	// 卖家备注旗帜（与淘宝网上订单的卖家备注旗帜对应，只有卖家才能查看该字段）红、黄、绿、蓝、紫 分别对应 1、2、3、4、5
-	SellerFlag int64 `json:"seller_flag,omitempty" xml:"seller_flag,omitempty"`
 	// 买家昵称
 	BuyerNick string `json:"buyer_nick,omitempty" xml:"buyer_nick,omitempty"`
 	// top动态字段
 	TradeAttr string `json:"trade_attr,omitempty" xml:"trade_attr,omitempty"`
-	// 订单中是否包含运费险订单，如果包含运费险订单返回true，不包含运费险订单，返回false
-	HasYfx bool `json:"has_yfx,omitempty" xml:"has_yfx,omitempty"`
 	// 订单的运费险，单位为元
 	YfxFee string `json:"yfx_fee,omitempty" xml:"yfx_fee,omitempty"`
 	// 使用信用卡支付金额数
@@ -120,16 +108,10 @@ type Trade struct {
 	AdjustFee string `json:"adjust_fee,omitempty" xml:"adjust_fee,omitempty"`
 	// 交易内部来源。WAP(手机);HITAO(嗨淘);TOP(TOP平台);TAOBAO(普通淘宝);JHS(聚划算)一笔订单可能同时有以上多个标记，则以逗号分隔
 	TradeFrom string `json:"trade_from,omitempty" xml:"trade_from,omitempty"`
-	// 服务子订单列表
-	ServiceOrders []ServiceOrder `json:"service_orders,omitempty" xml:"service_orders>service_order,omitempty"`
-	// 买家是否已评价。可选值:true(已评价),false(未评价)。如买家只评价未打分，此字段仍返回false
-	BuyerRate bool `json:"buyer_rate,omitempty" xml:"buyer_rate,omitempty"`
 	// 收货人的所在城市<br/>注：因为国家对于城市和地区的划分的有：省直辖市和省直辖县级行政区（区级别的）划分的，淘宝这边根据这个差异保存在不同字段里面比如：广东广州：广州属于一个直辖市是放在的receiver_city的字段里面；而河南济源：济源属于省直辖县级行政区划分，是区级别的，放在了receiver_district里面<br/>建议：程序依赖于城市字段做物流等判断的操作，最好加一个判断逻辑：如果返回值里面只有receiver_district参数，该参数作为城市
 	ReceiverCity string `json:"receiver_city,omitempty" xml:"receiver_city,omitempty"`
 	// 收货人的所在地区<br/>注：因为国家对于城市和地区的划分的有：省直辖市和省直辖县级行政区（区级别的）划分的，淘宝这边根据这个差异保存在不同字段里面比如：广东广州：广州属于一个直辖市是放在的receiver_city的字段里面；而河南济源：济源属于省直辖县级行政区划分，是区级别的，放在了receiver_district里面<br/>建议：程序依赖于城市字段做物流等判断的操作，最好加一个判断逻辑：如果返回值里面只有receiver_district参数，该参数作为城市
 	ReceiverDistrict string `json:"receiver_district,omitempty" xml:"receiver_district,omitempty"`
-	// 物流标签
-	ServiceTags []LogisticsTag `json:"service_tags,omitempty" xml:"service_tags>logistics_tag,omitempty"`
 	// 导购宝=crm
 	O2o string `json:"o2o,omitempty" xml:"o2o,omitempty"`
 	// 导购员id
@@ -142,8 +124,6 @@ type Trade struct {
 	O2oShopName string `json:"o2o_shop_name,omitempty" xml:"o2o_shop_name,omitempty"`
 	// 导购宝提货方式，inshop：店内提货，online：线上发货
 	O2oDelivery string `json:"o2o_delivery,omitempty" xml:"o2o_delivery,omitempty"`
-	// 交易扩展表信息
-	TradeExt *TradeExt `json:"trade_ext,omitempty" xml:"trade_ext,omitempty"`
 	// 天猫电子凭证家装
 	EticketServiceAddr string `json:"eticket_service_addr,omitempty" xml:"eticket_service_addr,omitempty"`
 	// 处方药未审核状态
@@ -156,34 +136,18 @@ type Trade struct {
 	OsDate string `json:"os_date,omitempty" xml:"os_date,omitempty"`
 	// 时间段
 	OsRange string `json:"os_range,omitempty" xml:"os_range,omitempty"`
-	// 订单中使用红包付款的金额
-	CouponFee int64 `json:"coupon_fee,omitempty" xml:"coupon_fee,omitempty"`
 	// 分阶段交易的特权定金订单ID
 	O2oEtOrderId string `json:"o2o_et_order_id,omitempty" xml:"o2o_et_order_id,omitempty"`
-	// 邮关订单
-	PostGateDeclare bool `json:"post_gate_declare,omitempty" xml:"post_gate_declare,omitempty"`
-	// 跨境订单
-	CrossBondedDeclare bool `json:"cross_bonded_declare,omitempty" xml:"cross_bonded_declare,omitempty"`
 	// 全渠道商品通相关字段
 	OmnichannelParam string `json:"omnichannel_param,omitempty" xml:"omnichannel_param,omitempty"`
 	// 组合商品
 	Assembly string `json:"assembly,omitempty" xml:"assembly,omitempty"`
-	// TOP拦截标识，0不拦截，1拦截
-	TopHold int64 `json:"top_hold,omitempty" xml:"top_hold,omitempty"`
 	// 星盘标识字段
 	OmniAttr string `json:"omni_attr,omitempty" xml:"omni_attr,omitempty"`
 	// 星盘业务字段
 	OmniParam string `json:"omni_param,omitempty" xml:"omni_param,omitempty"`
-	// 聚划算一起买字段
-	ForbidConsign int64 `json:"forbid_consign,omitempty" xml:"forbid_consign,omitempty"`
 	// 采购订单标识
 	Identity string `json:"identity,omitempty" xml:"identity,omitempty"`
-	// 天猫拼团拦截标示
-	TeamBuyHold int64 `json:"team_buy_hold,omitempty" xml:"team_buy_hold,omitempty"`
-	// shareGroupHold
-	ShareGroupHold int64 `json:"share_group_hold,omitempty" xml:"share_group_hold,omitempty"`
-	// 天猫国际拦截
-	OfpHold int64 `json:"ofp_hold,omitempty" xml:"ofp_hold,omitempty"`
 	// 组装O2O多阶段尾款订单的明细数据 总阶段数，当前阶数，阶段金额（单位：分），支付状态，例如 3_1_100_paid ; 3_2_2000_nopaid
 	O2oStepTradeDetail string `json:"o2o_step_trade_detail,omitempty" xml:"o2o_step_trade_detail,omitempty"`
 	// 特权定金订单的尾款订单ID
@@ -192,10 +156,6 @@ type Trade struct {
 	O2oVoucherPrice string `json:"o2o_voucher_price,omitempty" xml:"o2o_voucher_price,omitempty"`
 	// 天猫国际计税优惠金额
 	OrderTaxPromotionFee string `json:"order_tax_promotion_fee,omitempty" xml:"order_tax_promotion_fee,omitempty"`
-	// 聚划算火拼标记
-	DelayCreateDelivery int64 `json:"delay_create_delivery,omitempty" xml:"delay_create_delivery,omitempty"`
-	// top定义订单类型
-	Toptype int64 `json:"toptype,omitempty" xml:"toptype,omitempty"`
 	// serviceType
 	ServiceType string `json:"service_type,omitempty" xml:"service_type,omitempty"`
 	// o2oServiceMobile
@@ -230,8 +190,6 @@ type Trade struct {
 	NrOffline string `json:"nr_offline,omitempty" xml:"nr_offline,omitempty"`
 	// 网厅订单垂直表信息
 	WttParam string `json:"wtt_param,omitempty" xml:"wtt_param,omitempty"`
-	// logisticsInfos
-	LogisticsInfos []LogisticsInfo `json:"logistics_infos,omitempty" xml:"logistics_infos>logistics_info,omitempty"`
 	// nrStoreOrderId
 	NrStoreOrderId string `json:"nr_store_order_id,omitempty" xml:"nr_store_order_id,omitempty"`
 	// 门店 ID
@@ -244,24 +202,16 @@ type Trade struct {
 	NrShopGuideName string `json:"nr_shop_guide_name,omitempty" xml:"nr_shop_guide_name,omitempty"`
 	// sortInfo
 	SortInfo string `json:"sort_info,omitempty" xml:"sort_info,omitempty"`
-	// 1已排序 2不排序
-	Sorted int64 `json:"sorted,omitempty" xml:"sorted,omitempty"`
 	// 一小时达不处理订单
 	NrNoHandle string `json:"nr_no_handle,omitempty" xml:"nr_no_handle,omitempty"`
-	// isGift
-	IsGift bool `json:"is_gift,omitempty" xml:"is_gift,omitempty"`
 	// doneeNick
 	DoneeNick string `json:"donee_nick,omitempty" xml:"donee_nick,omitempty"`
 	// doneeUid
 	DoneeOpenUid string `json:"donee_open_uid,omitempty" xml:"donee_open_uid,omitempty"`
 	// suningShopCode
 	SuningShopCode string `json:"suning_shop_code,omitempty" xml:"suning_shop_code,omitempty"`
-	// suningShopValid
-	SuningShopValid int64 `json:"suning_shop_valid,omitempty" xml:"suning_shop_valid,omitempty"`
 	// retailStoreId
 	RetailStoreId string `json:"retail_store_id,omitempty" xml:"retail_store_id,omitempty"`
-	// isIstore
-	IsIstore bool `json:"is_istore,omitempty" xml:"is_istore,omitempty"`
 	// ua
 	Ua string `json:"ua,omitempty" xml:"ua,omitempty"`
 	// 截单时间
@@ -342,8 +292,6 @@ type Trade struct {
 	IsWmly string `json:"is_wmly,omitempty" xml:"is_wmly,omitempty"`
 	// 全渠道包裹信息
 	OmniPackage string `json:"omni_package,omitempty" xml:"omni_package,omitempty"`
-	// 购物金信息输出
-	ExpandcardInfo *ExpandCardInfo `json:"expandcard_info,omitempty" xml:"expandcard_info,omitempty"`
 	// 苹果发票详情
 	InvoiceDetailAfterRefund string `json:"invoice_detail_after_refund,omitempty" xml:"invoice_detail_after_refund,omitempty"`
 	// 苹果发票详情
@@ -358,36 +306,90 @@ type Trade struct {
 	ExpandCardBasicPriceUsed string `json:"expand_card_basic_price_used,omitempty" xml:"expand_card_basic_price_used,omitempty"`
 	// 用卡订单所用的权益金
 	ExpandCardExpandPriceUsed string `json:"expand_card_expand_price_used,omitempty" xml:"expand_card_expand_price_used,omitempty"`
-	// 是否是Openmall订单
-	IsOpenmall bool `json:"is_openmall,omitempty" xml:"is_openmall,omitempty"`
 	// asdp业务身份
 	AsdpBizType string `json:"asdp_biz_type,omitempty" xml:"asdp_biz_type,omitempty"`
 	// (收货人+手机号+收货地址+create）4字段返回值都都不能为空，否则生成不了oaid
 	Oaid string `json:"oaid,omitempty" xml:"oaid,omitempty"`
-	// 是否是码上收订单
-	VLogisticsCreate bool `json:"v_logistics_create,omitempty" xml:"v_logistics_create,omitempty"`
-	// 是否是非物流订单
-	QRPay bool `json:"q_r_pay,omitempty" xml:"q_r_pay,omitempty"`
 	// 关联下单订单
 	OrderFollowId string `json:"order_follow_id,omitempty" xml:"order_follow_id,omitempty"`
-	// 无物流信息返回true，平台属性，业务不要依赖
-	NoShipping bool `json:"no_shipping,omitempty" xml:"no_shipping,omitempty"`
 	// 送货上门标
 	AsdpAds string `json:"asdp_ads,omitempty" xml:"asdp_ads,omitempty"`
-	// 是否屏蔽发货
-	IsShShip bool `json:"is_sh_ship,omitempty" xml:"is_sh_ship,omitempty"`
 	// 抢单状态0,未处理待分发;1,抢单中;2,已抢单;3,已发货;-1,超时;-2,处理异常;-3,匹配失败;-4,取消抢单;-5,退款取消;-9,逻辑删除
 	O2oSnatchStatus string `json:"o2o_snatch_status,omitempty" xml:"o2o_snatch_status,omitempty"`
 	// 垂直市场
 	Market string `json:"market,omitempty" xml:"market,omitempty"`
 	// 电子凭证扫码购-扫码支付订单type
 	EtType string `json:"et_type,omitempty" xml:"et_type,omitempty"`
-	// 扫码购关联门店
-	EtShopId int64 `json:"et_shop_id,omitempty" xml:"et_shop_id,omitempty"`
 	// 门店预约自提订单标
 	Obs string `json:"obs,omitempty" xml:"obs,omitempty"`
 	// 透出前置营销工具
 	Pmtp string `json:"pmtp,omitempty" xml:"pmtp,omitempty"`
+	// 天猫直送服务
+	CnService string `json:"cn_service,omitempty" xml:"cn_service,omitempty"`
+	// 商品购买数量。取值范围：大于零的整数,对于一个trade对应多个order的时候（一笔主订单，对应多笔子订单），num=0，num是一个跟商品关联的属性，一笔订单对应多比子订单的时候，主订单上的num无意义。
+	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
+	// 商品数字编号
+	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
+	// 买家备注旗帜（与淘宝网上订单的买家备注旗帜对应，只有买家才能查看该字段）红、黄、绿、蓝、紫 分别对应 1、2、3、4、5
+	BuyerFlag int64 `json:"buyer_flag,omitempty" xml:"buyer_flag,omitempty"`
+	// 卖家备注旗帜（与淘宝网上订单的卖家备注旗帜对应，只有卖家才能查看该字段）红、黄、绿、蓝、紫 分别对应 1、2、3、4、5
+	SellerFlag int64 `json:"seller_flag,omitempty" xml:"seller_flag,omitempty"`
+	// 交易扩展表信息
+	TradeExt *TradeExt `json:"trade_ext,omitempty" xml:"trade_ext,omitempty"`
+	// 订单中使用红包付款的金额
+	CouponFee int64 `json:"coupon_fee,omitempty" xml:"coupon_fee,omitempty"`
+	// TOP拦截标识，0不拦截，1拦截
+	TopHold int64 `json:"top_hold,omitempty" xml:"top_hold,omitempty"`
+	// 聚划算一起买字段
+	ForbidConsign int64 `json:"forbid_consign,omitempty" xml:"forbid_consign,omitempty"`
+	// 天猫拼团拦截标示
+	TeamBuyHold int64 `json:"team_buy_hold,omitempty" xml:"team_buy_hold,omitempty"`
+	// shareGroupHold
+	ShareGroupHold int64 `json:"share_group_hold,omitempty" xml:"share_group_hold,omitempty"`
+	// 天猫国际拦截
+	OfpHold int64 `json:"ofp_hold,omitempty" xml:"ofp_hold,omitempty"`
+	// 聚划算火拼标记
+	DelayCreateDelivery int64 `json:"delay_create_delivery,omitempty" xml:"delay_create_delivery,omitempty"`
+	// top定义订单类型
+	Toptype int64 `json:"toptype,omitempty" xml:"toptype,omitempty"`
+	// 1已排序 2不排序
+	Sorted int64 `json:"sorted,omitempty" xml:"sorted,omitempty"`
+	// suningShopValid
+	SuningShopValid int64 `json:"suning_shop_valid,omitempty" xml:"suning_shop_valid,omitempty"`
+	// 购物金信息输出
+	ExpandcardInfo *ExpandCardInfo `json:"expandcard_info,omitempty" xml:"expandcard_info,omitempty"`
+	// 扫码购关联门店
+	EtShopId int64 `json:"et_shop_id,omitempty" xml:"et_shop_id,omitempty"`
+	// 是否包含邮费。与available_confirm_fee同时使用。可选值:true(包含),false(不包含)
+	HasPostFee bool `json:"has_post_fee,omitempty" xml:"has_post_fee,omitempty"`
+	// 卖家是否已评价。可选值:true(已评价),false(未评价)
+	SellerRate bool `json:"seller_rate,omitempty" xml:"seller_rate,omitempty"`
+	// 预售单为true，否则false (云店订单专用)
+	NewPresell bool `json:"new_presell,omitempty" xml:"new_presell,omitempty"`
+	// 优享购为true，否则false(云店订单专用)
+	YouXiang bool `json:"you_xiang,omitempty" xml:"you_xiang,omitempty"`
+	// 订单中是否包含运费险订单，如果包含运费险订单返回true，不包含运费险订单，返回false
+	HasYfx bool `json:"has_yfx,omitempty" xml:"has_yfx,omitempty"`
+	// 买家是否已评价。可选值:true(已评价),false(未评价)。如买家只评价未打分，此字段仍返回false
+	BuyerRate bool `json:"buyer_rate,omitempty" xml:"buyer_rate,omitempty"`
+	// 邮关订单
+	PostGateDeclare bool `json:"post_gate_declare,omitempty" xml:"post_gate_declare,omitempty"`
+	// 跨境订单
+	CrossBondedDeclare bool `json:"cross_bonded_declare,omitempty" xml:"cross_bonded_declare,omitempty"`
+	// isGift
+	IsGift bool `json:"is_gift,omitempty" xml:"is_gift,omitempty"`
+	// isIstore
+	IsIstore bool `json:"is_istore,omitempty" xml:"is_istore,omitempty"`
+	// 是否是Openmall订单
+	IsOpenmall bool `json:"is_openmall,omitempty" xml:"is_openmall,omitempty"`
+	// 是否是码上收订单
+	VLogisticsCreate bool `json:"v_logistics_create,omitempty" xml:"v_logistics_create,omitempty"`
+	// 是否是非物流订单
+	QRPay bool `json:"q_r_pay,omitempty" xml:"q_r_pay,omitempty"`
+	// 无物流信息返回true，平台属性，业务不要依赖
+	NoShipping bool `json:"no_shipping,omitempty" xml:"no_shipping,omitempty"`
+	// 是否屏蔽发货
+	IsShShip bool `json:"is_sh_ship,omitempty" xml:"is_sh_ship,omitempty"`
 	// 判断订单是否有买家留言，有买家留言返回true，否则返回false
 	HasBuyerMessage bool `json:"has_buyer_message,omitempty" xml:"has_buyer_message,omitempty"`
 	// threeplTiming
@@ -396,6 +398,4 @@ type Trade struct {
 	IsO2oPassport bool `json:"is_o2o_passport,omitempty" xml:"is_o2o_passport,omitempty"`
 	// tmallDelivery
 	TmallDelivery bool `json:"tmall_delivery,omitempty" xml:"tmall_delivery,omitempty"`
-	// 天猫直送服务
-	CnService string `json:"cn_service,omitempty" xml:"cn_service,omitempty"`
 }

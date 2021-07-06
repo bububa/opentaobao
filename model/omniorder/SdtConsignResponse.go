@@ -10,10 +10,10 @@ type SdtConsignResponse struct {
 	DeliveryUserPhone string `json:"delivery_user_phone,omitempty" xml:"delivery_user_phone,omitempty"`
 	// 接单小件员姓名
 	DeliveryUserName string `json:"delivery_user_name,omitempty" xml:"delivery_user_name,omitempty"`
+	// 物流订单号list
+	LpCodeList string `json:"lp_code_list,omitempty" xml:"lp_code_list,omitempty"`
 	// 商家id
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 包裹id
 	PackageId int64 `json:"package_id,omitempty" xml:"package_id,omitempty"`
-	// 物流订单号list
-	LpCodeList string `json:"lp_code_list,omitempty" xml:"lp_code_list,omitempty"`
 }

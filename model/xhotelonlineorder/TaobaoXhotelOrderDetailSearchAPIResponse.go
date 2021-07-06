@@ -20,10 +20,10 @@ type TaobaoXhotelOrderDetailSearchAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_detail_search_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 订单详情对象
-	TopOrderDetail *TopOrderDetail `json:"top_order_detail,omitempty" xml:"top_order_detail,omitempty"`
 	// 错误描述
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误编号
 	Error string `json:"error,omitempty" xml:"error,omitempty"`
+	// 订单详情对象
+	TopOrderDetail *TopOrderDetail `json:"top_order_detail,omitempty" xml:"top_order_detail,omitempty"`
 }

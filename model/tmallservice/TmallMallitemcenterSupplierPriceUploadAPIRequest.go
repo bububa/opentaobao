@@ -12,10 +12,10 @@ import (
 // 天猫服务商上传服务价格
 type TmallMallitemcenterSupplierPriceUploadAPIRequest struct {
 	model.Params
-	// 服务code
-	_serviceCode string
 	// 服务商门店价格列表
 	_providerPriceList []StoreOfferPriceDto
+	// 服务code
+	_serviceCode string
 }
 
 // NewTmallMallitemcenterSupplierPriceUploadRequest 初始化TmallMallitemcenterSupplierPriceUploadAPIRequest对象
@@ -39,19 +39,6 @@ func (r TmallMallitemcenterSupplierPriceUploadAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// SetServiceCode is ServiceCode Setter
-// 服务code
-func (r *TmallMallitemcenterSupplierPriceUploadAPIRequest) SetServiceCode(_serviceCode string) error {
-	r._serviceCode = _serviceCode
-	r.Set("service_code", _serviceCode)
-	return nil
-}
-
-// GetServiceCode ServiceCode Getter
-func (r TmallMallitemcenterSupplierPriceUploadAPIRequest) GetServiceCode() string {
-	return r._serviceCode
-}
-
 // SetProviderPriceList is ProviderPriceList Setter
 // 服务商门店价格列表
 func (r *TmallMallitemcenterSupplierPriceUploadAPIRequest) SetProviderPriceList(_providerPriceList []StoreOfferPriceDto) error {
@@ -63,4 +50,17 @@ func (r *TmallMallitemcenterSupplierPriceUploadAPIRequest) SetProviderPriceList(
 // GetProviderPriceList ProviderPriceList Getter
 func (r TmallMallitemcenterSupplierPriceUploadAPIRequest) GetProviderPriceList() []StoreOfferPriceDto {
 	return r._providerPriceList
+}
+
+// SetServiceCode is ServiceCode Setter
+// 服务code
+func (r *TmallMallitemcenterSupplierPriceUploadAPIRequest) SetServiceCode(_serviceCode string) error {
+	r._serviceCode = _serviceCode
+	r.Set("service_code", _serviceCode)
+	return nil
+}
+
+// GetServiceCode ServiceCode Getter
+func (r TmallMallitemcenterSupplierPriceUploadAPIRequest) GetServiceCode() string {
+	return r._serviceCode
 }

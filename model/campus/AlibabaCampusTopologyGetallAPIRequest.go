@@ -12,12 +12,12 @@ import (
 // 获取所属园区的所有规则拓扑图
 type AlibabaCampusTopologyGetallAPIRequest struct {
 	model.Params
+	// 系统id
+	_systemId string
 	// 园区id
 	_campusId int64
 	// 公司id
 	_companyId int64
-	// 系统id
-	_systemId string
 }
 
 // NewAlibabaCampusTopologyGetallRequest 初始化AlibabaCampusTopologyGetallAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaCampusTopologyGetallAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSystemId is SystemId Setter
+// 系统id
+func (r *AlibabaCampusTopologyGetallAPIRequest) SetSystemId(_systemId string) error {
+	r._systemId = _systemId
+	r.Set("system_id", _systemId)
+	return nil
+}
+
+// GetSystemId SystemId Getter
+func (r AlibabaCampusTopologyGetallAPIRequest) GetSystemId() string {
+	return r._systemId
 }
 
 // SetCampusId is CampusId Setter
@@ -65,17 +78,4 @@ func (r *AlibabaCampusTopologyGetallAPIRequest) SetCompanyId(_companyId int64) e
 // GetCompanyId CompanyId Getter
 func (r AlibabaCampusTopologyGetallAPIRequest) GetCompanyId() int64 {
 	return r._companyId
-}
-
-// SetSystemId is SystemId Setter
-// 系统id
-func (r *AlibabaCampusTopologyGetallAPIRequest) SetSystemId(_systemId string) error {
-	r._systemId = _systemId
-	r.Set("system_id", _systemId)
-	return nil
-}
-
-// GetSystemId SystemId Getter
-func (r AlibabaCampusTopologyGetallAPIRequest) GetSystemId() string {
-	return r._systemId
 }

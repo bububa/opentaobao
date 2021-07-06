@@ -18,14 +18,14 @@ type TaobaoSmartstoreDeviceAddAPIRequest struct {
 	_indoorPosition string
 	// 设备名称
 	_deviceName string
-	// 门店ID
-	_storeId int64
 	// 操作系统类型：WINDOWS("WINDOWS", "WINDOWS"),     ANDROID("ANDROID", "ANDROID"),     IOS("IOS", "IOS"),     LINUX("LINUX", "LINUX"),     OTHER("OTHER", "OTHER");
 	_osType string
 	// 设备类型：     CAMERA("CAMERA", "客流摄像头"),     SHELF("SHELF", "云货架"),     MAKEUP_MIRROR("MAKEUP_MIRROR", "试妆镜"),     FITTING_MIRROR("FITTING_MIRROR", "试衣镜"),     VENDOR("VENDOR", "售货机"),     SAMPLE_MACHINE("SAMPLE_MACHINE","派样机"),     DOLL_MACHINE("DOLL_MACHINE", "娃娃机"),     INTERACTIVE_PHOTO("INTERACTIVE_PHOTO", "互动拍照"),     INTERACTIVE_GAME("INTERACTIVE_GAME", "互动游戏"),     USHER_SCREEN("USHER_SCREEN", "智慧迎宾屏"),     DRESSING("DRESSING", "闪电换装"),     MAGIC_MIRROR("MAGIC_MIRROR", "百搭魔镜"),     SHOES_FITTING_MIRROR("SHOES_FITTING_MIRROR", "试鞋镜"),     SKIN_DETECTION("SKIN_DETECTION", "肌肤测试仪"),     FOOT_DETECTION("FOOT_DETECTION", "测脚仪"),     RFID_SENSOR("RFID_SENSOR", "RFID"),touch_machine("touch_machine","导购一体屏")
 	_deviceType string
 	// 商家自定义设备编码
 	_outerCode string
+	// 门店ID
+	_storeId int64
 }
 
 // NewTaobaoSmartstoreDeviceAddRequest 初始化TaobaoSmartstoreDeviceAddAPIRequest对象
@@ -88,19 +88,6 @@ func (r TaobaoSmartstoreDeviceAddAPIRequest) GetDeviceName() string {
 	return r._deviceName
 }
 
-// SetStoreId is StoreId Setter
-// 门店ID
-func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetStoreId(_storeId int64) error {
-	r._storeId = _storeId
-	r.Set("store_id", _storeId)
-	return nil
-}
-
-// GetStoreId StoreId Getter
-func (r TaobaoSmartstoreDeviceAddAPIRequest) GetStoreId() int64 {
-	return r._storeId
-}
-
 // SetOsType is OsType Setter
 // 操作系统类型：WINDOWS("WINDOWS", "WINDOWS"),     ANDROID("ANDROID", "ANDROID"),     IOS("IOS", "IOS"),     LINUX("LINUX", "LINUX"),     OTHER("OTHER", "OTHER");
 func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetOsType(_osType string) error {
@@ -138,4 +125,17 @@ func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetOuterCode(_outerCode string) er
 // GetOuterCode OuterCode Getter
 func (r TaobaoSmartstoreDeviceAddAPIRequest) GetOuterCode() string {
 	return r._outerCode
+}
+
+// SetStoreId is StoreId Setter
+// 门店ID
+func (r *TaobaoSmartstoreDeviceAddAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// GetStoreId StoreId Getter
+func (r TaobaoSmartstoreDeviceAddAPIRequest) GetStoreId() int64 {
+	return r._storeId
 }

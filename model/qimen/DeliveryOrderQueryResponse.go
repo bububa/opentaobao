@@ -2,6 +2,10 @@ package qimen
 
 // DeliveryOrderQueryResponse 结构体
 type DeliveryOrderQueryResponse struct {
+	// 包裹信息
+	Packages []Package `json:"packages,omitempty" xml:"packages>package,omitempty"`
+	// 单据列表
+	OrderLines []OrderLine `json:"orderLines,omitempty" xml:"orderLines>order_line,omitempty"`
 	// 响应结果:success|failure
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应码
@@ -12,8 +16,4 @@ type DeliveryOrderQueryResponse struct {
 	TotalLines int64 `json:"totalLines,omitempty" xml:"totalLines,omitempty"`
 	// 发货单信息
 	DeliveryOrder *DeliveryOrder `json:"deliveryOrder,omitempty" xml:"deliveryOrder,omitempty"`
-	// 包裹信息
-	Packages []Package `json:"packages,omitempty" xml:"packages>package,omitempty"`
-	// 单据列表
-	OrderLines []OrderLine `json:"orderLines,omitempty" xml:"orderLines>order_line,omitempty"`
 }

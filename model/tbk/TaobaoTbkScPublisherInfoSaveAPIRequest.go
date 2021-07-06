@@ -20,12 +20,12 @@ type TaobaoTbkScPublisherInfoSaveAPIRequest struct {
 	_onlineScene string
 	// 淘宝客邀请渠道或会员的邀请码
 	_inviterCode string
-	// 类型，必选 默认为1:
-	_infoType int64
 	// 媒体侧渠道备注
 	_note string
 	// 线下备案注册信息,字段包含: 电话号码(phoneNumber，必填),省(province,必填),市(city,必填),区县街道(location,必填),详细地址(detailAddress,必填),经营类型(career,线下个人必填),店铺类型(shopType,线下店铺必填),店铺名称(shopName,线下店铺必填),店铺证书类型(shopCertifyType,线下店铺选填),店铺证书编号(certifyNumber,线下店铺选填)
 	_registerInfo string
+	// 类型，必选 默认为1:
+	_infoType int64
 }
 
 // NewTaobaoTbkScPublisherInfoSaveRequest 初始化TaobaoTbkScPublisherInfoSaveAPIRequest对象
@@ -101,19 +101,6 @@ func (r TaobaoTbkScPublisherInfoSaveAPIRequest) GetInviterCode() string {
 	return r._inviterCode
 }
 
-// SetInfoType is InfoType Setter
-// 类型，必选 默认为1:
-func (r *TaobaoTbkScPublisherInfoSaveAPIRequest) SetInfoType(_infoType int64) error {
-	r._infoType = _infoType
-	r.Set("info_type", _infoType)
-	return nil
-}
-
-// GetInfoType InfoType Getter
-func (r TaobaoTbkScPublisherInfoSaveAPIRequest) GetInfoType() int64 {
-	return r._infoType
-}
-
 // SetNote is Note Setter
 // 媒体侧渠道备注
 func (r *TaobaoTbkScPublisherInfoSaveAPIRequest) SetNote(_note string) error {
@@ -138,4 +125,17 @@ func (r *TaobaoTbkScPublisherInfoSaveAPIRequest) SetRegisterInfo(_registerInfo s
 // GetRegisterInfo RegisterInfo Getter
 func (r TaobaoTbkScPublisherInfoSaveAPIRequest) GetRegisterInfo() string {
 	return r._registerInfo
+}
+
+// SetInfoType is InfoType Setter
+// 类型，必选 默认为1:
+func (r *TaobaoTbkScPublisherInfoSaveAPIRequest) SetInfoType(_infoType int64) error {
+	r._infoType = _infoType
+	r.Set("info_type", _infoType)
+	return nil
+}
+
+// GetInfoType InfoType Getter
+func (r TaobaoTbkScPublisherInfoSaveAPIRequest) GetInfoType() int64 {
+	return r._infoType
 }

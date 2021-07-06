@@ -14,12 +14,12 @@ type TaobaoBusHistoryorderGetAPIRequest struct {
 	model.Params
 	// 开始时间 2017-04-23 13:33:43
 	_fromDate string
-	// 分页大小 不超过1w
-	_pageSize int64
 	// 结束时间 2017-04-23 13:33:43
 	_toDate string
 	// offline_ticket 线下自助机； online_ticket：线上售票； 空 代表查全部
 	_type string
+	// 分页大小 不超过1w
+	_pageSize int64
 	// 第几页 从1开始
 	_pageIndex int64
 }
@@ -58,19 +58,6 @@ func (r TaobaoBusHistoryorderGetAPIRequest) GetFromDate() string {
 	return r._fromDate
 }
 
-// SetPageSize is PageSize Setter
-// 分页大小 不超过1w
-func (r *TaobaoBusHistoryorderGetAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoBusHistoryorderGetAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetToDate is ToDate Setter
 // 结束时间 2017-04-23 13:33:43
 func (r *TaobaoBusHistoryorderGetAPIRequest) SetToDate(_toDate string) error {
@@ -95,6 +82,19 @@ func (r *TaobaoBusHistoryorderGetAPIRequest) SetType(_type string) error {
 // GetType Type Getter
 func (r TaobaoBusHistoryorderGetAPIRequest) GetType() string {
 	return r._type
+}
+
+// SetPageSize is PageSize Setter
+// 分页大小 不超过1w
+func (r *TaobaoBusHistoryorderGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoBusHistoryorderGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
 // SetPageIndex is PageIndex Setter

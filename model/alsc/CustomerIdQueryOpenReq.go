@@ -2,6 +2,8 @@ package alsc
 
 // CustomerIdQueryOpenReq 结构体
 type CustomerIdQueryOpenReq struct {
+	// 查询选项，默认查询顾客基础信息， CARD：查询顾客名下的卡列表  ,RECHARGE：查询卡下的储值账户信息  ,POINT：查询顾客的积分信息.
+	Options []string `json:"options,omitempty" xml:"options>string,omitempty"`
 	// 品牌ID 外部品牌id 2选1
 	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
 	// 店铺ID和外部门店ID必须一
@@ -26,6 +28,4 @@ type CustomerIdQueryOpenReq struct {
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
 	// 支付宝ID
 	AlipayId string `json:"alipay_id,omitempty" xml:"alipay_id,omitempty"`
-	// 查询选项，默认查询顾客基础信息， CARD：查询顾客名下的卡列表  ,RECHARGE：查询卡下的储值账户信息  ,POINT：查询顾客的积分信息.
-	Options []string `json:"options,omitempty" xml:"options>string,omitempty"`
 }

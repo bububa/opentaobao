@@ -12,10 +12,10 @@ import (
 // 支付宝短链跳转三方h5通用接口
 type AlibabaAlihealthShortUrlGetAPIRequest struct {
 	model.Params
-	// 三方h5
-	_url string
 	// 参数替换列表
 	_params []string
+	// 三方h5
+	_url string
 }
 
 // NewAlibabaAlihealthShortUrlGetRequest 初始化AlibabaAlihealthShortUrlGetAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaAlihealthShortUrlGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetUrl is Url Setter
-// 三方h5
-func (r *AlibabaAlihealthShortUrlGetAPIRequest) SetUrl(_url string) error {
-	r._url = _url
-	r.Set("url", _url)
-	return nil
-}
-
-// GetUrl Url Getter
-func (r AlibabaAlihealthShortUrlGetAPIRequest) GetUrl() string {
-	return r._url
-}
-
 // SetParams is Params Setter
 // 参数替换列表
 func (r *AlibabaAlihealthShortUrlGetAPIRequest) SetParams(_params []string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaAlihealthShortUrlGetAPIRequest) SetParams(_params []string) erro
 // GetParams Params Getter
 func (r AlibabaAlihealthShortUrlGetAPIRequest) GetParams() []string {
 	return r._params
+}
+
+// SetUrl is Url Setter
+// 三方h5
+func (r *AlibabaAlihealthShortUrlGetAPIRequest) SetUrl(_url string) error {
+	r._url = _url
+	r.Set("url", _url)
+	return nil
+}
+
+// GetUrl Url Getter
+func (r AlibabaAlihealthShortUrlGetAPIRequest) GetUrl() string {
+	return r._url
 }

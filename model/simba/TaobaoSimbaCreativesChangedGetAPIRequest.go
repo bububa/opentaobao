@@ -14,12 +14,12 @@ type TaobaoSimbaCreativesChangedGetAPIRequest struct {
 	model.Params
 	// 主人昵称
 	_nick string
+	// 得到此时间点之后的数据，不能大于一个月
+	_startTime string
 	// 返回的每页数据量大小,默认200最大1000
 	_pageSize int64
 	// 返回的第几页数据，默认为1
 	_pageNo int64
-	// 得到此时间点之后的数据，不能大于一个月
-	_startTime string
 }
 
 // NewTaobaoSimbaCreativesChangedGetRequest 初始化TaobaoSimbaCreativesChangedGetAPIRequest对象
@@ -56,6 +56,19 @@ func (r TaobaoSimbaCreativesChangedGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
+// SetStartTime is StartTime Setter
+// 得到此时间点之后的数据，不能大于一个月
+func (r *TaobaoSimbaCreativesChangedGetAPIRequest) SetStartTime(_startTime string) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
+	return nil
+}
+
+// GetStartTime StartTime Getter
+func (r TaobaoSimbaCreativesChangedGetAPIRequest) GetStartTime() string {
+	return r._startTime
+}
+
 // SetPageSize is PageSize Setter
 // 返回的每页数据量大小,默认200最大1000
 func (r *TaobaoSimbaCreativesChangedGetAPIRequest) SetPageSize(_pageSize int64) error {
@@ -80,17 +93,4 @@ func (r *TaobaoSimbaCreativesChangedGetAPIRequest) SetPageNo(_pageNo int64) erro
 // GetPageNo PageNo Getter
 func (r TaobaoSimbaCreativesChangedGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
-}
-
-// SetStartTime is StartTime Setter
-// 得到此时间点之后的数据，不能大于一个月
-func (r *TaobaoSimbaCreativesChangedGetAPIRequest) SetStartTime(_startTime string) error {
-	r._startTime = _startTime
-	r.Set("start_time", _startTime)
-	return nil
-}
-
-// GetStartTime StartTime Getter
-func (r TaobaoSimbaCreativesChangedGetAPIRequest) GetStartTime() string {
-	return r._startTime
 }

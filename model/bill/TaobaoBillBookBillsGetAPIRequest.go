@@ -12,18 +12,18 @@ import (
 // 查询虚拟账户明细数据
 type TaobaoBillBookBillsGetAPIRequest struct {
 	model.Params
-	// 虚拟账户科目编号
-	_accountId int64
 	// 明细流水类型:流水类型:101、可用金充值；102、可用金扣除；103、冻结；104、解冻；105、冻结金充值；106、冻结金扣除
 	_journalTypes []int64
 	// 记账开始时间
 	_startTime string
 	// 记账结束时间,end_time与start_time相差不能超过30天
 	_endTime string
-	// 每页大小,建议40~100,不能超过100
-	_pageSize int64
 	// 需要返回的字段:bid,account_id,journal_type,amount,book_time,description,gmt_create,gmt_modified ,如果不是以上字段将自动忽略
 	_fields string
+	// 虚拟账户科目编号
+	_accountId int64
+	// 每页大小,建议40~100,不能超过100
+	_pageSize int64
 	// 页码,传入值为1代表第一页,传入值为2代表第二页,依此类推.默认返回的数据是从第一页开始
 	_pageNo int64
 }
@@ -47,19 +47,6 @@ func (r TaobaoBillBookBillsGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetAccountId is AccountId Setter
-// 虚拟账户科目编号
-func (r *TaobaoBillBookBillsGetAPIRequest) SetAccountId(_accountId int64) error {
-	r._accountId = _accountId
-	r.Set("account_id", _accountId)
-	return nil
-}
-
-// GetAccountId AccountId Getter
-func (r TaobaoBillBookBillsGetAPIRequest) GetAccountId() int64 {
-	return r._accountId
 }
 
 // SetJournalTypes is JournalTypes Setter
@@ -101,19 +88,6 @@ func (r TaobaoBillBookBillsGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// SetPageSize is PageSize Setter
-// 每页大小,建议40~100,不能超过100
-func (r *TaobaoBillBookBillsGetAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoBillBookBillsGetAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetFields is Fields Setter
 // 需要返回的字段:bid,account_id,journal_type,amount,book_time,description,gmt_create,gmt_modified ,如果不是以上字段将自动忽略
 func (r *TaobaoBillBookBillsGetAPIRequest) SetFields(_fields string) error {
@@ -125,6 +99,32 @@ func (r *TaobaoBillBookBillsGetAPIRequest) SetFields(_fields string) error {
 // GetFields Fields Getter
 func (r TaobaoBillBookBillsGetAPIRequest) GetFields() string {
 	return r._fields
+}
+
+// SetAccountId is AccountId Setter
+// 虚拟账户科目编号
+func (r *TaobaoBillBookBillsGetAPIRequest) SetAccountId(_accountId int64) error {
+	r._accountId = _accountId
+	r.Set("account_id", _accountId)
+	return nil
+}
+
+// GetAccountId AccountId Getter
+func (r TaobaoBillBookBillsGetAPIRequest) GetAccountId() int64 {
+	return r._accountId
+}
+
+// SetPageSize is PageSize Setter
+// 每页大小,建议40~100,不能超过100
+func (r *TaobaoBillBookBillsGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoBillBookBillsGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
 // SetPageNo is PageNo Setter

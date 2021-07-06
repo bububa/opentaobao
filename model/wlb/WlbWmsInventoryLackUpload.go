@@ -2,6 +2,8 @@ package wlb
 
 // WlbWmsInventoryLackUpload 结构体
 type WlbWmsInventoryLackUpload struct {
+	// 商品信息列表
+	ItemList []ItemListWlbWmsInventoryLackUpload `json:"item_list,omitempty" xml:"item_list>item_list_wlb_wms_inventory_lack_upload,omitempty"`
 	// 创建时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 外部业务编码;消息ID，用于去重
@@ -12,6 +14,4 @@ type WlbWmsInventoryLackUpload struct {
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
 	// 仓库编码
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
-	// 商品信息列表
-	ItemList []ItemListWlbWmsInventoryLackUpload `json:"item_list,omitempty" xml:"item_list>item_list_wlb_wms_inventory_lack_upload,omitempty"`
 }

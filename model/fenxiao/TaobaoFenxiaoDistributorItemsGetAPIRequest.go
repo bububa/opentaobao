@@ -12,12 +12,12 @@ import (
 // 供应商查询分销商商品下载记录。
 type TaobaoFenxiaoDistributorItemsGetAPIRequest struct {
 	model.Params
-	// 分销商ID 。
-	_distributorId int64
 	// 设置开始时间。空为不设置。
 	_startModified string
 	// 设置结束时间,空为不设置。
 	_endModified string
+	// 分销商ID 。
+	_distributorId int64
 	// 页码（大于0的整数，默认1）
 	_pageNo int64
 	// 每页记录数（默认20，最大50）
@@ -47,19 +47,6 @@ func (r TaobaoFenxiaoDistributorItemsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetDistributorId is DistributorId Setter
-// 分销商ID 。
-func (r *TaobaoFenxiaoDistributorItemsGetAPIRequest) SetDistributorId(_distributorId int64) error {
-	r._distributorId = _distributorId
-	r.Set("distributor_id", _distributorId)
-	return nil
-}
-
-// GetDistributorId DistributorId Getter
-func (r TaobaoFenxiaoDistributorItemsGetAPIRequest) GetDistributorId() int64 {
-	return r._distributorId
-}
-
 // SetStartModified is StartModified Setter
 // 设置开始时间。空为不设置。
 func (r *TaobaoFenxiaoDistributorItemsGetAPIRequest) SetStartModified(_startModified string) error {
@@ -84,6 +71,19 @@ func (r *TaobaoFenxiaoDistributorItemsGetAPIRequest) SetEndModified(_endModified
 // GetEndModified EndModified Getter
 func (r TaobaoFenxiaoDistributorItemsGetAPIRequest) GetEndModified() string {
 	return r._endModified
+}
+
+// SetDistributorId is DistributorId Setter
+// 分销商ID 。
+func (r *TaobaoFenxiaoDistributorItemsGetAPIRequest) SetDistributorId(_distributorId int64) error {
+	r._distributorId = _distributorId
+	r.Set("distributor_id", _distributorId)
+	return nil
+}
+
+// GetDistributorId DistributorId Getter
+func (r TaobaoFenxiaoDistributorItemsGetAPIRequest) GetDistributorId() int64 {
+	return r._distributorId
 }
 
 // SetPageNo is PageNo Setter

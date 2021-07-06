@@ -12,10 +12,10 @@ import (
 // 按照指定日期提供交易账单维度的结算明细数据，比供应商工作台上的结算账单还多一些数据项。
 type AlibabaLstTradeOrderFundbillQueryAPIRequest struct {
 	model.Params
-	// 每页最大记录数
-	_size int64
 	// 账单日期，格式：yyyy-MM-dd
 	_billDate string
+	// 每页最大记录数
+	_size int64
 	// 页码
 	_page int64
 	// 为true时,返回相应的商品详细信息，item_id和unit
@@ -43,19 +43,6 @@ func (r AlibabaLstTradeOrderFundbillQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetSize is Size Setter
-// 每页最大记录数
-func (r *AlibabaLstTradeOrderFundbillQueryAPIRequest) SetSize(_size int64) error {
-	r._size = _size
-	r.Set("size", _size)
-	return nil
-}
-
-// GetSize Size Getter
-func (r AlibabaLstTradeOrderFundbillQueryAPIRequest) GetSize() int64 {
-	return r._size
-}
-
 // SetBillDate is BillDate Setter
 // 账单日期，格式：yyyy-MM-dd
 func (r *AlibabaLstTradeOrderFundbillQueryAPIRequest) SetBillDate(_billDate string) error {
@@ -67,6 +54,19 @@ func (r *AlibabaLstTradeOrderFundbillQueryAPIRequest) SetBillDate(_billDate stri
 // GetBillDate BillDate Getter
 func (r AlibabaLstTradeOrderFundbillQueryAPIRequest) GetBillDate() string {
 	return r._billDate
+}
+
+// SetSize is Size Setter
+// 每页最大记录数
+func (r *AlibabaLstTradeOrderFundbillQueryAPIRequest) SetSize(_size int64) error {
+	r._size = _size
+	r.Set("size", _size)
+	return nil
+}
+
+// GetSize Size Getter
+func (r AlibabaLstTradeOrderFundbillQueryAPIRequest) GetSize() int64 {
+	return r._size
 }
 
 // SetPage is Page Setter

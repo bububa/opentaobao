@@ -16,8 +16,6 @@ type M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest struct {
 	_instanceName string
 	// 说明：实例密码规则：需同时且只能包含大写字母、小写字母和数字长度8~30个字符
 	_password string
-	// 说明：实例容量设置单位：MByte输入范围请见OCS规格参数表
-	_capacity int64
 	// 华东杭州：cn-hangzhou 华北青岛：cn-qingdao
 	_regionId string
 	// 用于保证幂等性
@@ -32,6 +30,8 @@ type M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest struct {
 	_vSwitchId string
 	// OCS实例所属vpc内的私网IP地址。当NetworkType参数为vpc时有效。如果不带本参数，则系统通过VpcId和VSwitchId自动分配。如果此参数对应的私网IP地址不在VSwitchId包含的IP地址段内，则创建失败。
 	_privateIpAddress string
+	// 说明：实例容量设置单位：MByte输入范围请见OCS规格参数表
+	_capacity int64
 }
 
 // NewM_kvstoreAliyuncsComCreateInstance2015_03_01Request 初始化M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest对象
@@ -79,19 +79,6 @@ func (r *M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) SetPassword(_pa
 // GetPassword Password Getter
 func (r M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) GetPassword() string {
 	return r._password
-}
-
-// SetCapacity is Capacity Setter
-// 说明：实例容量设置单位：MByte输入范围请见OCS规格参数表
-func (r *M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) SetCapacity(_capacity int64) error {
-	r._capacity = _capacity
-	r.Set("Capacity", _capacity)
-	return nil
-}
-
-// GetCapacity Capacity Getter
-func (r M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) GetCapacity() int64 {
-	return r._capacity
 }
 
 // SetRegionId is RegionId Setter
@@ -183,4 +170,17 @@ func (r *M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) SetPrivateIpAdd
 // GetPrivateIpAddress PrivateIpAddress Getter
 func (r M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) GetPrivateIpAddress() string {
 	return r._privateIpAddress
+}
+
+// SetCapacity is Capacity Setter
+// 说明：实例容量设置单位：MByte输入范围请见OCS规格参数表
+func (r *M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) SetCapacity(_capacity int64) error {
+	r._capacity = _capacity
+	r.Set("Capacity", _capacity)
+	return nil
+}
+
+// GetCapacity Capacity Getter
+func (r M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) GetCapacity() int64 {
+	return r._capacity
 }

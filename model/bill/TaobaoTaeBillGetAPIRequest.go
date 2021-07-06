@@ -12,10 +12,10 @@ import (
 // 查询单笔账单明细
 type TaobaoTaeBillGetAPIRequest struct {
 	model.Params
-	// 账单编号
-	_bid int64
 	// 传入需要返回的字段
 	_fields []string
+	// 账单编号
+	_bid int64
 	// 账单编号
 	_id int64
 	// 虚拟账户科目编号
@@ -43,19 +43,6 @@ func (r TaobaoTaeBillGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetBid is Bid Setter
-// 账单编号
-func (r *TaobaoTaeBillGetAPIRequest) SetBid(_bid int64) error {
-	r._bid = _bid
-	r.Set("bid", _bid)
-	return nil
-}
-
-// GetBid Bid Getter
-func (r TaobaoTaeBillGetAPIRequest) GetBid() int64 {
-	return r._bid
-}
-
 // SetFields is Fields Setter
 // 传入需要返回的字段
 func (r *TaobaoTaeBillGetAPIRequest) SetFields(_fields []string) error {
@@ -67,6 +54,19 @@ func (r *TaobaoTaeBillGetAPIRequest) SetFields(_fields []string) error {
 // GetFields Fields Getter
 func (r TaobaoTaeBillGetAPIRequest) GetFields() []string {
 	return r._fields
+}
+
+// SetBid is Bid Setter
+// 账单编号
+func (r *TaobaoTaeBillGetAPIRequest) SetBid(_bid int64) error {
+	r._bid = _bid
+	r.Set("bid", _bid)
+	return nil
+}
+
+// GetBid Bid Getter
+func (r TaobaoTaeBillGetAPIRequest) GetBid() int64 {
+	return r._bid
 }
 
 // SetId is Id Setter

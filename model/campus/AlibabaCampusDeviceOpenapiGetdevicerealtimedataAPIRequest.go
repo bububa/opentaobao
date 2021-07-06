@@ -12,12 +12,12 @@ import (
 // 获取指定设备下指定参数的实时值
 type AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest struct {
 	model.Params
-	// 请求端信息
-	_workBenchContext *WorkBenchContext
 	// 设备uuid
 	_uuid string
 	// 参数code,如灯亮度参数为brightness;参数code信息请查阅‘平台技术’下‘设备详细信息开发文档’[根据设备类型查看该设备所拥有的采集类参数]。
 	_propertyCode string
+	// 请求端信息
+	_workBenchContext *WorkBenchContext
 }
 
 // NewAlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest 初始化AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest) GetApiParams(
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetWorkBenchContext is WorkBenchContext Setter
-// 请求端信息
-func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
-	r._workBenchContext = _workBenchContext
-	r.Set("work_bench_context", _workBenchContext)
-	return nil
-}
-
-// GetWorkBenchContext WorkBenchContext Getter
-func (r AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest) GetWorkBenchContext() *WorkBenchContext {
-	return r._workBenchContext
 }
 
 // SetUuid is Uuid Setter
@@ -78,4 +65,17 @@ func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest) SetPropertyC
 // GetPropertyCode PropertyCode Getter
 func (r AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest) GetPropertyCode() string {
 	return r._propertyCode
+}
+
+// SetWorkBenchContext is WorkBenchContext Setter
+// 请求端信息
+func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+	r._workBenchContext = _workBenchContext
+	r.Set("work_bench_context", _workBenchContext)
+	return nil
+}
+
+// GetWorkBenchContext WorkBenchContext Getter
+func (r AlibabaCampusDeviceOpenapiGetdevicerealtimedataAPIRequest) GetWorkBenchContext() *WorkBenchContext {
+	return r._workBenchContext
 }

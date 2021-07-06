@@ -22,14 +22,14 @@ type OpenEquipmentDto struct {
 	EquipmentCode string `json:"equipment_code,omitempty" xml:"equipment_code,omitempty"`
 	// 设备激活时间
 	EnabledTime string `json:"enabled_time,omitempty" xml:"enabled_time,omitempty"`
+	// 修改时间
+	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+	// 设备回收（转租）时间
+	RecoveredTime string `json:"recovered_time,omitempty" xml:"recovered_time,omitempty"`
 	// 设备ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 创建时间
 	GmtCreate int64 `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-	// 修改时间
-	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 设备状态：1未激活，2已激活，3已回收（转租）
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
-	// 设备回收（转租）时间
-	RecoveredTime string `json:"recovered_time,omitempty" xml:"recovered_time,omitempty"`
 }

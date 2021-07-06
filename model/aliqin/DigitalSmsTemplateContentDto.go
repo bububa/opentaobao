@@ -6,8 +6,8 @@ type DigitalSmsTemplateContentDto struct {
 	FileSuffix string `json:"file_suffix,omitempty" xml:"file_suffix,omitempty"`
 	// 文件名称，请带上后缀
 	FileName string `json:"file_name,omitempty" xml:"file_name,omitempty"`
-	// 文件大小，单位：字节
-	FileSize int64 `json:"file_size,omitempty" xml:"file_size,omitempty"`
 	// 文件二进制数组转base64，转的时候指定编码格式为UTF-8
 	FileContents string `json:"file_contents,omitempty" xml:"file_contents,omitempty"`
+	// 文件大小，单位：字节
+	FileSize int64 `json:"file_size,omitempty" xml:"file_size,omitempty"`
 }

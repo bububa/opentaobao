@@ -20,8 +20,8 @@ type AlibabaNlifeB2cTradeDownloadAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_nlife_b2c_trade_download_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 查询命中数量
-	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// 订单列表
 	OrderList []Order `json:"order_list,omitempty" xml:"order_list>order,omitempty"`
+	// 查询命中数量
+	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 }

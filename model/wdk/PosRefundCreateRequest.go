@@ -12,14 +12,14 @@ type PosRefundCreateRequest struct {
 	OutSubOrderId string `json:"out_sub_order_id,omitempty" xml:"out_sub_order_id,omitempty"`
 	// skuCode
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
-	// 库存单位退货数量
-	RefundAmountSale int64 `json:"refund_amount_sale,omitempty" xml:"refund_amount_sale,omitempty"`
 	// 销售单位退货数量
 	RefundAmountStock string `json:"refund_amount_stock,omitempty" xml:"refund_amount_stock,omitempty"`
 	// 库存单位
 	StockUnit string `json:"stock_unit,omitempty" xml:"stock_unit,omitempty"`
 	// 销售单位
 	SaleUnit string `json:"sale_unit,omitempty" xml:"sale_unit,omitempty"`
+	// 库存单位退货数量
+	RefundAmountSale int64 `json:"refund_amount_sale,omitempty" xml:"refund_amount_sale,omitempty"`
 	// 退款金额，单位分
 	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 退款类型 1：仅退款 2：退货退款

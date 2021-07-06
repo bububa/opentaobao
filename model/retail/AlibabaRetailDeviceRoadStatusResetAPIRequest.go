@@ -12,14 +12,14 @@ import (
 // 贩卖机货道解锁
 type AlibabaRetailDeviceRoadStatusResetAPIRequest struct {
 	model.Params
+	// 货道编码
+	_roadNoList []string
 	// 设备外部编码
 	_deviceUuid string
 	// 阿里设备编码
 	_deviceCode string
 	// 阿里设备物理编码
 	_deviceSn string
-	// 货道编码
-	_roadNoList []string
 }
 
 // NewAlibabaRetailDeviceRoadStatusResetRequest 初始化AlibabaRetailDeviceRoadStatusResetAPIRequest对象
@@ -41,6 +41,19 @@ func (r AlibabaRetailDeviceRoadStatusResetAPIRequest) GetApiParams() url.Values 
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetRoadNoList is RoadNoList Setter
+// 货道编码
+func (r *AlibabaRetailDeviceRoadStatusResetAPIRequest) SetRoadNoList(_roadNoList []string) error {
+	r._roadNoList = _roadNoList
+	r.Set("road_no_list", _roadNoList)
+	return nil
+}
+
+// GetRoadNoList RoadNoList Getter
+func (r AlibabaRetailDeviceRoadStatusResetAPIRequest) GetRoadNoList() []string {
+	return r._roadNoList
 }
 
 // SetDeviceUuid is DeviceUuid Setter
@@ -80,17 +93,4 @@ func (r *AlibabaRetailDeviceRoadStatusResetAPIRequest) SetDeviceSn(_deviceSn str
 // GetDeviceSn DeviceSn Getter
 func (r AlibabaRetailDeviceRoadStatusResetAPIRequest) GetDeviceSn() string {
 	return r._deviceSn
-}
-
-// SetRoadNoList is RoadNoList Setter
-// 货道编码
-func (r *AlibabaRetailDeviceRoadStatusResetAPIRequest) SetRoadNoList(_roadNoList []string) error {
-	r._roadNoList = _roadNoList
-	r.Set("road_no_list", _roadNoList)
-	return nil
-}
-
-// GetRoadNoList RoadNoList Getter
-func (r AlibabaRetailDeviceRoadStatusResetAPIRequest) GetRoadNoList() []string {
-	return r._roadNoList
 }

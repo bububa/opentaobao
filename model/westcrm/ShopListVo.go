@@ -2,8 +2,6 @@ package westcrm
 
 // ShopListVo 结构体
 type ShopListVo struct {
-	// 目标客群结构体
-	Tags *ThirdTagsVo `json:"tags,omitempty" xml:"tags,omitempty"`
 	// 商铺类型
 	ShopType string `json:"shop_type,omitempty" xml:"shop_type,omitempty"`
 	// 商铺ID
@@ -14,4 +12,6 @@ type ShopListVo struct {
 	TypeLevel1 string `json:"type_level1,omitempty" xml:"type_level1,omitempty"`
 	// 二级业态
 	TypeLevel2 string `json:"type_level2,omitempty" xml:"type_level2,omitempty"`
+	// 目标客群结构体
+	Tags *ThirdTagsVo `json:"tags,omitempty" xml:"tags,omitempty"`
 }

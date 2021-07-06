@@ -2,12 +2,12 @@ package qimen
 
 // Item 结构体
 type Item struct {
+	// test
+	Batchs []TaobaoQimenCombineitemSynchronizeBatch `json:"batchs,omitempty" xml:"batchs>taobao_qimen_combineitem_synchronize_batch,omitempty"`
 	// 商品编码
 	ItemCode string `json:"itemCode,omitempty" xml:"itemCode,omitempty"`
 	// 后端商品编码
 	ItemId string `json:"itemId,omitempty" xml:"itemId,omitempty"`
-	// 组合商品中的该商品个数
-	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// ownerCode
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
 	// test
@@ -147,8 +147,6 @@ type Item struct {
 	// test
 	ActualAmount string `json:"actualAmount,omitempty" xml:"actualAmount,omitempty"`
 	// test
-	PriceAdjustment *PriceAdjustment `json:"priceAdjustment,omitempty" xml:"priceAdjustment,omitempty"`
-	// test
 	LatestUpdateTime string `json:"latestUpdateTime,omitempty" xml:"latestUpdateTime,omitempty"`
 	// test
 	ChangeTime string `json:"changeTime,omitempty" xml:"changeTime,omitempty"`
@@ -158,14 +156,10 @@ type Item struct {
 	ChannelCode string `json:"channelCode,omitempty" xml:"channelCode,omitempty"`
 	// test
 	OriginCode string `json:"originCode,omitempty" xml:"originCode,omitempty"`
-	// test
-	Batchs []TaobaoQimenCombineitemSynchronizeBatch `json:"batchs,omitempty" xml:"batchs>taobao_qimen_combineitem_synchronize_batch,omitempty"`
 	// 商品名称
 	ItemName string `json:"itemName,omitempty" xml:"itemName,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
-	// 库存商品总量
-	TotalQty int64 `json:"totalQty,omitempty" xml:"totalQty,omitempty"`
 	// 商品简称
 	ShortName string `json:"shortName,omitempty" xml:"shortName,omitempty"`
 	// 英文名
@@ -218,4 +212,10 @@ type Item struct {
 	OutCount string `json:"outCount,omitempty" xml:"outCount,omitempty"`
 	// 实际入库数量,Item1234,string(50),,
 	InCount string `json:"inCount,omitempty" xml:"inCount,omitempty"`
+	// 组合商品中的该商品个数
+	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+	// test
+	PriceAdjustment *PriceAdjustment `json:"priceAdjustment,omitempty" xml:"priceAdjustment,omitempty"`
+	// 库存商品总量
+	TotalQty int64 `json:"totalQty,omitempty" xml:"totalQty,omitempty"`
 }

@@ -2,6 +2,8 @@ package kbalgo
 
 // Poi 结构体
 type Poi struct {
+	// poi的标签
+	Labels []Label `json:"labels,omitempty" xml:"labels>label,omitempty"`
 	// POI地址(不包含城市，行政区，商圈)]]
 	PoiAddress string `json:"poi_address,omitempty" xml:"poi_address,omitempty"`
 	// poi名称
@@ -20,8 +22,6 @@ type Poi struct {
 	Latitude string `json:"latitude,omitempty" xml:"latitude,omitempty"`
 	// county
 	County string `json:"county,omitempty" xml:"county,omitempty"`
-	// poi的标签
-	Labels []Label `json:"labels,omitempty" xml:"labels>label,omitempty"`
 	// L1DXZ0001M3
 	PoiId string `json:"poi_id,omitempty" xml:"poi_id,omitempty"`
 	// longitude

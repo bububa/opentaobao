@@ -2,8 +2,6 @@ package einvoice
 
 // TaxOptimizationSalaryDetailInfoDto 结构体
 type TaxOptimizationSalaryDetailInfoDto struct {
-	// 明细金额
-	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 承包商编码
 	ContractorCode string `json:"contractor_code,omitempty" xml:"contractor_code,omitempty"`
 	// 创建时间
@@ -12,4 +10,6 @@ type TaxOptimizationSalaryDetailInfoDto struct {
 	DetailId string `json:"detail_id,omitempty" xml:"detail_id,omitempty"`
 	// 用户在业务平台的userid
 	IdentificationInBelongingEmployer string `json:"identification_in_belonging_employer,omitempty" xml:"identification_in_belonging_employer,omitempty"`
+	// 明细金额
+	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 }

@@ -2,6 +2,8 @@ package alihealthpw
 
 // AuditRollbackRo 结构体
 type AuditRollbackRo struct {
+	// 医院列表
+	HospitalsDesc []Null `json:"hospitals_desc,omitempty" xml:"hospitals_desc>null,omitempty"`
 	// 打款日期
 	ReceiptDate string `json:"receipt_date,omitempty" xml:"receipt_date,omitempty"`
 	// 唯一编码
@@ -18,8 +20,6 @@ type AuditRollbackRo struct {
 	ProjectThirdId string `json:"project_third_id,omitempty" xml:"project_third_id,omitempty"`
 	// 收款金额
 	ReceiptMoney string `json:"receipt_money,omitempty" xml:"receipt_money,omitempty"`
-	// 医院列表
-	HospitalsDesc []Null `json:"hospitals_desc,omitempty" xml:"hospitals_desc>null,omitempty"`
 	// 收款人
 	ReceiptName string `json:"receipt_name,omitempty" xml:"receipt_name,omitempty"`
 	// 收款账户

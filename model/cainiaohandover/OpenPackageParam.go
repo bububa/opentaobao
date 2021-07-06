@@ -2,6 +2,10 @@ package cainiaohandover
 
 // OpenPackageParam 结构体
 type OpenPackageParam struct {
+	// 商品参数
+	ItemParams []OpenItemParam `json:"item_params,omitempty" xml:"item_params>open_item_param,omitempty"`
+	// 包裹价格币种，CNY：人民币、USD：美元、RUB：卢布。
+	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
 	// 包裹长度
 	Length int64 `json:"length,omitempty" xml:"length,omitempty"`
 	// 包裹宽度
@@ -12,8 +16,4 @@ type OpenPackageParam struct {
 	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
 	// 包裹价格
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
-	// 商品参数
-	ItemParams []OpenItemParam `json:"item_params,omitempty" xml:"item_params>open_item_param,omitempty"`
-	// 包裹价格币种，CNY：人民币、USD：美元、RUB：卢布。
-	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
 }

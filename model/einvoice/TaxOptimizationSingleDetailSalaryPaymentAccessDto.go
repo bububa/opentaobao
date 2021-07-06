@@ -2,8 +2,6 @@ package einvoice
 
 // TaxOptimizationSingleDetailSalaryPaymentAccessDto 结构体
 type TaxOptimizationSingleDetailSalaryPaymentAccessDto struct {
-	// 发薪金额
-	ApplyAmount int64 `json:"apply_amount,omitempty" xml:"apply_amount,omitempty"`
 	// 业务提交时间
 	BusinessTime string `json:"business_time,omitempty" xml:"business_time,omitempty"`
 	// 承包商编码
@@ -16,4 +14,6 @@ type TaxOptimizationSingleDetailSalaryPaymentAccessDto struct {
 	IdentificationInBelongingEmployer string `json:"identification_in_belonging_employer,omitempty" xml:"identification_in_belonging_employer,omitempty"`
 	// 业务自定义发薪备注
 	SalaryRemark string `json:"salary_remark,omitempty" xml:"salary_remark,omitempty"`
+	// 发薪金额
+	ApplyAmount int64 `json:"apply_amount,omitempty" xml:"apply_amount,omitempty"`
 }

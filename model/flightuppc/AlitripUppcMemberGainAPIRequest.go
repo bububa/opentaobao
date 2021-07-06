@@ -14,12 +14,12 @@ type AlitripUppcMemberGainAPIRequest struct {
 	model.Params
 	// 请求唯一标识
 	_requestId string
-	// 查询成功
-	_statusCode int64
 	// 权益截止时间（扩展字段）
 	_responseJson string
 	// 错误提示
 	_errorMsg string
+	// 查询成功
+	_statusCode int64
 }
 
 // NewAlitripUppcMemberGainRequest 初始化AlitripUppcMemberGainAPIRequest对象
@@ -56,19 +56,6 @@ func (r AlitripUppcMemberGainAPIRequest) GetRequestId() string {
 	return r._requestId
 }
 
-// SetStatusCode is StatusCode Setter
-// 查询成功
-func (r *AlitripUppcMemberGainAPIRequest) SetStatusCode(_statusCode int64) error {
-	r._statusCode = _statusCode
-	r.Set("status_code", _statusCode)
-	return nil
-}
-
-// GetStatusCode StatusCode Getter
-func (r AlitripUppcMemberGainAPIRequest) GetStatusCode() int64 {
-	return r._statusCode
-}
-
 // SetResponseJson is ResponseJson Setter
 // 权益截止时间（扩展字段）
 func (r *AlitripUppcMemberGainAPIRequest) SetResponseJson(_responseJson string) error {
@@ -93,4 +80,17 @@ func (r *AlitripUppcMemberGainAPIRequest) SetErrorMsg(_errorMsg string) error {
 // GetErrorMsg ErrorMsg Getter
 func (r AlitripUppcMemberGainAPIRequest) GetErrorMsg() string {
 	return r._errorMsg
+}
+
+// SetStatusCode is StatusCode Setter
+// 查询成功
+func (r *AlitripUppcMemberGainAPIRequest) SetStatusCode(_statusCode int64) error {
+	r._statusCode = _statusCode
+	r.Set("status_code", _statusCode)
+	return nil
+}
+
+// GetStatusCode StatusCode Getter
+func (r AlitripUppcMemberGainAPIRequest) GetStatusCode() int64 {
+	return r._statusCode
 }

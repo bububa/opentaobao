@@ -12,10 +12,10 @@ import (
 // 用户每日摄入卡路里总量回传接口
 type AlibabaAlihealthAlipaypfmDietRecordAPIRequest struct {
 	model.Params
-	// 用户健康ID
-	_userId int64
 	// 记录日期，format：yyyy-MM-dd
 	_date string
+	// 用户健康ID
+	_userId int64
 	// 累积摄入卡路里
 	_energy int64
 }
@@ -41,19 +41,6 @@ func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// SetUserId is UserId Setter
-// 用户健康ID
-func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetUserId(_userId int64) error {
-	r._userId = _userId
-	r.Set("user_id", _userId)
-	return nil
-}
-
-// GetUserId UserId Getter
-func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetUserId() int64 {
-	return r._userId
-}
-
 // SetDate is Date Setter
 // 记录日期，format：yyyy-MM-dd
 func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetDate(_date string) error {
@@ -65,6 +52,19 @@ func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetDate(_date string) er
 // GetDate Date Getter
 func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetDate() string {
 	return r._date
+}
+
+// SetUserId is UserId Setter
+// 用户健康ID
+func (r *AlibabaAlihealthAlipaypfmDietRecordAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// GetUserId UserId Getter
+func (r AlibabaAlihealthAlipaypfmDietRecordAPIRequest) GetUserId() int64 {
+	return r._userId
 }
 
 // SetEnergy is Energy Setter

@@ -12,6 +12,8 @@ import (
 // 苹果卡密取消激活回调接口
 type TaobaoAppleCardActiveCancelNotifyAPIRequest struct {
 	model.Params
+	// 卡信息
+	_appleCardCancels []AppleCardCancelDto
 	// 原商户申请激活时的订单号
 	_orderNo string
 	// 结果，000：整单取消激活成功  04： 取消激活失败（包括全部失败和部分失败，此时需以detail为准）
@@ -20,8 +22,6 @@ type TaobaoAppleCardActiveCancelNotifyAPIRequest struct {
 	_gatewayOrderNo string
 	// 描述
 	_resultMsg string
-	// 卡信息
-	_appleCardCancels []AppleCardCancelDto
 }
 
 // NewTaobaoAppleCardActiveCancelNotifyRequest 初始化TaobaoAppleCardActiveCancelNotifyAPIRequest对象
@@ -43,6 +43,19 @@ func (r TaobaoAppleCardActiveCancelNotifyAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetAppleCardCancels is AppleCardCancels Setter
+// 卡信息
+func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetAppleCardCancels(_appleCardCancels []AppleCardCancelDto) error {
+	r._appleCardCancels = _appleCardCancels
+	r.Set("apple_card_cancels", _appleCardCancels)
+	return nil
+}
+
+// GetAppleCardCancels AppleCardCancels Getter
+func (r TaobaoAppleCardActiveCancelNotifyAPIRequest) GetAppleCardCancels() []AppleCardCancelDto {
+	return r._appleCardCancels
 }
 
 // SetOrderNo is OrderNo Setter
@@ -95,17 +108,4 @@ func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetResultMsg(_resultMsg st
 // GetResultMsg ResultMsg Getter
 func (r TaobaoAppleCardActiveCancelNotifyAPIRequest) GetResultMsg() string {
 	return r._resultMsg
-}
-
-// SetAppleCardCancels is AppleCardCancels Setter
-// 卡信息
-func (r *TaobaoAppleCardActiveCancelNotifyAPIRequest) SetAppleCardCancels(_appleCardCancels []AppleCardCancelDto) error {
-	r._appleCardCancels = _appleCardCancels
-	r.Set("apple_card_cancels", _appleCardCancels)
-	return nil
-}
-
-// GetAppleCardCancels AppleCardCancels Getter
-func (r TaobaoAppleCardActiveCancelNotifyAPIRequest) GetAppleCardCancels() []AppleCardCancelDto {
-	return r._appleCardCancels
 }

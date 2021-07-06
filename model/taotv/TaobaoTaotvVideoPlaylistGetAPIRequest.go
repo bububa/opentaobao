@@ -12,10 +12,10 @@ import (
 // 根据频道ID获取频道下节目单以及当前播放
 type TaobaoTaotvVideoPlaylistGetAPIRequest struct {
 	model.Params
-	// 播单id
-	_playListId int64
 	// 系统信息
 	_systemInfo string
+	// 播单id
+	_playListId int64
 }
 
 // NewTaobaoTaotvVideoPlaylistGetRequest 初始化TaobaoTaotvVideoPlaylistGetAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoTaotvVideoPlaylistGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetPlayListId is PlayListId Setter
-// 播单id
-func (r *TaobaoTaotvVideoPlaylistGetAPIRequest) SetPlayListId(_playListId int64) error {
-	r._playListId = _playListId
-	r.Set("play_list_id", _playListId)
-	return nil
-}
-
-// GetPlayListId PlayListId Getter
-func (r TaobaoTaotvVideoPlaylistGetAPIRequest) GetPlayListId() int64 {
-	return r._playListId
-}
-
 // SetSystemInfo is SystemInfo Setter
 // 系统信息
 func (r *TaobaoTaotvVideoPlaylistGetAPIRequest) SetSystemInfo(_systemInfo string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoTaotvVideoPlaylistGetAPIRequest) SetSystemInfo(_systemInfo string
 // GetSystemInfo SystemInfo Getter
 func (r TaobaoTaotvVideoPlaylistGetAPIRequest) GetSystemInfo() string {
 	return r._systemInfo
+}
+
+// SetPlayListId is PlayListId Setter
+// 播单id
+func (r *TaobaoTaotvVideoPlaylistGetAPIRequest) SetPlayListId(_playListId int64) error {
+	r._playListId = _playListId
+	r.Set("play_list_id", _playListId)
+	return nil
+}
+
+// GetPlayListId PlayListId Getter
+func (r TaobaoTaotvVideoPlaylistGetAPIRequest) GetPlayListId() int64 {
+	return r._playListId
 }

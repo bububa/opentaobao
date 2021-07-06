@@ -12,12 +12,12 @@ import (
 // 根据节点等条件查询履约单小票信息
 type AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest struct {
 	model.Params
+	// 批次号列表
+	_batchIds []string
 	// 作业节点类型： WAREHOUSE：仓  DELIVERY_DOCK：配送站 SHOP：经营店
 	_nodeType string
 	// warehouseCode, 出库仓，由基础店仓维护，盒马全域统一,
 	_nodeCode string
-	// 批次号列表
-	_batchIds []string
 }
 
 // NewAlibabaWdkFulfillBatchQueryByBatchidsRequest 初始化AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) GetApiParams() url.Valu
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetBatchIds is BatchIds Setter
+// 批次号列表
+func (r *AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) SetBatchIds(_batchIds []string) error {
+	r._batchIds = _batchIds
+	r.Set("batch_ids", _batchIds)
+	return nil
+}
+
+// GetBatchIds BatchIds Getter
+func (r AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) GetBatchIds() []string {
+	return r._batchIds
 }
 
 // SetNodeType is NodeType Setter
@@ -65,17 +78,4 @@ func (r *AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) SetNodeCode(_nodeCode 
 // GetNodeCode NodeCode Getter
 func (r AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) GetNodeCode() string {
 	return r._nodeCode
-}
-
-// SetBatchIds is BatchIds Setter
-// 批次号列表
-func (r *AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) SetBatchIds(_batchIds []string) error {
-	r._batchIds = _batchIds
-	r.Set("batch_ids", _batchIds)
-	return nil
-}
-
-// GetBatchIds BatchIds Getter
-func (r AlibabaWdkFulfillBatchQueryByBatchidsAPIRequest) GetBatchIds() []string {
-	return r._batchIds
 }

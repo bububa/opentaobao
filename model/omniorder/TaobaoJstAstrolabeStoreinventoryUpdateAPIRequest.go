@@ -12,10 +12,10 @@ import (
 // 增量更新门店或电商仓库存，该接口一次可以同时增量更新多个门店的多个商品的非确定性库存
 type TaobaoJstAstrolabeStoreinventoryUpdateAPIRequest struct {
 	model.Params
-	// 操作时间
-	_operationTime string
 	// 门店列表
 	_stores []Store
+	// 操作时间
+	_operationTime string
 }
 
 // NewTaobaoJstAstrolabeStoreinventoryUpdateRequest 初始化TaobaoJstAstrolabeStoreinventoryUpdateAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoJstAstrolabeStoreinventoryUpdateAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// SetOperationTime is OperationTime Setter
-// 操作时间
-func (r *TaobaoJstAstrolabeStoreinventoryUpdateAPIRequest) SetOperationTime(_operationTime string) error {
-	r._operationTime = _operationTime
-	r.Set("operation_time", _operationTime)
-	return nil
-}
-
-// GetOperationTime OperationTime Getter
-func (r TaobaoJstAstrolabeStoreinventoryUpdateAPIRequest) GetOperationTime() string {
-	return r._operationTime
-}
-
 // SetStores is Stores Setter
 // 门店列表
 func (r *TaobaoJstAstrolabeStoreinventoryUpdateAPIRequest) SetStores(_stores []Store) error {
@@ -63,4 +50,17 @@ func (r *TaobaoJstAstrolabeStoreinventoryUpdateAPIRequest) SetStores(_stores []S
 // GetStores Stores Getter
 func (r TaobaoJstAstrolabeStoreinventoryUpdateAPIRequest) GetStores() []Store {
 	return r._stores
+}
+
+// SetOperationTime is OperationTime Setter
+// 操作时间
+func (r *TaobaoJstAstrolabeStoreinventoryUpdateAPIRequest) SetOperationTime(_operationTime string) error {
+	r._operationTime = _operationTime
+	r.Set("operation_time", _operationTime)
+	return nil
+}
+
+// GetOperationTime OperationTime Getter
+func (r TaobaoJstAstrolabeStoreinventoryUpdateAPIRequest) GetOperationTime() string {
+	return r._operationTime
 }

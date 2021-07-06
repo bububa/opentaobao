@@ -4,8 +4,6 @@ package moziacl
 type CreateRoleResult struct {
 	// 创建角色返回data，此处无数据返回
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
-	// 接口调用是否成功，若成功则为true
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 请求唯一id
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 响应message，若失败则返回失败原因
@@ -14,4 +12,6 @@ type CreateRoleResult struct {
 	ResponseMetaData string `json:"response_meta_data,omitempty" xml:"response_meta_data,omitempty"`
 	// 响应code
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
+	// 接口调用是否成功，若成功则为true
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

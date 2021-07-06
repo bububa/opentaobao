@@ -12,10 +12,10 @@ import (
 // 卖家确认收货
 type TmallExchangeReturngoodsAgreeAPIRequest struct {
 	model.Params
-	// 换货单号ID
-	_disputeId int64
 	// 返回字段。目前支持dispute_id（换货单号ID）,bizorder_id（正向交易单号ID）, modified（订单修改时间）, status（当前换货状态）
 	_fields []string
+	// 换货单号ID
+	_disputeId int64
 }
 
 // NewTmallExchangeReturngoodsAgreeRequest 初始化TmallExchangeReturngoodsAgreeAPIRequest对象
@@ -39,19 +39,6 @@ func (r TmallExchangeReturngoodsAgreeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetDisputeId is DisputeId Setter
-// 换货单号ID
-func (r *TmallExchangeReturngoodsAgreeAPIRequest) SetDisputeId(_disputeId int64) error {
-	r._disputeId = _disputeId
-	r.Set("dispute_id", _disputeId)
-	return nil
-}
-
-// GetDisputeId DisputeId Getter
-func (r TmallExchangeReturngoodsAgreeAPIRequest) GetDisputeId() int64 {
-	return r._disputeId
-}
-
 // SetFields is Fields Setter
 // 返回字段。目前支持dispute_id（换货单号ID）,bizorder_id（正向交易单号ID）, modified（订单修改时间）, status（当前换货状态）
 func (r *TmallExchangeReturngoodsAgreeAPIRequest) SetFields(_fields []string) error {
@@ -63,4 +50,17 @@ func (r *TmallExchangeReturngoodsAgreeAPIRequest) SetFields(_fields []string) er
 // GetFields Fields Getter
 func (r TmallExchangeReturngoodsAgreeAPIRequest) GetFields() []string {
 	return r._fields
+}
+
+// SetDisputeId is DisputeId Setter
+// 换货单号ID
+func (r *TmallExchangeReturngoodsAgreeAPIRequest) SetDisputeId(_disputeId int64) error {
+	r._disputeId = _disputeId
+	r.Set("dispute_id", _disputeId)
+	return nil
+}
+
+// GetDisputeId DisputeId Getter
+func (r TmallExchangeReturngoodsAgreeAPIRequest) GetDisputeId() int64 {
+	return r._disputeId
 }

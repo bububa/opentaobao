@@ -12,14 +12,14 @@ import (
 // 获取酒店详情信息
 type TaobaoXhotelInfoListGetAPIRequest struct {
 	model.Params
+	// pid
+	_pid string
 	// 城市code
 	_cityCode int64
 	// 分页参数：当前页数，从1开始计数。<br/>默认值：1
 	_currentPage int64
 	// 分页参数：每页酒店数量。最小值1，最大值为50。默认值：20
 	_pageSize int64
-	// pid
-	_pid string
 	// 标准酒店id，如果需要查询单条酒店的信息，需要传入此参数
 	_shid int64
 }
@@ -43,6 +43,19 @@ func (r TaobaoXhotelInfoListGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetPid is Pid Setter
+// pid
+func (r *TaobaoXhotelInfoListGetAPIRequest) SetPid(_pid string) error {
+	r._pid = _pid
+	r.Set("pid", _pid)
+	return nil
+}
+
+// GetPid Pid Getter
+func (r TaobaoXhotelInfoListGetAPIRequest) GetPid() string {
+	return r._pid
 }
 
 // SetCityCode is CityCode Setter
@@ -82,19 +95,6 @@ func (r *TaobaoXhotelInfoListGetAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TaobaoXhotelInfoListGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetPid is Pid Setter
-// pid
-func (r *TaobaoXhotelInfoListGetAPIRequest) SetPid(_pid string) error {
-	r._pid = _pid
-	r.Set("pid", _pid)
-	return nil
-}
-
-// GetPid Pid Getter
-func (r TaobaoXhotelInfoListGetAPIRequest) GetPid() string {
-	return r._pid
 }
 
 // SetShid is Shid Setter

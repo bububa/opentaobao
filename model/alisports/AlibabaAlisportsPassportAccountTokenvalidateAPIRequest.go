@@ -18,8 +18,6 @@ type AlibabaAlisportsPassportAccountTokenvalidateAPIRequest struct {
 	_alispSign string
 	// token
 	_token string
-	// 注册用户类型
-	_userType int64
 	// 时间戳
 	_alispTime string
 	// 一键登录参数
@@ -28,6 +26,8 @@ type AlibabaAlisportsPassportAccountTokenvalidateAPIRequest struct {
 	_extInfo string
 	// 选填，调用百川登录接口的appkey，百川登录时，需要传此字段
 	_mtopAppkey string
+	// 注册用户类型
+	_userType int64
 }
 
 // NewAlibabaAlisportsPassportAccountTokenvalidateRequest 初始化AlibabaAlisportsPassportAccountTokenvalidateAPIRequest对象
@@ -90,19 +90,6 @@ func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetToken() strin
 	return r._token
 }
 
-// SetUserType is UserType Setter
-// 注册用户类型
-func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetUserType(_userType int64) error {
-	r._userType = _userType
-	r.Set("user_type", _userType)
-	return nil
-}
-
-// GetUserType UserType Getter
-func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetUserType() int64 {
-	return r._userType
-}
-
 // SetAlispTime is AlispTime Setter
 // 时间戳
 func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetAlispTime(_alispTime string) error {
@@ -153,4 +140,17 @@ func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetMtopAppkey(_
 // GetMtopAppkey MtopAppkey Getter
 func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetMtopAppkey() string {
 	return r._mtopAppkey
+}
+
+// SetUserType is UserType Setter
+// 注册用户类型
+func (r *AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) SetUserType(_userType int64) error {
+	r._userType = _userType
+	r.Set("user_type", _userType)
+	return nil
+}
+
+// GetUserType UserType Getter
+func (r AlibabaAlisportsPassportAccountTokenvalidateAPIRequest) GetUserType() int64 {
+	return r._userType
 }

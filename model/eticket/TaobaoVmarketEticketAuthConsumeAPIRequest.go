@@ -14,14 +14,14 @@ type TaobaoVmarketEticketAuthConsumeAPIRequest struct {
 	model.Params
 	// 核销的码，只支持单个码，多个码核销需要多次调用
 	_verifyCode string
-	// 核销份数
-	_consumeNum int64
 	// 核销方的ID，如果是普通码商必须传入机具ID,如果是私有码商家（即原有的信任商家）可默认传入私有码商ID
 	_operatorid string
 	// 自定义核销流水号，需要小于等于100个字符(a-zA-Z0-9_)
 	_serialNum string
 	// 网点ID,网点授权核销时，必须传入；其他核销方式可不传
 	_storeid string
+	// 核销份数
+	_consumeNum int64
 }
 
 // NewTaobaoVmarketEticketAuthConsumeRequest 初始化TaobaoVmarketEticketAuthConsumeAPIRequest对象
@@ -56,19 +56,6 @@ func (r *TaobaoVmarketEticketAuthConsumeAPIRequest) SetVerifyCode(_verifyCode st
 // GetVerifyCode VerifyCode Getter
 func (r TaobaoVmarketEticketAuthConsumeAPIRequest) GetVerifyCode() string {
 	return r._verifyCode
-}
-
-// SetConsumeNum is ConsumeNum Setter
-// 核销份数
-func (r *TaobaoVmarketEticketAuthConsumeAPIRequest) SetConsumeNum(_consumeNum int64) error {
-	r._consumeNum = _consumeNum
-	r.Set("consume_num", _consumeNum)
-	return nil
-}
-
-// GetConsumeNum ConsumeNum Getter
-func (r TaobaoVmarketEticketAuthConsumeAPIRequest) GetConsumeNum() int64 {
-	return r._consumeNum
 }
 
 // SetOperatorid is Operatorid Setter
@@ -108,4 +95,17 @@ func (r *TaobaoVmarketEticketAuthConsumeAPIRequest) SetStoreid(_storeid string) 
 // GetStoreid Storeid Getter
 func (r TaobaoVmarketEticketAuthConsumeAPIRequest) GetStoreid() string {
 	return r._storeid
+}
+
+// SetConsumeNum is ConsumeNum Setter
+// 核销份数
+func (r *TaobaoVmarketEticketAuthConsumeAPIRequest) SetConsumeNum(_consumeNum int64) error {
+	r._consumeNum = _consumeNum
+	r.Set("consume_num", _consumeNum)
+	return nil
+}
+
+// GetConsumeNum ConsumeNum Getter
+func (r TaobaoVmarketEticketAuthConsumeAPIRequest) GetConsumeNum() int64 {
+	return r._consumeNum
 }

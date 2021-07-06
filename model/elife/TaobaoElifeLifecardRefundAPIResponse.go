@@ -22,12 +22,12 @@ type TaobaoElifeLifecardRefundAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回码，成功为空
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
+	// 返回信息
+	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 本金
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 膨胀金
 	InflateAmount int64 `json:"inflate_amount,omitempty" xml:"inflate_amount,omitempty"`
-	// 返回信息
-	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 成功失败标志
 	Successed bool `json:"successed,omitempty" xml:"successed,omitempty"`
 }

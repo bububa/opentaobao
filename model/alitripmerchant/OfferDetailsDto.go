@@ -2,8 +2,12 @@ package alitripmerchant
 
 // OfferDetailsDto 结构体
 type OfferDetailsDto struct {
-	// offerId
-	OfferId int64 `json:"offer_id,omitempty" xml:"offer_id,omitempty"`
+	// 关联品牌
+	JoinBrands []JoinBrandDto `json:"join_brands,omitempty" xml:"join_brands>join_brand_dto,omitempty"`
+	// 无线端图片
+	OfferImageWireless []string `json:"offer_image_wireless,omitempty" xml:"offer_image_wireless>string,omitempty"`
+	// 酒店数据集合
+	HotelContentList []HotelContentDto `json:"hotel_content_list,omitempty" xml:"hotel_content_list>hotel_content_dto,omitempty"`
 	// offer名称
 	OfferName string `json:"offer_name,omitempty" xml:"offer_name,omitempty"`
 	// 子标题
@@ -18,8 +22,6 @@ type OfferDetailsDto struct {
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// offer跳转url
 	OfferRedirectUrl string `json:"offer_redirect_url,omitempty" xml:"offer_redirect_url,omitempty"`
-	// 关联品牌
-	JoinBrands []JoinBrandDto `json:"join_brands,omitempty" xml:"join_brands>join_brand_dto,omitempty"`
 	// 起价
 	FromPriceAmount string `json:"from_price_amount,omitempty" xml:"from_price_amount,omitempty"`
 	// 时区
@@ -36,8 +38,6 @@ type OfferDetailsDto struct {
 	ClStartDate string `json:"cl_start_date,omitempty" xml:"cl_start_date,omitempty"`
 	// 子类型
 	SubType string `json:"sub_type,omitempty" xml:"sub_type,omitempty"`
-	// 无线端图片
-	OfferImageWireless []string `json:"offer_image_wireless,omitempty" xml:"offer_image_wireless>string,omitempty"`
-	// 酒店数据集合
-	HotelContentList []HotelContentDto `json:"hotel_content_list,omitempty" xml:"hotel_content_list>hotel_content_dto,omitempty"`
+	// offerId
+	OfferId int64 `json:"offer_id,omitempty" xml:"offer_id,omitempty"`
 }

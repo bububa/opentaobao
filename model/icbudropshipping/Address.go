@@ -16,8 +16,6 @@ type Address struct {
 	Country string `json:"country,omitempty" xml:"country,omitempty"`
 	// Country code，ISO3166 standard and has two letters.
 	CountryCode string `json:"country_code,omitempty" xml:"country_code,omitempty"`
-	// Fax
-	Fax *Phone `json:"fax,omitempty" xml:"fax,omitempty"`
 	// Port name
 	Port string `json:"port,omitempty" xml:"port,omitempty"`
 	// Port code
@@ -26,8 +24,10 @@ type Address struct {
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
 	// Province/state abbreviation
 	ProvinceCode string `json:"province_code,omitempty" xml:"province_code,omitempty"`
-	// telephone
-	Telephone *Phone `json:"telephone,omitempty" xml:"telephone,omitempty"`
 	// zip
 	Zip string `json:"zip,omitempty" xml:"zip,omitempty"`
+	// Fax
+	Fax *Phone `json:"fax,omitempty" xml:"fax,omitempty"`
+	// telephone
+	Telephone *Phone `json:"telephone,omitempty" xml:"telephone,omitempty"`
 }

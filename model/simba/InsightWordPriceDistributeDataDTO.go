@@ -2,6 +2,16 @@ package simba
 
 // InsightWordPriceDistributeDataDto 结构体
 type InsightWordPriceDistributeDataDto struct {
+	// 点击率
+	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
+	// 平均点击花费
+	Cpc string `json:"cpc,omitempty" xml:"cpc,omitempty"`
+	// 投入产出比
+	Roi string `json:"roi,omitempty" xml:"roi,omitempty"`
+	// 点击转化率
+	Coverage string `json:"coverage,omitempty" xml:"coverage,omitempty"`
+	// 关键词
+	Bidword string `json:"bidword,omitempty" xml:"bidword,omitempty"`
 	// 展现量
 	Impression int64 `json:"impression,omitempty" xml:"impression,omitempty"`
 	// 点击量
@@ -28,16 +38,6 @@ type InsightWordPriceDistributeDataDto struct {
 	Favtotal int64 `json:"favtotal,omitempty" xml:"favtotal,omitempty"`
 	// 竞争度
 	Competition int64 `json:"competition,omitempty" xml:"competition,omitempty"`
-	// 点击率
-	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
-	// 平均点击花费
-	Cpc string `json:"cpc,omitempty" xml:"cpc,omitempty"`
-	// 投入产出比
-	Roi string `json:"roi,omitempty" xml:"roi,omitempty"`
-	// 点击转化率
-	Coverage string `json:"coverage,omitempty" xml:"coverage,omitempty"`
-	// 关键词
-	Bidword string `json:"bidword,omitempty" xml:"bidword,omitempty"`
 	// 竞价区间
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 }

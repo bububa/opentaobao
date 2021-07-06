@@ -20,12 +20,12 @@ type AliexpressAffiliateOrderListbyindexAPIRequest struct {
 	_endTime string
 	// 订单状态:Payment Completed,Buyer Confirmed Receipt
 	_status string
-	// 每页记录数
-	_pageSize int64
 	// 返回的字段信息
 	_fields string
 	// 安全签名
 	_appSignature string
+	// 每页记录数
+	_pageSize int64
 }
 
 // NewAliexpressAffiliateOrderListbyindexRequest 初始化AliexpressAffiliateOrderListbyindexAPIRequest对象
@@ -101,19 +101,6 @@ func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// SetPageSize is PageSize Setter
-// 每页记录数
-func (r *AliexpressAffiliateOrderListbyindexAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetFields is Fields Setter
 // 返回的字段信息
 func (r *AliexpressAffiliateOrderListbyindexAPIRequest) SetFields(_fields string) error {
@@ -138,4 +125,17 @@ func (r *AliexpressAffiliateOrderListbyindexAPIRequest) SetAppSignature(_appSign
 // GetAppSignature AppSignature Getter
 func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetAppSignature() string {
 	return r._appSignature
+}
+
+// SetPageSize is PageSize Setter
+// 每页记录数
+func (r *AliexpressAffiliateOrderListbyindexAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AliexpressAffiliateOrderListbyindexAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

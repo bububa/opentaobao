@@ -6,8 +6,6 @@ type BuyRequestSearchDetailRemoteDto struct {
 	LangSrc string `json:"lang_src,omitempty" xml:"lang_src,omitempty"`
 	// 供应商国家
 	SupplierCountrys string `json:"supplier_countrys,omitempty" xml:"supplier_countrys,omitempty"`
-	// 类目ID
-	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
 	// 类目名称
 	CategoryName string `json:"category_name,omitempty" xml:"category_name,omitempty"`
 	// 附加名称
@@ -22,18 +20,10 @@ type BuyRequestSearchDetailRemoteDto struct {
 	FobPrice string `json:"fob_price,omitempty" xml:"fob_price,omitempty"`
 	// 发运条件
 	ShippingTerms string `json:"shipping_terms,omitempty" xml:"shipping_terms,omitempty"`
-	// 剩余报价数量
-	LeftCount int64 `json:"left_count,omitempty" xml:"left_count,omitempty"`
-	// 开放时间
-	OpenTime int64 `json:"open_time,omitempty" xml:"open_time,omitempty"`
-	// 过期值
-	ExpirateTime int64 `json:"expirate_time,omitempty" xml:"expirate_time,omitempty"`
 	// 国家简称
 	CountrySimple string `json:"country_simple,omitempty" xml:"country_simple,omitempty"`
 	// 数量单位
 	QuantityUnit string `json:"quantity_unit,omitempty" xml:"quantity_unit,omitempty"`
-	// 数量
-	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 描述
@@ -42,4 +32,14 @@ type BuyRequestSearchDetailRemoteDto struct {
 	Subject string `json:"subject,omitempty" xml:"subject,omitempty"`
 	// RFQ ID
 	RfqId string `json:"rfq_id,omitempty" xml:"rfq_id,omitempty"`
+	// 类目ID
+	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
+	// 剩余报价数量
+	LeftCount int64 `json:"left_count,omitempty" xml:"left_count,omitempty"`
+	// 开放时间
+	OpenTime int64 `json:"open_time,omitempty" xml:"open_time,omitempty"`
+	// 过期值
+	ExpirateTime int64 `json:"expirate_time,omitempty" xml:"expirate_time,omitempty"`
+	// 数量
+	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 }

@@ -24,8 +24,8 @@ type AlitripTuanHotelAdaptStoreGetAPIResponseModel struct {
 	StoreDetailList []StoreDetailVoList `json:"store_detail_list,omitempty" xml:"store_detail_list>store_detail_vo_list,omitempty"`
 	// 错误码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
-	// 操作状态
-	Status bool `json:"status,omitempty" xml:"status,omitempty"`
 	// 错误信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// 操作状态
+	Status bool `json:"status,omitempty" xml:"status,omitempty"`
 }

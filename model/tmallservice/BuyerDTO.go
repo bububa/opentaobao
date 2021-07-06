@@ -12,8 +12,6 @@ type BuyerDto struct {
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
 	// 买家手机号
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
-	// 地区编码
-	Location int64 `json:"location,omitempty" xml:"location,omitempty"`
 	// 区
 	AddressDistrict string `json:"address_district,omitempty" xml:"address_district,omitempty"`
 	// 买家姓名
@@ -22,4 +20,6 @@ type BuyerDto struct {
 	AddressTown string `json:"address_town,omitempty" xml:"address_town,omitempty"`
 	// 市
 	AddressCity string `json:"address_city,omitempty" xml:"address_city,omitempty"`
+	// 地区编码
+	Location int64 `json:"location,omitempty" xml:"location,omitempty"`
 }

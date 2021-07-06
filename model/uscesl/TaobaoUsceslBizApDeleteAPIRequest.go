@@ -14,10 +14,10 @@ type TaobaoUsceslBizApDeleteAPIRequest struct {
 	model.Params
 	// ap的MAC地址
 	_apMac string
-	// 门店ID
-	_storeId int64
 	// 商家CODE
 	_bizBrandKey string
+	// 门店ID
+	_storeId int64
 }
 
 // NewTaobaoUsceslBizApDeleteRequest 初始化TaobaoUsceslBizApDeleteAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoUsceslBizApDeleteAPIRequest) GetApMac() string {
 	return r._apMac
 }
 
-// SetStoreId is StoreId Setter
-// 门店ID
-func (r *TaobaoUsceslBizApDeleteAPIRequest) SetStoreId(_storeId int64) error {
-	r._storeId = _storeId
-	r.Set("store_id", _storeId)
-	return nil
-}
-
-// GetStoreId StoreId Getter
-func (r TaobaoUsceslBizApDeleteAPIRequest) GetStoreId() int64 {
-	return r._storeId
-}
-
 // SetBizBrandKey is BizBrandKey Setter
 // 商家CODE
 func (r *TaobaoUsceslBizApDeleteAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
@@ -78,4 +65,17 @@ func (r *TaobaoUsceslBizApDeleteAPIRequest) SetBizBrandKey(_bizBrandKey string) 
 // GetBizBrandKey BizBrandKey Getter
 func (r TaobaoUsceslBizApDeleteAPIRequest) GetBizBrandKey() string {
 	return r._bizBrandKey
+}
+
+// SetStoreId is StoreId Setter
+// 门店ID
+func (r *TaobaoUsceslBizApDeleteAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// GetStoreId StoreId Getter
+func (r TaobaoUsceslBizApDeleteAPIRequest) GetStoreId() int64 {
+	return r._storeId
 }

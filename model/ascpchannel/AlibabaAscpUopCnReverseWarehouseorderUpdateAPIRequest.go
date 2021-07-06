@@ -14,10 +14,10 @@ type AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest struct {
 	model.Params
 	// 逆向入库单号
 	_orderCode string
-	// 是否已经退款
-	_refunded bool
 	// 退款原因
 	_refundReason string
+	// 是否已经退款
+	_refunded bool
 }
 
 // NewAlibabaAscpUopCnReverseWarehouseorderUpdateRequest 初始化AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest对象
@@ -54,19 +54,6 @@ func (r AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest) GetOrderCode() st
 	return r._orderCode
 }
 
-// SetRefunded is Refunded Setter
-// 是否已经退款
-func (r *AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest) SetRefunded(_refunded bool) error {
-	r._refunded = _refunded
-	r.Set("refunded", _refunded)
-	return nil
-}
-
-// GetRefunded Refunded Getter
-func (r AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest) GetRefunded() bool {
-	return r._refunded
-}
-
 // SetRefundReason is RefundReason Setter
 // 退款原因
 func (r *AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest) SetRefundReason(_refundReason string) error {
@@ -78,4 +65,17 @@ func (r *AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest) SetRefundReason(
 // GetRefundReason RefundReason Getter
 func (r AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest) GetRefundReason() string {
 	return r._refundReason
+}
+
+// SetRefunded is Refunded Setter
+// 是否已经退款
+func (r *AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest) SetRefunded(_refunded bool) error {
+	r._refunded = _refunded
+	r.Set("refunded", _refunded)
+	return nil
+}
+
+// GetRefunded Refunded Getter
+func (r AlibabaAscpUopCnReverseWarehouseorderUpdateAPIRequest) GetRefunded() bool {
+	return r._refunded
 }

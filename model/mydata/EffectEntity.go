@@ -2,6 +2,8 @@ package mydata
 
 // EffectEntity 结构体
 type EffectEntity struct {
+	// 词来源
+	KeywordEffects []KeywordEffectEntity `json:"keyword_effects,omitempty" xml:"keyword_effects>keyword_effect_entity,omitempty"`
 	// 收藏买家数
 	Bookmark int64 `json:"bookmark,omitempty" xml:"bookmark,omitempty"`
 	// 点击
@@ -12,8 +14,6 @@ type EffectEntity struct {
 	Fb int64 `json:"fb,omitempty" xml:"fb,omitempty"`
 	// 曝光
 	Impression int64 `json:"impression,omitempty" xml:"impression,omitempty"`
-	// 词来源
-	KeywordEffects []KeywordEffectEntity `json:"keyword_effects,omitempty" xml:"keyword_effects>keyword_effect_entity,omitempty"`
 	// 提交订单数
 	Order int64 `json:"order,omitempty" xml:"order,omitempty"`
 	// 产品id

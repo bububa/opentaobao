@@ -16,38 +16,38 @@ type AlibabaIcbuProductUpdateAPIRequest struct {
 	_attributes []ProductAttribute
 	// 根据数量设置的折扣价
 	_bulkDiscountPrices []BulkDiscountPrice
-	// 类目ID
-	_categoryId int64
+	// 关键词，不要包含特殊符号（如,;），最多三个
+	_keywords []string
 	// 商品详情描述，可包含图片中心的图片URL
 	_description string
 	// 补充信息
 	_extraContext string
-	// 分组ID
-	_groupId int64
-	// 关键词，不要包含特殊符号（如,;），最多三个
-	_keywords []string
 	// 语种，参见FAQ 语种枚举值
 	_language string
+	// 商品类型，在线批发商品(wholesale)或者询盘商品(sourcing)
+	_productType string
+	// 商品名称，最多128个字符
+	_subject string
+	// 发布的市场，支持main/onesite，默认main发到主市场，填onesite发布为商机通产品
+	_market string
+	// 混淆商品ID
+	_productId string
+	// 类目ID
+	_categoryId int64
+	// 分组ID
+	_groupId int64
 	// 商品主图
 	_mainImage *MainImage
 	// 商品SKU定义
 	_productSku *ProductSku
-	// 商品类型，在线批发商品(wholesale)或者询盘商品(sourcing)
-	_productType string
 	// 询盘商品交易信息
 	_sourcingTrade *SourcingTrade
-	// 商品名称，最多128个字符
-	_subject string
 	// 在线批发商品交易信息
 	_wholesaleTrade *WholesaleTrade
-	// 发布的市场，支持main/onesite，默认main发到主市场，填onesite发布为商机通产品
-	_market string
-	// 智能编辑，不填写使用原来的。注意必须和详情的格式一致
-	_isSmartEdit bool
 	// 定制信息
 	_customInfo *CustomInfo
-	// 混淆商品ID
-	_productId string
+	// 智能编辑，不填写使用原来的。注意必须和详情的格式一致
+	_isSmartEdit bool
 }
 
 // NewAlibabaIcbuProductUpdateRequest 初始化AlibabaIcbuProductUpdateAPIRequest对象
@@ -97,17 +97,17 @@ func (r AlibabaIcbuProductUpdateAPIRequest) GetBulkDiscountPrices() []BulkDiscou
 	return r._bulkDiscountPrices
 }
 
-// SetCategoryId is CategoryId Setter
-// 类目ID
-func (r *AlibabaIcbuProductUpdateAPIRequest) SetCategoryId(_categoryId int64) error {
-	r._categoryId = _categoryId
-	r.Set("category_id", _categoryId)
+// SetKeywords is Keywords Setter
+// 关键词，不要包含特殊符号（如,;），最多三个
+func (r *AlibabaIcbuProductUpdateAPIRequest) SetKeywords(_keywords []string) error {
+	r._keywords = _keywords
+	r.Set("keywords", _keywords)
 	return nil
 }
 
-// GetCategoryId CategoryId Getter
-func (r AlibabaIcbuProductUpdateAPIRequest) GetCategoryId() int64 {
-	return r._categoryId
+// GetKeywords Keywords Getter
+func (r AlibabaIcbuProductUpdateAPIRequest) GetKeywords() []string {
+	return r._keywords
 }
 
 // SetDescription is Description Setter
@@ -136,32 +136,6 @@ func (r AlibabaIcbuProductUpdateAPIRequest) GetExtraContext() string {
 	return r._extraContext
 }
 
-// SetGroupId is GroupId Setter
-// 分组ID
-func (r *AlibabaIcbuProductUpdateAPIRequest) SetGroupId(_groupId int64) error {
-	r._groupId = _groupId
-	r.Set("group_id", _groupId)
-	return nil
-}
-
-// GetGroupId GroupId Getter
-func (r AlibabaIcbuProductUpdateAPIRequest) GetGroupId() int64 {
-	return r._groupId
-}
-
-// SetKeywords is Keywords Setter
-// 关键词，不要包含特殊符号（如,;），最多三个
-func (r *AlibabaIcbuProductUpdateAPIRequest) SetKeywords(_keywords []string) error {
-	r._keywords = _keywords
-	r.Set("keywords", _keywords)
-	return nil
-}
-
-// GetKeywords Keywords Getter
-func (r AlibabaIcbuProductUpdateAPIRequest) GetKeywords() []string {
-	return r._keywords
-}
-
 // SetLanguage is Language Setter
 // 语种，参见FAQ 语种枚举值
 func (r *AlibabaIcbuProductUpdateAPIRequest) SetLanguage(_language string) error {
@@ -173,6 +147,84 @@ func (r *AlibabaIcbuProductUpdateAPIRequest) SetLanguage(_language string) error
 // GetLanguage Language Getter
 func (r AlibabaIcbuProductUpdateAPIRequest) GetLanguage() string {
 	return r._language
+}
+
+// SetProductType is ProductType Setter
+// 商品类型，在线批发商品(wholesale)或者询盘商品(sourcing)
+func (r *AlibabaIcbuProductUpdateAPIRequest) SetProductType(_productType string) error {
+	r._productType = _productType
+	r.Set("product_type", _productType)
+	return nil
+}
+
+// GetProductType ProductType Getter
+func (r AlibabaIcbuProductUpdateAPIRequest) GetProductType() string {
+	return r._productType
+}
+
+// SetSubject is Subject Setter
+// 商品名称，最多128个字符
+func (r *AlibabaIcbuProductUpdateAPIRequest) SetSubject(_subject string) error {
+	r._subject = _subject
+	r.Set("subject", _subject)
+	return nil
+}
+
+// GetSubject Subject Getter
+func (r AlibabaIcbuProductUpdateAPIRequest) GetSubject() string {
+	return r._subject
+}
+
+// SetMarket is Market Setter
+// 发布的市场，支持main/onesite，默认main发到主市场，填onesite发布为商机通产品
+func (r *AlibabaIcbuProductUpdateAPIRequest) SetMarket(_market string) error {
+	r._market = _market
+	r.Set("market", _market)
+	return nil
+}
+
+// GetMarket Market Getter
+func (r AlibabaIcbuProductUpdateAPIRequest) GetMarket() string {
+	return r._market
+}
+
+// SetProductId is ProductId Setter
+// 混淆商品ID
+func (r *AlibabaIcbuProductUpdateAPIRequest) SetProductId(_productId string) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// GetProductId ProductId Getter
+func (r AlibabaIcbuProductUpdateAPIRequest) GetProductId() string {
+	return r._productId
+}
+
+// SetCategoryId is CategoryId Setter
+// 类目ID
+func (r *AlibabaIcbuProductUpdateAPIRequest) SetCategoryId(_categoryId int64) error {
+	r._categoryId = _categoryId
+	r.Set("category_id", _categoryId)
+	return nil
+}
+
+// GetCategoryId CategoryId Getter
+func (r AlibabaIcbuProductUpdateAPIRequest) GetCategoryId() int64 {
+	return r._categoryId
+}
+
+// SetGroupId is GroupId Setter
+// 分组ID
+func (r *AlibabaIcbuProductUpdateAPIRequest) SetGroupId(_groupId int64) error {
+	r._groupId = _groupId
+	r.Set("group_id", _groupId)
+	return nil
+}
+
+// GetGroupId GroupId Getter
+func (r AlibabaIcbuProductUpdateAPIRequest) GetGroupId() int64 {
+	return r._groupId
 }
 
 // SetMainImage is MainImage Setter
@@ -201,19 +253,6 @@ func (r AlibabaIcbuProductUpdateAPIRequest) GetProductSku() *ProductSku {
 	return r._productSku
 }
 
-// SetProductType is ProductType Setter
-// 商品类型，在线批发商品(wholesale)或者询盘商品(sourcing)
-func (r *AlibabaIcbuProductUpdateAPIRequest) SetProductType(_productType string) error {
-	r._productType = _productType
-	r.Set("product_type", _productType)
-	return nil
-}
-
-// GetProductType ProductType Getter
-func (r AlibabaIcbuProductUpdateAPIRequest) GetProductType() string {
-	return r._productType
-}
-
 // SetSourcingTrade is SourcingTrade Setter
 // 询盘商品交易信息
 func (r *AlibabaIcbuProductUpdateAPIRequest) SetSourcingTrade(_sourcingTrade *SourcingTrade) error {
@@ -225,19 +264,6 @@ func (r *AlibabaIcbuProductUpdateAPIRequest) SetSourcingTrade(_sourcingTrade *So
 // GetSourcingTrade SourcingTrade Getter
 func (r AlibabaIcbuProductUpdateAPIRequest) GetSourcingTrade() *SourcingTrade {
 	return r._sourcingTrade
-}
-
-// SetSubject is Subject Setter
-// 商品名称，最多128个字符
-func (r *AlibabaIcbuProductUpdateAPIRequest) SetSubject(_subject string) error {
-	r._subject = _subject
-	r.Set("subject", _subject)
-	return nil
-}
-
-// GetSubject Subject Getter
-func (r AlibabaIcbuProductUpdateAPIRequest) GetSubject() string {
-	return r._subject
 }
 
 // SetWholesaleTrade is WholesaleTrade Setter
@@ -253,32 +279,6 @@ func (r AlibabaIcbuProductUpdateAPIRequest) GetWholesaleTrade() *WholesaleTrade 
 	return r._wholesaleTrade
 }
 
-// SetMarket is Market Setter
-// 发布的市场，支持main/onesite，默认main发到主市场，填onesite发布为商机通产品
-func (r *AlibabaIcbuProductUpdateAPIRequest) SetMarket(_market string) error {
-	r._market = _market
-	r.Set("market", _market)
-	return nil
-}
-
-// GetMarket Market Getter
-func (r AlibabaIcbuProductUpdateAPIRequest) GetMarket() string {
-	return r._market
-}
-
-// SetIsSmartEdit is IsSmartEdit Setter
-// 智能编辑，不填写使用原来的。注意必须和详情的格式一致
-func (r *AlibabaIcbuProductUpdateAPIRequest) SetIsSmartEdit(_isSmartEdit bool) error {
-	r._isSmartEdit = _isSmartEdit
-	r.Set("is_smart_edit", _isSmartEdit)
-	return nil
-}
-
-// GetIsSmartEdit IsSmartEdit Getter
-func (r AlibabaIcbuProductUpdateAPIRequest) GetIsSmartEdit() bool {
-	return r._isSmartEdit
-}
-
 // SetCustomInfo is CustomInfo Setter
 // 定制信息
 func (r *AlibabaIcbuProductUpdateAPIRequest) SetCustomInfo(_customInfo *CustomInfo) error {
@@ -292,15 +292,15 @@ func (r AlibabaIcbuProductUpdateAPIRequest) GetCustomInfo() *CustomInfo {
 	return r._customInfo
 }
 
-// SetProductId is ProductId Setter
-// 混淆商品ID
-func (r *AlibabaIcbuProductUpdateAPIRequest) SetProductId(_productId string) error {
-	r._productId = _productId
-	r.Set("product_id", _productId)
+// SetIsSmartEdit is IsSmartEdit Setter
+// 智能编辑，不填写使用原来的。注意必须和详情的格式一致
+func (r *AlibabaIcbuProductUpdateAPIRequest) SetIsSmartEdit(_isSmartEdit bool) error {
+	r._isSmartEdit = _isSmartEdit
+	r.Set("is_smart_edit", _isSmartEdit)
 	return nil
 }
 
-// GetProductId ProductId Getter
-func (r AlibabaIcbuProductUpdateAPIRequest) GetProductId() string {
-	return r._productId
+// GetIsSmartEdit IsSmartEdit Getter
+func (r AlibabaIcbuProductUpdateAPIRequest) GetIsSmartEdit() bool {
+	return r._isSmartEdit
 }

@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.2] - 2021-07-06
+
+### Added
+
+### Changed
+
+- 对生成结构体内存对齐 
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+
 ## [1.2.0] - 2021-07-01
 
 ### Added

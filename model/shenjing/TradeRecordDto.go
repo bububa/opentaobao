@@ -18,10 +18,6 @@ type TradeRecordDto struct {
 	TradeNo string `json:"trade_no,omitempty" xml:"trade_no,omitempty"`
 	// 付款目的
 	Purpose string `json:"purpose,omitempty" xml:"purpose,omitempty"`
-	// 流水同步日期
-	SyncDate int64 `json:"sync_date,omitempty" xml:"sync_date,omitempty"`
-	// 交易日期
-	TradeDate int64 `json:"trade_date,omitempty" xml:"trade_date,omitempty"`
 	// 借方金额(支出)
 	DebitAmount string `json:"debit_amount,omitempty" xml:"debit_amount,omitempty"`
 	// 业务摘要
@@ -44,4 +40,8 @@ type TradeRecordDto struct {
 	AccountNoEx string `json:"account_no_ex,omitempty" xml:"account_no_ex,omitempty"`
 	// 交易类型
 	TradeType string `json:"trade_type,omitempty" xml:"trade_type,omitempty"`
+	// 流水同步日期
+	SyncDate int64 `json:"sync_date,omitempty" xml:"sync_date,omitempty"`
+	// 交易日期
+	TradeDate int64 `json:"trade_date,omitempty" xml:"trade_date,omitempty"`
 }

@@ -12,10 +12,6 @@ import (
 // 支付宝医疗健康疫苗预约创建
 type AlibabaHealthVaccinNoticeOrderCreateAPIRequest struct {
 	model.Params
-	// 预约人性别(1男2女)
-	_sex int64
-	// 年龄
-	_age int64
 	// 预约日期
 	_reserveDate string
 	// 支付宝用户id
@@ -36,8 +32,6 @@ type AlibabaHealthVaccinNoticeOrderCreateAPIRequest struct {
 	_reserveTime string
 	// 疫苗信息
 	_vaccineInfo string
-	// 年龄类型(1-宝宝2-成人)
-	_ageType int64
 	// 支付宝消息通知跳转订单详情链接
 	_orderDetailUrl string
 	// 地区名字
@@ -46,6 +40,12 @@ type AlibabaHealthVaccinNoticeOrderCreateAPIRequest struct {
 	_city string
 	// 省份名字
 	_province string
+	// 预约人性别(1男2女)
+	_sex int64
+	// 年龄
+	_age int64
+	// 年龄类型(1-宝宝2-成人)
+	_ageType int64
 }
 
 // NewAlibabaHealthVaccinNoticeOrderCreateRequest 初始化AlibabaHealthVaccinNoticeOrderCreateAPIRequest对象
@@ -67,32 +67,6 @@ func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetApiParams() url.Value
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetSex is Sex Setter
-// 预约人性别(1男2女)
-func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetSex(_sex int64) error {
-	r._sex = _sex
-	r.Set("sex", _sex)
-	return nil
-}
-
-// GetSex Sex Getter
-func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetSex() int64 {
-	return r._sex
-}
-
-// SetAge is Age Setter
-// 年龄
-func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAge(_age int64) error {
-	r._age = _age
-	r.Set("age", _age)
-	return nil
-}
-
-// GetAge Age Getter
-func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetAge() int64 {
-	return r._age
 }
 
 // SetReserveDate is ReserveDate Setter
@@ -225,19 +199,6 @@ func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetVaccineInfo() string 
 	return r._vaccineInfo
 }
 
-// SetAgeType is AgeType Setter
-// 年龄类型(1-宝宝2-成人)
-func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAgeType(_ageType int64) error {
-	r._ageType = _ageType
-	r.Set("age_type", _ageType)
-	return nil
-}
-
-// GetAgeType AgeType Getter
-func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetAgeType() int64 {
-	return r._ageType
-}
-
 // SetOrderDetailUrl is OrderDetailUrl Setter
 // 支付宝消息通知跳转订单详情链接
 func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetOrderDetailUrl(_orderDetailUrl string) error {
@@ -288,4 +249,43 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetProvince(_province s
 // GetProvince Province Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetProvince() string {
 	return r._province
+}
+
+// SetSex is Sex Setter
+// 预约人性别(1男2女)
+func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetSex(_sex int64) error {
+	r._sex = _sex
+	r.Set("sex", _sex)
+	return nil
+}
+
+// GetSex Sex Getter
+func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetSex() int64 {
+	return r._sex
+}
+
+// SetAge is Age Setter
+// 年龄
+func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAge(_age int64) error {
+	r._age = _age
+	r.Set("age", _age)
+	return nil
+}
+
+// GetAge Age Getter
+func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetAge() int64 {
+	return r._age
+}
+
+// SetAgeType is AgeType Setter
+// 年龄类型(1-宝宝2-成人)
+func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAgeType(_ageType int64) error {
+	r._ageType = _ageType
+	r.Set("age_type", _ageType)
+	return nil
+}
+
+// GetAgeType AgeType Getter
+func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetAgeType() int64 {
+	return r._ageType
 }

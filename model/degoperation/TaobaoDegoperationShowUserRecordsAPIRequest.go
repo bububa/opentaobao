@@ -16,12 +16,12 @@ type TaobaoDegoperationShowUserRecordsAPIRequest struct {
 	_degAppKey string
 	// 活动后台配置
 	_eventKey string
+	// 系统信息
+	_degAccessToken string
 	// 第几页
 	_pageNumber int64
 	// 分页尺寸
 	_pageSize int64
-	// 系统信息
-	_degAccessToken string
 }
 
 // NewTaobaoDegoperationShowUserRecordsRequest 初始化TaobaoDegoperationShowUserRecordsAPIRequest对象
@@ -71,6 +71,19 @@ func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetEventKey() string {
 	return r._eventKey
 }
 
+// SetDegAccessToken is DegAccessToken Setter
+// 系统信息
+func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetDegAccessToken(_degAccessToken string) error {
+	r._degAccessToken = _degAccessToken
+	r.Set("deg_access_token", _degAccessToken)
+	return nil
+}
+
+// GetDegAccessToken DegAccessToken Getter
+func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetDegAccessToken() string {
+	return r._degAccessToken
+}
+
 // SetPageNumber is PageNumber Setter
 // 第几页
 func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetPageNumber(_pageNumber int64) error {
@@ -95,17 +108,4 @@ func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetPageSize(_pageSize int6
 // GetPageSize PageSize Getter
 func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetDegAccessToken is DegAccessToken Setter
-// 系统信息
-func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetDegAccessToken(_degAccessToken string) error {
-	r._degAccessToken = _degAccessToken
-	r.Set("deg_access_token", _degAccessToken)
-	return nil
-}
-
-// GetDegAccessToken DegAccessToken Getter
-func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetDegAccessToken() string {
-	return r._degAccessToken
 }

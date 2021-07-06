@@ -22,12 +22,12 @@ type TaobaoJstSmsOfficialaccountOfflineAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 系统异常
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
-	// 成功
-	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
 	// 请求id
 	ResponseId string `json:"response_id,omitempty" xml:"response_id,omitempty"`
-	// 成功
-	Module bool `json:"module,omitempty" xml:"module,omitempty"`
 	// 系统异常
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// 成功
+	ResponseSuccess bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+	// 成功
+	Module bool `json:"module,omitempty" xml:"module,omitempty"`
 }

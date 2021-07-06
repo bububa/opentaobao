@@ -10,8 +10,6 @@ type ShipAgentConfirmBookTicketInfo struct {
 	TicketId string `json:"ticket_id,omitempty" xml:"ticket_id,omitempty"`
 	// 票号
 	TicketNo string `json:"ticket_no,omitempty" xml:"ticket_no,omitempty"`
-	// 票价格(分)
-	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
 	// 取票密码
 	TicketPwd string `json:"ticket_pwd,omitempty" xml:"ticket_pwd,omitempty"`
 	// 座位号
@@ -28,4 +26,6 @@ type ShipAgentConfirmBookTicketInfo struct {
 	ExtAttr string `json:"ext_attr,omitempty" xml:"ext_attr,omitempty"`
 	// 过期时间
 	ExpireTime string `json:"expire_time,omitempty" xml:"expire_time,omitempty"`
+	// 票价格(分)
+	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
 }

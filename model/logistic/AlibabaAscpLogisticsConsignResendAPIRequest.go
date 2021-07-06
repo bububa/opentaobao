@@ -14,12 +14,12 @@ import (
 // 2、自己联系只能切换为自己联系的公司，在线下单也只能切换为在线下单的物流公司
 type AlibabaAscpLogisticsConsignResendAPIRequest struct {
 	model.Params
+	// 包裹包含的运单号及快递公司编号,多包裹时，需要包含所有包裹的运单号等信息
+	_consignPkgs []TopConsignPkgRequest
 	// 订单id
 	_tid string
 	// 拆单子订单列表，对应的数据是：子订单号列表。可以不传，但是如果传了则必须符合传递的规则。子订单必须是操作的物流订单的子订单的真子集
 	_subTids string
-	// 包裹包含的运单号及快递公司编号,多包裹时，需要包含所有包裹的运单号等信息
-	_consignPkgs []TopConsignPkgRequest
 }
 
 // NewAlibabaAscpLogisticsConsignResendRequest 初始化AlibabaAscpLogisticsConsignResendAPIRequest对象
@@ -41,6 +41,19 @@ func (r AlibabaAscpLogisticsConsignResendAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetConsignPkgs is ConsignPkgs Setter
+// 包裹包含的运单号及快递公司编号,多包裹时，需要包含所有包裹的运单号等信息
+func (r *AlibabaAscpLogisticsConsignResendAPIRequest) SetConsignPkgs(_consignPkgs []TopConsignPkgRequest) error {
+	r._consignPkgs = _consignPkgs
+	r.Set("consign_pkgs", _consignPkgs)
+	return nil
+}
+
+// GetConsignPkgs ConsignPkgs Getter
+func (r AlibabaAscpLogisticsConsignResendAPIRequest) GetConsignPkgs() []TopConsignPkgRequest {
+	return r._consignPkgs
 }
 
 // SetTid is Tid Setter
@@ -67,17 +80,4 @@ func (r *AlibabaAscpLogisticsConsignResendAPIRequest) SetSubTids(_subTids string
 // GetSubTids SubTids Getter
 func (r AlibabaAscpLogisticsConsignResendAPIRequest) GetSubTids() string {
 	return r._subTids
-}
-
-// SetConsignPkgs is ConsignPkgs Setter
-// 包裹包含的运单号及快递公司编号,多包裹时，需要包含所有包裹的运单号等信息
-func (r *AlibabaAscpLogisticsConsignResendAPIRequest) SetConsignPkgs(_consignPkgs []TopConsignPkgRequest) error {
-	r._consignPkgs = _consignPkgs
-	r.Set("consign_pkgs", _consignPkgs)
-	return nil
-}
-
-// GetConsignPkgs ConsignPkgs Getter
-func (r AlibabaAscpLogisticsConsignResendAPIRequest) GetConsignPkgs() []TopConsignPkgRequest {
-	return r._consignPkgs
 }

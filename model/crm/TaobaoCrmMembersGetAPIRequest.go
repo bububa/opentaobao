@@ -14,6 +14,10 @@ type TaobaoCrmMembersGetAPIRequest struct {
 	model.Params
 	// 买家的昵称
 	_buyerNick string
+	// 最早上次交易时间
+	_minLastTradeTime string
+	// 最迟上次交易时间
+	_maxLastTradeTime string
 	// 会员等级,如果不传入值则默认为全部等级。
 	_grade int64
 	// 最小交易额,单位为元
@@ -24,10 +28,6 @@ type TaobaoCrmMembersGetAPIRequest struct {
 	_minTradeCount int64
 	// 最大交易量
 	_maxTradeCount int64
-	// 最早上次交易时间
-	_minLastTradeTime string
-	// 最迟上次交易时间
-	_maxLastTradeTime string
 	// 表示每页显示的会员数量,page_size的最大值不能超过100条,最小值不能低于1，
 	_pageSize int64
 	// 显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1，最大页数为1000
@@ -66,6 +66,32 @@ func (r *TaobaoCrmMembersGetAPIRequest) SetBuyerNick(_buyerNick string) error {
 // GetBuyerNick BuyerNick Getter
 func (r TaobaoCrmMembersGetAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
+}
+
+// SetMinLastTradeTime is MinLastTradeTime Setter
+// 最早上次交易时间
+func (r *TaobaoCrmMembersGetAPIRequest) SetMinLastTradeTime(_minLastTradeTime string) error {
+	r._minLastTradeTime = _minLastTradeTime
+	r.Set("min_last_trade_time", _minLastTradeTime)
+	return nil
+}
+
+// GetMinLastTradeTime MinLastTradeTime Getter
+func (r TaobaoCrmMembersGetAPIRequest) GetMinLastTradeTime() string {
+	return r._minLastTradeTime
+}
+
+// SetMaxLastTradeTime is MaxLastTradeTime Setter
+// 最迟上次交易时间
+func (r *TaobaoCrmMembersGetAPIRequest) SetMaxLastTradeTime(_maxLastTradeTime string) error {
+	r._maxLastTradeTime = _maxLastTradeTime
+	r.Set("max_last_trade_time", _maxLastTradeTime)
+	return nil
+}
+
+// GetMaxLastTradeTime MaxLastTradeTime Getter
+func (r TaobaoCrmMembersGetAPIRequest) GetMaxLastTradeTime() string {
+	return r._maxLastTradeTime
 }
 
 // SetGrade is Grade Setter
@@ -131,32 +157,6 @@ func (r *TaobaoCrmMembersGetAPIRequest) SetMaxTradeCount(_maxTradeCount int64) e
 // GetMaxTradeCount MaxTradeCount Getter
 func (r TaobaoCrmMembersGetAPIRequest) GetMaxTradeCount() int64 {
 	return r._maxTradeCount
-}
-
-// SetMinLastTradeTime is MinLastTradeTime Setter
-// 最早上次交易时间
-func (r *TaobaoCrmMembersGetAPIRequest) SetMinLastTradeTime(_minLastTradeTime string) error {
-	r._minLastTradeTime = _minLastTradeTime
-	r.Set("min_last_trade_time", _minLastTradeTime)
-	return nil
-}
-
-// GetMinLastTradeTime MinLastTradeTime Getter
-func (r TaobaoCrmMembersGetAPIRequest) GetMinLastTradeTime() string {
-	return r._minLastTradeTime
-}
-
-// SetMaxLastTradeTime is MaxLastTradeTime Setter
-// 最迟上次交易时间
-func (r *TaobaoCrmMembersGetAPIRequest) SetMaxLastTradeTime(_maxLastTradeTime string) error {
-	r._maxLastTradeTime = _maxLastTradeTime
-	r.Set("max_last_trade_time", _maxLastTradeTime)
-	return nil
-}
-
-// GetMaxLastTradeTime MaxLastTradeTime Getter
-func (r TaobaoCrmMembersGetAPIRequest) GetMaxLastTradeTime() string {
-	return r._maxLastTradeTime
 }
 
 // SetPageSize is PageSize Setter

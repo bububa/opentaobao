@@ -2,6 +2,10 @@ package moscm
 
 // Spudto 结构体
 type Spudto struct {
+	// 商品图片集合
+	ProductImgs []ProductImgDto `json:"product_imgs,omitempty" xml:"product_imgs>product_img_dto,omitempty"`
+	// 属性
+	Props []PropertyDto `json:"props,omitempty" xml:"props>property_dto,omitempty"`
 	// 条码信息
 	BarcodeStr string `json:"barcode_str,omitempty" xml:"barcode_str,omitempty"`
 	// 品牌唯一标识
@@ -16,10 +20,6 @@ type Spudto struct {
 	Created string `json:"created,omitempty" xml:"created,omitempty"`
 	// 唯一标识
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
-	// 是否新品,默认true
-	IsNew bool `json:"is_new,omitempty" xml:"is_new,omitempty"`
-	// 商品级别:1.天猫，2.线上，3.单品，4.原始
-	Level int64 `json:"level,omitempty" xml:"level,omitempty"`
 	// 透明素材图
 	Material string `json:"material,omitempty" xml:"material,omitempty"`
 	// m站产品描述
@@ -34,16 +34,8 @@ type Spudto struct {
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
 	// 产品唯一标识
 	ProductId string `json:"product_id,omitempty" xml:"product_id,omitempty"`
-	// 商品图片集合
-	ProductImgs []ProductImgDto `json:"product_imgs,omitempty" xml:"product_imgs>product_img_dto,omitempty"`
-	// 属性
-	Props []PropertyDto `json:"props,omitempty" xml:"props>property_dto,omitempty"`
-	// 产品评分次数
-	RateNum int64 `json:"rate_num,omitempty" xml:"rate_num,omitempty"`
 	// 产品卖点描述，长度限制在20个汉字
 	SellPt string `json:"sell_pt,omitempty" xml:"sell_pt,omitempty"`
-	// 产品状态：删除(-1),正常(1)
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 款号
 	StyleNo string `json:"style_no,omitempty" xml:"style_no,omitempty"`
 	// 子标题
@@ -52,4 +44,12 @@ type Spudto struct {
 	Tags string `json:"tags,omitempty" xml:"tags,omitempty"`
 	// 产品名称
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
+	// 商品级别:1.天猫，2.线上，3.单品，4.原始
+	Level int64 `json:"level,omitempty" xml:"level,omitempty"`
+	// 产品评分次数
+	RateNum int64 `json:"rate_num,omitempty" xml:"rate_num,omitempty"`
+	// 产品状态：删除(-1),正常(1)
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 是否新品,默认true
+	IsNew bool `json:"is_new,omitempty" xml:"is_new,omitempty"`
 }

@@ -2,10 +2,12 @@ package alsc
 
 // PromotionFacadeOpenInfoList 结构体
 type PromotionFacadeOpenInfoList struct {
+	// 圈选商品
+	ItemSelectedOpenInfoList []ItemSelectedOpenInfoList `json:"item_selected_open_info_list,omitempty" xml:"item_selected_open_info_list>item_selected_open_info_list,omitempty"`
+	// 圈选门店
+	ShopSelectedOpenInfoList []ShopSelectedOpenInfoList `json:"shop_selected_open_info_list,omitempty" xml:"shop_selected_open_info_list>shop_selected_open_info_list,omitempty"`
 	// 可用时段  0000101（星期五，星期天）       [{"days":"0000101","startTime":"08:00:00","endTime":"11:59:59"},       {"days":"0010101","startTime":"08:00:00","endTime":"11:59:59"}]
 	AvailableTime string `json:"available_time,omitempty" xml:"available_time,omitempty"`
-	// 是否已经删除
-	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
 	// 规则描述
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// 促销周期结束时间
@@ -14,14 +16,10 @@ type PromotionFacadeOpenInfoList struct {
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
 	// 适用商品范围  值：ALL，PART_AVAILABLE，PART_UNAVAILABLE      * 说明：全部商品可用，部分商品可用，部分商品不可用
 	ItemCoverage string `json:"item_coverage,omitempty" xml:"item_coverage,omitempty"`
-	// 圈选商品
-	ItemSelectedOpenInfoList []ItemSelectedOpenInfoList `json:"item_selected_open_info_list,omitempty" xml:"item_selected_open_info_list>item_selected_open_info_list,omitempty"`
 	// 促销规则名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 促销规则Id
 	PromotionId string `json:"promotion_id,omitempty" xml:"promotion_id,omitempty"`
-	// 圈选门店
-	ShopSelectedOpenInfoList []ShopSelectedOpenInfoList `json:"shop_selected_open_info_list,omitempty" xml:"shop_selected_open_info_list>shop_selected_open_info_list,omitempty"`
 	// 促销周期开始时间
 	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 状态 促销活动状态 值：UNUSED,USED,NO_INVENTORY,INVALID 说明：未使用,使用中,使用中,使用中
@@ -40,4 +38,6 @@ type PromotionFacadeOpenInfoList struct {
 	UpdateBy string `json:"update_by,omitempty" xml:"update_by,omitempty"`
 	// 更新人名称
 	UpdateByName string `json:"update_by_name,omitempty" xml:"update_by_name,omitempty"`
+	// 是否已经删除
+	Deleted bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
 }

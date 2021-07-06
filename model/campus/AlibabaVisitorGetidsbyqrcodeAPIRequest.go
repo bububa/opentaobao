@@ -12,14 +12,14 @@ import (
 // 根据支付宝阿里访客小程序的动态二维码查询来访行程id
 type AlibabaVisitorGetidsbyqrcodeAPIRequest struct {
 	model.Params
-	// 公司id
-	_companyId int64
-	// 园区id
-	_campusId int64
 	// 来访时间
 	_date string
 	// 二维码字符串
 	_qrCode string
+	// 公司id
+	_companyId int64
+	// 园区id
+	_campusId int64
 }
 
 // NewAlibabaVisitorGetidsbyqrcodeRequest 初始化AlibabaVisitorGetidsbyqrcodeAPIRequest对象
@@ -41,32 +41,6 @@ func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetCompanyId is CompanyId Setter
-// 公司id
-func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetCompanyId(_companyId int64) error {
-	r._companyId = _companyId
-	r.Set("company_id", _companyId)
-	return nil
-}
-
-// GetCompanyId CompanyId Getter
-func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetCompanyId() int64 {
-	return r._companyId
-}
-
-// SetCampusId is CampusId Setter
-// 园区id
-func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetCampusId(_campusId int64) error {
-	r._campusId = _campusId
-	r.Set("campus_id", _campusId)
-	return nil
-}
-
-// GetCampusId CampusId Getter
-func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetCampusId() int64 {
-	return r._campusId
 }
 
 // SetDate is Date Setter
@@ -93,4 +67,30 @@ func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetQrCode(_qrCode string) error
 // GetQrCode QrCode Getter
 func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetQrCode() string {
 	return r._qrCode
+}
+
+// SetCompanyId is CompanyId Setter
+// 公司id
+func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetCompanyId(_companyId int64) error {
+	r._companyId = _companyId
+	r.Set("company_id", _companyId)
+	return nil
+}
+
+// GetCompanyId CompanyId Getter
+func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetCompanyId() int64 {
+	return r._companyId
+}
+
+// SetCampusId is CampusId Setter
+// 园区id
+func (r *AlibabaVisitorGetidsbyqrcodeAPIRequest) SetCampusId(_campusId int64) error {
+	r._campusId = _campusId
+	r.Set("campus_id", _campusId)
+	return nil
+}
+
+// GetCampusId CampusId Getter
+func (r AlibabaVisitorGetidsbyqrcodeAPIRequest) GetCampusId() int64 {
+	return r._campusId
 }

@@ -12,12 +12,12 @@ import (
 // 点播url
 type TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest struct {
 	model.Params
-	// 用户信息
-	_param0 *OpenBaseInfo
 	// 设备id
 	_param1 string
 	// url
 	_param2 string
+	// 用户信息
+	_param0 *OpenBaseInfo
 }
 
 // NewTaobaoAilabAicloudTopDeviceControlPlayurlRequest 初始化TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) GetApiParams() url.
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetParam0 is Param0 Setter
-// 用户信息
-func (r *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
-	r._param0 = _param0
-	r.Set("param0", _param0)
-	return nil
-}
-
-// GetParam0 Param0 Getter
-func (r TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) GetParam0() *OpenBaseInfo {
-	return r._param0
 }
 
 // SetParam1 is Param1 Setter
@@ -78,4 +65,17 @@ func (r *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) SetParam2(_param2 
 // GetParam2 Param2 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) GetParam2() string {
 	return r._param2
+}
+
+// SetParam0 is Param0 Setter
+// 用户信息
+func (r *TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// GetParam0 Param0 Getter
+func (r TaobaoAilabAicloudTopDeviceControlPlayurlAPIRequest) GetParam0() *OpenBaseInfo {
+	return r._param0
 }

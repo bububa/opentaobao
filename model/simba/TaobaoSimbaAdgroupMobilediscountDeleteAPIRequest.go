@@ -12,10 +12,10 @@ import (
 // 批量删除adgroup的移动溢价
 type TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest struct {
 	model.Params
-	// 昵称
-	_nick string
 	// adgroup主键数组（批量最多支持200个）
 	_adgroupIds []int64
+	// 昵称
+	_nick string
 }
 
 // NewTaobaoSimbaAdgroupMobilediscountDeleteRequest 初始化TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// SetNick is Nick Setter
-// 昵称
-func (r *TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) SetNick(_nick string) error {
-	r._nick = _nick
-	r.Set("nick", _nick)
-	return nil
-}
-
-// GetNick Nick Getter
-func (r TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) GetNick() string {
-	return r._nick
-}
-
 // SetAdgroupIds is AdgroupIds Setter
 // adgroup主键数组（批量最多支持200个）
 func (r *TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) SetAdgroupIds(_adgroupIds []int64) error {
@@ -63,4 +50,17 @@ func (r *TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) SetAdgroupIds(_adgrou
 // GetAdgroupIds AdgroupIds Getter
 func (r TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) GetAdgroupIds() []int64 {
 	return r._adgroupIds
+}
+
+// SetNick is Nick Setter
+// 昵称
+func (r *TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// GetNick Nick Getter
+func (r TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) GetNick() string {
+	return r._nick
 }

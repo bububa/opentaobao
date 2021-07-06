@@ -6,8 +6,6 @@ type OuterDoctorPublishRequest struct {
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 医生姓名
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
-	// 0-未填写；1-男；2-女
-	Sex int64 `json:"sex,omitempty" xml:"sex,omitempty"`
 	// 医生简介
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// 医生头像
@@ -16,8 +14,6 @@ type OuterDoctorPublishRequest struct {
 	SendWord string `json:"send_word,omitempty" xml:"send_word,omitempty"`
 	// 医生手机号
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
-	// 证件类型，1-身份证
-	IdentityType int64 `json:"identity_type,omitempty" xml:"identity_type,omitempty"`
 	// 证件号码
 	IdentityNo string `json:"identity_no,omitempty" xml:"identity_no,omitempty"`
 	// 证件图片
@@ -54,10 +50,14 @@ type OuterDoctorPublishRequest struct {
 	QuaCertificateNo string `json:"qua_certificate_no,omitempty" xml:"qua_certificate_no,omitempty"`
 	// 互联网医院id
 	HospitalId string `json:"hospital_id,omitempty" xml:"hospital_id,omitempty"`
-	// 健康标准二级科室ID
-	JkSecondStDepartId int64 `json:"jk_second_st_depart_id,omitempty" xml:"jk_second_st_depart_id,omitempty"`
 	// 健康标准二级科室名称
 	JkSecondStDepartName string `json:"jk_second_st_depart_name,omitempty" xml:"jk_second_st_depart_name,omitempty"`
 	// 医生uuid.新增医生该字段为空，修改医生该字段必传
 	DoctorUuid string `json:"doctor_uuid,omitempty" xml:"doctor_uuid,omitempty"`
+	// 0-未填写；1-男；2-女
+	Sex int64 `json:"sex,omitempty" xml:"sex,omitempty"`
+	// 证件类型，1-身份证
+	IdentityType int64 `json:"identity_type,omitempty" xml:"identity_type,omitempty"`
+	// 健康标准二级科室ID
+	JkSecondStDepartId int64 `json:"jk_second_st_depart_id,omitempty" xml:"jk_second_st_depart_id,omitempty"`
 }

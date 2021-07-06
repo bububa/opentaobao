@@ -4,8 +4,6 @@ package campus
 type MobileReceiverMessageEvent struct {
 	// 消息key
 	MsgKey string `json:"msg_key,omitempty" xml:"msg_key,omitempty"`
-	// 时间戳
-	EventTimeMillis int64 `json:"event_time_millis,omitempty" xml:"event_time_millis,omitempty"`
 	// 来源
 	Source string `json:"source,omitempty" xml:"source,omitempty"`
 	// 消息事件
@@ -20,6 +18,8 @@ type MobileReceiverMessageEvent struct {
 	ResourceId string `json:"resource_id,omitempty" xml:"resource_id,omitempty"`
 	// 资源URL
 	ResourceUrl string `json:"resource_url,omitempty" xml:"resource_url,omitempty"`
+	// 时间戳
+	EventTimeMillis int64 `json:"event_time_millis,omitempty" xml:"event_time_millis,omitempty"`
 	// 发送者
 	Sender int64 `json:"sender,omitempty" xml:"sender,omitempty"`
 }

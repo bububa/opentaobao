@@ -8,8 +8,6 @@ type TaobaoUsergrowthOfflineConvertionDetailsGetE struct {
 	ActivityName string `json:"activity_name,omitempty" xml:"activity_name,omitempty"`
 	// 是否是新登用户，1是0非2新登非归因
 	IsNewUser string `json:"is_new_user,omitempty" xml:"is_new_user,omitempty"`
-	// 日期
-	Ds int64 `json:"ds,omitempty" xml:"ds,omitempty"`
 	// 活动ID
 	ActivityId string `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
 	// 脱敏手机号
@@ -30,4 +28,6 @@ type TaobaoUsergrowthOfflineConvertionDetailsGetE struct {
 	TargetTime string `json:"target_time,omitempty" xml:"target_time,omitempty"`
 	// 推广码code
 	PromoterCode string `json:"promoter_code,omitempty" xml:"promoter_code,omitempty"`
+	// 日期
+	Ds int64 `json:"ds,omitempty" xml:"ds,omitempty"`
 }

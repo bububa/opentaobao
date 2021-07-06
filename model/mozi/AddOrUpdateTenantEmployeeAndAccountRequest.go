@@ -2,8 +2,6 @@ package mozi
 
 // AddOrUpdateTenantEmployeeAndAccountRequest 结构体
 type AddOrUpdateTenantEmployeeAndAccountRequest struct {
-	// 租户ID
-	TenantId int64 `json:"tenant_id,omitempty" xml:"tenant_id,omitempty"`
 	// 附加属性
 	RequestMetaData string `json:"request_meta_data,omitempty" xml:"request_meta_data,omitempty"`
 	// 昵称
@@ -34,4 +32,6 @@ type AddOrUpdateTenantEmployeeAndAccountRequest struct {
 	EmployeeNumber string `json:"employee_number,omitempty" xml:"employee_number,omitempty"`
 	// 头像URL地址
 	Avatar string `json:"avatar,omitempty" xml:"avatar,omitempty"`
+	// 租户ID
+	TenantId int64 `json:"tenant_id,omitempty" xml:"tenant_id,omitempty"`
 }

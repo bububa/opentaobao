@@ -20,10 +20,10 @@ type AlibabaWdkMarketingExpirePromotionDeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_wdk_marketing_expire_promotion_delete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// message
-	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// data
 	Datas []ExpirePromotionResult `json:"datas,omitempty" xml:"datas>expire_promotion_result,omitempty"`
+	// message
+	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// errorCode
 	FailCode string `json:"fail_code,omitempty" xml:"fail_code,omitempty"`
 	// success

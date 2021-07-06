@@ -20,6 +20,10 @@ type Orderitemwlbwmsconsignordernotify struct {
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 商品名称
 	ItemName string `json:"item_name,omitempty" xml:"item_name,omitempty"`
+	// 订单商品拓展属性数据
+	ExtendFields string `json:"extend_fields,omitempty" xml:"extend_fields,omitempty"`
+	// ERP店铺编码
+	ShopCode string `json:"shop_code,omitempty" xml:"shop_code,omitempty"`
 	// 商品数量
 	ItemQuantity int64 `json:"item_quantity,omitempty" xml:"item_quantity,omitempty"`
 	// 库存类型
@@ -30,8 +34,4 @@ type Orderitemwlbwmsconsignordernotify struct {
 	DiscountAmount int64 `json:"discount_amount,omitempty" xml:"discount_amount,omitempty"`
 	// 商品成交价格=销售价格-优惠金额
 	ActualPrice int64 `json:"actual_price,omitempty" xml:"actual_price,omitempty"`
-	// 订单商品拓展属性数据
-	ExtendFields string `json:"extend_fields,omitempty" xml:"extend_fields,omitempty"`
-	// ERP店铺编码
-	ShopCode string `json:"shop_code,omitempty" xml:"shop_code,omitempty"`
 }

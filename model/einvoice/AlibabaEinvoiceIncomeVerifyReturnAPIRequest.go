@@ -12,6 +12,8 @@ import (
 // 服务商回传发票查验的结果，分两种场景：扫描驱动服务商主动回传；阿里主动发起的查验回传
 type AlibabaEinvoiceIncomeVerifyReturnAPIRequest struct {
 	model.Params
+	// 发票明细
+	_invoiceItems []InvoiceItem
 	// 校验码，success=true时必填
 	_checksum string
 	// 错误码，success=false时必填
@@ -26,8 +28,6 @@ type AlibabaEinvoiceIncomeVerifyReturnAPIRequest struct {
 	_invoiceCode string
 	// 开票日期，格式为yyyy-MM-dd，success=true时必填
 	_invoiceDate string
-	// 发票明细
-	_invoiceItems []InvoiceItem
 	// 发票备注
 	_invoiceMemo string
 	// 发票号码，success=true时必填
@@ -58,8 +58,6 @@ type AlibabaEinvoiceIncomeVerifyReturnAPIRequest struct {
 	_payerRegisterNo string
 	// 开票请求标识，扫描驱动回传type=1时填批次号
 	_reqIndex string
-	// 查验结果，true=成功，false=失败
-	_success bool
 	// 发票不含税金额，success=true时必填
 	_sumPrice string
 	// 发票税额，success=true时必填
@@ -68,6 +66,8 @@ type AlibabaEinvoiceIncomeVerifyReturnAPIRequest struct {
 	_type int64
 	// 发票状态，0=无效（作废），1=有效
 	_invoiceStatus int64
+	// 查验结果，true=成功，false=失败
+	_success bool
 }
 
 // NewAlibabaEinvoiceIncomeVerifyReturnRequest 初始化AlibabaEinvoiceIncomeVerifyReturnAPIRequest对象
@@ -89,6 +89,19 @@ func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetInvoiceItems is InvoiceItems Setter
+// 发票明细
+func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceItems(_invoiceItems []InvoiceItem) error {
+	r._invoiceItems = _invoiceItems
+	r.Set("invoice_items", _invoiceItems)
+	return nil
+}
+
+// GetInvoiceItems InvoiceItems Getter
+func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetInvoiceItems() []InvoiceItem {
+	return r._invoiceItems
 }
 
 // SetChecksum is Checksum Setter
@@ -180,19 +193,6 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceDate(_invoiceDat
 // GetInvoiceDate InvoiceDate Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetInvoiceDate() string {
 	return r._invoiceDate
-}
-
-// SetInvoiceItems is InvoiceItems Setter
-// 发票明细
-func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceItems(_invoiceItems []InvoiceItem) error {
-	r._invoiceItems = _invoiceItems
-	r.Set("invoice_items", _invoiceItems)
-	return nil
-}
-
-// GetInvoiceItems InvoiceItems Getter
-func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetInvoiceItems() []InvoiceItem {
-	return r._invoiceItems
 }
 
 // SetInvoiceMemo is InvoiceMemo Setter
@@ -390,19 +390,6 @@ func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetReqIndex() string {
 	return r._reqIndex
 }
 
-// SetSuccess is Success Setter
-// 查验结果，true=成功，false=失败
-func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetSuccess(_success bool) error {
-	r._success = _success
-	r.Set("success", _success)
-	return nil
-}
-
-// GetSuccess Success Getter
-func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetSuccess() bool {
-	return r._success
-}
-
 // SetSumPrice is SumPrice Setter
 // 发票不含税金额，success=true时必填
 func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetSumPrice(_sumPrice string) error {
@@ -453,4 +440,17 @@ func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetInvoiceStatus(_invoiceS
 // GetInvoiceStatus InvoiceStatus Getter
 func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetInvoiceStatus() int64 {
 	return r._invoiceStatus
+}
+
+// SetSuccess is Success Setter
+// 查验结果，true=成功，false=失败
+func (r *AlibabaEinvoiceIncomeVerifyReturnAPIRequest) SetSuccess(_success bool) error {
+	r._success = _success
+	r.Set("success", _success)
+	return nil
+}
+
+// GetSuccess Success Getter
+func (r AlibabaEinvoiceIncomeVerifyReturnAPIRequest) GetSuccess() bool {
+	return r._success
 }

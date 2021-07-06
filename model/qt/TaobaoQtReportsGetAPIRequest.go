@@ -14,8 +14,6 @@ type TaobaoQtReportsGetAPIRequest struct {
 	model.Params
 	// 质检服务商名
 	_spName string
-	// 质检类型，目前只支持查询qt_type=11的类型
-	_qtType int64
 	// 收费项code
 	_servcieItemCode string
 	// 送检者昵称
@@ -24,6 +22,8 @@ type TaobaoQtReportsGetAPIRequest struct {
 	_startTime string
 	// 查询时间段的结束时间
 	_endTime string
+	// 质检类型，目前只支持查询qt_type=11的类型
+	_qtType int64
 }
 
 // NewTaobaoQtReportsGetRequest 初始化TaobaoQtReportsGetAPIRequest对象
@@ -58,19 +58,6 @@ func (r *TaobaoQtReportsGetAPIRequest) SetSpName(_spName string) error {
 // GetSpName SpName Getter
 func (r TaobaoQtReportsGetAPIRequest) GetSpName() string {
 	return r._spName
-}
-
-// SetQtType is QtType Setter
-// 质检类型，目前只支持查询qt_type=11的类型
-func (r *TaobaoQtReportsGetAPIRequest) SetQtType(_qtType int64) error {
-	r._qtType = _qtType
-	r.Set("qt_type", _qtType)
-	return nil
-}
-
-// GetQtType QtType Getter
-func (r TaobaoQtReportsGetAPIRequest) GetQtType() int64 {
-	return r._qtType
 }
 
 // SetServcieItemCode is ServcieItemCode Setter
@@ -123,4 +110,17 @@ func (r *TaobaoQtReportsGetAPIRequest) SetEndTime(_endTime string) error {
 // GetEndTime EndTime Getter
 func (r TaobaoQtReportsGetAPIRequest) GetEndTime() string {
 	return r._endTime
+}
+
+// SetQtType is QtType Setter
+// 质检类型，目前只支持查询qt_type=11的类型
+func (r *TaobaoQtReportsGetAPIRequest) SetQtType(_qtType int64) error {
+	r._qtType = _qtType
+	r.Set("qt_type", _qtType)
+	return nil
+}
+
+// GetQtType QtType Getter
+func (r TaobaoQtReportsGetAPIRequest) GetQtType() int64 {
+	return r._qtType
 }

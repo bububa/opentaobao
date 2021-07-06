@@ -18,8 +18,6 @@ type Buyer struct {
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
 	// 买家完整地址
 	FullAddress string `json:"full_address,omitempty" xml:"full_address,omitempty"`
-	// 地区编码
-	Location int64 `json:"location,omitempty" xml:"location,omitempty"`
 	// 区
 	AddressDistrict string `json:"address_district,omitempty" xml:"address_district,omitempty"`
 	// 市
@@ -30,4 +28,6 @@ type Buyer struct {
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 邮编
 	ZipCode string `json:"zip_code,omitempty" xml:"zip_code,omitempty"`
+	// 地区编码
+	Location int64 `json:"location,omitempty" xml:"location,omitempty"`
 }

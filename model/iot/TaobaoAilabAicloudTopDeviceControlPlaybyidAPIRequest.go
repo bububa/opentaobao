@@ -12,8 +12,6 @@ import (
 // 通过id播放歌曲
 type TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest struct {
 	model.Params
-	// 用户信息
-	_param0 *OpenBaseInfo
 	// 设备id
 	_param1 string
 	// 音频id
@@ -22,6 +20,8 @@ type TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest struct {
 	_param3 string
 	// 音频类型，如果没有音频类型默认填children_song
 	_param4 string
+	// 用户信息
+	_param0 *OpenBaseInfo
 }
 
 // NewTaobaoAilabAicloudTopDeviceControlPlaybyidRequest 初始化TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest对象
@@ -43,19 +43,6 @@ func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetApiParams() url
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetParam0 is Param0 Setter
-// 用户信息
-func (r *TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
-	r._param0 = _param0
-	r.Set("param0", _param0)
-	return nil
-}
-
-// GetParam0 Param0 Getter
-func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetParam0() *OpenBaseInfo {
-	return r._param0
 }
 
 // SetParam1 is Param1 Setter
@@ -108,4 +95,17 @@ func (r *TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) SetParam4(_param4
 // GetParam4 Param4 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetParam4() string {
 	return r._param4
+}
+
+// SetParam0 is Param0 Setter
+// 用户信息
+func (r *TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// GetParam0 Param0 Getter
+func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetParam0() *OpenBaseInfo {
+	return r._param0
 }

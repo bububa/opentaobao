@@ -4,8 +4,6 @@ package idleitem
 type RecycleOrderTo struct {
 	// 回收商appkey
 	AppKey string `json:"app_key,omitempty" xml:"app_key,omitempty"`
-	// 估价金额,单位分
-	ApprizeAmount int64 `json:"apprize_amount,omitempty" xml:"apprize_amount,omitempty"`
 	// 估价Id
 	ApprizeId string `json:"apprize_id,omitempty" xml:"apprize_id,omitempty"`
 	// 区
@@ -32,18 +30,12 @@ type RecycleOrderTo struct {
 	CouponId string `json:"coupon_id,omitempty" xml:"coupon_id,omitempty"`
 	// 加价券规则（预留）
 	CouponRule string `json:"coupon_rule,omitempty" xml:"coupon_rule,omitempty"`
-	// true：是信用预付订单，false：普通订单
-	CreditPay bool `json:"credit_pay,omitempty" xml:"credit_pay,omitempty"`
-	// 信用预付金额,单位分
-	CreditPayAmount int64 `json:"credit_pay_amount,omitempty" xml:"credit_pay_amount,omitempty"`
 	// onlien:线上环境 pre：测试环境
 	Env string `json:"env,omitempty" xml:"env,omitempty"`
 	// 订单创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 1:现金支付
 	IdlePayType string `json:"idle_pay_type,omitempty" xml:"idle_pay_type,omitempty"`
-	// 回收订单状态：1:订单创建 2:已上门取件 3:已质检 4:卖家确认交易完成 6:卖家订单已评价 7:回收商订单已评价 100:卖家申请退回 101:货物已退回 102:卖家关闭订单
-	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 省
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
 	// 卖家评价内容
@@ -82,6 +74,14 @@ type RecycleOrderTo struct {
 	MakeupPayTime string `json:"makeup_pay_time,omitempty" xml:"makeup_pay_time,omitempty"`
 	// 主订单支付流水Id
 	MainPayId string `json:"main_pay_id,omitempty" xml:"main_pay_id,omitempty"`
+	// 估价金额,单位分
+	ApprizeAmount int64 `json:"apprize_amount,omitempty" xml:"apprize_amount,omitempty"`
+	// 信用预付金额,单位分
+	CreditPayAmount int64 `json:"credit_pay_amount,omitempty" xml:"credit_pay_amount,omitempty"`
+	// 回收订单状态：1:订单创建 2:已上门取件 3:已质检 4:卖家确认交易完成 6:卖家订单已评价 7:回收商订单已评价 100:卖家申请退回 101:货物已退回 102:卖家关闭订单
+	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 质检金额,单位分
 	QaAmount int64 `json:"qa_amount,omitempty" xml:"qa_amount,omitempty"`
+	// true：是信用预付订单，false：普通订单
+	CreditPay bool `json:"credit_pay,omitempty" xml:"credit_pay,omitempty"`
 }

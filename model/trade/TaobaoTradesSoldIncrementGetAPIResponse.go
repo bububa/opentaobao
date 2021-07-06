@@ -24,10 +24,10 @@ type TaobaoTradesSoldIncrementGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"trades_sold_increment_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 搜索到的交易信息总数
-	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 搜索到的交易信息列表，返回的Trade和Order中包含的具体信息为入参fields请求的字段信息
 	Trades []Trade `json:"trades,omitempty" xml:"trades>trade,omitempty"`
+	// 搜索到的交易信息总数
+	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 是否存在下一页
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 }

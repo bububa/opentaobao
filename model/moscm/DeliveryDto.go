@@ -2,6 +2,8 @@ package moscm
 
 // DeliveryDto 结构体
 type DeliveryDto struct {
+	// 商品明细
+	ShipItems []ShipItemDto `json:"ship_items,omitempty" xml:"ship_items>ship_item_dto,omitempty"`
 	// 承运公司名称
 	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
 	// 订单号
@@ -12,8 +14,6 @@ type DeliveryDto struct {
 	OutboundDate string `json:"outbound_date,omitempty" xml:"outbound_date,omitempty"`
 	// 运单号
 	WaybillNumber string `json:"waybill_number,omitempty" xml:"waybill_number,omitempty"`
-	// 商品明细
-	ShipItems []ShipItemDto `json:"ship_items,omitempty" xml:"ship_items>ship_item_dto,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 }

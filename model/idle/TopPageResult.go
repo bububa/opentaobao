@@ -8,10 +8,10 @@ type TopPageResult struct {
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// 错误描述
 	ErrMsg string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
+	// 总结果数
+	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// 是否有下一页
 	NextPage bool `json:"next_page,omitempty" xml:"next_page,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
-	// 总结果数
-	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 }

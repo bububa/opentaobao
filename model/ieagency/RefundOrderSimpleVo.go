@@ -2,10 +2,10 @@ package ieagency
 
 // RefundOrderSimpleVo 结构体
 type RefundOrderSimpleVo struct {
-	// 代理商ID
-	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
 	// 新老模型（V1:老模型，V2：新模型）
 	ModelVersion string `json:"model_version,omitempty" xml:"model_version,omitempty"`
+	// 代理商ID
+	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
 	// 订单ID
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 10: "已提交待处理",WAI20:"待人工处理"

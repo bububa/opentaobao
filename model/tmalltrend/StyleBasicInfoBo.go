@@ -12,8 +12,6 @@ type StyleBasicInfoBo struct {
 	ModelSourceUrl string `json:"model_source_url,omitempty" xml:"model_source_url,omitempty"`
 	// 款式编号，业务唯一
 	StyleSerialNumber string `json:"style_serial_number,omitempty" xml:"style_serial_number,omitempty"`
-	// 是否拥有IP版权，true--有，false--无
-	IpCopyright bool `json:"ip_copyright,omitempty" xml:"ip_copyright,omitempty"`
 	// 图案元素，多个用英文分号分割组成字符串传递
 	Pattern string `json:"pattern,omitempty" xml:"pattern,omitempty"`
 	// 款式名称
@@ -68,4 +66,6 @@ type StyleBasicInfoBo struct {
 	Lights string `json:"lights,omitempty" xml:"lights,omitempty"`
 	// 版本号
 	Version string `json:"version,omitempty" xml:"version,omitempty"`
+	// 是否拥有IP版权，true--有，false--无
+	IpCopyright bool `json:"ip_copyright,omitempty" xml:"ip_copyright,omitempty"`
 }

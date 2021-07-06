@@ -14,12 +14,12 @@ type AlibabaItCloudliveGetagentconfigAPIRequest struct {
 	model.Params
 	// agent标识信息
 	_agentId string
-	// 时间戳
-	_timeStamp int64
 	// 签名
 	_signature string
 	// 设备所在IP地址
 	_agentIp string
+	// 时间戳
+	_timeStamp int64
 }
 
 // NewAlibabaItCloudliveGetagentconfigRequest 初始化AlibabaItCloudliveGetagentconfigAPIRequest对象
@@ -56,19 +56,6 @@ func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetAgentId() string {
 	return r._agentId
 }
 
-// SetTimeStamp is TimeStamp Setter
-// 时间戳
-func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetTimeStamp(_timeStamp int64) error {
-	r._timeStamp = _timeStamp
-	r.Set("time_stamp", _timeStamp)
-	return nil
-}
-
-// GetTimeStamp TimeStamp Getter
-func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetTimeStamp() int64 {
-	return r._timeStamp
-}
-
 // SetSignature is Signature Setter
 // 签名
 func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetSignature(_signature string) error {
@@ -93,4 +80,17 @@ func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetAgentIp(_agentIp string)
 // GetAgentIp AgentIp Getter
 func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetAgentIp() string {
 	return r._agentIp
+}
+
+// SetTimeStamp is TimeStamp Setter
+// 时间戳
+func (r *AlibabaItCloudliveGetagentconfigAPIRequest) SetTimeStamp(_timeStamp int64) error {
+	r._timeStamp = _timeStamp
+	r.Set("time_stamp", _timeStamp)
+	return nil
+}
+
+// GetTimeStamp TimeStamp Getter
+func (r AlibabaItCloudliveGetagentconfigAPIRequest) GetTimeStamp() int64 {
+	return r._timeStamp
 }

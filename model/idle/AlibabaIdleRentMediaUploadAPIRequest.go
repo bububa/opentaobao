@@ -12,10 +12,10 @@ import (
 // 上传多媒体信息，包括图片、视频（暂不支持）
 type AlibabaIdleRentMediaUploadAPIRequest struct {
 	model.Params
-	// 多媒体字节数组
-	_data *model.File
 	// 文件名
 	_name string
+	// 多媒体字节数组
+	_data *model.File
 	// 0-表示图片，1-表示视频（暂不支持）
 	_type int64
 }
@@ -41,19 +41,6 @@ func (r AlibabaIdleRentMediaUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetData is Data Setter
-// 多媒体字节数组
-func (r *AlibabaIdleRentMediaUploadAPIRequest) SetData(_data *model.File) error {
-	r._data = _data
-	r.Set("data", _data)
-	return nil
-}
-
-// GetData Data Getter
-func (r AlibabaIdleRentMediaUploadAPIRequest) GetData() *model.File {
-	return r._data
-}
-
 // SetName is Name Setter
 // 文件名
 func (r *AlibabaIdleRentMediaUploadAPIRequest) SetName(_name string) error {
@@ -65,6 +52,19 @@ func (r *AlibabaIdleRentMediaUploadAPIRequest) SetName(_name string) error {
 // GetName Name Getter
 func (r AlibabaIdleRentMediaUploadAPIRequest) GetName() string {
 	return r._name
+}
+
+// SetData is Data Setter
+// 多媒体字节数组
+func (r *AlibabaIdleRentMediaUploadAPIRequest) SetData(_data *model.File) error {
+	r._data = _data
+	r.Set("data", _data)
+	return nil
+}
+
+// GetData Data Getter
+func (r AlibabaIdleRentMediaUploadAPIRequest) GetData() *model.File {
+	return r._data
 }
 
 // SetType is Type Setter

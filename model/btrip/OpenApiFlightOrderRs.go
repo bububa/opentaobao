@@ -2,8 +2,12 @@ package btrip
 
 // OpenApiFlightOrderRs 结构体
 type OpenApiFlightOrderRs struct {
-	// 机票订单id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 价目信息
+	PriceInfoList []OpenPriceInfo `json:"price_info_list,omitempty" xml:"price_info_list>open_price_info,omitempty"`
+	// 保险信息
+	InsureInfoList []OpenFlightInsureInfo `json:"insure_info_list,omitempty" xml:"insure_info_list>open_flight_insure_info,omitempty"`
+	// 出行人列表
+	UserAffiliateList []OpenUserAffiliateDo `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
 	// 更新时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 第三方用户id
@@ -32,14 +36,8 @@ type OpenApiFlightOrderRs struct {
 	DepDate string `json:"dep_date,omitempty" xml:"dep_date,omitempty"`
 	// 到达日期
 	RetDate string `json:"ret_date,omitempty" xml:"ret_date,omitempty"`
-	// 行程类型。0:单程，1:往返，2:中转
-	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
-	// 乘机人数量
-	PassengerCount int64 `json:"passenger_count,omitempty" xml:"passenger_count,omitempty"`
 	// 舱位类型
 	CabinClass string `json:"cabin_class,omitempty" xml:"cabin_class,omitempty"`
-	// 订单状态：0待支付,1出票中,2已关闭,3有改签单,4有退票单,5出票成功,6退票申请中,7改签申请中
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 折扣
 	Discount string `json:"discount,omitempty" xml:"discount,omitempty"`
 	// 航班号
@@ -50,26 +48,28 @@ type OpenApiFlightOrderRs struct {
 	DepAirport string `json:"dep_airport,omitempty" xml:"dep_airport,omitempty"`
 	// 到达机场
 	ArrAirport string `json:"arr_airport,omitempty" xml:"arr_airport,omitempty"`
-	// 发票信息对象
-	Invoice *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
-	// 成本中心对象
-	CostCenter *OpenCostCenterDo `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
-	// 价目信息
-	PriceInfoList []OpenPriceInfo `json:"price_info_list,omitempty" xml:"price_info_list>open_price_info,omitempty"`
-	// 保险信息
-	InsureInfoList []OpenFlightInsureInfo `json:"insure_info_list,omitempty" xml:"insure_info_list>open_flight_insure_info,omitempty"`
 	// 第三方行程id
 	ThirdpartItineraryId string `json:"thirdpart_itinerary_id,omitempty" xml:"thirdpart_itinerary_id,omitempty"`
-	// 出行人列表
-	UserAffiliateList []OpenUserAffiliateDo `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
 	// 第三方申请单ID
 	ThirdpartApplyId string `json:"thirdpart_apply_id,omitempty" xml:"thirdpart_apply_id,omitempty"`
 	// 申请单名称
 	BtripTitle string `json:"btrip_title,omitempty" xml:"btrip_title,omitempty"`
-	// 项目id
-	ProjectId int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
 	// 项目code
 	ProjectCode string `json:"project_code,omitempty" xml:"project_code,omitempty"`
 	// 项目名称
 	ProjectTitle string `json:"project_title,omitempty" xml:"project_title,omitempty"`
+	// 机票订单id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 行程类型。0:单程，1:往返，2:中转
+	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
+	// 乘机人数量
+	PassengerCount int64 `json:"passenger_count,omitempty" xml:"passenger_count,omitempty"`
+	// 订单状态：0待支付,1出票中,2已关闭,3有改签单,4有退票单,5出票成功,6退票申请中,7改签申请中
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 发票信息对象
+	Invoice *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
+	// 成本中心对象
+	CostCenter *OpenCostCenterDo `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
+	// 项目id
+	ProjectId int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
 }

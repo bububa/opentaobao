@@ -2,10 +2,10 @@ package alsc
 
 // PointAccountOpenInfo 结构体
 type PointAccountOpenInfo struct {
-	// 可用的积分总数
-	AvailablePoint int64 `json:"available_point,omitempty" xml:"available_point,omitempty"`
 	// 会员ID
 	CustomerId string `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
+	// 可用的积分总数
+	AvailablePoint int64 `json:"available_point,omitempty" xml:"available_point,omitempty"`
 	// 冻结积分数
 	FreezePoint int64 `json:"freeze_point,omitempty" xml:"freeze_point,omitempty"`
 	// 累计过期积分数

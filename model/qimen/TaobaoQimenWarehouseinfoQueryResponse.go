@@ -2,6 +2,8 @@ package qimen
 
 // TaobaoQimenWarehouseinfoQueryResponse 结构体
 type TaobaoQimenWarehouseinfoQueryResponse struct {
+	// 奇门仓储字段
+	WarehouseInfos []WarehouseInfo `json:"warehouseInfos,omitempty" xml:"warehouseInfos>warehouse_info,omitempty"`
 	// 响应结果:success|failure
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应码
@@ -12,6 +14,4 @@ type TaobaoQimenWarehouseinfoQueryResponse struct {
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
 	// 奇门仓储字段
 	OwnerName string `json:"ownerName,omitempty" xml:"ownerName,omitempty"`
-	// 奇门仓储字段
-	WarehouseInfos []WarehouseInfo `json:"warehouseInfos,omitempty" xml:"warehouseInfos>warehouse_info,omitempty"`
 }

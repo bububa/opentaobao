@@ -12,14 +12,14 @@ import (
 // 获取指定用户的消费总额
 type AlibabaWestcrmUserConsumerGetAPIRequest struct {
 	model.Params
-	// 园区id
-	_campusId int64
-	// 用户id
-	_ibUserId int64
 	// 开始时间
 	_timeBegin string
 	// 结束时间
 	_timeEnd string
+	// 园区id
+	_campusId int64
+	// 用户id
+	_ibUserId int64
 }
 
 // NewAlibabaWestcrmUserConsumerGetRequest 初始化AlibabaWestcrmUserConsumerGetAPIRequest对象
@@ -41,32 +41,6 @@ func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetCampusId is CampusId Setter
-// 园区id
-func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetCampusId(_campusId int64) error {
-	r._campusId = _campusId
-	r.Set("campus_id", _campusId)
-	return nil
-}
-
-// GetCampusId CampusId Getter
-func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetCampusId() int64 {
-	return r._campusId
-}
-
-// SetIbUserId is IbUserId Setter
-// 用户id
-func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetIbUserId(_ibUserId int64) error {
-	r._ibUserId = _ibUserId
-	r.Set("ib_user_id", _ibUserId)
-	return nil
-}
-
-// GetIbUserId IbUserId Getter
-func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetIbUserId() int64 {
-	return r._ibUserId
 }
 
 // SetTimeBegin is TimeBegin Setter
@@ -93,4 +67,30 @@ func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetTimeEnd(_timeEnd string) er
 // GetTimeEnd TimeEnd Getter
 func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetTimeEnd() string {
 	return r._timeEnd
+}
+
+// SetCampusId is CampusId Setter
+// 园区id
+func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetCampusId(_campusId int64) error {
+	r._campusId = _campusId
+	r.Set("campus_id", _campusId)
+	return nil
+}
+
+// GetCampusId CampusId Getter
+func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetCampusId() int64 {
+	return r._campusId
+}
+
+// SetIbUserId is IbUserId Setter
+// 用户id
+func (r *AlibabaWestcrmUserConsumerGetAPIRequest) SetIbUserId(_ibUserId int64) error {
+	r._ibUserId = _ibUserId
+	r.Set("ib_user_id", _ibUserId)
+	return nil
+}
+
+// GetIbUserId IbUserId Getter
+func (r AlibabaWestcrmUserConsumerGetAPIRequest) GetIbUserId() int64 {
+	return r._ibUserId
 }

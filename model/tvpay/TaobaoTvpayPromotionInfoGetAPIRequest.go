@@ -20,10 +20,10 @@ type TaobaoTvpayPromotionInfoGetAPIRequest struct {
 	_subjectId string
 	// 淘系订单号
 	_extOrderId string
-	// 是否淘系
-	_isTao bool
 	// 标题
 	_subject string
+	// 是否淘系
+	_isTao bool
 }
 
 // NewTaobaoTvpayPromotionInfoGetRequest 初始化TaobaoTvpayPromotionInfoGetAPIRequest对象
@@ -99,19 +99,6 @@ func (r TaobaoTvpayPromotionInfoGetAPIRequest) GetExtOrderId() string {
 	return r._extOrderId
 }
 
-// SetIsTao is IsTao Setter
-// 是否淘系
-func (r *TaobaoTvpayPromotionInfoGetAPIRequest) SetIsTao(_isTao bool) error {
-	r._isTao = _isTao
-	r.Set("is_tao", _isTao)
-	return nil
-}
-
-// GetIsTao IsTao Getter
-func (r TaobaoTvpayPromotionInfoGetAPIRequest) GetIsTao() bool {
-	return r._isTao
-}
-
 // SetSubject is Subject Setter
 // 标题
 func (r *TaobaoTvpayPromotionInfoGetAPIRequest) SetSubject(_subject string) error {
@@ -123,4 +110,17 @@ func (r *TaobaoTvpayPromotionInfoGetAPIRequest) SetSubject(_subject string) erro
 // GetSubject Subject Getter
 func (r TaobaoTvpayPromotionInfoGetAPIRequest) GetSubject() string {
 	return r._subject
+}
+
+// SetIsTao is IsTao Setter
+// 是否淘系
+func (r *TaobaoTvpayPromotionInfoGetAPIRequest) SetIsTao(_isTao bool) error {
+	r._isTao = _isTao
+	r.Set("is_tao", _isTao)
+	return nil
+}
+
+// GetIsTao IsTao Getter
+func (r TaobaoTvpayPromotionInfoGetAPIRequest) GetIsTao() bool {
+	return r._isTao
 }

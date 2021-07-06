@@ -12,16 +12,16 @@ import (
 // 上传文件接口
 type AlibabaLegalSuitFileUploadAPIRequest struct {
 	model.Params
+	// 文件名称
+	_fileName string
+	// 签名
+	_signature string
 	// 文件
 	_file *model.File
 	// 时间搓
 	_timeStamp int64
-	// 文件名称
-	_fileName string
 	// 文件大小
 	_fileSize int64
-	// 签名
-	_signature string
 }
 
 // NewAlibabaLegalSuitFileUploadRequest 初始化AlibabaLegalSuitFileUploadAPIRequest对象
@@ -43,6 +43,32 @@ func (r AlibabaLegalSuitFileUploadAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetFileName is FileName Setter
+// 文件名称
+func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFileName(_fileName string) error {
+	r._fileName = _fileName
+	r.Set("file_name", _fileName)
+	return nil
+}
+
+// GetFileName FileName Getter
+func (r AlibabaLegalSuitFileUploadAPIRequest) GetFileName() string {
+	return r._fileName
+}
+
+// SetSignature is Signature Setter
+// 签名
+func (r *AlibabaLegalSuitFileUploadAPIRequest) SetSignature(_signature string) error {
+	r._signature = _signature
+	r.Set("signature", _signature)
+	return nil
+}
+
+// GetSignature Signature Getter
+func (r AlibabaLegalSuitFileUploadAPIRequest) GetSignature() string {
+	return r._signature
 }
 
 // SetFile is File Setter
@@ -71,19 +97,6 @@ func (r AlibabaLegalSuitFileUploadAPIRequest) GetTimeStamp() int64 {
 	return r._timeStamp
 }
 
-// SetFileName is FileName Setter
-// 文件名称
-func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFileName(_fileName string) error {
-	r._fileName = _fileName
-	r.Set("file_name", _fileName)
-	return nil
-}
-
-// GetFileName FileName Getter
-func (r AlibabaLegalSuitFileUploadAPIRequest) GetFileName() string {
-	return r._fileName
-}
-
 // SetFileSize is FileSize Setter
 // 文件大小
 func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFileSize(_fileSize int64) error {
@@ -95,17 +108,4 @@ func (r *AlibabaLegalSuitFileUploadAPIRequest) SetFileSize(_fileSize int64) erro
 // GetFileSize FileSize Getter
 func (r AlibabaLegalSuitFileUploadAPIRequest) GetFileSize() int64 {
 	return r._fileSize
-}
-
-// SetSignature is Signature Setter
-// 签名
-func (r *AlibabaLegalSuitFileUploadAPIRequest) SetSignature(_signature string) error {
-	r._signature = _signature
-	r.Set("signature", _signature)
-	return nil
-}
-
-// GetSignature Signature Getter
-func (r AlibabaLegalSuitFileUploadAPIRequest) GetSignature() string {
-	return r._signature
 }

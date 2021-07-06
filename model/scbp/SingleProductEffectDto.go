@@ -8,8 +8,6 @@ type SingleProductEffectDto struct {
 	ImpressionCnt string `json:"impression_cnt,omitempty" xml:"impression_cnt,omitempty"`
 	// 日期
 	StatDate string `json:"stat_date,omitempty" xml:"stat_date,omitempty"`
-	// 产品ID
-	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 平均点击花费
 	ClickCostAvg string `json:"click_cost_avg,omitempty" xml:"click_cost_avg,omitempty"`
 	// 点击数
@@ -18,4 +16,6 @@ type SingleProductEffectDto struct {
 	Cost string `json:"cost,omitempty" xml:"cost,omitempty"`
 	// 百分比，保留两位小数，例如3.75表示3.75%
 	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
+	// 产品ID
+	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 }

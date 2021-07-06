@@ -12,10 +12,10 @@ import (
 // 提供商家维护的景点、酒店、餐饮等元素搜索
 type AlitripTravelElementsSearchAPIRequest struct {
 	model.Params
-	// 商家id
-	_sellerId int64
 	// 查询关键词
 	_query string
+	// 商家id
+	_sellerId int64
 	// 查询数量，限制100
 	_count int64
 	// 资源类型
@@ -43,19 +43,6 @@ func (r AlitripTravelElementsSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetSellerId is SellerId Setter
-// 商家id
-func (r *AlitripTravelElementsSearchAPIRequest) SetSellerId(_sellerId int64) error {
-	r._sellerId = _sellerId
-	r.Set("seller_id", _sellerId)
-	return nil
-}
-
-// GetSellerId SellerId Getter
-func (r AlitripTravelElementsSearchAPIRequest) GetSellerId() int64 {
-	return r._sellerId
-}
-
 // SetQuery is Query Setter
 // 查询关键词
 func (r *AlitripTravelElementsSearchAPIRequest) SetQuery(_query string) error {
@@ -67,6 +54,19 @@ func (r *AlitripTravelElementsSearchAPIRequest) SetQuery(_query string) error {
 // GetQuery Query Getter
 func (r AlitripTravelElementsSearchAPIRequest) GetQuery() string {
 	return r._query
+}
+
+// SetSellerId is SellerId Setter
+// 商家id
+func (r *AlitripTravelElementsSearchAPIRequest) SetSellerId(_sellerId int64) error {
+	r._sellerId = _sellerId
+	r.Set("seller_id", _sellerId)
+	return nil
+}
+
+// GetSellerId SellerId Getter
+func (r AlitripTravelElementsSearchAPIRequest) GetSellerId() int64 {
+	return r._sellerId
 }
 
 // SetCount is Count Setter

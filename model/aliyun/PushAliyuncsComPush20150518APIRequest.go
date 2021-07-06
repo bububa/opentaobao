@@ -24,20 +24,12 @@ type PushAliyuncsComPush20150518APIRequest struct {
 	_androidOpenType string
 	// Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
 	_androidOpenUrl string
-	// 防打扰时长,取值范围为1~23
-	_antiHarassDuration int64
-	// 防打扰开始时间点,取值范围为0~23
-	_antiHarassStartTime int64
-	// 应用标识
-	_appId int64
 	// 批次编号,用于活动效果统计
 	_batchNumber string
 	// 推送内容
 	_body string
 	// 推送接收设备，多个以逗号分隔
 	_deviceId string
-	// 设备类型,取值范围为:0~3云推送支持多种设备,各 种设备类型编号如下: 0:IOS设备; 1:Andriod设备 3:全部. 默认为3.
-	_deviceType int64
 	// iOS应用图标右上角角标
 	_iOSBadge string
 	// 自定义的kv结构,开发者扩展用 针对iOS设备
@@ -46,18 +38,26 @@ type PushAliyuncsComPush20150518APIRequest struct {
 	_iOSMusic string
 	// 推送时间,若空表示立即推送,推送时间不能早于当前时间
 	_pushTime string
-	// 当APP不在线时候，是否通过通知提醒
-	_remind bool
-	// 推送类型,取值范围:1~4; 1:所有人,无需指定tag、 deviceType等2:一群人,必须指定tag3:指定用户,根据 用户账号列表文件发送消息4:指定设备,根据设备编码列 表文件发送消息默认值为1
-	_sendType int64
-	// 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
-	_storeOffline bool
 	// 通知的摘要
 	_summery string
-	// 离线消息保存时长,取值范围为1~72,若不填,则表示不保存离线消息
-	_timeout int64
 	// 推送的标题内容.
 	_title string
+	// 防打扰时长,取值范围为1~23
+	_antiHarassDuration int64
+	// 防打扰开始时间点,取值范围为0~23
+	_antiHarassStartTime int64
+	// 应用标识
+	_appId int64
+	// 设备类型,取值范围为:0~3云推送支持多种设备,各 种设备类型编号如下: 0:IOS设备; 1:Andriod设备 3:全部. 默认为3.
+	_deviceType int64
+	// 推送类型,取值范围:1~4; 1:所有人,无需指定tag、 deviceType等2:一群人,必须指定tag3:指定用户,根据 用户账号列表文件发送消息4:指定设备,根据设备编码列 表文件发送消息默认值为1
+	_sendType int64
+	// 离线消息保存时长,取值范围为1~72,若不填,则表示不保存离线消息
+	_timeout int64
+	// 当APP不在线时候，是否通过通知提醒
+	_remind bool
+	// 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
+	_storeOffline bool
 }
 
 // NewPushAliyuncsComPush20150518Request 初始化PushAliyuncsComPush20150518APIRequest对象
@@ -159,45 +159,6 @@ func (r PushAliyuncsComPush20150518APIRequest) GetAndroidOpenUrl() string {
 	return r._androidOpenUrl
 }
 
-// SetAntiHarassDuration is AntiHarassDuration Setter
-// 防打扰时长,取值范围为1~23
-func (r *PushAliyuncsComPush20150518APIRequest) SetAntiHarassDuration(_antiHarassDuration int64) error {
-	r._antiHarassDuration = _antiHarassDuration
-	r.Set("AntiHarassDuration", _antiHarassDuration)
-	return nil
-}
-
-// GetAntiHarassDuration AntiHarassDuration Getter
-func (r PushAliyuncsComPush20150518APIRequest) GetAntiHarassDuration() int64 {
-	return r._antiHarassDuration
-}
-
-// SetAntiHarassStartTime is AntiHarassStartTime Setter
-// 防打扰开始时间点,取值范围为0~23
-func (r *PushAliyuncsComPush20150518APIRequest) SetAntiHarassStartTime(_antiHarassStartTime int64) error {
-	r._antiHarassStartTime = _antiHarassStartTime
-	r.Set("AntiHarassStartTime", _antiHarassStartTime)
-	return nil
-}
-
-// GetAntiHarassStartTime AntiHarassStartTime Getter
-func (r PushAliyuncsComPush20150518APIRequest) GetAntiHarassStartTime() int64 {
-	return r._antiHarassStartTime
-}
-
-// SetAppId is AppId Setter
-// 应用标识
-func (r *PushAliyuncsComPush20150518APIRequest) SetAppId(_appId int64) error {
-	r._appId = _appId
-	r.Set("AppId", _appId)
-	return nil
-}
-
-// GetAppId AppId Getter
-func (r PushAliyuncsComPush20150518APIRequest) GetAppId() int64 {
-	return r._appId
-}
-
 // SetBatchNumber is BatchNumber Setter
 // 批次编号,用于活动效果统计
 func (r *PushAliyuncsComPush20150518APIRequest) SetBatchNumber(_batchNumber string) error {
@@ -235,19 +196,6 @@ func (r *PushAliyuncsComPush20150518APIRequest) SetDeviceId(_deviceId string) er
 // GetDeviceId DeviceId Getter
 func (r PushAliyuncsComPush20150518APIRequest) GetDeviceId() string {
 	return r._deviceId
-}
-
-// SetDeviceType is DeviceType Setter
-// 设备类型,取值范围为:0~3云推送支持多种设备,各 种设备类型编号如下: 0:IOS设备; 1:Andriod设备 3:全部. 默认为3.
-func (r *PushAliyuncsComPush20150518APIRequest) SetDeviceType(_deviceType int64) error {
-	r._deviceType = _deviceType
-	r.Set("DeviceType", _deviceType)
-	return nil
-}
-
-// GetDeviceType DeviceType Getter
-func (r PushAliyuncsComPush20150518APIRequest) GetDeviceType() int64 {
-	return r._deviceType
 }
 
 // SetIOSBadge is IOSBadge Setter
@@ -302,17 +250,82 @@ func (r PushAliyuncsComPush20150518APIRequest) GetPushTime() string {
 	return r._pushTime
 }
 
-// SetRemind is Remind Setter
-// 当APP不在线时候，是否通过通知提醒
-func (r *PushAliyuncsComPush20150518APIRequest) SetRemind(_remind bool) error {
-	r._remind = _remind
-	r.Set("Remind", _remind)
+// SetSummery is Summery Setter
+// 通知的摘要
+func (r *PushAliyuncsComPush20150518APIRequest) SetSummery(_summery string) error {
+	r._summery = _summery
+	r.Set("Summery", _summery)
 	return nil
 }
 
-// GetRemind Remind Getter
-func (r PushAliyuncsComPush20150518APIRequest) GetRemind() bool {
-	return r._remind
+// GetSummery Summery Getter
+func (r PushAliyuncsComPush20150518APIRequest) GetSummery() string {
+	return r._summery
+}
+
+// SetTitle is Title Setter
+// 推送的标题内容.
+func (r *PushAliyuncsComPush20150518APIRequest) SetTitle(_title string) error {
+	r._title = _title
+	r.Set("Title", _title)
+	return nil
+}
+
+// GetTitle Title Getter
+func (r PushAliyuncsComPush20150518APIRequest) GetTitle() string {
+	return r._title
+}
+
+// SetAntiHarassDuration is AntiHarassDuration Setter
+// 防打扰时长,取值范围为1~23
+func (r *PushAliyuncsComPush20150518APIRequest) SetAntiHarassDuration(_antiHarassDuration int64) error {
+	r._antiHarassDuration = _antiHarassDuration
+	r.Set("AntiHarassDuration", _antiHarassDuration)
+	return nil
+}
+
+// GetAntiHarassDuration AntiHarassDuration Getter
+func (r PushAliyuncsComPush20150518APIRequest) GetAntiHarassDuration() int64 {
+	return r._antiHarassDuration
+}
+
+// SetAntiHarassStartTime is AntiHarassStartTime Setter
+// 防打扰开始时间点,取值范围为0~23
+func (r *PushAliyuncsComPush20150518APIRequest) SetAntiHarassStartTime(_antiHarassStartTime int64) error {
+	r._antiHarassStartTime = _antiHarassStartTime
+	r.Set("AntiHarassStartTime", _antiHarassStartTime)
+	return nil
+}
+
+// GetAntiHarassStartTime AntiHarassStartTime Getter
+func (r PushAliyuncsComPush20150518APIRequest) GetAntiHarassStartTime() int64 {
+	return r._antiHarassStartTime
+}
+
+// SetAppId is AppId Setter
+// 应用标识
+func (r *PushAliyuncsComPush20150518APIRequest) SetAppId(_appId int64) error {
+	r._appId = _appId
+	r.Set("AppId", _appId)
+	return nil
+}
+
+// GetAppId AppId Getter
+func (r PushAliyuncsComPush20150518APIRequest) GetAppId() int64 {
+	return r._appId
+}
+
+// SetDeviceType is DeviceType Setter
+// 设备类型,取值范围为:0~3云推送支持多种设备,各 种设备类型编号如下: 0:IOS设备; 1:Andriod设备 3:全部. 默认为3.
+func (r *PushAliyuncsComPush20150518APIRequest) SetDeviceType(_deviceType int64) error {
+	r._deviceType = _deviceType
+	r.Set("DeviceType", _deviceType)
+	return nil
+}
+
+// GetDeviceType DeviceType Getter
+func (r PushAliyuncsComPush20150518APIRequest) GetDeviceType() int64 {
+	return r._deviceType
 }
 
 // SetSendType is SendType Setter
@@ -328,32 +341,6 @@ func (r PushAliyuncsComPush20150518APIRequest) GetSendType() int64 {
 	return r._sendType
 }
 
-// SetStoreOffline is StoreOffline Setter
-// 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
-func (r *PushAliyuncsComPush20150518APIRequest) SetStoreOffline(_storeOffline bool) error {
-	r._storeOffline = _storeOffline
-	r.Set("StoreOffline", _storeOffline)
-	return nil
-}
-
-// GetStoreOffline StoreOffline Getter
-func (r PushAliyuncsComPush20150518APIRequest) GetStoreOffline() bool {
-	return r._storeOffline
-}
-
-// SetSummery is Summery Setter
-// 通知的摘要
-func (r *PushAliyuncsComPush20150518APIRequest) SetSummery(_summery string) error {
-	r._summery = _summery
-	r.Set("Summery", _summery)
-	return nil
-}
-
-// GetSummery Summery Getter
-func (r PushAliyuncsComPush20150518APIRequest) GetSummery() string {
-	return r._summery
-}
-
 // SetTimeout is Timeout Setter
 // 离线消息保存时长,取值范围为1~72,若不填,则表示不保存离线消息
 func (r *PushAliyuncsComPush20150518APIRequest) SetTimeout(_timeout int64) error {
@@ -367,15 +354,28 @@ func (r PushAliyuncsComPush20150518APIRequest) GetTimeout() int64 {
 	return r._timeout
 }
 
-// SetTitle is Title Setter
-// 推送的标题内容.
-func (r *PushAliyuncsComPush20150518APIRequest) SetTitle(_title string) error {
-	r._title = _title
-	r.Set("Title", _title)
+// SetRemind is Remind Setter
+// 当APP不在线时候，是否通过通知提醒
+func (r *PushAliyuncsComPush20150518APIRequest) SetRemind(_remind bool) error {
+	r._remind = _remind
+	r.Set("Remind", _remind)
 	return nil
 }
 
-// GetTitle Title Getter
-func (r PushAliyuncsComPush20150518APIRequest) GetTitle() string {
-	return r._title
+// GetRemind Remind Getter
+func (r PushAliyuncsComPush20150518APIRequest) GetRemind() bool {
+	return r._remind
+}
+
+// SetStoreOffline is StoreOffline Setter
+// 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
+func (r *PushAliyuncsComPush20150518APIRequest) SetStoreOffline(_storeOffline bool) error {
+	r._storeOffline = _storeOffline
+	r.Set("StoreOffline", _storeOffline)
+	return nil
+}
+
+// GetStoreOffline StoreOffline Getter
+func (r PushAliyuncsComPush20150518APIRequest) GetStoreOffline() bool {
+	return r._storeOffline
 }

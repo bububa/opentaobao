@@ -14,10 +14,10 @@ type WdkCouponApplyParam struct {
 	OutBizNo string `json:"out_biz_no,omitempty" xml:"out_biz_no,omitempty"`
 	// 优惠券模版id
 	TemplateId string `json:"template_id,omitempty" xml:"template_id,omitempty"`
-	// 领取淘系id
-	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 优惠券模版uuid
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
 	// 幂等键
 	IdempotentKey string `json:"idempotent_key,omitempty" xml:"idempotent_key,omitempty"`
+	// 领取淘系id
+	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 }

@@ -12,28 +12,12 @@ import (
 // AE社交选品,通过各种筛选条件对社交商品池进行筛选
 type AliexpressSocialItemSearchAPIRequest struct {
 	model.Params
-	// 是否有视频
-	_hasVideo bool
 	// order by properties
 	_orderBy string
-	// 是否逆序
-	_desc bool
-	// page size
-	_pageSize int64
-	// 是否免邮
-	_isShipFree bool
 	// 佣金最大值
 	_commissionRateMax string
 	// 佣金最小值
 	_commissionRateMin string
-	// 物流时效
-	_logisticsTime int64
-	// 是否联盟商品
-	_allianceItem bool
-	// 类目ID
-	_cateId int64
-	// 页码
-	_pageNo int64
 	// 最低价格
 	_minPrice string
 	// 最高价格
@@ -48,6 +32,22 @@ type AliexpressSocialItemSearchAPIRequest struct {
 	_currency string
 	// locale,格式为language+"_"+country
 	_locale string
+	// page size
+	_pageSize int64
+	// 物流时效
+	_logisticsTime int64
+	// 类目ID
+	_cateId int64
+	// 页码
+	_pageNo int64
+	// 是否有视频
+	_hasVideo bool
+	// 是否逆序
+	_desc bool
+	// 是否免邮
+	_isShipFree bool
+	// 是否联盟商品
+	_allianceItem bool
 }
 
 // NewAliexpressSocialItemSearchRequest 初始化AliexpressSocialItemSearchAPIRequest对象
@@ -71,19 +71,6 @@ func (r AliexpressSocialItemSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetHasVideo is HasVideo Setter
-// 是否有视频
-func (r *AliexpressSocialItemSearchAPIRequest) SetHasVideo(_hasVideo bool) error {
-	r._hasVideo = _hasVideo
-	r.Set("has_video", _hasVideo)
-	return nil
-}
-
-// GetHasVideo HasVideo Getter
-func (r AliexpressSocialItemSearchAPIRequest) GetHasVideo() bool {
-	return r._hasVideo
-}
-
 // SetOrderBy is OrderBy Setter
 // order by properties
 func (r *AliexpressSocialItemSearchAPIRequest) SetOrderBy(_orderBy string) error {
@@ -95,45 +82,6 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetOrderBy(_orderBy string) error
 // GetOrderBy OrderBy Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetOrderBy() string {
 	return r._orderBy
-}
-
-// SetDesc is Desc Setter
-// 是否逆序
-func (r *AliexpressSocialItemSearchAPIRequest) SetDesc(_desc bool) error {
-	r._desc = _desc
-	r.Set("desc", _desc)
-	return nil
-}
-
-// GetDesc Desc Getter
-func (r AliexpressSocialItemSearchAPIRequest) GetDesc() bool {
-	return r._desc
-}
-
-// SetPageSize is PageSize Setter
-// page size
-func (r *AliexpressSocialItemSearchAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AliexpressSocialItemSearchAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetIsShipFree is IsShipFree Setter
-// 是否免邮
-func (r *AliexpressSocialItemSearchAPIRequest) SetIsShipFree(_isShipFree bool) error {
-	r._isShipFree = _isShipFree
-	r.Set("is_ship_free", _isShipFree)
-	return nil
-}
-
-// GetIsShipFree IsShipFree Getter
-func (r AliexpressSocialItemSearchAPIRequest) GetIsShipFree() bool {
-	return r._isShipFree
 }
 
 // SetCommissionRateMax is CommissionRateMax Setter
@@ -160,58 +108,6 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetCommissionRateMin(_commissionR
 // GetCommissionRateMin CommissionRateMin Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetCommissionRateMin() string {
 	return r._commissionRateMin
-}
-
-// SetLogisticsTime is LogisticsTime Setter
-// 物流时效
-func (r *AliexpressSocialItemSearchAPIRequest) SetLogisticsTime(_logisticsTime int64) error {
-	r._logisticsTime = _logisticsTime
-	r.Set("logistics_time", _logisticsTime)
-	return nil
-}
-
-// GetLogisticsTime LogisticsTime Getter
-func (r AliexpressSocialItemSearchAPIRequest) GetLogisticsTime() int64 {
-	return r._logisticsTime
-}
-
-// SetAllianceItem is AllianceItem Setter
-// 是否联盟商品
-func (r *AliexpressSocialItemSearchAPIRequest) SetAllianceItem(_allianceItem bool) error {
-	r._allianceItem = _allianceItem
-	r.Set("alliance_item", _allianceItem)
-	return nil
-}
-
-// GetAllianceItem AllianceItem Getter
-func (r AliexpressSocialItemSearchAPIRequest) GetAllianceItem() bool {
-	return r._allianceItem
-}
-
-// SetCateId is CateId Setter
-// 类目ID
-func (r *AliexpressSocialItemSearchAPIRequest) SetCateId(_cateId int64) error {
-	r._cateId = _cateId
-	r.Set("cate_id", _cateId)
-	return nil
-}
-
-// GetCateId CateId Getter
-func (r AliexpressSocialItemSearchAPIRequest) GetCateId() int64 {
-	return r._cateId
-}
-
-// SetPageNo is PageNo Setter
-// 页码
-func (r *AliexpressSocialItemSearchAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r AliexpressSocialItemSearchAPIRequest) GetPageNo() int64 {
-	return r._pageNo
 }
 
 // SetMinPrice is MinPrice Setter
@@ -303,4 +199,108 @@ func (r *AliexpressSocialItemSearchAPIRequest) SetLocale(_locale string) error {
 // GetLocale Locale Getter
 func (r AliexpressSocialItemSearchAPIRequest) GetLocale() string {
 	return r._locale
+}
+
+// SetPageSize is PageSize Setter
+// page size
+func (r *AliexpressSocialItemSearchAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AliexpressSocialItemSearchAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetLogisticsTime is LogisticsTime Setter
+// 物流时效
+func (r *AliexpressSocialItemSearchAPIRequest) SetLogisticsTime(_logisticsTime int64) error {
+	r._logisticsTime = _logisticsTime
+	r.Set("logistics_time", _logisticsTime)
+	return nil
+}
+
+// GetLogisticsTime LogisticsTime Getter
+func (r AliexpressSocialItemSearchAPIRequest) GetLogisticsTime() int64 {
+	return r._logisticsTime
+}
+
+// SetCateId is CateId Setter
+// 类目ID
+func (r *AliexpressSocialItemSearchAPIRequest) SetCateId(_cateId int64) error {
+	r._cateId = _cateId
+	r.Set("cate_id", _cateId)
+	return nil
+}
+
+// GetCateId CateId Getter
+func (r AliexpressSocialItemSearchAPIRequest) GetCateId() int64 {
+	return r._cateId
+}
+
+// SetPageNo is PageNo Setter
+// 页码
+func (r *AliexpressSocialItemSearchAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r AliexpressSocialItemSearchAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// SetHasVideo is HasVideo Setter
+// 是否有视频
+func (r *AliexpressSocialItemSearchAPIRequest) SetHasVideo(_hasVideo bool) error {
+	r._hasVideo = _hasVideo
+	r.Set("has_video", _hasVideo)
+	return nil
+}
+
+// GetHasVideo HasVideo Getter
+func (r AliexpressSocialItemSearchAPIRequest) GetHasVideo() bool {
+	return r._hasVideo
+}
+
+// SetDesc is Desc Setter
+// 是否逆序
+func (r *AliexpressSocialItemSearchAPIRequest) SetDesc(_desc bool) error {
+	r._desc = _desc
+	r.Set("desc", _desc)
+	return nil
+}
+
+// GetDesc Desc Getter
+func (r AliexpressSocialItemSearchAPIRequest) GetDesc() bool {
+	return r._desc
+}
+
+// SetIsShipFree is IsShipFree Setter
+// 是否免邮
+func (r *AliexpressSocialItemSearchAPIRequest) SetIsShipFree(_isShipFree bool) error {
+	r._isShipFree = _isShipFree
+	r.Set("is_ship_free", _isShipFree)
+	return nil
+}
+
+// GetIsShipFree IsShipFree Getter
+func (r AliexpressSocialItemSearchAPIRequest) GetIsShipFree() bool {
+	return r._isShipFree
+}
+
+// SetAllianceItem is AllianceItem Setter
+// 是否联盟商品
+func (r *AliexpressSocialItemSearchAPIRequest) SetAllianceItem(_allianceItem bool) error {
+	r._allianceItem = _allianceItem
+	r.Set("alliance_item", _allianceItem)
+	return nil
+}
+
+// GetAllianceItem AllianceItem Getter
+func (r AliexpressSocialItemSearchAPIRequest) GetAllianceItem() bool {
+	return r._allianceItem
 }

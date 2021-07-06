@@ -28,6 +28,18 @@ type ItemInfo struct {
 	SaleSpec string `json:"sale_spec,omitempty" xml:"sale_spec,omitempty"`
 	// 商品简称：对于商品的描述进行简化的表达，以便在拣货、标签等页面上能够进行直接展示；最多40个字符，会显示在pos屏幕上
 	ShortTitle string `json:"short_title,omitempty" xml:"short_title,omitempty"`
+	// 品牌名称：商品的品牌名字，需要先在淘鲜达提供的品牌库中匹配，如果匹配不上的直接传ERP中的品牌值
+	BrandName string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
+	// 净含量：商品包装规格的描述，建议跟销售规格描述填写一致
+	Content string `json:"content,omitempty" xml:"content,omitempty"`
+	// 存储条件：存储条件；填常温、冷藏、冷冻、热链、鲜活
+	Storage string `json:"storage,omitempty" xml:"storage,omitempty"`
+	// 条码：包含商品包装上已经印刷的条码，也包含企业内部的自编条码用于打印在食品包装上
+	Barcode string `json:"barcode,omitempty" xml:"barcode,omitempty"`
+	// 标价签类型：标价签类型；商品在门店陈列时，采用的售价标签类型。因不采用电子价签，建议商家填默认值“无价签”
+	LabelStyleType string `json:"label_style_type,omitempty" xml:"label_style_type,omitempty"`
+	// 售卖单位
+	SaleUtil string `json:"sale_util,omitempty" xml:"sale_util,omitempty"`
 	// 门店商品售价：商品一个库存单位的售卖价格，2位小数
 	SkuPrice int64 `json:"sku_price,omitempty" xml:"sku_price,omitempty"`
 	// 门店商品会员售价：会员正常购买该商品的售价，2位小数
@@ -36,22 +48,10 @@ type ItemInfo struct {
 	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
 	// 是否进口：是否进口,是否进口；原产地非中国，都填是 1：是? 0：否（默认为0）
 	ImportFlag int64 `json:"import_flag,omitempty" xml:"import_flag,omitempty"`
-	// 品牌名称：商品的品牌名字，需要先在淘鲜达提供的品牌库中匹配，如果匹配不上的直接传ERP中的品牌值
-	BrandName string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
-	// 净含量：商品包装规格的描述，建议跟销售规格描述填写一致
-	Content string `json:"content,omitempty" xml:"content,omitempty"`
-	// 存储条件：存储条件；填常温、冷藏、冷冻、热链、鲜活
-	Storage string `json:"storage,omitempty" xml:"storage,omitempty"`
 	// 保质天数：商品的保质期天数，必须为整数，0代表不管理保质期
 	Period int64 `json:"period,omitempty" xml:"period,omitempty"`
 	// 是否称重：是否称重（此字段一经录入不能修改）；若库存单位是kg，或g，此字段填是，其他的填否 1：是? 0：否（默认为0)
 	WeightFlag int64 `json:"weight_flag,omitempty" xml:"weight_flag,omitempty"`
-	// 条码：包含商品包装上已经印刷的条码，也包含企业内部的自编条码用于打印在食品包装上
-	Barcode string `json:"barcode,omitempty" xml:"barcode,omitempty"`
-	// 标价签类型：标价签类型；商品在门店陈列时，采用的售价标签类型。因不采用电子价签，建议商家填默认值“无价签”
-	LabelStyleType string `json:"label_style_type,omitempty" xml:"label_style_type,omitempty"`
-	// 售卖单位
-	SaleUtil string `json:"sale_util,omitempty" xml:"sale_util,omitempty"`
 	// 均重
 	AvgWeight int64 `json:"avg_weight,omitempty" xml:"avg_weight,omitempty"`
 }

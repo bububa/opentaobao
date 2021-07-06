@@ -12,12 +12,12 @@ import (
 // 同步通知给诉讼系统
 type AlibabaLegalCaseCommonNoticeAPIRequest struct {
 	model.Params
+	// adminicular_evidence（补充证据）risk_early_warning（风险预警）
+	_type string
 	// 案件id
 	_caseId int64
 	// 委托id
 	_entrustId int64
-	// adminicular_evidence（补充证据）risk_early_warning（风险预警）
-	_type string
 	// 消息模型
 	_noticeModel *NoticeModel
 }
@@ -41,6 +41,19 @@ func (r AlibabaLegalCaseCommonNoticeAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetType is Type Setter
+// adminicular_evidence（补充证据）risk_early_warning（风险预警）
+func (r *AlibabaLegalCaseCommonNoticeAPIRequest) SetType(_type string) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r AlibabaLegalCaseCommonNoticeAPIRequest) GetType() string {
+	return r._type
 }
 
 // SetCaseId is CaseId Setter
@@ -67,19 +80,6 @@ func (r *AlibabaLegalCaseCommonNoticeAPIRequest) SetEntrustId(_entrustId int64) 
 // GetEntrustId EntrustId Getter
 func (r AlibabaLegalCaseCommonNoticeAPIRequest) GetEntrustId() int64 {
 	return r._entrustId
-}
-
-// SetType is Type Setter
-// adminicular_evidence（补充证据）risk_early_warning（风险预警）
-func (r *AlibabaLegalCaseCommonNoticeAPIRequest) SetType(_type string) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r AlibabaLegalCaseCommonNoticeAPIRequest) GetType() string {
-	return r._type
 }
 
 // SetNoticeModel is NoticeModel Setter

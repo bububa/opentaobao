@@ -18,12 +18,12 @@ type TaobaoTvpayAuthQueryAPIRequest struct {
 	_from string
 	// 业务订单号
 	_bizOrderId string
-	// 是否淘系
-	_isTao bool
 	// 支付宝订单号
 	_orderNo string
 	// 外部订单号
 	_outOrderNo string
+	// 是否淘系
+	_isTao bool
 }
 
 // NewTaobaoTvpayAuthQueryRequest 初始化TaobaoTvpayAuthQueryAPIRequest对象
@@ -86,19 +86,6 @@ func (r TaobaoTvpayAuthQueryAPIRequest) GetBizOrderId() string {
 	return r._bizOrderId
 }
 
-// SetIsTao is IsTao Setter
-// 是否淘系
-func (r *TaobaoTvpayAuthQueryAPIRequest) SetIsTao(_isTao bool) error {
-	r._isTao = _isTao
-	r.Set("is_tao", _isTao)
-	return nil
-}
-
-// GetIsTao IsTao Getter
-func (r TaobaoTvpayAuthQueryAPIRequest) GetIsTao() bool {
-	return r._isTao
-}
-
 // SetOrderNo is OrderNo Setter
 // 支付宝订单号
 func (r *TaobaoTvpayAuthQueryAPIRequest) SetOrderNo(_orderNo string) error {
@@ -123,4 +110,17 @@ func (r *TaobaoTvpayAuthQueryAPIRequest) SetOutOrderNo(_outOrderNo string) error
 // GetOutOrderNo OutOrderNo Getter
 func (r TaobaoTvpayAuthQueryAPIRequest) GetOutOrderNo() string {
 	return r._outOrderNo
+}
+
+// SetIsTao is IsTao Setter
+// 是否淘系
+func (r *TaobaoTvpayAuthQueryAPIRequest) SetIsTao(_isTao bool) error {
+	r._isTao = _isTao
+	r.Set("is_tao", _isTao)
+	return nil
+}
+
+// GetIsTao IsTao Getter
+func (r TaobaoTvpayAuthQueryAPIRequest) GetIsTao() bool {
+	return r._isTao
 }

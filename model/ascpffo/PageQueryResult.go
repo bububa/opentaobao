@@ -12,8 +12,8 @@ type PageQueryResult struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 分页大小
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
-	// 是否成功
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 数量
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+	// 是否成功
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

@@ -4,8 +4,6 @@ package hotel
 type BedInfoGroupVo struct {
 	// 和关系床型集合
 	BedInfos []BedInfoVo `json:"bed_infos,omitempty" xml:"bed_infos>bed_info_vo,omitempty"`
-	// 床数量
-	BedNum int64 `json:"bed_num,omitempty" xml:"bed_num,omitempty"`
 	// 简短描述，用于详情页报价前面的床型展示
 	BriefDesc string `json:"brief_desc,omitempty" xml:"brief_desc,omitempty"`
 	// 分类，大类，用于搜索的筛选项。1:大床,2:双床,3:单人床,4:多床
@@ -18,4 +16,6 @@ type BedInfoGroupVo struct {
 	FuzzyDesc string `json:"fuzzy_desc,omitempty" xml:"fuzzy_desc,omitempty"`
 	// 简单描述，较长描述省略床宽，但依然会描述具体的床型信息，用于详情页标准房型床型展示
 	SimpleDesc string `json:"simple_desc,omitempty" xml:"simple_desc,omitempty"`
+	// 床数量
+	BedNum int64 `json:"bed_num,omitempty" xml:"bed_num,omitempty"`
 }

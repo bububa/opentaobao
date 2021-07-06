@@ -22,10 +22,6 @@ type TopTradeCreateDo struct {
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
 	// 收货地址的收件人姓名
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
-	// 商品的id
-	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
-	// 商品数量
-	Nums int64 `json:"nums,omitempty" xml:"nums,omitempty"`
 	// 订单的外部订单号，用来防止重复提交。需要以TOP：  appkey_（如：100000_） 开头，最长32位
 	OutId string `json:"out_id,omitempty" xml:"out_id,omitempty"`
 	// 外部订单交易金额（单位元），即消费者在渠道的实付金额
@@ -36,6 +32,10 @@ type TopTradeCreateDo struct {
 	Postcode string `json:"postcode,omitempty" xml:"postcode,omitempty"`
 	// 创建交易时的物流方式。 具体的值从 taobao.openmall.trade.render 接口获取，邮费0说明为包邮
 	ShippingType string `json:"shipping_type,omitempty" xml:"shipping_type,omitempty"`
+	// 商品的id
+	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
+	// 商品数量
+	Nums int64 `json:"nums,omitempty" xml:"nums,omitempty"`
 	// 商品对应的SKUID，无SKU商品传0
 	SkuIids int64 `json:"sku_iids,omitempty" xml:"sku_iids,omitempty"`
 	// 创建订单传入true的时候，订单支付后会进入半小时的hold单（订单状态为：PAID_FORBID_CONSIGN），此时订单不会发货，用户可以调用Openmall地址修改接口修改订单收货地址，半小时结束后订单自动结束hold单进入发货流程订单状态为（WAIT_SELLER_SEND_GOODS）

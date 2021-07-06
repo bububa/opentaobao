@@ -22,10 +22,10 @@ type AlibabaScbpAdKeywordAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 请求加入的词
 	Keyword string `json:"keyword,omitempty" xml:"keyword,omitempty"`
-	// 该词是否加入成功
-	IsAdded bool `json:"is_added,omitempty" xml:"is_added,omitempty"`
 	// 加词失败的原因
 	InvalidType string `json:"invalid_type,omitempty" xml:"invalid_type,omitempty"`
 	// 系统中存在归一化重复的词
 	RepeatKeyword string `json:"repeat_keyword,omitempty" xml:"repeat_keyword,omitempty"`
+	// 该词是否加入成功
+	IsAdded bool `json:"is_added,omitempty" xml:"is_added,omitempty"`
 }

@@ -12,10 +12,10 @@ import (
 // 产品更新接口
 type AlibabaGpuSchemaUpdateAPIRequest struct {
 	model.Params
-	// 产品ID
-	_productId int64
 	// 更新产品提交的schema数据
 	_schemaXmlFields string
+	// 产品ID
+	_productId int64
 	// 当前用户所在渠道如0代表天猫，8代表淘宝
 	_providerId int64
 }
@@ -41,19 +41,6 @@ func (r AlibabaGpuSchemaUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetProductId is ProductId Setter
-// 产品ID
-func (r *AlibabaGpuSchemaUpdateAPIRequest) SetProductId(_productId int64) error {
-	r._productId = _productId
-	r.Set("product_id", _productId)
-	return nil
-}
-
-// GetProductId ProductId Getter
-func (r AlibabaGpuSchemaUpdateAPIRequest) GetProductId() int64 {
-	return r._productId
-}
-
 // SetSchemaXmlFields is SchemaXmlFields Setter
 // 更新产品提交的schema数据
 func (r *AlibabaGpuSchemaUpdateAPIRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
@@ -65,6 +52,19 @@ func (r *AlibabaGpuSchemaUpdateAPIRequest) SetSchemaXmlFields(_schemaXmlFields s
 // GetSchemaXmlFields SchemaXmlFields Getter
 func (r AlibabaGpuSchemaUpdateAPIRequest) GetSchemaXmlFields() string {
 	return r._schemaXmlFields
+}
+
+// SetProductId is ProductId Setter
+// 产品ID
+func (r *AlibabaGpuSchemaUpdateAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// GetProductId ProductId Getter
+func (r AlibabaGpuSchemaUpdateAPIRequest) GetProductId() int64 {
+	return r._productId
 }
 
 // SetProviderId is ProviderId Setter

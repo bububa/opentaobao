@@ -16,14 +16,6 @@ type RecongnizeItemInfo struct {
 	RtItemNo string `json:"rt_item_no,omitempty" xml:"rt_item_no,omitempty"`
 	// 优惠描述
 	PromotionDesc string `json:"promotion_desc,omitempty" xml:"promotion_desc,omitempty"`
-	// 促销类型
-	PromotionType int64 `json:"promotion_type,omitempty" xml:"promotion_type,omitempty"`
-	// 是否促销中
-	InPromotion bool `json:"in_promotion,omitempty" xml:"in_promotion,omitempty"`
-	// 促销价
-	PromotionPrice int64 `json:"promotion_price,omitempty" xml:"promotion_price,omitempty"`
-	// 销售价
-	SalePrice int64 `json:"sale_price,omitempty" xml:"sale_price,omitempty"`
 	// 品牌
 	BrandName string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
 	// 品名
@@ -32,4 +24,12 @@ type RecongnizeItemInfo struct {
 	BarCode string `json:"bar_code,omitempty" xml:"bar_code,omitempty"`
 	// 流水号
 	SerialNo string `json:"serial_no,omitempty" xml:"serial_no,omitempty"`
+	// 促销类型
+	PromotionType int64 `json:"promotion_type,omitempty" xml:"promotion_type,omitempty"`
+	// 促销价
+	PromotionPrice int64 `json:"promotion_price,omitempty" xml:"promotion_price,omitempty"`
+	// 销售价
+	SalePrice int64 `json:"sale_price,omitempty" xml:"sale_price,omitempty"`
+	// 是否促销中
+	InPromotion bool `json:"in_promotion,omitempty" xml:"in_promotion,omitempty"`
 }

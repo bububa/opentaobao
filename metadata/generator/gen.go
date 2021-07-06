@@ -317,6 +317,7 @@ func genRequestModel(templatePath string, modelPath string, tpl metadata.ApiTpl)
 		return err
 	}
 	defer fd.Close()
+	metadata.AlignTplParams(tpl.RequestParams)
 	tmpl.Execute(fd, tpl)
 	return gofmt(targetFile)
 }
@@ -334,6 +335,7 @@ func genReponseModel(templatePath string, modelPath string, tpl metadata.ApiTpl)
 		return err
 	}
 	defer fd.Close()
+	metadata.AlignTplParams(tpl.ResponseParams)
 	tmpl.Execute(fd, tpl)
 	return gofmt(targetFile)
 }
@@ -345,13 +347,14 @@ func genModel(templatePath string, modelPath string, tpl metadata.TplModel) erro
 	if err != nil {
 		return err
 	}
-	tpl.ImportModel = tpl.NeedImportModel()
 	targetFile := filepath.Join(modelPath, fmt.Sprintf("%s.go", tpl.Name))
 	fd, err := os.Create(targetFile)
 	if err != nil {
 		return err
 	}
 	defer fd.Close()
+	tpl.ImportModel = tpl.NeedImportModel()
+	metadata.AlignTplParams(tpl.Params)
 	tmpl.Execute(fd, tpl)
 	return gofmt(targetFile)
 }

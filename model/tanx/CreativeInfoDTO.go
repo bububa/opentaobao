@@ -20,12 +20,12 @@ type CreativeInfoDto struct {
 	CreativeUrl string `json:"creative_url,omitempty" xml:"creative_url,omitempty"`
 	// 广告跳转的最终目标页面地址
 	ClickUrl string `json:"click_url,omitempty" xml:"click_url,omitempty"`
-	// 创意时长，单位是毫秒
-	Duration int64 `json:"duration,omitempty" xml:"duration,omitempty"`
 	// 广告主Id，多值使用&ldquo;,&rdquo;分隔
 	AdvertiserIds string `json:"advertiser_ids,omitempty" xml:"advertiser_ids,omitempty"`
 	// (选填)中间跳转地址（比如DSP的点击服务器地址），但跳转后的最终地址必须和click_url一致。
 	ClickThroughUrl string `json:"click_through_url,omitempty" xml:"click_through_url,omitempty"`
 	// (选填)点击监控地址，最多3个，多个值用逗号&ldquo;，&rdquo;分隔
 	ClickTrackUrl string `json:"click_track_url,omitempty" xml:"click_track_url,omitempty"`
+	// 创意时长，单位是毫秒
+	Duration int64 `json:"duration,omitempty" xml:"duration,omitempty"`
 }

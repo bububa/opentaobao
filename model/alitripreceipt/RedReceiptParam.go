@@ -2,12 +2,8 @@ package alitripreceipt
 
 // RedReceiptParam 结构体
 type RedReceiptParam struct {
-	// 发票抬头类型,0:企业;1:个人
-	ReceiptTitleType int64 `json:"receipt_title_type,omitempty" xml:"receipt_title_type,omitempty"`
 	// 发票备注
 	ReceiptMemo string `json:"receipt_memo,omitempty" xml:"receipt_memo,omitempty"`
-	// 代理商商家id
-	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
 	// 接收人
 	Receiver string `json:"receiver,omitempty" xml:"receiver,omitempty"`
 	// 发票邮箱
@@ -24,10 +20,6 @@ type RedReceiptParam struct {
 	ReceiveBankName string `json:"receive_bank_name,omitempty" xml:"receive_bank_name,omitempty"`
 	// 接收人开户行账号
 	ReceiveBankAccount string `json:"receive_bank_account,omitempty" xml:"receive_bank_account,omitempty"`
-	// 原始订单号
-	OriginTpOrderId int64 `json:"origin_tp_order_id,omitempty" xml:"origin_tp_order_id,omitempty"`
-	// 发票金额(分)
-	ReceiptAmount int64 `json:"receipt_amount,omitempty" xml:"receipt_amount,omitempty"`
 	// 扩展参数
 	ExtMap string `json:"ext_map,omitempty" xml:"ext_map,omitempty"`
 	// 发票抬头
@@ -36,4 +28,12 @@ type RedReceiptParam struct {
 	CompanyTaxNo string `json:"company_tax_no,omitempty" xml:"company_tax_no,omitempty"`
 	// 接收人手机号
 	ReceiveMobile string `json:"receive_mobile,omitempty" xml:"receive_mobile,omitempty"`
+	// 发票抬头类型,0:企业;1:个人
+	ReceiptTitleType int64 `json:"receipt_title_type,omitempty" xml:"receipt_title_type,omitempty"`
+	// 代理商商家id
+	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
+	// 原始订单号
+	OriginTpOrderId int64 `json:"origin_tp_order_id,omitempty" xml:"origin_tp_order_id,omitempty"`
+	// 发票金额(分)
+	ReceiptAmount int64 `json:"receipt_amount,omitempty" xml:"receipt_amount,omitempty"`
 }

@@ -16,10 +16,10 @@ type AlibabaJymIndustryInformationCallbakAPIRequest struct {
 	_taskId string
 	// 幂等ID
 	_bizId string
-	// 状态
-	_status int64
 	// 内容
 	_content string
+	// 状态
+	_status int64
 }
 
 // NewAlibabaJymIndustryInformationCallbakRequest 初始化AlibabaJymIndustryInformationCallbakAPIRequest对象
@@ -69,19 +69,6 @@ func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetBizId() string {
 	return r._bizId
 }
 
-// SetStatus is Status Setter
-// 状态
-func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetStatus(_status int64) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetStatus() int64 {
-	return r._status
-}
-
 // SetContent is Content Setter
 // 内容
 func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetContent(_content string) error {
@@ -93,4 +80,17 @@ func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetContent(_content str
 // GetContent Content Getter
 func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetContent() string {
 	return r._content
+}
+
+// SetStatus is Status Setter
+// 状态
+func (r *AlibabaJymIndustryInformationCallbakAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r AlibabaJymIndustryInformationCallbakAPIRequest) GetStatus() int64 {
+	return r._status
 }

@@ -8,8 +8,6 @@ type ProductItem struct {
 	ItemId string `json:"itemId,omitempty" xml:"itemId,omitempty"`
 	// 库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;默认为ZP)
 	InventoryType string `json:"inventoryType,omitempty" xml:"inventoryType,omitempty"`
-	// 数量
-	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 商品生产日期(YYYY-MM-DD)
 	ProductDate string `json:"productDate,omitempty" xml:"productDate,omitempty"`
 	// 商品过期日期(YYYY-MM-DD)
@@ -22,6 +20,8 @@ type ProductItem struct {
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 货主编码
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
+	// 数量
+	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 配比数量
 	RatioQty int64 `json:"ratioQty,omitempty" xml:"ratioQty,omitempty"`
 }

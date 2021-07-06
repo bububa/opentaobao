@@ -10,8 +10,8 @@ type Scheduling struct {
 	SellerNick string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
 	// 服务商子账号
 	SpNick string `json:"sp_nick,omitempty" xml:"sp_nick,omitempty"`
-	// 排班记录状态，1表示生效，-1表示失效
-	State int64 `json:"state,omitempty" xml:"state,omitempty"`
 	// 排班记录状态描述
 	StateDes string `json:"state_des,omitempty" xml:"state_des,omitempty"`
+	// 排班记录状态，1表示生效，-1表示失效
+	State int64 `json:"state,omitempty" xml:"state,omitempty"`
 }

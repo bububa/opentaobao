@@ -18,12 +18,12 @@ type BaseRegionDto struct {
 	NamePinyinSimple string `json:"name_pinyin_simple,omitempty" xml:"name_pinyin_simple,omitempty"`
 	// 区域类型
 	RegionType string `json:"region_type,omitempty" xml:"region_type,omitempty"`
-	// 区域代码
-	RegionId int64 `json:"region_id,omitempty" xml:"region_id,omitempty"`
 	// 外部城区ID -- 唯一
 	OuterRegionId string `json:"outer_region_id,omitempty" xml:"outer_region_id,omitempty"`
 	// 1或0 1删除 0不删
 	IsDeleted string `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
+	// 区域代码
+	RegionId int64 `json:"region_id,omitempty" xml:"region_id,omitempty"`
 	// 父级ID
 	ParentId int64 `json:"parent_id,omitempty" xml:"parent_id,omitempty"`
 }

@@ -12,20 +12,20 @@ import (
 // 用于客服外包中服务商查询订单列表
 type TaobaoWeikeEserviceOrderGetAPIRequest struct {
 	model.Params
-	// 订单服务开始日期
-	_startDate string
-	// 订单是否可以排班
-	_schedulingState bool
-	// 商家昵称
-	_sellerNick string
-	// 每页记录数（默认20，最大不超过20）
-	_pageSize int64
-	// 订单服务结束日期
-	_endDate string
 	// 订单ID列表，最大不超过20个（这个参数指定后，其它过滤条件失效）
 	_orderIdList []int64
+	// 订单服务开始日期
+	_startDate string
+	// 商家昵称
+	_sellerNick string
+	// 订单服务结束日期
+	_endDate string
+	// 每页记录数（默认20，最大不超过20）
+	_pageSize int64
 	// 页码（默认为1）
 	_pageNum int64
+	// 订单是否可以排班
+	_schedulingState bool
 }
 
 // NewTaobaoWeikeEserviceOrderGetRequest 初始化TaobaoWeikeEserviceOrderGetAPIRequest对象
@@ -49,6 +49,19 @@ func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetOrderIdList is OrderIdList Setter
+// 订单ID列表，最大不超过20个（这个参数指定后，其它过滤条件失效）
+func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetOrderIdList(_orderIdList []int64) error {
+	r._orderIdList = _orderIdList
+	r.Set("order_id_list", _orderIdList)
+	return nil
+}
+
+// GetOrderIdList OrderIdList Getter
+func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetOrderIdList() []int64 {
+	return r._orderIdList
+}
+
 // SetStartDate is StartDate Setter
 // 订单服务开始日期
 func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetStartDate(_startDate string) error {
@@ -60,19 +73,6 @@ func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetStartDate(_startDate string) 
 // GetStartDate StartDate Getter
 func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetStartDate() string {
 	return r._startDate
-}
-
-// SetSchedulingState is SchedulingState Setter
-// 订单是否可以排班
-func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetSchedulingState(_schedulingState bool) error {
-	r._schedulingState = _schedulingState
-	r.Set("scheduling_state", _schedulingState)
-	return nil
-}
-
-// GetSchedulingState SchedulingState Getter
-func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetSchedulingState() bool {
-	return r._schedulingState
 }
 
 // SetSellerNick is SellerNick Setter
@@ -88,19 +88,6 @@ func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetSellerNick() string {
 	return r._sellerNick
 }
 
-// SetPageSize is PageSize Setter
-// 每页记录数（默认20，最大不超过20）
-func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetEndDate is EndDate Setter
 // 订单服务结束日期
 func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetEndDate(_endDate string) error {
@@ -114,17 +101,17 @@ func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// SetOrderIdList is OrderIdList Setter
-// 订单ID列表，最大不超过20个（这个参数指定后，其它过滤条件失效）
-func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetOrderIdList(_orderIdList []int64) error {
-	r._orderIdList = _orderIdList
-	r.Set("order_id_list", _orderIdList)
+// SetPageSize is PageSize Setter
+// 每页记录数（默认20，最大不超过20）
+func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
 	return nil
 }
 
-// GetOrderIdList OrderIdList Getter
-func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetOrderIdList() []int64 {
-	return r._orderIdList
+// GetPageSize PageSize Getter
+func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
 // SetPageNum is PageNum Setter
@@ -138,4 +125,17 @@ func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetPageNum(_pageNum int64) error
 // GetPageNum PageNum Getter
 func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetPageNum() int64 {
 	return r._pageNum
+}
+
+// SetSchedulingState is SchedulingState Setter
+// 订单是否可以排班
+func (r *TaobaoWeikeEserviceOrderGetAPIRequest) SetSchedulingState(_schedulingState bool) error {
+	r._schedulingState = _schedulingState
+	r.Set("scheduling_state", _schedulingState)
+	return nil
+}
+
+// GetSchedulingState SchedulingState Getter
+func (r TaobaoWeikeEserviceOrderGetAPIRequest) GetSchedulingState() bool {
+	return r._schedulingState
 }

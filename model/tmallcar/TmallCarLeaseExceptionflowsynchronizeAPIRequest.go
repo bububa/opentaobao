@@ -12,14 +12,14 @@ import (
 // 天猫开新车租后异常流线下处理状态通知接口
 type TmallCarLeaseExceptionflowsynchronizeAPIRequest struct {
 	model.Params
+	// 切换原因描述
+	_desc string
 	// 天猫开新车订单id
 	_orderId int64
 	// 1:开始切换为异常流，2:线下处理完成
 	_status int64
 	// 异常流类型,0.退车,1.买断,2.分期，3.续租
 	_flowType int64
-	// 切换原因描述
-	_desc string
 }
 
 // NewTmallCarLeaseExceptionflowsynchronizeRequest 初始化TmallCarLeaseExceptionflowsynchronizeAPIRequest对象
@@ -41,6 +41,19 @@ func (r TmallCarLeaseExceptionflowsynchronizeAPIRequest) GetApiParams() url.Valu
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetDesc is Desc Setter
+// 切换原因描述
+func (r *TmallCarLeaseExceptionflowsynchronizeAPIRequest) SetDesc(_desc string) error {
+	r._desc = _desc
+	r.Set("desc", _desc)
+	return nil
+}
+
+// GetDesc Desc Getter
+func (r TmallCarLeaseExceptionflowsynchronizeAPIRequest) GetDesc() string {
+	return r._desc
 }
 
 // SetOrderId is OrderId Setter
@@ -80,17 +93,4 @@ func (r *TmallCarLeaseExceptionflowsynchronizeAPIRequest) SetFlowType(_flowType 
 // GetFlowType FlowType Getter
 func (r TmallCarLeaseExceptionflowsynchronizeAPIRequest) GetFlowType() int64 {
 	return r._flowType
-}
-
-// SetDesc is Desc Setter
-// 切换原因描述
-func (r *TmallCarLeaseExceptionflowsynchronizeAPIRequest) SetDesc(_desc string) error {
-	r._desc = _desc
-	r.Set("desc", _desc)
-	return nil
-}
-
-// GetDesc Desc Getter
-func (r TmallCarLeaseExceptionflowsynchronizeAPIRequest) GetDesc() string {
-	return r._desc
 }

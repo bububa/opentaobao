@@ -4,10 +4,6 @@ package simba
 type Creative struct {
 	// 主人昵称
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
-	// 推广计划Id
-	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
-	// 推广组id
-	AdgroupId int64 `json:"adgroup_id,omitempty" xml:"adgroup_id,omitempty"`
 	// 创意标题，最多20个汉字
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 创意图片地址，必须是推广组对应商品的图片之一
@@ -20,10 +16,14 @@ type Creative struct {
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 最后修改时间
 	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
+	// 使用副图作为创意的原始副图图片URL后缀
+	SecondImgOriginUrl string `json:"second_img_origin_url,omitempty" xml:"second_img_origin_url,omitempty"`
+	// 推广计划Id
+	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
+	// 推广组id
+	AdgroupId int64 `json:"adgroup_id,omitempty" xml:"adgroup_id,omitempty"`
 	// 创意id
 	CreativeId int64 `json:"creative_id,omitempty" xml:"creative_id,omitempty"`
 	// 创意图片类型,1-主图,2-副图,3-自定义图片
 	ImgType int64 `json:"img_type,omitempty" xml:"img_type,omitempty"`
-	// 使用副图作为创意的原始副图图片URL后缀
-	SecondImgOriginUrl string `json:"second_img_origin_url,omitempty" xml:"second_img_origin_url,omitempty"`
 }

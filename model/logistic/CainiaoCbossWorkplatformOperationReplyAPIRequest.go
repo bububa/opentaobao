@@ -18,8 +18,6 @@ type CainiaoCbossWorkplatformOperationReplyAPIRequest struct {
 	_taskId string
 	// 任务操作时间
 	_actionTime string
-	// 任务操作类型
-	_actionType int64
 	// 操作者userId
 	_dealerUserId string
 	// 操作者联系方式
@@ -30,6 +28,8 @@ type CainiaoCbossWorkplatformOperationReplyAPIRequest struct {
 	_attachPath string
 	// 扩展字段
 	_features string
+	// 任务操作类型
+	_actionType int64
 }
 
 // NewCainiaoCbossWorkplatformOperationReplyRequest 初始化CainiaoCbossWorkplatformOperationReplyAPIRequest对象
@@ -90,19 +90,6 @@ func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetActionTime(_action
 // GetActionTime ActionTime Getter
 func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetActionTime() string {
 	return r._actionTime
-}
-
-// SetActionType is ActionType Setter
-// 任务操作类型
-func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetActionType(_actionType int64) error {
-	r._actionType = _actionType
-	r.Set("action_type", _actionType)
-	return nil
-}
-
-// GetActionType ActionType Getter
-func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetActionType() int64 {
-	return r._actionType
 }
 
 // SetDealerUserId is DealerUserId Setter
@@ -168,4 +155,17 @@ func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetFeatures(_features
 // GetFeatures Features Getter
 func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetFeatures() string {
 	return r._features
+}
+
+// SetActionType is ActionType Setter
+// 任务操作类型
+func (r *CainiaoCbossWorkplatformOperationReplyAPIRequest) SetActionType(_actionType int64) error {
+	r._actionType = _actionType
+	r.Set("action_type", _actionType)
+	return nil
+}
+
+// GetActionType ActionType Getter
+func (r CainiaoCbossWorkplatformOperationReplyAPIRequest) GetActionType() int64 {
+	return r._actionType
 }

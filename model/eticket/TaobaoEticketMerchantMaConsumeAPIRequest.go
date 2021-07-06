@@ -12,14 +12,10 @@ import (
 // 电子凭证核销接口
 type TaobaoEticketMerchantMaConsumeAPIRequest struct {
 	model.Params
-	// 业务类型
-	_bizType int64
-	// 需要被核销的码
-	_code string
-	// 核销份数
-	_consumeNum int64
 	// 核销后换码的码列表
 	_isvMaList []IsvMa
+	// 需要被核销的码
+	_code string
 	// 业务id（订单号）
 	_outerId string
 	// 机具编号
@@ -28,6 +24,10 @@ type TaobaoEticketMerchantMaConsumeAPIRequest struct {
 	_serialNum string
 	// 需要跟发码通知获取到的参数一致
 	_token string
+	// 业务类型
+	_bizType int64
+	// 核销份数
+	_consumeNum int64
 }
 
 // NewTaobaoEticketMerchantMaConsumeRequest 初始化TaobaoEticketMerchantMaConsumeAPIRequest对象
@@ -51,17 +51,17 @@ func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetBizType is BizType Setter
-// 业务类型
-func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetBizType(_bizType int64) error {
-	r._bizType = _bizType
-	r.Set("biz_type", _bizType)
+// SetIsvMaList is IsvMaList Setter
+// 核销后换码的码列表
+func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetIsvMaList(_isvMaList []IsvMa) error {
+	r._isvMaList = _isvMaList
+	r.Set("isv_ma_list", _isvMaList)
 	return nil
 }
 
-// GetBizType BizType Getter
-func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetBizType() int64 {
-	return r._bizType
+// GetIsvMaList IsvMaList Getter
+func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetIsvMaList() []IsvMa {
+	return r._isvMaList
 }
 
 // SetCode is Code Setter
@@ -75,32 +75,6 @@ func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetCode(_code string) error {
 // GetCode Code Getter
 func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetCode() string {
 	return r._code
-}
-
-// SetConsumeNum is ConsumeNum Setter
-// 核销份数
-func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetConsumeNum(_consumeNum int64) error {
-	r._consumeNum = _consumeNum
-	r.Set("consume_num", _consumeNum)
-	return nil
-}
-
-// GetConsumeNum ConsumeNum Getter
-func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetConsumeNum() int64 {
-	return r._consumeNum
-}
-
-// SetIsvMaList is IsvMaList Setter
-// 核销后换码的码列表
-func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetIsvMaList(_isvMaList []IsvMa) error {
-	r._isvMaList = _isvMaList
-	r.Set("isv_ma_list", _isvMaList)
-	return nil
-}
-
-// GetIsvMaList IsvMaList Getter
-func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetIsvMaList() []IsvMa {
-	return r._isvMaList
 }
 
 // SetOuterId is OuterId Setter
@@ -153,4 +127,30 @@ func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetToken(_token string) error
 // GetToken Token Getter
 func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetBizType is BizType Setter
+// 业务类型
+func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetBizType(_bizType int64) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// GetBizType BizType Getter
+func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetBizType() int64 {
+	return r._bizType
+}
+
+// SetConsumeNum is ConsumeNum Setter
+// 核销份数
+func (r *TaobaoEticketMerchantMaConsumeAPIRequest) SetConsumeNum(_consumeNum int64) error {
+	r._consumeNum = _consumeNum
+	r.Set("consume_num", _consumeNum)
+	return nil
+}
+
+// GetConsumeNum ConsumeNum Getter
+func (r TaobaoEticketMerchantMaConsumeAPIRequest) GetConsumeNum() int64 {
+	return r._consumeNum
 }

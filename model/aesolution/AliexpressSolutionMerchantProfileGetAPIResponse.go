@@ -22,16 +22,16 @@ type AliexpressSolutionMerchantProfileGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// country code which the merchant chose when registered
 	CountryCode string `json:"country_code,omitempty" xml:"country_code,omitempty"`
-	// Indicate whether the mechant could post product or not. FALSE means the merchant could normally post product.
-	ProductPostingForbidden bool `json:"product_posting_forbidden,omitempty" xml:"product_posting_forbidden,omitempty"`
 	// merchant login id of Aliexpress
 	MerchantLoginId string `json:"merchant_login_id,omitempty" xml:"merchant_login_id,omitempty"`
-	// shop id
-	ShopId int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// shop name
 	ShopName string `json:"shop_name,omitempty" xml:"shop_name,omitempty"`
 	// shop type
 	ShopType string `json:"shop_type,omitempty" xml:"shop_type,omitempty"`
 	// shop url
 	ShopUrl string `json:"shop_url,omitempty" xml:"shop_url,omitempty"`
+	// shop id
+	ShopId int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+	// Indicate whether the mechant could post product or not. FALSE means the merchant could normally post product.
+	ProductPostingForbidden bool `json:"product_posting_forbidden,omitempty" xml:"product_posting_forbidden,omitempty"`
 }

@@ -2,8 +2,6 @@ package xhotelonlineorder
 
 // Toprelationorders 结构体
 type Toprelationorders struct {
-	// 订单tid
-	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 	// 订单状态
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 房型名称
@@ -20,6 +18,8 @@ type Toprelationorders struct {
 	UnionStatusText string `json:"union_status_text,omitempty" xml:"union_status_text,omitempty"`
 	// 统一订单状态
 	UnionStatusValue string `json:"union_status_value,omitempty" xml:"union_status_value,omitempty"`
+	// 订单tid
+	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 	// 支付状态
 	PayStatus int64 `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
 	// 房间数

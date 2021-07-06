@@ -2,6 +2,8 @@ package ieagency
 
 // RefundPassengerFeeVo 结构体
 type RefundPassengerFeeVo struct {
+	// 活动列表
+	RefundActivityVos []RefundActivityVo `json:"refund_activity_vos,omitempty" xml:"refund_activity_vos>refund_activity_vo,omitempty"`
 	// 已使用票总价(单位:分)
 	AlreadyUsedTotalPirce int64 `json:"already_used_total_pirce,omitempty" xml:"already_used_total_pirce,omitempty"`
 	// 改签不可退服务费(单位：分)
@@ -14,8 +16,6 @@ type RefundPassengerFeeVo struct {
 	NonRefundableTicketPrice int64 `json:"non_refundable_ticket_price,omitempty" xml:"non_refundable_ticket_price,omitempty"`
 	// 乘机人ID
 	PassengerId int64 `json:"passenger_id,omitempty" xml:"passenger_id,omitempty"`
-	// 活动列表
-	RefundActivityVos []RefundActivityVo `json:"refund_activity_vos,omitempty" xml:"refund_activity_vos>refund_activity_vo,omitempty"`
 	// 乘机人退总金额(单位:分)
 	RefundToBuyerMoney int64 `json:"refund_to_buyer_money,omitempty" xml:"refund_to_buyer_money,omitempty"`
 	// 乘机人红包收回(单位:分)

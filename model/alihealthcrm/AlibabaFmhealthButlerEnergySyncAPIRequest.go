@@ -12,12 +12,12 @@ import (
 // 同步用户消耗能量，用户消耗s点或卡路里后，同步给健康平台
 type AlibabaFmhealthButlerEnergySyncAPIRequest struct {
 	model.Params
+	// “S”- s点 “CAL”- 卡路里
+	_energyType string
 	// 阿里用户id
 	_userId int64
 	// 每日已消耗能量
 	_value *BigDecimal
-	// “S”- s点 “CAL”- 卡路里
-	_energyType string
 	// 每日可消耗能量
 	_target *BigDecimal
 	// 每日运动消耗能量值
@@ -45,6 +45,19 @@ func (r AlibabaFmhealthButlerEnergySyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetEnergyType is EnergyType Setter
+// “S”- s点 “CAL”- 卡路里
+func (r *AlibabaFmhealthButlerEnergySyncAPIRequest) SetEnergyType(_energyType string) error {
+	r._energyType = _energyType
+	r.Set("energy_type", _energyType)
+	return nil
+}
+
+// GetEnergyType EnergyType Getter
+func (r AlibabaFmhealthButlerEnergySyncAPIRequest) GetEnergyType() string {
+	return r._energyType
+}
+
 // SetUserId is UserId Setter
 // 阿里用户id
 func (r *AlibabaFmhealthButlerEnergySyncAPIRequest) SetUserId(_userId int64) error {
@@ -69,19 +82,6 @@ func (r *AlibabaFmhealthButlerEnergySyncAPIRequest) SetValue(_value *BigDecimal)
 // GetValue Value Getter
 func (r AlibabaFmhealthButlerEnergySyncAPIRequest) GetValue() *BigDecimal {
 	return r._value
-}
-
-// SetEnergyType is EnergyType Setter
-// “S”- s点 “CAL”- 卡路里
-func (r *AlibabaFmhealthButlerEnergySyncAPIRequest) SetEnergyType(_energyType string) error {
-	r._energyType = _energyType
-	r.Set("energy_type", _energyType)
-	return nil
-}
-
-// GetEnergyType EnergyType Getter
-func (r AlibabaFmhealthButlerEnergySyncAPIRequest) GetEnergyType() string {
-	return r._energyType
 }
 
 // SetTarget is Target Setter

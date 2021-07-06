@@ -6,10 +6,10 @@ type TargetEffectDto struct {
 	Subject string `json:"subject,omitempty" xml:"subject,omitempty"`
 	// 选项值
 	OptionValue string `json:"option_value,omitempty" xml:"option_value,omitempty"`
-	// 13:地域标签 14：人群标签
-	TagRefType int64 `json:"tag_ref_type,omitempty" xml:"tag_ref_type,omitempty"`
 	// 日期(yyyy-MM-dd)
 	StatDate string `json:"stat_date,omitempty" xml:"stat_date,omitempty"`
+	// 13:地域标签 14：人群标签
+	TagRefType int64 `json:"tag_ref_type,omitempty" xml:"tag_ref_type,omitempty"`
 	// 曝光
 	Impr int64 `json:"impr,omitempty" xml:"impr,omitempty"`
 	// 点击

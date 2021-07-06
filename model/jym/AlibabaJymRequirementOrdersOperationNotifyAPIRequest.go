@@ -12,10 +12,10 @@ import (
 // 交易猫需求订单操作接口
 type AlibabaJymRequirementOrdersOperationNotifyAPIRequest struct {
 	model.Params
-	// 需求订单操作
-	_operation int64
 	// 需求订单id
 	_reqmntOrderId string
+	// 需求订单操作
+	_operation int64
 }
 
 // NewAlibabaJymRequirementOrdersOperationNotifyRequest 初始化AlibabaJymRequirementOrdersOperationNotifyAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaJymRequirementOrdersOperationNotifyAPIRequest) GetApiParams() url
 	return params
 }
 
-// SetOperation is Operation Setter
-// 需求订单操作
-func (r *AlibabaJymRequirementOrdersOperationNotifyAPIRequest) SetOperation(_operation int64) error {
-	r._operation = _operation
-	r.Set("operation", _operation)
-	return nil
-}
-
-// GetOperation Operation Getter
-func (r AlibabaJymRequirementOrdersOperationNotifyAPIRequest) GetOperation() int64 {
-	return r._operation
-}
-
 // SetReqmntOrderId is ReqmntOrderId Setter
 // 需求订单id
 func (r *AlibabaJymRequirementOrdersOperationNotifyAPIRequest) SetReqmntOrderId(_reqmntOrderId string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaJymRequirementOrdersOperationNotifyAPIRequest) SetReqmntOrderId(
 // GetReqmntOrderId ReqmntOrderId Getter
 func (r AlibabaJymRequirementOrdersOperationNotifyAPIRequest) GetReqmntOrderId() string {
 	return r._reqmntOrderId
+}
+
+// SetOperation is Operation Setter
+// 需求订单操作
+func (r *AlibabaJymRequirementOrdersOperationNotifyAPIRequest) SetOperation(_operation int64) error {
+	r._operation = _operation
+	r.Set("operation", _operation)
+	return nil
+}
+
+// GetOperation Operation Getter
+func (r AlibabaJymRequirementOrdersOperationNotifyAPIRequest) GetOperation() int64 {
+	return r._operation
 }

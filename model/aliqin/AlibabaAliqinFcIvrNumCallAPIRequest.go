@@ -28,12 +28,12 @@ type AlibabaAliqinFcIvrNumCallAPIRequest struct {
 	_byeCode string
 	// 当use_tts=tts时，该字段可填写tts模板变量参数
 	_menuArgs string
-	// 播放次数
-	_playTimes int64
 	// 按键映射事件
 	_params string
 	// 人工服务号码
 	_serviceNumber string
+	// 播放次数
+	_playTimes int64
 }
 
 // NewAlibabaAliqinFcIvrNumCallRequest 初始化AlibabaAliqinFcIvrNumCallAPIRequest对象
@@ -161,19 +161,6 @@ func (r AlibabaAliqinFcIvrNumCallAPIRequest) GetMenuArgs() string {
 	return r._menuArgs
 }
 
-// SetPlayTimes is PlayTimes Setter
-// 播放次数
-func (r *AlibabaAliqinFcIvrNumCallAPIRequest) SetPlayTimes(_playTimes int64) error {
-	r._playTimes = _playTimes
-	r.Set("play_times", _playTimes)
-	return nil
-}
-
-// GetPlayTimes PlayTimes Getter
-func (r AlibabaAliqinFcIvrNumCallAPIRequest) GetPlayTimes() int64 {
-	return r._playTimes
-}
-
 // SetParams is Params Setter
 // 按键映射事件
 func (r *AlibabaAliqinFcIvrNumCallAPIRequest) SetParams(_params string) error {
@@ -198,4 +185,17 @@ func (r *AlibabaAliqinFcIvrNumCallAPIRequest) SetServiceNumber(_serviceNumber st
 // GetServiceNumber ServiceNumber Getter
 func (r AlibabaAliqinFcIvrNumCallAPIRequest) GetServiceNumber() string {
 	return r._serviceNumber
+}
+
+// SetPlayTimes is PlayTimes Setter
+// 播放次数
+func (r *AlibabaAliqinFcIvrNumCallAPIRequest) SetPlayTimes(_playTimes int64) error {
+	r._playTimes = _playTimes
+	r.Set("play_times", _playTimes)
+	return nil
+}
+
+// GetPlayTimes PlayTimes Getter
+func (r AlibabaAliqinFcIvrNumCallAPIRequest) GetPlayTimes() int64 {
+	return r._playTimes
 }

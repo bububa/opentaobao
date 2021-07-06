@@ -12,10 +12,10 @@ import (
 // 确认发货
 type AlibabaIdleRentOrderSenditemAPIRequest struct {
 	model.Params
-	// 订单id
-	_orderId int64
 	// 物流信息
 	_logisticsList []LogisticsDto
+	// 订单id
+	_orderId int64
 }
 
 // NewAlibabaIdleRentOrderSenditemRequest 初始化AlibabaIdleRentOrderSenditemAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaIdleRentOrderSenditemAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetOrderId is OrderId Setter
-// 订单id
-func (r *AlibabaIdleRentOrderSenditemAPIRequest) SetOrderId(_orderId int64) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
-	return nil
-}
-
-// GetOrderId OrderId Getter
-func (r AlibabaIdleRentOrderSenditemAPIRequest) GetOrderId() int64 {
-	return r._orderId
-}
-
 // SetLogisticsList is LogisticsList Setter
 // 物流信息
 func (r *AlibabaIdleRentOrderSenditemAPIRequest) SetLogisticsList(_logisticsList []LogisticsDto) error {
@@ -63,4 +50,17 @@ func (r *AlibabaIdleRentOrderSenditemAPIRequest) SetLogisticsList(_logisticsList
 // GetLogisticsList LogisticsList Getter
 func (r AlibabaIdleRentOrderSenditemAPIRequest) GetLogisticsList() []LogisticsDto {
 	return r._logisticsList
+}
+
+// SetOrderId is OrderId Setter
+// 订单id
+func (r *AlibabaIdleRentOrderSenditemAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// GetOrderId OrderId Getter
+func (r AlibabaIdleRentOrderSenditemAPIRequest) GetOrderId() int64 {
+	return r._orderId
 }

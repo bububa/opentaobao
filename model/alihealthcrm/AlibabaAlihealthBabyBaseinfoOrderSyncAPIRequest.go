@@ -12,20 +12,20 @@ import (
 // 育学园将订单信息回传给我们
 type AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest struct {
 	model.Params
-	// 健康id
-	_tpUserId int64
 	// 商品id
 	_commodityId string
 	// 商品名称
 	_commodityName string
-	// 价钱
-	_amount *BigDecimal
-	// 状态，1是已支付，2是已退款
-	_status int64
 	// 订单时间
 	_orderTime string
 	// 订单id
 	_orderId string
+	// 健康id
+	_tpUserId int64
+	// 价钱
+	_amount *BigDecimal
+	// 状态，1是已支付，2是已退款
+	_status int64
 }
 
 // NewAlibabaAlihealthBabyBaseinfoOrderSyncRequest 初始化AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest对象
@@ -47,19 +47,6 @@ func (r AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) GetApiParams() url.Valu
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetTpUserId is TpUserId Setter
-// 健康id
-func (r *AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) SetTpUserId(_tpUserId int64) error {
-	r._tpUserId = _tpUserId
-	r.Set("tp_user_id", _tpUserId)
-	return nil
-}
-
-// GetTpUserId TpUserId Getter
-func (r AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) GetTpUserId() int64 {
-	return r._tpUserId
 }
 
 // SetCommodityId is CommodityId Setter
@@ -88,32 +75,6 @@ func (r AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) GetCommodityName() stri
 	return r._commodityName
 }
 
-// SetAmount is Amount Setter
-// 价钱
-func (r *AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) SetAmount(_amount *BigDecimal) error {
-	r._amount = _amount
-	r.Set("amount", _amount)
-	return nil
-}
-
-// GetAmount Amount Getter
-func (r AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) GetAmount() *BigDecimal {
-	return r._amount
-}
-
-// SetStatus is Status Setter
-// 状态，1是已支付，2是已退款
-func (r *AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) SetStatus(_status int64) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) GetStatus() int64 {
-	return r._status
-}
-
 // SetOrderTime is OrderTime Setter
 // 订单时间
 func (r *AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) SetOrderTime(_orderTime string) error {
@@ -138,4 +99,43 @@ func (r *AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) SetOrderId(_orderId st
 // GetOrderId OrderId Getter
 func (r AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) GetOrderId() string {
 	return r._orderId
+}
+
+// SetTpUserId is TpUserId Setter
+// 健康id
+func (r *AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) SetTpUserId(_tpUserId int64) error {
+	r._tpUserId = _tpUserId
+	r.Set("tp_user_id", _tpUserId)
+	return nil
+}
+
+// GetTpUserId TpUserId Getter
+func (r AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) GetTpUserId() int64 {
+	return r._tpUserId
+}
+
+// SetAmount is Amount Setter
+// 价钱
+func (r *AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) SetAmount(_amount *BigDecimal) error {
+	r._amount = _amount
+	r.Set("amount", _amount)
+	return nil
+}
+
+// GetAmount Amount Getter
+func (r AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) GetAmount() *BigDecimal {
+	return r._amount
+}
+
+// SetStatus is Status Setter
+// 状态，1是已支付，2是已退款
+func (r *AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r AlibabaAlihealthBabyBaseinfoOrderSyncAPIRequest) GetStatus() int64 {
+	return r._status
 }

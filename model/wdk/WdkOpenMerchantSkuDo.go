@@ -2,6 +2,8 @@ package wdk
 
 // WdkOpenMerchantSkuDo 结构体
 type WdkOpenMerchantSkuDo struct {
+	// 条码
+	Barcodes []string `json:"barcodes,omitempty" xml:"barcodes>string,omitempty"`
 	// 商家编码
 	MerchantCode string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
 	// 机构编码
@@ -12,28 +14,16 @@ type WdkOpenMerchantSkuDo struct {
 	SkuName string `json:"sku_name,omitempty" xml:"sku_name,omitempty"`
 	// 商品简称
 	ShortTitle string `json:"short_title,omitempty" xml:"short_title,omitempty"`
-	// 条码
-	Barcodes []string `json:"barcodes,omitempty" xml:"barcodes>string,omitempty"`
 	// 商品生命周期状态(A-正常、T-暂时停购、C-淘汰出清、R-清退、D-删除封挡)
 	LifeStatus string `json:"life_status,omitempty" xml:"life_status,omitempty"`
 	// 平台类目编码
 	BackCatCode string `json:"back_cat_code,omitempty" xml:"back_cat_code,omitempty"`
 	// 商家类目编码
 	RetailerCatCode string `json:"retailer_cat_code,omitempty" xml:"retailer_cat_code,omitempty"`
-	// 商品经营方式(1001-普通商品， 2001-加工成品，2002-加工半成品，3001-原材料，4001-耗材，6001-组合商品)
-	ItemType int64 `json:"item_type,omitempty" xml:"item_type,omitempty"`
 	// 商品销项税率
 	InvoiceContent string `json:"invoice_content,omitempty" xml:"invoice_content,omitempty"`
-	// 是否可售: 1 - 可售， 0 - 不可售
-	SaleFlag int64 `json:"sale_flag,omitempty" xml:"sale_flag,omitempty"`
 	// 税率
 	TaxRate string `json:"tax_rate,omitempty" xml:"tax_rate,omitempty"`
-	// 是否加工商品
-	HangdlingFlag int64 `json:"hangdling_flag,omitempty" xml:"hangdling_flag,omitempty"`
-	// 存货性质（此字段一经录入不能修改）；此字段可传：原材料、办公品、服务项目、成品、半成品。与是否加工字段组合成商品类型字段。商品类型有5种：耗材、原材料、加工半成品、加工产成品、普通商品。若存货性质是成品，是否加工为是，则商品类型为“加工产成品”；若存货性质是成品，是否加工为否，则商品类型为“普通商品”；若存货性质是半成品，是否加工为是，则商品性质为“加工半成品”
-	GoodsNature int64 `json:"goods_nature,omitempty" xml:"goods_nature,omitempty"`
-	// 建议零售价
-	SuggestedPrice int64 `json:"suggested_price,omitempty" xml:"suggested_price,omitempty"`
 	// 品牌编码
 	BrandCode string `json:"brand_code,omitempty" xml:"brand_code,omitempty"`
 	// 供应商code
@@ -54,22 +44,10 @@ type WdkOpenMerchantSkuDo struct {
 	SaleUnit string `json:"sale_unit,omitempty" xml:"sale_unit,omitempty"`
 	// 净含量
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
-	// 是否APP可售
-	AllowAppSale int64 `json:"allow_app_sale,omitempty" xml:"allow_app_sale,omitempty"`
-	// 是否大件
-	BigFlag int64 `json:"big_flag,omitempty" xml:"big_flag,omitempty"`
-	// 是否称重
-	WeightFlag int64 `json:"weight_flag,omitempty" xml:"weight_flag,omitempty"`
-	// 是否进口
-	ImportFlag int64 `json:"import_flag,omitempty" xml:"import_flag,omitempty"`
 	// 存储条件；填常温、冷藏、冷冻、热链、鲜活
 	Storage string `json:"storage,omitempty" xml:"storage,omitempty"`
-	// 保质天数
-	Period int64 `json:"period,omitempty" xml:"period,omitempty"`
 	// 淘鲜达产地库中的值；国内产地传值格式：中国|省|市。若不能确定产地，可以传“见产品外包装”（按商家支持，需要提前通知技术配置）。国外产地只需要传国家名
 	ProducerPlace string `json:"producer_place,omitempty" xml:"producer_place,omitempty"`
-	// 重量（单位统一为g）。称重品（weight_flag为1）该字段不填。
-	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
 	// 长度(深)
 	Length string `json:"length,omitempty" xml:"length,omitempty"`
 	// 宽度（宽）
@@ -98,4 +76,26 @@ type WdkOpenMerchantSkuDo struct {
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 品牌名称
 	BrandName string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
+	// 商品经营方式(1001-普通商品， 2001-加工成品，2002-加工半成品，3001-原材料，4001-耗材，6001-组合商品)
+	ItemType int64 `json:"item_type,omitempty" xml:"item_type,omitempty"`
+	// 是否可售: 1 - 可售， 0 - 不可售
+	SaleFlag int64 `json:"sale_flag,omitempty" xml:"sale_flag,omitempty"`
+	// 是否加工商品
+	HangdlingFlag int64 `json:"hangdling_flag,omitempty" xml:"hangdling_flag,omitempty"`
+	// 存货性质（此字段一经录入不能修改）；此字段可传：原材料、办公品、服务项目、成品、半成品。与是否加工字段组合成商品类型字段。商品类型有5种：耗材、原材料、加工半成品、加工产成品、普通商品。若存货性质是成品，是否加工为是，则商品类型为“加工产成品”；若存货性质是成品，是否加工为否，则商品类型为“普通商品”；若存货性质是半成品，是否加工为是，则商品性质为“加工半成品”
+	GoodsNature int64 `json:"goods_nature,omitempty" xml:"goods_nature,omitempty"`
+	// 建议零售价
+	SuggestedPrice int64 `json:"suggested_price,omitempty" xml:"suggested_price,omitempty"`
+	// 是否APP可售
+	AllowAppSale int64 `json:"allow_app_sale,omitempty" xml:"allow_app_sale,omitempty"`
+	// 是否大件
+	BigFlag int64 `json:"big_flag,omitempty" xml:"big_flag,omitempty"`
+	// 是否称重
+	WeightFlag int64 `json:"weight_flag,omitempty" xml:"weight_flag,omitempty"`
+	// 是否进口
+	ImportFlag int64 `json:"import_flag,omitempty" xml:"import_flag,omitempty"`
+	// 保质天数
+	Period int64 `json:"period,omitempty" xml:"period,omitempty"`
+	// 重量（单位统一为g）。称重品（weight_flag为1）该字段不填。
+	Weight int64 `json:"weight,omitempty" xml:"weight,omitempty"`
 }

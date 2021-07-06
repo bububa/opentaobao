@@ -2,10 +2,10 @@ package ascpchannel
 
 // ProductLinkRequest 结构体
 type ProductLinkRequest struct {
-	// 分销商商品 ID
-	OutItemId string `json:"out_item_id,omitempty" xml:"out_item_id,omitempty"`
 	// sku 列表
 	SkuList []ProductSkuLinkDto `json:"sku_list,omitempty" xml:"sku_list>product_sku_link_dto,omitempty"`
+	// 分销商商品 ID
+	OutItemId string `json:"out_item_id,omitempty" xml:"out_item_id,omitempty"`
 	// 供应商产品 id
 	ProductId string `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 经营模式

@@ -14,12 +14,12 @@ type TaobaoOpenmallItemsQueryAPIRequest struct {
 	model.Params
 	// 已废弃，请勿使用
 	_itemIds string
+	// 当不输入渠道商时，展示全网公有商品池；当输入渠道商的淘宝Nick时，展示该渠道私有供给商品列表
+	_distributor string
 	// 第几页，默认：1
 	_pageNo int64
 	// 页大小，默认20，1~100
 	_pageSize int64
-	// 当不输入渠道商时，展示全网公有商品池；当输入渠道商的淘宝Nick时，展示该渠道私有供给商品列表
-	_distributor string
 }
 
 // NewTaobaoOpenmallItemsQueryRequest 初始化TaobaoOpenmallItemsQueryAPIRequest对象
@@ -56,6 +56,19 @@ func (r TaobaoOpenmallItemsQueryAPIRequest) GetItemIds() string {
 	return r._itemIds
 }
 
+// SetDistributor is Distributor Setter
+// 当不输入渠道商时，展示全网公有商品池；当输入渠道商的淘宝Nick时，展示该渠道私有供给商品列表
+func (r *TaobaoOpenmallItemsQueryAPIRequest) SetDistributor(_distributor string) error {
+	r._distributor = _distributor
+	r.Set("distributor", _distributor)
+	return nil
+}
+
+// GetDistributor Distributor Getter
+func (r TaobaoOpenmallItemsQueryAPIRequest) GetDistributor() string {
+	return r._distributor
+}
+
 // SetPageNo is PageNo Setter
 // 第几页，默认：1
 func (r *TaobaoOpenmallItemsQueryAPIRequest) SetPageNo(_pageNo int64) error {
@@ -80,17 +93,4 @@ func (r *TaobaoOpenmallItemsQueryAPIRequest) SetPageSize(_pageSize int64) error 
 // GetPageSize PageSize Getter
 func (r TaobaoOpenmallItemsQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetDistributor is Distributor Setter
-// 当不输入渠道商时，展示全网公有商品池；当输入渠道商的淘宝Nick时，展示该渠道私有供给商品列表
-func (r *TaobaoOpenmallItemsQueryAPIRequest) SetDistributor(_distributor string) error {
-	r._distributor = _distributor
-	r.Set("distributor", _distributor)
-	return nil
-}
-
-// GetDistributor Distributor Getter
-func (r TaobaoOpenmallItemsQueryAPIRequest) GetDistributor() string {
-	return r._distributor
 }

@@ -14,10 +14,10 @@ type TaobaoMiniappDistributionOrderItemsBindAPIRequest struct {
 	model.Params
 	// 商品id列表
 	_targetEntityList []string
-	// true表示新增绑定，false表示解绑
-	_addBind bool
 	// 投放计划标识id
 	_distributeId int64
+	// true表示新增绑定，false表示解绑
+	_addBind bool
 }
 
 // NewTaobaoMiniappDistributionOrderItemsBindRequest 初始化TaobaoMiniappDistributionOrderItemsBindAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoMiniappDistributionOrderItemsBindAPIRequest) GetTargetEntityList()
 	return r._targetEntityList
 }
 
-// SetAddBind is AddBind Setter
-// true表示新增绑定，false表示解绑
-func (r *TaobaoMiniappDistributionOrderItemsBindAPIRequest) SetAddBind(_addBind bool) error {
-	r._addBind = _addBind
-	r.Set("add_bind", _addBind)
-	return nil
-}
-
-// GetAddBind AddBind Getter
-func (r TaobaoMiniappDistributionOrderItemsBindAPIRequest) GetAddBind() bool {
-	return r._addBind
-}
-
 // SetDistributeId is DistributeId Setter
 // 投放计划标识id
 func (r *TaobaoMiniappDistributionOrderItemsBindAPIRequest) SetDistributeId(_distributeId int64) error {
@@ -78,4 +65,17 @@ func (r *TaobaoMiniappDistributionOrderItemsBindAPIRequest) SetDistributeId(_dis
 // GetDistributeId DistributeId Getter
 func (r TaobaoMiniappDistributionOrderItemsBindAPIRequest) GetDistributeId() int64 {
 	return r._distributeId
+}
+
+// SetAddBind is AddBind Setter
+// true表示新增绑定，false表示解绑
+func (r *TaobaoMiniappDistributionOrderItemsBindAPIRequest) SetAddBind(_addBind bool) error {
+	r._addBind = _addBind
+	r.Set("add_bind", _addBind)
+	return nil
+}
+
+// GetAddBind AddBind Getter
+func (r TaobaoMiniappDistributionOrderItemsBindAPIRequest) GetAddBind() bool {
+	return r._addBind
 }

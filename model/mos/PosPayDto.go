@@ -12,14 +12,10 @@ type PosPayDto struct {
 	OriginalOutTradeNo string `json:"original_out_trade_no,omitempty" xml:"original_out_trade_no,omitempty"`
 	// 消费者昵称
 	CustomerNickname string `json:"customer_nickname,omitempty" xml:"customer_nickname,omitempty"`
-	// 订单金额（支付金额）
-	PayAmount int64 `json:"pay_amount,omitempty" xml:"pay_amount,omitempty"`
 	// 付款时间
 	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
 	// 支付渠道
 	PayChannel string `json:"pay_channel,omitempty" xml:"pay_channel,omitempty"`
-	// 终端类型（销售渠道）
-	SaleChannel int64 `json:"sale_channel,omitempty" xml:"sale_channel,omitempty"`
 	// 外部小票号（11位小票号）
 	OutTradeNo string `json:"out_trade_no,omitempty" xml:"out_trade_no,omitempty"`
 	// 门店号
@@ -38,6 +34,10 @@ type PosPayDto struct {
 	Mac string `json:"mac,omitempty" xml:"mac,omitempty"`
 	// 扩展字段（支付渠道等）
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
+	// 订单金额（支付金额）
+	PayAmount int64 `json:"pay_amount,omitempty" xml:"pay_amount,omitempty"`
+	// 终端类型（销售渠道）
+	SaleChannel int64 `json:"sale_channel,omitempty" xml:"sale_channel,omitempty"`
 	// 交易类型
 	TradeType int64 `json:"trade_type,omitempty" xml:"trade_type,omitempty"`
 }

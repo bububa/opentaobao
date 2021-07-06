@@ -20,8 +20,8 @@ type TaobaoTanxNativetemplatesGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"tanx_nativetemplates_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 是否成功
-	IsOk bool `json:"is_ok,omitempty" xml:"is_ok,omitempty"`
 	// 本地模板列表
 	NativeTemplateList []NativeTemplateDto `json:"native_template_list,omitempty" xml:"native_template_list>native_template_dto,omitempty"`
+	// 是否成功
+	IsOk bool `json:"is_ok,omitempty" xml:"is_ok,omitempty"`
 }

@@ -22,8 +22,6 @@ type ServiceStoreSaveForTopReqDto struct {
 	LegalPersonIdCardPic string `json:"legal_person_id_card_pic,omitempty" xml:"legal_person_id_card_pic,omitempty"`
 	// 统一社会信用代码
 	SocialCreditCode string `json:"social_credit_code,omitempty" xml:"social_credit_code,omitempty"`
-	// 网点地址编码经纬度和详细地址id二选一
-	AddressId int64 `json:"address_id,omitempty" xml:"address_id,omitempty"`
 	// 法人姓名
 	LegalPersonName string `json:"legal_person_name,omitempty" xml:"legal_person_name,omitempty"`
 	// 品牌认证图片url-使用阿里图片服务
@@ -52,8 +50,10 @@ type ServiceStoreSaveForTopReqDto struct {
 	LicensePhoto string `json:"license_photo,omitempty" xml:"license_photo,omitempty"`
 	// 支付宝账号真实姓名
 	AlipayAccountName string `json:"alipay_account_name,omitempty" xml:"alipay_account_name,omitempty"`
-	// 网点id和网点code选其一
-	ServiceStoreId int64 `json:"service_store_id,omitempty" xml:"service_store_id,omitempty"`
 	// 对外服务电话
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
+	// 网点地址编码经纬度和详细地址id二选一
+	AddressId int64 `json:"address_id,omitempty" xml:"address_id,omitempty"`
+	// 网点id和网点code选其一
+	ServiceStoreId int64 `json:"service_store_id,omitempty" xml:"service_store_id,omitempty"`
 }

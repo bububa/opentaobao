@@ -2,10 +2,10 @@ package cainiaohandover
 
 // OpenHandoverContentDetailResponse 结构体
 type OpenHandoverContentDetailResponse struct {
-	// 交接物状态
-	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 大包关联的小包列表
 	ParcelOrderList []OpenParcelOrderDto `json:"parcel_order_list,omitempty" xml:"parcel_order_list>open_parcel_order_dto,omitempty"`
+	// 交接物状态
+	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 预估重量
 	EstimateWeight string `json:"estimate_weight,omitempty" xml:"estimate_weight,omitempty"`
 	// 实际重量

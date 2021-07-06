@@ -12,12 +12,12 @@ import (
 // 根据合同号查询铺位信息
 type AlibabaMosBunkBunkinfoQuerybunkAPIRequest struct {
 	model.Params
-	// 门店号
-	_storeNo string
 	// 合同状态集合
 	_statusList []string
 	// 合同号集合
 	_contractCodes []string
+	// 门店号
+	_storeNo string
 }
 
 // NewAlibabaMosBunkBunkinfoQuerybunkRequest 初始化AlibabaMosBunkBunkinfoQuerybunkAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaMosBunkBunkinfoQuerybunkAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetStoreNo is StoreNo Setter
-// 门店号
-func (r *AlibabaMosBunkBunkinfoQuerybunkAPIRequest) SetStoreNo(_storeNo string) error {
-	r._storeNo = _storeNo
-	r.Set("store_no", _storeNo)
-	return nil
-}
-
-// GetStoreNo StoreNo Getter
-func (r AlibabaMosBunkBunkinfoQuerybunkAPIRequest) GetStoreNo() string {
-	return r._storeNo
 }
 
 // SetStatusList is StatusList Setter
@@ -78,4 +65,17 @@ func (r *AlibabaMosBunkBunkinfoQuerybunkAPIRequest) SetContractCodes(_contractCo
 // GetContractCodes ContractCodes Getter
 func (r AlibabaMosBunkBunkinfoQuerybunkAPIRequest) GetContractCodes() []string {
 	return r._contractCodes
+}
+
+// SetStoreNo is StoreNo Setter
+// 门店号
+func (r *AlibabaMosBunkBunkinfoQuerybunkAPIRequest) SetStoreNo(_storeNo string) error {
+	r._storeNo = _storeNo
+	r.Set("store_no", _storeNo)
+	return nil
+}
+
+// GetStoreNo StoreNo Getter
+func (r AlibabaMosBunkBunkinfoQuerybunkAPIRequest) GetStoreNo() string {
+	return r._storeNo
 }

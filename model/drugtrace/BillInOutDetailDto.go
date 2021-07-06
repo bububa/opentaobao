@@ -2,6 +2,8 @@ package drugtrace
 
 // BillInOutDetailDto 结构体
 type BillInOutDetailDto struct {
+	// 单据详情
+	BillChkInOutDetailListDTOList []Billchkinoutdetaillistdtolist `json:"bill_chk_in_out_detail_list_d_t_o_list,omitempty" xml:"bill_chk_in_out_detail_list_d_t_o_list>billchkinoutdetaillistdtolist,omitempty"`
 	// 修改时间
 	ModDate string `json:"mod_date,omitempty" xml:"mod_date,omitempty"`
 	// 处理时间
@@ -22,8 +24,6 @@ type BillInOutDetailDto struct {
 	BillType string `json:"bill_type,omitempty" xml:"bill_type,omitempty"`
 	// 单据号码
 	BillCode string `json:"bill_code,omitempty" xml:"bill_code,omitempty"`
-	// 单据详情
-	BillChkInOutDetailListDTOList []Billchkinoutdetaillistdtolist `json:"bill_chk_in_out_detail_list_d_t_o_list,omitempty" xml:"bill_chk_in_out_detail_list_d_t_o_list>billchkinoutdetaillistdtolist,omitempty"`
 	// 上传文件名称
 	UploadFileName string `json:"upload_file_name,omitempty" xml:"upload_file_name,omitempty"`
 }

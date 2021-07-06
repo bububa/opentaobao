@@ -13,16 +13,16 @@ import (
 // 确认发货的目的是让交易流程继续走下去，确认发货后交易状态会由【买家已付款】变为【卖家已发货】。</font>
 type TaobaoLogisticsOnlineConfirmAPIRequest struct {
 	model.Params
-	// 淘宝交易ID
-	_tid int64
 	// 拆单子订单列表，对应的数据是：子订单号的列表。可以不传，但是如果传了则必须符合传递的规则。子订单必须是操作的物流订单的子订单的真子集
 	_subTid []int64
-	// 表明是否是拆单，默认值0，1表示拆单
-	_isSplit int64
 	// 运单号.具体一个物流公司的真实运单号码。淘宝官方物流会校验，请谨慎传入；
 	_outSid string
 	// 商家的IP地址
 	_sellerIp string
+	// 淘宝交易ID
+	_tid int64
+	// 表明是否是拆单，默认值0，1表示拆单
+	_isSplit int64
 }
 
 // NewTaobaoLogisticsOnlineConfirmRequest 初始化TaobaoLogisticsOnlineConfirmAPIRequest对象
@@ -46,19 +46,6 @@ func (r TaobaoLogisticsOnlineConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetTid is Tid Setter
-// 淘宝交易ID
-func (r *TaobaoLogisticsOnlineConfirmAPIRequest) SetTid(_tid int64) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
-	return nil
-}
-
-// GetTid Tid Getter
-func (r TaobaoLogisticsOnlineConfirmAPIRequest) GetTid() int64 {
-	return r._tid
-}
-
 // SetSubTid is SubTid Setter
 // 拆单子订单列表，对应的数据是：子订单号的列表。可以不传，但是如果传了则必须符合传递的规则。子订单必须是操作的物流订单的子订单的真子集
 func (r *TaobaoLogisticsOnlineConfirmAPIRequest) SetSubTid(_subTid []int64) error {
@@ -70,19 +57,6 @@ func (r *TaobaoLogisticsOnlineConfirmAPIRequest) SetSubTid(_subTid []int64) erro
 // GetSubTid SubTid Getter
 func (r TaobaoLogisticsOnlineConfirmAPIRequest) GetSubTid() []int64 {
 	return r._subTid
-}
-
-// SetIsSplit is IsSplit Setter
-// 表明是否是拆单，默认值0，1表示拆单
-func (r *TaobaoLogisticsOnlineConfirmAPIRequest) SetIsSplit(_isSplit int64) error {
-	r._isSplit = _isSplit
-	r.Set("is_split", _isSplit)
-	return nil
-}
-
-// GetIsSplit IsSplit Getter
-func (r TaobaoLogisticsOnlineConfirmAPIRequest) GetIsSplit() int64 {
-	return r._isSplit
 }
 
 // SetOutSid is OutSid Setter
@@ -109,4 +83,30 @@ func (r *TaobaoLogisticsOnlineConfirmAPIRequest) SetSellerIp(_sellerIp string) e
 // GetSellerIp SellerIp Getter
 func (r TaobaoLogisticsOnlineConfirmAPIRequest) GetSellerIp() string {
 	return r._sellerIp
+}
+
+// SetTid is Tid Setter
+// 淘宝交易ID
+func (r *TaobaoLogisticsOnlineConfirmAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoLogisticsOnlineConfirmAPIRequest) GetTid() int64 {
+	return r._tid
+}
+
+// SetIsSplit is IsSplit Setter
+// 表明是否是拆单，默认值0，1表示拆单
+func (r *TaobaoLogisticsOnlineConfirmAPIRequest) SetIsSplit(_isSplit int64) error {
+	r._isSplit = _isSplit
+	r.Set("is_split", _isSplit)
+	return nil
+}
+
+// GetIsSplit IsSplit Getter
+func (r TaobaoLogisticsOnlineConfirmAPIRequest) GetIsSplit() int64 {
+	return r._isSplit
 }

@@ -14,10 +14,10 @@ type TaobaoAlihealthDrugStoreSearchAPIRequest struct {
 	model.Params
 	// 搜索关键字
 	_keyword string
-	// 每页显示数量
-	_pageSize int64
 	// 店铺ID
 	_shopId string
+	// 每页显示数量
+	_pageSize int64
 	// 页码
 	_pageNo int64
 }
@@ -56,19 +56,6 @@ func (r TaobaoAlihealthDrugStoreSearchAPIRequest) GetKeyword() string {
 	return r._keyword
 }
 
-// SetPageSize is PageSize Setter
-// 每页显示数量
-func (r *TaobaoAlihealthDrugStoreSearchAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoAlihealthDrugStoreSearchAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetShopId is ShopId Setter
 // 店铺ID
 func (r *TaobaoAlihealthDrugStoreSearchAPIRequest) SetShopId(_shopId string) error {
@@ -80,6 +67,19 @@ func (r *TaobaoAlihealthDrugStoreSearchAPIRequest) SetShopId(_shopId string) err
 // GetShopId ShopId Getter
 func (r TaobaoAlihealthDrugStoreSearchAPIRequest) GetShopId() string {
 	return r._shopId
+}
+
+// SetPageSize is PageSize Setter
+// 每页显示数量
+func (r *TaobaoAlihealthDrugStoreSearchAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoAlihealthDrugStoreSearchAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
 // SetPageNo is PageNo Setter

@@ -18,10 +18,6 @@ type TaobaoKoubeiMallCommonItemShelfPageAPIRequest struct {
 	_mallId string
 	// 商圈内的门店ID
 	_storeId string
-	// 分页查询起始值，默认为0
-	_start int64
-	// 每页查询量，固定8个
-	_pageSize int64
 	// 口碑城市编码（示例：杭州市330100）
 	_cityCode string
 	// 经度（终端设备地理位置）
@@ -34,6 +30,10 @@ type TaobaoKoubeiMallCommonItemShelfPageAPIRequest struct {
 	_terminalType string
 	// 支付宝/口碑/淘宝app版本号
 	_appVersion string
+	// 分页查询起始值，默认为0
+	_start int64
+	// 每页查询量，固定8个
+	_pageSize int64
 }
 
 // NewTaobaoKoubeiMallCommonItemShelfPageRequest 初始化TaobaoKoubeiMallCommonItemShelfPageAPIRequest对象
@@ -94,32 +94,6 @@ func (r *TaobaoKoubeiMallCommonItemShelfPageAPIRequest) SetStoreId(_storeId stri
 // GetStoreId StoreId Getter
 func (r TaobaoKoubeiMallCommonItemShelfPageAPIRequest) GetStoreId() string {
 	return r._storeId
-}
-
-// SetStart is Start Setter
-// 分页查询起始值，默认为0
-func (r *TaobaoKoubeiMallCommonItemShelfPageAPIRequest) SetStart(_start int64) error {
-	r._start = _start
-	r.Set("start", _start)
-	return nil
-}
-
-// GetStart Start Getter
-func (r TaobaoKoubeiMallCommonItemShelfPageAPIRequest) GetStart() int64 {
-	return r._start
-}
-
-// SetPageSize is PageSize Setter
-// 每页查询量，固定8个
-func (r *TaobaoKoubeiMallCommonItemShelfPageAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoKoubeiMallCommonItemShelfPageAPIRequest) GetPageSize() int64 {
-	return r._pageSize
 }
 
 // SetCityCode is CityCode Setter
@@ -198,4 +172,30 @@ func (r *TaobaoKoubeiMallCommonItemShelfPageAPIRequest) SetAppVersion(_appVersio
 // GetAppVersion AppVersion Getter
 func (r TaobaoKoubeiMallCommonItemShelfPageAPIRequest) GetAppVersion() string {
 	return r._appVersion
+}
+
+// SetStart is Start Setter
+// 分页查询起始值，默认为0
+func (r *TaobaoKoubeiMallCommonItemShelfPageAPIRequest) SetStart(_start int64) error {
+	r._start = _start
+	r.Set("start", _start)
+	return nil
+}
+
+// GetStart Start Getter
+func (r TaobaoKoubeiMallCommonItemShelfPageAPIRequest) GetStart() int64 {
+	return r._start
+}
+
+// SetPageSize is PageSize Setter
+// 每页查询量，固定8个
+func (r *TaobaoKoubeiMallCommonItemShelfPageAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoKoubeiMallCommonItemShelfPageAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

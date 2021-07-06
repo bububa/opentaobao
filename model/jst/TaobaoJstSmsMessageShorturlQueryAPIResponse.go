@@ -20,8 +20,6 @@ type TaobaoJstSmsMessageShorturlQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_sms_message_shorturl_query_response"`
 	// 请求成功
 	RCode string `json:"r_code,omitempty" xml:"r_code,omitempty"`
-	// 成功
-	RSuccess bool `json:"r_success,omitempty" xml:"r_success,omitempty"`
 	// TOP请求ID
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 短链名
@@ -32,4 +30,6 @@ type TaobaoJstSmsMessageShorturlQueryAPIResponseModel struct {
 	LifeStart string `json:"life_start,omitempty" xml:"life_start,omitempty"`
 	// 查询短链信息失败
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// 成功
+	RSuccess bool `json:"r_success,omitempty" xml:"r_success,omitempty"`
 }

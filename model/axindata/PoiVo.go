@@ -2,8 +2,6 @@ package axindata
 
 // PoiVo 结构体
 type PoiVo struct {
-	// poiId
-	PoiId int64 `json:"poi_id,omitempty" xml:"poi_id,omitempty"`
 	// poi英文名
 	PoiNameEn string `json:"poi_name_en,omitempty" xml:"poi_name_en,omitempty"`
 	// poi名称
@@ -20,4 +18,6 @@ type PoiVo struct {
 	ProvinceName string `json:"province_name,omitempty" xml:"province_name,omitempty"`
 	// 省份id
 	ProvinceId string `json:"province_id,omitempty" xml:"province_id,omitempty"`
+	// poiId
+	PoiId int64 `json:"poi_id,omitempty" xml:"poi_id,omitempty"`
 }

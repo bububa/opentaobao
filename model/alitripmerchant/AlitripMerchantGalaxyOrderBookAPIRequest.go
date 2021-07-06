@@ -16,12 +16,12 @@ type AlitripMerchantGalaxyOrderBookAPIRequest struct {
 	_tenantKey string
 	// 用户登录token
 	_token string
-	// 预订参数
-	_orderParam *CreateOrderParam
 	// 订单编号
 	_orderCode string
 	// 广告追踪信息
 	_sourceQuery string
+	// 预订参数
+	_orderParam *CreateOrderParam
 }
 
 // NewAlitripMerchantGalaxyOrderBookRequest 初始化AlitripMerchantGalaxyOrderBookAPIRequest对象
@@ -71,19 +71,6 @@ func (r AlitripMerchantGalaxyOrderBookAPIRequest) GetToken() string {
 	return r._token
 }
 
-// SetOrderParam is OrderParam Setter
-// 预订参数
-func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetOrderParam(_orderParam *CreateOrderParam) error {
-	r._orderParam = _orderParam
-	r.Set("order_param", _orderParam)
-	return nil
-}
-
-// GetOrderParam OrderParam Getter
-func (r AlitripMerchantGalaxyOrderBookAPIRequest) GetOrderParam() *CreateOrderParam {
-	return r._orderParam
-}
-
 // SetOrderCode is OrderCode Setter
 // 订单编号
 func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetOrderCode(_orderCode string) error {
@@ -108,4 +95,17 @@ func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetSourceQuery(_sourceQuery s
 // GetSourceQuery SourceQuery Getter
 func (r AlitripMerchantGalaxyOrderBookAPIRequest) GetSourceQuery() string {
 	return r._sourceQuery
+}
+
+// SetOrderParam is OrderParam Setter
+// 预订参数
+func (r *AlitripMerchantGalaxyOrderBookAPIRequest) SetOrderParam(_orderParam *CreateOrderParam) error {
+	r._orderParam = _orderParam
+	r.Set("order_param", _orderParam)
+	return nil
+}
+
+// GetOrderParam OrderParam Getter
+func (r AlitripMerchantGalaxyOrderBookAPIRequest) GetOrderParam() *CreateOrderParam {
+	return r._orderParam
 }

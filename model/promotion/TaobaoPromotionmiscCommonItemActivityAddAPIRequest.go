@@ -22,10 +22,10 @@ type TaobaoPromotionmiscCommonItemActivityAddAPIRequest struct {
 	_startTime string
 	// 活动结束时间
 	_endTime string
-	// 是否指定人群标签
-	_isUserTag bool
 	// 用户标签。当is_user_tag为true时，该值才有意义。
 	_userTag string
+	// 是否指定人群标签
+	_isUserTag bool
 }
 
 // NewTaobaoPromotionmiscCommonItemActivityAddRequest 初始化TaobaoPromotionmiscCommonItemActivityAddAPIRequest对象
@@ -101,19 +101,6 @@ func (r TaobaoPromotionmiscCommonItemActivityAddAPIRequest) GetEndTime() string 
 	return r._endTime
 }
 
-// SetIsUserTag is IsUserTag Setter
-// 是否指定人群标签
-func (r *TaobaoPromotionmiscCommonItemActivityAddAPIRequest) SetIsUserTag(_isUserTag bool) error {
-	r._isUserTag = _isUserTag
-	r.Set("is_user_tag", _isUserTag)
-	return nil
-}
-
-// GetIsUserTag IsUserTag Getter
-func (r TaobaoPromotionmiscCommonItemActivityAddAPIRequest) GetIsUserTag() bool {
-	return r._isUserTag
-}
-
 // SetUserTag is UserTag Setter
 // 用户标签。当is_user_tag为true时，该值才有意义。
 func (r *TaobaoPromotionmiscCommonItemActivityAddAPIRequest) SetUserTag(_userTag string) error {
@@ -125,4 +112,17 @@ func (r *TaobaoPromotionmiscCommonItemActivityAddAPIRequest) SetUserTag(_userTag
 // GetUserTag UserTag Getter
 func (r TaobaoPromotionmiscCommonItemActivityAddAPIRequest) GetUserTag() string {
 	return r._userTag
+}
+
+// SetIsUserTag is IsUserTag Setter
+// 是否指定人群标签
+func (r *TaobaoPromotionmiscCommonItemActivityAddAPIRequest) SetIsUserTag(_isUserTag bool) error {
+	r._isUserTag = _isUserTag
+	r.Set("is_user_tag", _isUserTag)
+	return nil
+}
+
+// GetIsUserTag IsUserTag Getter
+func (r TaobaoPromotionmiscCommonItemActivityAddAPIRequest) GetIsUserTag() bool {
+	return r._isUserTag
 }

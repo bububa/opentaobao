@@ -4,8 +4,6 @@ package train
 type TrainBaseDto struct {
 	// 车次号
 	TrainNumber string `json:"train_number,omitempty" xml:"train_number,omitempty"`
-	// 车次类型
-	TrainType int64 `json:"train_type,omitempty" xml:"train_type,omitempty"`
 	// 运行时长
 	RunTime string `json:"run_time,omitempty" xml:"run_time,omitempty"`
 	// 到达时间
@@ -18,4 +16,6 @@ type TrainBaseDto struct {
 	FromStationName string `json:"from_station_name,omitempty" xml:"from_station_name,omitempty"`
 	// 坐席类型
 	SeatType string `json:"seat_type,omitempty" xml:"seat_type,omitempty"`
+	// 车次类型
+	TrainType int64 `json:"train_type,omitempty" xml:"train_type,omitempty"`
 }

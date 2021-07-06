@@ -12,10 +12,10 @@ import (
 // 聚安全实人认证上传认证信息
 type AlibabaSecurityJaqRpCloudUploadAPIRequest struct {
 	model.Params
-	// 认证token
-	_verifyToken string
 	// []
 	_elements []Elements
+	// 认证token
+	_verifyToken string
 }
 
 // NewAlibabaSecurityJaqRpCloudUploadRequest 初始化AlibabaSecurityJaqRpCloudUploadAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaSecurityJaqRpCloudUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetVerifyToken is VerifyToken Setter
-// 认证token
-func (r *AlibabaSecurityJaqRpCloudUploadAPIRequest) SetVerifyToken(_verifyToken string) error {
-	r._verifyToken = _verifyToken
-	r.Set("verify_token", _verifyToken)
-	return nil
-}
-
-// GetVerifyToken VerifyToken Getter
-func (r AlibabaSecurityJaqRpCloudUploadAPIRequest) GetVerifyToken() string {
-	return r._verifyToken
-}
-
 // SetElements is Elements Setter
 // []
 func (r *AlibabaSecurityJaqRpCloudUploadAPIRequest) SetElements(_elements []Elements) error {
@@ -63,4 +50,17 @@ func (r *AlibabaSecurityJaqRpCloudUploadAPIRequest) SetElements(_elements []Elem
 // GetElements Elements Getter
 func (r AlibabaSecurityJaqRpCloudUploadAPIRequest) GetElements() []Elements {
 	return r._elements
+}
+
+// SetVerifyToken is VerifyToken Setter
+// 认证token
+func (r *AlibabaSecurityJaqRpCloudUploadAPIRequest) SetVerifyToken(_verifyToken string) error {
+	r._verifyToken = _verifyToken
+	r.Set("verify_token", _verifyToken)
+	return nil
+}
+
+// GetVerifyToken VerifyToken Getter
+func (r AlibabaSecurityJaqRpCloudUploadAPIRequest) GetVerifyToken() string {
+	return r._verifyToken
 }

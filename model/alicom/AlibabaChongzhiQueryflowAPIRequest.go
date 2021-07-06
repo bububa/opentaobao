@@ -12,10 +12,10 @@ import (
 // 查询指定商家的可用的流量宝贝
 type AlibabaChongzhiQueryflowAPIRequest struct {
 	model.Params
-	// 号码
-	_mobile int64
 	// 来源
 	_clientSource string
+	// 号码
+	_mobile int64
 }
 
 // NewAlibabaChongzhiQueryflowRequest 初始化AlibabaChongzhiQueryflowAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaChongzhiQueryflowAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetMobile is Mobile Setter
-// 号码
-func (r *AlibabaChongzhiQueryflowAPIRequest) SetMobile(_mobile int64) error {
-	r._mobile = _mobile
-	r.Set("mobile", _mobile)
-	return nil
-}
-
-// GetMobile Mobile Getter
-func (r AlibabaChongzhiQueryflowAPIRequest) GetMobile() int64 {
-	return r._mobile
-}
-
 // SetClientSource is ClientSource Setter
 // 来源
 func (r *AlibabaChongzhiQueryflowAPIRequest) SetClientSource(_clientSource string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaChongzhiQueryflowAPIRequest) SetClientSource(_clientSource strin
 // GetClientSource ClientSource Getter
 func (r AlibabaChongzhiQueryflowAPIRequest) GetClientSource() string {
 	return r._clientSource
+}
+
+// SetMobile is Mobile Setter
+// 号码
+func (r *AlibabaChongzhiQueryflowAPIRequest) SetMobile(_mobile int64) error {
+	r._mobile = _mobile
+	r.Set("mobile", _mobile)
+	return nil
+}
+
+// GetMobile Mobile Getter
+func (r AlibabaChongzhiQueryflowAPIRequest) GetMobile() int64 {
+	return r._mobile
 }

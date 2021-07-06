@@ -2,6 +2,8 @@ package openmall
 
 // TopLogisticsDetailTraceVo 结构体
 type TopLogisticsDetailTraceVo struct {
+	// 流转信息列表
+	TraceList []TransitStepInfoVo `json:"trace_list,omitempty" xml:"trace_list>transit_step_info_vo,omitempty"`
 	// 物流公司名称
 	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
 	// 运单号
@@ -10,6 +12,4 @@ type TopLogisticsDetailTraceVo struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 淘宝交易单ID
 	Tid string `json:"tid,omitempty" xml:"tid,omitempty"`
-	// 流转信息列表
-	TraceList []TransitStepInfoVo `json:"trace_list,omitempty" xml:"trace_list>transit_step_info_vo,omitempty"`
 }

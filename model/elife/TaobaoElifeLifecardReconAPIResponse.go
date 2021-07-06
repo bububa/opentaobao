@@ -24,10 +24,10 @@ type TaobaoElifeLifecardReconAPIResponseModel struct {
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 对账日期
 	OpDate string `json:"op_date,omitempty" xml:"op_date,omitempty"`
-	// 成功标志
-	Successed bool `json:"successed,omitempty" xml:"successed,omitempty"`
 	// 错误码
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 下载下载文件
 	ReconFileUrl string `json:"recon_file_url,omitempty" xml:"recon_file_url,omitempty"`
+	// 成功标志
+	Successed bool `json:"successed,omitempty" xml:"successed,omitempty"`
 }

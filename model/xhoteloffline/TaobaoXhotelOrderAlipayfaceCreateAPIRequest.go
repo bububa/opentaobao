@@ -12,8 +12,8 @@ import (
 // 用于创建一笔信用住支付，主要应用场景是线下信用住
 type TaobaoXhotelOrderAlipayfaceCreateAPIRequest struct {
 	model.Params
-	// 总房费,单位为分
-	_totalFee int64
+	// 入住人信息, 注意必须有且只有一个设置为主入住人, 用于信用住结算扣款. 对于java版本的SDK可以使用setGuests(List &lt Guest &gt guests)赋值; 对于.net等其他版本SDK可以通过将List &lt Guest&gt结构数据转为json串赋值.
+	_guests []Guest
 	// 离店日期(最多允许9天)
 	_checkOut string
 	// 发布到阿里旅行的酒店编码
@@ -24,10 +24,6 @@ type TaobaoXhotelOrderAlipayfaceCreateAPIRequest struct {
 	_dailyPriceInfo string
 	// 商家系统的订单号，必须全局唯一，重复会按照相同订单处理
 	_outOrderId string
-	// 预定的房间数量
-	_roomQuantity int64
-	// 入住人信息, 注意必须有且只有一个设置为主入住人, 用于信用住结算扣款. 对于java版本的SDK可以使用setGuests(List &lt Guest &gt guests)赋值; 对于.net等其他版本SDK可以通过将List &lt Guest&gt结构数据转为json串赋值.
-	_guests []Guest
 	// 扫描用户支付宝得到的串号, 该字段不为空时会采用串号对应的支付宝账号进行信用住结算
 	_alipayNumber string
 	// 订单渠道信息,可以留空
@@ -38,6 +34,10 @@ type TaobaoXhotelOrderAlipayfaceCreateAPIRequest struct {
 	_roomtypeName string
 	// rateplan名称(不清楚可以留空)
 	_rateplanName string
+	// 总房费,单位为分
+	_totalFee int64
+	// 预定的房间数量
+	_roomQuantity int64
 	// 是否为自助入住模式下创建订单，是：true,否：false
 	_selfCheckin bool
 }
@@ -63,17 +63,17 @@ func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetTotalFee is TotalFee Setter
-// 总房费,单位为分
-func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetTotalFee(_totalFee int64) error {
-	r._totalFee = _totalFee
-	r.Set("total_fee", _totalFee)
+// SetGuests is Guests Setter
+// 入住人信息, 注意必须有且只有一个设置为主入住人, 用于信用住结算扣款. 对于java版本的SDK可以使用setGuests(List &lt Guest &gt guests)赋值; 对于.net等其他版本SDK可以通过将List &lt Guest&gt结构数据转为json串赋值.
+func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetGuests(_guests []Guest) error {
+	r._guests = _guests
+	r.Set("guests", _guests)
 	return nil
 }
 
-// GetTotalFee TotalFee Getter
-func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetTotalFee() int64 {
-	return r._totalFee
+// GetGuests Guests Getter
+func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetGuests() []Guest {
+	return r._guests
 }
 
 // SetCheckOut is CheckOut Setter
@@ -141,32 +141,6 @@ func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
 }
 
-// SetRoomQuantity is RoomQuantity Setter
-// 预定的房间数量
-func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetRoomQuantity(_roomQuantity int64) error {
-	r._roomQuantity = _roomQuantity
-	r.Set("room_quantity", _roomQuantity)
-	return nil
-}
-
-// GetRoomQuantity RoomQuantity Getter
-func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetRoomQuantity() int64 {
-	return r._roomQuantity
-}
-
-// SetGuests is Guests Setter
-// 入住人信息, 注意必须有且只有一个设置为主入住人, 用于信用住结算扣款. 对于java版本的SDK可以使用setGuests(List &lt Guest &gt guests)赋值; 对于.net等其他版本SDK可以通过将List &lt Guest&gt结构数据转为json串赋值.
-func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetGuests(_guests []Guest) error {
-	r._guests = _guests
-	r.Set("guests", _guests)
-	return nil
-}
-
-// GetGuests Guests Getter
-func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetGuests() []Guest {
-	return r._guests
-}
-
 // SetAlipayNumber is AlipayNumber Setter
 // 扫描用户支付宝得到的串号, 该字段不为空时会采用串号对应的支付宝账号进行信用住结算
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetAlipayNumber(_alipayNumber string) error {
@@ -230,6 +204,32 @@ func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetRateplanName(_rateplanN
 // GetRateplanName RateplanName Getter
 func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetRateplanName() string {
 	return r._rateplanName
+}
+
+// SetTotalFee is TotalFee Setter
+// 总房费,单位为分
+func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetTotalFee(_totalFee int64) error {
+	r._totalFee = _totalFee
+	r.Set("total_fee", _totalFee)
+	return nil
+}
+
+// GetTotalFee TotalFee Getter
+func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetTotalFee() int64 {
+	return r._totalFee
+}
+
+// SetRoomQuantity is RoomQuantity Setter
+// 预定的房间数量
+func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetRoomQuantity(_roomQuantity int64) error {
+	r._roomQuantity = _roomQuantity
+	r.Set("room_quantity", _roomQuantity)
+	return nil
+}
+
+// GetRoomQuantity RoomQuantity Getter
+func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetRoomQuantity() int64 {
+	return r._roomQuantity
 }
 
 // SetSelfCheckin is SelfCheckin Setter

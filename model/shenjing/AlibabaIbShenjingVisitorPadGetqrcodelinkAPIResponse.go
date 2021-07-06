@@ -22,8 +22,6 @@ type AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 内容
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
-	// 是否成功
-	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
 	// 错误码
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 错误信息
@@ -32,4 +30,6 @@ type AlibabaIbShenjingVisitorPadGetqrcodelinkAPIResponseModel struct {
 	ResultLevel string `json:"result_level,omitempty" xml:"result_level,omitempty"`
 	// request_id
 	ResultRequestId string `json:"result_request_id,omitempty" xml:"result_request_id,omitempty"`
+	// 是否成功
+	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
 }

@@ -2,8 +2,6 @@ package logistic
 
 // WarehouseDeliveryRelationDto 结构体
 type WarehouseDeliveryRelationDto struct {
-	// 数据版本号
-	DataVersion int64 `json:"data_version,omitempty" xml:"data_version,omitempty"`
 	// 网格仓外部编码
 	FromOrgResourceCode string `json:"from_org_resource_code,omitempty" xml:"from_org_resource_code,omitempty"`
 	// from资源来源
@@ -14,8 +12,6 @@ type WarehouseDeliveryRelationDto struct {
 	FromResourceName string `json:"from_resource_name,omitempty" xml:"from_resource_name,omitempty"`
 	// from资源类型
 	FromResourceType string `json:"from_resource_type,omitempty" xml:"from_resource_type,omitempty"`
-	// ID
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 商家
 	MerchantCode string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
 	// 网络编码
@@ -32,4 +28,8 @@ type WarehouseDeliveryRelationDto struct {
 	ToResourceName string `json:"to_resource_name,omitempty" xml:"to_resource_name,omitempty"`
 	// to资源类型
 	ToResourceType string `json:"to_resource_type,omitempty" xml:"to_resource_type,omitempty"`
+	// 数据版本号
+	DataVersion int64 `json:"data_version,omitempty" xml:"data_version,omitempty"`
+	// ID
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 }

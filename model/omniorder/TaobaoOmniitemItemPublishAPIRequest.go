@@ -12,10 +12,10 @@ import (
 // 全渠道门店商品轻发布
 type TaobaoOmniitemItemPublishAPIRequest struct {
 	model.Params
-	// 发布商品信息
-	_lightPublishInfo *ItemLightPublishDto
 	// 在全域商品或是门店商品中校验码是否重复，可选值对应为ALL或者STORE
 	_operateType string
+	// 发布商品信息
+	_lightPublishInfo *ItemLightPublishDto
 }
 
 // NewTaobaoOmniitemItemPublishRequest 初始化TaobaoOmniitemItemPublishAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoOmniitemItemPublishAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetLightPublishInfo is LightPublishInfo Setter
-// 发布商品信息
-func (r *TaobaoOmniitemItemPublishAPIRequest) SetLightPublishInfo(_lightPublishInfo *ItemLightPublishDto) error {
-	r._lightPublishInfo = _lightPublishInfo
-	r.Set("light_publish_info", _lightPublishInfo)
-	return nil
-}
-
-// GetLightPublishInfo LightPublishInfo Getter
-func (r TaobaoOmniitemItemPublishAPIRequest) GetLightPublishInfo() *ItemLightPublishDto {
-	return r._lightPublishInfo
-}
-
 // SetOperateType is OperateType Setter
 // 在全域商品或是门店商品中校验码是否重复，可选值对应为ALL或者STORE
 func (r *TaobaoOmniitemItemPublishAPIRequest) SetOperateType(_operateType string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoOmniitemItemPublishAPIRequest) SetOperateType(_operateType string
 // GetOperateType OperateType Getter
 func (r TaobaoOmniitemItemPublishAPIRequest) GetOperateType() string {
 	return r._operateType
+}
+
+// SetLightPublishInfo is LightPublishInfo Setter
+// 发布商品信息
+func (r *TaobaoOmniitemItemPublishAPIRequest) SetLightPublishInfo(_lightPublishInfo *ItemLightPublishDto) error {
+	r._lightPublishInfo = _lightPublishInfo
+	r.Set("light_publish_info", _lightPublishInfo)
+	return nil
+}
+
+// GetLightPublishInfo LightPublishInfo Getter
+func (r TaobaoOmniitemItemPublishAPIRequest) GetLightPublishInfo() *ItemLightPublishDto {
+	return r._lightPublishInfo
 }

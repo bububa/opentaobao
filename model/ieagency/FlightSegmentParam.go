@@ -18,8 +18,6 @@ type FlightSegmentParam struct {
 	DepTerminal string `json:"dep_terminal,omitempty" xml:"dep_terminal,omitempty"`
 	// 出发时间
 	DepTime string `json:"dep_time,omitempty" xml:"dep_time,omitempty"`
-	// 飞行时长(分钟)
-	ElapsedMinute int64 `json:"elapsed_minute,omitempty" xml:"elapsed_minute,omitempty"`
 	// 机型
 	EquipType string `json:"equip_type,omitempty" xml:"equip_type,omitempty"`
 	// 市场方航空公司
@@ -30,6 +28,8 @@ type FlightSegmentParam struct {
 	OperatingAirLine string `json:"operating_air_line,omitempty" xml:"operating_air_line,omitempty"`
 	// 承运航班号
 	OperatingFlightNumber string `json:"operating_flight_number,omitempty" xml:"operating_flight_number,omitempty"`
+	// 飞行时长(分钟)
+	ElapsedMinute int64 `json:"elapsed_minute,omitempty" xml:"elapsed_minute,omitempty"`
 	// 航段序号(从1开始)
 	SegmentRph int64 `json:"segment_rph,omitempty" xml:"segment_rph,omitempty"`
 	// 主航段

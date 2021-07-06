@@ -14,10 +14,10 @@ type TaobaoAuctionGovGetLatestbidAPIRequest struct {
 	model.Params
 	// 法院名称
 	_courtName string
-	// 死否包含下属法院
-	_containChild bool
 	// 获取最新出价条数
 	_maxCount int64
+	// 死否包含下属法院
+	_containChild bool
 }
 
 // NewTaobaoAuctionGovGetLatestbidRequest 初始化TaobaoAuctionGovGetLatestbidAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoAuctionGovGetLatestbidAPIRequest) GetCourtName() string {
 	return r._courtName
 }
 
-// SetContainChild is ContainChild Setter
-// 死否包含下属法院
-func (r *TaobaoAuctionGovGetLatestbidAPIRequest) SetContainChild(_containChild bool) error {
-	r._containChild = _containChild
-	r.Set("contain_child", _containChild)
-	return nil
-}
-
-// GetContainChild ContainChild Getter
-func (r TaobaoAuctionGovGetLatestbidAPIRequest) GetContainChild() bool {
-	return r._containChild
-}
-
 // SetMaxCount is MaxCount Setter
 // 获取最新出价条数
 func (r *TaobaoAuctionGovGetLatestbidAPIRequest) SetMaxCount(_maxCount int64) error {
@@ -78,4 +65,17 @@ func (r *TaobaoAuctionGovGetLatestbidAPIRequest) SetMaxCount(_maxCount int64) er
 // GetMaxCount MaxCount Getter
 func (r TaobaoAuctionGovGetLatestbidAPIRequest) GetMaxCount() int64 {
 	return r._maxCount
+}
+
+// SetContainChild is ContainChild Setter
+// 死否包含下属法院
+func (r *TaobaoAuctionGovGetLatestbidAPIRequest) SetContainChild(_containChild bool) error {
+	r._containChild = _containChild
+	r.Set("contain_child", _containChild)
+	return nil
+}
+
+// GetContainChild ContainChild Getter
+func (r TaobaoAuctionGovGetLatestbidAPIRequest) GetContainChild() bool {
+	return r._containChild
 }

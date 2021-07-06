@@ -8,8 +8,6 @@ type AgentConfirmRefundRq struct {
 	AgentTicketId string `json:"agent_ticket_id,omitempty" xml:"agent_ticket_id,omitempty"`
 	// 发车时间
 	DepartDate string `json:"depart_date,omitempty" xml:"depart_date,omitempty"`
-	// 平台单号
-	MainBizOrderId int64 `json:"main_biz_order_id,omitempty" xml:"main_biz_order_id,omitempty"`
 	// 退款乘客身份证号
 	PassengerIdNum string `json:"passenger_id_num,omitempty" xml:"passenger_id_num,omitempty"`
 	// 退款乘客手机号
@@ -20,6 +18,8 @@ type AgentConfirmRefundRq struct {
 	RefundTime string `json:"refund_time,omitempty" xml:"refund_time,omitempty"`
 	// 退款资金号唯一ID
 	RefundTransId string `json:"refund_trans_id,omitempty" xml:"refund_trans_id,omitempty"`
+	// 平台单号
+	MainBizOrderId int64 `json:"main_biz_order_id,omitempty" xml:"main_biz_order_id,omitempty"`
 	// 退款类型 0-退票
 	RefundType int64 `json:"refund_type,omitempty" xml:"refund_type,omitempty"`
 }

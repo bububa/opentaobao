@@ -14,24 +14,24 @@ type SyncMemberDto struct {
 	OuterMemberId string `json:"outer_member_id,omitempty" xml:"outer_member_id,omitempty"`
 	// 用户ID
 	UserId string `json:"user_id,omitempty" xml:"user_id,omitempty"`
-	// 版本号
-	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 对外开放的merchantId
 	OpenMerchantId string `json:"open_merchant_id,omitempty" xml:"open_merchant_id,omitempty"`
-	// 等级积分
-	LevelPoint int64 `json:"level_point,omitempty" xml:"level_point,omitempty"`
 	// 用户站点，淘宝 taobao，饿了么 eleme，支付宝 alipay
 	UserSite string `json:"user_site,omitempty" xml:"user_site,omitempty"`
-	// 等级
-	LevelNum int64 `json:"level_num,omitempty" xml:"level_num,omitempty"`
 	// 省份
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
 	// 外部会员卡号
 	OuterCardNo string `json:"outer_card_no,omitempty" xml:"outer_card_no,omitempty"`
 	// 姓名
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
-	// 消费积分
-	ConsumePoint int64 `json:"consume_point,omitempty" xml:"consume_point,omitempty"`
 	// 邮箱
 	Email string `json:"email,omitempty" xml:"email,omitempty"`
+	// 版本号
+	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+	// 等级积分
+	LevelPoint int64 `json:"level_point,omitempty" xml:"level_point,omitempty"`
+	// 等级
+	LevelNum int64 `json:"level_num,omitempty" xml:"level_num,omitempty"`
+	// 消费积分
+	ConsumePoint int64 `json:"consume_point,omitempty" xml:"consume_point,omitempty"`
 }

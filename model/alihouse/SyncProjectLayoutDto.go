@@ -24,10 +24,10 @@ type SyncProjectLayoutDto struct {
 	OuterLayoutId string `json:"outer_layout_id,omitempty" xml:"outer_layout_id,omitempty"`
 	// 户型名称
 	LayoutName string `json:"layout_name,omitempty" xml:"layout_name,omitempty"`
-	// 朝向
-	Orientation int64 `json:"orientation,omitempty" xml:"orientation,omitempty"`
 	// 描述说明
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// 是否删除 1 是 0 否
 	IsDeleted string `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
+	// 朝向
+	Orientation int64 `json:"orientation,omitempty" xml:"orientation,omitempty"`
 }

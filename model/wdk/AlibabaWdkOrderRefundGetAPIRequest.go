@@ -16,12 +16,12 @@ type AlibabaWdkOrderRefundGetAPIRequest struct {
 	_bizOrderIds []int64
 	// 退款订单列表
 	_refundIds []int64
-	// 渠道来源 3：饿了么 4：盒马
-	_orderFrom int64
 	// 渠道店id
 	_shopId string
 	// 经营店id
 	_storeId string
+	// 渠道来源 3：饿了么 4：盒马
+	_orderFrom int64
 }
 
 // NewAlibabaWdkOrderRefundGetRequest 初始化AlibabaWdkOrderRefundGetAPIRequest对象
@@ -71,19 +71,6 @@ func (r AlibabaWdkOrderRefundGetAPIRequest) GetRefundIds() []int64 {
 	return r._refundIds
 }
 
-// SetOrderFrom is OrderFrom Setter
-// 渠道来源 3：饿了么 4：盒马
-func (r *AlibabaWdkOrderRefundGetAPIRequest) SetOrderFrom(_orderFrom int64) error {
-	r._orderFrom = _orderFrom
-	r.Set("order_from", _orderFrom)
-	return nil
-}
-
-// GetOrderFrom OrderFrom Getter
-func (r AlibabaWdkOrderRefundGetAPIRequest) GetOrderFrom() int64 {
-	return r._orderFrom
-}
-
 // SetShopId is ShopId Setter
 // 渠道店id
 func (r *AlibabaWdkOrderRefundGetAPIRequest) SetShopId(_shopId string) error {
@@ -108,4 +95,17 @@ func (r *AlibabaWdkOrderRefundGetAPIRequest) SetStoreId(_storeId string) error {
 // GetStoreId StoreId Getter
 func (r AlibabaWdkOrderRefundGetAPIRequest) GetStoreId() string {
 	return r._storeId
+}
+
+// SetOrderFrom is OrderFrom Setter
+// 渠道来源 3：饿了么 4：盒马
+func (r *AlibabaWdkOrderRefundGetAPIRequest) SetOrderFrom(_orderFrom int64) error {
+	r._orderFrom = _orderFrom
+	r.Set("order_from", _orderFrom)
+	return nil
+}
+
+// GetOrderFrom OrderFrom Getter
+func (r AlibabaWdkOrderRefundGetAPIRequest) GetOrderFrom() int64 {
+	return r._orderFrom
 }

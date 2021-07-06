@@ -2,18 +2,16 @@ package koubeimall
 
 // StoreDto 结构体
 type StoreDto struct {
+	// 门店服务 预定、点餐、排号、外卖
+	ServiceTagList []ServiceTag `json:"service_tag_list,omitempty" xml:"service_tag_list>service_tag,omitempty"`
 	// 门店品牌名称
 	BrandName string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
 	// 门店联系方式，多个电话用英文","分隔符（包含手机、座机电话）
 	ContactInfo string `json:"contact_info,omitempty" xml:"contact_info,omitempty"`
-	// 门店服务 预定、点餐、排号、外卖
-	ServiceTagList []ServiceTag `json:"service_tag_list,omitempty" xml:"service_tag_list>service_tag,omitempty"`
 	// 门店所属商圈ID
 	MallId string `json:"mall_id,omitempty" xml:"mall_id,omitempty"`
 	// 门店评论总数
 	CommentTotalCount string `json:"comment_total_count,omitempty" xml:"comment_total_count,omitempty"`
-	// 地理位置信息模型
-	DistrictInfo *DistrictInfo `json:"district_info,omitempty" xml:"district_info,omitempty"`
 	// 门店评分
 	CommentScore string `json:"comment_score,omitempty" xml:"comment_score,omitempty"`
 	// 营业时间
@@ -34,4 +32,6 @@ type StoreDto struct {
 	StoreName string `json:"store_name,omitempty" xml:"store_name,omitempty"`
 	// 人均消费
 	AveragePrice string `json:"average_price,omitempty" xml:"average_price,omitempty"`
+	// 地理位置信息模型
+	DistrictInfo *DistrictInfo `json:"district_info,omitempty" xml:"district_info,omitempty"`
 }

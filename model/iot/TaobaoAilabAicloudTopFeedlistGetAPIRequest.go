@@ -12,14 +12,14 @@ import (
 // 获取指定应用的对话流信息
 type TaobaoAilabAicloudTopFeedlistGetAPIRequest struct {
 	model.Params
-	// 用户信息
-	_param0 *OpenBaseInfo
 	// 设备id
 	_param1 string
 	// 最后一条对话的key
 	_param2 string
 	// 单页的条目数，注意，是String类型！
 	_param3 string
+	// 用户信息
+	_param0 *OpenBaseInfo
 }
 
 // NewTaobaoAilabAicloudTopFeedlistGetRequest 初始化TaobaoAilabAicloudTopFeedlistGetAPIRequest对象
@@ -41,19 +41,6 @@ func (r TaobaoAilabAicloudTopFeedlistGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetParam0 is Param0 Setter
-// 用户信息
-func (r *TaobaoAilabAicloudTopFeedlistGetAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
-	r._param0 = _param0
-	r.Set("param0", _param0)
-	return nil
-}
-
-// GetParam0 Param0 Getter
-func (r TaobaoAilabAicloudTopFeedlistGetAPIRequest) GetParam0() *OpenBaseInfo {
-	return r._param0
 }
 
 // SetParam1 is Param1 Setter
@@ -93,4 +80,17 @@ func (r *TaobaoAilabAicloudTopFeedlistGetAPIRequest) SetParam3(_param3 string) e
 // GetParam3 Param3 Getter
 func (r TaobaoAilabAicloudTopFeedlistGetAPIRequest) GetParam3() string {
 	return r._param3
+}
+
+// SetParam0 is Param0 Setter
+// 用户信息
+func (r *TaobaoAilabAicloudTopFeedlistGetAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// GetParam0 Param0 Getter
+func (r TaobaoAilabAicloudTopFeedlistGetAPIRequest) GetParam0() *OpenBaseInfo {
+	return r._param0
 }

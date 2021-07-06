@@ -20,12 +20,12 @@ type TaobaoFiveeInnerproductPublishAPIResponseModel struct {
 	XMLName xml.Name `xml:"fivee_innerproduct_publish_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// code
-	CodeT int64 `json:"code_t,omitempty" xml:"code_t,omitempty"`
 	// 返回素材id
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// code
+	CodeT int64 `json:"code_t,omitempty" xml:"code_t,omitempty"`
 	// 是否成功
 	SuccessT bool `json:"success_t,omitempty" xml:"success_t,omitempty"`
 }

@@ -12,6 +12,8 @@ import (
 // 交易开放创建订单
 type TaobaoOpentradeCreateOrderAPIRequest struct {
 	model.Params
+	// 商品信息，一次不能超过10个
+	_itemInfos []ItemInfo
 	// 外部订单ID
 	_outId string
 	// 买家openID
@@ -26,8 +28,6 @@ type TaobaoOpentradeCreateOrderAPIRequest struct {
 	_sellerMemo string
 	// 卖家备忘
 	_buyerMemo string
-	// 商品信息，一次不能超过10个
-	_itemInfos []ItemInfo
 }
 
 // NewTaobaoOpentradeCreateOrderRequest 初始化TaobaoOpentradeCreateOrderAPIRequest对象
@@ -49,6 +49,19 @@ func (r TaobaoOpentradeCreateOrderAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetItemInfos is ItemInfos Setter
+// 商品信息，一次不能超过10个
+func (r *TaobaoOpentradeCreateOrderAPIRequest) SetItemInfos(_itemInfos []ItemInfo) error {
+	r._itemInfos = _itemInfos
+	r.Set("item_infos", _itemInfos)
+	return nil
+}
+
+// GetItemInfos ItemInfos Getter
+func (r TaobaoOpentradeCreateOrderAPIRequest) GetItemInfos() []ItemInfo {
+	return r._itemInfos
 }
 
 // SetOutId is OutId Setter
@@ -140,17 +153,4 @@ func (r *TaobaoOpentradeCreateOrderAPIRequest) SetBuyerMemo(_buyerMemo string) e
 // GetBuyerMemo BuyerMemo Getter
 func (r TaobaoOpentradeCreateOrderAPIRequest) GetBuyerMemo() string {
 	return r._buyerMemo
-}
-
-// SetItemInfos is ItemInfos Setter
-// 商品信息，一次不能超过10个
-func (r *TaobaoOpentradeCreateOrderAPIRequest) SetItemInfos(_itemInfos []ItemInfo) error {
-	r._itemInfos = _itemInfos
-	r.Set("item_infos", _itemInfos)
-	return nil
-}
-
-// GetItemInfos ItemInfos Getter
-func (r TaobaoOpentradeCreateOrderAPIRequest) GetItemInfos() []ItemInfo {
-	return r._itemInfos
 }

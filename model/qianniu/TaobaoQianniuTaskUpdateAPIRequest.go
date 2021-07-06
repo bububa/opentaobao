@@ -12,8 +12,6 @@ import (
 // 由任务执行者调用，sub_status，tag和memo至少提供一个
 type TaobaoQianniuTaskUpdateAPIRequest struct {
 	model.Params
-	// 任务ID
-	_taskId int64
 	// 子任务状态，由业务方自定义
 	_subStatus string
 	// 任务标签
@@ -22,10 +20,12 @@ type TaobaoQianniuTaskUpdateAPIRequest struct {
 	_memo string
 	// 状态值，多个以逗号分隔
 	_status string
-	// 提醒时间，时间的毫秒数
-	_remindTime int64
 	// 应用自定义参数
 	_bizParam string
+	// 任务ID
+	_taskId int64
+	// 提醒时间，时间的毫秒数
+	_remindTime int64
 	// 0为不提醒，1为全部提醒，2为PC提醒，3为移动提醒，4为已提醒，5为已忽略。
 	_remindFlag int64
 	// 表示memo字段的更新策略。如需采用追加方式的，请将此字段设置为1。
@@ -55,19 +55,6 @@ func (r TaobaoQianniuTaskUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetTaskId is TaskId Setter
-// 任务ID
-func (r *TaobaoQianniuTaskUpdateAPIRequest) SetTaskId(_taskId int64) error {
-	r._taskId = _taskId
-	r.Set("task_id", _taskId)
-	return nil
-}
-
-// GetTaskId TaskId Getter
-func (r TaobaoQianniuTaskUpdateAPIRequest) GetTaskId() int64 {
-	return r._taskId
 }
 
 // SetSubStatus is SubStatus Setter
@@ -122,19 +109,6 @@ func (r TaobaoQianniuTaskUpdateAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// SetRemindTime is RemindTime Setter
-// 提醒时间，时间的毫秒数
-func (r *TaobaoQianniuTaskUpdateAPIRequest) SetRemindTime(_remindTime int64) error {
-	r._remindTime = _remindTime
-	r.Set("remind_time", _remindTime)
-	return nil
-}
-
-// GetRemindTime RemindTime Getter
-func (r TaobaoQianniuTaskUpdateAPIRequest) GetRemindTime() int64 {
-	return r._remindTime
-}
-
 // SetBizParam is BizParam Setter
 // 应用自定义参数
 func (r *TaobaoQianniuTaskUpdateAPIRequest) SetBizParam(_bizParam string) error {
@@ -146,6 +120,32 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetBizParam(_bizParam string) error 
 // GetBizParam BizParam Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetBizParam() string {
 	return r._bizParam
+}
+
+// SetTaskId is TaskId Setter
+// 任务ID
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetTaskId(_taskId int64) error {
+	r._taskId = _taskId
+	r.Set("task_id", _taskId)
+	return nil
+}
+
+// GetTaskId TaskId Getter
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetTaskId() int64 {
+	return r._taskId
+}
+
+// SetRemindTime is RemindTime Setter
+// 提醒时间，时间的毫秒数
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetRemindTime(_remindTime int64) error {
+	r._remindTime = _remindTime
+	r.Set("remind_time", _remindTime)
+	return nil
+}
+
+// GetRemindTime RemindTime Getter
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetRemindTime() int64 {
+	return r._remindTime
 }
 
 // SetRemindFlag is RemindFlag Setter

@@ -2,6 +2,8 @@ package mos
 
 // OnsiteTradePayRequest 结构体
 type OnsiteTradePayRequest struct {
+	// 商品明细列表。订单包含的商品列表信息
+	GoodsDetailList []GoodsDetail `json:"goods_detail_list,omitempty" xml:"goods_detail_list>goods_detail,omitempty"`
 	// 商户支付流水号，64个字符以内、可包含字母、数字、下划线；需保证在商户端不重复
 	OutTradeNo string `json:"out_trade_no,omitempty" xml:"out_trade_no,omitempty"`
 	// 支付授权码。 消费者喵街中的“付款码”信息
@@ -18,8 +20,6 @@ type OnsiteTradePayRequest struct {
 	Subject string `json:"subject,omitempty" xml:"subject,omitempty"`
 	// 订单描述。对交易或商品的描述
 	Body string `json:"body,omitempty" xml:"body,omitempty"`
-	// 商品明细列表。订单包含的商品列表信息
-	GoodsDetailList []GoodsDetail `json:"goods_detail_list,omitempty" xml:"goods_detail_list>goods_detail,omitempty"`
 	// 商户门店编号的类型。取值：miaojie和out。如果取值为miaojie，则store_id的取值为商户门店在喵街中的编号；如果取值为out，则store_id的取值为商户自己的编号
 	StoreIdType string `json:"store_id_type,omitempty" xml:"store_id_type,omitempty"`
 	// 商户门店编号。可以是喵街内的商户门店ID，也可以是商户系统内自己的门店ID，其取值的含义由store_id_type定义

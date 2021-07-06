@@ -30,12 +30,12 @@ type AlibabaAlihealthDrugKytListupoutAPIRequest struct {
 	_status string
 	// 单据号
 	_billCode string
+	// 发货单位
+	_fromUserId string
 	// 页大小
 	_pageSize int64
 	// 页码
 	_page int64
-	// 发货单位
-	_fromUserId string
 }
 
 // NewAlibabaAlihealthDrugKytListupoutRequest 初始化AlibabaAlihealthDrugKytListupoutAPIRequest对象
@@ -176,6 +176,19 @@ func (r AlibabaAlihealthDrugKytListupoutAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
+// SetFromUserId is FromUserId Setter
+// 发货单位
+func (r *AlibabaAlihealthDrugKytListupoutAPIRequest) SetFromUserId(_fromUserId string) error {
+	r._fromUserId = _fromUserId
+	r.Set("from_user_id", _fromUserId)
+	return nil
+}
+
+// GetFromUserId FromUserId Getter
+func (r AlibabaAlihealthDrugKytListupoutAPIRequest) GetFromUserId() string {
+	return r._fromUserId
+}
+
 // SetPageSize is PageSize Setter
 // 页大小
 func (r *AlibabaAlihealthDrugKytListupoutAPIRequest) SetPageSize(_pageSize int64) error {
@@ -200,17 +213,4 @@ func (r *AlibabaAlihealthDrugKytListupoutAPIRequest) SetPage(_page int64) error 
 // GetPage Page Getter
 func (r AlibabaAlihealthDrugKytListupoutAPIRequest) GetPage() int64 {
 	return r._page
-}
-
-// SetFromUserId is FromUserId Setter
-// 发货单位
-func (r *AlibabaAlihealthDrugKytListupoutAPIRequest) SetFromUserId(_fromUserId string) error {
-	r._fromUserId = _fromUserId
-	r.Set("from_user_id", _fromUserId)
-	return nil
-}
-
-// GetFromUserId FromUserId Getter
-func (r AlibabaAlihealthDrugKytListupoutAPIRequest) GetFromUserId() string {
-	return r._fromUserId
 }

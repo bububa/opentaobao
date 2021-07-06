@@ -12,10 +12,10 @@ import (
 // 根据闲鱼渠道类目查询对应的品牌和型号清单，供服务商进行选择
 type AlibabaIdleIsvPvListAPIRequest struct {
 	model.Params
-	// 闲鱼渠道类目的id
-	_channelCatId string
 	// 系统自动生成
 	_brandModelInfo []IdleNewPubValueDo
+	// 闲鱼渠道类目的id
+	_channelCatId string
 }
 
 // NewAlibabaIdleIsvPvListRequest 初始化AlibabaIdleIsvPvListAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaIdleIsvPvListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetChannelCatId is ChannelCatId Setter
-// 闲鱼渠道类目的id
-func (r *AlibabaIdleIsvPvListAPIRequest) SetChannelCatId(_channelCatId string) error {
-	r._channelCatId = _channelCatId
-	r.Set("channel_cat_id", _channelCatId)
-	return nil
-}
-
-// GetChannelCatId ChannelCatId Getter
-func (r AlibabaIdleIsvPvListAPIRequest) GetChannelCatId() string {
-	return r._channelCatId
-}
-
 // SetBrandModelInfo is BrandModelInfo Setter
 // 系统自动生成
 func (r *AlibabaIdleIsvPvListAPIRequest) SetBrandModelInfo(_brandModelInfo []IdleNewPubValueDo) error {
@@ -63,4 +50,17 @@ func (r *AlibabaIdleIsvPvListAPIRequest) SetBrandModelInfo(_brandModelInfo []Idl
 // GetBrandModelInfo BrandModelInfo Getter
 func (r AlibabaIdleIsvPvListAPIRequest) GetBrandModelInfo() []IdleNewPubValueDo {
 	return r._brandModelInfo
+}
+
+// SetChannelCatId is ChannelCatId Setter
+// 闲鱼渠道类目的id
+func (r *AlibabaIdleIsvPvListAPIRequest) SetChannelCatId(_channelCatId string) error {
+	r._channelCatId = _channelCatId
+	r.Set("channel_cat_id", _channelCatId)
+	return nil
+}
+
+// GetChannelCatId ChannelCatId Getter
+func (r AlibabaIdleIsvPvListAPIRequest) GetChannelCatId() string {
+	return r._channelCatId
 }

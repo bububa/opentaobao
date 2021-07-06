@@ -2,6 +2,16 @@ package simba
 
 // InsightWordSubDataDto 结构体
 type InsightWordSubDataDto struct {
+	// 点击率
+	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
+	// 平均点击花费
+	Cpc string `json:"cpc,omitempty" xml:"cpc,omitempty"`
+	// 投入产出比
+	Roi string `json:"roi,omitempty" xml:"roi,omitempty"`
+	// 点击转化率
+	Coverage string `json:"coverage,omitempty" xml:"coverage,omitempty"`
+	// 关键词
+	Bidword string `json:"bidword,omitempty" xml:"bidword,omitempty"`
 	// 展现量
 	Impression int64 `json:"impression,omitempty" xml:"impression,omitempty"`
 	// 点击量
@@ -28,16 +38,6 @@ type InsightWordSubDataDto struct {
 	Favtotal int64 `json:"favtotal,omitempty" xml:"favtotal,omitempty"`
 	// 竞争度
 	Competition int64 `json:"competition,omitempty" xml:"competition,omitempty"`
-	// 点击率
-	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
-	// 平均点击花费
-	Cpc string `json:"cpc,omitempty" xml:"cpc,omitempty"`
-	// 投入产出比
-	Roi string `json:"roi,omitempty" xml:"roi,omitempty"`
-	// 点击转化率
-	Coverage string `json:"coverage,omitempty" xml:"coverage,omitempty"`
-	// 关键词
-	Bidword string `json:"bidword,omitempty" xml:"bidword,omitempty"`
 	// 流量来源：1:PC站内，2：PC站外,4:无线站内 5：无线站外
 	Network int64 `json:"network,omitempty" xml:"network,omitempty"`
 	// 投放机制:0:关键词推广 2：定向推广 3：通用定向

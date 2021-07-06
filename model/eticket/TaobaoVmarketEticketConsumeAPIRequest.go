@@ -12,16 +12,10 @@ import (
 // 外部合作商家电子票券消费回调接口
 type TaobaoVmarketEticketConsumeAPIRequest struct {
 	model.Params
-	// 进行验码的电子凭证订单的订单ID
-	_orderId int64
 	// 核销的码，只支持单个码，多个码核销需要多次调用
 	_verifyCode string
-	// 核销份数
-	_consumeNum int64
 	// 安全验证token,需要和发码通知中的token一致
 	_token string
-	// 码商ID,是码商的话必须传递,如果是信任卖家不需要传
-	_codemerchantId int64
 	// 机具ID(此参数信任卖家可不传递，码商必须传递)
 	_posid string
 	// 手机后四位(没有特殊说明请不要传该参数)
@@ -32,6 +26,12 @@ type TaobaoVmarketEticketConsumeAPIRequest struct {
 	_serialNum string
 	// 不需要上传二维码图片或者核销后不需重新生成码码商请不要传，需要传入二维码的码商请先调用taobao.vmarket.eticket.qrcode.upload接口，将返回的img_filename文件名称作为参数（如果二维码不变的话，也可将将发码时传入二维码文件名作为参数传入），文件名与参数new_code必须相互对应。
 	_qrImages string
+	// 进行验码的电子凭证订单的订单ID
+	_orderId int64
+	// 核销份数
+	_consumeNum int64
+	// 码商ID,是码商的话必须传递,如果是信任卖家不需要传
+	_codemerchantId int64
 }
 
 // NewTaobaoVmarketEticketConsumeRequest 初始化TaobaoVmarketEticketConsumeAPIRequest对象
@@ -55,19 +55,6 @@ func (r TaobaoVmarketEticketConsumeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetOrderId is OrderId Setter
-// 进行验码的电子凭证订单的订单ID
-func (r *TaobaoVmarketEticketConsumeAPIRequest) SetOrderId(_orderId int64) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
-	return nil
-}
-
-// GetOrderId OrderId Getter
-func (r TaobaoVmarketEticketConsumeAPIRequest) GetOrderId() int64 {
-	return r._orderId
-}
-
 // SetVerifyCode is VerifyCode Setter
 // 核销的码，只支持单个码，多个码核销需要多次调用
 func (r *TaobaoVmarketEticketConsumeAPIRequest) SetVerifyCode(_verifyCode string) error {
@@ -81,19 +68,6 @@ func (r TaobaoVmarketEticketConsumeAPIRequest) GetVerifyCode() string {
 	return r._verifyCode
 }
 
-// SetConsumeNum is ConsumeNum Setter
-// 核销份数
-func (r *TaobaoVmarketEticketConsumeAPIRequest) SetConsumeNum(_consumeNum int64) error {
-	r._consumeNum = _consumeNum
-	r.Set("consume_num", _consumeNum)
-	return nil
-}
-
-// GetConsumeNum ConsumeNum Getter
-func (r TaobaoVmarketEticketConsumeAPIRequest) GetConsumeNum() int64 {
-	return r._consumeNum
-}
-
 // SetToken is Token Setter
 // 安全验证token,需要和发码通知中的token一致
 func (r *TaobaoVmarketEticketConsumeAPIRequest) SetToken(_token string) error {
@@ -105,19 +79,6 @@ func (r *TaobaoVmarketEticketConsumeAPIRequest) SetToken(_token string) error {
 // GetToken Token Getter
 func (r TaobaoVmarketEticketConsumeAPIRequest) GetToken() string {
 	return r._token
-}
-
-// SetCodemerchantId is CodemerchantId Setter
-// 码商ID,是码商的话必须传递,如果是信任卖家不需要传
-func (r *TaobaoVmarketEticketConsumeAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
-	r._codemerchantId = _codemerchantId
-	r.Set("codemerchant_id", _codemerchantId)
-	return nil
-}
-
-// GetCodemerchantId CodemerchantId Getter
-func (r TaobaoVmarketEticketConsumeAPIRequest) GetCodemerchantId() int64 {
-	return r._codemerchantId
 }
 
 // SetPosid is Posid Setter
@@ -183,4 +144,43 @@ func (r *TaobaoVmarketEticketConsumeAPIRequest) SetQrImages(_qrImages string) er
 // GetQrImages QrImages Getter
 func (r TaobaoVmarketEticketConsumeAPIRequest) GetQrImages() string {
 	return r._qrImages
+}
+
+// SetOrderId is OrderId Setter
+// 进行验码的电子凭证订单的订单ID
+func (r *TaobaoVmarketEticketConsumeAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// GetOrderId OrderId Getter
+func (r TaobaoVmarketEticketConsumeAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}
+
+// SetConsumeNum is ConsumeNum Setter
+// 核销份数
+func (r *TaobaoVmarketEticketConsumeAPIRequest) SetConsumeNum(_consumeNum int64) error {
+	r._consumeNum = _consumeNum
+	r.Set("consume_num", _consumeNum)
+	return nil
+}
+
+// GetConsumeNum ConsumeNum Getter
+func (r TaobaoVmarketEticketConsumeAPIRequest) GetConsumeNum() int64 {
+	return r._consumeNum
+}
+
+// SetCodemerchantId is CodemerchantId Setter
+// 码商ID,是码商的话必须传递,如果是信任卖家不需要传
+func (r *TaobaoVmarketEticketConsumeAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
+	r._codemerchantId = _codemerchantId
+	r.Set("codemerchant_id", _codemerchantId)
+	return nil
+}
+
+// GetCodemerchantId CodemerchantId Getter
+func (r TaobaoVmarketEticketConsumeAPIRequest) GetCodemerchantId() int64 {
+	return r._codemerchantId
 }

@@ -12,10 +12,10 @@ import (
 // 删除根据topic名称路由消息到不同的分组关系
 type TaobaoTmcTopicGroupDeleteAPIRequest struct {
 	model.Params
-	// 消息分组名
-	_groupName string
 	// 消息topic名称，多个以逗号(,)分割
 	_topics []string
+	// 消息分组名
+	_groupName string
 	// 消息分组Id，一般不用填写，如果分组已经被删除，则根据问题排查工具返回的ID删除路由关系
 	_groupId int64
 }
@@ -41,19 +41,6 @@ func (r TaobaoTmcTopicGroupDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetGroupName is GroupName Setter
-// 消息分组名
-func (r *TaobaoTmcTopicGroupDeleteAPIRequest) SetGroupName(_groupName string) error {
-	r._groupName = _groupName
-	r.Set("group_name", _groupName)
-	return nil
-}
-
-// GetGroupName GroupName Getter
-func (r TaobaoTmcTopicGroupDeleteAPIRequest) GetGroupName() string {
-	return r._groupName
-}
-
 // SetTopics is Topics Setter
 // 消息topic名称，多个以逗号(,)分割
 func (r *TaobaoTmcTopicGroupDeleteAPIRequest) SetTopics(_topics []string) error {
@@ -65,6 +52,19 @@ func (r *TaobaoTmcTopicGroupDeleteAPIRequest) SetTopics(_topics []string) error 
 // GetTopics Topics Getter
 func (r TaobaoTmcTopicGroupDeleteAPIRequest) GetTopics() []string {
 	return r._topics
+}
+
+// SetGroupName is GroupName Setter
+// 消息分组名
+func (r *TaobaoTmcTopicGroupDeleteAPIRequest) SetGroupName(_groupName string) error {
+	r._groupName = _groupName
+	r.Set("group_name", _groupName)
+	return nil
+}
+
+// GetGroupName GroupName Getter
+func (r TaobaoTmcTopicGroupDeleteAPIRequest) GetGroupName() string {
+	return r._groupName
 }
 
 // SetGroupId is GroupId Setter

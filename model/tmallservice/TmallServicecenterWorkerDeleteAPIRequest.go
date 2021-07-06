@@ -29,10 +29,10 @@ type TmallServicecenterWorkerDeleteAPIRequest struct {
 	model.Params
 	// 工人姓名
 	_name string
-	// 工人手机号
-	_phone int64
 	// 业务类型,电器预约安装业务填appliance_install
 	_bizType string
+	// 工人手机号
+	_phone int64
 }
 
 // NewTmallServicecenterWorkerDeleteRequest 初始化TmallServicecenterWorkerDeleteAPIRequest对象
@@ -69,19 +69,6 @@ func (r TmallServicecenterWorkerDeleteAPIRequest) GetName() string {
 	return r._name
 }
 
-// SetPhone is Phone Setter
-// 工人手机号
-func (r *TmallServicecenterWorkerDeleteAPIRequest) SetPhone(_phone int64) error {
-	r._phone = _phone
-	r.Set("phone", _phone)
-	return nil
-}
-
-// GetPhone Phone Getter
-func (r TmallServicecenterWorkerDeleteAPIRequest) GetPhone() int64 {
-	return r._phone
-}
-
 // SetBizType is BizType Setter
 // 业务类型,电器预约安装业务填appliance_install
 func (r *TmallServicecenterWorkerDeleteAPIRequest) SetBizType(_bizType string) error {
@@ -93,4 +80,17 @@ func (r *TmallServicecenterWorkerDeleteAPIRequest) SetBizType(_bizType string) e
 // GetBizType BizType Getter
 func (r TmallServicecenterWorkerDeleteAPIRequest) GetBizType() string {
 	return r._bizType
+}
+
+// SetPhone is Phone Setter
+// 工人手机号
+func (r *TmallServicecenterWorkerDeleteAPIRequest) SetPhone(_phone int64) error {
+	r._phone = _phone
+	r.Set("phone", _phone)
+	return nil
+}
+
+// GetPhone Phone Getter
+func (r TmallServicecenterWorkerDeleteAPIRequest) GetPhone() int64 {
+	return r._phone
 }

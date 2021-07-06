@@ -21,11 +21,11 @@ type AlibabaDtTmllcarPricevalidateAPIRequest struct {
 	// tt
 	_password string
 	// tt
-	_price *BigDecimal
-	// tt
 	_cityName string
 	// tt
 	_modelName string
+	// tt
+	_price *BigDecimal
 }
 
 // NewAlibabaDtTmllcarPricevalidateRequest 初始化AlibabaDtTmllcarPricevalidateAPIRequest对象
@@ -88,19 +88,6 @@ func (r AlibabaDtTmllcarPricevalidateAPIRequest) GetPassword() string {
 	return r._password
 }
 
-// SetPrice is Price Setter
-// tt
-func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetPrice(_price *BigDecimal) error {
-	r._price = _price
-	r.Set("price", _price)
-	return nil
-}
-
-// GetPrice Price Getter
-func (r AlibabaDtTmllcarPricevalidateAPIRequest) GetPrice() *BigDecimal {
-	return r._price
-}
-
 // SetCityName is CityName Setter
 // tt
 func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetCityName(_cityName string) error {
@@ -125,4 +112,17 @@ func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetModelName(_modelName string
 // GetModelName ModelName Getter
 func (r AlibabaDtTmllcarPricevalidateAPIRequest) GetModelName() string {
 	return r._modelName
+}
+
+// SetPrice is Price Setter
+// tt
+func (r *AlibabaDtTmllcarPricevalidateAPIRequest) SetPrice(_price *BigDecimal) error {
+	r._price = _price
+	r.Set("price", _price)
+	return nil
+}
+
+// GetPrice Price Getter
+func (r AlibabaDtTmllcarPricevalidateAPIRequest) GetPrice() *BigDecimal {
+	return r._price
 }

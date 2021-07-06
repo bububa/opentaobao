@@ -12,10 +12,10 @@ import (
 // 卖家代填买家填写办理人信息
 type TaobaoAlitripTravelNormalvisaStoreuserAPIRequest struct {
 	model.Params
-	// 订单id
-	_bizOrderId int64
 	// 列表：签证人信息列表
 	_normalVisaUserUnitList []NormalVisaUserUnit
+	// 订单id
+	_bizOrderId int64
 }
 
 // NewTaobaoAlitripTravelNormalvisaStoreuserRequest 初始化TaobaoAlitripTravelNormalvisaStoreuserAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// SetBizOrderId is BizOrderId Setter
-// 订单id
-func (r *TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) SetBizOrderId(_bizOrderId int64) error {
-	r._bizOrderId = _bizOrderId
-	r.Set("biz_order_id", _bizOrderId)
-	return nil
-}
-
-// GetBizOrderId BizOrderId Getter
-func (r TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) GetBizOrderId() int64 {
-	return r._bizOrderId
-}
-
 // SetNormalVisaUserUnitList is NormalVisaUserUnitList Setter
 // 列表：签证人信息列表
 func (r *TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) SetNormalVisaUserUnitList(_normalVisaUserUnitList []NormalVisaUserUnit) error {
@@ -63,4 +50,17 @@ func (r *TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) SetNormalVisaUserUnit
 // GetNormalVisaUserUnitList NormalVisaUserUnitList Getter
 func (r TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) GetNormalVisaUserUnitList() []NormalVisaUserUnit {
 	return r._normalVisaUserUnitList
+}
+
+// SetBizOrderId is BizOrderId Setter
+// 订单id
+func (r *TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) SetBizOrderId(_bizOrderId int64) error {
+	r._bizOrderId = _bizOrderId
+	r.Set("biz_order_id", _bizOrderId)
+	return nil
+}
+
+// GetBizOrderId BizOrderId Getter
+func (r TaobaoAlitripTravelNormalvisaStoreuserAPIRequest) GetBizOrderId() int64 {
+	return r._bizOrderId
 }

@@ -24,10 +24,10 @@ type AlibabaEinvoiceIncomeTokenReturnAPIRequest struct {
 	_payeeName string
 	// 销售方纳税人识别号，success=true时必填
 	_payeeRegisterNo string
-	// token是否获取成功，true=成功， false=失败
-	_success bool
 	// token，success=true时必填
 	_token string
+	// token是否获取成功，true=成功， false=失败
+	_success bool
 }
 
 // NewAlibabaEinvoiceIncomeTokenReturnRequest 初始化AlibabaEinvoiceIncomeTokenReturnAPIRequest对象
@@ -129,19 +129,6 @@ func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetPayeeRegisterNo() string 
 	return r._payeeRegisterNo
 }
 
-// SetSuccess is Success Setter
-// token是否获取成功，true=成功， false=失败
-func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetSuccess(_success bool) error {
-	r._success = _success
-	r.Set("success", _success)
-	return nil
-}
-
-// GetSuccess Success Getter
-func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetSuccess() bool {
-	return r._success
-}
-
 // SetToken is Token Setter
 // token，success=true时必填
 func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetToken(_token string) error {
@@ -153,4 +140,17 @@ func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetToken(_token string) err
 // GetToken Token Getter
 func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetSuccess is Success Setter
+// token是否获取成功，true=成功， false=失败
+func (r *AlibabaEinvoiceIncomeTokenReturnAPIRequest) SetSuccess(_success bool) error {
+	r._success = _success
+	r.Set("success", _success)
+	return nil
+}
+
+// GetSuccess Success Getter
+func (r AlibabaEinvoiceIncomeTokenReturnAPIRequest) GetSuccess() bool {
+	return r._success
 }

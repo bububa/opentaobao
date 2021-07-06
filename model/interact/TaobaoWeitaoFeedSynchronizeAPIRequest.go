@@ -12,20 +12,20 @@ import (
 // 推广淘小铺isv 活动到微淘feed
 type TaobaoWeitaoFeedSynchronizeAPIRequest struct {
 	model.Params
-	// 活动id
-	_bizId int64
 	// feed封面图片url
 	_coverPath string
 	// feed点击跳转的活动地址
 	_detailUrl string
-	// feed展示结束时间
-	_endTime int64
-	// feed展示开始时间
-	_startTime int64
 	// feed描述
 	_summary string
 	// feed标题
 	_title string
+	// 活动id
+	_bizId int64
+	// feed展示结束时间
+	_endTime int64
+	// feed展示开始时间
+	_startTime int64
 }
 
 // NewTaobaoWeitaoFeedSynchronizeRequest 初始化TaobaoWeitaoFeedSynchronizeAPIRequest对象
@@ -47,19 +47,6 @@ func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetBizId is BizId Setter
-// 活动id
-func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetBizId(_bizId int64) error {
-	r._bizId = _bizId
-	r.Set("biz_id", _bizId)
-	return nil
-}
-
-// GetBizId BizId Getter
-func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetBizId() int64 {
-	return r._bizId
 }
 
 // SetCoverPath is CoverPath Setter
@@ -88,32 +75,6 @@ func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetDetailUrl() string {
 	return r._detailUrl
 }
 
-// SetEndTime is EndTime Setter
-// feed展示结束时间
-func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetEndTime(_endTime int64) error {
-	r._endTime = _endTime
-	r.Set("end_time", _endTime)
-	return nil
-}
-
-// GetEndTime EndTime Getter
-func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetEndTime() int64 {
-	return r._endTime
-}
-
-// SetStartTime is StartTime Setter
-// feed展示开始时间
-func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetStartTime(_startTime int64) error {
-	r._startTime = _startTime
-	r.Set("start_time", _startTime)
-	return nil
-}
-
-// GetStartTime StartTime Getter
-func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetStartTime() int64 {
-	return r._startTime
-}
-
 // SetSummary is Summary Setter
 // feed描述
 func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetSummary(_summary string) error {
@@ -138,4 +99,43 @@ func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetTitle(_title string) error {
 // GetTitle Title Getter
 func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetTitle() string {
 	return r._title
+}
+
+// SetBizId is BizId Setter
+// 活动id
+func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetBizId(_bizId int64) error {
+	r._bizId = _bizId
+	r.Set("biz_id", _bizId)
+	return nil
+}
+
+// GetBizId BizId Getter
+func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetBizId() int64 {
+	return r._bizId
+}
+
+// SetEndTime is EndTime Setter
+// feed展示结束时间
+func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetEndTime(_endTime int64) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
+	return nil
+}
+
+// GetEndTime EndTime Getter
+func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetEndTime() int64 {
+	return r._endTime
+}
+
+// SetStartTime is StartTime Setter
+// feed展示开始时间
+func (r *TaobaoWeitaoFeedSynchronizeAPIRequest) SetStartTime(_startTime int64) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
+	return nil
+}
+
+// GetStartTime StartTime Getter
+func (r TaobaoWeitaoFeedSynchronizeAPIRequest) GetStartTime() int64 {
+	return r._startTime
 }

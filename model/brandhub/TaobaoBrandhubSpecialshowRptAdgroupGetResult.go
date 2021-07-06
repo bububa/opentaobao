@@ -4,14 +4,10 @@ package brandhub
 type TaobaoBrandhubSpecialshowRptAdgroupGetResult struct {
 	// 日期
 	Thedate string `json:"thedate,omitempty" xml:"thedate,omitempty"`
-	// 计划id
-	SolutionId int64 `json:"solution_id,omitempty" xml:"solution_id,omitempty"`
 	// 计划名称
 	SolutionName string `json:"solution_name,omitempty" xml:"solution_name,omitempty"`
 	// 定向条件
 	TargetName string `json:"target_name,omitempty" xml:"target_name,omitempty"`
-	// 单元id
-	TaskId int64 `json:"task_id,omitempty" xml:"task_id,omitempty"`
 	// 单元名称
 	TaskName string `json:"task_name,omitempty" xml:"task_name,omitempty"`
 	// 展现
@@ -26,4 +22,8 @@ type TaobaoBrandhubSpecialshowRptAdgroupGetResult struct {
 	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
 	// 访客点击率
 	UvCtr string `json:"uv_ctr,omitempty" xml:"uv_ctr,omitempty"`
+	// 计划id
+	SolutionId int64 `json:"solution_id,omitempty" xml:"solution_id,omitempty"`
+	// 单元id
+	TaskId int64 `json:"task_id,omitempty" xml:"task_id,omitempty"`
 }

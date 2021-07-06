@@ -12,10 +12,10 @@ import (
 // 菜鸟工单平台根据交易订单查询某条业务线上的所有业务类型。 目前调用者ISV
 type CainiaoCbossWorkplatformBiztypeQueryallAPIRequest struct {
 	model.Params
-	// level
-	_level int64
 	// tradeId
 	_tradeId string
+	// level
+	_level int64
 }
 
 // NewCainiaoCbossWorkplatformBiztypeQueryallRequest 初始化CainiaoCbossWorkplatformBiztypeQueryallAPIRequest对象
@@ -39,19 +39,6 @@ func (r CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// SetLevel is Level Setter
-// level
-func (r *CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) SetLevel(_level int64) error {
-	r._level = _level
-	r.Set("level", _level)
-	return nil
-}
-
-// GetLevel Level Getter
-func (r CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) GetLevel() int64 {
-	return r._level
-}
-
 // SetTradeId is TradeId Setter
 // tradeId
 func (r *CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) SetTradeId(_tradeId string) error {
@@ -63,4 +50,17 @@ func (r *CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) SetTradeId(_tradeId 
 // GetTradeId TradeId Getter
 func (r CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) GetTradeId() string {
 	return r._tradeId
+}
+
+// SetLevel is Level Setter
+// level
+func (r *CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) SetLevel(_level int64) error {
+	r._level = _level
+	r.Set("level", _level)
+	return nil
+}
+
+// GetLevel Level Getter
+func (r CainiaoCbossWorkplatformBiztypeQueryallAPIRequest) GetLevel() int64 {
+	return r._level
 }

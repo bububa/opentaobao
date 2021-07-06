@@ -24,8 +24,8 @@ type AlitripTuanHotelShopCategoryGetAPIResponseModel struct {
 	TopRootShopCategoryList []TopRootShopCategoryVoList `json:"top_root_shop_category_list,omitempty" xml:"top_root_shop_category_list>top_root_shop_category_vo_list,omitempty"`
 	// code
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
-	// 是否成功
-	Status bool `json:"status,omitempty" xml:"status,omitempty"`
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// 是否成功
+	Status bool `json:"status,omitempty" xml:"status,omitempty"`
 }

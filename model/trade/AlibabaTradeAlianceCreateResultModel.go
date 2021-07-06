@@ -2,8 +2,6 @@ package trade
 
 // AlibabaTradeAlianceCreateResultModel 结构体
 type AlibabaTradeAlianceCreateResultModel struct {
-	// 是否创建成功
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// errorCode
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// errorMsg
@@ -16,4 +14,6 @@ type AlibabaTradeAlianceCreateResultModel struct {
 	MainOrderId string `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
 	// totalAmount
 	TotalAmount int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
+	// 是否创建成功
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

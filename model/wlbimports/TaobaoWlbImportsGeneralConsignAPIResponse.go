@@ -27,8 +27,8 @@ type TaobaoWlbImportsGeneralConsignAPIResponseModel struct {
 	LgorderCode string `json:"lgorder_code,omitempty" xml:"lgorder_code,omitempty"`
 	// 业务错误描述
 	ResultErrorMsg string `json:"result_error_msg,omitempty" xml:"result_error_msg,omitempty"`
-	// 是否发货成功,true:成功，false：失败
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 业务错误编码
 	ResultErrorCode string `json:"result_error_code,omitempty" xml:"result_error_code,omitempty"`
+	// 是否发货成功,true:成功，false：失败
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

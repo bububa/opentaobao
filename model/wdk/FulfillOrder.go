@@ -2,10 +2,10 @@ package wdk
 
 // FulfillOrder 结构体
 type FulfillOrder struct {
-	// 履约单号
-	FulfillOrderId string `json:"fulfill_order_id,omitempty" xml:"fulfill_order_id,omitempty"`
 	// 子订单信息列表
 	SkuInfoList []SkuInfo `json:"sku_info_list,omitempty" xml:"sku_info_list>sku_info,omitempty"`
+	// 履约单号
+	FulfillOrderId string `json:"fulfill_order_id,omitempty" xml:"fulfill_order_id,omitempty"`
 	// 扩展属性
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 收货人姓名

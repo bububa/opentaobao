@@ -14,14 +14,14 @@ type HotelRoomStaticDo struct {
 	EnName string `json:"en_name,omitempty" xml:"en_name,omitempty"`
 	// 暂不使用
 	ExtendInfo string `json:"extend_info,omitempty" xml:"extend_info,omitempty"`
-	// 热度
-	Hot int64 `json:"hot,omitempty" xml:"hot,omitempty"`
-	// id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// log图片
 	LogoUrl string `json:"logo_url,omitempty" xml:"logo_url,omitempty"`
 	// 中文名
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
+	// 热度
+	Hot int64 `json:"hot,omitempty" xml:"hot,omitempty"`
+	// id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 父id
 	ParentId int64 `json:"parent_id,omitempty" xml:"parent_id,omitempty"`
 	// 优先级

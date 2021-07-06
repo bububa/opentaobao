@@ -12,8 +12,8 @@ type AlbumDto struct {
 	AlbumStatus string `json:"album_status,omitempty" xml:"album_status,omitempty"`
 	// 专辑发行时间
 	GmtPublish string `json:"gmt_publish,omitempty" xml:"gmt_publish,omitempty"`
-	// 专辑id
-	AlbumId int64 `json:"album_id,omitempty" xml:"album_id,omitempty"`
 	// 语种
 	Language string `json:"language,omitempty" xml:"language,omitempty"`
+	// 专辑id
+	AlbumId int64 `json:"album_id,omitempty" xml:"album_id,omitempty"`
 }

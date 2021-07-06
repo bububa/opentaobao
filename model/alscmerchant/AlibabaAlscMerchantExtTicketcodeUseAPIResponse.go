@@ -20,6 +20,8 @@ type AlibabaAlscMerchantExtTicketcodeUseAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_alsc_merchant_ext_ticketcode_use_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 非次卡一次性核销多份场景，被核销的凭证明细信息
+	TicketUseDetails []MerchantTicketUseDetail `json:"ticket_use_details,omitempty" xml:"ticket_use_details>merchant_ticket_use_detail,omitempty"`
 	// 凭证码所属的订单id
 	OrderNo string `json:"order_no,omitempty" xml:"order_no,omitempty"`
 	// 用户购买时商品的原价，单位为元，精确到小数点后两位
@@ -54,8 +56,6 @@ type AlibabaAlscMerchantExtTicketcodeUseAPIResponseModel struct {
 	TicketRequestId string `json:"ticket_request_id,omitempty" xml:"ticket_request_id,omitempty"`
 	// 用户购买券的时候实际支付的金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总实际支付金额
 	BuyerPayAmount string `json:"buyer_pay_amount,omitempty" xml:"buyer_pay_amount,omitempty"`
-	// 非次卡一次性核销多份场景，被核销的凭证明细信息
-	TicketUseDetails []MerchantTicketUseDetail `json:"ticket_use_details,omitempty" xml:"ticket_use_details>merchant_ticket_use_detail,omitempty"`
 	// 口碑补贴金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总口碑补贴金额
 	MerchantSubsidyAmount string `json:"merchant_subsidy_amount,omitempty" xml:"merchant_subsidy_amount,omitempty"`
 	// 12位的券码，券码为纯数字，且唯一不重复

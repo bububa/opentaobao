@@ -24,22 +24,22 @@ type AlibabaHappytripTaxiPriceGetAPIRequest struct {
 	_mapType string
 	// 出发城市id
 	_city string
-	// 0:实时单 1:预约单
-	_type int64
 	// 预约单必须传（格式例如：2015-06-16 12:00:09）
 	_departureTime string
 	// 成本中心代码，用于区分不同的分账账号
 	_costCenter string
 	// 供应商车型代码
 	_requireLevel string
-	// 0：不拼车 1:允许拼车，默认不拼车
-	_carpoolType int64
-	// 乘车人数
-	_passengerNumber int64
 	// 用户唯一标识
 	_uid string
 	// 乘客手机号
 	_passengerPhone string
+	// 0:实时单 1:预约单
+	_type int64
+	// 0：不拼车 1:允许拼车，默认不拼车
+	_carpoolType int64
+	// 乘车人数
+	_passengerNumber int64
 }
 
 // NewAlibabaHappytripTaxiPriceGetRequest 初始化AlibabaHappytripTaxiPriceGetAPIRequest对象
@@ -141,19 +141,6 @@ func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetCity() string {
 	return r._city
 }
 
-// SetType is Type Setter
-// 0:实时单 1:预约单
-func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetType(_type int64) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetType() int64 {
-	return r._type
-}
-
 // SetDepartureTime is DepartureTime Setter
 // 预约单必须传（格式例如：2015-06-16 12:00:09）
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetDepartureTime(_departureTime string) error {
@@ -193,32 +180,6 @@ func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetRequireLevel() string {
 	return r._requireLevel
 }
 
-// SetCarpoolType is CarpoolType Setter
-// 0：不拼车 1:允许拼车，默认不拼车
-func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetCarpoolType(_carpoolType int64) error {
-	r._carpoolType = _carpoolType
-	r.Set("carpool_type", _carpoolType)
-	return nil
-}
-
-// GetCarpoolType CarpoolType Getter
-func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetCarpoolType() int64 {
-	return r._carpoolType
-}
-
-// SetPassengerNumber is PassengerNumber Setter
-// 乘车人数
-func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetPassengerNumber(_passengerNumber int64) error {
-	r._passengerNumber = _passengerNumber
-	r.Set("passenger_number", _passengerNumber)
-	return nil
-}
-
-// GetPassengerNumber PassengerNumber Getter
-func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetPassengerNumber() int64 {
-	return r._passengerNumber
-}
-
 // SetUid is Uid Setter
 // 用户唯一标识
 func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetUid(_uid string) error {
@@ -243,4 +204,43 @@ func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetPassengerPhone(_passengerPho
 // GetPassengerPhone PassengerPhone Getter
 func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetPassengerPhone() string {
 	return r._passengerPhone
+}
+
+// SetType is Type Setter
+// 0:实时单 1:预约单
+func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetType() int64 {
+	return r._type
+}
+
+// SetCarpoolType is CarpoolType Setter
+// 0：不拼车 1:允许拼车，默认不拼车
+func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetCarpoolType(_carpoolType int64) error {
+	r._carpoolType = _carpoolType
+	r.Set("carpool_type", _carpoolType)
+	return nil
+}
+
+// GetCarpoolType CarpoolType Getter
+func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetCarpoolType() int64 {
+	return r._carpoolType
+}
+
+// SetPassengerNumber is PassengerNumber Setter
+// 乘车人数
+func (r *AlibabaHappytripTaxiPriceGetAPIRequest) SetPassengerNumber(_passengerNumber int64) error {
+	r._passengerNumber = _passengerNumber
+	r.Set("passenger_number", _passengerNumber)
+	return nil
+}
+
+// GetPassengerNumber PassengerNumber Getter
+func (r AlibabaHappytripTaxiPriceGetAPIRequest) GetPassengerNumber() int64 {
+	return r._passengerNumber
 }

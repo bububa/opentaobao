@@ -14,14 +14,14 @@ type AlibabaBaichuanCtgContentGetAPIRequest struct {
 	model.Params
 	// 投放位置
 	_deliveryId string
-	// 分页大小
-	_pageSize int64
-	// 当前页
-	_currentPage int64
 	// 资源位
 	_resId string
 	// 日期
 	_date string
+	// 分页大小
+	_pageSize int64
+	// 当前页
+	_currentPage int64
 }
 
 // NewAlibabaBaichuanCtgContentGetRequest 初始化AlibabaBaichuanCtgContentGetAPIRequest对象
@@ -58,32 +58,6 @@ func (r AlibabaBaichuanCtgContentGetAPIRequest) GetDeliveryId() string {
 	return r._deliveryId
 }
 
-// SetPageSize is PageSize Setter
-// 分页大小
-func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlibabaBaichuanCtgContentGetAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetCurrentPage is CurrentPage Setter
-// 当前页
-func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetCurrentPage(_currentPage int64) error {
-	r._currentPage = _currentPage
-	r.Set("current_page", _currentPage)
-	return nil
-}
-
-// GetCurrentPage CurrentPage Getter
-func (r AlibabaBaichuanCtgContentGetAPIRequest) GetCurrentPage() int64 {
-	return r._currentPage
-}
-
 // SetResId is ResId Setter
 // 资源位
 func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetResId(_resId string) error {
@@ -108,4 +82,30 @@ func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetDate(_date string) error {
 // GetDate Date Getter
 func (r AlibabaBaichuanCtgContentGetAPIRequest) GetDate() string {
 	return r._date
+}
+
+// SetPageSize is PageSize Setter
+// 分页大小
+func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlibabaBaichuanCtgContentGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetCurrentPage is CurrentPage Setter
+// 当前页
+func (r *AlibabaBaichuanCtgContentGetAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// GetCurrentPage CurrentPage Getter
+func (r AlibabaBaichuanCtgContentGetAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
 }

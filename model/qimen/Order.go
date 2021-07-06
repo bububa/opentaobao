@@ -2,20 +2,16 @@ package qimen
 
 // Order 结构体
 type Order struct {
-	// 发货单信息
-	DeliveryOrder *DeliveryOrder `json:"deliveryOrder,omitempty" xml:"deliveryOrder,omitempty"`
 	// 订单包裹信息
 	Packages []Package `json:"packages,omitempty" xml:"packages>package,omitempty"`
 	// 单据列表
 	OrderLines []OrderLine `json:"orderLines,omitempty" xml:"orderLines>order_line,omitempty"`
+	// 拆单情况
+	DeliveryOrders []DeliveryOrder `json:"deliveryOrders,omitempty" xml:"deliveryOrders>delivery_order,omitempty"`
 	// 出错的出库单号
 	DeliveryOrderCode string `json:"deliveryOrderCode,omitempty" xml:"deliveryOrderCode,omitempty"`
 	// 出错信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
-	// 单据详情
-	OrderInfo *OrderInfo `json:"orderInfo,omitempty" xml:"orderInfo,omitempty"`
-	// 拆单情况
-	DeliveryOrders []DeliveryOrder `json:"deliveryOrders,omitempty" xml:"deliveryOrders>delivery_order,omitempty"`
 	// 响应结果:success|failure
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应码
@@ -38,4 +34,8 @@ type Order struct {
 	DeliveryOrderId string `json:"deliveryOrderId,omitempty" xml:"deliveryOrderId,omitempty"`
 	// 波次中的次序号
 	Num string `json:"num,omitempty" xml:"num,omitempty"`
+	// 发货单信息
+	DeliveryOrder *DeliveryOrder `json:"deliveryOrder,omitempty" xml:"deliveryOrder,omitempty"`
+	// 单据详情
+	OrderInfo *OrderInfo `json:"orderInfo,omitempty" xml:"orderInfo,omitempty"`
 }

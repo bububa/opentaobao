@@ -4,8 +4,6 @@ package logistic
 type AddressResult struct {
 	// 修改日期时间
 	ModifyDate string `json:"modify_date,omitempty" xml:"modify_date,omitempty"`
-	// 地址库ID
-	ContactId int64 `json:"contact_id,omitempty" xml:"contact_id,omitempty"`
 	// 联系人姓名
 	ContactName string `json:"contact_name,omitempty" xml:"contact_name,omitempty"`
 	// 省
@@ -26,6 +24,8 @@ type AddressResult struct {
 	SellerCompany string `json:"seller_company,omitempty" xml:"seller_company,omitempty"`
 	// 备注
 	Memo string `json:"memo,omitempty" xml:"memo,omitempty"`
+	// 地址库ID
+	ContactId int64 `json:"contact_id,omitempty" xml:"contact_id,omitempty"`
 	// 区域ID
 	AreaId int64 `json:"area_id,omitempty" xml:"area_id,omitempty"`
 	// 是否默认发货地址

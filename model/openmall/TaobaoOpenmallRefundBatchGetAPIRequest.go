@@ -15,14 +15,14 @@ type TaobaoOpenmallRefundBatchGetAPIRequest struct {
 	model.Params
 	// 查询范围结束时间，闭区间
 	_endCreated string
-	// 翻页页码，从1开始
-	_pageIndex int64
-	// 页面大小，不超过100
-	_pageSize int64
 	// 查询的渠道商Nick
 	_distributor string
 	// 查询范围开始时间，闭区间
 	_startCreated string
+	// 翻页页码，从1开始
+	_pageIndex int64
+	// 页面大小，不超过100
+	_pageSize int64
 }
 
 // NewTaobaoOpenmallRefundBatchGetRequest 初始化TaobaoOpenmallRefundBatchGetAPIRequest对象
@@ -59,32 +59,6 @@ func (r TaobaoOpenmallRefundBatchGetAPIRequest) GetEndCreated() string {
 	return r._endCreated
 }
 
-// SetPageIndex is PageIndex Setter
-// 翻页页码，从1开始
-func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetPageIndex(_pageIndex int64) error {
-	r._pageIndex = _pageIndex
-	r.Set("page_index", _pageIndex)
-	return nil
-}
-
-// GetPageIndex PageIndex Getter
-func (r TaobaoOpenmallRefundBatchGetAPIRequest) GetPageIndex() int64 {
-	return r._pageIndex
-}
-
-// SetPageSize is PageSize Setter
-// 页面大小，不超过100
-func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoOpenmallRefundBatchGetAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetDistributor is Distributor Setter
 // 查询的渠道商Nick
 func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetDistributor(_distributor string) error {
@@ -109,4 +83,30 @@ func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetStartCreated(_startCreated s
 // GetStartCreated StartCreated Getter
 func (r TaobaoOpenmallRefundBatchGetAPIRequest) GetStartCreated() string {
 	return r._startCreated
+}
+
+// SetPageIndex is PageIndex Setter
+// 翻页页码，从1开始
+func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetPageIndex(_pageIndex int64) error {
+	r._pageIndex = _pageIndex
+	r.Set("page_index", _pageIndex)
+	return nil
+}
+
+// GetPageIndex PageIndex Getter
+func (r TaobaoOpenmallRefundBatchGetAPIRequest) GetPageIndex() int64 {
+	return r._pageIndex
+}
+
+// SetPageSize is PageSize Setter
+// 页面大小，不超过100
+func (r *TaobaoOpenmallRefundBatchGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoOpenmallRefundBatchGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

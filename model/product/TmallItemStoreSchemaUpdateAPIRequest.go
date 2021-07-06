@@ -12,12 +12,12 @@ import (
 // 天猫门店商品编辑
 type TmallItemStoreSchemaUpdateAPIRequest struct {
 	model.Params
+	// 商品的schema xml
+	_xml string
 	// 主商品ID
 	_mainItemId int64
 	// 门店ID
 	_storeId int64
-	// 商品的schema xml
-	_xml string
 }
 
 // NewTmallItemStoreSchemaUpdateRequest 初始化TmallItemStoreSchemaUpdateAPIRequest对象
@@ -39,6 +39,19 @@ func (r TmallItemStoreSchemaUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetXml is Xml Setter
+// 商品的schema xml
+func (r *TmallItemStoreSchemaUpdateAPIRequest) SetXml(_xml string) error {
+	r._xml = _xml
+	r.Set("xml", _xml)
+	return nil
+}
+
+// GetXml Xml Getter
+func (r TmallItemStoreSchemaUpdateAPIRequest) GetXml() string {
+	return r._xml
 }
 
 // SetMainItemId is MainItemId Setter
@@ -65,17 +78,4 @@ func (r *TmallItemStoreSchemaUpdateAPIRequest) SetStoreId(_storeId int64) error 
 // GetStoreId StoreId Getter
 func (r TmallItemStoreSchemaUpdateAPIRequest) GetStoreId() int64 {
 	return r._storeId
-}
-
-// SetXml is Xml Setter
-// 商品的schema xml
-func (r *TmallItemStoreSchemaUpdateAPIRequest) SetXml(_xml string) error {
-	r._xml = _xml
-	r.Set("xml", _xml)
-	return nil
-}
-
-// GetXml Xml Getter
-func (r TmallItemStoreSchemaUpdateAPIRequest) GetXml() string {
-	return r._xml
 }

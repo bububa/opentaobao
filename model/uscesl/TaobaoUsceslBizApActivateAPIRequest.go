@@ -14,10 +14,10 @@ type TaobaoUsceslBizApActivateAPIRequest struct {
 	model.Params
 	// AP的mac地址
 	_apMac string
-	// 门店ID
-	_storeId int64
 	// 商家编码
 	_bizBrandKey string
+	// 门店ID
+	_storeId int64
 }
 
 // NewTaobaoUsceslBizApActivateRequest 初始化TaobaoUsceslBizApActivateAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoUsceslBizApActivateAPIRequest) GetApMac() string {
 	return r._apMac
 }
 
-// SetStoreId is StoreId Setter
-// 门店ID
-func (r *TaobaoUsceslBizApActivateAPIRequest) SetStoreId(_storeId int64) error {
-	r._storeId = _storeId
-	r.Set("store_id", _storeId)
-	return nil
-}
-
-// GetStoreId StoreId Getter
-func (r TaobaoUsceslBizApActivateAPIRequest) GetStoreId() int64 {
-	return r._storeId
-}
-
 // SetBizBrandKey is BizBrandKey Setter
 // 商家编码
 func (r *TaobaoUsceslBizApActivateAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
@@ -78,4 +65,17 @@ func (r *TaobaoUsceslBizApActivateAPIRequest) SetBizBrandKey(_bizBrandKey string
 // GetBizBrandKey BizBrandKey Getter
 func (r TaobaoUsceslBizApActivateAPIRequest) GetBizBrandKey() string {
 	return r._bizBrandKey
+}
+
+// SetStoreId is StoreId Setter
+// 门店ID
+func (r *TaobaoUsceslBizApActivateAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// GetStoreId StoreId Getter
+func (r TaobaoUsceslBizApActivateAPIRequest) GetStoreId() int64 {
+	return r._storeId
 }

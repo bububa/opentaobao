@@ -12,12 +12,12 @@ import (
 // 修改指定账户子账号的基本信息（通过主账号登陆只能修改属于该主账号的子账号基本信息）
 type TaobaoSubuserInfoUpdateAPIRequest struct {
 	model.Params
+	// 子账号ID
+	_subId int64
 	// 是否停用子账号 true:表示停用该子账号false:表示开启该子账号
 	_isDisableSubaccount bool
 	// 子账号是否参与分流 true:参与分流 false:不参与分流
 	_isDispatch bool
-	// 子账号ID
-	_subId int64
 }
 
 // NewTaobaoSubuserInfoUpdateRequest 初始化TaobaoSubuserInfoUpdateAPIRequest对象
@@ -39,6 +39,19 @@ func (r TaobaoSubuserInfoUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSubId is SubId Setter
+// 子账号ID
+func (r *TaobaoSubuserInfoUpdateAPIRequest) SetSubId(_subId int64) error {
+	r._subId = _subId
+	r.Set("sub_id", _subId)
+	return nil
+}
+
+// GetSubId SubId Getter
+func (r TaobaoSubuserInfoUpdateAPIRequest) GetSubId() int64 {
+	return r._subId
 }
 
 // SetIsDisableSubaccount is IsDisableSubaccount Setter
@@ -65,17 +78,4 @@ func (r *TaobaoSubuserInfoUpdateAPIRequest) SetIsDispatch(_isDispatch bool) erro
 // GetIsDispatch IsDispatch Getter
 func (r TaobaoSubuserInfoUpdateAPIRequest) GetIsDispatch() bool {
 	return r._isDispatch
-}
-
-// SetSubId is SubId Setter
-// 子账号ID
-func (r *TaobaoSubuserInfoUpdateAPIRequest) SetSubId(_subId int64) error {
-	r._subId = _subId
-	r.Set("sub_id", _subId)
-	return nil
-}
-
-// GetSubId SubId Getter
-func (r TaobaoSubuserInfoUpdateAPIRequest) GetSubId() int64 {
-	return r._subId
 }

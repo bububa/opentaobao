@@ -12,10 +12,10 @@ import (
 // 支付宝疫苗绑定接种人
 type AlibabaHealthVaccinNoticeUserBindAPIRequest struct {
 	model.Params
-	// 支付宝ID
-	_alipayUserId string
 	// 绑定人信息list
 	_bindUsers []AlipayVaccineUserBindDto
+	// 支付宝ID
+	_alipayUserId string
 	// ISV 侧用户 ID
 	_outerUserId string
 	// 联系电话
@@ -45,19 +45,6 @@ func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetAlipayUserId is AlipayUserId Setter
-// 支付宝ID
-func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetAlipayUserId(_alipayUserId string) error {
-	r._alipayUserId = _alipayUserId
-	r.Set("alipay_user_id", _alipayUserId)
-	return nil
-}
-
-// GetAlipayUserId AlipayUserId Getter
-func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetAlipayUserId() string {
-	return r._alipayUserId
-}
-
 // SetBindUsers is BindUsers Setter
 // 绑定人信息list
 func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetBindUsers(_bindUsers []AlipayVaccineUserBindDto) error {
@@ -69,6 +56,19 @@ func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetBindUsers(_bindUsers []
 // GetBindUsers BindUsers Getter
 func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetBindUsers() []AlipayVaccineUserBindDto {
 	return r._bindUsers
+}
+
+// SetAlipayUserId is AlipayUserId Setter
+// 支付宝ID
+func (r *AlibabaHealthVaccinNoticeUserBindAPIRequest) SetAlipayUserId(_alipayUserId string) error {
+	r._alipayUserId = _alipayUserId
+	r.Set("alipay_user_id", _alipayUserId)
+	return nil
+}
+
+// GetAlipayUserId AlipayUserId Getter
+func (r AlibabaHealthVaccinNoticeUserBindAPIRequest) GetAlipayUserId() string {
+	return r._alipayUserId
 }
 
 // SetOuterUserId is OuterUserId Setter

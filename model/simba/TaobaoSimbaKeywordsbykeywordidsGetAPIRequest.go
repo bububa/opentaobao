@@ -12,10 +12,10 @@ import (
 // 根据一个关键词Id列表取得一组关键词
 type TaobaoSimbaKeywordsbykeywordidsGetAPIRequest struct {
 	model.Params
-	// 主人昵称
-	_nick string
 	// 关键词Id数组，最多200个；
 	_keywordIds []int64
+	// 主人昵称
+	_nick string
 }
 
 // NewTaobaoSimbaKeywordsbykeywordidsGetRequest 初始化TaobaoSimbaKeywordsbykeywordidsGetAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// SetNick is Nick Setter
-// 主人昵称
-func (r *TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) SetNick(_nick string) error {
-	r._nick = _nick
-	r.Set("nick", _nick)
-	return nil
-}
-
-// GetNick Nick Getter
-func (r TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) GetNick() string {
-	return r._nick
-}
-
 // SetKeywordIds is KeywordIds Setter
 // 关键词Id数组，最多200个；
 func (r *TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) SetKeywordIds(_keywordIds []int64) error {
@@ -63,4 +50,17 @@ func (r *TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) SetKeywordIds(_keywordIds
 // GetKeywordIds KeywordIds Getter
 func (r TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) GetKeywordIds() []int64 {
 	return r._keywordIds
+}
+
+// SetNick is Nick Setter
+// 主人昵称
+func (r *TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// GetNick Nick Getter
+func (r TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) GetNick() string {
+	return r._nick
 }

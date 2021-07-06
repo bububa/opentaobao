@@ -2,6 +2,12 @@ package qimen
 
 // DeliveryOrder 结构体
 type DeliveryOrder struct {
+	// 发票信息
+	Invoices []Invoice `json:"invoices,omitempty" xml:"invoices>invoice,omitempty"`
+	// 单据列表
+	OrderLines []OrderLine `json:"orderLines,omitempty" xml:"orderLines>order_line,omitempty"`
+	// 关联单据信息
+	RelatedOrders []RelatedOrder `json:"relatedOrders,omitempty" xml:"relatedOrders>related_order,omitempty"`
 	// 出库单号
 	DeliveryOrderCode string `json:"deliveryOrderCode,omitempty" xml:"deliveryOrderCode,omitempty"`
 	// 仓储系统出库单号
@@ -14,8 +20,6 @@ type DeliveryOrder struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 外部业务编码(消息ID;用于去重;ISV对于同一请求;分配一个唯一性的编码。用来保证因为网络等原因导致重复传输;请求 不会被重复处理;条件必填;条件为一单需要多次确认时)
 	OutBizCode string `json:"outBizCode,omitempty" xml:"outBizCode,omitempty"`
-	// 支持出库单多次发货(多次发货后确认时;0表示发货单最终状态确认;1表示发货单中间状态确认)
-	ConfirmType int64 `json:"confirmType,omitempty" xml:"confirmType,omitempty"`
 	// 订单完成时间(YYYY-MM-DD HH:MM:SS)
 	OrderConfirmTime string `json:"orderConfirmTime,omitempty" xml:"orderConfirmTime,omitempty"`
 	// 当前状态操作员编码
@@ -26,8 +30,6 @@ type DeliveryOrder struct {
 	OperateTime string `json:"operateTime,omitempty" xml:"operateTime,omitempty"`
 	// 仓储费用
 	StorageFee string `json:"storageFee,omitempty" xml:"storageFee,omitempty"`
-	// 发票信息
-	Invoices []Invoice `json:"invoices,omitempty" xml:"invoices>invoice,omitempty"`
 	// 原出库单号(ERP分配)
 	PreDeliveryOrderCode string `json:"preDeliveryOrderCode,omitempty" xml:"preDeliveryOrderCode,omitempty"`
 	// 原出库单号(WMS分配)
@@ -74,20 +76,12 @@ type DeliveryOrder struct {
 	ExpressCode string `json:"expressCode,omitempty" xml:"expressCode,omitempty"`
 	// 快递区域编码
 	LogisticsAreaCode string `json:"logisticsAreaCode,omitempty" xml:"logisticsAreaCode,omitempty"`
-	// 发货要求
-	DeliveryRequirements *DeliveryRequirements `json:"deliveryRequirements,omitempty" xml:"deliveryRequirements,omitempty"`
-	// 发件人信息
-	SenderInfo *SenderInfo `json:"senderInfo,omitempty" xml:"senderInfo,omitempty"`
-	// 收件人信息
-	ReceiverInfo *ReceiverInfo `json:"receiverInfo,omitempty" xml:"receiverInfo,omitempty"`
 	// 是否紧急(Y/N;默认为N)
 	IsUrgency string `json:"isUrgency,omitempty" xml:"isUrgency,omitempty"`
 	// 是否需要发票(Y/N;默认为N)
 	InvoiceFlag string `json:"invoiceFlag,omitempty" xml:"invoiceFlag,omitempty"`
 	// 是否需要保险(Y/N;默认为N)
 	InsuranceFlag string `json:"insuranceFlag,omitempty" xml:"insuranceFlag,omitempty"`
-	// 保险信息
-	Insurance *Insurance `json:"insurance,omitempty" xml:"insurance,omitempty"`
 	// 买家留言
 	BuyerMessage string `json:"buyerMessage,omitempty" xml:"buyerMessage,omitempty"`
 	// 卖家留言
@@ -98,22 +92,16 @@ type DeliveryOrder struct {
 	ServiceCode string `json:"serviceCode,omitempty" xml:"serviceCode,omitempty"`
 	// 平台订单号
 	OaidOrderSourceCode string `json:"oaidOrderSourceCode,omitempty" xml:"oaidOrderSourceCode,omitempty"`
-	// 单据列表
-	OrderLines []OrderLine `json:"orderLines,omitempty" xml:"orderLines>order_line,omitempty"`
 	// 旧版本货主编码
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
 	// 最晚揽收时间, string (19) , YYYY-MM-DD HH:MM:SS
 	LatestCollectionTime string `json:"latestCollectionTime,omitempty" xml:"latestCollectionTime,omitempty"`
 	// 最晚发货时间, string (19) , YYYY-MM-DD HH:MM:SS
 	LatestDeliveryTime string `json:"latestDeliveryTime,omitempty" xml:"latestDeliveryTime,omitempty"`
-	// 单据总行数
-	TotalOrderLines int64 `json:"totalOrderLines,omitempty" xml:"totalOrderLines,omitempty"`
 	// 该笔出库单的费用承担部门或责任部门
 	ResponsibleDepartment string `json:"responsibleDepartment,omitempty" xml:"responsibleDepartment,omitempty"`
 	// 出库单确认其他出库单的子类型，用于 orderType设置为其他 出库单时设置
 	SubOrderType string `json:"subOrderType,omitempty" xml:"subOrderType,omitempty"`
-	// 关联单据信息
-	RelatedOrders []RelatedOrder `json:"relatedOrders,omitempty" xml:"relatedOrders>related_order,omitempty"`
 	// 要求出库时间(YYYY-MM-DD)
 	ScheduleDate string `json:"scheduleDate,omitempty" xml:"scheduleDate,omitempty"`
 	// 供应商编码
@@ -122,8 +110,6 @@ type DeliveryOrder struct {
 	SupplierName string `json:"supplierName,omitempty" xml:"supplierName,omitempty"`
 	// 提货方式(到仓自提、快递、干线物流)
 	TransportMode string `json:"transportMode,omitempty" xml:"transportMode,omitempty"`
-	// 提货人信息
-	PickerInfo *PickerInfo `json:"pickerInfo,omitempty" xml:"pickerInfo,omitempty"`
 	// 出库单渠道类型,VIP=唯品会，FX=分销 ，SHOP=门店
 	OrderSourceType string `json:"orderSourceType,omitempty" xml:"orderSourceType,omitempty"`
 	// 到货时间(YYYY-MM-DD HH:MM:SS)
@@ -138,4 +124,18 @@ type DeliveryOrder struct {
 	TargetEntryOrderCode string `json:"targetEntryOrderCode,omitempty" xml:"targetEntryOrderCode,omitempty"`
 	// 仓库名称
 	WarehouseName string `json:"warehouseName,omitempty" xml:"warehouseName,omitempty"`
+	// 支持出库单多次发货(多次发货后确认时;0表示发货单最终状态确认;1表示发货单中间状态确认)
+	ConfirmType int64 `json:"confirmType,omitempty" xml:"confirmType,omitempty"`
+	// 发货要求
+	DeliveryRequirements *DeliveryRequirements `json:"deliveryRequirements,omitempty" xml:"deliveryRequirements,omitempty"`
+	// 发件人信息
+	SenderInfo *SenderInfo `json:"senderInfo,omitempty" xml:"senderInfo,omitempty"`
+	// 收件人信息
+	ReceiverInfo *ReceiverInfo `json:"receiverInfo,omitempty" xml:"receiverInfo,omitempty"`
+	// 保险信息
+	Insurance *Insurance `json:"insurance,omitempty" xml:"insurance,omitempty"`
+	// 单据总行数
+	TotalOrderLines int64 `json:"totalOrderLines,omitempty" xml:"totalOrderLines,omitempty"`
+	// 提货人信息
+	PickerInfo *PickerInfo `json:"pickerInfo,omitempty" xml:"pickerInfo,omitempty"`
 }

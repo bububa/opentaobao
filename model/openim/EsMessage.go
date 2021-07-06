@@ -2,6 +2,8 @@ package openim
 
 // EsMessage 结构体
 type EsMessage struct {
+	// 消息内容
+	Content []RoamingMessageItem `json:"content,omitempty" xml:"content>roaming_message_item,omitempty"`
 	// 消息时间，UTC时间
 	Time int64 `json:"time,omitempty" xml:"time,omitempty"`
 	// 消息UUID
@@ -12,6 +14,4 @@ type EsMessage struct {
 	FromId *OpenImUser `json:"from_id,omitempty" xml:"from_id,omitempty"`
 	// 接收方
 	ToId *OpenImUser `json:"to_id,omitempty" xml:"to_id,omitempty"`
-	// 消息内容
-	Content []RoamingMessageItem `json:"content,omitempty" xml:"content>roaming_message_item,omitempty"`
 }

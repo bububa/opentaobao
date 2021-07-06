@@ -12,18 +12,18 @@ import (
 // API to query the feed list belonged to a seller
 type AliexpressSolutionFeedListGetAPIRequest struct {
 	model.Params
-	// current page
-	_currentPage int64
 	// feed type
 	_feedType string
-	// page size
-	_pageSize int64
 	// status of the job, currently there are 3 types: FINISH, PROCESSING, QUEUEING
 	_status string
 	// Search for feeds submitted before a specific time, format: yyyy-MM-dd hh:mm:ss. Timezone:America/Los_Angeles
 	_submittedTimeEnd string
 	// Search for feeds submitted after a specific time, format: yyyy-MM-dd hh:mm:ss  .Timezone:America/Los_Angeles
 	_submittedTimeStart string
+	// current page
+	_currentPage int64
+	// page size
+	_pageSize int64
 }
 
 // NewAliexpressSolutionFeedListGetRequest 初始化AliexpressSolutionFeedListGetAPIRequest对象
@@ -47,19 +47,6 @@ func (r AliexpressSolutionFeedListGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetCurrentPage is CurrentPage Setter
-// current page
-func (r *AliexpressSolutionFeedListGetAPIRequest) SetCurrentPage(_currentPage int64) error {
-	r._currentPage = _currentPage
-	r.Set("current_page", _currentPage)
-	return nil
-}
-
-// GetCurrentPage CurrentPage Getter
-func (r AliexpressSolutionFeedListGetAPIRequest) GetCurrentPage() int64 {
-	return r._currentPage
-}
-
 // SetFeedType is FeedType Setter
 // feed type
 func (r *AliexpressSolutionFeedListGetAPIRequest) SetFeedType(_feedType string) error {
@@ -71,19 +58,6 @@ func (r *AliexpressSolutionFeedListGetAPIRequest) SetFeedType(_feedType string) 
 // GetFeedType FeedType Getter
 func (r AliexpressSolutionFeedListGetAPIRequest) GetFeedType() string {
 	return r._feedType
-}
-
-// SetPageSize is PageSize Setter
-// page size
-func (r *AliexpressSolutionFeedListGetAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AliexpressSolutionFeedListGetAPIRequest) GetPageSize() int64 {
-	return r._pageSize
 }
 
 // SetStatus is Status Setter
@@ -123,4 +97,30 @@ func (r *AliexpressSolutionFeedListGetAPIRequest) SetSubmittedTimeStart(_submitt
 // GetSubmittedTimeStart SubmittedTimeStart Getter
 func (r AliexpressSolutionFeedListGetAPIRequest) GetSubmittedTimeStart() string {
 	return r._submittedTimeStart
+}
+
+// SetCurrentPage is CurrentPage Setter
+// current page
+func (r *AliexpressSolutionFeedListGetAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// GetCurrentPage CurrentPage Getter
+func (r AliexpressSolutionFeedListGetAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
+}
+
+// SetPageSize is PageSize Setter
+// page size
+func (r *AliexpressSolutionFeedListGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AliexpressSolutionFeedListGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

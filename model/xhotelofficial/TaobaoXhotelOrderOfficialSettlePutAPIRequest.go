@@ -12,12 +12,8 @@ import (
 // 用于酒店官网信用住商家结账调用
 type TaobaoXhotelOrderOfficialSettlePutAPIRequest struct {
 	model.Params
-	// 淘宝订单id,必须填写
-	_tid int64
-	// 房费总额(必须大于0)
-	_totalRoomFee int64
-	// 杂费总额(不能为负数)
-	_otherFee int64
+	// 房间明细列表
+	_roomSettleInfoList []RoomSettleInfo
 	// 杂费明细,如果otherFee>0则该字段必须设置,并和杂费金额相吻合
 	_otherFeeDetail string
 	// 商家订单号
@@ -30,14 +26,18 @@ type TaobaoXhotelOrderOfficialSettlePutAPIRequest struct {
 	_checkOut string
 	// 备注
 	_memo string
-	// 房间明细列表
-	_roomSettleInfoList []RoomSettleInfo
-	// 此金额是否包含担保金 0：默认值无意义；1：包含；2：不包含（多间房结账必须传入）
-	_containGuarantee int64
 	// 结账请求流水号
 	_outUuid string
 	// 请求结果通知地址（暂时无效，无需传入）
 	_notifyUrl string
+	// 淘宝订单id,必须填写
+	_tid int64
+	// 房费总额(必须大于0)
+	_totalRoomFee int64
+	// 杂费总额(不能为负数)
+	_otherFee int64
+	// 此金额是否包含担保金 0：默认值无意义；1：包含；2：不包含（多间房结账必须传入）
+	_containGuarantee int64
 }
 
 // NewTaobaoXhotelOrderOfficialSettlePutRequest 初始化TaobaoXhotelOrderOfficialSettlePutAPIRequest对象
@@ -61,43 +61,17 @@ func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// SetTid is Tid Setter
-// 淘宝订单id,必须填写
-func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) SetTid(_tid int64) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
+// SetRoomSettleInfoList is RoomSettleInfoList Setter
+// 房间明细列表
+func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) SetRoomSettleInfoList(_roomSettleInfoList []RoomSettleInfo) error {
+	r._roomSettleInfoList = _roomSettleInfoList
+	r.Set("room_settle_info_list", _roomSettleInfoList)
 	return nil
 }
 
-// GetTid Tid Getter
-func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetTid() int64 {
-	return r._tid
-}
-
-// SetTotalRoomFee is TotalRoomFee Setter
-// 房费总额(必须大于0)
-func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) SetTotalRoomFee(_totalRoomFee int64) error {
-	r._totalRoomFee = _totalRoomFee
-	r.Set("total_room_fee", _totalRoomFee)
-	return nil
-}
-
-// GetTotalRoomFee TotalRoomFee Getter
-func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetTotalRoomFee() int64 {
-	return r._totalRoomFee
-}
-
-// SetOtherFee is OtherFee Setter
-// 杂费总额(不能为负数)
-func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) SetOtherFee(_otherFee int64) error {
-	r._otherFee = _otherFee
-	r.Set("other_fee", _otherFee)
-	return nil
-}
-
-// GetOtherFee OtherFee Getter
-func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetOtherFee() int64 {
-	return r._otherFee
+// GetRoomSettleInfoList RoomSettleInfoList Getter
+func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetRoomSettleInfoList() []RoomSettleInfo {
+	return r._roomSettleInfoList
 }
 
 // SetOtherFeeDetail is OtherFeeDetail Setter
@@ -178,32 +152,6 @@ func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetMemo() string {
 	return r._memo
 }
 
-// SetRoomSettleInfoList is RoomSettleInfoList Setter
-// 房间明细列表
-func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) SetRoomSettleInfoList(_roomSettleInfoList []RoomSettleInfo) error {
-	r._roomSettleInfoList = _roomSettleInfoList
-	r.Set("room_settle_info_list", _roomSettleInfoList)
-	return nil
-}
-
-// GetRoomSettleInfoList RoomSettleInfoList Getter
-func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetRoomSettleInfoList() []RoomSettleInfo {
-	return r._roomSettleInfoList
-}
-
-// SetContainGuarantee is ContainGuarantee Setter
-// 此金额是否包含担保金 0：默认值无意义；1：包含；2：不包含（多间房结账必须传入）
-func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) SetContainGuarantee(_containGuarantee int64) error {
-	r._containGuarantee = _containGuarantee
-	r.Set("contain_guarantee", _containGuarantee)
-	return nil
-}
-
-// GetContainGuarantee ContainGuarantee Getter
-func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetContainGuarantee() int64 {
-	return r._containGuarantee
-}
-
 // SetOutUuid is OutUuid Setter
 // 结账请求流水号
 func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) SetOutUuid(_outUuid string) error {
@@ -228,4 +176,56 @@ func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) SetNotifyUrl(_notifyUrl s
 // GetNotifyUrl NotifyUrl Getter
 func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetNotifyUrl() string {
 	return r._notifyUrl
+}
+
+// SetTid is Tid Setter
+// 淘宝订单id,必须填写
+func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetTid() int64 {
+	return r._tid
+}
+
+// SetTotalRoomFee is TotalRoomFee Setter
+// 房费总额(必须大于0)
+func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) SetTotalRoomFee(_totalRoomFee int64) error {
+	r._totalRoomFee = _totalRoomFee
+	r.Set("total_room_fee", _totalRoomFee)
+	return nil
+}
+
+// GetTotalRoomFee TotalRoomFee Getter
+func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetTotalRoomFee() int64 {
+	return r._totalRoomFee
+}
+
+// SetOtherFee is OtherFee Setter
+// 杂费总额(不能为负数)
+func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) SetOtherFee(_otherFee int64) error {
+	r._otherFee = _otherFee
+	r.Set("other_fee", _otherFee)
+	return nil
+}
+
+// GetOtherFee OtherFee Getter
+func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetOtherFee() int64 {
+	return r._otherFee
+}
+
+// SetContainGuarantee is ContainGuarantee Setter
+// 此金额是否包含担保金 0：默认值无意义；1：包含；2：不包含（多间房结账必须传入）
+func (r *TaobaoXhotelOrderOfficialSettlePutAPIRequest) SetContainGuarantee(_containGuarantee int64) error {
+	r._containGuarantee = _containGuarantee
+	r.Set("contain_guarantee", _containGuarantee)
+	return nil
+}
+
+// GetContainGuarantee ContainGuarantee Getter
+func (r TaobaoXhotelOrderOfficialSettlePutAPIRequest) GetContainGuarantee() int64 {
+	return r._containGuarantee
 }

@@ -12,12 +12,12 @@ import (
 // 订单全链路状态统计差异比较
 type TaobaoJdsTradesStatisticsDiffAPIRequest struct {
 	model.Params
-	// 查询的日期，格式如YYYYMMDD的日期对应的数字
-	_date int64
 	// 需要比较的状态，将会和post_status做比较
 	_preStatus string
 	// 需要比较的状态
 	_postStatus string
+	// 查询的日期，格式如YYYYMMDD的日期对应的数字
+	_date int64
 	// 页数
 	_pageNo int64
 }
@@ -41,19 +41,6 @@ func (r TaobaoJdsTradesStatisticsDiffAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetDate is Date Setter
-// 查询的日期，格式如YYYYMMDD的日期对应的数字
-func (r *TaobaoJdsTradesStatisticsDiffAPIRequest) SetDate(_date int64) error {
-	r._date = _date
-	r.Set("date", _date)
-	return nil
-}
-
-// GetDate Date Getter
-func (r TaobaoJdsTradesStatisticsDiffAPIRequest) GetDate() int64 {
-	return r._date
 }
 
 // SetPreStatus is PreStatus Setter
@@ -80,6 +67,19 @@ func (r *TaobaoJdsTradesStatisticsDiffAPIRequest) SetPostStatus(_postStatus stri
 // GetPostStatus PostStatus Getter
 func (r TaobaoJdsTradesStatisticsDiffAPIRequest) GetPostStatus() string {
 	return r._postStatus
+}
+
+// SetDate is Date Setter
+// 查询的日期，格式如YYYYMMDD的日期对应的数字
+func (r *TaobaoJdsTradesStatisticsDiffAPIRequest) SetDate(_date int64) error {
+	r._date = _date
+	r.Set("date", _date)
+	return nil
+}
+
+// GetDate Date Getter
+func (r TaobaoJdsTradesStatisticsDiffAPIRequest) GetDate() int64 {
+	return r._date
 }
 
 // SetPageNo is PageNo Setter

@@ -28,8 +28,6 @@ type Userinfos struct {
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 名字，最大长度64
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
-	// 年龄
-	Age int64 `json:"age,omitempty" xml:"age,omitempty"`
 	// 性别。M: 男。 F：女
 	Gender string `json:"gender,omitempty" xml:"gender,omitempty"`
 	// 微信，最大长度64字节
@@ -38,8 +36,10 @@ type Userinfos struct {
 	Qq string `json:"qq,omitempty" xml:"qq,omitempty"`
 	// 微博，最大长度256字节
 	Weibo string `json:"weibo,omitempty" xml:"weibo,omitempty"`
-	// 用户激活状态，0表示未激活，1表示激活
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 最后更新时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+	// 年龄
+	Age int64 `json:"age,omitempty" xml:"age,omitempty"`
+	// 用户激活状态，0表示未激活，1表示激活
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 }

@@ -18,8 +18,6 @@ type Flowcardlist struct {
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
 	// promotion_price
 	PromotionPrice string `json:"promotion_price,omitempty" xml:"promotion_price,omitempty"`
-	// result
-	Result int64 `json:"result,omitempty" xml:"result,omitempty"`
 	// seller
 	Seller string `json:"seller,omitempty" xml:"seller,omitempty"`
 	// simple_desc
@@ -32,4 +30,6 @@ type Flowcardlist struct {
 	TimeLimit string `json:"time_limit,omitempty" xml:"time_limit,omitempty"`
 	// title
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
+	// result
+	Result int64 `json:"result,omitempty" xml:"result,omitempty"`
 }

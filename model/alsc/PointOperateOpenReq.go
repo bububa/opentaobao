@@ -4,12 +4,8 @@ package alsc
 type PointOperateOpenReq struct {
 	// saas品牌id
 	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
-	// 操作积分
-	ChangePoint int64 `json:"change_point,omitempty" xml:"change_point,omitempty"`
 	// 手机号
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
-	// 1-增加(charge)  2-冻结(freeze)  3-核销(verify)  4-扣减(decrease)
-	OperateType int64 `json:"operate_type,omitempty" xml:"operate_type,omitempty"`
 	// 操作人id
 	OperatorId string `json:"operator_id,omitempty" xml:"operator_id,omitempty"`
 	// 外部id
@@ -26,4 +22,8 @@ type PointOperateOpenReq struct {
 	OuterOrderId string `json:"outer_order_id,omitempty" xml:"outer_order_id,omitempty"`
 	// 顾客id
 	CustomerId string `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
+	// 操作积分
+	ChangePoint int64 `json:"change_point,omitempty" xml:"change_point,omitempty"`
+	// 1-增加(charge)  2-冻结(freeze)  3-核销(verify)  4-扣减(decrease)
+	OperateType int64 `json:"operate_type,omitempty" xml:"operate_type,omitempty"`
 }

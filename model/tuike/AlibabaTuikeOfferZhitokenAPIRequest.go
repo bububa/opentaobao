@@ -22,8 +22,6 @@ type AlibabaTuikeOfferZhitokenAPIRequest struct {
 	_bizType string
 	// 业务类型
 	_source string
-	// 生效时间，可以为空
-	_startTime int64
 	// 左按钮文案，可以为空，默认为"取消"
 	_leftBtnText string
 	// 左按钮链接，可以为空
@@ -32,6 +30,8 @@ type AlibabaTuikeOfferZhitokenAPIRequest struct {
 	_rightBtnText string
 	// 右按钮链接
 	_rightBtnLink string
+	// 生效时间，可以为空
+	_startTime int64
 }
 
 // NewAlibabaTuikeOfferZhitokenRequest 初始化AlibabaTuikeOfferZhitokenAPIRequest对象
@@ -120,19 +120,6 @@ func (r AlibabaTuikeOfferZhitokenAPIRequest) GetSource() string {
 	return r._source
 }
 
-// SetStartTime is StartTime Setter
-// 生效时间，可以为空
-func (r *AlibabaTuikeOfferZhitokenAPIRequest) SetStartTime(_startTime int64) error {
-	r._startTime = _startTime
-	r.Set("start_time", _startTime)
-	return nil
-}
-
-// GetStartTime StartTime Getter
-func (r AlibabaTuikeOfferZhitokenAPIRequest) GetStartTime() int64 {
-	return r._startTime
-}
-
 // SetLeftBtnText is LeftBtnText Setter
 // 左按钮文案，可以为空，默认为"取消"
 func (r *AlibabaTuikeOfferZhitokenAPIRequest) SetLeftBtnText(_leftBtnText string) error {
@@ -183,4 +170,17 @@ func (r *AlibabaTuikeOfferZhitokenAPIRequest) SetRightBtnLink(_rightBtnLink stri
 // GetRightBtnLink RightBtnLink Getter
 func (r AlibabaTuikeOfferZhitokenAPIRequest) GetRightBtnLink() string {
 	return r._rightBtnLink
+}
+
+// SetStartTime is StartTime Setter
+// 生效时间，可以为空
+func (r *AlibabaTuikeOfferZhitokenAPIRequest) SetStartTime(_startTime int64) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
+	return nil
+}
+
+// GetStartTime StartTime Getter
+func (r AlibabaTuikeOfferZhitokenAPIRequest) GetStartTime() int64 {
+	return r._startTime
 }

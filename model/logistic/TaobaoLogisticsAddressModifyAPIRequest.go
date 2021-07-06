@@ -12,8 +12,6 @@ import (
 // 卖家地址库修改
 type TaobaoLogisticsAddressModifyAPIRequest struct {
 	model.Params
-	// 地址库ID
-	_contactId int64
 	// 联系人姓名<br/><font color='red'>长度不可超过20个字节</font>
 	_contactName string
 	// 所在省
@@ -34,6 +32,8 @@ type TaobaoLogisticsAddressModifyAPIRequest struct {
 	_sellerCompany string
 	// 备注,<br><font color='red'>备注不能超过256字节</font>
 	_memo string
+	// 地址库ID
+	_contactId int64
 	// 默认取货地址。<br><br/><font color='red'>选择此项(true)，将当前地址设为默认取货地址，撤消原默认取货地址</font>
 	_getDef bool
 	// 默认退货地址。<br><br/><font color='red'>选择此项(true)，将当前地址设为默认退货地址，撤消原默认退货地址</font>
@@ -59,19 +59,6 @@ func (r TaobaoLogisticsAddressModifyAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetContactId is ContactId Setter
-// 地址库ID
-func (r *TaobaoLogisticsAddressModifyAPIRequest) SetContactId(_contactId int64) error {
-	r._contactId = _contactId
-	r.Set("contact_id", _contactId)
-	return nil
-}
-
-// GetContactId ContactId Getter
-func (r TaobaoLogisticsAddressModifyAPIRequest) GetContactId() int64 {
-	return r._contactId
 }
 
 // SetContactName is ContactName Setter
@@ -202,6 +189,19 @@ func (r *TaobaoLogisticsAddressModifyAPIRequest) SetMemo(_memo string) error {
 // GetMemo Memo Getter
 func (r TaobaoLogisticsAddressModifyAPIRequest) GetMemo() string {
 	return r._memo
+}
+
+// SetContactId is ContactId Setter
+// 地址库ID
+func (r *TaobaoLogisticsAddressModifyAPIRequest) SetContactId(_contactId int64) error {
+	r._contactId = _contactId
+	r.Set("contact_id", _contactId)
+	return nil
+}
+
+// GetContactId ContactId Getter
+func (r TaobaoLogisticsAddressModifyAPIRequest) GetContactId() int64 {
+	return r._contactId
 }
 
 // SetGetDef is GetDef Setter

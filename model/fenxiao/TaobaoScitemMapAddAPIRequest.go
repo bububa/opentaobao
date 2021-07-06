@@ -12,14 +12,14 @@ import (
 // 创建IC商品或分销商品与后端商品的映射关系
 type TaobaoScitemMapAddAPIRequest struct {
 	model.Params
+	// sc_item_id和outer_code 其中一个不能为空
+	_outerCode string
 	// 前台ic商品id
 	_itemId int64
 	// 前台ic商品skuid
 	_skuId int64
 	// sc_item_id和outer_code 其中一个不能为空
 	_scItemId int64
-	// sc_item_id和outer_code 其中一个不能为空
-	_outerCode string
 	// 默认值为false<br/>true:进行高级校验,前端商品或SKU的商家编码必须与后端商品的商家编码一致，否则会拒绝关联<br/>false:不进行高级校验
 	_needCheck bool
 }
@@ -43,6 +43,19 @@ func (r TaobaoScitemMapAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetOuterCode is OuterCode Setter
+// sc_item_id和outer_code 其中一个不能为空
+func (r *TaobaoScitemMapAddAPIRequest) SetOuterCode(_outerCode string) error {
+	r._outerCode = _outerCode
+	r.Set("outer_code", _outerCode)
+	return nil
+}
+
+// GetOuterCode OuterCode Getter
+func (r TaobaoScitemMapAddAPIRequest) GetOuterCode() string {
+	return r._outerCode
 }
 
 // SetItemId is ItemId Setter
@@ -82,19 +95,6 @@ func (r *TaobaoScitemMapAddAPIRequest) SetScItemId(_scItemId int64) error {
 // GetScItemId ScItemId Getter
 func (r TaobaoScitemMapAddAPIRequest) GetScItemId() int64 {
 	return r._scItemId
-}
-
-// SetOuterCode is OuterCode Setter
-// sc_item_id和outer_code 其中一个不能为空
-func (r *TaobaoScitemMapAddAPIRequest) SetOuterCode(_outerCode string) error {
-	r._outerCode = _outerCode
-	r.Set("outer_code", _outerCode)
-	return nil
-}
-
-// GetOuterCode OuterCode Getter
-func (r TaobaoScitemMapAddAPIRequest) GetOuterCode() string {
-	return r._outerCode
 }
 
 // SetNeedCheck is NeedCheck Setter

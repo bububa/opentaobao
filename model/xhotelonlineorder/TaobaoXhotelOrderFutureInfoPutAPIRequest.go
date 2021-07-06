@@ -14,8 +14,6 @@ type TaobaoXhotelOrderFutureInfoPutAPIRequest struct {
 	model.Params
 	// 商家请求流水号
 	_outUuid string
-	// 操作类型 21: 订单状态更新（商家推送订单状态变更）23：酒店房态信息上传（上传一段时间内的酒店房态）25：在线开发票请求确认 26：自助选房请求进行请求确认   27：自助checkIn请求进行请求确认 32: 扫脸入住入住信息回传 （飞猪将登记至公安系统）
-	_operateType int64
 	// 酒店编码
 	_hotelCode string
 	// 字段详细介绍参见 https://open.alitrip.com/docs/doc.htm?docType=1&articleId=106153
@@ -24,6 +22,8 @@ type TaobaoXhotelOrderFutureInfoPutAPIRequest struct {
 	_vendor string
 	// 请求流水号
 	_requestId string
+	// 操作类型 21: 订单状态更新（商家推送订单状态变更）23：酒店房态信息上传（上传一段时间内的酒店房态）25：在线开发票请求确认 26：自助选房请求进行请求确认   27：自助checkIn请求进行请求确认 32: 扫脸入住入住信息回传 （飞猪将登记至公安系统）
+	_operateType int64
 }
 
 // NewTaobaoXhotelOrderFutureInfoPutRequest 初始化TaobaoXhotelOrderFutureInfoPutAPIRequest对象
@@ -58,19 +58,6 @@ func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetOutUuid(_outUuid string) e
 // GetOutUuid OutUuid Getter
 func (r TaobaoXhotelOrderFutureInfoPutAPIRequest) GetOutUuid() string {
 	return r._outUuid
-}
-
-// SetOperateType is OperateType Setter
-// 操作类型 21: 订单状态更新（商家推送订单状态变更）23：酒店房态信息上传（上传一段时间内的酒店房态）25：在线开发票请求确认 26：自助选房请求进行请求确认   27：自助checkIn请求进行请求确认 32: 扫脸入住入住信息回传 （飞猪将登记至公安系统）
-func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetOperateType(_operateType int64) error {
-	r._operateType = _operateType
-	r.Set("operate_type", _operateType)
-	return nil
-}
-
-// GetOperateType OperateType Getter
-func (r TaobaoXhotelOrderFutureInfoPutAPIRequest) GetOperateType() int64 {
-	return r._operateType
 }
 
 // SetHotelCode is HotelCode Setter
@@ -123,4 +110,17 @@ func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetRequestId(_requestId strin
 // GetRequestId RequestId Getter
 func (r TaobaoXhotelOrderFutureInfoPutAPIRequest) GetRequestId() string {
 	return r._requestId
+}
+
+// SetOperateType is OperateType Setter
+// 操作类型 21: 订单状态更新（商家推送订单状态变更）23：酒店房态信息上传（上传一段时间内的酒店房态）25：在线开发票请求确认 26：自助选房请求进行请求确认   27：自助checkIn请求进行请求确认 32: 扫脸入住入住信息回传 （飞猪将登记至公安系统）
+func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetOperateType(_operateType int64) error {
+	r._operateType = _operateType
+	r.Set("operate_type", _operateType)
+	return nil
+}
+
+// GetOperateType OperateType Getter
+func (r TaobaoXhotelOrderFutureInfoPutAPIRequest) GetOperateType() int64 {
+	return r._operateType
 }

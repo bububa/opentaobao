@@ -24,10 +24,10 @@ type AlibabaMjOcOfflineMaxticketnoGetAPIResponseModel struct {
 	PayDate string `json:"pay_date,omitempty" xml:"pay_date,omitempty"`
 	// 收银机号
 	PosNo string `json:"pos_no,omitempty" xml:"pos_no,omitempty"`
-	// 联合收银标记
-	Union bool `json:"union,omitempty" xml:"union,omitempty"`
 	// 小票号
 	PayNo string `json:"pay_no,omitempty" xml:"pay_no,omitempty"`
 	// 外部门店号
 	StoreNo string `json:"store_no,omitempty" xml:"store_no,omitempty"`
+	// 联合收银标记
+	Union bool `json:"union,omitempty" xml:"union,omitempty"`
 }

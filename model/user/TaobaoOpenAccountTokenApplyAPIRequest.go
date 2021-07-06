@@ -12,18 +12,18 @@ import (
 // 申请免登Open Account Token
 type TaobaoOpenAccountTokenApplyAPIRequest struct {
 	model.Params
-	// 时间戳单位是毫秒
-	_tokenTimestamp int64
-	// open account id
-	_openAccountId int64
 	// isv自己账号的唯一id
 	_isvAccountId string
 	// 用于防重放的唯一id
 	_uuid string
-	// ISV APP的登录态时长单位是秒
-	_loginStateExpireIn int64
 	// 用于透传一些业务附加参数
 	_ext string
+	// 时间戳单位是毫秒
+	_tokenTimestamp int64
+	// open account id
+	_openAccountId int64
+	// ISV APP的登录态时长单位是秒
+	_loginStateExpireIn int64
 }
 
 // NewTaobaoOpenAccountTokenApplyRequest 初始化TaobaoOpenAccountTokenApplyAPIRequest对象
@@ -45,32 +45,6 @@ func (r TaobaoOpenAccountTokenApplyAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetTokenTimestamp is TokenTimestamp Setter
-// 时间戳单位是毫秒
-func (r *TaobaoOpenAccountTokenApplyAPIRequest) SetTokenTimestamp(_tokenTimestamp int64) error {
-	r._tokenTimestamp = _tokenTimestamp
-	r.Set("token_timestamp", _tokenTimestamp)
-	return nil
-}
-
-// GetTokenTimestamp TokenTimestamp Getter
-func (r TaobaoOpenAccountTokenApplyAPIRequest) GetTokenTimestamp() int64 {
-	return r._tokenTimestamp
-}
-
-// SetOpenAccountId is OpenAccountId Setter
-// open account id
-func (r *TaobaoOpenAccountTokenApplyAPIRequest) SetOpenAccountId(_openAccountId int64) error {
-	r._openAccountId = _openAccountId
-	r.Set("open_account_id", _openAccountId)
-	return nil
-}
-
-// GetOpenAccountId OpenAccountId Getter
-func (r TaobaoOpenAccountTokenApplyAPIRequest) GetOpenAccountId() int64 {
-	return r._openAccountId
 }
 
 // SetIsvAccountId is IsvAccountId Setter
@@ -99,19 +73,6 @@ func (r TaobaoOpenAccountTokenApplyAPIRequest) GetUuid() string {
 	return r._uuid
 }
 
-// SetLoginStateExpireIn is LoginStateExpireIn Setter
-// ISV APP的登录态时长单位是秒
-func (r *TaobaoOpenAccountTokenApplyAPIRequest) SetLoginStateExpireIn(_loginStateExpireIn int64) error {
-	r._loginStateExpireIn = _loginStateExpireIn
-	r.Set("login_state_expire_in", _loginStateExpireIn)
-	return nil
-}
-
-// GetLoginStateExpireIn LoginStateExpireIn Getter
-func (r TaobaoOpenAccountTokenApplyAPIRequest) GetLoginStateExpireIn() int64 {
-	return r._loginStateExpireIn
-}
-
 // SetExt is Ext Setter
 // 用于透传一些业务附加参数
 func (r *TaobaoOpenAccountTokenApplyAPIRequest) SetExt(_ext string) error {
@@ -123,4 +84,43 @@ func (r *TaobaoOpenAccountTokenApplyAPIRequest) SetExt(_ext string) error {
 // GetExt Ext Getter
 func (r TaobaoOpenAccountTokenApplyAPIRequest) GetExt() string {
 	return r._ext
+}
+
+// SetTokenTimestamp is TokenTimestamp Setter
+// 时间戳单位是毫秒
+func (r *TaobaoOpenAccountTokenApplyAPIRequest) SetTokenTimestamp(_tokenTimestamp int64) error {
+	r._tokenTimestamp = _tokenTimestamp
+	r.Set("token_timestamp", _tokenTimestamp)
+	return nil
+}
+
+// GetTokenTimestamp TokenTimestamp Getter
+func (r TaobaoOpenAccountTokenApplyAPIRequest) GetTokenTimestamp() int64 {
+	return r._tokenTimestamp
+}
+
+// SetOpenAccountId is OpenAccountId Setter
+// open account id
+func (r *TaobaoOpenAccountTokenApplyAPIRequest) SetOpenAccountId(_openAccountId int64) error {
+	r._openAccountId = _openAccountId
+	r.Set("open_account_id", _openAccountId)
+	return nil
+}
+
+// GetOpenAccountId OpenAccountId Getter
+func (r TaobaoOpenAccountTokenApplyAPIRequest) GetOpenAccountId() int64 {
+	return r._openAccountId
+}
+
+// SetLoginStateExpireIn is LoginStateExpireIn Setter
+// ISV APP的登录态时长单位是秒
+func (r *TaobaoOpenAccountTokenApplyAPIRequest) SetLoginStateExpireIn(_loginStateExpireIn int64) error {
+	r._loginStateExpireIn = _loginStateExpireIn
+	r.Set("login_state_expire_in", _loginStateExpireIn)
+	return nil
+}
+
+// GetLoginStateExpireIn LoginStateExpireIn Getter
+func (r TaobaoOpenAccountTokenApplyAPIRequest) GetLoginStateExpireIn() int64 {
+	return r._loginStateExpireIn
 }

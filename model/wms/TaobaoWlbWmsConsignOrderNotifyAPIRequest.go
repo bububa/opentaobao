@@ -12,14 +12,14 @@ import (
 // 发货订单通知
 type TaobaoWlbWmsConsignOrderNotifyAPIRequest struct {
 	model.Params
+	// 订单商品信息列表
+	_orderItemList []Orderitemlistwlbwmsconsignordernotify
+	// 发票信息列表
+	_invoiceInfoList []Invoicelistwlbwmsconsignordernotify
 	// ERP订单号
 	_orderCode string
-	// 单据类型 201 一般交易出库单 202 B2B交易出库单 502 换货出库单 503 补发出库单
-	_orderType int64
 	// 订单标识 (1: cod –货到付款，4:invoiceinfo-需要发票)
 	_orderFlag string
-	// 订单来源（213 天猫，201 淘宝，214 京东，202 1688 阿里中文站 ，203 苏宁在线，204 亚马逊中国，205 当当，208 1号店，207 唯品会，209 国美在线，210 拍拍，206 易贝ebay，211 聚美优品，212 乐蜂网，215 邮乐，216 凡客，217 优购，218 银泰，219 易讯，221 聚尚网，222 蘑菇街，223 POS门店，301 其他）
-	_orderSource int64
 	// 仓库编码，此字段为空时，由菜鸟路由仓库发货
 	_storeCode string
 	// 快递公司编码，此字段为空时，由菜鸟选择快递配送
@@ -36,6 +36,14 @@ type TaobaoWlbWmsConsignOrderNotifyAPIRequest struct {
 	_orderCreateTime string
 	// 订单审核时间,ERP创建支付时间
 	_orderExaminationTime string
+	// 拓展属性
+	_extendFields string
+	// 备注
+	_remark string
+	// 单据类型 201 一般交易出库单 202 B2B交易出库单 502 换货出库单 503 补发出库单
+	_orderType int64
+	// 订单来源（213 天猫，201 淘宝，214 京东，202 1688 阿里中文站 ，203 苏宁在线，204 亚马逊中国，205 当当，208 1号店，207 唯品会，209 国美在线，210 拍拍，206 易贝ebay，211 聚美优品，212 乐蜂网，215 邮乐，216 凡客，217 优购，218 银泰，219 易讯，221 聚尚网，222 蘑菇街，223 POS门店，301 其他）
+	_orderSource int64
 	// 订单总金额,=总商品金额-订单优惠金额+快递费用，单位分
 	_orderAmount int64
 	// 订单优惠金额，整单优惠金额，单位分
@@ -54,14 +62,6 @@ type TaobaoWlbWmsConsignOrderNotifyAPIRequest struct {
 	_receiverInfo *Receiverwlbwmsconsignordernotify
 	// 发货方信息
 	_senderInfo *Senderwlbwmsconsignordernotify
-	// 订单商品信息列表
-	_orderItemList []Orderitemlistwlbwmsconsignordernotify
-	// 发票信息列表
-	_invoiceInfoList []Invoicelistwlbwmsconsignordernotify
-	// 拓展属性
-	_extendFields string
-	// 备注
-	_remark string
 }
 
 // NewTaobaoWlbWmsConsignOrderNotifyRequest 初始化TaobaoWlbWmsConsignOrderNotifyAPIRequest对象
@@ -85,6 +85,32 @@ func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetOrderItemList is OrderItemList Setter
+// 订单商品信息列表
+func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderItemList(_orderItemList []Orderitemlistwlbwmsconsignordernotify) error {
+	r._orderItemList = _orderItemList
+	r.Set("order_item_list", _orderItemList)
+	return nil
+}
+
+// GetOrderItemList OrderItemList Getter
+func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderItemList() []Orderitemlistwlbwmsconsignordernotify {
+	return r._orderItemList
+}
+
+// SetInvoiceInfoList is InvoiceInfoList Setter
+// 发票信息列表
+func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetInvoiceInfoList(_invoiceInfoList []Invoicelistwlbwmsconsignordernotify) error {
+	r._invoiceInfoList = _invoiceInfoList
+	r.Set("invoice_info_list", _invoiceInfoList)
+	return nil
+}
+
+// GetInvoiceInfoList InvoiceInfoList Getter
+func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetInvoiceInfoList() []Invoicelistwlbwmsconsignordernotify {
+	return r._invoiceInfoList
+}
+
 // SetOrderCode is OrderCode Setter
 // ERP订单号
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderCode(_orderCode string) error {
@@ -98,19 +124,6 @@ func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// SetOrderType is OrderType Setter
-// 单据类型 201 一般交易出库单 202 B2B交易出库单 502 换货出库单 503 补发出库单
-func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderType(_orderType int64) error {
-	r._orderType = _orderType
-	r.Set("order_type", _orderType)
-	return nil
-}
-
-// GetOrderType OrderType Getter
-func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderType() int64 {
-	return r._orderType
-}
-
 // SetOrderFlag is OrderFlag Setter
 // 订单标识 (1: cod –货到付款，4:invoiceinfo-需要发票)
 func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderFlag(_orderFlag string) error {
@@ -122,19 +135,6 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderFlag(_orderFlag strin
 // GetOrderFlag OrderFlag Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderFlag() string {
 	return r._orderFlag
-}
-
-// SetOrderSource is OrderSource Setter
-// 订单来源（213 天猫，201 淘宝，214 京东，202 1688 阿里中文站 ，203 苏宁在线，204 亚马逊中国，205 当当，208 1号店，207 唯品会，209 国美在线，210 拍拍，206 易贝ebay，211 聚美优品，212 乐蜂网，215 邮乐，216 凡客，217 优购，218 银泰，219 易讯，221 聚尚网，222 蘑菇街，223 POS门店，301 其他）
-func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderSource(_orderSource int64) error {
-	r._orderSource = _orderSource
-	r.Set("order_source", _orderSource)
-	return nil
-}
-
-// GetOrderSource OrderSource Getter
-func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderSource() int64 {
-	return r._orderSource
 }
 
 // SetStoreCode is StoreCode Setter
@@ -239,6 +239,58 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderExaminationTime(_orde
 // GetOrderExaminationTime OrderExaminationTime Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderExaminationTime() string {
 	return r._orderExaminationTime
+}
+
+// SetExtendFields is ExtendFields Setter
+// 拓展属性
+func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetExtendFields(_extendFields string) error {
+	r._extendFields = _extendFields
+	r.Set("extend_fields", _extendFields)
+	return nil
+}
+
+// GetExtendFields ExtendFields Getter
+func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetExtendFields() string {
+	return r._extendFields
+}
+
+// SetRemark is Remark Setter
+// 备注
+func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetRemark(_remark string) error {
+	r._remark = _remark
+	r.Set("remark", _remark)
+	return nil
+}
+
+// GetRemark Remark Getter
+func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetRemark() string {
+	return r._remark
+}
+
+// SetOrderType is OrderType Setter
+// 单据类型 201 一般交易出库单 202 B2B交易出库单 502 换货出库单 503 补发出库单
+func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderType(_orderType int64) error {
+	r._orderType = _orderType
+	r.Set("order_type", _orderType)
+	return nil
+}
+
+// GetOrderType OrderType Getter
+func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderType() int64 {
+	return r._orderType
+}
+
+// SetOrderSource is OrderSource Setter
+// 订单来源（213 天猫，201 淘宝，214 京东，202 1688 阿里中文站 ，203 苏宁在线，204 亚马逊中国，205 当当，208 1号店，207 唯品会，209 国美在线，210 拍拍，206 易贝ebay，211 聚美优品，212 乐蜂网，215 邮乐，216 凡客，217 优购，218 银泰，219 易讯，221 聚尚网，222 蘑菇街，223 POS门店，301 其他）
+func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderSource(_orderSource int64) error {
+	r._orderSource = _orderSource
+	r.Set("order_source", _orderSource)
+	return nil
+}
+
+// GetOrderSource OrderSource Getter
+func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderSource() int64 {
+	return r._orderSource
 }
 
 // SetOrderAmount is OrderAmount Setter
@@ -356,56 +408,4 @@ func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *Se
 // GetSenderInfo SenderInfo Getter
 func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetSenderInfo() *Senderwlbwmsconsignordernotify {
 	return r._senderInfo
-}
-
-// SetOrderItemList is OrderItemList Setter
-// 订单商品信息列表
-func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetOrderItemList(_orderItemList []Orderitemlistwlbwmsconsignordernotify) error {
-	r._orderItemList = _orderItemList
-	r.Set("order_item_list", _orderItemList)
-	return nil
-}
-
-// GetOrderItemList OrderItemList Getter
-func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetOrderItemList() []Orderitemlistwlbwmsconsignordernotify {
-	return r._orderItemList
-}
-
-// SetInvoiceInfoList is InvoiceInfoList Setter
-// 发票信息列表
-func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetInvoiceInfoList(_invoiceInfoList []Invoicelistwlbwmsconsignordernotify) error {
-	r._invoiceInfoList = _invoiceInfoList
-	r.Set("invoice_info_list", _invoiceInfoList)
-	return nil
-}
-
-// GetInvoiceInfoList InvoiceInfoList Getter
-func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetInvoiceInfoList() []Invoicelistwlbwmsconsignordernotify {
-	return r._invoiceInfoList
-}
-
-// SetExtendFields is ExtendFields Setter
-// 拓展属性
-func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetExtendFields(_extendFields string) error {
-	r._extendFields = _extendFields
-	r.Set("extend_fields", _extendFields)
-	return nil
-}
-
-// GetExtendFields ExtendFields Getter
-func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetExtendFields() string {
-	return r._extendFields
-}
-
-// SetRemark is Remark Setter
-// 备注
-func (r *TaobaoWlbWmsConsignOrderNotifyAPIRequest) SetRemark(_remark string) error {
-	r._remark = _remark
-	r.Set("remark", _remark)
-	return nil
-}
-
-// GetRemark Remark Getter
-func (r TaobaoWlbWmsConsignOrderNotifyAPIRequest) GetRemark() string {
-	return r._remark
 }

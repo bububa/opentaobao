@@ -6,8 +6,6 @@ type Dto struct {
 	OrderType string `json:"order_type,omitempty" xml:"order_type,omitempty"`
 	// 订单编号
 	OrderNo string `json:"order_no,omitempty" xml:"order_no,omitempty"`
-	// 购买数量
-	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 订单状态
 	CurrentStatus string `json:"current_status,omitempty" xml:"current_status,omitempty"`
 	// 服务编码
@@ -30,14 +28,16 @@ type Dto struct {
 	OrderTitle string `json:"order_title,omitempty" xml:"order_title,omitempty"`
 	// 规格编码
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
-	// 购买者阿里id
-	BuyerAliId int64 `json:"buyer_ali_id,omitempty" xml:"buyer_ali_id,omitempty"`
 	// 购买者登陆账号
 	BuyerLoginId string `json:"buyer_login_id,omitempty" xml:"buyer_login_id,omitempty"`
-	// 服务分类id
-	ServiceCategoryId int64 `json:"service_category_id,omitempty" xml:"service_category_id,omitempty"`
 	// 服务分类名称
 	ServiceCategory string `json:"service_category,omitempty" xml:"service_category,omitempty"`
 	// 用户购买sku
 	ServiceSkuLabel string `json:"service_sku_label,omitempty" xml:"service_sku_label,omitempty"`
+	// 购买数量
+	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
+	// 购买者阿里id
+	BuyerAliId int64 `json:"buyer_ali_id,omitempty" xml:"buyer_ali_id,omitempty"`
+	// 服务分类id
+	ServiceCategoryId int64 `json:"service_category_id,omitempty" xml:"service_category_id,omitempty"`
 }

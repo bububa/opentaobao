@@ -18,20 +18,22 @@ type TaobaoWlbItemUpdateAPIRequest struct {
 	_deletePropertyKeyList string
 	// 需要修改的属性值的列表
 	_updatePropertyValueList string
-	// 要修改的商品id
-	_id int64
 	// 要修改的商品名称
 	_name string
 	// 要修改的商品标题
 	_title string
 	// 要修改的商品备注
 	_remark string
-	// 是否易碎品
-	_isFriable bool
-	// 是否危险品
-	_isDangerous bool
 	// 商品颜色
 	_color string
+	// 商品货类
+	_goodsCat string
+	// 商品计价货类
+	_pricingCat string
+	// 商品包装材料类型
+	_packageMaterial string
+	// 要修改的商品id
+	_id int64
 	// 商品重量，单位G
 	_weight int64
 	// 商品长度，单位厘米
@@ -42,12 +44,10 @@ type TaobaoWlbItemUpdateAPIRequest struct {
 	_height int64
 	// 商品体积，单位立方厘米
 	_volume int64
-	// 商品货类
-	_goodsCat string
-	// 商品计价货类
-	_pricingCat string
-	// 商品包装材料类型
-	_packageMaterial string
+	// 是否易碎品
+	_isFriable bool
+	// 是否危险品
+	_isDangerous bool
 }
 
 // NewTaobaoWlbItemUpdateRequest 初始化TaobaoWlbItemUpdateAPIRequest对象
@@ -110,19 +110,6 @@ func (r TaobaoWlbItemUpdateAPIRequest) GetUpdatePropertyValueList() string {
 	return r._updatePropertyValueList
 }
 
-// SetId is Id Setter
-// 要修改的商品id
-func (r *TaobaoWlbItemUpdateAPIRequest) SetId(_id int64) error {
-	r._id = _id
-	r.Set("id", _id)
-	return nil
-}
-
-// GetId Id Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetId() int64 {
-	return r._id
-}
-
 // SetName is Name Setter
 // 要修改的商品名称
 func (r *TaobaoWlbItemUpdateAPIRequest) SetName(_name string) error {
@@ -162,32 +149,6 @@ func (r TaobaoWlbItemUpdateAPIRequest) GetRemark() string {
 	return r._remark
 }
 
-// SetIsFriable is IsFriable Setter
-// 是否易碎品
-func (r *TaobaoWlbItemUpdateAPIRequest) SetIsFriable(_isFriable bool) error {
-	r._isFriable = _isFriable
-	r.Set("is_friable", _isFriable)
-	return nil
-}
-
-// GetIsFriable IsFriable Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetIsFriable() bool {
-	return r._isFriable
-}
-
-// SetIsDangerous is IsDangerous Setter
-// 是否危险品
-func (r *TaobaoWlbItemUpdateAPIRequest) SetIsDangerous(_isDangerous bool) error {
-	r._isDangerous = _isDangerous
-	r.Set("is_dangerous", _isDangerous)
-	return nil
-}
-
-// GetIsDangerous IsDangerous Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetIsDangerous() bool {
-	return r._isDangerous
-}
-
 // SetColor is Color Setter
 // 商品颜色
 func (r *TaobaoWlbItemUpdateAPIRequest) SetColor(_color string) error {
@@ -199,6 +160,58 @@ func (r *TaobaoWlbItemUpdateAPIRequest) SetColor(_color string) error {
 // GetColor Color Getter
 func (r TaobaoWlbItemUpdateAPIRequest) GetColor() string {
 	return r._color
+}
+
+// SetGoodsCat is GoodsCat Setter
+// 商品货类
+func (r *TaobaoWlbItemUpdateAPIRequest) SetGoodsCat(_goodsCat string) error {
+	r._goodsCat = _goodsCat
+	r.Set("goods_cat", _goodsCat)
+	return nil
+}
+
+// GetGoodsCat GoodsCat Getter
+func (r TaobaoWlbItemUpdateAPIRequest) GetGoodsCat() string {
+	return r._goodsCat
+}
+
+// SetPricingCat is PricingCat Setter
+// 商品计价货类
+func (r *TaobaoWlbItemUpdateAPIRequest) SetPricingCat(_pricingCat string) error {
+	r._pricingCat = _pricingCat
+	r.Set("pricing_cat", _pricingCat)
+	return nil
+}
+
+// GetPricingCat PricingCat Getter
+func (r TaobaoWlbItemUpdateAPIRequest) GetPricingCat() string {
+	return r._pricingCat
+}
+
+// SetPackageMaterial is PackageMaterial Setter
+// 商品包装材料类型
+func (r *TaobaoWlbItemUpdateAPIRequest) SetPackageMaterial(_packageMaterial string) error {
+	r._packageMaterial = _packageMaterial
+	r.Set("package_material", _packageMaterial)
+	return nil
+}
+
+// GetPackageMaterial PackageMaterial Getter
+func (r TaobaoWlbItemUpdateAPIRequest) GetPackageMaterial() string {
+	return r._packageMaterial
+}
+
+// SetId is Id Setter
+// 要修改的商品id
+func (r *TaobaoWlbItemUpdateAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// GetId Id Getter
+func (r TaobaoWlbItemUpdateAPIRequest) GetId() int64 {
+	return r._id
 }
 
 // SetWeight is Weight Setter
@@ -266,41 +279,28 @@ func (r TaobaoWlbItemUpdateAPIRequest) GetVolume() int64 {
 	return r._volume
 }
 
-// SetGoodsCat is GoodsCat Setter
-// 商品货类
-func (r *TaobaoWlbItemUpdateAPIRequest) SetGoodsCat(_goodsCat string) error {
-	r._goodsCat = _goodsCat
-	r.Set("goods_cat", _goodsCat)
+// SetIsFriable is IsFriable Setter
+// 是否易碎品
+func (r *TaobaoWlbItemUpdateAPIRequest) SetIsFriable(_isFriable bool) error {
+	r._isFriable = _isFriable
+	r.Set("is_friable", _isFriable)
 	return nil
 }
 
-// GetGoodsCat GoodsCat Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetGoodsCat() string {
-	return r._goodsCat
+// GetIsFriable IsFriable Getter
+func (r TaobaoWlbItemUpdateAPIRequest) GetIsFriable() bool {
+	return r._isFriable
 }
 
-// SetPricingCat is PricingCat Setter
-// 商品计价货类
-func (r *TaobaoWlbItemUpdateAPIRequest) SetPricingCat(_pricingCat string) error {
-	r._pricingCat = _pricingCat
-	r.Set("pricing_cat", _pricingCat)
+// SetIsDangerous is IsDangerous Setter
+// 是否危险品
+func (r *TaobaoWlbItemUpdateAPIRequest) SetIsDangerous(_isDangerous bool) error {
+	r._isDangerous = _isDangerous
+	r.Set("is_dangerous", _isDangerous)
 	return nil
 }
 
-// GetPricingCat PricingCat Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetPricingCat() string {
-	return r._pricingCat
-}
-
-// SetPackageMaterial is PackageMaterial Setter
-// 商品包装材料类型
-func (r *TaobaoWlbItemUpdateAPIRequest) SetPackageMaterial(_packageMaterial string) error {
-	r._packageMaterial = _packageMaterial
-	r.Set("package_material", _packageMaterial)
-	return nil
-}
-
-// GetPackageMaterial PackageMaterial Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetPackageMaterial() string {
-	return r._packageMaterial
+// GetIsDangerous IsDangerous Getter
+func (r TaobaoWlbItemUpdateAPIRequest) GetIsDangerous() bool {
+	return r._isDangerous
 }

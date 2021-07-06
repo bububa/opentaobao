@@ -12,10 +12,10 @@ import (
 // 供厂商获取音乐列表
 type TaobaoAilabAicloudTopMusicSearchAPIRequest struct {
 	model.Params
-	// botId值
-	_botId int64
 	// 筛选条件，目前只支持name、type和style
 	_params string
+	// botId值
+	_botId int64
 	// 分页页码
 	_pageNo int64
 	// 分页页大小
@@ -43,19 +43,6 @@ func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetBotId is BotId Setter
-// botId值
-func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetBotId(_botId int64) error {
-	r._botId = _botId
-	r.Set("bot_id", _botId)
-	return nil
-}
-
-// GetBotId BotId Getter
-func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetBotId() int64 {
-	return r._botId
-}
-
 // SetParams is Params Setter
 // 筛选条件，目前只支持name、type和style
 func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetParams(_params string) error {
@@ -67,6 +54,19 @@ func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetParams(_params string) e
 // GetParams Params Getter
 func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetParams() string {
 	return r._params
+}
+
+// SetBotId is BotId Setter
+// botId值
+func (r *TaobaoAilabAicloudTopMusicSearchAPIRequest) SetBotId(_botId int64) error {
+	r._botId = _botId
+	r.Set("bot_id", _botId)
+	return nil
+}
+
+// GetBotId BotId Getter
+func (r TaobaoAilabAicloudTopMusicSearchAPIRequest) GetBotId() int64 {
+	return r._botId
 }
 
 // SetPageNo is PageNo Setter

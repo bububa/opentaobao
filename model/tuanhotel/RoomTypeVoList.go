@@ -6,8 +6,6 @@ type RoomTypeVoList struct {
 	NetworkService string `json:"network_service,omitempty" xml:"network_service,omitempty"`
 	// 面积
 	Area string `json:"area,omitempty" xml:"area,omitempty"`
-	// 是否标准
-	Standard bool `json:"standard,omitempty" xml:"standard,omitempty"`
 	// 床型
 	Bed string `json:"bed,omitempty" xml:"bed,omitempty"`
 	// 名称
@@ -20,4 +18,6 @@ type RoomTypeVoList struct {
 	Rid string `json:"rid,omitempty" xml:"rid,omitempty"`
 	// 设施
 	Facility string `json:"facility,omitempty" xml:"facility,omitempty"`
+	// 是否标准
+	Standard bool `json:"standard,omitempty" xml:"standard,omitempty"`
 }

@@ -40,8 +40,6 @@ type ItemChangeBo struct {
 	CustomizeFeatureJ string `json:"customize_feature_j,omitempty" xml:"customize_feature_j,omitempty"`
 	// 二维码图片URL
 	ItemQrCode string `json:"item_qr_code,omitempty" xml:"item_qr_code,omitempty"`
-	// 是否优惠
-	IfPromotion bool `json:"if_promotion,omitempty" xml:"if_promotion,omitempty"`
 	// 优惠结束时间
 	PromotionEnd string `json:"promotion_end,omitempty" xml:"promotion_end,omitempty"`
 	// 额外扩展信息
@@ -68,20 +66,22 @@ type ItemChangeBo struct {
 	ItemTitle string `json:"item_title,omitempty" xml:"item_title,omitempty"`
 	// 优惠文案
 	PromotionText string `json:"promotion_text,omitempty" xml:"promotion_text,omitempty"`
-	// 商品状态
-	ItemStatus int64 `json:"item_status,omitempty" xml:"item_status,omitempty"`
-	// 商品ID
-	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 一级商品类目id
 	ForestFirstCatId string `json:"forest_first_cat_id,omitempty" xml:"forest_first_cat_id,omitempty"`
 	// 商品短标题
 	ShortTitle string `json:"short_title,omitempty" xml:"short_title,omitempty"`
-	// 是否溯源
-	IfSourceCode bool `json:"if_source_code,omitempty" xml:"if_source_code,omitempty"`
 	// 产地
 	ProductionPlace string `json:"production_place,omitempty" xml:"production_place,omitempty"`
 	// 商品变更状态
 	ItemChangeStatus string `json:"item_change_status,omitempty" xml:"item_change_status,omitempty"`
 	// 促销原因
 	PromotionReason string `json:"promotion_reason,omitempty" xml:"promotion_reason,omitempty"`
+	// 商品状态
+	ItemStatus int64 `json:"item_status,omitempty" xml:"item_status,omitempty"`
+	// 商品ID
+	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+	// 是否优惠
+	IfPromotion bool `json:"if_promotion,omitempty" xml:"if_promotion,omitempty"`
+	// 是否溯源
+	IfSourceCode bool `json:"if_source_code,omitempty" xml:"if_source_code,omitempty"`
 }

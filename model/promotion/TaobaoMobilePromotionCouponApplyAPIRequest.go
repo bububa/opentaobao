@@ -14,12 +14,12 @@ type TaobaoMobilePromotionCouponApplyAPIRequest struct {
 	model.Params
 	// 请求唯一id，问题排查
 	_traceId string
-	// 传播id
-	_spreadId int64
 	// 广播id
 	_feedId string
 	// 三方活动id
 	_bizId string
+	// 传播id
+	_spreadId int64
 }
 
 // NewTaobaoMobilePromotionCouponApplyRequest 初始化TaobaoMobilePromotionCouponApplyAPIRequest对象
@@ -56,19 +56,6 @@ func (r TaobaoMobilePromotionCouponApplyAPIRequest) GetTraceId() string {
 	return r._traceId
 }
 
-// SetSpreadId is SpreadId Setter
-// 传播id
-func (r *TaobaoMobilePromotionCouponApplyAPIRequest) SetSpreadId(_spreadId int64) error {
-	r._spreadId = _spreadId
-	r.Set("spread_id", _spreadId)
-	return nil
-}
-
-// GetSpreadId SpreadId Getter
-func (r TaobaoMobilePromotionCouponApplyAPIRequest) GetSpreadId() int64 {
-	return r._spreadId
-}
-
 // SetFeedId is FeedId Setter
 // 广播id
 func (r *TaobaoMobilePromotionCouponApplyAPIRequest) SetFeedId(_feedId string) error {
@@ -93,4 +80,17 @@ func (r *TaobaoMobilePromotionCouponApplyAPIRequest) SetBizId(_bizId string) err
 // GetBizId BizId Getter
 func (r TaobaoMobilePromotionCouponApplyAPIRequest) GetBizId() string {
 	return r._bizId
+}
+
+// SetSpreadId is SpreadId Setter
+// 传播id
+func (r *TaobaoMobilePromotionCouponApplyAPIRequest) SetSpreadId(_spreadId int64) error {
+	r._spreadId = _spreadId
+	r.Set("spread_id", _spreadId)
+	return nil
+}
+
+// GetSpreadId SpreadId Getter
+func (r TaobaoMobilePromotionCouponApplyAPIRequest) GetSpreadId() int64 {
+	return r._spreadId
 }

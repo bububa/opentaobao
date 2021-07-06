@@ -2,6 +2,8 @@ package ascpchannel
 
 // PresalesorderTest 结构体
 type PresalesorderTest struct {
+	// 订单信息
+	OrderLines []Orderlines `json:"order_lines,omitempty" xml:"order_lines>orderlines,omitempty"`
 	// 出库单号
 	PresalesOrderCode string `json:"presales_order_code,omitempty" xml:"presales_order_code,omitempty"`
 	// 前台订单(店铺订单)创建时间(下单时间)
@@ -10,12 +12,10 @@ type PresalesorderTest struct {
 	TotalAmount string `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
 	// 仓库
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
-	// 发件人信息
-	SenderInfo *Senderinfo `json:"sender_info,omitempty" xml:"sender_info,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
+	// 发件人信息
+	SenderInfo *Senderinfo `json:"sender_info,omitempty" xml:"sender_info,omitempty"`
 	// 收件人信息
 	ReceiverInfo *Receiverinfo `json:"receiver_info,omitempty" xml:"receiver_info,omitempty"`
-	// 订单信息
-	OrderLines []Orderlines `json:"order_lines,omitempty" xml:"order_lines>orderlines,omitempty"`
 }

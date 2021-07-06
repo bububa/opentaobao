@@ -2,10 +2,6 @@ package tmallcar
 
 // XCarSysModelDto 结构体
 type XCarSysModelDto struct {
-	// 品牌pid
-	BrandPid int64 `json:"brand_pid,omitempty" xml:"brand_pid,omitempty"`
-	// 品牌vid
-	BrandVid int64 `json:"brand_vid,omitempty" xml:"brand_vid,omitempty"`
 	// 车型最高降幅
 	CarModelMaximumDecline string `json:"car_model_maximum_decline,omitempty" xml:"car_model_maximum_decline,omitempty"`
 	// 燃油费用
@@ -14,10 +10,6 @@ type XCarSysModelDto struct {
 	InsuranceFree string `json:"insurance_free,omitempty" xml:"insurance_free,omitempty"`
 	// 养车费用
 	KeepCarFree string `json:"keep_car_free,omitempty" xml:"keep_car_free,omitempty"`
-	// 车系属性id
-	LinePid int64 `json:"line_pid,omitempty" xml:"line_pid,omitempty"`
-	// 车系值id
-	LineVid int64 `json:"line_vid,omitempty" xml:"line_vid,omitempty"`
 	// 本地参考价
 	LocalRefPriceRange string `json:"local_ref_price_range,omitempty" xml:"local_ref_price_range,omitempty"`
 	// 保养费用
@@ -26,6 +18,14 @@ type XCarSysModelDto struct {
 	ManuGuiPrice string `json:"manu_gui_price,omitempty" xml:"manu_gui_price,omitempty"`
 	// 媒体库，超大json
 	MediaConfig string `json:"media_config,omitempty" xml:"media_config,omitempty"`
+	// 品牌pid
+	BrandPid int64 `json:"brand_pid,omitempty" xml:"brand_pid,omitempty"`
+	// 品牌vid
+	BrandVid int64 `json:"brand_vid,omitempty" xml:"brand_vid,omitempty"`
+	// 车系属性id
+	LinePid int64 `json:"line_pid,omitempty" xml:"line_pid,omitempty"`
+	// 车系值id
+	LineVid int64 `json:"line_vid,omitempty" xml:"line_vid,omitempty"`
 	// 型号属性id
 	ModelPid int64 `json:"model_pid,omitempty" xml:"model_pid,omitempty"`
 	// 型号值id

@@ -2,10 +2,18 @@ package campus
 
 // SpaceGroupQuery 结构体
 type SpaceGroupQuery struct {
-	// 分页限制
-	Limit int64 `json:"limit,omitempty" xml:"limit,omitempty"`
 	// 分组ID集合
 	Ids []int64 `json:"ids,omitempty" xml:"ids>int64,omitempty"`
+	// 类型编码
+	TypeCode string `json:"type_code,omitempty" xml:"type_code,omitempty"`
+	// 空间分组编码
+	Code string `json:"code,omitempty" xml:"code,omitempty"`
+	// 分组名称
+	Name string `json:"name,omitempty" xml:"name,omitempty"`
+	// 分组名称或者code
+	NameOrCode string `json:"name_or_code,omitempty" xml:"name_or_code,omitempty"`
+	// 分页限制
+	Limit int64 `json:"limit,omitempty" xml:"limit,omitempty"`
 	// 分组ID
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
 	// 楼层ID
@@ -20,12 +28,4 @@ type SpaceGroupQuery struct {
 	CampusId int64 `json:"campus_id,omitempty" xml:"campus_id,omitempty"`
 	// 楼宇ID
 	BuildingId int64 `json:"building_id,omitempty" xml:"building_id,omitempty"`
-	// 类型编码
-	TypeCode string `json:"type_code,omitempty" xml:"type_code,omitempty"`
-	// 空间分组编码
-	Code string `json:"code,omitempty" xml:"code,omitempty"`
-	// 分组名称
-	Name string `json:"name,omitempty" xml:"name,omitempty"`
-	// 分组名称或者code
-	NameOrCode string `json:"name_or_code,omitempty" xml:"name_or_code,omitempty"`
 }

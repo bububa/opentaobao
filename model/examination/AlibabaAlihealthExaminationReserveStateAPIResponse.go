@@ -22,8 +22,8 @@ type AlibabaAlihealthExaminationReserveStateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果描述
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
-	// 预约信息
-	CooperationOrderInfo *CooperationOrderInfo `json:"cooperation_order_info,omitempty" xml:"cooperation_order_info,omitempty"`
 	// 返回结果编码
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
+	// 预约信息
+	CooperationOrderInfo *CooperationOrderInfo `json:"cooperation_order_info,omitempty" xml:"cooperation_order_info,omitempty"`
 }

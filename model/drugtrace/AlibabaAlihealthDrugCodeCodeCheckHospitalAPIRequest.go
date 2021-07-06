@@ -12,6 +12,8 @@ import (
 // 码核查状态同步-医院
 type AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest struct {
 	model.Params
+	// 码列表
+	_codes []string
 	// 认证企业refEntId
 	_authRefEntId string
 	// 企业refEntId
@@ -24,8 +26,6 @@ type AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest struct {
 	_terminalType string
 	// 核销类型
 	_cType string
-	// 码列表
-	_codes []string
 }
 
 // NewAlibabaAlihealthDrugCodeCodeCheckHospitalRequest 初始化AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest对象
@@ -47,6 +47,19 @@ func (r AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) GetApiParams() url.
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetCodes is Codes Setter
+// 码列表
+func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetCodes(_codes []string) error {
+	r._codes = _codes
+	r.Set("codes", _codes)
+	return nil
+}
+
+// GetCodes Codes Getter
+func (r AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) GetCodes() []string {
+	return r._codes
 }
 
 // SetAuthRefEntId is AuthRefEntId Setter
@@ -125,17 +138,4 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetCType(_cType st
 // GetCType CType Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) GetCType() string {
 	return r._cType
-}
-
-// SetCodes is Codes Setter
-// 码列表
-func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) SetCodes(_codes []string) error {
-	r._codes = _codes
-	r.Set("codes", _codes)
-	return nil
-}
-
-// GetCodes Codes Getter
-func (r AlibabaAlihealthDrugCodeCodeCheckHospitalAPIRequest) GetCodes() []string {
-	return r._codes
 }

@@ -12,6 +12,8 @@ import (
 // 支付宝疫苗POV发布公告提醒信息
 type AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest struct {
 	model.Params
+	// 需要接受公告的用户ID，默认是所有用户都可以看到
+	_alipayUserIds []string
 	// 接种点编码（通知方）
 	_povNo string
 	// 公告标题
@@ -22,8 +24,6 @@ type AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest struct {
 	_noticeType string
 	// 公告发布时间
 	_noticeTime string
-	// 需要接受公告的用户ID，默认是所有用户都可以看到
-	_alipayUserIds []string
 	// 接种点名称
 	_povName string
 }
@@ -47,6 +47,19 @@ func (r AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) GetApiParams() u
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetAlipayUserIds is AlipayUserIds Setter
+// 需要接受公告的用户ID，默认是所有用户都可以看到
+func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetAlipayUserIds(_alipayUserIds []string) error {
+	r._alipayUserIds = _alipayUserIds
+	r.Set("alipay_user_ids", _alipayUserIds)
+	return nil
+}
+
+// GetAlipayUserIds AlipayUserIds Getter
+func (r AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) GetAlipayUserIds() []string {
+	return r._alipayUserIds
 }
 
 // SetPovNo is PovNo Setter
@@ -112,19 +125,6 @@ func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetNoticeTime(_
 // GetNoticeTime NoticeTime Getter
 func (r AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) GetNoticeTime() string {
 	return r._noticeTime
-}
-
-// SetAlipayUserIds is AlipayUserIds Setter
-// 需要接受公告的用户ID，默认是所有用户都可以看到
-func (r *AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) SetAlipayUserIds(_alipayUserIds []string) error {
-	r._alipayUserIds = _alipayUserIds
-	r.Set("alipay_user_ids", _alipayUserIds)
-	return nil
-}
-
-// GetAlipayUserIds AlipayUserIds Getter
-func (r AlibabaHealthVaccinNoticeAnnouncementPublishAPIRequest) GetAlipayUserIds() []string {
-	return r._alipayUserIds
 }
 
 // SetPovName is PovName Setter

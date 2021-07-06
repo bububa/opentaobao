@@ -12,12 +12,12 @@ import (
 // 根据指定的资源获取所有中转仓列表
 type TaobaoWlbImportsResourceTransferstoreGetAPIRequest struct {
 	model.Params
+	// 商品前台叶子类目ID
+	_cids []int64
 	// 通过taobao.wlb.imports.resource.get接口查询出来的资源ID
 	_resourceId int64
 	// 卖家发货地址的区域ID，如果不填则为默认发货地址ID
 	_fromId int64
-	// 商品前台叶子类目ID
-	_cids []int64
 	// 买家收货地信息
 	_toAddress *ReciverAddressDo
 }
@@ -41,6 +41,19 @@ func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetApiParams() url.V
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetCids is Cids Setter
+// 商品前台叶子类目ID
+func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetCids(_cids []int64) error {
+	r._cids = _cids
+	r.Set("cids", _cids)
+	return nil
+}
+
+// GetCids Cids Getter
+func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetCids() []int64 {
+	return r._cids
 }
 
 // SetResourceId is ResourceId Setter
@@ -67,19 +80,6 @@ func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetFromId(_fromId i
 // GetFromId FromId Getter
 func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetFromId() int64 {
 	return r._fromId
-}
-
-// SetCids is Cids Setter
-// 商品前台叶子类目ID
-func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetCids(_cids []int64) error {
-	r._cids = _cids
-	r.Set("cids", _cids)
-	return nil
-}
-
-// GetCids Cids Getter
-func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetCids() []int64 {
-	return r._cids
 }
 
 // SetToAddress is ToAddress Setter

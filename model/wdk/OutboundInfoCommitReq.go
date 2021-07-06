@@ -8,8 +8,6 @@ type OutboundInfoCommitReq struct {
 	EstimatedArrivalAt string `json:"estimated_arrival_at,omitempty" xml:"estimated_arrival_at,omitempty"`
 	// 出货时间
 	OutboundAt string `json:"outbound_at,omitempty" xml:"outbound_at,omitempty"`
-	// 收货类型(信任收货、非信任收货)
-	TrustedInbound bool `json:"trusted_inbound,omitempty" xml:"trusted_inbound,omitempty"`
 	// 供应商名称
 	SupplierName string `json:"supplier_name,omitempty" xml:"supplier_name,omitempty"`
 	// 供应商编码
@@ -18,4 +16,6 @@ type OutboundInfoCommitReq struct {
 	AsnOrderNo string `json:"asn_order_no,omitempty" xml:"asn_order_no,omitempty"`
 	// 商家编码，已经废弃
 	MerchantCode string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
+	// 收货类型(信任收货、非信任收货)
+	TrustedInbound bool `json:"trusted_inbound,omitempty" xml:"trusted_inbound,omitempty"`
 }

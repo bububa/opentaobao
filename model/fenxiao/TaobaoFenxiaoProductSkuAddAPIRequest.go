@@ -12,10 +12,6 @@ import (
 // 添加产品SKU信息
 type TaobaoFenxiaoProductSkuAddAPIRequest struct {
 	model.Params
-	// 产品ID
-	_productId int64
-	// sku产品库存，在0到1000000之间，如果不传，则库存为0
-	_quantity int64
 	// 采购基准价，最大值1000000000
 	_standardPrice string
 	// 代销采购价
@@ -26,6 +22,10 @@ type TaobaoFenxiaoProductSkuAddAPIRequest struct {
 	_skuNumber string
 	// 经销采购价
 	_dealerCostPrice string
+	// 产品ID
+	_productId int64
+	// sku产品库存，在0到1000000之间，如果不传，则库存为0
+	_quantity int64
 }
 
 // NewTaobaoFenxiaoProductSkuAddRequest 初始化TaobaoFenxiaoProductSkuAddAPIRequest对象
@@ -47,32 +47,6 @@ func (r TaobaoFenxiaoProductSkuAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetProductId is ProductId Setter
-// 产品ID
-func (r *TaobaoFenxiaoProductSkuAddAPIRequest) SetProductId(_productId int64) error {
-	r._productId = _productId
-	r.Set("product_id", _productId)
-	return nil
-}
-
-// GetProductId ProductId Getter
-func (r TaobaoFenxiaoProductSkuAddAPIRequest) GetProductId() int64 {
-	return r._productId
-}
-
-// SetQuantity is Quantity Setter
-// sku产品库存，在0到1000000之间，如果不传，则库存为0
-func (r *TaobaoFenxiaoProductSkuAddAPIRequest) SetQuantity(_quantity int64) error {
-	r._quantity = _quantity
-	r.Set("quantity", _quantity)
-	return nil
-}
-
-// GetQuantity Quantity Getter
-func (r TaobaoFenxiaoProductSkuAddAPIRequest) GetQuantity() int64 {
-	return r._quantity
 }
 
 // SetStandardPrice is StandardPrice Setter
@@ -138,4 +112,30 @@ func (r *TaobaoFenxiaoProductSkuAddAPIRequest) SetDealerCostPrice(_dealerCostPri
 // GetDealerCostPrice DealerCostPrice Getter
 func (r TaobaoFenxiaoProductSkuAddAPIRequest) GetDealerCostPrice() string {
 	return r._dealerCostPrice
+}
+
+// SetProductId is ProductId Setter
+// 产品ID
+func (r *TaobaoFenxiaoProductSkuAddAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// GetProductId ProductId Getter
+func (r TaobaoFenxiaoProductSkuAddAPIRequest) GetProductId() int64 {
+	return r._productId
+}
+
+// SetQuantity is Quantity Setter
+// sku产品库存，在0到1000000之间，如果不传，则库存为0
+func (r *TaobaoFenxiaoProductSkuAddAPIRequest) SetQuantity(_quantity int64) error {
+	r._quantity = _quantity
+	r.Set("quantity", _quantity)
+	return nil
+}
+
+// GetQuantity Quantity Getter
+func (r TaobaoFenxiaoProductSkuAddAPIRequest) GetQuantity() int64 {
+	return r._quantity
 }

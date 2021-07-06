@@ -1,11 +1,14 @@
 package metadata
 
 import (
+	"sort"
 	"strings"
 )
 
 // ApiTpl SDK API模版结构体
 type ApiTpl struct {
+	RequestParams  []TplParam // 请求参数
+	ResponseParams []TplParam // 返回参数
 	Pkg            string     // 包名
 	ApiName        string     // Api方法名
 	Name           string     // Api结构体名
@@ -14,13 +17,12 @@ type ApiTpl struct {
 	ChineseName    string     // 中文名
 	Desc           string     // 描述
 	IsMultipart    bool       // 是否使用multipart/form
-	RequestParams  []TplParam // 请求参数
-	ResponseParams []TplParam // 返回参数
 	HasRequestId   bool       // 返回参数中是否已包含RequestId
 }
 
 // TplParam SDK API模版字段参数结构体
 type TplParam struct {
+	Obj       []TplParam // 对象类型结构体参数
 	Name      string     // 结构体成员名
 	Label     string     // 第一个字母小写的
 	ParamKey  string     // api 参数的key(json/xml)
@@ -31,7 +33,6 @@ type TplParam struct {
 	IsObject  bool       // 是否是对象
 	IsList    bool       // 是否是数组
 	Required  bool       // 是否必须
-	Obj       []TplParam // 对象类型结构体参数
 }
 
 // IsMultipart 判断SDK API是否需要使用multipart/form post
@@ -47,11 +48,53 @@ func (p TplParam) IsMultipart() bool {
 	return false
 }
 
+func (p TplParam) Size() int {
+	if strings.HasPrefix(p.Type, "*") {
+		return 8
+	}
+	if p.IsList {
+		return 24
+	}
+	switch p.Type {
+	case "string":
+		return 16
+	case "int64":
+		return 8
+	case "float64":
+		return 8
+	case "bool":
+		return 1
+	}
+	return 0
+}
+
+func (p TplParam) Align() int {
+	if p.Type == "bool" {
+		return 1
+	}
+	return 8
+}
+
+func AlignTplParams(params []TplParam) {
+	sort.SliceStable(params, func(i, j int) bool {
+		// first compare aligns of two fields
+		// bigger aligmnet means upper position
+		iAlign := params[i].Align()
+		jAlign := params[j].Align()
+		if iAlign != jAlign {
+			return iAlign > jAlign
+		}
+		// then compare sizes of two fields
+		// bigger size means upper position
+		return params[i].Size() > params[j].Size()
+	})
+}
+
 // TplModel SDK model模版结构体
 type TplModel struct {
+	Params      []TplParam // struct 成员
 	Pkg         string     // 包名
 	Name        string     // struct 名
-	Params      []TplParam // struct 成员
 	ImportModel bool       // 是否import github.com/bububa/opentaobao/model
 }
 

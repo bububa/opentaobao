@@ -6,6 +6,8 @@ type EntrustModel struct {
 	AttachmentList []FileModel `json:"attachment_list,omitempty" xml:"attachment_list>file_model,omitempty"`
 	// 案件ids
 	CaseIds []int64 `json:"case_ids,omitempty" xml:"case_ids>int64,omitempty"`
+	// 委托项
+	EntrustTypes []string `json:"entrust_types,omitempty" xml:"entrust_types>string,omitempty"`
 	// 调解截止时间
 	Deadline string `json:"deadline,omitempty" xml:"deadline,omitempty"`
 	// 备注
@@ -18,8 +20,6 @@ type EntrustModel struct {
 	EntrustPeople string `json:"entrust_people,omitempty" xml:"entrust_people,omitempty"`
 	// 委托时间
 	EntrustTime string `json:"entrust_time,omitempty" xml:"entrust_time,omitempty"`
-	// 委托项
-	EntrustTypes []string `json:"entrust_types,omitempty" xml:"entrust_types>string,omitempty"`
 	// lvms委托编号
 	LvmsEntrustCode string `json:"lvms_entrust_code,omitempty" xml:"lvms_entrust_code,omitempty"`
 	// 主要负责律师

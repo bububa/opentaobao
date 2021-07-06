@@ -12,18 +12,18 @@ import (
 // 商家验码之前的调用接口，用来同步到最新的订单状态并判断是否可以进行验码操作
 type TaobaoVmarketEticketBeforeconsumeAPIRequest struct {
 	model.Params
-	// 需要验码的电子凭证订单ID
-	_orderId int64
 	// 需要验的码
 	_verifyCode string
 	// 安全验证token，需要和发码通知中的token一致
 	_token string
-	// 码商ID,是码商的话必须传递,如果是信任卖家不需要传
-	_codemerchantId int64
 	// 操作员身份ID，如果是码商必须传,如果是信任卖家不需要传
 	_posid string
 	// 手机号码后四位,没有特殊说明请不要传
 	_mobile string
+	// 需要验码的电子凭证订单ID
+	_orderId int64
+	// 码商ID,是码商的话必须传递,如果是信任卖家不需要传
+	_codemerchantId int64
 }
 
 // NewTaobaoVmarketEticketBeforeconsumeRequest 初始化TaobaoVmarketEticketBeforeconsumeAPIRequest对象
@@ -45,19 +45,6 @@ func (r TaobaoVmarketEticketBeforeconsumeAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetOrderId is OrderId Setter
-// 需要验码的电子凭证订单ID
-func (r *TaobaoVmarketEticketBeforeconsumeAPIRequest) SetOrderId(_orderId int64) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
-	return nil
-}
-
-// GetOrderId OrderId Getter
-func (r TaobaoVmarketEticketBeforeconsumeAPIRequest) GetOrderId() int64 {
-	return r._orderId
 }
 
 // SetVerifyCode is VerifyCode Setter
@@ -86,19 +73,6 @@ func (r TaobaoVmarketEticketBeforeconsumeAPIRequest) GetToken() string {
 	return r._token
 }
 
-// SetCodemerchantId is CodemerchantId Setter
-// 码商ID,是码商的话必须传递,如果是信任卖家不需要传
-func (r *TaobaoVmarketEticketBeforeconsumeAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
-	r._codemerchantId = _codemerchantId
-	r.Set("codemerchant_id", _codemerchantId)
-	return nil
-}
-
-// GetCodemerchantId CodemerchantId Getter
-func (r TaobaoVmarketEticketBeforeconsumeAPIRequest) GetCodemerchantId() int64 {
-	return r._codemerchantId
-}
-
 // SetPosid is Posid Setter
 // 操作员身份ID，如果是码商必须传,如果是信任卖家不需要传
 func (r *TaobaoVmarketEticketBeforeconsumeAPIRequest) SetPosid(_posid string) error {
@@ -123,4 +97,30 @@ func (r *TaobaoVmarketEticketBeforeconsumeAPIRequest) SetMobile(_mobile string) 
 // GetMobile Mobile Getter
 func (r TaobaoVmarketEticketBeforeconsumeAPIRequest) GetMobile() string {
 	return r._mobile
+}
+
+// SetOrderId is OrderId Setter
+// 需要验码的电子凭证订单ID
+func (r *TaobaoVmarketEticketBeforeconsumeAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// GetOrderId OrderId Getter
+func (r TaobaoVmarketEticketBeforeconsumeAPIRequest) GetOrderId() int64 {
+	return r._orderId
+}
+
+// SetCodemerchantId is CodemerchantId Setter
+// 码商ID,是码商的话必须传递,如果是信任卖家不需要传
+func (r *TaobaoVmarketEticketBeforeconsumeAPIRequest) SetCodemerchantId(_codemerchantId int64) error {
+	r._codemerchantId = _codemerchantId
+	r.Set("codemerchant_id", _codemerchantId)
+	return nil
+}
+
+// GetCodemerchantId CodemerchantId Getter
+func (r TaobaoVmarketEticketBeforeconsumeAPIRequest) GetCodemerchantId() int64 {
+	return r._codemerchantId
 }

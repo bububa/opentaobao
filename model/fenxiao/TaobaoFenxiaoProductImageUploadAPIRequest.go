@@ -12,16 +12,16 @@ import (
 // 产品主图图片空间相对路径或绝对路径添加或更新，或者是图片上传。如果指定位置的图片已存在，则覆盖原有信息。如果位置为1,自动设为主图；如果位置为0，表示属性图片
 type TaobaoFenxiaoProductImageUploadAPIRequest struct {
 	model.Params
-	// 产品ID
-	_productId int64
 	// 产品主图图片空间相对路径或绝对路径
 	_picPath string
+	// properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
+	_properties string
+	// 产品ID
+	_productId int64
 	// 产品图片
 	_image *model.File
 	// 图片位置，0-14之间。0：操作sku属性图片，1：主图，2-5：细节图，6-14：额外主图
 	_position int64
-	// properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
-	_properties string
 }
 
 // NewTaobaoFenxiaoProductImageUploadRequest 初始化TaobaoFenxiaoProductImageUploadAPIRequest对象
@@ -45,19 +45,6 @@ func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetProductId is ProductId Setter
-// 产品ID
-func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetProductId(_productId int64) error {
-	r._productId = _productId
-	r.Set("product_id", _productId)
-	return nil
-}
-
-// GetProductId ProductId Getter
-func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetProductId() int64 {
-	return r._productId
-}
-
 // SetPicPath is PicPath Setter
 // 产品主图图片空间相对路径或绝对路径
 func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetPicPath(_picPath string) error {
@@ -69,6 +56,32 @@ func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetPicPath(_picPath string) 
 // GetPicPath PicPath Getter
 func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetPicPath() string {
 	return r._picPath
+}
+
+// SetProperties is Properties Setter
+// properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
+func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetProperties(_properties string) error {
+	r._properties = _properties
+	r.Set("properties", _properties)
+	return nil
+}
+
+// GetProperties Properties Getter
+func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetProperties() string {
+	return r._properties
+}
+
+// SetProductId is ProductId Setter
+// 产品ID
+func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// GetProductId ProductId Getter
+func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetProductId() int64 {
+	return r._productId
 }
 
 // SetImage is Image Setter
@@ -95,17 +108,4 @@ func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetPosition(_position int64)
 // GetPosition Position Getter
 func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetPosition() int64 {
 	return r._position
-}
-
-// SetProperties is Properties Setter
-// properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
-func (r *TaobaoFenxiaoProductImageUploadAPIRequest) SetProperties(_properties string) error {
-	r._properties = _properties
-	r.Set("properties", _properties)
-	return nil
-}
-
-// GetProperties Properties Getter
-func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetProperties() string {
-	return r._properties
 }

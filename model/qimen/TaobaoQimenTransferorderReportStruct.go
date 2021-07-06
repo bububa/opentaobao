@@ -2,6 +2,8 @@ package qimen
 
 // TaobaoQimenTransferorderReportStruct 结构体
 type TaobaoQimenTransferorderReportStruct struct {
+	// 项目集
+	Items []Items `json:"items,omitempty" xml:"items>items,omitempty"`
 	// 调拨单号,0,string(50),必填,
 	TransferOrderCode string `json:"transferOrderCode,omitempty" xml:"transferOrderCode,omitempty"`
 	// 调拨出库单号
@@ -24,8 +26,6 @@ type TaobaoQimenTransferorderReportStruct struct {
 	ErpOrderCode string `json:"erpOrderCode,omitempty" xml:"erpOrderCode,omitempty"`
 	// orderStatus
 	OrderStatus string `json:"orderStatus,omitempty" xml:"orderStatus,omitempty"`
-	// 项目集
-	Items []Items `json:"items,omitempty" xml:"items>items,omitempty"`
 	// 响应结果:success|failure,success,string(10),必填,
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应码,0,string(50),,

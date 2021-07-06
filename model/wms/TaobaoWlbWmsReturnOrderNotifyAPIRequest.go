@@ -12,6 +12,8 @@ import (
 // 销售退货通知
 type TaobaoWlbWmsReturnOrderNotifyAPIRequest struct {
 	model.Params
+	// 商品信息列表
+	_orderItemList []Orderitemlistwlbwmsreturnordernotify
 	// ERP单据编码
 	_orderCode string
 	// 仓库编码
@@ -28,12 +30,6 @@ type TaobaoWlbWmsReturnOrderNotifyAPIRequest struct {
 	_returnReason string
 	// 买家昵称
 	_buyerNick string
-	// 发件人信息
-	_senderInfo *Senderinfowlbwmsreturnordernotify
-	// 收件人信息
-	_receiverInfo *Receiverinfowlbwmsreturnordernotify
-	// 商品信息列表
-	_orderItemList []Orderitemlistwlbwmsreturnordernotify
 	// 扩展属性, key-value结构，格式要求： 以英文分号“;”分隔每组key-value，以英文冒号“:”分隔key与value。如果value中带有分号，需要转成下划线“_”，如果带有冒号，需要转成中划线“-”
 	_extendFields string
 	// 备注
@@ -48,6 +44,10 @@ type TaobaoWlbWmsReturnOrderNotifyAPIRequest struct {
 	_orderCreateTime string
 	// 快递公司名称
 	_tmsServiceName string
+	// 发件人信息
+	_senderInfo *Senderinfowlbwmsreturnordernotify
+	// 收件人信息
+	_receiverInfo *Receiverinfowlbwmsreturnordernotify
 }
 
 // NewTaobaoWlbWmsReturnOrderNotifyRequest 初始化TaobaoWlbWmsReturnOrderNotifyAPIRequest对象
@@ -69,6 +69,19 @@ func (r TaobaoWlbWmsReturnOrderNotifyAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetOrderItemList is OrderItemList Setter
+// 商品信息列表
+func (r *TaobaoWlbWmsReturnOrderNotifyAPIRequest) SetOrderItemList(_orderItemList []Orderitemlistwlbwmsreturnordernotify) error {
+	r._orderItemList = _orderItemList
+	r.Set("order_item_list", _orderItemList)
+	return nil
+}
+
+// GetOrderItemList OrderItemList Getter
+func (r TaobaoWlbWmsReturnOrderNotifyAPIRequest) GetOrderItemList() []Orderitemlistwlbwmsreturnordernotify {
+	return r._orderItemList
 }
 
 // SetOrderCode is OrderCode Setter
@@ -175,45 +188,6 @@ func (r TaobaoWlbWmsReturnOrderNotifyAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }
 
-// SetSenderInfo is SenderInfo Setter
-// 发件人信息
-func (r *TaobaoWlbWmsReturnOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *Senderinfowlbwmsreturnordernotify) error {
-	r._senderInfo = _senderInfo
-	r.Set("sender_info", _senderInfo)
-	return nil
-}
-
-// GetSenderInfo SenderInfo Getter
-func (r TaobaoWlbWmsReturnOrderNotifyAPIRequest) GetSenderInfo() *Senderinfowlbwmsreturnordernotify {
-	return r._senderInfo
-}
-
-// SetReceiverInfo is ReceiverInfo Setter
-// 收件人信息
-func (r *TaobaoWlbWmsReturnOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo *Receiverinfowlbwmsreturnordernotify) error {
-	r._receiverInfo = _receiverInfo
-	r.Set("receiver_info", _receiverInfo)
-	return nil
-}
-
-// GetReceiverInfo ReceiverInfo Getter
-func (r TaobaoWlbWmsReturnOrderNotifyAPIRequest) GetReceiverInfo() *Receiverinfowlbwmsreturnordernotify {
-	return r._receiverInfo
-}
-
-// SetOrderItemList is OrderItemList Setter
-// 商品信息列表
-func (r *TaobaoWlbWmsReturnOrderNotifyAPIRequest) SetOrderItemList(_orderItemList []Orderitemlistwlbwmsreturnordernotify) error {
-	r._orderItemList = _orderItemList
-	r.Set("order_item_list", _orderItemList)
-	return nil
-}
-
-// GetOrderItemList OrderItemList Getter
-func (r TaobaoWlbWmsReturnOrderNotifyAPIRequest) GetOrderItemList() []Orderitemlistwlbwmsreturnordernotify {
-	return r._orderItemList
-}
-
 // SetExtendFields is ExtendFields Setter
 // 扩展属性, key-value结构，格式要求： 以英文分号“;”分隔每组key-value，以英文冒号“:”分隔key与value。如果value中带有分号，需要转成下划线“_”，如果带有冒号，需要转成中划线“-”
 func (r *TaobaoWlbWmsReturnOrderNotifyAPIRequest) SetExtendFields(_extendFields string) error {
@@ -303,4 +277,30 @@ func (r *TaobaoWlbWmsReturnOrderNotifyAPIRequest) SetTmsServiceName(_tmsServiceN
 // GetTmsServiceName TmsServiceName Getter
 func (r TaobaoWlbWmsReturnOrderNotifyAPIRequest) GetTmsServiceName() string {
 	return r._tmsServiceName
+}
+
+// SetSenderInfo is SenderInfo Setter
+// 发件人信息
+func (r *TaobaoWlbWmsReturnOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *Senderinfowlbwmsreturnordernotify) error {
+	r._senderInfo = _senderInfo
+	r.Set("sender_info", _senderInfo)
+	return nil
+}
+
+// GetSenderInfo SenderInfo Getter
+func (r TaobaoWlbWmsReturnOrderNotifyAPIRequest) GetSenderInfo() *Senderinfowlbwmsreturnordernotify {
+	return r._senderInfo
+}
+
+// SetReceiverInfo is ReceiverInfo Setter
+// 收件人信息
+func (r *TaobaoWlbWmsReturnOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo *Receiverinfowlbwmsreturnordernotify) error {
+	r._receiverInfo = _receiverInfo
+	r.Set("receiver_info", _receiverInfo)
+	return nil
+}
+
+// GetReceiverInfo ReceiverInfo Getter
+func (r TaobaoWlbWmsReturnOrderNotifyAPIRequest) GetReceiverInfo() *Receiverinfowlbwmsreturnordernotify {
+	return r._receiverInfo
 }

@@ -2,14 +2,14 @@ package dmp
 
 // DmpCrowdDto 结构体
 type DmpCrowdDto struct {
-	// 过期时间
-	ValidDate string `json:"valid_date,omitempty" xml:"valid_date,omitempty"`
-	// 用户ID
-	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
-	// 人群名称
-	CrowdName string `json:"crowd_name,omitempty" xml:"crowd_name,omitempty"`
 	// 选项
 	Selects []DmpSelectTagOptionDto `json:"selects,omitempty" xml:"selects>dmp_select_tag_option_dto,omitempty"`
+	// 过期时间
+	ValidDate string `json:"valid_date,omitempty" xml:"valid_date,omitempty"`
+	// 人群名称
+	CrowdName string `json:"crowd_name,omitempty" xml:"crowd_name,omitempty"`
+	// 用户ID
+	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 覆盖人数
 	Coverage int64 `json:"coverage,omitempty" xml:"coverage,omitempty"`
 	// 人群ID

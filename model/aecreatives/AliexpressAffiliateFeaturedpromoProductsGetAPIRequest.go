@@ -18,10 +18,6 @@ type AliexpressAffiliateFeaturedpromoProductsGetAPIRequest struct {
 	_categoryId string
 	// 返回字段列表
 	_fields string
-	// 查询页码
-	_pageNo int64
-	// 每页记录数，1-50
-	_pageSize int64
 	// 活动结束时间，PST 时区
 	_promotionEndTime string
 	// 主题活动的名称，如何获取主题活动，请参考"get featuredpromo info" API. 固定主题：高佣品（Hot Product）、新品（New Arrival）、热销商品（Best Seller）、每周尖货（weeklydeals）
@@ -38,6 +34,10 @@ type AliexpressAffiliateFeaturedpromoProductsGetAPIRequest struct {
 	_trackingId string
 	// 商品收货国家，可筛选能销售至该国家的商品，并根据该国家税率政策返回对应商品价格
 	_country string
+	// 查询页码
+	_pageNo int64
+	// 每页记录数，1-50
+	_pageSize int64
 }
 
 // NewAliexpressAffiliateFeaturedpromoProductsGetRequest 初始化AliexpressAffiliateFeaturedpromoProductsGetAPIRequest对象
@@ -98,32 +98,6 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetFields(_field
 // GetFields Fields Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetFields() string {
 	return r._fields
-}
-
-// SetPageNo is PageNo Setter
-// 查询页码
-func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetPageNo() int64 {
-	return r._pageNo
-}
-
-// SetPageSize is PageSize Setter
-// 每页记录数，1-50
-func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetPageSize() int64 {
-	return r._pageSize
 }
 
 // SetPromotionEndTime is PromotionEndTime Setter
@@ -228,4 +202,30 @@ func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetCountry(_coun
 // GetCountry Country Getter
 func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetCountry() string {
 	return r._country
+}
+
+// SetPageNo is PageNo Setter
+// 查询页码
+func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// SetPageSize is PageSize Setter
+// 每页记录数，1-50
+func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

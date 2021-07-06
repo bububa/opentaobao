@@ -2,6 +2,8 @@ package qimen
 
 // OrderProcess 结构体
 type OrderProcess struct {
+	// 处理流程
+	Processes []Process `json:"processes,omitempty" xml:"processes>process,omitempty"`
 	// 单据号
 	OrderCode string `json:"orderCode,omitempty" xml:"orderCode,omitempty"`
 	// 仓储系统单据号
@@ -10,6 +12,4 @@ type OrderProcess struct {
 	OrderType string `json:"orderType,omitempty" xml:"orderType,omitempty"`
 	// 仓库编码
 	WarehouseCode string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
-	// 处理流程
-	Processes []Process `json:"processes,omitempty" xml:"processes>process,omitempty"`
 }

@@ -12,10 +12,10 @@ import (
 // 编辑仓库覆盖范围
 type TaobaoRegionWarehouseManageAPIRequest struct {
 	model.Params
-	// 仓库编码
-	_storeCode string
 	// 可映射三级地址,例: 广东省
 	_regions []string
+	// 仓库编码
+	_storeCode string
 }
 
 // NewTaobaoRegionWarehouseManageRequest 初始化TaobaoRegionWarehouseManageAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoRegionWarehouseManageAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetStoreCode is StoreCode Setter
-// 仓库编码
-func (r *TaobaoRegionWarehouseManageAPIRequest) SetStoreCode(_storeCode string) error {
-	r._storeCode = _storeCode
-	r.Set("store_code", _storeCode)
-	return nil
-}
-
-// GetStoreCode StoreCode Getter
-func (r TaobaoRegionWarehouseManageAPIRequest) GetStoreCode() string {
-	return r._storeCode
-}
-
 // SetRegions is Regions Setter
 // 可映射三级地址,例: 广东省
 func (r *TaobaoRegionWarehouseManageAPIRequest) SetRegions(_regions []string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoRegionWarehouseManageAPIRequest) SetRegions(_regions []string) er
 // GetRegions Regions Getter
 func (r TaobaoRegionWarehouseManageAPIRequest) GetRegions() []string {
 	return r._regions
+}
+
+// SetStoreCode is StoreCode Setter
+// 仓库编码
+func (r *TaobaoRegionWarehouseManageAPIRequest) SetStoreCode(_storeCode string) error {
+	r._storeCode = _storeCode
+	r.Set("store_code", _storeCode)
+	return nil
+}
+
+// GetStoreCode StoreCode Getter
+func (r TaobaoRegionWarehouseManageAPIRequest) GetStoreCode() string {
+	return r._storeCode
 }

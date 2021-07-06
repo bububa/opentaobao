@@ -2,22 +2,14 @@ package einvoice
 
 // InvoiceApplyDto 结构体
 type InvoiceApplyDto struct {
+	// 开票明细
+	InvoiceItems []InvoiceApplyItemsDto `json:"invoice_items,omitempty" xml:"invoice_items>invoice_apply_items_dto,omitempty"`
 	// 合计实付金额（申请开票的总金额，含税），格式为2位小数。开红票时传正数。需满足公式：开票总金额(invoiceAmount) = 各项明细的交易金额(amount)之和 - 各项明细的优惠金额(discount)之和
 	ApplyAmount string `json:"apply_amount,omitempty" xml:"apply_amount,omitempty"`
 	// 请求来源：order: 下单
 	ApplySource string `json:"apply_source,omitempty" xml:"apply_source,omitempty"`
-	// 当前申请单是否自动开票。当业务前台传入了该字段时，以前台传入的值为准。当前台未传值时，中台会读取商户在中台维护的自动开票配置。true: 申请单会自动转开票请求，调用税控进行开票。false: 申请单数据会在中台落地，状态为申请中。不会发起开票请求。适用于商户需要人工审核之后，再确认开票的场景。
-	AutoCreateInvoice bool `json:"auto_create_invoice,omitempty" xml:"auto_create_invoice,omitempty"`
-	// 抬头类型。可选值：0：个人1：企业；当apply_mode=pre_apply_url时可选
-	BusinessType int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
-	// 开票明细
-	InvoiceItems []InvoiceApplyItemsDto `json:"invoice_items,omitempty" xml:"invoice_items>invoice_apply_items_dto,omitempty"`
-	// 开票发票类型可选值：0: 电票1：纸质普票2：纸质专票
-	InvoiceKind int64 `json:"invoice_kind,omitempty" xml:"invoice_kind,omitempty"`
 	// 发票(开票)类型，可选值：blue: 蓝票red: 红票
 	InvoiceType string `json:"invoice_type,omitempty" xml:"invoice_type,omitempty"`
-	// 征税方式，0普通征收，1减按征收，2差额征收
-	LevyType int64 `json:"levy_type,omitempty" xml:"levy_type,omitempty"`
 	// 原发票代码(开红票时使用)
 	NormalInvoiceCode string `json:"normal_invoice_code,omitempty" xml:"normal_invoice_code,omitempty"`
 	// 原发票号码(开红票时使用)
@@ -32,8 +24,6 @@ type InvoiceApplyDto struct {
 	PayerBankName string `json:"payer_bank_name,omitempty" xml:"payer_bank_name,omitempty"`
 	// 购方电子邮箱，需满足邮箱格式。  格式要求：\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*
 	PayerEmail string `json:"payer_email,omitempty" xml:"payer_email,omitempty"`
-	// 购方收票物流信息，用于纸票场景。
-	PayerLogisticsInfo *PayerLogisticsInfoDto `json:"payer_logistics_info,omitempty" xml:"payer_logistics_info,omitempty"`
 	// 购方开票备注。不会显示在票面
 	PayerMemo string `json:"payer_memo,omitempty" xml:"payer_memo,omitempty"`
 	// 购方抬头；当apply_mode=pre_apply_url时可选
@@ -68,10 +58,20 @@ type InvoiceApplyDto struct {
 	PayeeRegisterNo string `json:"payee_register_no,omitempty" xml:"payee_register_no,omitempty"`
 	// 发票申请模式，可选值：  pre_apply_url: URL预申请模式；适用于扫码开票（一单一码）的业务场景：业务前台提交开票金额等信息，请求阿里发票平台生成一个对应的发票申请页面URL。用户可在该页面中填写抬头等信息，然后提交正式的发票申请。  normal(默认为此模式): 正式提交用户的发票申请，商户根据此发票申请自动或审核开票。
 	ApplyMode string `json:"apply_mode,omitempty" xml:"apply_mode,omitempty"`
-	// 请求开票的销方信息。 传了此参数，则使用传入的销方信息进行开票。 未传则会以商户维护在阿里发票平台的销方信息为准。 业务前台请根据商户在哪维护销方信息进行选择，推荐后者。
-	CreateInvPayeeInfo *InvoiceCreatePayeeInfoDto `json:"create_inv_payee_info,omitempty" xml:"create_inv_payee_info,omitempty"`
 	// 指定的开票税控设备ID 传了此参数，则使用传入的设备ID进行开票。 未传则会使用商户维护在阿里发票平台的默认设备开票。 业务前台请根据商户在哪维护税控设备进行选择，推荐后者。
 	DeviceId string `json:"device_id,omitempty" xml:"device_id,omitempty"`
 	// 发票备注，会显示在票面
 	InvoiceMemo string `json:"invoice_memo,omitempty" xml:"invoice_memo,omitempty"`
+	// 抬头类型。可选值：0：个人1：企业；当apply_mode=pre_apply_url时可选
+	BusinessType int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
+	// 开票发票类型可选值：0: 电票1：纸质普票2：纸质专票
+	InvoiceKind int64 `json:"invoice_kind,omitempty" xml:"invoice_kind,omitempty"`
+	// 征税方式，0普通征收，1减按征收，2差额征收
+	LevyType int64 `json:"levy_type,omitempty" xml:"levy_type,omitempty"`
+	// 购方收票物流信息，用于纸票场景。
+	PayerLogisticsInfo *PayerLogisticsInfoDto `json:"payer_logistics_info,omitempty" xml:"payer_logistics_info,omitempty"`
+	// 请求开票的销方信息。 传了此参数，则使用传入的销方信息进行开票。 未传则会以商户维护在阿里发票平台的销方信息为准。 业务前台请根据商户在哪维护销方信息进行选择，推荐后者。
+	CreateInvPayeeInfo *InvoiceCreatePayeeInfoDto `json:"create_inv_payee_info,omitempty" xml:"create_inv_payee_info,omitempty"`
+	// 当前申请单是否自动开票。当业务前台传入了该字段时，以前台传入的值为准。当前台未传值时，中台会读取商户在中台维护的自动开票配置。true: 申请单会自动转开票请求，调用税控进行开票。false: 申请单数据会在中台落地，状态为申请中。不会发起开票请求。适用于商户需要人工审核之后，再确认开票的场景。
+	AutoCreateInvoice bool `json:"auto_create_invoice,omitempty" xml:"auto_create_invoice,omitempty"`
 }

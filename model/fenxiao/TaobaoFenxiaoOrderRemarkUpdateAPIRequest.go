@@ -12,10 +12,10 @@ import (
 // 供应商修改采购单备注
 type TaobaoFenxiaoOrderRemarkUpdateAPIRequest struct {
 	model.Params
-	// 采购单编号
-	_purchaseOrderId int64
 	// 备注内容(供应商操作)
 	_supplierMemo string
+	// 采购单编号
+	_purchaseOrderId int64
 	// 旗子的标记，1-5之间的数字。非1-5之间，都采用1作为默认。<br/>1:红色<br/>2:黄色<br/>3:绿色<br/>4:蓝色<br/>5:粉红色
 	_supplierMemoFlag int64
 }
@@ -41,19 +41,6 @@ func (r TaobaoFenxiaoOrderRemarkUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetPurchaseOrderId is PurchaseOrderId Setter
-// 采购单编号
-func (r *TaobaoFenxiaoOrderRemarkUpdateAPIRequest) SetPurchaseOrderId(_purchaseOrderId int64) error {
-	r._purchaseOrderId = _purchaseOrderId
-	r.Set("purchase_order_id", _purchaseOrderId)
-	return nil
-}
-
-// GetPurchaseOrderId PurchaseOrderId Getter
-func (r TaobaoFenxiaoOrderRemarkUpdateAPIRequest) GetPurchaseOrderId() int64 {
-	return r._purchaseOrderId
-}
-
 // SetSupplierMemo is SupplierMemo Setter
 // 备注内容(供应商操作)
 func (r *TaobaoFenxiaoOrderRemarkUpdateAPIRequest) SetSupplierMemo(_supplierMemo string) error {
@@ -65,6 +52,19 @@ func (r *TaobaoFenxiaoOrderRemarkUpdateAPIRequest) SetSupplierMemo(_supplierMemo
 // GetSupplierMemo SupplierMemo Getter
 func (r TaobaoFenxiaoOrderRemarkUpdateAPIRequest) GetSupplierMemo() string {
 	return r._supplierMemo
+}
+
+// SetPurchaseOrderId is PurchaseOrderId Setter
+// 采购单编号
+func (r *TaobaoFenxiaoOrderRemarkUpdateAPIRequest) SetPurchaseOrderId(_purchaseOrderId int64) error {
+	r._purchaseOrderId = _purchaseOrderId
+	r.Set("purchase_order_id", _purchaseOrderId)
+	return nil
+}
+
+// GetPurchaseOrderId PurchaseOrderId Getter
+func (r TaobaoFenxiaoOrderRemarkUpdateAPIRequest) GetPurchaseOrderId() int64 {
+	return r._purchaseOrderId
 }
 
 // SetSupplierMemoFlag is SupplierMemoFlag Setter

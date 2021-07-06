@@ -2,8 +2,6 @@ package alsc
 
 // RefundInfo 结构体
 type RefundInfo struct {
-	// 退款金额
-	RefundAmount int64 `json:"refund_amount,omitempty" xml:"refund_amount,omitempty"`
 	// 退款商品
 	RefundItemList []Item `json:"refund_item_list,omitempty" xml:"refund_item_list>item,omitempty"`
 	// 退款流水号（支付宝单号、微信单号、三方单号）
@@ -16,4 +14,6 @@ type RefundInfo struct {
 	RefundType string `json:"refund_type,omitempty" xml:"refund_type,omitempty"`
 	// 退款单号，必填
 	OutRefundNo string `json:"out_refund_no,omitempty" xml:"out_refund_no,omitempty"`
+	// 退款金额
+	RefundAmount int64 `json:"refund_amount,omitempty" xml:"refund_amount,omitempty"`
 }

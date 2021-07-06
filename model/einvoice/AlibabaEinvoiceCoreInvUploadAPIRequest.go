@@ -14,6 +14,8 @@ import (
 // ② 直接回传发票给阿里发票平台，进行归集，并交付给业务前台和用户。
 type AlibabaEinvoiceCoreInvUploadAPIRequest struct {
 	model.Params
+	// 发票明细。source=apply时必填，其他source可为空
+	_invoiceItems []InvoiceResultItemDto
 	// 合计税额，格式为2位小数。  当开红票时，该字段为负数
 	_sumTax string
 	// 销方联系电话。
@@ -84,18 +86,10 @@ type AlibabaEinvoiceCoreInvUploadAPIRequest struct {
 	_payerAddress string
 	// 销方开户行名称。
 	_payeeBankName string
-	// 发票明细。source=apply时必填，其他source可为空
-	_invoiceItems []InvoiceResultItemDto
 	// 开票人
 	_payeeOperator string
-	// 发票板式文件数据，字节数据。  电票时必传。
-	_invoiceFileData *model.File
 	// 购方税务登记证号，由大写字母或数字组成，长度要求15~20位。  开企业抬头时必填， 专票必填。
 	_payerRegisterNo string
-	// 开票发票类型  可选值：  0: 电票  1：纸质普票  2：纸质专票
-	_invoiceKind int64
-	// 抬头类型。可选值：  0：个人  1：企业
-	_businessType int64
 	// 特殊票种标识，可选值：  02: 农产品收购票
 	_specialFlag string
 	// 业务平台Code, 由发票中台分配。  用于source=upload时标识需交付发票的业务平台。  source=apply时可空
@@ -110,6 +104,12 @@ type AlibabaEinvoiceCoreInvUploadAPIRequest struct {
 	_createResult string
 	// 开票流水号/序列号，唯一标志一笔开票请求，由于阿里发票中台生成。  source=async时必填，其他source可为空
 	_serialNo string
+	// 发票板式文件数据，字节数据。  电票时必传。
+	_invoiceFileData *model.File
+	// 开票发票类型  可选值：  0: 电票  1：纸质普票  2：纸质专票
+	_invoiceKind int64
+	// 抬头类型。可选值：  0：个人  1：企业
+	_businessType int64
 }
 
 // NewAlibabaEinvoiceCoreInvUploadRequest 初始化AlibabaEinvoiceCoreInvUploadAPIRequest对象
@@ -131,6 +131,19 @@ func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetInvoiceItems is InvoiceItems Setter
+// 发票明细。source=apply时必填，其他source可为空
+func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceItems(_invoiceItems []InvoiceResultItemDto) error {
+	r._invoiceItems = _invoiceItems
+	r.Set("invoice_items", _invoiceItems)
+	return nil
+}
+
+// GetInvoiceItems InvoiceItems Getter
+func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceItems() []InvoiceResultItemDto {
+	return r._invoiceItems
 }
 
 // SetSumTax is SumTax Setter
@@ -588,19 +601,6 @@ func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayeeBankName() string {
 	return r._payeeBankName
 }
 
-// SetInvoiceItems is InvoiceItems Setter
-// 发票明细。source=apply时必填，其他source可为空
-func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceItems(_invoiceItems []InvoiceResultItemDto) error {
-	r._invoiceItems = _invoiceItems
-	r.Set("invoice_items", _invoiceItems)
-	return nil
-}
-
-// GetInvoiceItems InvoiceItems Getter
-func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceItems() []InvoiceResultItemDto {
-	return r._invoiceItems
-}
-
 // SetPayeeOperator is PayeeOperator Setter
 // 开票人
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayeeOperator(_payeeOperator string) error {
@@ -614,19 +614,6 @@ func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayeeOperator() string {
 	return r._payeeOperator
 }
 
-// SetInvoiceFileData is InvoiceFileData Setter
-// 发票板式文件数据，字节数据。  电票时必传。
-func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceFileData(_invoiceFileData *model.File) error {
-	r._invoiceFileData = _invoiceFileData
-	r.Set("invoice_file_data", _invoiceFileData)
-	return nil
-}
-
-// GetInvoiceFileData InvoiceFileData Getter
-func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceFileData() *model.File {
-	return r._invoiceFileData
-}
-
 // SetPayerRegisterNo is PayerRegisterNo Setter
 // 购方税务登记证号，由大写字母或数字组成，长度要求15~20位。  开企业抬头时必填， 专票必填。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerRegisterNo(_payerRegisterNo string) error {
@@ -638,32 +625,6 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerRegisterNo(_payerRegist
 // GetPayerRegisterNo PayerRegisterNo Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayerRegisterNo() string {
 	return r._payerRegisterNo
-}
-
-// SetInvoiceKind is InvoiceKind Setter
-// 开票发票类型  可选值：  0: 电票  1：纸质普票  2：纸质专票
-func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceKind(_invoiceKind int64) error {
-	r._invoiceKind = _invoiceKind
-	r.Set("invoice_kind", _invoiceKind)
-	return nil
-}
-
-// GetInvoiceKind InvoiceKind Getter
-func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceKind() int64 {
-	return r._invoiceKind
-}
-
-// SetBusinessType is BusinessType Setter
-// 抬头类型。可选值：  0：个人  1：企业
-func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetBusinessType(_businessType int64) error {
-	r._businessType = _businessType
-	r.Set("business_type", _businessType)
-	return nil
-}
-
-// GetBusinessType BusinessType Getter
-func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetBusinessType() int64 {
-	return r._businessType
 }
 
 // SetSpecialFlag is SpecialFlag Setter
@@ -755,4 +716,43 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetSerialNo(_serialNo string) e
 // GetSerialNo SerialNo Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetSerialNo() string {
 	return r._serialNo
+}
+
+// SetInvoiceFileData is InvoiceFileData Setter
+// 发票板式文件数据，字节数据。  电票时必传。
+func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceFileData(_invoiceFileData *model.File) error {
+	r._invoiceFileData = _invoiceFileData
+	r.Set("invoice_file_data", _invoiceFileData)
+	return nil
+}
+
+// GetInvoiceFileData InvoiceFileData Getter
+func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceFileData() *model.File {
+	return r._invoiceFileData
+}
+
+// SetInvoiceKind is InvoiceKind Setter
+// 开票发票类型  可选值：  0: 电票  1：纸质普票  2：纸质专票
+func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceKind(_invoiceKind int64) error {
+	r._invoiceKind = _invoiceKind
+	r.Set("invoice_kind", _invoiceKind)
+	return nil
+}
+
+// GetInvoiceKind InvoiceKind Getter
+func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceKind() int64 {
+	return r._invoiceKind
+}
+
+// SetBusinessType is BusinessType Setter
+// 抬头类型。可选值：  0：个人  1：企业
+func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetBusinessType(_businessType int64) error {
+	r._businessType = _businessType
+	r.Set("business_type", _businessType)
+	return nil
+}
+
+// GetBusinessType BusinessType Getter
+func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetBusinessType() int64 {
+	return r._businessType
 }

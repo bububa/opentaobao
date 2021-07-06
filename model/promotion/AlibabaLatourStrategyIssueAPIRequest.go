@@ -14,8 +14,6 @@ type AlibabaLatourStrategyIssueAPIRequest struct {
 	model.Params
 	// 扩展参数
 	_extraData string
-	// 算法容灾
-	_failoverAlgorithmResult bool
 	// 幂等id
 	_idempotentId string
 	// 发放渠道
@@ -24,8 +22,6 @@ type AlibabaLatourStrategyIssueAPIRequest struct {
 	_userId string
 	// 转换用户类型
 	_transformedUserType string
-	// 是否需要过安全
-	_needIdentifyRisk bool
 	// 除非有特殊申请，默认不允许使用该参数，请通过用户授权token传递用户信息
 	_userNick string
 	// 投放计划code
@@ -34,6 +30,10 @@ type AlibabaLatourStrategyIssueAPIRequest struct {
 	_userType string
 	// 指定发放权益code
 	_selectedBenefitCode string
+	// 算法容灾
+	_failoverAlgorithmResult bool
+	// 是否需要过安全
+	_needIdentifyRisk bool
 }
 
 // NewAlibabaLatourStrategyIssueRequest 初始化AlibabaLatourStrategyIssueAPIRequest对象
@@ -68,19 +68,6 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetExtraData(_extraData string) e
 // GetExtraData ExtraData Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetExtraData() string {
 	return r._extraData
-}
-
-// SetFailoverAlgorithmResult is FailoverAlgorithmResult Setter
-// 算法容灾
-func (r *AlibabaLatourStrategyIssueAPIRequest) SetFailoverAlgorithmResult(_failoverAlgorithmResult bool) error {
-	r._failoverAlgorithmResult = _failoverAlgorithmResult
-	r.Set("failover_algorithm_result", _failoverAlgorithmResult)
-	return nil
-}
-
-// GetFailoverAlgorithmResult FailoverAlgorithmResult Getter
-func (r AlibabaLatourStrategyIssueAPIRequest) GetFailoverAlgorithmResult() bool {
-	return r._failoverAlgorithmResult
 }
 
 // SetIdempotentId is IdempotentId Setter
@@ -135,19 +122,6 @@ func (r AlibabaLatourStrategyIssueAPIRequest) GetTransformedUserType() string {
 	return r._transformedUserType
 }
 
-// SetNeedIdentifyRisk is NeedIdentifyRisk Setter
-// 是否需要过安全
-func (r *AlibabaLatourStrategyIssueAPIRequest) SetNeedIdentifyRisk(_needIdentifyRisk bool) error {
-	r._needIdentifyRisk = _needIdentifyRisk
-	r.Set("need_identify_risk", _needIdentifyRisk)
-	return nil
-}
-
-// GetNeedIdentifyRisk NeedIdentifyRisk Getter
-func (r AlibabaLatourStrategyIssueAPIRequest) GetNeedIdentifyRisk() bool {
-	return r._needIdentifyRisk
-}
-
 // SetUserNick is UserNick Setter
 // 除非有特殊申请，默认不允许使用该参数，请通过用户授权token传递用户信息
 func (r *AlibabaLatourStrategyIssueAPIRequest) SetUserNick(_userNick string) error {
@@ -198,4 +172,30 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetSelectedBenefitCode(_selectedB
 // GetSelectedBenefitCode SelectedBenefitCode Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetSelectedBenefitCode() string {
 	return r._selectedBenefitCode
+}
+
+// SetFailoverAlgorithmResult is FailoverAlgorithmResult Setter
+// 算法容灾
+func (r *AlibabaLatourStrategyIssueAPIRequest) SetFailoverAlgorithmResult(_failoverAlgorithmResult bool) error {
+	r._failoverAlgorithmResult = _failoverAlgorithmResult
+	r.Set("failover_algorithm_result", _failoverAlgorithmResult)
+	return nil
+}
+
+// GetFailoverAlgorithmResult FailoverAlgorithmResult Getter
+func (r AlibabaLatourStrategyIssueAPIRequest) GetFailoverAlgorithmResult() bool {
+	return r._failoverAlgorithmResult
+}
+
+// SetNeedIdentifyRisk is NeedIdentifyRisk Setter
+// 是否需要过安全
+func (r *AlibabaLatourStrategyIssueAPIRequest) SetNeedIdentifyRisk(_needIdentifyRisk bool) error {
+	r._needIdentifyRisk = _needIdentifyRisk
+	r.Set("need_identify_risk", _needIdentifyRisk)
+	return nil
+}
+
+// GetNeedIdentifyRisk NeedIdentifyRisk Getter
+func (r AlibabaLatourStrategyIssueAPIRequest) GetNeedIdentifyRisk() bool {
+	return r._needIdentifyRisk
 }

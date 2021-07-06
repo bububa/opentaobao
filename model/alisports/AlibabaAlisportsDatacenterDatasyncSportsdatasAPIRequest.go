@@ -14,12 +14,44 @@ type AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest struct {
 	model.Params
 	// 用户阿里体育id
 	_userId string
+	// 运动三级分类
+	_sportsCat3Id string
+	// 速度，单位：千米/小时
+	_speed string
+	// 动作计数，如：步数、滑水次数
+	_actionCount string
+	// 路径
+	_path string
+	// 数据原始来源
+	_subChannel string
+	// 开始位置，格式：经度,维度
+	_startPoint string
+	// 预留字段
+	_resultOther string
+	// 最大速度，单位：千米/小时
+	_maxSpeed string
+	// 结束位置,格式[经度,纬度]
+	_endPoint string
+	// 过程数据Json
+	_stage string
+	// 消耗卡路里，单位：千卡
+	_calorie string
+	// 路径节点数据下载地址
+	_pathDataUrl string
+	// 过程数据下载地址
+	_stageDataUrl string
+	// 设备型号(厂商)
+	_deviceModel string
+	// 设备名称
+	_deviceName string
+	// 三方数据唯一码
+	_messageId string
+	// 版本号
+	_version string
 	// 运动一级分类
 	_sportsCat1Id int64
 	// 运动二级分类
 	_sportsCat2Id int64
-	// 运动三级分类
-	_sportsCat3Id string
 	// 运动开始时间，单位：毫秒
 	_sportsStartTime int64
 	// 运动结束时间，单位：毫秒
@@ -32,50 +64,18 @@ type AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest struct {
 	_maxHeartrate int64
 	// 平均心率
 	_avgHeartrate int64
-	// 速度，单位：千米/小时
-	_speed string
-	// 动作计数，如：步数、滑水次数
-	_actionCount string
-	// 路径
-	_path string
-	// 数据原始来源
-	_subChannel string
 	// 里程，单位：米
 	_mileage int64
 	// 爬高，单位：米
 	_climb int64
 	// 运动持续时间，单位：毫秒
 	_durationTime int64
-	// 开始位置，格式：经度,维度
-	_startPoint string
-	// 预留字段
-	_resultOther string
-	// 最大速度，单位：千米/小时
-	_maxSpeed string
-	// 结束位置,格式[经度,纬度]
-	_endPoint string
-	// 过程数据Json
-	_stage string
 	// 频率
 	_powerFrequency int64
-	// 消耗卡路里，单位：千卡
-	_calorie string
-	// 路径节点数据下载地址
-	_pathDataUrl string
-	// 过程数据下载地址
-	_stageDataUrl string
 	// 数据类型：0.普通数据 1.赛事数据
 	_dataType int64
 	// 设备类型
 	_deviceType int64
-	// 设备型号(厂商)
-	_deviceModel string
-	// 设备名称
-	_deviceName string
-	// 三方数据唯一码
-	_messageId string
-	// 版本号
-	_version string
 }
 
 // NewAlibabaAlisportsDatacenterDatasyncSportsdatasRequest 初始化AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest对象
@@ -112,6 +112,227 @@ func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetUserId() str
 	return r._userId
 }
 
+// SetSportsCat3Id is SportsCat3Id Setter
+// 运动三级分类
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetSportsCat3Id(_sportsCat3Id string) error {
+	r._sportsCat3Id = _sportsCat3Id
+	r.Set("sports_cat3_id", _sportsCat3Id)
+	return nil
+}
+
+// GetSportsCat3Id SportsCat3Id Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetSportsCat3Id() string {
+	return r._sportsCat3Id
+}
+
+// SetSpeed is Speed Setter
+// 速度，单位：千米/小时
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetSpeed(_speed string) error {
+	r._speed = _speed
+	r.Set("speed", _speed)
+	return nil
+}
+
+// GetSpeed Speed Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetSpeed() string {
+	return r._speed
+}
+
+// SetActionCount is ActionCount Setter
+// 动作计数，如：步数、滑水次数
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetActionCount(_actionCount string) error {
+	r._actionCount = _actionCount
+	r.Set("action_count", _actionCount)
+	return nil
+}
+
+// GetActionCount ActionCount Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetActionCount() string {
+	return r._actionCount
+}
+
+// SetPath is Path Setter
+// 路径
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetPath(_path string) error {
+	r._path = _path
+	r.Set("path", _path)
+	return nil
+}
+
+// GetPath Path Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetPath() string {
+	return r._path
+}
+
+// SetSubChannel is SubChannel Setter
+// 数据原始来源
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetSubChannel(_subChannel string) error {
+	r._subChannel = _subChannel
+	r.Set("sub_channel", _subChannel)
+	return nil
+}
+
+// GetSubChannel SubChannel Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetSubChannel() string {
+	return r._subChannel
+}
+
+// SetStartPoint is StartPoint Setter
+// 开始位置，格式：经度,维度
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetStartPoint(_startPoint string) error {
+	r._startPoint = _startPoint
+	r.Set("start_point", _startPoint)
+	return nil
+}
+
+// GetStartPoint StartPoint Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetStartPoint() string {
+	return r._startPoint
+}
+
+// SetResultOther is ResultOther Setter
+// 预留字段
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetResultOther(_resultOther string) error {
+	r._resultOther = _resultOther
+	r.Set("result_other", _resultOther)
+	return nil
+}
+
+// GetResultOther ResultOther Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetResultOther() string {
+	return r._resultOther
+}
+
+// SetMaxSpeed is MaxSpeed Setter
+// 最大速度，单位：千米/小时
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetMaxSpeed(_maxSpeed string) error {
+	r._maxSpeed = _maxSpeed
+	r.Set("max_speed", _maxSpeed)
+	return nil
+}
+
+// GetMaxSpeed MaxSpeed Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetMaxSpeed() string {
+	return r._maxSpeed
+}
+
+// SetEndPoint is EndPoint Setter
+// 结束位置,格式[经度,纬度]
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetEndPoint(_endPoint string) error {
+	r._endPoint = _endPoint
+	r.Set("end_point", _endPoint)
+	return nil
+}
+
+// GetEndPoint EndPoint Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetEndPoint() string {
+	return r._endPoint
+}
+
+// SetStage is Stage Setter
+// 过程数据Json
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetStage(_stage string) error {
+	r._stage = _stage
+	r.Set("stage", _stage)
+	return nil
+}
+
+// GetStage Stage Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetStage() string {
+	return r._stage
+}
+
+// SetCalorie is Calorie Setter
+// 消耗卡路里，单位：千卡
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetCalorie(_calorie string) error {
+	r._calorie = _calorie
+	r.Set("calorie", _calorie)
+	return nil
+}
+
+// GetCalorie Calorie Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetCalorie() string {
+	return r._calorie
+}
+
+// SetPathDataUrl is PathDataUrl Setter
+// 路径节点数据下载地址
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetPathDataUrl(_pathDataUrl string) error {
+	r._pathDataUrl = _pathDataUrl
+	r.Set("path_data_url", _pathDataUrl)
+	return nil
+}
+
+// GetPathDataUrl PathDataUrl Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetPathDataUrl() string {
+	return r._pathDataUrl
+}
+
+// SetStageDataUrl is StageDataUrl Setter
+// 过程数据下载地址
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetStageDataUrl(_stageDataUrl string) error {
+	r._stageDataUrl = _stageDataUrl
+	r.Set("stage_data_url", _stageDataUrl)
+	return nil
+}
+
+// GetStageDataUrl StageDataUrl Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetStageDataUrl() string {
+	return r._stageDataUrl
+}
+
+// SetDeviceModel is DeviceModel Setter
+// 设备型号(厂商)
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetDeviceModel(_deviceModel string) error {
+	r._deviceModel = _deviceModel
+	r.Set("device_model", _deviceModel)
+	return nil
+}
+
+// GetDeviceModel DeviceModel Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetDeviceModel() string {
+	return r._deviceModel
+}
+
+// SetDeviceName is DeviceName Setter
+// 设备名称
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetDeviceName(_deviceName string) error {
+	r._deviceName = _deviceName
+	r.Set("device_name", _deviceName)
+	return nil
+}
+
+// GetDeviceName DeviceName Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetDeviceName() string {
+	return r._deviceName
+}
+
+// SetMessageId is MessageId Setter
+// 三方数据唯一码
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetMessageId(_messageId string) error {
+	r._messageId = _messageId
+	r.Set("message_id", _messageId)
+	return nil
+}
+
+// GetMessageId MessageId Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetMessageId() string {
+	return r._messageId
+}
+
+// SetVersion is Version Setter
+// 版本号
+func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetVersion(_version string) error {
+	r._version = _version
+	r.Set("version", _version)
+	return nil
+}
+
+// GetVersion Version Getter
+func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetVersion() string {
+	return r._version
+}
+
 // SetSportsCat1Id is SportsCat1Id Setter
 // 运动一级分类
 func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetSportsCat1Id(_sportsCat1Id int64) error {
@@ -136,19 +357,6 @@ func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetSportsCat2I
 // GetSportsCat2Id SportsCat2Id Getter
 func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetSportsCat2Id() int64 {
 	return r._sportsCat2Id
-}
-
-// SetSportsCat3Id is SportsCat3Id Setter
-// 运动三级分类
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetSportsCat3Id(_sportsCat3Id string) error {
-	r._sportsCat3Id = _sportsCat3Id
-	r.Set("sports_cat3_id", _sportsCat3Id)
-	return nil
-}
-
-// GetSportsCat3Id SportsCat3Id Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetSportsCat3Id() string {
-	return r._sportsCat3Id
 }
 
 // SetSportsStartTime is SportsStartTime Setter
@@ -229,58 +437,6 @@ func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetAvgHeartrate
 	return r._avgHeartrate
 }
 
-// SetSpeed is Speed Setter
-// 速度，单位：千米/小时
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetSpeed(_speed string) error {
-	r._speed = _speed
-	r.Set("speed", _speed)
-	return nil
-}
-
-// GetSpeed Speed Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetSpeed() string {
-	return r._speed
-}
-
-// SetActionCount is ActionCount Setter
-// 动作计数，如：步数、滑水次数
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetActionCount(_actionCount string) error {
-	r._actionCount = _actionCount
-	r.Set("action_count", _actionCount)
-	return nil
-}
-
-// GetActionCount ActionCount Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetActionCount() string {
-	return r._actionCount
-}
-
-// SetPath is Path Setter
-// 路径
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetPath(_path string) error {
-	r._path = _path
-	r.Set("path", _path)
-	return nil
-}
-
-// GetPath Path Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetPath() string {
-	return r._path
-}
-
-// SetSubChannel is SubChannel Setter
-// 数据原始来源
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetSubChannel(_subChannel string) error {
-	r._subChannel = _subChannel
-	r.Set("sub_channel", _subChannel)
-	return nil
-}
-
-// GetSubChannel SubChannel Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetSubChannel() string {
-	return r._subChannel
-}
-
 // SetMileage is Mileage Setter
 // 里程，单位：米
 func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetMileage(_mileage int64) error {
@@ -320,71 +476,6 @@ func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetDurationTime
 	return r._durationTime
 }
 
-// SetStartPoint is StartPoint Setter
-// 开始位置，格式：经度,维度
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetStartPoint(_startPoint string) error {
-	r._startPoint = _startPoint
-	r.Set("start_point", _startPoint)
-	return nil
-}
-
-// GetStartPoint StartPoint Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetStartPoint() string {
-	return r._startPoint
-}
-
-// SetResultOther is ResultOther Setter
-// 预留字段
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetResultOther(_resultOther string) error {
-	r._resultOther = _resultOther
-	r.Set("result_other", _resultOther)
-	return nil
-}
-
-// GetResultOther ResultOther Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetResultOther() string {
-	return r._resultOther
-}
-
-// SetMaxSpeed is MaxSpeed Setter
-// 最大速度，单位：千米/小时
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetMaxSpeed(_maxSpeed string) error {
-	r._maxSpeed = _maxSpeed
-	r.Set("max_speed", _maxSpeed)
-	return nil
-}
-
-// GetMaxSpeed MaxSpeed Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetMaxSpeed() string {
-	return r._maxSpeed
-}
-
-// SetEndPoint is EndPoint Setter
-// 结束位置,格式[经度,纬度]
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetEndPoint(_endPoint string) error {
-	r._endPoint = _endPoint
-	r.Set("end_point", _endPoint)
-	return nil
-}
-
-// GetEndPoint EndPoint Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetEndPoint() string {
-	return r._endPoint
-}
-
-// SetStage is Stage Setter
-// 过程数据Json
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetStage(_stage string) error {
-	r._stage = _stage
-	r.Set("stage", _stage)
-	return nil
-}
-
-// GetStage Stage Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetStage() string {
-	return r._stage
-}
-
 // SetPowerFrequency is PowerFrequency Setter
 // 频率
 func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetPowerFrequency(_powerFrequency int64) error {
@@ -396,45 +487,6 @@ func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetPowerFreque
 // GetPowerFrequency PowerFrequency Getter
 func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetPowerFrequency() int64 {
 	return r._powerFrequency
-}
-
-// SetCalorie is Calorie Setter
-// 消耗卡路里，单位：千卡
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetCalorie(_calorie string) error {
-	r._calorie = _calorie
-	r.Set("calorie", _calorie)
-	return nil
-}
-
-// GetCalorie Calorie Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetCalorie() string {
-	return r._calorie
-}
-
-// SetPathDataUrl is PathDataUrl Setter
-// 路径节点数据下载地址
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetPathDataUrl(_pathDataUrl string) error {
-	r._pathDataUrl = _pathDataUrl
-	r.Set("path_data_url", _pathDataUrl)
-	return nil
-}
-
-// GetPathDataUrl PathDataUrl Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetPathDataUrl() string {
-	return r._pathDataUrl
-}
-
-// SetStageDataUrl is StageDataUrl Setter
-// 过程数据下载地址
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetStageDataUrl(_stageDataUrl string) error {
-	r._stageDataUrl = _stageDataUrl
-	r.Set("stage_data_url", _stageDataUrl)
-	return nil
-}
-
-// GetStageDataUrl StageDataUrl Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetStageDataUrl() string {
-	return r._stageDataUrl
 }
 
 // SetDataType is DataType Setter
@@ -461,56 +513,4 @@ func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetDeviceType(
 // GetDeviceType DeviceType Getter
 func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetDeviceType() int64 {
 	return r._deviceType
-}
-
-// SetDeviceModel is DeviceModel Setter
-// 设备型号(厂商)
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetDeviceModel(_deviceModel string) error {
-	r._deviceModel = _deviceModel
-	r.Set("device_model", _deviceModel)
-	return nil
-}
-
-// GetDeviceModel DeviceModel Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetDeviceModel() string {
-	return r._deviceModel
-}
-
-// SetDeviceName is DeviceName Setter
-// 设备名称
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetDeviceName(_deviceName string) error {
-	r._deviceName = _deviceName
-	r.Set("device_name", _deviceName)
-	return nil
-}
-
-// GetDeviceName DeviceName Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetDeviceName() string {
-	return r._deviceName
-}
-
-// SetMessageId is MessageId Setter
-// 三方数据唯一码
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetMessageId(_messageId string) error {
-	r._messageId = _messageId
-	r.Set("message_id", _messageId)
-	return nil
-}
-
-// GetMessageId MessageId Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetMessageId() string {
-	return r._messageId
-}
-
-// SetVersion is Version Setter
-// 版本号
-func (r *AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) SetVersion(_version string) error {
-	r._version = _version
-	r.Set("version", _version)
-	return nil
-}
-
-// GetVersion Version Getter
-func (r AlibabaAlisportsDatacenterDatasyncSportsdatasAPIRequest) GetVersion() string {
-	return r._version
 }

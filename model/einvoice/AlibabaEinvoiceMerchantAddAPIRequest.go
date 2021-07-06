@@ -13,6 +13,8 @@ import (
 // 业务税号入驻成功后，需要将税号授权给同平台下其他商户，使得其他商户也具备开票能力
 type AlibabaEinvoiceMerchantAddAPIRequest struct {
 	model.Params
+	// 税盘列表
+	_deviceIds []string
 	// 验证码，门店绑定已入驻税号接口返回的taxToken
 	_taxToken string
 	// 业务方发起新增门店的唯一幂等ID, 由业务方生成。只能由字母和数字组成。
@@ -25,8 +27,6 @@ type AlibabaEinvoiceMerchantAddAPIRequest struct {
 	_payeeRegisterNo string
 	// 业务平台门店名称
 	_merchantName string
-	// 税盘列表
-	_deviceIds []string
 }
 
 // NewAlibabaEinvoiceMerchantAddRequest 初始化AlibabaEinvoiceMerchantAddAPIRequest对象
@@ -48,6 +48,19 @@ func (r AlibabaEinvoiceMerchantAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetDeviceIds is DeviceIds Setter
+// 税盘列表
+func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetDeviceIds(_deviceIds []string) error {
+	r._deviceIds = _deviceIds
+	r.Set("device_ids", _deviceIds)
+	return nil
+}
+
+// GetDeviceIds DeviceIds Getter
+func (r AlibabaEinvoiceMerchantAddAPIRequest) GetDeviceIds() []string {
+	return r._deviceIds
 }
 
 // SetTaxToken is TaxToken Setter
@@ -126,17 +139,4 @@ func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetMerchantName(_merchantName str
 // GetMerchantName MerchantName Getter
 func (r AlibabaEinvoiceMerchantAddAPIRequest) GetMerchantName() string {
 	return r._merchantName
-}
-
-// SetDeviceIds is DeviceIds Setter
-// 税盘列表
-func (r *AlibabaEinvoiceMerchantAddAPIRequest) SetDeviceIds(_deviceIds []string) error {
-	r._deviceIds = _deviceIds
-	r.Set("device_ids", _deviceIds)
-	return nil
-}
-
-// GetDeviceIds DeviceIds Getter
-func (r AlibabaEinvoiceMerchantAddAPIRequest) GetDeviceIds() []string {
-	return r._deviceIds
 }

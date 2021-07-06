@@ -2,8 +2,6 @@ package waybill
 
 // RecipientInfoDto 结构体
 type RecipientInfoDto struct {
-	// 地址
-	Address *AddressDto `json:"address,omitempty" xml:"address,omitempty"`
 	// 手机号码
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
 	// 姓名
@@ -16,4 +14,6 @@ type RecipientInfoDto struct {
 	Tid string `json:"tid,omitempty" xml:"tid,omitempty"`
 	// 菜鸟解密地址ID，用于电商平台收件人信息加密的场景使用，非订单加密场景请勿使用。
 	Caid string `json:"caid,omitempty" xml:"caid,omitempty"`
+	// 地址
+	Address *AddressDto `json:"address,omitempty" xml:"address,omitempty"`
 }

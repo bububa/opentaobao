@@ -12,16 +12,16 @@ import (
 // 打印一张已开具成功的纸票
 type AlibabaEinvoicePaperPrintAPIRequest struct {
 	model.Params
-	// 打印框设置，0=不弹打印设置框，1=弹出打印设置框
-	_dialogSettingFlag int64
-	// 是否强制打印，一般发票只能打印一次，但是因为打印机发票号码与待打印发票号码不一致，导致打印错误，需要重新打印
-	_forcePrint bool
 	// 销售方纳税人识别号
 	_payeeRegisterNo string
-	// 打印标记，0=打印发票；1=打印清单。发票明细超过8行时会生成清单页，需要打印清单。
-	_printFlag int64
 	// 开票流水号
 	_serialNo string
+	// 打印框设置，0=不弹打印设置框，1=弹出打印设置框
+	_dialogSettingFlag int64
+	// 打印标记，0=打印发票；1=打印清单。发票明细超过8行时会生成清单页，需要打印清单。
+	_printFlag int64
+	// 是否强制打印，一般发票只能打印一次，但是因为打印机发票号码与待打印发票号码不一致，导致打印错误，需要重新打印
+	_forcePrint bool
 }
 
 // NewAlibabaEinvoicePaperPrintRequest 初始化AlibabaEinvoicePaperPrintAPIRequest对象
@@ -45,32 +45,6 @@ func (r AlibabaEinvoicePaperPrintAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetDialogSettingFlag is DialogSettingFlag Setter
-// 打印框设置，0=不弹打印设置框，1=弹出打印设置框
-func (r *AlibabaEinvoicePaperPrintAPIRequest) SetDialogSettingFlag(_dialogSettingFlag int64) error {
-	r._dialogSettingFlag = _dialogSettingFlag
-	r.Set("dialog_setting_flag", _dialogSettingFlag)
-	return nil
-}
-
-// GetDialogSettingFlag DialogSettingFlag Getter
-func (r AlibabaEinvoicePaperPrintAPIRequest) GetDialogSettingFlag() int64 {
-	return r._dialogSettingFlag
-}
-
-// SetForcePrint is ForcePrint Setter
-// 是否强制打印，一般发票只能打印一次，但是因为打印机发票号码与待打印发票号码不一致，导致打印错误，需要重新打印
-func (r *AlibabaEinvoicePaperPrintAPIRequest) SetForcePrint(_forcePrint bool) error {
-	r._forcePrint = _forcePrint
-	r.Set("force_print", _forcePrint)
-	return nil
-}
-
-// GetForcePrint ForcePrint Getter
-func (r AlibabaEinvoicePaperPrintAPIRequest) GetForcePrint() bool {
-	return r._forcePrint
-}
-
 // SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 销售方纳税人识别号
 func (r *AlibabaEinvoicePaperPrintAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
@@ -82,6 +56,32 @@ func (r *AlibabaEinvoicePaperPrintAPIRequest) SetPayeeRegisterNo(_payeeRegisterN
 // GetPayeeRegisterNo PayeeRegisterNo Getter
 func (r AlibabaEinvoicePaperPrintAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
+}
+
+// SetSerialNo is SerialNo Setter
+// 开票流水号
+func (r *AlibabaEinvoicePaperPrintAPIRequest) SetSerialNo(_serialNo string) error {
+	r._serialNo = _serialNo
+	r.Set("serial_no", _serialNo)
+	return nil
+}
+
+// GetSerialNo SerialNo Getter
+func (r AlibabaEinvoicePaperPrintAPIRequest) GetSerialNo() string {
+	return r._serialNo
+}
+
+// SetDialogSettingFlag is DialogSettingFlag Setter
+// 打印框设置，0=不弹打印设置框，1=弹出打印设置框
+func (r *AlibabaEinvoicePaperPrintAPIRequest) SetDialogSettingFlag(_dialogSettingFlag int64) error {
+	r._dialogSettingFlag = _dialogSettingFlag
+	r.Set("dialog_setting_flag", _dialogSettingFlag)
+	return nil
+}
+
+// GetDialogSettingFlag DialogSettingFlag Getter
+func (r AlibabaEinvoicePaperPrintAPIRequest) GetDialogSettingFlag() int64 {
+	return r._dialogSettingFlag
 }
 
 // SetPrintFlag is PrintFlag Setter
@@ -97,15 +97,15 @@ func (r AlibabaEinvoicePaperPrintAPIRequest) GetPrintFlag() int64 {
 	return r._printFlag
 }
 
-// SetSerialNo is SerialNo Setter
-// 开票流水号
-func (r *AlibabaEinvoicePaperPrintAPIRequest) SetSerialNo(_serialNo string) error {
-	r._serialNo = _serialNo
-	r.Set("serial_no", _serialNo)
+// SetForcePrint is ForcePrint Setter
+// 是否强制打印，一般发票只能打印一次，但是因为打印机发票号码与待打印发票号码不一致，导致打印错误，需要重新打印
+func (r *AlibabaEinvoicePaperPrintAPIRequest) SetForcePrint(_forcePrint bool) error {
+	r._forcePrint = _forcePrint
+	r.Set("force_print", _forcePrint)
 	return nil
 }
 
-// GetSerialNo SerialNo Getter
-func (r AlibabaEinvoicePaperPrintAPIRequest) GetSerialNo() string {
-	return r._serialNo
+// GetForcePrint ForcePrint Getter
+func (r AlibabaEinvoicePaperPrintAPIRequest) GetForcePrint() bool {
+	return r._forcePrint
 }

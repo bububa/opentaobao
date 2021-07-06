@@ -20,14 +20,14 @@ type AliexpressAffiliateOrderListAPIRequest struct {
 	_status string
 	// 站点信息：global、ru_site、es_site、it_site
 	_localeSite string
-	// 页数
-	_pageNo int64
-	// 每页记录数
-	_pageSize int64
 	// 返回的字段信息
 	_fields string
 	// 安全签名
 	_appSignature string
+	// 页数
+	_pageNo int64
+	// 每页记录数
+	_pageSize int64
 }
 
 // NewAliexpressAffiliateOrderListRequest 初始化AliexpressAffiliateOrderListAPIRequest对象
@@ -103,32 +103,6 @@ func (r AliexpressAffiliateOrderListAPIRequest) GetLocaleSite() string {
 	return r._localeSite
 }
 
-// SetPageNo is PageNo Setter
-// 页数
-func (r *AliexpressAffiliateOrderListAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r AliexpressAffiliateOrderListAPIRequest) GetPageNo() int64 {
-	return r._pageNo
-}
-
-// SetPageSize is PageSize Setter
-// 每页记录数
-func (r *AliexpressAffiliateOrderListAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AliexpressAffiliateOrderListAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetFields is Fields Setter
 // 返回的字段信息
 func (r *AliexpressAffiliateOrderListAPIRequest) SetFields(_fields string) error {
@@ -153,4 +127,30 @@ func (r *AliexpressAffiliateOrderListAPIRequest) SetAppSignature(_appSignature s
 // GetAppSignature AppSignature Getter
 func (r AliexpressAffiliateOrderListAPIRequest) GetAppSignature() string {
 	return r._appSignature
+}
+
+// SetPageNo is PageNo Setter
+// 页数
+func (r *AliexpressAffiliateOrderListAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r AliexpressAffiliateOrderListAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// SetPageSize is PageSize Setter
+// 每页记录数
+func (r *AliexpressAffiliateOrderListAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AliexpressAffiliateOrderListAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

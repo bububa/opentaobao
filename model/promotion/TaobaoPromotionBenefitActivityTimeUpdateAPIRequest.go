@@ -12,12 +12,12 @@ import (
 // 更新关联权益的活动有效时间
 type TaobaoPromotionBenefitActivityTimeUpdateAPIRequest struct {
 	model.Params
-	// ISV活动关联权益后获得的关联ID
-	_relationId int64
 	// 活动的开始时间
 	_startTime string
 	// 活动的i结束时间
 	_endTime string
+	// ISV活动关联权益后获得的关联ID
+	_relationId int64
 }
 
 // NewTaobaoPromotionBenefitActivityTimeUpdateRequest 初始化TaobaoPromotionBenefitActivityTimeUpdateAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) GetApiParams() url.V
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetRelationId is RelationId Setter
-// ISV活动关联权益后获得的关联ID
-func (r *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) SetRelationId(_relationId int64) error {
-	r._relationId = _relationId
-	r.Set("relation_id", _relationId)
-	return nil
-}
-
-// GetRelationId RelationId Getter
-func (r TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) GetRelationId() int64 {
-	return r._relationId
 }
 
 // SetStartTime is StartTime Setter
@@ -78,4 +65,17 @@ func (r *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) SetEndTime(_endTime
 // GetEndTime EndTime Getter
 func (r TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) GetEndTime() string {
 	return r._endTime
+}
+
+// SetRelationId is RelationId Setter
+// ISV活动关联权益后获得的关联ID
+func (r *TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) SetRelationId(_relationId int64) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
+	return nil
+}
+
+// GetRelationId RelationId Getter
+func (r TaobaoPromotionBenefitActivityTimeUpdateAPIRequest) GetRelationId() int64 {
+	return r._relationId
 }

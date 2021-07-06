@@ -22,8 +22,8 @@ type AlibabaCloudgameUserMixuseridCheckAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回码
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
-	// 是否有效
-	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 	// 返回码描述
 	ResultMessage string `json:"result_message,omitempty" xml:"result_message,omitempty"`
+	// 是否有效
+	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 }

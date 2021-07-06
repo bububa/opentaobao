@@ -16,14 +16,14 @@ type TmallServicecenterWorkcardPushAPIRequest struct {
 	_attributes string
 	// 描述
 	_desc string
-	// 淘宝交易订单号
-	_bizOrderId int64
 	// 服务预约安装时间
 	_serviceReserveTime string
 	// 服务预约安装地址。四级地址与街道地址用空格隔开
 	_serviceReserveAddress string
 	// 0=初始化, 3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败
 	_status string
+	// 淘宝交易订单号
+	_bizOrderId int64
 }
 
 // NewTmallServicecenterWorkcardPushRequest 初始化TmallServicecenterWorkcardPushAPIRequest对象
@@ -73,19 +73,6 @@ func (r TmallServicecenterWorkcardPushAPIRequest) GetDesc() string {
 	return r._desc
 }
 
-// SetBizOrderId is BizOrderId Setter
-// 淘宝交易订单号
-func (r *TmallServicecenterWorkcardPushAPIRequest) SetBizOrderId(_bizOrderId int64) error {
-	r._bizOrderId = _bizOrderId
-	r.Set("biz_order_id", _bizOrderId)
-	return nil
-}
-
-// GetBizOrderId BizOrderId Getter
-func (r TmallServicecenterWorkcardPushAPIRequest) GetBizOrderId() int64 {
-	return r._bizOrderId
-}
-
 // SetServiceReserveTime is ServiceReserveTime Setter
 // 服务预约安装时间
 func (r *TmallServicecenterWorkcardPushAPIRequest) SetServiceReserveTime(_serviceReserveTime string) error {
@@ -123,4 +110,17 @@ func (r *TmallServicecenterWorkcardPushAPIRequest) SetStatus(_status string) err
 // GetStatus Status Getter
 func (r TmallServicecenterWorkcardPushAPIRequest) GetStatus() string {
 	return r._status
+}
+
+// SetBizOrderId is BizOrderId Setter
+// 淘宝交易订单号
+func (r *TmallServicecenterWorkcardPushAPIRequest) SetBizOrderId(_bizOrderId int64) error {
+	r._bizOrderId = _bizOrderId
+	r.Set("biz_order_id", _bizOrderId)
+	return nil
+}
+
+// GetBizOrderId BizOrderId Getter
+func (r TmallServicecenterWorkcardPushAPIRequest) GetBizOrderId() int64 {
+	return r._bizOrderId
 }

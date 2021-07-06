@@ -30,8 +30,6 @@ type TaobaoWlbOrderCreateAPIRequest struct {
 	_tmsServiceCode string
 	// 运单编号，退货单时可能会使用
 	_tmsOrderCode string
-	// 该物流宝订单是否已完成，如果完成则设置为true，如果为false，则需要等待继续创建订单商品信息。
-	_isFinished bool
 	// 投递时间范围要求,格式'13:20'用分号隔开
 	_scheduleStart string
 	// 投递时间范围要求,格式'15:20'用分号隔开
@@ -40,12 +38,6 @@ type TaobaoWlbOrderCreateAPIRequest struct {
 	_orderFlag string
 	// 支付宝交易号
 	_alipayNo string
-	// 总金额
-	_totalAmount int64
-	// 应收金额，cod订单必选
-	_payableAmount int64
-	// cod服务费，只有cod订单的时候，才需要这个字段
-	_serviceFee int64
 	// 买家呢称
 	_buyerNick string
 	// 收货方信息，必须传， 手机和电话必选其一。收货方信息：邮编^^^省^^^市^^^区^^^具体地址^^^收件方名称^^^手机^^^电话如果某一个字段的数据为空时，必须传NA
@@ -56,8 +48,6 @@ type TaobaoWlbOrderCreateAPIRequest struct {
 	_expectStartTime string
 	// 期望结束时间，在入库单会使用到
 	_expectEndTime string
-	// 包裹件数，入库单和出库单中会用到
-	_packageCount int64
 	// 出库单中可能会用到<br/>运输公司名称^^^运输公司联系人^^^运输公司运单号^^^运输公司电话^^^运输公司联系人身份证号<br/><br/>========================================<br/>如果某一个字段的数据为空时，必须传NA
 	_tmsInfo string
 	// {"invoince_info": [{"bill_type":"发票类型，必选", "bill_title":"发票抬头，必选", "bill_amount":"发票金额(单位是分)，必选","bill_content":"发票内容，可选"}]}
@@ -68,6 +58,16 @@ type TaobaoWlbOrderCreateAPIRequest struct {
 	_attributes string
 	// 备注
 	_remark string
+	// 总金额
+	_totalAmount int64
+	// 应收金额，cod订单必选
+	_payableAmount int64
+	// cod服务费，只有cod订单的时候，才需要这个字段
+	_serviceFee int64
+	// 包裹件数，入库单和出库单中会用到
+	_packageCount int64
+	// 该物流宝订单是否已完成，如果完成则设置为true，如果为false，则需要等待继续创建订单商品信息。
+	_isFinished bool
 }
 
 // NewTaobaoWlbOrderCreateRequest 初始化TaobaoWlbOrderCreateAPIRequest对象
@@ -208,19 +208,6 @@ func (r TaobaoWlbOrderCreateAPIRequest) GetTmsOrderCode() string {
 	return r._tmsOrderCode
 }
 
-// SetIsFinished is IsFinished Setter
-// 该物流宝订单是否已完成，如果完成则设置为true，如果为false，则需要等待继续创建订单商品信息。
-func (r *TaobaoWlbOrderCreateAPIRequest) SetIsFinished(_isFinished bool) error {
-	r._isFinished = _isFinished
-	r.Set("is_finished", _isFinished)
-	return nil
-}
-
-// GetIsFinished IsFinished Getter
-func (r TaobaoWlbOrderCreateAPIRequest) GetIsFinished() bool {
-	return r._isFinished
-}
-
 // SetScheduleStart is ScheduleStart Setter
 // 投递时间范围要求,格式'13:20'用分号隔开
 func (r *TaobaoWlbOrderCreateAPIRequest) SetScheduleStart(_scheduleStart string) error {
@@ -271,45 +258,6 @@ func (r *TaobaoWlbOrderCreateAPIRequest) SetAlipayNo(_alipayNo string) error {
 // GetAlipayNo AlipayNo Getter
 func (r TaobaoWlbOrderCreateAPIRequest) GetAlipayNo() string {
 	return r._alipayNo
-}
-
-// SetTotalAmount is TotalAmount Setter
-// 总金额
-func (r *TaobaoWlbOrderCreateAPIRequest) SetTotalAmount(_totalAmount int64) error {
-	r._totalAmount = _totalAmount
-	r.Set("total_amount", _totalAmount)
-	return nil
-}
-
-// GetTotalAmount TotalAmount Getter
-func (r TaobaoWlbOrderCreateAPIRequest) GetTotalAmount() int64 {
-	return r._totalAmount
-}
-
-// SetPayableAmount is PayableAmount Setter
-// 应收金额，cod订单必选
-func (r *TaobaoWlbOrderCreateAPIRequest) SetPayableAmount(_payableAmount int64) error {
-	r._payableAmount = _payableAmount
-	r.Set("payable_amount", _payableAmount)
-	return nil
-}
-
-// GetPayableAmount PayableAmount Getter
-func (r TaobaoWlbOrderCreateAPIRequest) GetPayableAmount() int64 {
-	return r._payableAmount
-}
-
-// SetServiceFee is ServiceFee Setter
-// cod服务费，只有cod订单的时候，才需要这个字段
-func (r *TaobaoWlbOrderCreateAPIRequest) SetServiceFee(_serviceFee int64) error {
-	r._serviceFee = _serviceFee
-	r.Set("service_fee", _serviceFee)
-	return nil
-}
-
-// GetServiceFee ServiceFee Getter
-func (r TaobaoWlbOrderCreateAPIRequest) GetServiceFee() int64 {
-	return r._serviceFee
 }
 
 // SetBuyerNick is BuyerNick Setter
@@ -377,19 +325,6 @@ func (r TaobaoWlbOrderCreateAPIRequest) GetExpectEndTime() string {
 	return r._expectEndTime
 }
 
-// SetPackageCount is PackageCount Setter
-// 包裹件数，入库单和出库单中会用到
-func (r *TaobaoWlbOrderCreateAPIRequest) SetPackageCount(_packageCount int64) error {
-	r._packageCount = _packageCount
-	r.Set("package_count", _packageCount)
-	return nil
-}
-
-// GetPackageCount PackageCount Getter
-func (r TaobaoWlbOrderCreateAPIRequest) GetPackageCount() int64 {
-	return r._packageCount
-}
-
 // SetTmsInfo is TmsInfo Setter
 // 出库单中可能会用到<br/>运输公司名称^^^运输公司联系人^^^运输公司运单号^^^运输公司电话^^^运输公司联系人身份证号<br/><br/>========================================<br/>如果某一个字段的数据为空时，必须传NA
 func (r *TaobaoWlbOrderCreateAPIRequest) SetTmsInfo(_tmsInfo string) error {
@@ -453,4 +388,69 @@ func (r *TaobaoWlbOrderCreateAPIRequest) SetRemark(_remark string) error {
 // GetRemark Remark Getter
 func (r TaobaoWlbOrderCreateAPIRequest) GetRemark() string {
 	return r._remark
+}
+
+// SetTotalAmount is TotalAmount Setter
+// 总金额
+func (r *TaobaoWlbOrderCreateAPIRequest) SetTotalAmount(_totalAmount int64) error {
+	r._totalAmount = _totalAmount
+	r.Set("total_amount", _totalAmount)
+	return nil
+}
+
+// GetTotalAmount TotalAmount Getter
+func (r TaobaoWlbOrderCreateAPIRequest) GetTotalAmount() int64 {
+	return r._totalAmount
+}
+
+// SetPayableAmount is PayableAmount Setter
+// 应收金额，cod订单必选
+func (r *TaobaoWlbOrderCreateAPIRequest) SetPayableAmount(_payableAmount int64) error {
+	r._payableAmount = _payableAmount
+	r.Set("payable_amount", _payableAmount)
+	return nil
+}
+
+// GetPayableAmount PayableAmount Getter
+func (r TaobaoWlbOrderCreateAPIRequest) GetPayableAmount() int64 {
+	return r._payableAmount
+}
+
+// SetServiceFee is ServiceFee Setter
+// cod服务费，只有cod订单的时候，才需要这个字段
+func (r *TaobaoWlbOrderCreateAPIRequest) SetServiceFee(_serviceFee int64) error {
+	r._serviceFee = _serviceFee
+	r.Set("service_fee", _serviceFee)
+	return nil
+}
+
+// GetServiceFee ServiceFee Getter
+func (r TaobaoWlbOrderCreateAPIRequest) GetServiceFee() int64 {
+	return r._serviceFee
+}
+
+// SetPackageCount is PackageCount Setter
+// 包裹件数，入库单和出库单中会用到
+func (r *TaobaoWlbOrderCreateAPIRequest) SetPackageCount(_packageCount int64) error {
+	r._packageCount = _packageCount
+	r.Set("package_count", _packageCount)
+	return nil
+}
+
+// GetPackageCount PackageCount Getter
+func (r TaobaoWlbOrderCreateAPIRequest) GetPackageCount() int64 {
+	return r._packageCount
+}
+
+// SetIsFinished is IsFinished Setter
+// 该物流宝订单是否已完成，如果完成则设置为true，如果为false，则需要等待继续创建订单商品信息。
+func (r *TaobaoWlbOrderCreateAPIRequest) SetIsFinished(_isFinished bool) error {
+	r._isFinished = _isFinished
+	r.Set("is_finished", _isFinished)
+	return nil
+}
+
+// GetIsFinished IsFinished Getter
+func (r TaobaoWlbOrderCreateAPIRequest) GetIsFinished() bool {
+	return r._isFinished
 }

@@ -24,10 +24,10 @@ type AlibabaBenefitSendAPIResponseModel struct {
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 接口返回代码
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
-	// 是否处理成功
-	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
-	// 权益id
-	RightId int64 `json:"right_id,omitempty" xml:"right_id,omitempty"`
 	// 奖品名称
 	PrizeName string `json:"prize_name,omitempty" xml:"prize_name,omitempty"`
+	// 权益id
+	RightId int64 `json:"right_id,omitempty" xml:"right_id,omitempty"`
+	// 是否处理成功
+	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
 }

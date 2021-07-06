@@ -12,10 +12,6 @@ import (
 // 产品SKU信息更新
 type TaobaoFenxiaoProductSkuUpdateAPIRequest struct {
 	model.Params
-	// 产品ID
-	_productId int64
-	// 产品SKU库存
-	_quantity int64
 	// 采购基准价
 	_standardPrice string
 	// 代销采购价
@@ -26,6 +22,10 @@ type TaobaoFenxiaoProductSkuUpdateAPIRequest struct {
 	_skuNumber string
 	// 经销采购价
 	_dealerCostPrice string
+	// 产品ID
+	_productId int64
+	// 产品SKU库存
+	_quantity int64
 }
 
 // NewTaobaoFenxiaoProductSkuUpdateRequest 初始化TaobaoFenxiaoProductSkuUpdateAPIRequest对象
@@ -47,32 +47,6 @@ func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetProductId is ProductId Setter
-// 产品ID
-func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetProductId(_productId int64) error {
-	r._productId = _productId
-	r.Set("product_id", _productId)
-	return nil
-}
-
-// GetProductId ProductId Getter
-func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetProductId() int64 {
-	return r._productId
-}
-
-// SetQuantity is Quantity Setter
-// 产品SKU库存
-func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetQuantity(_quantity int64) error {
-	r._quantity = _quantity
-	r.Set("quantity", _quantity)
-	return nil
-}
-
-// GetQuantity Quantity Getter
-func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetQuantity() int64 {
-	return r._quantity
 }
 
 // SetStandardPrice is StandardPrice Setter
@@ -138,4 +112,30 @@ func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetDealerCostPrice(_dealerCost
 // GetDealerCostPrice DealerCostPrice Getter
 func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetDealerCostPrice() string {
 	return r._dealerCostPrice
+}
+
+// SetProductId is ProductId Setter
+// 产品ID
+func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// GetProductId ProductId Getter
+func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetProductId() int64 {
+	return r._productId
+}
+
+// SetQuantity is Quantity Setter
+// 产品SKU库存
+func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetQuantity(_quantity int64) error {
+	r._quantity = _quantity
+	r.Set("quantity", _quantity)
+	return nil
+}
+
+// GetQuantity Quantity Getter
+func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetQuantity() int64 {
+	return r._quantity
 }

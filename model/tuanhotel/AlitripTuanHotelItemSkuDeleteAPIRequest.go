@@ -12,12 +12,12 @@ import (
 // 商户对发布的宝贝套餐价格库存信息进行删除
 type AlitripTuanHotelItemSkuDeleteAPIRequest struct {
 	model.Params
+	// 要删除的skuId列表
+	_itemDeletedSkuIdList []int64
 	// 宝贝ID
 	_itemId int64
 	// 宝贝所属类目
 	_catId int64
-	// 要删除的skuId列表
-	_itemDeletedSkuIdList []int64
 }
 
 // NewAlitripTuanHotelItemSkuDeleteRequest 初始化AlitripTuanHotelItemSkuDeleteAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlitripTuanHotelItemSkuDeleteAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetItemDeletedSkuIdList is ItemDeletedSkuIdList Setter
+// 要删除的skuId列表
+func (r *AlitripTuanHotelItemSkuDeleteAPIRequest) SetItemDeletedSkuIdList(_itemDeletedSkuIdList []int64) error {
+	r._itemDeletedSkuIdList = _itemDeletedSkuIdList
+	r.Set("item_deleted_sku_id_list", _itemDeletedSkuIdList)
+	return nil
+}
+
+// GetItemDeletedSkuIdList ItemDeletedSkuIdList Getter
+func (r AlitripTuanHotelItemSkuDeleteAPIRequest) GetItemDeletedSkuIdList() []int64 {
+	return r._itemDeletedSkuIdList
 }
 
 // SetItemId is ItemId Setter
@@ -65,17 +78,4 @@ func (r *AlitripTuanHotelItemSkuDeleteAPIRequest) SetCatId(_catId int64) error {
 // GetCatId CatId Getter
 func (r AlitripTuanHotelItemSkuDeleteAPIRequest) GetCatId() int64 {
 	return r._catId
-}
-
-// SetItemDeletedSkuIdList is ItemDeletedSkuIdList Setter
-// 要删除的skuId列表
-func (r *AlitripTuanHotelItemSkuDeleteAPIRequest) SetItemDeletedSkuIdList(_itemDeletedSkuIdList []int64) error {
-	r._itemDeletedSkuIdList = _itemDeletedSkuIdList
-	r.Set("item_deleted_sku_id_list", _itemDeletedSkuIdList)
-	return nil
-}
-
-// GetItemDeletedSkuIdList ItemDeletedSkuIdList Getter
-func (r AlitripTuanHotelItemSkuDeleteAPIRequest) GetItemDeletedSkuIdList() []int64 {
-	return r._itemDeletedSkuIdList
 }

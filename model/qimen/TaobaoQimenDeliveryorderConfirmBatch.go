@@ -12,8 +12,8 @@ type TaobaoQimenDeliveryorderConfirmBatch struct {
 	ProduceCode string `json:"produceCode,omitempty" xml:"produceCode,omitempty"`
 	// 库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;ZT=在途库存;默认为查所有类型的库存)
 	InventoryType string `json:"inventoryType,omitempty" xml:"inventoryType,omitempty"`
-	// 实发数量(要求batchs节点下所有的实发数量之和等于orderline中的实发数量)
-	ActualQty int64 `json:"actualQty,omitempty" xml:"actualQty,omitempty"`
 	// 货品sn编码
 	SnCode string `json:"snCode,omitempty" xml:"snCode,omitempty"`
+	// 实发数量(要求batchs节点下所有的实发数量之和等于orderline中的实发数量)
+	ActualQty int64 `json:"actualQty,omitempty" xml:"actualQty,omitempty"`
 }

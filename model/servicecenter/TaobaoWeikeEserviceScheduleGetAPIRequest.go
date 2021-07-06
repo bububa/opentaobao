@@ -12,8 +12,6 @@ import (
 // 客服排班信息查询接口
 type TaobaoWeikeEserviceScheduleGetAPIRequest struct {
 	model.Params
-	// 订单ID，orderId、sellerNick、spNick三者不能同时为Null
-	_orderId int64
 	// 商家子账号昵称，orderId、sellerNick、spNick三者不能同时为Null
 	_sellerNick string
 	// 服务商子账号昵称，orderId、sellerNick、spNick三者不能同时为Null
@@ -22,6 +20,8 @@ type TaobaoWeikeEserviceScheduleGetAPIRequest struct {
 	_startDate string
 	// 结束日期，起始日期和结束日期跨度不能超过31天
 	_endDate string
+	// 订单ID，orderId、sellerNick、spNick三者不能同时为Null
+	_orderId int64
 }
 
 // NewTaobaoWeikeEserviceScheduleGetRequest 初始化TaobaoWeikeEserviceScheduleGetAPIRequest对象
@@ -43,19 +43,6 @@ func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetOrderId is OrderId Setter
-// 订单ID，orderId、sellerNick、spNick三者不能同时为Null
-func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetOrderId(_orderId int64) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
-	return nil
-}
-
-// GetOrderId OrderId Getter
-func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetOrderId() int64 {
-	return r._orderId
 }
 
 // SetSellerNick is SellerNick Setter
@@ -108,4 +95,17 @@ func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetEndDate(_endDate string) e
 // GetEndDate EndDate Getter
 func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetEndDate() string {
 	return r._endDate
+}
+
+// SetOrderId is OrderId Setter
+// 订单ID，orderId、sellerNick、spNick三者不能同时为Null
+func (r *TaobaoWeikeEserviceScheduleGetAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// GetOrderId OrderId Getter
+func (r TaobaoWeikeEserviceScheduleGetAPIRequest) GetOrderId() int64 {
+	return r._orderId
 }

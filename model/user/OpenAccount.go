@@ -34,6 +34,18 @@ type OpenAccount struct {
 	CreateLocation string `json:"create_location,omitempty" xml:"create_location,omitempty"`
 	// 自定义扩展信息Map的Json格式
 	ExtInfos string `json:"ext_infos,omitempty" xml:"ext_infos,omitempty"`
+	// 姓名
+	Name string `json:"name,omitempty" xml:"name,omitempty"`
+	// 出生日期
+	Birthday string `json:"birthday,omitempty" xml:"birthday,omitempty"`
+	// 旺旺
+	Wangwang string `json:"wangwang,omitempty" xml:"wangwang,omitempty"`
+	// 微信
+	Weixin string `json:"weixin,omitempty" xml:"weixin,omitempty"`
+	// 记录创建时间
+	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
+	// 记录上次更新时间
+	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 密码加密强度
 	LoginPwdIntensity int64 `json:"login_pwd_intensity,omitempty" xml:"login_pwd_intensity,omitempty"`
 	// 账号创建类型：1、通过短信创建，2、ISV批量导入，3、ISV OAuth创建
@@ -44,22 +56,10 @@ type OpenAccount struct {
 	LoginPwdEncryption int64 `json:"login_pwd_encryption,omitempty" xml:"login_pwd_encryption,omitempty"`
 	// 1男 2女
 	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
-	// 姓名
-	Name string `json:"name,omitempty" xml:"name,omitempty"`
-	// 出生日期
-	Birthday string `json:"birthday,omitempty" xml:"birthday,omitempty"`
-	// 旺旺
-	Wangwang string `json:"wangwang,omitempty" xml:"wangwang,omitempty"`
-	// 微信
-	Weixin string `json:"weixin,omitempty" xml:"weixin,omitempty"`
 	// TAOBAO = 1;WEIXIN = 2;WEIBO = 3;QQ = 4;
 	OauthPlateform int64 `json:"oauth_plateform,omitempty" xml:"oauth_plateform,omitempty"`
 	// Open Account Id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
-	// 记录创建时间
-	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-	// 记录上次更新时间
-	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 记录的版本号
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 }

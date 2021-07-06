@@ -12,16 +12,20 @@ import (
 // 根据类目ID和商品名称查询商品概要信息。结果以修改时间倒序返回，支持分页，每页最多30个。每次调用都是独立的请求，不记录调用的上下文。
 type AlibabaIcbuProductListAPIRequest struct {
 	model.Params
-	// 类目ID
-	_categoryId int64
 	// 商品名称，支持模糊匹配
 	_subject string
+	// 商品语种，目前只支持ENGLISH
+	_language string
+	// 最晚修改时间，格式yyyy-MM-dd HH:mm:ss
+	_gmtModifiedTo string
+	// 最早修改时间，格式yyyy-MM-dd HH:mm:ss
+	_gmtModifiedFrom string
+	// 类目ID
+	_categoryId int64
 	// 当前页
 	_currentPage int64
 	// 每页大小，最大30
 	_pageSize int64
-	// 商品语种，目前只支持ENGLISH
-	_language string
 	// 商品三级分组id，可选填。若填写-1 则表示取回的商品没有三级分组，不填入代表取回的商品不关心它的三级分组，填写对应的group id将返回这个分组下的商品
 	_groupId3 int64
 	// 商品二级分组id，可选填。若填写-1 则表示取回的商品没有二级分组，不填入代表取回的商品不关系它的二级分组，填写对应的group id将返回这个分组下的商品
@@ -30,10 +34,6 @@ type AlibabaIcbuProductListAPIRequest struct {
 	_groupId1 int64
 	// 商品明文id
 	_id int64
-	// 最晚修改时间，格式yyyy-MM-dd HH:mm:ss
-	_gmtModifiedTo string
-	// 最早修改时间，格式yyyy-MM-dd HH:mm:ss
-	_gmtModifiedFrom string
 }
 
 // NewAlibabaIcbuProductListRequest 初始化AlibabaIcbuProductListAPIRequest对象
@@ -57,19 +57,6 @@ func (r AlibabaIcbuProductListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetCategoryId is CategoryId Setter
-// 类目ID
-func (r *AlibabaIcbuProductListAPIRequest) SetCategoryId(_categoryId int64) error {
-	r._categoryId = _categoryId
-	r.Set("category_id", _categoryId)
-	return nil
-}
-
-// GetCategoryId CategoryId Getter
-func (r AlibabaIcbuProductListAPIRequest) GetCategoryId() int64 {
-	return r._categoryId
-}
-
 // SetSubject is Subject Setter
 // 商品名称，支持模糊匹配
 func (r *AlibabaIcbuProductListAPIRequest) SetSubject(_subject string) error {
@@ -81,6 +68,58 @@ func (r *AlibabaIcbuProductListAPIRequest) SetSubject(_subject string) error {
 // GetSubject Subject Getter
 func (r AlibabaIcbuProductListAPIRequest) GetSubject() string {
 	return r._subject
+}
+
+// SetLanguage is Language Setter
+// 商品语种，目前只支持ENGLISH
+func (r *AlibabaIcbuProductListAPIRequest) SetLanguage(_language string) error {
+	r._language = _language
+	r.Set("language", _language)
+	return nil
+}
+
+// GetLanguage Language Getter
+func (r AlibabaIcbuProductListAPIRequest) GetLanguage() string {
+	return r._language
+}
+
+// SetGmtModifiedTo is GmtModifiedTo Setter
+// 最晚修改时间，格式yyyy-MM-dd HH:mm:ss
+func (r *AlibabaIcbuProductListAPIRequest) SetGmtModifiedTo(_gmtModifiedTo string) error {
+	r._gmtModifiedTo = _gmtModifiedTo
+	r.Set("gmt_modified_to", _gmtModifiedTo)
+	return nil
+}
+
+// GetGmtModifiedTo GmtModifiedTo Getter
+func (r AlibabaIcbuProductListAPIRequest) GetGmtModifiedTo() string {
+	return r._gmtModifiedTo
+}
+
+// SetGmtModifiedFrom is GmtModifiedFrom Setter
+// 最早修改时间，格式yyyy-MM-dd HH:mm:ss
+func (r *AlibabaIcbuProductListAPIRequest) SetGmtModifiedFrom(_gmtModifiedFrom string) error {
+	r._gmtModifiedFrom = _gmtModifiedFrom
+	r.Set("gmt_modified_from", _gmtModifiedFrom)
+	return nil
+}
+
+// GetGmtModifiedFrom GmtModifiedFrom Getter
+func (r AlibabaIcbuProductListAPIRequest) GetGmtModifiedFrom() string {
+	return r._gmtModifiedFrom
+}
+
+// SetCategoryId is CategoryId Setter
+// 类目ID
+func (r *AlibabaIcbuProductListAPIRequest) SetCategoryId(_categoryId int64) error {
+	r._categoryId = _categoryId
+	r.Set("category_id", _categoryId)
+	return nil
+}
+
+// GetCategoryId CategoryId Getter
+func (r AlibabaIcbuProductListAPIRequest) GetCategoryId() int64 {
+	return r._categoryId
 }
 
 // SetCurrentPage is CurrentPage Setter
@@ -107,19 +146,6 @@ func (r *AlibabaIcbuProductListAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r AlibabaIcbuProductListAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetLanguage is Language Setter
-// 商品语种，目前只支持ENGLISH
-func (r *AlibabaIcbuProductListAPIRequest) SetLanguage(_language string) error {
-	r._language = _language
-	r.Set("language", _language)
-	return nil
-}
-
-// GetLanguage Language Getter
-func (r AlibabaIcbuProductListAPIRequest) GetLanguage() string {
-	return r._language
 }
 
 // SetGroupId3 is GroupId3 Setter
@@ -172,30 +198,4 @@ func (r *AlibabaIcbuProductListAPIRequest) SetId(_id int64) error {
 // GetId Id Getter
 func (r AlibabaIcbuProductListAPIRequest) GetId() int64 {
 	return r._id
-}
-
-// SetGmtModifiedTo is GmtModifiedTo Setter
-// 最晚修改时间，格式yyyy-MM-dd HH:mm:ss
-func (r *AlibabaIcbuProductListAPIRequest) SetGmtModifiedTo(_gmtModifiedTo string) error {
-	r._gmtModifiedTo = _gmtModifiedTo
-	r.Set("gmt_modified_to", _gmtModifiedTo)
-	return nil
-}
-
-// GetGmtModifiedTo GmtModifiedTo Getter
-func (r AlibabaIcbuProductListAPIRequest) GetGmtModifiedTo() string {
-	return r._gmtModifiedTo
-}
-
-// SetGmtModifiedFrom is GmtModifiedFrom Setter
-// 最早修改时间，格式yyyy-MM-dd HH:mm:ss
-func (r *AlibabaIcbuProductListAPIRequest) SetGmtModifiedFrom(_gmtModifiedFrom string) error {
-	r._gmtModifiedFrom = _gmtModifiedFrom
-	r.Set("gmt_modified_from", _gmtModifiedFrom)
-	return nil
-}
-
-// GetGmtModifiedFrom GmtModifiedFrom Getter
-func (r AlibabaIcbuProductListAPIRequest) GetGmtModifiedFrom() string {
-	return r._gmtModifiedFrom
 }

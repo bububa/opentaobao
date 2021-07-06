@@ -2,8 +2,6 @@ package mozi
 
 // ReEntryTenantEmployeeAndAccountRequest 结构体
 type ReEntryTenantEmployeeAndAccountRequest struct {
-	// 租户ID
-	TenantId int64 `json:"tenant_id,omitempty" xml:"tenant_id,omitempty"`
 	// 证件号码
 	CertificateCode string `json:"certificate_code,omitempty" xml:"certificate_code,omitempty"`
 	// 请求附加消息
@@ -36,4 +34,6 @@ type ReEntryTenantEmployeeAndAccountRequest struct {
 	SecMobile string `json:"sec_mobile,omitempty" xml:"sec_mobile,omitempty"`
 	// 头像URL
 	Avatar string `json:"avatar,omitempty" xml:"avatar,omitempty"`
+	// 租户ID
+	TenantId int64 `json:"tenant_id,omitempty" xml:"tenant_id,omitempty"`
 }

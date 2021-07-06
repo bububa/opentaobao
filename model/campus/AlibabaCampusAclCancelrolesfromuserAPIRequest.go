@@ -14,16 +14,16 @@ type AlibabaCampusAclCancelrolesfromuserAPIRequest struct {
 	model.Params
 	// 系统自动生成
 	_role []RoleReq
-	// 公司id
-	_companyId int64
 	// 系统id
 	_systemId string
-	// 园区id
-	_campusId int64
 	// 用户账号
 	_accountId string
 	// 操作人id(不填默认appCode)
 	_userId string
+	// 公司id
+	_companyId int64
+	// 园区id
+	_campusId int64
 }
 
 // NewAlibabaCampusAclCancelrolesfromuserRequest 初始化AlibabaCampusAclCancelrolesfromuserAPIRequest对象
@@ -60,19 +60,6 @@ func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetRole() []RoleReq {
 	return r._role
 }
 
-// SetCompanyId is CompanyId Setter
-// 公司id
-func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetCompanyId(_companyId int64) error {
-	r._companyId = _companyId
-	r.Set("company_id", _companyId)
-	return nil
-}
-
-// GetCompanyId CompanyId Getter
-func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetCompanyId() int64 {
-	return r._companyId
-}
-
 // SetSystemId is SystemId Setter
 // 系统id
 func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetSystemId(_systemId string) error {
@@ -84,19 +71,6 @@ func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetSystemId(_systemId st
 // GetSystemId SystemId Getter
 func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetSystemId() string {
 	return r._systemId
-}
-
-// SetCampusId is CampusId Setter
-// 园区id
-func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetCampusId(_campusId int64) error {
-	r._campusId = _campusId
-	r.Set("campus_id", _campusId)
-	return nil
-}
-
-// GetCampusId CampusId Getter
-func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetCampusId() int64 {
-	return r._campusId
 }
 
 // SetAccountId is AccountId Setter
@@ -123,4 +97,30 @@ func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetUserId(_userId string
 // GetUserId UserId Getter
 func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetUserId() string {
 	return r._userId
+}
+
+// SetCompanyId is CompanyId Setter
+// 公司id
+func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetCompanyId(_companyId int64) error {
+	r._companyId = _companyId
+	r.Set("company_id", _companyId)
+	return nil
+}
+
+// GetCompanyId CompanyId Getter
+func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetCompanyId() int64 {
+	return r._companyId
+}
+
+// SetCampusId is CampusId Setter
+// 园区id
+func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetCampusId(_campusId int64) error {
+	r._campusId = _campusId
+	r.Set("campus_id", _campusId)
+	return nil
+}
+
+// GetCampusId CampusId Getter
+func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetCampusId() int64 {
+	return r._campusId
 }

@@ -12,8 +12,6 @@ import (
 // 查询单个商品未来价，融合了未来基础售价+未来促销价
 type AlibabaWdkItemFuturepriceQueryAPIRequest struct {
 	model.Params
-	// 渠道店id
-	_shopId int64
 	// 商品编码
 	_skuCode string
 	// 渠道
@@ -22,6 +20,8 @@ type AlibabaWdkItemFuturepriceQueryAPIRequest struct {
 	_startTime string
 	// 结束时间，结束时间-开始时间不能超过48小时
 	_endTime string
+	// 渠道店id
+	_shopId int64
 }
 
 // NewAlibabaWdkItemFuturepriceQueryRequest 初始化AlibabaWdkItemFuturepriceQueryAPIRequest对象
@@ -43,19 +43,6 @@ func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetShopId is ShopId Setter
-// 渠道店id
-func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetShopId(_shopId int64) error {
-	r._shopId = _shopId
-	r.Set("shop_id", _shopId)
-	return nil
-}
-
-// GetShopId ShopId Getter
-func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetShopId() int64 {
-	return r._shopId
 }
 
 // SetSkuCode is SkuCode Setter
@@ -108,4 +95,17 @@ func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetEndTime(_endTime string) e
 // GetEndTime EndTime Getter
 func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetEndTime() string {
 	return r._endTime
+}
+
+// SetShopId is ShopId Setter
+// 渠道店id
+func (r *AlibabaWdkItemFuturepriceQueryAPIRequest) SetShopId(_shopId int64) error {
+	r._shopId = _shopId
+	r.Set("shop_id", _shopId)
+	return nil
+}
+
+// GetShopId ShopId Getter
+func (r AlibabaWdkItemFuturepriceQueryAPIRequest) GetShopId() int64 {
+	return r._shopId
 }

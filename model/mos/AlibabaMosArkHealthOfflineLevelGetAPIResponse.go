@@ -22,10 +22,10 @@ type AlibabaMosArkHealthOfflineLevelGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// model
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
-	// success
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// msgInfo
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// msgCode
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
+	// success
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

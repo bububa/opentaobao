@@ -12,12 +12,12 @@ import (
 // 天猫服务寄送类业务，服务商履约完成后进行寄回操作呼叫运力
 type TmallServicecenterWorkcardExpressorderConsignAPIRequest struct {
 	model.Params
-	// 物流寄件单号（废弃）
-	_expressOrderId int64
 	// 工单List
 	_workcardIdList []int64
 	// 真实接单服务商
 	_realTpNick string
+	// 物流寄件单号（废弃）
+	_expressOrderId int64
 	// 物流订单号
 	_logisticsOrderId int64
 }
@@ -41,19 +41,6 @@ func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetApiParams() 
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetExpressOrderId is ExpressOrderId Setter
-// 物流寄件单号（废弃）
-func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetExpressOrderId(_expressOrderId int64) error {
-	r._expressOrderId = _expressOrderId
-	r.Set("express_order_id", _expressOrderId)
-	return nil
-}
-
-// GetExpressOrderId ExpressOrderId Getter
-func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetExpressOrderId() int64 {
-	return r._expressOrderId
 }
 
 // SetWorkcardIdList is WorkcardIdList Setter
@@ -80,6 +67,19 @@ func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetRealTpNick(
 // GetRealTpNick RealTpNick Getter
 func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetRealTpNick() string {
 	return r._realTpNick
+}
+
+// SetExpressOrderId is ExpressOrderId Setter
+// 物流寄件单号（废弃）
+func (r *TmallServicecenterWorkcardExpressorderConsignAPIRequest) SetExpressOrderId(_expressOrderId int64) error {
+	r._expressOrderId = _expressOrderId
+	r.Set("express_order_id", _expressOrderId)
+	return nil
+}
+
+// GetExpressOrderId ExpressOrderId Getter
+func (r TmallServicecenterWorkcardExpressorderConsignAPIRequest) GetExpressOrderId() int64 {
+	return r._expressOrderId
 }
 
 // SetLogisticsOrderId is LogisticsOrderId Setter

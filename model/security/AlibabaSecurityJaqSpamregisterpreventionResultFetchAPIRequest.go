@@ -18,8 +18,6 @@ type AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest struct {
 	_ip string
 	// 场景描述，String必须在下面可以使用的场景中选择。可以使用的场景为：Login：登录事件；Register：注册事件；Trade:交易事件；Payment:支付事件;Refund：退款事件	；Loan：借款事件；Transfer：转账事件；Withdraw	：提现事件；Modify：修改事件；Click：点击事件；Activate：激活事件；	Other：其他事件。
 	_context string
-	// 登录来源。可以输入的参数如下：1：PC网页；2：移动网页；3：APP；4：其他
-	_source int64
 	// 账号绑定的email地址
 	_email string
 	// 账号的全局唯一标识
@@ -50,6 +48,8 @@ type AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest struct {
 	_jsToken string
 	// 接入SDK后从服务端获取的token
 	_sdkToken string
+	// 登录来源。可以输入的参数如下：1：PC网页；2：移动网页；3：APP；4：其他
+	_source int64
 }
 
 // NewAlibabaSecurityJaqSpamregisterpreventionResultFetchRequest 初始化AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest对象
@@ -110,19 +110,6 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetConte
 // GetContext Context Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetContext() string {
 	return r._context
-}
-
-// SetSource is Source Setter
-// 登录来源。可以输入的参数如下：1：PC网页；2：移动网页；3：APP；4：其他
-func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetSource(_source int64) error {
-	r._source = _source
-	r.Set("source", _source)
-	return nil
-}
-
-// GetSource Source Getter
-func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetSource() int64 {
-	return r._source
 }
 
 // SetEmail is Email Setter
@@ -318,4 +305,17 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetSdkTo
 // GetSdkToken SdkToken Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetSdkToken() string {
 	return r._sdkToken
+}
+
+// SetSource is Source Setter
+// 登录来源。可以输入的参数如下：1：PC网页；2：移动网页；3：APP；4：其他
+func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) SetSource(_source int64) error {
+	r._source = _source
+	r.Set("source", _source)
+	return nil
+}
+
+// GetSource Source Getter
+func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchAPIRequest) GetSource() int64 {
+	return r._source
 }

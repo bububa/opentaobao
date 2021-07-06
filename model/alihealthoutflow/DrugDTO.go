@@ -2,6 +2,8 @@ package alihealthoutflow
 
 // DrugDto 结构体
 type DrugDto struct {
+	// 用法用量
+	DrugUsageList []DrugUsageVo `json:"drug_usage_list,omitempty" xml:"drug_usage_list>drug_usage_vo,omitempty"`
 	// 规格
 	Spec string `json:"spec,omitempty" xml:"spec,omitempty"`
 	// 总量
@@ -10,16 +12,12 @@ type DrugDto struct {
 	CommonDrugName string `json:"common_drug_name,omitempty" xml:"common_drug_name,omitempty"`
 	// 药品名
 	DrugName string `json:"drug_name,omitempty" xml:"drug_name,omitempty"`
-	// 用法用量
-	DrugUsageList []DrugUsageVo `json:"drug_usage_list,omitempty" xml:"drug_usage_list>drug_usage_vo,omitempty"`
 	// 剂型
 	DoseForm string `json:"dose_form,omitempty" xml:"dose_form,omitempty"`
 	// 药品通用名拼音
 	DrugCommonNamePy string `json:"drug_common_name_py,omitempty" xml:"drug_common_name_py,omitempty"`
 	// 药品名拼音
 	DrugNamePy string `json:"drug_name_py,omitempty" xml:"drug_name_py,omitempty"`
-	// 是否允许电子处方
-	ElectricPres bool `json:"electric_pres,omitempty" xml:"electric_pres,omitempty"`
 	// 省平台ID
 	ProvinceDrugCode string `json:"province_drug_code,omitempty" xml:"province_drug_code,omitempty"`
 	// 适应症
@@ -82,4 +80,6 @@ type DrugDto struct {
 	Count string `json:"count,omitempty" xml:"count,omitempty"`
 	// 核销药品单价
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
+	// 是否允许电子处方
+	ElectricPres bool `json:"electric_pres,omitempty" xml:"electric_pres,omitempty"`
 }

@@ -12,10 +12,10 @@ type Value struct {
 	VendorCode string `json:"vendor_code,omitempty" xml:"vendor_code,omitempty"`
 	// vendor name
 	VendorName string `json:"vendor_name,omitempty" xml:"vendor_name,omitempty"`
-	// shipping fee
-	Fee float64 `json:"fee,omitempty" xml:"fee,omitempty"`
 	// dispatch country
 	DispatchCountry string `json:"dispatch_country,omitempty" xml:"dispatch_country,omitempty"`
 	// delivery time (days)
 	DeliveryTime string `json:"delivery_time,omitempty" xml:"delivery_time,omitempty"`
+	// shipping fee
+	Fee float64 `json:"fee,omitempty" xml:"fee,omitempty"`
 }

@@ -12,10 +12,10 @@ import (
 // 供应商停止发货
 type TmallChannelTradeOrderStopAPIRequest struct {
 	model.Params
-	// 主采购单号
-	_mainPurchaseOrderNo int64
 	// 幂等单号
 	_requestNo string
+	// 主采购单号
+	_mainPurchaseOrderNo int64
 }
 
 // NewTmallChannelTradeOrderStopRequest 初始化TmallChannelTradeOrderStopAPIRequest对象
@@ -39,19 +39,6 @@ func (r TmallChannelTradeOrderStopAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetMainPurchaseOrderNo is MainPurchaseOrderNo Setter
-// 主采购单号
-func (r *TmallChannelTradeOrderStopAPIRequest) SetMainPurchaseOrderNo(_mainPurchaseOrderNo int64) error {
-	r._mainPurchaseOrderNo = _mainPurchaseOrderNo
-	r.Set("main_purchase_order_no", _mainPurchaseOrderNo)
-	return nil
-}
-
-// GetMainPurchaseOrderNo MainPurchaseOrderNo Getter
-func (r TmallChannelTradeOrderStopAPIRequest) GetMainPurchaseOrderNo() int64 {
-	return r._mainPurchaseOrderNo
-}
-
 // SetRequestNo is RequestNo Setter
 // 幂等单号
 func (r *TmallChannelTradeOrderStopAPIRequest) SetRequestNo(_requestNo string) error {
@@ -63,4 +50,17 @@ func (r *TmallChannelTradeOrderStopAPIRequest) SetRequestNo(_requestNo string) e
 // GetRequestNo RequestNo Getter
 func (r TmallChannelTradeOrderStopAPIRequest) GetRequestNo() string {
 	return r._requestNo
+}
+
+// SetMainPurchaseOrderNo is MainPurchaseOrderNo Setter
+// 主采购单号
+func (r *TmallChannelTradeOrderStopAPIRequest) SetMainPurchaseOrderNo(_mainPurchaseOrderNo int64) error {
+	r._mainPurchaseOrderNo = _mainPurchaseOrderNo
+	r.Set("main_purchase_order_no", _mainPurchaseOrderNo)
+	return nil
+}
+
+// GetMainPurchaseOrderNo MainPurchaseOrderNo Getter
+func (r TmallChannelTradeOrderStopAPIRequest) GetMainPurchaseOrderNo() int64 {
+	return r._mainPurchaseOrderNo
 }

@@ -20,8 +20,8 @@ type TaobaoAlitripItFareBatchdeleteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_it_fare_batchdelete_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 任务id，可以根据任务id调用querytask查询执行结果
-	TaskId int64 `json:"task_id,omitempty" xml:"task_id,omitempty"`
 	// json格式的字符串，扩展属性，预留
 	ExtendAttributes string `json:"extend_attributes,omitempty" xml:"extend_attributes,omitempty"`
+	// 任务id，可以根据任务id调用querytask查询执行结果
+	TaskId int64 `json:"task_id,omitempty" xml:"task_id,omitempty"`
 }

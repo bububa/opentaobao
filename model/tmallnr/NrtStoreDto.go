@@ -2,8 +2,6 @@ package tmallnr
 
 // NrtStoreDto 结构体
 type NrtStoreDto struct {
-	// 门店ID
-	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 门店名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 地址
@@ -12,4 +10,6 @@ type NrtStoreDto struct {
 	Lat string `json:"lat,omitempty" xml:"lat,omitempty"`
 	// 经度
 	Lng string `json:"lng,omitempty" xml:"lng,omitempty"`
+	// 门店ID
+	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 }

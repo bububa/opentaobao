@@ -12,12 +12,12 @@ import (
 // （供销）产品级别日历价格库存修改，全量覆盖
 type TaobaoAlitripTravelProductSkuOverrideAPIRequest struct {
 	model.Params
+	// 商品日历价格库存套餐
+	_skus []ItemSkuInfo
 	// 商品 外部商家编码。itemId和outProductId至少填写一个
 	_outProductId string
 	// 商品id。itemId和outProductId至少填写一个
 	_itemId int64
-	// 商品日历价格库存套餐
-	_skus []ItemSkuInfo
 }
 
 // NewTaobaoAlitripTravelProductSkuOverrideRequest 初始化TaobaoAlitripTravelProductSkuOverrideAPIRequest对象
@@ -39,6 +39,19 @@ func (r TaobaoAlitripTravelProductSkuOverrideAPIRequest) GetApiParams() url.Valu
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSkus is Skus Setter
+// 商品日历价格库存套餐
+func (r *TaobaoAlitripTravelProductSkuOverrideAPIRequest) SetSkus(_skus []ItemSkuInfo) error {
+	r._skus = _skus
+	r.Set("skus", _skus)
+	return nil
+}
+
+// GetSkus Skus Getter
+func (r TaobaoAlitripTravelProductSkuOverrideAPIRequest) GetSkus() []ItemSkuInfo {
+	return r._skus
 }
 
 // SetOutProductId is OutProductId Setter
@@ -65,17 +78,4 @@ func (r *TaobaoAlitripTravelProductSkuOverrideAPIRequest) SetItemId(_itemId int6
 // GetItemId ItemId Getter
 func (r TaobaoAlitripTravelProductSkuOverrideAPIRequest) GetItemId() int64 {
 	return r._itemId
-}
-
-// SetSkus is Skus Setter
-// 商品日历价格库存套餐
-func (r *TaobaoAlitripTravelProductSkuOverrideAPIRequest) SetSkus(_skus []ItemSkuInfo) error {
-	r._skus = _skus
-	r.Set("skus", _skus)
-	return nil
-}
-
-// GetSkus Skus Getter
-func (r TaobaoAlitripTravelProductSkuOverrideAPIRequest) GetSkus() []ItemSkuInfo {
-	return r._skus
 }

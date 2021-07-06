@@ -14,10 +14,10 @@ type AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest struct {
 	model.Params
 	// 角色id
 	_roleId int64
-	// 是否查询全部类型权限
-	_allPermission bool
 	// 系统参数
 	_workbenchcontext *WorkBenchContext
+	// 是否查询全部类型权限
+	_allPermission bool
 }
 
 // NewAlibabaCampusAclNewGetrolewithmenutreenodesRequest 初始化AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest对象
@@ -54,19 +54,6 @@ func (r AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) GetRoleId() int64
 	return r._roleId
 }
 
-// SetAllPermission is AllPermission Setter
-// 是否查询全部类型权限
-func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetAllPermission(_allPermission bool) error {
-	r._allPermission = _allPermission
-	r.Set("all_permission", _allPermission)
-	return nil
-}
-
-// GetAllPermission AllPermission Getter
-func (r AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) GetAllPermission() bool {
-	return r._allPermission
-}
-
 // SetWorkbenchcontext is Workbenchcontext Setter
 // 系统参数
 func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
@@ -78,4 +65,17 @@ func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetWorkbenchcont
 // GetWorkbenchcontext Workbenchcontext Getter
 func (r AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
+}
+
+// SetAllPermission is AllPermission Setter
+// 是否查询全部类型权限
+func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetAllPermission(_allPermission bool) error {
+	r._allPermission = _allPermission
+	r.Set("all_permission", _allPermission)
+	return nil
+}
+
+// GetAllPermission AllPermission Getter
+func (r AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) GetAllPermission() bool {
+	return r._allPermission
 }

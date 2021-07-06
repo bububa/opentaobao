@@ -14,10 +14,10 @@ type AlibabaSeakingTitlerewriteResultAPIRequest struct {
 	model.Params
 	// token来源站点
 	_tokenFrom string
-	// 任务id
-	_taskId int64
 	// 用户token
 	_token string
+	// 任务id
+	_taskId int64
 }
 
 // NewAlibabaSeakingTitlerewriteResultRequest 初始化AlibabaSeakingTitlerewriteResultAPIRequest对象
@@ -54,19 +54,6 @@ func (r AlibabaSeakingTitlerewriteResultAPIRequest) GetTokenFrom() string {
 	return r._tokenFrom
 }
 
-// SetTaskId is TaskId Setter
-// 任务id
-func (r *AlibabaSeakingTitlerewriteResultAPIRequest) SetTaskId(_taskId int64) error {
-	r._taskId = _taskId
-	r.Set("task_id", _taskId)
-	return nil
-}
-
-// GetTaskId TaskId Getter
-func (r AlibabaSeakingTitlerewriteResultAPIRequest) GetTaskId() int64 {
-	return r._taskId
-}
-
 // SetToken is Token Setter
 // 用户token
 func (r *AlibabaSeakingTitlerewriteResultAPIRequest) SetToken(_token string) error {
@@ -78,4 +65,17 @@ func (r *AlibabaSeakingTitlerewriteResultAPIRequest) SetToken(_token string) err
 // GetToken Token Getter
 func (r AlibabaSeakingTitlerewriteResultAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetTaskId is TaskId Setter
+// 任务id
+func (r *AlibabaSeakingTitlerewriteResultAPIRequest) SetTaskId(_taskId int64) error {
+	r._taskId = _taskId
+	r.Set("task_id", _taskId)
+	return nil
+}
+
+// GetTaskId TaskId Getter
+func (r AlibabaSeakingTitlerewriteResultAPIRequest) GetTaskId() int64 {
+	return r._taskId
 }

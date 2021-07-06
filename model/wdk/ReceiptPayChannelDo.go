@@ -2,10 +2,6 @@ package wdk
 
 // ReceiptPayChannelDo 结构体
 type ReceiptPayChannelDo struct {
-	// 序号
-	Index int64 `json:"index,omitempty" xml:"index,omitempty"`
-	// 付款金额
-	PayAmount int64 `json:"pay_amount,omitempty" xml:"pay_amount,omitempty"`
 	// 付款类型， 现金、支票、银行卡、支付宝、微信
 	PayType string `json:"pay_type,omitempty" xml:"pay_type,omitempty"`
 	// 款机号
@@ -18,4 +14,8 @@ type ReceiptPayChannelDo struct {
 	ChannelOrderId string `json:"channel_order_id,omitempty" xml:"channel_order_id,omitempty"`
 	// 付款码
 	PayCode string `json:"pay_code,omitempty" xml:"pay_code,omitempty"`
+	// 序号
+	Index int64 `json:"index,omitempty" xml:"index,omitempty"`
+	// 付款金额
+	PayAmount int64 `json:"pay_amount,omitempty" xml:"pay_amount,omitempty"`
 }

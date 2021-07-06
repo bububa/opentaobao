@@ -20,8 +20,6 @@ type TaobaoVmarketEticketStoreGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"vmarket_eticket_store_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 商户id
-	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 商户地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 商户名称
@@ -36,4 +34,6 @@ type TaobaoVmarketEticketStoreGetAPIResponseModel struct {
 	Contract string `json:"contract,omitempty" xml:"contract,omitempty"`
 	// 自有卖家导入门店的时候，可以把自己系统门店信息的主键或者唯一key传入，用于快速匹配
 	Selfcode string `json:"selfcode,omitempty" xml:"selfcode,omitempty"`
+	// 商户id
+	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 }

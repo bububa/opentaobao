@@ -4,8 +4,6 @@ package alitripbp
 type CouponDataRequest struct {
 	// 券id
 	CouponId string `json:"coupon_id,omitempty" xml:"coupon_id,omitempty"`
-	// 券状态
-	CouponStatus int64 `json:"coupon_status,omitempty" xml:"coupon_status,omitempty"`
 	// 券失效时间
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 场景
@@ -18,4 +16,6 @@ type CouponDataRequest struct {
 	CouponName string `json:"coupon_name,omitempty" xml:"coupon_name,omitempty"`
 	// 券额度(单位:分)
 	CouponPrice string `json:"coupon_price,omitempty" xml:"coupon_price,omitempty"`
+	// 券状态
+	CouponStatus int64 `json:"coupon_status,omitempty" xml:"coupon_status,omitempty"`
 }

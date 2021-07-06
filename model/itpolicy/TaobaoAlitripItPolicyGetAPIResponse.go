@@ -20,12 +20,12 @@ type TaobaoAlitripItPolicyGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alitrip_it_policy_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 扩展字段
+	ExtendAttributes string `json:"extend_attributes,omitempty" xml:"extend_attributes,omitempty"`
 	// 淘宝政策id
 	TaobaoId int64 `json:"taobao_id,omitempty" xml:"taobao_id,omitempty"`
 	// 政策状态，0-未发布，1-已发布，2-已过期
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
-	// 扩展字段
-	ExtendAttributes string `json:"extend_attributes,omitempty" xml:"extend_attributes,omitempty"`
 	// 政策信息
 	PolicyDo *TopPolicyDo `json:"policy_do,omitempty" xml:"policy_do,omitempty"`
 }

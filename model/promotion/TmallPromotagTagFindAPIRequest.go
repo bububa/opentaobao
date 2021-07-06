@@ -12,12 +12,12 @@ import (
 // 查询用户创建的所有标签
 type TmallPromotagTagFindAPIRequest struct {
 	model.Params
+	// 标签名称，查询时可选项
+	_tagName string
 	// 当前页码
 	_pageNo int64
 	// 每页显示个数
 	_pageSize int64
-	// 标签名称，查询时可选项
-	_tagName string
 	// 标签ID
 	_tagId int64
 }
@@ -41,6 +41,19 @@ func (r TmallPromotagTagFindAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTagName is TagName Setter
+// 标签名称，查询时可选项
+func (r *TmallPromotagTagFindAPIRequest) SetTagName(_tagName string) error {
+	r._tagName = _tagName
+	r.Set("tag_name", _tagName)
+	return nil
+}
+
+// GetTagName TagName Getter
+func (r TmallPromotagTagFindAPIRequest) GetTagName() string {
+	return r._tagName
 }
 
 // SetPageNo is PageNo Setter
@@ -67,19 +80,6 @@ func (r *TmallPromotagTagFindAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TmallPromotagTagFindAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetTagName is TagName Setter
-// 标签名称，查询时可选项
-func (r *TmallPromotagTagFindAPIRequest) SetTagName(_tagName string) error {
-	r._tagName = _tagName
-	r.Set("tag_name", _tagName)
-	return nil
-}
-
-// GetTagName TagName Getter
-func (r TmallPromotagTagFindAPIRequest) GetTagName() string {
-	return r._tagName
 }
 
 // SetTagId is TagId Setter

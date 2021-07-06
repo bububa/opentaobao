@@ -20,10 +20,10 @@ type AlibabaIdleRecycleOrderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_idle_recycle_order_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 订单信息
-	Module *RecycleOrderTo `json:"module,omitempty" xml:"module,omitempty"`
 	// 失败时候错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
+	// 订单信息
+	Module *RecycleOrderTo `json:"module,omitempty" xml:"module,omitempty"`
 	// 是否成功
 	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 }

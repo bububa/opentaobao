@@ -12,24 +12,10 @@ import (
 // 酒店产品库rate添加
 type TaobaoXhotelRateAddAPIRequest struct {
 	model.Params
-	// gid酒店商品id
-	_gid int64
-	// 酒店RPID
-	_rpid int64
 	// 名称
 	_name string
-	// 额外服务-是否可以加床，1：不可以，2：可以
-	_addBed int64
-	// 额外服务-加床价格
-	_addBedPrice int64
-	// 币种（仅支持CNY）
-	_currencyCode int64
-	// 实价有房标签（RP支付类型为全额支付）
-	_shijiaTag int64
 	// 价格和库存信息。A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。B:date  日期必须为 T---T+90 日内的日期（T为当天），且不能重复C:price 价格 int类型 取值范围1-99999999 单位为分D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)
 	_inventoryPrice string
-	// “即时确认”标识，此类商品预订后直接发货。
-	_jishiquerenTag int64
 	// 卖家自己系统的Code，简称RateCode
 	_rateplanCode string
 	// 用于标示该宝贝的售卖渠道信息，允许同一个卖家酒店房型在淘宝系统发布多个售卖渠道的宝贝的价格。
@@ -46,12 +32,26 @@ type TaobaoXhotelRateAddAPIRequest struct {
 	_currencyCodeName string
 	// 操作人信息
 	_operator string
+	// 在线预约关联关系推送，priceRuleNumber：加价规则序号
+	_onlineBookingBindingInfo string
+	// gid酒店商品id
+	_gid int64
+	// 酒店RPID
+	_rpid int64
+	// 额外服务-是否可以加床，1：不可以，2：可以
+	_addBed int64
+	// 额外服务-加床价格
+	_addBedPrice int64
+	// 币种（仅支持CNY）
+	_currencyCode int64
+	// 实价有房标签（RP支付类型为全额支付）
+	_shijiaTag int64
+	// “即时确认”标识，此类商品预订后直接发货。
+	_jishiquerenTag int64
 	// 默认是2 ,
 	_source int64
 	// 1是开,0是关, 不填默认是开, rate状态
 	_status int64
-	// 在线预约关联关系推送，priceRuleNumber：加价规则序号
-	_onlineBookingBindingInfo string
 }
 
 // NewTaobaoXhotelRateAddRequest 初始化TaobaoXhotelRateAddAPIRequest对象
@@ -75,32 +75,6 @@ func (r TaobaoXhotelRateAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetGid is Gid Setter
-// gid酒店商品id
-func (r *TaobaoXhotelRateAddAPIRequest) SetGid(_gid int64) error {
-	r._gid = _gid
-	r.Set("gid", _gid)
-	return nil
-}
-
-// GetGid Gid Getter
-func (r TaobaoXhotelRateAddAPIRequest) GetGid() int64 {
-	return r._gid
-}
-
-// SetRpid is Rpid Setter
-// 酒店RPID
-func (r *TaobaoXhotelRateAddAPIRequest) SetRpid(_rpid int64) error {
-	r._rpid = _rpid
-	r.Set("rpid", _rpid)
-	return nil
-}
-
-// GetRpid Rpid Getter
-func (r TaobaoXhotelRateAddAPIRequest) GetRpid() int64 {
-	return r._rpid
-}
-
 // SetName is Name Setter
 // 名称
 func (r *TaobaoXhotelRateAddAPIRequest) SetName(_name string) error {
@@ -114,58 +88,6 @@ func (r TaobaoXhotelRateAddAPIRequest) GetName() string {
 	return r._name
 }
 
-// SetAddBed is AddBed Setter
-// 额外服务-是否可以加床，1：不可以，2：可以
-func (r *TaobaoXhotelRateAddAPIRequest) SetAddBed(_addBed int64) error {
-	r._addBed = _addBed
-	r.Set("add_bed", _addBed)
-	return nil
-}
-
-// GetAddBed AddBed Getter
-func (r TaobaoXhotelRateAddAPIRequest) GetAddBed() int64 {
-	return r._addBed
-}
-
-// SetAddBedPrice is AddBedPrice Setter
-// 额外服务-加床价格
-func (r *TaobaoXhotelRateAddAPIRequest) SetAddBedPrice(_addBedPrice int64) error {
-	r._addBedPrice = _addBedPrice
-	r.Set("add_bed_price", _addBedPrice)
-	return nil
-}
-
-// GetAddBedPrice AddBedPrice Getter
-func (r TaobaoXhotelRateAddAPIRequest) GetAddBedPrice() int64 {
-	return r._addBedPrice
-}
-
-// SetCurrencyCode is CurrencyCode Setter
-// 币种（仅支持CNY）
-func (r *TaobaoXhotelRateAddAPIRequest) SetCurrencyCode(_currencyCode int64) error {
-	r._currencyCode = _currencyCode
-	r.Set("currency_code", _currencyCode)
-	return nil
-}
-
-// GetCurrencyCode CurrencyCode Getter
-func (r TaobaoXhotelRateAddAPIRequest) GetCurrencyCode() int64 {
-	return r._currencyCode
-}
-
-// SetShijiaTag is ShijiaTag Setter
-// 实价有房标签（RP支付类型为全额支付）
-func (r *TaobaoXhotelRateAddAPIRequest) SetShijiaTag(_shijiaTag int64) error {
-	r._shijiaTag = _shijiaTag
-	r.Set("shijia_tag", _shijiaTag)
-	return nil
-}
-
-// GetShijiaTag ShijiaTag Getter
-func (r TaobaoXhotelRateAddAPIRequest) GetShijiaTag() int64 {
-	return r._shijiaTag
-}
-
 // SetInventoryPrice is InventoryPrice Setter
 // 价格和库存信息。A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。B:date  日期必须为 T---T+90 日内的日期（T为当天），且不能重复C:price 价格 int类型 取值范围1-99999999 单位为分D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)
 func (r *TaobaoXhotelRateAddAPIRequest) SetInventoryPrice(_inventoryPrice string) error {
@@ -177,19 +99,6 @@ func (r *TaobaoXhotelRateAddAPIRequest) SetInventoryPrice(_inventoryPrice string
 // GetInventoryPrice InventoryPrice Getter
 func (r TaobaoXhotelRateAddAPIRequest) GetInventoryPrice() string {
 	return r._inventoryPrice
-}
-
-// SetJishiquerenTag is JishiquerenTag Setter
-// “即时确认”标识，此类商品预订后直接发货。
-func (r *TaobaoXhotelRateAddAPIRequest) SetJishiquerenTag(_jishiquerenTag int64) error {
-	r._jishiquerenTag = _jishiquerenTag
-	r.Set("jishiqueren_tag", _jishiquerenTag)
-	return nil
-}
-
-// GetJishiquerenTag JishiquerenTag Getter
-func (r TaobaoXhotelRateAddAPIRequest) GetJishiquerenTag() int64 {
-	return r._jishiquerenTag
 }
 
 // SetRateplanCode is RateplanCode Setter
@@ -296,6 +205,110 @@ func (r TaobaoXhotelRateAddAPIRequest) GetOperator() string {
 	return r._operator
 }
 
+// SetOnlineBookingBindingInfo is OnlineBookingBindingInfo Setter
+// 在线预约关联关系推送，priceRuleNumber：加价规则序号
+func (r *TaobaoXhotelRateAddAPIRequest) SetOnlineBookingBindingInfo(_onlineBookingBindingInfo string) error {
+	r._onlineBookingBindingInfo = _onlineBookingBindingInfo
+	r.Set("online_booking_binding_info", _onlineBookingBindingInfo)
+	return nil
+}
+
+// GetOnlineBookingBindingInfo OnlineBookingBindingInfo Getter
+func (r TaobaoXhotelRateAddAPIRequest) GetOnlineBookingBindingInfo() string {
+	return r._onlineBookingBindingInfo
+}
+
+// SetGid is Gid Setter
+// gid酒店商品id
+func (r *TaobaoXhotelRateAddAPIRequest) SetGid(_gid int64) error {
+	r._gid = _gid
+	r.Set("gid", _gid)
+	return nil
+}
+
+// GetGid Gid Getter
+func (r TaobaoXhotelRateAddAPIRequest) GetGid() int64 {
+	return r._gid
+}
+
+// SetRpid is Rpid Setter
+// 酒店RPID
+func (r *TaobaoXhotelRateAddAPIRequest) SetRpid(_rpid int64) error {
+	r._rpid = _rpid
+	r.Set("rpid", _rpid)
+	return nil
+}
+
+// GetRpid Rpid Getter
+func (r TaobaoXhotelRateAddAPIRequest) GetRpid() int64 {
+	return r._rpid
+}
+
+// SetAddBed is AddBed Setter
+// 额外服务-是否可以加床，1：不可以，2：可以
+func (r *TaobaoXhotelRateAddAPIRequest) SetAddBed(_addBed int64) error {
+	r._addBed = _addBed
+	r.Set("add_bed", _addBed)
+	return nil
+}
+
+// GetAddBed AddBed Getter
+func (r TaobaoXhotelRateAddAPIRequest) GetAddBed() int64 {
+	return r._addBed
+}
+
+// SetAddBedPrice is AddBedPrice Setter
+// 额外服务-加床价格
+func (r *TaobaoXhotelRateAddAPIRequest) SetAddBedPrice(_addBedPrice int64) error {
+	r._addBedPrice = _addBedPrice
+	r.Set("add_bed_price", _addBedPrice)
+	return nil
+}
+
+// GetAddBedPrice AddBedPrice Getter
+func (r TaobaoXhotelRateAddAPIRequest) GetAddBedPrice() int64 {
+	return r._addBedPrice
+}
+
+// SetCurrencyCode is CurrencyCode Setter
+// 币种（仅支持CNY）
+func (r *TaobaoXhotelRateAddAPIRequest) SetCurrencyCode(_currencyCode int64) error {
+	r._currencyCode = _currencyCode
+	r.Set("currency_code", _currencyCode)
+	return nil
+}
+
+// GetCurrencyCode CurrencyCode Getter
+func (r TaobaoXhotelRateAddAPIRequest) GetCurrencyCode() int64 {
+	return r._currencyCode
+}
+
+// SetShijiaTag is ShijiaTag Setter
+// 实价有房标签（RP支付类型为全额支付）
+func (r *TaobaoXhotelRateAddAPIRequest) SetShijiaTag(_shijiaTag int64) error {
+	r._shijiaTag = _shijiaTag
+	r.Set("shijia_tag", _shijiaTag)
+	return nil
+}
+
+// GetShijiaTag ShijiaTag Getter
+func (r TaobaoXhotelRateAddAPIRequest) GetShijiaTag() int64 {
+	return r._shijiaTag
+}
+
+// SetJishiquerenTag is JishiquerenTag Setter
+// “即时确认”标识，此类商品预订后直接发货。
+func (r *TaobaoXhotelRateAddAPIRequest) SetJishiquerenTag(_jishiquerenTag int64) error {
+	r._jishiquerenTag = _jishiquerenTag
+	r.Set("jishiqueren_tag", _jishiquerenTag)
+	return nil
+}
+
+// GetJishiquerenTag JishiquerenTag Getter
+func (r TaobaoXhotelRateAddAPIRequest) GetJishiquerenTag() int64 {
+	return r._jishiquerenTag
+}
+
 // SetSource is Source Setter
 // 默认是2 ,
 func (r *TaobaoXhotelRateAddAPIRequest) SetSource(_source int64) error {
@@ -320,17 +333,4 @@ func (r *TaobaoXhotelRateAddAPIRequest) SetStatus(_status int64) error {
 // GetStatus Status Getter
 func (r TaobaoXhotelRateAddAPIRequest) GetStatus() int64 {
 	return r._status
-}
-
-// SetOnlineBookingBindingInfo is OnlineBookingBindingInfo Setter
-// 在线预约关联关系推送，priceRuleNumber：加价规则序号
-func (r *TaobaoXhotelRateAddAPIRequest) SetOnlineBookingBindingInfo(_onlineBookingBindingInfo string) error {
-	r._onlineBookingBindingInfo = _onlineBookingBindingInfo
-	r.Set("online_booking_binding_info", _onlineBookingBindingInfo)
-	return nil
-}
-
-// GetOnlineBookingBindingInfo OnlineBookingBindingInfo Getter
-func (r TaobaoXhotelRateAddAPIRequest) GetOnlineBookingBindingInfo() string {
-	return r._onlineBookingBindingInfo
 }

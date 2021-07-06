@@ -12,10 +12,10 @@ import (
 // 线下推广充送等业务订单来源的查询接口
 type AlibabaWttOfflineRecordQueryagentinfoAPIRequest struct {
 	model.Params
-	// 淘宝订单号
-	_orderId int64
 	// 业务号码
 	_phone string
+	// 淘宝订单号
+	_orderId int64
 }
 
 // NewAlibabaWttOfflineRecordQueryagentinfoRequest 初始化AlibabaWttOfflineRecordQueryagentinfoAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaWttOfflineRecordQueryagentinfoAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// SetOrderId is OrderId Setter
-// 淘宝订单号
-func (r *AlibabaWttOfflineRecordQueryagentinfoAPIRequest) SetOrderId(_orderId int64) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
-	return nil
-}
-
-// GetOrderId OrderId Getter
-func (r AlibabaWttOfflineRecordQueryagentinfoAPIRequest) GetOrderId() int64 {
-	return r._orderId
-}
-
 // SetPhone is Phone Setter
 // 业务号码
 func (r *AlibabaWttOfflineRecordQueryagentinfoAPIRequest) SetPhone(_phone string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaWttOfflineRecordQueryagentinfoAPIRequest) SetPhone(_phone string
 // GetPhone Phone Getter
 func (r AlibabaWttOfflineRecordQueryagentinfoAPIRequest) GetPhone() string {
 	return r._phone
+}
+
+// SetOrderId is OrderId Setter
+// 淘宝订单号
+func (r *AlibabaWttOfflineRecordQueryagentinfoAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// GetOrderId OrderId Getter
+func (r AlibabaWttOfflineRecordQueryagentinfoAPIRequest) GetOrderId() int64 {
+	return r._orderId
 }

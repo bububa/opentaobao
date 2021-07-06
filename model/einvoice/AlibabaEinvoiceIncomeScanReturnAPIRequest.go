@@ -14,16 +14,16 @@ type AlibabaEinvoiceIncomeScanReturnAPIRequest struct {
 	model.Params
 	// 扫描的批次号
 	_batchNo string
+	// 错误码，success=false时填入
+	_errorCode string
+	// 错误信息，success=false时必填
+	_errorMessage string
 	// 扫描状态，0=开始ocr，1=ocr结束，2=开始查验，3=查验结束
 	_status int64
 	// 该批次对应的发票数量，扫描结束和查验结束status=1，3时必填
 	_invoiceCount int64
 	// 驱动是否成功，true=成功，false=失败
 	_success bool
-	// 错误码，success=false时填入
-	_errorCode string
-	// 错误信息，success=false时必填
-	_errorMessage string
 }
 
 // NewAlibabaEinvoiceIncomeScanReturnRequest 初始化AlibabaEinvoiceIncomeScanReturnAPIRequest对象
@@ -58,6 +58,32 @@ func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetBatchNo(_batchNo string) 
 // GetBatchNo BatchNo Getter
 func (r AlibabaEinvoiceIncomeScanReturnAPIRequest) GetBatchNo() string {
 	return r._batchNo
+}
+
+// SetErrorCode is ErrorCode Setter
+// 错误码，success=false时填入
+func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetErrorCode(_errorCode string) error {
+	r._errorCode = _errorCode
+	r.Set("error_code", _errorCode)
+	return nil
+}
+
+// GetErrorCode ErrorCode Getter
+func (r AlibabaEinvoiceIncomeScanReturnAPIRequest) GetErrorCode() string {
+	return r._errorCode
+}
+
+// SetErrorMessage is ErrorMessage Setter
+// 错误信息，success=false时必填
+func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetErrorMessage(_errorMessage string) error {
+	r._errorMessage = _errorMessage
+	r.Set("error_message", _errorMessage)
+	return nil
+}
+
+// GetErrorMessage ErrorMessage Getter
+func (r AlibabaEinvoiceIncomeScanReturnAPIRequest) GetErrorMessage() string {
+	return r._errorMessage
 }
 
 // SetStatus is Status Setter
@@ -97,30 +123,4 @@ func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetSuccess(_success bool) er
 // GetSuccess Success Getter
 func (r AlibabaEinvoiceIncomeScanReturnAPIRequest) GetSuccess() bool {
 	return r._success
-}
-
-// SetErrorCode is ErrorCode Setter
-// 错误码，success=false时填入
-func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetErrorCode(_errorCode string) error {
-	r._errorCode = _errorCode
-	r.Set("error_code", _errorCode)
-	return nil
-}
-
-// GetErrorCode ErrorCode Getter
-func (r AlibabaEinvoiceIncomeScanReturnAPIRequest) GetErrorCode() string {
-	return r._errorCode
-}
-
-// SetErrorMessage is ErrorMessage Setter
-// 错误信息，success=false时必填
-func (r *AlibabaEinvoiceIncomeScanReturnAPIRequest) SetErrorMessage(_errorMessage string) error {
-	r._errorMessage = _errorMessage
-	r.Set("error_message", _errorMessage)
-	return nil
-}
-
-// GetErrorMessage ErrorMessage Getter
-func (r AlibabaEinvoiceIncomeScanReturnAPIRequest) GetErrorMessage() string {
-	return r._errorMessage
 }

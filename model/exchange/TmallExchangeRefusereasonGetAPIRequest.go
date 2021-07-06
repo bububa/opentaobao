@@ -12,10 +12,10 @@ import (
 // 获取拒绝换货原因列表
 type TmallExchangeRefusereasonGetAPIRequest struct {
 	model.Params
-	// 换货单号ID
-	_disputeId int64
 	// 返回字段
 	_fields []string
+	// 换货单号ID
+	_disputeId int64
 	// 换货申请类型：0-任意类型；1-售中；2-售后
 	_disputeType int64
 }
@@ -41,19 +41,6 @@ func (r TmallExchangeRefusereasonGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetDisputeId is DisputeId Setter
-// 换货单号ID
-func (r *TmallExchangeRefusereasonGetAPIRequest) SetDisputeId(_disputeId int64) error {
-	r._disputeId = _disputeId
-	r.Set("dispute_id", _disputeId)
-	return nil
-}
-
-// GetDisputeId DisputeId Getter
-func (r TmallExchangeRefusereasonGetAPIRequest) GetDisputeId() int64 {
-	return r._disputeId
-}
-
 // SetFields is Fields Setter
 // 返回字段
 func (r *TmallExchangeRefusereasonGetAPIRequest) SetFields(_fields []string) error {
@@ -65,6 +52,19 @@ func (r *TmallExchangeRefusereasonGetAPIRequest) SetFields(_fields []string) err
 // GetFields Fields Getter
 func (r TmallExchangeRefusereasonGetAPIRequest) GetFields() []string {
 	return r._fields
+}
+
+// SetDisputeId is DisputeId Setter
+// 换货单号ID
+func (r *TmallExchangeRefusereasonGetAPIRequest) SetDisputeId(_disputeId int64) error {
+	r._disputeId = _disputeId
+	r.Set("dispute_id", _disputeId)
+	return nil
+}
+
+// GetDisputeId DisputeId Getter
+func (r TmallExchangeRefusereasonGetAPIRequest) GetDisputeId() int64 {
+	return r._disputeId
 }
 
 // SetDisputeType is DisputeType Setter

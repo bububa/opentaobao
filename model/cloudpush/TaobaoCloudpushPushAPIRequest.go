@@ -26,34 +26,34 @@ type TaobaoCloudpushPushAPIRequest struct {
 	_androidOpenType string
 	// Android收到推送后打开对应的url,仅仅当androidOpenType=3有效
 	_androidOpenUrl string
-	// 防打扰时长,取值范围为1~23
-	_antiHarassDuration int64
-	// 防打扰开始时间点,取值范围为0~23
-	_antiHarassStartTime int64
 	// 批次编号,用于活动效果统计
 	_batchNumber string
 	// 推送内容
 	_body string
-	// 设备类型,取值范围为:0~3云推送支持多种设备,各种设备类型编号如下:    iOS设备:deviceType=0; Andriod设备:deviceType=1;如果存在此字段,则向指定的设备类型推送消息。 默认为全部(3);
-	_deviceType int64
 	// iOS应用图标右上角角标
 	_iosBadge string
 	// 自定义的kv结构,开发者扩展用 针对iOS设备
 	_iosExtParameters string
 	// iOS通知声音
 	_iosMusic string
+	// 通知的摘要
+	_summery string
+	// 推送的标题内容.
+	_title string
+	// 防打扰时长,取值范围为1~23
+	_antiHarassDuration int64
+	// 防打扰开始时间点,取值范围为0~23
+	_antiHarassStartTime int64
+	// 设备类型,取值范围为:0~3云推送支持多种设备,各种设备类型编号如下:    iOS设备:deviceType=0; Andriod设备:deviceType=1;如果存在此字段,则向指定的设备类型推送消息。 默认为全部(3);
+	_deviceType int64
+	// 离线消息保存时长,取值范围为1~72,若不填,则表示不保存离线消息
+	_timeout int64
+	// 0:表示消息(默认为0),1:表示通知
+	_type int64
 	// 当APP不在线时候，是否通过通知提醒.  针对不同设备，处理逻辑不同。 该参数只针对iOS设备生效， (remind=true  & 发送消息的话(type=0)). 当你的目标设备不在线(既长连接通道不通, 我们会将这条消息的标题，通过苹果的apns通道再送达一次。发apns是发送生产环境的apns，需要在云推送配置的app的iOS生产证书和密码需要正确，否则也发送不了。 (remind=false & 并且是发送消息的话(type=0))，那么设备不在线，则不会再走苹果apns发送了。
 	_remind bool
 	// 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
 	_storeOffline bool
-	// 通知的摘要
-	_summery string
-	// 离线消息保存时长,取值范围为1~72,若不填,则表示不保存离线消息
-	_timeout int64
-	// 推送的标题内容.
-	_title string
-	// 0:表示消息(默认为0),1:表示通知
-	_type int64
 }
 
 // NewTaobaoCloudpushPushRequest 初始化TaobaoCloudpushPushAPIRequest对象
@@ -168,32 +168,6 @@ func (r TaobaoCloudpushPushAPIRequest) GetAndroidOpenUrl() string {
 	return r._androidOpenUrl
 }
 
-// SetAntiHarassDuration is AntiHarassDuration Setter
-// 防打扰时长,取值范围为1~23
-func (r *TaobaoCloudpushPushAPIRequest) SetAntiHarassDuration(_antiHarassDuration int64) error {
-	r._antiHarassDuration = _antiHarassDuration
-	r.Set("anti_harass_duration", _antiHarassDuration)
-	return nil
-}
-
-// GetAntiHarassDuration AntiHarassDuration Getter
-func (r TaobaoCloudpushPushAPIRequest) GetAntiHarassDuration() int64 {
-	return r._antiHarassDuration
-}
-
-// SetAntiHarassStartTime is AntiHarassStartTime Setter
-// 防打扰开始时间点,取值范围为0~23
-func (r *TaobaoCloudpushPushAPIRequest) SetAntiHarassStartTime(_antiHarassStartTime int64) error {
-	r._antiHarassStartTime = _antiHarassStartTime
-	r.Set("anti_harass_start_time", _antiHarassStartTime)
-	return nil
-}
-
-// GetAntiHarassStartTime AntiHarassStartTime Getter
-func (r TaobaoCloudpushPushAPIRequest) GetAntiHarassStartTime() int64 {
-	return r._antiHarassStartTime
-}
-
 // SetBatchNumber is BatchNumber Setter
 // 批次编号,用于活动效果统计
 func (r *TaobaoCloudpushPushAPIRequest) SetBatchNumber(_batchNumber string) error {
@@ -218,19 +192,6 @@ func (r *TaobaoCloudpushPushAPIRequest) SetBody(_body string) error {
 // GetBody Body Getter
 func (r TaobaoCloudpushPushAPIRequest) GetBody() string {
 	return r._body
-}
-
-// SetDeviceType is DeviceType Setter
-// 设备类型,取值范围为:0~3云推送支持多种设备,各种设备类型编号如下:    iOS设备:deviceType=0; Andriod设备:deviceType=1;如果存在此字段,则向指定的设备类型推送消息。 默认为全部(3);
-func (r *TaobaoCloudpushPushAPIRequest) SetDeviceType(_deviceType int64) error {
-	r._deviceType = _deviceType
-	r.Set("device_type", _deviceType)
-	return nil
-}
-
-// GetDeviceType DeviceType Getter
-func (r TaobaoCloudpushPushAPIRequest) GetDeviceType() int64 {
-	return r._deviceType
 }
 
 // SetIosBadge is IosBadge Setter
@@ -272,6 +233,97 @@ func (r TaobaoCloudpushPushAPIRequest) GetIosMusic() string {
 	return r._iosMusic
 }
 
+// SetSummery is Summery Setter
+// 通知的摘要
+func (r *TaobaoCloudpushPushAPIRequest) SetSummery(_summery string) error {
+	r._summery = _summery
+	r.Set("summery", _summery)
+	return nil
+}
+
+// GetSummery Summery Getter
+func (r TaobaoCloudpushPushAPIRequest) GetSummery() string {
+	return r._summery
+}
+
+// SetTitle is Title Setter
+// 推送的标题内容.
+func (r *TaobaoCloudpushPushAPIRequest) SetTitle(_title string) error {
+	r._title = _title
+	r.Set("title", _title)
+	return nil
+}
+
+// GetTitle Title Getter
+func (r TaobaoCloudpushPushAPIRequest) GetTitle() string {
+	return r._title
+}
+
+// SetAntiHarassDuration is AntiHarassDuration Setter
+// 防打扰时长,取值范围为1~23
+func (r *TaobaoCloudpushPushAPIRequest) SetAntiHarassDuration(_antiHarassDuration int64) error {
+	r._antiHarassDuration = _antiHarassDuration
+	r.Set("anti_harass_duration", _antiHarassDuration)
+	return nil
+}
+
+// GetAntiHarassDuration AntiHarassDuration Getter
+func (r TaobaoCloudpushPushAPIRequest) GetAntiHarassDuration() int64 {
+	return r._antiHarassDuration
+}
+
+// SetAntiHarassStartTime is AntiHarassStartTime Setter
+// 防打扰开始时间点,取值范围为0~23
+func (r *TaobaoCloudpushPushAPIRequest) SetAntiHarassStartTime(_antiHarassStartTime int64) error {
+	r._antiHarassStartTime = _antiHarassStartTime
+	r.Set("anti_harass_start_time", _antiHarassStartTime)
+	return nil
+}
+
+// GetAntiHarassStartTime AntiHarassStartTime Getter
+func (r TaobaoCloudpushPushAPIRequest) GetAntiHarassStartTime() int64 {
+	return r._antiHarassStartTime
+}
+
+// SetDeviceType is DeviceType Setter
+// 设备类型,取值范围为:0~3云推送支持多种设备,各种设备类型编号如下:    iOS设备:deviceType=0; Andriod设备:deviceType=1;如果存在此字段,则向指定的设备类型推送消息。 默认为全部(3);
+func (r *TaobaoCloudpushPushAPIRequest) SetDeviceType(_deviceType int64) error {
+	r._deviceType = _deviceType
+	r.Set("device_type", _deviceType)
+	return nil
+}
+
+// GetDeviceType DeviceType Getter
+func (r TaobaoCloudpushPushAPIRequest) GetDeviceType() int64 {
+	return r._deviceType
+}
+
+// SetTimeout is Timeout Setter
+// 离线消息保存时长,取值范围为1~72,若不填,则表示不保存离线消息
+func (r *TaobaoCloudpushPushAPIRequest) SetTimeout(_timeout int64) error {
+	r._timeout = _timeout
+	r.Set("timeout", _timeout)
+	return nil
+}
+
+// GetTimeout Timeout Getter
+func (r TaobaoCloudpushPushAPIRequest) GetTimeout() int64 {
+	return r._timeout
+}
+
+// SetType is Type Setter
+// 0:表示消息(默认为0),1:表示通知
+func (r *TaobaoCloudpushPushAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r TaobaoCloudpushPushAPIRequest) GetType() int64 {
+	return r._type
+}
+
 // SetRemind is Remind Setter
 // 当APP不在线时候，是否通过通知提醒.  针对不同设备，处理逻辑不同。 该参数只针对iOS设备生效， (remind=true  & 发送消息的话(type=0)). 当你的目标设备不在线(既长连接通道不通, 我们会将这条消息的标题，通过苹果的apns通道再送达一次。发apns是发送生产环境的apns，需要在云推送配置的app的iOS生产证书和密码需要正确，否则也发送不了。 (remind=false & 并且是发送消息的话(type=0))，那么设备不在线，则不会再走苹果apns发送了。
 func (r *TaobaoCloudpushPushAPIRequest) SetRemind(_remind bool) error {
@@ -296,56 +348,4 @@ func (r *TaobaoCloudpushPushAPIRequest) SetStoreOffline(_storeOffline bool) erro
 // GetStoreOffline StoreOffline Getter
 func (r TaobaoCloudpushPushAPIRequest) GetStoreOffline() bool {
 	return r._storeOffline
-}
-
-// SetSummery is Summery Setter
-// 通知的摘要
-func (r *TaobaoCloudpushPushAPIRequest) SetSummery(_summery string) error {
-	r._summery = _summery
-	r.Set("summery", _summery)
-	return nil
-}
-
-// GetSummery Summery Getter
-func (r TaobaoCloudpushPushAPIRequest) GetSummery() string {
-	return r._summery
-}
-
-// SetTimeout is Timeout Setter
-// 离线消息保存时长,取值范围为1~72,若不填,则表示不保存离线消息
-func (r *TaobaoCloudpushPushAPIRequest) SetTimeout(_timeout int64) error {
-	r._timeout = _timeout
-	r.Set("timeout", _timeout)
-	return nil
-}
-
-// GetTimeout Timeout Getter
-func (r TaobaoCloudpushPushAPIRequest) GetTimeout() int64 {
-	return r._timeout
-}
-
-// SetTitle is Title Setter
-// 推送的标题内容.
-func (r *TaobaoCloudpushPushAPIRequest) SetTitle(_title string) error {
-	r._title = _title
-	r.Set("title", _title)
-	return nil
-}
-
-// GetTitle Title Getter
-func (r TaobaoCloudpushPushAPIRequest) GetTitle() string {
-	return r._title
-}
-
-// SetType is Type Setter
-// 0:表示消息(默认为0),1:表示通知
-func (r *TaobaoCloudpushPushAPIRequest) SetType(_type int64) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r TaobaoCloudpushPushAPIRequest) GetType() int64 {
-	return r._type
 }

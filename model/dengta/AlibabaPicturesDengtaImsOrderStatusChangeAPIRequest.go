@@ -18,10 +18,10 @@ type AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest struct {
 	_comments string
 	// 天下秀订单id
 	_imsOrderId string
-	// 3=抖音，1-微博 2-微信
-	_accountType int64
 	// 扩展字段
 	_extJson string
+	// 3=抖音，1-微博 2-微信
+	_accountType int64
 	// 1:待执行  2:执行中  3:发布  4:完成  5:取消
 	_status int64
 }
@@ -86,19 +86,6 @@ func (r AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) GetImsOrderId() str
 	return r._imsOrderId
 }
 
-// SetAccountType is AccountType Setter
-// 3=抖音，1-微博 2-微信
-func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetAccountType(_accountType int64) error {
-	r._accountType = _accountType
-	r.Set("account_type", _accountType)
-	return nil
-}
-
-// GetAccountType AccountType Getter
-func (r AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) GetAccountType() int64 {
-	return r._accountType
-}
-
 // SetExtJson is ExtJson Setter
 // 扩展字段
 func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetExtJson(_extJson string) error {
@@ -110,6 +97,19 @@ func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetExtJson(_extJso
 // GetExtJson ExtJson Getter
 func (r AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) GetExtJson() string {
 	return r._extJson
+}
+
+// SetAccountType is AccountType Setter
+// 3=抖音，1-微博 2-微信
+func (r *AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) SetAccountType(_accountType int64) error {
+	r._accountType = _accountType
+	r.Set("account_type", _accountType)
+	return nil
+}
+
+// GetAccountType AccountType Getter
+func (r AlibabaPicturesDengtaImsOrderStatusChangeAPIRequest) GetAccountType() int64 {
+	return r._accountType
 }
 
 // SetStatus is Status Setter

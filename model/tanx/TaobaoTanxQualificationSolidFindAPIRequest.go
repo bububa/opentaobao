@@ -12,14 +12,14 @@ import (
 // 接口会返回该广告主下的所有审核通过并且可被共享的资质，这些资质在过期之前可以不需要再次上传。
 type TaobaoTanxQualificationSolidFindAPIRequest struct {
 	model.Params
-	// 广告主id
-	_advertiserId int64
 	// 资质元素id列表
 	_elementIds []int64
-	// dsp用户id
-	_memberId int64
 	// dsp客户验证token
 	_token string
+	// 广告主id
+	_advertiserId int64
+	// dsp用户id
+	_memberId int64
 	// 1970年到现在的秒
 	_signTime int64
 	// 查询起始页
@@ -49,19 +49,6 @@ func (r TaobaoTanxQualificationSolidFindAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetAdvertiserId is AdvertiserId Setter
-// 广告主id
-func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetAdvertiserId(_advertiserId int64) error {
-	r._advertiserId = _advertiserId
-	r.Set("advertiser_id", _advertiserId)
-	return nil
-}
-
-// GetAdvertiserId AdvertiserId Getter
-func (r TaobaoTanxQualificationSolidFindAPIRequest) GetAdvertiserId() int64 {
-	return r._advertiserId
-}
-
 // SetElementIds is ElementIds Setter
 // 资质元素id列表
 func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetElementIds(_elementIds []int64) error {
@@ -75,19 +62,6 @@ func (r TaobaoTanxQualificationSolidFindAPIRequest) GetElementIds() []int64 {
 	return r._elementIds
 }
 
-// SetMemberId is MemberId Setter
-// dsp用户id
-func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetMemberId(_memberId int64) error {
-	r._memberId = _memberId
-	r.Set("member_id", _memberId)
-	return nil
-}
-
-// GetMemberId MemberId Getter
-func (r TaobaoTanxQualificationSolidFindAPIRequest) GetMemberId() int64 {
-	return r._memberId
-}
-
 // SetToken is Token Setter
 // dsp客户验证token
 func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetToken(_token string) error {
@@ -99,6 +73,32 @@ func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetToken(_token string) err
 // GetToken Token Getter
 func (r TaobaoTanxQualificationSolidFindAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetAdvertiserId is AdvertiserId Setter
+// 广告主id
+func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetAdvertiserId(_advertiserId int64) error {
+	r._advertiserId = _advertiserId
+	r.Set("advertiser_id", _advertiserId)
+	return nil
+}
+
+// GetAdvertiserId AdvertiserId Getter
+func (r TaobaoTanxQualificationSolidFindAPIRequest) GetAdvertiserId() int64 {
+	return r._advertiserId
+}
+
+// SetMemberId is MemberId Setter
+// dsp用户id
+func (r *TaobaoTanxQualificationSolidFindAPIRequest) SetMemberId(_memberId int64) error {
+	r._memberId = _memberId
+	r.Set("member_id", _memberId)
+	return nil
+}
+
+// GetMemberId MemberId Getter
+func (r TaobaoTanxQualificationSolidFindAPIRequest) GetMemberId() int64 {
+	return r._memberId
 }
 
 // SetSignTime is SignTime Setter

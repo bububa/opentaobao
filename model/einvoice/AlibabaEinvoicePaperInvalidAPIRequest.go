@@ -18,12 +18,12 @@ type AlibabaEinvoicePaperInvalidAPIRequest struct {
 	_invoiceNo string
 	// 作废操作人
 	_invalidOperator string
-	// 作废类型, 0=空白发票(有残缺 的纸张发票，不能做为有效报销)作废, 1=已开发票作废
-	_invalidType int64
 	// 销售方纳税人识别号
 	_payeeRegisterNo string
 	// 开票流水号
 	_serialNo string
+	// 作废类型, 0=空白发票(有残缺 的纸张发票，不能做为有效报销)作废, 1=已开发票作废
+	_invalidType int64
 }
 
 // NewAlibabaEinvoicePaperInvalidRequest 初始化AlibabaEinvoicePaperInvalidAPIRequest对象
@@ -86,19 +86,6 @@ func (r AlibabaEinvoicePaperInvalidAPIRequest) GetInvalidOperator() string {
 	return r._invalidOperator
 }
 
-// SetInvalidType is InvalidType Setter
-// 作废类型, 0=空白发票(有残缺 的纸张发票，不能做为有效报销)作废, 1=已开发票作废
-func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvalidType(_invalidType int64) error {
-	r._invalidType = _invalidType
-	r.Set("invalid_type", _invalidType)
-	return nil
-}
-
-// GetInvalidType InvalidType Getter
-func (r AlibabaEinvoicePaperInvalidAPIRequest) GetInvalidType() int64 {
-	return r._invalidType
-}
-
 // SetPayeeRegisterNo is PayeeRegisterNo Setter
 // 销售方纳税人识别号
 func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
@@ -123,4 +110,17 @@ func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetSerialNo(_serialNo string) er
 // GetSerialNo SerialNo Getter
 func (r AlibabaEinvoicePaperInvalidAPIRequest) GetSerialNo() string {
 	return r._serialNo
+}
+
+// SetInvalidType is InvalidType Setter
+// 作废类型, 0=空白发票(有残缺 的纸张发票，不能做为有效报销)作废, 1=已开发票作废
+func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvalidType(_invalidType int64) error {
+	r._invalidType = _invalidType
+	r.Set("invalid_type", _invalidType)
+	return nil
+}
+
+// GetInvalidType InvalidType Getter
+func (r AlibabaEinvoicePaperInvalidAPIRequest) GetInvalidType() int64 {
+	return r._invalidType
 }

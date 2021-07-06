@@ -12,6 +12,12 @@ import (
 // 卖家查询换货列表
 type TmallExchangeReceiveGetAPIRequest struct {
 	model.Params
+	// 返回字段。目前支持dispute_id, bizorder_id, num, buyer_nick, status, created, modified, reason, title, buyer_logistic_no, seller_logistic_no, bought_sku, exchange_sku, buyer_address, address, buyer_phone, buyer_logistic_name, seller_logistic_name, alipay_no, buyer_name, seller_nick
+	_fields []string
+	// 换货状态，具体包括：换货待处理(1), 待买家退货(2), 买家已退货，待收货(3),  换货关闭(4), 换货成功(5), 待买家修改(6), 待发出换货商品(12), 待买家收货(13), 请退款(14)
+	_disputeStatusArray []int64
+	// 退款单号ID列表，最多只能输入20个id
+	_refundIdArray []int64
 	// 查询修改时间段的结束时间点
 	_endGmtModifedTime string
 	// 查询修改时间段的开始时间点
@@ -22,18 +28,12 @@ type TmallExchangeReceiveGetAPIRequest struct {
 	_buyerNick string
 	// 查询申请时间段的开始时间点
 	_startCreatedTime string
-	// 返回字段。目前支持dispute_id, bizorder_id, num, buyer_nick, status, created, modified, reason, title, buyer_logistic_no, seller_logistic_no, bought_sku, exchange_sku, buyer_address, address, buyer_phone, buyer_logistic_name, seller_logistic_name, alipay_no, buyer_name, seller_nick
-	_fields []string
-	// 每页条数
-	_pageSize int64
-	// 换货状态，具体包括：换货待处理(1), 待买家退货(2), 买家已退货，待收货(3),  换货关闭(4), 换货成功(5), 待买家修改(6), 待发出换货商品(12), 待买家收货(13), 请退款(14)
-	_disputeStatusArray []int64
 	// 查询申请时间段的结束时间点
 	_endCreatedTime string
+	// 每页条数
+	_pageSize int64
 	// 买家id
 	_buyerId int64
-	// 退款单号ID列表，最多只能输入20个id
-	_refundIdArray []int64
 	// 页码
 	_pageNo int64
 	// 正向订单号
@@ -59,6 +59,45 @@ func (r TmallExchangeReceiveGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetFields is Fields Setter
+// 返回字段。目前支持dispute_id, bizorder_id, num, buyer_nick, status, created, modified, reason, title, buyer_logistic_no, seller_logistic_no, bought_sku, exchange_sku, buyer_address, address, buyer_phone, buyer_logistic_name, seller_logistic_name, alipay_no, buyer_name, seller_nick
+func (r *TmallExchangeReceiveGetAPIRequest) SetFields(_fields []string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// GetFields Fields Getter
+func (r TmallExchangeReceiveGetAPIRequest) GetFields() []string {
+	return r._fields
+}
+
+// SetDisputeStatusArray is DisputeStatusArray Setter
+// 换货状态，具体包括：换货待处理(1), 待买家退货(2), 买家已退货，待收货(3),  换货关闭(4), 换货成功(5), 待买家修改(6), 待发出换货商品(12), 待买家收货(13), 请退款(14)
+func (r *TmallExchangeReceiveGetAPIRequest) SetDisputeStatusArray(_disputeStatusArray []int64) error {
+	r._disputeStatusArray = _disputeStatusArray
+	r.Set("dispute_status_array", _disputeStatusArray)
+	return nil
+}
+
+// GetDisputeStatusArray DisputeStatusArray Getter
+func (r TmallExchangeReceiveGetAPIRequest) GetDisputeStatusArray() []int64 {
+	return r._disputeStatusArray
+}
+
+// SetRefundIdArray is RefundIdArray Setter
+// 退款单号ID列表，最多只能输入20个id
+func (r *TmallExchangeReceiveGetAPIRequest) SetRefundIdArray(_refundIdArray []int64) error {
+	r._refundIdArray = _refundIdArray
+	r.Set("refund_id_array", _refundIdArray)
+	return nil
+}
+
+// GetRefundIdArray RefundIdArray Getter
+func (r TmallExchangeReceiveGetAPIRequest) GetRefundIdArray() []int64 {
+	return r._refundIdArray
 }
 
 // SetEndGmtModifedTime is EndGmtModifedTime Setter
@@ -126,17 +165,17 @@ func (r TmallExchangeReceiveGetAPIRequest) GetStartCreatedTime() string {
 	return r._startCreatedTime
 }
 
-// SetFields is Fields Setter
-// 返回字段。目前支持dispute_id, bizorder_id, num, buyer_nick, status, created, modified, reason, title, buyer_logistic_no, seller_logistic_no, bought_sku, exchange_sku, buyer_address, address, buyer_phone, buyer_logistic_name, seller_logistic_name, alipay_no, buyer_name, seller_nick
-func (r *TmallExchangeReceiveGetAPIRequest) SetFields(_fields []string) error {
-	r._fields = _fields
-	r.Set("fields", _fields)
+// SetEndCreatedTime is EndCreatedTime Setter
+// 查询申请时间段的结束时间点
+func (r *TmallExchangeReceiveGetAPIRequest) SetEndCreatedTime(_endCreatedTime string) error {
+	r._endCreatedTime = _endCreatedTime
+	r.Set("end_created_time", _endCreatedTime)
 	return nil
 }
 
-// GetFields Fields Getter
-func (r TmallExchangeReceiveGetAPIRequest) GetFields() []string {
-	return r._fields
+// GetEndCreatedTime EndCreatedTime Getter
+func (r TmallExchangeReceiveGetAPIRequest) GetEndCreatedTime() string {
+	return r._endCreatedTime
 }
 
 // SetPageSize is PageSize Setter
@@ -152,32 +191,6 @@ func (r TmallExchangeReceiveGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// SetDisputeStatusArray is DisputeStatusArray Setter
-// 换货状态，具体包括：换货待处理(1), 待买家退货(2), 买家已退货，待收货(3),  换货关闭(4), 换货成功(5), 待买家修改(6), 待发出换货商品(12), 待买家收货(13), 请退款(14)
-func (r *TmallExchangeReceiveGetAPIRequest) SetDisputeStatusArray(_disputeStatusArray []int64) error {
-	r._disputeStatusArray = _disputeStatusArray
-	r.Set("dispute_status_array", _disputeStatusArray)
-	return nil
-}
-
-// GetDisputeStatusArray DisputeStatusArray Getter
-func (r TmallExchangeReceiveGetAPIRequest) GetDisputeStatusArray() []int64 {
-	return r._disputeStatusArray
-}
-
-// SetEndCreatedTime is EndCreatedTime Setter
-// 查询申请时间段的结束时间点
-func (r *TmallExchangeReceiveGetAPIRequest) SetEndCreatedTime(_endCreatedTime string) error {
-	r._endCreatedTime = _endCreatedTime
-	r.Set("end_created_time", _endCreatedTime)
-	return nil
-}
-
-// GetEndCreatedTime EndCreatedTime Getter
-func (r TmallExchangeReceiveGetAPIRequest) GetEndCreatedTime() string {
-	return r._endCreatedTime
-}
-
 // SetBuyerId is BuyerId Setter
 // 买家id
 func (r *TmallExchangeReceiveGetAPIRequest) SetBuyerId(_buyerId int64) error {
@@ -189,19 +202,6 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetBuyerId(_buyerId int64) error {
 // GetBuyerId BuyerId Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetBuyerId() int64 {
 	return r._buyerId
-}
-
-// SetRefundIdArray is RefundIdArray Setter
-// 退款单号ID列表，最多只能输入20个id
-func (r *TmallExchangeReceiveGetAPIRequest) SetRefundIdArray(_refundIdArray []int64) error {
-	r._refundIdArray = _refundIdArray
-	r.Set("refund_id_array", _refundIdArray)
-	return nil
-}
-
-// GetRefundIdArray RefundIdArray Getter
-func (r TmallExchangeReceiveGetAPIRequest) GetRefundIdArray() []int64 {
-	return r._refundIdArray
 }
 
 // SetPageNo is PageNo Setter

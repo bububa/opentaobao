@@ -30,8 +30,6 @@ type AlibabaEinvoicePartnerReturnAPIRequest struct {
 	_invoiceNo string
 	// 发票日期
 	_invoiceDate string
-	// 发票文件PDF内容，PDF的byte[]字段串。
-	_invoiceFileData *model.File
 	// 流水号
 	_serialNo string
 	// 防伪码
@@ -52,6 +50,8 @@ type AlibabaEinvoicePartnerReturnAPIRequest struct {
 	_reqIndex string
 	// 开票时间，格式为HH:mm:ss
 	_invoiceTime string
+	// 发票文件PDF内容，PDF的byte[]字段串。
+	_invoiceFileData *model.File
 }
 
 // NewAlibabaEinvoicePartnerReturnRequest 初始化AlibabaEinvoicePartnerReturnAPIRequest对象
@@ -192,19 +192,6 @@ func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceDate() string {
 	return r._invoiceDate
 }
 
-// SetInvoiceFileData is InvoiceFileData Setter
-// 发票文件PDF内容，PDF的byte[]字段串。
-func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceFileData(_invoiceFileData *model.File) error {
-	r._invoiceFileData = _invoiceFileData
-	r.Set("invoice_file_data", _invoiceFileData)
-	return nil
-}
-
-// GetInvoiceFileData InvoiceFileData Getter
-func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceFileData() *model.File {
-	return r._invoiceFileData
-}
-
 // SetSerialNo is SerialNo Setter
 // 流水号
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetSerialNo(_serialNo string) error {
@@ -333,4 +320,17 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceTime(_invoiceTime str
 // GetInvoiceTime InvoiceTime Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceTime() string {
 	return r._invoiceTime
+}
+
+// SetInvoiceFileData is InvoiceFileData Setter
+// 发票文件PDF内容，PDF的byte[]字段串。
+func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceFileData(_invoiceFileData *model.File) error {
+	r._invoiceFileData = _invoiceFileData
+	r.Set("invoice_file_data", _invoiceFileData)
+	return nil
+}
+
+// GetInvoiceFileData InvoiceFileData Getter
+func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceFileData() *model.File {
+	return r._invoiceFileData
 }

@@ -14,8 +14,6 @@ type TaobaoDeActivityLuckydrawAPIRequest struct {
 	model.Params
 	// 运营和cp约定的事件唯一标示
 	_eventKey string
-	// 时间戳
-	_sequenceId int64
 	// 用户的串ID
 	_accountId string
 	// 机器设备号
@@ -34,6 +32,8 @@ type TaobaoDeActivityLuckydrawAPIRequest struct {
 	_distribChannel string
 	// 魔盒UUID
 	_uuid string
+	// 时间戳
+	_sequenceId int64
 }
 
 // NewTaobaoDeActivityLuckydrawRequest 初始化TaobaoDeActivityLuckydrawAPIRequest对象
@@ -68,19 +68,6 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetEventKey(_eventKey string) erro
 // GetEventKey EventKey Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetEventKey() string {
 	return r._eventKey
-}
-
-// SetSequenceId is SequenceId Setter
-// 时间戳
-func (r *TaobaoDeActivityLuckydrawAPIRequest) SetSequenceId(_sequenceId int64) error {
-	r._sequenceId = _sequenceId
-	r.Set("sequence_id", _sequenceId)
-	return nil
-}
-
-// GetSequenceId SequenceId Getter
-func (r TaobaoDeActivityLuckydrawAPIRequest) GetSequenceId() int64 {
-	return r._sequenceId
 }
 
 // SetAccountId is AccountId Setter
@@ -198,4 +185,17 @@ func (r *TaobaoDeActivityLuckydrawAPIRequest) SetUuid(_uuid string) error {
 // GetUuid Uuid Getter
 func (r TaobaoDeActivityLuckydrawAPIRequest) GetUuid() string {
 	return r._uuid
+}
+
+// SetSequenceId is SequenceId Setter
+// 时间戳
+func (r *TaobaoDeActivityLuckydrawAPIRequest) SetSequenceId(_sequenceId int64) error {
+	r._sequenceId = _sequenceId
+	r.Set("sequence_id", _sequenceId)
+	return nil
+}
+
+// GetSequenceId SequenceId Getter
+func (r TaobaoDeActivityLuckydrawAPIRequest) GetSequenceId() int64 {
+	return r._sequenceId
 }

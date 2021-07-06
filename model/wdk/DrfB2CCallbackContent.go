@@ -2,8 +2,6 @@ package wdk
 
 // DrfB2CCallbackContent 结构体
 type DrfB2CCallbackContent struct {
-	// 是否缺货出
-	IsShortage bool `json:"is_shortage,omitempty" xml:"is_shortage,omitempty"`
 	// 商品编码
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// 缺货出库存数量
@@ -16,4 +14,6 @@ type DrfB2CCallbackContent struct {
 	ActualSaleQuantity string `json:"actual_sale_quantity,omitempty" xml:"actual_sale_quantity,omitempty"`
 	// 作业内容单号
 	WorkUnitContentId string `json:"work_unit_content_id,omitempty" xml:"work_unit_content_id,omitempty"`
+	// 是否缺货出
+	IsShortage bool `json:"is_shortage,omitempty" xml:"is_shortage,omitempty"`
 }

@@ -12,14 +12,14 @@ import (
 // 零配方案中设备联网成功之后上报设备
 type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest struct {
 	model.Params
-	// 供应商id
-	_vendorId int64
 	// 设备id
 	_deviceId string
 	// 设备状态，online上线，offline下线
 	_status string
 	// 保留字段json字符串
 	_extensions string
+	// 供应商id
+	_vendorId int64
 }
 
 // NewTaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest 初始化TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest对象
@@ -41,19 +41,6 @@ func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetApiPar
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetVendorId is VendorId Setter
-// 供应商id
-func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetVendorId(_vendorId int64) error {
-	r._vendorId = _vendorId
-	r.Set("vendor_id", _vendorId)
-	return nil
-}
-
-// GetVendorId VendorId Getter
-func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetVendorId() int64 {
-	return r._vendorId
 }
 
 // SetDeviceId is DeviceId Setter
@@ -93,4 +80,17 @@ func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetExten
 // GetExtensions Extensions Getter
 func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetExtensions() string {
 	return r._extensions
+}
+
+// SetVendorId is VendorId Setter
+// 供应商id
+func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) SetVendorId(_vendorId int64) error {
+	r._vendorId = _vendorId
+	r.Set("vendor_id", _vendorId)
+	return nil
+}
+
+// GetVendorId VendorId Getter
+func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIRequest) GetVendorId() int64 {
+	return r._vendorId
 }

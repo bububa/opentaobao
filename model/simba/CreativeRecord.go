@@ -4,8 +4,6 @@ package simba
 type CreativeRecord struct {
 	// 主人昵称
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
-	// 关键词id
-	CreativeId int64 `json:"creative_id,omitempty" xml:"creative_id,omitempty"`
 	// 创意标题，最多20个汉字
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 修改前创意标题
@@ -24,4 +22,6 @@ type CreativeRecord struct {
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 系统记录最后修改时间
 	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
+	// 关键词id
+	CreativeId int64 `json:"creative_id,omitempty" xml:"creative_id,omitempty"`
 }

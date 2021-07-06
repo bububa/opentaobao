@@ -14,16 +14,16 @@ type TaobaoCaipiaoShopInfoInputAPIRequest struct {
 	model.Params
 	// 店铺名称
 	_shopName string
-	// 赠送类型：0-满就送；1-好评送；2-分享送；3-游戏送；4-收藏送，不可为空
-	_presentType int64
 	// 活动开始时间，格式需严格遵守yyyy-MM-dd HH:mm:ss，不可为空
 	_actStartDate string
 	// 活动结束时间，格式需严格遵守yyyy-MM-dd HH:mm:ss，不可为空
 	_actEndDate string
-	// 店铺类目编号，不可为空
-	_shopType int64
 	// 店铺参加的送彩票活动描述
 	_shopDesc string
+	// 赠送类型：0-满就送；1-好评送；2-分享送；3-游戏送；4-收藏送，不可为空
+	_presentType int64
+	// 店铺类目编号，不可为空
+	_shopType int64
 }
 
 // NewTaobaoCaipiaoShopInfoInputRequest 初始化TaobaoCaipiaoShopInfoInputAPIRequest对象
@@ -60,19 +60,6 @@ func (r TaobaoCaipiaoShopInfoInputAPIRequest) GetShopName() string {
 	return r._shopName
 }
 
-// SetPresentType is PresentType Setter
-// 赠送类型：0-满就送；1-好评送；2-分享送；3-游戏送；4-收藏送，不可为空
-func (r *TaobaoCaipiaoShopInfoInputAPIRequest) SetPresentType(_presentType int64) error {
-	r._presentType = _presentType
-	r.Set("present_type", _presentType)
-	return nil
-}
-
-// GetPresentType PresentType Getter
-func (r TaobaoCaipiaoShopInfoInputAPIRequest) GetPresentType() int64 {
-	return r._presentType
-}
-
 // SetActStartDate is ActStartDate Setter
 // 活动开始时间，格式需严格遵守yyyy-MM-dd HH:mm:ss，不可为空
 func (r *TaobaoCaipiaoShopInfoInputAPIRequest) SetActStartDate(_actStartDate string) error {
@@ -99,19 +86,6 @@ func (r TaobaoCaipiaoShopInfoInputAPIRequest) GetActEndDate() string {
 	return r._actEndDate
 }
 
-// SetShopType is ShopType Setter
-// 店铺类目编号，不可为空
-func (r *TaobaoCaipiaoShopInfoInputAPIRequest) SetShopType(_shopType int64) error {
-	r._shopType = _shopType
-	r.Set("shop_type", _shopType)
-	return nil
-}
-
-// GetShopType ShopType Getter
-func (r TaobaoCaipiaoShopInfoInputAPIRequest) GetShopType() int64 {
-	return r._shopType
-}
-
 // SetShopDesc is ShopDesc Setter
 // 店铺参加的送彩票活动描述
 func (r *TaobaoCaipiaoShopInfoInputAPIRequest) SetShopDesc(_shopDesc string) error {
@@ -123,4 +97,30 @@ func (r *TaobaoCaipiaoShopInfoInputAPIRequest) SetShopDesc(_shopDesc string) err
 // GetShopDesc ShopDesc Getter
 func (r TaobaoCaipiaoShopInfoInputAPIRequest) GetShopDesc() string {
 	return r._shopDesc
+}
+
+// SetPresentType is PresentType Setter
+// 赠送类型：0-满就送；1-好评送；2-分享送；3-游戏送；4-收藏送，不可为空
+func (r *TaobaoCaipiaoShopInfoInputAPIRequest) SetPresentType(_presentType int64) error {
+	r._presentType = _presentType
+	r.Set("present_type", _presentType)
+	return nil
+}
+
+// GetPresentType PresentType Getter
+func (r TaobaoCaipiaoShopInfoInputAPIRequest) GetPresentType() int64 {
+	return r._presentType
+}
+
+// SetShopType is ShopType Setter
+// 店铺类目编号，不可为空
+func (r *TaobaoCaipiaoShopInfoInputAPIRequest) SetShopType(_shopType int64) error {
+	r._shopType = _shopType
+	r.Set("shop_type", _shopType)
+	return nil
+}
+
+// GetShopType ShopType Getter
+func (r TaobaoCaipiaoShopInfoInputAPIRequest) GetShopType() int64 {
+	return r._shopType
 }

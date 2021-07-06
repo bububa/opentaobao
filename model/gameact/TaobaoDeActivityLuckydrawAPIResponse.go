@@ -22,10 +22,10 @@ type TaobaoDeActivityLuckydrawAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 中奖奖品
 	AwardVO *AwardVO `json:"award_v_o,omitempty" xml:"award_v_o,omitempty"`
-	// 123
-	IsLucky bool `json:"is_lucky,omitempty" xml:"is_lucky,omitempty"`
 	// 数娱积分/金牌余额
 	TotalAmount int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
 	// 可用抽奖次数
 	AccessAmount int64 `json:"access_amount,omitempty" xml:"access_amount,omitempty"`
+	// 123
+	IsLucky bool `json:"is_lucky,omitempty" xml:"is_lucky,omitempty"`
 }

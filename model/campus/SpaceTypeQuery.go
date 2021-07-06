@@ -2,6 +2,8 @@ package campus
 
 // SpaceTypeQuery 结构体
 type SpaceTypeQuery struct {
+	// 模糊查询key
+	Key string `json:"key,omitempty" xml:"key,omitempty"`
 	// 每页大小
 	Limit int64 `json:"limit,omitempty" xml:"limit,omitempty"`
 	// 大类id
@@ -20,6 +22,4 @@ type SpaceTypeQuery struct {
 	SpaceTopLevelId int64 `json:"space_top_level_id,omitempty" xml:"space_top_level_id,omitempty"`
 	// 当前页码
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
-	// 模糊查询key
-	Key string `json:"key,omitempty" xml:"key,omitempty"`
 }

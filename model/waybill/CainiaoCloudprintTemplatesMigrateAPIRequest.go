@@ -12,12 +12,12 @@ import (
 // 云打印模板迁移接口
 type CainiaoCloudprintTemplatesMigrateAPIRequest struct {
 	model.Params
-	// 标准电子面单模板的id
-	_tempalteId int64
 	// 自定义区名称
 	_customAreaName string
 	// 自定义区内容
 	_customAreaContent string
+	// 标准电子面单模板的id
+	_tempalteId int64
 }
 
 // NewCainiaoCloudprintTemplatesMigrateRequest 初始化CainiaoCloudprintTemplatesMigrateAPIRequest对象
@@ -39,19 +39,6 @@ func (r CainiaoCloudprintTemplatesMigrateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetTempalteId is TempalteId Setter
-// 标准电子面单模板的id
-func (r *CainiaoCloudprintTemplatesMigrateAPIRequest) SetTempalteId(_tempalteId int64) error {
-	r._tempalteId = _tempalteId
-	r.Set("tempalte_id", _tempalteId)
-	return nil
-}
-
-// GetTempalteId TempalteId Getter
-func (r CainiaoCloudprintTemplatesMigrateAPIRequest) GetTempalteId() int64 {
-	return r._tempalteId
 }
 
 // SetCustomAreaName is CustomAreaName Setter
@@ -78,4 +65,17 @@ func (r *CainiaoCloudprintTemplatesMigrateAPIRequest) SetCustomAreaContent(_cust
 // GetCustomAreaContent CustomAreaContent Getter
 func (r CainiaoCloudprintTemplatesMigrateAPIRequest) GetCustomAreaContent() string {
 	return r._customAreaContent
+}
+
+// SetTempalteId is TempalteId Setter
+// 标准电子面单模板的id
+func (r *CainiaoCloudprintTemplatesMigrateAPIRequest) SetTempalteId(_tempalteId int64) error {
+	r._tempalteId = _tempalteId
+	r.Set("tempalte_id", _tempalteId)
+	return nil
+}
+
+// GetTempalteId TempalteId Getter
+func (r CainiaoCloudprintTemplatesMigrateAPIRequest) GetTempalteId() int64 {
+	return r._tempalteId
 }

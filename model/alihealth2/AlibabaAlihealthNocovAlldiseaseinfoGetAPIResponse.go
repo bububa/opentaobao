@@ -22,10 +22,10 @@ type AlibabaAlihealthNocovAlldiseaseinfoGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回全国疫情的统计数据
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
-	// success
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// errCode
 	BizErrCode string `json:"biz_err_code,omitempty" xml:"biz_err_code,omitempty"`
 	// errMessage
 	BizErrMessage string `json:"biz_err_message,omitempty" xml:"biz_err_message,omitempty"`
+	// success
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

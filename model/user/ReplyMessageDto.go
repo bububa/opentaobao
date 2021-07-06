@@ -2,8 +2,6 @@ package user
 
 // ReplyMessageDto 结构体
 type ReplyMessageDto struct {
-	// 毫秒时间戳
-	CreateTime int64 `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 来源消息 id
 	OriginalMessageId string `json:"original_message_id,omitempty" xml:"original_message_id,omitempty"`
 	// 被回复消息发送者
@@ -16,4 +14,6 @@ type ReplyMessageDto struct {
 	BizMessageTag string `json:"biz_message_tag,omitempty" xml:"biz_message_tag,omitempty"`
 	// 小程序Id
 	AppId string `json:"app_id,omitempty" xml:"app_id,omitempty"`
+	// 毫秒时间戳
+	CreateTime int64 `json:"create_time,omitempty" xml:"create_time,omitempty"`
 }

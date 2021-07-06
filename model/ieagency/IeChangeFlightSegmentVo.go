@@ -14,8 +14,6 @@ type IeChangeFlightSegmentVo struct {
 	CabinClassCode string `json:"cabin_class_code,omitempty" xml:"cabin_class_code,omitempty"`
 	// 舱位代码
 	CabinCode string `json:"cabin_code,omitempty" xml:"cabin_code,omitempty"`
-	// 是否共享
-	CodeShare bool `json:"code_share,omitempty" xml:"code_share,omitempty"`
 	// 出发机场码
 	DepAirport string `json:"dep_airport,omitempty" xml:"dep_airport,omitempty"`
 	// 出发城市码
@@ -30,4 +28,6 @@ type IeChangeFlightSegmentVo struct {
 	OperatingFlightNumber string `json:"operating_flight_number,omitempty" xml:"operating_flight_number,omitempty"`
 	// 航段序号
 	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
+	// 是否共享
+	CodeShare bool `json:"code_share,omitempty" xml:"code_share,omitempty"`
 }

@@ -4,8 +4,6 @@ package alicom
 type PreAuthorizeModel struct {
 	// 扩展字段(json)
 	Ext string `json:"ext,omitempty" xml:"ext,omitempty"`
-	// 0:业务办理成功，2:业务办理失败,全额解冻
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 淘宝订单号
 	TbOrderNo string `json:"tb_order_no,omitempty" xml:"tb_order_no,omitempty"`
 	// 外部流水号
@@ -24,4 +22,6 @@ type PreAuthorizeModel struct {
 	Amount string `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 淘宝订单号
 	Tid string `json:"tid,omitempty" xml:"tid,omitempty"`
+	// 0:业务办理成功，2:业务办理失败,全额解冻
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 }

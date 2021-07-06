@@ -22,10 +22,10 @@ type TmallTrendStyleBasicinfoUploadAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 款式基本信息同步处理结果描述
 	Value string `json:"value,omitempty" xml:"value,omitempty"`
-	// 是否成功
-	RespSuccess bool `json:"resp_success,omitempty" xml:"resp_success,omitempty"`
-	// 错误码,1001-系统错误，1002-请求参数错误，1003-业务处理错误，1004-数据权限错误
-	RespErrorCode int64 `json:"resp_error_code,omitempty" xml:"resp_error_code,omitempty"`
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
+	// 错误码,1001-系统错误，1002-请求参数错误，1003-业务处理错误，1004-数据权限错误
+	RespErrorCode int64 `json:"resp_error_code,omitempty" xml:"resp_error_code,omitempty"`
+	// 是否成功
+	RespSuccess bool `json:"resp_success,omitempty" xml:"resp_success,omitempty"`
 }

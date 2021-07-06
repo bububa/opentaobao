@@ -2,10 +2,6 @@ package wms
 
 // CainiaoReturnBillInventoryitem 结构体
 type CainiaoReturnBillInventoryitem struct {
-	// 库存类型1 可销售库存 101残次品
-	InventoryType int64 `json:"inventory_type,omitempty" xml:"inventory_type,omitempty"`
-	// 数量
-	ItemQty int64 `json:"item_qty,omitempty" xml:"item_qty,omitempty"`
 	// 失效日期，保质期商品使用
 	DueDate string `json:"due_date,omitempty" xml:"due_date,omitempty"`
 	// 生产日期，保质期商品使用
@@ -16,4 +12,8 @@ type CainiaoReturnBillInventoryitem struct {
 	ProduceArea string `json:"produce_area,omitempty" xml:"produce_area,omitempty"`
 	// 批次号
 	BatchCode string `json:"batch_code,omitempty" xml:"batch_code,omitempty"`
+	// 库存类型1 可销售库存 101残次品
+	InventoryType int64 `json:"inventory_type,omitempty" xml:"inventory_type,omitempty"`
+	// 数量
+	ItemQty int64 `json:"item_qty,omitempty" xml:"item_qty,omitempty"`
 }

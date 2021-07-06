@@ -12,22 +12,22 @@ import (
 // 淘票票第三方退票接口
 type TaobaoFilmDataThirdPartyRefundOrderAPIRequest struct {
 	model.Params
-	// 淘宝账号ID，此ID是一串数字。可自行百度查看如何获取或者咨询淘票票技术人员提供
-	_userId int64
-	// 淘票票分配的渠道码
-	_platform int64
 	// 退票身份ID，用于标识一个购票用户的身份，该参数需要跟锁座接口的ext_order_id参数一致，否则下单会失败。外部渠道需保证该参数的唯一性及准确性，下单出票接口会利用该参数做冥等性判断，如果由于外部渠道自身传入的参数有问题而导致的下单出票接口返回的结果有误，需要外部渠道自己承担损失
 	_extUserId string
 	// 退款时候需要传入第三方的订单号。外部渠道需保证该参数的唯一性和准确性
 	_extOrderId string
+	// 目前可以暂时不填参数
+	_params string
+	// 淘宝账号ID，此ID是一串数字。可自行百度查看如何获取或者咨询淘票票技术人员提供
+	_userId int64
+	// 淘票票分配的渠道码
+	_platform int64
 	// 下单时返回的淘宝订单号参数
 	_tbOrderId int64
 	// 退款金额，以分为单位，为指定的退款订单的金额
 	_refundAmount int64
 	// 退款服务费，目前都为0
 	_refundServiceFee int64
-	// 目前可以暂时不填参数
-	_params string
 }
 
 // NewTaobaoFilmDataThirdPartyRefundOrderRequest 初始化TaobaoFilmDataThirdPartyRefundOrderAPIRequest对象
@@ -49,32 +49,6 @@ func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetApiParams() url.Values
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetUserId is UserId Setter
-// 淘宝账号ID，此ID是一串数字。可自行百度查看如何获取或者咨询淘票票技术人员提供
-func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetUserId(_userId int64) error {
-	r._userId = _userId
-	r.Set("user_id", _userId)
-	return nil
-}
-
-// GetUserId UserId Getter
-func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetUserId() int64 {
-	return r._userId
-}
-
-// SetPlatform is Platform Setter
-// 淘票票分配的渠道码
-func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetPlatform(_platform int64) error {
-	r._platform = _platform
-	r.Set("platform", _platform)
-	return nil
-}
-
-// GetPlatform Platform Getter
-func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetPlatform() int64 {
-	return r._platform
 }
 
 // SetExtUserId is ExtUserId Setter
@@ -101,6 +75,45 @@ func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetExtOrderId(_extOrderI
 // GetExtOrderId ExtOrderId Getter
 func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetExtOrderId() string {
 	return r._extOrderId
+}
+
+// SetParams is Params Setter
+// 目前可以暂时不填参数
+func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetParams(_params string) error {
+	r._params = _params
+	r.Set("params", _params)
+	return nil
+}
+
+// GetParams Params Getter
+func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetParams() string {
+	return r._params
+}
+
+// SetUserId is UserId Setter
+// 淘宝账号ID，此ID是一串数字。可自行百度查看如何获取或者咨询淘票票技术人员提供
+func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// GetUserId UserId Getter
+func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetUserId() int64 {
+	return r._userId
+}
+
+// SetPlatform is Platform Setter
+// 淘票票分配的渠道码
+func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetPlatform(_platform int64) error {
+	r._platform = _platform
+	r.Set("platform", _platform)
+	return nil
+}
+
+// GetPlatform Platform Getter
+func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetPlatform() int64 {
+	return r._platform
 }
 
 // SetTbOrderId is TbOrderId Setter
@@ -140,17 +153,4 @@ func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetRefundServiceFee(_ref
 // GetRefundServiceFee RefundServiceFee Getter
 func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetRefundServiceFee() int64 {
 	return r._refundServiceFee
-}
-
-// SetParams is Params Setter
-// 目前可以暂时不填参数
-func (r *TaobaoFilmDataThirdPartyRefundOrderAPIRequest) SetParams(_params string) error {
-	r._params = _params
-	r.Set("params", _params)
-	return nil
-}
-
-// GetParams Params Getter
-func (r TaobaoFilmDataThirdPartyRefundOrderAPIRequest) GetParams() string {
-	return r._params
 }

@@ -14,12 +14,12 @@ type AlibabaItemPublishPropsGetAPIRequest struct {
 	model.Params
 	// 商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版
 	_market string
-	// 商品类目ID
-	_catId int64
 	// 商品条码
 	_barcode string
 	// 类目属性渲染schema
 	_schema string
+	// 商品类目ID
+	_catId int64
 	// 属性ID
 	_propId int64
 }
@@ -58,19 +58,6 @@ func (r AlibabaItemPublishPropsGetAPIRequest) GetMarket() string {
 	return r._market
 }
 
-// SetCatId is CatId Setter
-// 商品类目ID
-func (r *AlibabaItemPublishPropsGetAPIRequest) SetCatId(_catId int64) error {
-	r._catId = _catId
-	r.Set("cat_id", _catId)
-	return nil
-}
-
-// GetCatId CatId Getter
-func (r AlibabaItemPublishPropsGetAPIRequest) GetCatId() int64 {
-	return r._catId
-}
-
 // SetBarcode is Barcode Setter
 // 商品条码
 func (r *AlibabaItemPublishPropsGetAPIRequest) SetBarcode(_barcode string) error {
@@ -95,6 +82,19 @@ func (r *AlibabaItemPublishPropsGetAPIRequest) SetSchema(_schema string) error {
 // GetSchema Schema Getter
 func (r AlibabaItemPublishPropsGetAPIRequest) GetSchema() string {
 	return r._schema
+}
+
+// SetCatId is CatId Setter
+// 商品类目ID
+func (r *AlibabaItemPublishPropsGetAPIRequest) SetCatId(_catId int64) error {
+	r._catId = _catId
+	r.Set("cat_id", _catId)
+	return nil
+}
+
+// GetCatId CatId Getter
+func (r AlibabaItemPublishPropsGetAPIRequest) GetCatId() int64 {
+	return r._catId
 }
 
 // SetPropId is PropId Setter

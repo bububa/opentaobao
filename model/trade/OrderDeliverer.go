@@ -36,10 +36,10 @@ type OrderDeliverer struct {
 	DeliveryEndTime string `json:"delivery_end_time,omitempty" xml:"delivery_end_time,omitempty"`
 	// 配送坐标
 	DeliveryGeo string `json:"delivery_geo,omitempty" xml:"delivery_geo,omitempty"`
-	// 运费
-	DeliveryFee int64 `json:"delivery_fee,omitempty" xml:"delivery_fee,omitempty"`
 	// 配送地址
 	DeliveryAddress string `json:"delivery_address,omitempty" xml:"delivery_address,omitempty"`
 	// 收货人电话
 	ConsigneePhone string `json:"consignee_phone,omitempty" xml:"consignee_phone,omitempty"`
+	// 运费
+	DeliveryFee int64 `json:"delivery_fee,omitempty" xml:"delivery_fee,omitempty"`
 }

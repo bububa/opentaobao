@@ -12,8 +12,6 @@ import (
 // 订单数据回传接口，各个isv通过我们渠道产生订单需要回传进行统计
 type AlibabaAlihealthAlipaypfmOrderSyncAPIRequest struct {
 	model.Params
-	// user_id
-	_userId int64
 	// 订单id
 	_orderId string
 	// 订单价格
@@ -22,6 +20,8 @@ type AlibabaAlihealthAlipaypfmOrderSyncAPIRequest struct {
 	_orderStatus string
 	// 扩展参数
 	_extParam string
+	// user_id
+	_userId int64
 }
 
 // NewAlibabaAlihealthAlipaypfmOrderSyncRequest 初始化AlibabaAlihealthAlipaypfmOrderSyncAPIRequest对象
@@ -43,19 +43,6 @@ func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetApiParams() url.Values 
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetUserId is UserId Setter
-// user_id
-func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetUserId(_userId int64) error {
-	r._userId = _userId
-	r.Set("user_id", _userId)
-	return nil
-}
-
-// GetUserId UserId Getter
-func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetUserId() int64 {
-	return r._userId
 }
 
 // SetOrderId is OrderId Setter
@@ -108,4 +95,17 @@ func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetExtParam(_extParam str
 // GetExtParam ExtParam Getter
 func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetExtParam() string {
 	return r._extParam
+}
+
+// SetUserId is UserId Setter
+// user_id
+func (r *AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// GetUserId UserId Getter
+func (r AlibabaAlihealthAlipaypfmOrderSyncAPIRequest) GetUserId() int64 {
+	return r._userId
 }

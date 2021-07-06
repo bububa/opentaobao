@@ -14,8 +14,6 @@ type AlibabaAiUserQuickTokenBindAPIRequest struct {
 	model.Params
 	// Oauth协议访问令牌
 	_accessTokenValue string
-	// 令牌有效期（秒）
-	_expiredTime int64
 	// 第三方用户账号唯一ID
 	_merchantUserId string
 	// 技能ID
@@ -24,6 +22,8 @@ type AlibabaAiUserQuickTokenBindAPIRequest struct {
 	_schemaKey string
 	// Oauth协议刷新令牌
 	_refreshToken string
+	// 令牌有效期（秒）
+	_expiredTime int64
 }
 
 // NewAlibabaAiUserQuickTokenBindRequest 初始化AlibabaAiUserQuickTokenBindAPIRequest对象
@@ -58,19 +58,6 @@ func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetAccessTokenValue(_accessToken
 // GetAccessTokenValue AccessTokenValue Getter
 func (r AlibabaAiUserQuickTokenBindAPIRequest) GetAccessTokenValue() string {
 	return r._accessTokenValue
-}
-
-// SetExpiredTime is ExpiredTime Setter
-// 令牌有效期（秒）
-func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetExpiredTime(_expiredTime int64) error {
-	r._expiredTime = _expiredTime
-	r.Set("expired_time", _expiredTime)
-	return nil
-}
-
-// GetExpiredTime ExpiredTime Getter
-func (r AlibabaAiUserQuickTokenBindAPIRequest) GetExpiredTime() int64 {
-	return r._expiredTime
 }
 
 // SetMerchantUserId is MerchantUserId Setter
@@ -123,4 +110,17 @@ func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetRefreshToken(_refreshToken st
 // GetRefreshToken RefreshToken Getter
 func (r AlibabaAiUserQuickTokenBindAPIRequest) GetRefreshToken() string {
 	return r._refreshToken
+}
+
+// SetExpiredTime is ExpiredTime Setter
+// 令牌有效期（秒）
+func (r *AlibabaAiUserQuickTokenBindAPIRequest) SetExpiredTime(_expiredTime int64) error {
+	r._expiredTime = _expiredTime
+	r.Set("expired_time", _expiredTime)
+	return nil
+}
+
+// GetExpiredTime ExpiredTime Getter
+func (r AlibabaAiUserQuickTokenBindAPIRequest) GetExpiredTime() int64 {
+	return r._expiredTime
 }

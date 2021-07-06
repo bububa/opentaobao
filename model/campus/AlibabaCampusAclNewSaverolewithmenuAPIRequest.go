@@ -12,12 +12,12 @@ import (
 // 保存角色级联保存角色和权限的关系
 type AlibabaCampusAclNewSaverolewithmenuAPIRequest struct {
 	model.Params
+	// 菜单id,权限id
+	_treeNodeIds []string
 	// 系统入参
 	_workbenchcontext *WorkBenchContext
 	// 系统自动生成
 	_sysRoleDTO *SysRoleDto
-	// 菜单id,权限id
-	_treeNodeIds []string
 }
 
 // NewAlibabaCampusAclNewSaverolewithmenuRequest 初始化AlibabaCampusAclNewSaverolewithmenuAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaCampusAclNewSaverolewithmenuAPIRequest) GetApiParams() url.Values
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTreeNodeIds is TreeNodeIds Setter
+// 菜单id,权限id
+func (r *AlibabaCampusAclNewSaverolewithmenuAPIRequest) SetTreeNodeIds(_treeNodeIds []string) error {
+	r._treeNodeIds = _treeNodeIds
+	r.Set("tree_node_ids", _treeNodeIds)
+	return nil
+}
+
+// GetTreeNodeIds TreeNodeIds Getter
+func (r AlibabaCampusAclNewSaverolewithmenuAPIRequest) GetTreeNodeIds() []string {
+	return r._treeNodeIds
 }
 
 // SetWorkbenchcontext is Workbenchcontext Setter
@@ -65,17 +78,4 @@ func (r *AlibabaCampusAclNewSaverolewithmenuAPIRequest) SetSysRoleDTO(_sysRoleDT
 // GetSysRoleDTO SysRoleDTO Getter
 func (r AlibabaCampusAclNewSaverolewithmenuAPIRequest) GetSysRoleDTO() *SysRoleDto {
 	return r._sysRoleDTO
-}
-
-// SetTreeNodeIds is TreeNodeIds Setter
-// 菜单id,权限id
-func (r *AlibabaCampusAclNewSaverolewithmenuAPIRequest) SetTreeNodeIds(_treeNodeIds []string) error {
-	r._treeNodeIds = _treeNodeIds
-	r.Set("tree_node_ids", _treeNodeIds)
-	return nil
-}
-
-// GetTreeNodeIds TreeNodeIds Getter
-func (r AlibabaCampusAclNewSaverolewithmenuAPIRequest) GetTreeNodeIds() []string {
-	return r._treeNodeIds
 }

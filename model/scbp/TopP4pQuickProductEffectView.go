@@ -4,8 +4,6 @@ package scbp
 type TopP4pQuickProductEffectView struct {
 	// 产品名称
 	ProductName string `json:"product_name,omitempty" xml:"product_name,omitempty"`
-	// 产品id
-	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 平均点击花费
 	Cpc string `json:"cpc,omitempty" xml:"cpc,omitempty"`
 	// 点击率
@@ -16,4 +14,6 @@ type TopP4pQuickProductEffectView struct {
 	ClickCnt string `json:"click_cnt,omitempty" xml:"click_cnt,omitempty"`
 	// 曝光量
 	ImpressionCnt string `json:"impression_cnt,omitempty" xml:"impression_cnt,omitempty"`
+	// 产品id
+	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 }

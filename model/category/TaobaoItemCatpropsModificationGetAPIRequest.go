@@ -12,12 +12,12 @@ import (
 // 查询商品类目属性变更信息
 type TaobaoItemCatpropsModificationGetAPIRequest struct {
 	model.Params
-	// 类目Id（与商品Id二选一即可）
-	_categoryId int64
 	// 商品Id（与类目Id二选一即可。若同时传入商品Id和类目Id，则优先使用商品Id。若填写商品Id，则起始时间设为该商品最近修改时间）
 	_itemId string
 	// 起始请求时间（建议传入，默认为90天内）
 	_startTime string
+	// 类目Id（与商品Id二选一即可）
+	_categoryId int64
 }
 
 // NewTaobaoItemCatpropsModificationGetRequest 初始化TaobaoItemCatpropsModificationGetAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoItemCatpropsModificationGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetCategoryId is CategoryId Setter
-// 类目Id（与商品Id二选一即可）
-func (r *TaobaoItemCatpropsModificationGetAPIRequest) SetCategoryId(_categoryId int64) error {
-	r._categoryId = _categoryId
-	r.Set("category_id", _categoryId)
-	return nil
-}
-
-// GetCategoryId CategoryId Getter
-func (r TaobaoItemCatpropsModificationGetAPIRequest) GetCategoryId() int64 {
-	return r._categoryId
 }
 
 // SetItemId is ItemId Setter
@@ -78,4 +65,17 @@ func (r *TaobaoItemCatpropsModificationGetAPIRequest) SetStartTime(_startTime st
 // GetStartTime StartTime Getter
 func (r TaobaoItemCatpropsModificationGetAPIRequest) GetStartTime() string {
 	return r._startTime
+}
+
+// SetCategoryId is CategoryId Setter
+// 类目Id（与商品Id二选一即可）
+func (r *TaobaoItemCatpropsModificationGetAPIRequest) SetCategoryId(_categoryId int64) error {
+	r._categoryId = _categoryId
+	r.Set("category_id", _categoryId)
+	return nil
+}
+
+// GetCategoryId CategoryId Getter
+func (r TaobaoItemCatpropsModificationGetAPIRequest) GetCategoryId() int64 {
+	return r._categoryId
 }

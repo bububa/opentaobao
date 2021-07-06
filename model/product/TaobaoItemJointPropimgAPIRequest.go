@@ -14,10 +14,10 @@ type TaobaoItemJointPropimgAPIRequest struct {
 	model.Params
 	// 属性列表。调用taobao.itemprops.get获取，属性必须是颜色属性，格式:pid:vid。
 	_properties string
-	// 属性图片ID。如果是新增不需要填写
-	_id int64
 	// 图片地址(传入图片相对地址即可,即不需包含 http://img02.taobao.net/bao/uploaded )
 	_picPath string
+	// 属性图片ID。如果是新增不需要填写
+	_id int64
 	// 商品数字ID，必选
 	_numIid int64
 	// 图片序号
@@ -58,19 +58,6 @@ func (r TaobaoItemJointPropimgAPIRequest) GetProperties() string {
 	return r._properties
 }
 
-// SetId is Id Setter
-// 属性图片ID。如果是新增不需要填写
-func (r *TaobaoItemJointPropimgAPIRequest) SetId(_id int64) error {
-	r._id = _id
-	r.Set("id", _id)
-	return nil
-}
-
-// GetId Id Getter
-func (r TaobaoItemJointPropimgAPIRequest) GetId() int64 {
-	return r._id
-}
-
 // SetPicPath is PicPath Setter
 // 图片地址(传入图片相对地址即可,即不需包含 http://img02.taobao.net/bao/uploaded )
 func (r *TaobaoItemJointPropimgAPIRequest) SetPicPath(_picPath string) error {
@@ -82,6 +69,19 @@ func (r *TaobaoItemJointPropimgAPIRequest) SetPicPath(_picPath string) error {
 // GetPicPath PicPath Getter
 func (r TaobaoItemJointPropimgAPIRequest) GetPicPath() string {
 	return r._picPath
+}
+
+// SetId is Id Setter
+// 属性图片ID。如果是新增不需要填写
+func (r *TaobaoItemJointPropimgAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// GetId Id Getter
+func (r TaobaoItemJointPropimgAPIRequest) GetId() int64 {
+	return r._id
 }
 
 // SetNumIid is NumIid Setter

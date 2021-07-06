@@ -12,10 +12,10 @@ import (
 // 提供天猫超市外部合作商家财务：供应商发票录入
 type TmallTxcsFinanceInvoiceInputAPIRequest struct {
 	model.Params
-	// 门店ID
-	_ouCode string
 	// 发票内容
 	_invoiceInputDTO1 []InvoiceInputDto
+	// 门店ID
+	_ouCode string
 }
 
 // NewTmallTxcsFinanceInvoiceInputRequest 初始化TmallTxcsFinanceInvoiceInputAPIRequest对象
@@ -39,19 +39,6 @@ func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetOuCode is OuCode Setter
-// 门店ID
-func (r *TmallTxcsFinanceInvoiceInputAPIRequest) SetOuCode(_ouCode string) error {
-	r._ouCode = _ouCode
-	r.Set("ou_code", _ouCode)
-	return nil
-}
-
-// GetOuCode OuCode Getter
-func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetOuCode() string {
-	return r._ouCode
-}
-
 // SetInvoiceInputDTO1 is InvoiceInputDTO1 Setter
 // 发票内容
 func (r *TmallTxcsFinanceInvoiceInputAPIRequest) SetInvoiceInputDTO1(_invoiceInputDTO1 []InvoiceInputDto) error {
@@ -63,4 +50,17 @@ func (r *TmallTxcsFinanceInvoiceInputAPIRequest) SetInvoiceInputDTO1(_invoiceInp
 // GetInvoiceInputDTO1 InvoiceInputDTO1 Getter
 func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetInvoiceInputDTO1() []InvoiceInputDto {
 	return r._invoiceInputDTO1
+}
+
+// SetOuCode is OuCode Setter
+// 门店ID
+func (r *TmallTxcsFinanceInvoiceInputAPIRequest) SetOuCode(_ouCode string) error {
+	r._ouCode = _ouCode
+	r.Set("ou_code", _ouCode)
+	return nil
+}
+
+// GetOuCode OuCode Getter
+func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetOuCode() string {
+	return r._ouCode
 }

@@ -2,6 +2,8 @@ package einvoice
 
 // ResultList 结构体
 type ResultList struct {
+	// 开票明细列表
+	InvoiceItems []InvoiceItems `json:"invoice_items,omitempty" xml:"invoice_items>invoice_items,omitempty"`
 	// 付款方税号
 	PayeeRegisterNo string `json:"payee_register_no,omitempty" xml:"payee_register_no,omitempty"`
 	// 付款方平台
@@ -10,8 +12,6 @@ type ResultList struct {
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 开票金额
 	SumPrice string `json:"sum_price,omitempty" xml:"sum_price,omitempty"`
-	// 开票明细列表
-	InvoiceItems []InvoiceItems `json:"invoice_items,omitempty" xml:"invoice_items>invoice_items,omitempty"`
 	// seriNo
 	SeriNo string `json:"seri_no,omitempty" xml:"seri_no,omitempty"`
 	// invoiceStatus

@@ -6,8 +6,8 @@ type FeedbackRequestModel struct {
 	DefenseCaliber string `json:"defense_caliber,omitempty" xml:"defense_caliber,omitempty"`
 	// 不采纳理由
 	Reason string `json:"reason,omitempty" xml:"reason,omitempty"`
-	// 是否采纳标志 true 为采纳 , false 为不采纳
-	AcceptFlag bool `json:"accept_flag,omitempty" xml:"accept_flag,omitempty"`
+	// 提交人
+	SubmitPeople string `json:"submit_people,omitempty" xml:"submit_people,omitempty"`
 	// 案件id
 	SuitId int64 `json:"suit_id,omitempty" xml:"suit_id,omitempty"`
 	// 委托id
@@ -16,6 +16,6 @@ type FeedbackRequestModel struct {
 	StandpointId int64 `json:"standpoint_id,omitempty" xml:"standpoint_id,omitempty"`
 	// 观点版本
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
-	// 提交人
-	SubmitPeople string `json:"submit_people,omitempty" xml:"submit_people,omitempty"`
+	// 是否采纳标志 true 为采纳 , false 为不采纳
+	AcceptFlag bool `json:"accept_flag,omitempty" xml:"accept_flag,omitempty"`
 }

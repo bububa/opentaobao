@@ -2,8 +2,10 @@ package btrip
 
 // OpenTrainOrderRs 结构体
 type OpenTrainOrderRs struct {
-	// 订单id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 价目信息
+	PriceInfoList []OpenPriceInfo `json:"price_info_list,omitempty" xml:"price_info_list>open_price_info,omitempty"`
+	// 出行人列表
+	UserAffiliateList []OpenUserAffiliateDo `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 企业Id
@@ -20,8 +22,6 @@ type OpenTrainOrderRs struct {
 	DepartId string `json:"depart_id,omitempty" xml:"depart_id,omitempty"`
 	// 部门名称
 	DepartName string `json:"depart_name,omitempty" xml:"depart_name,omitempty"`
-	// 申请单id
-	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 联系人名称
 	ContactName string `json:"contact_name,omitempty" xml:"contact_name,omitempty"`
 	// 联系人电话
@@ -50,18 +50,18 @@ type OpenTrainOrderRs struct {
 	ArrCity string `json:"arr_city,omitempty" xml:"arr_city,omitempty"`
 	// 乘客姓名
 	RiderName string `json:"rider_name,omitempty" xml:"rider_name,omitempty"`
+	// 第三方行程id
+	ThirdpartItineraryId string `json:"thirdpart_itinerary_id,omitempty" xml:"thirdpart_itinerary_id,omitempty"`
+	// 订单id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 申请单id
+	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 票的数量
 	TicketCount int64 `json:"ticket_count,omitempty" xml:"ticket_count,omitempty"`
-	// 价目信息
-	PriceInfoList []OpenPriceInfo `json:"price_info_list,omitempty" xml:"price_info_list>open_price_info,omitempty"`
 	// 订单状态：0待支付,1出票中,2已关闭(未支付，已经关闭),3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已经邮寄了,9出票失败,10改签失败,11退票失败
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 成本中心对象
 	CostCenter *OpenCostCenterDo `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
 	// 发票信息对象
 	Invoice *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
-	// 第三方行程id
-	ThirdpartItineraryId string `json:"thirdpart_itinerary_id,omitempty" xml:"thirdpart_itinerary_id,omitempty"`
-	// 出行人列表
-	UserAffiliateList []OpenUserAffiliateDo `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
 }

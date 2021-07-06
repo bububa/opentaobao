@@ -12,14 +12,14 @@ import (
 // 图片语种识别
 type AlibabaSeakingImagerecognizeAPIRequest struct {
 	model.Params
-	// 扩展信息
-	_extra *Extra
 	// erp用户id
 	_identifier string
 	// 调用来源(erp名称)
 	_identifierType string
 	// 图片url
 	_url string
+	// 扩展信息
+	_extra *Extra
 }
 
 // NewAlibabaSeakingImagerecognizeRequest 初始化AlibabaSeakingImagerecognizeAPIRequest对象
@@ -41,19 +41,6 @@ func (r AlibabaSeakingImagerecognizeAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetExtra is Extra Setter
-// 扩展信息
-func (r *AlibabaSeakingImagerecognizeAPIRequest) SetExtra(_extra *Extra) error {
-	r._extra = _extra
-	r.Set("extra", _extra)
-	return nil
-}
-
-// GetExtra Extra Getter
-func (r AlibabaSeakingImagerecognizeAPIRequest) GetExtra() *Extra {
-	return r._extra
 }
 
 // SetIdentifier is Identifier Setter
@@ -93,4 +80,17 @@ func (r *AlibabaSeakingImagerecognizeAPIRequest) SetUrl(_url string) error {
 // GetUrl Url Getter
 func (r AlibabaSeakingImagerecognizeAPIRequest) GetUrl() string {
 	return r._url
+}
+
+// SetExtra is Extra Setter
+// 扩展信息
+func (r *AlibabaSeakingImagerecognizeAPIRequest) SetExtra(_extra *Extra) error {
+	r._extra = _extra
+	r.Set("extra", _extra)
+	return nil
+}
+
+// GetExtra Extra Getter
+func (r AlibabaSeakingImagerecognizeAPIRequest) GetExtra() *Extra {
+	return r._extra
 }

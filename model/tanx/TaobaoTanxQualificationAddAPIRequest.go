@@ -14,10 +14,10 @@ type TaobaoTanxQualificationAddAPIRequest struct {
 	model.Params
 	// dsp客户新增资质dto
 	_qualifications []Qualification
-	// dsp用户memberId
-	_memberId int64
 	// dsp验证的token
 	_token string
+	// dsp用户memberId
+	_memberId int64
 	// 签名时间，1970年到现在的秒
 	_signTime int64
 }
@@ -56,19 +56,6 @@ func (r TaobaoTanxQualificationAddAPIRequest) GetQualifications() []Qualificatio
 	return r._qualifications
 }
 
-// SetMemberId is MemberId Setter
-// dsp用户memberId
-func (r *TaobaoTanxQualificationAddAPIRequest) SetMemberId(_memberId int64) error {
-	r._memberId = _memberId
-	r.Set("member_id", _memberId)
-	return nil
-}
-
-// GetMemberId MemberId Getter
-func (r TaobaoTanxQualificationAddAPIRequest) GetMemberId() int64 {
-	return r._memberId
-}
-
 // SetToken is Token Setter
 // dsp验证的token
 func (r *TaobaoTanxQualificationAddAPIRequest) SetToken(_token string) error {
@@ -80,6 +67,19 @@ func (r *TaobaoTanxQualificationAddAPIRequest) SetToken(_token string) error {
 // GetToken Token Getter
 func (r TaobaoTanxQualificationAddAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetMemberId is MemberId Setter
+// dsp用户memberId
+func (r *TaobaoTanxQualificationAddAPIRequest) SetMemberId(_memberId int64) error {
+	r._memberId = _memberId
+	r.Set("member_id", _memberId)
+	return nil
+}
+
+// GetMemberId MemberId Getter
+func (r TaobaoTanxQualificationAddAPIRequest) GetMemberId() int64 {
+	return r._memberId
 }
 
 // SetSignTime is SignTime Setter

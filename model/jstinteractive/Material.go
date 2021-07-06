@@ -4,8 +4,6 @@ package jstinteractive
 type Material struct {
 	// 待完成按钮文案
 	AcceptBtn string `json:"accept_btn,omitempty" xml:"accept_btn,omitempty"`
-	// 浏览任务需要多少秒才能完成
-	Duration int64 `json:"duration,omitempty" xml:"duration,omitempty"`
 	// 任务列表动作类型，VISIT=浏览
 	ActionType string `json:"action_type,omitempty" xml:"action_type,omitempty"`
 	// 任务列表副标题
@@ -22,4 +20,6 @@ type Material struct {
 	AwardBtn string `json:"award_btn,omitempty" xml:"award_btn,omitempty"`
 	// 已完成按钮文案
 	CompleteBtn string `json:"complete_btn,omitempty" xml:"complete_btn,omitempty"`
+	// 浏览任务需要多少秒才能完成
+	Duration int64 `json:"duration,omitempty" xml:"duration,omitempty"`
 }

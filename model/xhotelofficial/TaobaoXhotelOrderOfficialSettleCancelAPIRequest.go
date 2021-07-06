@@ -12,8 +12,6 @@ import (
 // 用于官网信用住取消结账
 type TaobaoXhotelOrderOfficialSettleCancelAPIRequest struct {
 	model.Params
-	// 阿里旅行订单号，淘宝订单号或外部订单号二选一必填
-	_tid int64
 	// 取消结账的原因
 	_reason string
 	// 外部订单号，和tid二选一必填
@@ -22,6 +20,8 @@ type TaobaoXhotelOrderOfficialSettleCancelAPIRequest struct {
 	_notifyUrl string
 	// 请求流水号
 	_outUuid string
+	// 阿里旅行订单号，淘宝订单号或外部订单号二选一必填
+	_tid int64
 }
 
 // NewTaobaoXhotelOrderOfficialSettleCancelRequest 初始化TaobaoXhotelOrderOfficialSettleCancelAPIRequest对象
@@ -43,19 +43,6 @@ func (r TaobaoXhotelOrderOfficialSettleCancelAPIRequest) GetApiParams() url.Valu
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetTid is Tid Setter
-// 阿里旅行订单号，淘宝订单号或外部订单号二选一必填
-func (r *TaobaoXhotelOrderOfficialSettleCancelAPIRequest) SetTid(_tid int64) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
-	return nil
-}
-
-// GetTid Tid Getter
-func (r TaobaoXhotelOrderOfficialSettleCancelAPIRequest) GetTid() int64 {
-	return r._tid
 }
 
 // SetReason is Reason Setter
@@ -108,4 +95,17 @@ func (r *TaobaoXhotelOrderOfficialSettleCancelAPIRequest) SetOutUuid(_outUuid st
 // GetOutUuid OutUuid Getter
 func (r TaobaoXhotelOrderOfficialSettleCancelAPIRequest) GetOutUuid() string {
 	return r._outUuid
+}
+
+// SetTid is Tid Setter
+// 阿里旅行订单号，淘宝订单号或外部订单号二选一必填
+func (r *TaobaoXhotelOrderOfficialSettleCancelAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoXhotelOrderOfficialSettleCancelAPIRequest) GetTid() int64 {
+	return r._tid
 }

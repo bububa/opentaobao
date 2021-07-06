@@ -16,8 +16,6 @@ type ResourceGroupDto struct {
 	FromResourceName string `json:"from_resource_name,omitempty" xml:"from_resource_name,omitempty"`
 	// from资源类型
 	FromResourceType string `json:"from_resource_type,omitempty" xml:"from_resource_type,omitempty"`
-	// 是否测试
-	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
 	// 商家
 	MerchantCode string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
 	// 网络编码
@@ -34,4 +32,6 @@ type ResourceGroupDto struct {
 	ToResourceName string `json:"to_resource_name,omitempty" xml:"to_resource_name,omitempty"`
 	// to资源类型
 	ToResourceType string `json:"to_resource_type,omitempty" xml:"to_resource_type,omitempty"`
+	// 是否测试
+	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
 }

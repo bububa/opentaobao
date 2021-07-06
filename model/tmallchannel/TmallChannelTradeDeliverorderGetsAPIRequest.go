@@ -12,20 +12,20 @@ import (
 // 查询发货单列表
 type TmallChannelTradeDeliverorderGetsAPIRequest struct {
 	model.Params
-	// 发货单单号
-	_mainDeliverOrderNo int64
 	// 发货单状态列表
 	_orderStatusList []int64
-	// 是否包括子发货单
-	_isIncludeSubOrder bool
+	// 发货单单号
+	_mainDeliverOrderNo int64
 	// 每页显示数量
 	_pageSize int64
 	// 查询第几页
 	_pageNumber int64
-	// 是否分页查询
-	_needPagination bool
 	// 渠道
 	_channel int64
+	// 是否包括子发货单
+	_isIncludeSubOrder bool
+	// 是否分页查询
+	_needPagination bool
 }
 
 // NewTmallChannelTradeDeliverorderGetsRequest 初始化TmallChannelTradeDeliverorderGetsAPIRequest对象
@@ -49,19 +49,6 @@ func (r TmallChannelTradeDeliverorderGetsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetMainDeliverOrderNo is MainDeliverOrderNo Setter
-// 发货单单号
-func (r *TmallChannelTradeDeliverorderGetsAPIRequest) SetMainDeliverOrderNo(_mainDeliverOrderNo int64) error {
-	r._mainDeliverOrderNo = _mainDeliverOrderNo
-	r.Set("main_deliver_order_no", _mainDeliverOrderNo)
-	return nil
-}
-
-// GetMainDeliverOrderNo MainDeliverOrderNo Getter
-func (r TmallChannelTradeDeliverorderGetsAPIRequest) GetMainDeliverOrderNo() int64 {
-	return r._mainDeliverOrderNo
-}
-
 // SetOrderStatusList is OrderStatusList Setter
 // 发货单状态列表
 func (r *TmallChannelTradeDeliverorderGetsAPIRequest) SetOrderStatusList(_orderStatusList []int64) error {
@@ -75,17 +62,17 @@ func (r TmallChannelTradeDeliverorderGetsAPIRequest) GetOrderStatusList() []int6
 	return r._orderStatusList
 }
 
-// SetIsIncludeSubOrder is IsIncludeSubOrder Setter
-// 是否包括子发货单
-func (r *TmallChannelTradeDeliverorderGetsAPIRequest) SetIsIncludeSubOrder(_isIncludeSubOrder bool) error {
-	r._isIncludeSubOrder = _isIncludeSubOrder
-	r.Set("is_include_sub_order", _isIncludeSubOrder)
+// SetMainDeliverOrderNo is MainDeliverOrderNo Setter
+// 发货单单号
+func (r *TmallChannelTradeDeliverorderGetsAPIRequest) SetMainDeliverOrderNo(_mainDeliverOrderNo int64) error {
+	r._mainDeliverOrderNo = _mainDeliverOrderNo
+	r.Set("main_deliver_order_no", _mainDeliverOrderNo)
 	return nil
 }
 
-// GetIsIncludeSubOrder IsIncludeSubOrder Getter
-func (r TmallChannelTradeDeliverorderGetsAPIRequest) GetIsIncludeSubOrder() bool {
-	return r._isIncludeSubOrder
+// GetMainDeliverOrderNo MainDeliverOrderNo Getter
+func (r TmallChannelTradeDeliverorderGetsAPIRequest) GetMainDeliverOrderNo() int64 {
+	return r._mainDeliverOrderNo
 }
 
 // SetPageSize is PageSize Setter
@@ -114,19 +101,6 @@ func (r TmallChannelTradeDeliverorderGetsAPIRequest) GetPageNumber() int64 {
 	return r._pageNumber
 }
 
-// SetNeedPagination is NeedPagination Setter
-// 是否分页查询
-func (r *TmallChannelTradeDeliverorderGetsAPIRequest) SetNeedPagination(_needPagination bool) error {
-	r._needPagination = _needPagination
-	r.Set("need_pagination", _needPagination)
-	return nil
-}
-
-// GetNeedPagination NeedPagination Getter
-func (r TmallChannelTradeDeliverorderGetsAPIRequest) GetNeedPagination() bool {
-	return r._needPagination
-}
-
 // SetChannel is Channel Setter
 // 渠道
 func (r *TmallChannelTradeDeliverorderGetsAPIRequest) SetChannel(_channel int64) error {
@@ -138,4 +112,30 @@ func (r *TmallChannelTradeDeliverorderGetsAPIRequest) SetChannel(_channel int64)
 // GetChannel Channel Getter
 func (r TmallChannelTradeDeliverorderGetsAPIRequest) GetChannel() int64 {
 	return r._channel
+}
+
+// SetIsIncludeSubOrder is IsIncludeSubOrder Setter
+// 是否包括子发货单
+func (r *TmallChannelTradeDeliverorderGetsAPIRequest) SetIsIncludeSubOrder(_isIncludeSubOrder bool) error {
+	r._isIncludeSubOrder = _isIncludeSubOrder
+	r.Set("is_include_sub_order", _isIncludeSubOrder)
+	return nil
+}
+
+// GetIsIncludeSubOrder IsIncludeSubOrder Getter
+func (r TmallChannelTradeDeliverorderGetsAPIRequest) GetIsIncludeSubOrder() bool {
+	return r._isIncludeSubOrder
+}
+
+// SetNeedPagination is NeedPagination Setter
+// 是否分页查询
+func (r *TmallChannelTradeDeliverorderGetsAPIRequest) SetNeedPagination(_needPagination bool) error {
+	r._needPagination = _needPagination
+	r.Set("need_pagination", _needPagination)
+	return nil
+}
+
+// GetNeedPagination NeedPagination Getter
+func (r TmallChannelTradeDeliverorderGetsAPIRequest) GetNeedPagination() bool {
+	return r._needPagination
 }

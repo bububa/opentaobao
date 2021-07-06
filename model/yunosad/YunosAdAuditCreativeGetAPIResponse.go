@@ -24,8 +24,8 @@ type YunosAdAuditCreativeGetAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 状态
 	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
-	// 是否成功
-	IsOk bool `json:"is_ok,omitempty" xml:"is_ok,omitempty"`
 	// 审核结果
 	Result *CreativeAuditDto `json:"result,omitempty" xml:"result,omitempty"`
+	// 是否成功
+	IsOk bool `json:"is_ok,omitempty" xml:"is_ok,omitempty"`
 }

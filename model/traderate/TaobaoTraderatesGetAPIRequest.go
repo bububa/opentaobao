@@ -20,20 +20,20 @@ type TaobaoTraderatesGetAPIRequest struct {
 	_role string
 	// 评价结果。可选值:good(好评),neutral(中评),bad(差评)
 	_result string
-	// 页码。取值范围:大于零的整数最大限制为200; 默认值:1
-	_pageNo int64
-	// 每页获取条数。默认值40，最小值1，最大值150。
-	_pageSize int64
 	// 评价开始时。如果只输入开始时间，那么能返回开始时间之后的评价数据。
 	_startDate string
 	// 评价结束时间。如果只输入结束时间，那么全部返回所有评价数据。
 	_endDate string
+	// 页码。取值范围:大于零的整数最大限制为200; 默认值:1
+	_pageNo int64
+	// 每页获取条数。默认值40，最小值1，最大值150。
+	_pageSize int64
 	// 交易订单id，可以是父订单id号，也可以是子订单id号
 	_tid int64
-	// 是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取评价信息，效率在原有的基础上有80%的提升。
-	_useHasNext bool
 	// 商品的数字ID
 	_numIid int64
+	// 是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取评价信息，效率在原有的基础上有80%的提升。
+	_useHasNext bool
 }
 
 // NewTaobaoTraderatesGetRequest 初始化TaobaoTraderatesGetAPIRequest对象
@@ -109,32 +109,6 @@ func (r TaobaoTraderatesGetAPIRequest) GetResult() string {
 	return r._result
 }
 
-// SetPageNo is PageNo Setter
-// 页码。取值范围:大于零的整数最大限制为200; 默认值:1
-func (r *TaobaoTraderatesGetAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r TaobaoTraderatesGetAPIRequest) GetPageNo() int64 {
-	return r._pageNo
-}
-
-// SetPageSize is PageSize Setter
-// 每页获取条数。默认值40，最小值1，最大值150。
-func (r *TaobaoTraderatesGetAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoTraderatesGetAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetStartDate is StartDate Setter
 // 评价开始时。如果只输入开始时间，那么能返回开始时间之后的评价数据。
 func (r *TaobaoTraderatesGetAPIRequest) SetStartDate(_startDate string) error {
@@ -161,6 +135,32 @@ func (r TaobaoTraderatesGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
+// SetPageNo is PageNo Setter
+// 页码。取值范围:大于零的整数最大限制为200; 默认值:1
+func (r *TaobaoTraderatesGetAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r TaobaoTraderatesGetAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// SetPageSize is PageSize Setter
+// 每页获取条数。默认值40，最小值1，最大值150。
+func (r *TaobaoTraderatesGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoTraderatesGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
 // SetTid is Tid Setter
 // 交易订单id，可以是父订单id号，也可以是子订单id号
 func (r *TaobaoTraderatesGetAPIRequest) SetTid(_tid int64) error {
@@ -174,19 +174,6 @@ func (r TaobaoTraderatesGetAPIRequest) GetTid() int64 {
 	return r._tid
 }
 
-// SetUseHasNext is UseHasNext Setter
-// 是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取评价信息，效率在原有的基础上有80%的提升。
-func (r *TaobaoTraderatesGetAPIRequest) SetUseHasNext(_useHasNext bool) error {
-	r._useHasNext = _useHasNext
-	r.Set("use_has_next", _useHasNext)
-	return nil
-}
-
-// GetUseHasNext UseHasNext Getter
-func (r TaobaoTraderatesGetAPIRequest) GetUseHasNext() bool {
-	return r._useHasNext
-}
-
 // SetNumIid is NumIid Setter
 // 商品的数字ID
 func (r *TaobaoTraderatesGetAPIRequest) SetNumIid(_numIid int64) error {
@@ -198,4 +185,17 @@ func (r *TaobaoTraderatesGetAPIRequest) SetNumIid(_numIid int64) error {
 // GetNumIid NumIid Getter
 func (r TaobaoTraderatesGetAPIRequest) GetNumIid() int64 {
 	return r._numIid
+}
+
+// SetUseHasNext is UseHasNext Setter
+// 是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取评价信息，效率在原有的基础上有80%的提升。
+func (r *TaobaoTraderatesGetAPIRequest) SetUseHasNext(_useHasNext bool) error {
+	r._useHasNext = _useHasNext
+	r.Set("use_has_next", _useHasNext)
+	return nil
+}
+
+// GetUseHasNext UseHasNext Getter
+func (r TaobaoTraderatesGetAPIRequest) GetUseHasNext() bool {
+	return r._useHasNext
 }

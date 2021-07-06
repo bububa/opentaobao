@@ -6,12 +6,12 @@ type B2BBusSeatPriceDto struct {
 	DepCityName string `json:"dep_city_name,omitempty" xml:"dep_city_name,omitempty"`
 	// 出发时间
 	DepTime string `json:"dep_time,omitempty" xml:"dep_time,omitempty"`
-	// 车次全价
-	FullPrice int64 `json:"full_price,omitempty" xml:"full_price,omitempty"`
 	// 目的地
 	LastPlaceName string `json:"last_place_name,omitempty" xml:"last_place_name,omitempty"`
 	// 车次ID
 	ScheduleId string `json:"schedule_id,omitempty" xml:"schedule_id,omitempty"`
+	// 车次全价
+	FullPrice int64 `json:"full_price,omitempty" xml:"full_price,omitempty"`
 	// 余票数量
 	Stock int64 `json:"stock,omitempty" xml:"stock,omitempty"`
 	// 服务费

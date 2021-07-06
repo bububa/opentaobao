@@ -20,12 +20,12 @@ type AlibabaPicturesDengtaWbaccountPriceChangeAPIRequest struct {
 	_changeTime string
 	// 原发价
 	_originPrice string
-	// id
-	_id int64
 	// 转发价格 折后价
 	_transferPriceAli string
 	// 原发价 折后价
 	_originPriceAli string
+	// id
+	_id int64
 }
 
 // NewAlibabaPicturesDengtaWbaccountPriceChangeRequest 初始化AlibabaPicturesDengtaWbaccountPriceChangeAPIRequest对象
@@ -101,19 +101,6 @@ func (r AlibabaPicturesDengtaWbaccountPriceChangeAPIRequest) GetOriginPrice() st
 	return r._originPrice
 }
 
-// SetId is Id Setter
-// id
-func (r *AlibabaPicturesDengtaWbaccountPriceChangeAPIRequest) SetId(_id int64) error {
-	r._id = _id
-	r.Set("id", _id)
-	return nil
-}
-
-// GetId Id Getter
-func (r AlibabaPicturesDengtaWbaccountPriceChangeAPIRequest) GetId() int64 {
-	return r._id
-}
-
 // SetTransferPriceAli is TransferPriceAli Setter
 // 转发价格 折后价
 func (r *AlibabaPicturesDengtaWbaccountPriceChangeAPIRequest) SetTransferPriceAli(_transferPriceAli string) error {
@@ -138,4 +125,17 @@ func (r *AlibabaPicturesDengtaWbaccountPriceChangeAPIRequest) SetOriginPriceAli(
 // GetOriginPriceAli OriginPriceAli Getter
 func (r AlibabaPicturesDengtaWbaccountPriceChangeAPIRequest) GetOriginPriceAli() string {
 	return r._originPriceAli
+}
+
+// SetId is Id Setter
+// id
+func (r *AlibabaPicturesDengtaWbaccountPriceChangeAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// GetId Id Getter
+func (r AlibabaPicturesDengtaWbaccountPriceChangeAPIRequest) GetId() int64 {
+	return r._id
 }

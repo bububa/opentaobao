@@ -22,8 +22,8 @@ type TaobaoTrainAgentReturnticketConfirmVtwoAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// resultCode
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
-	// success
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// resultMsg
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
+	// success
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

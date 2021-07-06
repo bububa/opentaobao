@@ -2,8 +2,8 @@ package tvupadmin
 
 // DfPageResultDto 结构体
 type DfPageResultDto struct {
-	// code
-	Code int64 `json:"code,omitempty" xml:"code,omitempty"`
+	// value
+	Values []string `json:"values,omitempty" xml:"values>string,omitempty"`
 	// codeName
 	CodeName string `json:"code_name,omitempty" xml:"code_name,omitempty"`
 	// detailMessage
@@ -14,18 +14,18 @@ type DfPageResultDto struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// msgInfo
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
+	// resultCode
+	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
+	// code
+	Code int64 `json:"code,omitempty" xml:"code,omitempty"`
 	// pageNo
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
 	// pageSize
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
-	// resultCode
-	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
-	// success
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// totalCount
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// totalPage
 	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
-	// value
-	Values []string `json:"values,omitempty" xml:"values>string,omitempty"`
+	// success
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

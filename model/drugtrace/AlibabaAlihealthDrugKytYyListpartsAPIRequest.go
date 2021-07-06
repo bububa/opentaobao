@@ -18,16 +18,16 @@ type AlibabaAlihealthDrugKytYyListpartsAPIRequest struct {
 	_entName string
 	// 企业自定义编号
 	_refPartnerId string
-	// 页大小
-	_pageSize int64
-	// 页码
-	_page int64
 	// 开始时间
 	_beginDate string
 	// 结束时间
 	_endDate string
 	// 代理企业唯一标识（物流企业）
 	_agentRefEntId string
+	// 页大小
+	_pageSize int64
+	// 页码
+	_page int64
 }
 
 // NewAlibabaAlihealthDrugKytYyListpartsRequest 初始化AlibabaAlihealthDrugKytYyListpartsAPIRequest对象
@@ -90,32 +90,6 @@ func (r AlibabaAlihealthDrugKytYyListpartsAPIRequest) GetRefPartnerId() string {
 	return r._refPartnerId
 }
 
-// SetPageSize is PageSize Setter
-// 页大小
-func (r *AlibabaAlihealthDrugKytYyListpartsAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlibabaAlihealthDrugKytYyListpartsAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetPage is Page Setter
-// 页码
-func (r *AlibabaAlihealthDrugKytYyListpartsAPIRequest) SetPage(_page int64) error {
-	r._page = _page
-	r.Set("page", _page)
-	return nil
-}
-
-// GetPage Page Getter
-func (r AlibabaAlihealthDrugKytYyListpartsAPIRequest) GetPage() int64 {
-	return r._page
-}
-
 // SetBeginDate is BeginDate Setter
 // 开始时间
 func (r *AlibabaAlihealthDrugKytYyListpartsAPIRequest) SetBeginDate(_beginDate string) error {
@@ -153,4 +127,30 @@ func (r *AlibabaAlihealthDrugKytYyListpartsAPIRequest) SetAgentRefEntId(_agentRe
 // GetAgentRefEntId AgentRefEntId Getter
 func (r AlibabaAlihealthDrugKytYyListpartsAPIRequest) GetAgentRefEntId() string {
 	return r._agentRefEntId
+}
+
+// SetPageSize is PageSize Setter
+// 页大小
+func (r *AlibabaAlihealthDrugKytYyListpartsAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlibabaAlihealthDrugKytYyListpartsAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetPage is Page Setter
+// 页码
+func (r *AlibabaAlihealthDrugKytYyListpartsAPIRequest) SetPage(_page int64) error {
+	r._page = _page
+	r.Set("page", _page)
+	return nil
+}
+
+// GetPage Page Getter
+func (r AlibabaAlihealthDrugKytYyListpartsAPIRequest) GetPage() int64 {
+	return r._page
 }

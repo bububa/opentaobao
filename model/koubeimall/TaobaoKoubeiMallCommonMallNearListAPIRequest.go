@@ -14,10 +14,6 @@ type TaobaoKoubeiMallCommonMallNearListAPIRequest struct {
 	model.Params
 	// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
 	_dataSetId string
-	// 召回半径，单位m，最大数值不能超过10km（该字段为空，默认全城召回）
-	_radius int64
-	// 查询个数，最大查询量不能超过50个
-	_size int64
 	// 经度（终端设备地理位置）
 	_longitude string
 	// 纬度（终端设备地理位置）
@@ -30,6 +26,10 @@ type TaobaoKoubeiMallCommonMallNearListAPIRequest struct {
 	_appVersion string
 	// 终端设备描述(中、英文均可)
 	_terminalType string
+	// 召回半径，单位m，最大数值不能超过10km（该字段为空，默认全城召回）
+	_radius int64
+	// 查询个数，最大查询量不能超过50个
+	_size int64
 }
 
 // NewTaobaoKoubeiMallCommonMallNearListRequest 初始化TaobaoKoubeiMallCommonMallNearListAPIRequest对象
@@ -64,32 +64,6 @@ func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetDataSetId(_dataSetId s
 // GetDataSetId DataSetId Getter
 func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetDataSetId() string {
 	return r._dataSetId
-}
-
-// SetRadius is Radius Setter
-// 召回半径，单位m，最大数值不能超过10km（该字段为空，默认全城召回）
-func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetRadius(_radius int64) error {
-	r._radius = _radius
-	r.Set("radius", _radius)
-	return nil
-}
-
-// GetRadius Radius Getter
-func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetRadius() int64 {
-	return r._radius
-}
-
-// SetSize is Size Setter
-// 查询个数，最大查询量不能超过50个
-func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetSize(_size int64) error {
-	r._size = _size
-	r.Set("size", _size)
-	return nil
-}
-
-// GetSize Size Getter
-func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetSize() int64 {
-	return r._size
 }
 
 // SetLongitude is Longitude Setter
@@ -168,4 +142,30 @@ func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetTerminalType(_terminal
 // GetTerminalType TerminalType Getter
 func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetTerminalType() string {
 	return r._terminalType
+}
+
+// SetRadius is Radius Setter
+// 召回半径，单位m，最大数值不能超过10km（该字段为空，默认全城召回）
+func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetRadius(_radius int64) error {
+	r._radius = _radius
+	r.Set("radius", _radius)
+	return nil
+}
+
+// GetRadius Radius Getter
+func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetRadius() int64 {
+	return r._radius
+}
+
+// SetSize is Size Setter
+// 查询个数，最大查询量不能超过50个
+func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetSize(_size int64) error {
+	r._size = _size
+	r.Set("size", _size)
+	return nil
+}
+
+// GetSize Size Getter
+func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetSize() int64 {
+	return r._size
 }

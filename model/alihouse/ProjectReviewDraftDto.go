@@ -6,8 +6,6 @@ type ProjectReviewDraftDto struct {
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 外部测评id
 	OuterReviewId string `json:"outer_review_id,omitempty" xml:"outer_review_id,omitempty"`
-	// 菜鸟城市id
-	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
 	// 区域描述
 	DistrictDesc string `json:"district_desc,omitempty" xml:"district_desc,omitempty"`
 	// 板块描述
@@ -36,10 +34,12 @@ type ProjectReviewDraftDto struct {
 	Lights string `json:"lights,omitempty" xml:"lights,omitempty"`
 	// 项目不足
 	Defect string `json:"defect,omitempty" xml:"defect,omitempty"`
-	// 状态 1有效0 无效
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 发布时间 时间格式 yyyy-MM-dd HH:mm:ss
 	PublishTime string `json:"publish_time,omitempty" xml:"publish_time,omitempty"`
+	// 菜鸟城市id
+	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
+	// 状态 1有效0 无效
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 1测试数据 0正常数据
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
 }

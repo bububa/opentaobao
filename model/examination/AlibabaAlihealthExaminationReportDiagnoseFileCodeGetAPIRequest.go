@@ -12,12 +12,12 @@ import (
 // 体检报告人工解读_ISV获取报告文件验证码进行查看报告文件
 type AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest struct {
 	model.Params
-	// 报告id
-	_reportId int64
 	// 订单id
 	_orderId string
 	// 医生id
 	_doctorId string
+	// 报告id
+	_reportId int64
 }
 
 // NewAlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest 初始化AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) GetApiPa
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetReportId is ReportId Setter
-// 报告id
-func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) SetReportId(_reportId int64) error {
-	r._reportId = _reportId
-	r.Set("report_id", _reportId)
-	return nil
-}
-
-// GetReportId ReportId Getter
-func (r AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) GetReportId() int64 {
-	return r._reportId
 }
 
 // SetOrderId is OrderId Setter
@@ -78,4 +65,17 @@ func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) SetDoct
 // GetDoctorId DoctorId Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) GetDoctorId() string {
 	return r._doctorId
+}
+
+// SetReportId is ReportId Setter
+// 报告id
+func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) SetReportId(_reportId int64) error {
+	r._reportId = _reportId
+	r.Set("report_id", _reportId)
+	return nil
+}
+
+// GetReportId ReportId Getter
+func (r AlibabaAlihealthExaminationReportDiagnoseFileCodeGetAPIRequest) GetReportId() int64 {
+	return r._reportId
 }

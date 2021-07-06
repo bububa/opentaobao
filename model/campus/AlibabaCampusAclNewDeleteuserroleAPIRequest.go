@@ -12,12 +12,12 @@ import (
 // 删除管理员
 type AlibabaCampusAclNewDeleteuserroleAPIRequest struct {
 	model.Params
-	// 系统入参
-	_workbenchcontext *WorkBenchContext
-	// 用户账号
-	_userId string
 	// 角色id
 	_roleIds []int64
+	// 用户账号
+	_userId string
+	// 系统入参
+	_workbenchcontext *WorkBenchContext
 }
 
 // NewAlibabaCampusAclNewDeleteuserroleRequest 初始化AlibabaCampusAclNewDeleteuserroleAPIRequest对象
@@ -41,17 +41,17 @@ func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetWorkbenchcontext is Workbenchcontext Setter
-// 系统入参
-func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
-	r._workbenchcontext = _workbenchcontext
-	r.Set("workbenchcontext", _workbenchcontext)
+// SetRoleIds is RoleIds Setter
+// 角色id
+func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) SetRoleIds(_roleIds []int64) error {
+	r._roleIds = _roleIds
+	r.Set("role_ids", _roleIds)
 	return nil
 }
 
-// GetWorkbenchcontext Workbenchcontext Getter
-func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
-	return r._workbenchcontext
+// GetRoleIds RoleIds Getter
+func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetRoleIds() []int64 {
+	return r._roleIds
 }
 
 // SetUserId is UserId Setter
@@ -67,15 +67,15 @@ func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// SetRoleIds is RoleIds Setter
-// 角色id
-func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) SetRoleIds(_roleIds []int64) error {
-	r._roleIds = _roleIds
-	r.Set("role_ids", _roleIds)
+// SetWorkbenchcontext is Workbenchcontext Setter
+// 系统入参
+func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+	r._workbenchcontext = _workbenchcontext
+	r.Set("workbenchcontext", _workbenchcontext)
 	return nil
 }
 
-// GetRoleIds RoleIds Getter
-func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetRoleIds() []int64 {
-	return r._roleIds
+// GetWorkbenchcontext Workbenchcontext Getter
+func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
+	return r._workbenchcontext
 }

@@ -16,14 +16,10 @@ type AliexpressAffiliateImageSearchAPIRequest struct {
 	_appSignature string
 	// 请求字段
 	_fields string
-	// 图片文件字节数组，最大不超过 100 KB
-	_imageFileBytes *model.File
 	// 图片类目倾向，不填则为最佳匹配。0 - 服装；3 - 包；4 - 鞋子；88888888 - 其他类目
 	_imgCid string
 	// 媒体用户唯一识别号
 	_mediaUserId string
-	// 搜索结果数量，最高 50
-	_productCnt int64
 	// ship-to 国家
 	_shptTo string
 	// 排序方式:SALE_PRICE_ASC, SALE_PRICE_DESC,LAST_VOLUME_ASC, LAST_VOLUME_DESC
@@ -34,6 +30,10 @@ type AliexpressAffiliateImageSearchAPIRequest struct {
 	_targetLanguage string
 	// 媒体 trackingid
 	_trackingId string
+	// 图片文件字节数组，最大不超过 100 KB
+	_imageFileBytes *model.File
+	// 搜索结果数量，最高 50
+	_productCnt int64
 }
 
 // NewAliexpressAffiliateImageSearchRequest 初始化AliexpressAffiliateImageSearchAPIRequest对象
@@ -83,19 +83,6 @@ func (r AliexpressAffiliateImageSearchAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// SetImageFileBytes is ImageFileBytes Setter
-// 图片文件字节数组，最大不超过 100 KB
-func (r *AliexpressAffiliateImageSearchAPIRequest) SetImageFileBytes(_imageFileBytes *model.File) error {
-	r._imageFileBytes = _imageFileBytes
-	r.Set("image_file_bytes", _imageFileBytes)
-	return nil
-}
-
-// GetImageFileBytes ImageFileBytes Getter
-func (r AliexpressAffiliateImageSearchAPIRequest) GetImageFileBytes() *model.File {
-	return r._imageFileBytes
-}
-
 // SetImgCid is ImgCid Setter
 // 图片类目倾向，不填则为最佳匹配。0 - 服装；3 - 包；4 - 鞋子；88888888 - 其他类目
 func (r *AliexpressAffiliateImageSearchAPIRequest) SetImgCid(_imgCid string) error {
@@ -120,19 +107,6 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetMediaUserId(_mediaUserId s
 // GetMediaUserId MediaUserId Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetMediaUserId() string {
 	return r._mediaUserId
-}
-
-// SetProductCnt is ProductCnt Setter
-// 搜索结果数量，最高 50
-func (r *AliexpressAffiliateImageSearchAPIRequest) SetProductCnt(_productCnt int64) error {
-	r._productCnt = _productCnt
-	r.Set("product_cnt", _productCnt)
-	return nil
-}
-
-// GetProductCnt ProductCnt Getter
-func (r AliexpressAffiliateImageSearchAPIRequest) GetProductCnt() int64 {
-	return r._productCnt
 }
 
 // SetShptTo is ShptTo Setter
@@ -198,4 +172,30 @@ func (r *AliexpressAffiliateImageSearchAPIRequest) SetTrackingId(_trackingId str
 // GetTrackingId TrackingId Getter
 func (r AliexpressAffiliateImageSearchAPIRequest) GetTrackingId() string {
 	return r._trackingId
+}
+
+// SetImageFileBytes is ImageFileBytes Setter
+// 图片文件字节数组，最大不超过 100 KB
+func (r *AliexpressAffiliateImageSearchAPIRequest) SetImageFileBytes(_imageFileBytes *model.File) error {
+	r._imageFileBytes = _imageFileBytes
+	r.Set("image_file_bytes", _imageFileBytes)
+	return nil
+}
+
+// GetImageFileBytes ImageFileBytes Getter
+func (r AliexpressAffiliateImageSearchAPIRequest) GetImageFileBytes() *model.File {
+	return r._imageFileBytes
+}
+
+// SetProductCnt is ProductCnt Setter
+// 搜索结果数量，最高 50
+func (r *AliexpressAffiliateImageSearchAPIRequest) SetProductCnt(_productCnt int64) error {
+	r._productCnt = _productCnt
+	r.Set("product_cnt", _productCnt)
+	return nil
+}
+
+// GetProductCnt ProductCnt Getter
+func (r AliexpressAffiliateImageSearchAPIRequest) GetProductCnt() int64 {
+	return r._productCnt
 }

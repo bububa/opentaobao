@@ -12,6 +12,8 @@ import (
 // ISV 将用户完成接种的疫苗同步给免疫规划中心
 type AlibabaHealthVaccinVaccinateCompleteAPIRequest struct {
 	model.Params
+	// 接种的疫苗信息
+	_vaccineList []VaccineInfo
 	// 支付宝用户 ID
 	_alipayUserId string
 	// ISV 侧用户 ID
@@ -26,8 +28,6 @@ type AlibabaHealthVaccinVaccinateCompleteAPIRequest struct {
 	_vaccinateDate string
 	// 接种时间
 	_vaccinateTime string
-	// 接种的疫苗信息
-	_vaccineList []VaccineInfo
 }
 
 // NewAlibabaHealthVaccinVaccinateCompleteRequest 初始化AlibabaHealthVaccinVaccinateCompleteAPIRequest对象
@@ -49,6 +49,19 @@ func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetApiParams() url.Value
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetVaccineList is VaccineList Setter
+// 接种的疫苗信息
+func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetVaccineList(_vaccineList []VaccineInfo) error {
+	r._vaccineList = _vaccineList
+	r.Set("vaccine_list", _vaccineList)
+	return nil
+}
+
+// GetVaccineList VaccineList Getter
+func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetVaccineList() []VaccineInfo {
+	return r._vaccineList
 }
 
 // SetAlipayUserId is AlipayUserId Setter
@@ -140,17 +153,4 @@ func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetVaccinateTime(_vacci
 // GetVaccinateTime VaccinateTime Getter
 func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetVaccinateTime() string {
 	return r._vaccinateTime
-}
-
-// SetVaccineList is VaccineList Setter
-// 接种的疫苗信息
-func (r *AlibabaHealthVaccinVaccinateCompleteAPIRequest) SetVaccineList(_vaccineList []VaccineInfo) error {
-	r._vaccineList = _vaccineList
-	r.Set("vaccine_list", _vaccineList)
-	return nil
-}
-
-// GetVaccineList VaccineList Getter
-func (r AlibabaHealthVaccinVaccinateCompleteAPIRequest) GetVaccineList() []VaccineInfo {
-	return r._vaccineList
 }

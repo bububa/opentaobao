@@ -14,12 +14,12 @@ type AlitripRailTradeIssueticketAPIRequest struct {
 	model.Params
 	// 代理商订单号
 	_agentOrderId string
+	// pnr票号有则填，无则空
+	_ticketNo string
 	// 平台订单号
 	_tpOrderId int64
 	// 代理商id
 	_agentId int64
-	// pnr票号有则填，无则空
-	_ticketNo string
 }
 
 // NewAlitripRailTradeIssueticketRequest 初始化AlitripRailTradeIssueticketAPIRequest对象
@@ -56,6 +56,19 @@ func (r AlitripRailTradeIssueticketAPIRequest) GetAgentOrderId() string {
 	return r._agentOrderId
 }
 
+// SetTicketNo is TicketNo Setter
+// pnr票号有则填，无则空
+func (r *AlitripRailTradeIssueticketAPIRequest) SetTicketNo(_ticketNo string) error {
+	r._ticketNo = _ticketNo
+	r.Set("ticket_no", _ticketNo)
+	return nil
+}
+
+// GetTicketNo TicketNo Getter
+func (r AlitripRailTradeIssueticketAPIRequest) GetTicketNo() string {
+	return r._ticketNo
+}
+
 // SetTpOrderId is TpOrderId Setter
 // 平台订单号
 func (r *AlitripRailTradeIssueticketAPIRequest) SetTpOrderId(_tpOrderId int64) error {
@@ -80,17 +93,4 @@ func (r *AlitripRailTradeIssueticketAPIRequest) SetAgentId(_agentId int64) error
 // GetAgentId AgentId Getter
 func (r AlitripRailTradeIssueticketAPIRequest) GetAgentId() int64 {
 	return r._agentId
-}
-
-// SetTicketNo is TicketNo Setter
-// pnr票号有则填，无则空
-func (r *AlitripRailTradeIssueticketAPIRequest) SetTicketNo(_ticketNo string) error {
-	r._ticketNo = _ticketNo
-	r.Set("ticket_no", _ticketNo)
-	return nil
-}
-
-// GetTicketNo TicketNo Getter
-func (r AlitripRailTradeIssueticketAPIRequest) GetTicketNo() string {
-	return r._ticketNo
 }

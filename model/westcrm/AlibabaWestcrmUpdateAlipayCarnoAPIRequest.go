@@ -12,14 +12,14 @@ import (
 // 更新支付宝业务卡号
 type AlibabaWestcrmUpdateAlipayCarnoAPIRequest struct {
 	model.Params
-	// 商场id
-	_mallId int64
-	// 用户id
-	_id int64
 	// 2088102011918821
 	_alipayCardNo string
 	// appkey
 	_westcrmAppKey string
+	// 商场id
+	_mallId int64
+	// 用户id
+	_id int64
 }
 
 // NewAlibabaWestcrmUpdateAlipayCarnoRequest 初始化AlibabaWestcrmUpdateAlipayCarnoAPIRequest对象
@@ -41,32 +41,6 @@ func (r AlibabaWestcrmUpdateAlipayCarnoAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetMallId is MallId Setter
-// 商场id
-func (r *AlibabaWestcrmUpdateAlipayCarnoAPIRequest) SetMallId(_mallId int64) error {
-	r._mallId = _mallId
-	r.Set("mall_id", _mallId)
-	return nil
-}
-
-// GetMallId MallId Getter
-func (r AlibabaWestcrmUpdateAlipayCarnoAPIRequest) GetMallId() int64 {
-	return r._mallId
-}
-
-// SetId is Id Setter
-// 用户id
-func (r *AlibabaWestcrmUpdateAlipayCarnoAPIRequest) SetId(_id int64) error {
-	r._id = _id
-	r.Set("id", _id)
-	return nil
-}
-
-// GetId Id Getter
-func (r AlibabaWestcrmUpdateAlipayCarnoAPIRequest) GetId() int64 {
-	return r._id
 }
 
 // SetAlipayCardNo is AlipayCardNo Setter
@@ -93,4 +67,30 @@ func (r *AlibabaWestcrmUpdateAlipayCarnoAPIRequest) SetWestcrmAppKey(_westcrmApp
 // GetWestcrmAppKey WestcrmAppKey Getter
 func (r AlibabaWestcrmUpdateAlipayCarnoAPIRequest) GetWestcrmAppKey() string {
 	return r._westcrmAppKey
+}
+
+// SetMallId is MallId Setter
+// 商场id
+func (r *AlibabaWestcrmUpdateAlipayCarnoAPIRequest) SetMallId(_mallId int64) error {
+	r._mallId = _mallId
+	r.Set("mall_id", _mallId)
+	return nil
+}
+
+// GetMallId MallId Getter
+func (r AlibabaWestcrmUpdateAlipayCarnoAPIRequest) GetMallId() int64 {
+	return r._mallId
+}
+
+// SetId is Id Setter
+// 用户id
+func (r *AlibabaWestcrmUpdateAlipayCarnoAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// GetId Id Getter
+func (r AlibabaWestcrmUpdateAlipayCarnoAPIRequest) GetId() int64 {
+	return r._id
 }

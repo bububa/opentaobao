@@ -12,12 +12,12 @@ import (
 // 虾米音乐精选集详情接口
 type AlibabaXiamiApiCollectDetailGetAPIRequest struct {
 	model.Params
+	// 是否需要tag, show为需要, 其他为不需要
+	_tag string
 	// 精选集ID
 	_id int64
 	// 是否获取完整描述
 	_fullDes bool
-	// 是否需要tag, show为需要, 其他为不需要
-	_tag string
 }
 
 // NewAlibabaXiamiApiCollectDetailGetRequest 初始化AlibabaXiamiApiCollectDetailGetAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaXiamiApiCollectDetailGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTag is Tag Setter
+// 是否需要tag, show为需要, 其他为不需要
+func (r *AlibabaXiamiApiCollectDetailGetAPIRequest) SetTag(_tag string) error {
+	r._tag = _tag
+	r.Set("tag", _tag)
+	return nil
+}
+
+// GetTag Tag Getter
+func (r AlibabaXiamiApiCollectDetailGetAPIRequest) GetTag() string {
+	return r._tag
 }
 
 // SetId is Id Setter
@@ -65,17 +78,4 @@ func (r *AlibabaXiamiApiCollectDetailGetAPIRequest) SetFullDes(_fullDes bool) er
 // GetFullDes FullDes Getter
 func (r AlibabaXiamiApiCollectDetailGetAPIRequest) GetFullDes() bool {
 	return r._fullDes
-}
-
-// SetTag is Tag Setter
-// 是否需要tag, show为需要, 其他为不需要
-func (r *AlibabaXiamiApiCollectDetailGetAPIRequest) SetTag(_tag string) error {
-	r._tag = _tag
-	r.Set("tag", _tag)
-	return nil
-}
-
-// GetTag Tag Getter
-func (r AlibabaXiamiApiCollectDetailGetAPIRequest) GetTag() string {
-	return r._tag
 }

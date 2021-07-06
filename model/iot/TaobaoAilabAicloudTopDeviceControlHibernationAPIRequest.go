@@ -12,12 +12,12 @@ import (
 // 定时休眠
 type TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest struct {
 	model.Params
-	// 用户信息
-	_param0 *OpenBaseInfo
 	// 设备id
 	_param1 string
 	// N秒后休眠
 	_param2 string
+	// 用户信息
+	_param0 *OpenBaseInfo
 }
 
 // NewTaobaoAilabAicloudTopDeviceControlHibernationRequest 初始化TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest) GetApiParams() 
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetParam0 is Param0 Setter
-// 用户信息
-func (r *TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
-	r._param0 = _param0
-	r.Set("param0", _param0)
-	return nil
-}
-
-// GetParam0 Param0 Getter
-func (r TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest) GetParam0() *OpenBaseInfo {
-	return r._param0
 }
 
 // SetParam1 is Param1 Setter
@@ -78,4 +65,17 @@ func (r *TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest) SetParam2(_par
 // GetParam2 Param2 Getter
 func (r TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest) GetParam2() string {
 	return r._param2
+}
+
+// SetParam0 is Param0 Setter
+// 用户信息
+func (r *TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest) SetParam0(_param0 *OpenBaseInfo) error {
+	r._param0 = _param0
+	r.Set("param0", _param0)
+	return nil
+}
+
+// GetParam0 Param0 Getter
+func (r TaobaoAilabAicloudTopDeviceControlHibernationAPIRequest) GetParam0() *OpenBaseInfo {
+	return r._param0
 }

@@ -12,10 +12,10 @@ import (
 // 批量得到推广组
 type TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest struct {
 	model.Params
-	// 主人昵称
-	_nick string
 	// 推广组Id列表
 	_adgroupIds []int64
+	// 主人昵称
+	_nick string
 	// 页尺寸，最大200，如果入参adgroup_ids有传入值，则page_size和page_no值不起作用。如果adgrpup_ids为空而campaign_id有值，此时page_size和page_no值才是返回的页数据大小和页码
 	_pageSize int64
 	// 页码，从1开始
@@ -43,19 +43,6 @@ func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// SetNick is Nick Setter
-// 主人昵称
-func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetNick(_nick string) error {
-	r._nick = _nick
-	r.Set("nick", _nick)
-	return nil
-}
-
-// GetNick Nick Getter
-func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetNick() string {
-	return r._nick
-}
-
 // SetAdgroupIds is AdgroupIds Setter
 // 推广组Id列表
 func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetAdgroupIds(_adgroupIds []int64) error {
@@ -67,6 +54,19 @@ func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetAdgroupIds(_adgroupIds
 // GetAdgroupIds AdgroupIds Getter
 func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetAdgroupIds() []int64 {
 	return r._adgroupIds
+}
+
+// SetNick is Nick Setter
+// 主人昵称
+func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// GetNick Nick Getter
+func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetNick() string {
+	return r._nick
 }
 
 // SetPageSize is PageSize Setter

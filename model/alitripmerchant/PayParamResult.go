@@ -14,8 +14,8 @@ type PayParamResult struct {
 	TimeStamp string `json:"time_stamp,omitempty" xml:"time_stamp,omitempty"`
 	// 小程序id
 	AppId string `json:"app_id,omitempty" xml:"app_id,omitempty"`
-	// 预订结果
-	BookResult bool `json:"book_result,omitempty" xml:"book_result,omitempty"`
 	// 订单编号
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
+	// 预订结果
+	BookResult bool `json:"book_result,omitempty" xml:"book_result,omitempty"`
 }

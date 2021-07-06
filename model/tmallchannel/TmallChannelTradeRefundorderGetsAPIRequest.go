@@ -12,10 +12,10 @@ import (
 // 供应商分页查询退款单
 type TmallChannelTradeRefundorderGetsAPIRequest struct {
 	model.Params
-	// 退款单号
-	_refundId int64
 	// 采购单号
 	_mainChannelOrderNo string
+	// 退款单号
+	_refundId int64
 	// 每页数据条数
 	_pageSize int64
 	// 页码
@@ -43,19 +43,6 @@ func (r TmallChannelTradeRefundorderGetsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetRefundId is RefundId Setter
-// 退款单号
-func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetRefundId(_refundId int64) error {
-	r._refundId = _refundId
-	r.Set("refund_id", _refundId)
-	return nil
-}
-
-// GetRefundId RefundId Getter
-func (r TmallChannelTradeRefundorderGetsAPIRequest) GetRefundId() int64 {
-	return r._refundId
-}
-
 // SetMainChannelOrderNo is MainChannelOrderNo Setter
 // 采购单号
 func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetMainChannelOrderNo(_mainChannelOrderNo string) error {
@@ -67,6 +54,19 @@ func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetMainChannelOrderNo(_main
 // GetMainChannelOrderNo MainChannelOrderNo Getter
 func (r TmallChannelTradeRefundorderGetsAPIRequest) GetMainChannelOrderNo() string {
 	return r._mainChannelOrderNo
+}
+
+// SetRefundId is RefundId Setter
+// 退款单号
+func (r *TmallChannelTradeRefundorderGetsAPIRequest) SetRefundId(_refundId int64) error {
+	r._refundId = _refundId
+	r.Set("refund_id", _refundId)
+	return nil
+}
+
+// GetRefundId RefundId Getter
+func (r TmallChannelTradeRefundorderGetsAPIRequest) GetRefundId() int64 {
+	return r._refundId
 }
 
 // SetPageSize is PageSize Setter

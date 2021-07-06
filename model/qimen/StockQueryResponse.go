@@ -2,6 +2,8 @@ package qimen
 
 // StockQueryResponse 结构体
 type StockQueryResponse struct {
+	// 商品的库存信息列表
+	Items []Item `json:"items,omitempty" xml:"items>item,omitempty"`
 	// 响应结果:success|failure
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应码
@@ -10,6 +12,4 @@ type StockQueryResponse struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 总数
 	TotalCount int64 `json:"totalCount,omitempty" xml:"totalCount,omitempty"`
-	// 商品的库存信息列表
-	Items []Item `json:"items,omitempty" xml:"items>item,omitempty"`
 }

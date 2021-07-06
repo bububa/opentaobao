@@ -12,10 +12,10 @@ import (
 // 全域新品店铺优惠券免除申请打标接口
 type TmallBrandItemCouponProtectAPIRequest struct {
 	model.Params
-	// 天猫商品id
-	_itemId int64
 	// 店铺优惠券新品保护期档次:PERIOD_0D("0天"),     PERIOD_7D("7天"),     PERIOD_14D("14天"),     PERIOD_21D("21天")
 	_protectionPeriod string
+	// 天猫商品id
+	_itemId int64
 	// 天猫品牌id
 	_brandId int64
 }
@@ -41,19 +41,6 @@ func (r TmallBrandItemCouponProtectAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetItemId is ItemId Setter
-// 天猫商品id
-func (r *TmallBrandItemCouponProtectAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
-	return nil
-}
-
-// GetItemId ItemId Getter
-func (r TmallBrandItemCouponProtectAPIRequest) GetItemId() int64 {
-	return r._itemId
-}
-
 // SetProtectionPeriod is ProtectionPeriod Setter
 // 店铺优惠券新品保护期档次:PERIOD_0D("0天"),     PERIOD_7D("7天"),     PERIOD_14D("14天"),     PERIOD_21D("21天")
 func (r *TmallBrandItemCouponProtectAPIRequest) SetProtectionPeriod(_protectionPeriod string) error {
@@ -65,6 +52,19 @@ func (r *TmallBrandItemCouponProtectAPIRequest) SetProtectionPeriod(_protectionP
 // GetProtectionPeriod ProtectionPeriod Getter
 func (r TmallBrandItemCouponProtectAPIRequest) GetProtectionPeriod() string {
 	return r._protectionPeriod
+}
+
+// SetItemId is ItemId Setter
+// 天猫商品id
+func (r *TmallBrandItemCouponProtectAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r TmallBrandItemCouponProtectAPIRequest) GetItemId() int64 {
+	return r._itemId
 }
 
 // SetBrandId is BrandId Setter

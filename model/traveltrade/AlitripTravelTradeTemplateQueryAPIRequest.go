@@ -12,10 +12,10 @@ import (
 // 通过订单ID获取标注模版信息，商家可以根据模版来填充行业信息
 type AlitripTravelTradeTemplateQueryAPIRequest struct {
 	model.Params
-	// 是否取最新的模版
-	_isNew bool
 	// 淘宝平台订单ID
 	_orderId int64
+	// 是否取最新的模版
+	_isNew bool
 }
 
 // NewAlitripTravelTradeTemplateQueryRequest 初始化AlitripTravelTradeTemplateQueryAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlitripTravelTradeTemplateQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetIsNew is IsNew Setter
-// 是否取最新的模版
-func (r *AlitripTravelTradeTemplateQueryAPIRequest) SetIsNew(_isNew bool) error {
-	r._isNew = _isNew
-	r.Set("is_new", _isNew)
-	return nil
-}
-
-// GetIsNew IsNew Getter
-func (r AlitripTravelTradeTemplateQueryAPIRequest) GetIsNew() bool {
-	return r._isNew
-}
-
 // SetOrderId is OrderId Setter
 // 淘宝平台订单ID
 func (r *AlitripTravelTradeTemplateQueryAPIRequest) SetOrderId(_orderId int64) error {
@@ -63,4 +50,17 @@ func (r *AlitripTravelTradeTemplateQueryAPIRequest) SetOrderId(_orderId int64) e
 // GetOrderId OrderId Getter
 func (r AlitripTravelTradeTemplateQueryAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+// SetIsNew is IsNew Setter
+// 是否取最新的模版
+func (r *AlitripTravelTradeTemplateQueryAPIRequest) SetIsNew(_isNew bool) error {
+	r._isNew = _isNew
+	r.Set("is_new", _isNew)
+	return nil
+}
+
+// GetIsNew IsNew Getter
+func (r AlitripTravelTradeTemplateQueryAPIRequest) GetIsNew() bool {
+	return r._isNew
 }

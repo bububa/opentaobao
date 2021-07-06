@@ -14,12 +14,12 @@ type TmallNrtCoupontemplateQueryAPIRequest struct {
 	model.Params
 	// 券列表
 	_couponTypeList []int64
+	// 业务code阿里指定
+	_bizCode string
 	// 当前页
 	_currentPage int64
 	// 每页数据数量
 	_pageSize int64
-	// 业务code阿里指定
-	_bizCode string
 }
 
 // NewTmallNrtCoupontemplateQueryRequest 初始化TmallNrtCoupontemplateQueryAPIRequest对象
@@ -56,6 +56,19 @@ func (r TmallNrtCoupontemplateQueryAPIRequest) GetCouponTypeList() []int64 {
 	return r._couponTypeList
 }
 
+// SetBizCode is BizCode Setter
+// 业务code阿里指定
+func (r *TmallNrtCoupontemplateQueryAPIRequest) SetBizCode(_bizCode string) error {
+	r._bizCode = _bizCode
+	r.Set("biz_code", _bizCode)
+	return nil
+}
+
+// GetBizCode BizCode Getter
+func (r TmallNrtCoupontemplateQueryAPIRequest) GetBizCode() string {
+	return r._bizCode
+}
+
 // SetCurrentPage is CurrentPage Setter
 // 当前页
 func (r *TmallNrtCoupontemplateQueryAPIRequest) SetCurrentPage(_currentPage int64) error {
@@ -80,17 +93,4 @@ func (r *TmallNrtCoupontemplateQueryAPIRequest) SetPageSize(_pageSize int64) err
 // GetPageSize PageSize Getter
 func (r TmallNrtCoupontemplateQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetBizCode is BizCode Setter
-// 业务code阿里指定
-func (r *TmallNrtCoupontemplateQueryAPIRequest) SetBizCode(_bizCode string) error {
-	r._bizCode = _bizCode
-	r.Set("biz_code", _bizCode)
-	return nil
-}
-
-// GetBizCode BizCode Getter
-func (r TmallNrtCoupontemplateQueryAPIRequest) GetBizCode() string {
-	return r._bizCode
 }

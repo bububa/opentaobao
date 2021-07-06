@@ -18,12 +18,8 @@ type AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest struct {
 	_email string
 	// 账号的全局唯一标识，为了提高准确率，建议带上该字段。【phone_number ,email, (user_id,id_type)三种必选其一】
 	_userId string
-	// 有user_id时候必填。1：阿里HID；2：用户自有ID；3：openId; 4:其它。【phone_number ,email, (user_id,id_type)三种必选其一】
-	_idType int64
 	// 登录时候的IP地址
 	_ip string
-	// 登录来源。1：PC网页；2：移动网页；3：APP;4:其它
-	_source int64
 	// 当前操作的页面URL。Source为1，2时，该参数必选
 	_registerUrl string
 	// 发送HTTP请求的代理
@@ -54,6 +50,10 @@ type AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest struct {
 	_protocolVersion string
 	// 扩展字段。json格式的字符串，根据具体情况而定
 	_extendData string
+	// 有user_id时候必填。1：阿里HID；2：用户自有ID；3：openId; 4:其它。【phone_number ,email, (user_id,id_type)三种必选其一】
+	_idType int64
+	// 登录来源。1：PC网页；2：移动网页；3：APP;4:其它
+	_source int64
 }
 
 // NewAlibabaSecurityJaqSpamregisterpreventionResultFetchNewRequest 初始化AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest对象
@@ -116,19 +116,6 @@ func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) GetUse
 	return r._userId
 }
 
-// SetIdType is IdType Setter
-// 有user_id时候必填。1：阿里HID；2：用户自有ID；3：openId; 4:其它。【phone_number ,email, (user_id,id_type)三种必选其一】
-func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) SetIdType(_idType int64) error {
-	r._idType = _idType
-	r.Set("id_type", _idType)
-	return nil
-}
-
-// GetIdType IdType Getter
-func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) GetIdType() int64 {
-	return r._idType
-}
-
 // SetIp is Ip Setter
 // 登录时候的IP地址
 func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) SetIp(_ip string) error {
@@ -140,19 +127,6 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) SetIp
 // GetIp Ip Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) GetIp() string {
 	return r._ip
-}
-
-// SetSource is Source Setter
-// 登录来源。1：PC网页；2：移动网页；3：APP;4:其它
-func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) SetSource(_source int64) error {
-	r._source = _source
-	r.Set("source", _source)
-	return nil
-}
-
-// GetSource Source Getter
-func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) GetSource() int64 {
-	return r._source
 }
 
 // SetRegisterUrl is RegisterUrl Setter
@@ -348,4 +322,30 @@ func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) SetEx
 // GetExtendData ExtendData Getter
 func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) GetExtendData() string {
 	return r._extendData
+}
+
+// SetIdType is IdType Setter
+// 有user_id时候必填。1：阿里HID；2：用户自有ID；3：openId; 4:其它。【phone_number ,email, (user_id,id_type)三种必选其一】
+func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) SetIdType(_idType int64) error {
+	r._idType = _idType
+	r.Set("id_type", _idType)
+	return nil
+}
+
+// GetIdType IdType Getter
+func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) GetIdType() int64 {
+	return r._idType
+}
+
+// SetSource is Source Setter
+// 登录来源。1：PC网页；2：移动网页；3：APP;4:其它
+func (r *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) SetSource(_source int64) error {
+	r._source = _source
+	r.Set("source", _source)
+	return nil
+}
+
+// GetSource Source Getter
+func (r AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIRequest) GetSource() int64 {
+	return r._source
 }

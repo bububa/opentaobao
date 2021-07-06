@@ -32,14 +32,14 @@ type AlibabaAlihealthDrugKytCodeprocessAPIRequest struct {
 	_drugEntBaseInfoId string
 	// 包装规格
 	_pkgSpec string
-	// 页数
-	_page int64
-	// 条数
-	_pageSize int64
 	// 客户端
 	_clientType string
 	// 企业ID
 	_refEntId string
+	// 页数
+	_page int64
+	// 条数
+	_pageSize int64
 }
 
 // NewAlibabaAlihealthDrugKytCodeprocessRequest 初始化AlibabaAlihealthDrugKytCodeprocessAPIRequest对象
@@ -193,32 +193,6 @@ func (r AlibabaAlihealthDrugKytCodeprocessAPIRequest) GetPkgSpec() string {
 	return r._pkgSpec
 }
 
-// SetPage is Page Setter
-// 页数
-func (r *AlibabaAlihealthDrugKytCodeprocessAPIRequest) SetPage(_page int64) error {
-	r._page = _page
-	r.Set("page", _page)
-	return nil
-}
-
-// GetPage Page Getter
-func (r AlibabaAlihealthDrugKytCodeprocessAPIRequest) GetPage() int64 {
-	return r._page
-}
-
-// SetPageSize is PageSize Setter
-// 条数
-func (r *AlibabaAlihealthDrugKytCodeprocessAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlibabaAlihealthDrugKytCodeprocessAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetClientType is ClientType Setter
 // 客户端
 func (r *AlibabaAlihealthDrugKytCodeprocessAPIRequest) SetClientType(_clientType string) error {
@@ -243,4 +217,30 @@ func (r *AlibabaAlihealthDrugKytCodeprocessAPIRequest) SetRefEntId(_refEntId str
 // GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytCodeprocessAPIRequest) GetRefEntId() string {
 	return r._refEntId
+}
+
+// SetPage is Page Setter
+// 页数
+func (r *AlibabaAlihealthDrugKytCodeprocessAPIRequest) SetPage(_page int64) error {
+	r._page = _page
+	r.Set("page", _page)
+	return nil
+}
+
+// GetPage Page Getter
+func (r AlibabaAlihealthDrugKytCodeprocessAPIRequest) GetPage() int64 {
+	return r._page
+}
+
+// SetPageSize is PageSize Setter
+// 条数
+func (r *AlibabaAlihealthDrugKytCodeprocessAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlibabaAlihealthDrugKytCodeprocessAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

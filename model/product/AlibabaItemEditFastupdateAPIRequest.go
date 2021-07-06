@@ -14,14 +14,14 @@ import (
 // <br/>新增sku用全量接口alibaba.item.edit.submit，先设置销售属性;
 type AlibabaItemEditFastupdateAPIRequest struct {
 	model.Params
+	// 编辑后的schema信息(增量更新，只填写需要更新的字段)
+	_schema string
 	// 商品类目ID。若不需要修改商品类目，则不用填写
 	_catId int64
 	// 产品ID，若不需要修改关联的产品信息，则不需要填写
 	_spuId int64
 	// 商品ID
 	_itemId int64
-	// 编辑后的schema信息(增量更新，只填写需要更新的字段)
-	_schema string
 }
 
 // NewAlibabaItemEditFastupdateRequest 初始化AlibabaItemEditFastupdateAPIRequest对象
@@ -43,6 +43,19 @@ func (r AlibabaItemEditFastupdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSchema is Schema Setter
+// 编辑后的schema信息(增量更新，只填写需要更新的字段)
+func (r *AlibabaItemEditFastupdateAPIRequest) SetSchema(_schema string) error {
+	r._schema = _schema
+	r.Set("schema", _schema)
+	return nil
+}
+
+// GetSchema Schema Getter
+func (r AlibabaItemEditFastupdateAPIRequest) GetSchema() string {
+	return r._schema
 }
 
 // SetCatId is CatId Setter
@@ -82,17 +95,4 @@ func (r *AlibabaItemEditFastupdateAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r AlibabaItemEditFastupdateAPIRequest) GetItemId() int64 {
 	return r._itemId
-}
-
-// SetSchema is Schema Setter
-// 编辑后的schema信息(增量更新，只填写需要更新的字段)
-func (r *AlibabaItemEditFastupdateAPIRequest) SetSchema(_schema string) error {
-	r._schema = _schema
-	r.Set("schema", _schema)
-	return nil
-}
-
-// GetSchema Schema Getter
-func (r AlibabaItemEditFastupdateAPIRequest) GetSchema() string {
-	return r._schema
 }

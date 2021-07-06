@@ -12,14 +12,20 @@ import (
 // 通过设置必要的参数，来获取商品后台标准类目属性，以及这些属性里面详细的属性值prop_values。
 type TaobaoItempropsGetAPIRequest struct {
 	model.Params
+	// 属性的Key，支持多条，以“,”分隔
+	_attrKeys []string
 	// 需要返回的字段列表，见：ItemProp，默认返回：pid, name, must, multi, prop_values
 	_fields string
+	// 类目子属性路径,由该子属性上层的类目属性和类目属性值组成,格式pid:vid;pid:vid.取类目子属性需要传child_path,cid
+	_childPath string
 	// 叶子类目ID，如果只传cid，则只返回一级属性,通过taobao.itemcats.get获得叶子类目ID
 	_cid int64
 	// 属性id (取类目属性时，传pid，不用同时传PID和parent_pid)
 	_pid int64
 	// 父属性ID
 	_parentPid int64
+	// 获取类目的类型：1代表集市、2代表天猫
+	_type int64
 	// 是否关键属性。可选值:true(是),false(否)
 	_isKeyProp bool
 	// 是否销售属性。可选值:true(是),false(否)
@@ -32,12 +38,6 @@ type TaobaoItempropsGetAPIRequest struct {
 	_isInputProp bool
 	// 是否商品属性，这个属性只能放于发布商品时使用。可选值:true(是),false(否)
 	_isItemProp bool
-	// 类目子属性路径,由该子属性上层的类目属性和类目属性值组成,格式pid:vid;pid:vid.取类目子属性需要传child_path,cid
-	_childPath string
-	// 获取类目的类型：1代表集市、2代表天猫
-	_type int64
-	// 属性的Key，支持多条，以“,”分隔
-	_attrKeys []string
 }
 
 // NewTaobaoItempropsGetRequest 初始化TaobaoItempropsGetAPIRequest对象
@@ -61,6 +61,19 @@ func (r TaobaoItempropsGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetAttrKeys is AttrKeys Setter
+// 属性的Key，支持多条，以“,”分隔
+func (r *TaobaoItempropsGetAPIRequest) SetAttrKeys(_attrKeys []string) error {
+	r._attrKeys = _attrKeys
+	r.Set("attr_keys", _attrKeys)
+	return nil
+}
+
+// GetAttrKeys AttrKeys Getter
+func (r TaobaoItempropsGetAPIRequest) GetAttrKeys() []string {
+	return r._attrKeys
+}
+
 // SetFields is Fields Setter
 // 需要返回的字段列表，见：ItemProp，默认返回：pid, name, must, multi, prop_values
 func (r *TaobaoItempropsGetAPIRequest) SetFields(_fields string) error {
@@ -72,6 +85,19 @@ func (r *TaobaoItempropsGetAPIRequest) SetFields(_fields string) error {
 // GetFields Fields Getter
 func (r TaobaoItempropsGetAPIRequest) GetFields() string {
 	return r._fields
+}
+
+// SetChildPath is ChildPath Setter
+// 类目子属性路径,由该子属性上层的类目属性和类目属性值组成,格式pid:vid;pid:vid.取类目子属性需要传child_path,cid
+func (r *TaobaoItempropsGetAPIRequest) SetChildPath(_childPath string) error {
+	r._childPath = _childPath
+	r.Set("child_path", _childPath)
+	return nil
+}
+
+// GetChildPath ChildPath Getter
+func (r TaobaoItempropsGetAPIRequest) GetChildPath() string {
+	return r._childPath
 }
 
 // SetCid is Cid Setter
@@ -111,6 +137,19 @@ func (r *TaobaoItempropsGetAPIRequest) SetParentPid(_parentPid int64) error {
 // GetParentPid ParentPid Getter
 func (r TaobaoItempropsGetAPIRequest) GetParentPid() int64 {
 	return r._parentPid
+}
+
+// SetType is Type Setter
+// 获取类目的类型：1代表集市、2代表天猫
+func (r *TaobaoItempropsGetAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r TaobaoItempropsGetAPIRequest) GetType() int64 {
+	return r._type
 }
 
 // SetIsKeyProp is IsKeyProp Setter
@@ -189,43 +228,4 @@ func (r *TaobaoItempropsGetAPIRequest) SetIsItemProp(_isItemProp bool) error {
 // GetIsItemProp IsItemProp Getter
 func (r TaobaoItempropsGetAPIRequest) GetIsItemProp() bool {
 	return r._isItemProp
-}
-
-// SetChildPath is ChildPath Setter
-// 类目子属性路径,由该子属性上层的类目属性和类目属性值组成,格式pid:vid;pid:vid.取类目子属性需要传child_path,cid
-func (r *TaobaoItempropsGetAPIRequest) SetChildPath(_childPath string) error {
-	r._childPath = _childPath
-	r.Set("child_path", _childPath)
-	return nil
-}
-
-// GetChildPath ChildPath Getter
-func (r TaobaoItempropsGetAPIRequest) GetChildPath() string {
-	return r._childPath
-}
-
-// SetType is Type Setter
-// 获取类目的类型：1代表集市、2代表天猫
-func (r *TaobaoItempropsGetAPIRequest) SetType(_type int64) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r TaobaoItempropsGetAPIRequest) GetType() int64 {
-	return r._type
-}
-
-// SetAttrKeys is AttrKeys Setter
-// 属性的Key，支持多条，以“,”分隔
-func (r *TaobaoItempropsGetAPIRequest) SetAttrKeys(_attrKeys []string) error {
-	r._attrKeys = _attrKeys
-	r.Set("attr_keys", _attrKeys)
-	return nil
-}
-
-// GetAttrKeys AttrKeys Getter
-func (r TaobaoItempropsGetAPIRequest) GetAttrKeys() []string {
-	return r._attrKeys
 }

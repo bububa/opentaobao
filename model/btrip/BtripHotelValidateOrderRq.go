@@ -10,6 +10,10 @@ type BtripHotelValidateOrderRq struct {
 	CheckIn string `json:"check_in,omitempty" xml:"check_in,omitempty"`
 	// 离店时间
 	CheckOut string `json:"check_out,omitempty" xml:"check_out,omitempty"`
+	// 分销子渠道，通常指代商旅的企业id
+	SubChannel string `json:"sub_channel,omitempty" xml:"sub_channel,omitempty"`
+	// 供应商标识
+	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`
 	// 商旅酒店唯一商品标识
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 每间房成人数
@@ -22,10 +26,6 @@ type BtripHotelValidateOrderRq struct {
 	SearchPromotionAmount int64 `json:"search_promotion_amount,omitempty" xml:"search_promotion_amount,omitempty"`
 	// 详情报价的房价
 	SearchRoomPrice int64 `json:"search_room_price,omitempty" xml:"search_room_price,omitempty"`
-	// 分销子渠道，通常指代商旅的企业id
-	SubChannel string `json:"sub_channel,omitempty" xml:"sub_channel,omitempty"`
-	// 供应商标识
-	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`
 	// 总价
 	TotalPrice int64 `json:"total_price,omitempty" xml:"total_price,omitempty"`
 }

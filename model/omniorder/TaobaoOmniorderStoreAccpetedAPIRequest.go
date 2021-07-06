@@ -12,14 +12,14 @@ import (
 // ISV Pos端门店接单，通知星盘
 type TaobaoOmniorderStoreAccpetedAPIRequest struct {
 	model.Params
-	// 淘宝交易主订单ID
-	_tid int64
 	// 子订单列表
 	_subOrderList []StoreAcceptedResult
-	// ISV系统上报时间
-	_reportTimestamp int64
 	// 跟踪Id
 	_traceId string
+	// 淘宝交易主订单ID
+	_tid int64
+	// ISV系统上报时间
+	_reportTimestamp int64
 }
 
 // NewTaobaoOmniorderStoreAccpetedRequest 初始化TaobaoOmniorderStoreAccpetedAPIRequest对象
@@ -43,19 +43,6 @@ func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetTid is Tid Setter
-// 淘宝交易主订单ID
-func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetTid(_tid int64) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
-	return nil
-}
-
-// GetTid Tid Getter
-func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetTid() int64 {
-	return r._tid
-}
-
 // SetSubOrderList is SubOrderList Setter
 // 子订单列表
 func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetSubOrderList(_subOrderList []StoreAcceptedResult) error {
@@ -69,19 +56,6 @@ func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetSubOrderList() []StoreAccepte
 	return r._subOrderList
 }
 
-// SetReportTimestamp is ReportTimestamp Setter
-// ISV系统上报时间
-func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetReportTimestamp(_reportTimestamp int64) error {
-	r._reportTimestamp = _reportTimestamp
-	r.Set("report_timestamp", _reportTimestamp)
-	return nil
-}
-
-// GetReportTimestamp ReportTimestamp Getter
-func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetReportTimestamp() int64 {
-	return r._reportTimestamp
-}
-
 // SetTraceId is TraceId Setter
 // 跟踪Id
 func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetTraceId(_traceId string) error {
@@ -93,4 +67,30 @@ func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetTraceId(_traceId string) err
 // GetTraceId TraceId Getter
 func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetTraceId() string {
 	return r._traceId
+}
+
+// SetTid is Tid Setter
+// 淘宝交易主订单ID
+func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetTid() int64 {
+	return r._tid
+}
+
+// SetReportTimestamp is ReportTimestamp Setter
+// ISV系统上报时间
+func (r *TaobaoOmniorderStoreAccpetedAPIRequest) SetReportTimestamp(_reportTimestamp int64) error {
+	r._reportTimestamp = _reportTimestamp
+	r.Set("report_timestamp", _reportTimestamp)
+	return nil
+}
+
+// GetReportTimestamp ReportTimestamp Getter
+func (r TaobaoOmniorderStoreAccpetedAPIRequest) GetReportTimestamp() int64 {
+	return r._reportTimestamp
 }

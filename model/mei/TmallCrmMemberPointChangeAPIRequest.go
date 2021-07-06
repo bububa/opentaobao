@@ -12,8 +12,6 @@ import (
 // 品牌CRM项目中，会员积分变更接口。
 type TmallCrmMemberPointChangeAPIRequest struct {
 	model.Params
-	// 更改积分数值
-	_point int64
 	// minus:扣减;add:累加
 	_type string
 	// 业务代码
@@ -22,6 +20,8 @@ type TmallCrmMemberPointChangeAPIRequest struct {
 	_bizDetail string
 	// 用户昵称
 	_userNick string
+	// 更改积分数值
+	_point int64
 }
 
 // NewTmallCrmMemberPointChangeRequest 初始化TmallCrmMemberPointChangeAPIRequest对象
@@ -43,19 +43,6 @@ func (r TmallCrmMemberPointChangeAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetPoint is Point Setter
-// 更改积分数值
-func (r *TmallCrmMemberPointChangeAPIRequest) SetPoint(_point int64) error {
-	r._point = _point
-	r.Set("point", _point)
-	return nil
-}
-
-// GetPoint Point Getter
-func (r TmallCrmMemberPointChangeAPIRequest) GetPoint() int64 {
-	return r._point
 }
 
 // SetType is Type Setter
@@ -108,4 +95,17 @@ func (r *TmallCrmMemberPointChangeAPIRequest) SetUserNick(_userNick string) erro
 // GetUserNick UserNick Getter
 func (r TmallCrmMemberPointChangeAPIRequest) GetUserNick() string {
 	return r._userNick
+}
+
+// SetPoint is Point Setter
+// 更改积分数值
+func (r *TmallCrmMemberPointChangeAPIRequest) SetPoint(_point int64) error {
+	r._point = _point
+	r.Set("point", _point)
+	return nil
+}
+
+// GetPoint Point Getter
+func (r TmallCrmMemberPointChangeAPIRequest) GetPoint() int64 {
+	return r._point
 }

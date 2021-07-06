@@ -14,14 +14,14 @@ type AlibabaItemEditSubmitAPIRequest struct {
 	model.Params
 	// 业务扩展参数，需与平台约定好
 	_bizType string
+	// 编辑后的schema信息，通过alibaba.item.edit.schema.get获取
+	_schema string
 	// 商品类目ID。若不需要修改商品类目，则不用填写
 	_catId int64
 	// 产品ID，若不需要修改关联的产品信息，则不需要填写
 	_spuId int64
 	// 商品ID
 	_itemId int64
-	// 编辑后的schema信息，通过alibaba.item.edit.schema.get获取
-	_schema string
 }
 
 // NewAlibabaItemEditSubmitRequest 初始化AlibabaItemEditSubmitAPIRequest对象
@@ -56,6 +56,19 @@ func (r *AlibabaItemEditSubmitAPIRequest) SetBizType(_bizType string) error {
 // GetBizType BizType Getter
 func (r AlibabaItemEditSubmitAPIRequest) GetBizType() string {
 	return r._bizType
+}
+
+// SetSchema is Schema Setter
+// 编辑后的schema信息，通过alibaba.item.edit.schema.get获取
+func (r *AlibabaItemEditSubmitAPIRequest) SetSchema(_schema string) error {
+	r._schema = _schema
+	r.Set("schema", _schema)
+	return nil
+}
+
+// GetSchema Schema Getter
+func (r AlibabaItemEditSubmitAPIRequest) GetSchema() string {
+	return r._schema
 }
 
 // SetCatId is CatId Setter
@@ -95,17 +108,4 @@ func (r *AlibabaItemEditSubmitAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r AlibabaItemEditSubmitAPIRequest) GetItemId() int64 {
 	return r._itemId
-}
-
-// SetSchema is Schema Setter
-// 编辑后的schema信息，通过alibaba.item.edit.schema.get获取
-func (r *AlibabaItemEditSubmitAPIRequest) SetSchema(_schema string) error {
-	r._schema = _schema
-	r.Set("schema", _schema)
-	return nil
-}
-
-// GetSchema Schema Getter
-func (r AlibabaItemEditSubmitAPIRequest) GetSchema() string {
-	return r._schema
 }

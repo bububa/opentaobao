@@ -20,12 +20,12 @@ type TaobaoSimbaRptCusteffectGetAPIRequest struct {
 	_endTime string
 	// 权限校验参数
 	_subwayToken string
+	// 数据来源（站内：1，站外：2 ，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2
+	_source string
 	// 页码
 	_pageNo int64
 	// 每页大小
 	_pageSize int64
-	// 数据来源（站内：1，站外：2 ，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2
-	_source string
 }
 
 // NewTaobaoSimbaRptCusteffectGetRequest 初始化TaobaoSimbaRptCusteffectGetAPIRequest对象
@@ -101,6 +101,19 @@ func (r TaobaoSimbaRptCusteffectGetAPIRequest) GetSubwayToken() string {
 	return r._subwayToken
 }
 
+// SetSource is Source Setter
+// 数据来源（站内：1，站外：2 ，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2
+func (r *TaobaoSimbaRptCusteffectGetAPIRequest) SetSource(_source string) error {
+	r._source = _source
+	r.Set("source", _source)
+	return nil
+}
+
+// GetSource Source Getter
+func (r TaobaoSimbaRptCusteffectGetAPIRequest) GetSource() string {
+	return r._source
+}
+
 // SetPageNo is PageNo Setter
 // 页码
 func (r *TaobaoSimbaRptCusteffectGetAPIRequest) SetPageNo(_pageNo int64) error {
@@ -125,17 +138,4 @@ func (r *TaobaoSimbaRptCusteffectGetAPIRequest) SetPageSize(_pageSize int64) err
 // GetPageSize PageSize Getter
 func (r TaobaoSimbaRptCusteffectGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetSource is Source Setter
-// 数据来源（站内：1，站外：2 ，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2
-func (r *TaobaoSimbaRptCusteffectGetAPIRequest) SetSource(_source string) error {
-	r._source = _source
-	r.Set("source", _source)
-	return nil
-}
-
-// GetSource Source Getter
-func (r TaobaoSimbaRptCusteffectGetAPIRequest) GetSource() string {
-	return r._source
 }

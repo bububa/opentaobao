@@ -12,10 +12,10 @@ import (
 // 新康众审批门店分账
 type TmallServicecenterSettlementStoretransferAuditAPIRequest struct {
 	model.Params
-	// 审批通过
-	_auditPass bool
 	// 工单id
 	_workcardId int64
+	// 审批通过
+	_auditPass bool
 }
 
 // NewTmallServicecenterSettlementStoretransferAuditRequest 初始化TmallServicecenterSettlementStoretransferAuditAPIRequest对象
@@ -39,19 +39,6 @@ func (r TmallServicecenterSettlementStoretransferAuditAPIRequest) GetApiParams()
 	return params
 }
 
-// SetAuditPass is AuditPass Setter
-// 审批通过
-func (r *TmallServicecenterSettlementStoretransferAuditAPIRequest) SetAuditPass(_auditPass bool) error {
-	r._auditPass = _auditPass
-	r.Set("audit_pass", _auditPass)
-	return nil
-}
-
-// GetAuditPass AuditPass Getter
-func (r TmallServicecenterSettlementStoretransferAuditAPIRequest) GetAuditPass() bool {
-	return r._auditPass
-}
-
 // SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *TmallServicecenterSettlementStoretransferAuditAPIRequest) SetWorkcardId(_workcardId int64) error {
@@ -63,4 +50,17 @@ func (r *TmallServicecenterSettlementStoretransferAuditAPIRequest) SetWorkcardId
 // GetWorkcardId WorkcardId Getter
 func (r TmallServicecenterSettlementStoretransferAuditAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
+}
+
+// SetAuditPass is AuditPass Setter
+// 审批通过
+func (r *TmallServicecenterSettlementStoretransferAuditAPIRequest) SetAuditPass(_auditPass bool) error {
+	r._auditPass = _auditPass
+	r.Set("audit_pass", _auditPass)
+	return nil
+}
+
+// GetAuditPass AuditPass Getter
+func (r TmallServicecenterSettlementStoretransferAuditAPIRequest) GetAuditPass() bool {
+	return r._auditPass
 }

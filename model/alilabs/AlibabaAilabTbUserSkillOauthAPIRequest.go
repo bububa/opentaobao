@@ -14,12 +14,12 @@ type AlibabaAilabTbUserSkillOauthAPIRequest struct {
 	model.Params
 	// taobao open id
 	_taobaoId string
-	// access token 过期时间，单位：秒
-	_expireIn int64
 	// access token
 	_oauthAccessToken string
 	// refresh token
 	_refreshToken string
+	// access token 过期时间，单位：秒
+	_expireIn int64
 }
 
 // NewAlibabaAilabTbUserSkillOauthRequest 初始化AlibabaAilabTbUserSkillOauthAPIRequest对象
@@ -56,19 +56,6 @@ func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetTaobaoId() string {
 	return r._taobaoId
 }
 
-// SetExpireIn is ExpireIn Setter
-// access token 过期时间，单位：秒
-func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetExpireIn(_expireIn int64) error {
-	r._expireIn = _expireIn
-	r.Set("expire_in", _expireIn)
-	return nil
-}
-
-// GetExpireIn ExpireIn Getter
-func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetExpireIn() int64 {
-	return r._expireIn
-}
-
 // SetOauthAccessToken is OauthAccessToken Setter
 // access token
 func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetOauthAccessToken(_oauthAccessToken string) error {
@@ -93,4 +80,17 @@ func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetRefreshToken(_refreshToken s
 // GetRefreshToken RefreshToken Getter
 func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetRefreshToken() string {
 	return r._refreshToken
+}
+
+// SetExpireIn is ExpireIn Setter
+// access token 过期时间，单位：秒
+func (r *AlibabaAilabTbUserSkillOauthAPIRequest) SetExpireIn(_expireIn int64) error {
+	r._expireIn = _expireIn
+	r.Set("expire_in", _expireIn)
+	return nil
+}
+
+// GetExpireIn ExpireIn Getter
+func (r AlibabaAilabTbUserSkillOauthAPIRequest) GetExpireIn() int64 {
+	return r._expireIn
 }

@@ -18,8 +18,6 @@ type ProjectDto struct {
 	Actors string `json:"actors,omitempty" xml:"actors,omitempty"`
 	// 场馆城市
 	VenueCity string `json:"venue_city,omitempty" xml:"venue_city,omitempty"`
-	// 结束售卖时间
-	SellEndTime int64 `json:"sell_end_time,omitempty" xml:"sell_end_time,omitempty"`
 	// 场馆名称
 	VenueName string `json:"venue_name,omitempty" xml:"venue_name,omitempty"`
 	// 上架时间
@@ -36,8 +34,6 @@ type ProjectDto struct {
 	SiteStatus string `json:"site_status,omitempty" xml:"site_status,omitempty"`
 	// 推荐语
 	SubHead string `json:"sub_head,omitempty" xml:"sub_head,omitempty"`
-	// 扩展信息
-	ExtraInfoMap *Extrainfomap `json:"extra_info_map,omitempty" xml:"extra_info_map,omitempty"`
 	// 是否电子票 1:是，0:非
 	IsETicket string `json:"is_e_ticket,omitempty" xml:"is_e_ticket,omitempty"`
 	// 是否选座 1:是,0:非
@@ -48,10 +44,14 @@ type ProjectDto struct {
 	SubTitle string `json:"sub_title,omitempty" xml:"sub_title,omitempty"`
 	// 价格字符串
 	PriceStr string `json:"price_str,omitempty" xml:"price_str,omitempty"`
-	// 演出场馆id
-	VenueId int64 `json:"venue_id,omitempty" xml:"venue_id,omitempty"`
 	// 纬度
 	Latitude string `json:"latitude,omitempty" xml:"latitude,omitempty"`
 	// 经度
 	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
+	// 结束售卖时间
+	SellEndTime int64 `json:"sell_end_time,omitempty" xml:"sell_end_time,omitempty"`
+	// 扩展信息
+	ExtraInfoMap *Extrainfomap `json:"extra_info_map,omitempty" xml:"extra_info_map,omitempty"`
+	// 演出场馆id
+	VenueId int64 `json:"venue_id,omitempty" xml:"venue_id,omitempty"`
 }

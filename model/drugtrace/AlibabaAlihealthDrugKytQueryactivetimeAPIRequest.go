@@ -13,6 +13,8 @@ import (
 // 应用于各地市对接前进行药品目录匹配，医保中心存在的药品可能比较陈旧杂乱
 type AlibabaAlihealthDrugKytQueryactivetimeAPIRequest struct {
 	model.Params
+	// 码段的数组
+	_resProdCodeList []string
 	// 社保局(所属地市名称)
 	_bureauName string
 	// 请求终端名称
@@ -21,8 +23,6 @@ type AlibabaAlihealthDrugKytQueryactivetimeAPIRequest struct {
 	_terminalType string
 	// 调用方式：formal-正式、test-测试
 	_invocation string
-	// 码段的数组
-	_resProdCodeList []string
 }
 
 // NewAlibabaAlihealthDrugKytQueryactivetimeRequest 初始化AlibabaAlihealthDrugKytQueryactivetimeAPIRequest对象
@@ -44,6 +44,19 @@ func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetApiParams() url.Val
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetResProdCodeList is ResProdCodeList Setter
+// 码段的数组
+func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetResProdCodeList(_resProdCodeList []string) error {
+	r._resProdCodeList = _resProdCodeList
+	r.Set("res_prod_code_list", _resProdCodeList)
+	return nil
+}
+
+// GetResProdCodeList ResProdCodeList Getter
+func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetResProdCodeList() []string {
+	return r._resProdCodeList
 }
 
 // SetBureauName is BureauName Setter
@@ -96,17 +109,4 @@ func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetInvocation(_invoca
 // GetInvocation Invocation Getter
 func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetInvocation() string {
 	return r._invocation
-}
-
-// SetResProdCodeList is ResProdCodeList Setter
-// 码段的数组
-func (r *AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) SetResProdCodeList(_resProdCodeList []string) error {
-	r._resProdCodeList = _resProdCodeList
-	r.Set("res_prod_code_list", _resProdCodeList)
-	return nil
-}
-
-// GetResProdCodeList ResProdCodeList Getter
-func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetResProdCodeList() []string {
-	return r._resProdCodeList
 }

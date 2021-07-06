@@ -22,10 +22,10 @@ type InsuranceRefundOrder struct {
 	ItemName string `json:"item_name,omitempty" xml:"item_name,omitempty"`
 	// 退货单ID
 	RefundId string `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
-	// 交易子订单ID
-	TbSubOrderId int64 `json:"tb_sub_order_id,omitempty" xml:"tb_sub_order_id,omitempty"`
 	// 退款发起时间
 	RefundCreateTime string `json:"refund_create_time,omitempty" xml:"refund_create_time,omitempty"`
 	// 签收时间
 	SignTime string `json:"sign_time,omitempty" xml:"sign_time,omitempty"`
+	// 交易子订单ID
+	TbSubOrderId int64 `json:"tb_sub_order_id,omitempty" xml:"tb_sub_order_id,omitempty"`
 }

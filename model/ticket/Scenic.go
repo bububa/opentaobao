@@ -2,6 +2,8 @@ package ticket
 
 // Scenic 结构体
 type Scenic struct {
+	// 收费项目列表
+	ProductList []Product `json:"product_list,omitempty" xml:"product_list>product,omitempty"`
 	// 标准景点ID
 	AliScenicId string `json:"ali_scenic_id,omitempty" xml:"ali_scenic_id,omitempty"`
 	// 标准景点名称
@@ -10,6 +12,4 @@ type Scenic struct {
 	OutScenicId string `json:"out_scenic_id,omitempty" xml:"out_scenic_id,omitempty"`
 	// 商家景点名称
 	OutScenicName string `json:"out_scenic_name,omitempty" xml:"out_scenic_name,omitempty"`
-	// 收费项目列表
-	ProductList []Product `json:"product_list,omitempty" xml:"product_list>product,omitempty"`
 }

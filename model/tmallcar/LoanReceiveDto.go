@@ -12,12 +12,8 @@ type LoanReceiveDto struct {
 	PaymentMethod string `json:"payment_method,omitempty" xml:"payment_method,omitempty"`
 	// 放贷利率
 	LoanRate string `json:"loan_rate,omitempty" xml:"loan_rate,omitempty"`
-	// 放贷期数
-	LoanTerm int64 `json:"loan_term,omitempty" xml:"loan_term,omitempty"`
 	// 放贷期数单位:DAY-按天计算;MONTH-按月计算;YEAR-按年计算
 	LoanTermUnit string `json:"loan_term_unit,omitempty" xml:"loan_term_unit,omitempty"`
-	// 最终放贷额度(单位分)
-	LoanAmount int64 `json:"loan_amount,omitempty" xml:"loan_amount,omitempty"`
 	// 最终放款到门店的时间
 	LoanTime string `json:"loan_time,omitempty" xml:"loan_time,omitempty"`
 	// 金融机构放贷内部单号
@@ -36,4 +32,8 @@ type LoanReceiveDto struct {
 	ExtensionField02 string `json:"extension_field02,omitempty" xml:"extension_field02,omitempty"`
 	// 扩展字段2
 	ExtensionField01 string `json:"extension_field01,omitempty" xml:"extension_field01,omitempty"`
+	// 放贷期数
+	LoanTerm int64 `json:"loan_term,omitempty" xml:"loan_term,omitempty"`
+	// 最终放贷额度(单位分)
+	LoanAmount int64 `json:"loan_amount,omitempty" xml:"loan_amount,omitempty"`
 }

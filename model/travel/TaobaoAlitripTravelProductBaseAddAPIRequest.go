@@ -12,14 +12,14 @@ import (
 // 飞猪供销平台供应商可通过该API发布新产品
 type TaobaoAlitripTravelProductBaseAddAPIRequest struct {
 	model.Params
-	// 产品基本信息
-	_baseInfo *ProductBaseInfo
 	// 选填，详细行程描述结构
 	_itineraries []ItemItineraryInfo
-	// 选填，退款规则结构
-	_refundInfo *ItemRefundInfo
 	// 必填，预定规则结构。示例： [{  "rule_type": "fee_excluded",  "rule_desc": "费用包含描述"},{  "rule_type": "fee_included",  "rule_desc": "费用不含描述"},{  "rule_type": "order_info",  "rule_desc": "预定须知描述"}]
 	_bookingRules []BookingRuleInfo
+	// 产品基本信息
+	_baseInfo *ProductBaseInfo
+	// 选填，退款规则结构
+	_refundInfo *ItemRefundInfo
 	// 特殊选填（当发布邮轮商品时必填，其他情况不填）邮轮商品相关信息，发布邮轮商品时必填
 	_cruiseProductExt *CruiseProductExt
 	// 选填，商品的销售属性相关信息
@@ -47,19 +47,6 @@ func (r TaobaoAlitripTravelProductBaseAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetBaseInfo is BaseInfo Setter
-// 产品基本信息
-func (r *TaobaoAlitripTravelProductBaseAddAPIRequest) SetBaseInfo(_baseInfo *ProductBaseInfo) error {
-	r._baseInfo = _baseInfo
-	r.Set("base_info", _baseInfo)
-	return nil
-}
-
-// GetBaseInfo BaseInfo Getter
-func (r TaobaoAlitripTravelProductBaseAddAPIRequest) GetBaseInfo() *ProductBaseInfo {
-	return r._baseInfo
-}
-
 // SetItineraries is Itineraries Setter
 // 选填，详细行程描述结构
 func (r *TaobaoAlitripTravelProductBaseAddAPIRequest) SetItineraries(_itineraries []ItemItineraryInfo) error {
@@ -73,19 +60,6 @@ func (r TaobaoAlitripTravelProductBaseAddAPIRequest) GetItineraries() []ItemItin
 	return r._itineraries
 }
 
-// SetRefundInfo is RefundInfo Setter
-// 选填，退款规则结构
-func (r *TaobaoAlitripTravelProductBaseAddAPIRequest) SetRefundInfo(_refundInfo *ItemRefundInfo) error {
-	r._refundInfo = _refundInfo
-	r.Set("refund_info", _refundInfo)
-	return nil
-}
-
-// GetRefundInfo RefundInfo Getter
-func (r TaobaoAlitripTravelProductBaseAddAPIRequest) GetRefundInfo() *ItemRefundInfo {
-	return r._refundInfo
-}
-
 // SetBookingRules is BookingRules Setter
 // 必填，预定规则结构。示例： [{  "rule_type": "fee_excluded",  "rule_desc": "费用包含描述"},{  "rule_type": "fee_included",  "rule_desc": "费用不含描述"},{  "rule_type": "order_info",  "rule_desc": "预定须知描述"}]
 func (r *TaobaoAlitripTravelProductBaseAddAPIRequest) SetBookingRules(_bookingRules []BookingRuleInfo) error {
@@ -97,6 +71,32 @@ func (r *TaobaoAlitripTravelProductBaseAddAPIRequest) SetBookingRules(_bookingRu
 // GetBookingRules BookingRules Getter
 func (r TaobaoAlitripTravelProductBaseAddAPIRequest) GetBookingRules() []BookingRuleInfo {
 	return r._bookingRules
+}
+
+// SetBaseInfo is BaseInfo Setter
+// 产品基本信息
+func (r *TaobaoAlitripTravelProductBaseAddAPIRequest) SetBaseInfo(_baseInfo *ProductBaseInfo) error {
+	r._baseInfo = _baseInfo
+	r.Set("base_info", _baseInfo)
+	return nil
+}
+
+// GetBaseInfo BaseInfo Getter
+func (r TaobaoAlitripTravelProductBaseAddAPIRequest) GetBaseInfo() *ProductBaseInfo {
+	return r._baseInfo
+}
+
+// SetRefundInfo is RefundInfo Setter
+// 选填，退款规则结构
+func (r *TaobaoAlitripTravelProductBaseAddAPIRequest) SetRefundInfo(_refundInfo *ItemRefundInfo) error {
+	r._refundInfo = _refundInfo
+	r.Set("refund_info", _refundInfo)
+	return nil
+}
+
+// GetRefundInfo RefundInfo Getter
+func (r TaobaoAlitripTravelProductBaseAddAPIRequest) GetRefundInfo() *ItemRefundInfo {
+	return r._refundInfo
 }
 
 // SetCruiseProductExt is CruiseProductExt Setter

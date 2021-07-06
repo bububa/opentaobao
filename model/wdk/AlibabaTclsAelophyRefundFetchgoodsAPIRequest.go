@@ -12,6 +12,8 @@ import (
 // saas 售后逆向 商户发起逆向取货
 type AlibabaTclsAelophyRefundFetchgoodsAPIRequest struct {
 	model.Params
+	// 外部子订单列表
+	_subRefundList []Subrefundlist
 	// 经营店ID
 	_storeId string
 	// 外部订单ID
@@ -24,8 +26,6 @@ type AlibabaTclsAelophyRefundFetchgoodsAPIRequest struct {
 	_fetchEndTime string
 	// 备注
 	_remark string
-	// 外部子订单列表
-	_subRefundList []Subrefundlist
 }
 
 // NewAlibabaTclsAelophyRefundFetchgoodsRequest 初始化AlibabaTclsAelophyRefundFetchgoodsAPIRequest对象
@@ -47,6 +47,19 @@ func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetApiParams() url.Values 
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSubRefundList is SubRefundList Setter
+// 外部子订单列表
+func (r *AlibabaTclsAelophyRefundFetchgoodsAPIRequest) SetSubRefundList(_subRefundList []Subrefundlist) error {
+	r._subRefundList = _subRefundList
+	r.Set("sub_refund_list", _subRefundList)
+	return nil
+}
+
+// GetSubRefundList SubRefundList Getter
+func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetSubRefundList() []Subrefundlist {
+	return r._subRefundList
 }
 
 // SetStoreId is StoreId Setter
@@ -125,17 +138,4 @@ func (r *AlibabaTclsAelophyRefundFetchgoodsAPIRequest) SetRemark(_remark string)
 // GetRemark Remark Getter
 func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetRemark() string {
 	return r._remark
-}
-
-// SetSubRefundList is SubRefundList Setter
-// 外部子订单列表
-func (r *AlibabaTclsAelophyRefundFetchgoodsAPIRequest) SetSubRefundList(_subRefundList []Subrefundlist) error {
-	r._subRefundList = _subRefundList
-	r.Set("sub_refund_list", _subRefundList)
-	return nil
-}
-
-// GetSubRefundList SubRefundList Getter
-func (r AlibabaTclsAelophyRefundFetchgoodsAPIRequest) GetSubRefundList() []Subrefundlist {
-	return r._subRefundList
 }

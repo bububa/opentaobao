@@ -12,12 +12,12 @@ import (
 // 卖家退款单商品状态同步
 type AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest struct {
 	model.Params
-	// 主订单id
-	_mainOrderId int64
 	// 退款单id
 	_refundId string
 	// 未发货，枚举类型：UNSEND
 	_status string
+	// 主订单id
+	_mainOrderId int64
 }
 
 // NewAlibabaLstTradeFastrefundGoodsstatusSyncRequest 初始化AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) GetApiParams() url.V
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetMainOrderId is MainOrderId Setter
-// 主订单id
-func (r *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) SetMainOrderId(_mainOrderId int64) error {
-	r._mainOrderId = _mainOrderId
-	r.Set("main_order_id", _mainOrderId)
-	return nil
-}
-
-// GetMainOrderId MainOrderId Getter
-func (r AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) GetMainOrderId() int64 {
-	return r._mainOrderId
 }
 
 // SetRefundId is RefundId Setter
@@ -78,4 +65,17 @@ func (r *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) SetStatus(_status s
 // GetStatus Status Getter
 func (r AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) GetStatus() string {
 	return r._status
+}
+
+// SetMainOrderId is MainOrderId Setter
+// 主订单id
+func (r *AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+	r._mainOrderId = _mainOrderId
+	r.Set("main_order_id", _mainOrderId)
+	return nil
+}
+
+// GetMainOrderId MainOrderId Getter
+func (r AlibabaLstTradeFastrefundGoodsstatusSyncAPIRequest) GetMainOrderId() int64 {
+	return r._mainOrderId
 }

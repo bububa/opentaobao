@@ -22,8 +22,8 @@ type AlitripBtripOpenInvoiceSearchAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 发票列表
 	InvoiceList []OpenInvoiceDo `json:"invoice_list,omitempty" xml:"invoice_list>open_invoice_do,omitempty"`
-	// 结果码
-	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 结果描述
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
+	// 结果码
+	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
 }

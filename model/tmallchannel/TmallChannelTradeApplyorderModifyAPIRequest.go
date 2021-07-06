@@ -12,10 +12,10 @@ import (
 // 上游供应商修改申请单, 目前只允许修改价格+件数且sku数量必须完全一致
 type TmallChannelTradeApplyorderModifyAPIRequest struct {
 	model.Params
-	// 采购申请单号
-	_channelPurchaseApplyOrderNo string
 	// 修改关联的的宝贝信息
 	_applyOrderRelateItemModifyParamList []TopChannelApplyOrderRelateItemModifyParam
+	// 采购申请单号
+	_channelPurchaseApplyOrderNo string
 }
 
 // NewTmallChannelTradeApplyorderModifyRequest 初始化TmallChannelTradeApplyorderModifyAPIRequest对象
@@ -39,19 +39,6 @@ func (r TmallChannelTradeApplyorderModifyAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetChannelPurchaseApplyOrderNo is ChannelPurchaseApplyOrderNo Setter
-// 采购申请单号
-func (r *TmallChannelTradeApplyorderModifyAPIRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
-	r._channelPurchaseApplyOrderNo = _channelPurchaseApplyOrderNo
-	r.Set("channel_purchase_apply_order_no", _channelPurchaseApplyOrderNo)
-	return nil
-}
-
-// GetChannelPurchaseApplyOrderNo ChannelPurchaseApplyOrderNo Getter
-func (r TmallChannelTradeApplyorderModifyAPIRequest) GetChannelPurchaseApplyOrderNo() string {
-	return r._channelPurchaseApplyOrderNo
-}
-
 // SetApplyOrderRelateItemModifyParamList is ApplyOrderRelateItemModifyParamList Setter
 // 修改关联的的宝贝信息
 func (r *TmallChannelTradeApplyorderModifyAPIRequest) SetApplyOrderRelateItemModifyParamList(_applyOrderRelateItemModifyParamList []TopChannelApplyOrderRelateItemModifyParam) error {
@@ -63,4 +50,17 @@ func (r *TmallChannelTradeApplyorderModifyAPIRequest) SetApplyOrderRelateItemMod
 // GetApplyOrderRelateItemModifyParamList ApplyOrderRelateItemModifyParamList Getter
 func (r TmallChannelTradeApplyorderModifyAPIRequest) GetApplyOrderRelateItemModifyParamList() []TopChannelApplyOrderRelateItemModifyParam {
 	return r._applyOrderRelateItemModifyParamList
+}
+
+// SetChannelPurchaseApplyOrderNo is ChannelPurchaseApplyOrderNo Setter
+// 采购申请单号
+func (r *TmallChannelTradeApplyorderModifyAPIRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
+	r._channelPurchaseApplyOrderNo = _channelPurchaseApplyOrderNo
+	r.Set("channel_purchase_apply_order_no", _channelPurchaseApplyOrderNo)
+	return nil
+}
+
+// GetChannelPurchaseApplyOrderNo ChannelPurchaseApplyOrderNo Getter
+func (r TmallChannelTradeApplyorderModifyAPIRequest) GetChannelPurchaseApplyOrderNo() string {
+	return r._channelPurchaseApplyOrderNo
 }

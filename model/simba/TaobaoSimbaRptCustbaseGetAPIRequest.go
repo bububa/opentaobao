@@ -20,12 +20,12 @@ type TaobaoSimbaRptCustbaseGetAPIRequest struct {
 	_startTime string
 	// 结束日期，格式yyyy-mm-dd
 	_endTime string
+	// 数据来源（站内：1，站外：2 ，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2
+	_source string
 	// 页码
 	_pageNo int64
 	// 每页大小
 	_pageSize int64
-	// 数据来源（站内：1，站外：2 ，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2
-	_source string
 }
 
 // NewTaobaoSimbaRptCustbaseGetRequest 初始化TaobaoSimbaRptCustbaseGetAPIRequest对象
@@ -101,6 +101,19 @@ func (r TaobaoSimbaRptCustbaseGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
+// SetSource is Source Setter
+// 数据来源（站内：1，站外：2 ，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2
+func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetSource(_source string) error {
+	r._source = _source
+	r.Set("source", _source)
+	return nil
+}
+
+// GetSource Source Getter
+func (r TaobaoSimbaRptCustbaseGetAPIRequest) GetSource() string {
+	return r._source
+}
+
 // SetPageNo is PageNo Setter
 // 页码
 func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetPageNo(_pageNo int64) error {
@@ -125,17 +138,4 @@ func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetPageSize(_pageSize int64) error
 // GetPageSize PageSize Getter
 func (r TaobaoSimbaRptCustbaseGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetSource is Source Setter
-// 数据来源（站内：1，站外：2 ，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2
-func (r *TaobaoSimbaRptCustbaseGetAPIRequest) SetSource(_source string) error {
-	r._source = _source
-	r.Set("source", _source)
-	return nil
-}
-
-// GetSource Source Getter
-func (r TaobaoSimbaRptCustbaseGetAPIRequest) GetSource() string {
-	return r._source
 }

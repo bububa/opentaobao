@@ -12,22 +12,10 @@ import (
 // 1 如果服务商受理了此服务，修改合同状态为：已受理=3<br/>2 如果服务商没有受理此服务，修改合同状态为：已拒绝=10<br/>3 如果服务商执行了此服务，修改合同状态为：已执行=4<br/>4 如果服务商执行服务成功，修改合同状态为：已完成=5<br/>5 如果此工单为合同类型的工单，当服务商受理了此服务后，会进行分账
 type TmallServicecenterWorkcardStatusUpdateAPIRequest struct {
 	model.Params
-	// 工单id
-	_workcardId int64
-	// 工单类型： 2（合同） 或者 1(任务）
-	_type *model.File
-	// 目前仅支持5种状态的反馈：3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败。（所有状态列表： -1： 初始化 0： 生成 1： 生效 2： 申请 3： 受理 4： 执行 5： 成功 9： 结算 10： 拒绝 11： 失败 12 ： 撤销 13： 暂停 19： 终止）
-	_status *model.File
-	// 买家id
-	_buyerId int64
+	// 一个工单可能包含多件商品，比如空调可能有两台，录入每天机器的安装情况
+	_workCardInstallDetailList []WorkCardInstallDetail
 	// api调用者
 	_updater string
-	// 更新时间
-	_updateDate int64
-	// 服务生效时间 ：工单类型为合同工单时，必选！
-	_effectDate int64
-	// 服务失效时间 ：工单类型为合同工单时，必选！
-	_expireDate int64
 	// 备注,256个字符以内
 	_comments string
 	// 任务类工单，预约或者上门地址
@@ -36,10 +24,6 @@ type TmallServicecenterWorkcardStatusUpdateAPIRequest struct {
 	_contactName string
 	// 任务执行，预约联系人电话
 	_contactPhone string
-	// 服务预约时间
-	_serviceDate int64
-	// 服务完成时间
-	_completeDate int64
 	// 服务凭证上传的图片URL链接，多个以;隔开
 	_serviceVoucherPics string
 	// 属性定义。例如无忧退货服务，K-V对定义，每对KV用“;”分割，“:”号左边是key右边是value，value如果有多个则以“,”分割。 reasons   :  原因，可能有多个 succeedCount     :    取件成功个数 failedCount    :    取件失败个数 cancelCount      :     取件取消个数 totalCount       :      总取件个数，totalCount= succeedCount + failedCount + cancelCount
@@ -48,32 +32,48 @@ type TmallServicecenterWorkcardStatusUpdateAPIRequest struct {
 	_serviceCenterCode string
 	// 服务商网点名字
 	_serviceCenterName string
-	// 单元是分
-	_serviceFee int64
-	// 是否上门
-	_isVisit bool
 	// 说明
 	_beforeServiceMemo string
 	// 说明
 	_afterServiceMemo string
 	// 手机号码
 	_phoneImei string
-	// 服务子状态：30 表示“服务已申请（上门）” 31表示“服务改约（上门）” 400表示“服务结果（待件上门）” 410表示“服务结果（拖机维修）” 411表示“服务结果（换机）” 420表示“服务结果（上门不可维修）”
-	_subStatus int64
 	// 网点负责人联系电话
 	_serviceCenterManagerPhone string
 	// 网点负责人
 	_serviceCenterManagerName string
 	// 网点地址
 	_serviceCenterAddress string
-	// 一个工单可能包含多件商品，比如空调可能有两台，录入每天机器的安装情况
-	_workCardInstallDetailList []WorkCardInstallDetail
 	// json string。费用单位为分
 	_serviceFeeDetail string
 	// 物流单号
 	_expressCode string
 	// 物流公司名字
 	_expressCompany string
+	// 工单id
+	_workcardId int64
+	// 工单类型： 2（合同） 或者 1(任务）
+	_type *model.File
+	// 目前仅支持5种状态的反馈：3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败。（所有状态列表： -1： 初始化 0： 生成 1： 生效 2： 申请 3： 受理 4： 执行 5： 成功 9： 结算 10： 拒绝 11： 失败 12 ： 撤销 13： 暂停 19： 终止）
+	_status *model.File
+	// 买家id
+	_buyerId int64
+	// 更新时间
+	_updateDate int64
+	// 服务生效时间 ：工单类型为合同工单时，必选！
+	_effectDate int64
+	// 服务失效时间 ：工单类型为合同工单时，必选！
+	_expireDate int64
+	// 服务预约时间
+	_serviceDate int64
+	// 服务完成时间
+	_completeDate int64
+	// 单元是分
+	_serviceFee int64
+	// 服务子状态：30 表示“服务已申请（上门）” 31表示“服务改约（上门）” 400表示“服务结果（待件上门）” 410表示“服务结果（拖机维修）” 411表示“服务结果（换机）” 420表示“服务结果（上门不可维修）”
+	_subStatus int64
+	// 是否上门
+	_isVisit bool
 }
 
 // NewTmallServicecenterWorkcardStatusUpdateRequest 初始化TmallServicecenterWorkcardStatusUpdateAPIRequest对象
@@ -97,56 +97,17 @@ func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// SetWorkcardId is WorkcardId Setter
-// 工单id
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetWorkcardId(_workcardId int64) error {
-	r._workcardId = _workcardId
-	r.Set("workcard_id", _workcardId)
+// SetWorkCardInstallDetailList is WorkCardInstallDetailList Setter
+// 一个工单可能包含多件商品，比如空调可能有两台，录入每天机器的安装情况
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetWorkCardInstallDetailList(_workCardInstallDetailList []WorkCardInstallDetail) error {
+	r._workCardInstallDetailList = _workCardInstallDetailList
+	r.Set("work_card_install_detail_list", _workCardInstallDetailList)
 	return nil
 }
 
-// GetWorkcardId WorkcardId Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetWorkcardId() int64 {
-	return r._workcardId
-}
-
-// SetType is Type Setter
-// 工单类型： 2（合同） 或者 1(任务）
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetType(_type *model.File) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetType() *model.File {
-	return r._type
-}
-
-// SetStatus is Status Setter
-// 目前仅支持5种状态的反馈：3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败。（所有状态列表： -1： 初始化 0： 生成 1： 生效 2： 申请 3： 受理 4： 执行 5： 成功 9： 结算 10： 拒绝 11： 失败 12 ： 撤销 13： 暂停 19： 终止）
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetStatus(_status *model.File) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetStatus() *model.File {
-	return r._status
-}
-
-// SetBuyerId is BuyerId Setter
-// 买家id
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetBuyerId(_buyerId int64) error {
-	r._buyerId = _buyerId
-	r.Set("buyer_id", _buyerId)
-	return nil
-}
-
-// GetBuyerId BuyerId Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetBuyerId() int64 {
-	return r._buyerId
+// GetWorkCardInstallDetailList WorkCardInstallDetailList Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetWorkCardInstallDetailList() []WorkCardInstallDetail {
+	return r._workCardInstallDetailList
 }
 
 // SetUpdater is Updater Setter
@@ -160,45 +121,6 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetUpdater(_updater s
 // GetUpdater Updater Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetUpdater() string {
 	return r._updater
-}
-
-// SetUpdateDate is UpdateDate Setter
-// 更新时间
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetUpdateDate(_updateDate int64) error {
-	r._updateDate = _updateDate
-	r.Set("update_date", _updateDate)
-	return nil
-}
-
-// GetUpdateDate UpdateDate Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetUpdateDate() int64 {
-	return r._updateDate
-}
-
-// SetEffectDate is EffectDate Setter
-// 服务生效时间 ：工单类型为合同工单时，必选！
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetEffectDate(_effectDate int64) error {
-	r._effectDate = _effectDate
-	r.Set("effect_date", _effectDate)
-	return nil
-}
-
-// GetEffectDate EffectDate Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetEffectDate() int64 {
-	return r._effectDate
-}
-
-// SetExpireDate is ExpireDate Setter
-// 服务失效时间 ：工单类型为合同工单时，必选！
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetExpireDate(_expireDate int64) error {
-	r._expireDate = _expireDate
-	r.Set("expire_date", _expireDate)
-	return nil
-}
-
-// GetExpireDate ExpireDate Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetExpireDate() int64 {
-	return r._expireDate
 }
 
 // SetComments is Comments Setter
@@ -253,32 +175,6 @@ func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetContactPhone() stri
 	return r._contactPhone
 }
 
-// SetServiceDate is ServiceDate Setter
-// 服务预约时间
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceDate(_serviceDate int64) error {
-	r._serviceDate = _serviceDate
-	r.Set("service_date", _serviceDate)
-	return nil
-}
-
-// GetServiceDate ServiceDate Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceDate() int64 {
-	return r._serviceDate
-}
-
-// SetCompleteDate is CompleteDate Setter
-// 服务完成时间
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetCompleteDate(_completeDate int64) error {
-	r._completeDate = _completeDate
-	r.Set("complete_date", _completeDate)
-	return nil
-}
-
-// GetCompleteDate CompleteDate Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetCompleteDate() int64 {
-	return r._completeDate
-}
-
 // SetServiceVoucherPics is ServiceVoucherPics Setter
 // 服务凭证上传的图片URL链接，多个以;隔开
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceVoucherPics(_serviceVoucherPics string) error {
@@ -331,32 +227,6 @@ func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceCenterName()
 	return r._serviceCenterName
 }
 
-// SetServiceFee is ServiceFee Setter
-// 单元是分
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceFee(_serviceFee int64) error {
-	r._serviceFee = _serviceFee
-	r.Set("service_fee", _serviceFee)
-	return nil
-}
-
-// GetServiceFee ServiceFee Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceFee() int64 {
-	return r._serviceFee
-}
-
-// SetIsVisit is IsVisit Setter
-// 是否上门
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetIsVisit(_isVisit bool) error {
-	r._isVisit = _isVisit
-	r.Set("is_visit", _isVisit)
-	return nil
-}
-
-// GetIsVisit IsVisit Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetIsVisit() bool {
-	return r._isVisit
-}
-
 // SetBeforeServiceMemo is BeforeServiceMemo Setter
 // 说明
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetBeforeServiceMemo(_beforeServiceMemo string) error {
@@ -394,19 +264,6 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetPhoneImei(_phoneIm
 // GetPhoneImei PhoneImei Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetPhoneImei() string {
 	return r._phoneImei
-}
-
-// SetSubStatus is SubStatus Setter
-// 服务子状态：30 表示“服务已申请（上门）” 31表示“服务改约（上门）” 400表示“服务结果（待件上门）” 410表示“服务结果（拖机维修）” 411表示“服务结果（换机）” 420表示“服务结果（上门不可维修）”
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetSubStatus(_subStatus int64) error {
-	r._subStatus = _subStatus
-	r.Set("sub_status", _subStatus)
-	return nil
-}
-
-// GetSubStatus SubStatus Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetSubStatus() int64 {
-	return r._subStatus
 }
 
 // SetServiceCenterManagerPhone is ServiceCenterManagerPhone Setter
@@ -448,19 +305,6 @@ func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceCenterAddres
 	return r._serviceCenterAddress
 }
 
-// SetWorkCardInstallDetailList is WorkCardInstallDetailList Setter
-// 一个工单可能包含多件商品，比如空调可能有两台，录入每天机器的安装情况
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetWorkCardInstallDetailList(_workCardInstallDetailList []WorkCardInstallDetail) error {
-	r._workCardInstallDetailList = _workCardInstallDetailList
-	r.Set("work_card_install_detail_list", _workCardInstallDetailList)
-	return nil
-}
-
-// GetWorkCardInstallDetailList WorkCardInstallDetailList Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetWorkCardInstallDetailList() []WorkCardInstallDetail {
-	return r._workCardInstallDetailList
-}
-
 // SetServiceFeeDetail is ServiceFeeDetail Setter
 // json string。费用单位为分
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceFeeDetail(_serviceFeeDetail string) error {
@@ -498,4 +342,160 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetExpressCompany(_ex
 // GetExpressCompany ExpressCompany Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetExpressCompany() string {
 	return r._expressCompany
+}
+
+// SetWorkcardId is WorkcardId Setter
+// 工单id
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetWorkcardId(_workcardId int64) error {
+	r._workcardId = _workcardId
+	r.Set("workcard_id", _workcardId)
+	return nil
+}
+
+// GetWorkcardId WorkcardId Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetWorkcardId() int64 {
+	return r._workcardId
+}
+
+// SetType is Type Setter
+// 工单类型： 2（合同） 或者 1(任务）
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetType(_type *model.File) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetType() *model.File {
+	return r._type
+}
+
+// SetStatus is Status Setter
+// 目前仅支持5种状态的反馈：3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败。（所有状态列表： -1： 初始化 0： 生成 1： 生效 2： 申请 3： 受理 4： 执行 5： 成功 9： 结算 10： 拒绝 11： 失败 12 ： 撤销 13： 暂停 19： 终止）
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetStatus(_status *model.File) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetStatus() *model.File {
+	return r._status
+}
+
+// SetBuyerId is BuyerId Setter
+// 买家id
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetBuyerId(_buyerId int64) error {
+	r._buyerId = _buyerId
+	r.Set("buyer_id", _buyerId)
+	return nil
+}
+
+// GetBuyerId BuyerId Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetBuyerId() int64 {
+	return r._buyerId
+}
+
+// SetUpdateDate is UpdateDate Setter
+// 更新时间
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetUpdateDate(_updateDate int64) error {
+	r._updateDate = _updateDate
+	r.Set("update_date", _updateDate)
+	return nil
+}
+
+// GetUpdateDate UpdateDate Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetUpdateDate() int64 {
+	return r._updateDate
+}
+
+// SetEffectDate is EffectDate Setter
+// 服务生效时间 ：工单类型为合同工单时，必选！
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetEffectDate(_effectDate int64) error {
+	r._effectDate = _effectDate
+	r.Set("effect_date", _effectDate)
+	return nil
+}
+
+// GetEffectDate EffectDate Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetEffectDate() int64 {
+	return r._effectDate
+}
+
+// SetExpireDate is ExpireDate Setter
+// 服务失效时间 ：工单类型为合同工单时，必选！
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetExpireDate(_expireDate int64) error {
+	r._expireDate = _expireDate
+	r.Set("expire_date", _expireDate)
+	return nil
+}
+
+// GetExpireDate ExpireDate Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetExpireDate() int64 {
+	return r._expireDate
+}
+
+// SetServiceDate is ServiceDate Setter
+// 服务预约时间
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceDate(_serviceDate int64) error {
+	r._serviceDate = _serviceDate
+	r.Set("service_date", _serviceDate)
+	return nil
+}
+
+// GetServiceDate ServiceDate Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceDate() int64 {
+	return r._serviceDate
+}
+
+// SetCompleteDate is CompleteDate Setter
+// 服务完成时间
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetCompleteDate(_completeDate int64) error {
+	r._completeDate = _completeDate
+	r.Set("complete_date", _completeDate)
+	return nil
+}
+
+// GetCompleteDate CompleteDate Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetCompleteDate() int64 {
+	return r._completeDate
+}
+
+// SetServiceFee is ServiceFee Setter
+// 单元是分
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetServiceFee(_serviceFee int64) error {
+	r._serviceFee = _serviceFee
+	r.Set("service_fee", _serviceFee)
+	return nil
+}
+
+// GetServiceFee ServiceFee Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetServiceFee() int64 {
+	return r._serviceFee
+}
+
+// SetSubStatus is SubStatus Setter
+// 服务子状态：30 表示“服务已申请（上门）” 31表示“服务改约（上门）” 400表示“服务结果（待件上门）” 410表示“服务结果（拖机维修）” 411表示“服务结果（换机）” 420表示“服务结果（上门不可维修）”
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetSubStatus(_subStatus int64) error {
+	r._subStatus = _subStatus
+	r.Set("sub_status", _subStatus)
+	return nil
+}
+
+// GetSubStatus SubStatus Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetSubStatus() int64 {
+	return r._subStatus
+}
+
+// SetIsVisit is IsVisit Setter
+// 是否上门
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetIsVisit(_isVisit bool) error {
+	r._isVisit = _isVisit
+	r.Set("is_visit", _isVisit)
+	return nil
+}
+
+// GetIsVisit IsVisit Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetIsVisit() bool {
+	return r._isVisit
 }

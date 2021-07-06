@@ -14,10 +14,10 @@ type AlibabaSecurityJaqRpStartAPIRequest struct {
 	model.Params
 	// token
 	_verifyToken string
-	// 客户端信息，如果是服务端接入，里面的参数可为空
-	_clientInfo *RpClientInfo
 	// 扩展信息
 	_extraData string
+	// 客户端信息，如果是服务端接入，里面的参数可为空
+	_clientInfo *RpClientInfo
 }
 
 // NewAlibabaSecurityJaqRpStartRequest 初始化AlibabaSecurityJaqRpStartAPIRequest对象
@@ -54,19 +54,6 @@ func (r AlibabaSecurityJaqRpStartAPIRequest) GetVerifyToken() string {
 	return r._verifyToken
 }
 
-// SetClientInfo is ClientInfo Setter
-// 客户端信息，如果是服务端接入，里面的参数可为空
-func (r *AlibabaSecurityJaqRpStartAPIRequest) SetClientInfo(_clientInfo *RpClientInfo) error {
-	r._clientInfo = _clientInfo
-	r.Set("client_info", _clientInfo)
-	return nil
-}
-
-// GetClientInfo ClientInfo Getter
-func (r AlibabaSecurityJaqRpStartAPIRequest) GetClientInfo() *RpClientInfo {
-	return r._clientInfo
-}
-
 // SetExtraData is ExtraData Setter
 // 扩展信息
 func (r *AlibabaSecurityJaqRpStartAPIRequest) SetExtraData(_extraData string) error {
@@ -78,4 +65,17 @@ func (r *AlibabaSecurityJaqRpStartAPIRequest) SetExtraData(_extraData string) er
 // GetExtraData ExtraData Getter
 func (r AlibabaSecurityJaqRpStartAPIRequest) GetExtraData() string {
 	return r._extraData
+}
+
+// SetClientInfo is ClientInfo Setter
+// 客户端信息，如果是服务端接入，里面的参数可为空
+func (r *AlibabaSecurityJaqRpStartAPIRequest) SetClientInfo(_clientInfo *RpClientInfo) error {
+	r._clientInfo = _clientInfo
+	r.Set("client_info", _clientInfo)
+	return nil
+}
+
+// GetClientInfo ClientInfo Getter
+func (r AlibabaSecurityJaqRpStartAPIRequest) GetClientInfo() *RpClientInfo {
+	return r._clientInfo
 }

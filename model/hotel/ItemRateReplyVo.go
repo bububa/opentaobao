@@ -6,10 +6,12 @@ type ItemRateReplyVo struct {
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
 	// 评论时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-	// intervalDay
-	IntervalDay int64 `json:"interval_day,omitempty" xml:"interval_day,omitempty"`
 	// 图片信息,图片URL的list
 	MediaInfo string `json:"media_info,omitempty" xml:"media_info,omitempty"`
+	// 脱敏后的用户名字
+	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
+	// intervalDay
+	IntervalDay int64 `json:"interval_day,omitempty" xml:"interval_day,omitempty"`
 	// 回复的是那一条，如果是回复主评为0，否则为追评id，组成树形结构
 	ParentId int64 `json:"parent_id,omitempty" xml:"parent_id,omitempty"`
 	// 被回复人的冗余信息
@@ -20,6 +22,4 @@ type ItemRateReplyVo struct {
 	ReplyType int64 `json:"reply_type,omitempty" xml:"reply_type,omitempty"`
 	// 脱敏后的userId
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
-	// 脱敏后的用户名字
-	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
 }

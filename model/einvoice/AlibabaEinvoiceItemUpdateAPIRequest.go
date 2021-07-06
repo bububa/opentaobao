@@ -14,12 +14,8 @@ type AlibabaEinvoiceItemUpdateAPIRequest struct {
 	model.Params
 	// 商品的开票名称，对应发票的货物劳务名称，值DELETE时表示删除
 	_invoiceName string
-	// 商品id，优先级高于outerId，商品必须归属于店铺，itemId和outerId不能同时为空
-	_itemId int64
 	// 税收分类编码，需要精确到叶子节点，必须和taxRate同时修改或删除，值DELETE时表示删除
 	_itemNo string
-	// skuId，必须是itemId下的sku，填写skuId后，修改和删除sku的开票信息
-	_skuId int64
 	// 规格型号，值DELETE时表示删除
 	_specification string
 	// 税率，可选值0，3，4，5，6，10，11，13， 16，17，必须和itemNo同时修改或删除,值为DELETE时表示删除
@@ -30,6 +26,10 @@ type AlibabaEinvoiceItemUpdateAPIRequest struct {
 	_unit string
 	// 商家外部商品id，如果outerId对应了多个天猫sku，则会更新所有的sku开票信息。itemId和outerId不能同时为空
 	_outerId string
+	// 商品id，优先级高于outerId，商品必须归属于店铺，itemId和outerId不能同时为空
+	_itemId int64
+	// skuId，必须是itemId下的sku，填写skuId后，修改和删除sku的开票信息
+	_skuId int64
 	// 是否根据outerId更新所有对应sku的开票信息，true=更新，false=开票信息维护在发票平台；自动开票时，根据skuId获取outerId，再根据outerId查询开票信息。outerId不为空时必填
 	_updateSku bool
 }
@@ -68,19 +68,6 @@ func (r AlibabaEinvoiceItemUpdateAPIRequest) GetInvoiceName() string {
 	return r._invoiceName
 }
 
-// SetItemId is ItemId Setter
-// 商品id，优先级高于outerId，商品必须归属于店铺，itemId和outerId不能同时为空
-func (r *AlibabaEinvoiceItemUpdateAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
-	return nil
-}
-
-// GetItemId ItemId Getter
-func (r AlibabaEinvoiceItemUpdateAPIRequest) GetItemId() int64 {
-	return r._itemId
-}
-
 // SetItemNo is ItemNo Setter
 // 税收分类编码，需要精确到叶子节点，必须和taxRate同时修改或删除，值DELETE时表示删除
 func (r *AlibabaEinvoiceItemUpdateAPIRequest) SetItemNo(_itemNo string) error {
@@ -92,19 +79,6 @@ func (r *AlibabaEinvoiceItemUpdateAPIRequest) SetItemNo(_itemNo string) error {
 // GetItemNo ItemNo Getter
 func (r AlibabaEinvoiceItemUpdateAPIRequest) GetItemNo() string {
 	return r._itemNo
-}
-
-// SetSkuId is SkuId Setter
-// skuId，必须是itemId下的sku，填写skuId后，修改和删除sku的开票信息
-func (r *AlibabaEinvoiceItemUpdateAPIRequest) SetSkuId(_skuId int64) error {
-	r._skuId = _skuId
-	r.Set("sku_id", _skuId)
-	return nil
-}
-
-// GetSkuId SkuId Getter
-func (r AlibabaEinvoiceItemUpdateAPIRequest) GetSkuId() int64 {
-	return r._skuId
 }
 
 // SetSpecification is Specification Setter
@@ -170,6 +144,32 @@ func (r *AlibabaEinvoiceItemUpdateAPIRequest) SetOuterId(_outerId string) error 
 // GetOuterId OuterId Getter
 func (r AlibabaEinvoiceItemUpdateAPIRequest) GetOuterId() string {
 	return r._outerId
+}
+
+// SetItemId is ItemId Setter
+// 商品id，优先级高于outerId，商品必须归属于店铺，itemId和outerId不能同时为空
+func (r *AlibabaEinvoiceItemUpdateAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r AlibabaEinvoiceItemUpdateAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
+// SetSkuId is SkuId Setter
+// skuId，必须是itemId下的sku，填写skuId后，修改和删除sku的开票信息
+func (r *AlibabaEinvoiceItemUpdateAPIRequest) SetSkuId(_skuId int64) error {
+	r._skuId = _skuId
+	r.Set("sku_id", _skuId)
+	return nil
+}
+
+// GetSkuId SkuId Getter
+func (r AlibabaEinvoiceItemUpdateAPIRequest) GetSkuId() int64 {
+	return r._skuId
 }
 
 // SetUpdateSku is UpdateSku Setter

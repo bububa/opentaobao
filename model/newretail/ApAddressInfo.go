@@ -24,8 +24,6 @@ type ApAddressInfo struct {
 	ApFloor string `json:"ap_floor,omitempty" xml:"ap_floor,omitempty"`
 	// 空间单元名称
 	ApUnitName string `json:"ap_unit_name,omitempty" xml:"ap_unit_name,omitempty"`
-	// 空间单元id
-	ApUnitId int64 `json:"ap_unit_id,omitempty" xml:"ap_unit_id,omitempty"`
 	// 方位
 	Direction string `json:"direction,omitempty" xml:"direction,omitempty"`
 	// 经度
@@ -34,4 +32,6 @@ type ApAddressInfo struct {
 	Lat string `json:"lat,omitempty" xml:"lat,omitempty"`
 	// 语言
 	Language string `json:"language,omitempty" xml:"language,omitempty"`
+	// 空间单元id
+	ApUnitId int64 `json:"ap_unit_id,omitempty" xml:"ap_unit_id,omitempty"`
 }

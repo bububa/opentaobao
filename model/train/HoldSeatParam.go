@@ -8,8 +8,8 @@ type HoldSeatParam struct {
 	ErrorCode int64 `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 订单信息
 	OrderBase *OrderInfoDto `json:"order_base,omitempty" xml:"order_base,omitempty"`
-	// 是否占座成功
-	HoldSeatStatus bool `json:"hold_seat_status,omitempty" xml:"hold_seat_status,omitempty"`
 	// 代理商id
 	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
+	// 是否占座成功
+	HoldSeatStatus bool `json:"hold_seat_status,omitempty" xml:"hold_seat_status,omitempty"`
 }

@@ -20,8 +20,8 @@ type TaobaoVmarketEticketTasksGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"vmarket_eticket_tasks_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 任务列表查询结果的总数
-	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 任务列表查询结果信息
 	EticketTasks []EticketTask `json:"eticket_tasks,omitempty" xml:"eticket_tasks>eticket_task,omitempty"`
+	// 任务列表查询结果的总数
+	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 }

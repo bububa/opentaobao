@@ -22,8 +22,8 @@ type TaobaoJstMiniappOpenidMessageSendAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 短信回执码
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
-	// 请求code
-	RCode int64 `json:"r_code,omitempty" xml:"r_code,omitempty"`
 	// 请求失败错误信息
 	RErrMsg string `json:"r_err_msg,omitempty" xml:"r_err_msg,omitempty"`
+	// 请求code
+	RCode int64 `json:"r_code,omitempty" xml:"r_code,omitempty"`
 }

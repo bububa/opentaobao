@@ -12,8 +12,6 @@ import (
 // 文件上传服务
 type YunosTvpubadminCommonFileUploadAPIRequest struct {
 	model.Params
-	// 文件字节流
-	_bytes *model.File
 	// 原文件名
 	_originalFilename string
 	// 文件大小
@@ -22,6 +20,8 @@ type YunosTvpubadminCommonFileUploadAPIRequest struct {
 	_contentType string
 	// 上传地址
 	_uploadPath string
+	// 文件字节流
+	_bytes *model.File
 }
 
 // NewYunosTvpubadminCommonFileUploadRequest 初始化YunosTvpubadminCommonFileUploadAPIRequest对象
@@ -43,19 +43,6 @@ func (r YunosTvpubadminCommonFileUploadAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetBytes is Bytes Setter
-// 文件字节流
-func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetBytes(_bytes *model.File) error {
-	r._bytes = _bytes
-	r.Set("bytes", _bytes)
-	return nil
-}
-
-// GetBytes Bytes Getter
-func (r YunosTvpubadminCommonFileUploadAPIRequest) GetBytes() *model.File {
-	return r._bytes
 }
 
 // SetOriginalFilename is OriginalFilename Setter
@@ -108,4 +95,17 @@ func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetUploadPath(_uploadPath st
 // GetUploadPath UploadPath Getter
 func (r YunosTvpubadminCommonFileUploadAPIRequest) GetUploadPath() string {
 	return r._uploadPath
+}
+
+// SetBytes is Bytes Setter
+// 文件字节流
+func (r *YunosTvpubadminCommonFileUploadAPIRequest) SetBytes(_bytes *model.File) error {
+	r._bytes = _bytes
+	r.Set("bytes", _bytes)
+	return nil
+}
+
+// GetBytes Bytes Getter
+func (r YunosTvpubadminCommonFileUploadAPIRequest) GetBytes() *model.File {
+	return r._bytes
 }

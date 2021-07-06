@@ -22,8 +22,8 @@ type AlibabaAlihealthExaminationReserveCancelAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 200:取消成功，状态变为已取消;800:取消失败，状态变为取消预约中；700：取消失败状态从取消预约中变为已到检；600取消失败，状态从取消预约中变为已预约
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
-	// 返回状态码不是600或者700时，不需要返回此字段
-	RevisionInfo *RevisionInfo `json:"revision_info,omitempty" xml:"revision_info,omitempty"`
 	// 返回结果描述
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// 返回状态码不是600或者700时，不需要返回此字段
+	RevisionInfo *RevisionInfo `json:"revision_info,omitempty" xml:"revision_info,omitempty"`
 }

@@ -14,8 +14,6 @@ type TaobaoLogisticsOrdersGetAPIRequest struct {
 	model.Params
 	// 需返回的字段列表.可选值:Shipping 物流数据结构中的以下字段: <br><br/>tid,order_code,seller_nick,buyer_nick,delivery_start, delivery_end,out_sid,item_title,receiver_name, created,modified,status,type,freight_payer,seller_confirm,company_name,sub_tids,is_spilt；<br>多个字段之间用","分隔。如tid,seller_nick,buyer_nick,delivery_start。
 	_fields string
-	// 交易ID.如果加入tid参数的话,不用传其他的参数,若传入tid：非拆单场景，仅会返回一条物流订单信息；拆单场景，会返回多条物流订单信息
-	_tid int64
 	// 买家昵称
 	_buyerNick string
 	// 物流状态.查看数据结构 Shipping 中的status字段.
@@ -32,6 +30,8 @@ type TaobaoLogisticsOrdersGetAPIRequest struct {
 	_freightPayer string
 	// 物流方式.可选值:post(平邮),express(快递),ems(EMS).如:post
 	_type string
+	// 交易ID.如果加入tid参数的话,不用传其他的参数,若传入tid：非拆单场景，仅会返回一条物流订单信息；拆单场景，会返回多条物流订单信息
+	_tid int64
 	// 页码.该字段没传 或 值<1 ,则默认page_no为1
 	_pageNo int64
 	// 每页条数.该字段没传 或 值<1 ,则默认page_size为40
@@ -70,19 +70,6 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetFields(_fields string) error {
 // GetFields Fields Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetFields() string {
 	return r._fields
-}
-
-// SetTid is Tid Setter
-// 交易ID.如果加入tid参数的话,不用传其他的参数,若传入tid：非拆单场景，仅会返回一条物流订单信息；拆单场景，会返回多条物流订单信息
-func (r *TaobaoLogisticsOrdersGetAPIRequest) SetTid(_tid int64) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
-	return nil
-}
-
-// GetTid Tid Getter
-func (r TaobaoLogisticsOrdersGetAPIRequest) GetTid() int64 {
-	return r._tid
 }
 
 // SetBuyerNick is BuyerNick Setter
@@ -187,6 +174,19 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetType(_type string) error {
 // GetType Type Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetType() string {
 	return r._type
+}
+
+// SetTid is Tid Setter
+// 交易ID.如果加入tid参数的话,不用传其他的参数,若传入tid：非拆单场景，仅会返回一条物流订单信息；拆单场景，会返回多条物流订单信息
+func (r *TaobaoLogisticsOrdersGetAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoLogisticsOrdersGetAPIRequest) GetTid() int64 {
+	return r._tid
 }
 
 // SetPageNo is PageNo Setter

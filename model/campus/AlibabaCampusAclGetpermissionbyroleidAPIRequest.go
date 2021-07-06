@@ -14,10 +14,10 @@ type AlibabaCampusAclGetpermissionbyroleidAPIRequest struct {
 	model.Params
 	// 系统id
 	_systemId string
-	// 园区id
-	_campusId int64
 	// 角色id
 	_roleId string
+	// 园区id
+	_campusId int64
 	// 公司id
 	_companyId int64
 }
@@ -56,19 +56,6 @@ func (r AlibabaCampusAclGetpermissionbyroleidAPIRequest) GetSystemId() string {
 	return r._systemId
 }
 
-// SetCampusId is CampusId Setter
-// 园区id
-func (r *AlibabaCampusAclGetpermissionbyroleidAPIRequest) SetCampusId(_campusId int64) error {
-	r._campusId = _campusId
-	r.Set("campus_id", _campusId)
-	return nil
-}
-
-// GetCampusId CampusId Getter
-func (r AlibabaCampusAclGetpermissionbyroleidAPIRequest) GetCampusId() int64 {
-	return r._campusId
-}
-
 // SetRoleId is RoleId Setter
 // 角色id
 func (r *AlibabaCampusAclGetpermissionbyroleidAPIRequest) SetRoleId(_roleId string) error {
@@ -80,6 +67,19 @@ func (r *AlibabaCampusAclGetpermissionbyroleidAPIRequest) SetRoleId(_roleId stri
 // GetRoleId RoleId Getter
 func (r AlibabaCampusAclGetpermissionbyroleidAPIRequest) GetRoleId() string {
 	return r._roleId
+}
+
+// SetCampusId is CampusId Setter
+// 园区id
+func (r *AlibabaCampusAclGetpermissionbyroleidAPIRequest) SetCampusId(_campusId int64) error {
+	r._campusId = _campusId
+	r.Set("campus_id", _campusId)
+	return nil
+}
+
+// GetCampusId CampusId Getter
+func (r AlibabaCampusAclGetpermissionbyroleidAPIRequest) GetCampusId() int64 {
+	return r._campusId
 }
 
 // SetCompanyId is CompanyId Setter

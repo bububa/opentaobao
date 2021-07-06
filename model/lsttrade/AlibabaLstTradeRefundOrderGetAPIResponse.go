@@ -20,6 +20,8 @@ type AlibabaLstTradeRefundOrderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_lst_trade_refund_order_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 子订单退款信息列表
+	SubOrders []RefundSubOrderInfo `json:"sub_orders,omitempty" xml:"sub_orders>refund_sub_order_info,omitempty"`
 	// 退款单id
 	RefundId string `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
 	// 退款申请时间
@@ -28,6 +30,4 @@ type AlibabaLstTradeRefundOrderGetAPIResponseModel struct {
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 退款完成时间
 	GmtCompleted string `json:"gmt_completed,omitempty" xml:"gmt_completed,omitempty"`
-	// 子订单退款信息列表
-	SubOrders []RefundSubOrderInfo `json:"sub_orders,omitempty" xml:"sub_orders>refund_sub_order_info,omitempty"`
 }

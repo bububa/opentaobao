@@ -12,6 +12,8 @@ import (
 // 零售修改出入库单追溯码
 type AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest struct {
 	model.Params
+	// 追溯码
+	_codeList []string
 	// 企业ID
 	_refEntId string
 	// 操作人ID
@@ -20,8 +22,6 @@ type AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest struct {
 	_billId string
 	// 单据类型
 	_billType string
-	// 追溯码
-	_codeList []string
 }
 
 // NewAlibabaAlihealthDrugKytUpdatebillcodeRequest 初始化AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest对象
@@ -43,6 +43,19 @@ func (r AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) GetApiParams() url.Valu
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetCodeList is CodeList Setter
+// 追溯码
+func (r *AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) SetCodeList(_codeList []string) error {
+	r._codeList = _codeList
+	r.Set("code_list", _codeList)
+	return nil
+}
+
+// GetCodeList CodeList Getter
+func (r AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) GetCodeList() []string {
+	return r._codeList
 }
 
 // SetRefEntId is RefEntId Setter
@@ -95,17 +108,4 @@ func (r *AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) SetBillType(_billType 
 // GetBillType BillType Getter
 func (r AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) GetBillType() string {
 	return r._billType
-}
-
-// SetCodeList is CodeList Setter
-// 追溯码
-func (r *AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) SetCodeList(_codeList []string) error {
-	r._codeList = _codeList
-	r.Set("code_list", _codeList)
-	return nil
-}
-
-// GetCodeList CodeList Getter
-func (r AlibabaAlihealthDrugKytUpdatebillcodeAPIRequest) GetCodeList() []string {
-	return r._codeList
 }

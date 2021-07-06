@@ -16,6 +16,10 @@ type AlibabaServiceSettlementQueryAPIRequest struct {
 	_gmtCreateStart string
 	// 账单查询结束时间，时间区间限制未15分钟。 格式示例 2019-03-26 17:15:28
 	_gmtCreateEnd string
+	// 账单修改开始时间。
+	_gmtModifiedEnd string
+	// 账单修改结束时间，时间区间限制未15分钟。
+	_gmtModifiedStart string
 	// 当前页面，开始值为1
 	_currentPage int64
 	// 页面展示条数大小
@@ -30,10 +34,6 @@ type AlibabaServiceSettlementQueryAPIRequest struct {
 	_masterTradeOrderId int64
 	// 交易服务订单号
 	_serviceTradeOrderId int64
-	// 账单修改开始时间。
-	_gmtModifiedEnd string
-	// 账单修改结束时间，时间区间限制未15分钟。
-	_gmtModifiedStart string
 }
 
 // NewAlibabaServiceSettlementQueryRequest 初始化AlibabaServiceSettlementQueryAPIRequest对象
@@ -81,6 +81,32 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtCreateEnd(_gmtCreateEnd 
 // GetGmtCreateEnd GmtCreateEnd Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetGmtCreateEnd() string {
 	return r._gmtCreateEnd
+}
+
+// SetGmtModifiedEnd is GmtModifiedEnd Setter
+// 账单修改开始时间。
+func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtModifiedEnd(_gmtModifiedEnd string) error {
+	r._gmtModifiedEnd = _gmtModifiedEnd
+	r.Set("gmt_modified_end", _gmtModifiedEnd)
+	return nil
+}
+
+// GetGmtModifiedEnd GmtModifiedEnd Getter
+func (r AlibabaServiceSettlementQueryAPIRequest) GetGmtModifiedEnd() string {
+	return r._gmtModifiedEnd
+}
+
+// SetGmtModifiedStart is GmtModifiedStart Setter
+// 账单修改结束时间，时间区间限制未15分钟。
+func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtModifiedStart(_gmtModifiedStart string) error {
+	r._gmtModifiedStart = _gmtModifiedStart
+	r.Set("gmt_modified_start", _gmtModifiedStart)
+	return nil
+}
+
+// GetGmtModifiedStart GmtModifiedStart Getter
+func (r AlibabaServiceSettlementQueryAPIRequest) GetGmtModifiedStart() string {
+	return r._gmtModifiedStart
 }
 
 // SetCurrentPage is CurrentPage Setter
@@ -172,30 +198,4 @@ func (r *AlibabaServiceSettlementQueryAPIRequest) SetServiceTradeOrderId(_servic
 // GetServiceTradeOrderId ServiceTradeOrderId Getter
 func (r AlibabaServiceSettlementQueryAPIRequest) GetServiceTradeOrderId() int64 {
 	return r._serviceTradeOrderId
-}
-
-// SetGmtModifiedEnd is GmtModifiedEnd Setter
-// 账单修改开始时间。
-func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtModifiedEnd(_gmtModifiedEnd string) error {
-	r._gmtModifiedEnd = _gmtModifiedEnd
-	r.Set("gmt_modified_end", _gmtModifiedEnd)
-	return nil
-}
-
-// GetGmtModifiedEnd GmtModifiedEnd Getter
-func (r AlibabaServiceSettlementQueryAPIRequest) GetGmtModifiedEnd() string {
-	return r._gmtModifiedEnd
-}
-
-// SetGmtModifiedStart is GmtModifiedStart Setter
-// 账单修改结束时间，时间区间限制未15分钟。
-func (r *AlibabaServiceSettlementQueryAPIRequest) SetGmtModifiedStart(_gmtModifiedStart string) error {
-	r._gmtModifiedStart = _gmtModifiedStart
-	r.Set("gmt_modified_start", _gmtModifiedStart)
-	return nil
-}
-
-// GetGmtModifiedStart GmtModifiedStart Getter
-func (r AlibabaServiceSettlementQueryAPIRequest) GetGmtModifiedStart() string {
-	return r._gmtModifiedStart
 }

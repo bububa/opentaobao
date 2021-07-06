@@ -12,10 +12,10 @@ import (
 // 增加活动参与的商品，部分商品参与的活动，最大支持指定150个商品。
 type TaobaoPromotionmiscActivityRangeAddAPIRequest struct {
 	model.Params
-	// 活动id。
-	_activityId int64
 	// 商品id,多个id用逗号隔开，一次不超过50个。
 	_ids string
+	// 活动id。
+	_activityId int64
 }
 
 // NewTaobaoPromotionmiscActivityRangeAddRequest 初始化TaobaoPromotionmiscActivityRangeAddAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoPromotionmiscActivityRangeAddAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// SetActivityId is ActivityId Setter
-// 活动id。
-func (r *TaobaoPromotionmiscActivityRangeAddAPIRequest) SetActivityId(_activityId int64) error {
-	r._activityId = _activityId
-	r.Set("activity_id", _activityId)
-	return nil
-}
-
-// GetActivityId ActivityId Getter
-func (r TaobaoPromotionmiscActivityRangeAddAPIRequest) GetActivityId() int64 {
-	return r._activityId
-}
-
 // SetIds is Ids Setter
 // 商品id,多个id用逗号隔开，一次不超过50个。
 func (r *TaobaoPromotionmiscActivityRangeAddAPIRequest) SetIds(_ids string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoPromotionmiscActivityRangeAddAPIRequest) SetIds(_ids string) erro
 // GetIds Ids Getter
 func (r TaobaoPromotionmiscActivityRangeAddAPIRequest) GetIds() string {
 	return r._ids
+}
+
+// SetActivityId is ActivityId Setter
+// 活动id。
+func (r *TaobaoPromotionmiscActivityRangeAddAPIRequest) SetActivityId(_activityId int64) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
+	return nil
+}
+
+// GetActivityId ActivityId Getter
+func (r TaobaoPromotionmiscActivityRangeAddAPIRequest) GetActivityId() int64 {
+	return r._activityId
 }

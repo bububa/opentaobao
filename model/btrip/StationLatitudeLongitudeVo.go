@@ -2,14 +2,14 @@ package btrip
 
 // StationLatitudeLongitudeVo 结构体
 type StationLatitudeLongitudeVo struct {
-	// 车站经度
-	Latitude string `json:"latitude,omitempty" xml:"latitude,omitempty"`
-	// 车站纬度
-	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
 	// 目的地频道提供的景点图片url（会有多张图片）
 	PoiPictureUrlList []string `json:"poi_picture_url_list,omitempty" xml:"poi_picture_url_list>string,omitempty"`
 	// 目的地频道提供的标签(可能会有多个标签)
 	PoiTagList []string `json:"poi_tag_list,omitempty" xml:"poi_tag_list>string,omitempty"`
+	// 车站经度
+	Latitude string `json:"latitude,omitempty" xml:"latitude,omitempty"`
+	// 车站纬度
+	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
 	// 车站地址
 	StationAddress string `json:"station_address,omitempty" xml:"station_address,omitempty"`
 	// 车站名

@@ -20,8 +20,8 @@ type PropertyDto struct {
 	VName string `json:"v_name,omitempty" xml:"v_name,omitempty"`
 	// 花色图片
 	ImgUrl string `json:"img_url,omitempty" xml:"img_url,omitempty"`
-	// 顺序
-	Order int64 `json:"order,omitempty" xml:"order,omitempty"`
 	// 属性类型（sale, nonCritical, critical, tmallItem）
 	PropertyType string `json:"property_type,omitempty" xml:"property_type,omitempty"`
+	// 顺序
+	Order int64 `json:"order,omitempty" xml:"order,omitempty"`
 }

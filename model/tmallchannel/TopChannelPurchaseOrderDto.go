@@ -2,14 +2,24 @@ package tmallchannel
 
 // TopChannelPurchaseOrderDto 结构体
 type TopChannelPurchaseOrderDto struct {
-	// 主采购单号
-	MainPurchaseOrderNo int64 `json:"main_purchase_order_no,omitempty" xml:"main_purchase_order_no,omitempty"`
+	// 子采购单列表
+	SubOrderList []TopChannelSubPurchaseOrderDto `json:"sub_order_list,omitempty" xml:"sub_order_list>top_channel_sub_purchase_order_dto,omitempty"`
 	// 申请单单号
 	ChannelPurchaseApplyOrderNo string `json:"channel_purchase_apply_order_no,omitempty" xml:"channel_purchase_apply_order_no,omitempty"`
 	// 分销商淘宝nick
 	DistributorNick string `json:"distributor_nick,omitempty" xml:"distributor_nick,omitempty"`
 	// 买家淘宝nick
 	BuyerTaobaoNick string `json:"buyer_taobao_nick,omitempty" xml:"buyer_taobao_nick,omitempty"`
+	// 记录创建时间
+	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
+	// 记录修改时间
+	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
+	// 付款时间
+	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
+	// 解析详情
+	Schema string `json:"schema,omitempty" xml:"schema,omitempty"`
+	// 主采购单号
+	MainPurchaseOrderNo int64 `json:"main_purchase_order_no,omitempty" xml:"main_purchase_order_no,omitempty"`
 	// 交易类型
 	TradeType int64 `json:"trade_type,omitempty" xml:"trade_type,omitempty"`
 	// 付款类型
@@ -24,16 +34,6 @@ type TopChannelPurchaseOrderDto struct {
 	LogisticsStatus int64 `json:"logistics_status,omitempty" xml:"logistics_status,omitempty"`
 	// 交易状态：1-交易中，2-交易关闭，3-交易成功
 	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
-	// 记录创建时间
-	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
-	// 记录修改时间
-	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
-	// 付款时间
-	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
-	// 子采购单列表
-	SubOrderList []TopChannelSubPurchaseOrderDto `json:"sub_order_list,omitempty" xml:"sub_order_list>top_channel_sub_purchase_order_dto,omitempty"`
 	// 物流单信息
 	ChannelLogisticsOrder *TopChannelLogisticsOrderDto `json:"channel_logistics_order,omitempty" xml:"channel_logistics_order,omitempty"`
-	// 解析详情
-	Schema string `json:"schema,omitempty" xml:"schema,omitempty"`
 }

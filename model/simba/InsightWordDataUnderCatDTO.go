@@ -2,6 +2,18 @@ package simba
 
 // InsightWordDataUnderCatDto 结构体
 type InsightWordDataUnderCatDto struct {
+	// 点击率
+	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
+	// 平均点击花费
+	Cpc string `json:"cpc,omitempty" xml:"cpc,omitempty"`
+	// 投入产出比
+	Roi string `json:"roi,omitempty" xml:"roi,omitempty"`
+	// 点击转化率
+	Coverage string `json:"coverage,omitempty" xml:"coverage,omitempty"`
+	// 类目名称
+	CatName string `json:"cat_name,omitempty" xml:"cat_name,omitempty"`
+	// 关键词
+	Bidword string `json:"bidword,omitempty" xml:"bidword,omitempty"`
 	// 展现量
 	Impression int64 `json:"impression,omitempty" xml:"impression,omitempty"`
 	// 点击量
@@ -28,18 +40,6 @@ type InsightWordDataUnderCatDto struct {
 	Favtotal int64 `json:"favtotal,omitempty" xml:"favtotal,omitempty"`
 	// 竞争度
 	Competition int64 `json:"competition,omitempty" xml:"competition,omitempty"`
-	// 点击率
-	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
-	// 平均点击花费
-	Cpc string `json:"cpc,omitempty" xml:"cpc,omitempty"`
-	// 投入产出比
-	Roi string `json:"roi,omitempty" xml:"roi,omitempty"`
-	// 点击转化率
-	Coverage string `json:"coverage,omitempty" xml:"coverage,omitempty"`
 	// 类目id
 	CatId int64 `json:"cat_id,omitempty" xml:"cat_id,omitempty"`
-	// 类目名称
-	CatName string `json:"cat_name,omitempty" xml:"cat_name,omitempty"`
-	// 关键词
-	Bidword string `json:"bidword,omitempty" xml:"bidword,omitempty"`
 }

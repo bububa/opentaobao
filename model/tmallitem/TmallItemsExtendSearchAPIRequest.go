@@ -24,6 +24,10 @@ type TmallItemsExtendSearchAPIRequest struct {
 	_loc string
 	// 以“属性id：属性值”的形式传入;
 	_prop string
+	// 商品标签。支持多选过滤,auction_tag=auction_tag1,auction_tag2,不支持天猫精品库8578
+	_auctionTag string
+	// 后台类目id，category=categoryId
+	_category string
 	// 是否包邮，-1为包邮
 	_postFee int64
 	// 在宝贝页面中进行价格筛选的时候，如果填写了最低价格，就会显示该字段。
@@ -44,8 +48,6 @@ type TmallItemsExtendSearchAPIRequest struct {
 	_miaosha int64
 	// 是否需要spu聚合的开关:1为关闭，不传表示遵循后端聚合逻辑。默认不作spu聚合。
 	_nspu int64
-	// 商品标签。支持多选过滤,auction_tag=auction_tag1,auction_tag2,不支持天猫精品库8578
-	_auctionTag string
 	// 可以根据产品Id搜索属于这个spu的商品。
 	_spuid int64
 	// 可以根据卖家id搜索属于该卖家的商品
@@ -54,8 +56,6 @@ type TmallItemsExtendSearchAPIRequest struct {
 	_pageNo int64
 	// 每页条数。取值范围：大于零的整数；最大值：100；默认值：40
 	_pageSize int64
-	// 后台类目id，category=categoryId
-	_category string
 }
 
 // NewTmallItemsExtendSearchRequest 初始化TmallItemsExtendSearchAPIRequest对象
@@ -155,6 +155,32 @@ func (r *TmallItemsExtendSearchAPIRequest) SetProp(_prop string) error {
 // GetProp Prop Getter
 func (r TmallItemsExtendSearchAPIRequest) GetProp() string {
 	return r._prop
+}
+
+// SetAuctionTag is AuctionTag Setter
+// 商品标签。支持多选过滤,auction_tag=auction_tag1,auction_tag2,不支持天猫精品库8578
+func (r *TmallItemsExtendSearchAPIRequest) SetAuctionTag(_auctionTag string) error {
+	r._auctionTag = _auctionTag
+	r.Set("auction_tag", _auctionTag)
+	return nil
+}
+
+// GetAuctionTag AuctionTag Getter
+func (r TmallItemsExtendSearchAPIRequest) GetAuctionTag() string {
+	return r._auctionTag
+}
+
+// SetCategory is Category Setter
+// 后台类目id，category=categoryId
+func (r *TmallItemsExtendSearchAPIRequest) SetCategory(_category string) error {
+	r._category = _category
+	r.Set("category", _category)
+	return nil
+}
+
+// GetCategory Category Getter
+func (r TmallItemsExtendSearchAPIRequest) GetCategory() string {
+	return r._category
 }
 
 // SetPostFee is PostFee Setter
@@ -287,19 +313,6 @@ func (r TmallItemsExtendSearchAPIRequest) GetNspu() int64 {
 	return r._nspu
 }
 
-// SetAuctionTag is AuctionTag Setter
-// 商品标签。支持多选过滤,auction_tag=auction_tag1,auction_tag2,不支持天猫精品库8578
-func (r *TmallItemsExtendSearchAPIRequest) SetAuctionTag(_auctionTag string) error {
-	r._auctionTag = _auctionTag
-	r.Set("auction_tag", _auctionTag)
-	return nil
-}
-
-// GetAuctionTag AuctionTag Getter
-func (r TmallItemsExtendSearchAPIRequest) GetAuctionTag() string {
-	return r._auctionTag
-}
-
 // SetSpuid is Spuid Setter
 // 可以根据产品Id搜索属于这个spu的商品。
 func (r *TmallItemsExtendSearchAPIRequest) SetSpuid(_spuid int64) error {
@@ -350,17 +363,4 @@ func (r *TmallItemsExtendSearchAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TmallItemsExtendSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetCategory is Category Setter
-// 后台类目id，category=categoryId
-func (r *TmallItemsExtendSearchAPIRequest) SetCategory(_category string) error {
-	r._category = _category
-	r.Set("category", _category)
-	return nil
-}
-
-// GetCategory Category Getter
-func (r TmallItemsExtendSearchAPIRequest) GetCategory() string {
-	return r._category
 }

@@ -12,14 +12,14 @@ import (
 // 出票成功回调接口
 type AlitripRailTradeCloseticketAPIRequest struct {
 	model.Params
-	// 平台订单号
-	_tpOrderId int64
-	// 代理商订单号
-	_agentId int64
 	// 出票失败原因
 	_errorMsg string
 	// 出票失败码
 	_errorCode string
+	// 平台订单号
+	_tpOrderId int64
+	// 代理商订单号
+	_agentId int64
 }
 
 // NewAlitripRailTradeCloseticketRequest 初始化AlitripRailTradeCloseticketAPIRequest对象
@@ -41,32 +41,6 @@ func (r AlitripRailTradeCloseticketAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetTpOrderId is TpOrderId Setter
-// 平台订单号
-func (r *AlitripRailTradeCloseticketAPIRequest) SetTpOrderId(_tpOrderId int64) error {
-	r._tpOrderId = _tpOrderId
-	r.Set("tp_order_id", _tpOrderId)
-	return nil
-}
-
-// GetTpOrderId TpOrderId Getter
-func (r AlitripRailTradeCloseticketAPIRequest) GetTpOrderId() int64 {
-	return r._tpOrderId
-}
-
-// SetAgentId is AgentId Setter
-// 代理商订单号
-func (r *AlitripRailTradeCloseticketAPIRequest) SetAgentId(_agentId int64) error {
-	r._agentId = _agentId
-	r.Set("agent_id", _agentId)
-	return nil
-}
-
-// GetAgentId AgentId Getter
-func (r AlitripRailTradeCloseticketAPIRequest) GetAgentId() int64 {
-	return r._agentId
 }
 
 // SetErrorMsg is ErrorMsg Setter
@@ -93,4 +67,30 @@ func (r *AlitripRailTradeCloseticketAPIRequest) SetErrorCode(_errorCode string) 
 // GetErrorCode ErrorCode Getter
 func (r AlitripRailTradeCloseticketAPIRequest) GetErrorCode() string {
 	return r._errorCode
+}
+
+// SetTpOrderId is TpOrderId Setter
+// 平台订单号
+func (r *AlitripRailTradeCloseticketAPIRequest) SetTpOrderId(_tpOrderId int64) error {
+	r._tpOrderId = _tpOrderId
+	r.Set("tp_order_id", _tpOrderId)
+	return nil
+}
+
+// GetTpOrderId TpOrderId Getter
+func (r AlitripRailTradeCloseticketAPIRequest) GetTpOrderId() int64 {
+	return r._tpOrderId
+}
+
+// SetAgentId is AgentId Setter
+// 代理商订单号
+func (r *AlitripRailTradeCloseticketAPIRequest) SetAgentId(_agentId int64) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// GetAgentId AgentId Getter
+func (r AlitripRailTradeCloseticketAPIRequest) GetAgentId() int64 {
+	return r._agentId
 }

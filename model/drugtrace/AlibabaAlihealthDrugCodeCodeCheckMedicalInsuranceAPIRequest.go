@@ -17,6 +17,8 @@ import (
 // 入参采用数组方式提供，一次同步最多支持100条记录
 type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest struct {
 	model.Params
+	// 码列表
+	_codes []string
 	// 行政区域
 	_bureauName string
 	// 终端id
@@ -25,8 +27,6 @@ type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest struct {
 	_terminalType string
 	// 核销类型(1012100：核销；1012900：退库)
 	_cType string
-	// 码列表
-	_codes []string
 	// 平台返回的终端id
 	_terminalEntId string
 }
@@ -50,6 +50,19 @@ func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetApiParam
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetCodes is Codes Setter
+// 码列表
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetCodes(_codes []string) error {
+	r._codes = _codes
+	r.Set("codes", _codes)
+	return nil
+}
+
+// GetCodes Codes Getter
+func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetCodes() []string {
+	return r._codes
 }
 
 // SetBureauName is BureauName Setter
@@ -102,19 +115,6 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetCType(_
 // GetCType CType Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetCType() string {
 	return r._cType
-}
-
-// SetCodes is Codes Setter
-// 码列表
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetCodes(_codes []string) error {
-	r._codes = _codes
-	r.Set("codes", _codes)
-	return nil
-}
-
-// GetCodes Codes Getter
-func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetCodes() []string {
-	return r._codes
 }
 
 // SetTerminalEntId is TerminalEntId Setter

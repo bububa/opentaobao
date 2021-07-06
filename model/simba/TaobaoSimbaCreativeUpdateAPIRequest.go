@@ -12,16 +12,16 @@ import (
 // 更新一个创意的信息，可以设置创意标题、创意图片
 type TaobaoSimbaCreativeUpdateAPIRequest struct {
 	model.Params
-	// 推广组Id
-	_adgroupId int64
-	// 创意Id
-	_creativeId int64
 	// 创意标题，最多20个汉字
 	_title string
 	// 创意图片地址，必须是推广组对应商品的图片之一
 	_imgUrl string
 	// 主人昵称
 	_nick string
+	// 推广组Id
+	_adgroupId int64
+	// 创意Id
+	_creativeId int64
 	// 如果用户开通了创意本地上传图片功能的，可以使用该用户图片空间的图片来修改创意，pictureId为图片空间中图片的pictureId，img_url为图片空间中图片链接地址，如果是使用的主图或副图修改创意，则pictureId必须为空
 	_pictureId int64
 }
@@ -45,32 +45,6 @@ func (r TaobaoSimbaCreativeUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetAdgroupId is AdgroupId Setter
-// 推广组Id
-func (r *TaobaoSimbaCreativeUpdateAPIRequest) SetAdgroupId(_adgroupId int64) error {
-	r._adgroupId = _adgroupId
-	r.Set("adgroup_id", _adgroupId)
-	return nil
-}
-
-// GetAdgroupId AdgroupId Getter
-func (r TaobaoSimbaCreativeUpdateAPIRequest) GetAdgroupId() int64 {
-	return r._adgroupId
-}
-
-// SetCreativeId is CreativeId Setter
-// 创意Id
-func (r *TaobaoSimbaCreativeUpdateAPIRequest) SetCreativeId(_creativeId int64) error {
-	r._creativeId = _creativeId
-	r.Set("creative_id", _creativeId)
-	return nil
-}
-
-// GetCreativeId CreativeId Getter
-func (r TaobaoSimbaCreativeUpdateAPIRequest) GetCreativeId() int64 {
-	return r._creativeId
 }
 
 // SetTitle is Title Setter
@@ -110,6 +84,32 @@ func (r *TaobaoSimbaCreativeUpdateAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoSimbaCreativeUpdateAPIRequest) GetNick() string {
 	return r._nick
+}
+
+// SetAdgroupId is AdgroupId Setter
+// 推广组Id
+func (r *TaobaoSimbaCreativeUpdateAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// GetAdgroupId AdgroupId Getter
+func (r TaobaoSimbaCreativeUpdateAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
+}
+
+// SetCreativeId is CreativeId Setter
+// 创意Id
+func (r *TaobaoSimbaCreativeUpdateAPIRequest) SetCreativeId(_creativeId int64) error {
+	r._creativeId = _creativeId
+	r.Set("creative_id", _creativeId)
+	return nil
+}
+
+// GetCreativeId CreativeId Getter
+func (r TaobaoSimbaCreativeUpdateAPIRequest) GetCreativeId() int64 {
+	return r._creativeId
 }
 
 // SetPictureId is PictureId Setter

@@ -12,14 +12,14 @@ import (
 // 如意音箱音频文件长传
 type AlibabaLstSpeakerFileUploadAPIRequest struct {
 	model.Params
-	// 数据流
-	_fileBytes *model.File
 	// 文件类型,audio:音频，advert:广告
 	_fileType string
 	// 文件ID
 	_fileId string
 	// md5直
 	_md5 string
+	// 数据流
+	_fileBytes *model.File
 }
 
 // NewAlibabaLstSpeakerFileUploadRequest 初始化AlibabaLstSpeakerFileUploadAPIRequest对象
@@ -41,19 +41,6 @@ func (r AlibabaLstSpeakerFileUploadAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetFileBytes is FileBytes Setter
-// 数据流
-func (r *AlibabaLstSpeakerFileUploadAPIRequest) SetFileBytes(_fileBytes *model.File) error {
-	r._fileBytes = _fileBytes
-	r.Set("file_bytes", _fileBytes)
-	return nil
-}
-
-// GetFileBytes FileBytes Getter
-func (r AlibabaLstSpeakerFileUploadAPIRequest) GetFileBytes() *model.File {
-	return r._fileBytes
 }
 
 // SetFileType is FileType Setter
@@ -93,4 +80,17 @@ func (r *AlibabaLstSpeakerFileUploadAPIRequest) SetMd5(_md5 string) error {
 // GetMd5 Md5 Getter
 func (r AlibabaLstSpeakerFileUploadAPIRequest) GetMd5() string {
 	return r._md5
+}
+
+// SetFileBytes is FileBytes Setter
+// 数据流
+func (r *AlibabaLstSpeakerFileUploadAPIRequest) SetFileBytes(_fileBytes *model.File) error {
+	r._fileBytes = _fileBytes
+	r.Set("file_bytes", _fileBytes)
+	return nil
+}
+
+// GetFileBytes FileBytes Getter
+func (r AlibabaLstSpeakerFileUploadAPIRequest) GetFileBytes() *model.File {
+	return r._fileBytes
 }

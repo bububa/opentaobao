@@ -12,6 +12,10 @@ import (
 // 供应商按查询条件批量查询代销采购退款
 type TaobaoFenxiaoRefundQueryAPIRequest struct {
 	model.Params
+	// 渠道code，可批量 老供销渠道：999
+	_tradeTypes []int64
+	// 代销：1 经销：2 寄售（猫超自营寄售）：5 平台寄售：6
+	_channelCodes []int64
 	// 代销采购退款单最早修改时间
 	_startDate string
 	// 代销采购退款最迟修改时间。与start_date的最大时间间隔不能超过30天
@@ -20,14 +24,10 @@ type TaobaoFenxiaoRefundQueryAPIRequest struct {
 	_pageNo int64
 	// 每页条数（大于0但小于等于50的整数。无值或大于50或小于1的值按默认值50计）
 	_pageSize int64
-	// 是否查询下游买家的退款信息
-	_querySellerRefund bool
-	// 渠道code，可批量 老供销渠道：999
-	_tradeTypes []int64
 	// 角色，供应商：2，分销商：1
 	_userRoleType int64
-	// 代销：1 经销：2 寄售（猫超自营寄售）：5 平台寄售：6
-	_channelCodes []int64
+	// 是否查询下游买家的退款信息
+	_querySellerRefund bool
 }
 
 // NewTaobaoFenxiaoRefundQueryRequest 初始化TaobaoFenxiaoRefundQueryAPIRequest对象
@@ -49,6 +49,32 @@ func (r TaobaoFenxiaoRefundQueryAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTradeTypes is TradeTypes Setter
+// 渠道code，可批量 老供销渠道：999
+func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetTradeTypes(_tradeTypes []int64) error {
+	r._tradeTypes = _tradeTypes
+	r.Set("trade_types", _tradeTypes)
+	return nil
+}
+
+// GetTradeTypes TradeTypes Getter
+func (r TaobaoFenxiaoRefundQueryAPIRequest) GetTradeTypes() []int64 {
+	return r._tradeTypes
+}
+
+// SetChannelCodes is ChannelCodes Setter
+// 代销：1 经销：2 寄售（猫超自营寄售）：5 平台寄售：6
+func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetChannelCodes(_channelCodes []int64) error {
+	r._channelCodes = _channelCodes
+	r.Set("channel_codes", _channelCodes)
+	return nil
+}
+
+// GetChannelCodes ChannelCodes Getter
+func (r TaobaoFenxiaoRefundQueryAPIRequest) GetChannelCodes() []int64 {
+	return r._channelCodes
 }
 
 // SetStartDate is StartDate Setter
@@ -103,32 +129,6 @@ func (r TaobaoFenxiaoRefundQueryAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// SetQuerySellerRefund is QuerySellerRefund Setter
-// 是否查询下游买家的退款信息
-func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetQuerySellerRefund(_querySellerRefund bool) error {
-	r._querySellerRefund = _querySellerRefund
-	r.Set("query_seller_refund", _querySellerRefund)
-	return nil
-}
-
-// GetQuerySellerRefund QuerySellerRefund Getter
-func (r TaobaoFenxiaoRefundQueryAPIRequest) GetQuerySellerRefund() bool {
-	return r._querySellerRefund
-}
-
-// SetTradeTypes is TradeTypes Setter
-// 渠道code，可批量 老供销渠道：999
-func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetTradeTypes(_tradeTypes []int64) error {
-	r._tradeTypes = _tradeTypes
-	r.Set("trade_types", _tradeTypes)
-	return nil
-}
-
-// GetTradeTypes TradeTypes Getter
-func (r TaobaoFenxiaoRefundQueryAPIRequest) GetTradeTypes() []int64 {
-	return r._tradeTypes
-}
-
 // SetUserRoleType is UserRoleType Setter
 // 角色，供应商：2，分销商：1
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetUserRoleType(_userRoleType int64) error {
@@ -142,15 +142,15 @@ func (r TaobaoFenxiaoRefundQueryAPIRequest) GetUserRoleType() int64 {
 	return r._userRoleType
 }
 
-// SetChannelCodes is ChannelCodes Setter
-// 代销：1 经销：2 寄售（猫超自营寄售）：5 平台寄售：6
-func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetChannelCodes(_channelCodes []int64) error {
-	r._channelCodes = _channelCodes
-	r.Set("channel_codes", _channelCodes)
+// SetQuerySellerRefund is QuerySellerRefund Setter
+// 是否查询下游买家的退款信息
+func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetQuerySellerRefund(_querySellerRefund bool) error {
+	r._querySellerRefund = _querySellerRefund
+	r.Set("query_seller_refund", _querySellerRefund)
 	return nil
 }
 
-// GetChannelCodes ChannelCodes Getter
-func (r TaobaoFenxiaoRefundQueryAPIRequest) GetChannelCodes() []int64 {
-	return r._channelCodes
+// GetQuerySellerRefund QuerySellerRefund Getter
+func (r TaobaoFenxiaoRefundQueryAPIRequest) GetQuerySellerRefund() bool {
+	return r._querySellerRefund
 }

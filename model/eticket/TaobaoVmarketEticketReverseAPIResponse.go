@@ -20,10 +20,10 @@ type TaobaoVmarketEticketReverseAPIResponseModel struct {
 	XMLName xml.Name `xml:"vmarket_eticket_reverse_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 0:失败，1:成功
-	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 	// 宝贝标题
 	ItemTitle string `json:"item_title,omitempty" xml:"item_title,omitempty"`
+	// 0:失败，1:成功
+	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 	// 整个订单的剩余可核销数量
 	LeftNum int64 `json:"left_num,omitempty" xml:"left_num,omitempty"`
 }

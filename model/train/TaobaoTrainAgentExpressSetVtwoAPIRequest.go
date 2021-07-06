@@ -12,18 +12,18 @@ import (
 // 线下票回填物流信息服务
 type TaobaoTrainAgentExpressSetVtwoAPIRequest struct {
 	model.Params
-	// 订单号
-	_mainOrderId int64
 	// 物流单号
 	_expressId string
 	// 发货地址
 	_addr string
 	// 手机号
 	_mobile string
-	// 代理商id
-	_agentId int64
 	// 物流公司:SF,EMS
 	_expressName string
+	// 订单号
+	_mainOrderId int64
+	// 代理商id
+	_agentId int64
 }
 
 // NewTaobaoTrainAgentExpressSetVtwoRequest 初始化TaobaoTrainAgentExpressSetVtwoAPIRequest对象
@@ -45,19 +45,6 @@ func (r TaobaoTrainAgentExpressSetVtwoAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetMainOrderId is MainOrderId Setter
-// 订单号
-func (r *TaobaoTrainAgentExpressSetVtwoAPIRequest) SetMainOrderId(_mainOrderId int64) error {
-	r._mainOrderId = _mainOrderId
-	r.Set("main_order_id", _mainOrderId)
-	return nil
-}
-
-// GetMainOrderId MainOrderId Getter
-func (r TaobaoTrainAgentExpressSetVtwoAPIRequest) GetMainOrderId() int64 {
-	return r._mainOrderId
 }
 
 // SetExpressId is ExpressId Setter
@@ -99,19 +86,6 @@ func (r TaobaoTrainAgentExpressSetVtwoAPIRequest) GetMobile() string {
 	return r._mobile
 }
 
-// SetAgentId is AgentId Setter
-// 代理商id
-func (r *TaobaoTrainAgentExpressSetVtwoAPIRequest) SetAgentId(_agentId int64) error {
-	r._agentId = _agentId
-	r.Set("agent_id", _agentId)
-	return nil
-}
-
-// GetAgentId AgentId Getter
-func (r TaobaoTrainAgentExpressSetVtwoAPIRequest) GetAgentId() int64 {
-	return r._agentId
-}
-
 // SetExpressName is ExpressName Setter
 // 物流公司:SF,EMS
 func (r *TaobaoTrainAgentExpressSetVtwoAPIRequest) SetExpressName(_expressName string) error {
@@ -123,4 +97,30 @@ func (r *TaobaoTrainAgentExpressSetVtwoAPIRequest) SetExpressName(_expressName s
 // GetExpressName ExpressName Getter
 func (r TaobaoTrainAgentExpressSetVtwoAPIRequest) GetExpressName() string {
 	return r._expressName
+}
+
+// SetMainOrderId is MainOrderId Setter
+// 订单号
+func (r *TaobaoTrainAgentExpressSetVtwoAPIRequest) SetMainOrderId(_mainOrderId int64) error {
+	r._mainOrderId = _mainOrderId
+	r.Set("main_order_id", _mainOrderId)
+	return nil
+}
+
+// GetMainOrderId MainOrderId Getter
+func (r TaobaoTrainAgentExpressSetVtwoAPIRequest) GetMainOrderId() int64 {
+	return r._mainOrderId
+}
+
+// SetAgentId is AgentId Setter
+// 代理商id
+func (r *TaobaoTrainAgentExpressSetVtwoAPIRequest) SetAgentId(_agentId int64) error {
+	r._agentId = _agentId
+	r.Set("agent_id", _agentId)
+	return nil
+}
+
+// GetAgentId AgentId Getter
+func (r TaobaoTrainAgentExpressSetVtwoAPIRequest) GetAgentId() int64 {
+	return r._agentId
 }

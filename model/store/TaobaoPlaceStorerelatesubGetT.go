@@ -2,8 +2,6 @@ package store
 
 // TaobaoPlaceStorerelatesubGetT 结构体
 type TaobaoPlaceStorerelatesubGetT struct {
-	// 门店Id
-	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 门店名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 门店分名称
@@ -16,6 +14,8 @@ type TaobaoPlaceStorerelatesubGetT struct {
 	CityName string `json:"city_name,omitempty" xml:"city_name,omitempty"`
 	// 区
 	DistrictName string `json:"district_name,omitempty" xml:"district_name,omitempty"`
+	// 门店Id
+	StoreId int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 省
 	ProvCode int64 `json:"prov_code,omitempty" xml:"prov_code,omitempty"`
 	// 市

@@ -12,8 +12,6 @@ import (
 // 计算补助金额
 type AlibabaAlisportsEfspCountsubsidyAPIRequest struct {
 	model.Params
-	// 订单金额
-	_sumAmount int64
 	// 健身房ID
 	_gymId string
 	// 企业ID
@@ -22,6 +20,8 @@ type AlibabaAlisportsEfspCountsubsidyAPIRequest struct {
 	_alipayId string
 	// 健身房所在省市
 	_districtCode string
+	// 订单金额
+	_sumAmount int64
 }
 
 // NewAlibabaAlisportsEfspCountsubsidyRequest 初始化AlibabaAlisportsEfspCountsubsidyAPIRequest对象
@@ -43,19 +43,6 @@ func (r AlibabaAlisportsEfspCountsubsidyAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetSumAmount is SumAmount Setter
-// 订单金额
-func (r *AlibabaAlisportsEfspCountsubsidyAPIRequest) SetSumAmount(_sumAmount int64) error {
-	r._sumAmount = _sumAmount
-	r.Set("sum_amount", _sumAmount)
-	return nil
-}
-
-// GetSumAmount SumAmount Getter
-func (r AlibabaAlisportsEfspCountsubsidyAPIRequest) GetSumAmount() int64 {
-	return r._sumAmount
 }
 
 // SetGymId is GymId Setter
@@ -108,4 +95,17 @@ func (r *AlibabaAlisportsEfspCountsubsidyAPIRequest) SetDistrictCode(_districtCo
 // GetDistrictCode DistrictCode Getter
 func (r AlibabaAlisportsEfspCountsubsidyAPIRequest) GetDistrictCode() string {
 	return r._districtCode
+}
+
+// SetSumAmount is SumAmount Setter
+// 订单金额
+func (r *AlibabaAlisportsEfspCountsubsidyAPIRequest) SetSumAmount(_sumAmount int64) error {
+	r._sumAmount = _sumAmount
+	r.Set("sum_amount", _sumAmount)
+	return nil
+}
+
+// GetSumAmount SumAmount Getter
+func (r AlibabaAlisportsEfspCountsubsidyAPIRequest) GetSumAmount() int64 {
+	return r._sumAmount
 }

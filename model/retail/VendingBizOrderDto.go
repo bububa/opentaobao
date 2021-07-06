@@ -18,18 +18,8 @@ type VendingBizOrderDto struct {
 	DeviceCode string `json:"device_code,omitempty" xml:"device_code,omitempty"`
 	// 点位名称
 	PointName string `json:"point_name,omitempty" xml:"point_name,omitempty"`
-	// 商家id
-	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
-	// 金额，单位分
-	TotalFee int64 `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
-	// 淘系订单id
-	TbMainOrderId int64 `json:"tb_main_order_id,omitempty" xml:"tb_main_order_id,omitempty"`
 	// 外部订单ID
 	MainOuterOrderId string `json:"main_outer_order_id,omitempty" xml:"main_outer_order_id,omitempty"`
-	// -20 已退款，-10 交易关闭 ，10 创单 20 已支付  30 已出货  40 交易完成
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
-	// 商品ID
-	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 商品名称
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 支付状态
@@ -42,4 +32,14 @@ type VendingBizOrderDto struct {
 	BarCode string `json:"bar_code,omitempty" xml:"bar_code,omitempty"`
 	// 货道编号
 	RoadId string `json:"road_id,omitempty" xml:"road_id,omitempty"`
+	// 商家id
+	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
+	// 金额，单位分
+	TotalFee int64 `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
+	// 淘系订单id
+	TbMainOrderId int64 `json:"tb_main_order_id,omitempty" xml:"tb_main_order_id,omitempty"`
+	// -20 已退款，-10 交易关闭 ，10 创单 20 已支付  30 已出货  40 交易完成
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 商品ID
+	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 }

@@ -12,10 +12,10 @@ import (
 // 取消广播在timeline和广场中的展示。
 type TaobaoWeitaoFeedCancelAPIRequest struct {
 	model.Params
-	// 广播id
-	_feedId int64
 	// 三方活动ID
 	_bizId string
+	// 广播id
+	_feedId int64
 	// 是否彻底删除（店铺动态不可见，等同卖家广播后台删除），默认false
 	_delete bool
 }
@@ -41,19 +41,6 @@ func (r TaobaoWeitaoFeedCancelAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetFeedId is FeedId Setter
-// 广播id
-func (r *TaobaoWeitaoFeedCancelAPIRequest) SetFeedId(_feedId int64) error {
-	r._feedId = _feedId
-	r.Set("feed_id", _feedId)
-	return nil
-}
-
-// GetFeedId FeedId Getter
-func (r TaobaoWeitaoFeedCancelAPIRequest) GetFeedId() int64 {
-	return r._feedId
-}
-
 // SetBizId is BizId Setter
 // 三方活动ID
 func (r *TaobaoWeitaoFeedCancelAPIRequest) SetBizId(_bizId string) error {
@@ -65,6 +52,19 @@ func (r *TaobaoWeitaoFeedCancelAPIRequest) SetBizId(_bizId string) error {
 // GetBizId BizId Getter
 func (r TaobaoWeitaoFeedCancelAPIRequest) GetBizId() string {
 	return r._bizId
+}
+
+// SetFeedId is FeedId Setter
+// 广播id
+func (r *TaobaoWeitaoFeedCancelAPIRequest) SetFeedId(_feedId int64) error {
+	r._feedId = _feedId
+	r.Set("feed_id", _feedId)
+	return nil
+}
+
+// GetFeedId FeedId Getter
+func (r TaobaoWeitaoFeedCancelAPIRequest) GetFeedId() int64 {
+	return r._feedId
 }
 
 // SetDelete is Delete Setter

@@ -58,12 +58,6 @@ type TaobaoUsceslIteminfoPutAPIRequest struct {
 	_customizeFeatureJ string
 	// 二维码
 	_itemQrCode string
-	// 商品状态0:在售 1:售罄
-	_itemStatus int64
-	// 促销状态0:非促销 1:促销
-	_ifPromotion bool
-	// 商品编码
-	_itemId int64
 	// 促销结束时间:yyyy-MM-dd HH:mm:ss
 	_promotionEnd string
 	// 促销原因
@@ -78,8 +72,14 @@ type TaobaoUsceslIteminfoPutAPIRequest struct {
 	_productionPlace string
 	// 扩展属性A
 	_customizeFeatureA string
+	// 商品状态0:在售 1:售罄
+	_itemStatus int64
+	// 商品编码
+	_itemId int64
 	// 门店ID
 	_shopId int64
+	// 促销状态0:非促销 1:促销
+	_ifPromotion bool
 }
 
 // NewTaobaoUsceslIteminfoPutRequest 初始化TaobaoUsceslIteminfoPutAPIRequest对象
@@ -402,45 +402,6 @@ func (r TaobaoUsceslIteminfoPutAPIRequest) GetItemQrCode() string {
 	return r._itemQrCode
 }
 
-// SetItemStatus is ItemStatus Setter
-// 商品状态0:在售 1:售罄
-func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemStatus(_itemStatus int64) error {
-	r._itemStatus = _itemStatus
-	r.Set("item_status", _itemStatus)
-	return nil
-}
-
-// GetItemStatus ItemStatus Getter
-func (r TaobaoUsceslIteminfoPutAPIRequest) GetItemStatus() int64 {
-	return r._itemStatus
-}
-
-// SetIfPromotion is IfPromotion Setter
-// 促销状态0:非促销 1:促销
-func (r *TaobaoUsceslIteminfoPutAPIRequest) SetIfPromotion(_ifPromotion bool) error {
-	r._ifPromotion = _ifPromotion
-	r.Set("if_promotion", _ifPromotion)
-	return nil
-}
-
-// GetIfPromotion IfPromotion Getter
-func (r TaobaoUsceslIteminfoPutAPIRequest) GetIfPromotion() bool {
-	return r._ifPromotion
-}
-
-// SetItemId is ItemId Setter
-// 商品编码
-func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
-	return nil
-}
-
-// GetItemId ItemId Getter
-func (r TaobaoUsceslIteminfoPutAPIRequest) GetItemId() int64 {
-	return r._itemId
-}
-
 // SetPromotionEnd is PromotionEnd Setter
 // 促销结束时间:yyyy-MM-dd HH:mm:ss
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetPromotionEnd(_promotionEnd string) error {
@@ -532,6 +493,32 @@ func (r TaobaoUsceslIteminfoPutAPIRequest) GetCustomizeFeatureA() string {
 	return r._customizeFeatureA
 }
 
+// SetItemStatus is ItemStatus Setter
+// 商品状态0:在售 1:售罄
+func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemStatus(_itemStatus int64) error {
+	r._itemStatus = _itemStatus
+	r.Set("item_status", _itemStatus)
+	return nil
+}
+
+// GetItemStatus ItemStatus Getter
+func (r TaobaoUsceslIteminfoPutAPIRequest) GetItemStatus() int64 {
+	return r._itemStatus
+}
+
+// SetItemId is ItemId Setter
+// 商品编码
+func (r *TaobaoUsceslIteminfoPutAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r TaobaoUsceslIteminfoPutAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
 // SetShopId is ShopId Setter
 // 门店ID
 func (r *TaobaoUsceslIteminfoPutAPIRequest) SetShopId(_shopId int64) error {
@@ -543,4 +530,17 @@ func (r *TaobaoUsceslIteminfoPutAPIRequest) SetShopId(_shopId int64) error {
 // GetShopId ShopId Getter
 func (r TaobaoUsceslIteminfoPutAPIRequest) GetShopId() int64 {
 	return r._shopId
+}
+
+// SetIfPromotion is IfPromotion Setter
+// 促销状态0:非促销 1:促销
+func (r *TaobaoUsceslIteminfoPutAPIRequest) SetIfPromotion(_ifPromotion bool) error {
+	r._ifPromotion = _ifPromotion
+	r.Set("if_promotion", _ifPromotion)
+	return nil
+}
+
+// GetIfPromotion IfPromotion Getter
+func (r TaobaoUsceslIteminfoPutAPIRequest) GetIfPromotion() bool {
+	return r._ifPromotion
 }

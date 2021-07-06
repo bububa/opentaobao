@@ -22,10 +22,10 @@ type AlibabaAiUserQuickBindAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 交易结果描述（例如： 交易成功、交易失败）
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
-	// 交易结果码（200：成功、其他：失败）
-	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
 	// 扩展字段，无用
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
 	// 交易结果详细描述（例如：用户已经存在，交易失败）
 	MessageDetail string `json:"message_detail,omitempty" xml:"message_detail,omitempty"`
+	// 交易结果码（200：成功、其他：失败）
+	StatusCode int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
 }

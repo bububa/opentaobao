@@ -16,14 +16,14 @@ type TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest struct {
 	_nick string
 	// 排序字段，starts：按开始时间排序bidCount:按销量排序
 	_orderField string
-	// 排序，true:降序， false:升序
-	_orderBy bool
 	// 页尺寸，最大200
 	_pageSize int64
 	// 页码，从1开始,最大50。最大只能获取1W个宝贝
 	_pageNo int64
 	// 推广单元类型 101001005代表标准推广，101001014代表销量明星推广
 	_productId int64
+	// 排序，true:降序， false:升序
+	_orderBy bool
 }
 
 // NewTaobaoSimbaAdgroupOnlineitemsvonGetRequest 初始化TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest对象
@@ -73,19 +73,6 @@ func (r TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest) GetOrderField() string {
 	return r._orderField
 }
 
-// SetOrderBy is OrderBy Setter
-// 排序，true:降序， false:升序
-func (r *TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest) SetOrderBy(_orderBy bool) error {
-	r._orderBy = _orderBy
-	r.Set("order_by", _orderBy)
-	return nil
-}
-
-// GetOrderBy OrderBy Getter
-func (r TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest) GetOrderBy() bool {
-	return r._orderBy
-}
-
 // SetPageSize is PageSize Setter
 // 页尺寸，最大200
 func (r *TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest) SetPageSize(_pageSize int64) error {
@@ -123,4 +110,17 @@ func (r *TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest) SetProductId(_productId 
 // GetProductId ProductId Getter
 func (r TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest) GetProductId() int64 {
 	return r._productId
+}
+
+// SetOrderBy is OrderBy Setter
+// 排序，true:降序， false:升序
+func (r *TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest) SetOrderBy(_orderBy bool) error {
+	r._orderBy = _orderBy
+	r.Set("order_by", _orderBy)
+	return nil
+}
+
+// GetOrderBy OrderBy Getter
+func (r TaobaoSimbaAdgroupOnlineitemsvonGetAPIRequest) GetOrderBy() bool {
+	return r._orderBy
 }

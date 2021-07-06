@@ -20,10 +20,10 @@ type AlibabaWdkItemMemberpriceUpdateAPIRequest struct {
 	_skuPrice int64
 	// 会员价，单位分
 	_skuMemberPrice int64
-	// 是否清空会员价
-	_cleanSkuMemberPrice bool
 	// 时间戳
 	_timeStamp int64
+	// 是否清空会员价
+	_cleanSkuMemberPrice bool
 }
 
 // NewAlibabaWdkItemMemberpriceUpdateRequest 初始化AlibabaWdkItemMemberpriceUpdateAPIRequest对象
@@ -99,19 +99,6 @@ func (r AlibabaWdkItemMemberpriceUpdateAPIRequest) GetSkuMemberPrice() int64 {
 	return r._skuMemberPrice
 }
 
-// SetCleanSkuMemberPrice is CleanSkuMemberPrice Setter
-// 是否清空会员价
-func (r *AlibabaWdkItemMemberpriceUpdateAPIRequest) SetCleanSkuMemberPrice(_cleanSkuMemberPrice bool) error {
-	r._cleanSkuMemberPrice = _cleanSkuMemberPrice
-	r.Set("clean_sku_member_price", _cleanSkuMemberPrice)
-	return nil
-}
-
-// GetCleanSkuMemberPrice CleanSkuMemberPrice Getter
-func (r AlibabaWdkItemMemberpriceUpdateAPIRequest) GetCleanSkuMemberPrice() bool {
-	return r._cleanSkuMemberPrice
-}
-
 // SetTimeStamp is TimeStamp Setter
 // 时间戳
 func (r *AlibabaWdkItemMemberpriceUpdateAPIRequest) SetTimeStamp(_timeStamp int64) error {
@@ -123,4 +110,17 @@ func (r *AlibabaWdkItemMemberpriceUpdateAPIRequest) SetTimeStamp(_timeStamp int6
 // GetTimeStamp TimeStamp Getter
 func (r AlibabaWdkItemMemberpriceUpdateAPIRequest) GetTimeStamp() int64 {
 	return r._timeStamp
+}
+
+// SetCleanSkuMemberPrice is CleanSkuMemberPrice Setter
+// 是否清空会员价
+func (r *AlibabaWdkItemMemberpriceUpdateAPIRequest) SetCleanSkuMemberPrice(_cleanSkuMemberPrice bool) error {
+	r._cleanSkuMemberPrice = _cleanSkuMemberPrice
+	r.Set("clean_sku_member_price", _cleanSkuMemberPrice)
+	return nil
+}
+
+// GetCleanSkuMemberPrice CleanSkuMemberPrice Getter
+func (r AlibabaWdkItemMemberpriceUpdateAPIRequest) GetCleanSkuMemberPrice() bool {
+	return r._cleanSkuMemberPrice
 }

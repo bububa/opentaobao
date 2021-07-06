@@ -12,14 +12,12 @@ import (
 // 门店在销售给顾客时，扫描追溯码的数据按照单据回传；
 type AlibabaAlihealthDrugKytUploadretailAPIRequest struct {
 	model.Params
+	// 追溯码[多个时用逗号分开]
+	_traceCodes []string
 	// 单据编号（唯一）
 	_billCode string
 	// 单据生成时间
 	_billTime string
-	// 单据类型[321,零售出库][322,疫苗接种]
-	_billType int64
-	// 药品类型[3,普药]
-	_physicType int64
 	// 码上放心平台企业编码（门店）
 	_refUserId string
 	// 发货企业(可为空)
@@ -30,8 +28,6 @@ type AlibabaAlihealthDrugKytUploadretailAPIRequest struct {
 	_operIcName string
 	// 请求类型[暂定都写2]
 	_clientType string
-	// 追溯码[多个时用逗号分开]
-	_traceCodes []string
 	// 患者电话
 	_userTel string
 	// 互联网标识
@@ -48,6 +44,10 @@ type AlibabaAlihealthDrugKytUploadretailAPIRequest struct {
 	_customerIdType string
 	// 购买人证件编号
 	_customerId string
+	// 单据类型[321,零售出库][322,疫苗接种]
+	_billType int64
+	// 药品类型[3,普药]
+	_physicType int64
 }
 
 // NewAlibabaAlihealthDrugKytUploadretailRequest 初始化AlibabaAlihealthDrugKytUploadretailAPIRequest对象
@@ -69,6 +69,19 @@ func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetApiParams() url.Values
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTraceCodes is TraceCodes Setter
+// 追溯码[多个时用逗号分开]
+func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetTraceCodes(_traceCodes []string) error {
+	r._traceCodes = _traceCodes
+	r.Set("trace_codes", _traceCodes)
+	return nil
+}
+
+// GetTraceCodes TraceCodes Getter
+func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetTraceCodes() []string {
+	return r._traceCodes
 }
 
 // SetBillCode is BillCode Setter
@@ -95,32 +108,6 @@ func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetBillTime(_billTime st
 // GetBillTime BillTime Getter
 func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetBillTime() string {
 	return r._billTime
-}
-
-// SetBillType is BillType Setter
-// 单据类型[321,零售出库][322,疫苗接种]
-func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetBillType(_billType int64) error {
-	r._billType = _billType
-	r.Set("bill_type", _billType)
-	return nil
-}
-
-// GetBillType BillType Getter
-func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetBillType() int64 {
-	return r._billType
-}
-
-// SetPhysicType is PhysicType Setter
-// 药品类型[3,普药]
-func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetPhysicType(_physicType int64) error {
-	r._physicType = _physicType
-	r.Set("physic_type", _physicType)
-	return nil
-}
-
-// GetPhysicType PhysicType Getter
-func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetPhysicType() int64 {
-	return r._physicType
 }
 
 // SetRefUserId is RefUserId Setter
@@ -186,19 +173,6 @@ func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetClientType(_clientTyp
 // GetClientType ClientType Getter
 func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetClientType() string {
 	return r._clientType
-}
-
-// SetTraceCodes is TraceCodes Setter
-// 追溯码[多个时用逗号分开]
-func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetTraceCodes(_traceCodes []string) error {
-	r._traceCodes = _traceCodes
-	r.Set("trace_codes", _traceCodes)
-	return nil
-}
-
-// GetTraceCodes TraceCodes Getter
-func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetTraceCodes() []string {
-	return r._traceCodes
 }
 
 // SetUserTel is UserTel Setter
@@ -303,4 +277,30 @@ func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetCustomerId(_customerI
 // GetCustomerId CustomerId Getter
 func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetCustomerId() string {
 	return r._customerId
+}
+
+// SetBillType is BillType Setter
+// 单据类型[321,零售出库][322,疫苗接种]
+func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetBillType(_billType int64) error {
+	r._billType = _billType
+	r.Set("bill_type", _billType)
+	return nil
+}
+
+// GetBillType BillType Getter
+func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetBillType() int64 {
+	return r._billType
+}
+
+// SetPhysicType is PhysicType Setter
+// 药品类型[3,普药]
+func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetPhysicType(_physicType int64) error {
+	r._physicType = _physicType
+	r.Set("physic_type", _physicType)
+	return nil
+}
+
+// GetPhysicType PhysicType Getter
+func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetPhysicType() int64 {
+	return r._physicType
 }

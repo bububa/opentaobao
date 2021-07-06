@@ -10,8 +10,8 @@ type CollinadataContext struct {
 	SceneId string `json:"scene_id,omitempty" xml:"scene_id,omitempty"`
 	// 参数签名, 签名函数由ISP提供
 	SerialNo string `json:"serial_no,omitempty" xml:"serial_no,omitempty"`
-	// 发起查询的时间,用于加密serial_no
-	TimeStamp int64 `json:"time_stamp,omitempty" xml:"time_stamp,omitempty"`
 	// 透传参数
 	Trans string `json:"trans,omitempty" xml:"trans,omitempty"`
+	// 发起查询的时间,用于加密serial_no
+	TimeStamp int64 `json:"time_stamp,omitempty" xml:"time_stamp,omitempty"`
 }

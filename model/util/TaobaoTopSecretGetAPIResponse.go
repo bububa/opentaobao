@@ -20,14 +20,14 @@ type TaobaoTopSecretGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_secret_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 下次更新秘钥间隔，单位（秒）
-	Interval int64 `json:"interval,omitempty" xml:"interval,omitempty"`
 	// 秘钥值
 	Secret string `json:"secret,omitempty" xml:"secret,omitempty"`
+	// app配置信息
+	AppConfig string `json:"app_config,omitempty" xml:"app_config,omitempty"`
+	// 下次更新秘钥间隔，单位（秒）
+	Interval int64 `json:"interval,omitempty" xml:"interval,omitempty"`
 	// 秘钥版本号
 	SecretVersion int64 `json:"secret_version,omitempty" xml:"secret_version,omitempty"`
 	// 最长有效期，容灾使用，单位（秒）
 	MaxInterval int64 `json:"max_interval,omitempty" xml:"max_interval,omitempty"`
-	// app配置信息
-	AppConfig string `json:"app_config,omitempty" xml:"app_config,omitempty"`
 }

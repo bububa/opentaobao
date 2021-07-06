@@ -14,18 +14,20 @@ type TaobaoXhotelDataServiceOrderDetailAPIRequest struct {
 	model.Params
 	// 查询开始日期
 	_startDate string
+	// 渠道商名称
+	_vendor string
+	// 查询结束时间
+	_endDate string
+	// 供应商名称
+	_supplier string
 	// 是否查无订单 1:是 0:否
 	_isCallNoOrder int64
 	// 酒店id
 	_hid int64
 	// 是否特殊时段订单 1:是 0:否
 	_isSpecTimeOrder int64
-	// 渠道商名称
-	_vendor string
 	// 分页大小
 	_pageSize int64
-	// 查询结束时间
-	_endDate string
 	// 是否到店无房 1:是
 	_isNoRoomCompen int64
 	// 分页参数
@@ -34,8 +36,6 @@ type TaobaoXhotelDataServiceOrderDetailAPIRequest struct {
 	_isSellerDeny int64
 	// 是否卖家原因退款 1:是 0:否
 	_isSellerRefund int64
-	// 供应商名称
-	_supplier string
 }
 
 // NewTaobaoXhotelDataServiceOrderDetailRequest 初始化TaobaoXhotelDataServiceOrderDetailAPIRequest对象
@@ -70,6 +70,45 @@ func (r *TaobaoXhotelDataServiceOrderDetailAPIRequest) SetStartDate(_startDate s
 // GetStartDate StartDate Getter
 func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetStartDate() string {
 	return r._startDate
+}
+
+// SetVendor is Vendor Setter
+// 渠道商名称
+func (r *TaobaoXhotelDataServiceOrderDetailAPIRequest) SetVendor(_vendor string) error {
+	r._vendor = _vendor
+	r.Set("vendor", _vendor)
+	return nil
+}
+
+// GetVendor Vendor Getter
+func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetVendor() string {
+	return r._vendor
+}
+
+// SetEndDate is EndDate Setter
+// 查询结束时间
+func (r *TaobaoXhotelDataServiceOrderDetailAPIRequest) SetEndDate(_endDate string) error {
+	r._endDate = _endDate
+	r.Set("end_date", _endDate)
+	return nil
+}
+
+// GetEndDate EndDate Getter
+func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetEndDate() string {
+	return r._endDate
+}
+
+// SetSupplier is Supplier Setter
+// 供应商名称
+func (r *TaobaoXhotelDataServiceOrderDetailAPIRequest) SetSupplier(_supplier string) error {
+	r._supplier = _supplier
+	r.Set("supplier", _supplier)
+	return nil
+}
+
+// GetSupplier Supplier Getter
+func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetSupplier() string {
+	return r._supplier
 }
 
 // SetIsCallNoOrder is IsCallNoOrder Setter
@@ -111,19 +150,6 @@ func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetIsSpecTimeOrder() int64
 	return r._isSpecTimeOrder
 }
 
-// SetVendor is Vendor Setter
-// 渠道商名称
-func (r *TaobaoXhotelDataServiceOrderDetailAPIRequest) SetVendor(_vendor string) error {
-	r._vendor = _vendor
-	r.Set("vendor", _vendor)
-	return nil
-}
-
-// GetVendor Vendor Getter
-func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetVendor() string {
-	return r._vendor
-}
-
 // SetPageSize is PageSize Setter
 // 分页大小
 func (r *TaobaoXhotelDataServiceOrderDetailAPIRequest) SetPageSize(_pageSize int64) error {
@@ -135,19 +161,6 @@ func (r *TaobaoXhotelDataServiceOrderDetailAPIRequest) SetPageSize(_pageSize int
 // GetPageSize PageSize Getter
 func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetEndDate is EndDate Setter
-// 查询结束时间
-func (r *TaobaoXhotelDataServiceOrderDetailAPIRequest) SetEndDate(_endDate string) error {
-	r._endDate = _endDate
-	r.Set("end_date", _endDate)
-	return nil
-}
-
-// GetEndDate EndDate Getter
-func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetEndDate() string {
-	return r._endDate
 }
 
 // SetIsNoRoomCompen is IsNoRoomCompen Setter
@@ -200,17 +213,4 @@ func (r *TaobaoXhotelDataServiceOrderDetailAPIRequest) SetIsSellerRefund(_isSell
 // GetIsSellerRefund IsSellerRefund Getter
 func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetIsSellerRefund() int64 {
 	return r._isSellerRefund
-}
-
-// SetSupplier is Supplier Setter
-// 供应商名称
-func (r *TaobaoXhotelDataServiceOrderDetailAPIRequest) SetSupplier(_supplier string) error {
-	r._supplier = _supplier
-	r.Set("supplier", _supplier)
-	return nil
-}
-
-// GetSupplier Supplier Getter
-func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetSupplier() string {
-	return r._supplier
 }

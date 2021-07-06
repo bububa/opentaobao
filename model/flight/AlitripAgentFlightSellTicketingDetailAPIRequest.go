@@ -12,10 +12,10 @@ import (
 // 销售出票详情
 type AlitripAgentFlightSellTicketingDetailAPIRequest struct {
 	model.Params
-	// 国内国际标识
-	_domesticIntl int64
 	// 飞猪订单号
 	_orderId string
+	// 国内国际标识
+	_domesticIntl int64
 }
 
 // NewAlitripAgentFlightSellTicketingDetailRequest 初始化AlitripAgentFlightSellTicketingDetailAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlitripAgentFlightSellTicketingDetailAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// SetDomesticIntl is DomesticIntl Setter
-// 国内国际标识
-func (r *AlitripAgentFlightSellTicketingDetailAPIRequest) SetDomesticIntl(_domesticIntl int64) error {
-	r._domesticIntl = _domesticIntl
-	r.Set("domestic_intl", _domesticIntl)
-	return nil
-}
-
-// GetDomesticIntl DomesticIntl Getter
-func (r AlitripAgentFlightSellTicketingDetailAPIRequest) GetDomesticIntl() int64 {
-	return r._domesticIntl
-}
-
 // SetOrderId is OrderId Setter
 // 飞猪订单号
 func (r *AlitripAgentFlightSellTicketingDetailAPIRequest) SetOrderId(_orderId string) error {
@@ -63,4 +50,17 @@ func (r *AlitripAgentFlightSellTicketingDetailAPIRequest) SetOrderId(_orderId st
 // GetOrderId OrderId Getter
 func (r AlitripAgentFlightSellTicketingDetailAPIRequest) GetOrderId() string {
 	return r._orderId
+}
+
+// SetDomesticIntl is DomesticIntl Setter
+// 国内国际标识
+func (r *AlitripAgentFlightSellTicketingDetailAPIRequest) SetDomesticIntl(_domesticIntl int64) error {
+	r._domesticIntl = _domesticIntl
+	r.Set("domestic_intl", _domesticIntl)
+	return nil
+}
+
+// GetDomesticIntl DomesticIntl Getter
+func (r AlitripAgentFlightSellTicketingDetailAPIRequest) GetDomesticIntl() int64 {
+	return r._domesticIntl
 }

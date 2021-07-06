@@ -2,6 +2,8 @@ package fundplatform
 
 // SyncLedgerInvoiceRequest 结构体
 type SyncLedgerInvoiceRequest struct {
+	// 发票行
+	InputInvoiceLineDTOList []InputInvoiceLineLedgerDto `json:"input_invoice_line_d_t_o_list,omitempty" xml:"input_invoice_line_d_t_o_list>input_invoice_line_ledger_dto,omitempty"`
 	// 金额
 	Amount string `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 认证时间
@@ -14,8 +16,6 @@ type SyncLedgerInvoiceRequest struct {
 	CipherText string `json:"cipher_text,omitempty" xml:"cipher_text,omitempty"`
 	// 不含税金额
 	ExcludingTaxAmount string `json:"excluding_tax_amount,omitempty" xml:"excluding_tax_amount,omitempty"`
-	// 发票行
-	InputInvoiceLineDTOList []InputInvoiceLineLedgerDto `json:"input_invoice_line_d_t_o_list,omitempty" xml:"input_invoice_line_d_t_o_list>input_invoice_line_ledger_dto,omitempty"`
 	// 发票代码
 	InvoiceCode string `json:"invoice_code,omitempty" xml:"invoice_code,omitempty"`
 	// 开票日期

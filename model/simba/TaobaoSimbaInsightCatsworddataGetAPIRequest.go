@@ -12,10 +12,10 @@ import (
 // 获取给定词在给定类目下的详细数据
 type TaobaoSimbaInsightCatsworddataGetAPIRequest struct {
 	model.Params
-	// 类目id
-	_catId string
 	// 需要查询的关键词列表，最大长度100。
 	_bidwordList []string
+	// 类目id
+	_catId string
 	// 开始时间，格式只能为：yyyy-MM-dd
 	_startDate string
 	// 结束时间，格式只能为：yyyy-MM-dd
@@ -43,19 +43,6 @@ func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetCatId is CatId Setter
-// 类目id
-func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetCatId(_catId string) error {
-	r._catId = _catId
-	r.Set("cat_id", _catId)
-	return nil
-}
-
-// GetCatId CatId Getter
-func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetCatId() string {
-	return r._catId
-}
-
 // SetBidwordList is BidwordList Setter
 // 需要查询的关键词列表，最大长度100。
 func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetBidwordList(_bidwordList []string) error {
@@ -67,6 +54,19 @@ func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetBidwordList(_bidwordLis
 // GetBidwordList BidwordList Getter
 func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetBidwordList() []string {
 	return r._bidwordList
+}
+
+// SetCatId is CatId Setter
+// 类目id
+func (r *TaobaoSimbaInsightCatsworddataGetAPIRequest) SetCatId(_catId string) error {
+	r._catId = _catId
+	r.Set("cat_id", _catId)
+	return nil
+}
+
+// GetCatId CatId Getter
+func (r TaobaoSimbaInsightCatsworddataGetAPIRequest) GetCatId() string {
+	return r._catId
 }
 
 // SetStartDate is StartDate Setter

@@ -12,16 +12,10 @@ import (
 // 提供给CRS商家搜索订单列表，仅返回订单号列表
 type AlitripTravelCrsorderSearchAPIRequest struct {
 	model.Params
-	// 订单状态，10-待派单，20-待用车，30-已取消，40-待处理退款申请，60-已关闭，70-已完成
-	_crsOrderStatus int64
 	// 用车时间-起始
 	_beginCarUseTime string
-	// 页大小，默认20
-	_pageSize int64
 	// 用车时间-终止
 	_endCarUseTime string
-	// 当前页，默认值1
-	_currentPage int64
 	// 支付时间-终止
 	_endPayTime string
 	// 支付时间-起始
@@ -30,6 +24,12 @@ type AlitripTravelCrsorderSearchAPIRequest struct {
 	_beginCancelTime string
 	// 取消时间-终止
 	_endCancelTime string
+	// 订单状态，10-待派单，20-待用车，30-已取消，40-待处理退款申请，60-已关闭，70-已完成
+	_crsOrderStatus int64
+	// 页大小，默认20
+	_pageSize int64
+	// 当前页，默认值1
+	_currentPage int64
 }
 
 // NewAlitripTravelCrsorderSearchRequest 初始化AlitripTravelCrsorderSearchAPIRequest对象
@@ -53,19 +53,6 @@ func (r AlitripTravelCrsorderSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetCrsOrderStatus is CrsOrderStatus Setter
-// 订单状态，10-待派单，20-待用车，30-已取消，40-待处理退款申请，60-已关闭，70-已完成
-func (r *AlitripTravelCrsorderSearchAPIRequest) SetCrsOrderStatus(_crsOrderStatus int64) error {
-	r._crsOrderStatus = _crsOrderStatus
-	r.Set("crs_order_status", _crsOrderStatus)
-	return nil
-}
-
-// GetCrsOrderStatus CrsOrderStatus Getter
-func (r AlitripTravelCrsorderSearchAPIRequest) GetCrsOrderStatus() int64 {
-	return r._crsOrderStatus
-}
-
 // SetBeginCarUseTime is BeginCarUseTime Setter
 // 用车时间-起始
 func (r *AlitripTravelCrsorderSearchAPIRequest) SetBeginCarUseTime(_beginCarUseTime string) error {
@@ -79,19 +66,6 @@ func (r AlitripTravelCrsorderSearchAPIRequest) GetBeginCarUseTime() string {
 	return r._beginCarUseTime
 }
 
-// SetPageSize is PageSize Setter
-// 页大小，默认20
-func (r *AlitripTravelCrsorderSearchAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlitripTravelCrsorderSearchAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetEndCarUseTime is EndCarUseTime Setter
 // 用车时间-终止
 func (r *AlitripTravelCrsorderSearchAPIRequest) SetEndCarUseTime(_endCarUseTime string) error {
@@ -103,19 +77,6 @@ func (r *AlitripTravelCrsorderSearchAPIRequest) SetEndCarUseTime(_endCarUseTime 
 // GetEndCarUseTime EndCarUseTime Getter
 func (r AlitripTravelCrsorderSearchAPIRequest) GetEndCarUseTime() string {
 	return r._endCarUseTime
-}
-
-// SetCurrentPage is CurrentPage Setter
-// 当前页，默认值1
-func (r *AlitripTravelCrsorderSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
-	r._currentPage = _currentPage
-	r.Set("current_page", _currentPage)
-	return nil
-}
-
-// GetCurrentPage CurrentPage Getter
-func (r AlitripTravelCrsorderSearchAPIRequest) GetCurrentPage() int64 {
-	return r._currentPage
 }
 
 // SetEndPayTime is EndPayTime Setter
@@ -168,4 +129,43 @@ func (r *AlitripTravelCrsorderSearchAPIRequest) SetEndCancelTime(_endCancelTime 
 // GetEndCancelTime EndCancelTime Getter
 func (r AlitripTravelCrsorderSearchAPIRequest) GetEndCancelTime() string {
 	return r._endCancelTime
+}
+
+// SetCrsOrderStatus is CrsOrderStatus Setter
+// 订单状态，10-待派单，20-待用车，30-已取消，40-待处理退款申请，60-已关闭，70-已完成
+func (r *AlitripTravelCrsorderSearchAPIRequest) SetCrsOrderStatus(_crsOrderStatus int64) error {
+	r._crsOrderStatus = _crsOrderStatus
+	r.Set("crs_order_status", _crsOrderStatus)
+	return nil
+}
+
+// GetCrsOrderStatus CrsOrderStatus Getter
+func (r AlitripTravelCrsorderSearchAPIRequest) GetCrsOrderStatus() int64 {
+	return r._crsOrderStatus
+}
+
+// SetPageSize is PageSize Setter
+// 页大小，默认20
+func (r *AlitripTravelCrsorderSearchAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlitripTravelCrsorderSearchAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetCurrentPage is CurrentPage Setter
+// 当前页，默认值1
+func (r *AlitripTravelCrsorderSearchAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// GetCurrentPage CurrentPage Getter
+func (r AlitripTravelCrsorderSearchAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
 }

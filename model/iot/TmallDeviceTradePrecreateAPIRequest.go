@@ -15,8 +15,6 @@ import (
 // 3，同一个码只运行一个用户扫码，多个用户扫一个码会报错 订单不存在。
 type TmallDeviceTradePrecreateAPIRequest struct {
 	model.Params
-	// 交易类型。1，售卖。2，派样
-	_type int64
 	// 商品列表
 	_itemList []TradeItemDo
 	// 设备业务编码
@@ -27,6 +25,8 @@ type TmallDeviceTradePrecreateAPIRequest struct {
 	_callbackUrl string
 	// 导购员手机号码
 	_baPhone string
+	// 交易类型。1，售卖。2，派样
+	_type int64
 	// 导购员所属门店
 	_baStoreId int64
 }
@@ -50,19 +50,6 @@ func (r TmallDeviceTradePrecreateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetType is Type Setter
-// 交易类型。1，售卖。2，派样
-func (r *TmallDeviceTradePrecreateAPIRequest) SetType(_type int64) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r TmallDeviceTradePrecreateAPIRequest) GetType() int64 {
-	return r._type
 }
 
 // SetItemList is ItemList Setter
@@ -128,6 +115,19 @@ func (r *TmallDeviceTradePrecreateAPIRequest) SetBaPhone(_baPhone string) error 
 // GetBaPhone BaPhone Getter
 func (r TmallDeviceTradePrecreateAPIRequest) GetBaPhone() string {
 	return r._baPhone
+}
+
+// SetType is Type Setter
+// 交易类型。1，售卖。2，派样
+func (r *TmallDeviceTradePrecreateAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r TmallDeviceTradePrecreateAPIRequest) GetType() int64 {
+	return r._type
 }
 
 // SetBaStoreId is BaStoreId Setter

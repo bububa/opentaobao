@@ -12,10 +12,10 @@ import (
 // openim群聊天记录导入
 type TaobaoOpenimTribelogsImportAPIRequest struct {
 	model.Params
-	// 群号。必须为已存在的群，且群主属于本app
-	_tribeId int64
 	// 消息列表
 	_messages []TribeTextMessage
+	// 群号。必须为已存在的群，且群主属于本app
+	_tribeId int64
 }
 
 // NewTaobaoOpenimTribelogsImportRequest 初始化TaobaoOpenimTribelogsImportAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoOpenimTribelogsImportAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetTribeId is TribeId Setter
-// 群号。必须为已存在的群，且群主属于本app
-func (r *TaobaoOpenimTribelogsImportAPIRequest) SetTribeId(_tribeId int64) error {
-	r._tribeId = _tribeId
-	r.Set("tribe_id", _tribeId)
-	return nil
-}
-
-// GetTribeId TribeId Getter
-func (r TaobaoOpenimTribelogsImportAPIRequest) GetTribeId() int64 {
-	return r._tribeId
-}
-
 // SetMessages is Messages Setter
 // 消息列表
 func (r *TaobaoOpenimTribelogsImportAPIRequest) SetMessages(_messages []TribeTextMessage) error {
@@ -63,4 +50,17 @@ func (r *TaobaoOpenimTribelogsImportAPIRequest) SetMessages(_messages []TribeTex
 // GetMessages Messages Getter
 func (r TaobaoOpenimTribelogsImportAPIRequest) GetMessages() []TribeTextMessage {
 	return r._messages
+}
+
+// SetTribeId is TribeId Setter
+// 群号。必须为已存在的群，且群主属于本app
+func (r *TaobaoOpenimTribelogsImportAPIRequest) SetTribeId(_tribeId int64) error {
+	r._tribeId = _tribeId
+	r.Set("tribe_id", _tribeId)
+	return nil
+}
+
+// GetTribeId TribeId Getter
+func (r TaobaoOpenimTribelogsImportAPIRequest) GetTribeId() int64 {
+	return r._tribeId
 }

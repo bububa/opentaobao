@@ -12,12 +12,12 @@ import (
 // 获取关键词新的质量分
 type TaobaoSimbaKeywordsQscoreSplitGetAPIRequest struct {
 	model.Params
+	// 词id数组（最多批量获取20个）
+	_bidwordIds []int64
 	// 账号昵称
 	_nick string
 	// 推广组id
 	_adGroupId int64
-	// 词id数组（最多批量获取20个）
-	_bidwordIds []int64
 }
 
 // NewTaobaoSimbaKeywordsQscoreSplitGetRequest 初始化TaobaoSimbaKeywordsQscoreSplitGetAPIRequest对象
@@ -39,6 +39,19 @@ func (r TaobaoSimbaKeywordsQscoreSplitGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetBidwordIds is BidwordIds Setter
+// 词id数组（最多批量获取20个）
+func (r *TaobaoSimbaKeywordsQscoreSplitGetAPIRequest) SetBidwordIds(_bidwordIds []int64) error {
+	r._bidwordIds = _bidwordIds
+	r.Set("bidword_ids", _bidwordIds)
+	return nil
+}
+
+// GetBidwordIds BidwordIds Getter
+func (r TaobaoSimbaKeywordsQscoreSplitGetAPIRequest) GetBidwordIds() []int64 {
+	return r._bidwordIds
 }
 
 // SetNick is Nick Setter
@@ -65,17 +78,4 @@ func (r *TaobaoSimbaKeywordsQscoreSplitGetAPIRequest) SetAdGroupId(_adGroupId in
 // GetAdGroupId AdGroupId Getter
 func (r TaobaoSimbaKeywordsQscoreSplitGetAPIRequest) GetAdGroupId() int64 {
 	return r._adGroupId
-}
-
-// SetBidwordIds is BidwordIds Setter
-// 词id数组（最多批量获取20个）
-func (r *TaobaoSimbaKeywordsQscoreSplitGetAPIRequest) SetBidwordIds(_bidwordIds []int64) error {
-	r._bidwordIds = _bidwordIds
-	r.Set("bidword_ids", _bidwordIds)
-	return nil
-}
-
-// GetBidwordIds BidwordIds Getter
-func (r TaobaoSimbaKeywordsQscoreSplitGetAPIRequest) GetBidwordIds() []int64 {
-	return r._bidwordIds
 }

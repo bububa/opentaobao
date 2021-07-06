@@ -12,14 +12,14 @@ import (
 // 更新应用版本审核状态
 type YunosTvpubadminDeviceUpdateappstatusAPIRequest struct {
 	model.Params
-	// 应用ID
-	_versionId int64
-	// 牌照方
-	_license int64
 	// 审核状态
 	_status string
 	// 审核意见
 	_auditComment string
+	// 应用ID
+	_versionId int64
+	// 牌照方
+	_license int64
 }
 
 // NewYunosTvpubadminDeviceUpdateappstatusRequest 初始化YunosTvpubadminDeviceUpdateappstatusAPIRequest对象
@@ -41,32 +41,6 @@ func (r YunosTvpubadminDeviceUpdateappstatusAPIRequest) GetApiParams() url.Value
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetVersionId is VersionId Setter
-// 应用ID
-func (r *YunosTvpubadminDeviceUpdateappstatusAPIRequest) SetVersionId(_versionId int64) error {
-	r._versionId = _versionId
-	r.Set("version_id", _versionId)
-	return nil
-}
-
-// GetVersionId VersionId Getter
-func (r YunosTvpubadminDeviceUpdateappstatusAPIRequest) GetVersionId() int64 {
-	return r._versionId
-}
-
-// SetLicense is License Setter
-// 牌照方
-func (r *YunosTvpubadminDeviceUpdateappstatusAPIRequest) SetLicense(_license int64) error {
-	r._license = _license
-	r.Set("license", _license)
-	return nil
-}
-
-// GetLicense License Getter
-func (r YunosTvpubadminDeviceUpdateappstatusAPIRequest) GetLicense() int64 {
-	return r._license
 }
 
 // SetStatus is Status Setter
@@ -93,4 +67,30 @@ func (r *YunosTvpubadminDeviceUpdateappstatusAPIRequest) SetAuditComment(_auditC
 // GetAuditComment AuditComment Getter
 func (r YunosTvpubadminDeviceUpdateappstatusAPIRequest) GetAuditComment() string {
 	return r._auditComment
+}
+
+// SetVersionId is VersionId Setter
+// 应用ID
+func (r *YunosTvpubadminDeviceUpdateappstatusAPIRequest) SetVersionId(_versionId int64) error {
+	r._versionId = _versionId
+	r.Set("version_id", _versionId)
+	return nil
+}
+
+// GetVersionId VersionId Getter
+func (r YunosTvpubadminDeviceUpdateappstatusAPIRequest) GetVersionId() int64 {
+	return r._versionId
+}
+
+// SetLicense is License Setter
+// 牌照方
+func (r *YunosTvpubadminDeviceUpdateappstatusAPIRequest) SetLicense(_license int64) error {
+	r._license = _license
+	r.Set("license", _license)
+	return nil
+}
+
+// GetLicense License Getter
+func (r YunosTvpubadminDeviceUpdateappstatusAPIRequest) GetLicense() int64 {
+	return r._license
 }

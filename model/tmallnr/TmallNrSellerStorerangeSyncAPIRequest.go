@@ -12,10 +12,10 @@ import (
 // 同步商户中心服务范围
 type TmallNrSellerStorerangeSyncAPIRequest struct {
 	model.Params
-	// 业务身份标识,dss定时送；self_day 自配日达；self_hour 自配小时达
-	_bizIdentity string
 	// 系统自动生成
 	_reqDTOList []SyncServiceRangeRequestDto
+	// 业务身份标识,dss定时送；self_day 自配日达；self_hour 自配小时达
+	_bizIdentity string
 	// 卖家id，有可能和登录seller不是同一个id
 	_sellerId int64
 }
@@ -41,19 +41,6 @@ func (r TmallNrSellerStorerangeSyncAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetBizIdentity is BizIdentity Setter
-// 业务身份标识,dss定时送；self_day 自配日达；self_hour 自配小时达
-func (r *TmallNrSellerStorerangeSyncAPIRequest) SetBizIdentity(_bizIdentity string) error {
-	r._bizIdentity = _bizIdentity
-	r.Set("biz_identity", _bizIdentity)
-	return nil
-}
-
-// GetBizIdentity BizIdentity Getter
-func (r TmallNrSellerStorerangeSyncAPIRequest) GetBizIdentity() string {
-	return r._bizIdentity
-}
-
 // SetReqDTOList is ReqDTOList Setter
 // 系统自动生成
 func (r *TmallNrSellerStorerangeSyncAPIRequest) SetReqDTOList(_reqDTOList []SyncServiceRangeRequestDto) error {
@@ -65,6 +52,19 @@ func (r *TmallNrSellerStorerangeSyncAPIRequest) SetReqDTOList(_reqDTOList []Sync
 // GetReqDTOList ReqDTOList Getter
 func (r TmallNrSellerStorerangeSyncAPIRequest) GetReqDTOList() []SyncServiceRangeRequestDto {
 	return r._reqDTOList
+}
+
+// SetBizIdentity is BizIdentity Setter
+// 业务身份标识,dss定时送；self_day 自配日达；self_hour 自配小时达
+func (r *TmallNrSellerStorerangeSyncAPIRequest) SetBizIdentity(_bizIdentity string) error {
+	r._bizIdentity = _bizIdentity
+	r.Set("biz_identity", _bizIdentity)
+	return nil
+}
+
+// GetBizIdentity BizIdentity Getter
+func (r TmallNrSellerStorerangeSyncAPIRequest) GetBizIdentity() string {
+	return r._bizIdentity
 }
 
 // SetSellerId is SellerId Setter

@@ -2,8 +2,6 @@ package nlife
 
 // Deliverlist 结构体
 type Deliverlist struct {
-	// 发货单的批次号
-	BatchNo int64 `json:"batch_no,omitempty" xml:"batch_no,omitempty"`
 	// 发货单号
 	ConsignNo string `json:"consign_no,omitempty" xml:"consign_no,omitempty"`
 	// 物流公司
@@ -12,4 +10,6 @@ type Deliverlist struct {
 	LogisticsNo string `json:"logistics_no,omitempty" xml:"logistics_no,omitempty"`
 	// 发货时间
 	GmtConsign string `json:"gmt_consign,omitempty" xml:"gmt_consign,omitempty"`
+	// 发货单的批次号
+	BatchNo int64 `json:"batch_no,omitempty" xml:"batch_no,omitempty"`
 }

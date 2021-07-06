@@ -12,10 +12,10 @@ import (
 // 更新应用升级状态
 type YunosOsupdateVersionstatusUpdateAPIRequest struct {
 	model.Params
-	// 升级任务ID
-	_id int64
 	// 状态值
 	_status string
+	// 升级任务ID
+	_id int64
 }
 
 // NewYunosOsupdateVersionstatusUpdateRequest 初始化YunosOsupdateVersionstatusUpdateAPIRequest对象
@@ -39,19 +39,6 @@ func (r YunosOsupdateVersionstatusUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetId is Id Setter
-// 升级任务ID
-func (r *YunosOsupdateVersionstatusUpdateAPIRequest) SetId(_id int64) error {
-	r._id = _id
-	r.Set("id", _id)
-	return nil
-}
-
-// GetId Id Getter
-func (r YunosOsupdateVersionstatusUpdateAPIRequest) GetId() int64 {
-	return r._id
-}
-
 // SetStatus is Status Setter
 // 状态值
 func (r *YunosOsupdateVersionstatusUpdateAPIRequest) SetStatus(_status string) error {
@@ -63,4 +50,17 @@ func (r *YunosOsupdateVersionstatusUpdateAPIRequest) SetStatus(_status string) e
 // GetStatus Status Getter
 func (r YunosOsupdateVersionstatusUpdateAPIRequest) GetStatus() string {
 	return r._status
+}
+
+// SetId is Id Setter
+// 升级任务ID
+func (r *YunosOsupdateVersionstatusUpdateAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// GetId Id Getter
+func (r YunosOsupdateVersionstatusUpdateAPIRequest) GetId() int64 {
+	return r._id
 }

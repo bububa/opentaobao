@@ -12,14 +12,14 @@ import (
 // 流量钱包流量扣减接口
 type AlibabaAliqinFlowWalletConsumeAPIRequest struct {
 	model.Params
-	// 扣减流量值
-	_flow int64
 	// 扣减流水号
 	_serialNo string
 	// 扣减原因
 	_reason string
 	// 备注
 	_remark string
+	// 扣减流量值
+	_flow int64
 }
 
 // NewAlibabaAliqinFlowWalletConsumeRequest 初始化AlibabaAliqinFlowWalletConsumeAPIRequest对象
@@ -41,19 +41,6 @@ func (r AlibabaAliqinFlowWalletConsumeAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetFlow is Flow Setter
-// 扣减流量值
-func (r *AlibabaAliqinFlowWalletConsumeAPIRequest) SetFlow(_flow int64) error {
-	r._flow = _flow
-	r.Set("flow", _flow)
-	return nil
-}
-
-// GetFlow Flow Getter
-func (r AlibabaAliqinFlowWalletConsumeAPIRequest) GetFlow() int64 {
-	return r._flow
 }
 
 // SetSerialNo is SerialNo Setter
@@ -93,4 +80,17 @@ func (r *AlibabaAliqinFlowWalletConsumeAPIRequest) SetRemark(_remark string) err
 // GetRemark Remark Getter
 func (r AlibabaAliqinFlowWalletConsumeAPIRequest) GetRemark() string {
 	return r._remark
+}
+
+// SetFlow is Flow Setter
+// 扣减流量值
+func (r *AlibabaAliqinFlowWalletConsumeAPIRequest) SetFlow(_flow int64) error {
+	r._flow = _flow
+	r.Set("flow", _flow)
+	return nil
+}
+
+// GetFlow Flow Getter
+func (r AlibabaAliqinFlowWalletConsumeAPIRequest) GetFlow() int64 {
+	return r._flow
 }

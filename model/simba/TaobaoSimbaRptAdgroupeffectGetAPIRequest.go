@@ -16,10 +16,6 @@ type TaobaoSimbaRptAdgroupeffectGetAPIRequest struct {
 	_subwayToken string
 	// 昵称
 	_nick string
-	// 推广计划id
-	_campaignId int64
-	// 推广组id
-	_adgroupId int64
 	// 开始时间，格式yyyy-mm-dd
 	_startTime string
 	// 结束时间，格式yyyy-mm-dd
@@ -28,6 +24,10 @@ type TaobaoSimbaRptAdgroupeffectGetAPIRequest struct {
 	_searchType string
 	// 数据来源（PC站内：1，PC站外：2，无线站内：4，无线站外 : 5）可多选，以逗号分隔
 	_source string
+	// 推广计划id
+	_campaignId int64
+	// 推广组id
+	_adgroupId int64
 	// 页码
 	_pageNo int64
 	// 每页大小
@@ -81,32 +81,6 @@ func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// SetCampaignId is CampaignId Setter
-// 推广计划id
-func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetCampaignId(_campaignId int64) error {
-	r._campaignId = _campaignId
-	r.Set("campaign_id", _campaignId)
-	return nil
-}
-
-// GetCampaignId CampaignId Getter
-func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetCampaignId() int64 {
-	return r._campaignId
-}
-
-// SetAdgroupId is AdgroupId Setter
-// 推广组id
-func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
-	r._adgroupId = _adgroupId
-	r.Set("adgroup_id", _adgroupId)
-	return nil
-}
-
-// GetAdgroupId AdgroupId Getter
-func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetAdgroupId() int64 {
-	return r._adgroupId
-}
-
 // SetStartTime is StartTime Setter
 // 开始时间，格式yyyy-mm-dd
 func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetStartTime(_startTime string) error {
@@ -157,6 +131,32 @@ func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetSource(_source string) err
 // GetSource Source Getter
 func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetSource() string {
 	return r._source
+}
+
+// SetCampaignId is CampaignId Setter
+// 推广计划id
+func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// GetCampaignId CampaignId Getter
+func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
+}
+
+// SetAdgroupId is AdgroupId Setter
+// 推广组id
+func (r *TaobaoSimbaRptAdgroupeffectGetAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// GetAdgroupId AdgroupId Getter
+func (r TaobaoSimbaRptAdgroupeffectGetAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
 }
 
 // SetPageNo is PageNo Setter

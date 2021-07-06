@@ -24,8 +24,8 @@ type AlibabaEleEnterpriseCartnewQueryAPIResponseModel struct {
 	EnterpriseCode string `json:"enterprise_code,omitempty" xml:"enterprise_code,omitempty"`
 	// 返回信息
 	EnterpriseMsg string `json:"enterprise_msg,omitempty" xml:"enterprise_msg,omitempty"`
-	// 系统自动生成
-	EnterpriseData *EnterpriseData `json:"enterprise_data,omitempty" xml:"enterprise_data,omitempty"`
 	// 请求id
 	EnterpriseRequestid string `json:"enterprise_requestid,omitempty" xml:"enterprise_requestid,omitempty"`
+	// 系统自动生成
+	EnterpriseData *EnterpriseData `json:"enterprise_data,omitempty" xml:"enterprise_data,omitempty"`
 }

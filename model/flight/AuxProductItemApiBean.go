@@ -2,6 +2,10 @@ package flight
 
 // AuxProductItemApiBean 结构体
 type AuxProductItemApiBean struct {
+	// 产品名称。 最大允许64个字符，不允许*·#|等特殊符号，也不允许带空格换行等符号
+	ProductName string `json:"product_name,omitempty" xml:"product_name,omitempty"`
+	// 外部ID，此辅营报价的唯一标识，后续用于校验生单；只允许数字字母组合，最大允许32个字符。 不允许包含空格、换行、|这类特殊符号
+	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 行李说明，当productType=4为必传
 	Baggage *BaggageApiBean `json:"baggage,omitempty" xml:"baggage,omitempty"`
 	// 柜台价，用于划价显示。 仅允许100的倍数。 币种：人民币。单位：分。
@@ -16,14 +20,10 @@ type AuxProductItemApiBean struct {
 	SalesRule *SalesRuleApiBean `json:"sales_rule,omitempty" xml:"sales_rule,omitempty"`
 	// 辅营产品退改规则
 	RefundRule *AuxRefundApiBean `json:"refund_rule,omitempty" xml:"refund_rule,omitempty"`
-	// 产品名称。 最大允许64个字符，不允许*·#|等特殊符号，也不允许带空格换行等符号
-	ProductName string `json:"product_name,omitempty" xml:"product_name,omitempty"`
 	// 成本价。仅允许100的倍数。 币种：人民币。单位：分。
 	BasePrice int64 `json:"base_price,omitempty" xml:"base_price,omitempty"`
 	// 产品类型 1:贵宾厅，2:CIP，3:在线选座，4:付费行李，6:值机，7:餐食, 8:值机及选座 当前仅允许投放：4，6，7，8
 	ProductType int64 `json:"product_type,omitempty" xml:"product_type,omitempty"`
-	// 外部ID，此辅营报价的唯一标识，后续用于校验生单；只允许数字字母组合，最大允许32个字符。 不允许包含空格、换行、|这类特殊符号
-	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 选座说明，当productType=3或8 为必传
 	Seat *SeatApiBean `json:"seat,omitempty" xml:"seat,omitempty"`
 }

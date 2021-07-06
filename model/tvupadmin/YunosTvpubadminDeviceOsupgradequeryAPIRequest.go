@@ -12,10 +12,10 @@ import (
 // 系统升级查询
 type YunosTvpubadminDeviceOsupgradequeryAPIRequest struct {
 	model.Params
-	// 牌照方
-	_license int64
 	// 审核状态
 	_status string
+	// 牌照方
+	_license int64
 	// 时间范围
 	_dayRange int64
 	// 第几页
@@ -45,19 +45,6 @@ func (r YunosTvpubadminDeviceOsupgradequeryAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// SetLicense is License Setter
-// 牌照方
-func (r *YunosTvpubadminDeviceOsupgradequeryAPIRequest) SetLicense(_license int64) error {
-	r._license = _license
-	r.Set("license", _license)
-	return nil
-}
-
-// GetLicense License Getter
-func (r YunosTvpubadminDeviceOsupgradequeryAPIRequest) GetLicense() int64 {
-	return r._license
-}
-
 // SetStatus is Status Setter
 // 审核状态
 func (r *YunosTvpubadminDeviceOsupgradequeryAPIRequest) SetStatus(_status string) error {
@@ -69,6 +56,19 @@ func (r *YunosTvpubadminDeviceOsupgradequeryAPIRequest) SetStatus(_status string
 // GetStatus Status Getter
 func (r YunosTvpubadminDeviceOsupgradequeryAPIRequest) GetStatus() string {
 	return r._status
+}
+
+// SetLicense is License Setter
+// 牌照方
+func (r *YunosTvpubadminDeviceOsupgradequeryAPIRequest) SetLicense(_license int64) error {
+	r._license = _license
+	r.Set("license", _license)
+	return nil
+}
+
+// GetLicense License Getter
+func (r YunosTvpubadminDeviceOsupgradequeryAPIRequest) GetLicense() int64 {
+	return r._license
 }
 
 // SetDayRange is DayRange Setter

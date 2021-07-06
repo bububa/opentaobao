@@ -3,6 +3,8 @@ package qimen
 // TaobaoQimenOrderexceptionReportRequest 结构体
 type TaobaoQimenOrderexceptionReportRequest struct {
 	// 奇门仓储字段
+	OrderLines []OrderLine `json:"orderLines,omitempty" xml:"orderLines>order_line,omitempty"`
+	// 奇门仓储字段
 	MessageId string `json:"messageId,omitempty" xml:"messageId,omitempty"`
 	// 奇门仓储字段
 	WarehouseCode string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
@@ -22,8 +24,6 @@ type TaobaoQimenOrderexceptionReportRequest struct {
 	MessageDesc string `json:"messageDesc,omitempty" xml:"messageDesc,omitempty"`
 	// 奇门仓储字段
 	CreateTime string `json:"createTime,omitempty" xml:"createTime,omitempty"`
-	// 奇门仓储字段
-	OrderLines []OrderLine `json:"orderLines,omitempty" xml:"orderLines>order_line,omitempty"`
 	// 奇门仓储字段
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
 	// 扩展属性

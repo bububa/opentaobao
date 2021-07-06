@@ -20,10 +20,10 @@ type TrainSearchRq struct {
 	DepLocation string `json:"dep_location,omitempty" xml:"dep_location,omitempty"`
 	// 出发地code，站点三字码
 	DepLocationCode string `json:"dep_location_code,omitempty" xml:"dep_location_code,omitempty"`
+	// 企业corpId
+	CorpId string `json:"corp_id,omitempty" xml:"corp_id,omitempty"`
 	// 0:普通(默认) 1：学生
 	PassengerType int64 `json:"passenger_type,omitempty" xml:"passenger_type,omitempty"`
 	// 排序规则，排序规则:0:最早出发,1:最晚出发,2:耗时最短
 	SortType int64 `json:"sort_type,omitempty" xml:"sort_type,omitempty"`
-	// 企业corpId
-	CorpId string `json:"corp_id,omitempty" xml:"corp_id,omitempty"`
 }

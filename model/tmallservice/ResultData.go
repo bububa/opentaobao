@@ -2,12 +2,10 @@ package tmallservice
 
 // ResultData 结构体
 type ResultData struct {
-	// 页面大小
-	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 	// 数据
 	OnePagedDataList []OnePagedDataList `json:"one_paged_data_list,omitempty" xml:"one_paged_data_list>one_paged_data_list,omitempty"`
-	// 总数量
-	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+	// 服务产品sku列表
+	SimpleServiceSkuList []SimpleServiceSkuDtOs `json:"simple_service_sku_list,omitempty" xml:"simple_service_sku_list>simple_service_sku_dt_os,omitempty"`
 	// 街道地址编码
 	TownCode string `json:"town_code,omitempty" xml:"town_code,omitempty"`
 	// 网点名称
@@ -32,8 +30,6 @@ type ResultData struct {
 	ServiceSiteCode string `json:"service_site_code,omitempty" xml:"service_site_code,omitempty"`
 	// 网点所在区
 	AddressDistrict string `json:"address_district,omitempty" xml:"address_district,omitempty"`
-	// 状态
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 网点所在省
 	AddressProvince string `json:"address_province,omitempty" xml:"address_province,omitempty"`
 	// 区地址编码
@@ -50,8 +46,6 @@ type ResultData struct {
 	AddressTown string `json:"address_town,omitempty" xml:"address_town,omitempty"`
 	// 门头照片
 	FrontPhoto string `json:"front_photo,omitempty" xml:"front_photo,omitempty"`
-	// 网点地址编码
-	AddressCode int64 `json:"address_code,omitempty" xml:"address_code,omitempty"`
 	// 认证的天猫品牌id列表
 	CertificatedBrandIds string `json:"certificated_brand_ids,omitempty" xml:"certificated_brand_ids,omitempty"`
 	// 省地址编码
@@ -76,22 +70,28 @@ type ResultData struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 服务产品介绍
 	ServiceProductContent string `json:"service_product_content,omitempty" xml:"service_product_content,omitempty"`
-	// 服务产品id
-	ServiceProductId int64 `json:"service_product_id,omitempty" xml:"service_product_id,omitempty"`
-	// 服务产品sku列表
-	SimpleServiceSkuList []SimpleServiceSkuDtOs `json:"simple_service_sku_list,omitempty" xml:"simple_service_sku_list>simple_service_sku_dt_os,omitempty"`
 	// 服务名称
 	ServiceCode string `json:"service_code,omitempty" xml:"service_code,omitempty"`
-	// 服务产品状态
-	ServiceProductStatus int64 `json:"service_product_status,omitempty" xml:"service_product_status,omitempty"`
-	// 服务产品类型
-	ServiceProductType int64 `json:"service_product_type,omitempty" xml:"service_product_type,omitempty"`
-	// 上传结果是否成功
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 错误码
 	FailureCode string `json:"failure_code,omitempty" xml:"failure_code,omitempty"`
 	// 出错因子列表
 	FailurePriceFactors string `json:"failure_price_factors,omitempty" xml:"failure_price_factors,omitempty"`
 	// 错误详情
 	FailureDetail string `json:"failure_detail,omitempty" xml:"failure_detail,omitempty"`
+	// 页面大小
+	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+	// 总数量
+	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+	// 状态
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 网点地址编码
+	AddressCode int64 `json:"address_code,omitempty" xml:"address_code,omitempty"`
+	// 服务产品id
+	ServiceProductId int64 `json:"service_product_id,omitempty" xml:"service_product_id,omitempty"`
+	// 服务产品状态
+	ServiceProductStatus int64 `json:"service_product_status,omitempty" xml:"service_product_status,omitempty"`
+	// 服务产品类型
+	ServiceProductType int64 `json:"service_product_type,omitempty" xml:"service_product_type,omitempty"`
+	// 上传结果是否成功
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

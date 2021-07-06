@@ -12,12 +12,12 @@ import (
 // OPENIM群信息修改
 type TaobaoOpenimTribeModifytribeinfoAPIRequest struct {
 	model.Params
-	// 用户信息
-	_user *OpenImUser
 	// 群名称
 	_tribeName string
 	// 群公告
 	_notice string
+	// 用户信息
+	_user *OpenImUser
 	// 群id
 	_tribeId int64
 }
@@ -41,19 +41,6 @@ func (r TaobaoOpenimTribeModifytribeinfoAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetUser is User Setter
-// 用户信息
-func (r *TaobaoOpenimTribeModifytribeinfoAPIRequest) SetUser(_user *OpenImUser) error {
-	r._user = _user
-	r.Set("user", _user)
-	return nil
-}
-
-// GetUser User Getter
-func (r TaobaoOpenimTribeModifytribeinfoAPIRequest) GetUser() *OpenImUser {
-	return r._user
 }
 
 // SetTribeName is TribeName Setter
@@ -80,6 +67,19 @@ func (r *TaobaoOpenimTribeModifytribeinfoAPIRequest) SetNotice(_notice string) e
 // GetNotice Notice Getter
 func (r TaobaoOpenimTribeModifytribeinfoAPIRequest) GetNotice() string {
 	return r._notice
+}
+
+// SetUser is User Setter
+// 用户信息
+func (r *TaobaoOpenimTribeModifytribeinfoAPIRequest) SetUser(_user *OpenImUser) error {
+	r._user = _user
+	r.Set("user", _user)
+	return nil
+}
+
+// GetUser User Getter
+func (r TaobaoOpenimTribeModifytribeinfoAPIRequest) GetUser() *OpenImUser {
+	return r._user
 }
 
 // SetTribeId is TribeId Setter

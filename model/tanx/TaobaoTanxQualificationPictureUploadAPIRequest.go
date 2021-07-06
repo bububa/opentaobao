@@ -12,10 +12,10 @@ import (
 // 资质图片上传接口
 type TaobaoTanxQualificationPictureUploadAPIRequest struct {
 	model.Params
-	// dsp用户id
-	_memberId int64
 	// dsp用户检验token
 	_token string
+	// dsp用户id
+	_memberId int64
 	// 1970年到现在的时间，毫秒
 	_signTime int64
 	// File文件getByte后的二进制数组
@@ -43,19 +43,6 @@ func (r TaobaoTanxQualificationPictureUploadAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// SetMemberId is MemberId Setter
-// dsp用户id
-func (r *TaobaoTanxQualificationPictureUploadAPIRequest) SetMemberId(_memberId int64) error {
-	r._memberId = _memberId
-	r.Set("member_id", _memberId)
-	return nil
-}
-
-// GetMemberId MemberId Getter
-func (r TaobaoTanxQualificationPictureUploadAPIRequest) GetMemberId() int64 {
-	return r._memberId
-}
-
 // SetToken is Token Setter
 // dsp用户检验token
 func (r *TaobaoTanxQualificationPictureUploadAPIRequest) SetToken(_token string) error {
@@ -67,6 +54,19 @@ func (r *TaobaoTanxQualificationPictureUploadAPIRequest) SetToken(_token string)
 // GetToken Token Getter
 func (r TaobaoTanxQualificationPictureUploadAPIRequest) GetToken() string {
 	return r._token
+}
+
+// SetMemberId is MemberId Setter
+// dsp用户id
+func (r *TaobaoTanxQualificationPictureUploadAPIRequest) SetMemberId(_memberId int64) error {
+	r._memberId = _memberId
+	r.Set("member_id", _memberId)
+	return nil
+}
+
+// GetMemberId MemberId Getter
+func (r TaobaoTanxQualificationPictureUploadAPIRequest) GetMemberId() int64 {
+	return r._memberId
 }
 
 // SetSignTime is SignTime Setter

@@ -12,10 +12,10 @@ import (
 // 服务商收到预警后，需要进行回复已读状态，并可填写备注
 type TmallServicecenterServicemonitormessageUpdateAPIRequest struct {
 	model.Params
-	// 预警消息id
-	_serviceMonitorMessageId int64
 	// 预警处理备注
 	_memo string
+	// 预警消息id
+	_serviceMonitorMessageId int64
 	// 可更新状态：3、已读
 	_status int64
 }
@@ -41,19 +41,6 @@ func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetApiParams() 
 	return params
 }
 
-// SetServiceMonitorMessageId is ServiceMonitorMessageId Setter
-// 预警消息id
-func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetServiceMonitorMessageId(_serviceMonitorMessageId int64) error {
-	r._serviceMonitorMessageId = _serviceMonitorMessageId
-	r.Set("service_monitor_message_id", _serviceMonitorMessageId)
-	return nil
-}
-
-// GetServiceMonitorMessageId ServiceMonitorMessageId Getter
-func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetServiceMonitorMessageId() int64 {
-	return r._serviceMonitorMessageId
-}
-
 // SetMemo is Memo Setter
 // 预警处理备注
 func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetMemo(_memo string) error {
@@ -65,6 +52,19 @@ func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetMemo(_memo 
 // GetMemo Memo Getter
 func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetMemo() string {
 	return r._memo
+}
+
+// SetServiceMonitorMessageId is ServiceMonitorMessageId Setter
+// 预警消息id
+func (r *TmallServicecenterServicemonitormessageUpdateAPIRequest) SetServiceMonitorMessageId(_serviceMonitorMessageId int64) error {
+	r._serviceMonitorMessageId = _serviceMonitorMessageId
+	r.Set("service_monitor_message_id", _serviceMonitorMessageId)
+	return nil
+}
+
+// GetServiceMonitorMessageId ServiceMonitorMessageId Getter
+func (r TmallServicecenterServicemonitormessageUpdateAPIRequest) GetServiceMonitorMessageId() int64 {
+	return r._serviceMonitorMessageId
 }
 
 // SetStatus is Status Setter

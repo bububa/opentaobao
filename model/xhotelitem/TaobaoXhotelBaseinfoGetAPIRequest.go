@@ -12,12 +12,14 @@ import (
 // 酒店基础信息(酒店/房型/房价定义)查询接口， 包括 酒店房型可售, 以及 hid 下 的标准房型列表
 type TaobaoXhotelBaseinfoGetAPIRequest struct {
 	model.Params
-	// 淘宝酒店ID
-	_hid int64
 	// 推荐使用卖家系统中的酒店ID。
 	_outHid string
 	// 用于标示该酒店发布的渠道信息
 	_vendor string
+	// 在查询酒店房型可售详情 时的入参JSON , {@link com.taobao.trip.hpc.client.query.HotelSellerInvQuery}
+	_jsonHotelSellerInvQuery string
+	// 淘宝酒店ID
+	_hid int64
 	// 是否需要房价基本信息（false为不需要），默认为需要
 	_isNeedRatePlan bool
 	// 是否需要房型基本信息（false为不需要），默认为需要
@@ -26,8 +28,6 @@ type TaobaoXhotelBaseinfoGetAPIRequest struct {
 	_needSRoomTypeList bool
 	// 是否需要酒店房型可售详情
 	_needHotelDynamicInfo bool
-	// 在查询酒店房型可售详情 时的入参JSON , {@link com.taobao.trip.hpc.client.query.HotelSellerInvQuery}
-	_jsonHotelSellerInvQuery string
 }
 
 // NewTaobaoXhotelBaseinfoGetRequest 初始化TaobaoXhotelBaseinfoGetAPIRequest对象
@@ -49,19 +49,6 @@ func (r TaobaoXhotelBaseinfoGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetHid is Hid Setter
-// 淘宝酒店ID
-func (r *TaobaoXhotelBaseinfoGetAPIRequest) SetHid(_hid int64) error {
-	r._hid = _hid
-	r.Set("hid", _hid)
-	return nil
-}
-
-// GetHid Hid Getter
-func (r TaobaoXhotelBaseinfoGetAPIRequest) GetHid() int64 {
-	return r._hid
 }
 
 // SetOutHid is OutHid Setter
@@ -88,6 +75,32 @@ func (r *TaobaoXhotelBaseinfoGetAPIRequest) SetVendor(_vendor string) error {
 // GetVendor Vendor Getter
 func (r TaobaoXhotelBaseinfoGetAPIRequest) GetVendor() string {
 	return r._vendor
+}
+
+// SetJsonHotelSellerInvQuery is JsonHotelSellerInvQuery Setter
+// 在查询酒店房型可售详情 时的入参JSON , {@link com.taobao.trip.hpc.client.query.HotelSellerInvQuery}
+func (r *TaobaoXhotelBaseinfoGetAPIRequest) SetJsonHotelSellerInvQuery(_jsonHotelSellerInvQuery string) error {
+	r._jsonHotelSellerInvQuery = _jsonHotelSellerInvQuery
+	r.Set("json_hotel_seller_inv_query", _jsonHotelSellerInvQuery)
+	return nil
+}
+
+// GetJsonHotelSellerInvQuery JsonHotelSellerInvQuery Getter
+func (r TaobaoXhotelBaseinfoGetAPIRequest) GetJsonHotelSellerInvQuery() string {
+	return r._jsonHotelSellerInvQuery
+}
+
+// SetHid is Hid Setter
+// 淘宝酒店ID
+func (r *TaobaoXhotelBaseinfoGetAPIRequest) SetHid(_hid int64) error {
+	r._hid = _hid
+	r.Set("hid", _hid)
+	return nil
+}
+
+// GetHid Hid Getter
+func (r TaobaoXhotelBaseinfoGetAPIRequest) GetHid() int64 {
+	return r._hid
 }
 
 // SetIsNeedRatePlan is IsNeedRatePlan Setter
@@ -140,17 +153,4 @@ func (r *TaobaoXhotelBaseinfoGetAPIRequest) SetNeedHotelDynamicInfo(_needHotelDy
 // GetNeedHotelDynamicInfo NeedHotelDynamicInfo Getter
 func (r TaobaoXhotelBaseinfoGetAPIRequest) GetNeedHotelDynamicInfo() bool {
 	return r._needHotelDynamicInfo
-}
-
-// SetJsonHotelSellerInvQuery is JsonHotelSellerInvQuery Setter
-// 在查询酒店房型可售详情 时的入参JSON , {@link com.taobao.trip.hpc.client.query.HotelSellerInvQuery}
-func (r *TaobaoXhotelBaseinfoGetAPIRequest) SetJsonHotelSellerInvQuery(_jsonHotelSellerInvQuery string) error {
-	r._jsonHotelSellerInvQuery = _jsonHotelSellerInvQuery
-	r.Set("json_hotel_seller_inv_query", _jsonHotelSellerInvQuery)
-	return nil
-}
-
-// GetJsonHotelSellerInvQuery JsonHotelSellerInvQuery Getter
-func (r TaobaoXhotelBaseinfoGetAPIRequest) GetJsonHotelSellerInvQuery() string {
-	return r._jsonHotelSellerInvQuery
 }

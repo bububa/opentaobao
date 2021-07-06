@@ -8,8 +8,6 @@ type FlightSegmentRs struct {
 	ArrCity string `json:"arr_city,omitempty" xml:"arr_city,omitempty"`
 	// 到达国家
 	ArrCountry string `json:"arr_country,omitempty" xml:"arr_country,omitempty"`
-	// 到达数字日期(yyyyMMdd)
-	ArrDateInt int64 `json:"arr_date_int,omitempty" xml:"arr_date_int,omitempty"`
 	// 航班到达航站楼
 	ArrTerm string `json:"arr_term,omitempty" xml:"arr_term,omitempty"`
 	// 到达日期时间(yyyy-MM-dd HH:mm:ss)
@@ -20,14 +18,10 @@ type FlightSegmentRs struct {
 	DepCity string `json:"dep_city,omitempty" xml:"dep_city,omitempty"`
 	// 出发国家
 	DepCountry string `json:"dep_country,omitempty" xml:"dep_country,omitempty"`
-	// 出发数字日期(yyyyMMdd)
-	DepDateInt int64 `json:"dep_date_int,omitempty" xml:"dep_date_int,omitempty"`
 	// 航班出发航站楼
 	DepTerm string `json:"dep_term,omitempty" xml:"dep_term,omitempty"`
 	// 出发日期时间(yyyy-MM-dd HH:mm:ss)
 	DepTime string `json:"dep_time,omitempty" xml:"dep_time,omitempty"`
-	// 时长(单位：分钟)
-	Duration int64 `json:"duration,omitempty" xml:"duration,omitempty"`
 	// 机型
 	EquipType string `json:"equip_type,omitempty" xml:"equip_type,omitempty"`
 	// 航班号+出发机场+达到机场+起飞时间（精确分）
@@ -36,6 +30,14 @@ type FlightSegmentRs struct {
 	MarketingAirline string `json:"marketing_airline,omitempty" xml:"marketing_airline,omitempty"`
 	// 市场方航班号(如：KA5809)
 	MarketingFlightNo string `json:"marketing_flight_no,omitempty" xml:"marketing_flight_no,omitempty"`
+	// 经停城市，多个值使用","分隔
+	StopCity string `json:"stop_city,omitempty" xml:"stop_city,omitempty"`
+	// 到达数字日期(yyyyMMdd)
+	ArrDateInt int64 `json:"arr_date_int,omitempty" xml:"arr_date_int,omitempty"`
+	// 出发数字日期(yyyyMMdd)
+	DepDateInt int64 `json:"dep_date_int,omitempty" xml:"dep_date_int,omitempty"`
+	// 时长(单位：分钟)
+	Duration int64 `json:"duration,omitempty" xml:"duration,omitempty"`
 	// 市场方数字航班号（如：5809）
 	MarketingFlightNoInt int64 `json:"marketing_flight_no_int,omitempty" xml:"marketing_flight_no_int,omitempty"`
 	// 餐食类型,0:无参食；1：有餐食；2：饮品；3：茶点；4：早餐；5：正餐；
@@ -46,12 +48,10 @@ type FlightSegmentRs struct {
 	SegmentShowInfo *SegmentShowInfoRs `json:"segment_show_info,omitempty" xml:"segment_show_info,omitempty"`
 	// 航段序号，从0开始
 	SeqId int64 `json:"seq_id,omitempty" xml:"seq_id,omitempty"`
-	// 经停城市，多个值使用","分隔
-	StopCity string `json:"stop_city,omitempty" xml:"stop_city,omitempty"`
 	// 经停次数
 	StopQuantity int64 `json:"stop_quantity,omitempty" xml:"stop_quantity,omitempty"`
-	// 是否换机场
-	TransferChangeAirport bool `json:"transfer_change_airport,omitempty" xml:"transfer_change_airport,omitempty"`
 	// 时间
 	TransferTime int64 `json:"transfer_time,omitempty" xml:"transfer_time,omitempty"`
+	// 是否换机场
+	TransferChangeAirport bool `json:"transfer_change_airport,omitempty" xml:"transfer_change_airport,omitempty"`
 }

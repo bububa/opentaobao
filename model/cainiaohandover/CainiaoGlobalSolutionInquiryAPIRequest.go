@@ -12,14 +12,14 @@ import (
 // 根据交易单号查询可用的解决方案
 type CainiaoGlobalSolutionInquiryAPIRequest struct {
 	model.Params
+	// 包裹参数
+	_packageParams []OpenPackageParam
 	// 多语言，zh_CN中文、en_US:英文、ru_RU俄语
 	_locale string
 	// 交易单参数
 	_tradeOrderParam *OpenTradeOrderParam
 	// 商家信息
 	_sellerInfoParam *OpenSellerInfoParam
-	// 包裹参数
-	_packageParams []OpenPackageParam
 }
 
 // NewCainiaoGlobalSolutionInquiryRequest 初始化CainiaoGlobalSolutionInquiryAPIRequest对象
@@ -41,6 +41,19 @@ func (r CainiaoGlobalSolutionInquiryAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetPackageParams is PackageParams Setter
+// 包裹参数
+func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetPackageParams(_packageParams []OpenPackageParam) error {
+	r._packageParams = _packageParams
+	r.Set("package_params", _packageParams)
+	return nil
+}
+
+// GetPackageParams PackageParams Getter
+func (r CainiaoGlobalSolutionInquiryAPIRequest) GetPackageParams() []OpenPackageParam {
+	return r._packageParams
 }
 
 // SetLocale is Locale Setter
@@ -80,17 +93,4 @@ func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetSellerInfoParam(_sellerInfoP
 // GetSellerInfoParam SellerInfoParam Getter
 func (r CainiaoGlobalSolutionInquiryAPIRequest) GetSellerInfoParam() *OpenSellerInfoParam {
 	return r._sellerInfoParam
-}
-
-// SetPackageParams is PackageParams Setter
-// 包裹参数
-func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetPackageParams(_packageParams []OpenPackageParam) error {
-	r._packageParams = _packageParams
-	r.Set("package_params", _packageParams)
-	return nil
-}
-
-// GetPackageParams PackageParams Getter
-func (r CainiaoGlobalSolutionInquiryAPIRequest) GetPackageParams() []OpenPackageParam {
-	return r._packageParams
 }

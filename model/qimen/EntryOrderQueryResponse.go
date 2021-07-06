@@ -2,6 +2,8 @@ package qimen
 
 // EntryOrderQueryResponse 结构体
 type EntryOrderQueryResponse struct {
+	// 入库单单据信息
+	OrderLines []OrderLine `json:"orderLines,omitempty" xml:"orderLines>order_line,omitempty"`
 	// 响应结果:success|failure
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 	// 响应码
@@ -12,6 +14,4 @@ type EntryOrderQueryResponse struct {
 	TotalLines int64 `json:"totalLines,omitempty" xml:"totalLines,omitempty"`
 	// 入库单信息
 	EntryOrder *EntryOrder `json:"entryOrder,omitempty" xml:"entryOrder,omitempty"`
-	// 入库单单据信息
-	OrderLines []OrderLine `json:"orderLines,omitempty" xml:"orderLines>order_line,omitempty"`
 }

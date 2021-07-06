@@ -20,12 +20,12 @@ type TaobaoXhotelOrderFutureInfoPutAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_order_future_info_put_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 是否成功标记
-	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
 	// 错误码
 	Errcode string `json:"errcode,omitempty" xml:"errcode,omitempty"`
 	// 错误描述
 	Eerrmsg string `json:"eerrmsg,omitempty" xml:"eerrmsg,omitempty"`
+	// 是否成功标记
+	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
 	// 是否更新失败。返回false表示更新成功。否则请读取错误码与错误描述
 	Error bool `json:"error,omitempty" xml:"error,omitempty"`
 }

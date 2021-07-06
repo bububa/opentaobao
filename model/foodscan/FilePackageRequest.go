@@ -2,10 +2,6 @@ package foodscan
 
 // FilePackageRequest 结构体
 type FilePackageRequest struct {
-	// 用户关系类型0/本人 1/爱人 2/父母 3/朋友 4/子女 99/他人
-	RelationType int64 `json:"relation_type,omitempty" xml:"relation_type,omitempty"`
-	// 1男2女
-	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
 	// 城市名称
 	City string `json:"city,omitempty" xml:"city,omitempty"`
 	// 淘宝的nickName
@@ -14,8 +10,6 @@ type FilePackageRequest struct {
 	RoleId string `json:"role_id,omitempty" xml:"role_id,omitempty"`
 	// 区域编码
 	DistrictAdcode string `json:"district_adcode,omitempty" xml:"district_adcode,omitempty"`
-	// 1左脚 2右脚
-	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 用户唯一标识，可以是淘宝用户Id
 	UserId string `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 设备系统平台
@@ -40,4 +34,10 @@ type FilePackageRequest struct {
 	FileName2 string `json:"file_name2,omitempty" xml:"file_name2,omitempty"`
 	// 第三张图片的文件名
 	FileName3 string `json:"file_name3,omitempty" xml:"file_name3,omitempty"`
+	// 用户关系类型0/本人 1/爱人 2/父母 3/朋友 4/子女 99/他人
+	RelationType int64 `json:"relation_type,omitempty" xml:"relation_type,omitempty"`
+	// 1男2女
+	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
+	// 1左脚 2右脚
+	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 }

@@ -2,8 +2,6 @@ package ascpffo
 
 // ErpFulfillmentForwardDto 结构体
 type ErpFulfillmentForwardDto struct {
-	// 订单产生时间戳
-	TradeCreateTime int64 `json:"trade_create_time,omitempty" xml:"trade_create_time,omitempty"`
 	// 发货金额
 	PackagePaidFee string `json:"package_paid_fee,omitempty" xml:"package_paid_fee,omitempty"`
 	// 收货地区
@@ -26,12 +24,14 @@ type ErpFulfillmentForwardDto struct {
 	TradeOrderNo string `json:"trade_order_no,omitempty" xml:"trade_order_no,omitempty"`
 	// 仓名称
 	WarehouseName string `json:"warehouse_name,omitempty" xml:"warehouse_name,omitempty"`
-	// 出库时间戳
-	OutBoundTime int64 `json:"out_bound_time,omitempty" xml:"out_bound_time,omitempty"`
-	// 下发到仓时间戳
-	SendFulfillTime int64 `json:"send_fulfill_time,omitempty" xml:"send_fulfill_time,omitempty"`
 	// 订单状态
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 扩展字段
 	ExtendFields string `json:"extend_fields,omitempty" xml:"extend_fields,omitempty"`
+	// 订单产生时间戳
+	TradeCreateTime int64 `json:"trade_create_time,omitempty" xml:"trade_create_time,omitempty"`
+	// 出库时间戳
+	OutBoundTime int64 `json:"out_bound_time,omitempty" xml:"out_bound_time,omitempty"`
+	// 下发到仓时间戳
+	SendFulfillTime int64 `json:"send_fulfill_time,omitempty" xml:"send_fulfill_time,omitempty"`
 }

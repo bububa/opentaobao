@@ -2,10 +2,10 @@ package logistic
 
 // UploadingReverseDto 结构体
 type UploadingReverseDto struct {
-	// 扩展字段，JSONObject格式
-	Extra string `json:"extra,omitempty" xml:"extra,omitempty"`
 	// 商品行列表
 	GoodsItemDTOList []WarehouseReverseGoodsItemDto `json:"goods_item_d_t_o_list,omitempty" xml:"goods_item_d_t_o_list>warehouse_reverse_goods_item_dto,omitempty"`
+	// 扩展字段，JSONObject格式
+	Extra string `json:"extra,omitempty" xml:"extra,omitempty"`
 	// 仓库名称
 	WarehouseName string `json:"warehouse_name,omitempty" xml:"warehouse_name,omitempty"`
 	// 详细地址
@@ -20,16 +20,16 @@ type UploadingReverseDto struct {
 	CountryName string `json:"country_name,omitempty" xml:"country_name,omitempty"`
 	// 创建时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
-	// 销退单状态(1=已创建；2=待入库；3=已入库，5=已取消)
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 物流公司code
 	CpCode string `json:"cp_code,omitempty" xml:"cp_code,omitempty"`
 	// 物流公司名称
 	CpName string `json:"cp_name,omitempty" xml:"cp_name,omitempty"`
 	// 运单编号
 	MailNo string `json:"mail_no,omitempty" xml:"mail_no,omitempty"`
-	// 主订单编号
-	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 	// 销退单ID
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
+	// 销退单状态(1=已创建；2=待入库；3=已入库，5=已取消)
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 主订单编号
+	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 }

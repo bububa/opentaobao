@@ -12,8 +12,6 @@ import (
 // 提供给ISV通过该接口获取面单云打印数据
 type CainiaoGlobalHandoverCloudprintGetAPIRequest struct {
 	model.Params
-	// 用户信息
-	_userInfo *UserInfoDto
 	// 大包运单号
 	_trackingNumber string
 	// ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
@@ -22,6 +20,8 @@ type CainiaoGlobalHandoverCloudprintGetAPIRequest struct {
 	_orderCode string
 	// 多语言
 	_locale string
+	// 用户信息
+	_userInfo *UserInfoDto
 }
 
 // NewCainiaoGlobalHandoverCloudprintGetRequest 初始化CainiaoGlobalHandoverCloudprintGetAPIRequest对象
@@ -43,19 +43,6 @@ func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetApiParams() url.Values 
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetUserInfo is UserInfo Setter
-// 用户信息
-func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
-	r._userInfo = _userInfo
-	r.Set("user_info", _userInfo)
-	return nil
-}
-
-// GetUserInfo UserInfo Getter
-func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetUserInfo() *UserInfoDto {
-	return r._userInfo
 }
 
 // SetTrackingNumber is TrackingNumber Setter
@@ -108,4 +95,17 @@ func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetLocale(_locale string)
 // GetLocale Locale Getter
 func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetLocale() string {
 	return r._locale
+}
+
+// SetUserInfo is UserInfo Setter
+// 用户信息
+func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+	r._userInfo = _userInfo
+	r.Set("user_info", _userInfo)
+	return nil
+}
+
+// GetUserInfo UserInfo Getter
+func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetUserInfo() *UserInfoDto {
+	return r._userInfo
 }

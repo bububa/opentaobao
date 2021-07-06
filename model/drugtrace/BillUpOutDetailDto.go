@@ -2,6 +2,8 @@ package drugtrace
 
 // BillUpOutDetailDto 结构体
 type BillUpOutDetailDto struct {
+	// 药品信息数据
+	DrugInfosDtoList []DrugInfosDto `json:"drug_infos_dto_list,omitempty" xml:"drug_infos_dto_list>drug_infos_dto,omitempty"`
 	// 单据编码
 	BillCode string `json:"bill_code,omitempty" xml:"bill_code,omitempty"`
 	// 单据类型描述
@@ -20,6 +22,4 @@ type BillUpOutDetailDto struct {
 	StoreOutDate string `json:"store_out_date,omitempty" xml:"store_out_date,omitempty"`
 	// 最后更新时间
 	UpdateDate string `json:"update_date,omitempty" xml:"update_date,omitempty"`
-	// 药品信息数据
-	DrugInfosDtoList []DrugInfosDto `json:"drug_infos_dto_list,omitempty" xml:"drug_infos_dto_list>drug_infos_dto,omitempty"`
 }

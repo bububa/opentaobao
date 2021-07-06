@@ -2,8 +2,6 @@ package alihealth2
 
 // BaseRule 结构体
 type BaseRule struct {
-	// 级别规则
-	Level int64 `json:"level,omitempty" xml:"level,omitempty"`
 	// 规则的详细数据
 	Detail string `json:"detail,omitempty" xml:"detail,omitempty"`
 	// 提示文案
@@ -34,6 +32,8 @@ type BaseRule struct {
 	Diags string `json:"diags,omitempty" xml:"diags,omitempty"`
 	// 跟该药冲突的诊断码， 如N19.x00（（命中禁忌症规则））
 	ForbiddenDiags string `json:"forbidden_diags,omitempty" xml:"forbidden_diags,omitempty"`
+	// 级别规则
+	Level int64 `json:"level,omitempty" xml:"level,omitempty"`
 	// 限购上限制（命中周期限购+单次限购规则）
 	LimitThreshold int64 `json:"limit_threshold,omitempty" xml:"limit_threshold,omitempty"`
 }

@@ -18,12 +18,8 @@ type AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest struct {
 	_email string
 	// 账号的全局唯一标识。【phone_number ,email, (user_id,id_type)三种必选其一】
 	_userId string
-	// 有user_id时候必填。1：阿里HID；2：用户自有ID；3：openId; 4:其它。【phone_number ,email, (user_id,id_type)三种必选其一】
-	_idType int64
 	// 登录时候的IP地址
 	_ip string
-	// 登录来源。1：PC网页；2：移动网页；3：APP;4:其它
-	_source int64
 	// 当前操作的页面URL。Source为1，2时，该参数必选
 	_currentUrl string
 	// 发送HTTP请求的代理
@@ -60,12 +56,16 @@ type AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest struct {
 	_activityId string
 	// 活动奖品面值，场景为活动时提供，活动抽中的价值
 	_prize string
+	// 注册时候的ip
+	_registerIp string
+	// 有user_id时候必填。1：阿里HID；2：用户自有ID；3：openId; 4:其它。【phone_number ,email, (user_id,id_type)三种必选其一】
+	_idType int64
+	// 登录来源。1：PC网页；2：移动网页；3：APP;4:其它
+	_source int64
 	// 活动奖品类型。1：事物；2：红包；3：优惠券；4：购物券；5：积分；6：代币；0：其它
 	_prizeType int64
 	// 注册的时间（秒）
 	_registerDate int64
-	// 注册时候的ip
-	_registerIp string
 }
 
 // NewAlibabaSecurityJaqCampaignpreventionResultFetchRequest 初始化AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest对象
@@ -128,19 +128,6 @@ func (r AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) GetUserId() s
 	return r._userId
 }
 
-// SetIdType is IdType Setter
-// 有user_id时候必填。1：阿里HID；2：用户自有ID；3：openId; 4:其它。【phone_number ,email, (user_id,id_type)三种必选其一】
-func (r *AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) SetIdType(_idType int64) error {
-	r._idType = _idType
-	r.Set("id_type", _idType)
-	return nil
-}
-
-// GetIdType IdType Getter
-func (r AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) GetIdType() int64 {
-	return r._idType
-}
-
 // SetIp is Ip Setter
 // 登录时候的IP地址
 func (r *AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) SetIp(_ip string) error {
@@ -152,19 +139,6 @@ func (r *AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) SetIp(_ip st
 // GetIp Ip Getter
 func (r AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) GetIp() string {
 	return r._ip
-}
-
-// SetSource is Source Setter
-// 登录来源。1：PC网页；2：移动网页；3：APP;4:其它
-func (r *AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) SetSource(_source int64) error {
-	r._source = _source
-	r.Set("source", _source)
-	return nil
-}
-
-// GetSource Source Getter
-func (r AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) GetSource() int64 {
-	return r._source
 }
 
 // SetCurrentUrl is CurrentUrl Setter
@@ -401,6 +375,45 @@ func (r AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) GetPrize() st
 	return r._prize
 }
 
+// SetRegisterIp is RegisterIp Setter
+// 注册时候的ip
+func (r *AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) SetRegisterIp(_registerIp string) error {
+	r._registerIp = _registerIp
+	r.Set("register_ip", _registerIp)
+	return nil
+}
+
+// GetRegisterIp RegisterIp Getter
+func (r AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) GetRegisterIp() string {
+	return r._registerIp
+}
+
+// SetIdType is IdType Setter
+// 有user_id时候必填。1：阿里HID；2：用户自有ID；3：openId; 4:其它。【phone_number ,email, (user_id,id_type)三种必选其一】
+func (r *AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) SetIdType(_idType int64) error {
+	r._idType = _idType
+	r.Set("id_type", _idType)
+	return nil
+}
+
+// GetIdType IdType Getter
+func (r AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) GetIdType() int64 {
+	return r._idType
+}
+
+// SetSource is Source Setter
+// 登录来源。1：PC网页；2：移动网页；3：APP;4:其它
+func (r *AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) SetSource(_source int64) error {
+	r._source = _source
+	r.Set("source", _source)
+	return nil
+}
+
+// GetSource Source Getter
+func (r AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) GetSource() int64 {
+	return r._source
+}
+
 // SetPrizeType is PrizeType Setter
 // 活动奖品类型。1：事物；2：红包；3：优惠券；4：购物券；5：积分；6：代币；0：其它
 func (r *AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) SetPrizeType(_prizeType int64) error {
@@ -425,17 +438,4 @@ func (r *AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) SetRegisterD
 // GetRegisterDate RegisterDate Getter
 func (r AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) GetRegisterDate() int64 {
 	return r._registerDate
-}
-
-// SetRegisterIp is RegisterIp Setter
-// 注册时候的ip
-func (r *AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) SetRegisterIp(_registerIp string) error {
-	r._registerIp = _registerIp
-	r.Set("register_ip", _registerIp)
-	return nil
-}
-
-// GetRegisterIp RegisterIp Getter
-func (r AlibabaSecurityJaqCampaignpreventionResultFetchAPIRequest) GetRegisterIp() string {
-	return r._registerIp
 }

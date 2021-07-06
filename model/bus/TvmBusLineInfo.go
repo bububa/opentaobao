@@ -4,8 +4,6 @@ package bus
 type TvmBusLineInfo struct {
 	// 出发时间 yyyy-mm-dd HH:mm:ss
 	DepTime string `json:"dep_time,omitempty" xml:"dep_time,omitempty"`
-	// 距离 km
-	Distance int64 `json:"distance,omitempty" xml:"distance,omitempty"`
 	// 到达目的地
 	LastPlaceName string `json:"last_place_name,omitempty" xml:"last_place_name,omitempty"`
 	// 出发城市(必须填写，后续程序中会进行校验)
@@ -32,8 +30,6 @@ type TvmBusLineInfo struct {
 	StartStationAddress string `json:"start_station_address,omitempty" xml:"start_station_address,omitempty"`
 	// 车型
 	BusType string `json:"bus_type,omitempty" xml:"bus_type,omitempty"`
-	// 运行时长（分）
-	Runtime int64 `json:"runtime,omitempty" xml:"runtime,omitempty"`
 	// 出发省份码
 	StartProvinceCode string `json:"start_province_code,omitempty" xml:"start_province_code,omitempty"`
 	// 出发城市码
@@ -42,4 +38,8 @@ type TvmBusLineInfo struct {
 	ToStationProvinceCode string `json:"to_station_province_code,omitempty" xml:"to_station_province_code,omitempty"`
 	// 到达城市码
 	ToStationCityCode string `json:"to_station_city_code,omitempty" xml:"to_station_city_code,omitempty"`
+	// 距离 km
+	Distance int64 `json:"distance,omitempty" xml:"distance,omitempty"`
+	// 运行时长（分）
+	Runtime int64 `json:"runtime,omitempty" xml:"runtime,omitempty"`
 }

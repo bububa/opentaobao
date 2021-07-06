@@ -12,14 +12,14 @@ import (
 // 房型删除TOP接口
 type TaobaoXhotelRoomtypeDeletePublicAPIRequest struct {
 	model.Params
-	// 房型rid ，传参方式：rid    或者   outer_id+vendor
-	_rid int64
 	// vendor
 	_vendor string
 	// 外部房型ID
 	_outerRid string
 	// 具体操作人，比如酒店帐号、小二名称等
 	_operator string
+	// 房型rid ，传参方式：rid    或者   outer_id+vendor
+	_rid int64
 }
 
 // NewTaobaoXhotelRoomtypeDeletePublicRequest 初始化TaobaoXhotelRoomtypeDeletePublicAPIRequest对象
@@ -41,19 +41,6 @@ func (r TaobaoXhotelRoomtypeDeletePublicAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetRid is Rid Setter
-// 房型rid ，传参方式：rid    或者   outer_id+vendor
-func (r *TaobaoXhotelRoomtypeDeletePublicAPIRequest) SetRid(_rid int64) error {
-	r._rid = _rid
-	r.Set("rid", _rid)
-	return nil
-}
-
-// GetRid Rid Getter
-func (r TaobaoXhotelRoomtypeDeletePublicAPIRequest) GetRid() int64 {
-	return r._rid
 }
 
 // SetVendor is Vendor Setter
@@ -93,4 +80,17 @@ func (r *TaobaoXhotelRoomtypeDeletePublicAPIRequest) SetOperator(_operator strin
 // GetOperator Operator Getter
 func (r TaobaoXhotelRoomtypeDeletePublicAPIRequest) GetOperator() string {
 	return r._operator
+}
+
+// SetRid is Rid Setter
+// 房型rid ，传参方式：rid    或者   outer_id+vendor
+func (r *TaobaoXhotelRoomtypeDeletePublicAPIRequest) SetRid(_rid int64) error {
+	r._rid = _rid
+	r.Set("rid", _rid)
+	return nil
+}
+
+// GetRid Rid Getter
+func (r TaobaoXhotelRoomtypeDeletePublicAPIRequest) GetRid() int64 {
+	return r._rid
 }

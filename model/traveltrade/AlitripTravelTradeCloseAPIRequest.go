@@ -14,10 +14,10 @@ type AlitripTravelTradeCloseAPIRequest struct {
 	model.Params
 	// 交易关闭原因
 	_closeReason string
-	// 子订单编号
-	_subOrderId int64
 	// 订单关闭原因描述
 	_reasonDesc string
+	// 子订单编号
+	_subOrderId int64
 }
 
 // NewAlitripTravelTradeCloseRequest 初始化AlitripTravelTradeCloseAPIRequest对象
@@ -54,19 +54,6 @@ func (r AlitripTravelTradeCloseAPIRequest) GetCloseReason() string {
 	return r._closeReason
 }
 
-// SetSubOrderId is SubOrderId Setter
-// 子订单编号
-func (r *AlitripTravelTradeCloseAPIRequest) SetSubOrderId(_subOrderId int64) error {
-	r._subOrderId = _subOrderId
-	r.Set("sub_order_id", _subOrderId)
-	return nil
-}
-
-// GetSubOrderId SubOrderId Getter
-func (r AlitripTravelTradeCloseAPIRequest) GetSubOrderId() int64 {
-	return r._subOrderId
-}
-
 // SetReasonDesc is ReasonDesc Setter
 // 订单关闭原因描述
 func (r *AlitripTravelTradeCloseAPIRequest) SetReasonDesc(_reasonDesc string) error {
@@ -78,4 +65,17 @@ func (r *AlitripTravelTradeCloseAPIRequest) SetReasonDesc(_reasonDesc string) er
 // GetReasonDesc ReasonDesc Getter
 func (r AlitripTravelTradeCloseAPIRequest) GetReasonDesc() string {
 	return r._reasonDesc
+}
+
+// SetSubOrderId is SubOrderId Setter
+// 子订单编号
+func (r *AlitripTravelTradeCloseAPIRequest) SetSubOrderId(_subOrderId int64) error {
+	r._subOrderId = _subOrderId
+	r.Set("sub_order_id", _subOrderId)
+	return nil
+}
+
+// GetSubOrderId SubOrderId Getter
+func (r AlitripTravelTradeCloseAPIRequest) GetSubOrderId() int64 {
+	return r._subOrderId
 }

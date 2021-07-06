@@ -8,10 +8,10 @@ type CiaConfig struct {
 	BidTargetType int64 `json:"bid_target_type,omitempty" xml:"bid_target_type,omitempty"`
 	// 最高溢价比例
 	MaxPremium int64 `json:"max_premium,omitempty" xml:"max_premium,omitempty"`
+	// 推广组id
+	AdGroupId int64 `json:"ad_group_id,omitempty" xml:"ad_group_id,omitempty"`
 	// 是否自动流转
 	IsCirculation bool `json:"is_circulation,omitempty" xml:"is_circulation,omitempty"`
 	// 是否开启智能出价
 	IsSmartBidding bool `json:"is_smart_bidding,omitempty" xml:"is_smart_bidding,omitempty"`
-	// 推广组id
-	AdGroupId int64 `json:"ad_group_id,omitempty" xml:"ad_group_id,omitempty"`
 }

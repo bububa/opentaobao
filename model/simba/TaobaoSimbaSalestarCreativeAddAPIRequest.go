@@ -12,14 +12,14 @@ import (
 // 创建一个创意
 type TaobaoSimbaSalestarCreativeAddAPIRequest struct {
 	model.Params
-	// 推广组Id
-	_adgroupId int64
 	// 创意标题，最多20个汉字
 	_title string
 	// 创意图片地址，必须是推广组对应商品的图片之一
 	_imgUrl string
 	// 主人昵称
 	_nick string
+	// 推广组Id
+	_adgroupId int64
 }
 
 // NewTaobaoSimbaSalestarCreativeAddRequest 初始化TaobaoSimbaSalestarCreativeAddAPIRequest对象
@@ -41,19 +41,6 @@ func (r TaobaoSimbaSalestarCreativeAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetAdgroupId is AdgroupId Setter
-// 推广组Id
-func (r *TaobaoSimbaSalestarCreativeAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
-	r._adgroupId = _adgroupId
-	r.Set("adgroup_id", _adgroupId)
-	return nil
-}
-
-// GetAdgroupId AdgroupId Getter
-func (r TaobaoSimbaSalestarCreativeAddAPIRequest) GetAdgroupId() int64 {
-	return r._adgroupId
 }
 
 // SetTitle is Title Setter
@@ -93,4 +80,17 @@ func (r *TaobaoSimbaSalestarCreativeAddAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoSimbaSalestarCreativeAddAPIRequest) GetNick() string {
 	return r._nick
+}
+
+// SetAdgroupId is AdgroupId Setter
+// 推广组Id
+func (r *TaobaoSimbaSalestarCreativeAddAPIRequest) SetAdgroupId(_adgroupId int64) error {
+	r._adgroupId = _adgroupId
+	r.Set("adgroup_id", _adgroupId)
+	return nil
+}
+
+// GetAdgroupId AdgroupId Getter
+func (r TaobaoSimbaSalestarCreativeAddAPIRequest) GetAdgroupId() int64 {
+	return r._adgroupId
 }

@@ -12,28 +12,28 @@ import (
 // iSV发布检验检测商品基本信息给健康，内部关联一个淘宝商品或SKU
 type AlibabaAlihealthLabItemSyncAPIRequest struct {
 	model.Params
+	// 打包的子项目
+	_subItems []LabSubItemBrief
+	// 项目关联的门店
+	_relatedIsvStoreCodes []string
 	// 检验检测项目isv侧编码
 	_isvItemCode string
 	// 检验检测项目名称
 	_name string
-	// 采购价，单位分
-	_costPrice int64
 	// 性别限制 MALE  FEMALE
 	_genderRestriction string
 	// 婚否状态限制 MARRIED UNMARRIED
 	_maritalStatusRestriction string
 	// 额外的属性
 	_extraAttributes string
-	// 报告产出预计需要的时长，单位毫秒
-	_reportGenerationTimeDuration int64
-	// 打包的子项目
-	_subItems []LabSubItemBrief
 	// EFFECTIVE 项目有效， INVALID 项目无效
 	_isvItemStatus string
-	// 项目关联的门店
-	_relatedIsvStoreCodes []string
 	// 项目介绍
 	_intro string
+	// 采购价，单位分
+	_costPrice int64
+	// 报告产出预计需要的时长，单位毫秒
+	_reportGenerationTimeDuration int64
 }
 
 // NewAlibabaAlihealthLabItemSyncRequest 初始化AlibabaAlihealthLabItemSyncAPIRequest对象
@@ -55,6 +55,32 @@ func (r AlibabaAlihealthLabItemSyncAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSubItems is SubItems Setter
+// 打包的子项目
+func (r *AlibabaAlihealthLabItemSyncAPIRequest) SetSubItems(_subItems []LabSubItemBrief) error {
+	r._subItems = _subItems
+	r.Set("sub_items", _subItems)
+	return nil
+}
+
+// GetSubItems SubItems Getter
+func (r AlibabaAlihealthLabItemSyncAPIRequest) GetSubItems() []LabSubItemBrief {
+	return r._subItems
+}
+
+// SetRelatedIsvStoreCodes is RelatedIsvStoreCodes Setter
+// 项目关联的门店
+func (r *AlibabaAlihealthLabItemSyncAPIRequest) SetRelatedIsvStoreCodes(_relatedIsvStoreCodes []string) error {
+	r._relatedIsvStoreCodes = _relatedIsvStoreCodes
+	r.Set("related_isv_store_codes", _relatedIsvStoreCodes)
+	return nil
+}
+
+// GetRelatedIsvStoreCodes RelatedIsvStoreCodes Getter
+func (r AlibabaAlihealthLabItemSyncAPIRequest) GetRelatedIsvStoreCodes() []string {
+	return r._relatedIsvStoreCodes
 }
 
 // SetIsvItemCode is IsvItemCode Setter
@@ -81,19 +107,6 @@ func (r *AlibabaAlihealthLabItemSyncAPIRequest) SetName(_name string) error {
 // GetName Name Getter
 func (r AlibabaAlihealthLabItemSyncAPIRequest) GetName() string {
 	return r._name
-}
-
-// SetCostPrice is CostPrice Setter
-// 采购价，单位分
-func (r *AlibabaAlihealthLabItemSyncAPIRequest) SetCostPrice(_costPrice int64) error {
-	r._costPrice = _costPrice
-	r.Set("cost_price", _costPrice)
-	return nil
-}
-
-// GetCostPrice CostPrice Getter
-func (r AlibabaAlihealthLabItemSyncAPIRequest) GetCostPrice() int64 {
-	return r._costPrice
 }
 
 // SetGenderRestriction is GenderRestriction Setter
@@ -135,32 +148,6 @@ func (r AlibabaAlihealthLabItemSyncAPIRequest) GetExtraAttributes() string {
 	return r._extraAttributes
 }
 
-// SetReportGenerationTimeDuration is ReportGenerationTimeDuration Setter
-// 报告产出预计需要的时长，单位毫秒
-func (r *AlibabaAlihealthLabItemSyncAPIRequest) SetReportGenerationTimeDuration(_reportGenerationTimeDuration int64) error {
-	r._reportGenerationTimeDuration = _reportGenerationTimeDuration
-	r.Set("report_generation_time_duration", _reportGenerationTimeDuration)
-	return nil
-}
-
-// GetReportGenerationTimeDuration ReportGenerationTimeDuration Getter
-func (r AlibabaAlihealthLabItemSyncAPIRequest) GetReportGenerationTimeDuration() int64 {
-	return r._reportGenerationTimeDuration
-}
-
-// SetSubItems is SubItems Setter
-// 打包的子项目
-func (r *AlibabaAlihealthLabItemSyncAPIRequest) SetSubItems(_subItems []LabSubItemBrief) error {
-	r._subItems = _subItems
-	r.Set("sub_items", _subItems)
-	return nil
-}
-
-// GetSubItems SubItems Getter
-func (r AlibabaAlihealthLabItemSyncAPIRequest) GetSubItems() []LabSubItemBrief {
-	return r._subItems
-}
-
 // SetIsvItemStatus is IsvItemStatus Setter
 // EFFECTIVE 项目有效， INVALID 项目无效
 func (r *AlibabaAlihealthLabItemSyncAPIRequest) SetIsvItemStatus(_isvItemStatus string) error {
@@ -174,19 +161,6 @@ func (r AlibabaAlihealthLabItemSyncAPIRequest) GetIsvItemStatus() string {
 	return r._isvItemStatus
 }
 
-// SetRelatedIsvStoreCodes is RelatedIsvStoreCodes Setter
-// 项目关联的门店
-func (r *AlibabaAlihealthLabItemSyncAPIRequest) SetRelatedIsvStoreCodes(_relatedIsvStoreCodes []string) error {
-	r._relatedIsvStoreCodes = _relatedIsvStoreCodes
-	r.Set("related_isv_store_codes", _relatedIsvStoreCodes)
-	return nil
-}
-
-// GetRelatedIsvStoreCodes RelatedIsvStoreCodes Getter
-func (r AlibabaAlihealthLabItemSyncAPIRequest) GetRelatedIsvStoreCodes() []string {
-	return r._relatedIsvStoreCodes
-}
-
 // SetIntro is Intro Setter
 // 项目介绍
 func (r *AlibabaAlihealthLabItemSyncAPIRequest) SetIntro(_intro string) error {
@@ -198,4 +172,30 @@ func (r *AlibabaAlihealthLabItemSyncAPIRequest) SetIntro(_intro string) error {
 // GetIntro Intro Getter
 func (r AlibabaAlihealthLabItemSyncAPIRequest) GetIntro() string {
 	return r._intro
+}
+
+// SetCostPrice is CostPrice Setter
+// 采购价，单位分
+func (r *AlibabaAlihealthLabItemSyncAPIRequest) SetCostPrice(_costPrice int64) error {
+	r._costPrice = _costPrice
+	r.Set("cost_price", _costPrice)
+	return nil
+}
+
+// GetCostPrice CostPrice Getter
+func (r AlibabaAlihealthLabItemSyncAPIRequest) GetCostPrice() int64 {
+	return r._costPrice
+}
+
+// SetReportGenerationTimeDuration is ReportGenerationTimeDuration Setter
+// 报告产出预计需要的时长，单位毫秒
+func (r *AlibabaAlihealthLabItemSyncAPIRequest) SetReportGenerationTimeDuration(_reportGenerationTimeDuration int64) error {
+	r._reportGenerationTimeDuration = _reportGenerationTimeDuration
+	r.Set("report_generation_time_duration", _reportGenerationTimeDuration)
+	return nil
+}
+
+// GetReportGenerationTimeDuration ReportGenerationTimeDuration Getter
+func (r AlibabaAlihealthLabItemSyncAPIRequest) GetReportGenerationTimeDuration() int64 {
+	return r._reportGenerationTimeDuration
 }

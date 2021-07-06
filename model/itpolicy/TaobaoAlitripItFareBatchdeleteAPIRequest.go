@@ -12,14 +12,14 @@ import (
 // 批量删除自有政策，单次删除最大5万，大于5万时候提示失败，需要缩小删除条件。此接口同步返回任务id，异步执行操作。每个接入方最多同时只能有10个处理中的任务，超过后直接返回失败。
 type TaobaoAlitripItFareBatchdeleteAPIRequest struct {
 	model.Params
+	// 0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据
+	_statusList []int64
 	// 航空公司
 	_airline string
 	// 到达城市 可传多个 AND关系
 	_arrCity string
 	// 舱位 可传多个 或者的关系
 	_cabin string
-	// 是否能够混舱
-	_canRt bool
 	// 到达城市 可传多个 AND关系
 	_depCity string
 	// 最晚修改时间
@@ -36,12 +36,12 @@ type TaobaoAlitripItFareBatchdeleteAPIRequest struct {
 	_startRestrictGoDate string
 	// 去程适用结束日期
 	_endRestrictGoDate string
-	// 运价类型，1单程 2往返
-	_fareType int64
-	// 0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据
-	_statusList []int64
 	// json格式的字符串，扩展属性，预留
 	_extendAttributes string
+	// 运价类型，1单程 2往返
+	_fareType int64
+	// 是否能够混舱
+	_canRt bool
 }
 
 // NewTaobaoAlitripItFareBatchdeleteRequest 初始化TaobaoAlitripItFareBatchdeleteAPIRequest对象
@@ -63,6 +63,19 @@ func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetStatusList is StatusList Setter
+// 0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据
+func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetStatusList(_statusList []int64) error {
+	r._statusList = _statusList
+	r.Set("statusList", _statusList)
+	return nil
+}
+
+// GetStatusList StatusList Getter
+func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetStatusList() []int64 {
+	return r._statusList
 }
 
 // SetAirline is Airline Setter
@@ -102,19 +115,6 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetCabin(_cabin string) error
 // GetCabin Cabin Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetCabin() string {
 	return r._cabin
-}
-
-// SetCanRt is CanRt Setter
-// 是否能够混舱
-func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetCanRt(_canRt bool) error {
-	r._canRt = _canRt
-	r.Set("canRt", _canRt)
-	return nil
-}
-
-// GetCanRt CanRt Getter
-func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetCanRt() bool {
-	return r._canRt
 }
 
 // SetDepCity is DepCity Setter
@@ -221,6 +221,19 @@ func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetEndRestrictGoDate() string 
 	return r._endRestrictGoDate
 }
 
+// SetExtendAttributes is ExtendAttributes Setter
+// json格式的字符串，扩展属性，预留
+func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetExtendAttributes(_extendAttributes string) error {
+	r._extendAttributes = _extendAttributes
+	r.Set("extendAttributes", _extendAttributes)
+	return nil
+}
+
+// GetExtendAttributes ExtendAttributes Getter
+func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetExtendAttributes() string {
+	return r._extendAttributes
+}
+
 // SetFareType is FareType Setter
 // 运价类型，1单程 2往返
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetFareType(_fareType int64) error {
@@ -234,28 +247,15 @@ func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetFareType() int64 {
 	return r._fareType
 }
 
-// SetStatusList is StatusList Setter
-// 0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据
-func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetStatusList(_statusList []int64) error {
-	r._statusList = _statusList
-	r.Set("statusList", _statusList)
+// SetCanRt is CanRt Setter
+// 是否能够混舱
+func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetCanRt(_canRt bool) error {
+	r._canRt = _canRt
+	r.Set("canRt", _canRt)
 	return nil
 }
 
-// GetStatusList StatusList Getter
-func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetStatusList() []int64 {
-	return r._statusList
-}
-
-// SetExtendAttributes is ExtendAttributes Setter
-// json格式的字符串，扩展属性，预留
-func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetExtendAttributes(_extendAttributes string) error {
-	r._extendAttributes = _extendAttributes
-	r.Set("extendAttributes", _extendAttributes)
-	return nil
-}
-
-// GetExtendAttributes ExtendAttributes Getter
-func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetExtendAttributes() string {
-	return r._extendAttributes
+// GetCanRt CanRt Getter
+func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetCanRt() bool {
+	return r._canRt
 }

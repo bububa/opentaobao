@@ -2,8 +2,6 @@ package tmallnr
 
 // NrFetchCodeDto 结构体
 type NrFetchCodeDto struct {
-	// 主订单号
-	MainOrderId int64 `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
 	// 发货公司名称
 	ConsignCompanyName string `json:"consign_company_name,omitempty" xml:"consign_company_name,omitempty"`
 	// 业务标识（fn/cn）
@@ -12,8 +10,6 @@ type NrFetchCodeDto struct {
 	ConsignCompanyCode string `json:"consign_company_code,omitempty" xml:"consign_company_code,omitempty"`
 	// 打印内容
 	Printdata string `json:"printdata,omitempty" xml:"printdata,omitempty"`
-	// 对货码
-	ShortId int64 `json:"short_id,omitempty" xml:"short_id,omitempty"`
 	// 取件码
 	FetchCode string `json:"fetch_code,omitempty" xml:"fetch_code,omitempty"`
 	// 面单号
@@ -36,4 +32,8 @@ type NrFetchCodeDto struct {
 	SendAddr string `json:"send_addr,omitempty" xml:"send_addr,omitempty"`
 	// 核销码
 	WriteOffCode string `json:"write_off_code,omitempty" xml:"write_off_code,omitempty"`
+	// 主订单号
+	MainOrderId int64 `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
+	// 对货码
+	ShortId int64 `json:"short_id,omitempty" xml:"short_id,omitempty"`
 }

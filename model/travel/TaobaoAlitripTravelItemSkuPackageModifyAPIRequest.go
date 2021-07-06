@@ -12,12 +12,12 @@ import (
 // 【API3.0】套餐级别日历价格库存增删操作
 type TaobaoAlitripTravelItemSkuPackageModifyAPIRequest struct {
 	model.Params
-	// 商品id。itemId和outProductId至少填写一个
-	_itemId int64
-	// 商品 外部商家编码。itemId和outProductId至少填写一个
-	_outProductId string
 	// 商品日历价格库存套餐
 	_skus []ItemSkuInfo
+	// 商品 外部商家编码。itemId和outProductId至少填写一个
+	_outProductId string
+	// 商品id。itemId和outProductId至少填写一个
+	_itemId int64
 }
 
 // NewTaobaoAlitripTravelItemSkuPackageModifyRequest 初始化TaobaoAlitripTravelItemSkuPackageModifyAPIRequest对象
@@ -41,17 +41,17 @@ func (r TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) GetApiParams() url.Va
 	return params
 }
 
-// SetItemId is ItemId Setter
-// 商品id。itemId和outProductId至少填写一个
-func (r *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
+// SetSkus is Skus Setter
+// 商品日历价格库存套餐
+func (r *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) SetSkus(_skus []ItemSkuInfo) error {
+	r._skus = _skus
+	r.Set("skus", _skus)
 	return nil
 }
 
-// GetItemId ItemId Getter
-func (r TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) GetItemId() int64 {
-	return r._itemId
+// GetSkus Skus Getter
+func (r TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) GetSkus() []ItemSkuInfo {
+	return r._skus
 }
 
 // SetOutProductId is OutProductId Setter
@@ -67,15 +67,15 @@ func (r TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) GetOutProductId() str
 	return r._outProductId
 }
 
-// SetSkus is Skus Setter
-// 商品日历价格库存套餐
-func (r *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) SetSkus(_skus []ItemSkuInfo) error {
-	r._skus = _skus
-	r.Set("skus", _skus)
+// SetItemId is ItemId Setter
+// 商品id。itemId和outProductId至少填写一个
+func (r *TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
 	return nil
 }
 
-// GetSkus Skus Getter
-func (r TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) GetSkus() []ItemSkuInfo {
-	return r._skus
+// GetItemId ItemId Getter
+func (r TaobaoAlitripTravelItemSkuPackageModifyAPIRequest) GetItemId() int64 {
+	return r._itemId
 }

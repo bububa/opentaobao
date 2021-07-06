@@ -2,10 +2,18 @@ package xhotel
 
 // DsNhotelInfoDo 结构体
 type DsNhotelInfoDo struct {
-	// onlineStatus
-	OnlineStatus int64 `json:"online_status,omitempty" xml:"online_status,omitempty"`
 	// onlineDate
 	OnlineDate string `json:"online_date,omitempty" xml:"online_date,omitempty"`
+	// signDate
+	SignDate string `json:"sign_date,omitempty" xml:"sign_date,omitempty"`
+	// name
+	Name string `json:"name,omitempty" xml:"name,omitempty"`
+	// outerId
+	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
+	// canSellDate
+	CanSellDate string `json:"can_sell_date,omitempty" xml:"can_sell_date,omitempty"`
+	// onlineStatus
+	OnlineStatus int64 `json:"online_status,omitempty" xml:"online_status,omitempty"`
 	// qualificationType
 	QualificationType int64 `json:"qualification_type,omitempty" xml:"qualification_type,omitempty"`
 	// accountType
@@ -24,24 +32,16 @@ type DsNhotelInfoDo struct {
 	BusinessLicenseStatus int64 `json:"business_license_status,omitempty" xml:"business_license_status,omitempty"`
 	// idConfirmLetterStatus
 	IdConfirmLetterStatus int64 `json:"id_confirm_letter_status,omitempty" xml:"id_confirm_letter_status,omitempty"`
-	// signDate
-	SignDate string `json:"sign_date,omitempty" xml:"sign_date,omitempty"`
 	// isSigned
 	IsSigned int64 `json:"is_signed,omitempty" xml:"is_signed,omitempty"`
 	// isAccountApply
 	IsAccountApply int64 `json:"is_account_apply,omitempty" xml:"is_account_apply,omitempty"`
-	// name
-	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// hid
 	Hid int64 `json:"hid,omitempty" xml:"hid,omitempty"`
-	// outerId
-	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// isKezhan
 	IsKezhan int64 `json:"is_kezhan,omitempty" xml:"is_kezhan,omitempty"`
 	// hotelPicturesStatus
 	HotelPicturesStatus int64 `json:"hotel_pictures_status,omitempty" xml:"hotel_pictures_status,omitempty"`
 	// canSellStatus
 	CanSellStatus int64 `json:"can_sell_status,omitempty" xml:"can_sell_status,omitempty"`
-	// canSellDate
-	CanSellDate string `json:"can_sell_date,omitempty" xml:"can_sell_date,omitempty"`
 }

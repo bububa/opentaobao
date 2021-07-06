@@ -4,22 +4,6 @@ package wdk
 type FinanceOrderDetail struct {
 	// 币种
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
-	// 未税销售净额
-	UntaxSaleTotalAmount int64 `json:"untax_sale_total_amount,omitempty" xml:"untax_sale_total_amount,omitempty"`
-	// 含税销售净额
-	SaleTotalAmount int64 `json:"sale_total_amount,omitempty" xml:"sale_total_amount,omitempty"`
-	// 未税优惠金额
-	UntaxDiscountAmount int64 `json:"untax_discount_amount,omitempty" xml:"untax_discount_amount,omitempty"`
-	// 含税优惠金额
-	DiscountAmount int64 `json:"discount_amount,omitempty" xml:"discount_amount,omitempty"`
-	// 未税金额
-	UntaxAmount int64 `json:"untax_amount,omitempty" xml:"untax_amount,omitempty"`
-	// 含税金额
-	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
-	// 含税商品单价（元）
-	UnitPrice int64 `json:"unit_price,omitempty" xml:"unit_price,omitempty"`
-	// 交易数量
-	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 税率
 	TaxRate string `json:"tax_rate,omitempty" xml:"tax_rate,omitempty"`
 	// 销售渠道
@@ -44,6 +28,22 @@ type FinanceOrderDetail struct {
 	BizDate string `json:"biz_date,omitempty" xml:"biz_date,omitempty"`
 	// 业务主键
 	BizUk string `json:"biz_uk,omitempty" xml:"biz_uk,omitempty"`
+	// 未税销售净额
+	UntaxSaleTotalAmount int64 `json:"untax_sale_total_amount,omitempty" xml:"untax_sale_total_amount,omitempty"`
+	// 含税销售净额
+	SaleTotalAmount int64 `json:"sale_total_amount,omitempty" xml:"sale_total_amount,omitempty"`
+	// 未税优惠金额
+	UntaxDiscountAmount int64 `json:"untax_discount_amount,omitempty" xml:"untax_discount_amount,omitempty"`
+	// 含税优惠金额
+	DiscountAmount int64 `json:"discount_amount,omitempty" xml:"discount_amount,omitempty"`
+	// 未税金额
+	UntaxAmount int64 `json:"untax_amount,omitempty" xml:"untax_amount,omitempty"`
+	// 含税金额
+	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
+	// 含税商品单价（元）
+	UnitPrice int64 `json:"unit_price,omitempty" xml:"unit_price,omitempty"`
+	// 交易数量
+	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 交易类型编码      * 88 - 销售      * 99 - 退款
 	TradeTypeCode int64 `json:"trade_type_code,omitempty" xml:"trade_type_code,omitempty"`
 }

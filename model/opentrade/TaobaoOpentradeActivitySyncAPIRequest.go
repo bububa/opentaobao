@@ -15,6 +15,8 @@ import (
 // 在活动结束后，对限购不再限制，平台开放购买，用户可在小程序内、商品详情、购物车下单购买；
 type TaobaoOpentradeActivitySyncAPIRequest struct {
 	model.Params
+	// 活动关联的商品列表，使用逗号(,)分割
+	_itemIdList []int64
 	// 排队活动ID，排队时如传入，这里需要填写；若未传，这里也可以不传
 	_activityId string
 	// 活动开始时间
@@ -23,8 +25,6 @@ type TaobaoOpentradeActivitySyncAPIRequest struct {
 	_endTime string
 	// 活动名称
 	_activityName string
-	// 活动关联的商品列表，使用逗号(,)分割
-	_itemIdList []int64
 }
 
 // NewTaobaoOpentradeActivitySyncRequest 初始化TaobaoOpentradeActivitySyncAPIRequest对象
@@ -46,6 +46,19 @@ func (r TaobaoOpentradeActivitySyncAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetItemIdList is ItemIdList Setter
+// 活动关联的商品列表，使用逗号(,)分割
+func (r *TaobaoOpentradeActivitySyncAPIRequest) SetItemIdList(_itemIdList []int64) error {
+	r._itemIdList = _itemIdList
+	r.Set("item_id_list", _itemIdList)
+	return nil
+}
+
+// GetItemIdList ItemIdList Getter
+func (r TaobaoOpentradeActivitySyncAPIRequest) GetItemIdList() []int64 {
+	return r._itemIdList
 }
 
 // SetActivityId is ActivityId Setter
@@ -98,17 +111,4 @@ func (r *TaobaoOpentradeActivitySyncAPIRequest) SetActivityName(_activityName st
 // GetActivityName ActivityName Getter
 func (r TaobaoOpentradeActivitySyncAPIRequest) GetActivityName() string {
 	return r._activityName
-}
-
-// SetItemIdList is ItemIdList Setter
-// 活动关联的商品列表，使用逗号(,)分割
-func (r *TaobaoOpentradeActivitySyncAPIRequest) SetItemIdList(_itemIdList []int64) error {
-	r._itemIdList = _itemIdList
-	r.Set("item_id_list", _itemIdList)
-	return nil
-}
-
-// GetItemIdList ItemIdList Getter
-func (r TaobaoOpentradeActivitySyncAPIRequest) GetItemIdList() []int64 {
-	return r._itemIdList
 }

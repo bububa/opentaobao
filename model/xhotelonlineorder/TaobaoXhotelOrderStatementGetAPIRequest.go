@@ -14,22 +14,22 @@ type TaobaoXhotelOrderStatementGetAPIRequest struct {
 	model.Params
 	// 要查询的tid列表，逗号分隔,列表查询;当此值不为空时候，其余参数忽略。最多单次20条。
 	_orderTids string
+	// 查询结束时间
+	_to string
+	// 查询开始时间
+	_from string
+	// 外部酒店编码
+	_hotelCode string
+	// 系统商vendor
+	_vendor string
 	// 查询条数，最大支持500条
 	_pageSize int64
 	// 数据查询开始下标
 	_start int64
 	// 0：check_in, 1：check_out,2：分账时间
 	_dateType int64
-	// 查询结束时间
-	_to string
-	// 查询开始时间
-	_from string
 	// 淘宝订单号
 	_tid int64
-	// 外部酒店编码
-	_hotelCode string
-	// 系统商vendor
-	_vendor string
 }
 
 // NewTaobaoXhotelOrderStatementGetRequest 初始化TaobaoXhotelOrderStatementGetAPIRequest对象
@@ -64,6 +64,58 @@ func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetOrderTids(_orderTids string
 // GetOrderTids OrderTids Getter
 func (r TaobaoXhotelOrderStatementGetAPIRequest) GetOrderTids() string {
 	return r._orderTids
+}
+
+// SetTo is To Setter
+// 查询结束时间
+func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetTo(_to string) error {
+	r._to = _to
+	r.Set("to", _to)
+	return nil
+}
+
+// GetTo To Getter
+func (r TaobaoXhotelOrderStatementGetAPIRequest) GetTo() string {
+	return r._to
+}
+
+// SetFrom is From Setter
+// 查询开始时间
+func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetFrom(_from string) error {
+	r._from = _from
+	r.Set("from", _from)
+	return nil
+}
+
+// GetFrom From Getter
+func (r TaobaoXhotelOrderStatementGetAPIRequest) GetFrom() string {
+	return r._from
+}
+
+// SetHotelCode is HotelCode Setter
+// 外部酒店编码
+func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetHotelCode(_hotelCode string) error {
+	r._hotelCode = _hotelCode
+	r.Set("hotel_code", _hotelCode)
+	return nil
+}
+
+// GetHotelCode HotelCode Getter
+func (r TaobaoXhotelOrderStatementGetAPIRequest) GetHotelCode() string {
+	return r._hotelCode
+}
+
+// SetVendor is Vendor Setter
+// 系统商vendor
+func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetVendor(_vendor string) error {
+	r._vendor = _vendor
+	r.Set("vendor", _vendor)
+	return nil
+}
+
+// GetVendor Vendor Getter
+func (r TaobaoXhotelOrderStatementGetAPIRequest) GetVendor() string {
+	return r._vendor
 }
 
 // SetPageSize is PageSize Setter
@@ -105,32 +157,6 @@ func (r TaobaoXhotelOrderStatementGetAPIRequest) GetDateType() int64 {
 	return r._dateType
 }
 
-// SetTo is To Setter
-// 查询结束时间
-func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetTo(_to string) error {
-	r._to = _to
-	r.Set("to", _to)
-	return nil
-}
-
-// GetTo To Getter
-func (r TaobaoXhotelOrderStatementGetAPIRequest) GetTo() string {
-	return r._to
-}
-
-// SetFrom is From Setter
-// 查询开始时间
-func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetFrom(_from string) error {
-	r._from = _from
-	r.Set("from", _from)
-	return nil
-}
-
-// GetFrom From Getter
-func (r TaobaoXhotelOrderStatementGetAPIRequest) GetFrom() string {
-	return r._from
-}
-
 // SetTid is Tid Setter
 // 淘宝订单号
 func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetTid(_tid int64) error {
@@ -142,30 +168,4 @@ func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetTid(_tid int64) error {
 // GetTid Tid Getter
 func (r TaobaoXhotelOrderStatementGetAPIRequest) GetTid() int64 {
 	return r._tid
-}
-
-// SetHotelCode is HotelCode Setter
-// 外部酒店编码
-func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetHotelCode(_hotelCode string) error {
-	r._hotelCode = _hotelCode
-	r.Set("hotel_code", _hotelCode)
-	return nil
-}
-
-// GetHotelCode HotelCode Getter
-func (r TaobaoXhotelOrderStatementGetAPIRequest) GetHotelCode() string {
-	return r._hotelCode
-}
-
-// SetVendor is Vendor Setter
-// 系统商vendor
-func (r *TaobaoXhotelOrderStatementGetAPIRequest) SetVendor(_vendor string) error {
-	r._vendor = _vendor
-	r.Set("vendor", _vendor)
-	return nil
-}
-
-// GetVendor Vendor Getter
-func (r TaobaoXhotelOrderStatementGetAPIRequest) GetVendor() string {
-	return r._vendor
 }

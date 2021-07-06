@@ -2,6 +2,8 @@ package wdk
 
 // SfB2CFmsCallbackContent 结构体
 type SfB2CFmsCallbackContent struct {
+	// 快递包裹信息
+	Packages []ExpressPackage `json:"packages,omitempty" xml:"packages>express_package,omitempty"`
 	// 商品编码
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// 缺货出库存数量
@@ -14,6 +16,4 @@ type SfB2CFmsCallbackContent struct {
 	ActualSaleQuantity string `json:"actual_sale_quantity,omitempty" xml:"actual_sale_quantity,omitempty"`
 	// 作业内容单号
 	WorkUnitContentId string `json:"work_unit_content_id,omitempty" xml:"work_unit_content_id,omitempty"`
-	// 快递包裹信息
-	Packages []ExpressPackage `json:"packages,omitempty" xml:"packages>express_package,omitempty"`
 }

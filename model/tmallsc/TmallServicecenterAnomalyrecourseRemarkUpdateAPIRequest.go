@@ -12,10 +12,10 @@ import (
 // 一键求助服务商可以回传备注
 type TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest struct {
 	model.Params
-	// 需要更新的一键求助单id
-	_id int64
 	// 需要更新的服务商备注
 	_remark string
+	// 需要更新的一键求助单id
+	_id int64
 }
 
 // NewTmallServicecenterAnomalyrecourseRemarkUpdateRequest 初始化TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest对象
@@ -39,19 +39,6 @@ func (r TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) GetApiParams() 
 	return params
 }
 
-// SetId is Id Setter
-// 需要更新的一键求助单id
-func (r *TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) SetId(_id int64) error {
-	r._id = _id
-	r.Set("id", _id)
-	return nil
-}
-
-// GetId Id Getter
-func (r TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) GetId() int64 {
-	return r._id
-}
-
 // SetRemark is Remark Setter
 // 需要更新的服务商备注
 func (r *TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) SetRemark(_remark string) error {
@@ -63,4 +50,17 @@ func (r *TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) SetRemark(_rem
 // GetRemark Remark Getter
 func (r TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) GetRemark() string {
 	return r._remark
+}
+
+// SetId is Id Setter
+// 需要更新的一键求助单id
+func (r *TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// GetId Id Getter
+func (r TmallServicecenterAnomalyrecourseRemarkUpdateAPIRequest) GetId() int64 {
+	return r._id
 }

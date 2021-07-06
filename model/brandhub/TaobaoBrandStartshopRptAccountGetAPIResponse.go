@@ -20,8 +20,8 @@ type TaobaoBrandStartshopRptAccountGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"brand_startshop_rpt_account_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 错误信息
-	ErrorParam string `json:"error_param,omitempty" xml:"error_param,omitempty"`
 	// result
 	AdvertiserRptList []TaobaoBrandStartshopRptAccountGetResult `json:"advertiser_rpt_list,omitempty" xml:"advertiser_rpt_list>taobao_brand_startshop_rpt_account_get_result,omitempty"`
+	// 错误信息
+	ErrorParam string `json:"error_param,omitempty" xml:"error_param,omitempty"`
 }

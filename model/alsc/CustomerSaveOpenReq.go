@@ -8,8 +8,6 @@ type CustomerSaveOpenReq struct {
 	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
 	// 渠道  crm_back(1, "CRM后台"),  pos(2, "POS"),  mobile_shop(3, "个人中心"),  wechat(4, "微信"),  alipay(5, "支付宝"),所有pos端传2
 	Channel string `json:"channel,omitempty" xml:"channel,omitempty"`
-	// 性别 0女 1男,2其他
-	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
 	// 手机号
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
 	// 姓名
@@ -26,4 +24,6 @@ type CustomerSaveOpenReq struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// saas门店id
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+	// 性别 0女 1男,2其他
+	Gender int64 `json:"gender,omitempty" xml:"gender,omitempty"`
 }

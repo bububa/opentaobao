@@ -2,8 +2,6 @@ package mozi
 
 // CreateTenantEmployeeAndAccountRequest 结构体
 type CreateTenantEmployeeAndAccountRequest struct {
-	// 租户ID
-	TenantId int64 `json:"tenant_id,omitempty" xml:"tenant_id,omitempty"`
 	// 证件号码
 	CertificateCode string `json:"certificate_code,omitempty" xml:"certificate_code,omitempty"`
 	// 请求附加消息
@@ -36,4 +34,6 @@ type CreateTenantEmployeeAndAccountRequest struct {
 	Namespace string `json:"namespace,omitempty" xml:"namespace,omitempty"`
 	// 头像的完整URL
 	Avatar string `json:"avatar,omitempty" xml:"avatar,omitempty"`
+	// 租户ID
+	TenantId int64 `json:"tenant_id,omitempty" xml:"tenant_id,omitempty"`
 }

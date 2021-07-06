@@ -12,12 +12,8 @@ import (
 // 创意预审新增接口
 type TaobaoTanxCreativeAddAPIRequest struct {
 	model.Params
-	// DSP的memberId
-	_memberId int64
 	// dsp用户身份认证的TOKEN
 	_token string
-	// 当前时间戳，1970-01-01后的秒数
-	_signTime int64
 	// 创意id
 	_creativeId string
 	// 广告类目 如果有多个，以逗号分隔
@@ -30,6 +26,10 @@ type TaobaoTanxCreativeAddAPIRequest struct {
 	_destinationUrl string
 	// 创意尺寸,中间以小写字母x分隔
 	_adboardSize string
+	// DSP的memberId
+	_memberId int64
+	// 当前时间戳，1970-01-01后的秒数
+	_signTime int64
 	// 创意封装类型：1 Htmlsnippet(pc网页),2 vast-nonlinear（视频暂停）,3vast-linear（视频贴片） 4 vast-companion(视频伴随),5 Html5(无线banner或app)
 	_creativePackageFormat int64
 }
@@ -55,19 +55,6 @@ func (r TaobaoTanxCreativeAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetMemberId is MemberId Setter
-// DSP的memberId
-func (r *TaobaoTanxCreativeAddAPIRequest) SetMemberId(_memberId int64) error {
-	r._memberId = _memberId
-	r.Set("member_id", _memberId)
-	return nil
-}
-
-// GetMemberId MemberId Getter
-func (r TaobaoTanxCreativeAddAPIRequest) GetMemberId() int64 {
-	return r._memberId
-}
-
 // SetToken is Token Setter
 // dsp用户身份认证的TOKEN
 func (r *TaobaoTanxCreativeAddAPIRequest) SetToken(_token string) error {
@@ -79,19 +66,6 @@ func (r *TaobaoTanxCreativeAddAPIRequest) SetToken(_token string) error {
 // GetToken Token Getter
 func (r TaobaoTanxCreativeAddAPIRequest) GetToken() string {
 	return r._token
-}
-
-// SetSignTime is SignTime Setter
-// 当前时间戳，1970-01-01后的秒数
-func (r *TaobaoTanxCreativeAddAPIRequest) SetSignTime(_signTime int64) error {
-	r._signTime = _signTime
-	r.Set("sign_time", _signTime)
-	return nil
-}
-
-// GetSignTime SignTime Getter
-func (r TaobaoTanxCreativeAddAPIRequest) GetSignTime() int64 {
-	return r._signTime
 }
 
 // SetCreativeId is CreativeId Setter
@@ -170,6 +144,32 @@ func (r *TaobaoTanxCreativeAddAPIRequest) SetAdboardSize(_adboardSize string) er
 // GetAdboardSize AdboardSize Getter
 func (r TaobaoTanxCreativeAddAPIRequest) GetAdboardSize() string {
 	return r._adboardSize
+}
+
+// SetMemberId is MemberId Setter
+// DSP的memberId
+func (r *TaobaoTanxCreativeAddAPIRequest) SetMemberId(_memberId int64) error {
+	r._memberId = _memberId
+	r.Set("member_id", _memberId)
+	return nil
+}
+
+// GetMemberId MemberId Getter
+func (r TaobaoTanxCreativeAddAPIRequest) GetMemberId() int64 {
+	return r._memberId
+}
+
+// SetSignTime is SignTime Setter
+// 当前时间戳，1970-01-01后的秒数
+func (r *TaobaoTanxCreativeAddAPIRequest) SetSignTime(_signTime int64) error {
+	r._signTime = _signTime
+	r.Set("sign_time", _signTime)
+	return nil
+}
+
+// GetSignTime SignTime Getter
+func (r TaobaoTanxCreativeAddAPIRequest) GetSignTime() int64 {
+	return r._signTime
 }
 
 // SetCreativePackageFormat is CreativePackageFormat Setter

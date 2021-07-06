@@ -20,8 +20,8 @@ type TaobaoOpenimTribeSendmsgAPIResponseModel struct {
 	XMLName xml.Name `xml:"openim_tribe_sendmsg_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 错误码
-	TribeCode int64 `json:"tribe_code,omitempty" xml:"tribe_code,omitempty"`
 	// 错误信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// 错误码
+	TribeCode int64 `json:"tribe_code,omitempty" xml:"tribe_code,omitempty"`
 }

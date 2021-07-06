@@ -12,6 +12,12 @@ import (
 // 分销商查询供应商产品信息
 type TaobaoFenxiaoDistributorProductsGetAPIRequest struct {
 	model.Params
+	// 指定查询额外的信息，可选值：skus（sku数据）、images（多图），多个可选值用逗号分割。
+	_fields []string
+	// 根据商品ID列表查询，优先级次于产品ID列表，高于其他分页查询条件。如果商品不是分销商品，自动过滤。最大限制20，用逗号分割，例如：“1001,1002,1003,1004,1005”
+	_itemIds []int64
+	// 产品ID列表（最大限制30），用逗号分割，例如：“1001,1002,1003,1004,1005”
+	_pids []int64
 	// order_by
 	_orderBy string
 	// time_type
@@ -22,22 +28,16 @@ type TaobaoFenxiaoDistributorProductsGetAPIRequest struct {
 	_tradeType string
 	// 结束时间
 	_endTime string
-	// 指定查询额外的信息，可选值：skus（sku数据）、images（多图），多个可选值用逗号分割。
-	_fields []string
-	// 根据商品ID列表查询，优先级次于产品ID列表，高于其他分页查询条件。如果商品不是分销商品，自动过滤。最大限制20，用逗号分割，例如：“1001,1002,1003,1004,1005”
-	_itemIds []int64
-	// 产品线ID
-	_productcatId int64
-	// 产品ID列表（最大限制30），用逗号分割，例如：“1001,1002,1003,1004,1005”
-	_pids []int64
 	// 开始修改时间
 	_startTime string
+	// 供应商nick，分页查询时，必传
+	_supplierNick string
+	// 产品线ID
+	_productcatId int64
 	// 页码（大于0的整数，默认1）
 	_pageNo int64
 	// 每页记录数（默认20，最大50）
 	_pageSize int64
-	// 供应商nick，分页查询时，必传
-	_supplierNick string
 }
 
 // NewTaobaoFenxiaoDistributorProductsGetRequest 初始化TaobaoFenxiaoDistributorProductsGetAPIRequest对象
@@ -59,6 +59,45 @@ func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetApiParams() url.Values
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetFields is Fields Setter
+// 指定查询额外的信息，可选值：skus（sku数据）、images（多图），多个可选值用逗号分割。
+func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) SetFields(_fields []string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// GetFields Fields Getter
+func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetFields() []string {
+	return r._fields
+}
+
+// SetItemIds is ItemIds Setter
+// 根据商品ID列表查询，优先级次于产品ID列表，高于其他分页查询条件。如果商品不是分销商品，自动过滤。最大限制20，用逗号分割，例如：“1001,1002,1003,1004,1005”
+func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) SetItemIds(_itemIds []int64) error {
+	r._itemIds = _itemIds
+	r.Set("item_ids", _itemIds)
+	return nil
+}
+
+// GetItemIds ItemIds Getter
+func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetItemIds() []int64 {
+	return r._itemIds
+}
+
+// SetPids is Pids Setter
+// 产品ID列表（最大限制30），用逗号分割，例如：“1001,1002,1003,1004,1005”
+func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) SetPids(_pids []int64) error {
+	r._pids = _pids
+	r.Set("pids", _pids)
+	return nil
+}
+
+// GetPids Pids Getter
+func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetPids() []int64 {
+	return r._pids
 }
 
 // SetOrderBy is OrderBy Setter
@@ -126,30 +165,30 @@ func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// SetFields is Fields Setter
-// 指定查询额外的信息，可选值：skus（sku数据）、images（多图），多个可选值用逗号分割。
-func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) SetFields(_fields []string) error {
-	r._fields = _fields
-	r.Set("fields", _fields)
+// SetStartTime is StartTime Setter
+// 开始修改时间
+func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) SetStartTime(_startTime string) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
 	return nil
 }
 
-// GetFields Fields Getter
-func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetFields() []string {
-	return r._fields
+// GetStartTime StartTime Getter
+func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetStartTime() string {
+	return r._startTime
 }
 
-// SetItemIds is ItemIds Setter
-// 根据商品ID列表查询，优先级次于产品ID列表，高于其他分页查询条件。如果商品不是分销商品，自动过滤。最大限制20，用逗号分割，例如：“1001,1002,1003,1004,1005”
-func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) SetItemIds(_itemIds []int64) error {
-	r._itemIds = _itemIds
-	r.Set("item_ids", _itemIds)
+// SetSupplierNick is SupplierNick Setter
+// 供应商nick，分页查询时，必传
+func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) SetSupplierNick(_supplierNick string) error {
+	r._supplierNick = _supplierNick
+	r.Set("supplier_nick", _supplierNick)
 	return nil
 }
 
-// GetItemIds ItemIds Getter
-func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetItemIds() []int64 {
-	return r._itemIds
+// GetSupplierNick SupplierNick Getter
+func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetSupplierNick() string {
+	return r._supplierNick
 }
 
 // SetProductcatId is ProductcatId Setter
@@ -163,32 +202,6 @@ func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) SetProductcatId(_product
 // GetProductcatId ProductcatId Getter
 func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetProductcatId() int64 {
 	return r._productcatId
-}
-
-// SetPids is Pids Setter
-// 产品ID列表（最大限制30），用逗号分割，例如：“1001,1002,1003,1004,1005”
-func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) SetPids(_pids []int64) error {
-	r._pids = _pids
-	r.Set("pids", _pids)
-	return nil
-}
-
-// GetPids Pids Getter
-func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetPids() []int64 {
-	return r._pids
-}
-
-// SetStartTime is StartTime Setter
-// 开始修改时间
-func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) SetStartTime(_startTime string) error {
-	r._startTime = _startTime
-	r.Set("start_time", _startTime)
-	return nil
-}
-
-// GetStartTime StartTime Getter
-func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetStartTime() string {
-	return r._startTime
 }
 
 // SetPageNo is PageNo Setter
@@ -215,17 +228,4 @@ func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) SetPageSize(_pageSize in
 // GetPageSize PageSize Getter
 func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetSupplierNick is SupplierNick Setter
-// 供应商nick，分页查询时，必传
-func (r *TaobaoFenxiaoDistributorProductsGetAPIRequest) SetSupplierNick(_supplierNick string) error {
-	r._supplierNick = _supplierNick
-	r.Set("supplier_nick", _supplierNick)
-	return nil
-}
-
-// GetSupplierNick SupplierNick Getter
-func (r TaobaoFenxiaoDistributorProductsGetAPIRequest) GetSupplierNick() string {
-	return r._supplierNick
 }

@@ -12,8 +12,6 @@ import (
 // 服务供应链服务单更新，服务商通过此接口将商品的sn等信息推送到服务单中
 type AlibabaServicecenterSpserviceorderUpdateAPIRequest struct {
 	model.Params
-	// 服务单id
-	_spServiceOrderId int64
 	// 新设备sn.当action填写addSn、changeSn时必填
 	_action string
 	// 新设备sn.当action填写addSn、changeSn时必填
@@ -24,6 +22,8 @@ type AlibabaServicecenterSpserviceorderUpdateAPIRequest struct {
 	_gmtEffect string
 	// 服务过期时间
 	_gmtExpire string
+	// 服务单id
+	_spServiceOrderId int64
 }
 
 // NewAlibabaServicecenterSpserviceorderUpdateRequest 初始化AlibabaServicecenterSpserviceorderUpdateAPIRequest对象
@@ -45,19 +45,6 @@ func (r AlibabaServicecenterSpserviceorderUpdateAPIRequest) GetApiParams() url.V
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetSpServiceOrderId is SpServiceOrderId Setter
-// 服务单id
-func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetSpServiceOrderId(_spServiceOrderId int64) error {
-	r._spServiceOrderId = _spServiceOrderId
-	r.Set("sp_service_order_id", _spServiceOrderId)
-	return nil
-}
-
-// GetSpServiceOrderId SpServiceOrderId Getter
-func (r AlibabaServicecenterSpserviceorderUpdateAPIRequest) GetSpServiceOrderId() int64 {
-	return r._spServiceOrderId
 }
 
 // SetAction is Action Setter
@@ -123,4 +110,17 @@ func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetGmtExpire(_gmtEx
 // GetGmtExpire GmtExpire Getter
 func (r AlibabaServicecenterSpserviceorderUpdateAPIRequest) GetGmtExpire() string {
 	return r._gmtExpire
+}
+
+// SetSpServiceOrderId is SpServiceOrderId Setter
+// 服务单id
+func (r *AlibabaServicecenterSpserviceorderUpdateAPIRequest) SetSpServiceOrderId(_spServiceOrderId int64) error {
+	r._spServiceOrderId = _spServiceOrderId
+	r.Set("sp_service_order_id", _spServiceOrderId)
+	return nil
+}
+
+// GetSpServiceOrderId SpServiceOrderId Getter
+func (r AlibabaServicecenterSpserviceorderUpdateAPIRequest) GetSpServiceOrderId() int64 {
+	return r._spServiceOrderId
 }

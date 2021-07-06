@@ -14,8 +14,6 @@ type TaobaoBrandStartshopRptAdgroupGetAPIRequest struct {
 	model.Params
 	// 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5
 	_trafficType string
-	// 转化周期默认15天,3,7,15
-	_effect int64
 	// 当前页数
 	_pageIndex string
 	// 每页条数
@@ -24,6 +22,8 @@ type TaobaoBrandStartshopRptAdgroupGetAPIRequest struct {
 	_startDate string
 	// 截至时间(最晚到昨天)
 	_endDate string
+	// 转化周期默认15天,3,7,15
+	_effect int64
 }
 
 // NewTaobaoBrandStartshopRptAdgroupGetRequest 初始化TaobaoBrandStartshopRptAdgroupGetAPIRequest对象
@@ -58,19 +58,6 @@ func (r *TaobaoBrandStartshopRptAdgroupGetAPIRequest) SetTrafficType(_trafficTyp
 // GetTrafficType TrafficType Getter
 func (r TaobaoBrandStartshopRptAdgroupGetAPIRequest) GetTrafficType() string {
 	return r._trafficType
-}
-
-// SetEffect is Effect Setter
-// 转化周期默认15天,3,7,15
-func (r *TaobaoBrandStartshopRptAdgroupGetAPIRequest) SetEffect(_effect int64) error {
-	r._effect = _effect
-	r.Set("effect", _effect)
-	return nil
-}
-
-// GetEffect Effect Getter
-func (r TaobaoBrandStartshopRptAdgroupGetAPIRequest) GetEffect() int64 {
-	return r._effect
 }
 
 // SetPageIndex is PageIndex Setter
@@ -123,4 +110,17 @@ func (r *TaobaoBrandStartshopRptAdgroupGetAPIRequest) SetEndDate(_endDate string
 // GetEndDate EndDate Getter
 func (r TaobaoBrandStartshopRptAdgroupGetAPIRequest) GetEndDate() string {
 	return r._endDate
+}
+
+// SetEffect is Effect Setter
+// 转化周期默认15天,3,7,15
+func (r *TaobaoBrandStartshopRptAdgroupGetAPIRequest) SetEffect(_effect int64) error {
+	r._effect = _effect
+	r.Set("effect", _effect)
+	return nil
+}
+
+// GetEffect Effect Getter
+func (r TaobaoBrandStartshopRptAdgroupGetAPIRequest) GetEffect() int64 {
+	return r._effect
 }

@@ -12,12 +12,12 @@ import (
 // 更新一个推广计划的分时折扣设置
 type TaobaoSimbaCampaignScheduleUpdateAPIRequest struct {
 	model.Params
-	// 推广计划Id
-	_campaignId int64
 	// 值为：“all”；或者用“;”分割的每天的设置字符串，该字符串为用“,”分割的时段折扣字符串，格式为：起始时间-结束时间:折扣，其中时间是24小时格式记录，折扣是1-150整数，表示折扣百分比；
 	_schedule string
 	// 主人昵称
 	_nick string
+	// 推广计划Id
+	_campaignId int64
 }
 
 // NewTaobaoSimbaCampaignScheduleUpdateRequest 初始化TaobaoSimbaCampaignScheduleUpdateAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoSimbaCampaignScheduleUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetCampaignId is CampaignId Setter
-// 推广计划Id
-func (r *TaobaoSimbaCampaignScheduleUpdateAPIRequest) SetCampaignId(_campaignId int64) error {
-	r._campaignId = _campaignId
-	r.Set("campaign_id", _campaignId)
-	return nil
-}
-
-// GetCampaignId CampaignId Getter
-func (r TaobaoSimbaCampaignScheduleUpdateAPIRequest) GetCampaignId() int64 {
-	return r._campaignId
 }
 
 // SetSchedule is Schedule Setter
@@ -78,4 +65,17 @@ func (r *TaobaoSimbaCampaignScheduleUpdateAPIRequest) SetNick(_nick string) erro
 // GetNick Nick Getter
 func (r TaobaoSimbaCampaignScheduleUpdateAPIRequest) GetNick() string {
 	return r._nick
+}
+
+// SetCampaignId is CampaignId Setter
+// 推广计划Id
+func (r *TaobaoSimbaCampaignScheduleUpdateAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// GetCampaignId CampaignId Getter
+func (r TaobaoSimbaCampaignScheduleUpdateAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
 }

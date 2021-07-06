@@ -14,6 +14,10 @@ type TaobaoCrmMembersSearchAPIRequest struct {
 	model.Params
 	// 买家昵称
 	_buyerNick string
+	// 最早上次交易时间（订单创建时间）
+	_minLastTradeTime string
+	// 最迟上次交易时间
+	_maxLastTradeTime string
 	// 会员等级
 	_grade int64
 	// 最小交易额，单位为元
@@ -24,10 +28,6 @@ type TaobaoCrmMembersSearchAPIRequest struct {
 	_minTradeCount int64
 	// 最大交易量
 	_maxTradeCount int64
-	// 最早上次交易时间（订单创建时间）
-	_minLastTradeTime string
-	// 最迟上次交易时间
-	_maxLastTradeTime string
 	// 关系来源，1交易成功，2未成交，3卖家手动吸纳
 	_relationSource int64
 	// 分组id
@@ -70,6 +70,32 @@ func (r *TaobaoCrmMembersSearchAPIRequest) SetBuyerNick(_buyerNick string) error
 // GetBuyerNick BuyerNick Getter
 func (r TaobaoCrmMembersSearchAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
+}
+
+// SetMinLastTradeTime is MinLastTradeTime Setter
+// 最早上次交易时间（订单创建时间）
+func (r *TaobaoCrmMembersSearchAPIRequest) SetMinLastTradeTime(_minLastTradeTime string) error {
+	r._minLastTradeTime = _minLastTradeTime
+	r.Set("min_last_trade_time", _minLastTradeTime)
+	return nil
+}
+
+// GetMinLastTradeTime MinLastTradeTime Getter
+func (r TaobaoCrmMembersSearchAPIRequest) GetMinLastTradeTime() string {
+	return r._minLastTradeTime
+}
+
+// SetMaxLastTradeTime is MaxLastTradeTime Setter
+// 最迟上次交易时间
+func (r *TaobaoCrmMembersSearchAPIRequest) SetMaxLastTradeTime(_maxLastTradeTime string) error {
+	r._maxLastTradeTime = _maxLastTradeTime
+	r.Set("max_last_trade_time", _maxLastTradeTime)
+	return nil
+}
+
+// GetMaxLastTradeTime MaxLastTradeTime Getter
+func (r TaobaoCrmMembersSearchAPIRequest) GetMaxLastTradeTime() string {
+	return r._maxLastTradeTime
 }
 
 // SetGrade is Grade Setter
@@ -135,32 +161,6 @@ func (r *TaobaoCrmMembersSearchAPIRequest) SetMaxTradeCount(_maxTradeCount int64
 // GetMaxTradeCount MaxTradeCount Getter
 func (r TaobaoCrmMembersSearchAPIRequest) GetMaxTradeCount() int64 {
 	return r._maxTradeCount
-}
-
-// SetMinLastTradeTime is MinLastTradeTime Setter
-// 最早上次交易时间（订单创建时间）
-func (r *TaobaoCrmMembersSearchAPIRequest) SetMinLastTradeTime(_minLastTradeTime string) error {
-	r._minLastTradeTime = _minLastTradeTime
-	r.Set("min_last_trade_time", _minLastTradeTime)
-	return nil
-}
-
-// GetMinLastTradeTime MinLastTradeTime Getter
-func (r TaobaoCrmMembersSearchAPIRequest) GetMinLastTradeTime() string {
-	return r._minLastTradeTime
-}
-
-// SetMaxLastTradeTime is MaxLastTradeTime Setter
-// 最迟上次交易时间
-func (r *TaobaoCrmMembersSearchAPIRequest) SetMaxLastTradeTime(_maxLastTradeTime string) error {
-	r._maxLastTradeTime = _maxLastTradeTime
-	r.Set("max_last_trade_time", _maxLastTradeTime)
-	return nil
-}
-
-// GetMaxLastTradeTime MaxLastTradeTime Getter
-func (r TaobaoCrmMembersSearchAPIRequest) GetMaxLastTradeTime() string {
-	return r._maxLastTradeTime
 }
 
 // SetRelationSource is RelationSource Setter

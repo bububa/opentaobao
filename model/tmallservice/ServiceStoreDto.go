@@ -4,8 +4,6 @@ package tmallservice
 type ServiceStoreDto struct {
 	// 城市
 	AddressCity string `json:"address_city,omitempty" xml:"address_city,omitempty"`
-	// 标准地址编码
-	AddressCode int64 `json:"address_code,omitempty" xml:"address_code,omitempty"`
 	// 详细地址
 	AddressDetail string `json:"address_detail,omitempty" xml:"address_detail,omitempty"`
 	// 地址-区
@@ -52,8 +50,6 @@ type ServiceStoreDto struct {
 	ServiceStoreName string `json:"service_store_name,omitempty" xml:"service_store_name,omitempty"`
 	// 统一社会信用代码
 	SocialCreditCode string `json:"social_credit_code,omitempty" xml:"social_credit_code,omitempty"`
-	// 门店类型
-	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 别名
 	ServiceStoreAlias string `json:"service_store_alias,omitempty" xml:"service_store_alias,omitempty"`
 	// 支付宝账户身份证号
@@ -68,8 +64,12 @@ type ServiceStoreDto struct {
 	LicensePhoto string `json:"license_photo,omitempty" xml:"license_photo,omitempty"`
 	// 品牌认证有效期
 	GmtBrandCertificationExpire string `json:"gmt_brand_certification_expire,omitempty" xml:"gmt_brand_certification_expire,omitempty"`
-	// 门店id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 照片集合
 	PhotoCollections string `json:"photo_collections,omitempty" xml:"photo_collections,omitempty"`
+	// 标准地址编码
+	AddressCode int64 `json:"address_code,omitempty" xml:"address_code,omitempty"`
+	// 门店类型
+	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+	// 门店id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 }

@@ -20,10 +20,10 @@ type AlibabaScsImageMatteAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_scs_image_matte_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 错误码
-	Errno string `json:"errno,omitempty" xml:"errno,omitempty"`
 	// 分组数据
 	DataList []Array `json:"data_list,omitempty" xml:"data_list>array,omitempty"`
+	// 错误码
+	Errno string `json:"errno,omitempty" xml:"errno,omitempty"`
 	// 错误提示信息
 	Errmsg string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
 	// 会话ID

@@ -12,14 +12,14 @@ import (
 // 商家价格管控白名单去除
 type AlibabaRetailVendingPriceWhitelistRemoveAPIRequest struct {
 	model.Params
-	// 淘宝用户ID
-	_sellerId int64
 	// 设备编码 device_code_list, device_uuid_list 二选一必填
 	_deviceCodeList []string
 	// 外部设备编码 device_code_list, device_uuid_list 二选一必填
 	_deviceUuidList []string
 	// 条码
 	_barcode string
+	// 淘宝用户ID
+	_sellerId int64
 	// 如果该参数传入，条码以商品条码为准
 	_itemId int64
 	// 是否生效到所有设备
@@ -45,19 +45,6 @@ func (r AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) GetApiParams() url.V
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetSellerId is SellerId Setter
-// 淘宝用户ID
-func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetSellerId(_sellerId int64) error {
-	r._sellerId = _sellerId
-	r.Set("seller_id", _sellerId)
-	return nil
-}
-
-// GetSellerId SellerId Getter
-func (r AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) GetSellerId() int64 {
-	return r._sellerId
 }
 
 // SetDeviceCodeList is DeviceCodeList Setter
@@ -97,6 +84,19 @@ func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetBarcode(_barcode
 // GetBarcode Barcode Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) GetBarcode() string {
 	return r._barcode
+}
+
+// SetSellerId is SellerId Setter
+// 淘宝用户ID
+func (r *AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) SetSellerId(_sellerId int64) error {
+	r._sellerId = _sellerId
+	r.Set("seller_id", _sellerId)
+	return nil
+}
+
+// GetSellerId SellerId Getter
+func (r AlibabaRetailVendingPriceWhitelistRemoveAPIRequest) GetSellerId() int64 {
+	return r._sellerId
 }
 
 // SetItemId is ItemId Setter

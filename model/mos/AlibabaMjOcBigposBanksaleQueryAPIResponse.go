@@ -20,8 +20,8 @@ type AlibabaMjOcBigposBanksaleQueryAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mj_oc_bigpos_banksale_query_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 明细数量
-	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// 数据主体
 	Datas []AlibabaMjOcBigposBanksaleQueryData `json:"datas,omitempty" xml:"datas>alibaba_mj_oc_bigpos_banksale_query_data,omitempty"`
+	// 明细数量
+	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 }

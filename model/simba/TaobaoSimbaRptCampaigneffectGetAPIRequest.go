@@ -20,12 +20,12 @@ type TaobaoSimbaRptCampaigneffectGetAPIRequest struct {
 	_startTime string
 	// 结束时间，格式yyyy-mm-dd
 	_endTime string
-	// 推广计划id
-	_campaignId int64
 	// 报表类型（搜索：SEARCH,类目出价：CAT,定向投放：NOSEARCH 全部：ALL）
 	_searchType string
 	// 数据来源（站内：1，站外：2）可多选以逗号分隔，默认值为：1,2
 	_source string
+	// 推广计划id
+	_campaignId int64
 	// 页码
 	_pageNo int64
 	// 每页大小
@@ -105,19 +105,6 @@ func (r TaobaoSimbaRptCampaigneffectGetAPIRequest) GetEndTime() string {
 	return r._endTime
 }
 
-// SetCampaignId is CampaignId Setter
-// 推广计划id
-func (r *TaobaoSimbaRptCampaigneffectGetAPIRequest) SetCampaignId(_campaignId int64) error {
-	r._campaignId = _campaignId
-	r.Set("campaign_id", _campaignId)
-	return nil
-}
-
-// GetCampaignId CampaignId Getter
-func (r TaobaoSimbaRptCampaigneffectGetAPIRequest) GetCampaignId() int64 {
-	return r._campaignId
-}
-
 // SetSearchType is SearchType Setter
 // 报表类型（搜索：SEARCH,类目出价：CAT,定向投放：NOSEARCH 全部：ALL）
 func (r *TaobaoSimbaRptCampaigneffectGetAPIRequest) SetSearchType(_searchType string) error {
@@ -142,6 +129,19 @@ func (r *TaobaoSimbaRptCampaigneffectGetAPIRequest) SetSource(_source string) er
 // GetSource Source Getter
 func (r TaobaoSimbaRptCampaigneffectGetAPIRequest) GetSource() string {
 	return r._source
+}
+
+// SetCampaignId is CampaignId Setter
+// 推广计划id
+func (r *TaobaoSimbaRptCampaigneffectGetAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// GetCampaignId CampaignId Getter
+func (r TaobaoSimbaRptCampaigneffectGetAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
 }
 
 // SetPageNo is PageNo Setter

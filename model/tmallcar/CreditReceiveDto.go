@@ -12,8 +12,6 @@ type CreditReceiveDto struct {
 	CapitalCode string `json:"capital_code,omitempty" xml:"capital_code,omitempty"`
 	// 授信未通过原因描述
 	FailReason string `json:"fail_reason,omitempty" xml:"fail_reason,omitempty"`
-	// 如果授信通过了,要有授信额度(单位分)
-	CreditAmount int64 `json:"credit_amount,omitempty" xml:"credit_amount,omitempty"`
 	// 金融机构的授信申请内部单号
 	CreditId string `json:"credit_id,omitempty" xml:"credit_id,omitempty"`
 	// 授信结果
@@ -24,4 +22,6 @@ type CreditReceiveDto struct {
 	BizCode string `json:"biz_code,omitempty" xml:"biz_code,omitempty"`
 	// 请求时间
 	RequestTime string `json:"request_time,omitempty" xml:"request_time,omitempty"`
+	// 如果授信通过了,要有授信额度(单位分)
+	CreditAmount int64 `json:"credit_amount,omitempty" xml:"credit_amount,omitempty"`
 }

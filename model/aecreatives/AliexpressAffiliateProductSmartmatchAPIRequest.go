@@ -36,10 +36,10 @@ type AliexpressAffiliateProductSmartmatchAPIRequest struct {
 	_trackingId string
 	// 用户信息
 	_user string
-	// 请求页数
-	_pageNo int64
 	// 商品收货国家，可筛选能销售至该国家的商品，并根据该国家税率政策返回对应商品价格
 	_country string
+	// 请求页数
+	_pageNo int64
 }
 
 // NewAliexpressAffiliateProductSmartmatchRequest 初始化AliexpressAffiliateProductSmartmatchAPIRequest对象
@@ -219,19 +219,6 @@ func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetUser() string {
 	return r._user
 }
 
-// SetPageNo is PageNo Setter
-// 请求页数
-func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetPageNo() int64 {
-	return r._pageNo
-}
-
 // SetCountry is Country Setter
 // 商品收货国家，可筛选能销售至该国家的商品，并根据该国家税率政策返回对应商品价格
 func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetCountry(_country string) error {
@@ -243,4 +230,17 @@ func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetCountry(_country str
 // GetCountry Country Getter
 func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetCountry() string {
 	return r._country
+}
+
+// SetPageNo is PageNo Setter
+// 请求页数
+func (r *AliexpressAffiliateProductSmartmatchAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r AliexpressAffiliateProductSmartmatchAPIRequest) GetPageNo() int64 {
+	return r._pageNo
 }

@@ -12,12 +12,6 @@ import (
 // 分页查询物流宝订单
 type TaobaoWlbOrderPageGetAPIRequest struct {
 	model.Params
-	// 每页多少条
-	_pageSize int64
-	// 分页的第几页
-	_pageNo int64
-	// TMS拒签：-100 接收方拒签：-200
-	_orderStatus int64
 	// 物流订单编号
 	_orderCode string
 	// 订单类型: （1）NORMAL_OUT ：正常出库 （2）NORMAL_IN：正常入库 （3）RETURN_IN：退货入库 （4）EXCHANGE_OUT：换货出库
@@ -28,6 +22,12 @@ type TaobaoWlbOrderPageGetAPIRequest struct {
 	_endTime string
 	// 查询开始时间
 	_startTime string
+	// 每页多少条
+	_pageSize int64
+	// 分页的第几页
+	_pageNo int64
+	// TMS拒签：-100 接收方拒签：-200
+	_orderStatus int64
 }
 
 // NewTaobaoWlbOrderPageGetRequest 初始化TaobaoWlbOrderPageGetAPIRequest对象
@@ -49,45 +49,6 @@ func (r TaobaoWlbOrderPageGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetPageSize is PageSize Setter
-// 每页多少条
-func (r *TaobaoWlbOrderPageGetAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoWlbOrderPageGetAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetPageNo is PageNo Setter
-// 分页的第几页
-func (r *TaobaoWlbOrderPageGetAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r TaobaoWlbOrderPageGetAPIRequest) GetPageNo() int64 {
-	return r._pageNo
-}
-
-// SetOrderStatus is OrderStatus Setter
-// TMS拒签：-100 接收方拒签：-200
-func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderStatus(_orderStatus int64) error {
-	r._orderStatus = _orderStatus
-	r.Set("order_status", _orderStatus)
-	return nil
-}
-
-// GetOrderStatus OrderStatus Getter
-func (r TaobaoWlbOrderPageGetAPIRequest) GetOrderStatus() int64 {
-	return r._orderStatus
 }
 
 // SetOrderCode is OrderCode Setter
@@ -153,4 +114,43 @@ func (r *TaobaoWlbOrderPageGetAPIRequest) SetStartTime(_startTime string) error 
 // GetStartTime StartTime Getter
 func (r TaobaoWlbOrderPageGetAPIRequest) GetStartTime() string {
 	return r._startTime
+}
+
+// SetPageSize is PageSize Setter
+// 每页多少条
+func (r *TaobaoWlbOrderPageGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoWlbOrderPageGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetPageNo is PageNo Setter
+// 分页的第几页
+func (r *TaobaoWlbOrderPageGetAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r TaobaoWlbOrderPageGetAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// SetOrderStatus is OrderStatus Setter
+// TMS拒签：-100 接收方拒签：-200
+func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderStatus(_orderStatus int64) error {
+	r._orderStatus = _orderStatus
+	r.Set("order_status", _orderStatus)
+	return nil
+}
+
+// GetOrderStatus OrderStatus Getter
+func (r TaobaoWlbOrderPageGetAPIRequest) GetOrderStatus() int64 {
+	return r._orderStatus
 }

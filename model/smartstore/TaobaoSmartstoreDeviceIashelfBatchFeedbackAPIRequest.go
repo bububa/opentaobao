@@ -16,10 +16,10 @@ import (
 // 2. 回流的设备属于当前应用添加
 type TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest struct {
 	model.Params
-	// 硬件CODE
-	_deviceCode string
 	// 回流数据数组，一次最多100条
 	_datas []DeviceBizDataDo
+	// 硬件CODE
+	_deviceCode string
 }
 
 // NewTaobaoSmartstoreDeviceIashelfBatchFeedbackRequest 初始化TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest对象
@@ -43,19 +43,6 @@ func (r TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) GetApiParams() url
 	return params
 }
 
-// SetDeviceCode is DeviceCode Setter
-// 硬件CODE
-func (r *TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) SetDeviceCode(_deviceCode string) error {
-	r._deviceCode = _deviceCode
-	r.Set("device_code", _deviceCode)
-	return nil
-}
-
-// GetDeviceCode DeviceCode Getter
-func (r TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) GetDeviceCode() string {
-	return r._deviceCode
-}
-
 // SetDatas is Datas Setter
 // 回流数据数组，一次最多100条
 func (r *TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) SetDatas(_datas []DeviceBizDataDo) error {
@@ -67,4 +54,17 @@ func (r *TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) SetDatas(_datas [
 // GetDatas Datas Getter
 func (r TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) GetDatas() []DeviceBizDataDo {
 	return r._datas
+}
+
+// SetDeviceCode is DeviceCode Setter
+// 硬件CODE
+func (r *TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) SetDeviceCode(_deviceCode string) error {
+	r._deviceCode = _deviceCode
+	r.Set("device_code", _deviceCode)
+	return nil
+}
+
+// GetDeviceCode DeviceCode Getter
+func (r TaobaoSmartstoreDeviceIashelfBatchFeedbackAPIRequest) GetDeviceCode() string {
+	return r._deviceCode
 }

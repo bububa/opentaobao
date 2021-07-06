@@ -2,8 +2,6 @@ package openim
 
 // TribeMsg 结构体
 type TribeMsg struct {
-	// 是否是at消息， 0表示不是at消息，1表示at指定的用户，2表示at群里所有人
-	AtFlag int64 `json:"at_flag,omitempty" xml:"at_flag,omitempty"`
 	// 当at_flag=1时，必须指定at的用户
 	Atmembers []User `json:"atmembers,omitempty" xml:"atmembers>user,omitempty"`
 	// 自定义push提醒参数，格式为json字符串，该参数为空时，采用系统默认的push；设置该参数时，json字符串必选包含至少包含指定的三个key，"d", "sound", "title"
@@ -12,6 +10,8 @@ type TribeMsg struct {
 	MediaAttrs string `json:"media_attrs,omitempty" xml:"media_attrs,omitempty"`
 	// 文本消息最大长度是4K，图片最大为500K。消息内容格式根据type确定。当type为文本时，内容为文本字符串；当类型为图片或语音时，内容为图片和语音的二进制base64编码生成的字符串；当类型为自定义消息时，内容必须为就送字符串格式，该字符串必须包含header字符，即{"header":{"summary":},...}
 	MsgContent string `json:"msg_content,omitempty" xml:"msg_content,omitempty"`
+	// 是否是at消息， 0表示不是at消息，1表示at指定的用户，2表示at群里所有人
+	AtFlag int64 `json:"at_flag,omitempty" xml:"at_flag,omitempty"`
 	// 消息类型，目前支持四中类型的消息； msg_type=0 表示普通文本消息； msg_type=2 表示语音消息； msg_type = 16表示图片消息； msg_type=17表示用户自定义消息
 	MsgType int64 `json:"msg_type,omitempty" xml:"msg_type,omitempty"`
 	// 该消息是否需要push

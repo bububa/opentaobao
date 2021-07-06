@@ -12,14 +12,14 @@ import (
 // 阿里健康020接单
 type TaobaoTradeDrugConfirmorderAPIRequest struct {
 	model.Params
+	// 子账号nick
+	_subUserNick string
 	// 代送宝 代送商ID
 	_deliveryId int64
 	// public static int NORMAL_TYPE=0; 普通发货 默认 public static int DD_DAI_SONG=2; 代送宝	public static int DD_SONG_TYPE_V2=3; 点点送发货
 	_confirmType int64
 	// 订单ID
 	_orderId int64
-	// 子账号nick
-	_subUserNick string
 }
 
 // NewTaobaoTradeDrugConfirmorderRequest 初始化TaobaoTradeDrugConfirmorderAPIRequest对象
@@ -41,6 +41,19 @@ func (r TaobaoTradeDrugConfirmorderAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSubUserNick is SubUserNick Setter
+// 子账号nick
+func (r *TaobaoTradeDrugConfirmorderAPIRequest) SetSubUserNick(_subUserNick string) error {
+	r._subUserNick = _subUserNick
+	r.Set("sub_user_nick", _subUserNick)
+	return nil
+}
+
+// GetSubUserNick SubUserNick Getter
+func (r TaobaoTradeDrugConfirmorderAPIRequest) GetSubUserNick() string {
+	return r._subUserNick
 }
 
 // SetDeliveryId is DeliveryId Setter
@@ -80,17 +93,4 @@ func (r *TaobaoTradeDrugConfirmorderAPIRequest) SetOrderId(_orderId int64) error
 // GetOrderId OrderId Getter
 func (r TaobaoTradeDrugConfirmorderAPIRequest) GetOrderId() int64 {
 	return r._orderId
-}
-
-// SetSubUserNick is SubUserNick Setter
-// 子账号nick
-func (r *TaobaoTradeDrugConfirmorderAPIRequest) SetSubUserNick(_subUserNick string) error {
-	r._subUserNick = _subUserNick
-	r.Set("sub_user_nick", _subUserNick)
-	return nil
-}
-
-// GetSubUserNick SubUserNick Getter
-func (r TaobaoTradeDrugConfirmorderAPIRequest) GetSubUserNick() string {
-	return r._subUserNick
 }

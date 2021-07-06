@@ -18,10 +18,10 @@ type RailStationRs struct {
 	EnName string `json:"en_name,omitempty" xml:"en_name,omitempty"`
 	// 所属城市名称
 	DivisionName string `json:"division_name,omitempty" xml:"division_name,omitempty"`
-	// 所属城市id
-	DivisionId int64 `json:"division_id,omitempty" xml:"division_id,omitempty"`
 	// 车站原始名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 车站编码
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
+	// 所属城市id
+	DivisionId int64 `json:"division_id,omitempty" xml:"division_id,omitempty"`
 }

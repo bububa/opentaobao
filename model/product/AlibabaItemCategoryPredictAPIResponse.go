@@ -22,8 +22,8 @@ type AlibabaItemCategoryPredictAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 类目路径
 	CatName string `json:"cat_name,omitempty" xml:"cat_name,omitempty"`
-	// 类目ID
-	CatId int64 `json:"cat_id,omitempty" xml:"cat_id,omitempty"`
 	// 类目名称
 	CatPath string `json:"cat_path,omitempty" xml:"cat_path,omitempty"`
+	// 类目ID
+	CatId int64 `json:"cat_id,omitempty" xml:"cat_id,omitempty"`
 }

@@ -12,14 +12,14 @@ import (
 // 取消服务工单
 type AlibabaServicecenterWorkcardCancelAPIRequest struct {
 	model.Params
-	// 工单id
-	_workcardId int64
 	// 取消备注
 	_memo string
-	// 服务单id
-	_serviceOrderId int64
 	// 真实服务商昵称
 	_realTpNick string
+	// 工单id
+	_workcardId int64
+	// 服务单id
+	_serviceOrderId int64
 }
 
 // NewAlibabaServicecenterWorkcardCancelRequest 初始化AlibabaServicecenterWorkcardCancelAPIRequest对象
@@ -43,19 +43,6 @@ func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetApiParams() url.Values 
 	return params
 }
 
-// SetWorkcardId is WorkcardId Setter
-// 工单id
-func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetWorkcardId(_workcardId int64) error {
-	r._workcardId = _workcardId
-	r.Set("workcard_id", _workcardId)
-	return nil
-}
-
-// GetWorkcardId WorkcardId Getter
-func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetWorkcardId() int64 {
-	return r._workcardId
-}
-
 // SetMemo is Memo Setter
 // 取消备注
 func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetMemo(_memo string) error {
@@ -69,19 +56,6 @@ func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetMemo() string {
 	return r._memo
 }
 
-// SetServiceOrderId is ServiceOrderId Setter
-// 服务单id
-func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetServiceOrderId(_serviceOrderId int64) error {
-	r._serviceOrderId = _serviceOrderId
-	r.Set("service_order_id", _serviceOrderId)
-	return nil
-}
-
-// GetServiceOrderId ServiceOrderId Getter
-func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetServiceOrderId() int64 {
-	return r._serviceOrderId
-}
-
 // SetRealTpNick is RealTpNick Setter
 // 真实服务商昵称
 func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetRealTpNick(_realTpNick string) error {
@@ -93,4 +67,30 @@ func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetRealTpNick(_realTpNick
 // GetRealTpNick RealTpNick Getter
 func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetRealTpNick() string {
 	return r._realTpNick
+}
+
+// SetWorkcardId is WorkcardId Setter
+// 工单id
+func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetWorkcardId(_workcardId int64) error {
+	r._workcardId = _workcardId
+	r.Set("workcard_id", _workcardId)
+	return nil
+}
+
+// GetWorkcardId WorkcardId Getter
+func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetWorkcardId() int64 {
+	return r._workcardId
+}
+
+// SetServiceOrderId is ServiceOrderId Setter
+// 服务单id
+func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetServiceOrderId(_serviceOrderId int64) error {
+	r._serviceOrderId = _serviceOrderId
+	r.Set("service_order_id", _serviceOrderId)
+	return nil
+}
+
+// GetServiceOrderId ServiceOrderId Getter
+func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetServiceOrderId() int64 {
+	return r._serviceOrderId
 }

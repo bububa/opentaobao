@@ -24,8 +24,8 @@ type AlibabaLsyCrmCreateAPIResponseModel struct {
 	FailMsg string `json:"fail_msg,omitempty" xml:"fail_msg,omitempty"`
 	// 错误码
 	FailCode string `json:"fail_code,omitempty" xml:"fail_code,omitempty"`
-	// 是否成功
-	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
 	// 返回的数据
 	Data *NrtCreateRecordReturnDto `json:"data,omitempty" xml:"data,omitempty"`
+	// 是否成功
+	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
 }

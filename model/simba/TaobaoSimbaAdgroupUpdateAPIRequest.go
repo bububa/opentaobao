@@ -16,14 +16,14 @@ type TaobaoSimbaAdgroupUpdateAPIRequest struct {
 	_useNonsearchDefaultPrice string
 	// 用户设置的上下线状态 offline-下线(暂停竞价)； online-上线；默认为online
 	_onlineStatus string
+	// 主人昵称
+	_nick string
 	// 推广组Id
 	_adgroupId int64
 	// 默认出价，单位是分，不能小于5
 	_defaultPrice int64
 	// 非搜索出价，单位是分，不能小于5，如果use_nonseatch_default_price为使用默认出价，则此nonsearch_max_price字段传入的数据不起作用，商品将使用默认非搜索出价
 	_nonsearchMaxPrice int64
-	// 主人昵称
-	_nick string
 }
 
 // NewTaobaoSimbaAdgroupUpdateRequest 初始化TaobaoSimbaAdgroupUpdateAPIRequest对象
@@ -73,6 +73,19 @@ func (r TaobaoSimbaAdgroupUpdateAPIRequest) GetOnlineStatus() string {
 	return r._onlineStatus
 }
 
+// SetNick is Nick Setter
+// 主人昵称
+func (r *TaobaoSimbaAdgroupUpdateAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// GetNick Nick Getter
+func (r TaobaoSimbaAdgroupUpdateAPIRequest) GetNick() string {
+	return r._nick
+}
+
 // SetAdgroupId is AdgroupId Setter
 // 推广组Id
 func (r *TaobaoSimbaAdgroupUpdateAPIRequest) SetAdgroupId(_adgroupId int64) error {
@@ -110,17 +123,4 @@ func (r *TaobaoSimbaAdgroupUpdateAPIRequest) SetNonsearchMaxPrice(_nonsearchMaxP
 // GetNonsearchMaxPrice NonsearchMaxPrice Getter
 func (r TaobaoSimbaAdgroupUpdateAPIRequest) GetNonsearchMaxPrice() int64 {
 	return r._nonsearchMaxPrice
-}
-
-// SetNick is Nick Setter
-// 主人昵称
-func (r *TaobaoSimbaAdgroupUpdateAPIRequest) SetNick(_nick string) error {
-	r._nick = _nick
-	r.Set("nick", _nick)
-	return nil
-}
-
-// GetNick Nick Getter
-func (r TaobaoSimbaAdgroupUpdateAPIRequest) GetNick() string {
-	return r._nick
 }

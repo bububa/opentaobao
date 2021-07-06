@@ -4,8 +4,6 @@ package drugtrace
 type AlibabaAlihealthDrugcodeUserDataResult struct {
 	// 无
 	Headers string `json:"headers,omitempty" xml:"headers,omitempty"`
-	// true 成功  false 不成功
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// model
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 无
@@ -18,4 +16,6 @@ type AlibabaAlihealthDrugcodeUserDataResult struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 无
 	HttpStatusCode int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
+	// true 成功  false 不成功
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

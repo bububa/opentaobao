@@ -12,12 +12,12 @@ import (
 // 获取商家拒绝原因列表
 type TaobaoRefundRefusereasonGetAPIRequest struct {
 	model.Params
-	// 退款编号
-	_refundId int64
 	// 返回参数
 	_fields string
 	// 售中或售后
 	_refundPhase string
+	// 退款编号
+	_refundId int64
 }
 
 // NewTaobaoRefundRefusereasonGetRequest 初始化TaobaoRefundRefusereasonGetAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoRefundRefusereasonGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetRefundId is RefundId Setter
-// 退款编号
-func (r *TaobaoRefundRefusereasonGetAPIRequest) SetRefundId(_refundId int64) error {
-	r._refundId = _refundId
-	r.Set("refund_id", _refundId)
-	return nil
-}
-
-// GetRefundId RefundId Getter
-func (r TaobaoRefundRefusereasonGetAPIRequest) GetRefundId() int64 {
-	return r._refundId
 }
 
 // SetFields is Fields Setter
@@ -78,4 +65,17 @@ func (r *TaobaoRefundRefusereasonGetAPIRequest) SetRefundPhase(_refundPhase stri
 // GetRefundPhase RefundPhase Getter
 func (r TaobaoRefundRefusereasonGetAPIRequest) GetRefundPhase() string {
 	return r._refundPhase
+}
+
+// SetRefundId is RefundId Setter
+// 退款编号
+func (r *TaobaoRefundRefusereasonGetAPIRequest) SetRefundId(_refundId int64) error {
+	r._refundId = _refundId
+	r.Set("refund_id", _refundId)
+	return nil
+}
+
+// GetRefundId RefundId Getter
+func (r TaobaoRefundRefusereasonGetAPIRequest) GetRefundId() int64 {
+	return r._refundId
 }

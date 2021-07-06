@@ -12,10 +12,10 @@ import (
 // 批量添加营销活动。替代单条添加营销详情的的API。此接口适用针对某个营销活动的多档设置，会按顺序插入detail。若在整个事务过程中出现断点，会将已插入完成的detail_id返回，注意记录这些id，并将其删除，会对交易过程中的优惠产生影响。
 type TaobaoUmpDetailListAddAPIRequest struct {
 	model.Params
-	// 营销活动id。
-	_actId int64
 	// 营销详情的列表。此列表由detail的json字符串组成。最多插入为10个。
 	_details string
+	// 营销活动id。
+	_actId int64
 }
 
 // NewTaobaoUmpDetailListAddRequest 初始化TaobaoUmpDetailListAddAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoUmpDetailListAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetActId is ActId Setter
-// 营销活动id。
-func (r *TaobaoUmpDetailListAddAPIRequest) SetActId(_actId int64) error {
-	r._actId = _actId
-	r.Set("act_id", _actId)
-	return nil
-}
-
-// GetActId ActId Getter
-func (r TaobaoUmpDetailListAddAPIRequest) GetActId() int64 {
-	return r._actId
-}
-
 // SetDetails is Details Setter
 // 营销详情的列表。此列表由detail的json字符串组成。最多插入为10个。
 func (r *TaobaoUmpDetailListAddAPIRequest) SetDetails(_details string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoUmpDetailListAddAPIRequest) SetDetails(_details string) error {
 // GetDetails Details Getter
 func (r TaobaoUmpDetailListAddAPIRequest) GetDetails() string {
 	return r._details
+}
+
+// SetActId is ActId Setter
+// 营销活动id。
+func (r *TaobaoUmpDetailListAddAPIRequest) SetActId(_actId int64) error {
+	r._actId = _actId
+	r.Set("act_id", _actId)
+	return nil
+}
+
+// GetActId ActId Getter
+func (r TaobaoUmpDetailListAddAPIRequest) GetActId() int64 {
+	return r._actId
 }

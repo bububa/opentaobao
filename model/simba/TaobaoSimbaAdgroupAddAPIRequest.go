@@ -14,16 +14,16 @@ type TaobaoSimbaAdgroupAddAPIRequest struct {
 	model.Params
 	// 主人昵称
 	_nick string
+	// 创意标题，最多20个汉字
+	_title string
+	// 创意图片地址，必须是商品的图片之一
+	_imgUrl string
 	// 推广计划Id
 	_campaignId int64
 	// 商品Id
 	_itemId int64
 	// 推广组默认出价，单位为分，不能小于5 不能大于日最高限额
 	_defaultPrice int64
-	// 创意标题，最多20个汉字
-	_title string
-	// 创意图片地址，必须是商品的图片之一
-	_imgUrl string
 }
 
 // NewTaobaoSimbaAdgroupAddRequest 初始化TaobaoSimbaAdgroupAddAPIRequest对象
@@ -58,6 +58,32 @@ func (r *TaobaoSimbaAdgroupAddAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoSimbaAdgroupAddAPIRequest) GetNick() string {
 	return r._nick
+}
+
+// SetTitle is Title Setter
+// 创意标题，最多20个汉字
+func (r *TaobaoSimbaAdgroupAddAPIRequest) SetTitle(_title string) error {
+	r._title = _title
+	r.Set("title", _title)
+	return nil
+}
+
+// GetTitle Title Getter
+func (r TaobaoSimbaAdgroupAddAPIRequest) GetTitle() string {
+	return r._title
+}
+
+// SetImgUrl is ImgUrl Setter
+// 创意图片地址，必须是商品的图片之一
+func (r *TaobaoSimbaAdgroupAddAPIRequest) SetImgUrl(_imgUrl string) error {
+	r._imgUrl = _imgUrl
+	r.Set("img_url", _imgUrl)
+	return nil
+}
+
+// GetImgUrl ImgUrl Getter
+func (r TaobaoSimbaAdgroupAddAPIRequest) GetImgUrl() string {
+	return r._imgUrl
 }
 
 // SetCampaignId is CampaignId Setter
@@ -97,30 +123,4 @@ func (r *TaobaoSimbaAdgroupAddAPIRequest) SetDefaultPrice(_defaultPrice int64) e
 // GetDefaultPrice DefaultPrice Getter
 func (r TaobaoSimbaAdgroupAddAPIRequest) GetDefaultPrice() int64 {
 	return r._defaultPrice
-}
-
-// SetTitle is Title Setter
-// 创意标题，最多20个汉字
-func (r *TaobaoSimbaAdgroupAddAPIRequest) SetTitle(_title string) error {
-	r._title = _title
-	r.Set("title", _title)
-	return nil
-}
-
-// GetTitle Title Getter
-func (r TaobaoSimbaAdgroupAddAPIRequest) GetTitle() string {
-	return r._title
-}
-
-// SetImgUrl is ImgUrl Setter
-// 创意图片地址，必须是商品的图片之一
-func (r *TaobaoSimbaAdgroupAddAPIRequest) SetImgUrl(_imgUrl string) error {
-	r._imgUrl = _imgUrl
-	r.Set("img_url", _imgUrl)
-	return nil
-}
-
-// GetImgUrl ImgUrl Getter
-func (r TaobaoSimbaAdgroupAddAPIRequest) GetImgUrl() string {
-	return r._imgUrl
 }

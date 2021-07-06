@@ -14,16 +14,16 @@ import (
 // 2、发货过程涉及到多个订单，其中一个订单是跟实操的发货操作同步的，剩下的订单，需要在实操的订单发货之后，一并通知交易发货。
 type TaobaoLogisticsConsignTcConfirmAPIRequest struct {
 	model.Params
-	// 货主id
-	_providerId int64
+	// 发货的包裹
+	_goodsList []ConfirmConsignGoodsDto
 	// ERP的名称
 	_appName string
 	// 扩展字段 K:V;
 	_extendFields string
-	// 发货的包裹
-	_goodsList []ConfirmConsignGoodsDto
 	// 已发货的外部订单号
 	_outTradeNo string
+	// 货主id
+	_providerId int64
 	// 卖家id
 	_sellerId int64
 	// 待发货的淘宝主交易号
@@ -51,17 +51,17 @@ func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetProviderId is ProviderId Setter
-// 货主id
-func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetProviderId(_providerId int64) error {
-	r._providerId = _providerId
-	r.Set("provider_id", _providerId)
+// SetGoodsList is GoodsList Setter
+// 发货的包裹
+func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetGoodsList(_goodsList []ConfirmConsignGoodsDto) error {
+	r._goodsList = _goodsList
+	r.Set("goods_list", _goodsList)
 	return nil
 }
 
-// GetProviderId ProviderId Getter
-func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetProviderId() int64 {
-	return r._providerId
+// GetGoodsList GoodsList Getter
+func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetGoodsList() []ConfirmConsignGoodsDto {
+	return r._goodsList
 }
 
 // SetAppName is AppName Setter
@@ -90,19 +90,6 @@ func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetExtendFields() string {
 	return r._extendFields
 }
 
-// SetGoodsList is GoodsList Setter
-// 发货的包裹
-func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetGoodsList(_goodsList []ConfirmConsignGoodsDto) error {
-	r._goodsList = _goodsList
-	r.Set("goods_list", _goodsList)
-	return nil
-}
-
-// GetGoodsList GoodsList Getter
-func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetGoodsList() []ConfirmConsignGoodsDto {
-	return r._goodsList
-}
-
 // SetOutTradeNo is OutTradeNo Setter
 // 已发货的外部订单号
 func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetOutTradeNo(_outTradeNo string) error {
@@ -114,6 +101,19 @@ func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetOutTradeNo(_outTradeNo st
 // GetOutTradeNo OutTradeNo Getter
 func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetOutTradeNo() string {
 	return r._outTradeNo
+}
+
+// SetProviderId is ProviderId Setter
+// 货主id
+func (r *TaobaoLogisticsConsignTcConfirmAPIRequest) SetProviderId(_providerId int64) error {
+	r._providerId = _providerId
+	r.Set("provider_id", _providerId)
+	return nil
+}
+
+// GetProviderId ProviderId Getter
+func (r TaobaoLogisticsConsignTcConfirmAPIRequest) GetProviderId() int64 {
+	return r._providerId
 }
 
 // SetSellerId is SellerId Setter

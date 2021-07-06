@@ -24,8 +24,6 @@ type ReturnOrder struct {
 	ReturnReason string `json:"returnReason,omitempty" xml:"returnReason,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
-	// 发件人信息
-	SenderInfo *SenderInfo `json:"senderInfo,omitempty" xml:"senderInfo,omitempty"`
 	// 用字符串格式来表示订单标记列表(比如VISIT^ SELLER_AFFORD^SYNC_RETURN_BILL等;中间用“^”来隔开订单标记list (所 有字母全部大写) VISIT=上门；SELLER_AFFORD=是否卖家承担运费(默认是)SYNC_RETURN_BILL=同时退回发票)
 	OrderFlag string `json:"orderFlag,omitempty" xml:"orderFlag,omitempty"`
 	// 原出库单号(ERP分配)
@@ -42,4 +40,6 @@ type ReturnOrder struct {
 	ShopNick string `json:"shopNick,omitempty" xml:"shopNick,omitempty"`
 	// 卖家名称
 	SellerNick string `json:"sellerNick,omitempty" xml:"sellerNick,omitempty"`
+	// 发件人信息
+	SenderInfo *SenderInfo `json:"senderInfo,omitempty" xml:"senderInfo,omitempty"`
 }

@@ -20,10 +20,10 @@ type TaobaoPromotionCouponSendAPIResponseModel struct {
 	XMLName xml.Name `xml:"promotion_coupon_send_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// true 成功，false失败
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 没有发送成功的买家
 	FailureBuyers []ErrorMessage `json:"failure_buyers,omitempty" xml:"failure_buyers>error_message,omitempty"`
 	// 发送成功的买家的昵称和优惠券的number
 	CouponResults []CouponResult `json:"coupon_results,omitempty" xml:"coupon_results>coupon_result,omitempty"`
+	// true 成功，false失败
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

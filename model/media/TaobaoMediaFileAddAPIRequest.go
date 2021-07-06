@@ -12,16 +12,16 @@ import (
 // 用户通过top上传文件到多媒体平台
 type TaobaoMediaFileAddAPIRequest struct {
 	model.Params
-	// 文件属于的那个目录的目录编号
-	_dirId int64
 	// 上传文件的名称
 	_name string
+	// 接入多媒体平台的业务code每个应用有一个特有的业务code
+	_bizCode string
+	// 文件属于的那个目录的目录编号
+	_dirId int64
 	// 额外信息
 	_ext int64
 	// 文件
 	_fileData *model.File
-	// 接入多媒体平台的业务code每个应用有一个特有的业务code
-	_bizCode string
 }
 
 // NewTaobaoMediaFileAddRequest 初始化TaobaoMediaFileAddAPIRequest对象
@@ -45,19 +45,6 @@ func (r TaobaoMediaFileAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetDirId is DirId Setter
-// 文件属于的那个目录的目录编号
-func (r *TaobaoMediaFileAddAPIRequest) SetDirId(_dirId int64) error {
-	r._dirId = _dirId
-	r.Set("dir_id", _dirId)
-	return nil
-}
-
-// GetDirId DirId Getter
-func (r TaobaoMediaFileAddAPIRequest) GetDirId() int64 {
-	return r._dirId
-}
-
 // SetName is Name Setter
 // 上传文件的名称
 func (r *TaobaoMediaFileAddAPIRequest) SetName(_name string) error {
@@ -69,6 +56,32 @@ func (r *TaobaoMediaFileAddAPIRequest) SetName(_name string) error {
 // GetName Name Getter
 func (r TaobaoMediaFileAddAPIRequest) GetName() string {
 	return r._name
+}
+
+// SetBizCode is BizCode Setter
+// 接入多媒体平台的业务code每个应用有一个特有的业务code
+func (r *TaobaoMediaFileAddAPIRequest) SetBizCode(_bizCode string) error {
+	r._bizCode = _bizCode
+	r.Set("biz_code", _bizCode)
+	return nil
+}
+
+// GetBizCode BizCode Getter
+func (r TaobaoMediaFileAddAPIRequest) GetBizCode() string {
+	return r._bizCode
+}
+
+// SetDirId is DirId Setter
+// 文件属于的那个目录的目录编号
+func (r *TaobaoMediaFileAddAPIRequest) SetDirId(_dirId int64) error {
+	r._dirId = _dirId
+	r.Set("dir_id", _dirId)
+	return nil
+}
+
+// GetDirId DirId Getter
+func (r TaobaoMediaFileAddAPIRequest) GetDirId() int64 {
+	return r._dirId
 }
 
 // SetExt is Ext Setter
@@ -95,17 +108,4 @@ func (r *TaobaoMediaFileAddAPIRequest) SetFileData(_fileData *model.File) error 
 // GetFileData FileData Getter
 func (r TaobaoMediaFileAddAPIRequest) GetFileData() *model.File {
 	return r._fileData
-}
-
-// SetBizCode is BizCode Setter
-// 接入多媒体平台的业务code每个应用有一个特有的业务code
-func (r *TaobaoMediaFileAddAPIRequest) SetBizCode(_bizCode string) error {
-	r._bizCode = _bizCode
-	r.Set("biz_code", _bizCode)
-	return nil
-}
-
-// GetBizCode BizCode Getter
-func (r TaobaoMediaFileAddAPIRequest) GetBizCode() string {
-	return r._bizCode
 }

@@ -8,8 +8,6 @@ type PassengerOrderInfo struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 订单详细状态码
 	SubStatus string `json:"sub_status,omitempty" xml:"sub_status,omitempty"`
-	// 乘客人数
-	PassengerNumber int64 `json:"passenger_number,omitempty" xml:"passenger_number,omitempty"`
 	// 出发地经度
 	Flng string `json:"flng,omitempty" xml:"flng,omitempty"`
 	// 出发地纬度
@@ -18,4 +16,6 @@ type PassengerOrderInfo struct {
 	Tlng string `json:"tlng,omitempty" xml:"tlng,omitempty"`
 	// 目的地纬度
 	Tlat string `json:"tlat,omitempty" xml:"tlat,omitempty"`
+	// 乘客人数
+	PassengerNumber int64 `json:"passenger_number,omitempty" xml:"passenger_number,omitempty"`
 }

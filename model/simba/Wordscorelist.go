@@ -8,14 +8,6 @@ type Wordscorelist struct {
 	WirelessCustscore string `json:"wireless_custscore,omitempty" xml:"wireless_custscore,omitempty"`
 	// 相关性，同kwscore
 	Relescore string `json:"relescore,omitempty" xml:"relescore,omitempty"`
-	// 计划id
-	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
-	// 词是否有首屏展示机会。值含义(4: 有展现机会,且能上首屏 2: 有展示机会,上不了首屏、1: 无展现机会,更上不了首屏)
-	WirelessMatchflag int64 `json:"wireless_matchflag,omitempty" xml:"wireless_matchflag,omitempty"`
-	// 推广组id
-	AdgroupId int64 `json:"adgroup_id,omitempty" xml:"adgroup_id,omitempty"`
-	// 词是否能推左
-	Plflag int64 `json:"plflag,omitempty" xml:"plflag,omitempty"`
 	// 移动相关性，同kwscore
 	WirelessRelescore string `json:"wireless_relescore,omitempty" xml:"wireless_relescore,omitempty"`
 	// 创意质量(创意效果)
@@ -26,8 +18,6 @@ type Wordscorelist struct {
 	Qscore string `json:"qscore,omitempty" xml:"qscore,omitempty"`
 	// 类目质量得分
 	Catscore string `json:"catscore,omitempty" xml:"catscore,omitempty"`
-	// 客户id
-	CustomerId int64 `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
 	// 店铺质量(账户表现)
 	Custscore string `json:"custscore,omitempty" xml:"custscore,omitempty"`
 	// 昵称
@@ -44,6 +34,16 @@ type Wordscorelist struct {
 	WirelessCvrscore string `json:"wireless_cvrscore,omitempty" xml:"wireless_cvrscore,omitempty"`
 	// 广告类型  单品： &quot;tbuad&quot;; 店铺： &quot;addp&quot;;
 	AdType string `json:"ad_type,omitempty" xml:"ad_type,omitempty"`
+	// 计划id
+	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
+	// 词是否有首屏展示机会。值含义(4: 有展现机会,且能上首屏 2: 有展示机会,上不了首屏、1: 无展现机会,更上不了首屏)
+	WirelessMatchflag int64 `json:"wireless_matchflag,omitempty" xml:"wireless_matchflag,omitempty"`
+	// 推广组id
+	AdgroupId int64 `json:"adgroup_id,omitempty" xml:"adgroup_id,omitempty"`
+	// 词是否能推左
+	Plflag int64 `json:"plflag,omitempty" xml:"plflag,omitempty"`
+	// 客户id
+	CustomerId int64 `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
 	// 词id
 	KeywordId int64 `json:"keyword_id,omitempty" xml:"keyword_id,omitempty"`
 	// 最低展现出价

@@ -2,10 +2,6 @@ package travel
 
 // ItemHotel 结构体
 type ItemHotel struct {
-	// 关联的套餐id
-	RelatedPackageId int64 `json:"related_package_id,omitempty" xml:"related_package_id,omitempty"`
-	// 晚数
-	HotelDays int64 `json:"hotel_days,omitempty" xml:"hotel_days,omitempty"`
 	// 酒店描述
 	HotelDesc string `json:"hotel_desc,omitempty" xml:"hotel_desc,omitempty"`
 	// POI来源，AMAP/GOOGLE。境内为高德（AMAP） 境外为GOOGLE
@@ -20,4 +16,8 @@ type ItemHotel struct {
 	CnName string `json:"cn_name,omitempty" xml:"cn_name,omitempty"`
 	// 必填，所在城市
 	City string `json:"city,omitempty" xml:"city,omitempty"`
+	// 关联的套餐id
+	RelatedPackageId int64 `json:"related_package_id,omitempty" xml:"related_package_id,omitempty"`
+	// 晚数
+	HotelDays int64 `json:"hotel_days,omitempty" xml:"hotel_days,omitempty"`
 }

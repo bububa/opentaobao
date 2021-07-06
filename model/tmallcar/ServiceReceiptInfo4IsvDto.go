@@ -18,8 +18,6 @@ type ServiceReceiptInfo4IsvDto struct {
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
 	// 消费者名称
 	UserName string `json:"user_name,omitempty" xml:"user_name,omitempty"`
-	// 工单号
-	ReceiptId int64 `json:"receipt_id,omitempty" xml:"receipt_id,omitempty"`
 	// 品牌
 	Brand string `json:"brand,omitempty" xml:"brand,omitempty"`
 	// 选择问题列表，多个问题以英文逗号分隔
@@ -32,4 +30,6 @@ type ServiceReceiptInfo4IsvDto struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 工单附加信息
 	Extension string `json:"extension,omitempty" xml:"extension,omitempty"`
+	// 工单号
+	ReceiptId int64 `json:"receipt_id,omitempty" xml:"receipt_id,omitempty"`
 }

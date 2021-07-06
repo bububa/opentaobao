@@ -4,8 +4,6 @@ package moscm
 type SalesOrderDto struct {
 	// 订单商品明细
 	OrderItems []SalesOrderItemDto `json:"order_items,omitempty" xml:"order_items>sales_order_item_dto,omitempty"`
-	// 发票信息（已废弃）
-	Invoice *InvoiceDto `json:"invoice,omitempty" xml:"invoice,omitempty"`
 	// 门店名称
 	StoreName string `json:"store_name,omitempty" xml:"store_name,omitempty"`
 	// 销售类型：STORE（门店销售)、ONLINE(线上销售)
@@ -62,4 +60,6 @@ type SalesOrderDto struct {
 	LatestDeliveryTime string `json:"latest_delivery_time,omitempty" xml:"latest_delivery_time,omitempty"`
 	// 订单标签，PRE_ORDER(预购)，PRE_SALE（预售），DUTCH_ACTION（东东抢）
 	Tag string `json:"tag,omitempty" xml:"tag,omitempty"`
+	// 发票信息（已废弃）
+	Invoice *InvoiceDto `json:"invoice,omitempty" xml:"invoice,omitempty"`
 }

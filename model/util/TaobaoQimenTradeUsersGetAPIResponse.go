@@ -20,8 +20,8 @@ type TaobaoQimenTradeUsersGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"qimen_trade_users_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// totalCount
-	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 	// modal
 	Users []QimenUser `json:"users,omitempty" xml:"users>qimen_user,omitempty"`
+	// totalCount
+	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 }

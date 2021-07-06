@@ -2,12 +2,12 @@ package hotel
 
 // HotelDivision 结构体
 type HotelDivision struct {
+	// 城市名称
+	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 0：国内；1：国外
 	Region int64 `json:"region,omitempty" xml:"region,omitempty"`
 	// 城市编码
 	Code int64 `json:"code,omitempty" xml:"code,omitempty"`
-	// 城市名称
-	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 层级，1：国家，2：州省，3：城市，4：区县
 	Level int64 `json:"level,omitempty" xml:"level,omitempty"`
 	// 类型，0：普通，1：景点,cityTag，如千岛湖

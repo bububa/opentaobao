@@ -2,8 +2,6 @@ package sungari
 
 // DisposeInfoDo 结构体
 type DisposeInfoDo struct {
-	// 处置类型，1:商品处置  2：经营者处置
-	ApiType int64 `json:"api_type,omitempty" xml:"api_type,omitempty"`
 	// 抽检报告编号
 	CheckNumber string `json:"check_number,omitempty" xml:"check_number,omitempty"`
 	// 处置函单位名称
@@ -12,8 +10,6 @@ type DisposeInfoDo struct {
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 处置对象内容
 	DisposeContent string `json:"dispose_content,omitempty" xml:"dispose_content,omitempty"`
-	// 处置对象类型，1:订单号  2：商品ID  3:商家会员账号 4：全网排查关键字
-	DisposeType int64 `json:"dispose_type,omitempty" xml:"dispose_type,omitempty"`
 	// 处置函件文号
 	DocName string `json:"doc_name,omitempty" xml:"doc_name,omitempty"`
 	// 资质证件号（执照）
@@ -24,8 +20,6 @@ type DisposeInfoDo struct {
 	OssKey string `json:"oss_key,omitempty" xml:"oss_key,omitempty"`
 	// 处置函联系人电话
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
-	// 处置函件接收平台，1:淘宝  2：天猫  3:1688
-	PlatformType int64 `json:"platform_type,omitempty" xml:"platform_type,omitempty"`
 	// 处置原因
 	Reason string `json:"reason,omitempty" xml:"reason,omitempty"`
 	// 备注信息
@@ -48,4 +42,10 @@ type DisposeInfoDo struct {
 	OssKeyUrl string `json:"oss_key_url,omitempty" xml:"oss_key_url,omitempty"`
 	// 原始函链接
 	SourceOssKeyUrl string `json:"source_oss_key_url,omitempty" xml:"source_oss_key_url,omitempty"`
+	// 处置类型，1:商品处置  2：经营者处置
+	ApiType int64 `json:"api_type,omitempty" xml:"api_type,omitempty"`
+	// 处置对象类型，1:订单号  2：商品ID  3:商家会员账号 4：全网排查关键字
+	DisposeType int64 `json:"dispose_type,omitempty" xml:"dispose_type,omitempty"`
+	// 处置函件接收平台，1:淘宝  2：天猫  3:1688
+	PlatformType int64 `json:"platform_type,omitempty" xml:"platform_type,omitempty"`
 }

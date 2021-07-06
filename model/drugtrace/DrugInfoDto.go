@@ -16,8 +16,6 @@ type DrugInfoDto struct {
 	PrepnType string `json:"prepn_type,omitempty" xml:"prepn_type,omitempty"`
 	// 包装规格
 	PkgSpec string `json:"pkg_spec,omitempty" xml:"pkg_spec,omitempty"`
-	// 查询次数(用户维度)
-	QueryTotalCount int64 `json:"query_total_count,omitempty" xml:"query_total_count,omitempty"`
 	// 批次
 	ProductionBatch string `json:"production_batch,omitempty" xml:"production_batch,omitempty"`
 	// 扫码次数
@@ -38,4 +36,6 @@ type DrugInfoDto struct {
 	SaleEnt string `json:"sale_ent,omitempty" xml:"sale_ent,omitempty"`
 	// 追溯码状态
 	CodeStatus string `json:"code_status,omitempty" xml:"code_status,omitempty"`
+	// 查询次数(用户维度)
+	QueryTotalCount int64 `json:"query_total_count,omitempty" xml:"query_total_count,omitempty"`
 }

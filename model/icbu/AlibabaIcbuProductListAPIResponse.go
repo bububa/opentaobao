@@ -20,12 +20,12 @@ type AlibabaIcbuProductListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_icbu_product_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 商品概要信息列表
+	Products []AlibabaProductBriefResponse `json:"products,omitempty" xml:"products>alibaba_product_brief_response,omitempty"`
 	// 总数
 	TotalItem int64 `json:"total_item,omitempty" xml:"total_item,omitempty"`
 	// 当前页
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 	// 每页大小
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
-	// 商品概要信息列表
-	Products []AlibabaProductBriefResponse `json:"products,omitempty" xml:"products>alibaba_product_brief_response,omitempty"`
 }

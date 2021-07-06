@@ -22,12 +22,12 @@ type AlibabaMoziAclRoleRemoveAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 无值
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
-	// 是否操作成功,true代表操作成功
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 请求id
 	MoziRequestId string `json:"mozi_request_id,omitempty" xml:"mozi_request_id,omitempty"`
 	// 如果success不为true，则自此段返回详细的错误信息
 	ResponseMessage string `json:"response_message,omitempty" xml:"response_message,omitempty"`
 	// 如果success为true，则返回0，否则此段返回详细的错误code
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
+	// 是否操作成功,true代表操作成功
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

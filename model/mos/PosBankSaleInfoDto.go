@@ -18,8 +18,6 @@ type PosBankSaleInfoDto struct {
 	SaleType string `json:"sale_type,omitempty" xml:"sale_type,omitempty"`
 	// 销售类型子类。001：消费，002：撤销，006：退款退货
 	SubSaleType string `json:"sub_sale_type,omitempty" xml:"sub_sale_type,omitempty"`
-	// 交易金额。单位：分
-	TradeAmount int64 `json:"trade_amount,omitempty" xml:"trade_amount,omitempty"`
 	// 银行编码
 	BankCode string `json:"bank_code,omitempty" xml:"bank_code,omitempty"`
 	// 银行名字
@@ -34,8 +32,6 @@ type PosBankSaleInfoDto struct {
 	BatchNo string `json:"batch_no,omitempty" xml:"batch_no,omitempty"`
 	// 交易参考号，系统跟踪号
 	TradeRefNo string `json:"trade_ref_no,omitempty" xml:"trade_ref_no,omitempty"`
-	// 支付类型行号
-	PayTypeNo int64 `json:"pay_type_no,omitempty" xml:"pay_type_no,omitempty"`
 	// 外部门店号，类似HZ01
 	StoreNo string `json:"store_no,omitempty" xml:"store_no,omitempty"`
 	// 操作时间。yyyy-MM-dd HH:mm:ss
@@ -56,4 +52,8 @@ type PosBankSaleInfoDto struct {
 	EncrypteSummary string `json:"encrypte_summary,omitempty" xml:"encrypte_summary,omitempty"`
 	// 扩展字段
 	ExtendParam string `json:"extend_param,omitempty" xml:"extend_param,omitempty"`
+	// 交易金额。单位：分
+	TradeAmount int64 `json:"trade_amount,omitempty" xml:"trade_amount,omitempty"`
+	// 支付类型行号
+	PayTypeNo int64 `json:"pay_type_no,omitempty" xml:"pay_type_no,omitempty"`
 }

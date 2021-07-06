@@ -12,8 +12,6 @@ import (
 // 订单延期
 type TaobaoEticketMerchantMaDelayAPIRequest struct {
 	model.Params
-	// 业务类型
-	_bizType int64
 	// 延期时间
 	_endDate string
 	// 码
@@ -24,6 +22,8 @@ type TaobaoEticketMerchantMaDelayAPIRequest struct {
 	_attributeMap string
 	// 请求ID，调用方保证惟一
 	_requestId string
+	// 业务类型
+	_bizType int64
 }
 
 // NewTaobaoEticketMerchantMaDelayRequest 初始化TaobaoEticketMerchantMaDelayAPIRequest对象
@@ -45,19 +45,6 @@ func (r TaobaoEticketMerchantMaDelayAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetBizType is BizType Setter
-// 业务类型
-func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetBizType(_bizType int64) error {
-	r._bizType = _bizType
-	r.Set("biz_type", _bizType)
-	return nil
-}
-
-// GetBizType BizType Getter
-func (r TaobaoEticketMerchantMaDelayAPIRequest) GetBizType() int64 {
-	return r._bizType
 }
 
 // SetEndDate is EndDate Setter
@@ -123,4 +110,17 @@ func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetRequestId(_requestId string)
 // GetRequestId RequestId Getter
 func (r TaobaoEticketMerchantMaDelayAPIRequest) GetRequestId() string {
 	return r._requestId
+}
+
+// SetBizType is BizType Setter
+// 业务类型
+func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetBizType(_bizType int64) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// GetBizType BizType Getter
+func (r TaobaoEticketMerchantMaDelayAPIRequest) GetBizType() int64 {
+	return r._bizType
 }

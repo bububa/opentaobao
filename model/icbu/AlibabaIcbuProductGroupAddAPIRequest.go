@@ -14,10 +14,10 @@ type AlibabaIcbuProductGroupAddAPIRequest struct {
 	model.Params
 	// 分组名称
 	_groupName string
-	// 上级分组ID，如果建立顶级分组设为-1
-	_parentId int64
 	// 补充信息，如isv id
 	_extraContext string
+	// 上级分组ID，如果建立顶级分组设为-1
+	_parentId int64
 }
 
 // NewAlibabaIcbuProductGroupAddRequest 初始化AlibabaIcbuProductGroupAddAPIRequest对象
@@ -54,19 +54,6 @@ func (r AlibabaIcbuProductGroupAddAPIRequest) GetGroupName() string {
 	return r._groupName
 }
 
-// SetParentId is ParentId Setter
-// 上级分组ID，如果建立顶级分组设为-1
-func (r *AlibabaIcbuProductGroupAddAPIRequest) SetParentId(_parentId int64) error {
-	r._parentId = _parentId
-	r.Set("parent_id", _parentId)
-	return nil
-}
-
-// GetParentId ParentId Getter
-func (r AlibabaIcbuProductGroupAddAPIRequest) GetParentId() int64 {
-	return r._parentId
-}
-
 // SetExtraContext is ExtraContext Setter
 // 补充信息，如isv id
 func (r *AlibabaIcbuProductGroupAddAPIRequest) SetExtraContext(_extraContext string) error {
@@ -78,4 +65,17 @@ func (r *AlibabaIcbuProductGroupAddAPIRequest) SetExtraContext(_extraContext str
 // GetExtraContext ExtraContext Getter
 func (r AlibabaIcbuProductGroupAddAPIRequest) GetExtraContext() string {
 	return r._extraContext
+}
+
+// SetParentId is ParentId Setter
+// 上级分组ID，如果建立顶级分组设为-1
+func (r *AlibabaIcbuProductGroupAddAPIRequest) SetParentId(_parentId int64) error {
+	r._parentId = _parentId
+	r.Set("parent_id", _parentId)
+	return nil
+}
+
+// GetParentId ParentId Getter
+func (r AlibabaIcbuProductGroupAddAPIRequest) GetParentId() int64 {
+	return r._parentId
 }

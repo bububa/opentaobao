@@ -13,10 +13,10 @@ import (
 // <br/> <span style="color:red"> API取消加邮费功能通知：http://open.taobao.com/support/announcement_detail.htm?tid=24750</span>
 type TaobaoTradePostageUpdateAPIRequest struct {
 	model.Params
-	// 主订单编号
-	_tid int64
 	// 邮费价格(邮费单位是元）
 	_postFee string
+	// 主订单编号
+	_tid int64
 }
 
 // NewTaobaoTradePostageUpdateRequest 初始化TaobaoTradePostageUpdateAPIRequest对象
@@ -40,19 +40,6 @@ func (r TaobaoTradePostageUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetTid is Tid Setter
-// 主订单编号
-func (r *TaobaoTradePostageUpdateAPIRequest) SetTid(_tid int64) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
-	return nil
-}
-
-// GetTid Tid Getter
-func (r TaobaoTradePostageUpdateAPIRequest) GetTid() int64 {
-	return r._tid
-}
-
 // SetPostFee is PostFee Setter
 // 邮费价格(邮费单位是元）
 func (r *TaobaoTradePostageUpdateAPIRequest) SetPostFee(_postFee string) error {
@@ -64,4 +51,17 @@ func (r *TaobaoTradePostageUpdateAPIRequest) SetPostFee(_postFee string) error {
 // GetPostFee PostFee Getter
 func (r TaobaoTradePostageUpdateAPIRequest) GetPostFee() string {
 	return r._postFee
+}
+
+// SetTid is Tid Setter
+// 主订单编号
+func (r *TaobaoTradePostageUpdateAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoTradePostageUpdateAPIRequest) GetTid() int64 {
+	return r._tid
 }

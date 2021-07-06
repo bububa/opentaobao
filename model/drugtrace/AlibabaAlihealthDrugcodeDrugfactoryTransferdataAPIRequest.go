@@ -12,14 +12,14 @@ import (
 // 药厂传输数据
 type AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest struct {
 	model.Params
-	// 时间戳(毫秒级别)
-	_timestampYl int64
 	// 签名值
 	_signValue string
 	// 密文
 	_cipherText string
 	// 企业Id
 	_refEntId string
+	// 时间戳(毫秒级别)
+	_timestampYl int64
 }
 
 // NewAlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest 初始化AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest对象
@@ -41,19 +41,6 @@ func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) GetApiParams(
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetTimestampYl is TimestampYl Setter
-// 时间戳(毫秒级别)
-func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) SetTimestampYl(_timestampYl int64) error {
-	r._timestampYl = _timestampYl
-	r.Set("timestamp_yl", _timestampYl)
-	return nil
-}
-
-// GetTimestampYl TimestampYl Getter
-func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) GetTimestampYl() int64 {
-	return r._timestampYl
 }
 
 // SetSignValue is SignValue Setter
@@ -93,4 +80,17 @@ func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) SetRefEntId(
 // GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) GetRefEntId() string {
 	return r._refEntId
+}
+
+// SetTimestampYl is TimestampYl Setter
+// 时间戳(毫秒级别)
+func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) SetTimestampYl(_timestampYl int64) error {
+	r._timestampYl = _timestampYl
+	r.Set("timestamp_yl", _timestampYl)
+	return nil
+}
+
+// GetTimestampYl TimestampYl Getter
+func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataAPIRequest) GetTimestampYl() int64 {
+	return r._timestampYl
 }

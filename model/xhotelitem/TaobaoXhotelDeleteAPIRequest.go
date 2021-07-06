@@ -12,12 +12,12 @@ import (
 // 删除飞猪酒店数据接口
 type TaobaoXhotelDeleteAPIRequest struct {
 	model.Params
-	// 酒店id，传参方式  hid   或者   outer_id+vendor
-	_hid int64
 	// 酒店vendor
 	_vendor string
 	// 酒店编码
 	_outerId string
+	// 酒店id，传参方式  hid   或者   outer_id+vendor
+	_hid int64
 }
 
 // NewTaobaoXhotelDeleteRequest 初始化TaobaoXhotelDeleteAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoXhotelDeleteAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetHid is Hid Setter
-// 酒店id，传参方式  hid   或者   outer_id+vendor
-func (r *TaobaoXhotelDeleteAPIRequest) SetHid(_hid int64) error {
-	r._hid = _hid
-	r.Set("hid", _hid)
-	return nil
-}
-
-// GetHid Hid Getter
-func (r TaobaoXhotelDeleteAPIRequest) GetHid() int64 {
-	return r._hid
 }
 
 // SetVendor is Vendor Setter
@@ -78,4 +65,17 @@ func (r *TaobaoXhotelDeleteAPIRequest) SetOuterId(_outerId string) error {
 // GetOuterId OuterId Getter
 func (r TaobaoXhotelDeleteAPIRequest) GetOuterId() string {
 	return r._outerId
+}
+
+// SetHid is Hid Setter
+// 酒店id，传参方式  hid   或者   outer_id+vendor
+func (r *TaobaoXhotelDeleteAPIRequest) SetHid(_hid int64) error {
+	r._hid = _hid
+	r.Set("hid", _hid)
+	return nil
+}
+
+// GetHid Hid Getter
+func (r TaobaoXhotelDeleteAPIRequest) GetHid() int64 {
+	return r._hid
 }

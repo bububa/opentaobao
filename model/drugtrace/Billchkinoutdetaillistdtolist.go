@@ -2,6 +2,8 @@ package drugtrace
 
 // Billchkinoutdetaillistdtolist 结构体
 type Billchkinoutdetaillistdtolist struct {
+	// 码列表
+	CodeAndParentList []Codeandparentlist `json:"code_and_parent_list,omitempty" xml:"code_and_parent_list>codeandparentlist,omitempty"`
 	// 有效期至
 	ExpiredDate string `json:"expired_date,omitempty" xml:"expired_date,omitempty"`
 	// 生产企业名称
@@ -30,8 +32,6 @@ type Billchkinoutdetaillistdtolist struct {
 	PhysicTypeName string `json:"physic_type_name,omitempty" xml:"physic_type_name,omitempty"`
 	// 药品类型编码
 	PhysicType string `json:"physic_type,omitempty" xml:"physic_type,omitempty"`
-	// 码列表
-	CodeAndParentList []Codeandparentlist `json:"code_and_parent_list,omitempty" xml:"code_and_parent_list>codeandparentlist,omitempty"`
 	// 国药准字
 	ApproveNo string `json:"approve_no,omitempty" xml:"approve_no,omitempty"`
 }

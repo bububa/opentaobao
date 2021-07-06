@@ -12,12 +12,10 @@ import (
 // 星盘和ISV，可以通过此接口，来更新订单状态。此接口应用于使用阿里星盘分单，且使用商家系统（非阿里掌柜）接单/拒单的模式下更新订单状态。
 type TaobaoQimenOrderstatusUpdateAPIRequest struct {
 	model.Params
-	// 星盘派单号
-	_allocationCode string
 	// 淘系子订单号
 	_orderCodes []int64
-	// 目标门店的商户中心门店编码
-	_storeId int64
+	// 星盘派单号
+	_allocationCode string
 	// 业务类型，（枚举值：FAHUO、ZITI）
 	_type string
 	// 订单状态，门店发货包括X_SHOP_ALLOCATION、X_SHOP_DENYX_SHOP_HANDLED、X_SHOP_CANCEL_CONFIRM、X_SHOP_CANCEL_DENIED、X_MATCHED；门店自提包括X_COMMODITY_CONFIRMX_COMMODITY_TRANSER、X_TRANSFER _SUCCESS、X_SHOP_CANCEL_CONFIRM、X_MATCHED、X_SHOP_DENY
@@ -26,6 +24,8 @@ type TaobaoQimenOrderstatusUpdateAPIRequest struct {
 	_operator string
 	// 事件发生时间
 	_actionTime string
+	// 目标门店的商户中心门店编码
+	_storeId int64
 }
 
 // NewTaobaoQimenOrderstatusUpdateRequest 初始化TaobaoQimenOrderstatusUpdateAPIRequest对象
@@ -49,19 +49,6 @@ func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetAllocationCode is AllocationCode Setter
-// 星盘派单号
-func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetAllocationCode(_allocationCode string) error {
-	r._allocationCode = _allocationCode
-	r.Set("allocation_code", _allocationCode)
-	return nil
-}
-
-// GetAllocationCode AllocationCode Getter
-func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetAllocationCode() string {
-	return r._allocationCode
-}
-
 // SetOrderCodes is OrderCodes Setter
 // 淘系子订单号
 func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetOrderCodes(_orderCodes []int64) error {
@@ -75,17 +62,17 @@ func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetOrderCodes() []int64 {
 	return r._orderCodes
 }
 
-// SetStoreId is StoreId Setter
-// 目标门店的商户中心门店编码
-func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetStoreId(_storeId int64) error {
-	r._storeId = _storeId
-	r.Set("store_id", _storeId)
+// SetAllocationCode is AllocationCode Setter
+// 星盘派单号
+func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetAllocationCode(_allocationCode string) error {
+	r._allocationCode = _allocationCode
+	r.Set("allocation_code", _allocationCode)
 	return nil
 }
 
-// GetStoreId StoreId Getter
-func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetStoreId() int64 {
-	return r._storeId
+// GetAllocationCode AllocationCode Getter
+func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetAllocationCode() string {
+	return r._allocationCode
 }
 
 // SetType is Type Setter
@@ -138,4 +125,17 @@ func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetActionTime(_actionTime strin
 // GetActionTime ActionTime Getter
 func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetActionTime() string {
 	return r._actionTime
+}
+
+// SetStoreId is StoreId Setter
+// 目标门店的商户中心门店编码
+func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetStoreId(_storeId int64) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// GetStoreId StoreId Getter
+func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetStoreId() int64 {
+	return r._storeId
 }

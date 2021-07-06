@@ -12,6 +12,8 @@ import (
 // 连锁总部仓库在采购入库或者销售出库环节，批量采集追溯码之后回传到码上放心平台。
 type AlibabaAlihealthDrugKytUploadinsignAPIRequest struct {
 	model.Params
+	// 追溯码[多个时用逗号分开]
+	_traceCodes []string
 	// 单据编号（小于20位字符串，唯一）
 	_billCode string
 	// 单据生成时间
@@ -22,8 +24,6 @@ type AlibabaAlihealthDrugKytUploadinsignAPIRequest struct {
 	_warehouseId string
 	// 药品ID
 	_drugId string
-	// 追溯码[多个时用逗号分开]
-	_traceCodes []string
 }
 
 // NewAlibabaAlihealthDrugKytUploadinsignRequest 初始化AlibabaAlihealthDrugKytUploadinsignAPIRequest对象
@@ -45,6 +45,19 @@ func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetApiParams() url.Values
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTraceCodes is TraceCodes Setter
+// 追溯码[多个时用逗号分开]
+func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetTraceCodes(_traceCodes []string) error {
+	r._traceCodes = _traceCodes
+	r.Set("trace_codes", _traceCodes)
+	return nil
+}
+
+// GetTraceCodes TraceCodes Getter
+func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetTraceCodes() []string {
+	return r._traceCodes
 }
 
 // SetBillCode is BillCode Setter
@@ -110,17 +123,4 @@ func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetDrugId(_drugId string
 // GetDrugId DrugId Getter
 func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetDrugId() string {
 	return r._drugId
-}
-
-// SetTraceCodes is TraceCodes Setter
-// 追溯码[多个时用逗号分开]
-func (r *AlibabaAlihealthDrugKytUploadinsignAPIRequest) SetTraceCodes(_traceCodes []string) error {
-	r._traceCodes = _traceCodes
-	r.Set("trace_codes", _traceCodes)
-	return nil
-}
-
-// GetTraceCodes TraceCodes Getter
-func (r AlibabaAlihealthDrugKytUploadinsignAPIRequest) GetTraceCodes() []string {
-	return r._traceCodes
 }

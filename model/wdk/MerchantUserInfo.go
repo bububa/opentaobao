@@ -28,20 +28,14 @@ type MerchantUserInfo struct {
 	UnionUid string `json:"union_uid,omitempty" xml:"union_uid,omitempty"`
 	// 渠道用户ID，如erp会员id，淘宝openid、饿了么uid、微信openId
 	ChannelUserId string `json:"channel_user_id,omitempty" xml:"channel_user_id,omitempty"`
-	// 储值卡余额，需要统一单位为”分“，然后取整上传
-	CardBalance int64 `json:"card_balance,omitempty" xml:"card_balance,omitempty"`
 	// 扩项属性
 	ExtendProperty string `json:"extend_property,omitempty" xml:"extend_property,omitempty"`
 	// 会员开始时间
 	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 会员结束时间
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
-	// 是否续费
-	Renew bool `json:"renew,omitempty" xml:"renew,omitempty"`
 	// 引导来源标识，填写引导来源标识备注，如门店编码
 	SourceTag string `json:"source_tag,omitempty" xml:"source_tag,omitempty"`
-	// 是否付费
-	PayMember bool `json:"pay_member,omitempty" xml:"pay_member,omitempty"`
 	// storeMember：门店会员，txd：淘鲜达，eleme：饿了么，weixin：微信小程序
 	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
 	// isv系统中的完整的用户信息
@@ -50,4 +44,10 @@ type MerchantUserInfo struct {
 	WxUserName string `json:"wx_user_name,omitempty" xml:"wx_user_name,omitempty"`
 	// 微信unionId
 	WxUnionId string `json:"wx_union_id,omitempty" xml:"wx_union_id,omitempty"`
+	// 储值卡余额，需要统一单位为”分“，然后取整上传
+	CardBalance int64 `json:"card_balance,omitempty" xml:"card_balance,omitempty"`
+	// 是否续费
+	Renew bool `json:"renew,omitempty" xml:"renew,omitempty"`
+	// 是否付费
+	PayMember bool `json:"pay_member,omitempty" xml:"pay_member,omitempty"`
 }

@@ -8,8 +8,8 @@ type ErrorResult struct {
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 单个订单isv业务处理关键字值
 	Key string `json:"key,omitempty" xml:"key,omitempty"`
-	// 单个订单处理结果标示  true：成功 false：失败
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 业务处理数据
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
+	// 单个订单处理结果标示  true：成功 false：失败
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

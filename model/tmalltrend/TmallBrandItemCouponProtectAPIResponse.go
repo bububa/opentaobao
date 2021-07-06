@@ -22,10 +22,10 @@ type TmallBrandItemCouponProtectAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结果
 	Value string `json:"value,omitempty" xml:"value,omitempty"`
-	// 店铺优惠券保护期设置是否成功
-	RespSuccess bool `json:"resp_success,omitempty" xml:"resp_success,omitempty"`
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误码
 	RespErrorCode string `json:"resp_error_code,omitempty" xml:"resp_error_code,omitempty"`
+	// 店铺优惠券保护期设置是否成功
+	RespSuccess bool `json:"resp_success,omitempty" xml:"resp_success,omitempty"`
 }

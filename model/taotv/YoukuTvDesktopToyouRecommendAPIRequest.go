@@ -18,8 +18,6 @@ type YoukuTvDesktopToyouRecommendAPIRequest struct {
 	_bcp string
 	// 终端设备型号
 	_deviceModel string
-	// 桌面版本号
-	_versionCode int64
 	// 终端设备mac
 	_mac string
 	// 终端设备uuid
@@ -28,14 +26,16 @@ type YoukuTvDesktopToyouRecommendAPIRequest struct {
 	_from string
 	// 支持收费方式，0-免费 1-限免 2-单点 3-包月 4-红包 5-单包,多项用“,”隔开
 	_chargeType string
-	// 获取的最大节目数
-	_maxSize int64
 	// 分辨率，sw720 sw1080
 	_sw string
 	// 支持媒体类型,dts,drm,dolby,h265
 	_deviceMedia string
 	// 请求IP
 	_ip string
+	// 桌面版本号
+	_versionCode int64
+	// 获取的最大节目数
+	_maxSize int64
 }
 
 // NewYoukuTvDesktopToyouRecommendRequest 初始化YoukuTvDesktopToyouRecommendAPIRequest对象
@@ -98,19 +98,6 @@ func (r YoukuTvDesktopToyouRecommendAPIRequest) GetDeviceModel() string {
 	return r._deviceModel
 }
 
-// SetVersionCode is VersionCode Setter
-// 桌面版本号
-func (r *YoukuTvDesktopToyouRecommendAPIRequest) SetVersionCode(_versionCode int64) error {
-	r._versionCode = _versionCode
-	r.Set("version_code", _versionCode)
-	return nil
-}
-
-// GetVersionCode VersionCode Getter
-func (r YoukuTvDesktopToyouRecommendAPIRequest) GetVersionCode() int64 {
-	return r._versionCode
-}
-
 // SetMac is Mac Setter
 // 终端设备mac
 func (r *YoukuTvDesktopToyouRecommendAPIRequest) SetMac(_mac string) error {
@@ -163,19 +150,6 @@ func (r YoukuTvDesktopToyouRecommendAPIRequest) GetChargeType() string {
 	return r._chargeType
 }
 
-// SetMaxSize is MaxSize Setter
-// 获取的最大节目数
-func (r *YoukuTvDesktopToyouRecommendAPIRequest) SetMaxSize(_maxSize int64) error {
-	r._maxSize = _maxSize
-	r.Set("max_size", _maxSize)
-	return nil
-}
-
-// GetMaxSize MaxSize Getter
-func (r YoukuTvDesktopToyouRecommendAPIRequest) GetMaxSize() int64 {
-	return r._maxSize
-}
-
 // SetSw is Sw Setter
 // 分辨率，sw720 sw1080
 func (r *YoukuTvDesktopToyouRecommendAPIRequest) SetSw(_sw string) error {
@@ -213,4 +187,30 @@ func (r *YoukuTvDesktopToyouRecommendAPIRequest) SetIp(_ip string) error {
 // GetIp Ip Getter
 func (r YoukuTvDesktopToyouRecommendAPIRequest) GetIp() string {
 	return r._ip
+}
+
+// SetVersionCode is VersionCode Setter
+// 桌面版本号
+func (r *YoukuTvDesktopToyouRecommendAPIRequest) SetVersionCode(_versionCode int64) error {
+	r._versionCode = _versionCode
+	r.Set("version_code", _versionCode)
+	return nil
+}
+
+// GetVersionCode VersionCode Getter
+func (r YoukuTvDesktopToyouRecommendAPIRequest) GetVersionCode() int64 {
+	return r._versionCode
+}
+
+// SetMaxSize is MaxSize Setter
+// 获取的最大节目数
+func (r *YoukuTvDesktopToyouRecommendAPIRequest) SetMaxSize(_maxSize int64) error {
+	r._maxSize = _maxSize
+	r.Set("max_size", _maxSize)
+	return nil
+}
+
+// GetMaxSize MaxSize Getter
+func (r YoukuTvDesktopToyouRecommendAPIRequest) GetMaxSize() int64 {
+	return r._maxSize
 }

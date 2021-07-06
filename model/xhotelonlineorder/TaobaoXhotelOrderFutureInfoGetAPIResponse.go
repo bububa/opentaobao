@@ -22,8 +22,8 @@ type TaobaoXhotelOrderFutureInfoGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 结果返回列表
 	Results []HotelOrderDirectInfo `json:"results,omitempty" xml:"results>hotel_order_direct_info,omitempty"`
-	// 是否成功标记
-	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
 	// 返回外部请求流水号
 	OutUuid string `json:"out_uuid,omitempty" xml:"out_uuid,omitempty"`
+	// 是否成功标记
+	Issuccess bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
 }

@@ -10,9 +10,9 @@ import (
 
 // PkgConfig SDK分包配置结构体
 type PkgConfig struct {
-	Id   int64  `json:"id,omitempty"`   // api catelog id
 	Name string `json:"name,omitempty"` // api catelog name
 	Pkg  string `json:"pkg,omitempty"`  // go package name
+	Id   int64  `json:"id,omitempty"`   // api catelog id
 }
 
 //go:embed assets/package.json

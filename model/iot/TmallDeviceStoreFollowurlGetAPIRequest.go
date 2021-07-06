@@ -16,12 +16,12 @@ type TmallDeviceStoreFollowurlGetAPIRequest struct {
 	_deviceCode string
 	// 关注完成后的回调地址,需要是EWS地址
 	_callbackUrl string
+	// 页面banner的图片，如果没有传入，会使用系统默认图
+	_bannerImg string
 	// 是否同时关注天猫理想站
 	_followRetailAccount bool
 	// 是否使用长期链接
 	_longterm bool
-	// 页面banner的图片，如果没有传入，会使用系统默认图
-	_bannerImg string
 }
 
 // NewTmallDeviceStoreFollowurlGetRequest 初始化TmallDeviceStoreFollowurlGetAPIRequest对象
@@ -71,6 +71,19 @@ func (r TmallDeviceStoreFollowurlGetAPIRequest) GetCallbackUrl() string {
 	return r._callbackUrl
 }
 
+// SetBannerImg is BannerImg Setter
+// 页面banner的图片，如果没有传入，会使用系统默认图
+func (r *TmallDeviceStoreFollowurlGetAPIRequest) SetBannerImg(_bannerImg string) error {
+	r._bannerImg = _bannerImg
+	r.Set("banner_img", _bannerImg)
+	return nil
+}
+
+// GetBannerImg BannerImg Getter
+func (r TmallDeviceStoreFollowurlGetAPIRequest) GetBannerImg() string {
+	return r._bannerImg
+}
+
 // SetFollowRetailAccount is FollowRetailAccount Setter
 // 是否同时关注天猫理想站
 func (r *TmallDeviceStoreFollowurlGetAPIRequest) SetFollowRetailAccount(_followRetailAccount bool) error {
@@ -95,17 +108,4 @@ func (r *TmallDeviceStoreFollowurlGetAPIRequest) SetLongterm(_longterm bool) err
 // GetLongterm Longterm Getter
 func (r TmallDeviceStoreFollowurlGetAPIRequest) GetLongterm() bool {
 	return r._longterm
-}
-
-// SetBannerImg is BannerImg Setter
-// 页面banner的图片，如果没有传入，会使用系统默认图
-func (r *TmallDeviceStoreFollowurlGetAPIRequest) SetBannerImg(_bannerImg string) error {
-	r._bannerImg = _bannerImg
-	r.Set("banner_img", _bannerImg)
-	return nil
-}
-
-// GetBannerImg BannerImg Getter
-func (r TmallDeviceStoreFollowurlGetAPIRequest) GetBannerImg() string {
-	return r._bannerImg
 }

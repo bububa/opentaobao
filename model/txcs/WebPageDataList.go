@@ -18,14 +18,8 @@ type WebPageDataList struct {
 	ShopName string `json:"shop_name,omitempty" xml:"shop_name,omitempty"`
 	// 业务订单编号
 	BizOrderCode string `json:"biz_order_code,omitempty" xml:"biz_order_code,omitempty"`
-	// 扩展信息
-	BizExtAttr *BizExtAttr `json:"biz_ext_attr,omitempty" xml:"biz_ext_attr,omitempty"`
-	// 叶子类目编码
-	LeafCatId int64 `json:"leaf_cat_id,omitempty" xml:"leaf_cat_id,omitempty"`
 	// 合同版本号
 	ContractVersion string `json:"contract_version,omitempty" xml:"contract_version,omitempty"`
-	// 业务时间
-	BizTime int64 `json:"biz_time,omitempty" xml:"biz_time,omitempty"`
 	// 税率
 	TaxRate string `json:"tax_rate,omitempty" xml:"tax_rate,omitempty"`
 	// 单位
@@ -38,16 +32,22 @@ type WebPageDataList struct {
 	FeeName string `json:"fee_name,omitempty" xml:"fee_name,omitempty"`
 	// 未税金额
 	UntaxAmount string `json:"untax_amount,omitempty" xml:"untax_amount,omitempty"`
-	// 币种
-	Currency *Currency `json:"currency,omitempty" xml:"currency,omitempty"`
 	// 结算金额
 	SettlementAmount string `json:"settlement_amount,omitempty" xml:"settlement_amount,omitempty"`
 	// 税额
 	TaxAmount string `json:"tax_amount,omitempty" xml:"tax_amount,omitempty"`
 	// 合同编码
 	ContractCode string `json:"contract_code,omitempty" xml:"contract_code,omitempty"`
-	// 结算方式描述
-	SettleWay int64 `json:"settle_way,omitempty" xml:"settle_way,omitempty"`
 	// 业务编码
 	BizCode string `json:"biz_code,omitempty" xml:"biz_code,omitempty"`
+	// 扩展信息
+	BizExtAttr *BizExtAttr `json:"biz_ext_attr,omitempty" xml:"biz_ext_attr,omitempty"`
+	// 叶子类目编码
+	LeafCatId int64 `json:"leaf_cat_id,omitempty" xml:"leaf_cat_id,omitempty"`
+	// 业务时间
+	BizTime int64 `json:"biz_time,omitempty" xml:"biz_time,omitempty"`
+	// 币种
+	Currency *Currency `json:"currency,omitempty" xml:"currency,omitempty"`
+	// 结算方式描述
+	SettleWay int64 `json:"settle_way,omitempty" xml:"settle_way,omitempty"`
 }

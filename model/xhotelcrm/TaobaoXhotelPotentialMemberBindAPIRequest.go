@@ -34,10 +34,10 @@ type TaobaoXhotelPotentialMemberBindAPIRequest struct {
 	_sex string
 	// 城市
 	_city string
-	// 年龄
-	_age int64
 	// 籍贯
 	_nativePlace string
+	// 年龄
+	_age int64
 }
 
 // NewTaobaoXhotelPotentialMemberBindRequest 初始化TaobaoXhotelPotentialMemberBindAPIRequest对象
@@ -204,19 +204,6 @@ func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetCity() string {
 	return r._city
 }
 
-// SetAge is Age Setter
-// 年龄
-func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetAge(_age int64) error {
-	r._age = _age
-	r.Set("age", _age)
-	return nil
-}
-
-// GetAge Age Getter
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetAge() int64 {
-	return r._age
-}
-
 // SetNativePlace is NativePlace Setter
 // 籍贯
 func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetNativePlace(_nativePlace string) error {
@@ -228,4 +215,17 @@ func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetNativePlace(_nativePlace 
 // GetNativePlace NativePlace Getter
 func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetNativePlace() string {
 	return r._nativePlace
+}
+
+// SetAge is Age Setter
+// 年龄
+func (r *TaobaoXhotelPotentialMemberBindAPIRequest) SetAge(_age int64) error {
+	r._age = _age
+	r.Set("age", _age)
+	return nil
+}
+
+// GetAge Age Getter
+func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetAge() int64 {
+	return r._age
 }

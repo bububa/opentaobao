@@ -14,12 +14,12 @@ type TaobaoSimbaCampaignUpdateAPIRequest struct {
 	model.Params
 	// 用户设置的上下限状态；offline-下线；online-上线；
 	_onlineStatus string
-	// 推广计划Id
-	_campaignId int64
 	// 推广计划名称，不能多余40个字符，不能和客户其他推广计划同名。
 	_title string
 	// 主人昵称
 	_nick string
+	// 推广计划Id
+	_campaignId int64
 }
 
 // NewTaobaoSimbaCampaignUpdateRequest 初始化TaobaoSimbaCampaignUpdateAPIRequest对象
@@ -56,19 +56,6 @@ func (r TaobaoSimbaCampaignUpdateAPIRequest) GetOnlineStatus() string {
 	return r._onlineStatus
 }
 
-// SetCampaignId is CampaignId Setter
-// 推广计划Id
-func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetCampaignId(_campaignId int64) error {
-	r._campaignId = _campaignId
-	r.Set("campaign_id", _campaignId)
-	return nil
-}
-
-// GetCampaignId CampaignId Getter
-func (r TaobaoSimbaCampaignUpdateAPIRequest) GetCampaignId() int64 {
-	return r._campaignId
-}
-
 // SetTitle is Title Setter
 // 推广计划名称，不能多余40个字符，不能和客户其他推广计划同名。
 func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetTitle(_title string) error {
@@ -93,4 +80,17 @@ func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoSimbaCampaignUpdateAPIRequest) GetNick() string {
 	return r._nick
+}
+
+// SetCampaignId is CampaignId Setter
+// 推广计划Id
+func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// GetCampaignId CampaignId Getter
+func (r TaobaoSimbaCampaignUpdateAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
 }

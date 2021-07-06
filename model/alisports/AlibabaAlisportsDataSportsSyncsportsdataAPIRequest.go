@@ -16,28 +16,18 @@ type AlibabaAlisportsDataSportsSyncsportsdataAPIRequest struct {
 	_alispAppKey string
 	// 最高速度 单位：米/每分
 	_maxSpeed string
-	// 平均心率 单位：次/每分
-	_averHeartrate int64
-	// 最高心率 单位：次/每分
-	_maxHeartrate int64
-	// 最低心率 单位：次/每分
-	_minHeartrate int64
 	// 运动轨迹，有序的经纬度集合，json格式 例：[[1,2],[3,4]] [1,2]是一个坐标点，1是经度 2是纬度（有就传，阿里体育较依赖此字段）
 	_trail string
 	// 运动开始时间（如果不区分开始结束，两个时间值相同;格式：Y-m-d H:i:s）
 	_stime string
 	// 运动结束时间（如果不区分开始结束，两个时间值相同;格式：Y-m-d H:i:s）
 	_etime string
-	// 设备类型 :1.手环;2.手表;3.跑步机;4.智能运动鞋;5.耳机;6.智能运动鞋;7.智能运动Bra8.智能单车;9.智能跳绳10.智能背心11.脚环
-	_deviceType int64
 	// 设备名（展示会用到）
 	_deviceName string
 	// 设备型号
 	_deviceModel string
 	// 平均速度 单位：米/每分
 	_averSpeed string
-	// 二级运动量单位 定义：1.爬楼层数(跑步、健走、健身、登山);2.划水次数(游泳)
-	_subUnit int64
 	// 二级运动量
 	_subNum string
 	// 时间戳精确到秒
@@ -50,14 +40,8 @@ type AlibabaAlisportsDataSportsSyncsportsdataAPIRequest struct {
 	_source string
 	// 三方运动数据主键id（数据唯一标记，去重使用）
 	_dataId string
-	// 运动类型一级分类 定义：1-跑步;2-健走;3-骑行;4-游泳;5-健身;6-篮球;7-足球;8-羽毛球;9-排球;10-乒乓球;11-瑜伽;12-电竞;13-登山;16-椭圆机;19-健身操;20-太极;
-	_sportsClass int64
-	// 运动类型二级分类 定义： 1001-室内跑步;1002-室外跑步;2001-室内健走;2002-室外健走;3001-室内骑行;3002-室外骑行;4001-室内游泳;4002-户外游泳
-	_sportsType int64
 	// 运动量
 	_num string
-	// 运动量单位 1.步数(跑步、健走、椭圆机、登山);2.趟数(游泳);3.平均踏频(骑行);
-	_unit int64
 	// 运动消耗卡路里 单位：卡
 	_calorie string
 	// 所属赛事（有就传，阿里体育较依赖此字段）
@@ -76,6 +60,22 @@ type AlibabaAlisportsDataSportsSyncsportsdataAPIRequest struct {
 	_startPoint string
 	// 结束运动地点经纬度，格式：1,2 (1为经度，2为纬度)
 	_endPoint string
+	// 平均心率 单位：次/每分
+	_averHeartrate int64
+	// 最高心率 单位：次/每分
+	_maxHeartrate int64
+	// 最低心率 单位：次/每分
+	_minHeartrate int64
+	// 设备类型 :1.手环;2.手表;3.跑步机;4.智能运动鞋;5.耳机;6.智能运动鞋;7.智能运动Bra8.智能单车;9.智能跳绳10.智能背心11.脚环
+	_deviceType int64
+	// 二级运动量单位 定义：1.爬楼层数(跑步、健走、健身、登山);2.划水次数(游泳)
+	_subUnit int64
+	// 运动类型一级分类 定义：1-跑步;2-健走;3-骑行;4-游泳;5-健身;6-篮球;7-足球;8-羽毛球;9-排球;10-乒乓球;11-瑜伽;12-电竞;13-登山;16-椭圆机;19-健身操;20-太极;
+	_sportsClass int64
+	// 运动类型二级分类 定义： 1001-室内跑步;1002-室外跑步;2001-室内健走;2002-室外健走;3001-室内骑行;3002-室外骑行;4001-室内游泳;4002-户外游泳
+	_sportsType int64
+	// 运动量单位 1.步数(跑步、健走、椭圆机、登山);2.趟数(游泳);3.平均踏频(骑行);
+	_unit int64
 }
 
 // NewAlibabaAlisportsDataSportsSyncsportsdataRequest 初始化AlibabaAlisportsDataSportsSyncsportsdataAPIRequest对象
@@ -125,45 +125,6 @@ func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetMaxSpeed() string
 	return r._maxSpeed
 }
 
-// SetAverHeartrate is AverHeartrate Setter
-// 平均心率 单位：次/每分
-func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetAverHeartrate(_averHeartrate int64) error {
-	r._averHeartrate = _averHeartrate
-	r.Set("aver_heartrate", _averHeartrate)
-	return nil
-}
-
-// GetAverHeartrate AverHeartrate Getter
-func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetAverHeartrate() int64 {
-	return r._averHeartrate
-}
-
-// SetMaxHeartrate is MaxHeartrate Setter
-// 最高心率 单位：次/每分
-func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetMaxHeartrate(_maxHeartrate int64) error {
-	r._maxHeartrate = _maxHeartrate
-	r.Set("max_heartrate", _maxHeartrate)
-	return nil
-}
-
-// GetMaxHeartrate MaxHeartrate Getter
-func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetMaxHeartrate() int64 {
-	return r._maxHeartrate
-}
-
-// SetMinHeartrate is MinHeartrate Setter
-// 最低心率 单位：次/每分
-func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetMinHeartrate(_minHeartrate int64) error {
-	r._minHeartrate = _minHeartrate
-	r.Set("min_heartrate", _minHeartrate)
-	return nil
-}
-
-// GetMinHeartrate MinHeartrate Getter
-func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetMinHeartrate() int64 {
-	return r._minHeartrate
-}
-
 // SetTrail is Trail Setter
 // 运动轨迹，有序的经纬度集合，json格式 例：[[1,2],[3,4]] [1,2]是一个坐标点，1是经度 2是纬度（有就传，阿里体育较依赖此字段）
 func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetTrail(_trail string) error {
@@ -203,19 +164,6 @@ func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetEtime() string {
 	return r._etime
 }
 
-// SetDeviceType is DeviceType Setter
-// 设备类型 :1.手环;2.手表;3.跑步机;4.智能运动鞋;5.耳机;6.智能运动鞋;7.智能运动Bra8.智能单车;9.智能跳绳10.智能背心11.脚环
-func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetDeviceType(_deviceType int64) error {
-	r._deviceType = _deviceType
-	r.Set("device_type", _deviceType)
-	return nil
-}
-
-// GetDeviceType DeviceType Getter
-func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetDeviceType() int64 {
-	return r._deviceType
-}
-
 // SetDeviceName is DeviceName Setter
 // 设备名（展示会用到）
 func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetDeviceName(_deviceName string) error {
@@ -253,19 +201,6 @@ func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetAverSpeed(_averS
 // GetAverSpeed AverSpeed Getter
 func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetAverSpeed() string {
 	return r._averSpeed
-}
-
-// SetSubUnit is SubUnit Setter
-// 二级运动量单位 定义：1.爬楼层数(跑步、健走、健身、登山);2.划水次数(游泳)
-func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetSubUnit(_subUnit int64) error {
-	r._subUnit = _subUnit
-	r.Set("sub_unit", _subUnit)
-	return nil
-}
-
-// GetSubUnit SubUnit Getter
-func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetSubUnit() int64 {
-	return r._subUnit
 }
 
 // SetSubNum is SubNum Setter
@@ -346,32 +281,6 @@ func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetDataId() string {
 	return r._dataId
 }
 
-// SetSportsClass is SportsClass Setter
-// 运动类型一级分类 定义：1-跑步;2-健走;3-骑行;4-游泳;5-健身;6-篮球;7-足球;8-羽毛球;9-排球;10-乒乓球;11-瑜伽;12-电竞;13-登山;16-椭圆机;19-健身操;20-太极;
-func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetSportsClass(_sportsClass int64) error {
-	r._sportsClass = _sportsClass
-	r.Set("sports_class", _sportsClass)
-	return nil
-}
-
-// GetSportsClass SportsClass Getter
-func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetSportsClass() int64 {
-	return r._sportsClass
-}
-
-// SetSportsType is SportsType Setter
-// 运动类型二级分类 定义： 1001-室内跑步;1002-室外跑步;2001-室内健走;2002-室外健走;3001-室内骑行;3002-室外骑行;4001-室内游泳;4002-户外游泳
-func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetSportsType(_sportsType int64) error {
-	r._sportsType = _sportsType
-	r.Set("sports_type", _sportsType)
-	return nil
-}
-
-// GetSportsType SportsType Getter
-func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetSportsType() int64 {
-	return r._sportsType
-}
-
 // SetNum is Num Setter
 // 运动量
 func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetNum(_num string) error {
@@ -383,19 +292,6 @@ func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetNum(_num string)
 // GetNum Num Getter
 func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetNum() string {
 	return r._num
-}
-
-// SetUnit is Unit Setter
-// 运动量单位 1.步数(跑步、健走、椭圆机、登山);2.趟数(游泳);3.平均踏频(骑行);
-func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetUnit(_unit int64) error {
-	r._unit = _unit
-	r.Set("unit", _unit)
-	return nil
-}
-
-// GetUnit Unit Getter
-func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetUnit() int64 {
-	return r._unit
 }
 
 // SetCalorie is Calorie Setter
@@ -513,4 +409,108 @@ func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetEndPoint(_endPoi
 // GetEndPoint EndPoint Getter
 func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetEndPoint() string {
 	return r._endPoint
+}
+
+// SetAverHeartrate is AverHeartrate Setter
+// 平均心率 单位：次/每分
+func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetAverHeartrate(_averHeartrate int64) error {
+	r._averHeartrate = _averHeartrate
+	r.Set("aver_heartrate", _averHeartrate)
+	return nil
+}
+
+// GetAverHeartrate AverHeartrate Getter
+func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetAverHeartrate() int64 {
+	return r._averHeartrate
+}
+
+// SetMaxHeartrate is MaxHeartrate Setter
+// 最高心率 单位：次/每分
+func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetMaxHeartrate(_maxHeartrate int64) error {
+	r._maxHeartrate = _maxHeartrate
+	r.Set("max_heartrate", _maxHeartrate)
+	return nil
+}
+
+// GetMaxHeartrate MaxHeartrate Getter
+func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetMaxHeartrate() int64 {
+	return r._maxHeartrate
+}
+
+// SetMinHeartrate is MinHeartrate Setter
+// 最低心率 单位：次/每分
+func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetMinHeartrate(_minHeartrate int64) error {
+	r._minHeartrate = _minHeartrate
+	r.Set("min_heartrate", _minHeartrate)
+	return nil
+}
+
+// GetMinHeartrate MinHeartrate Getter
+func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetMinHeartrate() int64 {
+	return r._minHeartrate
+}
+
+// SetDeviceType is DeviceType Setter
+// 设备类型 :1.手环;2.手表;3.跑步机;4.智能运动鞋;5.耳机;6.智能运动鞋;7.智能运动Bra8.智能单车;9.智能跳绳10.智能背心11.脚环
+func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetDeviceType(_deviceType int64) error {
+	r._deviceType = _deviceType
+	r.Set("device_type", _deviceType)
+	return nil
+}
+
+// GetDeviceType DeviceType Getter
+func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetDeviceType() int64 {
+	return r._deviceType
+}
+
+// SetSubUnit is SubUnit Setter
+// 二级运动量单位 定义：1.爬楼层数(跑步、健走、健身、登山);2.划水次数(游泳)
+func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetSubUnit(_subUnit int64) error {
+	r._subUnit = _subUnit
+	r.Set("sub_unit", _subUnit)
+	return nil
+}
+
+// GetSubUnit SubUnit Getter
+func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetSubUnit() int64 {
+	return r._subUnit
+}
+
+// SetSportsClass is SportsClass Setter
+// 运动类型一级分类 定义：1-跑步;2-健走;3-骑行;4-游泳;5-健身;6-篮球;7-足球;8-羽毛球;9-排球;10-乒乓球;11-瑜伽;12-电竞;13-登山;16-椭圆机;19-健身操;20-太极;
+func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetSportsClass(_sportsClass int64) error {
+	r._sportsClass = _sportsClass
+	r.Set("sports_class", _sportsClass)
+	return nil
+}
+
+// GetSportsClass SportsClass Getter
+func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetSportsClass() int64 {
+	return r._sportsClass
+}
+
+// SetSportsType is SportsType Setter
+// 运动类型二级分类 定义： 1001-室内跑步;1002-室外跑步;2001-室内健走;2002-室外健走;3001-室内骑行;3002-室外骑行;4001-室内游泳;4002-户外游泳
+func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetSportsType(_sportsType int64) error {
+	r._sportsType = _sportsType
+	r.Set("sports_type", _sportsType)
+	return nil
+}
+
+// GetSportsType SportsType Getter
+func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetSportsType() int64 {
+	return r._sportsType
+}
+
+// SetUnit is Unit Setter
+// 运动量单位 1.步数(跑步、健走、椭圆机、登山);2.趟数(游泳);3.平均踏频(骑行);
+func (r *AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) SetUnit(_unit int64) error {
+	r._unit = _unit
+	r.Set("unit", _unit)
+	return nil
+}
+
+// GetUnit Unit Getter
+func (r AlibabaAlisportsDataSportsSyncsportsdataAPIRequest) GetUnit() int64 {
+	return r._unit
 }

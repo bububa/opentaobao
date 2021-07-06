@@ -24,10 +24,10 @@ type YunosAdmarketAdBidAPIResponseModel struct {
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
 	// 返回结果描述
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
-	// 返回结果
-	Result *BidResponse `json:"result,omitempty" xml:"result,omitempty"`
 	// 响应码
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
+	// 返回结果
+	Result *BidResponse `json:"result,omitempty" xml:"result,omitempty"`
 	// 是否操作成功
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

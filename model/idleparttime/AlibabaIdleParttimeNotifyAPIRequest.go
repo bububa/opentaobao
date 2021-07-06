@@ -12,6 +12,8 @@ import (
 // 服务商侧有岗位状态变更对我们进行通知(岗位关闭, 录取状态)
 type AlibabaIdleParttimeNotifyAPIRequest struct {
 	model.Params
+	// 通知消息
+	_message string
 	// 实时同步类型, 0: 岗位状态, 1: 录取状态
 	_type int64
 	// 岗位: 0关闭 ; 录取: 0不录取, 1录取
@@ -24,8 +26,6 @@ type AlibabaIdleParttimeNotifyAPIRequest struct {
 	_syncTime int64
 	// 报名id
 	_applyId int64
-	// 通知消息
-	_message string
 }
 
 // NewAlibabaIdleParttimeNotifyRequest 初始化AlibabaIdleParttimeNotifyAPIRequest对象
@@ -47,6 +47,19 @@ func (r AlibabaIdleParttimeNotifyAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetMessage is Message Setter
+// 通知消息
+func (r *AlibabaIdleParttimeNotifyAPIRequest) SetMessage(_message string) error {
+	r._message = _message
+	r.Set("message", _message)
+	return nil
+}
+
+// GetMessage Message Getter
+func (r AlibabaIdleParttimeNotifyAPIRequest) GetMessage() string {
+	return r._message
 }
 
 // SetType is Type Setter
@@ -125,17 +138,4 @@ func (r *AlibabaIdleParttimeNotifyAPIRequest) SetApplyId(_applyId int64) error {
 // GetApplyId ApplyId Getter
 func (r AlibabaIdleParttimeNotifyAPIRequest) GetApplyId() int64 {
 	return r._applyId
-}
-
-// SetMessage is Message Setter
-// 通知消息
-func (r *AlibabaIdleParttimeNotifyAPIRequest) SetMessage(_message string) error {
-	r._message = _message
-	r.Set("message", _message)
-	return nil
-}
-
-// GetMessage Message Getter
-func (r AlibabaIdleParttimeNotifyAPIRequest) GetMessage() string {
-	return r._message
 }

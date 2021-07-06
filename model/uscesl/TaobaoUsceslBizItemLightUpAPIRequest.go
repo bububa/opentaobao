@@ -16,12 +16,12 @@ type TaobaoUsceslBizItemLightUpAPIRequest struct {
 	_itemBarCode string
 	// 亮灯颜色，绿：值为2；红：值为4
 	_ledColor string
+	// 商家编号
+	_bizBrandKey string
 	// 亮灯时长，单位：秒，最大长度3600秒
 	_lightUpTime int64
 	// 门店编号
 	_storeId int64
-	// 商家编号
-	_bizBrandKey string
 }
 
 // NewTaobaoUsceslBizItemLightUpRequest 初始化TaobaoUsceslBizItemLightUpAPIRequest对象
@@ -71,6 +71,19 @@ func (r TaobaoUsceslBizItemLightUpAPIRequest) GetLedColor() string {
 	return r._ledColor
 }
 
+// SetBizBrandKey is BizBrandKey Setter
+// 商家编号
+func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
+	r._bizBrandKey = _bizBrandKey
+	r.Set("biz_brand_key", _bizBrandKey)
+	return nil
+}
+
+// GetBizBrandKey BizBrandKey Getter
+func (r TaobaoUsceslBizItemLightUpAPIRequest) GetBizBrandKey() string {
+	return r._bizBrandKey
+}
+
 // SetLightUpTime is LightUpTime Setter
 // 亮灯时长，单位：秒，最大长度3600秒
 func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetLightUpTime(_lightUpTime int64) error {
@@ -95,17 +108,4 @@ func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetStoreId(_storeId int64) error 
 // GetStoreId StoreId Getter
 func (r TaobaoUsceslBizItemLightUpAPIRequest) GetStoreId() int64 {
 	return r._storeId
-}
-
-// SetBizBrandKey is BizBrandKey Setter
-// 商家编号
-func (r *TaobaoUsceslBizItemLightUpAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
-	r._bizBrandKey = _bizBrandKey
-	r.Set("biz_brand_key", _bizBrandKey)
-	return nil
-}
-
-// GetBizBrandKey BizBrandKey Getter
-func (r TaobaoUsceslBizItemLightUpAPIRequest) GetBizBrandKey() string {
-	return r._bizBrandKey
 }

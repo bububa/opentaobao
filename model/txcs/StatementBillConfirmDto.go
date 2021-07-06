@@ -2,6 +2,8 @@ package txcs
 
 // StatementBillConfirmDto 结构体
 type StatementBillConfirmDto struct {
+	// 账单code
+	StatementBillCodes []string `json:"statement_bill_codes,omitempty" xml:"statement_bill_codes>string,omitempty"`
 	// 结算公司编码
 	SettlementCompanyCode string `json:"settlement_company_code,omitempty" xml:"settlement_company_code,omitempty"`
 	// 幂等ID
@@ -10,6 +12,4 @@ type StatementBillConfirmDto struct {
 	OperatorId string `json:"operator_id,omitempty" xml:"operator_id,omitempty"`
 	// 操作人名称
 	OperatorName string `json:"operator_name,omitempty" xml:"operator_name,omitempty"`
-	// 账单code
-	StatementBillCodes []string `json:"statement_bill_codes,omitempty" xml:"statement_bill_codes>string,omitempty"`
 }

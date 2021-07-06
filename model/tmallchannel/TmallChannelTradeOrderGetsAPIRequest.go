@@ -12,32 +12,32 @@ import (
 // 分页查询采购单
 type TmallChannelTradeOrderGetsAPIRequest struct {
 	model.Params
-	// 是否包含子单
-	_isIncludeSubOrder bool
-	// 是否包含主单
-	_isIncludeMainOrder bool
-	// 是否包含物流信息
-	_isIncludeLogistics bool
+	// 分销商Nick
+	_distributorNick string
+	// 创建时间从
+	_createTimeStart string
+	// 创建时间到
+	_createTimeEnd string
 	// 每页显示数量
 	_pageSize int64
 	// 查询第几页
 	_pageNumber int64
-	// 是否分页查询
-	_needPagination bool
 	// 主采购单号
 	_mainPurchaseOrderNo int64
-	// 分销商Nick
-	_distributorNick string
 	// 渠道编码
 	_channel int64
 	// 1-代销；2-经销
 	_tradeType int64
 	// 1. 待付款 2.已付款待发货 3.已发货待收货 4.交易完成 5.交易关闭
 	_orderStatus int64
-	// 创建时间从
-	_createTimeStart string
-	// 创建时间到
-	_createTimeEnd string
+	// 是否包含子单
+	_isIncludeSubOrder bool
+	// 是否包含主单
+	_isIncludeMainOrder bool
+	// 是否包含物流信息
+	_isIncludeLogistics bool
+	// 是否分页查询
+	_needPagination bool
 }
 
 // NewTmallChannelTradeOrderGetsRequest 初始化TmallChannelTradeOrderGetsAPIRequest对象
@@ -61,43 +61,43 @@ func (r TmallChannelTradeOrderGetsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetIsIncludeSubOrder is IsIncludeSubOrder Setter
-// 是否包含子单
-func (r *TmallChannelTradeOrderGetsAPIRequest) SetIsIncludeSubOrder(_isIncludeSubOrder bool) error {
-	r._isIncludeSubOrder = _isIncludeSubOrder
-	r.Set("is_include_sub_order", _isIncludeSubOrder)
+// SetDistributorNick is DistributorNick Setter
+// 分销商Nick
+func (r *TmallChannelTradeOrderGetsAPIRequest) SetDistributorNick(_distributorNick string) error {
+	r._distributorNick = _distributorNick
+	r.Set("distributor_nick", _distributorNick)
 	return nil
 }
 
-// GetIsIncludeSubOrder IsIncludeSubOrder Getter
-func (r TmallChannelTradeOrderGetsAPIRequest) GetIsIncludeSubOrder() bool {
-	return r._isIncludeSubOrder
+// GetDistributorNick DistributorNick Getter
+func (r TmallChannelTradeOrderGetsAPIRequest) GetDistributorNick() string {
+	return r._distributorNick
 }
 
-// SetIsIncludeMainOrder is IsIncludeMainOrder Setter
-// 是否包含主单
-func (r *TmallChannelTradeOrderGetsAPIRequest) SetIsIncludeMainOrder(_isIncludeMainOrder bool) error {
-	r._isIncludeMainOrder = _isIncludeMainOrder
-	r.Set("is_include_main_order", _isIncludeMainOrder)
+// SetCreateTimeStart is CreateTimeStart Setter
+// 创建时间从
+func (r *TmallChannelTradeOrderGetsAPIRequest) SetCreateTimeStart(_createTimeStart string) error {
+	r._createTimeStart = _createTimeStart
+	r.Set("create_time_start", _createTimeStart)
 	return nil
 }
 
-// GetIsIncludeMainOrder IsIncludeMainOrder Getter
-func (r TmallChannelTradeOrderGetsAPIRequest) GetIsIncludeMainOrder() bool {
-	return r._isIncludeMainOrder
+// GetCreateTimeStart CreateTimeStart Getter
+func (r TmallChannelTradeOrderGetsAPIRequest) GetCreateTimeStart() string {
+	return r._createTimeStart
 }
 
-// SetIsIncludeLogistics is IsIncludeLogistics Setter
-// 是否包含物流信息
-func (r *TmallChannelTradeOrderGetsAPIRequest) SetIsIncludeLogistics(_isIncludeLogistics bool) error {
-	r._isIncludeLogistics = _isIncludeLogistics
-	r.Set("is_include_logistics", _isIncludeLogistics)
+// SetCreateTimeEnd is CreateTimeEnd Setter
+// 创建时间到
+func (r *TmallChannelTradeOrderGetsAPIRequest) SetCreateTimeEnd(_createTimeEnd string) error {
+	r._createTimeEnd = _createTimeEnd
+	r.Set("create_time_end", _createTimeEnd)
 	return nil
 }
 
-// GetIsIncludeLogistics IsIncludeLogistics Getter
-func (r TmallChannelTradeOrderGetsAPIRequest) GetIsIncludeLogistics() bool {
-	return r._isIncludeLogistics
+// GetCreateTimeEnd CreateTimeEnd Getter
+func (r TmallChannelTradeOrderGetsAPIRequest) GetCreateTimeEnd() string {
+	return r._createTimeEnd
 }
 
 // SetPageSize is PageSize Setter
@@ -126,19 +126,6 @@ func (r TmallChannelTradeOrderGetsAPIRequest) GetPageNumber() int64 {
 	return r._pageNumber
 }
 
-// SetNeedPagination is NeedPagination Setter
-// 是否分页查询
-func (r *TmallChannelTradeOrderGetsAPIRequest) SetNeedPagination(_needPagination bool) error {
-	r._needPagination = _needPagination
-	r.Set("need_pagination", _needPagination)
-	return nil
-}
-
-// GetNeedPagination NeedPagination Getter
-func (r TmallChannelTradeOrderGetsAPIRequest) GetNeedPagination() bool {
-	return r._needPagination
-}
-
 // SetMainPurchaseOrderNo is MainPurchaseOrderNo Setter
 // 主采购单号
 func (r *TmallChannelTradeOrderGetsAPIRequest) SetMainPurchaseOrderNo(_mainPurchaseOrderNo int64) error {
@@ -150,19 +137,6 @@ func (r *TmallChannelTradeOrderGetsAPIRequest) SetMainPurchaseOrderNo(_mainPurch
 // GetMainPurchaseOrderNo MainPurchaseOrderNo Getter
 func (r TmallChannelTradeOrderGetsAPIRequest) GetMainPurchaseOrderNo() int64 {
 	return r._mainPurchaseOrderNo
-}
-
-// SetDistributorNick is DistributorNick Setter
-// 分销商Nick
-func (r *TmallChannelTradeOrderGetsAPIRequest) SetDistributorNick(_distributorNick string) error {
-	r._distributorNick = _distributorNick
-	r.Set("distributor_nick", _distributorNick)
-	return nil
-}
-
-// GetDistributorNick DistributorNick Getter
-func (r TmallChannelTradeOrderGetsAPIRequest) GetDistributorNick() string {
-	return r._distributorNick
 }
 
 // SetChannel is Channel Setter
@@ -204,28 +178,54 @@ func (r TmallChannelTradeOrderGetsAPIRequest) GetOrderStatus() int64 {
 	return r._orderStatus
 }
 
-// SetCreateTimeStart is CreateTimeStart Setter
-// 创建时间从
-func (r *TmallChannelTradeOrderGetsAPIRequest) SetCreateTimeStart(_createTimeStart string) error {
-	r._createTimeStart = _createTimeStart
-	r.Set("create_time_start", _createTimeStart)
+// SetIsIncludeSubOrder is IsIncludeSubOrder Setter
+// 是否包含子单
+func (r *TmallChannelTradeOrderGetsAPIRequest) SetIsIncludeSubOrder(_isIncludeSubOrder bool) error {
+	r._isIncludeSubOrder = _isIncludeSubOrder
+	r.Set("is_include_sub_order", _isIncludeSubOrder)
 	return nil
 }
 
-// GetCreateTimeStart CreateTimeStart Getter
-func (r TmallChannelTradeOrderGetsAPIRequest) GetCreateTimeStart() string {
-	return r._createTimeStart
+// GetIsIncludeSubOrder IsIncludeSubOrder Getter
+func (r TmallChannelTradeOrderGetsAPIRequest) GetIsIncludeSubOrder() bool {
+	return r._isIncludeSubOrder
 }
 
-// SetCreateTimeEnd is CreateTimeEnd Setter
-// 创建时间到
-func (r *TmallChannelTradeOrderGetsAPIRequest) SetCreateTimeEnd(_createTimeEnd string) error {
-	r._createTimeEnd = _createTimeEnd
-	r.Set("create_time_end", _createTimeEnd)
+// SetIsIncludeMainOrder is IsIncludeMainOrder Setter
+// 是否包含主单
+func (r *TmallChannelTradeOrderGetsAPIRequest) SetIsIncludeMainOrder(_isIncludeMainOrder bool) error {
+	r._isIncludeMainOrder = _isIncludeMainOrder
+	r.Set("is_include_main_order", _isIncludeMainOrder)
 	return nil
 }
 
-// GetCreateTimeEnd CreateTimeEnd Getter
-func (r TmallChannelTradeOrderGetsAPIRequest) GetCreateTimeEnd() string {
-	return r._createTimeEnd
+// GetIsIncludeMainOrder IsIncludeMainOrder Getter
+func (r TmallChannelTradeOrderGetsAPIRequest) GetIsIncludeMainOrder() bool {
+	return r._isIncludeMainOrder
+}
+
+// SetIsIncludeLogistics is IsIncludeLogistics Setter
+// 是否包含物流信息
+func (r *TmallChannelTradeOrderGetsAPIRequest) SetIsIncludeLogistics(_isIncludeLogistics bool) error {
+	r._isIncludeLogistics = _isIncludeLogistics
+	r.Set("is_include_logistics", _isIncludeLogistics)
+	return nil
+}
+
+// GetIsIncludeLogistics IsIncludeLogistics Getter
+func (r TmallChannelTradeOrderGetsAPIRequest) GetIsIncludeLogistics() bool {
+	return r._isIncludeLogistics
+}
+
+// SetNeedPagination is NeedPagination Setter
+// 是否分页查询
+func (r *TmallChannelTradeOrderGetsAPIRequest) SetNeedPagination(_needPagination bool) error {
+	r._needPagination = _needPagination
+	r.Set("need_pagination", _needPagination)
+	return nil
+}
+
+// GetNeedPagination NeedPagination Getter
+func (r TmallChannelTradeOrderGetsAPIRequest) GetNeedPagination() bool {
+	return r._needPagination
 }

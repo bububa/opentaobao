@@ -12,10 +12,14 @@ import (
 // 混合搜索店铺
 type AlibabaEleEnterpriseRestaurantMixAPIRequest struct {
 	model.Params
+	// 餐厅分类ids
+	_categoryIds []int64
 	// longitude和latitude用英文逗号分隔
 	_geo string
 	// 首次查询无需传入，后续需要传入前次返回
 	_rankId string
+	// 搜索关键词（关键字需要urlencode处理
+	_keyword string
 	// 查询起始位置，默认为0。如果传的是10，那么餐厅会从第11个开始返回
 	_start int64
 	// 查询数量，默认是10，最大50
@@ -36,10 +40,6 @@ type AlibabaEleEnterpriseRestaurantMixAPIRequest struct {
 	_deliveryMode int64
 	// 排序选项（1-默认排序（热门）， 2-评价星级由高到低， 3-起送价由低到高， 4-销量由高到低， 5-送餐速度由快到慢， 6-餐厅距离由近到远， 7-订单量由高到低）
 	_orderBy int64
-	// 餐厅分类ids
-	_categoryIds []int64
-	// 搜索关键词（关键字需要urlencode处理
-	_keyword string
 	// 是否筛选支持预定 0:不需要 1:需要（不传该字段则不筛选）
 	_isBookable int64
 }
@@ -63,6 +63,19 @@ func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetCategoryIds is CategoryIds Setter
+// 餐厅分类ids
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetCategoryIds(_categoryIds []int64) error {
+	r._categoryIds = _categoryIds
+	r.Set("category_ids", _categoryIds)
+	return nil
+}
+
+// GetCategoryIds CategoryIds Getter
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetCategoryIds() []int64 {
+	return r._categoryIds
 }
 
 // SetGeo is Geo Setter
@@ -89,6 +102,19 @@ func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetRankId(_rankId string) 
 // GetRankId RankId Getter
 func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetRankId() string {
 	return r._rankId
+}
+
+// SetKeyword is Keyword Setter
+// 搜索关键词（关键字需要urlencode处理
+func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetKeyword(_keyword string) error {
+	r._keyword = _keyword
+	r.Set("keyword", _keyword)
+	return nil
+}
+
+// GetKeyword Keyword Getter
+func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetKeyword() string {
+	return r._keyword
 }
 
 // SetStart is Start Setter
@@ -219,32 +245,6 @@ func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetOrderBy(_orderBy int64)
 // GetOrderBy OrderBy Getter
 func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetOrderBy() int64 {
 	return r._orderBy
-}
-
-// SetCategoryIds is CategoryIds Setter
-// 餐厅分类ids
-func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetCategoryIds(_categoryIds []int64) error {
-	r._categoryIds = _categoryIds
-	r.Set("category_ids", _categoryIds)
-	return nil
-}
-
-// GetCategoryIds CategoryIds Getter
-func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetCategoryIds() []int64 {
-	return r._categoryIds
-}
-
-// SetKeyword is Keyword Setter
-// 搜索关键词（关键字需要urlencode处理
-func (r *AlibabaEleEnterpriseRestaurantMixAPIRequest) SetKeyword(_keyword string) error {
-	r._keyword = _keyword
-	r.Set("keyword", _keyword)
-	return nil
-}
-
-// GetKeyword Keyword Getter
-func (r AlibabaEleEnterpriseRestaurantMixAPIRequest) GetKeyword() string {
-	return r._keyword
 }
 
 // SetIsBookable is IsBookable Setter

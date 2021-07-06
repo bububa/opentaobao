@@ -22,12 +22,12 @@ type TaobaoElifeLifecardQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// resultMsg
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
-	// amount
-	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
-	// successed
-	Successed bool `json:"successed,omitempty" xml:"successed,omitempty"`
 	// resultCode
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
+	// amount
+	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 	// inflateAmount
 	InflateAmount int64 `json:"inflate_amount,omitempty" xml:"inflate_amount,omitempty"`
+	// successed
+	Successed bool `json:"successed,omitempty" xml:"successed,omitempty"`
 }

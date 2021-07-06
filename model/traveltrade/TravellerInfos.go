@@ -8,14 +8,10 @@ type TravellerInfos struct {
 	LastName string `json:"last_name,omitempty" xml:"last_name,omitempty"`
 	// 1： 出行管理 2： 二次预约 4： 二次确认 8:   电子合同 16：电子凭证 32：自定义出行人 64：门票
 	BizType string `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
-	// 预约ID
-	BookInfoId int64 `json:"book_info_id,omitempty" xml:"book_info_id,omitempty"`
 	// 子订单ID
 	SubTcOrderId string `json:"sub_tc_order_id,omitempty" xml:"sub_tc_order_id,omitempty"`
 	// 子订单ID
 	TcOrderId string `json:"tc_order_id,omitempty" xml:"tc_order_id,omitempty"`
-	// 证件类型
-	CredentialsType int64 `json:"credentials_type,omitempty" xml:"credentials_type,omitempty"`
 	// 出行人姓名
 	TravellerName string `json:"traveller_name,omitempty" xml:"traveller_name,omitempty"`
 	// 买家备注
@@ -40,8 +36,6 @@ type TravellerInfos struct {
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 国籍
 	Nationality string `json:"nationality,omitempty" xml:"nationality,omitempty"`
-	// 是否仅更新bookId字段
-	OnlyUpateBookId bool `json:"only_upate_book_id,omitempty" xml:"only_upate_book_id,omitempty"`
 	// 创建时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 证件签发国
@@ -50,4 +44,10 @@ type TravellerInfos struct {
 	Telphone string `json:"telphone,omitempty" xml:"telphone,omitempty"`
 	// 自定义出行人的时候的json格式
 	TravellerJson string `json:"traveller_json,omitempty" xml:"traveller_json,omitempty"`
+	// 预约ID
+	BookInfoId int64 `json:"book_info_id,omitempty" xml:"book_info_id,omitempty"`
+	// 证件类型
+	CredentialsType int64 `json:"credentials_type,omitempty" xml:"credentials_type,omitempty"`
+	// 是否仅更新bookId字段
+	OnlyUpateBookId bool `json:"only_upate_book_id,omitempty" xml:"only_upate_book_id,omitempty"`
 }

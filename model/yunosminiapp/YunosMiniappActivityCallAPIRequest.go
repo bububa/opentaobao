@@ -12,12 +12,12 @@ import (
 // 用于小程序调用活动接口
 type YunosMiniappActivityCallAPIRequest struct {
 	model.Params
-	// 请求选项
-	_options *Options
 	// 设备id
 	_deviceId string
 	// 活动id
 	_activityId string
+	// 请求选项
+	_options *Options
 }
 
 // NewYunosMiniappActivityCallRequest 初始化YunosMiniappActivityCallAPIRequest对象
@@ -39,19 +39,6 @@ func (r YunosMiniappActivityCallAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetOptions is Options Setter
-// 请求选项
-func (r *YunosMiniappActivityCallAPIRequest) SetOptions(_options *Options) error {
-	r._options = _options
-	r.Set("options", _options)
-	return nil
-}
-
-// GetOptions Options Getter
-func (r YunosMiniappActivityCallAPIRequest) GetOptions() *Options {
-	return r._options
 }
 
 // SetDeviceId is DeviceId Setter
@@ -78,4 +65,17 @@ func (r *YunosMiniappActivityCallAPIRequest) SetActivityId(_activityId string) e
 // GetActivityId ActivityId Getter
 func (r YunosMiniappActivityCallAPIRequest) GetActivityId() string {
 	return r._activityId
+}
+
+// SetOptions is Options Setter
+// 请求选项
+func (r *YunosMiniappActivityCallAPIRequest) SetOptions(_options *Options) error {
+	r._options = _options
+	r.Set("options", _options)
+	return nil
+}
+
+// GetOptions Options Getter
+func (r YunosMiniappActivityCallAPIRequest) GetOptions() *Options {
+	return r._options
 }

@@ -12,12 +12,12 @@ import (
 // 批量获取零售加平台上的商品详情信息
 type AlibabaNlifeStoreItemdetailsGetAPIRequest struct {
 	model.Params
+	// 查询参数list
+	_itemQueryDOList []ItemQueryDOList
 	// 门店ID/设备号
 	_storeId string
 	// 门店类型: 零售加的门店-RETAIL_PLUS_STORE ; 商户中心门店-PLACE_STORE ; 门店设备号-STORE_DEVICE
 	_storeIdType string
-	// 查询参数list
-	_itemQueryDOList []ItemQueryDOList
 	// 商品来源类型: 0-线上商品; 1-商户导入的线下商品. 如果为空则默认值为0
 	_itemType *model.File
 }
@@ -41,6 +41,19 @@ func (r AlibabaNlifeStoreItemdetailsGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetItemQueryDOList is ItemQueryDOList Setter
+// 查询参数list
+func (r *AlibabaNlifeStoreItemdetailsGetAPIRequest) SetItemQueryDOList(_itemQueryDOList []ItemQueryDOList) error {
+	r._itemQueryDOList = _itemQueryDOList
+	r.Set("item_query_d_o_list", _itemQueryDOList)
+	return nil
+}
+
+// GetItemQueryDOList ItemQueryDOList Getter
+func (r AlibabaNlifeStoreItemdetailsGetAPIRequest) GetItemQueryDOList() []ItemQueryDOList {
+	return r._itemQueryDOList
 }
 
 // SetStoreId is StoreId Setter
@@ -67,19 +80,6 @@ func (r *AlibabaNlifeStoreItemdetailsGetAPIRequest) SetStoreIdType(_storeIdType 
 // GetStoreIdType StoreIdType Getter
 func (r AlibabaNlifeStoreItemdetailsGetAPIRequest) GetStoreIdType() string {
 	return r._storeIdType
-}
-
-// SetItemQueryDOList is ItemQueryDOList Setter
-// 查询参数list
-func (r *AlibabaNlifeStoreItemdetailsGetAPIRequest) SetItemQueryDOList(_itemQueryDOList []ItemQueryDOList) error {
-	r._itemQueryDOList = _itemQueryDOList
-	r.Set("item_query_d_o_list", _itemQueryDOList)
-	return nil
-}
-
-// GetItemQueryDOList ItemQueryDOList Getter
-func (r AlibabaNlifeStoreItemdetailsGetAPIRequest) GetItemQueryDOList() []ItemQueryDOList {
-	return r._itemQueryDOList
 }
 
 // SetItemType is ItemType Setter

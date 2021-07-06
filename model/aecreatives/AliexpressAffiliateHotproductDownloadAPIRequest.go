@@ -22,16 +22,16 @@ type AliexpressAffiliateHotproductDownloadAPIRequest struct {
 	_fields string
 	// 站点商品标：global,it_site,es_site,ru_site
 	_localeSite string
-	// 请求页数
-	_pageNo int64
-	// 每次请求数量
-	_pageSize int64
 	// 目标币种:USD, GBP, CAD, EUR, UAH, MXN, TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW
 	_targetCurrency string
 	// 目标语言:EN,RU,PT,ES,FR,ID,IT,TH,JA,AR,VI,TR,DE,HE,KO,NL,PL,MX,CL,IW,IN
 	_targetLanguage string
 	// 收货国家，可筛选能销售至该国家的商品，并根据该国家税率政策返回对应商品价格
 	_country string
+	// 请求页数
+	_pageNo int64
+	// 每次请求数量
+	_pageSize int64
 }
 
 // NewAliexpressAffiliateHotproductDownloadRequest 初始化AliexpressAffiliateHotproductDownloadAPIRequest对象
@@ -120,32 +120,6 @@ func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetLocaleSite() string 
 	return r._localeSite
 }
 
-// SetPageNo is PageNo Setter
-// 请求页数
-func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetPageNo() int64 {
-	return r._pageNo
-}
-
-// SetPageSize is PageSize Setter
-// 每次请求数量
-func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetTargetCurrency is TargetCurrency Setter
 // 目标币种:USD, GBP, CAD, EUR, UAH, MXN, TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW
 func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetTargetCurrency(_targetCurrency string) error {
@@ -183,4 +157,30 @@ func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetCountry(_country st
 // GetCountry Country Getter
 func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetCountry() string {
 	return r._country
+}
+
+// SetPageNo is PageNo Setter
+// 请求页数
+func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetPageNo() int64 {
+	return r._pageNo
+}
+
+// SetPageSize is PageSize Setter
+// 每次请求数量
+func (r *AliexpressAffiliateHotproductDownloadAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AliexpressAffiliateHotproductDownloadAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

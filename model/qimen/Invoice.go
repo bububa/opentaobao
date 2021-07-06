@@ -8,8 +8,6 @@ type Invoice struct {
 	Amount string `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 发票内容
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
-	// 订单详情
-	Detail *TaobaoQimenDeliveryorderBatchconfirmDetail `json:"detail,omitempty" xml:"detail,omitempty"`
 	// 发票代码(纳税企业的标识)
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 发票号码(纳税企业内部的发票号)
@@ -18,4 +16,6 @@ type Invoice struct {
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 税号
 	TaxNumber string `json:"taxNumber,omitempty" xml:"taxNumber,omitempty"`
+	// 订单详情
+	Detail *TaobaoQimenDeliveryorderBatchconfirmDetail `json:"detail,omitempty" xml:"detail,omitempty"`
 }

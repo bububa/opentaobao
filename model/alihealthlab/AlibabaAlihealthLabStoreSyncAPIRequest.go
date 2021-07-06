@@ -12,12 +12,12 @@ import (
 // 阿里健康检验检测业务，isv门店同步到健康。支持门店的上线、下线操作
 type AlibabaAlihealthLabStoreSyncAPIRequest struct {
 	model.Params
+	// 支持的淘宝商品类目ID，阿里医院场景
+	_allowedTbItemCategoryIds []int64
 	// EFFECTIVE 生效，INVALID 失效
 	_isvStoreStatus string
 	// 预约须知
 	_reserveNotice string
-	// 支持在线报告
-	_supportOnlineReport bool
 	// 门店类型描述
 	_storeTypeDesc string
 	// 企业社会征信号
@@ -34,20 +34,20 @@ type AlibabaAlihealthLabStoreSyncAPIRequest struct {
 	_storePhone string
 	// 门店介绍
 	_storeIntro string
-	// 经度
-	_longitude *BigDecimal
-	// 纬度
-	_latitude *BigDecimal
-	// 城市编码
-	_cityCode int64
 	// 门店地址
 	_storeAddress string
 	// isv门店编码
 	_isvStoreCode string
 	// 门店名称
 	_storeName string
-	// 支持的淘宝商品类目ID，阿里医院场景
-	_allowedTbItemCategoryIds []int64
+	// 经度
+	_longitude *BigDecimal
+	// 纬度
+	_latitude *BigDecimal
+	// 城市编码
+	_cityCode int64
+	// 支持在线报告
+	_supportOnlineReport bool
 }
 
 // NewAlibabaAlihealthLabStoreSyncRequest 初始化AlibabaAlihealthLabStoreSyncAPIRequest对象
@@ -69,6 +69,19 @@ func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetAllowedTbItemCategoryIds is AllowedTbItemCategoryIds Setter
+// 支持的淘宝商品类目ID，阿里医院场景
+func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetAllowedTbItemCategoryIds(_allowedTbItemCategoryIds []int64) error {
+	r._allowedTbItemCategoryIds = _allowedTbItemCategoryIds
+	r.Set("allowed_tb_item_category_ids", _allowedTbItemCategoryIds)
+	return nil
+}
+
+// GetAllowedTbItemCategoryIds AllowedTbItemCategoryIds Getter
+func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetAllowedTbItemCategoryIds() []int64 {
+	return r._allowedTbItemCategoryIds
 }
 
 // SetIsvStoreStatus is IsvStoreStatus Setter
@@ -95,19 +108,6 @@ func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetReserveNotice(_reserveNotice
 // GetReserveNotice ReserveNotice Getter
 func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetReserveNotice() string {
 	return r._reserveNotice
-}
-
-// SetSupportOnlineReport is SupportOnlineReport Setter
-// 支持在线报告
-func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetSupportOnlineReport(_supportOnlineReport bool) error {
-	r._supportOnlineReport = _supportOnlineReport
-	r.Set("support_online_report", _supportOnlineReport)
-	return nil
-}
-
-// GetSupportOnlineReport SupportOnlineReport Getter
-func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetSupportOnlineReport() bool {
-	return r._supportOnlineReport
 }
 
 // SetStoreTypeDesc is StoreTypeDesc Setter
@@ -214,45 +214,6 @@ func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetStoreIntro() string {
 	return r._storeIntro
 }
 
-// SetLongitude is Longitude Setter
-// 经度
-func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetLongitude(_longitude *BigDecimal) error {
-	r._longitude = _longitude
-	r.Set("longitude", _longitude)
-	return nil
-}
-
-// GetLongitude Longitude Getter
-func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetLongitude() *BigDecimal {
-	return r._longitude
-}
-
-// SetLatitude is Latitude Setter
-// 纬度
-func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetLatitude(_latitude *BigDecimal) error {
-	r._latitude = _latitude
-	r.Set("latitude", _latitude)
-	return nil
-}
-
-// GetLatitude Latitude Getter
-func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetLatitude() *BigDecimal {
-	return r._latitude
-}
-
-// SetCityCode is CityCode Setter
-// 城市编码
-func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetCityCode(_cityCode int64) error {
-	r._cityCode = _cityCode
-	r.Set("city_code", _cityCode)
-	return nil
-}
-
-// GetCityCode CityCode Getter
-func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetCityCode() int64 {
-	return r._cityCode
-}
-
 // SetStoreAddress is StoreAddress Setter
 // 门店地址
 func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetStoreAddress(_storeAddress string) error {
@@ -292,15 +253,54 @@ func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetStoreName() string {
 	return r._storeName
 }
 
-// SetAllowedTbItemCategoryIds is AllowedTbItemCategoryIds Setter
-// 支持的淘宝商品类目ID，阿里医院场景
-func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetAllowedTbItemCategoryIds(_allowedTbItemCategoryIds []int64) error {
-	r._allowedTbItemCategoryIds = _allowedTbItemCategoryIds
-	r.Set("allowed_tb_item_category_ids", _allowedTbItemCategoryIds)
+// SetLongitude is Longitude Setter
+// 经度
+func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetLongitude(_longitude *BigDecimal) error {
+	r._longitude = _longitude
+	r.Set("longitude", _longitude)
 	return nil
 }
 
-// GetAllowedTbItemCategoryIds AllowedTbItemCategoryIds Getter
-func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetAllowedTbItemCategoryIds() []int64 {
-	return r._allowedTbItemCategoryIds
+// GetLongitude Longitude Getter
+func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetLongitude() *BigDecimal {
+	return r._longitude
+}
+
+// SetLatitude is Latitude Setter
+// 纬度
+func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetLatitude(_latitude *BigDecimal) error {
+	r._latitude = _latitude
+	r.Set("latitude", _latitude)
+	return nil
+}
+
+// GetLatitude Latitude Getter
+func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetLatitude() *BigDecimal {
+	return r._latitude
+}
+
+// SetCityCode is CityCode Setter
+// 城市编码
+func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetCityCode(_cityCode int64) error {
+	r._cityCode = _cityCode
+	r.Set("city_code", _cityCode)
+	return nil
+}
+
+// GetCityCode CityCode Getter
+func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetCityCode() int64 {
+	return r._cityCode
+}
+
+// SetSupportOnlineReport is SupportOnlineReport Setter
+// 支持在线报告
+func (r *AlibabaAlihealthLabStoreSyncAPIRequest) SetSupportOnlineReport(_supportOnlineReport bool) error {
+	r._supportOnlineReport = _supportOnlineReport
+	r.Set("support_online_report", _supportOnlineReport)
+	return nil
+}
+
+// GetSupportOnlineReport SupportOnlineReport Getter
+func (r AlibabaAlihealthLabStoreSyncAPIRequest) GetSupportOnlineReport() bool {
+	return r._supportOnlineReport
 }

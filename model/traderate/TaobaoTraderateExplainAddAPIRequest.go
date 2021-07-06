@@ -12,10 +12,10 @@ import (
 // 商城卖家给评价做出解释（买家追加评论后、评价超过30天的，都不能再做评价解释）
 type TaobaoTraderateExplainAddAPIRequest struct {
 	model.Params
-	// 子订单ID
-	_oid int64
 	// 评价解释内容，最大长度：500个汉字
 	_reply string
+	// 子订单ID
+	_oid int64
 }
 
 // NewTaobaoTraderateExplainAddRequest 初始化TaobaoTraderateExplainAddAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoTraderateExplainAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetOid is Oid Setter
-// 子订单ID
-func (r *TaobaoTraderateExplainAddAPIRequest) SetOid(_oid int64) error {
-	r._oid = _oid
-	r.Set("oid", _oid)
-	return nil
-}
-
-// GetOid Oid Getter
-func (r TaobaoTraderateExplainAddAPIRequest) GetOid() int64 {
-	return r._oid
-}
-
 // SetReply is Reply Setter
 // 评价解释内容，最大长度：500个汉字
 func (r *TaobaoTraderateExplainAddAPIRequest) SetReply(_reply string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoTraderateExplainAddAPIRequest) SetReply(_reply string) error {
 // GetReply Reply Getter
 func (r TaobaoTraderateExplainAddAPIRequest) GetReply() string {
 	return r._reply
+}
+
+// SetOid is Oid Setter
+// 子订单ID
+func (r *TaobaoTraderateExplainAddAPIRequest) SetOid(_oid int64) error {
+	r._oid = _oid
+	r.Set("oid", _oid)
+	return nil
+}
+
+// GetOid Oid Getter
+func (r TaobaoTraderateExplainAddAPIRequest) GetOid() int64 {
+	return r._oid
 }

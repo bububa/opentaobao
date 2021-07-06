@@ -12,14 +12,14 @@ import (
 // 天猫根据规则编辑商品
 type TmallItemSchemaUpdateAPIRequest struct {
 	model.Params
+	// 根据tmall.item.update.schema.get生成的商品编辑规则入参数据
+	_xmlData string
 	// 需要编辑的商品ID
 	_itemId int64
 	// 商品发布的目标类目，必须是叶子类目。如果没有切换类目需求不需要填写
 	_categoryId int64
 	// 商品发布的目标product_id。如果没有切换类目或者切换产品的需求，参数不用填写
 	_productId int64
-	// 根据tmall.item.update.schema.get生成的商品编辑规则入参数据
-	_xmlData string
 }
 
 // NewTmallItemSchemaUpdateRequest 初始化TmallItemSchemaUpdateAPIRequest对象
@@ -41,6 +41,19 @@ func (r TmallItemSchemaUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetXmlData is XmlData Setter
+// 根据tmall.item.update.schema.get生成的商品编辑规则入参数据
+func (r *TmallItemSchemaUpdateAPIRequest) SetXmlData(_xmlData string) error {
+	r._xmlData = _xmlData
+	r.Set("xml_data", _xmlData)
+	return nil
+}
+
+// GetXmlData XmlData Getter
+func (r TmallItemSchemaUpdateAPIRequest) GetXmlData() string {
+	return r._xmlData
 }
 
 // SetItemId is ItemId Setter
@@ -80,17 +93,4 @@ func (r *TmallItemSchemaUpdateAPIRequest) SetProductId(_productId int64) error {
 // GetProductId ProductId Getter
 func (r TmallItemSchemaUpdateAPIRequest) GetProductId() int64 {
 	return r._productId
-}
-
-// SetXmlData is XmlData Setter
-// 根据tmall.item.update.schema.get生成的商品编辑规则入参数据
-func (r *TmallItemSchemaUpdateAPIRequest) SetXmlData(_xmlData string) error {
-	r._xmlData = _xmlData
-	r.Set("xml_data", _xmlData)
-	return nil
-}
-
-// GetXmlData XmlData Getter
-func (r TmallItemSchemaUpdateAPIRequest) GetXmlData() string {
-	return r._xmlData
 }
